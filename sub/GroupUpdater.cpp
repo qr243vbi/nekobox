@@ -278,7 +278,7 @@ namespace NekoGui_sub {
 
                     // sing-mux
                     auto smux = NodeChild(proxy, {"smux"});
-                    if (Node2Bool(smux["enabled"])) bean->stream->multiplex_status = 1;
+                    if (Node2Bool(smux["enabled"])) bean->mux_state = 1;
                 } else if (type == "socks" || type == "http") {
                     auto bean = ent->SocksHTTPBean();
                     bean->username = Node2QString(proxy["username"]);
@@ -313,7 +313,7 @@ namespace NekoGui_sub {
 
                     // sing-mux
                     auto smux = NodeChild(proxy, {"smux"});
-                    if (Node2Bool(smux["enabled"])) bean->stream->multiplex_status = 1;
+                    if (Node2Bool(smux["enabled"])) bean->mux_state = 1;
 
                     // opts
                     auto ws = NodeChild(proxy, {"ws-opts", "ws-opt"});
@@ -358,7 +358,7 @@ namespace NekoGui_sub {
 
                     // sing-mux
                     auto smux = NodeChild(proxy, {"smux"});
-                    if (Node2Bool(smux["enabled"])) bean->stream->multiplex_status = 1;
+                    if (Node2Bool(smux["enabled"])) bean->mux_state = 1;
 
                     // meta packet encoding
                     if (Node2Bool(proxy["xudp"])) bean->stream->packet_encoding = "xudp";

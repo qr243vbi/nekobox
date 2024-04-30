@@ -100,6 +100,14 @@ namespace NekoGui_fmt {
             }
         }
 
+        // mux
+        auto mux_str = GetQueryValue(query, "mux", "");
+        if (mux_str == "true") {
+            mux_state = 1;
+        } else if (mux_str == "false") {
+            mux_state = 2;
+        }
+
         // protocol
         if (proxy_type == proxy_VLESS) {
             flow = GetQueryValue(query, "flow", "");
@@ -132,6 +140,13 @@ namespace NekoGui_fmt {
 
             auto query = GetQuery(url);
             plugin = query.queryItemValue("plugin").replace("simple-obfs;", "obfs-local;");
+            auto mux_str = GetQueryValue(query, "mux", "");
+            if (mux_str == "true") {
+                mux_state = 1;
+            } else if (mux_str == "false") {
+                mux_state = 2;
+            }
+
         } else {
             // v2rayN
             DECODE_V2RAY_N_1
@@ -210,6 +225,14 @@ namespace NekoGui_fmt {
                 stream->utlsFingerprint = NekoGui::dataStore->utlsFingerprint;
             }
 
+            // mux
+            auto mux_str = GetQueryValue(query, "mux", "");
+            if (mux_str == "true") {
+                mux_state = 1;
+            } else if (mux_str == "false") {
+                mux_state = 2;
+            }
+
             // type
             if (stream->network == "ws") {
                 stream->path = GetQueryValue(query, "path", "");
@@ -263,7 +286,6 @@ namespace NekoGui_fmt {
             name = url.fragment(QUrl::FullyDecoded);
             serverAddress = url.host();
             serverPort = url.port();
-            hopPort = query.queryItemValue("mport");
             obfsPassword = query.queryItemValue("obfsParam");
             allowInsecure = QStringList{"1", "true"}.contains(query.queryItemValue("insecure"));
             uploadMbps = query.queryItemValue("upmbps").toInt();
@@ -308,7 +330,6 @@ namespace NekoGui_fmt {
             name = url.fragment(QUrl::FullyDecoded);
             serverAddress = url.host();
             serverPort = url.port();
-            hopPort = query.queryItemValue("mport");
             obfsPassword = query.queryItemValue("obfs-password");
             allowInsecure = QStringList{"1", "true"}.contains(query.queryItemValue("insecure"));
 

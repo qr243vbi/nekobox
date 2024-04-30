@@ -13,10 +13,6 @@ DialogFirstSetup::~DialogFirstSetup() {
 
 void DialogFirstSetup::onButtonClicked() {
     auto s = sender();
-    if (s == ui->v2ray) {
-        NekoGui::coreType = NekoGui::CoreType::V2RAY;
-    } else if (s == ui->singbox) {
-        NekoGui::coreType = NekoGui::CoreType::SING_BOX;
-    }
+    NekoGui::coreType = NekoGui::CoreType::SING_BOX;
     done(0);
 }

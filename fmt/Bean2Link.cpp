@@ -64,6 +64,13 @@ namespace NekoGui_fmt {
             }
         }
 
+        // mux
+        if (mux_state == 1) {
+            query.addQueryItem("mux", "true");
+        } else if (mux_state == 2) {
+            query.addQueryItem("mux", "false");
+        }
+
         // protocol
         if (proxy_type == proxy_VLESS) {
             if (!flow.isEmpty()) {
@@ -92,6 +99,20 @@ namespace NekoGui_fmt {
         if (!name.isEmpty()) url.setFragment(name);
         QUrlQuery q;
         if (!plugin.isEmpty()) q.addQueryItem("plugin", plugin);
+
+        // mux
+        if (mux_state == 1) {
+            q.addQueryItem("mux", "true");
+        } else if (mux_state == 2) {
+            q.addQueryItem("mux", "false");
+        }
+        // uot
+        if (uot == 1) {
+            q.addQueryItem("uot", "1");
+        } else if (uot == 2) {
+            q.addQueryItem("uot", "2");
+        }
+
         if (!q.isEmpty()) url.setQuery(q);
         //
         auto link = url.toString(QUrl::FullyEncoded);
@@ -164,6 +185,13 @@ namespace NekoGui_fmt {
                 }
             }
 
+            // mux
+            if (mux_state == 1) {
+                query.addQueryItem("mux", "true");
+            } else if (mux_state == 2) {
+                query.addQueryItem("mux", "false");
+            }
+
             url.setQuery(query);
             return url.toString(QUrl::FullyEncoded);
         }
@@ -196,7 +224,6 @@ namespace NekoGui_fmt {
             if (authPayloadType == hysteria_auth_string) q.addQueryItem("auth", authPayload);
             if (hyProtocol == hysteria_protocol_facktcp) q.addQueryItem("protocol", "faketcp");
             if (hyProtocol == hysteria_protocol_wechat_video) q.addQueryItem("protocol", "wechat-video");
-            if (!hopPort.trimmed().isEmpty()) q.addQueryItem("mport", hopPort);
             if (allowInsecure) q.addQueryItem("insecure", "1");
             if (!sni.isEmpty()) q.addQueryItem("peer", sni);
             if (!alpn.isEmpty()) q.addQueryItem("alpn", alpn);
@@ -235,7 +262,6 @@ namespace NekoGui_fmt {
                 q.addQueryItem("obfs", "salamander");
                 q.addQueryItem("obfs-password", obfsPassword);
             }
-            if (!hopPort.trimmed().isEmpty()) q.addQueryItem("mport", hopPort);
             if (allowInsecure) q.addQueryItem("insecure", "1");
             if (!sni.isEmpty()) q.addQueryItem("sni", sni);
             if (!q.isEmpty()) url.setQuery(q);
