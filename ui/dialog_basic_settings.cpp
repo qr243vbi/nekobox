@@ -217,9 +217,6 @@ DialogBasicSettings::DialogBasicSettings(QWidget *parent)
         }
     });
 
-    // switch core
-    ui->switch_core_sing_box->setChecked(IS_NEKO_BOX);
-
     // Mux
     D_LOAD_INT(mux_concurrency)
     D_LOAD_COMBO_STRING(mux_protocol)
