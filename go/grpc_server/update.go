@@ -25,7 +25,7 @@ func (s *BaseServer) Update(ctx context.Context, in *gen.UpdateReq) (*gen.Update
 		ctx, cancel := context.WithTimeout(ctx, time.Second*10)
 		defer cancel()
 
-		req, _ := http.NewRequestWithContext(ctx, "GET", "https://api.github.com/repos/MatsuriDayo/nekoray/releases", nil)
+		req, _ := http.NewRequestWithContext(ctx, "GET", "https://api.github.com/repos/Mahdi-zarei/nekoray/releases", nil)
 		resp, err := client.Do(req)
 		if err != nil {
 			ret.Error = err.Error()
@@ -33,7 +33,7 @@ func (s *BaseServer) Update(ctx context.Context, in *gen.UpdateReq) (*gen.Update
 		}
 		defer resp.Body.Close()
 
-		v := []struct {
+		var v []struct {
 			HtmlUrl string `json:"html_url"`
 			Assets  []struct {
 				Name               string `json:"name"`
@@ -41,7 +41,7 @@ func (s *BaseServer) Update(ctx context.Context, in *gen.UpdateReq) (*gen.Update
 			} `json:"assets"`
 			Prerelease bool   `json:"prerelease"`
 			Body       string `json:"body"`
-		}{}
+		}
 		err = json.NewDecoder(resp.Body).Decode(&v)
 		if err != nil {
 			ret.Error = err.Error()

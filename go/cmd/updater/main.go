@@ -32,7 +32,7 @@ func main() {
 				// 3. start
 				exec.Command("./nekoray.exe").Start()
 			} else {
-				// 1. nekoray stop it self and run "updater.exe"
+				// 1. nekoray stop itself and run "updater.exe"
 				Copy("./updater.exe", "./updater.old")
 				exec.Command("./updater.old", os.Args[1:]...).Start()
 			}
