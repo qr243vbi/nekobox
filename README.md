@@ -34,7 +34,6 @@ Since the original author has abandoned the project, I have picked it up and wil
 
 Core:
 
-- [MatsuriDayo/Matsuri](https://github.com/MatsuriDayo/Matsuri) ( < 3.10 )
 - [SagerNet/sing-box](https://github.com/SagerNet/sing-box)
 - [Matsuridayo/sing-box-extra](https://github.com/Mahdi-zarei/sing-box-extra)
 
