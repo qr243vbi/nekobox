@@ -164,19 +164,13 @@ int main(int argc, char* argv[]) {
     if (coreLoaded.isEmpty()) {
         NekoGui::coreType = -1;
         loadTranslate(QLocale().name());
-        auto dialogFirstSetup = new DialogFirstSetup;
-        dialogFirstSetup->exec();
-        dialogFirstSetup->deleteLater();
-        if (NekoGui::coreType < 0) {
-            return 0;
-        } else {
-            QDir().mkdir("groups");
-            QFile file;
-            file.setFileName("groups/coreType");
-            file.open(QIODevice::ReadWrite | QIODevice::Truncate);
-            file.write(Int2String(NekoGui::coreType).toUtf8());
-            file.close();
-        }
+        NekoGui::coreType = NekoGui::CoreType::SING_BOX;
+        QDir().mkdir("groups");
+        QFile file;
+        file.setFileName("groups/coreType");
+        file.open(QIODevice::ReadWrite | QIODevice::Truncate);
+        file.write(Int2String(NekoGui::coreType).toUtf8());
+        file.close();
     } else {
         NekoGui::coreType = coreLoaded.toInt();
     }
@@ -200,9 +194,6 @@ int main(int argc, char* argv[]) {
 
     // Load dataStore
     switch (NekoGui::coreType) {
-        case NekoGui::CoreType::V2RAY:
-            NekoGui::dataStore->fn = "groups/nekoray.json";
-            break;
         case NekoGui::CoreType::SING_BOX:
             NekoGui::dataStore->fn = "groups/nekobox.json";
             break;

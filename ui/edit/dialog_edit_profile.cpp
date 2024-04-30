@@ -236,7 +236,7 @@ void DialogEditProfile::typeSelected(const QString &newType) {
         ui->ws_early_data_length->setText(Int2String(stream->ws_early_data_length));
         ui->reality_pbk->setText(stream->reality_pbk);
         ui->reality_sid->setText(stream->reality_sid);
-        ui->multiplex->setCurrentIndex(stream->multiplex_status);
+        ui->multiplex->setCurrentIndex(ent->bean->mux_state);
         CACHE.certificate = stream->certificate;
     } else {
         ui->right_all_w->setVisible(false);
@@ -371,7 +371,7 @@ bool DialogEditProfile::onEnd() {
         stream->ws_early_data_length = ui->ws_early_data_length->text().toInt();
         stream->reality_pbk = ui->reality_pbk->text();
         stream->reality_sid = ui->reality_sid->text();
-        stream->multiplex_status = ui->multiplex->currentIndex();
+        ent->bean->mux_state = ui->multiplex->currentIndex();
         stream->certificate = CACHE.certificate;
     }
 
@@ -515,7 +515,7 @@ void DialogEditProfile::do_apply_to_group(const std::shared_ptr<NekoGui::Group> 
     };
 
     if (key == ui->multiplex) {
-        copyStream(&stream->multiplex_status);
+        copyStream(&ent->bean->mux_state);
     } else if (key == ui->sni) {
         copyStream(&stream->sni);
     } else if (key == ui->alpn) {
