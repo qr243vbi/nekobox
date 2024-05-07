@@ -6,7 +6,7 @@
 #include "ui/mainwindow_interface.h"
 
 #include <QMessageBox>
-
+#define ADJUST_SIZE runOnUiThread([=] { adjustSize(); adjustPosition(mainwindow); }, this);
 DialogVPNSettings::DialogVPNSettings(QWidget *parent) : QDialog(parent), ui(new Ui::DialogVPNSettings) {
     ui->setupUi(this);
     ADD_ASTERISK(this);
@@ -16,12 +16,15 @@ DialogVPNSettings::DialogVPNSettings(QWidget *parent) : QDialog(parent), ui(new 
     ui->vpn_mtu->setCurrentText(Int2String(NekoGui::dataStore->vpn_mtu));
     ui->vpn_ipv6->setChecked(NekoGui::dataStore->vpn_ipv6);
     ui->hide_console->setChecked(NekoGui::dataStore->vpn_hide_console);
+    ui->gso_enable->setChecked(NekoGui::dataStore->enable_gso);
 #ifndef Q_OS_WIN
     ui->hide_console->setVisible(false);
 #endif
+#ifndef __linux__
+    ui->gso_enable->setVisible(false);
+    ADJUST_SIZE
+#endif
     ui->strict_route->setChecked(NekoGui::dataStore->vpn_strict_route);
-    ui->single_core->setVisible(IS_NEKO_BOX);
-    ui->single_core->setChecked(NekoGui::dataStore->vpn_internal_tun);
     //
     D_LOAD_STRING_PLAIN(vpn_rule_cidr)
     D_LOAD_STRING_PLAIN(vpn_rule_process)
@@ -53,18 +56,13 @@ void DialogVPNSettings::accept() {
     NekoGui::dataStore->vpn_hide_console = ui->hide_console->isChecked();
     NekoGui::dataStore->vpn_strict_route = ui->strict_route->isChecked();
     NekoGui::dataStore->vpn_rule_white = ui->whitelist_mode->isChecked();
-    bool isInternalChanged = NekoGui::dataStore->vpn_internal_tun != ui->single_core->isChecked();
-    NekoGui::dataStore->vpn_internal_tun = ui->single_core->isChecked();
+    NekoGui::dataStore->enable_gso = ui->gso_enable->isChecked();
     //
     D_SAVE_STRING_PLAIN(vpn_rule_cidr)
     D_SAVE_STRING_PLAIN(vpn_rule_process)
     //
     QStringList msg{"UpdateDataStore"};
-    if (isInternalChanged) {
-        msg << "NeedRestart";
-    } else {
-        msg << "VPNChanged";
-    }
+    msg << "VPNChanged";
     MW_dialog_message("", msg.join(","));
     QDialog::accept();
 }

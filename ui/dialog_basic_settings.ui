@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>600</width>
-    <height>400</height>
+    <width>728</width>
+    <height>472</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -33,7 +33,7 @@
    <item row="2" column="3">
     <widget class="QTabWidget" name="tabWidget">
      <property name="currentIndex">
-      <number>0</number>
+      <number>3</number>
      </property>
      <widget class="QWidget" name="tab_1">
       <attribute name="title">
@@ -689,6 +689,87 @@
          </layout>
         </widget>
        </item>
+       <item>
+        <widget class="QGroupBox" name="ntp_box">
+         <property name="toolTip">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Settings for the sing-box's built-in NTP client&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+         <property name="title">
+          <string>NTP Settings</string>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_7">
+          <item>
+           <widget class="QCheckBox" name="ntp_enable">
+            <property name="text">
+             <string>Enable</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QWidget" name="ntp_config" native="true">
+            <layout class="QHBoxLayout" name="horizontalLayout_11">
+             <item>
+              <widget class="QLabel" name="ntp_server_l">
+               <property name="text">
+                <string>server</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="ntp_server"/>
+             </item>
+             <item>
+              <widget class="QLabel" name="ntp_port_l">
+               <property name="text">
+                <string>Port</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="ntp_port">
+               <property name="maximumSize">
+                <size>
+                 <width>162</width>
+                 <height>16777215</height>
+                </size>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="ntp_interval_l">
+               <property name="text">
+                <string>sync interval</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QComboBox" name="ntp_interval">
+               <property name="toolTip">
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;In minutes&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               </property>
+               <item>
+                <property name="text">
+                 <string>5m</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>10m</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>30m</string>
+                </property>
+               </item>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
       </layout>
      </widget>
      <widget class="QWidget" name="tab_6">
@@ -709,8 +790,8 @@
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>198</width>
-            <height>58</height>
+            <width>680</width>
+            <height>355</height>
            </rect>
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_6">

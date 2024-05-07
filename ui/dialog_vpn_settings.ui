@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>600</width>
+    <width>640</width>
     <height>600</height>
    </rect>
   </property>
@@ -120,13 +120,12 @@
        </widget>
       </item>
       <item>
-       <widget class="QCheckBox" name="single_core">
+       <widget class="QCheckBox" name="gso_enable">
         <property name="toolTip">
-         <string>Add a tun inbound to the profile startup, instead of using two processes.
-This needs to be run NekoBox with administrator privileges.</string>
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Enables Generic Segmentation offloading on the Tun device, Only supported on Linux&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
         <property name="text">
-         <string>Internal Tun</string>
+         <string>Enable GSO</string>
         </property>
        </widget>
       </item>
@@ -217,7 +216,6 @@ This needs to be run NekoBox with administrator privileges.</string>
   <tabstop>vpn_ipv6</tabstop>
   <tabstop>strict_route</tabstop>
   <tabstop>fake_dns</tabstop>
-  <tabstop>single_core</tabstop>
   <tabstop>hide_console</tabstop>
   <tabstop>vpn_rule_cidr</tabstop>
   <tabstop>vpn_rule_process</tabstop>

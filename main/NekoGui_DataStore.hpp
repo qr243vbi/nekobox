@@ -147,7 +147,7 @@ namespace NekoGui {
 
         // VPN
         bool fake_dns = false;
-        bool vpn_internal_tun = true;
+        bool enable_gso = false;
         int vpn_implementation = 0;
         int vpn_mtu = 9000;
         bool vpn_ipv6 = false;
@@ -156,6 +156,12 @@ namespace NekoGui {
         bool vpn_rule_white = false;
         QString vpn_rule_process = "";
         QString vpn_rule_cidr = "";
+
+        // NTP
+        bool enable_ntp = false;
+        QString ntp_server_address = "";
+        int ntp_server_port = 0;
+        QString ntp_interval = "";
 
         // Hotkey
         QString hotkey_mainwindow = "";

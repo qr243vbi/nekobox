@@ -761,50 +761,32 @@ void MainWindow::neko_set_spmode_system_proxy(bool enable, bool save) {
 void MainWindow::neko_set_spmode_vpn(bool enable, bool save) {
     if (enable != NekoGui::dataStore->spmode_vpn) {
         if (enable) {
-            if (IS_NEKO_BOX_INTERNAL_TUN) {
-                bool requestPermission = !NekoGui::IsAdmin();
-                if (requestPermission) {
+            bool requestPermission = !NekoGui::IsAdmin();
+            if (requestPermission) {
 #ifdef Q_OS_LINUX
-                    if (!Linux_HavePkexec()) {
-                        MessageBoxWarning(software_name, "Please install \"pkexec\" first.");
-                        neko_set_spmode_FAILED
+                if (!Linux_HavePkexec()) {
+                    MessageBoxWarning(software_name, "Please install \"pkexec\" first.");
+                    neko_set_spmode_FAILED
+                }
+                auto ret = Linux_Pkexec_SetCapString(NekoGui::FindNekoBoxCoreRealPath(), "cap_net_admin=ep");
+                if (ret == 0) {
+                    this->exit_reason = 3;
+                    on_menu_exit_triggered();
+                } else {
+                    MessageBoxWarning(software_name, "Setcap for Tun mode failed.\n\n1. You may canceled the dialog.\n2. You may be using an incompatible environment like AppImage.");
+                    if (QProcessEnvironment::systemEnvironment().contains("APPIMAGE")) {
+                        MW_show_log("If you are using AppImage, it's impossible to start a Tun. Please use other package instead.");
                     }
-                    auto ret = Linux_Pkexec_SetCapString(NekoGui::FindNekoBoxCoreRealPath(), "cap_net_admin=ep");
-                    if (ret == 0) {
-                        this->exit_reason = 3;
-                        on_menu_exit_triggered();
-                    } else {
-                        MessageBoxWarning(software_name, "Setcap for Tun mode failed.\n\n1. You may canceled the dialog.\n2. You may be using an incompatible environment like AppImage.");
-                        if (QProcessEnvironment::systemEnvironment().contains("APPIMAGE")) {
-                            MW_show_log("If you are using AppImage, it's impossible to start a Tun. Please use other package instead.");
-                        }
-                    }
+                }
 #endif
 #ifdef Q_OS_WIN
-                    auto n = QMessageBox::warning(GetMessageBoxParent(), software_name, tr("Please run NekoBox as admin"), QMessageBox::Yes | QMessageBox::No);
-                    if (n == QMessageBox::Yes) {
-                        this->exit_reason = 3;
-                        on_menu_exit_triggered();
-                    }
+                auto n = QMessageBox::warning(GetMessageBoxParent(), software_name, tr("Please run NekoBox as admin"), QMessageBox::Yes | QMessageBox::No);
+                if (n == QMessageBox::Yes) {
+                    this->exit_reason = 3;
+                    on_menu_exit_triggered();
+                }
 #endif
-                    neko_set_spmode_FAILED
-                }
-            } else {
-                if (NekoGui::dataStore->need_keep_vpn_off) {
-                    MessageBoxWarning(software_name, tr("Current server is incompatible with Tun. Please stop the server first, enable Tun Mode, and then restart."));
-                    neko_set_spmode_FAILED
-                }
-                if (!StartVPNProcess()) {
-                    neko_set_spmode_FAILED
-                }
-            }
-        } else {
-            if (IS_NEKO_BOX_INTERNAL_TUN) {
-                // current core is sing-box
-            } else {
-                if (!StopVPNProcess()) {
-                    neko_set_spmode_FAILED
-                }
+                neko_set_spmode_FAILED
             }
         }
     }
@@ -820,7 +802,7 @@ void MainWindow::neko_set_spmode_vpn(bool enable, bool save) {
     NekoGui::dataStore->spmode_vpn = enable;
     refresh_status();
 
-    if (IS_NEKO_BOX_INTERNAL_TUN && NekoGui::dataStore->started_id >= 0) neko_start(NekoGui::dataStore->started_id);
+    if (NekoGui::dataStore->started_id >= 0) neko_start(NekoGui::dataStore->started_id);
 }
 
 void MainWindow::refresh_status(const QString &traffic_update) {

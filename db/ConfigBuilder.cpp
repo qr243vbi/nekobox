@@ -440,6 +440,7 @@ namespace NekoGui {
             inboundObj["mtu"] = dataStore->vpn_mtu;
             inboundObj["stack"] = Preset::SingBox::VpnImplementation.value(dataStore->vpn_implementation);
             inboundObj["strict_route"] = dataStore->vpn_strict_route;
+            inboundObj["gso"] = dataStore->enable_gso;
             inboundObj["inet4_address"] = "172.19.0.1/28";
             if (dataStore->vpn_ipv6) inboundObj["inet6_address"] = "fdfe:dcba:9876::1/126";
             if (dataStore->routing->sniffing_mode != SniffingMode::DISABLE) {
@@ -448,6 +449,16 @@ namespace NekoGui {
             }
             inboundObj["domain_strategy"] = dataStore->routing->domain_strategy;
             status->inbounds += inboundObj;
+        }
+
+        // ntp
+        if (dataStore->enable_ntp) {
+            QJsonObject ntpObj;
+            ntpObj["enabled"] = true;
+            ntpObj["server"] = dataStore->ntp_server_address;
+            ntpObj["server_port"] = dataStore->ntp_server_port;
+            ntpObj["interval"] = dataStore->ntp_interval;
+            status->result->coreConfig["ntp"] = ntpObj;
         }
 
         // Outbounds

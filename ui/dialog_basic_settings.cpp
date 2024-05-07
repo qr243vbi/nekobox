@@ -59,16 +59,10 @@ DialogBasicSettings::DialogBasicSettings(QWidget *parent)
 
     // Common
 
-    if (IS_NEKO_BOX) {
-        ui->groupBox_http->hide();
-        ui->inbound_socks_port_l->setText(ui->inbound_socks_port_l->text().replace("Socks", "Mixed (SOCKS+HTTP)"));
-        ui->log_level->addItems(QString("trace debug info warn error fatal panic").split(" "));
-        ui->mux_protocol->addItems({"h2mux", "smux", "yamux"});
-    } else {
-        ui->log_level->addItems({"debug", "info", "warning", "none"});
-        ui->mux_protocol->hide();
-        ui->mux_padding->hide();
-    }
+    ui->groupBox_http->hide();
+    ui->inbound_socks_port_l->setText(ui->inbound_socks_port_l->text().replace("Socks", "Mixed (SOCKS+HTTP)"));
+    ui->log_level->addItems(QString("trace debug info warn error fatal panic").split(" "));
+    ui->mux_protocol->addItems({"h2mux", "smux", "yamux"});
 
     refresh_auth();
 
@@ -102,9 +96,7 @@ DialogBasicSettings::DialogBasicSettings(QWidget *parent)
 #endif
 
     // Style
-    if (IS_NEKO_BOX) {
-        ui->connection_statistics_box->setDisabled(true);
-    }
+    ui->connection_statistics_box->setDisabled(true);
     //
     D_LOAD_BOOL(check_include_pre)
     D_LOAD_BOOL(connection_statistics)
@@ -223,6 +215,20 @@ DialogBasicSettings::DialogBasicSettings(QWidget *parent)
     D_LOAD_BOOL(mux_padding)
     D_LOAD_BOOL(mux_default_on)
 
+    // NTP
+    ui->ntp_enable->setChecked(NekoGui::dataStore->enable_ntp);
+    ui->ntp_config->setEnabled(NekoGui::dataStore->enable_ntp);
+    ui->ntp_server->setText(NekoGui::dataStore->ntp_server_address);
+    ui->ntp_port->setText(Int2String(NekoGui::dataStore->ntp_server_port));
+    ui->ntp_interval->setCurrentText(NekoGui::dataStore->ntp_interval);
+    connect(ui->ntp_enable, &QCheckBox::stateChanged, this, [=](const bool &state) {
+        if (state) {
+            ui->ntp_config->setEnabled(true);
+        } else {
+            ui->ntp_config->setEnabled(false);
+        }
+    });
+
     // Security
 
     ui->utlsFingerprint->addItems(IS_NEKO_BOX ? Preset::SingBox::UtlsFingerPrint : Preset::Xray::UtlsFingerPrint);
@@ -300,6 +306,12 @@ void DialogBasicSettings::accept() {
     D_SAVE_COMBO_STRING(mux_protocol)
     D_SAVE_BOOL(mux_padding)
     D_SAVE_BOOL(mux_default_on)
+
+    // NTP
+    NekoGui::dataStore->enable_ntp = ui->ntp_enable->isChecked();
+    NekoGui::dataStore->ntp_server_address = ui->ntp_server->text();
+    NekoGui::dataStore->ntp_server_port = ui->ntp_port->text().toInt();
+    NekoGui::dataStore->ntp_interval = ui->ntp_interval->currentText();
 
     // Security
 
