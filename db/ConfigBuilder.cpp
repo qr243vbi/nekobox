@@ -338,7 +338,7 @@ namespace NekoGui {
 
             auto mux_state = ent->bean->mux_state;
             if (mux_state == 0) {
-                if (!dataStore->mux_default_on) needMux = false;
+                if (!dataStore->mux_default_on && !ent->bean->enable_brutal) needMux = false;
             } else if (mux_state == 1) {
                 needMux = true;
             } else if (mux_state == 2) {
@@ -360,6 +360,15 @@ namespace NekoGui {
                     {"padding", dataStore->mux_padding},
                     {"max_streams", dataStore->mux_concurrency},
                 };
+                if (ent->bean->enable_brutal) {
+                    auto brutalObj = QJsonObject{
+                        {"enabled", true},
+                        {"up_mbps", ent->bean->brutal_speed},
+                        {"down_mbps", ent->bean->brutal_speed},
+                    };
+                    muxObj["max_connections"] = 1;
+                    muxObj["brutal"] = brutalObj;
+                }
                 outbound["multiplex"] = muxObj;
                 muxApplied = true;
             }
