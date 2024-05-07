@@ -98,6 +98,101 @@
        </widget>
       </item>
       <item>
+       <widget class="QGroupBox" name="security_box">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="title">
+         <string>TLS Security Settings</string>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_2">
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout">
+           <item>
+            <widget class="QCheckBox" name="insecure">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="toolTip">
+              <string>When enabled, V2Ray will not check the validity of the TLS certificate provided by the remote host (the security is equivalent to plaintext)</string>
+             </property>
+             <property name="text">
+              <string>Allow insecure</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="Line" name="line">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_6">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="toolTip">
+              <string notr="true"/>
+             </property>
+             <property name="text">
+              <string>Certificate</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="certificate_edit">
+             <property name="text">
+              <string notr="true">Edit</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QGridLayout" name="_3">
+           <item row="0" column="1">
+            <widget class="MyLineEdit" name="sni"/>
+           </item>
+           <item row="0" column="0">
+            <widget class="QLabel" name="label_5">
+             <property name="toolTip">
+              <string>Server name indication, clear text.</string>
+             </property>
+             <property name="text">
+              <string notr="true">SNI</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="label_8">
+             <property name="toolTip">
+              <string>Application layer protocol negotiation, clear text. Please separate them with commas.</string>
+             </property>
+             <property name="text">
+              <string notr="true">ALPN</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="MyLineEdit" name="alpn"/>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
        <widget class="QGroupBox" name="bean">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
@@ -198,7 +293,7 @@
      <property name="minimumSize">
       <size>
        <width>400</width>
-       <height>0</height>
+       <height>613</height>
       </size>
      </property>
      <property name="toolTip">
@@ -216,52 +311,18 @@
           <verstretch>0</verstretch>
          </sizepolicy>
         </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>156</height>
+         </size>
+        </property>
         <property name="title">
          <string>Settings</string>
         </property>
         <layout class="QVBoxLayout" name="verticalLayout">
          <item>
           <layout class="QGridLayout" name="_2">
-           <item row="0" column="1">
-            <widget class="QComboBox" name="network">
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
-             </property>
-             <item>
-              <property name="text">
-               <string notr="true"/>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string notr="true">tcp</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string notr="true">ws</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string notr="true">http</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string notr="true">grpc</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string notr="true">quic</string>
-              </property>
-             </item>
-            </widget>
-           </item>
            <item row="2" column="1">
             <widget class="QComboBox" name="packet_encoding">
              <item>
@@ -291,6 +352,71 @@
              </property>
             </widget>
            </item>
+           <item row="0" column="1">
+            <widget class="QComboBox" name="network">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <item>
+              <property name="text">
+               <string notr="true"/>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string notr="true">tcp</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string notr="true">ws</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>httpupgrade</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string notr="true">http</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string notr="true">grpc</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string notr="true">quic</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+           <item row="3" column="0">
+            <widget class="QLabel" name="multiplex_l">
+             <property name="toolTip">
+              <string>Server support is required</string>
+             </property>
+             <property name="text">
+              <string>Multiplex</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="security_l">
+             <property name="toolTip">
+              <string>Transport Layer Security. It must be consistent with the server, otherwise, the connection cannot be established.</string>
+             </property>
+             <property name="text">
+              <string>Security</string>
+             </property>
+            </widget>
+           </item>
            <item row="1" column="1">
             <widget class="QComboBox" name="security">
              <item>
@@ -305,16 +431,6 @@
              </item>
             </widget>
            </item>
-           <item row="1" column="0">
-            <widget class="QLabel" name="security_l">
-             <property name="toolTip">
-              <string>Transport Layer Security. It must be consistent with the server, otherwise, the connection cannot be established.</string>
-             </property>
-             <property name="text">
-              <string>Security</string>
-             </property>
-            </widget>
-           </item>
            <item row="2" column="0">
             <widget class="QLabel" name="packet_encoding_l">
              <property name="toolTip">
@@ -322,16 +438,6 @@
              </property>
              <property name="text">
               <string>Packet Encoding</string>
-             </property>
-            </widget>
-           </item>
-           <item row="3" column="0">
-            <widget class="QLabel" name="multiplex_l">
-             <property name="toolTip">
-              <string>Server support is required</string>
-             </property>
-             <property name="text">
-              <string>Multiplex</string>
              </property>
             </widget>
            </item>
@@ -355,6 +461,49 @@
             </widget>
            </item>
           </layout>
+         </item>
+         <item>
+          <widget class="QWidget" name="brutal_box" native="true">
+           <layout class="QHBoxLayout" name="horizontalLayout_5">
+            <item>
+             <widget class="QCheckBox" name="brutal_enable">
+              <property name="toolTip">
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Overrides mux to On&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              </property>
+              <property name="text">
+               <string>Enable TCP Brutal</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="Line" name="line_2">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="brutal_speed_l">
+              <property name="toolTip">
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Server to Client TCP Brutal Speed&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              </property>
+              <property name="text">
+               <string>TCP Brutal Speed</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="brutal_speed"/>
+            </item>
+            <item>
+             <widget class="QLabel" name="brutal_speed_u">
+              <property name="text">
+               <string>Mb/s</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
          </item>
         </layout>
        </widget>
@@ -463,101 +612,6 @@ security (QUIC)</string>
        </widget>
       </item>
       <item>
-       <widget class="QGroupBox" name="security_box">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="title">
-         <string>TLS Security Settings</string>
-        </property>
-        <layout class="QVBoxLayout" name="verticalLayout_2">
-         <item>
-          <layout class="QHBoxLayout" name="horizontalLayout">
-           <item>
-            <widget class="QCheckBox" name="insecure">
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
-             </property>
-             <property name="toolTip">
-              <string>When enabled, V2Ray will not check the validity of the TLS certificate provided by the remote host (the security is equivalent to plaintext)</string>
-             </property>
-             <property name="text">
-              <string>Allow insecure</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="Line" name="line">
-             <property name="orientation">
-              <enum>Qt::Vertical</enum>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QLabel" name="label_6">
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
-             </property>
-             <property name="toolTip">
-              <string notr="true"/>
-             </property>
-             <property name="text">
-              <string>Certificate</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QPushButton" name="certificate_edit">
-             <property name="text">
-              <string notr="true">Edit</string>
-             </property>
-            </widget>
-           </item>
-          </layout>
-         </item>
-         <item>
-          <layout class="QGridLayout" name="_3">
-           <item row="0" column="1">
-            <widget class="MyLineEdit" name="sni"/>
-           </item>
-           <item row="0" column="0">
-            <widget class="QLabel" name="label_5">
-             <property name="toolTip">
-              <string>Server name indication, clear text.</string>
-             </property>
-             <property name="text">
-              <string notr="true">SNI</string>
-             </property>
-            </widget>
-           </item>
-           <item row="1" column="0">
-            <widget class="QLabel" name="label_8">
-             <property name="toolTip">
-              <string>Application layer protocol negotiation, clear text. Please separate them with commas.</string>
-             </property>
-             <property name="text">
-              <string notr="true">ALPN</string>
-             </property>
-            </widget>
-           </item>
-           <item row="1" column="1">
-            <widget class="MyLineEdit" name="alpn"/>
-           </item>
-          </layout>
-         </item>
-        </layout>
-       </widget>
-      </item>
-      <item>
        <widget class="QGroupBox" name="tls_camouflage_box">
         <property name="title">
          <string>TLS Camouflage Settings</string>
@@ -567,6 +621,19 @@ security (QUIC)</string>
           <widget class="QComboBox" name="utlsFingerprint">
            <property name="editable">
             <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="MyLineEdit" name="reality_pbk"/>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="reality_pbk_l">
+           <property name="toolTip">
+            <string>Reality public key. If not empty, turn TLS into REALITY.</string>
+           </property>
+           <property name="text">
+            <string notr="true">Reality Pbk</string>
            </property>
           </widget>
          </item>
@@ -582,45 +649,6 @@ security (QUIC)</string>
             <string notr="true">Fingerprint</string>
            </property>
           </widget>
-         </item>
-         <item row="1" column="0">
-          <widget class="QLabel" name="reality_pbk_l">
-           <property name="toolTip">
-            <string>Reality public key. If not empty, turn TLS into REALITY.</string>
-           </property>
-           <property name="text">
-            <string notr="true">Reality Pbk</string>
-           </property>
-          </widget>
-         </item>
-         <item row="2" column="0">
-          <widget class="QLabel" name="reality_sid_l">
-           <property name="toolTip">
-            <string>Reality short id. Accept only one value.</string>
-           </property>
-           <property name="text">
-            <string notr="true">Reality Sid</string>
-           </property>
-          </widget>
-         </item>
-         <item row="2" column="1">
-          <widget class="MyLineEdit" name="reality_sid"/>
-         </item>
-         <item row="1" column="1">
-          <widget class="MyLineEdit" name="reality_pbk"/>
-         </item>
-         <item row="3" column="0">
-          <widget class="QLabel" name="reality_spx_l">
-           <property name="toolTip">
-            <string notr="true"/>
-           </property>
-           <property name="text">
-            <string notr="true">SpiderX</string>
-           </property>
-          </widget>
-         </item>
-         <item row="3" column="1">
-          <widget class="MyLineEdit" name="reality_spx"/>
          </item>
         </layout>
        </widget>
@@ -660,7 +688,6 @@ security (QUIC)</string>
   <tabstop>alpn</tabstop>
   <tabstop>utlsFingerprint</tabstop>
   <tabstop>reality_pbk</tabstop>
-  <tabstop>reality_sid</tabstop>
  </tabstops>
  <resources/>
  <connections>

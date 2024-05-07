@@ -31,7 +31,6 @@ DialogEditProfile::DialogEditProfile(const QString &_type, int profileOrGroupId,
     network_title_base = ui->network_box->title();
     connect(ui->network, &QComboBox::currentTextChanged, this, [=](const QString &txt) {
         ui->network_box->setTitle(network_title_base.arg(txt));
-        // 传输设置
         if (txt == "tcp") {
             ui->header_type->setVisible(true);
             ui->header_type_l->setVisible(true);
@@ -62,7 +61,7 @@ DialogEditProfile::DialogEditProfile(const QString &_type, int profileOrGroupId,
             ui->host_l->setVisible(false);
         }
         // 传输设置 ED
-        if (txt == "ws" && IS_NEKO_BOX) {
+        if (txt == "ws") {
             ui->ws_early_data_length->setVisible(true);
             ui->ws_early_data_length_l->setVisible(true);
             ui->ws_early_data_name->setVisible(true);
@@ -73,12 +72,7 @@ DialogEditProfile::DialogEditProfile(const QString &_type, int profileOrGroupId,
             ui->ws_early_data_name->setVisible(false);
             ui->ws_early_data_name_l->setVisible(false);
         }
-        // 传输设置 for NekoBox
-        if (IS_NEKO_BOX) {
-            if (!ui->utlsFingerprint->count()) ui->utlsFingerprint->addItems(Preset::SingBox::UtlsFingerPrint);
-        } else {
-            if (!ui->utlsFingerprint->count()) ui->utlsFingerprint->addItems(Preset::Xray::UtlsFingerPrint);
-        }
+        if (!ui->utlsFingerprint->count()) ui->utlsFingerprint->addItems(Preset::SingBox::UtlsFingerPrint);
         // 传输设置 是否可见
         int networkBoxVisible = 0;
         for (auto label: ui->network_box->findChildren<QLabel *>()) {
@@ -89,19 +83,11 @@ DialogEditProfile::DialogEditProfile(const QString &_type, int profileOrGroupId,
     });
     ui->network->removeItem(0);
 
-    if (IS_NEKO_BOX) {
-        ui->network->addItem("httpupgrade");
-    }
-
     // security changed
     connect(ui->security, &QComboBox::currentTextChanged, this, [=](const QString &txt) {
         if (txt == "tls") {
             ui->security_box->setVisible(true);
             ui->tls_camouflage_box->setVisible(true);
-            if (IS_NEKO_BOX) {
-                ui->reality_spx->hide();
-                ui->reality_spx_l->hide();
-            }
         } else {
             ui->security_box->setVisible(false);
             ui->tls_camouflage_box->setVisible(false);
@@ -109,6 +95,16 @@ DialogEditProfile::DialogEditProfile(const QString &_type, int profileOrGroupId,
         ADJUST_SIZE
     });
     emit ui->security->currentTextChanged(ui->security->currentText());
+
+    // mux setting changed
+    connect(ui->multiplex, &QComboBox::currentTextChanged, this, [=](const QString &txt) {
+        if (txt == "Off") {
+            ui->brutal_enable->setCheckState(Qt::CheckState::Unchecked);
+            ui->brutal_box->setEnabled(false);
+        } else {
+            ui->brutal_box->setEnabled(true);
+        }
+    });
 
     // 确定模式和 ent
     newEnt = _type != "";
@@ -235,8 +231,9 @@ void DialogEditProfile::typeSelected(const QString &newType) {
         ui->ws_early_data_name->setText(stream->ws_early_data_name);
         ui->ws_early_data_length->setText(Int2String(stream->ws_early_data_length));
         ui->reality_pbk->setText(stream->reality_pbk);
-        ui->reality_sid->setText(stream->reality_sid);
         ui->multiplex->setCurrentIndex(ent->bean->mux_state);
+        ui->brutal_enable->setCheckState(ent->bean->enable_brutal ? Qt::CheckState::Checked : Qt::CheckState::Unchecked);
+        ui->brutal_speed->setText(Int2String(ent->bean->brutal_speed));
         CACHE.certificate = stream->certificate;
     } else {
         ui->right_all_w->setVisible(false);
@@ -285,48 +282,44 @@ void DialogEditProfile::typeSelected(const QString &newType) {
     // 星号
     ADD_ASTERISK(this)
 
-    // 设置 for NekoBox
-    if (IS_NEKO_BOX) {
-        if (type == "vmess" || type == "vless") {
-            ui->packet_encoding->setVisible(true);
-            ui->packet_encoding_l->setVisible(true);
-        } else {
-            ui->packet_encoding->setVisible(false);
-            ui->packet_encoding_l->setVisible(false);
-        }
-        if (type == "vmess" || type == "vless" || type == "trojan") {
-            ui->network_l->setVisible(true);
-            ui->network->setVisible(true);
-            ui->network_box->setVisible(true);
-        } else {
-            ui->network_l->setVisible(false);
-            ui->network->setVisible(false);
-            ui->network_box->setVisible(false);
-        }
-        if (type == "vmess" || type == "vless" || type == "trojan" || type == "http") {
-            ui->security->setVisible(true);
-            ui->security_l->setVisible(true);
-        } else {
-            ui->security->setVisible(false);
-            ui->security_l->setVisible(false);
-        }
-        if (type == "vmess" || type == "vless" || type == "trojan" || type == "shadowsocks") {
-            ui->multiplex->setVisible(true);
-            ui->multiplex_l->setVisible(true);
-        } else {
-            ui->multiplex->setVisible(false);
-            ui->multiplex_l->setVisible(false);
-        }
-        // 设置 是否可见
-        int streamBoxVisible = 0;
-        for (auto label: ui->stream_box->findChildren<QLabel *>()) {
-            if (!label->isHidden()) streamBoxVisible++;
-        }
-        ui->stream_box->setVisible(streamBoxVisible);
+    if (type == "vmess" || type == "vless") {
+        ui->packet_encoding->setVisible(true);
+        ui->packet_encoding_l->setVisible(true);
     } else {
         ui->packet_encoding->setVisible(false);
         ui->packet_encoding_l->setVisible(false);
     }
+    if (type == "vmess" || type == "vless" || type == "trojan") {
+        ui->network_l->setVisible(true);
+        ui->network->setVisible(true);
+        ui->network_box->setVisible(true);
+    } else {
+        ui->network_l->setVisible(false);
+        ui->network->setVisible(false);
+        ui->network_box->setVisible(false);
+    }
+    if (type == "vmess" || type == "vless" || type == "trojan" || type == "http") {
+        ui->security->setVisible(true);
+        ui->security_l->setVisible(true);
+    } else {
+        ui->security->setVisible(false);
+        ui->security_l->setVisible(false);
+    }
+    if (type == "vmess" || type == "vless" || type == "trojan" || type == "shadowsocks") {
+        ui->multiplex->setVisible(true);
+        ui->multiplex_l->setVisible(true);
+        ui->brutal_box->setVisible(true);
+    } else {
+        ui->multiplex->setVisible(false);
+        ui->multiplex_l->setVisible(false);
+        ui->brutal_box->setVisible(false);
+    }
+    // 设置 是否可见
+    int streamBoxVisible = 0;
+    for (auto label: ui->stream_box->findChildren<QLabel *>()) {
+        if (!label->isHidden()) streamBoxVisible++;
+    }
+    ui->stream_box->setVisible(streamBoxVisible);
 
     // 载入 type 之后，有些类型没有右边的设置
     auto rightNoBox = (ui->stream_box->isHidden() && ui->network_box->isHidden() && ui->security_box->isHidden());
@@ -370,8 +363,9 @@ bool DialogEditProfile::onEnd() {
         stream->ws_early_data_name = ui->ws_early_data_name->text();
         stream->ws_early_data_length = ui->ws_early_data_length->text().toInt();
         stream->reality_pbk = ui->reality_pbk->text();
-        stream->reality_sid = ui->reality_sid->text();
         ent->bean->mux_state = ui->multiplex->currentIndex();
+        ent->bean->enable_brutal = ui->brutal_enable->isChecked();
+        ent->bean->brutal_speed = ui->brutal_speed->text().toInt();
         stream->certificate = CACHE.certificate;
     }
 
@@ -516,6 +510,10 @@ void DialogEditProfile::do_apply_to_group(const std::shared_ptr<NekoGui::Group> 
 
     if (key == ui->multiplex) {
         copyStream(&ent->bean->mux_state);
+    } else if (key == ui->brutal_enable) {
+        copyStream(&ent->bean->enable_brutal);
+    } else if (key == ui->brutal_speed) {
+        copyStream(&ent->bean->brutal_speed);
     } else if (key == ui->sni) {
         copyStream(&stream->sni);
     } else if (key == ui->alpn) {

@@ -35,6 +35,8 @@ namespace NekoGui_fmt {
         QString custom_config = "";
         QString custom_outbound = "";
         int mux_state = 0;
+        bool enable_brutal = false;
+        int brutal_speed = 0;
 
         explicit AbstractBean(int version);
 
