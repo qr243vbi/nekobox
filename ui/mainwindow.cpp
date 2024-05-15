@@ -726,21 +726,8 @@ void MainWindow::on_menu_exit_triggered() {
 void MainWindow::neko_set_spmode_system_proxy(bool enable, bool save) {
     if (enable != NekoGui::dataStore->spmode_system_proxy) {
         if (enable) {
-#if defined(Q_OS_WIN)
-            if (!IS_NEKO_BOX && !IsValidPort(NekoGui::dataStore->inbound_http_port)) {
-                auto btn = QMessageBox::warning(this, software_name,
-                                                tr("Http inbound is not enabled, can't set system proxy."),
-                                                "OK", tr("Settings"), "", 0, 0);
-                if (btn == 1) {
-                    on_menu_basic_settings_triggered();
-                }
-                return;
-            }
-#endif
             auto socks_port = NekoGui::dataStore->inbound_socks_port;
-            auto http_port = NekoGui::dataStore->inbound_http_port;
-            if (IS_NEKO_BOX) http_port = socks_port;
-            SetSystemProxy(http_port, socks_port);
+            SetSystemProxy(socks_port, socks_port);
         } else {
             ClearSystemProxy();
         }
@@ -756,6 +743,15 @@ void MainWindow::neko_set_spmode_system_proxy(bool enable, bool save) {
 
     NekoGui::dataStore->spmode_system_proxy = enable;
     refresh_status();
+}
+
+void MainWindow::neko_toggle_system_proxy() {
+    auto currentState = NekoGui::dataStore->spmode_system_proxy;
+    if (currentState) {
+        neko_set_spmode_system_proxy(false);
+    } else {
+        neko_set_spmode_system_proxy(true);
+    }
 }
 
 void MainWindow::neko_set_spmode_vpn(bool enable, bool save) {
@@ -1734,6 +1730,7 @@ void MainWindow::RegisterHotkey(bool unregister) {
         NekoGui::dataStore->hotkey_group,
         NekoGui::dataStore->hotkey_route,
         NekoGui::dataStore->hotkey_system_proxy_menu,
+        NekoGui::dataStore->hotkey_toggle_system_proxy,
     };
 
     for (const auto &key: regstr) {
@@ -1764,6 +1761,8 @@ void MainWindow::HotkeyEvent(const QString &key) {
             on_menu_routing_settings_triggered();
         } else if (key == NekoGui::dataStore->hotkey_system_proxy_menu) {
             ui->menu_spmode->popup(QCursor::pos());
+        } else if (key == NekoGui::dataStore->hotkey_toggle_system_proxy) {
+            neko_toggle_system_proxy();
         }
     });
 }

@@ -168,6 +168,7 @@ namespace NekoGui {
         QString hotkey_group = "";
         QString hotkey_route = "";
         QString hotkey_system_proxy_menu = "";
+        QString hotkey_toggle_system_proxy = "";
 
         // Core
         int core_box_clash_api = -9090;
