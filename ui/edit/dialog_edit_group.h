@@ -26,11 +26,17 @@ private:
         int front_proxy;
     } CACHE;
 
-    void refresh_front_proxy();
+    struct {
+        int landing_proxy;
+    } LANDING;
 
 private slots:
 
     void accept() override;
 
-    void on_front_proxy_clicked();
+    QStringList load_proxy_items();
+
+    int get_proxy_id(QString);
+
+    QString get_proxy_name(int id);
 };

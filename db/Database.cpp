@@ -308,6 +308,7 @@ namespace NekoGui {
     Group::Group() {
         _add(new configItem("id", &id, itemType::integer));
         _add(new configItem("front_proxy_id", &front_proxy_id, itemType::integer));
+        _add(new configItem("landing_proxy_id", &landing_proxy_id, itemType::integer));
         _add(new configItem("archive", &archive, itemType::boolean));
         _add(new configItem("skip_auto_update", &skip_auto_update, itemType::boolean));
         _add(new configItem("name", &name, itemType::string));
