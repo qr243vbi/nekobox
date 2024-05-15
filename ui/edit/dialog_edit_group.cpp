@@ -25,23 +25,27 @@ DialogEditGroup::DialogEditGroup(const std::shared_ptr<NekoGui::Group> &ent, QWi
     ui->type->currentIndexChanged(ui->type->currentIndex());
     ui->manually_column_width->setChecked(ent->manually_column_width);
     ui->cat_share->setVisible(false);
+    CACHE.front_proxy = ent->front_proxy_id;
+    LANDING.landing_proxy = ent->landing_proxy_id;
 
     if (ent->id >= 0) { // already a group
         ui->type->setDisabled(true);
         if (!ent->Profiles().isEmpty()) {
             ui->cat_share->setVisible(true);
         }
-    } else { // new group
-        ui->front_proxy->hide();
-        ui->front_proxy_l->hide();
-        ui->front_proxy_clear->hide();
     }
 
-    CACHE.front_proxy = ent->front_proxy_id;
-    refresh_front_proxy();
-    connect(ui->front_proxy_clear, &QPushButton::clicked, this, [=] {
-        CACHE.front_proxy = -1;
-        refresh_front_proxy();
+    auto proxy_items = load_proxy_items();
+    ui->front_proxy->addItems(proxy_items);
+    ui->front_proxy->setCurrentText(get_proxy_name(CACHE.front_proxy));
+    connect(ui->front_proxy, &QComboBox::currentTextChanged, this, [=](const QString &txt){
+        CACHE.front_proxy = get_proxy_id(txt);
+    });
+
+    ui->landing_proxy->addItems(proxy_items);
+    ui->landing_proxy->setCurrentText(get_proxy_name(LANDING.landing_proxy));
+    connect(ui->landing_proxy, &QComboBox::currentTextChanged, this, [=](const QString &txt){
+        LANDING.landing_proxy = get_proxy_id(txt);
     });
 
     connect(ui->copy_links, &QPushButton::clicked, this, [=] {
@@ -83,22 +87,31 @@ void DialogEditGroup::accept() {
     ent->skip_auto_update = ui->skip_auto_update->isChecked();
     ent->manually_column_width = ui->manually_column_width->isChecked();
     ent->front_proxy_id = CACHE.front_proxy;
+    ent->landing_proxy_id = LANDING.landing_proxy;
     QDialog::accept();
 }
 
-void DialogEditGroup::refresh_front_proxy() {
-    auto fEnt = NekoGui::profileManager->GetProfile(CACHE.front_proxy);
-    ui->front_proxy->setText(fEnt == nullptr ? tr("None") : fEnt->bean->DisplayTypeAndName());
+QStringList DialogEditGroup::load_proxy_items() {
+    QStringList res = QStringList();
+    auto profiles = NekoGui::profileManager->profiles;
+    for (const auto &item: profiles) {
+        res.push_back(item.second->bean->DisplayName());
+    }
+
+    return res;
 }
 
-void DialogEditGroup::on_front_proxy_clicked() {
-    auto parent = dynamic_cast<QWidget *>(this->parent());
-    parent->hide();
-    this->hide();
-    GetMainWindow()->start_select_mode(this, [=](int id) {
-        CACHE.front_proxy = id;
-        refresh_front_proxy();
-        parent->show();
-        show();
-    });
+int DialogEditGroup::get_proxy_id(QString name) {
+    auto profiles = NekoGui::profileManager->profiles;
+    for (const auto &item: profiles) {
+        if (item.second->bean->DisplayName() == name) return item.first;
+    }
+
+    return -1;
+}
+
+QString DialogEditGroup::get_proxy_name(int id) {
+    if (id == -1) return QString("None");
+    auto profiles = NekoGui::profileManager->profiles;
+    return profiles[id]->bean->DisplayName();
 }

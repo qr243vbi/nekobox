@@ -131,6 +131,16 @@ namespace NekoGui {
             if (!status->result->error.isEmpty()) return {};
         }
 
+        if (group->landing_proxy_id >= 0) {
+            auto lEnt = profileManager->GetProfile(group->landing_proxy_id);
+            if (lEnt == nullptr) {
+                status->result->error = QString("landing proxy ent not found.");
+                return {};
+            }
+            ents = resolveChain(lEnt) + ents;
+            if (!status->result->error.isEmpty()) return {};
+        }
+
         // BuildChain
         QString chainTagOut = BuildChainInternal(0, ents, status);
 
