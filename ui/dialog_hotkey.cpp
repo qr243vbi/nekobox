@@ -9,6 +9,7 @@ DialogHotkey::DialogHotkey(QWidget *parent) : QDialog(parent), ui(new Ui::Dialog
     ui->show_groups->setKeySequence(NekoGui::dataStore->hotkey_group);
     ui->show_routes->setKeySequence(NekoGui::dataStore->hotkey_route);
     ui->system_proxy->setKeySequence(NekoGui::dataStore->hotkey_system_proxy_menu);
+    ui->toggle_proxy->setKeySequence(NekoGui::dataStore->hotkey_toggle_system_proxy);
     GetMainWindow()->RegisterHotkey(true);
 }
 
@@ -18,6 +19,7 @@ DialogHotkey::~DialogHotkey() {
         NekoGui::dataStore->hotkey_group = ui->show_groups->keySequence().toString();
         NekoGui::dataStore->hotkey_route = ui->show_routes->keySequence().toString();
         NekoGui::dataStore->hotkey_system_proxy_menu = ui->system_proxy->keySequence().toString();
+        NekoGui::dataStore->hotkey_toggle_system_proxy = ui->toggle_proxy->keySequence().toString();
         NekoGui::dataStore->Save();
     }
     GetMainWindow()->RegisterHotkey(false);
