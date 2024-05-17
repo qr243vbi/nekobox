@@ -503,7 +503,7 @@ void MainWindow::CheckUpdate() {
         return;
     }
 
-    if (response.release_download_url() == nullptr) {
+    if (response.release_download_url() == nullptr || QString(response.assets_name().c_str()).contains(NKR_VERSION)) {
         runOnUiThread([=] {
             MessageBoxInfo(QObject::tr("Update"), QObject::tr("No update"));
         });
