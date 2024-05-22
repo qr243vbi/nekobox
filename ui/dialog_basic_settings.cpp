@@ -63,6 +63,7 @@ DialogBasicSettings::DialogBasicSettings(QWidget *parent)
     ui->inbound_socks_port_l->setText(ui->inbound_socks_port_l->text().replace("Socks", "Mixed (SOCKS+HTTP)"));
     ui->log_level->addItems(QString("trace debug info warn error fatal panic").split(" "));
     ui->mux_protocol->addItems({"h2mux", "smux", "yamux"});
+    ui->disable_stats->setChecked(NekoGui::dataStore->disable_traffic_stats);
 
     refresh_auth();
 
@@ -99,7 +100,6 @@ DialogBasicSettings::DialogBasicSettings(QWidget *parent)
     ui->connection_statistics_box->setDisabled(true);
     //
     D_LOAD_BOOL(check_include_pre)
-    D_LOAD_BOOL(connection_statistics)
     D_LOAD_BOOL(start_minimal)
     D_LOAD_INT(max_log_line)
     //
@@ -217,16 +217,16 @@ DialogBasicSettings::DialogBasicSettings(QWidget *parent)
 
     // NTP
     ui->ntp_enable->setChecked(NekoGui::dataStore->enable_ntp);
-    ui->ntp_config->setEnabled(NekoGui::dataStore->enable_ntp);
+    ui->ntp_server->setEnabled(NekoGui::dataStore->enable_ntp);
+    ui->ntp_port->setEnabled(NekoGui::dataStore->enable_ntp);
+    ui->ntp_interval->setEnabled(NekoGui::dataStore->enable_ntp);
     ui->ntp_server->setText(NekoGui::dataStore->ntp_server_address);
     ui->ntp_port->setText(Int2String(NekoGui::dataStore->ntp_server_port));
     ui->ntp_interval->setCurrentText(NekoGui::dataStore->ntp_interval);
     connect(ui->ntp_enable, &QCheckBox::stateChanged, this, [=](const bool &state) {
-        if (state) {
-            ui->ntp_config->setEnabled(true);
-        } else {
-            ui->ntp_config->setEnabled(false);
-        }
+        ui->ntp_server->setEnabled(state);
+        ui->ntp_port->setEnabled(state);
+        ui->ntp_interval->setEnabled(state);
     });
 
     // Security
@@ -259,7 +259,6 @@ void DialogBasicSettings::accept() {
     // Style
 
     NekoGui::dataStore->language = ui->language->currentIndex();
-    D_SAVE_BOOL(connection_statistics)
     D_SAVE_BOOL(check_include_pre)
     D_SAVE_BOOL(start_minimal)
     D_SAVE_INT(max_log_line)
@@ -300,6 +299,7 @@ void DialogBasicSettings::accept() {
 
     NekoGui::dataStore->v2ray_asset_dir = ui->core_v2ray_asset->text();
     NekoGui::dataStore->extraCore->core_map = QJsonObject2QString(CACHE.extraCore, true);
+    NekoGui::dataStore->disable_traffic_stats = ui->disable_stats->isChecked();
 
     // Mux
     D_SAVE_INT(mux_concurrency)
@@ -318,11 +318,6 @@ void DialogBasicSettings::accept() {
     D_SAVE_BOOL(skip_cert)
     NekoGui::dataStore->enable_js_hook = ui->enable_js_hook->currentIndex();
     NekoGui::dataStore->utlsFingerprint = ui->utlsFingerprint->currentText();
-
-    // 关闭连接统计，停止刷新前清空记录。
-    if (NekoGui::dataStore->traffic_loop_interval == 0 || NekoGui::dataStore->connection_statistics == false) {
-        MW_dialog_message("", "ClearConnectionList");
-    }
 
     QStringList str{"UpdateDataStore"};
     if (CACHE.needRestart) str << "NeedRestart";

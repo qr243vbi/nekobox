@@ -263,7 +263,7 @@ namespace NekoGui {
         _add(new configItem("fakedns", &fake_dns, itemType::boolean));
         _add(new configItem("active_routing", &active_routing, itemType::string));
         _add(new configItem("mw_size", &mw_size, itemType::string));
-        _add(new configItem("conn_stat", &connection_statistics, itemType::boolean));
+        _add(new configItem("disable_traffic_stats", &disable_traffic_stats, itemType::boolean));
         _add(new configItem("vpn_impl", &vpn_implementation, itemType::integer));
         _add(new configItem("vpn_mtu", &vpn_mtu, itemType::integer));
         _add(new configItem("vpn_ipv6", &vpn_ipv6, itemType::boolean));

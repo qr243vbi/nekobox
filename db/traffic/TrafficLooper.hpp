@@ -24,8 +24,6 @@ namespace NekoGui_traffic {
         TrafficData *bypass = new TrafficData("bypass");
 
         [[nodiscard]] static TrafficData *update_stats(TrafficData *item);
-
-        [[nodiscard]] static QJsonArray get_connection_list();
     };
 
     extern TrafficLooper *trafficLooper;

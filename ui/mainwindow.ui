@@ -29,8 +29,7 @@
          <string>Program</string>
         </property>
         <property name="icon">
-         <iconset theme="b-system-run">
-          <normaloff>.</normaloff>.</iconset>
+         <iconset theme="b-system-run"/>
         </property>
         <property name="iconSize">
          <size>
@@ -52,8 +51,7 @@
          <string>Preferences</string>
         </property>
         <property name="icon">
-         <iconset theme="b-preferences">
-          <normaloff>.</normaloff>.</iconset>
+         <iconset theme="b-preferences"/>
         </property>
         <property name="iconSize">
          <size>
@@ -75,8 +73,7 @@
          <string>Server</string>
         </property>
         <property name="icon">
-         <iconset theme="b-network-server">
-          <normaloff>.</normaloff>.</iconset>
+         <iconset theme="b-network-server"/>
         </property>
         <property name="iconSize">
          <size>
@@ -98,8 +95,7 @@
          <string>Ads</string>
         </property>
         <property name="icon">
-         <iconset theme="b-internet-web-browser">
-          <normaloff>.</normaloff>.</iconset>
+         <iconset theme="b-internet-web-browser"/>
         </property>
         <property name="iconSize">
          <size>
@@ -121,8 +117,7 @@
          <string>Document</string>
         </property>
         <property name="icon">
-         <iconset theme="b-dialog-question">
-          <normaloff>.</normaloff>.</iconset>
+         <iconset theme="b-dialog-question"/>
         </property>
         <property name="iconSize">
          <size>
@@ -144,8 +139,7 @@
          <string>Update</string>
         </property>
         <property name="icon">
-         <iconset theme="b-system-software-update">
-          <normaloff>.</normaloff>.</iconset>
+         <iconset theme="b-system-software-update"/>
         </property>
         <property name="iconSize">
          <size>
@@ -304,101 +298,34 @@
       <widget class="QWidget" name="aaaaaaaaaaaaaaaaaa">
        <layout class="QVBoxLayout" name="aaaaaaaaaaaa" stretch="0">
         <item>
-         <widget class="QTabWidget" name="down_tab">
-          <property name="currentIndex">
-           <number>0</number>
-          </property>
-          <widget class="QWidget" name="tab">
-           <attribute name="title">
-            <string>Log</string>
-           </attribute>
-           <layout class="QVBoxLayout" name="verticalLayout">
-            <property name="spacing">
-             <number>0</number>
-            </property>
-            <property name="leftMargin">
-             <number>0</number>
-            </property>
-            <property name="topMargin">
-             <number>0</number>
-            </property>
-            <property name="rightMargin">
-             <number>0</number>
-            </property>
-            <property name="bottomMargin">
-             <number>0</number>
-            </property>
-            <item>
-             <widget class="QTextBrowser" name="masterLogBrowser">
-              <property name="contextMenuPolicy">
-               <enum>Qt::CustomContextMenu</enum>
-              </property>
-              <property name="openLinks">
-               <bool>false</bool>
-              </property>
-             </widget>
-            </item>
-           </layout>
-          </widget>
-          <widget class="QWidget" name="tab_2">
-           <attribute name="title">
-            <string>Connection</string>
-           </attribute>
-           <layout class="QVBoxLayout" name="verticalLayout_2">
-            <property name="spacing">
-             <number>0</number>
-            </property>
-            <property name="leftMargin">
-             <number>0</number>
-            </property>
-            <property name="topMargin">
-             <number>0</number>
-            </property>
-            <property name="rightMargin">
-             <number>0</number>
-            </property>
-            <property name="bottomMargin">
-             <number>0</number>
-            </property>
-            <item>
-             <widget class="QTableWidget" name="tableWidget_conn">
-              <property name="contextMenuPolicy">
-               <enum>Qt::CustomContextMenu</enum>
-              </property>
-              <property name="editTriggers">
-               <set>QAbstractItemView::NoEditTriggers</set>
-              </property>
-              <property name="selectionBehavior">
-               <enum>QAbstractItemView::SelectRows</enum>
-              </property>
-              <property name="verticalScrollMode">
-               <enum>QAbstractItemView::ScrollPerPixel</enum>
-              </property>
-              <property name="horizontalScrollMode">
-               <enum>QAbstractItemView::ScrollPerPixel</enum>
-              </property>
-              <attribute name="horizontalHeaderHighlightSections">
-               <bool>false</bool>
-              </attribute>
-              <column>
-               <property name="text">
-                <string>Status</string>
-               </property>
-              </column>
-              <column>
-               <property name="text">
-                <string>Outbound</string>
-               </property>
-              </column>
-              <column>
-               <property name="text">
-                <string>Destination</string>
-               </property>
-              </column>
-             </widget>
-            </item>
-           </layout>
-          </widget>
+         <widget class="QWidget" name="down_tab" native="true">
+          <layout class="QVBoxLayout" name="verticalLayout">
+           <property name="spacing">
+            <number>0</number>
+           </property>
+           <property name="leftMargin">
+            <number>0</number>
+           </property>
+           <property name="topMargin">
+            <number>0</number>
+           </property>
+           <property name="rightMargin">
+            <number>0</number>
+           </property>
+           <property name="bottomMargin">
+            <number>0</number>
+           </property>
+           <item>
+            <widget class="QTextBrowser" name="masterLogBrowser">
+             <property name="contextMenuPolicy">
+              <enum>Qt::CustomContextMenu</enum>
+             </property>
+             <property name="openLinks">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </widget>
         </item>
        </layout>
@@ -454,7 +381,7 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>32</height>
+     <height>25</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu_program">

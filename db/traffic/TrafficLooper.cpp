@@ -15,7 +15,9 @@ namespace NekoGui_traffic {
     QElapsedTimer elapsedTimer;
 
     TrafficData *TrafficLooper::update_stats(TrafficData *item) {
-#ifndef NKR_NO_GRPC
+        if (NekoGui::dataStore->disable_traffic_stats) {
+            return nullptr;
+        }
         // last update
         auto now = elapsedTimer.elapsed();
         auto interval = now - item->last_update;
@@ -39,21 +41,12 @@ namespace NekoGui_traffic {
         ret->downlink_rate = item->downlink_rate;
         ret->uplink_rate = item->uplink_rate;
         return ret;
-#endif
-        return nullptr;
-    }
-
-    QJsonArray TrafficLooper::get_connection_list() {
-#ifndef NKR_NO_GRPC
-        auto str = NekoGui_rpc::defaultClient->ListConnections();
-        QJsonDocument jsonDocument = QJsonDocument::fromJson(str.c_str());
-        return jsonDocument.array();
-#else
-        return QJsonArray{};
-#endif
     }
 
     void TrafficLooper::UpdateAll() {
+        if (NekoGui::dataStore->disable_traffic_stats) {
+            return;
+        }
         std::map<std::string, TrafficData *> updated; // tag to diff
         for (const auto &item: this->items) {
             auto data = item.get();
@@ -77,6 +70,9 @@ namespace NekoGui_traffic {
     }
 
     void TrafficLooper::Loop() {
+        if (NekoGui::dataStore->disable_traffic_stats) {
+            return;
+        }
         elapsedTimer.start();
         while (true) {
             auto sleep_ms = NekoGui::dataStore->traffic_loop_interval;
@@ -107,12 +103,6 @@ namespace NekoGui_traffic {
 
             UpdateAll();
 
-            // do conn list update
-            QJsonArray conn_list;
-            if (NekoGui::dataStore->connection_statistics) {
-                conn_list = get_connection_list();
-            }
-
             loop_mutex.unlock();
 
             // post to UI
@@ -124,9 +114,6 @@ namespace NekoGui_traffic {
                 for (const auto &item: items) {
                     if (item->id < 0) continue;
                     m->refresh_proxy_list(item->id);
-                }
-                if (NekoGui::dataStore->connection_statistics) {
-                    m->refresh_connection_list(conn_list);
                 }
             });
         }

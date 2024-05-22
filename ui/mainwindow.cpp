@@ -195,9 +195,6 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
         group->column_width[logicalIndex] = newSize;
         group->Save();
     });
-    ui->tableWidget_conn->horizontalHeader()->setSectionResizeMode(0, QHeaderView::ResizeToContents);
-    ui->tableWidget_conn->horizontalHeader()->setSectionResizeMode(1, QHeaderView::ResizeToContents);
-    ui->tableWidget_conn->horizontalHeader()->setSectionResizeMode(2, QHeaderView::Stretch);
     ui->proxyListTable->verticalHeader()->setDefaultSectionSize(24);
 
     // search box
@@ -562,8 +559,6 @@ void MainWindow::dialog_message_impl(const QString &sender, const QString &info)
         on_menu_exit_triggered();
     } else if (info == "Raise") {
         ActivateWindow(this);
-    } else if (info == "ClearConnectionList") {
-        refresh_connection_list({});
     }
     // sender
     if (sender == Dialog_DialogEditProfile) {
@@ -803,7 +798,10 @@ void MainWindow::neko_set_spmode_vpn(bool enable, bool save) {
 
 void MainWindow::refresh_status(const QString &traffic_update) {
     auto refresh_speed_label = [=] {
-        if (traffic_update_cache == "") {
+        if (NekoGui::dataStore->disable_traffic_stats) {
+            ui->label_speed->setText("");
+        }
+        else if (traffic_update_cache == "") {
             ui->label_speed->setText(QObject::tr("Proxy: %1\nDirect: %2").arg("", ""));
         } else {
             ui->label_speed->setText(traffic_update_cache);
@@ -811,7 +809,7 @@ void MainWindow::refresh_status(const QString &traffic_update) {
     };
 
     // From TrafficLooper
-    if (!traffic_update.isEmpty()) {
+    if (!traffic_update.isEmpty() && !NekoGui::dataStore->disable_traffic_stats) {
         traffic_update_cache = traffic_update;
         if (traffic_update == "STOP") {
             traffic_update_cache = "";
@@ -842,7 +840,7 @@ void MainWindow::refresh_status(const QString &traffic_update) {
     }
     auto display_socks = DisplayAddress(NekoGui::dataStore->inbound_address, NekoGui::dataStore->inbound_socks_port);
     auto inbound_txt = QString("Socks: %1\nHTTP: %2").arg(display_socks, display_http);
-    if (IS_NEKO_BOX) inbound_txt = QString("Mixed: %1").arg(display_socks);
+    inbound_txt = QString("Mixed: %1").arg(display_socks);
     ui->label_inbound->setText(inbound_txt);
     //
     ui->checkBox_VPN->setChecked(NekoGui::dataStore->spmode_vpn);
@@ -1651,64 +1649,6 @@ void MainWindow::start_select_mode(QObject *context, const std::function<void(in
 // 连接列表
 
 inline QJsonArray last_arr; // format is nekoray_connections_json
-
-void MainWindow::refresh_connection_list(const QJsonArray &arr) {
-    if (last_arr == arr) {
-        return;
-    }
-    last_arr = arr;
-
-    if (NekoGui::dataStore->flag_debug) qDebug() << arr;
-
-    ui->tableWidget_conn->setRowCount(0);
-
-    int row = -1;
-    for (const auto &_item: arr) {
-        auto item = _item.toObject();
-        if (NekoGui::dataStore->ignoreConnTag.contains(item["Tag"].toString())) continue;
-
-        row++;
-        ui->tableWidget_conn->insertRow(row);
-
-        auto f0 = std::make_unique<QTableWidgetItem>();
-        f0->setData(114514, item["ID"].toInt());
-
-        // C0: Status
-        auto c0 = new QLabel;
-        auto start_t = item["Start"].toInt();
-        auto end_t = item["End"].toInt();
-        // icon
-        auto outboundTag = item["Tag"].toString();
-        if (outboundTag == "block") {
-            c0->setPixmap(Icon::GetMaterialIcon("cancel"));
-        } else {
-            if (end_t > 0) {
-                c0->setPixmap(Icon::GetMaterialIcon("history"));
-            } else {
-                c0->setPixmap(Icon::GetMaterialIcon("swap-vertical"));
-            }
-        }
-        c0->setAlignment(Qt::AlignCenter);
-        c0->setToolTip(tr("Start: %1\nEnd: %2").arg(DisplayTime(start_t), end_t > 0 ? DisplayTime(end_t) : ""));
-        ui->tableWidget_conn->setCellWidget(row, 0, c0);
-
-        // C1: Outbound
-        auto f = f0->clone();
-        f->setToolTip("");
-        f->setText(outboundTag);
-        ui->tableWidget_conn->setItem(row, 1, f);
-
-        // C2: Destination
-        f = f0->clone();
-        QString target1 = item["Dest"].toString();
-        QString target2 = item["RDest"].toString();
-        if (target2.isEmpty() || target1 == target2) {
-            target2 = "";
-        }
-        f->setText("[" + target1 + "] " + target2);
-        ui->tableWidget_conn->setItem(row, 2, f);
-    }
-}
 
 // Hotkey
 

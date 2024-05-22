@@ -255,20 +255,6 @@ namespace NekoGui_rpc {
         }
     }
 
-    std::string Client::ListConnections() {
-        libcore::EmptyReq request;
-        libcore::ListConnectionsResp reply;
-        auto status = default_grpc_channel->Call("ListConnections", request, &reply, 500);
-
-        if (status == QNetworkReply::NoError) {
-            return reply.nekoray_connections_json();
-        } else {
-            return "";
-        }
-    }
-
-    //
-
     libcore::TestResp Client::Test(bool *rpcOK, const libcore::TestReq &request) {
         libcore::TestResp reply;
         auto status = make_grpc_channel()->Call("Test", request, &reply);

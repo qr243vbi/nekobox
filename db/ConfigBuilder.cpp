@@ -25,9 +25,6 @@ namespace NekoGui {
 
     QString genTunName() {
         auto tun_name = "nekoray-tun";
-#ifdef Q_OS_MACOS
-        tun_name = "utun9";
-#endif
         return tun_name;
     }
 
@@ -227,12 +224,7 @@ namespace NekoGui {
                 // chain rules: past
                 if (pastExternalStat == 0) {
                     auto replaced = status->outbounds.last().toObject();
-                    if (IS_NEKO_BOX) {
-                        replaced["detour"] = tagOut;
-                    } else {
-                        status->result->error = "Xray is no longer supported";
-                        return {};
-                    }
+                    replaced["detour"] = tagOut;
                     status->outbounds.removeLast();
                     status->outbounds += replaced;
                 } else {
