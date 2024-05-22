@@ -63,8 +63,6 @@ public:
 
     void start_select_mode(QObject *context, const std::function<void(int)> &callback);
 
-    void refresh_connection_list(const QJsonArray &arr);
-
     void RegisterHotkey(bool unregister);
 
     bool StopVPNProcess(bool unconditional = false);

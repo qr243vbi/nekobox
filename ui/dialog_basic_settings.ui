@@ -32,6 +32,12 @@
    </item>
    <item row="2" column="3">
     <widget class="QTabWidget" name="tabWidget">
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>414</height>
+      </size>
+     </property>
      <property name="currentIndex">
       <number>0</number>
      </property>
@@ -629,14 +635,34 @@
               </widget>
              </item>
              <item row="1" column="1">
-              <widget class="QComboBox" name="log_level">
-               <property name="sizePolicy">
-                <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
-                 <horstretch>0</horstretch>
-                 <verstretch>0</verstretch>
-                </sizepolicy>
-               </property>
-              </widget>
+              <layout class="QHBoxLayout" name="horizontalLayout_20">
+               <item>
+                <widget class="QComboBox" name="log_level">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QCheckBox" name="disable_stats">
+                 <property name="minimumSize">
+                  <size>
+                   <width>411</width>
+                   <height>0</height>
+                  </size>
+                 </property>
+                 <property name="toolTip">
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Might Improve Ping and Performance&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
+                 <property name="text">
+                  <string>Disable Traffic Stats</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
              </item>
              <item row="2" column="0">
               <widget class="QLabel" name="label_6">
@@ -697,75 +723,73 @@
          <property name="title">
           <string>NTP Settings</string>
          </property>
-         <layout class="QVBoxLayout" name="verticalLayout_7">
-          <item>
+         <layout class="QGridLayout" name="gridLayout_6">
+          <item row="0" column="0">
            <widget class="QCheckBox" name="ntp_enable">
             <property name="text">
              <string>Enable</string>
             </property>
            </widget>
           </item>
-          <item>
-           <widget class="QWidget" name="ntp_config" native="true">
-            <layout class="QHBoxLayout" name="horizontalLayout_11">
-             <item>
-              <widget class="QLabel" name="ntp_server_l">
+          <item row="1" column="0">
+           <layout class="QHBoxLayout" name="horizontalLayout_22">
+            <item>
+             <widget class="QLabel" name="ntp_server_l">
+              <property name="text">
+               <string>server</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="ntp_server"/>
+            </item>
+            <item>
+             <widget class="QLabel" name="ntp_port_l">
+              <property name="text">
+               <string>Port</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="ntp_port">
+              <property name="maximumSize">
+               <size>
+                <width>162</width>
+                <height>16777215</height>
+               </size>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="ntp_interval_l">
+              <property name="text">
+               <string>sync interval</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QComboBox" name="ntp_interval">
+              <property name="toolTip">
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;In minutes&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              </property>
+              <item>
                <property name="text">
-                <string>server</string>
+                <string>5m</string>
                </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QLineEdit" name="ntp_server"/>
-             </item>
-             <item>
-              <widget class="QLabel" name="ntp_port_l">
+              </item>
+              <item>
                <property name="text">
-                <string>Port</string>
+                <string>10m</string>
                </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QLineEdit" name="ntp_port">
-               <property name="maximumSize">
-                <size>
-                 <width>162</width>
-                 <height>16777215</height>
-                </size>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QLabel" name="ntp_interval_l">
+              </item>
+              <item>
                <property name="text">
-                <string>sync interval</string>
+                <string>30m</string>
                </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QComboBox" name="ntp_interval">
-               <property name="toolTip">
-                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;In minutes&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-               </property>
-               <item>
-                <property name="text">
-                 <string>5m</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>10m</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>30m</string>
-                </property>
-               </item>
-              </widget>
-             </item>
-            </layout>
-           </widget>
+              </item>
+             </widget>
+            </item>
+           </layout>
           </item>
          </layout>
         </widget>

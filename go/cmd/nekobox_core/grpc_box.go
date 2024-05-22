@@ -51,7 +51,7 @@ func (s *server) Start(ctx context.Context, in *gen.LoadConfigReq) (out *gen.Err
 		// Logger
 		instance.SetLogWritter(neko_log.LogWriter)
 		// V2ray Service
-		if in.StatsOutbounds != nil {
+		if in.StatsOutbounds != nil && !in.DisableStats {
 			instance.Router().SetV2RayServer(boxapi.NewSbV2rayServer(option.V2RayStatsServiceOptions{
 				Enabled:   true,
 				Outbounds: in.StatsOutbounds,
@@ -135,7 +135,7 @@ func (s *server) Test(ctx context.Context, in *gen.TestReq) (out *gen.TestResp, 
 func (s *server) QueryStats(ctx context.Context, in *gen.QueryStatsReq) (out *gen.QueryStatsResp, _ error) {
 	out = &gen.QueryStatsResp{}
 
-	if instance != nil {
+	if instance != nil && instance.Router().V2RayServer() != nil {
 		if ss, ok := instance.Router().V2RayServer().(*boxapi.SbV2rayServer); ok {
 			out.Traffic = ss.QueryStats(fmt.Sprintf("outbound>>>%s>>>traffic>>>%s", in.Tag, in.Direct))
 		}

@@ -16,8 +16,6 @@ namespace NekoGui_rpc {
 
         void Exit();
 
-        bool KeepAlive();
-
         // QString returns is error string
 
         QString Start(bool *rpcOK, const libcore::LoadConfigReq &request);
@@ -25,8 +23,6 @@ namespace NekoGui_rpc {
         QString Stop(bool *rpcOK);
 
         long long QueryStats(const std::string &tag, const std::string &direct);
-
-        std::string ListConnections();
 
         libcore::TestResp Test(bool *rpcOK, const libcore::TestReq &request);
 

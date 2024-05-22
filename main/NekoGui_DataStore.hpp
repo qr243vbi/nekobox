@@ -100,7 +100,7 @@ namespace NekoGui {
         int test_concurrent = 5;
         bool old_share_link_format = true;
         int traffic_loop_interval = 1000;
-        bool connection_statistics = false;
+        bool disable_traffic_stats = false;
         int current_group = 0; // group id
         QString mux_protocol = "";
         bool mux_padding = false;
