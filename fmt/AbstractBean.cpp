@@ -14,6 +14,8 @@ namespace NekoGui_fmt {
         _add(new configItem("c_cfg", &custom_config, itemType::string));
         _add(new configItem("c_out", &custom_outbound, itemType::string));
         _add(new configItem("mux", &mux_state, itemType::integer));
+        _add(new configItem("enable_brutal", &enable_brutal, itemType::boolean));
+        _add(new configItem("brutal_speed", &brutal_speed, itemType::integer));
     }
 
     QString AbstractBean::ToNekorayShareLink(const QString &type) {
