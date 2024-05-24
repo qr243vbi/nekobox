@@ -3,7 +3,7 @@ module nekobox_core
 go 1.19
 
 require (
-	github.com/Mahdi-zarei/sing-box-extra v0.0.0-20240524204830-d0247f154fcf
+	github.com/Mahdi-zarei/sing-box-extra v0.0.0-20240524210208-2f5446580565
 	github.com/matsuridayo/libneko v0.0.0-20230913024055-5277a5bfc889
 	github.com/sagernet/sing-box v1.9.0-rc.21
 	grpc_server v1.0.0
