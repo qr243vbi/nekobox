@@ -45,7 +45,7 @@ func (s *server) Start(ctx context.Context, in *gen.LoadConfigReq) (out *gen.Err
 		return
 	}
 
-	instance, instance_cancel, err = boxmain.Create([]byte(in.CoreConfig))
+	instance, instance_cancel, err = boxmain.Create([]byte(in.CoreConfig), false)
 
 	if instance != nil {
 		// Logger
@@ -98,7 +98,7 @@ func (s *server) Test(ctx context.Context, in *gen.TestReq) (out *gen.TestResp, 
 		var cancel context.CancelFunc
 		if in.Config != nil {
 			// Test instance
-			i, cancel, err = boxmain.Create([]byte(in.Config.CoreConfig))
+			i, cancel, err = boxmain.Create([]byte(in.Config.CoreConfig), true)
 			if i != nil {
 				defer i.Close()
 				defer cancel()
@@ -118,7 +118,7 @@ func (s *server) Test(ctx context.Context, in *gen.TestReq) (out *gen.TestResp, 
 	} else if in.Mode == gen.TestMode_TcpPing {
 		out.Ms, err = speedtest.TcpPing(in.Address, in.Timeout)
 	} else if in.Mode == gen.TestMode_FullTest {
-		i, cancel, err := boxmain.Create([]byte(in.Config.CoreConfig))
+		i, cancel, err := boxmain.Create([]byte(in.Config.CoreConfig), true)
 		if i != nil {
 			defer i.Close()
 			defer cancel()

@@ -3,11 +3,13 @@ module nekobox_core
 go 1.19
 
 require (
-	github.com/Mahdi-zarei/sing-box-extra v0.0.0-20240522011145-69061b408559
+	github.com/Mahdi-zarei/sing-box-extra v0.0.0-20240524204830-d0247f154fcf
 	github.com/matsuridayo/libneko v0.0.0-20230913024055-5277a5bfc889
 	github.com/sagernet/sing-box v1.9.0-rc.21
 	grpc_server v1.0.0
 )
+
+replace github.com/sagernet/sing-box => github.com/Mahdi-zarei/sing-box v1.3.5-0.20240524203629-e284713b657d
 
 require (
 	berty.tech/go-libtor v1.0.385 // indirect
@@ -52,7 +54,7 @@ require (
 	github.com/sagernet/bbolt v0.0.0-20231014093535-ea5cb2fe9f0a // indirect
 	github.com/sagernet/cloudflare-tls v0.0.0-20231208171750-a4483c1b7cd1 // indirect
 	github.com/sagernet/gvisor v0.0.0-20240428053021-e691de28565f // indirect
-	github.com/sagernet/netlink v0.0.0-20220905062125-8043b4a9aa97 // indirect
+	github.com/sagernet/netlink v0.0.0-20240523065131-45e60152f9ba // indirect
 	github.com/sagernet/quic-go v0.43.1-beta.1 // indirect
 	github.com/sagernet/reality v0.0.0-20230406110435-ee17307e7691 // indirect
 	github.com/sagernet/sing v0.4.0-beta.20 // indirect
@@ -62,7 +64,7 @@ require (
 	github.com/sagernet/sing-shadowsocks v0.2.6 // indirect
 	github.com/sagernet/sing-shadowsocks2 v0.2.0 // indirect
 	github.com/sagernet/sing-shadowtls v0.1.4 // indirect
-	github.com/sagernet/sing-tun v0.3.0-beta.5 // indirect
+	github.com/sagernet/sing-tun v0.3.0-beta.6 // indirect
 	github.com/sagernet/sing-vmess v0.1.8 // indirect
 	github.com/sagernet/smux v0.0.0-20231208180855-7041f6ea79e7 // indirect
 	github.com/sagernet/tfo-go v0.0.0-20231209031829-7b5343ac1dc6 // indirect
