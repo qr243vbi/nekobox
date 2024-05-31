@@ -16,8 +16,8 @@ jobs:
   build-go:
     strategy:
       matrix:
-        cross_os: [ windows, linux ]
-        cross_arch: [ amd64 ]
+        cross_os: [ windows, linux, darwin ]
+        cross_arch: [ amd64, arm64 ]
         include:
           - cross_os: public_res
             cross_arch: public_res
@@ -64,6 +64,12 @@ jobs:
           - platform: ubuntu-20.04
             arch: x64
             qt_version: "5.12"
+          - platform: macos-14
+            arch: x64
+            qt_version: "6.5"
+          - platform: macos-14
+            arch: arm64
+            qt_version: "6.5"
       fail-fast: false
 
     runs-on: ${{ matrix.platform }}
@@ -81,6 +87,19 @@ jobs:
           # 14.1 is for vs2017, 14.2 is vs2019, following the upstream vcpkg build from Qv2ray-deps repo
           toolset: 14.2
           arch: ${{ matrix.arch }}
+      - name: Download Artifacts for macOS
+        if: matrix.platform == 'macos-14'
+        uses: actions/download-artifact@v4.1.7
+        with:
+          path: download-artifact
+      - name: macOS - Install Qt 6.5
+        if: matrix.platform == 'macos-14'
+        uses: jurplel/install-qt-action@v4.0.0
+        with:
+          version: 6.5
+          setup-python: true
+          cache: true
+          cache-key-prefix: QtCache-${{ matrix.platform }}-${{ matrix.arch }}
       # ========================================================================================================= Qt Install
       - name: Windows - Download Custom Qt ${{ matrix.qt_version }} SDK
         shell: bash
@@ -135,6 +154,16 @@ jobs:
             -w /nekoray \
             ghcr.io/matsuridayo/debian10-qt5:20230131 \
             bash -c "mkdir build && pushd build && cmake -GNinja -DCMAKE_BUILD_TYPE=Release .. && ninja && popd &&./libs/deploy_linux64.sh"
+      - name: macOS - Generate MakeFile and Build
+        shell: bash
+        if: matrix.platform == 'macos-14'
+        run: |
+          mkdir build
+          cd build
+          cmake -GNinja -DQT_VERSION_MAJOR=6 -DCMAKE_BUILD_TYPE=Release -DNKR_PACKAGE_MACOS=1 ..
+          ninja
+          cd ..
+          ./libs/deploy_macos.sh
       # ========================================================================================================= Deployments
       - name: Tar files
         shell: bash
@@ -177,6 +206,12 @@ jobs:
           mv windows64 nekoray
           zip -r $version_standalone-windows64.zip nekoray
           rm -rf nekoray
+          ####
+          mv macos-amd64/nekoray.dmg $version_standalone-macos-amd64.dmg
+          rm -rf macos-amd64
+          ####
+          mv macos-arm64/nekoray.dmg $version_standalone-macos-arm64.dmg
+          rm -rf macos-arm64
       - name: Pack Debian
         run: |
           source libs/env_deploy.sh
