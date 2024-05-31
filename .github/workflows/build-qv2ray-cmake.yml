@@ -61,7 +61,7 @@ jobs:
           - platform: windows-2022
             arch: x64
             qt_version: "6.5"
-          - platform: ubuntu-20.04
+          - platform: ubuntu-22.04
             arch: x64
             qt_version: "5.12"
           - platform: macos-14
@@ -92,6 +92,14 @@ jobs:
         uses: actions/download-artifact@v4.1.7
         with:
           path: download-artifact
+      - name: Linux - Install Qt 6.5
+        if: matrix.platform == 'ubuntu-22.04'
+        uses: jurplel/install-qt-action@v4.0.0
+        with:
+          version: 6.5
+          setup-python: true
+          cache: true
+          cache-key-prefix: QtCache-${{ matrix.platform }}-${{ matrix.arch }}
       - name: macOS - Install Qt 6.5
         if: matrix.platform == 'macos-14'
         uses: jurplel/install-qt-action@v4.0.0
@@ -118,17 +126,8 @@ jobs:
           key: DepsCache-${{ matrix.platform }}-${{ matrix.arch }}-${{ hashFiles('libs/build_deps_*.sh') }}-Qt${{ matrix.qt_version }}
       - name: Build Dependencies
         shell: bash
-        if: steps.cache-deps.outputs.cache-hit != 'true' && matrix.platform != 'ubuntu-20.04'
+        if: steps.cache-deps.outputs.cache-hit != 'true'
         run: ./libs/build_deps_all.sh
-      - name: Build Dependencies (Docker)
-        shell: bash
-        if: steps.cache-deps.outputs.cache-hit != 'true' && matrix.platform == 'ubuntu-20.04'
-        run: |
-          docker run --rm \
-            -v $PWD:/nekoray \
-            -w /nekoray \
-            ghcr.io/matsuridayo/debian10-qt5:20230131 \
-            bash -c "./libs/build_deps_all.sh"
       # ========================================================================================================= Generate MakeFile and Build
       - name: Windows - Generate MakeFile and Build
         shell: bash
@@ -147,13 +146,14 @@ jobs:
           ./libs/deploy_windows64.sh
       - name: Linux - Generate MakeFile and Build
         shell: bash
-        if: matrix.platform == 'ubuntu-20.04'
+        if: matrix.platform == 'ubuntu-22.04'
         run: |
-          docker run --rm \
-            -v $PWD:/nekoray \
-            -w /nekoray \
-            ghcr.io/matsuridayo/debian10-qt5:20230131 \
-            bash -c "mkdir build && pushd build && cmake -GNinja -DCMAKE_BUILD_TYPE=Release .. && ninja && popd &&./libs/deploy_linux64.sh"
+          mkdir build
+          pushd build
+          cmake -GNinja -DQT_VERSION_MAJOR=6 -DCMAKE_BUILD_TYPE=Release ..
+          ninja
+          popd
+          ./libs/deploy_linux64.sh
       - name: macOS - Generate MakeFile and Build
         shell: bash
         if: matrix.platform == 'macos-14'
