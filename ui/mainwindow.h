@@ -179,8 +179,6 @@ private:
 
     void HotkeyEvent(const QString &key);
 
-    bool StartVPNProcess();
-
     // grpc and ...
 
     static void setup_grpc();

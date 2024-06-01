@@ -1714,57 +1714,6 @@ void MainWindow::RegisterHotkey(bool unregister) {}
 void MainWindow::HotkeyEvent(const QString &key) {}
 
 #endif
-
-// VPN Launcher
-
-bool MainWindow::StartVPNProcess() {
-    //
-    if (vpn_pid != 0) {
-        return true;
-    }
-    //
-    auto protectPath = QDir::currentPath() + "/protect";
-    auto configPath = NekoGui::WriteVPNSingBoxConfig();
-    auto scriptPath = NekoGui::WriteVPNLinuxScript(protectPath, configPath);
-    //
-#ifdef Q_OS_WIN
-    runOnNewThread([=] {
-        vpn_pid = 1; // TODO get pid?
-        WinCommander::runProcessElevated(QApplication::applicationDirPath() + "/nekobox_core.exe",
-                                         {"--disable-color", "run", "-c", configPath}, "",
-                                         NekoGui::dataStore->vpn_hide_console ? WinCommander::SW_HIDE : WinCommander::SW_SHOWMINIMIZED); // blocking
-        vpn_pid = 0;
-        runOnUiThread([=] { neko_set_spmode_vpn(false); });
-    });
-#else
-    QFile::remove(protectPath);
-    if (QFile::exists(protectPath)) {
-        MessageBoxWarning("Error", "protect cannot be removed");
-        return false;
-    }
-    //
-    auto vpn_process = new QProcess;
-    QProcess::connect(vpn_process, &QProcess::stateChanged, this, [=](QProcess::ProcessState state) {
-        if (state == QProcess::NotRunning) {
-            vpn_pid = 0;
-            vpn_process->deleteLater();
-            GetMainWindow()->neko_set_spmode_vpn(false);
-        }
-    });
-    //
-    vpn_process->setProcessChannelMode(QProcess::ForwardedChannels);
-#ifdef Q_OS_MACOS
-    vpn_process->start("osascript", {"-e", QString("do shell script \"%1\" with administrator privileges")
-                                               .arg("bash " + scriptPath)});
-#else
-    vpn_process->start("pkexec", {"bash", scriptPath});
-#endif
-    vpn_process->waitForStarted();
-    vpn_pid = vpn_process->processId(); // actually it's pkexec or bash PID
-#endif
-    return true;
-}
-
 bool MainWindow::StopVPNProcess(bool unconditional) {
     if (unconditional || vpn_pid != 0) {
         bool ok;
