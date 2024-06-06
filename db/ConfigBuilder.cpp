@@ -493,11 +493,6 @@ namespace NekoGui {
         status->result->coreConfig.insert("inbounds", status->inbounds);
         status->result->coreConfig.insert("outbounds", status->outbounds);
 
-        // user rule
-        if (!status->forTest) {
-            DOMAIN_USER_RULE
-            IP_USER_RULE
-        }
 
         // sing-box common rule object
         auto make_rule = [&](const QStringList &list, bool isIP = false) {
@@ -722,12 +717,7 @@ namespace NekoGui {
         if (geosite.isEmpty()) status->result->error = +"geosite.db not found";
 
         // final add routing rule
-        auto routingRules = QString2QJsonObject(dataStore->routing->custom)["rules"].toArray();
-        if (status->forTest) routingRules = {};
-        if (!status->forTest) QJSONARRAY_ADD(routingRules, QString2QJsonObject(dataStore->custom_route_global)["rules"].toArray())
-        QJSONARRAY_ADD(routingRules, status->routingRules)
         auto routeObj = QJsonObject{
-            {"rules", routingRules},
             {"auto_detect_interface", true},
             {
                 "geoip",

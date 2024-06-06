@@ -22,11 +22,11 @@ endif ()
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets Network Svg LinguistTools)
 
 if (NKR_CROSS)
-    set_property(TARGET Qt5::moc PROPERTY IMPORTED_LOCATION /usr/bin/moc)
-    set_property(TARGET Qt5::uic PROPERTY IMPORTED_LOCATION /usr/bin/uic)
-    set_property(TARGET Qt5::rcc PROPERTY IMPORTED_LOCATION /usr/bin/rcc)
-    set_property(TARGET Qt5::lrelease PROPERTY IMPORTED_LOCATION /usr/bin/lrelease)
-    set_property(TARGET Qt5::lupdate PROPERTY IMPORTED_LOCATION /usr/bin/lupdate)
+    set_property(TARGET Qt6::moc PROPERTY IMPORTED_LOCATION /usr/bin/moc)
+    set_property(TARGET Qt6::uic PROPERTY IMPORTED_LOCATION /usr/bin/uic)
+    set_property(TARGET Qt6::rcc PROPERTY IMPORTED_LOCATION /usr/bin/rcc)
+    set_property(TARGET Qt6::lrelease PROPERTY IMPORTED_LOCATION /usr/bin/lrelease)
+    set_property(TARGET Qt6::lupdate PROPERTY IMPORTED_LOCATION /usr/bin/lupdate)
 endif ()
 
 #### Platform Variables ####
@@ -250,10 +250,15 @@ set(PROJECT_SOURCES
         ui/widget/GroupItem.cpp
         ui/widget/GroupItem.h
         ui/widget/GroupItem.ui
+        ui/widget/RouteItem.cpp
+        ui/widget/RouteItem.h
+        ui/widget/RouteItem.ui
 
         res/neko.qrc
         res/theme/feiyangqingyun/qss.qrc
         ${QV2RAY_RC}
+        db/RouteEntity.h
+        db/RouteEntity.cpp
 )
 
 # Qt exe

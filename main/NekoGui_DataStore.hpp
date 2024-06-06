@@ -4,14 +4,8 @@ namespace NekoGui {
 
     class Routing : public JsonStore {
     public:
-        QString direct_ip;
-        QString direct_domain;
-        QString proxy_ip;
-        QString proxy_domain;
-        QString block_ip;
-        QString block_domain;
+        int current_route_id = 0;
         QString def_outbound = "proxy";
-        QString custom = "{\"rules\": []}";
 
         // DNS
         QString remote_dns = "https://8.8.8.8/dns-query";
@@ -29,8 +23,6 @@ namespace NekoGui {
         int sniffing_mode = SniffingMode::FOR_ROUTING;
 
         explicit Routing(int preset = 0);
-
-        [[nodiscard]] QString DisplayRouting() const;
 
         static QStringList List();
 
