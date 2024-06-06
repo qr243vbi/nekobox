@@ -327,32 +327,9 @@ namespace NekoGui {
 
     // preset routing
     Routing::Routing(int preset) : JsonStore() {
-        if (preset == 1) {
-            direct_ip =
-                "geoip:cn\n"
-                "geoip:private";
-            direct_domain = "geosite:cn";
-            proxy_ip = "";
-            proxy_domain = "";
-            block_ip = "";
-            block_domain =
-                "geosite:category-ads-all\n"
-                "domain:appcenter.ms\n"
-                "domain:firebase.io\n"
-                "domain:crashlytics.com\n";
-        }
-        if (IS_NEKO_BOX) {
-            if (!Preset::SingBox::DomainStrategy.contains(domain_strategy)) domain_strategy = "";
-            if (!Preset::SingBox::DomainStrategy.contains(outbound_domain_strategy)) outbound_domain_strategy = "";
-        }
-        _add(new configItem("direct_ip", &this->direct_ip, itemType::string));
-        _add(new configItem("direct_domain", &this->direct_domain, itemType::string));
-        _add(new configItem("proxy_ip", &this->proxy_ip, itemType::string));
-        _add(new configItem("proxy_domain", &this->proxy_domain, itemType::string));
-        _add(new configItem("block_ip", &this->block_ip, itemType::string));
-        _add(new configItem("block_domain", &this->block_domain, itemType::string));
-        _add(new configItem("def_outbound", &this->def_outbound, itemType::string));
-        _add(new configItem("custom", &this->custom, itemType::string));
+        if (!Preset::SingBox::DomainStrategy.contains(domain_strategy)) domain_strategy = "";
+        if (!Preset::SingBox::DomainStrategy.contains(outbound_domain_strategy)) outbound_domain_strategy = "";
+        _add(new configItem("current_route_id", &this->current_route_id, itemType::integer));
         //
         _add(new configItem("remote_dns", &this->remote_dns, itemType::string));
         _add(new configItem("remote_dns_strategy", &this->remote_dns_strategy, itemType::string));
@@ -365,18 +342,6 @@ namespace NekoGui {
         _add(new configItem("use_dns_object", &this->use_dns_object, itemType::boolean));
         _add(new configItem("dns_object", &this->dns_object, itemType::string));
         _add(new configItem("dns_final_out", &this->dns_final_out, itemType::string));
-    }
-
-    QString Routing::DisplayRouting() const {
-        return QString("[Proxy] %1\n[Proxy] %2\n[Direct] %3\n[Direct] %4\n[Block] %5\n[Block] %6\n[Default Outbound] %7\n[DNS] %8")
-            .arg(SplitLinesSkipSharp(proxy_domain).join(","), 10)
-            .arg(SplitLinesSkipSharp(proxy_ip).join(","), 10)
-            .arg(SplitLinesSkipSharp(direct_domain).join(","), 10)
-            .arg(SplitLinesSkipSharp(direct_ip).join(","), 10)
-            .arg(SplitLinesSkipSharp(block_domain).join(","), 10)
-            .arg(SplitLinesSkipSharp(block_ip).join(","), 10)
-            .arg(def_outbound)
-            .arg(use_dns_object ? "DNS Object" : "Simple DNS");
     }
 
     QStringList Routing::List() {

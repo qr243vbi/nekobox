@@ -304,7 +304,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
             r.load_control_must = true;
             r.fn = ROUTES_PREFIX + fn;
             if (r.Load()) {
-                if (QMessageBox::question(GetMessageBoxParent(), software_name, tr("Load routing and apply: %1").arg(fn) + "\n" + r.DisplayRouting()) == QMessageBox::Yes) {
+                if (QMessageBox::question(GetMessageBoxParent(), software_name, tr("Load routing and apply: %1").arg(fn) + "\n" ) == QMessageBox::Yes) {
                     NekoGui::Routing::SetToActive(fn);
                     if (NekoGui::dataStore->started_id >= 0) {
                         neko_start(NekoGui::dataStore->started_id);
@@ -1577,32 +1577,6 @@ void MainWindow::on_masterLogBrowser_customContextMenuRequested(const QPoint &po
         auto item = QInputDialog::getItem(GetMessageBoxParent(), tr("Save as route"),
                                           tr("Save \"%1\" as a routing rule?").arg(newStr),
                                           items, select, false, &ok);
-        if (ok) {
-            auto index = items.indexOf(item);
-            switch (index) {
-                case 0:
-                    ADD_TO_CURRENT_ROUTE(proxy_ip, newStr);
-                    break;
-                case 1:
-                    ADD_TO_CURRENT_ROUTE(direct_ip, newStr);
-                    break;
-                case 2:
-                    ADD_TO_CURRENT_ROUTE(block_ip, newStr);
-                    break;
-                case 3:
-                    ADD_TO_CURRENT_ROUTE(proxy_domain, newStr);
-                    break;
-                case 4:
-                    ADD_TO_CURRENT_ROUTE(direct_domain, newStr);
-                    break;
-                case 5:
-                    ADD_TO_CURRENT_ROUTE(block_domain, newStr);
-                    break;
-                default:
-                    break;
-            }
-            MW_dialog_message("", "UpdateDataStore,RouteChanged");
-        }
     });
     menu->addAction(action_add_route);
 

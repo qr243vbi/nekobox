@@ -37,8 +37,10 @@ namespace NekoGui {
         //
         profiles = {};
         groups = {};
+        routes = {};
         profilesIdOrder = filterIntJsonFile("profiles");
         groupsIdOrder = filterIntJsonFile("groups");
+        routesIdOrder = filterIntJsonFile("routes");
         // Load Proxys
         QList<int> delProfile;
         for (auto id: profilesIdOrder) {
@@ -75,12 +77,29 @@ namespace NekoGui {
                 groupsTabOrder << id;
             }
         }
+        // Load Routing profiles
+        for (auto id : routesIdOrder) {
+            auto route = LoadRouteChain(QString("routes/%1.json").arg(id));
+            if (route == nullptr) {
+                MW_show_log(QString("File routes/%1.json is corrupted, consider manually handling it").arg(id));
+                continue;
+            }
+
+            routes[id] = route;
+        }
+
         // First setup
         if (groups.empty()) {
             auto defaultGroup = NekoGui::ProfileManager::NewGroup();
             defaultGroup->name = QObject::tr("Default");
             NekoGui::profileManager->AddGroup(defaultGroup);
         }
+
+        if (routes.empty()) {
+            auto defaultRoute = NekoGui::RoutingChain::GetDefaultChain();
+            NekoGui::profileManager->AddRouteChain(defaultRoute);
+        }
+
         //
         if (dataStore->flag_reorder) {
             {
@@ -161,6 +180,16 @@ namespace NekoGui {
             ent->Load();
         }
         return ent;
+    }
+
+    std::shared_ptr<RoutingChain> ProfileManager::LoadRouteChain(const QString &jsonPath) {
+        std::shared_ptr<RoutingChain> routingChain;
+        routingChain->fn = jsonPath;
+        if (!routingChain->Load()) {
+            return nullptr;
+        }
+
+        return routingChain;
     }
 
     //  新建的不给 fn 和 id
@@ -371,6 +400,37 @@ namespace NekoGui {
 
     std::shared_ptr<Group> ProfileManager::CurrentGroup() {
         return GetGroup(dataStore->current_group);
+    }
+
+
+    std::shared_ptr<RoutingChain> ProfileManager::NewRouteChain() {
+        auto route = std::make_shared<RoutingChain>();
+        return route;
+    }
+
+    int ProfileManager::NewRouteChainID() const {
+        if (routes.empty()) {
+            return 0;
+        }
+        return routesIdOrder.last() + 1;
+    }
+
+    bool ProfileManager::AddRouteChain(const std::shared_ptr<RoutingChain> chain) {
+        if (chain->id >= 0) {
+            return false;
+        }
+
+        chain->id = NewRouteChainID();
+        routes[chain->id] = chain;
+        routesIdOrder.push_back(chain->id);
+        chain->fn = QString("routes/%1.json").arg(chain->id);
+        chain->Save();
+
+        return true;
+    }
+
+    std::shared_ptr<RoutingChain> ProfileManager::GetRouteChain(int id) {
+        return routes.count(id) > 0 ? routes[id] : nullptr;
     }
 
     QList<std::shared_ptr<ProxyEntity>> Group::Profiles() const {
