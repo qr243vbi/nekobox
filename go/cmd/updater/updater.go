@@ -8,7 +8,7 @@ import (
 	"runtime"
 	"strings"
 
-	"github.com/codeclysm/extract"
+	"github.com/codeclysm/extract/v3"
 )
 
 func Updater() {
