@@ -27,11 +27,17 @@ private:
     Ui::RouteItem *ui;
     int currentIndex = -1;
 
+    int lastNum;
+
     [[nodiscard]] int getIndexOf(const QString& name) const;
 
     void showSelectItem(const QStringList& items, const QString& currentItem);
 
     void showTextEnterItem(const QStringList& items);
+
+    void setDefaultRuleData(const QString& currentData);
+
+    void updateRouteItemsView();
 
 private slots:
     void on_ok_button_clicked();
@@ -39,5 +45,5 @@ private slots:
     void on_new_route_item_clicked();
     void on_moveup_route_item_clicked();
     void on_movedown_route_item_clicked();
-    void on_route_view_json_clicked();
+    void on_delete_route_item_clicked();
 };

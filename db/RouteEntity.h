@@ -27,9 +27,9 @@ namespace NekoGui {
         QList<QString> process_path;
         QList<QString> rule_set;
         bool invert = false;
-        int outboundID = -1; // -2 is direct -3 is block -4 is dns_out
+        int outboundID = -1; // -1 is invalid -2 is direct -3 is block -4 is dns_out
 
-        [[nodiscard]] QJsonObject get_rule_json() const;
+        [[nodiscard]] QJsonObject get_rule_json(bool forView = false) const;
         static QStringList get_attributes();
         static inputType get_input_type(const QString& fieldName);
         static QStringList get_values_for_field(const QString& fieldName);
@@ -44,7 +44,7 @@ namespace NekoGui {
         QString name = "";
         QList<std::shared_ptr<RouteRule>> Rules;
 
-        QJsonArray get_route_rules();
+        QJsonArray get_route_rules(bool forView = false);
 
         static std::shared_ptr<RoutingChain> GetDefaultChain();
     };
