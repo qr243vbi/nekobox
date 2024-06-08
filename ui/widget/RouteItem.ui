@@ -70,6 +70,13 @@
            </property>
           </widget>
          </item>
+         <item>
+          <widget class="QPushButton" name="delete_route_item">
+           <property name="text">
+            <string>Delete</string>
+           </property>
+          </widget>
+         </item>
         </layout>
        </widget>
       </item>
@@ -82,6 +89,16 @@
          <item>
           <widget class="QWidget" name="widget_3" native="true">
            <layout class="QHBoxLayout" name="horizontalLayout_3">
+            <item>
+             <widget class="QLabel" name="rule_name_l">
+              <property name="text">
+               <string>Name</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="rule_name"/>
+            </item>
             <item>
              <widget class="QLabel" name="rule_attr_l">
               <property name="text">

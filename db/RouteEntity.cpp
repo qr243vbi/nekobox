@@ -13,7 +13,7 @@ namespace NekoGui {
         return res;
     }
 
-    QJsonObject RouteRule::get_rule_json() const {
+    QJsonObject RouteRule::get_rule_json(bool forView) const {
         QJsonObject obj;
 
         if (ip_version != "") obj["ip_version"] = ip_version.toInt();
@@ -36,20 +36,24 @@ namespace NekoGui {
         if (!rule_set.empty()) obj["rule_set"] = get_as_array(rule_set);
         if (invert) obj["invert"] = invert;
 
-        switch (outboundID) { // TODO use constants
-            case -2:
-                obj["outbound"] = "direct";
-            case -3:
-                obj["outbound"] = "block";
-            case -4:
-                obj["outbound"] = "dns_out";
-            default:
-                auto prof = NekoGui::profileManager->GetProfile(outboundID);
-                if (prof == nullptr) {
-                    MW_show_log("The outbound described in the rule chain is missing, maybe your data is corrupted");
-                    return {};
-                }
-                obj["outbound"] = prof->bean->DisplayName();
+        if (forView) {
+            switch (outboundID) { // TODO use constants
+                case -2:
+                    obj["outbound"] = "direct";
+                case -3:
+                    obj["outbound"] = "block";
+                case -4:
+                    obj["outbound"] = "dns_out";
+                default:
+                    auto prof = NekoGui::profileManager->GetProfile(outboundID);
+                    if (prof == nullptr) {
+                        MW_show_log("The outbound described in the rule chain is missing, maybe your data is corrupted");
+                        return {};
+                    }
+                    obj["outbound"] = prof->bean->DisplayName();
+            }
+        } else {
+            obj["outbound"] = outboundID;
         }
 
         return obj;
@@ -95,13 +99,13 @@ namespace NekoGui {
 
     QStringList RouteRule::get_values_for_field(const QString& fieldName) {
         if (fieldName == "ip_version") {
-            return {"4", "6"};
+            return {"", "4", "6"};
         }
         if (fieldName == "network") {
-            return {"tcp", "udp"};
+            return {"", "tcp", "udp"};
         }
         if (fieldName == "protocol") {
-            return {"http", "tls", "quic", "stun", "dns", "bittorrent"};
+            return {"", "http", "tls", "quic", "stun", "dns", "bittorrent"};
         }
         return {};
     }
@@ -226,10 +230,10 @@ namespace NekoGui {
         }
     }
 
-    QJsonArray RoutingChain::get_route_rules() {
+    QJsonArray RoutingChain::get_route_rules(bool forView) {
         QJsonArray res;
         for (const auto &item: Rules) {
-            auto rule_json = item->get_rule_json();
+            auto rule_json = item->get_rule_json(forView);
             if (rule_json.empty()) {
                 MW_show_log("Aborted generating routing section, an error has occurred");
                 return {};
