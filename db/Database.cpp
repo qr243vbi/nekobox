@@ -405,6 +405,7 @@ namespace NekoGui {
     RouteRule::RouteRule() {
         _add(new configItem("name", &name, itemType::string));
         _add(new configItem("ip_version", &ip_version, itemType::string));
+        _add(new configItem("network", &network, itemType::string));
         _add(new configItem("protocol", &protocol, itemType::string));
         _add(new configItem("domain", &domain, itemType::stringList));
         _add(new configItem("domain_suffix", &domain_suffix, itemType::stringList));

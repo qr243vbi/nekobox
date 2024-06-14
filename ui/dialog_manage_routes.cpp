@@ -11,9 +11,13 @@
 #include <QMessageBox>
 
 void DialogManageRoutes::reloadProfileItems() {
+    if (chainList.empty()) {
+        MessageBoxWarning("Invalid state", "The list of routing profiles is empty, this should be an unreachable state, crashes may occur now");
+        return;
+    }
+
     QSignalBlocker blocker = QSignalBlocker(ui->route_prof); // apparently the currentIndexChanged will make us crash if we clear the QComboBox
     ui->route_prof->clear();
-    blocker.unblock();
 
     ui->route_profiles->clear();
     bool selectedChainGone = true;
@@ -28,9 +32,10 @@ void DialogManageRoutes::reloadProfileItems() {
         i++;
     }
     if (selectedChainGone) {
-        currentRouteProfileID=0;
+        currentRouteProfileID=chainList[0]->id;
         ui->route_prof->setCurrentIndex(0);
     }
+    blocker.unblock();
 }
 
 DialogManageRoutes::DialogManageRoutes(QWidget *parent) : QDialog(parent), ui(new Ui::DialogManageRoutes) {

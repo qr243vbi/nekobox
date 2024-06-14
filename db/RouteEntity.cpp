@@ -24,9 +24,9 @@ namespace NekoGui {
     QJsonObject RouteRule::get_rule_json(bool forView, const QString& outboundTag) const {
         QJsonObject obj;
 
-        if (ip_version != "") obj["ip_version"] = ip_version.toInt();
-        if (network != "") obj["network"] = network;
-        if (protocol != "") obj["protocol"] = protocol;
+        if (!ip_version.isEmpty()) obj["ip_version"] = ip_version.toInt();
+        if (!network.isEmpty()) obj["network"] = network;
+        if (!protocol.isEmpty()) obj["protocol"] = protocol;
         if (isValidStrArray(domain)) obj["domain"] = get_as_array(domain);
         if (isValidStrArray(domain_suffix)) obj["domain_suffix"] = get_as_array(domain_suffix);
         if (isValidStrArray(domain_keyword)) obj["domain_keyword"] = get_as_array(domain_keyword);
