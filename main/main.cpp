@@ -13,7 +13,6 @@
 #include "main/NekoGui.hpp"
 
 #include "ui/mainwindow_interface.h"
-#include "ui/dialog_first_setup.h"
 
 #ifdef Q_OS_WIN
 #include "sys/windows/MiniDump.h"

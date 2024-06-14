@@ -12,7 +12,6 @@ namespace NekoGui {
         QString remote_dns_strategy = "";
         QString direct_dns = "localhost";
         QString direct_dns_strategy = "";
-        bool dns_routing = true;
         bool use_dns_object = false;
         QString dns_object = "";
         QString dns_final_out = "proxy";
@@ -143,9 +142,6 @@ namespace NekoGui {
         bool vpn_ipv6 = false;
         bool vpn_hide_console = true;
         bool vpn_strict_route = false;
-        bool vpn_rule_white = false;
-        QString vpn_rule_process = "";
-        QString vpn_rule_cidr = "";
 
         // NTP
         bool enable_ntp = false;
