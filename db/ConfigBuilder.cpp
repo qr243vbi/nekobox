@@ -3,12 +3,12 @@
 #include "fmt/includes.h"
 #include "fmt/Preset.hpp"
 #include "main/QJS.hpp"
+#include "rpc/gRPC.h"
 
 #include <QApplication>
 #include <QFile>
 #include <QFileInfo>
 
-#define BOX_UNDERLYING_DNS dataStore->core_box_underlying_dns.isEmpty() ? "underlying://0.0.0.0" : dataStore->core_box_underlying_dns
 #define BOX_UNDERLYING_DNS_EXPORT dataStore->core_box_underlying_dns.isEmpty() ? (status->forExport ? "local" : "underlying://0.0.0.0") : dataStore->core_box_underlying_dns
 
 namespace NekoGui {
@@ -151,35 +151,10 @@ namespace NekoGui {
         return chainTagOut;
     }
 
-#define DOMAIN_USER_RULE                                                             \
-    for (const auto &line: SplitLinesSkipSharp(dataStore->routing->proxy_domain)) {  \
-        if (dataStore->routing->dns_routing) status->domainListDNSRemote += line;    \
-        status->domainListRemote += line;                                            \
-    }                                                                                \
-    for (const auto &line: SplitLinesSkipSharp(dataStore->routing->direct_domain)) { \
-        if (dataStore->routing->dns_routing) status->domainListDNSDirect += line;    \
-        status->domainListDirect += line;                                            \
-    }                                                                                \
-    for (const auto &line: SplitLinesSkipSharp(dataStore->routing->block_domain)) {  \
-        status->domainListBlock += line;                                             \
-    }
-
-#define IP_USER_RULE                                                             \
-    for (const auto &line: SplitLinesSkipSharp(dataStore->routing->block_ip)) {  \
-        status->ipListBlock += line;                                             \
-    }                                                                            \
-    for (const auto &line: SplitLinesSkipSharp(dataStore->routing->proxy_ip)) {  \
-        status->ipListRemote += line;                                            \
-    }                                                                            \
-    for (const auto &line: SplitLinesSkipSharp(dataStore->routing->direct_ip)) { \
-        status->ipListDirect += line;                                            \
-    }
-
     QString BuildChainInternal(int chainId, const QList<std::shared_ptr<ProxyEntity>> &ents,
                                const std::shared_ptr<BuildConfigStatus> &status) {
         QString chainTag = "c-" + Int2String(chainId);
         QString chainTagOut;
-        bool muxApplied = false;
 
         QString pastTag;
         int pastExternalStat = 0;
@@ -290,7 +265,6 @@ namespace NekoGui {
             // Outbound
 
             QJsonObject outbound;
-            auto stream = GetStreamSettings(ent->bean.get());
 
             if (thisExternalStat > 0) {
                 auto extR = ent->bean->BuildExternal(ext_mapping_port, ext_socks_port, thisExternalStat);
@@ -309,71 +283,9 @@ namespace NekoGui {
                 outbound["type"] = "socks";
                 outbound["server"] = "127.0.0.1";
                 outbound["server_port"] = ext_socks_port;
-            } else {
-                const auto coreR = ent->bean->BuildCoreObjSingBox();
-                if (coreR.outbound.isEmpty()) {
-                    status->result->error = "unsupported outbound";
-                    return {};
-                }
-                if (!coreR.error.isEmpty()) { // rejected
-                    status->result->error = coreR.error;
-                    return {};
-                }
-                outbound = coreR.outbound;
             }
 
-            // outbound misc
-            outbound["tag"] = tagOut;
-            ent->traffic_data->id = ent->id;
-            ent->traffic_data->tag = tagOut.toStdString();
-            status->result->outboundStats += ent->traffic_data;
-
-            // mux common
-            auto needMux = ent->type == "vmess" || ent->type == "trojan" || ent->type == "vless" || ent->type == "shadowsocks";
-            needMux &= dataStore->mux_concurrency > 0;
-
-            if (stream != nullptr) {
-                if (stream->network == "grpc" || stream->network == "quic" || (stream->network == "http" && stream->security == "tls")) {
-                    needMux = false;
-                }
-            }
-
-            auto mux_state = ent->bean->mux_state;
-            if (mux_state == 0) {
-                if (!dataStore->mux_default_on && !ent->bean->enable_brutal) needMux = false;
-            } else if (mux_state == 1) {
-                needMux = true;
-            } else if (mux_state == 2) {
-                needMux = false;
-            }
-
-            if (ent->type == "vless" && outbound["flow"] != "") {
-                needMux = false;
-            }
-
-            // common
-            // apply domain_strategy
-            outbound["domain_strategy"] = dataStore->routing->outbound_domain_strategy;
-            // apply mux
-            if (!muxApplied && needMux) {
-                auto muxObj = QJsonObject{
-                    {"enabled", true},
-                    {"protocol", dataStore->mux_protocol},
-                    {"padding", dataStore->mux_padding},
-                    {"max_streams", dataStore->mux_concurrency},
-                };
-                if (ent->bean->enable_brutal) {
-                    auto brutalObj = QJsonObject{
-                        {"enabled", true},
-                        {"up_mbps", ent->bean->brutal_speed},
-                        {"down_mbps", ent->bean->brutal_speed},
-                    };
-                    muxObj["max_connections"] = 1;
-                    muxObj["brutal"] = brutalObj;
-                }
-                outbound["multiplex"] = muxObj;
-                muxApplied = true;
-            }
+            BuildOutbound(ent, status, outbound, tagOut);
 
             // apply custom outbound settings
             MergeJson(QString2QJsonObject(ent->bean->custom_outbound), outbound);
@@ -388,7 +300,7 @@ namespace NekoGui {
             }
 
             if (!IsIpAddress(serverAddress)) {
-                status->domainListDNSDirect += "full:" + serverAddress;
+                status->domainListDNSDirect += serverAddress;
             }
 
             status->outbounds += outbound;
@@ -398,6 +310,72 @@ namespace NekoGui {
         }
 
         return chainTagOut;
+    }
+
+    void BuildOutbound(const std::shared_ptr<ProxyEntity> &ent, const std::shared_ptr<BuildConfigStatus> &status, QJsonObject& outbound, const QString& tag) {
+        const auto coreR = ent->bean->BuildCoreObjSingBox();
+        if (coreR.outbound.isEmpty()) {
+            status->result->error = "unsupported outbound";
+            return;
+        }
+        if (!coreR.error.isEmpty()) { // rejected
+            status->result->error = coreR.error;
+            return;
+        }
+        outbound = coreR.outbound;
+
+        // outbound misc
+        outbound["tag"] = tag;
+        ent->traffic_data->id = ent->id;
+        ent->traffic_data->tag = tag.toStdString();
+        status->result->outboundStats += ent->traffic_data;
+
+        // mux common
+        auto needMux = ent->type == "vmess" || ent->type == "trojan" || ent->type == "vless" || ent->type == "shadowsocks";
+        needMux &= dataStore->mux_concurrency > 0;
+
+        auto stream = GetStreamSettings(ent->bean.get());
+        if (stream != nullptr) {
+            if (stream->network == "grpc" || stream->network == "quic" || (stream->network == "http" && stream->security == "tls")) {
+                needMux = false;
+            }
+        }
+
+        auto mux_state = ent->bean->mux_state;
+        if (mux_state == 0) {
+            if (!dataStore->mux_default_on && !ent->bean->enable_brutal) needMux = false;
+        } else if (mux_state == 1) {
+            needMux = true;
+        } else if (mux_state == 2) {
+            needMux = false;
+        }
+
+        if (ent->type == "vless" && outbound["flow"] != "") {
+            needMux = false;
+        }
+
+        // common
+        // apply domain_strategy
+        outbound["domain_strategy"] = dataStore->routing->outbound_domain_strategy;
+        // apply mux
+        if (needMux) {
+            auto muxObj = QJsonObject{
+                {"enabled", true},
+                {"protocol", dataStore->mux_protocol},
+                {"padding", dataStore->mux_padding},
+                {"max_streams", dataStore->mux_concurrency},
+            };
+            if (ent->bean->enable_brutal) {
+                auto brutalObj = QJsonObject{
+                    {"enabled", true},
+                    {"up_mbps", ent->bean->brutal_speed},
+                    {"down_mbps", ent->bean->brutal_speed},
+                };
+                muxObj["max_connections"] = 1;
+                muxObj["brutal"] = brutalObj;
+            }
+            outbound["multiplex"] = muxObj;
+        }
     }
 
     // SingBox
@@ -467,14 +445,10 @@ namespace NekoGui {
         auto tagProxy = BuildChain(0, status);
         if (!status->result->error.isEmpty()) return;
 
-        // direct & bypass & block
+        // direct & block & dns-out
         status->outbounds += QJsonObject{
             {"type", "direct"},
             {"tag", "direct"},
-        };
-        status->outbounds += QJsonObject{
-            {"type", "direct"},
-            {"tag", "bypass"},
         };
         status->outbounds += QJsonObject{
             {"type", "block"},
@@ -493,60 +467,89 @@ namespace NekoGui {
         status->result->coreConfig.insert("inbounds", status->inbounds);
         status->result->coreConfig.insert("outbounds", status->outbounds);
 
+        // Routing
+        // geopath
+        auto geoip = FindCoreAsset("geoip.db");
+        auto geosite = FindCoreAsset("geosite.db");
+        if (geoip.isEmpty()) status->result->error = +"geoip.db not found";
+        if (geosite.isEmpty()) status->result->error = +"geosite.db not found";
 
-        // sing-box common rule object
-        auto make_rule = [&](const QStringList &list, bool isIP = false) {
-            QJsonObject rule;
-            //
-            QJsonArray ip_cidr;
-            QJsonArray geoip;
-            //
-            QJsonArray domain_keyword;
-            QJsonArray domain_subdomain;
-            QJsonArray domain_regexp;
-            QJsonArray domain_full;
-            QJsonArray geosite;
-            for (auto item: list) {
-                if (isIP) {
-                    if (item.startsWith("geoip:")) {
-                        geoip += item.replace("geoip:", "");
-                    } else {
-                        ip_cidr += item;
-                    }
-                } else {
-                    // https://www.v2fly.org/config/dns.html#dnsobject
-                    if (item.startsWith("geosite:")) {
-                        geosite += item.replace("geosite:", "");
-                    } else if (item.startsWith("full:")) {
-                        domain_full += item.replace("full:", "").toLower();
-                    } else if (item.startsWith("domain:")) {
-                        domain_subdomain += item.replace("domain:", "").toLower();
-                    } else if (item.startsWith("regexp:")) {
-                        domain_regexp += item.replace("regexp:", "").toLower();
-                    } else if (item.startsWith("keyword:")) {
-                        domain_keyword += item.replace("keyword:", "").toLower();
-                    } else {
-                        domain_full += item.toLower();
-                    }
-                }
-            }
-            if (isIP) {
-                if (ip_cidr.isEmpty() && geoip.isEmpty()) return rule;
-                rule["ip_cidr"] = ip_cidr;
-                rule["geoip"] = geoip;
-            } else {
-                if (domain_keyword.isEmpty() && domain_subdomain.isEmpty() && domain_regexp.isEmpty() && domain_full.isEmpty() && geosite.isEmpty()) {
-                    return rule;
-                }
-                rule["domain"] = domain_full;
-                rule["domain_suffix"] = domain_subdomain; // v2ray Subdomain => sing-box suffix
-                rule["domain_keyword"] = domain_keyword;
-                rule["domain_regex"] = domain_regexp;
-                rule["geosite"] = geosite;
-            }
-            return rule;
-        };
+        // manage routing section
+        auto routeObj = QJsonObject{
+            {"auto_detect_interface", true},
+            {
+                "geoip",
+                QJsonObject{
+                    {"path", geoip},
+                },
+            },
+            {
+                "geosite",
+                QJsonObject{
+                    {"path", geosite},
+                },
+            }};
+        if (!status->forTest) routeObj["final"] = dataStore->routing->def_outbound;
+        if (status->forExport) {
+            routeObj.remove("geoip");
+            routeObj.remove("geosite");
+        }
 
+        auto routeChain = NekoGui::profileManager->GetRouteChain(NekoGui::dataStore->routing->current_route_id);
+        if (routeChain == nullptr) {
+            MessageBoxWarning("Corrupted Data", "Routing profile does not exist, try resetting the route profile in Routing Settings");
+            return;
+        }
+        auto neededOutbounds = routeChain->get_used_outbounds();
+        auto neededRuleSets = routeChain->get_used_rule_sets();
+        std::map<int, QString> outboundMap;
+        outboundMap[-1] = "proxy";
+        outboundMap[-2] = "direct";
+        outboundMap[-3] = "block";
+        outboundMap[-4] = "dns-out";
+        int suffix = 0;
+        for (const auto &item: *neededOutbounds) {
+            if (item < 0) continue;
+            auto neededEnt = NekoGui::profileManager->GetProfile(item);
+            if (neededEnt == nullptr) {
+                MessageBoxWarning("Invalid Data", "The routing profile is referencing outbounds that no longer exists, consider revising your settings");
+                return;
+            }
+            QJsonObject currOutbound;
+            QString tag = "rout-" + Int2String(suffix++);
+            BuildOutbound(neededEnt, status, currOutbound, tag);
+            status->outbounds += currOutbound;
+            outboundMap[item] = tag;
+
+            // add to dns direct resolve
+            if (!IsIpAddress(neededEnt->bean->serverAddress)) {
+                status->domainListDNSDirect << neededEnt->bean->serverAddress;
+            }
+        }
+        routeObj["rules"] = routeChain->get_route_rules(false, outboundMap);
+
+        auto ruleSetArray = QJsonArray();
+        for (const auto &item: *neededRuleSets) {
+            ruleSetArray += QJsonObject{
+                {"type", "local"},
+                {"tag", item},
+                {"format", "binary"},
+                {"path", RULE_SETS_DIR + QString("/%1.srs").arg(item)},
+            };
+            if (QFile(QString(RULE_SETS_DIR + "/%1.srs").arg(item)).exists()) continue;
+            bool ok;
+            auto err = NekoGui_rpc::defaultClient->CompileGeoSet(&ok, item.contains("_IP") ? NekoGui_rpc::GeoRuleSetType::ip : NekoGui_rpc::GeoRuleSetType::site, item.toStdString());
+            if (!ok) {
+                MW_show_log("Failed to generate rule set asset for " + item);
+                status->result->error = err;
+                return;
+            }
+        }
+        routeObj["rule_set"] = ruleSetArray;
+
+        status->result->coreConfig["route"] = routeObj;
+
+        // DNS settings
         // final add DNS
         QJsonObject dns;
         QJsonArray dnsServers;
@@ -600,34 +603,22 @@ namespace NekoGui {
             };
         }
 
+        // Direct dns domains
+        QJsonArray directDnsDomains;
+        for (const auto &item: status->domainListDNSDirect) {
+            directDnsDomains.append(item);
+        }
+        dnsRules += QJsonObject{
+            {"domain", directDnsDomains},
+            {"server", "dns-direct"},
+        };
+
         // Underlying 100% Working DNS
         dnsServers += QJsonObject{
             {"tag", "dns-local"},
             {"address", BOX_UNDERLYING_DNS_EXPORT},
             {"detour", "direct"},
         };
-
-        // sing-box dns rule object
-        auto add_rule_dns = [&](const QStringList &list, const QString &server) {
-            auto rule = make_rule(list, false);
-            if (rule.isEmpty()) return;
-            rule["server"] = server;
-            dnsRules += rule;
-        };
-        add_rule_dns(status->domainListDNSRemote, "dns-remote");
-        add_rule_dns(status->domainListDNSDirect, "dns-direct");
-
-        // built-in rules
-        if (!status->forTest) {
-            dnsRules += QJsonObject{
-                {"query_type", QJsonArray{32, 33}},
-                {"server", "dns-block"},
-            };
-            dnsRules += QJsonObject{
-                {"domain_suffix", ".lan"},
-                {"server", "dns-block"},
-            };
-        }
 
         // fakedns rule
         if (dataStore->fake_dns && dataStore->spmode_vpn && !status->forTest) {
@@ -645,99 +636,6 @@ namespace NekoGui {
             dns = QString2QJsonObject(dataStore->routing->dns_object);
         }
         status->result->coreConfig.insert("dns", dns);
-
-        // Routing
-
-        // dns hijack
-        if (!status->forTest) {
-            status->routingRules += QJsonObject{
-                {"protocol", "dns"},
-                {"outbound", "dns-out"},
-            };
-        }
-
-        // sing-box routing rule object
-        auto add_rule_route = [&](const QStringList &list, bool isIP, const QString &out) {
-            auto rule = make_rule(list, isIP);
-            if (rule.isEmpty()) return;
-            rule["outbound"] = out;
-            status->routingRules += rule;
-        };
-
-        // final add user rule
-        add_rule_route(status->domainListBlock, false, "block");
-        add_rule_route(status->domainListRemote, false, tagProxy);
-        add_rule_route(status->domainListDirect, false, "bypass");
-        add_rule_route(status->ipListBlock, true, "block");
-        add_rule_route(status->ipListRemote, true, tagProxy);
-        add_rule_route(status->ipListDirect, true, "bypass");
-
-        // built-in rules
-        status->routingRules += QJsonObject{
-            {"ip_cidr", QJsonArray{"224.0.0.0/3", "ff00::/8"}},
-            {"outbound", "block"},
-        };
-        status->routingRules += QJsonObject{
-            {"source_ip_cidr", QJsonArray{"224.0.0.0/3", "ff00::/8"}},
-            {"outbound", "block"},
-        };
-
-        // tun user rule
-        if (dataStore->spmode_vpn && !status->forTest) {
-            auto match_out = dataStore->vpn_rule_white ? "proxy" : "bypass";
-
-            QString process_name_rule = dataStore->vpn_rule_process.trimmed();
-            if (!process_name_rule.isEmpty()) {
-                auto arr = SplitLinesSkipSharp(process_name_rule);
-                QJsonObject rule{{"outbound", match_out},
-                                 {"process_name", QList2QJsonArray(arr)}};
-                status->routingRules += rule;
-            }
-
-            QString cidr_rule = dataStore->vpn_rule_cidr.trimmed();
-            if (!cidr_rule.isEmpty()) {
-                auto arr = SplitLinesSkipSharp(cidr_rule);
-                QJsonObject rule{{"outbound", match_out},
-                                 {"ip_cidr", QList2QJsonArray(arr)}};
-                status->routingRules += rule;
-            }
-
-            auto autoBypassExternalProcessPaths = getAutoBypassExternalProcessPaths(status->result);
-            if (!autoBypassExternalProcessPaths.isEmpty()) {
-                QJsonObject rule{{"outbound", "bypass"},
-                                 {"process_name", QList2QJsonArray(autoBypassExternalProcessPaths)}};
-                status->routingRules += rule;
-            }
-        }
-
-        // geopath
-        auto geoip = FindCoreAsset("geoip.db");
-        auto geosite = FindCoreAsset("geosite.db");
-        if (geoip.isEmpty()) status->result->error = +"geoip.db not found";
-        if (geosite.isEmpty()) status->result->error = +"geosite.db not found";
-
-        // final add routing rule
-        auto routeObj = QJsonObject{
-            {"auto_detect_interface", true},
-            {
-                "geoip",
-                QJsonObject{
-                    {"path", geoip},
-                },
-            },
-            {
-                "geosite",
-                QJsonObject{
-                    {"path", geosite},
-                },
-            }};
-        if (!status->forTest) routeObj["final"] = dataStore->routing->def_outbound;
-        if (status->forExport) {
-            routeObj.remove("geoip");
-            routeObj.remove("geosite");
-            routeObj.remove("auto_detect_interface");
-        }
-        status->result->coreConfig.insert("route", routeObj);
 
         // experimental
         QJsonObject experimentalObj;

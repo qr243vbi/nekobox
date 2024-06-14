@@ -3,8 +3,6 @@
 #include <utility>
 #include <QStringList>
 
-#ifndef NKR_NO_GRPC
-
 #include "main/NekoGui.hpp"
 
 #include <QCoreApplication>
@@ -15,6 +13,8 @@
 #include <QThread>
 #include <QMutex>
 #include <QAbstractNetworkCache>
+
+#include <iostream>
 
 namespace QtGrpc {
     const char *GrpcAcceptEncodingHeader = "grpc-accept-encoding";
@@ -280,6 +280,78 @@ namespace NekoGui_rpc {
             return reply;
         }
     }
-} // namespace NekoGui_rpc
 
-#endif
+    QStringList Client::GetGeoList(bool *rpcOK, GeoRuleSetType mode) {
+        switch (mode) {
+            case GeoRuleSetType::ip: {
+                libcore::EmptyReq req;
+                libcore::GetGeoIPListResponse resp;
+
+                auto status = default_grpc_channel->Call("GetGeoIPList", req, &resp);
+                if (status == QNetworkReply::NoError) {
+                    QStringList res;
+                    for (const auto & i : resp.items()) {
+                        res.append(QString::fromStdString(i));
+                    }
+                    *rpcOK = true;
+                    return res;
+                } else {
+                    NOT_OK
+                    return {};
+                }
+            }
+            case GeoRuleSetType::site: {
+                libcore::EmptyReq req;
+                libcore::GetGeoSiteListResponse resp;
+
+                auto status = default_grpc_channel->Call("GetGeoSiteList", req, &resp);
+                if (status == QNetworkReply::NoError) {
+                    QStringList res;
+                    for (const auto & i : resp.items()) {
+                        res.append(QString::fromStdString(i));
+                    }
+                    *rpcOK = true;
+                    return res;
+                } else {
+                    NOT_OK
+                    return {};
+                }
+            }
+        }
+        return {};
+    }
+
+    QString Client::CompileGeoSet(bool *rpcOK, GeoRuleSetType mode, std::string category) {
+        switch (mode) {
+            case ip: {
+                libcore::CompileGeoIPToSrsRequest req;
+                libcore::EmptyResp resp;
+                req.set_item(category);
+
+                auto status = default_grpc_channel->Call("CompileGeoIPToSrs", req, &resp);
+                if (status == QNetworkReply::NoError) {
+                    *rpcOK = true;
+                    return "";
+                } else {
+                    NOT_OK
+                    return qt_error_string(status);
+                }
+            }
+            case site: {
+                libcore::CompileGeoSiteToSrsRequest req;
+                libcore::EmptyResp resp;
+                req.set_item(category);
+
+                auto status = default_grpc_channel->Call("CompileGeoSiteToSrs", req, &resp);
+                if (status == QNetworkReply::NoError) {
+                    *rpcOK = true;
+                    return "";
+                } else {
+                    NOT_OK
+                    return qt_error_string(status);
+                }
+            }
+        }
+    }
+
+} // namespace NekoGui_rpc

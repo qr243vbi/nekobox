@@ -409,7 +409,6 @@ void MainWindow::neko_stop(bool crash, bool sem) {
             },
             DS_cores);
 
-#ifndef NKR_NO_GRPC
         NekoGui_traffic::trafficLooper->loop_enabled = false;
         NekoGui_traffic::trafficLooper->loop_mutex.lock();
         if (NekoGui::dataStore->traffic_loop_interval != 0) {
@@ -431,7 +430,6 @@ void MainWindow::neko_stop(bool crash, bool sem) {
                 return false;
             }
         }
-#endif
 
         NekoGui::dataStore->UpdateStartedId(-1919);
         NekoGui::dataStore->need_keep_vpn_off = false;
@@ -475,7 +473,6 @@ void MainWindow::neko_stop(bool crash, bool sem) {
 
 void MainWindow::CheckUpdate() {
     // on new thread...
-#ifndef NKR_NO_GRPC
     bool ok;
     libcore::UpdateReq request;
     request.set_action(libcore::UpdateAction::Check);
@@ -536,5 +533,4 @@ void MainWindow::CheckUpdate() {
             QDesktopServices::openUrl(QUrl(response.release_url().c_str()));
         }
     });
-#endif
 }

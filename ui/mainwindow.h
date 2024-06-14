@@ -179,7 +179,7 @@ private:
 
     void HotkeyEvent(const QString &key);
 
-    // grpc and ...
+    // grpc
 
     static void setup_grpc();
 

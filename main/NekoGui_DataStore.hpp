@@ -25,8 +25,6 @@ namespace NekoGui {
         explicit Routing(int preset = 0);
 
         static QStringList List();
-
-        static bool SetToActive(const QString &name);
     };
 
     class ExtraCore : public JsonStore {
@@ -179,7 +177,7 @@ namespace NekoGui {
 
         void UpdateStartedId(int id);
 
-        QString GetUserAgent(bool isDefault = false) const;
+        [[nodiscard]] QString GetUserAgent(bool isDefault = false) const;
     };
 
     extern DataStore *dataStore;

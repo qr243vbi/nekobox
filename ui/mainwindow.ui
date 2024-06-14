@@ -408,12 +408,6 @@
      </property>
      <addaction name="actionfake_2"/>
     </widget>
-    <widget class="QMenu" name="menuActive_Routing">
-     <property name="title">
-      <string>Active Routing</string>
-     </property>
-     <addaction name="actionfake_3"/>
-    </widget>
     <addaction name="actionShow_window"/>
     <addaction name="menu_add_from_clipboard2"/>
     <addaction name="menu_scan_qr"/>
@@ -422,7 +416,6 @@
     <addaction name="actionRemember_last_proxy"/>
     <addaction name="actionAllow_LAN"/>
     <addaction name="menuActive_Server"/>
-    <addaction name="menuActive_Routing"/>
     <addaction name="menu_spmode"/>
     <addaction name="menu_program_preference"/>
     <addaction name="separator"/>

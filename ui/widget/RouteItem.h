@@ -2,7 +2,8 @@
 
 #include <QWidget>
 #include <QListWidgetItem>
-#include <QGroupBox>
+#include <QDialog>
+#include <QStringListModel>
 
 #include "db/RouteEntity.h"
 
@@ -12,7 +13,7 @@ namespace Ui {
 }
 QT_END_NAMESPACE
 
-class RouteItem : public QGroupBox {
+class RouteItem : public QDialog {
     Q_OBJECT
 
 public:
@@ -21,13 +22,19 @@ public:
 
     std::shared_ptr<NekoGui::RoutingChain> chain;
 signals:
-    void settingsChanged(const std::shared_ptr<NekoGui::RoutingChain> routeChain);
+    void settingsChanged(std::shared_ptr<NekoGui::RoutingChain> routingChain);
 
 private:
     Ui::RouteItem *ui;
     int currentIndex = -1;
 
-    int lastNum;
+    int lastNum = 0;
+
+    QStringList geo_items;
+
+    QStringList current_helper_items;
+
+    QStringListModel* helperModel;
 
     [[nodiscard]] int getIndexOf(const QString& name) const;
 
@@ -37,11 +44,19 @@ private:
 
     void setDefaultRuleData(const QString& currentData);
 
+    void updateRuleSection();
+
+    void updateRulePreview();
+
     void updateRouteItemsView();
 
+    void updateHelperItems(const QString& base);
+
+    void applyRuleHelperSelect(const QModelIndex& index);
+
 private slots:
-    void on_ok_button_clicked();
-    void on_cancel_button_clicked();
+    void accept() override;
+
     void on_new_route_item_clicked();
     void on_moveup_route_item_clicked();
     void on_movedown_route_item_clicked();

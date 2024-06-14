@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
  <class>RouteItem</class>
- <widget class="QGroupBox" name="RouteItem">
+ <widget class="QDialog" name="RouteItem">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>GroupBox</string>
+   <string>Route Profile</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_3">
    <item>
@@ -81,7 +81,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QGroupBox" name="groupBox_2">
+       <widget class="QGroupBox" name="rule_attr_box">
         <property name="title">
          <string>Rule Attributes</string>
         </property>
@@ -129,7 +129,20 @@
            </property>
            <layout class="QHBoxLayout" name="horizontalLayout_4">
             <item>
+             <widget class="QTextBrowser" name="rule_preview">
+              <property name="minimumSize">
+               <size>
+                <width>190</width>
+                <height>0</height>
+               </size>
+              </property>
+             </widget>
+            </item>
+            <item>
              <widget class="QTextEdit" name="rule_attr_text"/>
+            </item>
+            <item>
+             <widget class="QListView" name="rule_set_helper"/>
             </item>
             <item>
              <widget class="QComboBox" name="rule_attr_selector"/>
@@ -140,27 +153,14 @@
         </layout>
        </widget>
       </item>
-      <item>
-       <widget class="QWidget" name="widget_4" native="true">
-        <layout class="QHBoxLayout" name="horizontalLayout_5">
-         <item>
-          <widget class="QPushButton" name="ok_button">
-           <property name="text">
-            <string>Ok</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QPushButton" name="cancel_button">
-           <property name="text">
-            <string>Cancel</string>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </widget>
-      </item>
      </layout>
+    </widget>
+   </item>
+   <item alignment="Qt::AlignHCenter">
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+     </property>
     </widget>
    </item>
   </layout>

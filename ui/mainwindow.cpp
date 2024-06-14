@@ -92,17 +92,15 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     }
 
     // software_name
-    if (IS_NEKO_BOX) {
-        software_name = "NekoBox";
-        software_core_name = "sing-box";
-        // replace default values
-        if (NekoGui::dataStore->log_level == "warning") NekoGui::dataStore->log_level = "info";
-        if (NekoGui::dataStore->mux_protocol.isEmpty()) NekoGui::dataStore->mux_protocol = "h2mux";
-        //
-        if (QDir("dashboard").count() == 0) {
-            QDir().mkdir("dashboard");
-            QFile::copy(":/neko/dashboard-notice.html", "dashboard/index.html");
-        }
+    software_name = "NekoBox";
+    software_core_name = "sing-box";
+    // replace default values
+    if (NekoGui::dataStore->log_level == "warning") NekoGui::dataStore->log_level = "info";
+    if (NekoGui::dataStore->mux_protocol.isEmpty()) NekoGui::dataStore->mux_protocol = "h2mux";
+    //
+    if (QDir("dashboard").count() == 0) {
+        QDir().mkdir("dashboard");
+        QFile::copy(":/neko/dashboard-notice.html", "dashboard/index.html");
     }
 
     // top bar
@@ -275,17 +273,6 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
             ui->menuActive_Server->addAction(a);
             if (++active_server_item_count == 100) break;
         }
-        // active routing
-        for (const auto &old: ui->menuActive_Routing->actions()) {
-            ui->menuActive_Routing->removeAction(old);
-            old->deleteLater();
-        }
-        for (const auto &name: NekoGui::Routing::List()) {
-            auto a = new QAction(name, this);
-            a->setCheckable(true);
-            a->setChecked(name == NekoGui::dataStore->active_routing);
-            ui->menuActive_Routing->addAction(a);
-        }
     });
     connect(ui->menuActive_Server, &QMenu::triggered, this, [=](QAction *a) {
         bool ok;
@@ -295,24 +282,6 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
             neko_stop();
         } else {
             neko_start(id);
-        }
-    });
-    connect(ui->menuActive_Routing, &QMenu::triggered, this, [=](QAction *a) {
-        auto fn = a->text();
-        if (!fn.isEmpty()) {
-            NekoGui::Routing r;
-            r.load_control_must = true;
-            r.fn = ROUTES_PREFIX + fn;
-            if (r.Load()) {
-                if (QMessageBox::question(GetMessageBoxParent(), software_name, tr("Load routing and apply: %1").arg(fn) + "\n" ) == QMessageBox::Yes) {
-                    NekoGui::Routing::SetToActive(fn);
-                    if (NekoGui::dataStore->started_id >= 0) {
-                        neko_start(NekoGui::dataStore->started_id);
-                    } else {
-                        refresh_status();
-                    }
-                }
-            }
         }
     });
     connect(ui->actionRemember_last_proxy, &QAction::triggered, this, [=](bool checked) {
@@ -531,6 +500,7 @@ void MainWindow::dialog_message_impl(const QString &sender, const QString &info)
     if (info.contains("UpdateDataStore")) {
         auto suggestRestartProxy = NekoGui::dataStore->Save();
         if (info.contains("RouteChanged")) {
+            NekoGui::dataStore->routing->Save();
             suggestRestartProxy = true;
         }
         if (info.contains("NeedRestart")) {

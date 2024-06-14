@@ -86,15 +86,27 @@ namespace NekoGui_ConfigItem {
                 case itemType::boolean:
                     object.insert(item->name, *(bool *) item->ptr);
                     break;
-                case itemType::stringList:
-                    object.insert(item->name, QList2QJsonArray<QString>(*(QList<QString> *) item->ptr));
+                case itemType::stringList: {
+                    if (QListStr2QJsonArray(*(QList<QString> *) item->ptr).isEmpty()) continue;
+                    object.insert(item->name, QListStr2QJsonArray(*(QList<QString> *) item->ptr));
                     break;
-                case itemType::integerList:
-                    object.insert(item->name, QList2QJsonArray<int>(*(QList<int> *) item->ptr));
+                }
+                case itemType::integerList: {
+                    if (QListInt2QJsonArray(*(QList<int> *) item->ptr).isEmpty()) continue;
+                    object.insert(item->name, QListInt2QJsonArray(*(QList<int> *) item->ptr));
                     break;
+                }
                 case itemType::jsonStore:
                     // _add 时应关联对应 JsonStore 的指针
                     object.insert(item->name, ((JsonStore *) item->ptr)->ToJson());
+                    break;
+                case itemType::jsonStoreList:
+                    QJsonArray jsonArray;
+                    auto arr = *(QList<JsonStore*> *) item->ptr;
+                    for ( JsonStore* obj : arr) {
+                        jsonArray.push_back(obj->ToJson());
+                    }
+                    object.insert(item->name, jsonArray);
                     break;
             }
         }
@@ -330,6 +342,7 @@ namespace NekoGui {
         if (!Preset::SingBox::DomainStrategy.contains(domain_strategy)) domain_strategy = "";
         if (!Preset::SingBox::DomainStrategy.contains(outbound_domain_strategy)) outbound_domain_strategy = "";
         _add(new configItem("current_route_id", &this->current_route_id, itemType::integer));
+        _add(new configItem("default_outbound", &this->def_outbound, itemType::string));
         //
         _add(new configItem("remote_dns", &this->remote_dns, itemType::string));
         _add(new configItem("remote_dns_strategy", &this->remote_dns_strategy, itemType::string));
@@ -345,20 +358,7 @@ namespace NekoGui {
     }
 
     QStringList Routing::List() {
-        QDir dr(ROUTES_PREFIX);
-        return dr.entryList(QDir::Files);
-    }
-
-    bool Routing::SetToActive(const QString &name) {
-        NekoGui::dataStore->routing = std::make_unique<Routing>();
-        NekoGui::dataStore->routing->load_control_must = true;
-        NekoGui::dataStore->routing->fn = ROUTES_PREFIX + name;
-        auto ok = NekoGui::dataStore->routing->Load();
-        if (ok) {
-            NekoGui::dataStore->active_routing = name;
-            NekoGui::dataStore->Save();
-        }
-        return ok;
+        return {"Default"};
     }
 
     // NO default extra core

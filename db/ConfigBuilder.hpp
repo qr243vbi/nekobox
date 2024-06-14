@@ -28,14 +28,7 @@ namespace NekoGui {
 
         // xxList is V2Ray format string list
 
-        QStringList domainListDNSRemote;
         QStringList domainListDNSDirect;
-        QStringList domainListRemote;
-        QStringList domainListDirect;
-        QStringList ipListRemote;
-        QStringList ipListDirect;
-        QStringList domainListBlock;
-        QStringList ipListBlock;
 
         // config format
 
@@ -52,4 +45,6 @@ namespace NekoGui {
 
     QString BuildChainInternal(int chainId, const QList<std::shared_ptr<ProxyEntity>> &ents,
                                const std::shared_ptr<BuildConfigStatus> &status);
+
+    void BuildOutbound(const std::shared_ptr<ProxyEntity> &ent, const std::shared_ptr<BuildConfigStatus> &status, QJsonObject& outbound, const QString& tag);
 } // namespace NekoGui

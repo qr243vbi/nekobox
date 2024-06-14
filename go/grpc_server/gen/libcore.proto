@@ -12,6 +12,11 @@ service LibcoreService {
   rpc Test(TestReq) returns (TestResp) {}
   rpc QueryStats(QueryStatsReq) returns (QueryStatsResp) {}
   rpc ListConnections(EmptyReq) returns (ListConnectionsResp) {}
+  //
+  rpc GetGeoIPList(EmptyReq) returns (GetGeoIPListResponse);
+  rpc GetGeoSiteList(EmptyReq) returns (GetGeoSiteListResponse);
+  rpc CompileGeoIPToSrs(CompileGeoIPToSrsRequest) returns (EmptyResp);
+  rpc CompileGeoSiteToSrs(CompileGeoSiteToSrsRequest) returns (EmptyResp);
 }
 
 message EmptyReq {}
@@ -92,4 +97,20 @@ message UpdateResp {
 
 message ListConnectionsResp {
   string nekoray_connections_json = 1;
+}
+
+message GetGeoIPListResponse {
+  repeated string items = 1;
+}
+
+message GetGeoSiteListResponse {
+  repeated string items = 2;
+}
+
+message CompileGeoIPToSrsRequest {
+  string item = 1;
+}
+
+message CompileGeoSiteToSrsRequest {
+  string item = 1;
 }

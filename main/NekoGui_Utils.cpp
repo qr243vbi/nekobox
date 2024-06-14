@@ -105,16 +105,25 @@ QString QJsonObject2QString(const QJsonObject &jsonObject, bool compact) {
     return QJsonDocument(jsonObject).toJson(compact ? QJsonDocument::Compact : QJsonDocument::Indented);
 }
 
-template<typename T>
-QJsonArray QList2QJsonArray(const QList<T> &list) {
+QJsonArray QListStr2QJsonArray(const QList<QString> &list) {
+    QVariantList list2;
+    bool isEmpty = true;
+    for (auto &item: list) {
+        if (item.trimmed().isEmpty()) continue;
+        list2.append(item);
+        isEmpty = false;
+    }
+
+    if (isEmpty) return {};
+    else return QJsonArray::fromVariantList(list2);
+}
+
+QJsonArray QListInt2QJsonArray(const QList<int> &list) {
     QVariantList list2;
     for (auto &item: list)
         list2.append(item);
     return QJsonArray::fromVariantList(list2);
 }
-
-template QJsonArray QList2QJsonArray<int>(const QList<int> &list);
-template QJsonArray QList2QJsonArray<QString>(const QList<QString> &list);
 
 QList<int> QJsonArray2QListInt(const QJsonArray &arr) {
     QList<int> list2;

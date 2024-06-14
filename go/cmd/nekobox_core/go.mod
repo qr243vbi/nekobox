@@ -3,13 +3,13 @@ module nekobox_core
 go 1.19
 
 require (
-	github.com/Mahdi-zarei/sing-box-extra v0.0.0-20240524210208-2f5446580565
+	github.com/Mahdi-zarei/sing-box-extra v0.0.0-20240614112142-907408da0959
 	github.com/matsuridayo/libneko v0.0.0-20230913024055-5277a5bfc889
-	github.com/sagernet/sing-box v1.9.0-rc.21
+	github.com/sagernet/sing-box v1.9.3
 	grpc_server v1.0.0
 )
 
-replace github.com/sagernet/sing-box => github.com/Mahdi-zarei/sing-box v1.3.5-0.20240524203629-e284713b657d
+replace github.com/sagernet/sing-box => github.com/Mahdi-zarei/sing-box v1.3.5-0.20240613091205-668453f192a9
 
 require (
 	berty.tech/go-libtor v1.0.385 // indirect
@@ -55,16 +55,16 @@ require (
 	github.com/sagernet/cloudflare-tls v0.0.0-20231208171750-a4483c1b7cd1 // indirect
 	github.com/sagernet/gvisor v0.0.0-20240428053021-e691de28565f // indirect
 	github.com/sagernet/netlink v0.0.0-20240523065131-45e60152f9ba // indirect
-	github.com/sagernet/quic-go v0.43.1-beta.1 // indirect
+	github.com/sagernet/quic-go v0.43.1-beta.2 // indirect
 	github.com/sagernet/reality v0.0.0-20230406110435-ee17307e7691 // indirect
-	github.com/sagernet/sing v0.4.0-beta.20 // indirect
-	github.com/sagernet/sing-dns v0.2.0-beta.18 // indirect
+	github.com/sagernet/sing v0.4.1 // indirect
+	github.com/sagernet/sing-dns v0.2.0 // indirect
 	github.com/sagernet/sing-mux v0.2.0 // indirect
 	github.com/sagernet/sing-quic v0.2.0-beta.5 // indirect
 	github.com/sagernet/sing-shadowsocks v0.2.6 // indirect
 	github.com/sagernet/sing-shadowsocks2 v0.2.0 // indirect
 	github.com/sagernet/sing-shadowtls v0.1.4 // indirect
-	github.com/sagernet/sing-tun v0.3.0-beta.6 // indirect
+	github.com/sagernet/sing-tun v0.3.2 // indirect
 	github.com/sagernet/sing-vmess v0.1.8 // indirect
 	github.com/sagernet/smux v0.0.0-20231208180855-7041f6ea79e7 // indirect
 	github.com/sagernet/tfo-go v0.0.0-20231209031829-7b5343ac1dc6 // indirect
@@ -84,7 +84,7 @@ require (
 	golang.org/x/mod v0.17.0 // indirect
 	golang.org/x/net v0.25.0 // indirect
 	golang.org/x/sync v0.7.0 // indirect
-	golang.org/x/sys v0.20.0 // indirect
+	golang.org/x/sys v0.21.0 // indirect
 	golang.org/x/text v0.15.0 // indirect
 	golang.org/x/time v0.5.0 // indirect
 	golang.org/x/tools v0.21.0 // indirect

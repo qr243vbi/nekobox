@@ -19,13 +19,17 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	LibcoreService_Exit_FullMethodName            = "/libcore.LibcoreService/Exit"
-	LibcoreService_Update_FullMethodName          = "/libcore.LibcoreService/Update"
-	LibcoreService_Start_FullMethodName           = "/libcore.LibcoreService/Start"
-	LibcoreService_Stop_FullMethodName            = "/libcore.LibcoreService/Stop"
-	LibcoreService_Test_FullMethodName            = "/libcore.LibcoreService/Test"
-	LibcoreService_QueryStats_FullMethodName      = "/libcore.LibcoreService/QueryStats"
-	LibcoreService_ListConnections_FullMethodName = "/libcore.LibcoreService/ListConnections"
+	LibcoreService_Exit_FullMethodName                = "/libcore.LibcoreService/Exit"
+	LibcoreService_Update_FullMethodName              = "/libcore.LibcoreService/Update"
+	LibcoreService_Start_FullMethodName               = "/libcore.LibcoreService/Start"
+	LibcoreService_Stop_FullMethodName                = "/libcore.LibcoreService/Stop"
+	LibcoreService_Test_FullMethodName                = "/libcore.LibcoreService/Test"
+	LibcoreService_QueryStats_FullMethodName          = "/libcore.LibcoreService/QueryStats"
+	LibcoreService_ListConnections_FullMethodName     = "/libcore.LibcoreService/ListConnections"
+	LibcoreService_GetGeoIPList_FullMethodName        = "/libcore.LibcoreService/GetGeoIPList"
+	LibcoreService_GetGeoSiteList_FullMethodName      = "/libcore.LibcoreService/GetGeoSiteList"
+	LibcoreService_CompileGeoIPToSrs_FullMethodName   = "/libcore.LibcoreService/CompileGeoIPToSrs"
+	LibcoreService_CompileGeoSiteToSrs_FullMethodName = "/libcore.LibcoreService/CompileGeoSiteToSrs"
 )
 
 // LibcoreServiceClient is the client API for LibcoreService service.
@@ -39,6 +43,10 @@ type LibcoreServiceClient interface {
 	Test(ctx context.Context, in *TestReq, opts ...grpc.CallOption) (*TestResp, error)
 	QueryStats(ctx context.Context, in *QueryStatsReq, opts ...grpc.CallOption) (*QueryStatsResp, error)
 	ListConnections(ctx context.Context, in *EmptyReq, opts ...grpc.CallOption) (*ListConnectionsResp, error)
+	GetGeoIPList(ctx context.Context, in *EmptyReq, opts ...grpc.CallOption) (*GetGeoIPListResponse, error)
+	GetGeoSiteList(ctx context.Context, in *EmptyReq, opts ...grpc.CallOption) (*GetGeoSiteListResponse, error)
+	CompileGeoIPToSrs(ctx context.Context, in *CompileGeoIPToSrsRequest, opts ...grpc.CallOption) (*EmptyResp, error)
+	CompileGeoSiteToSrs(ctx context.Context, in *CompileGeoSiteToSrsRequest, opts ...grpc.CallOption) (*EmptyResp, error)
 }
 
 type libcoreServiceClient struct {
@@ -112,6 +120,42 @@ func (c *libcoreServiceClient) ListConnections(ctx context.Context, in *EmptyReq
 	return out, nil
 }
 
+func (c *libcoreServiceClient) GetGeoIPList(ctx context.Context, in *EmptyReq, opts ...grpc.CallOption) (*GetGeoIPListResponse, error) {
+	out := new(GetGeoIPListResponse)
+	err := c.cc.Invoke(ctx, LibcoreService_GetGeoIPList_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *libcoreServiceClient) GetGeoSiteList(ctx context.Context, in *EmptyReq, opts ...grpc.CallOption) (*GetGeoSiteListResponse, error) {
+	out := new(GetGeoSiteListResponse)
+	err := c.cc.Invoke(ctx, LibcoreService_GetGeoSiteList_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *libcoreServiceClient) CompileGeoIPToSrs(ctx context.Context, in *CompileGeoIPToSrsRequest, opts ...grpc.CallOption) (*EmptyResp, error) {
+	out := new(EmptyResp)
+	err := c.cc.Invoke(ctx, LibcoreService_CompileGeoIPToSrs_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *libcoreServiceClient) CompileGeoSiteToSrs(ctx context.Context, in *CompileGeoSiteToSrsRequest, opts ...grpc.CallOption) (*EmptyResp, error) {
+	out := new(EmptyResp)
+	err := c.cc.Invoke(ctx, LibcoreService_CompileGeoSiteToSrs_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // LibcoreServiceServer is the server API for LibcoreService service.
 // All implementations must embed UnimplementedLibcoreServiceServer
 // for forward compatibility
@@ -123,6 +167,10 @@ type LibcoreServiceServer interface {
 	Test(context.Context, *TestReq) (*TestResp, error)
 	QueryStats(context.Context, *QueryStatsReq) (*QueryStatsResp, error)
 	ListConnections(context.Context, *EmptyReq) (*ListConnectionsResp, error)
+	GetGeoIPList(context.Context, *EmptyReq) (*GetGeoIPListResponse, error)
+	GetGeoSiteList(context.Context, *EmptyReq) (*GetGeoSiteListResponse, error)
+	CompileGeoIPToSrs(context.Context, *CompileGeoIPToSrsRequest) (*EmptyResp, error)
+	CompileGeoSiteToSrs(context.Context, *CompileGeoSiteToSrsRequest) (*EmptyResp, error)
 	mustEmbedUnimplementedLibcoreServiceServer()
 }
 
@@ -150,6 +198,18 @@ func (UnimplementedLibcoreServiceServer) QueryStats(context.Context, *QueryStats
 }
 func (UnimplementedLibcoreServiceServer) ListConnections(context.Context, *EmptyReq) (*ListConnectionsResp, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListConnections not implemented")
+}
+func (UnimplementedLibcoreServiceServer) GetGeoIPList(context.Context, *EmptyReq) (*GetGeoIPListResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetGeoIPList not implemented")
+}
+func (UnimplementedLibcoreServiceServer) GetGeoSiteList(context.Context, *EmptyReq) (*GetGeoSiteListResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetGeoSiteList not implemented")
+}
+func (UnimplementedLibcoreServiceServer) CompileGeoIPToSrs(context.Context, *CompileGeoIPToSrsRequest) (*EmptyResp, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CompileGeoIPToSrs not implemented")
+}
+func (UnimplementedLibcoreServiceServer) CompileGeoSiteToSrs(context.Context, *CompileGeoSiteToSrsRequest) (*EmptyResp, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CompileGeoSiteToSrs not implemented")
 }
 func (UnimplementedLibcoreServiceServer) mustEmbedUnimplementedLibcoreServiceServer() {}
 
@@ -290,6 +350,78 @@ func _LibcoreService_ListConnections_Handler(srv interface{}, ctx context.Contex
 	return interceptor(ctx, in, info, handler)
 }
 
+func _LibcoreService_GetGeoIPList_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(EmptyReq)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LibcoreServiceServer).GetGeoIPList(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LibcoreService_GetGeoIPList_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LibcoreServiceServer).GetGeoIPList(ctx, req.(*EmptyReq))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LibcoreService_GetGeoSiteList_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(EmptyReq)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LibcoreServiceServer).GetGeoSiteList(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LibcoreService_GetGeoSiteList_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LibcoreServiceServer).GetGeoSiteList(ctx, req.(*EmptyReq))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LibcoreService_CompileGeoIPToSrs_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CompileGeoIPToSrsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LibcoreServiceServer).CompileGeoIPToSrs(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LibcoreService_CompileGeoIPToSrs_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LibcoreServiceServer).CompileGeoIPToSrs(ctx, req.(*CompileGeoIPToSrsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LibcoreService_CompileGeoSiteToSrs_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CompileGeoSiteToSrsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LibcoreServiceServer).CompileGeoSiteToSrs(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LibcoreService_CompileGeoSiteToSrs_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LibcoreServiceServer).CompileGeoSiteToSrs(ctx, req.(*CompileGeoSiteToSrsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // LibcoreService_ServiceDesc is the grpc.ServiceDesc for LibcoreService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -324,6 +456,22 @@ var LibcoreService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ListConnections",
 			Handler:    _LibcoreService_ListConnections_Handler,
+		},
+		{
+			MethodName: "GetGeoIPList",
+			Handler:    _LibcoreService_GetGeoIPList_Handler,
+		},
+		{
+			MethodName: "GetGeoSiteList",
+			Handler:    _LibcoreService_GetGeoSiteList_Handler,
+		},
+		{
+			MethodName: "CompileGeoIPToSrs",
+			Handler:    _LibcoreService_CompileGeoIPToSrs_Handler,
+		},
+		{
+			MethodName: "CompileGeoSiteToSrs",
+			Handler:    _LibcoreService_CompileGeoSiteToSrs_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

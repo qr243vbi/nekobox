@@ -48,9 +48,11 @@ namespace NekoGui {
 
         std::shared_ptr<Group> CurrentGroup();
 
-        bool AddRouteChain(std::shared_ptr<RoutingChain> chain);
+        bool AddRouteChain(const std::shared_ptr<RoutingChain>& chain);
 
         std::shared_ptr<RoutingChain> GetRouteChain(int id);
+
+        void UpdateRouteChains(const QList<std::shared_ptr<RoutingChain>>& newChain);
 
     private:
         // sort by id
