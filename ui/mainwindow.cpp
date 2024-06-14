@@ -194,6 +194,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
         group->Save();
     });
     ui->proxyListTable->verticalHeader()->setDefaultSectionSize(24);
+    ui->proxyListTable->setTabKeyNavigation(false);
 
     // search box
     ui->search->setVisible(false);
