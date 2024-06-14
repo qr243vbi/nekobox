@@ -82,7 +82,6 @@ DialogManageRoutes::DialogManageRoutes(QWidget *parent) : QDialog(parent), ui(ne
     ui->domainStrategyCombo->setCurrentText(NekoGui::dataStore->routing->domain_strategy);
     ui->use_dns_object->setChecked(NekoGui::dataStore->routing->use_dns_object);
     ui->dns_object->setPlainText(NekoGui::dataStore->routing->dns_object);
-    ui->dns_routing->setChecked(NekoGui::dataStore->routing->dns_routing);
     ui->remote_dns->setCurrentText(NekoGui::dataStore->routing->remote_dns);
     ui->remote_dns_strategy->setCurrentText(NekoGui::dataStore->routing->remote_dns_strategy);
     ui->direct_dns->setCurrentText(NekoGui::dataStore->routing->direct_dns);
@@ -112,7 +111,6 @@ void DialogManageRoutes::accept() {
     NekoGui::dataStore->routing->outbound_domain_strategy = ui->outbound_domain_strategy->currentText();
     NekoGui::dataStore->routing->use_dns_object = ui->use_dns_object->isChecked();
     NekoGui::dataStore->routing->dns_object = ui->dns_object->toPlainText();
-    NekoGui::dataStore->routing->dns_routing = ui->dns_routing->isChecked();
     NekoGui::dataStore->routing->remote_dns = ui->remote_dns->currentText();
     NekoGui::dataStore->routing->remote_dns_strategy = ui->remote_dns_strategy->currentText();
     NekoGui::dataStore->routing->direct_dns = ui->direct_dns->currentText();

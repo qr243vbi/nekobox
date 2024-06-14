@@ -25,20 +25,6 @@ DialogVPNSettings::DialogVPNSettings(QWidget *parent) : QDialog(parent), ui(new 
     ADJUST_SIZE
 #endif
     ui->strict_route->setChecked(NekoGui::dataStore->vpn_strict_route);
-    //
-    D_LOAD_STRING_PLAIN(vpn_rule_cidr)
-    D_LOAD_STRING_PLAIN(vpn_rule_process)
-    //
-    connect(ui->whitelist_mode, &QCheckBox::stateChanged, this, [=](int state) {
-        if (state == Qt::Checked) {
-            ui->gb_cidr->setTitle(tr("Proxy CIDR"));
-            ui->gb_process_name->setTitle(tr("Proxy Process Name"));
-        } else {
-            ui->gb_cidr->setTitle(tr("Bypass CIDR"));
-            ui->gb_process_name->setTitle(tr("Bypass Process Name"));
-        }
-    });
-    ui->whitelist_mode->setChecked(NekoGui::dataStore->vpn_rule_white);
 }
 
 DialogVPNSettings::~DialogVPNSettings() {
@@ -55,11 +41,7 @@ void DialogVPNSettings::accept() {
     NekoGui::dataStore->vpn_ipv6 = ui->vpn_ipv6->isChecked();
     NekoGui::dataStore->vpn_hide_console = ui->hide_console->isChecked();
     NekoGui::dataStore->vpn_strict_route = ui->strict_route->isChecked();
-    NekoGui::dataStore->vpn_rule_white = ui->whitelist_mode->isChecked();
     NekoGui::dataStore->enable_gso = ui->gso_enable->isChecked();
-    //
-    D_SAVE_STRING_PLAIN(vpn_rule_cidr)
-    D_SAVE_STRING_PLAIN(vpn_rule_process)
     //
     QStringList msg{"UpdateDataStore"};
     msg << "VPNChanged";

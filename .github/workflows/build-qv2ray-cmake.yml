@@ -63,7 +63,7 @@ jobs:
             qt_version: "6.5"
           - platform: ubuntu-22.04
             arch: x64
-            qt_version: "5.12"
+            qt_version: "6.5"
           - platform: macos-14
             arch: x64
             qt_version: "6.5"

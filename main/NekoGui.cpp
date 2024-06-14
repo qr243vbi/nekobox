@@ -281,9 +281,6 @@ namespace NekoGui {
         _add(new configItem("vpn_ipv6", &vpn_ipv6, itemType::boolean));
         _add(new configItem("vpn_hide_console", &vpn_hide_console, itemType::boolean));
         _add(new configItem("vpn_strict_route", &vpn_strict_route, itemType::boolean));
-        _add(new configItem("vpn_bypass_process", &vpn_rule_process, itemType::string));
-        _add(new configItem("vpn_bypass_cidr", &vpn_rule_cidr, itemType::string));
-        _add(new configItem("vpn_rule_white", &vpn_rule_white, itemType::boolean));
         _add(new configItem("check_include_pre", &check_include_pre, itemType::boolean));
         _add(new configItem("sp_format", &system_proxy_format, itemType::string));
         _add(new configItem("sub_clear", &sub_clear, itemType::boolean));
@@ -351,7 +348,6 @@ namespace NekoGui {
         _add(new configItem("direct_dns_strategy", &this->direct_dns_strategy, itemType::string));
         _add(new configItem("domain_strategy", &this->domain_strategy, itemType::string));
         _add(new configItem("outbound_domain_strategy", &this->outbound_domain_strategy, itemType::string));
-        _add(new configItem("dns_routing", &this->dns_routing, itemType::boolean));
         _add(new configItem("sniffing_mode", &this->sniffing_mode, itemType::integer));
         _add(new configItem("use_dns_object", &this->use_dns_object, itemType::boolean));
         _add(new configItem("dns_object", &this->dns_object, itemType::string));

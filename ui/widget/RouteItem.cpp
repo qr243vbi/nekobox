@@ -160,8 +160,7 @@ RouteItem::RouteItem(QWidget *parent, const std::shared_ptr<NekoGui::RoutingChai
         updateRulePreview();
     });
 
-    connect(ui->route_items, &QListWidget::itemClicked, this, [=](const QListWidgetItem *item) {
-        auto idx = getIndexOf(item->text());
+    connect(ui->route_items, &QListWidget::currentRowChanged, this, [=](const int idx) {
         if (idx == -1) return;
         currentIndex = idx;
         updateRuleSection();

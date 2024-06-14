@@ -48,6 +48,9 @@
           </item>
           <item row="1" column="0">
            <widget class="QLabel" name="label">
+            <property name="toolTip">
+             <string>Sniffs the connections intial packet(s?) to identify the protocol and the SNI. Sniff result for destination also rewrites the destionation of the connection to the sniffed SNI. For more data on the sniffed protocol refer to the sing-box's documentation.</string>
+            </property>
             <property name="text">
              <string>Sniffing Mode</string>
             </property>
@@ -111,6 +114,9 @@ For sing-box, it sets inbound.domain_strategy</string>
           </item>
           <item row="5" column="0">
            <widget class="QLabel" name="default_out_l">
+            <property name="toolTip">
+             <string>The outbound tag to use when the request is not handled by any rule</string>
+            </property>
             <property name="text">
              <string>Default Outbound</string>
             </property>
@@ -224,29 +230,9 @@ For more information, see the document &quot;Configuration/DNS&quot;.</string>
           <item row="2" column="2">
            <layout class="QHBoxLayout" name="horizontalLayout_3">
             <item>
-             <widget class="QCheckBox" name="dns_routing">
-              <property name="text">
-               <string>Enable DNS Routing</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <spacer name="horizontalSpacer_2">
-              <property name="orientation">
-               <enum>Qt::Horizontal</enum>
-              </property>
-              <property name="sizeHint" stdset="0">
-               <size>
-                <width>40</width>
-                <height>20</height>
-               </size>
-              </property>
-             </spacer>
-            </item>
-            <item>
              <widget class="QLabel" name="dns_final_out_l">
               <property name="text">
-               <string>Final DNS Out</string>
+               <string>Default DNS server</string>
               </property>
              </widget>
             </item>
@@ -254,7 +240,7 @@ For more information, see the document &quot;Configuration/DNS&quot;.</string>
              <widget class="QComboBox" name="dns_final_out">
               <item>
                <property name="text">
-                <string notr="true">proxy</string>
+                <string notr="true">remote</string>
                </property>
               </item>
               <item>
@@ -468,7 +454,6 @@ For more information, see the document &quot;Configuration/DNS&quot;.</string>
   <tabstop>remote_dns_strategy</tabstop>
   <tabstop>direct_dns</tabstop>
   <tabstop>direct_dns_strategy</tabstop>
-  <tabstop>dns_routing</tabstop>
   <tabstop>dns_final_out</tabstop>
   <tabstop>use_dns_object</tabstop>
   <tabstop>format_dns_object</tabstop>
