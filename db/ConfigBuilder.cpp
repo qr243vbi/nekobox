@@ -576,7 +576,7 @@ namespace NekoGui {
                 {"address", directDNSAddress.replace("+local://", "://")},
                 {"detour", "direct"},
             };
-            if (dataStore->routing->dns_final_out == "bypass") {
+            if (dataStore->routing->dns_final_out == "direct") {
                 dnsServers.prepend(directObj);
             } else {
                 dnsServers.append(directObj);
