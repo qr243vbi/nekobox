@@ -381,9 +381,6 @@ namespace NekoGui {
     // SingBox
 
     void BuildConfigSingBox(const std::shared_ptr<BuildConfigStatus> &status) {
-        // Log
-        status->result->coreConfig["log"] = QJsonObject{{"level", dataStore->log_level}};
-
         // Inbounds
 
         // mixed-in
@@ -464,9 +461,6 @@ namespace NekoGui {
         // custom inbound
         if (!status->forTest) QJSONARRAY_ADD(status->inbounds, QString2QJsonObject(dataStore->custom_inbound)["inbounds"].toArray())
 
-        status->result->coreConfig.insert("inbounds", status->inbounds);
-        status->result->coreConfig.insert("outbounds", status->outbounds);
-
         // Routing
         // geopath
         auto geoip = FindCoreAsset("geoip.db");
@@ -546,8 +540,6 @@ namespace NekoGui {
             }
         }
         routeObj["rule_set"] = ruleSetArray;
-
-        status->result->coreConfig["route"] = routeObj;
 
         // DNS settings
         // final add DNS
@@ -635,7 +627,6 @@ namespace NekoGui {
         if (dataStore->routing->use_dns_object) {
             dns = QString2QJsonObject(dataStore->routing->dns_object);
         }
-        status->result->coreConfig.insert("dns", dns);
 
         // experimental
         QJsonObject experimentalObj;
@@ -649,6 +640,11 @@ namespace NekoGui {
             experimentalObj["clash_api"] = clash_api;
         }
 
+        status->result->coreConfig.insert("log", QJsonObject{{"level", dataStore->log_level}});
+        status->result->coreConfig.insert("dns", dns);
+        status->result->coreConfig.insert("inbounds", status->inbounds);
+        status->result->coreConfig.insert("outbounds", status->outbounds);
+        status->result->coreConfig.insert("route", routeObj);
         if (!experimentalObj.isEmpty()) status->result->coreConfig.insert("experimental", experimentalObj);
     }
 } // namespace NekoGui
