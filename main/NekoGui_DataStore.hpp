@@ -162,6 +162,7 @@ namespace NekoGui {
 
         // Core
         int core_box_clash_api = -9090;
+        QString core_box_clash_listen_addr = "127.0.0.1";
         QString core_box_clash_api_secret = "";
         QString core_box_underlying_dns = "";
         bool core_ray_direct_dns = false;
