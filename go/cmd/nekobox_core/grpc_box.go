@@ -4,6 +4,7 @@ import (
 	"context"
 	"errors"
 	"fmt"
+	"strings"
 	"time"
 
 	"grpc_server"
@@ -149,4 +150,54 @@ func (s *server) ListConnections(ctx context.Context, in *gen.EmptyReq) (*gen.Li
 		// TODO upstream api
 	}
 	return out, nil
+}
+
+func (s *server) GetGeoIPList(ctx context.Context, in *gen.EmptyReq) (*gen.GetGeoIPListResponse, error) {
+	resp, err := boxmain.ListGeoip()
+	if err != nil {
+		return nil, err
+	}
+
+	res := make([]string, 0)
+	for _, r := range resp {
+		r += "_IP"
+		res = append(res, r)
+	}
+
+	return &gen.GetGeoIPListResponse{Items: res}, nil
+}
+
+func (s *server) GetGeoSiteList(ctx context.Context, in *gen.EmptyReq) (*gen.GetGeoSiteListResponse, error) {
+	resp, err := boxmain.GeositeList()
+	if err != nil {
+		return nil, err
+	}
+
+	res := make([]string, 0)
+	for _, r := range resp {
+		r += "_SITE"
+		res = append(res, r)
+	}
+
+	return &gen.GetGeoSiteListResponse{Items: res}, nil
+}
+
+func (s *server) CompileGeoIPToSrs(ctx context.Context, in *gen.CompileGeoIPToSrsRequest) (*gen.EmptyResp, error) {
+	category := strings.TrimSuffix(in.Item, "_IP")
+	err := boxmain.CompileRuleSet(category, boxmain.IpRuleSet, "./rule_sets/"+in.Item+".srs")
+	if err != nil {
+		return nil, err
+	}
+
+	return &gen.EmptyResp{}, nil
+}
+
+func (s *server) CompileGeoSiteToSrs(ctx context.Context, in *gen.CompileGeoSiteToSrsRequest) (*gen.EmptyResp, error) {
+	category := strings.TrimSuffix(in.Item, "_SITE")
+	err := boxmain.CompileRuleSet(category, boxmain.SiteRuleSet, "./rule_sets/"+in.Item+".srs")
+	if err != nil {
+		return nil, err
+	}
+
+	return &gen.EmptyResp{}, nil
 }

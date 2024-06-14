@@ -40,7 +40,7 @@ namespace NekoGui {
         routes = {};
         profilesIdOrder = filterIntJsonFile("profiles");
         groupsIdOrder = filterIntJsonFile("groups");
-        routesIdOrder = filterIntJsonFile("routes");
+        routesIdOrder = filterIntJsonFile("route_profiles");
         // Load Proxys
         QList<int> delProfile;
         for (auto id: profilesIdOrder) {
@@ -79,9 +79,9 @@ namespace NekoGui {
         }
         // Load Routing profiles
         for (auto id : routesIdOrder) {
-            auto route = LoadRouteChain(QString("routes/%1.json").arg(id));
+            auto route = LoadRouteChain(QString("route_profiles/%1.json").arg(id));
             if (route == nullptr) {
-                MW_show_log(QString("File routes/%1.json is corrupted, consider manually handling it").arg(id));
+                MW_show_log(QString("File route_profiles/%1.json is corrupted, consider manually handling it").arg(id));
                 continue;
             }
 
@@ -183,7 +183,7 @@ namespace NekoGui {
     }
 
     std::shared_ptr<RoutingChain> ProfileManager::LoadRouteChain(const QString &jsonPath) {
-        std::shared_ptr<RoutingChain> routingChain;
+        auto routingChain = std::make_shared<RoutingChain>();
         routingChain->fn = jsonPath;
         if (!routingChain->Load()) {
             return nullptr;
@@ -402,6 +402,34 @@ namespace NekoGui {
         return GetGroup(dataStore->current_group);
     }
 
+    RouteRule::RouteRule() {
+        _add(new configItem("name", &name, itemType::string));
+        _add(new configItem("ip_version", &ip_version, itemType::string));
+        _add(new configItem("protocol", &protocol, itemType::string));
+        _add(new configItem("domain", &domain, itemType::stringList));
+        _add(new configItem("domain_suffix", &domain_suffix, itemType::stringList));
+        _add(new configItem("domain_keyword", &domain_keyword, itemType::stringList));
+        _add(new configItem("domain_regex", &domain_regex, itemType::stringList));
+        _add(new configItem("source_ip_cidr", &source_ip_cidr, itemType::stringList));
+        _add(new configItem("source_ip_is_private", &source_ip_is_private, itemType::boolean));
+        _add(new configItem("ip_cidr", &ip_cidr, itemType::stringList));
+        _add(new configItem("ip_is_private", &ip_is_private, itemType::boolean));
+        _add(new configItem("source_port", &source_port, itemType::stringList));
+        _add(new configItem("source_port_range", &source_port_range, itemType::stringList));
+        _add(new configItem("port", &port, itemType::stringList));
+        _add(new configItem("port_range", &port_range, itemType::stringList));
+        _add(new configItem("process_name", &process_name, itemType::stringList));
+        _add(new configItem("process_path", &process_path, itemType::stringList));
+        _add(new configItem("rule_set", &rule_set, itemType::stringList));
+        _add(new configItem("invert", &invert, itemType::boolean));
+        _add(new configItem("outboundID", &outboundID, itemType::integer));
+    }
+
+    RoutingChain::RoutingChain() {
+        _add(new configItem("id", &id, itemType::integer));
+        _add(new configItem("name", &name, itemType::string));
+        _add(new configItem("rules", &castedRules, itemType::jsonStoreList));
+    }
 
     std::shared_ptr<RoutingChain> ProfileManager::NewRouteChain() {
         auto route = std::make_shared<RoutingChain>();
@@ -415,15 +443,15 @@ namespace NekoGui {
         return routesIdOrder.last() + 1;
     }
 
-    bool ProfileManager::AddRouteChain(const std::shared_ptr<RoutingChain> chain) {
+    bool ProfileManager::AddRouteChain(const std::shared_ptr<RoutingChain>& chain) {
         if (chain->id >= 0) {
             return false;
         }
 
         chain->id = NewRouteChainID();
+        chain->fn = QString("route_profiles/%1.json").arg(chain->id);
         routes[chain->id] = chain;
         routesIdOrder.push_back(chain->id);
-        chain->fn = QString("routes/%1.json").arg(chain->id);
         chain->Save();
 
         return true;
@@ -431,6 +459,25 @@ namespace NekoGui {
 
     std::shared_ptr<RoutingChain> ProfileManager::GetRouteChain(int id) {
         return routes.count(id) > 0 ? routes[id] : nullptr;
+    }
+
+    void ProfileManager::UpdateRouteChains(const QList<std::shared_ptr<RoutingChain>>& newChain) {
+        routes.clear();
+        routesIdOrder.clear();
+
+        for (const auto &item: newChain) {
+            if (!AddRouteChain(item)) {
+                routes[item->id] = item;
+                item->Save();
+            }
+            routesIdOrder << item->id;
+        }
+        auto currFiles = filterIntJsonFile("route_profiles");
+        for (const auto &item: currFiles) { // clean up removed route profiles
+            if (!routes.count(item)) {
+                QFile(QString(ROUTES_PREFIX+"%1.json").arg(item)).remove();
+            }
+        }
     }
 
     QList<std::shared_ptr<ProxyEntity>> Group::Profiles() const {

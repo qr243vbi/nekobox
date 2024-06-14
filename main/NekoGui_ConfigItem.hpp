@@ -10,6 +10,7 @@ namespace NekoGui_ConfigItem {
         stringList,
         integerList,
         jsonStore,
+        jsonStoreList,
     };
 
     class configItem {
@@ -57,11 +58,11 @@ namespace NekoGui_ConfigItem {
 
         QByteArray ToJsonBytes();
 
-        void FromJson(QJsonObject object);
+        virtual void FromJson(QJsonObject object);
 
         void FromJsonBytes(const QByteArray &data);
 
-        bool Save();
+        virtual bool Save();
 
         bool Load();
     };

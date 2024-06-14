@@ -141,7 +141,7 @@ namespace NekoGui_fmt {
             relay["zero_rtt_handshake"] = zeroRttHandshake;
             relay["disable_sni"] = disableSni;
             if (!heartbeat.trimmed().isEmpty()) relay["heartbeat"] = heartbeat;
-            if (!alpn.trimmed().isEmpty()) relay["alpn"] = QList2QJsonArray(alpn.split(","));
+            if (!alpn.trimmed().isEmpty()) relay["alpn"] = QListStr2QJsonArray(alpn.split(","));
 
             if (!caText.trimmed().isEmpty()) {
                 WriteTempFile("tuic_" + GetRandomString(10) + ".crt", caText.toUtf8());

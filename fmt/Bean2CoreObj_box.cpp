@@ -25,7 +25,7 @@ namespace NekoGui_fmt {
                 }
             } else if (network == "http") {
                 if (!path.isEmpty()) transport["path"] = path;
-                if (!host.isEmpty()) transport["host"] = QList2QJsonArray(host.split(","));
+                if (!host.isEmpty()) transport["host"] = QListStr2QJsonArray(host.split(","));
             } else if (network == "grpc") {
                 if (!path.isEmpty()) transport["service_name"] = path;
             } else if (network == "httpupgrade") {
@@ -39,7 +39,7 @@ namespace NekoGui_fmt {
                 {"type", "http"},
                 {"method", "GET"},
                 {"path", path},
-                {"headers", QJsonObject{{"Host", QList2QJsonArray(host.split(","))}}},
+                {"headers", QJsonObject{{"Host", QListStr2QJsonArray(host.split(","))}}},
             };
             outbound->insert("transport", transport);
         }
@@ -53,7 +53,7 @@ namespace NekoGui_fmt {
                 tls["certificate"] = certificate.trimmed();
             }
             if (!alpn.trimmed().isEmpty()) {
-                tls["alpn"] = QList2QJsonArray(alpn.split(","));
+                tls["alpn"] = QListStr2QJsonArray(alpn.split(","));
             }
             QString fp = utlsFingerprint;
             if (!reality_pbk.trimmed().isEmpty()) {
@@ -182,7 +182,7 @@ namespace NekoGui_fmt {
             {"certificate", caText.trimmed()},
             {"server_name", sni},
         };
-        if (!alpn.trimmed().isEmpty()) coreTlsObj["alpn"] = QList2QJsonArray(alpn.split(","));
+        if (!alpn.trimmed().isEmpty()) coreTlsObj["alpn"] = QListStr2QJsonArray(alpn.split(","));
         if (proxy_type == proxy_Hysteria2) coreTlsObj["alpn"] = "h3";
 
         QJsonObject outbound{

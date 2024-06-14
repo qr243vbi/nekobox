@@ -187,20 +187,16 @@ int main(int argc, char* argv[]) {
     if (!dir.exists(ROUTES_PREFIX_NAME)) {
         dir_success &= dir.mkdir(ROUTES_PREFIX_NAME);
     }
+    if (!dir.exists(RULE_SETS_DIR)) {
+        dir_success &= dir.mkdir(RULE_SETS_DIR);
+    }
     if (!dir_success) {
         QMessageBox::warning(nullptr, "Error", "No permission to write " + dir.absolutePath());
         return 1;
     }
 
     // Load dataStore
-    switch (NekoGui::coreType) {
-        case NekoGui::CoreType::SING_BOX:
-            NekoGui::dataStore->fn = "groups/nekobox.json";
-            break;
-        default:
-            MessageBoxWarning("Error", "Unknown coreType.");
-            return 0;
-    }
+    NekoGui::dataStore->fn = "groups/nekobox.json";
     auto isLoaded = NekoGui::dataStore->Load();
     if (!isLoaded) {
         NekoGui::dataStore->Save();
@@ -211,7 +207,7 @@ int main(int argc, char* argv[]) {
 
     // load routing
     NekoGui::dataStore->routing = std::make_unique<NekoGui::Routing>();
-    NekoGui::dataStore->routing->fn = ROUTES_PREFIX + NekoGui::dataStore->active_routing;
+    NekoGui::dataStore->routing->fn = ROUTES_PREFIX + "Default";
     isLoaded = NekoGui::dataStore->routing->Load();
     if (!isLoaded) {
         NekoGui::dataStore->routing->Save();
