@@ -55,6 +55,8 @@ jobs:
           name: NekoRay-${{ github.sha }}-Common-${{ matrix.cross_os }}-${{ matrix.cross_arch }}
           path: artifacts.tgz
   build-cpp:
+    needs:
+      - build-go
     strategy:
       matrix:
         include:
@@ -64,8 +66,8 @@ jobs:
           - platform: ubuntu-22.04
             arch: x64
             qt_version: "6.5"
-          - platform: macos-14
-            arch: x64
+          - platform: macos-13
+            arch: amd64
             qt_version: "6.5"
           - platform: macos-14
             arch: arm64
@@ -88,7 +90,7 @@ jobs:
           toolset: 14.2
           arch: ${{ matrix.arch }}
       - name: Download Artifacts for macOS
-        if: matrix.platform == 'macos-14'
+        if: matrix.platform == 'macos-13' || matrix.platform == 'macos-14'
         uses: actions/download-artifact@v4.1.7
         with:
           path: download-artifact
@@ -101,7 +103,7 @@ jobs:
           cache: true
           cache-key-prefix: QtCache-${{ matrix.platform }}-${{ matrix.arch }}
       - name: macOS - Install Qt 6.5
-        if: matrix.platform == 'macos-14'
+        if: matrix.platform == 'macos-13' || matrix.platform == 'macos-14'
         uses: jurplel/install-qt-action@v4.0.0
         with:
           version: 6.5
@@ -156,7 +158,7 @@ jobs:
           ./libs/deploy_linux64.sh
       - name: macOS - Generate MakeFile and Build
         shell: bash
-        if: matrix.platform == 'macos-14'
+        if: matrix.platform == 'macos-13' || matrix.platform == 'macos-14'
         run: |
           mkdir build
           cd build
@@ -207,11 +209,11 @@ jobs:
           zip -r $version_standalone-windows64.zip nekoray
           rm -rf nekoray
           ####
-          mv macos-amd64/nekoray.dmg $version_standalone-macos-amd64.dmg
-          rm -rf macos-amd64
-          ####
           mv macos-arm64/nekoray.dmg $version_standalone-macos-arm64.dmg
-          rm -rf macos-arm64
+          rm -rf macos-arm64/nekoray.dmg
+          ####
+          mv macos-amd64/nekoray.dmg $version_standalone-macos-amd64.dmg
+          rm -rf macos-amd64/nekoray.dmg
       - name: Pack Debian
         run: |
           source libs/env_deploy.sh
@@ -236,6 +238,8 @@ jobs:
           cd deployment
           rm -rf linux64
           rm -rf windows64
+          rm -rf macos-amd64
+          rm -rf macos-arm64
           rm -rf public_res
           rm -rf *.pdb
       - name: Uploading Artifact
