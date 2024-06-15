@@ -2,7 +2,6 @@
 #include "ui_RouteItem.h"
 #include "db/RouteEntity.h"
 #include "db/Database.hpp"
-#include <iostream>
 #include "rpc/gRPC.h"
 
 int RouteItem::getIndexOf(const QString& name) const {
@@ -52,7 +51,7 @@ RouteItem::RouteItem(QWidget *parent, const std::shared_ptr<NekoGui::RoutingChai
     ui->setupUi(this);
 
     // make a copy
-    chain = routeChain;
+    chain = std::make_shared<NekoGui::RoutingChain>(*routeChain);
 
     // add the default rule if empty
     if (chain->Rules.empty()) {
@@ -114,10 +113,6 @@ RouteItem::RouteItem(QWidget *parent, const std::shared_ptr<NekoGui::RoutingChai
     ui->rule_preview->setEnabled(false);
     updateRuleSection();
 
-    connect(ui->route_name, &QLineEdit::textChanged, this, [=](const QString& text) {
-       chain->name = text;
-    });
-
     connect(ui->route_view_json, &QPushButton::clicked, this, [=] {
         QString res;
         auto rules = chain->get_route_rules(true);
@@ -131,13 +126,13 @@ RouteItem::RouteItem(QWidget *parent, const std::shared_ptr<NekoGui::RoutingChai
 
     connect(ui->rule_name, &QLineEdit::textChanged, this, [=](const QString& text) {
         if (currentIndex == -1) return;
-        chain->Rules[currentIndex]->name = text;
+        chain->Rules[currentIndex]->name = QString(text);
         updateRouteItemsView();
     });
 
     connect(ui->rule_attr_selector, &QComboBox::currentTextChanged, this, [=](const QString& text){
        if (currentIndex == -1) return;
-       chain->Rules[currentIndex]->set_field_value(ui->rule_attr->currentText(), {text});
+       chain->Rules[currentIndex]->set_field_value(ui->rule_attr->currentText(), {QString(text)});
        updateRulePreview();
     });
 
@@ -176,6 +171,12 @@ RouteItem::RouteItem(QWidget *parent, const std::shared_ptr<NekoGui::RoutingChai
     connect(ui->buttonBox, &QDialogButtonBox::rejected, this, [=]{
        QDialog::reject();
     });
+
+    deleteShortcut = new QShortcut(QKeySequence(Qt::Key_Delete), this);
+
+    connect(deleteShortcut, &QShortcut::activated, this, [=]{
+        on_delete_route_item_clicked();
+    });
 }
 
 RouteItem::~RouteItem() {
@@ -183,19 +184,24 @@ RouteItem::~RouteItem() {
 }
 
 void RouteItem::accept() {
+    chain->name = ui->route_name->text();
+
     if (chain->name == "") {
         MessageBoxWarning("Invalid operation", "Cannot create Route Profile with empty name");
         return;
     }
 
-    int i=0;
+    QList<std::shared_ptr<NekoGui::RouteRule>> tmpChain;
     for (const auto& item: chain->Rules) {
-        if (item->isEmpty()) {
-            chain->Rules.remove(i);
-            i--;
+        if (!item->isEmpty()) {
+            tmpChain << item;
         }
-        i++;
     }
+    chain->Rules.clear();
+    for (const auto& item: tmpChain) {
+        chain->Rules << item;
+    }
+
     if (chain->Rules.empty()) {
         MessageBoxInfo("Empty Route Profile", "No valid rules are in the profile");
         return;
@@ -224,24 +230,25 @@ void RouteItem::updateRuleSection() {
     switch (ruleItem->get_input_type(currentAttr)) {
         case NekoGui::trufalse: {
             QStringList items = {"false", "true"};
-            QString currentVal = chain->Rules[currentIndex]->get_current_value_bool(currentAttr);
+            QString currentVal = ruleItem->get_current_value_bool(currentAttr);
             showSelectItem(items, currentVal);
             break;
         }
         case NekoGui::select: {
             auto items = NekoGui::RouteRule::get_values_for_field(currentAttr);
-            auto currentVal = chain->Rules[currentIndex]->get_current_value_string(currentAttr)[0];
+            auto currentVal = ruleItem->get_current_value_string(currentAttr)[0];
             showSelectItem(items, currentVal);
             break;
         }
         case NekoGui::text: {
-            auto currentItems = chain->Rules[currentIndex]->get_current_value_string(currentAttr);
+            auto currentItems = ruleItem->get_current_value_string(currentAttr);
             showTextEnterItem(currentItems);
             break;
         }
     }
     ui->rule_name->setText(ruleItem->name);
     ui->rule_attr_box->setEnabled(true);
+    ui->rule_out->setCurrentText(get_outbound_name(ruleItem->outboundID));
     if (currentAttr == "rule_set") ui->rule_set_helper->show();
     else ui->rule_set_helper->hide();
 
@@ -328,7 +335,7 @@ void RouteItem::on_delete_route_item_clicked() {
     else {
         currentIndex--;
         if (currentIndex == -1) currentIndex = 0;
-        setDefaultRuleData(chain->Rules[currentIndex]->ip_version);
     }
     updateRouteItemsView();
+    updateRuleSection();
 }

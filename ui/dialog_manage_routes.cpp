@@ -9,6 +9,7 @@
 
 #include <QFile>
 #include <QMessageBox>
+#include <QShortcut>
 
 void DialogManageRoutes::reloadProfileItems() {
     if (chainList.empty()) {
@@ -96,6 +97,16 @@ DialogManageRoutes::DialogManageRoutes(QWidget *parent) : QDialog(parent), ui(ne
 
     connect(ui->route_prof, &QComboBox::currentIndexChanged, this, [=](const int& idx) {
         currentRouteProfileID = chainList[idx]->id;
+    });
+
+    connect(ui->route_profiles, &QListWidget::itemDoubleClicked, this, [=](const QListWidgetItem* item){
+        on_edit_route_clicked();
+    });
+
+    deleteShortcut = new QShortcut(QKeySequence(Qt::Key_Delete), this);
+
+    connect(deleteShortcut, &QShortcut::activated, this, [=]{
+        on_delete_route_clicked();
     });
 
     ADD_ASTERISK(this)

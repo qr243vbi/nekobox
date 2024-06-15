@@ -9,6 +9,8 @@ namespace NekoGui {
     public:
         RouteRule();
 
+        RouteRule(const RouteRule& other);
+
         QString name = "";
         QString ip_version;
         QString network;
@@ -49,6 +51,8 @@ namespace NekoGui {
         QList<JsonStore*> castedRules;
 
         RoutingChain();
+
+        RoutingChain(const RoutingChain& other);
 
         bool Save() override;
 

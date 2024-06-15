@@ -7,7 +7,6 @@ namespace NekoGui {
     QJsonArray get_as_array(const QList<QString>& str, bool castToNum = false) {
         QJsonArray res;
         for (const auto &item: str) {
-            if (item.trimmed().isEmpty()) continue;
             if (castToNum) res.append(item.toInt());
             else res.append(item);
         }
@@ -19,6 +18,52 @@ namespace NekoGui {
             if (!item.trimmed().isEmpty()) return true;
         }
         return false;
+    }
+
+    RouteRule::RouteRule(const RouteRule& other) {
+        name = other.name;
+        ip_version = other.ip_version;
+        network = other.network;
+        protocol = other.protocol;
+        domain << other.domain;
+        domain_suffix << other.domain_suffix;
+        domain_keyword << other.domain_keyword;
+        domain_regex << other.domain_regex;
+        source_ip_cidr << other.source_ip_cidr;
+        source_ip_is_private = other.source_ip_is_private;
+        ip_cidr << other.ip_cidr;
+        ip_is_private = other.ip_is_private;
+        source_port << other.source_port;
+        source_port_range << other.source_port_range;
+        port << other.port;
+        port_range << other.port_range;
+        process_name << other.process_name;
+        process_path << other.process_path;
+        rule_set << other.rule_set;
+        invert = other.invert;
+        outboundID = other.outboundID;
+
+        _add(new configItem("name", &name, itemType::string));
+        _add(new configItem("ip_version", &ip_version, itemType::string));
+        _add(new configItem("network", &network, itemType::string));
+        _add(new configItem("protocol", &protocol, itemType::string));
+        _add(new configItem("domain", &domain, itemType::stringList));
+        _add(new configItem("domain_suffix", &domain_suffix, itemType::stringList));
+        _add(new configItem("domain_keyword", &domain_keyword, itemType::stringList));
+        _add(new configItem("domain_regex", &domain_regex, itemType::stringList));
+        _add(new configItem("source_ip_cidr", &source_ip_cidr, itemType::stringList));
+        _add(new configItem("source_ip_is_private", &source_ip_is_private, itemType::boolean));
+        _add(new configItem("ip_cidr", &ip_cidr, itemType::stringList));
+        _add(new configItem("ip_is_private", &ip_is_private, itemType::boolean));
+        _add(new configItem("source_port", &source_port, itemType::stringList));
+        _add(new configItem("source_port_range", &source_port_range, itemType::stringList));
+        _add(new configItem("port", &port, itemType::stringList));
+        _add(new configItem("port_range", &port_range, itemType::stringList));
+        _add(new configItem("process_name", &process_name, itemType::stringList));
+        _add(new configItem("process_path", &process_path, itemType::stringList));
+        _add(new configItem("rule_set", &rule_set, itemType::stringList));
+        _add(new configItem("invert", &invert, itemType::boolean));
+        _add(new configItem("outboundID", &outboundID, itemType::integer));
     }
 
     QJsonObject RouteRule::get_rule_json(bool forView, const QString& outboundTag) const {
@@ -163,6 +208,15 @@ namespace NekoGui {
         return nullptr;
     }
 
+    QStringList filterEmpty(const QStringList& base) {
+        QStringList res;
+        for (const auto& item: base) {
+            if (item.trimmed().isEmpty()) continue;
+            res << item.trimmed();
+        }
+        return res;
+    }
+
     void RouteRule::set_field_value(const QString& fieldName, const QStringList& value) {
         if (fieldName == "ip_version") {
             ip_version = value[0];
@@ -174,49 +228,49 @@ namespace NekoGui {
             protocol = value[0];
         }
         if (fieldName == "domain") {
-            domain = value;
+            domain = filterEmpty(value);
         }
         if (fieldName == "domain_suffix") {
-            domain_suffix = value;
+            domain_suffix = filterEmpty(value);
         }
         if (fieldName == "domain_keyword") {
-            domain_keyword = value;
+            domain_keyword = filterEmpty(value);
         }
         if (fieldName == "domain_regex") {
-            domain_regex = value;
+            domain_regex = filterEmpty(value);
         }
         if (fieldName == "source_ip_cidr") {
-            source_ip_cidr = value;
+            source_ip_cidr = filterEmpty(value);
         }
         if (fieldName == "source_ip_is_private") {
             source_ip_is_private = value[0]=="true";
         }
         if (fieldName == "ip_cidr") {
-            ip_cidr = value;
+            ip_cidr = filterEmpty(value);
         }
         if (fieldName == "ip_is_private") {
             ip_is_private = value[0]=="true";
         }
         if (fieldName == "source_port") {
-            source_port = value;
+            source_port = filterEmpty(value);
         }
         if (fieldName == "source_port_range") {
-            source_port_range = value;
+            source_port_range = filterEmpty(value);
         }
         if (fieldName == "port") {
-            port = value;
+            port = filterEmpty(value);
         }
         if (fieldName == "port_range") {
-            port_range = value;
+            port_range = filterEmpty(value);
         }
         if (fieldName == "process_name") {
-            process_name = value;
+            process_name = filterEmpty(value);
         }
         if (fieldName == "process_path") {
-            process_path = value;
+            process_path = filterEmpty(value);
         }
         if (fieldName == "rule_set") {
-            rule_set = value;
+            rule_set = filterEmpty(value);
         }
         if (fieldName == "invert") {
             invert = value[0]=="true";
@@ -269,6 +323,19 @@ namespace NekoGui {
             }
         }
         return res;
+    }
+
+    RoutingChain::RoutingChain(const RoutingChain& other)  : JsonStore(other) {
+        id = other.id;
+        name = QString(other.name);
+        for (const auto& item: other.Rules) {
+            Rules.push_back(std::make_shared<RouteRule>(*item));
+        }
+        fn = QString(other.fn);
+
+        _add(new configItem("id", &id, itemType::integer));
+        _add(new configItem("name", &name, itemType::string));
+        _add(new configItem("rules", &castedRules, itemType::jsonStoreList));
     }
 
     bool RoutingChain::Save() {

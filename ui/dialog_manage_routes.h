@@ -31,6 +31,8 @@ private:
     QList<std::shared_ptr<NekoGui::RoutingChain>> chainList;
 
     int currentRouteProfileID = -1;
+
+    QShortcut* deleteShortcut;
 public slots:
     void accept() override;
 
