@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-if [[ $(uname -m) == 'arm64' ]]; then
+if [[ $(uname -m) == 'aarch64' || $(uname -m) == 'arm64' ]]; then
   ARCH="arm64"
 else
   ARCH="amd64"
@@ -13,11 +13,18 @@ rm -rf $DEST
 mkdir -p $DEST
 
 #### copy golang & public_res => .app ####
-pushd download-artifact
-find . -name artifacts.tgz | xargs -n1 tar xvzf
+
+cd download-artifact
+cd *darwin-$ARCH
+tar xvzf artifacts.tgz -C ../../
+cd ..
+cd *public_res
+tar xvzf artifacts.tgz -C ../../
+cd ..
+cd ..
+
 mv deployment/public_res/* deployment/macos-$ARCH
 mv deployment/macos-$ARCH/* $BUILD/nekoray.app/Contents/MacOS
-popd
 
 #### deploy qt & DLL runtime => .app ####
 pushd $BUILD
