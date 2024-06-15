@@ -4,6 +4,7 @@
 #include <QListWidgetItem>
 #include <QDialog>
 #include <QStringListModel>
+#include <QShortcut>
 
 #include "db/RouteEntity.h"
 
@@ -35,6 +36,8 @@ private:
     QStringList current_helper_items;
 
     QStringListModel* helperModel;
+
+    QShortcut* deleteShortcut;
 
     [[nodiscard]] int getIndexOf(const QString& name) const;
 
