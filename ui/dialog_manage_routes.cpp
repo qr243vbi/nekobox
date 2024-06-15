@@ -95,13 +95,11 @@ DialogManageRoutes::DialogManageRoutes(QWidget *parent) : QDialog(parent), ui(ne
     ui->dns_final_out->setCurrentText(NekoGui::dataStore->routing->dns_final_out);
     reloadProfileItems();
 
-    connect(ui->route_prof, &QComboBox::currentIndexChanged, this, [=](const int& idx) {
-        currentRouteProfileID = chainList[idx]->id;
-    });
-
     connect(ui->route_profiles, &QListWidget::itemDoubleClicked, this, [=](const QListWidgetItem* item){
         on_edit_route_clicked();
     });
+
+    connect(ui->route_prof, SIGNAL(currentIndexChanged(int)), this, SLOT(updateCurrentRouteProfile(int)));
 
     deleteShortcut = new QShortcut(QKeySequence(Qt::Key_Delete), this);
 
@@ -110,6 +108,10 @@ DialogManageRoutes::DialogManageRoutes(QWidget *parent) : QDialog(parent), ui(ne
     });
 
     ADD_ASTERISK(this)
+}
+
+void DialogManageRoutes::updateCurrentRouteProfile(int idx) {
+    currentRouteProfileID = chainList[idx]->id;
 }
 
 DialogManageRoutes::~DialogManageRoutes() {
