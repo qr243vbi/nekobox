@@ -63,9 +63,9 @@ jobs:
           - platform: windows-2022
             arch: x64
             qt_version: "6.5"
-          - platform: ubuntu-22.04
+          - platform: ubuntu-20.04
             arch: x64
-            qt_version: "6.5"
+            qt_version: "5.12"
           - platform: macos-13
             arch: amd64
             qt_version: "6.5"
@@ -130,6 +130,15 @@ jobs:
         shell: bash
         if: steps.cache-deps.outputs.cache-hit != 'true'
         run: ./libs/build_deps_all.sh
+      - name: Build Dependencies (Docker)
+        shell: bash
+        if: steps.cache-deps.outputs.cache-hit != 'true' && matrix.platform == 'ubuntu-20.04'
+        run: |
+          docker run --rm \
+            -v $PWD:/nekoray \
+            -w /nekoray \
+            ghcr.io/matsuridayo/debian10-qt5:20230131 \
+            bash -c "./libs/build_deps_all.sh"
       # ========================================================================================================= Generate MakeFile and Build
       - name: Windows - Generate MakeFile and Build
         shell: bash
@@ -148,14 +157,13 @@ jobs:
           ./libs/deploy_windows64.sh
       - name: Linux - Generate MakeFile and Build
         shell: bash
-        if: matrix.platform == 'ubuntu-22.04'
+        if: matrix.platform == 'ubuntu-20.04'
         run: |
-          mkdir build
-          pushd build
-          cmake -GNinja -DQT_VERSION_MAJOR=6 -DCMAKE_BUILD_TYPE=Release ..
-          ninja
-          popd
-          ./libs/deploy_linux64.sh
+          docker run --rm \
+            -v $PWD:/nekoray \
+            -w /nekoray \
+            ghcr.io/matsuridayo/debian10-qt5:20230131 \
+            bash -c "mkdir build && pushd build && cmake -GNinja -DCMAKE_BUILD_TYPE=Release .. && ninja && popd &&./libs/deploy_linux64.sh"
       - name: macOS - Generate MakeFile and Build
         shell: bash
         if: matrix.platform == 'macos-13' || matrix.platform == 'macos-14'

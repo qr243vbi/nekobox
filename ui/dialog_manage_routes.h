@@ -36,6 +36,8 @@ private:
 public slots:
     void accept() override;
 
+    void updateCurrentRouteProfile(int idx);
+
     void on_new_route_clicked();
 
     void on_edit_route_clicked();

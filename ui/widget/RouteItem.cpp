@@ -316,14 +316,18 @@ void RouteItem::on_new_route_item_clicked() {
 
 void RouteItem::on_moveup_route_item_clicked() {
     if (currentIndex == -1 || currentIndex == 0) return;
-    chain->Rules.swapItemsAt(currentIndex, currentIndex-1);
+    auto curr = chain->Rules[currentIndex];
+    chain->Rules[currentIndex] = chain->Rules[currentIndex-1];
+    chain->Rules[currentIndex-1] = curr;
     currentIndex--;
     updateRouteItemsView();
 }
 
 void RouteItem::on_movedown_route_item_clicked() {
     if (currentIndex == -1 || currentIndex == chain->Rules.size() - 1) return;
-    chain->Rules.swapItemsAt(currentIndex, currentIndex+1);
+    auto curr = chain->Rules[currentIndex];
+    chain->Rules[currentIndex] = chain->Rules[currentIndex+1];
+    chain->Rules[currentIndex+1] = curr;
     currentIndex++;
     updateRouteItemsView();
 }
