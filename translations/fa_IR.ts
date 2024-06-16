@@ -146,24 +146,12 @@
         <translation>هنگام به‌روزرسانی اشتراک، خطاهای TLS را نادیده گرفته شود</translation>
     </message>
     <message>
-        <source>Switch core</source>
-        <translation>سوئیچ هسته</translation>
-    </message>
-    <message>
         <source>Enable hook.js</source>
         <translation type="unfinished">فعال سازی hook.js</translation>
     </message>
     <message>
         <source>Advanced system proxy settings. Please select a format.</source>
         <translation>تنظیمات پیشرفته پروکسی سیستم. لطفا یک قالب را انتخاب کنید.</translation>
-    </message>
-    <message>
-        <source>Confirmation</source>
-        <translation>تائیدیه</translation>
-    </message>
-    <message>
-        <source>Switching the core to %1, click &quot;Yes&quot; to complete the switch and the program will restart. This feature may be unstable, please do not switch frequently.</source>
-        <translation>هسته به 1% تغییر میابد، روی  &quot;Yes&quot; کلیک کنید تا تغییر پایان یابد و برنامه ریستارت شود. این قابلیت ممکن است پایدار نباشد، لطفا مکررا تعویض نکنید</translation>
     </message>
     <message>
         <source>Please select a PNG file.</source>
@@ -220,10 +208,6 @@ For NekoBox, this rewrites the underlying(localhost) DNS in Tun Mode, normal mod
         <translation type="unfinished">پیشنهاد میشود که این گزینه را انتخاب نشده باقی بگذارید ، اما گاهی اوقات کار نمیکند در این مواقع شما میتوانید این گزینه را انتخاب کنید ، برای Nekoray این گزینه دی ان اس زیربنایی را در حالت تونل بازنویسی میکند ، و برای NekoBox این گزینه دی ان اس زیربنایی را هم در حالت تونل و هم در حالت معمولی و تست آدرس بازنویسی میکند</translation>
     </message>
     <message>
-        <source>If you Tun Mode is not working, try to change this option.</source>
-        <translation type="unfinished">اگر حالت تونل برای شما کار نمیکند ، این گزینه را تغییر دهید</translation>
-    </message>
-    <message>
         <source>Default On</source>
         <translation type="unfinished">به صورت پیشفرض فعال</translation>
     </message>
@@ -257,6 +241,50 @@ For NekoBox, this rewrites the underlying(localhost) DNS in Tun Mode, normal mod
     </message>
     <message>
         <source>Old Share Link Format</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Might Improve Ping and Performance&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Disable Traffic Stats</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Settings for the sing-box&apos;s built-in NTP client&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>NTP Settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>server</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Port</source>
+        <translation type="unfinished">پورت</translation>
+    </message>
+    <message>
+        <source>sync interval</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;In minutes&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>5m</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>10m</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>30m</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -323,10 +351,6 @@ For NekoBox, this rewrites the underlying(localhost) DNS in Tun Mode, normal mod
         <translation type="unfinished">هیچ یک</translation>
     </message>
     <message>
-        <source>Clear</source>
-        <translation type="unfinished">پاک کردن</translation>
-    </message>
-    <message>
         <source>Skip automatic update</source>
         <translation type="unfinished">لغو آپدیت اتوماتیک</translation>
     </message>
@@ -337,6 +361,10 @@ For NekoBox, this rewrites the underlying(localhost) DNS in Tun Mode, normal mod
     <message>
         <source>Share</source>
         <translation type="unfinished">اشتراک گذاری</translation>
+    </message>
+    <message>
+        <source>Landing Proxy</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -486,25 +514,28 @@ For NekoBox, this rewrites the underlying(localhost) DNS in Tun Mode, normal mod
         <translation type="unfinished">نیازمند پشتیبانی در سمت سرور</translation>
     </message>
     <message>
-        <source>Reality short id. Accept only one value.</source>
+        <source>httpupgrade</source>
         <translation type="unfinished"></translation>
     </message>
-</context>
-<context>
-    <name>DialogFirstSetup</name>
     <message>
-        <source>First time setup</source>
-        <translation type="unfinished">تنظیم دفعه اول</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Overrides mux to On&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>It looks like you are using this software for the first time, please select a core.
-
-These settings can be changed later.</source>
-        <translation type="unfinished">به نظر میرسد که شما برای اولین بار است که از این نرم افزار استفاده میکنید ، لطفا یک هسته را انتخاب کنید ، این تنظیمات میتواند بعدا تغییر یابد.</translation>
+        <source>Enable TCP Brutal</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Quit</source>
-        <translation type="unfinished">خروج</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Server to Client TCP Brutal Speed&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>TCP Brutal Speed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mb/s</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -526,8 +557,12 @@ These settings can be changed later.</source>
         <translation type="unfinished">نمایش پنجره اصلی</translation>
     </message>
     <message>
-        <source>System Proxy</source>
-        <translation>پروکسی سیستم</translation>
+        <source>Proxy mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Toggle System Proxy</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -576,74 +611,6 @@ These settings can be changed later.</source>
         <translation type="unfinished">دی ان اس مستقیم</translation>
     </message>
     <message>
-        <source>Enable DNS Routing</source>
-        <translation>فعال کردن مسیریابی DNS</translation>
-    </message>
-    <message>
-        <source>Block</source>
-        <translation type="unfinished">مسدود کردن</translation>
-    </message>
-    <message>
-        <source>Direct</source>
-        <translation>مستقیم</translation>
-    </message>
-    <message>
-        <source>Domain</source>
-        <translation>دامنه</translation>
-    </message>
-    <message>
-        <source>Proxy</source>
-        <translation>پروکسی</translation>
-    </message>
-    <message>
-        <source>IP</source>
-        <translation>آی پی</translation>
-    </message>
-    <message>
-        <source>Preset</source>
-        <translation>پیشفرض</translation>
-    </message>
-    <message>
-        <source>Mange route set</source>
-        <translation type="unfinished">مدیریت مسیرها</translation>
-    </message>
-    <message>
-        <source>Bypass LAN and China</source>
-        <translation type="unfinished">عبور ندادن ترافیک LAN و کشور چین</translation>
-    </message>
-    <message>
-        <source>Global</source>
-        <translation type="unfinished">همگانی</translation>
-    </message>
-    <message>
-        <source>Load</source>
-        <translation type="unfinished">بارگیری</translation>
-    </message>
-    <message>
-        <source>Save</source>
-        <translation>ذخیره کردن</translation>
-    </message>
-    <message>
-        <source>Remove</source>
-        <translation>حذف کردن</translation>
-    </message>
-    <message>
-        <source>Cancel</source>
-        <translation>لغو کردن</translation>
-    </message>
-    <message>
-        <source>Load routing: %1</source>
-        <translation type="unfinished">بارگیری مسیر : 1%</translation>
-    </message>
-    <message>
-        <source>Save routing: %1</source>
-        <translation type="unfinished">ذخیره مسیر : 1%</translation>
-    </message>
-    <message>
-        <source>Remove routing: %1</source>
-        <translation type="unfinished">حذف مسیر : 1%</translation>
-    </message>
-    <message>
         <source>Default Outbound</source>
         <translation type="unfinished"></translation>
     </message>
@@ -684,26 +651,6 @@ These settings can be changed later.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Simple Route</source>
-        <translation type="unfinished">مسیر ساده</translation>
-    </message>
-    <message>
-        <source>Custom Route</source>
-        <translation type="unfinished">مسیر سفارشی</translation>
-    </message>
-    <message>
-        <source>Custom Route (global)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Note: Other settings are independent for each route set.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Route sets</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Query Strategy</source>
         <translation type="unfinished"></translation>
     </message>
@@ -722,7 +669,51 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Final DNS Out</source>
+        <source>Sniffs the connections intial packet(s?) to identify the protocol and the SNI. Sniff result for destination also rewrites the destionation of the connection to the sniffed SNI. For more data on the sniffed protocol refer to the sing-box&apos;s documentation.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Routing Profile</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>proxy</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>direct</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The outbound tag to use when the request is not handled by any rule</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>8.8.8.8</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Default DNS server</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Route</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Routing Profiles</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Delete</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -739,30 +730,6 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
     <message>
         <source>Tun Enable IPv6</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Bypass CIDR</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Bypass Process Name</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Whether blacklisted or whitelisted, your traffic will be handled by nekobox_core (sing-tun). This is NOT equal to &quot;process mode&quot; of some software.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Whitelist mode</source>
-        <translation type="unfinished">حالت لیست سفید</translation>
-    </message>
-    <message>
-        <source>Proxy CIDR</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Proxy Process Name</source>
-        <translation type="unfinished">نام پروسه پراکسی</translation>
     </message>
     <message>
         <source>Troubleshooting</source>
@@ -784,12 +751,11 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</source>
         <translation type="unfinished">لغو کردن</translation>
     </message>
     <message>
-        <source>Internal Tun</source>
-        <translation type="unfinished">حالت تونل داخلی</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Enables Generic Segmentation offloading on the Tun device, Only supported on Linux&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Add a tun inbound to the profile startup, instead of using two processes.
-This needs to be run NekoBox with administrator privileges.</source>
+        <source>Enable GSO</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1190,32 +1156,8 @@ This needs to be run NekoBox with administrator privileges.</source>
         <translation>ترافیک</translation>
     </message>
     <message>
-        <source>Log</source>
-        <translation>ثبت رویدادها</translation>
-    </message>
-    <message>
-        <source>Connection</source>
-        <translation>اتصال</translation>
-    </message>
-    <message>
-        <source>Status</source>
-        <translation>وضعیت</translation>
-    </message>
-    <message>
-        <source>Outbound</source>
-        <translation>خروجی</translation>
-    </message>
-    <message>
-        <source>Destination</source>
-        <translation>مقصد</translation>
-    </message>
-    <message>
         <source>Active Server</source>
         <translation>سرور فعال</translation>
-    </message>
-    <message>
-        <source>Active Routing</source>
-        <translation>مسیریابی فعال</translation>
     </message>
     <message>
         <source>Share</source>
@@ -1374,10 +1316,6 @@ This needs to be run NekoBox with administrator privileges.</source>
         <translation>پوشه Config باز شود</translation>
     </message>
     <message>
-        <source>Load routing and apply: %1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Error</source>
         <translation>خطا</translation>
     </message>
@@ -1399,18 +1337,6 @@ This needs to be run NekoBox with administrator privileges.</source>
     </message>
     <message>
         <source>Imported %1 profile(s)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Http inbound is not enabled, can&apos;t set system proxy.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Settings</source>
-        <translation>تنظیمات</translation>
-    </message>
-    <message>
-        <source>Current server is incompatible with Tun. Please stop the server first, enable Tun Mode, and then restart.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1478,11 +1404,6 @@ Split by line.</source>
     <message>
         <source>Clear</source>
         <translation>پاک کردن</translation>
-    </message>
-    <message>
-        <source>Start: %1
-End: %2</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Failed to stop Tun process</source>
@@ -1718,6 +1639,57 @@ Direct: %2</source>
     <message>
         <source>You can not input space characters here.</source>
         <translation>شما نمی توانید کاراکتر فضای خالی در اینجا استفاده کنید.</translation>
+    </message>
+</context>
+<context>
+    <name>RouteItem</name>
+    <message>
+        <source>Route Profile</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>View JSON</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rules</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Move Up</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Move Down</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rule Attributes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Attribute</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Outbound</source>
+        <translation type="unfinished">خروجی</translation>
+    </message>
+    <message>
+        <source>Name_Placeholder</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>
