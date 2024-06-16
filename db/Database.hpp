@@ -6,6 +6,8 @@
 #include "RouteEntity.h"
 
 namespace NekoGui {
+    const int INVALID_ID = -99999;
+
     class ProfileManager : private JsonStore {
     public:
         // JsonStore

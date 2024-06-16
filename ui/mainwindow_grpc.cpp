@@ -55,6 +55,11 @@ inline bool speedtesting = false;
 inline QList<QThread *> speedtesting_threads = {};
 
 void MainWindow::speedtest_current_group(int mode) {
+    if (speedtesting) {
+        MessageBoxWarning(software_name, "The last speed test did not exit completely, please wait. If it persists, please restart the program.");
+        return;
+    }
+
     auto profiles = get_selected_or_group();
     if (profiles.isEmpty()) return;
     auto group = NekoGui::profileManager->CurrentGroup();
@@ -67,11 +72,6 @@ void MainWindow::speedtest_current_group(int mode) {
             if (t != nullptr) t->exit();
         }
         speedtesting = false;
-        return;
-    }
-
-    if (speedtesting) {
-        MessageBoxWarning(software_name, "The last speed test did not exit completely, please wait. If it persists, please restart the program.");
         return;
     }
 
@@ -136,7 +136,6 @@ void MainWindow::speedtest_current_group(int mode) {
                         }
                         lock_write.unlock();
                         // quit of this thread
-                        speedtesting_threads.removeAll(QObject::thread());
                         return;
                     }
                     auto profile = profiles_test.takeFirst();
@@ -232,6 +231,7 @@ void MainWindow::speedtest_current_group(int mode) {
         // Control
         lock_return.lock();
         lock_return.unlock();
+        speedtesting_threads.removeAll(QObject::thread());
         speedtesting = false;
     });
 }
@@ -471,6 +471,58 @@ void MainWindow::neko_stop(bool crash, bool sem) {
     });
 }
 
+bool isNewer(QString version) {
+    version = version.mid(8); // take out nekoray-
+    auto parts = version.split('.');
+    auto currentParts = QString(NKR_VERSION).split('.');
+    std::vector<int> verNums;
+    std::vector<int> currNums;
+    // add base version first
+    verNums.push_back(parts[0].toInt());
+    verNums.push_back(parts[1].toInt());
+    verNums.push_back(parts[2].split('-')[0].toInt());
+
+    currNums.push_back(currentParts[0].toInt());
+    currNums.push_back(currentParts[1].toInt());
+    currNums.push_back(currentParts[2].split('-')[0].toInt());
+
+    // base version is equal or greater, check release mode
+    int releaseMode;
+    int partialVer = 0;
+    if (parts[2].split('-').size() > 1 && parts[2].split('-')[1].toInt() == 0 /* this makes sure it is not a number*/) {
+        partialVer = parts[3].split('-')[0].toInt();
+        auto str = parts[2].split('-')[1];
+        if (str == "rc") releaseMode = 3;
+        if (str == "beta") releaseMode = 2;
+        if (str == "alpha") releaseMode = 1;
+    } else {
+        releaseMode = 4;
+    }
+    verNums.push_back(releaseMode);
+    verNums.push_back(partialVer);
+
+    int currReleaseMode;
+    int currentPartialVer = 0;
+    if (currentParts[2].split('-').size() > 1 && currentParts[2].split('-')[1].toInt() == 0 /* this makes sure it is not a number*/) {
+        currentPartialVer = currentParts[3].split('-')[0].toInt();
+        auto str = currentParts[2].split('-')[1];
+        if (str == "rc") currReleaseMode = 3;
+        if (str == "beta") currReleaseMode = 2;
+        if (str == "alpha") currReleaseMode = 1;
+    } else {
+        currReleaseMode = 4;
+    }
+    currNums.push_back(currReleaseMode);
+    currNums.push_back(currentPartialVer);
+
+    for (int i=0;i<verNums.size();i++) {
+        if (verNums[i] > currNums[i]) return true;
+        if (verNums[i] < currNums[i]) return false;
+    }
+
+    return false;
+}
+
 void MainWindow::CheckUpdate() {
     // on new thread...
     bool ok;
@@ -488,7 +540,7 @@ void MainWindow::CheckUpdate() {
         return;
     }
 
-    if (response.release_download_url() == nullptr || QString(response.assets_name().c_str()).contains(NKR_VERSION)) {
+    if (response.release_download_url() == nullptr || !isNewer(QString(response.assets_name().c_str()))) {
         runOnUiThread([=] {
             MessageBoxInfo(QObject::tr("Update"), QObject::tr("No update"));
         });

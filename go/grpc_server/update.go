@@ -48,8 +48,6 @@ func (s *BaseServer) Update(ctx context.Context, in *gen.UpdateReq) (*gen.Update
 			return ret, nil
 		}
 
-		nowVer := strings.TrimLeft(neko_common.Version_neko, "nekoray-")
-
 		var search string
 		if runtime.GOOS == "windows" && runtime.GOARCH == "amd64" {
 			search = "windows64"
@@ -69,13 +67,7 @@ func (s *BaseServer) Update(ctx context.Context, in *gen.UpdateReq) (*gen.Update
 		for _, release := range v {
 			if len(release.Assets) > 0 {
 				for _, asset := range release.Assets {
-					if strings.Contains(asset.Name, nowVer) {
-						return ret, nil // No update
-					}
 					if strings.Contains(asset.Name, search) {
-						if release.Prerelease && !in.CheckPreRelease {
-							continue
-						}
 						update_download_url = asset.BrowserDownloadUrl
 						ret.AssetsName = asset.Name
 						ret.DownloadUrl = asset.BrowserDownloadUrl

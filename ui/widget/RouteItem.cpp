@@ -33,7 +33,7 @@ int get_outbound_id(const QString& name) {
         if (item.second->bean->name == name) return item.first;
     }
 
-    return -1;
+    return NekoGui::INVALID_ID;
 }
 
 QStringList get_all_outbounds() {
@@ -103,6 +103,14 @@ RouteItem::RouteItem(QWidget *parent, const std::shared_ptr<NekoGui::RoutingChai
 
     QStringList outboundOptions = {"proxy", "direct", "block", "dns_out"};
     outboundOptions << get_all_outbounds();
+    // init outbound map
+    outboundMap[0] = -1;
+    outboundMap[1] = -2;
+    outboundMap[2] = -3;
+    outboundMap[3] = -4;
+    for (const auto& item: NekoGui::profileManager->profiles) {
+        outboundMap[outboundMap.size()] = item.second->id;
+    }
 
     ui->route_name->setText(chain->name);
     ui->rule_attr->addItems(NekoGui::RouteRule::get_attributes());
@@ -146,8 +154,8 @@ RouteItem::RouteItem(QWidget *parent, const std::shared_ptr<NekoGui::RoutingChai
 
     connect(ui->rule_out, &QComboBox::currentTextChanged, this, [=](const QString& text) {
         if (currentIndex == -1) return;
-        auto id = get_outbound_id(text);
-        if (id == -1) {
+        auto id = outboundMap[ui->rule_out->currentIndex()]; // we need to do this to avoid defining a seprate function for SLOT, as Qt 5 does not support lambda for  currentIndexChanged...
+        if (id == NekoGui::INVALID_ID) {
             MessageBoxWarning("Invalid state", "selected outbound does not exists in the database, try restarting the app.");
             return;
         }
