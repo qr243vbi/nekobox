@@ -469,20 +469,9 @@ namespace NekoGui {
         if (geosite.isEmpty()) status->result->error = +"geosite.db not found";
 
         // manage routing section
-        auto routeObj = QJsonObject{
+        auto routeObj = QJsonObject {
             {"auto_detect_interface", true},
-            {
-                "geoip",
-                QJsonObject{
-                    {"path", geoip},
-                },
-            },
-            {
-                "geosite",
-                QJsonObject{
-                    {"path", geosite},
-                },
-            }};
+        };
         if (!status->forTest) routeObj["final"] = dataStore->routing->def_outbound;
         if (status->forExport) {
             routeObj.remove("geoip");
@@ -600,10 +589,12 @@ namespace NekoGui {
         for (const auto &item: status->domainListDNSDirect) {
             directDnsDomains.append(item);
         }
-        dnsRules += QJsonObject{
-            {"domain", directDnsDomains},
-            {"server", "dns-direct"},
-        };
+        if (!directDnsDomains.isEmpty()) {
+            dnsRules += QJsonObject{
+                {"domain", directDnsDomains},
+                {"server", "dns-direct"},
+            };
+        }
 
         // Underlying 100% Working DNS
         dnsServers += QJsonObject{
