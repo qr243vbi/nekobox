@@ -255,7 +255,11 @@ jobs:
         with:
           name: Deployment-${{ github.sha }}
           path: deployment
+      - name: PreRelease
+        if: github.event.inputs.publish == 'p'
+        run: |
+          ./ghr -prerelease -delete -t "${{ github.token }}" -n "${{ github.event.inputs.tag }}" "${{ github.event.inputs.tag }}" deployment
       - name: Release
-        if: github.event.inputs.publish != 'y'
+        if: github.event.inputs.publish == ''
         run: |
           ./ghr -delete -t "${{ github.token }}" -n "${{ github.event.inputs.tag }}" "${{ github.event.inputs.tag }}" deployment
