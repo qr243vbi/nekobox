@@ -39,6 +39,8 @@ private:
 
     QShortcut* deleteShortcut;
 
+    std::map<int,int> outboundMap;
+
     [[nodiscard]] int getIndexOf(const QString& name) const;
 
     void showSelectItem(const QStringList& items, const QString& currentItem);

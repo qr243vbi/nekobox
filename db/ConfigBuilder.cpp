@@ -451,12 +451,10 @@ namespace NekoGui {
             {"type", "block"},
             {"tag", "block"},
         };
-        if (!status->forTest) {
-            status->outbounds += QJsonObject{
-                {"type", "dns"},
-                {"tag", "dns-out"},
-            };
-        }
+        status->outbounds += QJsonObject{
+            {"type", "dns"},
+            {"tag", "dns-out"},
+        };
 
         // custom inbound
         if (!status->forTest) QJSONARRAY_ADD(status->inbounds, QString2QJsonObject(dataStore->custom_inbound)["inbounds"].toArray())
@@ -465,18 +463,14 @@ namespace NekoGui {
         // geopath
         auto geoip = FindCoreAsset("geoip.db");
         auto geosite = FindCoreAsset("geosite.db");
-        if (geoip.isEmpty()) status->result->error = +"geoip.db not found";
-        if (geosite.isEmpty()) status->result->error = +"geosite.db not found";
+        if (geoip.isEmpty()) status->result->error = +"geoip.db not found, it is needed for generating rule sets";
+        if (geosite.isEmpty()) status->result->error = +"geosite.db not found, it is needed for generating rule sets";
 
         // manage routing section
         auto routeObj = QJsonObject {
             {"auto_detect_interface", true},
         };
-        if (!status->forTest) routeObj["final"] = dataStore->routing->def_outbound;
-        if (status->forExport) {
-            routeObj.remove("geoip");
-            routeObj.remove("geosite");
-        }
+        routeObj["final"] = dataStore->routing->def_outbound;
 
         auto routeChain = NekoGui::profileManager->GetRouteChain(NekoGui::dataStore->routing->current_route_id);
         if (routeChain == nullptr) {
@@ -537,39 +531,35 @@ namespace NekoGui {
         QJsonArray dnsRules;
 
         // Remote
-        if (!status->forTest)
-            dnsServers += QJsonObject{
-                {"tag", "dns-remote"},
-                {"address_resolver", "dns-local"},
-                {"strategy", dataStore->routing->remote_dns_strategy},
-                {"address", dataStore->routing->remote_dns},
-                {"detour", tagProxy},
-            };
+        dnsServers += QJsonObject{
+            {"tag", "dns-remote"},
+            {"address_resolver", "dns-local"},
+            {"strategy", dataStore->routing->remote_dns_strategy},
+            {"address", dataStore->routing->remote_dns},
+            {"detour", tagProxy},
+        };
 
         // Direct
         auto directDNSAddress = dataStore->routing->direct_dns;
         if (directDNSAddress == "localhost") directDNSAddress = BOX_UNDERLYING_DNS_EXPORT;
-        if (!status->forTest) {
-            QJsonObject directObj{
-                {"tag", "dns-direct"},
-                {"address_resolver", "dns-local"},
-                {"strategy", dataStore->routing->direct_dns_strategy},
-                {"address", directDNSAddress.replace("+local://", "://")},
-                {"detour", "direct"},
-            };
-            if (dataStore->routing->dns_final_out == "direct") {
-                dnsServers.prepend(directObj);
-            } else {
-                dnsServers.append(directObj);
-            }
+        QJsonObject directObj{
+            {"tag", "dns-direct"},
+            {"address_resolver", "dns-local"},
+            {"strategy", dataStore->routing->direct_dns_strategy},
+            {"address", directDNSAddress.replace("+local://", "://")},
+            {"detour", "direct"},
+        };
+        if (dataStore->routing->dns_final_out == "direct") {
+            dnsServers.prepend(directObj);
+        } else {
+            dnsServers.append(directObj);
         }
 
         // block
-        if (!status->forTest)
-            dnsServers += QJsonObject{
-                {"tag", "dns-block"},
-                {"address", "rcode://success"},
-            };
+        dnsServers += QJsonObject{
+            {"tag", "dns-block"},
+            {"address", "rcode://success"},
+        };
 
         // Fakedns
         if (dataStore->fake_dns && dataStore->spmode_vpn && !status->forTest) {

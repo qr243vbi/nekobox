@@ -99,7 +99,7 @@ namespace NekoGui {
         QString v2ray_asset_dir = "";
         int language = 0;
         QString mw_size = "";
-        bool check_include_pre = false;
+        bool check_include_pre = true;
         QString system_proxy_format = "";
         QStringList log_ignore = {};
         bool start_minimal = false;
