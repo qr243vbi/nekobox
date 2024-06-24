@@ -283,9 +283,14 @@ namespace NekoGui {
                 outbound["type"] = "socks";
                 outbound["server"] = "127.0.0.1";
                 outbound["server_port"] = ext_socks_port;
+                // outbound misc
+                outbound["tag"] = tagOut;
+                ent->traffic_data->id = ent->id;
+                ent->traffic_data->tag = tagOut.toStdString();
+                status->result->outboundStats += ent->traffic_data;
+            } else {
+                BuildOutbound(ent, status, outbound, tagOut);
             }
-
-            BuildOutbound(ent, status, outbound, tagOut);
 
             // apply custom outbound settings
             MergeJson(QString2QJsonObject(ent->bean->custom_outbound), outbound);
