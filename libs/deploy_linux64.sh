@@ -1,6 +1,12 @@
 #!/bin/bash
 set -e
 
+if [[ $(uname -m) == 'aarch64' || $(uname -m) == 'arm64' ]]; then
+  ARCH="arm64"
+else
+  ARCH="amd64"
+fi
+
 source libs/env_deploy.sh
 DEST=$DEPLOYMENT/linux64
 rm -rf $DEST
@@ -9,43 +15,25 @@ mkdir -p $DEST
 #### copy binary ####
 cp $BUILD/nekoray $DEST
 
-#### Download: prebuilt runtime ####
-curl -Lso usr.zip https://github.com/MatsuriDayo/nekoray_qt_runtime/releases/download/20220503/20230202-5.12.8-ubuntu20.04-linux64.zip
-unzip usr.zip
-mv usr $DEST
+cd download-artifact
+cd *linux-$ARCH
+tar xvzf artifacts.tgz -C ../../
+cd ..
+cd *public_res
+tar xvzf artifacts.tgz -C ../../
+cd ../..
 
+mv $DEPLOYMENT/public_res/* $DEST
 
-#### copy so ####
-# 5.11 looks buggy on new systems...
-exit
+wget https://github.com/linuxdeploy/linuxdeploy/releases/download/1-alpha-20240109-1/linuxdeploy-x86_64.AppImage
+wget https://github.com/linuxdeploy/linuxdeploy-plugin-qt/releases/download/1-alpha-20240109-1/linuxdeploy-plugin-qt-x86_64.AppImage
+chmod +x linuxdeploy-x86_64.AppImage linuxdeploy-plugin-qt-x86_64.AppImage
 
-USR_LIB=/usr/lib/x86_64-linux-gnu
-mkdir usr
-pushd usr
-mkdir lib
-pushd lib
-cp $USR_LIB/libQt5Core.so.5 .
-cp $USR_LIB/libQt5DBus.so.5 .
-cp $USR_LIB/libQt5Gui.so.5 .
-cp $USR_LIB/libQt5Network.so.5 .
-cp $USR_LIB/libQt5Svg.so.5 .
-cp $USR_LIB/libQt5Widgets.so.5 .
-cp $USR_LIB/libQt5X11Extras.so.5 .
-cp $USR_LIB/libQt5XcbQpa.so.5 .
-cp $USR_LIB/libdouble-conversion.so.? .
-cp $USR_LIB/libxcb-util.so.? .
-cp $USR_LIB/libicuuc.so.?? .
-cp $USR_LIB/libicui18n.so.?? .
-cp $USR_LIB/libicudata.so.?? .
-popd
-mkdir plugins
-pushd plugins
-cp -r $USR_LIB/qt5/plugins/bearer .
-cp -r $USR_LIB/qt5/plugins/iconengines .
-cp -r $USR_LIB/qt5/plugins/imageformats .
-cp -r $USR_LIB/qt5/plugins/platforminputcontexts .
-cp -r $USR_LIB/qt5/plugins/platforms .
-cp -r $USR_LIB/qt5/plugins/xcbglintegrations .
-popd
-popd
-mv usr $DEST
+export EXTRA_QT_PLUGINS="svg;iconengines;"
+./linuxdeploy-x86_64.AppImage --appdir $DEST --executable $DEST/nekoray --plugin qt
+rm linuxdeploy-x86_64.AppImage linuxdeploy-plugin-qt-x86_64.AppImage
+cd $DEST
+rm nekoray
+mv ./usr/bin/nekoray .
+rm -r ./usr/translations ./usr/bin ./usr/share ./apprun-hooks
+

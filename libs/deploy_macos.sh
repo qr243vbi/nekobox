@@ -13,15 +13,13 @@ rm -rf $DEST
 mkdir -p $DEST
 
 #### copy golang & public_res => .app ####
-
 cd download-artifact
 cd *darwin-$ARCH
 tar xvzf artifacts.tgz -C ../../
 cd ..
 cd *public_res
 tar xvzf artifacts.tgz -C ../../
-cd ..
-cd ..
+cd ../..
 
 mv deployment/public_res/* deployment/macos-$ARCH
 mv deployment/macos-$ARCH/* $BUILD/nekoray.app/Contents/MacOS
