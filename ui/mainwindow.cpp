@@ -752,6 +752,10 @@ void MainWindow::neko_set_spmode_vpn(bool enable, bool save) {
                     on_menu_exit_triggered();
                 }
 #endif
+
+#ifdef Q_OS_MACOS
+                MessageBoxWarning("Need administrator privilege", "Enabling TUN mode requires elevated privileges, please run the app as root.");
+#endif
                 neko_set_spmode_FAILED
             }
         }
