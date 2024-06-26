@@ -295,21 +295,6 @@
                 <string>System</string>
                </property>
               </item>
-              <item>
-               <property name="text">
-                <string notr="true">flatgray</string>
-               </property>
-              </item>
-              <item>
-               <property name="text">
-                <string notr="true">lightblue</string>
-               </property>
-              </item>
-              <item>
-               <property name="text">
-                <string notr="true">blacksoft</string>
-               </property>
-              </item>
              </widget>
             </item>
             <item>

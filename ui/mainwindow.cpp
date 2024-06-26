@@ -63,6 +63,12 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     NekoGui::profileManager->LoadManager();
 
     // Setup misc UI
+    // migrate old themes
+    bool isNum;
+    NekoGui::dataStore->theme.toInt(&isNum);
+    if (isNum) {
+        NekoGui::dataStore->theme = "System";
+    }
     themeManager->ApplyTheme(NekoGui::dataStore->theme);
     ui->setupUi(this);
     //
