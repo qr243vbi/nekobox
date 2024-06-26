@@ -746,7 +746,7 @@ void MainWindow::neko_set_spmode_vpn(bool enable, bool save) {
                 }
 #endif
 #ifdef Q_OS_WIN
-                auto n = QMessageBox::warning(GetMessageBoxParent(), software_name, tr("Please run NekoBox as admin"), QMessageBox::Yes | QMessageBox::No);
+                auto n = QMessageBox::warning(GetMessageBoxParent(), software_name, tr("Please run Nekoray as admin"), QMessageBox::Yes | QMessageBox::No);
                 if (n == QMessageBox::Yes) {
                     this->exit_reason = 3;
                     on_menu_exit_triggered();
@@ -754,7 +754,7 @@ void MainWindow::neko_set_spmode_vpn(bool enable, bool save) {
 #endif
 
 #ifdef Q_OS_MACOS
-                MessageBoxWarning("Need administrator privilege", "Enabling TUN mode requires elevated privileges, please run the app as root.");
+                MessageBoxWarning("Need administrator privilege", "Enabling TUN mode requires elevated privileges, please run Nekoray as root.");
 #endif
                 neko_set_spmode_FAILED
             }
