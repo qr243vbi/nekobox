@@ -122,7 +122,6 @@ DialogBasicSettings::DialogBasicSettings(QWidget *parent)
         CACHE.needRestart = true;
     });
     //
-    int built_in_len = ui->theme->count();
     ui->theme->addItems(QStyleFactory::keys());
     //
     bool ok;
@@ -134,13 +133,8 @@ DialogBasicSettings::DialogBasicSettings(QWidget *parent)
     }
     //
     connect(ui->theme, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, [=](int index) {
-        if (index + 1 <= built_in_len) {
-            themeManager->ApplyTheme(Int2String(index));
-            NekoGui::dataStore->theme = Int2String(index);
-        } else {
-            themeManager->ApplyTheme(ui->theme->currentText());
-            NekoGui::dataStore->theme = ui->theme->currentText();
-        }
+        themeManager->ApplyTheme(ui->theme->currentText());
+        NekoGui::dataStore->theme = ui->theme->currentText();
         repaint();
         mainwindow->repaint();
         NekoGui::dataStore->Save();

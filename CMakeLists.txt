@@ -196,7 +196,6 @@ set(PROJECT_SOURCES
         ui/widget/RouteItem.ui
 
         res/neko.qrc
-        res/theme/feiyangqingyun/qss.qrc
         ${QV2RAY_RC}
         db/RouteEntity.h
         db/RouteEntity.cpp
