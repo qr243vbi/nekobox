@@ -2,16 +2,17 @@
 set -e
 
 source libs/env_deploy.sh
-if [ "$DL_QT_VER" == "5.15" ]; then
-  DEST=$DEPLOYMENT/windows7-x64
-else
-  DEST=$DEPLOYMENT/windows64
-fi
+DEST=$DEPLOYMENT/windows64
 rm -rf $DEST
 mkdir -p $DEST
 
+DEST7=$DEPLOYMENT/windows7
+rm -rf $DEST7
+mkdir -p $DEST7
+
 #### copy exe ####
 cp $BUILD/nekoray.exe $DEST
+cp $BUILD/nekoray.exe $DEST7
 
 cd download-artifact
 cd *windows-amd64
@@ -21,21 +22,21 @@ cd *public_res
 tar xvzf artifacts.tgz -C ../../
 cd ../..
 
+cd download-artifact
+cd *windows7-amd64
+tar xvzf artifacts.tgz -C ../../
+cd ../..
+
+cp $DEPLOYMENT/public_res/* $DEST7
 mv $DEPLOYMENT/public_res/* $DEST
 
 #### deploy qt & DLL runtime ####
 pushd $DEST
-windeployqt nekoray.exe --no-compiler-runtime --no-system-d3d-compiler --no-opengl-sw --verbose 2
-rm -rf translations
-rm -rf libEGL.dll libGLESv2.dll Qt6Pdf.dll
-
-if [ "$DL_QT_VER" != "5.15" ]; then
-  cp $SRC_ROOT/qtsdk/Qt/bin/libcrypto-3-x64.dll .
-  cp $SRC_ROOT/qtsdk/Qt/bin/libssl-3-x64.dll .
-fi
-
+windeployqt nekoray.exe --no-translations --no-system-d3d-compiler --no-compiler-runtime --no-opengl-sw --verbose 2
 popd
 
-#### prepare deployment ####
-cp $BUILD/*.pdb $DEPLOYMENT
+pushd $DEST7
+windeployqt nekoray.exe --no-translations --no-system-d3d-compiler --no-compiler-runtime --no-opengl-sw --verbose 2
+popd
 
+rm -rf $DEST/dxcompiler.dll $DEST/dxil.dll $DEST7/dxcompiler.dll $DEST7/dxil.dll

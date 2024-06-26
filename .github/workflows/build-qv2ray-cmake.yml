@@ -21,6 +21,8 @@ jobs:
         include:
           - cross_os: public_res
             cross_arch: public_res
+          - cross_os: windows7
+            cross_arch: amd64
       fail-fast: false
     runs-on: ubuntu-latest
     steps:
@@ -35,10 +37,15 @@ jobs:
           path: artifacts.tgz
           key: CommonCache-${{ matrix.cross_os }}-${{ matrix.cross_arch }}-${{ hashFiles('libs/*.sh', 'go_status', '*.txt') }}
       - name: Install Golang
-        if: steps.cache-common.outputs.cache-hit != 'true'
+        if: steps.cache-common.outputs.cache-hit != 'true' && matrix.cross_os != 'windows7'
         uses: actions/setup-go@v5.0.0
         with:
-          go-version: ^1.22
+          go-version: '1.22.4'
+      - name: Install Older Golang
+        if: steps.cache-common.outputs.cache-hit != 'true' && matrix.cross_os == 'windows7'
+        uses: actions/setup-go@v5.0.0
+        with:
+          go-version: '1.20'
       - name: Build golang parts
         if: steps.cache-common.outputs.cache-hit != 'true'
         shell: bash
@@ -62,18 +69,17 @@ jobs:
         include:
           - platform: windows-2022
             arch: x64
-            qt_version: "6.5"
+            qt_version: "6.7.2"
           - platform: ubuntu-20.04
             arch: x64
-            qt_version: "6.5"
+            qt_version: "6.7.2"
           - platform: macos-13
             arch: amd64
-            qt_version: "6.5"
+            qt_version: "6.7.2"
           - platform: macos-14
             arch: arm64
-            qt_version: "6.5"
+            qt_version: "6.7.2"
       fail-fast: false
-
     runs-on: ${{ matrix.platform }}
     env:
       ACTIONS_ALLOW_UNSECURE_COMMANDS: true
@@ -84,41 +90,42 @@ jobs:
           submodules: "recursive"
       - name: Install MSVC compiler
         if: matrix.platform == 'windows-2022'
-        uses: ilammy/msvc-dev-cmd@v1
+        uses: ilammy/msvc-dev-cmd@v1.13.0
         with:
-          # 14.1 is for vs2017, 14.2 is vs2019, following the upstream vcpkg build from Qv2ray-deps repo
           toolset: 14.2
           arch: ${{ matrix.arch }}
       - name: Download Artifacts
         uses: actions/download-artifact@v4.1.7
         with:
           path: download-artifact
-      - name: Linux - Install Qt 6.5
+      # ========================================================================================================= Qt Install
+      - name: Linux - Install Qt
         if: matrix.platform == 'ubuntu-20.04'
         uses: jurplel/install-qt-action@v4.0.0
         with:
-          version: 6.5
+          version: ${{ matrix.qt_version }}
           setup-python: true
           cache: true
           cache-key-prefix: QtCache-${{ matrix.platform }}-${{ matrix.arch }}
-      - name: macOS - Install Qt 6.5
+      - name: macOS - Install Qt
         if: matrix.platform == 'macos-13' || matrix.platform == 'macos-14'
         uses: jurplel/install-qt-action@v4.0.0
         with:
-          version: 6.5
+          version: ${{ matrix.qt_version }}
           setup-python: true
           cache: true
           cache-key-prefix: QtCache-${{ matrix.platform }}-${{ matrix.arch }}
-      # ========================================================================================================= Qt Install
-      - name: Windows - Download Custom Qt ${{ matrix.qt_version }} SDK
-        shell: bash
+      - name: Windows - Install Qt
         if: matrix.platform == 'windows-2022'
-        env:
-          DL_QT_VER: ${{ matrix.qt_version }}
-        run: bash ./libs/download_qtsdk_win.sh
+        uses: jurplel/install-qt-action@v4.0.0
+        with:
+          version: ${{ matrix.qt_version }}
+          setup-python: true
+          cache: true
+          cache-key-prefix: QtCache-${{ matrix.platform }}-${{ matrix.arch }}
       # ========================================================================================================= 编译与 Qt 无关的依赖
       - name: Install ninja-build tool
-        uses: seanmiddleditch/gha-setup-ninja@v3
+        uses: seanmiddleditch/gha-setup-ninja@v5
       - name: Cache Download
         id: cache-deps
         uses: actions/cache@v4.0.2
@@ -134,11 +141,9 @@ jobs:
         shell: bash
         if: matrix.platform == 'windows-2022'
         env:
-          DL_QT_VER: ${{ matrix.qt_version }}
           CC: cl.exe
           CXX: cl.exe
         run: |
-          source libs/env_qtsdk.sh $PWD/qtsdk/Qt
           mkdir build
           cd build
           cmake -GNinja -DQT_VERSION_MAJOR=6 -DCMAKE_BUILD_TYPE=Release ..
@@ -200,6 +205,10 @@ jobs:
           zip -r $version_standalone-linux64.zip nekoray
           rm -rf nekoray
           ####
+          mv windows7 nekoray
+          zip -r $version_standalone-windows7.zip nekoray
+          rm -rf nekoray
+          ####
           mv windows64 nekoray
           zip -r $version_standalone-windows64.zip nekoray
           rm -rf nekoray
@@ -212,6 +221,8 @@ jobs:
       - name: Clean Up
         run: |
           cd deployment
+          rm -rf windows-arm64
+          rm -rf linux-arm64
           rm -rf linux64
           rm -rf windows64
           rm -rf macos-amd64
