@@ -25,6 +25,9 @@ namespace NekoGui {
 
     QString genTunName() {
         auto tun_name = "nekoray-tun";
+#ifdef Q_OS_MACOS
+        tun_name = "utun9";
+#endif
         return tun_name;
     }
 
