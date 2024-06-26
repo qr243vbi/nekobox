@@ -299,7 +299,7 @@ void MainWindow::neko_start(int _id) {
         req.set_disable_stats(NekoGui::dataStore->disable_traffic_stats);
         if (NekoGui::dataStore->traffic_loop_interval > 0) {
             req.add_stats_outbounds("proxy");
-            req.add_stats_outbounds("bypass");
+            req.add_stats_outbounds("direct");
         }
         //
         bool rpcOK;

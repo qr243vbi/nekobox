@@ -21,7 +21,7 @@ namespace NekoGui_traffic {
         void Loop();
 
     private:
-        TrafficData *bypass = new TrafficData("bypass");
+        TrafficData *direct = new TrafficData("direct");
 
         [[nodiscard]] static TrafficData *update_stats(TrafficData *item);
     };
