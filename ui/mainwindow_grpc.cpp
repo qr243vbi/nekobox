@@ -309,13 +309,15 @@ void MainWindow::neko_start(int _id) {
         }
         if (!error.isEmpty()) {
             if (error.contains("configure tun interface")) {
-                auto r = QMessageBox::information(this, tr("Tun device misbehaving"),
-                                                  tr("If you have trouble starting VPN, you can force reset nekobox_core process here and then try starting the profile again."),
-                                                  tr("Reset"), tr("Cancel"), "",
-                                                  1, 1);
-                if (r == 0) {
-                    GetMainWindow()->StopVPNProcess(true);
-                }
+                runOnUiThread([=] {
+                    auto r = QMessageBox::information(this, tr("Tun device misbehaving"),
+                                                      tr("If you have trouble starting VPN, you can force reset nekobox_core process here and then try starting the profile again."),
+                                                      tr("Reset"), tr("Cancel"), "",
+                                                      1, 1);
+                    if (r == 0) {
+                        GetMainWindow()->StopVPNProcess(true);
+                    }
+                });
                 return false;
             }
             runOnUiThread([=] { MessageBoxWarning("LoadConfig return error", error); });
