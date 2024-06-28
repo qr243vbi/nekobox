@@ -61,9 +61,6 @@ if (NKR_PACKAGE OR NKR_PACKAGE_MACOS)
     nkr_add_compile_definitions(NKR_CPP_USE_APPDATA)
 endif ()
 
-add_subdirectory(3rdparty/qjs)
-list(APPEND NKR_EXTERNAL_TARGETS quickjs)
-
 include("cmake/myproto.cmake")
 list(APPEND NKR_EXTERNAL_TARGETS myproto)
 
@@ -85,7 +82,6 @@ set(PROJECT_SOURCES
         main/main.cpp
         main/NekoGui.cpp
         main/NekoGui_Utils.cpp
-        main/QJS.cpp
         main/HTTPRequestHelper.cpp
 
         3rdparty/base64.cpp

@@ -2,7 +2,6 @@
 #include "db/Database.hpp"
 #include "fmt/includes.h"
 #include "fmt/Preset.hpp"
-#include "main/QJS.hpp"
 #include "rpc/gRPC.h"
 
 #include <QApplication>
@@ -72,19 +71,6 @@ namespace NekoGui {
         // apply custom config
         MergeJson(QString2QJsonObject(ent->bean->custom_config), result->coreConfig);
 
-        // hook.js
-        if (result->error.isEmpty() && !forTest) {
-            auto source = qjs::ReadHookJS();
-            if (!source.isEmpty()) {
-                qjs::QJS js(source);
-                auto js_result = js.EvalFunction("hook.hook_core_config", QJsonObject2QString(result->coreConfig, true));
-                auto js_result_json = QString2QJsonObject(js_result);
-                if (!js_result_json.isEmpty() && result->coreConfig != js_result_json) {
-                    MW_show_log("hook.js modified your " + software_core_name + " json config.");
-                    result->coreConfig = js_result_json;
-                }
-            }
-        }
         return result;
     }
 
