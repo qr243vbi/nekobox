@@ -4,6 +4,8 @@
 
 namespace NekoGui {
     enum inputType {trufalse, select, text};
+    const int IranBypassChainID = 111111111;
+    const int ChinaBypassChainID = 222222222;
 
     class RouteRule : public JsonStore {
     public:
@@ -60,7 +62,13 @@ namespace NekoGui {
 
         QJsonArray get_route_rules(bool forView = false, std::map<int, QString> outboundMap = {});
 
+        bool isViewOnly() const;
+
         static std::shared_ptr<RoutingChain> GetDefaultChain();
+
+        static std::shared_ptr<RoutingChain> GetIranDefaultChain();
+
+        static std::shared_ptr<RoutingChain> GetChinaDefaultChain();
 
         std::shared_ptr<QList<int>> get_used_outbounds();
 
