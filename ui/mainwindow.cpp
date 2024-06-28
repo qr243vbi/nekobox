@@ -29,6 +29,7 @@
 
 #ifdef Q_OS_WIN
 #include "3rdparty/WinCommander.hpp"
+#include "ui/edit/dialog_edit_group.h"
 #else
 #ifdef Q_OS_LINUX
 #include "sys/linux/LinuxCap.h"
@@ -85,6 +86,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     ui->label_running->installEventFilter(this);
     ui->label_inbound->installEventFilter(this);
     ui->splitter->installEventFilter(this);
+    ui->tabWidget->installEventFilter(this);
     //
     RegisterHotkey(false);
     //
@@ -1570,6 +1572,73 @@ void MainWindow::on_masterLogBrowser_customContextMenuRequested(const QPoint &po
     menu->exec(ui->masterLogBrowser->viewport()->mapToGlobal(pos)); // 弹出菜单
 }
 
+void MainWindow::on_tabWidget_customContextMenuRequested(const QPoint &p) {
+    int clickedIndex = ui->tabWidget->tabBar()->tabAt(p);
+    if (clickedIndex == -1) {
+        auto* menu = new QMenu(this);
+        auto* addAction = new QAction(tr("Add new Group"), this);
+        connect(addAction, &QAction::triggered, this, [=]{
+            auto ent = NekoGui::ProfileManager::NewGroup();
+            auto dialog = new DialogEditGroup(ent, this);
+            int ret = dialog->exec();
+            dialog->deleteLater();
+
+            if (ret == QDialog::Accepted) {
+                NekoGui::profileManager->AddGroup(ent);
+                MW_dialog_message(Dialog_DialogManageGroups, "refresh-1");
+            }
+        });
+
+        menu->addAction(addAction);
+        menu->exec(ui->tabWidget->tabBar()->mapToGlobal(p));
+        return;
+    }
+
+    ui->tabWidget->setCurrentIndex(clickedIndex);
+    auto* menu = new QMenu(this);
+
+    auto* addAction = new QAction(tr("Add new Group"), this);
+    auto* deleteAction = new QAction(tr("Delete selected Group"), this);
+    auto* editAction = new QAction(tr("Edit selected Group"), this);
+    connect(addAction, &QAction::triggered, this, [=]{
+        auto ent = NekoGui::ProfileManager::NewGroup();
+        auto dialog = new DialogEditGroup(ent, this);
+        int ret = dialog->exec();
+        dialog->deleteLater();
+
+        if (ret == QDialog::Accepted) {
+            NekoGui::profileManager->AddGroup(ent);
+            MW_dialog_message(Dialog_DialogManageGroups, "refresh-1");
+        }
+    });
+    connect(deleteAction, &QAction::triggered, this, [=] {
+        auto id = NekoGui::profileManager->groupsTabOrder[clickedIndex];
+        if (QMessageBox::question(this, tr("Confirmation"), tr("Remove %1?").arg(NekoGui::profileManager->groups[id]->name)) ==
+            QMessageBox::StandardButton::Yes) {
+            NekoGui::profileManager->DeleteGroup(id);
+            MW_dialog_message(Dialog_DialogManageGroups, "refresh-1");
+        }
+    });
+    connect(editAction, &QAction::triggered, this, [=]{
+        auto id = NekoGui::profileManager->groupsTabOrder[clickedIndex];
+        auto ent = NekoGui::profileManager->groups[id];
+        auto dialog = new DialogEditGroup(ent, this);
+        connect(dialog, &QDialog::finished, this, [=] {
+            if (dialog->result() == QDialog::Accepted) {
+                ent->Save();
+                MW_dialog_message(Dialog_DialogManageGroups, "refresh" + Int2String(ent->id));
+            }
+            dialog->deleteLater();
+        });
+        dialog->show();
+    });
+    menu->addAction(addAction);
+    menu->addAction(editAction);
+    menu->addAction(deleteAction);
+    menu->exec(ui->tabWidget->tabBar()->mapToGlobal(p));
+    return;
+}
+
 // eventFilter
 
 bool MainWindow::eventFilter(QObject *obj, QEvent *event) {
@@ -1580,6 +1649,9 @@ bool MainWindow::eventFilter(QObject *obj, QEvent *event) {
             return true;
         } else if (obj == ui->label_inbound && mouseEvent->button() == Qt::LeftButton) {
             on_menu_basic_settings_triggered();
+            return true;
+        } else if (obj == ui->tabWidget && mouseEvent->button() == Qt::RightButton) {
+            on_tabWidget_customContextMenuRequested(mouseEvent->pos());
             return true;
         }
     } else if (event->type() == QEvent::MouseButtonDblClick) {
