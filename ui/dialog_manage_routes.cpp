@@ -166,6 +166,7 @@ void DialogManageRoutes::on_edit_route_clicked() {
     routeChainWidget->setWindowModality(Qt::ApplicationModal);
     routeChainWidget->show();
     connect(routeChainWidget, &RouteItem::settingsChanged, this, [=](const std::shared_ptr<NekoGui::RoutingChain>& chain) {
+        if (chain->isViewOnly()) return;
         chainList[idx] = chain;
         reloadProfileItems();
     });
@@ -181,6 +182,7 @@ void DialogManageRoutes::on_delete_route_clicked() {
     }
 
     auto profileToDel = chainList[idx];
+    if (profileToDel->isViewOnly()) return;
     chainList.removeAt(idx);
     if (profileToDel->id == currentRouteProfileID) {
         currentRouteProfileID = chainList[0]->id;

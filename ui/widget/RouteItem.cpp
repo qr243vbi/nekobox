@@ -185,6 +185,16 @@ RouteItem::RouteItem(QWidget *parent, const std::shared_ptr<NekoGui::RoutingChai
     connect(deleteShortcut, &QShortcut::activated, this, [=]{
         on_delete_route_item_clicked();
     });
+
+    if (chain->isViewOnly()) {
+        ui->route_name->setText(chain->name + " (View only)");
+        ui->route_name->setEnabled(false);
+        ui->rule_attr_box->setEnabled(false);
+        ui->new_route_item->setEnabled(false);
+        ui->moveup_route_item->setEnabled(false);
+        ui->movedown_route_item->setEnabled(false);
+        ui->delete_route_item->setEnabled(false);
+    }
 }
 
 RouteItem::~RouteItem() {
@@ -255,7 +265,7 @@ void RouteItem::updateRuleSection() {
         }
     }
     ui->rule_name->setText(ruleItem->name);
-    ui->rule_attr_box->setEnabled(true);
+    ui->rule_attr_box->setDisabled(chain->isViewOnly());
     ui->rule_out->setCurrentText(get_outbound_name(ruleItem->outboundID));
     if (currentAttr == "rule_set") ui->rule_set_helper->show();
     else ui->rule_set_helper->hide();
@@ -311,6 +321,7 @@ void RouteItem::applyRuleHelperSelect(const QModelIndex& index) {
 }
 
 void RouteItem::on_new_route_item_clicked() {
+    if (chain->isViewOnly()) return;
     auto routeItem = std::make_shared<NekoGui::RouteRule>();
     routeItem->name = "rule_" + Int2String(++lastNum);
     chain->Rules << routeItem;
@@ -323,6 +334,7 @@ void RouteItem::on_new_route_item_clicked() {
 }
 
 void RouteItem::on_moveup_route_item_clicked() {
+    if (chain->isViewOnly()) return;
     if (currentIndex == -1 || currentIndex == 0) return;
     auto curr = chain->Rules[currentIndex];
     chain->Rules[currentIndex] = chain->Rules[currentIndex-1];
@@ -332,6 +344,7 @@ void RouteItem::on_moveup_route_item_clicked() {
 }
 
 void RouteItem::on_movedown_route_item_clicked() {
+    if (chain->isViewOnly()) return;
     if (currentIndex == -1 || currentIndex == chain->Rules.size() - 1) return;
     auto curr = chain->Rules[currentIndex];
     chain->Rules[currentIndex] = chain->Rules[currentIndex+1];
@@ -341,6 +354,7 @@ void RouteItem::on_movedown_route_item_clicked() {
 }
 
 void RouteItem::on_delete_route_item_clicked() {
+    if (chain->isViewOnly()) return;
     if (currentIndex == -1) return;
     chain->Rules.removeAt(currentIndex);
     if (chain->Rules.empty()) currentIndex = -1;
