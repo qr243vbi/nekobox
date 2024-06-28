@@ -28,9 +28,9 @@
        <widget class="QLineEdit" name="route_name"/>
       </item>
       <item>
-       <widget class="QPushButton" name="route_view_json">
+       <widget class="QPushButton" name="route_import_json">
         <property name="text">
-         <string>View JSON</string>
+         <string>Import JSON</string>
         </property>
        </widget>
       </item>

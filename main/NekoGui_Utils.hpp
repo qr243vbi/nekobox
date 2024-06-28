@@ -100,6 +100,8 @@ QList<int> QJsonArray2QListInt(const QJsonArray &arr);
 
 QList<QString> QJsonArray2QListString(const QJsonArray &arr);
 
+QJsonArray QString2QJsonArray(const QString& str);
+
 // Files
 
 QByteArray ReadFile(const QString &path);
