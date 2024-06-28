@@ -49,6 +49,7 @@
 #include <QMessageBox>
 #include <QDir>
 #include <QFileInfo>
+#include "edit/dialog_edit_group.h"
 
 void UI_InitMainWindow() {
     mainwindow = new MainWindow;
@@ -1634,7 +1635,7 @@ void MainWindow::on_tabWidget_customContextMenuRequested(const QPoint &p) {
     });
     menu->addAction(addAction);
     menu->addAction(editAction);
-    menu->addAction(deleteAction);
+    if (NekoGui::profileManager->groups.size() > 1) menu->addAction(deleteAction);
     menu->exec(ui->tabWidget->tabBar()->mapToGlobal(p));
     return;
 }
@@ -1651,7 +1652,7 @@ bool MainWindow::eventFilter(QObject *obj, QEvent *event) {
             on_menu_basic_settings_triggered();
             return true;
         } else if (obj == ui->tabWidget && mouseEvent->button() == Qt::RightButton) {
-            on_tabWidget_customContextMenuRequested(mouseEvent->pos());
+            on_tabWidget_customContextMenuRequested(mouseEvent->position().toPoint());
             return true;
         }
     } else if (event->type() == QEvent::MouseButtonDblClick) {
