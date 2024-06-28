@@ -45,7 +45,7 @@
          <widget class="QComboBox" name="front_proxy">
           <item>
            <property name="text">
-            <string>None</string>
+            <string notr="true">None</string>
            </property>
           </item>
          </widget>
@@ -105,7 +105,7 @@
        <widget class="QComboBox" name="landing_proxy">
         <item>
          <property name="text">
-          <string>None</string>
+          <string notr="true">None</string>
          </property>
         </item>
        </widget>
@@ -172,7 +172,7 @@
    <item>
     <widget class="QDialogButtonBox" name="buttonBox">
      <property name="standardButtons">
-      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+      <set>QDialogButtonBox::StandardButton::Cancel|QDialogButtonBox::StandardButton::Ok</set>
      </property>
     </widget>
    </item>

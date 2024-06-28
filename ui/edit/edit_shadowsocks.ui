@@ -59,7 +59,7 @@
     <widget class="QComboBox" name="plugin">
      <item>
       <property name="text">
-       <string/>
+       <string notr="true"/>
       </property>
      </item>
      <item>

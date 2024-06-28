@@ -44,10 +44,6 @@
         <translation>主题</translation>
     </message>
     <message>
-        <source>System</source>
-        <translation>系统</translation>
-    </message>
-    <message>
         <source>Subscription</source>
         <translation>订阅</translation>
     </message>
@@ -166,10 +162,6 @@
     <message>
         <source>Ignore TLS errors when updating subscription</source>
         <translation>更新订阅时忽略 TLS 错误</translation>
-    </message>
-    <message>
-        <source>Enable hook.js</source>
-        <translation>启用 hook.js 功能</translation>
     </message>
     <message>
         <source>Hide dashboard at startup</source>
@@ -345,10 +337,6 @@ For NekoBox, this rewrites the underlying(localhost) DNS in Tun Mode, normal mod
     <message>
         <source>Front Proxy</source>
         <translation>前置代理</translation>
-    </message>
-    <message>
-        <source>None</source>
-        <translation>无</translation>
     </message>
     <message>
         <source>Skip automatic update</source>
@@ -623,14 +611,6 @@ For NekoBox, this rewrites the underlying(localhost) DNS in Tun Mode, normal mod
         <translation>默认出站</translation>
     </message>
     <message>
-        <source>Domain Strategy</source>
-        <translation>域名策略</translation>
-    </message>
-    <message>
-        <source>Server Address Strategy</source>
-        <translation>服务器地址策略</translation>
-    </message>
-    <message>
         <source>Common</source>
         <translation>通用</translation>
     </message>
@@ -679,20 +659,12 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>proxy</source>
-        <translation>代理</translation>
-    </message>
-    <message>
         <source>direct</source>
         <translation>直连</translation>
     </message>
     <message>
         <source>The outbound tag to use when the request is not handled by any rule</source>
         <translation>当请求未被任何规则处理时使用的出站标签</translation>
-    </message>
-    <message>
-        <source>8.8.8.8</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Default DNS server</source>
@@ -717,6 +689,20 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
     <message>
         <source>Delete</source>
         <translation>删除</translation>
+    </message>
+    <message>
+        <source>outbound.domain_strategy
+when set, domain destinations are resolved to IP before connect,
+also if the connection cannot be established with the current address family (ipv4, ipv6), a fallback connection is created shortly after, with the other address family.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Outbound Domain Strategy</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Inbound Domain Strategy</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1121,10 +1107,6 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>服务器</translation>
     </message>
     <message>
-        <source>Ads</source>
-        <translation>推广</translation>
-    </message>
-    <message>
         <source>Type</source>
         <translation>类型</translation>
     </message>
@@ -1243,10 +1225,6 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <source>Update</source>
         <translation>更新</translation>
-    </message>
-    <message>
-        <source>Document</source>
-        <translation>文档</translation>
     </message>
     <message>
         <source>Select</source>
@@ -1451,10 +1429,6 @@ Split by line.</source>
         <translation>重启程序生效。</translation>
     </message>
     <message>
-        <source>Please run NekoBox as admin</source>
-        <translation>请以管理员权限运行 NekoBox</translation>
-    </message>
-    <message>
         <source>Restart Proxy</source>
         <translation>重启代理</translation>
     </message>
@@ -1497,6 +1471,42 @@ Split by line.</source>
     <message>
         <source>Stop Testing</source>
         <translation>停止测试</translation>
+    </message>
+    <message>
+        <source>Tun device misbehaving</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>If you have trouble starting VPN, you can force reset nekobox_core process here and then try starting the profile again.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reset</source>
+        <translation type="unfinished">重置</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished">取消</translation>
+    </message>
+    <message>
+        <source>Please run Nekoray as admin</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add new Group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Delete selected Group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit selected Group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove %1?</source>
+        <translation type="unfinished">删除 %1 ?</translation>
     </message>
 </context>
 <context>
@@ -1664,10 +1674,6 @@ Release note:
         <translation>名称</translation>
     </message>
     <message>
-        <source>View JSON</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Rules</source>
         <translation>规则</translation>
     </message>
@@ -1701,6 +1707,10 @@ Release note:
     </message>
     <message>
         <source>Name_Placeholder</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Import JSON</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

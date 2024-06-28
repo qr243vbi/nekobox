@@ -23,10 +23,10 @@
    <item row="8" column="3">
     <widget class="QDialogButtonBox" name="buttonBox">
      <property name="orientation">
-      <enum>Qt::Horizontal</enum>
+      <enum>Qt::Orientation::Horizontal</enum>
      </property>
      <property name="standardButtons">
-      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+      <set>QDialogButtonBox::StandardButton::Cancel|QDialogButtonBox::StandardButton::Ok</set>
      </property>
     </widget>
    </item>
@@ -215,7 +215,7 @@
           <item>
            <widget class="Line" name="sys_proxy_format_vline">
             <property name="orientation">
-             <enum>Qt::Vertical</enum>
+             <enum>Qt::Orientation::Vertical</enum>
             </property>
            </widget>
           </item>
@@ -292,7 +292,7 @@
              <widget class="QComboBox" name="theme">
               <item>
                <property name="text">
-                <string>System</string>
+                <string notr="true">System</string>
                </property>
               </item>
              </widget>
@@ -789,7 +789,7 @@
        <item>
         <widget class="QScrollArea" name="extra_core_box_scrollArea">
          <property name="frameShape">
-          <enum>QFrame::NoFrame</enum>
+          <enum>QFrame::Shape::NoFrame</enum>
          </property>
          <property name="widgetResizable">
           <bool>true</bool>
@@ -799,8 +799,8 @@
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>680</width>
-            <height>355</height>
+            <width>686</width>
+            <height>377</height>
            </rect>
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_6">
@@ -846,44 +846,6 @@
          <property name="text">
           <string>Skip TLS certificate authentication by default (allowInsecure)</string>
          </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QGroupBox" name="horizontalGroupBox3">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <layout class="QHBoxLayout" name="horizontalLayout_14">
-          <item>
-           <widget class="QLabel" name="label_2">
-            <property name="text">
-             <string>Enable hook.js</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QComboBox" name="enable_js_hook">
-            <item>
-             <property name="text">
-              <string notr="true">Disable</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string notr="true">Enable</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string notr="true">Enable + load std module</string>
-             </property>
-            </item>
-           </widget>
-          </item>
-         </layout>
         </widget>
        </item>
        <item>

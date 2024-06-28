@@ -64,10 +64,6 @@
         <translation>Тема</translation>
     </message>
     <message>
-        <source>System</source>
-        <translation>Системная</translation>
-    </message>
-    <message>
         <source>Set custom icon</source>
         <translation>Задать иконку</translation>
     </message>
@@ -162,10 +158,6 @@
     <message>
         <source>Skip TLS certificate authentication by default (allowInsecure)</source>
         <translation>Не проверять подлинность TLS сертификатов по умолчанию</translation>
-    </message>
-    <message>
-        <source>Enable hook.js</source>
-        <translation>Использовать hook.js</translation>
     </message>
     <message>
         <source>Default uTLS Fingerprint</source>
@@ -345,10 +337,6 @@ For NekoBox, this rewrites the underlying(localhost) DNS in Tun Mode, normal mod
     <message>
         <source>Please input URL</source>
         <translation>Пожалуйста, введите URL</translation>
-    </message>
-    <message>
-        <source>None</source>
-        <translation>Нет</translation>
     </message>
     <message>
         <source>Skip automatic update</source>
@@ -599,10 +587,6 @@ For NekoBox, this rewrites the underlying(localhost) DNS in Tun Mode, normal mod
         <translation>Общие</translation>
     </message>
     <message>
-        <source>Domain Strategy</source>
-        <translation>Стратегия доменов</translation>
-    </message>
-    <message>
         <source>Disable</source>
         <translation>Выкл</translation>
     </message>
@@ -617,10 +601,6 @@ For NekoBox, this rewrites the underlying(localhost) DNS in Tun Mode, normal mod
     <message>
         <source>Sniffing Mode</source>
         <translation>Режим подслушивания</translation>
-    </message>
-    <message>
-        <source>Server Address Strategy</source>
-        <translation>Стратегия выбора адреса сервера</translation>
     </message>
     <message>
         <source>DNS</source>
@@ -677,19 +657,11 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>proxy</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>direct</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>The outbound tag to use when the request is not handled by any rule</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>8.8.8.8</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -715,6 +687,20 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
     <message>
         <source>Delete</source>
         <translation type="unfinished">Удалить</translation>
+    </message>
+    <message>
+        <source>outbound.domain_strategy
+when set, domain destinations are resolved to IP before connect,
+also if the connection cannot be established with the current address family (ipv4, ipv6), a fallback connection is created shortly after, with the other address family.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Outbound Domain Strategy</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Inbound Domain Strategy</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1119,14 +1105,6 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>Сервер</translation>
     </message>
     <message>
-        <source>Ads</source>
-        <translation>Реклама</translation>
-    </message>
-    <message>
-        <source>Document</source>
-        <translation>Документация</translation>
-    </message>
-    <message>
         <source>Update</source>
         <translation>Обновление</translation>
     </message>
@@ -1364,10 +1342,6 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>Импортирован(ы) %1 профиль(ей)</translation>
     </message>
     <message>
-        <source>Please run NekoBox as admin</source>
-        <translation>Пожалуйста, запустите NekoBox с правами администратора</translation>
-    </message>
-    <message>
         <source>Not Running</source>
         <translation>Не запущен</translation>
     </message>
@@ -1496,6 +1470,42 @@ Split by line.</source>
     <message>
         <source>Stop Testing</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tun device misbehaving</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>If you have trouble starting VPN, you can force reset nekobox_core process here and then try starting the profile again.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reset</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished">Отмена</translation>
+    </message>
+    <message>
+        <source>Please run Nekoray as admin</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add new Group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Delete selected Group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit selected Group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove %1?</source>
+        <translation type="unfinished">Удалить %1?</translation>
     </message>
 </context>
 <context>
@@ -1663,10 +1673,6 @@ Release note:
         <translation type="unfinished">Имя</translation>
     </message>
     <message>
-        <source>View JSON</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Rules</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1700,6 +1706,10 @@ Release note:
     </message>
     <message>
         <source>Name_Placeholder</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Import JSON</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

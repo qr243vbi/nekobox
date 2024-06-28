@@ -44,10 +44,6 @@
         <translation>پوسته</translation>
     </message>
     <message>
-        <source>System</source>
-        <translation>سیستم</translation>
-    </message>
-    <message>
         <source>Subscription</source>
         <translation>اشتراک</translation>
     </message>
@@ -144,10 +140,6 @@
     <message>
         <source>Ignore TLS errors when updating subscription</source>
         <translation>هنگام به‌روزرسانی اشتراک، خطاهای TLS را نادیده گرفته شود</translation>
-    </message>
-    <message>
-        <source>Enable hook.js</source>
-        <translation type="unfinished">فعال سازی hook.js</translation>
     </message>
     <message>
         <source>Advanced system proxy settings. Please select a format.</source>
@@ -345,10 +337,6 @@ For NekoBox, this rewrites the underlying(localhost) DNS in Tun Mode, normal mod
     <message>
         <source>Front Proxy</source>
         <translation type="unfinished">پروکسی front</translation>
-    </message>
-    <message>
-        <source>None</source>
-        <translation type="unfinished">هیچ یک</translation>
     </message>
     <message>
         <source>Skip automatic update</source>
@@ -615,14 +603,6 @@ For NekoBox, this rewrites the underlying(localhost) DNS in Tun Mode, normal mod
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Domain Strategy</source>
-        <translation type="unfinished">استراتژی دامنه</translation>
-    </message>
-    <message>
-        <source>Server Address Strategy</source>
-        <translation type="unfinished">استراتژی آدرس سرور</translation>
-    </message>
-    <message>
         <source>Sniff result for routing</source>
         <translation type="unfinished"></translation>
     </message>
@@ -677,19 +657,11 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>proxy</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>direct</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>The outbound tag to use when the request is not handled by any rule</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>8.8.8.8</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -714,6 +686,20 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
     </message>
     <message>
         <source>Delete</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>outbound.domain_strategy
+when set, domain destinations are resolved to IP before connect,
+also if the connection cannot be established with the current address family (ipv4, ipv6), a fallback connection is created shortly after, with the other address family.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Outbound Domain Strategy</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Inbound Domain Strategy</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1116,14 +1102,6 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</source>
         <translation>سرور</translation>
     </message>
     <message>
-        <source>Ads</source>
-        <translation>تبلیغات</translation>
-    </message>
-    <message>
-        <source>Document</source>
-        <translation>اسناد</translation>
-    </message>
-    <message>
         <source>Update</source>
         <translation>بروزرسانی</translation>
     </message>
@@ -1442,10 +1420,6 @@ Split by line.</source>
         <translation type="unfinished">تنظیمات تغییر کرد</translation>
     </message>
     <message>
-        <source>Please run NekoBox as admin</source>
-        <translation type="unfinished">لطفا Nekobox را با مجوز ادمین اجرا کنید</translation>
-    </message>
-    <message>
         <source>Restart Proxy</source>
         <translation type="unfinished">راه اندازی مجدد پروکسی</translation>
     </message>
@@ -1492,6 +1466,42 @@ Split by line.</source>
     <message>
         <source>Stop Testing</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tun device misbehaving</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>If you have trouble starting VPN, you can force reset nekobox_core process here and then try starting the profile again.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reset</source>
+        <translation type="unfinished">بازنشانی</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished">لغو کردن</translation>
+    </message>
+    <message>
+        <source>Please run Nekoray as admin</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add new Group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Delete selected Group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit selected Group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove %1?</source>
+        <translation type="unfinished">حذف %1?</translation>
     </message>
 </context>
 <context>
@@ -1652,10 +1662,6 @@ Direct: %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>View JSON</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Rules</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1689,6 +1695,10 @@ Direct: %2</source>
     </message>
     <message>
         <source>Name_Placeholder</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Import JSON</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

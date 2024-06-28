@@ -107,7 +107,7 @@ when used, domain destinations are resolved to IP before routing.</string>
            <widget class="QComboBox" name="default_out">
             <item>
              <property name="text">
-              <string>proxy</string>
+              <string notr="true">proxy</string>
              </property>
             </item>
             <item>
@@ -170,7 +170,7 @@ For more information, see the document &quot;Configuration/DNS&quot;.</string>
               </property>
               <item>
                <property name="text">
-                <string>8.8.8.8</string>
+                <string notr="true">8.8.8.8</string>
                </property>
               </item>
               <item>
@@ -442,7 +442,7 @@ For more information, see the document &quot;Configuration/DNS&quot;.</string>
         </sizepolicy>
        </property>
        <property name="standardButtons">
-        <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+        <set>QDialogButtonBox::StandardButton::Cancel|QDialogButtonBox::StandardButton::Ok</set>
        </property>
       </widget>
      </item>
