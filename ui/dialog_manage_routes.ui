@@ -58,8 +58,13 @@
           </item>
           <item row="3" column="0">
            <widget class="QLabel" name="label_3">
+            <property name="toolTip">
+             <string>outbound.domain_strategy
+when set, domain destinations are resolved to IP before connect,
+also if the connection cannot be established with the current address family (ipv4, ipv6), a fallback connection is created shortly after, with the other address family.</string>
+            </property>
             <property name="text">
-             <string>Server Address Strategy</string>
+             <string>Outbound Domain Strategy</string>
             </property>
            </widget>
           </item>
@@ -90,11 +95,11 @@
           <item row="2" column="0">
            <widget class="QLabel" name="label_6">
             <property name="toolTip">
-             <string notr="true">For V2Ray, it sets routing.domainStrategy
-For sing-box, it sets inbound.domain_strategy</string>
+             <string notr="true">inbound.domain_strategy
+when used, domain destinations are resolved to IP before routing.</string>
             </property>
             <property name="text">
-             <string>Domain Strategy</string>
+             <string>Inbound Domain Strategy</string>
             </property>
            </widget>
           </item>
