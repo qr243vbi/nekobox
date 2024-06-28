@@ -468,7 +468,7 @@ namespace NekoGui {
 
         auto routeChain = NekoGui::profileManager->GetRouteChain(NekoGui::dataStore->routing->current_route_id);
         if (routeChain == nullptr) {
-            MessageBoxWarning("Corrupted Data", "Routing profile does not exist, try resetting the route profile in Routing Settings");
+            status->result->error = "Routing profile does not exist, try resetting the route profile in Routing Settings";
             return;
         }
         auto neededOutbounds = routeChain->get_used_outbounds();
@@ -483,7 +483,7 @@ namespace NekoGui {
             if (item < 0) continue;
             auto neededEnt = NekoGui::profileManager->GetProfile(item);
             if (neededEnt == nullptr) {
-                MessageBoxWarning("Invalid Data", "The routing profile is referencing outbounds that no longer exists, consider revising your settings");
+                status->result->error = "The routing profile is referencing outbounds that no longer exists, consider revising your settings";
                 return;
             }
             QJsonObject currOutbound;

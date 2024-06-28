@@ -88,10 +88,6 @@ namespace NekoGui {
             routes[id] = route;
         }
 
-        // Add default route chains
-        routes[IranBypassChainID] = RoutingChain::GetIranDefaultChain();
-        routes[ChinaBypassChainID] = RoutingChain::GetChinaDefaultChain();
-
         // First setup
         if (groups.empty()) {
             auto defaultGroup = NekoGui::ProfileManager::NewGroup();
@@ -99,10 +95,14 @@ namespace NekoGui {
             NekoGui::profileManager->AddGroup(defaultGroup);
         }
 
-        if (routes.empty()) {
+        if (routes.count(0) == 0) {
             auto defaultRoute = NekoGui::RoutingChain::GetDefaultChain();
             NekoGui::profileManager->AddRouteChain(defaultRoute);
         }
+
+        // Add default route chains
+        routes[IranBypassChainID] = RoutingChain::GetIranDefaultChain();
+        routes[ChinaBypassChainID] = RoutingChain::GetChinaDefaultChain();
 
         //
         if (dataStore->flag_reorder) {
