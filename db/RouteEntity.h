@@ -56,6 +56,8 @@ namespace NekoGui {
 
         RoutingChain(const RoutingChain& other);
 
+        static QList<std::shared_ptr<RouteRule>> parseJsonArray(const QJsonArray& arr, QString* parseError);
+
         bool Save() override;
 
         void FromJson(QJsonObject object);

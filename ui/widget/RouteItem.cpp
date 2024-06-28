@@ -121,15 +121,51 @@ RouteItem::RouteItem(QWidget *parent, const std::shared_ptr<NekoGui::RoutingChai
     ui->rule_preview->setEnabled(false);
     updateRuleSection();
 
-    connect(ui->route_view_json, &QPushButton::clicked, this, [=] {
-        QString res;
-        auto rules = chain->get_route_rules(true);
-        for (int i=0;i<rules.size();i++) {
-            auto item = rules[i];
-            res += QJsonObject2QString(item.toObject(), false);
-            if (i != rules.size()-1) res+=",";
-        }
-        MessageBoxInfo("JSON object", res);
+    connect(ui->route_import_json, &QPushButton::clicked, this, [=] {
+        auto w = new QDialog(this);
+        w->setWindowTitle("Import JSON Array");
+        w->setWindowModality(Qt::ApplicationModal);
+
+        auto line = 0;
+        auto layout = new QGridLayout;
+        w->setLayout(layout);
+
+        auto *tEdit = new QTextEdit;
+        tEdit->setPlaceholderText("[\n"
+            "      {\n"
+            "        \"outbound\": \"dns-out\",\n"
+            "        \"protocol\": \"dns\"\n"
+            "      },\n"
+            "      {\n"
+            "        \"outbound\": \"dns-out\",\n"
+            "        \"protocol\": \"udp\"\n"
+            "      }\n"
+            "    ]");
+        layout->addWidget(tEdit, line++, 0);
+
+        auto *buttons = new QDialogButtonBox;
+        buttons->setOrientation(Qt::Horizontal);
+        buttons->setStandardButtons(QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
+        layout->addWidget(buttons, line, 0);
+
+        connect(buttons, &QDialogButtonBox::accepted, w, [=]{
+           auto err = new QString;
+           auto parsed = NekoGui::RoutingChain::parseJsonArray(QString2QJsonArray(tEdit->toPlainText()), err);
+           if (!err->isEmpty()) {
+               MessageBoxInfo("Invalid JSON Array", "The provided input cannot be parsed to a valid route rule array:\n" + *err);
+               return;
+           }
+           chain->Rules.clear();
+           chain->Rules << parsed;
+           updateRouteItemsView();
+           updateRuleSection();
+
+           w->accept();
+        });
+        connect(buttons, &QDialogButtonBox::rejected, w, &QDialog::reject);
+
+        w->exec();
+        w->deleteLater();
     });
 
     connect(ui->rule_name, &QLineEdit::textChanged, this, [=](const QString& text) {
@@ -194,6 +230,7 @@ RouteItem::RouteItem(QWidget *parent, const std::shared_ptr<NekoGui::RoutingChai
         ui->moveup_route_item->setEnabled(false);
         ui->movedown_route_item->setEnabled(false);
         ui->delete_route_item->setEnabled(false);
+        ui->route_import_json->setEnabled(false);
     }
 }
 

@@ -2,6 +2,7 @@
 #include <QJsonArray>
 #include "RouteEntity.h"
 #include "db/Database.hpp"
+#include <iostream>
 
 namespace NekoGui {
     QJsonArray get_as_array(const QList<QString>& str, bool castToNum = false) {
@@ -279,6 +280,85 @@ namespace NekoGui {
 
     bool RouteRule::isEmpty() const {
         return get_rule_json().keys().length() == 1;
+    }
+
+    bool isOutboundIDValid(int id) {
+        switch (id) {
+            case -1:
+            case -2:
+            case -3:
+            case -4:
+                return true;
+            default:
+                return profileManager->profiles.count(id) > 0;
+        }
+    }
+
+    int getOutboundID(const QString& name) {
+        if (name == "proxy") return -1;
+        if (name == "direct") return -2;
+        if (name == "block") return -3;
+        if (name == "dns-out") return -4;
+        for (const auto& item: profileManager->profiles) {
+            if (item.second->bean->name == name) return item.first;
+        }
+
+        return INVALID_ID;
+    }
+
+    QList<std::shared_ptr<RouteRule>> RoutingChain::parseJsonArray(const QJsonArray& arr, QString* parseError) {
+        if (arr.empty()) {
+            parseError->append("Input is not a valid json array");
+            return {};
+        }
+
+        auto rules = QList<std::shared_ptr<RouteRule>>();
+        auto ruleID = 1;
+        for (const auto& item: arr) {
+            if (!item.isObject()) {
+                parseError->append(QString("expected array of json objects but have member of type '%1'").arg(item.type()));
+                return {};
+            }
+
+            auto obj = item.toObject();
+            auto rule = std::make_shared<RouteRule>();
+            bool hasOutbound = false;
+            for (const auto& key: obj.keys()) {
+                auto val = obj.value(key);
+                if (key == "outbound") {
+                    if (val.isDouble()) {
+                        if (!isOutboundIDValid(val.toInt())) {
+                            parseError->append(QString("outbound id %1 is not valid").arg(val.toInt()));
+                            return {};
+                        }
+                        rule->outboundID = val.toInt();
+                        hasOutbound = true;
+                    } else if (val.isString()) {
+                        auto id = getOutboundID(val.toString());
+                        if (id == INVALID_ID) {
+                            parseError->append(QString("outbound with name %1 does not exist").arg(val.toString()));
+                            return {};
+                        }
+                        rule->outboundID = id;
+                        hasOutbound = true;
+                    }
+                } else if (val.isArray()) {
+                    rule->set_field_value(key, QJsonArray2QListString(val.toArray()));
+                } else if (val.isString() || val.isBool()) {
+                    rule->set_field_value(key, {val.toString()});
+                }
+            }
+            if (hasOutbound) {
+                rule->name = "imported rule #" + Int2String(ruleID++);
+                rules << rule;
+            }
+            else {
+                parseError->append(QString("rule has no outbound: %1").arg(QJsonObject2QString(obj, false)));
+                return {};
+            }
+        }
+
+        return rules;
     }
 
     QJsonArray RoutingChain::get_route_rules(bool forView, std::map<int, QString> outboundMap) {

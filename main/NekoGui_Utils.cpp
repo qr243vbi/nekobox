@@ -139,6 +139,14 @@ QList<QString> QJsonArray2QListString(const QJsonArray &arr) {
     return list2;
 }
 
+QJsonArray QString2QJsonArray(const QString& str) {
+    auto doc = QJsonDocument::fromJson(str.toUtf8());
+    if (doc.isArray()) {
+        return doc.array();
+    }
+    return {};
+}
+
 QByteArray ReadFile(const QString &path) {
     QFile file(path);
     file.open(QFile::ReadOnly);
