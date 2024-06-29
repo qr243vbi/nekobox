@@ -32,6 +32,10 @@ func Updater() {
 	}
 	log.Println("updating from", updatePackagePath)
 
+	dir, err := os.Getwd()
+	if err != nil {
+		log.Fatalln(err)
+	}
 	// extract update package
 	if strings.HasSuffix(updatePackagePath, ".zip") {
 		pre_cleanup()
@@ -39,7 +43,7 @@ func Updater() {
 		if err != nil {
 			log.Fatalln(err.Error())
 		}
-		err = extract.Zip(context.Background(), f, "./nekoray_update", nil)
+		err = extract.Zip(context.Background(), f, dir+string(os.PathSeparator)+"nekoray_update", nil)
 		if err != nil {
 			log.Fatalln(err.Error())
 		}
@@ -50,7 +54,7 @@ func Updater() {
 		if err != nil {
 			log.Fatalln(err.Error())
 		}
-		err = extract.Gz(context.Background(), f, "./nekoray_update", nil)
+		err = extract.Gz(context.Background(), f, dir+string(os.PathSeparator)+"nekoray_update", nil)
 		if err != nil {
 			log.Fatalln(err.Error())
 		}
@@ -62,7 +66,7 @@ func Updater() {
 	removeAll("./*.dmp")
 
 	// update move
-	err := Mv("./nekoray_update/nekoray", "./")
+	err = Mv("./nekoray_update/nekoray", "./")
 	if err != nil {
 		MessageBoxPlain("NekoGui Updater", "Update failed. Please close the running instance and run the updater again.\n\n"+err.Error())
 		log.Fatalln(err.Error())
