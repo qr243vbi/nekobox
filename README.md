@@ -2,7 +2,7 @@
 
 Qt based cross-platform GUI proxy configuration manager (backend: sing-box)
 
-Support Windows / Linux / MacOS out of the box now. Windows7 is also supported, but requires some additional changes to run it.
+Support Windows / Linux / MacOS out of the box now. Windows7 is also supported, but requires some additional changes to run.
 
 This Project was adopted and developed since the original author had left it, now that arm64v8a has started to update the app again, I might stop maintaining this repo depending on the situation.
 
