@@ -411,6 +411,7 @@ namespace NekoGui {
         _add(new configItem("ip_version", &ip_version, itemType::string));
         _add(new configItem("network", &network, itemType::string));
         _add(new configItem("protocol", &protocol, itemType::string));
+        _add(new configItem("inbound", &inbound, itemType::stringList));
         _add(new configItem("domain", &domain, itemType::stringList));
         _add(new configItem("domain_suffix", &domain_suffix, itemType::stringList));
         _add(new configItem("domain_keyword", &domain_keyword, itemType::stringList));

@@ -26,6 +26,7 @@ namespace NekoGui {
         ip_version = other.ip_version;
         network = other.network;
         protocol = other.protocol;
+        inbound << other.inbound;
         domain << other.domain;
         domain_suffix << other.domain_suffix;
         domain_keyword << other.domain_keyword;
@@ -48,6 +49,7 @@ namespace NekoGui {
         _add(new configItem("ip_version", &ip_version, itemType::string));
         _add(new configItem("network", &network, itemType::string));
         _add(new configItem("protocol", &protocol, itemType::string));
+        _add(new configItem("inbound", &inbound, itemType::stringList));
         _add(new configItem("domain", &domain, itemType::stringList));
         _add(new configItem("domain_suffix", &domain_suffix, itemType::stringList));
         _add(new configItem("domain_keyword", &domain_keyword, itemType::stringList));
@@ -73,6 +75,7 @@ namespace NekoGui {
         if (!ip_version.isEmpty()) obj["ip_version"] = ip_version.toInt();
         if (!network.isEmpty()) obj["network"] = network;
         if (!protocol.isEmpty()) obj["protocol"] = protocol;
+        if (isValidStrArray(inbound)) obj["inbound"] = get_as_array(inbound);
         if (isValidStrArray(domain)) obj["domain"] = get_as_array(domain);
         if (isValidStrArray(domain_suffix)) obj["domain_suffix"] = get_as_array(domain_suffix);
         if (isValidStrArray(domain_keyword)) obj["domain_keyword"] = get_as_array(domain_keyword);
@@ -126,6 +129,7 @@ namespace NekoGui {
                 "ip_version",
                 "network",
                 "protocol",
+                "inbound",
                 "domain",
                 "domain_suffix",
                 "domain_keyword",
@@ -180,6 +184,7 @@ namespace NekoGui {
         if (fieldName == "protocol") {
             return {protocol};
         }
+        if (fieldName == "inbound") return inbound;
         if (fieldName == "domain") return domain;
         if (fieldName == "domain_suffix") return domain_suffix;
         if (fieldName == "domain_keyword") return domain_keyword;
@@ -227,6 +232,9 @@ namespace NekoGui {
         }
         if (fieldName == "protocol") {
             protocol = value[0];
+        }
+        if (fieldName == "inbound") {
+            inbound = filterEmpty(value);
         }
         if (fieldName == "domain") {
             domain = filterEmpty(value);
