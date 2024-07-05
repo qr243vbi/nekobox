@@ -17,6 +17,7 @@ namespace NekoGui {
         QString ip_version;
         QString network;
         QString protocol;
+        QList<QString> inbound;
         QList<QString> domain;
         QList<QString> domain_suffix;
         QList<QString> domain_keyword;
