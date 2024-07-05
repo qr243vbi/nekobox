@@ -216,6 +216,36 @@ void MainWindow::speedtest_current_group(int mode) {
     });
 }
 
+void MainWindow::url_test_current() {
+    last_test_time = QTime::currentTime();
+    ui->label_running->setText(tr("Testing"));
+
+    runOnNewThread([=] {
+        libcore::TestReq req;
+        req.set_mode(libcore::UrlTest);
+        req.set_timeout(3000);
+        req.set_url(NekoGui::dataStore->test_latency_url.toStdString());
+
+        bool rpcOK;
+        auto result = defaultClient->Test(&rpcOK, req);
+        if (!rpcOK) return;
+
+        auto latency = result.ms();
+        last_test_time = QTime::currentTime();
+
+        runOnUiThread([=] {
+            if (!result.error().empty()) {
+                MW_show_log(QString("UrlTest error: %1").arg(result.error().c_str()));
+            }
+            if (latency <= 0) {
+                ui->label_running->setText(tr("Test Result") + ": " + tr("Unavailable"));
+            } else if (latency > 0) {
+                ui->label_running->setText(tr("Test Result") + ": " + QString("%1 ms").arg(latency));
+            }
+        });
+    });
+}
+
 void MainWindow::stop_core_daemon() {
     NekoGui_rpc::defaultClient->Exit();
 }
