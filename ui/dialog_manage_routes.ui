@@ -27,6 +27,63 @@
        <item>
         <widget class="QWidget" name="widget" native="true">
          <layout class="QGridLayout" name="gridLayout_2">
+          <item row="2" column="0">
+           <widget class="QLabel" name="label_6">
+            <property name="toolTip">
+             <string notr="true">inbound.domain_strategy
+when used, domain destinations are resolved to IP before routing.</string>
+            </property>
+            <property name="text">
+             <string>Inbound Domain Strategy</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="0">
+           <widget class="QLabel" name="label_3">
+            <property name="toolTip">
+             <string>outbound.domain_strategy
+when set, domain destinations are resolved to IP before connect,
+also if the connection cannot be established with the current address family (ipv4, ipv6), a fallback connection is created shortly after, with the other address family.</string>
+            </property>
+            <property name="text">
+             <string>Outbound Domain Strategy</string>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="1">
+           <widget class="QComboBox" name="route_prof"/>
+          </item>
+          <item row="5" column="1">
+           <widget class="QComboBox" name="default_out">
+            <item>
+             <property name="text">
+              <string notr="true">proxy</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string notr="true">direct</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="label">
+            <property name="toolTip">
+             <string>Sniffs the connections intial packet(s?) to identify the protocol and the SNI. Sniff result for destination also rewrites the destionation of the connection to the sniffed SNI. For more data on the sniffed protocol refer to the sing-box's documentation.</string>
+            </property>
+            <property name="text">
+             <string>Sniffing Mode</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="1">
+           <widget class="QComboBox" name="outbound_domain_strategy">
+            <property name="editable">
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
           <item row="1" column="1">
            <widget class="QComboBox" name="sniffing_mode">
             <item>
@@ -46,75 +103,11 @@
             </item>
            </widget>
           </item>
-          <item row="1" column="0">
-           <widget class="QLabel" name="label">
-            <property name="toolTip">
-             <string>Sniffs the connections intial packet(s?) to identify the protocol and the SNI. Sniff result for destination also rewrites the destionation of the connection to the sniffed SNI. For more data on the sniffed protocol refer to the sing-box's documentation.</string>
-            </property>
-            <property name="text">
-             <string>Sniffing Mode</string>
-            </property>
-           </widget>
-          </item>
-          <item row="3" column="0">
-           <widget class="QLabel" name="label_3">
-            <property name="toolTip">
-             <string>outbound.domain_strategy
-when set, domain destinations are resolved to IP before connect,
-also if the connection cannot be established with the current address family (ipv4, ipv6), a fallback connection is created shortly after, with the other address family.</string>
-            </property>
-            <property name="text">
-             <string>Outbound Domain Strategy</string>
-            </property>
-           </widget>
-          </item>
           <item row="2" column="1">
            <widget class="QComboBox" name="domainStrategyCombo">
             <property name="editable">
              <bool>false</bool>
             </property>
-           </widget>
-          </item>
-          <item row="4" column="0">
-           <widget class="QLabel" name="route_prof_l">
-            <property name="text">
-             <string>Routing Profile</string>
-            </property>
-           </widget>
-          </item>
-          <item row="4" column="1">
-           <widget class="QComboBox" name="route_prof"/>
-          </item>
-          <item row="3" column="1">
-           <widget class="QComboBox" name="outbound_domain_strategy">
-            <property name="editable">
-             <bool>false</bool>
-            </property>
-           </widget>
-          </item>
-          <item row="2" column="0">
-           <widget class="QLabel" name="label_6">
-            <property name="toolTip">
-             <string notr="true">inbound.domain_strategy
-when used, domain destinations are resolved to IP before routing.</string>
-            </property>
-            <property name="text">
-             <string>Inbound Domain Strategy</string>
-            </property>
-           </widget>
-          </item>
-          <item row="5" column="1">
-           <widget class="QComboBox" name="default_out">
-            <item>
-             <property name="text">
-              <string notr="true">proxy</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string notr="true">direct</string>
-             </property>
-            </item>
            </widget>
           </item>
           <item row="5" column="0">
@@ -124,6 +117,13 @@ when used, domain destinations are resolved to IP before routing.</string>
             </property>
             <property name="text">
              <string>Default Outbound</string>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="0">
+           <widget class="QLabel" name="route_prof_l">
+            <property name="text">
+             <string>Routing Profile</string>
             </property>
            </widget>
           </item>
@@ -442,7 +442,7 @@ For more information, see the document &quot;Configuration/DNS&quot;.</string>
         </sizepolicy>
        </property>
        <property name="standardButtons">
-        <set>QDialogButtonBox::StandardButton::Cancel|QDialogButtonBox::StandardButton::Ok</set>
+        <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
        </property>
       </widget>
      </item>

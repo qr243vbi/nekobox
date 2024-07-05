@@ -473,6 +473,18 @@ namespace NekoGui {
         return res;
     }
 
+    QStringList RoutingChain::get_direct_site_rule_sets() {
+        auto res = QStringList();
+        for (const auto& item: Rules) {
+            if (item->outboundID == -2) {
+                for (const auto& rset: item->rule_set) {
+                    if (rset.endsWith("_SITE")) res << rset;
+                }
+            }
+        }
+        return res;
+    }
+
     RoutingChain::RoutingChain(const RoutingChain& other)  : JsonStore(other) {
         id = other.id;
         name = QString(other.name);
