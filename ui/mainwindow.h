@@ -194,6 +194,8 @@ private:
 
     void RunSpeedTest(const std::shared_ptr<NekoGui::ProxyEntity>& ent, int mode, const QStringList& full_test_flags);
 
+    void url_test_current();
+
     static void stop_core_daemon();
 
     void CheckUpdate();
