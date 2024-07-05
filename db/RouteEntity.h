@@ -77,6 +77,6 @@ namespace NekoGui {
 
         std::shared_ptr<QStringList> get_used_rule_sets();
 
-        QStringList get_direct_site_rule_sets();
+        QStringList get_direct_sites();
     };
 } // namespace NekoGui

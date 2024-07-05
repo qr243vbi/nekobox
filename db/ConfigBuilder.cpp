@@ -570,24 +570,40 @@ namespace NekoGui {
 
         // Direct dns domains
         QJsonArray directDnsDomains;
+        QJsonArray directDnsRuleSets;
+        QJsonArray directDnsSuffixes;
+        QJsonArray directDnsKeywords;
+        QJsonArray directDnsRegexes;
+
+        // server addresses
         for (const auto &item: status->domainListDNSDirect) {
             directDnsDomains.append(item);
         }
-        if (!directDnsDomains.isEmpty()) {
-            dnsRules += QJsonObject{
-                {"domain", directDnsDomains},
-                {"server", "dns-direct"},
-            };
-        }
 
-        // Direct domains in rules
-        QJsonArray directDnsRuleSets;
-        auto sets = routeChain->get_direct_site_rule_sets();
+        auto sets = routeChain->get_direct_sites();
         for (const auto &item: sets) {
-            directDnsRuleSets << item;
+            if (item.startsWith("ruleset:")) {
+                directDnsRuleSets << item.mid(8);
+            }
+            if (item.startsWith("domain:")) {
+                directDnsDomains << item.mid(7);
+            }
+            if (item.startsWith("suffix:")) {
+                directDnsSuffixes << item.mid(7);
+            }
+            if (item.startsWith("keyword:")) {
+                directDnsKeywords << item.mid(8);
+            }
+            if (item.startsWith("regex:")) {
+                directDnsRegexes << item.mid(6);
+            }
         }
         dnsRules += QJsonObject{
             {"rule_set", directDnsRuleSets},
+            {"domain", directDnsDomains},
+            {"domain_suffix", directDnsSuffixes},
+            {"domain_keyword", directDnsKeywords},
+            {"domain_regex", directDnsRegexes},
             {"server", "dns-direct"},
         };
 

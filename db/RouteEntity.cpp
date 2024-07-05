@@ -473,12 +473,24 @@ namespace NekoGui {
         return res;
     }
 
-    QStringList RoutingChain::get_direct_site_rule_sets() {
+    QStringList RoutingChain::get_direct_sites() {
         auto res = QStringList();
         for (const auto& item: Rules) {
             if (item->outboundID == -2) {
                 for (const auto& rset: item->rule_set) {
-                    if (rset.endsWith("_SITE")) res << rset;
+                    if (rset.endsWith("_SITE")) res << QString("ruleset:" + rset);
+                }
+                for (const auto& domain: item->domain) {
+                    res << QString("domain:" + domain);
+                }
+                for (const auto& suffix: item->domain_suffix) {
+                    res << QString("suffix:" + suffix);
+                }
+                for (const auto& keyword: item->domain_keyword) {
+                    res << QString("keyword:" + keyword);
+                }
+                for (const auto& regex: item->domain_regex) {
+                    res << QString("regex:" + regex);
                 }
             }
         }
