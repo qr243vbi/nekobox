@@ -580,6 +580,17 @@ namespace NekoGui {
             };
         }
 
+        // Direct domains in rules
+        QJsonArray directDnsRuleSets;
+        auto sets = routeChain->get_direct_site_rule_sets();
+        for (const auto &item: sets) {
+            directDnsRuleSets << item;
+        }
+        dnsRules += QJsonObject{
+            {"rule_set", directDnsRuleSets},
+            {"server", "dns-direct"},
+        };
+
         // Underlying 100% Working DNS
         dnsServers += QJsonObject{
             {"tag", "dns-local"},

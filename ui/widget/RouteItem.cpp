@@ -118,7 +118,7 @@ RouteItem::RouteItem(QWidget *parent, const std::shared_ptr<NekoGui::RoutingChai
     ui->rule_attr_text->hide();
     ui->rule_attr_data->setTitle("");
     ui->rule_attr_box->setEnabled(false);
-    ui->rule_preview->setEnabled(false);
+    ui->rule_preview->setReadOnly(true);
     updateRuleSection();
 
     connect(ui->route_import_json, &QPushButton::clicked, this, [=] {
