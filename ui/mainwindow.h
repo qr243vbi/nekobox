@@ -15,6 +15,7 @@
 #include <QShortcut>
 #include <QSemaphore>
 #include <QMutex>
+#include <QThreadPool>
 
 #include "GroupSort.hpp"
 
@@ -143,6 +144,10 @@ private:
     QShortcut *shortcut_ctrl_f = new QShortcut(QKeySequence("Ctrl+F"), this);
     QShortcut *shortcut_esc = new QShortcut(QKeySequence("Esc"), this);
     //
+    QThreadPool *speedTestThreadPool = new QThreadPool(this);
+    std::atomic<bool> stopSpeedtest = false;
+    QMutex speedtestRunning;
+    //
     NekoGui_sys::CoreProcess *core_process;
     qint64 vpn_pid = 0;
     //
@@ -187,7 +192,7 @@ private:
 
     void speedtest_current_group(int mode);
 
-    void speedtest_current();
+    void RunSpeedTest(const std::shared_ptr<NekoGui::ProxyEntity>& ent, int mode, const QStringList& full_test_flags);
 
     static void stop_core_daemon();
 

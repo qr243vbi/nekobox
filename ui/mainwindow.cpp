@@ -49,7 +49,6 @@
 #include <QMessageBox>
 #include <QDir>
 #include <QFileInfo>
-#include "edit/dialog_edit_group.h"
 
 void UI_InitMainWindow() {
     mainwindow = new MainWindow;
@@ -73,6 +72,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     }
     themeManager->ApplyTheme(NekoGui::dataStore->theme);
     ui->setupUi(this);
+    speedTestThreadPool->setMaxThreadCount(NekoGui::dataStore->test_concurrent);
     //
     connect(ui->menu_start, &QAction::triggered, this, [=]() { neko_start(); });
     connect(ui->menu_stop, &QAction::triggered, this, [=]() { neko_stop(); });
@@ -167,7 +167,6 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     }
     connect(ui->proxyListTable->horizontalHeader(), &QHeaderView::sectionClicked, this, [=](int logicalIndex) {
         GroupSortAction action;
-        // 不正确的descending实现
         if (proxy_last_order == logicalIndex) {
             action.descending = true;
             proxy_last_order = -1;
@@ -175,7 +174,6 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
             proxy_last_order = logicalIndex;
         }
         action.save_sort = true;
-        // 表头
         if (logicalIndex == 0) {
             action.method = GroupSortMethod::ByType;
         } else if (logicalIndex == 1) {
@@ -372,10 +370,10 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     if (NekoGui::dataStore->core_port <= 0) NekoGui::dataStore->core_port = 19810;
 
     auto core_path = QApplication::applicationDirPath() + "/";
-    core_path += IS_NEKO_BOX ? "nekobox_core" : "nekoray_core";
+    core_path += "nekobox_core";
 
     QStringList args;
-    args.push_back(IS_NEKO_BOX ? "nekobox" : "nekoray");
+    args.push_back("nekobox");
     args.push_back("-port");
     args.push_back(Int2String(NekoGui::dataStore->core_port));
     if (NekoGui::dataStore->flag_debug) args.push_back("-debug");

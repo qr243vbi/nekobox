@@ -49,29 +49,109 @@ void MainWindow::setup_grpc() {
     runOnNewThread([=] { NekoGui_traffic::trafficLooper->Loop(); });
 }
 
-// 测速
+void MainWindow::RunSpeedTest(const std::shared_ptr<NekoGui::ProxyEntity>& ent, int mode, const QStringList& full_test_flags) {
+    if (stopSpeedtest.load()) {
+        MW_show_log("Profile test aborted");
+        return;
+    }
 
-inline bool speedtesting = false;
-inline QList<QThread *> speedtesting_threads = {};
+    std::list<std::shared_ptr<NekoGui_sys::ExternalProcess>> extCs;
+    QSemaphore extSem;
+
+    libcore::TestReq req;
+    req.set_mode((libcore::TestMode) mode);
+    req.set_timeout(3000);
+    req.set_url(NekoGui::dataStore->test_latency_url.toStdString());
+    if (mode == libcore::TestMode::UrlTest || mode == libcore::FullTest) {
+        auto c = BuildConfig(ent, true, false);
+        if (!c->error.isEmpty()) {
+            ent->full_test_report = c->error;
+            ent->Save();
+            auto profileId = ent->id;
+            runOnUiThread([this, profileId] {
+                refresh_proxy_list(profileId);
+            });
+        }
+        //
+        if (!c->extRs.empty()) {
+            runOnUiThread(
+                [&] {
+                    extCs = CreateExtCFromExtR(c->extRs, true);
+                    QThread::msleep(500);
+                    extSem.release();
+                },
+                DS_cores);
+            extSem.acquire();
+        }
+        //
+        auto config = new libcore::LoadConfigReq;
+        config->set_core_config(QJsonObject2QString(c->coreConfig, true).toStdString());
+        req.set_allocated_config(config);
+        req.set_in_address(ent->bean->serverAddress.toStdString());
+
+        req.set_full_latency(full_test_flags.contains("1"));
+        req.set_full_udp_latency(full_test_flags.contains("2"));
+        req.set_full_speed(full_test_flags.contains("3"));
+        req.set_full_in_out(full_test_flags.contains("4"));
+
+        req.set_full_speed_url(NekoGui::dataStore->test_download_url.toStdString());
+        req.set_full_speed_timeout(NekoGui::dataStore->test_download_timeout);
+    } else if (mode == libcore::TcpPing) {
+        req.set_address(ent->bean->DisplayAddress().toStdString());
+    }
+
+    bool rpcOK;
+    auto result = defaultClient->Test(&rpcOK, req);
+    //
+    if (!extCs.empty()) {
+        runOnUiThread(
+            [&] {
+                for (const auto &extC: extCs) {
+                    extC->Kill();
+                }
+                extSem.release();
+            },
+            DS_cores);
+        extSem.acquire();
+    }
+    //
+    if (!rpcOK) return;
+
+    if (result.error().empty()) {
+        ent->latency = result.ms();
+        if (ent->latency == 0) ent->latency = 1; // nekoray use 0 to represents not tested
+    } else {
+        ent->latency = -1;
+    }
+    ent->full_test_report = result.full_report().c_str(); // higher priority
+    ent->Save();
+
+    if (!result.error().empty()) {
+        MW_show_log(tr("[%1] test error: %2").arg(ent->bean->DisplayTypeAndName(), result.error().c_str()));
+    }
+
+    auto profileId = ent->id;
+    runOnUiThread([this, profileId] {
+        refresh_proxy_list(profileId);
+    });
+}
 
 void MainWindow::speedtest_current_group(int mode) {
-    if (speedtesting) {
+    // menu_stop_testing mode == 114514, TODO use proper constants
+    if (mode == 114514) {
+        stopSpeedtest.store(true);
+        return;
+    }
+    if (!speedtestRunning.tryLock()) {
         MessageBoxWarning(software_name, "The last speed test did not exit completely, please wait. If it persists, please restart the program.");
         return;
     }
 
-    auto profiles = get_selected_or_group();
-    if (profiles.isEmpty()) return;
-    auto group = NekoGui::profileManager->CurrentGroup();
-    if (group->archive) return;
+    speedTestThreadPool->setMaxThreadCount(NekoGui::dataStore->test_concurrent);
 
-    // menu_stop_testing
-    if (mode == 114514) {
-        while (!speedtesting_threads.isEmpty()) {
-            auto t = speedtesting_threads.takeFirst();
-            if (t != nullptr) t->exit();
-        }
-        speedtesting = false;
+    auto profiles = get_selected_or_group();
+    if (profiles.isEmpty()) {
+        speedtestRunning.unlock();
         return;
     }
 
@@ -99,6 +179,7 @@ void MainWindow::speedtest_current_group(int mode) {
         layout->addWidget(box);
         if (w->exec() != QDialog::Accepted) {
             w->deleteLater();
+            speedtestRunning.unlock();
             return;
         }
         //
@@ -108,161 +189,30 @@ void MainWindow::speedtest_current_group(int mode) {
         if (l4->isChecked()) full_test_flags << "4";
         //
         w->deleteLater();
-        if (full_test_flags.isEmpty()) return;
+        if (full_test_flags.isEmpty()) {
+            speedtestRunning.unlock();
+            return;
+        }
     }
-    speedtesting = true;
 
-    runOnNewThread([this, profiles, mode, full_test_flags]() {
-        QMutex lock_write;
-        QMutex lock_return;
-        int threadN = NekoGui::dataStore->test_concurrent;
-        int threadN_finished = 0;
-        auto profiles_test = profiles; // copy
-
-        // Threads
-        lock_return.lock();
-        for (int i = 0; i < threadN; i++) {
-            runOnNewThread([&] {
-                speedtesting_threads << QObject::thread();
-
-                forever {
-                    //
-                    lock_write.lock();
-                    if (profiles_test.isEmpty()) {
-                        threadN_finished++;
-                        if (threadN == threadN_finished) {
-                            // quit control thread
-                            lock_return.unlock();
-                        }
-                        lock_write.unlock();
-                        // quit of this thread
-                        return;
-                    }
-                    auto profile = profiles_test.takeFirst();
-                    lock_write.unlock();
-
-                    //
-                    libcore::TestReq req;
-                    req.set_mode((libcore::TestMode) mode);
-                    req.set_timeout(3000);
-                    req.set_url(NekoGui::dataStore->test_latency_url.toStdString());
-
-                    //
-                    std::list<std::shared_ptr<NekoGui_sys::ExternalProcess>> extCs;
-                    QSemaphore extSem;
-
-                    if (mode == libcore::TestMode::UrlTest || mode == libcore::FullTest) {
-                        auto c = BuildConfig(profile, true, false);
-                        if (!c->error.isEmpty()) {
-                            profile->full_test_report = c->error;
-                            profile->Save();
-                            auto profileId = profile->id;
-                            runOnUiThread([this, profileId] {
-                                refresh_proxy_list(profileId);
-                            });
-                            continue;
-                        }
-                        //
-                        if (!c->extRs.empty()) {
-                            runOnUiThread(
-                                [&] {
-                                    extCs = CreateExtCFromExtR(c->extRs, true);
-                                    QThread::msleep(500);
-                                    extSem.release();
-                                },
-                                DS_cores);
-                            extSem.acquire();
-                        }
-                        //
-                        auto config = new libcore::LoadConfigReq;
-                        config->set_core_config(QJsonObject2QString(c->coreConfig, true).toStdString());
-                        req.set_allocated_config(config);
-                        req.set_in_address(profile->bean->serverAddress.toStdString());
-
-                        req.set_full_latency(full_test_flags.contains("1"));
-                        req.set_full_udp_latency(full_test_flags.contains("2"));
-                        req.set_full_speed(full_test_flags.contains("3"));
-                        req.set_full_in_out(full_test_flags.contains("4"));
-
-                        req.set_full_speed_url(NekoGui::dataStore->test_download_url.toStdString());
-                        req.set_full_speed_timeout(NekoGui::dataStore->test_download_timeout);
-                    } else if (mode == libcore::TcpPing) {
-                        req.set_address(profile->bean->DisplayAddress().toStdString());
-                    }
-
-                    bool rpcOK;
-                    auto result = defaultClient->Test(&rpcOK, req);
-                    //
-                    if (!extCs.empty()) {
-                        runOnUiThread(
-                            [&] {
-                                for (const auto &extC: extCs) {
-                                    extC->Kill();
-                                }
-                                extSem.release();
-                            },
-                            DS_cores);
-                        extSem.acquire();
-                    }
-                    //
-                    if (!rpcOK) return;
-
-                    if (result.error().empty()) {
-                        profile->latency = result.ms();
-                        if (profile->latency == 0) profile->latency = 1; // nekoray use 0 to represents not tested
-                    } else {
-                        profile->latency = -1;
-                    }
-                    profile->full_test_report = result.full_report().c_str(); // higher priority
-                    profile->Save();
-
-                    if (!result.error().empty()) {
-                        MW_show_log(tr("[%1] test error: %2").arg(profile->bean->DisplayTypeAndName(), result.error().c_str()));
-                    }
-
-                    auto profileId = profile->id;
-                    runOnUiThread([this, profileId] {
-                        refresh_proxy_list(profileId);
-                    });
+    runOnNewThread([profiles, full_test_flags, mode, this]() {
+        std::atomic<int> counter(0);
+        stopSpeedtest.store(false);
+        for (const auto &item: profiles) {
+            auto func = [&item, full_test_flags, mode, this, &counter, profiles]() {
+                MainWindow::RunSpeedTest(item, mode, full_test_flags);
+                counter++;
+                if (counter.load() == profiles.size()) {
+                    speedtestRunning.unlock();
                 }
-            });
+            };
+
+            speedTestThreadPool->start(func);
         }
 
-        // Control
-        lock_return.lock();
-        lock_return.unlock();
-        speedtesting_threads.removeAll(QObject::thread());
-        speedtesting = false;
-    });
-}
-
-void MainWindow::speedtest_current() {
-    last_test_time = QTime::currentTime();
-    ui->label_running->setText(tr("Testing"));
-
-    runOnNewThread([=] {
-        libcore::TestReq req;
-        req.set_mode(libcore::UrlTest);
-        req.set_timeout(3000);
-        req.set_url(NekoGui::dataStore->test_latency_url.toStdString());
-
-        bool rpcOK;
-        auto result = defaultClient->Test(&rpcOK, req);
-        if (!rpcOK) return;
-
-        auto latency = result.ms();
-        last_test_time = QTime::currentTime();
-
-        runOnUiThread([=] {
-            if (!result.error().empty()) {
-                MW_show_log(QString("UrlTest error: %1").arg(result.error().c_str()));
-            }
-            if (latency <= 0) {
-                ui->label_running->setText(tr("Test Result") + ": " + tr("Unavailable"));
-            } else if (latency > 0) {
-                ui->label_running->setText(tr("Test Result") + ": " + QString("%1 ms").arg(latency));
-            }
-        });
+        speedtestRunning.lock();
+        speedtestRunning.unlock();
+        MW_show_log("Speedtest finished!");
     });
 }
 
