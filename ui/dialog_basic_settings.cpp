@@ -135,8 +135,6 @@ DialogBasicSettings::DialogBasicSettings(QWidget *parent)
     connect(ui->theme, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, [=](int index) {
         themeManager->ApplyTheme(ui->theme->currentText());
         NekoGui::dataStore->theme = ui->theme->currentText();
-        repaint();
-        mainwindow->repaint();
         NekoGui::dataStore->Save();
     });
 

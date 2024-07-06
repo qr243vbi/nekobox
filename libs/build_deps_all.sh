@@ -27,8 +27,8 @@ clean() {
   rm -rf dl.zip yaml-* zxing-* protobuf
 }
 
-#### ZXing v2.0.0 ####
-curl -L -o dl.zip https://github.com/nu-book/zxing-cpp/archive/refs/tags/v2.0.0.zip
+#### ZXing v2.2.0 ####
+curl -L -o dl.zip https://github.com/nu-book/zxing-cpp/archive/refs/tags/v2.2.0.zip
 unzip dl.zip
 
 cd zxing-*
