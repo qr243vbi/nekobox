@@ -22,10 +22,7 @@
 #include "3rdparty/VT100Parser.hpp"
 #include "3rdparty/qv2ray/v2/components/proxy/QvProxyConfigurator.hpp"
 #include "3rdparty/qv2ray/v2/ui/LogHighlighter.hpp"
-
-#ifndef NKR_NO_ZXING
 #include "3rdparty/ZxingQtReader.hpp"
-#endif
 
 #ifdef Q_OS_WIN
 #include "3rdparty/WinCommander.hpp"

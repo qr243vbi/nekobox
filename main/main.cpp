@@ -56,13 +56,7 @@ int main(int argc, char* argv[]) {
     Windows_SetCrashHandler();
 #endif
 
-    // pre-init QApplication
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0) && QT_VERSION >= QT_VERSION_CHECK(5, 10, 0)
-    QApplication::setAttribute(Qt::AA_DisableWindowContextHelpButton);
-#endif
-#if QT_VERSION >= QT_VERSION_CHECK(5, 7, 0)
     QApplication::setAttribute(Qt::AA_DontUseNativeDialogs);
-#endif
     QApplication::setQuitOnLastWindowClosed(false);
     auto preQApp = new QApplication(argc, argv);
 
@@ -146,12 +140,10 @@ int main(int argc, char* argv[]) {
     MF_release_runguard = [&] { guard.release(); };
 
 // icons
-#if (QT_VERSION >= QT_VERSION_CHECK(5, 11, 0))
     QIcon::setFallbackSearchPaths(QStringList{
         ":/nekoray",
         ":/icon",
     });
-#endif
 
     // icon for no theme
     if (QIcon::themeName().isEmpty()) {
