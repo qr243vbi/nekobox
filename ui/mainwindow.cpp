@@ -23,10 +23,10 @@
 #include "3rdparty/qv2ray/v2/components/proxy/QvProxyConfigurator.hpp"
 #include "3rdparty/qv2ray/v2/ui/LogHighlighter.hpp"
 #include "3rdparty/ZxingQtReader.hpp"
+#include "ui/edit/dialog_edit_group.h"
 
 #ifdef Q_OS_WIN
 #include "3rdparty/WinCommander.hpp"
-#include "ui/edit/dialog_edit_group.h"
 #else
 #ifdef Q_OS_LINUX
 #include "sys/linux/LinuxCap.h"
