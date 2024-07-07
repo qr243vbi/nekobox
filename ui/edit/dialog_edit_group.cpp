@@ -5,6 +5,8 @@
 #include "ui/mainwindow_interface.h"
 
 #include <QClipboard>
+#include <QStringListModel>
+#include <QCompleter>
 
 #define ADJUST_SIZE runOnUiThread([=] { adjustSize(); adjustPosition(mainwindow); }, this);
 
@@ -38,12 +40,28 @@ DialogEditGroup::DialogEditGroup(const std::shared_ptr<NekoGui::Group> &ent, QWi
     auto proxy_items = load_proxy_items();
     ui->front_proxy->addItems(proxy_items);
     ui->front_proxy->setCurrentText(get_proxy_name(CACHE.front_proxy));
+    ui->front_proxy->setEditable(true);
+    ui->front_proxy->setInsertPolicy(QComboBox::NoInsert);
+    auto frontCompleter = new QCompleter(proxy_items, this);
+    frontCompleter->setCompletionMode(QCompleter::PopupCompletion);
+    frontCompleter->setCaseSensitivity(Qt::CaseInsensitive);
+    frontCompleter->setFilterMode(Qt::MatchContains);
+    ui->front_proxy->setCompleter(nullptr);
+    ui->front_proxy->lineEdit()->setCompleter(frontCompleter);
     connect(ui->front_proxy, &QComboBox::currentTextChanged, this, [=](const QString &txt){
         CACHE.front_proxy = get_proxy_id(txt);
     });
 
     ui->landing_proxy->addItems(proxy_items);
     ui->landing_proxy->setCurrentText(get_proxy_name(LANDING.landing_proxy));
+    ui->landing_proxy->setEditable(true);
+    ui->landing_proxy->setInsertPolicy(QComboBox::NoInsert);
+    auto landingCompleter = new QCompleter(proxy_items, this);
+    landingCompleter->setCompletionMode(QCompleter::PopupCompletion);
+    landingCompleter->setCaseSensitivity(Qt::CaseInsensitive);
+    landingCompleter->setFilterMode(Qt::MatchContains);
+    ui->landing_proxy->setCompleter(nullptr);
+    ui->landing_proxy->lineEdit()->setCompleter(frontCompleter);
     connect(ui->landing_proxy, &QComboBox::currentTextChanged, this, [=](const QString &txt){
         LANDING.landing_proxy = get_proxy_id(txt);
     });
