@@ -34,6 +34,8 @@ namespace NekoGui_rpc {
 
         QString CompileGeoSet(bool *rpcOK, GeoRuleSetType mode, std::string category);
 
+        QString SetSystemProxy(bool *rpcOK, bool enable);
+
     private:
         std::function<std::unique_ptr<QtGrpc::Http2GrpcChannelPrivate>()> make_grpc_channel;
         std::unique_ptr<QtGrpc::Http2GrpcChannelPrivate> default_grpc_channel;
