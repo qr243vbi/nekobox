@@ -30,6 +30,7 @@ const (
 	LibcoreService_GetGeoSiteList_FullMethodName      = "/libcore.LibcoreService/GetGeoSiteList"
 	LibcoreService_CompileGeoIPToSrs_FullMethodName   = "/libcore.LibcoreService/CompileGeoIPToSrs"
 	LibcoreService_CompileGeoSiteToSrs_FullMethodName = "/libcore.LibcoreService/CompileGeoSiteToSrs"
+	LibcoreService_SetSystemProxy_FullMethodName      = "/libcore.LibcoreService/SetSystemProxy"
 )
 
 // LibcoreServiceClient is the client API for LibcoreService service.
@@ -47,6 +48,7 @@ type LibcoreServiceClient interface {
 	GetGeoSiteList(ctx context.Context, in *EmptyReq, opts ...grpc.CallOption) (*GetGeoSiteListResponse, error)
 	CompileGeoIPToSrs(ctx context.Context, in *CompileGeoIPToSrsRequest, opts ...grpc.CallOption) (*EmptyResp, error)
 	CompileGeoSiteToSrs(ctx context.Context, in *CompileGeoSiteToSrsRequest, opts ...grpc.CallOption) (*EmptyResp, error)
+	SetSystemProxy(ctx context.Context, in *SetSystemProxyRequest, opts ...grpc.CallOption) (*EmptyResp, error)
 }
 
 type libcoreServiceClient struct {
@@ -156,6 +158,15 @@ func (c *libcoreServiceClient) CompileGeoSiteToSrs(ctx context.Context, in *Comp
 	return out, nil
 }
 
+func (c *libcoreServiceClient) SetSystemProxy(ctx context.Context, in *SetSystemProxyRequest, opts ...grpc.CallOption) (*EmptyResp, error) {
+	out := new(EmptyResp)
+	err := c.cc.Invoke(ctx, LibcoreService_SetSystemProxy_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // LibcoreServiceServer is the server API for LibcoreService service.
 // All implementations must embed UnimplementedLibcoreServiceServer
 // for forward compatibility
@@ -171,6 +182,7 @@ type LibcoreServiceServer interface {
 	GetGeoSiteList(context.Context, *EmptyReq) (*GetGeoSiteListResponse, error)
 	CompileGeoIPToSrs(context.Context, *CompileGeoIPToSrsRequest) (*EmptyResp, error)
 	CompileGeoSiteToSrs(context.Context, *CompileGeoSiteToSrsRequest) (*EmptyResp, error)
+	SetSystemProxy(context.Context, *SetSystemProxyRequest) (*EmptyResp, error)
 	mustEmbedUnimplementedLibcoreServiceServer()
 }
 
@@ -210,6 +222,9 @@ func (UnimplementedLibcoreServiceServer) CompileGeoIPToSrs(context.Context, *Com
 }
 func (UnimplementedLibcoreServiceServer) CompileGeoSiteToSrs(context.Context, *CompileGeoSiteToSrsRequest) (*EmptyResp, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CompileGeoSiteToSrs not implemented")
+}
+func (UnimplementedLibcoreServiceServer) SetSystemProxy(context.Context, *SetSystemProxyRequest) (*EmptyResp, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method SetSystemProxy not implemented")
 }
 func (UnimplementedLibcoreServiceServer) mustEmbedUnimplementedLibcoreServiceServer() {}
 
@@ -422,6 +437,24 @@ func _LibcoreService_CompileGeoSiteToSrs_Handler(srv interface{}, ctx context.Co
 	return interceptor(ctx, in, info, handler)
 }
 
+func _LibcoreService_SetSystemProxy_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SetSystemProxyRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LibcoreServiceServer).SetSystemProxy(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LibcoreService_SetSystemProxy_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LibcoreServiceServer).SetSystemProxy(ctx, req.(*SetSystemProxyRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // LibcoreService_ServiceDesc is the grpc.ServiceDesc for LibcoreService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -472,6 +505,10 @@ var LibcoreService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CompileGeoSiteToSrs",
 			Handler:    _LibcoreService_CompileGeoSiteToSrs_Handler,
+		},
+		{
+			MethodName: "SetSystemProxy",
+			Handler:    _LibcoreService_SetSystemProxy_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

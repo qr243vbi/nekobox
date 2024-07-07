@@ -17,6 +17,8 @@ service LibcoreService {
   rpc GetGeoSiteList(EmptyReq) returns (GetGeoSiteListResponse);
   rpc CompileGeoIPToSrs(CompileGeoIPToSrsRequest) returns (EmptyResp);
   rpc CompileGeoSiteToSrs(CompileGeoSiteToSrsRequest) returns (EmptyResp);
+  //
+  rpc SetSystemProxy(SetSystemProxyRequest) returns (EmptyResp);
 }
 
 message EmptyReq {}
@@ -113,4 +115,9 @@ message CompileGeoIPToSrsRequest {
 
 message CompileGeoSiteToSrsRequest {
   string item = 1;
+}
+
+message SetSystemProxyRequest {
+  bool enable = 1;
+  string address = 2;
 }

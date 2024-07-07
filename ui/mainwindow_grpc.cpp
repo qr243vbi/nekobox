@@ -384,6 +384,30 @@ void MainWindow::neko_start(int _id) {
     });
 }
 
+void MainWindow::neko_set_spmode_system_proxy(bool enable, bool save) {
+    if (enable != NekoGui::dataStore->spmode_system_proxy) {
+        bool ok;
+        auto error = defaultClient->SetSystemProxy(&ok, enable);
+        if (!ok) {
+            MW_show_log("Failed to set system proxy with error " + error);
+            ui->checkBox_SystemProxy->setChecked(false);
+            refresh_status();
+            return;
+        }
+    }
+
+    if (save) {
+        NekoGui::dataStore->remember_spmode.removeAll("system_proxy");
+        if (enable && NekoGui::dataStore->remember_enable) {
+            NekoGui::dataStore->remember_spmode.append("system_proxy");
+        }
+        NekoGui::dataStore->Save();
+    }
+
+    NekoGui::dataStore->spmode_system_proxy = enable;
+    refresh_status();
+}
+
 void MainWindow::neko_stop(bool crash, bool sem) {
     auto id = NekoGui::dataStore->started_id;
     if (id < 0) {

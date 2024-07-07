@@ -2,6 +2,8 @@ package main
 
 import (
 	"context"
+	"github.com/sagernet/sing-box/common/settings"
+	"github.com/sagernet/sing/common/metadata"
 	"net"
 	"net/http"
 
@@ -13,6 +15,8 @@ import (
 )
 
 var instance *boxbox.Box
+var systemProxyController settings.SystemProxy
+var systemProxyAddr metadata.Socksaddr
 var instance_cancel context.CancelFunc
 
 func setupCore() {

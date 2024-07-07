@@ -691,28 +691,6 @@ void MainWindow::on_menu_exit_triggered() {
     refresh_status();          \
     return;
 
-void MainWindow::neko_set_spmode_system_proxy(bool enable, bool save) {
-    if (enable != NekoGui::dataStore->spmode_system_proxy) {
-        if (enable) {
-            auto socks_port = NekoGui::dataStore->inbound_socks_port;
-            SetSystemProxy(socks_port, socks_port);
-        } else {
-            ClearSystemProxy();
-        }
-    }
-
-    if (save) {
-        NekoGui::dataStore->remember_spmode.removeAll("system_proxy");
-        if (enable && NekoGui::dataStore->remember_enable) {
-            NekoGui::dataStore->remember_spmode.append("system_proxy");
-        }
-        NekoGui::dataStore->Save();
-    }
-
-    NekoGui::dataStore->spmode_system_proxy = enable;
-    refresh_status();
-}
-
 void MainWindow::neko_toggle_system_proxy() {
     auto currentState = NekoGui::dataStore->spmode_system_proxy;
     if (currentState) {

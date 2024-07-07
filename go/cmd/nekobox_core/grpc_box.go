@@ -4,6 +4,8 @@ import (
 	"context"
 	"errors"
 	"fmt"
+	"github.com/sagernet/sing-box/common/settings"
+	"github.com/sagernet/sing/common/metadata"
 	"strings"
 	"time"
 
@@ -195,6 +197,29 @@ func (s *server) CompileGeoIPToSrs(ctx context.Context, in *gen.CompileGeoIPToSr
 func (s *server) CompileGeoSiteToSrs(ctx context.Context, in *gen.CompileGeoSiteToSrsRequest) (*gen.EmptyResp, error) {
 	category := strings.TrimSuffix(in.Item, "_SITE")
 	err := boxmain.CompileRuleSet(category, boxmain.SiteRuleSet, "./rule_sets/"+in.Item+".srs")
+	if err != nil {
+		return nil, err
+	}
+
+	return &gen.EmptyResp{}, nil
+}
+
+func (s *server) SetSystemProxy(ctx context.Context, in *gen.SetSystemProxyRequest) (*gen.EmptyResp, error) {
+	var err error
+	addr := metadata.ParseSocksaddr(in.Address)
+	if systemProxyController == nil || systemProxyAddr.String() != addr.String() {
+		systemProxyController, err = settings.NewSystemProxy(context.Background(), addr, true)
+		if err != nil {
+			return nil, err
+		}
+		systemProxyAddr = addr
+	}
+	if in.Enable && !systemProxyController.IsEnabled() {
+		err = systemProxyController.Enable()
+	}
+	if !in.Enable && systemProxyController.IsEnabled() {
+		err = systemProxyController.Disable()
+	}
 	if err != nil {
 		return nil, err
 	}
