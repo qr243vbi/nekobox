@@ -389,16 +389,6 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
         },
         DS_cores);
 
-    // Remember system proxy
-    if (NekoGui::dataStore->remember_enable || NekoGui::dataStore->flag_restart_tun_on) {
-        if (NekoGui::dataStore->remember_spmode.contains("system_proxy")) {
-            neko_set_spmode_system_proxy(true, false);
-        }
-        if (NekoGui::dataStore->remember_spmode.contains("vpn") || NekoGui::dataStore->flag_restart_tun_on) {
-            neko_set_spmode_vpn(true, false);
-        }
-    }
-
     connect(qApp, &QGuiApplication::commitDataRequest, this, &MainWindow::on_commitDataRequest);
 
     auto t = new QTimer;
@@ -563,6 +553,15 @@ void MainWindow::dialog_message_impl(const QString &sender, const QString &info)
         } else if (info == "CoreCrashed") {
             neko_stop(true);
         } else if (info.startsWith("CoreStarted")) {
+            if (NekoGui::dataStore->remember_enable || NekoGui::dataStore->flag_restart_tun_on) {
+                if (NekoGui::dataStore->remember_spmode.contains("system_proxy")) {
+                    neko_set_spmode_system_proxy(true, false);
+                }
+                if (NekoGui::dataStore->remember_spmode.contains("vpn") || NekoGui::dataStore->flag_restart_tun_on) {
+                    neko_set_spmode_vpn(true, false);
+                }
+            }
+
             neko_start(info.split(",")[1].toInt());
         }
     }
