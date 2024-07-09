@@ -345,6 +345,11 @@ void RouteItem::updateHelperItems(const QString& base) {
     for (const auto& item: geo_items) {
         if (item.contains(base)) current_helper_items << item;
     }
+    for (int i=0;i<current_helper_items.size();i++) {
+        for (int j=i+1;j<current_helper_items.size();j++) {
+            if (current_helper_items[i].length() > current_helper_items[j].length()) current_helper_items.swapItemsAt(i, j);
+        }
+    }
     helperModel->setStringList(current_helper_items);
     ui->rule_set_helper->setModel(helperModel);
 }

@@ -442,7 +442,7 @@ namespace NekoGui {
 
         auto rule1 = std::make_shared<RouteRule>();
         rule1->name = "Bypass Chinese IPs and Domains";
-        rule1->rule_set << QString("cn_IP") << QString("geolocation-cn_SITE");
+        rule1->rule_set << QString("cn_IP") << QString("geolocation-cn_SITE") << QString("cn_SITE");
         rule1->outboundID = -2;
         chain->Rules << rule1;
 
