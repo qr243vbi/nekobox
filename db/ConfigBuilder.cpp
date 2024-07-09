@@ -461,9 +461,10 @@ namespace NekoGui {
         if (geosite.isEmpty()) status->result->error = +"geosite.db not found, it is needed for generating rule sets";
 
         // manage routing section
-        auto routeObj = QJsonObject {
-            {"auto_detect_interface", true},
-        };
+        auto routeObj = QJsonObject();
+        if (dataStore->spmode_vpn) {
+            routeObj["auto_detect_interface"] = true;
+        }
         routeObj["final"] = dataStore->routing->def_outbound;
 
         auto routeChain = NekoGui::profileManager->GetRouteChain(NekoGui::dataStore->routing->current_route_id);
