@@ -123,6 +123,7 @@ DialogBasicSettings::DialogBasicSettings(QWidget *parent)
     });
     //
     ui->theme->addItems(QStyleFactory::keys());
+    ui->theme->addItem("QDarkStyle");
     //
     bool ok;
     auto themeId = NekoGui::dataStore->theme.toInt(&ok);

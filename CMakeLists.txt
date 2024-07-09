@@ -191,6 +191,7 @@ set(PROJECT_SOURCES
         ${QV2RAY_RC}
         db/RouteEntity.h
         db/RouteEntity.cpp
+        res/darkstyle.qrc
 )
 
 # Qt exe

@@ -1,6 +1,7 @@
 #include <QStyle>
 #include <QApplication>
-#include <QStyleFactory>
+#include <QFile>
+#include <QPalette>
 
 #include "ThemeManager.hpp"
 #include "iostream"
@@ -18,9 +19,17 @@ void ThemeManager::ApplyTheme(const QString &theme, bool force) {
         return;
     }
 
-    if (theme.toLower() == "system") {
+    auto lowerTheme = theme.toLower();
+    if (lowerTheme == "system") {
+        qApp->setStyleSheet("");
         qApp->setStyle(system_style_name);
+    } else if (lowerTheme == "qdarkstyle") {
+        QFile f(":qdarkstyle/dark/darkstyle.qss");
+        f.open(QFile::ReadOnly | QFile::Text);
+        QTextStream ts(&f);
+        qApp->setStyleSheet(ts.readAll());
     } else {
+        qApp->setStyleSheet("");
         qApp->setStyle(theme);
     }
 
