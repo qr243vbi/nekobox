@@ -17,10 +17,8 @@
 #include "ui/dialog_vpn_settings.h"
 #include "ui/dialog_hotkey.h"
 
-#include "3rdparty/fix_old_qt.h"
 #include "3rdparty/qrcodegen.hpp"
 #include "3rdparty/VT100Parser.hpp"
-#include "3rdparty/qv2ray/v2/components/proxy/QvProxyConfigurator.hpp"
 #include "3rdparty/qv2ray/v2/ui/LogHighlighter.hpp"
 #include "3rdparty/ZxingQtReader.hpp"
 #include "ui/edit/dialog_edit_group.h"
@@ -131,8 +129,13 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     });
     connect(themeManager, &ThemeManager::themeChanged, this, [=](const QString& theme){
         if (theme.toLower().contains("vista")) {
+            // light themes
             new SyntaxHighlighter(false, qvLogDocument);
+        } else if (theme.toLower().contains("qdarkstyle")) {
+            // dark themes
+            new SyntaxHighlighter(true, qvLogDocument);
         } else {
+            // bi-mode themes, follow system preference
             new SyntaxHighlighter(qApp->styleHints()->colorScheme() == Qt::ColorScheme::Dark, qvLogDocument);
         }
     });
