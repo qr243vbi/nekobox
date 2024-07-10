@@ -51,7 +51,7 @@ namespace Qv2ray::ui {
         highlightingRules.append(rule);
         //
         debugFormat.setForeground(Qt::darkGray);
-        rule.pattern = QRegularExpression("D[Ee][Bb][Uu].*?");
+        rule.pattern = QRegularExpression("D[Ee][Bb][Uu][Gg].*?");
         rule.format = debugFormat;
         highlightingRules.append(rule);
         //
@@ -66,7 +66,7 @@ namespace Qv2ray::ui {
         rule.format = warningFormat2;
         highlightingRules.append(rule);
         //
-        rule.pattern = QRegularExpression("E[Rr][Rr][Oo].*?");
+        rule.pattern = QRegularExpression("E[Rr][Rr][Oo][Rr].*?");
         rule.format = rejectedFormat;
         highlightingRules.append(rule);
 
