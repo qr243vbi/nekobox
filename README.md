@@ -1,10 +1,15 @@
-# NekoRay / NekoBox For PC
+# NekoRay
 
-Qt based cross-platform GUI proxy configuration manager (backend: sing-box)
+Qt based Desktop cross-platform GUI proxy configuration manager (backend: sing-box)
 
-Support Windows / Linux / MacOS out of the box now. Windows7 is also supported, but requires some additional changes to run.
+Supports Windows / Linux / MacOS out of the box now. Windows7 is also supported, but requires some additional changes to run.
 
-This Project was adopted and developed since the original author had left it, now that arm64v8a has started to update the app again, I might stop maintaining this repo depending on the situation.
+### How to run on Windows7
+To run on Windows7, you will need to utilize [VxKex](https://github.com/vxiiduu/VxKex/). Some of Tun mode stacks might not work as well, please fallback to gVisor stack if you encountered this problem.
+
+### Compatiblity issues on Linux Distros
+Since every Distro of Linux has its own set of libraries, you might need to manually install some packages in order for nekoray to run.
+Currently known libraries that might be missing: `libxcb-cursor`. Please make sure to install them if nekoray did not start.
 
 ### Using Tun mode in MacOS
 To use Tun mode in MacOS, you need to open the app as root.
@@ -57,7 +62,6 @@ JSON strings(can be human-readable or compact) and import links(each link should
 Core:
 
 - [SagerNet/sing-box](https://github.com/SagerNet/sing-box)
-- [Mahdi-zarei/sing-box-extra](https://github.com/Mahdi-zarei/sing-box-extra)
 
 Gui:
 
