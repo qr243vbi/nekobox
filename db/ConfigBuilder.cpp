@@ -570,6 +570,7 @@ namespace NekoGui {
         }
 
         // Direct dns domains
+        bool needDirectDnsRules = false;
         QJsonArray directDnsDomains;
         QJsonArray directDnsRuleSets;
         QJsonArray directDnsSuffixes;
@@ -579,6 +580,7 @@ namespace NekoGui {
         // server addresses
         for (const auto &item: status->domainListDNSDirect) {
             directDnsDomains.append(item);
+            needDirectDnsRules = true;
         }
 
         auto sets = routeChain->get_direct_sites();
@@ -598,15 +600,18 @@ namespace NekoGui {
             if (item.startsWith("regex:")) {
                 directDnsRegexes << item.mid(6);
             }
+            needDirectDnsRules = true;
         }
-        dnsRules += QJsonObject{
-            {"rule_set", directDnsRuleSets},
-            {"domain", directDnsDomains},
-            {"domain_suffix", directDnsSuffixes},
-            {"domain_keyword", directDnsKeywords},
-            {"domain_regex", directDnsRegexes},
-            {"server", "dns-direct"},
-        };
+        if (needDirectDnsRules) {
+            dnsRules += QJsonObject{
+                {"rule_set", directDnsRuleSets},
+                {"domain", directDnsDomains},
+                {"domain_suffix", directDnsSuffixes},
+                {"domain_keyword", directDnsKeywords},
+                {"domain_regex", directDnsRegexes},
+                {"server", "dns-direct"},
+            };
+        }
 
         // Underlying 100% Working DNS
         dnsServers += QJsonObject{
