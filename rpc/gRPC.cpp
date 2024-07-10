@@ -358,7 +358,7 @@ namespace NekoGui_rpc {
         libcore::SetSystemProxyRequest req;
         libcore::EmptyResp resp;
         req.set_enable(enable);
-        req.set_address(QString(NekoGui::dataStore->inbound_address + ":" + Int2String(NekoGui::dataStore->inbound_socks_port)).toStdString());
+        req.set_address(QString("127.0.0.1:" + Int2String(NekoGui::dataStore->inbound_socks_port)).toStdString());
 
         auto status = default_grpc_channel->Call("SetSystemProxy", req, &resp);
         if (status == QNetworkReply::NoError) {
