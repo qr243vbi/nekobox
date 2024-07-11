@@ -34,7 +34,6 @@ export EXTRA_QT_PLUGINS="svg;iconengines;"
 rm linuxdeploy-x86_64.AppImage linuxdeploy-plugin-qt-x86_64.AppImage
 cd $DEST
 rm -r ./usr/translations ./usr/bin ./usr/share ./apprun-hooks
-rm -r ./usr/plugins/tls
 
 # fix extra libs...
 mkdir ./usr/lib2
