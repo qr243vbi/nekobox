@@ -117,7 +117,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 
     // Setup log UI
     ui->splitter->restoreState(DecodeB64IfValid(NekoGui::dataStore->splitter_state));
-    new SyntaxHighlighter(qApp->styleHints()->colorScheme() == Qt::ColorScheme::Dark, qvLogDocument);
+    new SyntaxHighlighter(qApp->styleHints()->colorScheme() == Qt::ColorScheme::Dark || NekoGui::dataStore->theme.toLower() == "qdarkstyle", qvLogDocument);
     qvLogDocument->setUndoRedoEnabled(false);
     ui->masterLogBrowser->setUndoRedoEnabled(false);
     ui->masterLogBrowser->setDocument(qvLogDocument);

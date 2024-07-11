@@ -19,6 +19,7 @@ DialogVPNSettings::DialogVPNSettings(QWidget *parent) : QDialog(parent), ui(new 
     ui->gso_enable->setChecked(NekoGui::dataStore->enable_gso);
 #ifndef Q_OS_WIN
     ui->hide_console->setVisible(false);
+    ADJUST_SIZE
 #endif
 #ifndef __linux__
     ui->gso_enable->setVisible(false);
