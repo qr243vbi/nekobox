@@ -304,13 +304,8 @@ namespace NekoGui {
 
     void DataStore::UpdateStartedId(int id) {
         started_id = id;
-        if (remember_enable) {
-            remember_id = id;
-            Save();
-        } else if (remember_id >= 0) {
-            remember_id = -1919;
-            Save();
-        }
+        remember_id = id;
+        Save();
     }
 
     QString DataStore::GetUserAgent(bool isDefault) const {
