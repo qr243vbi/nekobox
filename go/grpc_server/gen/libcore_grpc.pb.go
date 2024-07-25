@@ -24,6 +24,7 @@ const (
 	LibcoreService_Start_FullMethodName               = "/libcore.LibcoreService/Start"
 	LibcoreService_Stop_FullMethodName                = "/libcore.LibcoreService/Stop"
 	LibcoreService_Test_FullMethodName                = "/libcore.LibcoreService/Test"
+	LibcoreService_StopTest_FullMethodName            = "/libcore.LibcoreService/StopTest"
 	LibcoreService_QueryStats_FullMethodName          = "/libcore.LibcoreService/QueryStats"
 	LibcoreService_ListConnections_FullMethodName     = "/libcore.LibcoreService/ListConnections"
 	LibcoreService_GetGeoIPList_FullMethodName        = "/libcore.LibcoreService/GetGeoIPList"
@@ -42,6 +43,7 @@ type LibcoreServiceClient interface {
 	Start(ctx context.Context, in *LoadConfigReq, opts ...grpc.CallOption) (*ErrorResp, error)
 	Stop(ctx context.Context, in *EmptyReq, opts ...grpc.CallOption) (*ErrorResp, error)
 	Test(ctx context.Context, in *TestReq, opts ...grpc.CallOption) (*TestResp, error)
+	StopTest(ctx context.Context, in *EmptyReq, opts ...grpc.CallOption) (*EmptyResp, error)
 	QueryStats(ctx context.Context, in *QueryStatsReq, opts ...grpc.CallOption) (*QueryStatsResp, error)
 	ListConnections(ctx context.Context, in *EmptyReq, opts ...grpc.CallOption) (*ListConnectionsResp, error)
 	GetGeoIPList(ctx context.Context, in *EmptyReq, opts ...grpc.CallOption) (*GetGeoIPListResponse, error)
@@ -98,6 +100,15 @@ func (c *libcoreServiceClient) Stop(ctx context.Context, in *EmptyReq, opts ...g
 func (c *libcoreServiceClient) Test(ctx context.Context, in *TestReq, opts ...grpc.CallOption) (*TestResp, error) {
 	out := new(TestResp)
 	err := c.cc.Invoke(ctx, LibcoreService_Test_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *libcoreServiceClient) StopTest(ctx context.Context, in *EmptyReq, opts ...grpc.CallOption) (*EmptyResp, error) {
+	out := new(EmptyResp)
+	err := c.cc.Invoke(ctx, LibcoreService_StopTest_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -176,6 +187,7 @@ type LibcoreServiceServer interface {
 	Start(context.Context, *LoadConfigReq) (*ErrorResp, error)
 	Stop(context.Context, *EmptyReq) (*ErrorResp, error)
 	Test(context.Context, *TestReq) (*TestResp, error)
+	StopTest(context.Context, *EmptyReq) (*EmptyResp, error)
 	QueryStats(context.Context, *QueryStatsReq) (*QueryStatsResp, error)
 	ListConnections(context.Context, *EmptyReq) (*ListConnectionsResp, error)
 	GetGeoIPList(context.Context, *EmptyReq) (*GetGeoIPListResponse, error)
@@ -204,6 +216,9 @@ func (UnimplementedLibcoreServiceServer) Stop(context.Context, *EmptyReq) (*Erro
 }
 func (UnimplementedLibcoreServiceServer) Test(context.Context, *TestReq) (*TestResp, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Test not implemented")
+}
+func (UnimplementedLibcoreServiceServer) StopTest(context.Context, *EmptyReq) (*EmptyResp, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method StopTest not implemented")
 }
 func (UnimplementedLibcoreServiceServer) QueryStats(context.Context, *QueryStatsReq) (*QueryStatsResp, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method QueryStats not implemented")
@@ -325,6 +340,24 @@ func _LibcoreService_Test_Handler(srv interface{}, ctx context.Context, dec func
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(LibcoreServiceServer).Test(ctx, req.(*TestReq))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LibcoreService_StopTest_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(EmptyReq)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LibcoreServiceServer).StopTest(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LibcoreService_StopTest_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LibcoreServiceServer).StopTest(ctx, req.(*EmptyReq))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -481,6 +514,10 @@ var LibcoreService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "Test",
 			Handler:    _LibcoreService_Test_Handler,
+		},
+		{
+			MethodName: "StopTest",
+			Handler:    _LibcoreService_StopTest_Handler,
 		},
 		{
 			MethodName: "QueryStats",

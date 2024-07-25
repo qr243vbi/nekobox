@@ -1,7 +1,6 @@
 #include "./ui_mainwindow.h"
 #include "mainwindow.h"
 
-#include "fmt/Preset.hpp"
 #include "db/ProfileFilter.hpp"
 #include "db/ConfigBuilder.hpp"
 #include "sub/GroupUpdater.hpp"
@@ -68,7 +67,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     }
     themeManager->ApplyTheme(NekoGui::dataStore->theme);
     ui->setupUi(this);
-    speedTestThreadPool->setMaxThreadCount(NekoGui::dataStore->test_concurrent);
+    speedTestThreadPool->setMaxThreadCount(10); // constant value
     //
     connect(ui->menu_start, &QAction::triggered, this, [=]() { neko_start(); });
     connect(ui->menu_stop, &QAction::triggered, this, [=]() { neko_stop(); });
@@ -323,37 +322,28 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
         neko_set_spmode_vpn(false);
     });
     connect(ui->menu_qr, &QAction::triggered, this, [=]() { display_qr_link(false); });
-    connect(ui->menu_tcp_ping, &QAction::triggered, this, [=]() { speedtest_current_group(0); });
-    connect(ui->menu_url_test, &QAction::triggered, this, [=]() { speedtest_current_group(1); });
-    connect(ui->menu_full_test, &QAction::triggered, this, [=]() { speedtest_current_group(2); });
-    connect(ui->menu_stop_testing, &QAction::triggered, this, [=]() { speedtest_current_group(114514); });
+
+    connect(ui->menu_server, &QMenu::aboutToShow, this, [=](){
+        if (!speedtestRunning.tryLock()) {
+            ui->menu_server->addAction(ui->menu_stop_testing);
+            return;
+        } else {
+            speedtestRunning.unlock();
+            ui->menu_server->removeAction(ui->menu_stop_testing);
+        }
+    });
+    connect(ui->actionUrl_Test_Selected, &QAction::triggered, this, [=]() {
+        speedtest_current_group(get_now_selected_list());
+    });
+    connect(ui->actionUrl_Test_Group, &QAction::triggered, this, [=]() {
+        speedtest_current_group(NekoGui::profileManager->CurrentGroup()->ProfilesWithOrder());
+    });
+    connect(ui->menu_stop_testing, &QAction::triggered, this, [=]() { stopSpeedTests(); });
     //
     auto set_selected_or_group = [=](int mode) {
         // 0=group 1=select 2=unknown(menu is hide)
         ui->menu_server->setProperty("selected_or_group", mode);
     };
-    auto move_tests_to_menu = [=](bool menuCurrent_Select) {
-        return [=] {
-            if (menuCurrent_Select) {
-                ui->menuCurrent_Select->insertAction(ui->actionfake_4, ui->menu_tcp_ping);
-                ui->menuCurrent_Select->insertAction(ui->actionfake_4, ui->menu_url_test);
-                ui->menuCurrent_Select->insertAction(ui->actionfake_4, ui->menu_full_test);
-                ui->menuCurrent_Select->insertAction(ui->actionfake_4, ui->menu_stop_testing);
-                ui->menuCurrent_Select->insertAction(ui->actionfake_4, ui->menu_clear_test_result);
-                ui->menuCurrent_Select->insertAction(ui->actionfake_4, ui->menu_resolve_domain);
-            } else {
-                ui->menuCurrent_Group->insertAction(ui->actionfake_5, ui->menu_tcp_ping);
-                ui->menuCurrent_Group->insertAction(ui->actionfake_5, ui->menu_url_test);
-                ui->menuCurrent_Group->insertAction(ui->actionfake_5, ui->menu_full_test);
-                ui->menuCurrent_Group->insertAction(ui->actionfake_5, ui->menu_stop_testing);
-                ui->menuCurrent_Group->insertAction(ui->actionfake_5, ui->menu_clear_test_result);
-                ui->menuCurrent_Group->insertAction(ui->actionfake_5, ui->menu_resolve_domain);
-            }
-            set_selected_or_group(menuCurrent_Select ? 1 : 0);
-        };
-    };
-    connect(ui->menuCurrent_Select, &QMenu::aboutToShow, this, move_tests_to_menu(true));
-    connect(ui->menuCurrent_Group, &QMenu::aboutToShow, this, move_tests_to_menu(false));
     connect(ui->menu_server, &QMenu::aboutToHide, this, [=] {
         setTimeout([=] { set_selected_or_group(2); }, this, 200);
     });
@@ -911,11 +901,10 @@ void MainWindow::refresh_proxy_list_impl(const int &id, GroupSortAction groupSor
         ui->proxyListTable->setRowCount(0);
         // 添加行
         int row = -1;
-        for (const auto &[id, profile]: NekoGui::profileManager->profiles) {
-            if (NekoGui::dataStore->current_group != profile->gid) continue;
+        for (const auto ent: NekoGui::profileManager->GetGroup(NekoGui::dataStore->current_group)->ProfilesWithOrder()) {
             row++;
             ui->proxyListTable->insertRow(row);
-            ui->proxyListTable->row2Id += id;
+            ui->proxyListTable->row2Id += ent->id;
         }
     }
 

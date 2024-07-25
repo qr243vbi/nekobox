@@ -91,6 +91,8 @@ func RunCore(setupCore func(), server gen.LibcoreServiceServer) {
 	s := grpc.NewServer(
 		grpc.StreamInterceptor(grpc_auth.StreamServerInterceptor(auther.Authenticate)),
 		grpc.UnaryInterceptor(grpc_auth.UnaryServerInterceptor(auther.Authenticate)),
+		grpc.MaxRecvMsgSize(1024*1024*1024), // 1 gigaByte
+		grpc.MaxSendMsgSize(1024*1024*1024), // 1 gigaByte
 	)
 	gen.RegisterLibcoreServiceServer(s, server)
 

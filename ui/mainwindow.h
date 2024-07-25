@@ -190,9 +190,11 @@ private:
 
     static void setup_grpc();
 
-    void speedtest_current_group(int mode);
+    void speedtest_current_group(const QList<std::shared_ptr<NekoGui::ProxyEntity>>& profiles);
 
-    void RunSpeedTest(const std::shared_ptr<NekoGui::ProxyEntity>& ent, int mode, const QStringList& full_test_flags);
+    void stopSpeedTests();
+
+    void RunSpeedTest(const QString& config, bool useDefault, const QStringList& outboundTags, const QMap<QString, int>& tag2entID, int entID = -1);
 
     void url_test_current();
 

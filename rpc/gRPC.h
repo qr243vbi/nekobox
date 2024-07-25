@@ -28,6 +28,8 @@ namespace NekoGui_rpc {
 
         libcore::TestResp Test(bool *rpcOK, const libcore::TestReq &request);
 
+        void StopTests(bool *rpcOK);
+
         libcore::UpdateResp Update(bool *rpcOK, const libcore::UpdateReq &request);
 
         QStringList GetGeoList(bool *rpcOK, GeoRuleSetType mode);
