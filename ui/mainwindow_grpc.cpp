@@ -8,12 +8,10 @@
 #include "ui/widget/MessageBoxTimer.h"
 
 #include <QTimer>
-#include <QThread>
 #include <QInputDialog>
 #include <QPushButton>
 #include <QDesktopServices>
 #include <QMessageBox>
-#include <QDialogButtonBox>
 
 // ext core
 
@@ -49,7 +47,7 @@ void MainWindow::setup_grpc() {
     runOnNewThread([=] { NekoGui_traffic::trafficLooper->Loop(); });
 }
 
-void MainWindow::RunSpeedTest(const std::shared_ptr<NekoGui::ProxyEntity>& ent, int mode, const QStringList& full_test_flags) {
+void MainWindow::RunSpeedTest(const QString& config, bool useDefault, const QStringList& outboundTags, const QMap<QString, int>& tag2entID, int entID) {
     if (stopSpeedtest.load()) {
         MW_show_log("Profile test aborted");
         return;
@@ -59,46 +57,13 @@ void MainWindow::RunSpeedTest(const std::shared_ptr<NekoGui::ProxyEntity>& ent, 
     QSemaphore extSem;
 
     libcore::TestReq req;
-    req.set_mode((libcore::TestMode) mode);
-    req.set_timeout(3000);
-    req.set_url(NekoGui::dataStore->test_latency_url.toStdString());
-    if (mode == libcore::TestMode::UrlTest || mode == libcore::FullTest) {
-        auto c = BuildConfig(ent, true, false);
-        if (!c->error.isEmpty()) {
-            ent->full_test_report = c->error;
-            ent->Save();
-            auto profileId = ent->id;
-            runOnUiThread([this, profileId] {
-                refresh_proxy_list(profileId);
-            });
-        }
-        //
-        if (!c->extRs.empty()) {
-            runOnUiThread(
-                [&] {
-                    extCs = CreateExtCFromExtR(c->extRs, true);
-                    QThread::msleep(500);
-                    extSem.release();
-                },
-                DS_cores);
-            extSem.acquire();
-        }
-        //
-        auto config = new libcore::LoadConfigReq;
-        config->set_core_config(QJsonObject2QString(c->coreConfig, true).toStdString());
-        req.set_allocated_config(config);
-        req.set_in_address(ent->bean->serverAddress.toStdString());
-
-        req.set_full_latency(full_test_flags.contains("1"));
-        req.set_full_udp_latency(full_test_flags.contains("2"));
-        req.set_full_speed(full_test_flags.contains("3"));
-        req.set_full_in_out(full_test_flags.contains("4"));
-
-        req.set_full_speed_url(NekoGui::dataStore->test_download_url.toStdString());
-        req.set_full_speed_timeout(NekoGui::dataStore->test_download_timeout);
-    } else if (mode == libcore::TcpPing) {
-        req.set_address(ent->bean->DisplayAddress().toStdString());
+    for (const auto &item: outboundTags) {
+        req.add_outbound_tags(item.toStdString());
     }
+    req.set_config(config.toStdString());
+    req.set_url(NekoGui::dataStore->test_latency_url.toStdString());
+    req.set_use_default_outbound(useDefault);
+    req.set_max_concurrency(NekoGui::dataStore->test_concurrent);
 
     bool rpcOK;
     auto result = defaultClient->Test(&rpcOK, req);
@@ -117,29 +82,33 @@ void MainWindow::RunSpeedTest(const std::shared_ptr<NekoGui::ProxyEntity>& ent, 
     //
     if (!rpcOK) return;
 
-    if (result.error().empty()) {
-        ent->latency = result.ms();
-        if (ent->latency == 0) ent->latency = 1; // nekoray use 0 to represents not tested
-    } else {
-        ent->latency = -1;
-    }
-    ent->full_test_report = result.full_report().c_str(); // higher priority
-    ent->Save();
+    for (const auto &res: result.results()) {
+        if (!tag2entID.empty()) {
+            entID = tag2entID.count(QString(res.outbound_tag().c_str())) == 0 ? -1 : tag2entID[QString(res.outbound_tag().c_str())];
+        }
+        if (entID == -1) {
+            MW_show_log("Something is very wrong, the subject ent cannot be found!");
+            continue;
+        }
 
-    if (!result.error().empty()) {
-        MW_show_log(tr("[%1] test error: %2").arg(ent->bean->DisplayTypeAndName(), result.error().c_str()));
-    }
+        auto ent = NekoGui::profileManager->GetProfile(entID);
+        if (ent == nullptr) {
+            MW_show_log("Profile manager data is corrupted, try again.");
+            continue;
+        }
 
-    auto profileId = ent->id;
-    runOnUiThread([this, profileId] {
-        refresh_proxy_list(profileId);
-    });
+        if (res.error().empty()) {
+            ent->latency = res.latency_ms();
+        } else {
+            ent->latency = 0;
+            MW_show_log(tr("[%1] test error: %2").arg(ent->bean->DisplayTypeAndName(), res.error().c_str()));
+        }
+        ent->Save();
+    }
 }
 
-void MainWindow::speedtest_current_group(int mode) {
-    // menu_stop_testing mode == 114514, TODO use proper constants
-    if (mode == 114514) {
-        stopSpeedtest.store(true);
+void MainWindow::speedtest_current_group(const QList<std::shared_ptr<NekoGui::ProxyEntity>>& profiles) {
+    if (profiles.isEmpty()) {
         return;
     }
     if (!speedtestRunning.tryLock()) {
@@ -147,73 +116,51 @@ void MainWindow::speedtest_current_group(int mode) {
         return;
     }
 
-    speedTestThreadPool->setMaxThreadCount(NekoGui::dataStore->test_concurrent);
+    runOnNewThread([this, profiles]() {
+        auto buildObject = NekoGui::BuildTestConfig(profiles);
 
-    auto profiles = get_selected_or_group();
-    if (profiles.isEmpty()) {
-        speedtestRunning.unlock();
-        return;
-    }
-
-    QStringList full_test_flags;
-    if (mode == libcore::FullTest) {
-        auto w = new QDialog(this);
-        auto layout = new QVBoxLayout(w);
-        w->setWindowTitle(tr("Test Options"));
-        //
-        auto l1 = new QCheckBox(tr("Latency"));
-        auto l2 = new QCheckBox(tr("UDP latency"));
-        auto l3 = new QCheckBox(tr("Download speed"));
-        auto l4 = new QCheckBox(tr("In and Out IP"));
-        //
-        auto box = new QDialogButtonBox;
-        box->setOrientation(Qt::Horizontal);
-        box->setStandardButtons(QDialogButtonBox::Cancel | QDialogButtonBox::Ok);
-        connect(box, &QDialogButtonBox::accepted, w, &QDialog::accept);
-        connect(box, &QDialogButtonBox::rejected, w, &QDialog::reject);
-        //
-        layout->addWidget(l1);
-        layout->addWidget(l2);
-        layout->addWidget(l3);
-        layout->addWidget(l4);
-        layout->addWidget(box);
-        if (w->exec() != QDialog::Accepted) {
-            w->deleteLater();
-            speedtestRunning.unlock();
-            return;
-        }
-        //
-        if (l1->isChecked()) full_test_flags << "1";
-        if (l2->isChecked()) full_test_flags << "2";
-        if (l3->isChecked()) full_test_flags << "3";
-        if (l4->isChecked()) full_test_flags << "4";
-        //
-        w->deleteLater();
-        if (full_test_flags.isEmpty()) {
-            speedtestRunning.unlock();
-            return;
-        }
-    }
-
-    runOnNewThread([profiles, full_test_flags, mode, this]() {
         std::atomic<int> counter(0);
         stopSpeedtest.store(false);
-        for (const auto &item: profiles) {
-            auto func = [&item, full_test_flags, mode, this, &counter, profiles]() {
-                MainWindow::RunSpeedTest(item, mode, full_test_flags);
+        auto testCount = buildObject->fullConfigs.size() + (!buildObject->outboundTags.empty());
+        for (const auto &entID: buildObject->fullConfigs.keys()) {
+            auto configStr = buildObject->fullConfigs[entID];
+            auto func = [this, &counter, testCount, configStr, entID]() {
+                MainWindow::RunSpeedTest(configStr, true, {}, {}, entID);
                 counter++;
-                if (counter.load() == profiles.size()) {
+                if (counter.load() == testCount) {
                     speedtestRunning.unlock();
                 }
             };
+            speedTestThreadPool->start(func);
+        }
 
+        if (!buildObject->outboundTags.empty()) {
+            auto func = [this, &buildObject, &counter, testCount]() {
+                MainWindow::RunSpeedTest(QJsonObject2QString(buildObject->coreConfig, false), false, buildObject->outboundTags, buildObject->tag2entID);
+                counter++;
+                if (counter.load() == testCount) {
+                    speedtestRunning.unlock();
+                }
+            };
             speedTestThreadPool->start(func);
         }
 
         speedtestRunning.lock();
         speedtestRunning.unlock();
-        MW_show_log("Speedtest finished!");
+        runOnUiThread([=]{
+            refresh_proxy_list();
+            MW_show_log("Speedtest finished!");
+        });
     });
+}
+
+void MainWindow::stopSpeedTests() {
+    bool ok;
+    defaultClient->StopTests(&ok);
+
+    if (!ok) {
+        MW_show_log("Failed to stop tests");
+    }
 }
 
 void MainWindow::url_test_current() {
@@ -222,20 +169,19 @@ void MainWindow::url_test_current() {
 
     runOnNewThread([=] {
         libcore::TestReq req;
-        req.set_mode(libcore::UrlTest);
-        req.set_timeout(3000);
+        req.set_test_current(true);
         req.set_url(NekoGui::dataStore->test_latency_url.toStdString());
 
         bool rpcOK;
         auto result = defaultClient->Test(&rpcOK, req);
         if (!rpcOK) return;
 
-        auto latency = result.ms();
+        auto latency = result.results()[0].latency_ms();
         last_test_time = QTime::currentTime();
 
         runOnUiThread([=] {
-            if (!result.error().empty()) {
-                MW_show_log(QString("UrlTest error: %1").arg(result.error().c_str()));
+            if (!result.results()[0].error().empty()) {
+                MW_show_log(QString("UrlTest error: %1").arg(result.results()[0].error().c_str()));
             }
             if (latency <= 0) {
                 ui->label_running->setText(tr("Test Result") + ": " + tr("Unavailable"));

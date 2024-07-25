@@ -66,9 +66,7 @@ namespace QtGrpc {
             QNetworkRequest request(callUrl);
             // request.setAttribute(QNetworkRequest::CacheSaveControlAttribute, false);
             // request.setAttribute(QNetworkRequest::CacheLoadControlAttribute, QNetworkRequest::AlwaysNetwork);
-#if QT_VERSION >= QT_VERSION_CHECK(5, 11, 0)
             request.setAttribute(QNetworkRequest::Http2DirectAttribute, true);
-#endif
             request.setHeader(QNetworkRequest::ContentTypeHeader, QLatin1String{"application/grpc"});
             request.setRawHeader("Cache-Control", "no-store");
             request.setRawHeader(GrpcAcceptEncodingHeader, QByteArray{"identity,deflate,gzip"});
@@ -265,6 +263,19 @@ namespace NekoGui_rpc {
         } else {
             NOT_OK
             return reply;
+        }
+    }
+
+    void Client::StopTests(bool *rpcOK) {
+        const libcore::EmptyReq req;
+        libcore::EmptyResp resp;
+
+        auto status = make_grpc_channel()->Call("StopTest", req, &resp);
+
+        if (status == QNetworkReply::NoError) {
+            *rpcOK = true;
+        } else {
+            NOT_OK
         }
     }
 

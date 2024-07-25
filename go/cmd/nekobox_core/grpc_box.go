@@ -4,6 +4,7 @@ import (
 	"context"
 	"errors"
 	"fmt"
+	"github.com/Mahdi-zarei/sing-box-extra/boxbox"
 	"github.com/sagernet/sing-box/common/settings"
 	"github.com/sagernet/sing/common/metadata"
 	"strings"
@@ -13,12 +14,9 @@ import (
 	"grpc_server/gen"
 
 	"github.com/Mahdi-zarei/sing-box-extra/boxapi"
-	"github.com/Mahdi-zarei/sing-box-extra/boxbox"
 	"github.com/Mahdi-zarei/sing-box-extra/boxmain"
 	"github.com/matsuridayo/libneko/neko_common"
 	"github.com/matsuridayo/libneko/neko_log"
-	"github.com/matsuridayo/libneko/speedtest"
-
 	"log"
 
 	"github.com/sagernet/sing-box/option"
@@ -86,53 +84,66 @@ func (s *server) Stop(ctx context.Context, in *gen.EmptyReq) (out *gen.ErrorResp
 	return
 }
 
-func (s *server) Test(ctx context.Context, in *gen.TestReq) (out *gen.TestResp, _ error) {
+func (s *server) Test(ctx context.Context, in *gen.TestReq) (*gen.TestResp, error) {
+	var testInstance *boxbox.Box
+	var cancel context.CancelFunc
 	var err error
-	out = &gen.TestResp{Ms: 0}
-
-	defer func() {
+	var twice = true
+	if in.TestCurrent {
+		if instance == nil {
+			return &gen.TestResp{Results: []*gen.URLTestResp{{
+				OutboundTag: "proxy",
+				LatencyMs:   0,
+				Error:       "Instance is not running",
+			}}}, nil
+		}
+		testInstance = instance
+		twice = false
+	} else {
+		testInstance, cancel, err = boxmain.Create([]byte(in.Config), true)
 		if err != nil {
-			out.Error = err.Error()
+			return nil, err
 		}
-	}()
-
-	if in.Mode == gen.TestMode_UrlTest {
-		var i *boxbox.Box
-		var cancel context.CancelFunc
-		if in.Config != nil {
-			// Test instance
-			i, cancel, err = boxmain.Create([]byte(in.Config.CoreConfig), true)
-			if i != nil {
-				defer i.Close()
-				defer cancel()
-			}
-			if err != nil {
-				return
-			}
-		} else {
-			// Test running instance
-			i = instance
-			if i == nil {
-				return
-			}
-		}
-		// Latency
-		out.Ms, err = speedtest.UrlTest(boxapi.CreateProxyHttpClient(i), in.Url, in.Timeout)
-	} else if in.Mode == gen.TestMode_TcpPing {
-		out.Ms, err = speedtest.TcpPing(in.Address, in.Timeout)
-	} else if in.Mode == gen.TestMode_FullTest {
-		i, cancel, err := boxmain.Create([]byte(in.Config.CoreConfig), true)
-		if i != nil {
-			defer i.Close()
-			defer cancel()
-		}
-		if err != nil {
-			return
-		}
-		return grpc_server.DoFullTest(ctx, in, i)
+		defer cancel()
+		defer testInstance.Close()
 	}
 
-	return
+	outboundTags := in.OutboundTags
+	if in.UseDefaultOutbound || in.TestCurrent {
+		outbound, err := testInstance.Router().DefaultOutbound("tcp")
+		if err != nil {
+			return nil, err
+		}
+		outboundTags = []string{outbound.Tag()}
+	}
+
+	var maxConcurrency = in.MaxConcurrency
+	if maxConcurrency >= 500 || maxConcurrency == 0 {
+		maxConcurrency = MaxConcurrentTests
+	}
+	results := BatchURLTest(testCtx, testInstance, outboundTags, in.Url, int(maxConcurrency), twice)
+
+	res := make([]*gen.URLTestResp, 0)
+	for idx, data := range results {
+		errStr := ""
+		if data.Error != nil {
+			errStr = data.Error.Error()
+		}
+		res = append(res, &gen.URLTestResp{
+			OutboundTag: outboundTags[idx],
+			LatencyMs:   int32(data.Duration.Milliseconds()),
+			Error:       errStr,
+		})
+	}
+
+	return &gen.TestResp{Results: res}, nil
+}
+
+func (s *server) StopTest(ctx context.Context, in *gen.EmptyReq) (*gen.EmptyResp, error) {
+	cancelTests()
+	testCtx, cancelTests = context.WithCancel(context.Background())
+
+	return &gen.EmptyResp{}, nil
 }
 
 func (s *server) QueryStats(ctx context.Context, in *gen.QueryStatsReq) (out *gen.QueryStatsResp, _ error) {

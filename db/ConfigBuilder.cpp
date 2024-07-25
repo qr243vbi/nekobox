@@ -51,15 +51,18 @@ namespace NekoGui {
         }
     }
 
+
+
     // Common
 
-    std::shared_ptr<BuildConfigResult> BuildConfig(const std::shared_ptr<ProxyEntity> &ent, bool forTest, bool forExport) {
+    std::shared_ptr<BuildConfigResult> BuildConfig(const std::shared_ptr<ProxyEntity> &ent, bool forTest, bool forExport, int chainID) {
         auto result = std::make_shared<BuildConfigResult>();
         auto status = std::make_shared<BuildConfigStatus>();
         status->ent = ent;
         status->result = result;
         status->forTest = forTest;
         status->forExport = forExport;
+        status->chainID = chainID;
 
         auto customBean = dynamic_cast<NekoGui_fmt::CustomBean *>(ent->bean.get());
         if (customBean != nullptr && customBean->core == "internal-full") {
@@ -72,6 +75,80 @@ namespace NekoGui {
         MergeJson(QString2QJsonObject(ent->bean->custom_config), result->coreConfig);
 
         return result;
+    }
+
+    std::shared_ptr<BuildTestConfigResult> BuildTestConfig(QList<std::shared_ptr<ProxyEntity>> profiles) {
+        auto results = std::make_shared<BuildTestConfigResult>();
+
+        auto idx = 1;
+        QJsonArray outboundArray = {
+            QJsonObject{
+                {"type", "direct"},
+                {"tag", "direct"}
+            },
+            QJsonObject{
+                {"type", "block"},
+                {"tag", "block"}
+            },
+            QJsonObject{
+                {"type", "dns"},
+                {"tag", "dns-out"}
+            }
+        };
+        QJsonArray directDomainArray;
+        for (const auto &item: profiles) {
+            auto res = BuildConfig(item, true, false, idx++);
+            if (!res->error.isEmpty()) {
+                results->error = res->error;
+                return results;
+            }
+            if (item->CustomBean() != nullptr && item->CustomBean()->core == "internal-full") {
+                res->coreConfig["inbounds"] = QJsonArray();
+                results->fullConfigs[item->id] = QJsonObject2QString(res->coreConfig, true);
+                continue;
+            }
+
+            // not full config, process it
+            if (results->coreConfig.isEmpty()) {
+                results->coreConfig = res->coreConfig;
+            }
+            // add the direct dns domains
+            for (const auto &rule: res->coreConfig["dns"].toObject()["rules"].toArray()) {
+                if (rule.toObject().contains("domain")) {
+                    for (const auto &domain: rule.toObject()["domain"].toArray()) {
+                        directDomainArray.append(domain);
+                    }
+                }
+            }
+            // now we add the outbounds of the current config to the final one
+            auto outbounds = res->coreConfig["outbounds"].toArray();
+            if (outbounds.isEmpty()) {
+                results->error = QString("outbounds is empty for %1").arg(item->bean->name);
+                return results;
+            }
+            auto tag = outbounds[0].toObject()["tag"].toString();
+            results->outboundTags << tag;
+            results->tag2entID.insert(tag, item->id);
+            for (const auto &outboundRef: outbounds) {
+                auto outbound = outboundRef.toObject();
+                if (outbound["tag"] == "direct" || outbound["tag"] == "block" || outbound["tag"] == "dns-out") continue;
+                outboundArray.append(outbound);
+            }
+        }
+
+        results->coreConfig["outbounds"] = outboundArray;
+        auto dnsObj = results->coreConfig["dns"].toObject();
+        auto dnsRulesObj = QJsonArray();
+        if (!directDomainArray.empty()) {
+            dnsRulesObj += QJsonObject{
+                {"domain", directDomainArray},
+                {"server", "dns-direct"}
+            };
+        }
+        dnsObj["rules"] = dnsRulesObj;
+        results->coreConfig["dns"] = dnsObj;
+
+        return results;
     }
 
     QString BuildChain(int chainId, const std::shared_ptr<BuildConfigStatus> &status) {
@@ -128,7 +205,7 @@ namespace NekoGui {
         }
 
         // BuildChain
-        QString chainTagOut = BuildChainInternal(0, ents, status);
+        QString chainTagOut = BuildChainInternal(chainId, ents, status);
 
         // Chain ent traffic stat
         if (ents.length() > 1) {
@@ -154,34 +231,22 @@ namespace NekoGui {
             // profile2 (in) (global)   tag g-(id)
             // profile1                 tag (chainTag)-(id)
             // profile0 (out)           tag (chainTag)-(id) / single: chainTag=g-(id)
-            auto tagOut = chainTag + "-" + Int2String(ent->id);
-
-            // needGlobal: can only contain one?
-            bool needGlobal = false;
+            auto tagOut = chainTag + "-" + Int2String(ent->id) + "-" + Int2String(index);
 
             // first profile set as global
             auto isFirstProfile = index == ents.length() - 1;
             if (isFirstProfile) {
-                needGlobal = true;
-                tagOut = "g-" + Int2String(ent->id);
+                tagOut = "g-" + Int2String(ent->id) + "-" + Int2String(index);
             }
 
             // last profile set as "proxy"
             if (chainId == 0 && index == 0) {
-                needGlobal = false;
                 tagOut = "proxy";
             }
 
             // ignoreConnTag
             if (index != 0) {
                 status->result->ignoreConnTag << tagOut;
-            }
-
-            if (needGlobal) {
-                if (status->globalProfiles.contains(ent->id)) {
-                    continue;
-                }
-                status->globalProfiles += ent->id;
             }
 
             if (index > 0) {
@@ -433,7 +498,7 @@ namespace NekoGui {
         }
 
         // Outbounds
-        auto tagProxy = BuildChain(0, status);
+        auto tagProxy = BuildChain(status->chainID, status);
         if (!status->result->error.isEmpty()) return;
 
         // direct & block & dns-out
@@ -465,7 +530,7 @@ namespace NekoGui {
         if (dataStore->spmode_vpn) {
             routeObj["auto_detect_interface"] = true;
         }
-        routeObj["final"] = dataStore->routing->def_outbound;
+        if (!status->forTest) routeObj["final"] = dataStore->routing->def_outbound;
 
         auto routeChain = NekoGui::profileManager->GetRouteChain(NekoGui::dataStore->routing->current_route_id);
         if (routeChain == nullptr) {
