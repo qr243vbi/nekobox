@@ -106,13 +106,6 @@
        </widget>
       </item>
       <item>
-       <widget class="QCheckBox" name="fake_dns">
-        <property name="text">
-         <string notr="true">FakeDNS</string>
-        </property>
-       </widget>
-      </item>
-      <item>
        <widget class="Line" name="line">
         <property name="orientation">
          <enum>Qt::Vertical</enum>
@@ -164,7 +157,6 @@
   <tabstop>vpn_mtu</tabstop>
   <tabstop>vpn_ipv6</tabstop>
   <tabstop>strict_route</tabstop>
-  <tabstop>fake_dns</tabstop>
   <tabstop>hide_console</tabstop>
   <tabstop>troubleshooting</tabstop>
  </tabstops>

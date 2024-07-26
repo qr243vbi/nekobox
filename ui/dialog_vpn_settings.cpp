@@ -11,7 +11,6 @@ DialogVPNSettings::DialogVPNSettings(QWidget *parent) : QDialog(parent), ui(new 
     ui->setupUi(this);
     ADD_ASTERISK(this);
 
-    ui->fake_dns->setChecked(NekoGui::dataStore->fake_dns);
     ui->vpn_implementation->setCurrentIndex(NekoGui::dataStore->vpn_implementation);
     ui->vpn_mtu->setCurrentText(Int2String(NekoGui::dataStore->vpn_mtu));
     ui->vpn_ipv6->setChecked(NekoGui::dataStore->vpn_ipv6);
@@ -37,7 +36,6 @@ void DialogVPNSettings::accept() {
     auto mtu = ui->vpn_mtu->currentText().toInt();
     if (mtu > 10000 || mtu < 1000) mtu = 9000;
     NekoGui::dataStore->vpn_implementation = ui->vpn_implementation->currentIndex();
-    NekoGui::dataStore->fake_dns = ui->fake_dns->isChecked();
     NekoGui::dataStore->vpn_mtu = mtu;
     NekoGui::dataStore->vpn_ipv6 = ui->vpn_ipv6->isChecked();
     NekoGui::dataStore->vpn_hide_console = ui->hide_console->isChecked();
