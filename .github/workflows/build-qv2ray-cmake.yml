@@ -194,12 +194,16 @@ jobs:
           path: download-artifact
       - name: Pack
         run: |
-          curl -Lo - https://github.com/tcnksm/ghr/releases/download/v0.13.0/ghr_v0.13.0_linux_amd64.tar.gz | tar xzv
+          curl -Lo - https://github.com/tcnksm/ghr/releases/download/v0.16.2/ghr_v0.16.2_linux_amd64.tar.gz | tar xzv
           mv ghr*linux_amd64/ghr .
           source libs/env_deploy.sh
           find . -name artifacts.tgz | xargs -n1 tar xvzf
           cd deployment
           rm -rf *.pdb
+          ####
+          bash ../libs/pack_debian.sh ${{ github.event.inputs.tag }}
+          mv nekoray.deb $version_standalone-debian-x64.deb
+          rm -rf nekoray
           ####
           mv linux64 nekoray
           zip -r $version_standalone-linux64.zip nekoray
