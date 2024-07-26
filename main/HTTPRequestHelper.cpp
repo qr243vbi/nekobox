@@ -1,77 +1,41 @@
 #include "HTTPRequestHelper.hpp"
 
 #include <QByteArray>
-#include <QNetworkProxy>
-#include <QEventLoop>
 #include <QMetaEnum>
 #include <QTimer>
+#include "cpr/cpr.h"
 
 #include "main/NekoGui.hpp"
 
 namespace NekoGui_network {
 
-    NekoHTTPResponse NetworkRequestHelper::HttpGet(const QUrl &url) {
-        QNetworkRequest request;
-        QNetworkAccessManager accessManager;
-        request.setUrl(url);
-        // Set proxy
+    NekoHTTPResponse NetworkRequestHelper::HttpGet(const QString &url) {
+        cpr::Session session;
         if (NekoGui::dataStore->sub_use_proxy) {
-            QNetworkProxy p;
-            // Note: sing-box mixed socks5 protocol error
-            p.setType(IS_NEKO_BOX ? QNetworkProxy::HttpProxy : QNetworkProxy::Socks5Proxy);
-            p.setHostName("127.0.0.1");
-            p.setPort(NekoGui::dataStore->inbound_socks_port);
+            session.SetProxies({{"http", "127.0.0.1:" + QString(Int2String(NekoGui::dataStore->inbound_socks_port)).toStdString()},
+                                {"https", "127.0.0.1:" + QString(Int2String(NekoGui::dataStore->inbound_socks_port)).toStdString()}});
             if (NekoGui::dataStore->inbound_auth->NeedAuth()) {
-                p.setUser(NekoGui::dataStore->inbound_auth->username);
-                p.setPassword(NekoGui::dataStore->inbound_auth->password);
+                session.SetProxyAuth(cpr::ProxyAuthentication{{"http",
+                cpr::EncodedAuthentication{NekoGui::dataStore->inbound_auth->username.toStdString(), NekoGui::dataStore->inbound_auth->password.toStdString()}}});
             }
-            accessManager.setProxy(p);
             if (NekoGui::dataStore->started_id < 0) {
                 return NekoHTTPResponse{QObject::tr("Request with proxy but no profile started.")};
             }
         }
-        if (accessManager.proxy().type() == QNetworkProxy::Socks5Proxy) {
-            auto cap = accessManager.proxy().capabilities();
-            accessManager.proxy().setCapabilities(cap | QNetworkProxy::HostNameLookupCapability);
-        }
-        // Set attribute
-#if (QT_VERSION >= QT_VERSION_CHECK(5, 9, 0))
-        request.setAttribute(QNetworkRequest::RedirectPolicyAttribute, QNetworkRequest::NoLessSafeRedirectPolicy);
-#endif
-        request.setHeader(QNetworkRequest::KnownHeaders::UserAgentHeader, NekoGui::dataStore->GetUserAgent());
         if (NekoGui::dataStore->sub_insecure) {
-            QSslConfiguration c;
-            c.setPeerVerifyMode(QSslSocket::PeerVerifyMode::VerifyNone);
-            request.setSslConfiguration(c);
+            session.SetVerifySsl(cpr::VerifySsl{false});
         }
-        //
-        auto _reply = accessManager.get(request);
-        connect(_reply, &QNetworkReply::sslErrors, _reply, [](const QList<QSslError> &errors) {
-            QStringList error_str;
-            for (const auto &err: errors) {
-                error_str << err.errorString();
-            }
-            MW_show_log(QString("SSL Errors: %1 %2").arg(error_str.join(","), NekoGui::dataStore->sub_insecure ? "(Ignored)" : ""));
-        });
-        // Wait for response
-        auto abortTimer = new QTimer;
-        abortTimer->setSingleShot(true);
-        abortTimer->setInterval(10000);
-        QObject::connect(abortTimer, &QTimer::timeout, _reply, &QNetworkReply::abort);
-        abortTimer->start();
-        {
-            QEventLoop loop;
-            QObject::connect(_reply, &QNetworkReply::finished, &loop, &QEventLoop::quit);
-            loop.exec();
+        session.SetUserAgent(cpr::UserAgent{NekoGui::dataStore->GetUserAgent().toStdString()});
+        session.SetTimeout(cpr::Timeout(10000));
+        session.SetUrl(cpr::Url(url.toStdString()));
+        auto resp = session.Get();
+        auto headerPairs = QList<QPair<QByteArray, QByteArray>>();
+        for (const auto &item: resp.header) {
+            headerPairs.append(std::pair<QByteArray, QByteArray>(QByteArray(item.first.c_str()), QByteArray(item.second.c_str())));
         }
-        if (abortTimer != nullptr) {
-            abortTimer->stop();
-            abortTimer->deleteLater();
-        }
-        //
-        auto result = NekoHTTPResponse{_reply->error() == QNetworkReply::NetworkError::NoError ? "" : _reply->errorString(),
-                                       _reply->readAll(), _reply->rawHeaderPairs()};
-        _reply->deleteLater();
+        auto err = resp.error.message.empty() ? (resp.status_code == 200 ? "" : resp.status_line) : resp.error.message;
+        auto result = NekoHTTPResponse{ err.c_str(),
+                                       resp.text.c_str(), headerPairs};
         return result;
     }
 
