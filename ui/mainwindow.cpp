@@ -326,10 +326,16 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     connect(ui->menu_server, &QMenu::aboutToShow, this, [=](){
         if (!speedtestRunning.tryLock()) {
             ui->menu_server->addAction(ui->menu_stop_testing);
-            return;
         } else {
             speedtestRunning.unlock();
             ui->menu_server->removeAction(ui->menu_stop_testing);
+        }
+
+        auto currGroup = NekoGui::profileManager->GetGroup(NekoGui::dataStore->current_group);
+        if (currGroup != nullptr && !currGroup->url.isEmpty()) {
+            ui->menu_server->addAction(ui->menu_update_subscription);
+        } else {
+            ui->menu_server->removeAction(ui->menu_update_subscription);
         }
     });
     connect(ui->actionUrl_Test_Selected, &QAction::triggered, this, [=]() {
