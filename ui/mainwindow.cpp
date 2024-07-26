@@ -332,6 +332,15 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
         }
 
         auto currGroup = NekoGui::profileManager->GetGroup(NekoGui::dataStore->current_group);
+
+        if (!currGroup->Profiles().empty()) {
+            ui->menu_server->addAction(ui->menu_clear_test_result);
+            ui->menu_server->addAction(ui->menu_remove_unavailable);
+        } else {
+            ui->menu_server->removeAction(ui->menu_clear_test_result);
+            ui->menu_server->removeAction(ui->menu_remove_unavailable);
+        }
+
         if (currGroup != nullptr && !currGroup->url.isEmpty()) {
             ui->menu_server->addAction(ui->menu_update_subscription);
         } else {
@@ -1078,30 +1087,6 @@ void MainWindow::on_menu_clone_triggered() {
     NekoGui_sub::groupUpdater->AsyncUpdate(sls.join("\n"));
 }
 
-void MainWindow::on_menu_move_triggered() {
-    auto ents = get_now_selected_list();
-    if (ents.isEmpty()) return;
-
-    auto items = QStringList{};
-    for (auto gid: NekoGui::profileManager->groupsTabOrder) {
-        auto group = NekoGui::profileManager->GetGroup(gid);
-        if (group == nullptr) continue;
-        items += Int2String(gid) + " " + group->name;
-    }
-
-    bool ok;
-    auto a = QInputDialog::getItem(nullptr,
-                                   tr("Move"),
-                                   tr("Move %1 item(s)").arg(ents.count()),
-                                   items, 0, false, &ok);
-    if (!ok) return;
-    auto gid = SubStrBefore(a, " ").toInt();
-    for (const auto &ent: ents) {
-        NekoGui::profileManager->MoveProfile(ent, gid);
-    }
-    refresh_proxy_list();
-}
-
 void MainWindow::on_menu_delete_triggered() {
     auto ents = get_now_selected_list();
     if (ents.count() == 0) return;
@@ -1121,19 +1106,6 @@ void MainWindow::on_menu_reset_traffic_triggered() {
         ent->traffic_data->Reset();
         ent->Save();
         refresh_proxy_list(ent->id);
-    }
-}
-
-void MainWindow::on_menu_profile_debug_info_triggered() {
-    auto ents = get_now_selected_list();
-    if (ents.count() != 1) return;
-    auto btn = QMessageBox::information(this, software_name, ents.first()->ToJsonBytes(), "OK", "Edit", "Reload", 0, 0);
-    if (btn == 1) {
-        QDesktopServices::openUrl(QUrl::fromLocalFile(QFileInfo(QString("profiles/%1.json").arg(ents.first()->id)).absoluteFilePath()));
-    } else if (btn == 2) {
-        NekoGui::dataStore->Load();
-        NekoGui::profileManager->LoadManager();
-        refresh_proxy_list();
     }
 }
 
@@ -1321,32 +1293,6 @@ void MainWindow::on_menu_select_all_triggered() {
     ui->proxyListTable->selectAll();
 }
 
-void MainWindow::on_menu_delete_repeat_triggered() {
-    QList<std::shared_ptr<NekoGui::ProxyEntity>> out;
-    QList<std::shared_ptr<NekoGui::ProxyEntity>> out_del;
-
-    NekoGui::ProfileFilter::Uniq(NekoGui::profileManager->CurrentGroup()->Profiles(), out, true, false);
-    NekoGui::ProfileFilter::OnlyInSrc_ByPointer(NekoGui::profileManager->CurrentGroup()->Profiles(), out, out_del);
-
-    int remove_display_count = 0;
-    QString remove_display;
-    for (const auto &ent: out_del) {
-        remove_display += ent->bean->DisplayTypeAndName() + "\n";
-        if (++remove_display_count == 20) {
-            remove_display += "...";
-            break;
-        }
-    }
-
-    if (out_del.length() > 0 &&
-        QMessageBox::question(this, tr("Confirmation"), tr("Remove %1 item(s) ?").arg(out_del.length()) + "\n" + remove_display) == QMessageBox::StandardButton::Yes) {
-        for (const auto &ent: out_del) {
-            NekoGui::profileManager->DeleteProfile(ent->id);
-        }
-        refresh_proxy_list();
-    }
-}
-
 bool mw_sub_updating = false;
 
 void MainWindow::on_menu_update_subscription_triggered() {
@@ -1381,29 +1327,6 @@ void MainWindow::on_menu_remove_unavailable_triggered() {
             NekoGui::profileManager->DeleteProfile(ent->id);
         }
         refresh_proxy_list();
-    }
-}
-
-void MainWindow::on_menu_resolve_domain_triggered() {
-    auto profiles = get_selected_or_group();
-    if (profiles.isEmpty()) return;
-
-    if (QMessageBox::question(this,
-                              tr("Confirmation"),
-                              tr("Resolving domain to IP, if support.")) != QMessageBox::StandardButton::Yes) {
-        return;
-    }
-    if (mw_sub_updating) return;
-    mw_sub_updating = true;
-    NekoGui::dataStore->resolve_count = profiles.count();
-
-    for (const auto &profile: profiles) {
-        profile->bean->ResolveDomainToIP([=] {
-            profile->Save();
-            if (--NekoGui::dataStore->resolve_count != 0) return;
-            refresh_proxy_list();
-            mw_sub_updating = false;
-        });
     }
 }
 
@@ -1493,10 +1416,6 @@ void MainWindow::show_log_impl(const QString &log) {
         break;
     }
 }
-
-#define ADD_TO_CURRENT_ROUTE(a, b)                                                                   \
-    NekoGui::dataStore->routing->a = (SplitLines(NekoGui::dataStore->routing->a) << (b)).join("\n"); \
-    NekoGui::dataStore->routing->Save();
 
 void MainWindow::on_masterLogBrowser_customContextMenuRequested(const QPoint &pos) {
     QMenu *menu = ui->masterLogBrowser->createStandardContextMenu();
@@ -1612,7 +1531,13 @@ void MainWindow::on_tabWidget_customContextMenuRequested(const QPoint &p) {
     });
     menu->addAction(addAction);
     menu->addAction(editAction);
+    auto group = NekoGui::profileManager->GetGroup(NekoGui::dataStore->current_group);
     if (NekoGui::profileManager->groups.size() > 1) menu->addAction(deleteAction);
+    if (!group->Profiles().empty()) {
+        menu->addAction(ui->menu_clear_test_result);
+        menu->addAction(ui->menu_remove_unavailable);
+    }
+    if (!group->url.isEmpty()) menu->addAction(ui->menu_update_subscription);
     menu->exec(ui->tabWidget->tabBar()->mapToGlobal(p));
     return;
 }

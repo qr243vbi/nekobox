@@ -98,13 +98,9 @@ private slots:
 
     void on_menu_clone_triggered();
 
-    void on_menu_move_triggered();
-
     void on_menu_delete_triggered();
 
     void on_menu_reset_traffic_triggered();
-
-    void on_menu_profile_debug_info_triggered();
 
     void on_menu_copy_links_triggered();
 
@@ -122,13 +118,9 @@ private slots:
 
     void on_menu_select_all_triggered();
 
-    void on_menu_delete_repeat_triggered();
-
     void on_menu_remove_unavailable_triggered();
 
     void on_menu_update_subscription_triggered();
-
-    void on_menu_resolve_domain_triggered();
 
     void on_proxyListTable_itemDoubleClicked(QTableWidgetItem *item);
 
