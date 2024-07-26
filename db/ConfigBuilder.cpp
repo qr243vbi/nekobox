@@ -622,7 +622,7 @@ namespace NekoGui {
         };
 
         // Fakedns
-        if (dataStore->fake_dns && dataStore->spmode_vpn && !status->forTest) {
+        if (dataStore->fake_dns) {
             dnsServers += QJsonObject{
                 {"tag", "dns-fake"},
                 {"address", "fakeip"},
@@ -632,6 +632,18 @@ namespace NekoGui {
                 {"inet4_range", "198.18.0.0/15"},
                 {"inet6_range", "fc00::/18"},
             };
+            dnsRules += QJsonObject{
+                {"outbound", "any"},
+                {"server", "dns-local"},
+            };
+            dnsRules += QJsonObject{
+                {"query_type", QJsonArray{
+                                   "A",
+                                   "AAAA"
+                               }},
+                {"server", "dns-fake"}
+            };
+            dns["independent_cache"] = true;
         }
 
         // Direct dns domains
@@ -685,17 +697,8 @@ namespace NekoGui {
             {"detour", "direct"},
         };
 
-        // fakedns rule
-        if (dataStore->fake_dns && dataStore->spmode_vpn && !status->forTest) {
-            dnsRules += QJsonObject{
-                {"inbound", "tun-in"},
-                {"server", "dns-fake"},
-            };
-        }
-
         dns["servers"] = dnsServers;
         dns["rules"] = dnsRules;
-        dns["independent_cache"] = true;
 
         if (dataStore->routing->use_dns_object) {
             dns = QString2QJsonObject(dataStore->routing->dns_object);

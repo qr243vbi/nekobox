@@ -65,6 +65,7 @@ DialogManageRoutes::DialogManageRoutes(QWidget *parent) : QDialog(parent), ui(ne
 
     ui->direct_dns_strategy->addItems(qsValue);
     ui->remote_dns_strategy->addItems(qsValue);
+    ui->enable_fakeip->setChecked(NekoGui::dataStore->fake_dns);
     //
     connect(ui->use_dns_object, &QCheckBox::stateChanged, this, [=](int state) {
         auto useDNSObject = state == Qt::Checked;
@@ -134,6 +135,7 @@ void DialogManageRoutes::accept() {
     NekoGui::dataStore->routing->direct_dns = ui->direct_dns->currentText();
     NekoGui::dataStore->routing->direct_dns_strategy = ui->direct_dns_strategy->currentText();
     NekoGui::dataStore->routing->dns_final_out = ui->dns_final_out->currentText();
+    NekoGui::dataStore->fake_dns = ui->enable_fakeip->isChecked();
 
     NekoGui::profileManager->UpdateRouteChains(chainList);
     NekoGui::dataStore->routing->current_route_id = currentRouteProfileID;
