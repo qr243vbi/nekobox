@@ -7,6 +7,7 @@
 #include "ui/Icon.hpp"
 #include "main/GuiUtils.hpp"
 #include "main/NekoGui.hpp"
+#include "main/HTTPRequestHelper.hpp"
 
 #include <QStyleFactory>
 #include <QFileDialog>
@@ -58,48 +59,25 @@ DialogBasicSettings::DialogBasicSettings(QWidget *parent)
     ADD_ASTERISK(this);
 
     // Common
-
-    ui->groupBox_http->hide();
     ui->inbound_socks_port_l->setText(ui->inbound_socks_port_l->text().replace("Socks", "Mixed (SOCKS+HTTP)"));
     ui->log_level->addItems(QString("trace debug info warn error fatal panic").split(" "));
     ui->mux_protocol->addItems({"h2mux", "smux", "yamux"});
     ui->disable_stats->setChecked(NekoGui::dataStore->disable_traffic_stats);
 
-    refresh_auth();
-
     D_LOAD_STRING(inbound_address)
     D_LOAD_COMBO_STRING(log_level)
     CACHE.custom_inbound = NekoGui::dataStore->custom_inbound;
     D_LOAD_INT(inbound_socks_port)
-    D_LOAD_INT_ENABLE(inbound_http_port, http_enable)
     D_LOAD_INT(test_concurrent)
-    D_LOAD_INT(test_download_timeout)
     D_LOAD_STRING(test_latency_url)
-    D_LOAD_STRING(test_download_url)
-    D_LOAD_BOOL(old_share_link_format)
 
     connect(ui->custom_inbound_edit, &QPushButton::clicked, this, [=] {
         C_EDIT_JSON_ALLOW_EMPTY(custom_inbound)
     });
 
-#ifdef Q_OS_WIN
-    connect(ui->sys_proxy_format, &QPushButton::clicked, this, [=] {
-        bool ok;
-        auto str = QInputDialog::getItem(this, ui->sys_proxy_format->text() + " (Windows)",
-                                         tr("Advanced system proxy settings. Please select a format."),
-                                         Preset::Windows::system_proxy_format,
-                                         Preset::Windows::system_proxy_format.indexOf(NekoGui::dataStore->system_proxy_format),
-                                         false, &ok);
-        if (ok) NekoGui::dataStore->system_proxy_format = str;
-    });
-#else
-    ui->sys_proxy_format->hide();
-#endif
-
     // Style
     ui->connection_statistics_box->setDisabled(true);
     //
-    D_LOAD_BOOL(check_include_pre)
     D_LOAD_BOOL(start_minimal)
     D_LOAD_INT(max_log_line)
     //
@@ -149,9 +127,47 @@ DialogBasicSettings::DialogBasicSettings(QWidget *parent)
     D_LOAD_INT_ENABLE(sub_auto_update, sub_auto_update_enable)
 
     // Core
-
     ui->groupBox_core->setTitle(software_core_name);
-    ui->core_v2ray_asset->setText(NekoGui::dataStore->v2ray_asset_dir);
+
+    // Assets
+    ui->geoip_url->setText(NekoGui::dataStore->geoip_download_url);
+    ui->geosite_url->setText(NekoGui::dataStore->geosite_download_url);
+    connect(ui->geoip_auto_btn, &QPushButton::clicked, this, [=](){
+        bool success;
+        auto resp = NetworkRequestHelper::GetLatestDownloadURL("https://api.github.com/repos/SagerNet/sing-geoip/releases/latest", "geoip.db", &success);
+        if (!success) {
+            runOnUiThread([=](){
+                MessageBoxWarning("Error", resp);
+            });
+            return;
+        }
+        ui->geoip_url->setText(resp);
+    });
+    connect(ui->geosite_auto_btn, &QPushButton::clicked, this, [=](){
+        bool success;
+        auto resp = NetworkRequestHelper::GetLatestDownloadURL("https://api.github.com/repos/SagerNet/sing-geosite/releases/latest", "geosite.db", &success);
+        if (!success) {
+            runOnUiThread([=](){
+                MessageBoxWarning("Error", resp);
+            });
+            return;
+        }
+        ui->geosite_url->setText(resp);
+    });
+    connect(ui->download_geo_btn, &QPushButton::clicked, this, [=]() {
+        MW_dialog_message(Dialog_DialogBasicSettings, "DownloadAssets;"+ui->geoip_url->text()+";"+ui->geosite_url->text());
+    });
+    connect(ui->remove_srs_btn, &QPushButton::clicked, this, [=](){
+       auto rsDir = QDir(RULE_SETS_DIR);
+       auto entries = rsDir.entryList(QDir::Files);
+       for (const auto &item: entries) {
+           if (!QFile(RULE_SETS_DIR + "/" + item).remove()) {
+               MW_show_log("Failed to remove " + item + ", stop the core then try again");
+           }
+       }
+       MW_show_log("Removed all rule-set files");
+    });
+
     //
     CACHE.extraCore = QString2QJsonObject(NekoGui::dataStore->extraCore->core_map);
     if (!CACHE.extraCore.contains("naive")) CACHE.extraCore.insert("naive", "");
@@ -164,16 +180,6 @@ DialogBasicSettings::DialogBasicSettings(QWidget *parent)
         extra_core_layout->addWidget(new ExtraCoreWidget(&CACHE.extraCore, s));
     }
     //
-    connect(ui->core_v2ray_asset, &QLineEdit::textChanged, this, [=] {
-        CACHE.needRestart = true;
-    });
-    connect(ui->core_v2ray_asset_pick, &QPushButton::clicked, this, [=] {
-        auto fn = QFileDialog::getExistingDirectory(this, tr("Select"), QDir::currentPath(),
-                                                    QFileDialog::Option::ShowDirsOnly | QFileDialog::Option::ReadOnly);
-        if (!fn.isEmpty()) {
-            ui->core_v2ray_asset->setText(fn);
-        }
-    });
     connect(ui->extra_core_add, &QPushButton::clicked, this, [=] {
         bool ok;
         auto s = QInputDialog::getText(nullptr, tr("Add"),
@@ -241,17 +247,12 @@ void DialogBasicSettings::accept() {
     D_SAVE_COMBO_STRING(log_level)
     NekoGui::dataStore->custom_inbound = CACHE.custom_inbound;
     D_SAVE_INT(inbound_socks_port)
-    D_SAVE_INT_ENABLE(inbound_http_port, http_enable)
     D_SAVE_INT(test_concurrent)
-    D_SAVE_INT(test_download_timeout)
     D_SAVE_STRING(test_latency_url)
-    D_SAVE_STRING(test_download_url)
-    D_SAVE_BOOL(old_share_link_format)
 
     // Style
 
     NekoGui::dataStore->language = ui->language->currentIndex();
-    D_SAVE_BOOL(check_include_pre)
     D_SAVE_BOOL(start_minimal)
     D_SAVE_INT(max_log_line)
 
@@ -288,10 +289,12 @@ void DialogBasicSettings::accept() {
     D_SAVE_INT_ENABLE(sub_auto_update, sub_auto_update_enable)
 
     // Core
-
-    NekoGui::dataStore->v2ray_asset_dir = ui->core_v2ray_asset->text();
     NekoGui::dataStore->extraCore->core_map = QJsonObject2QString(CACHE.extraCore, true);
     NekoGui::dataStore->disable_traffic_stats = ui->disable_stats->isChecked();
+
+    // Assets
+    NekoGui::dataStore->geoip_download_url = ui->geoip_url->text();
+    NekoGui::dataStore->geosite_download_url = ui->geosite_url->text();
 
     // Mux
     D_SAVE_INT(mux_concurrency)
@@ -316,17 +319,6 @@ void DialogBasicSettings::accept() {
     QDialog::accept();
 }
 
-// slots
-
-void DialogBasicSettings::refresh_auth() {
-    ui->inbound_auth->setText({});
-    if (NekoGui::dataStore->inbound_auth->NeedAuth()) {
-        ui->inbound_auth->setIcon(Icon::GetMaterialIcon("lock-outline"));
-    } else {
-        ui->inbound_auth->setIcon(Icon::GetMaterialIcon("lock-open-outline"));
-    }
-}
-
 void DialogBasicSettings::on_set_custom_icon_clicked() {
     auto title = ui->set_custom_icon->text();
     QString user_icon_path = "./" + software_name.toLower() + ".png";
@@ -348,40 +340,6 @@ void DialogBasicSettings::on_set_custom_icon_clicked() {
         return;
     }
     MW_dialog_message(Dialog_DialogBasicSettings, "UpdateIcon");
-}
-
-void DialogBasicSettings::on_inbound_auth_clicked() {
-    auto w = new QDialog(this);
-    w->setWindowTitle(tr("Inbound Auth"));
-    auto layout = new QGridLayout;
-    w->setLayout(layout);
-    //
-    auto user_l = new QLabel(tr("Username"));
-    auto pass_l = new QLabel(tr("Password"));
-    auto user = new MyLineEdit;
-    auto pass = new MyLineEdit;
-    user->setText(NekoGui::dataStore->inbound_auth->username);
-    pass->setText(NekoGui::dataStore->inbound_auth->password);
-    //
-    layout->addWidget(user_l, 0, 0);
-    layout->addWidget(user, 0, 1);
-    layout->addWidget(pass_l, 1, 0);
-    layout->addWidget(pass, 1, 1);
-    auto box = new QDialogButtonBox;
-    box->setOrientation(Qt::Horizontal);
-    box->setStandardButtons(QDialogButtonBox::Cancel | QDialogButtonBox::Ok);
-    connect(box, &QDialogButtonBox::accepted, w, [=] {
-        NekoGui::dataStore->inbound_auth->username = user->text();
-        NekoGui::dataStore->inbound_auth->password = pass->text();
-        MW_dialog_message(Dialog_DialogBasicSettings, "UpdateDataStore");
-        w->accept();
-    });
-    connect(box, &QDialogButtonBox::rejected, w, &QDialog::reject);
-    layout->addWidget(box, 2, 1);
-    //
-    w->exec();
-    w->deleteLater();
-    refresh_auth();
 }
 
 void DialogBasicSettings::on_core_settings_clicked() {
@@ -449,5 +407,4 @@ void DialogBasicSettings::on_core_settings_clicked() {
     ADD_ASTERISK(w)
     w->exec();
     w->deleteLater();
-    refresh_auth();
 }

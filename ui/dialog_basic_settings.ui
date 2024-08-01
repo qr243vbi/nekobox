@@ -30,7 +30,7 @@
      </property>
     </widget>
    </item>
-   <item row="2" column="3">
+   <item row="0" column="3">
     <widget class="QTabWidget" name="tabWidget">
      <property name="minimumSize">
       <size>
@@ -61,47 +61,16 @@
             <item>
              <widget class="QLineEdit" name="inbound_address"/>
             </item>
-            <item>
-             <widget class="QPushButton" name="inbound_auth">
-              <property name="text">
-               <string notr="true"/>
-              </property>
-             </widget>
-            </item>
            </layout>
           </widget>
          </item>
-         <item>
-          <widget class="QGroupBox" name="groupbox_custom_inbound">
-           <layout class="QHBoxLayout" name="horizontalLayout_10">
-            <item>
-             <widget class="QLabel" name="label_11">
-              <property name="text">
-               <string>Custom Inbound</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QPushButton" name="custom_inbound_edit">
-              <property name="text">
-               <string>Edit</string>
-              </property>
-             </widget>
-            </item>
-           </layout>
-          </widget>
-         </item>
-        </layout>
-       </item>
-       <item>
-        <layout class="QHBoxLayout" name="hlayout_l2">
          <item>
           <widget class="QGroupBox" name="horizontalGroupBox_2">
            <layout class="QHBoxLayout" name="horizontalLayout_13">
             <item>
              <widget class="QLabel" name="inbound_socks_port_l">
               <property name="text">
-               <string>Socks Listen Port</string>
+               <string>Listen Port</string>
               </property>
              </widget>
             </item>
@@ -118,30 +87,24 @@
            </layout>
           </widget>
          </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="hlayout_l2">
          <item>
-          <widget class="QGroupBox" name="groupBox_http">
-           <layout class="QHBoxLayout" name="horizontalLayout_16">
+          <widget class="QGroupBox" name="groupbox_custom_inbound">
+           <layout class="QHBoxLayout" name="horizontalLayout_10">
             <item>
-             <widget class="QLabel" name="label_5">
+             <widget class="QLabel" name="label_11">
               <property name="text">
-               <string>HTTP Listen Port</string>
+               <string>Custom Inbound</string>
               </property>
              </widget>
             </item>
             <item>
-             <widget class="QLineEdit" name="inbound_http_port">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QCheckBox" name="http_enable">
+             <widget class="QPushButton" name="custom_inbound_edit">
               <property name="text">
-               <string>Enable</string>
+               <string>Edit</string>
               </property>
              </widget>
             </item>
@@ -172,69 +135,6 @@
           </item>
           <item>
            <widget class="QLineEdit" name="test_concurrent"/>
-          </item>
-         </layout>
-        </widget>
-       </item>
-       <item>
-        <widget class="QGroupBox" name="horizontalGroupBox">
-         <layout class="QHBoxLayout" name="horizontalLayout_12" stretch="0,8,1,1">
-          <item>
-           <widget class="QLabel" name="label_19">
-            <property name="text">
-             <string>Download Test URL</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="MyLineEdit" name="test_download_url"/>
-          </item>
-          <item>
-           <widget class="QLabel" name="label_10">
-            <property name="text">
-             <string>Timeout (s)</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QLineEdit" name="test_download_timeout"/>
-          </item>
-         </layout>
-        </widget>
-       </item>
-       <item>
-        <widget class="QGroupBox" name="horizontalGroupBox1">
-         <layout class="QHBoxLayout" name="horizontalLayout_18">
-          <item>
-           <widget class="QCheckBox" name="check_include_pre">
-            <property name="text">
-             <string>Include Pre-release when checking update</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="Line" name="sys_proxy_format_vline">
-            <property name="orientation">
-             <enum>Qt::Orientation::Vertical</enum>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QCheckBox" name="old_share_link_format">
-            <property name="toolTip">
-             <string>Share VMess Link with v2rayN Format</string>
-            </property>
-            <property name="text">
-             <string>Old Share Link Format</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QPushButton" name="sys_proxy_format">
-            <property name="text">
-             <string>System proxy format</string>
-            </property>
-           </widget>
           </item>
          </layout>
         </widget>
@@ -587,39 +487,7 @@
           <item>
            <widget class="QWidget" name="assest_group" native="true">
             <layout class="QGridLayout" name="gridLayout_2">
-             <item row="0" column="0">
-              <widget class="QLabel" name="label_12">
-               <property name="text">
-                <string>Asset Location</string>
-               </property>
-              </widget>
-             </item>
              <item row="0" column="1">
-              <layout class="QGridLayout" name="gridLayout_4">
-               <item row="0" column="0">
-                <widget class="MyLineEdit" name="core_v2ray_asset">
-                 <property name="placeholderText">
-                  <string>Default: dir of &quot;nekoray&quot;</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="0" column="1">
-                <widget class="QPushButton" name="core_v2ray_asset_pick">
-                 <property name="text">
-                  <string>Select</string>
-                 </property>
-                </widget>
-               </item>
-              </layout>
-             </item>
-             <item row="1" column="0">
-              <widget class="QLabel" name="label_3">
-               <property name="text">
-                <string notr="true">Loglevel</string>
-               </property>
-              </widget>
-             </item>
-             <item row="1" column="1">
               <layout class="QHBoxLayout" name="horizontalLayout_20">
                <item>
                 <widget class="QComboBox" name="log_level">
@@ -649,14 +517,21 @@
                </item>
               </layout>
              </item>
-             <item row="2" column="0">
+             <item row="1" column="0">
               <widget class="QLabel" name="label_6">
                <property name="text">
                 <string>Multiplex (mux)</string>
                </property>
               </widget>
              </item>
-             <item row="2" column="1">
+             <item row="0" column="0">
+              <widget class="QLabel" name="label_3">
+               <property name="text">
+                <string notr="true">Loglevel</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="1">
               <layout class="QHBoxLayout" name="horizontalLayout">
                <item>
                 <widget class="QComboBox" name="mux_protocol"/>
@@ -781,6 +656,93 @@
        </item>
       </layout>
      </widget>
+     <widget class="QWidget" name="tab">
+      <attribute name="title">
+       <string>Assets</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_7">
+       <item>
+        <widget class="QGroupBox" name="groupBox_3">
+         <property name="title">
+          <string>Geo Assets and Rule-sets</string>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_8">
+          <item>
+           <widget class="QPushButton" name="remove_srs_btn">
+            <property name="toolTip">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Remove the currently generated rule-sets so that they can be regenerated&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+            <property name="text">
+             <string>Remove Generated Rule-sets</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QWidget" name="widget" native="true">
+            <layout class="QVBoxLayout" name="verticalLayout_9">
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_11">
+               <item>
+                <widget class="QLabel" name="geoip_url_l">
+                 <property name="text">
+                  <string>GeoIP URL</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLineEdit" name="geoip_url"/>
+               </item>
+               <item>
+                <widget class="QPushButton" name="geoip_auto_btn">
+                 <property name="toolTip">
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Sets the URL to the latest sing-geoip release URL&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
+                 <property name="text">
+                  <string>Use Sing-Geoip</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_14">
+               <item>
+                <widget class="QLabel" name="geosite_url_l">
+                 <property name="text">
+                  <string>GeoSite URL</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLineEdit" name="geosite_url"/>
+               </item>
+               <item>
+                <widget class="QPushButton" name="geosite_auto_btn">
+                 <property name="toolTip">
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Sets the URL to the latest sing-geosite release URL&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
+                 <property name="text">
+                  <string>Use Sing-Geosite</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <widget class="QPushButton" name="download_geo_btn">
+               <property name="text">
+                <string>Download and Replace Geo files</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
      <widget class="QWidget" name="tab_6">
       <attribute name="title">
        <string>Extra Core</string>
@@ -799,8 +761,8 @@
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>686</width>
-            <height>377</height>
+            <width>680</width>
+            <height>355</height>
            </rect>
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_6">

@@ -39,16 +39,6 @@ namespace NekoGui {
         void Delete(const QString &id);
     };
 
-    class InboundAuthorization : public JsonStore {
-    public:
-        QString username;
-        QString password;
-
-        InboundAuthorization();
-
-        [[nodiscard]] bool NeedAuth() const;
-    };
-
     class DataStore : public JsonStore {
     public:
         // Running
@@ -84,10 +74,7 @@ namespace NekoGui {
         // Misc
         QString log_level = "warning";
         QString test_latency_url = "http://cp.cloudflare.com/";
-        QString test_download_url = "http://cachefly.cachefly.net/10mb.test";
-        int test_download_timeout = 30;
         int test_concurrent = 5;
-        bool old_share_link_format = true;
         int traffic_loop_interval = 1000;
         bool disable_traffic_stats = false;
         int current_group = 0; // group id
@@ -96,11 +83,8 @@ namespace NekoGui {
         int mux_concurrency = 8;
         bool mux_default_on = false;
         QString theme = "0";
-        QString v2ray_asset_dir = "";
         int language = 0;
         QString mw_size = "";
-        bool check_include_pre = true;
-        QString system_proxy_format = "";
         QStringList log_ignore = {};
         bool start_minimal = false;
         int max_log_line = 200;
@@ -113,6 +97,10 @@ namespace NekoGui {
         bool sub_insecure = false;
         int sub_auto_update = -30;
 
+        // Assets
+        QString geoip_download_url = "";
+        QString geosite_download_url = "";
+
         // Security
         bool skip_cert = false;
         QString utlsFingerprint = "";
@@ -124,9 +112,7 @@ namespace NekoGui {
 
         // Socks & HTTP Inbound
         QString inbound_address = "127.0.0.1";
-        int inbound_socks_port = 2080; // or Mixed
-        int inbound_http_port = 2081;
-        InboundAuthorization *inbound_auth = new InboundAuthorization;
+        int inbound_socks_port = 2080; // Mixed, actually
         QString custom_inbound = "{\"inbounds\": []}";
 
         // Routing

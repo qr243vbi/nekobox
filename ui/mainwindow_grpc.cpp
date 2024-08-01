@@ -491,7 +491,6 @@ void MainWindow::CheckUpdate() {
     bool ok;
     libcore::UpdateReq request;
     request.set_action(libcore::UpdateAction::Check);
-    request.set_check_pre_release(NekoGui::dataStore->check_include_pre);
     auto response = NekoGui_rpc::defaultClient->Update(&ok, request);
     if (!ok) return;
 

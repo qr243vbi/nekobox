@@ -240,16 +240,12 @@ namespace NekoGui {
 
     DataStore::DataStore() : JsonStore() {
         _add(new configItem("extraCore", dynamic_cast<JsonStore *>(extraCore), itemType::jsonStore));
-        _add(new configItem("inbound_auth", dynamic_cast<JsonStore *>(inbound_auth), itemType::jsonStore));
 
         _add(new configItem("user_agent2", &user_agent, itemType::string));
         _add(new configItem("test_url", &test_latency_url, itemType::string));
-        _add(new configItem("test_url_dl", &test_download_url, itemType::string));
-        _add(new configItem("test_dl_timeout", &test_download_timeout, itemType::integer));
         _add(new configItem("current_group", &current_group, itemType::integer));
         _add(new configItem("inbound_address", &inbound_address, itemType::string));
         _add(new configItem("inbound_socks_port", &inbound_socks_port, itemType::integer));
-        _add(new configItem("inbound_http_port", &inbound_http_port, itemType::integer));
         _add(new configItem("log_level", &log_level, itemType::string));
         _add(new configItem("mux_protocol", &mux_protocol, itemType::string));
         _add(new configItem("mux_concurrency", &mux_concurrency, itemType::integer));
@@ -260,7 +256,6 @@ namespace NekoGui {
         _add(new configItem("theme", &theme, itemType::string));
         _add(new configItem("custom_inbound", &custom_inbound, itemType::string));
         _add(new configItem("custom_route", &custom_route_global, itemType::string));
-        _add(new configItem("v2ray_asset_dir", &v2ray_asset_dir, itemType::string));
         _add(new configItem("sub_use_proxy", &sub_use_proxy, itemType::boolean));
         _add(new configItem("remember_id", &remember_id, itemType::integer));
         _add(new configItem("remember_enable", &remember_enable, itemType::boolean));
@@ -281,8 +276,6 @@ namespace NekoGui {
         _add(new configItem("vpn_ipv6", &vpn_ipv6, itemType::boolean));
         _add(new configItem("vpn_hide_console", &vpn_hide_console, itemType::boolean));
         _add(new configItem("vpn_strict_route", &vpn_strict_route, itemType::boolean));
-        _add(new configItem("check_include_pre", &check_include_pre, itemType::boolean));
-        _add(new configItem("sp_format", &system_proxy_format, itemType::string));
         _add(new configItem("sub_clear", &sub_clear, itemType::boolean));
         _add(new configItem("sub_insecure", &sub_insecure, itemType::boolean));
         _add(new configItem("sub_auto_update", &sub_auto_update, itemType::integer));
@@ -300,6 +293,8 @@ namespace NekoGui {
         _add(new configItem("ntp_server_address", &ntp_server_address, itemType::string));
         _add(new configItem("ntp_server_port", &ntp_server_port, itemType::integer));
         _add(new configItem("ntp_interval", &ntp_interval, itemType::string));
+        _add(new configItem("geoip_download_url", &geoip_download_url, itemType::string));
+        _add(new configItem("geosite_download_url", &geosite_download_url, itemType::string));
     }
 
     void DataStore::UpdateStartedId(int id) {
@@ -373,25 +368,12 @@ namespace NekoGui {
         core_map = QJsonObject2QString(obj, true);
     }
 
-    InboundAuthorization::InboundAuthorization() : JsonStore() {
-        _add(new configItem("user", &this->username, itemType::string));
-        _add(new configItem("pass", &this->password, itemType::string));
-    }
-
-    bool InboundAuthorization::NeedAuth() const {
-        return !username.trimmed().isEmpty() && !password.trimmed().isEmpty();
-    }
-
     // System Utils
 
     QString FindCoreAsset(const QString &name) {
-        QStringList search{NekoGui::dataStore->v2ray_asset_dir};
-        search << QApplication::applicationDirPath();
+        QStringList search{QApplication::applicationDirPath()};
         search << "/usr/share/sing-geoip";
         search << "/usr/share/sing-geosite";
-        search << "/usr/share/xray";
-        search << "/usr/local/share/xray";
-        search << "/opt/xray";
         search << "/usr/share/v2ray";
         search << "/usr/local/share/v2ray";
         search << "/opt/v2ray";

@@ -453,14 +453,6 @@ namespace NekoGui {
                 inboundObj["sniff"] = true;
                 inboundObj["sniff_override_destination"] = dataStore->routing->sniffing_mode == SniffingMode::FOR_DESTINATION;
             }
-            if (dataStore->inbound_auth->NeedAuth()) {
-                inboundObj["users"] = QJsonArray{
-                    QJsonObject{
-                        {"username", dataStore->inbound_auth->username},
-                        {"password", dataStore->inbound_auth->password},
-                    },
-                };
-            }
             inboundObj["domain_strategy"] = dataStore->routing->domain_strategy;
             status->inbounds += inboundObj;
         }
