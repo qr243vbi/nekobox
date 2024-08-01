@@ -67,14 +67,15 @@ RouteItem::RouteItem(QWidget *parent, const std::shared_ptr<NekoGui::RoutingChai
     auto geoIpList = NekoGui_rpc::defaultClient->GetGeoList(&ok, NekoGui_rpc::GeoRuleSetType::ip);
     auto geoSiteList = NekoGui_rpc::defaultClient->GetGeoList(&ok, NekoGui_rpc::GeoRuleSetType::site);
     geo_items << geoIpList << geoSiteList;
-    helperModel = new QStringListModel(geo_items, this);
-    ui->rule_set_helper->hide();
-    ui->rule_set_helper->setEditTriggers(QAbstractItemView::NoEditTriggers);
-    ui->rule_set_helper->setSelectionMode(QAbstractItemView::SingleSelection);
-    ui->rule_set_helper->setSelectionRectVisible(false);
-    ui->rule_set_helper->setModel(helperModel);
-    connect(ui->rule_set_helper, &QListView::clicked, this, [=](const QModelIndex& index){
-        applyRuleHelperSelect(index);
+    rule_set_editor = new AutoCompleteTextEdit("", geo_items, this);
+    ui->rule_attr_data->layout()->addWidget(rule_set_editor);
+    ui->rule_attr_data->adjustSize();
+    rule_set_editor->hide();
+    connect(rule_set_editor, &QPlainTextEdit::textChanged, this, [=]{
+        if (currentIndex == -1) return;
+        auto currentVal = rule_set_editor->toPlainText().split('\n');
+        chain->Rules[currentIndex]->set_field_value(ui->rule_attr->currentText(), currentVal);
+        updateRulePreview();
     });
 
     std::map<QString, int> valueMap;
@@ -180,11 +181,10 @@ RouteItem::RouteItem(QWidget *parent, const std::shared_ptr<NekoGui::RoutingChai
        updateRulePreview();
     });
 
-    connect(ui->rule_attr_text, &QTextEdit::textChanged, this, [=] {
+    connect(ui->rule_attr_text, &QPlainTextEdit::textChanged, this, [=] {
         if (currentIndex == -1) return;
         auto currentVal = ui->rule_attr_text->toPlainText().split('\n');
         chain->Rules[currentIndex]->set_field_value(ui->rule_attr->currentText(), currentVal);
-        if (ui->rule_attr->currentText() == "rule_set") updateHelperItems(currentVal.last());
         updateRulePreview();
     });
 
@@ -297,15 +297,13 @@ void RouteItem::updateRuleSection() {
         }
         case NekoGui::text: {
             auto currentItems = ruleItem->get_current_value_string(currentAttr);
-            showTextEnterItem(currentItems);
+            showTextEnterItem(currentItems, currentAttr == "rule_set");
             break;
         }
     }
     ui->rule_name->setText(ruleItem->name);
     ui->rule_attr_box->setDisabled(chain->isViewOnly());
     ui->rule_out->setCurrentText(get_outbound_name(ruleItem->outboundID));
-    if (currentAttr == "rule_set") ui->rule_set_helper->show();
-    else ui->rule_set_helper->hide();
 
     updateRulePreview();
 }
@@ -324,6 +322,7 @@ void RouteItem::setDefaultRuleData(const QString& currentData) {
 
 void RouteItem::showSelectItem(const QStringList& items, const QString& currentItem) {
     ui->rule_attr_text->hide();
+    rule_set_editor->hide();
     ui->rule_attr_selector->clear();
     ui->rule_attr_selector->show();
     ui->rule_attr_selector->addItems(items);
@@ -331,35 +330,20 @@ void RouteItem::showSelectItem(const QStringList& items, const QString& currentI
     adjustSize();
 }
 
-void RouteItem::showTextEnterItem(const QStringList& items) {
+void RouteItem::showTextEnterItem(const QStringList& items, bool isRuleSet) {
     ui->rule_attr_selector->hide();
-    ui->rule_attr_text->clear();
-    ui->rule_attr_text->show();
-    ui->rule_attr_text->setText(items.join('\n'));
+    if (isRuleSet) {
+        ui->rule_attr_text->hide();
+        rule_set_editor->clear();
+        rule_set_editor->show();
+        rule_set_editor->setPlainText(items.join('\n'));
+    } else {
+        rule_set_editor->hide();
+        ui->rule_attr_text->clear();
+        ui->rule_attr_text->show();
+        ui->rule_attr_text->setPlainText(items.join('\n'));
+    }
     adjustSize();
-}
-
-void RouteItem::updateHelperItems(const QString& base) {
-    ui->rule_set_helper->clearSelection();
-    current_helper_items.clear();
-    for (const auto& item: geo_items) {
-        if (item.toLower().contains(base.toLower())) current_helper_items << item;
-    }
-    for (int i=0;i<current_helper_items.size();i++) {
-        for (int j=i+1;j<current_helper_items.size();j++) {
-            if (current_helper_items[i].length() > current_helper_items[j].length()) current_helper_items.swapItemsAt(i, j);
-        }
-    }
-    helperModel->setStringList(current_helper_items);
-    ui->rule_set_helper->setModel(helperModel);
-}
-
-void RouteItem::applyRuleHelperSelect(const QModelIndex& index) {
-    auto option = ui->rule_set_helper->model()->data(index, Qt::DisplayRole).toString();
-    auto currentText = ui->rule_attr_text->toPlainText();
-    auto parts = currentText.split('\n');
-    parts[parts.size() - 1] = option;
-    ui->rule_attr_text->setText(parts.join('\n'));
 }
 
 void RouteItem::on_new_route_item_clicked() {

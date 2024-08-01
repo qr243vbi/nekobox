@@ -139,10 +139,7 @@
              </widget>
             </item>
             <item>
-             <widget class="QTextEdit" name="rule_attr_text"/>
-            </item>
-            <item>
-             <widget class="QListView" name="rule_set_helper"/>
+             <widget class="QPlainTextEdit" name="rule_attr_text"/>
             </item>
             <item>
              <widget class="QComboBox" name="rule_attr_selector"/>
@@ -156,10 +153,10 @@
      </layout>
     </widget>
    </item>
-   <item alignment="Qt::AlignHCenter">
+   <item alignment="Qt::AlignmentFlag::AlignHCenter">
     <widget class="QDialogButtonBox" name="buttonBox">
      <property name="standardButtons">
-      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+      <set>QDialogButtonBox::StandardButton::Cancel|QDialogButtonBox::StandardButton::Ok</set>
      </property>
     </widget>
    </item>

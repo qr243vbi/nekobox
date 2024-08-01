@@ -7,6 +7,7 @@
 #include <QShortcut>
 
 #include "db/RouteEntity.h"
+#include "3rdparty/qv2ray/v2/ui/QvAutoCompleteTextEdit.hpp"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -33,6 +34,8 @@ private:
 
     QStringList geo_items;
 
+    AutoCompleteTextEdit* rule_set_editor;
+
     QStringList current_helper_items;
 
     QStringListModel* helperModel;
@@ -45,7 +48,7 @@ private:
 
     void showSelectItem(const QStringList& items, const QString& currentItem);
 
-    void showTextEnterItem(const QStringList& items);
+    void showTextEnterItem(const QStringList& items, bool isRuleSet);
 
     void setDefaultRuleData(const QString& currentData);
 
@@ -54,11 +57,6 @@ private:
     void updateRulePreview();
 
     void updateRouteItemsView();
-
-    void updateHelperItems(const QString& base);
-
-    void applyRuleHelperSelect(const QModelIndex& index);
-
 private slots:
     void accept() override;
 

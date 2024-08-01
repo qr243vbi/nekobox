@@ -77,7 +77,6 @@ namespace NekoGui_network {
     QString NetworkRequestHelper::DownloadGeoAsset(const QString &url, const QString &fileName) {
         cpr::Session session;
         session.SetUrl(cpr::Url{url.toStdString()});
-        session.SetTimeout(3000);
         if (NekoGui::dataStore->spmode_system_proxy) {
             session.SetProxies({{"http", "127.0.0.1:" + QString(Int2String(NekoGui::dataStore->inbound_socks_port)).toStdString()},
                                 {"https", "127.0.0.1:" + QString(Int2String(NekoGui::dataStore->inbound_socks_port)).toStdString()}});
