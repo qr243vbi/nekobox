@@ -44,6 +44,7 @@
 #include <QDir>
 #include <QFileInfo>
 #include <QStyleHints>
+#include <main/HTTPRequestHelper.hpp>
 
 void UI_InitMainWindow() {
     mainwindow = new MainWindow;
@@ -531,6 +532,12 @@ void MainWindow::dialog_message_impl(const QString &sender, const QString &info)
             on_menu_exit_triggered();
         }
     }
+    if (info.contains("DownloadAssets")) {
+        auto splitted = info.split(";");
+        runOnNewThread([=](){
+            DownloadAssets(splitted[1], splitted[2]);
+        });
+    }
     //
     if (info == "RestartProgram") {
         this->exit_reason = 2;
@@ -803,13 +810,8 @@ void MainWindow::refresh_status(const QString &traffic_update) {
         ui->label_running->setText(txt);
     }
     //
-    auto display_http = tr("None");
-    if (IsValidPort(NekoGui::dataStore->inbound_http_port)) {
-        display_http = DisplayAddress(NekoGui::dataStore->inbound_address, NekoGui::dataStore->inbound_http_port);
-    }
     auto display_socks = DisplayAddress(NekoGui::dataStore->inbound_address, NekoGui::dataStore->inbound_socks_port);
-    auto inbound_txt = QString("Socks: %1\nHTTP: %2").arg(display_socks, display_http);
-    inbound_txt = QString("Mixed: %1").arg(display_socks);
+    auto inbound_txt = QString("Mixed: %1").arg(display_socks);
     ui->label_inbound->setText(inbound_txt);
     //
     ui->checkBox_VPN->setChecked(NekoGui::dataStore->spmode_vpn);
@@ -1672,4 +1674,36 @@ bool MainWindow::StopVPNProcess(bool unconditional) {
         return ok;
     }
     return true;
+}
+
+void MainWindow::DownloadAssets(const QString &geoipUrl, const QString &geositeUrl) {
+    if (!mu_download_assets.tryLock()) {
+        runOnUiThread([=](){
+            MessageBoxWarning("Cannot start", "Last download request has not finished yet");
+        });
+        return;
+    }
+    MW_show_log("Start downloading...");
+    QString errors;
+    if (!geoipUrl.isEmpty()) {
+        auto resp = NetworkRequestHelper::DownloadGeoAsset(geoipUrl, "geoip.db");
+        if (!resp.isEmpty()) {
+            MW_show_log(QString("Failed to download geoip: %1").arg(resp));
+            errors += "geoip: " + resp;
+        }
+    }
+    if (!geositeUrl.isEmpty()) {
+        auto resp = NetworkRequestHelper::DownloadGeoAsset(geositeUrl, "geosite.db");
+        if (!resp.isEmpty()) {
+            MW_show_log(QString("Failed to download geosite: %1").arg(resp));
+            errors += "\ngeosite: " + resp;
+        }
+    }
+    mu_download_assets.unlock();
+    if (!errors.isEmpty()) {
+        runOnUiThread([=](){
+            MessageBoxWarning("Failed to download geo assets", errors);
+        });
+    }
+    MW_show_log("Geo Asset update completed!");
 }

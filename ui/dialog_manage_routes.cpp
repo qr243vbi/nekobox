@@ -3,7 +3,6 @@
 #include "db/Database.hpp"
 
 #include "3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.hpp"
-#include "3rdparty/qv2ray/v3/components/GeositeReader/GeositeReader.hpp"
 #include "main/GuiUtils.hpp"
 #include "fmt/Preset.hpp"
 

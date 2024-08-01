@@ -68,6 +68,8 @@ public:
 
     bool StopVPNProcess(bool unconditional = false);
 
+    void DownloadAssets(const QString &geoipUrl, const QString &geositeUrl);
+
 signals:
 
     void profile_selected(int id);
@@ -159,6 +161,8 @@ private:
     QMutex mu_exit;
     QSemaphore sem_stopped;
     int exit_reason = 0;
+    //
+    QMutex mu_download_assets;
 
     QList<std::shared_ptr<NekoGui::ProxyEntity>> get_now_selected_list();
 

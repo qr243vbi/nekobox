@@ -25,6 +25,10 @@ namespace NekoGui_network {
         static NekoHTTPResponse HttpGet(const QString &url);
 
         static QString GetHeader(const QList<QPair<QByteArray, QByteArray>> &header, const QString &name);
+
+        static QString GetLatestDownloadURL(const QString &url, const QString &assetName, bool* success);
+
+        static QString DownloadGeoAsset(const QString &url, const QString &fileName);
     };
 } // namespace NekoGui_network
 

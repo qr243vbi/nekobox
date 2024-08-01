@@ -3,6 +3,11 @@
 #include <QByteArray>
 #include <QMetaEnum>
 #include <QTimer>
+#include <QJsonObject>
+#include <QJsonArray>
+#include <QFile>
+#include <QDir>
+#include <QApplication>
 #include "cpr/cpr.h"
 
 #include "main/NekoGui.hpp"
@@ -11,14 +16,10 @@ namespace NekoGui_network {
 
     NekoHTTPResponse NetworkRequestHelper::HttpGet(const QString &url) {
         cpr::Session session;
-        if (NekoGui::dataStore->sub_use_proxy) {
+        if (NekoGui::dataStore->sub_use_proxy || NekoGui::dataStore->spmode_system_proxy) {
             session.SetProxies({{"http", "127.0.0.1:" + QString(Int2String(NekoGui::dataStore->inbound_socks_port)).toStdString()},
                                 {"https", "127.0.0.1:" + QString(Int2String(NekoGui::dataStore->inbound_socks_port)).toStdString()}});
-            if (NekoGui::dataStore->inbound_auth->NeedAuth()) {
-                session.SetProxyAuth(cpr::ProxyAuthentication{{"http",
-                cpr::EncodedAuthentication{NekoGui::dataStore->inbound_auth->username.toStdString(), NekoGui::dataStore->inbound_auth->password.toStdString()}}});
-            }
-            if (NekoGui::dataStore->started_id < 0) {
+            if (NekoGui::dataStore->started_id < 0 && NekoGui::dataStore->sub_use_proxy) {
                 return NekoHTTPResponse{QObject::tr("Request with proxy but no profile started.")};
             }
         }
@@ -42,6 +43,61 @@ namespace NekoGui_network {
     QString NetworkRequestHelper::GetHeader(const QList<QPair<QByteArray, QByteArray>> &header, const QString &name) {
         for (const auto &p: header) {
             if (QString(p.first).toLower() == name.toLower()) return p.second;
+        }
+        return "";
+    }
+
+    QString NetworkRequestHelper::GetLatestDownloadURL(const QString &url, const QString &assetName, bool* success) {
+        cpr::Session session;
+        session.SetUrl(cpr::Url{url.toStdString()});
+        session.SetTimeout(3000);
+        if (NekoGui::dataStore->spmode_system_proxy) {
+            session.SetProxies({{"http", "127.0.0.1:" + QString(Int2String(NekoGui::dataStore->inbound_socks_port)).toStdString()},
+                                {"https", "127.0.0.1:" + QString(Int2String(NekoGui::dataStore->inbound_socks_port)).toStdString()}});
+        }
+        cpr::Response r = session.Get();
+        if (r.status_code != 200) {
+            *success = false;
+            return {r.status_line.c_str()};
+        }
+        auto respObj = QString2QJsonObject(QString(r.text.c_str()));
+        auto assets = respObj["assets"].toArray();
+        for (const auto &asset: assets) {
+            auto assetObj = asset.toObject();
+            if (assetObj["name"] == assetName) {
+                *success = true;
+                return assetObj["browser_download_url"].toString();
+            }
+        }
+
+        *success = false;
+        return "not found";
+    }
+
+    QString NetworkRequestHelper::DownloadGeoAsset(const QString &url, const QString &fileName) {
+        cpr::Session session;
+        session.SetUrl(cpr::Url{url.toStdString()});
+        session.SetTimeout(3000);
+        if (NekoGui::dataStore->spmode_system_proxy) {
+            session.SetProxies({{"http", "127.0.0.1:" + QString(Int2String(NekoGui::dataStore->inbound_socks_port)).toStdString()},
+                                {"https", "127.0.0.1:" + QString(Int2String(NekoGui::dataStore->inbound_socks_port)).toStdString()}});
+        }
+        auto filePath = qApp->applicationDirPath()+ "/" + fileName;
+        std::ofstream fout;
+        fout.open(QString(filePath + ".1").toStdString(), std::ios::trunc | std::ios::out | std::ios::binary);
+        auto r = session.Download(fout);
+        fout.close();
+        auto tmpFile = QFile(filePath + ".1");
+        if (r.status_code != 200) {
+            tmpFile.remove();
+            if (r.status_code == 0) {
+                return "Please check the URL and your network Connectivity";
+            }
+            return r.status_line.c_str();
+        }
+        QFile(filePath).remove();
+        if (!tmpFile.rename(filePath)) {
+            return tmpFile.errorString();
         }
         return "";
     }
