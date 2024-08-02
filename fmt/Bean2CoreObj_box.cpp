@@ -19,6 +19,12 @@ namespace NekoGui_fmt {
                         transport["early_data_header_name"] = "Sec-WebSocket-Protocol";
                     }
                 }
+                bool ok;
+                auto headerMap = GetHeaderPairs(&ok);
+                if (!ok) {
+                    MW_show_log("Warning: headers could not be parsed, they will not be used");
+                }
+                transport["headers"] = QMapString2QJsonObject(headerMap);
                 if (ws_early_data_length > 0) {
                     transport["max_early_data"] = ws_early_data_length;
                     transport["early_data_header_name"] = ws_early_data_name;
@@ -26,21 +32,25 @@ namespace NekoGui_fmt {
             } else if (network == "http") {
                 if (!path.isEmpty()) transport["path"] = path;
                 if (!host.isEmpty()) transport["host"] = QListStr2QJsonArray(host.split(","));
+                if (!method.isEmpty()) transport["method"] = method.toUpper();
+                bool ok;
+                auto headerMap = GetHeaderPairs(&ok);
+                if (!ok) {
+                    MW_show_log("Warning: headers could not be parsed, they will not be used");
+                }
+                transport["headers"] = QMapString2QJsonObject(headerMap);
             } else if (network == "grpc") {
                 if (!path.isEmpty()) transport["service_name"] = path;
             } else if (network == "httpupgrade") {
                 if (!path.isEmpty()) transport["path"] = path;
                 if (!host.isEmpty()) transport["host"] = host;
+                bool ok;
+                auto headerMap = GetHeaderPairs(&ok);
+                if (!ok) {
+                    MW_show_log("Warning: headers could not be parsed, they will not be used");
+                }
+                transport["headers"] = QMapString2QJsonObject(headerMap);
             }
-            outbound->insert("transport", transport);
-        } else if (header_type == "http") {
-            // TCP + headerType
-            QJsonObject transport{
-                {"type", "http"},
-                {"method", "GET"},
-                {"path", path},
-                {"headers", QJsonObject{{"Host", QListStr2QJsonArray(host.split(","))}}},
-            };
             outbound->insert("transport", transport);
         }
 

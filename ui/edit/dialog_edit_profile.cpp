@@ -31,36 +31,43 @@ DialogEditProfile::DialogEditProfile(const QString &_type, int profileOrGroupId,
     network_title_base = ui->network_box->title();
     connect(ui->network, &QComboBox::currentTextChanged, this, [=](const QString &txt) {
         ui->network_box->setTitle(network_title_base.arg(txt));
-        if (txt == "tcp") {
-            ui->header_type->setVisible(true);
-            ui->header_type_l->setVisible(true);
-            ui->path->setVisible(true);
-            ui->path_l->setVisible(true);
-            ui->host->setVisible(true);
-            ui->host_l->setVisible(true);
-        } else if (txt == "grpc") {
-            ui->header_type->setVisible(false);
-            ui->header_type_l->setVisible(false);
+        if (txt == "grpc") {
+            ui->headers->setVisible(false);
+            ui->headers_l->setVisible(false);
+            ui->method->setVisible(false);
+            ui->method_l->setVisible(false);
             ui->path->setVisible(true);
             ui->path_l->setVisible(true);
             ui->host->setVisible(false);
             ui->host_l->setVisible(false);
-        } else if (txt == "ws" || txt == "http" || txt == "httpupgrade") {
-            ui->header_type->setVisible(false);
-            ui->header_type_l->setVisible(false);
+        } else if (txt == "ws" || txt == "httpupgrade") {
+            ui->headers->setVisible(true);
+            ui->headers_l->setVisible(true);
+            ui->method->setVisible(false);
+            ui->method_l->setVisible(false);
+            ui->path->setVisible(true);
+            ui->path_l->setVisible(true);
+            ui->host->setVisible(true);
+            ui->host_l->setVisible(true);
+        } else if (txt == "http") {
+            ui->headers->setVisible(true);
+            ui->headers_l->setVisible(true);
+            ui->method->setVisible(true);
+            ui->method_l->setVisible(true);
             ui->path->setVisible(true);
             ui->path_l->setVisible(true);
             ui->host->setVisible(true);
             ui->host_l->setVisible(true);
         } else {
-            ui->header_type->setVisible(false);
-            ui->header_type_l->setVisible(false);
+            ui->headers->setVisible(false);
+            ui->headers_l->setVisible(false);
+            ui->method->setVisible(false);
+            ui->method_l->setVisible(false);
             ui->path->setVisible(false);
             ui->path_l->setVisible(false);
             ui->host->setVisible(false);
             ui->host_l->setVisible(false);
         }
-        // 传输设置 ED
         if (txt == "ws") {
             ui->ws_early_data_length->setVisible(true);
             ui->ws_early_data_length_l->setVisible(true);
@@ -73,7 +80,6 @@ DialogEditProfile::DialogEditProfile(const QString &_type, int profileOrGroupId,
             ui->ws_early_data_name_l->setVisible(false);
         }
         if (!ui->utlsFingerprint->count()) ui->utlsFingerprint->addItems(Preset::SingBox::UtlsFingerPrint);
-        // 传输设置 是否可见
         int networkBoxVisible = 0;
         for (auto label: ui->network_box->findChildren<QLabel *>()) {
             if (!label->isHidden()) networkBoxVisible++;
@@ -88,6 +94,17 @@ DialogEditProfile::DialogEditProfile(const QString &_type, int profileOrGroupId,
         if (txt == "tls") {
             ui->security_box->setVisible(true);
             ui->tls_camouflage_box->setVisible(true);
+            ui->reality_pbk->setVisible(false);
+            ui->reality_pbk_l->setVisible(false);
+            ui->reality_sid->setVisible(false);
+            ui->reality_sid_l->setVisible(false);
+        } else if (txt == "reality") {
+            ui->security_box->setVisible(true);
+            ui->tls_camouflage_box->setVisible(true);
+            ui->reality_pbk->setVisible(true);
+            ui->reality_pbk_l->setVisible(true);
+            ui->reality_sid->setVisible(true);
+            ui->reality_sid_l->setVisible(true);
         } else {
             ui->security_box->setVisible(false);
             ui->tls_camouflage_box->setVisible(false);
@@ -213,12 +230,14 @@ void DialogEditProfile::typeSelected(const QString &newType) {
     // 右边 stream
     auto stream = GetStreamSettings(ent->bean.get());
     if (stream != nullptr) {
+        ui->network_box->setVisible(stream->network != "tcp");
         ui->right_all_w->setVisible(true);
         ui->network->setCurrentText(stream->network);
         ui->security->setCurrentText(stream->security);
         ui->packet_encoding->setCurrentText(stream->packet_encoding);
         ui->path->setText(stream->path);
         ui->host->setText(stream->host);
+        ui->method->setText(stream->method);
         ui->sni->setText(stream->sni);
         ui->alpn->setText(stream->alpn);
         if (newEnt) {
@@ -227,10 +246,11 @@ void DialogEditProfile::typeSelected(const QString &newType) {
             ui->utlsFingerprint->setCurrentText(stream->utlsFingerprint);
         }
         ui->insecure->setChecked(stream->allow_insecure);
-        ui->header_type->setCurrentText(stream->header_type);
+        ui->headers->setText(stream->headers);
         ui->ws_early_data_name->setText(stream->ws_early_data_name);
         ui->ws_early_data_length->setText(Int2String(stream->ws_early_data_length));
         ui->reality_pbk->setText(stream->reality_pbk);
+        ui->reality_sid->setText(stream->reality_sid);
         ui->multiplex->setCurrentIndex(ent->bean->mux_state);
         ui->brutal_enable->setCheckState(ent->bean->enable_brutal ? Qt::CheckState::Checked : Qt::CheckState::Unchecked);
         ui->brutal_speed->setText(Int2String(ent->bean->brutal_speed));
@@ -292,11 +312,9 @@ void DialogEditProfile::typeSelected(const QString &newType) {
     if (type == "vmess" || type == "vless" || type == "trojan") {
         ui->network_l->setVisible(true);
         ui->network->setVisible(true);
-        ui->network_box->setVisible(true);
     } else {
         ui->network_l->setVisible(false);
         ui->network->setVisible(false);
-        ui->network_box->setVisible(false);
     }
     if (type == "vmess" || type == "vless" || type == "trojan" || type == "http") {
         ui->security->setVisible(true);
@@ -314,14 +332,12 @@ void DialogEditProfile::typeSelected(const QString &newType) {
         ui->multiplex_l->setVisible(false);
         ui->brutal_box->setVisible(false);
     }
-    // 设置 是否可见
     int streamBoxVisible = 0;
     for (auto label: ui->stream_box->findChildren<QLabel *>()) {
-        if (!label->isHidden()) streamBoxVisible++;
+        if (!label->isHidden() && label->parent() == ui->stream_box) streamBoxVisible++;
     }
     ui->stream_box->setVisible(streamBoxVisible);
 
-    // 载入 type 之后，有些类型没有右边的设置
     auto rightNoBox = (ui->stream_box->isHidden() && ui->network_box->isHidden() && ui->security_box->isHidden());
     if (rightNoBox && !ui->right_all_w->isHidden()) {
         ui->right_all_w->setVisible(false);
@@ -359,14 +375,23 @@ bool DialogEditProfile::onEnd() {
         stream->alpn = ui->alpn->text();
         stream->utlsFingerprint = ui->utlsFingerprint->currentText();
         stream->allow_insecure = ui->insecure->isChecked();
-        stream->header_type = ui->header_type->currentText();
+        stream->headers = ui->headers->text();
+        stream->method = ui->method->text();
         stream->ws_early_data_name = ui->ws_early_data_name->text();
         stream->ws_early_data_length = ui->ws_early_data_length->text().toInt();
         stream->reality_pbk = ui->reality_pbk->text();
+        stream->reality_sid = ui->reality_sid->text();
         ent->bean->mux_state = ui->multiplex->currentIndex();
         ent->bean->enable_brutal = ui->brutal_enable->isChecked();
         ent->bean->brutal_speed = ui->brutal_speed->text().toInt();
         stream->certificate = CACHE.certificate;
+
+        bool validHeaders;
+        stream->GetHeaderPairs(&validHeaders);
+        if (!validHeaders) {
+            MW_show_log("Headers are not valid");
+            return false;
+        }
     }
 
     // cached custom
