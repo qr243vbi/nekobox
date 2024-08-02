@@ -24,14 +24,6 @@
         <translation>Изменить</translation>
     </message>
     <message>
-        <source>Socks Listen Port</source>
-        <translation>Адрес входящих SOCKS</translation>
-    </message>
-    <message>
-        <source>HTTP Listen Port</source>
-        <translation>Адрес входящих HTTP</translation>
-    </message>
-    <message>
         <source>Enable</source>
         <translation>Вкл</translation>
     </message>
@@ -42,18 +34,6 @@
     <message>
         <source>Concurrent</source>
         <translation>Параллельно</translation>
-    </message>
-    <message>
-        <source>Download Test URL</source>
-        <translation>URL теста загрузки</translation>
-    </message>
-    <message>
-        <source>Include Pre-release when checking update</source>
-        <translation>Проверять пре-релизы при обновлениях</translation>
-    </message>
-    <message>
-        <source>System proxy format</source>
-        <translation>Формат строки системного прокси</translation>
     </message>
     <message>
         <source>Style</source>
@@ -112,14 +92,6 @@
         <translation>Ядро</translation>
     </message>
     <message>
-        <source>Asset Location</source>
-        <translation>Расположение файлов</translation>
-    </message>
-    <message>
-        <source>Default: dir of &quot;nekoray&quot;</source>
-        <translation>По умолчанию: текущая папка nekoray</translation>
-    </message>
-    <message>
         <source>Select</source>
         <translation>Выбрать</translation>
     </message>
@@ -164,10 +136,6 @@
         <translation>uTLS fingerprint по умолчанию</translation>
     </message>
     <message>
-        <source>Advanced system proxy settings. Please select a format.</source>
-        <translation>Дополнительные настройки системного прокси. Пожалуйста, выберите формат.</translation>
-    </message>
-    <message>
         <source>Please input the core name.</source>
         <translation>Введите имя ядра.</translation>
     </message>
@@ -192,18 +160,6 @@
         <translation>Пожалуйста, выберите корректное квадратное изображение.</translation>
     </message>
     <message>
-        <source>Inbound Auth</source>
-        <translation>Аутентификация inbound</translation>
-    </message>
-    <message>
-        <source>Username</source>
-        <translation>Имя пользователя</translation>
-    </message>
-    <message>
-        <source>Password</source>
-        <translation>Пароль</translation>
-    </message>
-    <message>
         <source>Override underlying DNS</source>
         <translation>Переопределить нижестоящий DNS</translation>
     </message>
@@ -216,24 +172,12 @@ For NekoBox, this rewrites the underlying(localhost) DNS in Tun Mode, normal mod
 Для  NekoBox  это переопределяет нижестоящий (localhost) DNS в  Tun режиме, нормальном режиме, а также при URL тесте.</translation>
     </message>
     <message>
-        <source>Timeout (s)</source>
-        <translation>Таймаут (с)</translation>
-    </message>
-    <message>
         <source>Automatic update</source>
         <translation>Автоматическое обновление</translation>
     </message>
     <message>
         <source>Interval (minute, invalid if less than 30)</source>
         <translation>Интервал (в минутах, значение считается неправильным, если меньше 30)</translation>
-    </message>
-    <message>
-        <source>Share VMess Link with v2rayN Format</source>
-        <translation>Поделиться ссылкой VMess в формате v2rayN</translation>
-    </message>
-    <message>
-        <source>Old Share Link Format</source>
-        <translation>Поделиться ссылкой в старом формате</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Might Improve Ping and Performance&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
@@ -277,6 +221,54 @@ For NekoBox, this rewrites the underlying(localhost) DNS in Tun Mode, normal mod
     </message>
     <message>
         <source>30m</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Listen Port</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Assets</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Geo Assets and Rule-sets</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Remove the currently generated rule-sets so that they can be regenerated&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove Generated Rule-sets</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>GeoIP URL</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Sets the URL to the latest sing-geoip release URL&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use Sing-Geoip</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>GeoSite URL</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Sets the URL to the latest sing-geosite release URL&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use Sing-Geosite</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Download and Replace Geo files</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -525,6 +517,26 @@ For NekoBox, this rewrites the underlying(localhost) DNS in Tun Mode, normal mod
         <source>Mb/s</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>reality</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Method of http request, will be converted to uppercase&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Method</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reality SID</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>DialogHotkey</name>
@@ -657,10 +669,6 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>direct</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>The outbound tag to use when the request is not handled by any rule</source>
         <translation type="unfinished"></translation>
     </message>
@@ -700,6 +708,10 @@ also if the connection cannot be established with the current address family (ip
     </message>
     <message>
         <source>Inbound Domain Strategy</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enable FakeIP</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1145,14 +1157,6 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>Поделиться</translation>
     </message>
     <message>
-        <source>Current Group</source>
-        <translation>Текущая группа</translation>
-    </message>
-    <message>
-        <source>Current Select</source>
-        <translation>Текущий выбор</translation>
-    </message>
-    <message>
         <source>Exit</source>
         <translation>Выход</translation>
     </message>
@@ -1346,10 +1350,6 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>Не запущен</translation>
     </message>
     <message>
-        <source>None</source>
-        <translation>Нет</translation>
-    </message>
-    <message>
         <source>Select</source>
         <translation>Выбор</translation>
     </message>
@@ -1360,10 +1360,6 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <source>Clone %1 item(s)</source>
         <translation>Клонировать %1 записей</translation>
-    </message>
-    <message>
-        <source>Move %1 item(s)</source>
-        <translation>Переместить %1 записей</translation>
     </message>
     <message>
         <source>Remove %1 item(s) ?</source>
@@ -1380,10 +1376,6 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <source>QR Code not found</source>
         <translation>QR-код не найден</translation>
-    </message>
-    <message>
-        <source>Resolving domain to IP, if support.</source>
-        <translation>Отрезолвить домен в IP-адрес, если поддерживается.</translation>
     </message>
     <message>
         <source>Set ignore keyword</source>
@@ -1414,26 +1406,6 @@ Split by line.</source>
     <message>
         <source>Failed to stop Tun process</source>
         <translation>Не удалось остановить TUN-процесс</translation>
-    </message>
-    <message>
-        <source>Test Options</source>
-        <translation>Параметры тестирования</translation>
-    </message>
-    <message>
-        <source>Latency</source>
-        <translation>Задержка</translation>
-    </message>
-    <message>
-        <source>UDP latency</source>
-        <translation>Задержка UDP</translation>
-    </message>
-    <message>
-        <source>Download speed</source>
-        <translation>Скорость загрузки</translation>
-    </message>
-    <message>
-        <source>In and Out IP</source>
-        <translation>Входящий и исходящий IP</translation>
     </message>
     <message>
         <source>[%1] test error: %2</source>
@@ -1506,6 +1478,22 @@ Split by line.</source>
     <message>
         <source>Remove %1?</source>
         <translation type="unfinished">Удалить %1?</translation>
+    </message>
+    <message>
+        <source>Url Test Selected</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+Shift+S</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Url Test Group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+Shift+G</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

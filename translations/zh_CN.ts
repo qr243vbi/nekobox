@@ -12,16 +12,8 @@
         <translation>启用</translation>
     </message>
     <message>
-        <source>HTTP Listen Port</source>
-        <translation>HTTP 监听端口</translation>
-    </message>
-    <message>
         <source>Listen Address</source>
         <translation>监听地址</translation>
-    </message>
-    <message>
-        <source>Socks Listen Port</source>
-        <translation>Socks 监听端口</translation>
     </message>
     <message>
         <source>concurrency</source>
@@ -68,14 +60,6 @@
         <translation>自定义入站</translation>
     </message>
     <message>
-        <source>Asset Location</source>
-        <translation>资源文件路径</translation>
-    </message>
-    <message>
-        <source>Default: dir of &quot;nekoray&quot;</source>
-        <translation>默认值：和 nekoray 同路径</translation>
-    </message>
-    <message>
         <source>Concurrent</source>
         <translation>并发</translation>
     </message>
@@ -116,10 +100,6 @@
         <translation>连接统计</translation>
     </message>
     <message>
-        <source>Include Pre-release when checking update</source>
-        <translation>检查更新时包括 Pre-release 版本</translation>
-    </message>
-    <message>
         <source>Set custom icon</source>
         <translation>自定义图标</translation>
     </message>
@@ -140,22 +120,6 @@
         <translation>取消</translation>
     </message>
     <message>
-        <source>System proxy format</source>
-        <translation>系统代理格式</translation>
-    </message>
-    <message>
-        <source>Advanced system proxy settings. Please select a format.</source>
-        <translation>高级系统代理设置。请选择一种格式。</translation>
-    </message>
-    <message>
-        <source>Old Share Link Format</source>
-        <translation>旧分享链接格式</translation>
-    </message>
-    <message>
-        <source>Share VMess Link with v2rayN Format</source>
-        <translation>用 v2rayN 的格式分享 VMess 链接</translation>
-    </message>
-    <message>
         <source>Clear servers before updating subscription</source>
         <translation>更新订阅前清除服务器</translation>
     </message>
@@ -170,18 +134,6 @@
     <message>
         <source>Max log lines</source>
         <translation>日志最大行数限制</translation>
-    </message>
-    <message>
-        <source>Inbound Auth</source>
-        <translation>入站认证设置</translation>
-    </message>
-    <message>
-        <source>Username</source>
-        <translation>用户名</translation>
-    </message>
-    <message>
-        <source>Password</source>
-        <translation>密码</translation>
     </message>
     <message>
         <source>Skip TLS certificate authentication by default (allowInsecure)</source>
@@ -218,14 +170,6 @@ For NekoBox, this rewrites the underlying(localhost) DNS in Tun Mode, normal mod
     <message>
         <source>Latency Test URL</source>
         <translation>延迟测试 URL</translation>
-    </message>
-    <message>
-        <source>Download Test URL</source>
-        <translation>下载测试 URL</translation>
-    </message>
-    <message>
-        <source>Timeout (s)</source>
-        <translation>超时（秒）</translation>
     </message>
     <message>
         <source>Automatic update</source>
@@ -277,6 +221,54 @@ For NekoBox, this rewrites the underlying(localhost) DNS in Tun Mode, normal mod
     </message>
     <message>
         <source>30m</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Listen Port</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Assets</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Geo Assets and Rule-sets</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Remove the currently generated rule-sets so that they can be regenerated&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove Generated Rule-sets</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>GeoIP URL</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Sets the URL to the latest sing-geoip release URL&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use Sing-Geoip</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>GeoSite URL</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Sets the URL to the latest sing-geosite release URL&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use Sing-Geosite</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Download and Replace Geo files</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -525,6 +517,26 @@ For NekoBox, this rewrites the underlying(localhost) DNS in Tun Mode, normal mod
         <source>Mb/s</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>reality</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Method of http request, will be converted to uppercase&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Method</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reality SID</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>DialogHotkey</name>
@@ -659,10 +671,6 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>direct</source>
-        <translation>直连</translation>
-    </message>
-    <message>
         <source>The outbound tag to use when the request is not handled by any rule</source>
         <translation>当请求未被任何规则处理时使用的出站标签</translation>
     </message>
@@ -702,6 +710,10 @@ also if the connection cannot be established with the current address family (ip
     </message>
     <message>
         <source>Inbound Domain Strategy</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enable FakeIP</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1191,10 +1203,6 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>导入了 %1 个配置</translation>
     </message>
     <message>
-        <source>None</source>
-        <translation>无</translation>
-    </message>
-    <message>
         <source>Unavailable</source>
         <translation>不可用</translation>
     </message>
@@ -1255,10 +1263,6 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>记住最后的配置</translation>
     </message>
     <message>
-        <source>Move %1 item(s)</source>
-        <translation>移动 %1 个项目</translation>
-    </message>
-    <message>
         <source>Remove Unavailable</source>
         <translation>删除不可用的配置</translation>
     </message>
@@ -1285,10 +1289,6 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <source>Full Test</source>
         <translation>完整测试</translation>
-    </message>
-    <message>
-        <source>Current Group</source>
-        <translation>当前分组</translation>
     </message>
     <message>
         <source>Reset Traffic</source>
@@ -1363,10 +1363,6 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>将服务器域名解析为 IP</translation>
     </message>
     <message>
-        <source>Resolving domain to IP, if support.</source>
-        <translation>将服务器域名解析为 IP（如果支持）。</translation>
-    </message>
-    <message>
         <source>Export %1 config</source>
         <translation>导出 %1 配置</translation>
     </message>
@@ -1413,10 +1409,6 @@ Split by line.</source>
         <translation>编辑</translation>
     </message>
     <message>
-        <source>Current Select</source>
-        <translation>当前选中</translation>
-    </message>
-    <message>
         <source>Show Window</source>
         <translation>显示主窗口</translation>
     </message>
@@ -1447,26 +1439,6 @@ Split by line.</source>
     <message>
         <source>Select mode, double-click or press Enter to select a profile, press ESC to exit.</source>
         <translation>选择模式，双击或按回车键选择一个配置文件，按ESC键退出。</translation>
-    </message>
-    <message>
-        <source>Latency</source>
-        <translation>延迟</translation>
-    </message>
-    <message>
-        <source>UDP latency</source>
-        <translation>UDP 延迟</translation>
-    </message>
-    <message>
-        <source>Download speed</source>
-        <translation>下载速度</translation>
-    </message>
-    <message>
-        <source>In and Out IP</source>
-        <translation>入口出口IP</translation>
-    </message>
-    <message>
-        <source>Test Options</source>
-        <translation>测试选项</translation>
     </message>
     <message>
         <source>Stop Testing</source>
@@ -1507,6 +1479,22 @@ Split by line.</source>
     <message>
         <source>Remove %1?</source>
         <translation type="unfinished">删除 %1 ?</translation>
+    </message>
+    <message>
+        <source>Url Test Selected</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+Shift+S</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Url Test Group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+Shift+G</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
