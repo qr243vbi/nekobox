@@ -27,6 +27,14 @@ DialogEditGroup::DialogEditGroup(const std::shared_ptr<NekoGui::Group> &ent, QWi
     ui->type->currentIndexChanged(ui->type->currentIndex());
     ui->manually_column_width->setChecked(ent->manually_column_width);
     ui->cat_share->setVisible(false);
+    if (NekoGui::profileManager->GetProfile(ent->front_proxy_id) == nullptr) {
+        ent->front_proxy_id = -1;
+        ent->Save();
+    }
+    if (NekoGui::profileManager->GetProfile(ent->landing_proxy_id) == nullptr) {
+        ent->landing_proxy_id = -1;
+        ent->Save();
+    }
     CACHE.front_proxy = ent->front_proxy_id;
     LANDING.landing_proxy = ent->landing_proxy_id;
 
@@ -129,7 +137,6 @@ int DialogEditGroup::get_proxy_id(QString name) {
 }
 
 QString DialogEditGroup::get_proxy_name(int id) {
-    if (id == -1) return QString("None");
     auto profiles = NekoGui::profileManager->profiles;
-    return profiles[id]->bean->DisplayName();
+    return profiles.count(id) == 0 ? "None" : profiles[id]->bean->DisplayName();
 }
