@@ -12,16 +12,8 @@
         <translation>فعال کردن</translation>
     </message>
     <message>
-        <source>HTTP Listen Port</source>
-        <translation>پورت HTTP درحال شنود</translation>
-    </message>
-    <message>
         <source>Listen Address</source>
         <translation>آدرس درحال شنود</translation>
-    </message>
-    <message>
-        <source>Socks Listen Port</source>
-        <translation>پورت ساکس درحال شنود</translation>
     </message>
     <message>
         <source>concurrency</source>
@@ -68,14 +60,6 @@
         <translation>ورودی سفارشی</translation>
     </message>
     <message>
-        <source>Asset Location</source>
-        <translation>مکان دارایی</translation>
-    </message>
-    <message>
-        <source>Default: dir of &quot;nekoray&quot;</source>
-        <translation type="unfinished">مسیر پیش فرض &quot;nekoray&quot;</translation>
-    </message>
-    <message>
         <source>Concurrent</source>
         <translation>هم زمان</translation>
     </message>
@@ -118,14 +102,6 @@
         <translation>آمار اتصال</translation>
     </message>
     <message>
-        <source>Include Pre-release when checking update</source>
-        <translation>هنگام بررسی به‌روزرسانی، نسخه پیش‌انتشار را نیز لحاظ شود</translation>
-    </message>
-    <message>
-        <source>System proxy format</source>
-        <translation>فرمت پروکسی سیستم</translation>
-    </message>
-    <message>
         <source>Set custom icon</source>
         <translation>تنظیم آیکون سفارشی</translation>
     </message>
@@ -140,10 +116,6 @@
     <message>
         <source>Ignore TLS errors when updating subscription</source>
         <translation>هنگام به‌روزرسانی اشتراک، خطاهای TLS را نادیده گرفته شود</translation>
-    </message>
-    <message>
-        <source>Advanced system proxy settings. Please select a format.</source>
-        <translation>تنظیمات پیشرفته پروکسی سیستم. لطفا یک قالب را انتخاب کنید.</translation>
     </message>
     <message>
         <source>Please select a PNG file.</source>
@@ -164,18 +136,6 @@
     <message>
         <source>Max log lines</source>
         <translation>حداکثر خطوط فایل لاگ</translation>
-    </message>
-    <message>
-        <source>Inbound Auth</source>
-        <translation>اعتبار ورودی</translation>
-    </message>
-    <message>
-        <source>Username</source>
-        <translation>نام کاربری</translation>
-    </message>
-    <message>
-        <source>Password</source>
-        <translation>رمز عبور</translation>
     </message>
     <message>
         <source>Skip TLS certificate authentication by default (allowInsecure)</source>
@@ -212,28 +172,12 @@ For NekoBox, this rewrites the underlying(localhost) DNS in Tun Mode, normal mod
         <translation type="unfinished">آدرس تست تاخیر</translation>
     </message>
     <message>
-        <source>Download Test URL</source>
-        <translation type="unfinished">آدرس تست دانلود</translation>
-    </message>
-    <message>
-        <source>Timeout (s)</source>
-        <translation type="unfinished">تایم اوت (به ثانیه)</translation>
-    </message>
-    <message>
         <source>Automatic update</source>
         <translation type="unfinished">آپدیت اتوماتیک</translation>
     </message>
     <message>
         <source>Interval (minute, invalid if less than 30)</source>
         <translation type="unfinished">فاصله (به دقیقا ، اگر کمتر از ۳۰ باشد نادرست است)</translation>
-    </message>
-    <message>
-        <source>Share VMess Link with v2rayN Format</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Old Share Link Format</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Might Improve Ping and Performance&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
@@ -277,6 +221,54 @@ For NekoBox, this rewrites the underlying(localhost) DNS in Tun Mode, normal mod
     </message>
     <message>
         <source>30m</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Listen Port</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Assets</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Geo Assets and Rule-sets</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Remove the currently generated rule-sets so that they can be regenerated&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove Generated Rule-sets</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>GeoIP URL</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Sets the URL to the latest sing-geoip release URL&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use Sing-Geoip</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>GeoSite URL</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Sets the URL to the latest sing-geosite release URL&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use Sing-Geosite</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Download and Replace Geo files</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -525,6 +517,26 @@ For NekoBox, this rewrites the underlying(localhost) DNS in Tun Mode, normal mod
         <source>Mb/s</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>reality</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Method of http request, will be converted to uppercase&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Method</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reality SID</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>DialogHotkey</name>
@@ -657,10 +669,6 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>direct</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>The outbound tag to use when the request is not handled by any rule</source>
         <translation type="unfinished"></translation>
     </message>
@@ -700,6 +708,10 @@ also if the connection cannot be established with the current address family (ip
     </message>
     <message>
         <source>Inbound Domain Strategy</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enable FakeIP</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1142,10 +1154,6 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</source>
         <translation>اشتراک گذاری</translation>
     </message>
     <message>
-        <source>Current Group</source>
-        <translation>گروه فعلی</translation>
-    </message>
-    <message>
         <source>Exit</source>
         <translation>خروج</translation>
     </message>
@@ -1322,20 +1330,11 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</source>
         <translation>در حال اجرا نیست</translation>
     </message>
     <message>
-        <source>None</source>
-        <translatorcomment>هیچ یک</translatorcomment>
-        <translation>هیچ یک</translation>
-    </message>
-    <message>
         <source>Select</source>
         <translation>انتخاب</translation>
     </message>
     <message>
         <source>Clone %1 item(s)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Move %1 item(s)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1353,10 +1352,6 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</source>
     <message>
         <source>QR Code not found</source>
         <translation>کد QR یافت نشد</translation>
-    </message>
-    <message>
-        <source>Resolving domain to IP, if support.</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Set ignore keyword</source>
@@ -1408,10 +1403,6 @@ Split by line.</source>
         <translation>متوقف کردن پروفایل %1</translation>
     </message>
     <message>
-        <source>Current Select</source>
-        <translation type="unfinished">انتخاب فعلی</translation>
-    </message>
-    <message>
         <source>Show Window</source>
         <translation>نمایش پنجره برنامه</translation>
     </message>
@@ -1438,26 +1429,6 @@ Split by line.</source>
     <message>
         <source>Select mode, double-click or press Enter to select a profile, press ESC to exit.</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Latency</source>
-        <translation type="unfinished">تاخیر</translation>
-    </message>
-    <message>
-        <source>UDP latency</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Download speed</source>
-        <translation type="unfinished">سرعت دانلود</translation>
-    </message>
-    <message>
-        <source>In and Out IP</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Test Options</source>
-        <translation type="unfinished">گزینه های تست</translation>
     </message>
     <message>
         <source>Restart the program to take effect.</source>
@@ -1502,6 +1473,22 @@ Split by line.</source>
     <message>
         <source>Remove %1?</source>
         <translation type="unfinished">حذف %1?</translation>
+    </message>
+    <message>
+        <source>Url Test Selected</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+Shift+S</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Url Test Group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+Shift+G</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
