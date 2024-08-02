@@ -147,6 +147,15 @@ QJsonArray QString2QJsonArray(const QString& str) {
     return {};
 }
 
+QJsonObject QMapString2QJsonObject(const QMap<QString,QString> &mp) {
+    QJsonObject res;
+    for (const auto &key: mp.keys()) {
+        res.insert(key, mp[key]);
+    }
+
+    return res;
+}
+
 QByteArray ReadFile(const QString &path) {
     QFile file(path);
     file.open(QFile::ReadOnly);
