@@ -242,6 +242,31 @@ namespace NekoGui_fmt {
         return result;
     }
 
+    CoreObjOutboundBuildResult WireguardBean::BuildCoreObjSingBox() {
+        CoreObjOutboundBuildResult result;
+
+        auto tun_name = "nekoray-tunwg";
+#ifdef Q_OS_MACOS
+        tun_name = "utunwg9";
+#endif
+
+        QJsonObject outbound{
+            {"type", "wireguard"},
+            {"server", serverAddress},
+            {"server_port", serverPort},
+            {"interface_name", tun_name},
+            {"local_address", QJsonArray{"172.20.0.1/24", "fdfe:dcba:9876::1/96"}},
+            {"private_key", privateKey},
+            {"peer_public_key", publicKey},
+            {"pre_shared_key", preSharedKey},
+            {"reserved", QListInt2QJsonArray(reserved)},
+            {"mtu", MTU},
+        };
+
+        result.outbound = outbound;
+        return result;
+    }
+
     CoreObjOutboundBuildResult CustomBean::BuildCoreObjSingBox() {
         CoreObjOutboundBuildResult result;
 

@@ -333,4 +333,25 @@ namespace NekoGui_fmt {
         return true;
     }
 
+    bool WireguardBean::TryParseLink(const QString &link) {
+        auto url = QUrl(link);
+        if (!url.isValid()) return false;
+        auto query = GetQuery(url);
+
+        name = url.fragment(QUrl::FullyDecoded);
+        serverAddress = url.host();
+        serverPort = url.port();
+        privateKey = query.queryItemValue("private_key");
+        publicKey = query.queryItemValue("peer_public_key");
+        preSharedKey = query.queryItemValue("pre_shared_key");
+        auto rawReserved = query.queryItemValue("reserved");
+        if (!rawReserved.isEmpty()) {
+            for (const auto &item: rawReserved.split("-")) reserved += item.toInt();
+        }
+        MTU = query.queryItemValue("mtu").toInt();
+        useSystemInterface = query.queryItemValue("use_system_interface") == "true";
+
+        return true;
+    }
+
 } // namespace NekoGui_fmt

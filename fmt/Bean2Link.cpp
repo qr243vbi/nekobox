@@ -242,4 +242,21 @@ namespace NekoGui_fmt {
         return url.toString(QUrl::FullyEncoded);
     }
 
+    QString WireguardBean::ToShareLink() {
+        QUrl url;
+        url.setScheme("wg");
+        url.setHost(serverAddress);
+        url.setPort(serverPort);
+        if (!name.isEmpty()) url.setFragment(name);
+        QUrlQuery q;
+        q.addQueryItem("private_key", privateKey);
+        q.addQueryItem("peer_public_key", publicKey);
+        q.addQueryItem("pre_shared_key", preSharedKey);
+        q.addQueryItem("reserved", FormatReserved());
+        q.addQueryItem("mtu", Int2String(MTU));
+        q.addQueryItem("use_system_interface", useSystemInterface ? "true":"false");
+        url.setQuery(q);
+        return url.toString(QUrl::FullyEncoded);
+    }
+
 } // namespace NekoGui_fmt
