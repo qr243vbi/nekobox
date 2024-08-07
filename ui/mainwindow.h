@@ -60,6 +60,8 @@ public:
 
     void neko_set_spmode_vpn(bool enable, bool save = true);
 
+    bool get_elevated_permissions();
+
     void show_log_impl(const QString &log);
 
     void start_select_mode(QObject *context, const std::function<void(int)> &callback);

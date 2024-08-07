@@ -39,6 +39,7 @@ bool EditWireguard::onEnd() {
     auto rawReserved = ui->reserved->text();
     bean->reserved = {};
     for (const auto& item: rawReserved.split(",")) {
+        if (item.trimmed().isEmpty()) continue;
         bean->reserved += item.trimmed().toInt();
     }
     bean->MTU = ui->mtu->text().toInt();
