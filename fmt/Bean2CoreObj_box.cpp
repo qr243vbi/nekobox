@@ -245,9 +245,9 @@ namespace NekoGui_fmt {
     CoreObjOutboundBuildResult WireguardBean::BuildCoreObjSingBox() {
         CoreObjOutboundBuildResult result;
 
-        auto tun_name = "nekoray-tunwg";
+        auto tun_name = "nekoray-wg";
 #ifdef Q_OS_MACOS
-        tun_name = "utunwg9";
+        tun_name = "uwg9";
 #endif
 
         QJsonObject outbound{
@@ -261,6 +261,8 @@ namespace NekoGui_fmt {
             {"pre_shared_key", preSharedKey},
             {"reserved", QListInt2QJsonArray(reserved)},
             {"mtu", MTU},
+            {"gso", enableGSO},
+            {"system_interface", useSystemInterface}
         };
 
         result.outbound = outbound;

@@ -372,6 +372,14 @@ namespace NekoGui {
     }
 
     void BuildOutbound(const std::shared_ptr<ProxyEntity> &ent, const std::shared_ptr<BuildConfigStatus> &status, QJsonObject& outbound, const QString& tag) {
+        if (ent->WireguardBean() != nullptr) {
+            if (ent->WireguardBean()->useSystemInterface && !NekoGui::IsAdmin()) {
+                MW_dialog_message("configBuilder" ,"NeedAdmin");
+                status->result->error = "using wireguard system interface requires elevated permissions";
+                return;
+            }
+        }
+
         const auto coreR = ent->bean->BuildCoreObjSingBox();
         if (coreR.outbound.isEmpty()) {
             status->result->error = "unsupported outbound";

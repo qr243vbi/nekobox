@@ -545,6 +545,9 @@ void MainWindow::dialog_message_impl(const QString &sender, const QString &info)
     } else if (info == "Raise") {
         ActivateWindow(this);
     }
+    if (info == "NeedAdmin") {
+        get_elevated_permissions();
+    }
     // sender
     if (sender == Dialog_DialogEditProfile) {
         auto msg = info.split(",");
@@ -708,10 +711,6 @@ void MainWindow::on_menu_exit_triggered() {
     QCoreApplication::quit();
 }
 
-#define neko_set_spmode_FAILED \
-    refresh_status();          \
-    return;
-
 void MainWindow::neko_toggle_system_proxy() {
     auto currentState = NekoGui::dataStore->spmode_system_proxy;
     if (currentState) {
@@ -721,39 +720,48 @@ void MainWindow::neko_toggle_system_proxy() {
     }
 }
 
+bool MainWindow::get_elevated_permissions() {
+    if (NekoGui::IsAdmin()) return true;
+#ifdef Q_OS_LINUX
+    if (!Linux_HavePkexec()) {
+        MessageBoxWarning(software_name, "Please install \"pkexec\" first.");
+        neko_set_spmode_FAILED
+    }
+    auto ret = Linux_Pkexec_SetCapString(NekoGui::FindNekoBoxCoreRealPath(), "cap_net_admin=ep");
+    if (ret == 0) {
+        this->exit_reason = 3;
+        on_menu_exit_triggered();
+    } else {
+        MessageBoxWarning(software_name, "Setcap for Tun mode failed.\n\n1. You may canceled the dialog.\n2. You may be using an incompatible environment like AppImage.");
+        if (QProcessEnvironment::systemEnvironment().contains("APPIMAGE")) {
+            MW_show_log("If you are using AppImage, it's impossible to start a Tun. Please use other package instead.");
+        }
+    }
+#endif
+#ifdef Q_OS_WIN
+    auto n = QMessageBox::warning(GetMessageBoxParent(), software_name, tr("Please run Nekoray as admin"), QMessageBox::Yes | QMessageBox::No);
+    if (n == QMessageBox::Yes) {
+        this->exit_reason = 3;
+        on_menu_exit_triggered();
+    }
+#endif
+
+#ifdef Q_OS_MACOS
+    MessageBoxWarning("Need administrator privilege", "Enabling TUN mode requires elevated privileges, please run Nekoray as root.");
+#endif
+
+    return false;
+}
+
 void MainWindow::neko_set_spmode_vpn(bool enable, bool save) {
     if (enable != NekoGui::dataStore->spmode_vpn) {
         if (enable) {
             bool requestPermission = !NekoGui::IsAdmin();
             if (requestPermission) {
-#ifdef Q_OS_LINUX
-                if (!Linux_HavePkexec()) {
-                    MessageBoxWarning(software_name, "Please install \"pkexec\" first.");
-                    neko_set_spmode_FAILED
+                if (!get_elevated_permissions()) {
+                    refresh_status();
+                    return;
                 }
-                auto ret = Linux_Pkexec_SetCapString(NekoGui::FindNekoBoxCoreRealPath(), "cap_net_admin=ep");
-                if (ret == 0) {
-                    this->exit_reason = 3;
-                    on_menu_exit_triggered();
-                } else {
-                    MessageBoxWarning(software_name, "Setcap for Tun mode failed.\n\n1. You may canceled the dialog.\n2. You may be using an incompatible environment like AppImage.");
-                    if (QProcessEnvironment::systemEnvironment().contains("APPIMAGE")) {
-                        MW_show_log("If you are using AppImage, it's impossible to start a Tun. Please use other package instead.");
-                    }
-                }
-#endif
-#ifdef Q_OS_WIN
-                auto n = QMessageBox::warning(GetMessageBoxParent(), software_name, tr("Please run Nekoray as admin"), QMessageBox::Yes | QMessageBox::No);
-                if (n == QMessageBox::Yes) {
-                    this->exit_reason = 3;
-                    on_menu_exit_triggered();
-                }
-#endif
-
-#ifdef Q_OS_MACOS
-                MessageBoxWarning("Need administrator privilege", "Enabling TUN mode requires elevated privileges, please run Nekoray as root.");
-#endif
-                neko_set_spmode_FAILED
             }
         }
     }
