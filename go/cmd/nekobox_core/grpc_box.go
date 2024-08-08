@@ -46,7 +46,7 @@ func (s *server) Start(ctx context.Context, in *gen.LoadConfigReq) (out *gen.Err
 		return
 	}
 
-	instance, instance_cancel, err = boxmain.Create([]byte(in.CoreConfig), false)
+	instance, instance_cancel, err = boxmain.Create([]byte(in.CoreConfig))
 
 	if instance != nil {
 		// Logger
@@ -100,7 +100,7 @@ func (s *server) Test(ctx context.Context, in *gen.TestReq) (*gen.TestResp, erro
 		testInstance = instance
 		twice = false
 	} else {
-		testInstance, cancel, err = boxmain.Create([]byte(in.Config), true)
+		testInstance, cancel, err = boxmain.Create([]byte(in.Config))
 		if err != nil {
 			return nil, err
 		}
