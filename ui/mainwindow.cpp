@@ -725,7 +725,7 @@ bool MainWindow::get_elevated_permissions() {
 #ifdef Q_OS_LINUX
     if (!Linux_HavePkexec()) {
         MessageBoxWarning(software_name, "Please install \"pkexec\" first.");
-        neko_set_spmode_FAILED
+        return false;
     }
     auto ret = Linux_Pkexec_SetCapString(NekoGui::FindNekoBoxCoreRealPath(), "cap_net_admin=ep");
     if (ret == 0) {
