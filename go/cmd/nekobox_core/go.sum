@@ -4,8 +4,8 @@ cloud.google.com/go v0.26.0/go.mod h1:aQUYkXzVsufM+DwF1aE+0xfcU+56JwCaLick0ClmMT
 cloud.google.com/go/compute/metadata v0.3.0 h1:Tz+eQXMEqDIKRsmY3cHTL6FVaynIjX2QxYC4trgAKZc=
 cloud.google.com/go/compute/metadata v0.3.0/go.mod h1:zFmK7XCadkQkj6TtorcaGlCW1hT1fIilQDwofLpJ20k=
 github.com/BurntSushi/toml v0.3.1/go.mod h1:xHWCNGjB5oqiDr8zfno3MHue2Ht5sIBksp03qcyfWMU=
-github.com/Mahdi-zarei/sing-box-extra v0.0.0-20240808005324-7aa6169c0fd0 h1:kbufzkc/17ZUbnRcObpze3ZmfxZII0kM8HaOBUPXsn0=
-github.com/Mahdi-zarei/sing-box-extra v0.0.0-20240808005324-7aa6169c0fd0/go.mod h1:UtP+CVNAci0gu76MS6t3ccGPsR95Erqbq7ELpeNIJ5g=
+github.com/Mahdi-zarei/sing-box-extra v0.0.0-20240808013412-aef87550ef06 h1:HaebXqQzdfa9kA4CezE0VK/OFI0SLJ6Js0vs3Tc0Crk=
+github.com/Mahdi-zarei/sing-box-extra v0.0.0-20240808013412-aef87550ef06/go.mod h1:UtP+CVNAci0gu76MS6t3ccGPsR95Erqbq7ELpeNIJ5g=
 github.com/ajg/form v1.5.1 h1:t9c7v8JUKu/XxOGBU0yjNpaMloxGEJhUkqFRq0ibGeU=
 github.com/ajg/form v1.5.1/go.mod h1:uL1WgH+h2mgNtvBq0339dVnzXdBETtL2LeUXaIv25UY=
 github.com/andybalholm/brotli v1.0.6 h1:Yf9fFpf49Zrxb9NlQaluyE92/+X7UVHlhMNJN2sxfOI=
