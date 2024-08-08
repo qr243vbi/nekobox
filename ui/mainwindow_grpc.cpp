@@ -100,7 +100,7 @@ void MainWindow::RunSpeedTest(const QString& config, bool useDefault, const QStr
         if (res.error().empty()) {
             ent->latency = res.latency_ms();
         } else {
-            ent->latency = 0;
+            ent->latency = -1;
             MW_show_log(tr("[%1] test error: %2").arg(ent->bean->DisplayTypeAndName(), res.error().c_str()));
         }
         ent->Save();
