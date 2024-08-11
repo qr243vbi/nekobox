@@ -24,7 +24,7 @@ func Launcher() {
 	if len(system_ld_env) != 0 {
 		ld_env += system_ld_env + ":"
 	}
-	ld_env += "/lib:/usr/lib:/lib64:/usr/lib/x86_64:/usr/local/Qt:/opt/Qt"
+	ld_env += "/lib:/usr/lib:/lib64:/usr/lib/x86_64:/usr/local/Qt:/opt/Qt:"
 	ld_env += filepath.Join(wd, "./usr/lib")
 
 	system_qt_plugin_env := os.Getenv("QT_PLUGIN_PATH")
