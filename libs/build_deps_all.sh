@@ -24,7 +24,7 @@ mkdir -p $INSTALL_PREFIX
 
 #### clean ####
 clean() {
-  rm -rf dl.zip yaml-* zxing-* protobuf
+  rm -rf dl.zip yaml-* zxing-* protobuf curl cpr
 }
 
 #### ZXing v2.2.0 ####
@@ -70,6 +70,31 @@ $cmake .. -GNinja \
 ninja && ninja install
 
 cd ../..
+
+system_name=$(uname -s)
+
+# Check if 'NT' is present in the system name
+if [[ "$system_name" == *"NT"* ]]; then
+  echo "System is likely Windows"
+else
+  git clone https://github.com/curl/curl.git
+  cd curl
+  git checkout 83bedbd730d62b83744cc26fa0433d3f6e2e4cd6
+  mkdir build && cd build
+  cmake -GNinja .. -DCMAKE_BUILD_TYPE=Release -DBUILD_SHARED_LIBS=OFF -DCMAKE_INSTALL_PREFIX=$INSTALL_PREFIX
+  ninja && ninja install
+
+  cd ../..
+
+  git clone https://github.com/libcpr/cpr.git
+  cd cpr
+  git checkout 3b15fa82ea74739b574d705fea44959b58142eb8
+  mkdir build && cd build
+  cmake -GNinja .. -DCMAKE_BUILD_TYPE=Release -DCPR_USE_SYSTEM_CURL=ON -DBUILD_SHARED_LIBS=OFF -DCMAKE_INSTALL_PREFIX=$INSTALL_PREFIX
+  ninja && ninja install
+
+  cd ../..
+fi
 
 ####
 clean
