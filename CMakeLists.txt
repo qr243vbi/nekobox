@@ -66,10 +66,15 @@ list(APPEND NKR_EXTERNAL_TARGETS yaml-cpp)
 find_package(ZXing CONFIG REQUIRED)
 list(APPEND NKR_EXTERNAL_TARGETS ZXing::ZXing)
 
-include(FetchContent)
-FetchContent_Declare(cpr GIT_REPOSITORY https://github.com/libcpr/cpr.git
-        GIT_TAG 3b15fa82ea74739b574d705fea44959b58142eb8) # Replace with your desired git commit from: https://github.com/libcpr/cpr/releases
-FetchContent_MakeAvailable(cpr)
+IF (WIN32)
+    include(FetchContent)
+    FetchContent_Declare(cpr GIT_REPOSITORY https://github.com/libcpr/cpr.git
+            GIT_TAG 3b15fa82ea74739b574d705fea44959b58142eb8)
+    FetchContent_MakeAvailable(cpr)
+ELSE()
+    find_package(cpr REQUIRED)
+ENDIF()
+
 list(APPEND NKR_EXTERNAL_TARGETS cpr::cpr)
 
 set(QHOTKEY_INSTALL OFF)
