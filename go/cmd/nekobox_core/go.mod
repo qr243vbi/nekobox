@@ -3,10 +3,10 @@ module nekobox_core
 go 1.19
 
 require (
-	github.com/Mahdi-zarei/sing-box-extra v0.0.0-20240808013412-aef87550ef06
+	github.com/Mahdi-zarei/sing-box-extra v0.0.0-20240811213612-10ce5502c0bb
 	github.com/matsuridayo/libneko v0.0.0-20230913024055-5277a5bfc889
-	github.com/sagernet/sing v0.5.0-alpha.14.0.20240806051909-7beca62e4f0d
-	github.com/sagernet/sing-box v1.9.4-0.20240807020727-fbe803a11ee2
+	github.com/sagernet/sing v0.5.0-alpha.15
+	github.com/sagernet/sing-box v1.10.0-alpha.29
 	grpc_server v1.0.0
 )
 
@@ -59,7 +59,7 @@ require (
 	github.com/sagernet/gvisor v0.0.0-20240428053021-e691de28565f // indirect
 	github.com/sagernet/netlink v0.0.0-20240612041022-b9a21c07ac6a // indirect
 	github.com/sagernet/nftables v0.3.0-beta.4 // indirect
-	github.com/sagernet/quic-go v0.45.2-beta.1 // indirect
+	github.com/sagernet/quic-go v0.46.0-beta.2 // indirect
 	github.com/sagernet/reality v0.0.0-20230406110435-ee17307e7691 // indirect
 	github.com/sagernet/sing-dns v0.3.0-beta.14 // indirect
 	github.com/sagernet/sing-mux v0.2.0 // indirect
