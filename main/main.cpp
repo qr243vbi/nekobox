@@ -16,6 +16,11 @@
 
 #ifdef Q_OS_WIN
 #include "sys/windows/MiniDump.h"
+#pragma comment (lib, "cpr.lib")
+#pragma comment (lib, "libcurl.lib")
+#pragma comment (lib, "Ws2_32.lib")
+#pragma comment (lib, "Wldap32.lib")
+#pragma comment (lib, "Crypt32.lib")
 #endif
 
 void signal_handler(int signum) {

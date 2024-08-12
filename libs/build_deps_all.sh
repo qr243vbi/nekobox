@@ -14,17 +14,13 @@ fi
 # libs/deps/...
 mkdir -p $deps
 cd $deps
-if [ -z $NKR_PACKAGE ]; then
-  INSTALL_PREFIX=$PWD/built
-else
-  INSTALL_PREFIX=$PWD/package
-fi
-rm -rf $INSTALL_PREFIX
-mkdir -p $INSTALL_PREFIX
+INSTALL_PREFIX=$PWD/built
+#rm -rf $INSTALL_PREFIX
+#mkdir -p $INSTALL_PREFIX
 
 #### clean ####
 clean() {
-  rm -rf dl.zip yaml-* zxing-* protobuf curl cpr
+  rm -rf dl.zip yaml-* zxing-* protobuf curl cpr libpsl* zlib
 }
 
 #### ZXing v2.2.0 ####
@@ -71,29 +67,45 @@ ninja && ninja install
 
 cd ../..
 
-system_name=$(uname -s)
+if [[ "$(uname -s)" == *"NT"* ]]; then
+  git clone https://github.com/Microsoft/vcpkg.git
+  cd vcpkg
+  export VCPKG_BUILD_TYPE="release"
+  export VCPKG_LIBRARY_LINKAGE="static"
+  ./bootstrap-vcpkg.sh
+  ./vcpkg integrate install
+  ./vcpkg install curl:x64-windows-static --x-install-root=$INSTALL_PREFIX
 
-# Check if 'NT' is present in the system name
-if [[ "$system_name" == *"NT"* ]]; then
-  echo "System is likely Windows"
-else
-  git clone https://github.com/curl/curl.git
-  cd curl
-  git checkout 83bedbd730d62b83744cc26fa0433d3f6e2e4cd6
-  mkdir build && cd build
-  cmake -GNinja .. -DCMAKE_BUILD_TYPE=Release -DBUILD_SHARED_LIBS=OFF -DCMAKE_INSTALL_PREFIX=$INSTALL_PREFIX
-  ninja && ninja install
-
-  cd ../..
+  cd ..
 
   git clone https://github.com/libcpr/cpr.git
   cd cpr
   git checkout 3b15fa82ea74739b574d705fea44959b58142eb8
+  sed -i 's/find_package(CURL COMPONENTS HTTP HTTPS)/find_package(CURL REQUIRED)/g' CMakeLists.txt
   mkdir build && cd build
-  cmake -GNinja .. -DCMAKE_BUILD_TYPE=Release -DCPR_USE_SYSTEM_CURL=ON -DBUILD_SHARED_LIBS=OFF -DCMAKE_INSTALL_PREFIX=$INSTALL_PREFIX
+  cmake -GNinja .. -DCMAKE_BUILD_TYPE=Release -DCPR_USE_SYSTEM_CURL=ON -DBUILD_SHARED_LIBS=OFF -DCURL_STATICLIB=ON -DCURL_LIBRARY=../../built/x64-windows-static/lib -DCURL_INCLUDE_DIR=../../built/x64-windows-static/include -DCMAKE_INSTALL_PREFIX=$INSTALL_PREFIX
   ninja && ninja install
 
   cd ../..
+
+  else
+    git clone https://github.com/curl/curl.git
+    cd curl
+    git checkout 83bedbd730d62b83744cc26fa0433d3f6e2e4cd6
+    mkdir build && cd build
+    cmake -GNinja .. -DCMAKE_BUILD_TYPE=Release -DBUILD_SHARED_LIBS=OFF -DCMAKE_INSTALL_PREFIX=$INSTALL_PREFIX
+    ninja && ninja install
+
+    cd ../..
+
+    git clone https://github.com/libcpr/cpr.git
+    cd cpr
+    git checkout 3b15fa82ea74739b574d705fea44959b58142eb8
+    mkdir build && cd build
+    cmake -GNinja .. -DCMAKE_BUILD_TYPE=Release -DCPR_USE_SYSTEM_CURL=ON -DBUILD_SHARED_LIBS=OFF -DCURL_STATICLIB=ON -DCMAKE_INSTALL_PREFIX=$INSTALL_PREFIX
+    ninja && ninja install
+
+    cd ../..
 fi
 
 ####

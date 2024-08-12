@@ -28,16 +28,11 @@ endif ()
 
 #### default prefix path ####
 
-if (NOT NKR_LIBS)
-    if (NKR_PACKAGE)
-        list(APPEND NKR_LIBS ${CMAKE_SOURCE_DIR}/libs/deps/package)
-    else ()
-        list(APPEND NKR_LIBS ${CMAKE_SOURCE_DIR}/libs/deps/built)
-    endif ()
-endif ()
-
-if (NOT NKR_DISABLE_LIBS)
-    list(APPEND CMAKE_PREFIX_PATH ${NKR_LIBS})
+list(APPEND NKR_LIBS ${CMAKE_SOURCE_DIR}/libs/deps/built)
+list(APPEND CMAKE_PREFIX_PATH ${NKR_LIBS})
+if(WIN32)
+    list(APPEND CMAKE_PREFIX_PATH "libs/deps/built/x64-windows-static")
+    add_definitions(-DCURL_STATICLIB)
 endif ()
 
 message("[CMAKE_PREFIX_PATH] ${CMAKE_PREFIX_PATH}")
@@ -66,15 +61,7 @@ list(APPEND NKR_EXTERNAL_TARGETS yaml-cpp)
 find_package(ZXing CONFIG REQUIRED)
 list(APPEND NKR_EXTERNAL_TARGETS ZXing::ZXing)
 
-IF (WIN32)
-    include(FetchContent)
-    FetchContent_Declare(cpr GIT_REPOSITORY https://github.com/libcpr/cpr.git
-            GIT_TAG 3b15fa82ea74739b574d705fea44959b58142eb8)
-    FetchContent_MakeAvailable(cpr)
-ELSE()
-    find_package(cpr REQUIRED)
-ENDIF()
-
+find_package(cpr REQUIRED)
 list(APPEND NKR_EXTERNAL_TARGETS cpr::cpr)
 
 set(QHOTKEY_INSTALL OFF)
