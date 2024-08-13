@@ -34,3 +34,10 @@ export EXTRA_QT_PLUGINS="svg;iconengines;"
 rm linuxdeploy-x86_64.AppImage linuxdeploy-plugin-qt-x86_64.AppImage
 cd $DEST
 rm -r ./usr/translations ./usr/bin ./usr/share ./apprun-hooks
+
+# fix extra libs...
+mkdir ./usr/lib2
+ls ./usr/lib/
+cp ./usr/lib/libQt* ./usr/lib/libxcb-util* ./usr/lib/libicuuc* ./usr/lib/libicui18n* ./usr/lib/libicudata* ./usr/lib2
+rm -r ./usr/lib
+mv ./usr/lib2 ./usr/lib
