@@ -15,8 +15,8 @@ fi
 mkdir -p $deps
 cd $deps
 INSTALL_PREFIX=$PWD/built
-#rm -rf $INSTALL_PREFIX
-#mkdir -p $INSTALL_PREFIX
+rm -rf $INSTALL_PREFIX
+mkdir -p $INSTALL_PREFIX
 
 #### clean ####
 clean() {
@@ -93,7 +93,7 @@ if [[ "$(uname -s)" == *"NT"* ]]; then
     cd curl
     git checkout 83bedbd730d62b83744cc26fa0433d3f6e2e4cd6
     mkdir build && cd build
-    cmake -GNinja .. -DCMAKE_BUILD_TYPE=Release -DBUILD_SHARED_LIBS=OFF -DCMAKE_INSTALL_PREFIX=$INSTALL_PREFIX
+    cmake -GNinja .. -DCMAKE_BUILD_TYPE=Release -DBUILD_SHARED_LIBS=OFF -DCMAKE_INSTALL_PREFIX=$INSTALL_PREFIX -DCURL_STATICLIB=ON
     ninja && ninja install
 
     cd ../..
