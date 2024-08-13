@@ -7,8 +7,6 @@ mkdir -p nekoray/DEBIAN
 mkdir -p nekoray/opt
 cp -r linux64 nekoray/opt/
 mv nekoray/opt/linux64 nekoray/opt/nekoray
-rm -rf nekoray/opt/nekoray/usr
-rm nekoray/opt/nekoray/launcher
 
 # basic
 cat >nekoray/DEBIAN/control <<-EOF
@@ -16,7 +14,7 @@ Package: nekoray
 Version: $version
 Architecture: amd64
 Maintainer: Mahdi Mahdi.zrei@gmail.com
-Depends: libxcb-util1, libqt6core6, libqt6dbus6, libqt6gui6, libqt6network6, libqt6widgets6, libqt6svg6, libicu72, libxcb-cursor0, desktop-file-utils
+Depends: libxcb-util1, libqt6core6, libqt6dbus6, libqt6gui6, libqt6network6, libqt6widgets6, libqt6svg6, libicu-dev, libxcb-cursor0, desktop-file-utils
 Description: Qt based cross-platform GUI proxy configuration manager (backend: sing-box)
 EOF
 
@@ -26,7 +24,7 @@ if [ ! -s /usr/share/applications/nekoray.desktop ]; then
 [Desktop Entry]
 Name=nekoray
 Comment=Qt based cross-platform GUI proxy configuration manager (backend: sing-box)
-Exec=sh -c "PATH=/opt/nekoray:\$PATH /opt/nekoray/nekobox -appdata"
+Exec=sh -c "PATH=/opt/launcher:\$PATH /opt/nekoray/nekobox -appdata"
 Icon=/opt/nekoray/nekobox.png
 Terminal=false
 Type=Application
