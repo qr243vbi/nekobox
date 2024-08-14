@@ -336,9 +336,11 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 
         if (!currGroup->Profiles().empty()) {
             ui->menu_server->addAction(ui->menu_clear_test_result);
+            ui->menu_server->addAction(ui->menu_delete_repeat);
             ui->menu_server->addAction(ui->menu_remove_unavailable);
         } else {
             ui->menu_server->removeAction(ui->menu_clear_test_result);
+            ui->menu_server->removeAction(ui->menu_delete_repeat);
             ui->menu_server->removeAction(ui->menu_remove_unavailable);
         }
 
@@ -1097,6 +1099,32 @@ void MainWindow::on_menu_clone_triggered() {
     NekoGui_sub::groupUpdater->AsyncUpdate(sls.join("\n"));
 }
 
+void  MainWindow::on_menu_delete_repeat_triggered () {
+    QList<std::shared_ptr<NekoGui::ProxyEntity>> out;
+    QList<std::shared_ptr<NekoGui::ProxyEntity>> out_del;
+
+    NekoGui::ProfileFilter::Uniq (NekoGui::profileManager-> CurrentGroup ()-> Profiles (), out,  true ,  false );
+    NekoGui::ProfileFilter::OnlyInSrc_ByPointer (NekoGui::profileManager-> CurrentGroup ()-> Profiles (), out, out_del);
+
+    int  remove_display_count =  0 ;
+    QString remove_display;
+    for  ( const  auto  &ent: out_del) {
+        remove_display += ent-> bean -> DisplayTypeAndName () +  " \n " ;
+        if  (++remove_display_count ==  20 ) {
+            remove_display +=  " ... " ;
+            break ;
+        }
+    }
+
+    if  (out_del. length () >  0  &&
+        QMessageBox::question ( this ,  tr ( " Confirmation " ),  tr ( " Remove %1 item(s) ? " ). arg (out_del. length ()) +  " \n "  + remove_display) == QMessageBox::StandardButton::Yes) {
+        for  ( const  auto  &ent: out_del) {
+            NekoGui::profileManager-> DeleteProfile (ent-> id );
+        }
+        refresh_proxy_list ();
+    }
+}
+
 void MainWindow::on_menu_delete_triggered() {
     auto ents = get_now_selected_list();
     if (ents.count() == 0) return;
@@ -1545,6 +1573,7 @@ void MainWindow::on_tabWidget_customContextMenuRequested(const QPoint &p) {
     if (NekoGui::profileManager->groups.size() > 1) menu->addAction(deleteAction);
     if (!group->Profiles().empty()) {
         menu->addAction(ui->menu_clear_test_result);
+        menu->addAction(ui->menu_delete_repeat);
         menu->addAction(ui->menu_remove_unavailable);
     }
     if (!group->url.isEmpty()) menu->addAction(ui->menu_update_subscription);
