@@ -926,7 +926,7 @@ void MainWindow::refresh_proxy_list_impl(const int &id, GroupSortAction groupSor
         ui->proxyListTable->setRowCount(0);
         // 添加行
         int row = -1;
-        for (const auto ent: NekoGui::profileManager->GetGroup(NekoGui::dataStore->current_group)->ProfilesWithOrder()) {
+        for (const auto ent: NekoGui::profileManager->GetGroup(NekoGui::dataStore->current_group)->Profiles()) {
             row++;
             ui->proxyListTable->insertRow(row);
             ui->proxyListTable->row2Id += ent->id;
