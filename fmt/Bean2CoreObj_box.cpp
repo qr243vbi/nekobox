@@ -8,7 +8,6 @@ namespace NekoGui_fmt {
         if (network != "tcp") {
             QJsonObject transport{{"type", network}};
             if (network == "ws") {
-                if (!host.isEmpty()) transport["headers"] = QJsonObject{{"Host", host}};
                 // ws path & ed
                 auto pathWithoutEd = SubStrBefore(path, "?ed=");
                 if (!pathWithoutEd.isEmpty()) transport["path"] = pathWithoutEd;
@@ -24,6 +23,7 @@ namespace NekoGui_fmt {
                 if (!ok) {
                     MW_show_log("Warning: headers could not be parsed, they will not be used");
                 }
+                if (!host.isEmpty()) headerMap["Host"] = host;
                 transport["headers"] = QMapString2QJsonObject(headerMap);
                 if (ws_early_data_length > 0) {
                     transport["max_early_data"] = ws_early_data_length;
