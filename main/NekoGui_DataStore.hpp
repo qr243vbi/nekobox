@@ -58,7 +58,7 @@ namespace NekoGui {
         int imported_count = 0;
         bool refreshing_group_list = false;
         bool refreshing_group = false;
-        int resolve_count = 0;
+        std::atomic<int> resolve_count = 0;
 
         // Flags
         QStringList argv = {};
