@@ -44,6 +44,10 @@ namespace NekoGui_fmt {
         return QString("[%1] %2").arg(DisplayType(), DisplayName());
     }
 
+    bool AbstractBean::IsValid() {
+        return true;
+    }
+
     void AbstractBean::ResolveDomainToIP(const std::function<void()> &onFinished) {
         bool noResolve = false;
         if (dynamic_cast<ChainBean *>(this) != nullptr) noResolve = true;
@@ -54,8 +58,6 @@ namespace NekoGui_fmt {
             onFinished();
             return;
         }
-
-#if QT_VERSION >= QT_VERSION_CHECK(5, 11, 0) // TODO older QT
         QHostInfo::lookupHost(serverAddress, QApplication::instance(), [=](const QHostInfo &host) {
             auto addr = host.addresses();
             if (!addr.isEmpty()) {
@@ -77,6 +79,5 @@ namespace NekoGui_fmt {
             }
             onFinished();
         });
-#endif
     }
 } // namespace NekoGui_fmt

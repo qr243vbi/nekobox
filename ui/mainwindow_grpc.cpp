@@ -48,6 +48,7 @@ void MainWindow::setup_grpc() {
 }
 
 void MainWindow::RunSpeedTest(const QString& config, bool useDefault, const QStringList& outboundTags, const QMap<QString, int>& tag2entID, int entID) {
+    MW_show_log("IM CALLED");
     if (stopSpeedtest.load()) {
         MW_show_log("Profile test aborted");
         return;
@@ -118,6 +119,11 @@ void MainWindow::speedtest_current_group(const QList<std::shared_ptr<NekoGui::Pr
 
     runOnNewThread([this, profiles]() {
         auto buildObject = NekoGui::BuildTestConfig(profiles);
+        if (!buildObject->error.isEmpty()) {
+            MW_show_log("Failed to build test config: " + buildObject->error);
+            speedtestRunning.unlock();
+            return;
+        }
 
         std::atomic<int> counter(0);
         stopSpeedtest.store(false);
@@ -144,6 +150,7 @@ void MainWindow::speedtest_current_group(const QList<std::shared_ptr<NekoGui::Pr
             };
             speedTestThreadPool->start(func);
         }
+        if (testCount == 0) speedtestRunning.unlock();
 
         speedtestRunning.lock();
         speedtestRunning.unlock();

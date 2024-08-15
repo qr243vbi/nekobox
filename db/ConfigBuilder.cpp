@@ -97,6 +97,11 @@ namespace NekoGui {
         };
         QJsonArray directDomainArray;
         for (const auto &item: profiles) {
+            if (!item->bean->IsValid()) {
+                MW_show_log("Skipping invalid config: " + item->bean->name);
+                item->latency = -1;
+                continue;
+            }
             auto res = BuildConfig(item, true, false, idx++);
             if (!res->error.isEmpty()) {
                 results->error = res->error;

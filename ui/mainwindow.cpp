@@ -354,7 +354,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
         speedtest_current_group(get_now_selected_list());
     });
     connect(ui->actionUrl_Test_Group, &QAction::triggered, this, [=]() {
-        speedtest_current_group(NekoGui::profileManager->CurrentGroup()->ProfilesWithOrder());
+        speedtest_current_group(NekoGui::profileManager->CurrentGroup()->Profiles());
     });
     connect(ui->menu_stop_testing, &QAction::triggered, this, [=]() { stopSpeedTests(); });
     //
