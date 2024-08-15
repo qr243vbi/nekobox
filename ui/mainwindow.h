@@ -126,6 +126,10 @@ private slots:
 
     void on_menu_remove_unavailable_triggered();
 
+    void on_menu_resolve_selected_triggered();
+
+    void on_menu_resolve_domain_triggered();
+
     void on_menu_update_subscription_triggered();
 
     void on_proxyListTable_itemDoubleClicked(QTableWidgetItem *item);
