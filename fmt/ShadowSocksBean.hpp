@@ -2,6 +2,7 @@
 
 #include "fmt/AbstractBean.hpp"
 #include "fmt/V2RayStreamSettings.hpp"
+#include "Preset.hpp"
 
 namespace NekoGui_fmt {
     class ShadowSocksBean : public AbstractBean {
@@ -20,6 +21,10 @@ namespace NekoGui_fmt {
             _add(new configItem("uot", &uot, itemType::integer));
             _add(new configItem("stream", dynamic_cast<JsonStore *>(stream.get()), itemType::jsonStore));
         };
+
+        bool IsValid() {
+            return Preset::SingBox::ShadowsocksMethods.contains(method);
+        }
 
         QString DisplayType() override { return "Shadowsocks"; };
 

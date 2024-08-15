@@ -58,6 +58,8 @@ namespace NekoGui_fmt {
 
         virtual QString DisplayTypeAndName();
 
+        virtual bool IsValid();
+
         //
 
         virtual int NeedExternal(bool isFirstProfile) { return 0; };

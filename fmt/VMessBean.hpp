@@ -2,6 +2,7 @@
 
 #include "fmt/AbstractBean.hpp"
 #include "fmt/V2RayStreamSettings.hpp"
+#include "Preset.hpp"
 
 namespace NekoGui_fmt {
     class VMessBean : public AbstractBean {
@@ -18,6 +19,11 @@ namespace NekoGui_fmt {
             _add(new configItem("sec", &security, itemType::string));
             _add(new configItem("stream", dynamic_cast<JsonStore *>(stream.get()), itemType::jsonStore));
         };
+
+        bool IsValid() {
+            if (stream == nullptr) return true;
+            return Preset::SingBox::V2RAYTransports.contains(stream->network);
+        }
 
         QString DisplayType() override { return "VMess"; };
 
