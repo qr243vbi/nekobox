@@ -48,7 +48,6 @@ void MainWindow::setup_grpc() {
 }
 
 void MainWindow::RunSpeedTest(const QString& config, bool useDefault, const QStringList& outboundTags, const QMap<QString, int>& tag2entID, int entID) {
-    MW_show_log("IM CALLED");
     if (stopSpeedtest.load()) {
         MW_show_log("Profile test aborted");
         return;
@@ -101,8 +100,12 @@ void MainWindow::RunSpeedTest(const QString& config, bool useDefault, const QStr
         if (res.error().empty()) {
             ent->latency = res.latency_ms();
         } else {
-            ent->latency = -1;
-            MW_show_log(tr("[%1] test error: %2").arg(ent->bean->DisplayTypeAndName(), res.error().c_str()));
+            if (QString(res.error().c_str()).contains("test aborted") ||
+                QString(res.error().c_str()).contains("context canceled")) ent->latency=0;
+            else {
+                ent->latency = -1;
+                MW_show_log(tr("[%1] test error: %2").arg(ent->bean->DisplayTypeAndName(), res.error().c_str()));
+            }
         }
         ent->Save();
     }
@@ -162,6 +165,7 @@ void MainWindow::speedtest_current_group(const QList<std::shared_ptr<NekoGui::Pr
 }
 
 void MainWindow::stopSpeedTests() {
+    stopSpeedtest.store(true);
     bool ok;
     defaultClient->StopTests(&ok);
 
