@@ -1341,8 +1341,36 @@ void MainWindow::on_menu_remove_unavailable_triggered() {
         }
     }
 
-    if (out_del.length() > 0 &&
-        QMessageBox::question(this, tr("Confirmation"), tr("Remove %1 item(s) ?").arg(out_del.length()) + "\n" + remove_display) == QMessageBox::StandardButton::Yes) {
+    if (!out_del.empty() &&
+        QMessageBox::question(this, tr("Confirmation"), tr("Remove %1 Unavailable item(s) ?").arg(out_del.length()) + "\n" + remove_display) == QMessageBox::StandardButton::Yes) {
+        for (const auto &ent: out_del) {
+            NekoGui::profileManager->DeleteProfile(ent->id);
+        }
+        refresh_proxy_list();
+    }
+}
+
+void MainWindow::on_menu_remove_invalid_triggered() {
+    QList<std::shared_ptr<NekoGui::ProxyEntity>> out_del;
+
+    auto currentGroup = NekoGui::profileManager->GetGroup(NekoGui::dataStore->current_group);
+    if (currentGroup == nullptr) return;
+    for (const auto &profile : currentGroup->Profiles()) {
+        if (!profile->bean->IsValid()) out_del += profile;
+    }
+
+    int remove_display_count = 0;
+    QString remove_display;
+    for (const auto &ent: out_del) {
+        remove_display += ent->bean->DisplayTypeAndName() + "\n";
+        if (++remove_display_count == 20) {
+            remove_display += "...";
+            break;
+        }
+    }
+
+    if (!out_del.empty() &&
+        QMessageBox::question(this, tr("Confirmation"), tr("Remove %1 Invalid item(s) ?").arg(out_del.length()) + "\n" + remove_display) == QMessageBox::StandardButton::Yes) {
         for (const auto &ent: out_del) {
             NekoGui::profileManager->DeleteProfile(ent->id);
         }
@@ -1378,7 +1406,7 @@ void MainWindow::on_menu_resolve_domain_triggered() {
 
     if (QMessageBox::question(this,
                               tr("Confirmation"),
-                              tr("Resolving domain to IP, if support.")) != QMessageBox::StandardButton::Yes) {
+                              tr("Replace domain server addresses with their resolved IPs?")) != QMessageBox::StandardButton::Yes) {
         return;
     }
     if (mw_sub_updating) return;
@@ -1605,8 +1633,15 @@ void MainWindow::on_tabWidget_customContextMenuRequested(const QPoint &p) {
         menu->addAction(ui->menu_clear_test_result);
         menu->addAction(ui->menu_delete_repeat);
         menu->addAction(ui->menu_remove_unavailable);
+        menu->addAction(ui->menu_remove_invalid);
     }
     if (!group->url.isEmpty()) menu->addAction(ui->menu_update_subscription);
+    if (!speedtestRunning.tryLock()) {
+        menu->addAction(ui->menu_stop_testing);
+    } else {
+        speedtestRunning.unlock();
+        menu->removeAction(ui->menu_stop_testing);
+    }
     menu->exec(ui->tabWidget->tabBar()->mapToGlobal(p));
     return;
 }

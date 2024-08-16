@@ -417,7 +417,6 @@
     <addaction name="menu_share_item"/>
     <addaction name="separator"/>
     <addaction name="actionUrl_Test_Selected"/>
-    <addaction name="actionUrl_Test_Group"/>
     <addaction name="menu_resolve_selected"/>
    </widget>
    <addaction name="menu_program"/>
@@ -765,7 +764,7 @@
   </action>
   <action name="actionUrl_Test_Group">
    <property name="enabled">
-    <bool>false</bool>
+    <bool>true</bool>
    </property>
    <property name="text">
     <string>Url Test Group</string>
@@ -774,7 +773,7 @@
     <string>Ctrl+Shift+G</string>
    </property>
    <property name="visible">
-    <bool>false</bool>
+    <bool>true</bool>
    </property>
   </action>
   <action name="menu_resolve_selected">
@@ -783,6 +782,17 @@
    </property>
    <property name="visible">
     <bool>true</bool>
+   </property>
+  </action>
+  <action name="menu_remove_invalid">
+   <property name="text">
+    <string>Remove Invalid</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Alt+I</string>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::MenuRole::TextHeuristicRole</enum>
    </property>
   </action>
  </widget>
