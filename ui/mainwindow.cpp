@@ -71,7 +71,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     speedTestThreadPool->setMaxThreadCount(10); // constant value
     //
     connect(ui->menu_start, &QAction::triggered, this, [=]() { neko_start(); });
-    connect(ui->menu_stop, &QAction::triggered, this, [=]() { neko_stop(); });
+    connect(ui->menu_stop, &QAction::triggered, this, [=]() { neko_stop(false, false, true); });
     connect(ui->tabWidget->tabBar(), &QTabBar::tabMoved, this, [=](int from, int to) {
         // use tabData to track tab & gid
         NekoGui::profileManager->groupsTabOrder.clear();

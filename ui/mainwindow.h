@@ -52,7 +52,7 @@ public:
 
     void neko_start(int _id = -1);
 
-    void neko_stop(bool crash = false, bool sem = false);
+    void neko_stop(bool crash = false, bool sem = false, bool manual = false);
 
     void neko_set_spmode_system_proxy(bool enable, bool save = true);
 

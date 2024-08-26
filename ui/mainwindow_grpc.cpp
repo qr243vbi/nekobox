@@ -365,7 +365,7 @@ void MainWindow::neko_set_spmode_system_proxy(bool enable, bool save) {
     refresh_status();
 }
 
-void MainWindow::neko_stop(bool crash, bool sem) {
+void MainWindow::neko_stop(bool crash, bool sem, bool manual) {
     auto id = NekoGui::dataStore->started_id;
     if (id < 0) {
         if (sem) sem_stopped.release();
@@ -405,7 +405,7 @@ void MainWindow::neko_stop(bool crash, bool sem) {
             }
         }
 
-        NekoGui::dataStore->UpdateStartedId(-1919);
+        if (manual) NekoGui::dataStore->UpdateStartedId(-1919);
         NekoGui::dataStore->need_keep_vpn_off = false;
         running = nullptr;
 
