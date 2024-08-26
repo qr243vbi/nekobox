@@ -459,6 +459,23 @@ namespace NekoGui_sub {
                         }
                         bean->stream->path = Node2QString(h2["path"]);
                     }
+                    auto tcp_http = NodeChild(proxy, {"http-opts", "http-opt"});
+                    if (tcp_http.IsMap()) {
+                        bean->stream->network = "tcp";
+                        bean->stream->header_type = "http";
+                        auto headers = tcp_http["headers"];
+                        for (auto header: headers) {
+                            if (Node2QString(header.first).toLower() == "host") {
+                                bean->stream->host = Node2QString(header.second[0]);
+                            }
+                            break;
+                        }
+                        auto paths = tcp_http["path"];
+                        for (auto path: paths) {
+                            bean->stream->path = Node2QString(path);
+                            break;
+                        }
+                    }
                 } else if (type == "hysteria") {
                     auto bean = ent->QUICBean();
 
