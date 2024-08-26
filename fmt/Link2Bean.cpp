@@ -361,6 +361,10 @@ namespace NekoGui_fmt {
         if (!rawReserved.isEmpty()) {
             for (const auto &item: rawReserved.split("-")) reserved += item.toInt();
         }
+        auto rawLocalAddr = query.queryItemValue("local_address");
+        if (!rawLocalAddr.isEmpty()) {
+            for (const auto &item: rawLocalAddr.split("-")) localAddress += item;
+        }
         MTU = query.queryItemValue("mtu").toInt();
         useSystemInterface = query.queryItemValue("use_system_interface") == "true";
 

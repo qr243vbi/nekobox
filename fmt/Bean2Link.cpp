@@ -266,6 +266,7 @@ namespace NekoGui_fmt {
         q.addQueryItem("reserved", FormatReserved());
         q.addQueryItem("mtu", Int2String(MTU));
         q.addQueryItem("use_system_interface", useSystemInterface ? "true":"false");
+        q.addQueryItem("local_address", localAddress.join("-"));
         url.setQuery(q);
         return url.toString(QUrl::FullyEncoded);
     }

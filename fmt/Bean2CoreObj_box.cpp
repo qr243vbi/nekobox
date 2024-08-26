@@ -264,7 +264,7 @@ namespace NekoGui_fmt {
             {"server", serverAddress},
             {"server_port", serverPort},
             {"interface_name", tun_name},
-            {"local_address", QJsonArray{"172.20.0.1/24", "fdfe:dcba:9876::1/96"}},
+            {"local_address", QListStr2QJsonArray(localAddress)},
             {"private_key", privateKey},
             {"peer_public_key", publicKey},
             {"pre_shared_key", preSharedKey},

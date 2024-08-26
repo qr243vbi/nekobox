@@ -9,6 +9,7 @@ namespace NekoGui_fmt {
         QString publicKey;
         QString preSharedKey;
         QList<int> reserved;
+        QStringList localAddress;
         int MTU = 1420;
         bool useSystemInterface = false;
         bool enableGSO = false;
@@ -18,6 +19,7 @@ namespace NekoGui_fmt {
             _add(new configItem("public_key", &publicKey, itemType::string));
             _add(new configItem("pre_shared_key", &preSharedKey, itemType::string));
             _add(new configItem("reserved", &reserved, itemType::integerList));
+            _add(new configItem("local_address", &localAddress, itemType::stringList));
             _add(new configItem("mtu", &MTU, itemType::integer));
             _add(new configItem("use_system_proxy", &useSystemInterface, itemType::boolean));
             _add(new configItem("enable_gso", &enableGSO, itemType::boolean));
