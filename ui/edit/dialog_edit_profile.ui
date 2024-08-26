@@ -525,56 +525,14 @@
          <string>Network Settings (%1)</string>
         </property>
         <layout class="QGridLayout" name="gridLayout">
-         <item row="3" column="1">
-          <widget class="MyLineEdit" name="host"/>
-         </item>
-         <item row="4" column="1">
-          <widget class="MyLineEdit" name="ws_early_data_length"/>
-         </item>
-         <item row="5" column="1">
-          <widget class="MyLineEdit" name="ws_early_data_name"/>
-         </item>
-         <item row="3" column="0">
-          <widget class="QLabel" name="host_l">
-           <property name="toolTip">
-            <string notr="true">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;http host (ws/http/httpUpgrade)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-           </property>
-           <property name="text">
-            <string notr="true">Host</string>
-           </property>
-          </widget>
-         </item>
-         <item row="0" column="1">
-          <widget class="QLineEdit" name="headers"/>
-         </item>
-         <item row="4" column="0">
-          <widget class="QLabel" name="ws_early_data_length_l">
-           <property name="text">
-            <string notr="true">EarlyData Length</string>
-           </property>
-          </widget>
-         </item>
-         <item row="2" column="0">
-          <widget class="QLabel" name="path_l">
-           <property name="toolTip">
-            <string notr="true">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;http path (ws/http/httpUpgrade)&lt;/p&gt;&lt;p&gt;serviceName (gRPC)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-           </property>
-           <property name="text">
-            <string notr="true">Path</string>
-           </property>
-          </widget>
-         </item>
-         <item row="5" column="0">
+         <item row="6" column="0">
           <widget class="QLabel" name="ws_early_data_name_l">
            <property name="text">
             <string notr="true">EarlyData Name</string>
            </property>
           </widget>
          </item>
-         <item row="2" column="1">
-          <widget class="MyLineEdit" name="path"/>
-         </item>
-         <item row="0" column="0">
+         <item row="1" column="0">
           <widget class="QLabel" name="headers_l">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
@@ -593,7 +551,39 @@
            </property>
           </widget>
          </item>
-         <item row="1" column="0">
+         <item row="5" column="0">
+          <widget class="QLabel" name="ws_early_data_length_l">
+           <property name="text">
+            <string notr="true">EarlyData Length</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QLineEdit" name="method"/>
+         </item>
+         <item row="3" column="0">
+          <widget class="QLabel" name="path_l">
+           <property name="toolTip">
+            <string notr="true">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;http path (ws/http/httpUpgrade)&lt;/p&gt;&lt;p&gt;serviceName (gRPC)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           </property>
+           <property name="text">
+            <string notr="true">Path</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="1">
+          <widget class="MyLineEdit" name="path"/>
+         </item>
+         <item row="6" column="1">
+          <widget class="MyLineEdit" name="ws_early_data_name"/>
+         </item>
+         <item row="5" column="1">
+          <widget class="MyLineEdit" name="ws_early_data_length"/>
+         </item>
+         <item row="4" column="1">
+          <widget class="MyLineEdit" name="host"/>
+         </item>
+         <item row="2" column="0">
           <widget class="QLabel" name="method_l">
            <property name="toolTip">
             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Method of http request, will be converted to uppercase&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -603,8 +593,39 @@
            </property>
           </widget>
          </item>
+         <item row="4" column="0">
+          <widget class="QLabel" name="host_l">
+           <property name="toolTip">
+            <string notr="true">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;http host (ws/http/httpUpgrade)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           </property>
+           <property name="text">
+            <string notr="true">Host</string>
+           </property>
+          </widget>
+         </item>
          <item row="1" column="1">
-          <widget class="QLineEdit" name="method"/>
+          <widget class="QLineEdit" name="headers"/>
+         </item>
+         <item row="0" column="1">
+          <widget class="QComboBox" name="header_type">
+           <item>
+            <property name="text">
+             <string/>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>http</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="0" column="0">
+          <widget class="QLabel" name="header_type_l">
+           <property name="text">
+            <string>header type</string>
+           </property>
+          </widget>
          </item>
         </layout>
        </widget>

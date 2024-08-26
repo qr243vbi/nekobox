@@ -93,6 +93,12 @@ namespace NekoGui_fmt {
             stream->host = GetQueryValue(query, "host", "");
         } else if (stream->network == "grpc") {
             stream->path = GetQueryValue(query, "serviceName", "");
+        } else if (stream->network == "tcp") {
+            if (GetQueryValue(query, "headerType") == "http") {
+                stream->header_type = "http";
+                stream->host = GetQueryValue(query, "host", "");
+                stream->path = GetQueryValue(query, "path", "");
+            }
         }
 
         // mux
@@ -171,6 +177,7 @@ namespace NekoGui_fmt {
             stream->host = objN["host"].toString();
             stream->path = objN["path"].toString();
             stream->sni = objN["sni"].toString();
+            stream->header_type = objN["type"].toString();
             auto net = objN["net"].toString();
             if (!net.isEmpty()) {
                 if (net == "h2") {
@@ -239,6 +246,12 @@ namespace NekoGui_fmt {
                 stream->host = GetQueryValue(query, "host", "");
             } else if (stream->network == "grpc") {
                 stream->path = GetQueryValue(query, "serviceName", "");
+            } else if (stream->network == "tcp") {
+                if (GetQueryValue(query, "headerType") == "http") {
+                    stream->header_type = "http";
+                    stream->path = GetQueryValue(query, "path", "");
+                    stream->host = GetQueryValue(query, "host", "");
+                }
             }
             return !(uuid.isEmpty() || serverAddress.isEmpty());
         }

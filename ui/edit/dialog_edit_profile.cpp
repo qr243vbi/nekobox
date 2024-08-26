@@ -32,7 +32,20 @@ DialogEditProfile::DialogEditProfile(const QString &_type, int profileOrGroupId,
     network_title_base = ui->network_box->title();
     connect(ui->network, &QComboBox::currentTextChanged, this, [=](const QString &txt) {
         ui->network_box->setTitle(network_title_base.arg(txt));
-        if (txt == "grpc") {
+        if (txt == "tcp") {
+            ui->header_type->setVisible(true);
+            ui->header_type_l->setVisible(true);
+            ui->headers->setVisible(false);
+            ui->headers_l->setVisible(false);
+            ui->method->setVisible(false);
+            ui->method_l->setVisible(false);
+            ui->path->setVisible(true);
+            ui->path_l->setVisible(true);
+            ui->host->setVisible(true);
+            ui->host_l->setVisible(true);
+        } else if (txt == "grpc") {
+            ui->header_type->setVisible(false);
+            ui->header_type_l->setVisible(false);
             ui->headers->setVisible(false);
             ui->headers_l->setVisible(false);
             ui->method->setVisible(false);
@@ -42,6 +55,8 @@ DialogEditProfile::DialogEditProfile(const QString &_type, int profileOrGroupId,
             ui->host->setVisible(false);
             ui->host_l->setVisible(false);
         } else if (txt == "ws" || txt == "httpupgrade") {
+            ui->header_type->setVisible(false);
+            ui->header_type_l->setVisible(false);
             ui->headers->setVisible(true);
             ui->headers_l->setVisible(true);
             ui->method->setVisible(false);
@@ -51,6 +66,8 @@ DialogEditProfile::DialogEditProfile(const QString &_type, int profileOrGroupId,
             ui->host->setVisible(true);
             ui->host_l->setVisible(true);
         } else if (txt == "http") {
+            ui->header_type->setVisible(false);
+            ui->header_type_l->setVisible(false);
             ui->headers->setVisible(true);
             ui->headers_l->setVisible(true);
             ui->method->setVisible(true);
@@ -60,6 +77,8 @@ DialogEditProfile::DialogEditProfile(const QString &_type, int profileOrGroupId,
             ui->host->setVisible(true);
             ui->host_l->setVisible(true);
         } else {
+            ui->header_type->setVisible(false);
+            ui->header_type_l->setVisible(false);
             ui->headers->setVisible(false);
             ui->headers_l->setVisible(false);
             ui->method->setVisible(false);
@@ -236,7 +255,6 @@ void DialogEditProfile::typeSelected(const QString &newType) {
     // 右边 stream
     auto stream = GetStreamSettings(ent->bean.get());
     if (stream != nullptr) {
-        ui->network_box->setVisible(stream->network != "tcp");
         ui->right_all_w->setVisible(true);
         ui->network->setCurrentText(stream->network);
         ui->security->setCurrentText(stream->security);
@@ -252,6 +270,7 @@ void DialogEditProfile::typeSelected(const QString &newType) {
             ui->utlsFingerprint->setCurrentText(stream->utlsFingerprint);
         }
         ui->insecure->setChecked(stream->allow_insecure);
+        ui->header_type->setCurrentText(stream->header_type);
         ui->headers->setText(stream->headers);
         ui->ws_early_data_name->setText(stream->ws_early_data_name);
         ui->ws_early_data_length->setText(Int2String(stream->ws_early_data_length));
@@ -318,9 +337,11 @@ void DialogEditProfile::typeSelected(const QString &newType) {
     if (type == "vmess" || type == "vless" || type == "trojan") {
         ui->network_l->setVisible(true);
         ui->network->setVisible(true);
+        ui->network_box->setVisible(true);
     } else {
         ui->network_l->setVisible(false);
         ui->network->setVisible(false);
+        ui->network_box->setVisible(false);
     }
     if (type == "vmess" || type == "vless" || type == "trojan" || type == "http") {
         ui->security->setVisible(true);
@@ -382,6 +403,7 @@ bool DialogEditProfile::onEnd() {
         stream->utlsFingerprint = ui->utlsFingerprint->currentText();
         stream->allow_insecure = ui->insecure->isChecked();
         stream->headers = ui->headers->text();
+        stream->header_type = ui->header_type->currentText();
         stream->method = ui->method->text();
         stream->ws_early_data_name = ui->ws_early_data_name->text();
         stream->ws_early_data_length = ui->ws_early_data_length->text().toInt();

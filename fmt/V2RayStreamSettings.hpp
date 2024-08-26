@@ -13,6 +13,7 @@ namespace NekoGui_fmt {
         QString host = "";
         QString method = "";
         QString headers = "";
+        QString header_type = "";
 
         QString sni = "";
         QString alpn = "";
@@ -38,6 +39,7 @@ namespace NekoGui_fmt {
             _add(new configItem("cert", &certificate, itemType::string));
             _add(new configItem("insecure", &allow_insecure, itemType::boolean));
             _add(new configItem("headers", &headers, itemType::string));
+            _add(new configItem("h_type", &header_type, itemType::string));
             _add(new configItem("method", &method, itemType::string));
             _add(new configItem("ed_name", &ws_early_data_name, itemType::string));
             _add(new configItem("ed_len", &ws_early_data_length, itemType::integer));
