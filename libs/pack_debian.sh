@@ -4,9 +4,9 @@ set -e
 version="$1"
 
 mkdir -p nekoray/DEBIAN
-mkdir -p nekoray/opt
-cp -r linux64 nekoray/opt/
-mv nekoray/opt/linux64 nekoray/opt/nekoray
+mkdir -p nekoray/usr/local
+cp -r linux64 nekoray/usr/local
+mv nekoray/usr/local/linux64 nekoray/usr/local/nekoray
 
 # basic
 cat >nekoray/DEBIAN/control <<-EOF
@@ -24,15 +24,15 @@ if [ ! -s /usr/share/applications/nekoray.desktop ]; then
 [Desktop Entry]
 Name=nekoray
 Comment=Qt based cross-platform GUI proxy configuration manager (backend: sing-box)
-Exec=sh -c "PATH=/opt/launcher:\$PATH /opt/nekoray/nekobox -appdata"
-Icon=/opt/nekoray/nekobox.png
+Exec=sh -c "PATH=/usr/local/launcher:\$PATH /usr/local/nekoray/nekobox -appdata"
+Icon=/usr/local/nekoray/nekobox.png
 Terminal=false
 Type=Application
 Categories=Network;Application;
 END
 fi
 
-setcap cap_net_admin=ep /opt/nekoray/nekobox_core
+setcap cap_net_admin=ep /use/local/nekoray/nekobox_core
 
 update-desktop-database
 EOF
