@@ -152,6 +152,15 @@ namespace NekoGui {
         }
         dnsObj["rules"] = dnsRulesObj;
         results->coreConfig["dns"] = dnsObj;
+        std::map<int, QString> outboundMap;
+        outboundMap[-1] = "proxy";
+        outboundMap[-2] = "direct";
+        outboundMap[-3] = "block";
+        outboundMap[-4] = "dns-out";
+        results->coreConfig["route"] = QJsonObject{
+            {"rules", NekoGui::RoutingChain::GetDefaultChain()->get_route_rules(false, outboundMap)},
+            {"auto_detect_interface", true}
+        };
 
         return results;
     }
