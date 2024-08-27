@@ -86,6 +86,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     ui->tabWidget->installEventFilter(this);
     //
     RegisterHotkey(false);
+    RegisterShortcuts();
     //
     auto last_size = NekoGui::dataStore->mw_size.split("x");
     if (last_size.length() == 2) {
@@ -1719,6 +1720,14 @@ void MainWindow::RegisterHotkey(bool unregister) {
         } else {
             hk->deleteLater();
         }
+    }
+}
+
+void MainWindow::RegisterShortcuts() {
+    for (const auto &action: ui->menuHidden_menu->actions()) {
+        new QShortcut(action->shortcut(), this, [=](){
+            action->trigger();
+        });
     }
 }
 
