@@ -192,6 +192,8 @@ private:
 
     void HotkeyEvent(const QString &key);
 
+    void RegisterShortcuts();
+
     // grpc
 
     static void setup_grpc();

@@ -419,9 +419,22 @@
     <addaction name="actionUrl_Test_Selected"/>
     <addaction name="menu_resolve_selected"/>
    </widget>
+   <widget class="QMenu" name="menuHidden_menu">
+    <property name="title">
+     <string>Hidden menu</string>
+    </property>
+    <addaction name="menu_update_subscription"/>
+    <addaction name="menu_resolve_domain"/>
+    <addaction name="menu_remove_invalid"/>
+    <addaction name="actionUrl_Test_Group"/>
+    <addaction name="menu_remove_unavailable"/>
+    <addaction name="menu_clear_test_result"/>
+    <addaction name="menu_delete_repeat"/>
+   </widget>
    <addaction name="menu_program"/>
    <addaction name="menu_preferences"/>
    <addaction name="menu_server"/>
+   <addaction name="menuHidden_menu"/>
   </widget>
   <action name="menu_exit">
    <property name="text">
@@ -700,6 +713,9 @@
    </property>
    <property name="shortcut">
     <string notr="true">Ctrl+U</string>
+   </property>
+   <property name="visible">
+    <bool>true</bool>
    </property>
   </action>
   <action name="menu_resolve_domain">
