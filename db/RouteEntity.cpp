@@ -2,6 +2,7 @@
 #include <QJsonArray>
 #include "RouteEntity.h"
 #include "db/Database.hpp"
+#include "fmt/Preset.hpp"
 #include <iostream>
 
 namespace NekoGui {
@@ -169,7 +170,9 @@ namespace NekoGui {
             return {"", "tcp", "udp"};
         }
         if (fieldName == "protocol") {
-            return {"", "http", "tls", "quic", "stun", "dns", "bittorrent"};
+            auto resp = Preset::SingBox::SniffProtocols;
+            resp.prepend("");
+            return resp;
         }
         return {};
     }
