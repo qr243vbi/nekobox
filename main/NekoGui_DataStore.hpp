@@ -122,10 +122,10 @@ namespace NekoGui {
         // VPN
         bool fake_dns = false;
         bool enable_gso = false;
+        bool auto_redirect = false;
         int vpn_implementation = 0;
         int vpn_mtu = 9000;
         bool vpn_ipv6 = false;
-        bool vpn_hide_console = true;
         bool vpn_strict_route = false;
 
         // NTP
