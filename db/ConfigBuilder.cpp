@@ -107,7 +107,7 @@ namespace NekoGui {
                 results->error = res->error;
                 return results;
             }
-            if (item->CustomBean() != nullptr && item->CustomBean()->core == "internal-full") {
+            if (item->type == "custom" && item->CustomBean()->core == "internal-full") {
                 res->coreConfig["inbounds"] = QJsonArray();
                 results->fullConfigs[item->id] = QJsonObject2QString(res->coreConfig, true);
                 continue;
