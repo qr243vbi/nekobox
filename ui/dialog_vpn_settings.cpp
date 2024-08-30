@@ -19,9 +19,9 @@ DialogVPNSettings::DialogVPNSettings(QWidget *parent) : QDialog(parent), ui(new 
 #ifndef __linux__
     ui->gso_enable->setVisible(false);
     ui->auto_redir->setVisible(false);
-    ADJUST_SIZE
 #endif
     ui->strict_route->setChecked(NekoGui::dataStore->vpn_strict_route);
+    ADJUST_SIZE
 }
 
 DialogVPNSettings::~DialogVPNSettings() {
