@@ -29,6 +29,8 @@ pushd $BUILD
 macdeployqt nekoray.app -verbose=3
 popd
 
+codesign --force --deep --sign - $BUILD/nekoray.app
+
 #### pack dmg ###
 sudo npm install -g appdmg
 appdmg appdmg.json $DEST/nekoray.dmg
