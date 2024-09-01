@@ -372,28 +372,17 @@ void MainWindow::neko_stop(bool crash, bool sem, bool manual) {
         return;
     }
 
-    auto neko_stop_stage2 = [=] {
-        runOnUiThread(
-            [=] {
-                while (!NekoGui_sys::running_ext.empty()) {
-                    auto extC = NekoGui_sys::running_ext.front();
-                    extC->Kill();
-                    NekoGui_sys::running_ext.pop_front();
-                }
-            },
-            DS_cores);
-
-        NekoGui_traffic::trafficLooper->loop_enabled = false;
-        NekoGui_traffic::trafficLooper->loop_mutex.lock();
-        if (NekoGui::dataStore->traffic_loop_interval != 0) {
-            NekoGui_traffic::trafficLooper->UpdateAll();
-            for (const auto &item: NekoGui_traffic::trafficLooper->items) {
-                NekoGui::profileManager->GetProfile(item->id)->Save();
-                runOnUiThread([=] { refresh_proxy_list(item->id); });
+    runOnUiThread(
+        [=] {
+            while (!NekoGui_sys::running_ext.empty()) {
+                auto extC = NekoGui_sys::running_ext.front();
+                extC->Kill();
+                NekoGui_sys::running_ext.pop_front();
             }
-        }
-        NekoGui_traffic::trafficLooper->loop_mutex.unlock();
+        },
+        DS_cores);
 
+    auto neko_stop_stage2 = [=] {
         if (!crash) {
             bool rpcOK;
             QString error = defaultClient->Stop(&rpcOK);
@@ -404,16 +393,6 @@ void MainWindow::neko_stop(bool crash, bool sem, bool manual) {
                 return false;
             }
         }
-
-        if (manual) NekoGui::dataStore->UpdateStartedId(-1919);
-        NekoGui::dataStore->need_keep_vpn_off = false;
-        running = nullptr;
-
-        runOnUiThread([=] {
-            refresh_status();
-            refresh_proxy_list(id);
-        });
-
         return true;
     };
 
@@ -428,19 +407,38 @@ void MainWindow::neko_stop(bool crash, bool sem, bool manual) {
     connect(restartMsgbox, &QMessageBox::accepted, this, [=] { MW_dialog_message("", "RestartProgram"); });
     auto restartMsgboxTimer = new MessageBoxTimer(this, restartMsgbox, 5000);
 
+    NekoGui_traffic::trafficLooper->loop_enabled = false;
+    NekoGui_traffic::trafficLooper->loop_mutex.lock();
+    if (NekoGui::dataStore->traffic_loop_interval != 0) {
+        NekoGui_traffic::trafficLooper->UpdateAll();
+        for (const auto &item: NekoGui_traffic::trafficLooper->items) {
+            NekoGui::profileManager->GetProfile(item->id)->Save();
+            refresh_proxy_list(item->id);
+        }
+    }
+    NekoGui_traffic::trafficLooper->loop_mutex.unlock();
+
+    restartMsgboxTimer->cancel();
+    restartMsgboxTimer->deleteLater();
+    restartMsgbox->deleteLater();
+
     runOnNewThread([=] {
         // do stop
         MW_show_log(">>>>>>>> " + tr("Stopping profile %1").arg(running->bean->DisplayTypeAndName()));
         if (!neko_stop_stage2()) {
             MW_show_log("<<<<<<<< " + tr("Failed to stop, please restart the program."));
         }
-        mu_stopping.unlock();
-        if (sem) sem_stopped.release();
-        // cancel timeout
+
+        if (manual) NekoGui::dataStore->UpdateStartedId(-1919);
+        NekoGui::dataStore->need_keep_vpn_off = false;
+        running = nullptr;
+
         runOnUiThread([=] {
-            restartMsgboxTimer->cancel();
-            restartMsgboxTimer->deleteLater();
-            restartMsgbox->deleteLater();
+            refresh_status();
+            refresh_proxy_list(id);
+
+            mu_stopping.unlock();
+            if (sem) sem_stopped.release();
         });
     });
 }
