@@ -367,6 +367,7 @@ namespace NekoGui_fmt {
         }
         MTU = query.queryItemValue("mtu").toInt();
         useSystemInterface = query.queryItemValue("use_system_interface") == "true";
+        workerCount = query.queryItemValue("workers").toInt();
 
         return true;
     }

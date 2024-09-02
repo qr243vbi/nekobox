@@ -14,76 +14,12 @@
    <string>EditWireguard</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
-   <item row="7" column="0">
-    <widget class="QLabel" name="mtu_l">
-     <property name="text">
-      <string>MTU</string>
-     </property>
-    </widget>
-   </item>
-   <item row="4" column="0">
-    <widget class="QLabel" name="preshared_key_l">
-     <property name="text">
-      <string>Pre Shared Key</string>
-     </property>
-    </widget>
-   </item>
-   <item row="7" column="1">
-    <widget class="QLineEdit" name="mtu">
-     <property name="text">
-      <string>1420</string>
-     </property>
-    </widget>
-   </item>
-   <item row="8" column="1">
-    <widget class="QCheckBox" name="sys_ifc">
-     <property name="text">
-      <string>Use System Interface</string>
-     </property>
-    </widget>
-   </item>
-   <item row="5" column="1">
-    <widget class="QLineEdit" name="reserved"/>
-   </item>
-   <item row="2" column="1">
-    <widget class="QLineEdit" name="private_key"/>
-   </item>
    <item row="5" column="0">
     <widget class="QLabel" name="reserved_l">
      <property name="text">
       <string>Reserved</string>
      </property>
     </widget>
-   </item>
-   <item row="2" column="0">
-    <widget class="QLabel" name="private_key_l">
-     <property name="text">
-      <string>Private Key</string>
-     </property>
-    </widget>
-   </item>
-   <item row="9" column="1">
-    <widget class="QCheckBox" name="enable_gso">
-     <property name="text">
-      <string>Enable GSO</string>
-     </property>
-    </widget>
-   </item>
-   <item row="4" column="1">
-    <widget class="QLineEdit" name="preshared_key"/>
-   </item>
-   <item row="3" column="0">
-    <widget class="QLabel" name="public_key_l">
-     <property name="text">
-      <string>Public Key</string>
-     </property>
-    </widget>
-   </item>
-   <item row="3" column="1">
-    <widget class="QLineEdit" name="public_key"/>
-   </item>
-   <item row="6" column="1">
-    <widget class="QLineEdit" name="local_addr"/>
    </item>
    <item row="6" column="0">
     <widget class="QLabel" name="local_addr_l">
@@ -94,6 +30,80 @@
       <string>Local Address</string>
      </property>
     </widget>
+   </item>
+   <item row="4" column="0">
+    <widget class="QLabel" name="preshared_key_l">
+     <property name="text">
+      <string>Pre Shared Key</string>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="1">
+    <widget class="QLineEdit" name="local_addr"/>
+   </item>
+   <item row="5" column="1">
+    <widget class="QLineEdit" name="reserved"/>
+   </item>
+   <item row="9" column="1">
+    <widget class="QCheckBox" name="sys_ifc">
+     <property name="text">
+      <string>Use System Interface</string>
+     </property>
+    </widget>
+   </item>
+   <item row="10" column="1">
+    <widget class="QCheckBox" name="enable_gso">
+     <property name="text">
+      <string>Enable GSO</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="0">
+    <widget class="QLabel" name="public_key_l">
+     <property name="text">
+      <string>Public Key</string>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="1">
+    <widget class="QLineEdit" name="preshared_key"/>
+   </item>
+   <item row="2" column="0">
+    <widget class="QLabel" name="private_key_l">
+     <property name="text">
+      <string>Private Key</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="1">
+    <widget class="QLineEdit" name="public_key"/>
+   </item>
+   <item row="2" column="1">
+    <widget class="QLineEdit" name="private_key"/>
+   </item>
+   <item row="7" column="1">
+    <widget class="QLineEdit" name="mtu">
+     <property name="text">
+      <string>1420</string>
+     </property>
+    </widget>
+   </item>
+   <item row="7" column="0">
+    <widget class="QLabel" name="mtu_l">
+     <property name="text">
+      <string>MTU</string>
+     </property>
+    </widget>
+   </item>
+   <item row="8" column="0">
+    <widget class="QLabel" name="workers_l">
+     <property name="text">
+      <string>Workers</string>
+     </property>
+    </widget>
+   </item>
+   <item row="8" column="1">
+    <widget class="QLineEdit" name="workers"/>
    </item>
   </layout>
  </widget>

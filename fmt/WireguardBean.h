@@ -13,6 +13,7 @@ namespace NekoGui_fmt {
         int MTU = 1420;
         bool useSystemInterface = false;
         bool enableGSO = false;
+        int workerCount;
 
         WireguardBean() : AbstractBean(0) {
             _add(new configItem("private_key", &privateKey, itemType::string));
@@ -23,6 +24,7 @@ namespace NekoGui_fmt {
             _add(new configItem("mtu", &MTU, itemType::integer));
             _add(new configItem("use_system_proxy", &useSystemInterface, itemType::boolean));
             _add(new configItem("enable_gso", &enableGSO, itemType::boolean));
+            _add(new configItem("worker_count", &workerCount, itemType::integer));
         };
 
         QString FormatReserved() {
