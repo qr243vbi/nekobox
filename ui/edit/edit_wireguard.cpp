@@ -29,6 +29,7 @@ void EditWireguard::onStart(std::shared_ptr<NekoGui::ProxyEntity> _ent) {
     ui->sys_ifc->setChecked(bean->useSystemInterface);
     ui->enable_gso->setChecked(bean->enableGSO);
     ui->local_addr->setText(bean->localAddress.join(","));
+    ui->workers->setText(Int2String(bean->workerCount));
 }
 
 bool EditWireguard::onEnd() {
@@ -47,6 +48,7 @@ bool EditWireguard::onEnd() {
     bean->useSystemInterface = ui->sys_ifc->isChecked();
     bean->enableGSO = ui->enable_gso->isChecked();
     bean->localAddress = ui->local_addr->text().replace(" ", "").split(",");
+    bean->workerCount = ui->workers->text().toInt();
 
     return true;
 }

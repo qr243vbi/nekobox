@@ -271,7 +271,8 @@ namespace NekoGui_fmt {
             {"reserved", QListInt2QJsonArray(reserved)},
             {"mtu", MTU},
             {"gso", enableGSO},
-            {"system_interface", useSystemInterface}
+            {"system_interface", useSystemInterface},
+            {"workers", workerCount}
         };
 
         result.outbound = outbound;
