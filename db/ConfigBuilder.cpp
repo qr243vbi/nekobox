@@ -198,7 +198,7 @@ namespace NekoGui {
         auto ents = resolveChain(status->ent);
         if (!status->result->error.isEmpty()) return {};
 
-        if (group->front_proxy_id >= 0) {
+        if (group->front_proxy_id >= 0 && !status->forTest) {
             auto fEnt = profileManager->GetProfile(group->front_proxy_id);
             if (fEnt == nullptr) {
                 status->result->error = QString("front proxy ent not found.");
@@ -208,7 +208,7 @@ namespace NekoGui {
             if (!status->result->error.isEmpty()) return {};
         }
 
-        if (group->landing_proxy_id >= 0) {
+        if (group->landing_proxy_id >= 0 && !status->forTest) {
             auto lEnt = profileManager->GetProfile(group->landing_proxy_id);
             if (lEnt == nullptr) {
                 status->result->error = QString("landing proxy ent not found.");
