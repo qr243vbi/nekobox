@@ -13,7 +13,7 @@ namespace NekoGui_fmt {
         int MTU = 1420;
         bool useSystemInterface = false;
         bool enableGSO = false;
-        int workerCount;
+        int workerCount = 0;
 
         WireguardBean() : AbstractBean(0) {
             _add(new configItem("private_key", &privateKey, itemType::string));

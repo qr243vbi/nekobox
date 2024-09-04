@@ -210,6 +210,14 @@ namespace NekoGui_sub {
             if (!ok) return;
         }
 
+        // SSH
+        if (str.startsWith("ssh://")) {
+            needFix = false;
+            ent = NekoGui::ProfileManager::NewProxyEntity("ssh");
+            auto ok = ent->SSHBean()->TryParseLink(str);
+            if (!ok) return;
+        }
+
         if (ent == nullptr) return;
 
         // Fix

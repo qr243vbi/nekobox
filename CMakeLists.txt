@@ -190,6 +190,10 @@ set(PROJECT_SOURCES
         db/RouteEntity.h
         db/RouteEntity.cpp
         res/darkstyle.qrc
+        ui/edit/edit_ssh.cpp
+        ui/edit/edit_ssh.h
+        ui/edit/edit_ssh.ui
+        fmt/SSHBean.h
 )
 
 # Qt exe
