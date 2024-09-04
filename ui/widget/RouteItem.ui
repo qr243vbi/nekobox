@@ -117,7 +117,20 @@
              </widget>
             </item>
             <item>
-             <widget class="QComboBox" name="rule_out"/>
+             <widget class="QComboBox" name="rule_out">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>200</width>
+                <height>16777215</height>
+               </size>
+              </property>
+             </widget>
             </item>
            </layout>
           </widget>
