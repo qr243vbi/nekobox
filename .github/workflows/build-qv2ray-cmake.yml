@@ -70,7 +70,7 @@ jobs:
           - platform: windows-2022
             arch: x64
             qt_version: "6.7.2"
-          - platform: ubuntu-20.04
+          - platform: ubuntu-22.04
             arch: x64
             qt_version: "6.7.2"
           - platform: macos-13
@@ -100,7 +100,7 @@ jobs:
           path: download-artifact
       # ========================================================================================================= Qt Install
       - name: Linux - Install Qt
-        if: matrix.platform == 'ubuntu-20.04'
+        if: matrix.platform == 'ubuntu-22.04'
         uses: jurplel/install-qt-action@v4.0.0
         with:
           version: ${{ matrix.qt_version }}
@@ -152,8 +152,9 @@ jobs:
           ./libs/deploy_windows64.sh
       - name: Linux - Generate MakeFile and Build
         shell: bash
-        if: matrix.platform == 'ubuntu-20.04'
+        if: matrix.platform == 'ubuntu-22.04'
         run: |
+          sudo apt update && sudo apt upgrade -y
           mkdir build 
           pushd build 
           cmake -GNinja -DQT_VERSION_MAJOR=6  -DCMAKE_BUILD_TYPE=Release .. 
