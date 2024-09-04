@@ -4,10 +4,10 @@ cloud.google.com/go v0.26.0/go.mod h1:aQUYkXzVsufM+DwF1aE+0xfcU+56JwCaLick0ClmMT
 cloud.google.com/go/compute/metadata v0.3.0 h1:Tz+eQXMEqDIKRsmY3cHTL6FVaynIjX2QxYC4trgAKZc=
 cloud.google.com/go/compute/metadata v0.3.0/go.mod h1:zFmK7XCadkQkj6TtorcaGlCW1hT1fIilQDwofLpJ20k=
 github.com/BurntSushi/toml v0.3.1/go.mod h1:xHWCNGjB5oqiDr8zfno3MHue2Ht5sIBksp03qcyfWMU=
-github.com/Mahdi-zarei/sing-box v1.3.5-0.20240902015024-87ce1b5463e9 h1:w7wKaq2iez2/EOgM+sc3Ti5EKkUyXFWcbWRIZehPjPE=
-github.com/Mahdi-zarei/sing-box v1.3.5-0.20240902015024-87ce1b5463e9/go.mod h1:VjyGsaBUZ32vwYx8zVXOti3FNfhHvf/ep/e5kDpkkM0=
-github.com/Mahdi-zarei/sing-box-extra v0.0.0-20240902015241-67553399f0d3 h1:tPH8SfROa4mANNfzf6zCC4g4IUE+ZsP37o2URg1YQSs=
-github.com/Mahdi-zarei/sing-box-extra v0.0.0-20240902015241-67553399f0d3/go.mod h1:WDV7JVlC/tzRBv0iOMNe8z9exRu0uSc79vT/8vnAbAQ=
+github.com/Mahdi-zarei/sing-box v1.3.5-0.20240903235116-2a7756b546b9 h1:By3CYAqbFLkIWOxmpeg5jbd6gIY+qCM9PvuwcYCrcos=
+github.com/Mahdi-zarei/sing-box v1.3.5-0.20240903235116-2a7756b546b9/go.mod h1:VjyGsaBUZ32vwYx8zVXOti3FNfhHvf/ep/e5kDpkkM0=
+github.com/Mahdi-zarei/sing-box-extra v0.0.0-20240904000146-e1145d011ef6 h1:p/sgsZ98PukqosSZPVjAy3yxmymKDi2DrS0X2lPC7a4=
+github.com/Mahdi-zarei/sing-box-extra v0.0.0-20240904000146-e1145d011ef6/go.mod h1:02D/Khg/+qB8Cc8LVy3g1PdzrmS9RBytU3xbNVIMuzw=
 github.com/ajg/form v1.5.1 h1:t9c7v8JUKu/XxOGBU0yjNpaMloxGEJhUkqFRq0ibGeU=
 github.com/ajg/form v1.5.1/go.mod h1:uL1WgH+h2mgNtvBq0339dVnzXdBETtL2LeUXaIv25UY=
 github.com/andybalholm/brotli v1.0.6 h1:Yf9fFpf49Zrxb9NlQaluyE92/+X7UVHlhMNJN2sxfOI=

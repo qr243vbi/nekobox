@@ -220,7 +220,7 @@ namespace NekoGui_rpc {
             return {reply.error().c_str()};
         } else {
             NOT_OK
-            return "";
+            return reply.error().c_str();
         }
     }
 

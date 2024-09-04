@@ -53,6 +53,6 @@ void DialogVPNSettings::on_troubleshooting_clicked() {
                                       tr("Reset"), tr("Cancel"), "",
                                       1, 1);
     if (r == 0) {
-        GetMainWindow()->StopVPNProcess(true);
+        GetMainWindow()->StopVPNProcess();
     }
 }
