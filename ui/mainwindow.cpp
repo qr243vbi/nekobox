@@ -712,14 +712,12 @@ bool MainWindow::get_elevated_permissions() {
         MessageBoxWarning(software_name, "Please install \"pkexec\" first.");
         return false;
     }
-    auto ret = Linux_Pkexec_SetCapString(NekoGui::FindNekoBoxCoreRealPath(), "cap_net_admin=ep");
-    if (ret == 0) {
-        this->exit_reason = 3;
-        on_menu_exit_triggered();
-    } else {
-        MessageBoxWarning(software_name, "Setcap for Tun mode failed.\n\n1. You may canceled the dialog.\n2. You may be using an incompatible environment like AppImage.");
-        if (QProcessEnvironment::systemEnvironment().contains("APPIMAGE")) {
-            MW_show_log("If you are using AppImage, it's impossible to start a Tun. Please use other package instead.");
+    auto n = QMessageBox::warning(GetMessageBoxParent(), software_name, tr("Please run Nekoray as admin"), QMessageBox::Yes | QMessageBox::No);
+    if (n == QMessageBox::Yes) {
+        auto ret = Linux_Pkexec_SetCapString(NekoGui::FindNekorayRealPath(), "cap_sys_admin=ep");
+        if (ret == 0) {
+            this->exit_reason = 3;
+            on_menu_exit_triggered();
         }
     }
 #endif
@@ -1755,10 +1753,10 @@ void MainWindow::RegisterHotkey(bool unregister) {}
 void MainWindow::HotkeyEvent(const QString &key) {}
 
 #endif
-bool MainWindow::StopVPNProcess(bool unconditional) {
-    if (unconditional || vpn_pid != 0) {
+bool MainWindow::StopVPNProcess() {
+    if (vpn_pid != 0) {
         bool ok;
-        core_process->processId();
+        vpn_pid = core_process->processId();
 #ifdef Q_OS_WIN
         auto ret = WinCommander::runProcessElevated("taskkill", {"/IM", "nekobox_core.exe",
                                                                  "/FI",
@@ -1770,18 +1768,12 @@ bool MainWindow::StopVPNProcess(bool unconditional) {
         p.start("osascript", {"-e", QString("do shell script \"%1\" with administrator privileges")
                                         .arg("pkill -2 -U 0 nekobox_core")});
 #else
-        if (unconditional) {
-            p.start("pkexec", {"killall", "-2", "nekobox_core"});
-        } else {
-            p.start("pkexec", {"pkill", "-2", "-P", Int2String(vpn_pid)});
-        }
+        p.start("pkexec", {"pkill", "-2", "-P", Int2String(vpn_pid)});
 #endif
         p.waitForFinished();
         ok = p.exitCode() == 0;
 #endif
-        if (!unconditional) {
-            ok ? vpn_pid = 0 : MessageBoxWarning(tr("Error"), tr("Failed to stop Tun process"));
-        }
+        ok ? vpn_pid = 0 : MessageBoxWarning(tr("Error"), tr("Failed to stop Tun process"));
         return ok;
     }
     return true;

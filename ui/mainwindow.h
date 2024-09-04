@@ -68,7 +68,7 @@ public:
 
     void RegisterHotkey(bool unregister);
 
-    bool StopVPNProcess(bool unconditional = false);
+    bool StopVPNProcess();
 
     void DownloadAssets(const QString &geoipUrl, const QString &geositeUrl);
 

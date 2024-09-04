@@ -394,6 +394,20 @@ namespace NekoGui {
         return fn;
     }
 
+    QString FindNekorayRealPath() {
+        auto fn = QApplication::applicationDirPath() + "/";
+#ifdef Q_OS_LINUX
+        fn += "launcher";
+#elif Q_OS_WIN
+        fn += "nekoray.exe"
+#else
+        fn += "nekoray"
+#endif
+        auto fi = QFileInfo(fn);
+        if (fi.isSymLink()) return fi.symLinkTarget();
+        return fn;
+    }
+
     short isAdminCache = -1;
 
     // IsAdmin 主要判断：有无权限启动 Tun
@@ -405,7 +419,7 @@ namespace NekoGui {
         admin = Windows_IsInAdmin();
 #else
 #ifdef Q_OS_LINUX
-        admin |= Linux_GetCapString(FindNekoBoxCoreRealPath()).contains("cap_net_admin");
+        admin |= Linux_GetCapString(FindNekorayRealPath()).contains("cap_sys_admin");
 #endif
         admin |= geteuid() == 0;
 #endif
