@@ -295,6 +295,27 @@ namespace NekoGui_fmt {
         return result;
     }
 
+    CoreObjOutboundBuildResult SSHBean::BuildCoreObjSingBox(){
+        CoreObjOutboundBuildResult result;
+
+        QJsonObject outbound{
+            {"type", "ssh"},
+            {"server", serverAddress},
+            {"server_port", serverPort},
+            {"user", user},
+            {"password", password},
+        };
+        if (!privateKey.isEmpty()) outbound["private_key"] = privateKey;
+        if (!privateKeyPath.isEmpty()) outbound["private_key_path"] = privateKeyPath;
+        if (!privateKeyPass.isEmpty()) outbound["private_key_passphrase"] = privateKeyPass;
+        if (!hostKey.isEmpty()) outbound["host_key"] = QListStr2QJsonArray(hostKey);
+        if (!hostKeyAlgs.isEmpty()) outbound["host_key_algorithms"] = QListStr2QJsonArray(hostKeyAlgs);
+        if (!clientVersion.isEmpty()) outbound["client_version"] = clientVersion;
+
+        result.outbound = outbound;
+        return result;
+    }
+
     CoreObjOutboundBuildResult CustomBean::BuildCoreObjSingBox() {
         CoreObjOutboundBuildResult result;
 

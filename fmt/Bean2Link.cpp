@@ -266,4 +266,31 @@ namespace NekoGui_fmt {
         return url.toString(QUrl::FullyEncoded);
     }
 
+    QString SSHBean::ToShareLink() {
+        QUrl url;
+        url.setScheme("ssh");
+        url.setHost(serverAddress);
+        url.setPort(serverPort);
+        if (!name.isEmpty()) url.setFragment(name);
+        QUrlQuery q;
+        q.addQueryItem("user", user);
+        q.addQueryItem("password", password);
+        q.addQueryItem("private_key", privateKey.toUtf8().toBase64(QByteArray::OmitTrailingEquals));
+        q.addQueryItem("private_key_path", privateKeyPath);
+        q.addQueryItem("private_key_passphrase", privateKeyPass);
+        QStringList b64HostKeys = {};
+        for (const auto& item: hostKey) {
+            b64HostKeys << item.toUtf8().toBase64(QByteArray::OmitTrailingEquals);
+        }
+        q.addQueryItem("host_key", b64HostKeys.join("-"));
+        QStringList b64HostKeyAlgs = {};
+        for (const auto& item: hostKeyAlgs) {
+            b64HostKeyAlgs << item.toUtf8().toBase64(QByteArray::OmitTrailingEquals);
+        }
+        q.addQueryItem("host_key_algorithms", b64HostKeyAlgs.join("-"));
+        q.addQueryItem("client_version", clientVersion);
+        url.setQuery(q);
+        return url.toString(QUrl::FullyEncoded);
+    }
+
 } // namespace NekoGui_fmt

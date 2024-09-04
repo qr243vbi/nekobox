@@ -8,4 +8,5 @@
 #include "NaiveBean.hpp"
 #include "QUICBean.hpp"
 #include "WireguardBean.h"
+#include "SSHBean.h"
 #include "CustomBean.hpp"
