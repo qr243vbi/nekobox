@@ -26,7 +26,6 @@ namespace NekoGui_fmt {
         // reality
         QString reality_pbk = "";
         QString reality_sid = "";
-        QString reality_spx = "";
 
         V2rayStreamSettings() : JsonStore() {
             _add(new configItem("net", &network, itemType::string));
@@ -46,7 +45,6 @@ namespace NekoGui_fmt {
             _add(new configItem("utls", &utlsFingerprint, itemType::string));
             _add(new configItem("pbk", &reality_pbk, itemType::string));
             _add(new configItem("sid", &reality_sid, itemType::string));
-            _add(new configItem("spx", &reality_spx, itemType::string));
         }
 
         void BuildStreamSettingsSingBox(QJsonObject *outbound);

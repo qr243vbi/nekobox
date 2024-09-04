@@ -61,11 +61,7 @@ namespace NekoGui_fmt {
         }
         stream->network = type;
 
-        if (proxy_type == proxy_Trojan) {
-            stream->security = GetQueryValue(query, "security", "tls").replace("reality", "tls").replace("none", "");
-        } else {
-            stream->security = GetQueryValue(query, "security", "").replace("reality", "tls").replace("none", "");
-        }
+        stream->security = GetQueryValue(query, "security", "").replace("none", "");
         auto sni1 = GetQueryValue(query, "sni");
         auto sni2 = GetQueryValue(query, "peer");
         if (!sni1.isEmpty()) stream->sni = sni1;
@@ -74,7 +70,6 @@ namespace NekoGui_fmt {
         if (!query.queryItemValue("allowInsecure").isEmpty()) stream->allow_insecure = true;
         stream->reality_pbk = GetQueryValue(query, "pbk", "");
         stream->reality_sid = GetQueryValue(query, "sid", "");
-        stream->reality_spx = GetQueryValue(query, "spx", "");
         stream->utlsFingerprint = GetQueryValue(query, "fp", "");
         if (stream->utlsFingerprint.isEmpty()) {
             stream->utlsFingerprint = NekoGui::dataStore->utlsFingerprint;
@@ -220,7 +215,6 @@ namespace NekoGui_fmt {
             if (!query.queryItemValue("allowInsecure").isEmpty()) stream->allow_insecure = true;
             stream->reality_pbk = GetQueryValue(query, "pbk", "");
             stream->reality_sid = GetQueryValue(query, "sid", "");
-            stream->reality_spx = GetQueryValue(query, "spx", "");
             stream->utlsFingerprint = GetQueryValue(query, "fp", "");
             if (stream->utlsFingerprint.isEmpty()) {
                 stream->utlsFingerprint = NekoGui::dataStore->utlsFingerprint;
