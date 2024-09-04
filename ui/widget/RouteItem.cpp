@@ -23,24 +23,11 @@ QString get_outbound_name(int id) {
     return "INVALID OUTBOUND";
 }
 
-int get_outbound_id(const QString& name) {
-    if (name == "proxy") return -1;
-    if (name == "direct") return -2;
-    if (name == "block") return -3;
-    if (name == "dns_out") return -4;
-    auto profiles = NekoGui::profileManager->profiles;
-    for (const auto& item: profiles) {
-        if (item.second->bean->name == name) return item.first;
-    }
-
-    return NekoGui::INVALID_ID;
-}
-
 QStringList get_all_outbounds() {
     QStringList res;
     auto profiles = NekoGui::profileManager->profiles;
     for (const auto &item: profiles) {
-        res.append(item.second->bean->name);
+        res.append(item.second->bean->DisplayName());
     }
 
     return res;
