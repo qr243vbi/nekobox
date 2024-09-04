@@ -63,7 +63,7 @@ namespace NekoGui_fmt {
             outbound->insert("transport", transport);
         }
 
-        // 对应字段 tls
+        // tls
         if (security == "tls") {
             QJsonObject tls{{"enabled", true}};
             if (allow_insecure || NekoGui::dataStore->skip_cert) tls["insecure"] = true;
@@ -75,19 +75,35 @@ namespace NekoGui_fmt {
                 tls["alpn"] = QListStr2QJsonArray(alpn.split(","));
             }
             QString fp = utlsFingerprint;
-            if (!reality_pbk.trimmed().isEmpty()) {
-                tls["reality"] = QJsonObject{
-                    {"enabled", true},
-                    {"public_key", reality_pbk},
-                    {"short_id", reality_sid.split(",")[0]},
-                };
-                if (fp.isEmpty()) fp = "random";
-            }
             if (!fp.isEmpty()) {
                 tls["utls"] = QJsonObject{
                     {"enabled", true},
                     {"fingerprint", fp},
                 };
+            }
+            outbound->insert("tls", tls);
+        } else if (security == "reality") {
+            QJsonObject tls{{"enabled", true}};
+            if (allow_insecure || NekoGui::dataStore->skip_cert) tls["insecure"] = true;
+            if (!sni.trimmed().isEmpty()) tls["server_name"] = sni;
+            if (!certificate.trimmed().isEmpty()) {
+                tls["certificate"] = certificate.trimmed();
+            }
+            if (!alpn.trimmed().isEmpty()) {
+                tls["alpn"] = QListStr2QJsonArray(alpn.split(","));
+            }
+            tls["reality"] = QJsonObject{
+                                {"enabled", true},
+                                {"public_key", reality_pbk},
+                                {"short_id", reality_sid.split(",")[0]},
+                            };
+            QString fp = utlsFingerprint;
+            if (fp.isEmpty()) fp = "random";
+            if (!fp.isEmpty()) {
+                tls["utls"] = QJsonObject{
+                        {"enabled", true},
+                        {"fingerprint", fp},
+                    };
             }
             outbound->insert("tls", tls);
         }
