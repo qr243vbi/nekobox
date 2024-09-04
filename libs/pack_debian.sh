@@ -32,7 +32,7 @@ Categories=Network;Application;
 END
 fi
 
-setcap cap_net_admin=ep /use/local/nekoray/nekobox_core
+setcap cap_sys_admin=ep /usr/local/nekoray/nekoray
 
 update-desktop-database
 EOF
