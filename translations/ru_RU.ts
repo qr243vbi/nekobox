@@ -271,6 +271,10 @@ For NekoBox, this rewrites the underlying(localhost) DNS in Tun Mode, normal mod
         <source>Download and Replace Geo files</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Socks + HTTP Proxy&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>DialogEditGroup</name>
@@ -537,6 +541,14 @@ For NekoBox, this rewrites the underlying(localhost) DNS in Tun Mode, normal mod
         <source>Reality SID</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>http</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>header type</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>DialogHotkey</name>
@@ -726,10 +738,6 @@ also if the connection cannot be established with the current address family (ip
         <translation>Вкл. IPv6 в Tun</translation>
     </message>
     <message>
-        <source>Hide Console</source>
-        <translation>Скрывать окно</translation>
-    </message>
-    <message>
         <source>Troubleshooting</source>
         <translation>Исправление проблем</translation>
     </message>
@@ -757,6 +765,10 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     </message>
     <message>
         <source>Enable GSO</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Auto Redirect</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1014,6 +1026,57 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <source>Generate UUID</source>
         <translation>Сгенерировать UUID</translation>
+    </message>
+</context>
+<context>
+    <name>EditWireguard</name>
+    <message>
+        <source>EditWireguard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reserved</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;comma seperated list of subnets&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Local Address</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pre Shared Key</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use System Interface</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enable GSO</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Public Key</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Private Key</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>1420</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>MTU</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Workers</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1448,10 +1511,6 @@ Split by line.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>If you have trouble starting VPN, you can force reset nekobox_core process here and then try starting the profile again.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Reset</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1493,6 +1552,46 @@ Split by line.</source>
     </message>
     <message>
         <source>Ctrl+Shift+G</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hidden menu</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Resolve Selected Domain</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove Invalid</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+Alt+I</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>If you have trouble starting VPN, you can force reset nekobox_core process here and then try starting the profile again. The error is %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source> Confirmation </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source> Remove %1 item(s) ? </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove %1 Unavailable item(s) ?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove %1 Invalid item(s) ?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Replace domain server addresses with their resolved IPs?</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
