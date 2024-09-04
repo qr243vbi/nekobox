@@ -25,6 +25,8 @@ cd ../..
 
 mv $DEPLOYMENT/public_res/* $DEST
 
+sudo add-apt-repository universe
+sudo apt install libfuse2
 wget https://github.com/linuxdeploy/linuxdeploy/releases/download/1-alpha-20240109-1/linuxdeploy-x86_64.AppImage
 wget https://github.com/linuxdeploy/linuxdeploy-plugin-qt/releases/download/1-alpha-20240109-1/linuxdeploy-plugin-qt-x86_64.AppImage
 chmod +x linuxdeploy-x86_64.AppImage linuxdeploy-plugin-qt-x86_64.AppImage
