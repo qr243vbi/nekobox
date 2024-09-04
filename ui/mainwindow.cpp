@@ -737,14 +737,14 @@ bool MainWindow::get_elevated_permissions() {
 }
 
 void MainWindow::neko_set_spmode_vpn(bool enable, bool save) {
-    if (enable != NekoGui::dataStore->spmode_vpn) {
-        if (enable) {
-            bool requestPermission = !NekoGui::IsAdmin();
-            if (requestPermission) {
-                if (!get_elevated_permissions()) {
-                    refresh_status();
-                    return;
-                }
+    if (enable == NekoGui::dataStore->spmode_vpn) return;
+
+    if (enable) {
+        bool requestPermission = !NekoGui::IsAdmin();
+        if (requestPermission) {
+            if (!get_elevated_permissions()) {
+                refresh_status();
+                return;
             }
         }
     }
