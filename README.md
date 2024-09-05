@@ -5,7 +5,7 @@ Qt based Desktop cross-platform GUI proxy configuration manager (backend: sing-b
 Supports Windows / Linux / MacOS out of the box now. Windows7 is also supported, but requires some additional changes to run.
 
 ### How to run on Windows7
-To run on Windows7, you will need to utilize [VxKex](https://github.com/vxiiduu/VxKex/). Some of Tun mode stacks might not work as well, please fallback to gVisor stack if you encountered this problem.
+To run on Windows7, you will need to utilize [VxKex](https://github.com/i486/VxKex). Some of Tun mode stacks might not work as well, please fallback to gVisor stack if you encountered this problem.
 
 ### Compatiblity issues on Linux Distros
 Since every Distro of Linux has its own set of libraries, you might need to manually install some packages in order for nekoray to run.
