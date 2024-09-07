@@ -181,7 +181,7 @@ For NekoBox, this rewrites the underlying(localhost) DNS in Tun Mode, normal mod
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Might Improve Ping and Performance&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;可能改善延迟和性能&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Disable Traffic Stats</source>
@@ -225,23 +225,23 @@ For NekoBox, this rewrites the underlying(localhost) DNS in Tun Mode, normal mod
     </message>
     <message>
         <source>Listen Port</source>
-        <translation type="unfinished"></translation>
+        <translation>监听端口</translation>
     </message>
     <message>
         <source>Assets</source>
-        <translation type="unfinished"></translation>
+        <translation>资源</translation>
     </message>
     <message>
         <source>Geo Assets and Rule-sets</source>
-        <translation type="unfinished"></translation>
+        <translation>Geo资源和规则集</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Remove the currently generated rule-sets so that they can be regenerated&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation> <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;移除当前生成的规则集，以便重新生成&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation></translation>
     </message>
     <message>
         <source>Remove Generated Rule-sets</source>
-        <translation type="unfinished"></translation>
+        <translation>移除已生成的规则集</translation>
     </message>
     <message>
         <source>GeoIP URL</source>
@@ -249,11 +249,11 @@ For NekoBox, this rewrites the underlying(localhost) DNS in Tun Mode, normal mod
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Sets the URL to the latest sing-geoip release URL&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;设置为最新 sing-geoip 发布的 URL&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Use Sing-Geoip</source>
-        <translation type="unfinished"></translation>
+        <translation>使用 Sing-Geoip</translation>
     </message>
     <message>
         <source>GeoSite URL</source>
@@ -261,15 +261,15 @@ For NekoBox, this rewrites the underlying(localhost) DNS in Tun Mode, normal mod
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Sets the URL to the latest sing-geosite release URL&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;设置为最新 sing-geosite 发布的 URL&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Use Sing-Geosite</source>
-        <translation type="unfinished"></translation>
+        <translation>使用 Sing-Geosite</translation>
     </message>
     <message>
         <source>Download and Replace Geo files</source>
-        <translation type="unfinished"></translation>
+        <translation>下载并替换geo文件</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Socks + HTTP Proxy&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
@@ -503,7 +503,7 @@ For NekoBox, this rewrites the underlying(localhost) DNS in Tun Mode, normal mod
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Overrides mux to On&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;将 mux 设置为开启&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Enable TCP Brutal</source>
@@ -511,7 +511,7 @@ For NekoBox, this rewrites the underlying(localhost) DNS in Tun Mode, normal mod
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Server to Client TCP Brutal Speed&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;服务器到客户端的 TCP 极致速度&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>TCP Brutal Speed</source>
@@ -531,7 +531,7 @@ For NekoBox, this rewrites the underlying(localhost) DNS in Tun Mode, normal mod
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Method of http request, will be converted to uppercase&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;HTTP 请求的方法，将被转换为大写字母&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Method</source>
@@ -680,7 +680,7 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
     </message>
     <message>
         <source>Routing Profile</source>
-        <translation type="unfinished"></translation>
+        <translation>路由配置</translation>
     </message>
     <message>
         <source>The outbound tag to use when the request is not handled by any rule</source>
@@ -696,7 +696,7 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
     </message>
     <message>
         <source>Routing Profiles</source>
-        <translation type="unfinished"></translation>
+        <translation>路由配置文件</translation>
     </message>
     <message>
         <source>New</source>
@@ -714,19 +714,21 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
         <source>outbound.domain_strategy
 when set, domain destinations are resolved to IP before connect,
 also if the connection cannot be established with the current address family (ipv4, ipv6), a fallback connection is created shortly after, with the other address family.</source>
-        <translation type="unfinished"></translation>
+        <translation>outbound.domain_strategy
+设置后，域名目的地在连接前解析为 IP。如果无法通过当前地址（IPv4、IPv6）建立连接，则会在稍后使用另一地址创建备用连接。</translation>
+    </message>
     </message>
     <message>
         <source>Outbound Domain Strategy</source>
-        <translation type="unfinished"></translation>
+        <translation>出站域名策略</translation>
     </message>
     <message>
         <source>Inbound Domain Strategy</source>
-        <translation type="unfinished"></translation>
+        <translation>入站域名策略</translation>
     </message>
     <message>
         <source>Enable FakeIP</source>
-        <translation type="unfinished"></translation>
+        <translation>启用FakeIP</translation>
     </message>
 </context>
 <context>
@@ -771,7 +773,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     </message>
     <message>
         <source>Auto Redirect</source>
-        <translation type="unfinished"></translation>
+        <translation>自动重定向</translation>
     </message>
 </context>
 <context>
@@ -1034,39 +1036,39 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <name>EditWireguard</name>
     <message>
         <source>EditWireguard</source>
-        <translation type="unfinished"></translation>
+        <translation>编辑 Wireguard</translation>
     </message>
     <message>
         <source>Reserved</source>
-        <translation type="unfinished"></translation>
+        <translation>保留</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;comma seperated list of subnets&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;用逗号分隔的子网列表&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Local Address</source>
-        <translation type="unfinished"></translation>
+        <translation>本地地址</translation>
     </message>
     <message>
         <source>Pre Shared Key</source>
-        <translation type="unfinished"></translation>
+        <translation>预共享密钥</translation>
     </message>
     <message>
         <source>Use System Interface</source>
-        <translation type="unfinished"></translation>
+        <translation>使用系统接口</translation>
     </message>
     <message>
         <source>Enable GSO</source>
-        <translation type="unfinished">启用 GSO</translation>
+        <translation>启用 GSO</translation>
     </message>
     <message>
         <source>Public Key</source>
-        <translation type="unfinished"></translation>
+        <translation>公钥</translation>
     </message>
     <message>
         <source>Private Key</source>
-        <translation type="unfinished"></translation>
+        <translation>私钥</translation>
     </message>
     <message>
         <source>1420</source>
@@ -1078,7 +1080,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     </message>
     <message>
         <source>Workers</source>
-        <translation type="unfinished"></translation>
+        <translation>工作线程</translation>
     </message>
 </context>
 <context>
@@ -1124,47 +1126,47 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <name>JsonEditor</name>
     <message>
         <source>JSON Editor</source>
-        <translation></translation>
+        <translation>JSON 编辑器</translation>
     </message>
     <message>
         <source>Format JSON</source>
-        <translation></translation>
+        <translation>格式化 JSON</translation>
     </message>
     <message>
         <source>Remove All Comments</source>
-        <translation></translation>
+        <translation>移除所有注释</translation>
     </message>
     <message>
         <source>Json Editor</source>
-        <translation></translation>
+        <translation>Json 编辑器</translation>
     </message>
     <message>
         <source>Structure Preview</source>
-        <translation></translation>
+        <translation>结构预览</translation>
     </message>
     <message>
         <source>OK</source>
-        <translation></translation>
+        <translation>确定</translation>
     </message>
     <message>
         <source>Json Contains Syntax Errors</source>
-        <translation></translation>
+        <translation>JSON 包含语法错误</translation>
     </message>
     <message>
         <source>Original Json may contain syntax errors. Json tree is disabled.</source>
-        <translation></translation>
+        <translation>原始 JSON 可能包含语法错误。JSON 树已禁用。</translation>
     </message>
     <message>
         <source>You must correct these errors before continuing.</source>
-        <translation></translation>
+        <translation>在继续之前，您必须修正这些错误。</translation>
     </message>
     <message>
         <source>Syntax Errors</source>
-        <translation></translation>
+        <translation>语法错误</translation>
     </message>
     <message>
         <source>Please fix the JSON errors or remove the comments before continue</source>
-        <translation></translation>
+        <translation>请修正 JSON 错误或移除注释后再继续</translation>
     </message>
 </context>
 <context>
@@ -1509,39 +1511,39 @@ Split by line.</source>
     </message>
     <message>
         <source>Tun device misbehaving</source>
-        <translation type="unfinished"></translation>
+        <translation>Tun 设备运行异常</translation>
     </message>
     <message>
         <source>Reset</source>
-        <translation type="unfinished">重置</translation>
+        <translation>重置</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation type="unfinished">取消</translation>
+        <translation>取消</translation>
     </message>
     <message>
         <source>Please run Nekoray as admin</source>
-        <translation type="unfinished"></translation>
+        <translation>请以管理员身份运行 Nekoray</translation>
     </message>
     <message>
         <source>Add new Group</source>
-        <translation type="unfinished"></translation>
+        <translation>添加新组</translation>
     </message>
     <message>
         <source>Delete selected Group</source>
-        <translation type="unfinished"></translation>
+        <translation>删除选定组</translation>
     </message>
     <message>
         <source>Edit selected Group</source>
-        <translation type="unfinished"></translation>
+        <translation>编辑选定组</translation>
     </message>
     <message>
         <source>Remove %1?</source>
-        <translation type="unfinished">删除 %1 ?</translation>
+        <translation>删除 %1 ?</translation>
     </message>
     <message>
         <source>Url Test Selected</source>
-        <translation type="unfinished"></translation>
+        <translation>选择的 URL 测试</translation>
     </message>
     <message>
         <source>Ctrl+Shift+S</source>
@@ -1549,7 +1551,7 @@ Split by line.</source>
     </message>
     <message>
         <source>Url Test Group</source>
-        <translation type="unfinished"></translation>
+        <translation>URL 测试组</translation>
     </message>
     <message>
         <source>Ctrl+Shift+G</source>
@@ -1557,15 +1559,15 @@ Split by line.</source>
     </message>
     <message>
         <source>Hidden menu</source>
-        <translation type="unfinished"></translation>
+        <translation>隐藏菜单</translation>
     </message>
     <message>
         <source>Resolve Selected Domain</source>
-        <translation type="unfinished"></translation>
+        <translation>解析选定域名</translation>
     </message>
     <message>
         <source>Remove Invalid</source>
-        <translation type="unfinished"></translation>
+        <translation>移除无效项</translation>
     </message>
     <message>
         <source>Ctrl+Alt+I</source>
@@ -1573,27 +1575,27 @@ Split by line.</source>
     </message>
     <message>
         <source>If you have trouble starting VPN, you can force reset nekobox_core process here and then try starting the profile again. The error is %1</source>
-        <translation type="unfinished"></translation>
+        <translation>如果启动 VPN 时遇到问题，您可以在此强制重置 nekobox_core 进程，然后再次尝试启动配置文件。错误是 %1</translation>
     </message>
     <message>
         <source> Confirmation </source>
-        <translation type="unfinished"></translation>
+        <translation>确认</translation>
     </message>
     <message>
         <source> Remove %1 item(s) ? </source>
-        <translation type="unfinished"></translation>
+        <translation>移除 %1 项？</translation>
     </message>
     <message>
         <source>Remove %1 Unavailable item(s) ?</source>
-        <translation type="unfinished"></translation>
+        <translation>移除 %1 不可用的项？</translation>
     </message>
     <message>
         <source>Remove %1 Invalid item(s) ?</source>
-        <translation type="unfinished"></translation>
+        <translation>移除 %1 无效的项？</translation>
     </message>
     <message>
         <source>Replace domain server addresses with their resolved IPs?</source>
-        <translation type="unfinished"></translation>
+        <translation>用解析后的 IP 地址替换域名服务器地址？</translation>
     </message>
 </context>
 <context>
@@ -1754,7 +1756,7 @@ Release note:
     <name>RouteItem</name>
     <message>
         <source>Route Profile</source>
-        <translation type="unfinished"></translation>
+        <translation>路由配置</translation>
     </message>
     <message>
         <source>Name</source>
@@ -1794,11 +1796,11 @@ Release note:
     </message>
     <message>
         <source>Name_Placeholder</source>
-        <translation type="unfinished"></translation>
+        <translation>名称_占位符</translation>
     </message>
     <message>
         <source>Import JSON</source>
-        <translation type="unfinished"></translation>
+        <translation>导入json</translation>
     </message>
 </context>
 </TS>
