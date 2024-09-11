@@ -486,7 +486,7 @@ namespace NekoGui {
             inboundObj["auto_route"] = true;
             inboundObj["endpoint_independent_nat"] = true;
             inboundObj["mtu"] = dataStore->vpn_mtu;
-            inboundObj["stack"] = Preset::SingBox::VpnImplementation.value(dataStore->vpn_implementation);
+            inboundObj["stack"] = dataStore->vpn_implementation;
             inboundObj["strict_route"] = dataStore->vpn_strict_route;
             inboundObj["gso"] = dataStore->enable_gso;
             inboundObj["auto_redirect"] = dataStore->auto_redirect;

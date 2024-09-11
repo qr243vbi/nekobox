@@ -123,7 +123,7 @@ namespace NekoGui {
         bool fake_dns = false;
         bool enable_gso = false;
         bool auto_redirect = false;
-        int vpn_implementation = 0;
+        QString vpn_implementation;
         int vpn_mtu = 9000;
         bool vpn_ipv6 = false;
         bool vpn_strict_route = false;

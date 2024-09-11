@@ -38,21 +38,9 @@
       </item>
       <item>
        <widget class="QComboBox" name="vpn_implementation">
-        <item>
-         <property name="text">
-          <string notr="true">Mixed</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string notr="true">gVisor</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string notr="true">System</string>
-         </property>
-        </item>
+        <property name="editable">
+         <bool>false</bool>
+        </property>
        </widget>
       </item>
       <item>
