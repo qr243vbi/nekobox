@@ -1,6 +1,7 @@
 #include "dialog_vpn_settings.h"
 #include "ui_dialog_vpn_settings.h"
 
+#include "fmt/Preset.hpp"
 #include "main/GuiUtils.hpp"
 #include "main/NekoGui.hpp"
 #include "ui/mainwindow_interface.h"
@@ -11,7 +12,8 @@ DialogVPNSettings::DialogVPNSettings(QWidget *parent) : QDialog(parent), ui(new 
     ui->setupUi(this);
     ADD_ASTERISK(this);
 
-    ui->vpn_implementation->setCurrentIndex(NekoGui::dataStore->vpn_implementation);
+    ui->vpn_implementation->addItems(Preset::SingBox::VpnImplementation);
+    ui->vpn_implementation->setCurrentText(NekoGui::dataStore->vpn_implementation);
     ui->vpn_mtu->setCurrentText(Int2String(NekoGui::dataStore->vpn_mtu));
     ui->vpn_ipv6->setChecked(NekoGui::dataStore->vpn_ipv6);
     ui->gso_enable->setChecked(NekoGui::dataStore->enable_gso);
@@ -32,7 +34,7 @@ void DialogVPNSettings::accept() {
     //
     auto mtu = ui->vpn_mtu->currentText().toInt();
     if (mtu > 10000 || mtu < 1000) mtu = 9000;
-    NekoGui::dataStore->vpn_implementation = ui->vpn_implementation->currentIndex();
+    NekoGui::dataStore->vpn_implementation = ui->vpn_implementation->currentText();
     NekoGui::dataStore->vpn_mtu = mtu;
     NekoGui::dataStore->vpn_ipv6 = ui->vpn_ipv6->isChecked();
     NekoGui::dataStore->vpn_strict_route = ui->strict_route->isChecked();
