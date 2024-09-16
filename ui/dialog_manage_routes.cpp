@@ -159,6 +159,17 @@ void DialogManageRoutes::on_new_route_clicked() {
     });
 }
 
+void DialogManageRoutes::on_clone_route_clicked() {
+    auto idx = ui->route_profiles->currentRow();
+    if (idx < 0) return;
+
+    auto chainCopy = std::make_shared<NekoGui::RoutingChain>(*chainList[idx]);
+    chainCopy->name = chainCopy->name + " clone";
+    chainCopy->id = -1;
+    chainList.append(chainCopy);
+    reloadProfileItems();
+}
+
 void DialogManageRoutes::on_edit_route_clicked() {
     auto idx = ui->route_profiles->currentRow();
     if (idx < 0) return;

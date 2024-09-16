@@ -415,6 +415,13 @@ For more information, see the document &quot;Configuration/DNS&quot;.</string>
               </widget>
              </item>
              <item>
+              <widget class="QPushButton" name="clone_route">
+               <property name="text">
+                <string>Clone</string>
+               </property>
+              </widget>
+             </item>
+             <item>
               <widget class="QPushButton" name="edit_route">
                <property name="text">
                 <string>Edit</string>
@@ -449,7 +456,7 @@ For more information, see the document &quot;Configuration/DNS&quot;.</string>
         </sizepolicy>
        </property>
        <property name="standardButtons">
-        <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+        <set>QDialogButtonBox::StandardButton::Cancel|QDialogButtonBox::StandardButton::Ok</set>
        </property>
       </widget>
      </item>

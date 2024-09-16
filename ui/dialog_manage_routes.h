@@ -40,6 +40,8 @@ public slots:
 
     void on_new_route_clicked();
 
+    void on_clone_route_clicked();
+
     void on_edit_route_clicked();
 
     void on_delete_route_clicked();
