@@ -6,8 +6,8 @@
 #include "db/traffic/TrafficLooper.hpp"
 #include "rpc/gRPC.h"
 #include "ui/widget/MessageBoxTimer.h"
+#include "3rdparty/qv2ray/v2/proxy/QvProxyConfigurator.hpp"
 
-#include <QTimer>
 #include <QInputDialog>
 #include <QPushButton>
 #include <QDesktopServices>
@@ -343,6 +343,7 @@ void MainWindow::neko_start(int _id) {
 
 void MainWindow::neko_set_spmode_system_proxy(bool enable, bool save) {
     if (enable != NekoGui::dataStore->spmode_system_proxy) {
+#ifndef Q_OS_LINUX
         bool ok;
         auto error = defaultClient->SetSystemProxy(&ok, enable);
         if (!ok) {
@@ -351,6 +352,14 @@ void MainWindow::neko_set_spmode_system_proxy(bool enable, bool save) {
             refresh_status();
             return;
         }
+#else
+        if (enable) {
+            auto socks_port = NekoGui::dataStore->inbound_socks_port;
+            SetSystemProxy(socks_port, socks_port);
+        } else {
+            ClearSystemProxy();
+        }
+#endif
     }
 
     if (save) {

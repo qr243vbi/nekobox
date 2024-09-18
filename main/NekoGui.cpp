@@ -417,7 +417,7 @@ namespace NekoGui {
         admin = Windows_IsInAdmin();
 #else
 #ifdef Q_OS_LINUX
-        admin |= Linux_GetCapString(FindNekorayRealPath()).contains("cap_sys_admin");
+        admin |= Linux_GetCapString(FindNekoBoxCoreRealPath()).contains("cap_sys_admin");
 #endif
         admin |= geteuid() == 0;
 #endif
