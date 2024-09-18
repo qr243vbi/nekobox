@@ -88,6 +88,7 @@ set(PROJECT_SOURCES
         3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.cpp
         3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.hpp
         3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.ui
+        3rdparty/qv2ray/v2/proxy/QvProxyConfigurator.cpp
 
         rpc/gRPC.cpp
 

@@ -714,7 +714,7 @@ bool MainWindow::get_elevated_permissions() {
     }
     auto n = QMessageBox::warning(GetMessageBoxParent(), software_name, tr("Please run Nekoray as admin"), QMessageBox::Yes | QMessageBox::No);
     if (n == QMessageBox::Yes) {
-        auto ret = Linux_Pkexec_SetCapString(NekoGui::FindNekorayRealPath(), "cap_sys_admin=ep");
+        auto ret = Linux_Pkexec_SetCapString(NekoGui::FindNekoBoxCoreRealPath(), "cap_sys_admin=ep");
         if (ret == 0) {
             this->exit_reason = 3;
             on_menu_exit_triggered();
