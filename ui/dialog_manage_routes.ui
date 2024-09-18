@@ -205,6 +205,11 @@ For more information, see the document &quot;Configuration/DNS&quot;.</string>
               </property>
               <item>
                <property name="text">
+                <string>tls://8.8.8.8</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
                 <string notr="true">8.8.8.8</string>
                </property>
               </item>
