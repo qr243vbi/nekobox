@@ -56,8 +56,12 @@ namespace NekoGui_sys {
 #ifdef Q_OS_LINUX
         if (NekoGui::IsAdmin()) QProcess::startCommand("sudo " + program + " " + arguments.join(" "));
         else QProcess::start(program, arguments);
-#else
+#endif
+#ifdef Q_OS_WIN
         QProcess::start(program, arguments);
+#endif
+#ifdef Q_OS_MACOS
+        QProcess::startCommand("sudo " + program + " " + arguments.join(" "));
 #endif
     }
 
