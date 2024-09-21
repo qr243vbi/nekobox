@@ -747,8 +747,7 @@ bool MainWindow::get_elevated_permissions() {
 #endif
 
 #ifdef Q_OS_MACOS
-    MessageBoxWarning("dummy message", "Bypassing restriction for now");
-    return true;
+    MessageBoxWarning("Need administrator privilege", "Enabling TUN mode requires elevated privileges, please run Nekoray as root.");
 #endif
 
     return false;
