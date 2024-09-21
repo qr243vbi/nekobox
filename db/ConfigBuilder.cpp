@@ -531,7 +531,7 @@ namespace NekoGui {
             {"tag", "dns-out"},
         };
 
-        if (dataStore->enable_redirect) {
+        if (dataStore->enable_redirect && !status->forTest) {
             status->inbounds.prepend(QJsonObject{
                 {"tag", "hijack"},
                 {"type", "direct"},
@@ -603,7 +603,7 @@ namespace NekoGui {
         QJsonArray hijackDomainRegex;
         QJsonArray hijackGeoAssets;
 
-        if (dataStore->enable_dns_server) {
+        if (dataStore->enable_dns_server && !status->forTest) {
             for (const auto& rule : dataStore->dns_server_rules) {
                 if (rule.startsWith("ruleset:")) {
                     hijackGeoAssets << rule.mid(8);
@@ -681,7 +681,7 @@ namespace NekoGui {
         };
 
         // Hijack
-        if (dataStore->enable_dns_server) {
+        if (dataStore->enable_dns_server && !status->forTest) {
             dnsServers += QJsonObject {
                 {"tag", "dns-hijack"},
                 {"address", "hijack://10.10.10.10"},
