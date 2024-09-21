@@ -581,6 +581,9 @@ void MainWindow::dialog_message_impl(const QString &sender, const QString &info)
                 if (NekoGui::dataStore->remember_spmode.contains("vpn") || NekoGui::dataStore->flag_restart_tun_on) {
                     neko_set_spmode_vpn(true, false);
                 }
+                if (NekoGui::dataStore->flag_dns_set) {
+                    set_system_dns(true);
+                }
             }
             neko_start(info.split(",")[1].toInt());
             if (NekoGui::dataStore->system_dns_set) {
@@ -683,7 +686,7 @@ void MainWindow::on_menu_exit_triggered() {
     if (exit_reason == 1) {
         QDir::setCurrent(QApplication::applicationDirPath());
         QProcess::startDetached("./updater", QStringList{});
-    } else if (exit_reason == 2 || exit_reason == 3) {
+    } else if (exit_reason == 2 || exit_reason == 3 || exit_reason == 4) {
         QDir::setCurrent(QApplication::applicationDirPath());
 
         auto arguments = NekoGui::dataStore->argv;
@@ -697,9 +700,9 @@ void MainWindow::on_menu_exit_triggered() {
         if (isLauncher) arguments.prepend("--");
         auto program = isLauncher ? "./launcher" : QApplication::applicationFilePath();
 
-        if (exit_reason == 3) {
-            // Tun restart as admin
-            arguments << "-flag_restart_tun_on";
+        if (exit_reason == 3 || exit_reason == 4) {
+            if (exit_reason == 3) arguments << "-flag_restart_tun_on";
+            if (exit_reason == 4) arguments << "-flag_restart_dns_set";
 #ifdef Q_OS_WIN
             WinCommander::runProcessElevated(program, arguments, "", WinCommander::SW_NORMAL, false);
 #else
@@ -722,7 +725,7 @@ void MainWindow::neko_toggle_system_proxy() {
     }
 }
 
-bool MainWindow::get_elevated_permissions() {
+bool MainWindow::get_elevated_permissions(int reason) {
     if (NekoGui::IsAdmin()) return true;
 #ifdef Q_OS_LINUX
     if (!Linux_HavePkexec()) {
@@ -733,7 +736,7 @@ bool MainWindow::get_elevated_permissions() {
     if (n == QMessageBox::Yes) {
         auto ret = Linux_Pkexec_SetCapString(NekoGui::FindNekoBoxCoreRealPath(), "cap_sys_admin=ep");
         if (ret == 0) {
-            this->exit_reason = 3;
+            this->exit_reason = reason;
             on_menu_exit_triggered();
         }
     }
@@ -741,7 +744,7 @@ bool MainWindow::get_elevated_permissions() {
 #ifdef Q_OS_WIN
     auto n = QMessageBox::warning(GetMessageBoxParent(), software_name, tr("Please run Nekoray as admin"), QMessageBox::Yes | QMessageBox::No);
     if (n == QMessageBox::Yes) {
-        this->exit_reason = 3;
+        this->exit_reason = reason;
         on_menu_exit_triggered();
     }
 #endif

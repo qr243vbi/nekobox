@@ -208,6 +208,13 @@ void MainWindow::stop_core_daemon() {
 }
 
 bool MainWindow::set_system_dns(bool set, bool save_set) {
+    if (!NekoGui::dataStore->enable_dns_server) {
+        MW_show_log("You need to enable hijack DNS server first");
+        return false;
+    }
+    if (!get_elevated_permissions(4)) {
+        return false;
+    }
     bool rpcOK;
     QStringList servers;
     bool is_dhcp = false;
@@ -242,6 +249,14 @@ bool MainWindow::set_system_dns(bool set, bool save_set) {
 
 void MainWindow::neko_start(int _id) {
     if (NekoGui::dataStore->prepare_exit) return;
+#ifdef Q_OS_LINUX
+    if (NekoGui::dataStore->enable_dns_server && NekoGui::dataStore->dns_server_listen_port <= 1024) {
+        if (!get_elevated_permissions()) {
+            MW_show_log(QString("Failed to get admin access, cannot listen on port %1 without it").arg(NekoGui::dataStore->dns_server_listen_port));
+            return;
+        }
+    }
+#endif
 
     auto ents = get_now_selected_list();
     auto ent = (_id < 0 && !ents.isEmpty()) ? ents.first() : NekoGui::profileManager->GetProfile(_id);
