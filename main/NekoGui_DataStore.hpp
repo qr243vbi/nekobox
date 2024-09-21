@@ -8,7 +8,7 @@ namespace NekoGui {
         QString def_outbound = "proxy";
 
         // DNS
-        QString remote_dns = "8.8.8.8";
+        QString remote_dns = "tls://8.8.8.8";
         QString remote_dns_strategy = "";
         QString direct_dns = "localhost";
         QString direct_dns_strategy = "";
@@ -74,11 +74,11 @@ namespace NekoGui {
         // Misc
         QString log_level = "warning";
         QString test_latency_url = "http://cp.cloudflare.com/";
-        int test_concurrent = 5;
-        int traffic_loop_interval = 1000;
+        int test_concurrent = 10;
+        int traffic_loop_interval = 500;
         bool disable_traffic_stats = false;
         int current_group = 0; // group id
-        QString mux_protocol = "";
+        QString mux_protocol = "smux";
         bool mux_padding = false;
         int mux_concurrency = 8;
         bool mux_default_on = false;
@@ -123,7 +123,7 @@ namespace NekoGui {
         bool fake_dns = false;
         bool enable_gso = false;
         bool auto_redirect = false;
-        QString vpn_implementation;
+        QString vpn_implementation = "gvisor";
         int vpn_mtu = 9000;
         bool vpn_ipv6 = false;
         bool vpn_strict_route = false;
