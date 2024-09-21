@@ -1774,9 +1774,9 @@ void MainWindow::HotkeyEvent(const QString &key) {}
 
 #endif
 bool MainWindow::StopVPNProcess() {
+    vpn_pid = core_process->processId();
     if (vpn_pid != 0) {
         bool ok;
-        vpn_pid = core_process->processId();
 #ifdef Q_OS_WIN
         auto ret = WinCommander::runProcessElevated("taskkill", {"/IM", "nekobox_core.exe",
                                                                  "/FI",

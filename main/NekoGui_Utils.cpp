@@ -275,6 +275,17 @@ void runOnNewThread(const std::function<void()> &callback) {
     createQThread(callback)->start();
 }
 
+void runOnThread(const std::function<void()> &callback, QThread *thread) {
+    auto *timer = new QTimer();
+    timer->moveToThread(thread);
+    timer->setSingleShot(true);
+    QObject::connect(timer, &QTimer::timeout, [=]() {
+        callback();
+        timer->deleteLater();
+    });
+    QMetaObject::invokeMethod(timer, "start", Qt::QueuedConnection, Q_ARG(int, 0));
+}
+
 void setTimeout(const std::function<void()> &callback, QObject *obj, int timeout) {
     auto t = new QTimer;
     QObject::connect(t, &QTimer::timeout, obj, [=] {
