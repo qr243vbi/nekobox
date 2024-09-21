@@ -327,6 +327,8 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     connect(ui->system_dns, &QCheckBox::clicked, this, [=](bool checked) {
         if (const auto ok = set_system_dns(checked); !ok) {
             ui->system_dns->setChecked(!checked);
+        } else {
+            refresh_status();
         }
     });
     // only windows is supported for now
@@ -852,6 +854,8 @@ void MainWindow::refresh_status(const QString &traffic_update) {
     if (running != nullptr) {
         if (NekoGui::dataStore->spmode_vpn) {
             icon_status_new = Icon::VPN;
+        } else if (NekoGui::dataStore->system_dns_set) {
+            icon_status_new = Icon::DNS;
         } else if (NekoGui::dataStore->spmode_system_proxy) {
             icon_status_new = Icon::SYSTEM_PROXY;
         } else {

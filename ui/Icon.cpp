@@ -34,6 +34,8 @@ QPixmap Icon::GetTrayIcon(Icon::TrayIconStatus status) {
         p.setBrush(QBrush(Qt::blue));
     } else if (status == TrayIconStatus::VPN) {
         p.setBrush(QBrush(Qt::red));
+    } else if (status == TrayIconStatus::DNS) {
+        p.setBrush(QBrush(Qt::yellow));
     }
     p.drawRoundedRect(
         QRect(side - d - margin,
