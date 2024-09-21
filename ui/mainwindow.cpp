@@ -329,6 +329,10 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
             ui->system_dns->setChecked(!checked);
         }
     });
+    // only windows is supported for now
+#ifndef Q_OS_WIN
+    ui->system_dns->hide();
+#endif
 
     connect(ui->menu_server, &QMenu::aboutToShow, this, [=](){
         if (!speedtestRunning.tryLock()) {
