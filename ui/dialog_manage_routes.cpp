@@ -141,10 +141,10 @@ DialogManageRoutes::DialogManageRoutes(QWidget *parent) : QDialog(parent), ui(ne
     auto geoSiteList = NekoGui_rpc::defaultClient->GetGeoList(&ok, NekoGui_rpc::GeoRuleSetType::site);
     QStringList ruleItems = {"domain:", "suffix:", "regex:"};
     for (const auto& geoIP : geoIpList) {
-        ruleItems.append("rule_set:"+geoIP);
+        ruleItems.append("ruleset:"+geoIP);
     }
     for (const auto& geoSite: geoSiteList) {
-        ruleItems.append("rule_set:"+geoSite);
+        ruleItems.append("ruleset:"+geoSite);
     }
     rule_editor = new AutoCompleteTextEdit("", ruleItems, this);
     ui->hijack_box->layout()->replaceWidget(ui->dnshijack_rules, rule_editor);
@@ -185,7 +185,7 @@ void DialogManageRoutes::accept() {
         MessageBoxInfo("Invalid settings", "Routing profile cannot be empty");
         return;
     }
-    if (!validate_dns_rules(ui->dnshijack_rules->toPlainText())) {
+    if (!validate_dns_rules(rule_editor->toPlainText())) {
         MessageBoxInfo("Invalid settings", "DNS Rules are not valid");
         return;
     }
