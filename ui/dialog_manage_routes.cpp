@@ -149,6 +149,7 @@ DialogManageRoutes::DialogManageRoutes(QWidget *parent) : QDialog(parent), ui(ne
     rule_editor = new AutoCompleteTextEdit("", ruleItems, this);
     ui->hijack_box->layout()->replaceWidget(ui->dnshijack_rules, rule_editor);
     rule_editor->setPlainText(NekoGui::dataStore->dns_server_rules.join("\n"));
+    ui->dnshijack_rules->hide();
 #ifndef Q_OS_LINUX
     ui->dnshijack_listenport->setVisible(false);
     ui->dnshijack_listenport_l->setVisible(false);
