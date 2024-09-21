@@ -8,8 +8,8 @@ github.com/Mahdi-zarei/sing-box v1.3.5-0.20240920073315-bc73938972f4 h1:8joOa6Ie
 github.com/Mahdi-zarei/sing-box v1.3.5-0.20240920073315-bc73938972f4/go.mod h1:MSnb8j3iBcjvuf/w7SfApa1WgBC6XecxhBeLt1vzDJk=
 github.com/Mahdi-zarei/sing-box-extra v0.0.0-20240921073617-57308c84a31e h1:LPp4Da8Q70c4x6wfy6ySVEHVcxvsLqigWp6sUUTql9A=
 github.com/Mahdi-zarei/sing-box-extra v0.0.0-20240921073617-57308c84a31e/go.mod h1:5/Y7uNbJpofpogdnG5Ao/Yz+bjnA8cOU1nInfA+tV4s=
-github.com/Mahdi-zarei/sing-dns v0.3.0-beta.14.0.20240918175353-709eafff43d3 h1:1YoZLwSYHOZ9J9DftJrI/FADEjv29kPptn5g34A3vC4=
-github.com/Mahdi-zarei/sing-dns v0.3.0-beta.14.0.20240918175353-709eafff43d3/go.mod h1:rscgSr5ixOPk8XM9ZMLuMXCyldEQ1nLvdl0nfv+lp00=
+github.com/Mahdi-zarei/sing-dns v0.3.0-beta.14.0.20240920072724-5aaefdab8381 h1:6FonT1vQoLFyUTXLY/Xe/tfOVW/TA2dr8rdsUSc7OvE=
+github.com/Mahdi-zarei/sing-dns v0.3.0-beta.14.0.20240920072724-5aaefdab8381/go.mod h1:rscgSr5ixOPk8XM9ZMLuMXCyldEQ1nLvdl0nfv+lp00=
 github.com/ajg/form v1.5.1 h1:t9c7v8JUKu/XxOGBU0yjNpaMloxGEJhUkqFRq0ibGeU=
 github.com/ajg/form v1.5.1/go.mod h1:uL1WgH+h2mgNtvBq0339dVnzXdBETtL2LeUXaIv25UY=
 github.com/andybalholm/brotli v1.0.6 h1:Yf9fFpf49Zrxb9NlQaluyE92/+X7UVHlhMNJN2sxfOI=
