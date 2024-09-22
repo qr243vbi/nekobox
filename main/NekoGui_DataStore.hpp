@@ -73,7 +73,7 @@ namespace NekoGui {
         // Saved
 
         // Misc
-        QString log_level = "warning";
+        QString log_level = "info";
         QString test_latency_url = "http://cp.cloudflare.com/";
         int test_concurrent = 10;
         int traffic_loop_interval = 500;
@@ -125,7 +125,7 @@ namespace NekoGui {
         bool enable_gso = false;
         bool auto_redirect = false;
         QString vpn_implementation = "gvisor";
-        int vpn_mtu = 9000;
+        int vpn_mtu = 1500;
         bool vpn_ipv6 = false;
         bool vpn_strict_route = false;
 
