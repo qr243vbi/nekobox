@@ -34,12 +34,12 @@ namespace NekoGui_fmt {
 
         //  security
         query.addQueryItem("security", stream->security == "" ? "none" : stream->security);
-
-        if (!stream->sni.isEmpty()) query.addQueryItem("sni", stream->sni);
-        if (!stream->alpn.isEmpty()) query.addQueryItem("alpn", stream->alpn);
-        if (stream->allow_insecure) query.addQueryItem("allowInsecure", "1");
-        if (!stream->utlsFingerprint.isEmpty()) query.addQueryItem("fp", stream->utlsFingerprint);
-
+        if (stream->security == "tls") {
+            if (!stream->sni.isEmpty()) query.addQueryItem("sni", stream->sni);
+            if (!stream->alpn.isEmpty()) query.addQueryItem("alpn", stream->alpn);
+            if (stream->allow_insecure) query.addQueryItem("allowInsecure", "1");
+            if (!stream->utlsFingerprint.isEmpty()) query.addQueryItem("fp", stream->utlsFingerprint);
+        }
         if (stream->security == "reality") {
             query.addQueryItem("pbk", stream->reality_pbk);
             if (!stream->reality_sid.isEmpty()) query.addQueryItem("sid", stream->reality_sid);
