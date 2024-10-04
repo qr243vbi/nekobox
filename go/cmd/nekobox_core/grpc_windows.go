@@ -2,8 +2,8 @@ package main
 
 import (
 	"context"
-	"github.com/Mahdi-zarei/sing-box-extra/boxdns"
 	"grpc_server/gen"
+	"nekobox_core/internal/boxdns"
 	"net/netip"
 )
 

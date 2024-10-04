@@ -3,8 +3,8 @@ package main
 import (
 	"context"
 	"errors"
-	"github.com/Mahdi-zarei/sing-box-extra/boxbox"
 	"github.com/sagernet/sing/common/metadata"
+	"nekobox_core/internal/boxbox"
 	"net"
 	"net/http"
 	"sync"
