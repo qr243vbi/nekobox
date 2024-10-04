@@ -32,6 +32,7 @@ namespace NekoGui {
         QList<QString> port_range;
         QList<QString> process_name;
         QList<QString> process_path;
+        QList<QString> process_path_regex;
         QList<QString> rule_set;
         bool invert = false;
         int outboundID = -2; // -1 is proxy -2 is direct -3 is block -4 is dns_out

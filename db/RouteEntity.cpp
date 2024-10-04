@@ -42,6 +42,7 @@ namespace NekoGui {
         port_range << other.port_range;
         process_name << other.process_name;
         process_path << other.process_path;
+        process_path_regex << other.process_path_regex;
         rule_set << other.rule_set;
         invert = other.invert;
         outboundID = other.outboundID;
@@ -65,6 +66,7 @@ namespace NekoGui {
         _add(new configItem("port_range", &port_range, itemType::stringList));
         _add(new configItem("process_name", &process_name, itemType::stringList));
         _add(new configItem("process_path", &process_path, itemType::stringList));
+        _add(new configItem("process_path_regex", &process_path_regex, itemType::stringList));
         _add(new configItem("rule_set", &rule_set, itemType::stringList));
         _add(new configItem("invert", &invert, itemType::boolean));
         _add(new configItem("outboundID", &outboundID, itemType::integer));
@@ -91,6 +93,7 @@ namespace NekoGui {
         if (isValidStrArray(port_range)) obj["port_range"] = get_as_array(port_range);
         if (isValidStrArray(process_name)) obj["process_name"] = get_as_array(process_name);
         if (isValidStrArray(process_path)) obj["process_path"] = get_as_array(process_path);
+        if (isValidStrArray(process_path_regex)) obj["process_path_regex"] = get_as_array(process_path_regex);
         if (isValidStrArray(rule_set)) obj["rule_set"] = get_as_array(rule_set);
         if (invert) obj["invert"] = invert;
 
@@ -145,6 +148,7 @@ namespace NekoGui {
                 "port_range",
                 "process_name",
                 "process_path",
+                "process_path_regex",
                 "rule_set",
                 "invert",
         };
@@ -200,6 +204,7 @@ namespace NekoGui {
         if (fieldName == "port_range") return port_range;
         if (fieldName == "process_name") return process_name;
         if (fieldName == "process_path") return process_path;
+        if (fieldName == "process_path_regex") return process_path_regex;
         if (fieldName == "rule_set") return rule_set;
         return {};
     }
@@ -280,6 +285,9 @@ namespace NekoGui {
         }
         if (fieldName == "process_path") {
             process_path = filterEmpty(value);
+        }
+        if (fieldName == "process_path_regex") {
+            process_path_regex = filterEmpty(value);
         }
         if (fieldName == "rule_set") {
             rule_set = filterEmpty(value);
