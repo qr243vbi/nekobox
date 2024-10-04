@@ -4,20 +4,20 @@ import (
 	"context"
 	"errors"
 	"fmt"
-	"github.com/Mahdi-zarei/sing-box-extra/boxbox"
 	"github.com/sagernet/sing-box/common/settings"
 	"github.com/sagernet/sing/common/metadata"
+	"nekobox_core/internal/boxbox"
 	"strings"
 	"time"
 
 	"grpc_server"
 	"grpc_server/gen"
 
-	"github.com/Mahdi-zarei/sing-box-extra/boxapi"
-	"github.com/Mahdi-zarei/sing-box-extra/boxmain"
 	"github.com/matsuridayo/libneko/neko_common"
 	"github.com/matsuridayo/libneko/neko_log"
 	"log"
+	"nekobox_core/internal/boxapi"
+	"nekobox_core/internal/boxmain"
 
 	"github.com/sagernet/sing-box/option"
 )

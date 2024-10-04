@@ -7,8 +7,8 @@ import (
 
 	"grpc_server"
 
-	"github.com/Mahdi-zarei/sing-box-extra/boxbox"
-	_ "github.com/Mahdi-zarei/sing-box-extra/distro/all"
+	"nekobox_core/internal/boxbox"
+	_ "nekobox_core/internal/distro/all"
 )
 
 func main() {
