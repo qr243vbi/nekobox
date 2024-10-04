@@ -27,7 +27,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checking out sources
-        uses: actions/checkout@v4.1.4
+        uses: actions/checkout@v4.2.0
       - name: Go Status
         run: git ls-files go | xargs cat | sha1sum > go_status
       - name: Cache Common Download
@@ -40,7 +40,7 @@ jobs:
         if: steps.cache-common.outputs.cache-hit != 'true' && matrix.cross_os != 'windows7'
         uses: actions/setup-go@v5.0.2
         with:
-          go-version: '1.23'
+          go-version: '1.23.2'
       - name: Install Older Golang
         if: steps.cache-common.outputs.cache-hit != 'true' && matrix.cross_os == 'windows7'
         uses: actions/setup-go@v5.0.2
@@ -57,7 +57,7 @@ jobs:
         if: steps.cache-common.outputs.cache-hit != 'true'
         run: tar czvf artifacts.tgz ./deployment
       - name: Uploading Artifact
-        uses: actions/upload-artifact@v4.3.3
+        uses: actions/upload-artifact@v4.4.0
         with:
           name: NekoRay-${{ github.sha }}-Common-${{ matrix.cross_os }}-${{ matrix.cross_arch }}
           path: artifacts.tgz
@@ -85,7 +85,7 @@ jobs:
       ACTIONS_ALLOW_UNSECURE_COMMANDS: true
     steps:
       - name: Checking out sources
-        uses: actions/checkout@v4.1.4
+        uses: actions/checkout@v4.2.0
         with:
           submodules: "recursive"
       - name: Install MSVC compiler
@@ -95,28 +95,11 @@ jobs:
           toolset: 14.2
           arch: ${{ matrix.arch }}
       - name: Download Artifacts
-        uses: actions/download-artifact@v4.1.7
+        uses: actions/download-artifact@v4.1.8
         with:
           path: download-artifact
       # ========================================================================================================= Qt Install
-      - name: Linux - Install Qt
-        if: matrix.platform == 'ubuntu-22.04'
-        uses: jurplel/install-qt-action@v4.0.0
-        with:
-          version: ${{ matrix.qt_version }}
-          setup-python: true
-          cache: true
-          cache-key-prefix: QtCache-${{ matrix.platform }}-${{ matrix.arch }}
-      - name: macOS - Install Qt
-        if: matrix.platform == 'macos-13' || matrix.platform == 'macos-14'
-        uses: jurplel/install-qt-action@v4.0.0
-        with:
-          version: ${{ matrix.qt_version }}
-          setup-python: true
-          cache: true
-          cache-key-prefix: QtCache-${{ matrix.platform }}-${{ matrix.arch }}
-      - name: Windows - Install Qt
-        if: matrix.platform == 'windows-2022'
+      - name: Install Qt
         uses: jurplel/install-qt-action@v4.0.0
         with:
           version: ${{ matrix.qt_version }}
@@ -176,7 +159,7 @@ jobs:
         shell: bash
         run: tar czvf artifacts.tgz ./deployment
       - name: Uploading Artifact
-        uses: actions/upload-artifact@v4.3.3
+        uses: actions/upload-artifact@v4.4.0
         with:
           name: NekoRay-${{ github.sha }}-${{ matrix.platform }}-${{ matrix.arch }}-Qt${{ matrix.qt_version }}
           path: artifacts.tgz
@@ -188,9 +171,9 @@ jobs:
       - build-cpp
     steps:
       - name: Checking out sources
-        uses: actions/checkout@v4.1.4
+        uses: actions/checkout@v4.2.0
       - name: Download Artifacts
-        uses: actions/download-artifact@v4.1.7
+        uses: actions/download-artifact@v4.1.8
         with:
           path: download-artifact
       - name: Pack
@@ -235,7 +218,7 @@ jobs:
           rm -rf public_res
           rm -rf *.pdb
       - name: Uploading Artifact
-        uses: actions/upload-artifact@v4.3.3
+        uses: actions/upload-artifact@v4.4.0
         with:
           name: Deployment-${{ github.sha }}
           path: deployment
