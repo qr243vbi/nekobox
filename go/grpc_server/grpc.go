@@ -96,7 +96,7 @@ func RunCore(setupCore func(), server gen.LibcoreServiceServer) {
 	)
 	gen.RegisterLibcoreServiceServer(s, server)
 
-	name := "nekobox_core"
+	name := "Core"
 
 	log.Printf("%s grpc server listening at %v\n", name, lis.Addr())
 	if err := s.Serve(lis); err != nil {

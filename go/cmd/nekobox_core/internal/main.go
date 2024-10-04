@@ -10,7 +10,7 @@ import (
 )
 
 func main() {
-	fmt.Println("sing-box-extra:", boxbox.Version)
+	fmt.Println("sing-box:", boxbox.Version)
 	fmt.Println()
 
 	// sing-box
