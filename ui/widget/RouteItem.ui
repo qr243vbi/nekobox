@@ -166,7 +166,7 @@
      </layout>
     </widget>
    </item>
-   <item alignment="Qt::AlignmentFlag::AlignHCenter">
+   <item alignment="">
     <widget class="QDialogButtonBox" name="buttonBox">
      <property name="standardButtons">
       <set>QDialogButtonBox::StandardButton::Cancel|QDialogButtonBox::StandardButton::Ok</set>

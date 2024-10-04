@@ -4,6 +4,23 @@
 #include "db/Database.hpp"
 #include "rpc/gRPC.h"
 
+void adjustComboBoxWidth(const QComboBox *comboBox) {
+    int maxWidth = 0;
+
+    // Iterate over all items and calculate the width required
+    for (int i = 0; i < comboBox->count(); ++i) {
+        QFontMetrics fontMetrics(comboBox->font());
+        int itemWidth = fontMetrics.horizontalAdvance(comboBox->itemText(i));
+        maxWidth = qMax(maxWidth, itemWidth);
+    }
+
+    // Add some padding to the width to avoid text being too close to the edge
+    maxWidth += 30;
+
+    // Set the minimum width for the drop-down menu
+    comboBox->view()->setMinimumWidth(maxWidth);
+}
+
 int RouteItem::getIndexOf(const QString& name) const {
     for (int i=0;i<chain->Rules.size();i++) {
         if (chain->Rules[i]->name == name) return i;
@@ -102,6 +119,7 @@ RouteItem::RouteItem(QWidget *parent, const std::shared_ptr<NekoGui::RoutingChai
 
     ui->route_name->setText(chain->name);
     ui->rule_attr->addItems(NekoGui::RouteRule::get_attributes());
+    adjustComboBoxWidth(ui->rule_attr);
     ui->rule_out->addItems(outboundOptions);
     ui->rule_attr_text->hide();
     ui->rule_attr_data->setTitle("");
@@ -313,6 +331,7 @@ void RouteItem::showSelectItem(const QStringList& items, const QString& currentI
     ui->rule_attr_selector->clear();
     ui->rule_attr_selector->show();
     ui->rule_attr_selector->addItems(items);
+    adjustComboBoxWidth(ui->rule_attr_selector);
     ui->rule_attr_selector->setCurrentText(currentItem);
     adjustSize();
 }
