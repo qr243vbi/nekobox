@@ -320,11 +320,7 @@ namespace NekoGui {
         if (isDefault) {
             QString version = SubStrBefore(NKR_VERSION, "-");
             if (!version.contains(".")) version = "2.0";
-            if (IS_NEKO_BOX) {
-                return "NekoBox/PC/" + version + " (Prefer ClashMeta Format)";
-            } else {
-                return "NekoRay/PC/" + version + " (Prefer ClashMeta Format)";
-            }
+            return "Nekoray" + version;
         }
         return user_agent;
     }
