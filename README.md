@@ -53,7 +53,7 @@ Now, you can open it with the first command.
 
 ## Subscription
 
-We support widely used link formats(like Shadowsocks, Clash and v2rayN) as well as custom
+We support widely used link formats(like Shadowsocks and v2rayN) as well as custom
 outbound and custom configs. The subscription file can contain commented lines(starting with // or #, empty lines are ignored as well),
 JSON strings(can be human-readable or compact) and import links(each link should be on a separate line).
 
