@@ -5,8 +5,6 @@
 namespace NekoGui_sub {
     class RawUpdater {
     public:
-        void updateClash(const QString &str);
-
         void update(const QString &str, bool needParse);
 
         int gid_add_to = -1; // 导入到指定组 -1 为当前选中组
