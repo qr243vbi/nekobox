@@ -421,9 +421,11 @@ namespace NekoGui {
         bool admin = false;
 #ifdef Q_OS_WIN
         admin = Windows_IsInAdmin();
-#elifdef Q_OS_LINUX
+#endif
+#ifdef Q_OS_LINUX
         admin = QFileInfo(FindNekoBoxCoreRealPath()).groupId() == 0;
-#else
+#endif
+#ifdef Q_OS_MACOS
         admin = geteuid() == 0;
 #endif
 
