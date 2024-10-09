@@ -4,8 +4,8 @@ cloud.google.com/go v0.26.0/go.mod h1:aQUYkXzVsufM+DwF1aE+0xfcU+56JwCaLick0ClmMT
 cloud.google.com/go/compute/metadata v0.5.0 h1:Zr0eK8JbFv6+Wi4ilXAR8FJ3wyNdpxHKJNPos6LTZOY=
 cloud.google.com/go/compute/metadata v0.5.0/go.mod h1:aHnloV2TPI38yx4s9+wAZhHykWvVCfu7hQbF+9CWoiY=
 github.com/BurntSushi/toml v0.3.1/go.mod h1:xHWCNGjB5oqiDr8zfno3MHue2Ht5sIBksp03qcyfWMU=
-github.com/Mahdi-zarei/sing-box v1.3.5-0.20241004080948-fc777da4dba3 h1:vnZ1ElIeoDiWtiH4FO5Hvp64Ds+YB4HjKexuy7vqn3g=
-github.com/Mahdi-zarei/sing-box v1.3.5-0.20241004080948-fc777da4dba3/go.mod h1:WmfA791zSf/EOmFx71uGsPwouCKBzvsx1AGaycRogCI=
+github.com/Mahdi-zarei/sing-box v1.3.5-0.20241007195945-04f9f41f3fd3 h1:EsHnBolNXkUNEY3Fye+3GLh6O+V1N1WpWzrtVERveno=
+github.com/Mahdi-zarei/sing-box v1.3.5-0.20241007195945-04f9f41f3fd3/go.mod h1:WmfA791zSf/EOmFx71uGsPwouCKBzvsx1AGaycRogCI=
 github.com/Mahdi-zarei/sing-dns v0.3.0-beta.14.0.20240920072724-5aaefdab8381 h1:6FonT1vQoLFyUTXLY/Xe/tfOVW/TA2dr8rdsUSc7OvE=
 github.com/Mahdi-zarei/sing-dns v0.3.0-beta.14.0.20240920072724-5aaefdab8381/go.mod h1:rscgSr5ixOPk8XM9ZMLuMXCyldEQ1nLvdl0nfv+lp00=
 github.com/ajg/form v1.5.1 h1:t9c7v8JUKu/XxOGBU0yjNpaMloxGEJhUkqFRq0ibGeU=
