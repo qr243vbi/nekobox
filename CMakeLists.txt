@@ -6,6 +6,7 @@ set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_INTERPROCEDURAL_OPTIMIZATION TRUE)
 
 find_package(Qt6 REQUIRED COMPONENTS Widgets Network Svg LinguistTools QuickControls2)
 
@@ -209,12 +210,14 @@ set_property(TARGET nekoray PROPERTY AUTOUIC ON)
 set_property(TARGET nekoray PROPERTY AUTOMOC ON)
 set_property(TARGET nekoray PROPERTY AUTORCC ON)
 
+
 # Target Source macOS
 
 set(MACOSX_ICON ${CMAKE_SOURCE_DIR}/res/nekoray.icns)
 if (APPLE)
     target_sources(nekoray PRIVATE ${MACOSX_ICON})
 endif ()
+
 set_target_properties(nekoray PROPERTIES
         MACOSX_BUNDLE_ICON_FILE "nekoray.icns"
         RESOURCE ${MACOSX_ICON}
@@ -222,6 +225,7 @@ set_target_properties(nekoray PROPERTIES
         MACOSX_BUNDLE_GUI_IDENTIFIER moe.nekoray.macosx
         MACOSX_BUNDLE TRUE
         WIN32_EXECUTABLE TRUE
+
 )
 
 # Target Source Translations

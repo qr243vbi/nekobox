@@ -35,7 +35,7 @@ export EXTRA_QT_PLUGINS="svg;iconengines;"
 ./linuxdeploy-x86_64.AppImage --appdir $DEST --executable $DEST/nekoray --plugin qt
 rm linuxdeploy-x86_64.AppImage linuxdeploy-plugin-qt-x86_64.AppImage
 cd $DEST
-rm -r ./usr/translations ./usr/bin ./usr/share ./apprun-hooks
+#rm -r ./usr/translations ./usr/bin ./usr/share ./apprun-hooks
 
 # fix extra libs...
 mkdir ./usr/lib2
