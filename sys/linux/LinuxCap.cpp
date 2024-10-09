@@ -4,24 +4,9 @@
 #include <QProcess>
 #include <QStandardPaths>
 
-#define EXIT_CODE(p) (p.exitStatus() == QProcess::NormalExit ? p.exitCode() : -1)
-
-QString Linux_GetCapString(const QString &path) {
-    QProcess p;
-    p.setProgram(Linux_FindCapProgsExec("getcap"));
-    p.setArguments({path});
-    p.start();
-    p.waitForFinished(500);
-    return p.readAllStandardOutput();
-}
-
-int Linux_Pkexec_SetCapString(const QString &path, const QString &cap) {
-    QProcess p;
-    p.setProgram("pkexec");
-    p.setArguments({Linux_FindCapProgsExec("setcap"), cap, path});
-    p.start();
-    p.waitForFinished(-1);
-    return EXIT_CODE(p);
+int Linux_Run_Command(const QString &commandName, const QString &args) {
+    auto command = QString("pkexec %1 %2").arg(Linux_FindCapProgsExec(commandName)).arg(args);
+    return system(command.toStdString().c_str());
 }
 
 bool Linux_HavePkexec() {
@@ -31,7 +16,7 @@ bool Linux_HavePkexec() {
     p.setProcessChannelMode(QProcess::SeparateChannels);
     p.start();
     p.waitForFinished(500);
-    return EXIT_CODE(p) == 0;
+    return (p.exitStatus() == QProcess::NormalExit ? p.exitCode() : -1) == 0;
 }
 
 QString Linux_FindCapProgsExec(const QString &name) {
