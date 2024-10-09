@@ -732,12 +732,22 @@ bool MainWindow::get_elevated_permissions(int reason) {
         MessageBoxWarning(software_name, "Please install \"pkexec\" first.");
         return false;
     }
-    auto n = QMessageBox::warning(GetMessageBoxParent(), software_name, tr("Please run Nekoray as admin"), QMessageBox::Yes | QMessageBox::No);
+    auto n = QMessageBox::warning(GetMessageBoxParent(), software_name, tr("Please give the core root privileges"), QMessageBox::Yes | QMessageBox::No);
     if (n == QMessageBox::Yes) {
-        auto ret = Linux_Pkexec_SetCapString(NekoGui::FindNekoBoxCoreRealPath(), "cap_sys_admin=ep");
+        auto chownArgs = QString("root:root " + NekoGui::FindNekoBoxCoreRealPath());
+        auto ret = Linux_Run_Command("chown", chownArgs);
+        if (ret != 0) {
+            MW_show_log(QString("Failed to run chown %1 code is %2").arg(chownArgs).arg(ret));
+            return false;
+        }
+        auto chmodArgs = QString("u+s " + NekoGui::FindNekoBoxCoreRealPath());
+        ret = Linux_Run_Command("chmod", chmodArgs);
         if (ret == 0) {
             this->exit_reason = reason;
             on_menu_exit_triggered();
+        } else {
+            MW_show_log(QString("Failed to run chmod %1").arg(chmodArgs));
+            return false;
         }
     }
 #endif

@@ -421,11 +421,10 @@ namespace NekoGui {
         bool admin = false;
 #ifdef Q_OS_WIN
         admin = Windows_IsInAdmin();
+#elifdef Q_OS_LINUX
+        admin = QFileInfo(FindNekoBoxCoreRealPath()).groupId() == 0;
 #else
-#ifdef Q_OS_LINUX
-        admin |= Linux_GetCapString(FindNekoBoxCoreRealPath()).contains("cap_sys_admin");
-#endif
-        admin |= geteuid() == 0;
+        admin = geteuid() == 0;
 #endif
 
         isAdminCache = admin;

@@ -53,12 +53,8 @@ namespace NekoGui_sys {
         }
 
         QProcess::setEnvironment(env);
-#ifdef Q_OS_LINUX
-        if (NekoGui::IsAdmin()) QProcess::startCommand("sudo " + program + " " + arguments.join(" "));
-        else QProcess::start(program, arguments);
-#else
+
         QProcess::start(program, arguments);
-#endif
     }
 
     void ExternalProcess::Kill() {
