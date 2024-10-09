@@ -69,16 +69,16 @@ jobs:
         include:
           - platform: windows-2022
             arch: x64
-            qt_version: "6.7.3"
+            qt_version: "6.8.0"
           - platform: ubuntu-22.04
             arch: x64
-            qt_version: "6.7.3"
+            qt_version: "6.8.0"
           - platform: macos-13
             arch: amd64
-            qt_version: "6.7.3"
+            qt_version: "6.8.0"
           - platform: macos-14
             arch: arm64
-            qt_version: "6.7.3"
+            qt_version: "6.8.0"
       fail-fast: false
     runs-on: ${{ matrix.platform }}
     env:
