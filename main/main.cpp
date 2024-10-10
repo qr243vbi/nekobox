@@ -61,6 +61,10 @@ int main(int argc, char* argv[]) {
     Windows_SetCrashHandler();
 #endif
 
+#ifdef Q_OS_LINUX
+    QApplication::addLibraryPath(QApplication::applicationDirPath() + "/usr/plugins");
+#endif
+
     QApplication::setAttribute(Qt::AA_DontUseNativeDialogs);
     QApplication::setQuitOnLastWindowClosed(false);
     auto preQApp = new QApplication(argc, argv);
