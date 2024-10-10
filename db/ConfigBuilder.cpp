@@ -95,6 +95,8 @@ namespace NekoGui {
                 {"tag", "dns-out"}
             }
         };
+        int index = 0;
+
         QJsonArray directDomainArray;
         for (const auto &item: profiles) {
             if (!item->bean->IsValid()) {
@@ -102,7 +104,7 @@ namespace NekoGui {
                 item->latency = -1;
                 continue;
             }
-            auto res = BuildConfig(item, true, false, idx++);
+            auto res = BuildConfig(item, true, false, ++index);
             if (!res->error.isEmpty()) {
                 results->error = res->error;
                 return results;
@@ -131,12 +133,18 @@ namespace NekoGui {
                 results->error = QString("outbounds is empty for %1").arg(item->bean->name);
                 return results;
             }
-            auto tag = outbounds[0].toObject()["tag"].toString();
-            results->outboundTags << tag;
-            results->tag2entID.insert(tag, item->id);
             for (const auto &outboundRef: outbounds) {
                 auto outbound = outboundRef.toObject();
                 if (outbound["tag"] == "direct" || outbound["tag"] == "block" || outbound["tag"] == "dns-out") continue;
+                if (index != 1 && outbound["tag"].toString().startsWith("rout")) continue;
+                if (outbound["tag"] == "proxy") {
+                    auto tag = "proxy" + Int2String(index);
+                    outbound.insert("tag", tag);
+                    outboundArray.append(outbound);
+                    results->outboundTags << tag;
+                    results->tag2entID.insert(tag, item->id);
+                    continue;
+                }
                 outboundArray.append(outbound);
             }
         }
@@ -198,7 +206,7 @@ namespace NekoGui {
         auto ents = resolveChain(status->ent);
         if (!status->result->error.isEmpty()) return {};
 
-        if (group->front_proxy_id >= 0 && !status->forTest) {
+        if (group->front_proxy_id >= 0) {
             auto fEnt = profileManager->GetProfile(group->front_proxy_id);
             if (fEnt == nullptr) {
                 status->result->error = QString("front proxy ent not found.");
@@ -208,7 +216,7 @@ namespace NekoGui {
             if (!status->result->error.isEmpty()) return {};
         }
 
-        if (group->landing_proxy_id >= 0 && !status->forTest) {
+        if (group->landing_proxy_id >= 0) {
             auto lEnt = profileManager->GetProfile(group->landing_proxy_id);
             if (lEnt == nullptr) {
                 status->result->error = QString("landing proxy ent not found.");
@@ -249,12 +257,9 @@ namespace NekoGui {
 
             // first profile set as global
             auto isFirstProfile = index == ents.length() - 1;
-            if (isFirstProfile) {
-                tagOut = "g-" + Int2String(ent->id) + "-" + Int2String(index);
-            }
 
             // last profile set as "proxy"
-            if (chainId == 0 && index == 0) {
+            if (index == 0) {
                 tagOut = "proxy";
             }
 
