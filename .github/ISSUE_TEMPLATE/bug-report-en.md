@@ -15,7 +15,8 @@ Actual behavior:
 
 ## How to reproduce
 
-Provide helpful screenshots, videos, text descriptions, subscription links, etc.
+Provide steps on how the problem can be reproduced. Issues without this will be closed.
+Statements like `App dont work` and `config not connect` provide no useful information.
 
 ## log
 
