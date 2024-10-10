@@ -74,9 +74,10 @@ namespace NekoGui_fmt {
         if (stream->utlsFingerprint.isEmpty()) {
             stream->utlsFingerprint = NekoGui::dataStore->utlsFingerprint;
         }
-        // auto detect and override security, for compatibility
-        if (!stream->sni.isEmpty()) stream->security = "tls";
-        if (!stream->reality_pbk.isEmpty()) stream->security = "reality";
+        if (stream->security.isEmpty()) {
+            if (!sni1.isEmpty() || !sni2.isEmpty()) stream->security = "tls";
+            if (!stream->reality_pbk.isEmpty()) stream->security = "reality";
+        }
 
         // type
         if (stream->network == "ws") {
