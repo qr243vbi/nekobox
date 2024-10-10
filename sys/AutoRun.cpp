@@ -170,16 +170,10 @@ void AutoRun_SetEnabled(bool enable) {
     QString desktopFileLocation = userAutoStartPath + appName + QLatin1String(".desktop");
     QStringList appCmdList;
 
-    // nekoray: launcher
-    if (qEnvironmentVariable("NKR_FROM_LAUNCHER") == "1") {
-        appCmdList << QApplication::applicationDirPath() + "/launcher"
-                   << "--";
+    if (QProcessEnvironment::systemEnvironment().contains("APPIMAGE")) {
+        appCmdList << QProcessEnvironment::systemEnvironment().value("APPIMAGE");
     } else {
-        if (QProcessEnvironment::systemEnvironment().contains("APPIMAGE")) {
-            appCmdList << QProcessEnvironment::systemEnvironment().value("APPIMAGE");
-        } else {
-            appCmdList << QApplication::applicationFilePath();
-        }
+        appCmdList << QApplication::applicationFilePath();
     }
 
     appCmdList << "-tray";

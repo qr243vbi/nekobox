@@ -696,9 +696,7 @@ void MainWindow::on_menu_exit_triggered() {
             arguments.removeAll("-flag_restart_tun_on");
             arguments.removeAll("-flag_reorder");
         }
-        auto isLauncher = qEnvironmentVariable("NKR_FROM_LAUNCHER") == "1";
-        if (isLauncher) arguments.prepend("--");
-        auto program = isLauncher ? "./launcher" : QApplication::applicationFilePath();
+        auto program = QApplication::applicationFilePath();
 
         if (exit_reason == 3 || exit_reason == 4) {
             if (exit_reason == 3) arguments << "-flag_restart_tun_on";
