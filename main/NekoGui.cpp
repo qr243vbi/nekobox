@@ -397,15 +397,7 @@ namespace NekoGui {
         auto fn = QApplication::applicationDirPath() + "/nekobox_core";
         auto fi = QFileInfo(fn);
         if (fi.isSymLink()) return fi.symLinkTarget();
-        return fn;
-    }
-
-    QString FindNekorayRealPath() {
-        QString fn;
-        fn = QApplication::applicationFilePath();
-        auto fi = QFileInfo(fn);
-        if (fi.isSymLink()) return fi.symLinkTarget();
-        return fn;
+        return "'"+fn+"'";
     }
 
     short isAdminCache = -1;
