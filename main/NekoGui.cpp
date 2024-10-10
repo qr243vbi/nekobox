@@ -402,11 +402,7 @@ namespace NekoGui {
 
     QString FindNekorayRealPath() {
         QString fn;
-#ifdef Q_OS_LINUX
-        fn = QApplication::applicationDirPath() + "/launcher";
-#else
         fn = QApplication::applicationFilePath();
-#endif
         auto fi = QFileInfo(fn);
         if (fi.isSymLink()) return fi.symLinkTarget();
         return fn;

@@ -23,14 +23,12 @@ cat >/usr/share/applications/nekoray.desktop<<-END
 [Desktop Entry]
 Name=nekoray
 Comment=Qt based cross-platform GUI proxy configuration manager (backend: sing-box)
-Exec=sudo /opt/nekoray/launcher
+Exec=sh -c "PATH=/opt/nekoray:\$PATH /opt/nekoray/nekoray -appdata"
 Icon=/opt/nekoray/nekobox.png
 Terminal=false
 Type=Application
 Categories=Network;Application;
 END
-
-setcap cap_sys_admin=ep /opt/nekoray/launcher
 
 update-desktop-database
 EOF

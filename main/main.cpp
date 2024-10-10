@@ -74,11 +74,6 @@ int main(int argc, char* argv[]) {
     if (QFile::exists("updater.old")) {
         QFile::remove("updater.old");
     }
-#ifndef Q_OS_WIN
-    if (!QFile::exists("updater")) {
-        QFile::link("launcher", "updater");
-    }
-#endif
 
     // Flags
     NekoGui::dataStore->argv = QApplication::arguments();
