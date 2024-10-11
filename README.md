@@ -4,6 +4,11 @@ Qt based Desktop cross-platform GUI proxy configuration manager (backend: sing-b
 
 Supports Windows / Linux / MacOS out of the box now. Windows7 is also supported, but requires some additional changes to run.
 
+### Notes on the new versions on Windows
+The newest versions of Nekoray are built using the latest compilers and Qt releases, and so they need the latest `vc_redist` installed. If the app does not start and crashes, please make sure to update it.
+Also few anti-virus apps may identify the `nekobox_core.exe` as trojan, this is caused by the newely added code which alter the system DNS settings to hijack all dns requests to Nekoray to route them. Some apps may also 
+report `updater.exe` as trojan, this is also a false alaram caused by updater having to delete the old Nekoray files and replacing it with the new ones, which is like what many viruses do to replace your files with encrypted ones for ransoming purposes.
+
 ### How to run on Windows7
 To run on Windows7, you will need to utilize [VxKex](https://github.com/i486/VxKex). Some of Tun mode stacks might not work as well, please fallback to gVisor stack if you encountered this problem.
 
