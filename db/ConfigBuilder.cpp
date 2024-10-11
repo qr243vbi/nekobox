@@ -135,10 +135,10 @@ namespace NekoGui {
             }
             for (const auto &outboundRef: outbounds) {
                 auto outbound = outboundRef.toObject();
-                if (outbound["tag"] == "direct" || outbound["tag"] == "block" || outbound["tag"] == "dns-out") continue;
-                if (index != 1 && outbound["tag"].toString().startsWith("rout")) continue;
+                if (outbound["tag"] == "direct" || outbound["tag"] == "block" || outbound["tag"] == "dns-out" || outbound["tag"].toString().startsWith("rout")) continue;
                 if (outbound["tag"] == "proxy") {
-                    auto tag = "proxy" + Int2String(index);
+                    QString tag = "proxy";
+                    if (index > 1) tag += Int2String(index);
                     outbound.insert("tag", tag);
                     outboundArray.append(outbound);
                     results->outboundTags << tag;
@@ -160,13 +160,7 @@ namespace NekoGui {
         }
         dnsObj["rules"] = dnsRulesObj;
         results->coreConfig["dns"] = dnsObj;
-        std::map<int, QString> outboundMap;
-        outboundMap[-1] = "proxy";
-        outboundMap[-2] = "direct";
-        outboundMap[-3] = "block";
-        outboundMap[-4] = "dns-out";
         results->coreConfig["route"] = QJsonObject{
-            {"rules", NekoGui::RoutingChain::GetDefaultChain()->get_route_rules(false, outboundMap)},
             {"auto_detect_interface", true}
         };
 
