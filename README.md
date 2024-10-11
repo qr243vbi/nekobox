@@ -6,7 +6,7 @@ Supports Windows / Linux / MacOS out of the box now. Windows7 is also supported,
 
 ### Notes on the new versions on Windows
 The newest versions of Nekoray are built using the latest compilers and Qt releases, and so they need the latest `vc_redist` installed. If the app does not start and crashes, please make sure to update it.
-Also few anti-virus apps may identify the `nekobox_core.exe` as trojan, this is caused by the newely added code which alter the system DNS settings to hijack all dns requests to Nekoray to route them. Some apps may also 
+Also few anti-virus apps may identify the `nekobox_core.exe` as trojan, this is caused by the newely added code which can be used to alter the system DNS settings to hijack all dns requests to Nekoray to route them. Some apps may also 
 report `updater.exe` as trojan, this is also a false alaram caused by updater having to delete the old Nekoray files and replacing it with the new ones, which is like what many viruses do to replace your files with encrypted ones for ransoming purposes.
 
 ### How to run on Windows7
