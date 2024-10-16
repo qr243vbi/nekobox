@@ -90,7 +90,7 @@ func getNameServersForInterface(guid string) ([]string, error) {
 		}
 		s = strings.ReplaceAll(s, ",", " ")
 		for _, server := range strings.Split(s, " ") {
-			if server != "" {
+			if server != "" && server != "127.0.0.1" {
 				nameservers = append(nameservers, server)
 			}
 		}
