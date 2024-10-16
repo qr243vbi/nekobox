@@ -229,6 +229,10 @@ int main(int argc, char* argv[]) {
     QGuiApplication::tr("QT_LAYOUT_DIRECTION");
     loadTranslate(locale);
 
+    if (!NekoGui::dataStore->font.isEmpty()) {
+        qApp->setFont(NekoGui::dataStore->font);
+    }
+
     // Signals
     signal(SIGTERM, signal_handler);
     signal(SIGINT, signal_handler);

@@ -14,6 +14,7 @@
 #include <QInputDialog>
 #include <QMessageBox>
 #include <QTimer>
+#include <qfontdatabase.h>
 
 class ExtraCoreWidget : public QWidget {
 public:
@@ -97,6 +98,11 @@ DialogBasicSettings::DialogBasicSettings(QWidget *parent)
     //
     ui->language->setCurrentIndex(NekoGui::dataStore->language);
     connect(ui->language, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, [=](int index) {
+        CACHE.needRestart = true;
+    });
+    ui->font->addItems(QFontDatabase::families());
+    ui->font->setCurrentText(qApp->font().family());
+    connect(ui->font, &QComboBox::currentTextChanged, this, [=](const QString &font) {
         CACHE.needRestart = true;
     });
     //
@@ -253,6 +259,7 @@ void DialogBasicSettings::accept() {
     // Style
 
     NekoGui::dataStore->language = ui->language->currentIndex();
+    NekoGui::dataStore->font = ui->font->currentText();
     D_SAVE_BOOL(start_minimal)
     D_SAVE_INT(max_log_line)
 
