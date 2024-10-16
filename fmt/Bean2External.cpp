@@ -38,12 +38,12 @@ namespace NekoGui_fmt {
     int QUICBean::NeedExternal(bool isFirstProfile) {
         auto hysteriaCore = [=] {
             if (isFirstProfile) {
-                if (NekoGui::dataStore->spmode_vpn && hyProtocol != hysteria_protocol_facktcp && hopPort.trimmed().isEmpty()) {
+                if (NekoGui::dataStore->spmode_vpn && hyProtocol != hysteria_protocol_facktcp) {
                     return 1;
                 }
                 return 2;
             } else {
-                if (hyProtocol == hysteria_protocol_facktcp || !hopPort.trimmed().isEmpty()) {
+                if (hyProtocol == hysteria_protocol_facktcp) {
                     return -1;
                 }
             }
@@ -179,18 +179,10 @@ namespace NekoGui_fmt {
 
             QJsonObject config;
 
-            auto server = serverAddress;
-            if (!hopPort.trimmed().isEmpty()) {
-                server = WrapIPV6Host(server) + ":" + hopPort;
-            } else {
-                server = WrapIPV6Host(server) + ":" + Int2String(serverPort);
-            }
+            auto server = WrapIPV6Host(serverAddress) + ":" + Int2String(serverPort);;
 
             QJsonObject transport;
             transport["type"] = "udp";
-            transport["udp"] = QJsonObject{
-                {"hopInterval", QString::number(hopInterval) + "s"},
-            };
             config["transport"] = transport;
 
             config["server"] = server;
@@ -253,12 +245,7 @@ namespace NekoGui_fmt {
             auto sniGen = sni;
             if (sni.isEmpty() && !IsIpAddress(serverAddress)) sniGen = serverAddress;
 
-            auto server = serverAddress;
-            if (!hopPort.trimmed().isEmpty()) {
-                server = WrapIPV6Host(server) + ":" + hopPort;
-            } else {
-                server = WrapIPV6Host(server) + ":" + Int2String(serverPort);
-            }
+            auto server = WrapIPV6Host(serverAddress) + ":" + Int2String(serverPort);
             config["server"] = is_direct ? server : "127.0.0.1:" + Int2String(mapping_port);
 
             // listen
@@ -293,7 +280,6 @@ namespace NekoGui_fmt {
             if (streamReceiveWindow > 0) config["recv_window_conn"] = streamReceiveWindow;
             if (connectionReceiveWindow > 0) config["recv_window"] = connectionReceiveWindow;
             if (disableMtuDiscovery) config["disable_mtu_discovery"] = true;
-            config["hop_interval"] = hopInterval;
 
             //
 

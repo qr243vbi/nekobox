@@ -19,8 +19,6 @@ void EditQUIC::onStart(std::shared_ptr<NekoGui::ProxyEntity> _ent) {
     this->ent = _ent;
     auto bean = this->ent->QUICBean();
 
-    P_LOAD_STRING(hopPort);
-    P_LOAD_INT(hopInterval);
     P_LOAD_INT(uploadMbps);
     P_LOAD_INT(downloadMbps);
     P_LOAD_BOOL(disableMtuDiscovery)
@@ -86,10 +84,6 @@ void EditQUIC::onStart(std::shared_ptr<NekoGui::ProxyEntity> _ent) {
             }
         }
     } else if (bean->proxy_type == NekoGui_fmt::QUICBean::proxy_TUIC) {
-        ui->hopPort->hide();
-        ui->hopPort_l->hide();
-        ui->hopInterval->hide();
-        ui->hopInterval_l->hide();
         ui->uploadMbps->hide();
         ui->uploadMbps_l->hide();
         ui->downloadMbps->hide();
@@ -119,8 +113,6 @@ bool EditQUIC::onEnd() {
     P_SAVE_BOOL(forceExternal);
 
     // Hysteria
-    P_SAVE_STRING(hopPort);
-    P_SAVE_INT(hopInterval);
     P_SAVE_INT(uploadMbps);
     P_SAVE_INT(downloadMbps);
     P_SAVE_COMBO_INT(hyProtocol);
