@@ -35,10 +35,6 @@ namespace NekoGui_fmt {
         qint64 streamReceiveWindow = 0;
         qint64 connectionReceiveWindow = 0;
         bool disableMtuDiscovery = false;
-
-        int hopInterval = 10;
-        QString hopPort = "";
-
         // TUIC
 
         QString uuid = "";
@@ -70,8 +66,6 @@ namespace NekoGui_fmt {
                 _add(new configItem("streamReceiveWindow", &streamReceiveWindow, itemType::integer64));
                 _add(new configItem("connectionReceiveWindow", &connectionReceiveWindow, itemType::integer64));
                 _add(new configItem("disableMtuDiscovery", &disableMtuDiscovery, itemType::boolean));
-                _add(new configItem("hopInterval", &hopInterval, itemType::integer));
-                _add(new configItem("hopPort", &hopPort, itemType::string));
                 if (proxy_type == proxy_Hysteria) { // hy1
                     _add(new configItem("authPayloadType", &authPayloadType, itemType::integer));
                     _add(new configItem("protocol", &hyProtocol, itemType::integer));
@@ -99,7 +93,6 @@ namespace NekoGui_fmt {
         };
 
         QString DisplayAddress() override {
-            if (!hopPort.trimmed().isEmpty()) return WrapIPV6Host(serverAddress) + ":" + hopPort;
             return ::DisplayAddress(serverAddress, serverPort);
         }
 

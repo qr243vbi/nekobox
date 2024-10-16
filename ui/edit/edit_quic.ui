@@ -16,7 +16,7 @@
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
     <layout class="QGridLayout" name="upBox">
-     <item row="3" column="0">
+     <item row="2" column="0">
       <layout class="QHBoxLayout" name="heartbeatLay">
        <item>
         <widget class="QLabel" name="heartbeat_l">
@@ -37,21 +37,84 @@
        </item>
       </layout>
      </item>
-     <item row="0" column="0">
-      <layout class="QHBoxLayout" name="hopPortLay">
+     <item row="0" column="1">
+      <layout class="QHBoxLayout" name="downloadMbpsLay">
        <item>
-        <widget class="QLabel" name="hopPort_l">
+        <widget class="QLabel" name="downloadMbps_l">
          <property name="text">
-          <string>Hop Port</string>
+          <string>Download (Mbps)</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="MyLineEdit" name="hopPort"/>
+        <widget class="MyLineEdit" name="downloadMbps"/>
        </item>
       </layout>
      </item>
-     <item row="2" column="0">
+     <item row="3" column="1">
+      <widget class="QCheckBox" name="uos">
+       <property name="toolTip">
+        <string notr="true">Requires sing-box server</string>
+       </property>
+       <property name="text">
+        <string notr="true">UDP over Stream</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="0">
+      <layout class="QHBoxLayout" name="uploadMbpsLay">
+       <item>
+        <widget class="QLabel" name="uploadMbps_l">
+         <property name="text">
+          <string>Upload (Mbps)</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="MyLineEdit" name="uploadMbps"/>
+       </item>
+      </layout>
+     </item>
+     <item row="2" column="1">
+      <widget class="QCheckBox" name="zeroRttHandshake">
+       <property name="text">
+        <string>Zero Rtt Handshake</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="0">
+      <widget class="QCheckBox" name="forceExternal">
+       <property name="text">
+        <string>Force use external core</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <layout class="QHBoxLayout" name="udpRelayModeLay">
+       <item>
+        <widget class="QLabel" name="udpRelayMode_l">
+         <property name="text">
+          <string>UDP Relay Mode</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="udpRelayMode">
+         <item>
+          <property name="text">
+           <string notr="true">native</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string notr="true">quic</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item row="1" column="0">
       <layout class="QHBoxLayout" name="congestionControlLay">
        <item>
         <widget class="QLabel" name="congestionControl_l">
@@ -80,97 +143,6 @@
         </widget>
        </item>
       </layout>
-     </item>
-     <item row="1" column="1">
-      <layout class="QHBoxLayout" name="downloadMbpsLay">
-       <item>
-        <widget class="QLabel" name="downloadMbps_l">
-         <property name="text">
-          <string>Download (Mbps)</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="MyLineEdit" name="downloadMbps"/>
-       </item>
-      </layout>
-     </item>
-     <item row="0" column="1">
-      <layout class="QHBoxLayout" name="hopIntervalLay">
-       <item>
-        <widget class="QLabel" name="hopInterval_l">
-         <property name="text">
-          <string>Hop Interval (s)</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="MyLineEdit" name="hopInterval"/>
-       </item>
-      </layout>
-     </item>
-     <item row="1" column="0">
-      <layout class="QHBoxLayout" name="uploadMbpsLay">
-       <item>
-        <widget class="QLabel" name="uploadMbps_l">
-         <property name="text">
-          <string>Upload (Mbps)</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="MyLineEdit" name="uploadMbps"/>
-       </item>
-      </layout>
-     </item>
-     <item row="2" column="1">
-      <layout class="QHBoxLayout" name="udpRelayModeLay">
-       <item>
-        <widget class="QLabel" name="udpRelayMode_l">
-         <property name="text">
-          <string>UDP Relay Mode</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QComboBox" name="udpRelayMode">
-         <item>
-          <property name="text">
-           <string notr="true">native</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string notr="true">quic</string>
-          </property>
-         </item>
-        </widget>
-       </item>
-      </layout>
-     </item>
-     <item row="3" column="1">
-      <widget class="QCheckBox" name="zeroRttHandshake">
-       <property name="text">
-        <string>Zero Rtt Handshake</string>
-       </property>
-      </widget>
-     </item>
-     <item row="4" column="1">
-      <widget class="QCheckBox" name="uos">
-       <property name="toolTip">
-        <string notr="true">Requires sing-box server</string>
-       </property>
-       <property name="text">
-        <string notr="true">UDP over Stream</string>
-       </property>
-      </widget>
-     </item>
-     <item row="4" column="0">
-      <widget class="QCheckBox" name="forceExternal">
-       <property name="text">
-        <string>Force use external core</string>
-       </property>
-      </widget>
      </item>
     </layout>
    </item>
@@ -369,10 +341,10 @@
      <item row="1" column="2">
       <spacer name="alpn_sp">
        <property name="orientation">
-        <enum>Qt::Horizontal</enum>
+        <enum>Qt::Orientation::Horizontal</enum>
        </property>
        <property name="sizeType">
-        <enum>QSizePolicy::Maximum</enum>
+        <enum>QSizePolicy::Policy::Maximum</enum>
        </property>
        <property name="sizeHint" stdset="0">
         <size>
@@ -418,8 +390,6 @@
   </customwidget>
  </customwidgets>
  <tabstops>
-  <tabstop>hopPort</tabstop>
-  <tabstop>hopInterval</tabstop>
   <tabstop>uploadMbps</tabstop>
   <tabstop>downloadMbps</tabstop>
   <tabstop>congestionControl</tabstop>
