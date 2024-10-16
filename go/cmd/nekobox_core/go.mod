@@ -7,19 +7,19 @@ require (
 	github.com/gofrs/uuid/v5 v5.3.0
 	github.com/matsuridayo/libneko v0.0.0-20230913024055-5277a5bfc889
 	github.com/oschwald/maxminddb-golang v1.13.1
-	github.com/sagernet/sing v0.5.0-beta.2
+	github.com/sagernet/sing v0.5.0-rc.2
 	github.com/sagernet/sing-box v1.10.0-beta.12
-	github.com/sagernet/sing-dns v0.3.0-beta.14
-	github.com/sagernet/sing-tun v0.4.0-beta.16
+	github.com/sagernet/sing-dns v0.3.0-rc.2
+	github.com/sagernet/sing-tun v0.4.0-rc.3.0.20241014141023-07278fb4705b
 	github.com/spf13/cobra v1.8.1
 	golang.org/x/sys v0.25.0
 	golang.zx2c4.com/wireguard/wgctrl v0.0.0-20230429144221-925a1e7659e6
 	grpc_server v1.0.0
 )
 
-replace github.com/sagernet/sing-box => github.com/Mahdi-zarei/sing-box v1.3.5-0.20241007195945-04f9f41f3fd3
+replace github.com/sagernet/sing-box => github.com/Mahdi-zarei/sing-box v1.3.5-0.20241016190733-d626a7470382
 
-replace github.com/sagernet/sing-dns => github.com/Mahdi-zarei/sing-dns v0.3.0-beta.14.0.20240920072724-5aaefdab8381
+replace github.com/sagernet/sing-dns => github.com/Mahdi-zarei/sing-dns v0.3.0-beta.14.0.20241016191038-09d232d0a8a9
 
 require (
 	berty.tech/go-libtor v1.0.385 // indirect
@@ -54,7 +54,7 @@ require (
 	github.com/mdlayher/socket v0.4.1 // indirect
 	github.com/metacubex/tfo-go v0.0.0-20240821025650-e9be0afd5e7d // indirect
 	github.com/mholt/acmez v1.2.0 // indirect
-	github.com/miekg/dns v1.1.61 // indirect
+	github.com/miekg/dns v1.1.62 // indirect
 	github.com/onsi/ginkgo/v2 v2.9.7 // indirect
 	github.com/ooni/go-libtor v1.1.8 // indirect
 	github.com/pierrec/lz4/v4 v4.1.14 // indirect
@@ -70,7 +70,7 @@ require (
 	github.com/sagernet/quic-go v0.47.0-beta.2 // indirect
 	github.com/sagernet/reality v0.0.0-20230406110435-ee17307e7691 // indirect
 	github.com/sagernet/sing-mux v0.2.0 // indirect
-	github.com/sagernet/sing-quic v0.3.0-beta.3 // indirect
+	github.com/sagernet/sing-quic v0.3.0-rc.1 // indirect
 	github.com/sagernet/sing-shadowsocks v0.2.7 // indirect
 	github.com/sagernet/sing-shadowsocks2 v0.2.0 // indirect
 	github.com/sagernet/sing-shadowtls v0.1.4 // indirect
