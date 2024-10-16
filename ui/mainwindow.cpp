@@ -695,6 +695,7 @@ void MainWindow::on_menu_exit_triggered() {
             arguments.removeAll("-tray");
             arguments.removeAll("-flag_restart_tun_on");
             arguments.removeAll("-flag_reorder");
+            arguments.removeAll("-flag_restart_dns_set");
         }
         auto program = QApplication::applicationFilePath();
 
