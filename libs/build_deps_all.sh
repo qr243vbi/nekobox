@@ -20,7 +20,7 @@ mkdir -p $INSTALL_PREFIX
 
 #### clean ####
 clean() {
-  rm -rf dl.zip yaml-* zxing-* protobuf curl cpr libpsl* zlib
+  rm -rf dl.zip yaml-* zxing-* protobuf curl cpr libpsl* zlib vcpkg
 }
 
 #### ZXing v2.2.0 ####
@@ -52,8 +52,6 @@ cd ../..
 #### protobuf ####
 git clone --recurse-submodules -b v28.2 --depth 1 --shallow-submodules https://github.com/protocolbuffers/protobuf
 
-#备注：交叉编译要在 host 也安装 protobuf 并且版本一致,编译安装，同参数，安装到 /usr/local
-
 mkdir -p protobuf/build
 cd protobuf/build
 
@@ -80,7 +78,7 @@ if [[ "$(uname -s)" == *"NT"* ]]; then
 
   git clone https://github.com/libcpr/cpr.git
   cd cpr
-  git checkout 3b15fa82ea74739b574d705fea44959b58142eb8
+  git checkout bb01c8db702fb41e5497aee9c0559ddf4bf13749
   sed -i 's/find_package(CURL COMPONENTS HTTP HTTPS)/find_package(CURL REQUIRED)/g' CMakeLists.txt
   mkdir build && cd build
   cmake -GNinja .. -DCMAKE_BUILD_TYPE=Release -DCPR_USE_SYSTEM_CURL=ON -DBUILD_SHARED_LIBS=OFF -DCURL_STATICLIB=ON -DCURL_LIBRARY=../../built/x64-windows-static/lib -DCURL_INCLUDE_DIR=../../built/x64-windows-static/include -DCMAKE_INSTALL_PREFIX=$INSTALL_PREFIX
@@ -91,7 +89,7 @@ if [[ "$(uname -s)" == *"NT"* ]]; then
   else
     git clone https://github.com/curl/curl.git
     cd curl
-    git checkout 83bedbd730d62b83744cc26fa0433d3f6e2e4cd6
+    git checkout 7eb8c048470ed2cc14dca75be9c1cdae7ac8498b
     mkdir build && cd build
     cmake -GNinja .. -DCMAKE_BUILD_TYPE=Release -DBUILD_SHARED_LIBS=OFF -DCMAKE_INSTALL_PREFIX=$INSTALL_PREFIX -DCURL_STATICLIB=ON
     ninja && ninja install
@@ -100,7 +98,7 @@ if [[ "$(uname -s)" == *"NT"* ]]; then
 
     git clone https://github.com/libcpr/cpr.git
     cd cpr
-    git checkout 3b15fa82ea74739b574d705fea44959b58142eb8
+    git checkout bb01c8db702fb41e5497aee9c0559ddf4bf13749./
     mkdir build && cd build
     cmake -GNinja .. -DCMAKE_BUILD_TYPE=Release -DCPR_USE_SYSTEM_CURL=ON -DBUILD_SHARED_LIBS=OFF -DCURL_STATICLIB=ON -DCMAKE_INSTALL_PREFIX=$INSTALL_PREFIX
     ninja && ninja install
