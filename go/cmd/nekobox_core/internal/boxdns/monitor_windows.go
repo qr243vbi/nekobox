@@ -38,6 +38,13 @@ func init() {
 	monitorDI.RegisterCallback(handleInterfaceChange)
 	monitorDI.Start()
 	monitorNU.Start()
+
+	go func() {
+		for {
+			time.Sleep(5 * time.Second)
+			monitorForUnderlyingDNS(0) // to handle wifi change
+		}
+	}()
 }
 
 func monitorForUnderlyingDNS(event int) {

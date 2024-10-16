@@ -10,6 +10,7 @@ import (
 	"nekobox_core/internal/boxdns/winipcfg"
 	"net/netip"
 	"strings"
+	"time"
 )
 
 const (
@@ -17,14 +18,15 @@ const (
 	nameServerRegistryKey     = "NameServer"
 )
 
-var setDNS []netip.Addr
-var needAutoSet bool
+var customDNS []netip.Addr
+var dnsIsSet bool
 
 func handleInterfaceChange(event int) {
-	if !needAutoSet {
+	if !dnsIsSet {
 		return
 	}
-	_ = SetDefaultDNS(setDNS, false, false)
+	time.Sleep(2 * time.Second)
+	_ = SetDefaultDNS(customDNS, false, false)
 }
 
 func getDefaultInterfaceGuid() (string, error) {
@@ -92,10 +94,10 @@ func GetDefaultDNS() (servers []netip.Addr, dhcp bool, err error) {
 
 func SetDefaultDNS(servers []netip.Addr, dhcp bool, clear bool) error {
 	if clear {
-		needAutoSet = false
+		dnsIsSet = false
 	} else {
-		setDNS = servers
-		needAutoSet = true
+		customDNS = servers
+		dnsIsSet = true
 	}
 
 	luid, err := getDefaultInterfaceLUID()
