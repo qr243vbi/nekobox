@@ -85,6 +85,7 @@ namespace NekoGui {
         bool mux_default_on = false;
         QString theme = "0";
         int language = 0;
+        QString font;
         QString mw_size = "";
         QStringList log_ignore = {};
         bool start_minimal = false;
