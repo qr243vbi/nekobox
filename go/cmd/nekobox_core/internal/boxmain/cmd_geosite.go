@@ -10,8 +10,8 @@ var (
 	geositeCodeList []string
 )
 
-func geositePreRun() error {
-	reader, codeList, err := geosite.Open("../geosite.db") // currentDir is the config folder
+func geositePreRun(path string) error {
+	reader, codeList, err := geosite.Open(path)
 	if err != nil {
 		return E.Cause(err, "open geosite file ")
 	}

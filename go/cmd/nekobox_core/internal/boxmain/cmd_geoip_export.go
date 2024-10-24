@@ -13,8 +13,8 @@ import (
 	"github.com/oschwald/maxminddb-golang"
 )
 
-func geoipExport(countryCode string) ([]byte, error) {
-	if err := geoipPreRun(); err != nil {
+func geoipExport(path string, countryCode string) ([]byte, error) {
+	if err := geoipPreRun(path); err != nil {
 		return nil, err
 	}
 

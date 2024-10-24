@@ -7,6 +7,7 @@ import (
 	"github.com/sagernet/sing-box/common/settings"
 	"github.com/sagernet/sing/common/metadata"
 	"nekobox_core/internal/boxbox"
+	"os"
 	"strings"
 	"time"
 
@@ -165,8 +166,8 @@ func (s *server) ListConnections(ctx context.Context, in *gen.EmptyReq) (*gen.Li
 	return out, nil
 }
 
-func (s *server) GetGeoIPList(ctx context.Context, in *gen.EmptyReq) (*gen.GetGeoIPListResponse, error) {
-	resp, err := boxmain.ListGeoip()
+func (s *server) GetGeoIPList(ctx context.Context, in *gen.GeoListRequest) (*gen.GetGeoIPListResponse, error) {
+	resp, err := boxmain.ListGeoip(in.Path + string(os.PathSeparator) + "geoip.db")
 	if err != nil {
 		return nil, err
 	}
@@ -180,8 +181,8 @@ func (s *server) GetGeoIPList(ctx context.Context, in *gen.EmptyReq) (*gen.GetGe
 	return &gen.GetGeoIPListResponse{Items: res}, nil
 }
 
-func (s *server) GetGeoSiteList(ctx context.Context, in *gen.EmptyReq) (*gen.GetGeoSiteListResponse, error) {
-	resp, err := boxmain.GeositeList()
+func (s *server) GetGeoSiteList(ctx context.Context, in *gen.GeoListRequest) (*gen.GetGeoSiteListResponse, error) {
+	resp, err := boxmain.GeositeList(in.Path + string(os.PathSeparator) + "geosite.db")
 	if err != nil {
 		return nil, err
 	}
@@ -197,7 +198,7 @@ func (s *server) GetGeoSiteList(ctx context.Context, in *gen.EmptyReq) (*gen.Get
 
 func (s *server) CompileGeoIPToSrs(ctx context.Context, in *gen.CompileGeoIPToSrsRequest) (*gen.EmptyResp, error) {
 	category := strings.TrimSuffix(in.Item, "_IP")
-	err := boxmain.CompileRuleSet(category, boxmain.IpRuleSet, "./rule_sets/"+in.Item+".srs")
+	err := boxmain.CompileRuleSet(in.Path+string(os.PathSeparator)+"geoip.db", category, boxmain.IpRuleSet, "./rule_sets/"+in.Item+".srs")
 	if err != nil {
 		return nil, err
 	}
@@ -207,7 +208,7 @@ func (s *server) CompileGeoIPToSrs(ctx context.Context, in *gen.CompileGeoIPToSr
 
 func (s *server) CompileGeoSiteToSrs(ctx context.Context, in *gen.CompileGeoSiteToSrsRequest) (*gen.EmptyResp, error) {
 	category := strings.TrimSuffix(in.Item, "_SITE")
-	err := boxmain.CompileRuleSet(category, boxmain.SiteRuleSet, "./rule_sets/"+in.Item+".srs")
+	err := boxmain.CompileRuleSet(in.Path+string(os.PathSeparator)+"geosite.db", category, boxmain.SiteRuleSet, "./rule_sets/"+in.Item+".srs")
 	if err != nil {
 		return nil, err
 	}

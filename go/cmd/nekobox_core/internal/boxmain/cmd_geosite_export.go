@@ -8,8 +8,8 @@ import (
 	"github.com/sagernet/sing/common/json"
 )
 
-func geositeExport(category string) ([]byte, error) {
-	if err := geositePreRun(); err != nil {
+func geositeExport(path string, category string) ([]byte, error) {
+	if err := geositePreRun(path); err != nil {
 		return nil, err
 	}
 
