@@ -633,7 +633,7 @@ namespace NekoGui {
             };
             if (QFile(QString(RULE_SETS_DIR + "/%1.srs").arg(item)).exists()) continue;
             bool ok;
-            auto err = NekoGui_rpc::defaultClient->CompileGeoSet(&ok, item.contains("_IP") ? NekoGui_rpc::GeoRuleSetType::ip : NekoGui_rpc::GeoRuleSetType::site, item.toStdString());
+            auto err = NekoGui_rpc::defaultClient->CompileGeoSet(&ok, item.contains("_IP") ? NekoGui_rpc::GeoRuleSetType::ip : NekoGui_rpc::GeoRuleSetType::site, item.toStdString(), GetBasePath());
             if (!ok) {
                 MW_show_log("Failed to generate rule set asset for " + item);
                 status->result->error = err;

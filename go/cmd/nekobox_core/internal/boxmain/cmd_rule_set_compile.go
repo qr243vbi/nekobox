@@ -14,16 +14,16 @@ const (
 	SiteRuleSet
 )
 
-func CompileRuleSet(category string, ruleSetType RuleSetType, destPath string) error {
+func CompileRuleSet(path string, category string, ruleSetType RuleSetType, destPath string) error {
 	var (
 		content []byte
 		err     error
 	)
 
 	if ruleSetType == IpRuleSet {
-		content, err = geoipExport(category)
+		content, err = geoipExport(path, category)
 	} else {
-		content, err = geositeExport(category)
+		content, err = geositeExport(path, category)
 	}
 	if err != nil {
 		return err

@@ -15,6 +15,8 @@ namespace NekoGui {
     QString FindNekoBoxCoreRealPath();
 
     bool IsAdmin();
+
+    QString GetBasePath();
 } // namespace NekoGui
 
 #define IS_NEKO_BOX (NekoGui::coreType == NekoGui::CoreType::SING_BOX)

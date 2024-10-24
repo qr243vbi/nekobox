@@ -14,8 +14,8 @@ service LibcoreService {
   rpc QueryStats(QueryStatsReq) returns (QueryStatsResp) {}
   rpc ListConnections(EmptyReq) returns (ListConnectionsResp) {}
   //
-  rpc GetGeoIPList(EmptyReq) returns (GetGeoIPListResponse);
-  rpc GetGeoSiteList(EmptyReq) returns (GetGeoSiteListResponse);
+  rpc GetGeoIPList(GeoListRequest) returns (GetGeoIPListResponse);
+  rpc GetGeoSiteList(GeoListRequest) returns (GetGeoSiteListResponse);
   rpc CompileGeoIPToSrs(CompileGeoIPToSrsRequest) returns (EmptyResp);
   rpc CompileGeoSiteToSrs(CompileGeoSiteToSrsRequest) returns (EmptyResp);
   //
@@ -99,12 +99,18 @@ message GetGeoSiteListResponse {
   repeated string items = 2;
 }
 
+message GeoListRequest {
+  string path = 1;
+}
+
 message CompileGeoIPToSrsRequest {
   string item = 1;
+  string path = 2;
 }
 
 message CompileGeoSiteToSrsRequest {
   string item = 1;
+  string path = 2;
 }
 
 message SetSystemProxyRequest {

@@ -1,7 +1,7 @@
 package boxmain
 
-func GeositeList() ([]string, error) {
-	if err := geositePreRun(); err != nil {
+func GeositeList(path string) ([]string, error) {
+	if err := geositePreRun(path); err != nil {
 		return nil, err
 	}
 

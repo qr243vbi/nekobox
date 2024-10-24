@@ -48,8 +48,8 @@ type LibcoreServiceClient interface {
 	StopTest(ctx context.Context, in *EmptyReq, opts ...grpc.CallOption) (*EmptyResp, error)
 	QueryStats(ctx context.Context, in *QueryStatsReq, opts ...grpc.CallOption) (*QueryStatsResp, error)
 	ListConnections(ctx context.Context, in *EmptyReq, opts ...grpc.CallOption) (*ListConnectionsResp, error)
-	GetGeoIPList(ctx context.Context, in *EmptyReq, opts ...grpc.CallOption) (*GetGeoIPListResponse, error)
-	GetGeoSiteList(ctx context.Context, in *EmptyReq, opts ...grpc.CallOption) (*GetGeoSiteListResponse, error)
+	GetGeoIPList(ctx context.Context, in *GeoListRequest, opts ...grpc.CallOption) (*GetGeoIPListResponse, error)
+	GetGeoSiteList(ctx context.Context, in *GeoListRequest, opts ...grpc.CallOption) (*GetGeoSiteListResponse, error)
 	CompileGeoIPToSrs(ctx context.Context, in *CompileGeoIPToSrsRequest, opts ...grpc.CallOption) (*EmptyResp, error)
 	CompileGeoSiteToSrs(ctx context.Context, in *CompileGeoSiteToSrsRequest, opts ...grpc.CallOption) (*EmptyResp, error)
 	SetSystemProxy(ctx context.Context, in *SetSystemProxyRequest, opts ...grpc.CallOption) (*EmptyResp, error)
@@ -145,7 +145,7 @@ func (c *libcoreServiceClient) ListConnections(ctx context.Context, in *EmptyReq
 	return out, nil
 }
 
-func (c *libcoreServiceClient) GetGeoIPList(ctx context.Context, in *EmptyReq, opts ...grpc.CallOption) (*GetGeoIPListResponse, error) {
+func (c *libcoreServiceClient) GetGeoIPList(ctx context.Context, in *GeoListRequest, opts ...grpc.CallOption) (*GetGeoIPListResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(GetGeoIPListResponse)
 	err := c.cc.Invoke(ctx, LibcoreService_GetGeoIPList_FullMethodName, in, out, cOpts...)
@@ -155,7 +155,7 @@ func (c *libcoreServiceClient) GetGeoIPList(ctx context.Context, in *EmptyReq, o
 	return out, nil
 }
 
-func (c *libcoreServiceClient) GetGeoSiteList(ctx context.Context, in *EmptyReq, opts ...grpc.CallOption) (*GetGeoSiteListResponse, error) {
+func (c *libcoreServiceClient) GetGeoSiteList(ctx context.Context, in *GeoListRequest, opts ...grpc.CallOption) (*GetGeoSiteListResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(GetGeoSiteListResponse)
 	err := c.cc.Invoke(ctx, LibcoreService_GetGeoSiteList_FullMethodName, in, out, cOpts...)
@@ -227,8 +227,8 @@ type LibcoreServiceServer interface {
 	StopTest(context.Context, *EmptyReq) (*EmptyResp, error)
 	QueryStats(context.Context, *QueryStatsReq) (*QueryStatsResp, error)
 	ListConnections(context.Context, *EmptyReq) (*ListConnectionsResp, error)
-	GetGeoIPList(context.Context, *EmptyReq) (*GetGeoIPListResponse, error)
-	GetGeoSiteList(context.Context, *EmptyReq) (*GetGeoSiteListResponse, error)
+	GetGeoIPList(context.Context, *GeoListRequest) (*GetGeoIPListResponse, error)
+	GetGeoSiteList(context.Context, *GeoListRequest) (*GetGeoSiteListResponse, error)
 	CompileGeoIPToSrs(context.Context, *CompileGeoIPToSrsRequest) (*EmptyResp, error)
 	CompileGeoSiteToSrs(context.Context, *CompileGeoSiteToSrsRequest) (*EmptyResp, error)
 	SetSystemProxy(context.Context, *SetSystemProxyRequest) (*EmptyResp, error)
@@ -268,10 +268,10 @@ func (UnimplementedLibcoreServiceServer) QueryStats(context.Context, *QueryStats
 func (UnimplementedLibcoreServiceServer) ListConnections(context.Context, *EmptyReq) (*ListConnectionsResp, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListConnections not implemented")
 }
-func (UnimplementedLibcoreServiceServer) GetGeoIPList(context.Context, *EmptyReq) (*GetGeoIPListResponse, error) {
+func (UnimplementedLibcoreServiceServer) GetGeoIPList(context.Context, *GeoListRequest) (*GetGeoIPListResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetGeoIPList not implemented")
 }
-func (UnimplementedLibcoreServiceServer) GetGeoSiteList(context.Context, *EmptyReq) (*GetGeoSiteListResponse, error) {
+func (UnimplementedLibcoreServiceServer) GetGeoSiteList(context.Context, *GeoListRequest) (*GetGeoSiteListResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetGeoSiteList not implemented")
 }
 func (UnimplementedLibcoreServiceServer) CompileGeoIPToSrs(context.Context, *CompileGeoIPToSrsRequest) (*EmptyResp, error) {
@@ -455,7 +455,7 @@ func _LibcoreService_ListConnections_Handler(srv interface{}, ctx context.Contex
 }
 
 func _LibcoreService_GetGeoIPList_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(EmptyReq)
+	in := new(GeoListRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -467,13 +467,13 @@ func _LibcoreService_GetGeoIPList_Handler(srv interface{}, ctx context.Context, 
 		FullMethod: LibcoreService_GetGeoIPList_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(LibcoreServiceServer).GetGeoIPList(ctx, req.(*EmptyReq))
+		return srv.(LibcoreServiceServer).GetGeoIPList(ctx, req.(*GeoListRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _LibcoreService_GetGeoSiteList_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(EmptyReq)
+	in := new(GeoListRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -485,7 +485,7 @@ func _LibcoreService_GetGeoSiteList_Handler(srv interface{}, ctx context.Context
 		FullMethod: LibcoreService_GetGeoSiteList_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(LibcoreServiceServer).GetGeoSiteList(ctx, req.(*EmptyReq))
+		return srv.(LibcoreServiceServer).GetGeoSiteList(ctx, req.(*GeoListRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }

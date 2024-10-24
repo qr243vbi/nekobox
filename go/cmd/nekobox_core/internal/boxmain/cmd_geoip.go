@@ -10,8 +10,8 @@ var (
 	geoipReader *maxminddb.Reader
 )
 
-func geoipPreRun() error {
-	reader, err := maxminddb.Open("../geoip.db") // currentDir is the config folder
+func geoipPreRun(path string) error {
+	reader, err := maxminddb.Open(path)
 	if err != nil {
 		return err
 	}

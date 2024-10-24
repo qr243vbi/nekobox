@@ -54,9 +54,8 @@ namespace NekoGui_network {
             session.SetProxies({{"http", "127.0.0.1:" + QString(Int2String(NekoGui::dataStore->inbound_socks_port)).toStdString()},
                                 {"https", "127.0.0.1:" + QString(Int2String(NekoGui::dataStore->inbound_socks_port)).toStdString()}});
         }
-        auto filePath = qApp->applicationDirPath()+ "/" + fileName;
+        auto filePath = NekoGui::GetBasePath()+ "/" + fileName;
         std::ofstream fout;
-        QFile::remove(QString(filePath + ".1"));
         fout.open(QString(filePath + ".1").toStdString(), std::ios::trunc | std::ios::out | std::ios::binary);
         auto r = session.Download(fout);
         fout.close();
