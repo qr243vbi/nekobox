@@ -92,7 +92,6 @@ func getNameServersForInterface(guid string) ([]string, error) {
 	for _, name := range []string{`NameServer`, `DhcpNameServer`} {
 		s, _, err := key.GetStringValue(name)
 		if err != nil {
-			log.Println("getNameServersForInterface GetStringValue:", name, err)
 			continue
 		}
 		s = strings.ReplaceAll(s, ",", " ")
@@ -101,6 +100,10 @@ func getNameServersForInterface(guid string) ([]string, error) {
 				nameservers = append(nameservers, server)
 			}
 		}
+	}
+
+	if len(nameservers) == 0 {
+		log.Println("getNameServersForInterface: no nameservers found")
 	}
 
 	return nameservers, nil
