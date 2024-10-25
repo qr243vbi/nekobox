@@ -154,7 +154,7 @@ jobs:
           ./libs/deploy_linux64.sh
       - name: macOS - Generate MakeFile and Build
         shell: bash
-        if: matrix.platform == 'macos-13' || matrix.platform == 'macos-14'
+        if: matrix.platform == 'macos-14' || matrix.platform == 'macos-13'
         run: |
           mkdir build
           cd build
