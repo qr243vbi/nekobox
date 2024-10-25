@@ -426,9 +426,15 @@ namespace NekoGui {
     };
 
     QString GetBasePath() {
-        if (dataStore->flag_use_appdata) return QStandardPaths::writableLocation(QStandardPaths::AppConfigLocation);
+        if (dataStore->flag_use_appdata) return QStandardPaths::writableLocation(
+              QStandardPaths::AppConfigLocation);
         return qApp->applicationDirPath();
     }
 
-
+    bool NeedGeoAssets(){
+        auto path = GetBasePath();
+        auto geoIP = QFile(path + "/geoip.db");
+        auto geoSite = QFile(path + "/geosite.db");
+        return !geoIP.exists() || !geoSite.exists();
+    }
 } // namespace NekoGui

@@ -546,10 +546,10 @@ namespace NekoGui {
 
         // Routing
         // geopath
-        auto geoip = FindCoreAsset("geoip.db");
-        auto geosite = FindCoreAsset("geosite.db");
-        if (geoip.isEmpty()) status->result->error = +"geoip.db not found, it is needed for generating rule sets";
-        if (geosite.isEmpty()) status->result->error = +"geosite.db not found, it is needed for generating rule sets";
+        if (NeedGeoAssets()) {
+            status->result->error = "Geo Assets are missing, please download them through Basic Settings -> Assets";
+            return;
+        }
 
         // manage routing section
         auto routeObj = QJsonObject();
