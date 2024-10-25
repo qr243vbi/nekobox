@@ -417,6 +417,14 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     TM_auto_update_subsctiption_Reset_Minute(NekoGui::dataStore->sub_auto_update);
 
     if (!NekoGui::dataStore->flag_tray) show();
+
+    if (NekoGui::NeedGeoAssets()) {
+        auto n = QMessageBox::warning(GetMessageBoxParent(), software_name, tr("Geo Assets are missing, want to download them now?"), QMessageBox::Yes | QMessageBox::No);
+        if (n == QMessageBox::Yes) {
+            DownloadAssets(!NekoGui::dataStore->geoip_download_url.isEmpty() ? NekoGui::dataStore->geoip_download_url : NekoGui::GeoAssets::GeoIPURLs[0],
+                !NekoGui::dataStore->geosite_download_url.isEmpty() ? NekoGui::dataStore->geosite_download_url : NekoGui::GeoAssets::GeoSiteURLs[0]);
+        }
+    }
 }
 
 void MainWindow::closeEvent(QCloseEvent *event) {
