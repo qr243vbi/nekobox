@@ -296,7 +296,7 @@ namespace NekoGui_rpc {
             case GeoRuleSetType::ip: {
                 libcore::GeoListRequest req;
                 libcore::GetGeoIPListResponse resp;
-                req.set_path(basePath);
+                req.set_path(basePath.toStdString());
 
                 auto status = default_grpc_channel->Call("GetGeoIPList", req, &resp);
                 if (status == QNetworkReply::NoError) {
@@ -314,7 +314,7 @@ namespace NekoGui_rpc {
             case GeoRuleSetType::site: {
                 libcore::GeoListRequest req;
                 libcore::GetGeoSiteListResponse resp;
-                req.set_path(basePath);
+                req.set_path(basePath.toStdString());
 
                 auto status = default_grpc_channel->Call("GetGeoSiteList", req, &resp);
                 if (status == QNetworkReply::NoError) {
@@ -339,7 +339,7 @@ namespace NekoGui_rpc {
                 libcore::CompileGeoIPToSrsRequest req;
                 libcore::EmptyResp resp;
                 req.set_item(category);
-                req.set_path(basePath);
+                req.set_path(basePath.toStdString());
 
                 auto status = default_grpc_channel->Call("CompileGeoIPToSrs", req, &resp);
                 if (status == QNetworkReply::NoError) {
@@ -354,7 +354,7 @@ namespace NekoGui_rpc {
                 libcore::CompileGeoSiteToSrsRequest req;
                 libcore::EmptyResp resp;
                 req.set_item(category);
-                req.set_path(basePath);
+                req.set_path(basePath.toStdString());
 
                 auto status = default_grpc_channel->Call("CompileGeoSiteToSrs", req, &resp);
                 if (status == QNetworkReply::NoError) {
