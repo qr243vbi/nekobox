@@ -53,7 +53,6 @@ namespace NekoGui_sys {
         }
 
         QProcess::setEnvironment(env);
-
         QProcess::start(program, arguments);
     }
 

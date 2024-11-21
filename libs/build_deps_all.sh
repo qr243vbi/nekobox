@@ -61,6 +61,8 @@ $cmake .. -GNinja \
   -Dprotobuf_MSVC_STATIC_RUNTIME=OFF \
   -Dprotobuf_BUILD_TESTS=OFF \
   -DCMAKE_INSTALL_PREFIX=$INSTALL_PREFIX \
+  -Dprotobuf_BUILD_PROTOBUF_BINARIES=ON \
+  -Dprotobuf_BUILD_LIBUPB=OFF \
   -DCMAKE_CXX_STANDARD=17
 ninja && ninja install
 
