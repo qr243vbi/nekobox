@@ -391,23 +391,12 @@ void MainWindow::neko_start(int _id) {
 
 void MainWindow::neko_set_spmode_system_proxy(bool enable, bool save) {
     if (enable != NekoGui::dataStore->spmode_system_proxy) {
-#ifndef Q_OS_LINUX
-        bool ok;
-        auto error = defaultClient->SetSystemProxy(&ok, enable);
-        if (!ok) {
-            MW_show_log("Failed to set system proxy with error " + error);
-            ui->checkBox_SystemProxy->setChecked(false);
-            refresh_status();
-            return;
-        }
-#else
         if (enable) {
             auto socks_port = NekoGui::dataStore->inbound_socks_port;
             SetSystemProxy(socks_port, socks_port);
         } else {
             ClearSystemProxy();
         }
-#endif
     }
 
     if (save) {

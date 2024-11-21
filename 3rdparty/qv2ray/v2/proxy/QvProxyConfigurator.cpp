@@ -253,7 +253,21 @@ namespace Qv2ray::components::proxy {
 #endif
 
 #ifdef Q_OS_WIN
-        // we don't use this for windows
+        QString str = "socks={ip}:{socks_port}";
+        str = str.replace("{ip}", address)
+                  .replace("{socks_port}", Int2String(socksPort));
+        //
+        LOG("Windows proxy string: " + str);
+        auto proxyStrW = new WCHAR[str.length() + 1];
+        wcscpy(proxyStrW, str.toStdWString().c_str());
+        //
+        __QueryProxyOptions();
+
+        if (!__SetProxyOptions(proxyStrW, false)) {
+            LOG("Failed to set proxy.");
+        }
+
+        __QueryProxyOptions();
 #elif defined(Q_OS_LINUX)
         QList<ProcessArgument> actions;
         actions << ProcessArgument{"gsettings", {"set", "org.gnome.system.proxy", "mode", "manual"}};
