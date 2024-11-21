@@ -100,7 +100,7 @@ jobs:
       # ========================================================================================================= Qt Install
       - name: Install Qt
         if: matrix.platform != 'windows-2022'
-        uses: jurplel/install-qt-action@v4.0.0
+        uses: jurplel/install-qt-action@v4.1.1
         with:
           version: ${{ matrix.qt_version }}
           setup-python: true
@@ -108,9 +108,8 @@ jobs:
           cache-key-prefix: QtCache-${{ matrix.platform }}-${{ matrix.arch }}
       - name: Install Qt Windows
         if: matrix.platform == 'windows-2022'
-        uses: jurplel/install-qt-action@v4.0.0
+        uses: jurplel/install-qt-action@v4.1.1
         with:
-          arch: win64_msvc2022_64
           version: ${{ matrix.qt_version }}
           cache: true
           cache-key-prefix: QtCache-${{ matrix.platform }}-${{ matrix.arch }}
@@ -209,11 +208,13 @@ jobs:
           zip -r $version_standalone-windows64.zip nekoray
           rm -rf nekoray
           ####
-          mv macos-arm64/nekoray.dmg $version_standalone-macos-arm64.dmg
-          rm -rf macos-arm64/nekoray.dmg
+          mv macos-arm64/nekoray.app nekoray
+          zip -r $version_standalone-macos-arm64.zip nekoray
+          rm -rf nekoray
           ####
-          mv macos-amd64/nekoray.dmg $version_standalone-macos-amd64.dmg
-          rm -rf macos-amd64/nekoray.dmg
+          mv macos-amd64/nekoray.app nekoray
+          zip -r $version_standalone-macos-amd64.zip nekoray
+          rm -rf nekoray
       - name: Clean Up
         run: |
           cd deployment

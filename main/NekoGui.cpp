@@ -407,18 +407,14 @@ namespace NekoGui {
     short isAdminCache = -1;
 
     // IsAdmin 主要判断：有无权限启动 Tun
-    bool IsAdmin() {
-        if (isAdminCache >= 0) return isAdminCache;
+    bool IsAdmin(bool forceRenew) {
+        if (isAdminCache >= 0 && !forceRenew) return isAdminCache;
 
         bool admin = false;
 #ifdef Q_OS_WIN
         admin = Windows_IsInAdmin();
-#endif
-#ifdef Q_OS_LINUX
+#else
         admin = QFileInfo(FindNekoBoxCoreRealPath()).groupId() == 0;
-#endif
-#ifdef Q_OS_MACOS
-        admin = geteuid() == 0;
 #endif
 
         isAdminCache = admin;

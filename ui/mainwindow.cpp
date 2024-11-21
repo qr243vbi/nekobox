@@ -46,6 +46,8 @@
 #include <QStyleHints>
 #include <main/HTTPRequestHelper.hpp>
 
+#include "sys/macos/MacOS.h"
+
 void UI_InitMainWindow() {
     mainwindow = new MainWindow;
 }
@@ -764,9 +766,33 @@ bool MainWindow::get_elevated_permissions(int reason) {
 #endif
 
 #ifdef Q_OS_MACOS
-    MessageBoxWarning("Need administrator privilege", "Enabling TUN mode requires elevated privileges, please run Nekoray as root.");
+    if (NekoGui::IsAdmin(true))
+    {
+        this->exit_reason = reason;
+        on_menu_exit_triggered();
+        return false;
+    }
+    auto n = QMessageBox::warning(GetMessageBoxParent(), software_name, tr("Please give the core root privileges"), QMessageBox::Yes | QMessageBox::No);
+    if (n == QMessageBox::Yes)
+    {
+        auto chmodCommand = QString("chmod u+s " + NekoGui::FindNekoBoxCoreRealPath());
+        auto ret = Mac_Run_Command(chmodCommand);
+        if (ret != 0)
+        {
+            MW_show_log(QString("Failed to run %1 with code %2").arg(chmodCommand).arg(ret));
+            return false;
+        }
+        auto chownCommand = QString("sudo chown root:wheel " + NekoGui::FindNekoBoxCoreRealPath());
+        ret = Mac_Run_Command(chownCommand);
+        if (ret == 0) {
+            MessageBoxInfo(tr("Requesting permission"), tr("Please Enter your password in the opened terminals, then try again"));
+            return false;
+        } else {
+            MW_show_log(QString("Failed to run %1 with %2").arg(chownCommand).arg(ret));
+            return false;
+        }
+    }
 #endif
-
     return false;
 }
 
