@@ -249,6 +249,7 @@ void DialogManageRoutes::on_clone_route_clicked() {
     auto chainCopy = std::make_shared<NekoGui::RoutingChain>(*chainList[idx]);
     chainCopy->name = chainCopy->name + " clone";
     chainCopy->id = -1;
+    chainCopy->save_control_no_save = false;
     chainList.append(chainCopy);
     reloadProfileItems();
 }
