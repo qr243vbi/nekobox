@@ -45,7 +45,7 @@ func CompileRuleSet(path string, category string, ruleSetType RuleSetType, destP
 	if err != nil {
 		return err
 	}
-	err = srs.Write(outputFile, ruleSet, false)
+	err = srs.Write(outputFile, ruleSet, plainRuleSet.Version)
 	if err != nil {
 		outputFile.Close()
 		os.Remove(destPath)
