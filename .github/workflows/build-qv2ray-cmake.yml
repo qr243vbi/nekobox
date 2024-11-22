@@ -40,7 +40,7 @@ jobs:
         if: steps.cache-common.outputs.cache-hit != 'true' && matrix.cross_os != 'windows7'
         uses: actions/setup-go@v5.0.2
         with:
-          go-version: '1.23.2'
+          go-version: '1.23.3'
       - name: Install Older Golang
         if: steps.cache-common.outputs.cache-hit != 'true' && matrix.cross_os == 'windows7'
         uses: actions/setup-go@v5.0.2
@@ -67,18 +67,18 @@ jobs:
     strategy:
       matrix:
         include:
-          - platform: windows-2022
-            arch: x64
+          - platform: windows-latest
             qt_version: "6.8.0"
-          - platform: ubuntu-22.04
-            arch: x64
+            target: amd64
+          - platform: ubuntu-latest
             qt_version: "6.8.0"
-          - platform: macos-13
-            arch: amd64
+            target: amd64
+          - platform: macos-latest
             qt_version: "6.8.0"
-          - platform: macos-14
-            arch: arm64
+            target: x86_64
+          - platform: macos-latest
             qt_version: "6.8.0"
+            target: arm64
       fail-fast: false
     runs-on: ${{ matrix.platform }}
     env:
@@ -89,30 +89,21 @@ jobs:
         with:
           submodules: "recursive"
       - name: Install MSVC compiler
-        if: matrix.platform == 'windows-2022'
+        if: matrix.platform == 'windows-latest'
         uses: ilammy/msvc-dev-cmd@v1.13.0
-        with:
-          arch: ${{ matrix.arch }}
+
       - name: Download Artifacts
         uses: actions/download-artifact@v4.1.8
         with:
           path: download-artifact
       # ========================================================================================================= Qt Install
       - name: Install Qt
-        if: matrix.platform != 'windows-2022'
         uses: jurplel/install-qt-action@v4.1.1
         with:
           version: ${{ matrix.qt_version }}
           setup-python: true
           cache: true
-          cache-key-prefix: QtCache-${{ matrix.platform }}-${{ matrix.arch }}
-      - name: Install Qt Windows
-        if: matrix.platform == 'windows-2022'
-        uses: jurplel/install-qt-action@v4.1.1
-        with:
-          version: ${{ matrix.qt_version }}
-          cache: true
-          cache-key-prefix: QtCache-${{ matrix.platform }}-${{ matrix.arch }}
+          cache-key-prefix: QtCache-${{ matrix.platform }}-${{ matrix.target }}
       # ========================================================================================================= 编译与 Qt 无关的依赖
       - name: Install ninja-build tool
         uses: seanmiddleditch/gha-setup-ninja@v5
@@ -121,15 +112,15 @@ jobs:
         uses: actions/cache@v4.0.2
         with:
           path: libs/deps
-          key: DepsCache-${{ matrix.platform }}-${{ matrix.arch }}-${{ hashFiles('libs/build_deps_*.sh') }}-Qt${{ matrix.qt_version }}
+          key: DepsCache-${{ matrix.platform }}-${{ matrix.target }}-${{ hashFiles('libs/build_deps_*.sh') }}-Qt${{ matrix.qt_version }}
       - name: Build Dependencies
         shell: bash
         if: steps.cache-deps.outputs.cache-hit != 'true'
-        run: ./libs/build_deps_all.sh
+        run: ./libs/build_deps_all.sh ${{ matrix.target }}
       # ========================================================================================================= Generate MakeFile and Build
       - name: Windows - Generate MakeFile and Build
         shell: bash
-        if: matrix.platform == 'windows-2022'
+        if: matrix.platform == 'windows-latest'
         env:
           CC: cl.exe
           CXX: cl.exe
@@ -142,7 +133,7 @@ jobs:
           ./libs/deploy_windows64.sh
       - name: Linux - Generate MakeFile and Build
         shell: bash
-        if: matrix.platform == 'ubuntu-22.04'
+        if: matrix.platform == 'ubuntu-latest'
         run: |
           sudo apt update && sudo apt upgrade -y
           mkdir build 
@@ -153,14 +144,14 @@ jobs:
           ./libs/deploy_linux64.sh
       - name: macOS - Generate MakeFile and Build
         shell: bash
-        if: matrix.platform == 'macos-14' || matrix.platform == 'macos-13'
+        if: matrix.platform == 'macos-latest'
         run: |
           mkdir build
           cd build
-          cmake -GNinja -DQT_VERSION_MAJOR=6 -DCMAKE_BUILD_TYPE=Release -DNKR_PACKAGE_MACOS=1 ..
+          cmake -GNinja -DQT_VERSION_MAJOR=6 -DCMAKE_BUILD_TYPE=Release -DNKR_PACKAGE_MACOS=1 -DCMAKE_OSX_DEPLOYMENT_TARGET=10.15 -DCMAKE_OSX_ARCHITECTURES=${{ matrix.target }} ..
           ninja
           cd ..
-          ./libs/deploy_macos.sh
+          ./libs/deploy_macos.sh ${{ matrix.target }}
       # ========================================================================================================= Deployments
       - name: Tar files
         shell: bash
@@ -168,7 +159,7 @@ jobs:
       - name: Uploading Artifact
         uses: actions/upload-artifact@v4.4.0
         with:
-          name: NekoRay-${{ github.sha }}-${{ matrix.platform }}-${{ matrix.arch }}-Qt${{ matrix.qt_version }}
+          name: NekoRay-${{ github.sha }}-${{ matrix.platform }}-${{ matrix.target }}-Qt${{ matrix.qt_version }}
           path: artifacts.tgz
   publish:
     name: Pack & Publish Release
