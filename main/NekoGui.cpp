@@ -308,6 +308,7 @@ namespace NekoGui {
         _add(new configItem("system_dns_set", &system_dns_set, itemType::boolean));
         _add(new configItem("is_dhcp", &is_dhcp, itemType::boolean));
         _add(new configItem("system_dns_servers", &system_dns_servers, itemType::stringList));
+        _add(new configItem("windows_set_admin", &windows_set_admin, itemType::boolean));
     }
 
     void DataStore::UpdateStartedId(int id) {
@@ -413,6 +414,7 @@ namespace NekoGui {
         bool admin = false;
 #ifdef Q_OS_WIN
         admin = Windows_IsInAdmin();
+        dataStore->windows_set_admin = admin;
 #else
         admin = QFileInfo(FindNekoBoxCoreRealPath()).groupId() == 0;
 #endif

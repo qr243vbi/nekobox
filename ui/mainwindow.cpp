@@ -61,6 +61,15 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     // Load Manager
     NekoGui::profileManager->LoadManager();
 
+    #ifdef Q_OS_WIN
+    if (NekoGui::dataStore->windows_set_admin)
+    {
+        exit_reason = 5;
+        on_menu_exit_triggered();
+        return;
+    }
+    #endif
+
     // Setup misc UI
     // migrate old themes
     bool isNum;
@@ -706,7 +715,7 @@ void MainWindow::on_menu_exit_triggered() {
         }
         auto program = QApplication::applicationFilePath();
 
-        if (exit_reason == 3 || exit_reason == 4) {
+        if (exit_reason == 3 || exit_reason == 4 || exit_reason == 5) {
             if (exit_reason == 3) arguments << "-flag_restart_tun_on";
             if (exit_reason == 4) arguments << "-flag_restart_dns_set";
 #ifdef Q_OS_WIN
@@ -749,8 +758,9 @@ bool MainWindow::get_elevated_permissions(int reason) {
         auto chmodArgs = QString("u+s " + NekoGui::FindNekoBoxCoreRealPath());
         ret = Linux_Run_Command("chmod", chmodArgs);
         if (ret == 0) {
-            this->exit_reason = reason;
-            on_menu_exit_triggered();
+            NekoGui::IsAdmin(true);
+            StopVPNProcess();
+            return true;
         } else {
             MW_show_log(QString("Failed to run chmod %1").arg(chmodArgs));
             return false;
@@ -768,9 +778,8 @@ bool MainWindow::get_elevated_permissions(int reason) {
 #ifdef Q_OS_MACOS
     if (NekoGui::IsAdmin(true))
     {
-        this->exit_reason = reason;
-        on_menu_exit_triggered();
-        return false;
+        StopVPNProcess();
+        return true;
     }
     auto n = QMessageBox::warning(GetMessageBoxParent(), software_name, tr("Please give the core root privileges"), QMessageBox::Yes | QMessageBox::No);
     if (n == QMessageBox::Yes)
@@ -785,7 +794,7 @@ bool MainWindow::get_elevated_permissions(int reason) {
         auto chownCommand = QString("sudo chown root:wheel " + NekoGui::FindNekoBoxCoreRealPath());
         ret = Mac_Run_Command(chownCommand);
         if (ret == 0) {
-            MessageBoxInfo(tr("Requesting permission"), tr("Please Enter your password in the opened terminals, then try again"));
+            MessageBoxInfo(tr("Requesting permission"), tr("Please Enter your password in the opened terminal, then try again"));
             return false;
         } else {
             MW_show_log(QString("Failed to run %1 with %2").arg(chownCommand).arg(ret));
