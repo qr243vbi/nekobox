@@ -8,6 +8,7 @@
 #include <QLocalSocket>
 #include <QLocalServer>
 #include <QThread>
+#include <3rdparty/WinCommander.hpp>
 
 #include "3rdparty/RunGuard.hpp"
 #include "main/NekoGui.hpp"
@@ -197,6 +198,15 @@ int main(int argc, char* argv[]) {
     if (!isLoaded) {
         NekoGui::dataStore->Save();
     }
+
+#ifdef Q_OS_WIN
+    if (NekoGui::dataStore->windows_set_admin && !NekoGui::IsAdmin())
+    {
+        WinCommander::runProcessElevated(QApplication::applicationFilePath(), {}, "", WinCommander::SW_NORMAL, false);
+        QApplication::quit();
+        return 0;
+    }
+#endif
 
     // Datastore & Flags
     if (NekoGui::dataStore->start_minimal) NekoGui::dataStore->flag_tray = true;

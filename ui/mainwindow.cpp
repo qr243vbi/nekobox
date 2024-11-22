@@ -61,15 +61,6 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     // Load Manager
     NekoGui::profileManager->LoadManager();
 
-    #ifdef Q_OS_WIN
-    if (NekoGui::dataStore->windows_set_admin)
-    {
-        exit_reason = 5;
-        on_menu_exit_triggered();
-        return;
-    }
-    #endif
-
     // Setup misc UI
     // migrate old themes
     bool isNum;
@@ -715,7 +706,7 @@ void MainWindow::on_menu_exit_triggered() {
         }
         auto program = QApplication::applicationFilePath();
 
-        if (exit_reason == 3 || exit_reason == 4 || exit_reason == 5) {
+        if (exit_reason == 3 || exit_reason == 4) {
             if (exit_reason == 3) arguments << "-flag_restart_tun_on";
             if (exit_reason == 4) arguments << "-flag_restart_dns_set";
 #ifdef Q_OS_WIN
