@@ -202,6 +202,8 @@ int main(int argc, char* argv[]) {
 #ifdef Q_OS_WIN
     if (NekoGui::dataStore->windows_set_admin && !NekoGui::IsAdmin())
     {
+        NekoGui::dataStore->windows_set_admin = false; // so that if permission denied, we will run as user on the next run
+        NekoGui::dataStore->Save();
         WinCommander::runProcessElevated(QApplication::applicationFilePath(), {}, "", WinCommander::SW_NORMAL, false);
         QApplication::quit();
         return 0;
