@@ -1826,7 +1826,7 @@ bool MainWindow::StopVPNProcess() {
 #endif
 #ifdef Q_OS_LINUX
         QProcess p;
-        p.start("pkexec", {"pkill", "-2", "-P", Int2String(vpn_pid)});
+        p.start("pkexec", {"kill", "-9", Int2String(vpn_pid)});
         p.waitForFinished();
         ok = p.exitCode() == 0;
 #endif
