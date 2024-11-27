@@ -199,13 +199,13 @@ jobs:
           zip -r $version_standalone-windows64.zip nekoray
           rm -rf nekoray
           ####
-          mv macos-arm64/nekoray.app nekoray
-          zip -r $version_standalone-macos-arm64.zip nekoray
-          rm -rf nekoray
+          mv macos-arm64/nekoray.app nekoray.app
+          zip -r $version_standalone-macos-arm64.zip nekoray.app
+          rm -rf nekoray.app
           ####
-          mv macos-amd64/nekoray.app nekoray
-          zip -r $version_standalone-macos-amd64.zip nekoray
-          rm -rf nekoray
+          mv macos-amd64/nekoray.app nekoray.app
+          zip -r $version_standalone-macos-amd64.zip nekoray.app
+          rm -rf nekoray.app
       - name: Clean Up
         run: |
           cd deployment
