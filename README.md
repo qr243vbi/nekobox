@@ -2,7 +2,7 @@
 
 Qt based Desktop cross-platform GUI proxy configuration manager (backend: sing-box)
 
-Supports Windows / Linux / MacOS out of the box now. Windows7 is also supported, but requires some additional changes to run.
+Supports Windows / Linux / MacOS out of the box now.
 
 ### Notes on the new versions on Windows
 The newest versions of Nekoray are built using the latest compilers and Qt releases, and so they need the latest `vc_redist` installed. If the app does not start and crashes, please make sure to update it.
