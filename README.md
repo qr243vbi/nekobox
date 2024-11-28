@@ -10,7 +10,7 @@ Also few anti-virus apps may identify the `nekobox_core.exe` as trojan, this is 
 report `updater.exe` as trojan, this is also a false alarm caused by updater having to delete the old Nekoray files and replacing it with the new ones, which is like what many viruses do to replace your files with encrypted ones for ransoming purposes.
 
 ### How to run on Windows7
-To run on Windows7, you will need to utilize [VxKex](https://github.com/i486/VxKex). Some of Tun mode stacks might not work as well, please fallback to gVisor stack if you encountered this problem.
+Maintaining a windows7 build is no longer feasable, use [nekoray-win7](https://github.com/parhelia512/nekoray-win7) for windows7.
 
 ### Compatiblity issues on Linux Distros
 Since every Distro of Linux has its own set of libraries, you might need to manually install some packages in order for nekoray to run.
