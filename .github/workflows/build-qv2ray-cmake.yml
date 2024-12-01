@@ -68,16 +68,16 @@ jobs:
       matrix:
         include:
           - platform: windows-latest
-            qt_version: "6.8.0"
+            qt_version: "6.8.1"
             target: amd64
           - platform: ubuntu-latest
-            qt_version: "6.8.0"
+            qt_version: "6.8.1"
             target: amd64
           - platform: macos-latest
-            qt_version: "6.8.0"
+            qt_version: "6.8.1"
             target: x86_64
           - platform: macos-latest
-            qt_version: "6.8.0"
+            qt_version: "6.8.1"
             target: arm64
       fail-fast: false
     runs-on: ${{ matrix.platform }}
