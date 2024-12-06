@@ -17,8 +17,8 @@
 #include <QProcess>
 
 #include "3rdparty/qv2ray/wrapper.hpp"
-#include "fmt/Preset.hpp"
-#include "main/NekoGui.hpp"
+#include "include/configs/proxy/Preset.hpp"
+#include "include/global/NekoGui.hpp"
 
 #define QV_MODULE_NAME "SystemProxy"
 
