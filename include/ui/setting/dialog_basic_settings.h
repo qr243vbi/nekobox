@@ -25,7 +25,6 @@ private:
     Ui::DialogBasicSettings *ui;
 
     struct {
-        QJsonObject extraCore;
         QString custom_inbound;
         bool needRestart = false;
     } CACHE;

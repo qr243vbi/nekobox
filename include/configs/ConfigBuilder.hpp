@@ -1,7 +1,7 @@
 #pragma once
 
 #include "include/dataStore/ProxyEntity.hpp"
-#include "include/sys/ExternalProcess.hpp"
+#include "include/sys/Process.hpp"
 
 namespace NekoGui {
     class BuildConfigResult {
@@ -12,8 +12,6 @@ namespace NekoGui {
         QList<std::shared_ptr<NekoGui_traffic::TrafficData>> outboundStats; // all, but not including "bypass" "block"
         std::shared_ptr<NekoGui_traffic::TrafficData> outboundStat;         // main
         QStringList ignoreConnTag;
-
-        std::list<std::shared_ptr<NekoGui_fmt::ExternalBuildResult>> extRs;
     };
 
     class BuildTestConfigResult {

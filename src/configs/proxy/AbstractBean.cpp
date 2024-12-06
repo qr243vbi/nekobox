@@ -52,7 +52,6 @@ namespace NekoGui_fmt {
         bool noResolve = false;
         if (dynamic_cast<ChainBean *>(this) != nullptr) noResolve = true;
         if (dynamic_cast<CustomBean *>(this) != nullptr) noResolve = true;
-        if (dynamic_cast<NaiveBean *>(this) != nullptr) noResolve = true;
         if (IsIpAddress(serverAddress)) noResolve = true;
         if (noResolve) {
             onFinished();

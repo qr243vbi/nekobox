@@ -19,8 +19,6 @@ inline std::function<void()> MF_release_runguard;
 class QWidget;
 inline QWidget *mainwindow;
 inline std::function<void(QString)> MW_show_log;
-inline std::function<void(QString, QString)> MW_show_log_ext;
-inline std::function<void(QString)> MW_show_log_ext_vt100;
 inline std::function<void(QString, QString)> MW_dialog_message;
 
 // Dispatchers

@@ -15,44 +15,6 @@
 #include <QTimer>
 #include <qfontdatabase.h>
 
-class ExtraCoreWidget : public QWidget {
-public:
-    QString coreName;
-
-    QLabel *label_name;
-    MyLineEdit *lineEdit_path;
-    QPushButton *pushButton_pick;
-
-    explicit ExtraCoreWidget(QJsonObject *extraCore, const QString &coreName_,
-                             QWidget *parent = nullptr)
-        : QWidget(parent) {
-        coreName = coreName_;
-        label_name = new QLabel;
-        label_name->setText(coreName);
-        lineEdit_path = new MyLineEdit;
-        lineEdit_path->setText(extraCore->value(coreName).toString());
-        pushButton_pick = new QPushButton;
-        pushButton_pick->setText(QObject::tr("Select"));
-        auto layout = new QHBoxLayout;
-        layout->addWidget(label_name);
-        layout->addWidget(lineEdit_path);
-        layout->addWidget(pushButton_pick);
-        setLayout(layout);
-        setContentsMargins(0, 0, 0, 0);
-        //
-        connect(pushButton_pick, &QPushButton::clicked, this, [=] {
-            auto fn = QFileDialog::getOpenFileName(this, QObject::tr("Select"), QDir::currentPath(),
-                                                   "", nullptr, QFileDialog::Option::ReadOnly);
-            if (!fn.isEmpty()) {
-                lineEdit_path->setText(fn);
-            }
-        });
-        connect(lineEdit_path, &QLineEdit::textChanged, this, [=](const QString &newTxt) {
-            extraCore->insert(coreName, newTxt);
-        });
-    }
-};
-
 DialogBasicSettings::DialogBasicSettings(QWidget *parent)
     : QDialog(parent), ui(new Ui::DialogBasicSettings) {
     ui->setupUi(this);
@@ -169,46 +131,6 @@ DialogBasicSettings::DialogBasicSettings(QWidget *parent)
        MW_show_log("Removed all rule-set files");
     });
 
-    //
-    CACHE.extraCore = QString2QJsonObject(NekoGui::dataStore->extraCore->core_map);
-    if (!CACHE.extraCore.contains("naive")) CACHE.extraCore.insert("naive", "");
-    if (!CACHE.extraCore.contains("hysteria")) CACHE.extraCore.insert("hysteria", "");
-    if (!CACHE.extraCore.contains("hysteria2")) CACHE.extraCore.insert("hysteria2", "");
-    if (!CACHE.extraCore.contains("tuic")) CACHE.extraCore.insert("tuic", "");
-    //
-    auto extra_core_layout = ui->extra_core_box_scrollAreaWidgetContents->layout();
-    for (const auto &s: CACHE.extraCore.keys()) {
-        extra_core_layout->addWidget(new ExtraCoreWidget(&CACHE.extraCore, s));
-    }
-    //
-    connect(ui->extra_core_add, &QPushButton::clicked, this, [=] {
-        bool ok;
-        auto s = QInputDialog::getText(nullptr, tr("Add"),
-                                       tr("Please input the core name."),
-                                       QLineEdit::Normal, "", &ok)
-                     .trimmed();
-        if (s.isEmpty() || !ok) return;
-        if (CACHE.extraCore.contains(s)) return;
-        extra_core_layout->addWidget(new ExtraCoreWidget(&CACHE.extraCore, s));
-        CACHE.extraCore.insert(s, "");
-    });
-    connect(ui->extra_core_del, &QPushButton::clicked, this, [=] {
-        bool ok;
-        auto s = QInputDialog::getItem(nullptr, tr("Delete"),
-                                       tr("Please select the core name."),
-                                       CACHE.extraCore.keys(), 0, false, &ok);
-        if (s.isEmpty() || !ok) return;
-        for (int i = 0; i < extra_core_layout->count(); i++) {
-            auto item = extra_core_layout->itemAt(i);
-            auto ecw = dynamic_cast<ExtraCoreWidget *>(item->widget());
-            if (ecw != nullptr && ecw->coreName == s) {
-                ecw->deleteLater();
-                CACHE.extraCore.remove(s);
-                return;
-            }
-        }
-    });
-
     // Mux
     D_LOAD_INT(mux_concurrency)
     D_LOAD_COMBO_STRING(mux_protocol)
@@ -290,7 +212,6 @@ void DialogBasicSettings::accept() {
     D_SAVE_INT_ENABLE(sub_auto_update, sub_auto_update_enable)
 
     // Core
-    NekoGui::dataStore->extraCore->core_map = QJsonObject2QString(CACHE.extraCore, true);
     NekoGui::dataStore->disable_traffic_stats = ui->disable_stats->isChecked();
 
     // Assets

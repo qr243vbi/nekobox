@@ -12,24 +12,6 @@
 #include <QDesktopServices>
 #include <QMessageBox>
 
-// ext core
-
-std::list<std::shared_ptr<NekoGui_sys::ExternalProcess>> CreateExtCFromExtR(const std::list<std::shared_ptr<NekoGui_fmt::ExternalBuildResult>> &extRs, bool start) {
-    // plz run and start in same thread
-    std::list<std::shared_ptr<NekoGui_sys::ExternalProcess>> l;
-    for (const auto &extR: extRs) {
-        std::shared_ptr<NekoGui_sys::ExternalProcess> extC(new NekoGui_sys::ExternalProcess());
-        extC->tag = extR->tag;
-        extC->program = extR->program;
-        extC->arguments = extR->arguments;
-        extC->env = extR->env;
-        l.emplace_back(extC);
-        //
-        if (start) extC->Start();
-    }
-    return l;
-}
-
 // grpc
 
 using namespace NekoGui_rpc;
@@ -52,9 +34,6 @@ void MainWindow::RunSpeedTest(const QString& config, bool useDefault, const QStr
         return;
     }
 
-    std::list<std::shared_ptr<NekoGui_sys::ExternalProcess>> extCs;
-    QSemaphore extSem;
-
     libcore::TestReq req;
     for (const auto &item: outboundTags) {
         req.add_outbound_tags(item.toStdString());
@@ -66,18 +45,6 @@ void MainWindow::RunSpeedTest(const QString& config, bool useDefault, const QStr
 
     bool rpcOK;
     auto result = defaultClient->Test(&rpcOK, req);
-    //
-    if (!extCs.empty()) {
-        runOnUiThread(
-            [&] {
-                for (const auto &extC: extCs) {
-                    extC->Kill();
-                }
-                extSem.release();
-            },
-            DS_cores);
-        extSem.acquire();
-    }
     //
     if (!rpcOK) return;
 
@@ -313,13 +280,6 @@ void MainWindow::neko_start(int _id) {
         NekoGui::dataStore->ignoreConnTag = result->ignoreConnTag;
         NekoGui_traffic::trafficLooper->loop_enabled = true;
 
-        runOnUiThread(
-            [=] {
-                auto extCs = CreateExtCFromExtR(result->extRs, true);
-                NekoGui_sys::running_ext.splice(NekoGui_sys::running_ext.end(), extCs);
-            },
-            DS_cores);
-
         NekoGui::dataStore->UpdateStartedId(ent->id);
         running = ent;
 
@@ -416,16 +376,6 @@ void MainWindow::neko_stop(bool crash, bool sem, bool manual) {
         if (sem) sem_stopped.release();
         return;
     }
-
-    runOnUiThread(
-        [=] {
-            while (!NekoGui_sys::running_ext.empty()) {
-                auto extC = NekoGui_sys::running_ext.front();
-                extC->Kill();
-                NekoGui_sys::running_ext.pop_front();
-            }
-        },
-        DS_cores);
 
     auto neko_stop_stage2 = [=] {
         if (!crash) {

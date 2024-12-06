@@ -3,7 +3,7 @@
 #include "include/dataStore/ProfileFilter.hpp"
 #include "include/configs/configBuilder.hpp"
 #include "include/configs/sub/GroupUpdater.hpp"
-#include "include/sys/ExternalProcess.hpp"
+#include "include/sys/Process.hpp"
 #include "include/sys/AutoRun.hpp"
 
 #include "include/ui/setting/ThemeManager.hpp"
@@ -16,7 +16,6 @@
 #include "include/ui/setting/dialog_hotkey.h"
 
 #include "3rdparty/qrcodegen.hpp"
-#include "3rdparty/VT100Parser.hpp"
 #include "3rdparty/qv2ray/v2/ui/LogHighlighter.hpp"
 #include "3rdparty/ZxingQtReader.hpp"
 #include "include/ui/group/dialog_edit_group.h"
@@ -153,12 +152,6 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     });
     MW_show_log = [=](const QString &log) {
         runOnUiThread([=] { show_log_impl(log); });
-    };
-    MW_show_log_ext = [=](const QString &tag, const QString &log) {
-        runOnUiThread([=] { show_log_impl("[" + tag + "] " + log); });
-    };
-    MW_show_log_ext_vt100 = [=](const QString &log) {
-        runOnUiThread([=] { show_log_impl(cleanVT100String(log)); });
     };
 
     // table UI

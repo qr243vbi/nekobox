@@ -97,9 +97,7 @@ namespace NekoGui_fmt {
         }
 
         QString DisplayCoreType() override {
-            if (NeedExternal(true) == 0) {
-                return software_core_name;
-            } else if (proxy_type == proxy_TUIC) {
+            if (proxy_type == proxy_TUIC) {
                 return "tuic";
             } else if (proxy_type == proxy_Hysteria) {
                 return "hysteria";
@@ -117,10 +115,6 @@ namespace NekoGui_fmt {
                 return "Hysteria2";
             }
         };
-
-        int NeedExternal(bool isFirstProfile) override;
-
-        ExternalBuildResult BuildExternal(int mapping_port, int socks_port, int external_stat) override;
 
         CoreObjOutboundBuildResult BuildCoreObjSingBox() override;
 

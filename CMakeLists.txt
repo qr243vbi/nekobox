@@ -100,7 +100,6 @@ set(PROJECT_SOURCES
 
         src/configs/proxy/AbstractBean.cpp
         src/configs/proxy/Bean2CoreObj_box.cpp
-        src/configs/proxy/Bean2External.cpp
         src/configs/proxy/Bean2Link.cpp
         src/configs/proxy/Link2Bean.cpp
         include/configs/proxy/ChainBean.hpp # translate
@@ -108,7 +107,8 @@ set(PROJECT_SOURCES
         include/configs/sub/GroupUpdater.hpp
         src/configs/sub/GroupUpdater.cpp
 
-        src/sys/ExternalProcess.cpp
+        include/sys/Process.hpp
+        src/sys/Process.cpp
         src/sys/AutoRun.cpp
 
         include/ui/setting/ThemeManager.hpp
@@ -142,10 +142,6 @@ set(PROJECT_SOURCES
         include/ui/profile/edit_trojan_vless.h
         src/ui/profile/edit_trojan_vless.cpp
         include/ui/profile/edit_trojan_vless.ui
-
-        include/ui/profile/edit_naive.h
-        src/ui/profile/edit_naive.cpp
-        include/ui/profile/edit_naive.ui
 
         include/ui/profile/edit_quic.h
         src/ui/profile/edit_quic.cpp
@@ -209,7 +205,7 @@ set(PROJECT_SOURCES
         src/sys/macos/MacOS.cpp
 
         src/sys/AutoRun.cpp
-        src/sys/ExternalProcess.cpp
+        src/sys/Process.cpp
         include/ui/mainwindow_interface.h
 )
 

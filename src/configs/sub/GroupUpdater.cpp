@@ -172,14 +172,6 @@ namespace NekoGui_sub {
             if (!ok) return;
         }
 
-        // Naive
-        if (str.startsWith("naive+")) {
-            needFix = false;
-            ent = NekoGui::ProfileManager::NewProxyEntity("naive");
-            auto ok = ent->NaiveBean()->TryParseLink(str);
-            if (!ok) return;
-        }
-
         // Hysteria1
         if (str.startsWith("hysteria://")) {
             needFix = false;
