@@ -47,6 +47,7 @@ message("[CMAKE_FIND_ROOT_PATH] ${CMAKE_FIND_ROOT_PATH}")
 
 include("cmake/print.cmake")
 include("cmake/nkr.cmake")
+include("cmake/QHotkey.cmake")
 
 find_package(Threads)
 
@@ -66,9 +67,7 @@ list(APPEND NKR_EXTERNAL_TARGETS ZXing::ZXing)
 find_package(cpr REQUIRED)
 list(APPEND NKR_EXTERNAL_TARGETS cpr::cpr)
 
-set(QHOTKEY_INSTALL OFF)
 set(BUILD_SHARED_LIBS OFF)
-add_subdirectory(3rdparty/QHotkey)
 list(APPEND NKR_EXTERNAL_TARGETS qhotkey)
 
 # Sources
