@@ -43,6 +43,7 @@
 #include <QDir>
 #include <QFileInfo>
 #include <QStyleHints>
+#include <3rdparty/QHotkey/qhotkey.h>
 #include <include/global/HTTPRequestHelper.hpp>
 
 #include "include/sys/macos/MacOS.h"
@@ -1738,10 +1739,6 @@ inline QJsonArray last_arr; // format is nekoray_connections_json
 
 // Hotkey
 
-#ifndef NKR_NO_QHOTKEY
-
-#include <QHotkey>
-
 inline QList<std::shared_ptr<QHotkey>> RegisteredHotkey;
 
 void MainWindow::RegisterHotkey(bool unregister) {
@@ -1801,13 +1798,6 @@ void MainWindow::HotkeyEvent(const QString &key) {
     });
 }
 
-#else
-
-void MainWindow::RegisterHotkey(bool unregister) {}
-
-void MainWindow::HotkeyEvent(const QString &key) {}
-
-#endif
 bool MainWindow::StopVPNProcess() {
     vpn_pid = core_process->processId();
     if (vpn_pid != 0) {
