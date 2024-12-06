@@ -177,17 +177,6 @@ namespace NekoGui_fmt {
         return url.toString(QUrl::FullyEncoded);
     }
 
-    QString NaiveBean::ToShareLink() {
-        QUrl url;
-        url.setScheme("naive+" + protocol);
-        url.setUserName(username);
-        url.setPassword(password);
-        url.setHost(serverAddress);
-        url.setPort(serverPort);
-        if (!name.isEmpty()) url.setFragment(name);
-        return url.toString(QUrl::FullyEncoded);
-    }
-
     QString QUICBean::ToShareLink() {
         QUrl url;
         if (proxy_type == proxy_Hysteria) {

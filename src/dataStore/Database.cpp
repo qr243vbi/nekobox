@@ -215,8 +215,6 @@ namespace NekoGui {
             bean = new NekoGui_fmt::TrojanVLESSBean(NekoGui_fmt::TrojanVLESSBean::proxy_Trojan);
         } else if (type == "vless") {
             bean = new NekoGui_fmt::TrojanVLESSBean(NekoGui_fmt::TrojanVLESSBean::proxy_VLESS);
-        } else if (type == "naive") {
-            bean = new NekoGui_fmt::NaiveBean();
         } else if (type == "hysteria") {
             bean = new NekoGui_fmt::QUICBean(NekoGui_fmt::QUICBean::proxy_Hysteria);
         } else if (type == "hysteria2") {

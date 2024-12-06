@@ -31,7 +31,7 @@ namespace NekoGui_fmt {
             return core;
         };
 
-        QString DisplayCoreType() override { return NeedExternal(true) == 0 ? software_core_name : core; };
+        QString DisplayCoreType() override { return software_core_name; };
 
         QString DisplayAddress() override {
             if (core == "internal") {
@@ -42,10 +42,6 @@ namespace NekoGui_fmt {
             }
             return AbstractBean::DisplayAddress();
         };
-
-        int NeedExternal(bool isFirstProfile) override;
-
-        ExternalBuildResult BuildExternal(int mapping_port, int socks_port, int external_stat) override;
 
         CoreObjOutboundBuildResult BuildCoreObjSingBox() override;
     };

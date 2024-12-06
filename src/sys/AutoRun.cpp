@@ -3,7 +3,6 @@
 #include <QApplication>
 #include <QDir>
 
-#include "3rdparty/fix_old_qt.h"
 #include "include/global/NekoGui.hpp"
 
 // macOS headers (possibly OBJ-c)

@@ -11,17 +11,6 @@
 #define BOX_UNDERLYING_DNS_EXPORT dataStore->core_box_underlying_dns.isEmpty() ? (status->forExport ? "local" : "underlying://0.0.0.0") : dataStore->core_box_underlying_dns
 
 namespace NekoGui {
-
-    QStringList getAutoBypassExternalProcessPaths(const std::shared_ptr<BuildConfigResult> &result) {
-        QStringList paths;
-        for (const auto &extR: result->extRs) {
-            auto path = extR->program;
-            if (path.trimmed().isEmpty()) continue;
-            paths << path.replace("\\", "/");
-        }
-        return paths;
-    }
-
     QString genTunName() {
         auto tun_name = "nekoray-tun";
 #ifdef Q_OS_MACOS
@@ -281,83 +270,12 @@ namespace NekoGui {
                 status->result->outboundStat = ent->traffic_data;
             }
 
-            // chain rules: this
-            auto ext_mapping_port = 0;
-            auto ext_socks_port = 0;
-            auto thisExternalStat = ent->bean->NeedExternal(isFirstProfile);
-            if (thisExternalStat < 0) {
-                status->result->error = "This configuration cannot be set automatically, please try another.";
-                return {};
-            }
-
-            // determine port
-            if (thisExternalStat > 0) {
-                if (ent->type == "custom") {
-                    auto bean = ent->CustomBean();
-                    if (IsValidPort(bean->mapping_port)) {
-                        ext_mapping_port = bean->mapping_port;
-                    } else {
-                        ext_mapping_port = MkPort();
-                    }
-                    if (IsValidPort(bean->socks_port)) {
-                        ext_socks_port = bean->socks_port;
-                    } else {
-                        ext_socks_port = MkPort();
-                    }
-                } else {
-                    ext_mapping_port = MkPort();
-                    ext_socks_port = MkPort();
-                }
-            }
-            if (thisExternalStat == 2) dataStore->need_keep_vpn_off = true;
-            if (thisExternalStat == 1) {
-                // mapping
-                status->inbounds += QJsonObject{
-                    {"type", "direct"},
-                    {"tag", tagOut + "-mapping"},
-                    {"listen", "127.0.0.1"},
-                    {"listen_port", ext_mapping_port},
-                    {"override_address", ent->bean->serverAddress},
-                    {"override_port", ent->bean->serverPort},
-                };
-                // no chain rule and not outbound, so need to set to direct
-                if (isFirstProfile) {
-                    status->routingRules += QJsonObject{
-                        {"inbound", QJsonArray{tagOut + "-mapping"}},
-                        {"outbound", "direct"},
-                    };
-                }
-            }
-
             // Outbound
 
             QJsonObject outbound;
 
-            if (thisExternalStat > 0) {
-                auto extR = ent->bean->BuildExternal(ext_mapping_port, ext_socks_port, thisExternalStat);
-                if (extR.program.isEmpty()) {
-                    status->result->error = QObject::tr("Core not found: %1").arg(ent->bean->DisplayCoreType());
-                    return {};
-                }
-                if (!extR.error.isEmpty()) { // rejected
-                    status->result->error = extR.error;
-                    return {};
-                }
-                extR.tag = ent->bean->DisplayType();
-                status->result->extRs.emplace_back(std::make_shared<NekoGui_fmt::ExternalBuildResult>(extR));
+            BuildOutbound(ent, status, outbound, tagOut);
 
-                // SOCKS OUTBOUND
-                outbound["type"] = "socks";
-                outbound["server"] = "127.0.0.1";
-                outbound["server_port"] = ext_socks_port;
-                // outbound misc
-                outbound["tag"] = tagOut;
-                ent->traffic_data->id = ent->id;
-                ent->traffic_data->tag = tagOut.toStdString();
-                status->result->outboundStats += ent->traffic_data;
-            } else {
-                BuildOutbound(ent, status, outbound, tagOut);
-            }
 
             // apply custom outbound settings
             MergeJson(QString2QJsonObject(ent->bean->custom_outbound), outbound);
@@ -377,7 +295,6 @@ namespace NekoGui {
 
             status->outbounds += outbound;
             pastTag = tagOut;
-            pastExternalStat = thisExternalStat;
             index++;
         }
 

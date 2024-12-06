@@ -114,16 +114,6 @@ void EditCustom::onStart(std::shared_ptr<NekoGui::ProxyEntity> _ent) {
             MessageBoxInfo(software_name, result->error);
             return;
         }
-        for (const auto &extR: result->extRs) {
-            auto command = QStringList{extR->program};
-            command += extR->arguments;
-            auto btn = QMessageBox::information(this, tr("Preview config"),
-                                                QString("Command: %1\n\n%2").arg(QStringList2Command(command), extR->config_export),
-                                                "OK", "Copy", "", 0, 0);
-            if (btn == 1) {
-                QApplication::clipboard()->setText(extR->config_export);
-            }
-        }
     });
 }
 

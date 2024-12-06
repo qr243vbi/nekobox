@@ -12,18 +12,6 @@ namespace NekoGui_fmt {
         QString error;
     };
 
-    struct ExternalBuildResult {
-    public:
-        QString program;
-        QStringList env;
-        QStringList arguments;
-        //
-        QString tag;
-        //
-        QString error;
-        QString config_export;
-    };
-
     class AbstractBean : public JsonStore {
     public:
         int version;
@@ -62,11 +50,7 @@ namespace NekoGui_fmt {
 
         //
 
-        virtual int NeedExternal(bool isFirstProfile) { return 0; };
-
         virtual CoreObjOutboundBuildResult BuildCoreObjSingBox() { return {}; };
-
-        virtual ExternalBuildResult BuildExternal(int mapping_port, int socks_port, int external_stat) { return {}; };
 
         virtual QString ToShareLink() { return {}; };
     };

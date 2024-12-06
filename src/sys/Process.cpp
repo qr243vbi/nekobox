@@ -1,4 +1,4 @@
-#include "include/sys/ExternalProcess.hpp"
+#include "include/sys/Process.hpp"
 #include "include/global/NekoGui.hpp"
 
 #include <QTimer>
@@ -8,61 +8,20 @@
 
 namespace NekoGui_sys {
 
-    ExternalProcess::ExternalProcess() : QProcess() {
-        // qDebug() << "[Debug] ExternalProcess()" << this << running_ext;
+    CoreProcess::CoreProcess() : QProcess() {
         this->env = QProcessEnvironment::systemEnvironment().toStringList();
     }
 
-    ExternalProcess::~ExternalProcess() {
-        // qDebug() << "[Debug] ~ExternalProcess()" << this << running_ext;
+    CoreProcess::~CoreProcess() {
     }
 
-    void ExternalProcess::Start() {
-        if (started) return;
-        started = true;
-
-        if (managed) {
-            connect(this, &QProcess::readyReadStandardOutput, this, [&]() {
-                auto log = readAllStandardOutput();
-                if (logCounter.fetchAndAddRelaxed(log.count("\n")) > NekoGui::dataStore->max_log_line) return;
-                MW_show_log_ext_vt100(log);
-            });
-            connect(this, &QProcess::readyReadStandardError, this, [&]() {
-                MW_show_log_ext_vt100(readAllStandardError().trimmed());
-            });
-            connect(this, &QProcess::errorOccurred, this, [&](QProcess::ProcessError error) {
-                if (!killed) {
-                    crashed = true;
-                    MW_show_log_ext(tag, "errorOccurred:" + errorString());
-                    MW_dialog_message("ExternalProcess", "Crashed");
-                }
-            });
-            connect(this, &QProcess::stateChanged, this, [&](QProcess::ProcessState state) {
-                if (state == QProcess::NotRunning) {
-                    if (killed) { // 用户命令退出
-                        MW_show_log_ext(tag, "External core stopped");
-                    } else if (!crashed) { // 异常退出
-                        crashed = true;
-                        MW_show_log_ext(tag, "[Error] Program exited accidentally: " + errorString());
-                        Kill();
-                        MW_dialog_message("ExternalProcess", "Crashed");
-                    }
-                }
-            });
-            MW_show_log_ext(tag, "External core starting: " + env.join(" ") + " " + program + " " + arguments.join(" "));
-        }
-
-        QProcess::setEnvironment(env);
-        QProcess::start(program, arguments);
-    }
-
-    void ExternalProcess::Kill() {
+    void CoreProcess::Kill() {
         if (killed) return;
         killed = true;
 
         if (!crashed) {
-            QProcess::kill();
-            QProcess::waitForFinished(500);
+            kill();
+            waitForFinished(500);
         }
     }
 
@@ -70,10 +29,9 @@ namespace NekoGui_sys {
 
     QElapsedTimer coreRestartTimer;
 
-    CoreProcess::CoreProcess(const QString &core_path, const QStringList &args) : ExternalProcess() {
-        ExternalProcess::managed = false;
-        ExternalProcess::program = core_path;
-        ExternalProcess::arguments = args;
+    CoreProcess::CoreProcess(const QString &core_path, const QStringList &args) : QProcess() {
+        program = core_path;
+        arguments = args;
 
         connect(this, &QProcess::readyReadStandardOutput, this, [&]() {
             auto log = readAllStandardOutput();
@@ -87,7 +45,7 @@ namespace NekoGui_sys {
                     }
                 } else if (log.contains("failed to serve")) {
                     // The core failed to start
-                    QProcess::kill();
+                    kill();
                 }
             }
             if (logCounter.fetchAndAddRelaxed(log.count("\n")) > NekoGui::dataStore->max_log_line) return;
@@ -141,15 +99,19 @@ namespace NekoGui_sys {
 
     void CoreProcess::Start() {
         show_stderr = false;
-        ExternalProcess::Start();
+        if (started) return;
+        started = true;
+
+        setEnvironment(env);
+        start(program, arguments);
         write((NekoGui::dataStore->core_token + "\n").toUtf8());
     }
 
     void CoreProcess::Restart() {
         restarting = true;
-        QProcess::kill();
-        QProcess::waitForFinished(500);
-        ExternalProcess::started = false;
+        kill();
+        waitForFinished(500);
+        started = false;
         Start();
         restarting = false;
     }

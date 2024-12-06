@@ -5,7 +5,6 @@
 #include "include/ui/profile/edit_chain.h"
 #include "include/ui/profile/edit_vmess.h"
 #include "include/ui/profile/edit_trojan_vless.h"
-#include "include/ui/profile/edit_naive.h"
 #include "include/ui/profile/edit_quic.h"
 #include "include/ui/profile/edit_wireguard.h"
 #include "include/ui/profile/edit_ssh.h"
@@ -156,7 +155,6 @@ DialogEditProfile::DialogEditProfile(const QString &_type, int profileOrGroupId,
         LOAD_TYPE("trojan")
         LOAD_TYPE("vmess")
         LOAD_TYPE("vless")
-        LOAD_TYPE("naive")
         LOAD_TYPE("hysteria")
         LOAD_TYPE("hysteria2")
         LOAD_TYPE("tuic")
@@ -164,7 +162,6 @@ DialogEditProfile::DialogEditProfile(const QString &_type, int profileOrGroupId,
         LOAD_TYPE("ssh")
         ui->type->addItem(tr("Custom (%1 outbound)").arg(software_core_name), "internal");
         ui->type->addItem(tr("Custom (%1 config)").arg(software_core_name), "internal-full");
-        ui->type->addItem(tr("Custom (Extra Core)"), "custom");
         LOAD_TYPE("chain")
 
         // type changed
@@ -213,10 +210,6 @@ void DialogEditProfile::typeSelected(const QString &newType) {
         auto _innerWidget = new EditTrojanVLESS(this);
         innerWidget = _innerWidget;
         innerEditor = _innerWidget;
-    } else if (type == "naive") {
-        auto _innerWidget = new EditNaive(this);
-        innerWidget = _innerWidget;
-        innerEditor = _innerWidget;
     } else if (type == "hysteria" || type == "hysteria2" || type == "tuic") {
         auto _innerWidget = new EditQUIC(this);
         innerWidget = _innerWidget;
@@ -229,7 +222,7 @@ void DialogEditProfile::typeSelected(const QString &newType) {
         auto _innerWidget = new EditSSH(this);
         innerWidget = _innerWidget;
         innerEditor = _innerWidget;
-    } else if (type == "custom" || type == "internal" || type == "internal-full") {
+    } else if (type == "internal" || type == "internal-full") {
         auto _innerWidget = new EditCustom(this);
         innerWidget = _innerWidget;
         innerEditor = _innerWidget;
