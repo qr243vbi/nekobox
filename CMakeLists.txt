@@ -242,9 +242,9 @@ set_target_properties(nekoray PROPERTIES
 # Target Source Translations
 
 set(TS_FILES
-        translations/zh_CN.ts
-        translations/fa_IR.ts
-        translations/ru_RU.ts
+        res/translations/zh_CN.ts
+        res/translations/fa_IR.ts
+        res/translations/ru_RU.ts
 )
 set(LUPDATE_OPTIONS
         -locations none -no-obsolete
@@ -252,7 +252,7 @@ set(LUPDATE_OPTIONS
 qt_add_lupdate(nekoray TS_FILES ${TS_FILES} OPTIONS ${LUPDATE_OPTIONS})
 qt_add_lrelease(nekoray TS_FILES ${TS_FILES} QM_FILES_OUTPUT_VARIABLE QM_FILES)
 
-configure_file(translations/translations.qrc ${CMAKE_BINARY_DIR} COPYONLY)
+configure_file(res/translations/translations.qrc ${CMAKE_BINARY_DIR} COPYONLY)
 target_sources(nekoray PRIVATE ${CMAKE_BINARY_DIR}/translations.qrc)
 
 # Target Link
