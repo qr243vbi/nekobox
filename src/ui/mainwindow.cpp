@@ -239,11 +239,17 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     this->refresh_groups();
 
     // Setup Tray
-    tray = new QSystemTrayIcon(this); // 初始化托盘对象tray
+    tray = new QSystemTrayIcon(this);
     tray->setIcon(Icon::GetTrayIcon(Icon::NONE));
-    tray->setContextMenu(ui->menu_program); // 创建托盘菜单
-    tray->show();                           // 让托盘图标显示在系统托盘上
+    tray->show();
     connect(tray, &QSystemTrayIcon::activated, this, [=](QSystemTrayIcon::ActivationReason reason) {
+        if (reason == QSystemTrayIcon::Context)
+        {
+        QTimer::singleShot(100, this, [=]
+        {
+            ui->menu_program->popup(QCursor::pos());
+        });
+        }
         if (reason == QSystemTrayIcon::Trigger) {
             if (this->isVisible()) {
                 hide();
