@@ -474,6 +474,7 @@ void MainWindow::show_group(int gid) {
         NekoGui::dataStore->current_group = gid;
         NekoGui::dataStore->Save();
     }
+
     ui->tabWidget->widget(groupId2TabIndex(gid))->layout()->addWidget(ui->proxyListTable);
 
     // 列宽是否可调
@@ -964,7 +965,8 @@ void MainWindow::refresh_proxy_list_impl(const int &id, GroupSortAction groupSor
         ui->proxyListTable->setRowCount(0);
         // 添加行
         int row = -1;
-        for (const auto ent: NekoGui::profileManager->GetGroup(NekoGui::dataStore->current_group)->Profiles()) {
+        auto profiles = NekoGui::profileManager->GetGroup(NekoGui::dataStore->current_group)->Profiles();
+        for (const auto& ent: profiles) {
             row++;
             ui->proxyListTable->insertRow(row);
             ui->proxyListTable->row2Id += ent->id;
@@ -1044,56 +1046,72 @@ void MainWindow::refresh_proxy_list_impl(const int &id, GroupSortAction groupSor
 }
 
 void MainWindow::refresh_proxy_list_impl_refresh_data(const int &id) {
-    // 绘制或更新item(s)
-    for (int row = 0; row < ui->proxyListTable->rowCount(); row++) {
-        auto profileId = ui->proxyListTable->row2Id[row];
-        if (id >= 0 && profileId != id) continue; // refresh ONE item
-        auto profile = NekoGui::profileManager->GetProfile(profileId);
-        if (profile == nullptr) continue;
-
-        auto isRunning = profileId == NekoGui::dataStore->started_id;
-        auto f0 = std::make_unique<QTableWidgetItem>();
-        f0->setData(114514, profileId);
-
-        // Check state
-        auto check = f0->clone();
-        check->setText(isRunning ? "✓" : Int2String(row + 1));
-        ui->proxyListTable->setVerticalHeaderItem(row, check);
-
-        // C0: Type
-        auto f = f0->clone();
-        f->setText(profile->bean->DisplayType());
-        if (isRunning) f->setForeground(palette().link());
-        ui->proxyListTable->setItem(row, 0, f);
-
-        // C1: Address+Port
-        f = f0->clone();
-        f->setText(profile->bean->DisplayAddress());
-        if (isRunning) f->setForeground(palette().link());
-        ui->proxyListTable->setItem(row, 1, f);
-
-        // C2: Name
-        f = f0->clone();
-        f->setText(profile->bean->name);
-        if (isRunning) f->setForeground(palette().link());
-        ui->proxyListTable->setItem(row, 2, f);
-
-        // C3: Test Result
-        f = f0->clone();
-        if (profile->full_test_report.isEmpty()) {
-            auto color = profile->DisplayLatencyColor();
-            if (color.isValid()) f->setForeground(color);
-            f->setText(profile->DisplayLatency());
-        } else {
-            f->setText(profile->full_test_report);
+    if (id >= 0)
+    {
+        auto rowID = ui->proxyListTable->id2Row[id];
+        if (rowID < 0)
+        {
+            MW_show_log("Invalid proxy list id, data might be corrupted");
+            return;
         }
-        ui->proxyListTable->setItem(row, 3, f);
-
-        // C4: Traffic
-        f = f0->clone();
-        f->setText(profile->traffic_data->DisplayTraffic());
-        ui->proxyListTable->setItem(row, 4, f);
+        auto profile = NekoGui::profileManager->GetProfile(id);
+        refresh_table_item(rowID, profile);
+    } else
+    {
+        for (int row = 0; row < ui->proxyListTable->rowCount(); row++) {
+            auto profileId = ui->proxyListTable->row2Id[row];
+            auto profile = NekoGui::profileManager->GetProfile(profileId);
+            refresh_table_item(row, profile);
+        }
     }
+}
+
+void MainWindow::refresh_table_item(const int row, const std::shared_ptr<NekoGui::ProxyEntity>& profile)
+{
+    if (profile == nullptr) return;
+
+    auto isRunning = profile->id == NekoGui::dataStore->started_id;
+    auto f0 = std::make_unique<QTableWidgetItem>();
+    f0->setData(114514, profile->id);
+
+    // Check state
+    auto check = f0->clone();
+    check->setText(isRunning ? "✓" : Int2String(row + 1) + "  ");
+    ui->proxyListTable->setVerticalHeaderItem(row, check);
+
+    // C0: Type
+    auto f = f0->clone();
+    f->setText(profile->bean->DisplayType());
+    if (isRunning) f->setForeground(palette().link());
+    ui->proxyListTable->setItem(row, 0, f);
+
+    // C1: Address+Port
+    f = f0->clone();
+    f->setText(profile->bean->DisplayAddress());
+    if (isRunning) f->setForeground(palette().link());
+    ui->proxyListTable->setItem(row, 1, f);
+
+    // C2: Name
+    f = f0->clone();
+    f->setText(profile->bean->name);
+    if (isRunning) f->setForeground(palette().link());
+    ui->proxyListTable->setItem(row, 2, f);
+
+    // C3: Test Result
+    f = f0->clone();
+    if (profile->full_test_report.isEmpty()) {
+        auto color = profile->DisplayLatencyColor();
+        if (color.isValid()) f->setForeground(color);
+        f->setText(profile->DisplayLatency());
+    } else {
+        f->setText(profile->full_test_report);
+    }
+    ui->proxyListTable->setItem(row, 3, f);
+
+    // C4: Traffic
+    f = f0->clone();
+    f->setText(profile->traffic_data->DisplayTraffic());
+    ui->proxyListTable->setItem(row, 4, f);
 }
 
 // table菜单相关

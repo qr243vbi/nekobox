@@ -185,6 +185,8 @@ private:
 
     void refresh_proxy_list_impl_refresh_data(const int &id = -1);
 
+    void refresh_table_item(int row, const std::shared_ptr<NekoGui::ProxyEntity>& profile);
+
     void keyPressEvent(QKeyEvent *event) override;
 
     void closeEvent(QCloseEvent *event) override;
