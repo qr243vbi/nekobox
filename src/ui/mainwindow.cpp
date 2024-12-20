@@ -1045,7 +1045,7 @@ void MainWindow::refresh_proxy_list_impl(const int &id, GroupSortAction groupSor
     refresh_proxy_list_impl_refresh_data(id);
 }
 
-void MainWindow::refresh_proxy_list_impl_refresh_data(const int &id) {
+void MainWindow::refresh_proxy_list_impl_refresh_data(const int &id, bool stopping) {
     if (id >= 0)
     {
         auto rowID = ui->proxyListTable->id2Row[id];
@@ -1055,22 +1055,22 @@ void MainWindow::refresh_proxy_list_impl_refresh_data(const int &id) {
             return;
         }
         auto profile = NekoGui::profileManager->GetProfile(id);
-        refresh_table_item(rowID, profile);
+        refresh_table_item(rowID, profile, stopping);
     } else
     {
         for (int row = 0; row < ui->proxyListTable->rowCount(); row++) {
             auto profileId = ui->proxyListTable->row2Id[row];
             auto profile = NekoGui::profileManager->GetProfile(profileId);
-            refresh_table_item(row, profile);
+            refresh_table_item(row, profile, stopping);
         }
     }
 }
 
-void MainWindow::refresh_table_item(const int row, const std::shared_ptr<NekoGui::ProxyEntity>& profile)
+void MainWindow::refresh_table_item(const int row, const std::shared_ptr<NekoGui::ProxyEntity>& profile, bool stopping)
 {
     if (profile == nullptr) return;
 
-    auto isRunning = profile->id == NekoGui::dataStore->started_id;
+    auto isRunning = profile->id == NekoGui::dataStore->started_id && !stopping;
     auto f0 = std::make_unique<QTableWidgetItem>();
     f0->setData(114514, profile->id);
 

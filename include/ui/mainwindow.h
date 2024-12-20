@@ -183,9 +183,9 @@ private:
 
     void refresh_proxy_list_impl(const int &id = -1, GroupSortAction groupSortAction = {});
 
-    void refresh_proxy_list_impl_refresh_data(const int &id = -1);
+    void refresh_proxy_list_impl_refresh_data(const int &id = -1, bool stopping = false);
 
-    void refresh_table_item(int row, const std::shared_ptr<NekoGui::ProxyEntity>& profile);
+    void refresh_table_item(int row, const std::shared_ptr<NekoGui::ProxyEntity>& profile, bool stopping);
 
     void keyPressEvent(QKeyEvent *event) override;
 
