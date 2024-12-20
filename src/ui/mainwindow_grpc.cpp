@@ -430,7 +430,7 @@ void MainWindow::neko_stop(bool crash, bool sem, bool manual) {
 
         runOnUiThread([=] {
             refresh_status();
-            refresh_proxy_list(id);
+            refresh_proxy_list_impl_refresh_data(id, true);
 
             mu_stopping.unlock();
             if (sem) sem_stopped.release();
