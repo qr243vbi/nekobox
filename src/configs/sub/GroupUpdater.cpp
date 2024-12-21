@@ -686,7 +686,7 @@ namespace NekoGui_sub {
                 group->order = {};
                 for (const auto &ent: rawUpdater->updated_order) {
                     auto deleted_index = update_del.indexOf(ent);
-                    if (deleted_index > 0) {
+                    if (deleted_index >= 0) {
                         if (deleted_index >= update_keep.count()) continue; // should not happen
                         auto ent2 = update_keep[deleted_index];
                         group->order.append(ent2->id);
