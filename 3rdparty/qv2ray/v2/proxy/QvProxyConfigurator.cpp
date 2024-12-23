@@ -253,7 +253,7 @@ namespace Qv2ray::components::proxy {
 #endif
 
 #ifdef Q_OS_WIN
-        QString str = "socks={ip}:{socks_port}";
+        QString str = "http://{ip}:{socks_port}";
         str = str.replace("{ip}", address)
                   .replace("{socks_port}", Int2String(socksPort));
         //
