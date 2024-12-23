@@ -1170,7 +1170,7 @@ void  MainWindow::on_menu_delete_repeat_triggered () {
         }
     }
 
-    if  (out_del. length () >  0  &&
+    if  (!out_del.empty()  &&
         QMessageBox::question ( this ,  tr ( " Confirmation " ),  tr ( " Remove %1 item(s) ? " ). arg (out_del. length ()) +  " \n "  + remove_display) == QMessageBox::StandardButton::Yes) {
         for  ( const  auto  &ent: out_del) {
             NekoGui::profileManager-> DeleteProfile (ent-> id );
