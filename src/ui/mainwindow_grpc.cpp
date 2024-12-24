@@ -1,7 +1,7 @@
 #include "include/ui/mainwindow.h"
 
 #include "include/dataStore/Database.hpp"
-#include "include/configs/configBuilder.hpp"
+#include "include/configs/ConfigBuilder.hpp"
 #include "include/stats/traffic/TrafficLooper.hpp"
 #include "include/api/gRPC.h"
 #include "include/ui/utils//MessageBoxTimer.h"
