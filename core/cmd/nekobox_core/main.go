@@ -8,7 +8,7 @@ import (
 	"time"
 	_ "unsafe"
 
-	"grpc_server"
+	"nekobox_core/server"
 
 	"nekobox_core/internal/boxbox"
 	_ "nekobox_core/internal/distro/all"
