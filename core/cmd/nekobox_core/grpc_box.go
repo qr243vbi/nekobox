@@ -7,12 +7,11 @@ import (
 	"github.com/sagernet/sing-box/common/settings"
 	"github.com/sagernet/sing/common/metadata"
 	"nekobox_core/internal/boxbox"
+	grpc_server "nekobox_core/server"
+	"nekobox_core/server/gen"
 	"os"
 	"strings"
 	"time"
-
-	"grpc_server"
-	"grpc_server/gen"
 
 	"github.com/matsuridayo/libneko/neko_common"
 	"github.com/matsuridayo/libneko/neko_log"
