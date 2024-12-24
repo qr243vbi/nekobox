@@ -1,7 +1,7 @@
 #include "include/ui/mainwindow.h"
 
 #include "include/dataStore/ProfileFilter.hpp"
-#include "include/configs/configBuilder.hpp"
+#include "include/configs/ConfigBuilder.hpp"
 #include "include/configs/sub/GroupUpdater.hpp"
 #include "include/sys/Process.hpp"
 #include "include/sys/AutoRun.hpp"

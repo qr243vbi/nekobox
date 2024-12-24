@@ -200,9 +200,6 @@ set(PROJECT_SOURCES
         src/sys/macos/MacOS.cpp
         include/sys/macos/MacOS.h
 
-        src/sys/windows/guihelper.cpp
-        src/sys/windows/MiniDump.cpp
-
         src/sys/linux/LinuxCap.cpp
 
         src/sys/macos/MacOS.cpp

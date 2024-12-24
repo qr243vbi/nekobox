@@ -3,7 +3,7 @@
 #include "3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.hpp"
 #include "include/configs/proxy/CustomBean.hpp"
 #include "include/configs/proxy/Preset.hpp"
-#include "include/configs/configBuilder.hpp"
+#include "include/configs/ConfigBuilder.hpp"
 #include "include/dataStore/Database.hpp"
 
 #include <QMessageBox>
