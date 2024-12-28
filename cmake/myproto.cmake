@@ -1,7 +1,7 @@
 find_package(Protobuf CONFIG REQUIRED)
 
 set(PROTO_FILES
-        core/grpc_server/gen/libcore.proto
+        core/cmd/nekobox_core/server/gen/libcore.proto
         )
 
 add_library(myproto STATIC ${PROTO_FILES})
