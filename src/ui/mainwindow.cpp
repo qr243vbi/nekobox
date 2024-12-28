@@ -245,10 +245,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     connect(tray, &QSystemTrayIcon::activated, this, [=](QSystemTrayIcon::ActivationReason reason) {
         if (reason == QSystemTrayIcon::Context)
         {
-        QTimer::singleShot(100, this, [=]
-        {
-            ui->menu_program->popup(QCursor::pos());
-        });
+            ui->menu_program->exec(QCursor::pos());
         }
         if (reason == QSystemTrayIcon::Trigger) {
             if (this->isVisible()) {
@@ -1048,12 +1045,12 @@ void MainWindow::refresh_proxy_list_impl(const int &id, GroupSortAction groupSor
 void MainWindow::refresh_proxy_list_impl_refresh_data(const int &id, bool stopping) {
     if (id >= 0)
     {
-        auto rowID = ui->proxyListTable->id2Row[id];
-        if (rowID < 0)
+        if (ui->proxyListTable->id2Row.count(id) == 0)
         {
-            MW_show_log("Invalid proxy list id, data might be corrupted");
+            qDebug("Invalid proxy list id, data might be corrupted");
             return;
         }
+        auto rowID = ui->proxyListTable->id2Row[id];
         auto profile = NekoGui::profileManager->GetProfile(id);
         refresh_table_item(rowID, profile, stopping);
     } else
