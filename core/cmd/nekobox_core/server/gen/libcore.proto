@@ -88,7 +88,19 @@ message UpdateResp {
 }
 
 message ListConnectionsResp {
-  string nekoray_connections_json = 1;
+  repeated ConnectionMetaData connections = 1;
+}
+
+message ConnectionMetaData {
+  string id = 1;
+  int64 created_at = 2;
+  int64 upload = 3;
+  int64 download = 4;
+  string outbound = 5;
+  string network = 6;
+  string dest = 7;
+  string protocol = 8;
+  string domain = 9;
 }
 
 message GetGeoIPListResponse {

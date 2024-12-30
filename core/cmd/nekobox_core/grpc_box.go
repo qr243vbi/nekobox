@@ -159,8 +159,32 @@ func (s *server) QueryStats(ctx context.Context, in *gen.QueryStatsReq) (out *ge
 }
 
 func (s *server) ListConnections(ctx context.Context, in *gen.EmptyReq) (*gen.ListConnectionsResp, error) {
+	if instance.Router().ClashServer() == nil {
+		return nil, errors.New("no clash server found")
+	}
+	clash, ok := instance.Router().ClashServer().(*boxapi.SbClashServer)
+	if !ok {
+		return nil, errors.New("invalid state, should not be here")
+	}
+	connections := clash.TrafficManager().Connections()
+
+	res := make([]*gen.ConnectionMetaData, 0)
+	for _, c := range connections {
+		r := &gen.ConnectionMetaData{
+			Id:        c.ID.String(),
+			CreatedAt: c.CreatedAt.UnixMilli(),
+			Upload:    c.Upload.Load(),
+			Download:  c.Download.Load(),
+			Outbound:  c.Outbound,
+			Network:   c.Metadata.Network,
+			Dest:      c.Metadata.Destination.String(),
+			Protocol:  c.Metadata.Protocol,
+			Domain:    c.Metadata.Domain,
+		}
+		res = append(res, r)
+	}
 	out := &gen.ListConnectionsResp{
-		// TODO upstream api
+		Connections: res,
 	}
 	return out, nil
 }
