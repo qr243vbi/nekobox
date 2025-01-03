@@ -6,4 +6,4 @@ func init() {
 	constant.Version = Version
 }
 
-var Version = "1.10.3"
+var Version = "1.10.5"
