@@ -1,6 +1,7 @@
 #pragma once
 
 #include "AbstractBean.hpp"
+#include "Preset.hpp"
 
 namespace NekoGui_fmt {
     class V2rayStreamSettings : public JsonStore {
@@ -97,6 +98,13 @@ namespace NekoGui_fmt {
             }
             *ok = true;
             return res;
+        }
+
+        inline bool isValid()
+        {
+            bool isNetworkValid = Preset::SingBox::V2RAYTransports.contains(network);
+            bool isRealityValid = security != "reality" || !QByteArray::fromBase64(reality_pbk.toUtf8(), QByteArray::OmitTrailingEquals).isEmpty();
+            return isNetworkValid && isRealityValid;
         }
     };
 

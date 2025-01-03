@@ -22,7 +22,7 @@ namespace NekoGui_fmt {
 
         bool IsValid() {
             if (stream == nullptr) return true;
-            return Preset::SingBox::V2RAYTransports.contains(stream->network);
+            return stream->isValid();
         }
 
         QString DisplayType() override { return "VMess"; };
