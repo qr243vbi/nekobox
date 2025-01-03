@@ -45,7 +45,7 @@
        </property>
        <property name="icon">
         <iconset resource="../../res/neko.qrc">
-         <normaloff>:/icon/material/swap-horizontal.svg</normaloff>:/icon/material/swap-horizontal.svg</iconset>
+         <normaloff>:/icon/material/swap-horizontal.png</normaloff>:/icon/material/swap-horizontal.png</iconset>
        </property>
       </widget>
      </item>
@@ -59,7 +59,7 @@
        </property>
        <property name="icon">
         <iconset resource="../../res/neko.qrc">
-         <normaloff>:/icon/material/delete.svg</normaloff>:/icon/material/delete.svg</iconset>
+         <normaloff>:/icon/material/delete.png</normaloff>:/icon/material/delete.png</iconset>
        </property>
       </widget>
      </item>

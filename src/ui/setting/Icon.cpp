@@ -50,6 +50,6 @@ QPixmap Icon::GetTrayIcon(Icon::TrayIconStatus status) {
 }
 
 QPixmap Icon::GetMaterialIcon(const QString &name) {
-    QPixmap pixmap(":/icon/material/" + name + ".svg");
+    QPixmap pixmap(":/icon/material/" + name + ".png");
     return pixmap;
 }

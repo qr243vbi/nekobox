@@ -32,7 +32,7 @@ wget https://github.com/linuxdeploy/linuxdeploy/releases/download/1-alpha-202401
 wget https://github.com/linuxdeploy/linuxdeploy-plugin-qt/releases/download/1-alpha-20240109-1/linuxdeploy-plugin-qt-x86_64.AppImage
 chmod +x linuxdeploy-x86_64.AppImage linuxdeploy-plugin-qt-x86_64.AppImage
 
-export EXTRA_QT_PLUGINS="svg;iconengines;"
+export EXTRA_QT_PLUGINS="iconengines;"
 ./linuxdeploy-x86_64.AppImage --appdir $DEST --executable $DEST/nekoray --plugin qt
 rm linuxdeploy-x86_64.AppImage linuxdeploy-plugin-qt-x86_64.AppImage
 cd $DEST
