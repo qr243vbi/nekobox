@@ -569,9 +569,8 @@ namespace NekoGui_sub {
 
         if (_sub_gid < 0 && (content.startsWith("http://") || content.startsWith("https://"))) {
             auto items = QStringList{
-                QObject::tr("As Subscription (add to this group)"),
-                QObject::tr("As Subscription (create new group)"),
-                QObject::tr("As link"),
+                QObject::tr("Add profiles to this group"),
+                QObject::tr("Create new subscription group"),
             };
             bool ok;
             auto a = QInputDialog::getItem(nullptr,
@@ -579,7 +578,7 @@ namespace NekoGui_sub {
                                            QObject::tr("%1\nHow to update?").arg(content),
                                            items, 0, false, &ok);
             if (!ok) return;
-            if (items.indexOf(a) <= 1) asURL = true;
+            asURL = true;
             if (items.indexOf(a) == 1) createNewGroup = true;
         }
 
