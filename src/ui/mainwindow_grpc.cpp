@@ -406,6 +406,7 @@ void MainWindow::neko_stop(bool crash, bool sem, bool manual) {
 
     NekoGui_traffic::trafficLooper->loop_enabled = false;
     NekoGui_traffic::connection_lister->suspend = true;
+    UpdateConnectionListWithRecreate({});
     NekoGui_traffic::trafficLooper->loop_mutex.lock();
     if (NekoGui::dataStore->traffic_loop_interval != 0) {
         NekoGui_traffic::trafficLooper->UpdateAll();
