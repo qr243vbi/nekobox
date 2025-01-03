@@ -184,10 +184,6 @@ jobs:
           zip -r $version_standalone-linux64.zip nekoray
           rm -rf nekoray
           ####
-          mv windows7 nekoray
-          zip -r $version_standalone-windows7.zip nekoray
-          rm -rf nekoray
-          ####
           mv windows64 nekoray
           zip -r $version_standalone-windows64.zip nekoray
           rm -rf nekoray
