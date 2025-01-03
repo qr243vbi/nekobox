@@ -44,10 +44,6 @@
         <translation>内核</translation>
     </message>
     <message>
-        <source>Extra Core</source>
-        <translation>外部内核</translation>
-    </message>
-    <message>
         <source>Select</source>
         <translation>选择</translation>
     </message>
@@ -78,22 +74,6 @@
     <message>
         <source>Off</source>
         <translation>关闭</translation>
-    </message>
-    <message>
-        <source>Add</source>
-        <translation>添加</translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translation>删除</translation>
-    </message>
-    <message>
-        <source>Please input the core name.</source>
-        <translation>请输入内核名称.</translation>
-    </message>
-    <message>
-        <source>Please select the core name.</source>
-        <translation>请选择内核名称.</translation>
     </message>
     <message>
         <source>Connection statistics</source>
@@ -180,16 +160,8 @@ For NekoBox, this rewrites the underlying(localhost) DNS in Tun Mode, normal mod
         <translation>时间间隔 (分钟，少于 30 分钟无效)</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Might Improve Ping and Performance&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;可能改善延迟和性能&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Disable Traffic Stats</source>
         <translation>禁用流量状态</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Settings for the sing-box&apos;s built-in NTP client&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;sing-box 内置 NTP 客户端设置&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>NTP Settings</source>
@@ -206,10 +178,6 @@ For NekoBox, this rewrites the underlying(localhost) DNS in Tun Mode, normal mod
     <message>
         <source>sync interval</source>
         <translation>同步间隔</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;In minutes&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>5m</source>
@@ -236,10 +204,6 @@ For NekoBox, this rewrites the underlying(localhost) DNS in Tun Mode, normal mod
         <translation>Geo 资源和规则集</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Remove the currently generated rule-sets so that they can be regenerated&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;移除当前生成的规则集，以便重新生成&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Remove Generated Rule-sets</source>
         <translation>移除已生成的规则集</translation>
     </message>
@@ -248,31 +212,49 @@ For NekoBox, this rewrites the underlying(localhost) DNS in Tun Mode, normal mod
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Sets the URL to the latest sing-geoip release URL&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;设置为最新 sing-geoip 发布的 URL&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>Use Sing-Geoip</source>
-        <translation>使用 Sing-Geoip</translation>
-    </message>
-    <message>
         <source>GeoSite URL</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Sets the URL to the latest sing-geosite release URL&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;设置为最新 sing-geosite 发布的 URL&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>Use Sing-Geosite</source>
-        <translation>使用 Sing-Geosite</translation>
     </message>
     <message>
         <source>Download and Replace Geo files</source>
         <translation>下载并替换 Geo 文件</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Socks + HTTP Proxy&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Socks
+                                                                + HTTP Proxy&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
+                                                            </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Font Size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Font</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Might
+                                                                            Improve Ping and Performance&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
+                                                                        </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Settings for the
+                                            sing-box&apos;s built-in NTP client&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
+                                        </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;In
+                                                                minutes&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
+                                                            </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Remove the
+                                                        currently generated rule-sets so that they can be regenerated&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
+                                                    </source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -436,10 +418,6 @@ For NekoBox, this rewrites the underlying(localhost) DNS in Tun Mode, normal mod
     <message>
         <source>Settings</source>
         <translation>设置</translation>
-    </message>
-    <message>
-        <source>Custom (Extra Core)</source>
-        <translation>自定义 (外部内核)</translation>
     </message>
     <message>
         <source>TLS Security Settings</source>
@@ -729,6 +707,58 @@ also if the connection cannot be established with the current address family (ip
         <source>Enable FakeIP</source>
         <translation>启用 FakeIP</translation>
     </message>
+    <message>
+        <source>Hijack</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>DNS Server</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enable</source>
+        <translation type="unfinished">启用</translation>
+    </message>
+    <message>
+        <source>How does it work?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Listen Address</source>
+        <translation type="unfinished">监听地址</translation>
+    </message>
+    <message>
+        <source>Listen Port</source>
+        <translation type="unfinished">监听端口</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Following format should be used:&lt;br/&gt;domain:a.com&lt;/p&gt;&lt;p&gt;suffix:a.com&lt;/p&gt;&lt;p&gt;regex:someregex&lt;/p&gt;&lt;p&gt;rule_set:nameOfRuleSet&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rules</source>
+        <translation type="unfinished">规则</translation>
+    </message>
+    <message>
+        <source>IPv4 Response</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>IPv6 Response</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Redirect Settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>tls://8.8.8.8</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Clone</source>
+        <translation type="unfinished">克隆</translation>
+    </message>
 </context>
 <context>
     <name>DialogVPNSettings</name>
@@ -829,55 +859,12 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>预览替换串</translation>
     </message>
     <message>
-        <source>Preview config</source>
-        <translation>预览配置</translation>
-    </message>
-    <message>
         <source>Please fill the complete config.</source>
         <translation>请填写完整配置。</translation>
     </message>
     <message>
         <source>Name cannot be empty.</source>
         <translation>名称不能为空</translation>
-    </message>
-</context>
-<context>
-    <name>EditNaive</name>
-    <message>
-        <source>Protocol</source>
-        <translation>协议</translation>
-    </message>
-    <message>
-        <source>Password</source>
-        <translation>密码</translation>
-    </message>
-    <message>
-        <source>Extra headers</source>
-        <translation>附加标头</translation>
-    </message>
-    <message>
-        <source>SNI</source>
-        <translation></translation>
-    </message>
-    <message>
-        <source>Username</source>
-        <translation>用户名</translation>
-    </message>
-    <message>
-        <source>Certificate</source>
-        <translation>证书</translation>
-    </message>
-    <message>
-        <source>Insecure concurrency</source>
-        <translation>不安全并发</translation>
-    </message>
-    <message>
-        <source>Disable logs</source>
-        <translation>关闭日志</translation>
-    </message>
-    <message>
-        <source>Turn on this option if your connection is lost after a while</source>
-        <translation>如果连接一段时间后出现中断，请打开此选项</translation>
     </message>
 </context>
 <context>
@@ -903,16 +890,8 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>禁用 MTU 探测</translation>
     </message>
     <message>
-        <source>Hop Interval (s)</source>
-        <translation>端口跳跃间隔 (秒)</translation>
-    </message>
-    <message>
         <source>Allow Insecure</source>
         <translation>不检查服务器证书</translation>
-    </message>
-    <message>
-        <source>Hop Port</source>
-        <translation>跳跃端口</translation>
     </message>
     <message>
         <source>Upload (Mbps)</source>
@@ -961,6 +940,49 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <source>Force use external core</source>
         <translation>强制使用外部内核</translation>
+    </message>
+</context>
+<context>
+    <name>EditSSH</name>
+    <message>
+        <source>EditSSH</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation type="unfinished">密码</translation>
+    </message>
+    <message>
+        <source>Private Key</source>
+        <translation type="unfinished">私钥</translation>
+    </message>
+    <message>
+        <source>Private Key Password</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Host Key</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Host Key Algorithms</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Client Version</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Private Key Path</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Choose File</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1596,6 +1618,74 @@ Split by line.</source>
         <source>Replace domain server addresses with their resolved IPs?</source>
         <translation>用解析后的 IP 地址替换域名服务器地址？</translation>
     </message>
+    <message>
+        <source>System DNS</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Connections</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Destination</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Click To Disable Sorting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Domain</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Click To Sort By Domain</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Network</source>
+        <translation type="unfinished">传输</translation>
+    </message>
+    <message>
+        <source>Protocol</source>
+        <translation type="unfinished">协议</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Click To Sort By Download</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Upload</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Click To Sort By Upload</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Logs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Geo Assets are missing, want to download them now?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please give the core root privileges</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Requesting permission</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please Enter your password in the opened terminal, then try again</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ProxyItem</name>
@@ -1617,10 +1707,6 @@ Split by line.</source>
 </context>
 <context>
     <name>QObject</name>
-    <message>
-        <source>As link</source>
-        <translation>作为链接</translation>
-    </message>
     <message>
         <source>url detected</source>
         <translation>检测到 URL</translation>
@@ -1650,10 +1736,6 @@ Direct: %2</source>
     <message>
         <source>Used: %1 Remain: %2 Expire: %3</source>
         <translation>已用 %1 剩余 %2 过期 %3</translation>
-    </message>
-    <message>
-        <source>Core not found: %1</source>
-        <translation>找不到 &quot;%1&quot; 内核。请前往设置</translation>
     </message>
     <message>
         <source>Update</source>
@@ -1732,16 +1814,16 @@ Release note:
         <translation>Core 退出太频繁，停止自动重启。</translation>
     </message>
     <message>
-        <source>As Subscription (create new group)</source>
-        <translation>作为订阅 (创建新组)</translation>
-    </message>
-    <message>
-        <source>As Subscription (add to this group)</source>
-        <translation>作为订阅 (添加到该组)</translation>
-    </message>
-    <message>
         <source>Default</source>
         <translation>默认</translation>
+    </message>
+    <message>
+        <source>Add profiles to this group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Create new subscription group</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

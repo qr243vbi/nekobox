@@ -112,18 +112,6 @@
         <translation>Параметры ядра</translation>
     </message>
     <message>
-        <source>Extra Core</source>
-        <translation>Дополнительные ядра</translation>
-    </message>
-    <message>
-        <source>Add</source>
-        <translation>Добавить</translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translation>Удалить</translation>
-    </message>
-    <message>
         <source>Security</source>
         <translation>Безопасность</translation>
     </message>
@@ -134,14 +122,6 @@
     <message>
         <source>Default uTLS Fingerprint</source>
         <translation>uTLS fingerprint по умолчанию</translation>
-    </message>
-    <message>
-        <source>Please input the core name.</source>
-        <translation>Введите имя ядра.</translation>
-    </message>
-    <message>
-        <source>Please select the core name.</source>
-        <translation>Выберите имя ядра.</translation>
     </message>
     <message>
         <source>Please select a PNG file.</source>
@@ -180,15 +160,7 @@ For NekoBox, this rewrites the underlying(localhost) DNS in Tun Mode, normal mod
         <translation>Интервал (в минутах, значение считается неправильным, если меньше 30)</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Might Improve Ping and Performance&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Disable Traffic Stats</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Settings for the sing-box&apos;s built-in NTP client&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -205,10 +177,6 @@ For NekoBox, this rewrites the underlying(localhost) DNS in Tun Mode, normal mod
     </message>
     <message>
         <source>sync interval</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;In minutes&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -236,10 +204,6 @@ For NekoBox, this rewrites the underlying(localhost) DNS in Tun Mode, normal mod
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Remove the currently generated rule-sets so that they can be regenerated&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Remove Generated Rule-sets</source>
         <translation type="unfinished"></translation>
     </message>
@@ -248,23 +212,7 @@ For NekoBox, this rewrites the underlying(localhost) DNS in Tun Mode, normal mod
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Sets the URL to the latest sing-geoip release URL&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Use Sing-Geoip</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>GeoSite URL</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Sets the URL to the latest sing-geosite release URL&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Use Sing-Geosite</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -272,7 +220,41 @@ For NekoBox, this rewrites the underlying(localhost) DNS in Tun Mode, normal mod
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Socks + HTTP Proxy&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Socks
+                                                                + HTTP Proxy&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
+                                                            </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Font Size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Font</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Might
+                                                                            Improve Ping and Performance&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
+                                                                        </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Settings for the
+                                            sing-box&apos;s built-in NTP client&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
+                                        </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;In
+                                                                minutes&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
+                                                            </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Remove the
+                                                        currently generated rule-sets so that they can be regenerated&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
+                                                    </source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -480,10 +462,6 @@ For NekoBox, this rewrites the underlying(localhost) DNS in Tun Mode, normal mod
     <message>
         <source>Custom (%1 config)</source>
         <translation>Кастомный (%1 конфиг)</translation>
-    </message>
-    <message>
-        <source>Custom (Extra Core)</source>
-        <translation>Кастомный (доп. ядро)</translation>
     </message>
     <message>
         <source>Not set</source>
@@ -726,6 +704,58 @@ also if the connection cannot be established with the current address family (ip
         <source>Enable FakeIP</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Hijack</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>DNS Server</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enable</source>
+        <translation type="unfinished">Вкл</translation>
+    </message>
+    <message>
+        <source>How does it work?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Listen Address</source>
+        <translation type="unfinished">Адрес входящих подключений</translation>
+    </message>
+    <message>
+        <source>Listen Port</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Following format should be used:&lt;br/&gt;domain:a.com&lt;/p&gt;&lt;p&gt;suffix:a.com&lt;/p&gt;&lt;p&gt;regex:someregex&lt;/p&gt;&lt;p&gt;rule_set:nameOfRuleSet&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rules</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>IPv4 Response</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>IPv6 Response</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Redirect Settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>tls://8.8.8.8</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Clone</source>
+        <translation type="unfinished">Клонировать</translation>
+    </message>
 </context>
 <context>
     <name>DialogVPNSettings</name>
@@ -826,55 +856,12 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>Предпросмотр замен</translation>
     </message>
     <message>
-        <source>Preview config</source>
-        <translation>Предпросмотр конфигурации</translation>
-    </message>
-    <message>
         <source>Name cannot be empty.</source>
         <translation>Имя не может быть пустым.</translation>
     </message>
     <message>
         <source>Please pick a core.</source>
         <translation>Пожалуйста, выберите ядро.</translation>
-    </message>
-</context>
-<context>
-    <name>EditNaive</name>
-    <message>
-        <source>Protocol</source>
-        <translation>Протокол</translation>
-    </message>
-    <message>
-        <source>Password</source>
-        <translation>Пароль</translation>
-    </message>
-    <message>
-        <source>Extra headers</source>
-        <translation>Дополнительные заголовки</translation>
-    </message>
-    <message>
-        <source>SNI</source>
-        <translation>SNI</translation>
-    </message>
-    <message>
-        <source>Username</source>
-        <translation>Имя пользователя</translation>
-    </message>
-    <message>
-        <source>Certificate</source>
-        <translation>Сертификат</translation>
-    </message>
-    <message>
-        <source>Insecure concurrency</source>
-        <translation></translation>
-    </message>
-    <message>
-        <source>Disable logs</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Turn on this option if your connection is lost after a while</source>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -896,20 +883,12 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>Выкл. MTU discovery</translation>
     </message>
     <message>
-        <source>Hop Interval (s)</source>
-        <translation></translation>
-    </message>
-    <message>
         <source>Certificate</source>
         <translation>Сертификат</translation>
     </message>
     <message>
         <source>Allow Insecure</source>
         <translation>Разрешить небезопасные</translation>
-    </message>
-    <message>
-        <source>Hop Port</source>
-        <translation></translation>
     </message>
     <message>
         <source>Upload (Mbps)</source>
@@ -957,6 +936,49 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     </message>
     <message>
         <source>Force use external core</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>EditSSH</name>
+    <message>
+        <source>EditSSH</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation type="unfinished">Пароль</translation>
+    </message>
+    <message>
+        <source>Private Key</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Private Key Password</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Host Key</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Host Key Algorithms</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Client Version</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Private Key Path</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Choose File</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1594,6 +1616,74 @@ Split by line.</source>
         <source>Replace domain server addresses with their resolved IPs?</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>System DNS</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Connections</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Destination</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Click To Disable Sorting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Domain</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Click To Sort By Domain</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Network</source>
+        <translation type="unfinished">Транспорт</translation>
+    </message>
+    <message>
+        <source>Protocol</source>
+        <translation type="unfinished">Протокол</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Click To Sort By Download</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Upload</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Click To Sort By Upload</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Logs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Geo Assets are missing, want to download them now?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please give the core root privileges</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Requesting permission</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please Enter your password in the opened terminal, then try again</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ProxyItem</name>
@@ -1616,10 +1706,6 @@ Split by line.</source>
 <context>
     <name>QObject</name>
     <message>
-        <source>Core not found: %1</source>
-        <translation>Ядро не найдено: %1</translation>
-    </message>
-    <message>
         <source>Unavailable</source>
         <translation>Недоступно</translation>
     </message>
@@ -1636,18 +1722,6 @@ Direct: %2</source>
     <message>
         <source>Request with proxy but no profile started.</source>
         <translation>Запрос через прокси, но профиль не запущен.</translation>
-    </message>
-    <message>
-        <source>As Subscription (add to this group)</source>
-        <translation>Как подписку (добавить в эту группу)</translation>
-    </message>
-    <message>
-        <source>As Subscription (create new group)</source>
-        <translation>Как подписку (создать новую группу)</translation>
-    </message>
-    <message>
-        <source>As link</source>
-        <translation>Как ссылку</translation>
     </message>
     <message>
         <source>url detected</source>
@@ -1740,6 +1814,14 @@ Release note:
     <message>
         <source>Default</source>
         <translation>По умолчанию</translation>
+    </message>
+    <message>
+        <source>Add profiles to this group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Create new subscription group</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

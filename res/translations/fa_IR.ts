@@ -44,10 +44,6 @@
         <translation>هسته</translation>
     </message>
     <message>
-        <source>Extra Core</source>
-        <translation>هسته اضافی</translation>
-    </message>
-    <message>
         <source>Select</source>
         <translation>برگزیدن</translation>
     </message>
@@ -79,23 +75,6 @@
     <message>
         <source>Off</source>
         <translation>خاموش</translation>
-    </message>
-    <message>
-        <source>Add</source>
-        <translation>اضافه کردن</translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translatorcomment>حذف</translatorcomment>
-        <translation>حذف کردن</translation>
-    </message>
-    <message>
-        <source>Please input the core name.</source>
-        <translation>لطفا نام هسته را وارد کنید</translation>
-    </message>
-    <message>
-        <source>Please select the core name.</source>
-        <translation>لطفا نام هسته را انتخاب کنید</translation>
     </message>
     <message>
         <source>Connection statistics</source>
@@ -180,15 +159,7 @@ For NekoBox, this rewrites the underlying(localhost) DNS in Tun Mode, normal mod
         <translation type="unfinished">فاصله (به دقیقا ، اگر کمتر از ۳۰ باشد نادرست است)</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Might Improve Ping and Performance&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Disable Traffic Stats</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Settings for the sing-box&apos;s built-in NTP client&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -205,10 +176,6 @@ For NekoBox, this rewrites the underlying(localhost) DNS in Tun Mode, normal mod
     </message>
     <message>
         <source>sync interval</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;In minutes&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -236,10 +203,6 @@ For NekoBox, this rewrites the underlying(localhost) DNS in Tun Mode, normal mod
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Remove the currently generated rule-sets so that they can be regenerated&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Remove Generated Rule-sets</source>
         <translation type="unfinished"></translation>
     </message>
@@ -248,23 +211,7 @@ For NekoBox, this rewrites the underlying(localhost) DNS in Tun Mode, normal mod
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Sets the URL to the latest sing-geoip release URL&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Use Sing-Geoip</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>GeoSite URL</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Sets the URL to the latest sing-geosite release URL&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Use Sing-Geosite</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -272,7 +219,41 @@ For NekoBox, this rewrites the underlying(localhost) DNS in Tun Mode, normal mod
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Socks + HTTP Proxy&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Socks
+                                                                + HTTP Proxy&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
+                                                            </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Font Size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Font</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Might
+                                                                            Improve Ping and Performance&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
+                                                                        </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Settings for the
+                                            sing-box&apos;s built-in NTP client&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
+                                        </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;In
+                                                                minutes&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
+                                                            </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Remove the
+                                                        currently generated rule-sets so that they can be regenerated&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
+                                                    </source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -428,10 +409,6 @@ For NekoBox, this rewrites the underlying(localhost) DNS in Tun Mode, normal mod
     <message>
         <source>Application layer protocol negotiation, clear text. Please separate them with commas.</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Custom (Extra Core)</source>
-        <translation>سفارشی ( هسته اضافه)</translation>
     </message>
     <message>
         <source>Not set</source>
@@ -726,6 +703,58 @@ also if the connection cannot be established with the current address family (ip
         <source>Enable FakeIP</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Hijack</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>DNS Server</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enable</source>
+        <translation type="unfinished">فعال کردن</translation>
+    </message>
+    <message>
+        <source>How does it work?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Listen Address</source>
+        <translation type="unfinished">آدرس درحال شنود</translation>
+    </message>
+    <message>
+        <source>Listen Port</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Following format should be used:&lt;br/&gt;domain:a.com&lt;/p&gt;&lt;p&gt;suffix:a.com&lt;/p&gt;&lt;p&gt;regex:someregex&lt;/p&gt;&lt;p&gt;rule_set:nameOfRuleSet&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rules</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>IPv4 Response</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>IPv6 Response</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Redirect Settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>tls://8.8.8.8</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Clone</source>
+        <translation type="unfinished">همزادسازی</translation>
+    </message>
 </context>
 <context>
     <name>DialogVPNSettings</name>
@@ -823,55 +852,12 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Preview config</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Please fill the complete config.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Name cannot be empty.</source>
         <translation type="unfinished">نام نمیتواند خالی باشد</translation>
-    </message>
-</context>
-<context>
-    <name>EditNaive</name>
-    <message>
-        <source>Protocol</source>
-        <translation>پروتکل</translation>
-    </message>
-    <message>
-        <source>Password</source>
-        <translation>رمزعبور</translation>
-    </message>
-    <message>
-        <source>Extra headers</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>SNI</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Username</source>
-        <translation>نام کاربری</translation>
-    </message>
-    <message>
-        <source>Certificate</source>
-        <translation type="unfinished">گواهی</translation>
-    </message>
-    <message>
-        <source>Insecure concurrency</source>
-        <translation>همزمانی ناامن</translation>
-    </message>
-    <message>
-        <source>Disable logs</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Turn on this option if your connection is lost after a while</source>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -897,16 +883,8 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Hop Interval (s)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Allow Insecure</source>
         <translation type="unfinished">اجازه ارتباطات ناامن داده شود</translation>
-    </message>
-    <message>
-        <source>Hop Port</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Upload (Mbps)</source>
@@ -954,6 +932,49 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</source>
     </message>
     <message>
         <source>Force use external core</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>EditSSH</name>
+    <message>
+        <source>EditSSH</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Private Key</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Private Key Password</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Host Key</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Host Key Algorithms</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Client Version</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Private Key Path</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Choose File</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1589,6 +1610,74 @@ Split by line.</source>
         <source>Replace domain server addresses with their resolved IPs?</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>System DNS</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Connections</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Destination</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Click To Disable Sorting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Domain</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Click To Sort By Domain</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Network</source>
+        <translation type="unfinished">شبکه</translation>
+    </message>
+    <message>
+        <source>Protocol</source>
+        <translation type="unfinished">پروتکل</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Click To Sort By Download</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Upload</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Click To Sort By Upload</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Logs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Geo Assets are missing, want to download them now?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please give the core root privileges</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Requesting permission</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please Enter your password in the opened terminal, then try again</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ProxyItem</name>
@@ -1645,10 +1734,6 @@ Release note:
         <translation>به روز رسانی آماده است، برای نصب مجدد راه اندازی شود؟</translation>
     </message>
     <message>
-        <source>As link</source>
-        <translation>به عنوان لینک</translation>
-    </message>
-    <message>
         <source>url detected</source>
         <translation type="unfinished">آدرس شناسایی شد</translation>
     </message>
@@ -1689,10 +1774,6 @@ Deleted %3 Profiles:
         <translation>پروکسی زنجیره ای</translation>
     </message>
     <message>
-        <source>Core not found: %1</source>
-        <translation type="unfinished">هسته برنامه یافت نشد : %1</translation>
-    </message>
-    <message>
         <source>Proxy: %1
 Direct: %2</source>
         <translation type="unfinished"></translation>
@@ -1718,16 +1799,16 @@ Direct: %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>As Subscription (create new group)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>As Subscription (add to this group)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Default</source>
         <translation type="unfinished">پیش فرض</translation>
+    </message>
+    <message>
+        <source>Add profiles to this group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Create new subscription group</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
