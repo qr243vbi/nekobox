@@ -710,13 +710,19 @@ namespace NekoGui {
 
         // experimental
         QJsonObject experimentalObj;
+        QJsonObject clash_api = {
+            {"default_mode", "Rule"} // dummy to make sure it is created
+        };
 
-        if (!status->forTest && dataStore->core_box_clash_api > 0) {
-            QJsonObject clash_api = {
+        if (!status->forTest)
+        {
+            if (dataStore->core_box_clash_api > 0){
+                clash_api = {
                 {"external_controller", NekoGui::dataStore->core_box_clash_listen_addr + ":" + Int2String(dataStore->core_box_clash_api)},
                 {"secret", dataStore->core_box_clash_api_secret},
                 {"external_ui", "dashboard"},
-            };
+                };
+            }
             experimentalObj["clash_api"] = clash_api;
         }
 

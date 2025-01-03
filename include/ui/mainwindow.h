@@ -3,6 +3,7 @@
 #include <QMainWindow>
 
 #include "include/global/NekoGui.hpp"
+#include "include/stats/connections/connectionLister.hpp"
 
 #ifndef MW_INTERFACE
 
@@ -72,6 +73,10 @@ public:
     bool StopVPNProcess();
 
     void DownloadAssets(const QString &geoipUrl, const QString &geositeUrl);
+
+    void UpdateConnectionList(const QMap<QString, NekoGui_traffic::ConnectionMetadata>& toUpdate, const QMap<QString, NekoGui_traffic::ConnectionMetadata>& toAdd);
+
+    void UpdateConnectionListWithRecreate(const QList<NekoGui_traffic::ConnectionMetadata>& connections);
 
 signals:
 
@@ -214,6 +219,8 @@ private:
     bool set_system_dns(bool set, bool save_set = true);
 
     void CheckUpdate();
+
+    void setupConnectionList();
 
 protected:
     bool eventFilter(QObject *obj, QEvent *event) override;

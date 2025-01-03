@@ -418,4 +418,20 @@ namespace NekoGui_rpc {
         }
     }
 
+    libcore::ListConnectionsResp Client::ListConnections(bool* rpcOK) const
+    {
+        libcore::EmptyReq req;
+        libcore::ListConnectionsResp resp;
+        auto status = default_grpc_channel->Call("ListConnections", req, &resp);
+        if (status == QNetworkReply::NoError) {
+            *rpcOK = true;
+            return resp;
+        } else {
+            NOT_OK
+            MW_show_log(QString("Failed to list connections: " + qt_error_string(status)));
+            return {};
+        }
+    }
+
+
 } // namespace NekoGui_rpc

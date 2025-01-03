@@ -206,6 +206,8 @@ set(PROJECT_SOURCES
         src/sys/AutoRun.cpp
         src/sys/Process.cpp
         include/ui/mainwindow_interface.h
+        include/stats/connections/connectionLister.hpp
+        src/stats/connectionLister/connectionLister.cpp
 )
 
 # Qt exe

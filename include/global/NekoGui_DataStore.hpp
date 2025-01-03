@@ -92,6 +92,7 @@ namespace NekoGui {
         bool start_minimal = false;
         int max_log_line = 200;
         QString splitter_state = "";
+        bool enable_stats = true;
 
         // Subscription
         QString user_agent = ""; // set at main.cpp

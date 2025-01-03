@@ -38,7 +38,7 @@ DialogBasicSettings::DialogBasicSettings(QWidget *parent)
     });
 
     // Style
-    ui->connection_statistics_box->setDisabled(true);
+    ui->connection_statistics->setChecked(NekoGui::dataStore->enable_stats);
     //
     D_LOAD_BOOL(start_minimal)
     D_LOAD_INT(max_log_line)
@@ -175,6 +175,7 @@ void DialogBasicSettings::accept() {
 
     // Style
 
+    NekoGui::dataStore->enable_stats = ui->connection_statistics->isChecked();
     NekoGui::dataStore->language = ui->language->currentIndex();
     D_SAVE_BOOL(start_minimal)
     D_SAVE_INT(max_log_line)
@@ -271,7 +272,6 @@ void DialogBasicSettings::on_core_settings_clicked() {
     w->setLayout(layout);
     //
     auto line = -1;
-    QCheckBox *core_box_enable_clash_api;
     MyLineEdit *core_box_clash_api;
     MyLineEdit *core_box_clash_api_secret;
     MyLineEdit *core_box_underlying_dns;
@@ -288,12 +288,6 @@ void DialogBasicSettings::on_core_settings_clicked() {
     layout->addWidget(core_box_underlying_dns_l, ++line, 0);
     layout->addWidget(core_box_underlying_dns, line, 1);
     //
-    auto core_box_enable_clash_api_l = new QLabel("Enable Clash API");
-    core_box_enable_clash_api = new QCheckBox;
-    core_box_enable_clash_api->setChecked(NekoGui::dataStore->core_box_clash_api > 0);
-    layout->addWidget(core_box_enable_clash_api_l, ++line, 0);
-    layout->addWidget(core_box_enable_clash_api, line, 1);
-    //
     auto core_box_clash_listen_addr_l = new QLabel("Clash Api Listen Address");
     core_box_clash_listen_addr = new MyLineEdit;
     core_box_clash_listen_addr->setText(NekoGui::dataStore->core_box_clash_listen_addr);
@@ -302,7 +296,7 @@ void DialogBasicSettings::on_core_settings_clicked() {
     //
     auto core_box_clash_api_l = new QLabel("Clash API Listen Port");
     core_box_clash_api = new MyLineEdit;
-    core_box_clash_api->setText(Int2String(std::abs(NekoGui::dataStore->core_box_clash_api)));
+    core_box_clash_api->setText(NekoGui::dataStore->core_box_clash_api > 0 ? Int2String(NekoGui::dataStore->core_box_clash_api) : "");
     layout->addWidget(core_box_clash_api_l, ++line, 0);
     layout->addWidget(core_box_clash_api, line, 1);
     //
@@ -317,7 +311,7 @@ void DialogBasicSettings::on_core_settings_clicked() {
     box->setStandardButtons(QDialogButtonBox::Cancel | QDialogButtonBox::Ok);
     connect(box, &QDialogButtonBox::accepted, w, [=] {
         NekoGui::dataStore->core_box_underlying_dns = core_box_underlying_dns->text();
-        NekoGui::dataStore->core_box_clash_api = core_box_clash_api->text().toInt() * (core_box_enable_clash_api->isChecked() ? 1 : -1);
+        NekoGui::dataStore->core_box_clash_api = core_box_clash_api->text().toInt();
         NekoGui::dataStore->core_box_clash_listen_addr = core_box_clash_listen_addr->text();
         NekoGui::dataStore->core_box_clash_api_secret = core_box_clash_api_secret->text();
         MW_dialog_message(Dialog_DialogBasicSettings, "UpdateDataStore");
