@@ -101,6 +101,7 @@ message ConnectionMetaData {
   string dest = 7;
   string protocol = 8;
   string domain = 9;
+  string process = 10;
 }
 
 message GetGeoIPListResponse {

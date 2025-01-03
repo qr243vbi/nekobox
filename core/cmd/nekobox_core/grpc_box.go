@@ -5,6 +5,7 @@ import (
 	"errors"
 	"fmt"
 	"github.com/sagernet/sing-box/common/settings"
+	"github.com/sagernet/sing-box/experimental/clashapi"
 	"github.com/sagernet/sing/common/metadata"
 	"nekobox_core/internal/boxbox"
 	grpc_server "nekobox_core/server"
@@ -148,7 +149,6 @@ func (s *server) StopTest(ctx context.Context, in *gen.EmptyReq) (*gen.EmptyResp
 
 func (s *server) QueryStats(ctx context.Context, in *gen.QueryStatsReq) (out *gen.QueryStatsResp, _ error) {
 	out = &gen.QueryStatsResp{}
-
 	if instance != nil && instance.Router().V2RayServer() != nil {
 		if ss, ok := instance.Router().V2RayServer().(*boxapi.SbV2rayServer); ok {
 			out.Traffic = ss.QueryStats(fmt.Sprintf("outbound>>>%s>>>traffic>>>%s", in.Tag, in.Direct))
@@ -159,10 +159,13 @@ func (s *server) QueryStats(ctx context.Context, in *gen.QueryStatsReq) (out *ge
 }
 
 func (s *server) ListConnections(ctx context.Context, in *gen.EmptyReq) (*gen.ListConnectionsResp, error) {
+	if instance == nil {
+		return &gen.ListConnectionsResp{}, nil
+	}
 	if instance.Router().ClashServer() == nil {
 		return nil, errors.New("no clash server found")
 	}
-	clash, ok := instance.Router().ClashServer().(*boxapi.SbClashServer)
+	clash, ok := instance.Router().ClashServer().(*clashapi.Server)
 	if !ok {
 		return nil, errors.New("invalid state, should not be here")
 	}
@@ -170,6 +173,11 @@ func (s *server) ListConnections(ctx context.Context, in *gen.EmptyReq) (*gen.Li
 
 	res := make([]*gen.ConnectionMetaData, 0)
 	for _, c := range connections {
+		process := ""
+		if c.Metadata.ProcessInfo != nil {
+			spl := strings.Split(c.Metadata.ProcessInfo.ProcessPath, string(os.PathSeparator))
+			process = spl[len(spl)-1]
+		}
 		r := &gen.ConnectionMetaData{
 			Id:        c.ID.String(),
 			CreatedAt: c.CreatedAt.UnixMilli(),
@@ -180,6 +188,7 @@ func (s *server) ListConnections(ctx context.Context, in *gen.EmptyReq) (*gen.Li
 			Dest:      c.Metadata.Destination.String(),
 			Protocol:  c.Metadata.Protocol,
 			Domain:    c.Metadata.Domain,
+			Process:   process,
 		}
 		res = append(res, r)
 	}

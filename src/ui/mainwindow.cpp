@@ -154,6 +154,38 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
         runOnUiThread([=] { show_log_impl(log); });
     };
 
+    // setup connection UI
+    setupConnectionList();
+    connect(ui->connections->horizontalHeader(), &QHeaderView::sectionClicked, this, [=](int index)
+    {
+        // TODO this is a very bad idea to hardcode it like this, need to refactor it later
+        if (index == 0)
+        {
+            NekoGui_traffic::connection_lister->setSort(NekoGui_traffic::Default);
+            NekoGui_traffic::connection_lister->ForceUpdate();
+        }
+        if (index == 2 || index == 3)
+        {
+            // ignore
+            return;
+        }
+        if (index == 1)
+        {
+            NekoGui_traffic::connection_lister->setSort(NekoGui_traffic::ByDomain);
+            NekoGui_traffic::connection_lister->ForceUpdate();
+        }
+        if (index == 4)
+        {
+            NekoGui_traffic::connection_lister->setSort(NekoGui_traffic::ByDownload);
+            NekoGui_traffic::connection_lister->ForceUpdate();
+        }
+        if (index == 5)
+        {
+            NekoGui_traffic::connection_lister->setSort(NekoGui_traffic::ByUpload);
+            NekoGui_traffic::connection_lister->ForceUpdate();
+        }
+    });
+
     // table UI
     ui->proxyListTable->callback_save_order = [=] {
         auto group = NekoGui::profileManager->CurrentGroup();
@@ -814,6 +846,139 @@ void MainWindow::neko_set_spmode_vpn(bool enable, bool save) {
     if (NekoGui::dataStore->started_id >= 0) neko_start(NekoGui::dataStore->started_id);
 }
 
+void MainWindow::setupConnectionList()
+{
+    ui->connections->horizontalHeader()->setHighlightSections(false);
+    ui->connections->setSelectionMode(QAbstractItemView::NoSelection);
+    ui->connections->horizontalHeader()->setSectionResizeMode(0, QHeaderView::Stretch);
+    ui->connections->horizontalHeader()->setSectionResizeMode(1, QHeaderView::Stretch);
+    ui->connections->horizontalHeader()->setSectionResizeMode(2, QHeaderView::ResizeToContents);
+    ui->connections->horizontalHeader()->setSectionResizeMode(3, QHeaderView::ResizeToContents);
+    ui->connections->horizontalHeader()->setSectionResizeMode(4, QHeaderView::ResizeToContents);
+    ui->connections->horizontalHeader()->setSectionResizeMode(5, QHeaderView::ResizeToContents);
+    ui->connections->verticalHeader()->hide();
+}
+
+void MainWindow::UpdateConnectionList(const QMap<QString, NekoGui_traffic::ConnectionMetadata>& toUpdate, const QMap<QString, NekoGui_traffic::ConnectionMetadata>& toAdd)
+{
+    ui->connections->setUpdatesEnabled(false);
+    for (int row=0;row<ui->connections->rowCount();row++)
+    {
+        auto key = ui->connections->item(row, 0)->data(NekoGui_traffic::IDKEY).toString();
+        if (!toUpdate.contains(key))
+        {
+            ui->connections->removeRow(row);
+            row--;
+            continue;
+        }
+
+        auto conn = toUpdate[key];
+        // C0: Dest
+        ui->connections->item(row, 0)->setText(conn.dest);
+
+        // C1: Domain
+        ui->connections->item(row, 1)->setText(conn.domain);
+
+        // C2: Network
+        ui->connections->item(row, 2)->setText(conn.network);
+
+        // C3: Protocol
+        ui->connections->item(row, 3)->setText(conn.protocol);
+
+        // C4: Download
+        ui->connections->item(row, 4)->setText(ReadableSize(conn.download));
+
+        // C5: Upload
+        ui->connections->item(row, 5)->setText(ReadableSize(conn.upload));
+    }
+    int row = ui->connections->rowCount();
+    for (const auto& conn : toAdd)
+    {
+        ui->connections->insertRow(row);
+        auto f0 = std::make_unique<QTableWidgetItem>();
+        f0->setData(NekoGui_traffic::IDKEY, conn.id);
+
+        // C0: Dest
+        auto f = f0->clone();
+        f->setText(conn.dest);
+        ui->connections->setItem(row, 0, f);
+
+        // C1: Domain
+        f = f0->clone();
+        f->setText(conn.domain);
+        ui->connections->setItem(row, 1, f);
+
+        // C2: Network
+        f = f0->clone();
+        f->setText(conn.network);
+        ui->connections->setItem(row, 2, f);
+
+        // C3: Protocol
+        f = f0->clone();
+        f->setText(conn.protocol);
+        ui->connections->setItem(row, 3, f);
+
+        // C4: Download
+        f = f0->clone();
+        f->setText(ReadableSize(conn.download));
+        ui->connections->setItem(row, 4, f);
+
+        // C5: Upload
+        f = f0->clone();
+        f->setText(ReadableSize(conn.upload));
+        ui->connections->setItem(row, 5, f);
+
+        row++;
+    }
+    ui->connections->setUpdatesEnabled(true);
+}
+
+void MainWindow::UpdateConnectionListWithRecreate(const QList<NekoGui_traffic::ConnectionMetadata>& connections)
+{
+    ui->connections->setUpdatesEnabled(false);
+    ui->connections->setRowCount(0);
+    int row=0;
+    for (const auto& conn : connections)
+    {
+        ui->connections->insertRow(row);
+        auto f0 = std::make_unique<QTableWidgetItem>();
+        f0->setData(NekoGui_traffic::IDKEY, conn.id);
+
+        // C0: Dest
+        auto f = f0->clone();
+        f->setText(conn.dest);
+        ui->connections->setItem(row, 0, f);
+
+        // C1: Domain
+        f = f0->clone();
+        f->setText(conn.domain);
+        ui->connections->setItem(row, 1, f);
+
+        // C2: Network
+        f = f0->clone();
+        f->setText(conn.network);
+        ui->connections->setItem(row, 2, f);
+
+        // C3: Protocol
+        f = f0->clone();
+        f->setText(conn.protocol);
+        ui->connections->setItem(row, 3, f);
+
+        // C4: Download
+        f = f0->clone();
+        f->setText(ReadableSize(conn.download));
+        ui->connections->setItem(row, 4, f);
+
+        // C5: Upload
+        f = f0->clone();
+        f->setText(ReadableSize(conn.upload));
+        ui->connections->setItem(row, 5, f);
+
+        row++;
+    }
+    ui->connections->setUpdatesEnabled(true);
+}
+
 void MainWindow::refresh_status(const QString &traffic_update) {
     auto refresh_speed_label = [=] {
         if (NekoGui::dataStore->disable_traffic_stats) {
@@ -955,6 +1120,7 @@ void MainWindow::refresh_proxy_list(const int &id) {
 }
 
 void MainWindow::refresh_proxy_list_impl(const int &id, GroupSortAction groupSortAction) {
+    ui->proxyListTable->setUpdatesEnabled(false);
     // id < 0 重绘
     if (id < 0) {
         // 清空数据
@@ -975,7 +1141,11 @@ void MainWindow::refresh_proxy_list_impl(const int &id, GroupSortAction groupSor
         switch (groupSortAction.method) {
             case GroupSortMethod::Raw: {
                 auto group = NekoGui::profileManager->CurrentGroup();
-                if (group == nullptr) return;
+                if (group == nullptr)
+                {
+                    ui->proxyListTable->setUpdatesEnabled(true);
+                    return;
+                }
                 ui->proxyListTable->order = group->order;
                 break;
             }
@@ -1043,11 +1213,13 @@ void MainWindow::refresh_proxy_list_impl(const int &id, GroupSortAction groupSor
 }
 
 void MainWindow::refresh_proxy_list_impl_refresh_data(const int &id, bool stopping) {
+    ui->proxyListTable->setUpdatesEnabled(false);
     if (id >= 0)
     {
         if (ui->proxyListTable->id2Row.count(id) == 0)
         {
             qDebug("Invalid proxy list id, data might be corrupted");
+            ui->proxyListTable->setUpdatesEnabled(true);
             return;
         }
         auto rowID = ui->proxyListTable->id2Row[id];
@@ -1061,6 +1233,7 @@ void MainWindow::refresh_proxy_list_impl_refresh_data(const int &id, bool stoppi
             refresh_table_item(row, profile, stopping);
         }
     }
+    ui->proxyListTable->setUpdatesEnabled(true);
 }
 
 void MainWindow::refresh_table_item(const int row, const std::shared_ptr<NekoGui::ProxyEntity>& profile, bool stopping)

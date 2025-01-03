@@ -173,6 +173,9 @@
        <property name="currentIndex">
         <number>0</number>
        </property>
+       <property name="documentMode">
+        <bool>true</bool>
+       </property>
        <property name="movable">
         <bool>true</bool>
        </property>
@@ -182,13 +185,13 @@
         </attribute>
         <layout class="QGridLayout" name="gridLayout_2">
          <property name="leftMargin">
-          <number>0</number>
+          <number>1</number>
          </property>
          <property name="topMargin">
           <number>0</number>
          </property>
          <property name="rightMargin">
-          <number>0</number>
+          <number>1</number>
          </property>
          <property name="bottomMargin">
           <number>0</number>
@@ -279,13 +282,149 @@
             <number>0</number>
            </property>
            <item>
-            <widget class="QTextBrowser" name="masterLogBrowser">
-             <property name="contextMenuPolicy">
-              <enum>Qt::ContextMenuPolicy::CustomContextMenu</enum>
+            <widget class="QTabWidget" name="stats_widget">
+             <property name="autoFillBackground">
+              <bool>true</bool>
              </property>
-             <property name="openLinks">
+             <property name="tabPosition">
+              <enum>QTabWidget::TabPosition::North</enum>
+             </property>
+             <property name="tabShape">
+              <enum>QTabWidget::TabShape::Rounded</enum>
+             </property>
+             <property name="currentIndex">
+              <number>0</number>
+             </property>
+             <property name="elideMode">
+              <enum>Qt::TextElideMode::ElideNone</enum>
+             </property>
+             <property name="usesScrollButtons">
+              <bool>true</bool>
+             </property>
+             <property name="documentMode">
+              <bool>true</bool>
+             </property>
+             <property name="tabsClosable">
               <bool>false</bool>
              </property>
+             <property name="movable">
+              <bool>false</bool>
+             </property>
+             <property name="tabBarAutoHide">
+              <bool>false</bool>
+             </property>
+             <widget class="QWidget" name="connections_tab">
+              <attribute name="title">
+               <string>Connections</string>
+              </attribute>
+              <layout class="QHBoxLayout" name="horizontalLayout_4">
+               <property name="spacing">
+                <number>0</number>
+               </property>
+               <property name="sizeConstraint">
+                <enum>QLayout::SizeConstraint::SetDefaultConstraint</enum>
+               </property>
+               <property name="leftMargin">
+                <number>1</number>
+               </property>
+               <property name="topMargin">
+                <number>0</number>
+               </property>
+               <property name="rightMargin">
+                <number>1</number>
+               </property>
+               <property name="bottomMargin">
+                <number>0</number>
+               </property>
+               <item>
+                <widget class="QTableWidget" name="connections">
+                 <property name="autoFillBackground">
+                  <bool>false</bool>
+                 </property>
+                 <column>
+                  <property name="text">
+                   <string>Destination</string>
+                  </property>
+                  <property name="toolTip">
+                   <string>Click To Disable Sorting</string>
+                  </property>
+                 </column>
+                 <column>
+                  <property name="text">
+                   <string>Domain</string>
+                  </property>
+                  <property name="toolTip">
+                   <string>Click To Sort By Domain</string>
+                  </property>
+                 </column>
+                 <column>
+                  <property name="text">
+                   <string>Network</string>
+                  </property>
+                 </column>
+                 <column>
+                  <property name="text">
+                   <string>Protocol</string>
+                  </property>
+                 </column>
+                 <column>
+                  <property name="text">
+                   <string>Download</string>
+                  </property>
+                  <property name="toolTip">
+                   <string>Click To Sort By Download</string>
+                  </property>
+                 </column>
+                 <column>
+                  <property name="text">
+                   <string>Upload</string>
+                  </property>
+                  <property name="toolTip">
+                   <string>Click To Sort By Upload</string>
+                  </property>
+                 </column>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+             <widget class="QWidget" name="Logs">
+              <property name="enabled">
+               <bool>true</bool>
+              </property>
+              <attribute name="title">
+               <string>Logs</string>
+              </attribute>
+              <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="0">
+               <property name="spacing">
+                <number>0</number>
+               </property>
+               <property name="sizeConstraint">
+                <enum>QLayout::SizeConstraint::SetDefaultConstraint</enum>
+               </property>
+               <property name="leftMargin">
+                <number>1</number>
+               </property>
+               <property name="topMargin">
+                <number>0</number>
+               </property>
+               <property name="rightMargin">
+                <number>1</number>
+               </property>
+               <property name="bottomMargin">
+                <number>0</number>
+               </property>
+               <item>
+                <widget class="QTextBrowser" name="masterLogBrowser">
+                 <property name="contextMenuPolicy">
+                  <enum>Qt::ContextMenuPolicy::CustomContextMenu</enum>
+                 </property>
+                 <property name="openLinks">
+                  <bool>false</bool>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
             </widget>
            </item>
           </layout>

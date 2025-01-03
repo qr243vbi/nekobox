@@ -26,6 +26,7 @@ void MainWindow::setup_grpc() {
 
     // Looper
     runOnNewThread([=] { NekoGui_traffic::trafficLooper->Loop(); });
+    runOnNewThread([=] {NekoGui_traffic::connection_lister->Loop(); });
 }
 
 void MainWindow::RunSpeedTest(const QString& config, bool useDefault, const QStringList& outboundTags, const QMap<QString, int>& tag2entID, int entID) {
@@ -279,6 +280,7 @@ void MainWindow::neko_start(int _id) {
         NekoGui_traffic::trafficLooper->items = result->outboundStats;
         NekoGui::dataStore->ignoreConnTag = result->ignoreConnTag;
         NekoGui_traffic::trafficLooper->loop_enabled = true;
+        NekoGui_traffic::connection_lister->suspend = false;
 
         NekoGui::dataStore->UpdateStartedId(ent->id);
         running = ent;
@@ -403,6 +405,7 @@ void MainWindow::neko_stop(bool crash, bool sem, bool manual) {
     auto restartMsgboxTimer = new MessageBoxTimer(this, restartMsgbox, 5000);
 
     NekoGui_traffic::trafficLooper->loop_enabled = false;
+    NekoGui_traffic::connection_lister->suspend = true;
     NekoGui_traffic::trafficLooper->loop_mutex.lock();
     if (NekoGui::dataStore->traffic_loop_interval != 0) {
         NekoGui_traffic::trafficLooper->UpdateAll();

@@ -42,6 +42,8 @@ namespace NekoGui_rpc {
 
         QString SetSystemDNS(bool *rpcOK, const QStringList& servers, bool dhcp, bool clear) const;
 
+        libcore::ListConnectionsResp ListConnections(bool *rpcOK) const;
+
     private:
         std::function<std::unique_ptr<QtGrpc::Http2GrpcChannelPrivate>()> make_grpc_channel;
         std::unique_ptr<QtGrpc::Http2GrpcChannelPrivate> default_grpc_channel;
