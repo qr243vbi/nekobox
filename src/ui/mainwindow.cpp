@@ -271,13 +271,28 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     this->refresh_groups();
 
     // Setup Tray
-    tray = new QSystemTrayIcon(this);
+    tray = new QSystemTrayIcon(nullptr);
     tray->setIcon(Icon::GetTrayIcon(Icon::NONE));
     tray->show();
-    connect(tray, &QSystemTrayIcon::activated, this, [=](QSystemTrayIcon::ActivationReason reason) {
+    auto *trayMenu = new QMenu();
+    trayMenu->addAction(ui->actionShow_window);
+    trayMenu->addSeparator();
+    trayMenu->addAction(ui->actionStart_with_system);
+    trayMenu->addAction(ui->actionRemember_last_proxy);
+    trayMenu->addAction(ui->actionAllow_LAN);
+    trayMenu->addSeparator();
+    trayMenu->addMenu(ui->menu_spmode);
+    trayMenu->addSeparator();
+    trayMenu->addAction(ui->actionRestart_Proxy);
+    trayMenu->addAction(ui->actionRestart_Program);
+    trayMenu->addAction(ui->menu_exit);
+    connect(tray, &QSystemTrayIcon::activated, qApp, [=](QSystemTrayIcon::ActivationReason reason) {
         if (reason == QSystemTrayIcon::Context)
         {
-            ui->menu_program->exec(QCursor::pos());
+            const auto pos = this->mapFromGlobal(QCursor::pos());
+            auto semiPos = QCursor::pos();
+            QPoint p = {semiPos.x(), pos.y()};
+            trayMenu->popup(p);
         }
         if (reason == QSystemTrayIcon::Trigger) {
             if (this->isVisible()) {
@@ -289,51 +304,27 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     });
 
     // Misc menu
+    ui->actionRemember_last_proxy->setChecked(NekoGui::dataStore->remember_enable);
+    ui->actionStart_with_system->setChecked(AutoRun_IsEnabled());
+    ui->actionAllow_LAN->setChecked(QStringList{"::", "0.0.0.0"}.contains(NekoGui::dataStore->inbound_address));
+
     connect(ui->menu_open_config_folder, &QAction::triggered, this, [=] { QDesktopServices::openUrl(QUrl::fromLocalFile(QDir::currentPath())); });
-    ui->menu_program_preference->addActions(ui->menu_preferences->actions());
     connect(ui->menu_add_from_clipboard2, &QAction::triggered, ui->menu_add_from_clipboard, &QAction::trigger);
     connect(ui->actionRestart_Proxy, &QAction::triggered, this, [=] { if (NekoGui::dataStore->started_id>=0) neko_start(NekoGui::dataStore->started_id); });
     connect(ui->actionRestart_Program, &QAction::triggered, this, [=] { MW_dialog_message("", "RestartProgram"); });
     connect(ui->actionShow_window, &QAction::triggered, this, [=] { tray->activated(QSystemTrayIcon::ActivationReason::Trigger); });
-    //
-    connect(ui->menu_program, &QMenu::aboutToShow, this, [=]() {
-        ui->actionRemember_last_proxy->setChecked(NekoGui::dataStore->remember_enable);
-        ui->actionStart_with_system->setChecked(AutoRun_IsEnabled());
-        ui->actionAllow_LAN->setChecked(QStringList{"::", "0.0.0.0"}.contains(NekoGui::dataStore->inbound_address));
-        // active server
-        for (const auto &old: ui->menuActive_Server->actions()) {
-            ui->menuActive_Server->removeAction(old);
-            old->deleteLater();
-        }
-        int active_server_item_count = 0;
-        for (const auto &pf: NekoGui::profileManager->CurrentGroup()->ProfilesWithOrder()) {
-            auto a = new QAction(pf->bean->DisplayTypeAndName(), this);
-            a->setProperty("id", pf->id);
-            a->setCheckable(true);
-            if (NekoGui::dataStore->started_id == pf->id) a->setChecked(true);
-            ui->menuActive_Server->addAction(a);
-            if (++active_server_item_count == 100) break;
-        }
-    });
-    connect(ui->menuActive_Server, &QMenu::triggered, this, [=](QAction *a) {
-        bool ok;
-        auto id = a->property("id").toInt(&ok);
-        if (!ok) return;
-        if (NekoGui::dataStore->started_id == id) {
-            neko_stop();
-        } else {
-            neko_start(id);
-        }
-    });
     connect(ui->actionRemember_last_proxy, &QAction::triggered, this, [=](bool checked) {
         NekoGui::dataStore->remember_enable = checked;
+        ui->actionRemember_last_proxy->setChecked(checked);
         NekoGui::dataStore->Save();
     });
     connect(ui->actionStart_with_system, &QAction::triggered, this, [=](bool checked) {
         AutoRun_SetEnabled(checked);
+        ui->actionStart_with_system->setChecked(checked);
     });
     connect(ui->actionAllow_LAN, &QAction::triggered, this, [=](bool checked) {
         NekoGui::dataStore->inbound_address = checked ? "::" : "127.0.0.1";
+        ui->actionAllow_LAN->setChecked(checked);
         MW_dialog_message("", "UpdateDataStore");
     });
     //
