@@ -289,10 +289,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     connect(tray, &QSystemTrayIcon::activated, qApp, [=](QSystemTrayIcon::ActivationReason reason) {
         if (reason == QSystemTrayIcon::Context)
         {
-            const auto pos = this->mapFromGlobal(QCursor::pos());
-            auto semiPos = QCursor::pos();
-            QPoint p = {semiPos.x(), pos.y()};
-            trayMenu->popup(p);
+            trayMenu->popup(QCursor::pos());
         }
         if (reason == QSystemTrayIcon::Trigger) {
             if (this->isVisible()) {
