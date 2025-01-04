@@ -103,7 +103,7 @@ namespace NekoGui_fmt {
         inline bool isValid()
         {
             bool isNetworkValid = Preset::SingBox::V2RAYTransports.contains(network);
-            bool isRealityValid = security != "reality" || !QByteArray::fromBase64(reality_pbk.toUtf8(), QByteArray::OmitTrailingEquals).isEmpty();
+            bool isRealityValid = security != "reality" || !QByteArray::fromBase64(reality_pbk.toUtf8(), QByteArray::AbortOnBase64DecodingErrors).isEmpty();
             return isNetworkValid && isRealityValid;
         }
     };
