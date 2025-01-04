@@ -723,7 +723,10 @@ namespace NekoGui {
                 {"external_ui", "dashboard"},
                 };
             }
-            experimentalObj["clash_api"] = clash_api;
+            if (dataStore->core_box_clash_api > 0 || dataStore->enable_stats)
+            {
+                experimentalObj["clash_api"] = clash_api;
+            }
         }
 
         status->result->coreConfig.insert("log", QJsonObject{{"level", dataStore->log_level}});
