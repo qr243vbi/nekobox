@@ -841,6 +841,7 @@ void MainWindow::setupConnectionList()
 {
     ui->connections->horizontalHeader()->setHighlightSections(false);
     ui->connections->setSelectionMode(QAbstractItemView::NoSelection);
+    ui->connections->setEditTriggers(QAbstractItemView::NoEditTriggers);
     ui->connections->horizontalHeader()->setSectionResizeMode(0, QHeaderView::Stretch);
     ui->connections->horizontalHeader()->setSectionResizeMode(1, QHeaderView::Stretch);
     ui->connections->horizontalHeader()->setSectionResizeMode(2, QHeaderView::ResizeToContents);
