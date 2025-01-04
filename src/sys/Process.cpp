@@ -53,13 +53,7 @@ namespace NekoGui_sys {
         });
         connect(this, &QProcess::readyReadStandardError, this, [&]() {
             auto log = readAllStandardError().trimmed();
-            if (show_stderr) {
-                MW_show_log(log);
-                return;
-            }
-            if (log.contains("token is set")) {
-                show_stderr = true;
-            }
+            MW_show_log(log);
         });
         connect(this, &QProcess::errorOccurred, this, [&](QProcess::ProcessError error) {
             if (error == QProcess::ProcessError::FailedToStart) {
@@ -82,7 +76,7 @@ namespace NekoGui_sys {
                 if (coreRestartTimer.isValid()) {
                     if (coreRestartTimer.restart() < 10 * 1000) {
                         coreRestartTimer = QElapsedTimer();
-                        MW_show_log("[Error] " + QObject::tr("Core exits too frequently, stop automatic restart this profile."));
+                        MW_show_log("[ERROR] " + QObject::tr("Core exits too frequently, stop automatic restart this profile."));
                         return;
                     }
                 } else {
@@ -91,7 +85,7 @@ namespace NekoGui_sys {
 
                 // Restart
                 start_profile_when_core_is_up = NekoGui::dataStore->started_id;
-                MW_show_log("[Error] " + QObject::tr("Core exited, restarting."));
+                MW_show_log("[ERROR] " + QObject::tr("Core exited, restarting."));
                 setTimeout([=] { Restart(); }, this, 1000);
             }
         });
