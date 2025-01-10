@@ -22,6 +22,7 @@
 
 #ifdef Q_OS_WIN
 #include "3rdparty/WinCommander.hpp"
+#include "include/sys/windows/cursor.h"
 #else
 #ifdef Q_OS_LINUX
 #include "include/sys/linux/LinuxCap.h"
@@ -289,7 +290,18 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     connect(tray, &QSystemTrayIcon::activated, qApp, [=](QSystemTrayIcon::ActivationReason reason) {
         if (reason == QSystemTrayIcon::Context)
         {
+#ifdef Q_OS_WIN
+            auto pos = GetCursorPosition();
+            MW_show_log(Int2String(pos.x()));
+            MW_show_log(Int2String(pos.y()));
+            auto screen = QGuiApplication::screenAt(QCursor::pos());
+            QPoint finalPos = {int(pos.x() / screen->devicePixelRatio()), int(pos.y() / screen->devicePixelRatio())};
+            MW_show_log(Int2String(finalPos.x()));
+            MW_show_log(Int2String(finalPos.y()));
+            trayMenu->popup(finalPos);
+#else
             trayMenu->popup(QCursor::pos());
+#endif
         }
         if (reason == QSystemTrayIcon::Trigger) {
             if (this->isVisible()) {
