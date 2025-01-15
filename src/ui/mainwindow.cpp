@@ -22,7 +22,6 @@
 
 #ifdef Q_OS_WIN
 #include "3rdparty/WinCommander.hpp"
-#include "include/sys/windows/cursor.h"
 #else
 #ifdef Q_OS_LINUX
 #include "include/sys/linux/LinuxCap.h"
@@ -273,7 +272,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 
     // Setup Tray
     tray = new QSystemTrayIcon(nullptr);
-    tray->setIcon(Icon::GetTrayIcon(Icon::NONE));
+    tray->setIcon(GetTrayIcon(Icon::NONE));
     tray->show();
     auto *trayMenu = new QMenu();
     trayMenu->addAction(ui->actionShow_window);
@@ -287,21 +286,11 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     trayMenu->addAction(ui->actionRestart_Proxy);
     trayMenu->addAction(ui->actionRestart_Program);
     trayMenu->addAction(ui->menu_exit);
+    tray->setContextMenu(trayMenu);
     connect(tray, &QSystemTrayIcon::activated, qApp, [=](QSystemTrayIcon::ActivationReason reason) {
         if (reason == QSystemTrayIcon::Context)
         {
-#ifdef Q_OS_WIN
-            auto pos = GetCursorPosition();
-            MW_show_log(Int2String(pos.x()));
-            MW_show_log(Int2String(pos.y()));
-            auto screen = QGuiApplication::screenAt(QCursor::pos());
-            QPoint finalPos = {int(pos.x() / screen->devicePixelRatio()), int(pos.y() / screen->devicePixelRatio())};
-            MW_show_log(Int2String(finalPos.x()));
-            MW_show_log(Int2String(finalPos.y()));
-            trayMenu->popup(finalPos);
-#else
-            trayMenu->popup(QCursor::pos());
-#endif
+            trayMenuTime = std::chrono::steady_clock::now();
         }
         if (reason == QSystemTrayIcon::Trigger) {
             if (this->isVisible()) {
@@ -691,6 +680,11 @@ void MainWindow::on_commitDataRequest() {
 }
 
 void MainWindow::on_menu_exit_triggered() {
+    std::chrono::duration<double, std::milli> elapsed_milliseconds = std::chrono::steady_clock::now() - trayMenuTime;
+    if (elapsed_milliseconds.count() < 150)
+    {
+        return;
+    }
     if (mu_exit.tryLock()) {
         NekoGui::dataStore->prepare_exit = true;
         //

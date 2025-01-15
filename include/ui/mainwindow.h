@@ -151,6 +151,7 @@ private slots:
 private:
     Ui::MainWindow *ui;
     QSystemTrayIcon *tray;
+    std::chrono::time_point<std::chrono::steady_clock> trayMenuTime;
     QShortcut *shortcut_ctrl_f = new QShortcut(QKeySequence("Ctrl+F"), this);
     QShortcut *shortcut_esc = new QShortcut(QKeySequence("Esc"), this);
     //
