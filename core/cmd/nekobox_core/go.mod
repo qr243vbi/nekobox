@@ -10,9 +10,9 @@ require (
 	github.com/matsuridayo/libneko v0.0.0-20230913024055-5277a5bfc889
 	github.com/oschwald/maxminddb-golang v1.13.1
 	github.com/sagernet/sing v0.5.1
-	github.com/sagernet/sing-box v1.10.6
+	github.com/sagernet/sing-box v1.10.7
 	github.com/sagernet/sing-dns v0.3.0
-	github.com/sagernet/sing-tun v0.4.5
+	github.com/sagernet/sing-tun v0.4.6
 	github.com/spf13/cobra v1.8.1
 	golang.org/x/sys v0.28.0
 	golang.zx2c4.com/wireguard/wgctrl v0.0.0-20241231184526-a9ab2273dd10
@@ -20,7 +20,7 @@ require (
 	google.golang.org/protobuf v1.34.2
 )
 
-replace github.com/sagernet/sing-box => github.com/Mahdi-zarei/sing-box v1.3.5-0.20250104084300-e3fb0fbec010
+replace github.com/sagernet/sing-box => github.com/Mahdi-zarei/sing-box v1.3.5-0.20250115232813-35f70ce81d26
 
 replace github.com/sagernet/sing-dns => github.com/Mahdi-zarei/sing-dns v0.3.0-beta.14.0.20241224235217-e5e5dbb3be3d
 
@@ -71,7 +71,7 @@ require (
 	github.com/sagernet/quic-go v0.48.2-beta.1 // indirect
 	github.com/sagernet/reality v0.0.0-20230406110435-ee17307e7691 // indirect
 	github.com/sagernet/sing-mux v0.2.1 // indirect
-	github.com/sagernet/sing-quic v0.3.1 // indirect
+	github.com/sagernet/sing-quic v0.3.2 // indirect
 	github.com/sagernet/sing-shadowsocks v0.2.7 // indirect
 	github.com/sagernet/sing-shadowsocks2 v0.2.0 // indirect
 	github.com/sagernet/sing-shadowtls v0.1.5 // indirect
