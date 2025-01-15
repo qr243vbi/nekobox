@@ -343,7 +343,7 @@
                  </property>
                  <column>
                   <property name="text">
-                   <string>Destination</string>
+                   <string>Destination (Domain)</string>
                   </property>
                   <property name="toolTip">
                    <string>Click To Disable Sorting</string>
@@ -351,10 +351,10 @@
                  </column>
                  <column>
                   <property name="text">
-                   <string>Domain</string>
+                   <string>Process</string>
                   </property>
                   <property name="toolTip">
-                   <string>Click To Sort By Domain</string>
+                   <string>Click To Sort By Process</string>
                   </property>
                  </column>
                  <column>

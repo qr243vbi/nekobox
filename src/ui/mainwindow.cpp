@@ -171,7 +171,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
         }
         if (index == 1)
         {
-            NekoGui_traffic::connection_lister->setSort(NekoGui_traffic::ByDomain);
+            NekoGui_traffic::connection_lister->setSort(NekoGui_traffic::ByProcess);
             NekoGui_traffic::connection_lister->ForceUpdate();
         }
         if (index == 4)
@@ -680,8 +680,7 @@ void MainWindow::on_commitDataRequest() {
 }
 
 void MainWindow::on_menu_exit_triggered() {
-    std::chrono::duration<double, std::milli> elapsed_milliseconds = std::chrono::steady_clock::now() - trayMenuTime;
-    if (elapsed_milliseconds.count() < 150)
+    if (std::chrono::duration<double, std::milli> elapsed_milliseconds = std::chrono::steady_clock::now() - trayMenuTime; elapsed_milliseconds.count() < 150)
     {
         return;
     }
@@ -868,11 +867,11 @@ void MainWindow::UpdateConnectionList(const QMap<QString, NekoGui_traffic::Conne
         }
 
         auto conn = toUpdate[key];
-        // C0: Dest
-        ui->connections->item(row, 0)->setText(conn.dest);
+        // C0: Dest (Domain)
+        ui->connections->item(row, 0)->setText(DisplayDest(conn.dest, conn.domain));
 
-        // C1: Domain
-        ui->connections->item(row, 1)->setText(conn.domain);
+        // C1: Process
+        ui->connections->item(row, 1)->setText(conn.process);
 
         // C2: Network
         ui->connections->item(row, 2)->setText(conn.network);
@@ -893,14 +892,14 @@ void MainWindow::UpdateConnectionList(const QMap<QString, NekoGui_traffic::Conne
         auto f0 = std::make_unique<QTableWidgetItem>();
         f0->setData(NekoGui_traffic::IDKEY, conn.id);
 
-        // C0: Dest
+        // C0: Dest (Domain)
         auto f = f0->clone();
-        f->setText(conn.dest);
+        f->setText(DisplayDest(conn.dest, conn.domain));
         ui->connections->setItem(row, 0, f);
 
-        // C1: Domain
+        // C1: Process
         f = f0->clone();
-        f->setText(conn.domain);
+        f->setText(conn.process);
         ui->connections->setItem(row, 1, f);
 
         // C2: Network
@@ -939,14 +938,14 @@ void MainWindow::UpdateConnectionListWithRecreate(const QList<NekoGui_traffic::C
         auto f0 = std::make_unique<QTableWidgetItem>();
         f0->setData(NekoGui_traffic::IDKEY, conn.id);
 
-        // C0: Dest
+        // C0: Dest (Domain)
         auto f = f0->clone();
-        f->setText(conn.dest);
+        f->setText(DisplayDest(conn.dest, conn.domain));
         ui->connections->setItem(row, 0, f);
 
-        // C1: Domain
+        // C1: Process
         f = f0->clone();
-        f->setText(conn.domain);
+        f->setText(conn.process);
         ui->connections->setItem(row, 1, f);
 
         // C2: Network
