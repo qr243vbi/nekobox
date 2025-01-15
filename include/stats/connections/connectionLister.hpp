@@ -11,7 +11,7 @@ namespace NekoGui_traffic
         Default,
         ByDownload,
         ByUpload,
-        ByDomain
+        ByProcess
     };
 
     class ConnectionMetadata

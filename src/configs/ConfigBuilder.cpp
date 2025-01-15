@@ -473,6 +473,10 @@ namespace NekoGui {
         if (dataStore->spmode_vpn) {
             routeObj["auto_detect_interface"] = true;
         }
+        if (dataStore->enable_stats && !status->forTest)
+        {
+            routeObj["find_process"] = true;
+        }
         if (!status->forTest) routeObj["final"] = dataStore->routing->def_outbound;
 
         auto routeChain = NekoGui::profileManager->GetRouteChain(NekoGui::dataStore->routing->current_route_id);

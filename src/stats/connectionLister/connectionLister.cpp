@@ -107,12 +107,12 @@ namespace NekoGui_traffic
                        return asc ? a.upload < b.upload : a.upload > b.upload;
                     });
                 }
-                if (sort == ByDomain)
+                if (sort == ByProcess)
                 {
                     std::sort(sorted.begin(), sorted.end(), [=](const ConnectionMetadata& a, const ConnectionMetadata& b)
                     {
-                        if (a.domain == b.domain) return asc ? a.id > b.id : a.id < b.id;
-                        return asc ? a.domain > b.domain : a.domain < b.domain;
+                        if (a.process == b.process) return asc ? a.id > b.id : a.id < b.id;
+                        return asc ? a.process > b.process : a.process < b.process;
                     });
                 }
                 runOnUiThread([=] {
