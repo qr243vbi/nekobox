@@ -310,6 +310,7 @@ namespace NekoGui {
         _add(new configItem("system_dns_servers", &system_dns_servers, itemType::stringList));
         _add(new configItem("windows_set_admin", &windows_set_admin, itemType::boolean));
         _add(new configItem("enable_stats", &enable_stats, itemType::boolean));
+        _add(new configItem("stats_tab", &stats_tab, itemType::string));
     }
 
     void DataStore::UpdateStartedId(int id) {

@@ -308,11 +308,49 @@
               <bool>false</bool>
              </property>
              <property name="movable">
-              <bool>false</bool>
+              <bool>true</bool>
              </property>
              <property name="tabBarAutoHide">
               <bool>false</bool>
              </property>
+             <widget class="QWidget" name="Logs">
+              <property name="enabled">
+               <bool>true</bool>
+              </property>
+              <attribute name="title">
+               <string>Logs</string>
+              </attribute>
+              <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="0">
+               <property name="spacing">
+                <number>0</number>
+               </property>
+               <property name="sizeConstraint">
+                <enum>QLayout::SizeConstraint::SetDefaultConstraint</enum>
+               </property>
+               <property name="leftMargin">
+                <number>1</number>
+               </property>
+               <property name="topMargin">
+                <number>0</number>
+               </property>
+               <property name="rightMargin">
+                <number>1</number>
+               </property>
+               <property name="bottomMargin">
+                <number>0</number>
+               </property>
+               <item>
+                <widget class="QTextBrowser" name="masterLogBrowser">
+                 <property name="contextMenuPolicy">
+                  <enum>Qt::ContextMenuPolicy::CustomContextMenu</enum>
+                 </property>
+                 <property name="openLinks">
+                  <bool>false</bool>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
              <widget class="QWidget" name="connections_tab">
               <attribute name="title">
                <string>Connections</string>
@@ -383,44 +421,6 @@
                    <string>Click To Sort By Upload</string>
                   </property>
                  </column>
-                </widget>
-               </item>
-              </layout>
-             </widget>
-             <widget class="QWidget" name="Logs">
-              <property name="enabled">
-               <bool>true</bool>
-              </property>
-              <attribute name="title">
-               <string>Logs</string>
-              </attribute>
-              <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="0">
-               <property name="spacing">
-                <number>0</number>
-               </property>
-               <property name="sizeConstraint">
-                <enum>QLayout::SizeConstraint::SetDefaultConstraint</enum>
-               </property>
-               <property name="leftMargin">
-                <number>1</number>
-               </property>
-               <property name="topMargin">
-                <number>0</number>
-               </property>
-               <property name="rightMargin">
-                <number>1</number>
-               </property>
-               <property name="bottomMargin">
-                <number>0</number>
-               </property>
-               <item>
-                <widget class="QTextBrowser" name="masterLogBrowser">
-                 <property name="contextMenuPolicy">
-                  <enum>Qt::ContextMenuPolicy::CustomContextMenu</enum>
-                 </property>
-                 <property name="openLinks">
-                  <bool>false</bool>
-                 </property>
                 </widget>
                </item>
               </layout>
