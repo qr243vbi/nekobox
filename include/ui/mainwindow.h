@@ -180,6 +180,8 @@ private:
     int exit_reason = 0;
     //
     QMutex mu_download_assets;
+    //
+    int toolTipID;
 
     QList<std::shared_ptr<NekoGui::ProxyEntity>> get_now_selected_list();
 

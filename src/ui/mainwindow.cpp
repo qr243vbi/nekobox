@@ -42,6 +42,8 @@
 #include <QDir>
 #include <QFileInfo>
 #include <QStyleHints>
+#include <QToolTip>
+#include <random>
 #include <3rdparty/QHotkey/qhotkey.h>
 #include <include/global/HTTPRequestHelper.hpp>
 
@@ -156,6 +158,19 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 
     // setup connection UI
     setupConnectionList();
+    for (int i=0;i<ui->stats_widget->tabBar()->count();i++)
+    {
+        if (ui->stats_widget->tabBar()->tabText(i) == NekoGui::dataStore->stats_tab)
+        {
+            ui->stats_widget->tabBar()->setCurrentIndex(i);
+            break;
+        }
+    }
+    connect(ui->stats_widget->tabBar(), &QTabBar::currentChanged, this, [=](int index)
+    {
+        auto tabText = ui->stats_widget->tabBar()->tabText(index);
+        NekoGui::dataStore->stats_tab = tabText;
+    });
     connect(ui->connections->horizontalHeader(), &QHeaderView::sectionClicked, this, [=](int index)
     {
         // TODO this is a very bad idea to hardcode it like this, need to refactor it later
@@ -842,7 +857,6 @@ void MainWindow::neko_set_spmode_vpn(bool enable, bool save) {
 void MainWindow::setupConnectionList()
 {
     ui->connections->horizontalHeader()->setHighlightSections(false);
-    ui->connections->setSelectionMode(QAbstractItemView::NoSelection);
     ui->connections->setEditTriggers(QAbstractItemView::NoEditTriggers);
     ui->connections->horizontalHeader()->setSectionResizeMode(0, QHeaderView::Stretch);
     ui->connections->horizontalHeader()->setSectionResizeMode(1, QHeaderView::Stretch);
@@ -851,6 +865,22 @@ void MainWindow::setupConnectionList()
     ui->connections->horizontalHeader()->setSectionResizeMode(4, QHeaderView::ResizeToContents);
     ui->connections->horizontalHeader()->setSectionResizeMode(5, QHeaderView::ResizeToContents);
     ui->connections->verticalHeader()->hide();
+    connect(ui->connections, &QTableWidget::cellClicked, this, [=](int row, int column)
+    {
+        if (column > 3) return;
+        auto selected = ui->connections->item(row, column);
+        QApplication::clipboard()->setText(selected->text());
+        QPoint pos = ui->connections->mapToGlobal(ui->connections->visualItemRect(selected).center());
+        QToolTip::showText(pos, "Copied!", this);
+        auto r = ++toolTipID;
+        QTimer::singleShot(1500, [=] {
+            if (r != toolTipID)
+            {
+                return;
+            }
+            QToolTip::hideText();
+        });
+    });
 }
 
 void MainWindow::UpdateConnectionList(const QMap<QString, NekoGui_traffic::ConnectionMetadata>& toUpdate, const QMap<QString, NekoGui_traffic::ConnectionMetadata>& toAdd)

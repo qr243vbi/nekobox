@@ -93,6 +93,7 @@ namespace NekoGui {
         int max_log_line = 200;
         QString splitter_state = "";
         bool enable_stats = true;
+        QString stats_tab = ""; // either connection or log
 
         // Subscription
         QString user_agent = ""; // set at main.cpp
