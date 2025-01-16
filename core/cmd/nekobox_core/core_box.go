@@ -15,6 +15,7 @@ import (
 )
 
 var instance *boxbox.Box
+var needUnsetDNS bool
 var systemProxyController settings.SystemProxy
 var systemProxyAddr metadata.Socksaddr
 var instance_cancel context.CancelFunc
