@@ -134,7 +134,7 @@ inline QString DisplayAddress(QString serverAddress, int serverPort) {
 
 inline QString DisplayDest(const QString& dest, QString domain)
 {
-    if (domain.isEmpty() || dest.split(":").first() == domain) return domain;
+    if (domain.isEmpty() || dest.split(":").first() == domain) return dest;
     return dest + " (" + domain + ")";
 }
 
