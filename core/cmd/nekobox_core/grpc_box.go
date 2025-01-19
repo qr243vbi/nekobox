@@ -51,7 +51,7 @@ func (s *server) Start(ctx context.Context, in *gen.LoadConfigReq) (out *gen.Err
 
 	instance, instance_cancel, err = boxmain.Create([]byte(in.CoreConfig))
 	if runtime.GOOS == "darwin" && strings.Contains(in.CoreConfig, "utun") && err == nil {
-		err := sys.SetSystemDNS("192.18.0.2", instance.Router().InterfaceMonitor())
+		err := sys.SetSystemDNS("172.19.0.2", instance.Router().InterfaceMonitor())
 		if err != nil {
 			log.Println("Failed to set system DNS:", err)
 		}
