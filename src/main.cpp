@@ -241,15 +241,6 @@ int main(int argc, char* argv[]) {
     QGuiApplication::tr("QT_LAYOUT_DIRECTION");
     loadTranslate(locale);
 
-    if (!NekoGui::dataStore->font.isEmpty()) {
-        qApp->setFont(NekoGui::dataStore->font);
-    }
-    if (NekoGui::dataStore->font_size != 0) {
-        auto font = qApp->font();
-        font.setPointSize(NekoGui::dataStore->font_size);
-        qApp->setFont(font);
-    }
-
     // Signals
     signal(SIGTERM, signal_handler);
     signal(SIGINT, signal_handler);

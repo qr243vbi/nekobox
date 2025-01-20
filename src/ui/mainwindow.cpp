@@ -71,6 +71,16 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     }
     themeManager->ApplyTheme(NekoGui::dataStore->theme);
     ui->setupUi(this);
+
+    if (!NekoGui::dataStore->font.isEmpty()) {
+        qApp->setFont(NekoGui::dataStore->font);
+    }
+    if (NekoGui::dataStore->font_size != 0) {
+        auto font = qApp->font();
+        font.setPointSize(NekoGui::dataStore->font_size);
+        qApp->setFont(font);
+    }
+
     speedTestThreadPool->setMaxThreadCount(10); // constant value
     //
     connect(ui->menu_start, &QAction::triggered, this, [=]() { neko_start(); });
