@@ -64,7 +64,7 @@ int main(int argc, char* argv[]) {
 
     QApplication::setAttribute(Qt::AA_DontUseNativeDialogs);
     QApplication::setQuitOnLastWindowClosed(false);
-    auto preQApp = new QApplication(argc, argv);
+    QApplication a(argc, argv);
 
     // Clean
     QDir::setCurrent(QApplication::applicationDirPath());
@@ -108,10 +108,6 @@ int main(int argc, char* argv[]) {
     if (!wd.exists("config")) wd.mkdir("config");
     QDir::setCurrent(wd.absoluteFilePath("config"));
     QDir("temp").removeRecursively();
-
-    // init QApplication
-    delete preQApp;
-    QApplication a(argc, argv);
 
 #ifdef Q_OS_LINUX
     QApplication::addLibraryPath(QApplication::applicationDirPath() + "/usr/plugins");

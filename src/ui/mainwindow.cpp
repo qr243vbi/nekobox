@@ -298,7 +298,6 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     // Setup Tray
     tray = new QSystemTrayIcon(nullptr);
     tray->setIcon(GetTrayIcon(Icon::NONE));
-    tray->show();
     auto *trayMenu = new QMenu();
     trayMenu->addAction(ui->actionShow_window);
     trayMenu->addSeparator();
@@ -311,11 +310,20 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     trayMenu->addAction(ui->actionRestart_Proxy);
     trayMenu->addAction(ui->actionRestart_Program);
     trayMenu->addAction(ui->menu_exit);
-    tray->setContextMenu(trayMenu);
+    tray->show();
+    // popup once so that its height is calculated
+    trayMenu->popup(QCursor::pos());
+    trayMenu->hide();
     connect(tray, &QSystemTrayIcon::activated, qApp, [=](QSystemTrayIcon::ActivationReason reason) {
         if (reason == QSystemTrayIcon::Context)
         {
-            trayMenuTime = std::chrono::steady_clock::now();
+#ifdef Q_OS_WIN
+            int mh = trayMenu->geometry().height();
+            auto cPos = QCursor::pos();
+            trayMenu->popup({cPos.x(), cPos.y()-mh});
+#else
+            trayMenu->popup(QCursor::pos());
+#endif
         }
         if (reason == QSystemTrayIcon::Trigger) {
             if (this->isVisible()) {
@@ -705,10 +713,6 @@ void MainWindow::on_commitDataRequest() {
 }
 
 void MainWindow::on_menu_exit_triggered() {
-    if (std::chrono::duration<double, std::milli> elapsed_milliseconds = std::chrono::steady_clock::now() - trayMenuTime; elapsed_milliseconds.count() < 150)
-    {
-        return;
-    }
     if (mu_exit.tryLock()) {
         NekoGui::dataStore->prepare_exit = true;
         //
