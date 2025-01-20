@@ -31,7 +31,9 @@ private:
 
     QList<std::shared_ptr<NekoGui::RoutingChain>> chainList;
 
-    int currentRouteProfileID = -1;
+    std::shared_ptr<NekoGui::RoutingChain> currentRoute;
+
+    int tooltipID = 0;
 
     void set_dns_hijack_enability(bool enable) const;
 
@@ -46,6 +48,8 @@ public slots:
     void updateCurrentRouteProfile(int idx);
 
     void on_new_route_clicked();
+
+    void on_export_route_clicked();
 
     void on_clone_route_clicked();
 
