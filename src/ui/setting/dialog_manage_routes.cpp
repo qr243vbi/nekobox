@@ -1,4 +1,7 @@
 #include "include/ui/setting/dialog_manage_routes.h"
+
+#include <QClipboard>
+
 #include "include/dataStore/Database.hpp"
 
 #include "3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.hpp"
@@ -8,6 +11,8 @@
 #include <QFile>
 #include <QMessageBox>
 #include <QShortcut>
+#include <QTimer>
+#include <QToolTip>
 #include <include/api/gRPC.h>
 
 void DialogManageRoutes::reloadProfileItems() {
@@ -25,14 +30,14 @@ void DialogManageRoutes::reloadProfileItems() {
     for (const auto &item: chainList) {
         ui->route_prof->addItem(item->name);
         ui->route_profiles->addItem(item->name);
-        if (item->id == currentRouteProfileID) {
+        if (item == currentRoute) {
             ui->route_prof->setCurrentIndex(i);
             selectedChainGone=false;
         }
         i++;
     }
     if (selectedChainGone) {
-        currentRouteProfileID=chainList[0]->id;
+        currentRoute=chainList[0];
         ui->route_prof->setCurrentIndex(0);
     }
     blocker.unblock();
@@ -65,8 +70,8 @@ DialogManageRoutes::DialogManageRoutes(QWidget *parent) : QDialog(parent), ui(ne
         NekoGui::profileManager->AddRouteChain(defaultChain);
         chainList.append(defaultChain);
     }
-    currentRouteProfileID = NekoGui::dataStore->routing->current_route_id;
-    if (currentRouteProfileID < 0) currentRouteProfileID = chainList[0]->id;
+    currentRoute = NekoGui::profileManager->GetRouteChain(NekoGui::dataStore->routing->current_route_id);
+    if (currentRoute == nullptr) currentRoute = chainList[0];
 
     QStringList qsValue = {""};
     QString dnsHelpDocumentUrl;
@@ -173,7 +178,7 @@ DialogManageRoutes::DialogManageRoutes(QWidget *parent) : QDialog(parent), ui(ne
 }
 
 void DialogManageRoutes::updateCurrentRouteProfile(int idx) {
-    currentRouteProfileID = chainList[idx]->id;
+    currentRoute = chainList[idx];
 }
 
 DialogManageRoutes::~DialogManageRoutes() {
@@ -203,7 +208,7 @@ void DialogManageRoutes::accept() {
     NekoGui::dataStore->fake_dns = ui->enable_fakeip->isChecked();
 
     NekoGui::profileManager->UpdateRouteChains(chainList);
-    NekoGui::dataStore->routing->current_route_id = currentRouteProfileID;
+    NekoGui::dataStore->routing->current_route_id = currentRoute->id;
     NekoGui::dataStore->routing->def_outbound = ui->default_out->currentText();
 
     NekoGui::dataStore->enable_dns_server = ui->dnshijack_enable->isChecked();
@@ -238,6 +243,27 @@ void DialogManageRoutes::on_new_route_clicked() {
     connect(routeChainWidget, &RouteItem::settingsChanged, this, [=](const std::shared_ptr<NekoGui::RoutingChain>& chain) {
         chainList << chain;
         reloadProfileItems();
+    });
+}
+
+void DialogManageRoutes::on_export_route_clicked()
+{
+    auto idx = ui->route_profiles->currentRow();
+    if (idx < 0) return;
+
+    QJsonArray arr = chainList[idx]->get_route_rules(true, {});
+    QStringList res;
+    for (int i = 0; i < arr.count(); i++)
+    {
+        res.append(QJsonObject2QString(arr[i].toObject(), false));
+    }
+    QApplication::clipboard()->setText("[" + res.join(",") + "]");
+
+    QToolTip::showText(QCursor::pos(), "Copied!", this);
+    int r = ++tooltipID;
+    QTimer::singleShot(1500, [=] {
+        if (tooltipID != r) return;
+        QToolTip::hideText();
     });
 }
 
@@ -282,8 +308,8 @@ void DialogManageRoutes::on_delete_route_clicked() {
         return;
     }
     chainList.removeAt(idx);
-    if (profileToDel->id == currentRouteProfileID) {
-        currentRouteProfileID = chainList[0]->id;
+    if (profileToDel == currentRoute) {
+        currentRoute = chainList[0];
     }
     reloadProfileItems();
 }

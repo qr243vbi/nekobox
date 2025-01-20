@@ -477,9 +477,9 @@ namespace NekoGui {
         for (const auto &item: newChain) {
             if (!AddRouteChain(item)) {
                 routes[item->id] = item;
+                routesIdOrder << item->id;
                 item->Save();
             }
-            routesIdOrder << item->id;
         }
         auto currFiles = filterIntJsonFile("route_profiles");
         for (const auto &item: currFiles) { // clean up removed route profiles
