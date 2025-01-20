@@ -16,29 +16,41 @@ jobs:
   build-go:
     strategy:
       matrix:
-        cross_os: [ windows, linux, darwin ]
-        cross_arch: [ amd64, arm64 ]
         include:
           - cross_os: public_res
             cross_arch: public_res
+            go_version: "1.23.5"
+          - cross_os: windows
+            cross_arch: amd64
+            go_version: "1.23.5"
+          - cross_os: linux
+            cross_arch: amd64
+            go_version: "1.23.5"
+          - cross_os: darwin
+            cross_arch: amd64
+            go_version: "1.23.5"
+          - cross_os: darwin
+            cross_arch: arm64
+            go_version: "1.23.5"
       fail-fast: false
     runs-on: ubuntu-latest
     steps:
       - name: Checking out sources
-        uses: actions/checkout@v4.2.0
-      - name: Go Status
-        run: git ls-files go | xargs cat | sha1sum > go_status
+        uses: actions/checkout@v4.2.2
       - name: Cache Common Download
         id: cache-common
-        uses: actions/cache@v4.0.2
+        uses: actions/cache@v4.2.0
         with:
           path: artifacts.tgz
-          key: CommonCache-${{ matrix.cross_os }}-${{ matrix.cross_arch }}-${{ hashFiles('script/*.sh', 'go_status', '*.txt') }}
+          key: CommonCache-${{ matrix.cross_os }}-${{ matrix.cross_arch }}-${{ hashFiles('script/build_go.sh', 'core/cmd/*') }}-${{ matrix.go_version }}
       - name: Install Golang
-        if: steps.cache-common.outputs.cache-hit != 'true' && matrix.cross_os != 'windows7'
-        uses: actions/setup-go@v5.0.2
+        if: steps.cache-common.outputs.cache-hit != 'true'
+        uses: actions/setup-go@v5.2.0
         with:
-          go-version: '1.23.3'
+          go-version: ${{ matrix.go_version }}
+          cache-dependency-path: |
+            core/cmd/nekobox_core/go.sum
+            core/cmd/updater/go.sum
       - name: Build golang parts
         if: steps.cache-common.outputs.cache-hit != 'true'
         shell: bash
@@ -50,7 +62,7 @@ jobs:
         if: steps.cache-common.outputs.cache-hit != 'true'
         run: tar czvf artifacts.tgz ./deployment
       - name: Uploading Artifact
-        uses: actions/upload-artifact@v4.4.0
+        uses: actions/upload-artifact@v4.6.0
         with:
           name: NekoRay-${{ github.sha }}-Common-${{ matrix.cross_os }}-${{ matrix.cross_arch }}
           path: artifacts.tgz
@@ -78,7 +90,7 @@ jobs:
       ACTIONS_ALLOW_UNSECURE_COMMANDS: true
     steps:
       - name: Checking out sources
-        uses: actions/checkout@v4.2.0
+        uses: actions/checkout@v4.2.2
         with:
           submodules: "recursive"
       - name: Install MSVC compiler
@@ -102,7 +114,7 @@ jobs:
         uses: seanmiddleditch/gha-setup-ninja@v5
       - name: Cache Download
         id: cache-deps
-        uses: actions/cache@v4.0.2
+        uses: actions/cache@v4.2.0
         with:
           path: libs/deps
           key: DepsCache-${{ matrix.platform }}-${{ matrix.target }}-${{ hashFiles('script/build_deps_*.sh') }}-Qt${{ matrix.qt_version }}
@@ -150,7 +162,7 @@ jobs:
         shell: bash
         run: tar czvf artifacts.tgz ./deployment
       - name: Uploading Artifact
-        uses: actions/upload-artifact@v4.4.0
+        uses: actions/upload-artifact@v4.6.0
         with:
           name: NekoRay-${{ github.sha }}-${{ matrix.platform }}-${{ matrix.target }}-Qt${{ matrix.qt_version }}
           path: artifacts.tgz
@@ -162,7 +174,7 @@ jobs:
       - build-cpp
     steps:
       - name: Checking out sources
-        uses: actions/checkout@v4.2.0
+        uses: actions/checkout@v4.2.2
       - name: Download Artifacts
         uses: actions/download-artifact@v4.1.8
         with:
@@ -211,7 +223,7 @@ jobs:
           rm -rf public_res
           rm -rf *.pdb
       - name: Uploading Artifact
-        uses: actions/upload-artifact@v4.4.0
+        uses: actions/upload-artifact@v4.6.0
         with:
           name: Deployment-${{ github.sha }}
           path: deployment
