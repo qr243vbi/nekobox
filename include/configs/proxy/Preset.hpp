@@ -8,4 +8,6 @@ namespace Preset::SingBox {
   inline QStringList V2RAYTransports = {"http", "grpc", "quic", "httpupgrade", "ws", "tcp"};
   inline QStringList Flows = {"xtls-rprx-vision"};
   inline QStringList SniffProtocols = {"http", "tls", "quic", "stun", "dns", "bittorrent", "dtls", "ssh", "rdp"};
+  inline QStringList ActionTypes = {"route", "reject", "hijack-dns", "route-options", "sniff", "resolve"};
+  inline QStringList rejectMethods = {"default", "drop"};
 } // namespace Preset::SingBox

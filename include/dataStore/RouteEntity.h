@@ -1,5 +1,7 @@
 #pragma once
 
+#include <include/configs/proxy/Preset.hpp>
+
 #include "include/global/NekoGui.hpp"
 
 namespace NekoGui {
@@ -36,15 +38,37 @@ namespace NekoGui {
         QList<QString> rule_set;
         bool invert = false;
         int outboundID = -2; // -1 is proxy -2 is direct -3 is block -4 is dns_out
+        // since sing-box 1.11.0
+        QString actionType = "route";
 
-        [[nodiscard]] QJsonObject get_rule_json(bool forView = false, const QString& outboundTag = "") const;
+        // reject options
+        QString rejectMethod;
+        bool no_drop = false;
+
+        // route options
+        QString override_address;
+        QString override_port;
+        // TODO maybe add some of dial fields?
+
+        // sniff options
+        QStringList sniffers;
+        bool sniffOverrideDest = false;
+
+        // resolve options
+        QString strategy;
+
+        [[nodiscard]] QJsonObject get_rule_json(bool forView = false, const QString& outboundTag = "");
         static QStringList get_attributes();
+        static QStringList get_route_options();
+        static QStringList get_reject_options();
+        static QStringList get_sniff_options();
+        static QStringList get_resolve_options();
         static inputType get_input_type(const QString& fieldName);
         static QStringList get_values_for_field(const QString& fieldName);
         QStringList get_current_value_string(const QString& fieldName);
         [[nodiscard]] QString get_current_value_bool(const QString& fieldName) const;
         void set_field_value(const QString& fieldName, const QStringList& value);
-        [[nodiscard]] bool isEmpty() const;
+        [[nodiscard]] bool isEmpty();
     };
 
     class RoutingChain : public JsonStore {
