@@ -3,6 +3,7 @@ package boxdns
 import (
 	"github.com/gofrs/uuid/v5"
 	"github.com/matsuridayo/libneko/iphlpapi"
+	"github.com/sagernet/sing/common/control"
 	E "github.com/sagernet/sing/common/exceptions"
 	"golang.org/x/sys/windows"
 	"golang.org/x/sys/windows/registry"
@@ -21,7 +22,7 @@ const (
 var customDNS []netip.Addr
 var dnsIsSet bool
 
-func handleInterfaceChange(event int) {
+func handleInterfaceChange(_ *control.Interface, _ int) {
 	if !dnsIsSet {
 		return
 	}
@@ -30,7 +31,7 @@ func handleInterfaceChange(event int) {
 }
 
 func getDefaultInterfaceGuid() (string, error) {
-	index := monitorDI.DefaultInterfaceIndex(netip.IPv4Unspecified())
+	index := monitorDI.DefaultInterface().Index
 	var guid iphlpapi.GUID
 	if errno := iphlpapi.Index2GUID(uint64(index), &guid); errno != 0 {
 		return "", E.New("Failed to convert index to GUID")
@@ -48,7 +49,7 @@ func getDefaultInterfaceGuid() (string, error) {
 }
 
 func getDefaultInterfaceLUID() (winipcfg.LUID, error) {
-	index := monitorDI.DefaultInterfaceIndex(netip.IPv4Unspecified())
+	index := monitorDI.DefaultInterface().Index
 	luid, err := winipcfg.LUIDFromIndex(uint32(index))
 	if err != nil {
 		return 0, err
