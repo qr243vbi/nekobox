@@ -59,10 +59,6 @@ namespace NekoGui {
 
         [[nodiscard]] QJsonObject get_rule_json(bool forView = false, const QString& outboundTag = "");
         static QStringList get_attributes();
-        static QStringList get_route_options();
-        static QStringList get_reject_options();
-        static QStringList get_sniff_options();
-        static QStringList get_resolve_options();
         static inputType get_input_type(const QString& fieldName);
         static QStringList get_values_for_field(const QString& fieldName);
         QStringList get_current_value_string(const QString& fieldName);

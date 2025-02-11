@@ -43,6 +43,8 @@ private:
 
     QShortcut* deleteShortcut;
 
+    QStringList outbounds;
+
     std::map<int,int> outboundMap;
 
     [[nodiscard]] int getIndexOf(const QString& name) const;
@@ -58,7 +60,7 @@ private:
     void updateRulePreview();
 
     void updateRouteItemsView();
-private slots:
+    private slots:
     void accept() override;
 
     void on_new_route_item_clicked();

@@ -32,8 +32,6 @@ QString get_outbound_name(int id) {
     // -1 is proxy -2 is direct -3 is block -4 is dns-out
     if (id == -1) return "proxy";
     if (id == -2) return "direct";
-    if (id == -3) return "block";
-    if (id == -4) return "dns-out";
     auto profiles = NekoGui::profileManager->profiles;
     if (profiles.count(id)) return profiles[id]->bean->name;
     return "INVALID OUTBOUND";
@@ -61,7 +59,7 @@ RouteItem::RouteItem(QWidget *parent, const std::shared_ptr<NekoGui::RoutingChai
         auto routeItem = std::make_shared<NekoGui::RouteRule>();
         routeItem->name = "dns-hijack";
         routeItem->protocol = "dns";
-        routeItem->outboundID = -4;
+        routeItem->actionType = "hijack-dns";
         chain->Rules << routeItem;
     }
 
@@ -105,13 +103,11 @@ RouteItem::RouteItem(QWidget *parent, const std::shared_ptr<NekoGui::RoutingChai
         ui->route_items->addItem(item->name);
     }
 
-    QStringList outboundOptions = {"proxy", "direct", "block", "dns-out"};
-    outboundOptions << get_all_outbounds();
+    outbounds = {"proxy", "direct"};
+    outbounds << get_all_outbounds();
     // init outbound map
     outboundMap[0] = -1;
     outboundMap[1] = -2;
-    outboundMap[2] = -3;
-    outboundMap[3] = -4;
     for (const auto& item: NekoGui::profileManager->profiles) {
         outboundMap[outboundMap.size()] = item.second->id;
     }
@@ -119,7 +115,6 @@ RouteItem::RouteItem(QWidget *parent, const std::shared_ptr<NekoGui::RoutingChai
     ui->route_name->setText(chain->name);
     ui->rule_attr->addItems(NekoGui::RouteRule::get_attributes());
     adjustComboBoxWidth(ui->rule_attr);
-    ui->rule_out->addItems(outboundOptions);
     ui->rule_attr_text->hide();
     ui->rule_attr_data->setTitle("");
     ui->rule_attr_box->setEnabled(false);
@@ -192,17 +187,6 @@ RouteItem::RouteItem(QWidget *parent, const std::shared_ptr<NekoGui::RoutingChai
         updateRulePreview();
     });
 
-    connect(ui->rule_out, &QComboBox::currentTextChanged, this, [=](const QString& text) {
-        if (currentIndex == -1) return;
-        auto id = outboundMap[ui->rule_out->currentIndex()]; // we need to do this to avoid defining a seprate function for SLOT, as Qt 5 does not support lambda for  currentIndexChanged...
-        if (id == NekoGui::INVALID_ID) {
-            MessageBoxWarning("Invalid state", "selected outbound does not exists in the database, try restarting the app.");
-            return;
-        }
-        chain->Rules[currentIndex]->outboundID = id;
-        updateRulePreview();
-    });
-
     connect(ui->route_items, &QListWidget::currentRowChanged, this, [=](const int idx) {
         if (idx == -1) return;
         currentIndex = idx;
@@ -236,6 +220,8 @@ RouteItem::RouteItem(QWidget *parent, const std::shared_ptr<NekoGui::RoutingChai
         ui->delete_route_item->setEnabled(false);
         ui->route_import_json->setEnabled(false);
     }
+
+    adjustSize();
 }
 
 RouteItem::~RouteItem() {
@@ -294,6 +280,12 @@ void RouteItem::updateRuleSection() {
             break;
         }
         case NekoGui::select: {
+            if (currentAttr == "outbound")
+            {
+                // due to the need for mapping, we handle this in a different way...
+                showSelectItem(outbounds, get_outbound_name(ruleItem->outboundID));
+                break;
+            }
             auto items = NekoGui::RouteRule::get_values_for_field(currentAttr);
             auto currentVal = ruleItem->get_current_value_string(currentAttr)[0];
             showSelectItem(items, currentVal);
@@ -307,7 +299,6 @@ void RouteItem::updateRuleSection() {
     }
     ui->rule_name->setText(ruleItem->name);
     ui->rule_attr_box->setDisabled(chain->isViewOnly());
-    ui->rule_out->setCurrentText(get_outbound_name(ruleItem->outboundID));
 
     updateRulePreview();
 }
@@ -330,8 +321,8 @@ void RouteItem::showSelectItem(const QStringList& items, const QString& currentI
     ui->rule_attr_selector->clear();
     ui->rule_attr_selector->show();
     ui->rule_attr_selector->addItems(items);
-    adjustComboBoxWidth(ui->rule_attr_selector);
     ui->rule_attr_selector->setCurrentText(currentItem);
+    adjustComboBoxWidth(ui->rule_attr_selector);
     adjustSize();
 }
 
