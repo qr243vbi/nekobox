@@ -168,59 +168,39 @@ namespace NekoGui {
     }
 
     // TODO use constant for field names
-    QStringList RouteRule::get_attributes() {
+    QStringList RouteRule::get_attributes()
+    {
         return {
-                "ip_version",
-                "network",
-                "protocol",
-                "inbound",
-                "domain",
-                "domain_suffix",
-                "domain_keyword",
-                "domain_regex",
-                "source_ip_cidr",
-                "source_ip_is_private",
-                "ip_cidr",
-                "ip_is_private",
-                "source_port",
-                "source_port_range",
-                "port",
-                "port_range",
-                "process_name",
-                "process_path",
-                "process_path_regex",
-                "rule_set",
-                "invert",
-                "action_type",
-        };
-    }
-
-    QStringList RouteRule::get_route_options()
-    {
-        QStringList options;
-        options << "override_address" << "override_port";
-        return options;
-    }
-
-    QStringList RouteRule::get_reject_options()
-    {
-        QStringList options;
-        options << "method" << "no_drop";
-        return options;
-    }
-
-    QStringList RouteRule::get_resolve_options()
-    {
-        QStringList options;
-        options << "strategy";
-        return options;
-    }
-
-    QStringList RouteRule::get_sniff_options()
-    {
-        QStringList options;
-        options << "override_destination";
-        return options;
+            "ip_version",
+            "network",
+            "protocol",
+            "inbound",
+            "domain",
+            "domain_suffix",
+            "domain_keyword",
+            "domain_regex",
+            "source_ip_cidr",
+            "source_ip_is_private",
+            "ip_cidr",
+            "ip_is_private",
+            "source_port",
+            "source_port_range",
+            "port",
+            "port_range",
+            "process_name",
+            "process_path",
+            "process_path_regex",
+            "rule_set",
+            "invert",
+            "action_type",
+            "outbound",
+            "override_address",
+            "override_port",
+            "method",
+            "no_drop",
+            "override_destination",
+            "strategy",
+    };
     }
 
     inputType RouteRule::get_input_type(const QString& fieldName) {
@@ -235,7 +215,8 @@ namespace NekoGui {
             fieldName == "protocol" ||
             fieldName == "action_type" ||
             fieldName == "method" ||
-            fieldName == "strategy") return select;
+            fieldName == "strategy" ||
+            fieldName == "outbound") return select;
 
         return text;
     }
@@ -300,6 +281,10 @@ namespace NekoGui {
         if (fieldName == "override_port")
         {
             return {override_port};
+        }
+        if (fieldName == "outbound")
+        {
+            return {Int2String(outboundID)};
         }
         if (fieldName == "inbound") return inbound;
         if (fieldName == "domain") return domain;
