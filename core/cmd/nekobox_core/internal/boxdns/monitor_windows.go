@@ -4,7 +4,6 @@ import (
 	"context"
 	"github.com/sagernet/sing/common/control"
 	"log"
-	"net/netip"
 	"strings"
 	"time"
 
@@ -47,13 +46,13 @@ func init() {
 	go func() {
 		for {
 			time.Sleep(5 * time.Second)
-			monitorForUnderlyingDNS(0) // to handle wifi change
+			monitorForUnderlyingDNS(nil, 0) // to handle wifi change
 		}
 	}()
 }
 
-func monitorForUnderlyingDNS(event int) {
-	index := monitorDI.DefaultInterfaceIndex(netip.IPv4Unspecified())
+func monitorForUnderlyingDNS(_ *control.Interface, _ int) {
+	index := monitorDI.DefaultInterface().Index
 	var guid iphlpapi.GUID
 	if errno := iphlpapi.Index2GUID(uint64(index), &guid); errno != 0 {
 		return

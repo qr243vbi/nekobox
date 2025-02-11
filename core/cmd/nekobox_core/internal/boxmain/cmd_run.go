@@ -62,7 +62,7 @@ func readConfigAt(path string) (*OptionsEntry, error) {
 		return nil, E.Cause(err, "read config at ", path)
 	}
 	var options option.Options
-	err = options.UnmarshalJSON(configContent)
+	err = options.UnmarshalJSONContext(context.Background(), configContent)
 	if err != nil {
 		return nil, E.Cause(err, "decode config at ", path)
 	}
@@ -115,14 +115,14 @@ func readConfigAndMerge() (option.Options, error) {
 
 	var mergedMessage json.RawMessage
 	for _, options := range optionsList {
-		mergedMessage, err = badjson.MergeJSON(options.options.RawMessage, mergedMessage, false)
+		mergedMessage, err = badjson.MergeJSON(context.Background(), options.options.RawMessage, mergedMessage, false)
 		if err != nil {
 			return option.Options{}, E.Cause(err, "merge config at ", options.path)
 		}
 	}
 
 	var mergedOptions option.Options
-	err = mergedOptions.UnmarshalJSON(mergedMessage)
+	err = mergedOptions.UnmarshalJSONContext(context.Background(), mergedMessage)
 	if err != nil {
 		return option.Options{}, E.Cause(err, "unmarshal merged config")
 	}
@@ -137,7 +137,7 @@ func Create(nekoConfigContent []byte) (*boxbox.Box, context.CancelFunc, error) {
 	if nekoConfigContent == nil {
 		options, err = readConfigAndMerge()
 	} else {
-		err = options.UnmarshalJSON(nekoConfigContent)
+		err = options.UnmarshalJSONContext(context.Background(), nekoConfigContent)
 	}
 	if err != nil {
 		return nil, nil, err
@@ -231,7 +231,7 @@ func MergeOptions(source option.Options, destination option.Options) (option.Opt
 	if err != nil {
 		return option.Options{}, E.Cause(err, "marshal destination")
 	}
-	rawMerged, err := badjson.MergeJSON(rawSource, rawDestination, false)
+	rawMerged, err := badjson.MergeJSON(context.Background(), rawSource, rawDestination, false)
 	if err != nil {
 		return option.Options{}, E.Cause(err, "merge options")
 	}
