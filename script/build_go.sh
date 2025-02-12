@@ -19,12 +19,12 @@ mkdir -p $DEST
 export CGO_ENABLED=0
 
 #### Go: updater ####
-pushd core/cmd/updater
+pushd core/updater
 [ "$GOOS" == "darwin" ] || go build -o $DEST -trimpath -ldflags "-w -s"
 popd
 
-#### Go: nekobox_core ####
-pushd core/cmd/nekobox_core
+#### Go: core ####
+pushd core/server
 VERSION_SINGBOX=$(go list -m -f '{{.Version}}' github.com/sagernet/sing-box)
 go build -v -o $DEST -trimpath -ldflags "-w -s -X 'github.com/sagernet/sing-box/constant.Version=${VERSION_SINGBOX}'" -tags "with_clash_api,with_gvisor,with_quic,with_wireguard,with_utls,with_ech,with_dhcp"
 popd
