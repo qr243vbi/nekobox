@@ -11,7 +11,7 @@ service LibcoreService {
   rpc Stop(EmptyReq) returns (ErrorResp) {}
   rpc Test(TestReq) returns (TestResp) {}
   rpc StopTest(EmptyReq) returns (EmptyResp);
-  rpc QueryStats(QueryStatsReq) returns (QueryStatsResp) {}
+  rpc QueryStats(EmptyReq) returns (QueryStatsResp) {}
   rpc ListConnections(EmptyReq) returns (ListConnectionsResp) {}
   //
   rpc GetGeoIPList(GeoListRequest) returns (GetGeoIPListResponse);
@@ -35,9 +35,7 @@ message ErrorResp {
 
 message LoadConfigReq {
   string core_config = 1;
-  bool enable_nekoray_connections = 2;
-  repeated string stats_outbounds = 3;
-  bool disable_stats = 4;
+  bool disable_stats = 2;
 }
 
 message URLTestResp {
@@ -59,13 +57,11 @@ message TestResp {
   repeated URLTestResp results = 1;
 }
 
-message QueryStatsReq{
-  string tag = 1;
-  string direct = 2;
-}
-
 message QueryStatsResp{
-  int64 traffic = 1;
+  int64 direct_traffic_up = 1;
+  int64 direct_traffic_down = 2;
+  int64 proxy_traffic_up = 3;
+  int64 proxy_traffic_down = 4;
 }
 
 enum UpdateAction {

@@ -7,7 +7,7 @@ toolchain go1.23.0
 require (
 	github.com/dustin/go-humanize v1.0.1
 	github.com/gofrs/uuid/v5 v5.3.0
-	github.com/matsuridayo/libneko v0.0.0-20230913024055-5277a5bfc889
+	github.com/matsuridayo/libneko v0.0.0-20240702024904-1c47a3af7199
 	github.com/oschwald/maxminddb-golang v1.13.1
 	github.com/sagernet/sing v0.6.1
 	github.com/sagernet/sing-box v1.11.3
@@ -15,12 +15,11 @@ require (
 	github.com/sagernet/sing-tun v0.6.1
 	github.com/spf13/cobra v1.8.1
 	golang.org/x/sys v0.30.0
-	golang.zx2c4.com/wireguard/wgctrl v0.0.0-20241231184526-a9ab2273dd10
 	google.golang.org/grpc v1.64.1
 	google.golang.org/protobuf v1.34.2
 )
 
-replace github.com/sagernet/sing-box => github.com/Mahdi-zarei/sing-box v1.3.5-0.20250211135527-e2976e114e7c
+replace github.com/sagernet/sing-box => github.com/Mahdi-zarei/sing-box v1.3.5-0.20250212102409-e32b831454c2
 
 replace github.com/sagernet/sing-dns => github.com/Mahdi-zarei/sing-dns v0.3.0-beta.14.0.20250201180230-3ed9d1ef74d5
 

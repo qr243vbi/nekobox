@@ -3,7 +3,9 @@ package main
 import (
 	"context"
 	"errors"
+	"github.com/sagernet/sing-box/adapter"
 	"github.com/sagernet/sing/common/metadata"
+	"github.com/sagernet/sing/service"
 	"nekobox_core/internal/boxbox"
 	"net"
 	"net/http"
@@ -23,7 +25,7 @@ type URLTestResult struct {
 }
 
 func BatchURLTest(ctx context.Context, i *boxbox.Box, outboundTags []string, url string, maxConcurrency int, twice bool) []*URLTestResult {
-	router := i.Router()
+	outbounds := service.FromContext[adapter.OutboundManager](i.Context())
 	resMap := make(map[string]*URLTestResult)
 	resAccess := sync.Mutex{}
 	limiter := make(chan struct{}, maxConcurrency)
@@ -45,7 +47,7 @@ func BatchURLTest(ctx context.Context, i *boxbox.Box, outboundTags []string, url
 			limiter <- struct{}{}
 			go func(t string) {
 				defer wg.Done()
-				outbound, found := router.Outbound(t)
+				outbound, found := outbounds.Outbound(t)
 				if !found {
 					panic("no outbound with tag " + t + " found")
 				}
