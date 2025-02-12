@@ -34,6 +34,7 @@ import (
 var _ adapter.Service = (*Box)(nil)
 
 type Box struct {
+	ctx        context.Context
 	createdAt  time.Time
 	logFactory log.Factory
 	logger     log.ContextLogger
@@ -101,7 +102,6 @@ func New(options Options) (*Box, error) {
 
 	ctx = pause.WithDefaultManager(ctx)
 	experimentalOptions := common.PtrValueOrDefault(options.Experimental)
-	applyDebugOptions(common.PtrValueOrDefault(experimentalOptions.Debug))
 	var needCacheFile bool
 	var needClashAPI bool
 	var needV2RayAPI bool
@@ -280,6 +280,7 @@ func New(options Options) (*Box, error) {
 		services = append(services, adapter.NewLifecycleService(ntpService, "ntp service"))
 	}
 	return &Box{
+		ctx:        ctx,
 		network:    networkManager,
 		endpoint:   endpointManager,
 		inbound:    inboundManager,
@@ -426,4 +427,8 @@ func (s *Box) Inbound() adapter.InboundManager {
 
 func (s *Box) Outbound() adapter.OutboundManager {
 	return s.outbound
+}
+
+func (s *Box) Context() context.Context {
+	return s.ctx
 }

@@ -2,8 +2,8 @@ package main
 
 import (
 	"context"
+	"nekobox_core/gen"
 	"nekobox_core/internal/boxdns"
-	"nekobox_core/server/gen"
 	"net/netip"
 )
 
