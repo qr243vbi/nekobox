@@ -14,16 +14,12 @@ namespace NekoGui_traffic {
         QMutex loop_mutex;
 
         QList<std::shared_ptr<TrafficData>> items;
-        TrafficData *proxy = nullptr;
+        std::shared_ptr<TrafficData> proxy;
+        std::shared_ptr<TrafficData> direct;
 
         void UpdateAll();
 
         void Loop();
-
-    private:
-        TrafficData *direct = new TrafficData("direct");
-
-        [[nodiscard]] static TrafficData *update_stats(TrafficData *item);
     };
 
     extern TrafficLooper *trafficLooper;

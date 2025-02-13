@@ -249,10 +249,6 @@ void MainWindow::neko_start(int _id) {
         libcore::LoadConfigReq req;
         req.set_core_config(QJsonObject2QString(result->coreConfig, true).toStdString());
         req.set_disable_stats(NekoGui::dataStore->disable_traffic_stats);
-        if (NekoGui::dataStore->traffic_loop_interval > 0) {
-            req.add_stats_outbounds("proxy");
-            req.add_stats_outbounds("direct");
-        }
         //
         bool rpcOK;
         QString error = defaultClient->Start(&rpcOK, req);
@@ -276,9 +272,9 @@ void MainWindow::neko_start(int _id) {
             return false;
         }
         //
-        NekoGui_traffic::trafficLooper->proxy = result->outboundStat.get();
+        NekoGui_traffic::trafficLooper->proxy = std::make_shared<NekoGui_traffic::TrafficData>("proxy");
+        NekoGui_traffic::trafficLooper->direct = std::make_shared<NekoGui_traffic::TrafficData>("direct");
         NekoGui_traffic::trafficLooper->items = result->outboundStats;
-        NekoGui::dataStore->ignoreConnTag = result->ignoreConnTag;
         NekoGui_traffic::trafficLooper->loop_enabled = true;
         NekoGui_traffic::connection_lister->suspend = false;
 
@@ -411,6 +407,7 @@ void MainWindow::neko_stop(bool crash, bool sem, bool manual) {
     if (NekoGui::dataStore->traffic_loop_interval != 0) {
         NekoGui_traffic::trafficLooper->UpdateAll();
         for (const auto &item: NekoGui_traffic::trafficLooper->items) {
+            if (item->id < 0) continue;
             NekoGui::profileManager->GetProfile(item->id)->Save();
             refresh_proxy_list(item->id);
         }

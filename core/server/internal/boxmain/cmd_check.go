@@ -26,14 +26,14 @@ func init() {
 }
 
 func check() error {
-	options, err := readConfigAndMerge()
+	options, err := parseConfig(nil)
 	if err != nil {
 		return err
 	}
 	ctx, cancel := context.WithCancel(context.Background())
 	instance, err := boxbox.New(boxbox.Options{
 		Context: ctx,
-		Options: options,
+		Options: *options,
 	})
 	if err == nil {
 		instance.Close()

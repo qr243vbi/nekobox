@@ -46,7 +46,7 @@ namespace NekoGui {
         rule_set << other.rule_set;
         invert = other.invert;
         outboundID = other.outboundID;
-        actionType = other.actionType;
+        action = other.action;
         rejectMethod = other.rejectMethod;
         no_drop = other.no_drop;
         override_address = other.override_address;
@@ -78,7 +78,7 @@ namespace NekoGui {
         _add(new configItem("rule_set", &rule_set, itemType::stringList));
         _add(new configItem("invert", &invert, itemType::boolean));
         _add(new configItem("outboundID", &outboundID, itemType::integer));
-        _add(new configItem("actionType", &actionType, itemType::string));
+        _add(new configItem("actionType", &action, itemType::string));
         _add(new configItem("rejectMethod", &rejectMethod, itemType::string));
         _add(new configItem("noDrop", &no_drop, itemType::boolean));
         _add(new configItem("override_address", &override_address, itemType::string));
@@ -113,24 +113,24 @@ namespace NekoGui {
         if (isValidStrArray(rule_set)) obj["rule_set"] = get_as_array(rule_set);
         if (invert) obj["invert"] = invert;
         // fix action type
-        if (actionType == "route")
+        if (action == "route")
         {
-            if (outboundID == -3) actionType = "reject";
-            if (outboundID == -4) actionType = "resolve";
+            if (outboundID == -3) action = "reject";
+            if (outboundID == -4) action = "hijack-dns";
         }
-        obj["action_type"] = actionType;
+        obj["action"] = action;
 
-        if (actionType == "reject")
+        if (action == "reject")
         {
             if (!rejectMethod.isEmpty()) obj["reject_method"] = rejectMethod;
             if (no_drop) obj["no_drop"] = no_drop;
         }
-        if (actionType == "route" || actionType == "route-options")
+        if (action == "route" || action == "route-options")
         {
             if (!override_address.isEmpty()) obj["override_address"] = override_address;
             if (override_port.toInt() > 0) obj["override_port"] = override_port.toInt();
 
-            if (actionType == "route")
+            if (action == "route")
             {
                 if (forView) {
                     switch (outboundID) { // TODO use constants
@@ -154,12 +154,12 @@ namespace NekoGui {
                 }
             }
         }
-        if (actionType == "sniff")
+        if (action == "sniff")
         {
             if (isValidStrArray(sniffers)) obj["sniffers"] = get_as_array(sniffers);
             if (sniffOverrideDest) obj["override_destination"] = sniffOverrideDest;
         }
-        if (actionType == "resolve")
+        if (action == "resolve")
         {
             if (!strategy.isEmpty()) obj["strategy"] = strategy;
         }
@@ -192,7 +192,7 @@ namespace NekoGui {
             "process_path_regex",
             "rule_set",
             "invert",
-            "action_type",
+            "action",
             "outbound",
             "override_address",
             "override_port",
@@ -213,7 +213,7 @@ namespace NekoGui {
         if (fieldName == "ip_version" ||
             fieldName == "network" ||
             fieldName == "protocol" ||
-            fieldName == "action_type" ||
+            fieldName == "action" ||
             fieldName == "method" ||
             fieldName == "strategy" ||
             fieldName == "outbound") return select;
@@ -233,7 +233,7 @@ namespace NekoGui {
             resp.prepend("");
             return resp;
         }
-        if (fieldName == "action_type")
+        if (fieldName == "action")
         {
             return Preset::SingBox::ActionTypes;
         }
@@ -262,9 +262,9 @@ namespace NekoGui {
         if (fieldName == "protocol") {
             return {protocol};
         }
-        if (fieldName == "action_type")
+        if (fieldName == "action")
         {
-            return {actionType};
+            return {action};
         }
         if (fieldName == "method")
         {
@@ -398,9 +398,9 @@ namespace NekoGui {
         if (fieldName == "invert") {
             invert = value[0]=="true";
         }
-        if (fieldName == "action_type")
+        if (fieldName == "action")
         {
-            actionType = value[0];
+            action = value[0];
         }
         if (fieldName == "method")
         {
@@ -429,7 +429,10 @@ namespace NekoGui {
     }
 
     bool RouteRule::isEmpty() {
-        return get_rule_json().keys().length() == 1;
+        auto ruleJson = get_rule_json();
+        if (action == "route" || action == "route-options" || action == "hijack-dns") return ruleJson.keys().length() <= 1;
+        if (action == "sniff" || action == "resolve" || action == "reject") return ruleJson.keys().length() < 1;
+        return false;
     }
 
     bool isOutboundIDValid(int id) {
@@ -536,7 +539,8 @@ namespace NekoGui {
         defaultChain->name = "Default";
         auto defaultRule = std::make_shared<RouteRule>();
         defaultRule->name = "Route DNS";
-        defaultRule->actionType = "hijack-dns";
+        defaultRule->action = "hijack-dns";
+        defaultRule->protocol = "dns";
         defaultChain->Rules << defaultRule;
         return defaultChain;
     }
@@ -549,7 +553,8 @@ namespace NekoGui {
 
         auto rule0 = std::make_shared<RouteRule>();
         rule0->name = "Route DNS";
-        rule0->actionType = "hijack-dns";
+        rule0->action = "hijack-dns";
+        rule0->protocol = "dns";
         chain->Rules << rule0;
 
         auto rule1 = std::make_shared<RouteRule>();
@@ -575,7 +580,8 @@ namespace NekoGui {
 
         auto rule0 = std::make_shared<RouteRule>();
         rule0->name = "Route DNS";
-        rule0->actionType = "hijack-dns";
+        rule0->action = "hijack-dns";
+        rule0->protocol = "dns";
         chain->Rules << rule0;
 
         auto rule1 = std::make_shared<RouteRule>();

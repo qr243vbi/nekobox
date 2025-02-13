@@ -59,7 +59,7 @@ RouteItem::RouteItem(QWidget *parent, const std::shared_ptr<NekoGui::RoutingChai
         auto routeItem = std::make_shared<NekoGui::RouteRule>();
         routeItem->name = "dns-hijack";
         routeItem->protocol = "dns";
-        routeItem->actionType = "hijack-dns";
+        routeItem->action = "hijack-dns";
         chain->Rules << routeItem;
     }
 

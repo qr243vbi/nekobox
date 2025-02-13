@@ -39,7 +39,7 @@ namespace NekoGui {
         bool invert = false;
         int outboundID = -2; // -1 is proxy -2 is direct -3 is block -4 is dns_out
         // since sing-box 1.11.0
-        QString actionType = "route";
+        QString action = "route";
 
         // reject options
         QString rejectMethod;

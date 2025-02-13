@@ -1,7 +1,6 @@
 #include "include/api/gRPC.h"
 
 #include <utility>
-#include <QStringList>
 
 #include "include/global/NekoGui.hpp"
 
@@ -12,8 +11,6 @@
 #include <QThread>
 #include <QMutex>
 #include <QAbstractNetworkCache>
-
-#include <iostream>
 
 namespace QtGrpc {
     const char *GrpcAcceptEncodingHeader = "grpc-accept-encoding";
@@ -55,28 +52,22 @@ namespace QtGrpc {
 
         QString url_base;
         QString serviceName;
-        QByteArray nekoray_auth;
 
         // async
         QNetworkReply *post(const QString &method, const QString &service, const QByteArray &args) {
             QUrl callUrl = url_base + "/" + service + "/" + method;
-            // qDebug() << "Service call url: " << callUrl;
 
             QNetworkRequest request(callUrl);
-            // request.setAttribute(QNetworkRequest::CacheSaveControlAttribute, false);
-            // request.setAttribute(QNetworkRequest::CacheLoadControlAttribute, QNetworkRequest::AlwaysNetwork);
             request.setAttribute(QNetworkRequest::Http2DirectAttribute, true);
             request.setHeader(QNetworkRequest::ContentTypeHeader, QLatin1String{"application/grpc"});
             request.setRawHeader("Cache-Control", "no-store");
             request.setRawHeader(GrpcAcceptEncodingHeader, QByteArray{"identity,deflate,gzip"});
             request.setRawHeader(AcceptEncodingHeader, QByteArray{"identity,gzip"});
             request.setRawHeader(TEHeader, QByteArray{"trailers"});
-            request.setRawHeader("nekoray_auth", nekoray_auth);
 
             QByteArray msg(GrpcMessageSizeHeaderSize, '\0');
             *reinterpret_cast<int *>(msg.data() + 1) = qToBigEndian((int) args.size());
             msg += args;
-            // qDebug() << "SEND: " << msg.size();
 
             QNetworkReply *networkReply = nm->post(request, msg);
             return networkReply;
@@ -128,8 +119,6 @@ namespace QtGrpc {
 
             auto grpcStatus = QNetworkReply::NetworkError::ProtocolUnknownError;
             qByteArray = processReply(networkReply, grpcStatus);
-            // qDebug() << __func__ << "RECV: " << qByteArray.toHex() << "grpcStatus" << grpcStatus;
-            // qDebug() << networkReply->rawHeaderPairs();
 
             networkReply->deleteLater();
             return grpcStatus;
@@ -138,7 +127,6 @@ namespace QtGrpc {
     public:
         Http2GrpcChannelPrivate(const QString &url_, const QString &nekoray_auth_, const QString &serviceName_) {
             url_base = "http://" + url_;
-            nekoray_auth = nekoray_auth_.toLatin1();
             serviceName = serviceName_;
             //
             thread = new QThread;
@@ -237,18 +225,16 @@ namespace NekoGui_rpc {
         }
     }
 
-    long long Client::QueryStats(const std::string &tag, const std::string &direct) {
-        libcore::QueryStatsReq request;
-        request.set_tag(tag);
-        request.set_direct(direct);
+    libcore::QueryStatsResp Client::QueryStats() {
+        libcore::EmptyReq request;
 
         libcore::QueryStatsResp reply;
         auto status = default_grpc_channel->Call("QueryStats", request, &reply, 500);
 
         if (status == QNetworkReply::NoError) {
-            return reply.traffic();
+            return reply;
         } else {
-            return 0;
+            return {};
         }
     }
 

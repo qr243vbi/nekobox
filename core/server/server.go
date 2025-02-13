@@ -12,7 +12,7 @@ import (
 	"github.com/sagernet/sing/service"
 	"io"
 	"log"
-	gen2 "nekobox_core/gen"
+	"nekobox_core/gen"
 	"nekobox_core/internal/boxapi"
 	"nekobox_core/internal/boxbox"
 	"nekobox_core/internal/boxmain"
@@ -32,22 +32,22 @@ var instanceCancel context.CancelFunc
 var debug bool
 
 type server struct {
-	gen2.LibcoreServiceServer
+	gen.UnimplementedLibcoreServiceServer
 }
 
-func (s *server) Exit(ctx context.Context, in *gen2.EmptyReq) (out *gen2.EmptyResp, _ error) {
-	out = &gen2.EmptyResp{}
+func (s *server) Exit(ctx context.Context, in *gen.EmptyReq) (out *gen.EmptyResp, _ error) {
+	out = &gen.EmptyResp{}
 
 	// Connection closed
 	os.Exit(0)
 	return
 }
 
-func (s *server) Start(ctx context.Context, in *gen2.LoadConfigReq) (out *gen2.ErrorResp, _ error) {
+func (s *server) Start(ctx context.Context, in *gen.LoadConfigReq) (out *gen.ErrorResp, _ error) {
 	var err error
 
 	defer func() {
-		out = &gen2.ErrorResp{}
+		out = &gen.ErrorResp{}
 		if err != nil {
 			out.Error = err.Error()
 			boxInstance = nil
@@ -75,11 +75,11 @@ func (s *server) Start(ctx context.Context, in *gen2.LoadConfigReq) (out *gen2.E
 	return
 }
 
-func (s *server) Stop(ctx context.Context, in *gen2.EmptyReq) (out *gen2.ErrorResp, _ error) {
+func (s *server) Stop(ctx context.Context, in *gen.EmptyReq) (out *gen.ErrorResp, _ error) {
 	var err error
 
 	defer func() {
-		out = &gen2.ErrorResp{}
+		out = &gen.ErrorResp{}
 		if err != nil {
 			out.Error = err.Error()
 		}
@@ -103,14 +103,14 @@ func (s *server) Stop(ctx context.Context, in *gen2.EmptyReq) (out *gen2.ErrorRe
 	return
 }
 
-func (s *server) Test(ctx context.Context, in *gen2.TestReq) (*gen2.TestResp, error) {
+func (s *server) Test(ctx context.Context, in *gen.TestReq) (*gen.TestResp, error) {
 	var testInstance *boxbox.Box
 	var cancel context.CancelFunc
 	var err error
 	var twice = true
 	if in.TestCurrent {
 		if boxInstance == nil {
-			return &gen2.TestResp{Results: []*gen2.URLTestResp{{
+			return &gen.TestResp{Results: []*gen.URLTestResp{{
 				OutboundTag: "proxy",
 				LatencyMs:   0,
 				Error:       "Instance is not running",
@@ -139,31 +139,34 @@ func (s *server) Test(ctx context.Context, in *gen2.TestReq) (*gen2.TestResp, er
 	}
 	results := BatchURLTest(testCtx, testInstance, outboundTags, in.Url, int(maxConcurrency), twice)
 
-	res := make([]*gen2.URLTestResp, 0)
+	res := make([]*gen.URLTestResp, 0)
 	for idx, data := range results {
 		errStr := ""
 		if data.Error != nil {
 			errStr = data.Error.Error()
 		}
-		res = append(res, &gen2.URLTestResp{
+		res = append(res, &gen.URLTestResp{
 			OutboundTag: outboundTags[idx],
 			LatencyMs:   int32(data.Duration.Milliseconds()),
 			Error:       errStr,
 		})
 	}
 
-	return &gen2.TestResp{Results: res}, nil
+	return &gen.TestResp{Results: res}, nil
 }
 
-func (s *server) StopTest(ctx context.Context, in *gen2.EmptyReq) (*gen2.EmptyResp, error) {
+func (s *server) StopTest(ctx context.Context, in *gen.EmptyReq) (*gen.EmptyResp, error) {
 	cancelTests()
 	testCtx, cancelTests = context.WithCancel(context.Background())
 
-	return &gen2.EmptyResp{}, nil
+	return &gen.EmptyResp{}, nil
 }
 
-func (s *server) QueryStats(ctx context.Context, _ *gen2.EmptyReq) (*gen2.QueryStatsResp, error) {
-	resp := &gen2.QueryStatsResp{}
+func (s *server) QueryStats(ctx context.Context, _ *gen.EmptyReq) (*gen.QueryStatsResp, error) {
+	resp := &gen.QueryStatsResp{
+		Ups:   make(map[string]int64),
+		Downs: make(map[string]int64),
+	}
 	if boxInstance != nil {
 		clash := service.FromContext[adapter.ClashServer](boxInstance.Context())
 		if clash != nil {
@@ -172,20 +175,19 @@ func (s *server) QueryStats(ctx context.Context, _ *gen2.EmptyReq) (*gen2.QueryS
 				log.Println("Failed to assert clash server")
 				return nil, E.New("invalid clash server type")
 			}
-			outbounds := service.FromContext[adapter.OutboundManager](ctx)
+			outbounds := service.FromContext[adapter.OutboundManager](boxInstance.Context())
 			if outbounds == nil {
 				log.Println("Failed to assert outbound manager")
 				return nil, E.New("invalid outbound manager type")
 			}
 			for _, out := range outbounds.Outbounds() {
-				u, d := cApi.TrafficManager().TotalOutbound(out.Tag())
-				if strings.ToLower(out.Tag()) == "direct" {
-					resp.DirectTrafficUp += u
-					resp.DirectTrafficDown += d
-				} else {
-					resp.ProxyTrafficUp += u
-					resp.ProxyTrafficDown += d
+				if len(out.Dependencies()) > 0 {
+					// ignore, has detour
+					continue
 				}
+				u, d := cApi.TrafficManager().TotalOutbound(out.Tag())
+				resp.Ups[out.Tag()] = u
+				resp.Downs[out.Tag()] = d
 			}
 			cApi.TrafficManager().ResetStatistic()
 		}
@@ -194,9 +196,9 @@ func (s *server) QueryStats(ctx context.Context, _ *gen2.EmptyReq) (*gen2.QueryS
 	return resp, nil
 }
 
-func (s *server) ListConnections(ctx context.Context, in *gen2.EmptyReq) (*gen2.ListConnectionsResp, error) {
+func (s *server) ListConnections(ctx context.Context, in *gen.EmptyReq) (*gen.ListConnectionsResp, error) {
 	if boxInstance == nil {
-		return &gen2.ListConnectionsResp{}, nil
+		return &gen.ListConnectionsResp{}, nil
 	}
 	if service.FromContext[adapter.ClashServer](boxInstance.Context()) == nil {
 		return nil, errors.New("no clash server found")
@@ -207,14 +209,14 @@ func (s *server) ListConnections(ctx context.Context, in *gen2.EmptyReq) (*gen2.
 	}
 	connections := clash.TrafficManager().Connections()
 
-	res := make([]*gen2.ConnectionMetaData, 0)
+	res := make([]*gen.ConnectionMetaData, 0)
 	for _, c := range connections {
 		process := ""
 		if c.Metadata.ProcessInfo != nil {
 			spl := strings.Split(c.Metadata.ProcessInfo.ProcessPath, string(os.PathSeparator))
 			process = spl[len(spl)-1]
 		}
-		r := &gen2.ConnectionMetaData{
+		r := &gen.ConnectionMetaData{
 			Id:        c.ID.String(),
 			CreatedAt: c.CreatedAt.UnixMilli(),
 			Upload:    c.Upload.Load(),
@@ -228,13 +230,13 @@ func (s *server) ListConnections(ctx context.Context, in *gen2.EmptyReq) (*gen2.
 		}
 		res = append(res, r)
 	}
-	out := &gen2.ListConnectionsResp{
+	out := &gen.ListConnectionsResp{
 		Connections: res,
 	}
 	return out, nil
 }
 
-func (s *server) GetGeoIPList(ctx context.Context, in *gen2.GeoListRequest) (*gen2.GetGeoIPListResponse, error) {
+func (s *server) GetGeoIPList(ctx context.Context, in *gen.GeoListRequest) (*gen.GetGeoIPListResponse, error) {
 	resp, err := boxmain.ListGeoip(in.Path + string(os.PathSeparator) + "geoip.db")
 	if err != nil {
 		return nil, err
@@ -246,10 +248,10 @@ func (s *server) GetGeoIPList(ctx context.Context, in *gen2.GeoListRequest) (*ge
 		res = append(res, r)
 	}
 
-	return &gen2.GetGeoIPListResponse{Items: res}, nil
+	return &gen.GetGeoIPListResponse{Items: res}, nil
 }
 
-func (s *server) GetGeoSiteList(ctx context.Context, in *gen2.GeoListRequest) (*gen2.GetGeoSiteListResponse, error) {
+func (s *server) GetGeoSiteList(ctx context.Context, in *gen.GeoListRequest) (*gen.GetGeoSiteListResponse, error) {
 	resp, err := boxmain.GeositeList(in.Path + string(os.PathSeparator) + "geosite.db")
 	if err != nil {
 		return nil, err
@@ -261,30 +263,30 @@ func (s *server) GetGeoSiteList(ctx context.Context, in *gen2.GeoListRequest) (*
 		res = append(res, r)
 	}
 
-	return &gen2.GetGeoSiteListResponse{Items: res}, nil
+	return &gen.GetGeoSiteListResponse{Items: res}, nil
 }
 
-func (s *server) CompileGeoIPToSrs(ctx context.Context, in *gen2.CompileGeoIPToSrsRequest) (*gen2.EmptyResp, error) {
+func (s *server) CompileGeoIPToSrs(ctx context.Context, in *gen.CompileGeoIPToSrsRequest) (*gen.EmptyResp, error) {
 	category := strings.TrimSuffix(in.Item, "_IP")
 	err := boxmain.CompileRuleSet(in.Path+string(os.PathSeparator)+"geoip.db", category, boxmain.IpRuleSet, "./rule_sets/"+in.Item+".srs")
 	if err != nil {
 		return nil, err
 	}
 
-	return &gen2.EmptyResp{}, nil
+	return &gen.EmptyResp{}, nil
 }
 
-func (s *server) CompileGeoSiteToSrs(ctx context.Context, in *gen2.CompileGeoSiteToSrsRequest) (*gen2.EmptyResp, error) {
+func (s *server) CompileGeoSiteToSrs(ctx context.Context, in *gen.CompileGeoSiteToSrsRequest) (*gen.EmptyResp, error) {
 	category := strings.TrimSuffix(in.Item, "_SITE")
 	err := boxmain.CompileRuleSet(in.Path+string(os.PathSeparator)+"geosite.db", category, boxmain.SiteRuleSet, "./rule_sets/"+in.Item+".srs")
 	if err != nil {
 		return nil, err
 	}
 
-	return &gen2.EmptyResp{}, nil
+	return &gen.EmptyResp{}, nil
 }
 
-func (s *server) SetSystemProxy(ctx context.Context, in *gen2.SetSystemProxyRequest) (*gen2.EmptyResp, error) {
+func (s *server) SetSystemProxy(ctx context.Context, in *gen.SetSystemProxyRequest) (*gen.EmptyResp, error) {
 	var err error
 	addr := metadata.ParseSocksaddr(in.Address)
 	if systemProxyController == nil || systemProxyAddr.String() != addr.String() {
@@ -304,16 +306,16 @@ func (s *server) SetSystemProxy(ctx context.Context, in *gen2.SetSystemProxyRequ
 		return nil, err
 	}
 
-	return &gen2.EmptyResp{}, nil
+	return &gen.EmptyResp{}, nil
 }
 
-func (s *server) Update(ctx context.Context, in *gen2.UpdateReq) (*gen2.UpdateResp, error) {
+func (s *server) Update(ctx context.Context, in *gen.UpdateReq) (*gen.UpdateResp, error) {
 	var updateDownloadUrl string
-	ret := &gen2.UpdateResp{}
+	ret := &gen.UpdateResp{}
 
 	client := boxapi.CreateProxyHttpClient(boxInstance)
 
-	if in.Action == gen2.UpdateAction_Check { // Check update
+	if in.Action == gen.UpdateAction_Check { // Check update
 		ctx, cancel := context.WithTimeout(ctx, time.Second*10)
 		defer cancel()
 

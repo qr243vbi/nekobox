@@ -36,7 +36,7 @@ namespace NekoGui_sys {
         connect(this, &QProcess::readyReadStandardOutput, this, [&]() {
             auto log = readAllStandardOutput();
             if (!NekoGui::dataStore->core_running) {
-                if (log.contains("grpc server listening")) {
+                if (log.contains("Core listening at")) {
                     // The core really started
                     NekoGui::dataStore->core_running = true;
                     if (start_profile_when_core_is_up >= 0) {

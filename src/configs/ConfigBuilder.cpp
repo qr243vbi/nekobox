@@ -246,28 +246,15 @@ namespace NekoGui {
                 tagOut = "proxy";
             }
 
-            // ignoreConnTag
-            if (index != 0) {
-                status->result->ignoreConnTag << tagOut;
-            }
-
             if (index > 0) {
                 // chain rules: past
-                if (pastExternalStat == 0) {
-                    auto replaced = status->outbounds.last().toObject();
-                    replaced["detour"] = tagOut;
-                    status->outbounds.removeLast();
-                    status->outbounds += replaced;
-                } else {
-                    status->routingRules += QJsonObject{
-                        {"inbound", QJsonArray{pastTag + "-mapping"}},
-                        {"outbound", tagOut},
-                    };
-                }
+                auto replaced = status->outbounds.last().toObject();
+                replaced["detour"] = tagOut;
+                status->outbounds.removeLast();
+                status->outbounds += replaced;
             } else {
                 // index == 0 means last profile in chain / not chain
                 chainTagOut = tagOut;
-                status->result->outboundStat = ent->traffic_data;
             }
 
             // Outbound
@@ -275,7 +262,6 @@ namespace NekoGui {
             QJsonObject outbound;
 
             BuildOutbound(ent, status, outbound, tagOut);
-
 
             // apply custom outbound settings
             MergeJson(QString2QJsonObject(ent->bean->custom_outbound), outbound);
@@ -433,11 +419,12 @@ namespace NekoGui {
         auto tagProxy = BuildChain(status->chainID, status);
         if (!status->result->error.isEmpty()) return;
 
-        // direct & block & dns-out
+        // direct
         status->outbounds += QJsonObject{
             {"type", "direct"},
             {"tag", "direct"},
         };
+        status->result->outboundStats += std::make_shared<NekoGui_traffic::TrafficData>("direct");
         status->outbounds += QJsonObject{
             {"type", "block"},
             {"tag", "block"},
@@ -715,7 +702,7 @@ namespace NekoGui {
         // experimental
         QJsonObject experimentalObj;
         QJsonObject clash_api = {
-            {"default_mode", "Rule"} // dummy to make sure it is created
+            {"default_mode", ""} // dummy to make sure it is created
         };
 
         if (!status->forTest)
