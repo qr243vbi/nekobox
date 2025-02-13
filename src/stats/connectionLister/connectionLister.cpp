@@ -1,5 +1,5 @@
 #include <QThread>
-#include <core/cmd/nekobox_core/server/gen/libcore.pb.h>
+#include <core/server/gen/libcore.pb.h>
 #include <include/api/gRPC.h>
 #include "include/ui/mainwindow_interface.h"
 #include <include/stats/connections/connectionLister.hpp>

@@ -10,8 +10,6 @@ namespace NekoGui {
         QJsonObject coreConfig;
 
         QList<std::shared_ptr<NekoGui_traffic::TrafficData>> outboundStats; // all, but not including "bypass" "block"
-        std::shared_ptr<NekoGui_traffic::TrafficData> outboundStat;         // main
-        QStringList ignoreConnTag;
     };
 
     class BuildTestConfigResult {

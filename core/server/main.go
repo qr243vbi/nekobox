@@ -58,7 +58,7 @@ func RunCore() {
 	)
 	gen.RegisterLibcoreServiceServer(s, &server{})
 
-	log.Printf("Core grpc server listening at %v\n", lis.Addr())
+	fmt.Printf("Core listening at %v\n", lis.Addr())
 	if err := s.Serve(lis); err != nil {
 		log.Fatalf("failed to serve: %v", err)
 	}

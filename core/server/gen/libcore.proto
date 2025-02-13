@@ -58,10 +58,8 @@ message TestResp {
 }
 
 message QueryStatsResp{
-  int64 direct_traffic_up = 1;
-  int64 direct_traffic_down = 2;
-  int64 proxy_traffic_up = 3;
-  int64 proxy_traffic_down = 4;
+  map<string, int64> ups = 1;
+  map<string, int64> downs = 2;
 }
 
 enum UpdateAction {
