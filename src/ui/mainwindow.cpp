@@ -311,22 +311,8 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     trayMenu->addAction(ui->actionRestart_Program);
     trayMenu->addAction(ui->menu_exit);
     tray->show();
-#ifndef Q_OS_WIN
     tray->setContextMenu(trayMenu);
-#else
-    // popup once so that its height is calculated
-    trayMenu->popup(QCursor::pos());
-    trayMenu->hide();
-#endif
     connect(tray, &QSystemTrayIcon::activated, qApp, [=](QSystemTrayIcon::ActivationReason reason) {
-        if (reason == QSystemTrayIcon::Context)
-        {
-#ifdef Q_OS_WIN
-            int mh = trayMenu->geometry().height();
-            auto cPos = QCursor::pos();
-            trayMenu->popup({cPos.x(), cPos.y()-mh});
-#endif
-        }
         if (reason == QSystemTrayIcon::Trigger) {
             if (this->isVisible()) {
                 hide();
