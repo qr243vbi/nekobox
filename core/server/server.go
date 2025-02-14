@@ -189,7 +189,6 @@ func (s *server) QueryStats(ctx context.Context, _ *gen.EmptyReq) (*gen.QuerySta
 				resp.Ups[out.Tag()] = u
 				resp.Downs[out.Tag()] = d
 			}
-			cApi.TrafficManager().ResetStatistic()
 		}
 	}
 
