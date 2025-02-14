@@ -322,6 +322,11 @@ namespace NekoGui_fmt {
             } else {
                 password = url.userName() + ":" + url.password();
             }
+            if (query.hasQueryItem("server_ports"))
+            {
+                serverPorts = query.queryItemValue("server_ports").split("-");
+            }
+            hop_interval = query.queryItemValue("hop_interval");
 
             sni = query.queryItemValue("sni");
         }

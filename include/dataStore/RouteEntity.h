@@ -99,5 +99,7 @@ namespace NekoGui {
         std::shared_ptr<QStringList> get_used_rule_sets();
 
         QStringList get_direct_sites();
+
+        bool hasSniffer();
     };
 } // namespace NekoGui

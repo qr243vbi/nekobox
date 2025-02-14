@@ -35,6 +35,11 @@ namespace NekoGui_fmt {
         qint64 streamReceiveWindow = 0;
         qint64 connectionReceiveWindow = 0;
         bool disableMtuDiscovery = false;
+
+        // Hysteria 2
+        QStringList serverPorts;
+        QString hop_interval;
+
         // TUIC
 
         QString uuid = "";
@@ -73,6 +78,8 @@ namespace NekoGui_fmt {
                     uploadMbps = 0;
                     downloadMbps = 0;
                     _add(new configItem("password", &password, itemType::string));
+                    _add(new configItem("server_ports", &serverPorts, itemType::stringList));
+                    _add(new configItem("hop_interval", &hop_interval, itemType::string));
                 }
             } else if (proxy_type == proxy_TUIC) {
                 _add(new configItem("uuid", &uuid, itemType::string));

@@ -187,7 +187,6 @@ namespace NekoGui_fmt {
             {"server_port", serverPort},
         };
 
-        QJsonObject settings;
         if (proxy_type == proxy_VLESS) {
             if (flow.right(7) == "-udp443") {
                 // 检查末尾是否包含"-udp443"，如果是，则删去
@@ -242,6 +241,12 @@ namespace NekoGui_fmt {
             outbound["password"] = password;
             outbound["up_mbps"] = uploadMbps;
             outbound["down_mbps"] = downloadMbps;
+            if (!serverPorts.empty())
+            {
+                outbound.remove("server_port");
+                outbound["server_ports"] = QListStr2QJsonArray(serverPorts);
+                outbound["hop_interval"] = hop_interval;
+            }
 
             if (!obfsPassword.isEmpty()) {
                 outbound["obfs"] = QJsonObject{
@@ -275,19 +280,21 @@ namespace NekoGui_fmt {
         tun_name = "uwg9";
 #endif
 
-        QJsonObject outbound{
-            {"type", "wireguard"},
-            {"server", serverAddress},
-            {"server_port", serverPort},
-            {"interface_name", tun_name},
-            {"local_address", QListStr2QJsonArray(localAddress)},
-            {"private_key", privateKey},
-            {"peer_public_key", publicKey},
+        QJsonObject peer{
+            {"address", serverAddress},
+            {"port", serverPort},
+            {"public_key", publicKey},
             {"pre_shared_key", preSharedKey},
             {"reserved", QListInt2QJsonArray(reserved)},
+        };
+        QJsonObject outbound{
+            {"type", "wireguard"},
+            {"name", tun_name},
+            {"address", QListStr2QJsonArray(localAddress)},
+            {"private_key", privateKey},
+            {"peers", peer},
             {"mtu", MTU},
-            {"gso", enableGSO},
-            {"system_interface", useSystemInterface},
+            {"system", useSystemInterface},
             {"workers", workerCount}
         };
 
