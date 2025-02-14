@@ -641,16 +641,6 @@ namespace NekoGui {
         return res;
     }
 
-    bool RoutingChain::hasSniffer()
-    {
-        for (const auto& item: Rules)
-        {
-            auto l = item->get_rule_json().keys().length();
-            if (item->action == "sniff" && ((l == 2 && item->sniffOverrideDest) || (l == 1))) return true;
-        }
-        return false;
-    }
-
     RoutingChain::RoutingChain(const RoutingChain& other)  : JsonStore(other) {
         id = other.id;
         name = QString(other.name);
