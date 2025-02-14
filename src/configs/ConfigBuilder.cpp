@@ -365,6 +365,8 @@ namespace NekoGui {
             status->result->error = "Routing profile does not exist, try resetting the route profile in Routing Settings";
             return;
         }
+        // copy for modification
+        routeChain = std::make_shared<RoutingChain>(*routeChain);
 
         // Inbounds
         // mixed-in
@@ -425,12 +427,13 @@ namespace NekoGui {
             auto sniffRule = std::make_shared<RouteRule>();
             sniffRule->action = "sniff";
             sniffRule->inbound = {"dns-in"};
-            routeChain->Rules += sniffRule;
 
             auto redirRule = std::make_shared<RouteRule>();
             redirRule->action = "hijack-dns";
             redirRule->inbound = {"dns-in"};
-            routeChain->Rules += redirRule;
+
+            routeChain->Rules.prepend(redirRule);
+            routeChain->Rules.prepend(sniffRule);
         }
         if (dataStore->enable_redirect && !status->forTest) {
             status->inbounds.prepend(QJsonObject{
@@ -443,7 +446,7 @@ namespace NekoGui {
             sniffRule->action = "sniff";
             sniffRule->sniffOverrideDest = true;
             sniffRule->inbound = {"hijack"};
-            routeChain->Rules += sniffRule;
+            routeChain->Rules.prepend(sniffRule);
         }
 
         // custom inbound
@@ -476,7 +479,7 @@ namespace NekoGui {
             {
                 sniffRule->sniffOverrideDest = true;
             }
-            routeChain->Rules += sniffRule;
+            routeChain->Rules.prepend(sniffRule);
         }
         auto neededOutbounds = routeChain->get_used_outbounds();
         auto neededRuleSets = routeChain->get_used_rule_sets();
