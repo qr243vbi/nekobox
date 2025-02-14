@@ -1434,17 +1434,17 @@ void MainWindow::on_menu_export_config_triggered() {
     QApplication::clipboard()->setText(config_core);
 
     QMessageBox msg(QMessageBox::Information, tr("Config copied"), config_core);
-    msg.addButton("Copy core config", QMessageBox::YesRole);
-    msg.addButton("Copy test config", QMessageBox::YesRole);
+    QPushButton *button_1 = msg.addButton("Copy core config", QMessageBox::YesRole);
+    QPushButton *button_2 = msg.addButton("Copy test config", QMessageBox::YesRole);
     msg.addButton(QMessageBox::Ok);
     msg.setEscapeButton(QMessageBox::Ok);
     msg.setDefaultButton(QMessageBox::Ok);
-    auto ret = msg.exec();
-    if (ret == 0) {
+    msg.exec();
+    if (msg.clickedButton() == button_1) {
         result = BuildConfig(ent, false, false);
         config_core = QJsonObject2QString(result->coreConfig, true);
         QApplication::clipboard()->setText(config_core);
-    } else if (ret == 1) {
+    } else if (msg.clickedButton() == button_2) {
         result = BuildConfig(ent, true, false);
         config_core = QJsonObject2QString(result->coreConfig, true);
         QApplication::clipboard()->setText(config_core);
