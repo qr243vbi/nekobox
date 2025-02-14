@@ -470,7 +470,7 @@ namespace NekoGui {
         }
         if (!status->forTest) routeObj["final"] = dataStore->routing->def_outbound;
 
-        if (dataStore->routing->sniffing_mode != SniffingMode::DISABLE && !routeChain->hasSniffer())
+        if (dataStore->routing->sniffing_mode != SniffingMode::DISABLE)
         {
             auto sniffRule = std::make_shared<RouteRule>();
             sniffRule->action = "sniff";
