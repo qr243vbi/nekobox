@@ -69,21 +69,13 @@ namespace NekoGui {
     std::shared_ptr<BuildTestConfigResult> BuildTestConfig(QList<std::shared_ptr<ProxyEntity>> profiles) {
         auto results = std::make_shared<BuildTestConfigResult>();
 
-        auto idx = 1;
         QJsonArray outboundArray = {
             QJsonObject{
                 {"type", "direct"},
                 {"tag", "direct"}
-            },
-            QJsonObject{
-                {"type", "block"},
-                {"tag", "block"}
-            },
-            QJsonObject{
-                {"type", "dns"},
-                {"tag", "dns-out"}
             }
         };
+        QJsonArray endpointArray = {};
         int index = 0;
 
         QJsonArray directDomainArray;
@@ -129,7 +121,13 @@ namespace NekoGui {
                     QString tag = "proxy";
                     if (index > 1) tag += Int2String(index);
                     outbound.insert("tag", tag);
-                    outboundArray.append(outbound);
+                    if (outbound["type"] == "wireguard")
+                    {
+                        endpointArray.append(outbound);
+                    } else
+                    {
+                        outboundArray.append(outbound);
+                    }
                     results->outboundTags << tag;
                     results->tag2entID.insert(tag, item->id);
                     continue;
@@ -139,11 +137,13 @@ namespace NekoGui {
         }
 
         results->coreConfig["outbounds"] = outboundArray;
+        results->coreConfig["endpoints"] = endpointArray;
         auto dnsObj = results->coreConfig["dns"].toObject();
         auto dnsRulesObj = QJsonArray();
         if (!directDomainArray.empty()) {
             dnsRulesObj += QJsonObject{
                 {"domain", directDomainArray},
+                {"action", "route"},
                 {"server", "dns-direct"}
             };
         }
@@ -226,20 +226,10 @@ namespace NekoGui {
                                const std::shared_ptr<BuildConfigStatus> &status) {
         QString chainTag = "c-" + Int2String(chainId);
         QString chainTagOut;
-
-        QString pastTag;
-        int pastExternalStat = 0;
         int index = 0;
 
         for (const auto &ent: ents) {
-            // tagOut: v2ray outbound tag for a profile
-            // profile2 (in) (global)   tag g-(id)
-            // profile1                 tag (chainTag)-(id)
-            // profile0 (out)           tag (chainTag)-(id) / single: chainTag=g-(id)
             auto tagOut = chainTag + "-" + Int2String(ent->id) + "-" + Int2String(index);
-
-            // first profile set as global
-            auto isFirstProfile = index == ents.length() - 1;
 
             // last profile set as "proxy"
             if (index == 0) {
@@ -279,8 +269,13 @@ namespace NekoGui {
                 status->domainListDNSDirect += serverAddress;
             }
 
-            status->outbounds += outbound;
-            pastTag = tagOut;
+            if (ent->type == "wireguard")
+            {
+                status->endpoints += outbound;
+            } else
+            {
+                status->outbounds += outbound;
+            }
             index++;
         }
 
@@ -289,7 +284,7 @@ namespace NekoGui {
 
     void BuildOutbound(const std::shared_ptr<ProxyEntity> &ent, const std::shared_ptr<BuildConfigStatus> &status, QJsonObject& outbound, const QString& tag) {
         if (ent->type == "wireguard") {
-            if (ent->WireguardBean()->useSystemInterface && !NekoGui::IsAdmin()) {
+            if (ent->WireguardBean()->useSystemInterface && !IsAdmin()) {
                 MW_dialog_message("configBuilder" ,"NeedAdmin");
                 status->result->error = "using wireguard system interface requires elevated permissions";
                 return;
@@ -364,8 +359,14 @@ namespace NekoGui {
     // SingBox
 
     void BuildConfigSingBox(const std::shared_ptr<BuildConfigStatus> &status) {
-        // Inbounds
+        // Prefetch
+        auto routeChain = profileManager->GetRouteChain(dataStore->routing->current_route_id);
+        if (routeChain == nullptr) {
+            status->result->error = "Routing profile does not exist, try resetting the route profile in Routing Settings";
+            return;
+        }
 
+        // Inbounds
         // mixed-in
         if (IsValidPort(dataStore->inbound_socks_port) && !status->forTest) {
             QJsonObject inboundObj;
@@ -373,10 +374,6 @@ namespace NekoGui {
             inboundObj["type"] = "mixed";
             inboundObj["listen"] = dataStore->inbound_address;
             inboundObj["listen_port"] = dataStore->inbound_socks_port;
-            if (dataStore->routing->sniffing_mode != SniffingMode::DISABLE) {
-                inboundObj["sniff"] = true;
-                inboundObj["sniff_override_destination"] = dataStore->routing->sniffing_mode == SniffingMode::FOR_DESTINATION;
-            }
             inboundObj["domain_strategy"] = dataStore->routing->domain_strategy;
             status->inbounds += inboundObj;
         }
@@ -397,10 +394,6 @@ namespace NekoGui {
             auto tunAddress = QJsonArray{"172.19.0.1/24"};
             if (dataStore->vpn_ipv6) tunAddress += "fdfe:dcba:9876::1/96";
             inboundObj["address"] = tunAddress;
-            if (dataStore->routing->sniffing_mode != SniffingMode::DISABLE) {
-                inboundObj["sniff"] = true;
-                inboundObj["sniff_override_destination"] = dataStore->routing->sniffing_mode == SniffingMode::FOR_DESTINATION;
-            }
             inboundObj["domain_strategy"] = dataStore->routing->domain_strategy;
             status->inbounds += inboundObj;
         }
@@ -425,24 +418,32 @@ namespace NekoGui {
             {"tag", "direct"},
         };
         status->result->outboundStats += std::make_shared<NekoGui_traffic::TrafficData>("direct");
-        status->outbounds += QJsonObject{
-            {"type", "block"},
-            {"tag", "block"},
-        };
-        status->outbounds += QJsonObject{
-            {"type", "dns"},
-            {"tag", "dns-out"},
-        };
 
+        // Hijack
+        if (dataStore->enable_dns_server && !status->forTest)
+        {
+            auto sniffRule = std::make_shared<RouteRule>();
+            sniffRule->action = "sniff";
+            sniffRule->inbound = {"dns-in"};
+            routeChain->Rules += sniffRule;
+
+            auto redirRule = std::make_shared<RouteRule>();
+            redirRule->action = "hijack-dns";
+            redirRule->inbound = {"dns-in"};
+            routeChain->Rules += redirRule;
+        }
         if (dataStore->enable_redirect && !status->forTest) {
             status->inbounds.prepend(QJsonObject{
                 {"tag", "hijack"},
                 {"type", "direct"},
                 {"listen", dataStore->redirect_listen_address},
                 {"listen_port", dataStore->redirect_listen_port},
-                {"sniff", true},
-                {"sniff_override_destination", true},
             });
+            auto sniffRule = std::make_shared<RouteRule>();
+            sniffRule->action = "sniff";
+            sniffRule->sniffOverrideDest = true;
+            sniffRule->inbound = {"hijack"};
+            routeChain->Rules += sniffRule;
         }
 
         // custom inbound
@@ -466,22 +467,26 @@ namespace NekoGui {
         }
         if (!status->forTest) routeObj["final"] = dataStore->routing->def_outbound;
 
-        auto routeChain = NekoGui::profileManager->GetRouteChain(NekoGui::dataStore->routing->current_route_id);
-        if (routeChain == nullptr) {
-            status->result->error = "Routing profile does not exist, try resetting the route profile in Routing Settings";
-            return;
+        if (dataStore->routing->sniffing_mode != SniffingMode::DISABLE && !routeChain->hasSniffer())
+        {
+            auto sniffRule = std::make_shared<RouteRule>();
+            sniffRule->action = "sniff";
+            sniffRule->inbound = {"mixed-in", "tun-in"};
+            if (dataStore->routing->sniffing_mode == SniffingMode::FOR_DESTINATION)
+            {
+                sniffRule->sniffOverrideDest = true;
+            }
+            routeChain->Rules += sniffRule;
         }
         auto neededOutbounds = routeChain->get_used_outbounds();
         auto neededRuleSets = routeChain->get_used_rule_sets();
         std::map<int, QString> outboundMap;
         outboundMap[-1] = "proxy";
         outboundMap[-2] = "direct";
-        outboundMap[-3] = "block";
-        outboundMap[-4] = "dns-out";
         int suffix = 0;
         for (const auto &item: *neededOutbounds) {
             if (item < 0) continue;
-            auto neededEnt = NekoGui::profileManager->GetProfile(item);
+            auto neededEnt = profileManager->GetProfile(item);
             if (neededEnt == nullptr) {
                 status->result->error = "The routing profile is referencing outbounds that no longer exists, consider revising your settings";
                 return;
@@ -489,7 +494,13 @@ namespace NekoGui {
             QJsonObject currOutbound;
             QString tag = "rout-" + Int2String(suffix++);
             BuildOutbound(neededEnt, status, currOutbound, tag);
-            status->outbounds += currOutbound;
+            if (neededEnt->type == "wireguard")
+            {
+                status->endpoints += currOutbound;
+            } else
+            {
+                status->outbounds += currOutbound;
+            }
             outboundMap[item] = tag;
 
             // add to dns direct resolve
@@ -498,12 +509,9 @@ namespace NekoGui {
             }
         }
         auto routeRules = routeChain->get_route_rules(false, outboundMap);
-        if (dataStore->enable_dns_server) routeRules.prepend(QJsonObject{
-            {"inbound", "dns-in"},
-            {"outbound", "dns-out"}
-        });
         routeObj["rules"] = routeRules;
 
+        // DNS hijack deps
         bool needHijackRules = false;
         QJsonArray hijackDomains;
         QJsonArray hijackDomainSuffix;
@@ -601,7 +609,6 @@ namespace NekoGui {
                 {"type", "direct"},
                 {"listen", dataStore->dns_server_listen_addr},
                 {"listen_port", dataStore->dns_server_listen_port},
-                {"sniff", true},
             });
         }
 
@@ -670,6 +677,7 @@ namespace NekoGui {
                 {"domain_suffix", directDnsSuffixes},
                 {"domain_keyword", directDnsKeywords},
                 {"domain_regex", directDnsRegexes},
+                {"action", "route"},
                 {"server", "dns-direct"},
             };
         }
@@ -681,6 +689,7 @@ namespace NekoGui {
                     {"domain", hijackDomains},
                     {"domain_suffix", hijackDomainSuffix},
                     {"domain_regex", hijackDomainRegex},
+                       {"action", "route"},
                     {"server", "dns-hijack"},
             };
         }
@@ -724,6 +733,7 @@ namespace NekoGui {
         status->result->coreConfig.insert("dns", dns);
         status->result->coreConfig.insert("inbounds", status->inbounds);
         status->result->coreConfig.insert("outbounds", status->outbounds);
+        status->result->coreConfig.insert("endpoints", status->endpoints);
         status->result->coreConfig.insert("route", routeObj);
         if (!experimentalObj.isEmpty()) status->result->coreConfig.insert("experimental", experimentalObj);
     }
