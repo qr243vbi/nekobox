@@ -47,6 +47,12 @@ private:
 
     std::map<int,int> outboundMap;
 
+    AutoCompleteTextEdit* simpleDirect;
+
+    AutoCompleteTextEdit* simpleBlock;
+
+    AutoCompleteTextEdit* simpleProxy;
+
     [[nodiscard]] int getIndexOf(const QString& name) const;
 
     void showSelectItem(const QStringList& items, const QString& currentItem);
