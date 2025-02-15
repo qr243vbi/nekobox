@@ -432,6 +432,16 @@ namespace NekoGui {
         _add(new configItem("rule_set", &rule_set, itemType::stringList));
         _add(new configItem("invert", &invert, itemType::boolean));
         _add(new configItem("outboundID", &outboundID, itemType::integer));
+        _add(new configItem("actionType", &action, itemType::string));
+        _add(new configItem("rejectMethod", &rejectMethod, itemType::string));
+        _add(new configItem("noDrop", &no_drop, itemType::boolean));
+        _add(new configItem("override_address", &override_address, itemType::string));
+        _add(new configItem("override_port", &override_port, itemType::integer));
+        _add(new configItem("sniffers", &sniffers, itemType::stringList));
+        _add(new configItem("sniffOverrideDest", &sniffOverrideDest, itemType::boolean));
+        _add(new configItem("strategy", &strategy, itemType::string));
+        _add(new configItem("type", &type, itemType::integer));
+        _add(new configItem("simple_action", &simpleAction, itemType::integer));
     }
 
     RoutingChain::RoutingChain() {

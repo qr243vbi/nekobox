@@ -121,6 +121,66 @@ RouteItem::RouteItem(QWidget *parent, const std::shared_ptr<NekoGui::RoutingChai
     ui->rule_preview->setReadOnly(true);
     updateRuleSection();
 
+    // simple rules setup
+    QStringList ruleItems = {"domain:", "suffix:", "regex:", "keyword:", "ip:"};
+    for (const auto& geoIP : geoIpList) {
+        ruleItems.append("ruleset:"+geoIP);
+    }
+    for (const auto& geoSite: geoSiteList) {
+        ruleItems.append("ruleset:"+geoSite);
+    }
+    simpleDirect = new AutoCompleteTextEdit("", ruleItems, this);
+    simpleBlock = new AutoCompleteTextEdit("", ruleItems, this);
+    simpleProxy = new AutoCompleteTextEdit("", ruleItems, this);
+
+    ui->simple_direct_box->layout()->replaceWidget(ui->simple_direct, simpleDirect);
+    ui->simple_block_box->layout()->replaceWidget(ui->simple_block, simpleBlock);
+    ui->simple_proxy_box->layout()->replaceWidget(ui->simple_proxy, simpleProxy);
+    ui->simple_direct->hide();
+    ui->simple_block->hide();
+    ui->simple_proxy->hide();
+
+    simpleDirect->setPlainText(chain->GetSimpleRules(NekoGui::direct));
+    simpleBlock->setPlainText(chain->GetSimpleRules(NekoGui::block));
+    simpleProxy->setPlainText(chain->GetSimpleRules(NekoGui::proxy));
+
+    connect(ui->tabWidget->tabBar(), &QTabBar::currentChanged, this, [=]()
+    {
+        if (ui->tabWidget->tabBar()->currentIndex() == 1)
+        {
+            QString res;
+            res += chain->UpdateSimpleRules(simpleDirect->toPlainText(), NekoGui::direct);
+            res += chain->UpdateSimpleRules(simpleBlock->toPlainText(), NekoGui::block);
+            res += chain->UpdateSimpleRules(simpleProxy->toPlainText(), NekoGui::proxy);
+            if (!res.isEmpty())
+            {
+                runOnUiThread([=]
+                {
+                    MessageBoxWarning("Invalid rules", "Some rules could not be added:\n" + res);
+                });
+            }
+            currentIndex  = -1;
+            updateRouteItemsView();
+            updateRuleSection();
+        } else
+        {
+            // reload
+            updateRouteItemsView();
+            updateRuleSection();
+            simpleDirect->setPlainText(chain->GetSimpleRules(NekoGui::direct));
+            simpleBlock->setPlainText(chain->GetSimpleRules(NekoGui::block));
+            simpleProxy->setPlainText(chain->GetSimpleRules(NekoGui::proxy));
+        }
+    });
+
+    connect(ui->howtouse_button, &QPushButton::clicked, this, [=]()
+    {
+        runOnUiThread([=]
+        {
+            MessageBoxInfo("Simple rule manual", NekoGui::Information::SimpleRuleInfo);
+        });
+    });
+
     connect(ui->route_import_json, &QPushButton::clicked, this, [=] {
         auto w = new QDialog(this);
         w->setWindowTitle("Import JSON Array");
@@ -249,6 +309,19 @@ void RouteItem::accept() {
 
     if (chain->Rules.empty()) {
         MessageBoxInfo("Empty Route Profile", "No valid rules are in the profile");
+        return;
+    }
+
+    QString res;
+    res += chain->UpdateSimpleRules(simpleDirect->toPlainText(), NekoGui::direct);
+    res += chain->UpdateSimpleRules(simpleBlock->toPlainText(), NekoGui::block);
+    res += chain->UpdateSimpleRules(simpleProxy->toPlainText(), NekoGui::proxy);
+    if (!res.isEmpty())
+    {
+        runOnUiThread([=]
+        {
+            MessageBoxWarning("Invalid rules", "Some rules could not be added, fix them before saving:\n" + res);
+        });
         return;
     }
 

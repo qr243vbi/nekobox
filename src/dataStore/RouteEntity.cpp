@@ -86,6 +86,8 @@ namespace NekoGui {
         _add(new configItem("sniffers", &sniffers, itemType::stringList));
         _add(new configItem("sniffOverrideDest", &sniffOverrideDest, itemType::boolean));
         _add(new configItem("strategy", &strategy, itemType::string));
+        _add(new configItem("type", &type, itemType::integer));
+        _add(new configItem("simple_action", &simpleAction, itemType::integer));
     }
 
     QJsonObject RouteRule::get_rule_json(bool forView, const QString& outboundTag) {
@@ -639,6 +641,101 @@ namespace NekoGui {
             }
         }
         return res;
+    }
+
+    QString RoutingChain::GetSimpleRules(simpleAction action)
+    {
+        QString res;
+        for (const auto& item: Rules)
+        {
+            if (item->type == simpleAddress && item->simpleAction == action)
+            {
+                for (const auto& domain : item->domain) res += QString("domain:" + domain + "\n");
+                for (const auto& domain_suffix : item->domain_suffix) res += QString("suffix:" + domain_suffix + "\n");
+                for (const auto& domain_keyword : item->domain_keyword) res += QString("keyword:" + domain_keyword + "\n");
+                for (const auto& domain_regex : item->domain_regex) res += QString("regex:" + domain_regex + "\n");
+                for (const auto& rule_set : item->rule_set) res += QString("ruleset:" + rule_set + "\n");
+                for (const auto& ip_cidr : item->ip_cidr) res += QString("ip:" + ip_cidr + "\n");
+                break;
+            }
+        }
+        return res;
+    }
+
+
+    QString RoutingChain::UpdateSimpleRules(const QString& content, simpleAction action)
+    {
+        QString res;
+        auto items = content.split("\n");
+
+        for (int idx=0;idx<Rules.length();idx++)
+        {
+            auto route_rule = Rules[idx];
+            if (route_rule->type == simpleAddress && route_rule->simpleAction == action)
+            {
+                Rules.removeAt(idx);
+                break;
+            }
+        }
+        auto rule = std::make_shared<RouteRule>();
+        rule->name = "Simple Rule: " + action;
+        rule->type = simpleAddress;
+        rule->simpleAction = action;
+        if (action == block)
+        {
+            rule->action = "reject";
+        } else if (action == direct)
+        {
+            rule->action = "route";
+            rule->outboundID = -2;
+        } else if (action == proxy)
+        {
+            rule->action = "route";
+            rule->outboundID = -1;
+        }
+        auto ruleEmpty = true;
+        for (auto item : items)
+        {
+            item = item.trimmed();
+            if (item.isEmpty()) continue;
+            if (!add_simple_rule(item, rule))
+            {
+                res += "could not add: " + item + "\n";
+                continue;
+            }
+            ruleEmpty = false;
+        }
+        if (!ruleEmpty) Rules.append(rule);
+        return res;
+    }
+
+    bool RoutingChain::add_simple_rule(const QString& content, const std::shared_ptr<RouteRule>& rule)
+    {
+        auto sp = content.split(":");
+        if (sp.size() != 2) return false;
+        const QString& address = sp[1];
+        const QString& subType = sp[0];
+        if (subType == "domain") {
+            if (!rule->domain.contains(address)) rule->domain.append(address);
+            return true;
+        } else if (subType == "suffix") {
+            if (!rule->domain_suffix.contains(address)) rule->domain_suffix.append(address);
+            return true;
+        } else if (subType == "keyword") {
+            if (!rule->domain_keyword.contains(address)) rule->domain_keyword.append(address);
+            return true;
+        } else if (subType == "regex") {
+            if (!rule->domain_regex.contains(address)) rule->domain_regex.append(address);
+            return true;
+        } else if (subType == "ruleset") {
+            if (!rule->rule_set.contains(address)) rule->rule_set.append(address);
+            return true;
+        } else if (subType == "ip") {
+            if (!rule->ip_cidr.contains(address)) rule->ip_cidr.append(address);
+            return true;
+        } else {
+            return false;
+        }
     }
 
     RoutingChain::RoutingChain(const RoutingChain& other)  : JsonStore(other) {

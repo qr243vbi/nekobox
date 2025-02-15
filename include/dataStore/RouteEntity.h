@@ -8,6 +8,15 @@ namespace NekoGui {
     enum inputType {trufalse, select, text};
     const int IranBypassChainID = 111111111;
     const int ChinaBypassChainID = 222222222;
+    enum ruleType {custom, simpleAddress};
+    enum simpleAction{direct, block, proxy};
+    inline QString simpleActionToString(simpleAction action)
+    {
+        if (action == direct) return {"direct"};
+        if (action == block) return {"block"};
+        if (action == proxy) return {"proxy"};
+        return {"invalid"};
+    }
 
     class RouteRule : public JsonStore {
     public:
@@ -16,6 +25,8 @@ namespace NekoGui {
         RouteRule(const RouteRule& other);
 
         QString name = "";
+        int type = custom;
+        int simpleAction;
         QString ip_version;
         QString network;
         QString protocol;
@@ -99,5 +110,11 @@ namespace NekoGui {
         std::shared_ptr<QStringList> get_used_rule_sets();
 
         QStringList get_direct_sites();
+
+        QString GetSimpleRules(simpleAction action);
+
+        QString UpdateSimpleRules(const QString& content, simpleAction action);
+    private:
+        static bool add_simple_rule(const QString& content, const std::shared_ptr<RouteRule>& rule);
     };
 } // namespace NekoGui
