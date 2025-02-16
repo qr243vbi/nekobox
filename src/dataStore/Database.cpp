@@ -95,9 +95,9 @@ namespace NekoGui {
             NekoGui::profileManager->AddGroup(defaultGroup);
         }
 
-        if (routes.count(0) == 0) {
-            auto defaultRoute = NekoGui::RoutingChain::GetDefaultChain();
-            NekoGui::profileManager->AddRouteChain(defaultRoute);
+        if (routes.empty()) {
+            auto defaultRoute = RoutingChain::GetDefaultChain();
+            profileManager->AddRouteChain(defaultRoute);
         }
 
         // Add default route chains
