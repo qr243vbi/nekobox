@@ -144,6 +144,13 @@ RouteItem::RouteItem(QWidget *parent, const std::shared_ptr<NekoGui::RoutingChai
     simpleBlock->setPlainText(chain->GetSimpleRules(NekoGui::block));
     simpleProxy->setPlainText(chain->GetSimpleRules(NekoGui::proxy));
 
+    if (chain->isViewOnly())
+    {
+        ui->simple_direct_box->setEnabled(false);
+        ui->simple_block_box->setEnabled(false);
+        ui->simple_proxy_box->setEnabled(false);
+    }
+
     connect(ui->tabWidget->tabBar(), &QTabBar::currentChanged, this, [=]()
     {
         if (ui->tabWidget->tabBar()->currentIndex() == 1)
