@@ -678,7 +678,7 @@ namespace NekoGui {
             }
         }
         auto rule = std::make_shared<RouteRule>();
-        rule->name = "Simple Rule: " + action;
+        rule->name = "Simple Rule: " + simpleActionToString(action);
         rule->type = simpleAddress;
         rule->simpleAction = action;
         if (action == block)
