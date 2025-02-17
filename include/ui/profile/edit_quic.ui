@@ -82,13 +82,6 @@
        </property>
       </widget>
      </item>
-     <item row="3" column="0">
-      <widget class="QCheckBox" name="forceExternal">
-       <property name="text">
-        <string>Force use external core</string>
-       </property>
-      </widget>
-     </item>
      <item row="1" column="1">
       <layout class="QHBoxLayout" name="udpRelayModeLay">
        <item>
@@ -148,58 +141,59 @@
    </item>
    <item>
     <layout class="QGridLayout" name="obfuscation">
-     <item row="1" column="0">
+     <item row="0" column="1">
+      <widget class="QLineEdit" name="port_range">
+       <property name="toolTip">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Comma seperated ranges: 100-200,500-600&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="0">
       <widget class="QLabel" name="obfsPassword_l">
        <property name="text">
         <string>Obfs Password</string>
        </property>
       </widget>
      </item>
-     <item row="0" column="0">
-      <widget class="QLabel" name="hyProtocol_l">
+     <item row="0" column="2">
+      <layout class="QHBoxLayout" name="horizontalLayout_2"/>
+     </item>
+     <item row="2" column="0">
+      <widget class="QCheckBox" name="disableMtuDiscovery">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
        <property name="text">
-        <string>Protocol</string>
+        <string>Disable MTU Discovery</string>
        </property>
       </widget>
      </item>
-     <item row="0" column="1">
-      <layout class="QHBoxLayout" name="horizontalLayout_2">
-       <item>
-        <widget class="QComboBox" name="hyProtocol">
-         <item>
-          <property name="text">
-           <string notr="true">QUIC</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string notr="true">FakeTCP</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string notr="true">wechat-video</string>
-          </property>
-         </item>
-        </widget>
-       </item>
-       <item>
-        <widget class="QCheckBox" name="disableMtuDiscovery">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="text">
-          <string>Disable MTU Discovery</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
+     <item row="0" column="0">
+      <widget class="QLabel" name="port_range_l">
+       <property name="text">
+        <string>Port range</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="1">
+      <widget class="MyLineEdit" name="obfsPassword"/>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="hop_interval_l">
+       <property name="text">
+        <string>Hop Interval</string>
+       </property>
+      </widget>
      </item>
      <item row="1" column="1">
-      <widget class="MyLineEdit" name="obfsPassword"/>
+      <widget class="QLineEdit" name="hop_interval">
+       <property name="toolTip">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;100ms&lt;br/&gt;1s&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
      </item>
     </layout>
    </item>
@@ -396,11 +390,7 @@
   <tabstop>udpRelayMode</tabstop>
   <tabstop>heartbeat</tabstop>
   <tabstop>zeroRttHandshake</tabstop>
-  <tabstop>forceExternal</tabstop>
   <tabstop>uos</tabstop>
-  <tabstop>hyProtocol</tabstop>
-  <tabstop>disableMtuDiscovery</tabstop>
-  <tabstop>obfsPassword</tabstop>
   <tabstop>authPayloadType</tabstop>
   <tabstop>authPayload</tabstop>
   <tabstop>uuid</tabstop>
