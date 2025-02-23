@@ -428,7 +428,7 @@ namespace NekoGui {
         _add(new configItem("port_range", &port_range, itemType::stringList));
         _add(new configItem("process_name", &process_name, itemType::stringList));
         _add(new configItem("process_path", &process_path, itemType::stringList));
-        _add(new configItem("process_path_regex", &process_path, itemType::stringList));
+        _add(new configItem("process_path_regex", &process_path_regex, itemType::stringList));
         _add(new configItem("rule_set", &rule_set, itemType::stringList));
         _add(new configItem("invert", &invert, itemType::boolean));
         _add(new configItem("outboundID", &outboundID, itemType::integer));
