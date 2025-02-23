@@ -123,6 +123,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     ui->toolButton_program->setMenu(ui->menu_program);
     ui->toolButton_preferences->setMenu(ui->menu_preferences);
     ui->toolButton_server->setMenu(ui->menu_server);
+    ui->toolButton_routing->setMenu(ui->menuRouting_Menu);
     ui->menubar->setVisible(false);
     connect(ui->toolButton_update, &QToolButton::clicked, this, [=] { runOnNewThread([=] { CheckUpdate(); }); });
 
@@ -379,6 +380,27 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
         } else {
             speedtestRunning.unlock();
             ui->menu_server->removeAction(ui->menu_stop_testing);
+        }
+    });
+    connect(ui->menuRouting_Menu, &QMenu::aboutToShow, this, [=]()
+    {
+        ui->menuRouting_Menu->clear();
+        ui->menuRouting_Menu->addAction(ui->menu_routing_settings);
+        ui->menuRouting_Menu->addSeparator();
+        for (const auto& route : NekoGui::profileManager->routes)
+        {
+            auto* action = new QAction(ui->menuRouting_Menu);
+            action->setText(route.second->name);
+            action->setData(route.second->id);
+            action->setCheckable(true);
+            action->setChecked(NekoGui::dataStore->routing->current_route_id == route.first);
+            connect(action, &QAction::triggered, this, [=]()
+            {
+                if (NekoGui::dataStore->routing->current_route_id == route.first) return;
+                NekoGui::dataStore->routing->current_route_id = action->data().toInt();
+                if (NekoGui::dataStore->started_id >= 0) neko_start(NekoGui::dataStore->started_id);
+            });
+            ui->menuRouting_Menu->addAction(action);
         }
     });
     connect(ui->actionUrl_Test_Selected, &QAction::triggered, this, [=]() {

@@ -26,7 +26,7 @@
       <item>
        <widget class="QToolButton" name="toolButton_program">
         <property name="text">
-         <string>Program</string>
+         <string>Application</string>
         </property>
         <property name="icon">
          <iconset theme="b-system-run"/>
@@ -48,7 +48,7 @@
       <item>
        <widget class="QToolButton" name="toolButton_preferences">
         <property name="text">
-         <string>Preferences</string>
+         <string>Settings</string>
         </property>
         <property name="icon">
          <iconset theme="b-preferences"/>
@@ -70,10 +70,32 @@
       <item>
        <widget class="QToolButton" name="toolButton_server">
         <property name="text">
-         <string>Server</string>
+         <string>Profiles</string>
         </property>
         <property name="icon">
          <iconset theme="b-network-server"/>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>24</width>
+          <height>24</height>
+         </size>
+        </property>
+        <property name="popupMode">
+         <enum>QToolButton::ToolButtonPopupMode::InstantPopup</enum>
+        </property>
+        <property name="toolButtonStyle">
+         <enum>Qt::ToolButtonStyle::ToolButtonTextUnderIcon</enum>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QToolButton" name="toolButton_routing">
+        <property name="text">
+         <string>Routing</string>
+        </property>
+        <property name="icon">
+         <iconset theme="b-network-routing"/>
         </property>
         <property name="iconSize">
          <size>
@@ -498,7 +520,6 @@
      <addaction name="menu_spmode_vpn"/>
      <addaction name="menu_spmode_disabled"/>
     </widget>
-    <addaction name="actionShow_window"/>
     <addaction name="menu_add_from_clipboard2"/>
     <addaction name="menu_scan_qr"/>
     <addaction name="separator"/>
@@ -563,10 +584,16 @@
     <addaction name="menu_clear_test_result"/>
     <addaction name="menu_delete_repeat"/>
    </widget>
+   <widget class="QMenu" name="menuRouting_Menu">
+    <property name="title">
+     <string>Routing Menu</string>
+    </property>
+   </widget>
    <addaction name="menu_program"/>
    <addaction name="menu_preferences"/>
    <addaction name="menu_server"/>
    <addaction name="menuHidden_menu"/>
+   <addaction name="menuRouting_Menu"/>
   </widget>
   <action name="menu_exit">
    <property name="text">
@@ -941,6 +968,11 @@
    </property>
    <property name="menuRole">
     <enum>QAction::MenuRole::TextHeuristicRole</enum>
+   </property>
+  </action>
+  <action name="menu_open_routing_manager">
+   <property name="text">
+    <string>Open Manager</string>
    </property>
   </action>
  </widget>
