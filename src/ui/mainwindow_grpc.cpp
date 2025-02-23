@@ -350,7 +350,7 @@ void MainWindow::neko_set_spmode_system_proxy(bool enable, bool save) {
     if (enable != NekoGui::dataStore->spmode_system_proxy) {
         if (enable) {
             auto socks_port = NekoGui::dataStore->inbound_socks_port;
-            SetSystemProxy(socks_port, socks_port);
+            SetSystemProxy(socks_port, socks_port, NekoGui::dataStore->proxy_scheme);
         } else {
             ClearSystemProxy();
         }

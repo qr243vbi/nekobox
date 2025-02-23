@@ -37,6 +37,10 @@ DialogBasicSettings::DialogBasicSettings(QWidget *parent)
         C_EDIT_JSON_ALLOW_EMPTY(custom_inbound)
     });
 
+#ifndef Q_OS_WIN
+    ui->proxy_scheme_box->hide();
+#endif
+
     // Style
     ui->connection_statistics->setChecked(NekoGui::dataStore->enable_stats);
     //
@@ -172,6 +176,7 @@ void DialogBasicSettings::accept() {
     D_SAVE_INT(inbound_socks_port)
     D_SAVE_INT(test_concurrent)
     D_SAVE_STRING(test_latency_url)
+    NekoGui::dataStore->proxy_scheme = ui->proxy_scheme->currentText().toLower();
 
     // Style
 
