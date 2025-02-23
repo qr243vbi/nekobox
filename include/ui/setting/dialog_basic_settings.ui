@@ -95,6 +95,36 @@
         </layout>
        </item>
        <item>
+        <widget class="QGroupBox" name="proxy_scheme_box">
+         <property name="title">
+          <string/>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_7">
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_10">
+            <property name="text">
+             <string>Proxy Format</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QComboBox" name="proxy_scheme">
+            <item>
+             <property name="text">
+              <string>Http</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Socks</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
         <layout class="QHBoxLayout" name="hlayout_l2">
          <item>
           <widget class="QGroupBox" name="groupbox_custom_inbound">
@@ -390,7 +420,7 @@
                </sizepolicy>
               </property>
               <property name="text">
-               <string notr="true">Language</string>
+               <string>Language</string>
               </property>
              </widget>
             </item>

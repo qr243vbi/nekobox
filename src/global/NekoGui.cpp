@@ -311,6 +311,7 @@ namespace NekoGui {
         _add(new configItem("windows_set_admin", &windows_set_admin, itemType::boolean));
         _add(new configItem("enable_stats", &enable_stats, itemType::boolean));
         _add(new configItem("stats_tab", &stats_tab, itemType::string));
+        _add(new configItem("proxy_scheme", &proxy_scheme, itemType::string));
     }
 
     void DataStore::UpdateStartedId(int id) {

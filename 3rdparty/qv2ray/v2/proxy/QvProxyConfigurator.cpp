@@ -225,7 +225,7 @@ namespace Qv2ray::components::proxy {
     }
 #endif
 
-    void SetSystemProxy(int httpPort, int socksPort) {
+    void SetSystemProxy(int httpPort, int socksPort, QString scheme) {
         const QString &address = "127.0.0.1";
         bool hasHTTP = (httpPort > 0 && httpPort < 65536);
         bool hasSOCKS = (socksPort > 0 && socksPort < 65536);
@@ -253,8 +253,11 @@ namespace Qv2ray::components::proxy {
 #endif
 
 #ifdef Q_OS_WIN
-        QString str = "http://{ip}:{socks_port}";
-        str = str.replace("{ip}", address)
+        if (scheme == "http") scheme = "http://";
+        else if (scheme == "socks") scheme = "socks=";
+        QString str = "{scheme}{ip}:{socks_port}";
+        str = str.replace("{scheme}", scheme)
+                  .replace("{ip}", address)
                   .replace("{socks_port}", Int2String(socksPort));
         //
         LOG("Windows proxy string: " + str);

@@ -53,6 +53,7 @@ namespace NekoGui {
         bool need_keep_vpn_off = false;
         QString appdataDir = "";
         QStringList ignoreConnTag = {};
+        QString proxy_scheme = "http";
 
         std::unique_ptr<Routing> routing;
         int imported_count = 0;
