@@ -244,7 +244,12 @@ namespace NekoGui_fmt {
             if (!serverPorts.empty())
             {
                 outbound.remove("server_port");
-                outbound["server_ports"] = QListStr2QJsonArray(serverPorts);
+                QStringList portRanges;
+                for (auto range : serverPorts)
+                {
+                    portRanges.append(range.replace("-", ":"));
+                }
+                outbound["server_ports"] = QListStr2QJsonArray(portRanges);
                 outbound["hop_interval"] = hop_interval;
             }
 
