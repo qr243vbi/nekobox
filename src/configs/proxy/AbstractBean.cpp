@@ -44,10 +44,6 @@ namespace NekoGui_fmt {
         return QString("[%1] %2").arg(DisplayType(), DisplayName());
     }
 
-    bool AbstractBean::IsValid() {
-        return true;
-    }
-
     void AbstractBean::ResolveDomainToIP(const std::function<void()> &onFinished) {
         bool noResolve = false;
         if (dynamic_cast<ChainBean *>(this) != nullptr) noResolve = true;

@@ -1646,7 +1646,7 @@ void MainWindow::on_menu_remove_invalid_triggered() {
     auto currentGroup = NekoGui::profileManager->GetGroup(NekoGui::dataStore->current_group);
     if (currentGroup == nullptr) return;
     for (const auto &profile : currentGroup->Profiles()) {
-        if (!profile->bean->IsValid()) out_del += profile;
+        if (!IsValid(profile)) out_del += profile;
     }
 
     int remove_display_count = 0;

@@ -23,6 +23,7 @@ const (
 	LibcoreService_Update_FullMethodName              = "/libcore.LibcoreService/Update"
 	LibcoreService_Start_FullMethodName               = "/libcore.LibcoreService/Start"
 	LibcoreService_Stop_FullMethodName                = "/libcore.LibcoreService/Stop"
+	LibcoreService_CheckConfig_FullMethodName         = "/libcore.LibcoreService/CheckConfig"
 	LibcoreService_Test_FullMethodName                = "/libcore.LibcoreService/Test"
 	LibcoreService_StopTest_FullMethodName            = "/libcore.LibcoreService/StopTest"
 	LibcoreService_QueryStats_FullMethodName          = "/libcore.LibcoreService/QueryStats"
@@ -44,6 +45,7 @@ type LibcoreServiceClient interface {
 	Update(ctx context.Context, in *UpdateReq, opts ...grpc.CallOption) (*UpdateResp, error)
 	Start(ctx context.Context, in *LoadConfigReq, opts ...grpc.CallOption) (*ErrorResp, error)
 	Stop(ctx context.Context, in *EmptyReq, opts ...grpc.CallOption) (*ErrorResp, error)
+	CheckConfig(ctx context.Context, in *LoadConfigReq, opts ...grpc.CallOption) (*ErrorResp, error)
 	Test(ctx context.Context, in *TestReq, opts ...grpc.CallOption) (*TestResp, error)
 	StopTest(ctx context.Context, in *EmptyReq, opts ...grpc.CallOption) (*EmptyResp, error)
 	QueryStats(ctx context.Context, in *EmptyReq, opts ...grpc.CallOption) (*QueryStatsResp, error)
@@ -99,6 +101,16 @@ func (c *libcoreServiceClient) Stop(ctx context.Context, in *EmptyReq, opts ...g
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(ErrorResp)
 	err := c.cc.Invoke(ctx, LibcoreService_Stop_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *libcoreServiceClient) CheckConfig(ctx context.Context, in *LoadConfigReq, opts ...grpc.CallOption) (*ErrorResp, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ErrorResp)
+	err := c.cc.Invoke(ctx, LibcoreService_CheckConfig_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
@@ -223,6 +235,7 @@ type LibcoreServiceServer interface {
 	Update(context.Context, *UpdateReq) (*UpdateResp, error)
 	Start(context.Context, *LoadConfigReq) (*ErrorResp, error)
 	Stop(context.Context, *EmptyReq) (*ErrorResp, error)
+	CheckConfig(context.Context, *LoadConfigReq) (*ErrorResp, error)
 	Test(context.Context, *TestReq) (*TestResp, error)
 	StopTest(context.Context, *EmptyReq) (*EmptyResp, error)
 	QueryStats(context.Context, *EmptyReq) (*QueryStatsResp, error)
@@ -255,6 +268,9 @@ func (UnimplementedLibcoreServiceServer) Start(context.Context, *LoadConfigReq) 
 }
 func (UnimplementedLibcoreServiceServer) Stop(context.Context, *EmptyReq) (*ErrorResp, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Stop not implemented")
+}
+func (UnimplementedLibcoreServiceServer) CheckConfig(context.Context, *LoadConfigReq) (*ErrorResp, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CheckConfig not implemented")
 }
 func (UnimplementedLibcoreServiceServer) Test(context.Context, *TestReq) (*TestResp, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Test not implemented")
@@ -378,6 +394,24 @@ func _LibcoreService_Stop_Handler(srv interface{}, ctx context.Context, dec func
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(LibcoreServiceServer).Stop(ctx, req.(*EmptyReq))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LibcoreService_CheckConfig_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(LoadConfigReq)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LibcoreServiceServer).CheckConfig(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LibcoreService_CheckConfig_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LibcoreServiceServer).CheckConfig(ctx, req.(*LoadConfigReq))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -602,6 +636,10 @@ var LibcoreService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "Stop",
 			Handler:    _LibcoreService_Stop_Handler,
+		},
+		{
+			MethodName: "CheckConfig",
+			Handler:    _LibcoreService_CheckConfig_Handler,
 		},
 		{
 			MethodName: "Test",

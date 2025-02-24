@@ -103,6 +103,16 @@ func (s *server) Stop(ctx context.Context, in *gen.EmptyReq) (out *gen.ErrorResp
 	return
 }
 
+func (s *server) CheckConfig(ctx context.Context, in *gen.LoadConfigReq) (*gen.ErrorResp, error) {
+	err := boxmain.Check([]byte(in.CoreConfig))
+	if err != nil {
+		return &gen.ErrorResp{
+			Error: err.Error(),
+		}, nil
+	}
+	return &gen.ErrorResp{}, nil
+}
+
 func (s *server) Test(ctx context.Context, in *gen.TestReq) (*gen.TestResp, error) {
 	var testInstance *boxbox.Box
 	var cancel context.CancelFunc

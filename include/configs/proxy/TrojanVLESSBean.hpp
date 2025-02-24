@@ -23,11 +23,6 @@ namespace NekoGui_fmt {
             _add(new configItem("stream", dynamic_cast<JsonStore *>(stream.get()), itemType::jsonStore));
         };
 
-        bool IsValid() {
-            if (stream == nullptr) return true;
-            return stream->isValid();
-        }
-
         QString DisplayType() override { return proxy_type == proxy_VLESS ? "VLESS" : "Trojan"; };
 
         CoreObjOutboundBuildResult BuildCoreObjSingBox() override;
