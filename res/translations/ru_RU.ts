@@ -265,6 +265,22 @@ For NekoBox, this rewrites the underlying(localhost) DNS in Tun Mode, normal mod
                                                         сгенерированные наборы правил, чтобы их можно было сгенерировать заново&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                                                     </translation>
     </message>
+    <message>
+        <source>Proxy Format</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Http</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Socks</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>DialogEditGroup</name>
@@ -766,6 +782,10 @@ also if the connection cannot be established with the current address family (ip
         <source>Clone</source>
         <translation type="unfinished">Клонировать</translation>
     </message>
+    <message>
+        <source>Export</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>DialogVPNSettings</name>
@@ -881,10 +901,6 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>Тип авторизации</translation>
     </message>
     <message>
-        <source>Protocol</source>
-        <translation>Протокол</translation>
-    </message>
-    <message>
         <source>Download (Mbps)</source>
         <translation>Скорость приема (Mbps)</translation>
     </message>
@@ -945,8 +961,20 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>Режим ретрансляции UDP</translation>
     </message>
     <message>
-        <source>Force use external core</source>
-        <translation type="unfinished">Принудительное использование внешнего ядра</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Comma seperated ranges: 100-200,500-600&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Port range</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hop Interval</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;100ms&lt;br/&gt;1s&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1242,10 +1270,6 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <source>Traffic</source>
         <translation>Трафик</translation>
-    </message>
-    <message>
-        <source>Active Server</source>
-        <translation>Активный сервер</translation>
     </message>
     <message>
         <source>Share</source>
@@ -1635,20 +1659,8 @@ Split by line.</source>
         <translation type="unfinished">Подключения</translation>
     </message>
     <message>
-        <source>Destination</source>
-        <translation type="unfinished">Место назначения</translation>
-    </message>
-    <message>
         <source>Click To Disable Sorting</source>
         <translation type="unfinished">Нажмите, чтобы отключить сортировку</translation>
-    </message>
-    <message>
-        <source>Domain</source>
-        <translation type="unfinished">Домен</translation>
-    </message>
-    <message>
-        <source>Click To Sort By Domain</source>
-        <translation type="unfinished">Нажмите, чтобы отсортировать по домену</translation>
     </message>
     <message>
         <source>Network</source>
@@ -1693,6 +1705,42 @@ Split by line.</source>
     <message>
         <source>Please Enter your password in the opened terminal, then try again</source>
         <translation type="unfinished">Введите пароль в открывшемся терминале и повторите попытку.</translation>
+    </message>
+    <message>
+        <source>Application</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation type="unfinished">Настройки</translation>
+    </message>
+    <message>
+        <source>Profiles</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Routing</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Destination (Domain)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Process</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Click To Sort By Process</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Routing Menu</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open Manager</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1880,16 +1928,36 @@ Release note:
         <translation type="unfinished">Атрибут</translation>
     </message>
     <message>
-        <source>Outbound</source>
-        <translation type="unfinished">Исходящий</translation>
-    </message>
-    <message>
         <source>Name_Placeholder</source>
         <translation type="unfinished">Имя_пространства</translation>
     </message>
     <message>
         <source>Import JSON</source>
         <translation type="unfinished">Импорт JSON</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>How to use</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Direct</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Proxy</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Block</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Advanced</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

@@ -257,6 +257,22 @@ For NekoBox, this rewrites the underlying(localhost) DNS in Tun Mode, normal mod
                                                     </source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Proxy Format</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Http</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Socks</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>DialogEditGroup</name>
@@ -759,6 +775,10 @@ also if the connection cannot be established with the current address family (ip
         <source>Clone</source>
         <translation type="unfinished">克隆</translation>
     </message>
+    <message>
+        <source>Export</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>DialogVPNSettings</name>
@@ -878,10 +898,6 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>认证类型</translation>
     </message>
     <message>
-        <source>Protocol</source>
-        <translation>协议</translation>
-    </message>
-    <message>
         <source>Download (Mbps)</source>
         <translation>下载速度 (Mbps)</translation>
     </message>
@@ -938,8 +954,20 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>不发送服务器名称指示</translation>
     </message>
     <message>
-        <source>Force use external core</source>
-        <translation>强制使用外部内核</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Comma seperated ranges: 100-200,500-600&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Port range</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hop Interval</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;100ms&lt;br/&gt;1s&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1365,10 +1393,6 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>显示二维码和分享链接</translation>
     </message>
     <message>
-        <source>Active Server</source>
-        <translation>当前服务器</translation>
-    </message>
-    <message>
         <source>Copied %1 item(s)</source>
         <translation>复制了 %1 个项目</translation>
     </message>
@@ -1627,19 +1651,7 @@ Split by line.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Destination</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Click To Disable Sorting</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Domain</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Click To Sort By Domain</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1684,6 +1696,42 @@ Split by line.</source>
     </message>
     <message>
         <source>Please Enter your password in the opened terminal, then try again</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Application</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation type="unfinished">设置</translation>
+    </message>
+    <message>
+        <source>Profiles</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Routing</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Destination (Domain)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Process</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Click To Sort By Process</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Routing Menu</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open Manager</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1872,16 +1920,36 @@ Release note:
         <translation>属性</translation>
     </message>
     <message>
-        <source>Outbound</source>
-        <translation>出站</translation>
-    </message>
-    <message>
         <source>Name_Placeholder</source>
         <translation>名称_占位符</translation>
     </message>
     <message>
         <source>Import JSON</source>
         <translation>导入 JSON</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation type="unfinished">基本</translation>
+    </message>
+    <message>
+        <source>How to use</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Direct</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Proxy</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Block</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Advanced</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>
