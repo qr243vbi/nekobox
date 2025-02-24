@@ -111,7 +111,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     }
 
     // software_name
-    software_name = "NekoBox";
+    software_name = "Nekoray";
     software_core_name = "sing-box";
     //
     if (QDir("dashboard").count() == 0) {
