@@ -11,10 +11,6 @@
 inline QString software_name = "NekoRay";
 inline QString software_core_name = "Xray";
 
-// Main Functions
-
-inline std::function<void()> MF_release_runguard;
-
 // MainWindow functions
 class QWidget;
 inline QWidget *mainwindow;

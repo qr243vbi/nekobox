@@ -10,7 +10,6 @@
 #include <QThread>
 #include <3rdparty/WinCommander.hpp>
 
-#include "3rdparty/RunGuard.hpp"
 #include "include/global/NekoGui.hpp"
 
 #include "include/ui/mainwindow_interface.h"
@@ -117,30 +116,6 @@ int main(int argc, char* argv[]) {
     DS_cores = new QThread;
     DS_cores->start();
 
-    // RunGuard
-    RunGuard guard("nekoray" + wd.absolutePath());
-    quint64 guard_data_in = GetRandomUint64();
-    quint64 guard_data_out = 0;
-    if (!NekoGui::dataStore->flag_many && !guard.tryToRun(&guard_data_in)) {
-        // Some Good System
-        if (guard.isAnotherRunning(&guard_data_out)) {
-            // Wake up a running instance
-            QLocalSocket socket;
-            socket.connectToServer(LOCAL_SERVER_PREFIX + Int2String(guard_data_out));
-            qDebug() << socket.fullServerName();
-            if (!socket.waitForConnected(500)) {
-                qDebug() << "Failed to wake a running instance.";
-                return 0;
-            }
-            qDebug() << "connected to local server, try to raise another program";
-            return 0;
-        }
-        // Some Bad System
-        QMessageBox::warning(nullptr, "NekoRay", "RunGuard disallow to run, use -many to force start.");
-        return 0;
-    }
-    MF_release_runguard = [&] { guard.release(); };
-
 // icons
     QIcon::setFallbackSearchPaths(QStringList{
         ":/nekoray",
@@ -241,15 +216,30 @@ int main(int argc, char* argv[]) {
     signal(SIGTERM, signal_handler);
     signal(SIGINT, signal_handler);
 
+    // Check if another instance is running
+    QLocalSocket socket;
+    socket.connectToServer(LOCAL_SERVER_PREFIX + wd.absolutePath());
+    if (socket.waitForConnected(500))
+    {
+        qDebug() << "Another instance is running, let's wake it up and quit";
+        socket.write("Wake up!");
+        socket.disconnectFromServer();
+        return 0;
+    }
+
     // QLocalServer
-    QLocalServer server;
-    auto server_name = LOCAL_SERVER_PREFIX + Int2String(guard_data_in);
+    QLocalServer server(qApp);
+    auto server_name = LOCAL_SERVER_PREFIX + wd.absolutePath();
     QLocalServer::removeServer(server_name);
-    server.listen(server_name);
-    QObject::connect(&server, &QLocalServer::newConnection, &a, [&] {
-        auto socket = server.nextPendingConnection();
-        qDebug() << "nextPendingConnection:" << server_name << socket;
-        socket->deleteLater();
+    server.setSocketOptions(QLocalServer::WorldAccessOption);
+    if (!server.listen(server_name)) {
+        qWarning() << "Failed to start QLocalServer! Error:" << server.errorString();
+        return 1;
+    }
+    QObject::connect(&server, &QLocalServer::newConnection, qApp, [&] {
+        auto s = server.nextPendingConnection();
+        qDebug() << "Another instance tried to wake us up on " << server_name << s;
+        s->deleteLater();
         // raise main window
         MW_dialog_message("", "Raise");
     });
