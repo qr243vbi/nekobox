@@ -4,12 +4,11 @@ import (
 	tun "github.com/sagernet/sing-tun"
 	E "github.com/sagernet/sing/common/exceptions"
 	"github.com/sagernet/sing/common/shell"
-	"net/netip"
 	"strings"
 )
 
 func SetSystemDNS(addr string, interfaceMonitor tun.DefaultInterfaceMonitor) error {
-	interfaceName := interfaceMonitor.DefaultInterfaceName(netip.IPv4Unspecified())
+	interfaceName := interfaceMonitor.DefaultInterface().Name
 	interfaceDisplayName, err := getInterfaceDisplayName(interfaceName)
 	if err != nil {
 		return err
