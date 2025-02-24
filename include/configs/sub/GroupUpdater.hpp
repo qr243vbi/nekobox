@@ -9,6 +9,8 @@ namespace NekoGui_sub {
 
         void update(const QString &str, bool needParse);
 
+        void updateSingBox(const QString &str);
+
         int gid_add_to = -1;
 
         QList<std::shared_ptr<NekoGui::ProxyEntity>> updated_order;

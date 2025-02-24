@@ -6,6 +6,7 @@
 
 #include <QInputDialog>
 #include <QUrlQuery>
+#include <absl/strings/internal/str_format/extension.h>
 
 #ifndef NKR_NO_YAML
 
@@ -81,6 +82,13 @@ namespace NekoGui_sub {
                MessageBoxWarning("Deprecated", "Clash Meta format is deprecated and will no longer be updated.");
             });
             updateClash(str);
+            return;
+        }
+
+        // SingBox
+        if (str.contains("outbounds") || str.contains("endpoints"))
+        {
+            updateSingBox(str);
             return;
         }
 
@@ -221,6 +229,106 @@ namespace NekoGui_sub {
         NekoGui::profileManager->AddProfile(ent, gid_add_to);
         updated_order += ent;
     }
+
+    void RawUpdater::updateSingBox(const QString& str)
+    {
+        auto json = QString2QJsonObject(str);
+        auto outbounds = json["outbounds"].toArray() + json["endpoints"].toArray();
+
+        for (auto o : outbounds)
+        {
+            auto out = o.toObject();
+            if (out.isEmpty())
+            {
+                MW_show_log("invalid outbound: " + o.toVariant().toString());
+                continue;
+            }
+
+            std::shared_ptr<NekoGui::ProxyEntity> ent;
+
+            // SOCKS
+            if (out["type"] == "socks") {
+                ent = NekoGui::ProfileManager::NewProxyEntity("socks");
+                auto ok = ent->SocksHTTPBean()->TryParseJson(out);
+                if (!ok) continue;
+            }
+
+            // HTTP
+            if (out["type"] == "http") {
+                auto ok = ent->SocksHTTPBean()->TryParseJson(out);
+                if (!ok) continue;
+            }
+
+            // ShadowSocks
+            if (out["type"] == "shadowsocks") {
+                ent = NekoGui::ProfileManager::NewProxyEntity("shadowsocks");
+                auto ok = ent->ShadowSocksBean()->TryParseJson(out);
+                if (!ok) continue;
+            }
+
+            // VMess
+            if (out["type"] == "vmess") {
+                ent = NekoGui::ProfileManager::NewProxyEntity("vmess");
+                auto ok = ent->VMessBean()->TryParseJson(out);
+                if (!ok) continue;
+            }
+
+            // VLESS
+            if (out["type"] == "vless") {
+                ent = NekoGui::ProfileManager::NewProxyEntity("vless");
+                auto ok = ent->TrojanVLESSBean()->TryParseJson(out);
+                if (!ok) continue;
+            }
+
+            // Trojan
+            if (out["type"] == "trojan") {
+                ent = NekoGui::ProfileManager::NewProxyEntity("trojan");
+                auto ok = ent->TrojanVLESSBean()->TryParseJson(out);
+                if (!ok) continue;
+            }
+
+            // Hysteria1
+            if (out["type"] == "hysteria") {
+                ent = NekoGui::ProfileManager::NewProxyEntity("hysteria");
+                auto ok = ent->QUICBean()->TryParseJson(out);
+                if (!ok) continue;
+            }
+
+            // Hysteria2
+            if (out["type"] == "hysteria2") {
+                ent = NekoGui::ProfileManager::NewProxyEntity("hysteria2");
+                auto ok = ent->QUICBean()->TryParseJson(out);
+                if (!ok) continue;
+            }
+
+            // TUIC
+            if (out["type"] == "tuic") {
+                ent = NekoGui::ProfileManager::NewProxyEntity("tuic");
+                auto ok = ent->QUICBean()->TryParseJson(out);
+                if (!ok) continue;
+            }
+
+            // Wireguard
+            if (out["type"] == "wireguard") {
+                ent = NekoGui::ProfileManager::NewProxyEntity("wireguard");
+                auto ok = ent->WireguardBean()->TryParseJson(out);
+                if (!ok) continue;
+            }
+
+            // SSH
+            if (out["type"] == "ssh") {
+                ent = NekoGui::ProfileManager::NewProxyEntity("ssh");
+                auto ok = ent->SSHBean()->TryParseJson(out);
+                if (!ok) continue;
+            }
+
+            if (ent == nullptr) continue;
+
+            NekoGui::profileManager->AddProfile(ent, gid_add_to);
+            updated_order += ent;
+        }
+    }
+
 
 #ifndef NKR_NO_YAML
 

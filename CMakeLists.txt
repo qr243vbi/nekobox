@@ -208,6 +208,7 @@ set(PROJECT_SOURCES
         include/ui/mainwindow_interface.h
         include/stats/connections/connectionLister.hpp
         src/stats/connectionLister/connectionLister.cpp
+        src/configs/proxy/Json2Bean.cpp
 )
 
 # Qt exe
