@@ -256,6 +256,22 @@ For NekoBox, this rewrites the underlying(localhost) DNS in Tun Mode, normal mod
                                                     </source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Proxy Format</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Http</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Socks</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>DialogEditGroup</name>
@@ -683,7 +699,7 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">از بین بردن</translation>
     </message>
     <message>
         <source>outbound.domain_strategy
@@ -754,6 +770,10 @@ also if the connection cannot be established with the current address family (ip
     <message>
         <source>Clone</source>
         <translation type="unfinished">همزادسازی</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -871,10 +891,6 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Protocol</source>
-        <translation type="unfinished">پروتکل</translation>
-    </message>
-    <message>
         <source>Download (Mbps)</source>
         <translation type="unfinished">دانلود (مگابیت بر ثانیه)</translation>
     </message>
@@ -908,7 +924,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</source>
     </message>
     <message>
         <source>Password</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">کلمه عبور</translation>
     </message>
     <message>
         <source>Generate UUID</source>
@@ -931,7 +947,19 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Force use external core</source>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Comma seperated ranges: 100-200,500-600&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Port range</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hop Interval</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;100ms&lt;br/&gt;1s&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -947,7 +975,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</source>
     </message>
     <message>
         <source>Password</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">کلمه عبور</translation>
     </message>
     <message>
         <source>Private Key</source>
@@ -1228,10 +1256,6 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</source>
     <message>
         <source>Traffic</source>
         <translation>ترافیک</translation>
-    </message>
-    <message>
-        <source>Active Server</source>
-        <translation>سرور فعال</translation>
     </message>
     <message>
         <source>Share</source>
@@ -1619,19 +1643,7 @@ Split by line.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Destination</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Click To Disable Sorting</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Domain</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Click To Sort By Domain</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1676,6 +1688,42 @@ Split by line.</source>
     </message>
     <message>
         <source>Please Enter your password in the opened terminal, then try again</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Application</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation type="unfinished">تنظیمات</translation>
+    </message>
+    <message>
+        <source>Profiles</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Routing</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Destination (Domain)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Process</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Click To Sort By Process</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Routing Menu</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open Manager</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1846,7 +1894,7 @@ Direct: %2</source>
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">از بین بردن</translation>
     </message>
     <message>
         <source>Rule Attributes</source>
@@ -1857,15 +1905,35 @@ Direct: %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Outbound</source>
-        <translation type="unfinished">خروجی</translation>
-    </message>
-    <message>
         <source>Name_Placeholder</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Import JSON</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation type="unfinished">پایه</translation>
+    </message>
+    <message>
+        <source>How to use</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Direct</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Proxy</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Block</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Advanced</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
