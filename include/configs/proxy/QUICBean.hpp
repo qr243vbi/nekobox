@@ -103,16 +103,6 @@ namespace NekoGui_fmt {
             return ::DisplayAddress(serverAddress, serverPort);
         }
 
-        QString DisplayCoreType() override {
-            if (proxy_type == proxy_TUIC) {
-                return "tuic";
-            } else if (proxy_type == proxy_Hysteria) {
-                return "hysteria";
-            } else {
-                return "hysteria2";
-            }
-        }
-
         QString DisplayType() override {
             if (proxy_type == proxy_TUIC) {
                 return "TUIC";
