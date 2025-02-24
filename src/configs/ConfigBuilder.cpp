@@ -94,8 +94,9 @@ namespace NekoGui {
         {
             auto out = ent->bean->BuildCoreObjSingBox();
             auto outArr = QJsonArray{out.outbound};
+            auto key = ent->type == "wireguard" ? "endpoints" : "outbounds";
             conf = {
-            {"outbounds", outArr},
+            {key, outArr},
             };
         }
         bool ok;
