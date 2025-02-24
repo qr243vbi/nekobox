@@ -42,15 +42,15 @@ jobs:
         uses: actions/cache@v4.2.0
         with:
           path: artifacts.tgz
-          key: CommonCache-${{ matrix.cross_os }}-${{ matrix.cross_arch }}-${{ hashFiles('script/build_go.sh', 'core/cmd/*') }}-${{ matrix.go_version }}
+          key: CommonCache-${{ matrix.cross_os }}-${{ matrix.cross_arch }}-${{ hashFiles('script/build_go.sh', 'core/*') }}-${{ matrix.go_version }}
       - name: Install Golang
         if: steps.cache-common.outputs.cache-hit != 'true'
         uses: actions/setup-go@v5.2.0
         with:
           go-version: ${{ matrix.go_version }}
           cache-dependency-path: |
-            core/cmd/nekobox_core/go.sum
-            core/cmd/updater/go.sum
+            core/server/go.sum
+            core/updater/go.sum
       - name: Build golang parts
         if: steps.cache-common.outputs.cache-hit != 'true'
         shell: bash
