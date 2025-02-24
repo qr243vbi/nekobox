@@ -30,6 +30,8 @@ namespace NekoGui_fmt {
 
         bool TryParseLink(const QString &link);
 
+        bool TryParseJson(const QJsonObject &obj);
+
         QString ToShareLink() override;
     };
 } // namespace NekoGui_fmt
