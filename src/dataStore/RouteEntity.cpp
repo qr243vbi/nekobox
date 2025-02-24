@@ -54,6 +54,8 @@ namespace NekoGui {
         sniffers << other.sniffers;
         sniffOverrideDest = other.sniffOverrideDest;
         strategy = other.strategy;
+        type = other.type;
+        simpleAction = other.simpleAction;
 
         _add(new configItem("name", &name, itemType::string));
         _add(new configItem("ip_version", &ip_version, itemType::string));
