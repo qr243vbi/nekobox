@@ -419,5 +419,22 @@ namespace NekoGui_rpc {
         }
     }
 
+    QString Client::CheckConfig(bool* rpcOK, const QString& config) const
+    {
+        libcore::LoadConfigReq req;
+        libcore::ErrorResp resp;
+        req.set_core_config(config.toStdString());
+        auto status = default_grpc_channel->Call("CheckConfig", req, &resp);
+        if (status == QNetworkReply::NoError)
+        {
+            *rpcOK = true;
+            return {resp.error().c_str()};
+        } else
+        {
+            NOT_OK
+            return qt_error_string(status);
+        }
+
+    }
 
 } // namespace NekoGui_rpc

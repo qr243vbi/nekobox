@@ -4,15 +4,16 @@ package libcore;
 option go_package = "grpc_server/gen";
 
 service LibcoreService {
-  rpc Exit(EmptyReq) returns (EmptyResp) {}
-  rpc Update(UpdateReq) returns (UpdateResp) {}
+  rpc Exit(EmptyReq) returns (EmptyResp);
+  rpc Update(UpdateReq) returns (UpdateResp);
   //
-  rpc Start(LoadConfigReq) returns (ErrorResp) {}
-  rpc Stop(EmptyReq) returns (ErrorResp) {}
-  rpc Test(TestReq) returns (TestResp) {}
+  rpc Start(LoadConfigReq) returns (ErrorResp);
+  rpc Stop(EmptyReq) returns (ErrorResp);
+  rpc CheckConfig(LoadConfigReq) returns (ErrorResp);
+  rpc Test(TestReq) returns (TestResp);
   rpc StopTest(EmptyReq) returns (EmptyResp);
-  rpc QueryStats(EmptyReq) returns (QueryStatsResp) {}
-  rpc ListConnections(EmptyReq) returns (ListConnectionsResp) {}
+  rpc QueryStats(EmptyReq) returns (QueryStatsResp);
+  rpc ListConnections(EmptyReq) returns (ListConnectionsResp);
   //
   rpc GetGeoIPList(GeoListRequest) returns (GetGeoIPListResponse);
   rpc GetGeoSiteList(GeoListRequest) returns (GetGeoSiteListResponse);

@@ -2,35 +2,19 @@ package boxmain
 
 import (
 	"context"
+	"github.com/sagernet/sing-box/include"
 
-	"github.com/sagernet/sing-box/log"
 	"nekobox_core/internal/boxbox"
-
-	"github.com/spf13/cobra"
 )
 
-var commandCheck = &cobra.Command{
-	Use:   "check",
-	Short: "Check configuration",
-	Run: func(cmd *cobra.Command, args []string) {
-		err := check()
-		if err != nil {
-			log.Fatal(err)
-		}
-	},
-	Args: cobra.NoArgs,
-}
-
-func init() {
-	mainCommand.AddCommand(commandCheck)
-}
-
-func check() error {
-	options, err := parseConfig(nil)
+func Check(content []byte) error {
+	ctx := context.Background()
+	ctx = boxbox.Context(ctx, include.InboundRegistry(), include.OutboundRegistry(), include.EndpointRegistry())
+	options, err := parseConfig(ctx, content)
 	if err != nil {
 		return err
 	}
-	ctx, cancel := context.WithCancel(context.Background())
+	ctx, cancel := context.WithCancel(ctx)
 	instance, err := boxbox.New(boxbox.Options{
 		Context: ctx,
 		Options: *options,

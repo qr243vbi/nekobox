@@ -45,9 +45,6 @@ namespace NekoGui_fmt {
         virtual QString DisplayType() { return {}; };
 
         virtual QString DisplayTypeAndName();
-
-        virtual bool IsValid();
-
         //
 
         virtual CoreObjOutboundBuildResult BuildCoreObjSingBox() { return {}; };

@@ -39,11 +39,11 @@ type OptionsEntry struct {
 	options option.Options
 }
 
-func parseConfig(configContent []byte) (*option.Options, error) {
+func parseConfig(ctx context.Context, configContent []byte) (*option.Options, error) {
 	var (
 		err error
 	)
-	options, err := json.UnmarshalExtendedContext[option.Options](globalCtx, configContent)
+	options, err := json.UnmarshalExtendedContext[option.Options](ctx, configContent)
 	if err != nil {
 		return nil, E.Cause(err, "decode config at ", string(configContent))
 	}
@@ -53,7 +53,7 @@ func parseConfig(configContent []byte) (*option.Options, error) {
 func Create(configContent []byte) (*boxbox.Box, context.CancelFunc, error) {
 	globalCtx = context.Background()
 	globalCtx = boxbox.Context(globalCtx, include.InboundRegistry(), include.OutboundRegistry(), include.EndpointRegistry())
-	options, err := parseConfig(configContent)
+	options, err := parseConfig(globalCtx, configContent)
 	if err != nil {
 		return nil, nil, err
 	}
@@ -98,7 +98,7 @@ func Create(configContent []byte) (*boxbox.Box, context.CancelFunc, error) {
 
 func run() error {
 	osSignals := make(chan os.Signal, 1)
-	signal.Notify(osSignals, os.Interrupt, syscall.SIGTERM, syscall.SIGHUP)
+	signal.Notify(osSignals, os.Interrupt, syscall.SIGTERM)
 	defer signal.Stop(osSignals)
 	for {
 		instance, cancel, err := Create([]byte{})
@@ -108,13 +108,6 @@ func run() error {
 		runtimeDebug.FreeOSMemory()
 		for {
 			osSignal := <-osSignals
-			if osSignal == syscall.SIGHUP {
-				err = check()
-				if err != nil {
-					log.Error(E.Cause(err, "reload service"))
-					continue
-				}
-			}
 			cancel()
 			closeCtx, closed := context.WithCancel(context.Background())
 			go closeMonitor(closeCtx)

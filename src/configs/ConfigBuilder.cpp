@@ -66,7 +66,53 @@ namespace NekoGui {
         return result;
     }
 
-    std::shared_ptr<BuildTestConfigResult> BuildTestConfig(QList<std::shared_ptr<ProxyEntity>> profiles) {
+    bool IsValid(const std::shared_ptr<ProxyEntity>& ent)
+    {
+        if (ent->type == "chain")
+        {
+            for (int eId : ent->ChainBean()->list)
+            {
+                auto e = profileManager->GetProfile(eId);
+                if (e == nullptr)
+                {
+                    MW_show_log("Null ent in validator");
+                    return false;
+                }
+                if (!IsValid(e))
+                {
+                    MW_show_log("Invalid ent in chain: ID=" + QString::number(eId));
+                    return false;
+                }
+            }
+            return true;
+        }
+        QJsonObject conf;
+        if (ent->type == "custom" && ent->CustomBean()->core == "internal-full")
+        {
+            conf = QString2QJsonObject(ent->CustomBean()->config_simple);
+        } else
+        {
+            auto out = ent->bean->BuildCoreObjSingBox();
+            auto outArr = QJsonArray{out.outbound};
+            conf = {
+            {"outbounds", outArr},
+            };
+        }
+        bool ok;
+        auto resp = NekoGui_rpc::defaultClient->CheckConfig(&ok, QJsonObject2QString(conf, true));
+        if (!ok)
+        {
+            MW_show_log("Failed to contact the Core: " + resp);
+            return false;
+        }
+        if (resp.isEmpty()) return true;
+        // else
+        MW_show_log("Invalid ent " + ent->bean->name + ": " + resp);
+        return false;
+    }
+
+
+    std::shared_ptr<BuildTestConfigResult> BuildTestConfig(const QList<std::shared_ptr<ProxyEntity>>& profiles) {
         auto results = std::make_shared<BuildTestConfigResult>();
 
         QJsonArray outboundArray = {
@@ -80,7 +126,7 @@ namespace NekoGui {
 
         QJsonArray directDomainArray;
         for (const auto &item: profiles) {
-            if (!item->bean->IsValid()) {
+            if (!IsValid(item)) {
                 MW_show_log("Skipping invalid config: " + item->bean->name);
                 item->latency = -1;
                 continue;
