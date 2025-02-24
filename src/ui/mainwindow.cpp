@@ -606,7 +606,8 @@ void MainWindow::dialog_message_impl(const QString &sender, const QString &info)
     if (info == "RestartProgram") {
         this->exit_reason = 2;
         on_menu_exit_triggered();
-    } else if (info == "Raise") {
+    }
+    if (info == "Raise") {
         ActivateWindow(this);
     }
     if (info == "NeedAdmin") {
@@ -750,7 +751,6 @@ void MainWindow::on_menu_exit_triggered() {
         return;
     }
     //
-    MF_release_runguard();
     if (exit_reason == 1) {
         QDir::setCurrent(QApplication::applicationDirPath());
         QProcess::startDetached("./updater", QStringList{});
