@@ -111,12 +111,12 @@
            <widget class="QComboBox" name="proxy_scheme">
             <item>
              <property name="text">
-              <string>Http</string>
+              <string>http</string>
              </property>
             </item>
             <item>
              <property name="text">
-              <string>Socks</string>
+              <string>socks</string>
              </property>
             </item>
            </widget>

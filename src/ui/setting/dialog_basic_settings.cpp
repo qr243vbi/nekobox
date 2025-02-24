@@ -25,6 +25,7 @@ DialogBasicSettings::DialogBasicSettings(QWidget *parent)
     ui->log_level->addItems(QString("trace debug info warn error fatal panic").split(" "));
     ui->mux_protocol->addItems({"h2mux", "smux", "yamux"});
     ui->disable_stats->setChecked(NekoGui::dataStore->disable_traffic_stats);
+    ui->proxy_scheme->setCurrentText(NekoGui::dataStore->proxy_scheme);
 
     D_LOAD_STRING(inbound_address)
     D_LOAD_COMBO_STRING(log_level)
