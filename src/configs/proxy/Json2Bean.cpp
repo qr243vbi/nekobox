@@ -147,16 +147,16 @@ namespace NekoGui_fmt
         if (stream->network == "ws")
         {
             stream->path = obj["transport"].toObject()["path"].toString();
-            stream->host = obj["transport"].toObject()["host"].toString();
+            stream->host = obj["transport"].toObject()["host"].isArray() ? QJsonArray2QListString(obj["transport"].toObject()["host"].toArray()).join(",") : obj["transport"].toObject()["host"].toString();
         } else if (stream->network == "http")
         {
             stream->path = obj["transport"].toObject()["path"].toString();
-            stream->host = obj["transport"].toObject()["host"].toString();
+            stream->host = obj["transport"].toObject()["host"].isArray() ? QJsonArray2QListString(obj["transport"].toObject()["host"].toArray()).join(",") : obj["transport"].toObject()["host"].toString();
             stream->method = obj["transport"].toObject()["method"].toString();
         } else if (stream->network == "httpupgrade")
         {
             stream->path = obj["transport"].toObject()["path"].toString();
-            stream->host = obj["transport"].toObject()["host"].toString();
+            stream->host = obj["transport"].toObject()["host"].isArray() ? QJsonArray2QListString(obj["transport"].toObject()["host"].toArray()).join(",") : obj["transport"].toObject()["host"].toString();
         } else if (stream->network == "grpc")
         {
             stream->path = obj["transport"].toObject()["service_name"].toString();
@@ -189,16 +189,16 @@ namespace NekoGui_fmt
         if (stream->network == "ws")
         {
             stream->path = obj["transport"].toObject()["path"].toString();
-            stream->host = obj["transport"].toObject()["host"].toString();
+            stream->host = obj["transport"].toObject()["host"].isArray() ? QJsonArray2QListString(obj["transport"].toObject()["host"].toArray()).join(",") : obj["transport"].toObject()["host"].toString();
         } else if (stream->network == "http")
         {
             stream->path = obj["transport"].toObject()["path"].toString();
-            stream->host = obj["transport"].toObject()["host"].toString();
+            stream->host = obj["transport"].toObject()["host"].isArray() ? QJsonArray2QListString(obj["transport"].toObject()["host"].toArray()).join(",") : obj["transport"].toObject()["host"].toString();
             stream->method = obj["transport"].toObject()["method"].toString();
         } else if (stream->network == "httpupgrade")
         {
             stream->path = obj["transport"].toObject()["path"].toString();
-            stream->host = obj["transport"].toObject()["host"].toString();
+            stream->host = obj["transport"].toObject()["host"].isArray() ? QJsonArray2QListString(obj["transport"].toObject()["host"].toArray()).join(",") : obj["transport"].toObject()["host"].toString();
         } else if (stream->network == "grpc")
         {
             stream->path = obj["transport"].toObject()["service_name"].toString();

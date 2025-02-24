@@ -233,14 +233,26 @@ namespace NekoGui_sub {
     void RawUpdater::updateSingBox(const QString& str)
     {
         auto json = QString2QJsonObject(str);
-        auto outbounds = json["outbounds"].toArray() + json["endpoints"].toArray();
+        auto outbounds = json["outbounds"].toArray();
+        auto endpoints = json["endpoints"].toArray();
+        QJsonArray items;
+        for (auto && outbound : outbounds)
+        {
+            if (!outbound.isObject()) continue;
+            items.append(outbound.toObject());
+        }
+        for (auto && endpoint : endpoints)
+        {
+            if (!endpoint.isObject()) continue;
+            items.append(endpoint.toObject());
+        }
 
-        for (auto o : outbounds)
+        for (auto o : items)
         {
             auto out = o.toObject();
             if (out.isEmpty())
             {
-                MW_show_log("invalid outbound: " + o.toVariant().toString());
+                MW_show_log("invalid outbound of type: " + o.type());
                 continue;
             }
 
