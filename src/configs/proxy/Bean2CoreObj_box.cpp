@@ -286,13 +286,14 @@ namespace NekoGui_fmt {
             {"public_key", publicKey},
             {"pre_shared_key", preSharedKey},
             {"reserved", QListInt2QJsonArray(reserved)},
+            {"allowed_ips", QListStr2QJsonArray({"0.0.0.0/0", "::/0"})},
         };
         QJsonObject outbound{
             {"type", "wireguard"},
             {"name", tun_name},
             {"address", QListStr2QJsonArray(localAddress)},
             {"private_key", privateKey},
-            {"peers", peer},
+            {"peers", QJsonArray{peer}},
             {"mtu", MTU},
             {"system", useSystemInterface},
             {"workers", workerCount}
