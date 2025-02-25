@@ -122,7 +122,7 @@ RouteItem::RouteItem(QWidget *parent, const std::shared_ptr<NekoGui::RoutingChai
     updateRuleSection();
 
     // simple rules setup
-    QStringList ruleItems = {"domain:", "suffix:", "regex:", "keyword:", "ip:"};
+    QStringList ruleItems = {"domain:", "suffix:", "regex:", "keyword:", "ip:", "processName:", "processPath:"};
     for (const auto& geoIP : geoIpList) {
         ruleItems.append("ruleset:"+geoIP);
     }

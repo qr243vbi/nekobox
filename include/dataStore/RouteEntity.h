@@ -8,13 +8,22 @@ namespace NekoGui {
     enum inputType {trufalse, select, text};
     const int IranBypassChainID = 111111111;
     const int ChinaBypassChainID = 222222222;
-    enum ruleType {custom, simpleAddress};
+    enum ruleType {custom, simpleAddress, simpleProcessName, simpleProcessPath};
     enum simpleAction{direct, block, proxy};
     inline QString simpleActionToString(simpleAction action)
     {
         if (action == direct) return {"direct"};
         if (action == block) return {"block"};
         if (action == proxy) return {"proxy"};
+        return {"invalid"};
+    }
+
+    inline QString ruleTypeToString(ruleType type)
+    {
+        if (type == custom) return {"custom"};
+        if (type == simpleAddress) return {"Address"};
+        if (type == simpleProcessName) return {"Process Name"};
+        if (type == simpleProcessPath) return {"Process Path"};
         return {"invalid"};
     }
 
@@ -115,6 +124,12 @@ namespace NekoGui {
 
         QString UpdateSimpleRules(const QString& content, simpleAction action);
     private:
-        static bool add_simple_rule(const QString& content, const std::shared_ptr<RouteRule>& rule);
+        static bool need_add_simple_rule_item(const QString& content, ruleType type);
+
+        static bool add_simple_rule(const QString& content, const std::shared_ptr<RouteRule>& rule, ruleType type);
+
+        static bool add_simple_address_rule(const QString& content, const std::shared_ptr<RouteRule>& rule);
+
+        static bool add_simple_process_rule(const QString& content, const std::shared_ptr<RouteRule>& rule, ruleType type);
     };
 } // namespace NekoGui

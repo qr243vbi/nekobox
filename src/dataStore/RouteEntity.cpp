@@ -645,7 +645,7 @@ namespace NekoGui {
         QString res;
         for (const auto& item: Rules)
         {
-            if (item->type == simpleAddress && item->simpleAction == action)
+            if (item->type != custom && item->simpleAction == action)
             {
                 for (const auto& domain : item->domain) res += QString("domain:" + domain + "\n");
                 for (const auto& domain_suffix : item->domain_suffix) res += QString("suffix:" + domain_suffix + "\n");
@@ -653,7 +653,8 @@ namespace NekoGui {
                 for (const auto& domain_regex : item->domain_regex) res += QString("regex:" + domain_regex + "\n");
                 for (const auto& rule_set : item->rule_set) res += QString("ruleset:" + rule_set + "\n");
                 for (const auto& ip_cidr : item->ip_cidr) res += QString("ip:" + ip_cidr + "\n");
-                break;
+                for (const auto& process_name : item->process_name) res += QString("processName:" + process_name + "\n");
+                for (const auto& process_path : item->process_path) res += QString("processPath:" + process_path + "\n");
             }
         }
         return res;
@@ -665,48 +666,69 @@ namespace NekoGui {
         QString res;
         auto items = content.split("\n");
 
+        QList<std::shared_ptr<RouteRule>> toRemove;
         for (int idx=0;idx<Rules.length();idx++)
         {
             auto route_rule = Rules[idx];
-            if (route_rule->type == simpleAddress && route_rule->simpleAction == action)
+            if (route_rule->type != custom && route_rule->simpleAction == action)
             {
-                Rules.removeAt(idx);
-                break;
+                toRemove.append(route_rule);
             }
         }
-        auto rule = std::make_shared<RouteRule>();
-        rule->name = "Simple Rule: " + simpleActionToString(action);
-        rule->type = simpleAddress;
-        rule->simpleAction = action;
-        if (action == block)
+        for (const auto& rule : toRemove)
         {
-            rule->action = "reject";
-        } else if (action == direct)
-        {
-            rule->action = "route";
-            rule->outboundID = -2;
-        } else if (action == proxy)
-        {
-            rule->action = "route";
-            rule->outboundID = -1;
+            Rules.removeOne(rule);
         }
-        auto ruleEmpty = true;
-        for (auto item : items)
+
+        QSet<int> added_items;
+        for (const auto type : {simpleAddress, simpleProcessName, simpleProcessPath})
         {
-            item = item.trimmed();
-            if (item.isEmpty()) continue;
-            if (!add_simple_rule(item, rule))
+            auto rule = std::make_shared<RouteRule>();
+            rule->name = QString("Simple ") + ruleTypeToString(type) + " -> " + simpleActionToString(action);
+            rule->type = type;
+            rule->simpleAction = action;
+
+            if (action == block)
             {
-                res += "could not add: " + item + "\n";
-                continue;
+                rule->action = "reject";
+            } else if (action == direct)
+            {
+                rule->action = "route";
+                rule->outboundID = -2;
+            } else if (action == proxy)
+            {
+                rule->action = "route";
+                rule->outboundID = -1;
             }
-            ruleEmpty = false;
+            auto ruleEmpty = true;
+            for (int i=0;i<items.size();i++)
+            {
+                auto item = items[i];
+                item = item.trimmed();
+                if (item.isEmpty()) continue;
+                if (add_simple_rule(item, rule, type))
+                {
+                    added_items.insert(i);
+                    ruleEmpty = false;
+                }
+            }
+            if (!ruleEmpty) Rules.append(rule);
         }
-        if (!ruleEmpty) Rules.append(rule);
+        for (int i=0;i<items.size();i++)
+        {
+            if (items[i].trimmed().isEmpty()) continue;
+            if (!added_items.contains(i)) res += "Could not add " + items[i];
+        }
         return res;
     }
 
-    bool RoutingChain::add_simple_rule(const QString& content, const std::shared_ptr<RouteRule>& rule)
+    bool RoutingChain::add_simple_rule(const QString& content, const std::shared_ptr<RouteRule>& rule, ruleType type)
+    {
+        if (type == simpleAddress) return add_simple_address_rule(content, rule);
+        else return add_simple_process_rule(content, rule, type);
+    }
+
+    bool RoutingChain::add_simple_address_rule(const QString& content, const std::shared_ptr<RouteRule>& rule)
     {
         auto sp = content.split(":");
         if (sp.size() != 2) return false;
@@ -731,6 +753,26 @@ namespace NekoGui {
             if (!rule->ip_cidr.contains(address)) rule->ip_cidr.append(address);
             return true;
         } else {
+            return false;
+        }
+    }
+
+    bool RoutingChain::add_simple_process_rule(const QString& content, const std::shared_ptr<RouteRule>& rule, ruleType type)
+    {
+        auto sp = content.split(":");
+        if (sp.size() != 2) return false;
+        const QString& address = sp[1];
+        const QString& subType = sp[0];
+        if (subType == "processName" && type == simpleProcessName)
+        {
+            if (!rule->process_name.contains(address)) rule->process_name.append(address);
+            return true;
+        } else if (subType == "processPath" && type == simpleProcessPath)
+        {
+            if (!rule->process_path.contains(address)) rule->process_path.append(address);
+            return true;
+        } else
+        {
             return false;
         }
     }
