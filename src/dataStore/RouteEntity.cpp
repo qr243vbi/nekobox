@@ -430,6 +430,10 @@ namespace NekoGui {
         {
             strategy = value[0];
         }
+        if (fieldName == "outbound")
+        {
+            outboundID = value[0].toInt();
+        }
     }
 
     bool RouteRule::isEmpty() {

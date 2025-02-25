@@ -243,6 +243,12 @@ RouteItem::RouteItem(QWidget *parent, const std::shared_ptr<NekoGui::RoutingChai
 
     connect(ui->rule_attr_selector, &QComboBox::currentTextChanged, this, [=](const QString& text){
        if (currentIndex == -1) return;
+       if (ui->rule_attr->currentText() == "outbound")
+       {
+           chain->Rules[currentIndex]->set_field_value("outbound", {QString::number(outboundMap[ui->rule_attr_selector->currentIndex()])});
+           updateRulePreview();
+           return;
+       }
        chain->Rules[currentIndex]->set_field_value(ui->rule_attr->currentText(), {QString(text)});
        updateRulePreview();
     });
