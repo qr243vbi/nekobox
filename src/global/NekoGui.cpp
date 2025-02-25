@@ -289,7 +289,6 @@ namespace NekoGui {
         _add(new configItem("core_box_clash_listen_addr", &core_box_clash_listen_addr, itemType::string));
         _add(new configItem("core_box_clash_api_secret", &core_box_clash_api_secret, itemType::string));
         _add(new configItem("core_box_underlying_dns", &core_box_underlying_dns, itemType::string));
-        _add(new configItem("enable_gso", &enable_gso, itemType::boolean));
         _add(new configItem("enable_ntp", &enable_ntp, itemType::boolean));
         _add(new configItem("ntp_server_address", &ntp_server_address, itemType::string));
         _add(new configItem("ntp_server_port", &ntp_server_port, itemType::integer));

@@ -101,16 +101,6 @@
        </widget>
       </item>
       <item>
-       <widget class="QCheckBox" name="gso_enable">
-        <property name="toolTip">
-         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Enables Generic Segmentation offloading on the Tun device, Only supported on Linux&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-        </property>
-        <property name="text">
-         <string>Enable GSO</string>
-        </property>
-       </widget>
-      </item>
-      <item>
        <widget class="QCheckBox" name="auto_redir">
         <property name="text">
          <string>Auto Redirect</string>
