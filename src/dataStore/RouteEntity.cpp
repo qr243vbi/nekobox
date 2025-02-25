@@ -480,7 +480,6 @@ namespace NekoGui {
 
             auto obj = item.toObject();
             auto rule = std::make_shared<RouteRule>();
-            bool hasOutbound = false;
             for (const auto& key: obj.keys()) {
                 auto val = obj.value(key);
                 if (key == "outbound") {
@@ -490,7 +489,6 @@ namespace NekoGui {
                             return {};
                         }
                         rule->outboundID = val.toInt();
-                        hasOutbound = true;
                     } else if (val.isString()) {
                         auto id = getOutboundID(val.toString());
                         if (id == INVALID_ID) {
@@ -498,7 +496,6 @@ namespace NekoGui {
                             return {};
                         }
                         rule->outboundID = id;
-                        hasOutbound = true;
                     }
                 } else if (val.isArray()) {
                     rule->set_field_value(key, QJsonArray2QListString(val.toArray()));
@@ -508,14 +505,8 @@ namespace NekoGui {
                     rule->set_field_value(key, {val.toBool() ? "true":"false"});
                 }
             }
-            if (hasOutbound) {
-                rule->name = "imported rule #" + Int2String(ruleID++);
-                rules << rule;
-            }
-            else {
-                parseError->append(QString("rule has no outbound: %1").arg(QJsonObject2QString(obj, false)));
-                return {};
-            }
+            rule->name = "imported rule #" + Int2String(ruleID++);
+            rules << rule;
         }
 
         return rules;
