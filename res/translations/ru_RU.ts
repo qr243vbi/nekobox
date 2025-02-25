@@ -270,15 +270,15 @@ For NekoBox, this rewrites the underlying(localhost) DNS in Tun Mode, normal mod
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Http</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Socks</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Language</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>http</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>socks</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -961,10 +961,6 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>Режим ретрансляции UDP</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Comma seperated ranges: 100-200,500-600&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Port range</source>
         <translation type="unfinished"></translation>
     </message>
@@ -974,6 +970,10 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;100ms&lt;br/&gt;1s&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Comma seperated ranges: 100:200,500:600&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

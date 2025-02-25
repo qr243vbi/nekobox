@@ -244,13 +244,8 @@ namespace NekoGui_fmt {
             if (!serverPorts.empty())
             {
                 outbound.remove("server_port");
-                QStringList portRanges;
-                for (auto range : serverPorts)
-                {
-                    portRanges.append(range.replace("-", ":"));
-                }
-                outbound["server_ports"] = QListStr2QJsonArray(portRanges);
-                outbound["hop_interval"] = hop_interval;
+                outbound["server_ports"] = QListStr2QJsonArray(serverPorts);
+                if (!hop_interval.isEmpty()) outbound["hop_interval"] = hop_interval;
             }
 
             if (!obfsPassword.isEmpty()) {
