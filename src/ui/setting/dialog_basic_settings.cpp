@@ -133,7 +133,7 @@ DialogBasicSettings::DialogBasicSettings(QWidget *parent)
                MW_show_log("Failed to remove " + item + ", stop the core then try again");
            }
        }
-       MW_show_log("Removed all rule-set files");
+       MW_show_log(tr("Removed all rule-set files"));
     });
 
     // Mux

@@ -1459,8 +1459,8 @@ void MainWindow::on_menu_export_config_triggered() {
     QApplication::clipboard()->setText(config_core);
 
     QMessageBox msg(QMessageBox::Information, tr("Config copied"), config_core);
-    QPushButton *button_1 = msg.addButton("Copy core config", QMessageBox::YesRole);
-    QPushButton *button_2 = msg.addButton("Copy test config", QMessageBox::YesRole);
+    QPushButton *button_1 = msg.addButton(tr("Copy core config"), QMessageBox::YesRole);
+    QPushButton *button_2 = msg.addButton(tr("Copy test config"), QMessageBox::YesRole);
     msg.addButton(QMessageBox::Ok);
     msg.setEscapeButton(QMessageBox::Ok);
     msg.setDefaultButton(QMessageBox::Ok);
@@ -2066,7 +2066,7 @@ bool MainWindow::StopVPNProcess() {
 void MainWindow::DownloadAssets(const QString &geoipUrl, const QString &geositeUrl) {
     if (!mu_download_assets.tryLock()) {
         runOnUiThread([=](){
-            MessageBoxWarning("Cannot start", "Last download request has not finished yet");
+            MessageBoxWarning(tr("Cannot start"), tr("Last download request has not finished yet"));
         });
         return;
     }
@@ -2075,22 +2075,22 @@ void MainWindow::DownloadAssets(const QString &geoipUrl, const QString &geositeU
     if (!geoipUrl.isEmpty()) {
         auto resp = NetworkRequestHelper::DownloadGeoAsset(geoipUrl, "geoip.db");
         if (!resp.isEmpty()) {
-            MW_show_log(QString("Failed to download geoip: %1").arg(resp));
+            MW_show_log(QString(tr("Failed to download geoip: %1")).arg(resp));
             errors += "geoip: " + resp;
         }
     }
     if (!geositeUrl.isEmpty()) {
         auto resp = NetworkRequestHelper::DownloadGeoAsset(geositeUrl, "geosite.db");
         if (!resp.isEmpty()) {
-            MW_show_log(QString("Failed to download geosite: %1").arg(resp));
+            MW_show_log(QString(tr("Failed to download geosite: %1")).arg(resp));
             errors += "\ngeosite: " + resp;
         }
     }
     mu_download_assets.unlock();
     if (!errors.isEmpty()) {
         runOnUiThread([=](){
-            MessageBoxWarning("Failed to download geo assets", errors);
+            MessageBoxWarning(tr("Failed to download geo assets"), errors);
         });
     }
-    MW_show_log("Geo Asset update completed!");
+    MW_show_log(tr("Geo Asset update completed!"));
 }
