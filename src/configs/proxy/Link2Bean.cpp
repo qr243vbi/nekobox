@@ -324,7 +324,12 @@ namespace NekoGui_fmt {
             }
             if (query.hasQueryItem("server_ports"))
             {
-                serverPorts = query.queryItemValue("server_ports").split("-");
+                auto portList = query.queryItemValue("server_ports").split("-");
+                for (int i=0;i<portList.size();i+=2)
+                {
+                    if (i+1 >= portList.size()) break;
+                    serverPorts += portList[i]+":"+portList[i+1];
+                }
             }
             hop_interval = query.queryItemValue("hop_interval");
 

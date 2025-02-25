@@ -233,10 +233,18 @@ namespace NekoGui_fmt {
             }
             if (allowInsecure) q.addQueryItem("insecure", "1");
             if (!sni.isEmpty()) q.addQueryItem("sni", sni);
+            if (!serverPorts.empty())
+            {
+                QStringList portList;
+                for (const auto& range : serverPorts)
+                {
+                    portList.append(range.split(":"));
+                }
+                q.addQueryItem("server_ports", portList.join("-"));
+            }
+            if (!hop_interval.isEmpty()) q.addQueryItem("hop_interval", hop_interval);
             if (!q.isEmpty()) url.setQuery(q);
             if (!name.isEmpty()) url.setFragment(name);
-            if (!serverPorts.empty()) q.addQueryItem("server_ports", serverPorts.join("-"));
-            if (!hop_interval.isEmpty()) q.addQueryItem("hop_interval", hop_interval);
         }
         return url.toString(QUrl::FullyEncoded);
     }
