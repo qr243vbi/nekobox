@@ -15,10 +15,8 @@ DialogVPNSettings::DialogVPNSettings(QWidget *parent) : QDialog(parent), ui(new 
     ui->vpn_implementation->setCurrentText(NekoGui::dataStore->vpn_implementation);
     ui->vpn_mtu->setCurrentText(Int2String(NekoGui::dataStore->vpn_mtu));
     ui->vpn_ipv6->setChecked(NekoGui::dataStore->vpn_ipv6);
-    ui->gso_enable->setChecked(NekoGui::dataStore->enable_gso);
     ui->auto_redir->setChecked(NekoGui::dataStore->auto_redirect);
 #ifndef __linux__
-    ui->gso_enable->setVisible(false);
     ui->auto_redir->setVisible(false);
 #endif
     ui->strict_route->setChecked(NekoGui::dataStore->vpn_strict_route);
@@ -37,7 +35,6 @@ void DialogVPNSettings::accept() {
     NekoGui::dataStore->vpn_mtu = mtu;
     NekoGui::dataStore->vpn_ipv6 = ui->vpn_ipv6->isChecked();
     NekoGui::dataStore->vpn_strict_route = ui->strict_route->isChecked();
-    NekoGui::dataStore->enable_gso = ui->gso_enable->isChecked();
     NekoGui::dataStore->auto_redirect = ui->auto_redir->isChecked();
     //
     QStringList msg{"UpdateDataStore"};

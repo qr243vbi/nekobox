@@ -434,11 +434,9 @@ namespace NekoGui {
             inboundObj["type"] = "tun";
             inboundObj["interface_name"] = genTunName();
             inboundObj["auto_route"] = true;
-            inboundObj["endpoint_independent_nat"] = true;
             inboundObj["mtu"] = dataStore->vpn_mtu;
             inboundObj["stack"] = dataStore->vpn_implementation;
             inboundObj["strict_route"] = dataStore->vpn_strict_route;
-            inboundObj["gso"] = dataStore->enable_gso;
             inboundObj["auto_redirect"] = dataStore->auto_redirect;
             auto tunAddress = QJsonArray{"172.19.0.1/24"};
             if (dataStore->vpn_ipv6) tunAddress += "fdfe:dcba:9876::1/96";
