@@ -161,6 +161,8 @@ namespace NekoGui {
                 results->error = QString("outbounds is empty for %1").arg(item->bean->name);
                 return results;
             }
+            auto endpoints = res->coreConfig["endpoints"].toArray();
+            for (auto endpoint : endpoints) outbounds.append(endpoint);
             for (const auto &outboundRef: outbounds) {
                 auto outbound = outboundRef.toObject();
                 if (outbound["tag"] == "direct" || outbound["tag"] == "block" || outbound["tag"] == "dns-out" || outbound["tag"].toString().startsWith("rout")) continue;

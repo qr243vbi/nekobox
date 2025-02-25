@@ -26,6 +26,7 @@ type URLTestResult struct {
 
 func BatchURLTest(ctx context.Context, i *boxbox.Box, outboundTags []string, url string, maxConcurrency int, twice bool) []*URLTestResult {
 	outbounds := service.FromContext[adapter.OutboundManager](i.Context())
+	endpoints := service.FromContext[adapter.EndpointManager](i.Context())
 	resMap := make(map[string]*URLTestResult)
 	resAccess := sync.Mutex{}
 	limiter := make(chan struct{}, maxConcurrency)
@@ -49,7 +50,10 @@ func BatchURLTest(ctx context.Context, i *boxbox.Box, outboundTags []string, url
 				defer wg.Done()
 				outbound, found := outbounds.Outbound(t)
 				if !found {
-					panic("no outbound with tag " + t + " found")
+					outbound, found = endpoints.Get(t)
+					if !found {
+						panic("no outbound with tag " + t + " found")
+					}
 				}
 				client := &http.Client{
 					Transport: &http.Transport{
