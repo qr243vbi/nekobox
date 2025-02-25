@@ -17,8 +17,6 @@
     </qresource>
     <qresource prefix="/neko">
         <file alias="nekobox.png">public/nekobox.png</file>
-        <file>vpn/vpn-run-root.sh</file>
-        <file>vpn/sing-box-vpn.json</file>
         <file>dashboard-notice.html</file>
     </qresource>
 </RCC>

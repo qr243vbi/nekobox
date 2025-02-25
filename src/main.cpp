@@ -49,9 +49,6 @@ void loadTranslate(const QString& locale) {
     if (trans->load(":/translations/" + locale + ".qm")) {
         QCoreApplication::installTranslator(trans);
     }
-    if (trans_qt->load(QApplication::applicationDirPath() + "/qtbase_" + locale + ".qm")) {
-        QCoreApplication::installTranslator(trans_qt);
-    }
 }
 
 #define LOCAL_SERVER_PREFIX "nekoray-"
