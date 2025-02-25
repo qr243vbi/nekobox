@@ -17,7 +17,7 @@
 
 void DialogManageRoutes::reloadProfileItems() {
     if (chainList.empty()) {
-        MessageBoxWarning("Invalid state", "The list of routing profiles is empty, this should be an unreachable state, crashes may occur now");
+        MessageBoxWarning(tr("Invalid state"), tr("The list of routing profiles is empty, this should be an unreachable state, crashes may occur now"));
         return;
     }
 
@@ -187,11 +187,11 @@ DialogManageRoutes::~DialogManageRoutes() {
 
 void DialogManageRoutes::accept() {
     if (chainList.empty()) {
-        MessageBoxInfo("Invalid settings", "Routing profile cannot be empty");
+        MessageBoxInfo(tr("Invalid settings"), tr("Routing profile cannot be empty"));
         return;
     }
     if (!validate_dns_rules(rule_editor->toPlainText())) {
-        MessageBoxInfo("Invalid settings", "DNS Rules are not valid");
+        MessageBoxInfo(tr("Invalid settings"), tr("DNS Rules are not valid"));
         return;
     }
 
@@ -299,13 +299,13 @@ void DialogManageRoutes::on_delete_route_clicked() {
     auto idx = ui->route_profiles->currentRow();
     if (idx < 0) return;
     if (chainList.size() == 1) {
-        MessageBoxWarning("Invalid operation", "Routing Profiles cannot be empty, try adding another profile or editing this one");
+        MessageBoxWarning(tr("Invalid operation"), tr("Routing Profiles cannot be empty, try adding another profile or editing this one"));
         return;
     }
 
     auto profileToDel = chainList[idx];
     if (profileToDel->isViewOnly()) {
-        MessageBoxInfo("Profile is Read-only", "Cannot delete built-in profiles");
+        MessageBoxInfo(tr("Profile is Read-only"), tr("Cannot delete built-in profiles"));
         return;
     }
     chainList.removeAt(idx);

@@ -31,7 +31,7 @@ void MainWindow::setup_grpc() {
 
 void MainWindow::RunSpeedTest(const QString& config, bool useDefault, const QStringList& outboundTags, const QMap<QString, int>& tag2entID, int entID) {
     if (stopSpeedtest.load()) {
-        MW_show_log("Profile test aborted");
+        MW_show_log(tr("Profile test aborted"));
         return;
     }
 
@@ -54,13 +54,13 @@ void MainWindow::RunSpeedTest(const QString& config, bool useDefault, const QStr
             entID = tag2entID.count(QString(res.outbound_tag().c_str())) == 0 ? -1 : tag2entID[QString(res.outbound_tag().c_str())];
         }
         if (entID == -1) {
-            MW_show_log("Something is very wrong, the subject ent cannot be found!");
+            MW_show_log(tr("Something is very wrong, the subject ent cannot be found!"));
             continue;
         }
 
         auto ent = NekoGui::profileManager->GetProfile(entID);
         if (ent == nullptr) {
-            MW_show_log("Profile manager data is corrupted, try again.");
+            MW_show_log(tr("Profile manager data is corrupted, try again."));
             continue;
         }
 
@@ -83,14 +83,14 @@ void MainWindow::speedtest_current_group(const QList<std::shared_ptr<NekoGui::Pr
         return;
     }
     if (!speedtestRunning.tryLock()) {
-        MessageBoxWarning(software_name, "The last speed test did not exit completely, please wait. If it persists, please restart the program.");
+        MessageBoxWarning(software_name, tr("The last speed test did not exit completely, please wait. If it persists, please restart the program."));
         return;
     }
 
     runOnNewThread([this, profiles]() {
         auto buildObject = NekoGui::BuildTestConfig(profiles);
         if (!buildObject->error.isEmpty()) {
-            MW_show_log("Failed to build test config: " + buildObject->error);
+            MW_show_log(tr("Failed to build test config: ") + buildObject->error);
             speedtestRunning.unlock();
             return;
         }
@@ -126,7 +126,7 @@ void MainWindow::speedtest_current_group(const QList<std::shared_ptr<NekoGui::Pr
         speedtestRunning.unlock();
         runOnUiThread([=]{
             refresh_proxy_list();
-            MW_show_log("Speedtest finished!");
+            MW_show_log(tr("Speedtest finished!"));
         });
     });
 }
@@ -137,7 +137,7 @@ void MainWindow::stopSpeedTests() {
     defaultClient->StopTests(&ok);
 
     if (!ok) {
-        MW_show_log("Failed to stop tests");
+        MW_show_log(tr("Failed to stop tests"));
     }
 }
 
@@ -176,7 +176,7 @@ void MainWindow::stop_core_daemon() {
 
 bool MainWindow::set_system_dns(bool set, bool save_set) {
     if (!NekoGui::dataStore->enable_dns_server) {
-        MW_show_log("You need to enable hijack DNS server first");
+        MW_show_log(tr("You need to enable hijack DNS server first"));
         return false;
     }
     if (!get_elevated_permissions(4)) {
@@ -190,7 +190,7 @@ bool MainWindow::set_system_dns(bool set, bool save_set) {
         bool ok;
         auto sysDefaults = defaultClient->GetSystemDNS(&ok);
         if (!ok) {
-            MW_show_log("Failed to get system dns settings");
+            MW_show_log(tr("Failed to get system dns settings"));
             return false;
         }
         QStringList sysDefServers;
@@ -207,7 +207,7 @@ bool MainWindow::set_system_dns(bool set, bool save_set) {
         res = defaultClient->SetSystemDNS(&rpcOK, servers, is_dhcp, true);
     }
     if (!rpcOK) {
-        MW_show_log("Failed to set system dns: " + res);
+        MW_show_log(tr("Failed to set system dns: ") + res);
         return false;
     }
     if (save_set) NekoGui::dataStore->system_dns_set = set;
@@ -241,7 +241,7 @@ void MainWindow::neko_start(int _id) {
 
     auto result = BuildConfig(ent, false, false);
     if (!result->error.isEmpty()) {
-        MessageBoxWarning("BuildConfig return error", result->error);
+        MessageBoxWarning(tr("BuildConfig return error"), result->error);
         return;
     }
 
@@ -290,11 +290,11 @@ void MainWindow::neko_start(int _id) {
     };
 
     if (!mu_starting.tryLock()) {
-        MessageBoxWarning(software_name, "Another profile is starting...");
+        MessageBoxWarning(software_name, tr("Another profile is starting..."));
         return;
     }
     if (!mu_stopping.tryLock()) {
-        MessageBoxWarning(software_name, "Another profile is stopping...");
+        MessageBoxWarning(software_name, tr("Another profile is stopping..."));
         mu_starting.unlock();
         return;
     }
@@ -304,7 +304,7 @@ void MainWindow::neko_start(int _id) {
     if (!NekoGui::dataStore->core_running) {
         runOnUiThread(
             [=] {
-                MW_show_log("Try to start the config, but the core has not listened to the grpc port, so restart it...");
+                MW_show_log(tr("Try to start the config, but the core has not listened to the grpc port, so restart it..."));
                 core_process->start_profile_when_core_is_up = ent->id;
                 core_process->Restart();
             },
@@ -380,7 +380,7 @@ void MainWindow::neko_stop(bool crash, bool sem, bool manual) {
             bool rpcOK;
             QString error = defaultClient->Stop(&rpcOK);
             if (rpcOK && !error.isEmpty()) {
-                runOnUiThread([=] { MessageBoxWarning("Stop return error", error); });
+                runOnUiThread([=] { MessageBoxWarning(tr("Stop return error"), error); });
                 return false;
             } else if (!rpcOK) {
                 return false;

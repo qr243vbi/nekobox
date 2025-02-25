@@ -89,7 +89,7 @@
       <item>
        <widget class="QCheckBox" name="strict_route">
         <property name="text">
-         <string notr="true">Strict Route</string>
+         <string>Strict Route</string>
         </property>
        </widget>
       </item>

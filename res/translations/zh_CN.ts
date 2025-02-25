@@ -273,6 +273,10 @@ For NekoBox, this rewrites the underlying(localhost) DNS in Tun Mode, normal mod
         <source>socks</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Removed all rule-set files</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>DialogEditGroup</name>
@@ -779,6 +783,42 @@ also if the connection cannot be established with the current address family (ip
         <source>Export</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Invalid state</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The list of routing profiles is empty, this should be an unreachable state, crashes may occur now</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Invalid settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Routing profile cannot be empty</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>DNS Rules are not valid</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Invalid operation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Routing Profiles cannot be empty, try adding another profile or editing this one</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Profile is Read-only</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cannot delete built-in profiles</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>DialogVPNSettings</name>
@@ -811,14 +851,6 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <source>Cancel</source>
         <translation>取消</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Enables Generic Segmentation offloading on the Tun device, Only supported on Linux&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>在 Tun 设备上启用通用分段卸载，仅支持 Linux</translation>
-    </message>
-    <message>
-        <source>Enable GSO</source>
-        <translation>启用 GSO</translation>
     </message>
     <message>
         <source>Auto Redirect</source>
@@ -1734,6 +1766,98 @@ Split by line.</source>
         <source>Open Manager</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Profile test aborted</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Something is very wrong, the subject ent cannot be found!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Profile manager data is corrupted, try again.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The last speed test did not exit completely, please wait. If it persists, please restart the program.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Failed to build test config: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Speedtest finished!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Failed to stop tests</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You need to enable hijack DNS server first</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Failed to get system dns settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Failed to set system dns: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>BuildConfig return error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Another profile is starting...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Another profile is stopping...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Try to start the config, but the core has not listened to the grpc port, so restart it...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Stop return error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copy core config</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copy test config</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cannot start</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Last download request has not finished yet</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Failed to download geoip: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Failed to download geosite: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Failed to download geo assets</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Geo Asset update completed!</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ProxyItem</name>
@@ -1949,6 +2073,49 @@ Release note:
     </message>
     <message>
         <source>Advanced</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Invalid rules</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Some rules could not be added:
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Simple rule manual</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Invalid JSON Array</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The provided input cannot be parsed to a valid route rule array:
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Invalid operation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cannot create Route Profile with empty name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Empty Route Profile</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No valid rules are in the profile</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Some rules could not be added, fix them before saving:
+</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -163,7 +163,7 @@ RouteItem::RouteItem(QWidget *parent, const std::shared_ptr<NekoGui::RoutingChai
             {
                 runOnUiThread([=]
                 {
-                    MessageBoxWarning("Invalid rules", "Some rules could not be added:\n" + res);
+                    MessageBoxWarning(tr("Invalid rules"), tr("Some rules could not be added:\n") + res);
                 });
             }
             currentIndex  = -1;
@@ -184,7 +184,7 @@ RouteItem::RouteItem(QWidget *parent, const std::shared_ptr<NekoGui::RoutingChai
     {
         runOnUiThread([=]
         {
-            MessageBoxInfo("Simple rule manual", NekoGui::Information::SimpleRuleInfo);
+            MessageBoxInfo(tr("Simple rule manual"), NekoGui::Information::SimpleRuleInfo);
         });
     });
 
@@ -200,11 +200,11 @@ RouteItem::RouteItem(QWidget *parent, const std::shared_ptr<NekoGui::RoutingChai
         auto *tEdit = new QTextEdit;
         tEdit->setPlaceholderText("[\n"
             "      {\n"
-            "        \"outbound\": \"dns-out\",\n"
+            "        \"action\": \"hijack-dns\",\n"
             "        \"protocol\": \"dns\"\n"
             "      },\n"
             "      {\n"
-            "        \"outbound\": \"dns-out\",\n"
+            "        \"action\": \"reject\",\n"
             "        \"protocol\": \"udp\"\n"
             "      }\n"
             "    ]");
@@ -219,7 +219,7 @@ RouteItem::RouteItem(QWidget *parent, const std::shared_ptr<NekoGui::RoutingChai
            auto err = new QString;
            auto parsed = NekoGui::RoutingChain::parseJsonArray(QString2QJsonArray(tEdit->toPlainText()), err);
            if (!err->isEmpty()) {
-               MessageBoxInfo("Invalid JSON Array", "The provided input cannot be parsed to a valid route rule array:\n" + *err);
+               MessageBoxInfo(tr("Invalid JSON Array"), tr("The provided input cannot be parsed to a valid route rule array:\n") + *err);
                return;
            }
            chain->Rules.clear();
@@ -305,7 +305,7 @@ void RouteItem::accept() {
     chain->name = ui->route_name->text();
 
     if (chain->name == "") {
-        MessageBoxWarning("Invalid operation", "Cannot create Route Profile with empty name");
+        MessageBoxWarning(tr("Invalid operation"), tr("Cannot create Route Profile with empty name"));
         return;
     }
 
@@ -321,7 +321,7 @@ void RouteItem::accept() {
     }
 
     if (chain->Rules.empty()) {
-        MessageBoxInfo("Empty Route Profile", "No valid rules are in the profile");
+        MessageBoxInfo(tr("Empty Route Profile"), tr("No valid rules are in the profile"));
         return;
     }
 
@@ -333,7 +333,7 @@ void RouteItem::accept() {
     {
         runOnUiThread([=]
         {
-            MessageBoxWarning("Invalid rules", "Some rules could not be added, fix them before saving:\n" + res);
+            MessageBoxWarning(tr("Invalid rules"), tr("Some rules could not be added, fix them before saving:\n") + res);
         });
         return;
     }
