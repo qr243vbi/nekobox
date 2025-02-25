@@ -1,6 +1,7 @@
 #include <csignal>
 
 #include <QApplication>
+#include <QCryptographicHash>
 #include <QDir>
 #include <QTranslator>
 #include <QMessageBox>
@@ -53,7 +54,7 @@ void loadTranslate(const QString& locale) {
     }
 }
 
-#define LOCAL_SERVER_PREFIX "nekoraylocalserver-"
+#define LOCAL_SERVER_PREFIX "nekoray-"
 
 int main(int argc, char* argv[]) {
     // Core dump
@@ -217,29 +218,31 @@ int main(int argc, char* argv[]) {
     signal(SIGINT, signal_handler);
 
     // Check if another instance is running
+    QByteArray hashBytes = QCryptographicHash::hash(wd.absolutePath().toUtf8(), QCryptographicHash::Md5).toBase64(QByteArray::OmitTrailingEquals);
+    hashBytes.replace('+', '0').replace('/', '1');
+    auto serverName = LOCAL_SERVER_PREFIX + QString::fromUtf8(hashBytes);
+    qDebug() << "server name: " << serverName;
     QLocalSocket socket;
-    socket.connectToServer(LOCAL_SERVER_PREFIX + wd.absolutePath());
-    if (socket.waitForConnected(500))
+    socket.connectToServer(serverName);
+    if (socket.waitForConnected(250))
     {
         qDebug() << "Another instance is running, let's wake it up and quit";
-        socket.write("Wake up!");
         socket.disconnectFromServer();
         return 0;
     }
 
     // QLocalServer
     QLocalServer server(qApp);
-    auto server_name = LOCAL_SERVER_PREFIX + wd.absolutePath();
-    QLocalServer::removeServer(server_name);
+    QLocalServer::removeServer(serverName);
     server.setSocketOptions(QLocalServer::WorldAccessOption);
-    if (!server.listen(server_name)) {
+    if (!server.listen(serverName)) {
         qWarning() << "Failed to start QLocalServer! Error:" << server.errorString();
         return 1;
     }
     QObject::connect(&server, &QLocalServer::newConnection, qApp, [&] {
         auto s = server.nextPendingConnection();
-        qDebug() << "Another instance tried to wake us up on " << server_name << s;
-        s->deleteLater();
+        qDebug() << "Another instance tried to wake us up on " << serverName << s;
+        s->close();
         // raise main window
         MW_dialog_message("", "Raise");
     });
