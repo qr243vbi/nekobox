@@ -212,7 +212,7 @@ namespace NekoGui_fmt
         auto peers = obj["peers"].toArray();
         if (peers.empty()) return false;
         serverAddress = peers[0].toObject()["address"].toString();
-        serverPort = peers[0].toObject()["server_port"].toInt();
+        serverPort = peers[0].toObject()["port"].toInt();
         publicKey = peers[0].toObject()["public_key"].toString();
         reserved = QJsonArray2QListInt(peers[0].toObject()["reserved"].toArray());
         workerCount = obj["workers"].toInt();
