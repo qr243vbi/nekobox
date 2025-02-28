@@ -15,6 +15,10 @@ import (
 var DefaultIfcMonitor tun.DefaultInterfaceMonitor
 
 func monitorForUnderlyingDNS(customDNS []netip.Addr) {
+	if DefaultIfcMonitor == nil {
+		log.Println("Default interface monitor not available!")
+		return
+	}
 	ifc := DefaultIfcMonitor.DefaultInterface()
 	if ifc == nil {
 		log.Println("Default interface is nil!")
