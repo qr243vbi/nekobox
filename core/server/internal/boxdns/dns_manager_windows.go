@@ -30,6 +30,9 @@ func HandleInterfaceChange(_ *control.Interface, _ int) {
 }
 
 func getDefaultInterfaceGuid() (string, error) {
+	if DefaultIfcMonitor == nil {
+		return "", E.New("No default interface monitor")
+	}
 	ifc := DefaultIfcMonitor.DefaultInterface()
 	if ifc == nil {
 		log.Println("Default interface is nil!")
@@ -53,6 +56,9 @@ func getDefaultInterfaceGuid() (string, error) {
 }
 
 func getDefaultInterfaceLUID() (winipcfg.LUID, error) {
+	if DefaultIfcMonitor == nil {
+		return 0, E.New("No default interface monitor")
+	}
 	ifc := DefaultIfcMonitor.DefaultInterface()
 	if ifc == nil {
 		log.Println("Default interface is nil!")
