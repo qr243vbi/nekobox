@@ -1,58 +1,25 @@
 package boxdns
 
 import (
-	"context"
-	"github.com/sagernet/sing/common/control"
+	"github.com/matsuridayo/libneko/iphlpapi"
 	"log"
 	"strings"
-	"time"
 
-	"github.com/matsuridayo/libneko/iphlpapi"
-
-	L "github.com/sagernet/sing-box/log"
 	tun "github.com/sagernet/sing-tun"
 
 	"github.com/gofrs/uuid/v5"
 	"golang.org/x/sys/windows/registry"
 )
 
-var monitorNU tun.NetworkUpdateMonitor
-var monitorDI tun.DefaultInterfaceMonitor
+var DefaultIfcMonitor tun.DefaultInterfaceMonitor
 
-func init() {
-	defer func() {
-		if err := recover(); err != nil {
-			log.Println("[Warning] failed to start sing-tun monitor:", err)
-		}
-	}()
-
-	logFactory, _ := L.New(L.Options{
-		Context:  context.Background(),
-		BaseTime: time.Now(),
-	})
-	logger := logFactory.NewLogger("windows-dns")
-
-	ifcFinder := control.NewDefaultInterfaceFinder()
-	monitorNU, _ = tun.NewNetworkUpdateMonitor(logger)
-	monitorDI, _ = tun.NewDefaultInterfaceMonitor(monitorNU, logger, tun.DefaultInterfaceMonitorOptions{
-		InterfaceFinder: ifcFinder,
-	})
-	monitorDI.RegisterCallback(monitorForUnderlyingDNS)
-	monitorDI.RegisterCallback(handleInterfaceChange)
-	monitorDI.Start()
-	monitorNU.Start()
-	ifcFinder.Update()
-
-	go func() {
-		for {
-			time.Sleep(5 * time.Second)
-			monitorForUnderlyingDNS(nil, 0) // to handle wifi change
-		}
-	}()
-}
-
-func monitorForUnderlyingDNS(_ *control.Interface, _ int) {
-	index := monitorDI.DefaultInterface().Index
+func monitorForUnderlyingDNS() {
+	ifc := DefaultIfcMonitor.DefaultInterface()
+	if ifc == nil {
+		log.Println("Default interface is nil!")
+		return
+	}
+	index := ifc.Index
 	var guid iphlpapi.GUID
 	if errno := iphlpapi.Index2GUID(uint64(index), &guid); errno != 0 {
 		return

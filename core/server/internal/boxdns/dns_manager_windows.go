@@ -22,16 +22,22 @@ const (
 var customDNS []netip.Addr
 var dnsIsSet bool
 
-func handleInterfaceChange(_ *control.Interface, _ int) {
+func HandleInterfaceChange(_ *control.Interface, _ int) {
+	monitorForUnderlyingDNS()
+	time.Sleep(2 * time.Second)
 	if !dnsIsSet {
 		return
 	}
-	time.Sleep(2 * time.Second)
 	_ = SetDefaultDNS(customDNS, false, false)
 }
 
 func getDefaultInterfaceGuid() (string, error) {
-	index := monitorDI.DefaultInterface().Index
+	ifc := DefaultIfcMonitor.DefaultInterface()
+	if ifc == nil {
+		log.Println("Default interface is nil!")
+		return "", E.New("Default interface is nil!")
+	}
+	index := ifc.Index
 	var guid iphlpapi.GUID
 	if errno := iphlpapi.Index2GUID(uint64(index), &guid); errno != 0 {
 		return "", E.New("Failed to convert index to GUID")
@@ -49,7 +55,12 @@ func getDefaultInterfaceGuid() (string, error) {
 }
 
 func getDefaultInterfaceLUID() (winipcfg.LUID, error) {
-	index := monitorDI.DefaultInterface().Index
+	ifc := DefaultIfcMonitor.DefaultInterface()
+	if ifc == nil {
+		log.Println("Default interface is nil!")
+		return 0, E.New("Default interface is nil!")
+	}
+	index := ifc.Index
 	luid, err := winipcfg.LUIDFromIndex(uint32(index))
 	if err != nil {
 		return 0, err
