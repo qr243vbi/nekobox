@@ -19,7 +19,7 @@ require (
 	google.golang.org/protobuf v1.34.2
 )
 
-replace github.com/sagernet/sing-box => github.com/Mahdi-zarei/sing-box v1.3.5-0.20250224103252-b71e66ac2cc7
+replace github.com/sagernet/sing-box => github.com/Mahdi-zarei/sing-box v1.3.5-0.20250226183822-fbccffb7d54f
 
 replace github.com/sagernet/sing-dns => github.com/Mahdi-zarei/sing-dns v0.3.0-beta.14.0.20250201180230-3ed9d1ef74d5
 

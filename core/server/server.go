@@ -15,6 +15,7 @@ import (
 	"nekobox_core/gen"
 	"nekobox_core/internal/boxapi"
 	"nekobox_core/internal/boxbox"
+	"nekobox_core/internal/boxdns"
 	"nekobox_core/internal/boxmain"
 	"nekobox_core/internal/sys"
 	"net/http"
@@ -64,7 +65,16 @@ func (s *server) Start(ctx context.Context, in *gen.LoadConfigReq) (out *gen.Err
 	}
 
 	boxInstance, instanceCancel, err = boxmain.Create([]byte(in.CoreConfig))
-	if runtime.GOOS == "darwin" && strings.Contains(in.CoreConfig, "utun") && err == nil {
+	if err != nil {
+		return
+	}
+	if runtime.GOOS == "windows" {
+		nm := boxInstance.Network()
+		boxdns.DefaultIfcMonitor = nm.InterfaceMonitor()
+		boxdns.HandleInterfaceChange(nil, 0)
+		boxdns.DefaultIfcMonitor.RegisterCallback(boxdns.HandleInterfaceChange)
+	}
+	if runtime.GOOS == "darwin" && strings.Contains(in.CoreConfig, "utun") {
 		err := sys.SetSystemDNS("172.19.0.2", boxInstance.Network().InterfaceMonitor())
 		if err != nil {
 			log.Println("Failed to set system DNS:", err)
@@ -186,9 +196,14 @@ func (s *server) QueryStats(ctx context.Context, _ *gen.EmptyReq) (*gen.QuerySta
 				return nil, E.New("invalid clash server type")
 			}
 			outbounds := service.FromContext[adapter.OutboundManager](boxInstance.Context())
+			endpoints := service.FromContext[adapter.EndpointManager](boxInstance.Context())
 			if outbounds == nil {
 				log.Println("Failed to assert outbound manager")
 				return nil, E.New("invalid outbound manager type")
+			}
+			if endpoints == nil {
+				log.Println("Failed to assert endpoint manager")
+				return nil, E.New("invalid endpoint manager type")
 			}
 			for _, out := range outbounds.Outbounds() {
 				if len(out.Dependencies()) > 0 {
@@ -198,6 +213,15 @@ func (s *server) QueryStats(ctx context.Context, _ *gen.EmptyReq) (*gen.QuerySta
 				u, d := cApi.TrafficManager().TotalOutbound(out.Tag())
 				resp.Ups[out.Tag()] = u
 				resp.Downs[out.Tag()] = d
+			}
+			for _, end := range endpoints.Endpoints() {
+				if len(end.Dependencies()) > 0 {
+					// ignore, has detour
+					continue
+				}
+				u, d := cApi.TrafficManager().TotalOutbound(end.Tag())
+				resp.Ups[end.Tag()] = u
+				resp.Downs[end.Tag()] = d
 			}
 		}
 	}
