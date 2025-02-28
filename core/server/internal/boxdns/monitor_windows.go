@@ -3,6 +3,7 @@ package boxdns
 import (
 	"github.com/matsuridayo/libneko/iphlpapi"
 	"log"
+	"net/netip"
 	"strings"
 
 	tun "github.com/sagernet/sing-tun"
@@ -13,7 +14,7 @@ import (
 
 var DefaultIfcMonitor tun.DefaultInterfaceMonitor
 
-func monitorForUnderlyingDNS() {
+func monitorForUnderlyingDNS(customDNS []netip.Addr) {
 	ifc := DefaultIfcMonitor.DefaultInterface()
 	if ifc == nil {
 		log.Println("Default interface is nil!")
@@ -32,8 +33,13 @@ func monitorForUnderlyingDNS() {
 		guid.Data4[4], guid.Data4[5], guid.Data4[6], guid.Data4[7],
 	})
 	guidStr := "{" + u.String() + "}"
-	if getFirstDNS(guidStr) != underlyingDNS {
-		underlyingDNS = getFirstDNS(guidStr)
+	dns := getFirstDNS(guidStr)
+	if len(customDNS) > 0 && dns == customDNS[0].String() {
+		log.Println("Interface DNS is the same as Hijack dns, You may need to fix it manually!")
+		return
+	}
+	if dns != "" && dns != underlyingDNS {
+		underlyingDNS = dns
 		log.Println("underlyingDNS:", guidStr, underlyingDNS)
 	}
 }

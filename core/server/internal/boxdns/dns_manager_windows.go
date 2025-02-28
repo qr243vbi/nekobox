@@ -22,7 +22,7 @@ var customDNS []netip.Addr
 var dnsIsSet bool
 
 func HandleInterfaceChange(_ *control.Interface, _ int) {
-	monitorForUnderlyingDNS()
+	monitorForUnderlyingDNS(customDNS)
 	if !dnsIsSet {
 		return
 	}
