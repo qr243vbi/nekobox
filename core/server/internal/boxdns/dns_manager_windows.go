@@ -11,7 +11,6 @@ import (
 	"nekobox_core/internal/boxdns/winipcfg"
 	"net/netip"
 	"strings"
-	"time"
 )
 
 const (
@@ -24,7 +23,6 @@ var dnsIsSet bool
 
 func HandleInterfaceChange(_ *control.Interface, _ int) {
 	monitorForUnderlyingDNS()
-	time.Sleep(2 * time.Second)
 	if !dnsIsSet {
 		return
 	}
