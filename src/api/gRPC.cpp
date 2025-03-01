@@ -145,7 +145,7 @@ namespace QtGrpc {
 
         QNetworkReply::NetworkError Call(const QString &methodName,
                                          const google::protobuf::Message &req, google::protobuf::Message *rsp,
-                                         int timeout_ms = 2000) {
+                                         int timeout_ms = 0) {
             if (!NekoGui::dataStore->core_running) return QNetworkReply::NetworkError(-1919);
 
             std::string reqStr;
