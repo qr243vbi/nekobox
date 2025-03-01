@@ -51,8 +51,7 @@ func parseConfig(ctx context.Context, configContent []byte) (*option.Options, er
 }
 
 func Create(configContent []byte) (*boxbox.Box, context.CancelFunc, error) {
-	globalCtx = context.Background()
-	globalCtx = boxbox.Context(globalCtx, include.InboundRegistry(), include.OutboundRegistry(), include.EndpointRegistry())
+	preRun(nil, nil)
 	options, err := parseConfig(globalCtx, configContent)
 	if err != nil {
 		return nil, nil, err
