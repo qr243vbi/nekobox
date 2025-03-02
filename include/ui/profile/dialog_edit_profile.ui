@@ -377,7 +377,7 @@
              </item>
              <item>
               <property name="text">
-               <string>httpupgrade</string>
+               <string notr="true">httpupgrade</string>
               </property>
              </item>
              <item>
@@ -431,7 +431,7 @@
              </item>
              <item>
               <property name="text">
-               <string>reality</string>
+               <string notr="true">reality</string>
               </property>
              </item>
             </widget>
@@ -615,7 +615,7 @@
            </item>
            <item>
             <property name="text">
-             <string>http</string>
+             <string notr="true">http</string>
             </property>
            </item>
           </widget>
