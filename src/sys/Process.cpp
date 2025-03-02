@@ -7,11 +7,6 @@
 #include <QElapsedTimer>
 
 namespace NekoGui_sys {
-
-    CoreProcess::CoreProcess() : QProcess() {
-        this->env = QProcessEnvironment::systemEnvironment().toStringList();
-    }
-
     CoreProcess::~CoreProcess() {
     }
 
@@ -30,6 +25,7 @@ namespace NekoGui_sys {
     QElapsedTimer coreRestartTimer;
 
     CoreProcess::CoreProcess(const QString &core_path, const QStringList &args) : QProcess() {
+        this->env = QProcessEnvironment::systemEnvironment().toStringList();
         program = core_path;
         arguments = args;
 
