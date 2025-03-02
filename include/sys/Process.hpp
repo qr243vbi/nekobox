@@ -12,7 +12,6 @@ namespace NekoGui_sys {
         QStringList arguments;
         QStringList env;
 
-        CoreProcess();
         ~CoreProcess();
 
         // start & kill is one time
