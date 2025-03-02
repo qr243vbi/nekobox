@@ -2,7 +2,6 @@ package boxmain
 
 import (
 	"context"
-	"github.com/sagernet/sing-box/include"
 	"nekobox_core/internal/boxbox"
 	"os"
 	"os/signal"
