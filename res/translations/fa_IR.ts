@@ -495,10 +495,6 @@ For NekoBox, this rewrites the underlying(localhost) DNS in Tun Mode, normal mod
         <translation type="unfinished">نیازمند پشتیبانی در سمت سرور</translation>
     </message>
     <message>
-        <source>httpupgrade</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Overrides mux to On&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
@@ -519,10 +515,6 @@ For NekoBox, this rewrites the underlying(localhost) DNS in Tun Mode, normal mod
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>reality</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
@@ -536,10 +528,6 @@ For NekoBox, this rewrites the underlying(localhost) DNS in Tun Mode, normal mod
     </message>
     <message>
         <source>Reality SID</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>http</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -847,6 +835,10 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</source>
     </message>
     <message>
         <source>Auto Redirect</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Strict Route</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

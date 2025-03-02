@@ -4,26 +4,6 @@
 <context>
     <name>DialogBasicSettings</name>
     <message>
-        <source>System</source>
-        <translation type="unfinished">Системная</translation>
-    </message>
-    <message>
-        <source>Press shortcut</source>
-        <translation type="unfinished">Нажмите сочетание клавиш</translation>
-    </message>
-    <message>
-        <source>Yes</source>
-        <translation type="unfinished">Да</translation>
-    </message>
-    <message>
-        <source>No</source>
-        <translation type="unfinished">Нет</translation>
-    </message>
-    <message>
-        <source>Strict Route</source>
-        <translation type="unfinished">Строгий маршрут</translation>
-    </message>
-    <message>
         <source>Basic Settings</source>
         <translation>Основные настройки</translation>
     </message>
@@ -524,10 +504,6 @@ For NekoBox, this rewrites the underlying(localhost) DNS in Tun Mode, normal mod
         <translation>Подтвердить</translation>
     </message>
     <message>
-        <source>httpupgrade</source>
-        <translation type="unfinished">http обновление</translation>
-    </message>
-    <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Overrides mux to On&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Переопределяет мультиплексор на&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
@@ -548,10 +524,6 @@ For NekoBox, this rewrites the underlying(localhost) DNS in Tun Mode, normal mod
         <translation type="unfinished">Мб/с</translation>
     </message>
     <message>
-        <source>reality</source>
-        <translation type="unfinished">Настроящий</translation>
-    </message>
-    <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
@@ -566,10 +538,6 @@ For NekoBox, this rewrites the underlying(localhost) DNS in Tun Mode, normal mod
     <message>
         <source>Reality SID</source>
         <translation type="unfinished">Настроящий SID</translation>
-    </message>
-    <message>
-        <source>http</source>
-        <translation type="unfinished">http</translation>
     </message>
     <message>
         <source>header type</source>
@@ -882,6 +850,10 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <source>Auto Redirect</source>
         <translation type="unfinished">Авто. перенаправление</translation>
+    </message>
+    <message>
+        <source>Strict Route</source>
+        <translation type="unfinished">Строгий маршрут</translation>
     </message>
 </context>
 <context>
