@@ -342,8 +342,9 @@ func (s *server) SetSystemProxy(ctx context.Context, in *gen.SetSystemProxyReque
 	return &gen.EmptyResp{}, nil
 }
 
+var updateDownloadUrl string
+
 func (s *server) Update(ctx context.Context, in *gen.UpdateReq) (*gen.UpdateResp, error) {
-	var updateDownloadUrl string
 	ret := &gen.UpdateResp{}
 
 	client := boxapi.CreateProxyHttpClient(boxInstance)
