@@ -51,7 +51,7 @@ namespace NekoGui_fmt {
                 }
                 transport["headers"] = QMapString2QJsonObject(headerMap);
             }
-            outbound->insert("transport", transport);
+            if (!network.trimmed().isEmpty()) outbound->insert("transport", transport);
         } else if (header_type == "http") {
             // TCP + headerType
             QJsonObject transport{
@@ -60,7 +60,7 @@ namespace NekoGui_fmt {
                 {"path", path},
                 {"headers", QJsonObject{{"Host", QListStr2QJsonArray(host.split(","))}}},
             };
-            outbound->insert("transport", transport);
+            if (!network.trimmed().isEmpty()) outbound->insert("transport", transport);
         }
 
         // tls
