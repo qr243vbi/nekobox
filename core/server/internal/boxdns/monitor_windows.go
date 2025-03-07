@@ -1,9 +1,11 @@
 package boxdns
 
 import (
+	"fmt"
 	"github.com/matsuridayo/libneko/iphlpapi"
+	"github.com/sagernet/sing/common/control"
+	logger2 "github.com/sagernet/sing/common/logger"
 	"log"
-	"net/netip"
 	"strings"
 
 	tun "github.com/sagernet/sing-tun"
@@ -12,14 +14,47 @@ import (
 	"golang.org/x/sys/windows/registry"
 )
 
-var DefaultIfcMonitor tun.DefaultInterfaceMonitor
-
-func monitorForUnderlyingDNS(customDNS []netip.Addr) {
-	if DefaultIfcMonitor == nil {
-		log.Println("Default interface monitor not available!")
+func init() {
+	logger := logger2.NOP()
+	updMonitor, err := tun.NewNetworkUpdateMonitor(logger)
+	if err != nil {
+		fmt.Println("Could not create NetworkUpdateMonitor")
 		return
 	}
-	ifc := DefaultIfcMonitor.DefaultInterface()
+	monitor, err := tun.NewDefaultInterfaceMonitor(updMonitor, logger, tun.DefaultInterfaceMonitorOptions{
+		InterfaceFinder: control.NewDefaultInterfaceFinder(),
+	})
+	if err != nil {
+		fmt.Println("Could not create DefaultInterfaceMonitor")
+		return
+	}
+	DnsManagerInstance = &DnsManager{Monitor: monitor}
+	monitor.RegisterCallback(DnsManagerInstance.HandleUnderlyingDNS)
+	monitor.RegisterCallback(DnsManagerInstance.HandleSystemDNS)
+	if err = updMonitor.Start(); err != nil {
+		fmt.Println("Could not start updMonitor")
+		return
+	}
+	if err = monitor.Start(); err != nil {
+		fmt.Println("Could not start monitor")
+		return
+	}
+
+	//DnsManagerInstance.HandleUnderlyingDNS(monitor.DefaultInterface(), 0)
+}
+
+var DnsManagerInstance *DnsManager
+
+type DnsManager struct {
+	Monitor tun.DefaultInterfaceMonitor
+	lastIfc control.Interface
+}
+
+func (d *DnsManager) HandleUnderlyingDNS(ifc *control.Interface, flag int) {
+	if d == nil {
+		fmt.Println("No DnsManager, you may need to restart nekoray")
+		return
+	}
 	if ifc == nil {
 		log.Println("Default interface is nil!")
 		return

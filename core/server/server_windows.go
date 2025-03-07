@@ -8,7 +8,7 @@ import (
 )
 
 func (s *server) GetSystemDNS(ctx context.Context, in *gen.EmptyReq) (*gen.GetSystemDNSResponse, error) {
-	servers, dhcp, err := boxdns.GetDefaultDNS()
+	servers, dhcp, err := boxdns.DnsManagerInstance.GetDefaultDNS()
 	if err != nil {
 		return nil, err
 	}
@@ -33,7 +33,7 @@ func (s *server) SetSystemDNS(ctx context.Context, in *gen.SetSystemDNSRequest) 
 		}
 		servers = append(servers, s)
 	}
-	err := boxdns.SetDefaultDNS(servers, in.SetDhcp, in.Clear)
+	err := boxdns.DnsManagerInstance.SetDefaultDNS(servers, in.SetDhcp, in.Clear)
 	if err != nil {
 		return nil, err
 	}

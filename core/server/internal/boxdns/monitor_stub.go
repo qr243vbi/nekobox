@@ -7,8 +7,17 @@ import (
 	"github.com/sagernet/sing/common/control"
 )
 
-var DefaultIfcMonitor tun.DefaultInterfaceMonitor
+var DnsManagerInstance *DnsManager
 
-func HandleInterfaceChange(_ *control.Interface, _ int) {
+type DnsManager struct {
+	Monitor tun.DefaultInterfaceMonitor
+	lastIfc control.Interface
+}
+
+func (d *DnsManager) HandleSystemDNS(ifc *control.Interface, flag int) {
+	return
+}
+
+func (d *DnsManager) HandleUnderlyingDNS(ifc *control.Interface, flag int) {
 	return
 }

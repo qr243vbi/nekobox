@@ -1,6 +1,7 @@
 package boxdns
 
 import (
+	"fmt"
 	"github.com/gofrs/uuid/v5"
 	"github.com/matsuridayo/libneko/iphlpapi"
 	"github.com/sagernet/sing/common/control"
@@ -21,19 +22,25 @@ const (
 var customDNS []netip.Addr
 var dnsIsSet bool
 
-func HandleInterfaceChange(_ *control.Interface, _ int) {
-	monitorForUnderlyingDNS(customDNS)
+func (d *DnsManager) HandleSystemDNS(ifc *control.Interface, flag int) {
+	if d == nil {
+		fmt.Println("No DnsManager, you may need to restart nekoray")
+		return
+	}
+	if ifc == nil || ifc.Equals(d.lastIfc) {
+		return
+	}
 	if !dnsIsSet {
 		return
 	}
-	_ = SetDefaultDNS(customDNS, false, false)
+	_ = d.SetDefaultDNS(customDNS, false, false)
 }
 
-func getDefaultInterfaceGuid() (string, error) {
-	if DefaultIfcMonitor == nil {
-		return "", E.New("No default interface monitor")
+func (d *DnsManager) getDefaultInterfaceGuid() (string, error) {
+	if d.Monitor == nil {
+		return "", E.New("No Dns Manager, you may need to restart nekoray")
 	}
-	ifc := DefaultIfcMonitor.DefaultInterface()
+	ifc := d.Monitor.DefaultInterface()
 	if ifc == nil {
 		log.Println("Default interface is nil!")
 		return "", E.New("Default interface is nil!")
@@ -55,11 +62,11 @@ func getDefaultInterfaceGuid() (string, error) {
 	return guidStr, nil
 }
 
-func getDefaultInterfaceLUID() (winipcfg.LUID, error) {
-	if DefaultIfcMonitor == nil {
-		return 0, E.New("No default interface monitor")
+func (d *DnsManager) getDefaultInterfaceLUID() (winipcfg.LUID, error) {
+	if d.Monitor == nil {
+		return 0, E.New("No DnsManager, you may need to restart nekoray")
 	}
-	ifc := DefaultIfcMonitor.DefaultInterface()
+	ifc := d.Monitor.DefaultInterface()
 	if ifc == nil {
 		log.Println("Default interface is nil!")
 		return 0, E.New("Default interface is nil!")
@@ -73,8 +80,12 @@ func getDefaultInterfaceLUID() (winipcfg.LUID, error) {
 	return luid, nil
 }
 
-func GetDefaultDNS() (servers []netip.Addr, dhcp bool, err error) {
-	guidStr, err := getDefaultInterfaceGuid()
+func (d *DnsManager) GetDefaultDNS() (servers []netip.Addr, dhcp bool, err error) {
+	if d == nil {
+		fmt.Println("No DnsManager, you may need to restart nekoray")
+		return nil, false, E.New("No Dns Manager, you may need to restart nekoray")
+	}
+	guidStr, err := d.getDefaultInterfaceGuid()
 	if err != nil {
 		return nil, false, err
 	}
@@ -108,15 +119,22 @@ func GetDefaultDNS() (servers []netip.Addr, dhcp bool, err error) {
 	return resp, false, nil
 }
 
-func SetDefaultDNS(servers []netip.Addr, dhcp bool, clear bool) error {
+func (d *DnsManager) SetDefaultDNS(servers []netip.Addr, dhcp bool, clear bool) error {
+	if d == nil {
+		fmt.Println("No DnsManager, you may need to restart nekoray")
+		return E.New("No dns Manager, you may need to restart nekoray")
+	}
 	if clear {
 		dnsIsSet = false
 	} else {
 		customDNS = servers
 		dnsIsSet = true
+		if ifc := d.Monitor.DefaultInterface(); ifc != nil {
+			d.lastIfc = *ifc
+		}
 	}
 
-	luid, err := getDefaultInterfaceLUID()
+	luid, err := d.getDefaultInterfaceLUID()
 	if err != nil {
 		return err
 	}
