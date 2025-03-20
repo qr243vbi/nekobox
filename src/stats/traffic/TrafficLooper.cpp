@@ -33,6 +33,16 @@ namespace NekoGui_traffic {
             item->downlink += down;
             item->uplink_rate = up * 1000 / interval;
             item->downlink_rate = down * 1000 / interval;
+            auto isInter = false;
+            for (const auto& inter_tag : resp.intermediate_tags())
+            {
+                if (inter_tag == item->tag)
+                {
+                    isInter = true;
+                    break;
+                }
+            }
+            if (isInter) continue;
             if (item->tag == "direct")
             {
                 direct->uplink_rate = item->uplink_rate;
