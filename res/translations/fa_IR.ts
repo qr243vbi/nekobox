@@ -1976,6 +1976,29 @@ Direct: %2</source>
     </message>
 </context>
 <context>
+    <name>QPlatformTheme</name>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished">لغو کردن</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>OK</source>
+        <translation type="unfinished">تایید</translation>
+    </message>
+</context>
+<context>
     <name>Qv2ray::ui::widgets::AutoCompleteTextEdit</name>
     <message>
         <source>You can not input space characters here.</source>

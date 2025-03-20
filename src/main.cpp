@@ -35,6 +35,11 @@ QTranslator* trans = nullptr;
 QTranslator* trans_qt = nullptr;
 
 void loadTranslate(const QString& locale) {
+    QT_TRANSLATE_NOOP("QPlatformTheme", "Cancel");
+    QT_TRANSLATE_NOOP("QPlatformTheme", "Apply");
+    QT_TRANSLATE_NOOP("QPlatformTheme", "Yes");
+    QT_TRANSLATE_NOOP("QPlatformTheme", "No");
+    QT_TRANSLATE_NOOP("QPlatformTheme", "OK");
     if (trans != nullptr) {
         trans->deleteLater();
     }
