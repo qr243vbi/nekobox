@@ -76,13 +76,6 @@ namespace Qv2ray::ui {
         rule.format = v2rayComponentFormat;
         highlightingRules.append(rule);
         //
-        failedFormat.setFontWeight(QFont::Bold);
-        failedFormat.setBackground(Qt::red);
-        failedFormat.setForeground(Qt::white);
-        rule.pattern = QRegularExpression("failed");
-        rule.format = failedFormat;
-        highlightingRules.append(rule);
-        //
         rule.pattern = QRegularExpression(">>>>+");
         rule.format = warningFormat;
         highlightingRules.append(rule);

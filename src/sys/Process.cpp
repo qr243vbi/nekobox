@@ -4,7 +4,6 @@
 #include <QTimer>
 #include <QDir>
 #include <QApplication>
-#include <QElapsedTimer>
 
 namespace NekoGui_sys {
     CoreProcess::~CoreProcess() {
@@ -20,12 +19,7 @@ namespace NekoGui_sys {
         }
     }
 
-    //
-
-    QElapsedTimer coreRestartTimer;
-
     CoreProcess::CoreProcess(const QString &core_path, const QStringList &args) : QProcess() {
-        this->env = QProcessEnvironment::systemEnvironment().toStringList();
         program = core_path;
         arguments = args;
 
@@ -88,13 +82,11 @@ namespace NekoGui_sys {
     }
 
     void CoreProcess::Start() {
-        show_stderr = false;
         if (started) return;
         started = true;
 
-        setEnvironment(env);
+        setEnvironment(QProcessEnvironment::systemEnvironment().toStringList());
         start(program, arguments);
-        write((NekoGui::dataStore->core_token + "\n").toUtf8());
     }
 
     void CoreProcess::Restart() {

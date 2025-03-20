@@ -77,7 +77,6 @@ namespace Qv2ray {
             QTextCharFormat dateFormat;
             QTextCharFormat acceptedFormat;
             QTextCharFormat rejectedFormat;
-            QTextCharFormat failedFormat;
             QTextCharFormat warningFormat;
             QTextCharFormat warningFormat2;
             QTextCharFormat infoFormat;
