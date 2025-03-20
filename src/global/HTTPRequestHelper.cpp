@@ -55,11 +55,15 @@ namespace NekoGui_network {
                                 {"https", "127.0.0.1:" + QString(Int2String(NekoGui::dataStore->inbound_socks_port)).toStdString()}});
         }
         auto filePath = NekoGui::GetBasePath()+ "/" + fileName;
+        auto tempFilePath = QString(filePath + ".1");
+        QFile::remove(tempFilePath);
+
         std::ofstream fout;
-        fout.open(QString(filePath + ".1").toStdString(), std::ios::trunc | std::ios::out | std::ios::binary);
+        fout.open(tempFilePath.toStdString(), std::ios::trunc | std::ios::out | std::ios::binary);
         auto r = session.Download(fout);
         fout.close();
-        auto tmpFile = QFile(filePath + ".1");
+
+        auto tmpFile = QFile(tempFilePath);
         if (r.status_code != 200) {
             tmpFile.remove();
             if (r.status_code == 0) {
@@ -69,6 +73,7 @@ namespace NekoGui_network {
         }
         QFile(filePath).remove();
         if (!tmpFile.rename(filePath)) {
+            tmpFile.remove();
             return tmpFile.errorString();
         }
         return "";
