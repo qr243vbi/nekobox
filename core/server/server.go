@@ -189,32 +189,17 @@ func (s *server) QueryStats(ctx context.Context, _ *gen.EmptyReq) (*gen.QuerySta
 				return nil, E.New("invalid clash server type")
 			}
 			outbounds := service.FromContext[adapter.OutboundManager](boxInstance.Context())
-			endpoints := service.FromContext[adapter.EndpointManager](boxInstance.Context())
 			if outbounds == nil {
 				log.Println("Failed to assert outbound manager")
 				return nil, E.New("invalid outbound manager type")
 			}
-			if endpoints == nil {
-				log.Println("Failed to assert endpoint manager")
-				return nil, E.New("invalid endpoint manager type")
-			}
 			for _, out := range outbounds.Outbounds() {
 				if len(out.Dependencies()) > 0 {
-					// ignore, has detour
-					continue
+					resp.IntermediateTags = append(resp.IntermediateTags, out.Tag())
 				}
 				u, d := cApi.TrafficManager().TotalOutbound(out.Tag())
 				resp.Ups[out.Tag()] = u
 				resp.Downs[out.Tag()] = d
-			}
-			for _, end := range endpoints.Endpoints() {
-				if len(end.Dependencies()) > 0 {
-					// ignore, has detour
-					continue
-				}
-				u, d := cApi.TrafficManager().TotalOutbound(end.Tag())
-				resp.Ups[end.Tag()] = u
-				resp.Downs[end.Tag()] = d
 			}
 		}
 	}
