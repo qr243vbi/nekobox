@@ -320,6 +320,17 @@ func (s *server) SetSystemProxy(ctx context.Context, in *gen.SetSystemProxyReque
 	return &gen.EmptyResp{}, nil
 }
 
+func (s *server) IsPrivileged(ctx context.Context, _ *gen.EmptyReq) (*gen.IsPrivilegedResponse, error) {
+	if runtime.GOOS == "windows" {
+		return &gen.IsPrivilegedResponse{
+			HasPrivilege: false,
+		}, nil
+	}
+
+	return &gen.IsPrivilegedResponse{HasPrivilege: os.Geteuid() == 0}, nil
+}
+
+// TODO refactor this shit
 var updateDownloadUrl string
 
 func (s *server) Update(ctx context.Context, in *gen.UpdateReq) (*gen.UpdateResp, error) {

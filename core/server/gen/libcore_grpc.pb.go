@@ -35,6 +35,7 @@ const (
 	LibcoreService_SetSystemProxy_FullMethodName      = "/libcore.LibcoreService/SetSystemProxy"
 	LibcoreService_GetSystemDNS_FullMethodName        = "/libcore.LibcoreService/GetSystemDNS"
 	LibcoreService_SetSystemDNS_FullMethodName        = "/libcore.LibcoreService/SetSystemDNS"
+	LibcoreService_IsPrivileged_FullMethodName        = "/libcore.LibcoreService/IsPrivileged"
 )
 
 // LibcoreServiceClient is the client API for LibcoreService service.
@@ -57,6 +58,7 @@ type LibcoreServiceClient interface {
 	SetSystemProxy(ctx context.Context, in *SetSystemProxyRequest, opts ...grpc.CallOption) (*EmptyResp, error)
 	GetSystemDNS(ctx context.Context, in *EmptyReq, opts ...grpc.CallOption) (*GetSystemDNSResponse, error)
 	SetSystemDNS(ctx context.Context, in *SetSystemDNSRequest, opts ...grpc.CallOption) (*EmptyResp, error)
+	IsPrivileged(ctx context.Context, in *EmptyReq, opts ...grpc.CallOption) (*IsPrivilegedResponse, error)
 }
 
 type libcoreServiceClient struct {
@@ -227,6 +229,16 @@ func (c *libcoreServiceClient) SetSystemDNS(ctx context.Context, in *SetSystemDN
 	return out, nil
 }
 
+func (c *libcoreServiceClient) IsPrivileged(ctx context.Context, in *EmptyReq, opts ...grpc.CallOption) (*IsPrivilegedResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(IsPrivilegedResponse)
+	err := c.cc.Invoke(ctx, LibcoreService_IsPrivileged_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // LibcoreServiceServer is the server API for LibcoreService service.
 // All implementations must embed UnimplementedLibcoreServiceServer
 // for forward compatibility.
@@ -247,6 +259,7 @@ type LibcoreServiceServer interface {
 	SetSystemProxy(context.Context, *SetSystemProxyRequest) (*EmptyResp, error)
 	GetSystemDNS(context.Context, *EmptyReq) (*GetSystemDNSResponse, error)
 	SetSystemDNS(context.Context, *SetSystemDNSRequest) (*EmptyResp, error)
+	IsPrivileged(context.Context, *EmptyReq) (*IsPrivilegedResponse, error)
 	mustEmbedUnimplementedLibcoreServiceServer()
 }
 
@@ -304,6 +317,9 @@ func (UnimplementedLibcoreServiceServer) GetSystemDNS(context.Context, *EmptyReq
 }
 func (UnimplementedLibcoreServiceServer) SetSystemDNS(context.Context, *SetSystemDNSRequest) (*EmptyResp, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method SetSystemDNS not implemented")
+}
+func (UnimplementedLibcoreServiceServer) IsPrivileged(context.Context, *EmptyReq) (*IsPrivilegedResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method IsPrivileged not implemented")
 }
 func (UnimplementedLibcoreServiceServer) mustEmbedUnimplementedLibcoreServiceServer() {}
 func (UnimplementedLibcoreServiceServer) testEmbeddedByValue()                        {}
@@ -614,6 +630,24 @@ func _LibcoreService_SetSystemDNS_Handler(srv interface{}, ctx context.Context, 
 	return interceptor(ctx, in, info, handler)
 }
 
+func _LibcoreService_IsPrivileged_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(EmptyReq)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LibcoreServiceServer).IsPrivileged(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LibcoreService_IsPrivileged_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LibcoreServiceServer).IsPrivileged(ctx, req.(*EmptyReq))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // LibcoreService_ServiceDesc is the grpc.ServiceDesc for LibcoreService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -684,6 +718,10 @@ var LibcoreService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "SetSystemDNS",
 			Handler:    _LibcoreService_SetSystemDNS_Handler,
+		},
+		{
+			MethodName: "IsPrivileged",
+			Handler:    _LibcoreService_IsPrivileged_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

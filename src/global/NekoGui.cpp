@@ -9,6 +9,7 @@
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QStandardPaths>
+#include <include/api/gRPC.h>
 
 #ifdef Q_OS_WIN
 #include "include/sys/windows/guihelper.h"
@@ -418,9 +419,10 @@ namespace NekoGui {
         admin = Windows_IsInAdmin();
         dataStore->windows_set_admin = admin;
 #else
-        admin = QFileInfo(FindNekoBoxCoreRealPath()).groupId() == 0;
+        bool ok;
+        auto isPrivileged = NekoGui_rpc::defaultClient->IsPrivileged(&ok);
+        admin = ok && isPrivileged;
 #endif
-
         isAdminCache = admin;
         return admin;
     };
