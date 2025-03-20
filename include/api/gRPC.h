@@ -46,6 +46,8 @@ namespace NekoGui_rpc {
 
         QString CheckConfig(bool *rpcOK, const QString& config) const;
 
+        bool IsPrivileged(bool *rpcOK) const;
+
     private:
         std::function<std::unique_ptr<QtGrpc::Http2GrpcChannelPrivate>()> make_grpc_channel;
         std::unique_ptr<QtGrpc::Http2GrpcChannelPrivate> default_grpc_channel;

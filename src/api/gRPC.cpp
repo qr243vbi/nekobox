@@ -437,4 +437,21 @@ namespace NekoGui_rpc {
 
     }
 
+    bool Client::IsPrivileged(bool* rpcOK) const
+    {
+        auto req = libcore::EmptyReq();
+        auto resp = libcore::IsPrivilegedResponse();
+        auto status = default_grpc_channel->Call("IsPrivileged", req, &resp);
+        if (status == QNetworkReply::NoError)
+        {
+            *rpcOK = true;
+            return resp.has_privilege();
+        } else
+        {
+            NOT_OK
+            return false;
+        }
+    }
+
+
 } // namespace NekoGui_rpc

@@ -24,6 +24,8 @@ service LibcoreService {
   //
   rpc GetSystemDNS(EmptyReq) returns (GetSystemDNSResponse);
   rpc SetSystemDNS(SetSystemDNSRequest) returns (EmptyResp);
+  //
+  rpc IsPrivileged(EmptyReq) returns (IsPrivilegedResponse);
 }
 
 message EmptyReq {}
@@ -136,4 +138,8 @@ message SetSystemDNSRequest {
 message GetSystemDNSResponse {
   repeated string servers = 1;
   bool is_dhcp = 2;
+}
+
+message IsPrivilegedResponse {
+  bool has_privilege = 1;
 }
