@@ -1,6 +1,7 @@
 #pragma once
 
 #include <memory>
+#include <QElapsedTimer>
 #include <QProcess>
 
 namespace NekoGui_sys {
@@ -10,7 +11,6 @@ namespace NekoGui_sys {
         QString tag;
         QString program;
         QStringList arguments;
-        QStringList env;
 
         ~CoreProcess();
 
@@ -30,6 +30,8 @@ namespace NekoGui_sys {
         bool show_stderr = false;
         bool failed_to_start = false;
         bool restarting = false;
+
+        QElapsedTimer coreRestartTimer;
 
     protected:
         bool started = false;
