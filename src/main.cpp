@@ -12,6 +12,7 @@
 #include <3rdparty/WinCommander.hpp>
 
 #include "include/global/NekoGui.hpp"
+#include "include/sys/windows/vcCheck.h"
 
 #include "include/ui/mainwindow_interface.h"
 
@@ -67,6 +68,14 @@ int main(int argc, char* argv[]) {
     QApplication::setAttribute(Qt::AA_DontUseNativeDialogs);
     QApplication::setQuitOnLastWindowClosed(false);
     QApplication a(argc, argv);
+
+#ifdef Q_OS_WIN
+    if (!checkVCRedist())
+    {
+        QMessageBox::critical(nullptr, "Cannot run Nekoray", "You need to install VC 2022 Redistributable, Download it from: https://aka.ms/vs/17/release/vc_redist.x64.exe");
+        return 1;
+    }
+#endif
 
     // Clean
     QDir::setCurrent(QApplication::applicationDirPath());
@@ -162,7 +171,7 @@ int main(int argc, char* argv[]) {
         dir_success &= dir.mkdir(RULE_SETS_DIR);
     }
     if (!dir_success) {
-        QMessageBox::warning(nullptr, "Error", "No permission to write " + dir.absolutePath());
+        QMessageBox::critical(nullptr, "Error", "No permission to write " + dir.absolutePath());
         return 1;
     }
 
