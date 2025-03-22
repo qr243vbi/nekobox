@@ -209,6 +209,8 @@ set(PROJECT_SOURCES
         include/stats/connections/connectionLister.hpp
         src/stats/connectionLister/connectionLister.cpp
         src/configs/proxy/Json2Bean.cpp
+        include/sys/windows/vcCheck.h
+        src/sys/windows/vcCheck.cpp
 )
 
 # Qt exe
