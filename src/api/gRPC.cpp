@@ -125,7 +125,7 @@ namespace QtGrpc {
         }
 
     public:
-        Http2GrpcChannelPrivate(const QString &url_, const QString &nekoray_auth_, const QString &serviceName_) {
+        Http2GrpcChannelPrivate(const QString &url_, const QString &serviceName_) {
             url_base = "http://" + url_;
             serviceName = serviceName_;
             //
@@ -182,8 +182,8 @@ namespace QtGrpc {
 
 namespace NekoGui_rpc {
 
-    Client::Client(std::function<void(const QString &)> onError, const QString &target, const QString &token) {
-        this->make_grpc_channel = [=]() { return std::make_unique<QtGrpc::Http2GrpcChannelPrivate>(target, token, "libcore.LibcoreService"); };
+    Client::Client(std::function<void(const QString &)> onError, const QString &target) {
+        this->make_grpc_channel = [=]() { return std::make_unique<QtGrpc::Http2GrpcChannelPrivate>(target, "libcore.LibcoreService"); };
         this->default_grpc_channel = make_grpc_channel();
         this->onError = std::move(onError);
     }

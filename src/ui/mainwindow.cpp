@@ -72,6 +72,33 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     themeManager->ApplyTheme(NekoGui::dataStore->theme);
     ui->setupUi(this);
 
+    // Prepare core
+    NekoGui::dataStore->core_port = MkPort();
+    if (NekoGui::dataStore->core_port <= 0) NekoGui::dataStore->core_port = 19810;
+
+    auto core_path = QApplication::applicationDirPath() + "/";
+    core_path += "nekobox_core";
+
+    QStringList args;
+    args.push_back("nekobox");
+    args.push_back("-port");
+    args.push_back(Int2String(NekoGui::dataStore->core_port));
+    if (NekoGui::dataStore->flag_debug) args.push_back("-debug");
+
+    // Start core
+    runOnUiThread(
+        [=] {
+            core_process = new NekoGui_sys::CoreProcess(core_path, args);
+            // Remember last started
+            if (NekoGui::dataStore->remember_enable && NekoGui::dataStore->remember_id >= 0) {
+                core_process->start_profile_when_core_is_up = NekoGui::dataStore->remember_id;
+            }
+            // Setup
+            setup_grpc();
+            core_process->Start();
+        },
+        DS_cores);
+
     if (!NekoGui::dataStore->font.isEmpty()) {
         qApp->setFont(NekoGui::dataStore->font);
     }
@@ -432,34 +459,6 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     });
     refresh_status();
 
-    // Prepare core
-    NekoGui::dataStore->core_token = GetRandomString(32);
-    NekoGui::dataStore->core_port = MkPort();
-    if (NekoGui::dataStore->core_port <= 0) NekoGui::dataStore->core_port = 19810;
-
-    auto core_path = QApplication::applicationDirPath() + "/";
-    core_path += "nekobox_core";
-
-    QStringList args;
-    args.push_back("nekobox");
-    args.push_back("-port");
-    args.push_back(Int2String(NekoGui::dataStore->core_port));
-    if (NekoGui::dataStore->flag_debug) args.push_back("-debug");
-
-    // Start core
-    runOnUiThread(
-        [=] {
-            core_process = new NekoGui_sys::CoreProcess(core_path, args);
-            // Remember last started
-            if (NekoGui::dataStore->remember_enable && NekoGui::dataStore->remember_id >= 0) {
-                core_process->start_profile_when_core_is_up = NekoGui::dataStore->remember_id;
-            }
-            // Setup
-            core_process->Start();
-            setup_grpc();
-        },
-        DS_cores);
-
     connect(qApp, &QGuiApplication::commitDataRequest, this, &MainWindow::on_commitDataRequest);
 
     auto t = new QTimer;
@@ -813,7 +812,6 @@ bool MainWindow::get_elevated_permissions(int reason) {
         auto chmodArgs = QString("u+s " + NekoGui::FindNekoBoxCoreRealPath());
         ret = Linux_Run_Command("chmod", chmodArgs);
         if (ret == 0) {
-            NekoGui::IsAdmin(true);
             StopVPNProcess();
             return true;
         } else {

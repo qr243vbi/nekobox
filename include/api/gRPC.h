@@ -14,7 +14,7 @@ namespace NekoGui_rpc {
 
     class Client {
     public:
-        explicit Client(std::function<void(const QString &)> onError, const QString &target, const QString &token);
+        explicit Client(std::function<void(const QString &)> onError, const QString &target);
 
         void Exit();
 

@@ -20,9 +20,9 @@ void MainWindow::setup_grpc() {
     // Setup Connection
     defaultClient = new Client(
         [=](const QString &errStr) {
-            MW_show_log("[Error] gRPC: " + errStr);
+            MW_show_log("[Error] Core: " + errStr);
         },
-        "127.0.0.1:" + Int2String(NekoGui::dataStore->core_port), NekoGui::dataStore->core_token);
+        "127.0.0.1:" + Int2String(NekoGui::dataStore->core_port));
 
     // Looper
     runOnNewThread([=] { NekoGui_traffic::trafficLooper->Loop(); });
