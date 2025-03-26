@@ -2156,8 +2156,8 @@ void MainWindow::CheckUpdate() {
 	search = "windows32";
 #  endif
 #endif
-#ifdef Q_OS_LINUX && Q_PROCESSOR_X86_64
-	search = "linux64"
+#if defined(Q_OS_LINUX) && defined(Q_PROCESSOR_X86_64)
+	search = "linux64";
 #endif
 #ifdef Q_OS_MACOS
 #  ifdef Q_PROCESSOR_X86_64
