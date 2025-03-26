@@ -1,4 +1,4 @@
-find_package(Protobuf REQUIRED)
+find_package(Protobuf CONFIG REQUIRED)
 
 set(PROTO_FILES
         core/server/gen/libcore.proto
