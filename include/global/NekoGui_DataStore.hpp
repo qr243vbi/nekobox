@@ -30,7 +30,6 @@ namespace NekoGui {
     public:
         // Running
 
-        QString core_token;
         int core_port = 19810;
         int started_id = -1919;
         bool core_running = false;
