@@ -26,19 +26,6 @@ namespace NekoGui {
         static QStringList List();
     };
 
-    class ExtraCore : public JsonStore {
-    public:
-        QString core_map;
-
-        explicit ExtraCore();
-
-        [[nodiscard]] QString Get(const QString &id) const;
-
-        void Set(const QString &id, const QString &path);
-
-        void Delete(const QString &id);
-    };
-
     class DataStore : public JsonStore {
     public:
         // Running
@@ -168,9 +155,6 @@ namespace NekoGui {
         QString core_box_clash_listen_addr = "127.0.0.1";
         QString core_box_clash_api_secret = "";
         QString core_box_underlying_dns = "";
-
-        // Other Core
-        ExtraCore *extraCore = new ExtraCore;
 
         // Methods
 

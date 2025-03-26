@@ -222,7 +222,7 @@ void DialogEditProfile::typeSelected(const QString &newType) {
         auto _innerWidget = new EditSSH(this);
         innerWidget = _innerWidget;
         innerEditor = _innerWidget;
-    } else if (type == "custom" || type == "internal" || type == "internal-full") {
+    } else if (type == "internal" || type == "internal-full") {
         auto _innerWidget = new EditCustom(this);
         innerWidget = _innerWidget;
         innerEditor = _innerWidget;
