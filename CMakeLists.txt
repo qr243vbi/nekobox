@@ -12,8 +12,6 @@ if (NOT CMAKE_CXX_COMPILER_ID STREQUAL "GNU" AND WIN32)
 endif ()
 
 find_package(Qt6 REQUIRED COMPONENTS Widgets Network LinguistTools)
-find_package(absl REQUIRED)
-
 
 if (NKR_CROSS)
     set_property(TARGET Qt6::moc PROPERTY IMPORTED_LOCATION /usr/bin/moc)
@@ -268,9 +266,5 @@ target_link_libraries(nekoray PRIVATE
         ${NKR_EXTERNAL_TARGETS}
         ${PLATFORM_LIBRARIES}
 )
-
-# Link the Abseil libraries
-target_link_libraries(nekoray PRIVATE absl::base absl::strings)
-
 
 qt_finalize_executable(nekoray)
