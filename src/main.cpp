@@ -139,22 +139,6 @@ int main(int argc, char* argv[]) {
         QIcon::setThemeName("breeze");
     }
 
-    // Load coreType
-    auto coreLoaded = ReadFileText("groups/coreType");
-    if (coreLoaded.isEmpty()) {
-        NekoGui::coreType = -1;
-        loadTranslate(QLocale().name());
-        NekoGui::coreType = NekoGui::CoreType::SING_BOX;
-        QDir().mkdir("groups");
-        QFile file;
-        file.setFileName("groups/coreType");
-        file.open(QIODevice::ReadWrite | QIODevice::Truncate);
-        file.write(Int2String(NekoGui::coreType).toUtf8());
-        file.close();
-    } else {
-        NekoGui::coreType = coreLoaded.toInt();
-    }
-
     // Dir
     QDir dir;
     bool dir_success = true;

@@ -141,9 +141,17 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     software_name = "Nekoray";
     software_core_name = "sing-box";
     //
-    if (QDir("dashboard").count() == 0) {
-        QDir().mkdir("dashboard");
-        QFile::copy(":/neko/dashboard-notice.html", "dashboard/index.html");
+    if (auto dashDir = QDir("dashboard"); !dashDir.exists("dashboard") && QDir().mkdir("dashboard")) {
+        if (auto dashFile = QFile(":/neko/dashboard-notice.html"); dashFile.exists() && dashFile.open(QIODevice::ReadOnly))
+        {
+            auto data = dashFile.readAll();
+            if (auto dest = QFile("dashboard/index.html"); dest.open(QIODevice::Truncate | QIODevice::WriteOnly))
+            {
+                dest.write(data);
+                dest.close();
+            }
+            dashFile.close();
+        }
     }
 
     // top bar
