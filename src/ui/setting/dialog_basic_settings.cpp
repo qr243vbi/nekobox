@@ -48,20 +48,6 @@ DialogBasicSettings::DialogBasicSettings(QWidget *parent)
     D_LOAD_BOOL(start_minimal)
     D_LOAD_INT(max_log_line)
     //
-    if (NekoGui::dataStore->traffic_loop_interval == 500) {
-        ui->rfsh_r->setCurrentIndex(0);
-    } else if (NekoGui::dataStore->traffic_loop_interval == 1000) {
-        ui->rfsh_r->setCurrentIndex(1);
-    } else if (NekoGui::dataStore->traffic_loop_interval == 2000) {
-        ui->rfsh_r->setCurrentIndex(2);
-    } else if (NekoGui::dataStore->traffic_loop_interval == 3000) {
-        ui->rfsh_r->setCurrentIndex(3);
-    } else if (NekoGui::dataStore->traffic_loop_interval == 5000) {
-        ui->rfsh_r->setCurrentIndex(4);
-    } else {
-        ui->rfsh_r->setCurrentIndex(5);
-    }
-    //
     ui->language->setCurrentIndex(NekoGui::dataStore->language);
     connect(ui->language, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, [=](int index) {
         CACHE.needRestart = true;
@@ -188,20 +174,6 @@ void DialogBasicSettings::accept() {
 
     if (NekoGui::dataStore->max_log_line <= 0) {
         NekoGui::dataStore->max_log_line = 200;
-    }
-
-    if (ui->rfsh_r->currentIndex() == 0) {
-        NekoGui::dataStore->traffic_loop_interval = 500;
-    } else if (ui->rfsh_r->currentIndex() == 1) {
-        NekoGui::dataStore->traffic_loop_interval = 1000;
-    } else if (ui->rfsh_r->currentIndex() == 2) {
-        NekoGui::dataStore->traffic_loop_interval = 2000;
-    } else if (ui->rfsh_r->currentIndex() == 3) {
-        NekoGui::dataStore->traffic_loop_interval = 3000;
-    } else if (ui->rfsh_r->currentIndex() == 4) {
-        NekoGui::dataStore->traffic_loop_interval = 5000;
-    } else {
-        NekoGui::dataStore->traffic_loop_interval = 0;
     }
 
     // Subscription

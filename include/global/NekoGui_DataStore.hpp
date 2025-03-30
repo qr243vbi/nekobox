@@ -63,7 +63,6 @@ namespace NekoGui {
         QString log_level = "info";
         QString test_latency_url = "http://cp.cloudflare.com/";
         int test_concurrent = 10;
-        int traffic_loop_interval = 500;
         bool disable_traffic_stats = false;
         int current_group = 0; // group id
         QString mux_protocol = "smux";

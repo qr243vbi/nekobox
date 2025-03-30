@@ -56,15 +56,13 @@ namespace NekoGui_traffic {
     }
 
     void TrafficLooper::Loop() {
-        if (NekoGui::dataStore->disable_traffic_stats) {
-            return;
-        }
         elapsedTimer.start();
         while (true) {
-            auto sleep_ms = NekoGui::dataStore->traffic_loop_interval;
-            if (sleep_ms < 500 || sleep_ms > 5000) sleep_ms = 1000;
-            QThread::msleep(sleep_ms);
-            if (NekoGui::dataStore->traffic_loop_interval == 0) continue; // user disabled
+            QThread::msleep(1000); // refresh every one second
+
+            if (NekoGui::dataStore->disable_traffic_stats) {
+                continue;
+            }
 
             // profile start and stop
             if (!loop_enabled) {
@@ -76,6 +74,11 @@ namespace NekoGui_traffic {
                         m->refresh_status("STOP");
                     });
                 }
+                runOnUiThread([=]
+                {
+                   auto m = GetMainWindow();
+                   m->update_traffic_graph(0, 0, 0, 0);
+                });
                 continue;
             } else {
                 // 开始
@@ -96,6 +99,7 @@ namespace NekoGui_traffic {
                 auto m = GetMainWindow();
                 if (proxy != nullptr) {
                     m->refresh_status(QObject::tr("Proxy: %1\nDirect: %2").arg(proxy->DisplaySpeed(), direct->DisplaySpeed()));
+                    m->update_traffic_graph(proxy->downlink_rate, proxy->uplink_rate, direct->downlink_rate, direct->uplink_rate);
                 }
                 for (const auto &item: items) {
                     if (item->id < 0) continue;

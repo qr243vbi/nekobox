@@ -43,6 +43,7 @@
 #include <QFileInfo>
 #include <QStyleHints>
 #include <QToolTip>
+#include <QtCharts>
 #include <random>
 #include <3rdparty/QHotkey/qhotkey.h>
 #include <include/global/HTTPRequestHelper.hpp>
@@ -173,6 +174,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     connect(qApp->styleHints(), &QStyleHints::colorSchemeChanged, this, [=](const Qt::ColorScheme& scheme) {
         new SyntaxHighlighter(scheme == Qt::ColorScheme::Dark, qvLogDocument);
         themeManager->ApplyTheme(NekoGui::dataStore->theme, true);
+        if (trafficGraph) trafficGraph->updateTheme();
     });
     connect(themeManager, &ThemeManager::themeChanged, this, [=](const QString& theme){
         if (theme.toLower().contains("vista")) {
@@ -246,6 +248,10 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
             NekoGui_traffic::connection_lister->ForceUpdate();
         }
     });
+
+    // setup Traffic Graph
+    trafficGraph = new TrafficChart();
+    ui->graph_tab->layout()->addWidget(trafficGraph->getChartView());
 
     // table UI
     ui->proxyListTable->callback_save_order = [=] {
@@ -1126,6 +1132,11 @@ void MainWindow::refresh_status(const QString &traffic_update) {
     }
 
     icon_status = icon_status_new;
+}
+
+void MainWindow::update_traffic_graph(int proxyDl, int proxyUp, int directDl, int directUp)
+{
+    trafficGraph->updateChart(proxyDl, proxyUp, directDl, directUp);
 }
 
 // table显示
