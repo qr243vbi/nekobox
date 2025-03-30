@@ -447,6 +447,31 @@
                </item>
               </layout>
              </widget>
+             <widget class="QWidget" name="graph_tab">
+              <attribute name="title">
+               <string>Traffic Graph</string>
+              </attribute>
+              <layout class="QHBoxLayout" name="horizontalLayout_6" stretch="">
+               <property name="spacing">
+                <number>0</number>
+               </property>
+               <property name="sizeConstraint">
+                <enum>QLayout::SizeConstraint::SetDefaultConstraint</enum>
+               </property>
+               <property name="leftMargin">
+                <number>1</number>
+               </property>
+               <property name="topMargin">
+                <number>0</number>
+               </property>
+               <property name="rightMargin">
+                <number>1</number>
+               </property>
+               <property name="bottomMargin">
+                <number>0</number>
+               </property>
+              </layout>
+             </widget>
             </widget>
            </item>
           </layout>
@@ -505,7 +530,7 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>17</height>
+     <height>25</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu_program">

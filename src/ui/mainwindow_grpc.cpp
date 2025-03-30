@@ -415,13 +415,11 @@ void MainWindow::neko_stop(bool crash, bool sem, bool manual) {
     NekoGui_traffic::connection_lister->suspend = true;
     UpdateConnectionListWithRecreate({});
     NekoGui_traffic::trafficLooper->loop_mutex.lock();
-    if (NekoGui::dataStore->traffic_loop_interval != 0) {
-        NekoGui_traffic::trafficLooper->UpdateAll();
-        for (const auto &item: NekoGui_traffic::trafficLooper->items) {
-            if (item->id < 0) continue;
-            NekoGui::profileManager->GetProfile(item->id)->Save();
-            refresh_proxy_list(item->id);
-        }
+    NekoGui_traffic::trafficLooper->UpdateAll();
+    for (const auto &item: NekoGui_traffic::trafficLooper->items) {
+        if (item->id < 0) continue;
+        NekoGui::profileManager->GetProfile(item->id)->Save();
+        refresh_proxy_list(item->id);
     }
     NekoGui_traffic::trafficLooper->loop_mutex.unlock();
 

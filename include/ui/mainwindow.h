@@ -4,6 +4,7 @@
 
 #include "include/global/NekoGui.hpp"
 #include "include/stats/connections/connectionLister.hpp"
+#include "utils/TrafficChart.h"
 
 #ifndef MW_INTERFACE
 
@@ -51,6 +52,8 @@ public:
     void refresh_groups();
 
     void refresh_status(const QString &traffic_update = "");
+
+    void update_traffic_graph(int proxyDl, int proxyUp, int directDl, int directUp);
 
     void neko_start(int _id = -1);
 
@@ -182,6 +185,8 @@ private:
     QMutex mu_download_update;
     //
     int toolTipID;
+    //
+    TrafficChart* trafficGraph;
 
     QList<std::shared_ptr<NekoGui::ProxyEntity>> get_now_selected_list();
 
