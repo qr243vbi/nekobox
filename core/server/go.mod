@@ -9,8 +9,8 @@ require (
 	github.com/gofrs/uuid/v5 v5.3.0
 	github.com/matsuridayo/libneko v0.0.0-20240702024904-1c47a3af7199
 	github.com/oschwald/maxminddb-golang v1.13.1
-	github.com/sagernet/sing v0.6.1
-	github.com/sagernet/sing-box v1.11.4
+	github.com/sagernet/sing v0.6.5
+	github.com/sagernet/sing-box v1.11.6
 	github.com/sagernet/sing-dns v0.4.0
 	github.com/sagernet/sing-tun v0.6.1
 	github.com/spf13/cobra v1.8.1
@@ -19,7 +19,7 @@ require (
 	google.golang.org/protobuf v1.36.6
 )
 
-replace github.com/sagernet/sing-box => github.com/Mahdi-zarei/sing-box v1.3.5-0.20250307022037-4316c2a6260e
+replace github.com/sagernet/sing-box => github.com/Mahdi-zarei/sing-box v1.3.5-0.20250330212248-5e1acd1fa0b1
 
 replace github.com/sagernet/sing-dns => github.com/Mahdi-zarei/sing-dns v0.3.0-beta.14.0.20250201180230-3ed9d1ef74d5
 
