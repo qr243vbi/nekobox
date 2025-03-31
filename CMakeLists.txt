@@ -211,6 +211,7 @@ set(PROJECT_SOURCES
         include/sys/windows/vcCheck.h
         include/ui/utils/TrafficChart.h
         include/ui/utils/CustomChartView.h
+        include/sys/windows/eventHandler.h
 )
 
 # Qt exe

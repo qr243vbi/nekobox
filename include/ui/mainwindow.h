@@ -45,6 +45,8 @@ public:
 
     ~MainWindow() override;
 
+    void prepare_exit();
+
     void refresh_proxy_list(const int &id = -1);
 
     void show_group(int gid);

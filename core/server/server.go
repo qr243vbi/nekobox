@@ -35,7 +35,7 @@ func (s *server) Exit(ctx context.Context, in *gen.EmptyReq) (out *gen.EmptyResp
 	out = &gen.EmptyResp{}
 
 	// Connection closed
-	os.Exit(0)
+	defer os.Exit(0)
 	return
 }
 

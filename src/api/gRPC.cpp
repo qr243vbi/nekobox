@@ -195,7 +195,7 @@ namespace NekoGui_rpc {
     void Client::Exit() {
         libcore::EmptyReq request;
         libcore::EmptyResp reply;
-        default_grpc_channel->Call("Exit", request, &reply, 500);
+        default_grpc_channel->Call("Exit", request, &reply, 100);
     }
 
     QString Client::Start(bool *rpcOK, const libcore::LoadConfigReq &request) {
