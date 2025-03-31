@@ -46,6 +46,7 @@
 #include <QtCharts>
 #include <random>
 #include <3rdparty/QHotkey/qhotkey.h>
+#include <include/api/gRPC.h>
 #include <include/global/HTTPRequestHelper.hpp>
 
 #include "include/sys/macos/MacOS.h"
@@ -735,33 +736,36 @@ void MainWindow::on_commitDataRequest() {
     qDebug() << "End of data save";
 }
 
-void MainWindow::on_menu_exit_triggered() {
-    if (mu_exit.tryLock()) {
-        NekoGui::dataStore->prepare_exit = true;
-        //
-        neko_set_spmode_system_proxy(false, false);
-        neko_set_spmode_vpn(false, false);
-        if (NekoGui::dataStore->spmode_vpn) {
-            mu_exit.unlock(); // retry
-            return;
-        }
-        RegisterHotkey(true);
-        //
-        on_commitDataRequest();
-        //
-        NekoGui::dataStore->save_control_no_save = true; // don't change datastore after this line
-        neko_stop(false, true);
-        //
-        hide();
-        runOnNewThread([=] {
-            sem_stopped.acquire();
-            stop_core_daemon();
-            runOnUiThread([=] {
-                on_menu_exit_triggered(); // continue exit progress
-            });
-        });
+void MainWindow::prepare_exit()
+{
+    qDebug() << "prepare for exit...";
+    mu_exit.lock();
+    if (NekoGui::dataStore->prepare_exit)
+    {
+        qDebug() << "prepare exit had already succeeded, ignoring...";
+        mu_exit.unlock();
         return;
     }
+    hide();
+    tray->hide();
+    NekoGui::dataStore->prepare_exit = true;
+    //
+    neko_set_spmode_system_proxy(false, false);
+    RegisterHotkey(true);
+    //
+    on_commitDataRequest();
+    //
+    NekoGui::dataStore->save_control_no_save = true; // don't change datastore after this line
+    neko_stop(false, true);
+    //
+    sem_stopped.acquire();
+    NekoGui_rpc::defaultClient->Exit();
+    mu_exit.unlock();
+    qDebug() << "prepare exit done!";
+}
+
+void MainWindow::on_menu_exit_triggered() {
+    prepare_exit();
     //
     if (exit_reason == 1) {
         QDir::setCurrent(QApplication::applicationDirPath());
@@ -791,7 +795,6 @@ void MainWindow::on_menu_exit_triggered() {
             QProcess::startDetached(program, arguments);
         }
     }
-    tray->hide();
     QCoreApplication::quit();
 }
 

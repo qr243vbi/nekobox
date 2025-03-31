@@ -438,12 +438,13 @@ void MainWindow::neko_stop(bool crash, bool sem, bool manual) {
         NekoGui::dataStore->need_keep_vpn_off = false;
         running = nullptr;
 
+        if (sem) sem_stopped.release();
+
         runOnUiThread([=] {
             refresh_status();
             refresh_proxy_list_impl_refresh_data(id, true);
 
             mu_stopping.unlock();
-            if (sem) sem_stopped.release();
         });
     });
 }
