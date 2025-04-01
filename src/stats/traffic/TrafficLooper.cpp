@@ -31,8 +31,8 @@ namespace NekoGui_traffic {
             auto down = resp.downs().at(item->tag);
             item->uplink += up;
             item->downlink += down;
-            item->uplink_rate = up * 1000 / interval;
-            item->downlink_rate = down * 1000 / interval;
+            item->uplink_rate = static_cast<double>(up) * 1000.0 / static_cast<double>(interval);
+            item->downlink_rate = static_cast<double>(down) * 1000.0 / static_cast<double>(interval);
             auto isInter = false;
             for (const auto& inter_tag : resp.intermediate_tags())
             {
