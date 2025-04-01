@@ -12,7 +12,6 @@
 
 class TrafficChart
 {
-private:
     QChart *chart;
     CustomChartView *chartView;
 
@@ -63,7 +62,7 @@ private:
         scaleData();
     }
 
-    QString getRateLabel() const
+    [[nodiscard]] QString getRateLabel() const
     {
         if (scaleFactor == 1) return "%.0f B/s";
         if (scaleFactor == 1000) return "%.2f KB/s";
@@ -116,9 +115,9 @@ public:
 
         proxyDlLine = new QSplineSeries;
         proxyDlLine->setName("Proxy Dl");
-        proxyDlLine->setColor(Qt::darkBlue);
+        proxyDlLine->setColor(Qt::darkMagenta);
         auto pen = proxyDlLine->pen();
-        pen.setWidth(2);
+        pen.setWidth(3);
         proxyDlLine->setPen(pen);
         chart->addSeries(proxyDlLine);
 
@@ -126,7 +125,7 @@ public:
         proxyUpLine->setName("Proxy Ul");
         proxyUpLine->setColor(Qt::darkRed);
         pen = proxyUpLine->pen();
-        pen.setWidth(2);
+        pen.setWidth(3);
         proxyUpLine->setPen(pen);
         chart->addSeries(proxyUpLine);
 
@@ -134,7 +133,7 @@ public:
         directDlLine->setName("Direct Dl");
         directDlLine->setColor(Qt::darkGreen);
         pen = directDlLine->pen();
-        pen.setWidth(2);
+        pen.setWidth(3);
         directDlLine->setPen(pen);
         chart->addSeries(directDlLine);
 
@@ -142,13 +141,18 @@ public:
         directUpLine->setName("Direct Ul");
         directUpLine->setColor(Qt::darkYellow);
         pen = directUpLine->pen();
-        pen.setWidth(2);
+        pen.setWidth(3);
         directUpLine->setPen(pen);
         chart->addSeries(directUpLine);
 
         timeAxis = new QDateTimeAxis;
         timeAxis->setFormat("hh:mm:ss");
         timeAxis->setTickCount(10);
+        auto gridPen = timeAxis->gridLinePen();
+        gridPen.setWidth(1);
+        gridPen.setDashPattern({1,3});
+        gridPen.setColor(Qt::darkGray);
+        timeAxis->setGridLinePen(gridPen);
         chart->addAxis(timeAxis, Qt::AlignBottom);
         proxyDlLine->attachAxis(timeAxis);
         proxyUpLine->attachAxis(timeAxis);
@@ -159,6 +163,7 @@ public:
         valueAxis->setLabelFormat("%.0f B/s");
         valueAxis->setMin(0);
         valueAxis->setMax(1000);
+        valueAxis->setGridLinePen(gridPen);
         chart->addAxis(valueAxis, Qt::AlignLeft);
         proxyDlLine->attachAxis(valueAxis);
         proxyUpLine->attachAxis(valueAxis);
