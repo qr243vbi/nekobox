@@ -504,8 +504,8 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 
 void MainWindow::closeEvent(QCloseEvent *event) {
     if (tray->isVisible()) {
-        hide();          // 隐藏窗口
-        event->ignore(); // 忽略事件
+        hide();
+        event->ignore();
     }
 }
 

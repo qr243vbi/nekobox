@@ -19,10 +19,6 @@ bool PowerOffTaskkillFilter::nativeEventFilter(const QByteArray &eventType, void
                 cleanUpFunc(0);
                 return true;
             }
-        } else if (msg->message == WM_CLOSE) {
-            qDebug() << "WM_CLOSE received, calling cleanUpFunc";
-            cleanUpFunc(0);
-            return true;
         }
     }
     return false;
