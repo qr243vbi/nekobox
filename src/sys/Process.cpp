@@ -29,11 +29,8 @@ namespace NekoGui_sys {
                 if (log.contains("Core listening at")) {
                     // The core really started
                     NekoGui::dataStore->core_running = true;
-                    NekoGui::IsAdmin(true);
-                    if (start_profile_when_core_is_up >= 0) {
-                        MW_dialog_message("ExternalProcess", "CoreStarted," + Int2String(start_profile_when_core_is_up));
-                        start_profile_when_core_is_up = -1;
-                    }
+                    MW_dialog_message("ExternalProcess", "CoreStarted," + Int2String(start_profile_when_core_is_up));
+                    start_profile_when_core_is_up = -1;
                 } else if (log.contains("failed to serve")) {
                     // The core failed to start
                     kill();
