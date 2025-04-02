@@ -276,6 +276,7 @@ namespace NekoGui {
         QString chainTag = "c-" + Int2String(chainId);
         QString chainTagOut;
         int index = 0;
+        bool lastWasEndpoint = false;
 
         for (const auto &ent: ents) {
             auto tagOut = chainTag + "-" + Int2String(ent->id) + "-" + Int2String(index);
@@ -287,10 +288,10 @@ namespace NekoGui {
 
             if (index > 0) {
                 // chain rules: past
-                auto replaced = status->outbounds.last().toObject();
+                auto replaced = (lastWasEndpoint ? status->endpoints : status->outbounds).last().toObject();
                 replaced["detour"] = tagOut;
-                status->outbounds.removeLast();
-                status->outbounds += replaced;
+                (lastWasEndpoint ? status->endpoints : status->outbounds).removeLast();
+                (lastWasEndpoint ? status->endpoints : status->outbounds) += replaced;
             } else {
                 // index == 0 means last profile in chain / not chain
                 chainTagOut = tagOut;
@@ -321,9 +322,11 @@ namespace NekoGui {
             if (ent->type == "wireguard")
             {
                 status->endpoints += outbound;
+                lastWasEndpoint = true;
             } else
             {
                 status->outbounds += outbound;
+                lastWasEndpoint = false;
             }
             index++;
         }
