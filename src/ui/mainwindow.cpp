@@ -74,6 +74,47 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     themeManager->ApplyTheme(NekoGui::dataStore->theme);
     ui->setupUi(this);
 
+    // setup log
+    ui->splitter->restoreState(DecodeB64IfValid(NekoGui::dataStore->splitter_state));
+    new SyntaxHighlighter(qApp->styleHints()->colorScheme() == Qt::ColorScheme::Dark || NekoGui::dataStore->theme.toLower() == "qdarkstyle", qvLogDocument);
+    qvLogDocument->setUndoRedoEnabled(false);
+    ui->masterLogBrowser->setUndoRedoEnabled(false);
+    ui->masterLogBrowser->setDocument(qvLogDocument);
+    ui->masterLogBrowser->setFont(QFontDatabase::systemFont(QFontDatabase::FixedFont));
+
+    connect(qApp->styleHints(), &QStyleHints::colorSchemeChanged, this, [=](const Qt::ColorScheme& scheme) {
+        new SyntaxHighlighter(scheme == Qt::ColorScheme::Dark, qvLogDocument);
+        themeManager->ApplyTheme(NekoGui::dataStore->theme, true);
+        if (trafficGraph) trafficGraph->updateTheme();
+    });
+    connect(themeManager, &ThemeManager::themeChanged, this, [=](const QString& theme){
+        if (theme.toLower().contains("vista")) {
+            // light themes
+            new SyntaxHighlighter(false, qvLogDocument);
+        } else if (theme.toLower().contains("qdarkstyle")) {
+            // dark themes
+            new SyntaxHighlighter(true, qvLogDocument);
+        } else {
+            // bi-mode themes, follow system preference
+            new SyntaxHighlighter(qApp->styleHints()->colorScheme() == Qt::ColorScheme::Dark, qvLogDocument);
+        }
+    });
+    connect(ui->masterLogBrowser->verticalScrollBar(), &QSlider::valueChanged, this, [=](int value) {
+        if (ui->masterLogBrowser->verticalScrollBar()->maximum() == value)
+            qvLogAutoScoll = true;
+        else
+            qvLogAutoScoll = false;
+    });
+    connect(ui->masterLogBrowser, &QTextBrowser::textChanged, this, [=]() {
+        if (!qvLogAutoScoll)
+            return;
+        auto bar = ui->masterLogBrowser->verticalScrollBar();
+        bar->setValue(bar->maximum());
+    });
+    MW_show_log = [=](const QString &log) {
+        runOnUiThread([=] { show_log_impl(log); });
+    };
+
     // Prepare core
     NekoGui::dataStore->core_port = MkPort();
     if (NekoGui::dataStore->core_port <= 0) NekoGui::dataStore->core_port = 19810;
@@ -163,47 +204,6 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     ui->toolButton_routing->setMenu(ui->menuRouting_Menu);
     ui->menubar->setVisible(false);
     connect(ui->toolButton_update, &QToolButton::clicked, this, [=] { runOnNewThread([=] { CheckUpdate(); }); });
-
-    // Setup log UI
-    ui->splitter->restoreState(DecodeB64IfValid(NekoGui::dataStore->splitter_state));
-    new SyntaxHighlighter(qApp->styleHints()->colorScheme() == Qt::ColorScheme::Dark || NekoGui::dataStore->theme.toLower() == "qdarkstyle", qvLogDocument);
-    qvLogDocument->setUndoRedoEnabled(false);
-    ui->masterLogBrowser->setUndoRedoEnabled(false);
-    ui->masterLogBrowser->setDocument(qvLogDocument);
-    ui->masterLogBrowser->setFont(QFontDatabase::systemFont(QFontDatabase::FixedFont));
-
-    connect(qApp->styleHints(), &QStyleHints::colorSchemeChanged, this, [=](const Qt::ColorScheme& scheme) {
-        new SyntaxHighlighter(scheme == Qt::ColorScheme::Dark, qvLogDocument);
-        themeManager->ApplyTheme(NekoGui::dataStore->theme, true);
-        if (trafficGraph) trafficGraph->updateTheme();
-    });
-    connect(themeManager, &ThemeManager::themeChanged, this, [=](const QString& theme){
-        if (theme.toLower().contains("vista")) {
-            // light themes
-            new SyntaxHighlighter(false, qvLogDocument);
-        } else if (theme.toLower().contains("qdarkstyle")) {
-            // dark themes
-            new SyntaxHighlighter(true, qvLogDocument);
-        } else {
-            // bi-mode themes, follow system preference
-            new SyntaxHighlighter(qApp->styleHints()->colorScheme() == Qt::ColorScheme::Dark, qvLogDocument);
-        }
-    });
-    connect(ui->masterLogBrowser->verticalScrollBar(), &QSlider::valueChanged, this, [=](int value) {
-        if (ui->masterLogBrowser->verticalScrollBar()->maximum() == value)
-            qvLogAutoScoll = true;
-        else
-            qvLogAutoScoll = false;
-    });
-    connect(ui->masterLogBrowser, &QTextBrowser::textChanged, this, [=]() {
-        if (!qvLogAutoScoll)
-            return;
-        auto bar = ui->masterLogBrowser->verticalScrollBar();
-        bar->setValue(bar->maximum());
-    });
-    MW_show_log = [=](const QString &log) {
-        runOnUiThread([=] { show_log_impl(log); });
-    };
 
     // setup connection UI
     setupConnectionList();
@@ -656,6 +656,7 @@ void MainWindow::dialog_message_impl(const QString &sender, const QString &info)
         } else if (info == "CoreCrashed") {
             neko_stop(true);
         } else if (info.startsWith("CoreStarted")) {
+            NekoGui::IsAdmin(true);
             if (NekoGui::dataStore->remember_enable || NekoGui::dataStore->flag_restart_tun_on) {
                 if (NekoGui::dataStore->remember_spmode.contains("system_proxy")) {
                     neko_set_spmode_system_proxy(true, false);
@@ -667,7 +668,10 @@ void MainWindow::dialog_message_impl(const QString &sender, const QString &info)
                     set_system_dns(true);
                 }
             }
-            neko_start(info.split(",")[1].toInt());
+            if (auto id = info.split(",")[1].toInt() >= 0)
+            {
+                neko_start(id);
+            }
             if (NekoGui::dataStore->system_dns_set) {
                 set_system_dns(true);
                 ui->system_dns->setChecked(true);
