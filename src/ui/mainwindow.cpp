@@ -1139,7 +1139,7 @@ void MainWindow::refresh_status(const QString &traffic_update) {
 
 void MainWindow::update_traffic_graph(int proxyDl, int proxyUp, int directDl, int directUp)
 {
-    trafficGraph->updateChart(proxyDl, proxyUp, directDl, directUp);
+    if (trafficGraph) trafficGraph->updateChart(proxyDl, proxyUp, directDl, directUp);;
 }
 
 // table显示
