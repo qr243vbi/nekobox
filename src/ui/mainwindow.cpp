@@ -668,7 +668,7 @@ void MainWindow::dialog_message_impl(const QString &sender, const QString &info)
                     set_system_dns(true);
                 }
             }
-            if (auto id = info.split(",")[1].toInt() >= 0)
+            if (auto id = info.split(",")[1].toInt(); id >= 0)
             {
                 neko_start(id);
             }
