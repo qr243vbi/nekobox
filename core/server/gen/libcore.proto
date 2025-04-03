@@ -62,7 +62,6 @@ message TestResp {
 message QueryStatsResp{
   map<string, int64> ups = 1;
   map<string, int64> downs = 2;
-  repeated string intermediate_tags = 3;
 }
 
 message ListConnectionsResp {

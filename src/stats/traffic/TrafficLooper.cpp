@@ -21,6 +21,8 @@ namespace NekoGui_traffic {
         proxy->uplink_rate = 0;
         proxy->downlink_rate = 0;
 
+        int proxyUp = 0, proxyDown = 0;
+
         for (const auto &item: this->items) {
             if (!resp.ups().contains(item->tag)) continue;
             auto now = elapsedTimer.elapsed();
@@ -29,20 +31,16 @@ namespace NekoGui_traffic {
             if (interval <= 0) continue;
             auto up = resp.ups().at(item->tag);
             auto down = resp.downs().at(item->tag);
+            if (item->tag == "proxy")
+            {
+                proxyUp = up;
+                proxyDown = down;
+            }
             item->uplink += up;
             item->downlink += down;
             item->uplink_rate = static_cast<double>(up) * 1000.0 / static_cast<double>(interval);
             item->downlink_rate = static_cast<double>(down) * 1000.0 / static_cast<double>(interval);
-            auto isInter = false;
-            for (const auto& inter_tag : resp.intermediate_tags())
-            {
-                if (inter_tag == item->tag)
-                {
-                    isInter = true;
-                    break;
-                }
-            }
-            if (isInter) continue;
+            if (item->ignoreForRate) continue;
             if (item->tag == "direct")
             {
                 direct->uplink_rate = item->uplink_rate;
@@ -51,6 +49,17 @@ namespace NekoGui_traffic {
             {
                 proxy->uplink_rate += item->uplink_rate;
                 proxy->downlink_rate += item->downlink_rate;
+            }
+        }
+        if (isChain)
+        {
+            for (const auto &item: this->items)
+            {
+                if (item->isChainTail)
+                {
+                    item->uplink += proxyUp;
+                    item->downlink += proxyDown;
+                }
             }
         }
     }

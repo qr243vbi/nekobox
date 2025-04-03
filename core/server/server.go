@@ -190,9 +190,6 @@ func (s *server) QueryStats(ctx context.Context, _ *gen.EmptyReq) (*gen.QuerySta
 				return nil, E.New("invalid outbound manager type")
 			}
 			for _, out := range outbounds.Outbounds() {
-				if len(out.Dependencies()) > 0 {
-					resp.IntermediateTags = append(resp.IntermediateTags, out.Tag())
-				}
 				u, d := cApi.TrafficManager().TotalOutbound(out.Tag())
 				resp.Ups[out.Tag()] = u
 				resp.Downs[out.Tag()] = d

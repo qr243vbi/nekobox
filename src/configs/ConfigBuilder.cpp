@@ -265,6 +265,7 @@ namespace NekoGui {
         if (ents.length() > 1) {
             status->ent->traffic_data->id = status->ent->id;
             status->ent->traffic_data->tag = chainTagOut.toStdString();
+            status->ent->traffic_data->ignoreForRate = true;
             status->result->outboundStats += status->ent->traffic_data;
         }
 
@@ -275,10 +276,10 @@ namespace NekoGui {
                                const std::shared_ptr<BuildConfigStatus> &status) {
         QString chainTag = "c-" + Int2String(chainId);
         QString chainTagOut;
-        int index = 0;
         bool lastWasEndpoint = false;
 
-        for (const auto &ent: ents) {
+        for (int index = 0; index < ents.length(); index++) {
+            const auto& ent = ents.at(index);
             auto tagOut = chainTag + "-" + Int2String(ent->id) + "-" + Int2String(index);
 
             // last profile set as "proxy"
@@ -290,6 +291,7 @@ namespace NekoGui {
                 // chain rules: past
                 auto replaced = (lastWasEndpoint ? status->endpoints : status->outbounds).last().toObject();
                 replaced["detour"] = tagOut;
+                ent->traffic_data->isChainTail = true;
                 (lastWasEndpoint ? status->endpoints : status->outbounds).removeLast();
                 (lastWasEndpoint ? status->endpoints : status->outbounds) += replaced;
             } else {
@@ -328,7 +330,6 @@ namespace NekoGui {
                 status->outbounds += outbound;
                 lastWasEndpoint = false;
             }
-            index++;
         }
 
         return chainTagOut;

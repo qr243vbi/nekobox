@@ -286,6 +286,7 @@ void MainWindow::neko_start(int _id) {
         NekoGui_traffic::trafficLooper->proxy = std::make_shared<NekoGui_traffic::TrafficData>("proxy");
         NekoGui_traffic::trafficLooper->direct = std::make_shared<NekoGui_traffic::TrafficData>("direct");
         NekoGui_traffic::trafficLooper->items = result->outboundStats;
+        NekoGui_traffic::trafficLooper->isChain = ent->type == "chain";
         NekoGui_traffic::trafficLooper->loop_enabled = true;
         NekoGui_traffic::connection_lister->suspend = false;
 
