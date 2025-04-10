@@ -49,7 +49,7 @@ DialogBasicSettings::DialogBasicSettings(QWidget *parent)
     D_LOAD_INT(max_log_line)
     //
     ui->language->setCurrentIndex(NekoGui::dataStore->language);
-    connect(ui->language, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, [=](int index) {
+    connect(ui->language, &QComboBox::currentIndexChanged, this, [=](int index) {
         CACHE.needRestart = true;
     });
     connect(ui->font, &QComboBox::currentTextChanged, this, [=](const QString &font) {

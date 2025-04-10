@@ -69,14 +69,6 @@
         <translation>امنیت</translation>
     </message>
     <message>
-        <source>Statistics refresh rate</source>
-        <translation>نرخ تازه سازی آمار ترافیک</translation>
-    </message>
-    <message>
-        <source>Off</source>
-        <translation>خاموش</translation>
-    </message>
-    <message>
         <source>Connection statistics</source>
         <translation>آمار اتصال</translation>
     </message>
@@ -868,32 +860,8 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</source>
         <translation>ویرایشگر Json</translation>
     </message>
     <message>
-        <source>Command</source>
-        <translation type="unfinished">فرمان</translation>
-    </message>
-    <message>
-        <source>Config Suffix</source>
-        <translation type="unfinished">پسوند کانفیگ</translation>
-    </message>
-    <message>
         <source>Outbound JSON, please read the documentation.</source>
         <translation>JSON خروجی، لطفاً مستندات را بخوانید.</translation>
-    </message>
-    <message>
-        <source>Please pick a core.</source>
-        <translation>لطفا یک هسته انتخاب کنید.</translation>
-    </message>
-    <message>
-        <source>Random if it&apos;s empty or zero.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Preview</source>
-        <translation type="unfinished">پیش نمایش</translation>
-    </message>
-    <message>
-        <source>Preview replace</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Please fill the complete config.</source>
@@ -1842,6 +1810,14 @@ Split by line.</source>
         <source>Geo Asset update completed!</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Traffic Graph</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Failed to download update assets</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ProxyItem</name>
@@ -1972,6 +1948,38 @@ Direct: %2</source>
     </message>
     <message>
         <source>Create new subscription group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Could not open file.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Not official support platform</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Requesting update error: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Traffic Chart</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Proxy Dl</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Proxy Ul</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Direct Dl</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Direct Ul</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -108,13 +108,13 @@ public:
         // init
         chart = new QChart;
         updateTheme();
-        chart->setTitle("Traffic Rate");
+        chart->setTitle(QObject::tr("Traffic Chart"));
         chart->legend()->setVisible(true);
         chart->legend()->setAlignment(Qt::AlignBottom);
         chart->setMargins(QMargins(0, 0, 0, 0));
 
         proxyDlLine = new QSplineSeries;
-        proxyDlLine->setName("Proxy Dl");
+        proxyDlLine->setName(QObject::tr("Proxy Dl"));
         proxyDlLine->setColor(Qt::darkMagenta);
         auto pen = proxyDlLine->pen();
         pen.setWidth(3);
@@ -122,7 +122,7 @@ public:
         chart->addSeries(proxyDlLine);
 
         proxyUpLine = new QSplineSeries;
-        proxyUpLine->setName("Proxy Ul");
+        proxyUpLine->setName(QObject::tr("Proxy Ul"));
         proxyUpLine->setColor(Qt::darkRed);
         pen = proxyUpLine->pen();
         pen.setWidth(3);
@@ -130,7 +130,7 @@ public:
         chart->addSeries(proxyUpLine);
 
         directDlLine = new QSplineSeries;
-        directDlLine->setName("Direct Dl");
+        directDlLine->setName(QObject::tr("Direct Dl"));
         directDlLine->setColor(Qt::darkGreen);
         pen = directDlLine->pen();
         pen.setWidth(3);
@@ -138,7 +138,7 @@ public:
         chart->addSeries(directDlLine);
 
         directUpLine = new QSplineSeries;
-        directUpLine->setName("Direct Ul");
+        directUpLine->setName(QObject::tr("Direct Ul"));
         directUpLine->setColor(Qt::darkYellow);
         pen = directUpLine->pen();
         pen.setWidth(3);

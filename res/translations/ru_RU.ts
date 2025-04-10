@@ -48,14 +48,6 @@
         <translation>Задать иконку</translation>
     </message>
     <message>
-        <source>Statistics refresh rate</source>
-        <translation>Частота обновления статистики</translation>
-    </message>
-    <message>
-        <source>Off</source>
-        <translation>Выкл</translation>
-    </message>
-    <message>
         <source>Connection statistics</source>
         <translation>Статистика подключений</translation>
     </message>
@@ -885,22 +877,6 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>Редактор JSON</translation>
     </message>
     <message>
-        <source>Command</source>
-        <translation>Команда</translation>
-    </message>
-    <message>
-        <source>Config Suffix</source>
-        <translation>Суффикс конфига</translation>
-    </message>
-    <message>
-        <source>Random if it&apos;s empty or zero.</source>
-        <translation>Если пусто или ноль, то будет выбран случайным образом.</translation>
-    </message>
-    <message>
-        <source>Preview</source>
-        <translation>Предпросмотр</translation>
-    </message>
-    <message>
         <source>Outbound JSON, please read the documentation.</source>
         <translation>Outbound JSON, прочтите документацию.</translation>
     </message>
@@ -909,16 +885,8 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>Пожалуйста, введите полную конфигурацию.</translation>
     </message>
     <message>
-        <source>Preview replace</source>
-        <translation>Предпросмотр замен</translation>
-    </message>
-    <message>
         <source>Name cannot be empty.</source>
         <translation>Имя не может быть пустым.</translation>
-    </message>
-    <message>
-        <source>Please pick a core.</source>
-        <translation>Пожалуйста, выберите ядро.</translation>
     </message>
 </context>
 <context>
@@ -1861,6 +1829,14 @@ Split by line.</source>
         <source>Geo Asset update completed!</source>
         <translation type="unfinished">Обновление георесурсов завершено!</translation>
     </message>
+    <message>
+        <source>Traffic Graph</source>
+        <translation type="unfinished">График трафика</translation>
+    </message>
+    <message>
+        <source>Failed to download update assets</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ProxyItem</name>
@@ -1999,6 +1975,38 @@ Release note:
     <message>
         <source>Create new subscription group</source>
         <translation type="unfinished">Создать новую группу подписки</translation>
+    </message>
+    <message>
+        <source>Could not open file.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Not official support platform</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Requesting update error: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Traffic Chart</source>
+        <translation type="unfinished">График трафика</translation>
+    </message>
+    <message>
+        <source>Proxy Dl</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Proxy Ul</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Direct Dl</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Direct Ul</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
