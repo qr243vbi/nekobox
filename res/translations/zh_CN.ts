@@ -68,14 +68,6 @@
         <translation>安全</translation>
     </message>
     <message>
-        <source>Statistics refresh rate</source>
-        <translation>流量统计刷新率</translation>
-    </message>
-    <message>
-        <source>Off</source>
-        <translation>关闭</translation>
-    </message>
-    <message>
         <source>Connection statistics</source>
         <translation>连接统计</translation>
     </message>
@@ -871,36 +863,12 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>内核</translation>
     </message>
     <message>
-        <source>Command</source>
-        <translation>命令</translation>
-    </message>
-    <message>
         <source>Json Editor</source>
         <translation>JSON 编辑器</translation>
     </message>
     <message>
-        <source>Please pick a core.</source>
-        <translation>请选择一个内核。</translation>
-    </message>
-    <message>
         <source>Outbound JSON, please read the documentation.</source>
         <translation>填写出站 JSON 对象，详细请看文档。</translation>
-    </message>
-    <message>
-        <source>Config Suffix</source>
-        <translation>配置文件后缀</translation>
-    </message>
-    <message>
-        <source>Random if it&apos;s empty or zero.</source>
-        <translation>如果为空或为零，则表示使用随机端口。</translation>
-    </message>
-    <message>
-        <source>Preview</source>
-        <translation>预览</translation>
-    </message>
-    <message>
-        <source>Preview replace</source>
-        <translation>预览替换串</translation>
     </message>
     <message>
         <source>Please fill the complete config.</source>
@@ -1850,6 +1818,14 @@ Split by line.</source>
         <source>Geo Asset update completed!</source>
         <translation>地理资产更新完成！</translation>
     </message>
+    <message>
+        <source>Traffic Graph</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Failed to download update assets</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ProxyItem</name>
@@ -1988,6 +1964,38 @@ Release note:
     <message>
         <source>Create new subscription group</source>
         <translation>创建新订阅组</translation>
+    </message>
+    <message>
+        <source>Could not open file.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Not official support platform</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Requesting update error: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Traffic Chart</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Proxy Dl</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Proxy Ul</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Direct Dl</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Direct Ul</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2131,6 +2139,7 @@ Release note:
     <message>
         <source>Some rules could not be added, fix them before saving:
 </source>
-        <translation>某些规则无法添加，请在保存之前修复它们：</translation>    </message>
+        <translation>某些规则无法添加，请在保存之前修复它们：</translation>
+    </message>
 </context>
 </TS>
