@@ -311,8 +311,7 @@ namespace NekoGui {
             // Bypass Lookup for the first profile
             auto serverAddress = ent->bean->serverAddress;
 
-            auto customBean = dynamic_cast<NekoGui_fmt::CustomBean *>(ent->bean.get());
-            if (customBean != nullptr && customBean->core == "internal") {
+            if (auto customBean = dynamic_cast<NekoGui_fmt::CustomBean *>(ent->bean.get()); customBean != nullptr && customBean->core == "internal") {
                 auto server = QString2QJsonObject(customBean->config_simple)["server"].toString();
                 if (!server.isEmpty()) serverAddress = server;
             }
