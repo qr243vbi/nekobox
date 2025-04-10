@@ -186,13 +186,23 @@ func (s *server) QueryStats(ctx context.Context, _ *gen.EmptyReq) (*gen.QuerySta
 			}
 			outbounds := service.FromContext[adapter.OutboundManager](boxInstance.Context())
 			if outbounds == nil {
-				log.Println("Failed to assert outbound manager")
-				return nil, E.New("invalid outbound manager type")
+				log.Println("Failed to get outbound manager")
+				return nil, E.New("nil outbound manager")
+			}
+			endpoints := service.FromContext[adapter.EndpointManager](boxInstance.Context())
+			if endpoints == nil {
+				log.Println("Failed to get endpoint manager")
+				return nil, E.New("nil endpoint manager")
 			}
 			for _, out := range outbounds.Outbounds() {
 				u, d := cApi.TrafficManager().TotalOutbound(out.Tag())
 				resp.Ups[out.Tag()] = u
 				resp.Downs[out.Tag()] = d
+			}
+			for _, ep := range endpoints.Endpoints() {
+				u, d := cApi.TrafficManager().TotalOutbound(ep.Tag())
+				resp.Ups[ep.Tag()] = u
+				resp.Downs[ep.Tag()] = d
 			}
 		}
 	}
