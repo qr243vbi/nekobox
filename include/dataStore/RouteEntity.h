@@ -120,6 +120,8 @@ namespace NekoGui {
 
         QStringList get_direct_sites();
 
+        QStringList get_direct_ips();
+
         QString GetSimpleRules(simpleAction action);
 
         QString UpdateSimpleRules(const QString& content, simpleAction action);
