@@ -640,6 +640,22 @@ namespace NekoGui {
         return res;
     }
 
+    QStringList RoutingChain::get_direct_ips()
+    {
+        auto res = QStringList();
+        for (const auto& item: Rules) {
+            if (item->outboundID == -2) {
+                for (const auto& rset: item->rule_set) {
+                    if (rset.endsWith("_IP")) res << QString("ruleset:" + rset);
+                }
+                for (const auto& domain: item->ip_cidr) {
+                    res << QString("ip:" + domain);
+                }
+            }
+        }
+        return res;
+    }
+
     QString RoutingChain::GetSimpleRules(simpleAction action)
     {
         QString res;
