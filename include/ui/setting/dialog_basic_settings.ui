@@ -111,12 +111,17 @@
            <widget class="QComboBox" name="proxy_scheme">
             <item>
              <property name="text">
-              <string>http</string>
+              <string>{ip}:{port}</string>
              </property>
             </item>
             <item>
              <property name="text">
-              <string>socks</string>
+              <string>http://{ip}:{port}</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>socks={ip}:{port}</string>
              </property>
             </item>
            </widget>
