@@ -215,6 +215,7 @@ namespace NekoGui_fmt
         serverPort = peers[0].toObject()["port"].toInt();
         publicKey = peers[0].toObject()["public_key"].toString();
         reserved = QJsonArray2QListInt(peers[0].toObject()["reserved"].toArray());
+        persistentKeepalive = peers[0].toObject()["persistent_keepalive_interval"].toInt();
         workerCount = obj["workers"].toInt();
         privateKey = obj["private_key"].toString();
         localAddress = QJsonArray2QListString(obj["address"].toArray());
