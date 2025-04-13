@@ -438,8 +438,10 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
             action->setChecked(NekoGui::dataStore->routing->current_route_id == route.first);
             connect(action, &QAction::triggered, this, [=]()
             {
-                if (NekoGui::dataStore->routing->current_route_id == route.first) return;
-                NekoGui::dataStore->routing->current_route_id = action->data().toInt();
+                auto routeID = action->data().toInt();
+                if (NekoGui::dataStore->routing->current_route_id == routeID) return;
+                NekoGui::dataStore->routing->current_route_id = routeID;
+                NekoGui::dataStore->routing->Save();
                 if (NekoGui::dataStore->started_id >= 0) neko_start(NekoGui::dataStore->started_id);
             });
             ui->menuRouting_Menu->addAction(action);
