@@ -756,6 +756,13 @@
       </attribute>
       <layout class="QVBoxLayout" name="verticalLayout_4">
        <item>
+        <widget class="QCheckBox" name="disable_priv_req">
+         <property name="text">
+          <string>Disable Privilege request</string>
+         </property>
+        </widget>
+       </item>
+       <item>
         <widget class="QCheckBox" name="skip_cert">
          <property name="text">
           <string>Skip TLS certificate authentication by default (allowInsecure)</string>

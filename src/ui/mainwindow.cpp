@@ -816,6 +816,11 @@ void MainWindow::neko_toggle_system_proxy() {
 }
 
 bool MainWindow::get_elevated_permissions(int reason) {
+    if (NekoGui::dataStore->disable_privilege_req)
+    {
+        MW_show_log(tr("User opted for no privilege req, some features may not work"));
+        return true;
+    }
     if (NekoGui::IsAdmin()) return true;
 #ifdef Q_OS_LINUX
     if (!Linux_HavePkexec()) {

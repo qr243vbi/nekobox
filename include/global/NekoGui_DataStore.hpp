@@ -122,6 +122,7 @@ namespace NekoGui {
         int vpn_mtu = 1500;
         bool vpn_ipv6 = false;
         bool vpn_strict_route = true;
+        bool disable_privilege_req = false;
 
         // NTP
         bool enable_ntp = false;
