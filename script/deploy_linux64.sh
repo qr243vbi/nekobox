@@ -59,7 +59,7 @@ patchelf --set-rpath '$ORIGIN/../../lib' ./usr/plugins/platformthemes/libqxdgdes
 # fix extra libs...
 mkdir ./usr/lib2
 ls ./usr/lib/
-cp ./usr/lib/libQt* ./usr/lib/libxcb-util* ./usr/lib/libicuuc* ./usr/lib/libicui18n* ./usr/lib/libicudata* ./usr/lib2
+cp ./usr/lib/libQt* ./usr/lib/libxcb-cursor* ./usr/lib/libxcb-util* ./usr/lib/libicuuc* ./usr/lib/libicui18n* ./usr/lib/libicudata* ./usr/lib2
 rm -r ./usr/lib
 mv ./usr/lib2 ./usr/lib
 
