@@ -141,7 +141,7 @@ jobs:
         shell: bash
         if: matrix.platform == 'ubuntu-22.04'
         run: |
-          sudo apt --fix-broken update && sudo apt upgrade -y
+          sudo apt update && sudo apt upgrade -y
           mkdir build
           cd build
           cmake -GNinja -DQT_VERSION_MAJOR=6  -DCMAKE_BUILD_TYPE=Release ..
