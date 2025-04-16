@@ -194,22 +194,22 @@ jobs:
           rm -rf nekoray
           ####
           mv linux64 nekoray
-          zip -r $version_standalone-linux64.zip nekoray
+          zip -9 -r $version_standalone-linux64.zip nekoray
           rm -rf nekoray
           ####
           mv windows64 nekoray
-          zip -r $version_standalone-windows64.zip nekoray
+          zip -9 -r $version_standalone-windows64.zip nekoray
           rm -rf nekoray
           ####
           mkdir Nekoray
           mv macos-arm64/nekoray.app Nekoray/nekoray.app
-          zip --symlinks -r $version_standalone-macos-arm64.zip Nekoray
+          zip -9 --symlinks -r $version_standalone-macos-arm64.zip Nekoray
           rm -rf macos-arm64
           rm -rf Nekoray
           ####
           mkdir Nekoray
           mv macos-amd64/nekoray.app Nekoray/nekoray.app
-          zip --symlinks -r $version_standalone-macos-amd64.zip Nekoray
+          zip -9 --symlinks -r $version_standalone-macos-amd64.zip Nekoray
           rm -rf macos-amd64
           rm -rf Nekoray
       - name: Clean Up
