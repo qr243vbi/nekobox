@@ -1,21 +1,20 @@
 module nekobox_core
 
-go 1.22.0
+go 1.23.0
 
-toolchain go1.23.0
+toolchain go1.24.0
 
 require (
 	github.com/dustin/go-humanize v1.0.1
-	github.com/gofrs/uuid/v5 v5.3.0
-	github.com/matsuridayo/libneko v0.0.0-20240702024904-1c47a3af7199
+	github.com/gofrs/uuid/v5 v5.3.2
 	github.com/oschwald/maxminddb-golang v1.13.1
 	github.com/sagernet/sing v0.6.5
 	github.com/sagernet/sing-box v1.11.6
 	github.com/sagernet/sing-dns v0.4.0
 	github.com/sagernet/sing-tun v0.6.1
-	github.com/spf13/cobra v1.8.1
-	golang.org/x/sys v0.30.0
-	google.golang.org/grpc v1.66.3
+	github.com/spf13/cobra v1.9.1
+	golang.org/x/sys v0.32.0
+	google.golang.org/grpc v1.71.1
 	google.golang.org/protobuf v1.36.6
 )
 
@@ -77,7 +76,7 @@ require (
 	github.com/sagernet/utls v1.6.7 // indirect
 	github.com/sagernet/wireguard-go v0.0.1-beta.5 // indirect
 	github.com/sagernet/ws v0.0.0-20231204124109-acfe8907c854 // indirect
-	github.com/spf13/pflag v1.0.5 // indirect
+	github.com/spf13/pflag v1.0.6 // indirect
 	github.com/u-root/uio v0.0.0-20230220225925-ffce2a382923 // indirect
 	github.com/vishvananda/netns v0.0.4 // indirect
 	github.com/zeebo/blake3 v0.2.3 // indirect

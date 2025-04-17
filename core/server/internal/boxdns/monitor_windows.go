@@ -1,11 +1,12 @@
 package boxdns
 
 import (
+	"encoding/binary"
 	"fmt"
-	"github.com/matsuridayo/libneko/iphlpapi"
 	"github.com/sagernet/sing/common/control"
 	logger2 "github.com/sagernet/sing/common/logger"
 	"log"
+	"nekobox_core/internal/boxdns/winipcfg"
 	"strings"
 
 	tun "github.com/sagernet/sing-tun"
@@ -60,17 +61,11 @@ func (d *DnsManager) HandleUnderlyingDNS(ifc *control.Interface, flag int) {
 		return
 	}
 	index := ifc.Index
-	var guid iphlpapi.GUID
-	if errno := iphlpapi.Index2GUID(uint64(index), &guid); errno != 0 {
+	u, err := ifcIdxtoUUID(index)
+	if err != nil {
+		log.Println("Failed to get uuid for interface")
 		return
 	}
-	u, _ := uuid.FromBytes([]byte{
-		guid.Data1[3], guid.Data1[2], guid.Data1[1], guid.Data1[0],
-		guid.Data2[1], guid.Data2[0],
-		guid.Data3[1], guid.Data3[0],
-		guid.Data4[0], guid.Data4[1], guid.Data4[2], guid.Data4[3],
-		guid.Data4[4], guid.Data4[5], guid.Data4[6], guid.Data4[7],
-	})
 	guidStr := "{" + u.String() + "}"
 	dns := getFirstDNS(guidStr)
 	if len(customDNS) > 0 && dns == customDNS[0].String() {
@@ -118,4 +113,31 @@ func getNameServersForInterface(guid string) ([]string, error) {
 	}
 
 	return nameservers, nil
+}
+
+func ifcIdxtoUUID(index int) (*uuid.UUID, error) {
+	luid, err := winipcfg.LUIDFromIndex(uint32(index))
+	if err != nil {
+		log.Println("Could not get luid from index")
+		return nil, err
+	}
+	guid, err := luid.GUID()
+	if err != nil {
+		log.Println("Could not get guid from luid")
+		return nil, err
+	}
+	data1 := make([]byte, 4)
+	data2 := make([]byte, 2)
+	data3 := make([]byte, 2)
+	binary.LittleEndian.PutUint32(data1, guid.Data1)
+	binary.LittleEndian.PutUint16(data2, guid.Data2)
+	binary.LittleEndian.PutUint16(data3, guid.Data3)
+	u, _ := uuid.FromBytes([]byte{
+		data1[3], data1[2], data1[1], data1[0],
+		data2[1], data2[0],
+		data3[1], data3[0],
+		guid.Data4[0], guid.Data4[1], guid.Data4[2], guid.Data4[3],
+		guid.Data4[4], guid.Data4[5], guid.Data4[6], guid.Data4[7],
+	})
+	return &u, nil
 }
