@@ -212,6 +212,7 @@ void DialogManageRoutes::accept() {
     NekoGui::dataStore->routing->def_outbound = ui->default_out->currentText();
 
     NekoGui::dataStore->enable_dns_server = ui->dnshijack_enable->isChecked();
+    auto prevDNSListenAddr = NekoGui::dataStore->dns_server_listen_addr;
     NekoGui::dataStore->dns_server_listen_addr = ui->dnshijack_listenaddr->text();
     NekoGui::dataStore->dns_server_listen_port = ui->dnshijack_listenport->text().toInt();
     NekoGui::dataStore->dns_v4_resp = ui->dnshijack_v4resp->text();
@@ -227,6 +228,13 @@ void DialogManageRoutes::accept() {
     NekoGui::dataStore->enable_redirect = ui->redirect_enable->isChecked();
     NekoGui::dataStore->redirect_listen_address = ui->redirect_listenaddr->text();
     NekoGui::dataStore->redirect_listen_port = ui->redirect_listenport->text().toInt();
+
+    if (prevDNSListenAddr != NekoGui::dataStore->dns_server_listen_addr)
+    {
+        QStringList msg{"DNSServerChanged"};
+        msg << prevDNSListenAddr;
+        MW_dialog_message("", msg.join(","));
+    }
 
     //
     QStringList msg{"UpdateDataStore"};

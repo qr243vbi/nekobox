@@ -144,7 +144,6 @@ namespace NekoGui {
         // System dns
         bool system_dns_set = false;
         bool is_dhcp = false;
-        QStringList system_dns_servers = {};
 
         // Hotkey
         QString hotkey_mainwindow = "";

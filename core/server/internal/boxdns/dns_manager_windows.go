@@ -2,6 +2,7 @@ package boxdns
 
 import (
 	"fmt"
+	"github.com/sagernet/sing/common"
 	"github.com/sagernet/sing/common/control"
 	E "github.com/sagernet/sing/common/exceptions"
 	"golang.org/x/sys/windows"
@@ -13,11 +14,10 @@ import (
 )
 
 const (
-	dhcpNameServerRegistryKey = "DhcpNameServer"
-	nameServerRegistryKey     = "NameServer"
+	nameServerRegistryKey = "NameServer"
 )
 
-var customDNS []netip.Addr
+var customns netip.Addr
 var dnsIsSet bool
 
 func (d *DnsManager) HandleSystemDNS(ifc *control.Interface, flag int) {
@@ -31,7 +31,7 @@ func (d *DnsManager) HandleSystemDNS(ifc *control.Interface, flag int) {
 	if !dnsIsSet {
 		return
 	}
-	_ = d.SetDefaultDNS(customDNS, false, false)
+	_ = d.SetDefaultDNS(customns, false, false)
 }
 
 func (d *DnsManager) getDefaultInterfaceGuid() (string, error) {
@@ -71,46 +71,45 @@ func (d *DnsManager) getDefaultInterfaceLUID() (winipcfg.LUID, error) {
 	return luid, nil
 }
 
-func (d *DnsManager) GetDefaultDNS() (servers []netip.Addr, dhcp bool, err error) {
+func (d *DnsManager) getNewNameservers(current []netip.Addr, customNS netip.Addr, clear bool) []netip.Addr {
+	res := common.Filter(current, func(addr netip.Addr) bool {
+		return addr.String() != customNS.String() && addr.Is4()
+	})
+	if clear {
+		return res
+	}
+
+	res = append([]netip.Addr{customNS}, res...)
+	return res
+}
+
+func (d *DnsManager) DefaultIfcIsDHCP() (dhcp bool, err error) {
 	if d == nil {
 		fmt.Println("No DnsManager, you may need to restart nekoray")
-		return nil, false, E.New("No Dns Manager, you may need to restart nekoray")
+		return false, E.New("No Dns Manager, you may need to restart nekoray")
 	}
 	guidStr, err := d.getDefaultInterfaceGuid()
 	if err != nil {
-		return nil, false, err
+		return false, err
 	}
 
 	key, err := registry.OpenKey(registry.LOCAL_MACHINE, `SYSTEM\\CurrentControlSet\\Services\\Tcpip\\Parameters\\Interfaces\\`+guidStr, registry.QUERY_VALUE)
 	if err != nil {
 		log.Println("getNameServersForInterface OpenKey:", err)
-		return nil, false, err
+		return false, err
 	}
 	defer key.Close()
 
-	if dhcpServers, _, err := key.GetStringValue(dhcpNameServerRegistryKey); err == nil {
+	if dhcpServers, _, err := key.GetStringValue(nameServerRegistryKey); err == nil {
 		if len(strings.TrimSpace(dhcpServers)) > 0 {
-			return nil, true, nil
+			return false, nil
 		}
 	}
 
-	nameServersRaw, _, err := key.GetStringValue(nameServerRegistryKey)
-	if err != nil {
-		return nil, false, err
-	}
-	resp := make([]netip.Addr, 0)
-	nameServers := strings.Split(strings.ReplaceAll(nameServersRaw, ",", " "), " ")
-	for _, server := range nameServers {
-		if server != "" {
-			addr, _ := netip.ParseAddr(server)
-			resp = append(resp, addr)
-		}
-	}
-
-	return resp, false, nil
+	return true, nil
 }
 
-func (d *DnsManager) SetDefaultDNS(servers []netip.Addr, dhcp bool, clear bool) error {
+func (d *DnsManager) SetDefaultDNS(customNS netip.Addr, dhcp bool, clear bool) error {
 	if d == nil {
 		fmt.Println("No DnsManager, you may need to restart nekoray")
 		return E.New("No dns Manager, you may need to restart nekoray")
@@ -118,7 +117,7 @@ func (d *DnsManager) SetDefaultDNS(servers []netip.Addr, dhcp bool, clear bool) 
 	if clear {
 		dnsIsSet = false
 	} else {
-		customDNS = servers
+		customns = customNS
 		dnsIsSet = true
 		if ifc := d.Monitor.DefaultInterface(); ifc != nil {
 			d.lastIfc = *ifc
@@ -138,14 +137,13 @@ func (d *DnsManager) SetDefaultDNS(servers []netip.Addr, dhcp bool, clear bool) 
 		return nil
 	}
 
-	hasV4 := false
-	for _, server := range servers {
-		if server.Is4() {
-			hasV4 = true
-		}
+	servers, err := luid.DNS()
+	if err != nil {
+		return E.New("Failed to get DNS servers", err)
 	}
+	servers = d.getNewNameservers(servers, customNS, clear)
 
-	if hasV4 {
+	if len(servers) > 0 {
 		err = luid.SetDNS(winipcfg.AddressFamily(windows.AF_INET), servers, nil)
 		if err != nil {
 			return err

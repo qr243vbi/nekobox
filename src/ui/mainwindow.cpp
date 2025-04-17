@@ -405,7 +405,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     });
     connect(ui->menu_qr, &QAction::triggered, this, [=]() { display_qr_link(false); });
     connect(ui->system_dns, &QCheckBox::clicked, this, [=](bool checked) {
-        if (const auto ok = set_system_dns(checked); !ok) {
+        if (const auto ok = set_system_dns(checked, NekoGui::dataStore->dns_server_listen_addr); !ok) {
             ui->system_dns->setChecked(!checked);
         } else {
             refresh_status();
@@ -608,6 +608,15 @@ void MainWindow::dialog_message_impl(const QString &sender, const QString &info)
         }
         refresh_status();
     }
+    if (info.contains("DNSServerChanged"))
+    {
+        if (NekoGui::dataStore->system_dns_set)
+        {
+            auto oldAddr = info.split(",")[1];
+            set_system_dns(false, oldAddr);
+            set_system_dns(true, NekoGui::dataStore->dns_server_listen_addr);
+        }
+    }
     if (info.contains("NeedRestart")) {
         auto n = QMessageBox::warning(GetMessageBoxParent(), tr("Settings changed"), tr("Restart the program to take effect."), QMessageBox::Yes | QMessageBox::No);
         if (n == QMessageBox::Yes) {
@@ -671,7 +680,7 @@ void MainWindow::dialog_message_impl(const QString &sender, const QString &info)
                     neko_set_spmode_vpn(true, false);
                 }
                 if (NekoGui::dataStore->flag_dns_set) {
-                    set_system_dns(true);
+                    set_system_dns(true, NekoGui::dataStore->dns_server_listen_addr);
                 }
             }
             if (auto id = info.split(",")[1].toInt(); id >= 0)
@@ -679,7 +688,7 @@ void MainWindow::dialog_message_impl(const QString &sender, const QString &info)
                 neko_start(id);
             }
             if (NekoGui::dataStore->system_dns_set) {
-                set_system_dns(true);
+                set_system_dns(true, NekoGui::dataStore->dns_server_listen_addr);
                 ui->system_dns->setChecked(true);
             }
         }
@@ -722,7 +731,7 @@ void MainWindow::on_menu_hotkey_settings_triggered() {
 
 void MainWindow::on_commitDataRequest() {
     qDebug() << "Handling DNS setting";
-    if (NekoGui::dataStore->system_dns_set) set_system_dns(false, false);
+    if (NekoGui::dataStore->system_dns_set) set_system_dns(false, NekoGui::dataStore->dns_server_listen_addr, false);
     qDebug() << "Done handling DNS setting";
     qDebug() << "Start of data save";
     //

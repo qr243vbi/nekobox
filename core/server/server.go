@@ -300,29 +300,6 @@ func (s *server) CompileGeoSiteToSrs(ctx context.Context, in *gen.CompileGeoSite
 	return &gen.EmptyResp{}, nil
 }
 
-func (s *server) SetSystemProxy(ctx context.Context, in *gen.SetSystemProxyRequest) (*gen.EmptyResp, error) {
-	var err error
-	addr := metadata.ParseSocksaddr(in.Address)
-	if systemProxyController == nil || systemProxyAddr.String() != addr.String() {
-		systemProxyController, err = settings.NewSystemProxy(context.Background(), addr, true)
-		if err != nil {
-			return nil, err
-		}
-		systemProxyAddr = addr
-	}
-	if in.Enable && !systemProxyController.IsEnabled() {
-		err = systemProxyController.Enable()
-	}
-	if !in.Enable && systemProxyController.IsEnabled() {
-		err = systemProxyController.Disable()
-	}
-	if err != nil {
-		return nil, err
-	}
-
-	return &gen.EmptyResp{}, nil
-}
-
 func (s *server) IsPrivileged(ctx context.Context, _ *gen.EmptyReq) (*gen.IsPrivilegedResponse, error) {
 	if runtime.GOOS == "windows" {
 		return &gen.IsPrivilegedResponse{

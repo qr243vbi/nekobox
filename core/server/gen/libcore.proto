@@ -19,9 +19,7 @@ service LibcoreService {
   rpc CompileGeoIPToSrs(CompileGeoIPToSrsRequest) returns (EmptyResp);
   rpc CompileGeoSiteToSrs(CompileGeoSiteToSrsRequest) returns (EmptyResp);
   //
-  rpc SetSystemProxy(SetSystemProxyRequest) returns (EmptyResp);
-  //
-  rpc GetSystemDNS(EmptyReq) returns (GetSystemDNSResponse);
+  rpc GetDNSDHCPStatus(EmptyReq) returns (GetDNSDHCPStatusResponse);
   rpc SetSystemDNS(SetSystemDNSRequest) returns (EmptyResp);
   //
   rpc IsPrivileged(EmptyReq) returns (IsPrivilegedResponse);
@@ -103,20 +101,14 @@ message CompileGeoSiteToSrsRequest {
   string path = 2;
 }
 
-message SetSystemProxyRequest {
-  bool enable = 1;
-  string address = 2;
-}
-
 message SetSystemDNSRequest {
   bool clear = 1;
-  repeated string servers = 2;
+  string custom_ns = 2;
   bool set_dhcp = 3;
 }
 
-message GetSystemDNSResponse {
-  repeated string servers = 1;
-  bool is_dhcp = 2;
+message GetDNSDHCPStatusResponse {
+  bool is_dhcp = 1;
 }
 
 message IsPrivilegedResponse {
