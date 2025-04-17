@@ -2,8 +2,6 @@ package boxdns
 
 import (
 	"fmt"
-	"github.com/gofrs/uuid/v5"
-	"github.com/matsuridayo/libneko/iphlpapi"
 	"github.com/sagernet/sing/common/control"
 	E "github.com/sagernet/sing/common/exceptions"
 	"golang.org/x/sys/windows"
@@ -46,17 +44,10 @@ func (d *DnsManager) getDefaultInterfaceGuid() (string, error) {
 		return "", E.New("Default interface is nil!")
 	}
 	index := ifc.Index
-	var guid iphlpapi.GUID
-	if errno := iphlpapi.Index2GUID(uint64(index), &guid); errno != 0 {
-		return "", E.New("Failed to convert index to GUID")
+	u, err := ifcIdxtoUUID(index)
+	if err != nil {
+		return "", err
 	}
-	u, _ := uuid.FromBytes([]byte{
-		guid.Data1[3], guid.Data1[2], guid.Data1[1], guid.Data1[0],
-		guid.Data2[1], guid.Data2[0],
-		guid.Data3[1], guid.Data3[0],
-		guid.Data4[0], guid.Data4[1], guid.Data4[2], guid.Data4[3],
-		guid.Data4[4], guid.Data4[5], guid.Data4[6], guid.Data4[7],
-	})
 	guidStr := "{" + u.String() + "}"
 
 	return guidStr, nil
