@@ -342,43 +342,25 @@ namespace NekoGui_rpc {
         return "";
     }
 
-    QString Client::SetSystemProxy(bool *rpcOK, bool enable) {
-        libcore::SetSystemProxyRequest req;
-        libcore::EmptyResp resp;
-        req.set_enable(enable);
-        req.set_address(QString("127.0.0.1:" + Int2String(NekoGui::dataStore->inbound_socks_port)).toStdString());
-
-        auto status = default_grpc_channel->Call("SetSystemProxy", req, &resp);
-        if (status == QNetworkReply::NoError) {
-            *rpcOK = true;
-            return "";
-        } else {
-            NOT_OK
-            return qt_error_string(status);
-        }
-    }
-
-    libcore::GetSystemDNSResponse Client::GetSystemDNS(bool *rpcOK) const {
+    bool Client::GetDNSDHCPStatus(bool *rpcOK) const {
         libcore::EmptyReq req;
-        libcore::GetSystemDNSResponse resp;
+        libcore::GetDNSDHCPStatusResponse resp;
 
-        auto status = default_grpc_channel->Call("GetSystemDNS", req, &resp);
+        auto status = default_grpc_channel->Call("GetDNSDHCPStatus", req, &resp);
         if (status == QNetworkReply::NoError) {
             *rpcOK = true;
-            return resp;
+            return resp.is_dhcp();
         } else {
             NOT_OK
-            return {};
+            return false;
         }
     }
 
-    QString Client::SetSystemDNS(bool *rpcOK, const QStringList& servers, const bool dhcp, const bool clear) const {
+    QString Client::SetSystemDNS(bool *rpcOK, const QString& customNS, const bool dhcp, const bool clear) const {
         libcore::SetSystemDNSRequest req;
         libcore::EmptyResp resp;
 
-        for (const auto& server : servers) {
-            req.add_servers(server.toStdString());
-        }
+        req.set_custom_ns(customNS.toStdString());
         req.set_set_dhcp(dhcp);
         req.set_clear(clear);
 
