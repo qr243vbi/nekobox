@@ -93,20 +93,6 @@
         </property>
        </widget>
       </item>
-      <item>
-       <widget class="Line" name="line">
-        <property name="orientation">
-         <enum>Qt::Orientation::Vertical</enum>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QCheckBox" name="auto_redir">
-        <property name="text">
-         <string>Auto Redirect</string>
-        </property>
-       </widget>
-      </item>
      </layout>
     </widget>
    </item>
