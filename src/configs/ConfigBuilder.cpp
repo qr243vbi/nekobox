@@ -498,7 +498,7 @@ namespace NekoGui {
             inboundObj["stack"] = dataStore->vpn_implementation;
             inboundObj["strict_route"] = dataStore->vpn_strict_route;
 #ifdef Q_OS_LINUX
-            inboundObj["auto_redirect"] = dataStore->auto_redirect;
+            inboundObj["auto_redirect"] = true;
 #endif
             auto tunAddress = QJsonArray{"172.19.0.1/24"};
             if (dataStore->vpn_ipv6) tunAddress += "fdfe:dcba:9876::1/96";
