@@ -102,8 +102,9 @@ jobs:
         with:
           path: download-artifact
       # ========================================================================================================= Qt Install
-      - name: Install Qt
+      - name: Install Qt Windows
         uses: jurplel/install-qt-action@v4.1.1
+        if: matrix.platform == 'windows-latest'
         with:
           arch: win64_mingw
           version: ${{ matrix.qt_version }}
@@ -111,7 +112,16 @@ jobs:
           modules: qtcharts
           cache: true
           cache-key-prefix: QtCache-${{ matrix.platform }}-${{ matrix.target }}
-      # ========================================================================================================= 编译与 Qt 无关的依赖
+      - name: Install Qt
+        uses: jurplel/install-qt-action@v4.1.1
+        if: matrix.platform != 'windows-latest'
+        with:
+          version: ${{ matrix.qt_version }}
+          setup-python: true
+          modules: qtcharts
+          cache: true
+          cache-key-prefix: QtCache-${{ matrix.platform }}-${{ matrix.target }}
+      # ========================================================================================================= Install Ninja and Build deps
       - name: Install ninja-build tool
         uses: seanmiddleditch/gha-setup-ninja@v5
       - name: Cache Download
