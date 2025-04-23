@@ -30,6 +30,7 @@
 #include <QGraphicsView>
 #include <QMap>
 #include <QPen>
+#include <utility>
 
 class SpeedWidget : public QGraphicsView
 {
@@ -53,14 +54,14 @@ class SpeedWidget : public QGraphicsView
         quint64 y[NB_GRAPHS];
         PointData()
         {
-            for (auto i = 0; i < NB_GRAPHS; i++)
-                y[i] = 0;
+            for (unsigned long long & i : y)
+                i = 0;
         }
     };
 
     explicit SpeedWidget(QWidget *parent = nullptr);
     void UpdateSpeedPlotSettings();
-    void AddPointData(QMap<SpeedWidget::GraphType, long> data);
+    void AddPointData(const QMap<SpeedWidget::GraphType, long>& data);
     void Clear();
     void replot();
 
@@ -70,8 +71,8 @@ class SpeedWidget : public QGraphicsView
   private:
     struct GraphProperties
     {
-        GraphProperties(){};
-        GraphProperties(const QString &name, const QPen &pen) : name(name), pen(pen){};
+        GraphProperties()= default;
+        GraphProperties(QString name, QPen pen) : name(std::move(name)), pen(std::move(pen)){};
         QString name;
         QPen pen;
     };

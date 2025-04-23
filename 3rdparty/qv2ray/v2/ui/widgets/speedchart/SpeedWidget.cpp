@@ -70,7 +70,7 @@ SpeedWidget::SpeedWidget(QWidget *parent) : QGraphicsView(parent)
     UpdateSpeedPlotSettings();
 }
 
-void SpeedWidget::AddPointData(QMap<SpeedWidget::GraphType, long> data)
+void SpeedWidget::AddPointData(const QMap<SpeedWidget::GraphType, long>& data)
 {
     SpeedWidget::PointData point;
     point.x = QDateTime::currentMSecsSinceEpoch() / 1000;
@@ -302,7 +302,7 @@ void SpeedWidget::paintEvent(QPaintEvent *)
     double legendHeight = 0;
     int legendWidth = 0;
 
-    for (const auto &property : qAsConst(m_properties))
+    for (const auto &property : std::as_const(m_properties))
     {
         if (fontMetrics.horizontalAdvance(property.name) > legendWidth)
             legendWidth = fontMetrics.horizontalAdvance(property.name);
@@ -318,7 +318,7 @@ void SpeedWidget::paintEvent(QPaintEvent *)
         painter.fillRect(legendBackgroundRect, legendBackgroundColor);
 
         int i = 0;
-        for (const auto &property : qAsConst(m_properties))
+        for (const auto &property : std::as_const(m_properties))
         {
             int nameSize = fontMetrics.horizontalAdvance(property.name);
             double indent = 1.5 * (i++) * fontMetrics.height();
