@@ -109,7 +109,6 @@ jobs:
           arch: ${{ matrix.qt_arch }}
           version: ${{ matrix.qt_version }}
           setup-python: true
-          modules: qtcharts
           cache: true
           cache-key-prefix: QtCache-${{ matrix.platform }}-${{ matrix.target }}
       # ========================================================================================================= Install Ninja and Build deps
