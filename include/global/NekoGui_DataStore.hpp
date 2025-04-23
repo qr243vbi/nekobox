@@ -113,6 +113,7 @@ namespace NekoGui {
 
         // VPN
         bool fake_dns = false;
+        bool enable_tun_routing = false;
 #ifdef Q_OS_MACOS
         QString vpn_implementation = "gvisor";
 #else

@@ -308,6 +308,7 @@ namespace NekoGui {
         _add(new configItem("stats_tab", &stats_tab, itemType::string));
         _add(new configItem("proxy_scheme", &proxy_scheme, itemType::string));
         _add(new configItem("disable_privilege_req", &disable_privilege_req, itemType::boolean));
+        _add(new configItem("enable_tun_routing", &enable_tun_routing, itemType::boolean));
     }
 
     void DataStore::UpdateStartedId(int id) {

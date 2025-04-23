@@ -504,7 +504,7 @@ namespace NekoGui {
             if (dataStore->vpn_ipv6) tunAddress += "fdfe:dcba:9876::1/96";
             inboundObj["address"] = tunAddress;
             inboundObj["domain_strategy"] = dataStore->routing->domain_strategy;
-            if (dataStore->routing->def_outbound == "proxy")
+            if (dataStore->enable_tun_routing && dataStore->routing->def_outbound == "proxy")
             {
                 if (!directIPCIDRs.isEmpty()) inboundObj["route_exclude_address"] = directIPCIDRs;
                 if (!directIPSets.isEmpty()) inboundObj["route_exclude_address_set"] = directIPSets;

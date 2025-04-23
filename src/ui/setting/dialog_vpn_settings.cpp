@@ -16,6 +16,7 @@ DialogVPNSettings::DialogVPNSettings(QWidget *parent) : QDialog(parent), ui(new 
     ui->vpn_mtu->setCurrentText(Int2String(NekoGui::dataStore->vpn_mtu));
     ui->vpn_ipv6->setChecked(NekoGui::dataStore->vpn_ipv6);
     ui->strict_route->setChecked(NekoGui::dataStore->vpn_strict_route);
+    ui->tun_routing->setChecked(NekoGui::dataStore->enable_tun_routing);
     ADJUST_SIZE
 }
 
@@ -31,6 +32,7 @@ void DialogVPNSettings::accept() {
     NekoGui::dataStore->vpn_mtu = mtu;
     NekoGui::dataStore->vpn_ipv6 = ui->vpn_ipv6->isChecked();
     NekoGui::dataStore->vpn_strict_route = ui->strict_route->isChecked();
+    NekoGui::dataStore->enable_tun_routing = ui->tun_routing->isChecked();
     //
     QStringList msg{"UpdateDataStore"};
     msg << "VPNChanged";
