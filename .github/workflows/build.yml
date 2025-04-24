@@ -75,7 +75,6 @@ jobs:
           - platform: windows-latest
             qt_version: "6.9.0"
             target: amd64
-            qt_arch: win64_mingw
           - platform: ubuntu-22.04
             qt_version: "6.9.0"
             target: amd64
@@ -97,23 +96,34 @@ jobs:
       - name: Install mingw
         if: matrix.platform == 'windows-latest'
         uses: bwoodsend/setup-winlibs-action@v1.15
+      - name: Install ninja-build tool
+        uses: seanmiddleditch/gha-setup-ninja@v5
 
       - name: Download Artifacts
         uses: actions/download-artifact@v4.1.8
         with:
           path: download-artifact
       # ========================================================================================================= Qt Install
+      - name: Qt static Cache
+        id: cache-static-Qt
+        if: matrix.platform == 'windows-latest'
+        uses: actions/cache@v4.2.0
+        with:
+          path: qt6/build
+          key: QtStaticCache-${{ matrix.platform }}-${{ matrix.target }}-Qt${{ matrix.qt_version }}
+      - name: Install Qt Windows
+        shell: powershell
+        if: matrix.platform == 'windows-latest' && steps.cache-static-Qt.outputs.cache-hit != 'true'
+        run: ./script/build_qt_static_windows.bat ${{ matrix.qt_version }}
       - name: Install Qt
         uses: jurplel/install-qt-action@v4.1.1
+        if: matrix.platform != 'windows-latest'
         with:
-          arch: ${{ matrix.qt_arch }}
           version: ${{ matrix.qt_version }}
           setup-python: true
           cache: true
           cache-key-prefix: QtCache-${{ matrix.platform }}-${{ matrix.target }}
-      # ========================================================================================================= Install Ninja and Build deps
-      - name: Install ninja-build tool
-        uses: seanmiddleditch/gha-setup-ninja@v5
+      # ========================================================================================================= Build deps
       - name: Cache Download
         id: cache-deps
         uses: actions/cache@v4.2.0
@@ -132,9 +142,10 @@ jobs:
           CC: gcc.exe
           CXX: g++.exe
         run: |
+          export CMAKE_PREFIX_PATH=$PWD/qt6/build/lib/cmake
           mkdir build
           cd build
-          cmake -GNinja -DQT_VERSION_MAJOR=6 -DCMAKE_BUILD_TYPE=Release ..
+          cmake -GNinja -DQT_VERSION_MAJOR=6 -DCMAKE_CXX_FLAGS="-static -DNDEBUG -s" ..
           ninja -j2
           cd ..
           ./script/deploy_windows64.sh
