@@ -34,9 +34,6 @@ endif ()
 
 list(APPEND NKR_LIBS ${CMAKE_SOURCE_DIR}/libs/deps/built)
 list(APPEND CMAKE_PREFIX_PATH ${NKR_LIBS})
-if(WIN32)
-    list(APPEND CMAKE_PREFIX_PATH "libs/deps/built/x64-windows-static")
-endif ()
 
 message("[CMAKE_PREFIX_PATH] ${CMAKE_PREFIX_PATH}")
 
