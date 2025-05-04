@@ -132,7 +132,7 @@ namespace NekoGui {
 
         // Hijack
         bool enable_dns_server = false;
-        QString dns_server_listen_addr = "127.0.0.1";
+        bool dns_server_listen_lan = false;
         int dns_server_listen_port = 53;
         QString dns_v4_resp = "127.0.0.1";
         QString dns_v6_resp = "::1";
@@ -143,7 +143,6 @@ namespace NekoGui {
 
         // System dns
         bool system_dns_set = false;
-        bool is_dhcp = false;
 
         // Hotkey
         QString hotkey_mainwindow = "";

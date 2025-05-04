@@ -409,7 +409,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     });
     connect(ui->menu_qr, &QAction::triggered, this, [=]() { display_qr_link(false); });
     connect(ui->system_dns, &QCheckBox::clicked, this, [=](bool checked) {
-        if (const auto ok = set_system_dns(checked, NekoGui::dataStore->dns_server_listen_addr); !ok) {
+        if (const auto ok = set_system_dns(checked); !ok) {
             ui->system_dns->setChecked(!checked);
         } else {
             refresh_status();
@@ -617,8 +617,8 @@ void MainWindow::dialog_message_impl(const QString &sender, const QString &info)
         if (NekoGui::dataStore->system_dns_set)
         {
             auto oldAddr = info.split(",")[1];
-            set_system_dns(false, oldAddr);
-            set_system_dns(true, NekoGui::dataStore->dns_server_listen_addr);
+            set_system_dns(false);
+            set_system_dns(true);
         }
     }
     if (info.contains("NeedRestart")) {
@@ -684,7 +684,7 @@ void MainWindow::dialog_message_impl(const QString &sender, const QString &info)
                     neko_set_spmode_vpn(true, false);
                 }
                 if (NekoGui::dataStore->flag_dns_set) {
-                    set_system_dns(true, NekoGui::dataStore->dns_server_listen_addr);
+                    set_system_dns(true);
                 }
             }
             if (auto id = info.split(",")[1].toInt(); id >= 0)
@@ -692,7 +692,7 @@ void MainWindow::dialog_message_impl(const QString &sender, const QString &info)
                 neko_start(id);
             }
             if (NekoGui::dataStore->system_dns_set) {
-                set_system_dns(true, NekoGui::dataStore->dns_server_listen_addr);
+                set_system_dns(true);
                 ui->system_dns->setChecked(true);
             }
         }
@@ -735,7 +735,7 @@ void MainWindow::on_menu_hotkey_settings_triggered() {
 
 void MainWindow::on_commitDataRequest() {
     qDebug() << "Handling DNS setting";
-    if (NekoGui::dataStore->system_dns_set) set_system_dns(false, NekoGui::dataStore->dns_server_listen_addr, false);
+    if (NekoGui::dataStore->system_dns_set) set_system_dns(false, false);
     qDebug() << "Done handling DNS setting";
     qDebug() << "Start of data save";
     //

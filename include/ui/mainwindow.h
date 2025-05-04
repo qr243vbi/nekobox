@@ -229,7 +229,7 @@ private:
 
     static void stop_core_daemon();
 
-    bool set_system_dns(bool set, const QString& customServer, bool save_set = true);
+    bool set_system_dns(bool set, bool save_set = true);
 
     void CheckUpdate();
 

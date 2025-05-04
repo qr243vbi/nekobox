@@ -174,7 +174,7 @@ void MainWindow::stop_core_daemon() {
     NekoGui_rpc::defaultClient->Exit();
 }
 
-bool MainWindow::set_system_dns(bool set, const QString& customServer, bool save_set) {
+bool MainWindow::set_system_dns(bool set, bool save_set) {
     if (!NekoGui::dataStore->enable_dns_server) {
         MW_show_log(tr("You need to enable hijack DNS server first"));
         return false;
@@ -185,16 +185,9 @@ bool MainWindow::set_system_dns(bool set, const QString& customServer, bool save
     bool rpcOK;
     QString res;
     if (set) {
-        bool ok;
-        auto isDHCP = defaultClient->GetDNSDHCPStatus(&ok);
-        if (!ok) {
-            MW_show_log(tr("Failed to get system dns settings"));
-            return false;
-        }
-        NekoGui::dataStore->is_dhcp = isDHCP;
-        res = defaultClient->SetSystemDNS(&rpcOK, customServer, false, false);
+        res = defaultClient->SetSystemDNS(&rpcOK, false);
     } else {
-        res = defaultClient->SetSystemDNS(&rpcOK, customServer, NekoGui::dataStore->is_dhcp, true);
+        res = defaultClient->SetSystemDNS(&rpcOK, true);
     }
     if (!rpcOK) {
         MW_show_log(tr("Failed to set system dns: ") + res);

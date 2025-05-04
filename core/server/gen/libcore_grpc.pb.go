@@ -31,7 +31,6 @@ const (
 	LibcoreService_GetGeoSiteList_FullMethodName      = "/libcore.LibcoreService/GetGeoSiteList"
 	LibcoreService_CompileGeoIPToSrs_FullMethodName   = "/libcore.LibcoreService/CompileGeoIPToSrs"
 	LibcoreService_CompileGeoSiteToSrs_FullMethodName = "/libcore.LibcoreService/CompileGeoSiteToSrs"
-	LibcoreService_GetDNSDHCPStatus_FullMethodName    = "/libcore.LibcoreService/GetDNSDHCPStatus"
 	LibcoreService_SetSystemDNS_FullMethodName        = "/libcore.LibcoreService/SetSystemDNS"
 	LibcoreService_IsPrivileged_FullMethodName        = "/libcore.LibcoreService/IsPrivileged"
 )
@@ -52,7 +51,6 @@ type LibcoreServiceClient interface {
 	GetGeoSiteList(ctx context.Context, in *GeoListRequest, opts ...grpc.CallOption) (*GetGeoSiteListResponse, error)
 	CompileGeoIPToSrs(ctx context.Context, in *CompileGeoIPToSrsRequest, opts ...grpc.CallOption) (*EmptyResp, error)
 	CompileGeoSiteToSrs(ctx context.Context, in *CompileGeoSiteToSrsRequest, opts ...grpc.CallOption) (*EmptyResp, error)
-	GetDNSDHCPStatus(ctx context.Context, in *EmptyReq, opts ...grpc.CallOption) (*GetDNSDHCPStatusResponse, error)
 	SetSystemDNS(ctx context.Context, in *SetSystemDNSRequest, opts ...grpc.CallOption) (*EmptyResp, error)
 	IsPrivileged(ctx context.Context, in *EmptyReq, opts ...grpc.CallOption) (*IsPrivilegedResponse, error)
 }
@@ -185,16 +183,6 @@ func (c *libcoreServiceClient) CompileGeoSiteToSrs(ctx context.Context, in *Comp
 	return out, nil
 }
 
-func (c *libcoreServiceClient) GetDNSDHCPStatus(ctx context.Context, in *EmptyReq, opts ...grpc.CallOption) (*GetDNSDHCPStatusResponse, error) {
-	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(GetDNSDHCPStatusResponse)
-	err := c.cc.Invoke(ctx, LibcoreService_GetDNSDHCPStatus_FullMethodName, in, out, cOpts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *libcoreServiceClient) SetSystemDNS(ctx context.Context, in *SetSystemDNSRequest, opts ...grpc.CallOption) (*EmptyResp, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(EmptyResp)
@@ -231,7 +219,6 @@ type LibcoreServiceServer interface {
 	GetGeoSiteList(context.Context, *GeoListRequest) (*GetGeoSiteListResponse, error)
 	CompileGeoIPToSrs(context.Context, *CompileGeoIPToSrsRequest) (*EmptyResp, error)
 	CompileGeoSiteToSrs(context.Context, *CompileGeoSiteToSrsRequest) (*EmptyResp, error)
-	GetDNSDHCPStatus(context.Context, *EmptyReq) (*GetDNSDHCPStatusResponse, error)
 	SetSystemDNS(context.Context, *SetSystemDNSRequest) (*EmptyResp, error)
 	IsPrivileged(context.Context, *EmptyReq) (*IsPrivilegedResponse, error)
 	mustEmbedUnimplementedLibcoreServiceServer()
@@ -279,9 +266,6 @@ func (UnimplementedLibcoreServiceServer) CompileGeoIPToSrs(context.Context, *Com
 }
 func (UnimplementedLibcoreServiceServer) CompileGeoSiteToSrs(context.Context, *CompileGeoSiteToSrsRequest) (*EmptyResp, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CompileGeoSiteToSrs not implemented")
-}
-func (UnimplementedLibcoreServiceServer) GetDNSDHCPStatus(context.Context, *EmptyReq) (*GetDNSDHCPStatusResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetDNSDHCPStatus not implemented")
 }
 func (UnimplementedLibcoreServiceServer) SetSystemDNS(context.Context, *SetSystemDNSRequest) (*EmptyResp, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method SetSystemDNS not implemented")
@@ -526,24 +510,6 @@ func _LibcoreService_CompileGeoSiteToSrs_Handler(srv interface{}, ctx context.Co
 	return interceptor(ctx, in, info, handler)
 }
 
-func _LibcoreService_GetDNSDHCPStatus_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(EmptyReq)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(LibcoreServiceServer).GetDNSDHCPStatus(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: LibcoreService_GetDNSDHCPStatus_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(LibcoreServiceServer).GetDNSDHCPStatus(ctx, req.(*EmptyReq))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _LibcoreService_SetSystemDNS_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(SetSystemDNSRequest)
 	if err := dec(in); err != nil {
@@ -634,10 +600,6 @@ var LibcoreService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CompileGeoSiteToSrs",
 			Handler:    _LibcoreService_CompileGeoSiteToSrs_Handler,
-		},
-		{
-			MethodName: "GetDNSDHCPStatus",
-			Handler:    _LibcoreService_GetDNSDHCPStatus_Handler,
 		},
 		{
 			MethodName: "SetSystemDNS",

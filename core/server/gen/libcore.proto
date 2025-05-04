@@ -19,7 +19,6 @@ service LibcoreService {
   rpc CompileGeoIPToSrs(CompileGeoIPToSrsRequest) returns (EmptyResp);
   rpc CompileGeoSiteToSrs(CompileGeoSiteToSrsRequest) returns (EmptyResp);
   //
-  rpc GetDNSDHCPStatus(EmptyReq) returns (GetDNSDHCPStatusResponse);
   rpc SetSystemDNS(SetSystemDNSRequest) returns (EmptyResp);
   //
   rpc IsPrivileged(EmptyReq) returns (IsPrivilegedResponse);
@@ -103,12 +102,6 @@ message CompileGeoSiteToSrsRequest {
 
 message SetSystemDNSRequest {
   bool clear = 1;
-  string custom_ns = 2;
-  bool set_dhcp = 3;
-}
-
-message GetDNSDHCPStatusResponse {
-  bool is_dhcp = 1;
 }
 
 message IsPrivilegedResponse {

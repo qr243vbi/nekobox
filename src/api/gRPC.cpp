@@ -342,26 +342,10 @@ namespace NekoGui_rpc {
         return "";
     }
 
-    bool Client::GetDNSDHCPStatus(bool *rpcOK) const {
-        libcore::EmptyReq req;
-        libcore::GetDNSDHCPStatusResponse resp;
-
-        auto status = default_grpc_channel->Call("GetDNSDHCPStatus", req, &resp);
-        if (status == QNetworkReply::NoError) {
-            *rpcOK = true;
-            return resp.is_dhcp();
-        } else {
-            NOT_OK
-            return false;
-        }
-    }
-
-    QString Client::SetSystemDNS(bool *rpcOK, const QString& customNS, const bool dhcp, const bool clear) const {
+    QString Client::SetSystemDNS(bool *rpcOK, const bool clear) const {
         libcore::SetSystemDNSRequest req;
         libcore::EmptyResp resp;
 
-        req.set_custom_ns(customNS.toStdString());
-        req.set_set_dhcp(dhcp);
         req.set_clear(clear);
 
         auto status = default_grpc_channel->Call("SetSystemDNS", req, &resp);
