@@ -32,9 +32,7 @@ namespace NekoGui_rpc {
 
         QString CompileGeoSet(bool *rpcOK, GeoRuleSetType mode, std::string category, const QString& basePath);
 
-        bool GetDNSDHCPStatus(bool *rpcOK) const;
-
-        QString SetSystemDNS(bool *rpcOK, const QString& customNS, bool dhcp, bool clear) const;
+        QString SetSystemDNS(bool *rpcOK, bool clear) const;
 
         libcore::ListConnectionsResp ListConnections(bool *rpcOK) const;
 
