@@ -309,3 +309,69 @@ func (s *server) IsPrivileged(ctx context.Context, _ *gen.EmptyReq) (*gen.IsPriv
 
 	return &gen.IsPrivilegedResponse{HasPrivilege: os.Geteuid() == 0}, nil
 }
+
+func (s *server) SpeedTest(ctx context.Context, in *gen.SpeedTestRequest) (*gen.SpeedTestResponse, error) {
+	var testInstance *boxbox.Box
+	var cancel context.CancelFunc
+	outboundTags := in.OutboundTags
+	var err error
+	if in.TestCurrent {
+		if boxInstance == nil {
+			return &gen.SpeedTestResponse{Results: []*gen.SpeedTestResult{{
+				OutboundTag: "proxy",
+				Error:       "Instance is not running",
+			}}}, nil
+		}
+		testInstance = boxInstance
+		outbound := testInstance.Outbound().Default()
+		outboundTags = []string{outbound.Tag()}
+	} else {
+		testInstance, cancel, err = boxmain.Create([]byte(in.Config))
+		if err != nil {
+			return nil, err
+		}
+		defer cancel()
+		defer testInstance.Close()
+	}
+
+	results := BatchSpeedTest(testCtx, testInstance, outboundTags)
+
+	res := make([]*gen.SpeedTestResult, 0)
+	for _, data := range results {
+		errStr := ""
+		if data.Error != nil {
+			errStr = data.Error.Error()
+		}
+		res = append(res, &gen.SpeedTestResult{
+			DlSpeed:       data.DlSpeed,
+			UlSpeed:       data.UlSpeed,
+			Latency:       data.Latency,
+			OutboundTag:   data.Tag,
+			Error:         errStr,
+			ServerName:    data.ServerName,
+			ServerCountry: data.ServerCountry,
+		})
+	}
+
+	return &gen.SpeedTestResponse{Results: res}, nil
+}
+
+func (s *server) QuerySpeedTest(context.Context, *gen.EmptyReq) (*gen.QuerySpeedTestResponse, error) {
+	res, isRunning := SpTQuerier.Result()
+	errStr := ""
+	if res.Error != nil {
+		errStr = res.Error.Error()
+	}
+	return &gen.QuerySpeedTestResponse{
+		Result: &gen.SpeedTestResult{
+			DlSpeed:       res.DlSpeed,
+			UlSpeed:       res.UlSpeed,
+			Latency:       res.Latency,
+			OutboundTag:   res.Tag,
+			Error:         errStr,
+			ServerName:    res.ServerName,
+			ServerCountry: res.ServerCountry,
+		},
+		IsRunning: isRunning,
+	}, nil
+}

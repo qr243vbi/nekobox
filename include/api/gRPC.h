@@ -40,6 +40,10 @@ namespace NekoGui_rpc {
 
         bool IsPrivileged(bool *rpcOK) const;
 
+        libcore::SpeedTestResponse SpeedTest(bool *rpcOK, const libcore::SpeedTestRequest &request);
+
+        libcore::SpeedTestResult QueryCurrentSpeedTests(bool *rpcOK);
+
     private:
         std::function<std::unique_ptr<QtGrpc::Http2GrpcChannelPrivate>()> make_grpc_channel;
         std::unique_ptr<QtGrpc::Http2GrpcChannelPrivate> default_grpc_channel;
