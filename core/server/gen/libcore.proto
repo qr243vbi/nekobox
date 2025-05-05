@@ -22,6 +22,9 @@ service LibcoreService {
   rpc SetSystemDNS(SetSystemDNSRequest) returns (EmptyResp);
   //
   rpc IsPrivileged(EmptyReq) returns (IsPrivilegedResponse);
+  //
+  rpc SpeedTest(SpeedTestRequest) returns(SpeedTestResponse);
+  rpc QuerySpeedTest(EmptyReq) returns(QuerySpeedTestResponse);
 }
 
 message EmptyReq {}
@@ -106,4 +109,29 @@ message SetSystemDNSRequest {
 
 message IsPrivilegedResponse {
   bool has_privilege = 1;
+}
+
+message SpeedTestRequest {
+  string config = 1;
+  repeated string outbound_tags = 2;
+  bool test_current = 3;
+}
+
+message SpeedTestResult {
+  string dl_speed = 1;
+  string ul_speed = 2;
+  int32 latency = 3;
+  string outbound_tag = 4;
+  string error = 5;
+  string server_name = 6;
+  string server_country = 7;
+}
+
+message SpeedTestResponse {
+  repeated SpeedTestResult results = 1;
+}
+
+message QuerySpeedTestResponse {
+  SpeedTestResult result = 1;
+  bool is_running = 2;
 }

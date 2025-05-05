@@ -3,6 +3,8 @@ package main
 import (
 	"context"
 	"errors"
+	"fmt"
+	"github.com/Mahdi-zarei/speedtest-go/speedtest"
 	"github.com/sagernet/sing-box/adapter"
 	"github.com/sagernet/sing/common/metadata"
 	"github.com/sagernet/sing/service"
@@ -15,6 +17,7 @@ import (
 
 var testCtx context.Context
 var cancelTests context.CancelFunc
+var SpTQuerier SpeedTestResultQuerier
 
 const URLTestTimeout = 3 * time.Second
 const MaxConcurrentTests = 100
@@ -22,6 +25,38 @@ const MaxConcurrentTests = 100
 type URLTestResult struct {
 	Duration time.Duration
 	Error    error
+}
+
+type SpeedTestResult struct {
+	Tag           string
+	DlSpeed       string
+	UlSpeed       string
+	Latency       int32
+	ServerName    string
+	ServerCountry string
+	Error         error
+}
+
+type SpeedTestResultQuerier struct {
+	isRunning bool
+	current   SpeedTestResult
+	mu        sync.RWMutex
+}
+
+func (s *SpeedTestResultQuerier) Result() (SpeedTestResult, bool) {
+	s.mu.RLock()
+	defer s.mu.RUnlock()
+	return s.current, s.isRunning
+}
+
+func (s *SpeedTestResultQuerier) storeResult(result *SpeedTestResult) {
+	s.mu.Lock()
+	defer s.mu.Unlock()
+	s.current = *result
+}
+
+func (s *SpeedTestResultQuerier) setIsRunning(isRunning bool) {
+	s.isRunning = isRunning
 }
 
 func BatchURLTest(ctx context.Context, i *boxbox.Box, outboundTags []string, url string, maxConcurrency int, twice bool) []*URLTestResult {
@@ -98,4 +133,96 @@ func urlTest(ctx context.Context, client *http.Client, url string) (time.Duratio
 	}
 	_ = resp.Body.Close()
 	return time.Since(begin), nil
+}
+
+func getNetDialer(dialer func(ctx context.Context, network string, destination metadata.Socksaddr) (net.Conn, error)) func(ctx context.Context, network string, address string) (net.Conn, error) {
+	return func(ctx context.Context, network string, address string) (net.Conn, error) {
+		return dialer(ctx, network, metadata.Socksaddr{Addr: metadata.ParseAddr(address)})
+	}
+}
+
+func BatchSpeedTest(ctx context.Context, i *boxbox.Box, outboundTags []string) []*SpeedTestResult {
+	outbounds := service.FromContext[adapter.OutboundManager](i.Context())
+	results := make([]*SpeedTestResult, 0)
+
+	for _, tag := range outboundTags {
+		outbound, exists := outbounds.Outbound(tag)
+		if !exists {
+			panic("no outbound with tag " + tag + " found")
+		}
+		res := new(SpeedTestResult)
+		res.Tag = tag
+		results = append(results, res)
+
+		insCtx, cancel := context.WithTimeout(ctx, 30*time.Second)
+		err := speedTestWithDialer(insCtx, getNetDialer(outbound.DialContext), res)
+		cancel()
+		if err != nil {
+			res.Error = err
+			fmt.Println("Failed to speedtest with err:", err)
+		}
+	}
+
+	return results
+}
+
+func speedTestWithDialer(ctx context.Context, dialer func(ctx context.Context, network string, address string) (net.Conn, error), res *SpeedTestResult) error {
+	clt := speedtest.New(speedtest.WithUserConfig(&speedtest.UserConfig{
+		DialContextFunc: dialer,
+		PingMode:        speedtest.HTTP,
+		MaxConnections:  8,
+	}))
+	srv, err := clt.FetchServerListContext(ctx)
+	if err != nil {
+		return err
+	}
+	srv, err = srv.FindServer(nil)
+	if err != nil {
+		return err
+	}
+
+	if srv.Len() == 0 {
+		return errors.New("no server found for speedTest")
+	}
+	res.ServerName = srv[0].Name
+	res.ServerCountry = srv[0].Country
+
+	done := make(chan struct{})
+
+	SpTQuerier.setIsRunning(true)
+	defer SpTQuerier.setIsRunning(false)
+
+	go func() {
+		defer func() { close(done) }()
+		err = srv[0].DownloadTestContext(ctx)
+		if err != nil {
+			res.Error = err
+			return
+		}
+		err = srv[0].UploadTestContext(ctx)
+		if err != nil {
+			res.Error = err
+			return
+		}
+	}()
+
+	ticker := time.NewTicker(time.Millisecond * 50)
+	defer ticker.Stop()
+
+	for {
+		select {
+		case <-done:
+			res.DlSpeed = srv[0].DLSpeed.String()
+			res.UlSpeed = srv[0].ULSpeed.String()
+			res.Latency = int32(srv[0].Latency.Milliseconds())
+			SpTQuerier.storeResult(res)
+			return nil
+		case <-ctx.Done():
+			return ctx.Err()
+		case <-ticker.C:
+			res.DlSpeed = speedtest.ByteRate(srv[0].Context.GetEWMADownloadRate()).String()
+			res.UlSpeed = speedtest.ByteRate(srv[0].Context.GetEWMAUploadRate()).String()
+			SpTQuerier.storeResult(res)
+		}
+	}
 }

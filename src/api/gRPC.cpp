@@ -407,5 +407,34 @@ namespace NekoGui_rpc {
         }
     }
 
+    libcore::SpeedTestResponse Client::SpeedTest(bool *rpcOK, const libcore::SpeedTestRequest &request)
+    {
+        libcore::SpeedTestResponse reply;
+        auto status = make_grpc_channel()->Call("SpeedTest", request, &reply);
+
+        if (status == QNetworkReply::NoError) {
+            *rpcOK = true;
+            return reply;
+        } else {
+            NOT_OK
+            return reply;
+        }
+    }
+
+    libcore::SpeedTestResult Client::QueryCurrentSpeedTests(bool *rpcOK)
+    {
+        const libcore::EmptyReq req;
+        libcore::SpeedTestResult reply;
+        auto status = make_grpc_channel()->Call("QuerySpeedTest", req, &reply);
+
+        if (status == QNetworkReply::NoError) {
+            *rpcOK = true;
+            return reply;
+        } else {
+            NOT_OK
+            return reply;
+        }
+    }
+
 
 } // namespace NekoGui_rpc

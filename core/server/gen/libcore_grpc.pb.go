@@ -33,6 +33,8 @@ const (
 	LibcoreService_CompileGeoSiteToSrs_FullMethodName = "/libcore.LibcoreService/CompileGeoSiteToSrs"
 	LibcoreService_SetSystemDNS_FullMethodName        = "/libcore.LibcoreService/SetSystemDNS"
 	LibcoreService_IsPrivileged_FullMethodName        = "/libcore.LibcoreService/IsPrivileged"
+	LibcoreService_SpeedTest_FullMethodName           = "/libcore.LibcoreService/SpeedTest"
+	LibcoreService_QuerySpeedTest_FullMethodName      = "/libcore.LibcoreService/QuerySpeedTest"
 )
 
 // LibcoreServiceClient is the client API for LibcoreService service.
@@ -53,6 +55,8 @@ type LibcoreServiceClient interface {
 	CompileGeoSiteToSrs(ctx context.Context, in *CompileGeoSiteToSrsRequest, opts ...grpc.CallOption) (*EmptyResp, error)
 	SetSystemDNS(ctx context.Context, in *SetSystemDNSRequest, opts ...grpc.CallOption) (*EmptyResp, error)
 	IsPrivileged(ctx context.Context, in *EmptyReq, opts ...grpc.CallOption) (*IsPrivilegedResponse, error)
+	SpeedTest(ctx context.Context, in *SpeedTestRequest, opts ...grpc.CallOption) (*SpeedTestResponse, error)
+	QuerySpeedTest(ctx context.Context, in *EmptyReq, opts ...grpc.CallOption) (*QuerySpeedTestResponse, error)
 }
 
 type libcoreServiceClient struct {
@@ -203,6 +207,26 @@ func (c *libcoreServiceClient) IsPrivileged(ctx context.Context, in *EmptyReq, o
 	return out, nil
 }
 
+func (c *libcoreServiceClient) SpeedTest(ctx context.Context, in *SpeedTestRequest, opts ...grpc.CallOption) (*SpeedTestResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SpeedTestResponse)
+	err := c.cc.Invoke(ctx, LibcoreService_SpeedTest_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *libcoreServiceClient) QuerySpeedTest(ctx context.Context, in *EmptyReq, opts ...grpc.CallOption) (*QuerySpeedTestResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(QuerySpeedTestResponse)
+	err := c.cc.Invoke(ctx, LibcoreService_QuerySpeedTest_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // LibcoreServiceServer is the server API for LibcoreService service.
 // All implementations must embed UnimplementedLibcoreServiceServer
 // for forward compatibility.
@@ -221,6 +245,8 @@ type LibcoreServiceServer interface {
 	CompileGeoSiteToSrs(context.Context, *CompileGeoSiteToSrsRequest) (*EmptyResp, error)
 	SetSystemDNS(context.Context, *SetSystemDNSRequest) (*EmptyResp, error)
 	IsPrivileged(context.Context, *EmptyReq) (*IsPrivilegedResponse, error)
+	SpeedTest(context.Context, *SpeedTestRequest) (*SpeedTestResponse, error)
+	QuerySpeedTest(context.Context, *EmptyReq) (*QuerySpeedTestResponse, error)
 	mustEmbedUnimplementedLibcoreServiceServer()
 }
 
@@ -272,6 +298,12 @@ func (UnimplementedLibcoreServiceServer) SetSystemDNS(context.Context, *SetSyste
 }
 func (UnimplementedLibcoreServiceServer) IsPrivileged(context.Context, *EmptyReq) (*IsPrivilegedResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method IsPrivileged not implemented")
+}
+func (UnimplementedLibcoreServiceServer) SpeedTest(context.Context, *SpeedTestRequest) (*SpeedTestResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method SpeedTest not implemented")
+}
+func (UnimplementedLibcoreServiceServer) QuerySpeedTest(context.Context, *EmptyReq) (*QuerySpeedTestResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method QuerySpeedTest not implemented")
 }
 func (UnimplementedLibcoreServiceServer) mustEmbedUnimplementedLibcoreServiceServer() {}
 func (UnimplementedLibcoreServiceServer) testEmbeddedByValue()                        {}
@@ -546,6 +578,42 @@ func _LibcoreService_IsPrivileged_Handler(srv interface{}, ctx context.Context, 
 	return interceptor(ctx, in, info, handler)
 }
 
+func _LibcoreService_SpeedTest_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SpeedTestRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LibcoreServiceServer).SpeedTest(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LibcoreService_SpeedTest_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LibcoreServiceServer).SpeedTest(ctx, req.(*SpeedTestRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LibcoreService_QuerySpeedTest_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(EmptyReq)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LibcoreServiceServer).QuerySpeedTest(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LibcoreService_QuerySpeedTest_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LibcoreServiceServer).QuerySpeedTest(ctx, req.(*EmptyReq))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // LibcoreService_ServiceDesc is the grpc.ServiceDesc for LibcoreService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -608,6 +676,14 @@ var LibcoreService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "IsPrivileged",
 			Handler:    _LibcoreService_IsPrivileged_Handler,
+		},
+		{
+			MethodName: "SpeedTest",
+			Handler:    _LibcoreService_SpeedTest_Handler,
+		},
+		{
+			MethodName: "QuerySpeedTest",
+			Handler:    _LibcoreService_QuerySpeedTest_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
