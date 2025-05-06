@@ -249,6 +249,8 @@ namespace NekoGui {
         _add(new configItem("id", &id, itemType::integer));
         _add(new configItem("gid", &gid, itemType::integer));
         _add(new configItem("yc", &latency, itemType::integer));
+        _add(new configItem("dl", &dl_speed, itemType::string));
+        _add(new configItem("ul", &ul_speed, itemType::string));
         _add(new configItem("report", &full_test_report, itemType::string));
 
         // 可以不关联 bean，只加载 ProxyEntity 的信息
@@ -260,14 +262,16 @@ namespace NekoGui {
         }
     };
 
-    QString ProxyEntity::DisplayLatency() const {
+    QString ProxyEntity::DisplayTestResult() const {
+        QString result;
         if (latency < 0) {
-            return QObject::tr("Unavailable");
+            result = "Unavailable";
         } else if (latency > 0) {
-            return UNICODE_LRO + QString("%1 ms").arg(latency);
-        } else {
-            return "";
+            result = UNICODE_LRO + QString("%1 ms").arg(latency);
         }
+        if (!dl_speed.isEmpty()) result += " ↓" + dl_speed;
+        if (!ul_speed.isEmpty()) result += " ↑" + ul_speed;
+        return result;
     }
 
     QColor ProxyEntity::DisplayLatencyColor() const {

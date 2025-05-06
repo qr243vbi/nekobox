@@ -115,6 +115,9 @@ message SpeedTestRequest {
   string config = 1;
   repeated string outbound_tags = 2;
   bool test_current = 3;
+  bool use_default_outbound = 4;
+  bool test_download = 5;
+  bool test_upload = 6;
 }
 
 message SpeedTestResult {
