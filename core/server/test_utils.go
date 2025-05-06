@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"github.com/Mahdi-zarei/speedtest-go/speedtest"
 	"github.com/sagernet/sing-box/adapter"
+	E "github.com/sagernet/sing/common/exceptions"
 	"github.com/sagernet/sing/common/metadata"
 	"github.com/sagernet/sing/service"
 	"nekobox_core/internal/boxbox"
@@ -137,15 +138,20 @@ func urlTest(ctx context.Context, client *http.Client, url string) (time.Duratio
 
 func getNetDialer(dialer func(ctx context.Context, network string, destination metadata.Socksaddr) (net.Conn, error)) func(ctx context.Context, network string, address string) (net.Conn, error) {
 	return func(ctx context.Context, network string, address string) (net.Conn, error) {
-		return dialer(ctx, network, metadata.Socksaddr{Addr: metadata.ParseAddr(address)})
+		return dialer(ctx, network, metadata.ParseSocksaddr(address))
 	}
 }
 
-func BatchSpeedTest(ctx context.Context, i *boxbox.Box, outboundTags []string) []*SpeedTestResult {
+func BatchSpeedTest(ctx context.Context, i *boxbox.Box, outboundTags []string, testDl, testUl bool) []*SpeedTestResult {
 	outbounds := service.FromContext[adapter.OutboundManager](i.Context())
 	results := make([]*SpeedTestResult, 0)
 
 	for _, tag := range outboundTags {
+		select {
+		case <-ctx.Done():
+			break
+		default:
+		}
 		outbound, exists := outbounds.Outbound(tag)
 		if !exists {
 			panic("no outbound with tag " + tag + " found")
@@ -154,19 +160,23 @@ func BatchSpeedTest(ctx context.Context, i *boxbox.Box, outboundTags []string) [
 		res.Tag = tag
 		results = append(results, res)
 
-		insCtx, cancel := context.WithTimeout(ctx, 30*time.Second)
-		err := speedTestWithDialer(insCtx, getNetDialer(outbound.DialContext), res)
-		cancel()
+		err := speedTestWithDialer(ctx, getNetDialer(outbound.DialContext), res, testDl, testUl)
 		if err != nil {
 			res.Error = err
 			fmt.Println("Failed to speedtest with err:", err)
+		}
+		if !testDl {
+			res.DlSpeed = ""
+		}
+		if !testUl {
+			res.UlSpeed = ""
 		}
 	}
 
 	return results
 }
 
-func speedTestWithDialer(ctx context.Context, dialer func(ctx context.Context, network string, address string) (net.Conn, error), res *SpeedTestResult) error {
+func speedTestWithDialer(ctx context.Context, dialer func(ctx context.Context, network string, address string) (net.Conn, error), res *SpeedTestResult, testDl, testUl bool) error {
 	clt := speedtest.New(speedtest.WithUserConfig(&speedtest.UserConfig{
 		DialContextFunc: dialer,
 		PingMode:        speedtest.HTTP,
@@ -194,15 +204,19 @@ func speedTestWithDialer(ctx context.Context, dialer func(ctx context.Context, n
 
 	go func() {
 		defer func() { close(done) }()
-		err = srv[0].DownloadTestContext(ctx)
-		if err != nil {
-			res.Error = err
-			return
+		if testDl {
+			err = srv[0].DownloadTestContext(ctx)
+			if err != nil {
+				res.Error = err
+				return
+			}
 		}
-		err = srv[0].UploadTestContext(ctx)
-		if err != nil {
-			res.Error = err
-			return
+		if testUl {
+			err = srv[0].UploadTestContext(ctx)
+			if err != nil {
+				res.Error = err
+				return
+			}
 		}
 	}()
 
@@ -218,7 +232,7 @@ func speedTestWithDialer(ctx context.Context, dialer func(ctx context.Context, n
 			SpTQuerier.storeResult(res)
 			return nil
 		case <-ctx.Done():
-			return ctx.Err()
+			return E.New("test cancelled")
 		case <-ticker.C:
 			res.DlSpeed = speedtest.ByteRate(srv[0].Context.GetEWMADownloadRate()).String()
 			res.UlSpeed = speedtest.ByteRate(srv[0].Context.GetEWMAUploadRate()).String()

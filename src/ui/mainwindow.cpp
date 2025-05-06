@@ -421,6 +421,24 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 #endif
 
     connect(ui->menu_server, &QMenu::aboutToShow, this, [=](){
+        if (running)
+        {
+            ui->actionSpeedtest_Current->setEnabled(true);
+        } else
+        {
+            ui->actionSpeedtest_Current->setEnabled(false);
+        }
+        if (auto selected = get_now_selected_list(); selected.empty())
+        {
+            ui->actionSpeedtest_Selected->setEnabled(false);
+            ui->actionUrl_Test_Selected->setEnabled(false);
+            ui->menu_resolve_selected->setEnabled(false);
+        } else
+        {
+            ui->actionSpeedtest_Selected->setEnabled(true);
+            ui->actionUrl_Test_Selected->setEnabled(true);
+            ui->menu_resolve_selected->setEnabled(true);
+        }
         if (!speedtestRunning.tryLock()) {
             ui->menu_server->addAction(ui->menu_stop_testing);
         } else {
@@ -452,12 +470,27 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
         }
     });
     connect(ui->actionUrl_Test_Selected, &QAction::triggered, this, [=]() {
-        speedtest_current_group(get_now_selected_list());
+        urltest_current_group(get_now_selected_list());
     });
     connect(ui->actionUrl_Test_Group, &QAction::triggered, this, [=]() {
+        urltest_current_group(NekoGui::profileManager->CurrentGroup()->Profiles());
+    });
+    connect(ui->actionSpeedtest_Current, &QAction::triggered, this, [=]()
+    {
+        if (running != nullptr)
+        {
+            speedtest_current_group({running});
+        }
+    });
+    connect(ui->actionSpeedtest_Selected, &QAction::triggered, this, [=]()
+    {
+        speedtest_current_group(get_now_selected_list());
+    });
+    connect(ui->actionSpeedtest_Group, &QAction::triggered, this, [=]()
+    {
         speedtest_current_group(NekoGui::profileManager->CurrentGroup()->Profiles());
     });
-    connect(ui->menu_stop_testing, &QAction::triggered, this, [=]() { stopSpeedTests(); });
+    connect(ui->menu_stop_testing, &QAction::triggered, this, [=]() { stopTests(); });
     //
     auto set_selected_or_group = [=](int mode) {
         // 0=group 1=select 2=unknown(menu is hide)
@@ -561,7 +594,6 @@ void MainWindow::show_group(int gid) {
 
     ui->tabWidget->widget(groupId2TabIndex(gid))->layout()->addWidget(ui->proxyListTable);
 
-    // 列宽是否可调
     if (group->manually_column_width) {
         for (int i = 0; i <= 4; i++) {
             ui->proxyListTable->horizontalHeader()->setSectionResizeMode(i, QHeaderView::Interactive);
@@ -1376,7 +1408,7 @@ void MainWindow::refresh_table_item(const int row, const std::shared_ptr<NekoGui
     if (profile->full_test_report.isEmpty()) {
         auto color = profile->DisplayLatencyColor();
         if (color.isValid()) f->setForeground(color);
-        f->setText(profile->DisplayLatency());
+        f->setText(profile->DisplayTestResult());
     } else {
         f->setText(profile->full_test_report);
     }
@@ -1726,6 +1758,8 @@ void MainWindow::on_menu_scan_qr_triggered() {
 void MainWindow::on_menu_clear_test_result_triggered() {
     for (const auto &profile: get_selected_or_group()) {
         profile->latency = 0;
+        profile->dl_speed.clear();
+        profile->ul_speed.clear();
         profile->full_test_report = "";
         profile->Save();
     }
@@ -2056,6 +2090,7 @@ void MainWindow::on_tabWidget_customContextMenuRequested(const QPoint &p) {
     if (NekoGui::profileManager->groups.size() > 1) menu->addAction(deleteAction);
     if (!group->Profiles().empty()) {
         menu->addAction(ui->actionUrl_Test_Group);
+        menu->addAction(ui->actionSpeedtest_Group);
         menu->addAction(ui->menu_resolve_domain);
         menu->addAction(ui->menu_clear_test_result);
         menu->addAction(ui->menu_delete_repeat);

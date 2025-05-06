@@ -2,8 +2,8 @@ github.com/Mahdi-zarei/sing-box v1.3.5-0.20250419091424-318eff0efb34 h1:xhAgBfvZ
 github.com/Mahdi-zarei/sing-box v1.3.5-0.20250419091424-318eff0efb34/go.mod h1:wMfYe7SB/9L11IuO7r0A5Rh6eoxGsyjoErxeYwqLgXU=
 github.com/Mahdi-zarei/sing-dns v0.3.0-beta.14.0.20250419091211-cee3ab2d4492 h1:fLReuPi1fM99oFRERDU96JzEY1YpLh8PmDGEcfnexCY=
 github.com/Mahdi-zarei/sing-dns v0.3.0-beta.14.0.20250419091211-cee3ab2d4492/go.mod h1:dweQs54ng2YGzoJfz+F9dGuDNdP5pJ3PLeggnK5VWc8=
-github.com/Mahdi-zarei/speedtest-go v1.7.11 h1:K/c7qBlJNAYGv6MujDaIKvtb4AH+yPRdssZ1NJMGPFU=
-github.com/Mahdi-zarei/speedtest-go v1.7.11/go.mod h1:b1H+UBFUnLKH1YquN2xao8d1hokcnDFFhEKDARTzddM=
+github.com/Mahdi-zarei/speedtest-go v1.7.12 h1:KktFSpobkhIgrOd25e8IpVzVq2enpCDzQQPVtGxWZV4=
+github.com/Mahdi-zarei/speedtest-go v1.7.12/go.mod h1:b1H+UBFUnLKH1YquN2xao8d1hokcnDFFhEKDARTzddM=
 github.com/ajg/form v1.5.1 h1:t9c7v8JUKu/XxOGBU0yjNpaMloxGEJhUkqFRq0ibGeU=
 github.com/ajg/form v1.5.1/go.mod h1:uL1WgH+h2mgNtvBq0339dVnzXdBETtL2LeUXaIv25UY=
 github.com/andybalholm/brotli v1.0.6 h1:Yf9fFpf49Zrxb9NlQaluyE92/+X7UVHlhMNJN2sxfOI=

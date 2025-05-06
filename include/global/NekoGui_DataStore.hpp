@@ -1,5 +1,7 @@
 // DO NOT INCLUDE THIS
 
+#include "Const.hpp"
+
 namespace NekoGui {
 
     class Routing : public JsonStore {
@@ -80,6 +82,7 @@ namespace NekoGui {
         QString splitter_state = "";
         bool enable_stats = true;
         QString stats_tab = ""; // either connection or log
+        int speed_test_mode = TestConfig::FULL;
 
         // Subscription
         QString user_agent = ""; // set at main.cpp

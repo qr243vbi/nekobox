@@ -219,13 +219,17 @@ private:
 
     static void setup_grpc();
 
-    void speedtest_current_group(const QList<std::shared_ptr<NekoGui::ProxyEntity>>& profiles);
+    void urltest_current_group(const QList<std::shared_ptr<NekoGui::ProxyEntity>>& profiles);
 
-    void stopSpeedTests();
+    void stopTests();
 
-    void RunSpeedTest(const QString& config, bool useDefault, const QStringList& outboundTags, const QMap<QString, int>& tag2entID, int entID = -1);
+    void runURLTest(const QString& config, bool useDefault, const QStringList& outboundTags, const QMap<QString, int>& tag2entID, int entID = -1);
 
     void url_test_current();
+
+    void speedtest_current_group(const QList<std::shared_ptr<NekoGui::ProxyEntity>>& profiles);
+
+    void runSpeedTest(const QString& config, bool useDefault, const QStringList& outboundTags, const QMap<QString, int>& tag2entID, int entID = -1);
 
     static void stop_core_daemon();
 

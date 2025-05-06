@@ -602,6 +602,8 @@
     <addaction name="separator"/>
     <addaction name="actionUrl_Test_Selected"/>
     <addaction name="menu_resolve_selected"/>
+    <addaction name="actionSpeedtest_Current"/>
+    <addaction name="actionSpeedtest_Selected"/>
    </widget>
    <widget class="QMenu" name="menuHidden_menu">
     <property name="title">
@@ -614,6 +616,7 @@
     <addaction name="menu_remove_unavailable"/>
     <addaction name="menu_clear_test_result"/>
     <addaction name="menu_delete_repeat"/>
+    <addaction name="actionSpeedtest_Group"/>
    </widget>
    <widget class="QMenu" name="menuRouting_Menu">
     <property name="title">
@@ -1004,6 +1007,21 @@
   <action name="menu_open_routing_manager">
    <property name="text">
     <string>Open Manager</string>
+   </property>
+  </action>
+  <action name="actionSpeedtest_Current">
+   <property name="text">
+    <string>Speedtest Current</string>
+   </property>
+  </action>
+  <action name="actionSpeedtest_Selected">
+   <property name="text">
+    <string>Speedtest Selected</string>
+   </property>
+  </action>
+  <action name="actionSpeedtest_Group">
+   <property name="text">
+    <string>Speedtest Group</string>
    </property>
   </action>
  </widget>

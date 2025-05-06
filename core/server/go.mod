@@ -5,6 +5,7 @@ go 1.23.0
 toolchain go1.24.0
 
 require (
+	github.com/Mahdi-zarei/speedtest-go v1.7.12
 	github.com/dustin/go-humanize v1.0.1
 	github.com/gofrs/uuid/v5 v5.3.2
 	github.com/oschwald/maxminddb-golang v1.13.1
@@ -23,7 +24,6 @@ replace github.com/sagernet/sing-box => github.com/Mahdi-zarei/sing-box v1.3.5-0
 replace github.com/sagernet/sing-dns => github.com/Mahdi-zarei/sing-dns v0.3.0-beta.14.0.20250419091211-cee3ab2d4492
 
 require (
-	github.com/Mahdi-zarei/speedtest-go v1.7.11 // indirect
 	github.com/ajg/form v1.5.1 // indirect
 	github.com/andybalholm/brotli v1.0.6 // indirect
 	github.com/caddyserver/certmagic v0.20.0 // indirect

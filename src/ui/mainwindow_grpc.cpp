@@ -29,7 +29,7 @@ void MainWindow::setup_grpc() {
     runOnNewThread([=] {NekoGui_traffic::connection_lister->Loop(); });
 }
 
-void MainWindow::RunSpeedTest(const QString& config, bool useDefault, const QStringList& outboundTags, const QMap<QString, int>& tag2entID, int entID) {
+void MainWindow::runURLTest(const QString& config, bool useDefault, const QStringList& outboundTags, const QMap<QString, int>& tag2entID, int entID) {
     if (stopSpeedtest.load()) {
         MW_show_log(tr("Profile test aborted"));
         return;
@@ -78,12 +78,12 @@ void MainWindow::RunSpeedTest(const QString& config, bool useDefault, const QStr
     }
 }
 
-void MainWindow::speedtest_current_group(const QList<std::shared_ptr<NekoGui::ProxyEntity>>& profiles) {
+void MainWindow::urltest_current_group(const QList<std::shared_ptr<NekoGui::ProxyEntity>>& profiles) {
     if (profiles.isEmpty()) {
         return;
     }
     if (!speedtestRunning.tryLock()) {
-        MessageBoxWarning(software_name, tr("The last speed test did not exit completely, please wait. If it persists, please restart the program."));
+        MessageBoxWarning(software_name, tr("The last url test did not exit completely, please wait. If it persists, please restart the program."));
         return;
     }
 
@@ -101,7 +101,7 @@ void MainWindow::speedtest_current_group(const QList<std::shared_ptr<NekoGui::Pr
         for (const auto &entID: buildObject->fullConfigs.keys()) {
             auto configStr = buildObject->fullConfigs[entID];
             auto func = [this, &counter, testCount, configStr, entID]() {
-                MainWindow::RunSpeedTest(configStr, true, {}, {}, entID);
+                MainWindow::runURLTest(configStr, true, {}, {}, entID);
                 counter++;
                 if (counter.load() == testCount) {
                     speedtestRunning.unlock();
@@ -112,7 +112,7 @@ void MainWindow::speedtest_current_group(const QList<std::shared_ptr<NekoGui::Pr
 
         if (!buildObject->outboundTags.empty()) {
             auto func = [this, &buildObject, &counter, testCount]() {
-                MainWindow::RunSpeedTest(QJsonObject2QString(buildObject->coreConfig, false), false, buildObject->outboundTags, buildObject->tag2entID);
+                MainWindow::runURLTest(QJsonObject2QString(buildObject->coreConfig, false), false, buildObject->outboundTags, buildObject->tag2entID);
                 counter++;
                 if (counter.load() == testCount) {
                     speedtestRunning.unlock();
@@ -126,12 +126,12 @@ void MainWindow::speedtest_current_group(const QList<std::shared_ptr<NekoGui::Pr
         speedtestRunning.unlock();
         runOnUiThread([=]{
             refresh_proxy_list();
-            MW_show_log(tr("Speedtest finished!"));
+            MW_show_log(tr("URL test finished!"));
         });
     });
 }
 
-void MainWindow::stopSpeedTests() {
+void MainWindow::stopTests() {
     stopSpeedtest.store(true);
     bool ok;
     defaultClient->StopTests(&ok);
@@ -168,6 +168,96 @@ void MainWindow::url_test_current() {
             }
         });
     });
+}
+
+void MainWindow::speedtest_current_group(const QList<std::shared_ptr<NekoGui::ProxyEntity>>& profiles)
+{
+    if (profiles.isEmpty()) {
+        return;
+    }
+    if (!speedtestRunning.tryLock()) {
+        MessageBoxWarning(software_name, tr("The last speed test did not exit completely, please wait. If it persists, please restart the program."));
+        return;
+    }
+
+    runOnNewThread([this, profiles]() {
+        auto buildObject = NekoGui::BuildTestConfig(profiles);
+        if (!buildObject->error.isEmpty()) {
+            MW_show_log(tr("Failed to build test config: ") + buildObject->error);
+            speedtestRunning.unlock();
+            return;
+        }
+
+        stopSpeedtest.store(false);
+        for (const auto &entID: buildObject->fullConfigs.keys()) {
+            auto configStr = buildObject->fullConfigs[entID];
+            runSpeedTest(configStr, true, {}, {}, entID);
+        }
+
+        if (!buildObject->outboundTags.empty()) {
+            runSpeedTest(QJsonObject2QString(buildObject->coreConfig, false), false, buildObject->outboundTags, buildObject->tag2entID);
+        }
+
+        speedtestRunning.unlock();
+        runOnUiThread([=]{
+            refresh_proxy_list();
+            MW_show_log(tr("Speedtest finished!"));
+        });
+    });
+}
+
+void MainWindow::runSpeedTest(const QString& config, bool useDefault, const QStringList& outboundTags, const QMap<QString, int>& tag2entID, int entID)
+{
+    if (stopSpeedtest.load()) {
+        MW_show_log(tr("Profile speed test aborted"));
+        return;
+    }
+
+    libcore::SpeedTestRequest req;
+    auto speedtestConf = NekoGui::dataStore->speed_test_mode;
+    for (const auto &item: outboundTags) {
+        req.add_outbound_tags(item.toStdString());
+    }
+    req.set_config(config.toStdString());
+    req.set_use_default_outbound(useDefault);
+    req.set_test_download(speedtestConf == NekoGui::TestConfig::FULL || speedtestConf == NekoGui::TestConfig::DL);
+    req.set_test_upload(speedtestConf == NekoGui::TestConfig::FULL || speedtestConf == NekoGui::TestConfig::UL);
+
+    bool rpcOK;
+    auto result = defaultClient->SpeedTest(&rpcOK, req);
+    //
+    if (!rpcOK) return;
+
+    for (const auto &res: result.results()) {
+        if (!tag2entID.empty()) {
+            entID = tag2entID.count(QString(res.outbound_tag().c_str())) == 0 ? -1 : tag2entID[QString(res.outbound_tag().c_str())];
+        }
+        if (entID == -1) {
+            MW_show_log(tr("Something is very wrong, the subject ent cannot be found!"));
+            continue;
+        }
+
+        auto ent = NekoGui::profileManager->GetProfile(entID);
+        if (ent == nullptr) {
+            MW_show_log(tr("Profile manager data is corrupted, try again."));
+            continue;
+        }
+
+        if (res.error().empty()) {
+            ent->dl_speed = res.dl_speed().c_str();
+            ent->ul_speed = res.ul_speed().c_str();
+            if (ent->latency <= 0 && res.latency() > 0) ent->latency = res.latency();
+        } else {
+            if (QString(res.error().c_str()).contains("test aborted") ||
+                QString(res.error().c_str()).contains("context canceled")) ent->dl_speed = "", ent->ul_speed = "";
+            else {
+                ent->dl_speed = "N/A";
+                ent->ul_speed = "N/A";
+                MW_show_log(tr("[%1] speed test error: %2").arg(ent->bean->DisplayTypeAndName(), res.error().c_str()));
+            }
+        }
+        ent->Save();
+    }
 }
 
 void MainWindow::stop_core_daemon() {
