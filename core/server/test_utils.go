@@ -8,6 +8,7 @@ import (
 	"github.com/sagernet/sing-box/adapter"
 	"github.com/sagernet/sing/common/metadata"
 	"github.com/sagernet/sing/service"
+	"nekobox_core/internal"
 	"nekobox_core/internal/boxbox"
 	"net"
 	"net/http"
@@ -225,16 +226,16 @@ func speedTestWithDialer(ctx context.Context, dialer func(ctx context.Context, n
 	for {
 		select {
 		case <-done:
-			res.DlSpeed = srv[0].DLSpeed.String()
-			res.UlSpeed = srv[0].ULSpeed.String()
+			res.DlSpeed = internal.BrateToStr(float64(srv[0].DLSpeed))
+			res.UlSpeed = internal.BrateToStr(float64(srv[0].ULSpeed))
 			res.Latency = int32(srv[0].Latency.Milliseconds())
 			SpTQuerier.storeResult(res)
 			return nil
 		case <-ctx.Done():
 			return nil
 		case <-ticker.C:
-			res.DlSpeed = speedtest.ByteRate(srv[0].Context.GetEWMADownloadRate()).String()
-			res.UlSpeed = speedtest.ByteRate(srv[0].Context.GetEWMAUploadRate()).String()
+			res.DlSpeed = internal.BrateToStr(srv[0].Context.GetEWMADownloadRate())
+			res.UlSpeed = internal.BrateToStr(srv[0].Context.GetEWMAUploadRate())
 			SpTQuerier.storeResult(res)
 		}
 	}
