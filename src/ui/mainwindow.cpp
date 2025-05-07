@@ -928,24 +928,43 @@ void MainWindow::neko_set_spmode_vpn(bool enable, bool save) {
     if (NekoGui::dataStore->started_id >= 0) neko_start(NekoGui::dataStore->started_id);
 }
 
-void MainWindow::UpdateDataView(const libcore::SpeedTestResult& result, const QString& profileName, bool clear)
+void MainWindow::UpdateDataView()
 {
-    if (clear)
+    QString html;
+    if (showDownloadData)
     {
-        ui->data_view->clear();
-        return;
+        qint64 count = 10*currentDownloadReport.downloadedSize / currentDownloadReport.totalSize;
+        QString progressText;
+        for (int i = 0; i < 10; i++)
+        {
+            if (count--; count >=0) progressText += "#";
+            else progressText += "-";
+        }
+        QString stat = ReadableSize(currentDownloadReport.downloadedSize) + "/" + ReadableSize(currentDownloadReport.totalSize);
+        html = QString("<p style='text-align:center;margin:0;'>Downloading %1: %2 %3</p>").arg(currentDownloadReport.fileName, stat, progressText);
     }
-    QString html = QString(
+    if (showSpeedtestData)
+    {
+        html += QString(
     "<p style='text-align:center;margin:0;'>Running Speedtest: %1</p>"
-    "<p style='text-align:center; color:#3299FF;margin:0;'>Dl↓ %2</p>"
-    "<p style='text-align:center; color:#86C43F;margin:0;'>Ul↑ %3</p>"
+    "<div style='text-align: center;'>"
+    "<span style='color: #3299FF;'>Dl↓ %2</span>  "
+    "<span style='color: #86C43F;'>Ul↑ %3</span>"
+    "</div>"
     "<p style='text-align:center;margin:0;'>Server: %4, %5</p>"
-        ).arg(profileName,
-            result.dl_speed().c_str(),
-            result.ul_speed().c_str(),
-            result.server_country().c_str(),
-            result.server_name().c_str());
+        ).arg(currentSptProfileName,
+            currentTestResult.dl_speed().c_str(),
+            currentTestResult.ul_speed().c_str(),
+            currentTestResult.server_country().c_str(),
+            currentTestResult.server_name().c_str());
+    }
     ui->data_view->setHtml(html);
+}
+
+void MainWindow::setDownloadReport(const DownloadProgressReport& report, bool show)
+{
+    showDownloadData = show;
+    currentDownloadReport = report;
 }
 
 

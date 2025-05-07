@@ -2,6 +2,7 @@
 
 #include <QMainWindow>
 #include <core/server/gen/libcore.pb.h>
+#include <include/global/HTTPRequestHelper.hpp>
 
 #include "include/global/NekoGui.hpp"
 #include "include/stats/connections/connectionLister.hpp"
@@ -87,8 +88,9 @@ public:
 
     void UpdateConnectionListWithRecreate(const QList<NekoGui_traffic::ConnectionMetadata>& connections);
 
-    // TODO maybe use a more generalized way of passing data later, for now we only need it for speedtest data
-    void UpdateDataView(const libcore::SpeedTestResult& result, const QString& profileName, bool clear);
+    void UpdateDataView();
+
+    void setDownloadReport(const DownloadProgressReport& report, bool show);
 
 signals:
 
@@ -196,6 +198,13 @@ private:
     int toolTipID;
     //
     SpeedWidget *speedChartWidget;
+    //
+    // for data view
+    QString currentSptProfileName;
+    bool showSpeedtestData = false;
+    bool showDownloadData = false;
+    libcore::SpeedTestResult currentTestResult;
+    DownloadProgressReport currentDownloadReport; // could use a list, but don't think can show more than one anyways
 
     QList<std::shared_ptr<NekoGui::ProxyEntity>> get_now_selected_list();
 

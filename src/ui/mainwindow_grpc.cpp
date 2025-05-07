@@ -247,12 +247,16 @@ void MainWindow::runSpeedTest(const QString& config, bool useDefault, const QStr
             }
             runOnUiThread([=]
             {
-                UpdateDataView(res.result(), profile->bean->name, false);
+                showSpeedtestData = true;
+                currentSptProfileName = profile->bean->name;
+                currentTestResult = res.result();
+                UpdateDataView();
             });
         }
         runOnUiThread([=]
         {
-            UpdateDataView({}, {}, true);
+            showSpeedtestData = false;
+            UpdateDataView();
         });
         doneMu->unlock();
         delete doneMu;
