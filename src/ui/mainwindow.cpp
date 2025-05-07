@@ -930,6 +930,10 @@ void MainWindow::neko_set_spmode_vpn(bool enable, bool save) {
 
 void MainWindow::UpdateDataView()
 {
+    if (lastUpdated.msecsTo(QDateTime::currentDateTime()) < 100)
+    {
+        return;
+    }
     QString html;
     if (showDownloadData)
     {
@@ -959,6 +963,7 @@ void MainWindow::UpdateDataView()
             currentTestResult.server_name().c_str());
     }
     ui->data_view->setHtml(html);
+    lastUpdated = QDateTime::currentDateTime();
 }
 
 void MainWindow::setDownloadReport(const DownloadProgressReport& report, bool show)
