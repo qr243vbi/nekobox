@@ -310,36 +310,11 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     ui->proxyListTable->setTabKeyNavigation(false);
 
     // search box
-    ui->search->setVisible(false);
-    connect(shortcut_ctrl_f, &QShortcut::activated, this, [=] {
-        ui->search->setVisible(true);
-        ui->search->setFocus();
-    });
     connect(shortcut_esc, &QShortcut::activated, this, [=] {
-        if (ui->search->isVisible()) {
-            ui->search->setText("");
-            ui->search->textChanged("");
-            ui->search->setVisible(false);
-        }
         if (select_mode) {
             emit profile_selected(-1);
             select_mode = false;
             refresh_status();
-        }
-    });
-    connect(ui->search, &QLineEdit::textChanged, this, [=](const QString &text) {
-        if (text.isEmpty()) {
-            for (int i = 0; i < ui->proxyListTable->rowCount(); i++) {
-                ui->proxyListTable->setRowHidden(i, false);
-            }
-        } else {
-            QList<QTableWidgetItem *> findItem = ui->proxyListTable->findItems(text, Qt::MatchContains);
-            for (int i = 0; i < ui->proxyListTable->rowCount(); i++) {
-                ui->proxyListTable->setRowHidden(i, true);
-            }
-            for (auto item: findItem) {
-                if (item != nullptr) ui->proxyListTable->setRowHidden(item->row(), false);
-            }
         }
     });
 
@@ -952,6 +927,27 @@ void MainWindow::neko_set_spmode_vpn(bool enable, bool save) {
 
     if (NekoGui::dataStore->started_id >= 0) neko_start(NekoGui::dataStore->started_id);
 }
+
+void MainWindow::UpdateDataView(const libcore::SpeedTestResult& result, const QString& profileName, bool clear)
+{
+    if (clear)
+    {
+        ui->data_view->clear();
+        return;
+    }
+    QString html = QString(
+    "<p style='text-align:center;margin:0;'>Running Speedtest: %1</p>"
+    "<p style='text-align:center; color:#3299FF;margin:0;'>Dl↓ %2</p>"
+    "<p style='text-align:center; color:#86C43F;margin:0;'>Ul↑ %3</p>"
+    "<p style='text-align:center;margin:0;'>Server: %4, %5</p>"
+        ).arg(profileName,
+            result.dl_speed().c_str(),
+            result.ul_speed().c_str(),
+            result.server_country().c_str(),
+            result.server_name().c_str());
+    ui->data_view->setHtml(html);
+}
+
 
 void MainWindow::setupConnectionList()
 {

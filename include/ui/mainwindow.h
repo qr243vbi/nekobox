@@ -1,6 +1,7 @@
 #pragma once
 
 #include <QMainWindow>
+#include <core/server/gen/libcore.pb.h>
 
 #include "include/global/NekoGui.hpp"
 #include "include/stats/connections/connectionLister.hpp"
@@ -85,6 +86,9 @@ public:
     void UpdateConnectionList(const QMap<QString, NekoGui_traffic::ConnectionMetadata>& toUpdate, const QMap<QString, NekoGui_traffic::ConnectionMetadata>& toAdd);
 
     void UpdateConnectionListWithRecreate(const QList<NekoGui_traffic::ConnectionMetadata>& connections);
+
+    // TODO maybe use a more generalized way of passing data later, for now we only need it for speedtest data
+    void UpdateDataView(const libcore::SpeedTestResult& result, const QString& profileName, bool clear);
 
 signals:
 

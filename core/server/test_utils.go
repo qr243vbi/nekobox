@@ -6,7 +6,6 @@ import (
 	"fmt"
 	"github.com/Mahdi-zarei/speedtest-go/speedtest"
 	"github.com/sagernet/sing-box/adapter"
-	E "github.com/sagernet/sing/common/exceptions"
 	"github.com/sagernet/sing/common/metadata"
 	"github.com/sagernet/sing/service"
 	"nekobox_core/internal/boxbox"
@@ -206,14 +205,14 @@ func speedTestWithDialer(ctx context.Context, dialer func(ctx context.Context, n
 		defer func() { close(done) }()
 		if testDl {
 			err = srv[0].DownloadTestContext(ctx)
-			if err != nil {
+			if err != nil && !errors.Is(err, context.Canceled) {
 				res.Error = err
 				return
 			}
 		}
 		if testUl {
 			err = srv[0].UploadTestContext(ctx)
-			if err != nil {
+			if err != nil && !errors.Is(err, context.Canceled) {
 				res.Error = err
 				return
 			}
@@ -232,7 +231,7 @@ func speedTestWithDialer(ctx context.Context, dialer func(ctx context.Context, n
 			SpTQuerier.storeResult(res)
 			return nil
 		case <-ctx.Done():
-			return E.New("test cancelled")
+			return nil
 		case <-ticker.C:
 			res.DlSpeed = speedtest.ByteRate(srv[0].Context.GetEWMADownloadRate()).String()
 			res.UlSpeed = speedtest.ByteRate(srv[0].Context.GetEWMAUploadRate()).String()
