@@ -421,10 +421,10 @@ namespace NekoGui_rpc {
         }
     }
 
-    libcore::SpeedTestResult Client::QueryCurrentSpeedTests(bool *rpcOK)
+    libcore::QuerySpeedTestResponse Client::QueryCurrentSpeedTests(bool *rpcOK)
     {
         const libcore::EmptyReq req;
-        libcore::SpeedTestResult reply;
+        libcore::QuerySpeedTestResponse reply;
         auto status = make_grpc_channel()->Call("QuerySpeedTest", req, &reply);
 
         if (status == QNetworkReply::NoError) {

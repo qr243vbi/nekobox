@@ -42,7 +42,7 @@ namespace NekoGui_rpc {
 
         libcore::SpeedTestResponse SpeedTest(bool *rpcOK, const libcore::SpeedTestRequest &request);
 
-        libcore::SpeedTestResult QueryCurrentSpeedTests(bool *rpcOK);
+        libcore::QuerySpeedTestResponse QueryCurrentSpeedTests(bool *rpcOK);
 
     private:
         std::function<std::unique_ptr<QtGrpc::Http2GrpcChannelPrivate>()> make_grpc_channel;

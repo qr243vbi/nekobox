@@ -223,8 +223,43 @@ void MainWindow::runSpeedTest(const QString& config, bool useDefault, const QStr
     req.set_test_download(speedtestConf == NekoGui::TestConfig::FULL || speedtestConf == NekoGui::TestConfig::DL);
     req.set_test_upload(speedtestConf == NekoGui::TestConfig::FULL || speedtestConf == NekoGui::TestConfig::UL);
 
+    // loop query result
+    auto doneMu = new QMutex;
+    doneMu->lock();
+    runOnNewThread([=]
+    {
+        bool ok;
+        while (true) {
+            QThread::msleep(100);
+            if (doneMu->tryLock())
+            {
+                break;
+            }
+            auto res = defaultClient->QueryCurrentSpeedTests(&ok);
+            if (!ok || !res.is_running())
+            {
+                continue;
+            }
+            auto profile = NekoGui::profileManager->GetProfile(tag2entID[res.result().outbound_tag().c_str()]);
+            if (profile == nullptr)
+            {
+                continue;
+            }
+            runOnUiThread([=]
+            {
+                UpdateDataView(res.result(), profile->bean->name, false);
+            });
+        }
+        runOnUiThread([=]
+        {
+            UpdateDataView({}, {}, true);
+        });
+        doneMu->unlock();
+        delete doneMu;
+    });
     bool rpcOK;
     auto result = defaultClient->SpeedTest(&rpcOK, req);
+    doneMu->unlock();
     //
     if (!rpcOK) return;
 
