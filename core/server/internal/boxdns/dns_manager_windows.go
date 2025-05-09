@@ -2,7 +2,6 @@ package boxdns
 
 import (
 	"encoding/binary"
-	"fmt"
 	"github.com/gofrs/uuid/v5"
 	"github.com/sagernet/sing/common/control"
 	E "github.com/sagernet/sing/common/exceptions"
@@ -24,16 +23,19 @@ var dnsIsSet bool
 
 func (d *DnsManager) HandleSystemDNS(ifc *control.Interface, flag int) {
 	if d == nil {
-		fmt.Println("No DnsManager, you may need to restart nekoray")
+		log.Println("No DnsManager, you may need to restart nekoray")
 		return
 	}
-	if !dnsIsSet || ifc == nil {
-		return
+	if ifc != nil {
+		if !dnsIsSet {
+			d.restoreSystemDNS(*ifc)
+		} else {
+			d.setSystemDNS(*ifc)
+		}
+		if d.lastIfc != nil && d.lastIfc.Index != ifc.Index {
+			d.restoreSystemDNS(*d.lastIfc)
+		}
 	}
-	if d.lastIfc != nil && d.lastIfc.Index != ifc.Index {
-		d.restoreSystemDNS(*d.lastIfc)
-	}
-	d.setSystemDNS(*ifc)
 }
 
 func (d *DnsManager) getInterfaceGuid(ifc control.Interface) (string, error) {
@@ -79,9 +81,27 @@ func ifcIdxtoUUID(index int) (*uuid.UUID, error) {
 
 func (d *DnsManager) isIfcDNSDhcp(ifc control.Interface) (dhcp bool, err error) {
 	if d == nil {
-		fmt.Println("No DnsManager, you may need to restart nekoray")
+		log.Println("No DnsManager, you may need to restart nekoray")
 		return false, E.New("No Dns Manager, you may need to restart nekoray")
 	}
+
+	luid, err := winipcfg.LUIDFromIndex(uint32(ifc.Index))
+	if err != nil {
+		log.Println("[isIfcDNSDhcp] failed to get luid from index:", err)
+		return
+	}
+
+	dnsServers, err := luid.DNS()
+	if err != nil {
+		log.Println("[isIfcDNSDhcp] failed to get luid dns servers:", err)
+		return
+	}
+	for _, server := range dnsServers {
+		if server.String() == dhcpMarkAddr {
+			return true, nil
+		}
+	}
+
 	guidStr, err := d.getInterfaceGuid(ifc)
 	if err != nil {
 		return false, err
@@ -106,24 +126,31 @@ func (d *DnsManager) isIfcDNSDhcp(ifc control.Interface) (dhcp bool, err error) 
 func (d *DnsManager) restoreSystemDNS(ifx control.Interface) {
 	luid, err := winipcfg.LUIDFromIndex(uint32(ifx.Index))
 	if err != nil {
-		fmt.Println("[restoreSystemDNS] failed to get luid from index:", err)
+		log.Println("[restoreSystemDNS] failed to get luid from index:", err)
 		return
 	}
 
 	dnsServers, err := luid.DNS()
 	if err != nil {
-		fmt.Println("[restoreSystemDNS] failed to get luid dns servers:", err)
+		log.Println("[restoreSystemDNS] failed to get luid dns servers:", err)
 		return
 	}
 
 	isDhcp := false
 	newDnsServers := make([]netip.Addr, 0)
+	wasSet := false
 	for _, server := range dnsServers {
 		if server.String() == localAddr || server.String() == dhcpMarkAddr {
 			isDhcp = server.String() == dhcpMarkAddr
+			wasSet = true
 			continue
 		}
 		newDnsServers = append(newDnsServers, server)
+	}
+
+	if !wasSet {
+		log.Println("[restoreSystemDNS] no action needed")
+		return
 	}
 
 	if isDhcp {
@@ -132,22 +159,22 @@ func (d *DnsManager) restoreSystemDNS(ifx control.Interface) {
 		err = luid.SetDNS(winipcfg.AddressFamily(windows.AF_INET), newDnsServers, nil)
 	}
 	if err != nil {
-		fmt.Println("[restoreSystemDNS] failed to set dns servers:", err)
+		log.Println("[restoreSystemDNS] failed to set dns servers:", err)
 	}
 
-	fmt.Println("[restoreSystemDNS] Local DNS Server removed for:", ifx.Name)
+	log.Println("[restoreSystemDNS] Local DNS Server removed for:", ifx.Name)
 }
 
 func (d *DnsManager) setSystemDNS(ifx control.Interface) {
 	luid, err := winipcfg.LUIDFromIndex(uint32(ifx.Index))
 	if err != nil {
-		fmt.Println("[setSystemDNS] failed to get luid from index:", err)
+		log.Println("[setSystemDNS] failed to get luid from index:", err)
 		return
 	}
 
 	dnsServers, err := luid.DNS()
 	if err != nil {
-		fmt.Println("[setSystemDNS] failed to get luid dns servers:", err)
+		log.Println("[setSystemDNS] failed to get luid dns servers:", err)
 		return
 	}
 
@@ -165,7 +192,7 @@ func (d *DnsManager) setSystemDNS(ifx control.Interface) {
 	if !hasLocal {
 		dhcp, err := d.isIfcDNSDhcp(ifx)
 		if err != nil {
-			fmt.Println("[setSystemDNS] failed to determine whether ifc DNS is dhcp:", err)
+			log.Println("[setSystemDNS] failed to determine whether ifc DNS is dhcp:", err)
 		}
 		if dhcp {
 			markAddr, _ := netip.ParseAddr(dhcpMarkAddr)
@@ -174,15 +201,15 @@ func (d *DnsManager) setSystemDNS(ifx control.Interface) {
 	}
 
 	if err = luid.SetDNS(winipcfg.AddressFamily(windows.AF_INET), newDnsServers, nil); err != nil {
-		fmt.Println("[setSystemDNS] failed to set dns servers:", err)
+		log.Println("[setSystemDNS] failed to set dns servers:", err)
 	}
 
-	fmt.Println("[setSystemDNS] Local DNS Server added for:", ifx.Name)
+	log.Println("[setSystemDNS] Local DNS Server added for:", ifx.Name)
 }
 
 func (d *DnsManager) SetSystemDNS(ifc *control.Interface, clear bool) error {
 	if d == nil {
-		fmt.Println("No DnsManager, you may need to restart nekoray")
+		log.Println("No DnsManager, you may need to restart nekoray")
 		return E.New("No dns Manager, you may need to restart nekoray")
 	}
 
@@ -193,6 +220,7 @@ func (d *DnsManager) SetSystemDNS(ifc *control.Interface, clear bool) error {
 			return E.New("Default interface is nil!")
 		}
 	}
+	log.Println("[SetSystemDNS] Setting system dns for", ifc.Name, "clear is", clear)
 
 	if clear {
 		dnsIsSet = false
