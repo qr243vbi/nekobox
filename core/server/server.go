@@ -3,6 +3,7 @@ package main
 import (
 	"context"
 	"errors"
+	"fmt"
 	"github.com/sagernet/sing-box/adapter"
 	"github.com/sagernet/sing-box/common/settings"
 	"github.com/sagernet/sing-box/experimental/clashapi"
@@ -13,6 +14,7 @@ import (
 	"nekobox_core/gen"
 	"nekobox_core/internal/boxbox"
 	"nekobox_core/internal/boxmain"
+	"nekobox_core/internal/process"
 	"nekobox_core/internal/sys"
 	"os"
 	"runtime"
@@ -21,6 +23,7 @@ import (
 )
 
 var boxInstance *boxbox.Box
+var extraProcess *process.Process
 var needUnsetDNS bool
 var systemProxyController settings.SystemProxy
 var systemProxyAddr metadata.Socksaddr
@@ -57,6 +60,28 @@ func (s *server) Start(ctx context.Context, in *gen.LoadConfigReq) (out *gen.Err
 	if boxInstance != nil {
 		err = errors.New("instance already started")
 		return
+	}
+
+	if in.NeedExtraProcess {
+		extraConfPath := in.ExtraProcessConfDir + string(os.PathSeparator) + "extra.conf"
+		f, e := os.OpenFile(extraConfPath, os.O_CREATE|os.O_TRUNC|os.O_RDWR, 700)
+		if e != nil {
+			err = E.Cause(e, "Failed to open extra.conf")
+			return
+		}
+		_, e = f.WriteString(in.ExtraProcessConf)
+		if e != nil {
+			err = E.Cause(e, "Failed to write extra.conf")
+			return
+		}
+		_ = f.Close()
+		args := fmt.Sprintf(in.ExtraProcessArgs, extraConfPath)
+
+		extraProcess = process.NewProcess(in.ExtraProcessPath, args, in.ExtraNoOut)
+		err = extraProcess.Start()
+		if err != nil {
+			return
+		}
 	}
 
 	boxInstance, instanceCancel, err = boxmain.Create([]byte(in.CoreConfig))
@@ -98,6 +123,11 @@ func (s *server) Stop(ctx context.Context, in *gen.EmptyReq) (out *gen.ErrorResp
 	boxInstance.CloseWithTimeout(instanceCancel, time.Second*2, log.Println)
 
 	boxInstance = nil
+
+	if extraProcess != nil {
+		extraProcess.Stop()
+		extraProcess = nil
+	}
 
 	return
 }
