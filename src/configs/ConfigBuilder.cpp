@@ -437,6 +437,7 @@ namespace NekoGui {
             status->result->extraCoreData->config = bean->extraCoreConf;
             status->result->extraCoreData->configDir = GetBasePath();
             status->result->extraCoreData->noLog = bean->noLogs;
+            routeChain->Rules << RouteRule::get_processPath_direct_rule(bean->extraCorePath);
         }
 
         // Direct domains
