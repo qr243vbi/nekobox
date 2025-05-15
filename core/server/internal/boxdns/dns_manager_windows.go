@@ -5,6 +5,7 @@ import (
 	"github.com/gofrs/uuid/v5"
 	"github.com/sagernet/sing/common/control"
 	E "github.com/sagernet/sing/common/exceptions"
+	"github.com/sagernet/sing/common/windnsapi"
 	"golang.org/x/sys/windows"
 	"golang.org/x/sys/windows/registry"
 	"log"
@@ -160,6 +161,8 @@ func (d *DnsManager) restoreSystemDNS(ifx control.Interface) {
 	}
 	if err != nil {
 		log.Println("[restoreSystemDNS] failed to set dns servers:", err)
+	} else {
+		_ = windnsapi.FlushResolverCache()
 	}
 
 	log.Println("[restoreSystemDNS] Local DNS Server removed for:", ifx.Name)
@@ -202,6 +205,8 @@ func (d *DnsManager) setSystemDNS(ifx control.Interface) {
 
 	if err = luid.SetDNS(winipcfg.AddressFamily(windows.AF_INET), newDnsServers, nil); err != nil {
 		log.Println("[setSystemDNS] failed to set dns servers:", err)
+	} else {
+		_ = windnsapi.FlushResolverCache()
 	}
 
 	log.Println("[setSystemDNS] Local DNS Server added for:", ifx.Name)
