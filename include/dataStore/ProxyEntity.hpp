@@ -3,6 +3,7 @@
 #include "include/global/NekoGui.hpp"
 #include "include/stats/traffic/TrafficData.hpp"
 #include "include/configs/proxy/AbstractBean.hpp"
+#include "include/configs/proxy/ExtraCore.h"
 
 namespace NekoGui_fmt {
     class SocksHttpBean;
@@ -85,6 +86,10 @@ namespace NekoGui {
 
         [[nodiscard]] NekoGui_fmt::CustomBean *CustomBean() const {
             return (NekoGui_fmt::CustomBean *) bean.get();
+        };
+
+        [[nodiscard]] NekoGui_fmt::ExtraCoreBean *ExtraCoreBean() const {
+            return (NekoGui_fmt::ExtraCoreBean *) bean.get();
         };
     };
 } // namespace NekoGui

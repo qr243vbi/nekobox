@@ -38,6 +38,12 @@ message ErrorResp {
 message LoadConfigReq {
   string core_config = 1;
   bool disable_stats = 2;
+  bool need_extra_process = 3;
+  string extra_process_path = 4;
+  string extra_process_args = 5;
+  string extra_process_conf = 6;
+  string extra_process_conf_dir = 7;
+  bool extra_no_out = 8;
 }
 
 message URLTestResp {

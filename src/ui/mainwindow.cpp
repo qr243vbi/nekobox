@@ -454,7 +454,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     {
         if (running != nullptr)
         {
-            speedtest_current_group({running});
+            speedtest_current_group({}, true);
         }
     });
     connect(ui->actionSpeedtest_Selected, &QAction::triggered, this, [=]()

@@ -51,6 +51,7 @@ namespace NekoGui {
                 continue;
             }
             profiles[id] = ent;
+            if (ent->type == "extracore") extraCorePaths.insert(ent->ExtraCoreBean()->extraCorePath);
         }
         // Clear Corrupted profile
         for (auto id: delProfile) {
@@ -227,6 +228,8 @@ namespace NekoGui {
             bean = new NekoGui_fmt::SSHBean(NekoGui_fmt::SSHBean());
         } else if (type == "custom") {
             bean = new NekoGui_fmt::CustomBean();
+        } else if (type == "extracore") {
+            bean = new NekoGui_fmt::ExtraCoreBean();
         } else {
             bean = new NekoGui_fmt::AbstractBean(-114514);
         }
@@ -342,6 +345,19 @@ namespace NekoGui {
         return profiles.count(id) ? profiles[id] : nullptr;
     }
 
+    QStringList ProfileManager::GetExtraCorePaths() const {
+        return extraCorePaths.values();
+    }
+
+    bool ProfileManager::AddExtraCorePath(const QString &path)
+    {
+        if (extraCorePaths.contains(path))
+        {
+            return false;
+        }
+        extraCorePaths.insert(path);
+        return true;
+    }
     // Group
 
     Group::Group() {

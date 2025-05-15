@@ -170,9 +170,9 @@ void MainWindow::url_test_current() {
     });
 }
 
-void MainWindow::speedtest_current_group(const QList<std::shared_ptr<NekoGui::ProxyEntity>>& profiles)
+void MainWindow::speedtest_current_group(const QList<std::shared_ptr<NekoGui::ProxyEntity>>& profiles, bool testCurrent)
 {
-    if (profiles.isEmpty()) {
+    if (profiles.isEmpty() && !testCurrent) {
         return;
     }
     if (!speedtestRunning.tryLock()) {
@@ -180,22 +180,29 @@ void MainWindow::speedtest_current_group(const QList<std::shared_ptr<NekoGui::Pr
         return;
     }
 
-    runOnNewThread([this, profiles]() {
-        auto buildObject = NekoGui::BuildTestConfig(profiles);
-        if (!buildObject->error.isEmpty()) {
-            MW_show_log(tr("Failed to build test config: ") + buildObject->error);
-            speedtestRunning.unlock();
-            return;
-        }
+    runOnNewThread([this, profiles, testCurrent]() {
+        if (!testCurrent)
+        {
+            auto buildObject = NekoGui::BuildTestConfig(profiles);
+            if (!buildObject->error.isEmpty()) {
+                MW_show_log(tr("Failed to build test config: ") + buildObject->error);
+                speedtestRunning.unlock();
+                return;
+            }
 
-        stopSpeedtest.store(false);
-        for (const auto &entID: buildObject->fullConfigs.keys()) {
-            auto configStr = buildObject->fullConfigs[entID];
-            runSpeedTest(configStr, true, {}, {}, entID);
-        }
+            stopSpeedtest.store(false);
+            for (const auto &entID: buildObject->fullConfigs.keys()) {
+                auto configStr = buildObject->fullConfigs[entID];
+                runSpeedTest(configStr, true, false, {}, {}, entID);
+            }
 
-        if (!buildObject->outboundTags.empty()) {
-            runSpeedTest(QJsonObject2QString(buildObject->coreConfig, false), false, buildObject->outboundTags, buildObject->tag2entID);
+            if (!buildObject->outboundTags.empty()) {
+                runSpeedTest(QJsonObject2QString(buildObject->coreConfig, false), false, false, buildObject->outboundTags, buildObject->tag2entID);
+            }
+        } else
+        {
+            stopSpeedtest.store(false);
+            runSpeedTest("", true, true, {}, {});
         }
 
         speedtestRunning.unlock();
@@ -206,7 +213,7 @@ void MainWindow::speedtest_current_group(const QList<std::shared_ptr<NekoGui::Pr
     });
 }
 
-void MainWindow::runSpeedTest(const QString& config, bool useDefault, const QStringList& outboundTags, const QMap<QString, int>& tag2entID, int entID)
+void MainWindow::runSpeedTest(const QString& config, bool useDefault, bool testCurrent, const QStringList& outboundTags, const QMap<QString, int>& tag2entID, int entID)
 {
     if (stopSpeedtest.load()) {
         MW_show_log(tr("Profile speed test aborted"));
@@ -222,6 +229,7 @@ void MainWindow::runSpeedTest(const QString& config, bool useDefault, const QStr
     req.set_use_default_outbound(useDefault);
     req.set_test_download(speedtestConf == NekoGui::TestConfig::FULL || speedtestConf == NekoGui::TestConfig::DL);
     req.set_test_upload(speedtestConf == NekoGui::TestConfig::FULL || speedtestConf == NekoGui::TestConfig::UL);
+    req.set_test_current(testCurrent);
 
     // loop query result
     auto doneMu = new QMutex;
@@ -240,7 +248,7 @@ void MainWindow::runSpeedTest(const QString& config, bool useDefault, const QStr
             {
                 continue;
             }
-            auto profile = NekoGui::profileManager->GetProfile(tag2entID[res.result().outbound_tag().c_str()]);
+            auto profile = testCurrent ? running : NekoGui::profileManager->GetProfile(tag2entID[res.result().outbound_tag().c_str()]);
             if (profile == nullptr)
             {
                 continue;
@@ -268,7 +276,8 @@ void MainWindow::runSpeedTest(const QString& config, bool useDefault, const QStr
     if (!rpcOK) return;
 
     for (const auto &res: result.results()) {
-        if (!tag2entID.empty()) {
+        if (testCurrent) entID = running ? running->id : -1;
+        else {
             entID = tag2entID.count(QString(res.outbound_tag().c_str())) == 0 ? -1 : tag2entID[QString(res.outbound_tag().c_str())];
         }
         if (entID == -1) {
@@ -361,6 +370,15 @@ void MainWindow::neko_start(int _id) {
         libcore::LoadConfigReq req;
         req.set_core_config(QJsonObject2QString(result->coreConfig, true).toStdString());
         req.set_disable_stats(NekoGui::dataStore->disable_traffic_stats);
+        if (ent->type == "extracore")
+        {
+            req.set_need_extra_process(true);
+            req.set_extra_process_path(result->extraCoreData->path.toStdString());
+            req.set_extra_process_args(result->extraCoreData->args.toStdString());
+            req.set_extra_process_conf(result->extraCoreData->config.toStdString());
+            req.set_extra_process_conf_dir(result->extraCoreData->configDir.toStdString());
+            req.set_extra_no_out(result->extraCoreData->noLog);
+        }
         //
         bool rpcOK;
         QString error = defaultClient->Start(&rpcOK, req);
