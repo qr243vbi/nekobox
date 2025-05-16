@@ -29,6 +29,7 @@ Apple platforms have a very strict security policy and since Nekoray does not ha
 - Custom Outbound
 - Custom Config
 - Chaining outbounds
+- Extra Core
 
 ## Subscription Formats
 
