@@ -109,7 +109,7 @@ namespace NekoGui_network {
         runOnUiThread([=]
         {
             GetMainWindow()->setDownloadReport({}, false);
-            GetMainWindow()->UpdateDataView();
+            GetMainWindow()->UpdateDataView(true);
         });
         if(_reply->error() != QNetworkReply::NetworkError::NoError) {
             return _reply->errorString();
