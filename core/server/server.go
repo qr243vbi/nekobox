@@ -386,6 +386,7 @@ func (s *server) SpeedTest(ctx context.Context, in *gen.SpeedTestRequest) (*gen.
 			Error:         errStr,
 			ServerName:    data.ServerName,
 			ServerCountry: data.ServerCountry,
+			Cancelled:     data.Cancelled,
 		})
 	}
 
@@ -407,6 +408,7 @@ func (s *server) QuerySpeedTest(context.Context, *gen.EmptyReq) (*gen.QuerySpeed
 			Error:         errStr,
 			ServerName:    res.ServerName,
 			ServerCountry: res.ServerCountry,
+			Cancelled:     res.Cancelled,
 		},
 		IsRunning: isRunning,
 	}, nil

@@ -448,7 +448,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
         urltest_current_group(get_now_selected_list());
     });
     connect(ui->actionUrl_Test_Group, &QAction::triggered, this, [=]() {
-        urltest_current_group(NekoGui::profileManager->CurrentGroup()->Profiles());
+        urltest_current_group(NekoGui::profileManager->CurrentGroup()->ProfilesWithOrder());
     });
     connect(ui->actionSpeedtest_Current, &QAction::triggered, this, [=]()
     {
@@ -463,7 +463,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     });
     connect(ui->actionSpeedtest_Group, &QAction::triggered, this, [=]()
     {
-        speedtest_current_group(NekoGui::profileManager->CurrentGroup()->Profiles());
+        speedtest_current_group(NekoGui::profileManager->CurrentGroup()->ProfilesWithOrder());
     });
     connect(ui->menu_stop_testing, &QAction::triggered, this, [=]() { stopTests(); });
     //

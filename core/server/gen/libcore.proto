@@ -134,6 +134,7 @@ message SpeedTestResult {
   string error = 5;
   string server_name = 6;
   string server_country = 7;
+  bool cancelled = 8;
 }
 
 message SpeedTestResponse {
