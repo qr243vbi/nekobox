@@ -19,13 +19,34 @@ import (
 var testCtx context.Context
 var cancelTests context.CancelFunc
 var SpTQuerier SpeedTestResultQuerier
+var URLReporter URLTestReporter
 
 const URLTestTimeout = 3 * time.Second
 const MaxConcurrentTests = 100
 
 type URLTestResult struct {
 	Duration time.Duration
+	Tag      string
 	Error    error
+}
+
+type URLTestReporter struct {
+	results []*URLTestResult
+	mu      sync.Mutex
+}
+
+func (u *URLTestReporter) AddResult(result *URLTestResult) {
+	u.mu.Lock()
+	defer u.mu.Unlock()
+	u.results = append(u.results, result)
+}
+
+func (u *URLTestReporter) Results() []*URLTestResult {
+	u.mu.Lock()
+	defer u.mu.Unlock()
+	res := u.results
+	u.results = nil
+	return res
 }
 
 type SpeedTestResult struct {
@@ -102,10 +123,13 @@ func BatchURLTest(ctx context.Context, i *boxbox.Box, outboundTags []string, url
 					duration, err = urlTest(ctx, client, url)
 				}
 				resAccess.Lock()
-				resMap[t] = &URLTestResult{
+				u := &URLTestResult{
 					Duration: duration,
+					Tag:      t,
 					Error:    err,
 				}
+				resMap[t] = u
+				URLReporter.AddResult(u)
 				resAccess.Unlock()
 				<-limiter
 			}(tag)

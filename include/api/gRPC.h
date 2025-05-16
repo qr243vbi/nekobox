@@ -28,6 +28,8 @@ namespace NekoGui_rpc {
 
         void StopTests(bool *rpcOK);
 
+        libcore::QueryURLTestResponse QueryURLTest(bool *rpcOK);
+
         QStringList GetGeoList(bool *rpcOK, GeoRuleSetType mode, const QString& basePath);
 
         QString CompileGeoSet(bool *rpcOK, GeoRuleSetType mode, std::string category, const QString& basePath);

@@ -44,8 +44,61 @@ void MainWindow::runURLTest(const QString& config, bool useDefault, const QStrin
     req.set_use_default_outbound(useDefault);
     req.set_max_concurrency(NekoGui::dataStore->test_concurrent);
 
+    auto done = new QMutex;
+    done->lock();
+    runOnNewThread([=]
+    {
+        bool ok;
+        while (true)
+        {
+            QThread::msleep(1500);
+            if (done->try_lock()) break;
+            auto resp = defaultClient->QueryURLTest(&ok);
+            if (!ok || resp.results().empty())
+            {
+                continue;
+            }
+
+            bool needRefresh = false;
+            for (const auto& res : resp.results())
+            {
+                int entid = -1;
+                if (!tag2entID.empty()) {
+                    entid = tag2entID.count(QString(res.outbound_tag().c_str())) == 0 ? -1 : tag2entID[QString(res.outbound_tag().c_str())];
+                }
+                if (entid == -1) {
+                    continue;
+                }
+                auto ent = NekoGui::profileManager->GetProfile(entid);
+                if (ent == nullptr) {
+                    continue;
+                }
+                if (res.error().empty()) {
+                ent->latency = res.latency_ms();
+                } else {
+                    if (QString(res.error().c_str()).contains("test aborted") ||
+                        QString(res.error().c_str()).contains("context canceled")) ent->latency=0;
+                    else {
+                        ent->latency = -1;
+                        MW_show_log(tr("[%1] test error: %2").arg(ent->bean->DisplayTypeAndName(), res.error().c_str()));
+                    }
+                }
+                ent->Save();
+                needRefresh = true;
+            }
+            if (needRefresh)
+            {
+                runOnUiThread([=]{
+                    refresh_proxy_list();
+                });
+            }
+        }
+        done->unlock();
+        delete done;
+    });
     bool rpcOK;
     auto result = defaultClient->Test(&rpcOK, req);
+    done->unlock();
     //
     if (!rpcOK) return;
 

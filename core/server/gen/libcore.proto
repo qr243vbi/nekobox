@@ -11,6 +11,7 @@ service LibcoreService {
   rpc CheckConfig(LoadConfigReq) returns (ErrorResp);
   rpc Test(TestReq) returns (TestResp);
   rpc StopTest(EmptyReq) returns (EmptyResp);
+  rpc QueryURLTest(EmptyReq) returns (QueryURLTestResponse);
   rpc QueryStats(EmptyReq) returns (QueryStatsResp);
   rpc ListConnections(EmptyReq) returns (ListConnectionsResp);
   //
@@ -144,4 +145,8 @@ message SpeedTestResponse {
 message QuerySpeedTestResponse {
   SpeedTestResult result = 1;
   bool is_running = 2;
+}
+
+message QueryURLTestResponse {
+  repeated URLTestResp results = 1;
 }
