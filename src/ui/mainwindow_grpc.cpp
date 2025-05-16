@@ -236,6 +236,7 @@ void MainWindow::runSpeedTest(const QString& config, bool useDefault, bool testC
     doneMu->lock();
     runOnNewThread([=]
     {
+        QDateTime lastProxyListUpdate = QDateTime::currentDateTime();
         bool ok;
         while (true) {
             QThread::msleep(100);
@@ -253,12 +254,21 @@ void MainWindow::runSpeedTest(const QString& config, bool useDefault, bool testC
             {
                 continue;
             }
-            runOnUiThread([=]
+            runOnUiThread([=, &lastProxyListUpdate]
             {
                 showSpeedtestData = true;
                 currentSptProfileName = profile->bean->name;
                 currentTestResult = res.result();
                 UpdateDataView();
+
+                if (res.result().error().empty() && !res.result().cancelled() && lastProxyListUpdate.msecsTo(QDateTime::currentDateTime()) >= 500)
+                {
+                    if (!res.result().dl_speed().empty()) profile->dl_speed = res.result().dl_speed().c_str();
+                    if (!res.result().ul_speed().empty()) profile->ul_speed = res.result().ul_speed().c_str();
+                    if (profile->latency <= 0 && res.result().latency() > 0) profile->latency = res.result().latency();
+                    refresh_proxy_list(profile->id);
+                    lastProxyListUpdate = QDateTime::currentDateTime();
+                }
             });
         }
         runOnUiThread([=]
@@ -291,18 +301,17 @@ void MainWindow::runSpeedTest(const QString& config, bool useDefault, bool testC
             continue;
         }
 
+        if (res.cancelled()) continue;
+
         if (res.error().empty()) {
             ent->dl_speed = res.dl_speed().c_str();
             ent->ul_speed = res.ul_speed().c_str();
             if (ent->latency <= 0 && res.latency() > 0) ent->latency = res.latency();
         } else {
-            if (QString(res.error().c_str()).contains("test aborted") ||
-                QString(res.error().c_str()).contains("context canceled")) ent->dl_speed = "", ent->ul_speed = "";
-            else {
-                ent->dl_speed = "N/A";
-                ent->ul_speed = "N/A";
-                MW_show_log(tr("[%1] speed test error: %2").arg(ent->bean->DisplayTypeAndName(), res.error().c_str()));
-            }
+            ent->dl_speed = "N/A";
+            ent->ul_speed = "N/A";
+            ent->latency = -1;
+            MW_show_log(tr("[%1] speed test error: %2").arg(ent->bean->DisplayTypeAndName(), res.error().c_str()));
         }
         ent->Save();
     }

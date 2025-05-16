@@ -36,6 +36,7 @@ type SpeedTestResult struct {
 	ServerName    string
 	ServerCountry string
 	Error         error
+	Cancelled     bool
 }
 
 type SpeedTestResultQuerier struct {
@@ -161,7 +162,7 @@ func BatchSpeedTest(ctx context.Context, i *boxbox.Box, outboundTags []string, t
 		results = append(results, res)
 
 		err := speedTestWithDialer(ctx, getNetDialer(outbound.DialContext), res, testDl, testUl)
-		if err != nil {
+		if err != nil && !errors.Is(err, context.Canceled) {
 			res.Error = err
 			fmt.Println("Failed to speedtest with err:", err)
 		}
@@ -232,10 +233,12 @@ func speedTestWithDialer(ctx context.Context, dialer func(ctx context.Context, n
 			SpTQuerier.storeResult(res)
 			return nil
 		case <-ctx.Done():
-			return nil
+			res.Cancelled = true
+			return ctx.Err()
 		case <-ticker.C:
 			res.DlSpeed = internal.BrateToStr(srv[0].Context.GetEWMADownloadRate())
 			res.UlSpeed = internal.BrateToStr(srv[0].Context.GetEWMAUploadRate())
+			res.Latency = int32(srv[0].Latency.Milliseconds())
 			SpTQuerier.storeResult(res)
 		}
 	}
