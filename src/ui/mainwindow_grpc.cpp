@@ -327,7 +327,7 @@ void MainWindow::runSpeedTest(const QString& config, bool useDefault, bool testC
         runOnUiThread([=]
         {
             showSpeedtestData = false;
-            UpdateDataView();
+            UpdateDataView(true);
         });
         doneMu->unlock();
         delete doneMu;

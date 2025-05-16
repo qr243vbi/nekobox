@@ -88,7 +88,7 @@ public:
 
     void UpdateConnectionListWithRecreate(const QList<NekoGui_traffic::ConnectionMetadata>& connections);
 
-    void UpdateDataView();
+    void UpdateDataView(bool force = false);
 
     void setDownloadReport(const DownloadProgressReport& report, bool show);
 

@@ -928,9 +928,9 @@ void MainWindow::neko_set_spmode_vpn(bool enable, bool save) {
     if (NekoGui::dataStore->started_id >= 0) neko_start(NekoGui::dataStore->started_id);
 }
 
-void MainWindow::UpdateDataView()
+void MainWindow::UpdateDataView(bool force)
 {
-    if (lastUpdated.msecsTo(QDateTime::currentDateTime()) < 100)
+    if (!force && lastUpdated.msecsTo(QDateTime::currentDateTime()) < 100)
     {
         return;
     }
