@@ -264,6 +264,21 @@ namespace NekoGui_rpc {
         }
     }
 
+    libcore::QueryURLTestResponse Client::QueryURLTest(bool *rpcOK)
+    {
+        libcore::EmptyReq request;
+        libcore::QueryURLTestResponse resp;
+
+        auto status = make_grpc_channel()->Call("QueryURLTest", request, &resp);
+        if (status == QNetworkReply::NoError) {
+            *rpcOK = true;
+            return resp;
+        } else {
+            NOT_OK
+            return resp;
+        }
+    }
+
     QStringList Client::GetGeoList(bool *rpcOK, GeoRuleSetType mode, const QString& basePath) {
         switch (mode) {
             case GeoRuleSetType::ip: {

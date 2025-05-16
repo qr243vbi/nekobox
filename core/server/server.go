@@ -201,6 +201,23 @@ func (s *server) StopTest(ctx context.Context, in *gen.EmptyReq) (*gen.EmptyResp
 	return &gen.EmptyResp{}, nil
 }
 
+func (s *server) QueryURLTest(ctx context.Context, in *gen.EmptyReq) (*gen.QueryURLTestResponse, error) {
+	results := URLReporter.Results()
+	resp := &gen.QueryURLTestResponse{}
+	for _, r := range results {
+		errStr := ""
+		if r.Error != nil {
+			errStr = r.Error.Error()
+		}
+		resp.Results = append(resp.Results, &gen.URLTestResp{
+			OutboundTag: r.Tag,
+			LatencyMs:   int32(r.Duration.Milliseconds()),
+			Error:       errStr,
+		})
+	}
+	return resp, nil
+}
+
 func (s *server) QueryStats(ctx context.Context, _ *gen.EmptyReq) (*gen.QueryStatsResp, error) {
 	resp := &gen.QueryStatsResp{
 		Ups:   make(map[string]int64),
