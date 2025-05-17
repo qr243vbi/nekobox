@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.10)
 
-project(nekoray VERSION 0.1 LANGUAGES CXX)
+project(nekoray VERSION 0.1)
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
@@ -59,9 +59,6 @@ list(APPEND NKR_EXTERNAL_TARGETS myproto)
 find_package(yaml-cpp CONFIG REQUIRED) # only Release is built
 list(APPEND NKR_EXTERNAL_TARGETS yaml-cpp)
 
-find_package(ZXing CONFIG REQUIRED)
-list(APPEND NKR_EXTERNAL_TARGETS ZXing::ZXing)
-
 set(BUILD_SHARED_LIBS OFF)
 list(APPEND NKR_EXTERNAL_TARGETS qhotkey)
 
@@ -77,6 +74,7 @@ set(PROJECT_SOURCES
         3rdparty/base64.cpp
         3rdparty/qrcodegen.cpp
         3rdparty/QtExtKeySequenceEdit.cpp
+        3rdparty/QrDecoder.cpp
 
         3rdparty/qv2ray/v2/ui/LogHighlighter.cpp
         3rdparty/qv2ray/v2/ui/QvAutoCompleteTextEdit.cpp
@@ -87,6 +85,11 @@ set(PROJECT_SOURCES
         3rdparty/qv2ray/v2/ui/widgets/speedchart/SpeedWidget.cpp
         3rdparty/qv2ray/v2/ui/widgets/speedchart/SpeedWidget.hpp
         3rdparty/qv2ray/v2/proxy/QvProxyConfigurator.cpp
+
+        3rdparty/quirc/decode.c
+        3rdparty/quirc/identify.c
+        3rdparty/quirc/quirc.c
+        3rdparty/quirc/version_db.c
 
         src/api/gRPC.cpp
 
