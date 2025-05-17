@@ -56,9 +56,6 @@ endif ()
 include("cmake/myproto.cmake")
 list(APPEND NKR_EXTERNAL_TARGETS myproto)
 
-find_package(yaml-cpp CONFIG REQUIRED) # only Release is built
-list(APPEND NKR_EXTERNAL_TARGETS yaml-cpp)
-
 set(BUILD_SHARED_LIBS OFF)
 list(APPEND NKR_EXTERNAL_TARGETS qhotkey)
 
