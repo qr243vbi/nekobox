@@ -4,6 +4,7 @@ import (
 	"context"
 	"errors"
 	"fmt"
+	"github.com/google/shlex"
 	"github.com/sagernet/sing-box/adapter"
 	"github.com/sagernet/sing-box/common/settings"
 	"github.com/sagernet/sing-box/experimental/clashapi"
@@ -75,7 +76,17 @@ func (s *server) Start(ctx context.Context, in *gen.LoadConfigReq) (out *gen.Err
 			return
 		}
 		_ = f.Close()
-		args := fmt.Sprintf(in.ExtraProcessArgs, extraConfPath)
+		args, e := shlex.Split(in.ExtraProcessArgs)
+		if e != nil {
+			err = E.Cause(e, "Failed to parse args")
+			return
+		}
+		for idx, arg := range args {
+			if strings.Contains(arg, "%s") {
+				args[idx] = fmt.Sprintf(arg, extraConfPath)
+				break
+			}
+		}
 
 		extraProcess = process.NewProcess(in.ExtraProcessPath, args, in.ExtraNoOut)
 		err = extraProcess.Start()
