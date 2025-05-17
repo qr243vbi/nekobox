@@ -81,6 +81,9 @@
          </item>
          <item>
           <widget class="QComboBox" name="path_combo">
+           <property name="editable">
+            <bool>true</bool>
+           </property>
            <property name="frame">
             <bool>true</bool>
            </property>
