@@ -36,7 +36,7 @@ ninja && ninja install
 cd ../..
 
 #### protobuf ####
-git clone --recurse-submodules -b v31.0 --depth 1 --shallow-submodules https://github.com/protocolbuffers/protobuf
+git clone --recurse-submodules -b v30.2 --depth 1 --shallow-submodules https://github.com/parhelia512/protobuf
 
 mkdir -p protobuf/build
 cd protobuf/build
