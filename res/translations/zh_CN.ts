@@ -256,16 +256,40 @@ For nekobox_core, this rewrites the underlying(localhost) DNS in Tun Mode, norma
         <translation>语言</translation>
     </message>
     <message>
-        <source>http</source>
-        <translation>http</translation>
-    </message>
-    <message>
-        <source>socks</source>
-        <translation>socks</translation>
-    </message>
-    <message>
         <source>Removed all rule-set files</source>
         <translation>已移除所有规则集文件</translation>
+    </message>
+    <message>
+        <source>{ip}:{port}</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>http://{ip}:{port}</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>socks={ip}:{port}</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Speedtest mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Download + Upload</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Only Download</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Only Upload</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Disable Privilege request</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -524,6 +548,10 @@ For nekobox_core, this rewrites the underlying(localhost) DNS in Tun Mode, norma
     <message>
         <source>header type</source>
         <translation>头部类型</translation>
+    </message>
+    <message>
+        <source>Extra Core</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -797,6 +825,14 @@ also if the connection cannot be established with the current address family (ip
         <source>Cannot delete built-in profiles</source>
         <translation>无法删除内置配置文件</translation>
     </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Whether to listen on 0.0.0.0 so that other devices on LAN can use this server&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Allow Lan to Connect</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>DialogVPNSettings</name>
@@ -831,12 +867,16 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>取消</translation>
     </message>
     <message>
-        <source>Auto Redirect</source>
-        <translation>自动重定向</translation>
-    </message>
-    <message>
         <source>Strict Route</source>
         <translation>严格路由</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;When enabled, Direct IP CIDRs and rule sets will also be added to the Tun setting to be excluded at OS routing level. IMPORTANT: Large rule sets have been reported to cause massive CPU usage in windows, please enable this option with caution.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enable Tun Routing</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -875,6 +915,61 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <source>Name cannot be empty.</source>
         <translation>名称不能为空</translation>
+    </message>
+</context>
+<context>
+    <name>EditExtraCore</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Socks address</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>127.0.0.1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Socks port</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>1080</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Core path</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Choose from file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;args to pass to the executable. You can insert a single %s and it will be replaced with the path to a file containing the config entered below.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Args</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>run -confPath %s</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;contents of the config file that will be passed to the extra core process if %s is specified in the args&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Config</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No logs</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1120,6 +1215,18 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <source>Workers</source>
         <translation>工作线程</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;persistent_keepalive_interval in seconds&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>Persistent Keepalive</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1757,10 +1864,6 @@ Split by line.</source>
         <translation>您需要首先启用劫持 DNS 服务器</translation>
     </message>
     <message>
-        <source>Failed to get system dns settings</source>
-        <translation>获取系统 DNS 设置失败</translation>
-    </message>
-    <message>
         <source>Failed to set system dns: </source>
         <translation>设置系统 DNS 失败：</translation>
     </message>
@@ -1823,6 +1926,42 @@ Split by line.</source>
     <message>
         <source>Failed to download update assets</source>
         <translation>无法下载更新资源</translation>
+    </message>
+    <message>
+        <source>Speedtest Current</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Speedtest Selected</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Speedtest Group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The last url test did not exit completely, please wait. If it persists, please restart the program.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>URL test finished!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Profile speed test aborted</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>[%1] speed test error: %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>User opted for no privilege req, some features may not work</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unable to capture screen</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1904,10 +2043,6 @@ Release note:
 %2</translation>
     </message>
     <message>
-        <source>Unavailable</source>
-        <translation>不可用</translation>
-    </message>
-    <message>
         <source>Request with proxy but no profile started.</source>
         <translation>即将使用代理请求，但是代理未启动。</translation>
     </message>
@@ -1975,25 +2110,6 @@ Release note:
         <source>Requesting update error: %1</source>
         <translation>请求更新错误：%1</translation>
     </message>
-    <message>
-        <source>Traffic Chart</source>
-        <translation>流量图表</translation>
-    </message>
-    <message>
-        <source>Proxy Dl</source>
-        <translation>代理下载</translation>
-    </message>
-    <message>
-        <source>Proxy Ul</source>
-        <translation>代理上传</translation>
-    </message>
-    <message>
-        <source>Direct Dl</source>
-        <translation>直连下载</translation>
-    </message>
-    <message>
-        <source>Direct Ul</source>
-        <translation>直连上传</translation>    </message>
 </context>
 <context>
     <name>QPlatformTheme</name>
