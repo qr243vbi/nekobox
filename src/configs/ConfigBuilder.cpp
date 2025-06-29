@@ -386,10 +386,6 @@ namespace NekoGui {
             needMux = false;
         }
 
-        if (ent->type == "vless" && outbound["flow"] != "") {
-            needMux = false;
-        }
-
         // common
         // apply domain_strategy
         outbound["domain_strategy"] = dataStore->routing->outbound_domain_strategy;
