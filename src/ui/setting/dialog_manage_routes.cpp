@@ -302,10 +302,6 @@ void DialogManageRoutes::on_delete_route_clicked() {
     }
 
     auto profileToDel = chainList[idx];
-    if (profileToDel->isViewOnly()) {
-        MessageBoxInfo(tr("Profile is Read-only"), tr("Cannot delete built-in profiles"));
-        return;
-    }
     chainList.removeAt(idx);
     if (profileToDel == currentRoute) {
         currentRoute = chainList[0];
