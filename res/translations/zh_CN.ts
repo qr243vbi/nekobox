@@ -261,35 +261,35 @@ For nekobox_core, this rewrites the underlying(localhost) DNS in Tun Mode, norma
     </message>
     <message>
         <source>{ip}:{port}</source>
-        <translation type="unfinished"></translation>
+	<translation>{ip}:{port}</translation>
     </message>
     <message>
         <source>http://{ip}:{port}</source>
-        <translation type="unfinished"></translation>
+	<translation>http://{ip}:{port}</translation>
     </message>
     <message>
         <source>socks={ip}:{port}</source>
-        <translation type="unfinished"></translation>
+	<translation>socks={ip}:{port}</translation>
     </message>
     <message>
         <source>Speedtest mode</source>
-        <translation type="unfinished"></translation>
+	<translation>速度测试模式</translation>
     </message>
     <message>
         <source>Download + Upload</source>
-        <translation type="unfinished"></translation>
+	<translation>下载 + 上传</translation>
     </message>
     <message>
         <source>Only Download</source>
-        <translation type="unfinished"></translation>
+	<translation>仅下载</translation>
     </message>
     <message>
         <source>Only Upload</source>
-        <translation type="unfinished"></translation>
+	<translation>仅上传</translation>
     </message>
     <message>
         <source>Disable Privilege request</source>
-        <translation type="unfinished"></translation>
+	<translation>禁用权限请求</translation>
     </message>
 </context>
 <context>
@@ -551,7 +551,7 @@ For nekobox_core, this rewrites the underlying(localhost) DNS in Tun Mode, norma
     </message>
     <message>
         <source>Extra Core</source>
-        <translation type="unfinished"></translation>
+	<translation>额外核心</translation>
     </message>
 </context>
 <context>
@@ -827,11 +827,11 @@ also if the connection cannot be established with the current address family (ip
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Whether to listen on 0.0.0.0 so that other devices on LAN can use this server&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+	<translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;是否监听 0.0.0.0 以便局域网中的其他设备可以使用此服务器&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Allow Lan to Connect</source>
-        <translation type="unfinished"></translation>
+	<translation>允许局域网连接</translation>
     </message>
 </context>
 <context>
@@ -872,11 +872,11 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;When enabled, Direct IP CIDRs and rule sets will also be added to the Tun setting to be excluded at OS routing level. IMPORTANT: Large rule sets have been reported to cause massive CPU usage in windows, please enable this option with caution.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+	<translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;启用时，直接 IP CIDR 和规则集也将添加到 Tun 设置中，以在操作系统路由级别被排除。重要提示：已报告大型规则集会导致 Windows 中的 CPU 使用率大幅上升，请谨慎启用此选项。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Enable Tun Routing</source>
-        <translation type="unfinished"></translation>
+	<translation>启用 Tun 路由</translation>
     </message>
 </context>
 <context>
@@ -921,55 +921,55 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <name>EditExtraCore</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+	<translation>表单</translation>
     </message>
     <message>
         <source>Socks address</source>
-        <translation type="unfinished"></translation>
+	<translation>Socks 地址</translation>
     </message>
     <message>
         <source>127.0.0.1</source>
-        <translation type="unfinished"></translation>
+	<translation>127.0.0.1</translation>
     </message>
     <message>
         <source>Socks port</source>
-        <translation type="unfinished"></translation>
+	<translation>Socks 端口</translation>
     </message>
     <message>
         <source>1080</source>
-        <translation type="unfinished"></translation>
+	<translation>1080</translation>
     </message>
     <message>
         <source>Core path</source>
-        <translation type="unfinished"></translation>
+	<translation>核心路径</translation>
     </message>
     <message>
         <source>Choose from file</source>
-        <translation type="unfinished"></translation>
+	<translation>从文件中选择</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;args to pass to the executable. You can insert a single %s and it will be replaced with the path to a file containing the config entered below.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+	<translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;传递给可执行文件的参数。您可以插入一个 %s，它将被替换为包含下面输入的配置的文件路径。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Args</source>
-        <translation type="unfinished"></translation>
+	<translation>参数</translation>
     </message>
     <message>
         <source>run -confPath %s</source>
-        <translation type="unfinished"></translation>
+	<translation>run -confPath %s</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;contents of the config file that will be passed to the extra core process if %s is specified in the args&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+	<translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;将传递给额外核心进程的配置文件内容，如果在参数中指定了 %s&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Config</source>
-        <translation type="unfinished"></translation>
+	<translation>配置</translation>
     </message>
     <message>
         <source>No logs</source>
-        <translation type="unfinished"></translation>
+	<translation>无日志</translation>
     </message>
 </context>
 <context>
@@ -1218,15 +1218,15 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;persistent_keepalive_interval in seconds&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+	<translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;persistent_keepalive_interval（以秒为单位）&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+	<translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Persistent Keepalive</source>
-        <translation type="unfinished"></translation>
+	<translation>持久保持活动</translation>
     </message>
 </context>
 <context>
@@ -1929,39 +1929,39 @@ Split by line.</source>
     </message>
     <message>
         <source>Speedtest Current</source>
-        <translation type="unfinished"></translation>
+	<translation>速度测试当前</translation>
     </message>
     <message>
         <source>Speedtest Selected</source>
-        <translation type="unfinished"></translation>
+	<translation>速度测试已选</translation>
     </message>
     <message>
         <source>Speedtest Group</source>
-        <translation type="unfinished"></translation>
+	<translation>速度测试组</translation>
     </message>
     <message>
         <source>The last url test did not exit completely, please wait. If it persists, please restart the program.</source>
-        <translation type="unfinished"></translation>
+	<translation>上一个 URL 测试未完全退出，请稍候。如果持续存在，请重启程序。</translation>
     </message>
     <message>
         <source>URL test finished!</source>
-        <translation type="unfinished"></translation>
+	<translation>URL 测试完成！</translation>
     </message>
     <message>
         <source>Profile speed test aborted</source>
-        <translation type="unfinished"></translation>
+	<translation>配置文件速度测试已中止</translation>
     </message>
     <message>
         <source>[%1] speed test error: %2</source>
-        <translation type="unfinished"></translation>
+	<translation>[%1] 速度测试错误：%2</translation>
     </message>
     <message>
         <source>User opted for no privilege req, some features may not work</source>
-        <translation type="unfinished"></translation>
+	<translation>用户选择不请求权限，某些功能可能无法正常工作</translation>
     </message>
     <message>
         <source>Unable to capture screen</source>
-        <translation type="unfinished"></translation>
+	<translation>无法捕获屏幕</translation>
     </message>
 </context>
 <context>
