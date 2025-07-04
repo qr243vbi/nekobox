@@ -1,6 +1,7 @@
 package main
 
 import (
+	"bytes"
 	"context"
 	"errors"
 	"fmt"
@@ -8,6 +9,7 @@ import (
 	"github.com/sagernet/sing-box/adapter"
 	"github.com/sagernet/sing/common/metadata"
 	"github.com/sagernet/sing/service"
+	"io"
 	"nekobox_core/internal"
 	"nekobox_core/internal/boxbox"
 	"net"
@@ -167,7 +169,7 @@ func getNetDialer(dialer func(ctx context.Context, network string, destination m
 	}
 }
 
-func BatchSpeedTest(ctx context.Context, i *boxbox.Box, outboundTags []string, testDl, testUl bool) []*SpeedTestResult {
+func BatchSpeedTest(ctx context.Context, i *boxbox.Box, outboundTags []string, testDl, testUl bool, simpleDL bool, simpleAddress string) []*SpeedTestResult {
 	outbounds := service.FromContext[adapter.OutboundManager](i.Context())
 	results := make([]*SpeedTestResult, 0)
 
@@ -185,12 +187,17 @@ func BatchSpeedTest(ctx context.Context, i *boxbox.Box, outboundTags []string, t
 		res.Tag = tag
 		results = append(results, res)
 
-		err := speedTestWithDialer(ctx, getNetDialer(outbound.DialContext), res, testDl, testUl)
+		var err error
+		if simpleDL {
+			err = simpleDownloadTest(ctx, getNetDialer(outbound.DialContext), res, simpleAddress)
+		} else {
+			err = speedTestWithDialer(ctx, getNetDialer(outbound.DialContext), res, testDl, testUl)
+		}
 		if err != nil && !errors.Is(err, context.Canceled) {
 			res.Error = err
 			fmt.Println("Failed to speedtest with err:", err)
 		}
-		if !testDl {
+		if !testDl && !simpleDL {
 			res.DlSpeed = ""
 		}
 		if !testUl {
@@ -199,6 +206,66 @@ func BatchSpeedTest(ctx context.Context, i *boxbox.Box, outboundTags []string, t
 	}
 
 	return results
+}
+
+func simpleDownloadTest(ctx context.Context, dialer func(ctx context.Context, network string, address string) (net.Conn, error), res *SpeedTestResult, testURL string) error {
+	client := &http.Client{
+		Transport: &http.Transport{
+			DialContext: func(ctx context.Context, network string, addr string) (net.Conn, error) {
+				return dialer(ctx, network, addr)
+			},
+		},
+		Timeout: URLTestTimeout,
+	}
+
+	res.ServerName = "N/A"
+	res.ServerCountry = "N/A"
+
+	buf := bytes.NewBuffer(make([]byte, 0, 8*(1<<20)))
+	req, err := http.NewRequestWithContext(ctx, "GET", testURL, nil)
+	if err != nil {
+		return err
+	}
+
+	done := make(chan struct{})
+	var start time.Time
+	var latency int32
+
+	go func() {
+		defer close(done)
+		reqStart := time.Now()
+		resp, err := client.Do(req)
+		if err != nil {
+			res.Error = err
+			return
+		}
+		latency = int32(time.Since(reqStart).Milliseconds())
+		start = time.Now()
+		_, _ = io.Copy(buf, resp.Body)
+	}()
+
+	ticker := time.NewTicker(time.Millisecond * 50)
+	defer ticker.Stop()
+
+	SpTQuerier.setIsRunning(true)
+	defer SpTQuerier.setIsRunning(false)
+
+	for {
+		select {
+		case <-done:
+			res.DlSpeed = internal.BrateToStr(internal.CalculateBRate(float64(buf.Len()), start))
+			res.Latency = latency
+			SpTQuerier.storeResult(res)
+			return nil
+		case <-ctx.Done():
+			res.Cancelled = true
+			return ctx.Err()
+		case <-ticker.C:
+			res.DlSpeed = internal.BrateToStr(internal.CalculateBRate(float64(buf.Len()), start))
+			res.Latency = latency
+			SpTQuerier.storeResult(res)
+		}
+	}
 }
 
 func speedTestWithDialer(ctx context.Context, dialer func(ctx context.Context, network string, address string) (net.Conn, error), res *SpeedTestResult, testDl, testUl bool) error {

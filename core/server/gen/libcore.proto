@@ -126,6 +126,8 @@ message SpeedTestRequest {
   bool use_default_outbound = 4;
   bool test_download = 5;
   bool test_upload = 6;
+  bool simple_download = 7;
+  string simple_download_addr = 8;
 }
 
 message SpeedTestResult {

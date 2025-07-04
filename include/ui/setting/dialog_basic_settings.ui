@@ -187,32 +187,55 @@
          <property name="frameShadow">
           <enum>QFrame::Shadow::Raised</enum>
          </property>
-         <layout class="QHBoxLayout" name="horizontalLayout_3">
+         <layout class="QVBoxLayout" name="verticalLayout_5">
           <item>
-           <widget class="QLabel" name="label_12">
-            <property name="text">
-             <string>Speedtest mode</string>
-            </property>
-           </widget>
+           <layout class="QHBoxLayout" name="horizontalLayout_7">
+            <item>
+             <widget class="QLabel" name="label_12">
+              <property name="text">
+               <string>Speedtest mode</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QComboBox" name="speedtest_mode">
+              <item>
+               <property name="text">
+                <string>Download + Upload</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Only Download</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Only Upload</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Simple Download</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+           </layout>
           </item>
           <item>
-           <widget class="QComboBox" name="speedtest_mode">
+           <layout class="QHBoxLayout" name="horizontalLayout_3">
             <item>
-             <property name="text">
-              <string>Download + Upload</string>
-             </property>
+             <widget class="QLabel" name="label_16">
+              <property name="text">
+               <string>Simple Download URL</string>
+              </property>
+             </widget>
             </item>
             <item>
-             <property name="text">
-              <string>Only Download</string>
-             </property>
+             <widget class="QLineEdit" name="simple_down_url"/>
             </item>
-            <item>
-             <property name="text">
-              <string>Only Upload</string>
-             </property>
-            </item>
-           </widget>
+           </layout>
           </item>
          </layout>
         </widget>

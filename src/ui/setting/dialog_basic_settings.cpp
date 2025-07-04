@@ -34,6 +34,7 @@ DialogBasicSettings::DialogBasicSettings(QWidget *parent)
     D_LOAD_INT(test_concurrent)
     D_LOAD_STRING(test_latency_url)
     ui->speedtest_mode->setCurrentIndex(NekoGui::dataStore->speed_test_mode);
+    ui->simple_down_url->setText(NekoGui::dataStore->simple_dl_url);
 
     connect(ui->custom_inbound_edit, &QPushButton::clicked, this, [=] {
         C_EDIT_JSON_ALLOW_EMPTY(custom_inbound)
@@ -171,6 +172,7 @@ void DialogBasicSettings::accept() {
     D_SAVE_STRING(test_latency_url)
     NekoGui::dataStore->proxy_scheme = ui->proxy_scheme->currentText().toLower();
     NekoGui::dataStore->speed_test_mode = ui->speedtest_mode->currentIndex();
+    NekoGui::dataStore->simple_dl_url = ui->simple_down_url->text();
 
     // Style
 

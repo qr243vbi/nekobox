@@ -281,8 +281,7 @@ namespace NekoGui {
         if (latency < 0) {
             return Qt::red;
         } else if (latency > 0) {
-            auto greenMs = dataStore->test_latency_url.startsWith("https://") ? 200 : 100;
-            if (latency < greenMs) {
+            if (latency <= 200) {
                 return Qt::darkGreen;
             } else {
                 return Qt::darkYellow;
