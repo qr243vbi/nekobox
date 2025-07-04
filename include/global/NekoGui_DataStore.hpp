@@ -82,6 +82,7 @@ namespace NekoGui {
         bool enable_stats = true;
         QString stats_tab = ""; // either connection or log
         int speed_test_mode = TestConfig::FULL;
+        QString simple_dl_url = "http://cachefly.cachefly.net/1mb.test";
 
         // Subscription
         QString user_agent = ""; // set at main.cpp

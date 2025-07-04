@@ -377,7 +377,7 @@ func (s *server) IsPrivileged(ctx context.Context, _ *gen.EmptyReq) (*gen.IsPriv
 }
 
 func (s *server) SpeedTest(ctx context.Context, in *gen.SpeedTestRequest) (*gen.SpeedTestResponse, error) {
-	if !in.TestDownload && !in.TestUpload {
+	if !in.TestDownload && !in.TestUpload && !in.SimpleDownload {
 		return nil, errors.New("cannot run empty test")
 	}
 	var testInstance *boxbox.Box
@@ -406,7 +406,7 @@ func (s *server) SpeedTest(ctx context.Context, in *gen.SpeedTestRequest) (*gen.
 		outboundTags = []string{outbound.Tag()}
 	}
 
-	results := BatchSpeedTest(testCtx, testInstance, outboundTags, in.TestDownload, in.TestUpload)
+	results := BatchSpeedTest(testCtx, testInstance, outboundTags, in.TestDownload, in.TestUpload, in.SimpleDownload, in.SimpleDownloadAddr)
 
 	res := make([]*gen.SpeedTestResult, 0)
 	for _, data := range results {

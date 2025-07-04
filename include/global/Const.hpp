@@ -41,6 +41,7 @@ namespace GeoAssets {
             FULL,
             DL,
             UL,
+            SIMPLEDL,
         };
     }
 } // namespace NekoGui

@@ -282,6 +282,8 @@ void MainWindow::runSpeedTest(const QString& config, bool useDefault, bool testC
     req.set_use_default_outbound(useDefault);
     req.set_test_download(speedtestConf == NekoGui::TestConfig::FULL || speedtestConf == NekoGui::TestConfig::DL);
     req.set_test_upload(speedtestConf == NekoGui::TestConfig::FULL || speedtestConf == NekoGui::TestConfig::UL);
+    req.set_simple_download(speedtestConf == NekoGui::TestConfig::SIMPLEDL);
+    req.set_simple_download_addr(NekoGui::dataStore->simple_dl_url.toStdString());
     req.set_test_current(testCurrent);
 
     // loop query result
