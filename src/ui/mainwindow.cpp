@@ -63,7 +63,10 @@ void UI_InitMainWindow() {
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow) {
     mainwindow = this;
     MW_dialog_message = [=](const QString &a, const QString &b) {
-        runOnUiThread([=] { dialog_message_impl(a, b); });
+        runOnUiThread([=]
+        {
+            dialog_message_impl(a, b);
+        });
     };
 
     // Load Manager
@@ -1275,23 +1278,9 @@ void MainWindow::refresh_proxy_list(const int &id) {
 
 void MainWindow::refresh_proxy_list_impl(const int &id, GroupSortAction groupSortAction) {
     ui->proxyListTable->setUpdatesEnabled(false);
-    // id < 0 重绘
     if (id < 0) {
-        // 清空数据
         ui->proxyListTable->row2Id.clear();
         ui->proxyListTable->setRowCount(0);
-        // 添加行
-        int row = -1;
-        auto profiles = NekoGui::profileManager->GetGroup(NekoGui::dataStore->current_group)->Profiles();
-        for (const auto& ent: profiles) {
-            row++;
-            ui->proxyListTable->insertRow(row);
-            ui->proxyListTable->row2Id += ent->id;
-        }
-    }
-
-    // 显示排序
-    if (id < 0) {
         switch (groupSortAction.method) {
             case GroupSortMethod::Raw: {
                 auto group = NekoGui::profileManager->CurrentGroup();
@@ -1359,6 +1348,18 @@ void MainWindow::refresh_proxy_list_impl(const int &id, GroupSortAction groupSor
                 break;
             }
         }
+        if (ui->proxyListTable->order.empty())
+        {
+            auto profiles = NekoGui::profileManager->GetGroup(NekoGui::dataStore->current_group)->Profiles();
+            for (const auto& ent: profiles) {
+                ui->proxyListTable->row2Id += ent->id;
+            }
+            ui->proxyListTable->setRowCount(profiles.size());
+        } else
+        {
+            ui->proxyListTable->row2Id << ui->proxyListTable->order;
+            ui->proxyListTable->setRowCount(ui->proxyListTable->order.size());
+        }
         ui->proxyListTable->update_order(groupSortAction.save_sort);
     }
 
@@ -1381,11 +1382,13 @@ void MainWindow::refresh_proxy_list_impl_refresh_data(const int &id, bool stoppi
         refresh_table_item(rowID, profile, stopping);
     } else
     {
+        ui->proxyListTable->blockSignals(true);
         for (int row = 0; row < ui->proxyListTable->rowCount(); row++) {
             auto profileId = ui->proxyListTable->row2Id[row];
             auto profile = NekoGui::profileManager->GetProfile(profileId);
             refresh_table_item(row, profile, stopping);
         }
+        ui->proxyListTable->blockSignals(false);
     }
     ui->proxyListTable->setUpdatesEnabled(true);
 }
@@ -1947,6 +1950,11 @@ inline void FastAppendTextDocument(const QString &message, QTextDocument *doc) {
 }
 
 void MainWindow::show_log_impl(const QString &log) {
+    if (log.size() > 20000)
+    {
+        show_log_impl("Ignored massive log of size:" + Int2String(log.size()));
+        return;
+    }
     auto lines = SplitLines(log.trimmed());
     if (lines.isEmpty()) return;
 

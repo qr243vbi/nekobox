@@ -768,7 +768,6 @@ namespace NekoGui_sub {
             }
         }
 
-        // 解析并添加 profile
         rawUpdater->update(content);
 
         if (group != nullptr) {
@@ -790,12 +789,25 @@ namespace NekoGui_sub {
 
                 QString notice_added;
                 QString notice_deleted;
-                for (const auto &ent: only_out) {
-                    notice_added += "[+] " + ent->bean->DisplayTypeAndName() + "\n";
+                if (only_out.size() < 1000)
+                {
+                    for (const auto &ent: only_out) {
+                        notice_added += "[+] " + ent->bean->DisplayTypeAndName() + "\n";
+                    }
+                } else
+                {
+                    notice_added += QString("[+] ") + "added " + Int2String(only_out.size()) + "\n";
                 }
-                for (const auto &ent: only_in) {
-                    notice_deleted += "[-] " + ent->bean->DisplayTypeAndName() + "\n";
+                if (only_in.size() < 1000)
+                {
+                    for (const auto &ent: only_in) {
+                        notice_deleted += "[-] " + ent->bean->DisplayTypeAndName() + "\n";
+                    }
+                } else
+                {
+                    notice_deleted += QString("[-] ") + "deleted " + Int2String(only_in.size()) + "\n";
                 }
+
 
                 // sort according to order in remote
                 group->order = {};
