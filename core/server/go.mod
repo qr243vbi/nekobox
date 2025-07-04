@@ -2,7 +2,7 @@ module nekobox_core
 
 go 1.23.0
 
-toolchain go1.24.1
+toolchain go1.24.4
 
 require (
 	github.com/Mahdi-zarei/speedtest-go v1.7.12
@@ -10,13 +10,14 @@ require (
 	github.com/gofrs/uuid/v5 v5.3.2
 	github.com/google/shlex v0.0.0-20191202100458-e7afc7fbc510
 	github.com/oschwald/maxminddb-golang v1.13.1
-	github.com/sagernet/sing v0.6.10
+	github.com/sagernet/sing v0.6.11
 	github.com/sagernet/sing-box v1.11.14
 	github.com/sagernet/sing-dns v0.4.5
-	github.com/sagernet/sing-tun v0.6.8
+	github.com/sagernet/sing-tun v0.6.9
+	github.com/sagernet/sing-box v1.11.14
 	github.com/spf13/cobra v1.9.1
-	golang.org/x/sys v0.32.0
-	google.golang.org/grpc v1.71.1
+	golang.org/x/sys v0.33.0
+	google.golang.org/grpc v1.73.0
 	google.golang.org/protobuf v1.36.6
 )
 
@@ -31,14 +32,14 @@ require (
 	github.com/cloudflare/circl v1.6.1 // indirect
 	github.com/cretz/bine v0.2.0 // indirect
 	github.com/fsnotify/fsnotify v1.7.0 // indirect
-	github.com/go-chi/chi/v5 v5.2.1 // indirect
+	github.com/go-chi/chi/v5 v5.2.2 // indirect
 	github.com/go-chi/render v1.0.3 // indirect
 	github.com/go-ole/go-ole v1.3.0 // indirect
 	github.com/go-task/slim-sprig v0.0.0-20230315185526-52ccab3ef572 // indirect
 	github.com/gobwas/httphead v0.1.0 // indirect
 	github.com/gobwas/pool v0.2.1 // indirect
 	github.com/google/btree v1.1.3 // indirect
-	github.com/google/go-cmp v0.6.0 // indirect
+	github.com/google/go-cmp v0.7.0 // indirect
 	github.com/google/pprof v0.0.0-20231101202521-4ca4178f5c7a // indirect
 	github.com/hashicorp/yamux v0.1.2 // indirect
 	github.com/inconshreveable/mousetrap v1.1.0 // indirect
@@ -94,6 +95,6 @@ require (
 	golang.org/x/time v0.7.0 // indirect
 	golang.org/x/tools v0.28.0 // indirect
 	golang.zx2c4.com/wintun v0.0.0-20230126152724-0fa3db229ce2 // indirect
-	google.golang.org/genproto/googleapis/rpc v0.0.0-20250115164207-1a7da9e5054f // indirect
+	google.golang.org/genproto/googleapis/rpc v0.0.0-20250324211829-b45e905df463 // indirect
 	lukechampine.com/blake3 v1.3.0 // indirect
 )
