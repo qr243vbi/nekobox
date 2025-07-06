@@ -18,6 +18,7 @@
 #include "include/global/GuiUtils.hpp"
 
 #include <QInputDialog>
+#include <QToolTip>
 
 #define ADJUST_SIZE runOnUiThread([=] { adjustSize(); adjustPosition(mainwindow); }, this);
 #define LOAD_TYPE(a) ui->type->addItem(NekoGui::ProfileManager::NewProxyEntity(a)->bean->DisplayType(), a);
@@ -212,6 +213,16 @@ void DialogEditProfile::typeSelected(const QString &newType) {
         auto _innerWidget = new EditTrojanVLESS(this);
         innerWidget = _innerWidget;
         innerEditor = _innerWidget;
+        connect(_innerWidget->flow_, &QComboBox::currentTextChanged, _innerWidget, [=](const QString &txt)
+        {
+            if (txt == "xtls-rprx-vision")
+            {
+                ui->multiplex->setDisabled(true);
+            } else
+            {
+                ui->multiplex->setDisabled(false);
+            }
+        });
     } else if (type == "hysteria" || type == "hysteria2" || type == "tuic") {
         auto _innerWidget = new EditQUIC(this);
         innerWidget = _innerWidget;
