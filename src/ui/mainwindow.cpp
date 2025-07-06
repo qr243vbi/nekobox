@@ -251,12 +251,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
         }
         if (index == 4)
         {
-            NekoGui_traffic::connection_lister->setSort(NekoGui_traffic::ByDownload);
-            NekoGui_traffic::connection_lister->ForceUpdate();
-        }
-        if (index == 5)
-        {
-            NekoGui_traffic::connection_lister->setSort(NekoGui_traffic::ByUpload);
+            NekoGui_traffic::connection_lister->setSort(NekoGui_traffic::ByTraffic);
             NekoGui_traffic::connection_lister->ForceUpdate();
         }
     });
@@ -983,7 +978,6 @@ void MainWindow::setupConnectionList()
     ui->connections->horizontalHeader()->setSectionResizeMode(2, QHeaderView::ResizeToContents);
     ui->connections->horizontalHeader()->setSectionResizeMode(3, QHeaderView::ResizeToContents);
     ui->connections->horizontalHeader()->setSectionResizeMode(4, QHeaderView::ResizeToContents);
-    ui->connections->horizontalHeader()->setSectionResizeMode(5, QHeaderView::ResizeToContents);
     ui->connections->verticalHeader()->hide();
     connect(ui->connections, &QTableWidget::cellClicked, this, [=](int row, int column)
     {
@@ -1023,17 +1017,16 @@ void MainWindow::UpdateConnectionList(const QMap<QString, NekoGui_traffic::Conne
         // C1: Process
         ui->connections->item(row, 1)->setText(conn.process);
 
-        // C2: Network
-        ui->connections->item(row, 2)->setText(conn.network);
+        // C2: Protocol
+        auto prot = conn.network;
+        if (!conn.protocol.isEmpty()) prot += " ("+conn.protocol+")";
+        ui->connections->item(row, 2)->setText(prot);
 
-        // C3: Protocol
-        ui->connections->item(row, 3)->setText(conn.protocol);
+        // C3: Outbound
+        ui->connections->item(row, 3)->setText(conn.outbound);
 
-        // C4: Download
-        ui->connections->item(row, 4)->setText(ReadableSize(conn.download));
-
-        // C5: Upload
-        ui->connections->item(row, 5)->setText(ReadableSize(conn.upload));
+        // C4: Traffic
+        ui->connections->item(row, 4)->setText(ReadableSize(conn.upload) + "↑" + " " + ReadableSize(conn.download) + "↓");
     }
     int row = ui->connections->rowCount();
     for (const auto& conn : toAdd)
@@ -1052,25 +1045,22 @@ void MainWindow::UpdateConnectionList(const QMap<QString, NekoGui_traffic::Conne
         f->setText(conn.process);
         ui->connections->setItem(row, 1, f);
 
-        // C2: Network
+        // C2: Protocol
         f = f0->clone();
-        f->setText(conn.network);
+        auto prot = conn.network;
+        if (!conn.protocol.isEmpty()) prot += " ("+conn.protocol+")";
+        f->setText(prot);
         ui->connections->setItem(row, 2, f);
 
-        // C3: Protocol
+        // C3: Outbound
         f = f0->clone();
-        f->setText(conn.protocol);
+        f->setText(conn.outbound);
         ui->connections->setItem(row, 3, f);
 
-        // C4: Download
+        // C4: Traffic
         f = f0->clone();
-        f->setText(ReadableSize(conn.download));
+        f->setText(ReadableSize(conn.upload) + "↑" + " " + ReadableSize(conn.download) + "↓");
         ui->connections->setItem(row, 4, f);
-
-        // C5: Upload
-        f = f0->clone();
-        f->setText(ReadableSize(conn.upload));
-        ui->connections->setItem(row, 5, f);
 
         row++;
     }
@@ -1098,25 +1088,22 @@ void MainWindow::UpdateConnectionListWithRecreate(const QList<NekoGui_traffic::C
         f->setText(conn.process);
         ui->connections->setItem(row, 1, f);
 
-        // C2: Network
+        // C2: Protocol
         f = f0->clone();
-        f->setText(conn.network);
+        auto prot = conn.network;
+        if (!conn.protocol.isEmpty()) prot += " ("+conn.protocol+")";
+        f->setText(prot);
         ui->connections->setItem(row, 2, f);
 
-        // C3: Protocol
+        // C3: Outbound
         f = f0->clone();
-        f->setText(conn.protocol);
+        f->setText(conn.outbound);
         ui->connections->setItem(row, 3, f);
 
-        // C4: Download
+        // C4: Traffic
         f = f0->clone();
-        f->setText(ReadableSize(conn.download));
+        f->setText(ReadableSize(conn.upload) + "↑" + " " + ReadableSize(conn.download) + "↓");
         ui->connections->setItem(row, 4, f);
-
-        // C5: Upload
-        f = f0->clone();
-        f->setText(ReadableSize(conn.upload));
-        ui->connections->setItem(row, 5, f);
 
         row++;
     }
