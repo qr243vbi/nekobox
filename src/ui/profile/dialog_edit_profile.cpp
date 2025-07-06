@@ -235,12 +235,12 @@ void DialogEditProfile::typeSelected(const QString &newType) {
         auto _innerWidget = new EditSSH(this);
         innerWidget = _innerWidget;
         innerEditor = _innerWidget;
-    } else if (type == "internal" || type == "internal-full") {
+    } else if (type == "internal" || type == "internal-full" || type == "custom") {
         auto _innerWidget = new EditCustom(this);
         innerWidget = _innerWidget;
         innerEditor = _innerWidget;
         customType = newEnt ? type : ent->CustomBean()->core;
-        if (customType != "custom") _innerWidget->preset_core = customType;
+        _innerWidget->preset_core = customType;
         type = "custom";
         ui->apply_to_group->hide();
     } else if (type == "extracore")
