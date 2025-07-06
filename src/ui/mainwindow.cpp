@@ -1955,24 +1955,10 @@ void MainWindow::show_log_impl(const QString &log) {
         show_log_impl("Ignored massive log of size:" + Int2String(log.size()));
         return;
     }
-    auto lines = SplitLines(log.trimmed());
-    if (lines.isEmpty()) return;
+    auto trimmed = log.trimmed();
+    if (trimmed.isEmpty()) return;
 
-    QStringList newLines;
-    auto log_ignore = NekoGui::dataStore->log_ignore;
-    for (const auto &line: lines) {
-        bool showThisLine = true;
-        for (const auto &str: log_ignore) {
-            if (line.contains(str)) {
-                showThisLine = false;
-                break;
-            }
-        }
-        if (showThisLine) newLines << line;
-    }
-    if (newLines.isEmpty()) return;
-
-    FastAppendTextDocument(newLines.join("\n"), qvLogDocument);
+    FastAppendTextDocument(trimmed, qvLogDocument);
     // qvLogDocument->setPlainText(qvLogDocument->toPlainText() + log);
     // From https://gist.github.com/jemyzhang/7130092
     auto block = qvLogDocument->begin();
@@ -1996,40 +1982,6 @@ void MainWindow::on_masterLogBrowser_customContextMenuRequested(const QPoint &po
     auto sep = new QAction(this);
     sep->setSeparator(true);
     menu->addAction(sep);
-
-    auto action_add_ignore = new QAction(this);
-    action_add_ignore->setText(tr("Set ignore keyword"));
-    connect(action_add_ignore, &QAction::triggered, this, [=] {
-        auto list = NekoGui::dataStore->log_ignore;
-        auto newStr = ui->masterLogBrowser->textCursor().selectedText().trimmed();
-        if (!newStr.isEmpty()) list << newStr;
-        bool ok;
-        newStr = QInputDialog::getMultiLineText(GetMessageBoxParent(), tr("Set ignore keyword"), tr("Set the following keywords to ignore?\nSplit by line."), list.join("\n"), &ok);
-        if (ok) {
-            NekoGui::dataStore->log_ignore = SplitLines(newStr);
-            NekoGui::dataStore->Save();
-        }
-    });
-    menu->addAction(action_add_ignore);
-
-    auto action_add_route = new QAction(this);
-    action_add_route->setText(tr("Save as route"));
-    connect(action_add_route, &QAction::triggered, this, [=] {
-        auto newStr = ui->masterLogBrowser->textCursor().selectedText().trimmed();
-        if (newStr.isEmpty()) return;
-        //
-        bool ok;
-        newStr = QInputDialog::getText(GetMessageBoxParent(), tr("Save as route"), tr("Edit"), {}, newStr, &ok).trimmed();
-        if (!ok) return;
-        if (newStr.isEmpty()) return;
-        //
-        auto select = IsIpAddress(newStr) ? 0 : 3;
-        QStringList items = {"proxyIP", "bypassIP", "blockIP", "proxyDomain", "bypassDomain", "blockDomain"};
-        auto item = QInputDialog::getItem(GetMessageBoxParent(), tr("Save as route"),
-                                          tr("Save \"%1\" as a routing rule?").arg(newStr),
-                                          items, select, false, &ok);
-    });
-    menu->addAction(action_add_route);
 
     auto action_clear = new QAction(this);
     action_clear->setText(tr("Clear"));
