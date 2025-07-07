@@ -1268,14 +1268,57 @@ void MainWindow::refresh_proxy_list_impl(const int &id, GroupSortAction groupSor
     if (id < 0) {
         ui->proxyListTable->row2Id.clear();
         ui->proxyListTable->setRowCount(0);
+        auto oldOrder = QList<int>();
+        oldOrder << ui->proxyListTable->order;
+        auto group = NekoGui::profileManager->CurrentGroup();
+        if (group == nullptr)
+        {
+            ui->proxyListTable->setUpdatesEnabled(true);
+            return;
+        }
+
+        QSet<int> currProfs;
+        // remove old ones
+        ui->proxyListTable->order.clear();
+        for (const int oldID : oldOrder)
+        {
+            if (NekoGui::profileManager->GetProfile(oldID) != nullptr)
+            {
+                ui->proxyListTable->order << oldID;
+                currProfs.insert(oldID);
+            }
+        }
+
+        // add new ones
+        for (const auto& profile : NekoGui::profileManager->profiles)
+        {
+            if (profile.second->gid == group->id && !currProfs.contains(profile.first))
+            {
+                ui->proxyListTable->order << profile.first;
+            }
+        }
+
         switch (groupSortAction.method) {
             case GroupSortMethod::Raw: {
-                auto group = NekoGui::profileManager->CurrentGroup();
-                if (group == nullptr)
+                QList<int> newGroupOrder;
+                QSet<int> newGroupIds;
+                for (const int oldId : group->order)
                 {
-                    ui->proxyListTable->setUpdatesEnabled(true);
-                    return;
+                    if (NekoGui::profileManager->GetProfile(oldId) != nullptr)
+                    {
+                        newGroupOrder << oldId;
+                        newGroupIds.insert(oldId);
+                    }
                 }
+                for (const auto& profile : NekoGui::profileManager->profiles)
+                {
+                    if (profile.second->gid == group->id && !newGroupIds.contains(profile.first))
+                    {
+                        newGroupOrder << profile.first;
+                    }
+                }
+                group->order.clear();
+                group->order << newGroupOrder;
                 ui->proxyListTable->order = group->order;
                 break;
             }
@@ -1335,19 +1378,27 @@ void MainWindow::refresh_proxy_list_impl(const int &id, GroupSortAction groupSor
                 break;
             }
         }
-        if (ui->proxyListTable->order.empty())
+
+        if (ui->proxyListTable->order.isEmpty())
         {
-            auto profiles = NekoGui::profileManager->GetGroup(NekoGui::dataStore->current_group)->Profiles();
-            for (const auto& ent: profiles) {
-                ui->proxyListTable->row2Id += ent->id;
+            for (const auto& ent : group->Profiles())
+            {
+                ui->proxyListTable->order << ent->id;
             }
-            ui->proxyListTable->setRowCount(profiles.size());
-        } else
-        {
-            ui->proxyListTable->row2Id << ui->proxyListTable->order;
-            ui->proxyListTable->setRowCount(ui->proxyListTable->order.size());
         }
-        ui->proxyListTable->update_order(groupSortAction.save_sort);
+
+        bool needSave = oldOrder.size() != ui->proxyListTable->order.size();
+        for (int i=0;i<oldOrder.size() && !needSave;i++)
+        {
+            if (oldOrder[i] != ui->proxyListTable->order[i])
+            {
+                needSave = true;
+            }
+        }
+
+        ui->proxyListTable->row2Id << ui->proxyListTable->order;
+        ui->proxyListTable->setRowCount(ui->proxyListTable->order.size());
+        ui->proxyListTable->update_order(needSave);
     }
 
     // refresh data
