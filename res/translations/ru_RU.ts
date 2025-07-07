@@ -92,10 +92,6 @@
         <translation>Выбрать</translation>
     </message>
     <message>
-        <source>Loglevel</source>
-        <translation>Уровень логирования</translation>
-    </message>
-    <message>
         <source>Multiplex (mux)</source>
         <translation>Мультиплекс (mux)</translation>
     </message>
@@ -315,6 +311,10 @@ For nekobox_core, this rewrites the underlying(localhost) DNS in Tun Mode, norma
     <message>
         <source>Disable Privilege request</source>
         <translation type="unfinished">Откл. привилегированный запрос</translation>
+    </message>
+    <message>
+        <source>Simple Download</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -692,10 +692,6 @@ For nekobox_core, this rewrites the underlying(localhost) DNS in Tun Mode, norma
         <translation>Помощь</translation>
     </message>
     <message>
-        <source>Default Outbound</source>
-        <translation>Режим работы Outbound</translation>
-    </message>
-    <message>
         <source>This is especially important and it is recommended to use the default value of &quot;localhost&quot;.
 If the default value does not work, try changing it to &quot;223.5.5.5&quot;.
 For more information, see the document &quot;Configuration/DNS&quot;.</source>
@@ -710,10 +706,6 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
     <message>
         <source>Routing Profile</source>
         <translation type="unfinished">Профиль маршрутизации</translation>
-    </message>
-    <message>
-        <source>The outbound tag to use when the request is not handled by any rule</source>
-        <translation type="unfinished">Исходящий тег, используемый, когда запрос не обрабатывается ни одним правилом.</translation>
     </message>
     <message>
         <source>Default DNS server</source>
@@ -844,14 +836,6 @@ also if the connection cannot be established with the current address family (ip
         <translation type="unfinished">Профили маршрутизации не могут быть пустыми, попробуйте добавить другой профиль или отредактировать этот</translation>
     </message>
     <message>
-        <source>Profile is Read-only</source>
-        <translation type="unfinished">Профиль доступен только для чтения</translation>
-    </message>
-    <message>
-        <source>Cannot delete built-in profiles</source>
-        <translation type="unfinished">Невозможно удалить встроенные профили</translation>
-    </message>
-    <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Whether to listen on 0.0.0.0 so that other devices on LAN can use this server&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
@@ -898,7 +882,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;When enabled, Direct IP CIDRs and rule sets will also be added to the Tun setting to be excluded at OS routing level. IMPORTANT: Large rule sets have been reported to cause massive CPU usage in windows, please enable this option with caution.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Если эта опция включена, прямые IP CIDR'ы и наборы правил также будут добавлены в настройки Tun, чтобы исключить их на уровне маршрутизации ОС.
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Если эта опция включена, прямые IP CIDR&apos;ы и наборы правил также будут добавлены в настройки Tun, чтобы исключить их на уровне маршрутизации ОС.
 ВАЖНО: Сообщалось, что из-за большого кол-ва правил может вызвать повышенную нагрузку на процессор в windows, поэтому включайте эту опцию с осторожностью.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
@@ -1614,28 +1598,6 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>QR-код не найден</translation>
     </message>
     <message>
-        <source>Set ignore keyword</source>
-        <translation>Ключевые слова для игнорирования</translation>
-    </message>
-    <message>
-        <source>Set the following keywords to ignore?
-Split by line.</source>
-        <translation>Задайте ключевые слова для игнорирования,
-каждое на отдельной строке.</translation>
-    </message>
-    <message>
-        <source>Save as route</source>
-        <translation>Сохранить как маршрут</translation>
-    </message>
-    <message>
-        <source>Edit</source>
-        <translation>Редактировать</translation>
-    </message>
-    <message>
-        <source>Save &quot;%1&quot; as a routing rule?</source>
-        <translation>Сохранить &quot;%1&quot; как профиль маршрутизации?</translation>
-    </message>
-    <message>
         <source>Clear</source>
         <translation>Очистить</translation>
     </message>
@@ -1780,28 +1742,8 @@ Split by line.</source>
         <translation type="unfinished">Нажмите, чтобы отключить сортировку</translation>
     </message>
     <message>
-        <source>Network</source>
-        <translation type="unfinished">Сеть</translation>
-    </message>
-    <message>
         <source>Protocol</source>
         <translation type="unfinished">Протокол</translation>
-    </message>
-    <message>
-        <source>Download</source>
-        <translation type="unfinished">Загрузка</translation>
-    </message>
-    <message>
-        <source>Click To Sort By Download</source>
-        <translation type="unfinished">Нажмите, чтобы сортировать по загрузке</translation>
-    </message>
-    <message>
-        <source>Upload</source>
-        <translation type="unfinished">Выгрузка</translation>
-    </message>
-    <message>
-        <source>Click To Sort By Upload</source>
-        <translation type="unfinished">Нажмите, чтобы сортировать по выгрузке</translation>
     </message>
     <message>
         <source>Logs</source>
@@ -1991,6 +1933,14 @@ Split by line.</source>
         <source>Unable to capture screen</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Outbound</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Click To Toggle sort by Traffic</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ProxyItem</name>
@@ -2138,6 +2088,10 @@ Release note:
         <source>Requesting update error: %1</source>
         <translation type="unfinished">Ошибка запроса обновления: %1</translation>
     </message>
+    <message>
+        <source>Tun mode cannot be used with Custom configs</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>QPlatformTheme</name>
@@ -2281,6 +2235,14 @@ Release note:
         <source>Some rules could not be added, fix them before saving:
 </source>
         <translation type="unfinished">Некоторые правила не удалось добавить, исправьте их перед сохранением:</translation>
+    </message>
+    <message>
+        <source>proxy</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>direct</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
