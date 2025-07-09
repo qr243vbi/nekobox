@@ -58,6 +58,7 @@ namespace NekoGui {
         // Load Groups
         auto loadedOrder = groupsTabOrder;
         groupsTabOrder = {};
+        auto needToCheckGroups = QSet<int>();
         for (auto id: groupsIdOrder) {
             auto ent = LoadGroup(QString("groups/%1.json").arg(id));
             // Corrupted group?
@@ -69,6 +70,17 @@ namespace NekoGui {
                 loadedOrder << id;
             }
             groups[id] = ent;
+            if (ent->profiles.isEmpty()) needToCheckGroups << id;
+        }
+        for (const auto& [id, proxy] : profiles)
+        {
+            // corrupted data
+            if (groups.count(proxy->gid) < 1 || !needToCheckGroups.contains(proxy->gid)) continue;
+            groups[proxy->gid]->AddProfile(id);
+        }
+        for (const auto groupID : needToCheckGroups)
+        {
+            groups[groupID]->Save();
         }
         // Ensure groups contains order
         for (auto id: loadedOrder) {
