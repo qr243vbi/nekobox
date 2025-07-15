@@ -184,6 +184,8 @@ jobs:
     permissions:
       contents: write
       actions: read
+    env:
+      INPUT_VERSION: ${{ github.event.inputs.tag }}
     steps:
       - name: Checking out sources
         uses: actions/checkout@v4.2.2
