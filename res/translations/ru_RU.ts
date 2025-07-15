@@ -161,9 +161,9 @@
     </message>
     <message>
         <source>It is recommended to leave it blank, but it sometimes does not work, at this time you can set this option.
-For nekobox_core, this rewrites the underlying(localhost) DNS in Tun Mode, normal mode, and also URL Test.</source>
+For Core, this rewrites the underlying(localhost) DNS in Tun Mode, normal mode, and also URL Test.</source>
         <translation>Рекомендуется оставить параметр пустым, но иногда это не срабатывает как надо, и в таком случае можно использовать эту опцию.
-Для  nekobox_core  это переопределяет нижестоящий (localhost) DNS в  Tun режиме, нормальном режиме, а также при URL тесте.</translation>
+Для  Core  это переопределяет нижестоящий (localhost) DNS в  Tun режиме, нормальном режиме, а также при URL тесте.</translation>
     </message>
     <message>
         <source>Automatic update</source>
@@ -871,7 +871,7 @@ also if the connection cannot be established with the current address family (ip
         <translation>Исправление проблем</translation>
     </message>
     <message>
-        <source>If you have trouble starting VPN, you can force reset nekobox_core process here.
+        <source>If you have trouble starting VPN, you can force reset Core process here.
 
 If still not working, see documentation for more information.
 https://matsuridayo.github.io/n-configuration/#vpn-tun</source>
@@ -1718,8 +1718,8 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>If you have trouble starting VPN, you can force reset nekobox_core process here and then try starting the profile again. The error is %1</source>
-        <translation type="unfinished">Если у вас возникли проблемы с запуском VPN, вы можете принудительно сбросить процесс nekobox_core здесь, а затем снова попробовать запустить профиль. Ошибка: %1</translation>
+        <source>If you have trouble starting VPN, you can force reset Core process here and then try starting the profile again. The error is %1</source>
+        <translation type="unfinished">Если у вас возникли проблемы с запуском VPN, вы можете принудительно сбросить процесс Core здесь, а затем снова попробовать запустить профиль. Ошибка: %1</translation>
     </message>
     <message>
         <source> Confirmation </source>
