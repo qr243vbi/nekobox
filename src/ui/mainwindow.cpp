@@ -2212,55 +2212,69 @@ void MainWindow::DownloadAssets(const QString &geoipUrl, const QString &geositeU
     MW_show_log(tr("Geo Asset update completed!"));
 }
 
+// to parse versions of format Throne-1.2.3-beta.2 or Throne-1.2.3
 bool isNewer(QString version) {
-    version = version.mid(8); // take out nekoray-
-    auto parts = version.split('.');
-    auto currentParts = QString(NKR_VERSION).split('.');
+    if constexpr (NKR_VERSION == "") return false;
+    version = version.mid(7); // take out Throne-
+    auto parts = version.replace("-", ".").split('.');
+    auto currentParts = QString(NKR_VERSION).replace("-", ".").split('.');
+    if (parts.size() < 3 || currentParts.size() < 3)
+    {
+        MW_show_log("Version strings seem to be invalid" + QString(NKR_VERSION) + " and " + version);
+        return false;
+    }
     std::vector<int> verNums;
     std::vector<int> currNums;
     // add base version first
     verNums.push_back(parts[0].toInt());
     verNums.push_back(parts[1].toInt());
-    verNums.push_back(parts[2].split('-')[0].toInt());
+    verNums.push_back(parts[2].toInt());
+    if (parts.size() > 3)
+    {
+        if (parts[3] == "alpha") verNums.push_back(1);
+        if (parts[3] == "beta") verNums.push_back(2);
+        if (parts[3] == "rc") verNums.push_back(3);
+        if (parts.size() > 4) verNums.push_back(parts[4].toInt());
+    }
 
     currNums.push_back(currentParts[0].toInt());
     currNums.push_back(currentParts[1].toInt());
-    currNums.push_back(currentParts[2].split('-')[0].toInt());
-
-    // base version is equal or greater, check release mode
-    int releaseMode;
-    int partialVer = 0;
-    if (parts[2].split('-').size() > 1 && parts[2].split('-')[1].toInt() == 0 /* this makes sure it is not a number*/) {
-        partialVer = parts[3].split('-')[0].toInt();
-        auto str = parts[2].split('-')[1];
-        if (str == "rc") releaseMode = 3;
-        if (str == "beta") releaseMode = 2;
-        if (str == "alpha") releaseMode = 1;
-    } else {
-        releaseMode = 4;
+    currNums.push_back(currentParts[2].toInt());
+    if (currentParts.size() > 3)
+    {
+        if (currentParts[3] == "alpha") currNums.push_back(1);
+        if (currentParts[3] == "beta") currNums.push_back(2);
+        if (currentParts[3] == "rc") currNums.push_back(3);
+        if (currentParts.size() > 4) currNums.push_back(currentParts[4].toInt());
     }
-    verNums.push_back(releaseMode);
-    verNums.push_back(partialVer);
 
-    int currReleaseMode;
-    int currentPartialVer = 0;
-    if (currentParts[2].split('-').size() > 1 && currentParts[2].split('-')[1].toInt() == 0 /* this makes sure it is not a number*/) {
-        currentPartialVer = currentParts[3].split('-')[0].toInt();
-        auto str = currentParts[2].split('-')[1];
-        if (str == "rc") currReleaseMode = 3;
-        if (str == "beta") currReleaseMode = 2;
-        if (str == "alpha") currReleaseMode = 1;
-    } else {
-        currReleaseMode = 4;
+    if (verNums.size() < 3 || currNums.size() < 3)
+    {
+        MW_show_log("Version strings seem to be invalid" + QString(NKR_VERSION) + " and " + version);
+        return false;
     }
-    currNums.push_back(currReleaseMode);
-    currNums.push_back(currentPartialVer);
 
-    for (int i=0;i<verNums.size();i++) {
+    for (int i=0;i<3;i++)
+    {
         if (verNums[i] > currNums[i]) return true;
         if (verNums[i] < currNums[i]) return false;
     }
 
+    // equal base version, check beta-ness
+    if (verNums.size() == 5 && currNums.size() == 3) return false;
+    if (verNums.size() == 3 && currNums.size() == 5) return true;
+    if (verNums.size() == 5 && currNums.size() == 5)
+    {
+        for (int i=3;i<5;i++)
+        {
+            if (verNums[i] > currNums[i]) return true;
+            if (verNums[i] < currNums[i]) return false;
+        }
+    } else
+    {
+        MW_show_log("Version strings seem to be invalid" + QString(NKR_VERSION) + " and " + version);
+        return false;
+    }
     return false;
 }
 
