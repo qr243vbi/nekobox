@@ -2158,9 +2158,7 @@ bool MainWindow::StopVPNProcess() {
     if (vpn_pid != 0) {
         bool ok;
 #ifdef Q_OS_WIN
-        auto ret = WinCommander::runProcessElevated("taskkill", {"/IM", "Core.exe",
-                                                                 "/FI",
-                                                                 "PID ne " + Int2String(core_process->processId())});
+        auto ret = WinCommander::runProcessElevated("taskkill", {"/F", "/PID", Int2String(vpn_pid)});
         ok = ret == 0;
 #endif
 
@@ -2214,7 +2212,7 @@ void MainWindow::DownloadAssets(const QString &geoipUrl, const QString &geositeU
 
 // to parse versions of format Throne-1.2.3-beta.2 or Throne-1.2.3
 bool isNewer(QString version) {
-    if constexpr (NKR_VERSION == "") return false;
+    if (QString(NKR_VERSION).isEmpty()) return false;
     version = version.mid(7); // take out Throne-
     auto parts = version.replace("-", ".").split('.');
     auto currentParts = QString(NKR_VERSION).replace("-", ".").split('.');
