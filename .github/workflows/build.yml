@@ -52,6 +52,10 @@ jobs:
           cache-dependency-path: |
             core/server/go.sum
             core/updater/go.sum
+      - name: Installing protoc-gen-go
+        run: |
+          go get github.com/golang/protobuf/protoc-gen-go
+          go get google.golang.org/grpc/cmd/protoc-gen-go-grpc
       - name: Build golang parts
         if: steps.cache-common.outputs.cache-hit != 'true'
         shell: bash
