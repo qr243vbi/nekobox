@@ -25,6 +25,9 @@ popd
 
 #### Go: core ####
 pushd core/server
+pushd gen
+protoc -I . --go_out=. --go_opt paths=source_relative --go-grpc_out=. --go-grpc_opt paths=source_relative libcore.proto
+popd
 VERSION_SINGBOX=$(go list -m -f '{{.Version}}' github.com/sagernet/sing-box)
 go build -v -o $DEST -trimpath -ldflags "-w -s -X 'github.com/sagernet/sing-box/constant.Version=${VERSION_SINGBOX}'" -tags "with_clash_api,with_gvisor,with_quic,with_wireguard,with_utls,with_ech,with_dhcp"
 popd
