@@ -82,19 +82,19 @@ jobs:
       matrix:
         include:
           - platform: windows-latest
-            qt_version: "6.9.1"
+            qt_version: "6.9.0"
             target: amd64
           - platform: ubuntu-22.04
-            qt_version: "6.9.1"
+            qt_version: "6.9.0"
             target: amd64
           - platform: ubuntu-24.04-arm
-            qt_version: "6.9.1"
+            qt_version: "6.9.0"
             target: arm64
           - platform: macos-latest
-            qt_version: "6.9.1"
+            qt_version: "6.9.0"
             target: x86_64
           - platform: macos-latest
-            qt_version: "6.9.1"
+            qt_version: "6.9.0"
             target: arm64
       fail-fast: false
     runs-on: ${{ matrix.platform }}
