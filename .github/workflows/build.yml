@@ -96,11 +96,7 @@ jobs:
         include:
           - platform: windows-latest
             qt_version: "6.9.0"
-<<<<<<< HEAD
-            target: amd64
-=======
             target: x86_64
->>>>>>> origin/windows-legacy
           - platform: ubuntu-22.04
             qt_version: "6.9.0"
             target: amd64
