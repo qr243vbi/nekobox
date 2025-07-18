@@ -65,6 +65,8 @@ jobs:
           7z x go.7z
       - name: Install Protoc
         if: matrix.cross_os != 'public_res'
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
         uses: arduino/setup-protoc@v3
       - name: Installing protoc-gen-go
         if: matrix.cross_os != 'public_res'
