@@ -270,6 +270,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
         group->SwapProfiles(row1, row2);
         refresh_proxy_list(group->profiles[row1]);
         refresh_proxy_list(group->profiles[row2]);
+        group->Save();
     };
     if (auto button = ui->proxyListTable->findChild<QAbstractButton *>(QString(), Qt::FindDirectChildrenOnly)) {
         // Corner Button
@@ -296,6 +297,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
             return;
         }
         refresh_proxy_list_impl(-1, action);
+        Configs::profileManager->CurrentGroup()->Save();
     });
     connect(ui->proxyListTable->horizontalHeader(), &QHeaderView::sectionResized, this, [=](int logicalIndex, int oldSize, int newSize) {
         auto group = Configs::profileManager->CurrentGroup();
