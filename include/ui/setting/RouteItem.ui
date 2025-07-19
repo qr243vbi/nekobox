@@ -40,12 +40,12 @@
        <widget class="QComboBox" name="def_out">
         <item>
          <property name="text">
-          <string>proxy</string>
+          <string notr="true">proxy</string>
          </property>
         </item>
         <item>
          <property name="text">
-          <string>direct</string>
+          <string notr="true">direct</string>
          </property>
         </item>
        </widget>
