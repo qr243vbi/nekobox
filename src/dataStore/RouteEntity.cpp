@@ -597,7 +597,7 @@ namespace Configs {
         auto chain = std::make_shared<RoutingChain>();
         chain->name = "Bypass Iran";
         chain->id = IranBypassChainID;
-        chain->save_control_no_save = true;
+        chain->fn = QString("route_profiles/%1.json").arg(chain->id);
 
         auto rule0 = std::make_shared<RouteRule>();
         rule0->name = "Route DNS";
@@ -624,7 +624,7 @@ namespace Configs {
         auto chain = std::make_shared<RoutingChain>();
         chain->name = "Bypass China";
         chain->id = ChinaBypassChainID;
-        chain->save_control_no_save = true;
+        chain->fn = QString("route_profiles/%1.json").arg(chain->id);
 
         auto rule0 = std::make_shared<RouteRule>();
         rule0->name = "Route DNS";
@@ -651,7 +651,7 @@ namespace Configs {
         auto chain = std::make_shared<RoutingChain>();
         chain->name = "Bypass Russia";
         chain->id = RussiaBypassChainID;
-        chain->save_control_no_save = true;
+        chain->fn = QString("route_profiles/%1.json").arg(chain->id);
 
         auto rule0 = std::make_shared<RouteRule>();
         rule0->name = "Route DNS";
@@ -894,7 +894,7 @@ namespace Configs {
     bool RoutingChain::Save() {
         castedRules.clear();
         for (const auto &item: Rules) {
-            castedRules.push_back(dynamic_cast<JsonStore*>(item.get()));
+            castedRules.push_back(item.get());
         }
         return JsonStore::Save();
     }
