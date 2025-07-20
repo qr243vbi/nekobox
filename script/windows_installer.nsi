@@ -22,25 +22,22 @@ RequestExecutionLevel user
 UninstallText "This will uninstall Throne. Do you wish to continue?"
 UninstallIcon "res\ThroneDel.ico"
 
-!macro AbortOnRunningApp
-  Kill_Module:
-  FindProcDLL::FindProc "$INSTDIR\Throne.exe"
+!macro AbortOnRunningApp EXEName
+  killModule:
+  FindProcDLL::FindProc ${EXEName}
   Pop $R0
-  IntCmp $R0 1 0 no_run
-  FindProcDLL::KillProc "$INSTDIR\Throne.exe"
-  Sleep 1000
-  FindProcDLL::FindProc "$INSTDIR\Throne.exe"
-  Pop $R0
-  IntCmp $R0 1 0 no_run
-  Goto Kill_Module
-  no_run:
+  IntCmp $R0 1 0 notRunning
+    FindProcDLL::KillProc ${EXEName}
+    Sleep 1000
+    Goto killModule
+  notRunning:
 !macroend
 
 Section "Install"
   SetOutPath "$INSTDIR"
   SetOverwrite on
 
-  !insertmacro AbortOnRunningApp
+  !insertmacro AbortOnRunningApp "$INSTDIR\Throne.exe"
 
   File /r ".\deployment\windows64\*"
 
@@ -60,7 +57,7 @@ SectionEnd
 
 Section "Uninstall"
 
-  !insertmacro AbortOnRunningApp
+  !insertmacro AbortOnRunningApp "$INSTDIR\Throne.exe"
 
   Delete "$SMPROGRAMS\Throne\Throne.lnk"
   Delete "$SMPROGRAMS\Throne\Uninstall Throne.lnk"
