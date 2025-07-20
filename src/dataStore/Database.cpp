@@ -106,14 +106,23 @@ namespace Configs {
             profileManager->AddGroup(defaultGroup);
         }
 
+        // First setup
         if (routes.empty()) {
             auto defaultRoute = RoutingChain::GetDefaultChain();
             profileManager->AddRouteChain(defaultRoute);
-        }
 
-        routes[IranBypassChainID] = RoutingChain::GetIranDefaultChain();
-        routes[ChinaBypassChainID] = RoutingChain::GetChinaDefaultChain();
-        routes[RussiaBypassChainID] = RoutingChain::GetRussiaDefaultChain();
+            routes[IranBypassChainID] = RoutingChain::GetIranDefaultChain();
+            routesIdOrder.push_back(IranBypassChainID);
+            routes[IranBypassChainID]->Save();
+
+            routes[ChinaBypassChainID] = RoutingChain::GetChinaDefaultChain();
+            routesIdOrder.push_back(ChinaBypassChainID);
+            routes[ChinaBypassChainID]->Save();
+
+            routes[RussiaBypassChainID] = RoutingChain::GetRussiaDefaultChain();
+            routesIdOrder.push_back(RussiaBypassChainID);
+            routes[RussiaBypassChainID]->Save();
+        }
     }
 
     void ProfileManager::SaveManager() {
