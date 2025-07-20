@@ -2373,7 +2373,7 @@ void MainWindow::CheckUpdate() {
                 }
                 QString errors;
                 if (!release_download_url.isEmpty()) {
-                    auto res = NetworkRequestHelper::DownloadAsset(release_download_url, "nekoray.zip");
+                    auto res = NetworkRequestHelper::DownloadAsset(release_download_url, "Throne.zip");
                     if (!res.isEmpty()) {
                         errors += res;
                     }
