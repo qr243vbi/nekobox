@@ -22,10 +22,7 @@
 
 #ifdef Q_OS_WIN
 #include "3rdparty/WinCommander.hpp"
-#include <sdkddkver.h>
-#include <minwindef.h>
-#include <winbase.h>
-#include <VersionHelpers.h>
+#include "include/sys/windows/WinVersion.h"
 #else
 #ifdef Q_OS_LINUX
 #include "include/sys/linux/LinuxCap.h"
@@ -2286,7 +2283,7 @@ void MainWindow::CheckUpdate() {
     QString search;
 #ifdef Q_OS_WIN32
 #  ifdef Q_OS_WIN64
-    if (IsWindows10OrGreater())
+    if (WinVersion::IsBuildNumGreaterOrEqual(BuildNumber::Windows_10_1809))
         search = "windows64";
     else
 	search = "windowslegacy64";
