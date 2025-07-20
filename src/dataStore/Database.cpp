@@ -113,6 +113,7 @@ namespace Configs {
 
         routes[IranBypassChainID] = RoutingChain::GetIranDefaultChain();
         routes[ChinaBypassChainID] = RoutingChain::GetChinaDefaultChain();
+        routes[RussiaBypassChainID] = RoutingChain::GetRussiaDefaultChain();
     }
 
     void ProfileManager::SaveManager() {
