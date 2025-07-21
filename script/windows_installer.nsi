@@ -42,11 +42,8 @@ Section "Install"
   File /r ".\deployment\windows64\*"
 
   CreateShortcut "$desktop\Throne.lnk" "$instdir\Throne.exe"
-
-  CreateDirectory "$SMPROGRAMS\Throne"
-  CreateShortcut "$SMPROGRAMS\Throne\Throne.lnk" "$INSTDIR\Throne.exe" "" "$INSTDIR\Throne.exe" 0
-  CreateShortcut "$SMPROGRAMS\Throne\Uninstall Throne.lnk" "$INSTDIR\uninstall.exe"
-
+  CreateShortcut "$SMPROGRAMS\Throne.lnk" "$INSTDIR\Throne.exe" "" "$INSTDIR\Throne.exe" 0
+  
   WriteRegStr HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\Throne" "DisplayName" "Throne"
   WriteRegStr HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\Throne" "UninstallString" "$INSTDIR\uninstall.exe"
   WriteRegStr HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\Throne" "InstallLocation" "$INSTDIR"
@@ -59,8 +56,7 @@ Section "Uninstall"
 
   !insertmacro AbortOnRunningApp "$INSTDIR\Throne.exe"
 
-  Delete "$SMPROGRAMS\Throne\Throne.lnk"
-  Delete "$SMPROGRAMS\Throne\Uninstall Throne.lnk"
+  Delete "$SMPROGRAMS\Throne.lnk"
   Delete "$desktop\Throne.lnk"
   RMDir "$SMPROGRAMS\Throne"
 
