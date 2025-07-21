@@ -113,6 +113,7 @@ namespace Configs {
         QList<std::shared_ptr<RouteRule>> Rules;
         QList<JsonStore*> castedRules;
         int defaultOutboundID = proxyID;
+        std::map<QString, QString> tagMap;
 
         RoutingChain();
 
@@ -124,7 +125,7 @@ namespace Configs {
 
         void FromJson(QJsonObject object);
 
-        QJsonArray get_route_rules(bool forView = false, std::map<int, QString> outboundMap = {}, const QStringList& tagList = {});
+        QJsonArray get_route_rules(bool forView = false, std::map<int, QString> outboundMap = {});
 
         bool isViewOnly() const;
 
@@ -139,8 +140,6 @@ namespace Configs {
         std::shared_ptr<QList<int>> get_used_outbounds();
 
         std::shared_ptr<QStringList> get_used_rule_sets();
-
-        std::shared_ptr<QStringList> get_used_remote_rule_sets();
 
         QStringList get_direct_sites();
 

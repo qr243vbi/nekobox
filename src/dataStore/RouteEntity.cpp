@@ -564,8 +564,30 @@ namespace Configs {
         return rules;
     }
 
-    QJsonArray RoutingChain::get_route_rules(bool forView, std::map<int, QString> outboundMap, const QStringList& tagList) {
+    QJsonArray RoutingChain::get_route_rules(bool forView, std::map<int, QString> outboundMap) {
         QJsonArray res;
+        QStringList tagList;
+        for (const auto& item: Rules) {
+            for (const auto& ruleItem: item->rule_set) {
+                if (!ruleItem.startsWith("https://")) {
+                    tagList.push_back(ruleItem);
+                }
+            }
+        }
+        for (const auto& item: Rules) {
+            for (const auto& ruleItem: item->rule_set) {
+                if (ruleItem.startsWith("https://") && ruleItem.endsWith(".srs")) {
+                    QString tagRemote, tmp = ruleItem.section('/', -1);
+                    tmp.chop(4);
+                    tagRemote = tmp;
+                    int index = 1;
+                    while(tagList.contains(tagRemote))
+                        tagRemote = tmp + QString::number(index++);
+                    tagMap.insert(std::map<QString, QString>::value_type(ruleItem, tagRemote));
+                    tagList.push_back(tagRemote);
+                }
+            }
+        }
         for (const auto &item: Rules) {
             auto outboundTag = QString();
             if (outboundMap.count(item->outboundID)) outboundTag = outboundMap[item->outboundID];
@@ -690,19 +712,7 @@ namespace Configs {
         auto res = std::make_shared<QStringList>();
         for (const auto& item: Rules) {
             for (const auto& ruleItem: item->rule_set) {
-                if (!ruleItem.startsWith("https://"))
-                    res->push_back(ruleItem);
-            }
-        }
-        return res;
-    }
-
-    std::shared_ptr<QStringList> RoutingChain::get_used_remote_rule_sets() {
-        auto res = std::make_shared<QStringList>();
-        for (const auto& item: Rules) {
-            for (const auto& ruleItem: item->rule_set) {
-                if (ruleItem.startsWith("https://") && ruleItem.endsWith(".srs"))
-                    res->push_back(ruleItem);
+                res->push_back(ruleItem);
             }
         }
         return res;
