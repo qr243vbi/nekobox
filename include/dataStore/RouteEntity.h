@@ -23,9 +23,6 @@ namespace Configs {
         return proxyID;
     }
     enum inputType {trufalse, select, text};
-    const int IranBypassChainID = 111111111;
-    const int ChinaBypassChainID = 222222222;
-    const int RussiaBypassChainID = 333333333;
     enum ruleType {custom, simpleAddress, simpleProcessName, simpleProcessPath};
     enum simpleAction{direct, block, proxy};
     inline QString simpleActionToString(simpleAction action)
@@ -130,12 +127,6 @@ namespace Configs {
         bool isViewOnly() const;
 
         static std::shared_ptr<RoutingChain> GetDefaultChain();
-
-        static std::shared_ptr<RoutingChain> GetIranDefaultChain();
-
-        static std::shared_ptr<RoutingChain> GetChinaDefaultChain();
-
-        static std::shared_ptr<RoutingChain> GetRussiaDefaultChain();
 
         std::shared_ptr<QList<int>> get_used_outbounds();
 
