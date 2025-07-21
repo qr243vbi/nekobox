@@ -124,7 +124,7 @@ RouteItem::RouteItem(QWidget *parent, const std::shared_ptr<Configs::RoutingChai
     ui->def_out->setCurrentText(Configs::outboundIDToString(chain->defaultOutboundID));
 
     // simple rules setup
-    QStringList ruleItems = {"domain:", "suffix:", "regex:", "keyword:", "ip:", "processName:", "processPath:"};
+    QStringList ruleItems = {"domain:", "suffix:", "regex:", "keyword:", "ip:", "processName:", "processPath:", "ruleset:"};
     for (const auto& geoIP : geoIpList) {
         ruleItems.append("ruleset:"+geoIP);
     }
