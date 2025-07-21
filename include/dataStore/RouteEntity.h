@@ -95,7 +95,7 @@ namespace Configs {
         // resolve options
         QString strategy;
 
-        [[nodiscard]] QJsonObject get_rule_json(bool forView = false, const QString& outboundTag = "");
+        [[nodiscard]] QJsonObject get_rule_json(bool forView = false, const QString& outboundTag = "", const QStringList& tagList = {});
         static QStringList get_attributes();
         static inputType get_input_type(const QString& fieldName);
         static QStringList get_values_for_field(const QString& fieldName);
@@ -124,7 +124,7 @@ namespace Configs {
 
         void FromJson(QJsonObject object);
 
-        QJsonArray get_route_rules(bool forView = false, std::map<int, QString> outboundMap = {});
+        QJsonArray get_route_rules(bool forView = false, std::map<int, QString> outboundMap = {}, const QStringList& tagList = {});
 
         bool isViewOnly() const;
 
@@ -139,6 +139,8 @@ namespace Configs {
         std::shared_ptr<QList<int>> get_used_outbounds();
 
         std::shared_ptr<QStringList> get_used_rule_sets();
+
+        std::shared_ptr<QStringList> get_used_remote_rule_sets();
 
         QStringList get_direct_sites();
 
