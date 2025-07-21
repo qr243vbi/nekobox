@@ -245,7 +245,7 @@ jobs:
           source script/env_deploy.sh
           find . -name artifacts.tgz | xargs -n1 tar xvzf
           cd deployment
-          rm -rf *.pdb win*/*.pdb win*/*.png
+          rm -rf *.pdb win*/*.pdb
           ####
           bash ../script/pack_debian.sh ${{ github.event.inputs.tag }}
           mv Throne.deb $version_standalone-debian-x64.deb
