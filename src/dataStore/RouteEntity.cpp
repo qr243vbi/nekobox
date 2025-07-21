@@ -838,10 +838,10 @@ namespace Configs {
 
     bool RoutingChain::add_simple_address_rule(const QString& content, const std::shared_ptr<RouteRule>& rule)
     {
-        auto sp = content.split(":");
-        if (sp.size() != 2) return false;
-        const QString& address = sp[1];
-        const QString& subType = sp[0];
+        auto colonIdx = content.indexOf(':');
+        if (colonIdx == -1) return false;
+        const QString& address = content.mid(colonIdx+1);
+        const QString& subType = content.left(colonIdx);
         if (subType == "domain") {
             if (!rule->domain.contains(address)) rule->domain.append(address);
             return true;
