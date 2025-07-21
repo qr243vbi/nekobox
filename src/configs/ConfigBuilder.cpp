@@ -612,6 +612,7 @@ namespace Configs {
         }
         auto neededOutbounds = routeChain->get_used_outbounds();
         auto neededRuleSets = routeChain->get_used_rule_sets();
+        auto neededRemoteRuleSets = routeChain->get_used_remote_rule_sets();
         std::map<int, QString> outboundMap;
         outboundMap[-1] = "proxy";
         outboundMap[-2] = "direct";
@@ -641,8 +642,6 @@ namespace Configs {
                 needDirectDnsRules = true;
             }
         }
-        auto routeRules = routeChain->get_route_rules(false, outboundMap);
-        routeObj["rules"] = routeRules;
 
         // DNS hijack deps
         bool needHijackRules = false;
@@ -675,7 +674,9 @@ namespace Configs {
         auto ruleSetArray = QJsonArray();
         auto geoSitePath = GetCoreAssetDir("geosite.db");
         auto geoIpPath = GetCoreAssetDir("geoip.db");
+        QStringList tagList;
         for (const auto &item: *neededRuleSets) {
+            tagList.push_back(item);
             ruleSetArray += QJsonObject{
                 {"type", "local"},
                 {"tag", item},
@@ -697,6 +698,26 @@ namespace Configs {
                 return;
             }
         }
+        for (const auto &item: *neededRemoteRuleSets) {
+            QString tagRemote, tmp = item.section('/', -1);
+            tmp.chop(4);
+            tagRemote = tmp;
+            int index = 1;
+            while(tagList.contains(tagRemote))
+            {
+                tagRemote = tmp + QString::number(index);
+                index++;
+            }
+            tagList.push_back(tagRemote);
+            ruleSetArray += QJsonObject{
+                {"type", "remote"},
+                {"tag", tagRemote},
+                {"format", "binary"},
+                {"url", item},
+            };
+        }
+        auto routeRules = routeChain->get_route_rules(false, outboundMap, tagList);
+        routeObj["rules"] = routeRules;
         routeObj["rule_set"] = ruleSetArray;
 
         // DNS settings

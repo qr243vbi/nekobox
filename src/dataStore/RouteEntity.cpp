@@ -128,7 +128,7 @@ namespace Configs {
         _add(new configItem("simple_action", &simpleAction, itemType::integer));
     }
 
-    QJsonObject RouteRule::get_rule_json(bool forView, const QString& outboundTag) {
+    QJsonObject RouteRule::get_rule_json(bool forView, const QString& outboundTag, const QStringList& tagList) {
         QJsonObject obj;
 
         if (!ip_version.isEmpty()) obj["ip_version"] = ip_version.toInt();
@@ -150,7 +150,11 @@ namespace Configs {
         if (isValidStrArray(process_name)) obj["process_name"] = get_as_array(process_name);
         if (isValidStrArray(process_path)) obj["process_path"] = get_as_array(process_path);
         if (isValidStrArray(process_path_regex)) obj["process_path_regex"] = get_as_array(process_path_regex);
-        if (isValidStrArray(rule_set)) obj["rule_set"] = get_as_array(rule_set);
+        if (isValidStrArray(rule_set))
+            if (forView)
+                obj["rule_set"] = get_as_array(rule_set);
+            else
+                obj["rule_set"] = get_as_array(tagList);
         if (invert) obj["invert"] = invert;
         // fix action type
         if (action == "route")
@@ -560,12 +564,12 @@ namespace Configs {
         return rules;
     }
 
-    QJsonArray RoutingChain::get_route_rules(bool forView, std::map<int, QString> outboundMap) {
+    QJsonArray RoutingChain::get_route_rules(bool forView, std::map<int, QString> outboundMap, const QStringList& tagList) {
         QJsonArray res;
         for (const auto &item: Rules) {
             auto outboundTag = QString();
             if (outboundMap.count(item->outboundID)) outboundTag = outboundMap[item->outboundID];
-            auto rule_json = item->get_rule_json(forView, outboundTag);
+            auto rule_json = item->get_rule_json(forView, outboundTag, tagList);
             if (rule_json.empty()) {
                 MW_show_log("Aborted generating routing section, an error has occurred");
                 return {};
@@ -686,7 +690,19 @@ namespace Configs {
         auto res = std::make_shared<QStringList>();
         for (const auto& item: Rules) {
             for (const auto& ruleItem: item->rule_set) {
-                res->push_back(ruleItem);
+                if (!ruleItem.startsWith("https://"))
+                    res->push_back(ruleItem);
+            }
+        }
+        return res;
+    }
+
+    std::shared_ptr<QStringList> RoutingChain::get_used_remote_rule_sets() {
+        auto res = std::make_shared<QStringList>();
+        for (const auto& item: Rules) {
+            for (const auto& ruleItem: item->rule_set) {
+                if (ruleItem.startsWith("https://") && ruleItem.endsWith(".srs"))
+                    res->push_back(ruleItem);
             }
         }
         return res;
