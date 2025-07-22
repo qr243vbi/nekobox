@@ -428,49 +428,46 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
         ui->menuRouting_Menu->addAction(ui->menu_routing_settings);
 
         QMenu* profilesMenu = ui->menuRouting_Menu->addMenu("Download Profiles");
-        connect(profilesMenu, &QMenu::aboutToShow, this, [=] {
-            profilesMenu->clear();
 
-            auto resp = NetworkRequestHelper::HttpGet("https://api.github.com/repos/throneproj/routeprofiles/releases/latest");
-            if (!resp.error.isEmpty()) {
-                runOnUiThread([=] {
-                    MessageBoxWarning(QObject::tr("Download Profiles"), QObject::tr("Requesting list error: %1").arg(resp.error + "\n" + resp.data));
+        auto resp = NetworkRequestHelper::HttpGet("https://api.github.com/repos/throneproj/routeprofiles/releases/latest");
+        if (!resp.error.isEmpty()) {
+            runOnUiThread([=] {
+                MessageBoxWarning(QObject::tr("Download Profiles"), QObject::tr("Requesting list error: %1").arg(resp.error + "\n" + resp.data));
+            });
+            return;
+        }
+        QJsonObject release = QString2QJsonObject(resp.data);
+        for (const QJsonValue asset : release["assets"].toArray()) {
+            auto profile = asset["name"].toString();
+            if (profile.section('.', -1) == QString("json") && (profile.startsWith("bypass",Qt::CaseInsensitive) || profile.startsWith("proxy",Qt::CaseInsensitive))) {
+                profile.chop(5);
+                auto* action = new QAction(profilesMenu);
+                action->setText(profile);
+                connect(action, &QAction::triggered, this, [=]()
+                {
+                    auto res = NetworkRequestHelper::HttpGet("https://github.com/throneproj/routeprofiles/releases/latest/download/" + profile + ".json");
+                    if (!res.error.isEmpty()) {
+                        runOnUiThread([=] {
+                            MessageBoxWarning(QObject::tr("Download Profiles"), QObject::tr("Requesting profile error: %1").arg(res.error + "\n" + res.data));
+                        });
+                        return;
+                    }
+                    auto err = new QString;
+                    auto parsed = Configs::RoutingChain::parseJsonArray(QString2QJsonArray(res.data), err);
+                    if (!err->isEmpty()) {
+                        MessageBoxInfo(tr("Invalid JSON Array"), tr("The provided input cannot be parsed to a valid route rule array:\n") + *err);
+                        return;
+                    }
+                    auto chain = Configs::ProfileManager::NewRouteChain();
+                    chain->name = QString(profile).replace('_', ' ');
+                    chain->defaultOutboundID = profile.startsWith("bypass",Qt::CaseInsensitive) ? Configs::proxyID : Configs::directID;
+                    chain->Rules.clear();
+                    chain->Rules << parsed;
+                    Configs::profileManager->AddRouteChain(chain);
                 });
-                return;
+                profilesMenu->addAction(action);
             }
-            QJsonObject release = QString2QJsonObject(resp.data);
-            for (const QJsonValue asset : release["assets"].toArray()) {
-                auto profile = asset["name"].toString();
-                if (profile.section('.', -1) == QString("json") && (profile.startsWith("bypass",Qt::CaseInsensitive) || profile.startsWith("proxy",Qt::CaseInsensitive))) {
-                    profile.chop(5);
-                    auto* action = new QAction(profilesMenu);
-                    action->setText(profile);
-                    connect(action, &QAction::triggered, this, [=]()
-                    {
-                        auto res = NetworkRequestHelper::HttpGet("https://github.com/throneproj/routeprofiles/releases/latest/download/" + profile + ".json");
-                        if (!res.error.isEmpty()) {
-                            runOnUiThread([=] {
-                                MessageBoxWarning(QObject::tr("Download Profiles"), QObject::tr("Requesting profile error: %1").arg(res.error + "\n" + res.data));
-                            });
-                            return;
-                        }
-                        auto err = new QString;
-                        auto parsed = Configs::RoutingChain::parseJsonArray(QString2QJsonArray(res.data), err);
-                        if (!err->isEmpty()) {
-                            MessageBoxInfo(tr("Invalid JSON Array"), tr("The provided input cannot be parsed to a valid route rule array:\n") + *err);
-                            return;
-                        }
-                        auto chain = Configs::ProfileManager::NewRouteChain();
-                        chain->name = QString(profile).replace('_', ' ');
-                        chain->defaultOutboundID = profile.startsWith("bypass",Qt::CaseInsensitive) ? Configs::proxyID : Configs::directID;
-                        chain->Rules.clear();
-                        chain->Rules << parsed;
-                        Configs::profileManager->AddRouteChain(chain);
-                    });
-                    profilesMenu->addAction(action);
-                }
-            }
-        });
+        }
 
         ui->menuRouting_Menu->addSeparator();
         for (const auto& route : Configs::profileManager->routes)
