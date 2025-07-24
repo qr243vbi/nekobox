@@ -20,7 +20,7 @@
 #include <QInputDialog>
 #include <QToolTip>
 
-#define ADJUST_SIZE runOnUiThread([=] { adjustSize(); adjustPosition(mainwindow); }, this);
+#define ADJUST_SIZE runOnThread([=] { adjustSize(); adjustPosition(mainwindow); }, this);
 #define LOAD_TYPE(a) ui->type->addItem(Configs::ProfileManager::NewProxyEntity(a)->bean->DisplayType(), a);
 
 DialogEditProfile::DialogEditProfile(const QString &_type, int profileOrGroupId, QWidget *parent)
@@ -397,7 +397,7 @@ void DialogEditProfile::typeSelected(const QString &newType) {
 
     // 第一次显示
     if (isHidden()) {
-        runOnUiThread([=] { show(); }, this);
+        runOnThread([=] { show(); }, this);
     }
 }
 

@@ -504,7 +504,7 @@ void MainWindow::profile_start(int _id) {
 
     // check core state
     if (!Configs::dataStore->core_running) {
-        runOnUiThread(
+        runOnThread(
             [=] {
                 MW_show_log(tr("Try to start the config, but the core has not listened to the grpc port, so restart it..."));
                 core_process->start_profile_when_core_is_up = ent->id;

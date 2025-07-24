@@ -88,7 +88,7 @@ void GroupItem::refresh_data() {
             ui->subinfo->setText(info.join(" | "));
         }
     }
-    runOnUiThread(
+    runOnThread(
         [=] {
             adjustSize();
             item->setSizeHint(sizeHint());
