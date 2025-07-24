@@ -162,7 +162,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
         qApp->setFont(font);
     }
 
-    speedTestThreadPool->setMaxThreadCount(10); // constant value
+    parallelCoreCallPool->setMaxThreadCount(10); // constant value
     //
     connect(ui->menu_start, &QAction::triggered, this, [=]() { profile_start(); });
     connect(ui->menu_stop, &QAction::triggered, this, [=]() { profile_stop(false, false, true); });
@@ -1531,9 +1531,11 @@ void  MainWindow::on_menu_delete_repeat_triggered () {
 
     if  (!out_del.empty()  &&
         QMessageBox::question ( this ,  tr ( " Confirmation " ),  tr ( " Remove %1 item(s) ? " ). arg (out_del. length ()) +  " \n "  + remove_display) == QMessageBox::StandardButton::Yes) {
-        for  ( const  auto  &ent: out_del) {
-            Configs::profileManager->DeleteProfile(ent-> id );
+        QList<int> del_ids;
+        for (const auto &ent: out_del) {
+            del_ids += ent->id;
         }
+        Configs::profileManager->BatchDeleteProfiles(del_ids);
         refresh_proxy_list();
     }
 }
@@ -1543,9 +1545,11 @@ void MainWindow::on_menu_delete_triggered() {
     if (ents.count() == 0) return;
     if (QMessageBox::question(this, tr("Confirmation"), QString(tr("Remove %1 item(s) ?")).arg(ents.count())) ==
         QMessageBox::StandardButton::Yes) {
+        QList<int> del_ids;
         for (const auto &ent: ents) {
-            Configs::profileManager->DeleteProfile(ent->id);
+            del_ids += ent->id;
         }
+        Configs::profileManager->BatchDeleteProfiles(del_ids);
         refresh_proxy_list();
     }
 }
@@ -1849,39 +1853,65 @@ void MainWindow::on_menu_remove_unavailable_triggered() {
 
     if (!out_del.empty() &&
         QMessageBox::question(this, tr("Confirmation"), tr("Remove %1 Unavailable item(s) ?").arg(out_del.length()) + "\n" + remove_display) == QMessageBox::StandardButton::Yes) {
+        QList<int> del_ids;
         for (const auto &ent: out_del) {
-            Configs::profileManager->DeleteProfile(ent->id);
+            del_ids += ent->id;
         }
+        Configs::profileManager->BatchDeleteProfiles(del_ids);
         refresh_proxy_list();
     }
 }
 
 void MainWindow::on_menu_remove_invalid_triggered() {
-    QList<std::shared_ptr<Configs::ProxyEntity>> out_del;
+    runOnNewThread([=]
+    {
+        QList<std::shared_ptr<Configs::ProxyEntity>> out_del;
 
-    auto currentGroup = Configs::profileManager->GetGroup(Configs::dataStore->current_group);
-    if (currentGroup == nullptr) return;
-    for (const auto &profile : currentGroup->GetProfileEnts()) {
-        if (!IsValid(profile)) out_del += profile;
-    }
+     auto currentGroup = Configs::profileManager->GetGroup(Configs::dataStore->current_group);
+     if (currentGroup == nullptr) return;
+     std::atomic counter(0);
+     QMutex mu;
+     QMutex access;
+     int profileSize = currentGroup->GetProfileEnts().size();
+     mu.lock();
+     for (const auto& profile : currentGroup->GetProfileEnts()) {
+         parallelCoreCallPool->start([&out_del, profile, &counter, &mu, profileSize, &access]
+         {
+             if (!IsValid(profile))
+             {
+                 access.lock();
+                 out_del += profile;
+                 access.unlock();
+             }
+             if (++counter == profileSize) mu.unlock();
+         });
+     }
+     mu.lock();
+     mu.unlock();
 
-    int remove_display_count = 0;
-    QString remove_display;
-    for (const auto &ent: out_del) {
-        remove_display += ent->bean->DisplayTypeAndName() + "\n";
-        if (++remove_display_count == 20) {
-            remove_display += "...";
-            break;
-        }
-    }
+     int remove_display_count = 0;
+     QString remove_display;
+     for (const auto &ent: out_del) {
+         remove_display += ent->bean->DisplayTypeAndName() + "\n";
+         if (++remove_display_count == 20) {
+             remove_display += "...";
+             break;
+         }
+     }
 
-    if (!out_del.empty() &&
-        QMessageBox::question(this, tr("Confirmation"), tr("Remove %1 Invalid item(s) ?").arg(out_del.length()) + "\n" + remove_display) == QMessageBox::StandardButton::Yes) {
-        for (const auto &ent: out_del) {
-            Configs::profileManager->DeleteProfile(ent->id);
-        }
-        refresh_proxy_list();
-    }
+     runOnUiThread([=]
+     {
+         if (!out_del.empty() &&
+         QMessageBox::question(this, tr("Confirmation"), tr("Remove %1 Invalid item(s) ?").arg(out_del.length()) + "\n" + remove_display) == QMessageBox::StandardButton::Yes) {
+         QList<int> del_ids;
+         for (const auto &ent: out_del) {
+             del_ids += ent->id;
+         }
+         Configs::profileManager->BatchDeleteProfiles(del_ids);
+         refresh_proxy_list();
+     }
+     });
+    });
 }
 
 void MainWindow::on_menu_resolve_selected_triggered() {

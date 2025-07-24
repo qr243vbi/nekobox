@@ -230,6 +230,30 @@ namespace Configs {
         return true;
     }
 
+    bool ProfileManager::AddProfileBatch(const QList<std::shared_ptr<ProxyEntity>>& ents, int gid)
+    {
+        gid = gid < 0 ? dataStore->current_group : gid;
+        auto group = GetGroup(gid);
+        if (group == nullptr) return false;
+        for (const auto& ent : ents)
+        {
+            if (ent->id >= 0) continue;
+            ent->id = NewProfileID();
+            ent->gid = gid;
+            group->AddProfile(ent->id);
+            profiles[ent->id] = ent;
+            profilesIdOrder.push_back(ent->id);
+            ent->fn = QString("profiles/%1.json").arg(ent->id);
+        }
+        group->Save();
+        runOnNewThread([=]
+        {
+           for (const auto& ent : ents) ent->Save();
+        });
+        return true;
+    }
+
+
     void ProfileManager::DeleteProfile(int id) {
         if (id < 0) return;
         if (dataStore->started_id == id) return;
@@ -243,6 +267,40 @@ namespace Configs {
         deleteProfile(id);
     }
 
+    void ProfileManager::BatchDeleteProfiles(const QList<int>& ids)
+    {
+        QSet<std::shared_ptr<Group>> changed_groups;
+        QSet<int> deleted_ids;
+        for (auto id : ids)
+        {
+            if (id < 0) continue;
+            if (dataStore->started_id == id) continue;
+            auto ent = GetProfile(id);
+            if (ent == nullptr) continue;
+            if (auto group = GetGroup(ent->gid); group != nullptr)
+            {
+                group->RemoveProfile(id);
+                changed_groups.insert(group);
+            }
+            profiles.erase(id);
+            deleted_ids.insert(id);
+        }
+        for (const auto& group : changed_groups) group->Save();
+        QList<int> newOrder;
+        for (auto id : profilesIdOrder)
+        {
+            if (deleted_ids.contains(id)) continue;
+            newOrder.append(id);
+        }
+        profilesIdOrder = newOrder;
+
+        runOnNewThread([=]
+        {
+           for (int id : deleted_ids) QFile(QString("profiles/%1.json").arg(id)).remove();
+        });
+    }
+
+
     void ProfileManager::deleteProfile(int id)
     {
         profiles.erase(id);
@@ -252,7 +310,7 @@ namespace Configs {
 
 
     std::shared_ptr<ProxyEntity> ProfileManager::GetProfile(int id) {
-        return profiles.count(id) ? profiles[id] : nullptr;
+        return profiles.contains(id) ? profiles[id] : nullptr;
     }
 
     QStringList ProfileManager::GetExtraCorePaths() const {
