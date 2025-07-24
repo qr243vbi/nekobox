@@ -35,7 +35,6 @@ namespace Configs_sys {
 
     protected:
         bool started = false;
-        bool killed = false;
         bool crashed = false;
     };
 

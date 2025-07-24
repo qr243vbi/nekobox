@@ -155,7 +155,7 @@ namespace QtGrpc {
             QMutex lock;
             lock.lock();
 
-            runOnUiThread(
+            runOnThread(
                 [&] {
                     err = call(methodName, serviceName, requestArray, responseArray, timeout_ms);
                     lock.unlock();

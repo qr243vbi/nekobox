@@ -7,7 +7,7 @@
 #include <QStringListModel>
 #include <QCompleter>
 
-#define ADJUST_SIZE runOnUiThread([=] { adjustSize(); adjustPosition(mainwindow); }, this);
+#define ADJUST_SIZE runOnThread([=] { adjustSize(); adjustPosition(mainwindow); }, this);
 
 DialogEditGroup::DialogEditGroup(const std::shared_ptr<Configs::Group> &ent, QWidget *parent) : QDialog(parent), ui(new Ui::DialogEditGroup) {
     ui->setupUi(this);

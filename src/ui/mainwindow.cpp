@@ -138,7 +138,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     if (Configs::dataStore->flag_debug) args.push_back("-debug");
 
     // Start core
-    runOnUiThread(
+    runOnThread(
         [=] {
             core_process = new Configs_sys::CoreProcess(core_path, args);
             // Remember last started
@@ -423,29 +423,36 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
         }
     });
 
-    QStringList profileList;
-    for(int retry = 0; retry < 3; retry++) {
+    auto getRemoteRouteProfiles = [=]
+    {
         auto resp = NetworkRequestHelper::HttpGet("https://api.github.com/repos/throneproj/routeprofiles/releases/latest");
         if (resp.error.isEmpty()) {
+            QStringList newRemoteRouteProfiles;
             QJsonObject release = QString2QJsonObject(resp.data);
             for (const QJsonValue asset : release["assets"].toArray()) {
                 auto profile = asset["name"].toString();
                 if (profile.section('.', -1) == QString("json") && (profile.startsWith("bypass",Qt::CaseInsensitive) || profile.startsWith("proxy",Qt::CaseInsensitive))) {
                     profile.chop(5);
-                    profileList.push_back(profile);
+                    newRemoteRouteProfiles.push_back(profile);
                 }
             }
-            break;
+            mu_remoteRouteProfiles.lock();
+            remoteRouteProfiles = newRemoteRouteProfiles;
+            mu_remoteRouteProfiles.unlock();
         }
-    }
+    };
+    runOnNewThread(getRemoteRouteProfiles);
 
     connect(ui->menuRouting_Menu, &QMenu::aboutToShow, this, [=]()
     {
+        // refresh it on every menu show
+        runOnNewThread(getRemoteRouteProfiles);
         ui->menuRouting_Menu->clear();
         ui->menuRouting_Menu->addAction(ui->menu_routing_settings);
-        if(!profileList.isEmpty()) {
+        mu_remoteRouteProfiles.lock();
+        if(!remoteRouteProfiles.isEmpty()) {
             QMenu* profilesMenu = ui->menuRouting_Menu->addMenu(QObject::tr("Download Profiles"));
-            for (const auto& profile : profileList)
+            for (const auto& profile : remoteRouteProfiles)
             {
                 auto* action = new QAction(profilesMenu);
                 action->setText(profile);
@@ -461,7 +468,10 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
                     auto err = new QString;
                     auto parsed = Configs::RoutingChain::parseJsonArray(QString2QJsonArray(resp.data), err);
                     if (!err->isEmpty()) {
-                        MessageBoxInfo(tr("Invalid JSON Array"), tr("The provided input cannot be parsed to a valid route rule array:\n") + *err);
+                        runOnUiThread([=]
+                        {
+                            MessageBoxInfo(tr("Invalid JSON Array"), tr("The provided input cannot be parsed to a valid route rule array:\n") + *err);
+                        });
                         return;
                     }
                     auto chain = Configs::ProfileManager::NewRouteChain();
@@ -474,6 +484,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
                 profilesMenu->addAction(action);
             }
         }
+        mu_remoteRouteProfiles.unlock();
 
         ui->menuRouting_Menu->addSeparator();
         for (const auto& route : Configs::profileManager->routes)
@@ -843,7 +854,17 @@ void MainWindow::prepare_exit()
     Configs::dataStore->save_control_no_save = true; // don't change datastore after this line
     profile_stop(false, true);
     sem_stopped.acquire();
-    core_process->Kill();
+
+    QMutex coreKillMu;
+    coreKillMu.lock();
+    runOnThread([=, &coreKillMu]()
+    {
+        core_process->Kill();
+        coreKillMu.unlock();
+    }, DS_cores);
+    coreKillMu.lock();
+    coreKillMu.unlock();
+
     mu_exit.unlock();
     qDebug() << "prepare exit done!";
 }
@@ -2236,27 +2257,16 @@ void MainWindow::HotkeyEvent(const QString &key) {
 }
 
 bool MainWindow::StopVPNProcess() {
-    vpn_pid = core_process->processId();
-    if (vpn_pid != 0) {
-        bool ok;
-#ifdef Q_OS_WIN
-        auto ret = WinCommander::runProcessElevated("taskkill", {"/F", "/PID", Int2String(vpn_pid)});
-        ok = ret == 0;
-#endif
+    QMutex waitStop;
+    waitStop.lock();
+    runOnThread([=, &waitStop]
+    {
+        core_process->Kill();
+        waitStop.unlock();
+    }, DS_cores);
+    waitStop.lock();
+    waitStop.unlock();
 
-#ifdef Q_OS_MACOS
-        auto ret = system(QString("osascript -e 'do shell script \"kill -9 %1\"' with administrator privileges").arg(vpn_pid).toStdString().c_str());;
-        ok = ret == 0;
-#endif
-#ifdef Q_OS_LINUX
-        QProcess p;
-        p.start("pkexec", {"kill", "-9", Int2String(vpn_pid)});
-        p.waitForFinished();
-        ok = p.exitCode() == 0;
-#endif
-        ok ? vpn_pid = 0 : MessageBoxWarning(tr("Error"), tr("Failed to stop Tun process"));
-        return ok;
-    }
     return true;
 }
 

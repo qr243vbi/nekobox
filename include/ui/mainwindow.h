@@ -209,6 +209,9 @@ private:
     libcore::SpeedTestResult currentTestResult;
     DownloadProgressReport currentDownloadReport; // could use a list, but don't think can show more than one anyways
 
+    QStringList remoteRouteProfiles;
+    QMutex mu_remoteRouteProfiles;
+
     QList<std::shared_ptr<Configs::ProxyEntity>> get_now_selected_list();
 
     QList<std::shared_ptr<Configs::ProxyEntity>> get_selected_or_group();

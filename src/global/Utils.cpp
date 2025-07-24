@@ -249,15 +249,11 @@ void ActivateWindow(QWidget *w) {
     w->activateWindow();
 }
 
-void runOnUiThread(const std::function<void()> &callback, QObject *parent) {
+void runOnUiThread(const std::function<void()> &callback) {
     // any thread
     auto *timer = new QTimer();
-    auto thread = dynamic_cast<QThread *>(parent);
-    if (thread == nullptr) {
-        timer->moveToThread(parent == nullptr ? mainwindow->thread() : parent->thread());
-    } else {
-        timer->moveToThread(thread);
-    }
+    auto thread = mainwindow->thread();
+    timer->moveToThread(thread);
     timer->setSingleShot(true);
     QObject::connect(timer, &QTimer::timeout, [=]() {
         // main thread
@@ -271,9 +267,14 @@ void runOnNewThread(const std::function<void()> &callback) {
     createQThread(callback)->start();
 }
 
-void runOnThread(const std::function<void()> &callback, QThread *thread) {
+void runOnThread(const std::function<void()> &callback, QObject *parent) {
     auto *timer = new QTimer();
-    timer->moveToThread(thread);
+    auto thread = dynamic_cast<QThread *>(parent);
+    if (thread == nullptr) {
+        timer->moveToThread(parent->thread());
+    } else {
+        timer->moveToThread(thread);
+    }
     timer->setSingleShot(true);
     QObject::connect(timer, &QTimer::timeout, [=]() {
         callback();

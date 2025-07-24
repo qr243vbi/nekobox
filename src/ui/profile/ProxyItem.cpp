@@ -25,7 +25,7 @@ void ProxyItem::refresh_data() {
     ui->traffic->setText(ent->traffic_data->DisplayTraffic());
     ui->test_result->setText(ent->DisplayTestResult());
 
-    runOnUiThread(
+    runOnThread(
         [=] {
             adjustSize();
             item->setSizeHint(sizeHint());

@@ -10,13 +10,8 @@ namespace Configs_sys {
     }
 
     void CoreProcess::Kill() {
-        if (killed) return;
-        killed = true;
-
-        if (!crashed) {
-            kill();
-            waitForFinished(500);
-        }
+        kill();
+        waitForFinished();
     }
 
     CoreProcess::CoreProcess(const QString &core_path, const QStringList &args) {
