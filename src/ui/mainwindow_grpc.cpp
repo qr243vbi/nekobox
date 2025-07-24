@@ -160,7 +160,7 @@ void MainWindow::urltest_current_group(const QList<std::shared_ptr<Configs::Prox
                     speedtestRunning.unlock();
                 }
             };
-            speedTestThreadPool->start(func);
+            parallelCoreCallPool->start(func);
         }
 
         if (!buildObject->outboundTags.empty()) {
@@ -171,7 +171,7 @@ void MainWindow::urltest_current_group(const QList<std::shared_ptr<Configs::Prox
                     speedtestRunning.unlock();
                 }
             };
-            speedTestThreadPool->start(func);
+            parallelCoreCallPool->start(func);
         }
         if (testCount == 0) speedtestRunning.unlock();
 

@@ -218,7 +218,6 @@ namespace Subscription {
         if (needFix) RawUpdater_FixEnt(ent);
 
         // End
-        Configs::profileManager->AddProfile(ent, gid_add_to);
         updated_order += ent;
     }
 
@@ -328,7 +327,6 @@ namespace Subscription {
 
             if (ent == nullptr) continue;
 
-            Configs::profileManager->AddProfile(ent, gid_add_to);
             updated_order += ent;
         }
     }
@@ -667,7 +665,6 @@ namespace Subscription {
                 }
 
                 if (needFix) RawUpdater_FixEnt(ent);
-                Configs::profileManager->AddProfile(ent, gid_add_to);
                 updated_order += ent;
             }
         } catch (const fkyaml::exception &ex) {
@@ -760,13 +757,14 @@ namespace Subscription {
             //
             if (Configs::dataStore->sub_clear) {
                 MW_show_log(QObject::tr("Clearing servers..."));
-                for (const auto &profile: in) {
-                    Configs::profileManager->DeleteProfile(profile->id);
-                }
+                Configs::profileManager->BatchDeleteProfiles(group->profiles);
             }
         }
 
+        MW_show_log(">>>>>>>> " + QObject::tr("Processing subscription data..."));
         rawUpdater->update(content);
+        Configs::profileManager->AddProfileBatch(rawUpdater->updated_order, rawUpdater->gid_add_to);
+        MW_show_log(">>>>>>>> " + QObject::tr("Process complete, applying..."));
 
         if (group != nullptr) {
             out_all = group->GetProfileEnts();
@@ -821,11 +819,13 @@ namespace Subscription {
                 group->Save();
 
                 // cleanup
+                QList<int> del_ids;
                 for (const auto &ent: out_all) {
                     if (!group->HasProfile(ent->id)) {
-                        Configs::profileManager->DeleteProfile(ent->id);
+                        del_ids.append(ent->id);
                     }
                 }
+                Configs::profileManager->BatchDeleteProfiles(del_ids);
 
                 change_text = "\n" + QObject::tr("Added %1 profiles:\n%2\nDeleted %3 Profiles:\n%4")
                                          .arg(only_out.length())

@@ -36,7 +36,11 @@ namespace Configs {
 
         bool AddProfile(const std::shared_ptr<ProxyEntity> &ent, int gid = -1);
 
+        bool AddProfileBatch(const QList<std::shared_ptr<ProxyEntity>> &ents, int gid = -1);
+
         void DeleteProfile(int id);
+
+        void BatchDeleteProfiles(const QList<int>& ids);
 
         std::shared_ptr<ProxyEntity> GetProfile(int id);
 
