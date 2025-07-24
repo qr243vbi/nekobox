@@ -841,11 +841,8 @@ void MainWindow::prepare_exit()
     on_commitDataRequest();
     //
     Configs::dataStore->save_control_no_save = true; // don't change datastore after this line
-    if (Configs::dataStore->spmode_vpn)
-    {
-        profile_stop(false, true);
-        sem_stopped.acquire();
-    }
+    profile_stop(false, true);
+    sem_stopped.acquire();
     API::defaultClient->Exit();
     mu_exit.unlock();
     qDebug() << "prepare exit done!";
