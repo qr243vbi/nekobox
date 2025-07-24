@@ -10,8 +10,6 @@ on:
         required: false
 jobs:
   build-go:
-    permissions:
-      contents: read
     strategy:
       matrix:
         include:
@@ -89,8 +87,6 @@ jobs:
           name: Throne-${{ github.sha }}-Common-${{ matrix.cross_os }}-${{ matrix.cross_arch }}
           path: artifacts.tgz
   build-cpp:
-    permissions:
-      contents: read
     needs:
       - build-go
     strategy:
@@ -226,9 +222,6 @@ jobs:
     runs-on: ubuntu-latest
     needs:
       - build-cpp
-    permissions:
-      contents: write
-      actions: read
     env:
       INPUT_VERSION: ${{ github.event.inputs.tag }}
     steps:
