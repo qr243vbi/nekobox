@@ -188,13 +188,6 @@ namespace API {
     *rpcOK = false; \
     onError(QString("QNetworkReply::NetworkError code: %1\n").arg(status));
 
-    void Client::Exit() {
-        libcore::EmptyReq request;
-        libcore::EmptyResp reply;
-        std::vector<uint8_t> rsp;
-        default_grpc_channel->Call("Exit", spb::pb::serialize< std::string >( request ), rsp, 100);
-    }
-
     QString Client::Start(bool *rpcOK, const libcore::LoadConfigReq &request) {
         libcore::ErrorResp reply;
         std::vector<uint8_t> rsp;

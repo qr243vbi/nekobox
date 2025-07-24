@@ -16,8 +16,6 @@ namespace API {
     public:
         explicit Client(std::function<void(const QString &)> onError, const QString &target);
 
-        void Exit();
-
         // QString returns is error string
 
         QString Start(bool *rpcOK, const libcore::LoadConfigReq &request);

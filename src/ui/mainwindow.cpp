@@ -843,7 +843,7 @@ void MainWindow::prepare_exit()
     Configs::dataStore->save_control_no_save = true; // don't change datastore after this line
     profile_stop(false, true);
     sem_stopped.acquire();
-    API::defaultClient->Exit();
+    core_process->Kill();
     mu_exit.unlock();
     qDebug() << "prepare exit done!";
 }

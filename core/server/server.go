@@ -40,22 +40,6 @@ func To[T any](v T) *T {
 	return &v
 }
 
-func (s *server) Exit(ctx context.Context, in *gen.EmptyReq) (out *gen.EmptyResp, _ error) {
-	out = &gen.EmptyResp{}
-
-	if needUnsetDNS {
-		needUnsetDNS = false
-		err := sys.SetSystemDNS("Empty", boxInstance.Network().InterfaceMonitor())
-		if err != nil {
-			log.Println("Failed to unset system DNS:", err)
-		}
-	}
-
-	// Connection closed
-	defer os.Exit(0)
-	return
-}
-
 func (s *server) Start(ctx context.Context, in *gen.LoadConfigReq) (out *gen.ErrorResp, _ error) {
 	var err error
 

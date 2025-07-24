@@ -5,8 +5,6 @@ option go_package = "grpc_server/gen";
 option optimize_for = LITE_RUNTIME;
 
 service LibcoreService {
-  rpc Exit(EmptyReq) returns (EmptyResp);
-  //
   rpc Start(LoadConfigReq) returns (ErrorResp);
   rpc Stop(EmptyReq) returns (ErrorResp);
   rpc CheckConfig(LoadConfigReq) returns (ErrorResp);
