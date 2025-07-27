@@ -188,7 +188,7 @@ namespace Configs {
             q.addQueryItem("downmbps", Int2String(downloadMbps));
             if (!obfsPassword.isEmpty()) {
                 q.addQueryItem("obfs", "xplus");
-                q.addQueryItem("obfsParam", obfsPassword);
+                q.addQueryItem("obfsParam", QUrl::toPercentEncoding(obfsPassword));
             }
             if (authPayloadType == hysteria_auth_string) q.addQueryItem("auth", authPayload);
             if (hyProtocol == hysteria_protocol_facktcp) q.addQueryItem("protocol", "faketcp");
@@ -229,7 +229,7 @@ namespace Configs {
             QUrlQuery q;
             if (!obfsPassword.isEmpty()) {
                 q.addQueryItem("obfs", "salamander");
-                q.addQueryItem("obfs-password", obfsPassword);
+                q.addQueryItem("obfs-password", QUrl::toPercentEncoding(obfsPassword));
             }
             if (allowInsecure) q.addQueryItem("insecure", "1");
             if (!sni.isEmpty()) q.addQueryItem("sni", sni);
