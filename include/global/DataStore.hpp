@@ -11,7 +11,11 @@ namespace Configs {
         // DNS
         QString remote_dns = "tls://8.8.8.8";
         QString remote_dns_strategy = "";
+#ifdef Q_OS_WIN
         QString direct_dns = "localhost";
+#else
+        QString direct_dns = "dhcp://auto";
+#endif
         QString direct_dns_strategy = "";
         bool use_dns_object = false;
         QString dns_object = "";
