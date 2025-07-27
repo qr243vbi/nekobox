@@ -270,7 +270,7 @@ namespace Configs {
             name = url.fragment(QUrl::FullyDecoded);
             serverAddress = url.host();
             serverPort = url.port();
-            obfsPassword = query.queryItemValue("obfsParam");
+            obfsPassword = QUrl::fromPercentEncoding(query.queryItemValue("obfsParam").toUtf8());
             allowInsecure = QStringList{"1", "true"}.contains(query.queryItemValue("insecure"));
             uploadMbps = query.queryItemValue("upmbps").toInt();
             downloadMbps = query.queryItemValue("downmbps").toInt();
@@ -314,7 +314,7 @@ namespace Configs {
             name = url.fragment(QUrl::FullyDecoded);
             serverAddress = url.host();
             serverPort = url.port();
-            obfsPassword = query.queryItemValue("obfs-password");
+            obfsPassword = QUrl::fromPercentEncoding(query.queryItemValue("obfs-password").toUtf8());
             allowInsecure = QStringList{"1", "true"}.contains(query.queryItemValue("insecure"));
 
             if (url.password().isEmpty()) {
