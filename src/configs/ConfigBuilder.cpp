@@ -14,7 +14,7 @@ namespace Configs {
     QString genTunName() {
         auto tun_name = "throne-tun";
 #ifdef Q_OS_MACOS
-        tun_name = "utun9";
+        tun_name = "";
 #endif
         return tun_name;
     }
