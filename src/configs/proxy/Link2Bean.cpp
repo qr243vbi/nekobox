@@ -363,6 +363,17 @@ namespace Configs {
         useSystemInterface = query.queryItemValue("use_system_interface") == "true";
         workerCount = query.queryItemValue("workers").toInt();
 
+        enable_amenzia = query.queryItemValue("enable_amenzia") == "true";
+        junk_packet_count = query.queryItemValue("junk_packet_count").toInt();
+        junk_packet_min_size = query.queryItemValue("junk_packet_min_size").toInt();
+        junk_packet_max_size = query.queryItemValue("junk_packet_max_size").toInt();
+        init_packet_junk_size = query.queryItemValue("init_packet_junk_size").toInt();
+        response_packet_junk_size = query.queryItemValue("response_packet_junk_size").toInt();
+        init_packet_magic_header = query.queryItemValue("init_packet_magic_header").toInt();
+        response_packet_magic_header = query.queryItemValue("response_packet_magic_header").toInt();
+        underload_packet_magic_header = query.queryItemValue("underload_packet_magic_header").toInt();
+        transport_packet_magic_header = query.queryItemValue("transport_packet_magic_header").toInt();
+
         return true;
     }
 
