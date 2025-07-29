@@ -299,6 +299,18 @@ namespace Configs {
             {"system", useSystemInterface},
             {"workers", workerCount}
         };
+        if (enable_amenzia)
+        {
+            outbound["junk_packet_count"] = junk_packet_count;
+            outbound["junk_packet_min_size"] = junk_packet_min_size;
+            outbound["junk_packet_max_size"] = junk_packet_max_size;
+            outbound["init_packet_junk_size"] = init_packet_junk_size;
+            outbound["response_packet_junk_size"] = response_packet_junk_size;
+            outbound["init_packet_magic_header"] = init_packet_magic_header;
+            outbound["response_packet_magic_header"] = response_packet_magic_header;
+            outbound["underload_packet_magic_header"] = underload_packet_magic_header;
+            outbound["transport_packet_magic_header"] = transport_packet_magic_header;
+        }
 
         result.outbound = outbound;
         return result;

@@ -13,8 +13,19 @@ namespace Configs {
         QStringList localAddress;
         int MTU = 1420;
         bool useSystemInterface = false;
-        bool enableGSO = false;
         int workerCount = 0;
+
+        // Amenzia Options
+        bool enable_amenzia = false;
+        int junk_packet_count;
+        int junk_packet_min_size;
+        int junk_packet_max_size;
+        int init_packet_junk_size;
+        int response_packet_junk_size;
+        int init_packet_magic_header;
+        int response_packet_magic_header;
+        int underload_packet_magic_header;
+        int transport_packet_magic_header;
 
         WireguardBean() : AbstractBean(0) {
             _add(new configItem("private_key", &privateKey, itemType::string));
@@ -25,8 +36,18 @@ namespace Configs {
             _add(new configItem("local_address", &localAddress, itemType::stringList));
             _add(new configItem("mtu", &MTU, itemType::integer));
             _add(new configItem("use_system_proxy", &useSystemInterface, itemType::boolean));
-            _add(new configItem("enable_gso", &enableGSO, itemType::boolean));
             _add(new configItem("worker_count", &workerCount, itemType::integer));
+
+            _add(new configItem("enable_amenzia", &enable_amenzia, itemType::boolean));
+            _add(new configItem("junk_packet_count", &junk_packet_count, itemType::integer));
+            _add(new configItem("junk_packet_min_size", &junk_packet_min_size, itemType::integer));
+            _add(new configItem("junk_packet_max_size", &junk_packet_max_size, itemType::integer));
+            _add(new configItem("init_packet_junk_size", &init_packet_junk_size, itemType::integer));
+            _add(new configItem("response_packet_junk_size", &response_packet_junk_size, itemType::integer));
+            _add(new configItem("init_packet_magic_header", &init_packet_magic_header, itemType::integer));
+            _add(new configItem("response_packet_magic_header", &response_packet_magic_header, itemType::integer));
+            _add(new configItem("underload_packet_magic_header", &underload_packet_magic_header, itemType::integer));
+            _add(new configItem("transport_packet_magic_header", &transport_packet_magic_header, itemType::integer));
         };
 
         QString FormatReserved() {

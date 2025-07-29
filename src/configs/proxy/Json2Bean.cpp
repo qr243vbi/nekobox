@@ -222,6 +222,21 @@ namespace Configs
         localAddress = QJsonArray2QListString(obj["address"].toArray());
         MTU = obj["mtu"].toInt();
         useSystemInterface = obj["system"].toBool();
+
+        junk_packet_count = obj["junk_packet_count"].toInt();
+        junk_packet_min_size = obj["junk_packet_min_size"].toInt();
+        junk_packet_max_size = obj["junk_packet_max_size"].toInt();
+        init_packet_junk_size = obj["init_packet_junk_size"].toInt();
+        response_packet_junk_size = obj["response_packet_junk_size"].toInt();
+        init_packet_magic_header = obj["init_packet_magic_header"].toInt();
+        response_packet_magic_header = obj["response_packet_magic_header"].toInt();
+        underload_packet_magic_header = obj["underload_packet_magic_header"].toInt();
+        transport_packet_magic_header = obj["transport_packet_magic_header"].toInt();
+        if (junk_packet_count > 0 || junk_packet_min_size > 0 || junk_packet_max_size > 0)
+        {
+            enable_amenzia = true;
+        }
+
         return true;
     }
 

@@ -15,7 +15,6 @@ void EditWireguard::onStart(std::shared_ptr<Configs::ProxyEntity> _ent) {
     auto bean = this->ent->WireguardBean();
 
 #ifndef Q_OS_LINUX
-    ui->enable_gso->hide();
     adjustSize();
 #endif
 
@@ -27,9 +26,19 @@ void EditWireguard::onStart(std::shared_ptr<Configs::ProxyEntity> _ent) {
     ui->persistent_keepalive->setText(Int2String(bean->persistentKeepalive));
     ui->mtu->setText(Int2String(bean->MTU));
     ui->sys_ifc->setChecked(bean->useSystemInterface);
-    ui->enable_gso->setChecked(bean->enableGSO);
     ui->local_addr->setText(bean->localAddress.join(","));
     ui->workers->setText(Int2String(bean->workerCount));
+
+    ui->enable_amenzia->setChecked(bean->enable_amenzia);
+    ui->junk_packet_count->setText(Int2String(bean->junk_packet_count));
+    ui->junk_packet_min_size->setText(Int2String(bean->junk_packet_min_size));
+    ui->junk_packet_max_size->setText(Int2String(bean->junk_packet_max_size));
+    ui->init_packet_junk_size->setText(Int2String(bean->init_packet_junk_size));
+    ui->response_packet_junk_size->setText(Int2String(bean->response_packet_junk_size));
+    ui->init_packet_magic_header->setText(Int2String(bean->init_packet_magic_header));
+    ui->response_packet_magic_header->setText(Int2String(bean->response_packet_magic_header));
+    ui->underload_packet_magic_header->setText(Int2String(bean->underload_packet_magic_header));
+    ui->transport_packet_magic_header->setText(Int2String(bean->transport_packet_magic_header));
 }
 
 bool EditWireguard::onEnd() {
@@ -47,9 +56,19 @@ bool EditWireguard::onEnd() {
     bean->persistentKeepalive = ui->persistent_keepalive->text().toInt();
     bean->MTU = ui->mtu->text().toInt();
     bean->useSystemInterface = ui->sys_ifc->isChecked();
-    bean->enableGSO = ui->enable_gso->isChecked();
     bean->localAddress = ui->local_addr->text().replace(" ", "").split(",");
     bean->workerCount = ui->workers->text().toInt();
+
+    bean->enable_amenzia = ui->enable_amenzia->isChecked();
+    bean->junk_packet_count = ui->junk_packet_count->text().toInt();
+    bean->junk_packet_min_size = ui->junk_packet_min_size->text().toInt();
+    bean->junk_packet_max_size = ui->junk_packet_max_size->text().toInt();
+    bean->init_packet_junk_size = ui->init_packet_junk_size->text().toInt();
+    bean->response_packet_junk_size = ui->response_packet_junk_size->text().toInt();
+    bean->init_packet_magic_header = ui->init_packet_magic_header->text().toInt();
+    bean->response_packet_magic_header = ui->response_packet_magic_header->text().toInt();
+    bean->underload_packet_magic_header = ui->underload_packet_magic_header->text().toInt();
+    bean->transport_packet_magic_header = ui->transport_packet_magic_header->text().toInt();
 
     return true;
 }
