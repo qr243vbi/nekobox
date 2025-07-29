@@ -18,14 +18,14 @@ namespace Configs_network {
         QNetworkAccessManager accessManager;
         request.setUrl(url);
         if (Configs::dataStore->sub_use_proxy || Configs::dataStore->spmode_system_proxy) {
+            if (Configs::dataStore->started_id < 0) {
+                return HTTPResponse{QObject::tr("Request with proxy but no profile started.")};
+            }
             QNetworkProxy p;
             p.setType(QNetworkProxy::HttpProxy);
             p.setHostName("127.0.0.1");
             p.setPort(Configs::dataStore->inbound_socks_port);
             accessManager.setProxy(p);
-            if (Configs::dataStore->started_id < 0) {
-                return HTTPResponse{QObject::tr("Request with proxy but no profile started.")};
-            }
         }
         // Set attribute
         request.setAttribute(QNetworkRequest::RedirectPolicyAttribute, QNetworkRequest::NoLessSafeRedirectPolicy);
@@ -78,15 +78,17 @@ namespace Configs_network {
         QNetworkAccessManager accessManager;
         request.setUrl(url);
         if (Configs::dataStore->spmode_system_proxy) {
+            if (Configs::dataStore->started_id < 0) {
+                return QObject::tr("Request with proxy but no profile started.");
+            }
             QNetworkProxy p;
             p.setType(QNetworkProxy::HttpProxy);
             p.setHostName("127.0.0.1");
             p.setPort(Configs::dataStore->inbound_socks_port);
             accessManager.setProxy(p);
-            if (Configs::dataStore->started_id < 0) {
-                return QObject::tr("Request with proxy but no profile started.");
-            }
         }
+        request.setHeader(QNetworkRequest::KnownHeaders::UserAgentHeader, Configs::dataStore->GetUserAgent());
+        request.setRawHeader("Accept", "application/octet-stream");
 
         auto _reply = accessManager.get(request);
         connect(_reply, &QNetworkReply::sslErrors, _reply, [](const QList<QSslError> &errors) {
@@ -125,6 +127,7 @@ namespace Configs_network {
         }
         file.write(_reply->readAll());
         file.close();
+        _reply->deleteLater();
         return "";
     }
 
