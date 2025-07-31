@@ -267,10 +267,10 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     // table UI
     ui->proxyListTable->rowsSwapped = [=](int row1, int row2)
     {
+        if (row1 == row2) return;
         auto group = Configs::profileManager->CurrentGroup();
-        group->SwapProfiles(row1, row2);
-        refresh_proxy_list(group->profiles[row1]);
-        refresh_proxy_list(group->profiles[row2]);
+        group->EmplaceProfile(row1, row2);
+        refresh_proxy_list();
         group->Save();
     };
     if (auto button = ui->proxyListTable->findChild<QAbstractButton *>(QString(), Qt::FindDirectChildrenOnly)) {
