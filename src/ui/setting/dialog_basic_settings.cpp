@@ -44,7 +44,7 @@ DialogBasicSettings::DialogBasicSettings(QWidget *parent)
     connect(ui->disable_tray, &QCheckBox::stateChanged, this, [=](const bool &) {
         CACHE.updateDisableTray = true;
     });
-    connect(ui->random_listen_port, &QCheckBox::checkStateChanged, this, [=](const bool &state)
+    connect(ui->random_listen_port, &QCheckBox::stateChanged, this, [=](const bool &state)
     {
         if (state)
         {
