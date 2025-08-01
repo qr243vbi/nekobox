@@ -130,6 +130,10 @@ DialogBasicSettings::DialogBasicSettings(QWidget *parent)
        }
        MW_show_log(tr("Removed all rule-set files"));
     });
+    connect(ui->reset_assets, &QPushButton::clicked, this, [=]()
+    {
+        MW_dialog_message(Dialog_DialogBasicSettings, "ResetAssets;"+ui->geoip_url->currentText()+";"+ui->geosite_url->currentText());
+    });
 
     // Mux
     D_LOAD_INT(mux_concurrency)

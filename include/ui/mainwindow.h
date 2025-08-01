@@ -86,6 +86,8 @@ public:
 
     void DownloadAssets(const QString &geoipUrl, const QString &geositeUrl);
 
+    void ResetAssets(QString geoipUrl, QString geositeUrl);
+
     void UpdateConnectionList(const QMap<QString, Stats::ConnectionMetadata>& toUpdate, const QMap<QString, Stats::ConnectionMetadata>& toAdd);
 
     void UpdateConnectionListWithRecreate(const QList<Stats::ConnectionMetadata>& connections);
