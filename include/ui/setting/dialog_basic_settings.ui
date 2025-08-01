@@ -766,6 +766,41 @@
            <widget class="QWidget" name="widget" native="true">
             <layout class="QVBoxLayout" name="verticalLayout_9">
              <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_12">
+               <item>
+                <widget class="QLabel" name="label_19">
+                 <property name="text">
+                  <string>Auto Reset Assets</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QComboBox" name="auto_reset">
+                 <item>
+                  <property name="text">
+                   <string>Disabled</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Every Day</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Every 3 Days</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Every Week</string>
+                  </property>
+                 </item>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
               <layout class="QHBoxLayout" name="horizontalLayout_11">
                <item>
                 <widget class="QLabel" name="geoip_url_l">

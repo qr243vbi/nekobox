@@ -98,6 +98,8 @@ namespace Configs {
         // Assets
         QString geoip_download_url = "";
         QString geosite_download_url = "";
+        int auto_reset_assets_idx = 0;
+        long long last_asset_reset_epoch_secs = 0;
 
         // Security
         bool skip_cert = false;

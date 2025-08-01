@@ -573,7 +573,19 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     TM_auto_update_subsctiption_Reset_Minute(Configs::dataStore->sub_auto_update);
 
     // asset updater timer
-
+    auto TM_auto_reset_assets = new QTimer(this);
+    connect(TM_auto_reset_assets, &QTimer::timeout, this, [&]()
+    {
+       auto reset_interval = Configs::GeoAssets::ResetAssetsOptions[Configs::dataStore->auto_reset_assets_idx];
+       if (reset_interval > 0 && QDateTime::currentSecsSinceEpoch() - Configs::dataStore->last_asset_reset_epoch_secs > reset_interval)
+       {
+           runOnNewThread([=]
+           {
+               ResetAssets(Configs::dataStore->geoip_download_url, Configs::dataStore->geosite_download_url);
+           });
+       }
+    });
+    TM_auto_reset_assets->start(1000 * 60 * 5); // check every 5 minutes
 
     if (!Configs::dataStore->flag_tray) show();
 
@@ -2317,10 +2329,13 @@ void MainWindow::DownloadAssets(const QString &geoipUrl, const QString &geositeU
     MW_show_log(tr("Geo Asset update completed!"));
 }
 
-void MainWindow::ResetAssets(QString geoipUrl, QString geositeUrl)
+void MainWindow::ResetAssets(const QString& geoipUrl, const QString& geositeUrl)
 {
-    if (geoipUrl.isEmpty()) geoipUrl = Configs::dataStore->geoip_download_url;
-    if (geositeUrl.isEmpty()) geositeUrl = Configs::dataStore->geosite_download_url;
+    if (!mu_reset_assets.try_lock())
+    {
+        MW_show_log(tr("A reset of assets is already in progress"));
+        return;
+    }
     DownloadAssets(geoipUrl, geositeUrl);
     auto entries = QDir(RULE_SETS_DIR).entryList(QDir::Files);
     for (const auto &item: entries) {
@@ -2334,6 +2349,8 @@ void MainWindow::ResetAssets(QString geoipUrl, QString geositeUrl)
     {
         if (Configs::dataStore->started_id >= 0) profile_start(Configs::dataStore->started_id);
     });
+    Configs::dataStore->last_asset_reset_epoch_secs = QDateTime::currentSecsSinceEpoch();
+    mu_reset_assets.unlock();
 }
 
 // to parse versions of format Throne-1.2.3-beta.2 or Throne-1.2.3

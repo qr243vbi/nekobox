@@ -116,6 +116,7 @@ DialogBasicSettings::DialogBasicSettings(QWidget *parent)
     ui->geosite_url->addItems(Configs::GeoAssets::GeoSiteURLs);
     ui->geoip_url->setCurrentText(Configs::dataStore->geoip_download_url);
     ui->geosite_url->setCurrentText(Configs::dataStore->geosite_download_url);
+    ui->auto_reset->setCurrentIndex(Configs::dataStore->auto_reset_assets_idx);
 
     connect(ui->download_geo_btn, &QPushButton::clicked, this, [=]() {
         MW_dialog_message(Dialog_DialogBasicSettings, "DownloadAssets;"+ui->geoip_url->currentText()+";"+ui->geosite_url->currentText());
@@ -214,6 +215,7 @@ void DialogBasicSettings::accept() {
     // Assets
     Configs::dataStore->geoip_download_url = ui->geoip_url->currentText();
     Configs::dataStore->geosite_download_url = ui->geosite_url->currentText();
+    Configs::dataStore->auto_reset_assets_idx = ui->auto_reset->currentIndex();
 
     // Mux
     D_SAVE_INT(mux_concurrency)
