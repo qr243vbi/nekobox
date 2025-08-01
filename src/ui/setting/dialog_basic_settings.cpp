@@ -31,6 +31,7 @@ DialogBasicSettings::DialogBasicSettings(QWidget *parent)
     D_LOAD_COMBO_STRING(log_level)
     CACHE.custom_inbound = Configs::dataStore->custom_inbound;
     D_LOAD_INT(inbound_socks_port)
+    ui->random_listen_port->setChecked(Configs::dataStore->random_inbound_port);
     D_LOAD_INT(test_concurrent)
     D_LOAD_STRING(test_latency_url)
     D_LOAD_BOOL(disable_tray)
@@ -42,6 +43,16 @@ DialogBasicSettings::DialogBasicSettings(QWidget *parent)
     });
     connect(ui->disable_tray, &QCheckBox::stateChanged, this, [=](const bool &) {
         CACHE.updateDisableTray = true;
+    });
+    connect(ui->random_listen_port, &QCheckBox::checkStateChanged, this, [=](const bool &state)
+    {
+        if (state)
+        {
+            ui->inbound_socks_port->setDisabled(true);
+        } else
+        {
+            ui->inbound_socks_port->setDisabled(false);
+        }
     });
 
 #ifndef Q_OS_WIN
@@ -172,11 +183,17 @@ DialogBasicSettings::~DialogBasicSettings() {
 
 void DialogBasicSettings::accept() {
     // Common
+    bool needChoosePort = false;
 
     D_SAVE_STRING(inbound_address)
     D_SAVE_COMBO_STRING(log_level)
     Configs::dataStore->custom_inbound = CACHE.custom_inbound;
     D_SAVE_INT(inbound_socks_port)
+    if (!Configs::dataStore->random_inbound_port && ui->random_listen_port->isChecked())
+    {
+        needChoosePort = true;
+    }
+    Configs::dataStore->random_inbound_port = ui->random_listen_port->isChecked();
     D_SAVE_INT(test_concurrent)
     D_SAVE_STRING(test_latency_url)
     D_SAVE_BOOL(disable_tray)
@@ -239,6 +256,7 @@ void DialogBasicSettings::accept() {
     QStringList str{"UpdateDataStore"};
     if (CACHE.needRestart) str << "NeedRestart";
     if (CACHE.updateDisableTray) str << "UpdateDisableTray";
+    if (needChoosePort) str << "NeedChoosePort";
     MW_dialog_message(Dialog_DialogBasicSettings, str.join(","));
     QDialog::accept();
 }
