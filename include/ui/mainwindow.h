@@ -86,7 +86,7 @@ public:
 
     void DownloadAssets(const QString &geoipUrl, const QString &geositeUrl);
 
-    void ResetAssets(QString geoipUrl, QString geositeUrl);
+    void ResetAssets(const QString& geoipUrl, const QString& geositeUrl);
 
     void UpdateConnectionList(const QMap<QString, Stats::ConnectionMetadata>& toUpdate, const QMap<QString, Stats::ConnectionMetadata>& toAdd);
 
@@ -198,6 +198,7 @@ private:
     //
     QMutex mu_download_assets;
     QMutex mu_download_update;
+    QMutex mu_reset_assets;
     //
     int toolTipID;
     //

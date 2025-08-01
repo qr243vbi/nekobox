@@ -292,6 +292,8 @@ namespace Configs {
         _add(new configItem("ntp_interval", &ntp_interval, itemType::string));
         _add(new configItem("geoip_download_url", &geoip_download_url, itemType::string));
         _add(new configItem("geosite_download_url", &geosite_download_url, itemType::string));
+        _add(new configItem("auto_reset_assets_idx", &auto_reset_assets_idx, itemType::integer));
+        _add(new configItem("last_asset_reset_unix_secs", &last_asset_reset_epoch_secs, itemType::integer64));
         _add(new configItem("enable_dns_server", &enable_dns_server, itemType::boolean));
         _add(new configItem("dns_server_listen_lan", &dns_server_listen_lan, itemType::boolean));
         _add(new configItem("dns_server_listen_port", &dns_server_listen_port, itemType::integer));
