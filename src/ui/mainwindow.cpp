@@ -52,6 +52,7 @@
 #include <QToolTip>
 #include <random>
 #include <3rdparty/QHotkey/qhotkey.h>
+#include <3rdparty/qv2ray/v2/proxy/QvProxyConfigurator.hpp>
 #include <include/api/gRPC.h>
 #include <include/global/HTTPRequestHelper.hpp>
 
@@ -124,6 +125,12 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     MW_show_log = [=](const QString &log) {
         runOnUiThread([=] { show_log_impl(log); });
     };
+
+    // Listen port if random
+    if (Configs::dataStore->random_inbound_port)
+    {
+        Configs::dataStore->inbound_socks_port = MkPort();
+    }
 
     // Prepare core
     Configs::dataStore->core_port = MkPort();
@@ -688,6 +695,15 @@ void MainWindow::dialog_message_impl(const QString &sender, const QString &info)
         if (info.contains("UpdateDisableTray")) {
             tray->setVisible(!Configs::dataStore->disable_tray);
         }
+        if (info.contains("NeedChoosePort"))
+        {
+            Configs::dataStore->inbound_socks_port = MkPort();
+            if (Configs::dataStore->spmode_system_proxy)
+            {
+                set_spmode_system_proxy(false);
+                set_spmode_system_proxy(true);
+            }
+        }
         auto suggestRestartProxy = Configs::dataStore->Save();
         if (info.contains("RouteChanged")) {
             Configs::dataStore->routing->Save();
@@ -700,7 +716,7 @@ void MainWindow::dialog_message_impl(const QString &sender, const QString &info)
         if (info.contains("VPNChanged") && Configs::dataStore->spmode_vpn) {
             MessageBoxWarning(tr("Tun Settings changed"), tr("Restart Tun to take effect."));
         }
-        if (suggestRestartProxy && Configs::dataStore->started_id >= 0 &&
+        if ((info.contains("NeedChoosePort") || suggestRestartProxy) && Configs::dataStore->started_id >= 0 &&
             QMessageBox::question(GetMessageBoxParent(), tr("Confirmation"), tr("Settings changed, restart proxy?")) == QMessageBox::StandardButton::Yes) {
             profile_start(Configs::dataStore->started_id);
         }

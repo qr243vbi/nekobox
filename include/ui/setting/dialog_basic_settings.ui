@@ -89,6 +89,16 @@
               </property>
              </widget>
             </item>
+            <item>
+             <widget class="QCheckBox" name="random_listen_port">
+              <property name="toolTip">
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Selects a random available port on every run&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              </property>
+              <property name="text">
+               <string>Random port</string>
+              </property>
+             </widget>
+            </item>
            </layout>
           </widget>
          </item>
