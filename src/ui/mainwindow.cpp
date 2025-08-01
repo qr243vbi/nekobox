@@ -563,6 +563,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     connect(t, &QTimer::timeout, this, [&] { Configs_sys::logCounter.fetchAndStoreRelaxed(0); });
     t->start(1000);
 
+    // auto update timer
     TM_auto_update_subsctiption = new QTimer;
     TM_auto_update_subsctiption_Reset_Minute = [&](int m) {
         TM_auto_update_subsctiption->stop();
@@ -570,6 +571,9 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     };
     connect(TM_auto_update_subsctiption, &QTimer::timeout, this, [&] { UI_update_all_groups(true); });
     TM_auto_update_subsctiption_Reset_Minute(Configs::dataStore->sub_auto_update);
+
+    // asset updater timer
+
 
     if (!Configs::dataStore->flag_tray) show();
 
@@ -710,6 +714,13 @@ void MainWindow::dialog_message_impl(const QString &sender, const QString &info)
         auto splitted = info.split(";");
         runOnNewThread([=](){
             DownloadAssets(splitted[1], splitted[2]);
+        });
+    }
+    if (info.contains("ResetAssets"))
+    {
+        auto splitted = info.split(";");
+        runOnNewThread([=](){
+            ResetAssets(splitted[1], splitted[2]);
         });
     }
     //
@@ -2304,6 +2315,25 @@ void MainWindow::DownloadAssets(const QString &geoipUrl, const QString &geositeU
         });
     }
     MW_show_log(tr("Geo Asset update completed!"));
+}
+
+void MainWindow::ResetAssets(QString geoipUrl, QString geositeUrl)
+{
+    if (geoipUrl.isEmpty()) geoipUrl = Configs::dataStore->geoip_download_url;
+    if (geositeUrl.isEmpty()) geositeUrl = Configs::dataStore->geosite_download_url;
+    DownloadAssets(geoipUrl, geositeUrl);
+    auto entries = QDir(RULE_SETS_DIR).entryList(QDir::Files);
+    for (const auto &item: entries) {
+        if (!QFile(RULE_SETS_DIR + "/" + item).remove()) {
+            MW_show_log("Failed to remove " + item + ", stop the core then try again");
+        }
+    }
+    MW_show_log(tr("Removed all rule-set files"));
+
+    runOnUiThread([=]
+    {
+        if (Configs::dataStore->started_id >= 0) profile_start(Configs::dataStore->started_id);
+    });
 }
 
 // to parse versions of format Throne-1.2.3-beta.2 or Throne-1.2.3
