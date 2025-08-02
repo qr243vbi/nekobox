@@ -2442,7 +2442,7 @@ void MainWindow::CheckUpdate() {
     if (WinVersion::IsBuildNumGreaterOrEqual(BuildNumber::Windows_10_1809))
         search = "windows64";
     else
-	search = "windowslegacy64";
+	    search = "windowslegacy64";
 #  else
 	search = "windows32";
 #  endif
