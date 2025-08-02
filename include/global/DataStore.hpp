@@ -1,6 +1,9 @@
 // DO NOT INCLUDE THIS
 
 #include "Const.hpp"
+#ifdef Q_OS_WIN
+#include "include/sys/windows/WinVersion.h"
+#endif
 
 namespace Configs {
 
@@ -123,6 +126,8 @@ namespace Configs {
         bool enable_tun_routing = false;
 #ifdef Q_OS_MACOS
         QString vpn_implementation = "gvisor";
+#elif defined(Q_OS_WIN)
+        QString vpn_implementation = WinVersion::IsBuildNumGreaterOrEqual(BuildNumber::Windows_10_1507) ? "system" : "gvisor";
 #else
         QString vpn_implementation = "system";
 #endif

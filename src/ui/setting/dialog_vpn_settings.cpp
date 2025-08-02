@@ -4,6 +4,9 @@
 #include "include/global/GuiUtils.hpp"
 #include "include/global/Configs.hpp"
 #include "include/ui/mainwindow_interface.h"
+#ifdef Q_OS_WIN
+#include "include/sys/windows/WinVersion.h"
+#endif
 
 #include <QMessageBox>
 #define ADJUST_SIZE runOnThread([=] { adjustSize(); adjustPosition(mainwindow); }, this);
@@ -11,8 +14,19 @@ DialogVPNSettings::DialogVPNSettings(QWidget *parent) : QDialog(parent), ui(new 
     ui->setupUi(this);
     ADD_ASTERISK(this);
 
+#ifdef Q_OS_WIN
+    if (WinVersion::IsBuildNumGreaterOrEqual(BuildNumber::Windows_10_1507)) {
+        ui->vpn_implementation->addItems(Preset::SingBox::VpnImplementation);
+        ui->vpn_implementation->setCurrentText(Configs::dataStore->vpn_implementation);
+    }
+    else {
+        ui->vpn_implementation->setCurrentText("gvisor");
+        ui->vpn_implementation->setEnabled(false);
+    }
+#else
     ui->vpn_implementation->addItems(Preset::SingBox::VpnImplementation);
     ui->vpn_implementation->setCurrentText(Configs::dataStore->vpn_implementation);
+#endif
     ui->vpn_mtu->setCurrentText(Int2String(Configs::dataStore->vpn_mtu));
     ui->vpn_ipv6->setChecked(Configs::dataStore->vpn_ipv6);
     ui->strict_route->setChecked(Configs::dataStore->vpn_strict_route);
