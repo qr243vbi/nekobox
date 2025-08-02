@@ -40,7 +40,7 @@ namespace Stats
     {
         bool ok;
         libcore::ListConnectionsResp resp = API::defaultClient->ListConnections(&ok);
-        if (!ok || resp.connections.empty())
+        if (!ok)
         {
             return;
         }
