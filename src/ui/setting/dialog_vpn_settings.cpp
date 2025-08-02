@@ -20,6 +20,7 @@ DialogVPNSettings::DialogVPNSettings(QWidget *parent) : QDialog(parent), ui(new 
         ui->vpn_implementation->setCurrentText(Configs::dataStore->vpn_implementation);
     }
     else {
+        ui->vpn_implementation->addItems(Preset::SingBox::VpnImplementation);
         ui->vpn_implementation->setCurrentText("gvisor");
         ui->vpn_implementation->setEnabled(false);
     }
