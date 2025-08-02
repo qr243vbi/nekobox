@@ -2366,6 +2366,13 @@ void MainWindow::ResetAssets(const QString& geoipUrl, const QString& geositeUrl)
 bool isNewer(QString version) {
     if (QString(NKR_VERSION).isEmpty()) return false;
     version = version.mid(7); // take out Throne-
+    if (version.mid(version.indexOf("-")+1).startsWith("alpha") || version.mid(version.indexOf("-")+1).startsWith("beta") || version.mid(version.indexOf("-")+1).startsWith("rc"))
+    {
+        version = version.replace(".zip", "");
+    } else
+    {
+        version = version.left(version.indexOf("-"));
+    }
     auto parts = version.replace("-", ".").split('.');
     auto currentParts = QString(NKR_VERSION).replace("-", ".").split('.');
     if (parts.size() < 3 || currentParts.size() < 3)
