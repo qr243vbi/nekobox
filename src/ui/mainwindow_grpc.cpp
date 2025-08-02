@@ -538,12 +538,6 @@ void MainWindow::profile_start(int _id) {
             restartMsgboxTimer->cancel();
             restartMsgboxTimer->deleteLater();
             restartMsgbox->deleteLater();
-#ifdef Q_OS_LINUX
-            // Check systemd-resolved
-            if (Configs::dataStore->spmode_vpn && Configs::dataStore->routing->direct_dns.startsWith("local") && ReadFileText("/etc/resolv.conf").contains("systemd-resolved")) {
-                MW_show_log("[Warning] The default Direct DNS may not works with systemd-resolved, you may consider change your DNS settings.");
-            }
-#endif
         });
     });
 }
