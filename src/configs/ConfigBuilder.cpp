@@ -727,6 +727,14 @@ namespace Configs {
         // Direct
         auto directDNSAddress = dataStore->routing->direct_dns;
         if (directDNSAddress == "localhost") directDNSAddress = BOX_UNDERLYING_DNS_EXPORT;
+#ifdef Q_OS_LINUX
+        auto usingSystemdResolved = ReadFileText("/etc/resolv.conf").contains("systemd-resolved");
+        if (dataStore->spmode_vpn && (directDNSAddress.startsWith("local") || directDNSAddress.startsWith("underlying")) && usingSystemdResolved)
+        {
+            MW_show_log("[Warning] Using local dns resolver with systemd-resolved enabled causes a dns loophole, using dhcp://auto as direct dns.");
+            directDNSAddress = "dhcp://auto";
+        }
+#endif
         QJsonObject directObj{
             {"tag", "dns-direct"},
             {"address_resolver", "dns-local"},
@@ -813,9 +821,17 @@ namespace Configs {
         }
 
         // Underlying 100% Working DNS
+        auto dnsLocalAddress = BOX_UNDERLYING_DNS_EXPORT;
+#ifdef Q_OS_LINUX
+        if (dataStore->spmode_vpn && (dnsLocalAddress.startsWith("local") || dnsLocalAddress.startsWith("underlying")) && usingSystemdResolved)
+        {
+            MW_show_log("[Warning] Using local dns resolver with systemd-resolved enabled causes a dns loophole, using dhcp://auto as local dns.");
+            dnsLocalAddress = "dhcp://auto";
+        }
+#endif
         dnsServers += QJsonObject{
             {"tag", "dns-local"},
-            {"address", BOX_UNDERLYING_DNS_EXPORT},
+            {"address", dnsLocalAddress},
             {"detour", "direct"},
         };
 
