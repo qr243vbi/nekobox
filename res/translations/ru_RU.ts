@@ -181,7 +181,7 @@
     </message>
     <message>
         <source>Geo Assets and Rule-sets</source>
-        <translation type="unfinished">Георесурсы и наборы правил</translation>
+        <translation type="unfinished">Geo ресурсы и наборы правил</translation>
     </message>
     <message>
         <source>Remove Generated Rule-sets</source>
@@ -292,36 +292,37 @@
     </message>
     <message>
         <source>Auto Reset Assets</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Автоматически перезагружать ресурсы</translation>
     </message>
     <message>
         <source>Disabled</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Отключено</translation>
     </message>
     <message>
         <source>Every Day</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Каждый день</translation>
     </message>
     <message>
         <source>Every 3 Days</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Каждые 3 дня</translation>
     </message>
     <message>
         <source>Every Week</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Каждую неделю</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Downloads and replaces the geo asstes, and removes all generated rule-sets, then restarts the proxy&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Загружает и заменяет гео-ассеты, удаляет все сгенерированные наборы правил, а затем перезапускает прокси&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Reset All Assets</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Сбросить все ресурсы по умолч.</translation>
     </message>
     <message>
         <source>It is recommended to leave it blank, but it sometimes does not work, at this time you can set this option.
 this rewrites the underlying(localhost) DNS in Tun Mode, normal mode, and also URL Test.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Рекомендуется оставлять это значение пустым, но иногда оно не работает, и тогда вы можете установить этот параметр.
+переписывает базовый (localhost) DNS в Tun Режиме, обычном режиме, а также URL Test.</translation>
     </message>
 </context>
 <context>
@@ -610,7 +611,7 @@ this rewrites the underlying(localhost) DNS in Tun Mode, normal mode, and also U
     </message>
     <message>
         <source>Toggle System Proxy</source>
-        <translation type="unfinished">Режим проксирования</translation>
+        <translation type="unfinished">Переключится в режим системного прокси</translation>
     </message>
 </context>
 <context>
@@ -672,7 +673,7 @@ this rewrites the underlying(localhost) DNS in Tun Mode, normal mode, and also U
     </message>
     <message>
         <source>Direct DNS</source>
-        <translation>DNS для &quot;прямых&quot; запросов</translation>
+        <translation>DNS для прямых запросов</translation>
     </message>
     <message>
         <source>Query Strategy</source>
@@ -1910,19 +1911,19 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     </message>
     <message>
         <source>Failed to download geoip: %1</source>
-        <translation type="unfinished">Не удалось загрузить геоip: %1</translation>
+        <translation type="unfinished">Не удалось загрузить GeoIP: %1</translation>
     </message>
     <message>
         <source>Failed to download geosite: %1</source>
-        <translation type="unfinished">Не удалось загрузить геосайт: %1</translation>
+        <translation type="unfinished">Не удалось загрузить GeoSite: %1</translation>
     </message>
     <message>
         <source>Failed to download geo assets</source>
-        <translation type="unfinished">Не удалось загрузить георесурсы</translation>
+        <translation type="unfinished">Не удалось загрузить GEO ресурсы</translation>
     </message>
     <message>
         <source>Geo Asset update completed!</source>
-        <translation type="unfinished">Обновление георесурсов завершено!</translation>
+        <translation type="unfinished">Обновление GEO ресурсов завершено!</translation>
     </message>
     <message>
         <source>Traffic Graph</source>
@@ -1962,11 +1963,11 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     </message>
     <message>
         <source>User opted for no privilege req, some features may not work</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Пользователь решил не запрашивать привилегии, некоторые функции могут не работать</translation>
     </message>
     <message>
         <source>Unable to capture screen</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Невозможно захватить экран</translation>
     </message>
     <message>
         <source>Outbound</source>
@@ -1974,11 +1975,11 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     </message>
     <message>
         <source>Click To Toggle sort by Traffic</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Нажмите,чтобы переключить сортировку по трафику</translation>
     </message>
     <message>
         <source>Copy links of selected (Custom Links)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Скопированы выбранные ссылки (пользовательские ссылки)</translation>
     </message>
     <message>
         <source>Invalid JSON Array</source>
@@ -1991,11 +1992,11 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     </message>
     <message>
         <source>Please run Throne as admin</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Пожалуйста запустите Throne от имени администратора</translation>
     </message>
     <message>
         <source>A reset of assets is already in progress</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Происходит перезагрузка ресурсов</translation>
     </message>
     <message>
         <source>Removed all rule-set files</source>
@@ -2150,23 +2151,23 @@ Release note:
     </message>
     <message>
         <source>Tun mode cannot be used with Custom configs</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Режим Tun нельзя использовать с польз. конфигурациями</translation>
     </message>
     <message>
         <source>Processing subscription data...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Идёт обработка данных подписок...</translation>
     </message>
     <message>
         <source>Process complete, applying...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Процесс завершён, идёт приминение...</translation>
     </message>
     <message>
         <source>Download Profiles</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Скачивание Профилей</translation>
     </message>
     <message>
         <source>Requesting profile error: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">У запрашиваемого профиля,ошибка: %1</translation>
     </message>
 </context>
 <context>
@@ -2314,11 +2315,11 @@ Release note:
     </message>
     <message>
         <source>General</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Основное</translation>
     </message>
     <message>
         <source>Default outbound</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Стандарт. Outbound</translation>
     </message>
 </context>
 <context>
