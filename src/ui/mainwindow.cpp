@@ -2362,18 +2362,14 @@ void MainWindow::ResetAssets(const QString& geoipUrl, const QString& geositeUrl)
     mu_reset_assets.unlock();
 }
 
-// to parse versions of format Throne-1.2.3-beta.2 or Throne-1.2.3
-bool isNewer(QString version) {
+bool isNewer(QString assetName) {
     if (QString(NKR_VERSION).isEmpty()) return false;
-    version = version.mid(7); // take out Throne-
-    if (version.mid(version.indexOf("-")+1).startsWith("alpha") || version.mid(version.indexOf("-")+1).startsWith("beta") || version.mid(version.indexOf("-")+1).startsWith("rc"))
-    {
-        version = version.replace(".zip", "");
-    } else
-    {
-        version = version.left(version.indexOf("-"));
-    }
-    auto parts = version.replace("-", ".").split('.');
+    assetName = assetName.mid(7); // take out Throne-
+    QString version;
+    auto spl = assetName.split('-');
+    version += spl[0]; // version: 1.2.3
+    if (spl[1].contains("beta") || spl[1].contains("alpha") || spl[1].contains("rc")) version += "."+spl[1]; // .beta.13
+    auto parts = version.split("."); // [1,2,3,beta,13]
     auto currentParts = QString(NKR_VERSION).replace("-", ".").split('.');
     if (parts.size() < 3 || currentParts.size() < 3)
     {
