@@ -103,10 +103,11 @@ namespace Qv2ray::ui::widgets {
 
         if (lineUnderCursor().isEmpty()) {
             c->setCompletionPrefix("");
+            c->popup()->setCurrentIndex(c->completionModel()->index(0, 0));
         } else if (auto word = lineUnderCursor(); word != c->completionPrefix()) {
             c->setCompletionPrefix(word);
+            c->popup()->setCurrentIndex(c->completionModel()->index(0, 0));
         }
-        c->popup()->setCurrentIndex(c->completionModel()->index(0, 0));
         QRect cr = cursorRect();
         cr.setWidth(c->popup()->sizeHintForColumn(0) + c->popup()->verticalScrollBar()->sizeHint().width());
         c->complete(cr); // popup it up!
@@ -145,6 +146,15 @@ namespace Qv2ray::ui::widgets {
         }
 
         QPlainTextEdit::keyPressEvent(e);
+
+        if ((e->key() == Qt::Key_Enter || e->key() == Qt::Key_Return) && lineUnderCursor().isEmpty()) {
+            c->setCompletionPrefix("");
+            c->popup()->setCurrentIndex(c->completionModel()->index(0, 0));
+            QRect cr = cursorRect();
+            cr.setWidth(c->popup()->sizeHintForColumn(0) + c->popup()->verticalScrollBar()->sizeHint().width());
+            c->complete(cr); // popup it up!
+            return;
+        }
 
         if (!c || (hasCtrlOrShiftModifier && e->text().isEmpty()))
             return;
