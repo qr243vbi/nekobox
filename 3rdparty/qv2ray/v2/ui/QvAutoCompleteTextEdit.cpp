@@ -101,6 +101,16 @@ namespace Qv2ray::ui::widgets {
         if (c)
             c->setWidget(this);
 
+        if (lineUnderCursor().isEmpty()) {
+            c->setCompletionPrefix("");
+        } else if (auto word = lineUnderCursor(); word != c->completionPrefix()) {
+            c->setCompletionPrefix(word);
+        }
+        c->popup()->setCurrentIndex(c->completionModel()->index(0, 0));
+        QRect cr = cursorRect();
+        cr.setWidth(c->popup()->sizeHintForColumn(0) + c->popup()->verticalScrollBar()->sizeHint().width());
+        c->complete(cr); // popup it up!
+
         QPlainTextEdit::focusInEvent(e);
     }
 
@@ -126,6 +136,7 @@ namespace Qv2ray::ui::widgets {
                 case Qt::Key_Escape:
                 case Qt::Key_Tab:
                 case Qt::Key_Backtab:
+                case Qt::Key_Asterisk:
                     e->ignore();
                     return; // let the completer do default behavior
 
