@@ -147,7 +147,10 @@ namespace Qv2ray::ui::widgets {
 
         QPlainTextEdit::keyPressEvent(e);
 
-        if ((e->key() == Qt::Key_Enter || e->key() == Qt::Key_Return) && lineUnderCursor().isEmpty()) {
+        if (!c)
+            return;
+
+        if (lineUnderCursor().isEmpty()) {
             c->setCompletionPrefix("");
             c->popup()->setCurrentIndex(c->completionModel()->index(0, 0));
             QRect cr = cursorRect();
@@ -156,7 +159,7 @@ namespace Qv2ray::ui::widgets {
             return;
         }
 
-        if (!c || (hasCtrlOrShiftModifier && e->text().isEmpty()))
+        if (hasCtrlOrShiftModifier && e->text().isEmpty())
             return;
 
         // if we have other modifiers, or the text is empty, or the line does not start with our prefix.
