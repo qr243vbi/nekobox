@@ -17,7 +17,3 @@ type DnsManager struct {
 func (d *DnsManager) HandleSystemDNS(ifc *control.Interface, flag int) {
 	return
 }
-
-func (d *DnsManager) HandleUnderlyingDNS(ifc *control.Interface, flag int) {
-	return
-}
