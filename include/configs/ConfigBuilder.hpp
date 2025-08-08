@@ -60,6 +60,8 @@ namespace Configs {
 
     void BuildConfigSingBox(const std::shared_ptr<BuildConfigStatus> &status);
 
+    QJsonObject BuildDnsObject(QString address, bool tunEnabled);
+
     QString BuildChain(int chainId, const std::shared_ptr<BuildConfigStatus> &status);
 
     QString BuildChainInternal(int chainId, const QList<std::shared_ptr<ProxyEntity>> &ents,

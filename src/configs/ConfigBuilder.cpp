@@ -7,9 +7,6 @@
 #include <QApplication>
 #include <QFile>
 #include <QFileInfo>
-
-#define BOX_UNDERLYING_DNS_EXPORT dataStore->core_box_underlying_dns.isEmpty() ? (status->forExport ? "local" : "underlying://0.0.0.0") : dataStore->core_box_underlying_dns
-
 namespace Configs {
     QString genTunName() {
         auto tun_name = "throne-tun";
@@ -396,8 +393,6 @@ namespace Configs {
         }
 
         // common
-        // apply domain_strategy
-        outbound["domain_strategy"] = dataStore->routing->outbound_domain_strategy;
         // apply mux
         if (needMux) {
             auto muxObj = QJsonObject{
@@ -420,6 +415,88 @@ namespace Configs {
     }
 
     // SingBox
+
+    QJsonObject BuildDnsObject(QString address, bool tunEnabled)
+    {
+        bool usingSystemdResolved = false;
+#ifdef Q_OS_LINUX
+        usingSystemdResolved = ReadFileText("/etc/resolv.conf").contains("systemd-resolved");
+#endif
+        if (address.startsWith("local"))
+        {
+            if (tunEnabled && usingSystemdResolved)
+            {
+                return {
+                    {"type", "dhcp"}
+                };
+            }
+            return {
+            {"type", "local"}
+            };
+        }
+        if (address.startsWith("dhcp://"))
+        {
+            auto ifcName = address.replace("dhcp://", "");
+            if (ifcName == "auto") ifcName = "";
+            return {
+                {"type", "dhcp"},
+                {"interface", ifcName},
+            };
+        }
+        QString addr = address;
+        int port = -1;
+        QString type = "udp";
+        QString path = "";
+        if (address.startsWith("tcp://"))
+        {
+            type = "tcp";
+            addr = addr.replace("tcp://", "");
+        }
+        if (address.startsWith("tls://"))
+        {
+            type = "tls";
+            addr = addr.replace("tls://", "");
+        }
+        if (address.startsWith("quic://"))
+        {
+            type = "quic";
+            addr = addr.replace("quic://", "");
+        }
+        if (address.startsWith("https://"))
+        {
+            type = "https";
+            addr = addr.replace("https://", "");
+            if (addr.contains("/"))
+            {
+                path = addr.split("/").last();
+                addr = addr.left(addr.indexOf("/"));
+            }
+        }
+        if (address.startsWith("h3://"))
+        {
+            type = "h3";
+            addr = addr.replace("h3://", "");
+            if (addr.contains("/"))
+            {
+                path = addr.split("/").last();
+                addr = addr.left(addr.indexOf("/"));
+            }
+        }
+        if (addr.contains(":"))
+        {
+            auto spl = addr.split(":");
+            addr = spl[0];
+            port = spl[1].toInt();
+        }
+        QJsonObject res = {
+            {"type", type},
+            {"server", addr},
+        };
+        if (port != -1) res["server_port"] = port;
+        if (!path.isEmpty()) res["path"] = path;
+        return res;
+    }
+
 
     void BuildConfigSingBox(const std::shared_ptr<BuildConfigStatus> &status) {
         // Prefetch
@@ -504,7 +581,6 @@ namespace Configs {
             inboundObj["type"] = "mixed";
             inboundObj["listen"] = dataStore->inbound_address;
             inboundObj["listen_port"] = dataStore->inbound_socks_port;
-            inboundObj["domain_strategy"] = dataStore->routing->domain_strategy;
             status->inbounds += inboundObj;
         }
 
@@ -524,7 +600,6 @@ namespace Configs {
             auto tunAddress = QJsonArray{"172.19.0.1/24"};
             if (dataStore->vpn_ipv6) tunAddress += "fdfe:dcba:9876::1/96";
             inboundObj["address"] = tunAddress;
-            inboundObj["domain_strategy"] = dataStore->routing->domain_strategy;
             if (dataStore->enable_tun_routing && routeChain->defaultOutboundID == proxyID)
             {
                 if (!directIPCIDRs.isEmpty()) inboundObj["route_exclude_address"] = directIPCIDRs;
@@ -582,7 +657,6 @@ namespace Configs {
         if (!status->forTest) QJSONARRAY_ADD(status->inbounds, QString2QJsonObject(dataStore->custom_inbound)["inbounds"].toArray())
 
         // Routing
-        // geopath
         if (NeedGeoAssets()) {
             status->result->error = "Geo Assets are missing, please download them through Basic Settings -> Assets";
             return;
@@ -599,15 +673,19 @@ namespace Configs {
         }
         if (!status->forTest) routeObj["final"] = outboundIDToString(routeChain->defaultOutboundID);
 
+        if (!dataStore->routing->domain_strategy.isEmpty())
+        {
+            auto resolveRule = std::make_shared<RouteRule>();
+            resolveRule->action = "resolve";
+            resolveRule->strategy = dataStore->routing->domain_strategy;
+            resolveRule->inbound = {"mixed-in", "tun-in"};
+            routeChain->Rules.prepend(resolveRule);
+        }
         if (dataStore->routing->sniffing_mode != SniffingMode::DISABLE)
         {
             auto sniffRule = std::make_shared<RouteRule>();
             sniffRule->action = "sniff";
             sniffRule->inbound = {"mixed-in", "tun-in"};
-            if (dataStore->routing->sniffing_mode == SniffingMode::FOR_DESTINATION)
-            {
-                sniffRule->sniffOverrideDest = true;
-            }
             routeChain->Rules.prepend(sniffRule);
         }
         auto neededOutbounds = routeChain->get_used_outbounds();
@@ -645,7 +723,6 @@ namespace Configs {
         routeObj["rules"] = routeRules;
 
         // DNS hijack deps
-        bool needHijackRules = false;
         QJsonArray hijackDomains;
         QJsonArray hijackDomainSuffix;
         QJsonArray hijackDomainRegex;
@@ -665,7 +742,6 @@ namespace Configs {
                 if (rule.startsWith("regex:")) {
                     hijackDomainRegex << rule.mid(6);
                 }
-                needHijackRules = true;
             }
         }
         for (auto ruleSet : hijackGeoAssets) {
@@ -710,58 +786,73 @@ namespace Configs {
         routeObj["rule_set"] = ruleSetArray;
 
         // DNS settings
-        // final add DNS
         QJsonObject dns;
         QJsonArray dnsServers;
         QJsonArray dnsRules;
 
         // Remote
-        dnsServers += QJsonObject{
-            {"tag", "dns-remote"},
-            {"address_resolver", "dns-local"},
-            {"strategy", dataStore->routing->remote_dns_strategy},
-            {"address", dataStore->routing->remote_dns},
-            {"detour", tagProxy},
-        };
+        auto remoteDnsObj = BuildDnsObject(dataStore->routing->remote_dns, dataStore->spmode_vpn);
+        remoteDnsObj["tag"] = "dns-remote";
+        remoteDnsObj["domain_resolver"] = "dns-local";
+        remoteDnsObj["detour"] = tagProxy;
+        dnsServers += remoteDnsObj;
 
         // Direct
         auto directDNSAddress = dataStore->routing->direct_dns;
-        if (directDNSAddress == "localhost") directDNSAddress = BOX_UNDERLYING_DNS_EXPORT;
-#ifdef Q_OS_LINUX
-        auto usingSystemdResolved = ReadFileText("/etc/resolv.conf").contains("systemd-resolved");
-        if (dataStore->spmode_vpn && (directDNSAddress.startsWith("local") || directDNSAddress.startsWith("underlying")) && usingSystemdResolved)
-        {
-            MW_show_log("[Warning] Using local dns resolver with systemd-resolved enabled causes a dns loophole, using dhcp://auto as direct dns.");
-            directDNSAddress = "dhcp://auto";
-        }
-#endif
-        QJsonObject directObj{
-            {"tag", "dns-direct"},
-            {"address_resolver", "dns-local"},
-            {"strategy", dataStore->routing->direct_dns_strategy},
-            {"address", directDNSAddress},
-            {"detour", "direct"},
-        };
+        auto directDnsObj = BuildDnsObject(directDNSAddress, dataStore->spmode_vpn);
+        directDnsObj["tag"] = "dns-direct";
+        directDnsObj["domain_resolver"] = "dns-local";
+
+        // default dns server
         if (dataStore->routing->dns_final_out == "direct") {
-            dnsServers.prepend(directObj);
+            dnsServers.prepend(directDnsObj);
         } else {
-            dnsServers.append(directObj);
+            dnsServers.append(directDnsObj);
         }
 
-        // block
-        dnsServers += QJsonObject{
-            {"tag", "dns-block"},
-            {"address", "rcode://success"},
+        // Handle localhost
+        dnsRules += QJsonObject{
+            {"domain", "localhost"},
+            {"action", "predefined"},
+            {"query_type", "A"},
+            {"rcode", "NOERROR"},
+            {"answer", "localhost. IN A 127.0.0.1"},
+        };
+
+        dnsRules += QJsonObject{
+            {"domain", "localhost"},
+            {"action", "predefined"},
+            {"query_type", "AAAA"},
+            {"rcode", "NOERROR"},
+            {"answer", "localhost. IN AAAA ::1"},
         };
 
         // Hijack
         if (dataStore->enable_dns_server && !status->forTest) {
-            dnsServers += QJsonObject {
-                {"tag", "dns-hijack"},
-                {"address", "hijack://10.10.10.10"},
-                {"inet4_response", dataStore->dns_v4_resp},
-                {"inet6_response", dataStore->dns_v6_resp},
+            dnsRules += QJsonObject{
+                {"rule_set", hijackGeoAssets},
+                {"domain", hijackDomains},
+                {"domain_suffix", hijackDomainSuffix},
+                {"domain_regex", hijackDomainRegex},
+                {"query_type", "A"},
+                {"action", "predefined"},
+                {"rcode", "NOERROR"},
+                {"answer", QString("* IN A %1").arg(dataStore->dns_v4_resp)},
             };
+
+            if (!dataStore->dns_v6_resp.isEmpty())
+            {
+                dnsRules += QJsonObject{
+                    {"rule_set", hijackGeoAssets},
+                    {"domain", hijackDomains},
+                    {"domain_suffix", hijackDomainSuffix},
+                    {"domain_regex", hijackDomainRegex},
+                    {"query_type", "AAAA"},
+                    {"action", "predefined"},
+                    {"rcode", "NOERROR"},
+                    {"answer", QString("* IN AAAA %1").arg(dataStore->dns_v6_resp)},
+                };
+            }
 
             status->inbounds.prepend(QJsonObject{
                 {"tag", "dns-in"},
@@ -775,22 +866,16 @@ namespace Configs {
         if (dataStore->fake_dns) {
             dnsServers += QJsonObject{
                 {"tag", "dns-fake"},
-                {"address", "fakeip"},
-            };
-            dns["fakeip"] = QJsonObject{
-                {"enabled", true},
+                {"type", "fakeip"},
                 {"inet4_range", "198.18.0.0/15"},
                 {"inet6_range", "fc00::/18"},
-            };
-            dnsRules += QJsonObject{
-                {"outbound", "any"},
-                {"server", "dns-local"},
             };
             dnsRules += QJsonObject{
                 {"query_type", QJsonArray{
                                    "A",
                                    "AAAA"
                                }},
+                {"action", "route"},
                 {"server", "dns-fake"}
             };
             dns["independent_cache"] = true;
@@ -806,34 +891,17 @@ namespace Configs {
                 {"action", "route"},
                 {"server", "dns-direct"},
             };
-        }
-
-        // dns hijack rules
-        if (needHijackRules) {
-            dnsRules += QJsonObject{
-                    {"rule_set", hijackGeoAssets},
-                    {"domain", hijackDomains},
-                    {"domain_suffix", hijackDomainSuffix},
-                    {"domain_regex", hijackDomainRegex},
-                       {"action", "route"},
-                    {"server", "dns-hijack"},
+            routeObj["default_domain_resolver"] = QJsonObject{
+                {"server", "dns-direct"},
+                {"strategy", dataStore->routing->outbound_domain_strategy},
             };
         }
 
         // Underlying 100% Working DNS
-        auto dnsLocalAddress = BOX_UNDERLYING_DNS_EXPORT;
-#ifdef Q_OS_LINUX
-        if (dataStore->spmode_vpn && (dnsLocalAddress.startsWith("local") || dnsLocalAddress.startsWith("underlying")) && usingSystemdResolved)
-        {
-            MW_show_log("[Warning] Using local dns resolver with systemd-resolved enabled causes a dns loophole, using dhcp://auto as local dns.");
-            dnsLocalAddress = "dhcp://auto";
-        }
-#endif
-        dnsServers += QJsonObject{
-            {"tag", "dns-local"},
-            {"address", dnsLocalAddress},
-            {"detour", "direct"},
-        };
+        auto dnsLocalAddress = dataStore->core_box_underlying_dns.isEmpty() ? "local" : dataStore->core_box_underlying_dns;
+        auto dnsLocalObj = BuildDnsObject(dnsLocalAddress, dataStore->spmode_vpn);
+        dnsLocalObj["tag"] = "dns-local";
+        dnsServers += dnsLocalObj;
 
         dns["servers"] = dnsServers;
         dns["rules"] = dnsRules;
@@ -852,7 +920,7 @@ namespace Configs {
         {
             if (dataStore->core_box_clash_api > 0){
                 clash_api = {
-                {"external_controller", Configs::dataStore->core_box_clash_listen_addr + ":" + Int2String(dataStore->core_box_clash_api)},
+                {"external_controller", dataStore->core_box_clash_listen_addr + ":" + Int2String(dataStore->core_box_clash_api)},
                 {"secret", dataStore->core_box_clash_api_secret},
                 {"external_ui", "dashboard"},
                 };

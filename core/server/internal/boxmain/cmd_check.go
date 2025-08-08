@@ -9,7 +9,7 @@ import (
 
 func Check(content []byte) error {
 	ctx := context.Background()
-	ctx = boxbox.Context(ctx, include.InboundRegistry(), include.OutboundRegistry(), include.EndpointRegistry())
+	ctx = boxbox.Context(ctx, include.InboundRegistry(), include.OutboundRegistry(), include.EndpointRegistry(), include.DNSTransportRegistry(), include.ServiceRegistry())
 	options, err := parseConfig(ctx, content)
 	if err != nil {
 		return err
