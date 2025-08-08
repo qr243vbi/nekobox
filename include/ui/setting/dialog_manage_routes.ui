@@ -33,9 +33,7 @@
           <item row="3" column="0">
            <widget class="QLabel" name="label_3">
             <property name="toolTip">
-             <string>outbound.domain_strategy
-when set, domain destinations are resolved to IP before connect,
-also if the connection cannot be established with the current address family (ipv4, ipv6), a fallback connection is created shortly after, with the other address family.</string>
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Resolve domains to IP before connect, also affects the server address as well&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
             </property>
             <property name="text">
              <string>Outbound Domain Strategy</string>
@@ -62,8 +60,7 @@ also if the connection cannot be established with the current address family (ip
           <item row="2" column="0">
            <widget class="QLabel" name="label_6">
             <property name="toolTip">
-             <string notr="true">inbound.domain_strategy
-when used, domain destinations are resolved to IP before routing.</string>
+             <string notr="true">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Enable to resolve domains to IP before routing based on the strategy&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
             </property>
             <property name="text">
              <string>Inbound Domain Strategy</string>
@@ -80,11 +77,6 @@ when used, domain destinations are resolved to IP before routing.</string>
             <item>
              <property name="text">
               <string>Sniff result for routing</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>Sniff result for destination</string>
              </property>
             </item>
            </widget>
@@ -240,6 +232,9 @@ when used, domain destinations are resolved to IP before routing.</string>
          <layout class="QGridLayout" name="gridLayout">
           <item row="1" column="0">
            <widget class="QLabel" name="label_9">
+            <property name="toolTip">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;examples:&lt;br/&gt;tls://8.8.8.8&lt;br/&gt;https://domain/path&lt;/p&gt;&lt;p&gt;tcp://8.8.8.8:1234&lt;/p&gt;&lt;p&gt;dhcp://auto&lt;/p&gt;&lt;p&gt;h3://domain/path&lt;/p&gt;&lt;p&gt;quic://domain:4632&lt;/p&gt;&lt;p&gt;etc&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
             <property name="text">
              <string>Remote DNS</string>
             </property>
