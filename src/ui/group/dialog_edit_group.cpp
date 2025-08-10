@@ -7,13 +7,13 @@
 #include <QStringListModel>
 #include <QCompleter>
 
-#define ADJUST_SIZE runOnThread([=] { adjustSize(); adjustPosition(mainwindow); }, this);
+#define ADJUST_SIZE runOnThread([=,this] { adjustSize(); adjustPosition(mainwindow); }, this);
 
 DialogEditGroup::DialogEditGroup(const std::shared_ptr<Configs::Group> &ent, QWidget *parent) : QDialog(parent), ui(new Ui::DialogEditGroup) {
     ui->setupUi(this);
     this->ent = ent;
 
-    connect(ui->type, &QComboBox::currentIndexChanged, this, [=](int index) {
+    connect(ui->type, &QComboBox::currentIndexChanged, this, [=,this](int index) {
         ui->cat_sub->setHidden(index == 0);
         ADJUST_SIZE
     });
@@ -55,7 +55,7 @@ DialogEditGroup::DialogEditGroup(const std::shared_ptr<Configs::Group> &ent, QWi
     frontCompleter->setFilterMode(Qt::MatchContains);
     ui->front_proxy->setCompleter(nullptr);
     ui->front_proxy->lineEdit()->setCompleter(frontCompleter);
-    connect(ui->front_proxy, &QComboBox::currentTextChanged, this, [=](const QString &txt){
+    connect(ui->front_proxy, &QComboBox::currentTextChanged, this, [=,this](const QString &txt){
         CACHE.front_proxy = get_proxy_id(txt);
     });
 
@@ -69,11 +69,11 @@ DialogEditGroup::DialogEditGroup(const std::shared_ptr<Configs::Group> &ent, QWi
     landingCompleter->setFilterMode(Qt::MatchContains);
     ui->landing_proxy->setCompleter(nullptr);
     ui->landing_proxy->lineEdit()->setCompleter(frontCompleter);
-    connect(ui->landing_proxy, &QComboBox::currentTextChanged, this, [=](const QString &txt){
+    connect(ui->landing_proxy, &QComboBox::currentTextChanged, this, [=,this](const QString &txt){
         LANDING.landing_proxy = get_proxy_id(txt);
     });
 
-    connect(ui->copy_links, &QPushButton::clicked, this, [=] {
+    connect(ui->copy_links, &QPushButton::clicked, this, [=,this] {
         QStringList links;
         for (const auto &[_, profile]: Configs::profileManager->profiles) {
             if (profile->gid != ent->id) continue;
@@ -82,7 +82,7 @@ DialogEditGroup::DialogEditGroup(const std::shared_ptr<Configs::Group> &ent, QWi
         QApplication::clipboard()->setText(links.join("\n"));
         MessageBoxInfo(software_name, tr("Copied"));
     });
-    connect(ui->copy_links_nkr, &QPushButton::clicked, this, [=] {
+    connect(ui->copy_links_nkr, &QPushButton::clicked, this, [=,this] {
         QStringList links;
         for (const auto &[_, profile]: Configs::profileManager->profiles) {
             if (profile->gid != ent->id) continue;

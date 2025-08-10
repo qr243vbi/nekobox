@@ -78,12 +78,12 @@ namespace Stats {
                 // 停止
                 if (looping) {
                     looping = false;
-                    runOnUiThread([=] {
+                    runOnUiThread([=,this] {
                         auto m = GetMainWindow();
                         m->refresh_status("STOP");
                     });
                 }
-                runOnUiThread([=]
+                runOnUiThread([=,this]
                 {
                    auto m = GetMainWindow();
                    m->update_traffic_graph(0, 0, 0, 0);
@@ -104,7 +104,7 @@ namespace Stats {
             loop_mutex.unlock();
 
             // post to UI
-            runOnUiThread([=] {
+            runOnUiThread([=,this] {
                 auto m = GetMainWindow();
                 if (proxy != nullptr) {
                     m->refresh_status(QObject::tr("Proxy: %1\nDirect: %2").arg(proxy->DisplaySpeed(), direct->DisplaySpeed()));

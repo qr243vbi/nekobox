@@ -24,7 +24,7 @@ void EditSSH::onStart(std::shared_ptr<Configs::ProxyEntity> _ent) {
     ui->host_key_algs->setText(bean->hostKeyAlgs.join(","));
     ui->client_version->setText(bean->clientVersion);
 
-    connect(ui->choose_pk, &QPushButton::clicked, this, [=] {
+    connect(ui->choose_pk, &QPushButton::clicked, this, [=,this] {
         auto fn = QFileDialog::getOpenFileName(this, QObject::tr("Select"), QDir::currentPath(),
                                                "", nullptr, QFileDialog::Option::ReadOnly);
         if (!fn.isEmpty()) {

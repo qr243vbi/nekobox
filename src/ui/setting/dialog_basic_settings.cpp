@@ -38,13 +38,13 @@ DialogBasicSettings::DialogBasicSettings(QWidget *parent)
     ui->speedtest_mode->setCurrentIndex(Configs::dataStore->speed_test_mode);
     ui->simple_down_url->setText(Configs::dataStore->simple_dl_url);
 
-    connect(ui->custom_inbound_edit, &QPushButton::clicked, this, [=] {
+    connect(ui->custom_inbound_edit, &QPushButton::clicked, this, [=,this] {
         C_EDIT_JSON_ALLOW_EMPTY(custom_inbound)
     });
-    connect(ui->disable_tray, &QCheckBox::stateChanged, this, [=](const bool &) {
+    connect(ui->disable_tray, &QCheckBox::stateChanged, this, [=,this](const bool &) {
         CACHE.updateDisableTray = true;
     });
-    connect(ui->random_listen_port, &QCheckBox::stateChanged, this, [=](const bool &state)
+    connect(ui->random_listen_port, &QCheckBox::stateChanged, this, [=,this](const bool &state)
     {
         if (state)
         {
@@ -67,10 +67,10 @@ DialogBasicSettings::DialogBasicSettings(QWidget *parent)
     D_LOAD_INT(max_log_line)
     //
     ui->language->setCurrentIndex(Configs::dataStore->language);
-    connect(ui->language, &QComboBox::currentIndexChanged, this, [=](int index) {
+    connect(ui->language, &QComboBox::currentIndexChanged, this, [=,this](int index) {
         CACHE.needRestart = true;
     });
-    connect(ui->font, &QComboBox::currentTextChanged, this, [=](const QString &fontName) {
+    connect(ui->font, &QComboBox::currentTextChanged, this, [=,this](const QString &fontName) {
         auto font = qApp->font();
         font.setFamily(fontName);
         qApp->setFont(font);
@@ -82,7 +82,7 @@ DialogBasicSettings::DialogBasicSettings(QWidget *parent)
         ui->font_size->addItem(Int2String(i));
     }
     ui->font_size->setCurrentText(Int2String(qApp->font().pointSize()));
-    connect(ui->font_size, &QComboBox::currentTextChanged, this, [=](const QString &sizeStr) {
+    connect(ui->font_size, &QComboBox::currentTextChanged, this, [=,this](const QString &sizeStr) {
         auto font = qApp->font();
         font.setPointSize(sizeStr.toInt());
         qApp->setFont(font);
@@ -102,7 +102,7 @@ DialogBasicSettings::DialogBasicSettings(QWidget *parent)
         ui->theme->setCurrentText(Configs::dataStore->theme);
     }
     //
-    connect(ui->theme, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, [=](int index) {
+    connect(ui->theme, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, [=,this](int index) {
         themeManager->ApplyTheme(ui->theme->currentText());
         Configs::dataStore->theme = ui->theme->currentText();
         Configs::dataStore->Save();
@@ -129,10 +129,10 @@ DialogBasicSettings::DialogBasicSettings(QWidget *parent)
     ui->geosite_url->setCurrentText(Configs::dataStore->geosite_download_url);
     ui->auto_reset->setCurrentIndex(Configs::dataStore->auto_reset_assets_idx);
 
-    connect(ui->download_geo_btn, &QPushButton::clicked, this, [=]() {
+    connect(ui->download_geo_btn, &QPushButton::clicked, this, [=,this]() {
         MW_dialog_message(Dialog_DialogBasicSettings, "DownloadAssets;"+ui->geoip_url->currentText()+";"+ui->geosite_url->currentText());
     });
-    connect(ui->remove_srs_btn, &QPushButton::clicked, this, [=](){
+    connect(ui->remove_srs_btn, &QPushButton::clicked, this, [=,this](){
        auto rsDir = QDir(RULE_SETS_DIR);
        auto entries = rsDir.entryList(QDir::Files);
        for (const auto &item: entries) {
@@ -142,7 +142,7 @@ DialogBasicSettings::DialogBasicSettings(QWidget *parent)
        }
        MW_show_log(tr("Removed all rule-set files"));
     });
-    connect(ui->reset_assets, &QPushButton::clicked, this, [=]()
+    connect(ui->reset_assets, &QPushButton::clicked, this, [=,this]()
     {
         MW_dialog_message(Dialog_DialogBasicSettings, "ResetAssets;"+ui->geoip_url->currentText()+";"+ui->geosite_url->currentText());
     });
@@ -161,7 +161,7 @@ DialogBasicSettings::DialogBasicSettings(QWidget *parent)
     ui->ntp_server->setText(Configs::dataStore->ntp_server_address);
     ui->ntp_port->setText(Int2String(Configs::dataStore->ntp_server_port));
     ui->ntp_interval->setCurrentText(Configs::dataStore->ntp_interval);
-    connect(ui->ntp_enable, &QCheckBox::stateChanged, this, [=](const bool &state) {
+    connect(ui->ntp_enable, &QCheckBox::stateChanged, this, [=,this](const bool &state) {
         ui->ntp_server->setEnabled(state);
         ui->ntp_port->setEnabled(state);
         ui->ntp_interval->setEnabled(state);
@@ -172,6 +172,7 @@ DialogBasicSettings::DialogBasicSettings(QWidget *parent)
     ui->utlsFingerprint->addItems(Preset::SingBox::UtlsFingerPrint);
     ui->disable_priv_req->setChecked(Configs::dataStore->disable_privilege_req);
     ui->windows_no_admin->setChecked(Configs::dataStore->disable_run_admin);
+    ui->mozilla_cert->setChecked(Configs::dataStore->use_mozilla_certs);
 
     D_LOAD_BOOL(skip_cert)
     ui->utlsFingerprint->setCurrentText(Configs::dataStore->utlsFingerprint);
@@ -252,6 +253,7 @@ void DialogBasicSettings::accept() {
     Configs::dataStore->utlsFingerprint = ui->utlsFingerprint->currentText();
     Configs::dataStore->disable_privilege_req = ui->disable_priv_req->isChecked();
     Configs::dataStore->disable_run_admin = ui->windows_no_admin->isChecked();
+    Configs::dataStore->use_mozilla_certs = ui->mozilla_cert->isChecked();
 
     QStringList str{"UpdateDataStore"};
     if (CACHE.needRestart) str << "NeedRestart";
@@ -304,7 +306,7 @@ void DialogBasicSettings::on_core_settings_clicked() {
     auto box = new QDialogButtonBox;
     box->setOrientation(Qt::Horizontal);
     box->setStandardButtons(QDialogButtonBox::Cancel | QDialogButtonBox::Ok);
-    connect(box, &QDialogButtonBox::accepted, w, [=] {
+    connect(box, &QDialogButtonBox::accepted, w, [=,this] {
         Configs::dataStore->core_box_underlying_dns = core_box_underlying_dns->text();
         Configs::dataStore->core_box_clash_api = core_box_clash_api->text().toInt();
         Configs::dataStore->core_box_clash_listen_addr = core_box_clash_listen_addr->text();

@@ -86,16 +86,16 @@ DialogManageRoutes::DialogManageRoutes(QWidget *parent) : QDialog(parent), ui(ne
     ui->remote_dns_strategy->addItems(qsValue);
     ui->enable_fakeip->setChecked(Configs::dataStore->fake_dns);
     //
-    connect(ui->use_dns_object, &QCheckBox::stateChanged, this, [=](int state) {
+    connect(ui->use_dns_object, &QCheckBox::stateChanged, this, [=,this](int state) {
         auto useDNSObject = state == Qt::Checked;
         ui->simple_dns_box->setDisabled(useDNSObject);
         ui->dns_object->setDisabled(!useDNSObject);
     });
     ui->use_dns_object->stateChanged(Qt::Unchecked); // uncheck to uncheck
-    connect(ui->dns_document, &QPushButton::clicked, this, [=] {
+    connect(ui->dns_document, &QPushButton::clicked, this, [=,this] {
         MessageBoxInfo("DNS", dnsHelpDocumentUrl);
     });
-    connect(ui->format_dns_object, &QPushButton::clicked, this, [=] {
+    connect(ui->format_dns_object, &QPushButton::clicked, this, [=,this] {
         auto obj = QString2QJsonObject(ui->dns_object->toPlainText());
         if (obj.isEmpty()) {
             MessageBoxInfo("DNS", "invaild json");
@@ -115,7 +115,7 @@ DialogManageRoutes::DialogManageRoutes(QWidget *parent) : QDialog(parent), ui(ne
     ui->dns_final_out->setCurrentText(Configs::dataStore->routing->dns_final_out);
     reloadProfileItems();
 
-    connect(ui->route_profiles, &QListWidget::itemDoubleClicked, this, [=](const QListWidgetItem* item){
+    connect(ui->route_profiles, &QListWidget::itemDoubleClicked, this, [=,this](const QListWidgetItem* item){
         on_edit_route_clicked();
     });
 
@@ -123,7 +123,7 @@ DialogManageRoutes::DialogManageRoutes(QWidget *parent) : QDialog(parent), ui(ne
 
     deleteShortcut = new QShortcut(QKeySequence(Qt::Key_Delete), this);
 
-    connect(deleteShortcut, &QShortcut::activated, this, [=]{
+    connect(deleteShortcut, &QShortcut::activated, this, [=,this]{
         on_delete_route_clicked();
     });
 
@@ -135,7 +135,7 @@ DialogManageRoutes::DialogManageRoutes(QWidget *parent) : QDialog(parent), ui(ne
     ui->dnshijack_listenport->setText(Int2String(Configs::dataStore->dns_server_listen_port));
     ui->dnshijack_v4resp->setText(Configs::dataStore->dns_v4_resp);
     ui->dnshijack_v6resp->setText(Configs::dataStore->dns_v6_resp);
-    connect(ui->dnshijack_what, &QPushButton::clicked, this, [=] {
+    connect(ui->dnshijack_what, &QPushButton::clicked, this, [=,this] {
         MessageBoxInfo("What is this?", Configs::Information::HijackInfo);
     });
 
@@ -165,10 +165,10 @@ DialogManageRoutes::DialogManageRoutes(QWidget *parent) : QDialog(parent), ui(ne
     ui->redirect_listenport->setValidator(QRegExpValidator_Number);
     ui->redirect_listenport->setText(Int2String(Configs::dataStore->redirect_listen_port));
 
-    connect(ui->dnshijack_enable, &QCheckBox::stateChanged, this, [=](bool state) {
+    connect(ui->dnshijack_enable, &QCheckBox::stateChanged, this, [=,this](bool state) {
         set_dns_hijack_enability(state);
     });
-    connect(ui->redirect_enable, &QCheckBox::stateChanged, this, [=](bool state) {
+    connect(ui->redirect_enable, &QCheckBox::stateChanged, this, [=,this](bool state) {
         ui->redirect_listenaddr->setEnabled(state);
         ui->redirect_listenport->setEnabled(state);
     });
@@ -238,7 +238,7 @@ void DialogManageRoutes::on_new_route_clicked() {
     routeChainWidget = new RouteItem(this, Configs::ProfileManager::NewRouteChain());
     routeChainWidget->setWindowModality(Qt::ApplicationModal);
     routeChainWidget->show();
-    connect(routeChainWidget, &RouteItem::settingsChanged, this, [=](const std::shared_ptr<Configs::RoutingChain>& chain) {
+    connect(routeChainWidget, &RouteItem::settingsChanged, this, [=,this](const std::shared_ptr<Configs::RoutingChain>& chain) {
         chainList << chain;
         reloadProfileItems();
     });
@@ -259,7 +259,7 @@ void DialogManageRoutes::on_export_route_clicked()
 
     QToolTip::showText(QCursor::pos(), "Copied!", this);
     int r = ++tooltipID;
-    QTimer::singleShot(1500, [=] {
+    QTimer::singleShot(1500, [=,this] {
         if (tooltipID != r) return;
         QToolTip::hideText();
     });
@@ -284,7 +284,7 @@ void DialogManageRoutes::on_edit_route_clicked() {
     routeChainWidget = new RouteItem(this, chainList[idx]);
     routeChainWidget->setWindowModality(Qt::ApplicationModal);
     routeChainWidget->show();
-    connect(routeChainWidget, &RouteItem::settingsChanged, this, [=](const std::shared_ptr<Configs::RoutingChain>& chain) {
+    connect(routeChainWidget, &RouteItem::settingsChanged, this, [=,this](const std::shared_ptr<Configs::RoutingChain>& chain) {
         if (currentRoute == chainList[idx]) currentRoute = chain;
         chainList[idx] = chain;
         reloadProfileItems();

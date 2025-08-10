@@ -84,7 +84,7 @@ namespace Stats
 
         if (sort == Default)
         {
-            runOnUiThread([=] {
+            runOnUiThread([=,this] {
                 auto m = GetMainWindow();
                 m->UpdateConnectionList(toUpdate, toAdd);
             });
@@ -92,7 +92,7 @@ namespace Stats
         {
             if (sort == ByDownload)
             {
-                std::sort(sorted.begin(), sorted.end(), [=](const ConnectionMetadata& a, const ConnectionMetadata& b)
+                std::sort(sorted.begin(), sorted.end(), [=,this](const ConnectionMetadata& a, const ConnectionMetadata& b)
                 {
                     if (a.download == b.download) return asc ? a.id > b.id : a.id < b.id;
                     return asc ? a.download < b.download : a.download > b.download;
@@ -100,7 +100,7 @@ namespace Stats
             }
             if (sort == ByUpload)
             {
-                std::sort(sorted.begin(), sorted.end(), [=](const ConnectionMetadata& a, const ConnectionMetadata& b)
+                std::sort(sorted.begin(), sorted.end(), [=,this](const ConnectionMetadata& a, const ConnectionMetadata& b)
                 {
                    if (a.upload == b.upload) return asc ? a.id > b.id : a.id < b.id;
                    return asc ? a.upload < b.upload : a.upload > b.upload;
@@ -108,7 +108,7 @@ namespace Stats
             }
             if (sort == ByProcess)
             {
-                std::sort(sorted.begin(), sorted.end(), [=](const ConnectionMetadata& a, const ConnectionMetadata& b)
+                std::sort(sorted.begin(), sorted.end(), [=,this](const ConnectionMetadata& a, const ConnectionMetadata& b)
                 {
                     if (a.process == b.process) return asc ? a.id > b.id : a.id < b.id;
                     return asc ? a.process > b.process : a.process < b.process;
@@ -116,7 +116,7 @@ namespace Stats
             }
             if (sort == ByOutbound)
             {
-                std::sort(sorted.begin(), sorted.end(), [=](const ConnectionMetadata& a, const ConnectionMetadata& b)
+                std::sort(sorted.begin(), sorted.end(), [=,this](const ConnectionMetadata& a, const ConnectionMetadata& b)
                     {
                         if (a.outbound == b.outbound) return asc ? a.id > b.id : a.id < b.id;
                         return asc ? a.outbound > b.outbound : a.outbound < b.outbound;
@@ -124,13 +124,13 @@ namespace Stats
             }
             if (sort == ByProtocol)
             {
-                std::sort(sorted.begin(), sorted.end(), [=](const ConnectionMetadata& a, const ConnectionMetadata& b)
+                std::sort(sorted.begin(), sorted.end(), [=,this](const ConnectionMetadata& a, const ConnectionMetadata& b)
                     {
                         if (a.protocol == b.protocol) return asc ? a.id > b.id : a.id < b.id;
                         return asc ? a.protocol > b.protocol : a.protocol < b.protocol;
                     });
             }
-            runOnUiThread([=] {
+            runOnUiThread([=,this] {
                 auto m = GetMainWindow();
                 m->UpdateConnectionListWithRecreate(sorted);
             });

@@ -313,6 +313,7 @@ namespace Configs {
         _add(new configItem("disable_privilege_req", &disable_privilege_req, itemType::boolean));
         _add(new configItem("enable_tun_routing", &enable_tun_routing, itemType::boolean));
         _add(new configItem("speed_test_mode", &speed_test_mode, itemType::integer));
+        _add(new configItem("use_mozilla_certs", &use_mozilla_certs, itemType::boolean));
     }
 
     void DataStore::UpdateStartedId(int id) {

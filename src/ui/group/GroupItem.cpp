@@ -50,7 +50,7 @@ GroupItem::GroupItem(QWidget *parent, const std::shared_ptr<Configs::Group> &ent
     if (ent == nullptr) return;
 
     connect(this, &GroupItem::edit_clicked, this, &GroupItem::on_edit_clicked);
-    connect(Subscription::groupUpdater, &Subscription::GroupUpdater::asyncUpdateCallback, this, [=](int gid) { if (gid == this->ent->id) refresh_data(); });
+    connect(Subscription::groupUpdater, &Subscription::GroupUpdater::asyncUpdateCallback, this, [=,this](int gid) { if (gid == this->ent->id) refresh_data(); });
 
     refresh_data();
 }
@@ -89,7 +89,7 @@ void GroupItem::refresh_data() {
         }
     }
     runOnThread(
-        [=] {
+        [=,this] {
             adjustSize();
             item->setSizeHint(sizeHint());
             dynamic_cast<QWidget *>(parent())->adjustSize();
@@ -103,7 +103,7 @@ void GroupItem::on_update_sub_clicked() {
 
 void GroupItem::on_edit_clicked() {
     auto dialog = new DialogEditGroup(ent, parentWindow);
-    connect(dialog, &QDialog::finished, this, [=] {
+    connect(dialog, &QDialog::finished, this, [=,this] {
         if (dialog->result() == QDialog::Accepted) {
             ent->Save();
             refresh_data();

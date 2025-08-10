@@ -27,7 +27,7 @@ DialogManageGroups::DialogManageGroups(QWidget *parent) : QDialog(parent), ui(ne
         AddGroupToListIfExist(id)
     }
 
-    connect(ui->listWidget, &QListWidget::itemDoubleClicked, this, [=](QListWidgetItem *wI) {
+    connect(ui->listWidget, &QListWidget::itemDoubleClicked, this, [=,this](QListWidgetItem *wI) {
         auto w = dynamic_cast<GroupItem *>(ui->listWidget->itemWidget(wI));
         emit w->edit_clicked();
     });
