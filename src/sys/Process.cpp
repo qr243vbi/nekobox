@@ -75,7 +75,7 @@ namespace Configs_sys {
                 // Restart
                 start_profile_when_core_is_up = Configs::dataStore->started_id;
                 MW_show_log("[Fatal] " + QObject::tr("Core exited, restarting."));
-                setTimeout([=] { Restart(); }, this, 200);
+                setTimeout([=,this] { Restart(); }, this, 200);
             }
         });
     }

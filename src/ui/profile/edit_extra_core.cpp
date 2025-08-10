@@ -27,7 +27,7 @@ void EditExtraCore::onStart(std::shared_ptr<Configs::ProxyEntity> _ent) {
     ui->path_combo->addItems(Configs::profileManager->GetExtraCorePaths());
     ui->path_combo->setCurrentText(bean->extraCorePath);
 
-    connect(ui->path_button, &QPushButton::pressed, this, [=]
+    connect(ui->path_button, &QPushButton::pressed, this, [=,this]
     {
         auto f = QFileDialog::getOpenFileName();
         if (f.isEmpty())

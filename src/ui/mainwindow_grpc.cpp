@@ -46,7 +46,7 @@ void MainWindow::runURLTest(const QString& config, bool useDefault, const QStrin
 
     auto done = new QMutex;
     done->lock();
-    runOnNewThread([=]
+    runOnNewThread([=,this]
     {
         bool ok;
         while (true)
@@ -88,7 +88,7 @@ void MainWindow::runURLTest(const QString& config, bool useDefault, const QStrin
             }
             if (needRefresh)
             {
-                runOnUiThread([=]{
+                runOnUiThread([=,this]{
                     refresh_proxy_list();
                 });
             }
@@ -177,7 +177,7 @@ void MainWindow::urltest_current_group(const QList<std::shared_ptr<Configs::Prox
 
         speedtestRunning.lock();
         speedtestRunning.unlock();
-        runOnUiThread([=]{
+        runOnUiThread([=,this]{
             refresh_proxy_list();
             MW_show_log(tr("URL test finished!"));
         });
@@ -198,7 +198,7 @@ void MainWindow::url_test_current() {
     last_test_time = QTime::currentTime();
     ui->label_running->setText(tr("Testing"));
 
-    runOnNewThread([=] {
+    runOnNewThread([=,this] {
         libcore::TestReq req;
         req.test_current = true;
         req.url = Configs::dataStore->test_latency_url.toStdString();
@@ -210,7 +210,7 @@ void MainWindow::url_test_current() {
         auto latency = result.results[0].latency_ms.value();
         last_test_time = QTime::currentTime();
 
-        runOnUiThread([=] {
+        runOnUiThread([=,this] {
             if (!result.results[0].error.value().empty()) {
                 MW_show_log(QString("UrlTest error: %1").arg(QString::fromStdString(result.results[0].error.value())));
             }
@@ -259,7 +259,7 @@ void MainWindow::speedtest_current_group(const QList<std::shared_ptr<Configs::Pr
         }
 
         speedtestRunning.unlock();
-        runOnUiThread([=]{
+        runOnUiThread([=,this]{
             refresh_proxy_list();
             MW_show_log(tr("Speedtest finished!"));
         });
@@ -289,7 +289,7 @@ void MainWindow::runSpeedTest(const QString& config, bool useDefault, bool testC
     // loop query result
     auto doneMu = new QMutex;
     doneMu->lock();
-    runOnNewThread([=]
+    runOnNewThread([=,this]
     {
         QDateTime lastProxyListUpdate = QDateTime::currentDateTime();
         bool ok;
@@ -309,7 +309,7 @@ void MainWindow::runSpeedTest(const QString& config, bool useDefault, bool testC
             {
                 continue;
             }
-            runOnUiThread([=, &lastProxyListUpdate]
+            runOnUiThread([=, this, &lastProxyListUpdate]
             {
                 showSpeedtestData = true;
                 currentSptProfileName = profile->bean->name;
@@ -326,7 +326,7 @@ void MainWindow::runSpeedTest(const QString& config, bool useDefault, bool testC
                 }
             });
         }
-        runOnUiThread([=]
+        runOnUiThread([=, this]
         {
             showSpeedtestData = false;
             UpdateDataView(true);
@@ -426,7 +426,7 @@ void MainWindow::profile_start(int _id) {
         return;
     }
 
-    auto profile_start_stage2 = [=] {
+    auto profile_start_stage2 = [=, this] {
         libcore::LoadConfigReq req;
         req.core_config = QJsonObject2QString(result->coreConfig, true).toStdString();
         req.disable_stats = Configs::dataStore->disable_traffic_stats;
@@ -447,7 +447,7 @@ void MainWindow::profile_start(int _id) {
         }
         if (!error.isEmpty()) {
             if (error.contains("configure tun interface")) {
-                runOnUiThread([=] {
+                runOnUiThread([=, this] {
 
                     QMessageBox msg(
                         QMessageBox::Information,
@@ -469,7 +469,7 @@ void MainWindow::profile_start(int _id) {
                 });
                 return false;
             }
-            runOnUiThread([=] { MessageBoxWarning("LoadConfig return error", error); });
+            runOnUiThread([=,this] { MessageBoxWarning("LoadConfig return error", error); });
             return false;
         }
         //
@@ -483,7 +483,7 @@ void MainWindow::profile_start(int _id) {
         Configs::dataStore->UpdateStartedId(ent->id);
         running = ent;
 
-        runOnUiThread([=] {
+        runOnUiThread([=, this] {
             refresh_status();
             refresh_proxy_list(ent->id);
         });
@@ -505,7 +505,7 @@ void MainWindow::profile_start(int _id) {
     // check core state
     if (!Configs::dataStore->core_running) {
         runOnThread(
-            [=] {
+            [=, this] {
                 MW_show_log(tr("Try to start the config, but the core has not listened to the grpc port, so restart it..."));
                 core_process->start_profile_when_core_is_up = ent->id;
                 core_process->Restart();
@@ -518,13 +518,13 @@ void MainWindow::profile_start(int _id) {
     // timeout message
     auto restartMsgbox = new QMessageBox(QMessageBox::Question, software_name, tr("If there is no response for a long time, it is recommended to restart the software."),
                                          QMessageBox::Yes | QMessageBox::No, this);
-    connect(restartMsgbox, &QMessageBox::accepted, this, [=] { MW_dialog_message("", "RestartProgram"); });
+    connect(restartMsgbox, &QMessageBox::accepted, this, [=,this] { MW_dialog_message("", "RestartProgram"); });
     auto restartMsgboxTimer = new MessageBoxTimer(this, restartMsgbox, 5000);
 
-    runOnNewThread([=] {
+    runOnNewThread([=, this] {
         // stop current running
         if (running != nullptr) {
-            runOnUiThread([=] { profile_stop(false, true, true); });
+            runOnUiThread([=,this] { profile_stop(false, true, true); });
             sem_stopped.acquire();
         }
         // do start
@@ -534,7 +534,7 @@ void MainWindow::profile_start(int _id) {
         }
         mu_starting.unlock();
         // cancel timeout
-        runOnUiThread([=] {
+        runOnUiThread([=,this] {
             restartMsgboxTimer->cancel();
             restartMsgboxTimer->deleteLater();
             restartMsgbox->deleteLater();
@@ -571,12 +571,12 @@ void MainWindow::profile_stop(bool crash, bool sem, bool manual) {
         return;
     }
 
-    auto profile_stop_stage2 = [=] {
+    auto profile_stop_stage2 = [=,this] {
         if (!crash) {
             bool rpcOK;
             QString error = defaultClient->Stop(&rpcOK);
             if (rpcOK && !error.isEmpty()) {
-                runOnUiThread([=] { MessageBoxWarning(tr("Stop return error"), error); });
+                runOnUiThread([=,this] { MessageBoxWarning(tr("Stop return error"), error); });
                 return false;
             } else if (!rpcOK) {
                 return false;
@@ -593,7 +593,7 @@ void MainWindow::profile_stop(bool crash, bool sem, bool manual) {
     // timeout message
     auto restartMsgbox = new QMessageBox(QMessageBox::Question, software_name, tr("If there is no response for a long time, it is recommended to restart the software."),
                                          QMessageBox::Yes | QMessageBox::No, this);
-    connect(restartMsgbox, &QMessageBox::accepted, this, [=] { MW_dialog_message("", "RestartProgram"); });
+    connect(restartMsgbox, &QMessageBox::accepted, this, [=,this] { MW_dialog_message("", "RestartProgram"); });
     auto restartMsgboxTimer = new MessageBoxTimer(this, restartMsgbox, 5000);
 
     Stats::trafficLooper->loop_enabled = false;
@@ -612,7 +612,7 @@ void MainWindow::profile_stop(bool crash, bool sem, bool manual) {
     restartMsgboxTimer->deleteLater();
     restartMsgbox->deleteLater();
 
-    runOnNewThread([=] {
+    runOnNewThread([=, this] {
         // do stop
         MW_show_log(">>>>>>>> " + tr("Stopping profile %1").arg(running->bean->DisplayTypeAndName()));
         if (!profile_stop_stage2()) {
@@ -625,7 +625,7 @@ void MainWindow::profile_stop(bool crash, bool sem, bool manual) {
 
         if (sem) sem_stopped.release();
 
-        runOnUiThread([=] {
+        runOnUiThread([=, this] {
             refresh_status();
             refresh_proxy_list_impl_refresh_data(id, true);
 

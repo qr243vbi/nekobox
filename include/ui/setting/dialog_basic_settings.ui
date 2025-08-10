@@ -888,6 +888,13 @@
         </widget>
        </item>
        <item>
+        <widget class="QCheckBox" name="mozilla_cert">
+         <property name="text">
+          <string>Use Mozilla Certificate Store</string>
+         </property>
+        </widget>
+       </item>
+       <item>
         <widget class="QCheckBox" name="skip_cert">
          <property name="text">
           <string>Skip TLS certificate authentication by default (allowInsecure)</string>

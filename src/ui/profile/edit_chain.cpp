@@ -42,7 +42,7 @@ bool EditChain::onEnd() {
 
 void EditChain::on_select_profile_clicked() {
     get_edit_dialog()->hide();
-    GetMainWindow()->start_select_mode(this, [=](int id) {
+    GetMainWindow()->start_select_mode(this, [=,this](int id) {
         get_edit_dialog()->show();
         AddProfileToListIfExist(id);
     });
@@ -57,9 +57,9 @@ void EditChain::AddProfileToListIfExist(int profileId) {
         ui->listWidget->addItem(wI);
         ui->listWidget->setItemWidget(wI, w);
         // change button
-        connect(w->get_change_button(), &QPushButton::clicked, w, [=] {
+        connect(w->get_change_button(), &QPushButton::clicked, w, [=,this] {
             get_edit_dialog()->hide();
-            GetMainWindow()->start_select_mode(w, [=](int newId) {
+            GetMainWindow()->start_select_mode(w, [=,this](int newId) {
                 get_edit_dialog()->show();
                 ReplaceProfile(w, newId);
             });

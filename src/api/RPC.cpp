@@ -5,7 +5,7 @@
 namespace API {
 
     Client::Client(std::function<void(const QString &)> onError, const QString &host, int port) {
-        this->make_rpc_client = [=]() { return std::make_unique<protorpc::Client>(host.toStdString().c_str(), port); };
+        this->make_rpc_client = [=,this]() { return std::make_unique<protorpc::Client>(host.toStdString().c_str(), port); };
         this->onError = std::move(onError);
     }
 

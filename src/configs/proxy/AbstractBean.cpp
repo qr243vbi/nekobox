@@ -53,7 +53,7 @@ namespace Configs {
             onFinished();
             return;
         }
-        QHostInfo::lookupHost(serverAddress, QApplication::instance(), [=](const QHostInfo &host) {
+        QHostInfo::lookupHost(serverAddress, QApplication::instance(), [=,this](const QHostInfo &host) {
             auto addr = host.addresses();
             if (!addr.isEmpty()) {
                 auto domain = serverAddress;

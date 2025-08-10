@@ -104,6 +104,7 @@ namespace Configs {
         bool skip_cert = false;
         QString utlsFingerprint = "";
         bool disable_run_admin = false; // windows only
+        bool use_mozilla_certs = false;
 
         // Remember
         QStringList remember_spmode = {};

@@ -26,7 +26,7 @@ void ProxyItem::refresh_data() {
     ui->test_result->setText(ent->DisplayTestResult());
 
     runOnThread(
-        [=] {
+        [=,this] {
             adjustSize();
             item->setSizeHint(sizeHint());
             dynamic_cast<QWidget *>(parent())->adjustSize();

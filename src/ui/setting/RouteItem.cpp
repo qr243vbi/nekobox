@@ -72,7 +72,7 @@ RouteItem::RouteItem(QWidget *parent, const std::shared_ptr<Configs::RoutingChai
     ui->rule_attr_data->layout()->addWidget(rule_set_editor);
     ui->rule_attr_data->adjustSize();
     rule_set_editor->hide();
-    connect(rule_set_editor, &QPlainTextEdit::textChanged, this, [=]{
+    connect(rule_set_editor, &QPlainTextEdit::textChanged, this, [=,this]{
         if (currentIndex == -1) return;
         auto currentVal = rule_set_editor->toPlainText().split('\n');
         chain->Rules[currentIndex]->set_field_value(ui->rule_attr->currentText(), currentVal);
@@ -145,7 +145,7 @@ RouteItem::RouteItem(QWidget *parent, const std::shared_ptr<Configs::RoutingChai
     simpleBlock->setPlainText(chain->GetSimpleRules(Configs::block));
     simpleProxy->setPlainText(chain->GetSimpleRules(Configs::proxy));
 
-    connect(ui->tabWidget->tabBar(), &QTabBar::currentChanged, this, [=]()
+    connect(ui->tabWidget->tabBar(), &QTabBar::currentChanged, this, [=,this]()
     {
         if (ui->tabWidget->tabBar()->currentIndex() == 1)
         {
@@ -155,7 +155,7 @@ RouteItem::RouteItem(QWidget *parent, const std::shared_ptr<Configs::RoutingChai
             res += chain->UpdateSimpleRules(simpleProxy->toPlainText(), Configs::proxy);
             if (!res.isEmpty())
             {
-                runOnUiThread([=]
+                runOnUiThread([=,this]
                 {
                     MessageBoxWarning(tr("Invalid rules"), tr("Some rules could not be added:\n") + res);
                 });
@@ -174,15 +174,15 @@ RouteItem::RouteItem(QWidget *parent, const std::shared_ptr<Configs::RoutingChai
         }
     });
 
-    connect(ui->howtouse_button, &QPushButton::clicked, this, [=]()
+    connect(ui->howtouse_button, &QPushButton::clicked, this, [=,this]()
     {
-        runOnUiThread([=]
+        runOnUiThread([=,this]
         {
             MessageBoxInfo(tr("Simple rule manual"), Configs::Information::SimpleRuleInfo);
         });
     });
 
-    connect(ui->route_import_json, &QPushButton::clicked, this, [=] {
+    connect(ui->route_import_json, &QPushButton::clicked, this, [=,this] {
         auto w = new QDialog(this);
         w->setWindowTitle("Import JSON Array");
         w->setWindowModality(Qt::ApplicationModal);
@@ -209,7 +209,7 @@ RouteItem::RouteItem(QWidget *parent, const std::shared_ptr<Configs::RoutingChai
         buttons->setStandardButtons(QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
         layout->addWidget(buttons, line, 0);
 
-        connect(buttons, &QDialogButtonBox::accepted, w, [=]{
+        connect(buttons, &QDialogButtonBox::accepted, w, [=,this]{
            auto err = new QString;
            auto parsed = Configs::RoutingChain::parseJsonArray(QString2QJsonArray(tEdit->toPlainText()), err);
            if (!err->isEmpty()) {
@@ -229,13 +229,13 @@ RouteItem::RouteItem(QWidget *parent, const std::shared_ptr<Configs::RoutingChai
         w->deleteLater();
     });
 
-    connect(ui->rule_name, &QLineEdit::textChanged, this, [=](const QString& text) {
+    connect(ui->rule_name, &QLineEdit::textChanged, this, [=,this](const QString& text) {
         if (currentIndex == -1) return;
         chain->Rules[currentIndex]->name = QString(text);
         updateRouteItemsView();
     });
 
-    connect(ui->rule_attr_selector, &QComboBox::currentTextChanged, this, [=](const QString& text){
+    connect(ui->rule_attr_selector, &QComboBox::currentTextChanged, this, [=,this](const QString& text){
        if (currentIndex == -1) return;
        if (ui->rule_attr->currentText() == "outbound")
        {
@@ -247,33 +247,33 @@ RouteItem::RouteItem(QWidget *parent, const std::shared_ptr<Configs::RoutingChai
        updateRulePreview();
     });
 
-    connect(ui->rule_attr_text, &QPlainTextEdit::textChanged, this, [=] {
+    connect(ui->rule_attr_text, &QPlainTextEdit::textChanged, this, [=,this] {
         if (currentIndex == -1) return;
         auto currentVal = ui->rule_attr_text->toPlainText().split('\n');
         chain->Rules[currentIndex]->set_field_value(ui->rule_attr->currentText(), currentVal);
         updateRulePreview();
     });
 
-    connect(ui->route_items, &QListWidget::currentRowChanged, this, [=](const int idx) {
+    connect(ui->route_items, &QListWidget::currentRowChanged, this, [=,this](const int idx) {
         if (idx == -1) return;
         currentIndex = idx;
         updateRuleSection();
     });
 
-    connect(ui->rule_attr, &QComboBox::currentTextChanged, this, [=](const QString& text){
+    connect(ui->rule_attr, &QComboBox::currentTextChanged, this, [=,this](const QString& text){
         updateRuleSection();
     });
 
-    connect(ui->buttonBox, &QDialogButtonBox::accepted, this, [=]{
+    connect(ui->buttonBox, &QDialogButtonBox::accepted, this, [=,this]{
         accept();
     });
-    connect(ui->buttonBox, &QDialogButtonBox::rejected, this, [=]{
+    connect(ui->buttonBox, &QDialogButtonBox::rejected, this, [=,this]{
        QDialog::reject();
     });
 
     deleteShortcut = new QShortcut(QKeySequence(Qt::Key_Delete), this);
 
-    connect(deleteShortcut, &QShortcut::activated, this, [=]{
+    connect(deleteShortcut, &QShortcut::activated, this, [=,this]{
         on_delete_route_item_clicked();
     });
 
@@ -314,7 +314,7 @@ void RouteItem::accept() {
     res += chain->UpdateSimpleRules(simpleProxy->toPlainText(), Configs::proxy);
     if (!res.isEmpty())
     {
-        runOnUiThread([=]
+        runOnUiThread([=,this]
         {
             MessageBoxWarning(tr("Invalid rules"), tr("Some rules could not be added, fix them before saving:\n") + res);
         });

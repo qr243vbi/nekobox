@@ -668,7 +668,7 @@ namespace Subscription {
                 updated_order += ent;
             }
         } catch (const fkyaml::exception &ex) {
-            runOnUiThread([=] {
+            runOnUiThread([=,this] {
                 MessageBoxWarning("YAML Exception", ex.what());
             });
         }
@@ -695,7 +695,7 @@ namespace Subscription {
             if (items.indexOf(a) == 1) createNewGroup = true;
         }
 
-        runOnNewThread([=] {
+        runOnNewThread([=,this] {
             auto gid = _sub_gid;
             if (createNewGroup) {
                 auto group = Configs::ProfileManager::NewGroup();

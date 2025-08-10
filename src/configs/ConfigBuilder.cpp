@@ -932,6 +932,7 @@ namespace Configs {
         }
 
         status->result->coreConfig.insert("log", QJsonObject{{"level", dataStore->log_level}});
+        status->result->coreConfig.insert("certificate", QJsonObject{{"store", dataStore->use_mozilla_certs ? "mozilla" : "system"}});
         status->result->coreConfig.insert("dns", dns);
         status->result->coreConfig.insert("inbounds", status->inbounds);
         status->result->coreConfig.insert("outbounds", status->outbounds);

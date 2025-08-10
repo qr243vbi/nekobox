@@ -246,7 +246,7 @@ namespace Configs {
             ent->fn = QString("profiles/%1.json").arg(ent->id);
         }
         group->Save();
-        runOnNewThread([=]
+        runOnNewThread([=,this]
         {
            for (const auto& ent : ents) ent->Save();
         });
@@ -294,7 +294,7 @@ namespace Configs {
         }
         profilesIdOrder = newOrder;
 
-        runOnNewThread([=]
+        runOnNewThread([=,this]
         {
            for (int id : deleted_ids) QFile(QString("profiles/%1.json").arg(id)).remove();
         });
