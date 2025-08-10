@@ -141,6 +141,9 @@ namespace Configs
         stream->reality_pbk = obj["tls"].toObject()["reality"].toObject()["public_key"].toString();
         stream->reality_sid = obj["tls"].toObject()["reality"].toObject()["short_id"].toString();
         stream->utlsFingerprint = obj["tls"].toObject()["utls"].toObject()["fingerprint"].toString();
+        stream->enable_tls_fragment = obj["tls"].toObject()["fragment"].toBool();
+        stream->tls_fragment_fallback_delay = obj["tls"].toObject()["fragment_fallback_delay"].toString();
+        stream->enable_tls_record_fragment = obj["tls"].toObject()["record_fragment"].toBool();
         stream->sni = obj["tls"].toObject()["server_name"].toString();
         stream->alpn = obj["tls"].toObject()["alpn"].isArray() ? QJsonArray2QListString(obj["tls"].toObject()["alpn"].toArray()).join(",") : obj["tls"].toObject()["alpn"].toString();
         stream->allow_insecure = obj["tls"].toObject()["insecure"].toBool();
@@ -183,6 +186,9 @@ namespace Configs
         stream->reality_pbk = obj["tls"].toObject()["reality"].toObject()["public_key"].toString();
         stream->reality_sid = obj["tls"].toObject()["reality"].toObject()["short_id"].toString();
         stream->utlsFingerprint = obj["tls"].toObject()["utls"].toObject()["fingerprint"].toString();
+        stream->enable_tls_fragment = obj["tls"].toObject()["fragment"].toBool();
+        stream->tls_fragment_fallback_delay = obj["tls"].toObject()["fragment_fallback_delay"].toString();
+        stream->enable_tls_record_fragment = obj["tls"].toObject()["record_fragment"].toBool();
         stream->sni = obj["tls"].toObject()["server_name"].toString();
         stream->alpn = obj["tls"].toObject()["alpn"].isArray() ? QJsonArray2QListString(obj["tls"].toObject()["alpn"].toArray()).join(",") : obj["tls"].toObject()["alpn"].toString();
         stream->allow_insecure = obj["tls"].toObject()["insecure"].toBool();

@@ -134,6 +134,12 @@ DialogEditProfile::DialogEditProfile(const QString &_type, int profileOrGroupId,
     });
     emit ui->security->currentTextChanged(ui->security->currentText());
 
+    // for fragment
+    connect(ui->tls_frag, &QCheckBox::checkStateChanged, this, [=](bool state)
+    {
+        ui->tls_frag_fall_delay->setEnabled(state);
+    });
+
     // mux setting changed
     connect(ui->multiplex, &QComboBox::currentTextChanged, this, [=](const QString &txt) {
         if (txt == "Off") {
@@ -287,6 +293,10 @@ void DialogEditProfile::typeSelected(const QString &newType) {
         } else {
             ui->utlsFingerprint->setCurrentText(stream->utlsFingerprint);
         }
+        ui->tls_frag->setChecked(stream->enable_tls_fragment);
+        ui->tls_frag_fall_delay->setEnabled(stream->enable_tls_fragment);
+        ui->tls_frag_fall_delay->setText(stream->tls_fragment_fallback_delay);
+        ui->tls_rec_frag->setChecked(stream->enable_tls_record_fragment);
         ui->insecure->setChecked(stream->allow_insecure);
         ui->header_type->setCurrentText(stream->header_type);
         ui->headers->setText(stream->headers);
@@ -423,6 +433,9 @@ bool DialogEditProfile::onEnd() {
         stream->sni = ui->sni->text();
         stream->alpn = ui->alpn->text();
         stream->utlsFingerprint = ui->utlsFingerprint->currentText();
+        stream->enable_tls_fragment = ui->tls_frag->isChecked();
+        stream->tls_fragment_fallback_delay = ui->tls_frag_fall_delay->text();
+        stream->enable_tls_record_fragment = ui->tls_rec_frag->isChecked();
         stream->allow_insecure = ui->insecure->isChecked();
         stream->headers = ui->headers->text();
         stream->header_type = ui->header_type->currentText();

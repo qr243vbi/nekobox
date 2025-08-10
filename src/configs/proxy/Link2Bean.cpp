@@ -71,8 +71,11 @@ namespace Configs {
         stream->reality_pbk = GetQueryValue(query, "pbk", "");
         stream->reality_sid = GetQueryValue(query, "sid", "");
         stream->utlsFingerprint = GetQueryValue(query, "fp", "");
+        if (query.queryItemValue("fragment") == "1") stream->enable_tls_fragment = true;
+        stream->tls_fragment_fallback_delay = query.queryItemValue("fragment_fallback_delay");
+        if (query.queryItemValue("record_fragment") == "1") stream->enable_tls_record_fragment = true;
         if (stream->utlsFingerprint.isEmpty()) {
-            stream->utlsFingerprint = Configs::dataStore->utlsFingerprint;
+            stream->utlsFingerprint = dataStore->utlsFingerprint;
         }
         if (stream->security.isEmpty()) {
             if (!sni1.isEmpty() || !sni2.isEmpty()) stream->security = "tls";
@@ -224,6 +227,9 @@ namespace Configs {
             if (stream->utlsFingerprint.isEmpty()) {
                 stream->utlsFingerprint = Configs::dataStore->utlsFingerprint;
             }
+            if (query.queryItemValue("fragment") == "1") stream->enable_tls_fragment = true;
+            stream->tls_fragment_fallback_delay = query.queryItemValue("fragment_fallback_delay");
+            if (query.queryItemValue("record_fragment") == "1") stream->enable_tls_record_fragment = true;
 
             // mux
             auto mux_str = GetQueryValue(query, "mux", "");

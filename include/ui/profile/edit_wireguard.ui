@@ -6,115 +6,121 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>657</height>
+    <width>640</width>
+    <height>727</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>EditWireguard</string>
   </property>
-  <layout class="QFormLayout" name="formLayout_2">
-   <item row="0" column="0">
-    <widget class="QLabel" name="private_key_l">
-     <property name="text">
-      <string>Private Key</string>
-     </property>
+  <layout class="QHBoxLayout" name="horizontalLayout">
+   <item>
+    <widget class="QWidget" name="widget" native="true">
+     <layout class="QFormLayout" name="formLayout_3">
+      <item row="0" column="0">
+       <widget class="QLabel" name="private_key_l">
+        <property name="text">
+         <string>Private Key</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QLineEdit" name="private_key"/>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="public_key_l">
+        <property name="text">
+         <string>Public Key</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QLineEdit" name="public_key"/>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="preshared_key_l">
+        <property name="text">
+         <string>Pre Shared Key</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QLineEdit" name="preshared_key"/>
+      </item>
+      <item row="3" column="0">
+       <widget class="QLabel" name="reserved_l">
+        <property name="text">
+         <string>Reserved</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="1">
+       <widget class="QLineEdit" name="reserved"/>
+      </item>
+      <item row="4" column="0">
+       <widget class="QLabel" name="label">
+        <property name="toolTip">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;persistent_keepalive_interval in seconds&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="whatsThis">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="text">
+         <string>Persistent Keepalive</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="1">
+       <widget class="QLineEdit" name="persistent_keepalive"/>
+      </item>
+      <item row="5" column="0">
+       <widget class="QLabel" name="local_addr_l">
+        <property name="toolTip">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;comma seperated list of subnets&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="text">
+         <string>Local Address</string>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="1">
+       <widget class="QLineEdit" name="local_addr"/>
+      </item>
+      <item row="6" column="0">
+       <widget class="QLabel" name="mtu_l">
+        <property name="text">
+         <string>MTU</string>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="1">
+       <widget class="QLineEdit" name="mtu">
+        <property name="text">
+         <string>1420</string>
+        </property>
+       </widget>
+      </item>
+      <item row="7" column="0">
+       <widget class="QLabel" name="workers_l">
+        <property name="text">
+         <string>Workers</string>
+        </property>
+       </widget>
+      </item>
+      <item row="7" column="1">
+       <widget class="QLineEdit" name="workers"/>
+      </item>
+      <item row="8" column="1">
+       <widget class="QCheckBox" name="sys_ifc">
+        <property name="text">
+         <string>Use System Interface</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
     </widget>
    </item>
-   <item row="0" column="1">
-    <widget class="QLineEdit" name="private_key"/>
-   </item>
-   <item row="1" column="0">
-    <widget class="QLabel" name="public_key_l">
-     <property name="text">
-      <string>Public Key</string>
-     </property>
-    </widget>
-   </item>
-   <item row="1" column="1">
-    <widget class="QLineEdit" name="public_key"/>
-   </item>
-   <item row="2" column="0">
-    <widget class="QLabel" name="preshared_key_l">
-     <property name="text">
-      <string>Pre Shared Key</string>
-     </property>
-    </widget>
-   </item>
-   <item row="2" column="1">
-    <widget class="QLineEdit" name="preshared_key"/>
-   </item>
-   <item row="3" column="0">
-    <widget class="QLabel" name="reserved_l">
-     <property name="text">
-      <string>Reserved</string>
-     </property>
-    </widget>
-   </item>
-   <item row="3" column="1">
-    <widget class="QLineEdit" name="reserved"/>
-   </item>
-   <item row="4" column="0">
-    <widget class="QLabel" name="label">
-     <property name="toolTip">
-      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;persistent_keepalive_interval in seconds&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-     </property>
-     <property name="whatsThis">
-      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-     </property>
-     <property name="text">
-      <string>Persistent Keepalive</string>
-     </property>
-    </widget>
-   </item>
-   <item row="4" column="1">
-    <widget class="QLineEdit" name="persistent_keepalive"/>
-   </item>
-   <item row="5" column="0">
-    <widget class="QLabel" name="local_addr_l">
-     <property name="toolTip">
-      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;comma seperated list of subnets&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-     </property>
-     <property name="text">
-      <string>Local Address</string>
-     </property>
-    </widget>
-   </item>
-   <item row="5" column="1">
-    <widget class="QLineEdit" name="local_addr"/>
-   </item>
-   <item row="6" column="0">
-    <widget class="QLabel" name="mtu_l">
-     <property name="text">
-      <string>MTU</string>
-     </property>
-    </widget>
-   </item>
-   <item row="6" column="1">
-    <widget class="QLineEdit" name="mtu">
-     <property name="text">
-      <string>1420</string>
-     </property>
-    </widget>
-   </item>
-   <item row="7" column="0">
-    <widget class="QLabel" name="workers_l">
-     <property name="text">
-      <string>Workers</string>
-     </property>
-    </widget>
-   </item>
-   <item row="7" column="1">
-    <widget class="QLineEdit" name="workers"/>
-   </item>
-   <item row="8" column="1">
-    <widget class="QCheckBox" name="sys_ifc">
-     <property name="text">
-      <string>Use System Interface</string>
-     </property>
-    </widget>
-   </item>
-   <item row="9" column="0" colspan="2">
+   <item>
     <widget class="QGroupBox" name="groupBox">
      <property name="title">
       <string>Amenzia Settings</string>
@@ -127,9 +133,6 @@
         </property>
        </widget>
       </item>
-      <item row="1" column="1">
-       <widget class="QLineEdit" name="junk_packet_count"/>
-      </item>
       <item row="1" column="0">
        <widget class="QLabel" name="label_2">
         <property name="text">
@@ -137,8 +140,8 @@
         </property>
        </widget>
       </item>
-      <item row="2" column="1">
-       <widget class="QLineEdit" name="junk_packet_min_size"/>
+      <item row="1" column="1">
+       <widget class="QLineEdit" name="junk_packet_count"/>
       </item>
       <item row="2" column="0">
        <widget class="QLabel" name="label_3">
@@ -146,6 +149,9 @@
          <string>Junk Packet Min Size</string>
         </property>
        </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QLineEdit" name="junk_packet_min_size"/>
       </item>
       <item row="3" column="0">
        <widget class="QLabel" name="label_4">

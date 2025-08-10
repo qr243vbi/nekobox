@@ -39,6 +39,9 @@ namespace Configs {
         if (!stream->alpn.isEmpty()) query.addQueryItem("alpn", stream->alpn);
         if (stream->allow_insecure) query.addQueryItem("allowInsecure", "1");
         if (!stream->utlsFingerprint.isEmpty()) query.addQueryItem("fp", stream->utlsFingerprint);
+        if (stream->enable_tls_fragment) query.addQueryItem("fragment", "1");
+        if (!stream->tls_fragment_fallback_delay.isEmpty()) query.addQueryItem("fragment_fallback_delay", stream->tls_fragment_fallback_delay);
+        if (stream->enable_tls_record_fragment) query.addQueryItem("record_fragment", "1");
 
         if (stream->security == "reality") {
             query.addQueryItem("pbk", stream->reality_pbk);
@@ -145,6 +148,9 @@ namespace Configs {
         } else {
             query.addQueryItem("fp", stream->utlsFingerprint);
         }
+        if (stream->enable_tls_fragment) query.addQueryItem("fragment", "1");
+        if (!stream->tls_fragment_fallback_delay.isEmpty()) query.addQueryItem("fragment_fallback_delay", stream->tls_fragment_fallback_delay);
+        if (stream->enable_tls_record_fragment) query.addQueryItem("record_fragment", "1");
 
         if (stream->security == "reality") {
             query.addQueryItem("pbk", stream->reality_pbk);

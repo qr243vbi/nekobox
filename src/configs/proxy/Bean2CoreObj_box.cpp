@@ -12,8 +12,7 @@ namespace Configs {
                 auto pathWithoutEd = SubStrBefore(path, "?ed=");
                 if (!pathWithoutEd.isEmpty()) transport["path"] = pathWithoutEd;
                 if (pathWithoutEd != path) {
-                    auto ed = SubStrAfter(path, "?ed=").toInt();
-                    if (ed > 0) {
+                    if (auto ed = SubStrAfter(path, "?ed=").toInt(); ed > 0) {
                         transport["max_early_data"] = ed;
                         transport["early_data_header_name"] = "Sec-WebSocket-Protocol";
                     }
@@ -74,13 +73,18 @@ namespace Configs {
             if (!alpn.trimmed().isEmpty()) {
                 tls["alpn"] = QListStr2QJsonArray(alpn.split(","));
             }
-            QString fp = utlsFingerprint;
-            if (!fp.isEmpty()) {
+            if (QString fp = utlsFingerprint; !fp.isEmpty()) {
                 tls["utls"] = QJsonObject{
                     {"enabled", true},
                     {"fingerprint", fp},
                 };
             }
+            if (enable_tls_fragment)
+            {
+                tls["fragment"] = enable_tls_fragment;
+                if (!tls_fragment_fallback_delay.isEmpty()) tls["fragment_fallback_delay"] = tls_fragment_fallback_delay;
+            }
+            if (enable_tls_record_fragment) tls["record_fragment"] = enable_tls_record_fragment;
             outbound->insert("tls", tls);
         } else if (security == "reality") {
             QJsonObject tls{{"enabled", true}};
@@ -105,6 +109,12 @@ namespace Configs {
                         {"fingerprint", fp},
                     };
             }
+            if (enable_tls_fragment)
+            {
+                tls["fragment"] = enable_tls_fragment;
+                if (!tls_fragment_fallback_delay.isEmpty()) tls["fragment_fallback_delay"] = tls_fragment_fallback_delay;
+            }
+            if (enable_tls_record_fragment) tls["record_fragment"] = enable_tls_record_fragment;
             outbound->insert("tls", tls);
         }
 
@@ -277,7 +287,7 @@ namespace Configs {
 
         auto tun_name = "throne-wg";
 #ifdef Q_OS_MACOS
-        tun_name = "uwg9";
+        tun_name = "";
 #endif
 
         QJsonObject peer{
