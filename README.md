@@ -18,6 +18,9 @@ Apple platforms have a very strict security policy and since Throne does not hav
 - [git](https://aur.archlinux.org/packages/throne-git)
 - [bin](https://aur.archlinux.org/packages/throne-bin)
 
+### RPM repository
+[Throne RPM repository](https://parhelia512.github.io/) for Fedora/RHEL and openSUSE/SLE.
+
 ## Supported protocols
 
 - SOCKS
