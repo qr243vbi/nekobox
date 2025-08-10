@@ -20,6 +20,9 @@ namespace Configs {
         QString alpn = "";
         QString certificate = "";
         QString utlsFingerprint = "";
+        bool enable_tls_fragment = false;
+        QString tls_fragment_fallback_delay;
+        bool enable_tls_record_fragment = false;
         bool allow_insecure = false;
         // ws early data
         QString ws_early_data_name = "";
@@ -44,6 +47,9 @@ namespace Configs {
             _add(new configItem("ed_name", &ws_early_data_name, itemType::string));
             _add(new configItem("ed_len", &ws_early_data_length, itemType::integer));
             _add(new configItem("utls", &utlsFingerprint, itemType::string));
+            _add(new configItem("tls_frag", &enable_tls_fragment, itemType::boolean));
+            _add(new configItem("tls_frag_fall_delay", &tls_fragment_fallback_delay, itemType::string));
+            _add(new configItem("tls_record_frag", &enable_tls_record_fragment, itemType::boolean));
             _add(new configItem("pbk", &reality_pbk, itemType::string));
             _add(new configItem("sid", &reality_sid, itemType::string));
         }
