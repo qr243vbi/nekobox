@@ -33,7 +33,9 @@ namespace Configs {
         if (!name.isEmpty()) url.setFragment(name);
 
         //  security
-        query.addQueryItem("security", stream->security == "" ? "none" : stream->security);
+        auto security = stream->security;
+        if (security == "tls" && !stream->reality_pbk.trimmed().isEmpty()) security = "reality";
+        query.addQueryItem("security", security == "" ? "none" : security);
 
         if (!stream->sni.isEmpty()) query.addQueryItem("sni", stream->sni);
         if (!stream->alpn.isEmpty()) query.addQueryItem("alpn", stream->alpn);
@@ -43,7 +45,7 @@ namespace Configs {
         if (!stream->tls_fragment_fallback_delay.isEmpty()) query.addQueryItem("fragment_fallback_delay", stream->tls_fragment_fallback_delay);
         if (stream->enable_tls_record_fragment) query.addQueryItem("record_fragment", "1");
 
-        if (stream->security == "reality") {
+        if (security == "reality") {
             query.addQueryItem("pbk", stream->reality_pbk);
             if (!stream->reality_sid.isEmpty()) query.addQueryItem("sid", stream->reality_sid);
         }
@@ -62,7 +64,9 @@ namespace Configs {
         if (!name.isEmpty()) url.setFragment(name);
 
         //  security
-        query.addQueryItem("security", stream->security == "" ? "none" : stream->security);
+        auto security = stream->security;
+        if (security == "tls" && !stream->reality_pbk.trimmed().isEmpty()) security = "reality";
+        query.addQueryItem("security", security == "" ? "none" : security);
 
         if (!stream->sni.isEmpty()) query.addQueryItem("sni", stream->sni);
         if (!stream->alpn.isEmpty()) query.addQueryItem("alpn", stream->alpn);
@@ -72,7 +76,7 @@ namespace Configs {
         if (!stream->tls_fragment_fallback_delay.isEmpty()) query.addQueryItem("fragment_fallback_delay", stream->tls_fragment_fallback_delay);
         if (stream->enable_tls_record_fragment) query.addQueryItem("record_fragment", "1");
 
-        if (stream->security == "reality") {
+        if (security == "reality") {
             query.addQueryItem("pbk", stream->reality_pbk);
             if (!stream->reality_sid.isEmpty()) query.addQueryItem("sid", stream->reality_sid);
         }
@@ -168,7 +172,9 @@ namespace Configs {
         query.addQueryItem("encryption", security);
 
         //  security
-        query.addQueryItem("security", stream->security == "" ? "none" : stream->security);
+        auto security = stream->security;
+        if (security == "tls" && !stream->reality_pbk.trimmed().isEmpty()) security = "reality";
+        query.addQueryItem("security", security == "" ? "none" : security);
 
         if (!stream->sni.isEmpty()) query.addQueryItem("sni", stream->sni);
         if (stream->allow_insecure) query.addQueryItem("allowInsecure", "1");
@@ -181,7 +187,7 @@ namespace Configs {
         if (!stream->tls_fragment_fallback_delay.isEmpty()) query.addQueryItem("fragment_fallback_delay", stream->tls_fragment_fallback_delay);
         if (stream->enable_tls_record_fragment) query.addQueryItem("record_fragment", "1");
 
-        if (stream->security == "reality") {
+        if (security == "reality") {
             query.addQueryItem("pbk", stream->reality_pbk);
             if (!stream->reality_sid.isEmpty()) query.addQueryItem("sid", stream->reality_sid);
         }

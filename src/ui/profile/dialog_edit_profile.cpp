@@ -116,17 +116,6 @@ DialogEditProfile::DialogEditProfile(const QString &_type, int profileOrGroupId,
         if (txt == "tls") {
             ui->security_box->setVisible(true);
             ui->tls_camouflage_box->setVisible(true);
-            ui->reality_pbk->setVisible(false);
-            ui->reality_pbk_l->setVisible(false);
-            ui->reality_sid->setVisible(false);
-            ui->reality_sid_l->setVisible(false);
-        } else if (txt == "reality") {
-            ui->security_box->setVisible(true);
-            ui->tls_camouflage_box->setVisible(true);
-            ui->reality_pbk->setVisible(true);
-            ui->reality_pbk_l->setVisible(true);
-            ui->reality_sid->setVisible(true);
-            ui->reality_sid_l->setVisible(true);
         } else {
             ui->security_box->setVisible(false);
             ui->tls_camouflage_box->setVisible(false);

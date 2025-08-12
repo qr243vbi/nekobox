@@ -135,10 +135,6 @@ namespace Configs
         stream->packet_encoding = obj["packet_encoding"].toString();
         mux_state = obj["multiplex"].isObject() ? (obj["multiplex"].toObject()["enabled"].toBool() ? 1 : 2) : 0;
         stream->security = obj["tls"].isObject() ? "tls" : "";
-        if (obj["tls"].toObject()["reality"].toObject()["enabled"].toBool())
-        {
-            stream->security = "reality";
-        }
         stream->reality_pbk = obj["tls"].toObject()["reality"].toObject()["public_key"].toString();
         stream->reality_sid = obj["tls"].toObject()["reality"].toObject()["short_id"].toString();
         stream->utlsFingerprint = obj["tls"].toObject()["utls"].toObject()["fingerprint"].toString();
@@ -180,10 +176,6 @@ namespace Configs
         stream->packet_encoding = obj["packet_encoding"].toString();
         mux_state = obj["multiplex"].isObject() ? (obj["multiplex"].toObject()["enabled"].toBool() ? 1 : 2) : 0;
         stream->security = obj["tls"].isObject() ? "tls" : "";
-        if (obj["tls"].toObject()["reality"].toObject()["enabled"].toBool())
-        {
-            stream->security = "reality";
-        }
         stream->reality_pbk = obj["tls"].toObject()["reality"].toObject()["public_key"].toString();
         stream->reality_sid = obj["tls"].toObject()["reality"].toObject()["short_id"].toString();
         stream->utlsFingerprint = obj["tls"].toObject()["utls"].toObject()["fingerprint"].toString();
@@ -224,10 +216,6 @@ namespace Configs
         idle_session_timeout = obj["idle_session_timeout"].toInt();
         min_idle_session = obj["min_idle_session"].toInt();
         stream->security = obj["tls"].isObject() ? "tls" : "";
-        if (obj["tls"].toObject()["reality"].toObject()["enabled"].toBool())
-        {
-            stream->security = "reality";
-        }
         stream->reality_pbk = obj["tls"].toObject()["reality"].toObject()["public_key"].toString();
         stream->reality_sid = obj["tls"].toObject()["reality"].toObject()["short_id"].toString();
         stream->utlsFingerprint = obj["tls"].toObject()["utls"].toObject()["fingerprint"].toString();
