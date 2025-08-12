@@ -5,7 +5,7 @@
 #include <include/configs/proxy/SocksHttpBean.hpp>
 #include <include/configs/proxy/TrojanVLESSBean.hpp>
 #include <include/configs/proxy/VMessBean.hpp>
-#include <include/configs/proxy/AnyTlsBean.hpp>
+#include <include/configs/proxy/AnyTLSBean.hpp>
 #include <include/configs/proxy/WireguardBean.h>
 
 #include "include/configs/proxy/ExtraCore.h"
@@ -214,7 +214,7 @@ namespace Configs
         return true;
     }
 
-    bool AnyTlsBean::TryParseJson(const QJsonObject& obj)
+    bool AnyTLSBean::TryParseJson(const QJsonObject& obj)
     {
         name = obj["tag"].toString();
         serverAddress = obj["server"].toString();
@@ -267,7 +267,7 @@ namespace Configs
         transport_packet_magic_header = obj["transport_packet_magic_header"].toInt();
         if (junk_packet_count > 0 || junk_packet_min_size > 0 || junk_packet_max_size > 0)
         {
-            enable_amenzia = true;
+            enable_amnezia = true;
         }
 
         return true;

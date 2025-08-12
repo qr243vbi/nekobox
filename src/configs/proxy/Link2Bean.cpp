@@ -42,7 +42,7 @@ namespace Configs {
         return !serverAddress.isEmpty();
     }
 
-    bool AnyTlsBean::TryParseLink(const QString &link) {
+    bool AnyTLSBean::TryParseLink(const QString &link) {
         auto url = QUrl(link);
         if (!url.isValid()) return false;
         auto query = GetQuery(url);
@@ -406,7 +406,7 @@ namespace Configs {
         useSystemInterface = query.queryItemValue("use_system_interface") == "true";
         workerCount = query.queryItemValue("workers").toInt();
 
-        enable_amenzia = query.queryItemValue("enable_amenzia") == "true";
+        enable_amnezia = query.queryItemValue("enable_amnezia") == "true";
         junk_packet_count = query.queryItemValue("junk_packet_count").toInt();
         junk_packet_min_size = query.queryItemValue("junk_packet_min_size").toInt();
         junk_packet_max_size = query.queryItemValue("junk_packet_max_size").toInt();

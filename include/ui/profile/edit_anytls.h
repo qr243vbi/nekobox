@@ -6,23 +6,23 @@
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
-    class EditAnyTls;
+    class EditAnyTLS;
 }
 QT_END_NAMESPACE
 
-class EditAnyTls : public QWidget, public ProfileEditor {
+class EditAnyTLS : public QWidget, public ProfileEditor {
     Q_OBJECT
 
 public:
-    explicit EditAnyTls(QWidget *parent = nullptr);
+    explicit EditAnyTLS(QWidget *parent = nullptr);
 
-    ~EditAnyTls() override;
+    ~EditAnyTLS() override;
 
     void onStart(std::shared_ptr<Configs::ProxyEntity> _ent) override;
 
     bool onEnd() override;
 
 private:
-    Ui::EditAnyTls *ui;
+    Ui::EditAnyTLS *ui;
     std::shared_ptr<Configs::ProxyEntity> ent;
 };

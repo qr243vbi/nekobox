@@ -18,7 +18,7 @@ namespace Configs {
 
     class QUICBean;
 
-    class AnyTlsBean;
+    class AnyTLSBean;
 
     class WireguardBean;
 
@@ -78,8 +78,8 @@ namespace Configs {
             return (Configs::QUICBean *) bean.get();
         };
 
-        [[nodiscard]] Configs::AnyTlsBean *AnyTlsBean() const {
-            return (Configs::AnyTlsBean *) bean.get();
+        [[nodiscard]] Configs::AnyTLSBean *AnyTLSBean() const {
+            return (Configs::AnyTLSBean *) bean.get();
         };
 
         [[nodiscard]] Configs::WireguardBean *WireguardBean() const {
