@@ -236,7 +236,7 @@ void DialogEditProfile::typeSelected(const QString &newType) {
         innerWidget = _innerWidget;
         innerEditor = _innerWidget;
     } else if (type == "anytls") {
-        auto _innerWidget = new EditAnyTls(this);
+        auto _innerWidget = new EditAnyTLS(this);
         innerWidget = _innerWidget;
         innerEditor = _innerWidget;
     } else if (type == "wireguard") {

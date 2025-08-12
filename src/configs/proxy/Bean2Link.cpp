@@ -23,7 +23,7 @@ namespace Configs {
         return url.toString(QUrl::FullyEncoded);
     }
 
-    QString AnyTlsBean::ToShareLink() {
+    QString AnyTLSBean::ToShareLink() {
         QUrl url;
         QUrlQuery query;
         url.setScheme("anytls");
@@ -300,9 +300,9 @@ namespace Configs {
         q.addQueryItem("use_system_interface", useSystemInterface ? "true":"false");
         q.addQueryItem("local_address", localAddress.join("-"));
         q.addQueryItem("workers", Int2String(workerCount));
-        if (enable_amenzia)
+        if (enable_amnezia)
         {
-            q.addQueryItem("enable_amenzia", "true");
+            q.addQueryItem("enable_amnezia", "true");
             q.addQueryItem("junk_packet_count", Int2String(junk_packet_count));
             q.addQueryItem("junk_packet_min_size", Int2String(junk_packet_min_size));
             q.addQueryItem("junk_packet_max_size", Int2String(junk_packet_max_size));

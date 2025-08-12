@@ -171,7 +171,7 @@ namespace Configs {
         return result;
     }
 
-    CoreObjOutboundBuildResult AnyTlsBean::BuildCoreObjSingBox() {
+    CoreObjOutboundBuildResult AnyTLSBean::BuildCoreObjSingBox() {
         CoreObjOutboundBuildResult result;
 
         QJsonObject outbound{
@@ -327,7 +327,7 @@ namespace Configs {
             {"system", useSystemInterface},
             {"workers", workerCount}
         };
-        if (enable_amenzia)
+        if (enable_amnezia)
         {
             outbound["junk_packet_count"] = junk_packet_count;
             outbound["junk_packet_min_size"] = junk_packet_min_size;
