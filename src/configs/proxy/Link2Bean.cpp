@@ -55,7 +55,7 @@ namespace Configs {
 
         // security
 
-        stream->security = GetQueryValue(query, "security", "").replace("none", "");
+        stream->security = "tls";
         auto sni1 = GetQueryValue(query, "sni");
         auto sni2 = GetQueryValue(query, "peer");
         if (!sni1.isEmpty()) stream->sni = sni1;
@@ -70,10 +70,6 @@ namespace Configs {
         if (query.queryItemValue("record_fragment") == "1") stream->enable_tls_record_fragment = true;
         if (stream->utlsFingerprint.isEmpty()) {
             stream->utlsFingerprint = dataStore->utlsFingerprint;
-        }
-        if (stream->security.isEmpty()) {
-            if (!sni1.isEmpty() || !sni2.isEmpty()) stream->security = "tls";
-            if (!stream->reality_pbk.isEmpty()) stream->security = "reality";
         }
 
         return !(password.isEmpty() || serverAddress.isEmpty());
@@ -98,7 +94,11 @@ namespace Configs {
         }
         stream->network = type;
 
-        stream->security = GetQueryValue(query, "security", "").replace("none", "");
+        if (proxy_type == proxy_Trojan) {
+            stream->security = GetQueryValue(query, "security", "tls").replace("reality", "tls").replace("none", "");
+        } else {
+            stream->security = GetQueryValue(query, "security", "").replace("reality", "tls").replace("none", "");
+        }
         auto sni1 = GetQueryValue(query, "sni");
         auto sni2 = GetQueryValue(query, "peer");
         if (!sni1.isEmpty()) stream->sni = sni1;
@@ -116,7 +116,6 @@ namespace Configs {
         }
         if (stream->security.isEmpty()) {
             if (!sni1.isEmpty() || !sni2.isEmpty()) stream->security = "tls";
-            if (!stream->reality_pbk.isEmpty()) stream->security = "reality";
         }
 
         // type
