@@ -291,10 +291,6 @@ namespace Configs {
         _add(new configItem("ntp_server_address", &ntp_server_address, itemType::string));
         _add(new configItem("ntp_server_port", &ntp_server_port, itemType::integer));
         _add(new configItem("ntp_interval", &ntp_interval, itemType::string));
-        _add(new configItem("geoip_download_url", &geoip_download_url, itemType::string));
-        _add(new configItem("geosite_download_url", &geosite_download_url, itemType::string));
-        _add(new configItem("auto_reset_assets_idx", &auto_reset_assets_idx, itemType::integer));
-        _add(new configItem("last_asset_reset_unix_secs", &last_asset_reset_epoch_secs, itemType::integer64));
         _add(new configItem("enable_dns_server", &enable_dns_server, itemType::boolean));
         _add(new configItem("dns_server_listen_lan", &dns_server_listen_lan, itemType::boolean));
         _add(new configItem("dns_server_listen_port", &dns_server_listen_port, itemType::integer));
@@ -388,28 +384,5 @@ namespace Configs {
         if (dataStore->flag_use_appdata) return QStandardPaths::writableLocation(
               QStandardPaths::AppConfigLocation);
         return qApp->applicationDirPath();
-    }
-
-    QString GetCoreAssetDir(const QString &name) {
-        QStringList search = {
-            GetBasePath(),
-            QString("/usr/share/sing-geoip"),
-            QString("/usr/share/sing-geosite"),
-            QString("/usr/share/sing-box"),
-        };
-
-        for (const auto &dir: search) {
-            if (dir.isEmpty())
-                continue;
-
-            if (QFile(QString("%1/%2").arg(dir, name)).exists())
-                return dir;
-        }
-
-        return "";
-    }
-
-    bool NeedGeoAssets(){
-        return GetCoreAssetDir("geoip.db").isEmpty() || GetCoreAssetDir("geosite.db").isEmpty();
     }
 } // namespace Configs

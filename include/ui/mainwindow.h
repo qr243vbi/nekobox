@@ -84,10 +84,6 @@ public:
 
     bool StopVPNProcess();
 
-    void DownloadAssets(const QString &geoipUrl, const QString &geositeUrl);
-
-    void ResetAssets(const QString& geoipUrl, const QString& geositeUrl);
-
     void UpdateConnectionList(const QMap<QString, Stats::ConnectionMetadata>& toUpdate, const QMap<QString, Stats::ConnectionMetadata>& toAdd);
 
     void UpdateConnectionListWithRecreate(const QList<Stats::ConnectionMetadata>& connections);
@@ -196,9 +192,7 @@ private:
     QSemaphore sem_stopped;
     int exit_reason = 0;
     //
-    QMutex mu_download_assets;
     QMutex mu_download_update;
-    QMutex mu_reset_assets;
     //
     int toolTipID;
     //
@@ -211,6 +205,8 @@ private:
     bool showDownloadData = false;
     libcore::SpeedTestResult currentTestResult;
     DownloadProgressReport currentDownloadReport; // could use a list, but don't think can show more than one anyways
+
+    std::map<std::string, std::string> ruleSetMap;
 
     QStringList remoteRouteProfiles;
     QMutex mu_remoteRouteProfiles;

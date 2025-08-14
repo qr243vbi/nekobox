@@ -94,12 +94,6 @@ namespace Configs {
         bool sub_insecure = false;
         int sub_auto_update = -30;
 
-        // Assets
-        QString geoip_download_url = "";
-        QString geosite_download_url = "";
-        int auto_reset_assets_idx = 0;
-        long long last_asset_reset_epoch_secs = 0;
-
         // Security
         bool skip_cert = false;
         QString utlsFingerprint = "";
