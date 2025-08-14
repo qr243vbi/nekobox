@@ -23,12 +23,7 @@ cp ./res/public/Throne.png $DEST
 cd download-artifact
 cd *linux-$ARCH
 tar xvzf artifacts.tgz -C ../../
-cd ..
-cd *public_res
-tar xvzf artifacts.tgz -C ../../
 cd ../..
-
-mv $DEPLOYMENT/public_res/* $DEST
 
 sudo add-apt-repository universe
 sudo apt install libfuse2
