@@ -141,7 +141,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     QStringList args;
     args.push_back("-port");
     args.push_back(Int2String(Configs::dataStore->core_port));
-    if (Configs::dataStore->flag_debug) args.push_back("-debug");
+    if (Configs::dataStore->log_level == "debug") args.push_back("-debug");
 
     // Start core
     runOnThread(
