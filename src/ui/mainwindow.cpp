@@ -141,7 +141,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     QStringList args;
     args.push_back("-port");
     args.push_back(Int2String(Configs::dataStore->core_port));
-    if (Configs::dataStore->log_level == "debug") args.push_back("-debug");
+    if (Configs::dataStore->flag_debug) args.push_back("-debug");
 
     // Start core
     runOnThread(
@@ -420,7 +420,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     auto getRuleSet = [=,this]
     {
         QString err;
-        for(int retry = 0; retry < 3; retry++) {
+        for(int retry = 0; retry < 5; retry++) {
             auto resp = NetworkRequestHelper::HttpGet("https://raw.githubusercontent.com/throneproj/routeprofiles/rule-set/list");
             if (resp.error.isEmpty()) {
                 std::vector<uint8_t> respvec;
@@ -431,6 +431,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
             }
             else
                 err = resp.error;
+            QThread::sleep(1);
         }
         MW_show_log(QObject::tr("Requesting rule-set error: %1").arg(err));
     };
