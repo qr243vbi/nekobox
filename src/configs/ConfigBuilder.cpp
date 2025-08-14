@@ -769,6 +769,11 @@ namespace Configs {
         QJsonArray dnsServers;
         QJsonArray dnsRules;
 
+        routeObj["default_domain_resolver"] = QJsonObject{
+            {"server", "dns-direct"},
+            {"strategy", dataStore->routing->outbound_domain_strategy},
+        };
+
         // Remote
         if (status->ent->type == "tailscale")
         {
@@ -881,10 +886,6 @@ namespace Configs {
                 {"domain_regex", directRegexes},
                 {"action", "route"},
                 {"server", "dns-direct"},
-            };
-            routeObj["default_domain_resolver"] = QJsonObject{
-                {"server", "dns-direct"},
-                {"strategy", dataStore->routing->outbound_domain_strategy},
             };
         }
 
