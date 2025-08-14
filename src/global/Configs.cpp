@@ -343,6 +343,7 @@ namespace Configs {
         _add(new configItem("domain_strategy", &this->domain_strategy, itemType::string));
         _add(new configItem("outbound_domain_strategy", &this->outbound_domain_strategy, itemType::string));
         _add(new configItem("sniffing_mode", &this->sniffing_mode, itemType::integer));
+        _add(new configItem("ruleset_mirror", &this->ruleset_mirror, itemType::integer));
         _add(new configItem("use_dns_object", &this->use_dns_object, itemType::boolean));
         _add(new configItem("dns_object", &this->dns_object, itemType::string));
         _add(new configItem("dns_final_out", &this->dns_final_out, itemType::string));

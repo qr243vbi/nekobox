@@ -104,6 +104,7 @@ DialogManageRoutes::DialogManageRoutes(QWidget *parent, const std::map<std::stri
         }
     });
     ui->sniffing_mode->setCurrentIndex(Configs::dataStore->routing->sniffing_mode);
+    ui->ruleset_mirror->setCurrentIndex(Configs::dataStore->routing->ruleset_mirror);
     ui->outbound_domain_strategy->setCurrentText(Configs::dataStore->routing->outbound_domain_strategy);
     ui->domainStrategyCombo->setCurrentText(Configs::dataStore->routing->domain_strategy);
     ui->use_dns_object->setChecked(Configs::dataStore->routing->use_dns_object);
@@ -190,6 +191,7 @@ void DialogManageRoutes::accept() {
     }
 
     Configs::dataStore->routing->sniffing_mode = ui->sniffing_mode->currentIndex();
+    Configs::dataStore->routing->ruleset_mirror = ui->ruleset_mirror->currentIndex();
     Configs::dataStore->routing->domain_strategy = ui->domainStrategyCombo->currentText();
     Configs::dataStore->routing->outbound_domain_strategy = ui->outbound_domain_strategy->currentText();
     Configs::dataStore->routing->use_dns_object = ui->use_dns_object->isChecked();

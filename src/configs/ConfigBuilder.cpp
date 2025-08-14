@@ -753,7 +753,7 @@ namespace Configs {
                 };
             }
             else {
-                QString srsUrl = QString::fromStdString(ruleSetMap.at(item.toStdString()));
+                QString srsUrl = get_jsdelivr_link(QString::fromStdString(ruleSetMap.at(item.toStdString())));
                 ruleSetArray += QJsonObject{
                     {"type", "remote"},
                     {"tag", get_rule_set_name(srsUrl)},

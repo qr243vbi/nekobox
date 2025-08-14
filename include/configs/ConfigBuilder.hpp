@@ -68,4 +68,29 @@ namespace Configs {
                                const std::shared_ptr<BuildConfigStatus> &status);
 
     void BuildOutbound(const std::shared_ptr<ProxyEntity> &ent, const std::shared_ptr<BuildConfigStatus> &status, QJsonObject& outbound, const QString& tag);
+
+    inline QString get_jsdelivr_link(QString link)
+    {
+        if(dataStore->routing->ruleset_mirror == Mirrors::GITHUB)
+            return link;
+        if(auto url = QUrl(link); url.isValid() && url.host() == "raw.githubusercontent.com")
+        {
+            QStringList list = url.path().split('/');
+            int index = 0;
+            QString result = "https://cdn.jsdelivr.net/gh";
+            foreach(QString item, list)
+            {
+                if(!item.isEmpty())
+                {
+                    if(index == 2)
+                        result += "@" + item;
+                    else
+                        result += "/" + item;
+                    index++;
+                }
+            }
+            return result;
+        }
+        return link;
+    }
 } // namespace Configs
