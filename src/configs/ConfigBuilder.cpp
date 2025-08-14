@@ -752,15 +752,16 @@ namespace Configs {
                     {"url", item},
                 };
             }
-            else {
-                QString srsUrl = get_jsdelivr_link(QString::fromStdString(ruleSetMap.at(item.toStdString())));
-                ruleSetArray += QJsonObject{
-                    {"type", "remote"},
-                    {"tag", get_rule_set_name(srsUrl)},
-                    {"format", "binary"},
-                    {"url", srsUrl},
-                };
-            }
+            else
+                if(ruleSetMap.count(item.toStdString()) > 0) {
+                    QString srsUrl = get_jsdelivr_link(QString::fromStdString(ruleSetMap.at(item.toStdString())));
+                    ruleSetArray += QJsonObject{
+                        {"type", "remote"},
+                        {"tag", get_rule_set_name(srsUrl)},
+                        {"format", "binary"},
+                        {"url", srsUrl},
+                    };
+                }
         }
         routeObj["rule_set"] = ruleSetArray;
 
