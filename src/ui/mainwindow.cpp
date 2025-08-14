@@ -439,12 +439,12 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 
     auto getRemoteRouteProfiles = [=,this]
     {
-        auto resp = NetworkRequestHelper::HttpGet("https://api.github.com/repos/throneproj/routeprofiles/releases/latest");
+        auto resp = NetworkRequestHelper::HttpGet("https://api.github.com/repos/throneproj/routeprofiles/git/trees/profile");
         if (resp.error.isEmpty()) {
             QStringList newRemoteRouteProfiles;
             QJsonObject release = QString2QJsonObject(resp.data);
-            for (const QJsonValue asset : release["assets"].toArray()) {
-                auto profile = asset["name"].toString();
+            for (const QJsonValue asset : release["tree"].toArray()) {
+                auto profile = asset["path"].toString();
                 if (profile.section('.', -1) == QString("json") && (profile.startsWith("bypass",Qt::CaseInsensitive) || profile.startsWith("proxy",Qt::CaseInsensitive))) {
                     profile.chop(5);
                     newRemoteRouteProfiles.push_back(profile);
@@ -472,7 +472,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
                 action->setText(profile);
                 connect(action, &QAction::triggered, this, [=,this]()
                 {
-                    auto resp = NetworkRequestHelper::HttpGet("https://github.com/throneproj/routeprofiles/releases/latest/download/" + profile + ".json");
+                    auto resp = NetworkRequestHelper::HttpGet(Configs::get_jsdelivr_link("https://raw.githubusercontent.com/throneproj/routeprofiles/profile/" + profile + ".json"));
                     if (!resp.error.isEmpty()) {
                         runOnUiThread([=,this] {
                             MessageBoxWarning(QObject::tr("Download Profiles"), QObject::tr("Requesting profile error: %1").arg(resp.error + "\n" + resp.data));
