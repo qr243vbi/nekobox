@@ -39,4 +39,13 @@ namespace Configs {
             SIMPLEDL,
         };
     }
+
+    namespace Mirrors
+    {
+        enum Mirrors
+        {
+            GITHUB,
+            JSDELIVR,
+        };
+    }
 } // namespace Configs
