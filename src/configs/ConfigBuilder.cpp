@@ -427,7 +427,7 @@ namespace Configs {
             if (tunEnabled && usingSystemdResolved)
             {
                 return {
-                    {"type", "dhcp"}
+                    {"type", "underlying"}
                 };
             }
             return {
