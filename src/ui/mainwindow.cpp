@@ -772,8 +772,6 @@ void MainWindow::dialog_message_impl(const QString &sender, const QString &info)
     } else if (sender == "ExternalProcess") {
         if (info == "Crashed") {
             profile_stop();
-        } else if (info == "CoreCrashed") {
-            profile_stop(true);
         } else if (info.startsWith("CoreStarted")) {
             Configs::IsAdmin(true);
             if (Configs::dataStore->remember_enable || Configs::dataStore->flag_restart_tun_on) {
@@ -879,7 +877,6 @@ void MainWindow::prepare_exit()
     //
     Configs::dataStore->save_control_no_save = true; // don't change datastore after this line
     profile_stop(false, true);
-    sem_stopped.acquire();
 
     QMutex coreKillMu;
     coreKillMu.lock();
