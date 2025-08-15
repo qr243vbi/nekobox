@@ -924,9 +924,9 @@ namespace Configs {
         }
 
         QJsonObject cache_file = {
-            {"enabled", "true"},
-            {"store_fakeip", "true"},
-            {"store_rdrc", "true"}
+            {"enabled", true},
+            {"store_fakeip", true},
+            {"store_rdrc", true}
         };
         experimentalObj["cache_file"] = cache_file;
 
