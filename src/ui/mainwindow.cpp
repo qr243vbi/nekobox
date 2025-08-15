@@ -2469,6 +2469,7 @@ void MainWindow::CheckUpdate() {
     QJsonArray array = QString2QJsonArray(resp.data);
     for (const QJsonValue value : array) {
         QJsonObject release = value.toObject();
+        if (release["prerelease"].toBool() && !Configs::dataStore->allow_beta_update) continue;
         for (const QJsonValue asset : release["assets"].toArray()) {
             if (asset["name"].toString().contains(search) && asset["name"].toString().section('.', -1) == QString("zip")) {
                 note_pre_release = release["prerelease"].toBool() ? " (Pre-release)" : "";
