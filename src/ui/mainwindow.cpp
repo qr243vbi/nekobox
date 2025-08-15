@@ -417,6 +417,17 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
         }
     });
 
+	auto srslist = QFile(QString("%1/%2").arg(Configs::GetBasePath(), "srslist"));
+    if (srslist.exists()) {
+        if (srslist.open(QIODevice::ReadOnly)) {
+            QByteArray byteArray = srslist.readAll();
+            srslist.close();
+            std::vector<uint8_t> srsvec;
+            srsvec.assign(byteArray.begin(), byteArray.end());
+            ruleSetMap = spb::pb::deserialize<libcore::RuleSet>(srsvec).items;
+        }
+    }
+
     auto getRuleSet = [=,this]
     {
         QString err;
@@ -431,7 +442,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
             }
             else
                 err = resp.error;
-            QThread::sleep(1);
+            QThread::sleep(2);
         }
         MW_show_log(QObject::tr("Requesting rule-set error: %1").arg(err));
     };
