@@ -417,7 +417,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
         }
     });
 
-	auto srslist = QFile(QString("%1/%2").arg(Configs::GetBasePath(), "srslist"));
+	auto srslist = QFile(QString("%1/%2").arg(qApp->applicationDirPath(), "srslist"));
     if (srslist.exists()) {
         if (srslist.open(QIODevice::ReadOnly)) {
             QByteArray byteArray = srslist.readAll();
