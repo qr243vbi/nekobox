@@ -97,9 +97,6 @@
           </item>
           <item row="5" column="0">
            <widget class="QLabel" name="ruleset_mirror_l">
-            <property name="toolTip">
-             <string notr="true">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Change will apply on next launch&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-            </property>
             <property name="text">
              <string>Remote Rule-set Mirror</string>
             </property>
@@ -114,7 +111,27 @@
             </item>
             <item>
              <property name="text">
-              <string>jsDelivr</string>
+              <string>jsDelivr(Cloudflare)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>jsDelivr(Gcore)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>jsDelivr(Quantil)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>jsDelivr(Fastly)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>jsDelivr(CDN)</string>
              </property>
             </item>
            </widget>

@@ -45,7 +45,11 @@ namespace Configs {
         enum Mirrors
         {
             GITHUB,
-            JSDELIVR,
+            CLOUDFLARE,
+            GCORE,
+            QUANTIL,
+            FASTLY,
+            CDN,
         };
     }
 } // namespace Configs
