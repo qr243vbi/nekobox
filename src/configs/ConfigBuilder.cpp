@@ -921,14 +921,14 @@ namespace Configs {
             {
                 experimentalObj["clash_api"] = clash_api;
             }
-        }
 
-        QJsonObject cache_file = {
-            {"enabled", true},
-            {"store_fakeip", true},
-            {"store_rdrc", true}
-        };
-        experimentalObj["cache_file"] = cache_file;
+            QJsonObject cache_file = {
+                {"enabled", true},
+                {"store_fakeip", true},
+                {"store_rdrc", true}
+            };
+            experimentalObj["cache_file"] = cache_file;
+        }
 
         status->result->coreConfig.insert("log", QJsonObject{{"level", dataStore->log_level}});
         status->result->coreConfig.insert("certificate", QJsonObject{{"store", dataStore->use_mozilla_certs ? "mozilla" : "system"}});
