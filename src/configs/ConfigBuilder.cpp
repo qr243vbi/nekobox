@@ -505,6 +505,20 @@ namespace Configs {
             status->result->error = "Routing profile does not exist, try resetting the route profile in Routing Settings";
             return;
         }
+
+        // will be removed on November 1st, 2025
+        for (auto ruleItem = routeChain->Rules.begin(); ruleItem != routeChain->Rules.end(); ++ruleItem) {
+            for (auto ruleSetItem = (*ruleItem)->rule_set.begin(); ruleSetItem != (*ruleItem)->rule_set.end(); ++ruleSetItem) {
+                if ((*ruleSetItem).endsWith("_IP")) {
+                    *ruleSetItem = "geoip-" + (*ruleSetItem).left((*ruleSetItem).length() - 3);
+                }
+                if ((*ruleSetItem).endsWith("_SITE")) {
+                    *ruleSetItem = "geosite-" + (*ruleSetItem).left((*ruleSetItem).length() - 5);
+                }
+            }
+        }
+        routeChain->Save();
+        
         // copy for modification
         routeChain = std::make_shared<RoutingChain>(*routeChain);
 

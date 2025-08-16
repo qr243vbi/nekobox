@@ -601,20 +601,6 @@ namespace Configs {
     }
 
     std::shared_ptr<QStringList> RoutingChain::get_used_rule_sets() {
-
-        // will be removed on November 1st, 2025
-        for (auto ruleItem = Rules.begin(); ruleItem != Rules.end(); ++ruleItem) {
-            for (auto ruleSetItem = (*ruleItem)->rule_set.begin(); ruleSetItem != (*ruleItem)->rule_set.end(); ++ruleSetItem) {
-                if ((*ruleSetItem).endsWith("_IP")) {
-                    *ruleSetItem = "geoip-" + (*ruleSetItem).left((*ruleSetItem).length() - 3);
-                }
-                if ((*ruleSetItem).endsWith("_SITE")) {
-                    *ruleSetItem = "geosite-" + (*ruleSetItem).left((*ruleSetItem).length() - 5);
-                }
-            }
-        }
-        Save();
-
         auto res = std::make_shared<QStringList>();
         for (const auto& item: Rules) {
             for (const auto& ruleItem: item->rule_set) {
