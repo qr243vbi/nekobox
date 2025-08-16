@@ -65,7 +65,7 @@ RouteItem::RouteItem(QWidget *parent, const std::shared_ptr<Configs::RoutingChai
 
     // setup rule set helper
     for (const auto& item : ruleSetMap) {
-        geo_items.append("ruleset:" + QString::fromStdString(item.first));
+        geo_items.append(QString::fromStdString(item.first));
     }
     rule_set_editor = new AutoCompleteTextEdit("", geo_items, this);
     ui->rule_attr_data->layout()->addWidget(rule_set_editor);
