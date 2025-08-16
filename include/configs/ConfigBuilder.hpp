@@ -75,9 +75,17 @@ namespace Configs {
             return link;
         if(auto url = QUrl(link); url.isValid() && url.host() == "raw.githubusercontent.com")
         {
-            QStringList list = url.path().split('/');
+            QStringList list = url.path().split('/');      
+            QString result;
+            switch(dataStore->routing->ruleset_mirror) {
+            case Mirrors::GCORE: result = "https://gcore.jsdelivr.net/gh"; break;
+            case Mirrors::QUANTIL: result = "https://quantil.jsdelivr.net/gh"; break;
+            case Mirrors::FASTLY: result = "https://fastly.jsdelivr.net/gh"; break;
+            case Mirrors::CDN: result = "https://cdn.jsdelivr.net/gh"; break;
+            default: result = "https://testingcf.jsdelivr.net/gh";
+            }
+
             int index = 0;
-            QString result = "https://cdn.jsdelivr.net/gh";
             foreach(QString item, list)
             {
                 if(!item.isEmpty())

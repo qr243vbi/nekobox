@@ -24,7 +24,7 @@ namespace Configs {
         QString domain_strategy = "AsIs";
         QString outbound_domain_strategy = "AsIs";
         int sniffing_mode = SniffingMode::FOR_ROUTING;
-        int ruleset_mirror = Mirrors::JSDELIVR;
+        int ruleset_mirror = Mirrors::CLOUDFLARE;
 
         explicit Routing(int preset = 0);
 
