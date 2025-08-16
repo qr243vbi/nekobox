@@ -442,9 +442,9 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
             }
             else
                 err = resp.error;
-            QThread::sleep(2);
+            QThread::sleep(30);
         }
-        MW_show_log(QObject::tr("Requesting rule-set error: %1").arg(err));
+        MW_show_log(QObject::tr("Requesting rule-set list error: %1").arg(err));
     };
     runOnNewThread(getRuleSet);
 

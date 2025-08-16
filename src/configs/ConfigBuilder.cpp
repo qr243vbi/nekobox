@@ -753,12 +753,12 @@ namespace Configs {
                 };
             }
             else
-                if(ruleSetMap.count(QUrl(item).fileName().toStdString()) > 0) {
+                if(ruleSetMap.count(item.toStdString()) > 0) {
                     ruleSetArray += QJsonObject{
                         {"type", "remote"},
                         {"tag", item},
                         {"format", "binary"},
-                        {"url", get_jsdelivr_link(QString::fromStdString(ruleSetMap.at(QUrl(item).fileName().toStdString())))},
+                        {"url", get_jsdelivr_link(QString::fromStdString(ruleSetMap.at(item.toStdString())))},
                     };
                 }
         }
