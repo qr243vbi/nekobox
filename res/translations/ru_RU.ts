@@ -17,7 +17,7 @@
     </message>
     <message>
         <source>Custom Inbound</source>
-        <translation>Собственный inbound</translation>
+        <translation>Польз. inbound</translation>
     </message>
     <message>
         <source>Edit</source>
@@ -1757,7 +1757,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     </message>
     <message>
         <source>Url Test Selected</source>
-        <translation>Тест задержки (пинга) выбранного профиля</translation>
+        <translation>Тест задержки выбранного профиля</translation>
     </message>
     <message>
         <source>Ctrl+Shift+S</source>
@@ -1765,7 +1765,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     </message>
     <message>
         <source>Url Test Group</source>
-        <translation>Тест задержки (пинга) всей группы</translation>
+        <translation>Тест задержки всей группы</translation>
     </message>
     <message>
         <source>Ctrl+Shift+G</source>
@@ -1905,7 +1905,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     </message>
     <message>
         <source>Speedtest finished!</source>
-        <translation>Тест скорости завершен!</translation>
+        <translation>Тест скорости завершён!</translation>
     </message>
     <message>
         <source>Failed to stop tests</source>
