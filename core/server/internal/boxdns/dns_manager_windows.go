@@ -16,7 +16,7 @@ import (
 
 const (
 	nameServerRegistryKey = "NameServer"
-	localAddr             = "127.0.0.1"
+	localAddr             = "127.1.1.1"
 	dhcpMarkAddr          = "127.1.2.3"
 	setMarkAddr           = "127.3.2.1"
 )
@@ -200,7 +200,7 @@ func (d *DnsManager) setSystemDNS(ifx control.Interface) {
 	if wasSet && len(newDnsServers) > 0 && newDnsServers[0].String() == localAddr {
 		newDnsServers = newDnsServers[1:]
 	}
-	serverAddr, _ := netip.ParseAddr("127.0.0.1")
+	serverAddr, _ := netip.ParseAddr(localAddr)
 	newDnsServers = append([]netip.Addr{serverAddr}, newDnsServers...)
 
 	dhcp, err := d.isIfcDNSDhcp(ifx)
@@ -242,6 +242,7 @@ func (d *DnsManager) SetSystemDNS(ifc *control.Interface, clear bool) error {
 	if clear {
 		dnsIsSet = false
 		d.restoreSystemDNS(*ifc)
+		return nil
 		return nil
 	} else {
 		dnsIsSet = true
