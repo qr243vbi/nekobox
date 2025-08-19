@@ -871,7 +871,7 @@ namespace Configs {
             status->inbounds.prepend(QJsonObject{
                 {"tag", "dns-in"},
                 {"type", "direct"},
-                {"listen", dataStore->dns_server_listen_lan ? "0.0.0.0" : "127.0.0.1"},
+                {"listen", dataStore->dns_server_listen_lan ? "0.0.0.0" : "127.1.1.1"},
                 {"listen_port", dataStore->dns_server_listen_port},
             });
         }
