@@ -567,6 +567,14 @@ namespace Configs {
 
     QJsonArray RoutingChain::get_route_rules(bool forView, std::map<int, QString> outboundMap) {
         QJsonArray res;
+        if (Configs::dataStore->adblock_enable) {
+            QJsonObject obj;
+            obj["action"] = "reject";
+            QJsonArray jarray;
+            jarray.append("throne-adblocksingbox");
+            obj["rule_set"] = jarray;
+            res += obj;
+        }
         for (const auto &item: Rules) {
             auto outboundTag = QString();
             if (outboundMap.contains(item->outboundID)) outboundTag = outboundMap[item->outboundID];

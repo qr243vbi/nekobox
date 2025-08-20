@@ -426,7 +426,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
         }
     });
 
-	auto srslist = QFile(QString("%1/%2").arg(qApp->applicationDirPath(), "srslist"));
+	auto srslist = QFile(QApplication::applicationDirPath() + "/srslist");
     if (srslist.exists()) {
         if (srslist.open(QIODevice::ReadOnly)) {
             QByteArray byteArray = srslist.readAll();
@@ -435,27 +435,27 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
             srsvec.assign(byteArray.begin(), byteArray.end());
             ruleSetMap = spb::pb::deserialize<libcore::RuleSet>(srsvec).items;
         }
-    }
-
-    auto getRuleSet = [=,this]
-    {
-        QString err;
-        for(int retry = 0; retry < 5; retry++) {
-            auto resp = NetworkRequestHelper::HttpGet(Configs::get_jsdelivr_link("https://raw.githubusercontent.com/throneproj/routeprofiles/rule-set/list"));
-            if (resp.error.isEmpty()) {
-                std::vector<uint8_t> respvec;
-                respvec.assign(resp.data.begin(), resp.data.end());
-                auto reply = spb::pb::deserialize<libcore::RuleSet>(respvec);
-                ruleSetMap = reply.items;
-                return;
+    } else {
+        auto getRuleSet = [=,this]
+        {
+            QString err;
+            for(int retry = 0; retry < 5; retry++) {
+                auto resp = NetworkRequestHelper::HttpGet(Configs::get_jsdelivr_link("https://raw.githubusercontent.com/throneproj/routeprofiles/rule-set/list"));
+                if (resp.error.isEmpty()) {
+                    std::vector<uint8_t> respvec;
+                    respvec.assign(resp.data.begin(), resp.data.end());
+                    auto reply = spb::pb::deserialize<libcore::RuleSet>(respvec);
+                    ruleSetMap = reply.items;
+                    return;
+                }
+                else
+                    err = resp.error;
+                QThread::sleep(30);
             }
-            else
-                err = resp.error;
-            QThread::sleep(30);
-        }
-        MW_show_log(QObject::tr("Requesting rule-set list error: %1").arg(err));
-    };
-    runOnNewThread(getRuleSet);
+            MW_show_log(QObject::tr("Requesting rule-set list error: %1").arg(err));
+        };
+        runOnNewThread(getRuleSet);
+    }
 
     auto getRemoteRouteProfiles = [=,this]
     {
@@ -483,6 +483,19 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
             runOnNewThread(getRemoteRouteProfiles);
         ui->menuRouting_Menu->clear();
         ui->menuRouting_Menu->addAction(ui->menu_routing_settings);
+
+        auto* actionAdblock = new QAction(ui->menuRouting_Menu);
+        actionAdblock->setText("Enable AdBlock");
+        actionAdblock->setCheckable(true);
+        actionAdblock->setChecked(Configs::dataStore->adblock_enable);
+        connect(actionAdblock, &QAction::triggered, this, [=,this](bool checked) {
+            Configs::dataStore->adblock_enable = checked;
+            actionAdblock->setChecked(checked);
+            Configs::dataStore->Save();
+            if (Configs::dataStore->started_id >= 0) profile_start(Configs::dataStore->started_id);
+        });
+        ui->menuRouting_Menu->addAction(actionAdblock);
+
         mu_remoteRouteProfiles.lock();
         if(!remoteRouteProfiles.isEmpty()) {
             QMenu* profilesMenu = ui->menuRouting_Menu->addMenu(QObject::tr("Download Profiles"));
