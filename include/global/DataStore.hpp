@@ -117,6 +117,7 @@ namespace Configs {
         // Routing
         QString custom_route_global = "{\"rules\": []}";
         QString active_routing = "Default";
+        bool adblock_enable = false;
 
         // VPN
         bool fake_dns = false;
