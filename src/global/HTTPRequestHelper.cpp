@@ -47,7 +47,7 @@ namespace Configs_network {
         // Wait for response
         auto abortTimer = new QTimer;
         abortTimer->setSingleShot(true);
-        abortTimer->setInterval(3000);
+        abortTimer->setInterval(10000);
         connect(abortTimer, &QTimer::timeout, _reply, &QNetworkReply::abort);
         abortTimer->start();
         {
