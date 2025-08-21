@@ -624,7 +624,7 @@ namespace Subscription {
                     needFix = true;
                     auto bean = ent->AnyTLSBean();
                     bean->password = Node2QString(proxy["password"]);
-                    if (Node2Bool(proxy["tls"])) bean->stream->security = "tls";
+                    bean->stream->security = "tls";
                     if (Node2Bool(proxy["skip-cert-verify"])) bean->stream->allow_insecure = true;
                     bean->stream->sni = FIRST_OR_SECOND(Node2QString(proxy["sni"]), Node2QString(proxy["servername"]));
                     bean->stream->alpn = Node2QStringList(proxy["alpn"]).join(",");
