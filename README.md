@@ -44,6 +44,6 @@ Various formats are supported, including share links, JSON array of outbounds an
 - [QHotkey](https://github.com/Skycoder42/QHotkey)
 
 ## FAQ
-**Why does my Anti-Virus detect Throne and/or its Core as malware?** <br/>
+**Why does my Anti-Virus detect NekoBox as malware?** <br/>
 NekoBox's built-in update functionallity downloads the new release, removes the old files and replaces them with the new ones, which is quite simliar to what malwares do, remove your files and replace them with an encrypted version of your files.
 Also the `System DNS` feature will change your system's DNS settings, which is also considered a dangerous action by some Anti-Virus applications.
