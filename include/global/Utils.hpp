@@ -22,7 +22,7 @@ inline QWidget *mainwindow;
 inline std::function<void(QString)> MW_show_log;
 inline std::function<void(QString, QString)> MW_dialog_message;
 
-// Dispatchers
+// Threading
 
 class QThread;
 inline QThread *DS_cores;
