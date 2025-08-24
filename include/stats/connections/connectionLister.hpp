@@ -43,16 +43,12 @@ namespace Stats
 
         void ForceUpdate();
 
-        void stopLoop();
-
         void setSort(ConnectionSort newSort);
 
     private:
         void update();
 
         QMutex mu;
-
-        bool stop = false;
 
         std::shared_ptr<QSet<QString>> state;
 
