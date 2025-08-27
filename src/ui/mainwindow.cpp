@@ -789,16 +789,14 @@ void MainWindow::dialog_message_impl(const QString &sender, const QString &info)
             profile_stop();
         } else if (info.startsWith("CoreStarted")) {
             Configs::IsAdmin(true);
-            if (Configs::dataStore->remember_enable || Configs::dataStore->flag_restart_tun_on) {
-                if (Configs::dataStore->remember_spmode.contains("system_proxy")) {
-                    set_spmode_system_proxy(true, false);
-                }
-                if (Configs::dataStore->remember_spmode.contains("vpn") || Configs::dataStore->flag_restart_tun_on) {
-                    set_spmode_vpn(true, false);
-                }
-                if (Configs::dataStore->flag_dns_set) {
-                    set_system_dns(true);
-                }
+            if (Configs::dataStore->remember_spmode.contains("system_proxy")) {
+                set_spmode_system_proxy(true, false);
+            }
+            if (Configs::dataStore->remember_spmode.contains("vpn") || Configs::dataStore->flag_restart_tun_on) {
+                set_spmode_vpn(true, false);
+            }
+            if (Configs::dataStore->flag_dns_set) {
+                set_system_dns(true);
             }
             if (auto id = info.split(",")[1].toInt(); id >= 0)
             {
@@ -1035,7 +1033,7 @@ void MainWindow::set_spmode_vpn(bool enable, bool save) {
 
     if (save) {
         Configs::dataStore->remember_spmode.removeAll("vpn");
-        if (enable && Configs::dataStore->remember_enable) {
+        if (enable) {
             Configs::dataStore->remember_spmode.append("vpn");
         }
         Configs::dataStore->Save();
