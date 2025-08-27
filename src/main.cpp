@@ -219,7 +219,6 @@ int main(int argc, char* argv[]) {
 
     // QLocalServer
     QLocalServer server(qApp);
-    QLocalServer::removeServer(serverName);
     server.setSocketOptions(QLocalServer::WorldAccessOption);
     if (!server.listen(serverName)) {
         qWarning() << "Failed to start QLocalServer! Error:" << server.errorString();
@@ -231,6 +230,11 @@ int main(int argc, char* argv[]) {
         s->close();
         // raise main window
         MW_dialog_message("", "Raise");
+    });
+    QObject::connect(qApp, &QApplication::aboutToQuit, [&]
+    {
+        server.close();
+        QLocalServer::removeServer(serverName);
     });
 
 #ifdef Q_OS_WIN
