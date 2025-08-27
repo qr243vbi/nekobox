@@ -95,6 +95,10 @@ func Context(
 	return ctx
 }
 
+func (b *Box) Context() context.Context {
+	return b.ctx
+}
+
 func New(options Options) (*Box, error) {
 	createdAt := time.Now()
 	ctx := options.Context
@@ -314,15 +318,15 @@ func New(options Options) (*Box, error) {
 			return nil, E.Cause(err, "initialize service[", i, "]")
 		}
 	}
-	outboundManager.Initialize(common.Must1(
-		direct.NewOutbound(
+	outboundManager.Initialize(func() (adapter.Outbound, error) {
+		return direct.NewOutbound(
 			ctx,
 			router,
 			logFactory.NewLogger("outbound/direct"),
 			"direct",
 			option.DirectOutboundOptions{},
-		),
-	))
+		)
+	})
 	dnsTransportManager.Initialize(common.Must1(
 		local.NewTransport(
 			ctx,
@@ -396,10 +400,6 @@ func New(options Options) (*Box, error) {
 		internalService: internalServices,
 		done:            make(chan struct{}),
 	}, nil
-}
-
-func (s *Box) Context() context.Context {
-	return s.ctx
 }
 
 func (s *Box) PreStart() error {
