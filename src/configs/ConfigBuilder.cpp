@@ -618,10 +618,18 @@ namespace Configs {
             auto tunAddress = QJsonArray{"172.19.0.1/24"};
             if (dataStore->vpn_ipv6) tunAddress += "fdfe:dcba:9876::1/96";
             inboundObj["address"] = tunAddress;
-            if (dataStore->enable_tun_routing && routeChain->defaultOutboundID == proxyID)
+
+            QJsonArray routeExcludeAddrs = {"127.0.0.0/8"};
+            QJsonArray routeExcludeSets;
+            if (dataStore->enable_tun_routing)
             {
-                if (!directIPCIDRs.isEmpty()) inboundObj["route_exclude_address"] = directIPCIDRs;
-                if (!directIPSets.isEmpty()) inboundObj["route_exclude_address_set"] = directIPSets;
+                routeExcludeAddrs << directIPCIDRs;
+                routeExcludeSets << directIPSets;
+            }
+            if (routeChain->defaultOutboundID == proxyID)
+            {
+                inboundObj["route_exclude_address"] = routeExcludeAddrs;
+                if (!routeExcludeSets.isEmpty()) inboundObj["route_exclude_address_set"] = routeExcludeSets;
             }
             status->inbounds += inboundObj;
         }
