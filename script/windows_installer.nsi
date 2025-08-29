@@ -22,6 +22,12 @@ RequestExecutionLevel user
 UninstallText "This will uninstall Throne. Do you wish to continue?"
 UninstallIcon "res\ThroneDel.ico"
 
+Function .onInit
+  ReadRegStr $R0 HKCU "Software\Throne" "InstallPath"
+  StrCmp $R0 "" +2
+  StrCpy $INSTDIR $R0
+FunctionEnd
+
 !macro AbortOnRunningApp EXEName
   killModule:
   FindProcDLL::FindProc ${EXEName}
@@ -43,6 +49,8 @@ Section "Install"
 
   CreateShortcut "$desktop\Throne.lnk" "$instdir\Throne.exe"
   CreateShortcut "$SMPROGRAMS\Throne.lnk" "$INSTDIR\Throne.exe" "" "$INSTDIR\Throne.exe" 0
+
+  WriteRegStr HKCU "Software\Throne" "InstallPath" "$INSTDIR"
   
   WriteRegStr HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\Throne" "DisplayName" "Throne"
   WriteRegStr HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\Throne" "UninstallString" "$INSTDIR\uninstall.exe"
