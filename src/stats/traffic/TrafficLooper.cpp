@@ -67,7 +67,6 @@ namespace Stats {
     void TrafficLooper::Loop() {
         elapsedTimer.start();
         while (true) {
-            if (Configs::dataStore->prepare_exit) return;
             QThread::msleep(1000); // refresh every one second
 
             if (Configs::dataStore->disable_traffic_stats) {

@@ -25,7 +25,7 @@ namespace Stats
     {
         while (true)
         {
-            if (Configs::dataStore->prepare_exit) return;
+            if (stop) return;
             QThread::msleep(1000);
 
             if (suspend || !Configs::dataStore->enable_stats) continue;
@@ -135,6 +135,11 @@ namespace Stats
                 m->UpdateConnectionListWithRecreate(sorted);
             });
         }
+    }
+
+    void ConnectionLister::stopLoop()
+    {
+        stop = true;
     }
 
     void ConnectionLister::setSort(const ConnectionSort newSort)
