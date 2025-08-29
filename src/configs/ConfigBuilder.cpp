@@ -623,8 +623,8 @@ namespace Configs {
             QJsonArray routeExcludeSets;
             if (dataStore->enable_tun_routing)
             {
-                routeExcludeAddrs << directIPCIDRs;
-                routeExcludeSets << directIPSets;
+                for (auto item:directIPCIDRs) routeExcludeAddrs << item;
+                for (auto item: directIPSets) routeExcludeSets << item;
             }
             if (routeChain->defaultOutboundID == proxyID)
             {
