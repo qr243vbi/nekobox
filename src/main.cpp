@@ -199,10 +199,6 @@ int main(int argc, char* argv[]) {
     QGuiApplication::tr("QT_LAYOUT_DIRECTION");
     loadTranslate(locale);
 
-    // Signals
-    signal(SIGTERM, signal_handler);
-    signal(SIGINT, signal_handler);
-
     // Check if another instance is running
     QByteArray hashBytes = QCryptographicHash::hash(wd.absolutePath().toUtf8(), QCryptographicHash::Md5).toBase64(QByteArray::OmitTrailingEquals);
     hashBytes.replace('+', '0').replace('/', '1');
@@ -237,9 +233,22 @@ int main(int argc, char* argv[]) {
         QLocalServer::removeServer(serverName);
     });
 
+#ifdef Q_OS_LINUX
+    signal(SIGTERM, signal_handler);
+    signal(SIGINT, signal_handler);
+#endif
+
 #ifdef Q_OS_WIN
     auto eventFilter = new PowerOffTaskkillFilter(signal_handler);
     a.installNativeEventFilter(eventFilter);
+#endif
+
+#ifdef Q_OS_MACOS
+    QObject::connect(qApp, &QGuiApplication::commitDataRequest, [&](QSessionManager &manager)
+    {
+        Q_UNUSED(manager);
+        signal_handler(0);
+    });
 #endif
 
     UI_InitMainWindow();
