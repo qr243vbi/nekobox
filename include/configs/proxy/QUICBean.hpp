@@ -36,7 +36,6 @@ namespace Configs {
         qint64 connectionReceiveWindow = 0;
         bool disableMtuDiscovery = false;
 
-        // Hysteria 2
         QStringList serverPorts;
         QString hop_interval;
 
@@ -71,6 +70,8 @@ namespace Configs {
                 _add(new configItem("streamReceiveWindow", &streamReceiveWindow, itemType::integer64));
                 _add(new configItem("connectionReceiveWindow", &connectionReceiveWindow, itemType::integer64));
                 _add(new configItem("disableMtuDiscovery", &disableMtuDiscovery, itemType::boolean));
+                _add(new configItem("server_ports", &serverPorts, itemType::stringList));
+                _add(new configItem("hop_interval", &hop_interval, itemType::string));
                 if (proxy_type == proxy_Hysteria) { // hy1
                     _add(new configItem("authPayloadType", &authPayloadType, itemType::integer));
                     _add(new configItem("protocol", &hyProtocol, itemType::integer));
@@ -78,8 +79,6 @@ namespace Configs {
                     uploadMbps = 0;
                     downloadMbps = 0;
                     _add(new configItem("password", &password, itemType::string));
-                    _add(new configItem("server_ports", &serverPorts, itemType::stringList));
-                    _add(new configItem("hop_interval", &hop_interval, itemType::string));
                 }
             } else if (proxy_type == proxy_TUIC) {
                 _add(new configItem("uuid", &uuid, itemType::string));

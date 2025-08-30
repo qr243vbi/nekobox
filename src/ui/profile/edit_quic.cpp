@@ -55,14 +55,12 @@ void EditQUIC::onStart(std::shared_ptr<Configs::ProxyEntity> _ent) {
         ui->heartbeat->hide();
         ui->heartbeat_l->hide();
         ui->uos->hide();
+        ui->port_range->setText(bean->serverPorts.join(","));
+        ui->hop_interval->setText(bean->hop_interval);
 
         if (bean->proxy_type == Configs::QUICBean::proxy_Hysteria) { // hy1
             ui->password->hide();
             ui->password_l->hide();
-            ui->port_range->hide();
-            ui->port_range_l->hide();
-            ui->hop_interval->hide();
-            ui->hop_interval_l->hide();
         } else { // hy2
             ui->authPayload->hide();
             ui->authPayload_l->hide();
@@ -76,8 +74,6 @@ void EditQUIC::onStart(std::shared_ptr<Configs::ProxyEntity> _ent) {
             ui->connectionReceiveWindow_l->hide();
             ui->streamReceiveWindow->hide();
             ui->streamReceiveWindow_l->hide();
-            ui->port_range->setText(bean->serverPorts.join(","));
-            ui->hop_interval->setText(bean->hop_interval);
         }
     } else if (bean->proxy_type == Configs::QUICBean::proxy_TUIC) {
         ui->uploadMbps->hide();
