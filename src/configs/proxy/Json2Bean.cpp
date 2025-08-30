@@ -12,6 +12,7 @@ namespace Configs
 
             serverAddress = obj["server"].isString() ? obj["server"].toString() : "127.0.0.1";
             serverPort = obj["server_port"].isDouble() ? obj["server_port"].toInt() : 1080;
+            serverPorts = obj["server_ports"].isArray() ? QJsonArray2QListString(obj["server_ports"].toArray()) : QStringList();
             hop_interval = obj["hop_interval"].toString();
             uploadMbps = obj["up_mbps"].isDouble() ? obj["up_mbps"].toInt() : 0;
             downloadMbps = obj["down_mbps"].isDouble() ? obj["down_mbps"].toInt() : 0;

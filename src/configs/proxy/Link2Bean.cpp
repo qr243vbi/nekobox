@@ -334,6 +334,17 @@ namespace Configs {
 
             connectionReceiveWindow = query.queryItemValue("recv_window").toInt();
             streamReceiveWindow = query.queryItemValue("recv_window_conn").toInt();
+
+            if (query.hasQueryItem("server_ports"))
+            {
+                auto portList = query.queryItemValue("server_ports").split("-");
+                for (int i=0;i<portList.size();i+=2)
+                {
+                    if (i+1 >= portList.size()) break;
+                    serverPorts += portList[i]+":"+portList[i+1];
+                }
+            }
+            hop_interval = query.queryItemValue("hop_interval");
         } else if (url.scheme() == "tuic") {
             // by daeuniverse
             // https://github.com/daeuniverse/dae/discussions/182

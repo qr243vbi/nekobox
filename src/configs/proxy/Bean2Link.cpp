@@ -239,6 +239,16 @@ namespace Configs {
             if (!alpn.isEmpty()) q.addQueryItem("alpn", alpn);
             if (connectionReceiveWindow > 0) q.addQueryItem("recv_window", Int2String(connectionReceiveWindow));
             if (streamReceiveWindow > 0) q.addQueryItem("recv_window_conn", Int2String(streamReceiveWindow));
+            if (!serverPorts.empty())
+            {
+                QStringList portList;
+                for (const auto& range : serverPorts)
+                {
+                    portList.append(range.split(":"));
+                }
+                q.addQueryItem("server_ports", portList.join("-"));
+            }
+            if (!hop_interval.isEmpty()) q.addQueryItem("hop_interval", hop_interval);
             if (!q.isEmpty()) url.setQuery(q);
             if (!name.isEmpty()) url.setFragment(name);
         } else if (proxy_type == proxy_TUIC) {
