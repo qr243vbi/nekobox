@@ -676,8 +676,9 @@ namespace Subscription {
                             if (port.isEmpty()) {
                                 continue;
                             }
-                            port.replace("-", ":");
-                            serverPorts.append(port);
+                            QString modifiedPort = port;
+                            modifiedPort.replace("-", ":");
+                            serverPorts.append(modifiedPort);
                         }
                         bean->serverPorts = serverPorts;
                     }
@@ -702,8 +703,9 @@ namespace Subscription {
                             if (port.isEmpty()) {
                                 continue;
                             }
-                            port.replace("-", ":");
-                            serverPorts.append(port);
+                            QString modifiedPort = port;
+                            modifiedPort.replace("-", ":");
+                            serverPorts.append(modifiedPort);
                         }
                         bean->serverPorts = serverPorts;
                     }
