@@ -667,6 +667,20 @@ namespace Subscription {
                     auto downMbps = Node2QString(proxy["down"]).split(" ")[0].toInt();
                     if (upMbps > 0) bean->uploadMbps = upMbps;
                     if (downMbps > 0) bean->downloadMbps = downMbps;
+
+                    auto ports = Node2QString(proxy["ports"]);
+                    if (!ports.isEmpty()) {
+                        QStringList serverPorts;
+                        ports.replace("/", ",");
+                        for (const QString& port : ports.split(",", Qt::SkipEmptyParts)) {
+                            if (port.isEmpty()) {
+                                continue;
+                            }
+                            port.replace("-", ":");
+                            serverPorts.append(port);
+                        }
+                        bean->serverPorts = serverPorts;
+                    }
                 } else if (type == "hysteria2") {
                     auto bean = ent->QUICBean();
 
@@ -679,6 +693,20 @@ namespace Subscription {
 
                     bean->uploadMbps = Node2QString(proxy["up"]).split(" ")[0].toInt();
                     bean->downloadMbps = Node2QString(proxy["down"]).split(" ")[0].toInt();
+
+                    auto ports = Node2QString(proxy["ports"]);
+                    if (!ports.isEmpty()) {
+                        QStringList serverPorts;
+                        ports.replace("/", ",");
+                        for (const QString& port : ports.split(",", Qt::SkipEmptyParts)) {
+                            if (port.isEmpty()) {
+                                continue;
+                            }
+                            port.replace("-", ":");
+                            serverPorts.append(port);
+                        }
+                        bean->serverPorts = serverPorts;
+                    }
                 } else if (type == "tuic") {
                     auto bean = ent->QUICBean();
 
