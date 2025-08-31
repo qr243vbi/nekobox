@@ -690,10 +690,10 @@ namespace Configs {
 
         // manage routing section
         auto routeObj = QJsonObject();
+        if (dataStore->spmode_vpn) {
+            routeObj["auto_detect_interface"] = true;
+        }
         if (!status->forTest) {
-            if (dataStore->spmode_vpn) {
-                routeObj["auto_detect_interface"] = true;
-            }
             if (dataStore->enable_stats)
             {
                 routeObj["find_process"] = true;
