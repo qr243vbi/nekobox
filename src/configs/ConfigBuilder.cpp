@@ -682,121 +682,123 @@ namespace Configs {
         // custom inbound
         if (!status->forTest) QJSONARRAY_ADD(status->inbounds, QString2QJsonObject(dataStore->custom_inbound)["inbounds"].toArray())
 
-        // manage routing section
-        auto routeObj = QJsonObject();
-        if (dataStore->spmode_vpn) {
-            routeObj["auto_detect_interface"] = true;
-        }
-        if (dataStore->enable_stats && !status->forTest)
-        {
-            routeObj["find_process"] = true;
-        }
-        if (!status->forTest) routeObj["final"] = outboundIDToString(routeChain->defaultOutboundID);
-
-        if (!dataStore->routing->domain_strategy.isEmpty())
-        {
-            auto resolveRule = std::make_shared<RouteRule>();
-            resolveRule->action = "resolve";
-            resolveRule->strategy = dataStore->routing->domain_strategy;
-            resolveRule->inbound = {"mixed-in", "tun-in"};
-            routeChain->Rules.prepend(resolveRule);
-        }
-        if (dataStore->routing->sniffing_mode != SniffingMode::DISABLE)
-        {
-            auto sniffRule = std::make_shared<RouteRule>();
-            sniffRule->action = "sniff";
-            sniffRule->inbound = {"mixed-in", "tun-in"};
-            routeChain->Rules.prepend(sniffRule);
-        }
-        auto neededOutbounds = routeChain->get_used_outbounds();
-        auto neededRuleSets = routeChain->get_used_rule_sets();
-        std::map<int, QString> outboundMap;
-        outboundMap[-1] = "proxy";
-        outboundMap[-2] = "direct";
-        int suffix = 0;
-        for (const auto &item: *neededOutbounds) {
-            if (item < 0) continue;
-            auto neededEnt = profileManager->GetProfile(item);
-            if (neededEnt == nullptr) {
-                status->result->error = "The routing profile is referencing outbounds that no longer exists, consider revising your settings";
-                return;
-            }
-            QJsonObject currOutbound;
-            QString tag = "rout-" + Int2String(suffix++);
-            BuildOutbound(neededEnt, status, currOutbound, tag);
-            if (neededEnt->type == "wireguard")
-            {
-                status->endpoints += currOutbound;
-            } else
-            {
-                status->outbounds += currOutbound;
-            }
-            outboundMap[item] = tag;
-
-            // add to dns direct resolve
-            if (!IsIpAddress(neededEnt->bean->serverAddress)) {
-                directDomains << neededEnt->bean->serverAddress;
-                needDirectDnsRules = true;
-            }
-        }
-        auto routeRules = routeChain->get_route_rules(false, outboundMap);
-        routeObj["rules"] = routeRules;
-
         // DNS hijack deps
         QJsonArray hijackDomains;
         QJsonArray hijackDomainSuffix;
         QJsonArray hijackDomainRegex;
         QJsonArray hijackGeoAssets;
 
-        if (dataStore->enable_dns_server && !status->forTest) {
-            for (const auto& rule : dataStore->dns_server_rules) {
-                if (rule.startsWith("ruleset:")) {
-                    hijackGeoAssets << rule.mid(8);
-                }
-                if (rule.startsWith("domain:")) {
-                    hijackDomains << rule.mid(7);
-                }
-                if (rule.startsWith("suffix:")) {
-                    hijackDomainSuffix << rule.mid(7);
-                }
-                if (rule.startsWith("regex:")) {
-                    hijackDomainRegex << rule.mid(6);
-                }
+        // manage routing section
+        auto routeObj = QJsonObject();
+        if (!status->forTest) {
+            if (dataStore->spmode_vpn) {
+                routeObj["auto_detect_interface"] = true;
             }
-        }
-        for (auto ruleSet : hijackGeoAssets) {
-            if (!neededRuleSets->contains(ruleSet.toString())) neededRuleSets->append(ruleSet.toString());
-        }
+            if (dataStore->enable_stats)
+            {
+                routeObj["find_process"] = true;
+            }
+            routeObj["final"] = outboundIDToString(routeChain->defaultOutboundID);
 
-        auto ruleSetArray = QJsonArray();
-        for (const auto &item: *neededRuleSets) {
-            if(auto url = QUrl(item); url.isValid() && url.fileName().contains(".srs")) {
-                ruleSetArray += QJsonObject{
-                    {"type", "remote"},
-                    {"tag", get_rule_set_name(item)},
-                    {"format", "binary"},
-                    {"url", item},
-                };
+            if (!dataStore->routing->domain_strategy.isEmpty())
+            {
+                auto resolveRule = std::make_shared<RouteRule>();
+                resolveRule->action = "resolve";
+                resolveRule->strategy = dataStore->routing->domain_strategy;
+                resolveRule->inbound = {"mixed-in", "tun-in"};
+                routeChain->Rules.prepend(resolveRule);
             }
-            else
-                if(ruleSetMap.count(item.toStdString()) > 0) {
+            if (dataStore->routing->sniffing_mode != SniffingMode::DISABLE)
+            {
+                auto sniffRule = std::make_shared<RouteRule>();
+                sniffRule->action = "sniff";
+                sniffRule->inbound = {"mixed-in", "tun-in"};
+                routeChain->Rules.prepend(sniffRule);
+            }
+            auto neededOutbounds = routeChain->get_used_outbounds();
+            auto neededRuleSets = routeChain->get_used_rule_sets();
+            std::map<int, QString> outboundMap;
+            outboundMap[-1] = "proxy";
+            outboundMap[-2] = "direct";
+            int suffix = 0;
+            for (const auto &item: *neededOutbounds) {
+                if (item < 0) continue;
+                auto neededEnt = profileManager->GetProfile(item);
+                if (neededEnt == nullptr) {
+                    status->result->error = "The routing profile is referencing outbounds that no longer exists, consider revising your settings";
+                    return;
+                }
+                QJsonObject currOutbound;
+                QString tag = "rout-" + Int2String(suffix++);
+                BuildOutbound(neededEnt, status, currOutbound, tag);
+                if (neededEnt->type == "wireguard")
+                {
+                    status->endpoints += currOutbound;
+                } else
+                {
+                    status->outbounds += currOutbound;
+                }
+                outboundMap[item] = tag;
+
+                // add to dns direct resolve
+                if (!IsIpAddress(neededEnt->bean->serverAddress)) {
+                    directDomains << neededEnt->bean->serverAddress;
+                    needDirectDnsRules = true;
+                }
+            }
+            auto routeRules = routeChain->get_route_rules(false, outboundMap);
+            routeObj["rules"] = routeRules;
+
+            if (dataStore->enable_dns_server) {
+                for (const auto& rule : dataStore->dns_server_rules) {
+                    if (rule.startsWith("ruleset:")) {
+                        hijackGeoAssets << rule.mid(8);
+                    }
+                    if (rule.startsWith("domain:")) {
+                        hijackDomains << rule.mid(7);
+                    }
+                    if (rule.startsWith("suffix:")) {
+                        hijackDomainSuffix << rule.mid(7);
+                    }
+                    if (rule.startsWith("regex:")) {
+                        hijackDomainRegex << rule.mid(6);
+                    }
+                }
+            }
+            for (auto ruleSet : hijackGeoAssets) {
+                if (!neededRuleSets->contains(ruleSet.toString())) neededRuleSets->append(ruleSet.toString());
+            }
+
+            auto ruleSetArray = QJsonArray();
+            for (const auto &item: *neededRuleSets) {
+                if(auto url = QUrl(item); url.isValid() && url.fileName().contains(".srs")) {
                     ruleSetArray += QJsonObject{
                         {"type", "remote"},
-                        {"tag", item},
+                        {"tag", get_rule_set_name(item)},
                         {"format", "binary"},
-                        {"url", get_jsdelivr_link(QString::fromStdString(ruleSetMap.at(item.toStdString())))},
+                        {"url", item},
                     };
                 }
+                else
+                    if(ruleSetMap.count(item.toStdString()) > 0) {
+                        ruleSetArray += QJsonObject{
+                            {"type", "remote"},
+                            {"tag", item},
+                            {"format", "binary"},
+                            {"url", get_jsdelivr_link(QString::fromStdString(ruleSetMap.at(item.toStdString())))},
+                        };
+                    }
+            }
+            if (Configs::dataStore->adblock_enable) {
+                ruleSetArray += QJsonObject{
+                    {"type", "remote"},
+                    {"tag", "throne-adblocksingbox"},
+                    {"format", "binary"},
+                    {"url", get_jsdelivr_link("https://raw.githubusercontent.com/217heidai/adblockfilters/main/rules/adblocksingbox.srs")},
+                };
+            }
+            routeObj["rule_set"] = ruleSetArray;
         }
-        if (Configs::dataStore->adblock_enable) {
-            ruleSetArray += QJsonObject{
-                {"type", "remote"},
-                {"tag", "throne-adblocksingbox"},
-                {"format", "binary"},
-                {"url", get_jsdelivr_link("https://raw.githubusercontent.com/217heidai/adblockfilters/main/rules/adblocksingbox.srs")},
-            };
-        }
-        routeObj["rule_set"] = ruleSetArray;
 
         // DNS settings
         QJsonObject dns;
