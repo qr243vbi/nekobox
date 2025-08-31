@@ -243,7 +243,15 @@ namespace Configs {
             if (!serverPorts.empty())
             {
                 outbound.remove("server_port");
-                outbound["server_ports"] = QListStr2QJsonArray(serverPorts);
+                QStringList modifiedPorts;
+                for (const QString& port : serverPorts) {
+                    if (port.contains(":")) {
+                        modifiedPorts.append(port);
+                    } else {
+                        modifiedPorts.append(port + ":" + port);
+                    }
+                }
+                outbound["server_ports"] = QListStr2QJsonArray(modifiedPorts);
                 if (!hop_interval.isEmpty()) outbound["hop_interval"] = hop_interval;
             }
 
@@ -257,7 +265,15 @@ namespace Configs {
             if (!serverPorts.empty())
             {
                 outbound.remove("server_port");
-                outbound["server_ports"] = QListStr2QJsonArray(serverPorts);
+                QStringList modifiedPorts;
+                for (const QString& port : serverPorts) {
+                    if (port.contains(":")) {
+                        modifiedPorts.append(port);
+                    } else {
+                        modifiedPorts.append(port + ":" + port);
+                    }
+                }
+                outbound["server_ports"] = QListStr2QJsonArray(modifiedPorts);
                 if (!hop_interval.isEmpty()) outbound["hop_interval"] = hop_interval;
             }
 
