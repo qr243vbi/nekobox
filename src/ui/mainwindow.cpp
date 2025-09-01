@@ -594,7 +594,6 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
         ui->menu_export_config->setVisible(name == software_core_name);
         ui->menu_export_config->setText(tr("Export %1 config").arg(name));
     });
-    refresh_status();
 
     connect(qApp, &QGuiApplication::commitDataRequest, this, &MainWindow::on_commitDataRequest);
 
@@ -806,6 +805,7 @@ void MainWindow::dialog_message_impl(const QString &sender, const QString &info)
                 set_system_dns(true);
                 ui->system_dns->setChecked(true);
             }
+            refresh_status();
         }
     }
 }
