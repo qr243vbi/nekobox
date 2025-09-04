@@ -10,7 +10,7 @@ namespace API {
     }
 
 #define CHECK(method) \
-if (!Configs::dataStore->core_running) MW_show_log("Cannot invoke method" + QString(method) + ", core is not running");
+if (!Configs::dataStore->core_running) MW_show_log("Cannot invoke method " + QString(method) + ", core is not running");
 
 #define NOT_OK      \
     *rpcOK = false; \
