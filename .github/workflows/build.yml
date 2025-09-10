@@ -159,6 +159,7 @@ jobs:
           export CMAKE_PREFIX_PATH=$PWD/qt6/build/lib/cmake
           mkdir build
           cd build
+          curl -fLso srslist.h "https://raw.githubusercontent.com/throneproj/routeprofiles/rule-set/srslist.h"
           cmake -GNinja -DCMAKE_CXX_FLAGS="-static" -DCMAKE_BUILD_TYPE=Debug ..
           ninja -j2
           cd ..
@@ -175,6 +176,7 @@ jobs:
           export OPENSSL_ROOT_DIR=$PWD/openssl
           mkdir build
           cd build
+          curl -fLso srslist.h "https://raw.githubusercontent.com/throneproj/routeprofiles/rule-set/srslist.h"
           cmake -GNinja -DCMAKE_CXX_FLAGS="-static" -DCMAKE_BUILD_TYPE=Debug ..
           ninja -j2
           cd ..
@@ -193,6 +195,7 @@ jobs:
           sudo apt update && sudo apt upgrade -y
           mkdir build
           cd build
+          curl -fLso srslist.h "https://raw.githubusercontent.com/throneproj/routeprofiles/rule-set/srslist.h"
           cmake -GNinja -DCMAKE_BUILD_TYPE=Release -DCMAKE_EXE_LINKER_FLAGS="-static-libgcc -static-libstdc++" ..
           ninja
           cd ..
@@ -203,6 +206,7 @@ jobs:
         run: |
           mkdir build
           cd build
+          curl -fLso srslist.h "https://raw.githubusercontent.com/throneproj/routeprofiles/rule-set/srslist.h"
           cmake -GNinja -DCMAKE_BUILD_TYPE=Release -DNKR_PACKAGE_MACOS=1 -DCMAKE_OSX_DEPLOYMENT_TARGET=10.15 -DCMAKE_OSX_ARCHITECTURES=${{ matrix.target }} ..
           ninja
           cd ..

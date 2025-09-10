@@ -20,9 +20,6 @@ cd ../..
 
 mv deployment/macos-$ARCH/* $BUILD/Throne.app/Contents/MacOS
 
-#### download srslist ####
-curl -fLso $BUILD/Throne.app/Contents/MacOS/srslist "https://raw.githubusercontent.com/throneproj/routeprofiles/rule-set/list"
-
 #### deploy qt & DLL runtime => .app ####
 pushd $BUILD
 macdeployqt Throne.app -verbose=3

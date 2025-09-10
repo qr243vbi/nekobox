@@ -57,6 +57,8 @@
 
 #include "include/sys/macos/MacOS.h"
 
+#include <srslist.h>
+
 void UI_InitMainWindow() {
     mainwindow = new MainWindow;
 }
@@ -426,36 +428,8 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
         }
     });
 
-	auto srslist = QFile(QApplication::applicationDirPath() + "/srslist");
-    if (srslist.exists()) {
-        if (srslist.open(QIODevice::ReadOnly)) {
-            QByteArray byteArray = srslist.readAll();
-            srslist.close();
-            std::vector<uint8_t> srsvec;
-            srsvec.assign(byteArray.begin(), byteArray.end());
-            ruleSetMap = spb::pb::deserialize<libcore::RuleSet>(srsvec).items;
-        }
-    } else {
-        auto getRuleSet = [=,this]
-        {
-            QString err;
-            for(int retry = 0; retry < 5; retry++) {
-                auto resp = NetworkRequestHelper::HttpGet(Configs::get_jsdelivr_link("https://raw.githubusercontent.com/throneproj/routeprofiles/rule-set/list"));
-                if (resp.error.isEmpty()) {
-                    std::vector<uint8_t> respvec;
-                    respvec.assign(resp.data.begin(), resp.data.end());
-                    auto reply = spb::pb::deserialize<libcore::RuleSet>(respvec);
-                    ruleSetMap = reply.items;
-                    return;
-                }
-                else
-                    err = resp.error;
-                QThread::sleep(30);
-            }
-            MW_show_log(QObject::tr("Requesting rule-set list error: %1").arg(err));
-        };
-        runOnNewThread(getRuleSet);
-    }
+	std::vector<uint8_t> srsvec(std::begin(srslist), std::end(srslist));
+    ruleSetMap = spb::pb::deserialize<libcore::RuleSet>(srsvec).items;
 
     auto getRemoteRouteProfiles = [=,this]
     {
