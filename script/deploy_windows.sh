@@ -28,9 +28,6 @@ cd ..
 rm tmp.exe
 mv Throne.pdb $DEST
 
-#### download srslist ####
-curl -fLso $DEST/srslist "https://raw.githubusercontent.com/throneproj/routeprofiles/rule-set/list"
-
 #### copy exe ####
 cp $BUILD/Throne.exe $DEST
 
