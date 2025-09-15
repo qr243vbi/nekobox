@@ -35,7 +35,7 @@ QString ParseSubInfo(const QString &info) {
     }
 
     result = QObject::tr("Used: %1 Remain: %2 Expire: %3")
-                 .arg(ReadableSize(used), ReadableSize(total - used), DisplayTime(expire, QLocale::ShortFormat));
+                         .arg(ReadableSize(used), (total == 0) ? QString::fromUtf8("\u221E") : ReadableSize(total - used), DisplayTime(expire, QLocale::ShortFormat));
 
     return result;
 }
