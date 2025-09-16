@@ -228,7 +228,9 @@ RouteItem::RouteItem(QWidget *parent, const std::shared_ptr<Configs::RoutingChai
     connect(ui->rule_name, &QLineEdit::textChanged, this, [=,this](const QString& text) {
         if (currentIndex == -1) return;
         chain->Rules[currentIndex]->name = QString(text);
-        updateRouteItemsView();
+        auto ruleNameCursorPosition = ui->rule_name->cursorPosition();
+        updateRouteItemsView(); 
+        ui->rule_name->setCursorPosition(ruleNameCursorPosition);
     });
 
     connect(ui->rule_attr_selector, &QComboBox::currentTextChanged, this, [=,this](const QString& text){
