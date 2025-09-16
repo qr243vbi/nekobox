@@ -2178,7 +2178,7 @@ Release note:
     </message>
     <message>
         <source>Used: %1 Remain: %2 Expire: %3</source>
-        <translation>Использовано: %1, осталось: %2, истекло: %3</translation>
+        <translation>Использовано: %1, осталось: %2, истекает: %3</translation>
     </message>
     <message>
         <source>Default</source>
