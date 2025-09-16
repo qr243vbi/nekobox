@@ -187,7 +187,7 @@ jobs:
         run: |
           choco install nsis
           cp .\script\windows_installer.nsi .
-          C:\ProgramData\chocolatey\lib\nsis\tools\makensis.exe windows_installer.nsi
+          "C:\Program Files (x86)\NSIS\makensis.exe" windows_installer.nsi
           cp ThroneSetup.exe deployment/
       - name: Linux - Generate MakeFile and Build
         shell: bash
