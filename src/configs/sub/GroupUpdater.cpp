@@ -543,7 +543,7 @@ namespace Subscription {
                         bean->stream->reality_sid = Node2QString(reality["short-id"]);
                     }
 
-                    if (bean->stream->network == "tcp") {
+                    if (bean->stream->network == "tcp" && bean->stream->security.isEmpty()) {
                         if (bean->stream->header_type.isEmpty())
                             bean->stream->header_type = "http";
                         if (bean->stream->path.isEmpty())
