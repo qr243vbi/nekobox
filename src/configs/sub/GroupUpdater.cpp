@@ -615,10 +615,13 @@ namespace Subscription {
                             }
                         }
                         auto paths = tcp_http["path"];
-                        for (auto path: paths) {
-                            bean->stream->path = Node2QString(path);
-                            break;
-                        }
+                        if (paths.is_string())
+                            bean->stream->path = Node2QString(paths);
+                        else if (paths.is_sequence())
+                            for (auto path: paths) {
+                                bean->stream->path = Node2QString(path);
+                                break;
+                            }
                     }
                 } else if (type == "anytls") {
                     needFix = true;
