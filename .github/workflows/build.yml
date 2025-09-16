@@ -185,6 +185,7 @@ jobs:
         shell: cmd
         if: matrix.platform == 'windows-latest' && matrix.qt_version != '6.2.12'
         run: |
+          choco install nsis
           cp .\script\windows_installer.nsi .
           makensis windows_installer.nsi
           cp ThroneSetup.exe deployment/
