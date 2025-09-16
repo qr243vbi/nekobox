@@ -182,12 +182,12 @@ jobs:
           cd ..
           ./script/deploy_windows.sh ${{ matrix.target }}
       - name: Build Installer with NSIS
-        shell: cmd
+        shell: powershell
         if: matrix.platform == 'windows-latest' && matrix.qt_version != '6.2.12'
         run: |
           choco install nsis
           cp .\script\windows_installer.nsi .
-          C:\ProgramData\chocolatey\lib\nsis\tools\makensis.exe windows_installer.nsi
+          makensis windows_installer.nsi
           cp ThroneSetup.exe deployment/
       - name: Linux - Generate MakeFile and Build
         shell: bash
