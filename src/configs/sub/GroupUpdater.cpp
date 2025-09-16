@@ -609,7 +609,7 @@ namespace Subscription {
                         if (headers.is_mapping()) {
                             for (auto header: headers.as_map()) {
                                 if (Node2QString(header.first).toLower() == "host") {
-                                    bean->stream->host = Node2QString(header.second[0]);
+                                    bean->stream->host = Node2QString(header.second);
                                     break;
                                 }
                             }
