@@ -182,7 +182,7 @@ jobs:
           cd ..
           ./script/deploy_windows.sh ${{ matrix.target }}
       - name: Build Installer with NSIS
-        shell: cmd
+        shell: powershell
         if: matrix.platform == 'windows-latest' && matrix.qt_version != '6.2.12'
         run: |
           choco install nsis
