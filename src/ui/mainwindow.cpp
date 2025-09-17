@@ -1239,10 +1239,8 @@ void MainWindow::refresh_status(const QString &traffic_update) {
         if (group != nullptr) group_name = group->name;
     }
 
-    if (last_test_time.addSecs(2) < QTime::currentTime()) {
-        auto txt = running == nullptr ? tr("Not Running")
-                                      : QString("[%1] %2").arg(group_name, running->bean->DisplayName()).left(30);
-        ui->label_running->setText(txt);
+    if (QDateTime::currentSecsSinceEpoch() - last_test_time > 2) {
+        ui->label_running->setText(running ? QString("[%1] %2").arg(group_name, running->bean->DisplayName()).left(30) : tr("Not Running"));
     }
     //
     auto display_socks = DisplayAddress(Configs::dataStore->inbound_address, Configs::dataStore->inbound_socks_port);

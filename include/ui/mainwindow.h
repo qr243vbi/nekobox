@@ -15,7 +15,6 @@
 
 #ifndef MW_INTERFACE
 
-#include <QTime>
 #include <QTableWidgetItem>
 #include <QKeyEvent>
 #include <QSystemTrayIcon>
@@ -182,7 +181,7 @@ private:
     int icon_status = -1;
     std::shared_ptr<Configs::ProxyEntity> running;
     QString traffic_update_cache;
-    QTime last_test_time;
+    qint64 last_test_time = 0;
     //
     int proxy_last_order = -1;
     bool select_mode = false;
