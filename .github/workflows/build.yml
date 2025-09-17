@@ -26,7 +26,7 @@ jobs:
             go_version: "1.25.0"
           - cross_os: darwin
             cross_arch: amd64
-            go_version: "1.25.0"
+            go_version: "1.24.7"
           - cross_os: darwin
             cross_arch: arm64
             go_version: "1.25.0"
@@ -106,6 +106,9 @@ jobs:
           - platform: macos-latest
             qt_version: "6.9.0"
             target: arm64
+          - platform: macos-latest
+            qt_version: "6.4.3"
+            target: x86_64
           - platform: windows-latest
             qt_version: "6.2.12"
             target: x86_64
@@ -203,7 +206,7 @@ jobs:
           ./script/deploy_linux64.sh
       - name: macOS - Generate MakeFile and Build
         shell: bash
-        if: matrix.platform == 'macos-latest'
+        if: matrix.platform == 'macos-latest' && matrix.qt_version != '6.4.3'
         run: |
           mkdir build
           cd build
@@ -212,6 +215,17 @@ jobs:
           ninja
           cd ..
           ./script/deploy_macos.sh ${{ matrix.target }}
+      - name: Legacy macOS - Generate MakeFile and Build
+        shell: bash
+        if: matrix.platform == 'macos-latest' && matrix.qt_version == '6.4.3'
+        run: |
+          mkdir build
+          cd build
+          curl -fLso srslist.h "https://raw.githubusercontent.com/throneproj/routeprofiles/rule-set/srslist.h"
+          cmake -GNinja -DCMAKE_BUILD_TYPE=Release -DNKR_PACKAGE_MACOS=1 -DCMAKE_OSX_DEPLOYMENT_TARGET=10.14 -DCMAKE_OSX_ARCHITECTURES=${{ matrix.target }} ..
+          ninja
+          cd ..
+          ./script/deploy_macos.sh
       # ========================================================================================================= Deployments
       - name: Tar files
         shell: bash
@@ -283,6 +297,12 @@ jobs:
           zip -9 --symlinks -r $version_standalone-macos-amd64.zip Throne
           rm -rf macos-amd64
           rm -rf Throne
+          ####
+          mkdir Throne
+          mv macoslegacy-amd64/Throne.app Throne/Throne.app
+          zip -9 --symlinks -r $version_standalone-macoslegacy-amd64.zip Throne
+          rm -rf macoslegacy-amd64
+          rm -rf Throne
       - name: Clean Up
         run: |
           cd deployment
@@ -294,6 +314,7 @@ jobs:
           rm -rf windowslegacy64
           rm -rf macos-amd64
           rm -rf macos-arm64
+          rm -rf macoslegacy-amd64
           rm -rf *.pdb
       - name: Uploading Artifact
         uses: actions/upload-artifact@v4.6.2

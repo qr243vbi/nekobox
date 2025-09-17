@@ -1,14 +1,19 @@
 #!/bin/bash
 set -e
 
+source script/env_deploy.sh
 if [[ $1 == 'arm64' ]]; then
   ARCH="arm64"
+  DEST=$DEPLOYMENT/macos-arm64
 else
   ARCH="amd64"
+  if [[ $1 == 'x86_64' ]]; then
+    DEST=$DEPLOYMENT/macos-amd64
+  else
+    DEST=$DEPLOYMENT/macoslegacy-amd64
+  fi
 fi
 
-source script/env_deploy.sh
-DEST=$DEPLOYMENT/macos-$ARCH
 rm -rf $DEST
 mkdir -p $DEST
 
