@@ -195,7 +195,7 @@ void MainWindow::stopTests() {
 }
 
 void MainWindow::url_test_current() {
-    last_test_time = QTime::currentTime();
+    last_test_time = QDateTime::currentSecsSinceEpoch();
     ui->label_running->setText(tr("Testing"));
 
     runOnNewThread([=,this] {
@@ -208,7 +208,7 @@ void MainWindow::url_test_current() {
         if (!rpcOK || result.results.empty()) return;
 
         auto latency = result.results[0].latency_ms.value();
-        last_test_time = QTime::currentTime();
+        last_test_time = QDateTime::currentSecsSinceEpoch();
 
         runOnUiThread([=,this] {
             if (!result.results[0].error.value().empty()) {
