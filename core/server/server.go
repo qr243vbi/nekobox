@@ -58,7 +58,7 @@ func (s *server) Start(in *gen.LoadConfigReq, out *gen.ErrorResp) (_ error) {
 	}
 
 	if *in.NeedExtraProcess {
-		args, e := shlex.Split(*in.ExtraProcessArgs)
+		args, e := shlex.Split(in.GetExtraProcessArgs())
 		if e != nil {
 			err = E.Cause(e, "Failed to parse args")
 			return
