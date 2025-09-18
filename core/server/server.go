@@ -58,27 +58,29 @@ func (s *server) Start(in *gen.LoadConfigReq, out *gen.ErrorResp) (_ error) {
 	}
 
 	if *in.NeedExtraProcess {
-		extraConfPath := *in.ExtraProcessConfDir + string(os.PathSeparator) + "extra.conf"
-		f, e := os.OpenFile(extraConfPath, os.O_CREATE|os.O_TRUNC|os.O_RDWR, 700)
-		if e != nil {
-			err = E.Cause(e, "Failed to open extra.conf")
-			return
-		}
-		_, e = f.WriteString(*in.ExtraProcessConf)
-		if e != nil {
-			err = E.Cause(e, "Failed to write extra.conf")
-			return
-		}
-		_ = f.Close()
 		args, e := shlex.Split(*in.ExtraProcessArgs)
 		if e != nil {
 			err = E.Cause(e, "Failed to parse args")
 			return
 		}
-		for idx, arg := range args {
-			if strings.Contains(arg, "%s") {
-				args[idx] = fmt.Sprintf(arg, extraConfPath)
-				break
+		if in.ExtraProcessConf != nil {
+			extraConfPath := *in.ExtraProcessConfDir + string(os.PathSeparator) + "extra.conf"
+			f, e := os.OpenFile(extraConfPath, os.O_CREATE|os.O_TRUNC|os.O_RDWR, 700)
+			if e != nil {
+				err = E.Cause(e, "Failed to open extra.conf")
+				return
+			}
+			_, e = f.WriteString(*in.ExtraProcessConf)
+			if e != nil {
+				err = E.Cause(e, "Failed to write extra.conf")
+				return
+			}
+			_ = f.Close()
+			for idx, arg := range args {
+				if strings.Contains(arg, "%s") {
+					args[idx] = fmt.Sprintf(arg, extraConfPath)
+					break
+				}
 			}
 		}
 
