@@ -554,7 +554,7 @@
        <item row="5" column="1">
         <widget class="QCheckBox" name="sub_send_hwid">
          <property name="text">
-          <string>Includes sending HWID, model, and OS version</string>
+          <string>Enable sending HWID, device model, and OS version when updating subscription</string>
          </property>
         </widget>
        </item>

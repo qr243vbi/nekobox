@@ -91,6 +91,10 @@
         <source>Clear servers before updating subscription</source>
         <translation>Очищать список серверов перед обновлением подписки</translation>
     </message>
+	<message>
+        <source>Enable sending HWID, device model, and OS version when updating subscription</source>
+        <translation>Включить отправку HWID, модели устройства и версии ОС при обновлении подписки</translation>
+    </message>
     <message>
         <source>Core</source>
         <translation>Ядро</translation>
