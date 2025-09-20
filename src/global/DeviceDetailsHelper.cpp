@@ -10,7 +10,6 @@
 #include <windows.h>
 #include "include/sys/windows/WinVersion.h"
 #include <include/sys/Process.hpp>
-#include <comdef.h>
 #include <Wbemidl.h>
 #pragma comment(lib, "wbemuuid.lib")
 #endif
