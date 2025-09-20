@@ -68,10 +68,12 @@ static QString queryWmiProperty(const QString& wmiClass, const QString& property
     }
 
     IWbemServices* pSvc = NULL;
+    BSTR bstrNamespace = SysAllocString(L"ROOT\\CIMV2");
     hres = pLoc->ConnectServer(
-        _bstr_t(L"ROOT\\CIMV2"),
-        NULL, NULL, 0, NULL, 0, 0, &pSvc
+        bstrNamespace,
+        NULL, NULL, NULL, 0, NULL, 0, &pSvc
     );
+    SysFreeString(bstrNamespace);
     if (FAILED(hres)) {
         pLoc->Release();
         CoUninitialize();
