@@ -124,7 +124,7 @@ namespace Qv2ray::ui::widgets {
         const bool isTab = (e->modifiers().testFlag(Qt::NoModifier) && e->key() == Qt::Key_Tab);
         const bool isOtherSpace = e->text() == "　";
         //
-        if (isSpace || isTab || isOtherSpace) {
+        if (isSpace && !lineUnderCursor().startsWith("processName:") && !lineUnderCursor().startsWith("processPath:") || isTab || isOtherSpace) {
             QToolTip::showText(this->mapToGlobal(QPoint(0, 0)), tr("You can not input space characters here."), this, QRect{}, 2000);
             return;
         }

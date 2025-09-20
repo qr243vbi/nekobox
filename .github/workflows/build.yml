@@ -17,25 +17,28 @@ jobs:
         include:
           - cross_os: windows
             cross_arch: amd64
-            go_version: "1.25.0"
+            go_version: "1.25.1"
+          - cross_os: windows
+            cross_arch: arm64
+            go_version: "1.25.1"
           - cross_os: linux
             cross_arch: amd64
-            go_version: "1.25.0"
+            go_version: "1.25.1"
           - cross_os: linux
             cross_arch: arm64
-            go_version: "1.25.0"
+            go_version: "1.25.1"
           - cross_os: darwin
             cross_arch: amd64
-            go_version: "1.25.0"
+            go_version: "1.24.7"
           - cross_os: darwin
             cross_arch: arm64
-            go_version: "1.25.0"
+            go_version: "1.25.1"
           - cross_os: windowslegacy
             cross_arch: amd64
-            go_version: "1.25.0"
+            go_version: "1.25.1"
           - cross_os: windowslegacy
             cross_arch: 386
-            go_version: "1.25.0"
+            go_version: "1.25.1"
       fail-fast: false
     runs-on: ubuntu-latest
     steps:
@@ -94,6 +97,9 @@ jobs:
           - platform: windows-latest
             qt_version: "6.9.0"
             target: x86_64
+          - platform: windows-11-arm
+            qt_version: "6.9.0"
+            target: arm64
           - platform: ubuntu-22.04
             qt_version: "6.9.0"
             target: amd64
@@ -106,6 +112,9 @@ jobs:
           - platform: macos-latest
             qt_version: "6.9.0"
             target: arm64
+          - platform: macos-latest
+            qt_version: "6.4.3"
+            target: x86_64
           - platform: windows-latest
             qt_version: "6.2.12"
             target: x86_64
@@ -127,6 +136,11 @@ jobs:
         uses: bwoodsend/setup-winlibs-action@v1.15
         with:
           architecture: ${{ matrix.target }}
+      - name: Install MSVC compiler
+        if: matrix.platform == 'windows-11-arm'
+        uses: ilammy/msvc-dev-cmd@v1
+        with:
+          arch: arm64
       - name: Download Artifacts
         uses: actions/download-artifact@v4.3.0
         with:
@@ -181,6 +195,17 @@ jobs:
           ninja -j2
           cd ..
           ./script/deploy_windows.sh ${{ matrix.target }}
+      - name: WOA - Generate MakeFile and Build
+        shell: bash
+        if: matrix.platform == 'windows-11-arm'
+        run: |
+          mkdir build
+          cd build
+          curl -fLso srslist.h "https://raw.githubusercontent.com/throneproj/routeprofiles/rule-set/srslist.h"
+          cmake -GNinja -DCMAKE_BUILD_TYPE=Release ..
+          ninja -j2
+          cd ..
+          ./script/deploy_woa.sh
       - name: Build Installer with NSIS
         shell: cmd
         if: matrix.platform == 'windows-latest' && matrix.qt_version != '6.2.12'
@@ -203,7 +228,7 @@ jobs:
           ./script/deploy_linux64.sh
       - name: macOS - Generate MakeFile and Build
         shell: bash
-        if: matrix.platform == 'macos-latest'
+        if: matrix.platform == 'macos-latest' && matrix.qt_version != '6.4.3'
         run: |
           mkdir build
           cd build
@@ -212,6 +237,17 @@ jobs:
           ninja
           cd ..
           ./script/deploy_macos.sh ${{ matrix.target }}
+      - name: Legacy macOS - Generate MakeFile and Build
+        shell: bash
+        if: matrix.platform == 'macos-latest' && matrix.qt_version == '6.4.3'
+        run: |
+          mkdir build
+          cd build
+          curl -fLso srslist.h "https://raw.githubusercontent.com/throneproj/routeprofiles/rule-set/srslist.h"
+          cmake -GNinja -DCMAKE_BUILD_TYPE=Release -DNKR_PACKAGE_MACOS=1 -DCMAKE_OSX_DEPLOYMENT_TARGET=10.15 -DCMAKE_OSX_ARCHITECTURES=${{ matrix.target }} ..
+          ninja
+          cd ..
+          ./script/deploy_macos.sh
       # ========================================================================================================= Deployments
       - name: Tar files
         shell: bash
@@ -272,6 +308,10 @@ jobs:
           zip -9 -r $version_standalone-windowslegacy64.zip Throne
           rm -rf Throne
           ####
+          mv windows-arm64 Throne
+          zip -9 -r $version_standalone-windows-arm64.zip Throne
+          rm -rf Throne
+          ####
           mkdir Throne
           mv macos-arm64/Throne.app Throne/Throne.app
           zip -9 --symlinks -r $version_standalone-macos-arm64.zip Throne
@@ -282,6 +322,12 @@ jobs:
           mv macos-amd64/Throne.app Throne/Throne.app
           zip -9 --symlinks -r $version_standalone-macos-amd64.zip Throne
           rm -rf macos-amd64
+          rm -rf Throne
+          ####
+          mkdir Throne
+          mv macoslegacy-amd64/Throne.app Throne/Throne.app
+          zip -9 --symlinks -r $version_standalone-macoslegacy-amd64.zip Throne
+          rm -rf macoslegacy-amd64
           rm -rf Throne
       - name: Clean Up
         run: |
@@ -294,6 +340,7 @@ jobs:
           rm -rf windowslegacy64
           rm -rf macos-amd64
           rm -rf macos-arm64
+          rm -rf macoslegacy-amd64
           rm -rf *.pdb
       - name: Uploading Artifact
         uses: actions/upload-artifact@v4.6.2

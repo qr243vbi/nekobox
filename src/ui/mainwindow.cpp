@@ -2358,21 +2358,25 @@ bool isNewer(QString assetName) {
 
 void MainWindow::CheckUpdate() {
     QString search;
-#ifdef Q_OS_WIN32
-#  ifdef Q_OS_WIN64
-    if (WinVersion::IsBuildNumGreaterOrEqual(BuildNumber::Windows_10_1809))
-        search = "windows64";
-    else
-	    search = "windowslegacy64";
+#ifdef Q_OS_WIN
+#  ifdef Q_PROCESSOR_ARM_64
+    search = "windows-arm64";
 #  else
-	search = "windows32";
+#    ifdef Q_OS_WIN64
+        if (WinVersion::IsBuildNumGreaterOrEqual(BuildNumber::Windows_10_1809))
+            search = "windows64";
+        else
+	        search = "windowslegacy64";
+#    else
+	    search = "windows32";
+#    endif
 #  endif
 #endif
 #ifdef Q_OS_LINUX
 #  ifdef Q_PROCESSOR_X86_64
-        search = "linux-amd64";
+    search = "linux-amd64";
 #  else
-        search = "linux-arm64";
+    search = "linux-arm64";
 #  endif
 #endif
 #ifdef Q_OS_MACOS
