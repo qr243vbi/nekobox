@@ -64,6 +64,7 @@ set(PROJECT_SOURCES
         src/global/Configs.cpp
         src/global/Utils.cpp
         src/global/HTTPRequestHelper.cpp
+        src/global/DeviceDetailsHelper.cpp
 
         3rdparty/base64.cpp
         3rdparty/qrcodegen.cpp
