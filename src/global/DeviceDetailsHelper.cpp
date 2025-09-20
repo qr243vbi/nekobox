@@ -16,28 +16,6 @@
 
 
 #ifdef Q_OS_WIN
-static QString readRegistryStringValue(const QString& keyPath, const QString& valueName) {
-    HKEY hKey = nullptr;
-    std::wstring keyPathW = keyPath.toStdWString();
-    LONG res = RegOpenKeyExW(HKEY_LOCAL_MACHINE, keyPathW.c_str(), 0, KEY_READ | KEY_WOW64_64KEY, &hKey);
-    if (res != ERROR_SUCCESS) return QString();
-    DWORD type = 0;
-    DWORD cbData = 0;
-    res = RegQueryValueExW(hKey, (LPCWSTR)valueName.utf16(), nullptr, &type, nullptr, &cbData);
-    if (res != ERROR_SUCCESS || type != REG_SZ) {
-        RegCloseKey(hKey);
-        return QString();
-    }
-    std::vector<wchar_t> buffer(cbData / sizeof(wchar_t) + 1);
-    res = RegQueryValueExW(hKey, (LPCWSTR)valueName.utf16(), nullptr, nullptr, reinterpret_cast<LPBYTE>(buffer.data()), &cbData);
-    if (res != ERROR_SUCCESS) {
-        RegCloseKey(hKey);
-        return QString();
-    }
-    RegCloseKey(hKey);
-    return QString::fromWCharArray(buffer.data());
-}
-
 static QString queryWmiProperty(const QString& wmiClass, const QString& property) {
     HRESULT hres;
 
@@ -155,14 +133,10 @@ DeviceDetails GetDeviceDetails() {
     DeviceDetails details;
 
 #ifdef Q_OS_WIN
-    const QString regPath = QStringLiteral("SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\SoftwareProtectionPlatform\\Plugins\\Objects\\msft:rm/algorithm/hwid/4.0");
-    const QString valueName = QStringLiteral("ModuleId");
-    details.hwid = readRegistryStringValue(regPath, valueName);
-
+    details.hwid = QSysInfo::machineUniqueId();
     if (details.hwid.isEmpty()) {
-        auto productId = QSysInfo::machineUniqueId();
-        if (productId.isEmpty()) productId = QSysInfo::productType().toUtf8();
-        details.hwid = QString("%1-%2").arg(QSysInfo::machineHostName(), QString::fromUtf8(productId));
+        auto productType = QSysInfo::productType().toUtf8();
+        details.hwid = QString("%1-%2").arg(QSysInfo::machineHostName(), QString::fromUtf8(productType));
     }
 
     details.os = QStringLiteral("Windows");
