@@ -98,13 +98,17 @@ static QString queryWmiProperty(const QString& wmiClass, const QString& property
 
     IEnumWbemClassObject* pEnumerator = NULL;
     QString query = QString("SELECT %1 FROM %2").arg(property, wmiClass);
+    BSTR bstrWQL = SysAllocString(L"WQL");
+    BSTR bstrQuery = SysAllocString(query.toStdWString().c_str());
     hres = pSvc->ExecQuery(
-        bstr_t("WQL"),
-        bstr_t(query.toStdWString().c_str()),
+        bstrWQL,
+        bstrQuery,
         WBEM_FLAG_FORWARD_ONLY | WBEM_FLAG_RETURN_IMMEDIATELY,
         NULL,
         &pEnumerator
     );
+    SysFreeString(bstrWQL);
+    SysFreeString(bstrQuery);
     if (FAILED(hres)) {
         pSvc->Release();
         pLoc->Release();
