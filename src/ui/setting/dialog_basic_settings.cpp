@@ -7,6 +7,7 @@
 #include "include/global/GuiUtils.hpp"
 #include "include/global/Configs.hpp"
 #include "include/global/HTTPRequestHelper.hpp"
+#include "include/global/DeviceDetailsHelper.hpp"
 
 #include <QStyleFactory>
 #include <QFileDialog>
@@ -118,6 +119,13 @@ DialogBasicSettings::DialogBasicSettings(QWidget *parent)
     D_LOAD_BOOL(sub_insecure)
     D_LOAD_BOOL(sub_send_hwid)
     D_LOAD_INT_ENABLE(sub_auto_update, sub_auto_update_enable)
+    auto details = GetDeviceDetails();
+	ui->sub_send_hwid->setToolTip(
+        ui->sub_send_hwid->toolTip()
+            .arg(details.hwid.isEmpty() ? "N/A" : details.hwid,
+                details.os.isEmpty() ? "N/A" : details.os,
+                details.osVersion.isEmpty() ? "N/A" : details.osVersion,
+                details.model.isEmpty() ? "N/A" : details.model));
 
     // Core
     ui->groupBox_core->setTitle(software_core_name);

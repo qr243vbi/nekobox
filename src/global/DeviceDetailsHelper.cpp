@@ -14,7 +14,6 @@
 #pragma comment(lib, "wbemuuid.lib")
 #endif
 
-
 #ifdef Q_OS_WIN
 static QString queryWmiProperty(const QString& wmiClass, const QString& property) {
     HRESULT hres;
@@ -116,7 +115,6 @@ static QString queryWmiProperty(const QString& wmiClass, const QString& property
     pSvc->Release();
     pLoc->Release();
     CoUninitialize();
-
     return result;
 }
 
@@ -130,50 +128,56 @@ static QString winModel() {
 #endif
 
 DeviceDetails GetDeviceDetails() {
-    DeviceDetails details;
+    static const DeviceDetails details = []() {
+        DeviceDetails d;
 
-#ifdef Q_OS_WIN
-    details.hwid = QSysInfo::machineUniqueId();
-    if (details.hwid.isEmpty()) {
-        auto productType = QSysInfo::productType().toUtf8();
-        details.hwid = QString("%1-%2").arg(QSysInfo::machineHostName(), QString::fromUtf8(productType));
-    }
-
-    details.os = QStringLiteral("Windows");
-    VersionInfo info;
-    WinVersion::GetVersion(info);
-    details.osVersion = QString("%1.%2.%3").arg(info.Major).arg(info.Minor).arg(info.BuildNum);
-    auto wm = winModel();
-    auto wbb = winBaseBoard();
-    details.model = (wm == wbb) ? wm : wm + "/" + wbb;
-#elif defined(Q_OS_LINUX)
-    QString mid;
-    QFile f1("/etc/machine-id");
-    if (f1.exists() && f1.open(QIODevice::ReadOnly | QIODevice::Text)) {
-        mid = QString::fromUtf8(f1.readAll()).trimmed();
-        f1.close();
-    }
-    else {
-        QFile f2("/var/lib/dbus/machine-id");
-        if (f2.exists() && f2.open(QIODevice::ReadOnly | QIODevice::Text)) {
-            mid = QString::fromUtf8(f2.readAll()).trimmed();
-            f2.close();
+    #ifdef Q_OS_WIN
+        d.hwid = QSysInfo::machineUniqueId();
+        if (d.hwid.isEmpty()) {
+            auto productType = QSysInfo::productType().toUtf8();
+            d.hwid = QString("%1-%2").arg(QSysInfo::machineHostName(), QString::fromUtf8(productType));
         }
-    }
-    details.hwid = mid;
-    details.os = QStringLiteral("Linux");
-    details.osVersion = QSysInfo::kernelVersion();
-    details.model = QSysInfo::prettyProductName();
-#elif defined(Q_OS_MACOS)
-    details.hwid = QSysInfo::machineUniqueId();
-    details.os = QStringLiteral("macOS");
-    details.osVersion = QSysInfo::productVersion();
-    details.model = QSysInfo::prettyProductName();
-#else
-    details.hwid = QSysInfo::machineUniqueId();
-    details.os = QSysInfo::productType();
-    details.osVersion = QSysInfo::productVersion();
-    details.model = QSysInfo::prettyProductName();
-#endif
+
+        d.os = QStringLiteral("Windows ") + QSysInfo::productVersion();
+
+        VersionInfo info;
+        WinVersion::GetVersion(info);
+        d.osVersion = QString("%1.%2.%3").arg(info.Major).arg(info.Minor).arg(info.BuildNum);
+        
+        auto wm = winModel();
+        auto wbb = winBaseBoard();
+        d.model = (wm == wbb) ? wm : wm + "/" + wbb;
+        if (d.hwid.isEmpty()) d.model = QSysInfo::prettyProductName();
+    #elif defined(Q_OS_LINUX)
+        QString mid;
+        QFile f1("/etc/machine-id");
+        if (f1.exists() && f1.open(QIODevice::ReadOnly | QIODevice::Text)) {
+            mid = QString::fromUtf8(f1.readAll()).trimmed();
+            f1.close();
+        }
+        else {
+            QFile f2("/var/lib/dbus/machine-id");
+            if (f2.exists() && f2.open(QIODevice::ReadOnly | QIODevice::Text)) {
+                mid = QString::fromUtf8(f2.readAll()).trimmed();
+                f2.close();
+            }
+        }
+        d.hwid = mid;
+        d.os = QStringLiteral("Linux");
+        d.osVersion = QSysInfo::kernelVersion();
+        d.model = QSysInfo::prettyProductName();
+    #elif defined(Q_OS_MACOS)
+        d.hwid = QSysInfo::machineUniqueId();
+        d.os = QStringLiteral("macOS");
+        d.osVersion = QSysInfo::productVersion();
+        d.model = QSysInfo::prettyProductName();
+    #else
+        d.hwid = QSysInfo::machineUniqueId();
+        d.os = QSysInfo::productType();
+        d.osVersion = QSysInfo::productVersion();
+        d.model = QSysInfo::prettyProductName();
+    #endif
+        return d;
+    }();
     return details;
 }
