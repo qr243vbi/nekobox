@@ -138,7 +138,7 @@ DeviceDetails GetDeviceDetails() {
             d.hwid = QString("%1-%2").arg(QSysInfo::machineHostName(), QString::fromUtf8(productType));
         }
 
-        d.os = QStringLiteral("Windows ") + QSysInfo::productVersion();
+        d.os = QStringLiteral("Windows");
 
         VersionInfo info;
         WinVersion::GetVersion(info);
