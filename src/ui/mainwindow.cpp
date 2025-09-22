@@ -54,6 +54,7 @@
 #include <3rdparty/QHotkey/qhotkey.h>
 #include <3rdparty/qv2ray/v2/proxy/QvProxyConfigurator.hpp>
 #include <include/global/HTTPRequestHelper.hpp>
+#include "include/global/DeviceDetailsHelper.hpp"
 
 #include "include/sys/macos/MacOS.h"
 
@@ -132,6 +133,9 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     {
         Configs::dataStore->inbound_socks_port = MkPort();
     }
+
+    //init HWID data
+    runOnNewThread([=, this] {GetDeviceDetails(); });
 
     // Prepare core
     Configs::dataStore->core_port = MkPort();

@@ -95,6 +95,7 @@ namespace Configs {
         bool sub_clear = false;
         bool sub_insecure = false;
         int sub_auto_update = -30;
+        bool sub_send_hwid = false;
 
         // Security
         bool skip_cert = false;

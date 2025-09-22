@@ -10,6 +10,7 @@
 
 #include "include/global/Configs.hpp"
 #include "include/ui/mainwindow.h"
+#include "include/global/DeviceDetailsHelper.hpp"
 
 namespace Configs_network {
 
@@ -34,6 +35,15 @@ namespace Configs_network {
             QSslConfiguration c;
             c.setPeerVerifyMode(QSslSocket::PeerVerifyMode::VerifyNone);
             request.setSslConfiguration(c);
+        }
+        //Attach HWID and device info headers if enabled in settings
+        if (Configs::dataStore->sub_send_hwid && !request.url().toString().contains("/throneproj/")) {
+            auto details = GetDeviceDetails();
+           
+            if (!details.hwid.isEmpty()) request.setRawHeader("x-hwid", details.hwid.toUtf8());
+            if (!details.os.isEmpty()) request.setRawHeader("x-device-os", details.os.toUtf8());
+            if (!details.osVersion.isEmpty()) request.setRawHeader("x-ver-os", details.osVersion.toUtf8());
+            if (!details.model.isEmpty()) request.setRawHeader("x-device-model", details.model.toUtf8());
         }
         //
         auto _reply = accessManager.get(request);
