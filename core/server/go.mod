@@ -9,15 +9,15 @@ require (
 	github.com/gofrs/uuid/v5 v5.3.2
 	github.com/golang/protobuf v1.5.4
 	github.com/google/shlex v0.0.0-20191202100458-e7afc7fbc510
-	github.com/sagernet/sing v0.7.6-0.20250825114712-2aeec120ce28
-	github.com/sagernet/sing-box v1.12.4
-	github.com/sagernet/sing-tun v0.7.0-beta.1
+	github.com/sagernet/sing v0.7.10
+	github.com/sagernet/sing-box v1.12.8
+	github.com/sagernet/sing-tun v0.7.2
 	github.com/spf13/cobra v1.9.1
 	golang.org/x/sys v0.35.0
 	google.golang.org/protobuf v1.36.6
 )
 
-replace github.com/sagernet/sing-box => github.com/throneproj/sing-box v1.11.16-0.20250829161934-408d9b12100a
+replace github.com/sagernet/sing-box => github.com/throneproj/sing-box v1.11.16-0.20250922092316-8bee3116798a
 
 replace github.com/sagernet/wireguard-go => github.com/throneproj/wireguard-go v0.0.1-beta.7.0.20250728063157-408bba78ad26
 
@@ -89,7 +89,7 @@ require (
 	github.com/sagernet/nftables v0.3.0-beta.4 // indirect
 	github.com/sagernet/quic-go v0.52.0-beta.1 // indirect
 	github.com/sagernet/sing-mux v0.3.3 // indirect
-	github.com/sagernet/sing-quic v0.5.0 // indirect
+	github.com/sagernet/sing-quic v0.5.2-0.20250909083218-00a55617c0fb // indirect
 	github.com/sagernet/sing-shadowsocks v0.2.8 // indirect
 	github.com/sagernet/sing-shadowsocks2 v0.2.1 // indirect
 	github.com/sagernet/sing-shadowtls v0.2.1-0.20250503051639-fcd445d33c11 // indirect
