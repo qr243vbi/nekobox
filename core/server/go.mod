@@ -17,7 +17,7 @@ require (
 	google.golang.org/protobuf v1.36.6
 )
 
-replace github.com/sagernet/sing-box => github.com/throneproj/sing-box v1.11.16-0.20250922092316-8bee3116798a
+replace github.com/sagernet/sing-box => github.com/throneproj/sing-box v1.11.16-0.20250923115053-308d2d6fe6a9
 
 replace github.com/sagernet/wireguard-go => github.com/throneproj/wireguard-go v0.0.1-beta.7.0.20250728063157-408bba78ad26
 
