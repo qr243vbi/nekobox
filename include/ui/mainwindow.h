@@ -209,6 +209,14 @@ private:
     QStringList remoteRouteProfiles;
     QMutex mu_remoteRouteProfiles;
 
+    // search
+    bool searchEnabled = false;
+    QString searchString;
+
+    void setSearchState(bool enable);
+
+    QList<std::shared_ptr<Configs::ProxyEntity>> filterProfilesList(const QList<int>& profiles);
+
     QList<std::shared_ptr<Configs::ProxyEntity>> get_now_selected_list();
 
     QList<std::shared_ptr<Configs::ProxyEntity>> get_selected_or_group();

@@ -320,12 +320,24 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     ui->proxyListTable->setTabKeyNavigation(false);
 
     // search box
+    setSearchState(false);
+    connect(shortcut_ctrl_f, &QShortcut::activated, this, [=, this]
+    {
+        setSearchState(true);
+        ui->search_input->setFocus();
+    });
+    connect(ui->search_input, &QLineEdit::textChanged, this, [=,this](const QString& currentText)
+    {
+       searchString = currentText;
+       refresh_proxy_list(-1);
+    });
     connect(shortcut_esc, &QShortcut::activated, this, [=,this] {
         if (select_mode) {
             emit profile_selected(-1);
             select_mode = false;
             refresh_status();
         }
+        if (searchEnabled) setSearchState(false);
     });
 
     // refresh
@@ -1211,6 +1223,47 @@ void MainWindow::UpdateConnectionListWithRecreate(const QList<Stats::ConnectionM
     ui->connections->setUpdatesEnabled(true);
 }
 
+void MainWindow::setSearchState(bool enable)
+{
+    searchEnabled = enable;
+    if (enable)
+    {
+        ui->data_view->hide();
+        ui->search_input->show();
+        adjustSize();
+    } else
+    {
+        ui->search_input->blockSignals(true);
+        ui->search_input->clear();
+        ui->search_input->blockSignals(false);
+
+        ui->search_input->hide();
+        ui->data_view->show();
+        adjustSize();
+        if (!searchString.isEmpty())
+        {
+            searchString.clear();
+            refresh_proxy_list(-1);
+        }
+    }
+}
+
+QList<std::shared_ptr<Configs::ProxyEntity>> MainWindow::filterProfilesList(const QList<int>& profiles)
+{
+    QList<std::shared_ptr<Configs::ProxyEntity>> res;
+    for (const auto& id : profiles)
+    {
+        auto profile = Configs::profileManager->GetProfile(id);
+        if (!profile)
+        {
+            MW_show_log("Null profile, maybe data is corrupted");
+            continue;
+        }
+        if (searchString.isEmpty() || profile->bean->name.contains(searchString, Qt::CaseInsensitive) || profile->bean->serverAddress.contains(searchString, Qt::CaseInsensitive)) res.append(profile);
+    }
+    return res;
+}
+
 void MainWindow::refresh_status(const QString &traffic_update) {
     auto refresh_speed_label = [=,this] {
         if (Configs::dataStore->disable_traffic_stats) {
@@ -1430,8 +1483,6 @@ void MainWindow::refresh_proxy_list_impl(const int &id, GroupSortAction groupSor
                 break;
             }
         }
-
-        ui->proxyListTable->setRowCount(currentGroup->profiles.count());
     }
 
     // refresh data
@@ -1448,15 +1499,21 @@ void MainWindow::refresh_proxy_list_impl_refresh_data(const int &id, bool stoppi
             ui->proxyListTable->setUpdatesEnabled(true);
             return;
         }
-        auto rowID = currentGroup->profiles.indexOf(id);
         auto profile = Configs::profileManager->GetProfile(id);
+        if (filterProfilesList({id}).isEmpty())
+        {
+            ui->proxyListTable->setUpdatesEnabled(true);
+            return;
+        }
+        auto rowID = currentGroup->profiles.indexOf(id);
         refresh_table_item(rowID, profile, stopping);
     } else
     {
         ui->proxyListTable->blockSignals(true);
         int row = 0;
-        for (const auto profileId : currentGroup->profiles) {
-            auto profile = Configs::profileManager->GetProfile(profileId);
+        auto profiles = filterProfilesList(currentGroup->profiles);
+        ui->proxyListTable->setRowCount(profiles.count());
+        for (const auto& profile : profiles) {
             refresh_table_item(row++, profile, stopping);
         }
         ui->proxyListTable->blockSignals(false);
