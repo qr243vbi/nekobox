@@ -24,4 +24,7 @@
         <file alias="Tun.png">public/Tun.png</file>
         <file>dashboard-notice.html</file>
     </qresource>
+    <qresource prefix="/font">
+        <file alias="notoEmoji">font/NotoColorEmoji.ttf</file>
+    </qresource>
 </RCC>
