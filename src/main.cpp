@@ -21,6 +21,7 @@
 #endif
 #ifdef Q_OS_LINUX
 #include "include/sys/linux/desktopinfo.h"
+#include <qfontdatabase.h>
 #endif
 
 void signal_handler(int signum) {
@@ -66,6 +67,11 @@ int main(int argc, char* argv[]) {
     QApplication::setAttribute(Qt::AA_DontUseNativeDialogs);
     QApplication::setQuitOnLastWindowClosed(false);
     QApplication a(argc, argv);
+
+#ifdef Q_OS_LINUX
+    // Load the emoji font only on Linux
+    QFontDatabase::addApplicationFont(":/font/notoEmoji");
+#endif
 
     // Clean
     QDir::setCurrent(QApplication::applicationDirPath());
