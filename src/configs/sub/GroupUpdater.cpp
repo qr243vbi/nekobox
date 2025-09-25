@@ -286,7 +286,7 @@ namespace Subscription {
             // VLESS
             if (out["type"] == "vless") {
                 ent = Configs::ProfileManager::NewProxyEntity("vless");
-                auto ok = ent->VLESSBean()->TryParseJson(out);
+                auto ok = ent->TrojanVLESSBean()->TryParseJson(out);
                 if (!ok) continue;
             }
 
@@ -526,6 +526,7 @@ namespace Subscription {
                                         bean->stream->host = Node2QString(header.second);
                                     else if (header.second.is_sequence() && header.second[0].is_string())
                                         bean->stream->host = Node2QString(header.second[0]);
+                                    break;
                                 }
                             }
                         }
