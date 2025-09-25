@@ -286,7 +286,7 @@ namespace Subscription {
             // VLESS
             if (out["type"] == "vless") {
                 ent = Configs::ProfileManager::NewProxyEntity("vless");
-                auto ok = ent->TrojanVLESSBean()->TryParseJson(out);
+                auto ok = ent->VLESSBean()->TryParseJson(out);
                 if (!ok) continue;
             }
 
@@ -501,7 +501,7 @@ namespace Subscription {
                     } else {
                         bean->password = Node2QString(proxy["password"]);
                     }
-                    if (Node2Bool(proxy["tls"])) bean->stream->security = "tls";
+                    bean->stream->security = "tls";
                     bean->stream->network = Node2QString(proxy["network"], "tcp");
                     bean->stream->sni = FIRST_OR_SECOND(Node2QString(proxy["sni"]), Node2QString(proxy["servername"]));
                     bean->stream->alpn = Node2QStringList(proxy["alpn"]).join(",");
@@ -522,8 +522,10 @@ namespace Subscription {
                         if (headers.is_mapping()) {
                             for (auto header: headers.as_map()) {
                                 if (Node2QString(header.first).toLower() == "host") {
-                                    bean->stream->host = Node2QString(header.second);
-                                    break;
+                                    if (header.second.is_string())
+                                        bean->stream->host = Node2QString(header.second);
+                                    else if (header.second.is_sequence() && header.second[0].is_string())
+                                        bean->stream->host = Node2QString(header.second[0]);
                                 }
                             }
                         }
@@ -541,13 +543,6 @@ namespace Subscription {
                     if (reality.is_mapping()) {
                         bean->stream->reality_pbk = Node2QString(reality["public-key"]);
                         bean->stream->reality_sid = Node2QString(reality["short-id"]);
-                    }
-
-                    if (bean->stream->network == "tcp" && bean->stream->security.isEmpty()) {
-                        if (bean->stream->header_type.isEmpty())
-                            bean->stream->header_type = "http";
-                        if (bean->stream->path.isEmpty())
-                            bean->stream->path = "/";
                     }
                 } else if (type == "vmess") {
                     needFix = true;
@@ -624,11 +619,8 @@ namespace Subscription {
                         auto paths = tcp_http["path"];
                         if (paths.is_string())
                             bean->stream->path = Node2QString(paths);
-                        else if (paths.is_sequence())
-                            for (auto path: paths) {
-                                bean->stream->path = Node2QString(path);
-                                break;
-                            }
+                        else if (paths.is_sequence() && paths[0].is_string())
+                            bean->stream->path = Node2QString(paths[0]);
                     }
                 } else if (type == "anytls") {
                     needFix = true;
