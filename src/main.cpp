@@ -18,6 +18,7 @@
 #ifdef Q_OS_WIN
 #include "include/sys/windows/MiniDump.h"
 #include "include/sys/windows/eventHandler.h"
+#include <qfontdatabase.h>
 #endif
 #ifdef Q_OS_LINUX
 #include "include/sys/linux/desktopinfo.h"
@@ -68,8 +69,8 @@ int main(int argc, char* argv[]) {
     QApplication::setQuitOnLastWindowClosed(false);
     QApplication a(argc, argv);
 
-#ifdef Q_OS_LINUX
-    // Load the emoji font only on Linux
+#ifndef Q_OS_MACOS
+    // Load the emoji fonts
     QFontDatabase::addApplicationFont(":/font/notoEmoji");
 #endif
 
