@@ -18,10 +18,10 @@ namespace Configs {
         _add(new configItem("brutal_speed", &brutal_speed, itemType::integer));
     }
 
-    QString AbstractBean::ToNekorayShareLink(const QString &type) {
+    QString AbstractBean::TonekoboxShareLink(const QString &type) {
         auto b = ToJson();
         QUrl url;
-        url.setScheme("nekoray");
+        url.setScheme("nekobox");
         url.setHost(type);
         url.setFragment(QJsonObject2QString(b, true)
                             .toUtf8()

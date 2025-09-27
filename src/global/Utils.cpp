@@ -1,7 +1,6 @@
 #include "include/global/Utils.hpp"
 
 #include "3rdparty/base64.h"
-#include "3rdparty/QThreadCreateThread.hpp"
 
 #include <random>
 
@@ -17,6 +16,7 @@
 #include <QRegularExpression>
 #include <QDateTime>
 #include <QLocale>
+#include <QThreadPool>
 
 #ifdef Q_OS_WIN
 #include "include/sys/windows/guihelper.h"
@@ -250,37 +250,15 @@ void ActivateWindow(QWidget *w) {
 }
 
 void runOnUiThread(const std::function<void()> &callback) {
-    // any thread
-    auto *timer = new QTimer();
-    auto thread = mainwindow->thread();
-    timer->moveToThread(thread);
-    timer->setSingleShot(true);
-    QObject::connect(timer, &QTimer::timeout, [=]() {
-        // main thread
-        callback();
-        timer->deleteLater();
-    });
-    QMetaObject::invokeMethod(timer, "start", Qt::QueuedConnection, Q_ARG(int, 0));
+    QMetaObject::invokeMethod(mainwindow, callback);
 }
 
 void runOnNewThread(const std::function<void()> &callback) {
-    createQThread(callback)->start();
+    QThreadPool::globalInstance()->start(callback);
 }
 
 void runOnThread(const std::function<void()> &callback, QObject *parent) {
-    auto *timer = new QTimer();
-    auto thread = dynamic_cast<QThread *>(parent);
-    if (thread == nullptr) {
-        timer->moveToThread(parent->thread());
-    } else {
-        timer->moveToThread(thread);
-    }
-    timer->setSingleShot(true);
-    QObject::connect(timer, &QTimer::timeout, [=]() {
-        callback();
-        timer->deleteLater();
-    });
-    QMetaObject::invokeMethod(timer, "start", Qt::QueuedConnection, Q_ARG(int, 0));
+    QMetaObject::invokeMethod(parent, callback);
 }
 
 void setTimeout(const std::function<void()> &callback, QObject *obj, int timeout) {

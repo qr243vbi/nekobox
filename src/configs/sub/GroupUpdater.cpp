@@ -101,8 +101,8 @@ namespace Subscription {
         std::shared_ptr<Configs::ProxyEntity> ent;
         bool needFix = true;
 
-        // Nekoray format
-        if (str.startsWith("nekoray://")) {
+        // nekobox format
+        if (str.startsWith("nekobox://")) {
             needFix = false;
             auto link = QUrl(str);
             if (!link.isValid()) return;

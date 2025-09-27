@@ -86,7 +86,7 @@ DialogEditGroup::DialogEditGroup(const std::shared_ptr<Configs::Group> &ent, QWi
         QStringList links;
         for (const auto &[_, profile]: Configs::profileManager->profiles) {
             if (profile->gid != ent->id) continue;
-            links += profile->bean->ToNekorayShareLink(profile->type);
+            links += profile->bean->TonekoboxShareLink(profile->type);
         }
         QApplication::clipboard()->setText(links.join("\n"));
         MessageBoxInfo(software_name, tr("Copied"));

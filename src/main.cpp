@@ -57,7 +57,7 @@ void loadTranslate(const QString& locale) {
     }
 }
 
-#define LOCAL_SERVER_PREFIX "throne-"
+#define LOCAL_SERVER_PREFIX "nekobox-"
 
 int main(int argc, char* argv[]) {
     // Core dump
@@ -104,7 +104,7 @@ int main(int argc, char* argv[]) {
     // dirs & clean
     auto wd = QDir(QApplication::applicationDirPath());
     if (Configs::dataStore->flag_use_appdata) {
-        QApplication::setApplicationName("Throne");
+        QApplication::setApplicationName("nekobox");
         if (!Configs::dataStore->appdataDir.isEmpty()) {
             wd.setPath(Configs::dataStore->appdataDir);
         } else {

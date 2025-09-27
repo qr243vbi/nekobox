@@ -20,6 +20,18 @@
 #include "include/global/GuiUtils.hpp"
 
 #include <QInputDialog>
+#include <QToolTip>
+#include <QtGlobal>
+#include <QtCore/qglobal.h>
+#include <QObject>
+#include <QString>
+#include <QDebug>
+#include <QApplication>
+
+#include <QStyle>
+#ifndef USE_LEGACY_QT
+#define stateChanged checkStateChanged
+#endif
 
 #define ADJUST_SIZE runOnThread([=,this] { adjustSize(); adjustPosition(mainwindow); }, this);
 #define LOAD_TYPE(a) ui->type->addItem(Configs::ProfileManager::NewProxyEntity(a)->bean->DisplayType(), a);

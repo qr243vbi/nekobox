@@ -17,12 +17,14 @@ namespace Configs_sys {
         // start & kill is one time
 
         void Start();
-
         void Kill();
+        void Restart();
+
+#ifdef Q_OS_LINUX
+        void elevateCoreProcessProgram();
+#endif
 
         CoreProcess(const QString &core_path, const QStringList &args);
-
-        void Restart();
 
         int start_profile_when_core_is_up = -1;
 
@@ -36,6 +38,10 @@ namespace Configs_sys {
     protected:
         bool started = false;
         bool crashed = false;
+
+#ifdef Q_OS_LINUX
+        bool coreProcessProgramElevated = false;
+#endif
     };
 
     inline QAtomicInt logCounter;
