@@ -255,7 +255,7 @@ namespace Configs {
         _add(new configItem("theme", &theme, itemType::string));
         _add(new configItem("custom_inbound", &custom_inbound, itemType::string));
         _add(new configItem("custom_route", &custom_route_global, itemType::string));
-        _add(new configItem("sub_use_proxy", &sub_use_proxy, itemType::boolean));
+        _add(new configItem("net_use_proxy", &net_use_proxy, itemType::boolean));
         _add(new configItem("remember_id", &remember_id, itemType::integer));
         _add(new configItem("remember_enable", &remember_enable, itemType::boolean));
         _add(new configItem("language", &language, itemType::integer));
@@ -277,7 +277,7 @@ namespace Configs {
         _add(new configItem("vpn_ipv6", &vpn_ipv6, itemType::boolean));
         _add(new configItem("vpn_strict_route", &vpn_strict_route, itemType::boolean));
         _add(new configItem("sub_clear", &sub_clear, itemType::boolean));
-        _add(new configItem("sub_insecure", &sub_insecure, itemType::boolean));
+        _add(new configItem("net_insecure", &net_insecure, itemType::boolean));
         _add(new configItem("sub_auto_update", &sub_auto_update, itemType::integer));
         _add(new configItem("sub_send_hwid", &sub_send_hwid, itemType::boolean));
         _add(new configItem("start_minimal", &start_minimal, itemType::boolean));
