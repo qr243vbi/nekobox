@@ -14,11 +14,12 @@
 
 namespace Configs_network {
 
-    HTTPResponse NetworkRequestHelper::HttpGet(const QString &url) {
+    HTTPResponse NetworkRequestHelper::HttpGet(const QString &url, bool sendHwid) {
         QNetworkRequest request;
         QNetworkAccessManager accessManager;
+        accessManager.setTransferTimeout(10000);
         request.setUrl(url);
-        if (Configs::dataStore->sub_use_proxy || Configs::dataStore->spmode_system_proxy) {
+        if (Configs::dataStore->net_use_proxy || Configs::dataStore->spmode_system_proxy) {
             if (Configs::dataStore->started_id < 0) {
                 return HTTPResponse{QObject::tr("Request with proxy but no profile started.")};
             }
@@ -31,13 +32,13 @@ namespace Configs_network {
         // Set attribute
         request.setAttribute(QNetworkRequest::RedirectPolicyAttribute, QNetworkRequest::NoLessSafeRedirectPolicy);
         request.setHeader(QNetworkRequest::KnownHeaders::UserAgentHeader, Configs::dataStore->GetUserAgent());
-        if (Configs::dataStore->sub_insecure) {
+        if (Configs::dataStore->net_insecure) {
             QSslConfiguration c;
             c.setPeerVerifyMode(QSslSocket::PeerVerifyMode::VerifyNone);
             request.setSslConfiguration(c);
         }
         //Attach HWID and device info headers if enabled in settings
-        if (Configs::dataStore->sub_send_hwid && !request.url().toString().contains("/throneproj/")) {
+        if (sendHwid) {
             auto details = GetDeviceDetails();
            
             if (!details.hwid.isEmpty()) request.setRawHeader("x-hwid", details.hwid.toUtf8());
@@ -52,23 +53,13 @@ namespace Configs_network {
             for (const auto &err: errors) {
                 error_str << err.errorString();
             }
-            MW_show_log(QString("SSL Errors: %1 %2").arg(error_str.join(","), Configs::dataStore->sub_insecure ? "(Ignored)" : ""));
+            MW_show_log(QString("SSL Errors: %1 %2").arg(error_str.join(","), Configs::dataStore->net_insecure ? "(Ignored)" : ""));
         });
         // Wait for response
-        auto abortTimer = new QTimer;
-        abortTimer->setSingleShot(true);
-        abortTimer->setInterval(10000);
-        connect(abortTimer, &QTimer::timeout, _reply, &QNetworkReply::abort);
-        abortTimer->start();
-        {
-            QEventLoop loop;
-            connect(_reply, &QNetworkReply::finished, &loop, &QEventLoop::quit);
-            loop.exec();
-        }
-        if (abortTimer != nullptr) {
-            abortTimer->stop();
-            abortTimer->deleteLater();
-        }
+        QEventLoop loop;
+        connect(_reply, &QNetworkReply::finished, &loop, &QEventLoop::quit);
+        loop.exec();
+        
         //
         auto result = HTTPResponse{_reply->error() == QNetworkReply::NetworkError::NoError ? "" : _reply->errorString(),
                                        _reply->readAll(), _reply->rawHeaderPairs()};
@@ -87,7 +78,7 @@ namespace Configs_network {
         QNetworkRequest request;
         QNetworkAccessManager accessManager;
         request.setUrl(url);
-        if (Configs::dataStore->spmode_system_proxy) {
+        if (Configs::dataStore->net_use_proxy || Configs::dataStore->spmode_system_proxy) {
             if (Configs::dataStore->started_id < 0) {
                 return QObject::tr("Request with proxy but no profile started.");
             }
@@ -97,8 +88,11 @@ namespace Configs_network {
             p.setPort(Configs::dataStore->inbound_socks_port);
             accessManager.setProxy(p);
         }
-        request.setHeader(QNetworkRequest::KnownHeaders::UserAgentHeader, Configs::dataStore->GetUserAgent());
-        request.setRawHeader("Accept", "application/octet-stream");
+        if (Configs::dataStore->net_insecure) {
+            QSslConfiguration c;
+            c.setPeerVerifyMode(QSslSocket::PeerVerifyMode::VerifyNone);
+            request.setSslConfiguration(c);
+        }
 
         auto _reply = accessManager.get(request);
         connect(_reply, &QNetworkReply::sslErrors, _reply, [](const QList<QSslError> &errors) {
@@ -106,7 +100,7 @@ namespace Configs_network {
             for (const auto &err: errors) {
                 error_str << err.errorString();
             }
-            MW_show_log(QString("SSL Errors: %1").arg(error_str.join(",")));
+            MW_show_log(QString("SSL Errors: %1 %2").arg(error_str.join(","), Configs::dataStore->net_insecure ? "(Ignored)" : ""));
         });
         connect(_reply, &QNetworkReply::downloadProgress, _reply, [&](qint64 bytesReceived, qint64 bytesTotal)
         {
@@ -123,6 +117,7 @@ namespace Configs_network {
             GetMainWindow()->setDownloadReport({}, false);
             GetMainWindow()->UpdateDataView(true);
         });
+        _reply->deleteLater();
         if(_reply->error() != QNetworkReply::NetworkError::NoError) {
             return _reply->errorString();
         }
@@ -137,7 +132,6 @@ namespace Configs_network {
         }
         file.write(_reply->readAll());
         file.close();
-        _reply->deleteLater();
         return "";
     }
 

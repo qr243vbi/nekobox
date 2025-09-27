@@ -89,12 +89,14 @@ namespace Configs {
         QString simple_dl_url = "http://cachefly.cachefly.net/1mb.test";
         bool allow_beta_update = false;
 
+        // Network
+        bool net_use_proxy = false;
+        bool net_insecure = false;
+
         // Subscription
         QString user_agent = ""; // set at main.cpp
-        bool sub_use_proxy = false;
-        bool sub_clear = false;
-        bool sub_insecure = false;
         int sub_auto_update = -30;
+        bool sub_clear = false;
         bool sub_send_hwid = false;
 
         // Security
