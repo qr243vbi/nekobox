@@ -222,6 +222,10 @@ set(PROJECT_SOURCES
         src/dataStore/ProxyEntity.cpp
 )
 
+if (NOT APPLE AND Qt6_VERSION VERSION_GREATER_EQUAL 6.9.0)
+        list(APPEND PROJECT_SOURCES res/EmojiFont.qrc)
+endif ()
+
 # Qt exe
 qt_add_executable(Throne
         MANUAL_FINALIZATION
