@@ -6,6 +6,7 @@
 #define Dialog_DialogEditProfile "DialogEditProfile"
 #define Dialog_DialogManageGroups "DialogManageGroups"
 #define Dialog_DialogManageRoutes "DialogManageRoutes"
+#define Dialog_DialogManageHotkeys "DialogManageHotkeys"
 
 // Utils
 
