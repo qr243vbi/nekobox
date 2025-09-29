@@ -204,6 +204,9 @@ private:
     libcore::SpeedTestResult currentTestResult;
     DownloadProgressReport currentDownloadReport; // could use a list, but don't think can show more than one anyways
 
+    // shortcuts
+    QList<QShortcut*> hiddenMenuShortcuts;
+
     std::map<std::string, std::string> ruleSetMap;
 
     QStringList remoteRouteProfiles;
@@ -237,7 +240,13 @@ private:
 
     void HotkeyEvent(const QString &key);
 
-    void RegisterShortcuts();
+    void RegisterHiddenMenuShortcuts(bool unregister = false);
+
+    void setActionsData();
+
+    QList<QAction*> getActionsForShortcut();
+
+    void loadShortcuts();
 
     // grpc
 

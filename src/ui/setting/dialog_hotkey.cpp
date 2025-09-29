@@ -1,26 +1,63 @@
 #include "include/ui/setting/dialog_hotkey.h"
 
+#include <include/global/GuiUtils.hpp>
+
 #include "include/ui/mainwindow_interface.h"
 
-DialogHotkey::DialogHotkey(QWidget *parent) : QDialog(parent), ui(new Ui::DialogHotkey) {
+DialogHotkey::DialogHotkey(QWidget *parent, const QList<QAction*>& actions) : QDialog(parent), ui(new Ui::DialogHotkey) {
     ui->setupUi(this);
     ui->show_mainwindow->setKeySequence(Configs::dataStore->hotkey_mainwindow);
     ui->show_groups->setKeySequence(Configs::dataStore->hotkey_group);
     ui->show_routes->setKeySequence(Configs::dataStore->hotkey_route);
     ui->system_proxy->setKeySequence(Configs::dataStore->hotkey_system_proxy_menu);
     ui->toggle_proxy->setKeySequence(Configs::dataStore->hotkey_toggle_system_proxy);
+
+    generateShortcutItems(actions);
+
     GetMainWindow()->RegisterHotkey(true);
 }
 
-DialogHotkey::~DialogHotkey() {
-    if (result() == QDialog::Accepted) {
-        Configs::dataStore->hotkey_mainwindow = ui->show_mainwindow->keySequence().toString();
-        Configs::dataStore->hotkey_group = ui->show_groups->keySequence().toString();
-        Configs::dataStore->hotkey_route = ui->show_routes->keySequence().toString();
-        Configs::dataStore->hotkey_system_proxy_menu = ui->system_proxy->keySequence().toString();
-        Configs::dataStore->hotkey_toggle_system_proxy = ui->toggle_proxy->keySequence().toString();
-        Configs::dataStore->Save();
+void DialogHotkey::generateShortcutItems(const QList<QAction*>& actions)
+{
+    auto layout = new QFormLayout(this);
+    auto widget = new QWidget(this);
+    widget->setLayout(layout);
+    ui->shortcut_area->setWidget(widget);
+    for (auto action : actions)
+    {
+        auto kseq = new QtExtKeySequenceEdit(this);
+        if (!action->shortcut().isEmpty()) kseq->setKeySequence(action->shortcut());
+        seqEdit2ID[kseq] = action->data().toString();
+        layout->addRow(action->text(), kseq);
     }
+}
+
+void DialogHotkey::accept()
+{
+    Configs::dataStore->hotkey_mainwindow = ui->show_mainwindow->keySequence().toString();
+    Configs::dataStore->hotkey_group = ui->show_groups->keySequence().toString();
+    Configs::dataStore->hotkey_route = ui->show_routes->keySequence().toString();
+    Configs::dataStore->hotkey_system_proxy_menu = ui->system_proxy->keySequence().toString();
+    Configs::dataStore->hotkey_toggle_system_proxy = ui->toggle_proxy->keySequence().toString();
+
+    for (auto [kseq, actionID] : seqEdit2ID.asKeyValueRange())
+    {
+        Configs::dataStore->shortcuts->shortcuts[actionID] = kseq->keySequence();
+    }
+    Configs::dataStore->shortcuts->Save();
+
+    Configs::dataStore->Save();
+    MW_dialog_message(Dialog_DialogManageHotkeys, "UpdateShortcuts");
     GetMainWindow()->RegisterHotkey(false);
+    QDialog::accept();
+}
+
+void DialogHotkey::reject()
+{
+    GetMainWindow()->RegisterHotkey(false);
+    QDialog::reject();
+}
+
+DialogHotkey::~DialogHotkey() {
     delete ui;
 }

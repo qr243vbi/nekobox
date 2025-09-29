@@ -31,6 +31,19 @@ namespace Configs {
         static QStringList List();
     };
 
+    class Shortcuts : public JsonStore
+    {
+    public:
+        QMap<QString, QKeySequence> shortcuts;
+
+        QStringList keyVal;
+
+        explicit Shortcuts();
+        bool Save() override;
+
+        bool Load();
+    };
+
     class DataStore : public JsonStore {
     public:
         // Running
@@ -110,6 +123,7 @@ namespace Configs {
         int remember_id = -1919;
         bool remember_enable = false;
         bool windows_set_admin = false;
+        std::unique_ptr<Shortcuts> shortcuts;
 
         // Socks & HTTP Inbound
         QString inbound_address = "127.0.0.1";

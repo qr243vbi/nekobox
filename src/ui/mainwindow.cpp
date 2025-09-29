@@ -86,6 +86,10 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     themeManager->ApplyTheme(Configs::dataStore->theme);
     ui->setupUi(this);
 
+    // init shortcuts
+    setActionsData();
+    loadShortcuts();
+
     // setup log
     ui->splitter->restoreState(DecodeB64IfValid(Configs::dataStore->splitter_state));
     new SyntaxHighlighter(isDarkMode() || Configs::dataStore->theme.toLower() == "qdarkstyle", qvLogDocument);
@@ -201,7 +205,6 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     ui->tabWidget->installEventFilter(this);
     //
     RegisterHotkey(false);
-    RegisterShortcuts();
     //
     auto last_size = Configs::dataStore->mw_size.split("x");
     if (last_size.length() == 2) {
@@ -749,6 +752,10 @@ void MainWindow::dialog_message_impl(const QString &sender, const QString &info)
     if (info == "NeedAdmin") {
         get_elevated_permissions();
     }
+    if (info == "UpdateShortcuts")
+    {
+        loadShortcuts();
+    }
     // sender
     if (sender == Dialog_DialogEditProfile) {
         auto msg = info.split(",");
@@ -838,7 +845,15 @@ void MainWindow::on_menu_vpn_settings_triggered() {
 }
 
 void MainWindow::on_menu_hotkey_settings_triggered() {
-    USE_DIALOG(DialogHotkey)
+    if (dialog_is_using) return;
+    dialog_is_using = true;
+    auto dialog = new DialogHotkey(this, getActionsForShortcut());
+    connect(dialog, &QDialog::finished, this, [=,this]
+    {
+        dialog->deleteLater();
+        dialog_is_using = false;
+    });
+    dialog->show();
 }
 
 void MainWindow::on_commitDataRequest() {
@@ -879,6 +894,7 @@ void MainWindow::prepare_exit()
     tray->hide();
     Configs::dataStore->prepare_exit = true;
     //
+    RegisterHiddenMenuShortcuts(true);
     RegisterHotkey(true);
     if (Configs::dataStore->system_dns_set) set_system_dns(false, false);
     set_spmode_system_proxy(false, false);
@@ -2282,7 +2298,7 @@ void MainWindow::RegisterHotkey(bool unregister) {
         auto hk = RegisteredHotkey.takeFirst();
         hk->deleteLater();
     }
-    if (unregister) return;
+    if (unregister || Configs::dataStore->prepare_exit) return;
 
     QStringList regstr{
         Configs::dataStore->hotkey_mainwindow,
@@ -2309,13 +2325,71 @@ void MainWindow::RegisterHotkey(bool unregister) {
     }
 }
 
-void MainWindow::RegisterShortcuts() {
+void MainWindow::RegisterHiddenMenuShortcuts(bool unregister) {
+    for (const auto s : hiddenMenuShortcuts) s->deleteLater();
+    hiddenMenuShortcuts.clear();
+
+    if (unregister) return;
+
     for (const auto &action: ui->menuHidden_menu->actions()) {
-        new QShortcut(action->shortcut(), this, [=,this](){
-            action->trigger();
-        });
+        if (!action->shortcut().toString().isEmpty())
+        {
+            hiddenMenuShortcuts.append(new QShortcut(action->shortcut(), this, [=,this](){
+                action->trigger();
+            }));
+        }
     }
 }
+
+void MainWindow::setActionsData()
+{
+    // assign ids to menu actions so that we can save and restore them
+    ui->menu_add_from_input->setData(QString("m2"));
+    ui->menu_clear_test_result->setData(QString("m3"));
+    ui->menu_clone->setData(QString("m4"));
+    ui->menu_copy_links->setData(QString("m5"));
+    ui->menu_delete_repeat->setData(QString("m6"));
+    ui->menu_export_config->setData(QString("m7"));
+    ui->menu_qr->setData(QString("m8"));
+    ui->menu_remove_invalid->setData(QString("m9"));
+    ui->menu_remove_unavailable->setData(QString("m10"));
+    ui->menu_reset_traffic->setData(QString("m11"));
+    ui->menu_resolve_domain->setData(QString("m12"));
+    ui->menu_resolve_selected->setData(QString("m13"));
+    ui->menu_scan_qr->setData(QString("m14"));
+    ui->menu_stop_testing->setData(QString("m15"));
+    ui->menu_update_subscription->setData(QString("m16"));
+    ui->actionSpeedtest_Current->setData(QString("m18"));
+    ui->actionSpeedtest_Group->setData(QString("m19"));
+    ui->actionSpeedtest_Selected->setData(QString("m20"));
+    ui->actionUrl_Test_Group->setData(QString("m21"));
+    ui->actionUrl_Test_Selected->setData(QString("m22"));
+}
+
+QList<QAction*> MainWindow::getActionsForShortcut()
+{
+    QList<QAction*> list;
+    QList<QAction *> actions = findChildren<QAction *>();
+
+    for (QAction *action : actions) {
+        if (action->data().isNull() || action->data().toString().isEmpty()) continue;
+        list.append(action);
+    }
+    return list;
+}
+
+void MainWindow::loadShortcuts()
+{
+    auto mp = Configs::dataStore->shortcuts->shortcuts;
+    for (QList<QAction *> actions = findChildren<QAction *>(); QAction *action : actions)
+    {
+        if (mp.count(action->data().toString()) == 0) action->setShortcut(QKeySequence());
+        else action->setShortcut(mp[action->data().toString()]);
+    }
+
+    RegisterHiddenMenuShortcuts();
+}
+
 
 void MainWindow::HotkeyEvent(const QString &key) {
     if (key.isEmpty()) return;

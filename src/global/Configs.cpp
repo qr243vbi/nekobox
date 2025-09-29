@@ -8,7 +8,10 @@
 #include <QJsonArray>
 #include <QJsonDocument>
 #include <QJsonObject>
+#include <QKeySequence>
+#include <QNetworkAccessManager>
 #include <QStandardPaths>
+#include <utility>
 #include <include/api/RPC.h>
 
 #ifdef Q_OS_WIN
@@ -350,6 +353,34 @@ namespace Configs {
         _add(new configItem("use_dns_object", &this->use_dns_object, itemType::boolean));
         _add(new configItem("dns_object", &this->dns_object, itemType::string));
         _add(new configItem("dns_final_out", &this->dns_final_out, itemType::string));
+    }
+
+    Shortcuts::Shortcuts() : JsonStore()
+    {
+        _add(new configItem("keyval", &keyVal, itemType::stringList));
+    }
+
+    bool Shortcuts::Save()
+    {
+        keyVal.clear();
+        for (auto [k, v] : shortcuts.asKeyValueRange())
+        {
+            if (v.isEmpty()) continue;
+            keyVal << k << v.toString();
+        }
+
+        return JsonStore::Save();
+    }
+
+    bool Shortcuts::Load() {
+        auto ret = JsonStore::Load();
+        if (!ret) return false;
+        if (keyVal.count()%2 != 0) return false;
+        for (int i=0;i<keyVal.size();i+=2)
+        {
+            shortcuts[keyVal[i]] = QKeySequence(keyVal[i+1]);
+        }
+        return ret;
     }
 
     QStringList Routing::List() {

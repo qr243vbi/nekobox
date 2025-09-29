@@ -186,12 +186,19 @@ int main(int argc, char* argv[]) {
     // Datastore & Flags
     if (Configs::dataStore->start_minimal) Configs::dataStore->flag_tray = true;
 
-    // load routing
+    // load routing and shortcuts
     Configs::dataStore->routing = std::make_unique<Configs::Routing>();
     Configs::dataStore->routing->fn = ROUTES_PREFIX + "Default";
     isLoaded = Configs::dataStore->routing->Load();
     if (!isLoaded) {
         Configs::dataStore->routing->Save();
+    }
+
+    Configs::dataStore->shortcuts = std::make_unique<Configs::Shortcuts>();
+    Configs::dataStore->shortcuts->fn = "shortcuts.json";
+    isLoaded = Configs::dataStore->shortcuts->Load();
+    if (!isLoaded) {
+        Configs::dataStore->shortcuts->Save();
     }
 
     // Translate
