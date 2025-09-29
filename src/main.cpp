@@ -71,7 +71,17 @@ int main(int argc, char* argv[]) {
 
 #ifndef Q_OS_MACOS
     // Load the emoji fonts
-    QFontDatabase::addApplicationFont(":/font/notoEmoji");
+    int fontId = QFontDatabase::addApplicationFont(":/font/notoEmoji");
+    if (fontId >= 0)
+    {
+#if (QT_VERSION >= QT_VERSION_CHECK(6,9,0))
+        QStringList fontFamilies = QFontDatabase::applicationFontFamilies(fontId);
+        QFontDatabase::setApplicationEmojiFontFamilies(fontFamilies);
+#endif
+    } else
+    {
+        qDebug() << "could not load noto font!";
+    }
 #endif
 
     // Clean
