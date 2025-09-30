@@ -1,6 +1,9 @@
 #include "QrDecoder.h"
 
 #include "quirc/quirc.h"
+#include <qdebug.h>
+
+#include "quirc/quirc_internal.h"
 
 QrDecoder::QrDecoder()
     : m_qr(quirc_new())
@@ -30,11 +33,7 @@ QVector<QString> QrDecoder::decode(const QImage &image)
     {
         return result;
     }
-#if QT_VERSION >= QT_VERSION_CHECK(5, 10, 0)
-    std::copy(image.constBits(), image.constBits() + image.sizeInBytes(), rawImage);
-#else
-    std::copy(image.constBits(), image.constBits() + image.byteCount(), rawImage);
-#endif
+    std::copy(image.constBits(), image.constBits() + image.width()*image.height(), rawImage);
     quirc_end(m_qr);
 
     const int count = quirc_count(m_qr);
