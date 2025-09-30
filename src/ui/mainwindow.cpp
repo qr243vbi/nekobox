@@ -374,6 +374,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     ui->actionStart_with_system->setChecked(AutoRun_IsEnabled());
     ui->actionAllow_LAN->setChecked(QStringList{"::", "0.0.0.0"}.contains(Configs::dataStore->inbound_address));
 
+    connect(ui->actionHide_window, &QAction::triggered, this, [=, this](){ this->hide(); });
     connect(ui->menu_open_config_folder, &QAction::triggered, this, [=,this] { QDesktopServices::openUrl(QUrl::fromLocalFile(QDir::currentPath())); });
     connect(ui->menu_add_from_clipboard2, &QAction::triggered, ui->menu_add_from_clipboard, &QAction::trigger);
     connect(ui->actionRestart_Proxy, &QAction::triggered, this, [=,this] { if (Configs::dataStore->started_id>=0) profile_start(Configs::dataStore->started_id); });
@@ -2364,6 +2365,7 @@ void MainWindow::setActionsData()
     ui->actionSpeedtest_Selected->setData(QString("m20"));
     ui->actionUrl_Test_Group->setData(QString("m21"));
     ui->actionUrl_Test_Selected->setData(QString("m22"));
+    ui->actionHide_window->setData(QString("m23"));
 }
 
 QList<QAction*> MainWindow::getActionsForShortcut()

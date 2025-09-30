@@ -557,7 +557,7 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>25</height>
+     <height>17</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu_program">
@@ -572,6 +572,8 @@
      <addaction name="menu_spmode_vpn"/>
      <addaction name="menu_spmode_disabled"/>
     </widget>
+    <addaction name="actionHide_window"/>
+    <addaction name="separator"/>
     <addaction name="menu_add_from_clipboard2"/>
     <addaction name="menu_scan_qr"/>
     <addaction name="separator"/>
@@ -1043,6 +1045,11 @@
   <action name="actionSpeedtest_Group">
    <property name="text">
     <string>Speedtest Group</string>
+   </property>
+  </action>
+  <action name="actionHide_window">
+   <property name="text">
+    <string>Hide window</string>
    </property>
   </action>
  </widget>
