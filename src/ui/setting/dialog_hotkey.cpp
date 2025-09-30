@@ -19,8 +19,8 @@ DialogHotkey::DialogHotkey(QWidget *parent, const QList<QAction*>& actions) : QD
 
 void DialogHotkey::generateShortcutItems(const QList<QAction*>& actions)
 {
-    auto layout = new QFormLayout(this);
-    auto widget = new QWidget(this);
+    auto widget = new QWidget(ui->shortcut_area);
+    auto layout = new QFormLayout(widget);
     widget->setLayout(layout);
     ui->shortcut_area->setWidget(widget);
     for (auto action : actions)
