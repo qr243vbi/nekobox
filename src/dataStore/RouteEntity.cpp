@@ -584,13 +584,13 @@ namespace Configs {
                 MW_show_log("Aborted generating routing section, an error has occurred");
                 return {};
             }
-            if (Configs::dataStore->adblock_enable && rule_json["action"] == "route") {
+            if (!added_adblock && Configs::dataStore->adblock_enable && rule_json["action"] == "route") {
                 res += createAdblockRule();
                 added_adblock = true;
             }                
             res += rule_json;
         }
-        if (Configs::dataStore->adblock_enable && !added_adblock)
+        if (!added_adblock && Configs::dataStore->adblock_enable)
             res += createAdblockRule();
 
         return res;
