@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/font">
+        <file alias="emojiFont">font/TwemojiMozilla.ttf</file>
+    </qresource>
+</RCC>
