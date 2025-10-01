@@ -567,14 +567,15 @@ namespace Configs {
 
     QJsonArray RoutingChain::get_route_rules(bool forView, std::map<int, QString> outboundMap) {
         QJsonArray res;
-        if (Configs::dataStore->adblock_enable) {
+        bool added_adblock;
+        auto createAdblockRule = []() -> QJsonObject {
             QJsonObject obj;
             obj["action"] = "reject";
             QJsonArray jarray;
             jarray.append("throne-adblocksingbox");
             obj["rule_set"] = jarray;
-            res += obj;
-        }
+            return obj;
+        };
         for (const auto &item: Rules) {
             auto outboundTag = QString();
             if (outboundMap.contains(item->outboundID)) outboundTag = outboundMap[item->outboundID];
@@ -583,8 +584,14 @@ namespace Configs {
                 MW_show_log("Aborted generating routing section, an error has occurred");
                 return {};
             }
+            if (Configs::dataStore->adblock_enable && rule_json["action"] == "route") {
+                res += createAdblockRule();
+                added_adblock = true;
+            }                
             res += rule_json;
         }
+        if (Configs::dataStore->adblock_enable && !added_adblock)
+            res += createAdblockRule();
 
         return res;
     }
