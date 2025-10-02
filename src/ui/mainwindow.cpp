@@ -1002,9 +1002,8 @@ bool MainWindow::get_elevated_permissions(int reason) {
 #endif
 
 #ifdef Q_OS_MACOS
-    if (Configs::IsAdmin(true))
+    if (Configs::isSetuidSet(Configs::FindCoreRealPath().toStdString()))
     {
-        Configs::IsAdmin(true);
         StopVPNProcess();
         return true;
     }

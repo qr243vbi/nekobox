@@ -12,6 +12,8 @@ namespace Configs {
 
     bool IsAdmin(bool forceRenew=false);
 
+    bool isSetuidSet(const std::string& path);
+
     QString GetBasePath();
 } // namespace Configs
 
