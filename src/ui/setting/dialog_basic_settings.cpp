@@ -60,7 +60,8 @@ DialogBasicSettings::DialogBasicSettings(QWidget *parent)
     });
 
 #ifndef Q_OS_WIN
-    ui->proxy_scheme_box->hide();
+    ui->proxy_scheme_l->hide();
+    ui->proxy_scheme->hide();
     ui->windows_no_admin->hide();
 #endif
 
