@@ -43,6 +43,7 @@ void MainWindow::runURLTest(const QString& config, bool useDefault, const QStrin
     req.url = Configs::dataStore->test_latency_url.toStdString();
     req.use_default_outbound = useDefault;
     req.max_concurrency = Configs::dataStore->test_concurrent;
+    req.test_timeout_ms = Configs::dataStore->url_test_timeout_ms;
 
     auto done = new QMutex;
     done->lock();
@@ -51,7 +52,7 @@ void MainWindow::runURLTest(const QString& config, bool useDefault, const QStrin
         bool ok;
         while (true)
         {
-            QThread::msleep(1500);
+            QThread::msleep(200);
             if (done->try_lock()) break;
             auto resp = defaultClient->QueryURLTest(&ok);
             if (!ok || resp.results.empty())
@@ -285,6 +286,7 @@ void MainWindow::runSpeedTest(const QString& config, bool useDefault, bool testC
     req.simple_download = speedtestConf == Configs::TestConfig::SIMPLEDL;
     req.simple_download_addr = Configs::dataStore->simple_dl_url.toStdString();
     req.test_current = testCurrent;
+    req.timeout_ms = Configs::dataStore->speed_test_timeout_ms;
 
     // loop query result
     auto doneMu = new QMutex;

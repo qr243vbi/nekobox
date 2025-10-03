@@ -79,6 +79,7 @@ namespace Configs {
         // Misc
         QString log_level = "info";
         QString test_latency_url = "http://cp.cloudflare.com/";
+        int url_test_timeout_ms = 3000;
         bool disable_tray = false;
         int test_concurrent = 10;
         bool disable_traffic_stats = false;
@@ -99,6 +100,7 @@ namespace Configs {
         bool enable_stats = true;
         int stats_tab = 0; // either connection or log
         int speed_test_mode = TestConfig::FULL;
+        int speed_test_timeout_ms = 3000;
         QString simple_dl_url = "http://cachefly.cachefly.net/1mb.test";
         bool allow_beta_update = false;
 

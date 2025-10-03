@@ -2384,6 +2384,7 @@ void MainWindow::loadShortcuts()
     auto mp = Configs::dataStore->shortcuts->shortcuts;
     for (QList<QAction *> actions = findChildren<QAction *>(); QAction *action : actions)
     {
+        if (action->data().isNull() || action->data().toString().isEmpty()) continue;
         if (mp.count(action->data().toString()) == 0) action->setShortcut(QKeySequence());
         else action->setShortcut(mp[action->data().toString()]);
     }
