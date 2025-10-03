@@ -4,6 +4,7 @@ go 1.23.6
 
 require (
 	github.com/Mahdi-zarei/speedtest-go v1.7.12
+	github.com/biter777/countries v1.7.5
 	github.com/chai2010/protorpc v0.0.0-00010101000000-000000000000
 	github.com/dustin/go-humanize v1.0.1
 	github.com/gofrs/uuid/v5 v5.3.2
@@ -17,7 +18,7 @@ require (
 	google.golang.org/protobuf v1.36.6
 )
 
-replace github.com/sagernet/sing-box => github.com/throneproj/sing-box v1.11.16-0.20250923115053-308d2d6fe6a9
+replace github.com/sagernet/sing-box => github.com/throneproj/sing-box v1.11.16-0.20251003143907-415b931b5a47
 
 replace github.com/sagernet/wireguard-go => github.com/throneproj/wireguard-go v0.0.1-beta.7.0.20250728063157-408bba78ad26
 
@@ -30,7 +31,6 @@ require (
 	github.com/alexbrainman/sspi v0.0.0-20231016080023-1a75b4708caa // indirect
 	github.com/andybalholm/brotli v1.1.0 // indirect
 	github.com/anytls/sing-anytls v0.0.8 // indirect
-	github.com/biter777/countries v1.7.5 // indirect
 	github.com/bits-and-blooms/bitset v1.13.0 // indirect
 	github.com/caddyserver/certmagic v0.23.0 // indirect
 	github.com/caddyserver/zerossl v0.1.3 // indirect
