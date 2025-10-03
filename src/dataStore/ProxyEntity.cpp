@@ -12,6 +12,7 @@ namespace Configs
         _add(new configItem("dl", &dl_speed, itemType::string));
         _add(new configItem("ul", &ul_speed, itemType::string));
         _add(new configItem("report", &full_test_report, itemType::string));
+        _add(new configItem("country_emoji", &test_country_emoji, itemType::string));
 
         if (bean != nullptr) {
             this->bean = std::shared_ptr<Configs::AbstractBean>(bean);
@@ -25,21 +26,25 @@ namespace Configs
         if (latency < 0) {
             result = "Unavailable";
         } else if (latency > 0) {
-            result = UNICODE_LRO + QString("%1 ms").arg(latency);
+            if (!test_country_emoji.isEmpty()) result += UNICODE_LRO + test_country_emoji + " ";
+            result += QString("%1 ms").arg(latency);
         }
-        if (!dl_speed.isEmpty()) result += " ↓" + dl_speed;
-        if (!ul_speed.isEmpty()) result += " ↑" + ul_speed;
+        if (!dl_speed.isEmpty() && dl_speed != "N/A") result += " ↓" + dl_speed;
+        if (!ul_speed.isEmpty() && ul_speed != "N/A") result += " ↑" + ul_speed;
         return result;
     }
 
     QColor ProxyEntity::DisplayLatencyColor() const {
         if (latency < 0) {
-            return Qt::red;
+            return Qt::darkGray;
         } else if (latency > 0) {
-            if (latency <= 200) {
+            if (latency <= 100) {
                 return Qt::darkGreen;
-            } else {
+            } else if (latency <= 300)
+            {
                 return Qt::darkYellow;
+            } else {
+                return Qt::red;
             }
         } else {
             return {};

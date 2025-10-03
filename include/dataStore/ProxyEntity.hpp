@@ -41,6 +41,7 @@ namespace Configs {
         int latency = 0;
         QString dl_speed;
         QString ul_speed;
+        QString test_country_emoji;
         std::shared_ptr<Configs::AbstractBean> bean;
         std::shared_ptr<Stats::TrafficData> traffic_data = std::make_shared<Stats::TrafficData>("");
 
