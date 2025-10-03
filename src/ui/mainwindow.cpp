@@ -2353,7 +2353,6 @@ void MainWindow::setActionsData()
     ui->menu_add_from_input->setData(QString("m2"));
     ui->menu_clear_test_result->setData(QString("m3"));
     ui->menu_clone->setData(QString("m4"));
-    ui->menu_copy_links->setData(QString("m5"));
     ui->menu_delete_repeat->setData(QString("m6"));
     ui->menu_export_config->setData(QString("m7"));
     ui->menu_qr->setData(QString("m8"));
