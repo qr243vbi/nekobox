@@ -53,6 +53,7 @@ message TestReq {
   optional string url = 4 [default = ""];
   optional bool test_current = 5 [default = false];
   optional int32 max_concurrency = 6 [default = 0];
+  optional int32 test_timeout_ms = 7 [default = 0];
 }
 
 message TestResp {
@@ -98,6 +99,7 @@ message SpeedTestRequest {
   optional bool test_upload = 6 [default = false];
   optional bool simple_download = 7 [default = false];
   optional string simple_download_addr = 8 [default = ""];
+  optional int32 timeout_ms = 9 [default = 0];
 }
 
 message SpeedTestResult {
