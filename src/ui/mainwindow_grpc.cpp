@@ -323,6 +323,7 @@ void MainWindow::runSpeedTest(const QString& config, bool useDefault, bool testC
                     if (!res.result.value().dl_speed.value().empty()) profile->dl_speed = QString::fromStdString(res.result.value().dl_speed.value());
                     if (!res.result.value().ul_speed.value().empty()) profile->ul_speed = QString::fromStdString(res.result.value().ul_speed.value());
                     if (profile->latency <= 0 && res.result.value().latency.value() > 0) profile->latency = res.result.value().latency.value();
+                    if (!res.result->server_country_emoji.value().empty()) profile->test_country_emoji = QString::fromStdString(res.result.value().server_country_emoji.value());
                     refresh_proxy_list(profile->id);
                     lastProxyListUpdate = QDateTime::currentDateTime();
                 }
@@ -364,10 +365,12 @@ void MainWindow::runSpeedTest(const QString& config, bool useDefault, bool testC
             ent->dl_speed = QString::fromStdString(res.dl_speed.value());
             ent->ul_speed = QString::fromStdString(res.ul_speed.value());
             if (ent->latency <= 0 && res.latency.value() > 0) ent->latency = res.latency.value();
+            if (!res.server_country_emoji.value().empty()) ent->test_country_emoji = QString::fromStdString(res.server_country_emoji.value());
         } else {
             ent->dl_speed = "N/A";
             ent->ul_speed = "N/A";
             ent->latency = -1;
+            ent->test_country_emoji = "";
             MW_show_log(tr("[%1] speed test error: %2").arg(ent->bean->DisplayTypeAndName(), QString::fromStdString(res.error.value())));
         }
         ent->Save();

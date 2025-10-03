@@ -1080,10 +1080,11 @@ void MainWindow::UpdateDataView(bool force)
     "<span style='color: #3299FF;'>Dl↓ %2</span>  "
     "<span style='color: #86C43F;'>Ul↑ %3</span>"
     "</div>"
-    "<p style='text-align:center;margin:0;'>Server: %4, %5</p>"
+    "<p style='text-align:center;margin:0;'>Server: %4%5, %6</p>"
         ).arg(currentSptProfileName,
             currentTestResult.dl_speed.value().c_str(),
             currentTestResult.ul_speed.value().c_str(),
+            currentTestResult.server_country_emoji.value().c_str(),
             currentTestResult.server_country.value().c_str(),
             currentTestResult.server_name.value().c_str());
     }
