@@ -36,15 +36,14 @@ namespace Configs
 
     QColor ProxyEntity::DisplayLatencyColor() const {
         if (latency < 0) {
-            return Qt::darkGray;
+            return Qt::red;
         } else if (latency > 0) {
             if (latency <= 100) {
+                return Qt::green;
+            } else if (latency <= 300){
                 return Qt::darkGreen;
-            } else if (latency <= 300)
-            {
-                return Qt::darkYellow;
             } else {
-                return Qt::red;
+                return Qt::darkGray;
             }
         } else {
             return {};

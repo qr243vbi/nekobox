@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.10)
 
-project(Throne VERSION 0.1)
+project(nekobox VERSION 5.0.0)
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
@@ -45,6 +45,10 @@ include("cmake/nkr.cmake")
 include("cmake/QHotkey.cmake")
 
 find_package(Threads)
+
+option(SKIP_UPDATE_BUTTON "Always hide update button" OFF)
+option(SKIP_JS_UPDATER "Skip JS update checker" OFF)
+option(USE_LEGACY_QT "Use legacy QT" OFF)
 
 if (NKR_PACKAGE OR NKR_PACKAGE_MACOS)
     nkr_add_compile_definitions(NKR_CPP_USE_APPDATA)
@@ -196,7 +200,7 @@ set(PROJECT_SOURCES
         include/ui/setting/RouteItem.h
         include/ui/setting/RouteItem.ui
 
-        res/Throne.qrc
+        res/nekobox.qrc
         ${QV2RAY_RC}
         include/dataStore/RouteEntity.h
         src/dataStore/RouteEntity.cpp
@@ -223,37 +227,47 @@ set(PROJECT_SOURCES
 )
 
 if (NOT APPLE AND Qt6_VERSION VERSION_GREATER_EQUAL 6.9.0)
-    list(APPEND PROJECT_SOURCES res/EmojiFont.qrc)
-    if (WIN32)
-        list(APPEND PROJECT_SOURCES res/EmojiFontWin.qrc)
-    endif ()
+        list(APPEND PROJECT_SOURCES res/EmojiFont.qrc)
 endif ()
 
 # Qt exe
-qt_add_executable(Throne
+qt_add_executable(nekobox
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
 )
 
 # Target
 
-set_property(TARGET Throne PROPERTY AUTOUIC ON)
-set_property(TARGET Throne PROPERTY AUTOMOC ON)
-set_property(TARGET Throne PROPERTY AUTORCC ON)
+set_property(TARGET nekobox PROPERTY AUTOUIC ON)
+set_property(TARGET nekobox PROPERTY AUTOMOC ON)
+set_property(TARGET nekobox PROPERTY AUTORCC ON)
 
+if(USE_LEGACY_QT)
+    add_definitions(-DUSE_LEGACY_QT)
+endif()
+
+if(SKIP_UPDATE_BUTTON)
+    add_definitions(-DSKIP_UPDATE_BUTTON)
+elseif(SKIP_JS_UPDATER)
+    add_definitions(-DSKIP_JS_UPDATER)
+else()
+    add_subdirectory("3rdparty/quickjs")
+    include_directories(${CMAKE_SOURCE_DIR}/3rdparty/quickjs)
+    target_link_libraries(nekobox PRIVATE qjs)
+endif()
 
 # Target Source macOS
 
-set(MACOSX_ICON ${CMAKE_SOURCE_DIR}/res/Throne.icns)
+set(MACOSX_ICON ${CMAKE_SOURCE_DIR}/res/nekobox.icns)
 if (APPLE)
-    target_sources(Throne PRIVATE ${MACOSX_ICON})
+    target_sources(nekobox PRIVATE ${MACOSX_ICON})
 endif ()
 
-set_target_properties(Throne PROPERTIES
-        MACOSX_BUNDLE_ICON_FILE "Throne.icns"
+set_target_properties(nekobox PROPERTIES
+        MACOSX_BUNDLE_ICON_FILE "nekobox.icns"
         RESOURCE ${MACOSX_ICON}
         MACOSX_BUNDLE_INFO_PLIST ${CMAKE_SOURCE_DIR}/res/MacOSXBundleInfo.plist
-        MACOSX_BUNDLE_GUI_IDENTIFIER moe.Throne.macosx
+        MACOSX_BUNDLE_GUI_IDENTIFIER moe.nekobox.macosx
         MACOSX_BUNDLE TRUE
         WIN32_EXECUTABLE TRUE
 
@@ -269,19 +283,23 @@ set(TS_FILES
 set(LUPDATE_OPTIONS
         -locations none -no-obsolete
 )
-qt_add_lupdate(Throne TS_FILES ${TS_FILES} OPTIONS ${LUPDATE_OPTIONS})
-qt_add_lrelease(Throne TS_FILES ${TS_FILES} QM_FILES_OUTPUT_VARIABLE QM_FILES)
+qt_add_lupdate(nekobox TS_FILES ${TS_FILES} OPTIONS ${LUPDATE_OPTIONS})
+qt_add_lrelease(nekobox TS_FILES ${TS_FILES} QM_FILES_OUTPUT_VARIABLE QM_FILES)
 
 configure_file(res/translations/translations.qrc ${CMAKE_BINARY_DIR} COPYONLY)
-target_sources(Throne PRIVATE ${CMAKE_BINARY_DIR}/translations.qrc)
+target_sources(nekobox PRIVATE ${CMAKE_BINARY_DIR}/translations.qrc)
 
 # Target Link
 
-target_link_libraries(Throne PRIVATE
+target_link_libraries(nekobox PRIVATE
         Qt6::Widgets Qt6::Network Qt6::DBus
         Threads::Threads
         ${NKR_EXTERNAL_TARGETS}
         ${PLATFORM_LIBRARIES}
 )
 
-qt_finalize_executable(Throne)
+if (MSVC)
+    target_compile_options(nekobox PRIVATE "/std:c++20")       # add c++20 feature
+endif ()
+
+qt_finalize_executable(nekobox)

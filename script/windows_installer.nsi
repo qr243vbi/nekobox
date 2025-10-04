@@ -1,15 +1,20 @@
-Name "Throne"
-OutFile "ThroneSetup.exe"
-InstallDir $APPDATA\Throne
+Name "nekobox"
+
+!ifdef OUTFILE
+    OutFile "${OUTFILE}.exe"
+!else
+    OutFile "nekobox_setup.exe"
+!endif
+InstallDir $APPDATA\nekobox
 RequestExecutionLevel user
 
 !include MUI2.nsh
-!define MUI_ICON "res\Throne.ico"
+!define MUI_ICON "res\nekobox.ico"
 !define MUI_ABORTWARNING
-!define MUI_WELCOMEPAGE_TITLE "Welcome to Throne Installer"
-!define MUI_WELCOMEPAGE_TEXT "This wizard will guide you through the installation of Throne."
-!define MUI_FINISHPAGE_RUN "$INSTDIR\Throne.exe"
-!define MUI_FINISHPAGE_RUN_TEXT "Launch Throne"
+!define MUI_WELCOMEPAGE_TITLE "Welcome to nekobox Installer"
+!define MUI_WELCOMEPAGE_TEXT "This wizard will guide you through the installation of nekobox."
+!define MUI_FINISHPAGE_RUN "$INSTDIR\nekobox.exe"
+!define MUI_FINISHPAGE_RUN_TEXT "Launch nekobox"
 !addplugindir .\script\
 
 !insertmacro MUI_PAGE_WELCOME
@@ -19,58 +24,39 @@ RequestExecutionLevel user
 
 !insertmacro MUI_LANGUAGE "English"
 
-UninstallText "This will uninstall Throne. Do you wish to continue?"
-UninstallIcon "res\ThroneDel.ico"
-
-Function .onInit
-  ReadRegStr $R0 HKCU "Software\Throne" "InstallPath"
-  StrCmp $R0 "" +2
-  StrCpy $INSTDIR $R0
-FunctionEnd
-
-!macro AbortOnRunningApp EXEName
-  killModule:
-  FindProcDLL::FindProc ${EXEName}
-  Pop $R0
-  IntCmp $R0 1 0 notRunning
-    FindProcDLL::KillProc ${EXEName}
-    Sleep 1000
-    Goto killModule
-  notRunning:
-!macroend
-
 Section "Install"
   SetOutPath "$INSTDIR"
   SetOverwrite on
 
-  !insertmacro AbortOnRunningApp "$INSTDIR\Throne.exe"
+  !ifdef DIRECTORY
+    File /r ".\deployment\${DIRECTORY}\*"
+  !else
+    File /r ".\deployment\windows64\*"
+  !endif
 
-  File /r ".\deployment\windows64\*"
 
-  CreateShortcut "$desktop\Throne.lnk" "$instdir\Throne.exe"
-  CreateShortcut "$SMPROGRAMS\Throne.lnk" "$INSTDIR\Throne.exe" "" "$INSTDIR\Throne.exe" 0
+  CreateShortcut "$desktop\nekobox.lnk" "$INSTDIR\nekobox.exe" "-appdata" "$INSTDIR\nekobox.exe" 0
+  CreateShortcut "$SMPROGRAMS\nekobox.lnk" "$INSTDIR\nekobox.exe" "-appdata" "$INSTDIR\nekobox.exe" 0
 
-  WriteRegStr HKCU "Software\Throne" "InstallPath" "$INSTDIR"
-  
-  WriteRegStr HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\Throne" "DisplayName" "Throne"
-  WriteRegStr HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\Throne" "UninstallString" "$INSTDIR\uninstall.exe"
-  WriteRegStr HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\Throne" "InstallLocation" "$INSTDIR"
-  WriteRegDWORD HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\Throne" "NoModify" 1
-  WriteRegDWORD HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\Throne" "NoRepair" 1
+  WriteRegStr HKCU "Software\nekobox" "InstallPath" "$INSTDIR"
+
+  WriteRegStr HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\nekobox" "DisplayName" "nekobox"
+  WriteRegStr HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\nekobox" "UninstallString" "$INSTDIR\uninstall.exe"
+  WriteRegStr HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\nekobox" "InstallLocation" "$INSTDIR"
+  WriteRegDWORD HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\nekobox" "NoModify" 1
+  WriteRegDWORD HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\nekobox" "NoRepair" 1
   WriteUninstaller "uninstall.exe"
 SectionEnd
 
 Section "Uninstall"
 
-  !insertmacro AbortOnRunningApp "$INSTDIR\Throne.exe"
-
-  Delete "$SMPROGRAMS\Throne.lnk"
-  Delete "$desktop\Throne.lnk"
-  RMDir "$SMPROGRAMS\Throne"
+  Delete "$SMPROGRAMS\nekobox.lnk"
+  Delete "$desktop\nekobox.lnk"
+  RMDir "$SMPROGRAMS\nekobox"
 
   RMDir /r "$INSTDIR"
 
   Delete "$INSTDIR\uninstall.exe"
 
-  DeleteRegKey HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\Throne"
+  DeleteRegKey HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\nekobox"
 SectionEnd

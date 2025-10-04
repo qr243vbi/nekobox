@@ -71,9 +71,9 @@ public:
 
     void toggle_system_proxy();
 
-    void set_spmode_vpn(bool enable, bool save = true);
+    void set_spmode_vpn(bool enable, bool save = true, bool requestAdmin = true);
 
-    bool get_elevated_permissions(int reason = 3);
+    bool get_elevated_permissions(int reason = 3, void * pointer = nullptr);
 
     void show_log_impl(const QString &log);
 
@@ -96,7 +96,6 @@ signals:
     void profile_selected(int id);
 
 public slots:
-
     void on_commitDataRequest();
 
     void on_menu_exit_triggered();
@@ -265,9 +264,9 @@ private:
     void runSpeedTest(const QString& config, bool useDefault, bool testCurrent, const QStringList& outboundTags, const QMap<QString, int>& tag2entID, int entID = -1);
 
     bool set_system_dns(bool set, bool save_set = true);
-
+#ifndef SKIP_UPDATE_BUTTON
     void CheckUpdate();
-
+#endif
     void setupConnectionList();
 
 protected:

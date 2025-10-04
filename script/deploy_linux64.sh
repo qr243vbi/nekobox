@@ -1,7 +1,10 @@
 #!/bin/bash
 set -e
+export CURDIR=$PWD
 
-if [[ $(uname -m) == 'aarch64' || $(uname -m) == 'arm64' ]]; then
+UNAME="$(uname -m)"
+
+if [[ "${UNAME}" == 'aarch64' || "${UNAME}" == 'arm64' ]]; then
   ARCH="arm64"
   ARCH1="aarch64"
 else
@@ -14,27 +17,27 @@ DEST=$DEPLOYMENT/linux-$ARCH
 rm -rf $DEST
 mkdir -p $DEST
 
-#### copy binary ####
-cp $BUILD/Throne $DEST
+#### copy srslist ####
+cp srslist $DEST/srslist
 
-#### copy Throne.png ####
-cp ./res/public/Throne.png $DEST
+#### copy binary ####
+cp $BUILD/nekobox $DEST
+
+#### copy nekobox.png ####
+cp ./res/public/nekobox.png $DEST
 
 cd download-artifact
 cd *linux-$ARCH
 tar xvzf artifacts.tgz -C ../../
 cd ../..
 
-sudo add-apt-repository universe
-sudo apt install libfuse2
-sudo apt install patchelf
 wget https://github.com/linuxdeploy/linuxdeploy/releases/download/1-alpha-20250213-2/linuxdeploy-$ARCH1.AppImage
 wget https://github.com/linuxdeploy/linuxdeploy-plugin-qt/releases/download/1-alpha-20250213-1/linuxdeploy-plugin-qt-$ARCH1.AppImage
 chmod +x linuxdeploy-$ARCH1.AppImage linuxdeploy-plugin-qt-$ARCH1.AppImage
 
 export EXTRA_QT_PLUGINS="iconengines;wayland-shell-integration;wayland-decoration-client;"
 export EXTRA_PLATFORM_PLUGINS="libqwayland-generic.so;"
-./linuxdeploy-$ARCH1.AppImage --appdir $DEST --executable $DEST/Throne --plugin qt
+./linuxdeploy-$ARCH1.AppImage --appdir $DEST --executable $DEST/nekobox --plugin qt
 rm linuxdeploy-$ARCH1.AppImage linuxdeploy-plugin-qt-$ARCH1.AppImage
 cd $DEST
 rm -r ./usr/translations ./usr/bin ./usr/share ./apprun-hooks
@@ -64,5 +67,6 @@ rm -r ./usr/lib
 mv ./usr/lib2 ./usr/lib
 
 # fix lib rpath
+cp $CURDIR/check_new_release.js $DEST
 cd $DEST
-patchelf --set-rpath '$ORIGIN/usr/lib' ./Throne
+patchelf --set-rpath '$ORIGIN/usr/lib' ./nekobox
