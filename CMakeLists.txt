@@ -223,7 +223,10 @@ set(PROJECT_SOURCES
 )
 
 if (NOT APPLE AND Qt6_VERSION VERSION_GREATER_EQUAL 6.9.0)
-        list(APPEND PROJECT_SOURCES res/EmojiFont.qrc)
+    list(APPEND PROJECT_SOURCES res/EmojiFont.qrc)
+    if (WIN32)
+        list(APPEND PROJECT_SOURCES res/EmojiFontWin.qrc)
+    endif ()
 endif ()
 
 # Qt exe
