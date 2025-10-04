@@ -57,7 +57,6 @@ jobs:
           go-version: ${{ matrix.go_version }}
           cache-dependency-path: |
             core/server/go.sum
-            core/updater/go.sum
       - name: Install Golang For Legacy Windows
         if: matrix.cross_os == 'windowslegacy'
         run: |

@@ -29,12 +29,22 @@ fi
 rm -rf $DEST
 mkdir -p $DEST
 
-export CGO_ENABLED=0
+if [[ "$GOOS" == "windows" ]]; then
+  if [[ "$GOARCH" == "386" ]]; then
+    curl -fLso $DEST/updater.exe "https://github.com/throneproj/updater/releases/latest/download/updater-windows32.exe"
+  else
+    curl -fLso $DEST/updater.exe "https://github.com/throneproj/updater/releases/latest/download/updater-windows64.exe"
+  fi
+fi
+if [[ "$GOOS" == "linux" ]]; then
+  if [[ "$GOARCH" == "arm64" ]]; then
+    curl -fLso $DEST/updater "https://github.com/throneproj/updater/releases/latest/download/updater-linux-arm64"
+  else
+    curl -fLso $DEST/updater "https://github.com/throneproj/updater/releases/latest/download/updater-linux-amd64"
+  fi
+fi
 
-#### Go: updater ####
-pushd core/updater
-[ "$GOOS" == "darwin" ] || $GOCMD build -o $DEST -trimpath -ldflags "-w -s"
-popd
+export CGO_ENABLED=0
 
 #### Go: core ####
 pushd core/server
