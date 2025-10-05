@@ -17,15 +17,15 @@ namespace Configs {
 
         // Amnezia Options
         bool enable_amnezia = false;
-        int junk_packet_count;
-        int junk_packet_min_size;
-        int junk_packet_max_size;
-        int init_packet_junk_size;
-        int response_packet_junk_size;
-        int init_packet_magic_header;
-        int response_packet_magic_header;
-        int underload_packet_magic_header;
-        int transport_packet_magic_header;
+        int junk_packet_count = 0;
+        int junk_packet_min_size = 0;
+        int junk_packet_max_size = 0;
+        int init_packet_junk_size = 0;
+        int response_packet_junk_size = 0;
+        int init_packet_magic_header = 0;
+        int response_packet_magic_header = 0;
+        int underload_packet_magic_header = 0;
+        int transport_packet_magic_header = 0;
 
         WireguardBean() : AbstractBean(0) {
             _add(new configItem("private_key", &privateKey, itemType::string));

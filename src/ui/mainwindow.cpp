@@ -49,7 +49,9 @@
 #if QT_VERSION >= QT_VERSION_CHECK(6, 5, 0)
 #include <QStyleHints>
 #endif
+#include <QFileDialog>
 #include <QToolTip>
+#include <QMimeData>
 #include <random>
 #include <3rdparty/QHotkey/qhotkey.h>
 #include <3rdparty/qv2ray/v2/proxy/QvProxyConfigurator.hpp>
@@ -66,6 +68,7 @@ void UI_InitMainWindow() {
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow) {
     mainwindow = this;
+    setAcceptDrops(true);
     MW_dialog_message = [=,this](const QString &a, const QString &b) {
         runOnUiThread([=,this]
         {
@@ -588,6 +591,25 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
         ui->menu_export_config->setVisible(name == software_core_name);
         ui->menu_export_config->setText(tr("Export %1 config").arg(name));
     });
+    connect(ui->actionAdd_profile_from_File, &QAction::triggered, this, [=,this]()
+    {
+        auto path = QFileDialog::getOpenFileName();
+        if (path.isEmpty())
+        {
+            return;
+        }
+        auto file = QFile(path);
+        if (!file.exists()) return;
+        if (file.size() > 50 * 1024 * 1024)
+        {
+            MW_show_log("File too large, will not process it");
+            return;
+        }
+        file.open(QIODevice::ReadOnly);
+        auto contents = file.readAll();
+        file.close();
+        Subscription::groupUpdater->AsyncUpdate(contents);
+    });
 
     connect(qApp, &QGuiApplication::commitDataRequest, this, &MainWindow::on_commitDataRequest);
 
@@ -620,6 +642,55 @@ void MainWindow::closeEvent(QCloseEvent *event) {
     } else {
         on_menu_exit_triggered();
     }
+}
+
+void MainWindow::dragEnterEvent(QDragEnterEvent *event)
+{
+    if (event->mimeData()->hasUrls() || event->mimeData()->hasText()) {
+        event->acceptProposedAction();
+    } else {
+        event->ignore();
+    }
+}
+
+void MainWindow::dropEvent(QDropEvent* event)
+{
+    auto mimeData = event->mimeData();
+
+    if (mimeData->hasUrls()) {
+        QList<QUrl> urlList = mimeData->urls();
+        for (const QUrl &url : urlList) {
+            if (url.isLocalFile()) {
+                if (auto qpx = QPixmap(url.toLocalFile()); !qpx.isNull())
+                {
+                    parseQrImage(&qpx);
+                } else if (auto file = QFile(url.toLocalFile()); file.exists())
+                {
+                    file.open(QFile::ReadOnly);
+                    if (file.size() > 50 * 1024 * 1024)
+                    {
+                        file.close();
+                        MW_show_log("File size is larger than 50MB, will not parse it");
+                        event->acceptProposedAction();
+                        return;
+                    }
+                    auto contents = file.readAll();
+                    file.close();
+                    Subscription::groupUpdater->AsyncUpdate(contents);
+                }
+            }
+        }
+        event->acceptProposedAction();
+        return;
+    }
+
+    if (mimeData->hasText()) {
+        Subscription::groupUpdater->AsyncUpdate(mimeData->text());
+        event->acceptProposedAction();
+        return;
+    }
+
+    event->ignore();
 }
 
 MainWindow::~MainWindow() {
@@ -1898,6 +1969,19 @@ QPixmap grabScreen(QScreen* screen, bool& ok)
         return screen->grabWindow(0, geom.x(), geom.y(), geom.width(), geom.height());
 }
 
+void MainWindow::parseQrImage(const QPixmap *image)
+{
+    const QVector<QString> texts = QrDecoder().decode(image->toImage().convertToFormat(QImage::Format_Grayscale8));
+    if (texts.isEmpty()) {
+        MessageBoxInfo(software_name, tr("QR Code not found"));
+    } else {
+        for (const QString &text : texts) {
+            show_log_impl("QR Code Result:\n" + text);
+            Subscription::groupUpdater->AsyncUpdate(text);
+        }
+    }
+}
+
 void MainWindow::on_menu_scan_qr_triggered() {
     hide();
     QThread::sleep(1);
@@ -1907,15 +1991,7 @@ void MainWindow::on_menu_scan_qr_triggered() {
 
     show();
     if (ok) {
-        const QVector<QString> texts = QrDecoder().decode(qpx.toImage().convertToFormat(QImage::Format_Grayscale8));
-        if (texts.isEmpty()) {
-            MessageBoxInfo(software_name, tr("QR Code not found"));
-        } else {
-            for (const QString &text : texts) {
-                show_log_impl("QR Code Result:\n" + text);
-                Subscription::groupUpdater->AsyncUpdate(text);
-            }
-        }
+        parseQrImage(&qpx);
     }
     else {
         MessageBoxInfo(software_name, tr("Unable to capture screen"));
@@ -2370,6 +2446,7 @@ void MainWindow::setActionsData()
     ui->actionUrl_Test_Group->setData(QString("m21"));
     ui->actionUrl_Test_Selected->setData(QString("m22"));
     ui->actionHide_window->setData(QString("m23"));
+    ui->actionAdd_profile_from_File->setData(QString("m24"));
 }
 
 QList<QAction*> MainWindow::getActionsForShortcut()

@@ -557,7 +557,7 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>17</height>
+     <height>25</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu_program">
@@ -575,6 +575,7 @@
     <addaction name="actionHide_window"/>
     <addaction name="separator"/>
     <addaction name="menu_add_from_clipboard2"/>
+    <addaction name="actionAdd_profile_from_File"/>
     <addaction name="menu_scan_qr"/>
     <addaction name="separator"/>
     <addaction name="actionStart_with_system"/>
@@ -1050,6 +1051,11 @@
   <action name="actionHide_window">
    <property name="text">
     <string>Hide window</string>
+   </property>
+  </action>
+  <action name="actionAdd_profile_from_File">
+   <property name="text">
+    <string>Add profile from File</string>
    </property>
   </action>
  </widget>

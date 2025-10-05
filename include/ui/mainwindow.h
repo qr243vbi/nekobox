@@ -232,9 +232,15 @@ private:
 
     void refresh_table_item(int row, const std::shared_ptr<Configs::ProxyEntity>& profile, bool stopping);
 
+    void parseQrImage(const QPixmap *image);
+
     void keyPressEvent(QKeyEvent *event) override;
 
     void closeEvent(QCloseEvent *event) override;
+
+    void dragEnterEvent(QDragEnterEvent *event);
+
+    void dropEvent(QDropEvent* event) override;
 
     //
 
