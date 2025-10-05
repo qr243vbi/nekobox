@@ -11,6 +11,8 @@ namespace Subscription {
 
         void updateSingBox(const QString &str);
 
+        void updateWireguardFileConfig(const QString &str);
+
         int gid_add_to = -1;
 
         QList<std::shared_ptr<Configs::ProxyEntity>> updated_order;
