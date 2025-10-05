@@ -84,6 +84,13 @@ namespace Subscription {
             return;
         }
 
+        // Wireguard Config
+        if (str.contains("[Interface]") && str.contains("[Peer]"))
+        {
+            updateWireguardFileConfig(str);
+            return;
+        }
+
         // Multi line
         if (str.count("\n") > 0 && needParse) {
             auto list = Disect(str);
@@ -344,6 +351,15 @@ namespace Subscription {
             updated_order += ent;
         }
     }
+
+    void RawUpdater::updateWireguardFileConfig(const QString& str)
+    {
+        auto ent = Configs::ProfileManager::NewProxyEntity("wireguard");
+        auto ok = ent->WireguardBean()->TryParseLink(str);
+        if (!ok) return;
+        updated_order += ent;
+    }
+
 
     QString Node2QString(const fkyaml::node &n, const QString &def = "") {
         try {

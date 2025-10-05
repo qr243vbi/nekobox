@@ -396,6 +396,8 @@ namespace Configs {
     }
 
     bool WireguardBean::TryParseLink(const QString &link) {
+        if (parseWgConfig(link)) return true;
+
         auto url = QUrl(link);
         if (!url.isValid()) return false;
         auto query = GetQuery(url);
