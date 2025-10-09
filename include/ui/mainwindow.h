@@ -213,7 +213,10 @@ private:
     QMutex mu_remoteRouteProfiles;
 
     // search
+    bool searchEnabled = false;
     QString searchString;
+
+    void setSearchState(bool enable);
 
     QList<std::shared_ptr<Configs::ProxyEntity>> filterProfilesList(const QList<int>& profiles);
 
