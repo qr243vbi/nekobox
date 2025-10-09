@@ -348,15 +348,14 @@ func (s *server) SpeedTest(in *gen.SpeedTestRequest, out *gen.SpeedTestResponse)
 			errStr = data.Error.Error()
 		}
 		res = append(res, &gen.SpeedTestResult{
-			DlSpeed:            To(data.DlSpeed),
-			UlSpeed:            To(data.UlSpeed),
-			Latency:            To(data.Latency),
-			OutboundTag:        To(data.Tag),
-			Error:              To(errStr),
-			ServerName:         To(data.ServerName),
-			ServerCountry:      To(data.ServerCountry),
-			ServerCountryEmoji: To(data.ServerCountryEmoji),
-			Cancelled:          To(data.Cancelled),
+			DlSpeed:       To(data.DlSpeed),
+			UlSpeed:       To(data.UlSpeed),
+			Latency:       To(data.Latency),
+			OutboundTag:   To(data.Tag),
+			Error:         To(errStr),
+			ServerName:    To(data.ServerName),
+			ServerCountry: To(data.ServerCountry),
+			Cancelled:     To(data.Cancelled),
 		})
 	}
 
@@ -371,15 +370,14 @@ func (s *server) QuerySpeedTest(in *gen.EmptyReq, out *gen.QuerySpeedTestRespons
 		errStr = res.Error.Error()
 	}
 	out.Result = &gen.SpeedTestResult{
-		DlSpeed:            To(res.DlSpeed),
-		UlSpeed:            To(res.UlSpeed),
-		Latency:            To(res.Latency),
-		OutboundTag:        To(res.Tag),
-		Error:              To(errStr),
-		ServerName:         To(res.ServerName),
-		ServerCountry:      To(res.ServerCountry),
-		ServerCountryEmoji: To(res.ServerCountryEmoji),
-		Cancelled:          To(res.Cancelled),
+		DlSpeed:       To(res.DlSpeed),
+		UlSpeed:       To(res.UlSpeed),
+		Latency:       To(res.Latency),
+		OutboundTag:   To(res.Tag),
+		Error:         To(errStr),
+		ServerName:    To(res.ServerName),
+		ServerCountry: To(res.ServerCountry),
+		Cancelled:     To(res.Cancelled),
 	}
 	out.IsRunning = To(isRunning)
 	return nil
