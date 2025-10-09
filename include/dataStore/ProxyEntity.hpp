@@ -1,12 +1,10 @@
 #pragma once
 
 #include "include/global/Configs.hpp"
+#include "include/global/CountryHelper.hpp"
 #include "include/stats/traffic/TrafficData.hpp"
 #include "include/configs/proxy/AbstractBean.hpp"
 #include "include/configs/proxy/ExtraCore.h"
-#ifndef Q_MOC_RUN
-#include "include/global/CountryHelper.hpp"
-#endif
 
 namespace Configs {
     class SocksHttpBean;
