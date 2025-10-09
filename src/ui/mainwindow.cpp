@@ -1158,7 +1158,7 @@ void MainWindow::UpdateDataView(bool force)
         ).arg(currentSptProfileName,
             currentTestResult.dl_speed.value().c_str(),
             currentTestResult.ul_speed.value().c_str(),
-            currentTestResult.server_country_emoji.value().c_str(),
+            CountryCodeToFlag(CountryNameToCode(QString::fromStdString(currentTestResult.server_country.value()))),
             currentTestResult.server_country.value().c_str(),
             currentTestResult.server_name.value().c_str());
     }
@@ -1325,7 +1325,9 @@ QList<std::shared_ptr<Configs::ProxyEntity>> MainWindow::filterProfilesList(cons
             MW_show_log("Null profile, maybe data is corrupted");
             continue;
         }
-        if (searchString.isEmpty() || profile->bean->name.contains(searchString, Qt::CaseInsensitive) || profile->bean->serverAddress.contains(searchString, Qt::CaseInsensitive)) res.append(profile);
+        if (searchString.isEmpty() || profile->bean->name.contains(searchString, Qt::CaseInsensitive) || profile->bean->serverAddress.contains(searchString, Qt::CaseInsensitive)
+            || (searchString.startsWith("CODE:") && searchString.mid(5) == profile->test_country))
+            res.append(profile);
     }
     return res;
 }

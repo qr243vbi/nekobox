@@ -111,7 +111,6 @@ message SpeedTestResult {
   optional string server_name = 6 [default = ""];
   optional string server_country = 7 [default = ""];
   optional bool cancelled = 8 [default = false];
-  optional string server_country_emoji = 9 [default = ""];
 }
 
 message SpeedTestResponse {

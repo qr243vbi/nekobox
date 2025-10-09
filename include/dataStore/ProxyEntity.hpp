@@ -4,6 +4,9 @@
 #include "include/stats/traffic/TrafficData.hpp"
 #include "include/configs/proxy/AbstractBean.hpp"
 #include "include/configs/proxy/ExtraCore.h"
+#ifndef Q_MOC_RUN
+#include "include/global/CountryHelper.hpp"
+#endif
 
 namespace Configs {
     class SocksHttpBean;
@@ -41,7 +44,7 @@ namespace Configs {
         int latency = 0;
         QString dl_speed;
         QString ul_speed;
-        QString test_country_emoji;
+        QString test_country;
         std::shared_ptr<Configs::AbstractBean> bean;
         std::shared_ptr<Stats::TrafficData> traffic_data = std::make_shared<Stats::TrafficData>("");
 

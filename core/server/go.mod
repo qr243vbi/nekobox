@@ -4,7 +4,6 @@ go 1.23.6
 
 require (
 	github.com/Mahdi-zarei/speedtest-go v1.7.12
-	github.com/biter777/countries v1.7.5
 	github.com/chai2010/protorpc v0.0.0-00010101000000-000000000000
 	github.com/dustin/go-humanize v1.0.1
 	github.com/gofrs/uuid/v5 v5.3.2

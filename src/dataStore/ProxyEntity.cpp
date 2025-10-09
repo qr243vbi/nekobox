@@ -12,7 +12,7 @@ namespace Configs
         _add(new configItem("dl", &dl_speed, itemType::string));
         _add(new configItem("ul", &ul_speed, itemType::string));
         _add(new configItem("report", &full_test_report, itemType::string));
-        _add(new configItem("country_emoji", &test_country_emoji, itemType::string));
+        _add(new configItem("country", &test_country, itemType::string));
 
         if (bean != nullptr) {
             this->bean = std::shared_ptr<Configs::AbstractBean>(bean);
@@ -26,7 +26,7 @@ namespace Configs
         if (latency < 0) {
             result = "Unavailable";
         } else if (latency > 0) {
-            if (!test_country_emoji.isEmpty()) result += UNICODE_LRO + test_country_emoji + " ";
+            if (!test_country.isEmpty()) result += UNICODE_LRO + CountryCodeToFlag(test_country) + " ";
             result += QString("%1 ms").arg(latency);
         }
         if (!dl_speed.isEmpty() && dl_speed != "N/A") result += " ↓" + dl_speed;

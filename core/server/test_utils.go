@@ -53,15 +53,14 @@ func (u *URLTestReporter) Results() []*URLTestResult {
 }
 
 type SpeedTestResult struct {
-	Tag                string
-	DlSpeed            string
-	UlSpeed            string
-	Latency            int32
-	ServerName         string
-	ServerCountry      string
-	ServerCountryEmoji string
-	Error              error
-	Cancelled          bool
+	Tag           string
+	DlSpeed       string
+	UlSpeed       string
+	Latency       int32
+	ServerName    string
+	ServerCountry string
+	Error         error
+	Cancelled     bool
 }
 
 type SpeedTestResultQuerier struct {
@@ -296,12 +295,6 @@ func speedTestWithDialer(ctx context.Context, dialer func(ctx context.Context, n
 	}
 	res.ServerName = srv[0].Name
 	res.ServerCountry = srv[0].Country
-	countryEmoji := internal.GetCountryEmojiByName(srv[0].Country)
-	if countryEmoji == "" {
-		fmt.Println("Failed to get country emoji for", srv[0].Name)
-	} else {
-		res.ServerCountryEmoji = countryEmoji
-	}
 
 	done := make(chan struct{})
 
