@@ -151,7 +151,13 @@ jobs:
         uses: actions/cache@v4.2.3
         with:
           path: qt6/build
-          key: QtStaticCache-${{ matrix.platform }}-${{ matrix.target }}-Qt${{ matrix.qt_version }}
+          key: QtStaticCache-${{ matrix.platform }}-${{ matrix.target }}-Qt${{ matrix.qt_version }}-${{ hashFiles('script/build_qt_static_windows.bat') }}
+      - name: Install OpenSSL (Windows)
+        if: matrix.platform == 'windows-latest' && steps.cache-static-Qt.outputs.cache-hit != 'true' && matrix.qt_version != '6.2.12'
+        shell: powershell
+        run: |
+          echo "VCPKG_ROOT=$env:VCPKG_INSTALLATION_ROOT" | Out-File -FilePath $env:GITHUB_ENV -Append
+          vcpkg install openssl:x64-mingw-static
       - name: Install Qt Windows
         shell: powershell
         if: matrix.platform == 'windows-latest' && steps.cache-static-Qt.outputs.cache-hit != 'true' && matrix.qt_version != '6.2.12'
@@ -173,7 +179,7 @@ jobs:
           mkdir build
           cd build
           curl -fLso srslist.h "https://raw.githubusercontent.com/throneproj/routeprofiles/rule-set/srslist.h"
-          cmake -GNinja -DCMAKE_CXX_FLAGS="-static" -DCMAKE_BUILD_TYPE=Debug ..
+          cmake -GNinja -DCMAKE_CXX_FLAGS="-static" -DOPENSSL_ROOT_DIR="$VCPKG_ROOT/installed/x64-mingw-static" -DCMAKE_BUILD_TYPE=Debug ..
           ninja -j2
           cd ..
           ./script/deploy_windows.sh
