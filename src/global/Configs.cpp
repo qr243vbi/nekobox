@@ -76,39 +76,51 @@ namespace Configs_ConfigItem {
         QJsonObject object;
         for (const auto &_item: _map) {
             auto item = _item.get();
+            if (item == nullptr){
+                continue;
+            }
             if (without.contains(item->name)) continue;
+            auto ptr = item->ptr;
+            if (ptr == nullptr){
+                continue;
+            }
             switch (item->type) {
                 case itemType::string:
                     // Allow Empty
-                    object.insert(item->name, *(QString *) item->ptr);
+                    object.insert(item->name, *(QString *) ptr);
                     break;
                 case itemType::integer:
-                    object.insert(item->name, *(int *) item->ptr);
+                    object.insert(item->name, *(int *) ptr);
                     break;
                 case itemType::integer64:
-                    object.insert(item->name, *(long long *) item->ptr);
+                    object.insert(item->name, *(long long *) ptr);
                     break;
                 case itemType::boolean:
-                    object.insert(item->name, *(bool *) item->ptr);
+                    object.insert(item->name, *(bool *) ptr);
                     break;
                 case itemType::stringList: {
-                    if (QListStr2QJsonArray(*(QList<QString> *) item->ptr).isEmpty()) continue;
-                    object.insert(item->name, QListStr2QJsonArray(*(QList<QString> *) item->ptr));
+                    auto jsonarray = QListStr2QJsonArray(*(QList<QString> *) ptr);
+                    if (jsonarray.isEmpty()) continue;
+                    object.insert(item->name, jsonarray);
                     break;
                 }
                 case itemType::integerList: {
-                    if (QListInt2QJsonArray(*(QList<int> *) item->ptr).isEmpty()) continue;
-                    object.insert(item->name, QListInt2QJsonArray(*(QList<int> *) item->ptr));
+                    auto jsonarray = QListInt2QJsonArray(*(QList<int> *) ptr);
+                    if (jsonarray.isEmpty()) continue;
+                    object.insert(item->name, jsonarray);
                     break;
                 }
                 case itemType::jsonStore:
                     // _add 时应关联对应 JsonStore 的指针
-                    object.insert(item->name, ((JsonStore *) item->ptr)->ToJson());
+                    object.insert(item->name, ((JsonStore *) ptr)->ToJson());
                     break;
                 case itemType::jsonStoreList:
                     QJsonArray jsonArray;
-                    auto arr = *(QList<JsonStore*> *) item->ptr;
+                    auto arr = *(QList<JsonStore*> *) ptr;
                     for ( JsonStore* obj : arr) {
+                        if (obj ==  nullptr){
+                            continue;
+                        }
                         jsonArray.push_back(obj->ToJson());
                     }
                     object.insert(item->name, jsonArray);
@@ -335,7 +347,7 @@ namespace Configs {
         if (isDefault) {
             QString version = SubStrBefore(NKR_VERSION, "-");
             if (!version.contains(".")) version = "1.0.0";
-            return "Throne/" + version + " (Prefer ClashMeta Format)";
+            return "nekobox/" + version + " (Prefer ClashMeta Format)";
         }
         return user_agent;
     }
@@ -367,8 +379,7 @@ namespace Configs {
     bool Shortcuts::Save()
     {
         keyVal.clear();
-        auto mp = shortcuts.toStdMap();
-        for (const auto& [k, v] : mp)
+        for (auto [k, v] : asKeyValueRange(shortcuts))
         {
             if (v.isEmpty()) continue;
             keyVal << k << v.toString();
@@ -395,7 +406,7 @@ namespace Configs {
     // System Utils
 
     QString FindCoreRealPath() {
-        auto fn = QApplication::applicationDirPath() + "/Core";
+        auto fn = QApplication::applicationDirPath() + "/nekobox_core";
         auto fi = QFileInfo(fn);
         if (fi.isSymLink()) return fi.symLinkTarget();
         return fn;

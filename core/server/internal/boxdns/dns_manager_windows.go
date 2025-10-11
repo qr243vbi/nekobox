@@ -25,7 +25,7 @@ var dnsIsSet bool
 
 func (d *DnsManager) HandleSystemDNS(ifc *control.Interface, flag int) {
 	if d == nil {
-		log.Println("No DnsManager, you may need to restart Throne")
+		log.Println("No DnsManager, you may need to restart nekobox")
 		return
 	}
 	if ifc != nil {
@@ -42,7 +42,7 @@ func (d *DnsManager) HandleSystemDNS(ifc *control.Interface, flag int) {
 
 func (d *DnsManager) getInterfaceGuid(ifc control.Interface) (string, error) {
 	if d.Monitor == nil {
-		return "", E.New("No Dns Manager, you may need to restart Throne")
+		return "", E.New("No Dns Manager, you may need to restart nekobox")
 	}
 	index := ifc.Index
 	u, err := ifcIdxtoUUID(index)
@@ -83,8 +83,8 @@ func ifcIdxtoUUID(index int) (*uuid.UUID, error) {
 
 func (d *DnsManager) isIfcDNSDhcp(ifc control.Interface) (dhcp bool, err error) {
 	if d == nil {
-		log.Println("No DnsManager, you may need to restart Throne")
-		return false, E.New("No Dns Manager, you may need to restart Throne")
+		log.Println("No DnsManager, you may need to restart nekobox")
+		return false, E.New("No Dns Manager, you may need to restart nekobox")
 	}
 
 	luid, err := winipcfg.LUIDFromIndex(uint32(ifc.Index))
@@ -226,8 +226,8 @@ func (d *DnsManager) setSystemDNS(ifx control.Interface) {
 
 func (d *DnsManager) SetSystemDNS(ifc *control.Interface, clear bool) error {
 	if d == nil {
-		log.Println("No DnsManager, you may need to restart Throne")
-		return E.New("No dns Manager, you may need to restart Throne")
+		log.Println("No DnsManager, you may need to restart nekobox")
+		return E.New("No dns Manager, you may need to restart nekobox")
 	}
 
 	if ifc == nil {

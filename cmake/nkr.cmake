@@ -1,3 +1,6 @@
+if("$ENV{INPUT_VERSION}" STREQUAL "")
+    add_definitions(-DSKIP_UPDATE_BUTTON)
+endif()
 # Release
 set(NKR_VERSION "$ENV{INPUT_VERSION}")
 add_compile_definitions(NKR_VERSION=\"${NKR_VERSION}\")

@@ -9,32 +9,32 @@ QPixmap Icon::GetTrayIcon(TrayIconStatus status) {
 
     if (status == NONE)
     {
-        auto pixmap_read = QPixmap(QString(":/Throne/") + "Off" + ".png");
+        auto pixmap_read = QPixmap(QString(":/systray/") + "Off" + ".png");
         if (!pixmap_read.isNull()) pixmap = pixmap_read;
     } else if (status == RUNNING)
     {
-        auto pixmap_read = QPixmap(QString(":/Throne/") + "Throne" + ".png");
+        auto pixmap_read = QPixmap(QString(":/systray/") + "On" + ".png");
         if (!pixmap_read.isNull()) pixmap = pixmap_read;
     } else if (status == SYSTEM_PROXY_DNS)
     {
-        auto pixmap_read = QPixmap(QString(":/Throne/") + "Proxy-Dns" + ".png");
+        auto pixmap_read = QPixmap(QString(":/systray/") + "Proxy-Dns" + ".png");
         if (!pixmap_read.isNull()) pixmap = pixmap_read;
     } else if (status == SYSTEM_PROXY)
     {
-        auto pixmap_read = QPixmap(QString(":/Throne/") + "Proxy" + ".png");
+        auto pixmap_read = QPixmap(QString(":/systray/") + "Proxy" + ".png");
         if (!pixmap_read.isNull()) pixmap = pixmap_read;
     } else if (status == DNS)
     {
-        auto pixmap_read = QPixmap(QString(":/Throne/") + "Dns" + ".png");
+        auto pixmap_read = QPixmap(QString(":/systray/") + "Dns" + ".png");
         if (!pixmap_read.isNull()) pixmap = pixmap_read;
     } else if (status == VPN)
     {
-        auto pixmap_read = QPixmap(QString(":/Throne/") + "Tun" + ".png");
+        auto pixmap_read = QPixmap(QString(":/systray/") + "Tun" + ".png");
         if (!pixmap_read.isNull()) pixmap = pixmap_read;
     } else
     {
         MW_show_log("Icon::GetTrayIcon: Unknown status");
-        auto pixmap_read = QPixmap(QString(":/Throne/") + "Off" + ".png");
+        auto pixmap_read = QPixmap(QString(":/systray/") + "Off" + ".png");
         if (!pixmap_read.isNull()) pixmap = pixmap_read;
     }
 
