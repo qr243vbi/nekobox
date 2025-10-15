@@ -16,6 +16,8 @@
 #include <QTimer>
 #include <qfontdatabase.h>
 
+#include "include/ui/mainwindow.h"
+
 DialogBasicSettings::DialogBasicSettings(QWidget *parent)
     : QDialog(parent), ui(new Ui::DialogBasicSettings) {
     ui->setupUi(this);
@@ -67,6 +69,14 @@ DialogBasicSettings::DialogBasicSettings(QWidget *parent)
 
     // Style
     ui->connection_statistics->setChecked(Configs::dataStore->enable_stats);
+    ui->show_sys_dns->setChecked(Configs::dataStore->show_system_dns);
+    connect(ui->show_sys_dns, &QCheckBox::stateChanged, this, [=]
+    {
+        CACHE.updateSystemDns = true;
+    });
+#ifndef Q_OS_WIN
+    ui->show_sys_dns->hide();
+#endif
     //
     D_LOAD_BOOL(start_minimal)
     D_LOAD_INT(max_log_line)
@@ -197,6 +207,7 @@ void DialogBasicSettings::accept() {
     Configs::dataStore->language = ui->language->currentIndex();
     D_SAVE_BOOL(start_minimal)
     D_SAVE_INT(max_log_line)
+    Configs::dataStore->show_system_dns = ui->show_sys_dns->isChecked();
 
     if (Configs::dataStore->max_log_line <= 0) {
         Configs::dataStore->max_log_line = 200;
@@ -243,6 +254,7 @@ void DialogBasicSettings::accept() {
     QStringList str{"UpdateDataStore"};
     if (CACHE.needRestart) str << "NeedRestart";
     if (CACHE.updateDisableTray) str << "UpdateDisableTray";
+    if (CACHE.updateSystemDns) str << "UpdateSystemDns";
     if (needChoosePort) str << "NeedChoosePort";
     MW_dialog_message(Dialog_DialogBasicSettings, str.join(","));
     QDialog::accept();

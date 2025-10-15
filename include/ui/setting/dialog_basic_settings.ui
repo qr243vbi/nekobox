@@ -360,7 +360,7 @@
         <layout class="QHBoxLayout" name="style_h_3">
          <item>
           <widget class="QGroupBox" name="horizontalGroupBox_5">
-           <layout class="QHBoxLayout" name="horizontalLayout_6">
+           <layout class="QVBoxLayout" name="verticalLayout_5">
             <item>
              <widget class="QCheckBox" name="start_minimal">
               <property name="sizePolicy">
@@ -371,6 +371,13 @@
               </property>
               <property name="text">
                <string>Hide dashboard at startup</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QCheckBox" name="show_sys_dns">
+              <property name="text">
+               <string>Show System DNS option</string>
               </property>
              </widget>
             </item>
