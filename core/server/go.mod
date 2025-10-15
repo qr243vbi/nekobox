@@ -1,6 +1,8 @@
 module Core
 
-go 1.23.6
+go 1.24.0
+
+toolchain go1.24.4
 
 require (
 	github.com/Mahdi-zarei/speedtest-go v1.7.12
@@ -10,14 +12,14 @@ require (
 	github.com/golang/protobuf v1.5.4
 	github.com/google/shlex v0.0.0-20191202100458-e7afc7fbc510
 	github.com/sagernet/sing v0.7.12
-	github.com/sagernet/sing-box v1.12.9
+	github.com/sagernet/sing-box v1.12.10
 	github.com/sagernet/sing-tun v0.7.2
-	github.com/spf13/cobra v1.9.1
-	golang.org/x/sys v0.35.0
-	google.golang.org/protobuf v1.36.6
+	github.com/spf13/cobra v1.10.1
+	golang.org/x/sys v0.37.0
+	google.golang.org/protobuf v1.36.10
 )
 
-replace github.com/sagernet/sing-box => github.com/throneproj/sing-box v1.11.16-0.20251005124159-9a648497aa63
+replace github.com/sagernet/sing-box => github.com/throneproj/sing-box v1.11.16-0.20251015233716-d454ba00b4be
 
 replace github.com/sagernet/wireguard-go => github.com/throneproj/wireguard-go v0.0.1-beta.7.0.20250728063157-408bba78ad26
 
@@ -73,7 +75,7 @@ require (
 	github.com/mdlayher/sdnotify v1.0.0 // indirect
 	github.com/mdlayher/socket v0.5.1 // indirect
 	github.com/metacubex/tfo-go v0.0.0-20250516165257-e29c16ae41d4 // indirect
-	github.com/metacubex/utls v1.8.0 // indirect
+	github.com/metacubex/utls v1.8.2 // indirect
 	github.com/mholt/acmez/v3 v3.1.2 // indirect
 	github.com/miekg/dns v1.1.67 // indirect
 	github.com/mitchellh/go-ps v1.0.0 // indirect
@@ -98,7 +100,7 @@ require (
 	github.com/sagernet/tailscale v1.80.3-sing-box-1.12-mod.1 // indirect
 	github.com/sagernet/wireguard-go v0.0.1-beta.7 // indirect
 	github.com/sagernet/ws v0.0.0-20231204124109-acfe8907c854 // indirect
-	github.com/spf13/pflag v1.0.6 // indirect
+	github.com/spf13/pflag v1.0.9 // indirect
 	github.com/tailscale/certstore v0.1.1-0.20231202035212-d3fa0460f47e // indirect
 	github.com/tailscale/go-winio v0.0.0-20231025203758-c4f33415bf55 // indirect
 	github.com/tailscale/golang-x-crypto v0.0.0-20240604161659-3fde5e568aa4 // indirect
