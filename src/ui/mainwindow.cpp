@@ -419,10 +419,8 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
             refresh_status();
         }
     });
-    // only windows is supported for now
-#ifndef Q_OS_WIN
-    ui->system_dns->hide();
-#endif
+    if (Configs::dataStore->show_system_dns) ui->system_dns->show();
+    else ui->system_dns->hide();
 
     connect(ui->menu_server, &QMenu::aboutToShow, this, [=,this](){
         if (running)
@@ -769,6 +767,11 @@ void MainWindow::dialog_message_impl(const QString &sender, const QString &info)
     if (info.contains("UpdateDataStore")) {
         if (info.contains("UpdateDisableTray")) {
             tray->setVisible(!Configs::dataStore->disable_tray);
+        }
+        if (info.contains("UpdateSystemDns"))
+        {
+            if (Configs::dataStore->show_system_dns) ui->system_dns->show();
+            else ui->system_dns->hide();
         }
         if (info.contains("NeedChoosePort"))
         {

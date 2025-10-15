@@ -28,6 +28,7 @@ private:
         QString custom_inbound;
         bool needRestart = false;
         bool updateDisableTray = false;
+        bool updateSystemDns = false;
     } CACHE;
 
 private slots:
