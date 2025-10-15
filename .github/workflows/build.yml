@@ -152,8 +152,15 @@ jobs:
         with:
           path: qt6/build
           key: QtStaticCache-${{ matrix.platform }}-${{ matrix.target }}-Qt${{ matrix.qt_version }}-${{ hashFiles('script/build_qt_static_windows.bat') }}
+      - name: OpenSSL Cache
+        id: cache-openssl
+        if: matrix.platform == 'windows-latest' && matrix.qt_version != '6.2.12'
+        uses: actions/cache@v4.2.3
+        with:
+          path: ${{ env.VCPKG_ROOT }}/installed/x64-mingw-static
+          key: OpenSSLCache-${{ matrix.platform }}-${{ matrix.target }}
       - name: Install OpenSSL (Windows)
-        if: matrix.platform == 'windows-latest' && steps.cache-static-Qt.outputs.cache-hit != 'true' && matrix.qt_version != '6.2.12'
+        if: matrix.platform == 'windows-latest' && steps.cache-openssl.outputs.cache-hit != 'true' && matrix.qt_version != '6.2.12'
         shell: powershell
         run: |
           echo "VCPKG_ROOT=$env:VCPKG_INSTALLATION_ROOT" | Out-File -FilePath $env:GITHUB_ENV -Append
