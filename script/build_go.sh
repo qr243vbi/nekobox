@@ -42,6 +42,7 @@ if [[ "$GOOS" == "linux" ]]; then
   else
     curl -fLso $DEST/updater "https://github.com/throneproj/updater/releases/latest/download/updater-linux-amd64"
   fi
+  chmod +x $DEST/updater
 fi
 
 export CGO_ENABLED=0
