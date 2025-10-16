@@ -157,7 +157,7 @@ jobs:
         if: matrix.platform == 'windows-latest' && matrix.qt_version != '6.2.12'
         uses: actions/cache@v4.2.3
         with:
-          path: ${{ env.VCPKG_ROOT }}/installed/x64-mingw-static
+          path: ${{ env.VCPKG_INSTALLATION_ROOT }}/installed/x64-mingw-static
           key: OpenSSLCache-${{ matrix.platform }}-${{ matrix.target }}
       - name: Install OpenSSL (Windows)
         if: matrix.platform == 'windows-latest' && steps.cache-openssl.outputs.cache-hit != 'true' && matrix.qt_version != '6.2.12'
