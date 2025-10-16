@@ -157,7 +157,7 @@ jobs:
         if: matrix.platform == 'windows-latest' && matrix.qt_version != '6.2.12'
         uses: actions/cache@v4.2.3
         with:
-          path: ${{ env.VCPKG_INSTALLATION_ROOT }}/installed/x64-mingw-static
+          path: C:/vcpkg/installed/x64-mingw-static
           key: OpenSSLCache-${{ matrix.platform }}-${{ matrix.target }}
       - name: Install OpenSSL (Windows)
         if: matrix.platform == 'windows-latest' && steps.cache-openssl.outputs.cache-hit != 'true' && matrix.qt_version != '6.2.12'
@@ -186,7 +186,7 @@ jobs:
           mkdir build
           cd build
           curl -fLso srslist.h "https://raw.githubusercontent.com/throneproj/routeprofiles/rule-set/srslist.h"
-          cmake -GNinja -DCMAKE_CXX_FLAGS="-static" -DOPENSSL_ROOT_DIR="$VCPKG_ROOT/installed/x64-mingw-static" -DCMAKE_BUILD_TYPE=Debug ..
+          cmake -GNinja -DCMAKE_CXX_FLAGS="-static" -DOPENSSL_ROOT_DIR="$VCPKG_INSTALLATION_ROOT/installed/x64-mingw-static" -DCMAKE_BUILD_TYPE=Debug ..
           ninja -j2
           cd ..
           ./script/deploy_windows.sh
