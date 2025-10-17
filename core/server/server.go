@@ -95,7 +95,7 @@ func (s *server) Start(in *gen.LoadConfigReq, out *gen.ErrorResp) (_ error) {
 	if err != nil {
 		return
 	}
-	if runtime.GOOS == "darwin" && strings.Contains(*in.CoreConfig, "utun") {
+	if runtime.GOOS == "darwin" && strings.Contains(*in.CoreConfig, "tun-in") && strings.Contains(*in.CoreConfig, "172.19.0.1/24") {
 		err := sys.SetSystemDNS("172.19.0.2", boxInstance.Network().InterfaceMonitor())
 		if err != nil {
 			log.Println("Failed to set system DNS:", err)
