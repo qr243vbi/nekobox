@@ -309,7 +309,7 @@ func (s *server) IsPrivileged(in *gen.EmptyReq, out *gen.IsPrivilegedResponse) e
 }
 
 func (s *server) SpeedTest(in *gen.SpeedTestRequest, out *gen.SpeedTestResponse) error {
-	if !*in.TestDownload && !*in.TestUpload && !*in.SimpleDownload {
+	if !*in.TestDownload && !*in.TestUpload && !*in.SimpleDownload && !*in.OnlyCountry {
 		return errors.New("cannot run empty test")
 	}
 	var testInstance *boxbox.Box
@@ -339,7 +339,7 @@ func (s *server) SpeedTest(in *gen.SpeedTestRequest, out *gen.SpeedTestResponse)
 		outboundTags = []string{outbound.Tag()}
 	}
 
-	results := BatchSpeedTest(testCtx, testInstance, outboundTags, *in.TestDownload, *in.TestUpload, *in.SimpleDownload, *in.SimpleDownloadAddr, time.Duration(*in.TimeoutMs)*time.Millisecond)
+	results := BatchSpeedTest(testCtx, testInstance, outboundTags, *in.TestDownload, *in.TestUpload, *in.SimpleDownload, *in.SimpleDownloadAddr, time.Duration(*in.TimeoutMs)*time.Millisecond, *in.OnlyCountry, *in.CountryConcurrency)
 
 	res := make([]*gen.SpeedTestResult, 0)
 	for _, data := range results {
@@ -380,5 +380,26 @@ func (s *server) QuerySpeedTest(in *gen.EmptyReq, out *gen.QuerySpeedTestRespons
 		Cancelled:     To(res.Cancelled),
 	}
 	out.IsRunning = To(isRunning)
+	return nil
+}
+
+func (s *server) QueryCountryTest(in *gen.EmptyReq, out *gen.QueryCountryTestResponse) error {
+	results := CountryResults.Results()
+	for _, res := range results {
+		var errStr string
+		if res.Error != nil {
+			errStr = res.Error.Error()
+		}
+		out.Results = append(out.Results, &gen.SpeedTestResult{
+			DlSpeed:       To(res.DlSpeed),
+			UlSpeed:       To(res.UlSpeed),
+			Latency:       To(res.Latency),
+			OutboundTag:   To(res.Tag),
+			Error:         To(errStr),
+			ServerName:    To(res.ServerName),
+			ServerCountry: To(res.ServerCountry),
+			Cancelled:     To(res.Cancelled),
+		})
+	}
 	return nil
 }

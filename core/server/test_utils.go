@@ -22,6 +22,7 @@ var testCtx context.Context
 var cancelTests context.CancelFunc
 var SpTQuerier SpeedTestResultQuerier
 var URLReporter URLTestReporter
+var CountryResults CountryTestResults
 
 const URLTestTimeout = 3 * time.Second
 const FetchServersTimeout = 8 * time.Second
@@ -83,6 +84,25 @@ func (s *SpeedTestResultQuerier) storeResult(result *SpeedTestResult) {
 
 func (s *SpeedTestResultQuerier) setIsRunning(isRunning bool) {
 	s.isRunning = isRunning
+}
+
+type CountryTestResults struct {
+	results []*SpeedTestResult
+	mu      sync.Mutex
+}
+
+func (c *CountryTestResults) AddResult(result *SpeedTestResult) {
+	c.mu.Lock()
+	defer c.mu.Unlock()
+	c.results = append(c.results, result)
+}
+
+func (c *CountryTestResults) Results() []*SpeedTestResult {
+	c.mu.Lock()
+	defer c.mu.Unlock()
+	cp := c.results
+	c.results = nil
+	return cp
 }
 
 func BatchURLTest(ctx context.Context, i *boxbox.Box, outboundTags []string, url string, maxConcurrency int, twice bool, timeout time.Duration) []*URLTestResult {
@@ -171,9 +191,17 @@ func getNetDialer(dialer func(ctx context.Context, network string, destination m
 	}
 }
 
-func BatchSpeedTest(ctx context.Context, i *boxbox.Box, outboundTags []string, testDl, testUl bool, simpleDL bool, simpleAddress string, timeout time.Duration) []*SpeedTestResult {
+func BatchSpeedTest(ctx context.Context, i *boxbox.Box, outboundTags []string, testDl, testUl bool, simpleDL bool, simpleAddress string, timeout time.Duration, countryOnly bool, countryConcurrency int32) []*SpeedTestResult {
 	outbounds := service.FromContext[adapter.OutboundManager](i.Context())
 	results := make([]*SpeedTestResult, 0)
+	var queuer chan struct{}
+	wg := &sync.WaitGroup{}
+	if countryOnly {
+		if countryConcurrency <= 0 {
+			countryConcurrency = 5
+		}
+		queuer = make(chan struct{}, countryConcurrency)
+	}
 
 	for _, tag := range outboundTags {
 		select {
@@ -190,6 +218,21 @@ func BatchSpeedTest(ctx context.Context, i *boxbox.Box, outboundTags []string, t
 		results = append(results, res)
 
 		var err error
+		if countryOnly {
+			queuer <- struct{}{}
+			wg.Add(1)
+			go func(res *SpeedTestResult, outbound adapter.Outbound) {
+				defer func() { <-queuer }()
+				defer wg.Done()
+				err := countryTest(ctx, getNetDialer(outbound.DialContext), res)
+				if err != nil && !errors.Is(err, context.Canceled) {
+					res.Error = err
+					fmt.Println("Failed to countryTest with err:", err)
+				}
+				CountryResults.AddResult(res)
+			}(res, outbound)
+			continue
+		}
 		if simpleDL {
 			err = simpleDownloadTest(ctx, getNetDialer(outbound.DialContext), res, simpleAddress, timeout)
 		} else {
@@ -206,6 +249,7 @@ func BatchSpeedTest(ctx context.Context, i *boxbox.Box, outboundTags []string, t
 			res.UlSpeed = ""
 		}
 	}
+	wg.Wait()
 
 	return results
 }
@@ -273,7 +317,7 @@ func simpleDownloadTest(ctx context.Context, dialer func(ctx context.Context, ne
 	}
 }
 
-func speedTestWithDialer(ctx context.Context, dialer func(ctx context.Context, network string, address string) (net.Conn, error), res *SpeedTestResult, testDl, testUl bool, timeout time.Duration) error {
+func getSpeedtestServer(ctx context.Context, dialer func(ctx context.Context, network string, address string) (net.Conn, error)) (*speedtest.Server, error) {
 	clt := speedtest.New(speedtest.WithUserConfig(&speedtest.UserConfig{
 		DialContextFunc: dialer,
 		PingMode:        speedtest.HTTP,
@@ -283,18 +327,38 @@ func speedTestWithDialer(ctx context.Context, dialer func(ctx context.Context, n
 	defer cancel()
 	srv, err := clt.FetchServerListContext(fetchCtx)
 	if err != nil {
-		return err
+		return nil, err
 	}
 	srv, err = srv.FindServer(nil)
 	if err != nil {
-		return err
+		return nil, err
 	}
 
 	if srv.Len() == 0 {
-		return errors.New("no server found for speedTest")
+		return nil, errors.New("no server found for speedTest")
 	}
-	res.ServerName = srv[0].Name
-	res.ServerCountry = srv[0].Country
+
+	return srv[0], nil
+}
+
+func countryTest(ctx context.Context, dialer func(ctx context.Context, network string, address string) (net.Conn, error), res *SpeedTestResult) error {
+	srv, err := getSpeedtestServer(ctx, dialer)
+	if err != nil {
+		return err
+	}
+	res.ServerName = srv.Name
+	res.ServerCountry = srv.Country
+	res.Latency = int32(srv.Latency.Milliseconds())
+	return nil
+}
+
+func speedTestWithDialer(ctx context.Context, dialer func(ctx context.Context, network string, address string) (net.Conn, error), res *SpeedTestResult, testDl, testUl bool, timeout time.Duration) error {
+	srv, err := getSpeedtestServer(ctx, dialer)
+	if err != nil {
+		return err
+	}
+	res.ServerName = srv.Name
+	res.ServerCountry = srv.Country
 
 	done := make(chan struct{})
 
@@ -306,7 +370,7 @@ func speedTestWithDialer(ctx context.Context, dialer func(ctx context.Context, n
 		if testDl {
 			timeoutCtx, cancel := context.WithTimeout(ctx, timeout)
 			defer cancel()
-			err = srv[0].DownloadTestContext(timeoutCtx)
+			err = srv.DownloadTestContext(timeoutCtx)
 			if err != nil && !errors.Is(err, context.Canceled) {
 				res.Error = err
 				return
@@ -315,7 +379,7 @@ func speedTestWithDialer(ctx context.Context, dialer func(ctx context.Context, n
 		if testUl {
 			timeoutCtx, cancel := context.WithTimeout(ctx, timeout)
 			defer cancel()
-			err = srv[0].UploadTestContext(timeoutCtx)
+			err = srv.UploadTestContext(timeoutCtx)
 			if err != nil && !errors.Is(err, context.Canceled) {
 				res.Error = err
 				return
@@ -329,18 +393,18 @@ func speedTestWithDialer(ctx context.Context, dialer func(ctx context.Context, n
 	for {
 		select {
 		case <-done:
-			res.DlSpeed = internal.BrateToStr(float64(srv[0].DLSpeed))
-			res.UlSpeed = internal.BrateToStr(float64(srv[0].ULSpeed))
-			res.Latency = int32(srv[0].Latency.Milliseconds())
+			res.DlSpeed = internal.BrateToStr(float64(srv.DLSpeed))
+			res.UlSpeed = internal.BrateToStr(float64(srv.ULSpeed))
+			res.Latency = int32(srv.Latency.Milliseconds())
 			SpTQuerier.storeResult(res)
 			return nil
 		case <-ctx.Done():
 			res.Cancelled = true
 			return ctx.Err()
 		case <-ticker.C:
-			res.DlSpeed = internal.BrateToStr(srv[0].Context.GetEWMADownloadRate())
-			res.UlSpeed = internal.BrateToStr(srv[0].Context.GetEWMAUploadRate())
-			res.Latency = int32(srv[0].Latency.Milliseconds())
+			res.DlSpeed = internal.BrateToStr(srv.Context.GetEWMADownloadRate())
+			res.UlSpeed = internal.BrateToStr(srv.Context.GetEWMAUploadRate())
+			res.Latency = int32(srv.Latency.Milliseconds())
 			SpTQuerier.storeResult(res)
 		}
 	}

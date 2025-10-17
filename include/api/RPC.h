@@ -37,6 +37,8 @@ namespace API {
 
         libcore::QuerySpeedTestResponse QueryCurrentSpeedTests(bool *rpcOK);
 
+        libcore::QueryCountryTestResponse QueryCountryTestResults(bool *rpcOK);
+
     private:
         std::function<std::unique_ptr<protorpc::Client>()> make_rpc_client;
         std::function<void(const QString &)> onError;
