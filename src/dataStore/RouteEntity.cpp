@@ -567,7 +567,7 @@ namespace Configs {
 
     QJsonArray RoutingChain::get_route_rules(bool forView, std::map<int, QString> outboundMap) {
         QJsonArray res;
-        bool added_adblock;
+        bool added_adblock = false;
         auto createAdblockRule = []() -> QJsonObject {
             QJsonObject obj;
             obj["action"] = "reject";
