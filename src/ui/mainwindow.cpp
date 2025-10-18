@@ -1355,7 +1355,6 @@ void MainWindow::setSearchState(bool enable)
     {
         ui->data_view->hide();
         ui->search_input->show();
-        adjustSize();
     } else
     {
         ui->search_input->blockSignals(true);
@@ -1364,7 +1363,6 @@ void MainWindow::setSearchState(bool enable)
 
         ui->search_input->hide();
         ui->data_view->show();
-        adjustSize();
         if (!searchString.isEmpty())
         {
             searchString.clear();

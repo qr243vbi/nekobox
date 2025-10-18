@@ -95,7 +95,7 @@ func (s *server) Start(in *gen.LoadConfigReq, out *gen.ErrorResp) (_ error) {
 	if err != nil {
 		return
 	}
-	if runtime.GOOS == "darwin" && strings.Contains(*in.CoreConfig, "utun") {
+	if runtime.GOOS == "darwin" && strings.Contains(*in.CoreConfig, "tun-in") && strings.Contains(*in.CoreConfig, "172.19.0.1/24") {
 		err := sys.SetSystemDNS("172.19.0.2", boxInstance.Network().InterfaceMonitor())
 		if err != nil {
 			log.Println("Failed to set system DNS:", err)
@@ -299,7 +299,7 @@ func (s *server) ListConnections(in *gen.EmptyReq, out *gen.ListConnectionsResp)
 }
 
 func (s *server) SpeedTest(in *gen.SpeedTestRequest, out *gen.SpeedTestResponse) error {
-	if !*in.TestDownload && !*in.TestUpload && !*in.SimpleDownload {
+	if !*in.TestDownload && !*in.TestUpload && !*in.SimpleDownload && !*in.OnlyCountry {
 		return errors.New("cannot run empty test")
 	}
 	var testInstance *boxbox.Box
@@ -329,7 +329,7 @@ func (s *server) SpeedTest(in *gen.SpeedTestRequest, out *gen.SpeedTestResponse)
 		outboundTags = []string{outbound.Tag()}
 	}
 
-	results := BatchSpeedTest(testCtx, testInstance, outboundTags, *in.TestDownload, *in.TestUpload, *in.SimpleDownload, *in.SimpleDownloadAddr, time.Duration(*in.TimeoutMs)*time.Millisecond)
+	results := BatchSpeedTest(testCtx, testInstance, outboundTags, *in.TestDownload, *in.TestUpload, *in.SimpleDownload, *in.SimpleDownloadAddr, time.Duration(*in.TimeoutMs)*time.Millisecond, *in.OnlyCountry, *in.CountryConcurrency)
 
 	res := make([]*gen.SpeedTestResult, 0)
 	for _, data := range results {
@@ -370,5 +370,26 @@ func (s *server) QuerySpeedTest(in *gen.EmptyReq, out *gen.QuerySpeedTestRespons
 		Cancelled:     To(res.Cancelled),
 	}
 	out.IsRunning = To(isRunning)
+	return nil
+}
+
+func (s *server) QueryCountryTest(in *gen.EmptyReq, out *gen.QueryCountryTestResponse) error {
+	results := CountryResults.Results()
+	for _, res := range results {
+		var errStr string
+		if res.Error != nil {
+			errStr = res.Error.Error()
+		}
+		out.Results = append(out.Results, &gen.SpeedTestResult{
+			DlSpeed:       To(res.DlSpeed),
+			UlSpeed:       To(res.UlSpeed),
+			Latency:       To(res.Latency),
+			OutboundTag:   To(res.Tag),
+			Error:         To(errStr),
+			ServerName:    To(res.ServerName),
+			ServerCountry: To(res.ServerCountry),
+			Cancelled:     To(res.Cancelled),
+		})
+	}
 	return nil
 }

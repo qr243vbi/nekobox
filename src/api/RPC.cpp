@@ -222,5 +222,22 @@ if (!Configs::dataStore->core_running) MW_show_log("Cannot invoke method " + QSt
         }
     }
 
+    libcore::QueryCountryTestResponse Client::QueryCountryTestResults(bool* rpcOK)
+    {
+        CHECK("QueryCountryTestResults")
+        const libcore::EmptyReq request;
+        libcore::QueryCountryTestResponse reply;
+        std::string resp, req = spb::pb::serialize<std::string>(request);
+        auto err = make_rpc_client()->CallMethod("LibcoreService.QueryCountryTest", &req, &resp);
+
+        if(err.IsNil()) {
+            reply = spb::pb::deserialize< libcore::QueryCountryTestResponse >( resp );
+            *rpcOK = true;
+            return reply;
+        } else {
+            NOT_OK
+            return reply;
+        }
+    }
 
 } // namespace API

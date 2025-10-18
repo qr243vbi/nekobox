@@ -19,6 +19,7 @@ service LibcoreService {
   //
   rpc SpeedTest(SpeedTestRequest) returns(SpeedTestResponse);
   rpc QuerySpeedTest(EmptyReq) returns(QuerySpeedTestResponse);
+  rpc QueryCountryTest(EmptyReq) returns(QueryCountryTestResponse);
 }
 
 message EmptyReq {}
@@ -100,6 +101,8 @@ message SpeedTestRequest {
   optional bool simple_download = 7 [default = false];
   optional string simple_download_addr = 8 [default = ""];
   optional int32 timeout_ms = 9 [default = 0];
+  optional bool only_country = 10 [default = false];
+  optional int32 country_concurrency = 11 [default = 0];
 }
 
 message SpeedTestResult {
@@ -120,6 +123,10 @@ message SpeedTestResponse {
 message QuerySpeedTestResponse {
   optional SpeedTestResult result = 1;
   optional bool is_running = 2 [default = false];
+}
+
+message QueryCountryTestResponse {
+  repeated SpeedTestResult results = 1;
 }
 
 message QueryURLTestResponse {
