@@ -438,15 +438,6 @@ namespace Configs {
                     {"type", "underlying"}
                 };
             }
-            #ifdef Q_OS_MACOS
-            if (tunEnabled)
-            {
-                MW_show_log(R"(DNS has been overriden to dhcp, if it does not work, please change both "Routing settings->Direct DNS" and "basic settings->Core->Core options->underlying dns" to something other than local)");
-                return {
-                        {"type", "dhcp"}
-                };
-            }
-            #endif
             return {
             {"type", "local"}
             };
