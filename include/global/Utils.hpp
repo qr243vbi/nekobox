@@ -167,11 +167,11 @@ void ActivateWindow(QWidget *w);
 
 //
 
-void runOnUiThread(const std::function<void()> &callback);
+void runOnUiThread(const std::function<void()> &callback, bool wait = false);
 
-void runOnNewThread(const std::function<void()> &callback);
+void runOnNewThread(const std::function<void()> &callback, bool wait = false);
 
-void runOnThread(const std::function<void()> &callback, QObject *parent);
+void runOnThread(const std::function<void()> &callback, QObject *parent, bool wait = false);
 
 template<typename EMITTER, typename SIGNAL, typename RECEIVER, typename ReceiverFunc>
 inline void connectOnce(EMITTER *emitter, SIGNAL signal, RECEIVER *receiver, ReceiverFunc f,
