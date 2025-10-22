@@ -15,6 +15,15 @@
 #include <QToolTip>
 #include <include/api/RPC.h>
 
+#include <QtGlobal> // For QT_VERSION_CHECK
+
+#if QT_VERSION >= QT_VERSION_CHECK(6, 6, 0)
+#define STATE_CHANGED &QCheckBox::checkStateChanged
+#else
+#define STATE_CHANGED &QCheckBox::stateChanged
+#endif
+
+
 void DialogManageRoutes::reloadProfileItems() {
     if (chainList.empty()) {
         MessageBoxWarning(tr("Invalid state"), tr("The list of routing profiles is empty, this should be an unreachable state, crashes may occur now"));
@@ -86,12 +95,16 @@ DialogManageRoutes::DialogManageRoutes(QWidget *parent, const std::map<std::stri
     ui->remote_dns_strategy->addItems(qsValue);
     ui->enable_fakeip->setChecked(Configs::dataStore->fake_dns);
     //
-    connect(ui->use_dns_object, &QCheckBox::stateChanged, this, [=,this](int state) {
+    connect(ui->use_dns_object, STATE_CHANGED, this, [=,this](int state) {
         auto useDNSObject = state == Qt::Checked;
         ui->simple_dns_box->setDisabled(useDNSObject);
         ui->dns_object->setDisabled(!useDNSObject);
     });
+#if QT_VERSION < QT_VERSION_CHECK(6, 6, 0)
     ui->use_dns_object->stateChanged(Qt::Unchecked); // uncheck to uncheck
+#else
+    ui->use_dns_object->checkStateChanged(Qt::Unchecked); // uncheck to uncheck    
+#endif
     connect(ui->dns_document, &QPushButton::clicked, this, [=,this] {
         MessageBoxInfo("DNS", dnsHelpDocumentUrl);
     });
@@ -161,10 +174,10 @@ DialogManageRoutes::DialogManageRoutes(QWidget *parent, const std::map<std::stri
     ui->redirect_listenport->setValidator(QRegExpValidator_Number);
     ui->redirect_listenport->setText(Int2String(Configs::dataStore->redirect_listen_port));
 
-    connect(ui->dnshijack_enable, &QCheckBox::stateChanged, this, [=,this](bool state) {
+    connect(ui->dnshijack_enable, STATE_CHANGED, this, [=,this](bool state) {
         set_dns_hijack_enability(state);
     });
-    connect(ui->redirect_enable, &QCheckBox::stateChanged, this, [=,this](bool state) {
+    connect(ui->redirect_enable, STATE_CHANGED, this, [=,this](bool state) {
         ui->redirect_listenaddr->setEnabled(state);
         ui->redirect_listenport->setEnabled(state);
     });

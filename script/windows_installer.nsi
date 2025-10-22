@@ -24,7 +24,7 @@ FunctionEnd
 !define MUI_ABORTWARNING
 !define MUI_WELCOMEPAGE_TITLE "Welcome to nekobox Installer"
 !define MUI_WELCOMEPAGE_TEXT "This wizard will guide you through the installation of nekobox."
-!define MUI_FINISHPAGE_RUN "$INSTDIR\nekobox.exe -appdata"
+!define MUI_FINISHPAGE_RUN "$INSTDIR\nekobox.exe"
 !define MUI_FINISHPAGE_RUN_TEXT "Launch nekobox"
 !addplugindir .\script\
 
@@ -40,13 +40,14 @@ Section "Install"
   SetOverwrite on
 
   !ifdef DIRECTORY
-    File /r /x "updater.exe" ".\deployment\${DIRECTORY}\*"
+    File /r ".\deployment\${DIRECTORY}\*"
+    ;/x "updater.exe"
   !else
-    File /r /x "updater.exe" ".\deployment\windows64\*"
+    File /r ".\deployment\windows64\*"
   !endif
 
-  CreateShortcut "$desktop\nekobox.lnk" "$INSTDIR\nekobox.exe" "-appdata" "$INSTDIR\nekobox.exe" 0
-  CreateShortcut "$SMPROGRAMS\nekobox.lnk" "$INSTDIR\nekobox.exe" "-appdata" "$INSTDIR\nekobox.exe" 0
+  CreateShortcut "$desktop\nekobox.lnk" "$INSTDIR\nekobox.exe" "$INSTDIR\nekobox.exe" 0
+  CreateShortcut "$SMPROGRAMS\nekobox.lnk" "$INSTDIR\nekobox.exe" "$INSTDIR\nekobox.exe" 0
 
   WriteRegStr HKCU "Software\nekobox" "InstallPath" "$INSTDIR"
 

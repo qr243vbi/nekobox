@@ -43,6 +43,7 @@ cp srslist $DEST/srslist
 #### copy exe ####
 cp $CURDIR/check_new_release.js $DEST
 cp $BUILD/nekobox.exe $DEST
+echo 'DeleteToUseThisDirectoryForConfig' > $DEST/config
 cp -RT $CURDIR/res/public $DEST/public
 
 if [[ "$COMPILER" != "MinGW" ]]

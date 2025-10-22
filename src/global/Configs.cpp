@@ -220,8 +220,9 @@ namespace Configs_ConfigItem {
 
         QFile file;
         file.setFileName(fn);
-        file.open(QIODevice::ReadWrite | QIODevice::Truncate);
-        file.write(save_content);
+        if (file.open(QIODevice::ReadWrite | QIODevice::Truncate)){
+            file.write(save_content);
+        }
         file.close();
 
         return changed;
