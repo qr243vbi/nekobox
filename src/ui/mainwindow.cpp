@@ -1008,6 +1008,10 @@ void MainWindow::prepare_exit()
     coreKillMu.lock();
     coreKillMu.unlock();
 */
+    runOnThread([=, this]()
+    {
+        core_process->Kill();
+    }, DS_cores, true);
 
     mu_exit.unlock();
     qDebug() << "prepare exit done!";

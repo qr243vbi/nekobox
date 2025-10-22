@@ -423,13 +423,16 @@ namespace Configs {
     QJsonObject BuildDnsObject(QString address, bool tunEnabled)
     {
         bool usingSystemdResolved = false;
-       // bool isDarwin = false;
+ll       // bool isDarwin = false;
 #ifdef Q_OS_LINUX
         usingSystemdResolved = ReadFileText("/etc/resolv.conf").contains("systemd-resolved");
 #endif
 //#ifdef Q_OS_MACOS
  //       isDarwin = true;
 //#endif
+#ifdef Q_OS_LINUX
+        usingSystemdResolved = ReadFileText("/etc/resolv.conf").contains("systemd-resolved");
+#endif
         if (address.startsWith("local"))
         {
             if (tunEnabled && usingSystemdResolved)
