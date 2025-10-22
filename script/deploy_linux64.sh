@@ -24,7 +24,7 @@ cp srslist $DEST/srslist
 cp $BUILD/nekobox $DEST
 
 #### copy nekobox.png ####
-cp ./res/public/nekobox.png $DEST
+cp ./res/nekobox.ico $DEST/nekobox.ico
 
 cd download-artifact
 cd *linux-$ARCH
@@ -68,5 +68,7 @@ mv ./usr/lib2 ./usr/lib
 
 # fix lib rpath
 cp $CURDIR/check_new_release.js $DEST
+cp -RT $CURDIR/res/public $DEST/public
+
 cd $DEST
 patchelf --set-rpath '$ORIGIN/usr/lib' ./nekobox

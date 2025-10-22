@@ -71,6 +71,13 @@ Various formats are supported, including share links, JSON array of outbounds an
 - [URLParser](https://github.com/dongbum/URLParser)
 - [npipe](https://github.com/NullYing/npipe)
 
+## TODO
+- Command line tools
+- [OpenRC](https://openrc.run/)/[runit](https://smarden.org/runit/)/[systemd](https://systemd.io/) integration of nekobox_core
+- Terminal UI
+- Remote control
+- Support for BSD, Solaris, Android platforms
+
 ## FAQ
 **Why does my Anti-Virus detect NekoBox as malware?** <br/>
 NekoBox's built-in update functionallity downloads the new release, removes the old files and replaces them with the new ones, which is quite simliar to what malwares do, remove your files and replace them with an encrypted version of your files.

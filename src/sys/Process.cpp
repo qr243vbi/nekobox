@@ -4,7 +4,7 @@
 #include <QTimer>
 #include <QDir>
 #include <QApplication>
-
+#include <QCoreApplication>
 #include "include/ui/mainwindow.h"
 
 namespace Configs_sys {
@@ -19,6 +19,8 @@ namespace Configs_sys {
     CoreProcess::CoreProcess(const QString &core_path, const QStringList &args) {
         program = core_path;
         arguments = args;
+        arguments << "-waitpid";
+        arguments << QString::number(QCoreApplication::applicationPid());
 
         connect(this, &QProcess::readyReadStandardOutput, this, [&]() {
             auto log = readAllStandardOutput();

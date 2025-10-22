@@ -618,10 +618,11 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
             MW_show_log("File too large, will not process it");
             return;
         }
-        file.open(QIODevice::ReadOnly);
-        auto contents = file.readAll();
-        file.close();
-        Subscription::groupUpdater->AsyncUpdate(contents);
+        if (file.open(QIODevice::ReadOnly)){
+            auto contents = file.readAll();
+            file.close();
+            Subscription::groupUpdater->AsyncUpdate(contents);
+        }
     });
 
     connect(qApp, &QGuiApplication::commitDataRequest, this, &MainWindow::on_commitDataRequest);
@@ -679,7 +680,9 @@ void MainWindow::dropEvent(QDropEvent* event)
                     parseQrImage(&qpx);
                 } else if (auto file = QFile(url.toLocalFile()); file.exists())
                 {
-                    file.open(QFile::ReadOnly);
+                    if (!file.open(QFile::ReadOnly)){
+                        MW_show_log("File is not accessible, will not parse it");
+                    }
                     if (file.size() > 50 * 1024 * 1024)
                     {
                         file.close();
@@ -994,10 +997,17 @@ void MainWindow::prepare_exit()
     Configs::dataStore->save_control_no_save = true; // don't change datastore after this line
     profile_stop(false, true);
 
-    runOnThread([=, this]()
+/*
+    QMutex coreKillMu;
+    coreKillMu.lock();
+    runOnThread([=, this, &coreKillMu]()
     {
         core_process->Kill();
-    }, DS_cores, true);
+        coreKillMu.unlock();
+    }, DS_cores);
+    coreKillMu.lock();
+    coreKillMu.unlock();
+*/
 
     mu_exit.unlock();
     qDebug() << "prepare exit done!";
@@ -1083,7 +1093,7 @@ bool MainWindow::get_elevated_permissions(int reason, void * pointer) {
     auto n = QMessageBox::warning(GetMessageBoxParent(), software_name, tr("Please give the core root privileges"), QMessageBox::Yes | QMessageBox::No);
     if (n == QMessageBox::Yes) {
 
-#   ifdef USE_LEGACY_QT
+#   ifdef EXIT_IF_UAC_REQUIRED
         this->exit_reason = reason;
         on_menu_exit_triggered();
 #   else

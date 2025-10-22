@@ -423,9 +423,13 @@ namespace Configs {
     QJsonObject BuildDnsObject(QString address, bool tunEnabled)
     {
         bool usingSystemdResolved = false;
+       // bool isDarwin = false;
 #ifdef Q_OS_LINUX
         usingSystemdResolved = ReadFileText("/etc/resolv.conf").contains("systemd-resolved");
 #endif
+//#ifdef Q_OS_MACOS
+ //       isDarwin = true;
+//#endif
         if (address.startsWith("local"))
         {
             if (tunEnabled && usingSystemdResolved)
@@ -434,6 +438,15 @@ namespace Configs {
                     {"type", "underlying"}
                 };
             }
+            #ifdef Q_OS_MACOS
+            if (tunEnabled)
+            {
+                MW_show_log(R"(DNS has been overriden to dhcp, if it does not work, please change both "Routing settings->Direct DNS" and "basic settings->Core->Core options->underlying dns" to something other than local)");
+                return {
+                        {"type", "dhcp"}
+                };
+            }
+            #endif
             return {
             {"type", "local"}
             };

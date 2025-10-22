@@ -220,8 +220,9 @@ namespace Configs_ConfigItem {
 
         QFile file;
         file.setFileName(fn);
-        file.open(QIODevice::ReadWrite | QIODevice::Truncate);
-        file.write(save_content);
+        if (file.open(QIODevice::ReadWrite | QIODevice::Truncate)){
+            file.write(save_content);
+        }
         file.close();
 
         return changed;
@@ -439,7 +440,7 @@ namespace Configs {
 
         bool admin = false;
 #ifdef Q_OS_WIN
-#ifdef USE_LEGACY_QT
+#ifdef EXIT_IF_UAC_REQUIRED
         admin = Windows_IsInAdmin();
         dataStore->windows_set_admin = admin;
 #define SKIP_ASK_CORE
