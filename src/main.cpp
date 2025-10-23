@@ -154,17 +154,27 @@ int main(int argc, char** argv) {
     } else {
         use_application_dir = true;
     }
+    
+    bool dir_success = true;
+    QDir dir;
+    
     if (!wd.exists()) wd.mkpath(wd.absolutePath());
-    if (!wd.exists("config")) wd.mkdir("config");
+    if (!wd.exists("config")) {
+        dir_success &= wd.mkdir("config");
+    }
+       
+    if (!dir_success){
+        goto loop_back_2;
+    }
+    
     QDir::setCurrent(wd.absoluteFilePath("config"));
     QDir("temp").removeRecursively();
     
         // Dir
-    QDir dir;
-    bool dir_success = true;
     if (!dir.exists("profiles")) {
         dir_success &= dir.mkdir("profiles");
     }
+    
     if (!dir.exists("groups")) {
         dir_success &= dir.mkdir("groups");
     }
