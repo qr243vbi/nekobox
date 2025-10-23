@@ -1,4 +1,4 @@
-# Nekoray-new
+# Throne (原先的 Nekoray-new)
 
 基于 Qt 的跨平台的桌面 GUI 代理客户端，授权自 [Sing-box](https://github.com/SagerNet/sing-box)
 
@@ -48,7 +48,7 @@
 ## FAQ
 **这个项目与原始的 Nekoray 有什么不同？** <br/>
 [Nekoray](https://github.com/MatsuriDayo/nekoray/releases) 的原始开发者 MatsuriDayo 从 2023 年 12 月开始开始部分放弃项目，只进行一些小更新，而现在该项目以正式归档。
-[Mahdi-zarei 的 nekoray](https://github.com/Mahdi-zarei/nekoray) 旨在继承原始计划，带有大量的改进，增加大量新特性，还去掉了过时的功能并进行了简化。
+[Mahdi-zarei 的 nekoray](https://github.com/Mahdi-zarei/nekoray) 旨在继承原始计划，带有大量的改进，增加大量新特性，还去掉了过时的功能并进行了简化，后重新出发改为 Throne。
 
 **为何某些防毒软件检测到 Nekoray 或其 核心 为恶意软件?** <br/>
 Nekoray 的内置更新功能下载新发行版，移除旧文件并使用新的文件进行替代，这些相当类似于某些恶意软件所作所为（删除你的文件，使用加密文件替换你的文件）。
