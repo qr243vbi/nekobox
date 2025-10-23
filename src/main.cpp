@@ -10,6 +10,7 @@
 #include <QLocalSocket>
 #include <QLocalServer>
 #include <QThread>
+#include <QFileInfo>
 
 #ifdef Q_OS_WIN
 
@@ -162,7 +163,9 @@ int main(int argc, char** argv) {
     if (!wd.exists("config")) {
         dir_success &= wd.mkdir("config");
     }
-       
+    QFileInfo fileInfo("config");
+    dir_success &= fileInfo.exists();
+    dir_success &= fileInfo.isDir();  
     if (!dir_success){
         goto loop_back_2;
     }
