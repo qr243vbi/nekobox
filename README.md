@@ -70,3 +70,6 @@ If Throne is force-quit while `System proxy` is enabled, the process ends immedi
 Solution:
 - Always close Throne normally.
 - If you force quit by accident, open Throne again, enable `System proxy`, then disable it- this will reset the settings.
+
+**Where are the downloadable route profiles/rulesets coming from?**<br/>
+They are located at the [routeprofiles](https://github.com/throneproj/routeprofiles) repository.
