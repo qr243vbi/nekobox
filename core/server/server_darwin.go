@@ -35,3 +35,6 @@ func WaitForProcessExit (pid int) error{
 		time.Sleep(442 * time.Millisecond)
 	}
 }
+
+func restartAsAdmin(){
+}

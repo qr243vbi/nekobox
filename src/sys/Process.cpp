@@ -7,6 +7,14 @@
 #include <QCoreApplication>
 #include "include/ui/mainwindow.h"
 
+#undef ELEVATE_METHOD
+#ifdef Q_OS_LINUX
+#define ELEVATE_METHOD
+#endif
+#ifdef Q_OS_WIN
+#define ELEVATE_METHOD
+#endif
+
 namespace Configs_sys {
     CoreProcess::~CoreProcess() {
     }
@@ -102,25 +110,13 @@ namespace Configs_sys {
         restarting = false;
     }
 
-#ifdef Q_OS_LINUX
-    void CoreProcess::elevateCoreProcessProgram(){
-        if (!coreProcessProgramElevated){
-            arguments.prepend(program);
-            arguments.prepend("exec \"$0\" \"$@\"");
-            arguments.prepend("-c");
-            arguments.prepend("sh");
-            program = "pkexec";
-            coreProcessProgramElevated = true;
-        }
-    }
-#endif
-
-#ifdef Q_OS_WIN
+#ifdef ELEVATE_METHOD
     void CoreProcess::elevateCoreProcessProgram(){
         if (!coreProcessProgramElevated){
             arguments.prepend("-admin");
             coreProcessProgramElevated = true;
         }
     }
+#undef ELEVATE_METHOD
 #endif
 } // namespace Configs_sys

@@ -9,11 +9,10 @@ import (
 	"log"
 	"net"
 	"net/http"
+    "strconv"
 	"os"
 	"runtime"
 	runtimeDebug "runtime/debug"
-	"strconv"
-	"syscall"
 	"time"
 	_ "Core/internal/distro/all"
 	C "github.com/sagernet/sing-box/constant"
@@ -22,25 +21,6 @@ import (
 
 func RunCore(_port * int, _debug * bool) {
 	debug = *_debug
-
-	go func() {
-		parent, err := os.FindProcess(os.Getppid())
-		if err != nil {
-			log.Fatalln("find parent:", err)
-		}
-		if runtime.GOOS == "windows" {
-			state, err := parent.Wait()
-			log.Fatalln("parent exited:", state, err)
-		} else {
-			for {
-				time.Sleep(time.Second * 10)
-				err = parent.Signal(syscall.Signal(0))
-				if err != nil {
-					log.Fatalln("parent exited:", err)
-				}
-			}
-		}
-	}()
 	boxmain.DisableColor()
 
 	go func() {
@@ -71,7 +51,7 @@ func main() {
 	_port := flag.Int("port", 19810, "")
 	_debug := flag.Bool("debug", false, "")
 	
-	if runtime.GOOS == "windows" {
+	if runtime.GOOS == "windows" || runtime.GOOS == "linux"{
 		_admin = flag.Bool("admin", false, "Run in admin mode")
 	}
 
@@ -81,6 +61,12 @@ func main() {
 	redirectError := flag.String("redirect-error", "", "Path to redirect stderr (e.g. named pipe or file)")
 
 	flag.CommandLine.Parse(os.Args[1:])
+    
+    if runtime.GOOS == "linux" {
+        if (*_admin){
+            restartAsAdmin();
+        }
+    }
 
 	// Redirect stderr and logs if flag is provided
 	if *redirectError != "" {

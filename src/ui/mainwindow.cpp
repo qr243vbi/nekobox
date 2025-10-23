@@ -463,9 +463,8 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
         }
     });
 
-	  std::vector<uint8_t> srsvec(std::begin(srslist), std::end(srslist));
+    std::vector<uint8_t> srsvec(std::begin(srslist), std::end(srslist));
     ruleSetMap = spb::pb::deserialize<libcore::RuleSet>(srsvec).items;
-
 
     auto getRemoteRouteProfiles = [=,this]
     {
@@ -1068,35 +1067,31 @@ bool MainWindow::get_elevated_permissions(int reason, void * pointer) {
         return true;
     }
     if (Configs::IsAdmin()) return true;
+#undef ELEVATE_CORE_PROGRAM
+
 #ifdef Q_OS_LINUX
     if (!Linux_HavePkexec()) {
         MessageBoxWarning(software_name, "Please install \"pkexec\" first.");
         return false;
     }
-    auto n = QMessageBox::warning(GetMessageBoxParent(), software_name, tr("Please give the core root privileges"), QMessageBox::Yes | QMessageBox::No);
-    if (n == QMessageBox::Yes) {
-        StopVPNProcess();
-        core_process->elevateCoreProcessProgram();
-        {
-            if (reason == 3){
-                bool save = false;
-                if (pointer != nullptr){
-                    save = *((bool*) pointer);
-                }
-                set_spmode_vpn(true, save, false);
-            }
-        }
-        return false;
-    }
+#define ELEVATE_CORE_PROGRAM
 #endif
+
 #ifdef Q_OS_WIN
+#ifdef EXIT_IF_UAC_REQUIRED
     auto n = QMessageBox::warning(GetMessageBoxParent(), software_name, tr("Please give the core root privileges"), QMessageBox::Yes | QMessageBox::No);
     if (n == QMessageBox::Yes) {
-
-#   ifdef EXIT_IF_UAC_REQUIRED
         this->exit_reason = reason;
         on_menu_exit_triggered();
-#   else
+    }
+#else
+#define ELEVATE_CORE_PROGRAM
+#endif
+#endif
+
+#ifdef ELEVATE_CORE_PROGRAM
+    auto n = QMessageBox::warning(GetMessageBoxParent(), software_name, tr("Please give the core root privileges"), QMessageBox::Yes | QMessageBox::No);
+    if (n == QMessageBox::Yes) {
         StopVPNProcess();
         core_process->elevateCoreProcessProgram();
         {
@@ -1109,8 +1104,8 @@ bool MainWindow::get_elevated_permissions(int reason, void * pointer) {
             }
         }
         return false;
-#   endif
     }
+#undef ELEVATE_CORE_PROGRAM
 #endif
 
 #ifdef Q_OS_MACOS

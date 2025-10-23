@@ -6,6 +6,8 @@ import (
 	"fmt"
 	"time"
 	"syscall"
+    "log"
+    "os/exec"
 )
 
 func (s *server) SetSystemDNS(in *gen.SetSystemDNSRequest, out *gen.EmptyResp) error {
@@ -34,4 +36,38 @@ func WaitForProcessExit (pid int) error{
 		}
 		time.Sleep(442 * time.Millisecond)
 	}
+}
+
+
+func restartAsAdmin(){
+            var args [] string
+            executablePath, err := os.Executable()
+            if err != nil {
+                log.Fatalf("Failed to get executable path: %v", err)
+            }
+            
+            pkexecPath, err := exec.LookPath("pkexec")
+            if err != nil {
+            // exec.ErrNotFound is returned if the executable cannot be found.
+                if err == exec.ErrNotFound {
+                    log.Fatalf("pkexec executable not found in PATH: %v", err)
+                } else {
+                    log.Fatalf("Error finding pkexec executable: %v", err)
+                }
+            }
+            
+            args = append(args, pkexecPath, "sh", "-c", "exec \"$0\" \"$@\"", executablePath)
+            for _, arg := range os.Args[1:] {
+                if arg != "-admin" {
+                    args = append(args, arg)
+                }
+            }
+            
+            
+            err = syscall.Exec(pkexecPath, args, os.Environ())
+            if err != nil {
+                // This part of the code will only be reached if syscall.Exec fails
+                fmt.Println("Error executing 'pkexec':", err)
+                os.Exit(1)
+            }
 }

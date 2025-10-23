@@ -145,6 +145,11 @@ func handlePipe(pipeName string, output io.Writer, wg *sync.WaitGroup) {
 }
 
 func runAdmin(_port * int, _debug * bool) (int, error) {
+    executablePath, err := os.Executable()
+    if err != nil {
+        log.Fatalf("Failed to get executable path: %v", err)
+    }
+            
 	randstr, _ := RandString(6);
 	
 	stdout_pipe := `\\.\pipe\nekobox_core_stdout_` + randstr
@@ -172,7 +177,7 @@ func runAdmin(_port * int, _debug * bool) (int, error) {
 	wg.Add(1)
 	go handlePipe(stderr_pipe, os.Stderr, &wg)
 
-    return runShellExec(os.Args[0], formattedString)
+    return runShellExec(executablePath, formattedString)
 	/*
 	cmd := exec.Command("powershell", "-Command", formattedString)
 	err := cmd.Run()
@@ -249,3 +254,7 @@ func (s *server) IsPrivileged(in *gen.EmptyReq, out *gen.IsPrivilegedResponse) e
 	out.HasPrivilege = To(elevated)
 	return nil
 }
+
+func restartAsAdmin(){
+}
+
