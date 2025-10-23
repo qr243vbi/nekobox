@@ -1,3 +1,4 @@
+
 #include <csignal>
 
 #include <QApplication>
@@ -9,18 +10,25 @@
 #include <QLocalSocket>
 #include <QLocalServer>
 #include <QThread>
-#include <3rdparty/WinCommander.hpp>
-
-#include "include/global/Configs.hpp"
-
-#include "include/ui/mainwindow_interface.h"
+#include <QFileInfo>
 
 #ifdef Q_OS_WIN
+
+#include <3rdparty/WinCommander.hpp>
+#include <windows.h>
+
+#include <iostream>
 #include "include/sys/windows/MiniDump.h"
 #include "include/sys/windows/eventHandler.h"
 #include "include/sys/windows/WinVersion.h"
 #include <qfontdatabase.h>
 #endif
+
+
+#include "include/global/Configs.hpp"
+
+#include "include/ui/mainwindow_interface.h"
+
 #ifdef Q_OS_LINUX
 #include "include/sys/linux/desktopinfo.h"
 #include <qfontdatabase.h>
@@ -58,9 +66,27 @@ void loadTranslate(const QString& locale) {
     }
 }
 
-#define LOCAL_SERVER_PREFIX "throne-"
+#define LOCAL_SERVER_PREFIX "nekobox-"
 
-int main(int argc, char* argv[]) {
+bool isFileAppendable(const QString &filePath) {
+    QFile file(filePath);
+    // Check if the file exists and is writable in append mode
+    if (file.exists()){
+        if (file.open(QIODevice::Append)){
+            file.close();
+            return true;
+        }
+    } else {
+        if (file.open(QIODevice::WriteOnly)){
+            file.close();
+            return true;
+        }
+    }
+    return false;
+}
+
+
+int main(int argc, char** argv) {
     // Core dump
 #ifdef Q_OS_WIN
     Windows_SetCrashHandler();
@@ -83,7 +109,7 @@ int main(int argc, char* argv[]) {
         QFontDatabase::setApplicationEmojiFontFamilies(fontFamilies);
     } else
     {
-        qDebug() << "could not load emoji font!";
+        qDebug() << "could not load noto font!";
     }
 #endif
 
@@ -113,22 +139,77 @@ int main(int argc, char* argv[]) {
 #ifdef NKR_CPP_DEBUG
     Configs::dataStore->flag_debug = true;
 #endif
-
-    // dirs & clean
+    bool use_application_dir = true;
+    QApplication::setApplicationName("nekobox");
+    
+    bool dir_success = true;
+    QDir dir;
+	// dirs & clean
     auto wd = QDir(QApplication::applicationDirPath());
     if (Configs::dataStore->flag_use_appdata) {
-        QApplication::setApplicationName("Throne");
         if (!Configs::dataStore->appdataDir.isEmpty()) {
             wd.setPath(Configs::dataStore->appdataDir);
         } else {
+			loop_back_1:
             wd.setPath(QStandardPaths::writableLocation(QStandardPaths::AppConfigLocation));
         }
+        use_application_dir = false;
     }
+    dir_success = true;
+    
     if (!wd.exists()) wd.mkpath(wd.absolutePath());
-    if (!wd.exists("config")) wd.mkdir("config");
-    QDir::setCurrent(wd.absoluteFilePath("config"));
-    QDir("temp").removeRecursively();
+    if (!wd.exists("config")) {
+        dir_success &= wd.mkdir("config");
+    }
+    
+	{
+		QString wd_abs = wd.absoluteFilePath("config");
+		QDir::setCurrent(wd_abs);
+		QDir("temp").removeRecursively();
+		dir = QDir(wd_abs);
+	
+		QFileInfo fileInfo(wd_abs);
+		dir_success &= fileInfo.exists();
+		dir_success &= fileInfo.isDir();  
+		if (!dir_success){
+			goto loop_back_2;
+		}
+	}
+        // Dir
+    if (!dir.exists("profiles")) {
+        dir_success &= dir.mkdir("profiles");
+    }
+    if (!dir.exists("groups")) {
+        dir_success &= dir.mkdir("groups");
+    }
+    if (!dir.exists(ROUTES_PREFIX_NAME)) {
+        dir_success &= dir.mkdir(ROUTES_PREFIX_NAME);
+    }
+    if (!dir_success) {
+        loop_back_2:
+        if (use_application_dir){
+            Configs::dataStore->flag_use_appdata = true;
+            goto loop_back_1;
+        }
+        QMessageBox::critical(nullptr, "Error", "No permission to write " + wd.absoluteFilePath("config"));
+        return 1;
+    }
 
+    // migrate the old config file
+    if (QFile::exists("groups/nekobox.json")) {
+        QFile::rename("groups/nekobox.json", "configs.json");
+    } else if (QFile::exists("groups/nekoray.json")) {
+        QFile::rename("groups/nekoray.json", "configs.json");
+    } else if (QFile::exists("groups/Throne.json")) {
+        QFile::rename("groups/Throne.json", "configs.json");
+    }
+    
+    dir_success &= isFileAppendable("configs.json");
+    
+    if (!dir_success){
+        goto loop_back_2;
+    }
+    
 #ifdef Q_OS_LINUX
     QApplication::addLibraryPath(QApplication::applicationDirPath() + "/usr/plugins");
 #endif
@@ -141,40 +222,18 @@ int main(int argc, char* argv[]) {
     QIcon::setFallbackSearchPaths(QStringList{
         ":/icon",
     });
-
-    // icon for no theme
-    if (QIcon::themeName().isEmpty()) {
-        QIcon::setThemeName("breeze");
-    }
-
-    // Dir
-    QDir dir;
-    bool dir_success = true;
-    if (!dir.exists("profiles")) {
-        dir_success &= dir.mkdir("profiles");
-    }
-    if (!dir.exists("groups")) {
-        dir_success &= dir.mkdir("groups");
-    }
-    if (!dir.exists(ROUTES_PREFIX_NAME)) {
-        dir_success &= dir.mkdir(ROUTES_PREFIX_NAME);
-    }
-    if (!dir_success) {
-        QMessageBox::critical(nullptr, "Error", "No permission to write " + dir.absolutePath());
-        return 1;
-    }
-
-    // migrate the old config file
-    if (QFile::exists("groups/nekobox.json"))
-    {
-        QFile::rename("groups/nekobox.json", "configs.json");
-    }
-
+    
     // Load dataStore
     Configs::dataStore->fn = "configs.json";
     auto isLoaded = Configs::dataStore->Load();
     if (!isLoaded) {
         Configs::dataStore->Save();
+    }
+    
+
+    // icon for no theme
+    if (QIcon::themeName().isEmpty()) {
+        QIcon::setThemeName("breeze");
     }
 
 #ifdef Q_OS_WIN
@@ -182,7 +241,7 @@ int main(int argc, char* argv[]) {
     {
         Configs::dataStore->windows_set_admin = false; // so that if permission denied, we will run as user on the next run
         Configs::dataStore->Save();
-        WinCommander::runProcessElevated(QApplication::applicationFilePath(), {}, "", WinCommander::SW_NORMAL, false);
+        WinCommander::runProcessElevated(QApplication::applicationFilePath(), {}, "", SW_NORMAL, false);
         QApplication::quit();
         return 0;
     }
