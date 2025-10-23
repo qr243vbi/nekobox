@@ -46,8 +46,8 @@ Section "Install"
     File /r /x "updater.exe" ".\deployment\windows64\*"
   !endif
 
-  CreateShortcut "$desktop\nekobox.lnk" "$INSTDIR\nekobox.exe" "$INSTDIR\nekobox.exe" 0
-  CreateShortcut "$SMPROGRAMS\nekobox.lnk" "$INSTDIR\nekobox.exe" "$INSTDIR\nekobox.exe" 0
+  CreateShortcut "$desktop\nekobox.lnk" "$INSTDIR\nekobox.exe" "" "$INSTDIR\nekobox.exe" 0
+  CreateShortcut "$SMPROGRAMS\nekobox.lnk" "$INSTDIR\nekobox.exe" "" "$INSTDIR\nekobox.exe" 0
 
   WriteRegStr HKCU "Software\nekobox" "InstallPath" "$INSTDIR"
 

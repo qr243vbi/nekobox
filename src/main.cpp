@@ -139,45 +139,46 @@ int main(int argc, char** argv) {
 #ifdef NKR_CPP_DEBUG
     Configs::dataStore->flag_debug = true;
 #endif
-    bool use_application_dir = false;
-    loop_back_1:
-    // dirs & clean
-    auto wd = QDir(QApplication::applicationDirPath());
-    if (Configs::dataStore->flag_use_appdata) {
-        QApplication::setApplicationName("nekobox");
-        if (!Configs::dataStore->appdataDir.isEmpty()) {
-            wd.setPath(Configs::dataStore->appdataDir);
-        } else {
-            set_appdir_location:
-            wd.setPath(QStandardPaths::writableLocation(QStandardPaths::AppConfigLocation));
-        }
-        use_application_dir = false;
-    } else {
-        use_application_dir = true;
-    }
+    bool use_application_dir = true;
+    QApplication::setApplicationName("nekobox");
     
     bool dir_success = true;
     QDir dir;
+	// dirs & clean
+    auto wd = QDir(QApplication::applicationDirPath());
+    if (Configs::dataStore->flag_use_appdata) {
+        if (!Configs::dataStore->appdataDir.isEmpty()) {
+            wd.setPath(Configs::dataStore->appdataDir);
+        } else {
+			loop_back_1:
+            wd.setPath(QStandardPaths::writableLocation(QStandardPaths::AppConfigLocation));
+        }
+        use_application_dir = false;
+    }
+    dir_success = true;
     
     if (!wd.exists()) wd.mkpath(wd.absolutePath());
     if (!wd.exists("config")) {
         dir_success &= wd.mkdir("config");
     }
-    QFileInfo fileInfo("config");
-    dir_success &= fileInfo.exists();
-    dir_success &= fileInfo.isDir();  
-    if (!dir_success){
-        goto loop_back_2;
-    }
     
-    QDir::setCurrent(wd.absoluteFilePath("config"));
-    QDir("temp").removeRecursively();
-    
+	{
+		QString wd_abs = wd.absoluteFilePath("config");
+		QDir::setCurrent(wd_abs);
+		QDir("temp").removeRecursively();
+		dir = QDir(wd_abs);
+	
+		QFileInfo fileInfo(wd_abs);
+		dir_success &= fileInfo.exists();
+		dir_success &= fileInfo.isDir();  
+		if (!dir_success){
+			goto loop_back_2;
+		}
+	}
         // Dir
     if (!dir.exists("profiles")) {
         dir_success &= dir.mkdir("profiles");
     }
-    
     if (!dir.exists("groups")) {
         dir_success &= dir.mkdir("groups");
     }
@@ -190,7 +191,7 @@ int main(int argc, char** argv) {
             Configs::dataStore->flag_use_appdata = true;
             goto loop_back_1;
         }
-        QMessageBox::critical(nullptr, "Error", "No permission to write " + dir.absolutePath());
+        QMessageBox::critical(nullptr, "Error", "No permission to write " + wd.absoluteFilePath("config"));
         return 1;
     }
 
