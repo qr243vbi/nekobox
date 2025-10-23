@@ -1075,8 +1075,8 @@ bool MainWindow::get_elevated_permissions(int reason, void * pointer) {
     }
     auto n = QMessageBox::warning(GetMessageBoxParent(), software_name, tr("Please give the core root privileges"), QMessageBox::Yes | QMessageBox::No);
     if (n == QMessageBox::Yes) {
-        core_process->elevateCoreProcessProgram();
         StopVPNProcess();
+        core_process->elevateCoreProcessProgram();
         {
             if (reason == 3){
                 bool save = false;
@@ -1097,8 +1097,8 @@ bool MainWindow::get_elevated_permissions(int reason, void * pointer) {
         this->exit_reason = reason;
         on_menu_exit_triggered();
 #   else
-        core_process->elevateCoreProcessProgram();
         StopVPNProcess();
+        core_process->elevateCoreProcessProgram();
         {
             if (reason == 3){
                 bool save = false;
@@ -2538,10 +2538,11 @@ void MainWindow::HotkeyEvent(const QString &key) {
 bool MainWindow::StopVPNProcess() {
     QMutex waitStop;
     waitStop.lock();
-    runOnUiThread([=,this,&waitStop] { 
+    runOnThread([=, this, &waitStop]
+    {
         core_process->Kill();
         waitStop.unlock();
-    });
+    }, DS_cores);
     waitStop.lock();
     waitStop.unlock();
     return true;
