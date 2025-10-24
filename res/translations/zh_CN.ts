@@ -99,6 +99,18 @@
         <source>Override underlying DNS</source>
         <translation>覆盖底层 DNS</translation>
     </message>
+	<message>
+        <source>Clash Api Listen Address</source>
+        <translation>Clash API 监听地址</translation>
+    </message>
+	<message>
+        <source>Clash API Listen Port</source>
+        <translation>Clash API 监听端口</translation>
+    </message>
+	<message>
+        <source>Clash API Secret</source>
+        <translation>Clash API 加密</translation>
+    </message>
     <message>
         <source>Default On</source>
         <translation>默认开启</translation>
@@ -347,11 +359,11 @@ this rewrites the underlying(localhost) DNS in Tun Mode, normal mode, and also U
     </message>
 	<message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;timeout in milliseconds&lt;br/&gt;applies to all tests individually&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;毫秒为单位的超时值&lt;br/&gt;分别适用于所有测试&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;毫秒为单位的超时值&lt;br/&gt;分别应用于所有测试&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 	<message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Timeout for URLtest in ms&lt;br/&gt;Note that muxed connections take a much longer time for their initial request, and setting this value too low will cause the test to falsely report that the config is not working&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;以毫秒为单位的 URL 测试的超时&lt;br/&gt;注意，复用连接在其初始请求耗时更长，并且设置这个值过低将会导致测试误报该配置无效&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;以毫秒为单位的 URL 测试的超时&lt;br/&gt;注意，复用连接在其初始请求时耗时更长，而且这个值设置过低将会导致测试误报该配置无效&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 	<message>
         <source>Show System DNS option</source>
