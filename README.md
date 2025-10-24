@@ -8,7 +8,7 @@ Supports Windows 11/10/8/7 (arm64, i386, x86_64) / Linux / MacOS (arm64, x86_64)
 [![GitHub All Releases](https://img.shields.io/github/downloads/qr243vbi/nekobox/total?label=downloads-total&logo=github&style=flat-square)](https://github.com/qr243vbi/nekobox/releases)
 
 ### OBS repository
-[NekoBox repository](https://software.opensuse.org//download.html?project=home%3Ajuzbun%3ANekoBox&package=nekobox) for various linux distributions ([OpenSUSE](https://get.opensuse.org/), [Debian](https://www.debian.org/), [Raspbian](https://www.raspberrypi.com/software/), [Ubuntu](https://ubuntu.com/), [Arch](https://archlinux.org/)).
+[NekoBox repository](https://software.opensuse.org//download.html?project=home%3Ajuzbun%3ANekoBox&package=nekobox) for various linux distributions ([OpenSUSE](https://get.opensuse.org/), [Fedora](https://fedoraproject.org/), [Mageia](https://www.mageia.org/), [Debian](https://www.debian.org/), [Raspbian](https://www.raspberrypi.com/software/), [Ubuntu](https://ubuntu.com/), [Arch](https://archlinux.org/)).
 
 ### COPR repository
 [NekoBox repository](https://copr.fedorainfracloud.org/coprs/qr243vbi/NekoBox/) for various linux distributions ([RedHat](https://www.redhat.com), [Centos](https://www.centos.org), [Fedora](https://fedoraproject.org/), [Mageia](https://www.mageia.org/), [Almalinux](https://almalinux.org/)).
