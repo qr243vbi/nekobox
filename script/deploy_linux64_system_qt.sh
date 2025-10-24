@@ -1,6 +1,12 @@
 #!/bin/bash
 set -e
 
+if [[ $(uname -m) == 'aarch64' || $(uname -m) == 'arm64' ]]; then
+  ARCH="arm64"
+else
+  ARCH="amd64"
+fi
+
 source script/env_deploy.sh
 DEST=$DEPLOYMENT/linux-system-qt-$ARCH
 rm -rf $DEST
