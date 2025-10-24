@@ -22,7 +22,6 @@
 #include <qfontdatabase.h>
 #endif
 #ifdef Q_OS_LINUX
-#include "include/sys/linux/desktopinfo.h"
 #include <qfontdatabase.h>
 #endif
 
