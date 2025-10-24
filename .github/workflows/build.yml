@@ -102,6 +102,9 @@ jobs:
           - platform: ubuntu-22.04
             qt_version: "6.10.0"
             target: amd64
+          - platform: ubuntu-22.04
+            qt_version: "6.2.0"
+            target: amd64
           - platform: ubuntu-24.04-arm
             qt_version: "6.10.0"
             target: arm64
@@ -187,7 +190,7 @@ jobs:
           cd build
           curl -fLso srslist.h "https://raw.githubusercontent.com/throneproj/routeprofiles/rule-set/srslist.h"
           cmake -GNinja -DCMAKE_CXX_FLAGS="-static" -DOPENSSL_ROOT_DIR="$VCPKG_INSTALLATION_ROOT/installed/x64-mingw-static" -DCMAKE_BUILD_TYPE=Debug ..
-          ninja -j2
+          ninja
           cd ..
           ./script/deploy_windows.sh
       - name: Legacy Windows - Generate MakeFile and Build
@@ -204,7 +207,7 @@ jobs:
           cd build
           curl -fLso srslist.h "https://raw.githubusercontent.com/throneproj/routeprofiles/rule-set/srslist.h"
           cmake -GNinja -DCMAKE_CXX_FLAGS="-static" -DCMAKE_BUILD_TYPE=Debug ..
-          ninja -j2
+          ninja
           cd ..
           ./script/deploy_windows.sh ${{ matrix.target }}
       - name: WOA - Generate MakeFile and Build
@@ -215,7 +218,7 @@ jobs:
           cd build
           curl -fLso srslist.h "https://raw.githubusercontent.com/throneproj/routeprofiles/rule-set/srslist.h"
           cmake -GNinja -DCMAKE_BUILD_TYPE=Release ..
-          ninja -j2
+          ninja
           cd ..
           ./script/deploy_woa.sh
       - name: Build Installer with NSIS
@@ -228,7 +231,7 @@ jobs:
           cp ThroneSetup.exe deployment/
       - name: Linux - Generate MakeFile and Build
         shell: bash
-        if: contains( matrix.platform, 'ubuntu' )
+        if: contains( matrix.platform, 'ubuntu' ) && matrix.qt_version != '6.2.0'
         run: |
           sudo apt update && sudo apt upgrade -y
           mkdir build
@@ -238,6 +241,17 @@ jobs:
           ninja
           cd ..
           ./script/deploy_linux64.sh
+      - name: Linux Using System Qt - Generate MakeFile and Build
+        shell: bash
+        if: contains( matrix.platform, 'ubuntu' ) && matrix.qt_version == '6.2.0'
+        run: |
+          mkdir build
+          cd build
+          curl -fLso srslist.h "https://raw.githubusercontent.com/throneproj/routeprofiles/rule-set/srslist.h"
+          cmake -GNinja -DCMAKE_BUILD_TYPE=Release -DCMAKE_EXE_LINKER_FLAGS="-static-libgcc -static-libstdc++" ..
+          ninja
+          cd ..
+          ./script/deploy_linux64_system_qt.sh
       - name: macOS - Generate MakeFile and Build
         shell: bash
         if: matrix.platform == 'macos-latest' && matrix.qt_version != '6.4.3'
@@ -297,6 +311,10 @@ jobs:
           ####
           bash ../script/pack_debian.sh ${{ github.event.inputs.tag }}
           mv Throne.deb $version_standalone-debian-x64.deb
+          rm -rf Throne
+          ####
+          bash ../script/pack_debian_system_qt.sh ${{ github.event.inputs.tag }}
+          mv Throne.deb $version_standalone-debian-system-qt-x64.deb
           rm -rf Throne
           ####
           mv linux-amd64 Throne
