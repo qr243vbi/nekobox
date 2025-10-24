@@ -24,3 +24,4 @@ cd *linux-$ARCH
 tar xvzf artifacts.tgz -C ../../
 cd ../..
 cp deployment/linux-$ARCH/Core $DEST
+rm -rf deployment/linux-$ARCH
