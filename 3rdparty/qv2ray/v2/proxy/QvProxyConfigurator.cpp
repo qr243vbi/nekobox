@@ -273,7 +273,8 @@ namespace Qv2ray::components::proxy {
         QList<ProcessArgument> actions;
         //
         bool isKDE = qEnvironmentVariable("XDG_SESSION_DESKTOP") == "KDE" ||
-                     qEnvironmentVariable("XDG_SESSION_DESKTOP") == "plasma";
+                     qEnvironmentVariable("XDG_SESSION_DESKTOP") == "plasma"||
+                     qEnvironmentVariable("XDG_SESSION_DESKTOP") == "tde";
         const auto configPath = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation);
         QString kwriteconfigCmd = qEnvironmentVariable("KDE_SESSION_VERSION") == "5" ? "kwriteconfig5" : qEnvironmentVariable("KDE_SESSION_VERSION") == "6" ? "kwriteconfig6" : "kwriteconfig";
 
@@ -384,7 +385,8 @@ namespace Qv2ray::components::proxy {
 #elif defined(Q_OS_LINUX)
         QList<ProcessArgument> actions;
         const bool isKDE = qEnvironmentVariable("XDG_SESSION_DESKTOP") == "KDE" ||
-                           qEnvironmentVariable("XDG_SESSION_DESKTOP") == "plasma";
+                           qEnvironmentVariable("XDG_SESSION_DESKTOP") == "plasma"||
+                           qEnvironmentVariable("XDG_SESSION_DESKTOP") == "tde";
         const auto configRoot = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation);
 
         // Setting System Proxy Mode to: None
