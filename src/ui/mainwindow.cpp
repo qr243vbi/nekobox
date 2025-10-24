@@ -26,7 +26,6 @@
 #else
 #ifdef Q_OS_LINUX
 #include "include/sys/linux/LinuxCap.h"
-#include "include/sys/linux/desktopinfo.h"
 #include <QDBusInterface>
 #include <QDBusReply>
 #include <QUuid>
@@ -1910,8 +1909,7 @@ QPixmap grabScreen(QScreen* screen, bool& ok)
     QPixmap p;
     QRect geom = screen->geometry();
 #ifdef Q_OS_LINUX
-    DesktopInfo m_info;
-    if (m_info.waylandDetected()) {
+    if (qEnvironmentVariable("XDG_SESSION_TYPE") == "wayland" || qEnvironmentVariable("WAYLAND_DISPLAY").contains("wayland", Qt::CaseInsensitive)) {
         QDBusInterface screenshotInterface(
           QStringLiteral("org.freedesktop.portal.Desktop"),
           QStringLiteral("/org/freedesktop/portal/desktop"),
