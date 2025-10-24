@@ -1,1 +1,1 @@
-osc
+osc copr

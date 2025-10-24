@@ -464,7 +464,7 @@ jobs:
         shell: bash
         if: github.event.inputs.publish == 'r'
         run: |
-          pip install osc
+          pip install osc copr
           echo '[general]' > oscrc
           echo 'apiurl=https://api.opensuse.org' >> oscrc
           echo '[https://api.opensuse.org]' >> oscrc
@@ -473,7 +473,8 @@ jobs:
           echo 'credentials_mgr_class=osc.credentials.PlaintextConfigFileCredentialsManager' >> oscrc
           ####
           install -Dm644 oscrc "$HOME"/.config/osc/oscrc
-          osc token --trigger "${{ secrets.OBS_HOOK_TOKEN }}" ||:
+          osc token --trigger "${{ secrets.OBS_HOOK_TOKEN }}"
+          python3 -c "from copr import v3; client = v3.Client({'copr_url': 'https://copr.fedorainfracloud.org', 'login': '${{ secrets.COPR_LOGIN }}', 'token': '${{ secrets.COPR_TOKEN }}'}); print(client.package_proxy.build('qr243vbi', 'NekoBox', 'NekoBox'))"
 
   publish_chocolatey:
     name: Publish Chocolatey Package
