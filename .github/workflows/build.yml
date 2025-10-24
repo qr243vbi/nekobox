@@ -460,7 +460,7 @@ jobs:
         with:
           python-version: '3.13'
           cache: 'pip' # caching pip dependencies
-      - name: Trigger Open Build Service
+      - name: Trigger Open Build Service and Copr
         shell: bash
         if: github.event.inputs.publish == 'r'
         run: |
