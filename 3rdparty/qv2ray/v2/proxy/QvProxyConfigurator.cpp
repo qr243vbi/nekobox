@@ -225,6 +225,18 @@ namespace Qv2ray::components::proxy {
     }
 #endif
 
+#ifdef Q_OS_LINUX
+    QString GetKconfigCmd() {
+        if(qEnvironmentVariable("KDE_SESSION_VERSION") == "5") {
+            return "kwriteconfig5";
+        } else if(qEnvironmentVariable("KDE_SESSION_VERSION") == "6") {
+            return "kwriteconfig6";
+        } else {
+            return "kwriteconfig";
+        }
+    }
+#endif
+
     void SetSystemProxy(int httpPort, int socksPort, QString scheme) {
         const QString &address = "127.0.0.1";
         bool hasHTTP = (httpPort > 0 && httpPort < 65536);
@@ -292,7 +304,7 @@ namespace Qv2ray::components::proxy {
 
                 // for KDE:
                 if (isKDE) {
-                    actions << ProcessArgument{"kwriteconfig5",
+                    actions << ProcessArgument{GetKconfigCmd(),
                                                {"--file", configPath + "/kioslaverc", //
                                                 "--group", "Proxy Settings",          //
                                                 "--key", protocol + "Proxy",          //
@@ -311,7 +323,7 @@ namespace Qv2ray::components::proxy {
 
                 // for KDE:
                 if (isKDE) {
-                    actions << ProcessArgument{"kwriteconfig5",
+                    actions << ProcessArgument{GetKconfigCmd(),
                                                {"--file", configPath + "/kioslaverc", //
                                                 "--group", "Proxy Settings",          //
                                                 "--key", "socksProxy",                //
@@ -328,7 +340,7 @@ namespace Qv2ray::components::proxy {
 
             // for KDE:
             if (isKDE) {
-                actions << ProcessArgument{"kwriteconfig5",
+                actions << ProcessArgument{GetKconfigCmd(),
                                            {"--file", configPath + "/kioslaverc", //
                                             "--group", "Proxy Settings",          //
                                             "--key", "ProxyType", "1"}};
@@ -401,7 +413,7 @@ namespace Qv2ray::components::proxy {
 
             // for KDE:
             if (isKDE) {
-                actions << ProcessArgument{"kwriteconfig5",
+                actions << ProcessArgument{GetKconfigCmd(),
                                            {"--file", configRoot + "/kioslaverc", //
                                             "--group", "Proxy Settings",          //
                                             "--key", "ProxyType", "0"}};
