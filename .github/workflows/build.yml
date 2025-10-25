@@ -429,21 +429,21 @@ jobs:
             rm -rf nekobox windowslegacy64
           fi
           ####
-          if [[ -d macos-arm64 ]]; then
+          if [[ -f macos-arm64/nekobox.app ]]; then
             mkdir nekobox
             mv macos-arm64/nekobox.app nekobox/nekobox.app
             zip -9 --symlinks -r $version_standalone-macos-arm64.zip nekobox
             rm -rf macos-arm64 nekobox
           fi
           ####
-          if [[ -d macos-amd64 ]]; then
+          if [[ -f macos-amd64/nekobox.app ]]; then
             mkdir nekobox
             mv macos-amd64/nekobox.app nekobox/nekobox.app
             zip -9 --symlinks -r $version_standalone-macos-amd64.zip nekobox
             rm -rf macos-amd64 nekobox
           fi
           ####
-          if [[ -d macoslegacy-amd64 ]]; then
+          if [[ -f macoslegacy-amd64/nekobox.app ]]; then
             mkdir nekobox
             mv macoslegacy-amd64/nekobox.app nekobox/nekobox.app
             zip -9 --symlinks -r $version_standalone-macoslegacy-amd64.zip nekobox
