@@ -2062,8 +2062,8 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
 </translation>
     </message>
     <message>
-        <source>Please run Throne as admin</source>
-        <translation>Пожалуйста, запустите Throne от имени администратора</translation>
+        <source>Please run nekobox as admin</source>
+        <translation>Пожалуйста, запустите nekobox от имени администратора</translation>
     </message>
     <message>
         <source>A reset of assets is already in progress</source>

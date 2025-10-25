@@ -20,6 +20,21 @@
 #include "include/global/GuiUtils.hpp"
 
 #include <QInputDialog>
+#include <QToolTip>
+#include <QtGlobal>
+#include <QtCore/qglobal.h>
+#include <QObject>
+#include <QString>
+#include <QDebug>
+#include <QApplication>
+
+#include <QStyle>
+#if QT_VERSION >= QT_VERSION_CHECK(6, 6, 0)
+#define STATE_CHANGED &QCheckBox::checkStateChanged
+#else
+#define STATE_CHANGED &QCheckBox::stateChanged
+#endif
+
 
 #define ADJUST_SIZE runOnThread([=,this] { adjustSize(); adjustPosition(mainwindow); }, this);
 #define LOAD_TYPE(a) ui->type->addItem(Configs::ProfileManager::NewProxyEntity(a)->bean->DisplayType(), a);
@@ -125,7 +140,7 @@ DialogEditProfile::DialogEditProfile(const QString &_type, int profileOrGroupId,
     emit ui->security->currentTextChanged(ui->security->currentText());
 
     // for fragment
-    connect(ui->tls_frag, &QCheckBox::stateChanged, this, [=,this](bool state)
+    connect(ui->tls_frag, STATE_CHANGED, this, [=,this](bool state)
     {
         ui->tls_frag_fall_delay->setEnabled(state);
     });

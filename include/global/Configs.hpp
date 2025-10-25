@@ -4,7 +4,7 @@
 #include "Utils.hpp"
 #include "ConfigItem.hpp"
 #include "DataStore.hpp"
-
+#include "keyvaluerange.h"
 // Switch core support
 
 namespace Configs {

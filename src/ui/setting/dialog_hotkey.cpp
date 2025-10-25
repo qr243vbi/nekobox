@@ -3,6 +3,7 @@
 #include <include/global/GuiUtils.hpp>
 
 #include "include/ui/mainwindow_interface.h"
+#include <include/global/keyvaluerange.h>
 #include <QAction>
 
 DialogHotkey::DialogHotkey(QWidget *parent, const QList<QAction*>& actions) : QDialog(parent), ui(new Ui::DialogHotkey) {
@@ -41,8 +42,7 @@ void DialogHotkey::accept()
     Configs::dataStore->hotkey_system_proxy_menu = ui->system_proxy->keySequence().toString();
     Configs::dataStore->hotkey_toggle_system_proxy = ui->toggle_proxy->keySequence().toString();
 
-    auto mp = seqEdit2ID.toStdMap();
-    for (const auto& [kseq, actionID] : mp)
+    for (auto [kseq, actionID] : asKeyValueRange(seqEdit2ID))
     {
         Configs::dataStore->shortcuts->shortcuts[actionID] = kseq->keySequence();
     }
