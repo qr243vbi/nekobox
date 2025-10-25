@@ -7,6 +7,7 @@
 #include "include/sys/Process.hpp"
 #include "include/sys/AutoRun.hpp"
 
+#include <include/js/version.h>
 #include <QQueue>
 #include <QMutex>
 #include <QWaitCondition>
@@ -2632,7 +2633,8 @@ bool isNewer(QString assetName) {
 #ifndef SKIP_JS_UPDATER
 #define MAINWINDOW_H_DEFINED
 #include <thread>
-#include "include/js_updater.hpp"
+#include <iostream>
+#include "include/js/js_updater.h"
 #endif
 void MainWindow::CheckUpdate() {
     bool is_newer = false;
@@ -2720,7 +2722,7 @@ void MainWindow::CheckUpdate() {
 end_search_define:
 
 #ifndef SKIP_JS_UPDATER
-    BlockingQueue<QueuePart> bQueue;
+    MessageQueue bQueue;
     QString updater_js = "";
     {
         QFile file(QApplication::applicationDirPath() + "/check_new_release.js");
@@ -2739,7 +2741,7 @@ end_search_define:
 
 
     {
-        std::thread updater(  []( BlockingQueue<QueuePart>* bQueue,
+        std::thread updater(  []( MessageQueue* bQueue,
                                   QString * updater_js,
                                   QString * search,
                                   QString * assets_name,
@@ -2761,7 +2763,7 @@ end_search_define:
                 archive_name,
                 is_newer
             );
-            bQueue->push(QueuePart{"", "", 0});
+            bQueue->Push(MessagePart{"", "", 0});
         },
         &bQueue,
         &updater_js,
@@ -2775,7 +2777,8 @@ end_search_define:
         &is_newer);
 
         do {
-            QueuePart part = bQueue.pop();
+            MessagePart part;
+            bQueue.Pop(part);
             auto type = part.type;
             if (type == 0){
                 break;
@@ -2791,6 +2794,8 @@ end_search_define:
                 runOnUiThread([=,this] { MessageBoxWarning(part.title, part.message); });
             } else if (type == 3){
                 runOnUiThread([=,this] { MessageBoxInfo(part.title, part.message); });
+            } else if (type == 4){
+                std::cout << part.message.toStdString() << std::endl;
             }
         } while (true);
         updater.join();

@@ -13,6 +13,7 @@
 #include <QStandardPaths>
 #include <utility>
 #include <include/api/RPC.h>
+#include <include/js/version.h>
 
 #ifdef Q_OS_WIN
 #include "include/sys/windows/guihelper.h"

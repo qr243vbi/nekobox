@@ -225,6 +225,7 @@ set(PROJECT_SOURCES
         include/sys/windows/eventHandler.h
         src/dataStore/Group.cpp
         src/dataStore/ProxyEntity.cpp
+        src/js/version.cpp
 )
 
 if (APPLE)
@@ -248,17 +249,22 @@ set_property(TARGET nekobox PROPERTY AUTOMOC ON)
 set_property(TARGET nekobox PROPERTY AUTORCC ON)
 
 if(USE_LEGACY_QT)
-    add_definitions(-DUSE_LEGACY_QT)
+    add_definitions(USE_LEGACY_QT)
 endif()
 
 if(SKIP_UPDATE_BUTTON)
-    add_definitions(-DSKIP_UPDATE_BUTTON)
+    add_definitions(SKIP_UPDATE_BUTTON)
 elseif(SKIP_JS_UPDATER)
-    add_definitions(-DSKIP_JS_UPDATER)
+    remove_definitions(SKIP_UPDATE_BUTTON)
+    add_definitions(SKIP_JS_UPDATER)
 else()
-    add_subdirectory("3rdparty/quickjs")
-    include_directories(${CMAKE_SOURCE_DIR}/3rdparty/quickjs)
-    target_link_libraries(nekobox PRIVATE qjs)
+    remove_definitions(SKIP_UPDATE_BUTTON)
+    remove_definitions(SKIP_JS_UPDATER)
+#    add_subdirectory("3rdparty/quickjs")
+#    include_directories(${CMAKE_SOURCE_DIR}/3rdparty/quickjs)
+    find_package(Qt6 REQUIRED COMPONENTS Qml)
+    target_link_libraries(nekobox PRIVATE Qt6::Qml)
+    target_sources(nekobox PRIVATE src/js/js_updater.cpp include/js/js_updater.h src/js/message_queue.cpp include/js/message_queue.h res/nekobox_updater.qrc)
 endif()
 
 # Target Source macOS

@@ -1,7 +1,6 @@
 let allow_beta_update = configs['allow_beta_update'];
 let exitFlag = false;
-let resp = httpget("https://api.github.com/repos/qr243vbi/nekobox/releases");
-
+let resp = new HTTPResponse("https://api.github.com/repos/qr243vbi/nekobox/releases");
 
 function isNewer(assetName) {
     if (!NKR_VERSION) {
@@ -77,17 +76,20 @@ function isNewer(assetName) {
 }
 
 
-release_array = [];
-is_newer = false;
-exitFlag = false;
-stopFlag = false;
-note_pre_release = '';
-release_url = '';
-release_note = '';
-assets_name = '';
-release_download_url = '';
+var release_array = [];
+var is_newer = false;
+var stopFlag = false;
+var note_pre_release = '';
+var release_url = '';
+var release_note = '';
+var assets_name = '';
+var release_download_url = '';
 
-if (!resp.error){
+if (resp.error){
+    warning(
+        translate('Requesting update error: %1').replace('%1', resp.error),
+        translate('Update'));
+} else {
     let array = JSON.parse(resp.text);
 
     for (let release of array){
