@@ -296,6 +296,7 @@ jobs:
           ninja
           cd ..
           ./script/deploy_linux64.sh
+          
       - name: macOS - Generate MakeFile and Build
         shell: bash
         if: matrix.platform == 'macos-latest' && github.event.inputs.source != 'y'
