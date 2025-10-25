@@ -12,6 +12,11 @@
 #include <QDateTime>
 #include <QMessageBox>
 
+#include <include/js/version.h>
+#ifndef NKR_VERSION
+#define NKR_VERSION getVersionString()
+#endif
+
 typedef BOOL(WINAPI *MINIDUMPWRITEDUMP)(
     HANDLE hProcess,
     DWORD dwPid,

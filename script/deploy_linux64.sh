@@ -69,6 +69,7 @@ mv ./usr/lib2 ./usr/lib
 # fix lib rpath
 cp $CURDIR/check_new_release.js $DEST
 cp -RT $CURDIR/res/public $DEST/public
+echo "$INPUT_VERSION" > $DEST/version.txt
 
 cd $DEST
 patchelf --set-rpath '$ORIGIN/usr/lib' ./nekobox

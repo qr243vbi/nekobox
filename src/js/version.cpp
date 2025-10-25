@@ -1,5 +1,6 @@
 #include <include/js/version.h>
-#if NKR_VERSION == getNkrVersion
+
+#ifdef NKR_DYNAMIC_VERSION
 
 #include <QCoreApplication>
 #include <QFile>
@@ -14,7 +15,11 @@ const char * getVersionString(){
         QFile file(filePath);
         QString source;
         if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
+#ifdef NKR_DEFAULT_VERSION
+            source = NKR_DEFAULT_VERSION;
+#else
             source = "1.0.0";
+#endif
         } else {
             QTextStream in(&file);
             source = in.readAll();
@@ -25,4 +30,11 @@ const char * getVersionString(){
     }
     return VERSION;
 }
+
+#else
+
+const char * getVersionString(){
+    return NKR_VERSION;
+}
+
 #endif

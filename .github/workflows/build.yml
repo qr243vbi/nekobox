@@ -126,7 +126,7 @@ jobs:
             qt_version: "6.10.0"
             target: x86_64
           - platform: macos-latest
-            qt_version: "6.10.0"
+            qt_version: "6.4.3"
             target: arm64
           - platform: windows-2022
             qt_version: "6.10.0"
@@ -206,7 +206,7 @@ jobs:
  #       run: ./script/build_qt_static_windows.bat ${{ matrix.qt_version }}
       - name: Install Qt
         uses: jurplel/install-qt-action@v4.3.0
-        if: matrix.qt_version != '6.2.12' && github.event.inputs.source != 'y'
+        if: github.event.inputs.source != 'y' # && matrix.qt_version != '6.2.12'
         with:
           version: ${{ matrix.qt_version }}
           setup-python: true
@@ -224,32 +224,45 @@ jobs:
           
       - name: Windows - Generate MakeFile and Build
         shell: bash
-        if: contains( matrix.platform, 'windows' ) && matrix.qt_version != '6.2.12' && github.event.inputs.source != 'y'
+        if: contains( matrix.platform, 'windows' ) && github.event.inputs.source != 'y' # && matrix.qt_version != '6.2.12'
         run: |
           export CMAKE_PREFIX_PATH=$PWD/qt6/build/lib/cmake
           cd build
-          if [[ ${{ github.event.inputs.updater }}es == yes ]]; then export SKIP_UPDATE_BUTTON=ON; else export SKIP_UPDATE_BUTTON=OFF; fi
-          cmake -GNinja "-DSKIP_UPDATE_BUTTON=${SKIP_UPDATE_BUTTON}" -DCMAKE_BUILD_TYPE=Release ..
+          if [[ ${{ github.event.inputs.updater }}es == yes ]]
+          then
+            export SKIP_UPDATE_BUTTON=ON;
+          else
+            export SKIP_UPDATE_BUTTON=OFF
+          fi
+          if [[ ${{ matrix.qt_version }} == '6.10.0' ]]
+          then
+            export LEGACY_QT=OFF
+            export MATRIX=new-${{ matrix.target }}
+          else
+            export LEGACY_QT=ON
+            export MATRIX=${{ matrix.target }}
+          fi
+          cmake -GNinja "-DSKIP_UPDATE_BUTTON=${SKIP_UPDATE_BUTTON}" -DUSE_LEGACY_QT="${LEGACY_QT}" -DCMAKE_BUILD_TYPE=Release ..
           ninja -j2
+          ./script/deploy_windows.sh "${MATRIX}"
           cd ..
-          ./script/deploy_windows.sh new-${{ matrix.target }}
-      - name: Legacy Windows - Generate MakeFile and Build
-        shell: bash
-        if: contains( matrix.platform, 'windows' ) && matrix.qt_version == '6.2.12' && github.event.inputs.source != 'y'
-        run: |
-          curl -L -o qt.7z https://github.com/throneproj/env_windows_legacy/releases/download/latest/qt-${{ matrix.target }}.7z
-          7z x qt.7z
-          curl -L -o openssl.7z https://github.com/throneproj/env_windows_legacy/releases/download/latest/openssl-${{ matrix.target }}.7z
-          7z x openssl.7z
-          export CMAKE_PREFIX_PATH=$PWD/Qt/lib/cmake
-          export OPENSSL_ROOT_DIR=$PWD/openssl
-          cd build
-          if [[ ${{ github.event.inputs.updater }}es == yes ]]; then export SKIP_UPDATE_BUTTON=ON; else export SKIP_UPDATE_BUTTON=OFF; fi
-          cmake -GNinja "-DSKIP_UPDATE_BUTTON=${SKIP_UPDATE_BUTTON}" -DUSE_LEGACY_QT=ON -DCMAKE_CXX_FLAGS="-static" -DCMAKE_BUILD_TYPE=Debug ..
-          ninja -j2
-          cd ..
-          export COMPILER="MinGW"
-          ./script/deploy_windows.sh ${{ matrix.target }}
+   #   - name: Legacy Windows - Generate MakeFile and Build
+    #    shell: bash
+    #    if: contains( matrix.platform, 'windows' ) && matrix.qt_version == '6.2.12' && github.event.inputs.source != 'y'
+    #    run: |
+    #      curl -L -o qt.7z https://github.com/throneproj/env_windows_legacy/releases/download/latest/qt-${{ matrix.target }}.7z
+    #      7z x qt.7z
+    #      curl -L -o openssl.7z https://github.com/throneproj/env_windows_legacy/releases/download/latest/openssl-${{ matrix.target }}.7z
+    #      7z x openssl.7z
+   #       export CMAKE_PREFIX_PATH=$PWD/Qt/lib/cmake
+   #       export OPENSSL_ROOT_DIR=$PWD/openssl
+   #       cd build
+   #       if [[ ${{ github.event.inputs.updater }}es == yes ]]; then export SKIP_UPDATE_BUTTON=ON; else export SKIP_UPDATE_BUTTON=OFF; fi
+   #       cmake -GNinja "-DSKIP_UPDATE_BUTTON=${SKIP_UPDATE_BUTTON}" -DUSE_LEGACY_QT=ON -DCMAKE_CXX_FLAGS="-static" -DCMAKE_BUILD_TYPE=Debug ..
+   #       ninja -j2
+   #       cd ..
+   #       export COMPILER="MinGW"
+   #       ./script/deploy_windows.sh ${{ matrix.target }}
       - name: Build Installer with NSIS for windows64
         shell: cmd
         if: contains( matrix.platform, 'windows' ) && matrix.qt_version != '6.2.12' && matrix.target == 'x86_64' && github.event.inputs.source != 'y'
@@ -301,22 +314,19 @@ jobs:
         shell: bash
         if: matrix.platform == 'macos-latest' && github.event.inputs.source != 'y'
         run: |
+          if [[ ${{ matrix.qt_version }} == '6.10.0' ]]
+          then
+            export LEGACY_QT=OFF
+            export MATRIX=new-${{ matrix.target }}
+          else
+            export LEGACY_QT=ON
+            export MATRIX=${{ matrix.target }}
+          fi
           cd build
-          cmake -GNinja -DSKIP_UPDATE_BUTTON=ON -DCMAKE_BUILD_TYPE=Release -DNKR_PACKAGE_MACOS=1 -DCMAKE_OSX_DEPLOYMENT_TARGET=10.15 -DCMAKE_OSX_ARCHITECTURES=${{ matrix.target }} ..
+          cmake -GNinja -DUSE_LEGACY_QT="${LEGACY_QT}" -DCMAKE_BUILD_TYPE=Release -DNKR_VERSION="${INPUT_VERSION}" -DNKR_PACKAGE_MACOS=1 -DCMAKE_OSX_DEPLOYMENT_TARGET=10.15 -DCMAKE_OSX_ARCHITECTURES=${{ matrix.target }} ..
           ninja
           cd ..
-          ./script/deploy_macos.sh ${{ matrix.target }}
-      - name: Legacy macOS - Generate MakeFile and Build
-        shell: bash
-        if: matrix.platform == 'macos-latest' && matrix.qt_version == '6.4.3'
-        run: |
-          mkdir build
-          cd build
-          curl -fLso srslist.h "https://raw.githubusercontent.com/throneproj/routeprofiles/rule-set/srslist.h"
-          cmake -GNinja -DCMAKE_BUILD_TYPE=Release -DNKR_PACKAGE_MACOS=1 -DCMAKE_OSX_DEPLOYMENT_TARGET=10.15 -DCMAKE_OSX_ARCHITECTURES=${{ matrix.target }} ..
-          ninja
-          cd ..
-          ./script/deploy_macos.sh
+          ./script/deploy_macos.sh "${MATRIX}"
       # ========================================================================================================= Deployments
       - name: Tar files
         if: github.event.inputs.source != 'y'
@@ -427,6 +437,13 @@ jobs:
             mv macos-amd64/nekobox.app nekobox/nekobox.app
             zip -9 --symlinks -r $version_standalone-macos-amd64.zip nekobox
             rm -rf macos-amd64 nekobox
+          fi
+          ####
+          if [[ -d macoslegacy-amd64 ]]; then
+            mkdir nekobox
+            mv macoslegacy-amd64/nekobox.app nekobox/nekobox.app
+            zip -9 --symlinks -r $version_standalone-macoslegacy-amd64.zip nekobox
+            rm -rf macoslegacy-amd64 nekobox
           fi
       - name: Clean Up
         run: |

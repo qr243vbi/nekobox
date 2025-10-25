@@ -8,6 +8,10 @@
 #include "include/sys/AutoRun.hpp"
 
 #include <include/js/version.h>
+#ifndef NKR_VERSION
+#define NKR_VERSION getVersionString()
+#endif
+
 #include <QQueue>
 #include <QMutex>
 #include <QWaitCondition>
@@ -2712,10 +2716,18 @@ void MainWindow::CheckUpdate() {
 
 #ifdef Q_OS_MACOS
 #  ifdef Q_PROCESSOR_X86_64
+#    ifndef USE_LEGACY_QT
         SEARCHDEF("macos-amd64");
+#    else
+        SEARCHDEF("macoslegacy-amd64");
+#    endif
 #  endif
 #  ifdef Q_PROCESSOR_ARM_64
+#    ifndef USE_LEGACY_QT
         SEARCHDEF("macos-arm64");
+#    else
+        SEARCHDEF("macoslegacy-arm64");
+#    endif
 #  endif
 #endif
 
