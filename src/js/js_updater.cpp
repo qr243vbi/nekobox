@@ -105,7 +105,7 @@ bool jsUpdater( MessageQueue* queue,
     QString script;
 
     script = "var configs = ";
-    script += Configs::dataStore->ToJsonBytes().toStdString();
+    script = script + QString::fromUtf8(Configs::dataStore->ToJsonBytes());
     ctx.evaluate(script);
 
     script = [&] { QFile f(":/updater.js"); return f.open(QIODevice::ReadOnly) ? QTextStream(&f).readAll() : QString(); }();
