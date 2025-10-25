@@ -269,28 +269,28 @@ jobs:
           ./script/deploy_windows.sh ${{ matrix.target }}
       - name: Build Installer with NSIS for windows64
         shell: cmd
-        if: contains( matrix.platform, 'windows' ) && matrix.qt_version != '6.2.12' && matrix.target == 'x86_64' && github.event.inputs.source != 'y'
+        if: contains( matrix.platform, 'windows' ) && matrix.qt_version == '6.10.0' && matrix.target == 'x86_64' && github.event.inputs.source != 'y'
         run: |
           cp .\script\windows_installer.nsi .
           makensis.exe windows_installer.nsi
           install -D nekobox_setup.exe deployment/nekobox_setup.exe
       - name: Build Installer with NSIS for windows32
         shell: cmd
-        if: contains( matrix.platform, 'windows' ) && matrix.qt_version == '6.2.12' && matrix.target == 'i686' && github.event.inputs.source != 'y'
+        if: contains( matrix.platform, 'windows' ) && matrix.qt_version != '6.10.0' && matrix.target == 'i686' && github.event.inputs.source != 'y'
         run: |
           cp .\script\windows_installer.nsi .
           makensis "/DDIRECTORY=windows32"  windows_installer.nsi
           install -D nekobox_setup.exe deployment/nekobox_setup32.exe
       - name: Build Installer with NSIS for windows-arm64
         shell: cmd
-        if: contains( matrix.platform, 'windows' ) && matrix.qt_version != '6.2.12' && matrix.target == 'arm64' && github.event.inputs.source != 'y'
+        if: contains( matrix.platform, 'windows' ) && matrix.qt_version == '6.10.0' && matrix.target == 'arm64' && github.event.inputs.source != 'y'
         run: |
           cp .\script\windows_installer.nsi .
           makensis "/DDIRECTORY=windows-arm64" windows_installer.nsi
           install -D nekobox_setup.exe deployment/nekobox_setup_arm64.exe
       - name: Build Installer with NSIS for windowslegacy64
         shell: cmd
-        if: contains( matrix.platform, 'windows' ) && matrix.qt_version == '6.2.12' && matrix.target != 'i686' && github.event.inputs.source != 'y'
+        if: contains( matrix.platform, 'windows' ) && matrix.qt_version != '6.10.0' && matrix.target != 'i686' && github.event.inputs.source != 'y'
         run: |
           cp .\script\windows_installer.nsi .
           makensis "/DDIRECTORY=windowslegacy64" windows_installer.nsi
