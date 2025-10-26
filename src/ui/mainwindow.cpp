@@ -66,7 +66,7 @@
 #include <3rdparty/qv2ray/v2/proxy/QvProxyConfigurator.hpp>
 #include <include/global/HTTPRequestHelper.hpp>
 #include "include/global/DeviceDetailsHelper.hpp"
-
+#include <QSettings>
 #include "include/sys/macos/MacOS.h"
 
 #include <srslist.h>
@@ -76,6 +76,7 @@ void setAppIcon(Icon::TrayIconStatus, QSystemTrayIcon*);
 void UI_InitMainWindow() {
     mainwindow = new MainWindow;
 }
+
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow) {
     mainwindow = this;
@@ -99,6 +100,13 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     }
     themeManager->ApplyTheme(Configs::dataStore->theme);
     ui->setupUi(this);
+
+    // restore size and geometry
+    {
+        QSettings settings("qr243vbi_NekoBox", "nekobox_gui");
+        restoreGeometry(settings.value("geometry").toByteArray());
+        restoreState(settings.value("windowState").toByteArray());
+    }
 
     // init shortcuts
     setActionsData();
@@ -653,6 +661,10 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 }
 
 void MainWindow::closeEvent(QCloseEvent *event) {
+    QSettings settings("qr243vbi_NekoBox", "nekobox_gui");
+    settings.setValue("geometry", saveGeometry());
+    settings.setValue("windowState", saveState());
+
     if (tray->isVisible()) {
         hide();
         event->ignore();
