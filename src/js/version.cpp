@@ -25,7 +25,7 @@ const char * getVersionString(){
             source = in.readAll();
             file.close();
         }
-        QByteArray tempByteArray = source.toUtf8();
+        QByteArray tempByteArray = source.simplified().toUtf8();
         VERSION = strdup(tempByteArray.constData());
     }
     return VERSION;

@@ -225,7 +225,6 @@ set(PROJECT_SOURCES
         include/sys/windows/eventHandler.h
         src/dataStore/Group.cpp
         src/dataStore/ProxyEntity.cpp
-        src/js/version.cpp
 )
 
 if (APPLE)

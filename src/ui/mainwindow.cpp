@@ -8,9 +8,6 @@
 #include "include/sys/AutoRun.hpp"
 
 #include <include/js/version.h>
-#ifndef NKR_VERSION
-#define NKR_VERSION getVersionString()
-#endif
 
 #include <QQueue>
 #include <QMutex>

@@ -96,11 +96,8 @@ bool jsUpdater( MessageQueue* queue,
     ctx.globalObject().setProperty("HTTPResponse", jsFactory);
     ctx.globalObject().setProperty("search", *search);
     ctx.globalObject().setProperty("archive_name", "nekobox.zip");
-#ifndef NKR_VERSION
-    ctx.globalObject().setProperty("NKR_VERSION", "");
-#else
+
     ctx.globalObject().setProperty("NKR_VERSION", NKR_VERSION);
-#endif
 
     QString script;
 

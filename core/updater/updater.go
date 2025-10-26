@@ -67,6 +67,7 @@ func Updater() {
 
 	// os.RemoveAll("./run_admin.ps1")
 	os.RemoveAll("./check_new_release.js")
+	os.RemoveAll("./version.txt")
 
 	// update move
 	err = Mv("./nekobox_update/nekobox", "./")

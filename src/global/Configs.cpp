@@ -15,9 +15,6 @@
 #include <include/api/RPC.h>
 
 #include <include/js/version.h>
-#ifndef NKR_VERSION
-#define NKR_VERSION getVersionString()
-#endif
 
 #ifdef Q_OS_WIN
 #include "include/sys/windows/guihelper.h"
