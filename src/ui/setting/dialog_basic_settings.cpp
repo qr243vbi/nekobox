@@ -269,18 +269,7 @@ void DialogBasicSettings::on_core_settings_clicked() {
     auto line = -1;
     MyLineEdit *core_box_clash_api;
     MyLineEdit *core_box_clash_api_secret;
-    MyLineEdit *core_box_underlying_dns;
     MyLineEdit *core_box_clash_listen_addr;
-    //
-    auto core_box_underlying_dns_l = new QLabel(tr("Override underlying DNS"));
-    core_box_underlying_dns_l->setToolTip(tr(
-        "It is recommended to leave it blank, but it sometimes does not work, at this time you can set this option.\n"
-        "this rewrites the underlying(localhost) DNS in Tun Mode, normal mode, and also URL Test."));
-    core_box_underlying_dns = new MyLineEdit;
-    core_box_underlying_dns->setText(Configs::dataStore->core_box_underlying_dns);
-    core_box_underlying_dns->setMinimumWidth(300);
-    layout->addWidget(core_box_underlying_dns_l, ++line, 0);
-    layout->addWidget(core_box_underlying_dns, line, 1);
     //
     auto core_box_clash_listen_addr_l = new QLabel("Clash Api Listen Address");
     core_box_clash_listen_addr = new MyLineEdit;
@@ -304,7 +293,6 @@ void DialogBasicSettings::on_core_settings_clicked() {
     box->setOrientation(Qt::Horizontal);
     box->setStandardButtons(QDialogButtonBox::Cancel | QDialogButtonBox::Ok);
     connect(box, &QDialogButtonBox::accepted, w, [=,this] {
-        Configs::dataStore->core_box_underlying_dns = core_box_underlying_dns->text();
         Configs::dataStore->core_box_clash_api = core_box_clash_api->text().toInt();
         Configs::dataStore->core_box_clash_listen_addr = core_box_clash_listen_addr->text();
         Configs::dataStore->core_box_clash_api_secret = core_box_clash_api_secret->text();
