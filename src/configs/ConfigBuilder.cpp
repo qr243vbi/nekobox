@@ -434,6 +434,13 @@ namespace Configs {
                     {"type", "underlying"}
                 };
             }
+            if (tunEnabled && getOS() == Darwin)
+            {
+                return {
+                    {"type", "udp"},
+                    {"server", dataStore->core_box_underlying_dns}
+                };
+            }
             return {
             {"type", "local"}
             };
@@ -522,6 +529,12 @@ namespace Configs {
             }
         }
         routeChain->Save();
+
+        if (getOS() == Darwin && dataStore->core_box_underlying_dns.isEmpty() && dataStore->spmode_vpn)
+        {
+            status->result->error = QObject::tr("Local DNS and Tun mode do not work together, please set an IP to be used as the Local DNS server in the Routing Settings -> Local override");
+            return;
+        }
         
         // copy for modification
         routeChain = std::make_shared<RoutingChain>(*routeChain);
@@ -789,7 +802,7 @@ namespace Configs {
                         };
                     }
             }
-            if (Configs::dataStore->adblock_enable) {
+            if (dataStore->adblock_enable) {
                 ruleSetArray += QJsonObject{
                     {"type", "remote"},
                     {"tag", "throne-adblocksingbox"},
@@ -925,7 +938,7 @@ namespace Configs {
             };
         }
 
-        // Underlying 100% Working DNS
+        // Underlying DNS
         auto dnsLocalAddress = dataStore->core_box_underlying_dns.isEmpty() ? "local" : dataStore->core_box_underlying_dns;
         auto dnsLocalObj = BuildDnsObject(dnsLocalAddress, dataStore->spmode_vpn);
         dnsLocalObj["tag"] = "dns-local";

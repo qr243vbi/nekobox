@@ -84,6 +84,7 @@ DialogManageRoutes::DialogManageRoutes(QWidget *parent, const std::map<std::stri
 
     ui->direct_dns_strategy->addItems(qsValue);
     ui->remote_dns_strategy->addItems(qsValue);
+    ui->local_override->setText(Configs::dataStore->core_box_underlying_dns);
     ui->enable_fakeip->setChecked(Configs::dataStore->fake_dns);
     //
     connect(ui->use_dns_object, &QCheckBox::stateChanged, this, [=,this](int state) {
@@ -200,6 +201,7 @@ void DialogManageRoutes::accept() {
     Configs::dataStore->routing->remote_dns_strategy = ui->remote_dns_strategy->currentText();
     Configs::dataStore->routing->direct_dns = ui->direct_dns->currentText();
     Configs::dataStore->routing->direct_dns_strategy = ui->direct_dns_strategy->currentText();
+    Configs::dataStore->core_box_underlying_dns = ui->local_override->text().trimmed();
     Configs::dataStore->routing->dns_final_out = ui->dns_final_out->currentText();
     Configs::dataStore->fake_dns = ui->enable_fakeip->isChecked();
 
