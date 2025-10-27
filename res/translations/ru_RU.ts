@@ -71,10 +71,6 @@
         <source>Max log lines</source>
         <translation>Макс. кол-во строк в логах</translation>
     </message>
-	<message>
-        <source>Network</source>
-        <translation>Сеть</translation>
-    </message>
     <message>
         <source>Subscription</source>
         <translation>Подписка</translation>
@@ -95,11 +91,11 @@
         <source>Clear servers before updating subscription</source>
         <translation>Очищать список серверов перед обновлением подписки</translation>
     </message>
-	<message>
+    <message>
         <source>Enable sending HWID, device model, and OS version when updating subscription</source>
         <translation>Включить отправку HWID, модели устройства и версии ОС при обновлении подписки</translation>
     </message>
-	<message>
+    <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;HWID=%1&lt;/p&gt;&lt;p&gt;OS=%2&lt;/p&gt;&lt;p&gt;OS Version=%3&lt;/p&gt;&lt;p&gt;Model=%4&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;HWID=%1&lt;/p&gt;&lt;p&gt;ОС=%2&lt;/p&gt;&lt;p&gt;Версия ОС=%3&lt;/p&gt;&lt;p&gt;Модель=%4&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
@@ -144,20 +140,12 @@
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Не пытаться запускать приложение от имени администратора, если явно не запрошено&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <source>Override underlying DNS</source>
-        <translation>Переопределить нижестоящий DNS</translation>
-    </message>
-    <message>
         <source>Automatic update</source>
         <translation>Автоматическое обновление</translation>
     </message>
     <message>
         <source>Interval (minute, invalid if less than 30)</source>
         <translation>Интервал (в минутах; неверно, если значение меньше 30)</translation>
-    </message>
-	<message>
-        <source>Loglevel</source>
-        <translation>Уровень логирования</translation>
     </message>
     <message>
         <source>Disable Traffic Stats</source>
@@ -194,30 +182,6 @@
     <message>
         <source>Listen Port</source>
         <translation>Прослушиваемый порт</translation>
-    </message>
-    <message>
-        <source>Assets</source>
-        <translation>Ресурсы</translation>
-    </message>
-    <message>
-        <source>Geo Assets and Rule-sets</source>
-        <translation>Geo-ресурсы и наборы правил</translation>
-    </message>
-    <message>
-        <source>Remove Generated Rule-sets</source>
-        <translation>Удалить сгенерированные наборы правил</translation>
-    </message>
-    <message>
-        <source>GeoIP URL</source>
-        <translation>Ссылка на GeoIP</translation>
-    </message>
-    <message>
-        <source>GeoSite URL</source>
-        <translation>Ссылка на GeoSite</translation>
-    </message>
-    <message>
-        <source>Download and Replace Geo files</source>
-        <translation>Загрузить и заменить Geo-ресурсы</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Socks
@@ -260,24 +224,12 @@
                                                             </translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Remove the
-                                                        currently generated rule-sets so that they can be regenerated&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
-                                                    </source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Удалить
-                                                        сгенерированные наборы правил, чтобы их можно было сгенерировать заново&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
-                                                    </translation>
-    </message>
-    <message>
         <source>Proxy Format</source>
         <translation>Формат прокси</translation>
     </message>
     <message>
         <source>Language</source>
         <translation>Язык</translation>
-    </message>
-    <message>
-        <source>Removed all rule-set files</source>
-        <translation>Все файлы набора правил удалены</translation>
     </message>
     <message>
         <source>Speedtest mode</source>
@@ -312,42 +264,36 @@
         <translation>Случайный порт</translation>
     </message>
     <message>
-        <source>Auto Reset Assets</source>
-        <translation>Автоматический сброс ресурсов</translation>
-    </message>
-    <message>
-        <source>Disabled</source>
-        <translation>Отключено</translation>
-    </message>
-    <message>
-        <source>Every Day</source>
-        <translation>Каждый день</translation>
-    </message>
-    <message>
-        <source>Every 3 Days</source>
-        <translation>Каждые 3 дня</translation>
-    </message>
-    <message>
-        <source>Every Week</source>
-        <translation>Каждую неделю</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Downloads and replaces the geo asstes, and removes all generated rule-sets, then restarts the proxy&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Загружает и заменяет гео-ассеты, удаляет все сгенерированные наборы правил и перезапускает прокси&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>Reset All Assets</source>
-        <translation>Сбросить все ресурсы</translation>
-    </message>
-    <message>
-        <source>It is recommended to leave it blank, but it sometimes does not work, at this time you can set this option.
-this rewrites the underlying(localhost) DNS in Tun Mode, normal mode, and also URL Test.</source>
-        <translation>Рекомендуется оставлять пустым, но иногда это не работает — в таком случае и стоит использовать этот параметр.
-Переопределяет нижестоящий (localhost) DNS в режиме TUN, обычном режиме и тесте задержки.</translation>
-    </message>
-    <message>
         <source>Use Mozilla Certificate Store</source>
         <translation>Исп. хранилище сертификатов Mozilla</translation>
+    </message>
+    <message>
+        <source>Network Settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Test Settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Only Country</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;timeout in milliseconds&lt;br/&gt;applies to all tests individually&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Timeout</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Timeout for URLtest in ms&lt;br/&gt;Note that muxed connections take a much longer time for their initial request, and setting this value too low will cause the test to falsely report that the config is not working&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show System DNS option</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -662,6 +608,14 @@ this rewrites the underlying(localhost) DNS in Tun Mode, normal mode, and also U
         <source>Toggle System Proxy</source>
         <translation>Вкл. системный прокси</translation>
     </message>
+    <message>
+        <source>Global</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Shortcuts</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>DialogManageGroups</name>
@@ -845,10 +799,6 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
         <translation>Настройки перенаправления</translation>
     </message>
     <message>
-        <source>tls://8.8.8.8</source>
-        <translation>tls://8.8.8.8</translation>
-    </message>
-    <message>
         <source>Clone</source>
         <translation>Клонировать</translation>
     </message>
@@ -899,6 +849,38 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;examples:&lt;br/&gt;tls://8.8.8.8&lt;br/&gt;https://domain/path&lt;/p&gt;&lt;p&gt;tcp://8.8.8.8:1234&lt;/p&gt;&lt;p&gt;dhcp://auto&lt;/p&gt;&lt;p&gt;h3://domain/path&lt;/p&gt;&lt;p&gt;quic://domain:4632&lt;/p&gt;&lt;p&gt;etc&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;examples:&lt;br/&gt;tls://8.8.8.8&lt;br/&gt;https://домен/путь&lt;/p&gt;&lt;p&gt;tcp://8.8.8.8:1234&lt;/p&gt;&lt;p&gt;dhcp://auto&lt;/p&gt;&lt;p&gt;h3://домен/путь&lt;/p&gt;&lt;p&gt;quic://домен:4632&lt;/p&gt;&lt;p&gt;etc&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>GitHub</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>jsDelivr(Cloudflare)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>jsDelivr(Gcore)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>jsDelivr(Quantil)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>jsDelivr(Fastly)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>jsDelivr(CDN)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Local DNS can not be used in some configurations, you will have to set an ip here to be used as local dns in such situations&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Local Override</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1224,6 +1206,65 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <source>Password</source>
         <translation>Пароль</translation>
+    </message>
+</context>
+<context>
+    <name>EditTailScale</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Форма</translation>
+    </message>
+    <message>
+        <source>State directory</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Auth key</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Control URL</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hostname</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Accept routes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ephemeral</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Exit node allow lan access</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Advertise exit node</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Exit node</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;comma seperated list of subnets&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Список подсетей, разделенных запятыми&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>Advertise routes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;use tailscale dns as the remote dns&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Global DNS</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1856,10 +1897,6 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>Логи</translation>
     </message>
     <message>
-        <source>Geo Assets are missing, want to download them now?</source>
-        <translation>Geo-ресурсы отсутствуют. Хотите загрузить их сейчас?</translation>
-    </message>
-    <message>
         <source>Please give the core root privileges</source>
         <translation>Пожалуйста, предоставьте ядру права root.</translation>
     </message>
@@ -1980,22 +2017,6 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>Последний запрос на загрузку еще не завершён</translation>
     </message>
     <message>
-        <source>Failed to download geoip: %1</source>
-        <translation>Не удалось загрузить GeoIP: %1</translation>
-    </message>
-    <message>
-        <source>Failed to download geosite: %1</source>
-        <translation>Не удалось загрузить GeoSite: %1</translation>
-    </message>
-    <message>
-        <source>Failed to download geo assets</source>
-        <translation>Не удалось загрузить Geo-ресурсы</translation>
-    </message>
-    <message>
-        <source>Geo Asset update completed!</source>
-        <translation>Обновление Geo-ресурсов завершено!</translation>
-    </message>
-    <message>
         <source>Traffic Graph</source>
         <translation>График соединения</translation>
     </message>
@@ -2017,7 +2038,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     </message>
     <message>
         <source>The last url test did not exit completely, please wait. If it persists, please restart the program.</source>
-        <translation>Тест задержки не завершился до конца — пожалуйста, подождите. Если такое поведение повторяется, перезапустите программу</translation>
+        <translation>Тест задержки не завершился до конца —&#xa0;пожалуйста, подождите. Если такое поведение повторяется, перезапустите программу</translation>
     </message>
     <message>
         <source>URL test finished!</source>
@@ -2066,20 +2087,16 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>Пожалуйста, запустите Throne от имени администратора</translation>
     </message>
     <message>
-        <source>A reset of assets is already in progress</source>
-        <translation>Сброс ресурсов уже запущен</translation>
-    </message>
-    <message>
-        <source>Removed all rule-set files</source>
-        <translation>Удалены все файлы c наборами правил</translation>
-    </message>
-    <message>
         <source>Click To Sort By Protocol</source>
         <translation>Нажмите для сортировки по протоколу</translation>
     </message>
     <message>
         <source>Click To Sort By Outbound</source>
         <translation>Нажмите для сортировки по Outbound</translation>
+    </message>
+    <message>
+        <source>Add profile from File</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2165,10 +2182,6 @@ Deleted %3 Profiles:
         <translation>Ядро слишком часто останавливается, отмена автоматического перезапуска этого профиля.</translation>
     </message>
     <message>
-        <source>Core exited, restarting.</source>
-        <translation>Ядро остановлено, перезапуск.</translation>
-    </message>
-    <message>
         <source>Select</source>
         <translation>Выбор</translation>
     </message>
@@ -2241,16 +2254,24 @@ Release note:
         <translation>Процесс завершён, применение...</translation>
     </message>
     <message>
-        <source>Enable AdBlock</source>
-        <translation>Включить AdBlock</translation>
-    </message>
-    <message>
         <source>Download Profiles</source>
         <translation>Загрузка профилей</translation>
     </message>
     <message>
         <source>Requesting profile error: %1</source>
         <translation>Ошибка запроса профиля: %1</translation>
+    </message>
+    <message>
+        <source>Local DNS and Tun mode do not work together, please set an IP to be used as the Local DNS server in the Routing Settings -&gt; Local override</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Core exited, cleaning up...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Restarting the core ...</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

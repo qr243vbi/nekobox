@@ -56,10 +56,6 @@
         <translation>并发</translation>
     </message>
     <message>
-        <source>Use proxy when updating subscription</source>
-        <translation>更新订阅时使用代理</translation>
-    </message>
-    <message>
         <source>Security</source>
         <translation>安全</translation>
     </message>
@@ -70,10 +66,6 @@
     <message>
         <source>Clear servers before updating subscription</source>
         <translation>更新订阅前清除服务器</translation>
-    </message>
-    <message>
-        <source>Ignore TLS errors when updating subscription</source>
-        <translation>更新订阅时忽略 TLS 错误</translation>
     </message>
     <message>
         <source>Hide dashboard at startup</source>
@@ -94,22 +86,6 @@
     <message>
         <source>Core Options</source>
         <translation>核心选项</translation>
-    </message>
-    <message>
-        <source>Override underlying DNS</source>
-        <translation>覆盖底层 DNS</translation>
-    </message>
-	<message>
-        <source>Clash Api Listen Address</source>
-        <translation>Clash API 监听地址</translation>
-    </message>
-	<message>
-        <source>Clash API Listen Port</source>
-        <translation>Clash API 监听端口</translation>
-    </message>
-	<message>
-        <source>Clash API Secret</source>
-        <translation>Clash API 加密</translation>
     </message>
     <message>
         <source>Default On</source>
@@ -176,30 +152,6 @@
         <translation>监听端口</translation>
     </message>
     <message>
-        <source>Assets</source>
-        <translation>资源</translation>
-    </message>
-    <message>
-        <source>Geo Assets and Rule-sets</source>
-        <translation>Geo 资源和规则集</translation>
-    </message>
-    <message>
-        <source>Remove Generated Rule-sets</source>
-        <translation>移除生成的规则集</translation>
-    </message>
-    <message>
-        <source>GeoIP URL</source>
-        <translation>GeoIP URL</translation>
-    </message>
-    <message>
-        <source>GeoSite URL</source>
-        <translation>GeoSite URL</translation>
-    </message>
-    <message>
-        <source>Download and Replace Geo files</source>
-        <translation>下载并替换 Geo 文件</translation>
-    </message>
-    <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Socks
                                                                 + HTTP Proxy&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                                                             </source>
@@ -234,22 +186,12 @@
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;分钟为单位&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Remove the
-                                                        currently generated rule-sets so that they can be regenerated&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
-                                                    </source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;移除当前生成的规则集，以便重新生成&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Proxy Format</source>
         <translation>代理格式</translation>
     </message>
     <message>
         <source>Language</source>
         <translation>语言</translation>
-    </message>
-    <message>
-        <source>Removed all rule-set files</source>
-        <translation>已移除所有规则集文件</translation>
     </message>
     <message>
         <source>Speedtest mode</source>
@@ -296,94 +238,56 @@
         <translation>随机端口</translation>
     </message>
     <message>
-        <source>Auto Reset Assets</source>
-        <translation>自动重置资产</translation>
-    </message>
-    <message>
-        <source>Disabled</source>
-        <translation>禁用</translation>
-    </message>
-    <message>
-        <source>Every Day</source>
-        <translation>每天</translation>
-    </message>
-    <message>
-        <source>Every 3 Days</source>
-        <translation>每3天</translation>
-    </message>
-    <message>
-        <source>Every Week</source>
-        <translation>每周</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Downloads and replaces the geo asstes, and removes all generated rule-sets, then restarts the proxy&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;下载和替换地理资产(geo asstes)，并移除所有生成的规则，然后重新启动该代理&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>Reset All Assets</source>
-        <translation>重置所有资产</translation>
-    </message>
-    <message>
-        <source>It is recommended to leave it blank, but it sometimes does not work, at this time you can set this option.
-this rewrites the underlying(localhost) DNS in Tun Mode, normal mode, and also URL Test.</source>
-        <translation>建议留空，但是有时不起效，此时你可以设置这个选项。
-这会在 Tun 模式、普通模式以及 URL 测试中重写底层 (localhost) DNS。</translation>
-    </message>
-    <message>
         <source>Use Mozilla Certificate Store</source>
         <translation>使用 Mozilla 证书存储库</translation>
     </message>
-	<message>
+    <message>
         <source>Allow updating to beta versions</source>
         <translation>允许更新到 beta 版</translation>
     </message>
-	<message>
+    <message>
         <source>Network Settings</source>
         <translation>网络设置</translation>
     </message>
-	<message>
+    <message>
         <source>Use proxy</source>
         <translation>使用代理</translation>
     </message>
-	<message>
+    <message>
         <source>Ignore TLS errors</source>
         <translation>忽略 TLS 错误</translation>
     </message>
-	<message>
+    <message>
         <source>Test Settings</source>
         <translation>测试设置</translation>
     </message>
-	<message>
+    <message>
         <source>Timeout</source>
-        <translation>超时</translation>		
+        <translation>超时</translation>
     </message>
-	<message>
+    <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;timeout in milliseconds&lt;br/&gt;applies to all tests individually&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;毫秒为单位的超时值&lt;br/&gt;分别应用于所有测试&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
-	<message>
+    <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Timeout for URLtest in ms&lt;br/&gt;Note that muxed connections take a much longer time for their initial request, and setting this value too low will cause the test to falsely report that the config is not working&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;以毫秒为单位的 URL 测试的超时&lt;br/&gt;注意，复用连接在其初始请求时耗时更长，而且这个值设置过低将会导致测试误报该配置无效&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
-	<message>
+    <message>
         <source>Show System DNS option</source>
         <translation>显示系统 DNS 选项</translation>
     </message>
-	<message>
+    <message>
         <source>Enable sending HWID, device model, and OS version when updating subscription</source>
-        <translation>启用在更新订阅时发送 HWID、设备型号以及 OS 版本</translation>		
+        <translation>启用在更新订阅时发送 HWID、设备型号以及 OS 版本</translation>
     </message>
-	<message>
+    <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;HWID=%1&lt;/p&gt;&lt;p&gt;OS=%2&lt;/p&gt;&lt;p&gt;OS Version=%3&lt;/p&gt;&lt;p&gt;Model=%4&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;HWID=%1&lt;/p&gt;&lt;p&gt;OS=%2&lt;/p&gt;&lt;p&gt;OS Version=%3&lt;/p&gt;&lt;p&gt;Model=%4&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>		
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;HWID=%1&lt;/p&gt;&lt;p&gt;OS=%2&lt;/p&gt;&lt;p&gt;OS Version=%3&lt;/p&gt;&lt;p&gt;Model=%4&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
-	<message>
-        <source>Loglevel</source>
-        <translation>日志级别</translation>
-    </message>
-	<message>
-        <source>Padding</source>
-        <translation>填充</translation>
+    <message>
+        <source>Only Country</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -678,7 +582,7 @@ this rewrites the underlying(localhost) DNS in Tun Mode, normal mode, and also U
         <source>Hotkey</source>
         <translation>热键</translation>
     </message>
-	<message>
+    <message>
         <source>Global</source>
         <translation>全局</translation>
     </message>
@@ -702,7 +606,7 @@ this rewrites the underlying(localhost) DNS in Tun Mode, normal mode, and also U
         <source>Toggle System Proxy</source>
         <translation>切换系统代理</translation>
     </message>
-	<message>
+    <message>
         <source>Shortcuts</source>
         <translation>快捷键</translation>
     </message>
@@ -836,11 +740,7 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
         <source>Inbound Domain Strategy</source>
         <translation>入站域名策略</translation>
     </message>
-	<message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Enable to resolve domains to IP before routing based on the strategy&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;启用以在基于策略的路由前解析域名为 IP&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-	<message>
+    <message>
         <source>Remote Rule-set Mirror</source>
         <translation>远程规则集镜像</translation>
     </message>
@@ -891,10 +791,6 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
     <message>
         <source>Redirect Settings</source>
         <translation>重定向设置</translation>
-    </message>
-    <message>
-        <source>tls://8.8.8.8</source>
-        <translation>tls://8.8.8.8</translation>
     </message>
     <message>
         <source>Clone</source>
@@ -948,13 +844,41 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;examples:&lt;br/&gt;tls://8.8.8.8&lt;br/&gt;https://domain/path&lt;/p&gt;&lt;p&gt;tcp://8.8.8.8:1234&lt;/p&gt;&lt;p&gt;dhcp://auto&lt;/p&gt;&lt;p&gt;h3://domain/path&lt;/p&gt;&lt;p&gt;quic://domain:4632&lt;/p&gt;&lt;p&gt;etc&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;示例:&lt;br/&gt;tls://8.8.8.8&lt;br/&gt;https://domain/path&lt;/p&gt;&lt;p&gt;tcp://8.8.8.8:1234&lt;/p&gt;&lt;p&gt;dhcp://auto&lt;/p&gt;&lt;p&gt;h3://domain/path&lt;/p&gt;&lt;p&gt;quic://domain:4632&lt;/p&gt;&lt;p&gt;等&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
+    <message>
+        <source>GitHub</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>jsDelivr(Cloudflare)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>jsDelivr(Gcore)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>jsDelivr(Quantil)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>jsDelivr(Fastly)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>jsDelivr(CDN)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Local DNS can not be used in some configurations, you will have to set an ip here to be used as local dns in such situations&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Local Override</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>DialogVPNSettings</name>
-	<message>
-        <source>Stack</source>
-        <translation>堆栈</translation>
-    </message>
     <message>
         <source>Tun Settings</source>
         <translation>Tun 设置</translation>
@@ -1284,49 +1208,57 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <source>State directory</source>
         <translation>状态目录</translation>
     </message>
-	<message>
+    <message>
         <source>Auth key</source>
         <translation>验证钥匙</translation>
     </message>
-	<message>
+    <message>
         <source>Control URL</source>
         <translation>控制 URL</translation>
     </message>
-	<message>
+    <message>
         <source>Hostname</source>
         <translation>主机名</translation>
     </message>
-	<message>
+    <message>
         <source>Accept routes</source>
         <translation>接受路由</translation>
     </message>
-	<message>
+    <message>
         <source>Exit node allow lan access</source>
         <translation>出口节点允许LAN访问</translation>
     </message>
-	<message>
+    <message>
         <source>Advertise exit node</source>
         <translation>通告出口节点</translation>
     </message>
-	<message>
+    <message>
         <source>Exit node</source>
         <translation>出口节点</translation>
     </message>
-	<message>
+    <message>
         <source>Advertise routes</source>
         <translation>通告路由</translation>
     </message>
-	<message>
+    <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;comma seperated list of subnets&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;子网的逗号间隔列表&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
-	<message>
+    <message>
         <source>Global DNS</source>
         <translation>全局 DNS</translation>
     </message>
-	<message>
+    <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;use tailscale dns as the remote dns&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;使用 tailscale dns 作为远程 dns&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">表单</translation>
+    </message>
+    <message>
+        <source>Ephemeral</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1546,11 +1478,11 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
 </context>
 <context>
     <name>MainWindow</name>
-	<message>
+    <message>
         <source>Hide window</source>
         <translation>隐藏窗口</translation>
     </message>
-	<message>
+    <message>
         <source>Add profile from File</source>
         <translation>添加来自文件的配置档</translation>
     </message>
@@ -1963,10 +1895,6 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>日志</translation>
     </message>
     <message>
-        <source>Geo Assets are missing, want to download them now?</source>
-        <translation>缺少地理资产，想立即下载吗？</translation>
-    </message>
-    <message>
         <source>Please give the core root privileges</source>
         <translation>请赋予核心根(root)权限</translation>
     </message>
@@ -2087,22 +2015,6 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>上次的下载请求尚未完成</translation>
     </message>
     <message>
-        <source>Failed to download geoip: %1</source>
-        <translation>下载 geoip 失败：%1</translation>
-    </message>
-    <message>
-        <source>Failed to download geosite: %1</source>
-        <translation>下载 geosite 失败：%1</translation>
-    </message>
-    <message>
-        <source>Failed to download geo assets</source>
-        <translation>下载地理资产失败</translation>
-    </message>
-    <message>
-        <source>Geo Asset update completed!</source>
-        <translation>地理资产更新完成！</translation>
-    </message>
-    <message>
         <source>Traffic Graph</source>
         <translation>流量图</translation>
     </message>
@@ -2171,14 +2083,6 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <source>Please run Throne as admin</source>
         <translation>请以管理员身份运行 Throne</translation>
-    </message>
-    <message>
-        <source>A reset of assets is already in progress</source>
-        <translation>资产的重置已在进行中</translation>
-    </message>
-    <message>
-        <source>Removed all rule-set files</source>
-        <translation>已移除所有规则集文件</translation>
     </message>
     <message>
         <source>Click To Sort By Protocol</source>
@@ -2304,10 +2208,6 @@ Release note:
         <translation>订阅请求完成: %1</translation>
     </message>
     <message>
-        <source>Core exited, restarting.</source>
-        <translation>Core 退出了，正在重启。</translation>
-    </message>
-    <message>
         <source>Core exits too frequently, stop automatic restart this profile.</source>
         <translation>Core 退出太频繁，停止自动重启这个配置档。</translation>
     </message>
@@ -2354,6 +2254,18 @@ Release note:
     <message>
         <source>Requesting profile error: %1</source>
         <translation>请求配置档时出错: %1</translation>
+    </message>
+    <message>
+        <source>Local DNS and Tun mode do not work together, please set an IP to be used as the Local DNS server in the Routing Settings -&gt; Local override</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Core exited, cleaning up...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Restarting the core ...</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
