@@ -46,9 +46,6 @@ jobs:
             cross_arch: arm64
             go_version: "1.25.0"
           - cross_os: windowslegacy
-            cross_arch: amd64
-            go_version: "1.25.0"
-          - cross_os: windowslegacy
             cross_arch: 386
             go_version: "1.25.0"
       fail-fast: false
@@ -134,9 +131,6 @@ jobs:
           - platform: windows-11-arm
             qt_version: "6.10.0"
             target: arm64
-          - platform: windows-2022
-            qt_version: "6.4.3"
-            target: x86_64
           - platform: windows-2022
             qt_version: "6.2.12"
             target: i686
