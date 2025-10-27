@@ -56,10 +56,6 @@
         <translation>هم زمان</translation>
     </message>
     <message>
-        <source>Use proxy when updating subscription</source>
-        <translation>استفاده از پروکسی زمانی که اشتراک را بروزرسانی می کنید</translation>
-    </message>
-    <message>
         <source>Security</source>
         <translatorcomment>امنیت security</translatorcomment>
         <translation>امنیت</translation>
@@ -77,10 +73,6 @@
         <translation>قبل از به‌روزرسانی اشتراک، سرورها را پاک شود</translation>
     </message>
     <message>
-        <source>Ignore TLS errors when updating subscription</source>
-        <translation>هنگام به‌روزرسانی اشتراک، خطاهای TLS را نادیده گرفته شود</translation>
-    </message>
-    <message>
         <source>Max log lines</source>
         <translation>حداکثر خطوط فایل لاگ</translation>
     </message>
@@ -95,10 +87,6 @@
     <message>
         <source>Core Options</source>
         <translation>تنظیمات هسته</translation>
-    </message>
-    <message>
-        <source>Override underlying DNS</source>
-        <translation>لغو دی ان اس زیربنایی</translation>
     </message>
     <message>
         <source>Default On</source>
@@ -165,30 +153,6 @@
         <translation>پورت شنود</translation>
     </message>
     <message>
-        <source>Assets</source>
-        <translation>منابع</translation>
-    </message>
-    <message>
-        <source>Geo Assets and Rule-sets</source>
-        <translation>منابع و قوانین جغرافیایی</translation>
-    </message>
-    <message>
-        <source>Remove Generated Rule-sets</source>
-        <translation>پاک کردن قوانین تولیدشده</translation>
-    </message>
-    <message>
-        <source>GeoIP URL</source>
-        <translation>نشانی GeoIP</translation>
-    </message>
-    <message>
-        <source>GeoSite URL</source>
-        <translation>نشانی GeoSite</translation>
-    </message>
-    <message>
-        <source>Download and Replace Geo files</source>
-        <translation>بارگیری و جایگزینی پرونده‌های جغرافیایی</translation>
-    </message>
-    <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Socks
                                                                 + HTTP Proxy&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                                                             </source>
@@ -229,24 +193,12 @@
                                                             </translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Remove the
-                                                        currently generated rule-sets so that they can be regenerated&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
-                                                    </source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;پاک کردن
-                                                        مجموعه‌قوانین تولیدشده کنونی برای بازتولید آن‌ها&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
-                                                    </translation>
-    </message>
-    <message>
         <source>Proxy Format</source>
         <translation>قالب پروکسی</translation>
     </message>
     <message>
         <source>Language</source>
         <translation>زبان</translation>
-    </message>
-    <message>
-        <source>Removed all rule-set files</source>
-        <translation>همه پرونده‌های مجموعه‌قوانین پاک شدند</translation>
     </message>
     <message>
         <source>Speedtest mode</source>
@@ -293,40 +245,55 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Auto Reset Assets</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Disabled</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Every Day</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Every 3 Days</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Every Week</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Downloads and replaces the geo asstes, and removes all generated rule-sets, then restarts the proxy&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Reset All Assets</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>It is recommended to leave it blank, but it sometimes does not work, at this time you can set this option.
-this rewrites the underlying(localhost) DNS in Tun Mode, normal mode, and also URL Test.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Use Mozilla Certificate Store</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Allow updating to beta versions</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Network Settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use proxy</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ignore TLS errors</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Test Settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Only Country</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;timeout in milliseconds&lt;br/&gt;applies to all tests individually&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Timeout</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Timeout for URLtest in ms&lt;br/&gt;Note that muxed connections take a much longer time for their initial request, and setting this value too low will cause the test to falsely report that the config is not working&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show System DNS option</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;HWID=%1&lt;/p&gt;&lt;p&gt;OS=%2&lt;/p&gt;&lt;p&gt;OS Version=%3&lt;/p&gt;&lt;p&gt;Model=%4&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enable sending HWID, device model, and OS version when updating subscription</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -642,6 +609,14 @@ this rewrites the underlying(localhost) DNS in Tun Mode, normal mode, and also U
         <source>Toggle System Proxy</source>
         <translation>تغییر وضعیت پروکسی سیستم</translation>
     </message>
+    <message>
+        <source>Global</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Shortcuts</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>DialogManageGroups</name>
@@ -822,10 +797,6 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
         <translation>تنظیمات هدایت</translation>
     </message>
     <message>
-        <source>tls://8.8.8.8</source>
-        <translation>tls://8.8.8.8</translation>
-    </message>
-    <message>
         <source>Clone</source>
         <translation>همزادسازی</translation>
     </message>
@@ -875,6 +846,42 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;examples:&lt;br/&gt;tls://8.8.8.8&lt;br/&gt;https://domain/path&lt;/p&gt;&lt;p&gt;tcp://8.8.8.8:1234&lt;/p&gt;&lt;p&gt;dhcp://auto&lt;/p&gt;&lt;p&gt;h3://domain/path&lt;/p&gt;&lt;p&gt;quic://domain:4632&lt;/p&gt;&lt;p&gt;etc&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remote Rule-set Mirror</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>GitHub</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>jsDelivr(Cloudflare)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>jsDelivr(Gcore)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>jsDelivr(Quantil)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>jsDelivr(Fastly)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>jsDelivr(CDN)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Local DNS can not be used in some configurations, you will have to set an ip here to be used as local dns in such situations&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Local Override</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1201,6 +1208,65 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <source>Password</source>
         <translation>کلمه عبور</translation>
+    </message>
+</context>
+<context>
+    <name>EditTailScale</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">فرم</translation>
+    </message>
+    <message>
+        <source>State directory</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Auth key</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Control URL</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hostname</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Accept routes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ephemeral</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Exit node allow lan access</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Advertise exit node</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Exit node</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;comma seperated list of subnets&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;فهرست زیرشبکه‌های جدا شده با کاما&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>Advertise routes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;use tailscale dns as the remote dns&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Global DNS</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1829,10 +1895,6 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>گزارش‌ها</translation>
     </message>
     <message>
-        <source>Geo Assets are missing, want to download them now?</source>
-        <translation>منابع جغرافیایی وجود ندارند، آیا می‌خواهید اکنون آن‌ها را بارگیری کنید؟</translation>
-    </message>
-    <message>
         <source>Please give the core root privileges</source>
         <translation>لطفاً به هسته دسترسی ریشه بدهید</translation>
     </message>
@@ -1953,22 +2015,6 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>آخرین درخواست بارگیری هنوز به پایان نرسیده است</translation>
     </message>
     <message>
-        <source>Failed to download geoip: %1</source>
-        <translation>بارگیری GeoIP ناموفق بود: %1</translation>
-    </message>
-    <message>
-        <source>Failed to download geosite: %1</source>
-        <translation>بارگیری GeoSite ناموفق بود: %1</translation>
-    </message>
-    <message>
-        <source>Failed to download geo assets</source>
-        <translation>بارگیری منابع جغرافیایی ناموفق بود</translation>
-    </message>
-    <message>
-        <source>Geo Asset update completed!</source>
-        <translation>به‌روزرسانی منابع جغرافیایی کامل شد!</translation>
-    </message>
-    <message>
         <source>Traffic Graph</source>
         <translation>نمودار ترافیک</translation>
     </message>
@@ -2039,19 +2085,19 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>A reset of assets is already in progress</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Removed all rule-set files</source>
-        <translation type="unfinished">همه پرونده‌های مجموعه‌قوانین پاک شدند</translation>
-    </message>
-    <message>
         <source>Click To Sort By Protocol</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Click To Sort By Outbound</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hide window</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add profile from File</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2168,10 +2214,6 @@ Direct: %2</source>
         <translation>درخواست اشتراک به پایان رسید: %1</translation>
     </message>
     <message>
-        <source>Core exited, restarting.</source>
-        <translation>هسته برنامه متوقف شد ، در حال راه اندازی مجدد</translation>
-    </message>
-    <message>
         <source>Core exits too frequently, stop automatic restart this profile.</source>
         <translation>هسته بیش از حد متوقف می‌شود، راه‌اندازی خودکار این نمایه متوقف شود.</translation>
     </message>
@@ -2217,6 +2259,18 @@ Direct: %2</source>
     </message>
     <message>
         <source>Requesting profile error: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Local DNS and Tun mode do not work together, please set an IP to be used as the Local DNS server in the Routing Settings -&gt; Local override</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Core exited, cleaning up...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Restarting the core ...</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

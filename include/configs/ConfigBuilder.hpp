@@ -4,6 +4,14 @@
 #include "include/sys/Process.hpp"
 
 namespace Configs {
+    enum OSType
+    {
+        Unknown = 0,
+        Linux = 1,
+        Windows = 2,
+        Darwin = 3,
+    };
+
     class ExtraCoreData
     {
     public:
@@ -50,6 +58,20 @@ namespace Configs {
         QJsonArray inbounds;
         QJsonArray outbounds;
         QJsonArray endpoints;
+    };
+
+    inline OSType getOS()
+    {
+#ifdef Q_OS_MACOS
+        return Darwin;
+#endif
+#ifdef Q_OS_LINUX
+        return Linux;
+#endif
+#ifdef Q_OS_WIN
+        return Windows;
+#endif
+        return Unknown;
     };
 
     bool IsValid(const std::shared_ptr<ProxyEntity> &ent);
