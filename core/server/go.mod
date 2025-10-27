@@ -11,15 +11,15 @@ require (
 	github.com/gofrs/uuid/v5 v5.3.2
 	github.com/golang/protobuf v1.5.4
 	github.com/google/shlex v0.0.0-20191202100458-e7afc7fbc510
-	github.com/sagernet/sing v0.7.12
-	github.com/sagernet/sing-box v1.12.10
-	github.com/sagernet/sing-tun v0.7.2
+	github.com/sagernet/sing v0.7.13
+	github.com/sagernet/sing-box v1.12.12
+	github.com/sagernet/sing-tun v0.7.3
 	github.com/spf13/cobra v1.10.1
 	golang.org/x/sys v0.37.0
 	google.golang.org/protobuf v1.36.10
 )
 
-replace github.com/sagernet/sing-box => github.com/throneproj/sing-box v1.11.16-0.20251015233716-d454ba00b4be
+replace github.com/sagernet/sing-box => github.com/throneproj/sing-box v1.11.16-0.20251027170654-efe4b5f5b1e4
 
 replace github.com/sagernet/wireguard-go => github.com/throneproj/wireguard-go v0.0.1-beta.7.0.20250728063157-408bba78ad26
 
@@ -74,8 +74,8 @@ require (
 	github.com/mdlayher/netlink v1.7.3-0.20250113171957-fbb4dce95f42 // indirect
 	github.com/mdlayher/sdnotify v1.0.0 // indirect
 	github.com/mdlayher/socket v0.5.1 // indirect
-	github.com/metacubex/tfo-go v0.0.0-20250516165257-e29c16ae41d4 // indirect
-	github.com/metacubex/utls v1.8.2 // indirect
+	github.com/metacubex/tfo-go v0.0.0-20250921095601-b102db4216c0 // indirect
+	github.com/metacubex/utls v1.8.3 // indirect
 	github.com/mholt/acmez/v3 v3.1.2 // indirect
 	github.com/miekg/dns v1.1.67 // indirect
 	github.com/mitchellh/go-ps v1.0.0 // indirect
@@ -89,7 +89,7 @@ require (
 	github.com/sagernet/gvisor v0.0.0-20250325023245-7a9c0f5725fb // indirect
 	github.com/sagernet/netlink v0.0.0-20240612041022-b9a21c07ac6a // indirect
 	github.com/sagernet/nftables v0.3.0-beta.4 // indirect
-	github.com/sagernet/quic-go v0.52.0-sing-box-mod.2 // indirect
+	github.com/sagernet/quic-go v0.52.0-sing-box-mod.3 // indirect
 	github.com/sagernet/sing-mux v0.3.3 // indirect
 	github.com/sagernet/sing-quic v0.5.2-0.20250909083218-00a55617c0fb // indirect
 	github.com/sagernet/sing-shadowsocks v0.2.8 // indirect
@@ -97,7 +97,7 @@ require (
 	github.com/sagernet/sing-shadowtls v0.2.1-0.20250503051639-fcd445d33c11 // indirect
 	github.com/sagernet/sing-vmess v0.2.7 // indirect
 	github.com/sagernet/smux v1.5.34-mod.2 // indirect
-	github.com/sagernet/tailscale v1.80.3-sing-box-1.12-mod.1 // indirect
+	github.com/sagernet/tailscale v1.80.3-sing-box-1.12-mod.2 // indirect
 	github.com/sagernet/wireguard-go v0.0.1-beta.7 // indirect
 	github.com/sagernet/ws v0.0.0-20231204124109-acfe8907c854 // indirect
 	github.com/spf13/pflag v1.0.9 // indirect
