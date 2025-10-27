@@ -123,7 +123,7 @@ jobs:
             qt_version: "6.10.0"
             target: arm64
           - platform: macos-latest
-            qt_version: "6.4.3"
+            qt_version: "6.10.0"
             target: x86_64
           - platform: macos-latest
             qt_version: "6.10.0"
@@ -313,24 +313,16 @@ jobs:
           ninja
           cd ..
           ./script/deploy_linux64.sh
-          
+
       - name: macOS - Generate MakeFile and Build
         shell: bash
         if: matrix.platform == 'macos-latest' && github.event.inputs.source != 'y'
         run: |
-          if [[ ${{ matrix.qt_version }} == '6.10.0' ]]
-          then
-            export LEGACY_QT=OFF
-            export MATRIX=new-${{ matrix.target }}
-          else
-            export LEGACY_QT=ON
-            export MATRIX=${{ matrix.target }}
-          fi
           cd build
-            cmake -GNinja -DUSE_LEGACY_QT="${LEGACY_QT}" -DCMAKE_BUILD_TYPE=Release -DNKR_VERSION="${INPUT_VERSION}" -DNKR_PACKAGE_MACOS=1 -DCMAKE_OSX_DEPLOYMENT_TARGET=10.15 -DCMAKE_OSX_ARCHITECTURES=${{ matrix.target }} ..
-            ninja
+          cmake -GNinja -DSKIP_UPDATE_BUTTON=ON -DCMAKE_BUILD_TYPE=Release -DNKR_VERSION="${INPUT_VERSION}" -DNKR_PACKAGE_MACOS=1 -DCMAKE_OSX_DEPLOYMENT_TARGET=10.15 -DCMAKE_OSX_ARCHITECTURES=${{ matrix.target }} ..
+          ninja
           cd ..
-          ./script/deploy_macos.sh "${MATRIX}"
+          ./script/deploy_macos.sh ${{ matrix.target }}
       # ========================================================================================================= Deployments
       - name: Tar files
         if: github.event.inputs.source != 'y'
