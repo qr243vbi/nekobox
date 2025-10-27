@@ -123,7 +123,7 @@ jobs:
             qt_version: "6.10.0"
             target: arm64
           - platform: macos-latest
-            qt_version: "6.10.0"
+            qt_version: "6.4.3"
             target: x86_64
           - platform: macos-latest
             qt_version: "6.10.0"
