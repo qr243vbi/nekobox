@@ -73,6 +73,8 @@ Various formats are supported, including share links, JSON array of outbounds an
 - [shlex](https://github.com/google/shlex)
 - [URLParser](https://github.com/dongbum/URLParser)
 - [npipe](https://github.com/NullYing/npipe)
+- [Fedora COPR](https://copr.fedorainfracloud.org/)
+- [Chocolatey Software](https://chocolatey.org/)
 
 ## TODO
 - Command line tools
