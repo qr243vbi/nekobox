@@ -501,7 +501,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
         {
             QString err;
             for(int retry = 0; retry < 5; retry++) {
-                auto resp = NetworkRequestHelper::HttpGet(Configs::get_jsdelivr_link("https://raw.githubusercontent.com/throneproj/routeprofiles/rule-set/list"));
+                auto resp = NetworkRequestHelper::HttpGet(Configs::get_jsdelivr_link("https://github.com/qr243vbi/ruleset/raw/refs/heads/rule-set/srslist"));
                 if (resp.error.isEmpty()) {
                     std::vector<uint8_t> respvec;
                     respvec.assign(resp.data.begin(), resp.data.end());
