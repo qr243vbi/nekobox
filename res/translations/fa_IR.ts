@@ -1991,8 +1991,8 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>نمایه دیگری در حال توقف است...</translation>
     </message>
     <message>
-        <source>Try to start the config, but the core has not listened to the grpc port, so restart it...</source>
-        <translation>تلاش برای شروع پیکربندی، اما هسته به پورت grpc گوش نداده است، بنابراین آن را دوباره راه‌اندازی کنید...</translation>
+        <source>Try to start the config, but the core has not listened to the RPC port, so restart it...</source>
+        <translation>تلاش برای شروع پیکربندی، اما هسته به پورت RPC گوش نداده است، بنابراین آن را دوباره راه‌اندازی کنید...</translation>
     </message>
     <message>
         <source>Stop return error</source>

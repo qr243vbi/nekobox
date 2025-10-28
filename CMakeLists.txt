@@ -116,7 +116,7 @@ set(PROJECT_SOURCES
         src/ui/setting/ThemeManager.cpp
         src/ui/setting/Icon.cpp
 
-        src/ui/mainwindow_grpc.cpp
+        src/ui/mainwindow_rpc.cpp
         src/ui/mainwindow.cpp
         include/ui/mainwindow.h
         include/ui/mainwindow.ui
