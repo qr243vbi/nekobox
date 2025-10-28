@@ -66,7 +66,6 @@
 #include <QSettings>
 #include "include/sys/macos/MacOS.h"
 
-#include <srslist.h>
 
 void setAppIcon(Icon::TrayIconStatus, QSystemTrayIcon*);
 
@@ -484,8 +483,46 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
         }
     });
 
-    std::vector<uint8_t> srsvec(std::begin(srslist), std::end(srslist));
-    ruleSetMap = spb::pb::deserialize<libcore::RuleSet>(srsvec).items;
+	QFile* srslist = new QFile("srslist");
+    if (!srslist->exists()){
+        delete srslist;
+        srslist = new QFile(QApplication::applicationDirPath() + "/srslist");
+    }
+    if (srslist->exists() && srslist->open(QIODevice::ReadOnly)) {
+        QByteArray byteArray = srslist->readAll();
+        srslist->close();
+        delete srslist;
+        std::vector<uint8_t> srsvec;
+        srsvec.assign(byteArray.begin(), byteArray.end());
+        ruleSetMap = spb::pb::deserialize<libcore::RuleSet>(srsvec).items;
+    } else {
+        delete srslist;
+        auto getRuleSet = [=,this]
+        {
+            QString err;
+            for(int retry = 0; retry < 5; retry++) {
+                auto resp = NetworkRequestHelper::HttpGet(Configs::get_jsdelivr_link("https://raw.githubusercontent.com/throneproj/routeprofiles/rule-set/list"));
+                if (resp.error.isEmpty()) {
+                    std::vector<uint8_t> respvec;
+                    respvec.assign(resp.data.begin(), resp.data.end());
+                    auto reply = spb::pb::deserialize<libcore::RuleSet>(respvec);
+                    ruleSetMap = reply.items;
+                    QFile file;
+                    file.setFileName("srslist");
+                    if (file.open(QIODevice::ReadWrite | QIODevice::Truncate)){
+                        file.write(resp.data);
+                        file.close();
+                    }
+                    return;
+                }
+                else
+                    err = resp.error;
+                QThread::sleep(30);
+            }
+            MW_show_log(QObject::tr("Requesting rule-set list error: %1").arg(err));
+        };
+        runOnNewThread(getRuleSet);
+    }
 
     auto getRemoteRouteProfiles = [=,this]
     {
@@ -675,9 +712,9 @@ void MainWindow::closeEvent(QCloseEvent *event) {
     QPoint position = pos();
     int x = position.x();
     int y = position.y();
-    QSize size = size();
-    int width = size.width();
-    int height = size.height();
+    auto geometry = size();
+    int width = geometry.width();
+    int height = geometry.height();
     settings.setValue("x", x);
     settings.setValue("y", y);
     settings.setValue("width", width);
