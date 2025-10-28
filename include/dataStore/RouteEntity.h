@@ -129,7 +129,7 @@ namespace Configs {
 
         bool Save() override;
 
-        void FromJson(QJsonObject object);
+        void FromJson(QJsonObject object) override;
 
         QJsonArray get_route_rules(bool forView = false, std::map<int, QString> outboundMap = {});
 

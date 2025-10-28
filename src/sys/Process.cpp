@@ -4,8 +4,16 @@
 #include <QTimer>
 #include <QDir>
 #include <QApplication>
-
+#include <QCoreApplication>
 #include "include/ui/mainwindow.h"
+
+#undef ELEVATE_METHOD
+#ifdef Q_OS_LINUX
+#define ELEVATE_METHOD
+#endif
+#ifdef Q_OS_WIN
+#define ELEVATE_METHOD
+#endif
 
 namespace Configs_sys {
     CoreProcess::~CoreProcess() {
@@ -19,6 +27,8 @@ namespace Configs_sys {
     CoreProcess::CoreProcess(const QString &core_path, const QStringList &args) {
         program = core_path;
         arguments = args;
+        arguments << "-waitpid";
+        arguments << QString::number(QCoreApplication::applicationPid());
 
         connect(this, &QProcess::readyReadStandardOutput, this, [&]() {
             auto log = readAllStandardOutput();
@@ -62,10 +72,7 @@ namespace Configs_sys {
                 if (restarting) return;
 
                 MW_show_log("[Fatal] " + QObject::tr("Core exited, cleaning up..."));
-                runOnUiThread([=, this]
-                {
-                    GetMainWindow()->profile_stop(true, true);
-                }, true);
+                GetMainWindow()->profile_stop(true, true);
 
                 // Retry rate limit
                 if (coreRestartTimer.isValid()) {
@@ -103,4 +110,13 @@ namespace Configs_sys {
         restarting = false;
     }
 
+#ifdef ELEVATE_METHOD
+    void CoreProcess::elevateCoreProcessProgram(){
+        if (!coreProcessProgramElevated){
+            arguments.prepend("-admin");
+            coreProcessProgramElevated = true;
+        }
+    }
+#undef ELEVATE_METHOD
+#endif
 } // namespace Configs_sys

@@ -9,7 +9,7 @@
 #include <QFileInfo>
 namespace Configs {
     QString genTunName() {
-        auto tun_name = "throne-tun";
+        auto tun_name = "nekobox-tun";
 #ifdef Q_OS_MACOS
         tun_name = "";
 #endif
@@ -423,6 +423,7 @@ namespace Configs {
     QJsonObject BuildDnsObject(QString address, bool tunEnabled)
     {
         bool usingSystemdResolved = false;
+       // bool isDarwin = false;
 #ifdef Q_OS_LINUX
         usingSystemdResolved = ReadFileText("/etc/resolv.conf").contains("systemd-resolved");
 #endif

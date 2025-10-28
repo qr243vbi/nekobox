@@ -16,7 +16,7 @@ set(CPACK_DEBIAN_PACKAGE_SECTION "Libraries")
 set(CPACK_DEBIAN_PACKAGE_DEPENDS "libqt6x11extras6 (>= 6.2.0)")
 include(CPack)
 
-add_library(qhotkey 3rdparty/QHotkey/qhotkey.cpp)
+add_library(qhotkey STATIC 3rdparty/QHotkey/qhotkey.cpp)
 add_library(QHotkey::QHotkey ALIAS qhotkey)
 target_link_libraries(qhotkey PUBLIC Qt6::Core Qt6::Gui)
 
