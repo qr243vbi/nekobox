@@ -133,7 +133,7 @@
     </message>
     <message>
         <source>Always Start as Standard User</source>
-        <translation>Всегда запускать Throne от имени обычного пользователя</translation>
+        <translation>Всегда запускать NekoBox от имени обычного пользователя</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Do not attempt to start as Admin unless explicitly requested&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
