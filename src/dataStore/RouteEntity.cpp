@@ -785,6 +785,7 @@ namespace Configs {
     bool RoutingChain::add_simple_process_rule(const QString& content, const std::shared_ptr<RouteRule>& rule, ruleType type)
     {
         auto sp = content.split(":");
+        if (sp.size() < 2) return false;
         const QString& subType = sp[0];
         if (subType == "processPath" && type == simpleProcessPath)
         {
