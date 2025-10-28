@@ -788,7 +788,7 @@ namespace Configs {
         const QString& subType = sp[0];
         if (subType == "processPath" && type == simpleProcessPath)
         {
-            const QString& address = content.section(':', 0);
+            const QString& address = content.section(':', 1);
             if (!rule->process_path.contains(address)) rule->process_path.append(address);
             return true;
         } else if (subType == "processName" && type == simpleProcessName && sp.size() == 2)
