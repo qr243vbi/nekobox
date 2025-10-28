@@ -164,7 +164,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
                 core_process->start_profile_when_core_is_up = Configs::dataStore->remember_id;
             }
             // Setup
-            setup_grpc();
+            setup_rpc();
             core_process->Start();
         },
         DS_cores);

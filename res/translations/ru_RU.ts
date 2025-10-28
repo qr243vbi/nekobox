@@ -1993,8 +1993,8 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>Другой профиль останавливается...</translation>
     </message>
     <message>
-        <source>Try to start the config, but the core has not listened to the grpc port, so restart it...</source>
-        <translation>Попытка запустить конфигурацию — ядро не прослушивает порт gRPC, поэтому перезапустите его...</translation>
+        <source>Try to start the config, but the core has not listened to the RPC port, so restart it...</source>
+        <translation>Попытка запустить конфигурацию — ядро не прослушивает порт RPC, поэтому перезапустите его...</translation>
     </message>
     <message>
         <source>Stop return error</source>

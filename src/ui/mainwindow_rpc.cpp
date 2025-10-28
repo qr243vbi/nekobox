@@ -12,11 +12,11 @@
 #include <QDesktopServices>
 #include <QMessageBox>
 
-// grpc
+// rpc
 
 using namespace API;
 
-void MainWindow::setup_grpc() {
+void MainWindow::setup_rpc() {
     // Setup Connection
     defaultClient = new Client(
         [=](const QString &errStr) {
@@ -552,7 +552,7 @@ void MainWindow::profile_start(int _id) {
     if (!Configs::dataStore->core_running) {
         runOnThread(
             [=, this] {
-                MW_show_log(tr("Try to start the config, but the core has not listened to the grpc port, so restart it..."));
+                MW_show_log(tr("Try to start the config, but the core has not listened to the RPC port, so restart it..."));
                 core_process->start_profile_when_core_is_up = ent->id;
                 core_process->Restart();
             },

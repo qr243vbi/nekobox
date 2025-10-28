@@ -254,9 +254,9 @@ private:
 
     void loadShortcuts();
 
-    // grpc
+    // rpc
 
-    static void setup_grpc();
+    static void setup_rpc();
 
     void urltest_current_group(const QList<std::shared_ptr<Configs::ProxyEntity>>& profiles);
 
