@@ -206,6 +206,8 @@ private:
     // shortcuts
     QList<QShortcut*> hiddenMenuShortcuts;
 
+    std::map<std::string, std::string> ruleSetMap;
+
     QStringList remoteRouteProfiles;
     QMutex mu_remoteRouteProfiles;
 
