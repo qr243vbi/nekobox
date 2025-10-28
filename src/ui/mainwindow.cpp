@@ -101,8 +101,20 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     // restore size and geometry
     {
         QSettings settings("qr243vbi_NekoBox", "nekobox_gui");
-        restoreGeometry(settings.value("geometry").toByteArray());
-        restoreState(settings.value("windowState").toByteArray());
+        int width, height, x, y;
+        width = settings.value("width", -1).toInt();
+        height = settings.value("height", -1).toInt();
+        x = settings.value("X", -1).toInt();
+        y = settings.value("Y", -1).toInt();
+        if (width >= 0 && y >= 0){
+            resize(width, height);
+        }
+        if (x >= 0 && y >= 0){
+            move(x, y);
+        }
+        if (settings.value("maximized", false).toBool()){
+            showMaximized();
+        }
     }
 
     // init shortcuts
@@ -659,8 +671,17 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 
 void MainWindow::closeEvent(QCloseEvent *event) {
     QSettings settings("qr243vbi_NekoBox", "nekobox_gui");
-    settings.setValue("geometry", saveGeometry());
-    settings.setValue("windowState", saveState());
+    settings.setValue("maximized", isMaximized());
+    QPoint position = pos();
+    int x = position.x();
+    int y = position.y();
+    QSize size = size();
+    int width = size.width();
+    int height = size.height();
+    settings.setValue("x", x);
+    settings.setValue("y", y);
+    settings.setValue("width", width);
+    settings.setValue("height", height);
 
     if (tray->isVisible()) {
         hide();
