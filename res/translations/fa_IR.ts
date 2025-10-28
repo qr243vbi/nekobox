@@ -2081,7 +2081,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
 </translation>
     </message>
     <message>
-        <source>Please run Throne as admin</source>
+        <source>Please run nekobox as admin</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
