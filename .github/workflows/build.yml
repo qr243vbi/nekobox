@@ -215,7 +215,7 @@ jobs:
         shell: bash
         if: github.event.inputs.source != 'y'
         run: |
-          curl -fLso "srslist" "https://raw.githubusercontent.com/throneproj/routeprofiles/rule-set/list"
+          curl -fLso "srslist" "https://github.com/qr243vbi/ruleset/raw/refs/heads/rule-set/srslist"
           mkdir build
           
       - name: Windows - Generate MakeFile and Build

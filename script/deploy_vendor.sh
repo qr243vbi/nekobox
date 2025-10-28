@@ -7,7 +7,7 @@ pushd gen
   protoc -I . --go_out="$DEPLOYMENT/gen" --protorpc_out="$DEPLOYMENT/gen" libcore.proto
 popd
 
-curl -fLso "$DEPLOYMENT/srslist" "https://raw.githubusercontent.com/throneproj/routeprofiles/rule-set/list"
+curl -fLso "$DEPLOYMENT/srslist" "https://github.com/qr243vbi/ruleset/raw/refs/heads/rule-set/srslist"
 
 go mod tidy
 go mod vendor
