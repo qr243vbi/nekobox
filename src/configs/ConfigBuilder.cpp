@@ -41,7 +41,7 @@ namespace Configs {
 
     // Common
 
-    std::shared_ptr<BuildConfigResult> BuildConfig(const std::shared_ptr<ProxyEntity> &ent, const std::map<std::string, std::string>& ruleSetMap, bool forTest, bool forExport, int chainID) {
+    std::shared_ptr<BuildConfigResult> BuildConfig(const std::shared_ptr<ProxyEntity> &ent, bool forTest, bool forExport, int chainID) {
         auto result = std::make_shared<BuildConfigResult>();
         result->extraCoreData = std::make_shared<ExtraCoreData>();
         auto status = std::make_shared<BuildConfigStatus>();
@@ -60,7 +60,7 @@ namespace Configs {
             }
             result->coreConfig = QString2QJsonObject(customBean->config_simple);
         } else {
-            BuildConfigSingBox(status, ruleSetMap);
+            BuildConfigSingBox(status);
         }
 
         // apply custom config
@@ -116,7 +116,7 @@ namespace Configs {
     }
 
 
-    std::shared_ptr<BuildTestConfigResult> BuildTestConfig(const QList<std::shared_ptr<ProxyEntity>>& profiles, const std::map<std::string, std::string>& ruleSetMap) {
+    std::shared_ptr<BuildTestConfigResult> BuildTestConfig(const QList<std::shared_ptr<ProxyEntity>>& profiles) {
         auto results = std::make_shared<BuildTestConfigResult>();
 
         QJsonArray outboundArray = {
@@ -140,7 +140,7 @@ namespace Configs {
                 item->latency = -1;
                 continue;
             }
-            auto res = BuildConfig(item, ruleSetMap, true, false, ++index);
+            auto res = BuildConfig(item, true, false, ++index);
             if (!res->error.isEmpty()) {
                 results->error = res->error;
                 return results;
@@ -509,7 +509,7 @@ namespace Configs {
     }
 
 
-    void BuildConfigSingBox(const std::shared_ptr<BuildConfigStatus> &status, const std::map<std::string, std::string>& ruleSetMap) {
+    void BuildConfigSingBox(const std::shared_ptr<BuildConfigStatus> &status) {
         // Prefetch
         auto routeChain = profileManager->GetRouteChain(dataStore->routing->current_route_id);
         if (routeChain == nullptr) {
