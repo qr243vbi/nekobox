@@ -4,6 +4,7 @@
 #include "Utils.hpp"
 #include "ConfigItem.hpp"
 #include "DataStore.hpp"
+#include <srslist.h>
 
 // Switch core support
 

@@ -59,7 +59,7 @@ bool DialogManageRoutes::validate_dns_rules(const QString &rawString) {
     return true;
 }
 
-DialogManageRoutes::DialogManageRoutes(QWidget *parent, const std::map<std::string, std::string>& dataMap) : QDialog(parent), ui(new Ui::DialogManageRoutes) {
+DialogManageRoutes::DialogManageRoutes(QWidget *parent) : QDialog(parent), ui(new Ui::DialogManageRoutes) {
     ui->setupUi(this);
     auto profiles = Configs::profileManager->routes;
     for (const auto &item: profiles) {
@@ -141,7 +141,6 @@ DialogManageRoutes::DialogManageRoutes(QWidget *parent, const std::map<std::stri
         MessageBoxInfo("What is this?", Configs::Information::HijackInfo);
     });
 
-    ruleSetMap = dataMap;
     QStringList ruleItems = {"domain:", "suffix:", "regex:"};
     for (const auto& item : ruleSetMap) {
         ruleItems.append("ruleset:" + QString::fromStdString(item.first));
@@ -234,7 +233,7 @@ void DialogManageRoutes::accept() {
 }
 
 void DialogManageRoutes::on_new_route_clicked() {
-    routeChainWidget = new RouteItem(this, Configs::ProfileManager::NewRouteChain(), ruleSetMap);
+    routeChainWidget = new RouteItem(this, Configs::ProfileManager::NewRouteChain());
     routeChainWidget->setWindowModality(Qt::ApplicationModal);
     routeChainWidget->show();
     connect(routeChainWidget, &RouteItem::settingsChanged, this, [=,this](const std::shared_ptr<Configs::RoutingChain>& chain) {
@@ -280,7 +279,7 @@ void DialogManageRoutes::on_edit_route_clicked() {
     auto idx = ui->route_profiles->currentRow();
     if (idx < 0) return;
 
-    routeChainWidget = new RouteItem(this, chainList[idx], ruleSetMap);
+    routeChainWidget = new RouteItem(this, chainList[idx]);
     routeChainWidget->setWindowModality(Qt::ApplicationModal);
     routeChainWidget->show();
     connect(routeChainWidget, &RouteItem::settingsChanged, this, [=,this](const std::shared_ptr<Configs::RoutingChain>& chain) {
