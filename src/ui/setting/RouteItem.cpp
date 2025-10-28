@@ -47,7 +47,7 @@ QStringList get_all_outbounds() {
     return res;
 }
 
-RouteItem::RouteItem(QWidget *parent, const std::shared_ptr<Configs::RoutingChain>& routeChain, const std::map<std::string, std::string>& ruleSetMap)
+RouteItem::RouteItem(QWidget *parent, const std::shared_ptr<Configs::RoutingChain>& routeChain)
     : QDialog(parent), ui(new Ui::RouteItem) {
     ui->setupUi(this);
 

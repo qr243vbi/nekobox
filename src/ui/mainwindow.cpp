@@ -66,7 +66,6 @@
 #include <QSettings>
 #include "include/sys/macos/MacOS.h"
 
-
 void setAppIcon(Icon::TrayIconStatus, QSystemTrayIcon*);
 
 void UI_InitMainWindow() {
@@ -192,7 +191,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
                 core_process->start_profile_when_core_is_up = Configs::dataStore->remember_id;
             }
             // Setup
-            setup_grpc();
+            setup_rpc();
             core_process->Start();
         },
         DS_cores);
@@ -482,6 +481,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
             ui->menu_server->removeAction(ui->menu_stop_testing);
         }
     });
+
 
 	QFile* srslist = new QFile("srslist");
     if (!srslist->exists()){
@@ -995,7 +995,7 @@ void MainWindow::on_menu_manage_groups_triggered() {
 void MainWindow::on_menu_routing_settings_triggered() {
     if (dialog_is_using) return;
     dialog_is_using = true;
-    auto dialog = new DialogManageRoutes(this, ruleSetMap);
+    auto dialog = new DialogManageRoutes(this);
     connect(dialog, &QDialog::finished, this, [=,this] {
         dialog->deleteLater();
         dialog_is_using = false;
@@ -1894,7 +1894,7 @@ void MainWindow::on_menu_export_config_triggered() {
     auto ent = ents.first();
     if (ent->bean->DisplayCoreType() != software_core_name) return;
 
-    auto result = BuildConfig(ent, ruleSetMap, false, true);
+    auto result = BuildConfig(ent, false, true);
     QString config_core = QJsonObject2QString(result->coreConfig, true);
     QApplication::clipboard()->setText(config_core);
 
@@ -1906,11 +1906,11 @@ void MainWindow::on_menu_export_config_triggered() {
     msg.setDefaultButton(QMessageBox::Ok);
     msg.exec();
     if (msg.clickedButton() == button_1) {
-        result = BuildConfig(ent, ruleSetMap, false, false);
+        result = BuildConfig(ent, false, false);
         config_core = QJsonObject2QString(result->coreConfig, true);
         QApplication::clipboard()->setText(config_core);
     } else if (msg.clickedButton() == button_2) {
-        result = BuildConfig(ent, ruleSetMap, true, false);
+        result = BuildConfig(ent, true, false);
         config_core = QJsonObject2QString(result->coreConfig, true);
         QApplication::clipboard()->setText(config_core);
     }

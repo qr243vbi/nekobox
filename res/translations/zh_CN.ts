@@ -1991,8 +1991,8 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>另一个配置档正在停止...</translation>
     </message>
     <message>
-        <source>Try to start the config, but the core has not listened to the grpc port, so restart it...</source>
-        <translation>尝试启动该配置，但核心尚未监听到 grpc 端口，因此请重启它...</translation>
+        <source>Try to start the config, but the core has not listened to the RPC port, so restart it...</source>
+        <translation>尝试启动该配置，但核心尚未监听到 RPC 端口，因此请重启它...</translation>
     </message>
     <message>
         <source>Stop return error</source>

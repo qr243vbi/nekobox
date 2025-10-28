@@ -12,11 +12,11 @@
 #include <QDesktopServices>
 #include <QMessageBox>
 
-// grpc
+// rpc
 
 using namespace API;
 
-void MainWindow::setup_grpc() {
+void MainWindow::setup_rpc() {
     // Setup Connection
     defaultClient = new Client(
         [=](const QString &errStr) {
@@ -142,7 +142,7 @@ void MainWindow::urltest_current_group(const QList<std::shared_ptr<Configs::Prox
     }
 
     runOnNewThread([this, profiles]() {
-        auto buildObject = Configs::BuildTestConfig(profiles, ruleSetMap);
+        auto buildObject = Configs::BuildTestConfig(profiles);
         if (!buildObject->error.isEmpty()) {
             MW_show_log(tr("Failed to build test config: ") + buildObject->error);
             speedtestRunning.unlock();
@@ -237,7 +237,7 @@ void MainWindow::speedtest_current_group(const QList<std::shared_ptr<Configs::Pr
     runOnNewThread([this, profiles, testCurrent]() {
         if (!testCurrent)
         {
-            auto buildObject = Configs::BuildTestConfig(profiles, ruleSetMap);
+            auto buildObject = Configs::BuildTestConfig(profiles);
             if (!buildObject->error.isEmpty()) {
                 MW_show_log(tr("Failed to build test config: ") + buildObject->error);
                 speedtestRunning.unlock();
@@ -466,7 +466,7 @@ void MainWindow::profile_start(int _id) {
     auto group = Configs::profileManager->GetGroup(ent->gid);
     if (group == nullptr || group->archive) return;
 
-    auto result = BuildConfig(ent, ruleSetMap, false, false);
+    auto result = BuildConfig(ent, false, false);
     if (!result->error.isEmpty()) {
         MessageBoxWarning(tr("BuildConfig return error"), result->error);
         return;
@@ -552,7 +552,7 @@ void MainWindow::profile_start(int _id) {
     if (!Configs::dataStore->core_running) {
         runOnThread(
             [=, this] {
-                MW_show_log(tr("Try to start the config, but the core has not listened to the grpc port, so restart it..."));
+                MW_show_log(tr("Try to start the config, but the core has not listened to the RPC port, so restart it..."));
                 core_process->start_profile_when_core_is_up = ent->id;
                 core_process->Restart();
             },
