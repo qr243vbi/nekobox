@@ -79,6 +79,7 @@ func Updater() {
 	os.RemoveAll("./nekobox_update")
 	os.RemoveAll("./nekobox.zip")
 	os.RemoveAll("./nekobox.tar.gz")
+	os.RemoveAll("./nekobox.tgz")
 }
 
 func Exist(path string) bool {
