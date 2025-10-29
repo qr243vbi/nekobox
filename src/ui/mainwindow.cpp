@@ -1905,6 +1905,12 @@ void MainWindow::on_menu_copy_links_nkr_triggered() {
     show_log_impl(tr("Copied %1 item(s)").arg(links.length()));
 }
 
+std::shared_ptr<Configs::BuildConfigResult> MainWindow::BuildConfig(const std::shared_ptr<ProxyEntity> &ent, 
+    bool forTest, bool forExport, int chainID = 0){
+        BuildConfig(ent, ruleSetMap forTest, forExport, chainID);
+};
+
+
 void MainWindow::on_menu_export_config_triggered() {
     auto ents = get_now_selected_list();
     if (ents.count() != 1) return;
