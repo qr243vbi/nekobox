@@ -66,7 +66,7 @@ func Updater() {
 	removeAll("./*.dmp")
 	os.RemoveAll("./check_new_release.js")
 	os.RemoveAll("./version.txt")
-	os.RemoveAll("./srslist")
+	os.RemoveAll("./srslist.json")
 	os.RemoveAll("./nekobox_update/nekobox/public")
 
 	// update move

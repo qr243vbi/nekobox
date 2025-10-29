@@ -18,7 +18,7 @@ rm -rf $DEST
 mkdir -p $DEST
 
 #### copy srslist ####
-cp srslist $DEST/srslist
+cp srslist.json $DEST/srslist.json
 
 #### copy binary ####
 cp $BUILD/nekobox $DEST
