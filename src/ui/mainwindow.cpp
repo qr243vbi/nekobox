@@ -1907,7 +1907,7 @@ void MainWindow::on_menu_copy_links_nkr_triggered() {
 
 std::shared_ptr<Configs::BuildConfigResult> MainWindow::BuildConfig(const std::shared_ptr<ProxyEntity> &ent, 
     bool forTest, bool forExport, int chainID = 0){
-        BuildConfig(ent, ruleSetMap forTest, forExport, chainID);
+        return BuildConfig(ent, ruleSetMap, forTest, forExport, chainID);
 };
 
 
