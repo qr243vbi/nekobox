@@ -12,6 +12,7 @@
 #include <QQueue>
 #include <QMutex>
 #include <QWaitCondition>
+#include <QJsonDocument>
 
 #include "include/ui/setting/ThemeManager.hpp"
 #include "include/ui/setting/Icon.hpp"
