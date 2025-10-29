@@ -28,6 +28,7 @@
 #include "group/GroupSort.hpp"
 
 #include "include/dataStore/ProxyEntity.hpp"
+#include "include/configs/ConfigBuilder.hpp"
 #include "include/global/GuiUtils.hpp"
 #include "ui_mainwindow.h"
 
