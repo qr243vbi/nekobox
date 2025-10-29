@@ -242,7 +242,7 @@ private:
 
     void dropEvent(QDropEvent* event) override;
 
-    std::shared_ptr<Configs::BuildConfigResult> BuildConfig(const std::shared_ptr<ProxyEntity> &ent, bool forTest, bool forExport, int chainID = 0);
+    std::shared_ptr<Configs::BuildConfigResult> BuildConfig(const std::shared_ptr<Configs::ProxyEntity> &ent, bool forTest, bool forExport, int chainID = 0);
     //
 
     void HotkeyEvent(const QString &key);
