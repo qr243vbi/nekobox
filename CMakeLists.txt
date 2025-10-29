@@ -221,6 +221,16 @@ set(PROJECT_SOURCES
         include/sys/windows/eventHandler.h
         src/dataStore/Group.cpp
         src/dataStore/ProxyEntity.cpp
+        include/configs/baseConfig.h
+        include/configs/common/DialFields.h
+        include/configs/common/TLS.h
+        include/configs/common/multiplex.h
+        include/configs/common/transport.h
+        include/configs/common/Outbound.h
+        include/configs/outbounds/socks.h
+        include/configs/outbounds/http.h
+        include/configs/outbounds/shadowsocks.h
+        include/configs/outbounds/vmess.h
 )
 
 if (NOT APPLE AND Qt6_VERSION VERSION_GREATER_EQUAL 6.9.0)
