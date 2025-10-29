@@ -1905,19 +1905,13 @@ void MainWindow::on_menu_copy_links_nkr_triggered() {
     show_log_impl(tr("Copied %1 item(s)").arg(links.length()));
 }
 
-std::shared_ptr<Configs::BuildConfigResult> MainWindow::BuildConfig(const std::shared_ptr<Configs::ProxyEntity> &ent, 
-    bool forTest, bool forExport, int chainID = 0){
-        return BuildConfig(ent, ruleSetMap, forTest, forExport, chainID);
-};
-
-
 void MainWindow::on_menu_export_config_triggered() {
     auto ents = get_now_selected_list();
     if (ents.count() != 1) return;
     auto ent = ents.first();
     if (ent->bean->DisplayCoreType() != software_core_name) return;
 
-    auto result = BuildConfig(ent, false, true);
+    auto result = BuildConfig(ent, ruleSetMap, false, true);
     QString config_core = QJsonObject2QString(result->coreConfig, true);
     QApplication::clipboard()->setText(config_core);
 
@@ -1929,11 +1923,11 @@ void MainWindow::on_menu_export_config_triggered() {
     msg.setDefaultButton(QMessageBox::Ok);
     msg.exec();
     if (msg.clickedButton() == button_1) {
-        result = BuildConfig(ent, false, false);
+        result = BuildConfig(ent, ruleSetMap, false, false);
         config_core = QJsonObject2QString(result->coreConfig, true);
         QApplication::clipboard()->setText(config_core);
     } else if (msg.clickedButton() == button_2) {
-        result = BuildConfig(ent, true, false);
+        result = BuildConfig(ent, ruleSetMap, true, false);
         config_core = QJsonObject2QString(result->coreConfig, true);
         QApplication::clipboard()->setText(config_core);
     }
