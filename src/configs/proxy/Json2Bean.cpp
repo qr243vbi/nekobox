@@ -151,6 +151,11 @@ namespace Configs
         } else if (stream->network == "grpc")
         {
             stream->path = obj["transport"].toObject()["service_name"].toString();
+        } else if (stream->network == "xhttp")
+        {
+            stream->path = obj["transport"].toObject()["path"].toString();
+            stream->host = obj["transport"].toObject()["host"].isArray() ? QJsonArray2QListString(obj["transport"].toObject()["host"].toArray()).join(",") : obj["transport"].toObject()["host"].toString();
+            stream->xhttp_mode = obj["transport"].toObject()["mode"].toString();
         }
         return true;
     }
@@ -192,6 +197,11 @@ namespace Configs
         } else if (stream->network == "grpc")
         {
             stream->path = obj["transport"].toObject()["service_name"].toString();
+        } else if (stream->network == "xhttp")
+        {
+            stream->path = obj["transport"].toObject()["path"].toString();
+            stream->host = obj["transport"].toObject()["host"].isArray() ? QJsonArray2QListString(obj["transport"].toObject()["host"].toArray()).join(",") : obj["transport"].toObject()["host"].toString();
+            stream->xhttp_mode = obj["transport"].toObject()["mode"].toString();
         }
         return true;
     }
