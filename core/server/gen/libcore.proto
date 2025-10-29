@@ -132,3 +132,8 @@ message QueryCountryTestResponse {
 message QueryURLTestResponse {
   repeated URLTestResp results = 1;
 }
+
+message RuleSet{
+  map<string, string> items = 1;
+}
+

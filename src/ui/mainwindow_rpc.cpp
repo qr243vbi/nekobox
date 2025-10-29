@@ -570,10 +570,7 @@ void MainWindow::profile_start(int _id) {
     runOnNewThread([=, this] {
         // stop current running
         if (running != nullptr) {
-            runOnUiThread([=, this]
-            {
-                profile_stop(false, true, true);
-            }, true);
+            profile_stop(false, true, true);
         }
         // do start
         MW_show_log(">>>>>>>> " + tr("Starting profile %1").arg(ent->bean->DisplayTypeAndName()));

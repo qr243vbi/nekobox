@@ -154,15 +154,23 @@ QJsonObject QMapString2QJsonObject(const QMap<QString,QString> &mp) {
 
 QByteArray ReadFile(const QString &path) {
     QFile file(path);
-    file.open(QFile::ReadOnly);
-    return file.readAll();
+    QByteArray array;
+    if (file.open(QFile::ReadOnly)){
+        array = file.readAll();
+    }
+    file.close();
+    return array;
 }
 
 QString ReadFileText(const QString &path) {
     QFile file(path);
-    file.open(QFile::ReadOnly | QFile::Text);
-    QTextStream stream(&file);
-    return stream.readAll();
+    QString str;
+    if (file.open(QFile::ReadOnly | QFile::Text)){
+        QTextStream stream(&file);
+        str = stream.readAll();
+        file.close();
+    }
+    return str;
 }
 
 int MkPort() {
@@ -249,84 +257,38 @@ void ActivateWindow(QWidget *w) {
     w->activateWindow();
 }
 
-void runOnUiThread(const std::function<void()> &callback, bool wait) {
+void runOnUiThread(const std::function<void()> &callback) {
     // any thread
     auto *timer = new QTimer();
     auto thread = mainwindow->thread();
     timer->moveToThread(thread);
     timer->setSingleShot(true);
-
-    QEventLoop loop;
-    QObject::connect(timer, &QTimer::timeout, [=, &loop]() {
+    QObject::connect(timer, &QTimer::timeout, [=]() {
         // main thread
         callback();
         timer->deleteLater();
-
-        if (wait)
-        {
-            QMetaObject::invokeMethod(&loop, "quit", Qt::QueuedConnection);
-        }
     });
     QMetaObject::invokeMethod(timer, "start", Qt::QueuedConnection, Q_ARG(int, 0));
-
-    if (wait && QThread::currentThread() != thread) {
-        loop.exec();
-    }
 }
 
-void runOnNewThread(const std::function<void()> &callback, bool wait) {
-    auto *timer = new QTimer();
-    auto thread = new QThread();
-    timer->moveToThread(thread);
-    timer->setSingleShot(true);
-
-    thread->start();
-    QObject::connect(thread, &QThread::finished, thread, &QObject::deleteLater);
-
-    QEventLoop loop;
-    QObject::connect(timer, &QTimer::timeout, [=, &loop]() {
-        callback();
-        timer->deleteLater();
-        QMetaObject::invokeMethod(thread, "quit", Qt::QueuedConnection);
-
-        if (wait)
-        {
-            QMetaObject::invokeMethod(&loop, "quit", Qt::QueuedConnection);
-        }
-    });
-    QMetaObject::invokeMethod(timer, "start", Qt::QueuedConnection, Q_ARG(int, 0));
-
-    if (wait && QThread::currentThread() != thread) {
-        loop.exec();
-    }
+void runOnNewThread(const std::function<void()> &callback) {
+    createQThread(callback)->start();
 }
 
-void runOnThread(const std::function<void()> &callback, QObject *parent, bool wait) {
+void runOnThread(const std::function<void()> &callback, QObject *parent) {
     auto *timer = new QTimer();
     auto thread = dynamic_cast<QThread *>(parent);
     if (thread == nullptr) {
         timer->moveToThread(parent->thread());
-        thread = parent->thread();
     } else {
         timer->moveToThread(thread);
     }
     timer->setSingleShot(true);
-
-    QEventLoop loop;
-    QObject::connect(timer, &QTimer::timeout, [=, &loop]() {
+    QObject::connect(timer, &QTimer::timeout, [=]() {
         callback();
         timer->deleteLater();
-
-        if (wait)
-        {
-            QMetaObject::invokeMethod(&loop, "quit", Qt::QueuedConnection);
-        }
     });
     QMetaObject::invokeMethod(timer, "start", Qt::QueuedConnection, Q_ARG(int, 0));
-
-    if (wait && QThread::currentThread() != thread) {
-        loop.exec();
-    }
 }
 
 void setTimeout(const std::function<void()> &callback, QObject *obj, int timeout) {
