@@ -27,6 +27,9 @@ namespace Configs {
         // ws early data
         QString ws_early_data_name = "";
         int ws_early_data_length = 0;
+        // xhttp
+        QString xhttp_mode = "auto";
+        QString xhttp_extra = "";
         // reality
         QString reality_pbk = "";
         QString reality_sid = "";
@@ -46,6 +49,8 @@ namespace Configs {
             _add(new configItem("method", &method, itemType::string));
             _add(new configItem("ed_name", &ws_early_data_name, itemType::string));
             _add(new configItem("ed_len", &ws_early_data_length, itemType::integer));
+            _add(new configItem("xhttp_mode", &xhttp_mode, itemType::string));
+            _add(new configItem("xhttp_extra", &xhttp_extra, itemType::string));
             _add(new configItem("utls", &utlsFingerprint, itemType::string));
             _add(new configItem("tls_frag", &enable_tls_fragment, itemType::boolean));
             _add(new configItem("tls_frag_fall_delay", &tls_fragment_fallback_delay, itemType::string));
