@@ -227,6 +227,13 @@ set(PROJECT_SOURCES
         include/configs/common/multiplex.h
         include/configs/common/transport.h
         include/configs/common/Outbound.h
+        
+        # common impl
+        src/configs/common/DialFields.cpp
+        src/configs/common/TLS.cpp
+        src/configs/common/multiplex.cpp
+        src/configs/common/transport.cpp
+        src/configs/common/Outbound.cpp
         include/configs/outbounds/socks.h
         include/configs/outbounds/http.h
         include/configs/outbounds/shadowsocks.h
@@ -238,6 +245,24 @@ set(PROJECT_SOURCES
         include/configs/outbounds/hysteria2.h
         include/configs/outbounds/anyTLS.h
         include/configs/outbounds/ssh.h
+        
+        # outbounds impl
+        src/configs/outbounds/anyTLS.cpp
+        src/configs/outbounds/http.cpp
+        src/configs/outbounds/hysteria.cpp
+        src/configs/outbounds/hysteria2.cpp
+        src/configs/outbounds/shadowsocks.cpp
+        src/configs/outbounds/socks.cpp
+        src/configs/outbounds/ssh.cpp
+        src/configs/outbounds/tailscale.cpp
+        src/configs/outbounds/trojan.cpp
+        src/configs/outbounds/tuic.cpp
+        src/configs/outbounds/vless.cpp
+        src/configs/outbounds/vmess.cpp
+        src/configs/outbounds/wireguard.cpp
+        include/configs/generate.h
+        include/configs/common/utils.h
+        src/configs/common/utils.cpp
 )
 
 if (NOT APPLE AND Qt6_VERSION VERSION_GREATER_EQUAL 6.9.0)

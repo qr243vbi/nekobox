@@ -36,5 +36,12 @@ namespace Configs
             _add(new configItem("early_data_header_name", &early_data_header_name, string));
             _add(new configItem("service_name", &service_name, string));
         }
+
+        // baseConfig overrides
+        bool ParseFromLink(const QString& link) override;
+        bool ParseFromJson(const QJsonObject& object) override;
+        QString ExportToLink() override;
+        QJsonObject ExportToJson() override;
+        BuildResult Build() override;
     };
 }
