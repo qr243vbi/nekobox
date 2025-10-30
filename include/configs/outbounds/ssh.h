@@ -29,5 +29,19 @@ namespace Configs
             _add(new configItem("host_key_algorithms", &host_key_algorithms, stringList));
             _add(new configItem("client_version", &client_version, string));
         }
+
+        // baseConfig overrides
+        bool ParseFromLink(const QString& link) override;
+        bool ParseFromJson(const QJsonObject& object) override;
+        QString ExportToLink() override;
+        QJsonObject ExportToJson() override;
+        BuildResult Build() override;
+
+        // outboundMeta overrides
+        QString DisplayAddress() override;
+        QString DisplayName() override;
+        QString DisplayType() override;
+        QString DisplayTypeAndName() override;
+        bool IsEndpoint() override;
     };
 }
