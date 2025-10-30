@@ -1,4 +1,5 @@
 #include "include/ui/setting/RouteItem.h"
+#include "include/ui/setting/dialog_manage_routes.h"
 #include "include/dataStore/RouteEntity.h"
 #include "include/dataStore/Database.hpp"
 #include "include/api/RPC.h"
@@ -47,9 +48,10 @@ QStringList get_all_outbounds() {
     return res;
 }
 
-RouteItem::RouteItem(QWidget *parent, const std::shared_ptr<Configs::RoutingChain>& routeChain)
+RouteItem::RouteItem(DialogManageRoutes *parent, const std::shared_ptr<Configs::RoutingChain>& routeChain)
     : QDialog(parent), ui(new Ui::RouteItem) {
     ui->setupUi(this);
+    this->parent = parent;
 
     // make a copy
     chain = std::make_shared<Configs::RoutingChain>(*routeChain);
@@ -64,7 +66,7 @@ RouteItem::RouteItem(QWidget *parent, const std::shared_ptr<Configs::RoutingChai
     }
 
     // setup rule set helper
-    for (const auto& item : ruleSetMap) {
+    for (const auto& item : parent->parent->ruleSetMap) {
         geo_items.append(QString::fromStdString(item.first));
     }
     rule_set_editor = new AutoCompleteTextEdit("", geo_items, this);
@@ -123,7 +125,7 @@ RouteItem::RouteItem(QWidget *parent, const std::shared_ptr<Configs::RoutingChai
 
     // simple rules setup
     QStringList ruleItems = {"domain:", "suffix:", "regex:", "keyword:", "ip:", "processName:", "processPath:", "ruleset:"};
-    for (const auto& item : ruleSetMap) {
+    for (const auto& item : parent->parent->ruleSetMap) {
         ruleItems.append("ruleset:" + QString::fromStdString(item.first));
     }
     simpleDirect = new AutoCompleteTextEdit("", ruleItems, this);
