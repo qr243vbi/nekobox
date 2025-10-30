@@ -38,7 +38,7 @@ mv nekobox.pdb $DEST
 fi
 
 #### copy srslist ####
-cp srslist $DEST/srslist
+cp srslist.json $DEST/srslist.json
 
 #### copy exe ####
 cp $CURDIR/check_new_release.js $DEST
