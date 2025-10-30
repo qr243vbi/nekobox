@@ -298,16 +298,6 @@ func (s *server) ListConnections(in *gen.EmptyReq, out *gen.ListConnectionsResp)
 	return nil
 }
 
-func (s *server) IsPrivileged(in *gen.EmptyReq, out *gen.IsPrivilegedResponse) error {
-	if runtime.GOOS == "windows" {
-		out.HasPrivilege = To(false)
-		return nil
-	}
-
-	out.HasPrivilege = To(os.Geteuid() == 0)
-	return nil
-}
-
 func (s *server) SpeedTest(in *gen.SpeedTestRequest, out *gen.SpeedTestResponse) error {
 	if !*in.TestDownload && !*in.TestUpload && !*in.SimpleDownload && !*in.OnlyCountry {
 		return errors.New("cannot run empty test")

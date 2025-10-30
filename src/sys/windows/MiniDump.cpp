@@ -12,6 +12,8 @@
 #include <QDateTime>
 #include <QMessageBox>
 
+#include <include/js/version.h>
+
 typedef BOOL(WINAPI *MINIDUMPWRITEDUMP)(
     HANDLE hProcess,
     DWORD dwPid,

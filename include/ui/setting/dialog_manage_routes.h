@@ -3,6 +3,7 @@
 #include <QDialog>
 #include <QMenu>
 
+#include "include/ui/mainwindow.h"
 #include "3rdparty/qv2ray/v2/ui/QvAutoCompleteTextEdit.hpp"
 #include "include/global/Configs.hpp"
 #include "include/ui/setting/RouteItem.h"
@@ -18,9 +19,11 @@ class DialogManageRoutes : public QDialog {
     Q_OBJECT
 
 public:
-    explicit DialogManageRoutes(QWidget *parent = nullptr);
+    explicit DialogManageRoutes(MainWindow *parent);
 
     ~DialogManageRoutes() override;
+    
+    MainWindow * parent;
 
 private:
     Ui::DialogManageRoutes *ui;
