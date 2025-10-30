@@ -1,4 +1,4 @@
-name: Throne build matrix
+name: nekobox build matrix
 on:
   workflow_dispatch:
     inputs:
@@ -8,6 +8,15 @@ on:
       publish:
         description: "r for normal release, p for prerelease, leave empty to not publish anything"
         required: false
+      text:
+        description: "Release Description"
+        required: false
+      source:
+        description: "skip building binaries, distribute only unified source"
+        required: false
+      updater:
+        description: "ship binaries without updater"
+        required: false
 jobs:
   build-go:
     permissions:
@@ -15,75 +24,86 @@ jobs:
     strategy:
       matrix:
         include:
-          - cross_os: windows
-            cross_arch: amd64
-            go_version: "1.25.3"
-          - cross_os: windows
-            cross_arch: arm64
-            go_version: "1.25.3"
+          - cross_os: public
+            cross_arch: public
+            go_version: "1.25.0"
           - cross_os: linux
             cross_arch: amd64
-            go_version: "1.25.3"
+            go_version: "1.25.0"
           - cross_os: linux
             cross_arch: arm64
-            go_version: "1.25.3"
+            go_version: "1.25.0"
           - cross_os: darwin
             cross_arch: amd64
-            go_version: "1.24.9"
+            go_version: "1.25.0"
           - cross_os: darwin
             cross_arch: arm64
-            go_version: "1.25.3"
-          - cross_os: windowslegacy
+            go_version: "1.25.0"
+          - cross_os: windows
             cross_arch: amd64
-            go_version: "1.25.3"
+            go_version: "1.25.0"
+          - cross_os: windows
+            cross_arch: arm64
+            go_version: "1.25.0"
           - cross_os: windowslegacy
             cross_arch: 386
-            go_version: "1.25.3"
+            go_version: "1.25.0"
       fail-fast: false
     runs-on: ubuntu-latest
     steps:
       - name: Checking out sources
+        if: matrix.cross_os == 'public' || github.event.inputs.source != 'y'
         uses: actions/checkout@v4.2.2
       - name: Cache Common Download
         id: cache-common
+        if: matrix.cross_os == 'public' || github.event.inputs.source != 'y'
         uses: actions/cache@v4.2.3
         with:
           path: artifacts.tgz
           key: CommonCache-${{ matrix.cross_os }}-${{ matrix.cross_arch }}-${{ hashFiles('script/build_go.sh', 'core/*') }}-${{ matrix.go_version }}
       - name: Install Golang
-        if: steps.cache-common.outputs.cache-hit != 'true'
+        if: ( matrix.cross_os == 'public' || github.event.inputs.source != 'y' ) && steps.cache-common.outputs.cache-hit != 'true'
         uses: actions/setup-go@v5.5.0
         with:
           go-version: ${{ matrix.go_version }}
           cache-dependency-path: |
             core/server/go.sum
+            core/updater/go.sum
       - name: Install Golang For Legacy Windows
-        if: matrix.cross_os == 'windowslegacy'
+        if: matrix.cross_os == 'windowslegacy' && github.event.inputs.source != 'y'
         run: |
           curl -L -o go.7z https://github.com/throneproj/env_windows_legacy/releases/download/latest/go.7z
           7z x go.7z
       - name: Install Protoc
+        if: matrix.cross_os == 'public' || github.event.inputs.source != 'y'
         run: |
           curl -LO "https://github.com/protocolbuffers/protobuf/releases/download/v31.1/protoc-31.1-linux-x86_64.zip"
           unzip "protoc-31.1-linux-x86_64.zip" -d protoc_install
           cp ./protoc_install/bin/protoc /usr/local/bin
           protoc --version
       - name: Installing protoc-gen-go
+        if: matrix.cross_os == 'public' || github.event.inputs.source != 'y'
         run: |
           go install github.com/golang/protobuf/protoc-gen-go@latest
           go install github.com/chai2010/protorpc/protoc-gen-protorpc@latest
       - name: Build golang parts
-        if: steps.cache-common.outputs.cache-hit != 'true'
+        if: steps.cache-common.outputs.cache-hit != 'true' && matrix.cross_os != 'public' && github.event.inputs.source != 'y'
         shell: bash
         run: |
-          GOOS=${{ matrix.cross_os }} GOARCH=${{ matrix.cross_arch }} ./script/build_go.sh
+          GO_MOD_TIDY=yes SKIP_UPDATER=${{ github.event.inputs.updater }} GOOS=${{ matrix.cross_os }} GOARCH=${{ matrix.cross_arch }} ./script/build_go.sh
+      - name: Build vendor
+        if: steps.cache-common.outputs.cache-hit != 'true' && matrix.cross_os == 'public'
+        shell: bash
+        run: |
+          bash -x ./script/deploy_vendor.sh
       - name: Tar files
-        if: steps.cache-common.outputs.cache-hit != 'true'
+        if: ( matrix.cross_os == 'public' || github.event.inputs.source != 'y' ) && steps.cache-common.outputs.cache-hit != 'true'
         run: tar czvf artifacts.tgz ./deployment
       - name: Uploading Artifact
+        if: matrix.cross_os == 'public' || github.event.inputs.source != 'y'
         uses: actions/upload-artifact@v4.6.2
         with:
-          name: Throne-${{ github.sha }}-Common-${{ matrix.cross_os }}-${{ matrix.cross_arch }}
+          name: nekobox-${{ github.sha }}-Common-${{ matrix.cross_os }}-${{ matrix.cross_arch }}
           path: artifacts.tgz
   build-cpp:
     permissions:
@@ -93,34 +113,25 @@ jobs:
     strategy:
       matrix:
         include:
-          - platform: windows-latest
+          - platform: ubuntu-24.04
             qt_version: "6.10.0"
-            target: x86_64
-          - platform: windows-11-arm
-            qt_version: "6.10.0"
-            target: arm64
-          - platform: ubuntu-22.04
-            qt_version: "6.10.0"
-            target: amd64
-          - platform: ubuntu-22.04
-            qt_version: "6.2.0"
             target: amd64
           - platform: ubuntu-24.04-arm
             qt_version: "6.10.0"
             target: arm64
           - platform: macos-latest
-            qt_version: "6.10.0"
+            qt_version: "6.4.3"
             target: x86_64
           - platform: macos-latest
             qt_version: "6.10.0"
             target: arm64
-          - platform: macos-latest
-            qt_version: "6.4.3"
+          - platform: windows-2022
+            qt_version: "6.10.0"
             target: x86_64
-          - platform: windows-latest
-            qt_version: "6.2.12"
-            target: x86_64
-          - platform: windows-latest
+          - platform: windows-11-arm
+            qt_version: "6.10.0"
+            target: arm64
+          - platform: windows-2022
             qt_version: "6.2.12"
             target: i686
       fail-fast: false
@@ -130,72 +141,110 @@ jobs:
       INPUT_VERSION: ${{ github.event.inputs.tag }}
     steps:
       - name: Checking out sources
+        if: github.event.inputs.source != 'y'
         uses: actions/checkout@v4.2.2
         with:
           submodules: "recursive"
+
+      - name: Install Nsis
+        if: contains( matrix.platform, 'windows-latest' ) && github.event.inputs.source != 'y'
+        uses: ConorMacBride/install-package@v1
+        with:
+          choco: nsis
+
       - name: Install mingw
-        if: matrix.platform == 'windows-latest'
+        if: matrix.qt_version == '6.2.12' && contains( matrix.platform, 'windows' ) && github.event.inputs.source != 'y'
         uses: bwoodsend/setup-winlibs-action@v1.15
         with:
           architecture: ${{ matrix.target }}
       - name: Install MSVC compiler
-        if: matrix.platform == 'windows-11-arm'
+        if: matrix.target == 'x86_64' && contains( matrix.platform, 'windows' ) && github.event.inputs.source != 'y'
+        uses: ilammy/msvc-dev-cmd@v1
+        with:
+          arch: x64
+ #     - name: Install MSVC compiler
+ #       if: matrix.target == 'i686' && contains( matrix.platform, 'windows' ) && github.event.inputs.source != 'y'
+ #       uses: ilammy/msvc-dev-cmd@v1
+ #       with:
+ #         arch: x86
+      - name: Install MSVC compiler
+        if: matrix.target == 'arm64' && contains( matrix.platform, 'windows' ) && github.event.inputs.source != 'y'
         uses: ilammy/msvc-dev-cmd@v1
         with:
           arch: arm64
+     #   uses: TheMrMilchmann/setup-msvc-dev@v4
+     #   with:
+     #     arch: x64
+
+     # - name: Install MSVC compiler
+    #    if: matrix.qt_version != '6.2.12' && matrix.target == 'arm64' && (matrix.platform == 'windows-latest' || matrix.platform == 'windows-11-arm') && github.event.inputs.source != 'y'
+   #     uses: TheMrMilchmann/setup-msvc-dev@v4
+  #      with:
+ #         arch: x64_arm
+
+      - name: Install ninja-build tool
+        if: contains( matrix.platform, 'windows' ) && github.event.inputs.source != 'y' #&& matrix.qt_version != '6.2.12'
+        uses: seanmiddleditch/gha-setup-ninja@v6
       - name: Download Artifacts
+        if: github.event.inputs.source != 'y'
         uses: actions/download-artifact@v4.3.0
         with:
           path: download-artifact
       # ========================================================================================================= Qt Install
-      - name: Qt static Cache
-        id: cache-static-Qt
-        if: matrix.platform == 'windows-latest' && matrix.qt_version != '6.2.12'
-        uses: actions/cache@v4.2.3
-        with:
-          path: qt6/build
-          key: QtStaticCache-${{ matrix.platform }}-${{ matrix.target }}-Qt${{ matrix.qt_version }}-${{ hashFiles('script/build_qt_static_windows.bat') }}
-      - name: OpenSSL Cache
-        id: cache-openssl
-        if: matrix.platform == 'windows-latest' && matrix.qt_version != '6.2.12'
-        uses: actions/cache@v4.2.3
-        with:
-          path: C:/vcpkg/installed/x64-mingw-static
-          key: OpenSSLCache-${{ matrix.platform }}-${{ matrix.target }}
-      - name: Install OpenSSL (Windows)
-        if: matrix.platform == 'windows-latest' && steps.cache-openssl.outputs.cache-hit != 'true' && matrix.qt_version != '6.2.12'
-        shell: powershell
-        run: |
-          echo "VCPKG_ROOT=$env:VCPKG_INSTALLATION_ROOT" | Out-File -FilePath $env:GITHUB_ENV -Append
-          vcpkg install openssl:x64-mingw-static
-      - name: Install Qt Windows
-        shell: powershell
-        if: matrix.platform == 'windows-latest' && steps.cache-static-Qt.outputs.cache-hit != 'true' && matrix.qt_version != '6.2.12'
-        run: ./script/build_qt_static_windows.bat ${{ matrix.qt_version }}
+ #     - name: Qt static Cache
+ #       id: cache-static-Qt
+ #       if: matrix.platform == 'windows-latest' && matrix.qt_version != '6.2.12' && github.event.inputs.source != 'y'
+ #       uses: actions/cache@v4.2.3
+ #       with:
+ #         path: qt6/build
+ #         key: QtStaticCache-${{ matrix.platform }}-${{ matrix.target }}-Qt${{ matrix.qt_version }}
+ #     - name: Install Qt Windows
+ #       shell: powershell
+ #       if: matrix.platform == 'windows-latest' && steps.cache-static-Qt.outputs.cache-hit != 'true' && matrix.qt_version != 6.2.12' && github.event.inputs.source != 'y'
+ #       run: ./script/build_qt_static_windows.bat ${{ matrix.qt_version }}
       - name: Install Qt
         uses: jurplel/install-qt-action@v4.3.0
-        if: matrix.platform != 'windows-latest'
+        if: github.event.inputs.source != 'y'  && matrix.qt_version != '6.2.12'
         with:
           version: ${{ matrix.qt_version }}
           setup-python: true
           cache: true
           cache-key-prefix: QtCache-${{ matrix.platform }}-${{ matrix.target }}
       # ========================================================================================================= Generate MakeFile and Build
+      - name: Download Srslist
+        shell: bash
+        if: github.event.inputs.source != 'y'
+        run: |
+          curl -fLso "srslist" "https://github.com/qr243vbi/ruleset/raw/refs/heads/rule-set/srslist"
+          mkdir build
+          
       - name: Windows - Generate MakeFile and Build
         shell: bash
-        if: matrix.platform == 'windows-latest' && matrix.qt_version != '6.2.12'
+        if: contains( matrix.platform, 'windows' ) && github.event.inputs.source != 'y' && matrix.qt_version != '6.2.12'
         run: |
           export CMAKE_PREFIX_PATH=$PWD/qt6/build/lib/cmake
-          mkdir build
           cd build
-          curl -fLso srslist.h "https://raw.githubusercontent.com/throneproj/routeprofiles/rule-set/srslist.h"
-          cmake -GNinja -DCMAKE_CXX_FLAGS="-static" -DOPENSSL_ROOT_DIR="$VCPKG_INSTALLATION_ROOT/installed/x64-mingw-static" -DCMAKE_BUILD_TYPE=Debug ..
-          ninja
+          if [[ ${{ github.event.inputs.updater }}es == yes ]]
+          then
+            export SKIP_UPDATE_BUTTON=ON;
+          else
+            export SKIP_UPDATE_BUTTON=OFF
+          fi
+          if [[ ${{ matrix.qt_version }} == '6.10.0' ]]
+          then
+            export LEGACY_QT=OFF
+            export MATRIX=new-${{ matrix.target }}
+          else
+            export LEGACY_QT=ON
+            export MATRIX=${{ matrix.target }}
+          fi
+          cmake -GNinja "-DSKIP_UPDATE_BUTTON=${SKIP_UPDATE_BUTTON}" -DUSE_LEGACY_QT="${LEGACY_QT}" -DCMAKE_BUILD_TYPE=Release ..
+          ninja -j2
           cd ..
-          ./script/deploy_windows.sh
+          ./script/deploy_windows.sh "${MATRIX}"
       - name: Legacy Windows - Generate MakeFile and Build
         shell: bash
-        if: matrix.platform == 'windows-latest' && matrix.qt_version == '6.2.12'
+        if: contains( matrix.platform, 'windows' ) && matrix.qt_version == '6.2.12' && github.event.inputs.source != 'y'
         run: |
           curl -L -o qt.7z https://github.com/throneproj/env_windows_legacy/releases/download/latest/qt-${{ matrix.target }}.7z
           7z x qt.7z
@@ -203,86 +252,81 @@ jobs:
           7z x openssl.7z
           export CMAKE_PREFIX_PATH=$PWD/Qt/lib/cmake
           export OPENSSL_ROOT_DIR=$PWD/openssl
-          mkdir build
           cd build
-          curl -fLso srslist.h "https://raw.githubusercontent.com/throneproj/routeprofiles/rule-set/srslist.h"
-          cmake -GNinja -DCMAKE_CXX_FLAGS="-static" -DCMAKE_BUILD_TYPE=Debug ..
-          ninja
+          if [[ ${{ github.event.inputs.updater }}es == yes ]]; then export SKIP_UPDATE_BUTTON=ON; else export SKIP_UPDATE_BUTTON=OFF; fi
+          cmake -GNinja "-DSKIP_UPDATE_BUTTON=${SKIP_UPDATE_BUTTON}" -DSKIP_JS_UPDATER=ON -DUSE_LEGACY_QT=ON -DCMAKE_CXX_FLAGS="-static" -DCMAKE_BUILD_TYPE=Debug ..
+          ninja -j2
           cd ..
+          export COMPILER="MinGW"
           ./script/deploy_windows.sh ${{ matrix.target }}
-      - name: WOA - Generate MakeFile and Build
-        shell: bash
-        if: matrix.platform == 'windows-11-arm'
-        run: |
-          mkdir build
-          cd build
-          curl -fLso srslist.h "https://raw.githubusercontent.com/throneproj/routeprofiles/rule-set/srslist.h"
-          cmake -GNinja -DCMAKE_BUILD_TYPE=Release ..
-          ninja
-          cd ..
-          ./script/deploy_woa.sh
-      - name: Build Installer with NSIS
+      - name: Build Installer with NSIS for windows64
         shell: cmd
-        if: matrix.platform == 'windows-latest' && matrix.qt_version != '6.2.12'
+        if: contains( matrix.platform, 'windows' ) && matrix.qt_version == '6.10.0' && matrix.target == 'x86_64' && github.event.inputs.source != 'y'
         run: |
-          choco install nsis
           cp .\script\windows_installer.nsi .
-          "C:\Program Files (x86)\NSIS\makensis.exe" windows_installer.nsi
-          cp ThroneSetup.exe deployment/
+          makensis.exe windows_installer.nsi
+          install -D nekobox_setup.exe deployment/nekobox_setup.exe
+      - name: Build Installer with NSIS for windows32
+        shell: cmd
+        if: contains( matrix.platform, 'windows' ) && matrix.qt_version != '6.10.0' && matrix.target == 'i686' && github.event.inputs.source != 'y'
+        run: |
+          cp .\script\windows_installer.nsi .
+          makensis "/DDIRECTORY=windows32"  windows_installer.nsi
+          install -D nekobox_setup.exe deployment/nekobox_setup32.exe
+      - name: Build Installer with NSIS for windows-arm64
+        shell: cmd
+        if: contains( matrix.platform, 'windows' ) && matrix.qt_version == '6.10.0' && matrix.target == 'arm64' && github.event.inputs.source != 'y'
+        run: |
+          cp .\script\windows_installer.nsi .
+          makensis "/DDIRECTORY=windows-arm64" windows_installer.nsi
+          install -D nekobox_setup.exe deployment/nekobox_setup_arm64.exe
+      - name: Build Installer with NSIS for windowslegacy64
+        shell: cmd
+        if: contains( matrix.platform, 'windows' ) && matrix.qt_version != '6.10.0' && matrix.target != 'i686' && github.event.inputs.source != 'y'
+        run: |
+          cp .\script\windows_installer.nsi .
+          makensis "/DDIRECTORY=windowslegacy64" windows_installer.nsi
+          install -D nekobox_setup.exe deployment/nekobox_setup_legacy.exe
+
+      - name: Linux - Install apt dependencies
+        uses: awalsh128/cache-apt-pkgs-action@latest
+        if: contains( matrix.platform, 'ubuntu' ) && github.event.inputs.source != 'y'
+        with:
+          packages: libfuse2 patchelf
+          version: 1.0
+
       - name: Linux - Generate MakeFile and Build
         shell: bash
-        if: contains( matrix.platform, 'ubuntu' ) && matrix.qt_version != '6.2.0'
+        if: contains( matrix.platform, 'ubuntu' ) && github.event.inputs.source != 'y'
         run: |
-          sudo apt update && sudo apt upgrade -y
-          mkdir build
           cd build
-          curl -fLso srslist.h "https://raw.githubusercontent.com/throneproj/routeprofiles/rule-set/srslist.h"
-          cmake -GNinja -DCMAKE_BUILD_TYPE=Release -DCMAKE_EXE_LINKER_FLAGS="-static-libgcc -static-libstdc++" ..
+          if [[ ${{ github.event.inputs.updater }}es == yes ]]; then export SKIP_UPDATE_BUTTON=ON; else export SKIP_UPDATE_BUTTON=OFF; fi
+          cmake -GNinja -DSKIP_UPDATE_BUTTON="${SKIP_UPDATE_BUTTON}" -DCMAKE_BUILD_TYPE=Release -DCMAKE_EXE_LINKER_FLAGS="-static-libgcc -static-libstdc++" ..
           ninja
           cd ..
           ./script/deploy_linux64.sh
-      - name: Linux Using System Qt - Generate MakeFile and Build
-        shell: bash
-        if: contains( matrix.platform, 'ubuntu' ) && matrix.qt_version == '6.2.0'
-        run: |
-          mkdir build
-          cd build
-          curl -fLso srslist.h "https://raw.githubusercontent.com/throneproj/routeprofiles/rule-set/srslist.h"
-          cmake -GNinja -DCMAKE_BUILD_TYPE=Release -DCMAKE_EXE_LINKER_FLAGS="-static-libgcc" ..
-          ninja
-          cd ..
-          ./script/deploy_linux64_system_qt.sh
+
       - name: macOS - Generate MakeFile and Build
         shell: bash
-        if: matrix.platform == 'macos-latest' && matrix.qt_version != '6.4.3'
+        if: matrix.platform == 'macos-latest' && github.event.inputs.source != 'y'
         run: |
-          mkdir build
           cd build
-          curl -fLso srslist.h "https://raw.githubusercontent.com/throneproj/routeprofiles/rule-set/srslist.h"
-          cmake -GNinja -DCMAKE_BUILD_TYPE=Release -DNKR_PACKAGE_MACOS=1 -DCMAKE_OSX_DEPLOYMENT_TARGET=10.15 -DCMAKE_OSX_ARCHITECTURES=${{ matrix.target }} ..
+          cmake -GNinja -DSKIP_UPDATE_BUTTON=ON -DCMAKE_BUILD_TYPE=Release -DNKR_VERSION="${INPUT_VERSION}" -DNKR_PACKAGE_MACOS=1 -DCMAKE_OSX_DEPLOYMENT_TARGET=10.15 -DCMAKE_OSX_ARCHITECTURES=${{ matrix.target }} ..
           ninja
           cd ..
           ./script/deploy_macos.sh ${{ matrix.target }}
-      - name: Legacy macOS - Generate MakeFile and Build
-        shell: bash
-        if: matrix.platform == 'macos-latest' && matrix.qt_version == '6.4.3'
-        run: |
-          mkdir build
-          cd build
-          curl -fLso srslist.h "https://raw.githubusercontent.com/throneproj/routeprofiles/rule-set/srslist.h"
-          cmake -GNinja -DCMAKE_BUILD_TYPE=Release -DNKR_PACKAGE_MACOS=1 -DCMAKE_OSX_DEPLOYMENT_TARGET=10.15 -DCMAKE_OSX_ARCHITECTURES=${{ matrix.target }} ..
-          ninja
-          cd ..
-          ./script/deploy_macos.sh
       # ========================================================================================================= Deployments
       - name: Tar files
+        if: github.event.inputs.source != 'y'
         shell: bash
         run: tar czvf artifacts.tgz ./deployment
       - name: Uploading Artifact
+        if: github.event.inputs.source != 'y'
         uses: actions/upload-artifact@v4.6.2
         with:
-          name: Throne-${{ github.sha }}-${{ matrix.platform }}-${{ matrix.target }}-Qt${{ matrix.qt_version }}
+          name: nekobox-${{ github.sha }}-${{ matrix.platform }}-${{ matrix.target }}-Qt${{ matrix.qt_version }}
           path: artifacts.tgz
+
   publish:
     name: Pack & Publish Release
     runs-on: ubuntu-latest
@@ -306,72 +350,87 @@ jobs:
           mv ghr*linux_amd64/ghr .
           source script/env_deploy.sh
           find . -name artifacts.tgz | xargs -n1 tar xvzf
+          ##
+          mkdir -pv core/server/gen ||:
+          rm -rfv core/server/vendor ||:
+          mv deployment/Sagernet.SingBox.Version.txt SingBox.Version
+          mv -T deployment/vendor core/server/vendor
+          rm core/server/go.mod
+          rm core/server/go.sum
+          mv deployment/go.mod core/server/
+          mv deployment/go.sum core/server/
+          mv deployment/gen/*.go core/server/gen/
+          mv deployment/srslist* ./
+          echo "${INPUT_VERSION}" > version.txt
+          git add -f srslist* version.txt core/server/gen/*.go core/server/vendor SingBox.Version
+          ##
+          git ls-files --recurse-submodules | tar --transform="s,^,nekobox-unified-source-${{ github.event.inputs.tag }}/,S" -c --xz -f "deployment/nekobox-unified-source-${{ github.event.inputs.tag }}.tar.xz" -T-
+          ##
           cd deployment
-          rm -rf *.pdb win*/*.pdb
+          rm -rf *.pdb ||:
+          sha256sum "nekobox-unified-source-${{ github.event.inputs.tag }}.tar.xz" > "nekobox-unified-source-${{ github.event.inputs.tag }}.tar.xz.sha256sum"
           ####
-          bash ../script/pack_debian.sh ${{ github.event.inputs.tag }}
-          mv Throne.deb $version_standalone-debian-x64.deb
-          rm -rf Throne
+          if [[ -d linux-amd64 ]]; then
+            mv linux-amd64 nekobox
+            zip -9 -r $version_standalone-linux-amd64.zip nekobox
+            rm -rf nekobox linux-amd64
+          fi
           ####
-          bash ../script/pack_debian_system_qt.sh ${{ github.event.inputs.tag }}
-          mv Throne.deb $version_standalone-debian-system-qt-x64.deb
-          rm -rf Throne
+          if [[ -d linux-arm64 ]]; then
+            mv linux-arm64 nekobox
+            zip -9 -r $version_standalone-linux-arm64.zip nekobox
+            rm -rf nekobox linux-arm64
+          fi
           ####
-          mv linux-amd64 Throne
-          zip -9 -r $version_standalone-linux-amd64.zip Throne
-          rm -rf Throne
+          if [[ -f nekobox_setup.exe ]]; then
+            mv nekobox_setup.exe $version_standalone-windows64-installer.exe
+            mv windows64 nekobox
+            rm nekobox/config
+            zip -9 -r $version_standalone-windows64.zip nekobox
+            rm -rf nekobox windows64
+          fi
           ####
-          mv linux-arm64 Throne
-          zip -9 -r $version_standalone-linux-arm64.zip Throne
-          rm -rf Throne
+          if [[ -f nekobox_setup_arm64.exe ]]; then
+            mv nekobox_setup_arm64.exe $version_standalone-windows-arm64-installer.exe
+            mv windows-arm64 nekobox
+            rm nekobox/config
+            zip -9 -r $version_standalone-windows-arm64.zip nekobox
+            rm -rf nekobox windows-arm64
+          fi
           ####
-          mv ThroneSetup.exe $version_standalone-windows64-installer.exe
-          mv windows64 Throne
-          zip -9 -r $version_standalone-windows64.zip Throne
-          rm -rf Throne
+          if [[ -f nekobox_setup32.exe ]]; then
+            mv nekobox_setup32.exe $version_standalone-windows32-installer.exe
+            mv windows32 nekobox
+            rm nekobox/config
+            zip -9 -r $version_standalone-windows32.zip nekobox
+            rm -rf nekobox windows32
+          fi
           ####
-          mv windows32 Throne
-          zip -9 -r $version_standalone-windows32.zip Throne
-          rm -rf Throne
+          if [[ -f nekobox_setup_legacy.exe ]]; then
+            mv nekobox_setup_legacy.exe $version_standalone-windowslegacy64-installer.exe
+            mv windowslegacy64 nekobox
+            rm nekobox/config
+            zip -9 -r $version_standalone-windowslegacy64.zip nekobox
+            rm -rf nekobox windowslegacy64
+          fi
           ####
-          mv windowslegacy64 Throne
-          zip -9 -r $version_standalone-windowslegacy64.zip Throne
-          rm -rf Throne
+          if [[ -d macos-arm64 ]]; then
+            mkdir nekobox
+            mv macos-arm64/nekobox.app nekobox/nekobox.app
+            zip -9 --symlinks -r $version_standalone-macos-arm64.zip nekobox
+            rm -rf macos-arm64 nekobox
+          fi
           ####
-          mv windows-arm64 Throne
-          zip -9 -r $version_standalone-windows-arm64.zip Throne
-          rm -rf Throne
-          ####
-          mkdir Throne
-          mv macos-arm64/Throne.app Throne/Throne.app
-          zip -9 --symlinks -r $version_standalone-macos-arm64.zip Throne
-          rm -rf macos-arm64
-          rm -rf Throne
-          ####
-          mkdir Throne
-          mv macos-amd64/Throne.app Throne/Throne.app
-          zip -9 --symlinks -r $version_standalone-macos-amd64.zip Throne
-          rm -rf macos-amd64
-          rm -rf Throne
-          ####
-          mkdir Throne
-          mv macoslegacy-amd64/Throne.app Throne/Throne.app
-          zip -9 --symlinks -r $version_standalone-macoslegacy-amd64.zip Throne
-          rm -rf macoslegacy-amd64
-          rm -rf Throne
+          if [[ -d macos-amd64 ]]; then
+            mkdir nekobox
+            mv macos-amd64/nekobox.app nekobox/nekobox.app
+            zip -9 --symlinks -r $version_standalone-macos-amd64.zip nekobox
+            rm -rf macos-amd64 nekobox
+          fi
       - name: Clean Up
         run: |
           cd deployment
-          rm -rf windows-arm64
-          rm -rf linux-arm64
-          rm -rf linux-amd64
-          rm -rf windows64
-          rm -rf windows32
-          rm -rf windowslegacy64
-          rm -rf macos-amd64
-          rm -rf macos-arm64
-          rm -rf macoslegacy-amd64
-          rm -rf *.pdb
+          rm -rf *.pdb ||:
       - name: Uploading Artifact
         uses: actions/upload-artifact@v4.6.2
         with:
@@ -380,8 +439,63 @@ jobs:
       - name: PreRelease
         if: github.event.inputs.publish == 'p'
         run: |
-          ./ghr -prerelease -delete -t "${{ github.token }}" -n "${{ github.event.inputs.tag }}" "${{ github.event.inputs.tag }}" deployment
+          ./ghr -prerelease -delete -t "${{ github.token }}" -b "${{ github.event.inputs.text }}" -n "${{ github.event.inputs.tag }}" "${{ github.event.inputs.tag }}" deployment
       - name: Release
         if: github.event.inputs.publish == 'r'
         run: |
-          ./ghr -delete -t "${{ github.token }}" -n "${{ github.event.inputs.tag }}" "${{ github.event.inputs.tag }}" deployment
+          ./ghr -delete -t "${{ github.token }}" -b "${{ github.event.inputs.text }}" -n "${{ github.event.inputs.tag }}" "${{ github.event.inputs.tag }}" deployment
+
+  webhook:
+    name: Trigger Open Build Service
+    runs-on: ubuntu-latest
+    needs:
+      - publish
+    permissions:
+      contents: read
+      actions: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        if: github.event.inputs.publish == 'r'
+        with:
+          python-version: '3.13'
+          cache: 'pip' # caching pip dependencies
+      - name: Trigger Open Build Service and Copr
+        shell: bash
+        if: github.event.inputs.publish == 'r'
+        run: |
+          pip install osc copr
+          echo '[general]' > oscrc
+          echo 'apiurl=https://api.opensuse.org' >> oscrc
+          echo '[https://api.opensuse.org]' >> oscrc
+          echo 'user=${{ secrets.OBS_USER }}' >> oscrc
+          echo 'pass=${{ secrets.OBS_PASSWORD }}' >> oscrc
+          echo 'credentials_mgr_class=osc.credentials.PlaintextConfigFileCredentialsManager' >> oscrc
+          ####
+          install -Dm644 oscrc "$HOME"/.config/osc/oscrc
+          osc token --trigger "${{ secrets.OBS_HOOK_TOKEN }}"
+          python3 -c "from copr import v3; client = v3.Client({'copr_url': 'https://copr.fedorainfracloud.org', 'login': '${{ secrets.COPR_LOGIN }}', 'token': '${{ secrets.COPR_TOKEN }}'}); print(client.package_proxy.build('qr243vbi', 'NekoBox', 'NekoBox'))"
+
+  publish_chocolatey:
+    name: Publish Chocolatey Package
+    runs-on: windows-latest
+    needs:
+      - publish
+    permissions:
+      contents: read
+      actions: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ConorMacBride/install-package@v1
+        if: github.event.inputs.publish == 'r' && github.event.inputs.source != 'y'
+        with:
+          choco: curl jq sed
+      - name: Upload Chocolatey Package
+        shell: bash
+        if: github.event.inputs.publish == 'r' && github.event.inputs.source != 'y'
+        run: |
+          cd ./script/
+          export INPUT_VERSION=${{ github.event.inputs.tag }}
+          export CHOCOLATEY_API_KEY=${{ secrets.CHOCOLATEY_API_TOKEN }}
+          bash -x chocolatey_push.sh
+
