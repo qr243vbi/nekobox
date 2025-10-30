@@ -1,0 +1,2995 @@
+#include "include/ui/mainwindow.h"
+
+#include "include/dataStore/ProfileFilter.hpp"
+#include "include/configs/ConfigBuilder.hpp"
+#include "include/configs/sub/GroupUpdater.hpp"
+#include "include/global/Utils.hpp"
+#include "include/sys/Process.hpp"
+#include "include/sys/AutoRun.hpp"
+
+#include <include/js/version.h>
+
+#include <QQueue>
+#include <QMutex>
+#include <QWaitCondition>
+
+#include "include/ui/setting/ThemeManager.hpp"
+#include "include/ui/setting/Icon.hpp"
+#include "include/ui/profile/dialog_edit_profile.h"
+#include "include/ui/setting/dialog_basic_settings.h"
+#include "include/ui/group/dialog_manage_groups.h"
+#include "include/ui/setting/dialog_manage_routes.h"
+#include "include/ui/setting/dialog_vpn_settings.h"
+#include "include/ui/setting/dialog_hotkey.h"
+
+#include "3rdparty/qrcodegen.hpp"
+#include "3rdparty/qv2ray/v2/ui/LogHighlighter.hpp"
+#include "3rdparty/QrDecoder.h"
+#include "include/ui/group/dialog_edit_group.h"
+
+#ifdef Q_OS_WIN
+#include "3rdparty/WinCommander.hpp"
+#include "include/sys/windows/WinVersion.h"
+#else
+#ifdef Q_OS_LINUX
+#include "include/sys/linux/LinuxCap.h"
+#include <QDBusInterface>
+#include <QDBusReply>
+#include <QUuid>
+#endif
+#include <unistd.h>
+#endif
+
+#include <QClipboard>
+#include <QLabel>
+#include <QTextBlock>
+#include <QScrollBar>
+#include <QScreen>
+#include <QDesktopServices>
+#include <QInputDialog>
+#include <QThread>
+#include <QTimer>
+#include <QMessageBox>
+#include <QDir>
+#include <QFileInfo>
+#if QT_VERSION >= QT_VERSION_CHECK(6, 5, 0)
+#include <QStyleHints>
+#endif
+#include <QFileDialog>
+#include <QToolTip>
+#include <QMimeData>
+#include <random>
+#include <3rdparty/QHotkey/qhotkey.h>
+#include <3rdparty/qv2ray/v2/proxy/QvProxyConfigurator.hpp>
+#include <include/global/HTTPRequestHelper.hpp>
+#include "include/global/DeviceDetailsHelper.hpp"
+#include <QSettings>
+#include "include/sys/macos/MacOS.h"
+
+void setAppIcon(Icon::TrayIconStatus, QSystemTrayIcon*);
+
+void UI_InitMainWindow() {
+    mainwindow = new MainWindow;
+}
+
+
+MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow) {
+    mainwindow = this;
+    setAcceptDrops(true);
+    MW_dialog_message = [=,this](const QString &a, const QString &b) {
+        runOnUiThread([=,this]
+        {
+            dialog_message_impl(a, b);
+        });
+    };
+
+    // Load Manager
+    Configs::profileManager->LoadManager();
+
+    // Setup misc UI
+    // migrate old themes
+    bool isNum;
+    Configs::dataStore->theme.toInt(&isNum);
+    if (isNum) {
+        Configs::dataStore->theme = "System";
+    }
+    themeManager->ApplyTheme(Configs::dataStore->theme);
+    ui->setupUi(this);
+
+    // restore size and geometry
+    {
+        QSettings settings("qr243vbi_NekoBox", "nekobox_gui");
+        int width, height, x, y;
+        width = settings.value("width", -1).toInt();
+        height = settings.value("height", -1).toInt();
+        x = settings.value("X", -1).toInt();
+        y = settings.value("Y", -1).toInt();
+        if (width >= 0 && y >= 0){
+            resize(width, height);
+        }
+        if (x >= 0 && y >= 0){
+            move(x, y);
+        }
+        if (settings.value("maximized", false).toBool()){
+            showMaximized();
+        }
+    }
+
+    // init shortcuts
+    setActionsData();
+    loadShortcuts();
+
+    // setup log
+    ui->splitter->restoreState(DecodeB64IfValid(Configs::dataStore->splitter_state));
+    new SyntaxHighlighter(isDarkMode() || Configs::dataStore->theme.toLower() == "qdarkstyle", qvLogDocument);
+    qvLogDocument->setUndoRedoEnabled(false);
+    ui->masterLogBrowser->setUndoRedoEnabled(false);
+    ui->masterLogBrowser->setDocument(qvLogDocument);
+    ui->masterLogBrowser->setFont(QFontDatabase::systemFont(QFontDatabase::FixedFont));
+
+#if QT_VERSION >= QT_VERSION_CHECK(6, 5, 0)
+    connect(qApp->styleHints(), &QStyleHints::colorSchemeChanged, this, [=,this](const Qt::ColorScheme& scheme) {
+        new SyntaxHighlighter(scheme == Qt::ColorScheme::Dark, qvLogDocument);
+        themeManager->ApplyTheme(Configs::dataStore->theme, true);
+    });
+#endif
+    connect(themeManager, &ThemeManager::themeChanged, this, [=,this](const QString& theme){
+        if (theme.toLower().contains("vista")) {
+            // light themes
+            new SyntaxHighlighter(false, qvLogDocument);
+        } else if (theme.toLower().contains("qdarkstyle")) {
+            // dark themes
+            new SyntaxHighlighter(true, qvLogDocument);
+        } else {
+            // bi-mode themes, follow system preference
+            new SyntaxHighlighter(isDarkMode(), qvLogDocument);
+        }
+    });
+    connect(ui->masterLogBrowser->verticalScrollBar(), &QSlider::valueChanged, this, [=,this](int value) {
+        if (ui->masterLogBrowser->verticalScrollBar()->maximum() == value)
+            qvLogAutoScoll = true;
+        else
+            qvLogAutoScoll = false;
+    });
+    connect(ui->masterLogBrowser, &QTextBrowser::textChanged, this, [=,this]() {
+        if (!qvLogAutoScoll)
+            return;
+        auto bar = ui->masterLogBrowser->verticalScrollBar();
+        bar->setValue(bar->maximum());
+    });
+    MW_show_log = [=,this](const QString &log) {
+        runOnUiThread([=,this] { show_log_impl(log); });
+    };
+
+    // Listen port if random
+    if (Configs::dataStore->random_inbound_port)
+    {
+        Configs::dataStore->inbound_socks_port = MkPort();
+    }
+
+    //init HWID data
+    runOnNewThread([=, this] {GetDeviceDetails(); });
+
+    // Prepare core
+    Configs::dataStore->core_port = MkPort();
+    if (Configs::dataStore->core_port <= 0) Configs::dataStore->core_port = 19810;
+
+    auto core_path = QApplication::applicationDirPath() + "/";
+    core_path += "nekobox_core";
+
+    QStringList args;
+    args.push_back("-port");
+    args.push_back(Int2String(Configs::dataStore->core_port));
+    if (Configs::dataStore->log_level == "debug") args.push_back("-debug");
+
+    // Start core
+    runOnThread(
+        [=,this] {
+            core_process = new Configs_sys::CoreProcess(core_path, args);
+            // Remember last started
+            if (Configs::dataStore->remember_enable && Configs::dataStore->remember_id >= 0) {
+                core_process->start_profile_when_core_is_up = Configs::dataStore->remember_id;
+            }
+            // Setup
+            setup_rpc();
+            core_process->Start();
+        },
+        DS_cores);
+
+#ifdef Q_OS_LINUX
+    for (int i=0;i<20;i++)
+    {
+        QThread::msleep(100);
+        if (Configs::dataStore->core_running) break;
+    }
+    if (!Configs::dataStore->core_running) qDebug() << "[Warn] Core is taking too much time to start";
+#endif
+
+    if (!Configs::dataStore->font.isEmpty()) {
+        auto font = qApp->font();
+        font.setFamily(Configs::dataStore->font);
+        qApp->setFont(font);
+    }
+    if (Configs::dataStore->font_size != 0) {
+        auto font = qApp->font();
+        font.setPointSize(Configs::dataStore->font_size);
+        qApp->setFont(font);
+    }
+
+    parallelCoreCallPool->setMaxThreadCount(10); // constant value
+    //
+    connect(ui->menu_start, &QAction::triggered, this, [=,this]() { profile_start(); });
+    connect(ui->menu_stop, &QAction::triggered, this, [=,this]() { profile_stop(false, false, true); });
+    connect(ui->tabWidget->tabBar(), &QTabBar::tabMoved, this, [=,this](int from, int to) {
+        // use tabData to track tab & gid
+        Configs::profileManager->groupsTabOrder.clear();
+        for (int i = 0; i < ui->tabWidget->tabBar()->count(); i++) {
+            Configs::profileManager->groupsTabOrder += ui->tabWidget->tabBar()->tabData(i).toInt();
+        }
+        Configs::profileManager->SaveManager();
+    });
+    ui->label_running->installEventFilter(this);
+    ui->label_inbound->installEventFilter(this);
+    ui->splitter->installEventFilter(this);
+    ui->tabWidget->installEventFilter(this);
+    //
+    RegisterHotkey(false);
+    //
+    auto last_size = Configs::dataStore->mw_size.split("x");
+    if (last_size.length() == 2) {
+        auto w = last_size[0].toInt();
+        auto h = last_size[1].toInt();
+        if (w > 0 && h > 0) {
+            resize(w, h);
+        }
+    }
+
+    // software_name
+    software_name = "nekobox";
+    software_core_name = "sing-box";
+    //
+    if (auto dashDir = QDir("dashboard"); !dashDir.exists("dashboard") && QDir().mkdir("dashboard")) {
+        if (auto dashFile = QFile(":/nekobox/dashboard-notice.html"); dashFile.exists() && dashFile.open(QIODevice::ReadOnly))
+        {
+            auto data = dashFile.readAll();
+            if (auto dest = QFile("dashboard/index.html"); dest.open(QIODevice::Truncate | QIODevice::WriteOnly))
+            {
+                dest.write(data);
+                dest.close();
+            }
+            dashFile.close();
+        }
+    }
+
+    // top bar
+    ui->toolButton_program->setMenu(ui->menu_program);
+    ui->toolButton_preferences->setMenu(ui->menu_preferences);
+    ui->toolButton_server->setMenu(ui->menu_server);
+    ui->toolButton_routing->setMenu(ui->menuRouting_Menu);
+    ui->menubar->setVisible(false);
+#ifndef SKIP_UPDATE_BUTTON
+    connect(ui->toolButton_update, &QToolButton::clicked, this, [=,this] { runOnNewThread([=,this] { CheckUpdate(); }); });
+#ifndef SKIP_JS_UPDATER
+	if (
+       !QFile::exists(QApplication::applicationDirPath() + "/check_new_release.js")
+    ) {
+        ui->toolButton_update->hide();
+    }
+#endif
+#else
+    ui->toolButton_update->hide();
+#endif
+
+    // setup connection UI
+    setupConnectionList();
+    ui->stats_widget->tabBar()->setCurrentIndex(Configs::dataStore->stats_tab);
+    connect(ui->stats_widget->tabBar(), &QTabBar::currentChanged, this, [=,this](int index)
+    {
+        Configs::dataStore->stats_tab = ui->stats_widget->tabBar()->currentIndex();
+    });
+    connect(ui->connections->horizontalHeader(), &QHeaderView::sectionClicked, this, [=,this](int index)
+    {
+            Stats::ConnectionSort sortType;
+
+            switch (index)
+            {
+            case 1: sortType = Stats::ByProcess; break;
+            case 2: sortType = Stats::ByProtocol; break;
+            case 3: sortType = Stats::ByOutbound; break;
+            case 4: sortType = Stats::ByTraffic; break;
+            default: sortType = Stats::Default; break;
+            }
+
+            Stats::connection_lister->setSort(sortType);
+            Stats::connection_lister->ForceUpdate();
+    });
+
+    // setup Speed Chart
+    speedChartWidget = new SpeedWidget(this);
+    ui->graph_tab->layout()->addWidget(speedChartWidget);
+
+    // table UI
+    ui->proxyListTable->rowsSwapped = [=,this](int row1, int row2)
+    {
+        if (row1 == row2) return;
+        auto group = Configs::profileManager->CurrentGroup();
+        group->EmplaceProfile(row1, row2);
+        refresh_proxy_list();
+        group->Save();
+    };
+    if (auto button = ui->proxyListTable->findChild<QAbstractButton *>(QString(), Qt::FindDirectChildrenOnly)) {
+        // Corner Button
+        connect(button, &QAbstractButton::clicked, this, [=,this] { refresh_proxy_list_impl(-1, {GroupSortMethod::ById}); });
+    }
+    connect(ui->proxyListTable->horizontalHeader(), &QHeaderView::sectionClicked, this, [=, this](int logicalIndex) {
+        GroupSortAction action;
+        if (proxy_last_order == logicalIndex) {
+            action.descending = true;
+            proxy_last_order = -1;
+        } else {
+            proxy_last_order = logicalIndex;
+        }
+        action.save_sort = true;
+        if (logicalIndex == 0) {
+            action.method = GroupSortMethod::ByType;
+        } else if (logicalIndex == 1) {
+            action.method = GroupSortMethod::ByAddress;
+        } else if (logicalIndex == 2) {
+            action.method = GroupSortMethod::ByName;
+        } else if (logicalIndex == 3) {
+            action.method = GroupSortMethod::ByLatency;
+        } else {
+            return;
+        }
+        refresh_proxy_list_impl(-1, action);
+        Configs::profileManager->CurrentGroup()->Save();
+    });
+    connect(ui->proxyListTable->horizontalHeader(), &QHeaderView::sectionResized, this, [=, this](int logicalIndex, int oldSize, int newSize) {
+        auto group = Configs::profileManager->CurrentGroup();
+        if (Configs::dataStore->refreshing_group || group == nullptr || !group->manually_column_width) return;
+        // save manually column width
+        group->column_width.clear();
+        for (int i = 0; i < ui->proxyListTable->horizontalHeader()->count(); i++) {
+            group->column_width.push_back(ui->proxyListTable->horizontalHeader()->sectionSize(i));
+        }
+        group->column_width[logicalIndex] = newSize;
+        group->Save();
+    });
+    ui->proxyListTable->verticalHeader()->setDefaultSectionSize(24);
+    ui->proxyListTable->setTabKeyNavigation(false);
+
+    // search box
+    setSearchState(false);
+    connect(shortcut_ctrl_f, &QShortcut::activated, this, [=, this]
+    {
+        setSearchState(true);
+        ui->search_input->setFocus();
+    });
+    connect(ui->search_input, &QLineEdit::textChanged, this, [=,this](const QString& currentText)
+    {
+       searchString = currentText;
+       refresh_proxy_list(-1);
+    });
+    connect(shortcut_esc, &QShortcut::activated, this, [=,this] {
+        if (select_mode) {
+            emit profile_selected(-1);
+            select_mode = false;
+            refresh_status();
+        }
+        if (searchEnabled) setSearchState(false);
+    });
+
+    // refresh
+    this->refresh_groups();
+
+    // Setup Tray
+    tray = new QSystemTrayIcon(nullptr);
+    setAppIcon(Icon::NONE, tray);
+    auto *trayMenu = new QMenu();
+    trayMenu->addAction(ui->actionShow_window);
+    trayMenu->addSeparator();
+    trayMenu->addAction(ui->actionStart_with_system);
+    trayMenu->addAction(ui->actionRemember_last_proxy);
+    trayMenu->addAction(ui->actionAllow_LAN);
+    trayMenu->addSeparator();
+    trayMenu->addMenu(ui->menu_spmode);
+    trayMenu->addSeparator();
+    trayMenu->addAction(ui->actionRestart_Proxy);
+    trayMenu->addAction(ui->actionRestart_Program);
+    trayMenu->addAction(ui->menu_exit);
+    tray->setVisible(!Configs::dataStore->disable_tray);
+    tray->setContextMenu(trayMenu);
+    connect(tray, &QSystemTrayIcon::activated, qApp, [=, this](QSystemTrayIcon::ActivationReason reason) {
+        if (reason == QSystemTrayIcon::Trigger) {
+            ActivateWindow(this);
+        }
+    });
+
+    // Misc menu
+    ui->actionRemember_last_proxy->setChecked(Configs::dataStore->remember_enable);
+    ui->actionStart_with_system->setChecked(AutoRun_IsEnabled());
+    ui->actionAllow_LAN->setChecked(QStringList{"::", "0.0.0.0"}.contains(Configs::dataStore->inbound_address));
+
+    connect(ui->actionHide_window, &QAction::triggered, this, [=, this](){ this->hide(); });
+    connect(ui->menu_open_config_folder, &QAction::triggered, this, [=,this] { QDesktopServices::openUrl(QUrl::fromLocalFile(QDir::currentPath())); });
+    connect(ui->menu_add_from_clipboard2, &QAction::triggered, ui->menu_add_from_clipboard, &QAction::trigger);
+    connect(ui->actionRestart_Proxy, &QAction::triggered, this, [=,this] { if (Configs::dataStore->started_id>=0) profile_start(Configs::dataStore->started_id); });
+    connect(ui->actionRestart_Program, &QAction::triggered, this, [=,this] { MW_dialog_message("", "RestartProgram"); });
+    connect(ui->actionShow_window, &QAction::triggered, this, [=,this] { ActivateWindow(this); });
+    connect(ui->actionRemember_last_proxy, &QAction::triggered, this, [=,this](bool checked) {
+        Configs::dataStore->remember_enable = checked;
+        ui->actionRemember_last_proxy->setChecked(checked);
+        Configs::dataStore->Save();
+    });
+    connect(ui->actionStart_with_system, &QAction::triggered, this, [=,this](bool checked) {
+        AutoRun_SetEnabled(checked);
+        ui->actionStart_with_system->setChecked(checked);
+    });
+    connect(ui->actionAllow_LAN, &QAction::triggered, this, [=,this](bool checked) {
+        Configs::dataStore->inbound_address = checked ? "::" : "127.0.0.1";
+        ui->actionAllow_LAN->setChecked(checked);
+        MW_dialog_message("", "UpdateDataStore");
+    });
+    //
+    connect(ui->checkBox_VPN, &QCheckBox::clicked, this, [=,this](bool checked) { set_spmode_vpn(checked); });
+    connect(ui->checkBox_SystemProxy, &QCheckBox::clicked, this, [=,this](bool checked) { set_spmode_system_proxy(checked); });
+    connect(ui->menu_spmode, &QMenu::aboutToShow, this, [=,this]() {
+        ui->menu_spmode_disabled->setChecked(!(Configs::dataStore->spmode_system_proxy || Configs::dataStore->spmode_vpn));
+        ui->menu_spmode_system_proxy->setChecked(Configs::dataStore->spmode_system_proxy);
+        ui->menu_spmode_vpn->setChecked(Configs::dataStore->spmode_vpn);
+    });
+    connect(ui->menu_spmode_system_proxy, &QAction::triggered, this, [=,this](bool checked) { set_spmode_system_proxy(checked); });
+    connect(ui->menu_spmode_vpn, &QAction::triggered, this, [=,this](bool checked) { set_spmode_vpn(checked); });
+    connect(ui->menu_spmode_disabled, &QAction::triggered, this, [=,this]() {
+        set_spmode_system_proxy(false);
+        set_spmode_vpn(false);
+    });
+    connect(ui->menu_qr, &QAction::triggered, this, [=,this]() { display_qr_link(false); });
+    connect(ui->system_dns, &QCheckBox::clicked, this, [=,this](bool checked) {
+        if (const auto ok = set_system_dns(checked); !ok) {
+            ui->system_dns->setChecked(!checked);
+        } else {
+            refresh_status();
+        }
+    });
+    if (Configs::dataStore->show_system_dns) ui->system_dns->show();
+    else ui->system_dns->hide();
+
+    connect(ui->menu_server, &QMenu::aboutToShow, this, [=,this](){
+        if (running)
+        {
+            ui->actionSpeedtest_Current->setEnabled(true);
+        } else
+        {
+            ui->actionSpeedtest_Current->setEnabled(false);
+        }
+        if (auto selected = get_now_selected_list(); selected.empty())
+        {
+            ui->actionSpeedtest_Selected->setEnabled(false);
+            ui->actionUrl_Test_Selected->setEnabled(false);
+            ui->menu_resolve_selected->setEnabled(false);
+        } else
+        {
+            ui->actionSpeedtest_Selected->setEnabled(true);
+            ui->actionUrl_Test_Selected->setEnabled(true);
+            ui->menu_resolve_selected->setEnabled(true);
+        }
+        if (!speedtestRunning.tryLock()) {
+            ui->menu_server->addAction(ui->menu_stop_testing);
+        } else {
+            speedtestRunning.unlock();
+            ui->menu_server->removeAction(ui->menu_stop_testing);
+        }
+    });
+
+
+	QFile* srslist = new QFile("srslist");
+    if (!srslist->exists()){
+        delete srslist;
+        srslist = new QFile(QApplication::applicationDirPath() + "/srslist");
+    }
+    if (srslist->exists() && srslist->open(QIODevice::ReadOnly)) {
+        QByteArray byteArray = srslist->readAll();
+        srslist->close();
+        delete srslist;
+        std::vector<uint8_t> srsvec;
+        srsvec.assign(byteArray.begin(), byteArray.end());
+        ruleSetMap = spb::pb::deserialize<libcore::RuleSet>(srsvec).items;
+    } else {
+        delete srslist;
+        auto getRuleSet = [=,this]
+        {
+            QString err;
+            for(int retry = 0; retry < 5; retry++) {
+                auto resp = NetworkRequestHelper::HttpGet(Configs::get_jsdelivr_link("https://github.com/qr243vbi/ruleset/raw/refs/heads/rule-set/srslist"));
+                if (resp.error.isEmpty()) {
+                    std::vector<uint8_t> respvec;
+                    respvec.assign(resp.data.begin(), resp.data.end());
+                    auto reply = spb::pb::deserialize<libcore::RuleSet>(respvec);
+                    ruleSetMap = reply.items;
+                    QFile file;
+                    file.setFileName("srslist");
+                    if (file.open(QIODevice::ReadWrite | QIODevice::Truncate)){
+                        file.write(resp.data);
+                        file.close();
+                    }
+                    return;
+                }
+                else
+                    err = resp.error;
+                QThread::sleep(30);
+            }
+            MW_show_log(QObject::tr("Requesting rule-set list error: %1").arg(err));
+        };
+        runOnNewThread(getRuleSet);
+    }
+
+    auto getRemoteRouteProfiles = [=,this]
+    {
+        auto resp = NetworkRequestHelper::HttpGet("https://api.github.com/repos/throneproj/routeprofiles/git/trees/profile");
+        if (resp.error.isEmpty()) {
+            QStringList newRemoteRouteProfiles;
+            QJsonObject release = QString2QJsonObject(resp.data);
+            for (const QJsonValue asset : release["tree"].toArray()) {
+                auto profile = asset["path"].toString();
+                if (profile.section('.', -1) == QString("json") && (profile.startsWith("bypass",Qt::CaseInsensitive) || profile.startsWith("proxy",Qt::CaseInsensitive))) {
+                    profile.chop(5);
+                    newRemoteRouteProfiles.push_back(profile);
+                }
+            }
+            mu_remoteRouteProfiles.lock();
+            remoteRouteProfiles = newRemoteRouteProfiles;
+            mu_remoteRouteProfiles.unlock();
+        }
+    };
+    runOnNewThread(getRemoteRouteProfiles);
+
+    connect(ui->menuRouting_Menu, &QMenu::aboutToShow, this, [=,this]()
+    {
+        if(remoteRouteProfiles.isEmpty())
+            runOnNewThread(getRemoteRouteProfiles);
+        ui->menuRouting_Menu->clear();
+        ui->menuRouting_Menu->addAction(ui->menu_routing_settings);
+
+        auto* actionAdblock = new QAction(ui->menuRouting_Menu);
+        actionAdblock->setText("Enable AdBlock");
+        actionAdblock->setCheckable(true);
+        actionAdblock->setChecked(Configs::dataStore->adblock_enable);
+        connect(actionAdblock, &QAction::triggered, this, [=,this](bool checked) {
+            Configs::dataStore->adblock_enable = checked;
+            actionAdblock->setChecked(checked);
+            Configs::dataStore->Save();
+            if (Configs::dataStore->started_id >= 0) profile_start(Configs::dataStore->started_id);
+        });
+        ui->menuRouting_Menu->addAction(actionAdblock);
+
+        mu_remoteRouteProfiles.lock();
+        if(!remoteRouteProfiles.isEmpty()) {
+            QMenu* profilesMenu = ui->menuRouting_Menu->addMenu(QObject::tr("Download Profiles"));
+            for (const auto& profile : remoteRouteProfiles)
+            {
+                auto* action = new QAction(profilesMenu);
+                action->setText(profile);
+                connect(action, &QAction::triggered, this, [=,this]()
+                {
+                    auto resp = NetworkRequestHelper::HttpGet(Configs::get_jsdelivr_link("https://raw.githubusercontent.com/throneproj/routeprofiles/profile/" + profile + ".json"));
+                    if (!resp.error.isEmpty()) {
+                        runOnUiThread([=,this] {
+                            MessageBoxWarning(QObject::tr("Download Profiles"), QObject::tr("Requesting profile error: %1").arg(resp.error + "\n" + resp.data));
+                        });
+                        return;
+                    }
+                    auto err = new QString;
+                    auto parsed = Configs::RoutingChain::parseJsonArray(QString2QJsonArray(resp.data), err);
+                    if (!err->isEmpty()) {
+                        runOnUiThread([=,this]
+                        {
+                            MessageBoxInfo(tr("Invalid JSON Array"), tr("The provided input cannot be parsed to a valid route rule array:\n") + *err);
+                        });
+                        return;
+                    }
+                    auto chain = Configs::ProfileManager::NewRouteChain();
+                    chain->name = QString(profile).replace('_', ' ');
+                    chain->defaultOutboundID = profile.startsWith("bypass",Qt::CaseInsensitive) ? Configs::proxyID : Configs::directID;
+                    chain->Rules.clear();
+                    chain->Rules << parsed;
+                    Configs::profileManager->AddRouteChain(chain);
+                });
+                profilesMenu->addAction(action);
+            }
+        }
+        mu_remoteRouteProfiles.unlock();
+
+        ui->menuRouting_Menu->addSeparator();
+        for (const auto& route : Configs::profileManager->routes)
+        {
+            auto* action = new QAction(ui->menuRouting_Menu);
+            action->setText(route.second->name);
+            action->setData(route.second->id);
+            action->setCheckable(true);
+            action->setChecked(Configs::dataStore->routing->current_route_id == route.first);
+            connect(action, &QAction::triggered, this, [=,this]()
+            {
+                auto routeID = action->data().toInt();
+                if (Configs::dataStore->routing->current_route_id == routeID) return;
+                Configs::dataStore->routing->current_route_id = routeID;
+                Configs::dataStore->routing->Save();
+                if (Configs::dataStore->started_id >= 0) profile_start(Configs::dataStore->started_id);
+            });
+            ui->menuRouting_Menu->addAction(action);
+        }
+    });
+    connect(ui->actionUrl_Test_Selected, &QAction::triggered, this, [=,this]() {
+        urltest_current_group(get_now_selected_list());
+    });
+    connect(ui->actionUrl_Test_Group, &QAction::triggered, this, [=,this]() {
+        urltest_current_group(Configs::profileManager->CurrentGroup()->GetProfileEnts());
+    });
+    connect(ui->actionSpeedtest_Current, &QAction::triggered, this, [=,this]()
+    {
+        if (running != nullptr)
+        {
+            speedtest_current_group({}, true);
+        }
+    });
+    connect(ui->actionSpeedtest_Selected, &QAction::triggered, this, [=,this]()
+    {
+        speedtest_current_group(get_now_selected_list());
+    });
+    connect(ui->actionSpeedtest_Group, &QAction::triggered, this, [=,this]()
+    {
+        speedtest_current_group(Configs::profileManager->CurrentGroup()->GetProfileEnts());
+    });
+    connect(ui->menu_stop_testing, &QAction::triggered, this, [=,this]() { stopTests(); });
+    //
+    auto set_selected_or_group = [=,this](int mode) {
+        // 0=group 1=select 2=unknown(menu is hide)
+        ui->menu_server->setProperty("selected_or_group", mode);
+    };
+    connect(ui->menu_server, &QMenu::aboutToHide, this, [=,this] {
+        setTimeout([=,this] { set_selected_or_group(2); }, this, 200);
+    });
+    set_selected_or_group(2);
+    //
+    connect(ui->menu_share_item, &QMenu::aboutToShow, this, [=,this] {
+        QString name;
+        auto selected = get_now_selected_list();
+        if (!selected.isEmpty()) {
+            auto ent = selected.first();
+            name = ent->bean->DisplayCoreType();
+        }
+        ui->menu_export_config->setVisible(name == software_core_name);
+        ui->menu_export_config->setText(tr("Export %1 config").arg(name));
+    });
+    connect(ui->actionAdd_profile_from_File, &QAction::triggered, this, [=,this]()
+    {
+        auto path = QFileDialog::getOpenFileName();
+        if (path.isEmpty())
+        {
+            return;
+        }
+        auto file = QFile(path);
+        if (!file.exists()) return;
+        if (file.size() > 50 * 1024 * 1024)
+        {
+            MW_show_log("File too large, will not process it");
+            return;
+        }
+        if (file.open(QIODevice::ReadOnly)){
+            auto contents = file.readAll();
+            file.close();
+            Subscription::groupUpdater->AsyncUpdate(contents);
+        }
+    });
+
+    connect(qApp, &QGuiApplication::commitDataRequest, this, &MainWindow::on_commitDataRequest);
+
+    auto t = new QTimer;
+    connect(t, &QTimer::timeout, this, [=,this]() { refresh_status(); });
+    t->start(2000);
+
+    t = new QTimer;
+    connect(t, &QTimer::timeout, this, [&] { Configs_sys::logCounter.fetchAndStoreRelaxed(0); });
+    t->start(1000);
+
+    // auto update timer
+    TM_auto_update_subsctiption = new QTimer;
+    TM_auto_update_subsctiption_Reset_Minute = [&](int m) {
+        TM_auto_update_subsctiption->stop();
+        if (m >= 30) TM_auto_update_subsctiption->start(m * 60 * 1000);
+    };
+    connect(TM_auto_update_subsctiption, &QTimer::timeout, this, [&] { UI_update_all_groups(true); });
+    TM_auto_update_subsctiption_Reset_Minute(Configs::dataStore->sub_auto_update);
+
+    if (!Configs::dataStore->flag_tray) show();
+
+    ui->data_view->setStyleSheet("background: transparent; border: none;");
+}
+
+void MainWindow::closeEvent(QCloseEvent *event) {
+    QSettings settings("qr243vbi_NekoBox", "nekobox_gui");
+    settings.setValue("maximized", isMaximized());
+    QPoint position = pos();
+    int x = position.x();
+    int y = position.y();
+    auto geometry = size();
+    int width = geometry.width();
+    int height = geometry.height();
+    settings.setValue("x", x);
+    settings.setValue("y", y);
+    settings.setValue("width", width);
+    settings.setValue("height", height);
+
+    if (tray->isVisible()) {
+        hide();
+        event->ignore();
+    } else {
+        on_menu_exit_triggered();
+    }
+}
+
+void MainWindow::dragEnterEvent(QDragEnterEvent *event)
+{
+    if (event->mimeData()->hasUrls() || event->mimeData()->hasText()) {
+        event->acceptProposedAction();
+    } else {
+        event->ignore();
+    }
+}
+
+void MainWindow::dropEvent(QDropEvent* event)
+{
+    auto mimeData = event->mimeData();
+
+    if (mimeData->hasUrls()) {
+        QList<QUrl> urlList = mimeData->urls();
+        for (const QUrl &url : urlList) {
+            if (url.isLocalFile()) {
+                if (auto qpx = QPixmap(url.toLocalFile()); !qpx.isNull())
+                {
+                    parseQrImage(&qpx);
+                } else if (auto file = QFile(url.toLocalFile()); file.exists())
+                {
+                    if (!file.open(QFile::ReadOnly)){
+                        MW_show_log("File is not accessible, will not parse it");
+                    }
+                    if (file.size() > 50 * 1024 * 1024)
+                    {
+                        file.close();
+                        MW_show_log("File size is larger than 50MB, will not parse it");
+                        event->acceptProposedAction();
+                        return;
+                    }
+                    auto contents = file.readAll();
+                    file.close();
+                    Subscription::groupUpdater->AsyncUpdate(contents);
+                }
+            }
+        }
+        event->acceptProposedAction();
+        return;
+    }
+
+    if (mimeData->hasText()) {
+        Subscription::groupUpdater->AsyncUpdate(mimeData->text());
+        event->acceptProposedAction();
+        return;
+    }
+
+    event->ignore();
+}
+
+MainWindow::~MainWindow() {
+    delete ui;
+}
+
+// Group tab manage
+
+inline int tabIndex2GroupId(int index) {
+    if (Configs::profileManager->groupsTabOrder.length() <= index) return -1;
+    return Configs::profileManager->groupsTabOrder[index];
+}
+
+inline int groupId2TabIndex(int gid) {
+    for (int key = 0; key < Configs::profileManager->groupsTabOrder.count(); key++) {
+        if (Configs::profileManager->groupsTabOrder[key] == gid) return key;
+    }
+    return 0;
+}
+
+void MainWindow::on_tabWidget_currentChanged(int index) {
+    if (Configs::dataStore->refreshing_group_list) return;
+    if (tabIndex2GroupId(index) == Configs::dataStore->current_group) return;
+    show_group(tabIndex2GroupId(index));
+}
+
+void MainWindow::show_group(int gid) {
+    if (Configs::dataStore->refreshing_group) return;
+    Configs::dataStore->refreshing_group = true;
+
+    auto group = Configs::profileManager->GetGroup(gid);
+    if (group == nullptr) {
+        MessageBoxWarning(tr("Error"), QString("No such group: %1").arg(gid));
+        Configs::dataStore->refreshing_group = false;
+        return;
+    }
+
+    if (Configs::dataStore->current_group != gid) {
+        Configs::dataStore->current_group = gid;
+        Configs::dataStore->Save();
+    }
+
+    ui->tabWidget->widget(groupId2TabIndex(gid))->layout()->addWidget(ui->proxyListTable);
+
+    if (group->manually_column_width) {
+        for (int i = 0; i <= 4; i++) {
+            ui->proxyListTable->horizontalHeader()->setSectionResizeMode(i, QHeaderView::Interactive);
+            auto size = group->column_width.value(i);
+            if (size <= 0) size = ui->proxyListTable->horizontalHeader()->defaultSectionSize();
+            ui->proxyListTable->horizontalHeader()->resizeSection(i, size);
+        }
+    } else {
+        ui->proxyListTable->horizontalHeader()->setSectionResizeMode(0, QHeaderView::ResizeToContents);
+        ui->proxyListTable->horizontalHeader()->setSectionResizeMode(1, QHeaderView::Stretch);
+        ui->proxyListTable->horizontalHeader()->setSectionResizeMode(2, QHeaderView::Stretch);
+        ui->proxyListTable->horizontalHeader()->setSectionResizeMode(3, QHeaderView::ResizeToContents);
+        ui->proxyListTable->horizontalHeader()->setSectionResizeMode(4, QHeaderView::ResizeToContents);
+    }
+
+    // show proxies
+    GroupSortAction gsa;
+    gsa.scroll_to_started = true;
+    refresh_proxy_list_impl(-1, gsa);
+
+    Configs::dataStore->refreshing_group = false;
+}
+
+// callback
+
+void MainWindow::dialog_message_impl(const QString &sender, const QString &info) {
+    // info
+    if (info.contains("UpdateIcon")) {
+        icon_status = -1;
+        refresh_status();
+    }
+    if (info.contains("UpdateDataStore")) {
+        if (info.contains("UpdateDisableTray")) {
+            tray->setVisible(!Configs::dataStore->disable_tray);
+        }
+        if (info.contains("UpdateSystemDns"))
+        {
+            if (Configs::dataStore->show_system_dns) ui->system_dns->show();
+            else ui->system_dns->hide();
+        }
+        if (info.contains("NeedChoosePort"))
+        {
+            Configs::dataStore->inbound_socks_port = MkPort();
+            if (Configs::dataStore->spmode_system_proxy)
+            {
+                set_spmode_system_proxy(false);
+                set_spmode_system_proxy(true);
+            }
+        }
+        auto suggestRestartProxy = Configs::dataStore->Save();
+        if (info.contains("RouteChanged")) {
+            Configs::dataStore->routing->Save();
+            suggestRestartProxy = true;
+        }
+        if (info.contains("NeedRestart")) {
+            suggestRestartProxy = false;
+        }
+        refresh_proxy_list();
+        if (info.contains("VPNChanged") && Configs::dataStore->spmode_vpn) {
+            MessageBoxWarning(tr("Tun Settings changed"), tr("Restart Tun to take effect."));
+        }
+        if ((info.contains("NeedChoosePort") || suggestRestartProxy) && Configs::dataStore->started_id >= 0 &&
+            QMessageBox::question(GetMessageBoxParent(), tr("Confirmation"), tr("Settings changed, restart proxy?")) == QMessageBox::StandardButton::Yes) {
+            profile_start(Configs::dataStore->started_id);
+        }
+        refresh_status();
+    }
+    if (info.contains("DNSServerChanged"))
+    {
+        if (Configs::dataStore->system_dns_set)
+        {
+            auto oldAddr = info.split(",")[1];
+            set_system_dns(false);
+            set_system_dns(true);
+        }
+    }
+    if (info.contains("NeedRestart")) {
+        auto n = QMessageBox::warning(GetMessageBoxParent(), tr("Settings changed"), tr("Restart the program to take effect."), QMessageBox::Yes | QMessageBox::No);
+        if (n == QMessageBox::Yes) {
+            this->exit_reason = 2;
+            on_menu_exit_triggered();
+        }
+    }
+    //
+    if (info == "RestartProgram") {
+        this->exit_reason = 2;
+        on_menu_exit_triggered();
+    }
+    if (info == "Raise") {
+        ActivateWindow(this);
+    }
+    if (info == "NeedAdmin") {
+        get_elevated_permissions();
+    }
+    if (info == "UpdateShortcuts")
+    {
+        loadShortcuts();
+    }
+    // sender
+    if (sender == Dialog_DialogEditProfile) {
+        auto msg = info.split(",");
+        if (msg.contains("accept")) {
+            refresh_proxy_list();
+            if (msg.contains("restart")) {
+                if (QMessageBox::question(GetMessageBoxParent(), tr("Confirmation"), tr("Settings changed, restart proxy?")) == QMessageBox::StandardButton::Yes) {
+                    profile_start(Configs::dataStore->started_id);
+                }
+            }
+        }
+    } else if (sender == Dialog_DialogManageGroups) {
+        if (info.startsWith("refresh")) {
+            this->refresh_groups();
+        }
+    } else if (sender == "SubUpdater") {
+        if (info.startsWith("finish")) {
+            refresh_proxy_list();
+            if (!info.contains("dingyue")) {
+                show_log_impl(tr("Imported %1 profile(s)").arg(Configs::dataStore->imported_count));
+            }
+        } else if (info == "NewGroup") {
+            refresh_groups();
+        }
+    } else if (sender == "ExternalProcess") {
+        if (info == "Crashed") {
+            profile_stop();
+        } else if (info.startsWith("CoreStarted")) {
+            Configs::IsAdmin(true);
+            if (Configs::dataStore->remember_spmode.contains("system_proxy")) {
+                set_spmode_system_proxy(true, false);
+            }
+            if (Configs::dataStore->remember_spmode.contains("vpn") || Configs::dataStore->flag_restart_tun_on) {
+                set_spmode_vpn(true, false);
+            }
+            if (Configs::dataStore->flag_dns_set) {
+                set_system_dns(true);
+            }
+            if (auto id = info.split(",")[1].toInt(); id >= 0)
+            {
+                profile_start(id);
+            }
+            if (Configs::dataStore->system_dns_set) {
+                set_system_dns(true);
+                ui->system_dns->setChecked(true);
+            }
+            refresh_status();
+        }
+    }
+}
+
+// top bar & tray menu
+
+inline bool dialog_is_using = false;
+
+#define USE_DIALOG(a)                               \
+    if (dialog_is_using) return;                    \
+    dialog_is_using = true;                         \
+    auto dialog = new a(this);                      \
+    connect(dialog, &QDialog::finished, this, [=,this] { \
+        dialog->deleteLater();                      \
+        dialog_is_using = false;                    \
+    });                                             \
+    dialog->show();
+
+void MainWindow::on_menu_basic_settings_triggered() {
+    USE_DIALOG(DialogBasicSettings)
+}
+
+void MainWindow::on_menu_manage_groups_triggered() {
+    USE_DIALOG(DialogManageGroups)
+}
+
+void MainWindow::on_menu_routing_settings_triggered() {
+    if (dialog_is_using) return;
+    dialog_is_using = true;
+    auto dialog = new DialogManageRoutes(this);
+    connect(dialog, &QDialog::finished, this, [=,this] {
+        dialog->deleteLater();
+        dialog_is_using = false;
+    });
+    dialog->show();
+}
+
+void MainWindow::on_menu_vpn_settings_triggered() {
+    USE_DIALOG(DialogVPNSettings)
+}
+
+void MainWindow::on_menu_hotkey_settings_triggered() {
+    if (dialog_is_using) return;
+    dialog_is_using = true;
+    auto dialog = new DialogHotkey(this, getActionsForShortcut());
+    connect(dialog, &QDialog::finished, this, [=,this]
+    {
+        dialog->deleteLater();
+        dialog_is_using = false;
+    });
+    dialog->show();
+}
+
+void MainWindow::on_commitDataRequest() {
+    qDebug() << "Start of data save";
+    //
+    if (!isMaximized()) {
+        auto olds = Configs::dataStore->mw_size;
+        auto news = QString("%1x%2").arg(size().width()).arg(size().height());
+        if (olds != news) {
+            Configs::dataStore->mw_size = news;
+        }
+    }
+    //
+    Configs::dataStore->splitter_state = ui->splitter->saveState().toBase64();
+    //
+    auto last_id = Configs::dataStore->started_id;
+    if (Configs::dataStore->remember_enable && last_id >= 0) {
+        Configs::dataStore->remember_id = last_id;
+    }
+    if (running) running->Save();
+    //
+    Configs::dataStore->Save();
+    Configs::profileManager->SaveManager();
+    qDebug() << "End of data save";
+}
+
+void MainWindow::prepare_exit()
+{
+    qDebug() << "prepare for exit...";
+    mu_exit.lock();
+    if (Configs::dataStore->prepare_exit)
+    {
+        qDebug() << "prepare exit had already succeeded, ignoring...";
+        mu_exit.unlock();
+        return;
+    }
+    hide();
+    tray->hide();
+    Configs::dataStore->prepare_exit = true;
+    //
+    RegisterHiddenMenuShortcuts(true);
+    RegisterHotkey(true);
+    if (Configs::dataStore->system_dns_set) set_system_dns(false, false);
+    set_spmode_system_proxy(false, false);
+    //
+    on_commitDataRequest();
+    //
+    Configs::dataStore->save_control_no_save = true; // don't change datastore after this line
+    profile_stop(false, true);
+
+/*
+    QMutex coreKillMu;
+    coreKillMu.lock();
+    runOnThread([=, this, &coreKillMu]()
+    {
+        core_process->Kill();
+        coreKillMu.unlock();
+    }, DS_cores);
+    coreKillMu.lock();
+    coreKillMu.unlock();
+*/
+
+    mu_exit.unlock();
+    qDebug() << "prepare exit done!";
+}
+
+void MainWindow::on_menu_exit_triggered() {
+    prepare_exit();
+    //
+    if (exit_reason == 1) {
+        QDir::setCurrent(QApplication::applicationDirPath());
+#ifdef Q_OS_WIN
+        QFile::copy("./updater.exe", "./updater.old");
+        QProcess::startDetached("./updater.old", QStringList{});
+#else
+        QProcess::startDetached("./updater", QStringList{});
+#endif
+    } else if (exit_reason == 2 || exit_reason == 3 || exit_reason == 4) {
+        QDir::setCurrent(QApplication::applicationDirPath());
+
+        auto arguments = Configs::dataStore->argv;
+        if (arguments.length() > 0) {
+            arguments.removeFirst();
+            arguments.removeAll("-tray");
+            arguments.removeAll("-flag_restart_tun_on");
+            arguments.removeAll("-flag_restart_dns_set");
+        }
+        auto program = QApplication::applicationFilePath();
+
+        if (exit_reason == 3 || exit_reason == 4) {
+            if (exit_reason == 3) arguments << "-flag_restart_tun_on";
+            if (exit_reason == 4) arguments << "-flag_restart_dns_set";
+#ifdef Q_OS_WIN
+            WinCommander::runProcessElevated(program, arguments, "", WinCommander::SW_NORMAL, false);
+#else
+            QProcess::startDetached(program, arguments);
+#endif
+        } else {
+            QProcess::startDetached(program, arguments);
+        }
+    }
+    QCoreApplication::quit();
+}
+
+void MainWindow::toggle_system_proxy() {
+    auto currentState = Configs::dataStore->spmode_system_proxy;
+    if (currentState) {
+        set_spmode_system_proxy(false);
+    } else {
+        set_spmode_system_proxy(true);
+    }
+}
+
+
+bool MainWindow::get_elevated_permissions(int reason, void * pointer) {
+    if (Configs::dataStore->disable_privilege_req)
+    {
+        MW_show_log(tr("User opted for no privilege req, some features may not work"));
+        return true;
+    }
+    if (Configs::IsAdmin()) return true;
+#undef ELEVATE_CORE_PROGRAM
+
+#ifdef Q_OS_LINUX
+    if (!Linux_HavePkexec()) {
+        MessageBoxWarning(software_name, "Please install \"pkexec\" first.");
+        return false;
+    }
+#define ELEVATE_CORE_PROGRAM
+#endif
+
+#ifdef Q_OS_WIN
+#ifdef EXIT_IF_UAC_REQUIRED
+    auto n = QMessageBox::warning(GetMessageBoxParent(), software_name, tr("Please give the core root privileges"), QMessageBox::Yes | QMessageBox::No);
+    if (n == QMessageBox::Yes) {
+        this->exit_reason = reason;
+        on_menu_exit_triggered();
+    }
+#else
+#define ELEVATE_CORE_PROGRAM
+#endif
+#endif
+
+#ifdef ELEVATE_CORE_PROGRAM
+    auto n = QMessageBox::warning(GetMessageBoxParent(), software_name, tr("Please give the core root privileges"), QMessageBox::Yes | QMessageBox::No);
+    if (n == QMessageBox::Yes) {
+        StopVPNProcess();
+        core_process->elevateCoreProcessProgram();
+        {
+            if (reason == 3){
+                bool save = false;
+                if (pointer != nullptr){
+                    save = *((bool*) pointer);
+                }
+                set_spmode_vpn(true, save, false);
+            }
+        }
+        return false;
+    }
+#undef ELEVATE_CORE_PROGRAM
+#endif
+
+#ifdef Q_OS_MACOS
+    if (Configs::isSetuidSet(Configs::FindCoreRealPath().toStdString()))
+    {
+        StopVPNProcess();
+        return true;
+    }
+    auto n = QMessageBox::warning(GetMessageBoxParent(), software_name, tr("Please give the core root privileges"), QMessageBox::Yes | QMessageBox::No);
+    if (n == QMessageBox::Yes)
+    {
+        auto Command = QString("sudo chown root:wheel " + Configs::FindCoreRealPath() + " && " + "sudo chmod u+s "+Configs::FindCoreRealPath());
+        auto ret = Mac_Run_Command(Command);
+        if (ret == 0) {
+            MessageBoxInfo(tr("Requesting permission"), tr("Please Enter your password in the opened terminal, then try again"));
+            return false;
+        } else {
+            MW_show_log(QString("Failed to run %1 with %2").arg(Command).arg(ret));
+            return false;
+        }
+    }
+#endif
+    return false;
+}
+
+void MainWindow::set_spmode_vpn(bool enable, bool save, bool requestAdmin) {
+    if (enable == Configs::dataStore->spmode_vpn) return;
+
+    if (enable && requestAdmin) {
+        bool requestPermission = !Configs::IsAdmin();
+        if (requestPermission) {
+            if (!get_elevated_permissions(3 /*set vpn mode*/, (void*)&save)) {
+                refresh_status();
+                return;
+            }
+        }
+    }
+
+    if (save) {
+        Configs::dataStore->remember_spmode.removeAll("vpn");
+        if (enable) {
+            Configs::dataStore->remember_spmode.append("vpn");
+        }
+        Configs::dataStore->Save();
+    }
+
+    Configs::dataStore->spmode_vpn = enable;
+    if (requestAdmin){
+        refresh_status();
+        if (Configs::dataStore->started_id >= 0) profile_start(Configs::dataStore->started_id);
+    }
+}
+
+void MainWindow::UpdateDataView(bool force)
+{
+    if (!force && lastUpdated.msecsTo(QDateTime::currentDateTime()) < 100)
+    {
+        return;
+    }
+    QString html;
+    if (showDownloadData)
+    {
+        qint64 count = 0;
+        if(currentDownloadReport.totalSize > 0)
+            count = 10 * currentDownloadReport.downloadedSize / currentDownloadReport.totalSize;
+        QString progressText;
+        for (int i = 0; i < 10; i++)
+        {
+            if (count--; count >=0) progressText += "#";
+            else progressText += "-";
+        }
+        QString stat = ReadableSize(currentDownloadReport.downloadedSize) + "/" + ReadableSize(currentDownloadReport.totalSize);
+        html = QString("<p style='text-align:center;margin:0;'>Downloading %1: %2 %3</p>").arg(currentDownloadReport.fileName, stat, progressText);
+    }
+    if (showSpeedtestData)
+    {
+        html += QString(
+    "<p style='text-align:center;margin:0;'>Running Speedtest: %1</p>"
+    "<div style='text-align: center;'>"
+    "<span style='color: #3299FF;'>Dl↓ %2</span>  "
+    "<span style='color: #86C43F;'>Ul↑ %3</span>"
+    "</div>"
+    "<p style='text-align:center;margin:0;'>Server: %4%5, %6</p>"
+        ).arg(currentSptProfileName,
+            currentTestResult.dl_speed.value().c_str(),
+            currentTestResult.ul_speed.value().c_str(),
+            CountryCodeToFlag(CountryNameToCode(QString::fromStdString(currentTestResult.server_country.value()))),
+            currentTestResult.server_country.value().c_str(),
+            currentTestResult.server_name.value().c_str());
+    }
+    ui->data_view->setHtml(html);
+    lastUpdated = QDateTime::currentDateTime();
+}
+
+void MainWindow::setDownloadReport(const DownloadProgressReport& report, bool show)
+{
+    showDownloadData = show;
+    currentDownloadReport = report;
+}
+
+
+void MainWindow::setupConnectionList()
+{
+    ui->connections->horizontalHeader()->setHighlightSections(false);
+    ui->connections->setEditTriggers(QAbstractItemView::NoEditTriggers);
+    ui->connections->horizontalHeader()->setSectionResizeMode(0, QHeaderView::Stretch);
+    ui->connections->horizontalHeader()->setSectionResizeMode(1, QHeaderView::Stretch);
+    ui->connections->horizontalHeader()->setSectionResizeMode(2, QHeaderView::ResizeToContents);
+    ui->connections->horizontalHeader()->setSectionResizeMode(3, QHeaderView::ResizeToContents);
+    ui->connections->horizontalHeader()->setSectionResizeMode(4, QHeaderView::ResizeToContents);
+    ui->connections->verticalHeader()->hide();
+    connect(ui->connections, &QTableWidget::cellClicked, this, [=,this](int row, int column)
+    {
+        if (column > 3) return;
+        auto selected = ui->connections->item(row, column);
+        QApplication::clipboard()->setText(selected->text());
+        QPoint pos = ui->connections->mapToGlobal(ui->connections->visualItemRect(selected).center());
+        QToolTip::showText(pos, "Copied!", this);
+        auto r = ++toolTipID;
+        QTimer::singleShot(1500, [=,this] {
+            if (r != toolTipID)
+            {
+                return;
+            }
+            QToolTip::hideText();
+        });
+    });
+}
+
+void MainWindow::UpdateConnectionList(const QMap<QString, Stats::ConnectionMetadata>& toUpdate, const QMap<QString, Stats::ConnectionMetadata>& toAdd)
+{
+    ui->connections->setUpdatesEnabled(false);
+    for (int row=0;row<ui->connections->rowCount();row++)
+    {
+        auto key = ui->connections->item(row, 0)->data(Stats::IDKEY).toString();
+        if (!toUpdate.contains(key))
+        {
+            ui->connections->removeRow(row);
+            row--;
+            continue;
+        }
+
+        auto conn = toUpdate[key];
+        // C0: Dest (Domain)
+        ui->connections->item(row, 0)->setText(DisplayDest(conn.dest, conn.domain));
+
+        // C1: Process
+        ui->connections->item(row, 1)->setText(conn.process);
+
+        // C2: Protocol
+        auto prot = conn.network;
+        if (!conn.protocol.isEmpty()) prot += " ("+conn.protocol+")";
+        ui->connections->item(row, 2)->setText(prot);
+
+        // C3: Outbound
+        ui->connections->item(row, 3)->setText(conn.outbound);
+
+        // C4: Traffic
+        ui->connections->item(row, 4)->setText(ReadableSize(conn.upload) + "↑" + " " + ReadableSize(conn.download) + "↓");
+    }
+    int row = ui->connections->rowCount();
+    for (const auto& conn : toAdd)
+    {
+        ui->connections->insertRow(row);
+        auto f0 = std::make_unique<QTableWidgetItem>();
+        f0->setData(Stats::IDKEY, conn.id);
+
+        // C0: Dest (Domain)
+        auto f = f0->clone();
+        f->setText(DisplayDest(conn.dest, conn.domain));
+        ui->connections->setItem(row, 0, f);
+
+        // C1: Process
+        f = f0->clone();
+        f->setText(conn.process);
+        ui->connections->setItem(row, 1, f);
+
+        // C2: Protocol
+        f = f0->clone();
+        auto prot = conn.network;
+        if (!conn.protocol.isEmpty()) prot += " ("+conn.protocol+")";
+        f->setText(prot);
+        ui->connections->setItem(row, 2, f);
+
+        // C3: Outbound
+        f = f0->clone();
+        f->setText(conn.outbound);
+        ui->connections->setItem(row, 3, f);
+
+        // C4: Traffic
+        f = f0->clone();
+        f->setText(ReadableSize(conn.upload) + "↑" + " " + ReadableSize(conn.download) + "↓");
+        ui->connections->setItem(row, 4, f);
+
+        row++;
+    }
+    ui->connections->setUpdatesEnabled(true);
+}
+
+void MainWindow::UpdateConnectionListWithRecreate(const QList<Stats::ConnectionMetadata>& connections)
+{
+    ui->connections->setUpdatesEnabled(false);
+    ui->connections->setRowCount(0);
+    int row=0;
+    for (const auto& conn : connections)
+    {
+        ui->connections->insertRow(row);
+        auto f0 = std::make_unique<QTableWidgetItem>();
+        f0->setData(Stats::IDKEY, conn.id);
+
+        // C0: Dest (Domain)
+        auto f = f0->clone();
+        f->setText(DisplayDest(conn.dest, conn.domain));
+        ui->connections->setItem(row, 0, f);
+
+        // C1: Process
+        f = f0->clone();
+        f->setText(conn.process);
+        ui->connections->setItem(row, 1, f);
+
+        // C2: Protocol
+        f = f0->clone();
+        auto prot = conn.network;
+        if (!conn.protocol.isEmpty()) prot += " ("+conn.protocol+")";
+        f->setText(prot);
+        ui->connections->setItem(row, 2, f);
+
+        // C3: Outbound
+        f = f0->clone();
+        f->setText(conn.outbound);
+        ui->connections->setItem(row, 3, f);
+
+        // C4: Traffic
+        f = f0->clone();
+        f->setText(ReadableSize(conn.upload) + "↑" + " " + ReadableSize(conn.download) + "↓");
+        ui->connections->setItem(row, 4, f);
+
+        row++;
+    }
+    ui->connections->setUpdatesEnabled(true);
+}
+
+void MainWindow::setSearchState(bool enable)
+{
+    searchEnabled = enable;
+    if (enable)
+    {
+        ui->data_view->hide();
+        ui->search_input->show();
+    } else
+    {
+        ui->search_input->blockSignals(true);
+        ui->search_input->clear();
+        ui->search_input->blockSignals(false);
+
+        ui->search_input->hide();
+        ui->data_view->show();
+        if (!searchString.isEmpty())
+        {
+            searchString.clear();
+            refresh_proxy_list(-1);
+        }
+    }
+}
+
+QList<std::shared_ptr<Configs::ProxyEntity>> MainWindow::filterProfilesList(const QList<int>& profiles)
+{
+    QList<std::shared_ptr<Configs::ProxyEntity>> res;
+    for (const auto& id : profiles)
+    {
+        auto profile = Configs::profileManager->GetProfile(id);
+        if (!profile)
+        {
+            MW_show_log("Null profile, maybe data is corrupted");
+            continue;
+        }
+        if (searchString.isEmpty() || profile->bean->name.contains(searchString, Qt::CaseInsensitive) || profile->bean->serverAddress.contains(searchString, Qt::CaseInsensitive)
+            || (searchString.startsWith("CODE:") && searchString.mid(5) == profile->test_country))
+            res.append(profile);
+    }
+    return res;
+}
+
+void MainWindow::refresh_status(const QString &traffic_update) {
+    auto refresh_speed_label = [=,this] {
+        if (Configs::dataStore->disable_traffic_stats) {
+            ui->label_speed->setText("");
+        }
+        else if (traffic_update_cache == "") {
+            ui->label_speed->setText(QObject::tr("Proxy: %1\nDirect: %2").arg("", ""));
+        } else {
+            ui->label_speed->setText(traffic_update_cache);
+        }
+    };
+
+    // From TrafficLooper
+    if (!traffic_update.isEmpty() && !Configs::dataStore->disable_traffic_stats) {
+        traffic_update_cache = traffic_update;
+        if (traffic_update == "STOP") {
+            traffic_update_cache = "";
+        } else {
+            refresh_speed_label();
+            return;
+        }
+    }
+
+    refresh_speed_label();
+
+    // From UI
+    QString group_name;
+    if (running != nullptr) {
+        auto group = Configs::profileManager->GetGroup(running->gid);
+        if (group != nullptr) group_name = group->name;
+    }
+
+    if (QDateTime::currentSecsSinceEpoch() - last_test_time > 2) {
+        ui->label_running->setText(running ? QString("[%1] %2").arg(group_name, running->bean->DisplayName()).left(30) : tr("Not Running"));
+    }
+    //
+    auto display_socks = DisplayAddress(Configs::dataStore->inbound_address, Configs::dataStore->inbound_socks_port);
+    auto inbound_txt = QString("Mixed: %1").arg(display_socks);
+    ui->label_inbound->setText(inbound_txt);
+    //
+    ui->checkBox_VPN->setChecked(Configs::dataStore->spmode_vpn);
+    ui->checkBox_SystemProxy->setChecked(Configs::dataStore->spmode_system_proxy);
+    if (select_mode) {
+        ui->label_running->setText(tr("Select") + " *");
+        ui->label_running->setToolTip(tr("Select mode, double-click or press Enter to select a profile, press ESC to exit."));
+    } else {
+        ui->label_running->setToolTip({});
+    }
+
+    auto make_title = [=,this](bool isTray) {
+        QStringList tt;
+        if (!isTray && Configs::IsAdmin()) tt << "[Admin]";
+        if (select_mode) tt << "[" + tr("Select") + "]";
+        if (!title_error.isEmpty()) tt << "[" + title_error + "]";
+        if (Configs::dataStore->spmode_vpn && !Configs::dataStore->spmode_system_proxy) tt << "[Tun]";
+        if (!Configs::dataStore->spmode_vpn && Configs::dataStore->spmode_system_proxy) tt << "[" + tr("System Proxy") + "]";
+        if (Configs::dataStore->spmode_vpn && Configs::dataStore->spmode_system_proxy) tt << "[Tun+" + tr("System Proxy") + "]";
+        tt << software_name;
+        if (!isTray) tt << QString(NKR_VERSION);
+        if (!Configs::dataStore->active_routing.isEmpty() && Configs::dataStore->active_routing != "Default") {
+            tt << "[" + Configs::dataStore->active_routing + "]";
+        }
+        if (running != nullptr) tt << running->bean->DisplayTypeAndName() + "@" + group_name;
+        return tt.join(isTray ? "\n" : " ");
+    };
+
+    auto icon_status_new = Icon::NONE;
+
+    if (running != nullptr) {
+        if (Configs::dataStore->spmode_vpn) {
+            icon_status_new = Icon::VPN;
+        } else if (Configs::dataStore->system_dns_set && Configs::dataStore->spmode_system_proxy) {
+            icon_status_new = Icon::SYSTEM_PROXY_DNS;
+        } else if (Configs::dataStore->system_dns_set) {
+            icon_status_new = Icon::DNS;
+        } else if (Configs::dataStore->spmode_system_proxy) {
+            icon_status_new = Icon::SYSTEM_PROXY;
+        } else {
+            icon_status_new = Icon::RUNNING;
+        }
+    }
+
+    // refresh title & window icon
+    setWindowTitle(make_title(false));
+    if (icon_status_new != icon_status) QApplication::setWindowIcon(GetTrayIcon(Icon::RUNNING));
+
+    // refresh tray
+    if (tray != nullptr) {
+        tray->setToolTip(make_title(true));
+        if (icon_status_new != icon_status) setAppIcon(icon_status_new, tray);
+    }
+
+    icon_status = icon_status_new;
+}
+
+void setAppIcon(Icon::TrayIconStatus icon_status_new, QSystemTrayIcon *tray){
+    auto icon = Icon::GetTrayIcon(icon_status_new);
+    tray->setIcon(icon);
+    QApplication::setWindowIcon(icon);
+}
+
+void MainWindow::update_traffic_graph(int proxyDl, int proxyUp, int directDl, int directUp)
+{
+    if (speedChartWidget) {
+        QMap<SpeedWidget::GraphType, long> pointData;
+        pointData[SpeedWidget::OUTBOUND_PROXY_UP] = proxyUp;
+        pointData[SpeedWidget::OUTBOUND_PROXY_DOWN] = proxyDl;
+        pointData[SpeedWidget::OUTBOUND_DIRECT_UP] = directUp;
+        pointData[SpeedWidget::OUTBOUND_DIRECT_DOWN] = directDl;
+
+        speedChartWidget->AddPointData(pointData);
+    }
+}
+
+// table显示
+
+// refresh_groups -> show_group -> refresh_proxy_list
+void MainWindow::refresh_groups() {
+    Configs::dataStore->refreshing_group_list = true;
+
+    // refresh group?
+    for (int i = ui->tabWidget->count() - 1; i > 0; i--) {
+        ui->tabWidget->removeTab(i);
+    }
+
+    int index = 0;
+    for (const auto &gid: Configs::profileManager->groupsTabOrder) {
+        auto group = Configs::profileManager->GetGroup(gid);
+        if (index == 0) {
+            ui->tabWidget->setTabText(0, group->name);
+        } else {
+            auto widget2 = new QWidget();
+            auto layout2 = new QVBoxLayout();
+            layout2->setContentsMargins(QMargins());
+            layout2->setSpacing(0);
+            widget2->setLayout(layout2);
+            ui->tabWidget->addTab(widget2, group->name);
+        }
+        ui->tabWidget->tabBar()->setTabData(index, gid);
+        index++;
+    }
+
+    // show after group changed
+    if (Configs::profileManager->CurrentGroup() == nullptr) {
+        Configs::dataStore->current_group = -1;
+        ui->tabWidget->setCurrentIndex(groupId2TabIndex(0));
+        show_group(Configs::profileManager->groupsTabOrder.count() > 0 ? Configs::profileManager->groupsTabOrder.first() : 0);
+    } else {
+        ui->tabWidget->setCurrentIndex(groupId2TabIndex(Configs::dataStore->current_group));
+        show_group(Configs::dataStore->current_group);
+    }
+
+    Configs::dataStore->refreshing_group_list = false;
+}
+
+void MainWindow::refresh_proxy_list(const int &id) {
+    refresh_proxy_list_impl(id, {});
+}
+
+void MainWindow::refresh_proxy_list_impl(const int &id, GroupSortAction groupSortAction) {
+    ui->proxyListTable->setUpdatesEnabled(false);
+    if (id < 0) {
+        auto currentGroup = Configs::profileManager->CurrentGroup();
+        if (currentGroup == nullptr)
+        {
+            MW_show_log("Could not find current group!");
+            return;
+        }
+        switch (groupSortAction.method) {
+            case GroupSortMethod::Raw: {
+                break;
+            }
+            case GroupSortMethod::ById: {
+                break;
+            }
+            case GroupSortMethod::ByAddress:
+            case GroupSortMethod::ByName:
+            case GroupSortMethod::ByLatency:
+            case GroupSortMethod::ByType: {
+                std::sort(currentGroup->profiles.begin(), currentGroup->profiles.end(),
+                          [=,this](int a, int b) {
+                              QString ms_a;
+                              QString ms_b;
+                              if (groupSortAction.method == GroupSortMethod::ByType) {
+                                  ms_a = Configs::profileManager->GetProfile(a)->bean->DisplayType();
+                                  ms_b = Configs::profileManager->GetProfile(b)->bean->DisplayType();
+                              } else if (groupSortAction.method == GroupSortMethod::ByName) {
+                                  ms_a = Configs::profileManager->GetProfile(a)->bean->name;
+                                  ms_b = Configs::profileManager->GetProfile(b)->bean->name;
+                              } else if (groupSortAction.method == GroupSortMethod::ByAddress) {
+                                  ms_a = Configs::profileManager->GetProfile(a)->bean->DisplayAddress();
+                                  ms_b = Configs::profileManager->GetProfile(b)->bean->DisplayAddress();
+                              } else if (groupSortAction.method == GroupSortMethod::ByLatency) {
+                                  ms_a = Configs::profileManager->GetProfile(a)->full_test_report;
+                                  ms_b = Configs::profileManager->GetProfile(b)->full_test_report;
+                              }
+                              auto get_latency_for_sort = [](int id) {
+                                  auto i = Configs::profileManager->GetProfile(id)->latency;
+                                  if (i == 0) i = 100000;
+                                  if (i < 0) i = 99999;
+                                  return i;
+                              };
+                              if (groupSortAction.descending) {
+                                  if (groupSortAction.method == GroupSortMethod::ByLatency) {
+                                      if (ms_a.isEmpty() && ms_b.isEmpty()) {
+                                          // compare latency if full_test_report is empty
+                                          return get_latency_for_sort(a) > get_latency_for_sort(b);
+                                      }
+                                  }
+                                  return ms_a > ms_b;
+                              } else {
+                                  if (groupSortAction.method == GroupSortMethod::ByLatency) {
+                                      auto int_a = Configs::profileManager->GetProfile(a)->latency;
+                                      auto int_b = Configs::profileManager->GetProfile(b)->latency;
+                                      if (ms_a.isEmpty() && ms_b.isEmpty()) {
+                                          // compare latency if full_test_report is empty
+                                          return get_latency_for_sort(a) < get_latency_for_sort(b);
+                                      }
+                                  }
+                                  return ms_a < ms_b;
+                              }
+                          });
+                break;
+            }
+        }
+    }
+
+    // refresh data
+    refresh_proxy_list_impl_refresh_data(id);
+}
+
+void MainWindow::refresh_proxy_list_impl_refresh_data(const int &id, bool stopping) {
+    ui->proxyListTable->setUpdatesEnabled(false);
+    auto currentGroup = Configs::profileManager->CurrentGroup();
+    if (id >= 0)
+    {
+        if (!currentGroup->HasProfile(id))
+        {
+            ui->proxyListTable->setUpdatesEnabled(true);
+            return;
+        }
+        auto profile = Configs::profileManager->GetProfile(id);
+        if (filterProfilesList({id}).isEmpty())
+        {
+            ui->proxyListTable->setUpdatesEnabled(true);
+            return;
+        }
+        auto rowID = currentGroup->profiles.indexOf(id);
+        refresh_table_item(rowID, profile, stopping);
+    } else
+    {
+        ui->proxyListTable->blockSignals(true);
+        int row = 0;
+        auto profiles = filterProfilesList(currentGroup->profiles);
+        ui->proxyListTable->setRowCount(profiles.count());
+        for (const auto& profile : profiles) {
+            refresh_table_item(row++, profile, stopping);
+        }
+        ui->proxyListTable->blockSignals(false);
+    }
+    ui->proxyListTable->setUpdatesEnabled(true);
+}
+
+void MainWindow::refresh_table_item(const int row, const std::shared_ptr<Configs::ProxyEntity>& profile, bool stopping)
+{
+    if (profile == nullptr) return;
+
+    auto isRunning = profile->id == Configs::dataStore->started_id && !stopping;
+    auto f0 = std::make_unique<QTableWidgetItem>();
+    f0->setData(114514, profile->id);
+
+    // Check state
+    auto check = f0->clone();
+    check->setText(isRunning ? "✓" : Int2String(row + 1) + "  ");
+    ui->proxyListTable->setVerticalHeaderItem(row, check);
+
+    // C0: Type
+    auto f = f0->clone();
+    f->setText(profile->bean->DisplayType());
+    if (isRunning) f->setForeground(palette().link());
+    ui->proxyListTable->setItem(row, 0, f);
+
+    // C1: Address+Port
+    f = f0->clone();
+    f->setText(profile->bean->DisplayAddress());
+    if (isRunning) f->setForeground(palette().link());
+    ui->proxyListTable->setItem(row, 1, f);
+
+    // C2: Name
+    f = f0->clone();
+    f->setText(profile->bean->name);
+    if (isRunning) f->setForeground(palette().link());
+    ui->proxyListTable->setItem(row, 2, f);
+
+    // C3: Test Result
+    f = f0->clone();
+    if (profile->full_test_report.isEmpty()) {
+        auto color = profile->DisplayLatencyColor();
+        if (color.isValid()) f->setForeground(color);
+        f->setText(profile->DisplayTestResult());
+    } else {
+        f->setText(profile->full_test_report);
+    }
+    ui->proxyListTable->setItem(row, 3, f);
+
+    // C4: Traffic
+    f = f0->clone();
+    f->setText(profile->traffic_data->DisplayTraffic());
+    ui->proxyListTable->setItem(row, 4, f);
+}
+
+// table菜单相关
+
+void MainWindow::on_proxyListTable_itemDoubleClicked(QTableWidgetItem *item) {
+    auto id = item->data(114514).toInt();
+    if (select_mode) {
+        emit profile_selected(id);
+        select_mode = false;
+        refresh_status();
+        return;
+    }
+    auto dialog = new DialogEditProfile("", id, this);
+    connect(dialog, &QDialog::finished, dialog, &QDialog::deleteLater);
+}
+
+void MainWindow::on_menu_add_from_input_triggered() {
+    auto dialog = new DialogEditProfile("socks", Configs::dataStore->current_group, this);
+    connect(dialog, &QDialog::finished, dialog, &QDialog::deleteLater);
+}
+
+void MainWindow::on_menu_add_from_clipboard_triggered() {
+    auto clipboard = QApplication::clipboard()->text();
+    Subscription::groupUpdater->AsyncUpdate(clipboard);
+}
+
+void MainWindow::on_menu_clone_triggered() {
+    auto ents = get_now_selected_list();
+    if (ents.isEmpty()) return;
+
+    auto btn = QMessageBox::question(this, tr("Clone"), tr("Clone %1 item(s)").arg(ents.count()));
+    if (btn != QMessageBox::Yes) return;
+
+    QStringList sls;
+    for (const auto &ent: ents) {
+        sls << ent->bean->ToNekorayShareLink(ent->type);
+    }
+
+    Subscription::groupUpdater->AsyncUpdate(sls.join("\n"));
+}
+
+void  MainWindow::on_menu_delete_repeat_triggered () {
+    QList<std::shared_ptr<Configs::ProxyEntity>> out;
+    QList<std::shared_ptr<Configs::ProxyEntity>> out_del;
+
+    Configs::ProfileFilter::Uniq (Configs::profileManager-> CurrentGroup ()-> GetProfileEnts (), out,  true ,  false );
+    Configs::ProfileFilter::OnlyInSrc_ByPointer (Configs::profileManager-> CurrentGroup ()-> GetProfileEnts (), out, out_del);
+
+    int  remove_display_count =  0 ;
+    QString remove_display;
+    for  ( const  auto  &ent: out_del) {
+        remove_display += ent-> bean -> DisplayTypeAndName () +  " \n " ;
+        if  (++remove_display_count ==  20 ) {
+            remove_display +=  " ... " ;
+            break ;
+        }
+    }
+
+    if  (!out_del.empty()  &&
+        QMessageBox::question ( this ,  tr ( " Confirmation " ),  tr ( " Remove %1 item(s) ? " ). arg (out_del. length ()) +  " \n "  + remove_display) == QMessageBox::StandardButton::Yes) {
+        QList<int> del_ids;
+        for (const auto &ent: out_del) {
+            del_ids += ent->id;
+        }
+        Configs::profileManager->BatchDeleteProfiles(del_ids);
+        refresh_proxy_list();
+    }
+}
+
+void MainWindow::on_menu_delete_triggered() {
+    auto ents = get_now_selected_list();
+    if (ents.count() == 0) return;
+    if (QMessageBox::question(this, tr("Confirmation"), QString(tr("Remove %1 item(s) ?")).arg(ents.count())) ==
+        QMessageBox::StandardButton::Yes) {
+        QList<int> del_ids;
+        for (const auto &ent: ents) {
+            del_ids += ent->id;
+        }
+        Configs::profileManager->BatchDeleteProfiles(del_ids);
+        refresh_proxy_list();
+    }
+}
+
+void MainWindow::on_menu_reset_traffic_triggered() {
+    auto ents = get_now_selected_list();
+    if (ents.count() == 0) return;
+    for (const auto &ent: ents) {
+        ent->traffic_data->Reset();
+        ent->Save();
+        refresh_proxy_list(ent->id);
+    }
+}
+
+void MainWindow::on_menu_copy_links_triggered() {
+    if (ui->masterLogBrowser->hasFocus()) {
+        ui->masterLogBrowser->copy();
+        return;
+    }
+    auto ents = get_now_selected_list();
+    QStringList links;
+    for (const auto &ent: ents) {
+        links += ent->bean->ToShareLink();
+    }
+    if (links.length() == 0) return;
+    QApplication::clipboard()->setText(links.join("\n"));
+    show_log_impl(tr("Copied %1 item(s)").arg(links.length()));
+}
+
+void MainWindow::on_menu_copy_links_nkr_triggered() {
+    auto ents = get_now_selected_list();
+    QStringList links;
+    for (const auto &ent: ents) {
+        links += ent->bean->ToNekorayShareLink(ent->type);
+    }
+    if (links.length() == 0) return;
+    QApplication::clipboard()->setText(links.join("\n"));
+    show_log_impl(tr("Copied %1 item(s)").arg(links.length()));
+}
+
+void MainWindow::on_menu_export_config_triggered() {
+    auto ents = get_now_selected_list();
+    if (ents.count() != 1) return;
+    auto ent = ents.first();
+    if (ent->bean->DisplayCoreType() != software_core_name) return;
+
+    auto result = BuildConfig(ent, false, true);
+    QString config_core = QJsonObject2QString(result->coreConfig, true);
+    QApplication::clipboard()->setText(config_core);
+
+    QMessageBox msg(QMessageBox::Information, tr("Config copied"), config_core);
+    QPushButton *button_1 = msg.addButton(tr("Copy core config"), QMessageBox::YesRole);
+    QPushButton *button_2 = msg.addButton(tr("Copy test config"), QMessageBox::YesRole);
+    msg.addButton(QMessageBox::Ok);
+    msg.setEscapeButton(QMessageBox::Ok);
+    msg.setDefaultButton(QMessageBox::Ok);
+    msg.exec();
+    if (msg.clickedButton() == button_1) {
+        result = BuildConfig(ent, false, false);
+        config_core = QJsonObject2QString(result->coreConfig, true);
+        QApplication::clipboard()->setText(config_core);
+    } else if (msg.clickedButton() == button_2) {
+        result = BuildConfig(ent, true, false);
+        config_core = QJsonObject2QString(result->coreConfig, true);
+        QApplication::clipboard()->setText(config_core);
+    }
+}
+
+void MainWindow::display_qr_link(bool nkrFormat) {
+    auto ents = get_now_selected_list();
+    if (ents.count() != 1) return;
+
+    class W : public QDialog {
+    public:
+        QLabel *l = nullptr;
+        QCheckBox *cb = nullptr;
+        //
+        QPlainTextEdit *l2 = nullptr;
+        QImage im;
+        //
+        QString link;
+        QString link_nk;
+
+        void show_qr(const QSize &size) const {
+            auto side = size.height() - 20 - l2->size().height() - cb->size().height();
+            l->setPixmap(QPixmap::fromImage(im.scaled(side, side, Qt::KeepAspectRatio, Qt::FastTransformation),
+                                            Qt::MonoOnly));
+            l->resize(side, side);
+        }
+
+        void refresh(bool is_nk) {
+            auto link_display = is_nk ? link_nk : link;
+            l2->setPlainText(link_display);
+            constexpr qint32 qr_padding = 2;
+            //
+            try {
+                qrcodegen::QrCode qr = qrcodegen::QrCode::encodeText(link_display.toUtf8().data(), qrcodegen::QrCode::Ecc::MEDIUM);
+                qint32 sz = qr.getSize();
+                im = QImage(sz + qr_padding * 2, sz + qr_padding * 2, QImage::Format_RGB32);
+                QRgb black = qRgb(0, 0, 0);
+                QRgb white = qRgb(255, 255, 255);
+                im.fill(white);
+                for (int y = 0; y < sz; y++)
+                    for (int x = 0; x < sz; x++)
+                        if (qr.getModule(x, y))
+                            im.setPixel(x + qr_padding, y + qr_padding, black);
+                show_qr(size());
+            } catch (const std::exception &ex) {
+                QMessageBox::warning(nullptr, "error", ex.what());
+            }
+        }
+
+        W(const QString &link_, const QString &link_nk_) {
+            link = link_;
+            link_nk = link_nk_;
+            //
+            setLayout(new QVBoxLayout);
+            setMinimumSize(256, 256);
+            QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
+            sizePolicy.setHeightForWidth(true);
+            setSizePolicy(sizePolicy);
+            //
+            l = new QLabel();
+            l->setMinimumSize(256, 256);
+            l->setMargin(6);
+            l->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
+            l->setScaledContents(true);
+            layout()->addWidget(l);
+            cb = new QCheckBox;
+            cb->setText("Neko Links");
+            layout()->addWidget(cb);
+            l2 = new QPlainTextEdit();
+            l2->setReadOnly(true);
+            layout()->addWidget(l2);
+            //
+            connect(cb, &QCheckBox::toggled, this, &W::refresh);
+            refresh(false);
+        }
+
+        void resizeEvent(QResizeEvent *resizeEvent) override {
+            show_qr(resizeEvent->size());
+        }
+    };
+
+    auto link = ents.first()->bean->ToShareLink();
+    auto link_nk = ents.first()->bean->ToNekorayShareLink(ents.first()->type);
+    auto w = new W(link, link_nk);
+    w->setWindowTitle(ents.first()->bean->DisplayTypeAndName());
+    w->exec();
+    w->deleteLater();
+}
+
+#ifdef Q_OS_LINUX
+OrgFreedesktopPortalRequestInterface::OrgFreedesktopPortalRequestInterface(
+  const QString& service,
+  const QString& path,
+  const QDBusConnection& connection,
+  QObject* parent)
+  : QDBusAbstractInterface(service,
+                           path,
+                           "org.freedesktop.portal.Request",
+                           connection,
+                           parent)
+{}
+
+OrgFreedesktopPortalRequestInterface::~OrgFreedesktopPortalRequestInterface() {}
+#endif
+
+QPixmap grabScreen(QScreen* screen, bool& ok)
+{
+    QPixmap p;
+    QRect geom = screen->geometry();
+#ifdef Q_OS_LINUX
+    if (qEnvironmentVariable("XDG_SESSION_TYPE") == "wayland" || qEnvironmentVariable("WAYLAND_DISPLAY").contains("wayland", Qt::CaseInsensitive)) {
+        QDBusInterface screenshotInterface(
+          QStringLiteral("org.freedesktop.portal.Desktop"),
+          QStringLiteral("/org/freedesktop/portal/desktop"),
+          QStringLiteral("org.freedesktop.portal.Screenshot"));
+
+        // unique token
+        QString token =
+          QUuid::createUuid().toString().remove('-').remove('{').remove('}');
+
+        // premake interface
+        auto* request = new OrgFreedesktopPortalRequestInterface(
+          QStringLiteral("org.freedesktop.portal.Desktop"),
+          "/org/freedesktop/portal/desktop/request/" +
+            QDBusConnection::sessionBus().baseService().remove(':').replace('.','_') +
+            "/" + token,
+          QDBusConnection::sessionBus());
+
+        QEventLoop loop;
+        const auto gotSignal = [&p, &loop](uint status, const QVariantMap& map) {
+            if (status == 0) {
+                // Parse this as URI to handle unicode properly
+                QUrl uri = map.value("uri").toString();
+                QString uriString = uri.toLocalFile();
+                p = QPixmap(uriString);
+                p.setDevicePixelRatio(qApp->devicePixelRatio());
+                QFile imgFile(uriString);
+                imgFile.remove();
+            }
+            loop.quit();
+        };
+
+        // prevent racy situations and listen before calling screenshot
+        QMetaObject::Connection conn = QObject::connect(
+          request, &org::freedesktop::portal::Request::Response, gotSignal);
+
+        screenshotInterface.call(
+          QStringLiteral("Screenshot"),
+          "",
+          QMap<QString, QVariant>({ { "handle_token", QVariant(token) },
+                                    { "interactive", QVariant(false) } }));
+
+        loop.exec();
+        QObject::disconnect(conn);
+        request->Close().waitForFinished();
+        request->deleteLater();
+
+        if (p.isNull()) {
+            ok = false;
+        }
+	return p;
+    } else
+#endif
+        return screen->grabWindow(0, geom.x(), geom.y(), geom.width(), geom.height());
+}
+
+void MainWindow::parseQrImage(const QPixmap *image)
+{
+    const QVector<QString> texts = QrDecoder().decode(image->toImage().convertToFormat(QImage::Format_Grayscale8));
+    if (texts.isEmpty()) {
+        MessageBoxInfo(software_name, tr("QR Code not found"));
+    } else {
+        for (const QString &text : texts) {
+            show_log_impl("QR Code Result:\n" + text);
+            Subscription::groupUpdater->AsyncUpdate(text);
+        }
+    }
+}
+
+void MainWindow::on_menu_scan_qr_triggered() {
+    hide();
+    QThread::sleep(1);
+
+    bool ok = true;
+    QPixmap qpx(grabScreen(QGuiApplication::primaryScreen(), ok));
+
+    show();
+    if (ok) {
+        parseQrImage(&qpx);
+    }
+    else {
+        MessageBoxInfo(software_name, tr("Unable to capture screen"));
+    }
+}
+
+void MainWindow::on_menu_clear_test_result_triggered() {
+    for (const auto &profile: get_selected_or_group()) {
+        profile->latency = 0;
+        profile->dl_speed.clear();
+        profile->ul_speed.clear();
+        profile->full_test_report = "";
+        profile->Save();
+    }
+    refresh_proxy_list();
+}
+
+void MainWindow::on_menu_select_all_triggered() {
+    if (ui->masterLogBrowser->hasFocus()) {
+        ui->masterLogBrowser->selectAll();
+        return;
+    }
+    ui->proxyListTable->selectAll();
+}
+
+bool mw_sub_updating = false;
+
+void MainWindow::on_menu_update_subscription_triggered() {
+    auto group = Configs::profileManager->CurrentGroup();
+    if (group->url.isEmpty()) return;
+    if (mw_sub_updating) return;
+    mw_sub_updating = true;
+    Subscription::groupUpdater->AsyncUpdate(group->url, group->id, [&] { mw_sub_updating = false; });
+}
+
+void MainWindow::on_menu_remove_unavailable_triggered() {
+    QList<std::shared_ptr<Configs::ProxyEntity>> out_del;
+
+    for (const auto &[_, profile]: Configs::profileManager->profiles) {
+        if (Configs::dataStore->current_group != profile->gid) continue;
+        if (profile->latency < 0) out_del += profile;
+    }
+
+    int remove_display_count = 0;
+    QString remove_display;
+    for (const auto &ent: out_del) {
+        remove_display += ent->bean->DisplayTypeAndName() + "\n";
+        if (++remove_display_count == 20) {
+            remove_display += "...";
+            break;
+        }
+    }
+
+    if (!out_del.empty() &&
+        QMessageBox::question(this, tr("Confirmation"), tr("Remove %1 Unavailable item(s) ?").arg(out_del.length()) + "\n" + remove_display) == QMessageBox::StandardButton::Yes) {
+        QList<int> del_ids;
+        for (const auto &ent: out_del) {
+            del_ids += ent->id;
+        }
+        Configs::profileManager->BatchDeleteProfiles(del_ids);
+        refresh_proxy_list();
+    }
+}
+
+void MainWindow::on_menu_remove_invalid_triggered() {
+    runOnNewThread([=,this]
+    {
+        QList<std::shared_ptr<Configs::ProxyEntity>> out_del;
+
+     auto currentGroup = Configs::profileManager->GetGroup(Configs::dataStore->current_group);
+     if (currentGroup == nullptr) return;
+     std::atomic counter(0);
+     QMutex mu;
+     QMutex access;
+     int profileSize = currentGroup->GetProfileEnts().size();
+     mu.lock();
+     for (const auto& profile : currentGroup->GetProfileEnts()) {
+         parallelCoreCallPool->start([&out_del, profile, &counter, &mu, profileSize, &access]
+         {
+             if (!IsValid(profile))
+             {
+                 access.lock();
+                 out_del += profile;
+                 access.unlock();
+             }
+             if (++counter == profileSize) mu.unlock();
+         });
+     }
+     mu.lock();
+     mu.unlock();
+
+     int remove_display_count = 0;
+     QString remove_display;
+     for (const auto &ent: out_del) {
+         remove_display += ent->bean->DisplayTypeAndName() + "\n";
+         if (++remove_display_count == 20) {
+             remove_display += "...";
+             break;
+         }
+     }
+
+     runOnUiThread([=,this]
+     {
+         if (!out_del.empty() &&
+         QMessageBox::question(this, tr("Confirmation"), tr("Remove %1 Invalid item(s) ?").arg(out_del.length()) + "\n" + remove_display) == QMessageBox::StandardButton::Yes) {
+         QList<int> del_ids;
+         for (const auto &ent: out_del) {
+             del_ids += ent->id;
+         }
+         Configs::profileManager->BatchDeleteProfiles(del_ids);
+         refresh_proxy_list();
+     }
+     });
+    });
+}
+
+void MainWindow::on_menu_resolve_selected_triggered() {
+    auto profiles = get_now_selected_list();
+    if (profiles.isEmpty()) return;
+
+    if (mw_sub_updating) return;
+    mw_sub_updating = true;
+    auto resolve_count = std::atomic<int>(0);
+    Configs::dataStore->resolve_count = profiles.count();
+
+    for (const auto &profile: profiles) {
+        profile->bean->ResolveDomainToIP([=,this] {
+            profile->Save();
+            if (--Configs::dataStore->resolve_count != 0) return;
+            refresh_proxy_list();
+            mw_sub_updating = false;
+        });
+    }
+}
+
+void MainWindow::on_menu_resolve_domain_triggered() {
+    auto currGroup = Configs::profileManager->GetGroup(Configs::dataStore->current_group);
+    if (currGroup == nullptr) return;
+
+    auto profiles = currGroup->Profiles();
+    if (profiles.isEmpty()) return;
+
+    if (QMessageBox::question(this,
+                              tr("Confirmation"),
+                              tr("Replace domain server addresses with their resolved IPs?")) != QMessageBox::StandardButton::Yes) {
+        return;
+    }
+    if (mw_sub_updating) return;
+    mw_sub_updating = true;
+    auto resolve_count = std::atomic<int>(0);
+    Configs::dataStore->resolve_count = profiles.count();
+
+    for (const auto id: profiles) {
+        auto profile = Configs::profileManager->GetProfile(id);
+        profile->bean->ResolveDomainToIP([=,this] {
+            profile->Save();
+            if (--Configs::dataStore->resolve_count != 0) return;
+            refresh_proxy_list();
+            mw_sub_updating = false;
+        });
+    }
+}
+
+void MainWindow::on_proxyListTable_customContextMenuRequested(const QPoint &pos) {
+    ui->menu_server->popup(ui->proxyListTable->viewport()->mapToGlobal(pos)); // 弹出菜单
+}
+
+QList<std::shared_ptr<Configs::ProxyEntity>> MainWindow::get_now_selected_list() {
+    auto items = ui->proxyListTable->selectedItems();
+    QList<std::shared_ptr<Configs::ProxyEntity>> list;
+    for (auto item: items) {
+        auto id = item->data(114514).toInt();
+        auto ent = Configs::profileManager->GetProfile(id);
+        if (ent != nullptr && !list.contains(ent)) list += ent;
+    }
+    return list;
+}
+
+QList<std::shared_ptr<Configs::ProxyEntity>> MainWindow::get_selected_or_group() {
+    auto selected_or_group = ui->menu_server->property("selected_or_group").toInt();
+    QList<std::shared_ptr<Configs::ProxyEntity>> profiles;
+    if (selected_or_group > 0) {
+        profiles = get_now_selected_list();
+        if (profiles.isEmpty() && selected_or_group == 2) profiles = Configs::profileManager->CurrentGroup()->GetProfileEnts();
+    } else {
+        profiles = Configs::profileManager->CurrentGroup()->GetProfileEnts();
+    }
+    return profiles;
+}
+
+void MainWindow::keyPressEvent(QKeyEvent *event) {
+    switch (event->key()) {
+        case Qt::Key_Escape:
+            // take over by shortcut_esc
+            break;
+        case Qt::Key_Enter:
+            profile_start();
+            break;
+        default:
+            QMainWindow::keyPressEvent(event);
+    }
+}
+
+// Log
+
+inline void FastAppendTextDocument(const QString &message, QTextDocument *doc) {
+    QTextCursor cursor(doc);
+    cursor.movePosition(QTextCursor::End);
+    cursor.beginEditBlock();
+    cursor.insertBlock();
+    cursor.insertText(message);
+    cursor.endEditBlock();
+}
+
+void MainWindow::show_log_impl(const QString &log) {
+    if (log.size() > 20000)
+    {
+        show_log_impl("Ignored massive log of size:" + Int2String(log.size()));
+        return;
+    }
+    auto trimmed = log.trimmed();
+    if (trimmed.isEmpty()) return;
+
+    FastAppendTextDocument(trimmed, qvLogDocument);
+    // qvLogDocument->setPlainText(qvLogDocument->toPlainText() + log);
+    // From https://gist.github.com/jemyzhang/7130092
+    auto block = qvLogDocument->begin();
+
+    while (block.isValid()) {
+        if (qvLogDocument->blockCount() > Configs::dataStore->max_log_line) {
+            QTextCursor cursor(block);
+            block = block.next();
+            cursor.select(QTextCursor::BlockUnderCursor);
+            cursor.movePosition(QTextCursor::NextCharacter, QTextCursor::KeepAnchor);
+            cursor.removeSelectedText();
+            continue;
+        }
+        break;
+    }
+}
+
+void MainWindow::on_masterLogBrowser_customContextMenuRequested(const QPoint &pos) {
+    QMenu *menu = ui->masterLogBrowser->createStandardContextMenu();
+
+    auto sep = new QAction(this);
+    sep->setSeparator(true);
+    menu->addAction(sep);
+
+    auto action_clear = new QAction(this);
+    action_clear->setText(tr("Clear"));
+    connect(action_clear, &QAction::triggered, this, [=,this] {
+        qvLogDocument->clear();
+        ui->masterLogBrowser->clear();
+    });
+    menu->addAction(action_clear);
+
+    menu->exec(ui->masterLogBrowser->viewport()->mapToGlobal(pos)); // 弹出菜单
+}
+
+void MainWindow::on_tabWidget_customContextMenuRequested(const QPoint &p) {
+    int clickedIndex = ui->tabWidget->tabBar()->tabAt(p);
+    if (clickedIndex == -1) {
+        auto* menu = new QMenu(this);
+        auto* addAction = new QAction(tr("Add new Group"), this);
+        connect(addAction, &QAction::triggered, this, [=,this]{
+            auto ent = Configs::ProfileManager::NewGroup();
+            auto dialog = new DialogEditGroup(ent, this);
+            int ret = dialog->exec();
+            dialog->deleteLater();
+
+            if (ret == QDialog::Accepted) {
+                Configs::profileManager->AddGroup(ent);
+                MW_dialog_message(Dialog_DialogManageGroups, "refresh-1");
+            }
+        });
+
+        menu->addAction(addAction);
+        menu->exec(ui->tabWidget->tabBar()->mapToGlobal(p));
+        return;
+    }
+
+    ui->tabWidget->setCurrentIndex(clickedIndex);
+    auto* menu = new QMenu(this);
+
+    auto* addAction = new QAction(tr("Add new Group"), this);
+    auto* deleteAction = new QAction(tr("Delete selected Group"), this);
+    auto* editAction = new QAction(tr("Edit selected Group"), this);
+    connect(addAction, &QAction::triggered, this, [=,this]{
+        auto ent = Configs::ProfileManager::NewGroup();
+        auto dialog = new DialogEditGroup(ent, this);
+        int ret = dialog->exec();
+        dialog->deleteLater();
+
+        if (ret == QDialog::Accepted) {
+            Configs::profileManager->AddGroup(ent);
+            MW_dialog_message(Dialog_DialogManageGroups, "refresh-1");
+        }
+    });
+    connect(deleteAction, &QAction::triggered, this, [=,this] {
+        auto id = Configs::profileManager->groupsTabOrder[clickedIndex];
+        if (QMessageBox::question(this, tr("Confirmation"), tr("Remove %1?").arg(Configs::profileManager->groups[id]->name)) ==
+            QMessageBox::StandardButton::Yes) {
+            Configs::profileManager->DeleteGroup(id);
+            MW_dialog_message(Dialog_DialogManageGroups, "refresh-1");
+        }
+    });
+    connect(editAction, &QAction::triggered, this, [=,this]{
+        auto id = Configs::profileManager->groupsTabOrder[clickedIndex];
+        auto ent = Configs::profileManager->groups[id];
+        auto dialog = new DialogEditGroup(ent, this);
+        connect(dialog, &QDialog::finished, this, [=,this] {
+            if (dialog->result() == QDialog::Accepted) {
+                ent->Save();
+                MW_dialog_message(Dialog_DialogManageGroups, "refresh" + Int2String(ent->id));
+            }
+            dialog->deleteLater();
+        });
+        dialog->show();
+    });
+    menu->addAction(addAction);
+    menu->addAction(editAction);
+    auto group = Configs::profileManager->GetGroup(Configs::dataStore->current_group);
+    if (Configs::profileManager->groups.size() > 1) menu->addAction(deleteAction);
+    if (!group->Profiles().empty()) {
+        menu->addAction(ui->actionUrl_Test_Group);
+        menu->addAction(ui->actionSpeedtest_Group);
+        menu->addAction(ui->menu_resolve_domain);
+        menu->addAction(ui->menu_clear_test_result);
+        menu->addAction(ui->menu_delete_repeat);
+        menu->addAction(ui->menu_remove_unavailable);
+        menu->addAction(ui->menu_remove_invalid);
+    }
+    if (!group->url.isEmpty()) menu->addAction(ui->menu_update_subscription);
+    if (!speedtestRunning.tryLock()) {
+        menu->addAction(ui->menu_stop_testing);
+    } else {
+        speedtestRunning.unlock();
+        menu->removeAction(ui->menu_stop_testing);
+    }
+    menu->exec(ui->tabWidget->tabBar()->mapToGlobal(p));
+    return;
+}
+
+// eventFilter
+
+bool MainWindow::eventFilter(QObject *obj, QEvent *event) {
+    if (event->type() == QEvent::MouseButtonPress) {
+        auto mouseEvent = dynamic_cast<QMouseEvent *>(event);
+        if (obj == ui->label_running && mouseEvent->button() == Qt::LeftButton && running != nullptr) {
+            url_test_current();
+            return true;
+        } else if (obj == ui->label_inbound && mouseEvent->button() == Qt::LeftButton) {
+            on_menu_basic_settings_triggered();
+            return true;
+        } else if (obj == ui->tabWidget && mouseEvent->button() == Qt::RightButton) {
+            on_tabWidget_customContextMenuRequested(mouseEvent->position().toPoint());
+            return true;
+        }
+    } else if (event->type() == QEvent::MouseButtonDblClick) {
+        if (obj == ui->splitter) {
+            auto size = ui->splitter->size();
+            ui->splitter->setSizes({size.height() / 2, size.height() / 2});
+        }
+    }
+    return QMainWindow::eventFilter(obj, event);
+}
+
+// profile selector
+
+void MainWindow::start_select_mode(QObject *context, const std::function<void(int)> &callback) {
+    select_mode = true;
+    connectOnce(this, &MainWindow::profile_selected, context, callback);
+    refresh_status();
+}
+
+// 连接列表
+
+inline QJsonArray last_arr; // format is nekoray_connections_json
+
+// Hotkey
+
+inline QList<std::shared_ptr<QHotkey>> RegisteredHotkey;
+
+void MainWindow::RegisterHotkey(bool unregister) {
+    while (!RegisteredHotkey.isEmpty()) {
+        auto hk = RegisteredHotkey.takeFirst();
+        hk->deleteLater();
+    }
+    if (unregister || Configs::dataStore->prepare_exit) return;
+
+    QStringList regstr{
+        Configs::dataStore->hotkey_mainwindow,
+        Configs::dataStore->hotkey_group,
+        Configs::dataStore->hotkey_route,
+        Configs::dataStore->hotkey_system_proxy_menu,
+        Configs::dataStore->hotkey_toggle_system_proxy,
+    };
+
+    for (const auto &key: regstr) {
+        if (key.isEmpty()) continue;
+        if (regstr.count(key) > 1) return; // Conflict hotkey
+    }
+    for (const auto &key: regstr) {
+        QKeySequence k(key);
+        if (k.isEmpty()) continue;
+        auto hk = std::make_shared<QHotkey>(k, true);
+        if (hk->isRegistered()) {
+            RegisteredHotkey += hk;
+            connect(hk.get(), &QHotkey::activated, this, [=,this] { HotkeyEvent(key); });
+        } else {
+            hk->deleteLater();
+        }
+    }
+}
+
+void MainWindow::RegisterHiddenMenuShortcuts(bool unregister) {
+    for (const auto s : hiddenMenuShortcuts) s->deleteLater();
+    hiddenMenuShortcuts.clear();
+
+    if (unregister) return;
+
+    for (const auto &action: ui->menuHidden_menu->actions()) {
+        if (!action->shortcut().toString().isEmpty())
+        {
+            hiddenMenuShortcuts.append(new QShortcut(action->shortcut(), this, [=,this](){
+                action->trigger();
+            }));
+        }
+    }
+}
+
+void MainWindow::setActionsData()
+{
+    // assign ids to menu actions so that we can save and restore them
+    ui->menu_add_from_input->setData(QString("m2"));
+    ui->menu_clear_test_result->setData(QString("m3"));
+    ui->menu_clone->setData(QString("m4"));
+    ui->menu_delete_repeat->setData(QString("m6"));
+    ui->menu_export_config->setData(QString("m7"));
+    ui->menu_qr->setData(QString("m8"));
+    ui->menu_remove_invalid->setData(QString("m9"));
+    ui->menu_remove_unavailable->setData(QString("m10"));
+    ui->menu_reset_traffic->setData(QString("m11"));
+    ui->menu_resolve_domain->setData(QString("m12"));
+    ui->menu_resolve_selected->setData(QString("m13"));
+    ui->menu_scan_qr->setData(QString("m14"));
+    ui->menu_stop_testing->setData(QString("m15"));
+    ui->menu_update_subscription->setData(QString("m16"));
+    ui->actionSpeedtest_Current->setData(QString("m18"));
+    ui->actionSpeedtest_Group->setData(QString("m19"));
+    ui->actionSpeedtest_Selected->setData(QString("m20"));
+    ui->actionUrl_Test_Group->setData(QString("m21"));
+    ui->actionUrl_Test_Selected->setData(QString("m22"));
+    ui->actionHide_window->setData(QString("m23"));
+    ui->actionAdd_profile_from_File->setData(QString("m24"));
+}
+
+QList<QAction*> MainWindow::getActionsForShortcut()
+{
+    QList<QAction*> list;
+    QList<QAction *> actions = findChildren<QAction *>();
+
+    for (QAction *action : actions) {
+        if (action->data().isNull() || action->data().toString().isEmpty()) continue;
+        list.append(action);
+    }
+    return list;
+}
+
+void MainWindow::loadShortcuts()
+{
+    auto mp = Configs::dataStore->shortcuts->shortcuts;
+    for (QList<QAction *> actions = findChildren<QAction *>(); QAction *action : actions)
+    {
+        if (action->data().isNull() || action->data().toString().isEmpty()) continue;
+        if (mp.count(action->data().toString()) == 0) action->setShortcut(QKeySequence());
+        else action->setShortcut(mp[action->data().toString()]);
+    }
+
+    RegisterHiddenMenuShortcuts();
+}
+
+
+void MainWindow::HotkeyEvent(const QString &key) {
+    if (key.isEmpty()) return;
+    runOnUiThread([=,this] {
+        if (key == Configs::dataStore->hotkey_mainwindow) {
+            tray->activated(QSystemTrayIcon::ActivationReason::Trigger);
+        } else if (key == Configs::dataStore->hotkey_group) {
+            on_menu_manage_groups_triggered();
+        } else if (key == Configs::dataStore->hotkey_route) {
+            on_menu_routing_settings_triggered();
+        } else if (key == Configs::dataStore->hotkey_system_proxy_menu) {
+            ui->menu_spmode->popup(QCursor::pos());
+        } else if (key == Configs::dataStore->hotkey_toggle_system_proxy) {
+            toggle_system_proxy();
+        }
+    });
+}
+
+bool MainWindow::StopVPNProcess() {
+    QMutex waitStop;
+    waitStop.lock();
+    runOnThread([=, this, &waitStop]
+    {
+        core_process->Kill();
+        waitStop.unlock();
+    }, DS_cores);
+    waitStop.lock();
+    waitStop.unlock();
+    return true;
+}
+
+#ifndef SKIP_UPDATE_BUTTON
+#ifdef SKIP_JS_UPDATER
+// ```
+bool isNewer(QString assetName) {
+    if (QString(NKR_VERSION).isEmpty()) return false;
+  //  assetName = assetName.mid(8); // take out nekobox-
+    QString version;
+
+    auto spl = assetName.split('-');
+    auto spl_size = spl.size();
+    if (spl_size < 2){
+        return false;
+    }
+
+    version += spl[1]; // version: 1.2.3
+    if (spl_size < 3){
+        auto & spl_2 = spl[2];
+        if (spl_2.contains("beta") || spl_2.contains("alpha") || spl_2.contains("rc")) {
+            version += "."+spl_2;
+        }// .beta.13
+    }
+    auto parts = version.split("."); // [1,2,3,beta,13]
+    auto currentParts = QString(NKR_VERSION).replace("-", ".").split('.');
+
+    if (parts.size() < 3 || currentParts.size() < 3)
+    {
+        return false;
+    }
+
+    std::vector<int> verNums;
+    std::vector<int> currNums;
+    // add base version first
+    verNums.push_back(parts[0].toInt());
+    verNums.push_back(parts[1].toInt());
+    verNums.push_back(parts[2].toInt());
+    if (parts.size() > 3)
+    {
+        if (parts[3] == "alpha") verNums.push_back(1);
+        if (parts[3] == "beta") verNums.push_back(2);
+        if (parts[3] == "rc") verNums.push_back(3);
+        if (parts.size() > 4) verNums.push_back(parts[4].toInt());
+    }
+
+    currNums.push_back(currentParts[0].toInt());
+    currNums.push_back(currentParts[1].toInt());
+    currNums.push_back(currentParts[2].toInt());
+    if (currentParts.size() > 3)
+    {
+        if (currentParts[3] == "alpha") currNums.push_back(1);
+        if (currentParts[3] == "beta") currNums.push_back(2);
+        if (currentParts[3] == "rc") currNums.push_back(3);
+        if (currentParts.size() > 4) currNums.push_back(currentParts[4].toInt());
+    }
+
+    if (verNums.size() < 3 || currNums.size() < 3)
+    {
+        MW_show_log("Version strings seem to be invalid" + QString(NKR_VERSION) + " and " + version);
+        return false;
+    }
+
+    for (int i=0;i<3;i++)
+    {
+        if (verNums[i] > currNums[i]) return true;
+        if (verNums[i] < currNums[i]) return false;
+    }
+
+    // equal base version, check beta-ness
+    if (verNums.size() == 5 && currNums.size() == 3) return false;
+    if (verNums.size() == 3 && currNums.size() == 5) return true;
+    if (verNums.size() == 5 && currNums.size() == 5)
+    {
+        for (int i=3;i<5;i++)
+        {
+            if (verNums[i] > currNums[i]) return true;
+            if (verNums[i] < currNums[i]) return false;
+        }
+    } else
+    {
+        MW_show_log("Version strings seem to be invalid" + QString(NKR_VERSION) + " and " + version);
+        return false;
+    }
+    return false;
+}
+// ```
+#endif
+#endif
+
+#ifndef SKIP_UPDATE_BUTTON
+#ifndef SKIP_JS_UPDATER
+#define MAINWINDOW_H_DEFINED
+#include <thread>
+#include <iostream>
+#include "include/js/js_updater.h"
+#endif
+void MainWindow::CheckUpdate() {
+    bool is_newer = false;
+    QString
+        archive_name            = "nekobox.zip",
+        assets_name             = "",
+        release_download_url    = "",
+        release_url             = "",
+        release_note            = "",
+        note_pre_release        = "",
+        search                  = "";
+
+#define SEARCHDEF(X) search = X; goto end_search_define;
+#define IS_64_BIT (QT_POINTER_SIZE == 8)
+
+#if Q_PROCESSOR_ARM
+#if IS_64_BIT
+#define Q_PROCESSOR_ARM_64
+#else
+#define Q_PROCESSOR_ARM_32
+#endif
+#endif
+
+#ifdef Q_OS_WIN
+#  ifdef Q_PROCESSOR_ARM_64
+#    ifndef USE_LEGACY_QT
+        SEARCHDEF("windows-arm64");
+#    else
+        SEARCHDEF("windowslegacy-arm64");
+#    endif
+#  endif
+#endif
+
+#ifdef Q_OS_WIN32
+#  ifdef Q_OS_WIN64
+#   ifdef Q_PROCESSOR_X86_64
+#    ifndef USE_LEGACY_QT
+        SEARCHDEF("windows64");
+#    else
+        SEARCHDEF("windowslegacy64");
+#    endif
+#   endif
+#  endif
+#  ifdef Q_PROCESSOR_X86_32
+        SEARCHDEF("windows32");
+#  endif
+#endif
+
+#ifdef Q_OS_LINUX
+#  ifdef Q_PROCESSOR_X86_64
+        SEARCHDEF("linux-amd64");
+#  endif
+#  ifdef Q_PROCESSOR_ARM_32
+        SEARCHDEF("linux-arm32");
+#  endif
+#  ifdef Q_PROCESSOR_ARM_64
+        SEARCHDEF("linux-arm64");
+#  endif
+#  ifdef Q_PROCESSOR_X86_32
+        SEARCHDEF("linux-i386");
+#  endif
+#  ifdef Q_PROCESSOR_RISCV_32
+        SEARCHDEF("linux-riscv32");
+#  endif
+#  ifdef Q_PROCESSOR_RISCV_64
+        SEARCHDEF("linux-riscv64");
+#  endif
+#  ifdef Q_PROCESSOR_MIPS_32
+        SEARCHDEF("linux-mips32");
+#  endif
+#  ifdef Q_PROCESSOR_MIPS_64
+        SEARCHDEF("linux-mips64");
+#  endif
+#endif
+
+#ifdef Q_OS_MACOS
+#  ifdef Q_PROCESSOR_X86_64
+#    ifndef USE_LEGACY_QT
+        SEARCHDEF("macos-amd64");
+#    else
+        SEARCHDEF("macoslegacy-amd64");
+#    endif
+#  endif
+#  ifdef Q_PROCESSOR_ARM_64
+#    ifndef USE_LEGACY_QT
+        SEARCHDEF("macos-arm64");
+#    else
+        SEARCHDEF("macoslegacy-arm64");
+#    endif
+#  endif
+#endif
+
+end_search_define:
+
+#ifndef SKIP_JS_UPDATER
+    MessageQueue bQueue;
+    QString updater_js = "";
+    {
+        QFile file(QApplication::applicationDirPath() + "/check_new_release.js");
+
+        if (!file.exists()) {
+            goto skip1;
+        }
+        if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
+            goto skip1;
+        }
+        QTextStream in(&file);
+        updater_js = in.readAll().toUtf8().constData();
+
+        file.close();
+    }
+
+
+    {
+        std::thread updater(  []( MessageQueue* bQueue,
+                                  QString * updater_js,
+                                  QString * search,
+                                  QString * assets_name,
+                                  QString * release_download_url,
+                                  QString * release_url,
+                                  QString * release_note,
+                                  QString * note_pre_release,
+                                  QString * archive_name,
+                                  bool * is_newer){
+            jsUpdater(
+                bQueue,
+                updater_js,
+                search,
+                assets_name,
+                release_download_url,
+                release_url,
+                release_note,
+                note_pre_release,
+                archive_name,
+                is_newer
+            );
+            bQueue->Push(MessagePart{"", "", 0});
+        },
+        &bQueue,
+        &updater_js,
+        &search,
+        &assets_name,
+        &release_download_url,
+        &release_url,
+        &release_note,
+        &note_pre_release,
+        &archive_name,
+        &is_newer);
+
+        do {
+            MessagePart part;
+            bQueue.Pop(part);
+            auto type = part.type;
+            if (type == 0){
+                break;
+            } else if (type == 1){
+                auto & title = part.title;
+                auto & message = part.message;
+                if (title.isEmpty()){
+                    MW_show_log(message);
+                } else {
+                    MW_show_log("["+title+"]: "+message);
+                }
+            } else if (type == 2){
+                runOnUiThread([=,this] { MessageBoxWarning(part.title, part.message); });
+            } else if (type == 3){
+                runOnUiThread([=,this] { MessageBoxInfo(part.title, part.message); });
+            } else if (type == 4){
+                std::cout << part.message.toStdString() << std::endl;
+            }
+        } while (true);
+        updater.join();
+    }
+#endif
+    skip1:
+
+    if (search.isEmpty()) {
+        runOnUiThread([=,this] {
+            MessageBoxWarning(QObject::tr("Update"), QObject::tr("Not official support platform"));
+        });
+        return;
+    }
+#ifdef SKIP_JS_UPDATER
+    {
+        auto resp = NetworkRequestHelper::HttpGet("https://api.github.com/repos/qr243vbi/nekobox/releases");
+        if (!resp.error.isEmpty()) {
+            runOnUiThread([=,this] {
+                MessageBoxWarning(QObject::tr("Update"), QObject::tr("Requesting update error: %1").arg(resp.error + "\n" + resp.data));
+            });
+            return;
+        }
+
+        bool exitFlag = false;
+        QJsonArray array = QString2QJsonArray(resp.data);
+        for (const QJsonValue value : array) {
+            QJsonObject release = value.toObject();
+            if (release["prerelease"].toBool() && !Configs::dataStore->allow_beta_update) continue;
+            for (const QJsonValue asset : release["assets"].toArray()) {
+                if (asset["name"].toString().contains(search) && asset["name"].toString().section('.', -1) == QString("zip")) {
+                    note_pre_release = release["prerelease"].toBool() ? " (Pre-release)" : "";
+                    release_url = release["html_url"].toString();
+                    release_note = release["body"].toString();
+                    assets_name = asset["name"].toString();
+                    release_download_url = asset["browser_download_url"].toString();
+                    exitFlag = true;
+                    break;
+                }
+            }
+            if (exitFlag) break;
+        }
+    }
+
+    is_newer = !assets_name.isEmpty();
+    if (is_newer){
+        is_newer = isNewer(assets_name);
+    }
+#endif
+
+    if (!is_newer){
+        MW_show_log("[Warn]: assets version is not newer ");
+    } else {
+        MW_show_log("[Warn]: assets version is newer ");
+    }
+
+    if (release_download_url.isEmpty() || !is_newer) {
+        runOnUiThread([=,this] {
+            MessageBoxInfo(QObject::tr("Update"), QObject::tr("No update"));
+        });
+        return;
+    }
+
+    runOnUiThread([=,this] {
+        auto allow_updater = !Configs::dataStore->flag_use_appdata;
+        QMessageBox box(QMessageBox::Question, QObject::tr("Update") + note_pre_release,
+                        QObject::tr("Update found: %1\nRelease note:\n%2").arg(assets_name, release_note));
+        //
+        QAbstractButton *btn1 = nullptr;
+        if (allow_updater) {
+			if (
+				QFile::exists(QApplication::applicationDirPath() + "/updater") ||
+				QFile::exists(QApplication::applicationDirPath() + "/updater.exe")
+			) {
+            	btn1 = box.addButton(QObject::tr("Update"), QMessageBox::AcceptRole);
+			} else {
+				allow_updater = false;
+			}
+        }
+        QAbstractButton *btn2 = box.addButton(QObject::tr("Open in browser"), QMessageBox::AcceptRole);
+        box.addButton(QObject::tr("Close"), QMessageBox::RejectRole);
+        box.exec();
+        //
+        if (btn1 == box.clickedButton() && allow_updater) {
+            // Download Update
+            runOnNewThread([=,this] {
+                if (!mu_download_update.tryLock()) {
+                    runOnUiThread([=,this](){
+                        MessageBoxWarning(tr("Cannot start"), tr("Last download request has not finished yet"));
+                    });
+                    return;
+                }
+                QString errors;
+                if (!release_download_url.isEmpty()) {
+                    auto res = NetworkRequestHelper::DownloadAsset(release_download_url, archive_name);
+                    if (!res.isEmpty()) {
+                        errors += res;
+                    }
+                }
+                mu_download_update.unlock();
+                runOnUiThread([=,this] {
+                    if (errors.isEmpty()) {
+                        auto q = QMessageBox::question(nullptr, QObject::tr("Update"),
+                                                       QObject::tr("Update is ready, restart to install?"));
+                        if (q == QMessageBox::StandardButton::Yes) {
+                            this->exit_reason = 1;
+                            on_menu_exit_triggered();
+                        }
+                    } else {
+                        MessageBoxWarning(tr("Failed to download update assets"), errors);
+                    }
+                });
+            });
+        } else if (btn2 == box.clickedButton()) {
+            QDesktopServices::openUrl(QUrl(release_url));
+        }
+    });
+}
+#endif
