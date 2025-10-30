@@ -36,5 +36,19 @@ namespace Configs
             _add(new configItem("disable_mtu_discovery", &disable_mtu_discovery, boolean));
             _add(new configItem("tls", dynamic_cast<JsonStore *>(tls.get()), jsonStore));
         }
+
+        // baseConfig overrides
+        bool ParseFromLink(const QString& link) override;
+        bool ParseFromJson(const QJsonObject& object) override;
+        QString ExportToLink() override;
+        QJsonObject ExportToJson() override;
+        BuildResult Build() override;
+
+        // outboundMeta overrides
+        QString DisplayAddress() override;
+        QString DisplayName() override;
+        QString DisplayType() override;
+        QString DisplayTypeAndName() override;
+        bool IsEndpoint() override;
     };
 }

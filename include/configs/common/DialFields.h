@@ -20,5 +20,12 @@ namespace Configs
             _add(new configItem("tcp_multi_path", &tcp_multi_path, itemType::boolean));
             _add(new configItem("udp_fragment", &udp_fragment, itemType::boolean));
         }
+
+        // baseConfig overrides
+        bool ParseFromLink(const QString& link) override;
+        bool ParseFromJson(const QJsonObject& object) override;
+        QString ExportToLink() override;
+        QJsonObject ExportToJson() override;
+        BuildResult Build() override;
     };
 }

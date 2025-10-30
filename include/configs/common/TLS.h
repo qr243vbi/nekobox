@@ -17,6 +17,13 @@ namespace Configs
             _add(new configItem("enabled", &enabled, boolean));
             _add(new configItem("fingerprint", &fingerPrint, string));
         }
+
+        // baseConfig overrides
+        bool ParseFromLink(const QString& link) override;
+        bool ParseFromJson(const QJsonObject& object) override;
+        QString ExportToLink() override;
+        QJsonObject ExportToJson() override;
+        BuildResult Build() override;
     };
 
     class ECH : public baseConfig
@@ -32,6 +39,13 @@ namespace Configs
             _add(new configItem("config", &config, stringList));
             _add(new configItem("config_path", &config_path, string));
         }
+
+        // baseConfig overrides
+        bool ParseFromLink(const QString& link) override;
+        bool ParseFromJson(const QJsonObject& object) override;
+        QString ExportToLink() override;
+        QJsonObject ExportToJson() override;
+        BuildResult Build() override;
     };
 
     class Reality : public baseConfig
@@ -47,6 +61,13 @@ namespace Configs
             _add(new configItem("public_key", &public_key, string));
             _add(new configItem("short_id", &short_id, string));
         }
+
+        // baseConfig overrides
+        bool ParseFromLink(const QString& link) override;
+        bool ParseFromJson(const QJsonObject& object) override;
+        QString ExportToLink() override;
+        QJsonObject ExportToJson() override;
+        BuildResult Build() override;
     };
 
     class TLS : public baseConfig
@@ -100,5 +121,12 @@ namespace Configs
             _add(new configItem("utls", dynamic_cast<JsonStore *>(utls.get()), jsonStore));
             _add(new configItem("reality", dynamic_cast<JsonStore *>(reality.get()), jsonStore));
         }
+
+        // baseConfig overrides
+        bool ParseFromLink(const QString& link) override;
+        bool ParseFromJson(const QJsonObject& object) override;
+        QString ExportToLink() override;
+        QJsonObject ExportToJson() override;
+        BuildResult Build() override;
     };
 }

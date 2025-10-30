@@ -3,7 +3,7 @@
 
 namespace Configs
 {
-    inline QStringLists muxProtocols = {"smux", "yamux", "h2mux"};
+    inline QStringList muxProtocols = {"smux", "yamux", "h2mux"};
 
     class TcpBrutal : public baseConfig
     {
@@ -18,6 +18,13 @@ namespace Configs
             _add(new configItem("up_mbps", &up_mbps, integer));
             _add(new configItem("down_mbps", &down_mbps, integer));
         }
+
+        // baseConfig overrides
+        bool ParseFromLink(const QString& link) override;
+        bool ParseFromJson(const QJsonObject& object) override;
+        QString ExportToLink() override;
+        QJsonObject ExportToJson() override;
+        BuildResult Build() override;
     };
 
     class Multiplex : public baseConfig
@@ -41,5 +48,12 @@ namespace Configs
             _add(new configItem("padding", &padding, boolean));
             _add(new configItem("brutal", dynamic_cast<JsonStore *>(brutal.get()), jsonStore));
         }
+
+        // baseConfig overrides
+        bool ParseFromLink(const QString& link) override;
+        bool ParseFromJson(const QJsonObject& object) override;
+        QString ExportToLink() override;
+        QJsonObject ExportToJson() override;
+        BuildResult Build() override;
     };
 }
