@@ -12,6 +12,7 @@
 #include <QQueue>
 #include <QMutex>
 #include <QWaitCondition>
+#include <QJsonDocument>
 
 #include "include/ui/setting/ThemeManager.hpp"
 #include "include/ui/setting/Icon.hpp"
@@ -72,6 +73,27 @@ void UI_InitMainWindow() {
     mainwindow = new MainWindow;
 }
 
+std::map<std::string, std::string> jsonToMap(const QByteArray& byteArray) {
+    std::map<std::string, std::string> result;
+
+    // Convert QByteArray to QJsonDocument
+    QJsonDocument jsonDoc = QJsonDocument::fromJson(byteArray);
+
+    // Check if conversion was successful
+    if (!jsonDoc.isNull() && jsonDoc.isObject()) {
+        QJsonObject jsonObj = jsonDoc.object();
+
+        // Iterate over the QJsonObject and populate the std::map
+        for (const auto& key : jsonObj.keys()) {
+            result[key.toStdString()] = jsonObj[key].toVariant().toString().toStdString();
+        }
+    } else {
+        // Handle error
+        qWarning() << "Failed to convert QByteArray to QJsonDocument.";
+    }
+
+    return result;
+}
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow) {
     mainwindow = this;
@@ -483,32 +505,27 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     });
 
 
-	QFile* srslist = new QFile("srslist");
+	QFile* srslist = new QFile("srslist.json");
     if (!srslist->exists()){
         delete srslist;
-        srslist = new QFile(QApplication::applicationDirPath() + "/srslist");
+        srslist = new QFile(QApplication::applicationDirPath() + "/srslist.json");
     }
     if (srslist->exists() && srslist->open(QIODevice::ReadOnly)) {
         QByteArray byteArray = srslist->readAll();
         srslist->close();
         delete srslist;
-        std::vector<uint8_t> srsvec;
-        srsvec.assign(byteArray.begin(), byteArray.end());
-        ruleSetMap = spb::pb::deserialize<libcore::RuleSet>(srsvec).items;
+        ruleSetMap = jsonToMap(byteArray);
     } else {
         delete srslist;
         auto getRuleSet = [=,this]
         {
             QString err;
             for(int retry = 0; retry < 5; retry++) {
-                auto resp = NetworkRequestHelper::HttpGet(Configs::get_jsdelivr_link("https://github.com/qr243vbi/ruleset/raw/refs/heads/rule-set/srslist"));
+                auto resp = NetworkRequestHelper::HttpGet(Configs::get_jsdelivr_link("https://github.com/qr243vbi/ruleset/raw/refs/heads/rule-set/srslist.json"));
                 if (resp.error.isEmpty()) {
-                    std::vector<uint8_t> respvec;
-                    respvec.assign(resp.data.begin(), resp.data.end());
-                    auto reply = spb::pb::deserialize<libcore::RuleSet>(respvec);
-                    ruleSetMap = reply.items;
+                    ruleSetMap = jsonToMap(resp.data);
                     QFile file;
-                    file.setFileName("srslist");
+                    file.setFileName("srslist.json");
                     if (file.open(QIODevice::ReadWrite | QIODevice::Truncate)){
                         file.write(resp.data);
                         file.close();
@@ -1894,7 +1911,7 @@ void MainWindow::on_menu_export_config_triggered() {
     auto ent = ents.first();
     if (ent->bean->DisplayCoreType() != software_core_name) return;
 
-    auto result = BuildConfig(ent, false, true);
+    auto result = BuildConfig(ent, ruleSetMap, false, true);
     QString config_core = QJsonObject2QString(result->coreConfig, true);
     QApplication::clipboard()->setText(config_core);
 
@@ -1906,11 +1923,11 @@ void MainWindow::on_menu_export_config_triggered() {
     msg.setDefaultButton(QMessageBox::Ok);
     msg.exec();
     if (msg.clickedButton() == button_1) {
-        result = BuildConfig(ent, false, false);
+        result = BuildConfig(ent, ruleSetMap, false, false);
         config_core = QJsonObject2QString(result->coreConfig, true);
         QApplication::clipboard()->setText(config_core);
     } else if (msg.clickedButton() == button_2) {
-        result = BuildConfig(ent, true, false);
+        result = BuildConfig(ent, ruleSetMap, true, false);
         config_core = QJsonObject2QString(result->coreConfig, true);
         QApplication::clipboard()->setText(config_core);
     }

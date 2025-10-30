@@ -28,6 +28,7 @@
 #include "group/GroupSort.hpp"
 
 #include "include/dataStore/ProxyEntity.hpp"
+#include "include/configs/ConfigBuilder.hpp"
 #include "include/global/GuiUtils.hpp"
 #include "ui_mainwindow.h"
 
@@ -50,6 +51,8 @@ public:
     explicit MainWindow(QWidget *parent = nullptr);
 
     ~MainWindow() override;
+
+    std::map<std::string, std::string> ruleSetMap;
 
     void prepare_exit();
 
@@ -206,8 +209,6 @@ private:
     // shortcuts
     QList<QShortcut*> hiddenMenuShortcuts;
 
-    std::map<std::string, std::string> ruleSetMap;
-
     QStringList remoteRouteProfiles;
     QMutex mu_remoteRouteProfiles;
 
@@ -240,8 +241,6 @@ private:
     void dragEnterEvent(QDragEnterEvent *event);
 
     void dropEvent(QDropEvent* event) override;
-
-    //
 
     void HotkeyEvent(const QString &key);
 

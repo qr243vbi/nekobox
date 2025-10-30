@@ -64,10 +64,10 @@ func Updater() {
 	// remove old file
 	removeAll("./*.dll")	
 	removeAll("./*.dmp")
-
-	// os.RemoveAll("./run_admin.ps1")
 	os.RemoveAll("./check_new_release.js")
 	os.RemoveAll("./version.txt")
+	os.RemoveAll("./srslist.json")
+	os.RemoveAll("./nekobox_update/nekobox/public")
 
 	// update move
 	err = Mv("./nekobox_update/nekobox", "./")
@@ -79,6 +79,7 @@ func Updater() {
 	os.RemoveAll("./nekobox_update")
 	os.RemoveAll("./nekobox.zip")
 	os.RemoveAll("./nekobox.tar.gz")
+	os.RemoveAll("./nekobox.tgz")
 }
 
 func Exist(path string) bool {
