@@ -543,7 +543,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 
     auto getRemoteRouteProfiles = [=,this]
     {
-        auto resp = NetworkRequestHelper::HttpGet("https://api.github.com/repos/throneproj/routeprofiles/git/trees/profile");
+        auto resp = NetworkRequestHelper::HttpGet("https://api.github.com/repos/qr243vbi/ruleset/git/trees/routeprofiles");
         if (resp.error.isEmpty()) {
             QStringList newRemoteRouteProfiles;
             QJsonObject release = QString2QJsonObject(resp.data);
@@ -589,7 +589,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
                 action->setText(profile);
                 connect(action, &QAction::triggered, this, [=,this]()
                 {
-                    auto resp = NetworkRequestHelper::HttpGet(Configs::get_jsdelivr_link("https://raw.githubusercontent.com/throneproj/routeprofiles/profile/" + profile + ".json"));
+                    auto resp = NetworkRequestHelper::HttpGet(Configs::get_jsdelivr_link("https://raw.githubusercontent.com/qr243vbi/ruleset/routeprofiles/" + profile + ".json"));
                     if (!resp.error.isEmpty()) {
                         runOnUiThread([=,this] {
                             MessageBoxWarning(QObject::tr("Download Profiles"), QObject::tr("Requesting profile error: %1").arg(resp.error + "\n" + resp.data));
