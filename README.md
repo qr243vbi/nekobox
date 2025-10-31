@@ -116,3 +116,6 @@ Solution:
   Twitter Emoji, also known as Twemoji, has a more colorful and stylized design. It often features more expressive and characterful designs compared to Noto. These emojis are primarily used on Twitter and other platforms where Twitter’s branding is applied. They are designed for use in tweets, direct messages, and other Twitter communications. While Twemoji can be used elsewhere, it is specifically tailored for the Twitter platform, emphasizing a cohesive user experience within Twitter's ecosystem.
 
   Noto emoji provides better system integration and is part of the larger Noto fonts project, which aims to support all emoji characters defined in Unicode. Generally, Noto emoji are smaller than Twitter emoji. NekoBox does use Noto emoji font because we prefer better system integration over specific stylized design.
+
+**Where are the downloadable route profiles/rulesets coming from?**<br/>
+They are located at the [ruleset](https://github.com/qr243vbi/ruleset/tree/routeprofiles) repository.
