@@ -13,7 +13,7 @@ Supports Windows 11/10/8/7 (arm64, i386, x86_64) / Linux / MacOS (arm64, x86_64)
 ### COPR repository
 [NekoBox repository](https://copr.fedorainfracloud.org/coprs/qr243vbi/NekoBox/) for various linux distributions ([RedHat](https://www.redhat.com), [Centos](https://www.centos.org), [OpenSUSE](https://get.opensuse.org/), [Fedora](https://fedoraproject.org/), [Mageia](https://www.mageia.org/), [Almalinux](https://almalinux.org/)).
 
-### Chocolatey Package
+### Chocolatey Package (not approved yet, chocolatey package is outdated)
 
 [![Chocolatey Package For Windows](https://img.shields.io/chocolatey/dt/nekobox?style=flat-square&logo=chocolatey&label=downloads-total
 )](https://community.chocolatey.org/packages/nekobox)
