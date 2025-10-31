@@ -84,8 +84,11 @@ Various formats are supported, including share links, JSON array of outbounds an
 - Support for BSD, Solaris, Android platforms
 
 ## FAQ
-**Why does my Anti-Virus detect NekoBox as malware?** <br/>
-NekoBox's built-in update functionallity downloads the new release, removes the old files and replaces them with the new ones, which is quite simliar to what malwares do, remove your files and replace them with an encrypted version of your files. Also the `System DNS` feature will change your system's DNS settings, which is also considered a dangerous action by some Anti-Virus applications.
+** What is [Throne](https://throne.com/about)? ** <br/>
+About Throne
+Throne powers the infrastructure that creators need to better engage and monetize their audiences. Over 1,000,000 creators from 89 countries use Throne's all-in-one wishlist builder to let their fans support them in a privacy-first way. Further, partnerships with 1,000+ brands allow Throne to offer creators and their fans an exceptional commerce experience.
+
+Started in 2021, Throne has revolutionized creator gifting through its Wishlist product. Today, Throne is leveraging the relationships it has built with creators and brands to give creators even more tools to engage with their fans in a safe, fun and enjoyable way. In this way, Throne is a three-sided marketplace connecting world-class brands with creators and their fans. Throne has offices in the US and Germany.
 
 **I have computer with Windows 7, or Window 8, or Windows 8.1. Which version of NekoBox should I download?** <br/>
 For Windows 7, Windows 8 and Windows 8.1 it is recommended to install 32 bit NekoBox, even if you run Windows with x64 cpu support. In generally, 64 bit executables does not means run faster than 32 bit unless program needs more than 2Gb of ram memory, which is not the case with NekoBox. 64 bit executables are built with latest Qt and does support Windows 10/11 dark theme. You can read more about 32 bit software at [Reddit topic](https://www.reddit.com/r/AskComputerScience/comments/15aqv4o/are_there_any_advantages_to_32_bit_software_or_64/)
@@ -111,4 +114,4 @@ Solution:
 
   Twitter Emoji, also known as Twemoji, has a more colorful and stylized design. It often features more expressive and characterful designs compared to Noto. These emojis are primarily used on Twitter and other platforms where Twitter’s branding is applied. They are designed for use in tweets, direct messages, and other Twitter communications. While Twemoji can be used elsewhere, it is specifically tailored for the Twitter platform, emphasizing a cohesive user experience within Twitter's ecosystem.
 
-  Noto emoji provides better system integration and is part of the larger Noto fonts project, which aims to support all emoji characters defined in Unicode. Generally, Noto emoji are smaller than Twitter emoji. NekoBox does use Noto emoji font because we prefer better system integration over specific stylized design. The Throne project does not care about system integration at all.
+  Noto emoji provides better system integration and is part of the larger Noto fonts project, which aims to support all emoji characters defined in Unicode. Generally, Noto emoji are smaller than Twitter emoji. NekoBox does use Noto emoji font because we prefer better system integration over specific stylized design.
