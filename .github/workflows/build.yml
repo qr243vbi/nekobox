@@ -486,13 +486,14 @@ jobs:
       actions: read
     steps:
       - uses: actions/checkout@v4
+        if: github.event.inputs.publish == 'r' && github.event.inputs.source != 'y' && 'chocolatey_package_approved' == 'yes'
       - uses: ConorMacBride/install-package@v1
-        if: github.event.inputs.publish == 'r' && github.event.inputs.source != 'y'
+        if: github.event.inputs.publish == 'r' && github.event.inputs.source != 'y'  && 'chocolatey_package_approved' == 'yes'
         with:
           choco: curl jq sed
       - name: Upload Chocolatey Package
         shell: bash
-        if: github.event.inputs.publish == 'r' && github.event.inputs.source != 'y'
+        if: github.event.inputs.publish == 'r' && github.event.inputs.source != 'y' && 'chocolatey_package_approved' == 'yes'
         run: |
           cd ./script/
           export INPUT_VERSION=${{ github.event.inputs.tag }}

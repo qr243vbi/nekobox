@@ -33,8 +33,8 @@
         </property>
         <property name="iconSize">
          <size>
-          <width>30</width>
-          <height>30</height>
+            <width>38</width>
+            <height>38</height>
          </size>
         </property>
         <property name="popupMode">
@@ -55,8 +55,8 @@
         </property>
         <property name="iconSize">
          <size>
-          <width>30</width>
-          <height>30</height>
+             <width>38</width>
+             <height>38</height>
          </size>
         </property>
         <property name="popupMode">
@@ -77,8 +77,8 @@
         </property>
         <property name="iconSize">
          <size>
-          <width>30</width>
-          <height>30</height>
+            <width>38</width>
+             <height>38</height>
          </size>
         </property>
         <property name="popupMode">
@@ -99,8 +99,8 @@
         </property>
         <property name="iconSize">
          <size>
-          <width>30</width>
-          <height>30</height>
+              <width>38</width>
+              <height>38</height>
          </size>
         </property>
         <property name="popupMode">
@@ -121,8 +121,8 @@
         </property>
         <property name="iconSize">
          <size>
-          <width>30</width>
-          <height>30</height>
+           <width>38</width>
+            <height>38</height>
          </size>
         </property>
         <property name="popupMode">
