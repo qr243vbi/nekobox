@@ -84,7 +84,7 @@ Various formats are supported, including share links, JSON array of outbounds an
 - Support for BSD, Solaris, Android platforms
 
 ## FAQ
-**What is [Throne](https://stripe.com/en-ch/customers/throne)?** <br/>
+**What is [Throne](https://throne.com/landing)?** <br/>
 About Throne
 
 Throne powers the infrastructure that creators need to better engage and monetize their audiences. Over 1,000,000 creators from 89 countries use Throne's all-in-one wishlist builder to let their fans support them in a privacy-first way. Further, partnerships with 1,000+ brands allow Throne to offer creators and their fans an exceptional commerce experience.
