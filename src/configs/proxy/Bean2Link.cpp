@@ -99,6 +99,11 @@ namespace Configs {
                 query.addQueryItem("headerType", "http");
                 query.addQueryItem("host", stream->host);
             }
+        } else if (stream->network == "xhttp") {
+            if (!stream->path.isEmpty()) query.addQueryItem("path", stream->path);
+            if (!stream->host.isEmpty()) query.addQueryItem("host", stream->host);
+            if (!stream->xhttp_mode.isEmpty()) query.addQueryItem("mode", stream->xhttp_mode);
+            if (!stream->xhttp_extra.isEmpty()) query.addQueryItem("extra", stream->xhttp_extra);
         }
 
         // mux
@@ -205,6 +210,11 @@ namespace Configs {
                 query.addQueryItem("headerType", "http");
                 query.addQueryItem("host", stream->host);
             }
+        } else if (stream->network == "xhttp") {
+            if (!stream->path.isEmpty()) query.addQueryItem("path", stream->path);
+            if (!stream->host.isEmpty()) query.addQueryItem("host", stream->host);
+            if (!stream->xhttp_mode.isEmpty()) query.addQueryItem("mode", stream->xhttp_mode);
+            if (!stream->xhttp_extra.isEmpty()) query.addQueryItem("extra", stream->xhttp_extra);
         }
 
         // mux
