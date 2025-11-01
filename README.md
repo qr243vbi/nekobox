@@ -81,7 +81,7 @@ Various formats are supported, including share links, JSON array of outbounds an
 - [OpenRC](https://openrc.run/)/[runit](https://smarden.org/runit/)/[systemd](https://systemd.io/) integration of nekobox_core
 - Terminal UI
 - Remote control
-- Support for BSD, Solaris, Android platforms
+- Support for Hauki, AmigaOS, BSD, Solaris, Android platforms
 
 ## FAQ
 **What is [Throne](https://throne.com/landing)?** <br/>
