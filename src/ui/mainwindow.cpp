@@ -203,13 +203,10 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     Configs::dataStore->core_port = MkPort();
     if (Configs::dataStore->core_port <= 0) Configs::dataStore->core_port = 19810;
 
-    QString core_path = settings.value("core_path",
-#if Q_OS_WIN
-        QApplication::applicationDirPath() + "/nekobox_core.exe"
-#else
-        QApplication::applicationDirPath() + "/nekobox_core"
-#endif
-).toString();
+    QString core_path = QApplication::applicationDirPath();
+    core_path += "/nekobox_core.exe";
+
+    core_path = settings.value("core_path", core_path).toString();
 
     QStringList args;
     args.push_back("-port");
