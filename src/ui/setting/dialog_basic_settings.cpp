@@ -15,6 +15,8 @@
 #include <QMessageBox>
 #include <QTimer>
 #include <qfontdatabase.h>
+#include <QSettings>
+#include <QString>
 
 #include "include/ui/mainwindow.h"
 
@@ -23,11 +25,14 @@
 #else
 #define STATE_CHANGED &QCheckBox::stateChanged
 #endif
+#include <QDir>
+#define CONFIG_INI_PATH  QDir::current().absolutePath() + "/window.ini"
 
-DialogBasicSettings::DialogBasicSettings(QWidget *parent)
+DialogBasicSettings::DialogBasicSettings(MainWindow *parent)
     : QDialog(parent), ui(new Ui::DialogBasicSettings) {
     ui->setupUi(this);
     ADD_ASTERISK(this);
+    this->parent = parent;
 
     // Common
     ui->inbound_socks_port_l->setText(ui->inbound_socks_port_l->text().replace("Socks", "Mixed (SOCKS+HTTP)"));
@@ -178,6 +183,53 @@ DialogBasicSettings::DialogBasicSettings(QWidget *parent)
 
     D_LOAD_BOOL(skip_cert)
     ui->utlsFingerprint->setCurrentText(Configs::dataStore->utlsFingerprint);
+
+    // Startup
+    connect(ui->select_core, &QPushButton::clicked, this, [=,this]{
+        QString fileName = QFileDialog::getOpenFileName(this, QObject::tr("Select"), QDir::currentPath(),
+                                                        "", nullptr, QFileDialog::Option::ReadOnly);
+        ui->core_path->setText(fileName);
+    });
+    connect(ui->select_icons, &QPushButton::clicked, this, [=,this]{
+        QString folderName = QFileDialog::getExistingDirectory(this, QObject::tr("Select a Folder"), "");
+        ui->icons_path->setText(folderName);
+    });
+
+    connect(this, &DialogBasicSettings::size_changed, parent, &MainWindow::size_changed);
+    connect(this, &DialogBasicSettings::point_changed, parent, &MainWindow::point_changed);
+    connect(ui->apply_now, &QPushButton::clicked, this, [=,this]{
+        emit size_changed(ui->window_width->text().toInt(), ui->window_height->text().toInt());
+        emit point_changed(ui->window_X->text().toInt(), ui->window_Y->text().toInt());
+    });
+
+    QSettings settings(CONFIG_INI_PATH, QSettings::IniFormat);
+    auto validator = new QIntValidator(0, 0xfffffff, this);
+    ui->save_geometry->setChecked(settings.value("save_geometry", true).toBool());
+    ui->window_width->setText(QString::number(settings.value("width", 0).toInt()));
+    ui->window_height->setText(QString::number(settings.value("height", 0).toInt()));
+    ui->window_X->setText(QString::number(settings.value("X", 0).toInt()));
+    ui->window_Y->setText(QString::number(settings.value("Y", 0).toInt()));
+    ui->window_width->setValidator(validator);
+    ui->window_height->setValidator(validator);
+    ui->window_X->setValidator(validator);
+    ui->window_Y->setValidator(validator);
+
+    QString core_path = settings.value("core_path", "").toString();
+    QString icons_path = settings.value("icons_path", "").toString();
+    ui->core_path->setText(core_path);
+    ui->icons_path->setText(icons_path);
+    connect(ui->default_core_path, STATE_CHANGED, this, [=, this](int state){
+        bool disabled = (state == Qt::Checked);
+        ui->core_path->setDisabled(disabled);
+        ui->select_core->setDisabled(disabled);
+    });
+    connect(ui->default_icons_path, STATE_CHANGED, this, [=, this](int state){
+        bool disabled = (state == Qt::Checked);
+        ui->icons_path->setDisabled(disabled);
+        ui->select_icons->setDisabled(disabled);
+    });
+    ui->default_core_path->setChecked(core_path == "");
+    ui->default_icons_path->setChecked(icons_path == "");
 }
 
 DialogBasicSettings::~DialogBasicSettings() {
@@ -185,6 +237,7 @@ DialogBasicSettings::~DialogBasicSettings() {
 }
 
 void DialogBasicSettings::accept() {
+    QSettings settings(CONFIG_INI_PATH, QSettings::IniFormat);
     // Common
     bool needChoosePort = false;
 
@@ -264,6 +317,25 @@ void DialogBasicSettings::accept() {
     if (needChoosePort) str << "NeedChoosePort";
     MW_dialog_message(Dialog_DialogBasicSettings, str.join(","));
     QDialog::accept();
+
+    int width, height, X, Y;
+    // Startup
+    settings.setValue("save_geometry", ui->save_geometry->isChecked());
+    settings.setValue("width", width = ui->window_width->text().toInt());
+    settings.setValue("height", height = ui->window_height->text().toInt());
+    settings.setValue("X", X = ui->window_X->text().toInt());
+    settings.setValue("Y", Y = ui->window_Y->text().toInt());
+    if (ui->default_core_path->isChecked()){
+        settings.remove("core_path");
+    } else {
+        settings.setValue("core_path", ui->core_path->text());
+    }
+    if (ui->default_icons_path->isChecked()){
+        settings.remove("icons_path");
+    } else {
+        settings.setValue("icons_path", ui->icons_path->text());
+    }
+    settings.sync();
 }
 
 void DialogBasicSettings::on_core_settings_clicked() {

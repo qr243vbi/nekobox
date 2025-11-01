@@ -66,6 +66,9 @@
 #include "include/global/DeviceDetailsHelper.hpp"
 #include <QSettings>
 #include "include/sys/macos/MacOS.h"
+#include <QDir>
+
+#define CONFIG_PATH  QDir::current().absolutePath() + "/window.ini"
 
 void setAppIcon(Icon::TrayIconStatus, QSystemTrayIcon*);
 
@@ -119,18 +122,22 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     ui->setupUi(this);
 
     // restore size and geometry
+    QSettings settings(CONFIG_PATH, QSettings::IniFormat);
     {
-        QSettings settings("qr243vbi_NekoBox", "nekobox_gui");
         int width, height, x, y;
-        width = settings.value("width", -1).toInt();
-        height = settings.value("height", -1).toInt();
-        x = settings.value("X", -1).toInt();
-        y = settings.value("Y", -1).toInt();
-        if (width >= 0 && y >= 0){
-            resize(width, height);
+        width = settings.value("width", 0).toInt();
+        height = settings.value("height", 0).toInt();
+        x = settings.value("X", 0).toInt();
+        y = settings.value("Y", 0).toInt();
+        if (width > 0){
+            if (height > 0){
+                resize(width, height);
+            }
         }
-        if (x >= 0 && y >= 0){
-            move(x, y);
+        if (x > 0){
+            if (y > 0){
+                move(x, y);
+            }
         }
         if (settings.value("maximized", false).toBool()){
             showMaximized();
@@ -196,8 +203,14 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     Configs::dataStore->core_port = MkPort();
     if (Configs::dataStore->core_port <= 0) Configs::dataStore->core_port = 19810;
 
-    auto core_path = QApplication::applicationDirPath() + "/";
-    core_path += "nekobox_core";
+    QString core_path = settings.value("core_path",
+        QApplication::applicationDirPath() + "/" +
+#if Q_OS_WIN
+        "nekobox_core.exe"
+#else
+        "nekobox_core"
+#endif
+).toString();
 
     QStringList args;
     args.push_back("-port");
@@ -257,14 +270,6 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     //
     RegisterHotkey(false);
     //
-    auto last_size = Configs::dataStore->mw_size.split("x");
-    if (last_size.length() == 2) {
-        auto w = last_size[0].toInt();
-        auto h = last_size[1].toInt();
-        if (w > 0 && h > 0) {
-            resize(w, h);
-        }
-    }
 
     // software_name
     software_name = "nekobox";
@@ -723,20 +728,9 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     ui->data_view->setStyleSheet("background: transparent; border: none;");
 }
 
-void MainWindow::closeEvent(QCloseEvent *event) {
-    QSettings settings("qr243vbi_NekoBox", "nekobox_gui");
-    settings.setValue("maximized", isMaximized());
-    QPoint position = pos();
-    int x = position.x();
-    int y = position.y();
-    auto geometry = size();
-    int width = geometry.width();
-    int height = geometry.height();
-    settings.setValue("x", x);
-    settings.setValue("y", y);
-    settings.setValue("width", width);
-    settings.setValue("height", height);
+#include <iostream>
 
+void MainWindow::closeEvent(QCloseEvent *event) {
     if (tray->isVisible()) {
         hide();
         event->ignore();
@@ -1010,14 +1004,7 @@ void MainWindow::on_menu_manage_groups_triggered() {
 }
 
 void MainWindow::on_menu_routing_settings_triggered() {
-    if (dialog_is_using) return;
-    dialog_is_using = true;
-    auto dialog = new DialogManageRoutes(this);
-    connect(dialog, &QDialog::finished, this, [=,this] {
-        dialog->deleteLater();
-        dialog_is_using = false;
-    });
-    dialog->show();
+    USE_DIALOG(DialogManageRoutes)
 }
 
 void MainWindow::on_menu_vpn_settings_triggered() {
@@ -1038,12 +1025,27 @@ void MainWindow::on_menu_hotkey_settings_triggered() {
 
 void MainWindow::on_commitDataRequest() {
     qDebug() << "Start of data save";
-    //
-    if (!isMaximized()) {
-        auto olds = Configs::dataStore->mw_size;
-        auto news = QString("%1x%2").arg(size().width()).arg(size().height());
-        if (olds != news) {
-            Configs::dataStore->mw_size = news;
+    {
+        // save size and geometry
+        int x, y, width, height;
+        QPoint position;
+        QSize geometry;
+
+        QSettings settings(CONFIG_PATH, QSettings::IniFormat);
+
+        if (settings.value("save_geometry", true).toBool()){
+            settings.setValue("maximized", isMaximized());
+            position = pos();
+            x = position.x();
+            y = position.y();
+            geometry = size();
+            width = geometry.width();
+            height = geometry.height();
+            settings.setValue("X", x);
+            settings.setValue("Y", y);
+            settings.setValue("width", width);
+            settings.setValue("height", height);
+            settings.sync();
         }
     }
     //
@@ -1084,20 +1086,20 @@ void MainWindow::prepare_exit()
     Configs::dataStore->save_control_no_save = true; // don't change datastore after this line
     profile_stop(false, true);
 
-/*
-    QMutex coreKillMu;
-    coreKillMu.lock();
-    runOnThread([=, this, &coreKillMu]()
-    {
-        core_process->Kill();
-        coreKillMu.unlock();
-    }, DS_cores);
-    coreKillMu.lock();
-    coreKillMu.unlock();
-*/
-
     mu_exit.unlock();
     qDebug() << "prepare exit done!";
+}
+
+void MainWindow::size_changed(int width, int height){
+    runOnUiThread([=, this]{
+        this->resize(width, height);
+    });
+}
+
+void MainWindow::point_changed(int width, int height){
+    runOnUiThread([=, this]{
+        this->move(width, height);
+    });
 }
 
 void MainWindow::on_menu_exit_triggered() {
