@@ -16,7 +16,8 @@ static inline QString getIconDir(){
     QSettings settings(CONFIG_INI_PATH, QSettings::IniFormat);
     QString str = settings.value("icons_path", "").toString();
     if (str == ""){
-        str = QCoreApplication::applicationDirPath() + "/public";
+        str = QCoreApplication::applicationDirPath();
+        str += "/public";
     }
     return str;
 }
