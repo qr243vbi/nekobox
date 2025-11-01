@@ -9,7 +9,18 @@
 #ifdef Q_OS_MACOS
 #define SYSTRAY_ICON_DIR ":/systray/"
 #else
-#define SYSTRAY_ICON_DIR QCoreApplication::applicationDirPath() + "/public/"
+
+#include <QSettings>
+#define CONFIG_INI_PATH  QDir::current().absolutePath() + "/window.ini"
+static inline QString getIconDir(){
+    QSettings settings(CONFIG_INI_PATH, QSettings::IniFormat);
+    QString str = settings.value("icons_path", "").toString();
+    if (str == ""){
+        str = QCoreApplication::applicationDirPath() + "/public";
+    }
+    return str;
+}
+#define SYSTRAY_ICON_DIR getIconDir() + "/"
 #endif
 #endif
 

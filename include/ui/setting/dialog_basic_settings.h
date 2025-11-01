@@ -4,6 +4,7 @@
 #include <QDialog>
 #include <QJsonObject>
 #include "ui_dialog_basic_settings.h"
+#include "include/ui/mainwindow.h"
 
 namespace Ui {
     class DialogBasicSettings;
@@ -13,9 +14,15 @@ class DialogBasicSettings : public QDialog {
     Q_OBJECT
 
 public:
-    explicit DialogBasicSettings(QWidget *parent = nullptr);
+    explicit DialogBasicSettings(MainWindow *parent = nullptr);
 
     ~DialogBasicSettings();
+
+    MainWindow * parent;
+
+signals:
+    void size_changed(int x, int y);
+    void point_changed(int x, int y);
 
 public slots:
 
