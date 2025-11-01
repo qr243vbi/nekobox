@@ -103,6 +103,9 @@ public slots:
 
     void on_menu_exit_triggered();
 
+    void size_changed(int width, int height);
+
+    void point_changed(int x, int y);
 #ifndef MW_INTERFACE
 
 private slots:
