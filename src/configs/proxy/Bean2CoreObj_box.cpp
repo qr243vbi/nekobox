@@ -49,6 +49,10 @@ namespace Configs {
                     MW_show_log("Warning: headers could not be parsed, they will not be used");
                 }
                 transport["headers"] = QMapString2QJsonObject(headerMap);
+            } else if (network == "xhttp") {
+                if (!path.isEmpty()) transport["path"] = path;
+                if (!host.isEmpty()) transport["host"] = host;
+                transport["mode"] = xhttp_mode;
             }
             if (!network.trimmed().isEmpty()) outbound->insert("transport", transport);
         } else if (header_type == "http") {
