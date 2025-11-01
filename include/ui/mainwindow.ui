@@ -1058,11 +1058,6 @@
     <string>Add profile from File</string>
    </property>
   </action>
-  <action name="actionStart_Settings">
-   <property name="text">
-    <string>Start Settings</string>
-   </property>
-  </action>
  </widget>
  <customwidgets>
   <customwidget>
