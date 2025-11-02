@@ -2600,7 +2600,23 @@ void MainWindow::loadShortcuts()
 
     RegisterHiddenMenuShortcuts();
 }
+/*
 
+void MainWindow::on_log_show(const QString & message, const QString & title){
+    if (title.isEmpty()){
+        MW_show_log(message);
+    } else {
+        MW_show_log("["+title+"]: "+message);
+    }
+};
+void MainWindow::on_info_show(const QString & message, const QString & title){
+    runOnUiThread([=,this] { MessageBoxInfo(title, message); });
+};
+void MainWindow::on_warning_show(const QString & message, const QString & title){
+    runOnUiThread([=,this] { MessageBoxWarning(title, message); });
+};
+
+*/
 
 void MainWindow::HotkeyEvent(const QString &key) {
     if (key.isEmpty()) return;
@@ -2618,7 +2634,7 @@ void MainWindow::HotkeyEvent(const QString &key) {
         }
     });
 }
-
+/*
 #include <include/js/message_queue.h>
 
 void MainWindow::message_queue(MessageQueue & bQueue){
@@ -2645,7 +2661,7 @@ void MainWindow::message_queue(MessageQueue & bQueue){
         }
     } while (true);
 };
-
+*/
 bool MainWindow::StopVPNProcess() {
     QMutex waitStop;
     waitStop.lock();
@@ -2742,6 +2758,9 @@ bool isNewer(QString assetName) {
     }
     return false;
 }
+
+
+
 // ```
 #endif
 #endif
@@ -2751,7 +2770,7 @@ bool isNewer(QString assetName) {
 #define MAINWINDOW_H_DEFINED
 #include <thread>
 #include <iostream>
-#include "include/js/js_updater.h"
+#include <include/js/js_updater.h>
 #endif
 void MainWindow::CheckUpdate() {
     bool is_newer = false;
@@ -2847,7 +2866,7 @@ void MainWindow::CheckUpdate() {
 end_search_define:
 
 #ifndef SKIP_JS_UPDATER
-    MessageQueue bQueue;
+    JsUpdaterWindow * bQueue = new JsUpdaterWindow() ;
     QString updater_js = "";
     {
         QFile file(QApplication::applicationDirPath() + "/check_new_release.js");
@@ -2865,8 +2884,28 @@ end_search_define:
     }
 
 
+    // Connect the signal to a lambda function
+    connect(bQueue, &JsUpdaterWindow::log_signal, this, [=, this](const QString &message, const QString &title) {
+            if (title.isEmpty()){
+                MW_show_log(message);
+            } else {
+                MW_show_log("["+title+"]: "+message);
+            }
+    });
+
+    // Connect the signal to a lambda function
+    connect(bQueue, &JsUpdaterWindow::warning_signal, this, [=, this](const QString &message, const QString &title) {
+            runOnUiThread([=,this] { MessageBoxWarning(title, message); });
+    });
+
+    // Connect the signal to a lambda function
+    connect(bQueue, &JsUpdaterWindow::info_signal, this, [=, this](const QString &message, const QString &title) {
+            runOnUiThread([=,this] { MessageBoxInfo(title, message); });
+    });
+
+/*
     {
-        std::thread updater(  [
+        std::thread updater([
                 &bQueue,
                 &updater_js,
                 &search,
@@ -2877,8 +2916,8 @@ end_search_define:
                 &note_pre_release,
                 &archive_name,
                 &is_newer](){
-            jsUpdater(
-                &bQueue,
+*/            jsUpdater(
+                bQueue,
                 &updater_js,
                 &search,
                 &assets_name,
@@ -2889,12 +2928,14 @@ end_search_define:
                 &archive_name,
                 &is_newer
             );
-            bQueue.Push(MessagePart{"", "", 0});
+
+  //      QObject::disconnect(&bQueue);
+/*            bQueue.Push(MessagePart{"", "", 0});
         });
 
         this->message_queue(bQueue);
         updater.join();
-    }
+    }*/
 #endif
     skip1:
 

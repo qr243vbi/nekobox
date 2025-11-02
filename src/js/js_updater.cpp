@@ -6,31 +6,42 @@
 #include <iostream>
 #include "include/configs/ConfigBuilder.hpp"
 #include <include/js/version.h>
+#include <iostream>
 
-JsHTTPRequest::JsHTTPRequest(const QString& url)
-: QObject(nullptr)
-{
+JsHTTPRequest::JsHTTPRequest(const QString& url): QObject(nullptr){
     init(url);
 }
 
-JsHTTPRequest::~JsHTTPRequest()
-{
+JsHTTPRequest::~JsHTTPRequest(){
 }
 
-JsUpdaterWindow::JsUpdaterWindow(MessageQueue* msgq){
-    queue = msgq;
+JsUpdaterWindow::JsUpdaterWindow(){ //MainWindow* msgq){
+ /*   queue = msgq;
+    connect(this, &JsUpdaterWindow::log_signal, msgq, &MainWindow::on_log_show);
+    connect(this, &JsUpdaterWindow::warning_signal, msgq, &MainWindow::on_warning_show);
+    connect(this, &JsUpdaterWindow::info_signal, msgq, &MainWindow::on_info_show); */
 }
 void JsUpdaterWindow::print(const QVariant value){
-    queue->Push(MessagePart{value.toString(), "", 4});
+    std::cout << value.toString().toStdString() << std::endl;
+ //   queue->Push(MessagePart{value.toString(), "", 4});
 }
 void JsUpdaterWindow::log(const QVariant value, const QVariant title){
-    queue->Push(MessagePart{value.toString(), title.toString(), 1});
+    QString value1 = value.toString();
+    QString title1 = title.toString();
+    emit log_signal(value1, title1);
+ //   queue->Push(MessagePart{value.toString(), title.toString(), 1});
 }
 void JsUpdaterWindow::warning(const QVariant value, const QVariant title){
-    queue->Push(MessagePart{value.toString(), title.toString(), 2});
+    QString value1 = value.toString();
+    QString title1 = title.toString();
+    emit warning_signal(value1, title1);
+ //   queue->Push(MessagePart{value.toString(), title.toString(), 2});
 }
 void JsUpdaterWindow::info(const QVariant value, const QVariant title){
-    queue->Push(MessagePart{value.toString(), title.toString(), 3});
+    QString value1 = value.toString();
+    QString title1 = title.toString();
+    emit info_signal(value1, title1);
+ //   queue->Push(MessagePart{value.toString(), title.toString(), 3});
 }
 QString JsUpdaterWindow::translate(const QVariant value){
     return QObject::tr(value.toString().toUtf8().constData());
@@ -76,7 +87,7 @@ void getBoolean(QJSEngine& engine, QString name, bool * value){
     *value = engine.globalObject().property(name).toBool();
 }
 
-bool jsUpdater( MessageQueue* queue,
+bool jsUpdater( JsUpdaterWindow* factory,
                 QString * updater_js,
                 QString * search,
                 QString * assets_name,
@@ -87,8 +98,7 @@ bool jsUpdater( MessageQueue* queue,
                 QString * archive_name,
                 bool * is_newer){
     QJSEngine ctx;
-    JsUpdaterWindow factory(queue);
-    QJSValue jsFactory = ctx.newQObject(&factory);
+    QJSValue jsFactory = ctx.newQObject(factory);
 
     ctx.globalObject().setProperty("window", jsFactory);
     jsFactory = ctx.newQMetaObject(&JsHTTPRequest::staticMetaObject);
@@ -108,7 +118,7 @@ bool jsUpdater( MessageQueue* queue,
     script = [&] { QFile f(":/updater.js"); return f.open(QIODevice::ReadOnly) ? QTextStream(&f).readAll() : QString(); }();
     ctx.evaluate(script);
     script = *updater_js;
-    std::cout << ctx.evaluate(script).toString().toStdString() << std::endl;;
+    std::cout << ctx.evaluate(script).toString().toStdString() << std::endl;
 
     getString(ctx, "assets_name", assets_name);
     getString(ctx, "release_download_url", release_download_url);
