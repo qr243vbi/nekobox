@@ -561,6 +561,17 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
             }
             mu_remoteRouteProfiles.lock();
             remoteRouteProfiles = newRemoteRouteProfiles;
+
+            remoteRouteProfileGetter = [=, this] (QString profile) -> QString {
+                NetworkRequestHelper::HttpGet(Configs::get_jsdelivr_link("https://raw.githubusercontent.com/qr243vbi/ruleset/routeprofiles/" + profile + ".json"));
+                if (!resp.error.isEmpty()) {
+                    runOnUiThread([=,this] {
+                        MessageBoxWarning(QObject::tr("Download Profiles"), QObject::tr("Requesting profile error: %1").arg(resp.error + "\n" + resp.data));
+                    });
+                    return "";
+                }
+                return resp.data;
+            };
             mu_remoteRouteProfiles.unlock();
         }
     };
@@ -594,15 +605,13 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
                 action->setText(profile);
                 connect(action, &QAction::triggered, this, [=,this]()
                 {
-                    auto resp = NetworkRequestHelper::HttpGet(Configs::get_jsdelivr_link("https://raw.githubusercontent.com/qr243vbi/ruleset/routeprofiles/" + profile + ".json"));
-                    if (!resp.error.isEmpty()) {
-                        runOnUiThread([=,this] {
-                            MessageBoxWarning(QObject::tr("Download Profiles"), QObject::tr("Requesting profile error: %1").arg(resp.error + "\n" + resp.data));
-                        });
+                    auto resp = remoteRouteProfileGetter(profile);
+                    if (resp.isEmpty()){
                         return;
                     }
+
                     auto err = new QString;
-                    auto parsed = Configs::RoutingChain::parseJsonArray(QString2QJsonArray(resp.data), err);
+                    auto parsed = Configs::RoutingChain::parseJsonArray(QString2QJsonArray(resp), err);
                     if (!err->isEmpty()) {
                         runOnUiThread([=,this]
                         {
@@ -2618,6 +2627,33 @@ void MainWindow::on_warning_show(const QString & message, const QString & title)
 
 */
 
+
+#ifndef SKIP_JS_UPDATER
+JsUpdaterWindow* MainWindow::createJsUpdaterWindow(){
+    JsUpdaterWindow * bQueue = new JsUpdaterWindow();
+    // Connect the signal to a lambda function
+    connect(bQueue, &JsUpdaterWindow::log_signal, this, [=, this](const QString &message, const QString &title) {
+        if (title.isEmpty()){
+            MW_show_log(message);
+        } else {
+            MW_show_log("["+title+"]: "+message);
+        }
+    });
+
+    // Connect the signal to a lambda function
+    connect(bQueue, &JsUpdaterWindow::warning_signal, this, [=, this](const QString &message, const QString &title) {
+        runOnUiThread([=,this] { MessageBoxWarning(title, message); });
+    });
+
+    // Connect the signal to a lambda function
+    connect(bQueue, &JsUpdaterWindow::info_signal, this, [=, this](const QString &message, const QString &title) {
+        runOnUiThread([=,this] { MessageBoxInfo(title, message); });
+    });
+
+    return bQueue;
+}
+#endif
+
 void MainWindow::HotkeyEvent(const QString &key) {
     if (key.isEmpty()) return;
     runOnUiThread([=,this] {
@@ -2634,34 +2670,7 @@ void MainWindow::HotkeyEvent(const QString &key) {
         }
     });
 }
-/*
-#include <include/js/message_queue.h>
 
-void MainWindow::message_queue(MessageQueue & bQueue){
-    do {
-        MessagePart part;
-        bQueue.Pop(part);
-        auto type = part.type;
-        if (type == 0){
-            break;
-        } else if (type == 1){
-            auto & title = part.title;
-            auto & message = part.message;
-            if (title.isEmpty()){
-                MW_show_log(message);
-            } else {
-                MW_show_log("["+title+"]: "+message);
-            }
-        } else if (type == 2){
-            runOnUiThread([=,this] { MessageBoxWarning(part.title, part.message); });
-        } else if (type == 3){
-            runOnUiThread([=,this] { MessageBoxInfo(part.title, part.message); });
-        } else if (type == 4){
-            std::cout << part.message.toStdString() << std::endl;
-        }
-    } while (true);
-};
-*/
 bool MainWindow::StopVPNProcess() {
     QMutex waitStop;
     waitStop.lock();
@@ -2767,8 +2776,6 @@ bool isNewer(QString assetName) {
 
 #ifndef SKIP_UPDATE_BUTTON
 #ifndef SKIP_JS_UPDATER
-#define MAINWINDOW_H_DEFINED
-#include <thread>
 #include <iostream>
 #include <include/js/js_updater.h>
 #endif
@@ -2866,7 +2873,6 @@ void MainWindow::CheckUpdate() {
 end_search_define:
 
 #ifndef SKIP_JS_UPDATER
-    JsUpdaterWindow * bQueue = new JsUpdaterWindow() ;
     QString updater_js = "";
     {
         QFile file(QApplication::applicationDirPath() + "/check_new_release.js");
@@ -2884,39 +2890,9 @@ end_search_define:
     }
 
 
-    // Connect the signal to a lambda function
-    connect(bQueue, &JsUpdaterWindow::log_signal, this, [=, this](const QString &message, const QString &title) {
-            if (title.isEmpty()){
-                MW_show_log(message);
-            } else {
-                MW_show_log("["+title+"]: "+message);
-            }
-    });
+    JsUpdaterWindow * bQueue = createJsUpdaterWindow();
 
-    // Connect the signal to a lambda function
-    connect(bQueue, &JsUpdaterWindow::warning_signal, this, [=, this](const QString &message, const QString &title) {
-            runOnUiThread([=,this] { MessageBoxWarning(title, message); });
-    });
-
-    // Connect the signal to a lambda function
-    connect(bQueue, &JsUpdaterWindow::info_signal, this, [=, this](const QString &message, const QString &title) {
-            runOnUiThread([=,this] { MessageBoxInfo(title, message); });
-    });
-
-/*
-    {
-        std::thread updater([
-                &bQueue,
-                &updater_js,
-                &search,
-                &assets_name,
-                &release_download_url,
-                &release_url,
-                &release_note,
-                &note_pre_release,
-                &archive_name,
-                &is_newer](){
-*/            jsUpdater(
+            jsUpdater(
                 bQueue,
                 &updater_js,
                 &search,
@@ -2928,14 +2904,6 @@ end_search_define:
                 &archive_name,
                 &is_newer
             );
-
-  //      QObject::disconnect(&bQueue);
-/*            bQueue.Push(MessagePart{"", "", 0});
-        });
-
-        this->message_queue(bQueue);
-        updater.join();
-    }*/
 #endif
     skip1:
 

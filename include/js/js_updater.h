@@ -5,7 +5,6 @@
 #include <QObject>
 #include <QVariantMap>
 #include <include/global/HTTPRequestHelper.hpp>
-#include <include/ui/mainwindow.h>
 
 class JsUpdaterWindow : public QObject
 {
@@ -17,8 +16,6 @@ public:
     Q_INVOKABLE void warning(const QVariant message, const QVariant title);
     Q_INVOKABLE void info(const QVariant message, const QVariant title);
     Q_INVOKABLE QString translate(const QVariant value);
-private:
-    MainWindow* queue;
 signals:
     void log_signal(const QString &value, const QString &title);
     void warning_signal(const QString &value, const QString &title);

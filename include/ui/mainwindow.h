@@ -14,6 +14,13 @@
 #endif
 
 
+#ifndef SKIP_JS_UPDATER
+class JsUpdaterWindow;
+
+#include <iostream>
+#include <include/js/js_updater.h>
+#endif
+
 
 #ifndef MW_INTERFACE
 
@@ -35,6 +42,9 @@
 #include "include/global/GuiUtils.hpp"
 #include "ui_mainwindow.h"
 
+#endif
+#ifndef SKIP_JS_UPDATER
+#include <include/js/js_updater.h>
 #endif
 
 //class MessageQueue;
@@ -111,10 +121,6 @@ public slots:
     void size_changed(int width, int height);
 
     void point_changed(int x, int y);
-/*
-    void on_log_show(const QString & message, const QString & title);
-    void on_info_show(const QString & message, const QString & title);
-    void on_warning_show(const QString & message, const QString & title);*/
 #ifndef MW_INTERFACE
 
 private slots:
@@ -176,6 +182,7 @@ private slots:
     void on_tabWidget_customContextMenuRequested(const QPoint& p);
 
 private:
+
     Ui::MainWindow *ui;
     QSystemTrayIcon *tray;
     QShortcut *shortcut_ctrl_f = new QShortcut(QKeySequence("Ctrl+F"), this);
@@ -222,6 +229,7 @@ private:
     QList<QShortcut*> hiddenMenuShortcuts;
 
     QStringList remoteRouteProfiles;
+    std::function<QString(QString)> remoteRouteProfileGetter;
     QMutex mu_remoteRouteProfiles;
 
     // search
@@ -283,6 +291,9 @@ private:
     bool set_system_dns(bool set, bool save_set = true);
 #ifndef SKIP_UPDATE_BUTTON
     void CheckUpdate();
+#endif
+#ifndef SKIP_JS_UPDATER
+    JsUpdaterWindow* createJsUpdaterWindow();
 #endif
 //    void message_queue(MessageQueue & queue);
 
