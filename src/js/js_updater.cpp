@@ -160,12 +160,12 @@ bool jsRouteProfileGetter(
     *func = [ctx] (QString profile) -> QString {
             QJSValue jsFunction = ctx->globalObject().property("route_profile_get_json");
             if (jsFunction.isError()) {
-               qWarning() <<  "Error in JavaScript code: " << jsFunction.toString().toStdString();
+               qWarning() <<  "Error in JavaScript code: " << jsFunction.toString();
                return "";
             }
             QJSValue result = jsFunction.call(QJSValueList() << profile);
             if (result.isError()) {
-               qWarning() << "Error calling JavaScript function: " << result.toString().toStdString();
+               qWarning() << "Error calling JavaScript function: " << result.toString();
                return "";
             }
             return result.toString();
