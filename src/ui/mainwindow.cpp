@@ -2619,6 +2619,33 @@ void MainWindow::HotkeyEvent(const QString &key) {
     });
 }
 
+#include <include/js/message_queue.h>
+
+void MainWindow::message_queue(MessageQueue & bQueue){
+    do {
+        MessagePart part;
+        bQueue.Pop(part);
+        auto type = part.type;
+        if (type == 0){
+            break;
+        } else if (type == 1){
+            auto & title = part.title;
+            auto & message = part.message;
+            if (title.isEmpty()){
+                MW_show_log(message);
+            } else {
+                MW_show_log("["+title+"]: "+message);
+            }
+        } else if (type == 2){
+            runOnUiThread([=,this] { MessageBoxWarning(part.title, part.message); });
+        } else if (type == 3){
+            runOnUiThread([=,this] { MessageBoxInfo(part.title, part.message); });
+        } else if (type == 4){
+            std::cout << part.message.toStdString() << std::endl;
+        }
+    } while (true);
+};
+
 bool MainWindow::StopVPNProcess() {
     QMutex waitStop;
     waitStop.lock();
@@ -2839,63 +2866,33 @@ end_search_define:
 
 
     {
-        std::thread updater(  []( MessageQueue* bQueue,
-                                  QString * updater_js,
-                                  QString * search,
-                                  QString * assets_name,
-                                  QString * release_download_url,
-                                  QString * release_url,
-                                  QString * release_note,
-                                  QString * note_pre_release,
-                                  QString * archive_name,
-                                  bool * is_newer){
+        std::thread updater(  [
+                &bQueue,
+                &updater_js,
+                &search,
+                &assets_name,
+                &release_download_url,
+                &release_url,
+                &release_note,
+                &note_pre_release,
+                &archive_name,
+                &is_newer](){
             jsUpdater(
-                bQueue,
-                updater_js,
-                search,
-                assets_name,
-                release_download_url,
-                release_url,
-                release_note,
-                note_pre_release,
-                archive_name,
-                is_newer
+                &bQueue,
+                &updater_js,
+                &search,
+                &assets_name,
+                &release_download_url,
+                &release_url,
+                &release_note,
+                &note_pre_release,
+                &archive_name,
+                &is_newer
             );
-            bQueue->Push(MessagePart{"", "", 0});
-        },
-        &bQueue,
-        &updater_js,
-        &search,
-        &assets_name,
-        &release_download_url,
-        &release_url,
-        &release_note,
-        &note_pre_release,
-        &archive_name,
-        &is_newer);
+            bQueue.Push(MessagePart{"", "", 0});
+        });
 
-        do {
-            MessagePart part;
-            bQueue.Pop(part);
-            auto type = part.type;
-            if (type == 0){
-                break;
-            } else if (type == 1){
-                auto & title = part.title;
-                auto & message = part.message;
-                if (title.isEmpty()){
-                    MW_show_log(message);
-                } else {
-                    MW_show_log("["+title+"]: "+message);
-                }
-            } else if (type == 2){
-                runOnUiThread([=,this] { MessageBoxWarning(part.title, part.message); });
-            } else if (type == 3){
-                runOnUiThread([=,this] { MessageBoxInfo(part.title, part.message); });
-            } else if (type == 4){
-                std::cout << part.message.toStdString() << std::endl;
-            }
-        } while (true);
+        this->message_queue(bQueue);
         updater.join();
     }
 #endif
@@ -2941,7 +2938,6 @@ end_search_define:
     if (is_newer){
         is_newer = isNewer(assets_name);
     }
-#endif
 
     if (!is_newer){
         MW_show_log("[Warn]: assets version is not newer ");
@@ -2955,6 +2951,13 @@ end_search_define:
         });
         return;
     }
+
+#else
+    if (!is_newer) {
+        return;
+    }
+
+#endif
 
     runOnUiThread([=,this] {
         auto allow_updater = !Configs::dataStore->flag_use_appdata;

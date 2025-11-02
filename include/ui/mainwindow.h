@@ -13,6 +13,8 @@
 #include <QtDBus>
 #endif
 
+
+
 #ifndef MW_INTERFACE
 
 #include <QTableWidgetItem>
@@ -24,6 +26,7 @@
 #include <QSemaphore>
 #include <QMutex>
 #include <QThreadPool>
+#include <include/js/message_queue.h>
 
 #include "group/GroupSort.hpp"
 
@@ -33,6 +36,8 @@
 #include "ui_mainwindow.h"
 
 #endif
+
+class MessageQueue;
 
 namespace Configs_sys {
     class CoreProcess;
@@ -275,6 +280,8 @@ private:
 #ifndef SKIP_UPDATE_BUTTON
     void CheckUpdate();
 #endif
+    void message_queue(MessageQueue & queue);
+
     void setupConnectionList();
 
     void querySpeedtest(QDateTime lastProxyListUpdate, const QMap<QString, int>& tag2entID, bool testCurrent);

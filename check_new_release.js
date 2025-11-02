@@ -3,7 +3,8 @@ let exitFlag = false;
 let resp = new HTTPResponse("https://api.github.com/repos/qr243vbi/nekobox/releases");
 
 function isNewer(assetName) {
-    if (!NKR_VERSION) {
+    let curver = NKR_VERSION.trim();
+    if (!curver) {
         return false;
     }
 
@@ -21,10 +22,10 @@ function isNewer(assetName) {
     }
 
     const parts = version.split('.'); // [1, 2, 3, beta, 13]
-    const currentParts = NKR_VERSION.split('.').map(part => part.replace("-", "."));
+    const currentParts = curver.split('.').map(part => part.replace("-", "."));
 
     if (parts.length < 3 || currentParts.length < 3) {
-        log("Version strings seem to be invalid: " + NKR_VERSION + " and " + version);
+        log("1. Version strings seem to be invalid: " + curver + " and " + version);
         return false;
     }
 
@@ -49,7 +50,7 @@ function isNewer(assetName) {
     }
 
     if (verNums.length < 3 || currNums.length < 3) {
-        log("Version strings seem to be invalid: " + NKR_VERSION + " and " + version);
+        log("2. Version strings seem to be invalid: " + curver + " and " + version);
         return false;
     }
 
@@ -68,7 +69,6 @@ function isNewer(assetName) {
             if (verNums[i] < currNums[i]) return false;
         }
     } else {
-        log("Version strings seem to be invalid: " + NKR_VERSION + " and " + version);
         return false;
     }
 
@@ -143,5 +143,14 @@ if (resp.error){
             release_note += ar[0] + ': ' + ar[1];
         }
     }
+}
+
+let release_download_url_flag = (release_download_url == '');
+
+log(translate("assets version is" + (is_newer ? "": " not") + " newer" + ((is_newer && release_download_url_flag) ? ", but download url is empty" : "") ), "Warn");
+
+if (release_download_url_flag || !is_newer){
+    warning("No update", "Update");
+    is_newer = false;
 }
 
