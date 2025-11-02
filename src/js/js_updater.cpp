@@ -112,8 +112,24 @@ bool jsInit(
 
     script = [&] { QFile f(":/updater.js"); return f.open(QIODevice::ReadOnly) ? QTextStream(&f).readAll() : QString(); }();
     ctx->evaluate(script);
-    script = *updater_js;
-    std::cout << ctx->evaluate(script).toString().toStdString() << std::endl;
+    if (updater_js != nullptr){
+        script = *updater_js;
+        std::cout << ctx->evaluate(script).toString().toStdString() << std::endl;
+    }
+    return true;
+}
+
+bool jsRouteProfileGetter(
+    JsUpdaterWindow * factory,
+    QString * updater_js,
+    QStringList * list,
+    std::function<QString(QString)> * func
+    ){
+    QJSEngine ctx;
+    if (!jsInit(&ctx, updater_js, factory)){
+        return false;
+    };
+
     return true;
 }
 
@@ -130,7 +146,6 @@ bool jsUpdater( JsUpdaterWindow* factory,
                 bool * is_newer){
     QJSEngine ctx;
     ctx.globalObject().setProperty("search", *search);
-
     if (!jsInit(&ctx, updater_js, factory)){
         return false;
     };
