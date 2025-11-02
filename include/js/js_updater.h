@@ -4,6 +4,7 @@
 #include <QString>
 #include <QObject>
 #include <QVariantMap>
+#include <functional>
 #include <include/global/HTTPRequestHelper.hpp>
 
 class JsUpdaterWindow : public QObject
@@ -15,6 +16,7 @@ public:
     Q_INVOKABLE void log(const QVariant value, const QVariant title);
     Q_INVOKABLE void warning(const QVariant message, const QVariant title);
     Q_INVOKABLE void info(const QVariant message, const QVariant title);
+    Q_INVOKABLE QString get_jsdelivr_link(const QVariant value);
     Q_INVOKABLE QString translate(const QVariant value);
 signals:
     void log_signal(const QString &value, const QString &title);
@@ -59,5 +61,12 @@ bool jsUpdater( JsUpdaterWindow* bQueue,
   QString * note_pre_release,
   QString * archive_name,
   bool * is_newer);
+
+bool jsRouteProfileGetter(
+    JsUpdaterWindow * factory,
+    QString * updater_js,
+    QStringList * list,
+    std::function<QString(QString)> * func
+);
 
 #endif

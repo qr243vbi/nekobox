@@ -7,6 +7,11 @@
 #include "include/configs/ConfigBuilder.hpp"
 #include <include/js/version.h>
 #include <iostream>
+#include <QString>
+
+#include <iostream>
+#include <memory>
+#include <functional>
 
 JsHTTPRequest::JsHTTPRequest(const QString& url): QObject(nullptr){
     init(url);
@@ -46,7 +51,9 @@ void JsUpdaterWindow::info(const QVariant value, const QVariant title){
 QString JsUpdaterWindow::translate(const QVariant value){
     return QObject::tr(value.toString().toUtf8().constData());
 }
-
+QString JsUpdaterWindow::get_jsdelivr_link(const QVariant value){
+    return Configs::get_jsdelivr_link(value.toString());
+}
 void JsHTTPRequest::init(const QString& url)
 {
     auto resp = NetworkRequestHelper::HttpGet(url);
@@ -119,15 +126,49 @@ bool jsInit(
     return true;
 }
 
+QStringList jsArrayToQStringList(const QJSValue &jsArray) {
+    QStringList stringList;
+
+    if (jsArray.isArray()) {
+        // Get the length of the array
+        int size = jsArray.property("length").toInt();
+
+        // Iterate over the elements
+        for (int i = 0; i < size; ++i) {
+            QJSValue element = jsArray.property(i);
+            stringList.append(element.toString());
+        }
+    } else {
+        qWarning() << "Provided QJSValue is not an array.";
+    }
+
+    return stringList;
+}
+
 bool jsRouteProfileGetter(
     JsUpdaterWindow * factory,
     QString * updater_js,
     QStringList * list,
     std::function<QString(QString)> * func
     ){
-    QJSEngine ctx;
-    if (!jsInit(&ctx, updater_js, factory)){
+    std::shared_ptr<QJSEngine> ctx = std::make_shared<QJSEngine>();
+    if (!jsInit(ctx.get(), updater_js, factory)){
         return false;
+    };
+
+    *list = jsArrayToQStringList(ctx->globalObject().property("route_profiles"));
+    *func = [ctx] (QString profile) -> QString {
+            QJSValue jsFunction = ctx->globalObject().property("route_profile_get_json");
+            if (jsFunction.isError()) {
+               qWarning() <<  "Error in JavaScript code: " << jsFunction.toString().toStdString();
+               return "";
+            }
+            QJSValue result = jsFunction.call(QJSValueList() << profile);
+            if (result.isError()) {
+               qWarning() << "Error calling JavaScript function: " << result.toString().toStdString();
+               return "";
+            }
+            return result.toString();
     };
 
     return true;
