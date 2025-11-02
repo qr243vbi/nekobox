@@ -5,19 +5,24 @@
 #include <QObject>
 #include <QVariantMap>
 #include <include/global/HTTPRequestHelper.hpp>
+#include <include/ui/mainwindow.h>
 
 class JsUpdaterWindow : public QObject
 {
     Q_OBJECT
 public:
-    explicit JsUpdaterWindow(MessageQueue* );
+    explicit JsUpdaterWindow(); //MainWindow*);
     Q_INVOKABLE void print(const QVariant value);
     Q_INVOKABLE void log(const QVariant value, const QVariant title);
     Q_INVOKABLE void warning(const QVariant message, const QVariant title);
     Q_INVOKABLE void info(const QVariant message, const QVariant title);
     Q_INVOKABLE QString translate(const QVariant value);
 private:
-    MessageQueue* queue;
+    MainWindow* queue;
+signals:
+    void log_signal(const QString &value, const QString &title);
+    void warning_signal(const QString &value, const QString &title);
+    void info_signal(const QString &value, const QString &title);
 };
 
 class JsHTTPRequest : public QObject
@@ -47,7 +52,7 @@ private:
 };
 
 
-bool jsUpdater( MessageQueue* bQueue,
+bool jsUpdater( JsUpdaterWindow* bQueue,
   QString * updater_js,
   QString * search,
   QString * assets_name,

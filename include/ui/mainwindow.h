@@ -26,7 +26,7 @@
 #include <QSemaphore>
 #include <QMutex>
 #include <QThreadPool>
-#include <include/js/message_queue.h>
+//#include <include/js/message_queue.h>
 
 #include "group/GroupSort.hpp"
 
@@ -37,7 +37,7 @@
 
 #endif
 
-class MessageQueue;
+//class MessageQueue;
 
 namespace Configs_sys {
     class CoreProcess;
@@ -111,6 +111,10 @@ public slots:
     void size_changed(int width, int height);
 
     void point_changed(int x, int y);
+/*
+    void on_log_show(const QString & message, const QString & title);
+    void on_info_show(const QString & message, const QString & title);
+    void on_warning_show(const QString & message, const QString & title);*/
 #ifndef MW_INTERFACE
 
 private slots:
@@ -280,7 +284,7 @@ private:
 #ifndef SKIP_UPDATE_BUTTON
     void CheckUpdate();
 #endif
-    void message_queue(MessageQueue & queue);
+//    void message_queue(MessageQueue & queue);
 
     void setupConnectionList();
 
