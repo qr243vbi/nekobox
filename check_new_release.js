@@ -143,7 +143,6 @@ if (resp.error){
             release_note += ar[0] + ': ' + ar[1];
         }
     }
-}
 
 let release_download_url_flag = (release_download_url == '');
 
@@ -154,3 +153,4 @@ if (release_download_url_flag || !is_newer){
     is_newer = false;
 }
 
+}
