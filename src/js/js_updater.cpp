@@ -87,6 +87,37 @@ void getBoolean(QJSEngine& engine, QString name, bool * value){
     *value = engine.globalObject().property(name).toBool();
 }
 
+
+bool jsInit(
+    QJSEngine * ctx,
+    QString * updater_js,
+    JsUpdaterWindow * factory
+){
+    QJSValue jsFactory = ctx->newQObject(factory);
+
+    ctx->globalObject().setProperty("window", jsFactory);
+    jsFactory = ctx->newQMetaObject(&JsHTTPRequest::staticMetaObject);
+
+
+    ctx->globalObject().setProperty("HTTPResponse", jsFactory);
+    ctx->globalObject().setProperty("archive_name", "nekobox.zip");
+
+    ctx->globalObject().setProperty("NKR_VERSION", NKR_VERSION);
+
+    QString script;
+
+    script = "var configs = ";
+    script = script + QString::fromUtf8(Configs::dataStore->ToJsonBytes());
+    ctx->evaluate(script);
+
+    script = [&] { QFile f(":/updater.js"); return f.open(QIODevice::ReadOnly) ? QTextStream(&f).readAll() : QString(); }();
+    ctx->evaluate(script);
+    script = *updater_js;
+    std::cout << ctx->evaluate(script).toString().toStdString() << std::endl;
+    return true;
+}
+
+
 bool jsUpdater( JsUpdaterWindow* factory,
                 QString * updater_js,
                 QString * search,
@@ -98,27 +129,11 @@ bool jsUpdater( JsUpdaterWindow* factory,
                 QString * archive_name,
                 bool * is_newer){
     QJSEngine ctx;
-    QJSValue jsFactory = ctx.newQObject(factory);
-
-    ctx.globalObject().setProperty("window", jsFactory);
-    jsFactory = ctx.newQMetaObject(&JsHTTPRequest::staticMetaObject);
-
-    ctx.globalObject().setProperty("HTTPResponse", jsFactory);
     ctx.globalObject().setProperty("search", *search);
-    ctx.globalObject().setProperty("archive_name", "nekobox.zip");
 
-    ctx.globalObject().setProperty("NKR_VERSION", NKR_VERSION);
-
-    QString script;
-
-    script = "var configs = ";
-    script = script + QString::fromUtf8(Configs::dataStore->ToJsonBytes());
-    ctx.evaluate(script);
-
-    script = [&] { QFile f(":/updater.js"); return f.open(QIODevice::ReadOnly) ? QTextStream(&f).readAll() : QString(); }();
-    ctx.evaluate(script);
-    script = *updater_js;
-    std::cout << ctx.evaluate(script).toString().toStdString() << std::endl;
+    if (!jsInit(&ctx, updater_js, factory)){
+        return false;
+    };
 
     getString(ctx, "assets_name", assets_name);
     getString(ctx, "release_download_url", release_download_url);
