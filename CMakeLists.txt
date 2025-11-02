@@ -274,7 +274,7 @@ else()
 #    include_directories(${CMAKE_SOURCE_DIR}/3rdparty/quickjs)
     find_package(Qt6 REQUIRED COMPONENTS Qml)
     target_link_libraries(nekobox PRIVATE Qt6::Qml)
-    target_sources(nekobox PRIVATE src/js/js_updater.cpp include/js/js_updater.h src/js/message_queue.cpp include/js/message_queue.h res/nekobox_updater.qrc)
+    target_sources(nekobox PRIVATE src/js/js_updater.cpp include/js/js_updater.h res/nekobox_updater.qrc)
 endif()
 
 # Target Source macOS
