@@ -2873,6 +2873,7 @@ void MainWindow::CheckUpdate() {
 end_search_define:
 
 #ifndef SKIP_JS_UPDATER
+    JsUpdaterWindow * bQueue;
     QString updater_js = "";
     {
         QFile file(QApplication::applicationDirPath() + "/check_new_release.js");
@@ -2890,7 +2891,7 @@ end_search_define:
     }
 
 
-    JsUpdaterWindow * bQueue = createJsUpdaterWindow();
+    bQueue = createJsUpdaterWindow();
 
             jsUpdater(
                 bQueue,
