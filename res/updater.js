@@ -26,6 +26,10 @@ function translate(message){
     return window.translate(_n(message));
 }
 
+function get_jsdelivr_link(message){
+    return window.get_jsdelivr_link(_n(message));
+}
+
 function httpget(url, message, title){
     if (message === undefined){
         message = 'Requesting update error: %1';

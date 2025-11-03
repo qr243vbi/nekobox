@@ -41,7 +41,7 @@ fi
 cp srslist.json $DEST/srslist.json
 
 #### copy exe ####
-cp $CURDIR/check_new_release.js $DEST
+cp $CURDIR/*.js $DEST
 cp $BUILD/nekobox.exe $DEST
 echo 'DeleteToUseThisDirectoryForConfig' > $DEST/config
 cp -RT $CURDIR/res/public $DEST/public
