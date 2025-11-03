@@ -12,7 +12,7 @@ release.tree.forEach(asset => {
 
 function route_profile_get_json(profile){
     resp = new HTTPResponse(get_jsdelivr_link("https://raw.githubusercontent.com/qr243vbi/ruleset/routeprofiles/" + profile + ".json"));
-    let text=resp.data;
+    let text=resp.text;
     if (!(resp.error == '')) {
         warning( translate("Requesting profile error: %1").replace("%1", resp.error + "\n" + text), translate("Download Profiles"));
         return "";
