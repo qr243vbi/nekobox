@@ -20,3 +20,4 @@ function route_profile_get_json(profile){
     log(text)
     return text;
 }
+
