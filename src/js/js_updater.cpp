@@ -163,14 +163,17 @@ bool jsRouteProfileGetter(
                qWarning() <<  "Error in JavaScript code: " << jsFunction.toString();
                return "";
             }
-            QJSValue result = jsFunction.call(QJSValueList() << profile);
+            qDebug() << "jsFunction " << jsFunction.toString();
+            QJSValueList args ;
+            args << profile ;
+
+            QJSValue result = jsFunction.call(args);
             if (result.isError()) {
                qWarning() << "Error calling JavaScript function: " << result.toString();
                return "";
             }
             return result.toString();
     };
-
     return true;
 }
 

@@ -1,5 +1,6 @@
 #!/bin/bash
 set -e
+export CURDIR=$PWD
 
 source script/env_deploy.sh
 if [[ $1 == 'arm64' ]]; then
@@ -26,6 +27,7 @@ cd ../..
 mv deployment/macos-$ARCH/* $BUILD/nekobox.app/Contents/MacOS
 
 #### copy srslist ####
+cp $CURDIR/*.js $BUILD/nekobox.app/Contents/MacOS
 cp srslist.json $BUILD/nekobox.app/Contents/MacOS/srslist.json
 
 #### deploy qt & DLL runtime => .app ####
