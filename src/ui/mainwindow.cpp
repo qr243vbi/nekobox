@@ -548,6 +548,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 
     auto getRemoteRouteProfiles = [=,this]
     {
+#ifdef SKIP_JS_UPDATER
         auto resp = NetworkRequestHelper::HttpGet("https://api.github.com/repos/qr243vbi/ruleset/git/trees/routeprofiles");
         if (resp.error.isEmpty()) {
             QStringList newRemoteRouteProfiles;
@@ -574,6 +575,27 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
             };
             mu_remoteRouteProfiles.unlock();
         }
+#else
+QString updater_js = "";
+{
+    QFile file(QApplication::applicationDirPath() + "/check_routeprofiles.js");
+
+    if (file.exists()) {
+        if (file.open(QIODevice::ReadOnly | QIODevice::Text)) {
+            QTextStream in(&file);
+            updater_js = in.readAll().toUtf8().constData();
+            file.close();
+            {
+                auto bQueue = createJsUpdaterWindow();
+                mu_remoteRouteProfiles.lock();
+                jsRouteProfileGetter(bQueue, &updater_js, &remoteRouteProfiles, &remoteRouteProfileGetter);
+                mu_remoteRouteProfiles.unlock();
+            }
+        }
+    }
+}
+
+#endif
     };
     runOnNewThread(getRemoteRouteProfiles);
 
@@ -608,6 +630,8 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
                     auto resp = remoteRouteProfileGetter(profile);
                     if (resp.isEmpty()){
                         return;
+                    } else {
+                        qDebug() << resp;
                     }
 
                     auto err = new QString;
@@ -1602,7 +1626,7 @@ void MainWindow::update_traffic_graph(int proxyDl, int proxyUp, int directDl, in
     }
 }
 
-// table显示
+// table
 
 // refresh_groups -> show_group -> refresh_proxy_list
 void MainWindow::refresh_groups() {
