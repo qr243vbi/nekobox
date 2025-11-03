@@ -1,6 +1,6 @@
 var route_profiles = [];
 let resp = new HTTPResponse("https://api.github.com/repos/qr243vbi/ruleset/git/trees/routeprofiles");
-let release = JSON.parse(resp.data); // Assuming resp.data is a JSON string
+let release = JSON.parse(resp.text); // Assuming resp.data is a JSON string
 
 release.tree.forEach(asset => {
     let profile = asset.path;
@@ -10,13 +10,13 @@ release.tree.forEach(asset => {
     }
 });
 
-function route_profile_get_json(str){
+function route_profile_get_json(profile){
     resp = new HTTPResponse(get_jsdelivr_link("https://raw.githubusercontent.com/qr243vbi/ruleset/routeprofiles/" + profile + ".json"));
+    let text=resp.data;
     if (!(resp.error == '')) {
-        warning( translate("Requesting profile error: %1").replace("%1", resp.error + "\n" + resp.data), translate("Download Profiles"));
-
+        warning( translate("Requesting profile error: %1").replace("%1", resp.error + "\n" + text), translate("Download Profiles"));
         return "";
     }
-    log(resp.data)
-    return resp.data;
+    log(text)
+    return text;
 }
