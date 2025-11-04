@@ -1202,19 +1202,22 @@ bool MainWindow::get_elevated_permissions(int reason, void * pointer) {
 
 #ifdef Q_OS_WIN
 #ifdef EXIT_IF_UAC_REQUIRED
-    auto n = QMessageBox::warning(GetMessageBoxParent(), software_name, tr("Please give the core root privileges"), QMessageBox::Yes | QMessageBox::No);
-    if (n == QMessageBox::Yes) {
+    goto skip_start_elevate_process;
+    start_elevate_process:
+    {
         this->exit_reason = reason;
         on_menu_exit_triggered();
     }
+    skip_start_elevate_process:
 #else
 #define ELEVATE_CORE_PROGRAM
 #endif
 #endif
 
 #ifdef ELEVATE_CORE_PROGRAM
-    auto n = QMessageBox::warning(GetMessageBoxParent(), software_name, tr("Please give the core root privileges"), QMessageBox::Yes | QMessageBox::No);
-    if (n == QMessageBox::Yes) {
+    goto skip_start_elevate_process;
+    start_elevate_process:
+    {
         StopVPNProcess();
         core_process->elevateCoreProcessProgram();
         {
@@ -1228,6 +1231,7 @@ bool MainWindow::get_elevated_permissions(int reason, void * pointer) {
         }
         return false;
     }
+    skip_start_elevate_process:
 #undef ELEVATE_CORE_PROGRAM
 #endif
 
@@ -1237,8 +1241,8 @@ bool MainWindow::get_elevated_permissions(int reason, void * pointer) {
         StopVPNProcess();
         return true;
     }
-    auto n = QMessageBox::warning(GetMessageBoxParent(), software_name, tr("Please give the core root privileges"), QMessageBox::Yes | QMessageBox::No);
-    if (n == QMessageBox::Yes)
+    goto skip_start_elevate_process;
+    start_elevate_process:
     {
         auto Command = QString("sudo chown root:wheel " + Configs::FindCoreRealPath() + " && " + "sudo chmod u+s "+Configs::FindCoreRealPath());
         auto ret = Mac_Run_Command(Command);
@@ -1250,7 +1254,16 @@ bool MainWindow::get_elevated_permissions(int reason, void * pointer) {
             return false;
         }
     }
+    skip_start_elevate_process:
 #endif
+    auto n = QMessageBox::warning(GetMessageBoxParent(), software_name, tr("Please give the core root privileges"), QMessageBox::Yes | QMessageBox::No);
+    if (n == QMessageBox::Yes) {
+        goto start_elevate_process;
+    } else {
+        if (reason == 3){
+            Configs::dataStore->remember_spmode.removeAll("vpn");
+        }
+    }
     return false;
 }
 
