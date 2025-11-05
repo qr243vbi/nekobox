@@ -162,6 +162,11 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
         themeManager->ApplyTheme(Configs::dataStore->theme, true);
     });
 #endif
+    connect(ui->data_view, &QTextBrowser::textChanged, [this]() {
+        QTextDocument *document = ui->data_view->document();
+        ui->data_view->setMaximumHeight(document->size().height());
+    });
+
     connect(themeManager, &ThemeManager::themeChanged, this, [=,this](const QString& theme){
         if (theme.toLower().contains("vista")) {
             // light themes
