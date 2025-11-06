@@ -205,6 +205,7 @@ DialogBasicSettings::DialogBasicSettings(MainWindow *parent)
     QSettings settings(CONFIG_INI_PATH, QSettings::IniFormat);
     auto validator = new QIntValidator(0, 0xfffffff, this);
     ui->save_geometry->setChecked(settings.value("save_geometry", true).toBool());
+    ui->save_position->setChecked(settings.value("save_position", true).toBool());
     ui->window_width->setText(QString::number(settings.value("width", 0).toInt()));
     ui->window_height->setText(QString::number(settings.value("height", 0).toInt()));
     ui->window_X->setText(QString::number(settings.value("X", 0).toInt()));
@@ -321,6 +322,7 @@ void DialogBasicSettings::accept() {
     int width, height, X, Y;
     // Startup
     settings.setValue("save_geometry", ui->save_geometry->isChecked());
+    settings.setValue("save_position", ui->save_position->isChecked());
     settings.setValue("width", width = ui->window_width->text().toInt());
     settings.setValue("height", height = ui->window_height->text().toInt());
     settings.setValue("X", X = ui->window_X->text().toInt());
