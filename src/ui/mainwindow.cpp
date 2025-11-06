@@ -349,6 +349,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
         refresh_proxy_list();
         group->Save();
     };
+
     if (auto button = ui->proxyListTable->findChild<QAbstractButton *>(QString(), Qt::FindDirectChildrenOnly)) {
         // Corner Button
         connect(button, &QAbstractButton::clicked, this, [=,this] { refresh_proxy_list_impl(-1, {GroupSortMethod::ById}); });
@@ -870,19 +871,25 @@ void MainWindow::show_group(int gid) {
 
     ui->tabWidget->widget(groupId2TabIndex(gid))->layout()->addWidget(ui->proxyListTable);
 
-    if (group->manually_column_width) {
-        for (int i = 0; i <= 4; i++) {
-            ui->proxyListTable->horizontalHeader()->setSectionResizeMode(i, QHeaderView::Interactive);
-            auto size = group->column_width.value(i);
-            if (size <= 0) size = ui->proxyListTable->horizontalHeader()->defaultSectionSize();
-            ui->proxyListTable->horizontalHeader()->resizeSection(i, size);
+
+    {
+        // Make headers resizable on proxy list table
+        QHeaderView* header = ui->proxyListTable->horizontalHeader();
+        header->setSectionsMovable(true); // Allow moving sections
+        if (group->manually_column_width) {
+            for (int i = 0; i <= 4; i++) {
+                header->setSectionResizeMode(i, QHeaderView::Interactive);
+                auto size = group->column_width.value(i);
+                if (size <= 0) size = header->defaultSectionSize();
+                header->resizeSection(i, size);
+            }
+        } else {
+            header->setSectionResizeMode(0, QHeaderView::ResizeToContents);
+            header->setSectionResizeMode(1, QHeaderView::Stretch);
+            header->setSectionResizeMode(2, QHeaderView::Stretch);
+            header->setSectionResizeMode(3, QHeaderView::ResizeToContents);
+            header->setSectionResizeMode(4, QHeaderView::ResizeToContents);
         }
-    } else {
-        ui->proxyListTable->horizontalHeader()->setSectionResizeMode(0, QHeaderView::ResizeToContents);
-        ui->proxyListTable->horizontalHeader()->setSectionResizeMode(1, QHeaderView::Stretch);
-        ui->proxyListTable->horizontalHeader()->setSectionResizeMode(2, QHeaderView::Stretch);
-        ui->proxyListTable->horizontalHeader()->setSectionResizeMode(3, QHeaderView::ResizeToContents);
-        ui->proxyListTable->horizontalHeader()->setSectionResizeMode(4, QHeaderView::ResizeToContents);
     }
 
     // show proxies
@@ -1073,17 +1080,19 @@ void MainWindow::on_commitDataRequest() {
 
         if (settings.value("save_geometry", true).toBool()){
             settings.setValue("maximized", isMaximized());
-            position = pos();
-            x = position.x();
-            y = position.y();
             geometry = size();
             width = geometry.width();
             height = geometry.height();
-            settings.setValue("X", x);
-            settings.setValue("Y", y);
             settings.setValue("width", width);
             settings.setValue("height", height);
             settings.sync();
+        }
+        if (settings.value("save_position", true).toBool()){
+            position = pos();
+            x = position.x();
+            y = position.y();
+            settings.setValue("X", x);
+            settings.setValue("Y", y);
         }
     }
     //
