@@ -1,6 +1,9 @@
 #pragma once
 
 #include <QDialog>
+#include <QMap>
+#include <QString>
+#include <QEvent>
 #include "include/dataStore/Group.hpp"
 #include "ui_dialog_edit_group.h"
 
@@ -23,21 +26,21 @@ private:
 
     std::shared_ptr<Configs::Group> ent;
 
-    struct {
-        int front_proxy;
-    } CACHE;
+    QMap<QString, int> proxy_items;
 
-    struct {
-        int landing_proxy;
-    } LANDING;
+    struct  {
+        bool proxy_items_need_refresh = true;
+        bool proxy_landing_changed = false;
+        bool proxy_front_changed = false;
+    } CACHE;
 
 private slots:
 
     void accept() override;
 
-    QStringList load_proxy_items();
-
-    int get_proxy_id(QString);
-
     QString get_proxy_name(int id);
+
+    void on_refresh_proxy_items();
+
+    int get_proxy_id(QString & text);
 };
