@@ -292,7 +292,7 @@ jobs:
         uses: awalsh128/cache-apt-pkgs-action@latest
         if: contains( matrix.platform, 'ubuntu' ) && github.event.inputs.source != 'y'
         with:
-          packages: libfuse2 patchelf
+          packages: libfuse2 patchelf squashfs-tools
           version: 1.0
 
       - name: Linux - Generate MakeFile and Build
@@ -304,7 +304,7 @@ jobs:
           cmake -GNinja -DSKIP_UPDATE_BUTTON="${SKIP_UPDATE_BUTTON}" -DCMAKE_BUILD_TYPE=Release -DCMAKE_EXE_LINKER_FLAGS="-static-libgcc -static-libstdc++" ..
           ninja
           cd ..
-          ./script/deploy_linux64.sh
+          bash -x ./script/deploy_linux64.sh
 
       - name: macOS - Generate MakeFile and Build
         shell: bash
