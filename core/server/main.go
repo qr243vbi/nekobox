@@ -9,7 +9,7 @@ import (
 	"log"
 	"net"
 	"net/http"
-    "strconv"
+	"strconv"
 	"os"
 	"runtime"
 	runtimeDebug "runtime/debug"
@@ -62,11 +62,11 @@ func main() {
 
 	flag.CommandLine.Parse(os.Args[1:])
     
-    if runtime.GOOS == "linux" {
-        if (*_admin){
-            restartAsAdmin();
-        }
-    }
+	if runtime.GOOS == "linux" {
+		if (*_admin){
+			restartAsAdmin();
+		}
+	}
 
 	// Redirect stderr and logs if flag is provided
 	if *redirectError != "" {
@@ -121,10 +121,10 @@ func main() {
 	if runtime.GOOS == "windows" {
 		if *_admin{
 			code, err := runAdmin(_port, _debug)
-            if (err != nil){
-                fmt.Fprintf(os.Stderr, "Failed to run as admin: %v\n", err)
-            }
-            os.Exit(code)
+			if (err != nil){
+				fmt.Fprintf(os.Stderr, "Failed to run as admin: %v\n", err)
+			}
+			os.Exit(code)
 		}
 	}
 	
