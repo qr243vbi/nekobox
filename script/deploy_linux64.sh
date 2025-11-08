@@ -74,6 +74,8 @@ echo "$INPUT_VERSION" > $DEST/version.txt
 cd $DEST
 patchelf --set-rpath '$ORIGIN/usr/lib' ./nekobox
 
+shopt -s extglob
+
 mkdir -p appimage/AppDir
 cd appimage
 wget "https://github.com/AppImage/type2-runtime/releases/download/continuous/runtime-${ARCH1}"
