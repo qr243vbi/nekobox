@@ -78,22 +78,23 @@ shopt -s extglob
 
 mkdir -p appimage/AppDir
 cd appimage
-wget "https://github.com/AppImage/type2-runtime/releases/download/continuous/runtime-${ARCH1}"
-wget "https://github.com/AppImage/appimagetool/releases/download/continuous/appimagetool-${ARCH1}.AppImage"
+[[ -f "runtime-${ARCH1}" ]] || wget "https://github.com/AppImage/type2-runtime/releases/download/continuous/runtime-${ARCH1}"
+[[ -f "appimagetool-${ARCH1}.AppImage" ]] || wget "https://github.com/AppImage/appimagetool/releases/download/continuous/appimagetool-${ARCH1}.AppImage"
 chmod 755 *
 cp -Rfv ../!(updater|appimage) ./AppDir
 (
 cd AppDir
 mv nekobox_core .nekobox_core_binary_file
-cat << EOF > nekobox_core
+cat << 'EOF' > nekobox_core
 #!/bin/sh
-export NEKOBOX_APPIMAGE_CUSTOM_EXECUTABLE_DIR="$(dirname $0)"
-export NEKOBOX_APPIMAGE_CUSTOM_EXECUTABLE="${NEKOBOX_APPIMAGE_CUSTOM_EXECUTABLE_DIR}/.nekobox_core_binary_file"
-exec "${NEKOBOX_APPIMAGE_CUSTOM_EXECUTABLE_DIR}/AppRun" "${@}"
+cd "$(dirname $0)"
+export NEKOBOX_APPIMAGE_CUSTOM_EXECUTABLE="./.nekobox_core_binary_file"
+exec "./AppRun" "${@}"
 EOF
-cat << EOF > AppRun
+cat << 'EOF' > AppRun
 #!/bin/sh
-exec "${NEKOBOX_APPIMAGE_CUSTOM_EXECUTABLE:-$(dirname $0)/nekobox}" "${@}"
+cd "$(dirname $0)"
+exec "${NEKOBOX_APPIMAGE_CUSTOM_EXECUTABLE:-./nekobox}" "${@}"
 EOF
 chmod 755 nekobox_core AppRun
 )
