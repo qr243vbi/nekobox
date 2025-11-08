@@ -5,7 +5,7 @@ Supports Windows 11/10/8/7 (arm64, i386, x86_64) / Linux / MacOS (arm64, x86_64)
  
 ### GitHub Releases (Portable ZIPs, Windows installers, AppImages)
 
-[![GitHub All Releases](https://img.shields.io/github/downloads/qr243vbi/nekobox/total?label=downloads-total&logo=github&style=flat-square)](https://github.com/qr243vbi/nekobox/releases)
+[![GitHub All Releases](https://img.shields.io/github/downloads/qr243vbi/nekobox/total?label=downloads-total&logo=github)](https://github.com/qr243vbi/nekobox/releases)
 
 ### OBS repository 
 [![build result](https://build.opensuse.org/projects/home:juzbun:NekoBox/packages/nekobox/badge.svg?type=percent)](https://build.opensuse.org/package/show/home:juzbun:NekoBox/nekobox) </br>
