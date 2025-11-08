@@ -82,7 +82,21 @@ wget "https://github.com/AppImage/type2-runtime/releases/download/continuous/run
 wget "https://github.com/AppImage/appimagetool/releases/download/continuous/appimagetool-${ARCH1}.AppImage"
 chmod 755 *
 cp -Rfv ../!(updater|appimage) ./AppDir
-ln -s nekobox ./AppDir/AppRun
+(
+cd AppDir
+mv nekobox_core .nekobox_core_binary_file
+cat << EOF > nekobox_core
+#!/bin/sh
+export NEKOBOX_APPIMAGE_CUSTOM_EXECUTABLE_DIR="$(dirname $0)"
+export NEKOBOX_APPIMAGE_CUSTOM_EXECUTABLE="${NEKOBOX_APPIMAGE_CUSTOM_EXECUTABLE_DIR}/.nekobox_core_binary_file"
+exec "${NEKOBOX_APPIMAGE_CUSTOM_EXECUTABLE_DIR}/AppRun" "${@}"
+EOF
+cat << EOF > AppRun
+#!/bin/sh
+exec "${NEKOBOX_APPIMAGE_CUSTOM_EXECUTABLE:-$(dirname $0)/nekobox}" "${@}"
+EOF
+chmod 755 nekobox_core AppRun
+)
 ln -s public/Tun.png ./AppDir/Tun.png
 cat << EOF > ./AppDir/nekobox.desktop
 [Desktop Entry]

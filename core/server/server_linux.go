@@ -6,8 +6,8 @@ import (
 	"fmt"
 	"time"
 	"syscall"
-    "log"
-    "os/exec"
+	"log"
+	"os/exec"
 )
 
 func (s *server) SetSystemDNS(in *gen.SetSystemDNSRequest, out *gen.EmptyResp) error {
@@ -40,34 +40,43 @@ func WaitForProcessExit (pid int) error{
 
 
 func restartAsAdmin(){
-            var args [] string
-            executablePath, err := os.Executable()
-            if err != nil {
-                log.Fatalf("Failed to get executable path: %v", err)
-            }
-            
-            pkexecPath, err := exec.LookPath("pkexec")
-            if err != nil {
-            // exec.ErrNotFound is returned if the executable cannot be found.
-                if err == exec.ErrNotFound {
-                    log.Fatalf("pkexec executable not found in PATH: %v", err)
-                } else {
-                    log.Fatalf("Error finding pkexec executable: %v", err)
-                }
-            }
-            
-            args = append(args, pkexecPath, "sh", "-c", "exec \"$0\" \"$@\"", executablePath)
-            for _, arg := range os.Args[1:] {
-                if arg != "-admin" {
-                    args = append(args, arg)
-                }
-            }
-            
-            
-            err = syscall.Exec(pkexecPath, args, os.Environ())
-            if err != nil {
-                // This part of the code will only be reached if syscall.Exec fails
-                fmt.Println("Error executing 'pkexec':", err)
-                os.Exit(1)
-            }
+	var args [] string
+	pkexecPath, err := exec.LookPath("pkexec")
+	if err != nil {
+		// exec.ErrNotFound is returned if the executable cannot be found.
+		if err == exec.ErrNotFound {
+			log.Fatalf("pkexec executable not found in PATH: %v", err)
+		} else {
+			log.Fatalf("Error finding pkexec executable: %v", err)
+		}
+	}
+	executablePath, runningAppImage := os.LookupEnv("APPIMAGE")
+	args = append(args, pkexecPath, "sh", "-c", "exec \"${0}\" \"${@}\"")
+	if (runningAppImage){
+		value, runningAppImage := os.LookupEnv("NEKOBOX_APPIMAGE_CUSTOM_EXECUTABLE")
+		if (!runningAppImage){
+			goto executable_path;
+		}
+		args = append(args, "env", "NEKOBOX_APPIMAGE_CUSTOM_EXECUTABLE=" + value, executablePath)
+	}
+	if (!runningAppImage){
+		executable_path:
+		executablePath, err := os.Executable()
+		if err != nil {
+			log.Fatalf("Failed to get executable path: %v", err)
+		}
+		args = append(args, executablePath)
+	}
+
+	for _, arg := range os.Args[1:] {
+		if arg != "-admin" {
+			args = append(args, arg)
+		}
+	}
+	err = syscall.Exec(pkexecPath, args, os.Environ())
+	if err != nil {
+		// This part of the code will only be reached if syscall.Exec fails
+		fmt.Println("Error executing 'pkexec':", err)
+		os.Exit(1)
+	}
 }
