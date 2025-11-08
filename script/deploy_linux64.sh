@@ -73,3 +73,26 @@ echo "$INPUT_VERSION" > $DEST/version.txt
 
 cd $DEST
 patchelf --set-rpath '$ORIGIN/usr/lib' ./nekobox
+
+mkdir -p appimage/AppDir
+cd appimage
+wget "https://github.com/AppImage/type2-runtime/releases/download/continuous/runtime-${ARCH1}"
+wget "https://github.com/AppImage/appimagetool/releases/download/continuous/appimagetool-${ARCH1}.AppImage"
+chmod 755 *
+cp -Rfv ../!(updater|appimage) ./AppDir
+ln -s nekobox ./AppDir/AppRun
+ln -s public/Tun.png ./AppDir/Tun.png
+cat << EOF > ./AppDir/nekobox.desktop
+[Desktop Entry]
+Version=1.0
+Terminal=false
+Type=Application
+Name=nekobox
+Categories=Network;
+Keywords=Internet;VPN;Proxy;sing-box;
+Exec=nekobox
+Icon=Tun
+EOF
+./appimagetool-${ARCH1}.AppImage AppDir ../nekobox-${ARCH1}.AppImage --runtime-file runtime-${ARCH1}
+cd ../
+rm -rfv appimage
