@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>402</width>
-    <height>518</height>
+    <width>400</width>
+    <height>636</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -31,35 +31,110 @@
      <property name="title">
       <string>Common</string>
      </property>
-     <layout class="QGridLayout" name="main">
-      <item row="0" column="0">
-       <widget class="QLabel" name="label">
-        <property name="text">
-         <string>Name</string>
+     <property name="flat">
+      <bool>false</bool>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_3">
+      <item>
+       <widget class="QTabWidget" name="common_tabs">
+        <property name="currentIndex">
+         <number>0</number>
         </property>
-       </widget>
-      </item>
-      <item row="2" column="1">
-       <layout class="QHBoxLayout" name="horizontalLayout">
-        <item>
-         <widget class="QComboBox" name="front_proxy">
-          <item>
-           <property name="text">
-            <string notr="true">None</string>
-           </property>
+        <widget class="QWidget" name="tab_5">
+         <attribute name="title">
+          <string>Base</string>
+         </attribute>
+         <layout class="QGridLayout" name="gridLayout">
+          <item row="0" column="0">
+           <widget class="QLabel" name="label">
+            <property name="text">
+             <string>Name</string>
+            </property>
+           </widget>
           </item>
-         </widget>
-        </item>
-       </layout>
-      </item>
-      <item row="2" column="0">
-       <widget class="QLabel" name="front_proxy_l">
-        <property name="text">
-         <string>Front Proxy</string>
-        </property>
+          <item row="0" column="1">
+           <widget class="QLineEdit" name="name"/>
+          </item>
+          <item row="1" column="1">
+           <widget class="QComboBox" name="type">
+            <item>
+             <property name="text">
+              <string>Basic</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Subscription</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="label_2">
+            <property name="text">
+             <string>Type</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="tab_6">
+         <attribute name="title">
+          <string>Proxy</string>
+         </attribute>
+         <layout class="QGridLayout" name="gridLayout_2">
+          <item row="0" column="1">
+           <widget class="QComboBox" name="front_proxy">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <item>
+             <property name="text">
+              <string notr="true">None</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="0" column="0">
+           <widget class="QLabel" name="front_proxy_l">
+            <property name="text">
+             <string>Front Proxy</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="landing_proxy_l">
+            <property name="text">
+             <string>Landing Proxy</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QComboBox" name="landing_proxy">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <item>
+             <property name="text">
+              <string notr="true">None</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+         </layout>
+        </widget>
        </widget>
       </item>
-      <item row="4" column="1">
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout"/>
+      </item>
+      <item>
        <layout class="QHBoxLayout" name="horizontalLayout_2">
         <item>
          <widget class="QCheckBox" name="manually_column_width">
@@ -77,60 +152,16 @@
         </item>
        </layout>
       </item>
-      <item row="1" column="1">
-       <widget class="QComboBox" name="type">
-        <item>
-         <property name="text">
-          <string>Basic</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>Subscription</string>
-         </property>
-        </item>
-       </widget>
-      </item>
-      <item row="1" column="0">
-       <widget class="QLabel" name="label_2">
-        <property name="text">
-         <string>Type</string>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="1">
-       <widget class="QLineEdit" name="name"/>
-      </item>
-      <item row="3" column="1">
-       <widget class="QComboBox" name="landing_proxy">
-        <item>
-         <property name="text">
-          <string notr="true">None</string>
-         </property>
-        </item>
-       </widget>
-      </item>
-      <item row="3" column="0">
-       <widget class="QLabel" name="landing_proxy_l">
-        <property name="text">
-         <string>Landing Proxy</string>
-        </property>
-       </widget>
-      </item>
      </layout>
-     <zorder>label</zorder>
-     <zorder>front_proxy_l</zorder>
-     <zorder>type</zorder>
-     <zorder>label_2</zorder>
-     <zorder>landing_proxy</zorder>
-     <zorder>landing_proxy_l</zorder>
-     <zorder>name</zorder>
     </widget>
    </item>
    <item>
     <widget class="QGroupBox" name="cat_sub">
      <property name="title">
       <string>Subscription</string>
+     </property>
+     <property name="flat">
+      <bool>false</bool>
      </property>
      <layout class="QGridLayout" name="_2">
       <item row="0" column="0">
@@ -193,8 +224,6 @@
   </customwidget>
  </customwidgets>
  <tabstops>
-  <tabstop>name</tabstop>
-  <tabstop>type</tabstop>
   <tabstop>manually_column_width</tabstop>
   <tabstop>archive</tabstop>
   <tabstop>url</tabstop>
