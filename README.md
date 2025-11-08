@@ -82,7 +82,7 @@ Various formats are supported, including share links, JSON array of outbounds an
 - [OpenRC](https://openrc.run/)/[runit](https://smarden.org/runit/)/[systemd](https://systemd.io/) integration of nekobox_core
 - Terminal UI
 - Remote control
-- Support for BSD platforms
+- Support for all platforms that supported by sing-box and Qt
 
 ## FAQ
 **What is AppImage?** <br/>
