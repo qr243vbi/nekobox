@@ -85,6 +85,9 @@ Various formats are supported, including share links, JSON array of outbounds an
 - Support for Haiku, AmigaOS, BSD, Solaris, Android platforms
 
 ## FAQ
+**What is AppImage?** <br/>
+AppImage is a reliable and straightforward method for running applications on a Linux computer without the traditional installation process. You download a single, self-contained file which includes everything the program needs to operate. To use it, you simply grant the file permission to run and double-click it. This approach ensures compatibility across various Linux systems and allows for easy removal—simply delete the file when you no longer need the application, with no residual files left behind on your system.
+
 **What is [Throne](https://throne.com/landing)?** <br/>
 About Throne
 
