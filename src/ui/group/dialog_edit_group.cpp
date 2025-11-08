@@ -34,8 +34,6 @@ DialogEditGroup::DialogEditGroup(const std::shared_ptr<Configs::Group> &ent, QWi
         ent->landing_proxy_id = -1;
         ent->Save();
     }
-    CACHE.front_proxy = ent->front_proxy_id;
-    LANDING.landing_proxy = ent->landing_proxy_id;
 
     if (ent->id >= 0) { // already a group
         ui->type->setDisabled(true);
@@ -44,34 +42,13 @@ DialogEditGroup::DialogEditGroup(const std::shared_ptr<Configs::Group> &ent, QWi
         }
     }
 
-    auto proxy_items = load_proxy_items();
-    ui->front_proxy->addItems(proxy_items);
-    ui->front_proxy->setCurrentText(get_proxy_name(CACHE.front_proxy));
     ui->front_proxy->setEditable(true);
     ui->front_proxy->setInsertPolicy(QComboBox::NoInsert);
-    auto frontCompleter = new QCompleter(proxy_items, this);
-    frontCompleter->setCompletionMode(QCompleter::PopupCompletion);
-    frontCompleter->setCaseSensitivity(Qt::CaseInsensitive);
-    frontCompleter->setFilterMode(Qt::MatchContains);
     ui->front_proxy->setCompleter(nullptr);
-    ui->front_proxy->lineEdit()->setCompleter(frontCompleter);
-    connect(ui->front_proxy, &QComboBox::currentTextChanged, this, [=,this](const QString &txt){
-        CACHE.front_proxy = get_proxy_id(txt);
-    });
 
-    ui->landing_proxy->addItems(proxy_items);
-    ui->landing_proxy->setCurrentText(get_proxy_name(LANDING.landing_proxy));
     ui->landing_proxy->setEditable(true);
     ui->landing_proxy->setInsertPolicy(QComboBox::NoInsert);
-    auto landingCompleter = new QCompleter(proxy_items, this);
-    landingCompleter->setCompletionMode(QCompleter::PopupCompletion);
-    landingCompleter->setCaseSensitivity(Qt::CaseInsensitive);
-    landingCompleter->setFilterMode(Qt::MatchContains);
     ui->landing_proxy->setCompleter(nullptr);
-    ui->landing_proxy->lineEdit()->setCompleter(frontCompleter);
-    connect(ui->landing_proxy, &QComboBox::currentTextChanged, this, [=,this](const QString &txt){
-        LANDING.landing_proxy = get_proxy_id(txt);
-    });
 
     connect(ui->copy_links, &QPushButton::clicked, this, [=,this] {
         QStringList links;
@@ -92,8 +69,17 @@ DialogEditGroup::DialogEditGroup(const std::shared_ptr<Configs::Group> &ent, QWi
         MessageBoxInfo(software_name, tr("Copied"));
     });
 
-    ui->name->setFocus();
+    connect(ui->common_tabs, &QTabWidget::currentChanged, this, [=,this] (int index) {
+        if (index == 1){
+            if (CACHE.proxy_items_need_refresh){
+                qDebug() <<" Refresh proxy list for group editor ";
+                CACHE.proxy_items_need_refresh = false;
+                on_refresh_proxy_items();
+            }
+        }
+    });
 
+    ui->name->setFocus();
     ADJUST_SIZE
 }
 
@@ -113,31 +99,82 @@ void DialogEditGroup::accept() {
     ent->archive = ui->archive->isChecked();
     ent->skip_auto_update = ui->skip_auto_update->isChecked();
     ent->manually_column_width = ui->manually_column_width->isChecked();
-    ent->front_proxy_id = CACHE.front_proxy;
-    ent->landing_proxy_id = LANDING.landing_proxy;
+    if (!CACHE.proxy_items_need_refresh){
+        if (CACHE.proxy_landing_changed){
+            QString front_proxy_text = ui->front_proxy->currentText();
+            ent->front_proxy_id = get_proxy_id(front_proxy_text);
+        }
+        if (CACHE.proxy_front_changed){
+            QString landing_proxy_text = ui->landing_proxy->currentText();
+            ent->landing_proxy_id = get_proxy_id(landing_proxy_text);
+        }
+    }
     QDialog::accept();
 }
 
-QStringList DialogEditGroup::load_proxy_items() {
-    QStringList res = QStringList();
-    auto profiles = Configs::profileManager->profiles;
-    for (const auto &item: profiles) {
-        res.push_back(item.second->bean->DisplayName());
+int DialogEditGroup::get_proxy_id(QString & text){
+    int i = proxy_items.value(text, -1);
+    if (i >= 0){
+        return i;
     }
-
-    return res;
+    bool is_int;
+    text.toInt(&is_int);
+    if (is_int){
+        if (i >= 0){
+            return i;
+        }
+    }
+    return -1;
 }
 
-int DialogEditGroup::get_proxy_id(QString name) {
-    auto profiles = Configs::profileManager->profiles;
-    for (const auto &item: profiles) {
-        if (item.second->bean->DisplayName() == name) return item.first;
+void DialogEditGroup::on_refresh_proxy_items(){
+    QStringList proxy_items_list;
+    for (const auto &item: Configs::profileManager->profiles) {
+        QString name = (item.second->bean->DisplayName());
+        int id = item.first;
+        if (name.isEmpty()){
+            name = QString::number(id);
+        }
+        proxy_items_list.push_back(name);
+        proxy_items[name] = id;
     }
+    proxy_items[""] = -1;
 
-    return -1;
+    ui->front_proxy->addItems(proxy_items_list);
+    ui->landing_proxy->addItems(proxy_items_list);
+
+    QString front_name;
+    QString landing_name;
+
+    ui->front_proxy->setCurrentText(front_name = get_proxy_name(ent->front_proxy_id));
+    ui->landing_proxy->setCurrentText(landing_name = get_proxy_name(ent->landing_proxy_id));
+
+    connect(ui->front_proxy, &QComboBox::currentTextChanged, this, [=, this](const QString &text) {
+        CACHE.proxy_front_changed = !(text == front_name);
+    });
+
+    connect(ui->landing_proxy, &QComboBox::currentTextChanged, this, [=, this](const QString &text) {
+        CACHE.proxy_landing_changed = !(text == landing_name);
+    });
+
+    auto Completer = new QCompleter(proxy_items_list, this);
+    Completer->setCompletionMode(QCompleter::PopupCompletion);
+    Completer->setCaseSensitivity(Qt::CaseInsensitive);
+    Completer->setFilterMode(Qt::MatchContains);
+    ui->front_proxy->lineEdit()->setCompleter(Completer);
+    ui->landing_proxy->lineEdit()->setCompleter(Completer);
 }
 
 QString DialogEditGroup::get_proxy_name(int id) {
     auto profiles = Configs::profileManager->profiles;
-    return profiles.count(id) == 0 ? "None" : profiles[id]->bean->DisplayName();
+    if (profiles.count(id) == 0){
+        return "";
+    } else {
+        QString str = profiles[id]->bean->DisplayName();
+        if (str.isEmpty()){
+            return QString::number(id);
+        } else {
+            return str;
+        }
+    }
 }
