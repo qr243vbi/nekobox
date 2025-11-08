@@ -3,13 +3,13 @@
 
 namespace Configs
 {
-    class custom : public outbound
+    class Custom : public outbound
     {
     public:
         QString config;
-        QString type; // one of outbound or fullconfig
+        QString type; // one of outbound or fullconfig TODO use consts
 
-        custom()
+        Custom() : outbound()
         {
             _add(new configItem("commons", dynamic_cast<JsonStore *>(commons.get()), jsonStore));
             _add(new configItem("config", &config, string));

@@ -72,7 +72,7 @@
         </widget>
        </item>
        <item row="4" column="1">
-        <widget class="QKeySequenceEdit" name="toggle_proxy"/>
+        <widget class="QtExtKeySequenceEdit" name="toggle_proxy"/>
        </item>
       </layout>
      </widget>
@@ -94,8 +94,8 @@
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>380</width>
-            <height>311</height>
+            <width>360</width>
+            <height>264</height>
            </rect>
           </property>
          </widget>

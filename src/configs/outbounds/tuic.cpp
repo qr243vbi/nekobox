@@ -86,7 +86,18 @@ namespace Configs {
 
     BuildResult tuic::Build()
     {
-        return {ExportToJson(), ""};
+        QJsonObject object;
+        object["type"] = "tuic";
+        mergeJsonObjects(object, commons->Build().object);
+        if (!uuid.isEmpty()) object["uuid"] = uuid;
+        if (!password.isEmpty()) object["password"] = password;
+        if (!congestion_control.isEmpty()) object["congestion_control"] = congestion_control;
+        if (!udp_relay_mode.isEmpty()) object["udp_relay_mode"] = udp_relay_mode;
+        if (udp_over_stream) object["udp_over_stream"] = udp_over_stream;
+        if (zero_rtt_handshake) object["zero_rtt_handshake"] = zero_rtt_handshake;
+        if (!heartbeat.isEmpty()) object["heartbeat"] = heartbeat;
+        if (tls->enabled) object["tls"] = tls->Build().object;
+        return {object, ""};
     }
 
     QString tuic::DisplayType()

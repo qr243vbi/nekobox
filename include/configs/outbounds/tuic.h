@@ -20,7 +20,7 @@ namespace Configs
         QString heartbeat;
         std::shared_ptr<TLS> tls = std::make_shared<TLS>();
 
-        tuic()
+        tuic() : outbound()
         {
             _add(new configItem("commons", dynamic_cast<JsonStore *>(commons.get()), jsonStore));
             _add(new configItem("uuid", &uuid, string));

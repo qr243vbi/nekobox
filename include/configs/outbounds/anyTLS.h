@@ -13,7 +13,7 @@ namespace Configs
         int min_idle_session = 5;
         std::shared_ptr<TLS> tls = std::make_shared<TLS>();
 
-        anyTLS()
+        anyTLS() : outbound()
         {
             _add(new configItem("commons", dynamic_cast<JsonStore *>(commons.get()), jsonStore));
             _add(new configItem("password", &password, string));

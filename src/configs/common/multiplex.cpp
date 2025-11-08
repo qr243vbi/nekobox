@@ -1,8 +1,4 @@
 #include "include/configs/common/multiplex.h"
-
-#include <QUrlQuery>
-#include <include/global/DataStore.hpp>
-
 #include "include/configs/common/utils.h"
 
 namespace Configs {
@@ -19,7 +15,7 @@ namespace Configs {
     }
     bool TcpBrutal::ParseFromJson(const QJsonObject& object)
     {
-        if (object == nullptr) return false;
+        if (object.isEmpty()) return false;
         if (object.contains("enabled")) enabled = object["enabled"].toBool();
         if (object.contains("up_mbps")) up_mbps = object["up_mbps"].toInt();
         if (object.contains("down_mbps")) down_mbps = object["down_mbps"].toInt();
@@ -56,7 +52,7 @@ namespace Configs {
 
         if (query.hasQueryItem("mux")) enabled = query.queryItemValue("mux") == "true";
         else unspecified = true;
-        protocol = query.hasQueryItem("mux_protocol") ? query.queryItemValue("mux_protocol") : "smux";
+        if (query.hasQueryItem("mux_protocol")) protocol = query.queryItemValue("mux_protocol");
         if (query.hasQueryItem("mux_max_connections")) max_connections = query.queryItemValue("mux_max_connections").toInt();
         if (query.hasQueryItem("mux_min_streams")) min_streams = query.queryItemValue("mux_min_streams").toInt();
         if (query.hasQueryItem("mux_max_streams")) max_streams = query.queryItemValue("mux_max_streams").toInt();
@@ -66,7 +62,7 @@ namespace Configs {
     }
     bool Multiplex::ParseFromJson(const QJsonObject& object)
     {
-        if (object == nullptr)
+        if (object.isEmpty())
         {
             unspecified = true;
             return false;
@@ -111,6 +107,7 @@ namespace Configs {
     {
         auto obj = ExportToJson();
         if (unspecified && dataStore->mux_default_on) obj["enabled"] = true;
+        if (!obj["enabled"].toBool()) return {{}, ""};
         if (protocol.isEmpty()) obj["protocol"] = dataStore->mux_protocol;
         if (max_streams == 0 && max_connections == 0 && min_streams == 0) obj["max_streams"] = dataStore->mux_concurrency;
         if (dataStore->mux_padding) obj["padding"] = true;

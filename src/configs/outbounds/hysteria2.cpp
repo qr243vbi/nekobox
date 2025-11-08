@@ -136,7 +136,18 @@ namespace Configs {
 
     BuildResult hysteria2::Build()
     {
-        return {ExportToJson(), ""};
+        QJsonObject object;
+        object["type"] = "hysteria2";
+        mergeJsonObjects(object, commons->Build().object);
+        if (!server_ports.isEmpty()) object["server_ports"] = QListStr2QJsonArray(server_ports);
+        if (!hop_interval.isEmpty()) object["hop_interval"] = hop_interval;
+        if (up_mbps > 0) object["up_mbps"] = up_mbps;
+        if (down_mbps > 0) object["down_mbps"] = down_mbps;
+        if (!obfsType.isEmpty()) object["obfsType"] = obfsType;
+        if (!obfsPassword.isEmpty()) object["obfsPassword"] = obfsPassword;
+        if (!password.isEmpty()) object["password"] = password;
+        if (tls->enabled) object["tls"] = tls->Build().object;
+        return {object, ""};
     }
 
     QString hysteria2::DisplayType()

@@ -97,7 +97,6 @@ set(PROJECT_SOURCES
         src/dataStore/Database.cpp
         src/stats/traffic/TrafficLooper.cpp
         src/dataStore/ProfileFilter.cpp
-        src/configs/ConfigBuilder.cpp
 
         src/configs/proxy/AbstractBean.cpp
         src/configs/proxy/Bean2CoreObj_box.cpp

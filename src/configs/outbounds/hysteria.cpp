@@ -134,7 +134,21 @@ namespace Configs {
 
     BuildResult hysteria::Build()
     {
-        return {ExportToJson(), ""};
+        QJsonObject object;
+        object["type"] = "hysteria";
+        mergeJsonObjects(object, commons->Build().object);
+        if (!server_ports.isEmpty()) object["server_ports"] = QListStr2QJsonArray(server_ports);
+        if (!hop_interval.isEmpty()) object["hop_interval"] = hop_interval;
+        if (up_mbps > 0) object["up_mbps"] = up_mbps;
+        if (down_mbps > 0) object["down_mbps"] = down_mbps;
+        if (!obfs.isEmpty()) object["obfs"] = obfs;
+        if (!auth.isEmpty()) object["auth"] = auth;
+        if (!auth_str.isEmpty()) object["auth_str"] = auth_str;
+        if (recv_window_conn > 0) object["recv_window_conn"] = recv_window_conn;
+        if (recv_window > 0) object["recv_window"] = recv_window;
+        if (disable_mtu_discovery) object["disable_mtu_discovery"] = disable_mtu_discovery;
+        if (tls->enabled) object["tls"] = tls->Build().object;
+        return {object, ""};
     }
 
     QString hysteria::DisplayType()

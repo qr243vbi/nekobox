@@ -13,14 +13,24 @@ namespace Configs
     class baseConfig : public JsonStore
     {
     public:
-        virtual bool ParseFromLink(const QString& link);
+        virtual bool ParseFromLink(const QString& link) {
+            return false;
+        }
 
-        virtual bool ParseFromJson(const QJsonObject& object);
+        virtual bool ParseFromJson(const QJsonObject& object) {
+            return false;
+        }
 
-        virtual QString ExportToLink();
+        virtual QString ExportToLink() {
+            return {};
+        }
 
-        virtual QJsonObject ExportToJson();
+        virtual QJsonObject ExportToJson() {
+            return {};
+        }
 
-        virtual BuildResult Build();
+        virtual BuildResult Build() {
+            return {{}, "base class function called!"};
+        }
     };
 }

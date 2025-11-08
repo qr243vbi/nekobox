@@ -86,7 +86,7 @@ namespace Configs
         bool forExport = false;
         bool tunEnabled = false;
         bool isResolvedUsed = false;
-        std::shared_ptr<ProxyEntity> ent = std::make_shared<ProxyEntity>(nullptr, nullptr);
+        std::shared_ptr<ProxyEntity> ent = std::make_shared<ProxyEntity>(nullptr, nullptr, nullptr);
         std::shared_ptr<BuildPrerequisities> buildPrerequisities = std::make_shared<BuildPrerequisities>();
         OSType os;
 
@@ -161,5 +161,5 @@ namespace Configs
 
     bool IsValid(const std::shared_ptr<ProxyEntity> &ent);
 
-    std::shared_ptr<BuildTestConfigResult> BuildTestConfig(const QList<std::shared_ptr<ProxyEntity>>& profiles);
+    std::shared_ptr<BuildTestConfigResult> BuildTestConfig(const QList<std::shared_ptr<ProxyEntity> > &profiles);
 }

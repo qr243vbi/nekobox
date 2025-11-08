@@ -18,7 +18,7 @@ namespace Configs
         bool advertise_exit_node = false;
         bool globalDNS = false;
 
-        tailscale()
+        tailscale() : outbound()
         {
             _add(new configItem("commons", dynamic_cast<JsonStore *>(commons.get()), jsonStore));
             _add(new configItem("state_directory", &state_directory, itemType::string));

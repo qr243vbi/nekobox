@@ -234,7 +234,21 @@ namespace Configs {
 
     BuildResult wireguard::Build()
     {
-        return {ExportToJson(), ""};
+        QJsonObject object;
+        object["type"] = "wireguard";
+        mergeJsonObjects(object, commons->Build().object);
+        if (!private_key.isEmpty()) object["private_key"] = private_key;
+        if (!address.isEmpty()) object["address"] = QListStr2QJsonArray(address);
+        if (mtu > 0) object["mtu"] = mtu;
+        if (system) object["system"] = system;
+        if (worker_count > 0) object["worker_count"] = worker_count;
+        if (!udp_timeout.isEmpty()) object["udp_timeout"] = udp_timeout;
+
+        auto peerObj = peer->Build().object;
+        if (!peerObj.isEmpty()) {
+            object["peer"] = QJsonArray({peerObj});
+        }
+        return {object, ""};
     }
 
     QString wireguard::DisplayAddress()

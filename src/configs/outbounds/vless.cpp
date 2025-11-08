@@ -83,7 +83,16 @@ namespace Configs {
 
     BuildResult vless::Build()
     {
-        return {ExportToJson(), ""};
+        QJsonObject object;
+        object["type"] = "vless";
+        mergeJsonObjects(object, commons->Build().object);
+        if (!uuid.isEmpty()) object["uuid"] = uuid;
+        if (!flow.isEmpty()) object["flow"] = flow;
+        if (!packet_encoding.isEmpty()) object["packet_encoding"] = packet_encoding;
+        if (tls->enabled) object["tls"] = tls->Build().object;
+        if (!transport->type.isEmpty()) object["transport"] = transport->Build().object;
+        if (auto obj = multiplex->Build().object; !obj.isEmpty()) object["multiplex"] = obj;
+        return {object, ""};
     }
 
     QString vless::DisplayType()

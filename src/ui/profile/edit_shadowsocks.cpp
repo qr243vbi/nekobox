@@ -1,6 +1,5 @@
 #include "include/ui/profile/edit_shadowsocks.h"
 
-#include "include/configs/proxy/ShadowSocksBean.hpp"
 #include "include/configs/proxy/Preset.hpp"
 
 EditShadowSocks::EditShadowSocks(QWidget *parent) : QWidget(parent),
@@ -15,7 +14,7 @@ EditShadowSocks::~EditShadowSocks() {
 
 void EditShadowSocks::onStart(std::shared_ptr<Configs::ProxyEntity> _ent) {
     this->ent = _ent;
-    auto bean = this->ent->ShadowSocksBean();
+    auto bean = this->ent->ShadowSocks();
 
     ui->method->setCurrentText(bean->method);
     ui->uot->setCurrentIndex(bean->uot);
@@ -28,7 +27,7 @@ void EditShadowSocks::onStart(std::shared_ptr<Configs::ProxyEntity> _ent) {
 }
 
 bool EditShadowSocks::onEnd() {
-    auto bean = this->ent->ShadowSocksBean();
+    auto bean = this->ent->ShadowSocks();
 
     bean->method = ui->method->currentText();
     bean->password = ui->password->text();

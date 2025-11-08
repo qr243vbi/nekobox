@@ -128,7 +128,19 @@ namespace Configs {
 
     BuildResult vmess::Build()
     {
-        return {ExportToJson(), ""};
+        QJsonObject object;
+        object["type"] = "vmess";
+        mergeJsonObjects(object, commons->Build().object);
+        if (!uuid.isEmpty()) object["uuid"] = uuid;
+        if (security != "auto") object["security"] = security;
+        if (alter_id > 0) object["alter_id"] = alter_id;
+        if (global_padding) object["global_padding"] = global_padding;
+        if (authenticated_length) object["authenticated_length"] = authenticated_length;
+        if (!packet_encoding.isEmpty()) object["packet_encoding"] = packet_encoding;
+        if (tls->enabled) object["tls"] = tls->Build().object;
+        if (!transport->type.isEmpty()) object["transport"] = transport->Build().object;
+        if (auto obj = multiplex->Build().object; !obj.isEmpty()) object["multiplex"] = obj;
+        return {object, ""};
     }
 
     QString vmess::DisplayType()

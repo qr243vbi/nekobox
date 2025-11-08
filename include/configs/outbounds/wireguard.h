@@ -54,7 +54,7 @@ namespace Configs
         int underload_packet_magic_header = 0;
         int transport_packet_magic_header = 0;
 
-        wireguard()
+        wireguard() : outbound()
         {
             _add(new configItem("commons", dynamic_cast<JsonStore *>(commons.get()), jsonStore));
 

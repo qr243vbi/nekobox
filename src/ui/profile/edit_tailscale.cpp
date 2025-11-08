@@ -12,7 +12,7 @@ EditTailScale::~EditTailScale() {
 
 void EditTailScale::onStart(std::shared_ptr<Configs::ProxyEntity> _ent) {
     this->ent = _ent;
-    auto bean = this->ent->TailscaleBean();
+    auto bean = this->ent->Tailscale();
 
     ui->state_dir->setText(bean->state_directory);
     ui->auth_key->setText(bean->auth_key);
@@ -28,7 +28,7 @@ void EditTailScale::onStart(std::shared_ptr<Configs::ProxyEntity> _ent) {
 }
 
 bool EditTailScale::onEnd() {
-    auto bean = this->ent->TailscaleBean();
+    auto bean = this->ent->Tailscale();
 
     bean->state_directory = ui->state_dir->text();
     bean->auth_key = ui->auth_key->text();

@@ -245,7 +245,7 @@ void DialogEditProfile::typeSelected(const QString &newType) {
         auto _innerWidget = new EditCustom(this);
         innerWidget = _innerWidget;
         innerEditor = _innerWidget;
-        customType = newEnt ? type : ent->CustomBean()->core;
+        customType = newEnt ? type : ent->Custom()->type;
         _innerWidget->preset_core = customType;
         type = "custom";
         ui->apply_to_group->hide();

@@ -124,7 +124,18 @@ namespace Configs {
 
     BuildResult ssh::Build()
     {
-        return {ExportToJson(), ""};
+        QJsonObject object;
+        object["type"] = "ssh";
+        mergeJsonObjects(object, commons->Build().object);
+        if (!user.isEmpty()) object["user"] = user;
+        if (!password.isEmpty()) object["password"] = password;
+        if (!private_key.isEmpty()) object["private_key"] = private_key;
+        if (!private_key_path.isEmpty()) object["private_key_path"] = private_key_path;
+        if (!private_key_passphrase.isEmpty()) object["private_key_passphrase"] = private_key_passphrase;
+        if (!host_key.isEmpty()) object["host_key"] = QListStr2QJsonArray(host_key);
+        if (!host_key_algorithms.isEmpty()) object["host_key_algorithms"] = QListStr2QJsonArray(host_key_algorithms);
+        if (!client_version.isEmpty()) object["client_version"] = client_version;
+        return {object, ""};
     }
 
     QString ssh::DisplayType()

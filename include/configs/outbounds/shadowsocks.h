@@ -17,7 +17,7 @@ namespace Configs
         bool uot = false;
         std::shared_ptr<Multiplex> multiplex = std::make_shared<Multiplex>();
 
-        shadowsocks()
+        shadowsocks() : outbound()
         {
             _add(new configItem("commons", dynamic_cast<JsonStore *>(commons.get()), jsonStore));
             _add(new configItem("method", &method, string));

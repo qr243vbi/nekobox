@@ -112,7 +112,16 @@ namespace Configs {
 
     BuildResult shadowsocks::Build()
     {
-        return {ExportToJson(), ""};
+        QJsonObject object;
+        object["type"] = "shadowsocks";
+        mergeJsonObjects(object, commons->Build().object);
+        if (!method.isEmpty()) object["method"] = method;
+        if (!password.isEmpty()) object["password"] = password;
+        if (!plugin.isEmpty()) object["plugin"] = plugin;
+        if (!plugin_opts.isEmpty()) object["plugin_opts"] = plugin_opts;
+        if (uot) object["uot"] = uot;
+        if (auto obj = multiplex->Build().object; !obj.isEmpty()) object["multiplex"] = obj;
+        return {object, ""};
     }
 
     QString shadowsocks::DisplayType()

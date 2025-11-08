@@ -1,7 +1,6 @@
 #include "include/ui/mainwindow.h"
 
 #include "include/dataStore/ProfileFilter.hpp"
-#include "include/configs/ConfigBuilder.hpp"
 #include "include/configs/sub/GroupUpdater.hpp"
 #include "include/sys/Process.hpp"
 #include "include/sys/AutoRun.hpp"
@@ -18,6 +17,7 @@
 #include "3rdparty/qrcodegen.hpp"
 #include "3rdparty/qv2ray/v2/ui/LogHighlighter.hpp"
 #include "3rdparty/QrDecoder.h"
+#include "include/configs/generate.h"
 #include "include/ui/group/dialog_edit_group.h"
 
 #ifdef Q_OS_WIN
@@ -1777,7 +1777,7 @@ void MainWindow::on_menu_export_config_triggered() {
     auto ent = ents.first();
     if (ent->bean->DisplayCoreType() != software_core_name) return;
 
-    auto result = BuildConfig(ent, false, true);
+    auto result = Configs::BuildSingBoxConfig(ent);
     QString config_core = QJsonObject2QString(result->coreConfig, true);
     QApplication::clipboard()->setText(config_core);
 
@@ -1789,12 +1789,12 @@ void MainWindow::on_menu_export_config_triggered() {
     msg.setDefaultButton(QMessageBox::Ok);
     msg.exec();
     if (msg.clickedButton() == button_1) {
-        result = BuildConfig(ent, false, false);
+        result = BuildSingBoxConfig(ent);
         config_core = QJsonObject2QString(result->coreConfig, true);
         QApplication::clipboard()->setText(config_core);
     } else if (msg.clickedButton() == button_2) {
-        result = BuildConfig(ent, true, false);
-        config_core = QJsonObject2QString(result->coreConfig, true);
+        auto res = Configs::BuildTestConfig({ent});
+        config_core = QJsonObject2QString(res->coreConfig, true);
         QApplication::clipboard()->setText(config_core);
     }
 }

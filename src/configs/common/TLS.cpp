@@ -1,8 +1,6 @@
 #include "include/configs/common/TLS.h"
 
 #include <QJsonArray>
-#include <QUrlQuery>
-#include <include/global/DataStore.hpp>
 #include <include/global/Utils.hpp>
 
 #include "include/configs/common/utils.h"
@@ -15,7 +13,6 @@ namespace Configs {
         auto query = QUrlQuery(url.query(QUrl::ComponentFormattingOption::FullyDecoded));
 
         // handle the common format
-        fingerPrint = dataStore->utlsFingerprint;
         if (query.hasQueryItem("fp")) fingerPrint = query.queryItemValue("fp");
         if (!fingerPrint.isEmpty()) enabled = true;
         return true;
@@ -44,6 +41,11 @@ namespace Configs {
     }
     BuildResult uTLS::Build()
     {
+        auto obj = ExportToJson();
+        if ((obj.isEmpty() || obj["enabled"].toBool() == false) && !dataStore->utlsFingerprint.isEmpty()) {
+            obj["enabled"] = true;
+            obj["fingerprint"] = dataStore->utlsFingerprint;
+        }
         return {ExportToJson(), ""};
     }
 
@@ -165,6 +167,7 @@ namespace Configs {
         if (query.hasQueryItem("tls_fragment")) fragment = query.queryItemValue("tls_fragment") == "true";
         if (query.hasQueryItem("tls_fragment_fallback_delay")) fragment_fallback_delay = query.queryItemValue("tls_fragment_fallback_delay");
         if (query.hasQueryItem("tls_record_fragment")) record_fragment = query.queryItemValue("tls_record_fragment") == "true";
+        if (!server_name.isEmpty()) enabled = true;
         ech->ParseFromLink(link);
         utls->ParseFromLink(link);
         reality->ParseFromLink(link);
@@ -275,6 +278,10 @@ namespace Configs {
     }
     BuildResult TLS::Build()
     {
+        auto obj = ExportToJson();
+        if (!obj.isEmpty() && obj["enabled"].toBool()) {
+            if (dataStore->skip_cert) obj["insecure"] = true;
+        }
         return {ExportToJson(), ""};
     }
 }

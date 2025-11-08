@@ -15,7 +15,7 @@ namespace Configs
         QStringList host_key_algorithms;
         QString client_version;
 
-        ssh()
+        ssh() : outbound()
         {
             _add(new configItem("commons", dynamic_cast<JsonStore *>(commons.get()), jsonStore));
             _add(new configItem("user", &user, string));

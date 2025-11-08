@@ -19,7 +19,7 @@ namespace Configs
         bool disable_mtu_discovery = false;
         std::shared_ptr<TLS> tls = std::make_shared<TLS>();
 
-        hysteria()
+        hysteria() : outbound()
         {
             _add(new configItem("commons", dynamic_cast<JsonStore *>(commons.get()), jsonStore));
             _add(new configItem("server_ports", &server_ports, stringList));

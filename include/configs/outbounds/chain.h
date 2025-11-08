@@ -8,7 +8,7 @@ namespace Configs
         public:
         QList<int> list; // from in to out
 
-        chain()
+        chain() : outbound()
         {
             _add(new configItem("commons", dynamic_cast<JsonStore *>(commons.get()), jsonStore));
             _add(new configItem("list", &list, integerList));

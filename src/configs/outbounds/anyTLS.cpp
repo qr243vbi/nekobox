@@ -75,7 +75,15 @@ namespace Configs {
 
     BuildResult anyTLS::Build()
     {
-        return {ExportToJson(), ""};
+        QJsonObject object;
+        object["type"] = "anytls";
+        mergeJsonObjects(object, commons->Build().object);
+        if (!password.isEmpty()) object["password"] = password;
+        if (!idle_session_check_interval.isEmpty()) object["idle_session_check_interval"] = idle_session_check_interval;
+        if (!idle_session_timeout.isEmpty()) object["idle_session_timeout"] = idle_session_timeout;
+        if (min_idle_session > 0) object["min_idle_session"] = min_idle_session;
+        object["tls"] = tls->Build().object;
+        return {object, ""};
     }
 
     QString anyTLS::DisplayType()

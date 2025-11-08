@@ -48,6 +48,8 @@ namespace Configs_ConfigItem {
 
         void _add(configItem *item);
 
+        void _remove(const QString &key);
+
         QString _name(void *p);
 
         std::shared_ptr<configItem> _get(const QString &name);

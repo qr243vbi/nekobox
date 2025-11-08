@@ -14,7 +14,7 @@ namespace Configs
         std::shared_ptr<Multiplex> multiplex = std::make_shared<Multiplex>();
         std::shared_ptr<Transport> transport = std::make_shared<Transport>();
 
-        Trojan()
+        Trojan() : outbound()
         {
             _add(new configItem("commons", dynamic_cast<JsonStore *>(commons.get()), jsonStore));
             _add(new configItem("password", &password, string));

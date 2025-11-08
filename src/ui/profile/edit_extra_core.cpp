@@ -18,7 +18,7 @@ EditExtraCore::~EditExtraCore() {
 void EditExtraCore::onStart(std::shared_ptr<Configs::ProxyEntity> _ent) {
     this->ent = _ent;
 
-    auto bean = ent->ExtraCoreBean();
+    auto bean = ent->ExtraCore();
     ui->socks_address->setText(bean->socksAddress);
     ui->socks_port->setValidator(new QIntValidator(1, 65534));
     ui->socks_port->setText(Int2String(bean->socksPort));
@@ -46,7 +46,7 @@ void EditExtraCore::onStart(std::shared_ptr<Configs::ProxyEntity> _ent) {
 }
 
 bool EditExtraCore::onEnd() {
-    auto bean = ent->ExtraCoreBean();
+    auto bean = ent->ExtraCore();
     bean->socksAddress = ui->socks_address->text();
     bean->socksPort = ui->socks_port->text().toInt();
     bean->extraCoreConf = ui->config->toPlainText();

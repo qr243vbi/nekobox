@@ -95,7 +95,14 @@ namespace Configs {
 
     BuildResult socks::Build()
     {
-        return {ExportToJson(), ""};
+        QJsonObject object;
+        object["type"] = "socks";
+        mergeJsonObjects(object, commons->Build().object);
+        if (!username.isEmpty()) object["username"] = username;
+        if (!password.isEmpty()) object["password"] = password;
+        if (version == 4) object["version"] = "4";
+        if (uot) object["uot"] = uot;
+        return {object, ""};
     }
 
     QString socks::DisplayType()

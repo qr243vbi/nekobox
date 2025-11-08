@@ -14,7 +14,7 @@ namespace Configs
         QStringList headers;
         std::shared_ptr<TLS> tls = std::make_shared<TLS>();
 
-        http()
+        http() : outbound()
         {
             _add(new configItem("commons", dynamic_cast<JsonStore *>(commons.get()), jsonStore));
             _add(new configItem("username", &username, string));

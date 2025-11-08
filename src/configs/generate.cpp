@@ -1,15 +1,12 @@
 #include "include/configs/generate.h"
 #include "include/dataStore/Database.hpp"
 #include "include/configs/proxy/includes.h"
-#include "include/configs/proxy/Preset.hpp"
 #include "include/api/RPC.h"
 #include "include/global/Configs.hpp"
 #include "include/global/Utils.hpp"
 
 #include <QApplication>
-#include <QFile>
 #include <QFileInfo>
-#include <include/configs/ConfigBuilder.hpp>
 
 namespace Configs {
 
@@ -340,28 +337,30 @@ namespace Configs {
         QJsonArray servers;
         QJsonArray rules;
         // remote
-        if (isTailscale)
-        {
-            auto tailscale = ctx->ent->Tailscale();
-            if (tailscale == nullptr)
+        if (!ctx->forTest) {
+            if (isTailscale)
             {
-                ctx->error = "Corrupted state, needed tailscale been but could not cast";
-                return;
+                auto tailscale = ctx->ent->Tailscale();
+                if (tailscale == nullptr)
+                {
+                    ctx->error = "Corrupted state, needed tailscale been but could not cast";
+                    return;
+                }
+                auto tailDns = QJsonObject{
+                        {"type", "tailscale"},
+                        {"tag", "dns-remote"},
+                        {"endpoint", "proxy"},
+                        {"accept_default_resolvers", tailscale->globalDNS},
+                    };
+                servers += tailDns;
+            } else
+            {
+                auto remoteDnsObj = buildDnsObj(dataStore->routing->remote_dns, ctx);
+                remoteDnsObj["tag"] = "dns-remote";
+                remoteDnsObj["domain_resolver"] = "dns-local";
+                remoteDnsObj["detour"] = "proxy";
+                servers += remoteDnsObj;
             }
-            auto tailDns = QJsonObject{
-                    {"type", "tailscale"},
-                    {"tag", "dns-remote"},
-                    {"endpoint", "proxy"},
-                    {"accept_default_resolvers", tailscale->globalDNS},
-                };
-            servers += tailDns;
-        } else
-        {
-            auto remoteDnsObj = buildDnsObj(dataStore->routing->remote_dns, ctx);
-            remoteDnsObj["tag"] = "dns-remote";
-            remoteDnsObj["domain_resolver"] = "dns-local";
-            remoteDnsObj["detour"] = "proxy";
-            servers += remoteDnsObj;
         }
 
         // direct
@@ -375,21 +374,23 @@ namespace Configs {
         }
 
         // Handle localhost
-        rules += QJsonObject{
-                {"domain", "localhost"},
-                {"action", "predefined"},
-                {"query_type", "A"},
-                {"rcode", "NOERROR"},
-                {"answer", "localhost. IN A 127.0.0.1"},
-            };
+        if (!ctx->forTest) {
+            rules += QJsonObject{
+                    {"domain", "localhost"},
+                    {"action", "predefined"},
+                    {"query_type", "A"},
+                    {"rcode", "NOERROR"},
+                    {"answer", "localhost. IN A 127.0.0.1"},
+                };
 
-        rules += QJsonObject{
-                {"domain", "localhost"},
-                {"action", "predefined"},
-                {"query_type", "AAAA"},
-                {"rcode", "NOERROR"},
-                {"answer", "localhost. IN AAAA ::1"},
-            };
+            rules += QJsonObject{
+                    {"domain", "localhost"},
+                    {"action", "predefined"},
+                    {"query_type", "AAAA"},
+                    {"rcode", "NOERROR"},
+                    {"answer", "localhost. IN AAAA ::1"},
+                };
+        }
 
         // HijackRules
         if (dataStore->enable_dns_server && !ctx->forTest)
@@ -453,7 +454,7 @@ namespace Configs {
 
         // Local
         auto dnsLocalAddress = dataStore->core_box_underlying_dns.isEmpty() ? "local" : dataStore->core_box_underlying_dns;
-        auto dnsLocalObj = BuildDnsObject(dnsLocalAddress, dataStore->spmode_vpn);
+        auto dnsLocalObj = buildDnsObj(dnsLocalAddress, ctx);
         dnsLocalObj["tag"] = "dns-local";
         servers += dnsLocalObj;
 
@@ -714,6 +715,9 @@ namespace Configs {
         route["rules"] = routeRules;
         route["rule_set"] = ruleSetArray;
         route["final"] = outboundIDToString(routeChain->defaultOutboundID);
+        route["default_domain_resolver"] = QJsonObject{
+                                {"server", "dns-direct"},
+                                {"strategy", dataStore->routing->outbound_domain_strategy}};
         if (dataStore->spmode_vpn) route["auto_detect_interface"] = true;
 
         ctx->buildConfigResult->coreConfig["route"] = route;
@@ -771,6 +775,8 @@ namespace Configs {
         auto ctx = std::make_shared<BuildSingBoxConfigContext>();
         ctx->ent = ent;
 
+        CalculatePrerequisities(ctx);
+
         // log
         buildLogSections(ctx);
         // ntp
@@ -779,6 +785,7 @@ namespace Configs {
         buildDNSSection(ctx);
         if (!ctx->error.isEmpty())
         {
+            MW_show_log("Config build error:" + ctx->error);
             ctx->buildConfigResult->error = ctx->error;
             return ctx->buildConfigResult;
         }
@@ -788,6 +795,7 @@ namespace Configs {
         buildInboundSection(ctx);
         if (!ctx->error.isEmpty())
         {
+            MW_show_log("Config build error:" + ctx->error);
             ctx->buildConfigResult->error = ctx->error;
             return ctx->buildConfigResult;
         }
@@ -795,6 +803,7 @@ namespace Configs {
         buildOutboundsSection(ctx);
         if (!ctx->error.isEmpty())
         {
+            MW_show_log("Config build error:" + ctx->error);
             ctx->buildConfigResult->error = ctx->error;
             return ctx->buildConfigResult;
         }
@@ -802,6 +811,7 @@ namespace Configs {
         buildRouteSection(ctx);
         if (!ctx->error.isEmpty())
         {
+            MW_show_log("Config build error:" + ctx->error);
             ctx->buildConfigResult->error = ctx->error;
             return ctx->buildConfigResult;
         }
@@ -809,6 +819,7 @@ namespace Configs {
         buildExperimentalSection(ctx);
         if (!ctx->error.isEmpty())
         {
+            MW_show_log("Config build error:" + ctx->error);
             ctx->buildConfigResult->error = ctx->error;
             return ctx->buildConfigResult;
         }
@@ -879,10 +890,11 @@ namespace Configs {
         return false;
     }
 
-    std::shared_ptr<BuildTestConfigResult> BuildTestConfig(const QList<std::shared_ptr<ProxyEntity>>& profiles)
+    std::shared_ptr<BuildTestConfigResult> BuildTestConfig(const QList<std::shared_ptr<ProxyEntity> > &profiles)
     {
-        auto res = std::make_shared<BuildConfigResult>();
+        auto res = std::make_shared<BuildTestConfigResult>();
         auto ctx = std::make_shared<BuildSingBoxConfigContext>();
+        ctx->forTest = true;
         QList<int> entIDs;
         for (const auto& proxy : profiles) entIDs << proxy->id;
         ctx->buildPrerequisities->dnsDeps->directDomains = QListStr2QJsonArray(getEntDomains(entIDs, ctx->error));
@@ -896,7 +908,7 @@ namespace Configs {
         buildCertificateSection(ctx);
         buildNTPSection(ctx);
         int suffix = 1;
-        for (auto item : profiles)
+        for (const auto& item : profiles)
         {
             if (item->type == "extracore")
             {
@@ -930,10 +942,11 @@ namespace Configs {
                     continue;
                 }
             }
-            buildOutboundChain(ctx, {item->id}, "proxy-" + Int2String(suffix++), false, true);
-            auto tag = "proxy-" + Int2String(suffix++) + "-0";
+            buildOutboundChain(ctx, {item->id}, "proxy-" + Int2String(suffix), false, true);
+            auto tag = "proxy-" + Int2String(suffix) + "-0";
             res->outboundTags << tag;
             res->tag2entID.insert(tag, item->id);
+            suffix++;
         }
         ctx->outbounds << QJsonObject{{"type", "direct"}, {"tag", "direct"}};
         ctx->buildConfigResult->coreConfig["outbounds"] = ctx->outbounds;

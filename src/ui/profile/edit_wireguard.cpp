@@ -1,7 +1,5 @@
 #include "include/ui/profile/edit_wireguard.h"
 
-#include "include/configs/proxy/WireguardBean.h"
-
 EditWireguard::EditWireguard(QWidget *parent) : QWidget(parent), ui(new Ui::EditWireguard) {
     ui->setupUi(this);
 }
@@ -12,22 +10,22 @@ EditWireguard::~EditWireguard() {
 
 void EditWireguard::onStart(std::shared_ptr<Configs::ProxyEntity> _ent) {
     this->ent = _ent;
-    auto bean = this->ent->WireguardBean();
+    auto bean = this->ent->Wireguard();
 
 #ifndef Q_OS_LINUX
     adjustSize();
 #endif
 
-    ui->private_key->setText(bean->privateKey);
-    ui->public_key->setText(bean->publicKey);
-    ui->preshared_key->setText(bean->preSharedKey);
-    auto reservedStr = bean->FormatReserved().replace("-", ",");
-    ui->reserved->setText(reservedStr);
-    ui->persistent_keepalive->setText(Int2String(bean->persistentKeepalive));
-    ui->mtu->setText(Int2String(bean->MTU));
-    ui->sys_ifc->setChecked(bean->useSystemInterface);
-    ui->local_addr->setText(bean->localAddress.join(","));
-    ui->workers->setText(Int2String(bean->workerCount));
+    ui->private_key->setText(bean->private_key);
+    ui->public_key->setText(bean->peer->public_key);
+    ui->preshared_key->setText(bean->peer->pre_shared_key);
+    // auto reservedStr = bean->peer->reserved;
+    // ui->reserved->setText(reservedStr);
+    ui->persistent_keepalive->setText(Int2String(bean->peer->persistent_keepalive));
+    ui->mtu->setText(Int2String(bean->mtu));
+    ui->sys_ifc->setChecked(bean->system);
+    ui->local_addr->setText(bean->address.join(","));
+    ui->workers->setText(Int2String(bean->worker_count));
 
     ui->enable_amnezia->setChecked(bean->enable_amnezia);
     ui->junk_packet_count->setText(Int2String(bean->junk_packet_count));
@@ -42,22 +40,22 @@ void EditWireguard::onStart(std::shared_ptr<Configs::ProxyEntity> _ent) {
 }
 
 bool EditWireguard::onEnd() {
-    auto bean = this->ent->WireguardBean();
+    auto bean = this->ent->Wireguard();
 
-    bean->privateKey = ui->private_key->text();
-    bean->publicKey = ui->public_key->text();
-    bean->preSharedKey = ui->preshared_key->text();
+    bean->private_key = ui->private_key->text();
+    bean->peer->public_key = ui->public_key->text();
+    bean->peer->pre_shared_key = ui->preshared_key->text();
     auto rawReserved = ui->reserved->text();
-    bean->reserved = {};
-    for (const auto& item: rawReserved.split(",")) {
-        if (item.trimmed().isEmpty()) continue;
-        bean->reserved += item.trimmed().toInt();
-    }
-    bean->persistentKeepalive = ui->persistent_keepalive->text().toInt();
-    bean->MTU = ui->mtu->text().toInt();
-    bean->useSystemInterface = ui->sys_ifc->isChecked();
-    bean->localAddress = ui->local_addr->text().replace(" ", "").split(",");
-    bean->workerCount = ui->workers->text().toInt();
+    // bean->reserved = {};
+    // for (const auto& item: rawReserved.split(",")) {
+    //     if (item.trimmed().isEmpty()) continue;
+    //     bean->reserved += item.trimmed().toInt();
+    // }
+    bean->peer->persistent_keepalive = ui->persistent_keepalive->text().toInt();
+    bean->mtu = ui->mtu->text().toInt();
+    bean->system = ui->sys_ifc->isChecked();
+    bean->address = ui->local_addr->text().replace(" ", "").split(",");
+    bean->worker_count = ui->workers->text().toInt();
 
     bean->enable_amnezia = ui->enable_amnezia->isChecked();
     bean->junk_packet_count = ui->junk_packet_count->text().toInt();

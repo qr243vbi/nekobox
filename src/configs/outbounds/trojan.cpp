@@ -56,7 +56,14 @@ namespace Configs {
     }
     BuildResult Trojan::Build()
     {
-        return {ExportToJson(), ""};
+        QJsonObject object;
+        object["type"] = "trojan";
+        mergeJsonObjects(object, commons->Build().object);
+        if (!password.isEmpty()) object["password"] = password;
+        if (tls->enabled) object["tls"] = tls->Build().object;
+        if (!transport->type.isEmpty()) object["transport"] = transport->Build().object;
+        if (auto obj = multiplex->Build().object; !obj.isEmpty()) object["multiplex"] = obj;
+        return {object, ""};
     }
 
     QString Trojan::DisplayType()

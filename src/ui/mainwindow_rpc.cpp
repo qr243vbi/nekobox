@@ -1,7 +1,6 @@
 #include "include/ui/mainwindow.h"
 
 #include "include/dataStore/Database.hpp"
-#include "include/configs/ConfigBuilder.hpp"
 #include "include/stats/traffic/TrafficLooper.hpp"
 #include "include/api/RPC.h"
 #include "include/ui/utils//MessageBoxTimer.h"
@@ -11,6 +10,9 @@
 #include <QPushButton>
 #include <QDesktopServices>
 #include <QMessageBox>
+
+#include "include/configs/generate.h"
+#include "include/sys/Process.hpp"
 
 // rpc
 
@@ -466,7 +468,7 @@ void MainWindow::profile_start(int _id) {
     auto group = Configs::profileManager->GetGroup(ent->gid);
     if (group == nullptr || group->archive) return;
 
-    auto result = BuildConfig(ent, false, false);
+    auto result = Configs::BuildSingBoxConfig(ent);
     if (!result->error.isEmpty()) {
         MessageBoxWarning(tr("BuildConfig return error"), result->error);
         return;
@@ -673,7 +675,7 @@ void MainWindow::profile_stop(bool crash, bool block, bool manual) {
 
         if (block) blocker.unlock();
 
-        runOnUiThread([=, this, &blocker] {
+        runOnUiThread([=, this] {
             refresh_status();
             refresh_proxy_list_impl_refresh_data(id, true);
 

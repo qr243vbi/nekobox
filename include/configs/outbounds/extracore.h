@@ -12,7 +12,7 @@ namespace Configs
         QString extraCoreConf;
         bool noLogs = false;
 
-        extracore() {
+        extracore() : outbound() {
             _add(new configItem("commons", dynamic_cast<JsonStore *>(commons.get()), jsonStore));
             _add(new configItem("socks_address", &socksAddress, itemType::string));
             _add(new configItem("socks_port", &socksPort, itemType::integer));

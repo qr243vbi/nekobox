@@ -98,7 +98,21 @@ namespace Configs {
 
     BuildResult tailscale::Build()
     {
-        return {ExportToJson(), ""};
+        QJsonObject object;
+        object["type"] = "tailscale";
+        mergeJsonObjects(object, commons->Build().object);
+        if (!state_directory.isEmpty()) object["state_directory"] = state_directory;
+        if (!auth_key.isEmpty()) object["auth_key"] = auth_key;
+        if (!control_url.isEmpty()) object["control_url"] = control_url;
+        if (ephemeral) object["ephemeral"] = ephemeral;
+        if (!hostname.isEmpty()) object["hostname"] = hostname;
+        if (accept_routes) object["accept_routes"] = accept_routes;
+        if (!exit_node.isEmpty()) object["exit_node"] = exit_node;
+        if (exit_node_allow_lan_access) object["exit_node_allow_lan_access"] = exit_node_allow_lan_access;
+        if (!advertise_routes.isEmpty()) object["advertise_routes"] = QListStr2QJsonArray(advertise_routes);
+        if (advertise_exit_node) object["advertise_exit_node"] = advertise_exit_node;
+        if (globalDNS) object["globalDNS"] = globalDNS;
+        return {object, ""};
     }
 
     QString tailscale::DisplayAddress()

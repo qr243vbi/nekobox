@@ -67,7 +67,15 @@ namespace Configs {
     }
     BuildResult http::Build()
     {
-        return {ExportToJson(), ""};
+        QJsonObject object;
+        object["type"] = "http";
+        mergeJsonObjects(object, commons->Build().object);
+        if (!username.isEmpty()) object["username"] = username;
+        if (!password.isEmpty()) object["password"] = password;
+        if (!path.isEmpty()) object["path"] = path;
+        if (auto headerObj = qStringListToJsonObject(headers); !headerObj.isEmpty()) object["headers"] = headerObj;
+        if (auto tlsObj = tls->Build().object; !tlsObj.isEmpty()) object["tls"] = tlsObj;
+        return {object, ""};
     }
 
     QString http::DisplayType()

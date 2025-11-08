@@ -26,32 +26,6 @@
 #include "include/configs/proxy/ExtraCore.h"
 
 namespace Configs {
-    class SocksHttpBean;
-
-    class ShadowSocksBean;
-
-    class VMessBean;
-
-    class TrojanVLESSBean;
-
-    class NaiveBean;
-
-    class QUICBean;
-
-    class AnyTLSBean;
-
-    class WireguardBean;
-
-    class TailscaleBean;
-
-    class SSHBean;
-
-    class CustomBean;
-
-    class ChainBean;
-}; // namespace Configs
-
-namespace Configs {
     class ProxyEntity : public JsonStore {
     public:
         QString type;
@@ -68,68 +42,12 @@ namespace Configs {
 
         QString full_test_report;
 
-        ProxyEntity(Configs::AbstractBean *bean, const QString &type_);
-
-        ProxyEntity(Configs::outbound *outbound, const QString &type_);
+        ProxyEntity(Configs::outbound *outbound, Configs::AbstractBean *bean, const QString &type_);
 
         [[nodiscard]] QString DisplayTestResult() const;
 
         [[nodiscard]] QColor DisplayLatencyColor() const;
 
-        [[nodiscard]] Configs::ChainBean *ChainBean() const {
-            return (Configs::ChainBean *) bean.get();
-        };
-
-        [[nodiscard]] Configs::SocksHttpBean *SocksHTTPBean() const {
-            return (Configs::SocksHttpBean *) bean.get();
-        };
-
-        [[nodiscard]] Configs::ShadowSocksBean *ShadowSocksBean() const {
-            return (Configs::ShadowSocksBean *) bean.get();
-        };
-
-        [[nodiscard]] Configs::VMessBean *VMessBean() const {
-            return (Configs::VMessBean *) bean.get();
-        };
-
-        [[nodiscard]] Configs::TrojanVLESSBean *TrojanVLESSBean() const {
-            return (Configs::TrojanVLESSBean *) bean.get();
-        };
-
-        [[nodiscard]] Configs::NaiveBean *NaiveBean() const {
-            return (Configs::NaiveBean *) bean.get();
-        };
-
-        [[nodiscard]] Configs::QUICBean *QUICBean() const {
-            return (Configs::QUICBean *) bean.get();
-        };
-
-        [[nodiscard]] Configs::AnyTLSBean *AnyTLSBean() const {
-            return (Configs::AnyTLSBean *) bean.get();
-        };
-
-        [[nodiscard]] Configs::WireguardBean *WireguardBean() const {
-            return (Configs::WireguardBean *) bean.get();
-        };
-
-        [[nodiscard]] Configs::TailscaleBean *TailscaleBean() const
-        {
-            return (Configs::TailscaleBean *) bean.get();
-        }
-
-        [[nodiscard]] Configs::SSHBean *SSHBean() const {
-            return (Configs::SSHBean *) bean.get();
-        };
-
-        [[nodiscard]] Configs::CustomBean *CustomBean() const {
-            return (Configs::CustomBean *) bean.get();
-        };
-
-        [[nodiscard]] Configs::ExtraCoreBean *ExtraCoreBean() const {
-            return (Configs::ExtraCoreBean *) bean.get();
-        };
-
-        // Outbound getter functions
         [[nodiscard]] Configs::socks *Socks() const {
             return dynamic_cast<Configs::socks *>(outbound.get());
         };
@@ -182,8 +100,8 @@ namespace Configs {
             return dynamic_cast<Configs::wireguard *>(outbound.get());
         };
 
-        [[nodiscard]] Configs::custom *Custom() const {
-            return dynamic_cast<Configs::custom *>(outbound.get());
+        [[nodiscard]] Configs::Custom *Custom() const {
+            return dynamic_cast<Configs::Custom *>(outbound.get());
         };
 
         [[nodiscard]] Configs::chain *Chain() const {
