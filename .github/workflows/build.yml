@@ -373,7 +373,7 @@ jobs:
           if [[ -d linux-amd64 ]]; then
             mv linux-amd64 nekobox
             if [[ -f nekobox/nekobox-x86_64.AppImage ]]; then
-                mv nekobox/nekobox-x86_64.AppImage ./
+                mv nekobox/nekobox-x86_64.AppImage ./nekobox-${{ github.event.inputs.tag }}-x86_64.AppImage
             fi
             zip -9 -r $version_standalone-linux-amd64.zip nekobox
             rm -rf nekobox linux-amd64
@@ -382,7 +382,7 @@ jobs:
           if [[ -d linux-arm64 ]]; then
             mv linux-arm64 nekobox
             if [[ -f nekobox/nekobox-aarch64.AppImage ]]; then
-                mv nekobox/nekobox-aarch64.AppImage ./
+                mv nekobox/nekobox-aarch64.AppImage ./nekobox-${{ github.event.inputs.tag }}-aarch64.AppImage
             fi
             zip -9 -r $version_standalone-linux-arm64.zip nekobox
             rm -rf nekobox linux-arm64
