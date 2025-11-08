@@ -54,13 +54,11 @@ func restartAsAdmin(){
 	args = append(args, pkexecPath, "sh", "-c", "exec \"${0}\" \"${@}\"")
 	if (runningAppImage){
 		value, runningAppImage := os.LookupEnv("NEKOBOX_APPIMAGE_CUSTOM_EXECUTABLE")
-		if (!runningAppImage){
-			goto executable_path;
+		if (runningAppImage){
+			args = append(args, "env", "NEKOBOX_APPIMAGE_CUSTOM_EXECUTABLE=" + value, executablePath)
 		}
-		args = append(args, "env", "NEKOBOX_APPIMAGE_CUSTOM_EXECUTABLE=" + value, executablePath)
 	}
 	if (!runningAppImage){
-		executable_path:
 		executablePath, err := os.Executable()
 		if err != nil {
 			log.Fatalf("Failed to get executable path: %v", err)
