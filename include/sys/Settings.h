@@ -1,9 +1,6 @@
 #ifndef NEKOBOX_SETTINGS
 #define NEKOBOX_SETTINGS
 #include <QSettings>
-#include <QDir>
-#include <QCoreApplication>
-
 
 #define CONFIG_INI_PATH  QDir::current().absolutePath() + "/window.ini"
 QSettings getSettings();

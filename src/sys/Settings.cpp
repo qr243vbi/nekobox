@@ -1,4 +1,7 @@
 #include "include/sys/Settings.h"
+
+#include <QDir>
+#include <QApplication>
 QSettings getSettings(){
     return QSettings(CONFIG_INI_PATH, QSettings::IniFormat);
 }
@@ -25,7 +28,7 @@ QString getResource(QString str){
 }
 
 QString getRootResource(QString str){
-    QString dir = QCoreApplication::applicationDirPath();
+    QString dir = QApplication::applicationDirPath();
     dir += "/";
     dir += str;
     return dir;
@@ -66,15 +69,15 @@ bool isAppImage(){
 }
 QString getApplicationPath(){
     QString appimage = getAppImage();
-    if (appimage == ""){
+    if (appimage != ""){
         return appimage;
     } else {
-        return QCoreApplication::applicationFilePath();
+        return QApplication::applicationFilePath();
     }
 }
 #else
 QString getApplicationPath(){
-    return QCoreApplication::applicationFilePath();
+    return QApplication::applicationFilePath();
 }
 #endif
 
