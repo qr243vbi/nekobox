@@ -1162,9 +1162,7 @@ void MainWindow::on_menu_exit_triggered() {
         if (QFile::copy(sourceFilePath, destinationFilePath)) {
             qDebug() << "File copied successfully from" << sourceFilePath << "to" << destinationFilePath;
 #ifdef Q_OS_WIN
-            QFileInfo dirInfo(updateDir);
-
-            if (!dirInfo.isWritable()) {
+            if (!isDirectoryWritable(updateDir)) {
                 WinCommander::runProcessElevated(destinationFilePath, list, "", WinCommander::SW_NORMAL, false);
             } else {
 #endif
@@ -3068,6 +3066,16 @@ end_search_define:
 
     runOnUiThread([=,this] {
         auto allow_updater = true;
+#ifdef Q_OS_LINUX
+        if (isAppImage()){
+            allow_updater = isFileAppendable(getApplicationPath());
+        } else {
+#endif
+            allow_updater = isDirectoryWritable(QApplication::applicationDirPath());
+#ifdef Q_OS_LINUX
+        }
+#endif
+
         QMessageBox box(QMessageBox::Question, QObject::tr("Update") + note_pre_release,
                         QObject::tr("Update found: %1\nRelease note:\n%2").arg(assets_name, release_note));
         //

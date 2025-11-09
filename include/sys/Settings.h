@@ -15,5 +15,7 @@ bool isAppImage();
 QString getRootResource(QString str);
 QString getCorePath();
 QString getApplicationPath();
+bool isFileAppendable(QString filePath);
+bool isDirectoryWritable(QString filePath);
 
 #endif

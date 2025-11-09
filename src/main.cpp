@@ -67,22 +67,6 @@ void loadTranslate(const QString& locale) {
 
 #define LOCAL_SERVER_PREFIX "nekobox-"
 
-bool isFileAppendable(const QString &filePath) {
-    QFile file(filePath);
-    // Check if the file exists and is writable in append mode
-    if (file.exists()){
-        if (file.open(QIODevice::Append)){
-            file.close();
-            return true;
-        }
-    } else {
-        if (file.open(QIODevice::WriteOnly)){
-            file.close();
-            return true;
-        }
-    }
-    return false;
-}
 
 
 int main(int argc, char** argv) {
