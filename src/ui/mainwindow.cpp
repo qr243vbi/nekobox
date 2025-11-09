@@ -3066,6 +3066,7 @@ end_search_define:
 
     runOnUiThread([=,this] {
         auto allow_updater = true;
+#ifndef Q_OS_WIN
 #ifdef Q_OS_LINUX
         if (isAppImage()){
             allow_updater = isFileAppendable(getApplicationPath());
@@ -3074,6 +3075,7 @@ end_search_define:
             allow_updater = isDirectoryWritable(QApplication::applicationDirPath());
 #ifdef Q_OS_LINUX
         }
+#endif
 #endif
 
         QMessageBox box(QMessageBox::Question, QObject::tr("Update") + note_pre_release,
