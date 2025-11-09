@@ -437,7 +437,6 @@ namespace Configs {
 #endif
     }
 
-    // IsAdmin 主要判断：有无权限启动 Tun
     bool IsAdmin(bool forceRenew) {
         if (isAdminCache >= 0 && !forceRenew) return isAdminCache;
 
@@ -459,9 +458,6 @@ namespace Configs {
         return admin;
     };
     QString GetBasePath() {
-        if (!Configs::dataStore->appdataDir.isEmpty()) return Configs::dataStore->appdataDir;
-        if (dataStore->flag_use_appdata) return QStandardPaths::writableLocation(QStandardPaths::AppConfigLocation);
-        return qApp->applicationDirPath();
+        return QDir::currentPath();
     }
-
 } // namespace Configs

@@ -42,6 +42,42 @@ QString getUpdaterPath(){
 }
 #endif
 
+
+#ifdef Q_OS_LINUX
+#include <QProcessEnvironment>
+QString getAppImage(){
+    QProcessEnvironment env = QProcessEnvironment::systemEnvironment();
+    if (env.contains("APPIMAGE") && env.contains("NEKOBOX_APPIMAGE_CUSTOM_EXECUTABLE")){
+        QString appimage = env.value("APPIMAGE");
+        QString appimageproof = env.value("NEKOBOX_APPIMAGE_CUSTOM_EXECUTABLE");
+        QFile imageproof(getRootResource(appimageproof));
+        if (imageproof.exists()){
+            QFile image(appimage);
+            if (image.exists()){
+                return appimage;
+            }
+        }
+    }
+    return "";
+}
+
+bool isAppImage(){
+    return getAppImage() != "";
+}
+QString getApplicationPath(){
+    QString appimage = getAppImage();
+    if (appimage == ""){
+        return appimage;
+    } else {
+        return QCoreApplication::applicationFilePath();
+    }
+}
+#else
+QString getApplicationPath(){
+    return QCoreApplication::applicationFilePath();
+}
+#endif
+
 QString getCorePath(){
     QSettings settings = getSettings();
     QString core_path = getRootResource(
