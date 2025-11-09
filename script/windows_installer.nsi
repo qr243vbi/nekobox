@@ -40,10 +40,10 @@ Section "Install"
   SetOverwrite on
 
   !ifdef DIRECTORY
-    File /r /x "updater.exe" ".\deployment\${DIRECTORY}\*"
+    File /r  ".\deployment\${DIRECTORY}\*"
     ;/x "updater.exe"
   !else
-    File /r /x "updater.exe" ".\deployment\windows64\*"
+    File /r  ".\deployment\windows64\*"
   !endif
 
   CreateShortcut "$desktop\nekobox.lnk" "$INSTDIR\nekobox.exe" "" "$INSTDIR\nekobox.exe" 0
