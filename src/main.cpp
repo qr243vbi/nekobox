@@ -96,7 +96,7 @@ int main(int argc, char** argv) {
     QApplication a(argc, argv);
 
 #if !defined(Q_OS_MACOS) && (QT_VERSION >= QT_VERSION_CHECK(6,9,0))
-    int fontId = QFontDatabase::addApplicationFont(getResource("emoji.font"));
+    int fontId = QFontDatabase::addApplicationFont(getResource("emoji.ttf"));
 
     if (fontId >= 0)
     {
