@@ -292,7 +292,7 @@ jobs:
         uses: awalsh128/cache-apt-pkgs-action@latest
         if: contains( matrix.platform, 'ubuntu' ) && github.event.inputs.source != 'y'
         with:
-          packages: libfuse2 patchelf squashfs-tools
+          packages: libfuse2 patchelf squashfs-tools openssl-dev openssl
           version: 1.0
 
       - name: Linux - Generate MakeFile and Build
