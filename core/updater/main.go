@@ -7,8 +7,6 @@ import (
 	"os/exec"
 	"path/filepath"
 	"runtime"
-	"strings"
-	"time"
 )
 
 func main() {
@@ -18,33 +16,25 @@ func main() {
 		panic(err.Error())
 	}
 
-	wd := filepath.Dir(exe)
+	wd := os.Args[2]
 	os.Chdir(wd)
+	box := os.Args[1]
 	exe = filepath.Base(os.Args[0])
-	log.Println("exe:", exe, "exe dir:", wd)
-
-	if strings.HasPrefix(strings.ToLower(exe), "updater") {
-		if runtime.GOOS == "windows" {
-			if strings.HasPrefix(strings.ToLower(exe), "updater.old") {
-				// 2. "updater.old" update files
-				time.Sleep(time.Second)
-				Updater()
-				// 3. start
-				exec.Command("./nekobox.exe").Start()
-			} else {
-				// 1. nekobox stop itself and run "updater.exe"
-				Copy("./updater.exe", "./updater.old")
-				exec.Command("./updater.old", os.Args[1:]...).Start()
-			}
-		} else {
+	log.Println("exe:", exe, "exe dir:", wd, "box: ", box)
+	{
+		{
+			os.Chdir(wd)
 			// 1. update files
-			Updater()
+			Updater(box)
 			// 2. start
-			exec.Command("./nekobox").Start()
+			if runtime.GOOS == "windows" {
+				exec.Command("./nekobox.exe",  os.Args[3:]...).Start()
+			} else {
+				exec.Command("./nekobox",  os.Args[3:]...).Start()
+			}
 		}
 		return
 	}
-	log.Fatalf("wrong name")
 }
 
 func Copy(src string, dst string) {

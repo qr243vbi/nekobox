@@ -1144,8 +1144,27 @@ void MainWindow::on_menu_exit_triggered() {
     prepare_exit();
     //
     if (exit_reason == 1) {
-        QDir::setCurrent(QApplication::applicationDirPath());
-        QProcess::startDetached(getUpdaterPath(), QStringList{});
+#ifndef SKIP_UPDATE_BUTTON
+        QStringList list;
+        list << Configs::GetBasePath() + "/" + this->archive_name;
+        list << QApplication::applicationDirPath();
+        list += QApplication::arguments();
+        QString sourceFilePath = getUpdaterPath();
+        QDir tempdir;
+        tempdir.mkpath("temp");
+        QString destinationFilePath = Configs::GetBasePath();
+#ifdef Q_OS_WIN
+        destinationFilePath += "\\temp\\updater.exe";
+#else
+        destinationFilePath += "/temp/updater";
+#endif
+        if (QFile::copy(sourceFilePath, destinationFilePath)) {
+            qDebug() << "File copied successfully from" << sourceFilePath << "to" << destinationFilePath;
+            QProcess::startDetached(destinationFilePath, list);
+        } else {
+            qDebug() << "Failed to copy file from" << sourceFilePath << "to" << destinationFilePath;
+        }
+#endif
     } else if (exit_reason == 2 || exit_reason == 3 || exit_reason == 4) {
         QDir::setCurrent(QApplication::applicationDirPath());
 
@@ -1156,7 +1175,7 @@ void MainWindow::on_menu_exit_triggered() {
             arguments.removeAll("-flag_restart_tun_on");
             arguments.removeAll("-flag_restart_dns_set");
         }
-        auto program = QApplication::applicationFilePath();
+        auto program = getApplicationPath();
 
         if (exit_reason == 3 || exit_reason == 4) {
             if (exit_reason == 3) arguments << "-flag_restart_tun_on";
@@ -3060,6 +3079,7 @@ end_search_define:
                                                        QObject::tr("Update is ready, restart to install?"));
                         if (q == QMessageBox::StandardButton::Yes) {
                             this->exit_reason = 1;
+                            this->archive_name = archive_name;
                             on_menu_exit_triggered();
                         }
                     } else {

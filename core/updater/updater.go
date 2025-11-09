@@ -11,7 +11,7 @@ import (
 	"github.com/codeclysm/extract/v4"
 )
 
-func Updater(updatePackagePath string ) {
+func Updater( updatePackagePath string) {
 	pre_cleanup := func() {
 		if runtime.GOOS == "linux" {
 			os.RemoveAll("./usr")
@@ -20,9 +20,8 @@ func Updater(updatePackagePath string ) {
 	}
 
 	// find update package
-
-	if ! Exist(updatePackagePath){
-		log.Fatalln("\"" + updatePackagePath + "\" does not exists ")
+	if ! Exist(os.Args[1]) {
+		log.Fatalln("no update")
 	}
 	log.Println("updating from", updatePackagePath)
 

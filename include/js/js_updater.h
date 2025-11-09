@@ -16,6 +16,7 @@ public:
     Q_INVOKABLE void log(const QVariant value, const QVariant title);
     Q_INVOKABLE void warning(const QVariant message, const QVariant title);
     Q_INVOKABLE void info(const QVariant message, const QVariant title);
+    Q_INVOKABLE bool file_exists(const QVariant file);
     Q_INVOKABLE QString get_jsdelivr_link(const QVariant value);
     Q_INVOKABLE QString translate(const QVariant value);
 signals:

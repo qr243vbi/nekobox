@@ -30,6 +30,10 @@ function get_jsdelivr_link(message){
     return window.get_jsdelivr_link(_n(message));
 }
 
+function file_exists(message){
+    return window.file_exists(_n(message));
+}
+
 function httpget(url, message, title){
     if (message === undefined){
         message = 'Requesting update error: %1';

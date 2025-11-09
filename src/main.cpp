@@ -24,7 +24,7 @@
 #include <qfontdatabase.h>
 #endif
 
-
+#include "include/sys/Settings.h"
 #include "include/global/Configs.hpp"
 
 #include "include/ui/mainwindow_interface.h"
@@ -96,7 +96,7 @@ int main(int argc, char** argv) {
     QApplication a(argc, argv);
 
 #if !defined(Q_OS_MACOS) && (QT_VERSION >= QT_VERSION_CHECK(6,9,0))
-    int fontId = -1 ; //QFontDatabase::addApplicationFont(":/font/notoEmoji");
+    int fontId = QFontDatabase::addApplicationFont(getResource("emoji.font"));
 
     if (fontId >= 0)
     {
@@ -107,12 +107,6 @@ int main(int argc, char** argv) {
         qDebug() << "could not load noto font!";
     }
 #endif
-
-    // Clean
-    QDir::setCurrent(QApplication::applicationDirPath());
-    if (QFile::exists("updater.old")) {
-        QFile::remove("updater.old");
-    }
 
     // Flags
     Configs::dataStore->argv = QApplication::arguments();
@@ -238,7 +232,7 @@ int main(int argc, char** argv) {
     {
         Configs::dataStore->windows_set_admin = false; // so that if permission denied, we will run as user on the next run
         Configs::dataStore->Save();
-        WinCommander::runProcessElevated(QApplication::applicationFilePath(), {}, "", SW_NORMAL, false);
+        WinCommander::runProcessElevated(getApplicationPath(), {}, "", SW_NORMAL, false);
         QApplication::quit();
         return 0;
     }

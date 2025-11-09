@@ -8,10 +8,11 @@
 #include <include/js/version.h>
 #include <iostream>
 #include <QString>
-
+#include <QProcessEnvironment>
 #include <iostream>
 #include <memory>
 #include <functional>
+#include <QCoreApplication>
 
 JsHTTPRequest::JsHTTPRequest(const QString& url): QObject(nullptr){
     init(url);
@@ -29,6 +30,15 @@ JsUpdaterWindow::JsUpdaterWindow(){ //MainWindow* msgq){
 void JsUpdaterWindow::print(const QVariant value){
     std::cout << value.toString().toStdString() << std::endl;
  //   queue->Push(MessagePart{value.toString(), "", 4});
+}
+bool JsUpdaterWindow::file_exists(const QVariant value){
+    QString filepath = value.toString();
+    if (filepath == ""){
+        return false;
+    }
+    QFile file(filepath);
+    return file.exists();
+    //   queue->Push(MessagePart{value.toString(), "", 4});
 }
 void JsUpdaterWindow::log(const QVariant value, const QVariant title){
     QString value1 = value.toString();
@@ -94,6 +104,15 @@ void getBoolean(QJSEngine& engine, QString name, bool * value){
     *value = engine.globalObject().property(name).toBool();
 }
 
+void exposeEnvironmentVariables(QJSEngine *engine) {
+    QProcessEnvironment env = QProcessEnvironment::systemEnvironment();
+    QJSValue envObject = engine->newObject();
+    for (const QString &key : env.keys()) {
+        envObject.setProperty(key, env.value(key));
+    }
+    engine->globalObject().setProperty("env", envObject);
+}
+
 
 bool jsInit(
     QJSEngine * ctx,
@@ -110,6 +129,7 @@ bool jsInit(
     ctx->globalObject().setProperty("archive_name", "nekobox.zip");
 
     ctx->globalObject().setProperty("NKR_VERSION", NKR_VERSION);
+    ctx->globalObject().setProperty("APPLICATION_DIR_PATH", QCoreApplication::applicationDirPath());
 
     QString script;
 
@@ -117,12 +137,15 @@ bool jsInit(
     script = script + QString::fromUtf8(Configs::dataStore->ToJsonBytes());
     ctx->evaluate(script);
 
+    exposeEnvironmentVariables(ctx);
+
     script = [&] { QFile f(":/updater.js"); return f.open(QIODevice::ReadOnly) ? QTextStream(&f).readAll() : QString(); }();
     ctx->evaluate(script);
     if (updater_js != nullptr){
         script = *updater_js;
         std::cout << ctx->evaluate(script).toString().toStdString() << std::endl;
     }
+
     return true;
 }
 
