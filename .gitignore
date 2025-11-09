@@ -94,3 +94,8 @@ out
 /core/server/vendor
 /core/server/gen/*.go
 /core/server/Core
+*.AppImage
+download-artifact
+deployment
+srslist.json
+runtime-*
