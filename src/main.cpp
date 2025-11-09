@@ -118,7 +118,9 @@ int main(int argc, char** argv) {
     Configs::dataStore->argv = QApplication::arguments();
     if (Configs::dataStore->argv.contains("-many")) Configs::dataStore->flag_many = true;
     if (Configs::dataStore->argv.contains("-appdata")) {
+#ifndef NKR_CPP_USE_APPDATA
         Configs::dataStore->flag_use_appdata = true;
+#endif
         int appdataIndex = Configs::dataStore->argv.indexOf("-appdata");
         if (Configs::dataStore->argv.size() > appdataIndex + 1 && !Configs::dataStore->argv.at(appdataIndex + 1).startsWith("-")) {
             Configs::dataStore->appdataDir = Configs::dataStore->argv.at(appdataIndex + 1);

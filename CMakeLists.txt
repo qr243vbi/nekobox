@@ -211,9 +211,9 @@ set(PROJECT_SOURCES
         include/ui/profile/edit_ssh.ui
         include/configs/proxy/SSHBean.h
         include/sys/macos/MacOS.h
+        src/sys/Settings.cpp
 
         src/sys/linux/LinuxCap.cpp
-
         src/sys/macos/MacOS.cpp
 
         src/sys/AutoRun.cpp

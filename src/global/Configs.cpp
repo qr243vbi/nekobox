@@ -1,5 +1,6 @@
 #include "include/global/Configs.hpp"
 #include "include/configs/proxy/Preset.hpp"
+#include "include/sys/Settings.h"
 
 #include <QApplication>
 #include <QDir>
@@ -410,7 +411,7 @@ namespace Configs {
     // System Utils
 
     QString FindCoreRealPath() {
-        auto fn = QApplication::applicationDirPath() + "/nekobox_core";
+        auto fn = getCorePath();
         auto fi = QFileInfo(fn);
         if (fi.isSymLink()) return fi.symLinkTarget();
         return fn;
@@ -457,10 +458,10 @@ namespace Configs {
         isAdminCache = admin;
         return admin;
     };
-
     QString GetBasePath() {
-        if (dataStore->flag_use_appdata) return QStandardPaths::writableLocation(
-              QStandardPaths::AppConfigLocation);
+        if (!Configs::dataStore->appdataDir.isEmpty()) return Configs::dataStore->appdataDir;
+        if (dataStore->flag_use_appdata) return QStandardPaths::writableLocation(QStandardPaths::AppConfigLocation);
         return qApp->applicationDirPath();
     }
+
 } // namespace Configs

@@ -29,7 +29,7 @@
       </size>
      </property>
      <property name="currentIndex">
-      <number>0</number>
+      <number>5</number>
      </property>
      <widget class="QWidget" name="tab_1">
       <attribute name="title">
@@ -1335,7 +1335,7 @@
              </size>
             </property>
             <property name="text">
-             <string>Tray Icon Directory</string>
+             <string>Resources Directory</string>
             </property>
            </widget>
           </item>
