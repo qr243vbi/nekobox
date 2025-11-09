@@ -3069,7 +3069,7 @@ end_search_define:
 #ifndef Q_OS_WIN
 #ifdef Q_OS_LINUX
         if (isAppImage()){
-            allow_updater = isFileAppendable(getApplicationPath());
+            allow_updater = true;
         } else {
 #endif
             allow_updater = isDirectoryWritable(QApplication::applicationDirPath());
