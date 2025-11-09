@@ -193,6 +193,7 @@ private:
     QMutex speedtestRunning;
     QMutex logLock;
     bool logClear = false;
+    QString archive_name;
     //
     Configs_sys::CoreProcess *core_process;
     qint64 vpn_pid = 0;

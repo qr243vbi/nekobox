@@ -92,9 +92,18 @@ exec "$(dirname $0)"/"AppRun" "${@}"
 EOF
 cat << 'EOF' > AppRun
 #!/bin/sh
-exec "$(dirname $0)"/"${NEKOBOX_APPIMAGE_CUSTOM_EXECUTABLE:-nekobox}" "${@}"
+export NEKOBOX_APPIMAGE_CUSTOM_EXECUTABLE="${NEKOBOX_APPIMAGE_CUSTOM_EXECUTABLE:-nekobox}"
+exec "$(dirname $0)"/"${NEKOBOX_APPIMAGE_CUSTOM_EXECUTABLE}" "${@}"
 EOF
-chmod 755 nekobox_core AppRun
+cat << 'EOF' > updater
+#!/bin/sh
+rm "${APPIMAGE}"
+cp "${1}" "${APPIMAGE}"
+shift
+shift
+"${APPIMAGE}" "${@}"
+EOF
+chmod 755 nekobox_core AppRun updater
 )
 ln -s public/Tun.png ./AppDir/Tun.png
 cat << EOF > ./AppDir/nekobox.desktop

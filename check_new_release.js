@@ -1,6 +1,24 @@
 let allow_beta_update = configs['allow_beta_update'];
 let exitFlag = false;
 let resp = new HTTPResponse("https://api.github.com/repos/qr243vbi/nekobox/releases");
+var archive_extension = ".zip"
+
+if (file_exists(env["APPIMAGE"])){
+  if (file_exists(APPLICATION_DIR_PATH + "/" + env["NEKOBOX_APPIMAGE_CUSTOM_EXECUTABLE"])){
+    archive_extension = ".AppImage";
+    if (search == "linux-amd64"){
+      search = "x86_64-linux";
+    } else if (search == "linux-arm64"){
+      search = "aarch64-linux";
+    } else if (search == "linux-arm32"){
+      search = "armhf-linux";
+    } else if (search == "linux-i386"){
+      search = "i686-linux";
+    } else {
+      archive_extension = ".zip"
+    }
+  }
+}
 
 function isNewer(assetName) {
     let curver = NKR_VERSION.trim();
@@ -84,6 +102,7 @@ var release_url = '';
 var release_note = '';
 var assets_name = '';
 var release_download_url = '';
+var archive_name = '';
 
 if (resp.error){
     warning(
@@ -101,8 +120,7 @@ if (resp.error){
 
         for (let asset of release["assets"]) {
             let asset_name = asset["name"];
-            if (asset_name.includes(search) && asset_name.endsWith(".zip")) {
-
+            if (asset_name.includes(search) && asset_name.endsWith(archive_extension)) {
                 if (exitFlag){
                     let tag_name = release['tag_name'];
                     if (isNewer(asset_name)) {
@@ -143,6 +161,7 @@ if (resp.error){
             release_note += ar[0] + ': ' + ar[1];
         }
     }
+archive_name = assets_name;
 
 let release_download_url_flag = (release_download_url == '');
 
