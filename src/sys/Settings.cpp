@@ -2,6 +2,7 @@
 
 #include <QDir>
 #include <QApplication>
+#include <QTemporaryFile>
 QSettings getSettings(){
     return QSettings(CONFIG_INI_PATH, QSettings::IniFormat);
 }
