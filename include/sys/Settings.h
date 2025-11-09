@@ -7,9 +7,10 @@
 #define CONFIG_INI_PATH  QDir::current().absolutePath() + "/window.ini"
 QSettings getSettings();
 QString getResourcesDir();
-QString getUpdaterPath();
 QString getResource(QString);
-QString getUpdater();
+#ifndef SKIP_UPDATER_BUTTON
+QString getUpdaterPath();
+#endif
 QString getRootResource(QString str);
 QString getCorePath();
 
