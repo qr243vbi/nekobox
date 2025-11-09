@@ -11,6 +11,8 @@ QString getResourcesDir();
 QString getResource(QString);
 #ifndef SKIP_UPDATER_BUTTON
 QString getUpdaterPath();
+#endif
+#ifdef Q_OS_LINUX
 bool isAppImage();
 #endif
 QString getRootResource(QString str);
