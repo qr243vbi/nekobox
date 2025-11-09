@@ -2394,30 +2394,42 @@ inline void FastAppendTextDocument(const QString &message, QTextDocument *doc) {
 }
 
 void MainWindow::show_log_impl(const QString &log) {
+    logLock.lock();
+
+    int blockCount = qvLogDocument->blockCount();
+    // Check the number of blocks
+    if (logClear){
+        if (blockCount > 2500) {
+            QTextBlock currentBlock = qvLogDocument->begin();
+            for (blockCount = 5; blockCount > 0; blockCount --){
+                QTextBlock next = currentBlock.next();
+                QTextCursor cursor(currentBlock);
+                cursor.select(QTextCursor::BlockUnderCursor);
+                cursor.removeSelectedText();
+                currentBlock = next;
+            }
+        } else {
+            logClear = false;
+        }
+    } else {
+        if (blockCount > 4000){
+            logClear = true;
+        }
+    }
+
+    QString trimmed;
     if (log.size() > 20000)
     {
-        show_log_impl("Ignored massive log of size:" + Int2String(log.size()));
-        return;
+        trimmed = ("Ignored massive log of size: " + Int2String(log.size()));
+    } else {
+        trimmed = log.trimmed();
     }
-    auto trimmed = log.trimmed();
-    if (trimmed.isEmpty()) return;
 
-    FastAppendTextDocument(trimmed, qvLogDocument);
-    // qvLogDocument->setPlainText(qvLogDocument->toPlainText() + log);
-    // From https://gist.github.com/jemyzhang/7130092
-    auto block = qvLogDocument->begin();
-
-    while (block.isValid()) {
-        if (qvLogDocument->blockCount() > Configs::dataStore->max_log_line) {
-            QTextCursor cursor(block);
-            block = block.next();
-            cursor.select(QTextCursor::BlockUnderCursor);
-            cursor.movePosition(QTextCursor::NextCharacter, QTextCursor::KeepAnchor);
-            cursor.removeSelectedText();
-            continue;
-        }
-        break;
+    if (!trimmed.isEmpty()) {
+        FastAppendTextDocument(trimmed, qvLogDocument);
     }
+
+    logLock.unlock();
 }
 
 void MainWindow::on_masterLogBrowser_customContextMenuRequested(const QPoint &pos) {
@@ -2435,7 +2447,7 @@ void MainWindow::on_masterLogBrowser_customContextMenuRequested(const QPoint &po
     });
     menu->addAction(action_clear);
 
-    menu->exec(ui->masterLogBrowser->viewport()->mapToGlobal(pos)); // 弹出菜单
+    menu->exec(ui->masterLogBrowser->viewport()->mapToGlobal(pos));
 }
 
 void MainWindow::on_tabWidget_customContextMenuRequested(const QPoint &p) {

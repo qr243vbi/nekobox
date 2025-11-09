@@ -14,7 +14,7 @@
 #define CONFIG_INI_PATH  QDir::current().absolutePath() + "/window.ini"
 static inline QString getIconDir(){
     QSettings settings(CONFIG_INI_PATH, QSettings::IniFormat);
-    QString str = settings.value("icons_path", "").toString();
+    QString str = settings.value("resources_path", "").toString();
     if (str == ""){
         str = QCoreApplication::applicationDirPath();
         str += "/public";

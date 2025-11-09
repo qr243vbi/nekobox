@@ -191,6 +191,8 @@ private:
     QThreadPool *parallelCoreCallPool = new QThreadPool(this);
     std::atomic<bool> stopSpeedtest = false;
     QMutex speedtestRunning;
+    QMutex logLock;
+    bool logClear = false;
     //
     Configs_sys::CoreProcess *core_process;
     qint64 vpn_pid = 0;
@@ -296,7 +298,6 @@ private:
     JsUpdaterWindow* createJsUpdaterWindow();
 #endif
 //    void message_queue(MessageQueue & queue);
-
     void setupConnectionList();
 
     void querySpeedtest(QDateTime lastProxyListUpdate, const QMap<QString, int>& tag2entID, bool testCurrent);

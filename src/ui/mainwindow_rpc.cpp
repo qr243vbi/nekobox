@@ -13,7 +13,6 @@
 #include <QMessageBox>
 
 // rpc
-
 using namespace API;
 
 void MainWindow::setup_rpc() {
