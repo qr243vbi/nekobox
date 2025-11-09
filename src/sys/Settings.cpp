@@ -30,7 +30,7 @@ QString getRootResource(QString str){
     dir += str;
     return dir;
 }
-
+#ifndef SKIP_UPDATER_BUTTON
 QString getUpdaterPath(){
     return getResource(
     #ifdef Q_OS_WIN
@@ -40,6 +40,7 @@ QString getUpdaterPath(){
     #endif
     );
 }
+#endif
 
 QString getCorePath(){
     QSettings settings = getSettings();

@@ -11,7 +11,7 @@ import (
 	"github.com/codeclysm/extract/v4"
 )
 
-func Updater() {
+func Updater(updatePackagePath string ) {
 	pre_cleanup := func() {
 		if runtime.GOOS == "linux" {
 			os.RemoveAll("./usr")
@@ -20,15 +20,9 @@ func Updater() {
 	}
 
 	// find update package
-	var updatePackagePath string
-	if len(os.Args) == 2 && Exist(os.Args[1]) {
-		updatePackagePath = os.Args[1]
-	} else if Exist("./nekobox.zip") {
-		updatePackagePath = "./nekobox.zip"
-	} else if Exist("./nekobox.tar.gz") {
-		updatePackagePath = "./nekobox.tar.gz"
-	} else {
-		log.Fatalln("no update")
+
+	if ! Exist(updatePackagePath){
+		log.Fatalln("\"" + updatePackagePath + "\" does not exists ")
 	}
 	log.Println("updating from", updatePackagePath)
 
@@ -48,7 +42,7 @@ func Updater() {
 			log.Fatalln(err.Error())
 		}
 		f.Close()
-	} else if strings.HasSuffix(updatePackagePath, ".tar.gz") {
+	} else if strings.HasSuffix(updatePackagePath, ".tar.gz") || strings.HasSuffix(updatePackagePath, ".tgz") {
 		pre_cleanup()
 		f, err := os.Open(updatePackagePath)
 		if err != nil {
@@ -65,8 +59,8 @@ func Updater() {
 	removeAll("./*.dll")	
 	removeAll("./*.dmp")
 	removeAll("./*.js")
-	os.RemoveAll("./version.txt")
-	os.RemoveAll("./srslist.json")
+	removeAll("./*.json")
+	removeAll("./*.txt")
 	os.RemoveAll("./nekobox_update/nekobox/public")
 
 	// update move
