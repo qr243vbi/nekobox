@@ -8,24 +8,13 @@
 #ifndef SYSTRAY_ICON_DIR
 #ifdef Q_OS_MACOS
 #define SYSTRAY_ICON_DIR ":/systray/"
-#else
-
-#include <QSettings>
-#define CONFIG_INI_PATH  QDir::current().absolutePath() + "/window.ini"
-static inline QString getIconDir(){
-    QSettings settings(CONFIG_INI_PATH, QSettings::IniFormat);
-    QString str = settings.value("resources_path", "").toString();
-    if (str == ""){
-        str = QCoreApplication::applicationDirPath();
-        str += "/public";
-    }
-    return str;
-}
-#define SYSTRAY_ICON_DIR getIconDir() + "/"
-#endif
-#endif
-
 #define SYSTRAY_ICON(X) QString(SYSTRAY_ICON_DIR) + X
+#else
+#include "include/sys/Settings.h"
+#define SYSTRAY_ICON(X) getResource(X)
+#endif
+#endif
+
 #define FORMAT nullptr
 
 QPixmap Icon::GetTrayIcon(TrayIconStatus status) {

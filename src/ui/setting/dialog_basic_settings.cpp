@@ -15,7 +15,7 @@
 #include <QMessageBox>
 #include <QTimer>
 #include <qfontdatabase.h>
-#include <QSettings>
+#include "include/sys/Settings.h"
 #include <QString>
 
 #include "include/ui/mainwindow.h"
@@ -26,7 +26,6 @@
 #define STATE_CHANGED &QCheckBox::stateChanged
 #endif
 #include <QDir>
-#define CONFIG_INI_PATH  QDir::current().absolutePath() + "/window.ini"
 
 DialogBasicSettings::DialogBasicSettings(MainWindow *parent)
     : QDialog(parent), ui(new Ui::DialogBasicSettings) {
@@ -202,7 +201,7 @@ DialogBasicSettings::DialogBasicSettings(MainWindow *parent)
         emit point_changed(ui->window_X->text().toInt(), ui->window_Y->text().toInt());
     });
 
-    QSettings settings(CONFIG_INI_PATH, QSettings::IniFormat);
+    QSettings settings = getSettings();
     auto validator = new QIntValidator(0, 0xfffffff, this);
     ui->save_geometry->setChecked(settings.value("save_geometry", true).toBool());
     ui->save_position->setChecked(settings.value("save_position", true).toBool());
@@ -238,7 +237,7 @@ DialogBasicSettings::~DialogBasicSettings() {
 }
 
 void DialogBasicSettings::accept() {
-    QSettings settings(CONFIG_INI_PATH, QSettings::IniFormat);
+    QSettings settings = getSettings();
     // Common
     bool needChoosePort = false;
 

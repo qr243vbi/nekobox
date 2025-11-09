@@ -6,12 +6,12 @@
 #include <QFile>
 #include <QTextStream>
 #include <QDebug>
+#include "include/sys/Settings.h"
 
 const char * getVersionString(){
     static const char * VERSION = nullptr;
     if (VERSION == nullptr){
-        QString appPath = QCoreApplication::applicationDirPath();
-        QString filePath = appPath + "/version.txt";
+        QString filePath = getResource("version.txt");
         QFile file(filePath);
         QString source;
         if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
