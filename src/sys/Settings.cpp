@@ -92,3 +92,40 @@ QString getCorePath(){
     );
     return settings.value("core_path", core_path).toString();
 }
+
+bool isFileAppendable(QString filePath) {
+    QFile file(filePath);
+    // Check if the file exists and is writable in append mode
+    if (file.exists()){
+        if (file.open(QIODevice::Append)){
+            file.close();
+            return true;
+        }
+    } else {
+        if (file.open(QIODevice::WriteOnly)){
+            file.close();
+            return true;
+        }
+    }
+    return false;
+}
+
+bool isDirectoryWritable(QString dirPath) {
+    // Ensure the directory exists first
+    QDir dir(dirPath);
+    if (!dir.exists()) {
+        return false;
+    }
+
+    // Create a temporary file in that directory
+    QTemporaryFile tempFile(dir.filePath("temp_XXXXXX.tmp"));
+    if (tempFile.open()) {
+        tempFile.close();
+        // The file was created, so the directory is writable. Clean up.
+        tempFile.remove();
+        return true;
+    } else {
+        // Failed to create/open the file, directory is likely not writable
+        return false;
+    }
+}
