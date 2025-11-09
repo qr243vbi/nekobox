@@ -3067,7 +3067,7 @@ end_search_define:
 #endif
 
     runOnUiThread([=,this] {
-        auto allow_updater = !Configs::dataStore->flag_use_appdata;
+        auto allow_updater = true;
         QMessageBox box(QMessageBox::Question, QObject::tr("Update") + note_pre_release,
                         QObject::tr("Update found: %1\nRelease note:\n%2").arg(assets_name, release_note));
         //
