@@ -8,7 +8,6 @@
 #include "include/sys/AutoRun.hpp"
 
 #include <include/js/version.h>
-
 #include <QQueue>
 #include <QMutex>
 #include <QWaitCondition>
@@ -1146,8 +1145,9 @@ void MainWindow::on_menu_exit_triggered() {
     if (exit_reason == 1) {
 #ifndef SKIP_UPDATE_BUTTON
         QStringList list;
+        QString updateDir =  QApplication::applicationDirPath();
         list << Configs::GetBasePath() + "/" + this->archive_name;
-        list << QApplication::applicationDirPath();
+        list << updateDir;
         list += QApplication::arguments();
         QString sourceFilePath = getUpdaterPath();
         QDir tempdir;
@@ -1160,7 +1160,17 @@ void MainWindow::on_menu_exit_triggered() {
 #endif
         if (QFile::copy(sourceFilePath, destinationFilePath)) {
             qDebug() << "File copied successfully from" << sourceFilePath << "to" << destinationFilePath;
-            QProcess::startDetached(destinationFilePath, list);
+#ifdef Q_OS_WIN
+            QFileInfo dirInfo(updateDir);
+
+            if (!dirInfo.isWritable()) {
+                WinCommander::runProcessElevated(destinationFilePath, list, "", WinCommander::SW_NORMAL, false);
+            } else {
+#endif
+                QProcess::startDetached(destinationFilePath, list);
+#ifdef Q_OS_WIN
+            }
+#endif
         } else {
             qDebug() << "Failed to copy file from" << sourceFilePath << "to" << destinationFilePath;
         }

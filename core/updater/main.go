@@ -6,6 +6,7 @@ import (
 	"os"
 	"os/exec"
 	"path/filepath"
+	"time"
 	"runtime"
 )
 
@@ -22,6 +23,7 @@ func main() {
 	exe = filepath.Base(os.Args[0])
 	log.Println("exe:", exe, "exe dir:", wd, "box: ", box)
 	{
+		time.Sleep(2 * time.Second)
 		{
 			os.Chdir(wd)
 			// 1. update files
