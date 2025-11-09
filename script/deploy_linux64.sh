@@ -87,6 +87,7 @@ cd AppDir
 mv nekobox_core .nekobox_core_binary_file
 cat << 'EOF' > nekobox_core
 #!/bin/sh
+export NEKOBOX_APPIMAGE_CUSTOM_EXECUTABLE_USE_APPIMAGE_CORE="qr243vbi"
 export NEKOBOX_APPIMAGE_CUSTOM_EXECUTABLE=".nekobox_core_binary_file"
 exec "$(dirname $0)"/"AppRun" "${@}"
 EOF

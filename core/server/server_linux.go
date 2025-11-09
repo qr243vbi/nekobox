@@ -53,9 +53,12 @@ func restartAsAdmin(){
 	executablePath, runningAppImage := os.LookupEnv("APPIMAGE")
 	args = append(args, pkexecPath, "sh", "-c", "exec \"${0}\" \"${@}\"")
 	if (runningAppImage){
-		value, runningAppImage := os.LookupEnv("NEKOBOX_APPIMAGE_CUSTOM_EXECUTABLE")
+		value, runningAppImage := os.LookupEnv("NEKOBOX_APPIMAGE_CUSTOM_EXECUTABLE_USE_APPIMAGE_CORE")
+		if (value != "qr243vbi"){
+			runningAppImage = false
+		}
 		if (runningAppImage){
-			args = append(args, "env", "NEKOBOX_APPIMAGE_CUSTOM_EXECUTABLE=" + value, executablePath)
+			args = append(args, "env", "NEKOBOX_APPIMAGE_CUSTOM_EXECUTABLE=nekobox_core", executablePath)
 		}
 	}
 	if (!runningAppImage){
