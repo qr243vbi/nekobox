@@ -1147,7 +1147,16 @@ void MainWindow::on_menu_exit_triggered() {
     if (exit_reason == 1) {
 #ifndef SKIP_UPDATE_BUTTON
         QStringList list;
-        QString updateDir =  QApplication::applicationDirPath();
+        QString updateDir;
+#ifdef Q_OS_LINUX
+        if (isAppImage()){
+            updateDir = getApplicationPath();
+        } else {
+#endif
+            updateDir = QApplication::applicationDirPath();
+#ifdef Q_OS_LINUX
+        }
+#endif
         list << Configs::GetBasePath() + "/" + this->archive_name;
         list << updateDir;
         list += QApplication::arguments();
@@ -2599,7 +2608,6 @@ void MainWindow::start_select_mode(QObject *context, const std::function<void(in
     refresh_status();
 }
 
-// 连接列表
 
 inline QJsonArray last_arr; // format is nekoray_connections_json
 
@@ -3107,9 +3115,12 @@ end_search_define:
                 }
                 QString errors;
                 if (!release_download_url.isEmpty()) {
-                    auto res = NetworkRequestHelper::DownloadAsset(release_download_url, archive_name);
-                    if (!res.isEmpty()) {
-                        errors += res;
+                    QFile archive_file1(Configs::GetBasePath() + "/" + this->archive_name);
+                    if (!archive_file1.exists()){
+                        auto res = NetworkRequestHelper::DownloadAsset(release_download_url, archive_name);
+                        if (!res.isEmpty()) {
+                            errors += res;
+                        }
                     }
                 }
                 mu_download_update.unlock();
