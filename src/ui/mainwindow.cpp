@@ -122,6 +122,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     QSettings settings = getSettings();
     {
         int width, height, x, y;
+        this->stop_logs = !(settings.value("logs_enabled", true).toBool());
         width = settings.value("width", 0).toInt();
         height = settings.value("height", 0).toInt();
         x = settings.value("X", 0).toInt();
@@ -1186,6 +1187,8 @@ void MainWindow::on_menu_exit_triggered() {
             arguments.removeAll("-flag_restart_dns_set");
         }
         auto program = getApplicationPath();
+
+        qDebug() << "Will Be Restarted: " << program;
 
         if (exit_reason == 3 || exit_reason == 4) {
             if (exit_reason == 3) arguments << "-flag_restart_tun_on";
@@ -2409,12 +2412,16 @@ inline void FastAppendTextDocument(const QString &message, QTextDocument *doc) {
 }
 
 void MainWindow::show_log_impl(const QString &log) {
+    if (this->stop_logs){
+        return;
+    }
+
     logLock.lock();
 
     int blockCount = qvLogDocument->blockCount();
     // Check the number of blocks
     if (logClear){
-        if (blockCount > 2500) {
+        if (blockCount > 1200) {
             QTextBlock currentBlock = qvLogDocument->begin();
             for (blockCount = 5; blockCount > 0; blockCount --){
                 QTextBlock next = currentBlock.next();
@@ -2427,7 +2434,7 @@ void MainWindow::show_log_impl(const QString &log) {
             logClear = false;
         }
     } else {
-        if (blockCount > 4000){
+        if (blockCount > 2000){
             logClear = true;
         }
     }
@@ -2455,12 +2462,24 @@ void MainWindow::on_masterLogBrowser_customContextMenuRequested(const QPoint &po
     menu->addAction(sep);
 
     auto action_clear = new QAction(this);
+    auto action_stop = new QAction(this);
     action_clear->setText(tr("Clear"));
+
+    action_stop->setText((!this->stop_logs) ? tr("Stop") : tr("Start"));
+
     connect(action_clear, &QAction::triggered, this, [=,this] {
         qvLogDocument->clear();
         ui->masterLogBrowser->clear();
     });
+    connect(action_stop, &QAction::triggered, this, [=,this] {
+        bool stop = this->stop_logs;
+        action_stop->setText(stop ? tr("Stop") : tr("Start"));
+        this->stop_logs = !stop;
+        QSettings settings = getSettings();
+        settings.setValue("logs_enabled", stop);
+    });
     menu->addAction(action_clear);
+    menu->addAction(action_stop);
 
     menu->exec(ui->masterLogBrowser->viewport()->mapToGlobal(pos));
 }
