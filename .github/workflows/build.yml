@@ -450,7 +450,6 @@ jobs:
         if: github.event.inputs.publish == 'r'
         run: |
           ./ghr -delete -t "${{ github.token }}" -b "${{ github.event.inputs.text }}" -n "${{ github.event.inputs.tag }}" "${{ github.event.inputs.tag }}" deployment
-
   webhook:
     name: Trigger Open Build Service
     runs-on: ubuntu-latest
@@ -481,7 +480,6 @@ jobs:
           install -Dm644 oscrc "$HOME"/.config/osc/oscrc
           osc token --trigger "${{ secrets.OBS_HOOK_TOKEN }}"
           python3 -c "from copr import v3; client = v3.Client({'copr_url': 'https://copr.fedorainfracloud.org', 'login': '${{ secrets.COPR_LOGIN }}', 'token': '${{ secrets.COPR_TOKEN }}'}); print(client.package_proxy.build('qr243vbi', 'NekoBox', 'NekoBox'))"
-
   publish_chocolatey:
     name: Publish Chocolatey Package
     runs-on: windows-latest
