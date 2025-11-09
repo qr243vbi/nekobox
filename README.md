@@ -76,6 +76,10 @@ Various formats are supported, including share links, JSON array of outbounds an
 - [npipe](https://github.com/NullYing/npipe)
 - [Fedora COPR](https://copr.fedorainfracloud.org/)
 - [Chocolatey Software](https://chocolatey.org/)
+- [OpenSSL](https://github.com/openssl/openssl)
+- [Install Package Github Action](https://github.com/ConorMacBride/install-package)
+- [AppImage](https://appimage.org/)
+- [sharun](https://github.com/VHSgunzo/sharun)
 
 ## TODO
 - Command line tools
