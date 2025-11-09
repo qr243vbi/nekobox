@@ -32,6 +32,7 @@
 #include "include/sys/windows/WinVersion.h"
 #else
 #ifdef Q_OS_LINUX
+#include <unistd.h> // For access()
 #include "include/sys/linux/LinuxCap.h"
 #include <QDBusInterface>
 #include <QDBusReply>
@@ -3069,7 +3070,7 @@ end_search_define:
 #ifndef Q_OS_WIN
 #ifdef Q_OS_LINUX
         if (isAppImage()){
-            allow_updater = true;
+            allow_updater = (access(getApplicationPath().toUtf8().constData(), W_OK) == 0);
         } else {
 #endif
             allow_updater = isDirectoryWritable(QApplication::applicationDirPath());
