@@ -194,6 +194,7 @@ private:
     QMutex logLock;
     bool logClear = false;
     QString archive_name;
+    bool stop_logs = false;
     //
     Configs_sys::CoreProcess *core_process;
     qint64 vpn_pid = 0;
