@@ -64,11 +64,9 @@
 #include <3rdparty/qv2ray/v2/proxy/QvProxyConfigurator.hpp>
 #include <include/global/HTTPRequestHelper.hpp>
 #include "include/global/DeviceDetailsHelper.hpp"
-#include <QSettings>
+#include "include/sys/Settings.h"
 #include "include/sys/macos/MacOS.h"
 #include <QDir>
-
-#define CONFIG_PATH  QDir::current().absolutePath() + "/window.ini"
 
 void setAppIcon(Icon::TrayIconStatus, QSystemTrayIcon*);
 
@@ -122,7 +120,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     ui->setupUi(this);
 
     // restore size and geometry
-    QSettings settings(CONFIG_PATH, QSettings::IniFormat);
+    QSettings settings = getSettings();
     {
         int width, height, x, y;
         width = settings.value("width", 0).toInt();
@@ -208,14 +206,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     Configs::dataStore->core_port = MkPort();
     if (Configs::dataStore->core_port <= 0) Configs::dataStore->core_port = 19810;
 
-    QString core_path = QApplication::applicationDirPath();
-#ifdef Q_OS_WIN
-    core_path += "/nekobox_core.exe";
-#else
-    core_path += "/nekobox_core";
-#endif
-
-    core_path = settings.value("core_path", core_path).toString();
+    QString core_path = getCorePath();
 
     QStringList args;
     args.push_back("-port");
@@ -303,7 +294,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     connect(ui->toolButton_update, &QToolButton::clicked, this, [=,this] { runOnNewThread([=,this] { CheckUpdate(); }); });
 #ifndef SKIP_JS_UPDATER
 	if (
-       !QFile::exists(QApplication::applicationDirPath() + "/check_new_release.js")
+       !QFile::exists(getResource("check_new_release.js"))
     ) {
         ui->toolButton_update->hide();
     }
@@ -519,7 +510,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 	QFile* srslist = new QFile("srslist.json");
     if (!srslist->exists()){
         delete srslist;
-        srslist = new QFile(QApplication::applicationDirPath() + "/srslist.json");
+        srslist = new QFile(getResource("srslist.json"));
     }
     if (srslist->exists() && srslist->open(QIODevice::ReadOnly)) {
         QByteArray byteArray = srslist->readAll();
@@ -584,7 +575,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 #else
 QString updater_js = "";
 {
-    QFile file(QApplication::applicationDirPath() + "/check_routeprofiles.js");
+    QFile file(getResource("check_routeprofiles.js"));
 
     if (file.exists()) {
         if (file.open(QIODevice::ReadOnly | QIODevice::Text)) {
@@ -1076,7 +1067,7 @@ void MainWindow::on_commitDataRequest() {
         QPoint position;
         QSize geometry;
 
-        QSettings settings(CONFIG_PATH, QSettings::IniFormat);
+        QSettings settings = getSettings();
 
         if (settings.value("save_geometry", true).toBool()){
             settings.setValue("maximized", isMaximized());
@@ -2939,7 +2930,7 @@ end_search_define:
     JsUpdaterWindow * bQueue;
     QString updater_js = "";
     {
-        QFile file(QApplication::applicationDirPath() + "/check_new_release.js");
+        QFile file(getResource("check_new_release.js"));
 
         if (!file.exists()) {
             goto skip1;
@@ -3040,8 +3031,7 @@ end_search_define:
         QAbstractButton *btn1 = nullptr;
         if (allow_updater) {
 			if (
-				QFile::exists(QApplication::applicationDirPath() + "/updater") ||
-				QFile::exists(QApplication::applicationDirPath() + "/updater.exe")
+				QFile::exists(getUpdaterPath())
 			) {
             	btn1 = box.addButton(QObject::tr("Update"), QMessageBox::AcceptRole);
 			} else {
