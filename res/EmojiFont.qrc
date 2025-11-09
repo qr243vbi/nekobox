@@ -1,5 +1,5 @@
 <RCC>
     <qresource prefix="/font">
-        <file alias="notoEmoji">font/NotoColorEmoji.ttf</file>
+        <!--file alias="notoEmoji">font/NotoColorEmoji.ttf</file-->
     </qresource>
 </RCC>

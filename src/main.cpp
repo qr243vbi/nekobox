@@ -96,12 +96,8 @@ int main(int argc, char** argv) {
     QApplication a(argc, argv);
 
 #if !defined(Q_OS_MACOS) && (QT_VERSION >= QT_VERSION_CHECK(6,9,0))
-    // Load the emoji fonts
-#ifdef Q_OS_WIN
-    int fontId = QFontDatabase::addApplicationFont(WinVersion::IsBuildNumGreaterOrEqual(BuildNumber::Windows_11_22H2) ? ":/font/notoEmoji" : ":/font/Twemoji");
-#else
-    int fontId = QFontDatabase::addApplicationFont(":/font/notoEmoji");
-#endif
+    int fontId = -1 ; //QFontDatabase::addApplicationFont(":/font/notoEmoji");
+
     if (fontId >= 0)
     {
         QStringList fontFamilies = QFontDatabase::applicationFontFamilies(fontId);

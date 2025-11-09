@@ -216,7 +216,7 @@ DialogBasicSettings::DialogBasicSettings(MainWindow *parent)
     ui->window_Y->setValidator(validator);
 
     QString core_path = settings.value("core_path", "").toString();
-    QString icons_path = settings.value("icons_path", "").toString();
+    QString icons_path = settings.value("resources_path", "").toString();
     ui->core_path->setText(core_path);
     ui->icons_path->setText(icons_path);
     connect(ui->default_core_path, STATE_CHANGED, this, [=, this](int state){
@@ -333,9 +333,9 @@ void DialogBasicSettings::accept() {
         settings.setValue("core_path", ui->core_path->text());
     }
     if (ui->default_icons_path->isChecked()){
-        settings.remove("icons_path");
+        settings.remove("resources_path");
     } else {
-        settings.setValue("icons_path", ui->icons_path->text());
+        settings.setValue("resources_path", ui->icons_path->text());
     }
     settings.sync();
 }
