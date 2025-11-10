@@ -2427,10 +2427,23 @@ void MainWindow::show_log_impl(const QString &log) {
 
     logLock.lock();
 
+
+    QString trimmed;
+    if (log.size() > 20000)
+    {
+        trimmed = ("Ignored massive log of size: " + Int2String(log.size()));
+    } else {
+        trimmed = log.trimmed();
+    }
+
+    if (!trimmed.isEmpty()) {
+        FastAppendTextDocument(trimmed, qvLogDocument);
+    }
+
     int blockCount = qvLogDocument->blockCount();
     // Check the number of blocks
     if (logClear){
-        if (blockCount > 1200) {
+        if (blockCount > 300) {
             QTextBlock currentBlock = qvLogDocument->begin();
             for (blockCount = 5; blockCount > 0; blockCount --){
                 QTextBlock next = currentBlock.next();
@@ -2443,21 +2456,9 @@ void MainWindow::show_log_impl(const QString &log) {
             logClear = false;
         }
     } else {
-        if (blockCount > 2000){
+        if (blockCount > 700){
             logClear = true;
         }
-    }
-
-    QString trimmed;
-    if (log.size() > 20000)
-    {
-        trimmed = ("Ignored massive log of size: " + Int2String(log.size()));
-    } else {
-        trimmed = log.trimmed();
-    }
-
-    if (!trimmed.isEmpty()) {
-        FastAppendTextDocument(trimmed, qvLogDocument);
     }
 
     logLock.unlock();
