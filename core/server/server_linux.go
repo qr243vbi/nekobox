@@ -38,7 +38,6 @@ func WaitForProcessExit (pid int) error{
 	}
 }
 
-
 func restartAsAdmin(){
 	if (os.Geteuid() == 0){
 		return
