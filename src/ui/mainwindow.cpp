@@ -218,7 +218,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     runOnThread(
         [=,this] {
             core_process = new Configs_sys::CoreProcess(core_path, args);
-            qDebug () << "Core located at: " << core_path;
+            qDebug () << "Core file located at " << core_path;
             // Remember last started
             if (Configs::dataStore->remember_enable && Configs::dataStore->remember_id >= 0) {
                 core_process->start_profile_when_core_is_up = Configs::dataStore->remember_id;
