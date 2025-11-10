@@ -215,6 +215,7 @@ DialogBasicSettings::DialogBasicSettings(MainWindow *parent)
     ui->window_Y->setValidator(validator);
 
     QString core_path = settings.value("core_path", "").toString();
+    CACHE.core_path = core_path;
     QString icons_path = settings.value("resources_path", "").toString();
     ui->core_path->setText(core_path);
     ui->icons_path->setText(icons_path);
@@ -302,6 +303,33 @@ void DialogBasicSettings::accept() {
     Configs::dataStore->ntp_server_port = ui->ntp_port->text().toInt();
     Configs::dataStore->ntp_interval = ui->ntp_interval->currentText();
 
+    int width, height, X, Y;
+    // Startup
+    settings.setValue("save_geometry", ui->save_geometry->isChecked());
+    settings.setValue("save_position", ui->save_position->isChecked());
+    settings.setValue("width", width = ui->window_width->text().toInt());
+    settings.setValue("height", height = ui->window_height->text().toInt());
+    settings.setValue("X", X = ui->window_X->text().toInt());
+    settings.setValue("Y", Y = ui->window_Y->text().toInt());
+    if (ui->default_core_path->isChecked()){
+        settings.remove("core_path");
+        if (CACHE.core_path != ""){
+            CACHE.needRestart = true;
+        }
+    } else {
+        QString core_path_text = ui->core_path->text();
+        settings.setValue("core_path", core_path_text);
+        if (CACHE.core_path != core_path_text){
+            CACHE.needRestart = true;
+        }
+    }
+    if (ui->default_icons_path->isChecked()){
+        settings.remove("resources_path");
+    } else {
+        settings.setValue("resources_path", ui->icons_path->text());
+    }
+    settings.sync();
+
     // Security
 
     D_SAVE_BOOL(skip_cert)
@@ -317,26 +345,6 @@ void DialogBasicSettings::accept() {
     if (needChoosePort) str << "NeedChoosePort";
     MW_dialog_message(Dialog_DialogBasicSettings, str.join(","));
     QDialog::accept();
-
-    int width, height, X, Y;
-    // Startup
-    settings.setValue("save_geometry", ui->save_geometry->isChecked());
-    settings.setValue("save_position", ui->save_position->isChecked());
-    settings.setValue("width", width = ui->window_width->text().toInt());
-    settings.setValue("height", height = ui->window_height->text().toInt());
-    settings.setValue("X", X = ui->window_X->text().toInt());
-    settings.setValue("Y", Y = ui->window_Y->text().toInt());
-    if (ui->default_core_path->isChecked()){
-        settings.remove("core_path");
-    } else {
-        settings.setValue("core_path", ui->core_path->text());
-    }
-    if (ui->default_icons_path->isChecked()){
-        settings.remove("resources_path");
-    } else {
-        settings.setValue("resources_path", ui->icons_path->text());
-    }
-    settings.sync();
 }
 
 void DialogBasicSettings::on_core_settings_clicked() {
