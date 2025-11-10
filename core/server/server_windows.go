@@ -256,13 +256,4 @@ func (s *server) IsPrivileged(in *gen.EmptyReq, out *gen.IsPrivilegedResponse) e
 }
 
 func restartAsAdmin(){
-	elevated, _ := isElevated();
-	if (!elevated){
-		code, err := runAdmin(_port, _debug)
-		if (err != nil){
-			fmt.Fprintf(os.Stderr, "Failed to run as admin: %v\n", err)
-		}
-		os.Exit(code)
-	}
 }
-

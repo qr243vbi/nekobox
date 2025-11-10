@@ -16,6 +16,10 @@ func runAdmin(_port * int, _debug * bool) (int, error) {
 	return 0, nil
 }
 
+func isElevated() (bool, error) {
+	return (os.Geteuid() == 0), nil
+}
+
 func (s *server) IsPrivileged(in *gen.EmptyReq, out *gen.IsPrivilegedResponse) error {
 	out.HasPrivilege = To(os.Geteuid() == 0)
 	return nil
