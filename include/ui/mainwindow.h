@@ -13,6 +13,15 @@
 #include <QtDBus>
 #endif
 
+
+#ifndef SKIP_JS_UPDATER
+class JsUpdaterWindow;
+
+#include <iostream>
+#include <include/js/js_updater.h>
+#endif
+
+
 #ifndef MW_INTERFACE
 
 #include <QTableWidgetItem>
@@ -24,14 +33,21 @@
 #include <QSemaphore>
 #include <QMutex>
 #include <QThreadPool>
+//#include <include/js/message_queue.h>
 
 #include "group/GroupSort.hpp"
 
 #include "include/dataStore/ProxyEntity.hpp"
+#include "include/configs/ConfigBuilder.hpp"
 #include "include/global/GuiUtils.hpp"
 #include "ui_mainwindow.h"
 
 #endif
+#ifndef SKIP_JS_UPDATER
+#include <include/js/js_updater.h>
+#endif
+
+//class MessageQueue;
 
 namespace Configs_sys {
     class CoreProcess;
@@ -50,6 +66,8 @@ public:
     explicit MainWindow(QWidget *parent = nullptr);
 
     ~MainWindow() override;
+
+    std::map<std::string, std::string> ruleSetMap;
 
     void prepare_exit();
 
@@ -71,9 +89,9 @@ public:
 
     void toggle_system_proxy();
 
-    void set_spmode_vpn(bool enable, bool save = true);
+    void set_spmode_vpn(bool enable, bool save = true, bool requestAdmin = true);
 
-    bool get_elevated_permissions(int reason = 3);
+    bool get_elevated_permissions(int reason = 3, void * pointer = nullptr);
 
     void show_log_impl(const QString &log);
 
@@ -96,11 +114,13 @@ signals:
     void profile_selected(int id);
 
 public slots:
-
     void on_commitDataRequest();
 
     void on_menu_exit_triggered();
 
+    void size_changed(int width, int height);
+
+    void point_changed(int x, int y);
 #ifndef MW_INTERFACE
 
 private slots:
@@ -162,6 +182,7 @@ private slots:
     void on_tabWidget_customContextMenuRequested(const QPoint& p);
 
 private:
+
     Ui::MainWindow *ui;
     QSystemTrayIcon *tray;
     QShortcut *shortcut_ctrl_f = new QShortcut(QKeySequence("Ctrl+F"), this);
@@ -170,6 +191,10 @@ private:
     QThreadPool *parallelCoreCallPool = new QThreadPool(this);
     std::atomic<bool> stopSpeedtest = false;
     QMutex speedtestRunning;
+    QMutex logLock;
+    bool logClear = false;
+    QString archive_name;
+    bool stop_logs = false;
     //
     Configs_sys::CoreProcess *core_process;
     qint64 vpn_pid = 0;
@@ -208,6 +233,7 @@ private:
     QList<QShortcut*> hiddenMenuShortcuts;
 
     QStringList remoteRouteProfiles;
+    std::function<QString(QString)> remoteRouteProfileGetter;
     QMutex mu_remoteRouteProfiles;
 
     // search
@@ -240,8 +266,6 @@ private:
 
     void dropEvent(QDropEvent* event) override;
 
-    //
-
     void HotkeyEvent(const QString &key);
 
     void RegisterHiddenMenuShortcuts(bool unregister = false);
@@ -269,9 +293,13 @@ private:
     void runSpeedTest(const QString& config, bool useDefault, bool testCurrent, const QStringList& outboundTags, const QMap<QString, int>& tag2entID, int entID = -1);
 
     bool set_system_dns(bool set, bool save_set = true);
-
+#ifndef SKIP_UPDATE_BUTTON
     void CheckUpdate();
-
+#endif
+#ifndef SKIP_JS_UPDATER
+    JsUpdaterWindow* createJsUpdaterWindow();
+#endif
+//    void message_queue(MessageQueue & queue);
     void setupConnectionList();
 
     void querySpeedtest(QDateTime lastProxyListUpdate, const QMap<QString, int>& tag2entID, bool testCurrent);

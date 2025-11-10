@@ -3,7 +3,11 @@
 
 namespace Configs
 {
+<<<<<<< HEAD
     inline QStringList muxProtocols = {"smux", "yamux", "h2mux"};
+=======
+    inline QStringLists muxProtocols = {"smux", "yamux", "h2mux"};
+>>>>>>> main
 
     class TcpBrutal : public baseConfig
     {
@@ -18,6 +22,7 @@ namespace Configs
             _add(new configItem("up_mbps", &up_mbps, integer));
             _add(new configItem("down_mbps", &down_mbps, integer));
         }
+<<<<<<< HEAD
 
         // baseConfig overrides
         bool ParseFromLink(const QString& link) override;
@@ -25,13 +30,18 @@ namespace Configs
         QString ExportToLink() override;
         QJsonObject ExportToJson() override;
         BuildResult Build() override;
+=======
+>>>>>>> main
     };
 
     class Multiplex : public baseConfig
     {
         public:
         bool enabled = false;
+<<<<<<< HEAD
         bool unspecified = false;
+=======
+>>>>>>> main
         QString protocol;
         int max_connections = 0;
         int min_streams = 0;
@@ -42,7 +52,10 @@ namespace Configs
         Multiplex()
         {
             _add(new configItem("enabled", &enabled, boolean));
+<<<<<<< HEAD
             _add(new configItem("unspecified", &unspecified, boolean));
+=======
+>>>>>>> main
             _add(new configItem("protocol", &protocol, string));
             _add(new configItem("max_connections", &max_connections, integer));
             _add(new configItem("min_streams", &min_streams, integer));
@@ -50,6 +63,7 @@ namespace Configs
             _add(new configItem("padding", &padding, boolean));
             _add(new configItem("brutal", dynamic_cast<JsonStore *>(brutal.get()), jsonStore));
         }
+<<<<<<< HEAD
 
         // baseConfig overrides
         bool ParseFromLink(const QString& link) override;
@@ -57,5 +71,7 @@ namespace Configs
         QString ExportToLink() override;
         QJsonObject ExportToJson() override;
         BuildResult Build() override;
+=======
+>>>>>>> main
     };
 }

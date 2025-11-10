@@ -36,6 +36,7 @@ namespace Configs
             _add(new configItem("early_data_header_name", &early_data_header_name, string));
             _add(new configItem("service_name", &service_name, string));
         }
+<<<<<<< HEAD
 
         // baseConfig overrides
         bool ParseFromLink(const QString& link) override;
@@ -43,5 +44,7 @@ namespace Configs
         QString ExportToLink() override;
         QJsonObject ExportToJson() override;
         BuildResult Build() override;
+=======
+>>>>>>> main
     };
 }

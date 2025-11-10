@@ -15,13 +15,23 @@
 #include <QMessageBox>
 #include <QTimer>
 #include <qfontdatabase.h>
+#include "include/sys/Settings.h"
+#include <QString>
 
 #include "include/ui/mainwindow.h"
 
-DialogBasicSettings::DialogBasicSettings(QWidget *parent)
+#if QT_VERSION >= QT_VERSION_CHECK(6, 6, 0)
+#define STATE_CHANGED &QCheckBox::checkStateChanged
+#else
+#define STATE_CHANGED &QCheckBox::stateChanged
+#endif
+#include <QDir>
+
+DialogBasicSettings::DialogBasicSettings(MainWindow *parent)
     : QDialog(parent), ui(new Ui::DialogBasicSettings) {
     ui->setupUi(this);
     ADD_ASTERISK(this);
+    this->parent = parent;
 
     // Common
     ui->inbound_socks_port_l->setText(ui->inbound_socks_port_l->text().replace("Socks", "Mixed (SOCKS+HTTP)"));
@@ -47,10 +57,10 @@ DialogBasicSettings::DialogBasicSettings(QWidget *parent)
     connect(ui->custom_inbound_edit, &QPushButton::clicked, this, [=,this] {
         C_EDIT_JSON_ALLOW_EMPTY(custom_inbound)
     });
-    connect(ui->disable_tray, &QCheckBox::stateChanged, this, [=,this](const bool &) {
+    connect(ui->disable_tray, STATE_CHANGED, this, [=,this](const bool &) {
         CACHE.updateDisableTray = true;
     });
-    connect(ui->random_listen_port, &QCheckBox::stateChanged, this, [=,this](const bool &state)
+    connect(ui->random_listen_port, STATE_CHANGED, this, [=,this](const bool &state)
     {
         if (state)
         {
@@ -70,7 +80,7 @@ DialogBasicSettings::DialogBasicSettings(QWidget *parent)
     // Style
     ui->connection_statistics->setChecked(Configs::dataStore->enable_stats);
     ui->show_sys_dns->setChecked(Configs::dataStore->show_system_dns);
-    connect(ui->show_sys_dns, &QCheckBox::stateChanged, this, [=]
+    connect(ui->show_sys_dns, STATE_CHANGED, this, [=,this]
     {
         CACHE.updateSystemDns = true;
     });
@@ -157,7 +167,7 @@ DialogBasicSettings::DialogBasicSettings(QWidget *parent)
     ui->ntp_server->setText(Configs::dataStore->ntp_server_address);
     ui->ntp_port->setText(Int2String(Configs::dataStore->ntp_server_port));
     ui->ntp_interval->setCurrentText(Configs::dataStore->ntp_interval);
-    connect(ui->ntp_enable, &QCheckBox::stateChanged, this, [=,this](const bool &state) {
+    connect(ui->ntp_enable, STATE_CHANGED, this, [=,this](const bool &state) {
         ui->ntp_server->setEnabled(state);
         ui->ntp_port->setEnabled(state);
         ui->ntp_interval->setEnabled(state);
@@ -172,6 +182,55 @@ DialogBasicSettings::DialogBasicSettings(QWidget *parent)
 
     D_LOAD_BOOL(skip_cert)
     ui->utlsFingerprint->setCurrentText(Configs::dataStore->utlsFingerprint);
+
+    // Startup
+    connect(ui->select_core, &QPushButton::clicked, this, [=,this]{
+        QString fileName = QFileDialog::getOpenFileName(this, QObject::tr("Select"), QDir::currentPath(),
+                                                        "", nullptr, QFileDialog::Option::ReadOnly);
+        ui->core_path->setText(fileName);
+    });
+    connect(ui->select_icons, &QPushButton::clicked, this, [=,this]{
+        QString folderName = QFileDialog::getExistingDirectory(this, QObject::tr("Select a Folder"), "");
+        ui->icons_path->setText(folderName);
+    });
+
+    connect(this, &DialogBasicSettings::size_changed, parent, &MainWindow::size_changed);
+    connect(this, &DialogBasicSettings::point_changed, parent, &MainWindow::point_changed);
+    connect(ui->apply_now, &QPushButton::clicked, this, [=,this]{
+        emit size_changed(ui->window_width->text().toInt(), ui->window_height->text().toInt());
+        emit point_changed(ui->window_X->text().toInt(), ui->window_Y->text().toInt());
+    });
+
+    QSettings settings = getSettings();
+    auto validator = new QIntValidator(0, 0xfffffff, this);
+    ui->save_geometry->setChecked(settings.value("save_geometry", true).toBool());
+    ui->save_position->setChecked(settings.value("save_position", true).toBool());
+    ui->window_width->setText(QString::number(settings.value("width", 0).toInt()));
+    ui->window_height->setText(QString::number(settings.value("height", 0).toInt()));
+    ui->window_X->setText(QString::number(settings.value("X", 0).toInt()));
+    ui->window_Y->setText(QString::number(settings.value("Y", 0).toInt()));
+    ui->window_width->setValidator(validator);
+    ui->window_height->setValidator(validator);
+    ui->window_X->setValidator(validator);
+    ui->window_Y->setValidator(validator);
+
+    QString core_path = settings.value("core_path", "").toString();
+    CACHE.core_path = core_path;
+    QString icons_path = settings.value("resources_path", "").toString();
+    ui->core_path->setText(core_path);
+    ui->icons_path->setText(icons_path);
+    connect(ui->default_core_path, STATE_CHANGED, this, [=, this](int state){
+        bool disabled = (state == Qt::Checked);
+        ui->core_path->setDisabled(disabled);
+        ui->select_core->setDisabled(disabled);
+    });
+    connect(ui->default_icons_path, STATE_CHANGED, this, [=, this](int state){
+        bool disabled = (state == Qt::Checked);
+        ui->icons_path->setDisabled(disabled);
+        ui->select_icons->setDisabled(disabled);
+    });
+    ui->default_core_path->setChecked(core_path == "");
+    ui->default_icons_path->setChecked(icons_path == "");
 }
 
 DialogBasicSettings::~DialogBasicSettings() {
@@ -179,6 +238,7 @@ DialogBasicSettings::~DialogBasicSettings() {
 }
 
 void DialogBasicSettings::accept() {
+    QSettings settings = getSettings();
     // Common
     bool needChoosePort = false;
 
@@ -242,6 +302,33 @@ void DialogBasicSettings::accept() {
     Configs::dataStore->ntp_server_address = ui->ntp_server->text();
     Configs::dataStore->ntp_server_port = ui->ntp_port->text().toInt();
     Configs::dataStore->ntp_interval = ui->ntp_interval->currentText();
+
+    int width, height, X, Y;
+    // Startup
+    settings.setValue("save_geometry", ui->save_geometry->isChecked());
+    settings.setValue("save_position", ui->save_position->isChecked());
+    settings.setValue("width", width = ui->window_width->text().toInt());
+    settings.setValue("height", height = ui->window_height->text().toInt());
+    settings.setValue("X", X = ui->window_X->text().toInt());
+    settings.setValue("Y", Y = ui->window_Y->text().toInt());
+    if (ui->default_core_path->isChecked()){
+        settings.remove("core_path");
+        if (CACHE.core_path != ""){
+            CACHE.needRestart = true;
+        }
+    } else {
+        QString core_path_text = ui->core_path->text();
+        settings.setValue("core_path", core_path_text);
+        if (CACHE.core_path != core_path_text){
+            CACHE.needRestart = true;
+        }
+    }
+    if (ui->default_icons_path->isChecked()){
+        settings.remove("resources_path");
+    } else {
+        settings.setValue("resources_path", ui->icons_path->text());
+    }
+    settings.sync();
 
     // Security
 

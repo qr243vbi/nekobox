@@ -1,5 +1,6 @@
 #!/bin/bash
 set -e
+export CURDIR=$PWD
 
 source script/env_deploy.sh
 if [[ $1 == 'arm64' ]]; then
@@ -23,13 +24,17 @@ cd *darwin-$ARCH
 tar xvzf artifacts.tgz -C ../../
 cd ../..
 
-mv deployment/macos-$ARCH/* $BUILD/Throne.app/Contents/MacOS
+mv deployment/macos-$ARCH/* $BUILD/nekobox.app/Contents/MacOS
+
+#### copy srslist ####
+cp $CURDIR/*.js $BUILD/nekobox.app/Contents/MacOS
+cp srslist.json $BUILD/nekobox.app/Contents/MacOS/srslist.json
 
 #### deploy qt & DLL runtime => .app ####
 pushd $BUILD
-macdeployqt Throne.app -verbose=3
+macdeployqt nekobox.app -verbose=3
 popd
 
-codesign --force --deep --sign - $BUILD/Throne.app
+codesign --force --deep --sign - $BUILD/nekobox.app
 
-mv $BUILD/Throne.app $DEST
+mv $BUILD/nekobox.app $DEST

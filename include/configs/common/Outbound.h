@@ -1,5 +1,8 @@
 #pragma once
+<<<<<<< HEAD
 #include "DialFields.h"
+=======
+>>>>>>> main
 #include "include/configs/baseConfig.h"
 
 namespace Configs
@@ -7,6 +10,7 @@ namespace Configs
     class OutboundCommons : public baseConfig
     {
         public:
+<<<<<<< HEAD
         QString name;
         QString server;
         int server_port = 0;
@@ -61,5 +65,21 @@ namespace Configs
         }
 
         virtual bool IsEndpoint() { return false; };
+=======
+        QString type;
+        QString name;
+        int id = -1;
+        QString server;
+        int server_port = 0;
+
+        OutboundCommons()
+        {
+            _add(new configItem("type", &type, string));
+            _add(new configItem("name", &name, string));
+            _add(new configItem("id", &id, integer));
+            _add(new configItem("server", &server, string));
+            _add(new configItem("server_port", &server_port, integer));
+        }
+>>>>>>> main
     };
 }

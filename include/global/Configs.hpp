@@ -4,7 +4,8 @@
 #include "Utils.hpp"
 #include "ConfigItem.hpp"
 #include "DataStore.hpp"
-#include <srslist.h>
+
+#include "keyvaluerange.h"
 
 // Switch core support
 

@@ -1,6 +1,7 @@
 #pragma once
 
 #include <QJsonObject>
+<<<<<<< HEAD
 #include "include/global/Configs.hpp"
 
 namespace Configs
@@ -32,5 +33,24 @@ namespace Configs
         virtual BuildResult Build() {
             return {{}, "base class function called!"};
         }
+=======
+#include <QString>
+#include "include/global/ConfigItem.hpp"
+
+namespace Configs
+{
+    class baseConfig : public JsonStore
+    {
+    public:
+        virtual bool ParseFromLink(QString link);
+
+        virtual bool ParseFromJson(QJsonObject object);
+
+        virtual QString ExportToLink();
+
+        virtual QJsonObject ExportToJson();
+
+        virtual QJsonObject Build();
+>>>>>>> main
     };
 }

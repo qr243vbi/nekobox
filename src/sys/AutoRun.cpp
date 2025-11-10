@@ -3,6 +3,7 @@
 #include <QApplication>
 #include <QDir>
 
+#include "include/sys/Settings.h"
 #include "include/global/Configs.hpp"
 
 // macOS headers (possibly OBJ-c)
@@ -16,16 +17,14 @@
 #include <QSettings>
 
 QString Windows_GenAutoRunString() {
-    auto appPath = QApplication::applicationFilePath();
+    auto appPath = getApplicationPath();
     appPath = "\"" + QDir::toNativeSeparators(appPath) + "\"";
     appPath += " -tray";
     return appPath;
 }
 
 void AutoRun_SetEnabled(bool enable) {
-    // 以程序名称作为注册表中的键
-    // 根据键获取对应的值（程序路径）
-    auto appPath = QApplication::applicationFilePath();
+    auto appPath = getApplicationPath();
     QFileInfo fInfo(appPath);
     QString name = fInfo.baseName();
 
@@ -41,9 +40,7 @@ void AutoRun_SetEnabled(bool enable) {
 bool AutoRun_IsEnabled() {
     QSettings settings("HKEY_CURRENT_USER\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", QSettings::NativeFormat);
 
-    // 以程序名称作为注册表中的键
-    // 根据键获取对应的值（程序路径）
-    auto appPath = QApplication::applicationFilePath();
+    auto appPath = getApplicationPath();
     QFileInfo fInfo(appPath);
     QString name = fInfo.baseName();
 
@@ -169,11 +166,7 @@ void AutoRun_SetEnabled(bool enable) {
     QString desktopFileLocation = userAutoStartPath + appName + QLatin1String(".desktop");
     QStringList appCmdList;
 
-    if (QProcessEnvironment::systemEnvironment().contains("APPIMAGE")) {
-        appCmdList << QProcessEnvironment::systemEnvironment().value("APPIMAGE");
-    } else {
-        appCmdList << QApplication::applicationFilePath();
-    }
+    appCmdList << getApplicationPath();
 
     appCmdList << "-tray";
 

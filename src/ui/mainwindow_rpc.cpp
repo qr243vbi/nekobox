@@ -15,7 +15,6 @@
 #include "include/sys/Process.hpp"
 
 // rpc
-
 using namespace API;
 
 void MainWindow::setup_rpc() {
@@ -144,7 +143,7 @@ void MainWindow::urltest_current_group(const QList<std::shared_ptr<Configs::Prox
     }
 
     runOnNewThread([this, profiles]() {
-        auto buildObject = Configs::BuildTestConfig(profiles);
+        auto buildObject = Configs::BuildTestConfig(profiles, ruleSetMap);
         if (!buildObject->error.isEmpty()) {
             MW_show_log(tr("Failed to build test config: ") + buildObject->error);
             speedtestRunning.unlock();
@@ -239,7 +238,7 @@ void MainWindow::speedtest_current_group(const QList<std::shared_ptr<Configs::Pr
     runOnNewThread([this, profiles, testCurrent]() {
         if (!testCurrent)
         {
-            auto buildObject = Configs::BuildTestConfig(profiles);
+            auto buildObject = Configs::BuildTestConfig(profiles, ruleSetMap);
             if (!buildObject->error.isEmpty()) {
                 MW_show_log(tr("Failed to build test config: ") + buildObject->error);
                 speedtestRunning.unlock();
@@ -468,7 +467,11 @@ void MainWindow::profile_start(int _id) {
     auto group = Configs::profileManager->GetGroup(ent->gid);
     if (group == nullptr || group->archive) return;
 
+<<<<<<< HEAD
     auto result = Configs::BuildSingBoxConfig(ent);
+=======
+    auto result = BuildConfig(ent, ruleSetMap, false, false);
+>>>>>>> main
     if (!result->error.isEmpty()) {
         MessageBoxWarning(tr("BuildConfig return error"), result->error);
         return;
@@ -572,10 +575,7 @@ void MainWindow::profile_start(int _id) {
     runOnNewThread([=, this] {
         // stop current running
         if (running != nullptr) {
-            runOnUiThread([=, this]
-            {
-                profile_stop(false, true, true);
-            }, true);
+            profile_stop(false, true, true);
         }
         // do start
         MW_show_log(">>>>>>>> " + tr("Starting profile %1").arg(ent->bean->DisplayTypeAndName()));

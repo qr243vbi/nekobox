@@ -20,6 +20,21 @@
 #include "include/global/GuiUtils.hpp"
 
 #include <QInputDialog>
+#include <QToolTip>
+#include <QtGlobal>
+#include <QtCore/qglobal.h>
+#include <QObject>
+#include <QString>
+#include <QDebug>
+#include <QApplication>
+
+#include <QStyle>
+#if QT_VERSION >= QT_VERSION_CHECK(6, 6, 0)
+#define STATE_CHANGED &QCheckBox::checkStateChanged
+#else
+#define STATE_CHANGED &QCheckBox::stateChanged
+#endif
+
 
 #define ADJUST_SIZE runOnThread([=,this] { adjustSize(); adjustPosition(mainwindow); }, this);
 #define LOAD_TYPE(a) ui->type->addItem(Configs::ProfileManager::NewProxyEntity(a)->bean->DisplayType(), a);
@@ -78,6 +93,17 @@ DialogEditProfile::DialogEditProfile(const QString &_type, int profileOrGroupId,
             ui->path_l->setVisible(true);
             ui->host->setVisible(true);
             ui->host_l->setVisible(true);
+        } else if (txt == "xhttp") {
+            ui->header_type->setVisible(false);
+            ui->header_type_l->setVisible(false);
+            ui->headers->setVisible(false);
+            ui->headers_l->setVisible(false);
+            ui->method->setVisible(false);
+            ui->method_l->setVisible(false);
+            ui->path->setVisible(true);
+            ui->path_l->setVisible(true);
+            ui->host->setVisible(true);
+            ui->host_l->setVisible(true);
         } else {
             ui->header_type->setVisible(false);
             ui->header_type_l->setVisible(false);
@@ -100,6 +126,17 @@ DialogEditProfile::DialogEditProfile(const QString &_type, int profileOrGroupId,
             ui->ws_early_data_length_l->setVisible(false);
             ui->ws_early_data_name->setVisible(false);
             ui->ws_early_data_name_l->setVisible(false);
+        }
+        if (txt == "xhttp") {
+            ui->xhttp_mode->setVisible(true);
+            ui->xhttp_mode_l->setVisible(true);
+            ui->xhttp_extra->setVisible(true);
+            ui->xhttp_extra_l->setVisible(true);
+        } else {
+            ui->xhttp_mode->setVisible(false);
+            ui->xhttp_mode_l->setVisible(false);
+            ui->xhttp_extra->setVisible(false);
+            ui->xhttp_extra_l->setVisible(false);
         }
         if (!ui->utlsFingerprint->count()) ui->utlsFingerprint->addItems(Preset::SingBox::UtlsFingerPrint);
         int networkBoxVisible = 0;
@@ -125,7 +162,7 @@ DialogEditProfile::DialogEditProfile(const QString &_type, int profileOrGroupId,
     emit ui->security->currentTextChanged(ui->security->currentText());
 
     // for fragment
-    connect(ui->tls_frag, &QCheckBox::stateChanged, this, [=,this](bool state)
+    connect(ui->tls_frag, STATE_CHANGED, this, [=,this](bool state)
     {
         ui->tls_frag_fall_delay->setEnabled(state);
     });
@@ -302,6 +339,8 @@ void DialogEditProfile::typeSelected(const QString &newType) {
         ui->headers->setText(stream->headers);
         ui->ws_early_data_name->setText(stream->ws_early_data_name);
         ui->ws_early_data_length->setText(Int2String(stream->ws_early_data_length));
+        ui->xhttp_mode->setCurrentText(stream->xhttp_mode);
+        ui->xhttp_extra->setText(stream->xhttp_extra);
         ui->reality_pbk->setText(stream->reality_pbk);
         ui->reality_sid->setText(stream->reality_sid);
         ui->multiplex->setCurrentIndex(ent->bean->mux_state);
@@ -442,6 +481,8 @@ bool DialogEditProfile::onEnd() {
         stream->method = ui->method->text();
         stream->ws_early_data_name = ui->ws_early_data_name->text();
         stream->ws_early_data_length = ui->ws_early_data_length->text().toInt();
+        stream->xhttp_mode = ui->xhttp_mode->currentText();
+        stream->xhttp_extra = ui->xhttp_extra->text();
         stream->reality_pbk = ui->reality_pbk->text();
         stream->reality_sid = ui->reality_sid->text();
         ent->bean->mux_state = ui->multiplex->currentIndex();

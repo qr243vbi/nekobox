@@ -138,6 +138,11 @@ namespace Configs {
                 stream->host = GetQueryValue(query, "host", "");
                 stream->path = GetQueryValue(query, "path", "");
             }
+        } else if (stream->network == "xhttp") {
+            stream->path = GetQueryValue(query, "path", "");
+            stream->host = GetQueryValue(query, "host", "");
+            stream->xhttp_mode = GetQueryValue(query, "mode", "auto");
+            stream->xhttp_extra = GetQueryValue(query, "extra", "");
         }
 
         // mux
@@ -294,6 +299,11 @@ namespace Configs {
                     stream->path = GetQueryValue(query, "path", "");
                     stream->host = GetQueryValue(query, "host", "");
                 }
+            } else if (stream->network == "xhttp") {
+                stream->path = GetQueryValue(query, "path", "");
+                stream->host = GetQueryValue(query, "host", "");
+                stream->xhttp_mode = GetQueryValue(query, "mode", "auto");
+                stream->xhttp_extra = GetQueryValue(query, "extra", "");
             }
             return !(uuid.isEmpty() || serverAddress.isEmpty());
         }
