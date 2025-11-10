@@ -17,7 +17,7 @@ DEST=$DEPLOYMENT/linux-$ARCH
 mkdir -p $DEST ||:
 
 #### copy srslist ####
-wget -c https://github.com/qr243vbi/ruleset/raw/refs/heads/rule-set/srslist.json
+[[ -f srslist.json ]] || wget -c https://github.com/qr243vbi/ruleset/raw/refs/heads/rule-set/srslist.json
 cp srslist.json $DEST/srslist.json
 
 #### copy binary ####
@@ -93,9 +93,7 @@ cd AppDir
 mv nekobox_core .nekobox_core_binary_file
 cat << 'EOF' > nekobox_core
 #!/bin/sh
-export NEKOBOX_APPIMAGE_CUSTOM_EXECUTABLE_USE_APPIMAGE_CORE="qr243vbi"
-export NEKOBOX_APPIMAGE_CUSTOM_EXECUTABLE=".nekobox_core_binary_file"
-exec "$(dirname $0)"/"AppRun" "${@}"
+exec env --argv0="${APPIMAGE}" "$(dirname $0)"/".nekobox_core_binary_file" "${@}"
 EOF
 cat << 'EOF' > AppRun
 #!/bin/sh

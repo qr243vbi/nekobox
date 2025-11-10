@@ -50,24 +50,9 @@ func restartAsAdmin(){
 			log.Fatalf("Error finding pkexec executable: %v", err)
 		}
 	}
-	executablePath, runningAppImage := os.LookupEnv("APPIMAGE")
-	args = append(args, pkexecPath, "sh", "-c", "exec \"${0}\" \"${@}\"")
-	if (runningAppImage){
-		value, runningAppImage := os.LookupEnv("NEKOBOX_APPIMAGE_CUSTOM_EXECUTABLE_USE_APPIMAGE_CORE")
-		if (value != "qr243vbi"){
-			runningAppImage = false
-		}
-		if (runningAppImage){
-			args = append(args, "env", "NEKOBOX_APPIMAGE_CUSTOM_EXECUTABLE=nekobox_core", executablePath)
-		}
-	}
-	if (!runningAppImage){
-		executablePath, err := os.Executable()
-		if err != nil {
-			log.Fatalf("Failed to get executable path: %v", err)
-		}
-		args = append(args, executablePath)
-	}
+
+	executablePath := os.Args[0];
+	args = append(args, pkexecPath, "sh", "-c", "exec \"${0}\" \"${@}\"", "env", "NEKOBOX_APPIMAGE_CUSTOM_EXECUTABLE=nekobox_core", executablePath)
 
 	for _, arg := range os.Args[1:] {
 		if arg != "-admin" {
