@@ -2456,7 +2456,7 @@ void MainWindow::show_log_impl(const QString &log) {
             logClear = false;
         }
     } else {
-        if (blockCount > 700){
+        if (blockCount > 600){
             logClear = true;
         }
     }
