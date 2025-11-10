@@ -40,6 +40,9 @@ func WaitForProcessExit (pid int) error{
 
 
 func restartAsAdmin(){
+	if (os.Geteuid() == 0){
+		return
+	}
 	var args [] string
 	pkexecPath, err := exec.LookPath("pkexec")
 	if err != nil {
