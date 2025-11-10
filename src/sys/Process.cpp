@@ -98,7 +98,7 @@ namespace Configs_sys {
         started = true;
         QStringList list = QProcessEnvironment::systemEnvironment().toStringList();
         list << "NEKOBOX_APPIMAGE_CUSTOM_EXECUTABLE=nekobox_core";
-        setEnvironment();
+        setEnvironment(list);
         start(program, arguments);
     }
 

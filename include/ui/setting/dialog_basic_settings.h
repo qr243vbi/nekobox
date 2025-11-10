@@ -36,6 +36,7 @@ private:
         bool needRestart = false;
         bool updateDisableTray = false;
         bool updateSystemDns = false;
+        QString core_path;
     } CACHE;
 
 private slots:
