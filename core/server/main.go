@@ -113,11 +113,14 @@ func main() {
 	
 	if runtime.GOOS == "windows" {
 		if *_admin{
-			code, err := runAdmin(_port, _debug)
-			if (err != nil){
-				fmt.Fprintf(os.Stderr, "Failed to run as admin: %v\n", err)
+			elevated, _ := isElevated();
+			if (!elevated){
+				code, err := runAdmin(_port, _debug)
+				if (err != nil){
+					fmt.Fprintf(os.Stderr, "Failed to run as admin: %v\n", err)
+				}
+				os.Exit(code)
 			}
-			os.Exit(code)
 		}
 	}
 	
