@@ -475,8 +475,21 @@ jobs:
           export OBS_HOOK_TOKEN="${{ secrets.OBS_HOOK_TOKEN }}"
           export COPR_LOGIN="${{ secrets.COPR_LOGIN }}",
           export COPR_TOKEN="${{ secrets.COPR_TOKEN }}"
-          ./script/trigger_open_build_service.sh
-          ./script/trigger_community_projects.py
+          export INPUT_VERSION=${{ github.event.inputs.tag }}
+          bash ./script/trigger_open_build_service.sh
+          python3 -c ./script/trigger_community_projects.py
+          bash ./script/generate_pkgbuild.sh
+      - name: Publish AUR package
+        uses: KSXGitHub/github-actions-deploy-aur@<TAG>
+        with:
+          pkgname: my-awesome-package
+          pkgbuild: ./script/nekobox_aur/PKGBUILD
+          commit_username: ${{ secrets.AUR_USERNAME }}
+          commit_email: ${{ secrets.AUR_EMAIL }}
+          ssh_private_key: ${{ secrets.AUR_SSH_PRIVATE_KEY }}
+          commit_message: Update AUR package
+          ssh_keyscan_types: rsa,ecdsa,ed25519
+
   publish_chocolatey:
     name: Publish Chocolatey Package
     runs-on: windows-latest
