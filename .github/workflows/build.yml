@@ -483,7 +483,7 @@ jobs:
         uses: KSXGitHub/github-actions-deploy-aur@v4.1.1
         if: github.event.inputs.publish == 'r'
         with:
-          pkgname: my-awesome-package
+          pkgname: nekobox
           pkgbuild: ./script/nekobox_aur/PKGBUILD
           commit_username: ${{ secrets.AUR_USERNAME }}
           commit_email: ${{ secrets.AUR_EMAIL }}
