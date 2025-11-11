@@ -477,7 +477,7 @@ jobs:
           export COPR_TOKEN="${{ secrets.COPR_TOKEN }}"
           export INPUT_VERSION=${{ github.event.inputs.tag }}
           bash ./script/trigger_open_build_service.sh
-          python3 -c ./script/trigger_community_projects.py
+          python3 ./script/trigger_community_projects.py
           bash ./script/generate_pkgbuild.sh
       - name: Publish AUR package
         uses: KSXGitHub/github-actions-deploy-aur@v4.1.1
