@@ -480,7 +480,8 @@ jobs:
           python3 -c ./script/trigger_community_projects.py
           bash ./script/generate_pkgbuild.sh
       - name: Publish AUR package
-        uses: KSXGitHub/github-actions-deploy-aur@<TAG>
+        uses: KSXGitHub/github-actions-deploy-aur@latest
+        if: github.event.inputs.publish == 'r'
         with:
           pkgname: my-awesome-package
           pkgbuild: ./script/nekobox_aur/PKGBUILD
