@@ -479,7 +479,15 @@ jobs:
           ####
           install -Dm644 oscrc "$HOME"/.config/osc/oscrc
           osc token --trigger "${{ secrets.OBS_HOOK_TOKEN }}"
-          python3 -c "from copr import v3; client = v3.Client({'copr_url': 'https://copr.fedorainfracloud.org', 'login': '${{ secrets.COPR_LOGIN }}', 'token': '${{ secrets.COPR_TOKEN }}'}); print(client.package_proxy.build('qr243vbi', 'NekoBox', 'NekoBox'))"
+          COPR_SCRIPT=cat << EOF 
+          from copr import v3; 
+          client = v3.Client({
+            'copr_url': 'https://copr.fedorainfracloud.org', 
+            'login': '${{ secrets.COPR_LOGIN }}', 
+            'token': '${{ secrets.COPR_TOKEN }}'})
+          print(client.package_proxy.build('qr243vbi', 'NekoBox', 'NekoBox'))
+          EOF
+          python3 -c "${COPR_SCRIPT}"
   publish_chocolatey:
     name: Publish Chocolatey Package
     runs-on: windows-latest
