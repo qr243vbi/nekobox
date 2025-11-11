@@ -1,3 +1,4 @@
+#!/bin/bash -x
 echo '[general]' > oscrc
 echo 'apiurl=https://api.opensuse.org' >> oscrc
 echo '[https://api.opensuse.org]' >> oscrc

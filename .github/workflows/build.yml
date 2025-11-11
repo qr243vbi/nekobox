@@ -475,8 +475,8 @@ jobs:
           export OBS_HOOK_TOKEN="${{ secrets.OBS_HOOK_TOKEN }}"
           export COPR_LOGIN="${{ secrets.COPR_LOGIN }}",
           export COPR_TOKEN="${{ secrets.COPR_TOKEN }}"
-          bash -x script/trigger_open_build_service.sh
-          python3 -c script/trigger_community_projects.py
+          ./script/trigger_open_build_service.sh
+          ./script/trigger_community_projects.py
   publish_chocolatey:
     name: Publish Chocolatey Package
     runs-on: windows-latest
