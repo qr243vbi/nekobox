@@ -4,4 +4,4 @@ asset_res="$(echo "$text"  | jq '.assets[] | select(.browser_download_url | ends
 url_res="$(echo "$asset_res" | jq -r '.browser_download_url' | sed "s~$INPUT_VERSION~\${pkgver}~g")"
 sha_res="$(echo "$asset_res" | jq -r '.digest' | sed 's~sha256:~~g')"
 
-sed -i "s@pkgver=(.*@pkgver=${INPUT_VERSION}@g; s@sha256sums=(.*@sha256sums=(\"$sha_res\")@g; s@source=(.*@source=(\"$url_res\")@g;" ./script/nekobox_aur/PKGBUILD
+sed "s@pkgver=(.*@pkgver=${INPUT_VERSION}@g; s@sha256sums=(.*@sha256sums=(\"$sha_res\")@g; s@source=(.*@source=(\"$url_res\")@g;" ./script/nekobox_aur/PKGBUILD | tee ./PKGBUILD
