@@ -470,24 +470,13 @@ jobs:
         if: github.event.inputs.publish == 'r'
         run: |
           pip install osc copr
-          echo '[general]' > oscrc
-          echo 'apiurl=https://api.opensuse.org' >> oscrc
-          echo '[https://api.opensuse.org]' >> oscrc
-          echo 'user=${{ secrets.OBS_USER }}' >> oscrc
-          echo 'pass=${{ secrets.OBS_PASSWORD }}' >> oscrc
-          echo 'credentials_mgr_class=osc.credentials.PlaintextConfigFileCredentialsManager' >> oscrc
-          ####
-          install -Dm644 oscrc "$HOME"/.config/osc/oscrc
-          osc token --trigger "${{ secrets.OBS_HOOK_TOKEN }}"
-          COPR_SCRIPT=cat << EOF 
-          from copr import v3; 
-          client = v3.Client({
-            'copr_url': 'https://copr.fedorainfracloud.org', 
-            'login': '${{ secrets.COPR_LOGIN }}', 
-            'token': '${{ secrets.COPR_TOKEN }}'})
-          print(client.package_proxy.build('qr243vbi', 'NekoBox', 'NekoBox'))
-          EOF
-          python3 -c "${COPR_SCRIPT}"
+          export OBS_USER="${{ secrets.OBS_USER }}"
+          export OBS_PASSWORD="${{ secrets.OBS_PASSWORD }}"
+          export OBS_HOOK_TOKEN="${{ secrets.OBS_HOOK_TOKEN }}"
+          export COPR_LOGIN="${{ secrets.COPR_LOGIN }}",
+          export COPR_TOKEN="${{ secrets.COPR_TOKEN }}"
+          bash -x script/trigger_open_build_service.sh
+          python3 -c script/trigger_community_projects.py
   publish_chocolatey:
     name: Publish Chocolatey Package
     runs-on: windows-latest
