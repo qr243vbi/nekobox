@@ -19,8 +19,13 @@ public:
 			return false;
 		}
 
-		memcpy(&temp[0], &input_url[before], st - before);
-		before = st + delim.length();
+		int stbef = (int) st;
+		stbef -= (int)before;
+
+		if (stbef > -1 && stbef <= 1024){
+			memcpy(&temp[0], &input_url[before], stbef);
+			before = st + delim.length();
+		}
 
 		result = std::string(temp);
 		if (result.empty())
@@ -34,13 +39,22 @@ public:
 		char first[1024] = { 0, };
 		char second[1024] = { 0, };
 
-		size_t st = str.find(delim, 0);
+		int st = str.find(delim, 0);
+		if (st > 1024) {
+			key = str;
+			value = "";
+			return true;
+		} else {
+			memcpy(first, &str[0], st);
+			int st2 =  str.length() - st;
+			if (st2 > 1024) st2 = 1024;
+			if (st2 < 0) st2 = 0;
 
-		memcpy(first, &str[0], st);
-		memcpy(second, &str[st + 1], str.length() - st);
+			memcpy(second, &str[st + 1], st2);
 
-		key = std::string(first);
-		value = std::string(second);
+			key = std::string(first);
+			value = std::string(second);
+		}
 
 		return true;
 	};
