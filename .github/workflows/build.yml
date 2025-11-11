@@ -488,36 +488,35 @@ jobs:
           python3 ./script/trigger_community_projects.py ||:
           bash ./script/generate_pkgbuild.sh
 
-      - name: Set up SSH
-        if: github.event.inputs.publish == 'r'
-        run: |
-          mkdir -p ~/.ssh
-          echo "${{ secrets.AUR_SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan aur.archlinux.org >> ~/.ssh/known_hosts
+#      - name: Set up SSH
+#        if: github.event.inputs.publish == 'r'
+#        run: |
+#          mkdir -p ~/.ssh
+#          echo "${{ secrets.AUR_SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+#          chmod 600 ~/.ssh/id_rsa
+#          ssh-keyscan aur.archlinux.org >> ~/.ssh/known_hosts
+#      - name: Push to AUR
+#        if: github.event.inputs.publish == 'r'
+#        run: |
+#          git clone ssh://aur@aur.archlinux.org/nekobox.git nekobox_git
+#          cp PKGBUILD nekobox_git/NEKOBOX
+#          cd nekobox_git
+#          makepkg --printsrcinfo > .SRCINFO
+#          git add --all
+#          git commit -am update
+#          git push
 
-      - name: Push to AUR
+      - name: Publish AUR package
+        uses: KSXGitHub/github-actions-deploy-aur@v4.1.1
         if: github.event.inputs.publish == 'r'
-        run: |
-          git clone ssh://aur@aur.archlinux.org/nekobox.git nekobox_git
-          cp PKGBUILD nekobox_git/NEKOBOX
-          cd nekobox_git
-          makepkg --printsrcinfo > .SRCINFO
-          git add --all
-          git commit -am update
-          git push
-
-#      - name: Publish AUR package
- #       uses: KSXGitHub/github-actions-deploy-aur@v4.1.1
-  #      if: github.event.inputs.publish == 'r'
-   #     with:
-    #      pkgname: nekobox
-     #     pkgbuild: ./PKGBUILD
-      #    commit_username: ${{ secrets.AUR_USERNAME }}
-       #   commit_email: ${{ secrets.AUR_EMAIL }}
-        #  ssh_private_key: ${{ secrets.AUR_SSH_PRIVATE_KEY }}
-         # commit_message: Update AUR package
-          #ssh_keyscan_types: rsa,ecdsa,ed25519
+        with:
+          pkgname: nekobox
+          pkgbuild: ./PKGBUILD
+          commit_username: ${{ secrets.AUR_USERNAME }}
+          commit_email: ${{ secrets.AUR_EMAIL }}
+          ssh_private_key: ${{ secrets.AUR_SSH_PRIVATE_KEY }}
+          commit_message: Update AUR package
+          ssh_keyscan_types: rsa,ecdsa,ed25519
 
   publish_chocolatey:
     name: Publish Chocolatey Package
