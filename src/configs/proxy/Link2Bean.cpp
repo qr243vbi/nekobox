@@ -318,8 +318,8 @@ namespace Configs {
                 return false;
             serverPort = 0;
             serverPorts = QString::fromStdString(URLParser::Parse((link.split("?")[0] + "/").toStdString()).port).split(",");
-            for (int i=0; i < serverPorts.size(); i++) {
-                serverPorts[i].replace("-", ":");
+            for (auto & serverPort : serverPorts) {
+                serverPort.replace("-", ":");
             }
         }
         auto query = QUrlQuery(url.query());

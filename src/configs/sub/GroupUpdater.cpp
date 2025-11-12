@@ -123,14 +123,14 @@ namespace Subscription {
         // Json
         if (str.startsWith('{')) {
             ent = Configs::ProfileManager::NewProxyEntity("custom");
-            auto bean = ent->CustomBean();
+            auto custom = ent->Custom();
             auto obj = QString2QJsonObject(str);
             if (obj.contains("outbounds")) {
-                bean->core = "internal-full";
-                bean->config_simple = str;
+                custom->type = "fullconfig";
+                custom->config = str;
             } else if (obj.contains("server")) {
-                bean->core = "internal";
-                bean->config_simple = str;
+                custom->type = "outbound";
+                custom->config = str;
             } else {
                 return;
             }
@@ -140,49 +140,49 @@ namespace Subscription {
         if (str.startsWith("socks5://") || str.startsWith("socks4://") ||
             str.startsWith("socks4a://") || str.startsWith("socks://")) {
             ent = Configs::ProfileManager::NewProxyEntity("socks");
-            auto ok = ent->SocksHTTPBean()->TryParseLink(str);
+            auto ok = ent->Socks()->ParseFromLink(str);
             if (!ok) return;
         }
 
         // HTTP
         if (str.startsWith("http://") || str.startsWith("https://")) {
             ent = Configs::ProfileManager::NewProxyEntity("http");
-            auto ok = ent->SocksHTTPBean()->TryParseLink(str);
+            auto ok = ent->Http()->ParseFromLink(str);
             if (!ok) return;
         }
 
         // ShadowSocks
         if (str.startsWith("ss://")) {
             ent = Configs::ProfileManager::NewProxyEntity("shadowsocks");
-            auto ok = ent->ShadowSocksBean()->TryParseLink(str);
+            auto ok = ent->ShadowSocks()->ParseFromLink(str);
             if (!ok) return;
         }
 
         // VMess
         if (str.startsWith("vmess://")) {
             ent = Configs::ProfileManager::NewProxyEntity("vmess");
-            auto ok = ent->VMessBean()->TryParseLink(str);
+            auto ok = ent->VMess()->ParseFromLink(str);
             if (!ok) return;
         }
 
         // VLESS
         if (str.startsWith("vless://")) {
             ent = Configs::ProfileManager::NewProxyEntity("vless");
-            auto ok = ent->TrojanVLESSBean()->TryParseLink(str);
+            auto ok = ent->VLESS()->ParseFromLink(str);
             if (!ok) return;
         }
 
         // Trojan
         if (str.startsWith("trojan://")) {
             ent = Configs::ProfileManager::NewProxyEntity("trojan");
-            auto ok = ent->TrojanVLESSBean()->TryParseLink(str);
+            auto ok = ent->Trojan()->ParseFromLink(str);
             if (!ok) return;
         }
 
         // AnyTLS
         if (str.startsWith("anytls://")) {
             ent = Configs::ProfileManager::NewProxyEntity("anytls");
-            auto ok = ent->AnyTLSBean()->TryParseLink(str);
+            auto ok = ent->AnyTLS()->ParseFromLink(str);
             if (!ok) return;
         }
 
@@ -190,7 +190,7 @@ namespace Subscription {
         if (str.startsWith("hysteria://")) {
             needFix = false;
             ent = Configs::ProfileManager::NewProxyEntity("hysteria");
-            auto ok = ent->QUICBean()->TryParseLink(str);
+            auto ok = ent->Hysteria()->ParseFromLink(str);
             if (!ok) return;
         }
 
@@ -198,7 +198,7 @@ namespace Subscription {
         if (str.startsWith("hysteria2://") || str.startsWith("hy2://")) {
             needFix = false;
             ent = Configs::ProfileManager::NewProxyEntity("hysteria2");
-            auto ok = ent->QUICBean()->TryParseLink(str);
+            auto ok = ent->Hysteria2()->ParseFromLink(str);
             if (!ok) return;
         }
 
@@ -206,7 +206,7 @@ namespace Subscription {
         if (str.startsWith("tuic://")) {
             needFix = false;
             ent = Configs::ProfileManager::NewProxyEntity("tuic");
-            auto ok = ent->QUICBean()->TryParseLink(str);
+            auto ok = ent->TUIC()->ParseFromLink(str);
             if (!ok) return;
         }
 
@@ -214,7 +214,7 @@ namespace Subscription {
         if (str.startsWith("wg://")) {
             needFix = false;
             ent = Configs::ProfileManager::NewProxyEntity("wireguard");
-            auto ok = ent->WireguardBean()->TryParseLink(str);
+            auto ok = ent->Wireguard()->ParseFromLink(str);
             if (!ok) return;
         }
 
@@ -222,7 +222,7 @@ namespace Subscription {
         if (str.startsWith("ssh://")) {
             needFix = false;
             ent = Configs::ProfileManager::NewProxyEntity("ssh");
-            auto ok = ent->SSHBean()->TryParseLink(str);
+            auto ok = ent->SSH()->ParseFromLink(str);
             if (!ok) return;
         }
 
@@ -266,83 +266,83 @@ namespace Subscription {
             // SOCKS
             if (out["type"] == "socks") {
                 ent = Configs::ProfileManager::NewProxyEntity("socks");
-                auto ok = ent->SocksHTTPBean()->TryParseJson(out);
+                auto ok = ent->Socks()->ParseFromJson(out);
                 if (!ok) continue;
             }
 
             // HTTP
             if (out["type"] == "http") {
-                auto ok = ent->SocksHTTPBean()->TryParseJson(out);
+                auto ok = ent->Http()->ParseFromJson(out);
                 if (!ok) continue;
             }
 
             // ShadowSocks
             if (out["type"] == "shadowsocks") {
                 ent = Configs::ProfileManager::NewProxyEntity("shadowsocks");
-                auto ok = ent->ShadowSocksBean()->TryParseJson(out);
+                auto ok = ent->ShadowSocks()->ParseFromJson(out);
                 if (!ok) continue;
             }
 
             // VMess
             if (out["type"] == "vmess") {
                 ent = Configs::ProfileManager::NewProxyEntity("vmess");
-                auto ok = ent->VMessBean()->TryParseJson(out);
+                auto ok = ent->VMess()->ParseFromJson(out);
                 if (!ok) continue;
             }
 
             // VLESS
             if (out["type"] == "vless") {
                 ent = Configs::ProfileManager::NewProxyEntity("vless");
-                auto ok = ent->TrojanVLESSBean()->TryParseJson(out);
+                auto ok = ent->VLESS()->ParseFromJson(out);
                 if (!ok) continue;
             }
 
             // Trojan
             if (out["type"] == "trojan") {
                 ent = Configs::ProfileManager::NewProxyEntity("trojan");
-                auto ok = ent->TrojanVLESSBean()->TryParseJson(out);
+                auto ok = ent->Trojan()->ParseFromJson(out);
                 if (!ok) continue;
             }
 
             // AnyTLS
             if (out["type"] == "anytls") {
                 ent = Configs::ProfileManager::NewProxyEntity("anytls");
-                auto ok = ent->AnyTLSBean()->TryParseJson(out);
+                auto ok = ent->AnyTLS()->ParseFromJson(out);
                 if (!ok) continue;
             }
 
             // Hysteria1
             if (out["type"] == "hysteria") {
                 ent = Configs::ProfileManager::NewProxyEntity("hysteria");
-                auto ok = ent->QUICBean()->TryParseJson(out);
+                auto ok = ent->Hysteria()->ParseFromJson(out);
                 if (!ok) continue;
             }
 
             // Hysteria2
             if (out["type"] == "hysteria2") {
                 ent = Configs::ProfileManager::NewProxyEntity("hysteria2");
-                auto ok = ent->QUICBean()->TryParseJson(out);
+                auto ok = ent->Hysteria2()->ParseFromJson(out);
                 if (!ok) continue;
             }
 
             // TUIC
             if (out["type"] == "tuic") {
                 ent = Configs::ProfileManager::NewProxyEntity("tuic");
-                auto ok = ent->QUICBean()->TryParseJson(out);
+                auto ok = ent->TUIC()->ParseFromJson(out);
                 if (!ok) continue;
             }
 
             // Wireguard
             if (out["type"] == "wireguard") {
                 ent = Configs::ProfileManager::NewProxyEntity("wireguard");
-                auto ok = ent->WireguardBean()->TryParseJson(out);
+                auto ok = ent->Wireguard()->ParseFromJson(out);
                 if (!ok) continue;
             }
 
             // SSH
             if (out["type"] == "ssh") {
                 ent = Configs::ProfileManager::NewProxyEntity("ssh");
-                auto ok = ent->SSHBean()->TryParseJson(out);
+                auto ok = ent->SSH()->ParseFromJson(out);
                 if (!ok) continue;
             }
 
@@ -355,7 +355,7 @@ namespace Subscription {
     void RawUpdater::updateWireguardFileConfig(const QString& str)
     {
         auto ent = Configs::ProfileManager::NewProxyEntity("wireguard");
-        auto ok = ent->WireguardBean()->TryParseLink(str);
+        auto ok = ent->Wireguard()->ParseFromLink(str);
         if (!ok) return;
         updated_order += ent;
     }
@@ -434,23 +434,23 @@ namespace Subscription {
                 if (type == "socks5") type = "socks";
 
                 auto ent = Configs::ProfileManager::NewProxyEntity(type);
-                if (ent->bean->version == -114514) continue;
+                if (ent->outbound->DisplayType().isEmpty()) continue;
                 bool needFix = false;
 
                 // common
-                ent->bean->name = Node2QString(proxy["name"]);
-                ent->bean->serverAddress = Node2QString(proxy["server"]);
-                ent->bean->serverPort = Node2Int(proxy["port"]);
+                ent->outbound->commons->name = Node2QString(proxy["name"]);
+                ent->outbound->commons->server = Node2QString(proxy["server"]);
+                ent->outbound->commons->server_port = Node2Int(proxy["port"]);
 
                 if (type_clash == "ss") {
-                    auto bean = ent->ShadowSocksBean();
+                    auto bean = ent->ShadowSocks();
                     bean->method = Node2QString(proxy["cipher"]).replace("dummy", "none");
                     bean->password = Node2QString(proxy["password"]);
 
                     // UDP over TCP
                     if (Node2Bool(proxy["udp-over-tcp"])) {
                         bean->uot = Node2Int(proxy["udp-over-tcp-version"]);
-                        if (bean->uot == 0) bean->uot = 2;
+                        if (bean->uot == 0) bean->uot = true;
                     }
 
                     if (proxy.contains("plugin") && proxy.contains("plugin-opts")) {
@@ -480,56 +480,51 @@ namespace Subscription {
 
                     // sing-mux
                     auto smux = NodeChild(proxy, {"smux"});
-                    if (!smux.is_null() && Node2Bool(smux["enabled"])) bean->mux_state = 1;
-                } else if (type == "socks" || type == "http") {
-                    auto bean = ent->SocksHTTPBean();
+                    if (!smux.is_null() && Node2Bool(smux["enabled"])) bean->multiplex->enabled = true;
+                } else if (type == "http") {
+                    auto bean = ent->Http();
                     bean->username = Node2QString(proxy["username"]);
                     bean->password = Node2QString(proxy["password"]);
                     if (type == "http" && Node2Bool(proxy["tls"])) {
-                        bean->stream->security = "tls";
-                        if (Node2Bool(proxy["skip-cert-verify"])) bean->stream->allow_insecure = true;
-                        bean->stream->sni = FIRST_OR_SECOND(Node2QString(proxy["sni"]), Node2QString(proxy["servername"]));
-                        bean->stream->alpn = Node2QStringList(proxy["alpn"]).join(",");
-                        bean->stream->utlsFingerprint = Node2QString(proxy["client-fingerprint"]);
-                        if (bean->stream->utlsFingerprint.isEmpty()) {
-                            bean->stream->utlsFingerprint = Configs::dataStore->utlsFingerprint;
+                        bean->tls->enabled = true;
+                        if (Node2Bool(proxy["skip-cert-verify"])) bean->tls->insecure = true;
+                        bean->tls->server_name = FIRST_OR_SECOND(Node2QString(proxy["sni"]), Node2QString(proxy["servername"]));
+                        bean->tls->alpn = Node2QStringList(proxy["alpn"]);
+                        bean->tls->utls->fingerPrint = Node2QString(proxy["client-fingerprint"]);
+                        bean->tls->utls->enabled = true;
+                        if (bean->tls->utls->fingerPrint.isEmpty()) {
+                            bean->tls->utls->fingerPrint = Configs::dataStore->utlsFingerprint;
                         }
 
                         auto reality = NodeChild(proxy, {"reality-opts"});
                         if (reality.is_mapping()) {
-                            bean->stream->reality_pbk = Node2QString(reality["public-key"]);
-                            bean->stream->reality_sid = Node2QString(reality["short-id"]);
+                            bean->tls->reality->enabled = true;
+                            bean->tls->reality->public_key = Node2QString(reality["public-key"]);
+                            bean->tls->reality->short_id = Node2QString(reality["short-id"]);
                         }
                     }
-                } else if (type == "trojan" || type == "vless") {
+                } else if (type == "socks") {
+                    auto bean = ent->Socks();
+                    bean->username = Node2QString(proxy["username"]);
+                    bean->password = Node2QString(proxy["password"]);
+                } else if (type == "trojan") {
                     needFix = true;
-                    auto bean = ent->TrojanVLESSBean();
-                    if (type == "vless") {
-                        bean->flow = Node2QString(proxy["flow"]);
-                        bean->password = Node2QString(proxy["uuid"]);
-                        // meta packet encoding
-                        if (Node2Bool(proxy["packet-addr"])) {
-                            bean->stream->packet_encoding = "packetaddr";
-                        } else {
-                            // For VLESS, default to use xudp
-                            bean->stream->packet_encoding = "xudp";
-                        }
-                    } else {
-                        bean->password = Node2QString(proxy["password"]);
-                    }
-                    bean->stream->security = "tls";
-                    bean->stream->network = Node2QString(proxy["network"], "tcp");
-                    bean->stream->sni = FIRST_OR_SECOND(Node2QString(proxy["sni"]), Node2QString(proxy["servername"]));
-                    bean->stream->alpn = Node2QStringList(proxy["alpn"]).join(",");
-                    bean->stream->allow_insecure = Node2Bool(proxy["skip-cert-verify"]);
-                    bean->stream->utlsFingerprint = Node2QString(proxy["client-fingerprint"]);
-                    if (bean->stream->utlsFingerprint.isEmpty()) {
-                        bean->stream->utlsFingerprint = Configs::dataStore->utlsFingerprint;
+                    auto bean = ent->Trojan();
+                    bean->password = Node2QString(proxy["password"]);
+                    bean->tls->enabled = true;
+                    bean->transport->type = Node2QString(proxy["network"], "tcp");
+                    bean->tls->server_name = FIRST_OR_SECOND(Node2QString(proxy["sni"]), Node2QString(proxy["servername"]));
+                    bean->tls->alpn = Node2QStringList(proxy["alpn"]);
+                    bean->tls->insecure = Node2Bool(proxy["skip-cert-verify"]);
+                    bean->tls->utls->fingerPrint = Node2QString(proxy["client-fingerprint"]);
+                    bean->tls->utls->enabled = true;
+                    if (bean->tls->utls->fingerPrint.isEmpty()) {
+                        bean->tls->utls->fingerPrint = Configs::dataStore->utlsFingerprint;
                     }
 
                     // sing-mux
                     auto smux = NodeChild(proxy, {"smux"});
-                    if (!smux.is_null() && Node2Bool(smux["enabled"])) bean->mux_state = 1;
+                    if (!smux.is_null() && Node2Bool(smux["enabled"])) bean->multiplex->enabled = true;
 
                     // opts
                     auto ws = NodeChild(proxy, {"ws-opts", "ws-opt"});
@@ -539,51 +534,57 @@ namespace Subscription {
                             for (auto header: headers.as_map()) {
                                 if (Node2QString(header.first).toLower() == "host") {
                                     if (header.second.is_string())
-                                        bean->stream->host = Node2QString(header.second);
+                                        bean->transport->host = Node2QString(header.second);
                                     else if (header.second.is_sequence() && header.second[0].is_string())
-                                        bean->stream->host = Node2QString(header.second[0]);
+                                        bean->transport->host = Node2QString(header.second[0]);
                                     break;
                                 }
                             }
                         }
-                        bean->stream->path = Node2QString(ws["path"]);
-                        bean->stream->ws_early_data_length = Node2Int(ws["max-early-data"]);
-                        bean->stream->ws_early_data_name = Node2QString(ws["early-data-header-name"]);
+                        bean->transport->path = Node2QString(ws["path"]);
+                        bean->transport->max_early_data = Node2Int(ws["max-early-data"]);
+                        bean->transport->early_data_header_name = Node2QString(ws["early-data-header-name"]);
                     }
 
                     auto grpc = NodeChild(proxy, {"grpc-opts", "grpc-opt"});
                     if (grpc.is_mapping()) {
-                        bean->stream->path = Node2QString(grpc["grpc-service-name"]);
+                        bean->transport->path = Node2QString(grpc["grpc-service-name"]);
                     }
 
                     auto reality = NodeChild(proxy, {"reality-opts"});
                     if (reality.is_mapping()) {
-                        bean->stream->reality_pbk = Node2QString(reality["public-key"]);
-                        bean->stream->reality_sid = Node2QString(reality["short-id"]);
+                        bean->tls->reality->enabled = true;
+                        bean->tls->reality->public_key = Node2QString(reality["public-key"]);
+                        bean->tls->reality->short_id = Node2QString(reality["short-id"]);
                     }
-                } else if (type == "vmess") {
+                } else if (type == "vless") {
                     needFix = true;
-                    auto bean = ent->VMessBean();
-                    bean->uuid = Node2QString(proxy["uuid"]);
-                    bean->aid = Node2Int(proxy["alterId"]);
-                    bean->security = Node2QString(proxy["cipher"], bean->security);
-                    bean->stream->network = Node2QString(proxy["network"], "tcp").replace("h2", "http");
-                    bean->stream->sni = FIRST_OR_SECOND(Node2QString(proxy["sni"]), Node2QString(proxy["servername"]));
-                    bean->stream->alpn = Node2QStringList(proxy["alpn"]).join(",");
-                    if (Node2Bool(proxy["tls"])) bean->stream->security = "tls";
-                    if (Node2Bool(proxy["skip-cert-verify"])) bean->stream->allow_insecure = true;
-                    bean->stream->utlsFingerprint = Node2QString(proxy["client-fingerprint"]);
-                    if (bean->stream->utlsFingerprint.isEmpty()) {
-                        bean->stream->utlsFingerprint = Configs::dataStore->utlsFingerprint;
+                    auto bean = ent->VLESS();
+                    if (type == "vless") {
+                        bean->flow = Node2QString(proxy["flow"]);
+                        bean->uuid = Node2QString(proxy["uuid"]);
+                        // meta packet encoding
+                        if (Node2Bool(proxy["packet-addr"])) {
+                            bean->packet_encoding = "packetaddr";
+                        } else {
+                            // For VLESS, default to use xudp
+                            bean->packet_encoding = "xudp";
+                        }
+                    }
+                    bean->tls->enabled = true;
+                    bean->transport->type = Node2QString(proxy["network"], "tcp");
+                    bean->tls->server_name = FIRST_OR_SECOND(Node2QString(proxy["sni"]), Node2QString(proxy["servername"]));
+                    bean->tls->alpn = Node2QStringList(proxy["alpn"]);
+                    bean->tls->insecure = Node2Bool(proxy["skip-cert-verify"]);
+                    bean->tls->utls->enabled = true;
+                    bean->tls->utls->fingerPrint = Node2QString(proxy["client-fingerprint"]);
+                    if (bean->tls->utls->fingerPrint.isEmpty()) {
+                        bean->tls->utls->fingerPrint = Configs::dataStore->utlsFingerprint;
                     }
 
                     // sing-mux
                     auto smux = NodeChild(proxy, {"smux"});
-                    if (!smux.is_null() && Node2Bool(smux["enabled"])) bean->mux_state = 1;
-
-                    // meta packet encoding
-                    if (Node2Bool(proxy["xudp"])) bean->stream->packet_encoding = "xudp";
-                    if (Node2Bool(proxy["packet-addr"])) bean->stream->packet_encoding = "packetaddr";
+                    if (!smux.is_null() && Node2Bool(smux["enabled"])) bean->multiplex->enabled = 1;
 
                     // opts
                     auto ws = NodeChild(proxy, {"ws-opts", "ws-opt"});
@@ -592,100 +593,156 @@ namespace Subscription {
                         if (headers.is_mapping()) {
                             for (auto header: headers.as_map()) {
                                 if (Node2QString(header.first).toLower() == "host") {
-                                    bean->stream->host = Node2QString(header.second);
+                                    if (header.second.is_string())
+                                        bean->transport->host = Node2QString(header.second);
+                                    else if (header.second.is_sequence() && header.second[0].is_string())
+                                        bean->transport->host = Node2QString(header.second[0]);
                                     break;
                                 }
                             }
                         }
-                        bean->stream->path = Node2QString(ws["path"]);
-                        bean->stream->ws_early_data_length = Node2Int(ws["max-early-data"]);
-                        bean->stream->ws_early_data_name = Node2QString(ws["early-data-header-name"]);
+                        bean->transport->path = Node2QString(ws["path"]);
+                        bean->transport->max_early_data = Node2Int(ws["max-early-data"]);
+                        bean->transport->early_data_header_name = Node2QString(ws["early-data-header-name"]);
+                    }
+
+                    auto grpc = NodeChild(proxy, {"grpc-opts", "grpc-opt"});
+                    if (grpc.is_mapping()) {
+                        bean->transport->path = Node2QString(grpc["grpc-service-name"]);
+                    }
+
+                    auto reality = NodeChild(proxy, {"reality-opts"});
+                    if (reality.is_mapping()) {
+                        bean->tls->reality->enabled = true;
+                        bean->tls->reality->public_key = Node2QString(reality["public-key"]);
+                        bean->tls->reality->short_id = Node2QString(reality["short-id"]);
+                    }
+                } else if (type == "vmess") {
+                    needFix = true;
+                    auto bean = ent->VMess();
+                    bean->uuid = Node2QString(proxy["uuid"]);
+                    bean->alter_id = Node2Int(proxy["alterId"]);
+                    bean->security = Node2QString(proxy["cipher"], bean->security);
+                    bean->transport->type = Node2QString(proxy["network"], "tcp").replace("h2", "http");
+                    bean->tls->server_name = FIRST_OR_SECOND(Node2QString(proxy["sni"]), Node2QString(proxy["servername"]));
+                    bean->tls->alpn = Node2QStringList(proxy["alpn"]);
+                    if (Node2Bool(proxy["tls"])) bean->tls->enabled = true;
+                    if (Node2Bool(proxy["skip-cert-verify"])) bean->tls->insecure = true;
+                    bean->tls->utls->fingerPrint = Node2QString(proxy["client-fingerprint"]);
+                    bean->tls->utls->enabled = true;
+                    if (bean->tls->utls->fingerPrint.isEmpty()) {
+                        bean->tls->utls->fingerPrint = Configs::dataStore->utlsFingerprint;
+                    }
+
+                    // sing-mux
+                    auto smux = NodeChild(proxy, {"smux"});
+                    if (!smux.is_null() && Node2Bool(smux["enabled"])) bean->multiplex->enabled = true;
+
+                    // meta packet encoding
+                    if (Node2Bool(proxy["xudp"])) bean->packet_encoding = "xudp";
+                    if (Node2Bool(proxy["packet-addr"])) bean->packet_encoding = "packetaddr";
+
+                    // opts
+                    auto ws = NodeChild(proxy, {"ws-opts", "ws-opt"});
+                    if (ws.is_mapping()) {
+                        auto headers = ws["headers"];
+                        if (headers.is_mapping()) {
+                            for (auto header: headers.as_map()) {
+                                if (Node2QString(header.first).toLower() == "host") {
+                                    bean->transport->host = Node2QString(header.second);
+                                    break;
+                                }
+                            }
+                        }
+                        bean->transport->path = Node2QString(ws["path"]);
+                        bean->transport->max_early_data = Node2Int(ws["max-early-data"]);
+                        bean->transport->early_data_header_name = Node2QString(ws["early-data-header-name"]);
                         // for Xray
                         if (Node2QString(ws["early-data-header-name"]) == "Sec-WebSocket-Protocol") {
-                            bean->stream->path += "?ed=" + Node2QString(ws["max-early-data"]);
+                            bean->transport->path += "?ed=" + Node2QString(ws["max-early-data"]);
                         }
                     }
 
                     auto grpc = NodeChild(proxy, {"grpc-opts", "grpc-opt"});
                     if (grpc.is_mapping()) {
-                        bean->stream->path = Node2QString(grpc["grpc-service-name"]);
+                        bean->transport->path = Node2QString(grpc["grpc-service-name"]);
                     }
 
                     auto h2 = NodeChild(proxy, {"h2-opts", "h2-opt"});
                     if (h2.is_mapping()) {
                         auto hosts = h2["host"];
                         for (auto host: hosts) {
-                            bean->stream->host = Node2QString(host);
+                            bean->transport->host = Node2QString(host);
                             break;
                         }
-                        bean->stream->path = Node2QString(h2["path"]);
+                        bean->transport->path = Node2QString(h2["path"]);
                     }
                     auto tcp_http = NodeChild(proxy, {"http-opts", "http-opt"});
                     if (tcp_http.is_mapping()) {
-                        bean->stream->network = "tcp";
-                        bean->stream->header_type = "http";
+                        bean->transport->type = "http";
                         auto headers = tcp_http["headers"];
                         if (headers.is_mapping()) {
                             for (auto header: headers.as_map()) {
                                 if (Node2QString(header.first).toLower() == "host") {
-                                    bean->stream->host = Node2QString(header.second);
+                                    bean->transport->host = Node2QString(header.second);
                                     break;
                                 }
                             }
                         }
                         auto paths = tcp_http["path"];
                         if (paths.is_string())
-                            bean->stream->path = Node2QString(paths);
+                            bean->transport->path = Node2QString(paths);
                         else if (paths.is_sequence() && paths[0].is_string())
-                            bean->stream->path = Node2QString(paths[0]);
+                            bean->transport->path = Node2QString(paths[0]);
                     }
                 } else if (type == "anytls") {
                     needFix = true;
-                    auto bean = ent->AnyTLSBean();
+                    auto bean = ent->AnyTLS();
                     bean->password = Node2QString(proxy["password"]);
-                    bean->stream->security = "tls";
-                    if (Node2Bool(proxy["skip-cert-verify"])) bean->stream->allow_insecure = true;
-                    bean->stream->sni = FIRST_OR_SECOND(Node2QString(proxy["sni"]), Node2QString(proxy["servername"]));
-                    bean->stream->alpn = Node2QStringList(proxy["alpn"]).join(",");
-                    bean->stream->utlsFingerprint = Node2QString(proxy["client-fingerprint"]);
-                    if (bean->stream->utlsFingerprint.isEmpty()) {
-                        bean->stream->utlsFingerprint = Configs::dataStore->utlsFingerprint;
+                    bean->tls->enabled = true;
+                    if (Node2Bool(proxy["skip-cert-verify"])) bean->tls->insecure = true;
+                    bean->tls->server_name = FIRST_OR_SECOND(Node2QString(proxy["sni"]), Node2QString(proxy["servername"]));
+                    bean->tls->alpn = Node2QStringList(proxy["alpn"]);
+                    bean->tls->utls->fingerPrint = Node2QString(proxy["client-fingerprint"]);
+                    bean->tls->utls->enabled = true;
+                    if (bean->tls->utls->fingerPrint.isEmpty()) {
+                        bean->tls->utls->fingerPrint = Configs::dataStore->utlsFingerprint;
                     }
 
                     auto reality = NodeChild(proxy, {"reality-opts"});
                     if (reality.is_mapping()) {
-                        bean->stream->reality_pbk = Node2QString(reality["public-key"]);
-                        bean->stream->reality_sid = Node2QString(reality["short-id"]);
+                        bean->tls->reality->enabled = true;
+                        bean->tls->reality->public_key = Node2QString(reality["public-key"]);
+                        bean->tls->reality->short_id = Node2QString(reality["short-id"]);
                     }
                 } else if (type == "hysteria") {
-                    auto bean = ent->QUICBean();
+                    auto bean = ent->Hysteria();
 
-                    bean->allowInsecure = Node2Bool(proxy["skip-cert-verify"]);
+                    bean->tls->enabled = true;
+                    bean->tls->insecure = Node2Bool(proxy["skip-cert-verify"]);
                     auto alpn = Node2QStringList(proxy["alpn"]);
-                    bean->caText = Node2QString(proxy["ca-str"]);
-                    if (!alpn.isEmpty()) bean->alpn = alpn[0];
-                    bean->sni = Node2QString(proxy["sni"]);
+                    bean->tls->certificate = Node2QString(proxy["ca-str"]);
+                    if (!alpn.isEmpty()) bean->tls->alpn = {alpn[0]};
+                    bean->tls->server_name = Node2QString(proxy["sni"]);
 
                     auto auth_str = FIRST_OR_SECOND(Node2QString(proxy["auth_str"]), Node2QString(proxy["auth-str"]));
                     auto auth = Node2QString(proxy["auth"]);
                     if (!auth_str.isEmpty()) {
-                        bean->authPayloadType = Configs::QUICBean::hysteria_auth_string;
-                        bean->authPayload = auth_str;
+                        bean->auth_str = auth_str;
                     }
                     if (!auth.isEmpty()) {
-                        bean->authPayloadType = Configs::QUICBean::hysteria_auth_base64;
-                        bean->authPayload = auth;
+                        bean->auth = auth;
                     }
-                    bean->obfsPassword = Node2QString(proxy["obfs"]);
+                    bean->obfs = Node2QString(proxy["obfs"]);
 
-                    if (Node2Bool(proxy["disable_mtu_discovery"]) || Node2Bool(proxy["disable-mtu-discovery"])) bean->disableMtuDiscovery = true;
-                    bean->streamReceiveWindow = Node2Int(proxy["recv-window"]);
-                    bean->connectionReceiveWindow = Node2Int(proxy["recv-window-conn"]);
+                    if (Node2Bool(proxy["disable_mtu_discovery"]) || Node2Bool(proxy["disable-mtu-discovery"])) bean->disable_mtu_discovery = true;
+                    bean->recv_window = Node2Int(proxy["recv-window"]);
+                    bean->recv_window_conn = Node2Int(proxy["recv-window-conn"]);
 
                     auto upMbps = Node2QString(proxy["up"]).split(" ")[0].toInt();
                     auto downMbps = Node2QString(proxy["down"]).split(" ")[0].toInt();
-                    if (upMbps > 0) bean->uploadMbps = upMbps;
-                    if (downMbps > 0) bean->downloadMbps = downMbps;
+                    if (upMbps > 0) bean->up_mbps = upMbps;
+                    if (downMbps > 0) bean->down_mbps = downMbps;
 
                     auto ports = Node2QString(proxy["ports"]);
                     if (!ports.isEmpty()) {
@@ -699,20 +756,21 @@ namespace Subscription {
                             modifiedPort.replace("-", ":");
                             serverPorts.append(modifiedPort);
                         }
-                        bean->serverPorts = serverPorts;
+                        bean->server_ports = serverPorts;
                     }
                 } else if (type == "hysteria2") {
-                    auto bean = ent->QUICBean();
+                    auto bean = ent->Hysteria2();
 
-                    bean->allowInsecure = Node2Bool(proxy["skip-cert-verify"]);
-                    bean->caText = Node2QString(proxy["ca-str"]);
-                    bean->sni = Node2QString(proxy["sni"]);
+                    bean->tls->enabled = true;
+                    bean->tls->insecure = Node2Bool(proxy["skip-cert-verify"]);
+                    bean->tls->certificate = Node2QString(proxy["ca-str"]);
+                    bean->tls->server_name = Node2QString(proxy["sni"]);
 
                     bean->obfsPassword = Node2QString(proxy["obfs-password"]);
                     bean->password = Node2QString(proxy["password"]);
 
-                    bean->uploadMbps = Node2QString(proxy["up"]).split(" ")[0].toInt();
-                    bean->downloadMbps = Node2QString(proxy["down"]).split(" ")[0].toInt();
+                    bean->up_mbps = Node2QString(proxy["up"]).split(" ")[0].toInt();
+                    bean->down_mbps = Node2QString(proxy["down"]).split(" ")[0].toInt();
 
                     auto ports = Node2QString(proxy["ports"]);
                     if (!ports.isEmpty()) {
@@ -726,10 +784,10 @@ namespace Subscription {
                             modifiedPort.replace("-", ":");
                             serverPorts.append(modifiedPort);
                         }
-                        bean->serverPorts = serverPorts;
+                        bean->server_ports = serverPorts;
                     }
                 } else if (type == "tuic") {
-                    auto bean = ent->QUICBean();
+                    auto bean = ent->TUIC();
 
                     bean->uuid = Node2QString(proxy["uuid"]);
                     bean->password = Node2QString(proxy["password"]);
@@ -738,21 +796,22 @@ namespace Subscription {
                         bean->heartbeat = Int2String(Node2Int(proxy["heartbeat-interval"])) + "ms";
                     }
 
-                    bean->udpRelayMode = Node2QString(proxy["udp-relay-mode"], bean->udpRelayMode);
-                    bean->congestionControl = Node2QString(proxy["congestion-controller"], bean->congestionControl);
+                    bean->udp_relay_mode = Node2QString(proxy["udp-relay-mode"], "native");
+                    bean->congestion_control = Node2QString(proxy["congestion-controller"], "bbr");
 
-                    bean->disableSni = Node2Bool(proxy["disable-sni"]);
-                    bean->zeroRttHandshake = Node2Bool(proxy["reduce-rtt"]);
-                    bean->allowInsecure = Node2Bool(proxy["skip-cert-verify"]);
-                    bean->alpn = Node2QStringList(proxy["alpn"]).join(",");
-                    bean->caText = Node2QString(proxy["ca-str"]);
-                    bean->sni = Node2QString(proxy["sni"]);
+                    bean->tls->enabled = true;
+                    bean->tls->disable_sni = Node2Bool(proxy["disable-sni"]);
+                    bean->zero_rtt_handshake = Node2Bool(proxy["reduce-rtt"]);
+                    bean->tls->insecure = Node2Bool(proxy["skip-cert-verify"]);
+                    bean->tls->alpn = Node2QStringList(proxy["alpn"]);
+                    bean->tls->certificate = Node2QString(proxy["ca-str"]);
+                    bean->tls->server_name = Node2QString(proxy["sni"]);
 
-                    if (Node2Bool(proxy["udp-over-stream"])) bean->uos = true;
+                    if (Node2Bool(proxy["udp-over-stream"])) bean->udp_over_stream = true;
 
                     if (!Node2QString(proxy["ip"]).isEmpty()) {
-                        if (bean->sni.isEmpty()) bean->sni = bean->serverAddress;
-                        bean->serverAddress = Node2QString(proxy["ip"]);
+                        if (bean->tls->server_name.isEmpty()) bean->tls->server_name = bean->commons->server;
+                        bean->commons->server = Node2QString(proxy["ip"]);
                     }
                 } else {
                     continue;
@@ -762,7 +821,7 @@ namespace Subscription {
                 updated_order += ent;
             }
         } catch (const fkyaml::exception &ex) {
-            runOnUiThread([=,this] {
+            runOnUiThread([=] {
                 MessageBoxWarning("YAML Exception", ex.what());
             });
         }

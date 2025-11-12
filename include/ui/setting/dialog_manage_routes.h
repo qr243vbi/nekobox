@@ -19,11 +19,9 @@ class DialogManageRoutes : public QDialog {
     Q_OBJECT
 
 public:
-    explicit DialogManageRoutes(MainWindow *parent);
+    explicit DialogManageRoutes(QWidget *parent);
 
     ~DialogManageRoutes() override;
-    
-    MainWindow * parent;
 
 private:
     Ui::DialogManageRoutes *ui;

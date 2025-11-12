@@ -16,7 +16,7 @@ EditChain::~EditChain() {
 
 void EditChain::onStart(std::shared_ptr<Configs::ProxyEntity> _ent) {
     this->ent = _ent;
-    auto bean = this->ent->ChainBean();
+    auto bean = this->ent->Chain();
 
     for (auto id: bean->list) {
         AddProfileToListIfExist(id);
@@ -29,7 +29,7 @@ bool EditChain::onEnd() {
         return false;
     }
 
-    auto bean = this->ent->ChainBean();
+    auto bean = this->ent->Chain();
 
     QList<int> idList;
     for (int i = 0; i < ui->listWidget->count(); i++) {

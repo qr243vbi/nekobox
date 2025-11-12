@@ -4,7 +4,6 @@
 #include <include/global/HTTPRequestHelper.hpp>
 #include <QFile>
 #include <iostream>
-#include "include/configs/ConfigBuilder.hpp"
 #include <include/js/version.h>
 #include <iostream>
 #include <QString>
@@ -13,6 +12,8 @@
 #include <memory>
 #include <functional>
 #include <QCoreApplication>
+#include <include/dataStore/ProxyEntity.hpp>
+#include <include/configs/generate.h>
 
 JsHTTPRequest::JsHTTPRequest(const QString& url): QObject(nullptr){
     init(url);

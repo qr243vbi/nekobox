@@ -15,18 +15,18 @@ EditVMess::~EditVMess() {
 
 void EditVMess::onStart(std::shared_ptr<Configs::ProxyEntity> _ent) {
     this->ent = _ent;
-    auto bean = this->ent->VMessBean();
+    auto bean = this->ent->VMess();
 
     ui->uuid->setText(bean->uuid);
-    ui->aid->setText(Int2String(bean->aid));
+    ui->aid->setText(Int2String(bean->alter_id));
     ui->security->setCurrentText(bean->security);
 }
 
 bool EditVMess::onEnd() {
-    auto bean = this->ent->VMessBean();
+    auto bean = this->ent->VMess();
 
     bean->uuid = ui->uuid->text();
-    bean->aid = ui->aid->text().toInt();
+    bean->alter_id = ui->aid->text().toInt();
     bean->security = ui->security->currentText();
 
     return true;

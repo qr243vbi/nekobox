@@ -23,7 +23,7 @@ class RouteItem : public QDialog {
     Q_OBJECT
 
 public:
-    explicit RouteItem(DialogManageRoutes *parent, const std::shared_ptr<Configs::RoutingChain>& routeChain = nullptr);
+    explicit RouteItem(QWidget *parent, const std::shared_ptr<Configs::RoutingChain>& routeChain = nullptr);
     ~RouteItem() override;
 
     std::shared_ptr<Configs::RoutingChain> chain;

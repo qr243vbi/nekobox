@@ -49,7 +49,7 @@ namespace Configs {
                 continue;
             }
             profiles[id] = ent;
-            if (ent->type == "extracore") extraCorePaths.insert(ent->ExtraCoreBean()->extraCorePath);
+            if (ent->type == "extracore") extraCorePaths.insert(ent->ExtraCore()->extraCorePath);
         }
         // Clear Corrupted profile
         for (auto id: delProfile) {
@@ -117,9 +117,77 @@ namespace Configs {
         JsonStore::Save();
     }
 
+    void migrateBeanToOutbound(const std::shared_ptr<ProxyEntity> &ent)
+    {
+        if (ent->type == "chain")
+        {
+            auto bean = dynamic_cast<Configs::ChainBean*>(ent->bean.get());
+            if (bean == nullptr)
+            {
+                qDebug() << "Broken state in migrate for chain";
+                return;
+            }
+            auto chain = ent->Chain();
+            if (chain == nullptr)
+            {
+                qDebug() << "Invalid state in migrate for chain";
+                return;
+            }
+            chain->commons->name = bean->name;
+            chain->list = bean->list;
+        } else if (ent->type == "custom")
+        {
+            auto bean = dynamic_cast<Configs::CustomBean*>(ent->bean.get());
+            if (bean == nullptr)
+            {
+                qDebug() << "Broken state in migrate for custom";
+                return;
+            }
+            auto custom = ent->Custom();
+            if (custom == nullptr)
+            {
+                qDebug() << "Invalid state in migrate for custom";
+                return;
+            }
+            custom->commons->name = bean->name;
+            custom->config = bean->config_simple;
+            custom->type = bean->core == "internal" ? "outbound" : "fullconfig";
+        } else if (ent->type == "extracore")
+        {
+            auto bean = dynamic_cast<Configs::ExtraCoreBean*>(ent->bean.get());
+            if (bean == nullptr)
+            {
+                qDebug() << "Broken state in migrate for extracore";
+                return;
+            }
+            auto extraCore = ent->ExtraCore();
+            if (extraCore == nullptr)
+            {
+                qDebug() << "Invalid state in migrate for extracore";
+                return;
+            }
+            extraCore->commons->name = bean->name;
+            extraCore->socksAddress = bean->socksAddress;
+            extraCore->socksPort = bean->socksPort;
+            extraCore->extraCorePath = bean->extraCorePath;
+            extraCore->extraCoreArgs = bean->extraCoreArgs;
+            extraCore->extraCoreConf = bean->extraCoreConf;
+            extraCore->noLogs = bean->noLogs;
+        } else
+        {
+            auto beanJson = ent->bean->BuildCoreObjSingBox();
+            auto obj = beanJson.outbound;
+            if (ent->bean->mux_state == 0) obj["multiplex"] = QJsonObject{};
+            else if (ent->bean->mux_state == 1) obj["multiplex"] = QJsonObject{{"enabled", true}};
+            else if (ent->bean->mux_state == 2) obj["multiplex"] = QJsonObject{{"enabled", false}};
+            ent->outbound->ParseFromJson(obj);
+            ent->outbound->commons->name = ent->bean->name;
+        }
+    }
+
     std::shared_ptr<ProxyEntity> ProfileManager::LoadProxyEntity(const QString &jsonPath) {
         // Load type
-        ProxyEntity ent0(nullptr, nullptr);
+        ProxyEntity ent0(nullptr, nullptr, nullptr);
         ent0.fn = jsonPath;
         auto validJson = ent0.Load();
         auto type = ent0.type;
@@ -137,6 +205,15 @@ namespace Configs {
             ent->load_control_must = true;
             ent->fn = jsonPath;
             ent->Load();
+            ent->_remove("bean");
+        }
+
+        if (!QString2QJsonObject(QString(ent->last_save_content.toStdString().c_str())).contains("outbound"))
+        {
+            qDebug() << "migrating" << ent->type;
+            // migrate
+            migrateBeanToOutbound(ent);
+            ent->Save();
         }
         return ent;
     }
@@ -151,48 +228,64 @@ namespace Configs {
         return routingChain;
     }
 
-    //  新建的不给 fn 和 id
-
     std::shared_ptr<ProxyEntity> ProfileManager::NewProxyEntity(const QString &type) {
         Configs::AbstractBean *bean;
+        Configs::outbound *outbound;
 
         if (type == "socks") {
             bean = new Configs::SocksHttpBean(Configs::SocksHttpBean::type_Socks5);
+            outbound = new Configs::socks();
         } else if (type == "http") {
             bean = new Configs::SocksHttpBean(Configs::SocksHttpBean::type_HTTP);
+            outbound = new Configs::http();
         } else if (type == "shadowsocks") {
             bean = new Configs::ShadowSocksBean();
+            outbound = new Configs::shadowsocks();
         } else if (type == "chain") {
             bean = new Configs::ChainBean();
+            outbound = new Configs::chain();
         } else if (type == "vmess") {
             bean = new Configs::VMessBean();
+            outbound = new Configs::vmess();
         } else if (type == "trojan") {
             bean = new Configs::TrojanVLESSBean(Configs::TrojanVLESSBean::proxy_Trojan);
+            outbound = new Configs::Trojan();
         } else if (type == "vless") {
             bean = new Configs::TrojanVLESSBean(Configs::TrojanVLESSBean::proxy_VLESS);
+            outbound = new Configs::vless();
         } else if (type == "hysteria") {
             bean = new Configs::QUICBean(Configs::QUICBean::proxy_Hysteria);
+            outbound = new Configs::hysteria();
         } else if (type == "hysteria2") {
             bean = new Configs::QUICBean(Configs::QUICBean::proxy_Hysteria2);
+            outbound = new Configs::hysteria2();
         } else if (type == "tuic") {
             bean = new Configs::QUICBean(Configs::QUICBean::proxy_TUIC);
+            outbound = new Configs::tuic();
         } else if (type == "anytls") {
             bean = new Configs::AnyTLSBean();
+            outbound = new Configs::anyTLS();
         } else if (type == "wireguard") {
             bean = new Configs::WireguardBean(Configs::WireguardBean());
+            outbound = new Configs::wireguard();
         } else if (type == "tailscale") {
             bean = new Configs::TailscaleBean(Configs::TailscaleBean());
+            outbound = new Configs::tailscale();
         } else if (type == "ssh") {
             bean = new Configs::SSHBean(Configs::SSHBean());
+            outbound = new Configs::ssh();
         } else if (type == "custom") {
             bean = new Configs::CustomBean();
+            outbound = new Configs::Custom();
         } else if (type == "extracore") {
             bean = new Configs::ExtraCoreBean();
+            outbound = new Configs::extracore();
         } else {
             bean = new Configs::AbstractBean(-114514);
+            outbound = new Configs::outbound();
         }
 
-        auto ent = std::make_shared<ProxyEntity>(bean, type);
+        auto ent = std::make_shared<ProxyEntity>(outbound, bean, type);
         return ent;
     }
 

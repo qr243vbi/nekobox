@@ -7,6 +7,7 @@
 #include "3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.hpp"
 #include "include/global/GuiUtils.hpp"
 #include "include/configs/proxy/Preset.hpp"
+#include "include/js/ruleset.h"
 
 #include <QFile>
 #include <QMessageBox>
@@ -68,9 +69,8 @@ bool DialogManageRoutes::validate_dns_rules(const QString &rawString) {
     return true;
 }
 
-DialogManageRoutes::DialogManageRoutes(MainWindow *parent) : QDialog(parent), ui(new Ui::DialogManageRoutes) {
+DialogManageRoutes::DialogManageRoutes(QWidget *parent) : QDialog(parent), ui(new Ui::DialogManageRoutes) {
     ui->setupUi(this);
-    this->parent = parent;
     auto profiles = Configs::profileManager->routes;
     for (const auto &item: profiles) {
         chainList << item.second;
@@ -156,7 +156,7 @@ DialogManageRoutes::DialogManageRoutes(MainWindow *parent) : QDialog(parent), ui
     });
 
     QStringList ruleItems = {"domain:", "suffix:", "regex:"};
-    for (const auto& item : parent->ruleSetMap) {
+    for (const auto& item : ruleSetMap) {
         ruleItems.append("ruleset:" + QString::fromStdString(item.first));
     }
     rule_editor = new AutoCompleteTextEdit("", ruleItems, this);
