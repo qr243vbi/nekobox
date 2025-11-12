@@ -6,6 +6,7 @@ toolchain go1.24.4
 
 require (
 	github.com/Mahdi-zarei/speedtest-go v1.7.12
+	github.com/NullYing/npipe v0.0.0-20250430055250-2d2a4d962cf7
 	github.com/chai2010/protorpc v0.0.0-00010101000000-000000000000
 	github.com/dustin/go-humanize v1.0.1
 	github.com/gofrs/uuid/v5 v5.3.2
@@ -18,8 +19,6 @@ require (
 	golang.org/x/sys v0.37.0
 	google.golang.org/protobuf v1.36.10
 )
-
-replace github.com/sagernet/sing-box => github.com/throneproj/sing-box v1.11.16-0.20251027170654-efe4b5f5b1e4
 
 replace github.com/sagernet/wireguard-go => github.com/throneproj/wireguard-go v0.0.1-beta.7.0.20250728063157-408bba78ad26
 
@@ -53,7 +52,7 @@ require (
 	github.com/golang/groupcache v0.0.0-20210331224755-41bb18bfe9da // indirect
 	github.com/google/btree v1.1.3 // indirect
 	github.com/google/go-cmp v0.7.0 // indirect
-	github.com/google/nftables v0.2.1-0.20240414091927-5e242ec57806 // indirect
+	github.com/google/nftables v0.3.0 // indirect
 	github.com/google/uuid v1.6.0 // indirect
 	github.com/gorilla/csrf v1.7.3-0.20250123201450-9dd6af1f6d30 // indirect
 	github.com/gorilla/securecookie v1.1.2 // indirect
@@ -132,5 +131,8 @@ require (
 	golang.zx2c4.com/wireguard/windows v0.5.3 // indirect
 	google.golang.org/genproto/googleapis/rpc v0.0.0-20250324211829-b45e905df463 // indirect
 	google.golang.org/grpc v1.73.0 // indirect
+	gopkg.in/natefinch/npipe.v2 v2.0.0-20160621034901-c1b8fa8bdcce // indirect
 	lukechampine.com/blake3 v1.3.0 // indirect
 )
+
+replace github.com/sagernet/sing-box => github.com/qr243vbi/sing-box v1.12.13-0.20251106192352-cd1a261b0bb1

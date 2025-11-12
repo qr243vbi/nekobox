@@ -2,8 +2,15 @@
 
 #include "include/dataStore/ProfileFilter.hpp"
 #include "include/configs/sub/GroupUpdater.hpp"
+#include "include/global/Utils.hpp"
 #include "include/sys/Process.hpp"
 #include "include/sys/AutoRun.hpp"
+
+#include <include/js/version.h>
+#include <QQueue>
+#include <QMutex>
+#include <QWaitCondition>
+#include <QJsonDocument>
 
 #include "include/ui/setting/ThemeManager.hpp"
 #include "include/ui/setting/Icon.hpp"
@@ -25,6 +32,7 @@
 #include "include/sys/windows/WinVersion.h"
 #else
 #ifdef Q_OS_LINUX
+#include <unistd.h> // For access()
 #include "include/sys/linux/LinuxCap.h"
 #include <QDBusInterface>
 #include <QDBusReply>
@@ -56,11 +64,36 @@
 #include <3rdparty/qv2ray/v2/proxy/QvProxyConfigurator.hpp>
 #include <include/global/HTTPRequestHelper.hpp>
 #include "include/global/DeviceDetailsHelper.hpp"
-
+#include "include/sys/Settings.h"
 #include "include/sys/macos/MacOS.h"
+#include <QDir>
+
+void setAppIcon(Icon::TrayIconStatus, QSystemTrayIcon*);
 
 void UI_InitMainWindow() {
     mainwindow = new MainWindow;
+}
+
+std::map<std::string, std::string> jsonToMap(const QByteArray& byteArray) {
+    std::map<std::string, std::string> result;
+
+    // Convert QByteArray to QJsonDocument
+    QJsonDocument jsonDoc = QJsonDocument::fromJson(byteArray);
+
+    // Check if conversion was successful
+    if (!jsonDoc.isNull() && jsonDoc.isObject()) {
+        QJsonObject jsonObj = jsonDoc.object();
+
+        // Iterate over the QJsonObject and populate the std::map
+        for (const auto& key : jsonObj.keys()) {
+            result[key.toStdString()] = jsonObj[key].toVariant().toString().toStdString();
+        }
+    } else {
+        // Handle error
+        qWarning() << "Failed to convert QByteArray to QJsonDocument.";
+    }
+
+    return result;
 }
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow) {
@@ -86,6 +119,30 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     themeManager->ApplyTheme(Configs::dataStore->theme);
     ui->setupUi(this);
 
+    // restore size and geometry
+    QSettings settings = getSettings();
+    {
+        int width, height, x, y;
+        this->stop_logs = !(settings.value("logs_enabled", true).toBool());
+        width = settings.value("width", 0).toInt();
+        height = settings.value("height", 0).toInt();
+        x = settings.value("X", 0).toInt();
+        y = settings.value("Y", 0).toInt();
+        if (width > 0){
+            if (height > 0){
+                resize(width, height);
+            }
+        }
+        if (x > 0){
+            if (y > 0){
+                move(x, y);
+            }
+        }
+        if (settings.value("maximized", false).toBool()){
+            showMaximized();
+        }
+    }
+
     // init shortcuts
     setActionsData();
     loadShortcuts();
@@ -104,6 +161,11 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
         themeManager->ApplyTheme(Configs::dataStore->theme, true);
     });
 #endif
+    connect(ui->data_view, &QTextBrowser::textChanged, [this]() {
+        QTextDocument *document = ui->data_view->document();
+        ui->data_view->setMaximumHeight(document->size().height());
+    });
+
     connect(themeManager, &ThemeManager::themeChanged, this, [=,this](const QString& theme){
         if (theme.toLower().contains("vista")) {
             // light themes
@@ -145,8 +207,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     Configs::dataStore->core_port = MkPort();
     if (Configs::dataStore->core_port <= 0) Configs::dataStore->core_port = 19810;
 
-    auto core_path = QApplication::applicationDirPath() + "/";
-    core_path += "Core";
+    QString core_path = getCorePath();
 
     QStringList args;
     args.push_back("-port");
@@ -157,6 +218,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     runOnThread(
         [=,this] {
             core_process = new Configs_sys::CoreProcess(core_path, args);
+            qDebug () << "Core file located at " << core_path;
             // Remember last started
             if (Configs::dataStore->remember_enable && Configs::dataStore->remember_id >= 0) {
                 core_process->start_profile_when_core_is_up = Configs::dataStore->remember_id;
@@ -206,21 +268,13 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     //
     RegisterHotkey(false);
     //
-    auto last_size = Configs::dataStore->mw_size.split("x");
-    if (last_size.length() == 2) {
-        auto w = last_size[0].toInt();
-        auto h = last_size[1].toInt();
-        if (w > 0 && h > 0) {
-            resize(w, h);
-        }
-    }
 
     // software_name
-    software_name = "Throne";
+    software_name = "nekobox";
     software_core_name = "sing-box";
     //
     if (auto dashDir = QDir("dashboard"); !dashDir.exists("dashboard") && QDir().mkdir("dashboard")) {
-        if (auto dashFile = QFile(":/Throne/dashboard-notice.html"); dashFile.exists() && dashFile.open(QIODevice::ReadOnly))
+        if (auto dashFile = QFile(":/nekobox/dashboard-notice.html"); dashFile.exists() && dashFile.open(QIODevice::ReadOnly))
         {
             auto data = dashFile.readAll();
             if (auto dest = QFile("dashboard/index.html"); dest.open(QIODevice::Truncate | QIODevice::WriteOnly))
@@ -238,11 +292,18 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     ui->toolButton_server->setMenu(ui->menu_server);
     ui->toolButton_routing->setMenu(ui->menuRouting_Menu);
     ui->menubar->setVisible(false);
+#ifndef SKIP_UPDATE_BUTTON
     connect(ui->toolButton_update, &QToolButton::clicked, this, [=,this] { runOnNewThread([=,this] { CheckUpdate(); }); });
-    if (!QFile::exists(QApplication::applicationDirPath() + "/updater") && !QFile::exists(QApplication::applicationDirPath() + "/updater.exe"))
-    {
+#ifndef SKIP_JS_UPDATER
+	if (
+       !QFile::exists(getResource("check_new_release.js"))
+    ) {
         ui->toolButton_update->hide();
     }
+#endif
+#else
+    ui->toolButton_update->hide();
+#endif
 
     // setup connection UI
     setupConnectionList();
@@ -281,6 +342,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
         refresh_proxy_list();
         group->Save();
     };
+
     if (auto button = ui->proxyListTable->findChild<QAbstractButton *>(QString(), Qt::FindDirectChildrenOnly)) {
         // Corner Button
         connect(button, &QAbstractButton::clicked, this, [=,this] { refresh_proxy_list_impl(-1, {GroupSortMethod::ById}); });
@@ -348,7 +410,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 
     // Setup Tray
     tray = new QSystemTrayIcon(nullptr);
-    tray->setIcon(GetTrayIcon(Icon::NONE));
+    setAppIcon(Icon::NONE, tray);
     auto *trayMenu = new QMenu();
     trayMenu->addAction(ui->actionShow_window);
     trayMenu->addSeparator();
@@ -446,9 +508,47 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
         }
     });
 
+
+	QFile* srslist = new QFile("srslist.json");
+    if (!srslist->exists()){
+        delete srslist;
+        srslist = new QFile(getResource("srslist.json"));
+    }
+    if (srslist->exists() && srslist->open(QIODevice::ReadOnly)) {
+        QByteArray byteArray = srslist->readAll();
+        srslist->close();
+        delete srslist;
+        ruleSetMap = jsonToMap(byteArray);
+    } else {
+        delete srslist;
+        auto getRuleSet = [=,this]
+        {
+            QString err;
+            for(int retry = 0; retry < 5; retry++) {
+                auto resp = NetworkRequestHelper::HttpGet(Configs::get_jsdelivr_link("https://github.com/qr243vbi/ruleset/raw/refs/heads/rule-set/srslist.json"));
+                if (resp.error.isEmpty()) {
+                    ruleSetMap = jsonToMap(resp.data);
+                    QFile file;
+                    file.setFileName("srslist.json");
+                    if (file.open(QIODevice::ReadWrite | QIODevice::Truncate)){
+                        file.write(resp.data);
+                        file.close();
+                    }
+                    return;
+                }
+                else
+                    err = resp.error;
+                QThread::sleep(30);
+            }
+            MW_show_log(QObject::tr("Requesting rule-set list error: %1").arg(err));
+        };
+        runOnNewThread(getRuleSet);
+    }
+
     auto getRemoteRouteProfiles = [=,this]
     {
-        auto resp = NetworkRequestHelper::HttpGet("https://api.github.com/repos/throneproj/routeprofiles/git/trees/profile");
+#ifdef SKIP_JS_UPDATER
+        auto resp = NetworkRequestHelper::HttpGet("https://api.github.com/repos/qr243vbi/ruleset/git/trees/routeprofiles");
         if (resp.error.isEmpty()) {
             QStringList newRemoteRouteProfiles;
             QJsonObject release = QString2QJsonObject(resp.data);
@@ -461,8 +561,40 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
             }
             mu_remoteRouteProfiles.lock();
             remoteRouteProfiles = newRemoteRouteProfiles;
+
+            remoteRouteProfileGetter = [=, this] (QString profile) -> QString {
+                NetworkRequestHelper::HttpGet(Configs::get_jsdelivr_link("https://raw.githubusercontent.com/qr243vbi/ruleset/routeprofiles/" + profile + ".json"));
+                if (!resp.error.isEmpty()) {
+                    runOnUiThread([=,this] {
+                        MessageBoxWarning(QObject::tr("Download Profiles"), QObject::tr("Requesting profile error: %1").arg(resp.error + "\n" + resp.data));
+                    });
+                    return "";
+                }
+                return resp.data;
+            };
             mu_remoteRouteProfiles.unlock();
         }
+#else
+QString updater_js = "";
+{
+    QFile file(getResource("check_routeprofiles.js"));
+
+    if (file.exists()) {
+        if (file.open(QIODevice::ReadOnly | QIODevice::Text)) {
+            QTextStream in(&file);
+            updater_js = in.readAll().toUtf8().constData();
+            file.close();
+            {
+                auto bQueue = createJsUpdaterWindow();
+                mu_remoteRouteProfiles.lock();
+                jsRouteProfileGetter(bQueue, &updater_js, &remoteRouteProfiles, &remoteRouteProfileGetter);
+                mu_remoteRouteProfiles.unlock();
+            }
+        }
+    }
+}
+
+#endif
     };
     runOnNewThread(getRemoteRouteProfiles);
 
@@ -494,15 +626,15 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
                 action->setText(profile);
                 connect(action, &QAction::triggered, this, [=,this]()
                 {
-                    auto resp = NetworkRequestHelper::HttpGet(Configs::get_jsdelivr_link("https://raw.githubusercontent.com/throneproj/routeprofiles/profile/" + profile + ".json"));
-                    if (!resp.error.isEmpty()) {
-                        runOnUiThread([=,this] {
-                            MessageBoxWarning(QObject::tr("Download Profiles"), QObject::tr("Requesting profile error: %1").arg(resp.error + "\n" + resp.data));
-                        });
+                    auto resp = remoteRouteProfileGetter(profile);
+                    if (resp.isEmpty()){
                         return;
+                    } else {
+                        qDebug() << resp;
                     }
+
                     auto err = new QString;
-                    auto parsed = Configs::RoutingChain::parseJsonArray(QString2QJsonArray(resp.data), err);
+                    auto parsed = Configs::RoutingChain::parseJsonArray(QString2QJsonArray(resp), err);
                     if (!err->isEmpty()) {
                         runOnUiThread([=,this]
                         {
@@ -597,10 +729,11 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
             MW_show_log("File too large, will not process it");
             return;
         }
-        file.open(QIODevice::ReadOnly);
-        auto contents = file.readAll();
-        file.close();
-        Subscription::groupUpdater->AsyncUpdate(contents);
+        if (file.open(QIODevice::ReadOnly)){
+            auto contents = file.readAll();
+            file.close();
+            Subscription::groupUpdater->AsyncUpdate(contents);
+        }
     });
 
     connect(qApp, &QGuiApplication::commitDataRequest, this, &MainWindow::on_commitDataRequest);
@@ -626,6 +759,8 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 
     ui->data_view->setStyleSheet("background: transparent; border: none;");
 }
+
+#include <iostream>
 
 void MainWindow::closeEvent(QCloseEvent *event) {
     if (tray->isVisible()) {
@@ -658,7 +793,9 @@ void MainWindow::dropEvent(QDropEvent* event)
                     parseQrImage(&qpx);
                 } else if (auto file = QFile(url.toLocalFile()); file.exists())
                 {
-                    file.open(QFile::ReadOnly);
+                    if (!file.open(QFile::ReadOnly)){
+                        MW_show_log("File is not accessible, will not parse it");
+                    }
                     if (file.size() > 50 * 1024 * 1024)
                     {
                         file.close();
@@ -727,19 +864,25 @@ void MainWindow::show_group(int gid) {
 
     ui->tabWidget->widget(groupId2TabIndex(gid))->layout()->addWidget(ui->proxyListTable);
 
-    if (group->manually_column_width) {
-        for (int i = 0; i <= 4; i++) {
-            ui->proxyListTable->horizontalHeader()->setSectionResizeMode(i, QHeaderView::Interactive);
-            auto size = group->column_width.value(i);
-            if (size <= 0) size = ui->proxyListTable->horizontalHeader()->defaultSectionSize();
-            ui->proxyListTable->horizontalHeader()->resizeSection(i, size);
+
+    {
+        // Make headers resizable on proxy list table
+        QHeaderView* header = ui->proxyListTable->horizontalHeader();
+        header->setSectionsMovable(true); // Allow moving sections
+        if (group->manually_column_width) {
+            for (int i = 0; i <= 4; i++) {
+                header->setSectionResizeMode(i, QHeaderView::Interactive);
+                auto size = group->column_width.value(i);
+                if (size <= 0) size = header->defaultSectionSize();
+                header->resizeSection(i, size);
+            }
+        } else {
+            header->setSectionResizeMode(0, QHeaderView::ResizeToContents);
+            header->setSectionResizeMode(1, QHeaderView::Stretch);
+            header->setSectionResizeMode(2, QHeaderView::Stretch);
+            header->setSectionResizeMode(3, QHeaderView::ResizeToContents);
+            header->setSectionResizeMode(4, QHeaderView::ResizeToContents);
         }
-    } else {
-        ui->proxyListTable->horizontalHeader()->setSectionResizeMode(0, QHeaderView::ResizeToContents);
-        ui->proxyListTable->horizontalHeader()->setSectionResizeMode(1, QHeaderView::Stretch);
-        ui->proxyListTable->horizontalHeader()->setSectionResizeMode(2, QHeaderView::Stretch);
-        ui->proxyListTable->horizontalHeader()->setSectionResizeMode(3, QHeaderView::ResizeToContents);
-        ui->proxyListTable->horizontalHeader()->setSectionResizeMode(4, QHeaderView::ResizeToContents);
     }
 
     // show proxies
@@ -899,14 +1042,7 @@ void MainWindow::on_menu_manage_groups_triggered() {
 }
 
 void MainWindow::on_menu_routing_settings_triggered() {
-    if (dialog_is_using) return;
-    dialog_is_using = true;
-    auto dialog = new DialogManageRoutes(this);
-    connect(dialog, &QDialog::finished, this, [=,this] {
-        dialog->deleteLater();
-        dialog_is_using = false;
-    });
-    dialog->show();
+    USE_DIALOG(DialogManageRoutes)
 }
 
 void MainWindow::on_menu_vpn_settings_triggered() {
@@ -927,12 +1063,29 @@ void MainWindow::on_menu_hotkey_settings_triggered() {
 
 void MainWindow::on_commitDataRequest() {
     qDebug() << "Start of data save";
-    //
-    if (!isMaximized()) {
-        auto olds = Configs::dataStore->mw_size;
-        auto news = QString("%1x%2").arg(size().width()).arg(size().height());
-        if (olds != news) {
-            Configs::dataStore->mw_size = news;
+    {
+        // save size and geometry
+        int x, y, width, height;
+        QPoint position;
+        QSize geometry;
+
+        QSettings settings = getSettings();
+
+        if (settings.value("save_geometry", true).toBool()){
+            settings.setValue("maximized", isMaximized());
+            geometry = size();
+            width = geometry.width();
+            height = geometry.height();
+            settings.setValue("width", width);
+            settings.setValue("height", height);
+            settings.sync();
+        }
+        if (settings.value("save_position", true).toBool()){
+            position = pos();
+            x = position.x();
+            y = position.y();
+            settings.setValue("X", x);
+            settings.setValue("Y", y);
         }
     }
     //
@@ -973,25 +1126,64 @@ void MainWindow::prepare_exit()
     Configs::dataStore->save_control_no_save = true; // don't change datastore after this line
     profile_stop(false, true);
 
-    runOnThread([=, this]()
-    {
-        core_process->Kill();
-    }, DS_cores, true);
-
     mu_exit.unlock();
     qDebug() << "prepare exit done!";
+}
+
+void MainWindow::size_changed(int width, int height){
+    runOnUiThread([=, this]{
+        this->resize(width, height);
+    });
+}
+
+void MainWindow::point_changed(int width, int height){
+    runOnUiThread([=, this]{
+        this->move(width, height);
+    });
 }
 
 void MainWindow::on_menu_exit_triggered() {
     prepare_exit();
     //
     if (exit_reason == 1) {
-        QDir::setCurrent(QApplication::applicationDirPath());
+#ifndef SKIP_UPDATE_BUTTON
+        QStringList list;
+        QString updateDir;
+#ifdef Q_OS_LINUX
+        if (isAppImage()){
+            updateDir = getApplicationPath();
+        } else {
+#endif
+            updateDir = QApplication::applicationDirPath();
+#ifdef Q_OS_LINUX
+        }
+#endif
+        list << Configs::GetBasePath() + "/" + this->archive_name;
+        list << updateDir;
+        list += QApplication::arguments();
+        QString sourceFilePath = getUpdaterPath();
+        QDir tempdir;
+        tempdir.mkpath("temp");
+        QString destinationFilePath = Configs::GetBasePath();
 #ifdef Q_OS_WIN
-        QFile::copy("./updater.exe", "./updater.old");
-        QProcess::startDetached("./updater.old", QStringList{});
+        destinationFilePath += "\\temp\\updater.exe";
 #else
-        QProcess::startDetached("./updater", QStringList{});
+        destinationFilePath += "/temp/updater";
+#endif
+        if (QFile::copy(sourceFilePath, destinationFilePath)) {
+            qDebug() << "File copied successfully from" << sourceFilePath << "to" << destinationFilePath;
+#ifdef Q_OS_WIN
+            if (!isDirectoryWritable(updateDir)) {
+                WinCommander::runProcessElevated(destinationFilePath, list, "", WinCommander::SW_NORMAL, false);
+            } else {
+#endif
+                QProcess::startDetached(destinationFilePath, list);
+#ifdef Q_OS_WIN
+            }
+#endif
+        } else {
+            qDebug() << "Failed to copy file from" << sourceFilePath << "to" << destinationFilePath;
+        }
 #endif
     } else if (exit_reason == 2 || exit_reason == 3 || exit_reason == 4) {
         QDir::setCurrent(QApplication::applicationDirPath());
@@ -1003,7 +1195,9 @@ void MainWindow::on_menu_exit_triggered() {
             arguments.removeAll("-flag_restart_tun_on");
             arguments.removeAll("-flag_restart_dns_set");
         }
-        auto program = QApplication::applicationFilePath();
+        auto program = getApplicationPath();
+
+        qDebug() << "Will Be Restarted: " << program;
 
         if (exit_reason == 3 || exit_reason == 4) {
             if (exit_reason == 3) arguments << "-flag_restart_tun_on";
@@ -1029,44 +1223,57 @@ void MainWindow::toggle_system_proxy() {
     }
 }
 
-bool MainWindow::get_elevated_permissions(int reason) {
+
+bool MainWindow::get_elevated_permissions(int reason, void * pointer) {
     if (Configs::dataStore->disable_privilege_req)
     {
         MW_show_log(tr("User opted for no privilege req, some features may not work"));
         return true;
     }
     if (Configs::IsAdmin()) return true;
+#undef ELEVATE_CORE_PROGRAM
+
 #ifdef Q_OS_LINUX
     if (!Linux_HavePkexec()) {
         MessageBoxWarning(software_name, "Please install \"pkexec\" first.");
         return false;
     }
-    auto n = QMessageBox::warning(GetMessageBoxParent(), software_name, tr("Please give the core root privileges"), QMessageBox::Yes | QMessageBox::No);
-    if (n == QMessageBox::Yes) {
-        runOnNewThread([=,this]
-        {
-            auto chownArgs = QString("root:root " + Configs::FindCoreRealPath());
-            auto ret = Linux_Run_Command("chown", chownArgs);
-            if (ret != 0) {
-                MW_show_log(QString("Failed to run chown %1 code is %2").arg(chownArgs).arg(ret));
-            }
-            auto chmodArgs = QString("u+s " + Configs::FindCoreRealPath());
-            ret = Linux_Run_Command("chmod", chmodArgs);
-            if (ret == 0) {
-                StopVPNProcess();
-            } else {
-                MW_show_log(QString("Failed to run chmod %1").arg(chmodArgs));
-            }
-        });
-        return false;
-    }
+#define ELEVATE_CORE_PROGRAM
 #endif
+
 #ifdef Q_OS_WIN
-    auto n = QMessageBox::warning(GetMessageBoxParent(), software_name, tr("Please run Throne as admin"), QMessageBox::Yes | QMessageBox::No);
-    if (n == QMessageBox::Yes) {
+#ifdef EXIT_IF_UAC_REQUIRED
+    goto skip_start_elevate_process;
+    start_elevate_process:
+    {
         this->exit_reason = reason;
         on_menu_exit_triggered();
     }
+    skip_start_elevate_process:
+#else
+#define ELEVATE_CORE_PROGRAM
+#endif
+#endif
+
+#ifdef ELEVATE_CORE_PROGRAM
+    goto skip_start_elevate_process;
+    start_elevate_process:
+    {
+        StopVPNProcess();
+        core_process->elevateCoreProcessProgram();
+        {
+            if (reason == 3){
+                bool save = false;
+                if (pointer != nullptr){
+                    save = *((bool*) pointer);
+                }
+                set_spmode_vpn(true, save, false);
+            }
+        }
+        return false;
+    }
+    skip_start_elevate_process:
+#undef ELEVATE_CORE_PROGRAM
 #endif
 
 #ifdef Q_OS_MACOS
@@ -1075,8 +1282,8 @@ bool MainWindow::get_elevated_permissions(int reason) {
         StopVPNProcess();
         return true;
     }
-    auto n = QMessageBox::warning(GetMessageBoxParent(), software_name, tr("Please give the core root privileges"), QMessageBox::Yes | QMessageBox::No);
-    if (n == QMessageBox::Yes)
+    goto skip_start_elevate_process;
+    start_elevate_process:
     {
         auto Command = QString("sudo chown root:wheel " + Configs::FindCoreRealPath() + " && " + "sudo chmod u+s "+Configs::FindCoreRealPath());
         auto ret = Mac_Run_Command(Command);
@@ -1088,17 +1295,26 @@ bool MainWindow::get_elevated_permissions(int reason) {
             return false;
         }
     }
+    skip_start_elevate_process:
 #endif
+    auto n = QMessageBox::warning(GetMessageBoxParent(), software_name, tr("Please give the core root privileges"), QMessageBox::Yes | QMessageBox::No);
+    if (n == QMessageBox::Yes) {
+        goto start_elevate_process;
+    } else {
+        if (reason == 3){
+            Configs::dataStore->remember_spmode.removeAll("vpn");
+        }
+    }
     return false;
 }
 
-void MainWindow::set_spmode_vpn(bool enable, bool save) {
+void MainWindow::set_spmode_vpn(bool enable, bool save, bool requestAdmin) {
     if (enable == Configs::dataStore->spmode_vpn) return;
 
-    if (enable) {
+    if (enable && requestAdmin) {
         bool requestPermission = !Configs::IsAdmin();
         if (requestPermission) {
-            if (!get_elevated_permissions()) {
+            if (!get_elevated_permissions(3 /*set vpn mode*/, (void*)&save)) {
                 refresh_status();
                 return;
             }
@@ -1114,9 +1330,10 @@ void MainWindow::set_spmode_vpn(bool enable, bool save) {
     }
 
     Configs::dataStore->spmode_vpn = enable;
-    refresh_status();
-
-    if (Configs::dataStore->started_id >= 0) profile_start(Configs::dataStore->started_id);
+    if (requestAdmin){
+        refresh_status();
+        if (Configs::dataStore->started_id >= 0) profile_start(Configs::dataStore->started_id);
+    }
 }
 
 void MainWindow::UpdateDataView(bool force)
@@ -1438,10 +1655,16 @@ void MainWindow::refresh_status(const QString &traffic_update) {
     // refresh tray
     if (tray != nullptr) {
         tray->setToolTip(make_title(true));
-        if (icon_status_new != icon_status) tray->setIcon(Icon::GetTrayIcon(icon_status_new));
+        if (icon_status_new != icon_status) setAppIcon(icon_status_new, tray);
     }
 
     icon_status = icon_status_new;
+}
+
+void setAppIcon(Icon::TrayIconStatus icon_status_new, QSystemTrayIcon *tray){
+    auto icon = Icon::GetTrayIcon(icon_status_new);
+    tray->setIcon(icon);
+    QApplication::setWindowIcon(icon);
 }
 
 void MainWindow::update_traffic_graph(int proxyDl, int proxyUp, int directDl, int directUp)
@@ -1457,7 +1680,7 @@ void MainWindow::update_traffic_graph(int proxyDl, int proxyUp, int directDl, in
     }
 }
 
-// table显示
+// table
 
 // refresh_groups -> show_group -> refresh_proxy_list
 void MainWindow::refresh_groups() {
@@ -1778,6 +2001,7 @@ void MainWindow::on_menu_export_config_triggered() {
     if (ent->bean->DisplayCoreType() != software_core_name) return;
 
     auto result = Configs::BuildSingBoxConfig(ent);
+
     QString config_core = QJsonObject2QString(result->coreConfig, true);
     QApplication::clipboard()->setText(config_core);
 
@@ -2198,30 +2422,47 @@ inline void FastAppendTextDocument(const QString &message, QTextDocument *doc) {
 }
 
 void MainWindow::show_log_impl(const QString &log) {
-    if (log.size() > 20000)
-    {
-        show_log_impl("Ignored massive log of size:" + Int2String(log.size()));
+    if (this->stop_logs){
         return;
     }
-    auto trimmed = log.trimmed();
-    if (trimmed.isEmpty()) return;
 
-    FastAppendTextDocument(trimmed, qvLogDocument);
-    // qvLogDocument->setPlainText(qvLogDocument->toPlainText() + log);
-    // From https://gist.github.com/jemyzhang/7130092
-    auto block = qvLogDocument->begin();
+    logLock.lock();
 
-    while (block.isValid()) {
-        if (qvLogDocument->blockCount() > Configs::dataStore->max_log_line) {
-            QTextCursor cursor(block);
-            block = block.next();
-            cursor.select(QTextCursor::BlockUnderCursor);
-            cursor.movePosition(QTextCursor::NextCharacter, QTextCursor::KeepAnchor);
-            cursor.removeSelectedText();
-            continue;
-        }
-        break;
+
+    QString trimmed;
+    if (log.size() > 20000)
+    {
+        trimmed = ("Ignored massive log of size: " + Int2String(log.size()));
+    } else {
+        trimmed = log.trimmed();
     }
+
+    if (!trimmed.isEmpty()) {
+        FastAppendTextDocument(trimmed, qvLogDocument);
+    }
+
+    int blockCount = qvLogDocument->blockCount();
+    // Check the number of blocks
+    if (logClear){
+        if (blockCount > 300) {
+            QTextBlock currentBlock = qvLogDocument->begin();
+            for (blockCount = 5; blockCount > 0; blockCount --){
+                QTextBlock next = currentBlock.next();
+                QTextCursor cursor(currentBlock);
+                cursor.select(QTextCursor::BlockUnderCursor);
+                cursor.removeSelectedText();
+                currentBlock = next;
+            }
+        } else {
+            logClear = false;
+        }
+    } else {
+        if (blockCount > 600){
+            logClear = true;
+        }
+    }
+
+    logLock.unlock();
 }
 
 void MainWindow::on_masterLogBrowser_customContextMenuRequested(const QPoint &pos) {
@@ -2232,14 +2473,26 @@ void MainWindow::on_masterLogBrowser_customContextMenuRequested(const QPoint &po
     menu->addAction(sep);
 
     auto action_clear = new QAction(this);
+    auto action_stop = new QAction(this);
     action_clear->setText(tr("Clear"));
+
+    action_stop->setText((!this->stop_logs) ? tr("Stop") : tr("Start"));
+
     connect(action_clear, &QAction::triggered, this, [=,this] {
         qvLogDocument->clear();
         ui->masterLogBrowser->clear();
     });
+    connect(action_stop, &QAction::triggered, this, [=,this] {
+        bool stop = this->stop_logs;
+        action_stop->setText(stop ? tr("Stop") : tr("Start"));
+        this->stop_logs = !stop;
+        QSettings settings = getSettings();
+        settings.setValue("logs_enabled", stop);
+    });
     menu->addAction(action_clear);
+    menu->addAction(action_stop);
 
-    menu->exec(ui->masterLogBrowser->viewport()->mapToGlobal(pos)); // 弹出菜单
+    menu->exec(ui->masterLogBrowser->viewport()->mapToGlobal(pos));
 }
 
 void MainWindow::on_tabWidget_customContextMenuRequested(const QPoint &p) {
@@ -2358,7 +2611,6 @@ void MainWindow::start_select_mode(QObject *context, const std::function<void(in
     refresh_status();
 }
 
-// 连接列表
 
 inline QJsonArray last_arr; // format is nekoray_connections_json
 
@@ -2464,7 +2716,50 @@ void MainWindow::loadShortcuts()
 
     RegisterHiddenMenuShortcuts();
 }
+/*
 
+void MainWindow::on_log_show(const QString & message, const QString & title){
+    if (title.isEmpty()){
+        MW_show_log(message);
+    } else {
+        MW_show_log("["+title+"]: "+message);
+    }
+};
+void MainWindow::on_info_show(const QString & message, const QString & title){
+    runOnUiThread([=,this] { MessageBoxInfo(title, message); });
+};
+void MainWindow::on_warning_show(const QString & message, const QString & title){
+    runOnUiThread([=,this] { MessageBoxWarning(title, message); });
+};
+
+*/
+
+
+#ifndef SKIP_JS_UPDATER
+JsUpdaterWindow* MainWindow::createJsUpdaterWindow(){
+    JsUpdaterWindow * bQueue = new JsUpdaterWindow();
+    // Connect the signal to a lambda function
+    connect(bQueue, &JsUpdaterWindow::log_signal, this, [=, this](const QString &message, const QString &title) {
+        if (title.isEmpty()){
+            MW_show_log(message);
+        } else {
+            MW_show_log("["+title+"]: "+message);
+        }
+    });
+
+    // Connect the signal to a lambda function
+    connect(bQueue, &JsUpdaterWindow::warning_signal, this, [=, this](const QString &message, const QString &title) {
+        runOnUiThread([=,this] { MessageBoxWarning(title, message); });
+    });
+
+    // Connect the signal to a lambda function
+    connect(bQueue, &JsUpdaterWindow::info_signal, this, [=, this](const QString &message, const QString &title) {
+        runOnUiThread([=,this] { MessageBoxInfo(title, message); });
+    });
+
+    return bQueue;
+}
+#endif
 
 void MainWindow::HotkeyEvent(const QString &key) {
     if (key.isEmpty()) return;
@@ -2493,24 +2788,38 @@ bool MainWindow::StopVPNProcess() {
     }, DS_cores);
     waitStop.lock();
     waitStop.unlock();
-
     return true;
 }
 
+#ifndef SKIP_UPDATE_BUTTON
+#ifdef SKIP_JS_UPDATER
+// ```
 bool isNewer(QString assetName) {
     if (QString(NKR_VERSION).isEmpty()) return false;
-    assetName = assetName.mid(7); // take out Throne-
+  //  assetName = assetName.mid(8); // take out nekobox-
     QString version;
+
     auto spl = assetName.split('-');
-    version += spl[0]; // version: 1.2.3
-    if (spl[1].contains("beta") || spl[1].contains("alpha") || spl[1].contains("rc")) version += "."+spl[1]; // .beta.13
-    auto parts = version.split("."); // [1,2,3,beta,13]
-    auto currentParts = QString(NKR_VERSION).replace("-", ".").split('.');
-    if (parts.size() < 3 || currentParts.size() < 3)
-    {
-        MW_show_log("Version strings seem to be invalid" + QString(NKR_VERSION) + " and " + version);
+    auto spl_size = spl.size();
+    if (spl_size < 2){
         return false;
     }
+
+    version += spl[1]; // version: 1.2.3
+    if (spl_size < 3){
+        auto & spl_2 = spl[2];
+        if (spl_2.contains("beta") || spl_2.contains("alpha") || spl_2.contains("rc")) {
+            version += "."+spl_2;
+        }// .beta.13
+    }
+    auto parts = version.split("."); // [1,2,3,beta,13]
+    auto currentParts = QString(NKR_VERSION).replace("-", ".").split('.');
+
+    if (parts.size() < 3 || currentParts.size() < 3)
+    {
+        return false;
+    }
+
     std::vector<int> verNums;
     std::vector<int> currNums;
     // add base version first
@@ -2566,86 +2875,233 @@ bool isNewer(QString assetName) {
     return false;
 }
 
+
+
+// ```
+#endif
+#endif
+
+#ifndef SKIP_UPDATE_BUTTON
+#ifndef SKIP_JS_UPDATER
+#include <iostream>
+#include <include/js/js_updater.h>
+#endif
 void MainWindow::CheckUpdate() {
-    QString search;
+    bool is_newer = false;
+    QString
+        archive_name            = "nekobox.zip",
+        assets_name             = "",
+        release_download_url    = "",
+        release_url             = "",
+        release_note            = "",
+        note_pre_release        = "",
+        search                  = "";
+
+#define SEARCHDEF(X) search = X; goto end_search_define;
+#define IS_64_BIT (QT_POINTER_SIZE == 8)
+
+#if Q_PROCESSOR_ARM
+#if IS_64_BIT
+#define Q_PROCESSOR_ARM_64
+#else
+#define Q_PROCESSOR_ARM_32
+#endif
+#endif
+
 #ifdef Q_OS_WIN
 #  ifdef Q_PROCESSOR_ARM_64
-    search = "windows-arm64";
-#  else
-#    ifdef Q_OS_WIN64
-        if (WinVersion::IsBuildNumGreaterOrEqual(BuildNumber::Windows_10_1809))
-            search = "windows64";
-        else
-	        search = "windowslegacy64";
+#    ifndef USE_LEGACY_QT
+        SEARCHDEF("windows-arm64");
 #    else
-	    search = "windows32";
+        SEARCHDEF("windowslegacy-arm64");
 #    endif
 #  endif
 #endif
+
+#ifdef Q_OS_WIN32
+#  ifdef Q_OS_WIN64
+#   ifdef Q_PROCESSOR_X86_64
+#    ifndef USE_LEGACY_QT
+        SEARCHDEF("windows64");
+#    else
+        SEARCHDEF("windowslegacy64");
+#    endif
+#   endif
+#  endif
+#  ifdef Q_PROCESSOR_X86_32
+        SEARCHDEF("windows32");
+#  endif
+#endif
+
 #ifdef Q_OS_LINUX
 #  ifdef Q_PROCESSOR_X86_64
-    search = "linux-amd64";
-#  else
-    search = "linux-arm64";
+        SEARCHDEF("linux-amd64");
+#  endif
+#  ifdef Q_PROCESSOR_ARM_32
+        SEARCHDEF("linux-arm32");
+#  endif
+#  ifdef Q_PROCESSOR_ARM_64
+        SEARCHDEF("linux-arm64");
+#  endif
+#  ifdef Q_PROCESSOR_X86_32
+        SEARCHDEF("linux-i386");
+#  endif
+#  ifdef Q_PROCESSOR_RISCV_32
+        SEARCHDEF("linux-riscv32");
+#  endif
+#  ifdef Q_PROCESSOR_RISCV_64
+        SEARCHDEF("linux-riscv64");
+#  endif
+#  ifdef Q_PROCESSOR_MIPS_32
+        SEARCHDEF("linux-mips32");
+#  endif
+#  ifdef Q_PROCESSOR_MIPS_64
+        SEARCHDEF("linux-mips64");
 #  endif
 #endif
+
 #ifdef Q_OS_MACOS
 #  ifdef Q_PROCESSOR_X86_64
-	search = "macos-amd64";
-#  else
-	search = "macos-arm64";
+#    ifndef USE_LEGACY_QT
+        SEARCHDEF("macos-amd64");
+#    else
+        SEARCHDEF("macoslegacy-amd64");
+#    endif
+#  endif
+#  ifdef Q_PROCESSOR_ARM_64
+#    ifndef USE_LEGACY_QT
+        SEARCHDEF("macos-arm64");
+#    else
+        SEARCHDEF("macoslegacy-arm64");
+#    endif
 #  endif
 #endif
+
+end_search_define:
+
+#ifndef SKIP_JS_UPDATER
+    JsUpdaterWindow * bQueue;
+    QString updater_js = "";
+    {
+        QFile file(getResource("check_new_release.js"));
+
+        if (!file.exists()) {
+            goto skip1;
+        }
+        if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
+            goto skip1;
+        }
+        QTextStream in(&file);
+        updater_js = in.readAll().toUtf8().constData();
+
+        file.close();
+    }
+
+
+    bQueue = createJsUpdaterWindow();
+
+            jsUpdater(
+                bQueue,
+                &updater_js,
+                &search,
+                &assets_name,
+                &release_download_url,
+                &release_url,
+                &release_note,
+                &note_pre_release,
+                &archive_name,
+                &is_newer
+            );
+#endif
+    skip1:
+
     if (search.isEmpty()) {
         runOnUiThread([=,this] {
             MessageBoxWarning(QObject::tr("Update"), QObject::tr("Not official support platform"));
         });
         return;
     }
-
-    auto resp = NetworkRequestHelper::HttpGet("https://api.github.com/repos/throneproj/Throne/releases");
-    if (!resp.error.isEmpty()) {
-        runOnUiThread([=,this] {
-            MessageBoxWarning(QObject::tr("Update"), QObject::tr("Requesting update error: %1").arg(resp.error + "\n" + resp.data));
-        });
-        return;
-    }
-
-    QString assets_name, release_download_url, release_url, release_note, note_pre_release;
-    bool exitFlag = false;
-    QJsonArray array = QString2QJsonArray(resp.data);
-    for (const QJsonValue value : array) {
-        QJsonObject release = value.toObject();
-        if (release["prerelease"].toBool() && !Configs::dataStore->allow_beta_update) continue;
-        for (const QJsonValue asset : release["assets"].toArray()) {
-            if (asset["name"].toString().contains(search) && asset["name"].toString().section('.', -1) == QString("zip")) {
-                note_pre_release = release["prerelease"].toBool() ? " (Pre-release)" : "";
-                release_url = release["html_url"].toString();
-                release_note = release["body"].toString();
-                assets_name = asset["name"].toString();
-                release_download_url = asset["browser_download_url"].toString();
-                exitFlag = true;
-                break;
-            }
+#ifdef SKIP_JS_UPDATER
+    {
+        auto resp = NetworkRequestHelper::HttpGet("https://api.github.com/repos/qr243vbi/nekobox/releases");
+        if (!resp.error.isEmpty()) {
+            runOnUiThread([=,this] {
+                MessageBoxWarning(QObject::tr("Update"), QObject::tr("Requesting update error: %1").arg(resp.error + "\n" + resp.data));
+            });
+            return;
         }
-        if (exitFlag) break;
+
+        bool exitFlag = false;
+        QJsonArray array = QString2QJsonArray(resp.data);
+        for (const QJsonValue value : array) {
+            QJsonObject release = value.toObject();
+            if (release["prerelease"].toBool() && !Configs::dataStore->allow_beta_update) continue;
+            for (const QJsonValue asset : release["assets"].toArray()) {
+                if (asset["name"].toString().contains(search) && asset["name"].toString().section('.', -1) == QString("zip")) {
+                    note_pre_release = release["prerelease"].toBool() ? " (Pre-release)" : "";
+                    release_url = release["html_url"].toString();
+                    release_note = release["body"].toString();
+                    assets_name = asset["name"].toString();
+                    release_download_url = asset["browser_download_url"].toString();
+                    exitFlag = true;
+                    break;
+                }
+            }
+            if (exitFlag) break;
+        }
     }
 
-    if (release_download_url.isEmpty() || !isNewer(assets_name)) {
+    is_newer = !assets_name.isEmpty();
+    if (is_newer){
+        is_newer = isNewer(assets_name);
+    }
+
+    if (!is_newer){
+        MW_show_log("[Warn]: assets version is not newer ");
+    } else {
+        MW_show_log("[Warn]: assets version is newer ");
+    }
+
+    if (release_download_url.isEmpty() || !is_newer) {
         runOnUiThread([=,this] {
             MessageBoxInfo(QObject::tr("Update"), QObject::tr("No update"));
         });
         return;
     }
 
+#else
+    if (!is_newer) {
+        return;
+    }
+
+#endif
+
     runOnUiThread([=,this] {
-        auto allow_updater = !Configs::dataStore->flag_use_appdata;
+        auto allow_updater = true;
+#ifndef Q_OS_WIN
+#ifdef Q_OS_LINUX
+        if (isAppImage()){
+            allow_updater = (access(getApplicationPath().toUtf8().constData(), W_OK) == 0);
+        } else {
+#endif
+            allow_updater = isDirectoryWritable(QApplication::applicationDirPath());
+#ifdef Q_OS_LINUX
+        }
+#endif
+#endif
+
         QMessageBox box(QMessageBox::Question, QObject::tr("Update") + note_pre_release,
                         QObject::tr("Update found: %1\nRelease note:\n%2").arg(assets_name, release_note));
         //
         QAbstractButton *btn1 = nullptr;
         if (allow_updater) {
-            btn1 = box.addButton(QObject::tr("Update"), QMessageBox::AcceptRole);
+			if (
+				QFile::exists(getUpdaterPath())
+			) {
+            	btn1 = box.addButton(QObject::tr("Update"), QMessageBox::AcceptRole);
+			} else {
+				allow_updater = false;
+			}
         }
         QAbstractButton *btn2 = box.addButton(QObject::tr("Open in browser"), QMessageBox::AcceptRole);
         box.addButton(QObject::tr("Close"), QMessageBox::RejectRole);
@@ -2662,9 +3118,12 @@ void MainWindow::CheckUpdate() {
                 }
                 QString errors;
                 if (!release_download_url.isEmpty()) {
-                    auto res = NetworkRequestHelper::DownloadAsset(release_download_url, "Throne.zip");
-                    if (!res.isEmpty()) {
-                        errors += res;
+                    QFile archive_file1(Configs::GetBasePath() + "/" + this->archive_name);
+                    if (!archive_file1.exists()){
+                        auto res = NetworkRequestHelper::DownloadAsset(release_download_url, archive_name);
+                        if (!res.isEmpty()) {
+                            errors += res;
+                        }
                     }
                 }
                 mu_download_update.unlock();
@@ -2674,6 +3133,7 @@ void MainWindow::CheckUpdate() {
                                                        QObject::tr("Update is ready, restart to install?"));
                         if (q == QMessageBox::StandardButton::Yes) {
                             this->exit_reason = 1;
+                            this->archive_name = archive_name;
                             on_menu_exit_triggered();
                         }
                     } else {
@@ -2686,3 +3146,4 @@ void MainWindow::CheckUpdate() {
         }
     });
 }
+#endif

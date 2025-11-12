@@ -1,6 +1,8 @@
 # This file is used to ignore files which are generated
 # ----------------------------------------------------------------------------
-
+/config
+/updater
+nekobox_core
 *~
 *.autosave
 *.a
@@ -32,7 +34,7 @@ Thumbs.db
 *.res
 /.qmake.cache
 /.qmake.stash
-
+/.cache
 # qtcreator generated files
 *.pro.user*
 
@@ -70,7 +72,10 @@ Thumbs.db
 *.exe
 
 # Custom
-/Throne
+srslist.h
+srslist
+
+/nekobox
 /build
 CMakeLists.txt.user*
 /cmake-build-*
@@ -86,4 +91,11 @@ CMakeLists.txt.user*
 .vs
 out
 /libs
-srslist.h
+/core/server/vendor
+/core/server/gen/*.go
+/core/server/Core
+*.AppImage
+download-artifact
+deployment
+srslist.json
+runtime-*
