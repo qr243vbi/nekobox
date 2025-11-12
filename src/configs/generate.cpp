@@ -4,6 +4,7 @@
 #include "include/api/RPC.h"
 #include "include/global/Configs.hpp"
 #include "include/global/Utils.hpp"
+#include "include/js/ruleset.h"
 
 #include <QApplication>
 #include <QFileInfo>

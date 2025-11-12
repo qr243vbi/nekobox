@@ -68,6 +68,12 @@
 #include "include/sys/macos/MacOS.h"
 #include <QDir>
 
+#include <map>
+#include <string>
+
+std::map<std::string, std::string> ruleSetMap;
+
+
 void setAppIcon(Icon::TrayIconStatus, QSystemTrayIcon*);
 
 void UI_InitMainWindow() {

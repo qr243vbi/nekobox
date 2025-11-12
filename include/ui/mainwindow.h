@@ -19,6 +19,7 @@ class JsUpdaterWindow;
 
 #include <iostream>
 #include <include/js/js_updater.h>
+#include <include/js/ruleset.h>
 #endif
 
 
@@ -38,7 +39,7 @@ class JsUpdaterWindow;
 #include "group/GroupSort.hpp"
 
 #include "include/dataStore/ProxyEntity.hpp"
-#include "include/configs/ConfigBuilder.hpp"
+
 #include "include/global/GuiUtils.hpp"
 #include "ui_mainwindow.h"
 
@@ -66,8 +67,6 @@ public:
     explicit MainWindow(QWidget *parent = nullptr);
 
     ~MainWindow() override;
-
-    std::map<std::string, std::string> ruleSetMap;
 
     void prepare_exit();
 
