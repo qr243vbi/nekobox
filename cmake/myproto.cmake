@@ -1,9 +1,11 @@
-add_subdirectory(3rdparty/simple-protobuf)
+find_package(Qt6 COMPONENTS Core Grpc Protobuf REQUIRED)
 
-spb_protobuf_generate(PROTO_SRCS PROTO_HDRS core/server/gen/libcore.proto)
+# Generate protobuf message classes
+qt_add_protobuf(MyProtoTarget
+    PROTO_FILES core/server/gen/libcore.proto
+)
 
-add_library(myproto STATIC ${PROTO_SRCS} ${PROTO_HDRS})
-target_link_libraries(myproto
-        PUBLIC
-        spb-proto
-        )
+# Generate gRPC client classes
+qt_add_grpc(MyGrpcTarget CLIENT
+    PROTO_FILES core/server/gen/libcore.proto
+)
