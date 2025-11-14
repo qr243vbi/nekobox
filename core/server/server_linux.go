@@ -2,6 +2,7 @@ package main
 
 import (
 	"Core/gen"
+	"context"
 	"os"
 	"fmt"
 	"time"
@@ -10,17 +11,19 @@ import (
 	"os/exec"
 )
 
-func (s *server) SetSystemDNS(in *gen.SetSystemDNSRequest, out *gen.EmptyResp) error {
-	return nil
+func (s *server) SetSystemDNS(ctx context.Context,in *gen.SetSystemDNSRequest) (*gen.EmptyResp, error) {
+	out := new(gen.EmptyResp)
+	return out, nil
 }
 
 func runAdmin(_port * int, _debug * bool) (int, error) {
 	return 0, nil
 }
 
-func (s *server) IsPrivileged(in *gen.EmptyReq, out *gen.IsPrivilegedResponse) error {
+func (s *server) IsPrivileged(ctx context.Context,in *gen.EmptyReq) (*gen.IsPrivilegedResponse, error) {
+	out := new(gen.IsPrivilegedResponse)
 	out.HasPrivilege = To(os.Geteuid() == 0)
-	return nil
+	return out, nil
 }
 
 func WaitForProcessExit (pid int) error{
