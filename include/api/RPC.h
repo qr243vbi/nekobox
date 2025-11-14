@@ -1,10 +1,9 @@
 #pragma once
 
 #ifndef Q_MOC_RUN
-#include "libcore.pb.h"
+#include "libcore_client.grpc.qpb.h"
 #endif
 #include <QString>
-#include "3rdparty/protorpc/rpc_client.h"
 
 namespace API {
     class Client {

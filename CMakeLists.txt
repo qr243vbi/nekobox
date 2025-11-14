@@ -55,7 +55,7 @@ if (NKR_PACKAGE OR NKR_PACKAGE_MACOS)
 endif ()
 
 include("cmake/myproto.cmake")
-list(APPEND NKR_EXTERNAL_TARGETS myproto)
+list(APPEND NKR_EXTERNAL_TARGETS MyProtoTarget MyGrpcTarget)
 
 set(BUILD_SHARED_LIBS OFF)
 list(APPEND NKR_EXTERNAL_TARGETS qhotkey)
@@ -90,11 +90,6 @@ set(PROJECT_SOURCES
         3rdparty/quirc/identify.c
         3rdparty/quirc/quirc.c
         3rdparty/quirc/version_db.c
-
-        3rdparty/protorpc/rpc_client.cc
-        3rdparty/protorpc/rpc_conn.cc
-        3rdparty/protorpc/rpc_wire.cc
-        3rdparty/protorpc/wire.pb/wire.pb.cc
 
         src/api/RPC.cpp
 
