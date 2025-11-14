@@ -31,14 +31,18 @@ var systemProxyAddr metadata.Socksaddr
 var instanceCancel context.CancelFunc
 var debug bool
 
-type server int
+// server is used to implement myservice.MyServiceServer.
+type server struct {
+	gen.UnimplementedLibcoreServiceServer
+}
 
 // To returns a pointer to the given value.
 func To[T any](v T) *T {
 	return &v
 }
 
-func (s *server) Start(in *gen.LoadConfigReq, out *gen.ErrorResp) (_ error) {
+func (s *server) Start(ctx context.Context, in *gen.LoadConfigReq ) (*gen.ErrorResp, error) {
+	out := new (gen.ErrorResp)
 	var err error
 
 	defer func() {
@@ -54,26 +58,26 @@ func (s *server) Start(in *gen.LoadConfigReq, out *gen.ErrorResp) (_ error) {
 
 	if boxInstance != nil {
 		err = errors.New("instance already started")
-		return
+		return out, nil
 	}
 
 	if *in.NeedExtraProcess {
 		args, e := shlex.Split(in.GetExtraProcessArgs())
 		if e != nil {
 			err = E.Cause(e, "Failed to parse args")
-			return
+			return out, nil
 		}
 		if in.ExtraProcessConf != nil {
 			extraConfPath := *in.ExtraProcessConfDir + string(os.PathSeparator) + "extra.conf"
 			f, e := os.OpenFile(extraConfPath, os.O_CREATE|os.O_TRUNC|os.O_RDWR, 700)
 			if e != nil {
 				err = E.Cause(e, "Failed to open extra.conf")
-				return
+				return out, nil
 			}
 			_, e = f.WriteString(*in.ExtraProcessConf)
 			if e != nil {
 				err = E.Cause(e, "Failed to write extra.conf")
-				return
+				return out, nil
 			}
 			_ = f.Close()
 			for idx, arg := range args {
@@ -87,13 +91,13 @@ func (s *server) Start(in *gen.LoadConfigReq, out *gen.ErrorResp) (_ error) {
 		extraProcess = process.NewProcess(*in.ExtraProcessPath, args, *in.ExtraNoOut)
 		err = extraProcess.Start()
 		if err != nil {
-			return
+			return out, nil
 		}
 	}
 
 	boxInstance, instanceCancel, err = boxmain.Create([]byte(*in.CoreConfig))
 	if err != nil {
-		return
+		return out, nil
 	}
 	if runtime.GOOS == "darwin" && strings.Contains(*in.CoreConfig, "tun-in") && strings.Contains(*in.CoreConfig, "172.19.0.1/24") {
 		err := sys.SetSystemDNS("172.19.0.2", boxInstance.Network().InterfaceMonitor())
@@ -103,10 +107,11 @@ func (s *server) Start(in *gen.LoadConfigReq, out *gen.ErrorResp) (_ error) {
 		needUnsetDNS = true
 	}
 
-	return
+	return out, nil
 }
 
-func (s *server) Stop(in *gen.EmptyReq, out *gen.ErrorResp) (_ error) {
+func (s *server) Stop(ctx context.Context, in *gen.EmptyReq) ( *gen.ErrorResp,  error) {
+	out := new (gen.ErrorResp)
 	var err error
 
 	defer func() {
@@ -116,7 +121,7 @@ func (s *server) Stop(in *gen.EmptyReq, out *gen.ErrorResp) (_ error) {
 	}()
 
 	if boxInstance == nil {
-		return
+		return out, err
 	}
 
 	if needUnsetDNS {
@@ -135,19 +140,21 @@ func (s *server) Stop(in *gen.EmptyReq, out *gen.ErrorResp) (_ error) {
 		extraProcess = nil
 	}
 
-	return
+	return out, nil
 }
 
-func (s *server) CheckConfig(in *gen.LoadConfigReq, out *gen.ErrorResp) error {
+func (s *server) CheckConfig(ctx context.Context,in *gen.LoadConfigReq)(*gen.ErrorResp, error) {
+	out := new (gen.ErrorResp)
 	err := boxmain.Check([]byte(*in.CoreConfig))
 	if err != nil {
 		out.Error = To(err.Error())
-		return nil
+		return out, nil
 	}
-	return nil
+	return out, nil
 }
 
-func (s *server) Test(in *gen.TestReq, out *gen.TestResp) error {
+func (s *server) Test(ctx context.Context,in *gen.TestReq)( *gen.TestResp, error) {
+	out := new (gen.TestResp)
 	var testInstance *boxbox.Box
 	var cancel context.CancelFunc
 	var err error
@@ -159,14 +166,14 @@ func (s *server) Test(in *gen.TestReq, out *gen.TestResp) error {
 				LatencyMs:   To(int32(0)),
 				Error:       To("Instance is not running"),
 			}}
-			return nil
+			return out, nil
 		}
 		testInstance = boxInstance
 		twice = false
 	} else {
 		testInstance, cancel, err = boxmain.Create([]byte(*in.Config))
 		if err != nil {
-			return err
+			return out, err
 		}
 		defer cancel()
 		defer testInstance.Close()
@@ -198,17 +205,20 @@ func (s *server) Test(in *gen.TestReq, out *gen.TestResp) error {
 	}
 
 	out.Results = res
-	return nil
+	return out, nil
 }
 
-func (s *server) StopTest(in *gen.EmptyReq, out *gen.EmptyResp) error {
+func (s *server) StopTest(ctx context.Context,in *gen.EmptyReq)( *gen.EmptyResp, error) {
+	out := new (gen.EmptyResp)
+
 	cancelTests()
 	testCtx, cancelTests = context.WithCancel(context.Background())
 
-	return nil
+	return out, nil
 }
 
-func (s *server) QueryURLTest(in *gen.EmptyReq, out *gen.QueryURLTestResponse) error {
+func (s *server) QueryURLTest(ctx context.Context,in *gen.EmptyReq) (*gen.QueryURLTestResponse, error) {
+	out := new (gen.QueryURLTestResponse)
 	results := URLReporter.Results()
 	for _, r := range results {
 		errStr := ""
@@ -221,10 +231,11 @@ func (s *server) QueryURLTest(in *gen.EmptyReq, out *gen.QueryURLTestResponse) e
 			Error:       To(errStr),
 		})
 	}
-	return nil
+	return out, nil
 }
 
-func (s *server) QueryStats(in *gen.EmptyReq, out *gen.QueryStatsResp) error {
+func (s *server) QueryStats(ctx context.Context,in *gen.EmptyReq)(*gen.QueryStatsResp, error) {
+	out := new (gen.QueryStatsResp)
 	out.Ups = make(map[string]int64)
 	out.Downs = make(map[string]int64)
 	if boxInstance != nil {
@@ -233,17 +244,17 @@ func (s *server) QueryStats(in *gen.EmptyReq, out *gen.QueryStatsResp) error {
 			cApi, ok := clash.(*clashapi.Server)
 			if !ok {
 				log.Println("Failed to assert clash server")
-				return E.New("invalid clash server type")
+				return out, E.New("invalid clash server type")
 			}
 			outbounds := service.FromContext[adapter.OutboundManager](boxInstance.Context())
 			if outbounds == nil {
 				log.Println("Failed to get outbound manager")
-				return E.New("nil outbound manager")
+				return out, E.New("nil outbound manager")
 			}
 			endpoints := service.FromContext[adapter.EndpointManager](boxInstance.Context())
 			if endpoints == nil {
 				log.Println("Failed to get endpoint manager")
-				return E.New("nil endpoint manager")
+				return out, E.New("nil endpoint manager")
 			}
 			for _, ob := range outbounds.Outbounds() {
 				u, d := cApi.TrafficManager().TotalOutbound(ob.Tag())
@@ -257,19 +268,20 @@ func (s *server) QueryStats(in *gen.EmptyReq, out *gen.QueryStatsResp) error {
 			}
 		}
 	}
-	return nil
+	return out, nil
 }
 
-func (s *server) ListConnections(in *gen.EmptyReq, out *gen.ListConnectionsResp) error {
+func (s *server) ListConnections(ctx context.Context,in *gen.EmptyReq) (*gen.ListConnectionsResp, error) {
+	out := new (gen.ListConnectionsResp)
 	if boxInstance == nil {
-		return nil
+		return out, nil
 	}
 	if service.FromContext[adapter.ClashServer](boxInstance.Context()) == nil {
-		return errors.New("no clash server found")
+		return out, errors.New("no clash server found")
 	}
 	clash, ok := service.FromContext[adapter.ClashServer](boxInstance.Context()).(*clashapi.Server)
 	if !ok {
-		return errors.New("invalid state, should not be here")
+		return out, errors.New("invalid state, should not be here")
 	}
 	connections := clash.TrafficManager().Connections()
 
@@ -295,12 +307,13 @@ func (s *server) ListConnections(in *gen.EmptyReq, out *gen.ListConnectionsResp)
 		res = append(res, r)
 	}
 	out.Connections = res
-	return nil
+	return out, nil
 }
 
-func (s *server) SpeedTest(in *gen.SpeedTestRequest, out *gen.SpeedTestResponse) error {
+func (s *server) SpeedTest(ctx context.Context,in *gen.SpeedTestRequest) (*gen.SpeedTestResponse,error) {
+	out := new(gen.SpeedTestResponse)
 	if !*in.TestDownload && !*in.TestUpload && !*in.SimpleDownload && !*in.OnlyCountry {
-		return errors.New("cannot run empty test")
+		return out, errors.New("cannot run empty test")
 	}
 	var testInstance *boxbox.Box
 	var cancel context.CancelFunc
@@ -312,13 +325,13 @@ func (s *server) SpeedTest(in *gen.SpeedTestRequest, out *gen.SpeedTestResponse)
 				OutboundTag: To("proxy"),
 				Error:       To("Instance is not running"),
 			}}
-			return nil
+			return out, nil
 		}
 		testInstance = boxInstance
 	} else {
 		testInstance, cancel, err = boxmain.Create([]byte(*in.Config))
 		if err != nil {
-			return err
+			return out, err
 		}
 		defer cancel()
 		defer testInstance.Close()
@@ -350,10 +363,11 @@ func (s *server) SpeedTest(in *gen.SpeedTestRequest, out *gen.SpeedTestResponse)
 	}
 
 	out.Results = res
-	return nil
+	return out, nil
 }
 
-func (s *server) QuerySpeedTest(in *gen.EmptyReq, out *gen.QuerySpeedTestResponse) error {
+func (s *server) QuerySpeedTest(ctx context.Context,in *gen.EmptyReq) (*gen.QuerySpeedTestResponse,error) {
+	out := new (gen.QuerySpeedTestResponse)
 	res, isRunning := SpTQuerier.Result()
 	errStr := ""
 	if res.Error != nil {
@@ -370,10 +384,11 @@ func (s *server) QuerySpeedTest(in *gen.EmptyReq, out *gen.QuerySpeedTestRespons
 		Cancelled:     To(res.Cancelled),
 	}
 	out.IsRunning = To(isRunning)
-	return nil
+	return out, nil
 }
 
-func (s *server) QueryCountryTest(in *gen.EmptyReq, out *gen.QueryCountryTestResponse) error {
+func (s *server) QueryCountryTest(ctx context.Context,in *gen.EmptyReq) (*gen.QueryCountryTestResponse,error) {
+	out := new(gen.QueryCountryTestResponse)
 	results := CountryResults.Results()
 	for _, res := range results {
 		var errStr string
@@ -391,5 +406,5 @@ func (s *server) QueryCountryTest(in *gen.EmptyReq, out *gen.QueryCountryTestRes
 			Cancelled:     To(res.Cancelled),
 		})
 	}
-	return nil
+	return out, nil
 }
