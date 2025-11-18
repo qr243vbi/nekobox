@@ -5,7 +5,9 @@ Supports Windows 11/10 (arm64, x86_64) / Linux  out of the box.
 Starting with version 5.8.0, we have discontinued support for MacOS. NekoRay lives on!
 
 <img width="888" height="716" alt="image" src="https://github.com/user-attachments/assets/78539901-976a-4efb-8ea7-3f4a012f5807" />
- 
+
+
+
 ### GitHub Releases (Portable ZIPs, Windows installers, [AppImages](https://github.com/qr243vbi/nekobox/discussions/41))
 
 [![GitHub All Releases](https://img.shields.io/github/downloads/qr243vbi/nekobox/total?label=downloads-total&logo=github)](https://github.com/qr243vbi/nekobox/releases)
