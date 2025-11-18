@@ -2,28 +2,31 @@ package main
 
 import (
 	"Core/gen"
-	"os"
+	"context"
 	"fmt"
-	"time"
-	"syscall"
 	"log"
+	"os"
 	"os/exec"
+	"syscall"
+	"time"
 )
 
-func (s *server) SetSystemDNS(in *gen.SetSystemDNSRequest, out *gen.EmptyResp) error {
-	return nil
+func (s *server) SetSystemDNS(ctx context.Context, in *gen.SetSystemDNSRequest) (*gen.EmptyResp, error) {
+	out := new(gen.EmptyResp)
+	return out, nil
 }
 
-func runAdmin(_port * int, _debug * bool) (int, error) {
+func runAdmin(_port *int, _debug *bool) (int, error) {
 	return 0, nil
 }
 
-func (s *server) IsPrivileged(in *gen.EmptyReq, out *gen.IsPrivilegedResponse) error {
-	out.HasPrivilege = To(os.Geteuid() == 0)
-	return nil
+func (s *server) IsPrivileged(ctx context.Context, in *gen.EmptyReq) (*gen.IsPrivilegedResponse, error) {
+	out := new(gen.IsPrivilegedResponse)
+	out.HasPrivilege = (os.Geteuid() == 0)
+	return out, nil
 }
 
-func WaitForProcessExit (pid int) error{
+func WaitForProcessExit(pid int) error {
 	// Wait for the process to terminate
 	for {
 		// Send signal 0 to check if the process exists
@@ -42,11 +45,11 @@ func isElevated() (bool, error) {
 	return (os.Geteuid() == 0), nil
 }
 
-func restartAsAdmin(){
-	if (os.Geteuid() == 0){
+func restartAsAdmin() {
+	if os.Geteuid() == 0 {
 		return
 	}
-	var args [] string
+	var args []string
 	pkexecPath, err := exec.LookPath("pkexec")
 	if err != nil {
 		// exec.ErrNotFound is returned if the executable cannot be found.
@@ -57,7 +60,7 @@ func restartAsAdmin(){
 		}
 	}
 
-	executablePath := os.Args[0];
+	executablePath := os.Args[0]
 	args = append(args, pkexecPath, "sh", "-c", "exec \"${0}\" \"${@}\"", "env", "NEKOBOX_APPIMAGE_CUSTOM_EXECUTABLE=nekobox_core", executablePath)
 
 	for _, arg := range os.Args[1:] {

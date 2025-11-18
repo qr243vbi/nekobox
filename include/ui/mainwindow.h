@@ -3,7 +3,7 @@
 #include <QMainWindow>
 #include <include/global/HTTPRequestHelper.hpp>
 #ifndef Q_MOC_RUN
-#include <libcore.pb.h>
+#include "include/api/RPC.h"
 #endif
 
 #include "include/global/Configs.hpp"

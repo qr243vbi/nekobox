@@ -253,3 +253,7 @@ static const QMap<QString, QString> CountryMap = {
 QString CountryNameToCode(const QString& countryName);
 
 QString CountryCodeToFlag(const QString& countryCode);
+
+QString CountryNameToCode(const std::string& countryName);
+
+QString CountryCodeToFlag(const std::string& countryCode);

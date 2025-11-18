@@ -26,25 +26,16 @@ else if [[ "$GOOS" == "darwin" && "$GOARCH" == "arm64" ]]; then
   DEST=$DEPLOYMENT/macos-arm64
 fi; fi; fi; fi; fi; fi; fi; fi; fi; fi; fi;
 
+if [ -z $DEST ]; then
+  DEST=$PWD/build
+fi
 
 echo "DESTINATION IS $DEST FOR MACHINE $GOARCH with platform $GOOS"
 TAGS="with_clash_api,with_gvisor,with_quic,with_wireguard,with_utls,with_dhcp,with_tailscale"
 
-if [[ "$GOOS" == "windowslegacy" ]]; then
-  GOOS="windows"
-  GOCMD="$PWD/go/bin/go"
-  TAGS="$TAGS,with_legacy"
-else
-  GOCMD="go"
-fi
+GOCMD="${GOCMD:-go}"
 
-if [ -z $DEST ]; then
-  echo "Please set GOOS GOARCH"
-  exit 1
-fi
-
-rm -rf $DEST
-mkdir -p $DEST
+mkdir -p $DEST ||:
 
 export CGO_ENABLED=0
 
@@ -61,7 +52,7 @@ $GOCMD build -o $DEST/updater"${EXT}" -trimpath -ldflags "-w -s"
 pushd core/server
 (
 cd gen
-protoc -I . --go_out=. --protorpc_out=. libcore.proto
+protoc -I . --go_out=. --go-grpc_out=. libcore.proto
 ) || :
 VERSION_SINGBOX="${VERSION_SINGBOX:-$(go list -m -f '{{.Version}}' github.com/sagernet/sing-box)}"
 [ "$GO_MOD_TIDY" == yes ] && $GOCMD mod tidy
