@@ -1,7 +1,8 @@
 #pragma once
 
 #ifndef Q_MOC_RUN
-#include "libcore_client.grpc.qpb.h"
+#include <core/server/gen/libcore.pb.h>
+#include <core/server/gen/libcore.grpc.pb.h>
 #endif
 #include <QString>
 
@@ -39,7 +40,7 @@ namespace API {
         libcore::QueryCountryTestResponse QueryCountryTestResults(bool *rpcOK);
 
     private:
-        std::function<std::unique_ptr<protorpc::Client>()> make_rpc_client;
+        QString address;
         std::function<void(const QString &)> onError;
     };
 

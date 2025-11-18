@@ -1,31 +1,54 @@
 #include "include/api/RPC.h"
-
+#include <grpcpp/client_context.h>
+#include <grpcpp/grpcpp.h>
+#include "core/server/gen/libcore.grpc.pb.h"
 #include "include/global/Configs.hpp"
+#include <QDebug>
 
 namespace API {
 
     Client::Client(std::function<void(const QString &)> onError, const QString &host, int port) {
-        this->make_rpc_client = [=,this]() { return std::make_unique<protorpc::Client>(host.toStdString().c_str(), port); };
+        QString address = host;          
+        address += ":";                         
+        address += QString::number(port);
+        this->address = address;
         this->onError = std::move(onError);
     }
 
 #define CHECK(method) \
-if (!Configs::dataStore->core_running) MW_show_log("Cannot invoke method " + QString(method) + ", core is not running");
+bool is_running = true;                                  \
+if (!Configs::dataStore->core_running) {                                               \
+    MW_show_log("Cannot invoke method " + QString(method) + ", core is not running");  \
+    is_running = false; \
+} else {    \
+qDebug() << "Invoke" << QString(method);  \
+}
+
+#define CHANNEL                         \
+auto channel = grpc::CreateChannel(address.toStdString(), grpc::InsecureChannelCredentials()); \
+auto stub = libcore::LibcoreService::NewStub(channel); \
+grpc::ClientContext context;
 
 #define NOT_OK      \
     *rpcOK = false; \
-    onError(QString("LibcoreService error: %1\n").arg(QString::fromStdString(err.String())));
+    onError(QString("LibcoreService error with code %2: %1\n").  \
+    arg(QString::fromStdString(status.error_message()),          \
+    QString::number(status.error_code()) )          \
+);
 
     QString Client::Start(bool *rpcOK, const libcore::LoadConfigReq &request) {
         CHECK("Start")
+        if (!is_running){
+            *rpcOK = false;
+            return "";
+        }
+        CHANNEL
         libcore::ErrorResp reply;
-        std::string resp, req = spb::pb::serialize<std::string>(request);
-        auto err = make_rpc_client()->CallMethod("LibcoreService.Start", &req, &resp);
+        auto status = stub->Start(&context, request, &reply);
 
-        if(err.IsNil()) {
-            reply = spb::pb::deserialize< libcore::ErrorResp >(resp);
+        if(status.ok()) {
             *rpcOK = true;
-            return QString::fromStdString(reply.error.value());
+            return QString::fromStdString(reply.error());
         } else {
             NOT_OK
             return "";
@@ -34,15 +57,18 @@ if (!Configs::dataStore->core_running) MW_show_log("Cannot invoke method " + QSt
 
     QString Client::Stop(bool *rpcOK) {
         CHECK("Stop")
+        if (!is_running){
+            *rpcOK = false;
+            return "";
+        }
         libcore::EmptyReq request;
         libcore::ErrorResp reply;
-        std::string resp, req = spb::pb::serialize<std::string>(request);
-        auto err = make_rpc_client()->CallMethod("LibcoreService.Stop", &req, &resp);
+        CHANNEL
+        auto status = stub->Stop(&context, request, &reply);
 
-        if(err.IsNil()) {
-            reply = spb::pb::deserialize< libcore::ErrorResp >( resp );
+        if(status.ok()) {
             *rpcOK = true;
-            return QString::fromStdString(reply.error.value());
+            return QString::fromStdString(reply.error());
         } else {
             NOT_OK
             return "";
@@ -53,11 +79,13 @@ if (!Configs::dataStore->core_running) MW_show_log("Cannot invoke method " + QSt
         CHECK("QueryStats")
         libcore::EmptyReq request;
         libcore::QueryStatsResp reply;
-        std::string resp, req = spb::pb::serialize<std::string>(request);
-        auto err = make_rpc_client()->CallMethod("LibcoreService.QueryStats", &req, &resp);
+        if (!is_running){
+            return {};
+        }
+        CHANNEL
+        auto status = stub->QueryStats(&context, request, &reply);
 
-        if(err.IsNil()) {
-            reply = spb::pb::deserialize< libcore::QueryStatsResp >( resp );
+        if(status.ok()) {
             return reply;
         } else {
             return {};
@@ -66,12 +94,15 @@ if (!Configs::dataStore->core_running) MW_show_log("Cannot invoke method " + QSt
 
     libcore::TestResp Client::Test(bool *rpcOK, const libcore::TestReq &request) {
         CHECK("Test")
+        if (!is_running){
+            *rpcOK = false;
+            return {};
+        }
         libcore::TestResp reply;
-        std::string resp, req = spb::pb::serialize<std::string>(request);
-        auto err = make_rpc_client()->CallMethod("LibcoreService.Test", &req, &resp);
+        CHANNEL
+        auto status = stub->Test(&context, request, &reply);
 
-        if(err.IsNil()) {
-            reply = spb::pb::deserialize< libcore::TestResp >( resp );
+        if(status.ok()) {
             *rpcOK = true;
             return reply;
         } else {
@@ -82,65 +113,86 @@ if (!Configs::dataStore->core_running) MW_show_log("Cannot invoke method " + QSt
 
     void Client::StopTests(bool *rpcOK) {
         CHECK("StopTests")
-        const libcore::EmptyReq request;
-        std::string resp, req = spb::pb::serialize<std::string>(request);
-        auto err = make_rpc_client()->CallMethod("LibcoreService.StopTest", &req, &resp);
+        if (!is_running){
+            *rpcOK = false;
+            return;
+        }
+        libcore::EmptyReq request;
+        libcore::EmptyResp resp;
+        CHANNEL
+        auto status = stub->StopTest(&context, request, &resp);
 
-        if(err.IsNil()) {
+        if(status.ok()) {
             *rpcOK = true;
+            return;
         } else {
             NOT_OK
+            return;
         }
     }
 
     libcore::QueryURLTestResponse Client::QueryURLTest(bool *rpcOK)
     {
         CHECK("QueryURLTest")
-        libcore::EmptyReq request;
-        libcore::QueryURLTestResponse reply;
-        std::string resp, req = spb::pb::serialize<std::string>(request);
-        auto err = make_rpc_client()->CallMethod("LibcoreService.QueryURLTest", &req, &resp);
+        if (!is_running){
+            *rpcOK = false;
+            return {};
+        }
+        libcore::EmptyReq req;
+        libcore::QueryURLTestResponse resp;
+        CHANNEL
+        auto status = stub->QueryURLTest(
+            &context, req, &resp);
 
-        if(err.IsNil()) {
-            reply = spb::pb::deserialize< libcore::QueryURLTestResponse >( resp );
+        if(status.ok()) {
             *rpcOK = true;
-            return reply;
+            return resp;
         } else {
             NOT_OK
-            return reply;
+            return resp;
         }
     }
 
     QString Client::SetSystemDNS(bool *rpcOK, const bool clear) const {
         CHECK("SetSystemDNS")
+        if (!is_running){
+            *rpcOK = false;
+            return "";
+        }
         libcore::SetSystemDNSRequest request;
-        request.clear = clear;
-        std::string resp, req = spb::pb::serialize<std::string>(request);
+        request.set_clear(clear);
+        libcore::EmptyResp resp;
+        CHANNEL
 
-        auto err = make_rpc_client()->CallMethod("LibcoreService.SetSystemDNS", &req, &resp);
-        if(err.IsNil()) {
+        auto status = stub->SetSystemDNS(
+            &context, request, &resp);
+        if(status.ok()) {
             *rpcOK = true;
             return "";
         } else {
             NOT_OK
-            return QString::fromStdString(err.String());
+            return QString::fromStdString(status.error_message());
         }
     }
 
     libcore::ListConnectionsResp Client::ListConnections(bool* rpcOK) const
     {
         CHECK("ListConnections")
-        libcore::EmptyReq request;
+        if (!is_running){
+            *rpcOK = false;
+            return {};
+        }
+        libcore::EmptyReq req;
         libcore::ListConnectionsResp reply;
-        std::string resp, req = spb::pb::serialize<std::string>(request);
-        auto err = make_rpc_client()->CallMethod("LibcoreService.ListConnections", &req, &resp);
-        if(err.IsNil()) {
-            reply = spb::pb::deserialize< libcore::ListConnectionsResp >( resp );
+        CHANNEL
+        auto status = stub->ListConnections(&context, req, &reply);
+        if(status.ok()) {
             *rpcOK = true;
             return reply;
         } else {
             NOT_OK
-            MW_show_log(QString("Failed to list connections: ") + QString::fromStdString(err.String()));
+            MW_show_log(QString("Failed to list connections: ") + 
+                QString::fromStdString(status.error_message()));
             return {};
         }
     }
@@ -148,21 +200,24 @@ if (!Configs::dataStore->core_running) MW_show_log("Cannot invoke method " + QSt
     QString Client::CheckConfig(bool* rpcOK, const QString& config) const
     {
         CHECK("CheckConfig")
+        if (!is_running){
+            *rpcOK = false;
+            return "";
+        }
         libcore::LoadConfigReq request;
         libcore::ErrorResp reply;
-        request.core_config = config.toStdString();
-        std::string resp, req = spb::pb::serialize<std::string>(request);
-        auto err = make_rpc_client()->CallMethod("LibcoreService.CheckConfig", &req, &resp);
+        request.set_core_config(config.toStdString());
+        CHANNEL
+        auto status = stub->CheckConfig(&context, request, &reply);
 
-        if(err.IsNil())
+        if(status.ok())
         {
-            reply = spb::pb::deserialize< libcore::ErrorResp >( resp );
             *rpcOK = true;
-            return QString::fromStdString(reply.error.value());
+            return QString::fromStdString(reply.error());
         } else
         {
             NOT_OK
-            return QString::fromStdString(err.String());
+            return QString::fromStdString(status.error_message());
         }
 
     }
@@ -170,16 +225,20 @@ if (!Configs::dataStore->core_running) MW_show_log("Cannot invoke method " + QSt
     bool Client::IsPrivileged(bool* rpcOK) const
     {
         CHECK("IsPrivileged")
-        libcore::EmptyReq request;
-        libcore::IsPrivilegedResponse reply;
-        std::string resp, req = spb::pb::serialize<std::string>(request);
-        auto err = make_rpc_client()->CallMethod("LibcoreService.IsPrivileged", &req, &resp);
 
-        if(err.IsNil())
+        if (!is_running){
+            *rpcOK = false;
+            return false;
+        }
+        libcore::EmptyReq req;
+        libcore::IsPrivilegedResponse reply;
+        CHANNEL
+        auto status = stub->IsPrivileged(&context, req, &reply);
+
+        if(status.ok())
         {
-            reply = spb::pb::deserialize< libcore::IsPrivilegedResponse >( resp );
             *rpcOK = true;
-            return reply.has_privilege.value();
+            return reply.has_privilege();
         } else
         {
             NOT_OK
@@ -190,12 +249,15 @@ if (!Configs::dataStore->core_running) MW_show_log("Cannot invoke method " + QSt
     libcore::SpeedTestResponse Client::SpeedTest(bool *rpcOK, const libcore::SpeedTestRequest &request)
     {
         CHECK("SpeedTest")
+        if (!is_running){
+            *rpcOK = false;
+            return {};
+        }
         libcore::SpeedTestResponse reply;
-        std::string resp, req = spb::pb::serialize<std::string>(request);
-        auto err = make_rpc_client()->CallMethod("LibcoreService.SpeedTest", &req, &resp);
+        CHANNEL
+        auto status = stub->SpeedTest(&context, request, &reply);
 
-        if(err.IsNil()) {
-            reply = spb::pb::deserialize< libcore::SpeedTestResponse >( resp );
+        if(status.ok()) {
             *rpcOK = true;
             return reply;
         } else {
@@ -207,13 +269,17 @@ if (!Configs::dataStore->core_running) MW_show_log("Cannot invoke method " + QSt
     libcore::QuerySpeedTestResponse Client::QueryCurrentSpeedTests(bool *rpcOK)
     {
         CHECK("QueryCurrentSpeedTests")
+        if (!is_running){
+            *rpcOK = false;
+            return {};
+        }
         const libcore::EmptyReq request;
         libcore::QuerySpeedTestResponse reply;
-        std::string resp, req = spb::pb::serialize<std::string>(request);
-        auto err = make_rpc_client()->CallMethod("LibcoreService.QuerySpeedTest", &req, &resp);
+        CHANNEL
+        auto status = stub->QuerySpeedTest(&context, 
+            request, &reply);
 
-        if(err.IsNil()) {
-            reply = spb::pb::deserialize< libcore::QuerySpeedTestResponse >( resp );
+        if(status.ok()) {
             *rpcOK = true;
             return reply;
         } else {
@@ -225,13 +291,17 @@ if (!Configs::dataStore->core_running) MW_show_log("Cannot invoke method " + QSt
     libcore::QueryCountryTestResponse Client::QueryCountryTestResults(bool* rpcOK)
     {
         CHECK("QueryCountryTestResults")
+        if (!is_running){
+            *rpcOK = false;
+            return {};
+        }
         const libcore::EmptyReq request;
         libcore::QueryCountryTestResponse reply;
-        std::string resp, req = spb::pb::serialize<std::string>(request);
-        auto err = make_rpc_client()->CallMethod("LibcoreService.QueryCountryTest", &req, &resp);
+        CHANNEL
+        auto status = stub->QueryCountryTest(
+            &context, request, &reply);
 
-        if(err.IsNil()) {
-            reply = spb::pb::deserialize< libcore::QueryCountryTestResponse >( resp );
+        if(status.ok()) {
             *rpcOK = true;
             return reply;
         } else {

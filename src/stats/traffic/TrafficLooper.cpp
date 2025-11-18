@@ -22,15 +22,17 @@ namespace Stats {
         proxy->downlink_rate = 0;
 
         int proxyUp = 0, proxyDown = 0;
+        auto ups = resp.ups();
+        auto downs = resp.downs();
 
         for (const auto &item: this->items) {
-            if (!resp.ups.contains(item->tag)) continue;
+            if (!ups.contains(item->tag)) continue;
             auto now = elapsedTimer.elapsed();
             auto interval = now - item->last_update;
             item->last_update = now;
             if (interval <= 0) continue;
-            auto up = resp.ups.at(item->tag);
-            auto down = resp.downs.at(item->tag);
+            auto up = ups.at(item->tag);
+            auto down = downs.at(item->tag);
             if (item->tag == "proxy")
             {
                 proxyUp = up;

@@ -1,7 +1,8 @@
 cmake_minimum_required(VERSION 3.10)
 
-project(nekobox VERSION 5.0.0)
+project(nekobox VERSION 5.8.0)
 
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
 set(CMAKE_CXX_STANDARD 20)
@@ -53,7 +54,7 @@ if (NKR_PACKAGE)
 endif ()
 
 include("cmake/myproto.cmake")
-list(APPEND NKR_EXTERNAL_TARGETS MyProtoTarget MyGrpcTarget)
+list(APPEND NKR_EXTERNAL_TARGETS myproto)
 
 set(BUILD_SHARED_LIBS OFF)
 list(APPEND NKR_EXTERNAL_TARGETS qhotkey)
@@ -203,11 +204,9 @@ set(PROJECT_SOURCES
         include/ui/profile/edit_ssh.h
         include/ui/profile/edit_ssh.ui
         include/configs/proxy/SSHBean.h
-        include/sys/macos/MacOS.h
         src/sys/Settings.cpp
 
         src/sys/linux/LinuxCap.cpp
-        src/sys/macos/MacOS.cpp
 
         src/sys/AutoRun.cpp
         src/sys/Process.cpp
