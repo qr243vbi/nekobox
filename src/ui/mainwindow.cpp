@@ -65,7 +65,6 @@
 #include <include/global/HTTPRequestHelper.hpp>
 #include "include/global/DeviceDetailsHelper.hpp"
 #include "include/sys/Settings.h"
-#include "include/sys/macos/MacOS.h"
 #include <QDir>
 
 void setAppIcon(Icon::TrayIconStatus, QSystemTrayIcon*);
@@ -760,7 +759,6 @@ QString updater_js = "";
     ui->data_view->setStyleSheet("background: transparent; border: none;");
 }
 
-#include <iostream>
 
 void MainWindow::closeEvent(QCloseEvent *event) {
     if (tray->isVisible()) {
@@ -1367,11 +1365,11 @@ void MainWindow::UpdateDataView(bool force)
     "</div>"
     "<p style='text-align:center;margin:0;'>Server: %4%5, %6</p>"
         ).arg(currentSptProfileName,
-            currentTestResult.dl_speed.value().c_str(),
-            currentTestResult.ul_speed.value().c_str(),
-            CountryCodeToFlag(CountryNameToCode(QString::fromStdString(currentTestResult.server_country.value()))),
-            currentTestResult.server_country.value().c_str(),
-            currentTestResult.server_name.value().c_str());
+            currentTestResult.dl_speed().c_str(),
+            currentTestResult.ul_speed().c_str(),
+            CountryCodeToFlag(CountryNameToCode((currentTestResult.server_country()))),
+            currentTestResult.server_country().c_str(),
+            currentTestResult.server_name().c_str());
     }
     ui->data_view->setHtml(html);
     lastUpdated = QDateTime::currentDateTime();

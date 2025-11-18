@@ -10,6 +10,7 @@ import (
 	"net"
 	"strconv"
 	"os"
+	"google.golang.org/grpc"
 	"runtime"
 	runtimeDebug "runtime/debug"
 	"time"
@@ -32,9 +33,17 @@ func RunCore(_port * int, _debug * bool) {
 			}
 		}
 	}()
-	err := gen.ListenAndServeLibcoreService("tcp", "127.0.0.1:"+strconv.Itoa(*_port), new(server))
-	if err != nil {
-		log.Fatalf("failed to listen: %v", err)
+	{
+		lis, err := net.Listen("tcp", ":"+strconv.Itoa(*_port))
+		if err != nil {
+			log.Fatalf("failed to listen: %v", err)
+		}
+		s := grpc.NewServer()
+		gen.RegisterLibcoreServiceServer(s, &server{})
+		log.Println("Server is running at :50051")
+		if err := s.Serve(lis); err != nil {
+			log.Fatalf("failed to serve: %v", err)
+		}
 	}
 }
 
