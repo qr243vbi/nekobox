@@ -39,9 +39,6 @@ jobs:
           - cross_os: windows
             cross_arch: arm64
             go_version: "1.25.0"
-          - cross_os: windowslegacy
-            cross_arch: 386
-            go_version: "1.25.0"
       fail-fast: false
     runs-on: ubuntu-latest
     steps:
@@ -63,11 +60,6 @@ jobs:
           cache-dependency-path: |
             core/server/go.sum
             core/updater/go.sum
-      - name: Install Golang For Legacy Windows
-        if: matrix.cross_os == 'windowslegacy' && github.event.inputs.source != 'y'
-        run: |
-          curl -L -o go.7z https://github.com/throneproj/env_windows_legacy/releases/download/latest/go.7z
-          7z x go.7z
       - name: Install Protoc
         if: matrix.cross_os == 'public' || github.event.inputs.source != 'y'
         run: |
@@ -79,7 +71,7 @@ jobs:
         if: matrix.cross_os == 'public' || github.event.inputs.source != 'y'
         run: |
           go install github.com/golang/protobuf/protoc-gen-go@latest
-          go install github.com/chai2010/protorpc/protoc-gen-protorpc@latest
+          go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@latest
       - name: Build golang parts
         if: steps.cache-common.outputs.cache-hit != 'true' && matrix.cross_os != 'public' && github.event.inputs.source != 'y'
         shell: bash
@@ -119,9 +111,6 @@ jobs:
           - platform: windows-11-arm
             qt_version: "6.10.0"
             target: arm64
-          - platform: windows-2022
-            qt_version: "6.2.12"
-            target: i686
       fail-fast: false
     runs-on: ${{ matrix.platform }}
     env:
@@ -197,7 +186,13 @@ jobs:
           version: ${{ matrix.qt_version }}
           setup-python: true
           cache: true
+          modules: qtcharts qtgrpc
           cache-key-prefix: QtCache-${{ matrix.platform }}-${{ matrix.target }}
+      - name: Install Protoc
+        if: github.event.inputs.source != 'y'
+        uses: arduino/setup-protoc@v3
+        with:
+          version: "23.2"
       # ========================================================================================================= Generate MakeFile and Build
       - name: Download Srslist
         shell: bash
@@ -230,23 +225,6 @@ jobs:
           ninja -j2
           cd ..
           ./script/deploy_windows.sh "${MATRIX}"
-      - name: Legacy Windows - Generate MakeFile and Build
-        shell: bash
-        if: contains( matrix.platform, 'windows' ) && matrix.qt_version == '6.2.12' && github.event.inputs.source != 'y'
-        run: |
-          curl -L -o qt.7z https://github.com/throneproj/env_windows_legacy/releases/download/latest/qt-${{ matrix.target }}.7z
-          7z x qt.7z
-          curl -L -o openssl.7z https://github.com/throneproj/env_windows_legacy/releases/download/latest/openssl-${{ matrix.target }}.7z
-          7z x openssl.7z
-          export CMAKE_PREFIX_PATH=$PWD/Qt/lib/cmake
-          export OPENSSL_ROOT_DIR=$PWD/openssl
-          cd build
-          if [[ ${{ github.event.inputs.updater }}es == yes ]]; then export SKIP_UPDATE_BUTTON=ON; else export SKIP_UPDATE_BUTTON=OFF; fi
-          cmake -GNinja "-DSKIP_UPDATE_BUTTON=${SKIP_UPDATE_BUTTON}" -DSKIP_JS_UPDATER=ON -DUSE_LEGACY_QT=ON -DCMAKE_CXX_FLAGS="-static" -DCMAKE_BUILD_TYPE=Debug ..
-          ninja -j2
-          cd ..
-          export COMPILER="MinGW"
-          ./script/deploy_windows.sh ${{ matrix.target }}
       - name: Build Installer with NSIS for windows64
         shell: cmd
         if: contains( matrix.platform, 'windows' ) && matrix.qt_version == '6.10.0' && matrix.target == 'x86_64' && github.event.inputs.source != 'y'
