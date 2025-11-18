@@ -106,10 +106,10 @@ jobs:
             qt_version: "6.10.0"
             target: arm64
           - platform: windows-2022
-            qt_version: "6.10.0"
+            qt_version: "6.8.1"
             target: x86_64
           - platform: windows-11-arm
-            qt_version: "6.10.0"
+            qt_version: "6.8.1"
             target: arm64
       fail-fast: false
     runs-on: ${{ matrix.platform }}
