@@ -52,7 +52,6 @@ DialogBasicSettings::DialogBasicSettings(MainWindow *parent)
     ui->speedtest_mode->setCurrentIndex(Configs::dataStore->speed_test_mode);
     ui->test_timeout->setText(Int2String(Configs::dataStore->speed_test_timeout_ms));
     ui->simple_down_url->setText(Configs::dataStore->simple_dl_url);
-    ui->allow_beta->setChecked(Configs::dataStore->allow_beta_update);
 
     connect(ui->custom_inbound_edit, &QPushButton::clicked, this, [=,this] {
         C_EDIT_JSON_ALLOW_EMPTY(custom_inbound)
@@ -259,7 +258,6 @@ void DialogBasicSettings::accept() {
     Configs::dataStore->simple_dl_url = ui->simple_down_url->text();
     Configs::dataStore->url_test_timeout_ms = ui->url_timeout->text().toInt();
     Configs::dataStore->speed_test_timeout_ms = ui->test_timeout->text().toInt();
-    Configs::dataStore->allow_beta_update = ui->allow_beta->isChecked();
 
     // Style
 
