@@ -2,10 +2,9 @@
 Qt based Desktop cross-platform GUI proxy utility, empowered by [Sing-box](https://github.com/SagerNet/sing-box)
 Supports Windows 11/10 (arm64, x86_64) / Linux  out of the box.
 
-Starting with version 5.8.0, we have discontinued support for MacOS. NekoRay lives on!
-
 <img width="888" height="716" alt="image" src="https://github.com/user-attachments/assets/78539901-976a-4efb-8ea7-3f4a012f5807" />
 
+Starting with version 5.8.0, we have discontinued support for MacOS. NekoRay lives on!
 
 
 ### GitHub Releases (Portable ZIPs, Windows installers, [AppImages](https://github.com/qr243vbi/nekobox/discussions/41))
