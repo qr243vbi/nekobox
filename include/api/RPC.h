@@ -1,10 +1,10 @@
 #pragma once
 
 #ifndef Q_MOC_RUN
-#include "libcore.pb.h"
+#include <core/server/gen/libcore.pb.h>
+#include <core/server/gen/libcore.grpc.pb.h>
 #endif
 #include <QString>
-#include "3rdparty/protorpc/rpc_client.h"
 
 namespace API {
     class Client {
@@ -40,7 +40,7 @@ namespace API {
         libcore::QueryCountryTestResponse QueryCountryTestResults(bool *rpcOK);
 
     private:
-        std::function<std::unique_ptr<protorpc::Client>()> make_rpc_client;
+        QString address;
         std::function<void(const QString &)> onError;
     };
 

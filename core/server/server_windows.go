@@ -3,17 +3,19 @@ package main
 import (
 	"Core/gen"
 	"Core/internal/boxdns"
+	"context"
 	"crypto/rand"
 	"fmt"
-	"math/big"
-	"github.com/NullYing/npipe"
 	"io"
-	"os"
-	"sync"    
-	"golang.org/x/sys/windows"
 	"log"
+	"math/big"
+	"os"
+	"sync"
+	"syscall"
 	"unsafe"
-    "syscall"
+
+	"github.com/NullYing/npipe"
+	"golang.org/x/sys/windows"
 )
 
 const (
@@ -94,30 +96,29 @@ func runShellExec(command string, arguments string) (int, error) {
 	return int(exitCode), nil
 }
 
-
 const letters = "abcdefghijklmnopqrstuvwxyz"
 
 func RandString(n int) (string, error) {
-    result := make([]byte, n)
-    for i := 0; i < n; i++ {
-        num, err := rand.Int(rand.Reader, big.NewInt(int64(len(letters))))
-        if err != nil {
-            return "", err
-        }
-        result[i] = letters[num.Int64()]
-    }
-    return string(result), nil
+	result := make([]byte, n)
+	for i := 0; i < n; i++ {
+		num, err := rand.Int(rand.Reader, big.NewInt(int64(len(letters))))
+		if err != nil {
+			return "", err
+		}
+		result[i] = letters[num.Int64()]
+	}
+	return string(result), nil
 }
 
-func (s *server) SetSystemDNS(in *gen.SetSystemDNSRequest, out *gen.EmptyResp) error {
-	err := boxdns.DnsManagerInstance.SetSystemDNS(nil, *in.Clear)
+func (s *server) SetSystemDNS(ctx context.Context, in *gen.SetSystemDNSRequest) (*gen.EmptyResp, error) {
+	err := boxdns.DnsManagerInstance.SetSystemDNS(nil, in.Clear)
+	out := new(gen.EmptyResp)
 	if err != nil {
-		return err
+		return out, err
 	}
 
-	return nil
+	return out, nil
 }
-
 
 func handlePipe(pipeName string, output io.Writer, wg *sync.WaitGroup) {
 	defer wg.Done()
@@ -136,7 +137,7 @@ func handlePipe(pipeName string, output io.Writer, wg *sync.WaitGroup) {
 	}
 	defer conn.Close()
 
-//	fmt.Printf("Client connected to %s\n", pipeName)
+	//	fmt.Printf("Client connected to %s\n", pipeName)
 
 	_, err = io.Copy(output, conn)
 	if err != nil {
@@ -144,29 +145,29 @@ func handlePipe(pipeName string, output io.Writer, wg *sync.WaitGroup) {
 	}
 }
 
-func runAdmin(_port * int, _debug * bool) (int, error) {
-    executablePath, err := os.Executable()
-    if err != nil {
-        log.Fatalf("Failed to get executable path: %v", err)
-    }
-            
-	randstr, _ := RandString(6);
-	
+func runAdmin(_port *int, _debug *bool) (int, error) {
+	executablePath, err := os.Executable()
+	if err != nil {
+		log.Fatalf("Failed to get executable path: %v", err)
+	}
+
+	randstr, _ := RandString(6)
+
 	stdout_pipe := `\\.\pipe\nekobox_core_stdout_` + randstr
 	stderr_pipe := `\\.\pipe\nekobox_core_stderr_` + randstr
 	flag := ""
-	if (*_debug){
+	if *_debug {
 		flag = " \"-debug\""
 	}
-	
+
 	var pid int
-	pid = os.Getpid();
-	
-//	formattedString := fmt.Sprintf("Start-Process \"%s\" -ArgumentList '-port %d -waitpid %d -redirect-output \"%s\" -redirect-error \"%s\"%s' -WindowStyle Hidden -Verb RunAs -Wait", 
-//		 os.Args[0], *_port, pid, stdout_pipe, stderr_pipe, flag)
-	
+	pid = os.Getpid()
+
+	//	formattedString := fmt.Sprintf("Start-Process \"%s\" -ArgumentList '-port %d -waitpid %d -redirect-output \"%s\" -redirect-error \"%s\"%s' -WindowStyle Hidden -Verb RunAs -Wait",
+	//		 os.Args[0], *_port, pid, stdout_pipe, stderr_pipe, flag)
+
 	formattedString := fmt.Sprintf("-port %d -waitpid %d -redirect-output \"%s\" -redirect-error \"%s\"%s", *_port, pid, stdout_pipe, stderr_pipe, flag)
-    
+
 	var wg sync.WaitGroup
 
 	// Pipe for stdout
@@ -177,51 +178,51 @@ func runAdmin(_port * int, _debug * bool) (int, error) {
 	wg.Add(1)
 	go handlePipe(stderr_pipe, os.Stderr, &wg)
 
-    return runShellExec(executablePath, formattedString)
+	return runShellExec(executablePath, formattedString)
 	/*
-	cmd := exec.Command("powershell", "-Command", formattedString)
-	err := cmd.Run()
-	
-	var code int
-	
-	if err != nil {
-        // Process exited with error
-        if exitErr, ok := err.(*exec.ExitError); ok {
-            code = exitErr.ExitCode()
-        } else {
-			code = -1
-		}
-    } else {
-        // Process exited successfully
-        code = 0
-    }
-	
-	return code, nil
-    */
+			cmd := exec.Command("powershell", "-Command", formattedString)
+			err := cmd.Run()
+
+			var code int
+
+			if err != nil {
+		        // Process exited with error
+		        if exitErr, ok := err.(*exec.ExitError); ok {
+		            code = exitErr.ExitCode()
+		        } else {
+					code = -1
+				}
+		    } else {
+		        // Process exited successfully
+		        code = 0
+		    }
+
+			return code, nil
+	*/
 }
 
 func isElevated() (bool, error) {
-    var token windows.Token
-    err := windows.OpenProcessToken(windows.CurrentProcess(), windows.TOKEN_QUERY, &token)
-    if err != nil {
-        return false, err
-    }
-    defer token.Close()
+	var token windows.Token
+	err := windows.OpenProcessToken(windows.CurrentProcess(), windows.TOKEN_QUERY, &token)
+	if err != nil {
+		return false, err
+	}
+	defer token.Close()
 
-    var elevation uint32
-    var outLen uint32
-    err = windows.GetTokenInformation(
-        token,
-        windows.TokenElevation,
-        (*byte)(unsafe.Pointer(&elevation)),
-        uint32(unsafe.Sizeof(elevation)),
-        &outLen,
-    )
-    if err != nil {
-        return false, err
-    }
+	var elevation uint32
+	var outLen uint32
+	err = windows.GetTokenInformation(
+		token,
+		windows.TokenElevation,
+		(*byte)(unsafe.Pointer(&elevation)),
+		uint32(unsafe.Sizeof(elevation)),
+		&outLen,
+	)
+	if err != nil {
+		return false, err
+	}
 
-    return elevation != 0, nil
+	return elevation != 0, nil
 }
 
 // WaitForProcessExit waits for a Windows process (by PID) to exit.
@@ -244,16 +245,16 @@ func WaitForProcessExit(pid int) error {
 	return nil
 }
 
-
-func (s *server) IsPrivileged(in *gen.EmptyReq, out *gen.IsPrivilegedResponse) error {
+func (s *server) IsPrivileged(ctx context.Context, in *gen.EmptyReq) (*gen.IsPrivilegedResponse, error) {
 	elevated, err := isElevated()
+	out := new(gen.IsPrivilegedResponse)
 	if err != nil {
-		out.HasPrivilege = To(false)
-		return err
+		out.HasPrivilege = (false)
+		return out, err
 	}
-	out.HasPrivilege = To(elevated)
-	return nil
+	out.HasPrivilege = (elevated)
+	return out, nil
 }
 
-func restartAsAdmin(){
+func restartAsAdmin() {
 }

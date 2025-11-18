@@ -1,5 +1,5 @@
 #include <QThread>
-#include <libcore.pb.h>
+#include <core/server/gen/libcore.pb.h>
 #include <include/api/RPC.h>
 #include "include/ui/mainwindow_interface.h"
 #include <include/stats/connections/connectionLister.hpp>
@@ -49,20 +49,20 @@ namespace Stats
         QMap<QString, ConnectionMetadata> toAdd;
         QSet<QString> newState;
         QList<ConnectionMetadata> sorted;
-        auto conns = resp.connections;
+        auto conns = resp.connections();
         for (auto conn : conns)
         {
             auto c = ConnectionMetadata();
-            c.id = QString(conn.id.value().c_str());
-            c.createdAtMs = conn.created_at.value();
-            c.dest = QString(conn.dest.value().c_str());
-            c.upload = conn.upload.value();
-            c.download = conn.download.value();
-            c.domain = QString(conn.domain.value().c_str());
-            c.network = QString(conn.network.value().c_str());
-            c.outbound = QString(conn.outbound.value().c_str());
-            c.process = QString(conn.process.value().c_str());
-            c.protocol = QString(conn.protocol.value().c_str());
+            c.id = QString::fromStdString(conn.id());
+            c.createdAtMs = conn.created_at();
+            c.dest = QString::fromStdString(conn.dest());
+            c.upload = conn.upload();
+            c.download = conn.download();
+            c.domain = QString::fromStdString(conn.domain());
+            c.network = QString::fromStdString(conn.network());
+            c.outbound = QString::fromStdString(conn.outbound());
+            c.process = QString::fromStdString(conn.process());
+            c.protocol = QString::fromStdString(conn.protocol());
             if (sort == Default)
             {
                 if (state->contains(c.id))
