@@ -22,17 +22,18 @@ namespace Stats {
         proxy->downlink_rate = 0;
 
         int proxyUp = 0, proxyDown = 0;
-        auto ups = resp.ups();
-        auto downs = resp.downs();
+        auto ups = resp->ups();
+        auto downs = resp->downs();
 
         for (const auto &item: this->items) {
-            if (!ups.contains(item->tag)) continue;
+            auto tag = QString::fromStdString(item->tag);
+            if (!ups.contains(tag)) continue;
             auto now = elapsedTimer.elapsed();
             auto interval = now - item->last_update;
             item->last_update = now;
             if (interval <= 0) continue;
-            auto up = ups.at(item->tag);
-            auto down = downs.at(item->tag);
+            auto up = ups.value(tag);
+            auto down = downs.value(tag);
             if (item->tag == "proxy")
             {
                 proxyUp = up;
