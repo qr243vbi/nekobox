@@ -29,7 +29,7 @@
       </size>
      </property>
      <property name="currentIndex">
-      <number>5</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="tab_1">
       <attribute name="title">
@@ -42,49 +42,6 @@
           <string>Basic Settings</string>
          </property>
          <layout class="QGridLayout" name="gridLayout_9">
-          <item row="2" column="2">
-           <widget class="QCheckBox" name="allow_beta">
-            <property name="text">
-             <string>Allow updating to beta versions</string>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="0">
-           <widget class="QLabel" name="label_11">
-            <property name="text">
-             <string>Custom Inbound</string>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="4">
-           <widget class="QLineEdit" name="inbound_socks_port">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="3">
-           <widget class="QLabel" name="inbound_socks_port_l">
-            <property name="toolTip">
-             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Socks
-                                                                + HTTP Proxy&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
-                                                            </string>
-            </property>
-            <property name="text">
-             <string>Listen Port</string>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="1" colspan="2">
-           <widget class="QPushButton" name="custom_inbound_edit">
-            <property name="text">
-             <string>Edit</string>
-            </property>
-           </widget>
-          </item>
           <item row="2" column="0">
            <widget class="QCheckBox" name="disable_tray">
             <property name="sizePolicy">
@@ -101,8 +58,29 @@
             </property>
            </widget>
           </item>
-          <item row="0" column="1" colspan="2">
-           <widget class="QLineEdit" name="inbound_address"/>
+          <item row="0" column="4">
+           <widget class="QLineEdit" name="inbound_socks_port">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="3">
+           <widget class="QLabel" name="proxy_scheme_l">
+            <property name="text">
+             <string>Proxy Format</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1" colspan="2">
+           <widget class="QPushButton" name="custom_inbound_edit">
+            <property name="text">
+             <string>Edit</string>
+            </property>
+           </widget>
           </item>
           <item row="0" column="5">
            <widget class="QCheckBox" name="random_listen_port">
@@ -111,20 +89,6 @@
             </property>
             <property name="text">
              <string>Random port</string>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="0">
-           <widget class="QLabel" name="label">
-            <property name="text">
-             <string>Listen Address</string>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="3">
-           <widget class="QLabel" name="proxy_scheme_l">
-            <property name="text">
-             <string>Proxy Format</string>
             </property>
            </widget>
           </item>
@@ -147,32 +111,46 @@
             </item>
            </widget>
           </item>
-         </layout>
-        </widget>
-       </item>
-       <item>
-        <widget class="QGroupBox" name="groupBox_3">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="title">
-          <string>Network Settings</string>
-         </property>
-         <layout class="QHBoxLayout" name="horizontalLayout_11">
-          <item>
-           <widget class="QCheckBox" name="net_use_proxy">
+          <item row="0" column="3">
+           <widget class="QLabel" name="inbound_socks_port_l">
+            <property name="toolTip">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Socks
+                                                                + HTTP Proxy&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
+                                                            </string>
+            </property>
             <property name="text">
-             <string>Use proxy</string>
+             <string>Listen Port</string>
             </property>
            </widget>
           </item>
-          <item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="label_11">
+            <property name="text">
+             <string>Custom Inbound</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1" colspan="2">
+           <widget class="QLineEdit" name="inbound_address"/>
+          </item>
+          <item row="0" column="0">
+           <widget class="QLabel" name="label">
+            <property name="text">
+             <string>Listen Address</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="4">
            <widget class="QCheckBox" name="net_insecure">
             <property name="text">
              <string>Ignore TLS errors</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="3">
+           <widget class="QCheckBox" name="net_use_proxy">
+            <property name="text">
+             <string>Use proxy</string>
             </property>
            </widget>
           </item>
