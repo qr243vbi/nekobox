@@ -2,17 +2,18 @@ package main
 
 import (
 	"Core/gen"
-	"os"
+	"context"
 	"fmt"
-	"time"
+	"os"
 	"syscall"
+	"time"
 )
 
 func (s *server) SetSystemDNS(in *gen.SetSystemDNSRequest, out *gen.EmptyResp) error {
 	return nil
 }
 
-func runAdmin(_port * int, _debug * bool) (int, error) {
+func runAdmin(_port *int, _debug *bool) (int, error) {
 	return 0, nil
 }
 
@@ -20,12 +21,13 @@ func isElevated() (bool, error) {
 	return (os.Geteuid() == 0), nil
 }
 
-func (s *server) IsPrivileged(in *gen.EmptyReq, out *gen.IsPrivilegedResponse) error {
-	out.HasPrivilege = To(os.Geteuid() == 0)
-	return nil
+func (s *server) IsPrivileged(ctx context.Context, in *gen.EmptyReq) (*gen.IsPrivilegedResponse, error) {
+	out := new(gen.IsPrivilegedResponse)
+	out.HasPrivilege = (os.Geteuid() == 0)
+	return out, nil
 }
 
-func WaitForProcessExit (pid int) error{
+func WaitForProcessExit(pid int) error {
 	// Wait for the process to terminate
 	for {
 		// Send signal 0 to check if the process exists
@@ -40,5 +42,5 @@ func WaitForProcessExit (pid int) error{
 	}
 }
 
-func restartAsAdmin(){
+func restartAsAdmin() {
 }
