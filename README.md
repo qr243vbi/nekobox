@@ -2,7 +2,7 @@
 Qt based Desktop cross-platform GUI proxy utility, empowered by [Sing-box](https://github.com/SagerNet/sing-box)
 Supports Windows 11/10 (arm64, i386, x86_64) / Linux  out of the box.
 
-We dropped support for MacOS
+We dropped support for MacOS starting from version 5.8.0
 
 <img width="888" height="716" alt="image" src="https://github.com/user-attachments/assets/78539901-976a-4efb-8ea7-3f4a012f5807" />
  
