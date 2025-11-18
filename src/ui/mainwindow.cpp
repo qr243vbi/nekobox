@@ -1365,11 +1365,11 @@ void MainWindow::UpdateDataView(bool force)
     "</div>"
     "<p style='text-align:center;margin:0;'>Server: %4%5, %6</p>"
         ).arg(currentSptProfileName,
-            currentTestResult.dl_speed().c_str(),
-            currentTestResult.ul_speed().c_str(),
-            CountryCodeToFlag(CountryNameToCode((currentTestResult.server_country()))),
-            currentTestResult.server_country().c_str(),
-            currentTestResult.server_name().c_str());
+            currentTestResult.dlSpeed(),
+            currentTestResult.ulSpeed(),
+            CountryCodeToFlag(CountryNameToCode((currentTestResult.serverCountry()))),
+            currentTestResult.serverCountry(),
+            currentTestResult.serverName());
     }
     ui->data_view->setHtml(html);
     lastUpdated = QDateTime::currentDateTime();
@@ -3032,7 +3032,7 @@ end_search_define:
         QJsonArray array = QString2QJsonArray(resp.data);
         for (const QJsonValue value : array) {
             QJsonObject release = value.toObject();
-            if (release["prerelease"].toBool() && !Configs::dataStore->allow_beta_update) continue;
+            if (release["prerelease"].toBool() ) continue;
             for (const QJsonValue asset : release["assets"].toArray()) {
                 if (asset["name"].toString().contains(search) && asset["name"].toString().section('.', -1) == QString("zip")) {
                     note_pre_release = release["prerelease"].toBool() ? " (Pre-release)" : "";
