@@ -187,6 +187,11 @@ jobs:
           setup-python: true
           cache: true
           cache-key-prefix: QtCache-${{ matrix.platform }}-${{ matrix.target }}
+      - name: Setup gRPC
+        uses: eWaterCycle/setup-grpc@v5
+        if: github.event.inputs.source != 'y'
+        with:
+          grpc-version: 1.75.0
       # ========================================================================================================= Generate MakeFile and Build
       - name: Download Srslist
         shell: bash
