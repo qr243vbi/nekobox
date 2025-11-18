@@ -186,7 +186,7 @@ jobs:
           version: ${{ matrix.qt_version }}
           setup-python: true
           cache: true
-          modules: qtcharts qtgrpc qtscript
+          modules: qtcharts qtgrpc
           cache-key-prefix: QtCache-${{ matrix.platform }}-${{ matrix.target }}
 #      - name: Setup gRPC
  #       uses: eWaterCycle/setup-grpc@v5
