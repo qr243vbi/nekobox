@@ -67,6 +67,7 @@ Various formats are supported, including share links, JSON array of outbounds an
 - [Setup Ninja Github Action](https://github.com/seanmiddleditch/gha-setup-ninja)
 - [Cache Apt Pkgs Github Action](https://github.com/awalsh128/cache-apt-pkgs-action)
 - [Setup Qt Github Action](https://github.com/jurplel/install-qt-action)
+- [Setup gRPC Github Action](https://github.com/marketplace/actions/setup-grpc)
 - [linuxdeploy](https://github.com/linuxdeploy/linuxdeploy)
 - [MinGW](https://www.mingw-w64.org)
 - [MSVC](https://visualstudio.microsoft.com/)
