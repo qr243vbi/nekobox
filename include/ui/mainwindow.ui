@@ -33,8 +33,8 @@
         </property>
         <property name="iconSize">
          <size>
-          <width>30</width>
-          <height>30</height>
+          <width>37</width>
+          <height>37</height>
          </size>
         </property>
         <property name="popupMode">
@@ -55,8 +55,8 @@
         </property>
         <property name="iconSize">
          <size>
-          <width>30</width>
-          <height>30</height>
+          <width>37</width>
+          <height>37</height>
          </size>
         </property>
         <property name="popupMode">
@@ -77,8 +77,8 @@
         </property>
         <property name="iconSize">
          <size>
-          <width>30</width>
-          <height>30</height>
+          <width>37</width>
+          <height>37</height>
          </size>
         </property>
         <property name="popupMode">
@@ -99,8 +99,8 @@
         </property>
         <property name="iconSize">
          <size>
-          <width>30</width>
-          <height>30</height>
+          <width>37</width>
+          <height>37</height>
          </size>
         </property>
         <property name="popupMode">
@@ -121,8 +121,8 @@
         </property>
         <property name="iconSize">
          <size>
-          <width>30</width>
-          <height>30</height>
+          <width>37</width>
+          <height>37</height>
          </size>
         </property>
         <property name="popupMode">
@@ -292,7 +292,7 @@
             <bool>false</bool>
            </attribute>
            <attribute name="verticalHeaderDefaultSectionSize">
-            <number>30</number>
+            <number>32</number>
            </attribute>
            <column>
             <property name="text">
@@ -575,7 +575,7 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>30</height>
+     <height>33</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu_program">

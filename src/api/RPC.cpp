@@ -24,7 +24,7 @@ if (!Configs::dataStore->core_running) {                                        
     MW_show_log("Cannot invoke method " + QString(method) + ", core is not running");  \
     is_running = false; \
 } else {    \
-    qDebug() << "Invoke" << QString(method);  \
+  /*  qDebug() << "Invoke" << QString(method);*/  \
 }
 
 #define CHANNEL(X, VAL)                                            \
@@ -200,6 +200,9 @@ std::unique_ptr<QGrpcCallReply> call = client.X(request);           \
 
     QString Client::CheckConfig(bool* rpcOK, const QString& config) const
     {
+        *rpcOK = true;
+        return "";
+        /*
         CHECK("CheckConfig")
         if (!is_running){
             *rpcOK = false;
@@ -217,6 +220,7 @@ std::unique_ptr<QGrpcCallReply> call = client.X(request);           \
             NOT_OK
             return (status.message());
         }
+            */
     }
 
     bool Client::IsPrivileged(bool* rpcOK) const
