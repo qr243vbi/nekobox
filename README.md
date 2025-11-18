@@ -87,6 +87,8 @@ Various formats are supported, including share links, JSON array of outbounds an
 - [AppImage](https://appimage.org/)
 - [sharun](https://github.com/VHSgunzo/sharun)
 - [Aur](https://aur.archlinux.org/)
+- [Protobuf](https://protobuf.dev/)
+- [gRPC](https://grpc.io/)
 
 ## TODO
 - Command line tools
