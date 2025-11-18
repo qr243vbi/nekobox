@@ -1,14 +1,17 @@
 #include "include/api/RPC.h"
-#include <grpcpp/client_context.h>
-#include <grpcpp/grpcpp.h>
-#include "core/server/gen/libcore.grpc.pb.h"
 #include "include/global/Configs.hpp"
+#include "libcore.qpb.h"
 #include <QDebug>
+#include <QGrpcHttp2Channel>
+#include <optional>
+#include <qnamespace.h>
+#include <qtgrpcnamespace.h>
 
 namespace API {
 
     Client::Client(std::function<void(const QString &)> onError, const QString &host, int port) {
-        QString address = host;          
+        QString address = "http://";
+        address += host;          
         address += ":";                         
         address += QString::number(port);
         this->address = address;
@@ -21,19 +24,31 @@ if (!Configs::dataStore->core_running) {                                        
     MW_show_log("Cannot invoke method " + QString(method) + ", core is not running");  \
     is_running = false; \
 } else {    \
-qDebug() << "Invoke" << QString(method);  \
+    qDebug() << "Invoke" << QString(method);  \
 }
 
-#define CHANNEL                         \
-auto channel = grpc::CreateChannel(address.toStdString(), grpc::InsecureChannelCredentials()); \
-auto stub = libcore::LibcoreService::NewStub(channel); \
-grpc::ClientContext context;
+#define CHANNEL(X, VAL)                                            \
+libcore::LibcoreService::Client client;                             \
+auto channel = std::make_shared<QGrpcHttp2Channel>(                 \
+    this->address                                                   \
+); client.attachChannel(channel);                                   \
+std::unique_ptr<QGrpcCallReply> call = client.X(request);           \
+        QEventLoop GrpcLoop;                                        \
+        QGrpcStatus status;                                         \
+        QObject::connect(call.get(),                                \
+    &QGrpcCallReply::finished,                                      \
+    &GrpcLoop, [&status, &GrpcLoop]( const QGrpcStatus & stat){           \
+        status = stat; GrpcLoop.exit();                             \
+    },                                                              \
+    Qt::SingleShotConnection);                                      \
+        GrpcLoop.exec();                                            \
+        auto reply = call->read<libcore::VAL>();
+            
 
-#define NOT_OK      \
-    *rpcOK = false; \
-    onError(QString("LibcoreService error with code %2: %1\n").  \
-    arg(QString::fromStdString(status.error_message()),          \
-    QString::number(status.error_code()) )          \
+#define NOT_OK                                                      \
+    *rpcOK = false;                                                 \
+    onError(QString("LibcoreService error: %1\n").     \
+    arg(status.message())                          \
 );
 
     QString Client::Start(bool *rpcOK, const libcore::LoadConfigReq &request) {
@@ -42,16 +57,14 @@ grpc::ClientContext context;
             *rpcOK = false;
             return "";
         }
-        CHANNEL
-        libcore::ErrorResp reply;
-        auto status = stub->Start(&context, request, &reply);
+        CHANNEL(Start, ErrorResp)
 
-        if(status.ok()) {
+        if(status.isOk()) {
             *rpcOK = true;
-            return QString::fromStdString(reply.error());
+            return (reply->error());
         } else {
             NOT_OK
-            return "";
+            return  status.message();
         }
     }
 
@@ -62,67 +75,60 @@ grpc::ClientContext context;
             return "";
         }
         libcore::EmptyReq request;
-        libcore::ErrorResp reply;
-        CHANNEL
-        auto status = stub->Stop(&context, request, &reply);
-
-        if(status.ok()) {
+        CHANNEL(Stop, ErrorResp)
+        
+        if(status.isOk()) {
             *rpcOK = true;
-            return QString::fromStdString(reply.error());
+            return (reply->error());
         } else {
             NOT_OK
-            return "";
+            return status.message();
         }
     }
 
-    libcore::QueryStatsResp Client::QueryStats() {
+    std::optional<libcore::QueryStatsResp> Client::QueryStats() {
         CHECK("QueryStats")
-        libcore::EmptyReq request;
-        libcore::QueryStatsResp reply;
         if (!is_running){
-            return {};
+            return std::nullopt;
         }
-        CHANNEL
-        auto status = stub->QueryStats(&context, request, &reply);
+        libcore::EmptyReq request;
+        CHANNEL(QueryStats, QueryStatsResp)
 
-        if(status.ok()) {
+        if(status.isOk()) {
             return reply;
         } else {
-            return {};
+            return std::nullopt;
         }
     }
 
-    libcore::TestResp Client::Test(bool *rpcOK, const libcore::TestReq &request) {
+    std::optional<libcore::TestResp> Client::Test(bool *rpcOK, const libcore::TestReq &request) {
         CHECK("Test")
         if (!is_running){
             *rpcOK = false;
-            return {};
+            return std::nullopt;
         }
-        libcore::TestResp reply;
-        CHANNEL
-        auto status = stub->Test(&context, request, &reply);
-
-        if(status.ok()) {
+        CHANNEL(Test, TestResp)
+    
+        if(status.isOk()) {
             *rpcOK = true;
             return reply;
         } else {
             NOT_OK
-            return reply;
+            return std::nullopt;
         }
     }
 
     void Client::StopTests(bool *rpcOK) {
         CHECK("StopTests")
+        
         if (!is_running){
             *rpcOK = false;
             return;
         }
         libcore::EmptyReq request;
-        libcore::EmptyResp resp;
-        CHANNEL
-        auto status = stub->StopTest(&context, request, &resp);
+        CHANNEL(StopTest, EmptyResp)
 
-        if(status.ok()) {
+        if(status.isOk()) {
             *rpcOK = true;
             return;
         } else {
@@ -131,25 +137,22 @@ grpc::ClientContext context;
         }
     }
 
-    libcore::QueryURLTestResponse Client::QueryURLTest(bool *rpcOK)
+    std::optional<libcore::QueryURLTestResponse> Client::QueryURLTest(bool *rpcOK)
     {
         CHECK("QueryURLTest")
         if (!is_running){
             *rpcOK = false;
-            return {};
+            return std::nullopt;
         }
-        libcore::EmptyReq req;
-        libcore::QueryURLTestResponse resp;
-        CHANNEL
-        auto status = stub->QueryURLTest(
-            &context, req, &resp);
-
-        if(status.ok()) {
+        libcore::EmptyReq request;
+        CHANNEL(QueryURLTest, QueryURLTestResponse)
+     
+        if(status.isOk()) {
             *rpcOK = true;
-            return resp;
+            return reply;
         } else {
             NOT_OK
-            return resp;
+            return std::nullopt;
         }
     }
 
@@ -159,41 +162,39 @@ grpc::ClientContext context;
             *rpcOK = false;
             return "";
         }
+        
         libcore::SetSystemDNSRequest request;
-        request.set_clear(clear);
+        request.setClear(clear);
         libcore::EmptyResp resp;
-        CHANNEL
+        CHANNEL(SetSystemDNS, EmptyResp)
 
-        auto status = stub->SetSystemDNS(
-            &context, request, &resp);
-        if(status.ok()) {
+        if(status.isOk()) {
             *rpcOK = true;
             return "";
         } else {
             NOT_OK
-            return QString::fromStdString(status.error_message());
+            return (status.message());
         }
     }
 
-    libcore::ListConnectionsResp Client::ListConnections(bool* rpcOK) const
+    std::optional<libcore::ListConnectionsResp> Client::ListConnections(bool* rpcOK) const
     {
         CHECK("ListConnections")
         if (!is_running){
             *rpcOK = false;
-            return {};
+            return std::nullopt;
         }
-        libcore::EmptyReq req;
-        libcore::ListConnectionsResp reply;
-        CHANNEL
-        auto status = stub->ListConnections(&context, req, &reply);
-        if(status.ok()) {
+    
+        libcore::EmptyReq request;
+        CHANNEL(ListConnections, ListConnectionsResp)
+        if(status.isOk()) {
             *rpcOK = true;
             return reply;
         } else {
             NOT_OK
             MW_show_log(QString("Failed to list connections: ") + 
-                QString::fromStdString(status.error_message()));
-            return {};
+                (status.message()));
+            return std::nullopt;
         }
     }
 
@@ -205,59 +206,48 @@ grpc::ClientContext context;
             return "";
         }
         libcore::LoadConfigReq request;
-        libcore::ErrorResp reply;
-        request.set_core_config(config.toStdString());
-        CHANNEL
-        auto status = stub->CheckConfig(&context, request, &reply);
-
-        if(status.ok())
+        request.setCoreConfig(config);
+        CHANNEL(CheckConfig, ErrorResp)
+        if(status.isOk())
         {
             *rpcOK = true;
-            return QString::fromStdString(reply.error());
+            return (reply->error());
         } else
         {
             NOT_OK
-            return QString::fromStdString(status.error_message());
+            return (status.message());
         }
-
     }
 
     bool Client::IsPrivileged(bool* rpcOK) const
     {
         CHECK("IsPrivileged")
-
-        if (!is_running){
+        if (!is_running) {
             *rpcOK = false;
             return false;
         }
-        libcore::EmptyReq req;
-        libcore::IsPrivilegedResponse reply;
-        CHANNEL
-        auto status = stub->IsPrivileged(&context, req, &reply);
 
-        if(status.ok())
-        {
+        libcore::EmptyReq request;
+        CHANNEL(IsPrivileged, IsPrivilegedResponse)
+        if(status.isOk()) {
             *rpcOK = true;
-            return reply.has_privilege();
-        } else
-        {
+            return reply->hasPrivilege();
+        } else {
             NOT_OK
             return false;
         }
     }
 
-    libcore::SpeedTestResponse Client::SpeedTest(bool *rpcOK, const libcore::SpeedTestRequest &request)
+    std::optional<libcore::SpeedTestResponse> Client::SpeedTest(bool *rpcOK, const libcore::SpeedTestRequest &request)
     {
         CHECK("SpeedTest")
         if (!is_running){
             *rpcOK = false;
-            return {};
+            return std::nullopt;
         }
-        libcore::SpeedTestResponse reply;
-        CHANNEL
-        auto status = stub->SpeedTest(&context, request, &reply);
+        CHANNEL(SpeedTest, SpeedTestResponse)
 
-        if(status.ok()) {
+        if(status.isOk()) {
             *rpcOK = true;
             return reply;
         } else {
@@ -266,42 +256,36 @@ grpc::ClientContext context;
         }
     }
 
-    libcore::QuerySpeedTestResponse Client::QueryCurrentSpeedTests(bool *rpcOK)
+    std::optional<libcore::QuerySpeedTestResponse> Client::QueryCurrentSpeedTests(bool *rpcOK)
     {
         CHECK("QueryCurrentSpeedTests")
         if (!is_running){
             *rpcOK = false;
-            return {};
+            return std::nullopt;
         }
-        const libcore::EmptyReq request;
-        libcore::QuerySpeedTestResponse reply;
-        CHANNEL
-        auto status = stub->QuerySpeedTest(&context, 
-            request, &reply);
+        libcore::EmptyReq request;
+        CHANNEL(QuerySpeedTest, QuerySpeedTestResponse)
 
-        if(status.ok()) {
+        if(status.isOk()) {
             *rpcOK = true;
             return reply;
         } else {
             NOT_OK
-            return reply;
+            return std::nullopt;
         }
     }
 
-    libcore::QueryCountryTestResponse Client::QueryCountryTestResults(bool* rpcOK)
+    std::optional<libcore::QueryCountryTestResponse> Client::QueryCountryTestResults(bool* rpcOK)
     {
         CHECK("QueryCountryTestResults")
         if (!is_running){
             *rpcOK = false;
-            return {};
+            return std::nullopt;
         }
         const libcore::EmptyReq request;
-        libcore::QueryCountryTestResponse reply;
-        CHANNEL
-        auto status = stub->QueryCountryTest(
-            &context, request, &reply);
+        CHANNEL(QueryCountryTest, QueryCountryTestResponse)
 
-        if(status.ok()) {
+        if(status.isOk()) {
             *rpcOK = true;
             return reply;
         } else {

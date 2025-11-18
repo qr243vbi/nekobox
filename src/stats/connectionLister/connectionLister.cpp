@@ -1,5 +1,4 @@
 #include <QThread>
-#include <core/server/gen/libcore.pb.h>
 #include <include/api/RPC.h>
 #include "include/ui/mainwindow_interface.h"
 #include <include/stats/connections/connectionLister.hpp>
@@ -39,7 +38,7 @@ namespace Stats
     void ConnectionLister::update()
     {
         bool ok;
-        libcore::ListConnectionsResp resp = API::defaultClient->ListConnections(&ok);
+        std::optional<libcore::ListConnectionsResp> resp = API::defaultClient->ListConnections(&ok);
         if (!ok)
         {
             return;
@@ -49,20 +48,20 @@ namespace Stats
         QMap<QString, ConnectionMetadata> toAdd;
         QSet<QString> newState;
         QList<ConnectionMetadata> sorted;
-        auto conns = resp.connections();
+        auto conns = resp->connections();
         for (auto conn : conns)
         {
             auto c = ConnectionMetadata();
-            c.id = QString::fromStdString(conn.id());
-            c.createdAtMs = conn.created_at();
-            c.dest = QString::fromStdString(conn.dest());
+            c.id = (conn.id_proto());
+            c.createdAtMs = conn.createdAt();
+            c.dest = (conn.dest());
             c.upload = conn.upload();
             c.download = conn.download();
-            c.domain = QString::fromStdString(conn.domain());
-            c.network = QString::fromStdString(conn.network());
-            c.outbound = QString::fromStdString(conn.outbound());
-            c.process = QString::fromStdString(conn.process());
-            c.protocol = QString::fromStdString(conn.protocol());
+            c.domain = (conn.domain());
+            c.network = (conn.network());
+            c.outbound = (conn.outbound());
+            c.process = (conn.process());
+            c.protocol = (conn.protocol());
             if (sort == Default)
             {
                 if (state->contains(c.id))
