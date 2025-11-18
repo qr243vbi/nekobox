@@ -1,6 +1,6 @@
 # [NekoBox](https://github.com/qr243vbi/nekobox) for PC
 Qt based Desktop cross-platform GUI proxy utility, empowered by [Sing-box](https://github.com/SagerNet/sing-box)
-Supports Windows 11/10 (arm64, i386, x86_64) / Linux  out of the box.
+Supports Windows 11/10 (arm64, x86_64) / Linux  out of the box.
 
 We dropped support for MacOS starting from version 5.8.0
 
