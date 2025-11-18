@@ -1,8 +1,7 @@
 #pragma once
 
 #ifndef Q_MOC_RUN
-#include <core/server/gen/libcore.pb.h>
-#include <core/server/gen/libcore.grpc.pb.h>
+#include <libcore_client.grpc.qpb.h>
 #endif
 #include <QString>
 
@@ -17,27 +16,27 @@ namespace API {
 
         QString Stop(bool *rpcOK);
 
-        libcore::QueryStatsResp QueryStats();
+        std::optional<libcore::QueryStatsResp> QueryStats();
 
-        libcore::TestResp Test(bool *rpcOK, const libcore::TestReq &request);
+        std::optional<libcore::TestResp> Test(bool *rpcOK, const libcore::TestReq &request);
 
         void StopTests(bool *rpcOK);
 
-        libcore::QueryURLTestResponse QueryURLTest(bool *rpcOK);
+        std::optional<libcore::QueryURLTestResponse> QueryURLTest(bool *rpcOK);
 
         QString SetSystemDNS(bool *rpcOK, bool clear) const;
 
-        libcore::ListConnectionsResp ListConnections(bool *rpcOK) const;
+        std::optional<libcore::ListConnectionsResp> ListConnections(bool *rpcOK) const;
 
         QString CheckConfig(bool *rpcOK, const QString& config) const;
 
         bool IsPrivileged(bool *rpcOK) const;
 
-        libcore::SpeedTestResponse SpeedTest(bool *rpcOK, const libcore::SpeedTestRequest &request);
+        std::optional<libcore::SpeedTestResponse> SpeedTest(bool *rpcOK, const libcore::SpeedTestRequest &request);
 
-        libcore::QuerySpeedTestResponse QueryCurrentSpeedTests(bool *rpcOK);
+        std::optional<libcore::QuerySpeedTestResponse> QueryCurrentSpeedTests(bool *rpcOK);
 
-        libcore::QueryCountryTestResponse QueryCountryTestResults(bool *rpcOK);
+        std::optional<libcore::QueryCountryTestResponse> QueryCountryTestResults(bool *rpcOK);
 
     private:
         QString address;
