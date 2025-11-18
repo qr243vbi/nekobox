@@ -110,13 +110,14 @@ func RandString(n int) (string, error) {
 	return string(result), nil
 }
 
-func (s *server) SetSystemDNS(in *gen.SetSystemDNSRequest, out *gen.EmptyResp) error {
+func (s *server) SetSystemDNS(ctx context.Context, in *gen.SetSystemDNSRequest) (*gen.EmptyResp, error) {
 	err := boxdns.DnsManagerInstance.SetSystemDNS(nil, in.Clear)
+	out := new(gen.EmptyResp)
 	if err != nil {
-		return err
+		return out, err
 	}
 
-	return nil
+	return out, nil
 }
 
 func handlePipe(pipeName string, output io.Writer, wg *sync.WaitGroup) {

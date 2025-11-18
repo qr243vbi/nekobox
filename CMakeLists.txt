@@ -22,9 +22,7 @@ if (NKR_CROSS)
 endif ()
 
 #### Platform Variables ####
-if (APPLE)
-    include("cmake/macos/macos.cmake")
-elseif (WIN32)
+if (WIN32)
     include("cmake/windows/windows.cmake")
 else ()
     include("cmake/linux/linux.cmake")
@@ -50,7 +48,7 @@ option(SKIP_UPDATE_BUTTON "Always hide update button" OFF)
 option(SKIP_JS_UPDATER "Skip JS update checker" OFF)
 option(USE_LEGACY_QT "Use legacy QT" OFF)
 
-if (NKR_PACKAGE OR NKR_PACKAGE_MACOS)
+if (NKR_PACKAGE)
     nkr_add_compile_definitions(NKR_CPP_USE_APPDATA)
 endif ()
 
@@ -222,14 +220,6 @@ set(PROJECT_SOURCES
         src/dataStore/ProxyEntity.cpp
 )
 
-if (APPLE)
-        list(APPEND PROJECT_SOURCES res/nekobox_mac.qrc)
-endif()
-
-if (NOT APPLE AND Qt6_VERSION VERSION_GREATER_EQUAL 6.9.0)
-        list(APPEND PROJECT_SOURCES res/EmojiFont.qrc)
-endif ()
-
 # Qt exe
 qt_add_executable(nekobox
         MANUAL_FINALIZATION
@@ -260,9 +250,7 @@ endif()
 # Target Source macOS
 
 set(MACOSX_ICON ${CMAKE_SOURCE_DIR}/res/nekobox.icns)
-if (APPLE)
-    target_sources(nekobox PRIVATE ${MACOSX_ICON})
-endif ()
+
 
 set_target_properties(nekobox PROPERTIES
         MACOSX_BUNDLE_ICON_FILE "nekobox.icns"

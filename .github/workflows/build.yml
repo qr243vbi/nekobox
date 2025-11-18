@@ -33,12 +33,6 @@ jobs:
           - cross_os: linux
             cross_arch: arm64
             go_version: "1.25.0"
-          - cross_os: darwin
-            cross_arch: amd64
-            go_version: "1.25.0"
-          - cross_os: darwin
-            cross_arch: arm64
-            go_version: "1.25.0"
           - cross_os: windows
             cross_arch: amd64
             go_version: "1.25.0"
@@ -117,12 +111,6 @@ jobs:
             qt_version: "6.10.0"
             target: amd64
           - platform: ubuntu-24.04-arm
-            qt_version: "6.10.0"
-            target: arm64
-          - platform: macos-latest
-            qt_version: "6.4.3"
-            target: x86_64
-          - platform: macos-latest
             qt_version: "6.10.0"
             target: arm64
           - platform: windows-2022
@@ -305,16 +293,6 @@ jobs:
           ninja
           cd ..
           bash -x ./script/deploy_linux64.sh
-
-      - name: macOS - Generate MakeFile and Build
-        shell: bash
-        if: matrix.platform == 'macos-latest' && github.event.inputs.source != 'y'
-        run: |
-          cd build
-          cmake -GNinja -DSKIP_UPDATE_BUTTON=ON -DCMAKE_BUILD_TYPE=Release -DNKR_VERSION="${INPUT_VERSION}" -DNKR_PACKAGE_MACOS=1 -DCMAKE_OSX_DEPLOYMENT_TARGET=10.15 -DCMAKE_OSX_ARCHITECTURES=${{ matrix.target }} ..
-          ninja
-          cd ..
-          ./script/deploy_macos.sh ${{ matrix.target }}
       # ========================================================================================================= Deployments
       - name: Tar files
         if: github.event.inputs.source != 'y'
@@ -418,20 +396,6 @@ jobs:
             rm nekobox/config
             zip -9 -r $version_standalone-windowslegacy64.zip nekobox
             rm -rf nekobox windowslegacy64
-          fi
-          ####
-          if [[ -d macos-arm64 ]]; then
-            mkdir nekobox
-            mv macos-arm64/nekobox.app nekobox/nekobox.app
-            zip -9 --symlinks -r $version_standalone-macos-arm64.zip nekobox
-            rm -rf macos-arm64 nekobox
-          fi
-          ####
-          if [[ -d macos-amd64 ]]; then
-            mkdir nekobox
-            mv macos-amd64/nekobox.app nekobox/nekobox.app
-            zip -9 --symlinks -r $version_standalone-macos-amd64.zip nekobox
-            rm -rf macos-amd64 nekobox
           fi
       - name: Clean Up
         run: |
