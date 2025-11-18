@@ -11,3 +11,13 @@ QString CountryCodeToFlag(const QString& countryCode) {
     }
     return QString::fromUcs4((char32_t*)ucs4.data(), countryCode.length());
 }
+
+
+QString CountryNameToCode(const std::string& countryName) {
+    return CountryNameToCode(QString::fromStdString(countryName));
+}
+
+
+QString CountryCodeToFlag(const std::string& countryName) {
+    return CountryNameToCode(QString::fromStdString(countryName));
+}

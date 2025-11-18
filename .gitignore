@@ -3,6 +3,7 @@
 /config
 /updater
 nekobox_core
+compile_commands.json
 *~
 *.autosave
 *.a
