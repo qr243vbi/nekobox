@@ -114,7 +114,7 @@ jobs:
           - platform: windows-11-arm
             qt_version: "6.8.1"
             target: arm64
-            triplet: arm64-windows-release
+            triplet: arm64-windows
       fail-fast: false
     runs-on: ${{ matrix.platform }}
     env:
@@ -192,11 +192,11 @@ jobs:
           cache: true
           modules: qtcharts qtgrpc
           cache-key-prefix: QtCache-${{ matrix.platform }}-${{ matrix.target }}
-  #    - name: Install Protoc
-  #      if: github.event.inputs.source != 'y'
-  #      uses: arduino/setup-protoc@v3
-  #      with:
-  #        version: "23.2"
+      - name: Install Protoc
+        if: github.event.inputs.source != 'y'
+        uses: arduino/setup-protoc@v3
+        with:
+          version: "23.2"
       # ========================================================================================================= Generate MakeFile and Build
       - name: Download Srslist
         shell: bash
