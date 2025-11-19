@@ -128,7 +128,7 @@ jobs:
           submodules: "recursive"
 
       - name: Install Nsis and protoc
-        if: contains( matrix.platform, 'windows-latest' ) && github.event.inputs.source != 'y'
+        if: contains( matrix.platform, 'windows' ) && github.event.inputs.source != 'y'
         uses: ConorMacBride/install-package@v1
         with:
           choco: nsis protoc
