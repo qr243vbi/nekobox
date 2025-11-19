@@ -111,7 +111,6 @@ jobs:
 #          - platform: windows-11-arm
 #            qt_version: "6.9.1"
 #            target: arm64
-#            triplet: arm64-windows
       fail-fast: false
     runs-on: ${{ matrix.platform }}
     env:
@@ -129,54 +128,7 @@ jobs:
         uses: ConorMacBride/install-package@v1
         with:
           choco: nsis protoc
-      - uses: actions/checkout@v4
-        with:
-        # Checkout the official protobuf repository source code
-         repository: protocolbuffers/protobuf
-         path: protobuf_src
-    # Define paths for clarity
-      - name: Set Environment Variables
-        run: |
-         echo "PROTO_SRC_DIR=${{github.workspace}}/protobuf_src" >> $GITHUB_ENV
-         echo "PROTO_BUILD_DIR=${{github.workspace}}/build_output" >> $GITHUB_ENV
-         echo "PROTO_INSTALL_DIR=${{github.workspace}}/protobuf_install" >> $GITHUB_ENV
 
-    # Step 1: Cache the built and installed library files
-      - name: Cache Protobuf build
-        id: cache-protobuf
-        uses: actions/cache@v4
-        with:
-         path: ${{ env.PROTO_INSTALL_DIR }}
-        # Key uses OS, compiler version, and a hash of source files
-         key: ${{ runner.os }}-protobuf-source-build-v143-${{ hashFiles('protobuf_src/CMakeLists.txt') }}
-
-    # Step 2: Configure the build using CMake (only if not cached)
-      - name: Configure CMake for Windows (Visual Studio)
-        if: steps.cache-protobuf.outputs.cache-hit != 'true'
-        working-directory: ${{ env.PROTO_BUILD_DIR }}
-        run: |
-          # Use a generator compatible with the VS environment on the runner
-          cmake ${{ env.PROTO_SRC_DIR }}/cmake -G "Visual Studio 17 2022" `
-          -DCMAKE_INSTALL_PREFIX=${{ env.PROTO_INSTALL_DIR }} `
-          -Dprotobuf_BUILD_SHARED_LIBS=ON # Optional: build as DLLs, default is static libs
-
-    # Step 3: Build the "INSTALL" target using MSBuild (only if not cached)
-      - name: Build and Install Protobuf Library
-        if: steps.cache-protobuf.outputs.cache-hit != 'true'
-        working-directory: ${{ env.PROTO_BUILD_DIR }}
-        run: |
-          # Build the 'INSTALL' target in Release mode using the generated solution
-          cmake --build . --config Release --target INSTALL
-
-    # Step 4: Verify the installation and make files available to subsequent steps
-      - name: Verify Installation and Add to PATH
-        run: |
-          # Add the bin directory to the PATH for subsequent steps
-          echo "${{ env.PROTO_INSTALL_DIR }}\bin\Release" >> $GITHUB_PATH 
-          echo "${{ env.PROTO_INSTALL_DIR }}\bin" >> $GITHUB_PATH # Also add bin directly just in case
-          # Verify the compiler is available
-          protoc --version
-          dir ${{ env.PROTO_INSTALL_DIR }}\lib
  #     - name: Install mingw
  #       if: matrix.qt_version == '6.2.12' && contains( matrix.platform, 'windows' ) && github.event.inputs.source != 'y'
  #       uses: bwoodsend/setup-winlibs-action@v1.15
@@ -200,7 +152,53 @@ jobs:
      #   uses: TheMrMilchmann/setup-msvc-dev@v4
      #   with:
      #     arch: x64
+    # Define variables as local references used throughout the workflow
+    # PROTO_VERSION is used for both checkout and the cache key
+      - name: Define Protobuf Version reference
+        if: contains( matrix.platform, 'windows' ) && github.event.inputs.source != 'y'
+        run: echo "::set-output name=version::v3.31"
+        id: proto_version # Store the version in a step output
 
+    # The installation directory will be a constant path relative to the workspace
+      - name: Cache Protobuf Installation
+        uses: actions/cache@v4
+        if: contains( matrix.platform, 'windows' ) && github.event.inputs.source != 'y'
+        id: cache-protobuf
+        with:
+          path: ${{ github.workspace }}/protobuf_install # Direct path reference
+        # Key uses step output and direct path references
+          key: ${{ runner.os }}-protobuf-${{ steps.proto_version.outputs.version }}-static-md-${{ hashFiles('protobuf_src/CMakeLists.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-protobuf-${{ steps.proto_version.outputs.version }}-static-md-
+
+      - name: Checkout Protobuf Source if cache miss
+        if: steps.cache-protobuf.outputs.cache-hit != 'true' && contains( matrix.platform, 'windows' ) && github.event.inputs.source != 'y'
+        uses: actions/checkout@v4
+        with:
+         repository: protocolbuffers/protobuf
+         ref: v3.31 # Use the same version here
+         path: protobuf_src
+
+      - name: Initialize Protobuf submodules if cache miss
+        if: steps.cache-protobuf.outputs.cache-hit != 'true' && contains( matrix.platform, 'windows' ) && github.event.inputs.source != 'y'
+        run: git submodule update --init --recursive
+        working-directory: protobuf_src
+
+      - name: Configure, Build, and Install Protobuf if cache miss
+        if: steps.cache-protobuf.outputs.cache-hit != 'true' && contains( matrix.platform, 'windows' ) && github.event.inputs.source != 'y'
+        run: |
+         # Direct path reference for CMAKE_INSTALL_PREFIX
+         $install_dir = "${{ github.workspace }}\protobuf_install"
+         cmake -S . -B build `
+         -DCMAKE_BUILD_TYPE=Release `
+         -Dprotobuf_BUILD_SHARED_LIBS=OFF `
+         -Dprotobuf_MSVC_STATIC_RUNTIME=OFF `
+         -DCMAKE_INSTALL_PREFIX=$install_dir
+
+         cmake --build build --config Release
+         cmake --install build --config Release
+        working-directory: protobuf_src
+        shell: powershell
      # - name: Install MSVC compiler
     #    if: matrix.qt_version != '6.2.12' && matrix.target == 'arm64' && (matrix.platform == 'windows-latest' || matrix.platform == 'windows-11-arm') && github.event.inputs.source != 'y'
    #     uses: TheMrMilchmann/setup-msvc-dev@v4
@@ -266,7 +264,7 @@ jobs:
             export LEGACY_QT=ON
             export MATRIX=${{ matrix.target }}
           fi
-          cmake -GNinja ${{ steps.vcpkg.outputs.vcpkg-cmake-config }} "-DSKIP_UPDATE_BUTTON=${SKIP_UPDATE_BUTTON}" -DUSE_LEGACY_QT="${LEGACY_QT}" -DCMAKE_BUILD_TYPE=Release ..
+          cmake -GNinja -DProtobuf_DIR=$protobuf_DIR "-DSKIP_UPDATE_BUTTON=${SKIP_UPDATE_BUTTON}" -DUSE_LEGACY_QT="${LEGACY_QT}" -DCMAKE_BUILD_TYPE=Release ..
           ninja -j2
           cd ..
           ./script/deploy_windows.sh "${MATRIX}"
