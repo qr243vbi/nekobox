@@ -129,11 +129,11 @@ jobs:
         with:
           choco: nsis
 
-      - name: Install mingw
-        if: matrix.qt_version == '6.2.12' && contains( matrix.platform, 'windows' ) && github.event.inputs.source != 'y'
-        uses: bwoodsend/setup-winlibs-action@v1.15
-        with:
-          architecture: ${{ matrix.target }}
+ #     - name: Install mingw
+ #       if: matrix.qt_version == '6.2.12' && contains( matrix.platform, 'windows' ) && github.event.inputs.source != 'y'
+ #       uses: bwoodsend/setup-winlibs-action@v1.15
+ #       with:
+ #         architecture: ${{ matrix.target }}
       - name: Install MSVC compiler
         if: matrix.target == 'x86_64' && contains( matrix.platform, 'windows' ) && github.event.inputs.source != 'y'
         uses: ilammy/msvc-dev-cmd@v1
@@ -181,18 +181,18 @@ jobs:
  #       run: ./script/build_qt_static_windows.bat ${{ matrix.qt_version }}
       - name: Install Qt
         uses: jurplel/install-qt-action@v4.3.0
-        if: github.event.inputs.source != 'y'  && matrix.qt_version != '6.2.12'
+        if: github.event.inputs.source != 'y' && matrix.qt_version != '6.2.12' && contains( matrix.platform, 'ubuntu' )
         with:
           version: ${{ matrix.qt_version }}
           setup-python: true
           cache: true
           modules: qtcharts qtgrpc
           cache-key-prefix: QtCache-${{ matrix.platform }}-${{ matrix.target }}
-      - name: Install Protoc
-        if: github.event.inputs.source != 'y'
-        uses: arduino/setup-protoc@v3
-        with:
-          version: "23.2"
+  #    - name: Install Protoc
+  #      if: github.event.inputs.source != 'y'
+  #      uses: arduino/setup-protoc@v3
+  #      with:
+  #        version: "23.2"
       # ========================================================================================================= Generate MakeFile and Build
       - name: Download Srslist
         shell: bash
@@ -200,6 +200,24 @@ jobs:
         run: |
           curl -fLso "srslist.json" "https://github.com/qr243vbi/ruleset/raw/refs/heads/rule-set/srslist.json"
           mkdir build
+          
+      - name: vcpkg build
+        uses: johnwason/vcpkg-action@v7
+        if: matrix.target == 'x86_64' && contains( matrix.platform, 'windows' ) && github.event.inputs.source != 'y' && matrix.qt_version != '6.2.12'
+        id: vcpkg-x64
+        with:
+          pkgs: qt qtgrpc 
+          triplet: x64-windows-release
+          token: ${{ github.token }}
+          
+      - name: vcpkg build
+        uses: johnwason/vcpkg-action@v7
+        if: matrix.target == 'arm64' && contains( matrix.platform, 'windows' ) && github.event.inputs.source != 'y' && matrix.qt_version != '6.2.12'
+        id: vcpkg-arm64
+        with:
+          pkgs: qt qtgrpc 
+          triplet: amd64-windows-release
+          token: ${{ github.token }}
           
       - name: Windows - Generate MakeFile and Build
         shell: bash
