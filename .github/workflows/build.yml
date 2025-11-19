@@ -107,14 +107,14 @@ jobs:
             qt_version: "6.10.0"
             target: arm64
             triplet: arm64
-      #    - platform: windows-2022
-      #      qt_version: "6.8.1"
-      #      target: x86_64
-      #      triplet: x64-windows-release
-      #    - platform: windows-11-arm
-      #      qt_version: "6.8.1"
-      #      target: arm64
-      #      triplet: arm64-windows
+          - platform: windows-2022
+            qt_version: "6.11.0"
+            target: x86_64
+            triplet: x64-windows-release
+          - platform: windows-11-arm
+            qt_version: "6.11.0"
+            target: arm64
+            triplet: arm64-windows
       fail-fast: false
     runs-on: ${{ matrix.platform }}
     env:
@@ -127,11 +127,11 @@ jobs:
         with:
           submodules: "recursive"
 
-      - name: Install Nsis
+      - name: Install Nsis and protoc
         if: contains( matrix.platform, 'windows-latest' ) && github.event.inputs.source != 'y'
         uses: ConorMacBride/install-package@v1
         with:
-          choco: nsis
+          choco: nsis protoc
 
  #     - name: Install mingw
  #       if: matrix.qt_version == '6.2.12' && contains( matrix.platform, 'windows' ) && github.event.inputs.source != 'y'
@@ -185,18 +185,14 @@ jobs:
  #       run: ./script/build_qt_static_windows.bat ${{ matrix.qt_version }}
       - name: Install Qt
         uses: jurplel/install-qt-action@v4.3.0
-        if: github.event.inputs.source != 'y' && matrix.qt_version != '6.2.12' && contains( matrix.platform, 'ubuntu' )
+        if: github.event.inputs.source != 'y' && matrix.qt_version != '6.2.12'
         with:
           version: ${{ matrix.qt_version }}
           setup-python: true
           cache: true
           modules: qtcharts qtgrpc
           cache-key-prefix: QtCache-${{ matrix.platform }}-${{ matrix.target }}
-      - name: Install Protoc
-        if: github.event.inputs.source != 'y'
-        uses: arduino/setup-protoc@v3
-        with:
-          version: "23.2"
+
       # ========================================================================================================= Generate MakeFile and Build
       - name: Download Srslist
         shell: bash
@@ -204,15 +200,6 @@ jobs:
         run: |
           curl -fLso "srslist.json" "https://github.com/qr243vbi/ruleset/raw/refs/heads/rule-set/srslist.json"
           mkdir build
-          
-      - name: vcpkg build
-        uses: johnwason/vcpkg-action@v7
-        if: contains( matrix.platform, 'windows' ) && github.event.inputs.source != 'y' && matrix.qt_version != '6.2.12'
-        id: vcpkg
-        with:
-          pkgs: qt qtgrpc 
-          triplet: ${{ matrix.triplet }}
-          token: ${{ github.token }}
           
       - name: Windows - Generate MakeFile and Build
         shell: bash
@@ -271,7 +258,7 @@ jobs:
         uses: awalsh128/cache-apt-pkgs-action@latest
         if: contains( matrix.platform, 'ubuntu' ) && github.event.inputs.source != 'y'
         with:
-          packages: libfuse2 patchelf squashfs-tools openssl-dev openssl
+          packages: libfuse2 patchelf squashfs-tools openssl-dev openssl protobuf-compiler
           version: 1.0
 
       - name: Linux - Generate MakeFile and Build
