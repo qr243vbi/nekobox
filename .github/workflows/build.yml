@@ -108,11 +108,11 @@ jobs:
             target: arm64
             triplet: arm64
           - platform: windows-2022
-            qt_version: "6.11.0"
+            qt_version: "6.9.1"
             target: x86_64
             triplet: x64-windows-release
           - platform: windows-11-arm
-            qt_version: "6.11.0"
+            qt_version: "6.9.1"
             target: arm64
             triplet: arm64-windows
       fail-fast: false
