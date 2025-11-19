@@ -36,9 +36,9 @@ jobs:
           - cross_os: windows
             cross_arch: amd64
             go_version: "1.25.0"
-          - cross_os: windows
-            cross_arch: arm64
-            go_version: "1.25.0"
+#          - cross_os: windows
+#            cross_arch: arm64
+#            go_version: "1.25.0"
       fail-fast: false
     runs-on: ubuntu-latest
     steps:
@@ -102,19 +102,16 @@ jobs:
           - platform: ubuntu-24.04
             qt_version: "6.10.0"
             target: amd64
-            triplet: x64
           - platform: ubuntu-24.04-arm
             qt_version: "6.10.0"
             target: arm64
-            triplet: arm64
           - platform: windows-2022
             qt_version: "6.9.1"
             target: x86_64
-            triplet: x64-windows-release
-          - platform: windows-11-arm
-            qt_version: "6.9.1"
-            target: arm64
-            triplet: arm64-windows
+#          - platform: windows-11-arm
+#            qt_version: "6.9.1"
+#            target: arm64
+#            triplet: arm64-windows
       fail-fast: false
     runs-on: ${{ matrix.platform }}
     env:
@@ -132,7 +129,54 @@ jobs:
         uses: ConorMacBride/install-package@v1
         with:
           choco: nsis protoc
+      - uses: actions/checkout@v4
+        with:
+        # Checkout the official protobuf repository source code
+         repository: protocolbuffers/protobuf
+         path: protobuf_src
+    # Define paths for clarity
+      - name: Set Environment Variables
+        run: |
+         echo "PROTO_SRC_DIR=${{github.workspace}}/protobuf_src" >> $GITHUB_ENV
+         echo "PROTO_BUILD_DIR=${{github.workspace}}/build_output" >> $GITHUB_ENV
+         echo "PROTO_INSTALL_DIR=${{github.workspace}}/protobuf_install" >> $GITHUB_ENV
 
+    # Step 1: Cache the built and installed library files
+      - name: Cache Protobuf build
+        id: cache-protobuf
+        uses: actions/cache@v4
+        with:
+         path: ${{ env.PROTO_INSTALL_DIR }}
+        # Key uses OS, compiler version, and a hash of source files
+         key: ${{ runner.os }}-protobuf-source-build-v143-${{ hashFiles('protobuf_src/CMakeLists.txt') }}
+
+    # Step 2: Configure the build using CMake (only if not cached)
+      - name: Configure CMake for Windows (Visual Studio)
+        if: steps.cache-protobuf.outputs.cache-hit != 'true'
+        working-directory: ${{ env.PROTO_BUILD_DIR }}
+        run: |
+          # Use a generator compatible with the VS environment on the runner
+          cmake ${{ env.PROTO_SRC_DIR }}/cmake -G "Visual Studio 17 2022" `
+          -DCMAKE_INSTALL_PREFIX=${{ env.PROTO_INSTALL_DIR }} `
+          -Dprotobuf_BUILD_SHARED_LIBS=ON # Optional: build as DLLs, default is static libs
+
+    # Step 3: Build the "INSTALL" target using MSBuild (only if not cached)
+      - name: Build and Install Protobuf Library
+        if: steps.cache-protobuf.outputs.cache-hit != 'true'
+        working-directory: ${{ env.PROTO_BUILD_DIR }}
+        run: |
+          # Build the 'INSTALL' target in Release mode using the generated solution
+          cmake --build . --config Release --target INSTALL
+
+    # Step 4: Verify the installation and make files available to subsequent steps
+      - name: Verify Installation and Add to PATH
+        run: |
+          # Add the bin directory to the PATH for subsequent steps
+          echo "${{ env.PROTO_INSTALL_DIR }}\bin\Release" >> $GITHUB_PATH 
+          echo "${{ env.PROTO_INSTALL_DIR }}\bin" >> $GITHUB_PATH # Also add bin directly just in case
+          # Verify the compiler is available
+          protoc --version
+          dir ${{ env.PROTO_INSTALL_DIR }}\lib
  #     - name: Install mingw
  #       if: matrix.qt_version == '6.2.12' && contains( matrix.platform, 'windows' ) && github.event.inputs.source != 'y'
  #       uses: bwoodsend/setup-winlibs-action@v1.15
@@ -206,6 +250,7 @@ jobs:
         if: contains( matrix.platform, 'windows' ) && github.event.inputs.source != 'y' && matrix.qt_version != '6.2.12'
         run: |
           export CMAKE_PREFIX_PATH=$PWD/qt6/build/lib/cmake
+          export protobuf_DIR=${{ env.PROTO_INSTALL_DIR }}\lib
           cd build
           if [[ ${{ github.event.inputs.updater }}es == yes ]]
           then
