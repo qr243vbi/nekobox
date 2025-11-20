@@ -137,7 +137,7 @@ jobs:
         uses: johnwason/vcpkg-action@v7
         id: vcpkg
         with:
-            pkgs: openssl protobuf grpc qtgrpc qt
+            pkgs: openssl protobuf qtgrpc qt
             triplet: ${{ matrix.triplet }}
             token: ${{ github.token }}
 
