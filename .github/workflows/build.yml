@@ -91,6 +91,68 @@ jobs:
         with:
           name: nekobox-${{ github.sha }}-Common-${{ matrix.cross_os }}-${{ matrix.cross_arch }}
           path: artifacts.tgz
+  build-cpp-windows:
+    permissions:
+      contents: read
+    needs:
+      - build-go
+    strategy:
+      matrix:
+        include:
+          - platform: windows-latest
+            triplet: x64-mingw-static
+            target: x86_64
+      fail-fast: false
+    runs-on: ${{ matrix.platform }}
+    env:
+      ACTIONS_ALLOW_UNSECURE_COMMANDS: true
+      INPUT_VERSION: ${{ github.event.inputs.tag }}
+    steps:
+      - name: Checking out sources
+        if: github.event.inputs.source != 'y'
+        uses: actions/checkout@v4.2.2
+        with:
+          submodules: "recursive"
+
+      - name: Download Artifacts
+        if: github.event.inputs.source != 'y'
+        uses: actions/download-artifact@v4.3.0
+        with:
+          path: download-artifact
+
+      - name: Download Srslist
+        shell: bash
+        if: github.event.inputs.source != 'y'
+        run: |
+          curl -fLso "srslist.json" "https://github.com/qr243vbi/ruleset/raw/refs/heads/rule-set/srslist.json"
+          mkdir build
+
+      - name: Install mingw
+        if: matrix.platform == 'windows-latest'
+        uses: bwoodsend/setup-winlibs-action@v1.15
+        with:
+          architecture: ${{ matrix.target }}
+
+      - name: vcpkg build
+        uses: johnwason/vcpkg-action@v7
+        id: vcpkg
+        with:
+            pkgs: openssl protobuf grpc qtgrpc qt
+            triplet: ${{ matrix.triplet }}
+            token: ${{ github.token }}
+
+      - name: Tar files
+        if: github.event.inputs.source != 'y'
+        shell: bash
+        run: tar czvf artifacts.tgz ./deployment
+
+      - name: Uploading Artifact
+        if: github.event.inputs.source != 'y'
+        uses: actions/upload-artifact@v4.6.2
+        with:
+          name: nekobox-${{ github.sha }}-${{ matrix.platform }}-${{ matrix.target }}-Qt${{ matrix.qt_version }}
+          path: artifacts.tgz
+
   build-cpp:
     permissions:
       contents: read
@@ -180,6 +242,7 @@ jobs:
     runs-on: ubuntu-latest
     needs:
       - build-cpp
+      - build-cpp-windows
     permissions:
       contents: write
       actions: read
