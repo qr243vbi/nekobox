@@ -140,6 +140,10 @@ jobs:
         with:
           architecture: ${{ matrix.target }}
 
+      - name: Install ninja-build tool
+        if: github.event.inputs.source != 'y'
+        uses: seanmiddleditch/gha-setup-ninja@v6
+
       - name: vcpkg build
         uses: johnwason/vcpkg-action@v7
         if: github.event.inputs.source != 'y'
@@ -154,7 +158,7 @@ jobs:
         if: github.event.inputs.source != 'y'
         uses: actions/cache@v4
         with:
-          path: qt6
+          path: qt6_build
           key: QtStaticCache-${{ matrix.platform }}-${{ matrix.target }}-Qt${{ matrix.qt_version }}-${{ hashFiles('script/build_qt_static_windows.bat') }}
 
       - name: Download a Qt Sources
@@ -168,7 +172,10 @@ jobs:
       - name: Install Qt Windows
         shell: powershell
         if: github.event.inputs.source != 'y' && steps.cache-static-Qt.outputs.cache-hit != 'true'
-        run: ./script/build_qt_static_windows.bat ${{ matrix.qt_version }}
+        run: |
+          Expand-Archive -Force qt-everywhere-src-${{ matrix.qt_version }}.zip
+          Rename-Item -Path qt-everywhere-src-${{ matrix.qt_version }} -NewName qt6
+          ./script/build_qt_static_windows.bat ${{ matrix.qt_version }}
 
 #      - name: Tar files
 #        if: github.event.inputs.source != 'y'
