@@ -33,9 +33,9 @@ jobs:
           - cross_os: linux
             cross_arch: arm64
             go_version: "1.25.0"
-          - cross_os: windows
-            cross_arch: amd64
-            go_version: "1.25.0"
+#          - cross_os: windows
+#            cross_arch: amd64
+#            go_version: "1.25.0"
 #          - cross_os: windows
 #            cross_arch: arm64
 #            go_version: "1.25.0"
@@ -105,9 +105,9 @@ jobs:
           - platform: ubuntu-24.04-arm
             qt_version: "6.10.0"
             target: arm64
-          - platform: windows-2022
-            qt_version: "6.9.1"
-            target: x86_64
+#          - platform: windows-2022
+#            qt_version: "6.9.1"
+#            target: x86_64
 #          - platform: windows-11-arm
 #            qt_version: "6.9.1"
 #            target: arm64
@@ -123,111 +123,15 @@ jobs:
         with:
           submodules: "recursive"
 
-      - name: Install Nsis and protoc
-        if: contains( matrix.platform, 'windows' ) && github.event.inputs.source != 'y'
-        uses: ConorMacBride/install-package@v1
-        with:
-          choco: nsis protoc
-
- #     - name: Install mingw
- #       if: matrix.qt_version == '6.2.12' && contains( matrix.platform, 'windows' ) && github.event.inputs.source != 'y'
- #       uses: bwoodsend/setup-winlibs-action@v1.15
- #       with:
- #         architecture: ${{ matrix.target }}
-      - name: Install MSVC compiler
-        if: matrix.target == 'x86_64' && contains( matrix.platform, 'windows' ) && github.event.inputs.source != 'y'
-        uses: ilammy/msvc-dev-cmd@v1
-        with:
-          arch: x64
- #     - name: Install MSVC compiler
- #       if: matrix.target == 'i686' && contains( matrix.platform, 'windows' ) && github.event.inputs.source != 'y'
- #       uses: ilammy/msvc-dev-cmd@v1
- #       with:
- #         arch: x86
-      - name: Install MSVC compiler
-        if: matrix.target == 'arm64' && contains( matrix.platform, 'windows' ) && github.event.inputs.source != 'y'
-        uses: ilammy/msvc-dev-cmd@v1
-        with:
-          arch: arm64
-     #   uses: TheMrMilchmann/setup-msvc-dev@v4
-     #   with:
-     #     arch: x64
-    # Define variables as local references used throughout the workflow
-    # PROTO_VERSION is used for both checkout and the cache key
-      - name: Define Protobuf Version reference
-        if: contains( matrix.platform, 'windows' ) && github.event.inputs.source != 'y'
-        run: echo "::set-output name=version::v3.31"
-        id: proto_version # Store the version in a step output
-
-    # The installation directory will be a constant path relative to the workspace
-      - name: Cache Protobuf Installation
-        uses: actions/cache@v4
-        if: contains( matrix.platform, 'windows' ) && github.event.inputs.source != 'y'
-        id: cache-protobuf
-        with:
-          path: ${{ github.workspace }}/protobuf_install # Direct path reference
-        # Key uses step output and direct path references
-          key: ${{ runner.os }}-protobuf-${{ steps.proto_version.outputs.version }}-static-md-${{ hashFiles('protobuf_src/CMakeLists.txt') }}
-          restore-keys: |
-            ${{ runner.os }}-protobuf-${{ steps.proto_version.outputs.version }}-static-md-
-
-      - name: Checkout Protobuf Source if cache miss
-        if: steps.cache-protobuf.outputs.cache-hit != 'true' && contains( matrix.platform, 'windows' ) && github.event.inputs.source != 'y'
-        uses: actions/checkout@v4
-        with:
-         repository: protocolbuffers/protobuf
-         ref: v3.31 # Use the same version here
-         path: protobuf_src
-
-      - name: Initialize Protobuf submodules if cache miss
-        if: steps.cache-protobuf.outputs.cache-hit != 'true' && contains( matrix.platform, 'windows' ) && github.event.inputs.source != 'y'
-        run: git submodule update --init --recursive
-        working-directory: protobuf_src
-
-      - name: Configure, Build, and Install Protobuf if cache miss
-        if: steps.cache-protobuf.outputs.cache-hit != 'true' && contains( matrix.platform, 'windows' ) && github.event.inputs.source != 'y'
-        run: |
-         # Direct path reference for CMAKE_INSTALL_PREFIX
-         $install_dir = "${{ github.workspace }}\protobuf_install"
-         cmake -S . -B build `
-         -DCMAKE_BUILD_TYPE=Release `
-         -Dprotobuf_BUILD_SHARED_LIBS=OFF `
-         -Dprotobuf_MSVC_STATIC_RUNTIME=OFF `
-         -DCMAKE_INSTALL_PREFIX=$install_dir
-
-         cmake --build build --config Release
-         cmake --install build --config Release
-        working-directory: protobuf_src
-        shell: powershell
-     # - name: Install MSVC compiler
-    #    if: matrix.qt_version != '6.2.12' && matrix.target == 'arm64' && (matrix.platform == 'windows-latest' || matrix.platform == 'windows-11-arm') && github.event.inputs.source != 'y'
-   #     uses: TheMrMilchmann/setup-msvc-dev@v4
-  #      with:
- #         arch: x64_arm
-
-      - name: Install ninja-build tool
-        if: contains( matrix.platform, 'windows' ) && github.event.inputs.source != 'y' #&& matrix.qt_version != '6.2.12'
-        uses: seanmiddleditch/gha-setup-ninja@v6
       - name: Download Artifacts
         if: github.event.inputs.source != 'y'
         uses: actions/download-artifact@v4.3.0
         with:
           path: download-artifact
-      # ========================================================================================================= Qt Install
- #     - name: Qt static Cache
- #       id: cache-static-Qt
- #       if: matrix.platform == 'windows-latest' && matrix.qt_version != '6.2.12' && github.event.inputs.source != 'y'
- #       uses: actions/cache@v4.2.3
- #       with:
- #         path: qt6/build
- #         key: QtStaticCache-${{ matrix.platform }}-${{ matrix.target }}-Qt${{ matrix.qt_version }}
- #     - name: Install Qt Windows
- #       shell: powershell
- #       if: matrix.platform == 'windows-latest' && steps.cache-static-Qt.outputs.cache-hit != 'true' && matrix.qt_version != 6.2.12' && github.event.inputs.source != 'y'
- #       run: ./script/build_qt_static_windows.bat ${{ matrix.qt_version }}
+
       - name: Install Qt
         uses: jurplel/install-qt-action@v4.3.0
-        if: github.event.inputs.source != 'y' && matrix.qt_version != '6.2.12'
+        if: github.event.inputs.source != 'y'
         with:
           version: ${{ matrix.qt_version }}
           setup-python: true
@@ -235,67 +139,12 @@ jobs:
           modules: qtcharts qtgrpc
           cache-key-prefix: QtCache-${{ matrix.platform }}-${{ matrix.target }}
 
-      # ========================================================================================================= Generate MakeFile and Build
       - name: Download Srslist
         shell: bash
         if: github.event.inputs.source != 'y'
         run: |
           curl -fLso "srslist.json" "https://github.com/qr243vbi/ruleset/raw/refs/heads/rule-set/srslist.json"
           mkdir build
-          
-      - name: Windows - Generate MakeFile and Build
-        shell: bash
-        if: contains( matrix.platform, 'windows' ) && github.event.inputs.source != 'y' && matrix.qt_version != '6.2.12'
-        run: |
-          export CMAKE_PREFIX_PATH=$PWD/qt6/build/lib/cmake
-          export protobuf_DIR=${{ env.PROTO_INSTALL_DIR }}\lib
-          cd build
-          if [[ ${{ github.event.inputs.updater }}es == yes ]]
-          then
-            export SKIP_UPDATE_BUTTON=ON;
-          else
-            export SKIP_UPDATE_BUTTON=OFF
-          fi
-          if [[ ${{ matrix.qt_version }} == '6.10.0' ]]
-          then
-            export LEGACY_QT=OFF
-            export MATRIX=new-${{ matrix.target }}
-          else
-            export LEGACY_QT=ON
-            export MATRIX=${{ matrix.target }}
-          fi
-          cmake -GNinja -DProtobuf_DIR=$protobuf_DIR "-DSKIP_UPDATE_BUTTON=${SKIP_UPDATE_BUTTON}" -DUSE_LEGACY_QT="${LEGACY_QT}" -DCMAKE_BUILD_TYPE=Release ..
-          ninja -j2
-          cd ..
-          ./script/deploy_windows.sh "${MATRIX}"
-      - name: Build Installer with NSIS for windows64
-        shell: cmd
-        if: contains( matrix.platform, 'windows' ) && matrix.qt_version == '6.10.0' && matrix.target == 'x86_64' && github.event.inputs.source != 'y'
-        run: |
-          cp .\script\windows_installer.nsi .
-          makensis.exe windows_installer.nsi
-          install -D nekobox_setup.exe deployment/nekobox_setup.exe
-      - name: Build Installer with NSIS for windows32
-        shell: cmd
-        if: contains( matrix.platform, 'windows' ) && matrix.qt_version != '6.10.0' && matrix.target == 'i686' && github.event.inputs.source != 'y'
-        run: |
-          cp .\script\windows_installer.nsi .
-          makensis "/DDIRECTORY=windows32"  windows_installer.nsi
-          install -D nekobox_setup.exe deployment/nekobox_setup32.exe
-      - name: Build Installer with NSIS for windows-arm64
-        shell: cmd
-        if: contains( matrix.platform, 'windows' ) && matrix.qt_version == '6.10.0' && matrix.target == 'arm64' && github.event.inputs.source != 'y'
-        run: |
-          cp .\script\windows_installer.nsi .
-          makensis "/DDIRECTORY=windows-arm64" windows_installer.nsi
-          install -D nekobox_setup.exe deployment/nekobox_setup_arm64.exe
-      - name: Build Installer with NSIS for windowslegacy64
-        shell: cmd
-        if: contains( matrix.platform, 'windows' ) && matrix.qt_version != '6.10.0' && matrix.target != 'i686' && github.event.inputs.source != 'y'
-        run: |
-          cp .\script\windows_installer.nsi .
-          makensis "/DDIRECTORY=windowslegacy64" windows_installer.nsi
-          install -D nekobox_setup.exe deployment/nekobox_setup_legacy.exe
 
       - name: Linux - Install apt dependencies
         uses: awalsh128/cache-apt-pkgs-action@latest
@@ -314,7 +163,7 @@ jobs:
           ninja
           cd ..
           bash -x ./script/deploy_linux64.sh
-      # ========================================================================================================= Deployments
+
       - name: Tar files
         if: github.event.inputs.source != 'y'
         shell: bash
