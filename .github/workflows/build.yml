@@ -13,6 +13,7 @@ on:
         required: false
       source:
         description: "skip building binaries, distribute only unified source"
+        type: boolean
         required: false
       updater:
         description: "ship binaries without updater"
@@ -44,17 +45,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checking out sources
-        if: matrix.cross_os == 'public' || github.event.inputs.source != 'y'
+        if: matrix.cross_os == 'public' || github.event.inputs.source != 'true'
         uses: actions/checkout@v4.2.2
       - name: Cache Common Download
         id: cache-common
-        if: matrix.cross_os == 'public' || github.event.inputs.source != 'y'
+        if: matrix.cross_os == 'public' || github.event.inputs.source != 'true'
         uses: actions/cache@v4.2.3
         with:
           path: artifacts.tgz
           key: CommonCache-${{ matrix.cross_os }}-${{ matrix.cross_arch }}-${{ hashFiles('script/build_go.sh', 'core/*') }}-${{ matrix.go_version }}
       - name: Install Golang
-        if: ( matrix.cross_os == 'public' || github.event.inputs.source != 'y' ) && steps.cache-common.outputs.cache-hit != 'true'
+        if: ( matrix.cross_os == 'public' || github.event.inputs.source != 'true' ) && steps.cache-common.outputs.cache-hit != 'true'
         uses: actions/setup-go@v5.5.0
         with:
           go-version: ${{ matrix.go_version }}
@@ -62,19 +63,19 @@ jobs:
             core/server/go.sum
             core/updater/go.sum
       - name: Install Protoc
-        if: matrix.cross_os == 'public' || github.event.inputs.source != 'y'
+        if: matrix.cross_os == 'public' || github.event.inputs.source != 'true'
         run: |
           curl -LO "https://github.com/protocolbuffers/protobuf/releases/download/v31.1/protoc-31.1-linux-x86_64.zip"
           unzip "protoc-31.1-linux-x86_64.zip" -d protoc_install
           cp ./protoc_install/bin/protoc /usr/local/bin
           protoc --version
       - name: Installing protoc-gen-go
-        if: matrix.cross_os == 'public' || github.event.inputs.source != 'y'
+        if: matrix.cross_os == 'public' || github.event.inputs.source != 'true'
         run: |
           go install github.com/golang/protobuf/protoc-gen-go@latest
           go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@latest
       - name: Build golang parts
-        if: steps.cache-common.outputs.cache-hit != 'true' && matrix.cross_os != 'public' && github.event.inputs.source != 'y'
+        if: steps.cache-common.outputs.cache-hit != 'true' && matrix.cross_os != 'public' && github.event.inputs.source != 'true'
         shell: bash
         run: |
           GO_MOD_TIDY=yes SKIP_UPDATER=${{ github.event.inputs.updater }} GOOS=${{ matrix.cross_os }} GOARCH=${{ matrix.cross_arch }} ./script/build_go.sh
@@ -84,10 +85,10 @@ jobs:
         run: |
           bash -x ./script/deploy_vendor.sh
       - name: Tar files
-        if: ( matrix.cross_os == 'public' || github.event.inputs.source != 'y' ) && steps.cache-common.outputs.cache-hit != 'true'
+        if: ( matrix.cross_os == 'public' || github.event.inputs.source != 'true' ) && steps.cache-common.outputs.cache-hit != 'true'
         run: tar czvf artifacts.tgz ./deployment
       - name: Uploading Artifact
-        if: matrix.cross_os == 'public' || github.event.inputs.source != 'y'
+        if: matrix.cross_os == 'public' || github.event.inputs.source != 'true'
         uses: actions/upload-artifact@v4.6.2
         with:
           name: nekobox-${{ github.sha }}-Common-${{ matrix.cross_os }}-${{ matrix.cross_arch }}
@@ -111,43 +112,43 @@ jobs:
       INPUT_VERSION: ${{ github.event.inputs.tag }}
     steps:
       - name: Checking out sources
-        if: github.event.inputs.source != 'y'
+        if: github.event.inputs.source != 'true'
         uses: actions/checkout@v4.2.2
         with:
           submodules: "recursive"
 
       - name: Install Chocolatey Packages
-        if: github.event.inputs.source != 'y'
+        if: github.event.inputs.source != 'true'
         uses: ConorMacBride/install-package@v1
         with:
           choco: nsis protoc
 
       - name: Download Artifacts
-        if: github.event.inputs.source != 'y'
+        if: github.event.inputs.source != 'true'
         uses: actions/download-artifact@v4.3.0
         with:
           path: download-artifact
 
       - name: Download Srslist
         shell: bash
-        if: github.event.inputs.source != 'y'
+        if: github.event.inputs.source != 'true'
         run: |
           curl -fLso "srslist.json" "https://github.com/qr243vbi/ruleset/raw/refs/heads/rule-set/srslist.json"
           mkdir build
 
       - name: Install mingw
-        if: github.event.inputs.source != 'y'
+        if: github.event.inputs.source != 'true'
         uses: bwoodsend/setup-winlibs-action@v1.15
         with:
           architecture: ${{ matrix.target }}
 
       - name: Install ninja-build tool
-        if: github.event.inputs.source != 'y'
+        if: github.event.inputs.source != 'true'
         uses: seanmiddleditch/gha-setup-ninja@v6
 
       - name: Qt static Cache
         id: cache-static-Qt
-        if: github.event.inputs.source != 'y'
+        if: github.event.inputs.source != 'true'
         uses: actions/cache@v4
         with:
           path: qt6_build
@@ -155,7 +156,7 @@ jobs:
 
       - name: Qt static source Cache
         id: cache-static-source-Qt
-        if: github.event.inputs.source != 'y' && steps.cache-static-Qt.outputs.cache-hit != 'true'
+        if: github.event.inputs.source != 'true' && steps.cache-static-Qt.outputs.cache-hit != 'true'
         uses: actions/cache@v4
         with:
           path: qt6
@@ -163,7 +164,7 @@ jobs:
 
       - name: Init Qt Submodules
         shell: bash
-        if: github.event.inputs.source != 'y' && steps.cache-static-Qt.outputs.cache-hit != 'true'
+        if: github.event.inputs.source != 'true' && steps.cache-static-Qt.outputs.cache-hit != 'true'
         run: |
           if [[ -d qt6 ]]; then
             echo "Got qt6 from cache"
@@ -175,7 +176,7 @@ jobs:
 
       - name: vcpkg build
         uses: johnwason/vcpkg-action@v7
-        if: github.event.inputs.source != 'y'
+        if: github.event.inputs.source != 'true'
         id: vcpkg
         with:
             pkgs: openssl protobuf
@@ -185,7 +186,7 @@ jobs:
 
       - name: Build Qt Submodules
         shell: powershell
-        if: github.event.inputs.source != 'y' && steps.cache-static-Qt.outputs.cache-hit != 'true'
+        if: github.event.inputs.source != 'true' && steps.cache-static-Qt.outputs.cache-hit != 'true'
         run: ./script/build_qt_static_windows.bat
 
 #      - name: Tar files
@@ -227,20 +228,20 @@ jobs:
       INPUT_VERSION: ${{ github.event.inputs.tag }}
     steps:
       - name: Checking out sources
-        if: github.event.inputs.source != 'y'
+        if: github.event.inputs.source != 'true'
         uses: actions/checkout@v4.2.2
         with:
           submodules: "recursive"
 
       - name: Download Artifacts
-        if: github.event.inputs.source != 'y'
+        if: github.event.inputs.source != 'true'
         uses: actions/download-artifact@v4.3.0
         with:
           path: download-artifact
 
       - name: Install Qt
         uses: jurplel/install-qt-action@v4.3.0
-        if: github.event.inputs.source != 'y'
+        if: github.event.inputs.source != 'true'
         with:
           version: ${{ matrix.qt_version }}
           setup-python: true
@@ -250,21 +251,21 @@ jobs:
 
       - name: Download Srslist
         shell: bash
-        if: github.event.inputs.source != 'y'
+        if: github.event.inputs.source != 'true'
         run: |
           curl -fLso "srslist.json" "https://github.com/qr243vbi/ruleset/raw/refs/heads/rule-set/srslist.json"
           mkdir build
 
       - name: Linux - Install apt dependencies
         uses: awalsh128/cache-apt-pkgs-action@latest
-        if: contains( matrix.platform, 'ubuntu' ) && github.event.inputs.source != 'y'
+        if: contains( matrix.platform, 'ubuntu' ) && github.event.inputs.source != 'true'
         with:
           packages: libfuse2 patchelf squashfs-tools openssl-dev openssl protobuf-compiler
           version: 1.0
 
       - name: Linux - Generate MakeFile and Build
         shell: bash
-        if: contains( matrix.platform, 'ubuntu' ) && github.event.inputs.source != 'y'
+        if: contains( matrix.platform, 'ubuntu' ) && github.event.inputs.source != 'true'
         run: |
           cd build
           if [[ ${{ github.event.inputs.updater }}es == yes ]]; then export SKIP_UPDATE_BUTTON=ON; else export SKIP_UPDATE_BUTTON=OFF; fi
@@ -274,11 +275,11 @@ jobs:
           bash -x ./script/deploy_linux64.sh
 
       - name: Tar files
-        if: github.event.inputs.source != 'y'
+        if: github.event.inputs.source != 'true'
         shell: bash
         run: tar czvf artifacts.tgz ./deployment
       - name: Uploading Artifact
-        if: github.event.inputs.source != 'y'
+        if: github.event.inputs.source != 'true'
         uses: actions/upload-artifact@v4.6.2
         with:
           name: nekobox-${{ github.sha }}-${{ matrix.platform }}-${{ matrix.target }}-Qt${{ matrix.qt_version }}
@@ -472,14 +473,14 @@ jobs:
       actions: read
     steps:
       - uses: actions/checkout@v4
-        if: github.event.inputs.publish == 'r' && github.event.inputs.source != 'y' && 'chocolatey_package_approved' == 'yes'
+        if: github.event.inputs.publish == 'r' && github.event.inputs.source != 'true' && 'chocolatey_package_approved' == 'yes'
       - uses: ConorMacBride/install-package@v1
-        if: github.event.inputs.publish == 'r' && github.event.inputs.source != 'y'  && 'chocolatey_package_approved' == 'yes'
+        if: github.event.inputs.publish == 'r' && github.event.inputs.source != 'true'  && 'chocolatey_package_approved' == 'yes'
         with:
           choco: curl jq sed
       - name: Upload Chocolatey Package
         shell: bash
-        if: github.event.inputs.publish == 'r' && github.event.inputs.source != 'y' && 'chocolatey_package_approved' == 'yes'
+        if: github.event.inputs.publish == 'r' && github.event.inputs.source != 'true' && 'chocolatey_package_approved' == 'yes'
         run: |
           cd ./script/
           export INPUT_VERSION=${{ github.event.inputs.tag }}
