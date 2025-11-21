@@ -1,12 +1,28 @@
 @0xabcdefabcdefabcdef;
 
-using Go = import "/go.capnp";
+using Go = import "/capnp/go.capnp";
 $Go.package("gen");
-$Go.import("capnproto.org/go/capnp/v3/example");
+$Go.import("Core/gen");
 
-struct EmptyReq {}
+using Cxx = import "/capnp/c++.capnp";
+$Cxx.namespace("gen");
 
-struct EmptyResp {}
+interface LibcoreService {
+    start @0 (request :LoadConfigReq) -> (response :ErrorResp);
+    stop @1 () -> (response :ErrorResp);
+    checkConfig @2 (request :LoadConfigReq) -> (response :ErrorResp);
+    test @3 (request :TestReq) -> (response :TestResp);
+    stopTest @4 () -> ();
+    queryURLTest @5 () -> (response :QueryURLTestResponse);
+    queryStats @6 () -> (response :QueryStatsResp);
+    listConnections @7 () -> (response :ListConnectionsResp);
+    setSystemDNS @8 (request :SetSystemDNSRequest) -> ();
+    isPrivileged @9 () -> (response :IsPrivilegedResponse);
+    speedTest @10 (request :SpeedTestRequest) -> (response :SpeedTestResponse);
+    querySpeedTest @11 () -> (response :QuerySpeedTestResponse);
+    queryCountryTest @12 () -> (response :QueryCountryTestResponse);
+}
+
 
 struct ErrorResp {
     error @0 :Text = "";
@@ -118,20 +134,4 @@ struct QueryCountryTestResponse {
 
 struct QueryURLTestResponse {
     results @0 :List(URLTestResp) = [];
-}
-
-interface LibcoreService {
-    start @0 (config :LoadConfigReq) -> (response :ErrorResp);
-    stop @1 (req :EmptyReq) -> (response :ErrorResp);
-    checkConfig @2 (config :LoadConfigReq) -> (response :ErrorResp);
-    test @3 (req :TestReq) -> (response :TestResp);
-    stopTest @4 (req :EmptyReq) -> (response :EmptyResp);
-    queryURLTest @5 (req :EmptyReq) -> (response :QueryURLTestResponse);
-    queryStats @6 (req :EmptyReq) -> (response :QueryStatsResp);
-    listConnections @7 (req :EmptyReq) -> (response :ListConnectionsResp);
-    setSystemDNS @8 (req :SetSystemDNSRequest) -> (response :EmptyResp);
-    isPrivileged @9 (req :EmptyReq) -> (response :IsPrivilegedResponse);
-    speedTest @10 (req :SpeedTestRequest) -> (response :SpeedTestResponse);
-    querySpeedTest @11 (req :EmptyReq) -> (response :QuerySpeedTestResponse);
-    queryCountryTest @12 (req :EmptyReq) -> (response :QueryCountryTestResponse);
 }
