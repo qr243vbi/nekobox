@@ -40,7 +40,6 @@ jobs:
     permissions:
       contents: read
     strategy:
-      max-parallel: 1
       matrix:
         include:
           - cross_os: public
@@ -122,6 +121,7 @@ jobs:
     needs:
       - build-go
     strategy:
+      max-parallel: 1
       matrix:
         include:
           - platform: windows-latest
