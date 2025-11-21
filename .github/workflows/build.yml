@@ -129,33 +129,37 @@ jobs:
             qt_version: 6.10.0
       fail-fast: false
     runs-on: ${{ matrix.platform }}
-    if: github.event.inputs.build_windows == 'true' && github.event.inputs.source != 'true'
     env:
       ACTIONS_ALLOW_UNSECURE_COMMANDS: true
       INPUT_VERSION: ${{ github.event.inputs.tag }}
     steps:
       - name: Checking out sources
+        if: github.event.inputs.build_windows == 'true' && github.event.inputs.source != 'true'
         uses: actions/checkout@v4.2.2
         with:
           submodules: "recursive"
 
       - name: Install Chocolatey Packages
+        if: github.event.inputs.build_windows == 'true' && github.event.inputs.source != 'true'
         uses: ConorMacBride/install-package@v1
         with:
           choco: nsis protoc
 
       - name: Download Artifacts
+        if: github.event.inputs.build_windows == 'true' && github.event.inputs.source != 'true'
         uses: actions/download-artifact@v4.3.0
         with:
           path: download-artifact
 
       - name: Download Srslist
+        if: github.event.inputs.build_windows == 'true' && github.event.inputs.source != 'true'
         shell: bash
         run: |
           curl -fLso "srslist.json" "https://github.com/qr243vbi/ruleset/raw/refs/heads/rule-set/srslist.json"
           mkdir build
 
       - name: Install Qt
+        if: github.event.inputs.build_windows == 'true' && github.event.inputs.source != 'true'
         uses: jurplel/install-qt-action@v4.3.0
         with:
           version: ${{ matrix.qt_version }}
@@ -165,11 +169,13 @@ jobs:
           cache-key-prefix: QtCache-${{ matrix.platform }}-${{ matrix.target }}
 
       - name: Install MSVC compiler
+        if: github.event.inputs.build_windows == 'true' && github.event.inputs.source != 'true'
         uses: ilammy/msvc-dev-cmd@v1
         with:
           arch: ${{ matrix.target }}
 
       - name: Windows - Generate MakeFile and Build
+        if: github.event.inputs.build_windows == 'true' && github.event.inputs.source != 'true'
         shell: bash
         run: |
           cmake -DCMAKE_BUILD_TYPE=Release -S . -B build
@@ -254,22 +260,24 @@ jobs:
 #            target: arm64
       fail-fast: false
     runs-on: ${{ matrix.platform }}
-    if: github.event.inputs.build_ubuntu == 'true' && github.event.inputs.source != 'true'
     env:
       ACTIONS_ALLOW_UNSECURE_COMMANDS: true
       INPUT_VERSION: ${{ github.event.inputs.tag }}
     steps:
       - name: Checking out sources
+        if: github.event.inputs.build_ubuntu == 'true' && github.event.inputs.source != 'true'
         uses: actions/checkout@v4.2.2
         with:
           submodules: "recursive"
 
       - name: Download Artifacts
+        if: github.event.inputs.build_ubuntu == 'true' && github.event.inputs.source != 'true'
         uses: actions/download-artifact@v4.3.0
         with:
           path: download-artifact
 
       - name: Install Qt
+        if: github.event.inputs.build_ubuntu == 'true' && github.event.inputs.source != 'true'
         uses: jurplel/install-qt-action@v4.3.0
         with:
           version: ${{ matrix.qt_version }}
@@ -279,18 +287,21 @@ jobs:
           cache-key-prefix: QtCache-${{ matrix.platform }}-${{ matrix.target }}
 
       - name: Download Srslist
+        if: github.event.inputs.build_ubuntu == 'true' && github.event.inputs.source != 'true'
         shell: bash
         run: |
           curl -fLso "srslist.json" "https://github.com/qr243vbi/ruleset/raw/refs/heads/rule-set/srslist.json"
           mkdir build
 
       - name: Linux - Install apt dependencies
+        if: github.event.inputs.build_ubuntu == 'true' && github.event.inputs.source != 'true'
         uses: awalsh128/cache-apt-pkgs-action@latest
         with:
           packages: libfuse2 patchelf squashfs-tools openssl-dev openssl protobuf-compiler
           version: 1.0
 
       - name: Linux - Generate MakeFile and Build
+        if: github.event.inputs.build_ubuntu == 'true' && github.event.inputs.source != 'true'
         shell: bash
         run: |
           cd build
@@ -301,10 +312,12 @@ jobs:
           bash -x ./script/deploy_linux64.sh
 
       - name: Tar files
+        if: github.event.inputs.build_ubuntu == 'true' && github.event.inputs.source != 'true'
         shell: bash
         run: tar czvf artifacts.tgz ./deployment
 
       - name: Uploading Artifact
+        if: github.event.inputs.build_ubuntu == 'true' && github.event.inputs.source != 'true'
         uses: actions/upload-artifact@v4.6.2
         with:
           name: nekobox-${{ github.sha }}-${{ matrix.platform }}-${{ matrix.target }}-Qt${{ matrix.qt_version }}
