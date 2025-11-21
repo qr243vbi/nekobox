@@ -20,6 +20,16 @@ on:
         description: "Ship binaries without updater"
         type: boolean
         required: false
+      build_windows:
+        description: "Build windows binaries"
+        type: boolean
+        default: true
+        required: false
+      build_ubuntu:
+        description: "Build linux binaries"
+        type: boolean
+        default: true
+        required: false
 jobs:
   build-go:
     permissions:
@@ -45,6 +55,7 @@ jobs:
 #            go_version: "1.25.0"
       fail-fast: false
     runs-on: ubuntu-latest
+    if: ( github.event.inputs.build_ubuntu == 'true' && contains(matrix.cross_os, 'linux') ) || ( github.event.inputs.build_windows == 'true' && contains(matrix.cross_os, 'windows'))
     steps:
       - name: Checking out sources
         if: matrix.cross_os == 'public' || github.event.inputs.source != 'true'
@@ -112,6 +123,7 @@ jobs:
             qt_version: 6.10.0
       fail-fast: false
     runs-on: ${{ matrix.platform }}
+    if: github.event.inputs.build_windows == 'true'
     env:
       ACTIONS_ALLOW_UNSECURE_COMMANDS: true
       INPUT_VERSION: ${{ github.event.inputs.tag }}
@@ -228,6 +240,7 @@ jobs:
 #            target: arm64
       fail-fast: false
     runs-on: ${{ matrix.platform }}
+    if: github.event.inputs.build_ubuntu == 'true'
     env:
       ACTIONS_ALLOW_UNSECURE_COMMANDS: true
       INPUT_VERSION: ${{ github.event.inputs.tag }}
