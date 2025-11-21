@@ -75,7 +75,7 @@ jobs:
           path: artifacts.tgz
           key: CommonCache-${{ matrix.cross_os }}-${{ matrix.cross_arch }}-${{ hashFiles('script/build_go.sh', 'core/*') }}-${{ matrix.go_version }}
       - name: Install Golang
-        if: ( matrix.cross_os == 'public' || github.event.inputs.source != 'true' ) && steps.cache-common.outputs.cache-hit != 'true'
+        if: ( matrix.cross_os == 'public' || ( github.event.inputs.source != 'true' && github.event.inputs.allow == 'true' ) ) && steps.cache-common.outputs.cache-hit != 'true'
         uses: actions/setup-go@v5.5.0
         with:
           go-version: ${{ matrix.go_version }}
@@ -108,7 +108,7 @@ jobs:
         run: |
           bash -x ./script/deploy_vendor.sh
       - name: Tar files
-        if: ( matrix.cross_os == 'public' || github.event.inputs.source != 'true' ) && steps.cache-common.outputs.cache-hit != 'true'
+        if: ( matrix.cross_os == 'public' || ( github.event.inputs.source != 'true' && github.event.inputs.allow == 'true' ) ) && steps.cache-common.outputs.cache-hit != 'true'
         run: tar czvf artifacts.tgz ./deployment
       - name: Uploading Artifact
         if: matrix.cross_os == 'public' || ( github.event.inputs.source != 'true' && github.event.inputs.allow == 'true' )
