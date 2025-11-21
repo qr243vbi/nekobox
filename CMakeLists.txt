@@ -250,6 +250,13 @@ endif()
 if(USE_QT_GRPC)
 find_package(Qt6 REQUIRED COMPONENTS Grpc)
 target_link_libraries(nekobox PRIVATE Qt6::Grpc)
+else()
+find_package(Protobuf CONFIG REQUIRED)
+find_package(gRPC CONFIG REQUIRED)
+target_link_libraries(nekobox PRIVATE
+        protobuf::libprotobuf
+        gRPC::grpc
+        gRPC::grpc++)
 endif()
 
 set_target_properties(nekobox PROPERTIES
