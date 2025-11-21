@@ -44,25 +44,28 @@ jobs:
           - cross_os: linux
             cross_arch: amd64
             go_version: "1.25.0"
+            allow: ${{ github.event.inputs.build_ubuntu }}
           - cross_os: linux
             cross_arch: arm64
             go_version: "1.25.0"
+            allow: ${{ github.event.inputs.build_ubuntu }}
           - cross_os: windows
             cross_arch: amd64
             go_version: "1.25.0"
+            allow: ${{ github.event.inputs.build_windows }}
 #          - cross_os: windows
 #            cross_arch: arm64
 #            go_version: "1.25.0"
       fail-fast: false
     runs-on: ubuntu-latest
-    if: ( github.event.inputs.build_ubuntu == 'true' && contains(matrix.cross_os, 'linux') ) || ( github.event.inputs.build_windows == 'true' && contains(matrix.cross_os, 'windows'))
+    if: (  == 'true' && contains(matrix.cross_os, 'linux') ) || ( github.event.inputs.build_windows == 'true' && contains(matrix.cross_os, 'windows'))
     steps:
       - name: Checking out sources
-        if: matrix.cross_os == 'public' || github.event.inputs.source != 'true'
+        if: matrix.cross_os == 'public' || ( github.event.inputs.source != 'true' && github.event.inputs.allow == 'true' )
         uses: actions/checkout@v4.2.2
       - name: Cache Common Download
         id: cache-common
-        if: matrix.cross_os == 'public' || github.event.inputs.source != 'true'
+        if: matrix.cross_os == 'public' || ( github.event.inputs.source != 'true' && github.event.inputs.allow == 'true' )
         uses: actions/cache@v4.2.3
         with:
           path: artifacts.tgz
@@ -76,19 +79,19 @@ jobs:
             core/server/go.sum
             core/updater/go.sum
       - name: Install Protoc
-        if: matrix.cross_os == 'public' || github.event.inputs.source != 'true'
+        if: matrix.cross_os == 'public' || ( github.event.inputs.source != 'true' && github.event.inputs.allow == 'true' )
         run: |
           curl -LO "https://github.com/protocolbuffers/protobuf/releases/download/v31.1/protoc-31.1-linux-x86_64.zip"
           unzip "protoc-31.1-linux-x86_64.zip" -d protoc_install
           cp ./protoc_install/bin/protoc /usr/local/bin
           protoc --version
       - name: Installing protoc-gen-go
-        if: matrix.cross_os == 'public' || github.event.inputs.source != 'true'
+        if: matrix.cross_os == 'public' || ( github.event.inputs.source != 'true' && github.event.inputs.allow == 'true' )
         run: |
           go install github.com/golang/protobuf/protoc-gen-go@latest
           go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@latest
       - name: Build golang parts
-        if: steps.cache-common.outputs.cache-hit != 'true' && matrix.cross_os != 'public' && github.event.inputs.source != 'true'
+        if: steps.cache-common.outputs.cache-hit != 'true' && matrix.cross_os != 'public' && ( github.event.inputs.source != 'true' && github.event.inputs.allow == 'true' )
         shell: bash
         run: |
           if [[ ${{ github.event.inputs.updater }} == 'true' ]]
@@ -104,7 +107,7 @@ jobs:
         if: ( matrix.cross_os == 'public' || github.event.inputs.source != 'true' ) && steps.cache-common.outputs.cache-hit != 'true'
         run: tar czvf artifacts.tgz ./deployment
       - name: Uploading Artifact
-        if: matrix.cross_os == 'public' || github.event.inputs.source != 'true'
+        if: matrix.cross_os == 'public' || ( github.event.inputs.source != 'true' && github.event.inputs.allow == 'true' )
         uses: actions/upload-artifact@v4.6.2
         with:
           name: nekobox-${{ github.sha }}-Common-${{ matrix.cross_os }}-${{ matrix.cross_arch }}
@@ -123,49 +126,42 @@ jobs:
             qt_version: 6.10.0
       fail-fast: false
     runs-on: ${{ matrix.platform }}
-    if: github.event.inputs.build_windows == 'true'
+    if: github.event.inputs.build_windows == 'true' && github.event.inputs.source != 'true'
     env:
       ACTIONS_ALLOW_UNSECURE_COMMANDS: true
       INPUT_VERSION: ${{ github.event.inputs.tag }}
     steps:
       - name: Checking out sources
-        if: github.event.inputs.source != 'true'
         uses: actions/checkout@v4.2.2
         with:
           submodules: "recursive"
 
       - name: Install Chocolatey Packages
-        if: github.event.inputs.source != 'true'
         uses: ConorMacBride/install-package@v1
         with:
           choco: nsis protoc
 
       - name: Download Artifacts
-        if: github.event.inputs.source != 'true'
         uses: actions/download-artifact@v4.3.0
         with:
           path: download-artifact
 
       - name: Download Srslist
         shell: bash
-        if: github.event.inputs.source != 'true'
         run: |
           curl -fLso "srslist.json" "https://github.com/qr243vbi/ruleset/raw/refs/heads/rule-set/srslist.json"
           mkdir build
 
       - name: Install mingw
-        if: github.event.inputs.source != 'true'
         uses: bwoodsend/setup-winlibs-action@v1.15
         with:
           architecture: ${{ matrix.target }}
 
       - name: Install ninja-build tool
-        if: github.event.inputs.source != 'true'
         uses: seanmiddleditch/gha-setup-ninja@v6
 
       - name: Qt static Cache
         id: cache-static-Qt
-        if: github.event.inputs.source != 'true'
         uses: actions/cache@v4
         with:
           path: qt6_build
@@ -173,7 +169,7 @@ jobs:
 
       - name: Qt static source Cache
         id: cache-static-source-Qt
-        if: github.event.inputs.source != 'true' && steps.cache-static-Qt.outputs.cache-hit != 'true'
+        if: steps.cache-static-Qt.outputs.cache-hit != 'true'
         uses: actions/cache@v4
         with:
           path: qt6
@@ -181,7 +177,7 @@ jobs:
 
       - name: Init Qt Submodules
         shell: bash
-        if: github.event.inputs.source != 'true' && steps.cache-static-Qt.outputs.cache-hit != 'true'
+        if: steps.cache-static-Qt.outputs.cache-hit != 'true'
         run: |
           if [[ -d qt6 ]]; then
             echo "Got qt6 from cache"
@@ -193,7 +189,6 @@ jobs:
 
       - name: vcpkg build
         uses: johnwason/vcpkg-action@v7
-        if: github.event.inputs.source != 'true'
         id: vcpkg
         with:
             pkgs: openssl protobuf
@@ -203,7 +198,7 @@ jobs:
 
       - name: Build Qt Submodules
         shell: powershell
-        if: github.event.inputs.source != 'true' && steps.cache-static-Qt.outputs.cache-hit != 'true'
+        if: steps.cache-static-Qt.outputs.cache-hit != 'true'
         run: ./script/build_qt_static_windows.bat
 
 #      - name: Tar files
