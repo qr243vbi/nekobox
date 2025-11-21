@@ -248,6 +248,7 @@ else()
 endif()
 
 if(USE_QT_GRPC)
+add_definitions(-DNEKOBOX_USE_QT_GRPC)
 find_package(Qt6 REQUIRED COMPONENTS Grpc)
 target_link_libraries(nekobox PRIVATE Qt6::Grpc)
 else()
