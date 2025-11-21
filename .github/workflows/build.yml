@@ -31,9 +31,9 @@ on:
         default: true
         required: false
       publish_chocolatey:
-        description: "Build linux binaries"
+        description: "Publish chocolatey packages"
         type: boolean
-        default: true
+        default: false
         required: false
 jobs:
   build-go:
