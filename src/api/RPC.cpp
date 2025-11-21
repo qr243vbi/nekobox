@@ -2,10 +2,8 @@
 #include "include/global/Configs.hpp"
 #include <QDebug>
 
-#ifdef NEKOBOX_USE_QT_GRPC
 #include <QGrpcHttp2Channel>
 #include <qtgrpcnamespace.h>
-#endif
 
 #include <optional>
 #include <qnamespace.h>
