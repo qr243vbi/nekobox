@@ -193,7 +193,7 @@ jobs:
         uses: johnwason/vcpkg-action@v7
         id: vcpkg
         with:
-            pkgs: openssl protobuf vcpkg-tool-ninja
+            pkgs: openssl protobuf
             triplet: ${{ matrix.triplet }}
             token: ${{ github.token }}
             cache-key: vcpkg-${{ matrix.platform }}-${{ matrix.triplet }}-${{ matrix.target }}
