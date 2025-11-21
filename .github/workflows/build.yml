@@ -145,6 +145,34 @@ jobs:
         if: github.event.inputs.source != 'y'
         uses: seanmiddleditch/gha-setup-ninja@v6
 
+      - name: Qt static Cache
+        id: cache-static-Qt
+        if: github.event.inputs.source != 'y'
+        uses: actions/cache@v4
+        with:
+          path: qt6_build
+          key: QtStaticCache-${{ matrix.platform }}-${{ matrix.target }}-Qt${{ matrix.qt_version }}-${{ hashFiles('script/build_qt_static_windows.bat') }}
+
+      - name: Qt static source Cache
+        id: cache-static-source-Qt
+        if: github.event.inputs.source != 'y' && steps.cache-static-Qt.outputs.cache-hit != 'true'
+        uses: actions/cache@v4
+        with:
+          path: qt6
+          key: QtStaticSourceCache-Qt${{ matrix.qt_version }}
+
+      - name: Init Qt Submodules
+        shell: bash
+        if: github.event.inputs.source != 'y' && steps.cache-static-Qt.outputs.cache-hit != 'true'
+        run: |
+          if [[ -d qt6 ]]; then
+            echo "Got qt6 from cache"
+          else
+            git clone --depth 200 --branch v${{ matrix.qt_version }} https://code.qt.io/qt/qt5.git qt6
+            echo "Qt6 successfully cloned"
+          fi
+          ./qt6/configure.bat -init-submodules -submodules qtdeclarative,qtbase,qtimageformats,qtsvg,qttranslations,qtgrpc
+
       - name: vcpkg build
         uses: johnwason/vcpkg-action@v7
         if: github.event.inputs.source != 'y'
@@ -154,30 +182,6 @@ jobs:
             triplet: ${{ matrix.triplet }}
             token: ${{ github.token }}
             cache-key: vcpkg-${{ matrix.platform }}-${{ matrix.triplet }}-${{ matrix.target }}
-
-      - name: Qt static Cache
-        id: cache-static-Qt
-        if: github.event.inputs.source != 'y'
-        uses: actions/cache@v4
-        with:
-          path: qt6_build
-          key: QtStaticCache-${{ matrix.platform }}-${{ matrix.target }}-Qt${{ matrix.qt_version }}-${{ hashFiles('script/build_qt_static_windows.bat') }}
-
-      - name: Download a Qt Sources
-        uses: ethanjli/cached-download-action@v0.1.3
-        if: github.event.inputs.source != 'y' && steps.cache-static-Qt.outputs.cache-hit != 'true'
-        with:
-          enable-cross-os-archive: true
-          url: https://download.qt.io/official_releases/qt/6.10/${{ matrix.qt_version }}/single/qt-everywhere-src-${{ matrix.qt_version }}.zip
-          destination: qt-everywhere-src-${{ matrix.qt_version }}.zip
-
-      - name: Install Qt Windows
-        shell: powershell
-        if: github.event.inputs.source != 'y' && steps.cache-static-Qt.outputs.cache-hit != 'true'
-        run: |
-          Expand-Archive -Force qt-everywhere-src-${{ matrix.qt_version }}.zip
-          Rename-Item -Path qt-everywhere-src-${{ matrix.qt_version }} -NewName qt6
-          ./script/build_qt_static_windows.bat ${{ matrix.qt_version }}
 
 #      - name: Tar files
 #        if: github.event.inputs.source != 'y'
