@@ -1274,27 +1274,6 @@ bool MainWindow::get_elevated_permissions(int reason, void * pointer) {
 #undef ELEVATE_CORE_PROGRAM
 #endif
 
-#ifdef Q_OS_MACOS
-    if (Configs::isSetuidSet(Configs::FindCoreRealPath().toStdString()))
-    {
-        StopVPNProcess();
-        return true;
-    }
-    goto skip_start_elevate_process;
-    start_elevate_process:
-    {
-        auto Command = QString("sudo chown root:wheel " + Configs::FindCoreRealPath() + " && " + "sudo chmod u+s "+Configs::FindCoreRealPath());
-        auto ret = Mac_Run_Command(Command);
-        if (ret == 0) {
-            MessageBoxInfo(tr("Requesting permission"), tr("Please Enter your password in the opened terminal, then try again"));
-            return false;
-        } else {
-            MW_show_log(QString("Failed to run %1 with %2").arg(Command).arg(ret));
-            return false;
-        }
-    }
-    skip_start_elevate_process:
-#endif
     auto n = QMessageBox::warning(GetMessageBoxParent(), software_name, tr("Please give the core root privileges"), QMessageBox::Yes | QMessageBox::No);
     if (n == QMessageBox::Yes) {
         goto start_elevate_process;
@@ -2907,22 +2886,14 @@ void MainWindow::CheckUpdate() {
 
 #ifdef Q_OS_WIN
 #  ifdef Q_PROCESSOR_ARM_64
-#    ifndef USE_LEGACY_QT
         SEARCHDEF("windows-arm64");
-#    else
-        SEARCHDEF("windowslegacy-arm64");
-#    endif
 #  endif
 #endif
 
 #ifdef Q_OS_WIN32
 #  ifdef Q_OS_WIN64
 #   ifdef Q_PROCESSOR_X86_64
-#    ifndef USE_LEGACY_QT
         SEARCHDEF("windows64");
-#    else
-        SEARCHDEF("windowslegacy64");
-#    endif
 #   endif
 #  endif
 #  ifdef Q_PROCESSOR_X86_32
@@ -2954,23 +2925,6 @@ void MainWindow::CheckUpdate() {
 #  endif
 #  ifdef Q_PROCESSOR_MIPS_64
         SEARCHDEF("linux-mips64");
-#  endif
-#endif
-
-#ifdef Q_OS_MACOS
-#  ifdef Q_PROCESSOR_X86_64
-#    ifndef USE_LEGACY_QT
-        SEARCHDEF("macos-amd64");
-#    else
-        SEARCHDEF("macoslegacy-amd64");
-#    endif
-#  endif
-#  ifdef Q_PROCESSOR_ARM_64
-#    ifndef USE_LEGACY_QT
-        SEARCHDEF("macos-arm64");
-#    else
-        SEARCHDEF("macoslegacy-arm64");
-#    endif
 #  endif
 #endif
 

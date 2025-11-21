@@ -79,7 +79,7 @@ int main(int argc, char** argv) {
     QApplication::setQuitOnLastWindowClosed(false);
     QApplication a(argc, argv);
 
-#if !defined(Q_OS_MACOS) && (QT_VERSION >= QT_VERSION_CHECK(6,9,0))
+#if (QT_VERSION >= QT_VERSION_CHECK(6,9,0))
     int fontId = QFontDatabase::addApplicationFont(getResource("emoji.ttf"));
 
     if (fontId >= 0)
@@ -109,7 +109,7 @@ int main(int argc, char** argv) {
     if (Configs::dataStore->argv.contains("-flag_restart_tun_on")) Configs::dataStore->flag_restart_tun_on = true;
     if (Configs::dataStore->argv.contains("-flag_restart_dns_set")) Configs::dataStore->flag_dns_set = true;
 #ifdef NKR_CPP_USE_APPDATA
-    Configs::dataStore->flag_use_appdata = true; // Example: Package & MacOS
+    Configs::dataStore->flag_use_appdata = true; // Example: Package
 #endif
 #ifdef NKR_CPP_DEBUG
     Configs::dataStore->flag_debug = true;
@@ -302,14 +302,6 @@ int main(int argc, char** argv) {
 #ifdef Q_OS_WIN
     auto eventFilter = new PowerOffTaskkillFilter(signal_handler);
     a.installNativeEventFilter(eventFilter);
-#endif
-
-#ifdef Q_OS_MACOS
-    QObject::connect(qApp, &QGuiApplication::commitDataRequest, [&](QSessionManager &manager)
-    {
-        Q_UNUSED(manager);
-        signal_handler(0);
-    });
 #endif
 
     UI_InitMainWindow();

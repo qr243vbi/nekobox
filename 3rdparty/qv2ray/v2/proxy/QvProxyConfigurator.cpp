@@ -355,23 +355,6 @@ namespace Qv2ray::components::proxy {
         if (results.count(true) != actions.size()) {
             LOG("Something wrong when setting proxies.");
         }
-#else
-
-        for (const auto &service: macOSgetNetworkServices()) {
-            LOG("Setting proxy for interface: " + service);
-            if (hasHTTP) {
-                QProcess::execute("/usr/sbin/networksetup", {"-setwebproxystate", service, "on"});
-                QProcess::execute("/usr/sbin/networksetup", {"-setsecurewebproxystate", service, "on"});
-                QProcess::execute("/usr/sbin/networksetup", {"-setwebproxy", service, address, QSTRN(httpPort)});
-                QProcess::execute("/usr/sbin/networksetup", {"-setsecurewebproxy", service, address, QSTRN(httpPort)});
-            }
-
-            if (hasSOCKS) {
-                QProcess::execute("/usr/sbin/networksetup", {"-setsocksfirewallproxystate", service, "on"});
-                QProcess::execute("/usr/sbin/networksetup", {"-setsocksfirewallproxy", service, address, QSTRN(socksPort)});
-            }
-        }
-
 #endif
     }
 
