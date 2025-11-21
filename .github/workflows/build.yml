@@ -30,6 +30,11 @@ on:
         type: boolean
         default: true
         required: false
+      publish_chocolatey:
+        description: "Build linux binaries"
+        type: boolean
+        default: true
+        required: false
 jobs:
   build-go:
     permissions:
@@ -201,12 +206,10 @@ jobs:
         run: ./script/build_qt_static_windows.bat
 
 #      - name: Tar files
-#        if: github.event.inputs.source != 'y'
 #        shell: bash
 #        run: tar czvf artifacts.tgz ./deployment
 
 #      - name: Uploading Artifact
-#        if: github.event.inputs.source != 'y'
 #        uses: actions/upload-artifact@v4.6.2
 #        with:
 #          name: nekobox-${{ github.sha }}-${{ matrix.platform }}-${{ matrix.target }}-Qt${{ matrix.qt_version }}
@@ -234,26 +237,23 @@ jobs:
 #            target: arm64
       fail-fast: false
     runs-on: ${{ matrix.platform }}
-    if: github.event.inputs.build_ubuntu == 'true'
+    if: github.event.inputs.build_ubuntu == 'true' && github.event.inputs.source != 'true'
     env:
       ACTIONS_ALLOW_UNSECURE_COMMANDS: true
       INPUT_VERSION: ${{ github.event.inputs.tag }}
     steps:
       - name: Checking out sources
-        if: github.event.inputs.source != 'true'
         uses: actions/checkout@v4.2.2
         with:
           submodules: "recursive"
 
       - name: Download Artifacts
-        if: github.event.inputs.source != 'true'
         uses: actions/download-artifact@v4.3.0
         with:
           path: download-artifact
 
       - name: Install Qt
         uses: jurplel/install-qt-action@v4.3.0
-        if: github.event.inputs.source != 'true'
         with:
           version: ${{ matrix.qt_version }}
           setup-python: true
@@ -263,21 +263,18 @@ jobs:
 
       - name: Download Srslist
         shell: bash
-        if: github.event.inputs.source != 'true'
         run: |
           curl -fLso "srslist.json" "https://github.com/qr243vbi/ruleset/raw/refs/heads/rule-set/srslist.json"
           mkdir build
 
       - name: Linux - Install apt dependencies
         uses: awalsh128/cache-apt-pkgs-action@latest
-        if: contains( matrix.platform, 'ubuntu' ) && github.event.inputs.source != 'true'
         with:
           packages: libfuse2 patchelf squashfs-tools openssl-dev openssl protobuf-compiler
           version: 1.0
 
       - name: Linux - Generate MakeFile and Build
         shell: bash
-        if: contains( matrix.platform, 'ubuntu' ) && github.event.inputs.source != 'true'
         run: |
           cd build
           if [[ ${{ github.event.inputs.updater }} == 'true' ]]; then export SKIP_UPDATE_BUTTON=ON; else export SKIP_UPDATE_BUTTON=OFF; fi
@@ -287,11 +284,10 @@ jobs:
           bash -x ./script/deploy_linux64.sh
 
       - name: Tar files
-        if: github.event.inputs.source != 'true'
         shell: bash
         run: tar czvf artifacts.tgz ./deployment
+
       - name: Uploading Artifact
-        if: github.event.inputs.source != 'true'
         uses: actions/upload-artifact@v4.6.2
         with:
           name: nekobox-${{ github.sha }}-${{ matrix.platform }}-${{ matrix.target }}-Qt${{ matrix.qt_version }}
@@ -415,24 +411,22 @@ jobs:
     permissions:
       contents: read
       actions: read
+    if: github.event.inputs.publish == 'true'
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
-        if: github.event.inputs.publish == 'true'
         with:
           python-version: '3.13'
           cache: 'pip'
 
       - name: Linux - Install apt dependencies
         uses: awalsh128/cache-apt-pkgs-action@latest
-        if: github.event.inputs.publish == 'true'
         with:
           packages: makepkg
           version: 1.0
 
       - name: Trigger Open Build Service and Copr
         shell: bash
-        if: github.event.inputs.publish == 'true'
         run: |
           pip install osc copr
           export OBS_USER="${{ secrets.OBS_USER }}"
@@ -465,7 +459,6 @@ jobs:
 
       - name: Publish AUR package
         uses: KSXGitHub/github-actions-deploy-aur@v4.1.1
-        if: github.event.inputs.publish == 'true'
         with:
           pkgname: nekobox
           pkgbuild: ./PKGBUILD
@@ -483,16 +476,14 @@ jobs:
     permissions:
       contents: read
       actions: read
+    if: github.event.inputs.publish == 'true' && github.event.inputs.source != 'true' && github.event.inputs.build_windows == 'true' && github.event.inputs.publish_chocolatey == 'true'
     steps:
       - uses: actions/checkout@v4
-        if: github.event.inputs.publish == 'true' && github.event.inputs.source != 'true' && 'chocolatey_package_approved' == 'yes'
       - uses: ConorMacBride/install-package@v1
-        if: github.event.inputs.publish == 'true' && github.event.inputs.source != 'true'  && 'chocolatey_package_approved' == 'yes'
         with:
           choco: curl jq sed
       - name: Upload Chocolatey Package
         shell: bash
-        if: github.event.inputs.publish == 'true' && github.event.inputs.source != 'true' && 'chocolatey_package_approved' == 'yes'
         run: |
           cd ./script/
           export INPUT_VERSION=${{ github.event.inputs.tag }}
