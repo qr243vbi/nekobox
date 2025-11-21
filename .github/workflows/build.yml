@@ -189,7 +189,8 @@ jobs:
             git clone --depth 200 --branch v${{ matrix.qt_version }} https://github.com/qt/qt5 qt6
             echo "Qt6 successfully cloned"
           fi
-          ./qt6/configure.bat -init-submodules -submodules qtdeclarative,qtbase,qtimageformats,qtsvg,qttranslations,qtgrpc
+          cd qt6
+          git submodule foreach 'git fetch --depth=200'
 
       - name: vcpkg build
         uses: johnwason/vcpkg-action@v7
@@ -203,7 +204,7 @@ jobs:
       - name: Build Qt Submodules
         shell: powershell
         if: steps.cache-static-Qt.outputs.cache-hit != 'true'
-        run: ./script/build_qt_static_windows.bat
+        run: ./script/build_qt_static_windows.bat ${{ matrix.triplet }}
 
 #      - name: Tar files
 #        shell: bash
