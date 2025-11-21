@@ -321,6 +321,7 @@ jobs:
       actions: read
     env:
       INPUT_VERSION: ${{ github.event.inputs.tag }}
+    if: github.event.inputs.publish == 'true'
     steps:
       - name: Checking out sources
         uses: actions/checkout@v4.2.2
@@ -417,7 +418,6 @@ jobs:
    #     run: |
    #       ./ghr -prerelease -delete -t "${{ github.token }}" -b "${{ github.event.inputs.text }}" -n "${{ github.event.inputs.tag }}" "${{ github.event.inputs.tag }}" deployment
       - name: Release
-        if: github.event.inputs.publish == 'true'
         run: |
           ./ghr -delete -t "${{ github.token }}" -b "${{ github.event.inputs.text }}" -n "${{ github.event.inputs.tag }}" "${{ github.event.inputs.tag }}" deployment
   webhook:
