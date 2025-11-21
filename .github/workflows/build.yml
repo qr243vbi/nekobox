@@ -156,11 +156,6 @@ jobs:
           curl -fLso "srslist.json" "https://github.com/qr243vbi/ruleset/raw/refs/heads/rule-set/srslist.json"
           mkdir build
 
-      - name: Install mingw
-        uses: bwoodsend/setup-winlibs-action@v1.15
-        with:
-          architecture: ${{ matrix.target }}
-
       - name: Qt static Cache
         id: cache-static-Qt
         uses: actions/cache@v4
@@ -188,6 +183,11 @@ jobs:
           fi
           cd qt6
           git submodule foreach 'git fetch --depth=200'
+
+      - name: Install mingw
+        uses: bwoodsend/setup-winlibs-action@v1.15
+        with:
+          architecture: ${{ matrix.target }}
 
       - name: vcpkg build
         uses: johnwason/vcpkg-action@v7
