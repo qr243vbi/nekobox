@@ -168,7 +168,7 @@ jobs:
           if [[ -d qt6 ]]; then
             echo "Got qt6 from cache"
           else
-            git clone --depth 200 --branch v${{ matrix.qt_version }} https://code.qt.io/qt/qt5.git qt6
+            git clone --depth 200 --branch v${{ matrix.qt_version }} https://github.com/qt/qt5 qt6
             echo "Qt6 successfully cloned"
           fi
           ./qt6/configure.bat -init-submodules -submodules qtdeclarative,qtbase,qtimageformats,qtsvg,qttranslations,qtgrpc
@@ -182,6 +182,11 @@ jobs:
             triplet: ${{ matrix.triplet }}
             token: ${{ github.token }}
             cache-key: vcpkg-${{ matrix.platform }}-${{ matrix.triplet }}-${{ matrix.target }}
+
+      - name: Build Qt Submodules
+        shell: powershell
+        if: github.event.inputs.source != 'y' && steps.cache-static-Qt.outputs.cache-hit != 'true'
+        run: ./script/build_qt_static_windows.bat
 
 #      - name: Tar files
 #        if: github.event.inputs.source != 'y'
