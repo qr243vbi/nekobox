@@ -10,9 +10,6 @@
 namespace Configs {
     QString genTunName() {
         auto tun_name = "nekobox-tun";
-#ifdef Q_OS_MACOS
-        tun_name = "";
-#endif
         return tun_name;
     }
 
@@ -423,7 +420,6 @@ namespace Configs {
     QJsonObject BuildDnsObject(QString address, bool tunEnabled)
     {
         bool usingSystemdResolved = false;
-       // bool isDarwin = false;
 #ifdef Q_OS_LINUX
         usingSystemdResolved = ReadFileText("/etc/resolv.conf").contains("systemd-resolved");
 #endif
@@ -433,13 +429,6 @@ namespace Configs {
             {
                 return {
                     {"type", "underlying"}
-                };
-            }
-            if (tunEnabled && getOS() == Darwin)
-            {
-                return {
-                    {"type", "udp"},
-                    {"server", dataStore->core_box_underlying_dns}
                 };
             }
             return {
@@ -531,7 +520,7 @@ namespace Configs {
         }
         routeChain->Save();
 
-        if (getOS() == Darwin && dataStore->core_box_underlying_dns.isEmpty() && dataStore->spmode_vpn)
+        if (dataStore->core_box_underlying_dns.isEmpty() && dataStore->spmode_vpn)
         {
             status->result->error = QObject::tr("Local DNS and Tun mode do not work together, please set an IP to be used as the Local DNS server in the Routing Settings -> Local override");
             return;

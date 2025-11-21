@@ -8,8 +8,7 @@ namespace Configs {
     {
         Unknown = 0,
         Linux = 1,
-        Windows = 2,
-        Darwin = 3,
+        Windows = 2
     };
 
     class ExtraCoreData
@@ -62,9 +61,6 @@ namespace Configs {
 
     inline OSType getOS()
     {
-#ifdef Q_OS_MACOS
-        return Darwin;
-#endif
 #ifdef Q_OS_LINUX
         return Linux;
 #endif
