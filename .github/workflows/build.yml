@@ -58,7 +58,6 @@ jobs:
 #            go_version: "1.25.0"
       fail-fast: false
     runs-on: ubuntu-latest
-    if: (  == 'true' && contains(matrix.cross_os, 'linux') ) || ( github.event.inputs.build_windows == 'true' && contains(matrix.cross_os, 'windows'))
     steps:
       - name: Checking out sources
         if: matrix.cross_os == 'public' || ( github.event.inputs.source != 'true' && github.event.inputs.allow == 'true' )
