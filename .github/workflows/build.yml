@@ -80,7 +80,7 @@ jobs:
         if: steps.cache-common.outputs.cache-hit != 'true' && matrix.cross_os != 'public' && github.event.inputs.source != 'true'
         shell: bash
         run: |
-          if [[ ${{ github.event.inputs.updater }} == true ]]
+          if [[ ${{ github.event.inputs.updater }} == 'true' ]]
             export SKIP_UPDATER=y
           fi
           GO_MOD_TIDY=yes GOOS=${{ matrix.cross_os }} GOARCH=${{ matrix.cross_arch }} ./script/build_go.sh
@@ -392,12 +392,12 @@ jobs:
         with:
           name: Deployment-${{ github.sha }}
           path: deployment
-      - name: PreRelease
-        if: github.event.inputs.publish == 'p'
-        run: |
-          ./ghr -prerelease -delete -t "${{ github.token }}" -b "${{ github.event.inputs.text }}" -n "${{ github.event.inputs.tag }}" "${{ github.event.inputs.tag }}" deployment
+   #   - name: PreRelease
+   #     if: github.event.inputs.publish == 'p'
+   #     run: |
+   #       ./ghr -prerelease -delete -t "${{ github.token }}" -b "${{ github.event.inputs.text }}" -n "${{ github.event.inputs.tag }}" "${{ github.event.inputs.tag }}" deployment
       - name: Release
-        if: github.event.inputs.publish == 'r'
+        if: github.event.inputs.publish == 'true'
         run: |
           ./ghr -delete -t "${{ github.token }}" -b "${{ github.event.inputs.text }}" -n "${{ github.event.inputs.tag }}" "${{ github.event.inputs.tag }}" deployment
   webhook:
@@ -411,21 +411,21 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
-        if: github.event.inputs.publish == 'r'
+        if: github.event.inputs.publish == 'true'
         with:
           python-version: '3.13'
           cache: 'pip'
 
       - name: Linux - Install apt dependencies
         uses: awalsh128/cache-apt-pkgs-action@latest
-        if: github.event.inputs.publish == 'r'
+        if: github.event.inputs.publish == 'true'
         with:
           packages: makepkg
           version: 1.0
 
       - name: Trigger Open Build Service and Copr
         shell: bash
-        if: github.event.inputs.publish == 'r'
+        if: github.event.inputs.publish == 'true'
         run: |
           pip install osc copr
           export OBS_USER="${{ secrets.OBS_USER }}"
@@ -458,7 +458,7 @@ jobs:
 
       - name: Publish AUR package
         uses: KSXGitHub/github-actions-deploy-aur@v4.1.1
-        if: github.event.inputs.publish == 'r'
+        if: github.event.inputs.publish == 'true'
         with:
           pkgname: nekobox
           pkgbuild: ./PKGBUILD
@@ -478,14 +478,14 @@ jobs:
       actions: read
     steps:
       - uses: actions/checkout@v4
-        if: github.event.inputs.publish == 'r' && github.event.inputs.source != 'true' && 'chocolatey_package_approved' == 'yes'
+        if: github.event.inputs.publish == 'true' && github.event.inputs.source != 'true' && 'chocolatey_package_approved' == 'yes'
       - uses: ConorMacBride/install-package@v1
-        if: github.event.inputs.publish == 'r' && github.event.inputs.source != 'true'  && 'chocolatey_package_approved' == 'yes'
+        if: github.event.inputs.publish == 'true' && github.event.inputs.source != 'true'  && 'chocolatey_package_approved' == 'yes'
         with:
           choco: curl jq sed
       - name: Upload Chocolatey Package
         shell: bash
-        if: github.event.inputs.publish == 'r' && github.event.inputs.source != 'true' && 'chocolatey_package_approved' == 'yes'
+        if: github.event.inputs.publish == 'true' && github.event.inputs.source != 'true' && 'chocolatey_package_approved' == 'yes'
         run: |
           cd ./script/
           export INPUT_VERSION=${{ github.event.inputs.tag }}
