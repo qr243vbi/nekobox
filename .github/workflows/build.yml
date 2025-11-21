@@ -161,9 +161,6 @@ jobs:
         with:
           architecture: ${{ matrix.target }}
 
-      - name: Install ninja-build tool
-        uses: seanmiddleditch/gha-setup-ninja@v6
-
       - name: Qt static Cache
         id: cache-static-Qt
         uses: actions/cache@v4
