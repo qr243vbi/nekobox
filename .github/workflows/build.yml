@@ -97,7 +97,7 @@ jobs:
         if: steps.cache-common.outputs.cache-hit != 'true' && matrix.cross_os != 'public' && ( github.event.inputs.source != 'true' && matrix.allow == 'true' )
         shell: bash
         run: |
-          if [[ ${{ github.event.inputs.updater }} == 'true' ]]
+          if [[ ${{ github.event.inputs.updater }} == 'true' ]]; then
             export SKIP_UPDATER=y
           fi
           GO_MOD_TIDY=yes GOOS=${{ matrix.cross_os }} GOARCH=${{ matrix.cross_arch }} ./script/build_go.sh
