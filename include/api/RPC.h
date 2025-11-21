@@ -1,13 +1,8 @@
 #pragma once
 
 #ifndef Q_MOC_RUN
-#ifdef NEKOBOX_USE_QT_GRPC
 #include <libcore_client.grpc.qpb.h>
 namespace libcore = gen;
-#else
-namespace libcore {
-}
-#endif
 #endif
 #include <QString>
 
