@@ -125,7 +125,6 @@ jobs:
       matrix:
         include:
           - platform: windows-latest
-            triplet: x64-mingw-static
             target: x86_64
             qt_version: 6.10.0
       fail-fast: false
@@ -162,6 +161,7 @@ jobs:
           version: ${{ matrix.qt_version }}
           setup-python: true
           cache: true
+          modules: qtcharts qtgrpc
           cache-key-prefix: QtCache-${{ matrix.platform }}-${{ matrix.target }}
 
       - name: Install MSVC compiler
