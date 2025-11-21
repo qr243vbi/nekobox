@@ -12,7 +12,7 @@ if (NOT CMAKE_CXX_COMPILER_ID STREQUAL "GNU" AND WIN32)
     set(CMAKE_INTERPROCEDURAL_OPTIMIZATION ON)
 endif ()
 
-find_package(Qt6 REQUIRED COMPONENTS Widgets Network LinguistTools DBus)
+find_package(Qt6 REQUIRED COMPONENTS Widgets Network LinguistTools DBus Grpc)
 
 if (NKR_CROSS)
     set_property(TARGET Qt6::moc PROPERTY IMPORTED_LOCATION /usr/bin/moc)
@@ -53,14 +53,6 @@ option(USE_QT_GRPC "Use gRPC provided by QT" ON)
 if (NKR_PACKAGE)
     nkr_add_compile_definitions(NKR_CPP_USE_APPDATA)
 endif ()
-
-
-if(USE_QT_GRPC)
-include("cmake/myproto_qt.cmake")
-else()
-include("cmake/myproto.cmake")
-endif()
-list(APPEND NKR_EXTERNAL_TARGETS myproto)
 
 set(BUILD_SHARED_LIBS OFF)
 list(APPEND NKR_EXTERNAL_TARGETS qhotkey)
@@ -247,18 +239,15 @@ else()
     target_sources(nekobox PRIVATE src/js/js_updater.cpp include/js/js_updater.h res/nekobox_updater.qrc)
 endif()
 
-if(USE_QT_GRPC)
-add_definitions(-DNEKOBOX_USE_QT_GRPC)
-find_package(Qt6 REQUIRED COMPONENTS Grpc)
-target_link_libraries(nekobox PRIVATE Qt6::Grpc)
-else()
-find_package(Protobuf CONFIG REQUIRED)
-find_package(gRPC CONFIG REQUIRED)
-target_link_libraries(nekobox PRIVATE
-        protobuf::libprotobuf
-        gRPC::grpc
-        gRPC::grpc++)
-endif()
+set(PROTO_FILES
+    core/server/gen/libcore.proto
+)
+
+qt_add_grpc(nekobox CLIENT PROTO_FILES ${PROTO_FILES})
+
+qt_add_protobuf(nekobox PROTO_FILES ${PROTO_FILES})
+
+target_link_libraries(nekobox PRIVATE Qt6::Grpc Qt6::Protobuf)
 
 set_target_properties(nekobox PROPERTIES
         WIN32_EXECUTABLE TRUE
