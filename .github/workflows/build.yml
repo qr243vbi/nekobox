@@ -6,17 +6,19 @@ on:
         description: "Release Tag and version"
         required: true
       publish:
-        description: "r for normal release, p for prerelease, leave empty to not publish anything"
+        description: "Publish Release"
+        type: boolean
         required: false
       text:
         description: "Release Description"
         required: false
       source:
-        description: "skip building binaries, distribute only unified source"
+        description: "Skip building binaries, distribute only unified source"
         type: boolean
         required: false
       updater:
-        description: "ship binaries without updater"
+        description: "Ship binaries without updater"
+        type: boolean
         required: false
 jobs:
   build-go:
@@ -78,7 +80,10 @@ jobs:
         if: steps.cache-common.outputs.cache-hit != 'true' && matrix.cross_os != 'public' && github.event.inputs.source != 'true'
         shell: bash
         run: |
-          GO_MOD_TIDY=yes SKIP_UPDATER=${{ github.event.inputs.updater }} GOOS=${{ matrix.cross_os }} GOARCH=${{ matrix.cross_arch }} ./script/build_go.sh
+          if [[ ${{ github.event.inputs.updater }} == true ]]
+            export SKIP_UPDATER=y
+          fi
+          GO_MOD_TIDY=yes GOOS=${{ matrix.cross_os }} GOARCH=${{ matrix.cross_arch }} ./script/build_go.sh
       - name: Build vendor
         if: steps.cache-common.outputs.cache-hit != 'true' && matrix.cross_os == 'public'
         shell: bash
@@ -268,7 +273,7 @@ jobs:
         if: contains( matrix.platform, 'ubuntu' ) && github.event.inputs.source != 'true'
         run: |
           cd build
-          if [[ ${{ github.event.inputs.updater }}es == yes ]]; then export SKIP_UPDATE_BUTTON=ON; else export SKIP_UPDATE_BUTTON=OFF; fi
+          if [[ ${{ github.event.inputs.updater }} == 'true' ]]; then export SKIP_UPDATE_BUTTON=ON; else export SKIP_UPDATE_BUTTON=OFF; fi
           cmake -GNinja -DSKIP_UPDATE_BUTTON="${SKIP_UPDATE_BUTTON}" -DCMAKE_BUILD_TYPE=Release ..
           ninja
           cd ..
