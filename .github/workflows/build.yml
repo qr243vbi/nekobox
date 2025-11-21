@@ -156,52 +156,71 @@ jobs:
           curl -fLso "srslist.json" "https://github.com/qr243vbi/ruleset/raw/refs/heads/rule-set/srslist.json"
           mkdir build
 
-      - name: Qt static Cache
-        id: cache-static-Qt
-        uses: actions/cache@v4
+      - name: Install Qt
+        uses: jurplel/install-qt-action@v4.3.0
         with:
-          path: qt6_build
-          key: QtStaticCache-${{ matrix.platform }}-${{ matrix.target }}-Qt${{ matrix.qt_version }}-${{ hashFiles('script/build_qt_static_windows.bat') }}
+          version: ${{ matrix.qt_version }}
+          setup-python: true
+          cache: true
+          cache-key-prefix: QtCache-${{ matrix.platform }}-${{ matrix.target }}
 
-      - name: Qt static source Cache
-        id: cache-static-source-Qt
-        if: steps.cache-static-Qt.outputs.cache-hit != 'true'
-        uses: actions/cache@v4
+      - name: Install MSVC compiler
+        uses: ilammy/msvc-dev-cmd@v1
         with:
-          path: qt6
-          key: QtStaticSourceCache-Qt${{ matrix.qt_version }}
+          arch: ${{ matrix.target }}
 
-      - name: Init Qt Submodules
+      - name: Windows - Generate MakeFile and Build
         shell: bash
-        if: steps.cache-static-Qt.outputs.cache-hit != 'true'
         run: |
-          if [[ -d qt6 ]]; then
-            echo "Got qt6 from cache"
-          else
-            git clone --depth 200 --branch v${{ matrix.qt_version }} https://github.com/qt/qt5 qt6
-            echo "Qt6 successfully cloned"
-          fi
-          cd qt6
-          git submodule foreach 'git fetch --depth=200'
+          cmake -DCMAKE_BUILD_TYPE=Release -S . -B build
+          cmake --build build
 
-      - name: Install mingw
-        uses: bwoodsend/setup-winlibs-action@v1.15
-        with:
-          architecture: ${{ matrix.target }}
+#      - name: Qt static Cache
+#        id: cache-static-Qt
+#        uses: actions/cache@v4
+#        with:
+#          path: qt6_build
+#          key: QtStaticCache-${{ matrix.platform }}-${{ matrix.target }}-Qt${{ matrix.qt_version }}-${{ hashFiles('script/build_qt_static_windows.bat') }}
 
-      - name: vcpkg build
-        uses: johnwason/vcpkg-action@v7
-        id: vcpkg
-        with:
-            pkgs: openssl protobuf
-            triplet: ${{ matrix.triplet }}
-            token: ${{ github.token }}
-            cache-key: vcpkg-${{ matrix.platform }}-${{ matrix.triplet }}-${{ matrix.target }}
+#      - name: Qt static source Cache
+#        id: cache-static-source-Qt
+#        if: steps.cache-static-Qt.outputs.cache-hit != 'true'
+#        uses: actions/cache@v4
+#        with:
+#          path: qt6
+#          key: QtStaticSourceCache-Qt${{ matrix.qt_version }}
 
-      - name: Build Qt Submodules
-        shell: powershell
-        if: steps.cache-static-Qt.outputs.cache-hit != 'true'
-        run: ./script/build_qt_static_windows.bat ${{ matrix.triplet }}
+#      - name: Init Qt Submodules
+#        shell: bash
+#        if: steps.cache-static-Qt.outputs.cache-hit != 'true'
+#        run: |
+#          if [[ -d qt6 ]]; then
+#            echo "Got qt6 from cache"
+#          else
+#            git clone --depth 200 --branch v${{ matrix.qt_version }} https://github.com/qt/qt5 qt6
+#            echo "Qt6 successfully cloned"
+#          fi
+#          cd qt6
+#          git submodule foreach 'git fetch --depth=200'
+
+#      - name: Install mingw
+#        uses: bwoodsend/setup-winlibs-action@v1.15
+#        with:
+#          architecture: ${{ matrix.target }}
+
+#      - name: vcpkg build
+#        uses: johnwason/vcpkg-action@v7
+#        id: vcpkg
+#        with:
+#            pkgs: openssl protobuf
+#            triplet: ${{ matrix.triplet }}
+#            token: ${{ github.token }}
+#            cache-key: vcpkg-${{ matrix.platform }}-${{ matrix.triplet }}-${{ matrix.target }}
+
+#      - name: Build Qt Submodules
+#        shell: powershell
+#        if: steps.cache-static-Qt.outputs.cache-hit != 'true'
+#        run: ./script/build_qt_static_windows.bat ${{ matrix.triplet }}
 
 #      - name: Tar files
 #        shell: bash
