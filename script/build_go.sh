@@ -20,11 +20,7 @@ else if [[ "$GOOS" == "linux" && "$GOARCH" == "arm64" ]]; then
   DEST=$DEPLOYMENT/linux-arm64
 else if [[ "$GOOS" == "linux" && "$GOARCH" == "386" ]]; then
   DEST=$DEPLOYMENT/linux-i386
-else if [[ "$GOOS" == "darwin" && "$GOARCH" == "amd64" ]]; then
-  DEST=$DEPLOYMENT/macos-amd64
-else if [[ "$GOOS" == "darwin" && "$GOARCH" == "arm64" ]]; then
-  DEST=$DEPLOYMENT/macos-arm64
-fi; fi; fi; fi; fi; fi; fi; fi; fi; fi; fi;
+fi; fi; fi; fi; fi; fi; fi; fi; fi;
 
 if [ -z $DEST ]; then
   DEST=$PWD/build
@@ -42,7 +38,7 @@ export CGO_ENABLED=0
 [ "$GOOS" == "windows" ] && EXT=".exe" || EXT=''
 
 #### Go: updater ####
-[ "$GOOS" == "darwin" ] || [ "$SKIP_UPDATER" == y ] || (
+[ "$SKIP_UPDATER" == y ] || (
 cd core/updater
 [ "$GO_MOD_TIDY" == yes ] && $GOCMD mod tidy
 $GOCMD build -o $DEST/updater"${EXT}" -trimpath -ldflags "-w -s"

@@ -100,7 +100,7 @@ func (s *server) Start(ctx context.Context, in *gen.LoadConfigReq) (*gen.ErrorRe
 	if err != nil {
 		return out, nil
 	}
-	if runtime.GOOS == "darwin" && strings.Contains(
+	if strings.Contains(
 		in.CoreConfig, "tun-in") && strings.Contains(
 		in.CoreConfig, "172.19.0.1/24") {
 		err := sys.SetSystemDNS("172.19.0.2", boxInstance.Network().InterfaceMonitor())

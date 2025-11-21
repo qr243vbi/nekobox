@@ -1,23 +1,29 @@
-# Find the required Qt components, including Protobuf
-find_package(Qt6 REQUIRED COMPONENTS Protobuf Grpc)
+find_package(Protobuf CONFIG REQUIRED)
+find_package(gRPC CONFIG REQUIRED)
+find_package(Threads)
 
-# Define your .proto files
+#
+# Protobuf/Grpc source files
+#
 set(PROTO_FILES
     core/server/gen/libcore.proto
 )
 
-# You can use a single target for both generated outputs
-add_library(myproto STATIC ${PROTO_FILES})
-
-# Generate Protobuf and gRPC code and add the sources to the 'myproto' target
-
-qt_add_grpc(myproto CLIENT PROTO_FILES ${PROTO_FILES})
-
-qt_add_protobuf(myproto PROTO_FILES ${PROTO_FILES})
-
+#
+# Add Library target with protobuf sources
+#
+add_library(myproto ${PROTO_FILES})
 target_link_libraries(myproto
-    PRIVATE
-        Qt6::Core
-        Qt6::Protobuf # Link against the Qt Protobuf library
-        Qt6::Grpc     # Link against the Qt Grpc library
+    PUBLIC
+        protobuf::libprotobuf
+        gRPC::grpc
+        gRPC::grpc++
 )
+target_include_directories(myproto PUBLIC ${CMAKE_CURRENT_BINARY_DIR})
+
+#
+# Compile protobuf and grpc files in myproto target to cpp
+#
+get_target_property(grpc_cpp_plugin_location gRPC::grpc_cpp_plugin LOCATION)
+protobuf_generate(TARGET myproto LANGUAGE cpp)
+protobuf_generate(TARGET myproto LANGUAGE grpc GENERATE_EXTENSIONS .grpc.pb.h .grpc.pb.cc PLUGIN "protoc-gen-grpc=${grpc_cpp_plugin_location}")

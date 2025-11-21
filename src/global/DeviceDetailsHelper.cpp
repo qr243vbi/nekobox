@@ -166,11 +166,6 @@ DeviceDetails GetDeviceDetails() {
         d.os = QStringLiteral("Linux");
         d.osVersion = QSysInfo::kernelVersion();
         d.model = QSysInfo::prettyProductName();
-    #elif defined(Q_OS_MACOS)
-        d.hwid = QSysInfo::machineUniqueId();
-        d.os = QStringLiteral("macOS");
-        d.osVersion = QSysInfo::productVersion();
-        d.model = QSysInfo::prettyProductName();
     #else
         d.hwid = QSysInfo::machineUniqueId();
         d.os = QSysInfo::productType();

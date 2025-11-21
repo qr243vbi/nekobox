@@ -12,7 +12,7 @@ if (NOT CMAKE_CXX_COMPILER_ID STREQUAL "GNU" AND WIN32)
     set(CMAKE_INTERPROCEDURAL_OPTIMIZATION ON)
 endif ()
 
-find_package(Qt6 REQUIRED COMPONENTS Widgets Network LinguistTools DBus Grpc)
+find_package(Qt6 REQUIRED COMPONENTS Widgets Network LinguistTools DBus)
 
 if (NKR_CROSS)
     set_property(TARGET Qt6::moc PROPERTY IMPORTED_LOCATION /usr/bin/moc)
@@ -47,13 +47,19 @@ find_package(Threads)
 
 option(SKIP_UPDATE_BUTTON "Always hide update button" OFF)
 option(SKIP_JS_UPDATER "Skip JS update checker" OFF)
-option(USE_LEGACY_QT "Use legacy QT" OFF)
+option(USE_QT_GRPC "Use gRPC provided by QT" ON)
+
 
 if (NKR_PACKAGE)
     nkr_add_compile_definitions(NKR_CPP_USE_APPDATA)
 endif ()
 
+
+if(USE_QT_GRPC)
+include("cmake/myproto_qt.cmake")
+else()
 include("cmake/myproto.cmake")
+endif()
 list(APPEND NKR_EXTERNAL_TARGETS myproto)
 
 set(BUILD_SHARED_LIBS OFF)
@@ -91,7 +97,6 @@ set(PROJECT_SOURCES
         3rdparty/quirc/version_db.c
 
         src/api/RPC.cpp
-
         src/dataStore/Database.cpp
         src/stats/traffic/TrafficLooper.cpp
         src/dataStore/ProfileFilter.cpp
@@ -231,10 +236,6 @@ set_property(TARGET nekobox PROPERTY AUTOUIC ON)
 set_property(TARGET nekobox PROPERTY AUTOMOC ON)
 set_property(TARGET nekobox PROPERTY AUTORCC ON)
 
-if(USE_LEGACY_QT)
-    add_definitions(-DUSE_LEGACY_QT)
-endif()
-
 if(SKIP_UPDATE_BUTTON)
     add_definitions(-DSKIP_UPDATE_BUTTON)
 endif()
@@ -246,19 +247,13 @@ else()
     target_sources(nekobox PRIVATE src/js/js_updater.cpp include/js/js_updater.h res/nekobox_updater.qrc)
 endif()
 
-# Target Source macOS
-
-set(MACOSX_ICON ${CMAKE_SOURCE_DIR}/res/nekobox.icns)
-
+if(USE_QT_GRPC)
+find_package(Qt6 REQUIRED COMPONENTS Grpc)
+target_link_libraries(nekobox PRIVATE Qt6::Grpc)
+endif()
 
 set_target_properties(nekobox PROPERTIES
-        MACOSX_BUNDLE_ICON_FILE "nekobox.icns"
-        RESOURCE ${MACOSX_ICON}
-        MACOSX_BUNDLE_INFO_PLIST ${CMAKE_SOURCE_DIR}/res/MacOSXBundleInfo.plist
-        MACOSX_BUNDLE_GUI_IDENTIFIER moe.nekobox.macosx
-        MACOSX_BUNDLE TRUE
         WIN32_EXECUTABLE TRUE
-
 )
 
 # Target Source Translations
@@ -280,7 +275,7 @@ target_sources(nekobox PRIVATE ${CMAKE_BINARY_DIR}/translations.qrc)
 # Target Link
 
 target_link_libraries(nekobox PRIVATE
-        Qt6::Widgets Qt6::Network Qt6::DBus Qt6::Grpc
+        Qt6::Widgets Qt6::Network Qt6::DBus
         Threads::Threads
         ${NKR_EXTERNAL_TARGETS}
         ${PLATFORM_LIBRARIES}

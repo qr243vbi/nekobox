@@ -72,7 +72,7 @@ The following are more advanced settings:
  * chocolateyPackageParameters - Parameters to use with packaging, not the same as install arguments (which are passed directly to the native installer). Based on `--package-parameters`.
  * CHOCOLATEY_VERSION - The version of Choco you normally see. Use if you are 'lighting' things up based on choco version. Otherwise take a dependency on the specific version you need.
  * chocolateyForceX86 = If available and set to 'true', then user has requested 32bit version. Automatically handled in built in Choco functions.
- * OS_PLATFORM - Like Windows, macOS, Linux.
+ * OS_PLATFORM - Like Windows, Linux.
  * OS_VERSION - The version of OS, like 10.0 something something for Windows.
  * OS_NAME - The reported name of the OS.
  * USER_NAME = The user name
