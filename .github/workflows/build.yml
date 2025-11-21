@@ -27,20 +27,8 @@ jobs:
           - cross_os: public
             cross_arch: public
             go_version: "1.25.0"
-          - cross_os: linux
-            cross_arch: amd64
-            go_version: "1.25.0"
-          - cross_os: linux
-            cross_arch: arm64
-            go_version: "1.25.0"
           - cross_os: windows
             cross_arch: amd64
-            go_version: "1.25.0"
-          - cross_os: windows
-            cross_arch: arm64
-            go_version: "1.25.0"
-          - cross_os: windowslegacy
-            cross_arch: 386
             go_version: "1.25.0"
       fail-fast: false
     runs-on: ubuntu-latest
@@ -107,21 +95,9 @@ jobs:
     strategy:
       matrix:
         include:
-          - platform: ubuntu-24.04
-            qt_version: "6.10.0"
-            target: amd64
-          - platform: ubuntu-24.04-arm
-            qt_version: "6.10.0"
-            target: arm64
           - platform: windows-2022
             qt_version: "6.10.0"
             target: x86_64
-          - platform: windows-11-arm
-            qt_version: "6.10.0"
-            target: arm64
-          - platform: windows-2022
-            qt_version: "6.2.12"
-            target: i686
       fail-fast: false
     runs-on: ${{ matrix.platform }}
     env:
@@ -210,24 +186,9 @@ jobs:
         shell: bash
         if: contains( matrix.platform, 'windows' ) && github.event.inputs.source != 'y' && matrix.qt_version != '6.2.12'
         run: |
-          export CMAKE_PREFIX_PATH=$PWD/qt6/build/lib/cmake
           cd build
-          if [[ ${{ github.event.inputs.updater }}es == yes ]]
-          then
-            export SKIP_UPDATE_BUTTON=ON;
-          else
-            export SKIP_UPDATE_BUTTON=OFF
-          fi
-          if [[ ${{ matrix.qt_version }} == '6.10.0' ]]
-          then
-            export LEGACY_QT=OFF
-            export MATRIX=new-${{ matrix.target }}
-          else
-            export LEGACY_QT=ON
-            export MATRIX=${{ matrix.target }}
-          fi
           cmake -GNinja "-DSKIP_UPDATE_BUTTON=${SKIP_UPDATE_BUTTON}" -DUSE_LEGACY_QT="${LEGACY_QT}" -DCMAKE_BUILD_TYPE=Release ..
-          ninja -j2
+          cmake --build . --verbose
           cd ..
           ./script/deploy_windows.sh "${MATRIX}"
       - name: Legacy Windows - Generate MakeFile and Build
