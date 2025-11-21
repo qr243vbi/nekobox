@@ -173,7 +173,7 @@ jobs:
         shell: bash
         run: |
           cmake -DCMAKE_BUILD_TYPE=Release -S . -B build
-          cmake --build build
+          cmake --build build --verbose
 
 #      - name: Qt static Cache
 #        id: cache-static-Qt
