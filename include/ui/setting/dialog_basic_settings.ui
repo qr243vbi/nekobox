@@ -1186,6 +1186,13 @@
            </widget>
           </item>
           <item>
+           <widget class="QCheckBox" name="remote_control">
+            <property name="text">
+             <string>Remote Control</string>
+            </property>
+           </widget>
+          </item>
+          <item>
            <spacer name="horizontalSpacer">
             <property name="orientation">
              <enum>Qt::Orientation::Horizontal</enum>
@@ -1343,6 +1350,13 @@
             </property>
             <property name="text">
              <string>Use default</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="resource_manager">
+            <property name="text">
+             <string>Resource Manager</string>
             </property>
            </widget>
           </item>
