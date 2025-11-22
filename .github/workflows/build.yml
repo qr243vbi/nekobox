@@ -57,9 +57,9 @@ jobs:
             cross_arch: amd64
             go_version: "1.25.0"
             allow: ${{ github.event.inputs.build_windows }}
-#          - cross_os: windows
-#            cross_arch: arm64
-#            go_version: "1.25.0"
+          - cross_os: windows
+            cross_arch: arm64
+            go_version: "1.25.0"
       fail-fast: false
     runs-on: ubuntu-latest
     steps:
@@ -126,6 +126,9 @@ jobs:
         include:
           - platform: windows-2022
             target: x86_64
+            qt_version: 6.10.0
+          - platform: windows-11-arm
+            target: arm64
             qt_version: 6.10.0
       fail-fast: false
     runs-on: ${{ matrix.platform }}
