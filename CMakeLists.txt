@@ -249,6 +249,10 @@ qt_add_protobuf(nekobox PROTO_FILES ${PROTO_FILES})
 
 target_link_libraries(nekobox PRIVATE Qt6::Grpc Qt6::Protobuf)
 
+target_include_directories(nekobox PRIVATE
+    ${Qt6Protobuf_PRIVATE_INCLUDE_DIRS}
+)
+
 set_target_properties(nekobox PROPERTIES
         WIN32_EXECUTABLE TRUE
 )
@@ -280,6 +284,7 @@ target_link_libraries(nekobox PRIVATE
 
 if (MSVC)
     target_compile_options(nekobox PRIVATE "/std:c++20")       # add c++20 feature
+    set_target_properties(nekobox PROPERTIES INTERPROCEDURAL_OPTIMIZATION FALSE)
 endif ()
 
 qt_finalize_executable(nekobox)
