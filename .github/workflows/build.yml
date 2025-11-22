@@ -124,7 +124,7 @@ jobs:
       max-parallel: 1
       matrix:
         include:
-          - platform: windows-latest
+          - platform: windows-2022
             target: x86_64
             qt_version: 6.10.0
       fail-fast: false
