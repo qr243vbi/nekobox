@@ -68,9 +68,8 @@ bool DialogManageRoutes::validate_dns_rules(const QString &rawString) {
     return true;
 }
 
-DialogManageRoutes::DialogManageRoutes(MainWindow *parent) : QDialog(parent), ui(new Ui::DialogManageRoutes) {
+DialogManageRoutes::DialogManageRoutes(QWidget *parent) : QDialog(parent), ui(new Ui::DialogManageRoutes) {
     ui->setupUi(this);
-    this->parent = parent;
     auto profiles = Configs::profileManager->routes;
     for (const auto &item: profiles) {
         chainList << item.second;
@@ -156,7 +155,7 @@ DialogManageRoutes::DialogManageRoutes(MainWindow *parent) : QDialog(parent), ui
     });
 
     QStringList ruleItems = {"domain:", "suffix:", "regex:"};
-    for (const auto& item : parent->ruleSetMap) {
+    for (const auto& item : ruleSetMap) {
         ruleItems.append("ruleset:" + QString::fromStdString(item.first));
     }
     rule_editor = new AutoCompleteTextEdit("", ruleItems, this);

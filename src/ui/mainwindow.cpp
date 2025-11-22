@@ -66,6 +66,7 @@
 #include "include/global/DeviceDetailsHelper.hpp"
 #include "include/sys/Settings.h"
 #include <QDir>
+#include "include/rulesets.h"
 
 void setAppIcon(Icon::TrayIconStatus, QSystemTrayIcon*);
 
@@ -1977,7 +1978,7 @@ void MainWindow::on_menu_export_config_triggered() {
     auto ent = ents.first();
     if (ent->bean->DisplayCoreType() != software_core_name) return;
 
-    auto result = BuildConfig(ent, ruleSetMap, false, true);
+    auto result = BuildConfig(ent, false, true);
     QString config_core = QJsonObject2QString(result->coreConfig, true);
     QApplication::clipboard()->setText(config_core);
 
@@ -1989,11 +1990,11 @@ void MainWindow::on_menu_export_config_triggered() {
     msg.setDefaultButton(QMessageBox::Ok);
     msg.exec();
     if (msg.clickedButton() == button_1) {
-        result = BuildConfig(ent, ruleSetMap, false, false);
+        result = BuildConfig(ent, false, false);
         config_core = QJsonObject2QString(result->coreConfig, true);
         QApplication::clipboard()->setText(config_core);
     } else if (msg.clickedButton() == button_2) {
-        result = BuildConfig(ent, ruleSetMap, true, false);
+        result = BuildConfig(ent, true, false);
         config_core = QJsonObject2QString(result->coreConfig, true);
         QApplication::clipboard()->setText(config_core);
     }
