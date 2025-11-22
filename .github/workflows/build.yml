@@ -181,8 +181,17 @@ jobs:
           if [[ ${{ github.event.inputs.updater }} == 'true' ]]; then export SKIP_UPDATE_BUTTON=ON; else export SKIP_UPDATE_BUTTON=OFF; fi
           cmake -GNinja -DSKIP_UPDATE_BUTTON="${SKIP_UPDATE_BUTTON}" -DCMAKE_BUILD_TYPE=Release -S . -B build
           cmake --build build --verbose
-          ./script/deploy_windows.sh "new-${{ matrix.target }}
+          ./script/deploy_windows.sh "new-${{ matrix.target }}"
 
+      - name: Tar files
+        shell: bash
+        run: tar czvf artifacts.tgz ./deployment
+
+      - name: Uploading Artifact
+        uses: actions/upload-artifact@v4.6.2
+        with:
+          name: nekobox-${{ github.sha }}-${{ matrix.platform }}-${{ matrix.target }}-Qt${{ matrix.qt_version }}
+          path: artifacts.tgz
 
 #      - name: Qt static Cache
 #        id: cache-static-Qt
