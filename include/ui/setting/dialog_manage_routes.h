@@ -7,7 +7,10 @@
 #include "include/global/Configs.hpp"
 #include "include/ui/setting/RouteItem.h"
 #include "ui_dialog_manage_routes.h"
-#include "include/rulesets.h"
+
+#include <map>
+#include <string>
+extern  std::map<std::string, std::string> ruleSetMap;
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
