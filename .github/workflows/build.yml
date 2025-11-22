@@ -178,8 +178,11 @@ jobs:
         if: github.event.inputs.build_windows == 'true' && github.event.inputs.source != 'true'
         shell: bash
         run: |
-          cmake -DCMAKE_BUILD_TYPE=Release -S . -B build
+          if [[ ${{ github.event.inputs.updater }} == 'true' ]]; then export SKIP_UPDATE_BUTTON=ON; else export SKIP_UPDATE_BUTTON=OFF; fi
+          cmake -GNinja -DSKIP_UPDATE_BUTTON="${SKIP_UPDATE_BUTTON}" -DCMAKE_BUILD_TYPE=Release -S . -B build
           cmake --build build --verbose
+          ./script/deploy_windows.sh "new-${{ matrix.target }}
+
 
 #      - name: Qt static Cache
 #        id: cache-static-Qt

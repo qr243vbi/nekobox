@@ -60,3 +60,38 @@ ls
 cd *$ARCH
 tar xvzf artifacts.tgz -C ../../
 cd ../..
+
+
+
+(
+cd "$CURDIR"
+cp '.\script\windows_installer.nsi' .
+
+if [[ "$ARCH" == "windows-amd64" ]];
+then
+makensis.exe windows_installer.nsi
+install -D nekobox_setup.exe deployment/nekobox_setup.exe
+else
+if [[ "$ARCH" == "windowslegacy-386" ]];
+then
+makensis "/DDIRECTORY=windows32"  windows_installer.nsi
+install -D nekobox_setup.exe deployment/nekobox_setup32.exe
+else
+if [[ "$ARCH" == "windows-arm64" ]];
+then
+makensis "/DDIRECTORY=windows-arm64" windows_installer.nsi
+install -D nekobox_setup.exe deployment/nekobox_setup_arm64.exe
+else
+if [[ "$ARCH" == "windowslegacy-amd64" ]]; then
+makensis "/DDIRECTORY=windowslegacy64" windows_installer.nsi
+install -D nekobox_setup.exe deployment/nekobox_setup_legacy.exe
+else
+if [[ "$ARCH" == "windowslegacy-arm64" ]]; then
+makensis "/DDIRECTORY=windowslegacy-arm64" windows_installer.nsi
+install -D nekobox_setup.exe deployment/nekobox_setup_legacy_arm64.exe
+fi
+fi
+fi
+fi
+fi
+)

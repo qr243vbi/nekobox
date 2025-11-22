@@ -13,6 +13,7 @@
 #include <QFileInfo>
 
 #ifdef Q_OS_WIN
+#include <QtProtobuf/qprotobufmessage.h>
 
 #include <3rdparty/WinCommander.hpp>
 #include <windows.h>
