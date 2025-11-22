@@ -2,7 +2,10 @@
 
 #include "include/dataStore/ProxyEntity.hpp"
 #include "include/sys/Process.hpp"
-#include "include/rulesets.h"
+
+#include <map>
+#include <string>
+extern  std::map<std::string, std::string> ruleSetMap;
 
 namespace Configs {
     enum OSType

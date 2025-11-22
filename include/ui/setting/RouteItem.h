@@ -12,7 +12,10 @@ class RouteItem;
 #include "include/dataStore/RouteEntity.h"
 #include "3rdparty/qv2ray/v2/ui/QvAutoCompleteTextEdit.hpp"
 #include "ui_RouteItem.h"
-#include "include/rulesets.h"
+
+#include <map>
+#include <string>
+extern  std::map<std::string, std::string> ruleSetMap;
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
