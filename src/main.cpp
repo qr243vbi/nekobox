@@ -29,7 +29,6 @@
 #include "include/global/Configs.hpp"
 
 #include "include/ui/mainwindow_interface.h"
-#include "include/rulesets.h"
 
 std::map<std::string, std::string> ruleSetMap;
 

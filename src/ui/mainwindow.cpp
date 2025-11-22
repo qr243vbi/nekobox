@@ -66,7 +66,10 @@
 #include "include/global/DeviceDetailsHelper.hpp"
 #include "include/sys/Settings.h"
 #include <QDir>
-#include "include/rulesets.h"
+
+#include <map>
+#include <string>
+extern  std::map<std::string, std::string> ruleSetMap;
 
 void setAppIcon(Icon::TrayIconStatus, QSystemTrayIcon*);
 
