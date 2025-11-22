@@ -3071,10 +3071,15 @@ end_search_define:
                     });
                     return;
                 }
+                qDebug() << release_download_url;
                 QString errors;
                 if (!release_download_url.isEmpty()) {
-                    QFile archive_file1(Configs::GetBasePath() + "/" + this->archive_name);
+
+                    qDebug() << "REQUEST 1" ;
+                    QFile archive_file1(archive_name);
+                    qDebug() << archive_file1.fileName();
                     if (!archive_file1.exists()){
+                        qDebug() << "REQUEST 2" ;
                         auto res = NetworkRequestHelper::DownloadAsset(release_download_url, archive_name);
                         if (!res.isEmpty()) {
                             errors += res;
