@@ -67,8 +67,6 @@ public:
 
     ~MainWindow() override;
 
-    std::map<std::string, std::string> ruleSetMap;
-
     void prepare_exit();
 
     void refresh_proxy_list(const int &id = -1);

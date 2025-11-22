@@ -57,9 +57,9 @@ jobs:
             cross_arch: amd64
             go_version: "1.25.0"
             allow: ${{ github.event.inputs.build_windows }}
-          - cross_os: windows
-            cross_arch: arm64
-            go_version: "1.25.0"
+#          - cross_os: windows
+ #           cross_arch: arm64
+  #          go_version: "1.25.0"
       fail-fast: false
     runs-on: ubuntu-latest
     steps:
@@ -127,9 +127,9 @@ jobs:
           - platform: windows-2022
             target: x86_64
             qt_version: 6.10.0
-          - platform: windows-11-arm
-            target: arm64
-            qt_version: 6.10.0
+#          - platform: windows-11-arm
+ #           target: arm64
+  #          qt_version: 6.10.0
       fail-fast: false
     runs-on: ${{ matrix.platform }}
     env:
@@ -196,63 +196,6 @@ jobs:
           name: nekobox-${{ github.sha }}-${{ matrix.platform }}-${{ matrix.target }}-Qt${{ matrix.qt_version }}
           path: artifacts.tgz
 
-#      - name: Qt static Cache
-#        id: cache-static-Qt
-#        uses: actions/cache@v4
-#        with:
-#          path: qt6_build
-#          key: QtStaticCache-${{ matrix.platform }}-${{ matrix.target }}-Qt${{ matrix.qt_version }}-${{ hashFiles('script/build_qt_static_windows.bat') }}
-
-#      - name: Qt static source Cache
-#        id: cache-static-source-Qt
-#        if: steps.cache-static-Qt.outputs.cache-hit != 'true'
-#        uses: actions/cache@v4
-#        with:
-#          path: qt6
-#          key: QtStaticSourceCache-Qt${{ matrix.qt_version }}
-
-#      - name: Init Qt Submodules
-#        shell: bash
-#        if: steps.cache-static-Qt.outputs.cache-hit != 'true'
-#        run: |
-#          if [[ -d qt6 ]]; then
-#            echo "Got qt6 from cache"
-#          else
-#            git clone --depth 200 --branch v${{ matrix.qt_version }} https://github.com/qt/qt5 qt6
-#            echo "Qt6 successfully cloned"
-#          fi
-#          cd qt6
-#          git submodule foreach 'git fetch --depth=200'
-
-#      - name: Install mingw
-#        uses: bwoodsend/setup-winlibs-action@v1.15
-#        with:
-#          architecture: ${{ matrix.target }}
-
-#      - name: vcpkg build
-#        uses: johnwason/vcpkg-action@v7
-#        id: vcpkg
-#        with:
-#            pkgs: openssl protobuf
-#            triplet: ${{ matrix.triplet }}
-#            token: ${{ github.token }}
-#            cache-key: vcpkg-${{ matrix.platform }}-${{ matrix.triplet }}-${{ matrix.target }}
-
-#      - name: Build Qt Submodules
-#        shell: powershell
-#        if: steps.cache-static-Qt.outputs.cache-hit != 'true'
-#        run: ./script/build_qt_static_windows.bat ${{ matrix.triplet }}
-
-#      - name: Tar files
-#        shell: bash
-#        run: tar czvf artifacts.tgz ./deployment
-
-#      - name: Uploading Artifact
-#        uses: actions/upload-artifact@v4.6.2
-#        with:
-#          name: nekobox-${{ github.sha }}-${{ matrix.platform }}-${{ matrix.target }}-Qt${{ matrix.qt_version }}
-#          path: artifacts.tgz
-
   build-cpp:
     permissions:
       contents: read
@@ -267,12 +210,6 @@ jobs:
           - platform: ubuntu-24.04-arm
             qt_version: "6.10.0"
             target: arm64
-#          - platform: windows-2022
-#            qt_version: "6.9.1"
-#            target: x86_64
-#          - platform: windows-11-arm
-#            qt_version: "6.9.1"
-#            target: arm64
       fail-fast: false
     runs-on: ${{ matrix.platform }}
     env:
