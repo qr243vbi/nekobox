@@ -3,6 +3,8 @@
 #include <QSettings>
 
 #define CONFIG_INI_PATH  QDir::current().absolutePath() + "/window.ini"
+
+bool createSymlink(const QString &targetPath, const QString &linkPath);
 QSettings getSettings();
 QString getResourcesDir();
 QString getResource(QString);

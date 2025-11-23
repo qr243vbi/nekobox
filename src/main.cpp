@@ -160,6 +160,9 @@ int main(int argc, char** argv) {
     if (!dir.exists("groups")) {
         dir_success &= dir.mkdir("groups");
     }
+    if (!dir.exists("resources")) {
+        dir_success &= dir.mkdir("resources");
+    }
     if (!dir.exists(ROUTES_PREFIX_NAME)) {
         dir_success &= dir.mkdir(ROUTES_PREFIX_NAME);
     }

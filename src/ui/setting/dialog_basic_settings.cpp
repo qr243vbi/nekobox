@@ -16,6 +16,7 @@
 #include <QTimer>
 #include <qfontdatabase.h>
 #include "include/sys/Settings.h"
+#include "include/dataStore/ResourceEntity.hpp"
 #include <QString>
 
 #include "include/ui/mainwindow.h"
@@ -213,9 +214,8 @@ DialogBasicSettings::DialogBasicSettings(MainWindow *parent)
     ui->window_X->setValidator(validator);
     ui->window_Y->setValidator(validator);
 
-    QString core_path = settings.value("core_path", "").toString();
-    CACHE.core_path = core_path;
-    QString icons_path = settings.value("resources_path", "").toString();
+    QString core_path = Configs::resourceManager->core_path;
+    QString icons_path = Configs::resourceManager->resources_path;
     ui->core_path->setText(core_path);
     ui->icons_path->setText(icons_path);
     connect(ui->default_core_path, STATE_CHANGED, this, [=, this](int state){
@@ -309,25 +309,30 @@ void DialogBasicSettings::accept() {
     settings.setValue("height", height = ui->window_height->text().toInt());
     settings.setValue("X", X = ui->window_X->text().toInt());
     settings.setValue("Y", Y = ui->window_Y->text().toInt());
+    QString core_path_text, resources_path;
+    bool need_save_manager = false;
     if (ui->default_core_path->isChecked()){
-        settings.remove("core_path");
-        if (CACHE.core_path != ""){
-            CACHE.needRestart = true;
-        }
+        core_path_text = "";
     } else {
-        QString core_path_text = ui->core_path->text();
-        settings.setValue("core_path", core_path_text);
-        if (CACHE.core_path != core_path_text){
-            CACHE.needRestart = true;
-        }
+        core_path_text = ui->core_path->text();
+    }
+    if (Configs::resourceManager->core_path != core_path_text){
+        CACHE.needRestart = need_save_manager = true;
+        Configs::resourceManager->core_path = core_path_text;
     }
     if (ui->default_icons_path->isChecked()){
-        settings.remove("resources_path");
+        resources_path = "";
     } else {
-        settings.setValue("resources_path", ui->icons_path->text());
+        resources_path = (ui->icons_path->text());
+    }
+    if (Configs::resourceManager->resources_path != resources_path){
+        Configs::resourceManager->resources_path = resources_path;
+        need_save_manager = true;
+    }
+    if (need_save_manager){
+        Configs::resourceManager->Save();
     }
     settings.sync();
-
     // Security
 
     D_SAVE_BOOL(skip_cert)
