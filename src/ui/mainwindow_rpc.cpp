@@ -225,7 +225,7 @@ void MainWindow::url_test_current() {
                 ui->label_running->setText(tr("Test Result") + ": " + tr("Unavailable"));
             } else if (latency > 0) {
                 ui->label_running->setText(tr("Test Result") + ": " + 
-                    QString("%1 ms").arg(latency));
+                    QString::number(latency) + QString(" ms"));
             }
         });
     });
