@@ -232,8 +232,7 @@ namespace Configs_ConfigItem {
     }
 
     bool JsonStore::Load() {
-        QFile file;
-        file.setFileName(fn);
+        QFile file(fn);
 
         if (!file.exists() && !load_control_must) {
             return false;

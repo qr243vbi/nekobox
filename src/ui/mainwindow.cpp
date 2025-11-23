@@ -6,6 +6,7 @@
 #include "include/global/Utils.hpp"
 #include "include/sys/Process.hpp"
 #include "include/sys/AutoRun.hpp"
+#include "include/dataStore/ResourceEntity.hpp"
 
 #include <include/js/version.h>
 #include <QQueue>
@@ -146,6 +147,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     // init shortcuts
     setActionsData();
     loadShortcuts();
+    Configs::resourceManager->Load();
 
     // setup log
     ui->splitter->restoreState(DecodeB64IfValid(Configs::dataStore->splitter_state));
