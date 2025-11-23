@@ -25,7 +25,7 @@ ResourceEntity::ResourceEntity(QString fileent, bool sym)
     path = "";
     entity = fileent;
   };
-  load_control_must = true;
+  this->Load();
 }
 
 ResourceManager::ResourceManager() : JsonStore("resources/manager.json") {

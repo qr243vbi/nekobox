@@ -234,13 +234,15 @@ namespace Configs_ConfigItem {
     bool JsonStore::Load() {
         QFile file(fn);
 
-        if (!file.exists() && !load_control_must) {
+        if (!file.exists()) {
             return false;
         }
 
         bool ok = file.open(QIODevice::ReadOnly);
         if (!ok) {
-            MessageBoxWarning("error", "can not open config " + fn + "\n" + file.errorString());
+            if (load_control_must){
+                MessageBoxWarning("error", "can not open config " + fn + "\n" + file.errorString());
+            }
         } else {
             last_save_content = file.readAll();
             FromJsonBytes(last_save_content);

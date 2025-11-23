@@ -147,7 +147,6 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     // init shortcuts
     setActionsData();
     loadShortcuts();
-    Configs::resourceManager->Load();
 
     // setup log
     ui->splitter->restoreState(DecodeB64IfValid(Configs::dataStore->splitter_state));

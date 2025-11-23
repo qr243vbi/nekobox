@@ -183,8 +183,11 @@ DialogBasicSettings::DialogBasicSettings(MainWindow *parent)
 
     D_LOAD_BOOL(skip_cert)
     ui->utlsFingerprint->setCurrentText(Configs::dataStore->utlsFingerprint);
-
     // Startup
+    // #TODO remote_control, resource_manager
+    ui->remote_control->setDisabled(true);
+    ui->resource_manager->setDisabled(true);
+    
     connect(ui->select_core, &QPushButton::clicked, this, [=,this]{
         QString fileName = QFileDialog::getOpenFileName(this, QObject::tr("Select"), QDir::currentPath(),
                                                         "", nullptr, QFileDialog::Option::ReadOnly);
