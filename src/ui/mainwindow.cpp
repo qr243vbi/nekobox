@@ -109,21 +109,18 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
         });
     };
 
+    QSettings settings = getSettings();
     // Load Manager
     Configs::profileManager->LoadManager();
-
+    QString theme = settings.value("theme", "System").toString();
+    QString font_family = settings.value("font_family", "").toString();
+    int font_size = settings.value("font_size", 0).toInt();
     // Setup misc UI
     // migrate old themes
-    bool isNum;
-    Configs::dataStore->theme.toInt(&isNum);
-    if (isNum) {
-        Configs::dataStore->theme = "System";
-    }
-    themeManager->ApplyTheme(Configs::dataStore->theme);
+    themeManager->ApplyTheme(theme);
     ui->setupUi(this);
 
     // restore size and geometry
-    QSettings settings = getSettings();
     {
         int width, height, x, y;
         this->stop_logs = !(settings.value("logs_enabled", true).toBool());
@@ -152,7 +149,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 
     // setup log
     ui->splitter->restoreState(DecodeB64IfValid(Configs::dataStore->splitter_state));
-    new SyntaxHighlighter(isDarkMode() || Configs::dataStore->theme.toLower() == "qdarkstyle", qvLogDocument);
+    new SyntaxHighlighter(isDarkMode() || theme.toLower() == "qdarkstyle", qvLogDocument);
     qvLogDocument->setUndoRedoEnabled(false);
     ui->masterLogBrowser->setUndoRedoEnabled(false);
     ui->masterLogBrowser->setDocument(qvLogDocument);
@@ -161,7 +158,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 #if QT_VERSION >= QT_VERSION_CHECK(6, 5, 0)
     connect(qApp->styleHints(), &QStyleHints::colorSchemeChanged, this, [=,this](const Qt::ColorScheme& scheme) {
         new SyntaxHighlighter(scheme == Qt::ColorScheme::Dark, qvLogDocument);
-        themeManager->ApplyTheme(Configs::dataStore->theme, true);
+        themeManager->ApplyTheme(theme, true);
     });
 #endif
     connect(ui->data_view, &QTextBrowser::textChanged, [this]() {
@@ -241,14 +238,14 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     if (!Configs::dataStore->core_running) qDebug() << "[Warn] Core is taking too much time to start";
 #endif
 
-    if (!Configs::dataStore->font.isEmpty()) {
+    if (!font_family.isEmpty()) {
         auto font = qApp->font();
-        font.setFamily(Configs::dataStore->font);
+        font.setFamily(font_family);
         qApp->setFont(font);
     }
-    if (Configs::dataStore->font_size != 0) {
+    if (font_size != 0) {
         auto font = qApp->font();
-        font.setPointSize(Configs::dataStore->font_size);
+        font.setPointSize(font_size);
         qApp->setFont(font);
     }
 

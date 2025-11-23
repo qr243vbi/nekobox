@@ -273,15 +273,15 @@ namespace Configs {
         _add(new configItem("mux_padding", &mux_padding, itemType::boolean));
         _add(new configItem("mux_default_on", &mux_default_on, itemType::boolean));
         _add(new configItem("test_concurrent", &test_concurrent, itemType::integer));
-        _add(new configItem("theme", &theme, itemType::string));
+   //     _add(new configItem("theme", &theme, itemType::string));
         _add(new configItem("custom_inbound", &custom_inbound, itemType::string));
         _add(new configItem("custom_route", &custom_route_global, itemType::string));
         _add(new configItem("net_use_proxy", &net_use_proxy, itemType::boolean));
         _add(new configItem("remember_id", &remember_id, itemType::integer));
         _add(new configItem("remember_enable", &remember_enable, itemType::boolean));
         _add(new configItem("language", &language, itemType::integer));
-        _add(new configItem("font", &font, itemType::string));
-        _add(new configItem("font_size", &font_size, itemType::integer));
+   //     _add(new configItem("font", &font, itemType::string));
+   //     _add(new configItem("font_size", &font_size, itemType::integer));
         _add(new configItem("spmode2", &remember_spmode, itemType::stringList));
         _add(new configItem("skip_cert", &skip_cert, itemType::boolean));
         _add(new configItem("hk_mw", &hotkey_mainwindow, itemType::string));
@@ -291,7 +291,7 @@ namespace Configs {
         _add(new configItem("hk_toggle", &hotkey_toggle_system_proxy, itemType::string));
         _add(new configItem("fakedns", &fake_dns, itemType::boolean));
         _add(new configItem("active_routing", &active_routing, itemType::string));
-        _add(new configItem("mw_size", &mw_size, itemType::string));
+   //     _add(new configItem("mw_size", &mw_size, itemType::string));
         _add(new configItem("disable_traffic_stats", &disable_traffic_stats, itemType::boolean));
         _add(new configItem("vpn_impl", &vpn_implementation, itemType::string));
         _add(new configItem("vpn_mtu", &vpn_mtu, itemType::integer));

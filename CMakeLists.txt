@@ -49,7 +49,6 @@ option(SKIP_UPDATE_BUTTON "Always hide update button" OFF)
 option(SKIP_JS_UPDATER "Skip JS update checker" OFF)
 option(USE_QT_GRPC "Use gRPC provided by QT" ON)
 
-
 if (NKR_PACKAGE)
     nkr_add_compile_definitions(NKR_CPP_USE_APPDATA)
 endif ()
@@ -288,3 +287,9 @@ if (MSVC)
 endif ()
 
 qt_finalize_executable(nekobox)
+
+
+
+
+install(TARGETS nekobox DESTINATION ${CMAKE_INSTALL_LIBEXECDIR}/nekobox)
+install(FILES res/public/On.png check_routeprofiles.js res/public/emoji.ttf DESTINATION ${CMAKE_INSTALL_LIBEXECDIR}/nekobox/public)

@@ -79,6 +79,7 @@ srslist
 
 /nekobox
 /build
+/temp
 CMakeLists.txt.user*
 /cmake-build-*
 /build-*
