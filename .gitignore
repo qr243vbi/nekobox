@@ -1,5 +1,7 @@
 # This file is used to ignore files which are generated
 # ----------------------------------------------------------------------------
+SingBox.Version
+version.txt
 /config
 /updater
 nekobox_core
