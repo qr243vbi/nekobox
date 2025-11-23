@@ -11,6 +11,7 @@
 #include <QLocalServer>
 #include <QThread>
 #include <QFileInfo>
+#include "include/dataStore/ResourceEntity.hpp"
 
 #ifdef Q_OS_WIN
 #include <QtProtobuf/qprotobufmessage.h>
@@ -26,7 +27,7 @@
 #endif
 
 #include "include/sys/Settings.h"
-#include "include/dataStore/ResourceEntity.hpp"
+#include "include/global/Configs.hpp"
 
 #include "include/ui/mainwindow_interface.h"
 
