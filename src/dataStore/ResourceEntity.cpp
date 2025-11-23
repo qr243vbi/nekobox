@@ -41,12 +41,11 @@ ResourceManager::ResourceManager() : JsonStore("resources/manager.json") {
     symlinks_supported = false;
   };
   load_control_must = true;
+  this->Load();
 }
 
 ResourceEntity ResourceManager::getEntity(QString str) {
- ResourceEntity ent(_ent(str), this->symlinks_supported);
- ent.Load();
- return ent;
+ return ResourceEntity(_ent(str), this->symlinks_supported);
 };
 
 bool ResourceEntity::Save(){
@@ -79,7 +78,8 @@ QString ResourceManager::getLink(QString str) {
   } else {
     return "";
   }
+
 };
 
-ResourceManager *resourceManager = new ResourceManager();
+  ResourceManager  * resourceManager = new Configs::ResourceManager();
 } // namespace Configs
