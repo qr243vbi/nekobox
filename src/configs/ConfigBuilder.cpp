@@ -520,12 +520,14 @@ namespace Configs {
         }
         routeChain->Save();
 
+        /*
         if (dataStore->core_box_underlying_dns.isEmpty() && dataStore->spmode_vpn)
         {
             status->result->error = QObject::tr("Local DNS and Tun mode do not work together, please set an IP to be used as the Local DNS server in the Routing Settings -> Local override");
             return;
         }
-        
+        */
+
         // copy for modification
         routeChain = std::make_shared<RoutingChain>(*routeChain);
 
