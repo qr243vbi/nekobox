@@ -248,13 +248,23 @@ int MessageBoxInfo(const QString &title, const QString &text) {
 }
 
 void ActivateWindow(QWidget *w) {
-    w->setWindowState(w->windowState() & ~Qt::WindowMinimized);
-    w->setVisible(true);
+    this->ToggleWindow(w);
+}
+
+void ToggleWindow(QWidget *w) {
+    if (w->isVisible() && !(w->windowState() & Qt::WindowMinimized)) {
+        // Window is visible → minimize / hide
+        w->hide();
+    } else {
+        // Window is hidden or minimized → show
+        w->setWindowState(w->windowState() & ~Qt::WindowMinimized);
+        w->setVisible(true);
 #ifdef Q_OS_WIN
-    Windows_QWidget_SetForegroundWindow(w);
+        Windows_QWidget_SetForegroundWindow(w);
 #endif
-    w->raise();
-    w->activateWindow();
+        w->raise();
+        w->activateWindow();
+    }
 }
 
 void runOnUiThread(const std::function<void()> &callback) {
