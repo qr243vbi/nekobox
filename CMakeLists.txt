@@ -8,9 +8,7 @@ set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_POLICY_DEFAULT_CMP0069 NEW)
-if (NOT CMAKE_CXX_COMPILER_ID STREQUAL "GNU" AND WIN32)
-    set(CMAKE_INTERPROCEDURAL_OPTIMIZATION ON)
-endif ()
+
 
 find_package(Qt6 REQUIRED COMPONENTS Widgets Network LinguistTools DBus Grpc)
 
@@ -195,6 +193,7 @@ set(PROJECT_SOURCES
         ${QV2RAY_RC}
         include/dataStore/RouteEntity.h
         src/dataStore/RouteEntity.cpp
+        src/dataStore/ResourceEntity.cpp
         res/darkstyle.qrc
         src/ui/profile/edit_ssh.cpp
         include/ui/profile/edit_ssh.h
@@ -283,7 +282,6 @@ target_link_libraries(nekobox PRIVATE
 
 if (MSVC)
     target_compile_options(nekobox PRIVATE "/std:c++20")       # add c++20 feature
-    set_target_properties(nekobox PROPERTIES INTERPROCEDURAL_OPTIMIZATION FALSE)
 endif ()
 
 qt_finalize_executable(nekobox)
