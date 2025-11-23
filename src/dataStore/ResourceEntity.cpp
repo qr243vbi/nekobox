@@ -1,6 +1,7 @@
 #include "include/dataStore/ResourceEntity.hpp"
 #include "include/sys/Settings.h"
 #include <QString>
+#include <qcoreapplication.h>
 
 static inline QString _ent(QString name) {
   name = name.replace("/", "_P");
@@ -24,28 +25,28 @@ ResourceEntity::ResourceEntity(QString fileent, bool sym)
     path = "";
     entity = fileent;
   };
+  load_control_must = true;
 }
 
 ResourceManager::ResourceManager() : JsonStore("resources/manager.json") {
   _add(new configItem("core_path", &core_path, itemType::string));
   _add(new configItem("resources_path", &resources_path, itemType::string));
-  if (createSymlink(QApplication::applicationFilePath(),
-                    "resources/nekobox.lnk.lnk")) {
+  QFileInfo fileName("configs.json");
+  QString linkName = "resources/nekobox.lnk.lnk";
+  if (createSymlink(fileName.absoluteFilePath(), linkName)) {
     symlinks_supported = true;
-    QFile f("resources/nekobox.lnk.lnk");
+    QFile f(linkName);
     f.remove();
   } else {
     symlinks_supported = false;
   };
+  load_control_must = true;
 }
-/*
-void ResourceEntity::setPath(QString val) {
 
-  this->Save();
-}
-*/
 ResourceEntity ResourceManager::getEntity(QString str) {
-  return ResourceEntity(_ent(str), this->symlinks_supported);
+ ResourceEntity ent(_ent(str), this->symlinks_supported);
+ ent.Load();
+ return ent;
 };
 
 bool ResourceEntity::Save(){
