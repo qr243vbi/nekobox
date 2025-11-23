@@ -15,6 +15,7 @@ require (
 	github.com/sagernet/sing-tun v0.7.3
 	github.com/spf13/cobra v1.10.1
 	golang.org/x/sys v0.37.0
+	google.golang.org/grpc v1.73.0
 )
 
 require (
@@ -122,7 +123,6 @@ require (
 	golang.zx2c4.com/wintun v0.0.0-20230126152724-0fa3db229ce2 // indirect
 	golang.zx2c4.com/wireguard/windows v0.5.3 // indirect
 	google.golang.org/genproto/googleapis/rpc v0.0.0-20250324211829-b45e905df463 // indirect
-	google.golang.org/grpc v1.73.0 // indirect
 	google.golang.org/protobuf v1.36.10 // indirect
 	gopkg.in/natefinch/npipe.v2 v2.0.0-20160621034901-c1b8fa8bdcce // indirect
 	lukechampine.com/blake3 v1.3.0 // indirect

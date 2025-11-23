@@ -5,7 +5,7 @@
 
 static inline QString _ent(QString name) {
   name = name.replace("/", "_P");
-#if Q_OS_WIN
+#ifdef Q_OS_WIN
   name = name.replace("\\", "_p");
 #endif
   name = name.replace("_", "__");
