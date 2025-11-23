@@ -248,7 +248,7 @@ int MessageBoxInfo(const QString &title, const QString &text) {
 }
 
 void ActivateWindow(QWidget *w) {
-    this->ToggleWindow(w);
+    ToggleWindow(w);
 }
 
 void ToggleWindow(QWidget *w) {
