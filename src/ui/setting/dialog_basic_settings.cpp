@@ -33,6 +33,7 @@ DialogBasicSettings::DialogBasicSettings(MainWindow *parent)
     ADD_ASTERISK(this);
     this->parent = parent;
 
+    QSettings settings = getSettings();
     // Common
     ui->inbound_socks_port_l->setText(ui->inbound_socks_port_l->text().replace("Socks", "Mixed (SOCKS+HTTP)"));
     ui->log_level->addItems(QString("trace debug info warn error fatal panic").split(" "));
@@ -95,11 +96,12 @@ DialogBasicSettings::DialogBasicSettings(MainWindow *parent)
         CACHE.needRestart = true;
     });
     connect(ui->font, &QComboBox::currentTextChanged, this, [=,this](const QString &fontName) {
+        QSettings settings = getSettings();
         auto font = qApp->font();
         font.setFamily(fontName);
         qApp->setFont(font);
-        Configs::dataStore->font = fontName;
-        Configs::dataStore->Save();
+        settings.setValue("font_family", fontName);
+        settings.sync();
         adjustSize();
     });
     for (int i=7;i<=26;i++) {
@@ -107,11 +109,13 @@ DialogBasicSettings::DialogBasicSettings(MainWindow *parent)
     }
     ui->font_size->setCurrentText(Int2String(qApp->font().pointSize()));
     connect(ui->font_size, &QComboBox::currentTextChanged, this, [=,this](const QString &sizeStr) {
+        QSettings settings = getSettings();
         auto font = qApp->font();
-        font.setPointSize(sizeStr.toInt());
+        int font_size = sizeStr.toInt();
+        font.setPointSize(font_size);
         qApp->setFont(font);
-        Configs::dataStore->font_size = sizeStr.toInt();
-        Configs::dataStore->Save();
+        settings.setValue("font_size", font_size);
+        settings.sync();
         adjustSize();
     });
     //
@@ -119,17 +123,14 @@ DialogBasicSettings::DialogBasicSettings(MainWindow *parent)
     ui->theme->addItem("QDarkStyle");
     //
     bool ok;
-    auto themeId = Configs::dataStore->theme.toInt(&ok);
-    if (ok) {
-        ui->theme->setCurrentIndex(themeId);
-    } else {
-        ui->theme->setCurrentText(Configs::dataStore->theme);
-    }
+    ui->theme->setCurrentText(settings.value("theme", "").toString());
     //
     connect(ui->theme, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, [=,this](int index) {
-        themeManager->ApplyTheme(ui->theme->currentText());
-        Configs::dataStore->theme = ui->theme->currentText();
-        Configs::dataStore->Save();
+        QSettings settings = getSettings();
+        QString ui_theme_text = ui->theme->currentText();
+        themeManager->ApplyTheme(ui_theme_text);
+        settings.setValue("theme", ui_theme_text);
+        settings.sync();
     });
 
     // Subscription
@@ -200,7 +201,6 @@ DialogBasicSettings::DialogBasicSettings(MainWindow *parent)
         emit point_changed(ui->window_X->text().toInt(), ui->window_Y->text().toInt());
     });
 
-    QSettings settings = getSettings();
     auto validator = new QIntValidator(0, 0xfffffff, this);
     ui->save_geometry->setChecked(settings.value("save_geometry", true).toBool());
     ui->save_position->setChecked(settings.value("save_position", true).toBool());
