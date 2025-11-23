@@ -88,11 +88,11 @@ namespace Configs {
         bool mux_padding = false;
         int mux_concurrency = 8;
         bool mux_default_on = false;
-        QString theme = "0";
+ //       QString theme = "0";
         int language = 0;
-        QString font = "";
-        int font_size = 0;
-        QString mw_size = "";
+ //       QString font = "";
+  //      int font_size = 0;
+ //       QString mw_size = "";
         QStringList log_ignore = {};
         bool start_minimal = false;
         int max_log_line = 200;
