@@ -11,6 +11,7 @@
 #include <QLocalServer>
 #include <QThread>
 #include <QFileInfo>
+#include "include/dataStore/ResourceEntity.hpp"
 
 #ifdef Q_OS_WIN
 #include <QtProtobuf/qprotobufmessage.h>
@@ -35,6 +36,7 @@ std::map<std::string, std::string> ruleSetMap;
 #ifdef Q_OS_LINUX
 #include <qfontdatabase.h>
 #endif
+
 
 void signal_handler(int signum) {
     if (GetMainWindow()) {
@@ -69,8 +71,6 @@ void loadTranslate(const QString& locale) {
 }
 
 #define LOCAL_SERVER_PREFIX "nekobox-"
-
-
 
 int main(int argc, char** argv) {
     // Core dump
@@ -191,10 +191,13 @@ int main(int argc, char** argv) {
         goto loop_back_2;
     }
     
+    Configs::resourceManager->Load();
+    
 #ifdef Q_OS_LINUX
     QApplication::addLibraryPath(QApplication::applicationDirPath() + "/usr/plugins");
 #endif
 
+    
     // dispatchers
     DS_cores = new QThread;
     DS_cores->start();
