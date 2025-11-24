@@ -3,6 +3,7 @@
 #include "include/dataStore/Database.hpp"
 #include "include/ui/mainwindow_interface.h"
 
+
 #include <QClipboard>
 #include <QStringListModel>
 #include <QCompleter>
@@ -25,7 +26,6 @@ DialogEditGroup::DialogEditGroup(const std::shared_ptr<Configs::Group> &ent, QWi
     ui->type->setCurrentIndex(ent->url.isEmpty() ? 0 : 1);
     ui->type->currentIndexChanged(ui->type->currentIndex());
     ui->manually_column_width->setChecked(ent->manually_column_width);
-    ui->cat_share->setVisible(false);
     if (Configs::profileManager->GetProfile(ent->front_proxy_id) == nullptr) {
         ent->front_proxy_id = -1;
         ent->Save();
@@ -35,13 +35,16 @@ DialogEditGroup::DialogEditGroup(const std::shared_ptr<Configs::Group> &ent, QWi
         ent->Save();
     }
 
+    bool disable_share = true;
+
     if (ent->id >= 0) { // already a group
         ui->type->setDisabled(true);
         if (!ent->Profiles().isEmpty()) {
-            ui->cat_share->setVisible(true);
+            disable_share = false;
         }
     }
 
+/*
     ui->front_proxy->setEditable(true);
     ui->front_proxy->setInsertPolicy(QComboBox::NoInsert);
     ui->front_proxy->setCompleter(nullptr);
@@ -49,7 +52,7 @@ DialogEditGroup::DialogEditGroup(const std::shared_ptr<Configs::Group> &ent, QWi
     ui->landing_proxy->setEditable(true);
     ui->landing_proxy->setInsertPolicy(QComboBox::NoInsert);
     ui->landing_proxy->setCompleter(nullptr);
-
+*/
     connect(ui->copy_links, &QPushButton::clicked, this, [=,this] {
         QStringList links;
         for (const auto &[_, profile]: Configs::profileManager->profiles) {
@@ -81,6 +84,18 @@ DialogEditGroup::DialogEditGroup(const std::shared_ptr<Configs::Group> &ent, QWi
 
     ui->name->setFocus();
     ADJUST_SIZE
+
+    if (disable_share){
+        ui->common_tabs->removeTab(2);
+    }
+}
+
+DialogGroupChooseProxy::DialogGroupChooseProxy(QWidget * parent): QDialog(parent), ui(new Ui::DialogGroupChooseProxy) {
+    ui->setupUi(this);
+}
+
+DialogGroupChooseProxy::~DialogGroupChooseProxy(){
+    delete ui;
 }
 
 DialogEditGroup::~DialogEditGroup() {
@@ -101,33 +116,19 @@ void DialogEditGroup::accept() {
     ent->manually_column_width = ui->manually_column_width->isChecked();
     if (!CACHE.proxy_items_need_refresh){
         if (CACHE.proxy_landing_changed){
-            QString front_proxy_text = ui->front_proxy->currentText();
-            ent->front_proxy_id = get_proxy_id(front_proxy_text);
+  //          QString front_proxy_text = ui->front_proxy->currentText();
+  //          ent->front_proxy_id = get_proxy_id(front_proxy_text);
         }
         if (CACHE.proxy_front_changed){
-            QString landing_proxy_text = ui->landing_proxy->currentText();
-            ent->landing_proxy_id = get_proxy_id(landing_proxy_text);
+  //          QString landing_proxy_text = ui->landing_proxy->currentText();
+  //          ent->landing_proxy_id = get_proxy_id(landing_proxy_text);
         }
     }
     QDialog::accept();
 }
 
-int DialogEditGroup::get_proxy_id(QString & text){
-    int i = proxy_items.value(text, -1);
-    if (i >= 0){
-        return i;
-    }
-    bool is_int;
-    text.toInt(&is_int);
-    if (is_int){
-        if (i >= 0){
-            return i;
-        }
-    }
-    return -1;
-}
-
 void DialogEditGroup::on_refresh_proxy_items(){
+    /*
     QStringList proxy_items_list;
     for (const auto &item: Configs::profileManager->profiles) {
         QString name = (item.second->bean->DisplayName());
@@ -145,34 +146,39 @@ void DialogEditGroup::on_refresh_proxy_items(){
 
     QString front_name;
     QString landing_name;
+*/
+    ui->front_proxy->setText (get_proxy_name(ent->front_proxy_id).trimmed());
+    ui->landing_proxy->setText(get_proxy_name(ent->landing_proxy_id).trimmed());
 
-    ui->front_proxy->setCurrentText(front_name = get_proxy_name(ent->front_proxy_id));
-    ui->landing_proxy->setCurrentText(landing_name = get_proxy_name(ent->landing_proxy_id));
-
-    connect(ui->front_proxy, &QComboBox::currentTextChanged, this, [=, this](const QString &text) {
-        CACHE.proxy_front_changed = !(text == front_name);
+    connect(ui->front_proxy, &QCommandLinkButton::clicked, this, 
+        [=, this](bool b) {
+            auto window = new DialogGroupChooseProxy(this);
+            window->show();
     });
 
-    connect(ui->landing_proxy, &QComboBox::currentTextChanged, this, [=, this](const QString &text) {
-        CACHE.proxy_landing_changed = !(text == landing_name);
+    connect(ui->landing_proxy, &QCommandLinkButton::clicked, this, 
+        [=, this](bool b) {
+            auto window = new DialogGroupChooseProxy(this);
+            window->show();
     });
-
+/*
     auto Completer = new QCompleter(proxy_items_list, this);
     Completer->setCompletionMode(QCompleter::PopupCompletion);
     Completer->setCaseSensitivity(Qt::CaseInsensitive);
     Completer->setFilterMode(Qt::MatchContains);
     ui->front_proxy->lineEdit()->setCompleter(Completer);
     ui->landing_proxy->lineEdit()->setCompleter(Completer);
+    */
 }
 
 QString DialogEditGroup::get_proxy_name(int id) {
     auto profiles = Configs::profileManager->profiles;
-    if (profiles.count(id) == 0){
-        return "";
+    if (!profiles.contains(id)){
+        return "None";
     } else {
         QString str = profiles[id]->bean->DisplayName();
         if (str.isEmpty()){
-            return QString::number(id);
+            return "Id: "+ QString::number(id);
         } else {
             return str;
         }
