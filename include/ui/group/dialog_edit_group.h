@@ -4,14 +4,19 @@
 #include <QMap>
 #include <QString>
 #include <QEvent>
+#include <qtmetamacros.h>
 #include "include/dataStore/Group.hpp"
 #include "ui_dialog_edit_group.h"
+
+#include "ui_dialog_group_choose_proxy.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
     class DialogEditGroup;
+    class DialogGroupChooseProxy;
 }
 QT_END_NAMESPACE
+
 
 class DialogEditGroup : public QDialog {
     Q_OBJECT
@@ -26,8 +31,6 @@ private:
 
     std::shared_ptr<Configs::Group> ent;
 
-    QMap<QString, int> proxy_items;
-
     struct  {
         bool proxy_items_need_refresh = true;
         bool proxy_landing_changed = false;
@@ -41,6 +44,16 @@ private slots:
     QString get_proxy_name(int id);
 
     void on_refresh_proxy_items();
+};
 
-    int get_proxy_id(QString & text);
+
+class DialogGroupChooseProxy: public QDialog {
+    Q_OBJECT
+    public:
+
+    explicit DialogGroupChooseProxy(QWidget *parent = nullptr);
+
+    ~DialogGroupChooseProxy() override;
+    private:
+    Ui::DialogGroupChooseProxy *ui;
 };
