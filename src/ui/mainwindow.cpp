@@ -2553,7 +2553,8 @@ void MainWindow::on_tabWidget_customContextMenuRequested(const QPoint &p) {
         speedtestRunning.unlock();
         menu->removeAction(ui->menu_stop_testing);
     }
-    menu->exec(ui->tabWidget->tabBar()->mapToGlobal(p));
+    menu->exec(mapToGlobal(p));
+    //ui->tabWidget->tabBar()->mapToGlobal(p));
     return;
 }
 

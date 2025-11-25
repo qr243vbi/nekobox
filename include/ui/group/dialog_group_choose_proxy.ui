@@ -35,13 +35,10 @@
       <string/>
      </property>
      <layout class="QGridLayout" name="gridLayout_2">
-      <item row="1" column="2">
-       <widget class="QLineEdit" name="lineEdit"/>
-      </item>
-      <item row="0" column="2">
-       <widget class="QLabel" name="label_3">
+      <item row="0" column="0">
+       <widget class="QLabel" name="proxy_label">
         <property name="text">
-         <string>Some Proxy</string>
+         <string>Landing Proxy: </string>
         </property>
        </widget>
       </item>
@@ -52,189 +49,31 @@
         </property>
        </widget>
       </item>
-      <item row="0" column="0">
-       <widget class="QLabel" name="label">
-        <property name="text">
-         <string>Landing Proxy: </string>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </widget>
-   </item>
-   <item>
-    <widget class="QGroupBox" name="groupBox_3">
-     <property name="title">
-      <string>Load Profile table starting from group:</string>
-     </property>
-     <property name="flat">
-      <bool>true</bool>
-     </property>
-     <layout class="QGridLayout" name="gridLayout_3">
-      <property name="leftMargin">
-       <number>0</number>
-      </property>
-      <property name="topMargin">
-       <number>0</number>
-      </property>
-      <property name="rightMargin">
-       <number>0</number>
-      </property>
-      <property name="bottomMargin">
-       <number>0</number>
-      </property>
-      <property name="spacing">
-       <number>0</number>
-      </property>
-      <item row="0" column="2">
-       <widget class="QComboBox" name="comboBox_2">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="0">
-       <widget class="QRadioButton" name="radioButton">
-        <property name="text">
-         <string>All</string>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="3">
-       <widget class="QPushButton" name="pushButton_3">
-        <property name="text">
-         <string>Load</string>
-        </property>
-       </widget>
-      </item>
       <item row="0" column="1">
-       <widget class="QRadioButton" name="radioButton_2">
-        <property name="text">
-         <string>Selected</string>
-        </property>
-       </widget>
+       <widget class="QLineEdit" name="profile_label"/>
+      </item>
+      <item row="1" column="1">
+       <widget class="QLineEdit" name="search_line"/>
       </item>
      </layout>
     </widget>
    </item>
    <item>
-    <widget class="QTabWidget" name="tabWidget">
+    <widget class="QTabWidget" name="groups">
      <property name="currentIndex">
-      <number>0</number>
+      <number>1</number>
      </property>
      <widget class="QWidget" name="tab">
       <attribute name="title">
        <string>Group1</string>
       </attribute>
-      <layout class="QVBoxLayout" name="verticalLayout_2">
-       <item>
-        <widget class="QTableWidget" name="tableWidget">
-         <property name="selectionBehavior">
-          <enum>QAbstractItemView::SelectionBehavior::SelectRows</enum>
-         </property>
-         <property name="gridStyle">
-          <enum>Qt::PenStyle::DashLine</enum>
-         </property>
-         <row/>
-         <row/>
-         <row/>
-         <column>
-          <property name="text">
-           <string>Type</string>
-          </property>
-         </column>
-         <column>
-          <property name="text">
-           <string>Address</string>
-          </property>
-         </column>
-         <column>
-          <property name="text">
-           <string>Name</string>
-          </property>
-          <property name="font">
-           <font>
-            <hintingpreference>PreferDefaultHinting</hintingpreference>
-           </font>
-          </property>
-         </column>
-         <item row="0" column="0">
-          <property name="text">
-           <string>VLESS</string>
-          </property>
-         </item>
-         <item row="0" column="1">
-          <property name="text">
-           <string>1.1.1.1</string>
-          </property>
-         </item>
-         <item row="0" column="2">
-          <property name="text">
-           <string>Random</string>
-          </property>
-         </item>
-         <item row="1" column="0">
-          <property name="text">
-           <string>VLESS</string>
-          </property>
-         </item>
-         <item row="1" column="1">
-          <property name="text">
-           <string>2.2.2.2</string>
-          </property>
-         </item>
-         <item row="1" column="2">
-          <property name="text">
-           <string>Another</string>
-          </property>
-         </item>
-         <item row="2" column="0">
-          <property name="text">
-           <string>VLESS</string>
-          </property>
-         </item>
-         <item row="2" column="1">
-          <property name="text">
-           <string>3.3.3.3</string>
-          </property>
-         </item>
-         <item row="2" column="2">
-          <property name="text">
-           <string>New</string>
-          </property>
-         </item>
-        </widget>
-       </item>
-      </layout>
+      <layout class="QVBoxLayout" name="verticalLayout_2"/>
      </widget>
      <widget class="QWidget" name="tab_2">
       <attribute name="title">
        <string>Group2</string>
       </attribute>
-      <layout class="QGridLayout" name="gridLayout">
-       <item row="0" column="0">
-        <widget class="QTableWidget" name="tableWidget_2">
-         <column>
-          <property name="text">
-           <string>Name</string>
-          </property>
-          <property name="font">
-           <font>
-            <hintingpreference>PreferDefaultHinting</hintingpreference>
-           </font>
-          </property>
-         </column>
-         <column>
-          <property name="text">
-           <string>Address</string>
-          </property>
-         </column>
-        </widget>
-       </item>
-      </layout>
+      <layout class="QGridLayout" name="gridLayout"/>
      </widget>
     </widget>
    </item>
@@ -278,9 +117,9 @@
     </widget>
    </item>
    <item>
-    <widget class="QDialogButtonBox" name="buttonBox">
+    <widget class="QDialogButtonBox" name="buttons">
      <property name="standardButtons">
-      <set>QDialogButtonBox::StandardButton::Apply|QDialogButtonBox::StandardButton::Cancel|QDialogButtonBox::StandardButton::Ok|QDialogButtonBox::StandardButton::Reset|QDialogButtonBox::StandardButton::RestoreDefaults</set>
+      <set>QDialogButtonBox::StandardButton::Cancel|QDialogButtonBox::StandardButton::Discard|QDialogButtonBox::StandardButton::Ok|QDialogButtonBox::StandardButton::RestoreDefaults</set>
      </property>
     </widget>
    </item>
