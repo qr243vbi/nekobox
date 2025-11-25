@@ -6,6 +6,7 @@
 #include <QEvent>
 #include <qtmetamacros.h>
 #include "include/dataStore/Group.hpp"
+#include <vector>
 #include "ui_dialog_edit_group.h"
 
 #include "ui_dialog_group_choose_proxy.h"
@@ -26,34 +27,37 @@ public:
 
     ~DialogEditGroup() override;
 
+   static QString get_proxy_name(int id);
 private:
     Ui::DialogEditGroup *ui;
 
     std::shared_ptr<Configs::Group> ent;
 
-    struct  {
-        bool proxy_items_need_refresh = true;
-        bool proxy_landing_changed = false;
-        bool proxy_front_changed = false;
-    } CACHE;
-
-private slots:
-
-    void accept() override;
-
-    QString get_proxy_name(int id);
-
     void on_refresh_proxy_items();
+private slots:
+    void accept() override;
+    void set_landing_proxy(int id);
+    void set_front_proxy(int id);
 };
 
 
 class DialogGroupChooseProxy: public QDialog {
     Q_OBJECT
-    public:
-
+private:
+    std::vector<int> groups;
+    int selected_id = -1;
+    int default_id = -1;
+public:
+    Ui::DialogGroupChooseProxy *ui;
     explicit DialogGroupChooseProxy(QWidget *parent = nullptr);
 
     ~DialogGroupChooseProxy() override;
-    private:
-    Ui::DialogGroupChooseProxy *ui;
+signals: 
+    void set_proxy(int id);
+
+public slots:
+    void change_tab(int id);
+    void profile_selected(int id, bool def = false);
+
+    void dialog_button(QAbstractButton *button);
 };
