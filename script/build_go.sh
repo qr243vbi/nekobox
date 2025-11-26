@@ -34,6 +34,7 @@ GOCMD="${GOCMD:-go}"
 mkdir -p $DEST ||:
 
 export CGO_ENABLED=0
+export GOTOOLCHAIN=local
 
 [ "$GOOS" == "windows" ] && EXT=".exe" || EXT=''
 
