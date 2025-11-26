@@ -80,7 +80,7 @@ DialogEditGroup::DialogEditGroup(const std::shared_ptr<Configs::Group> &ent, QWi
     ui->name->setFocus();
 
     if (disable_share){
-        ui->qr243vbi_share_group->hide();
+        ui->tabs->tabBar()->setTabVisible(2, false);
     }
     
     ADJUST_SIZE
