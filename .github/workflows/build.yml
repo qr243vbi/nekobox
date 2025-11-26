@@ -188,9 +188,11 @@ jobs:
 
       - name: Tar files
         shell: bash
+        if: github.event.inputs.build_windows == 'true' && github.event.inputs.source != 'true'
         run: tar czvf artifacts.tgz ./deployment
 
       - name: Uploading Artifact
+        if: github.event.inputs.build_windows == 'true' && github.event.inputs.source != 'true'
         uses: actions/upload-artifact@v4.6.2
         with:
           name: nekobox-${{ github.sha }}-${{ matrix.platform }}-${{ matrix.target }}-Qt${{ matrix.qt_version }}
