@@ -269,7 +269,7 @@ namespace Qv2ray::components::proxy {
         }
 
         __QueryProxyOptions();
-#elif defined(Q_OS_LINUX)
+#elif defined(Q_OS_UNIX)
         QList<ProcessArgument> actions;
         //
         bool isKDE = qEnvironmentVariable("XDG_SESSION_DESKTOP") == "KDE" ||
@@ -365,7 +365,7 @@ namespace Qv2ray::components::proxy {
         if (!__SetProxyOptions(nullptr, false)) {
             LOG("Failed to clear proxy.");
         }
-#elif defined(Q_OS_LINUX)
+#elif defined(Q_OS_UNIX)
         QList<ProcessArgument> actions;
         const bool isKDE = qEnvironmentVariable("XDG_SESSION_DESKTOP") == "KDE" ||
                            qEnvironmentVariable("XDG_SESSION_DESKTOP") == "plasma"||

@@ -162,7 +162,7 @@ DialogManageRoutes::DialogManageRoutes(QWidget *parent) : QDialog(parent), ui(ne
     ui->hijack_box->layout()->replaceWidget(ui->dnshijack_rules, rule_editor);
     rule_editor->setPlainText(Configs::dataStore->dns_server_rules.join("\n"));
     ui->dnshijack_rules->hide();
-#ifndef Q_OS_LINUX
+#ifndef Q_OS_UNIX
     ui->dnshijack_listenport->setVisible(false);
     ui->dnshijack_listenport_l->setVisible(false);
 #endif

@@ -28,7 +28,7 @@ endif ()
 if (WIN32)
     include("cmake/windows/windows.cmake")
 else ()
-    include("cmake/linux/linux.cmake")
+    include("cmake/unix/unix.cmake")
 endif ()
 
 #### default prefix path ####
