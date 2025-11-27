@@ -31,15 +31,7 @@ ResourceEntity::ResourceEntity(QString fileent, bool sym)
 ResourceManager::ResourceManager() : JsonStore("resources/manager.json") {
   _add(new configItem("core_path", &core_path, itemType::string));
   _add(new configItem("resources_path", &resources_path, itemType::string));
-  QFileInfo fileName("configs.json");
-  QString linkName = "resources/nekobox.lnk.lnk";
-  if (createSymlink(fileName.absoluteFilePath(), linkName)) {
-    symlinks_supported = true;
-    QFile f(linkName);
-    f.remove();
-  } else {
-    symlinks_supported = false;
-  };
+  symlinks_supported = true;
   load_control_must = true;
   this->Load();
 }
