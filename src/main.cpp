@@ -191,6 +191,10 @@ int main(int argc, char** argv) {
     }
     
     Configs::resourceManager->Load();
+    if (Configs::resourceManager->symlinks_supported = createSymlink(getApplicationPath(), "resources/qr243vbi.lnk.lnk")){
+        QFile::remove("resources/qr243vbi.lnk.lnk");
+    };
+
     
 #ifdef Q_OS_UNIX
     QApplication::addLibraryPath(QApplication::applicationDirPath() + "/usr/plugins");
