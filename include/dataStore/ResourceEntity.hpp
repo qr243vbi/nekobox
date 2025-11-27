@@ -26,8 +26,6 @@ public:
   QString resources_path;
   ResourceEntity getEntity(QString str);
   QString getLink(QString str);
-
-private:
   bool symlinks_supported;
 };
 
