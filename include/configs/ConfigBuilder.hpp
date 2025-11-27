@@ -8,12 +8,6 @@
 extern  std::map<std::string, std::string> ruleSetMap;
 
 namespace Configs {
-    enum OSType
-    {
-        Unknown = 0,
-        Linux = 1,
-        Windows = 2
-    };
 
     class ExtraCoreData
     {
@@ -63,16 +57,6 @@ namespace Configs {
         QJsonArray endpoints;
     };
 
-    inline OSType getOS()
-    {
-#ifdef Q_OS_LINUX
-        return Linux;
-#endif
-#ifdef Q_OS_WIN
-        return Windows;
-#endif
-        return Unknown;
-    };
 
     bool IsValid(const std::shared_ptr<ProxyEntity> &ent);
 

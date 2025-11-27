@@ -466,7 +466,7 @@ bool MainWindow::set_system_dns(bool set, bool save_set) {
 
 void MainWindow::profile_start(int _id) {
     if (Configs::dataStore->prepare_exit) return;
-#ifdef Q_OS_LINUX
+#ifdef Q_OS_UNIX
     if (Configs::dataStore->enable_dns_server && Configs::dataStore->dns_server_listen_port <= 1024) {
         if (!get_elevated_permissions()) {
             MW_show_log(QString("Failed to get admin access, cannot listen on port %1 without it").arg(Configs::dataStore->dns_server_listen_port));

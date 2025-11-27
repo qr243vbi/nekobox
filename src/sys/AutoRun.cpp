@@ -44,7 +44,7 @@ bool AutoRun_IsEnabled() {
 
 #endif
 
-#ifdef Q_OS_LINUX
+#ifdef Q_OS_UNIX
 
 #include <QStandardPaths>
 #include <QProcessEnvironment>

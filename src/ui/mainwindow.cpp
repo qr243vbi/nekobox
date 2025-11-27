@@ -32,7 +32,7 @@
 #include "3rdparty/WinCommander.hpp"
 #include "include/sys/windows/WinVersion.h"
 #else
-#ifdef Q_OS_LINUX
+#ifdef Q_OS_UNIX
 #include <unistd.h> // For access()
 #include "include/sys/linux/LinuxCap.h"
 #include <QDBusInterface>
@@ -230,7 +230,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
         },
         DS_cores);
 
-#ifdef Q_OS_LINUX
+#ifdef Q_OS_UNIX
     for (int i=0;i<20;i++)
     {
         QThread::msleep(100);
@@ -1149,13 +1149,13 @@ void MainWindow::on_menu_exit_triggered() {
 #ifndef SKIP_UPDATE_BUTTON
         QStringList list;
         QString updateDir;
-#ifdef Q_OS_LINUX
+#ifdef Q_OS_UNIX
         if (isAppImage()){
             updateDir = getApplicationPath();
         } else {
 #endif
             updateDir = QApplication::applicationDirPath();
-#ifdef Q_OS_LINUX
+#ifdef Q_OS_UNIX
         }
 #endif
         list << Configs::GetBasePath() + "/" + this->archive_name;
@@ -1233,7 +1233,7 @@ bool MainWindow::get_elevated_permissions(int reason, void * pointer) {
     if (Configs::IsAdmin()) return true;
 #undef ELEVATE_CORE_PROGRAM
 
-#ifdef Q_OS_LINUX
+#ifdef Q_OS_UNIX
     if (!Linux_HavePkexec()) {
         MessageBoxWarning(software_name, "Please install \"pkexec\" first.");
         return false;
@@ -2085,7 +2085,7 @@ void MainWindow::display_qr_link(bool nkrFormat) {
     w->deleteLater();
 }
 
-#ifdef Q_OS_LINUX
+#ifdef Q_OS_UNIX
 OrgFreedesktopPortalRequestInterface::OrgFreedesktopPortalRequestInterface(
   const QString& service,
   const QString& path,
@@ -2105,7 +2105,7 @@ QPixmap grabScreen(QScreen* screen, bool& ok)
 {
     QPixmap p;
     QRect geom = screen->geometry();
-#ifdef Q_OS_LINUX
+#ifdef Q_OS_UNIX
     if (qEnvironmentVariable("XDG_SESSION_TYPE") == "wayland" || qEnvironmentVariable("WAYLAND_DISPLAY").contains("wayland", Qt::CaseInsensitive)) {
         QDBusInterface screenshotInterface(
           QStringLiteral("org.freedesktop.portal.Desktop"),
@@ -2904,6 +2904,33 @@ void MainWindow::CheckUpdate() {
 #  endif
 #endif
 
+#ifdef Q_OS_FREEBSD
+#  ifdef Q_PROCESSOR_X86_64
+        SEARCHDEF("freebsd-amd64");
+#  endif
+#  ifdef Q_PROCESSOR_ARM_32
+        SEARCHDEF("freebsd-arm32");
+#  endif
+#  ifdef Q_PROCESSOR_ARM_64
+        SEARCHDEF("freebsd-arm64");
+#  endif
+#  ifdef Q_PROCESSOR_X86_32
+        SEARCHDEF("freebsd-i386");
+#  endif
+#  ifdef Q_PROCESSOR_RISCV_32
+        SEARCHDEF("freebsd-riscv32");
+#  endif
+#  ifdef Q_PROCESSOR_RISCV_64
+        SEARCHDEF("freebsd-riscv64");
+#  endif
+#  ifdef Q_PROCESSOR_MIPS_32
+        SEARCHDEF("freebsd-mips32");
+#  endif
+#  ifdef Q_PROCESSOR_MIPS_64
+        SEARCHDEF("freebsd-mips64");
+#  endif
+#endif
+
 #ifdef Q_OS_LINUX
 #  ifdef Q_PROCESSOR_X86_64
         SEARCHDEF("linux-amd64");
@@ -3033,13 +3060,13 @@ end_search_define:
     runOnUiThread([=,this] {
         auto allow_updater = true;
 #ifndef Q_OS_WIN
-#ifdef Q_OS_LINUX
+#ifdef Q_OS_UNIX
         if (isAppImage()){
             allow_updater = (access(getApplicationPath().toUtf8().constData(), W_OK) == 0);
         } else {
 #endif
             allow_updater = isDirectoryWritable(QApplication::applicationDirPath());
-#ifdef Q_OS_LINUX
+#ifdef Q_OS_UNIX
         }
 #endif
 #endif

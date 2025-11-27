@@ -20,7 +20,7 @@
 #ifdef Q_OS_WIN
 #include "include/sys/windows/guihelper.h"
 #else
-#ifdef Q_OS_LINUX
+#ifdef Q_OS_UNIX
 #include <include/sys/linux/LinuxCap.h>
 #endif
 #include <unistd.h>

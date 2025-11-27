@@ -5,7 +5,7 @@
 #include <QProcess>
 
 #undef ELEVATE_METHOD
-#ifdef Q_OS_LINUX
+#ifdef Q_OS_UNIX
 #define ELEVATE_METHOD
 #endif
 #ifdef Q_OS_WIN

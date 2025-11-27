@@ -32,7 +32,7 @@
 
 std::map<std::string, std::string> ruleSetMap;
 
-#ifdef Q_OS_LINUX
+#ifdef Q_OS_UNIX
 #include <qfontdatabase.h>
 #endif
 
@@ -192,7 +192,7 @@ int main(int argc, char** argv) {
     
     Configs::resourceManager->Load();
     
-#ifdef Q_OS_LINUX
+#ifdef Q_OS_UNIX
     QApplication::addLibraryPath(QApplication::applicationDirPath() + "/usr/plugins");
 #endif
 
@@ -302,7 +302,7 @@ int main(int argc, char** argv) {
         QLocalServer::removeServer(serverName);
     });
 
-#ifdef Q_OS_LINUX
+#ifdef Q_OS_UNIX
     signal(SIGTERM, signal_handler);
     signal(SIGINT, signal_handler);
 #endif

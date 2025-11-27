@@ -14,7 +14,7 @@ void EditWireguard::onStart(std::shared_ptr<Configs::ProxyEntity> _ent) {
     this->ent = _ent;
     auto bean = this->ent->WireguardBean();
 
-#ifndef Q_OS_LINUX
+#ifndef Q_OS_UNIX
     adjustSize();
 #endif
 
