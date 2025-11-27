@@ -53,7 +53,7 @@ QString getUpdaterPath() {
 }
 #endif
 
-#ifdef Q_OS_LINUX
+#ifdef Q_OS_UNIX
 #include <QProcessEnvironment>
 QString getAppImage() {
   QProcessEnvironment env = QProcessEnvironment::systemEnvironment();

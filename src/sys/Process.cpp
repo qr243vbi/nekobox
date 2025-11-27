@@ -8,7 +8,7 @@
 #include "include/ui/mainwindow.h"
 
 #undef ELEVATE_METHOD
-#ifdef Q_OS_LINUX
+#ifdef Q_OS_UNIX
 #define ELEVATE_METHOD
 #endif
 #ifdef Q_OS_WIN
