@@ -30,14 +30,25 @@ public:
    static QString get_proxy_name(int id);
 private:
     Ui::DialogEditGroup *ui;
+    struct {
+        bool edited ;
+        bool loaded ;
+        int landing_proxy_id ;
+        int front_proxy_id ;
+    } CACHE;
+    struct {
+        bool edited;
+        bool loaded;
+    } NOTES;
 
     std::shared_ptr<Configs::Group> ent;
 
-    void on_refresh_proxy_items();
+    void on_refresh_proxy_items(int id);
 private slots:
     void accept() override;
     void set_landing_proxy(int id);
     void set_front_proxy(int id);
+
 };
 
 
@@ -47,6 +58,7 @@ private:
     std::vector<int> groups;
     int selected_id = -1;
     int default_id = -1;
+
 public:
     Ui::DialogGroupChooseProxy *ui;
     explicit DialogGroupChooseProxy(QWidget *parent = nullptr);

@@ -10,6 +10,7 @@
 #include <QTableView>
 #include <qdialog.h>
 #include <qdialogbuttonbox.h>
+#include <qnamespace.h>
 
 #define ADJUST_SIZE runOnThread([=,this] { adjustSize(); adjustPosition(mainwindow); }, this);
 
@@ -29,14 +30,6 @@ DialogEditGroup::DialogEditGroup(const std::shared_ptr<Configs::Group> &ent, QWi
     ui->type->setCurrentIndex(ent->url.isEmpty() ? 0 : 1);
     ui->type->currentIndexChanged(ui->type->currentIndex());
     ui->manually_column_width->setChecked(ent->manually_column_width);
-    if (Configs::profileManager->GetProfile(ent->front_proxy_id) == nullptr) {
-        ent->front_proxy_id = -1;
-        ent->Save();
-    }
-    if (Configs::profileManager->GetProfile(ent->landing_proxy_id) == nullptr) {
-        ent->landing_proxy_id = -1;
-        ent->Save();
-    }
 
     bool disable_share = true;
 
@@ -47,15 +40,6 @@ DialogEditGroup::DialogEditGroup(const std::shared_ptr<Configs::Group> &ent, QWi
         }
     }
 
-/*
-    ui->front_proxy->setEditable(true);
-    ui->front_proxy->setInsertPolicy(QComboBox::NoInsert);
-    ui->front_proxy->setCompleter(nullptr);
-
-    ui->landing_proxy->setEditable(true);
-    ui->landing_proxy->setInsertPolicy(QComboBox::NoInsert);
-    ui->landing_proxy->setCompleter(nullptr);
-*/
     connect(ui->copy_links, &QPushButton::clicked, this, [=,this] {
         QStringList links;
         for (const auto &[_, profile]: Configs::profileManager->profiles) {
@@ -75,9 +59,14 @@ DialogEditGroup::DialogEditGroup(const std::shared_ptr<Configs::Group> &ent, QWi
         MessageBoxInfo(software_name, tr("Copied"));
     });
 
-    on_refresh_proxy_items();
-
     ui->name->setFocus();
+    CACHE.landing_proxy_id = ent->landing_proxy_id;
+    CACHE.front_proxy_id = ent->front_proxy_id;
+    CACHE.edited = false;
+    CACHE.loaded = false;
+
+    connect(ui->tabs, &QTabWidget::currentChanged, 
+        this, &DialogEditGroup::on_refresh_proxy_items);
 
     if (disable_share){
         ui->tabs->tabBar()->setTabVisible(2, false);
@@ -315,7 +304,6 @@ void DialogGroupChooseProxy::change_tab(int group){
             header->setSectionResizeMode(2, QHeaderView::ResizeToContents);
             ui->profile_label->setReadOnly(true);
 
-
         // Connect the search edit to filter the proxy model
             connect(ui->search_line, &QLineEdit::textChanged, proxyModel, 
                 &QSortFilterProxyModel::setFilterFixedString);
@@ -333,12 +321,14 @@ DialogGroupChooseProxy::~DialogGroupChooseProxy(){
 }
 
 void DialogEditGroup::set_landing_proxy(int id){
-    ent->landing_proxy_id = id;
+    CACHE.landing_proxy_id = id;
+    CACHE.edited = true;
     ui->landing_proxy->setText(get_proxy_name(id).trimmed());
 }
 
 void DialogEditGroup::set_front_proxy(int id){
-    ent->front_proxy_id = id;
+    CACHE.front_proxy_id = id;
+    CACHE.edited = true;
     ui->front_proxy->setText(get_proxy_name(id).trimmed());
 }
 
@@ -358,11 +348,45 @@ void DialogEditGroup::accept() {
     ent->archive = ui->archive->isChecked();
     ent->skip_auto_update = ui->skip_auto_update->isChecked();
     ent->manually_column_width = ui->manually_column_width->isChecked();
+    if (CACHE.edited){
+        ent->landing_proxy_id = CACHE.landing_proxy_id;
+        ent->front_proxy_id = CACHE.front_proxy_id;
+    }
+    if (NOTES.edited){
+        QString notes = ui->group_notes->toPlainText();
+        ent->saveNotes(notes);
+    }
+    ent->Save();
 
     QDialog::accept();
 }
 
-void DialogEditGroup::on_refresh_proxy_items(){
+void DialogEditGroup::on_refresh_proxy_items(int index){
+{
+        if (index == 1){
+            if (!CACHE.loaded){
+                CACHE.loaded = true;
+                goto on_refresh_proxy_items_1;
+            }
+        } else if (index == 3){
+            if (!NOTES.loaded){
+                NOTES.loaded = true;
+                ui->group_notes->setText(this->ent->getNotes());
+                connect(ui->group_notes, &QTextEdit::textChanged, 
+                    this, [this](){
+                        NOTES.edited = true;
+                }, Qt::SingleShotConnection);
+            }
+        }
+        if (NOTES.loaded && CACHE.loaded){
+            disconnect(ui->tabs, &QTabWidget::currentChanged, this, &DialogEditGroup::on_refresh_proxy_items);
+        }
+    }
+
+    return;
+
+    on_refresh_proxy_items_1:
+
     ui->front_proxy->setText (get_proxy_name(ent->front_proxy_id).trimmed());
     ui->landing_proxy->setText(get_proxy_name(ent->landing_proxy_id).trimmed());
 
@@ -390,11 +414,12 @@ void DialogEditGroup::on_refresh_proxy_items(){
 }
 
 QString DialogEditGroup::get_proxy_name(int id) {
-    auto profiles = Configs::profileManager->profiles;
-    if (!profiles.contains(id)){
+    std::shared_ptr<Configs::ProxyEntity> profile;
+    if (id < 0 ||
+        (profile = Configs::profileManager->GetProfile(id)) == nullptr){
         return tr("None");
     } else {
-        QString str = profiles[id]->bean->name;
+        QString str = profile->bean->name;
         if (str.isEmpty()){
             return tr("Id: ")+ QString::number(id);
         } else {
