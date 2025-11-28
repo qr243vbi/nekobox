@@ -16,6 +16,10 @@
         <translation>监听地址</translation>
     </message>
     <message>
+        <source>Proxy</source>
+        <translation>代理人</translation>
+    </message>
+    <message>
         <source>concurrency</source>
         <translation>并发</translation>
     </message>
