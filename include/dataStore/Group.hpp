@@ -37,5 +37,9 @@ namespace Configs
         bool EmplaceProfile(int idx, int newIdx);
 
         bool HasProfile(int id) const;
+
+        QString getNotes() const;
+
+        bool saveNotes(QString&);
     };
 }// namespace Configs
