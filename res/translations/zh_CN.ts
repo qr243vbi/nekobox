@@ -16,10 +16,6 @@
         <translation>监听地址</translation>
     </message>
     <message>
-        <source>Proxy</source>
-        <translation>代理人</translation>
-    </message>
-    <message>
         <source>concurrency</source>
         <translation>并发</translation>
     </message>
@@ -303,6 +299,14 @@
     <message>
         <source>Type</source>
         <translation>类型</translation>
+    </message>
+    <message>
+        <source>Proxy</source>
+        <translation>代理</translation>
+    </message>
+    <message>
+        <source>Notes</source>
+        <translation>注释</translation>
     </message>
     <message>
         <source>Name</source>
