@@ -334,8 +334,8 @@ namespace Configs {
         _add(new configItem("speed_test_mode", &speed_test_mode, itemType::integer));
         _add(new configItem("use_mozilla_certs", &use_mozilla_certs, itemType::boolean));
         _add(new configItem("adblock_enable", &adblock_enable, itemType::boolean));
-        _add(new configItem("speed_test_timeout_ms", &speed_test_timeout_ms, itemType::integer));
-        _add(new configItem("url_ping_timeout_ms", &url_test_timeout_ms, itemType::integer));
+        _add(new configItem("speedtest_timeout_ms", &speed_test_timeout_ms, itemType::integer));
+        _add(new configItem("urltest_timeout_ms", &url_test_timeout_ms, itemType::integer));
         _add(new configItem("show_system_dns", &show_system_dns, itemType::boolean));
     }
 
