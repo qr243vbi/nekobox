@@ -170,7 +170,7 @@ RouteItem::RouteItem(QWidget *parent, const std::shared_ptr<Configs::RoutingChai
             simpleProxy->setPlainText(chain->GetSimpleRules(Configs::proxy));
         }
     });
-
+/*
     connect(ui->howtouse_button, &QPushButton::clicked, this, [=,this]()
     {
         runOnUiThread([=,this]
@@ -178,7 +178,7 @@ RouteItem::RouteItem(QWidget *parent, const std::shared_ptr<Configs::RoutingChai
             MessageBoxInfo(tr("Simple rule manual"), Configs::Information::SimpleRuleInfo);
         });
     });
-
+*/
     connect(ui->route_import_json, &QPushButton::clicked, this, [=,this] {
         auto w = new QDialog(this);
         w->setWindowTitle("Import JSON Array");
