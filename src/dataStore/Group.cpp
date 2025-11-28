@@ -1,9 +1,34 @@
 #include <include/dataStore/Group.hpp>
-
+#include <QFile>
 #include "include/ui/profile/dialog_edit_profile.h"
 
 namespace Configs
 {
+    bool Group::saveNotes(QString &notes){
+        QFile file("groups/" + QString::number(this->id) + ".note.txt");
+        if (file.open(QIODevice::WriteOnly)){
+            QTextStream out(&file);
+            out << notes;
+            file.close();
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    QString Group::getNotes() const{
+        QFile file("groups/" + QString::number(this->id) + ".note.txt");
+        if (file.exists()){
+            if (file.open(QIODevice::ReadOnly | QIODevice::Text)){
+                QTextStream in(&file);
+                QString ret = in.readAll();
+                file.close();
+                return ret;
+            }
+        }
+        return "";
+    };
+
     Group::Group() {
         _add(new configItem("id", &id, itemType::integer));
         _add(new configItem("front_proxy_id", &front_proxy_id, itemType::integer));
@@ -14,6 +39,7 @@ namespace Configs
         _add(new configItem("profiles", &profiles, itemType::integerList));
         _add(new configItem("url", &url, itemType::string));
         _add(new configItem("info", &info, itemType::string));
+    //    _add(new configItem("notes", &notes, itemType::string));
         _add(new configItem("lastup", &sub_last_update, itemType::integer64));
         _add(new configItem("manually_column_width", &manually_column_width, itemType::boolean));
         _add(new configItem("column_width", &column_width, itemType::integerList));
