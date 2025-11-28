@@ -80,8 +80,8 @@
         <translation>User Agent</translation>
     </message>
     <message>
-        <source>Use proxy</source>
-        <translation>Использовать прокси</translation>
+        <source>Use proxy when activated</source>
+        <translation>Использовать прокси если активирован</translation>
     </message>
     <message>
         <source>Ignore TLS errors</source>

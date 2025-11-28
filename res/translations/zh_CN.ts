@@ -250,8 +250,8 @@
         <translation>网络设置</translation>
     </message>
     <message>
-        <source>Use proxy</source>
-        <translation>使用代理</translation>
+        <source>Use proxy when activated</source>
+        <translation>启用时使用代理</translation>
     </message>
     <message>
         <source>Ignore TLS errors</source>
