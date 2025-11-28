@@ -79,7 +79,7 @@ namespace Configs {
         // Misc
         QString log_level = "info";
         QString test_latency_url = "http://cp.cloudflare.com/";
-        int url_test_timeout_ms = 17000;
+        int url_test_timeout_ms = 6000;
         bool disable_tray = false;
         int test_concurrent = 10;
         bool disable_traffic_stats = false;
