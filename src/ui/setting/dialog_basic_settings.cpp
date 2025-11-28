@@ -138,7 +138,7 @@ DialogBasicSettings::DialogBasicSettings(MainWindow *parent)
 
     ui->user_agent->setText(Configs::dataStore->user_agent);
     ui->user_agent->setPlaceholderText(Configs::dataStore->GetUserAgent(true));
-    D_LOAD_BOOL(net_use_proxy)
+    ui->net_use_proxy->setChecked(!Configs::dataStore->net_skip_proxy);
     D_LOAD_BOOL(sub_clear)
     D_LOAD_BOOL(net_insecure)
     D_LOAD_BOOL(sub_send_hwid)
@@ -283,7 +283,7 @@ void DialogBasicSettings::accept() {
     }
 
     Configs::dataStore->user_agent = ui->user_agent->text();
-    D_SAVE_BOOL(net_use_proxy)
+    Configs::dataStore->net_skip_proxy = !ui->net_use_proxy->isChecked();
     D_SAVE_BOOL(sub_clear)
     D_SAVE_BOOL(net_insecure)
     D_SAVE_BOOL(sub_send_hwid)

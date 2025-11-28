@@ -12,16 +12,24 @@
 #include "include/ui/mainwindow.h"
 #include "include/global/DeviceDetailsHelper.hpp"
 
-namespace Configs_network {
-
-    HTTPResponse NetworkRequestHelper::HttpGet(const QString &url, bool sendHwid) {
-        QNetworkRequest request;
-        QNetworkAccessManager accessManager;
+static inline void InitializeRequest(
+    QNetworkRequest & request, 
+    QNetworkAccessManager & accessManager,
+    const QString & url,
+    QString & error,
+    bool sendHwid
+){
+        bool net_use_proxy = !Configs::dataStore->net_skip_proxy;
+        bool proxy_started = Configs::dataStore->started_id >= 0;
+        net_use_proxy &= proxy_started;
+        net_use_proxy |= Configs::dataStore->spmode_system_proxy;
+        
         accessManager.setTransferTimeout(10000);
         request.setUrl(url);
-        if (Configs::dataStore->net_use_proxy || Configs::dataStore->spmode_system_proxy) {
-            if (Configs::dataStore->started_id < 0) {
-                return HTTPResponse{QObject::tr("Request with proxy but no profile started.")};
+        if (net_use_proxy) {
+            if (!proxy_started) {
+                error = QObject::tr("Request with proxy but no profile started.");
+                return;
             }
             QNetworkProxy p;
             p.setType(QNetworkProxy::HttpProxy);
@@ -45,6 +53,20 @@ namespace Configs_network {
             if (!details.os.isEmpty()) request.setRawHeader("x-device-os", details.os.toUtf8());
             if (!details.osVersion.isEmpty()) request.setRawHeader("x-ver-os", details.osVersion.toUtf8());
             if (!details.model.isEmpty()) request.setRawHeader("x-device-model", details.model.toUtf8());
+        }
+}
+
+namespace Configs_network {
+
+    HTTPResponse NetworkRequestHelper::HttpGet(const QString &url, bool sendHwid) {
+        QNetworkRequest request;
+        QNetworkAccessManager accessManager;
+        QString error;
+
+        InitializeRequest(request, accessManager, url, error, sendHwid);
+
+        if (!error.isEmpty()){
+            return HTTPResponse{error};
         }
         //
         auto _reply = accessManager.get(request);
@@ -77,21 +99,11 @@ namespace Configs_network {
     QString NetworkRequestHelper::DownloadAsset(const QString &url, const QString &fileName) {
         QNetworkRequest request;
         QNetworkAccessManager accessManager;
-        request.setUrl(url);
-        if (Configs::dataStore->net_use_proxy || Configs::dataStore->spmode_system_proxy) {
-            if (Configs::dataStore->started_id < 0) {
-                return QObject::tr("Request with proxy but no profile started.");
-            }
-            QNetworkProxy p;
-            p.setType(QNetworkProxy::HttpProxy);
-            p.setHostName("127.0.0.1");
-            p.setPort(Configs::dataStore->inbound_socks_port);
-            accessManager.setProxy(p);
-        }
-        if (Configs::dataStore->net_insecure) {
-            QSslConfiguration c;
-            c.setPeerVerifyMode(QSslSocket::PeerVerifyMode::VerifyNone);
-            request.setSslConfiguration(c);
+        QString error;
+
+        InitializeRequest(request, accessManager, url, error, false);
+        if (!error.isEmpty()){
+            return error;
         }
 
         auto _reply = accessManager.get(request);

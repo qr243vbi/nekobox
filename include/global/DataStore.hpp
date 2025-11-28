@@ -106,7 +106,7 @@ namespace Configs {
         bool show_system_dns = false;
 
         // Network
-        bool net_use_proxy = false;
+        bool net_skip_proxy = false;
         bool net_insecure = false;
 
         // Subscription
