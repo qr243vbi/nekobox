@@ -226,7 +226,12 @@ DialogGroupChooseProxy::DialogGroupChooseProxy(QWidget * parent): QDialog(parent
     connect(buttons, &QDialogButtonBox::clicked, this, 
                 &DialogGroupChooseProxy::dialog_button);
 
-    groups_widget->setCurrentIndex(tabid);
+    if (tabid == 0){
+        this->change_tab(tabid);
+    } else {
+        groups_widget->setCurrentIndex(tabid);
+    }
+
 }
 
 void DialogGroupChooseProxy::dialog_button(QAbstractButton * button){
