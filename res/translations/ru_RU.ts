@@ -306,9 +306,18 @@
         <source>Name</source>
         <translation>Название</translation>
     </message>
+
+    <message>
+        <source>Proxy</source>
+        <translation>Прокси</translation>
+    </message>
+    <message>
+        <source>Notes</source>
+        <translation>Заметки</translation>
+    </message>
     <message>
         <source>Manually column width</source>
-        <translation>Уст. ширину колонок вручную</translation>
+        <translation>Переменная ширина колонок</translation>
     </message>
     <message>
         <source>Archive</source>
