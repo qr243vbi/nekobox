@@ -150,9 +150,7 @@ DialogManageRoutes::DialogManageRoutes(QWidget *parent) : QDialog(parent), ui(ne
     ui->dnshijack_listenport->setText(Int2String(Configs::dataStore->dns_server_listen_port));
     ui->dnshijack_v4resp->setText(Configs::dataStore->dns_v4_resp);
     ui->dnshijack_v6resp->setText(Configs::dataStore->dns_v6_resp);
-    connect(ui->dnshijack_what, &QPushButton::clicked, this, [=,this] {
-        MessageBoxInfo("What is this?", Configs::Information::HijackInfo);
-    });
+
 
     QStringList ruleItems = {"domain:", "suffix:", "regex:"};
     for (const auto& item : ruleSetMap) {

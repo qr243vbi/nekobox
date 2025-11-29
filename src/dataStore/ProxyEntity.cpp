@@ -24,7 +24,7 @@ namespace Configs
     QString ProxyEntity::DisplayTestResult() const {
         QString result;
         if (latency < 0) {
-            result = "Unavailable";
+            result = QCoreApplication::translate("MainWindow", "Unavailable");
         } else if (latency > 0) {
             if (!test_country.isEmpty()) result += UNICODE_LRO + CountryCodeToFlag(test_country) + " ";
             result += QString("%1 ms").arg(latency);

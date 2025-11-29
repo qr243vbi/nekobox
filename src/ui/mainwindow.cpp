@@ -608,7 +608,7 @@ QString updater_js = "";
         ui->menuRouting_Menu->addAction(ui->menu_routing_settings);
 
         auto* actionAdblock = new QAction(ui->menuRouting_Menu);
-        actionAdblock->setText("Enable AdBlock");
+        actionAdblock->setText(QCoreApplication::translate("MainWindow", "Enable AdBlock"));
         actionAdblock->setCheckable(true);
         actionAdblock->setChecked(Configs::dataStore->adblock_enable);
         connect(actionAdblock, &QAction::triggered, this, [=,this](bool checked) {
