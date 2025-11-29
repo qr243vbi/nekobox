@@ -292,7 +292,5 @@ endif ()
 qt_finalize_executable(nekobox)
 
 
-
-
 install(TARGETS nekobox DESTINATION ${CMAKE_INSTALL_LIBEXECDIR}/nekobox)
 install(FILES res/public/On.png check_routeprofiles.js res/public/emoji.ttf DESTINATION ${CMAKE_INSTALL_LIBEXECDIR}/nekobox/public)
