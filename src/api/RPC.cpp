@@ -201,9 +201,6 @@ std::unique_ptr<QGrpcCallReply> call = client.X(request);           \
 
     QString Client::CheckConfig(bool* rpcOK, const QString& config) const
     {
-        *rpcOK = true;
-        return "";
-        /*
         CHECK("CheckConfig")
         if (!is_running){
             *rpcOK = false;
@@ -221,7 +218,6 @@ std::unique_ptr<QGrpcCallReply> call = client.X(request);           \
             NOT_OK
             return (status.message());
         }
-            */
     }
 
     bool Client::IsPrivileged(bool* rpcOK) const

@@ -1583,7 +1583,7 @@ void MainWindow::refresh_status(const QString &traffic_update) {
     }
     //
     auto display_socks = DisplayAddress(Configs::dataStore->inbound_address, Configs::dataStore->inbound_socks_port);
-    auto inbound_txt = QString("Mixed: %1").arg(display_socks);
+    auto inbound_txt = QObject::tr("Mixed: %1").arg(display_socks);
     ui->label_inbound->setText(inbound_txt);
     //
     ui->checkBox_VPN->setChecked(Configs::dataStore->spmode_vpn);
