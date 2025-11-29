@@ -134,6 +134,7 @@ QString getLocale(){
 }
 
 void updateEmojiFont(){
+#if QT_VERSION >= QT_VERSION_CHECK(6,9,0)
     int fontId = QFontDatabase::addApplicationFont(getResource("emoji.ttf"));
 
     if (fontId >= 0)
@@ -144,6 +145,7 @@ void updateEmojiFont(){
     {
         qDebug() << "could not load noto font!";
     }
+#endif
 }
 
 bool isDirectoryWritable(QString dirPath) {
