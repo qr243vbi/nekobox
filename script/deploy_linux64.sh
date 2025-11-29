@@ -120,7 +120,7 @@ EOF
 chmod 755 nekobox_core AppRun updater
 )
 rm ./AppDir/Tun.png ||:
-ln -s public/Tun.png ./AppDir/Tun.png
+ln -s public/icon.png ./AppDir/Tun.png
 cat << EOF > ./AppDir/nekobox.desktop
 [Desktop Entry]
 Version=1.0
