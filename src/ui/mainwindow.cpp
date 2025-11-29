@@ -902,6 +902,7 @@ void MainWindow::dialog_message_impl(const QString &sender, const QString &info)
         icon_status = -1;
         refresh_status();
     }
+    bool updateCorePath = (info.contains("UpdateCorePath"));
     if (info.contains("UpdateDataStore")) {
         if (info.contains("UpdateDisableTray")) {
             tray->setVisible(!Configs::dataStore->disable_tray);
@@ -932,8 +933,11 @@ void MainWindow::dialog_message_impl(const QString &sender, const QString &info)
         if (info.contains("VPNChanged") && Configs::dataStore->spmode_vpn) {
             MessageBoxWarning(tr("Tun Settings changed"), tr("Restart Tun to take effect."));
         }
-        if ((info.contains("NeedChoosePort") || suggestRestartProxy) && Configs::dataStore->started_id >= 0 &&
+        if ((info.contains("NeedChoosePort") || updateCorePath || suggestRestartProxy) && Configs::dataStore->started_id >= 0 &&
             QMessageBox::question(GetMessageBoxParent(), tr("Confirmation"), tr("Settings changed, restart proxy?")) == QMessageBox::StandardButton::Yes) {
+            if (updateCorePath){
+                StopVPNProcess();
+            }
             profile_start(Configs::dataStore->started_id);
         }
         refresh_status();
