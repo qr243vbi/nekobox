@@ -67,6 +67,6 @@ package_nekobox() {
     cp *.js "${pkgdir}/usr/lib/NekoBox"
     cp -RfvT "res/public" "${pkgdir}/usr/lib/NekoBox/public"
     echo "${pkgver}" > "${pkgdir}/usr/lib/NekoBox/version.txt"
-    install -Dm644 res/public/On.png "${pkgdir}/usr/share/pixmaps/nekobox.png"
+    install -Dm644 res/public/icon.png "${pkgdir}/usr/share/pixmaps/nekobox.png"
 }
 

@@ -14,7 +14,7 @@
 
 QPixmap Icon::GetTrayIcon(TrayIconStatus status) {
     QPixmap pixmap;
-    auto pixmap_read = QPixmap(SYSTRAY_ICON("On.png"), FORMAT);
+    auto pixmap_read = QPixmap(SYSTRAY_ICON("icon.png"), FORMAT);
     if (!pixmap_read.isNull()) pixmap = pixmap_read;
 
     if (status == TrayIconStatus::NONE) return pixmap;
@@ -30,7 +30,7 @@ QPixmap Icon::GetTrayIcon(TrayIconStatus status) {
     } else if (status == TrayIconStatus::SYSTEM_PROXY) {
         p.setBrush(QBrush(Qt::blue));
     } else if (status == TrayIconStatus::VPN) {
-        p.setBrush(QBrush(Qt::red));
+        p.setBrush(QBrush(QColor(165, 42, 42)));
     } else if (status == TrayIconStatus::DNS) {
         p.setBrush(QBrush(Qt::darkMagenta));
     }

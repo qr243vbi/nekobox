@@ -17,6 +17,8 @@ require (
 	google.golang.org/protobuf v1.36.10
 )
 
+require kernel.org/pub/linux/libs/security/libcap/psx v1.2.77 // indirect
+
 require (
 	filippo.io/edwards25519 v1.1.0 // indirect
 	github.com/ajg/form v1.5.1 // indirect
@@ -124,6 +126,7 @@ require (
 	golang.zx2c4.com/wireguard/windows v0.5.3 // indirect
 	google.golang.org/genproto/googleapis/rpc v0.0.0-20251022142026-3a174f9686a8 // indirect
 	gopkg.in/natefinch/npipe.v2 v2.0.0-20160621034901-c1b8fa8bdcce // indirect
+	kernel.org/pub/linux/libs/security/libcap/cap v1.2.77
 	lukechampine.com/blake3 v1.3.0 // indirect
 )
 
