@@ -7,6 +7,64 @@
         <source>Basic Settings</source>
         <translation>Основные настройки</translation>
     </message>
+
+    <message>
+        <source>System</source>
+        <translation>Система</translation>
+    </message>
+    <message>
+        <source>Icon</source>
+        <translation>Иконка</translation>
+    </message>
+    <message>
+        <source>Emoji Font</source>
+        <translation>Эмоджи шрифт</translation>
+    </message>
+    <message>
+        <source>Startup</source>
+        <translation>Запуск</translation>
+    </message>
+    <message>
+        <source>Geometry</source>
+        <translation>Геометрия</translation>
+    </message>
+    <message>
+        <source>Autosave geometry</source>
+        <translation>Сохранить геометрию</translation>
+    </message>
+    <message>
+        <source>Autosave position</source>
+        <translation>Сохранить позицию</translation>
+    </message>
+    <message>
+        <source>Apply now</source>
+        <translation>Применить сейчас</translation>
+    </message>
+    <message>
+        <source>Width</source>
+        <translation>Ширина</translation>
+    </message>
+    <message>
+        <source>Height</source>
+        <translation>Высота</translation>
+    </message>
+    <message>
+        <source>Use default</source>
+        <translation>Использовать по умолчанию</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Выбрать</translation>
+    </message>
+    <message>
+        <source>Core Executable Path</source>
+        <translation>Путь к ядру</translation>
+    </message>
+    <message>
+        <source>Resources Directory</source>
+        <translation>Директория с ресурсами</translation>
+    </message>
+
     <message>
         <source>Common</source>
         <translation>Общие</translation>
@@ -16,8 +74,12 @@
         <translation>Прослушиваемый адрес</translation>
     </message>
     <message>
+        <source>User Agent</source>
+        <translation>Пользовательский агент</translation>
+    </message>
+    <message>
         <source>Custom Inbound</source>
-        <translation>Польз. inbound</translation>
+        <translation>Кастомный inbound</translation>
     </message>
     <message>
         <source>Edit</source>
@@ -74,10 +136,6 @@
     <message>
         <source>Subscription</source>
         <translation>Подписка</translation>
-    </message>
-    <message>
-        <source>User Agent</source>
-        <translation>User Agent</translation>
     </message>
     <message>
         <source>Use proxy when activated</source>
@@ -1498,6 +1556,10 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>Программа</translation>
     </message>
     <message>
+        <source>Enable AdBlock</source>
+        <translation>Включить AdBlock</translation>
+    </message>
+    <message>
         <source>Preferences</source>
         <translation>Настройки</translation>
     </message>
@@ -1547,6 +1609,10 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     </message>
     <message>
         <source>Show Window</source>
+        <translation>Показать окно</translation>
+    </message>
+    <message>
+        <source>Toggle Window</source>
         <translation>Показать окно</translation>
     </message>
     <message>

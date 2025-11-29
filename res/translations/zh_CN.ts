@@ -8,6 +8,67 @@
         <translation>基本设置</translation>
     </message>
     <message>
+        <source>System</source>
+        <translation>系统</translation>
+    </message>
+    <message>
+        <source>User Agent</source>
+        <translation>用户代理</translation>
+    </message>
+    <message>
+        <source>Icon</source>
+        <translation>图标</translation>
+    </message>
+    <message>
+        <source>Emoji Font</source>
+        <translation>表情符号字体</translation>
+    </message>
+    <message>
+        <source>Startup</source>
+        <translation>启动</translation>
+    </message>
+    <message>
+        <source>Geometry</source>
+        <translation>几何学</translation>
+    </message>
+    <message>
+        <source>Autosave geometry</source>
+        <translation>保持几何形状</translation>
+    </message>
+    <message>
+        <source>Autosave position</source>
+        <translation>保持位置</translation>
+    </message>
+    <message>
+        <source>Apply now</source>
+        <translation>立即应用</translation>
+    </message>
+    <message>
+        <source>Width</source>
+        <translation>宽度</translation>
+    </message>
+    <message>
+        <source>Height</source>
+        <translation>高度</translation>
+    </message>
+    <message>
+        <source>Use default</source>
+        <translation>使用默认值</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>选择</translation>
+    </message>
+    <message>
+        <source>Core Executable Path</source>
+        <translation>通往核心之路</translation>
+    </message>
+    <message>
+        <source>Resources Directory</source>
+        <translation>资源目录</translation>
+    </message>
+
+    <message>
         <source>Enable</source>
         <translation>启用</translation>
     </message>
@@ -18,10 +79,6 @@
     <message>
         <source>concurrency</source>
         <translation>并发</translation>
-    </message>
-    <message>
-        <source>User Agent</source>
-        <translation>UserAgent标识</translation>
     </message>
     <message>
         <source>Common</source>
@@ -86,6 +143,14 @@
     <message>
         <source>Core Options</source>
         <translation>核心选项</translation>
+    </message>
+    <message>
+        <source>Padding</source>
+        <translation>填充</translation>
+    </message>
+    <message>
+        <source>Loglevel</source>
+        <translation>日志级别</translation>
     </message>
     <message>
         <source>Default On</source>
@@ -1491,6 +1556,10 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>隐藏窗口</translation>
     </message>
     <message>
+        <source>Enable AdBlock</source>
+        <translation>启用广告拦截</translation>
+    </message>
+    <message>
         <source>Add profile from File</source>
         <translation>添加来自文件的配置档</translation>
     </message>
@@ -1764,6 +1833,10 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     </message>
     <message>
         <source>Show Window</source>
+        <translation>显示窗口</translation>
+    </message>
+    <message>
+        <source>Toggle Window</source>
         <translation>显示窗口</translation>
     </message>
     <message>
