@@ -9,6 +9,8 @@ import (
 	"os/exec"
 	"syscall"
 	"time"
+
+	"kernel.org/pub/linux/libs/security/libcap/cap"
 )
 
 func (s *server) SetSystemDNS(ctx context.Context, in *gen.SetSystemDNSRequest) (*gen.EmptyResp, error) {
@@ -22,8 +24,9 @@ func runAdmin(_port *int, _debug *bool) (int, error) {
 
 func (s *server) IsPrivileged(ctx context.Context, in *gen.EmptyReq) (*gen.IsPrivilegedResponse, error) {
 	out := new(gen.IsPrivilegedResponse)
-	out.HasPrivilege = (os.Geteuid() == 0)
-	return out, nil
+	priv, err := isElevated()
+	out.HasPrivilege = priv
+	return out, err
 }
 
 func WaitForProcessExit(pid int) error {
@@ -42,7 +45,12 @@ func WaitForProcessExit(pid int) error {
 }
 
 func isElevated() (bool, error) {
-	return (os.Geteuid() == 0), nil
+	if os.Geteuid() == 0 {
+		return true, nil
+	}
+	c := cap.GetProc()
+	cap, err := c.GetFlag(cap.Effective, cap.NET_ADMIN)
+	return cap, err
 }
 
 func restartAsAdmin() {

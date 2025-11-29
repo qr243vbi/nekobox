@@ -95,6 +95,7 @@ std::unique_ptr<QGrpcCallReply> call = client.X(request);           \
         libcore::EmptyReq request;
         CHANNEL(QueryStats, QueryStatsResp)
 
+
         if(status.isOk()) {
             return reply;
         } else {
