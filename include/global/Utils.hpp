@@ -8,6 +8,7 @@
 #include <QDebug>
 #include <QApplication>
 #include <QStyle>
+#include <QFile>
 #if QT_VERSION >= QT_VERSION_CHECK(6, 5, 0)
 #include <QStyleHints>
 #endif
@@ -106,9 +107,13 @@ QJsonArray QString2QJsonArray(const QString& str);
 // Files
 
 QByteArray ReadFile(const QString &path);
+QByteArray ReadFile( QFile &path);
 
 QString ReadFileText(const QString &path);
+QString ReadFileText( QFile &path);
 
+bool WriteFileText(const QString &path, const QString &text);
+bool WriteFileText(QFile &file, const QString &notes);
 // Validators
 
 bool IsIpAddress(const QString &str);

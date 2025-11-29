@@ -1,32 +1,18 @@
 #include <include/dataStore/Group.hpp>
 #include <QFile>
 #include "include/ui/profile/dialog_edit_profile.h"
+#include "include/global/Utils.hpp"
 
 namespace Configs
 {
-    bool Group::saveNotes(QString &notes){
-        QFile file("groups/" + QString::number(this->id) + ".note.txt");
-        if (file.open(QIODevice::WriteOnly)){
-            QTextStream out(&file);
-            out << notes;
-            file.close();
-            return true;
-        } else {
-            return false;
-        }
+    bool Group::saveNotes(const QString &notes){
+        QString path = ("groups/" + QString::number(this->id) + ".note.txt");
+        return WriteFileText(path, notes);
     }
 
     QString Group::getNotes() const{
-        QFile file("groups/" + QString::number(this->id) + ".note.txt");
-        if (file.exists()){
-            if (file.open(QIODevice::ReadOnly | QIODevice::Text)){
-                QTextStream in(&file);
-                QString ret = in.readAll();
-                file.close();
-                return ret;
-            }
-        }
-        return "";
+        QString str = ("groups/" + QString::number(this->id) + ".note.txt");
+        return ReadFileText(str);
     };
 
     Group::Group() {

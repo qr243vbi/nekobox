@@ -1,11 +1,15 @@
 #ifndef NEKOBOX_SETTINGS
 #define NEKOBOX_SETTINGS
 #include <QSettings>
+#include <QList>
 
 #define CONFIG_INI_PATH  QDir::current().absolutePath() + "/window.ini"
 
+void updateEmojiFont();
+
 bool createSymlink(const QString &targetPath, const QString &linkPath);
 QSettings getSettings();
+QString getLocale();
 QString getResourcesDir();
 QString getResource(QString);
 #ifndef SKIP_UPDATER_BUTTON

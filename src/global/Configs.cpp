@@ -280,7 +280,7 @@ namespace Configs {
         _add(new configItem("net_skip_proxy", &net_skip_proxy, itemType::boolean));
         _add(new configItem("remember_id", &remember_id, itemType::integer));
         _add(new configItem("remember_enable", &remember_enable, itemType::boolean));
-        _add(new configItem("language", &language, itemType::integer));
+   //     _add(new configItem("language", &language, itemType::integer));
    //     _add(new configItem("font", &font, itemType::string));
    //     _add(new configItem("font_size", &font_size, itemType::integer));
         _add(new configItem("spmode2", &remember_spmode, itemType::stringList));

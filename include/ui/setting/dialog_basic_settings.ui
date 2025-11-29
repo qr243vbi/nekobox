@@ -20,6 +20,16 @@
    <string>Basic Settings</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
+   <item row="9" column="3">
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="orientation">
+      <enum>Qt::Orientation::Horizontal</enum>
+     </property>
+     <property name="standardButtons">
+      <set>QDialogButtonBox::StandardButton::Cancel|QDialogButtonBox::StandardButton::Ok</set>
+     </property>
+    </widget>
+   </item>
    <item row="0" column="3">
     <widget class="QTabWidget" name="tabWidget">
      <property name="minimumSize">
@@ -29,7 +39,7 @@
       </size>
      </property>
      <property name="currentIndex">
-      <number>0</number>
+      <number>1</number>
      </property>
      <widget class="QWidget" name="tab_1">
       <attribute name="title">
@@ -453,8 +463,8 @@
         <layout class="QHBoxLayout" name="style_h_1">
          <item>
           <widget class="QGroupBox" name="groupBox">
-           <layout class="QHBoxLayout" name="horizontalLayout_4">
-            <item>
+           <layout class="QGridLayout" name="gridLayout_10">
+            <item row="0" column="0">
              <widget class="QLabel" name="label_8">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
@@ -467,7 +477,7 @@
               </property>
              </widget>
             </item>
-            <item>
+            <item row="0" column="1">
              <widget class="QComboBox" name="theme">
               <item>
                <property name="text">
@@ -476,13 +486,20 @@
               </item>
              </widget>
             </item>
-           </layout>
-          </widget>
-         </item>
-         <item>
-          <widget class="QGroupBox" name="groupBox2">
-           <layout class="QGridLayout" name="gridLayout_4">
-            <item row="0" column="2">
+            <item row="1" column="0">
+             <widget class="QLabel" name="label_15">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="text">
+               <string>Language</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1">
              <widget class="QComboBox" name="language">
               <item>
                <property name="text">
@@ -492,6 +509,11 @@
               <item>
                <property name="text">
                 <string notr="true">English</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>עברית</string>
                </property>
               </item>
               <item>
@@ -511,16 +533,23 @@
               </item>
              </widget>
             </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <widget class="QGroupBox" name="groupBox2">
+           <layout class="QGridLayout" name="gridLayout_4">
             <item row="0" column="0">
-             <widget class="QLabel" name="label_15">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
+             <widget class="QPushButton" name="icon">
               <property name="text">
-               <string>Language</string>
+               <string>Icon</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <widget class="QPushButton" name="emoji">
+              <property name="text">
+               <string>Emoji Font</string>
               </property>
              </widget>
             </item>
@@ -1495,16 +1524,6 @@
        </item>
       </layout>
      </widget>
-    </widget>
-   </item>
-   <item row="9" column="3">
-    <widget class="QDialogButtonBox" name="buttonBox">
-     <property name="orientation">
-      <enum>Qt::Orientation::Horizontal</enum>
-     </property>
-     <property name="standardButtons">
-      <set>QDialogButtonBox::StandardButton::Cancel|QDialogButtonBox::StandardButton::Ok</set>
-     </property>
     </widget>
    </item>
   </layout>

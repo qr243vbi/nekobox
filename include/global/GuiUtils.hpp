@@ -54,6 +54,22 @@
 #define P_LOAD_BOOL(a) ui->a->setChecked(bean->a);
 #define P_SAVE_BOOL(a) bean->a = ui->a->isChecked();
 
+#define EMPTY_JOB {}
+
+#define CREATE_LINK(name) { \
+    QString fileName = QFileDialog::getOpenFileName(this,   \
+        QObject::tr("Select"), QDir::currentPath(),         \
+        "", nullptr, QFileDialog::Option::ReadOnly);        \
+    Configs::resourceManager->saveLink(name, fileName);     \
+}
+
+#define LINK_RESOURCE_MANAGER(name, id, job) {                  \
+    connect(ui->id, &QPushButton::clicked, this, [=, this](){   \
+        CREATE_LINK(name)                                       \
+        job  ;                                                  \
+    });                                                         \
+}
+
 #define D_LOAD_INT_ENABLE(i, e)                             \
     if (Configs::dataStore->i > 0) {                        \
         ui->e->setChecked(true);                            \
