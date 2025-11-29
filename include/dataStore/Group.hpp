@@ -40,6 +40,6 @@ namespace Configs
 
         QString getNotes() const;
 
-        bool saveNotes(QString&);
+        bool saveNotes(const QString&);
     };
 }// namespace Configs

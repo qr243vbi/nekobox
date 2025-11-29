@@ -81,19 +81,6 @@ int main(int argc, char** argv) {
     QApplication::setQuitOnLastWindowClosed(false);
     QApplication a(argc, argv);
 
-#if (QT_VERSION >= QT_VERSION_CHECK(6,9,0))
-    int fontId = QFontDatabase::addApplicationFont(getResource("emoji.ttf"));
-
-    if (fontId >= 0)
-    {
-        QStringList fontFamilies = QFontDatabase::applicationFontFamilies(fontId);
-        QFontDatabase::setApplicationEmojiFontFamilies(fontFamilies);
-    } else
-    {
-        qDebug() << "could not load noto font!";
-    }
-#endif
-
     // Flags
     Configs::dataStore->argv = QApplication::arguments();
     if (Configs::dataStore->argv.contains("-many")) Configs::dataStore->flag_many = true;
@@ -253,23 +240,9 @@ int main(int argc, char** argv) {
     }
 
     // Translate
-    QString locale;
-    switch (Configs::dataStore->language) {
-        case 1: // English
-            break;
-        case 2:
-            locale = "zh_CN";
-            break;
-        case 3:
-            locale = "fa_IR"; // farsi(iran)
-            break;
-        case 4:
-            locale = "ru_RU"; // Russian
-            break;
-        default:
-            locale = QLocale().name();
-    }
+    QString locale = getLocale();
     QGuiApplication::tr("QT_LAYOUT_DIRECTION");
+    if (locale == "") locale = QLocale().name();
     loadTranslate(locale);
 
     // Check if another instance is running

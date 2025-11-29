@@ -154,6 +154,10 @@ QJsonObject QMapString2QJsonObject(const QMap<QString,QString> &mp) {
 
 QByteArray ReadFile(const QString &path) {
     QFile file(path);
+    return ReadFile(file);
+}
+
+QByteArray ReadFile( QFile &file) {
     QByteArray array;
     if (file.open(QFile::ReadOnly)){
         array = file.readAll();
@@ -163,14 +167,27 @@ QByteArray ReadFile(const QString &path) {
 }
 
 QString ReadFileText(const QString &path) {
+    return QString::fromUtf8(ReadFile(path));
+}
+
+QString ReadFileText( QFile &path) {
+    return QString::fromUtf8(ReadFile(path));
+}
+
+bool WriteFileText(const QString &path, const QString &notes){
     QFile file(path);
-    QString str;
-    if (file.open(QFile::ReadOnly | QFile::Text)){
-        QTextStream stream(&file);
-        str = stream.readAll();
+    return WriteFileText(file, notes);
+}
+
+bool WriteFileText(QFile &file, const QString &notes){
+    if (file.open(QIODevice::WriteOnly)){
+        QTextStream out(&file);
+        out << notes;
         file.close();
+        return true;
+    } else {
+        return false;
     }
-    return str;
 }
 
 int MkPort() {

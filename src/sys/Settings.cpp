@@ -4,6 +4,7 @@
 #include <QApplication>
 #include <QDir>
 #include <QTemporaryFile>
+#include <QFontDatabase>
 
 QSettings getSettings() {
   return QSettings(CONFIG_INI_PATH, QSettings::IniFormat);
@@ -125,6 +126,24 @@ bool createSymlink(const QString &targetPath, const QString &linkPath) {
   } else {
     return false;
   }
+}
+
+QString getLocale(){
+  auto settings = getSettings();
+  return settings.value("language", QLocale().name()).toString();
+}
+
+void updateEmojiFont(){
+    int fontId = QFontDatabase::addApplicationFont(getResource("emoji.ttf"));
+
+    if (fontId >= 0)
+    {
+        QStringList fontFamilies = QFontDatabase::applicationFontFamilies(fontId);
+        QFontDatabase::setApplicationEmojiFontFamilies(fontFamilies);
+    } else
+    {
+        qDebug() << "could not load noto font!";
+    }
 }
 
 bool isDirectoryWritable(QString dirPath) {
