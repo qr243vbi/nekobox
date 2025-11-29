@@ -4,6 +4,8 @@
 #include "include/dataStore/Database.hpp"
 #include "include/api/RPC.h"
 
+QList<QString> default_outbound_choose = {"proxy", "direct"};
+
 void adjustComboBoxWidth(const QComboBox *comboBox) {
     int maxWidth = 0;
 
@@ -120,7 +122,10 @@ RouteItem::RouteItem(QWidget *parent, const std::shared_ptr<Configs::RoutingChai
     ui->rule_preview->setReadOnly(true);
     updateRuleSection();
 
-    ui->def_out->setCurrentText(Configs::outboundIDToString(chain->defaultOutboundID));
+    ui->def_out->setCurrentIndex(default_outbound_choose.indexOf(
+        Configs::outboundIDToString(chain->defaultOutboundID)
+    ));
+   // ui->def_out->setCurrentText(Configs::outboundIDToString(chain->defaultOutboundID));
 
     // simple rules setup
     QStringList ruleItems = {"domain:", "suffix:", "regex:", "keyword:", "ip:", "processName:", "processPath:", "ruleset:"};
@@ -319,7 +324,9 @@ void RouteItem::accept() {
         });
         return;
     }
-    chain->defaultOutboundID = Configs::stringToOutboundID(ui->def_out->currentText());
+    chain->defaultOutboundID = Configs::stringToOutboundID(
+        default_outbound_choose[ui->def_out->currentIndex()]
+    );
 
     emit settingsChanged(chain);
 
