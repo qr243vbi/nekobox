@@ -15,64 +15,74 @@
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_3">
    <item>
-    <widget class="QGroupBox" name="generalBox">
-     <property name="title">
-      <string>General</string>
-     </property>
-     <layout class="QGridLayout" name="gridLayout">
-      <item row="0" column="0">
-       <widget class="QLabel" name="route_name_l">
-        <property name="text">
-         <string>Name</string>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="1">
-       <widget class="QLineEdit" name="route_name"/>
-      </item>
-      <item row="2" column="1">
-       <widget class="QComboBox" name="def_out">
-        <item>
-         <property name="text">
-          <string notr="true">proxy</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string notr="true">direct</string>
-         </property>
-        </item>
-       </widget>
-      </item>
-      <item row="2" column="0">
-       <widget class="QLabel" name="def_out_l">
-        <property name="text">
-         <string>Default outbound</string>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </widget>
-   </item>
-   <item>
     <widget class="QTabWidget" name="tabWidget">
      <property name="currentIndex">
       <number>0</number>
      </property>
-     <widget class="QWidget" name="tab_2">
+     <widget class="QWidget" name="tab_3">
       <attribute name="title">
-       <string>Basic</string>
+       <string>General</string>
       </attribute>
-      <layout class="QVBoxLayout" name="verticalLayout_5">
-       <item>
-        <widget class="QGroupBox" name="simple_direct_box">
+      <layout class="QHBoxLayout" name="horizontalLayout_5">
+       <item alignment="Qt::AlignmentFlag::AlignTop">
+        <widget class="QGroupBox" name="generalBox">
          <property name="title">
-          <string>Direct</string>
+          <string/>
          </property>
          <property name="flat">
           <bool>true</bool>
          </property>
-         <layout class="QVBoxLayout" name="verticalLayout_6">
+         <layout class="QGridLayout" name="gridLayout">
+          <item row="0" column="0">
+           <widget class="QLabel" name="route_name_l">
+            <property name="text">
+             <string>Name</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QLineEdit" name="route_name"/>
+          </item>
+          <item row="2" column="1">
+           <widget class="QComboBox" name="def_out">
+            <item>
+             <property name="text">
+              <string notr="true">proxy</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string notr="true">direct</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="def_out_l">
+            <property name="text">
+             <string>Default outbound</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tab_2">
+      <attribute name="title">
+       <string>Basic</string>
+      </attribute>
+      <layout class="QHBoxLayout" name="horizontalLayout_6">
+       <item>
+        <widget class="QGroupBox" name="simple_block_box">
+         <property name="title">
+          <string>Block</string>
+         </property>
+         <property name="flat">
+          <bool>true</bool>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_8">
           <property name="spacing">
            <number>0</number>
           </property>
@@ -89,7 +99,7 @@
            <number>0</number>
           </property>
           <item>
-           <widget class="QTextEdit" name="simple_direct"/>
+           <widget class="QTextEdit" name="simple_block"/>
           </item>
          </layout>
         </widget>
@@ -125,14 +135,14 @@
         </widget>
        </item>
        <item>
-        <widget class="QGroupBox" name="simple_block_box">
+        <widget class="QGroupBox" name="simple_direct_box">
          <property name="title">
-          <string>Block</string>
+          <string>Direct</string>
          </property>
          <property name="flat">
           <bool>true</bool>
          </property>
-         <layout class="QVBoxLayout" name="verticalLayout_8">
+         <layout class="QVBoxLayout" name="verticalLayout_6">
           <property name="spacing">
            <number>0</number>
           </property>
@@ -149,7 +159,7 @@
            <number>0</number>
           </property>
           <item>
-           <widget class="QTextEdit" name="simple_block"/>
+           <widget class="QTextEdit" name="simple_direct"/>
           </item>
          </layout>
         </widget>

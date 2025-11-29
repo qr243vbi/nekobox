@@ -2215,6 +2215,10 @@ Deleted %3 Profiles:
 %4</translation>
     </message>
     <message>
+        <source>Mixed: %1</source>
+        <translation>混合: %1</translation>
+    </message>
+    <message>
         <source>Proxy: %1
 Direct: %2</source>
         <translation>代理: %1
