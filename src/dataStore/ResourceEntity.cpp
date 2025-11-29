@@ -13,20 +13,7 @@ static inline QString _ent(QString name) {
 }
 
 namespace Configs {
-ResourceEntity::ResourceEntity(QString fileent, bool sym)
-    : JsonStore("resources/" + fileent + ".ent.json") {
-  this->symlinks_supported = sym;
-  _add(new configItem("name", &name, itemType::string));
-  _add(new configItem("path", &path, itemType::string));
-  _add(new configItem("summary", &summary, itemType::string));
-  if (!this->Load()) {
-    name = fileent.replace("_p", "\\").replace("__", "_").replace("_P", "/");
-    summary = "";
-    path = "";
-    entity = fileent;
-  };
-  this->Load();
-}
+
 
 ResourceManager::ResourceManager() : JsonStore("resources/manager.json") {
   _add(new configItem("core_path", &core_path, itemType::string));
@@ -36,18 +23,17 @@ ResourceManager::ResourceManager() : JsonStore("resources/manager.json") {
   this->Load();
 }
 
-ResourceEntity ResourceManager::getEntity(QString str) {
- return ResourceEntity(_ent(str), this->symlinks_supported);
-};
-
-bool ResourceEntity::Save(){
+bool ResourceManager::saveLink(QString str, QString path){
+  str = _ent(str);
   if (symlinks_supported) {
-    QString val = this->path;
-    QString linkpath = "resources/" + entity + ".ent.lnk";
-    QFile::remove(linkpath);
-    createSymlink(val, linkpath);
-  }  
-  return JsonStore::Save();
+    QString file("resources/" + str + ".ent.lnk");
+    QFile::remove(file);
+    return createSymlink(path, file);
+  } else {
+    QFile file("resources/" + str + ".ent.txt");
+    file.remove();
+    return WriteFileText(file, path);
+  }
 }
 
 QString ResourceManager::getLink(QString str) {
@@ -59,9 +45,9 @@ QString ResourceManager::getLink(QString str) {
       filepath = file.symLinkTarget();
     }
   } else {
-    ResourceEntity entity(str, this->symlinks_supported);
-    if (!entity.path.isEmpty()) {
-      filepath = entity.path;
+    QFile file("resources/" + str + ".ent.txt");
+    if (file.exists()) {
+      filepath = ReadFileText(file);
     }
   }
   QFileInfo info(filepath);

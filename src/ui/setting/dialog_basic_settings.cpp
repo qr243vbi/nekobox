@@ -8,6 +8,7 @@
 #include "include/global/Configs.hpp"
 #include "include/global/HTTPRequestHelper.hpp"
 #include "include/global/DeviceDetailsHelper.hpp"
+#include "include/dataStore/ResourceEntity.hpp"
 
 #include <QStyleFactory>
 #include <QFileDialog>
@@ -20,6 +21,16 @@
 #include <QString>
 
 #include "include/ui/mainwindow.h"
+
+
+QList<QString> locales = {
+    "",
+    "C",
+    "he_IL",
+    "zh_CN",
+    "fa_IR",
+    "ru_RU"
+};
 
 #if QT_VERSION >= QT_VERSION_CHECK(6, 6, 0)
 #define STATE_CHANGED &QCheckBox::checkStateChanged
@@ -41,6 +52,12 @@ DialogBasicSettings::DialogBasicSettings(MainWindow *parent)
     ui->mux_protocol->addItems({"h2mux", "smux", "yamux"});
     ui->disable_stats->setChecked(Configs::dataStore->disable_traffic_stats);
     ui->proxy_scheme->setCurrentText(Configs::dataStore->proxy_scheme);
+
+    #define UPDATE_ICON CACHE.updateIcon = true
+    #define UPDATE_FONT CACHE.updateFont = true
+    
+    LINK_RESOURCE_MANAGER("On.png", icon, UPDATE_ICON);
+    LINK_RESOURCE_MANAGER("emoji.ttf", emoji, UPDATE_FONT);
 
     D_LOAD_STRING(inbound_address)
     D_LOAD_COMBO_STRING(log_level)
@@ -92,8 +109,9 @@ DialogBasicSettings::DialogBasicSettings(MainWindow *parent)
     D_LOAD_BOOL(start_minimal)
     D_LOAD_INT(max_log_line)
     //
-    ui->language->setCurrentIndex(Configs::dataStore->language);
-    connect(ui->language, &QComboBox::currentIndexChanged, this, [=,this](int index) {
+    auto language = ui->language;
+    language->setCurrentIndex(locales.indexOf(getLocale()));
+    connect(language, &QComboBox::currentIndexChanged, this, [=,this](int index) {
         CACHE.needRestart = true;
     });
     connect(ui->font, &QComboBox::currentTextChanged, this, [=,this](const QString &fontName) {
@@ -265,7 +283,11 @@ void DialogBasicSettings::accept() {
     // Style
 
     Configs::dataStore->enable_stats = ui->connection_statistics->isChecked();
-    Configs::dataStore->language = ui->language->currentIndex();
+    QString locale = "";
+    int locale_index = ui->language->currentIndex();
+    if (locale_index >= 0){
+        locale = (locales[locale_index]);
+    }
     D_SAVE_BOOL(start_minimal)
     D_SAVE_INT(max_log_line)
     Configs::dataStore->show_system_dns = ui->show_sys_dns->isChecked();
@@ -306,6 +328,7 @@ void DialogBasicSettings::accept() {
 
     int width, height, X, Y;
     // Startup
+    settings.setValue("language", locale);
     settings.setValue("save_geometry", ui->save_geometry->isChecked());
     settings.setValue("save_position", ui->save_position->isChecked());
     settings.setValue("width", width = ui->window_width->text().toInt());
@@ -314,13 +337,15 @@ void DialogBasicSettings::accept() {
     settings.setValue("Y", Y = ui->window_Y->text().toInt());
     QString core_path_text, resources_path;
     bool need_save_manager = false;
+    bool need_core_restart = false;
     if (ui->default_core_path->isChecked()){
         core_path_text = "";
     } else {
         core_path_text = ui->core_path->text();
     }
     if (Configs::resourceManager->core_path != core_path_text){
-        CACHE.needRestart = need_save_manager = true;
+        need_save_manager = true;
+        need_core_restart = true;
         Configs::resourceManager->core_path = core_path_text;
     }
     if (ui->default_icons_path->isChecked()){
@@ -349,6 +374,11 @@ void DialogBasicSettings::accept() {
     if (CACHE.updateDisableTray) str << "UpdateDisableTray";
     if (CACHE.updateSystemDns) str << "UpdateSystemDns";
     if (needChoosePort) str << "NeedChoosePort";
+    if (CACHE.updateIcon) str << "UpdateIcon";
+    if (CACHE.updateFont) {
+        updateEmojiFont();
+    }
+    if (need_core_restart) str << "UpdateCorePath";
     MW_dialog_message(Dialog_DialogBasicSettings, str.join(","));
     QDialog::accept();
 }

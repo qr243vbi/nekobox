@@ -72,7 +72,7 @@
 #include <string>
 extern  std::map<std::string, std::string> ruleSetMap;
 
-void setAppIcon(Icon::TrayIconStatus, QSystemTrayIcon*);
+void setAppIcon(Icon::TrayIconStatus, QSystemTrayIcon*, MainWindow * window);
 
 void UI_InitMainWindow() {
     mainwindow = new MainWindow;
@@ -120,6 +120,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     // migrate old themes
     themeManager->ApplyTheme(theme);
     ui->setupUi(this);
+    updateEmojiFont();
 
     // restore size and geometry
     {
@@ -411,7 +412,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 
     // Setup Tray
     tray = new QSystemTrayIcon(nullptr);
-    setAppIcon(Icon::NONE, tray);
+    setAppIcon(Icon::NONE, tray, this);
     auto *trayMenu = new QMenu();
     trayMenu->addAction(ui->actionToggle_window);
     trayMenu->addSeparator();
@@ -1634,15 +1635,19 @@ void MainWindow::refresh_status(const QString &traffic_update) {
     // refresh tray
     if (tray != nullptr) {
         tray->setToolTip(make_title(true));
-        if (icon_status_new != icon_status) setAppIcon(icon_status_new, tray);
+        if (icon_status_new != icon_status) setAppIcon(icon_status_new, tray, this);
     }
 
     icon_status = icon_status_new;
 }
 
-void setAppIcon(Icon::TrayIconStatus icon_status_new, QSystemTrayIcon *tray){
+void setAppIcon(Icon::TrayIconStatus icon_status_new, 
+        QSystemTrayIcon *tray,
+        MainWindow * window
+    ){
     auto icon = Icon::GetTrayIcon(icon_status_new);
     tray->setIcon(icon);
+    window->setWindowIcon(icon);
     QApplication::setWindowIcon(icon);
 }
 

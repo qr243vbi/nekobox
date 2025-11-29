@@ -6,6 +6,9 @@
 #include "ui_dialog_basic_settings.h"
 #include "include/ui/mainwindow.h"
 
+
+extern QList<QString> locales;
+
 namespace Ui {
     class DialogBasicSettings;
 }
@@ -36,6 +39,8 @@ private:
         bool needRestart = false;
         bool updateDisableTray = false;
         bool updateSystemDns = false;
+        bool updateIcon = false;
+        bool updateFont = false;
     } CACHE;
 
 private slots:

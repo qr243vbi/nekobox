@@ -89,7 +89,7 @@ namespace Configs {
         int mux_concurrency = 8;
         bool mux_default_on = false;
  //       QString theme = "0";
-        int language = 0;
+ //       int language = 0;
  //       QString font = "";
   //      int font_size = 0;
  //       QString mw_size = "";
