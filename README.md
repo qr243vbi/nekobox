@@ -123,7 +123,7 @@ The "msvcp140.dll not found" error usually means that the Microsoft Visual C++ R
 No, that is not necessary. [NekoBox](https://github.com/qr243vbi/nekobox) restarts nekobox_core in UAC mode if TUN mode is selected and [NekoBox](https://github.com/qr243vbi/nekobox) is not already running with administrator privileges. [NekoBox](https://github.com/qr243vbi/nekobox) requests UAC confirmation to restart the core.
 
 **Is setting the `SUID` bit really needed on Linux?** <br/>
-No, it is not needed, but if `SUID` does not configured properly, the [NekoBox](https://github.com/qr243vbi/nekobox) will ask for administrator password to order to restart nekobox_core with administrator privilegies, if TUN mode is selected and [NekoBox](https://github.com/qr243vbi/nekobox) is not already running as root. [NekoBox](https://github.com/qr243vbi/nekobox) will ask for password for once, and will not configure `SUID`.
+No, it is not needed, but if `SUID` does not configured properly, the [NekoBox](https://github.com/qr243vbi/nekobox) will ask for administrator password to order to restart nekobox_core with administrator privilegies, if TUN mode is selected and [NekoBox](https://github.com/qr243vbi/nekobox) is not already running as root (or with special capabilities), [NekoBox](https://github.com/qr243vbi/nekobox) will ask for password for once, and will not configure `SUID`.
 
 **Why does my internet stop working after I force quit [NekoBox](https://github.com/qr243vbi/nekobox)?** <br/>
 If [NekoBox](https://github.com/qr243vbi/nekobox) is force-quit while `System proxy` is enabled, the process ends immediately and [NekoBox](https://github.com/qr243vbi/nekobox) cannot reset the proxy. <br/>
