@@ -21,7 +21,7 @@ QString getResourcesDir() {
 QString getResource(QString str) {
   {
     auto link = Configs::resourceManager->getLink(str);
-    qDebug() << "Link for " << str << " is " << link;
+   // qDebug() << "Link for " << str << " is " << link;
     if (!link.isEmpty()) {
       return link;
     }
