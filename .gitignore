@@ -5,7 +5,7 @@ version.txt
 /config
 /updater
 nekobox_core
-*.h
+/libcore*.qpb.h
 compile_commands.json
 *~
 *.autosave
