@@ -500,5 +500,19 @@ namespace Configs {
         return false;
     }
 
+    bool MieruBean::TryParseLink(const QString& link)
+    {
+        auto url = QUrl(link);
+        if (!url.isValid()) return false;
+        auto query = GetQuery(url);
 
+        name = url.fragment(QUrl::FullyDecoded);
+        serverAddress = url.host();
+        serverPort = url.port();
+        username = query.queryItemValue("username");
+        password = query.queryItemValue("password");
+        multiplexing = query.queryItemValue("multiplexing");
+        serverPorts = query.queryItemValue("server_ports").split(",");
+        return true;
+    }
 } // namespace Configs

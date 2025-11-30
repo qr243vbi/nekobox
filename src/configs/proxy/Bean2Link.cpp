@@ -403,4 +403,21 @@ namespace Configs {
         return "Unsupported for now";
     }
 
+    QString MieruBean::ToShareLink(){
+        QUrl url;
+        url.setScheme("mieru");
+        url.setHost(serverAddress);
+        url.setPort(serverPort);
+        if (!name.isEmpty()) url.setFragment(name);
+        QUrlQuery q;
+        q.addQueryItem("username", username);
+        q.addQueryItem("password", password);
+        q.addQueryItem("transport", "TCP");
+        q.addQueryItem("multiplexing", multiplexing);
+        q.addQueryItem("server_ports", serverPorts.join(","));
+        url.setQuery(q);
+
+        return url.toString(QUrl::FullyEncoded);
+    }
+
 } // namespace Configs

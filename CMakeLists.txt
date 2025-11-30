@@ -137,6 +137,9 @@ set(PROJECT_SOURCES
         include/ui/profile/edit_vmess.h
         src/ui/profile/edit_vmess.cpp
         include/ui/profile/edit_vmess.ui
+        include/ui/profile/edit_mieru.h
+        src/ui/profile/edit_mieru.cpp
+        include/ui/profile/edit_mieru.ui
         include/ui/profile/edit_trojan_vless.h
         src/ui/profile/edit_trojan_vless.cpp
         include/ui/profile/edit_trojan_vless.ui

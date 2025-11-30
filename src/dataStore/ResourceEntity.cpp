@@ -14,10 +14,24 @@ static inline QString _ent(QString name) {
 
 namespace Configs {
 
+ConfJsMap & ResourceManager::_map(){
+  static ConfJsMap  ptr;
+  static bool init = false;
+
+    #ifndef  d_add
+    #define  d_add(X, Y, B) _put(ptr, X, &this->Y, B)
+    #endif
+
+  if (init) return ptr;
+  {
+    d_add( "core_path", core_path, string);
+    d_add( "resources_path", resources_path, string);
+  }
+  init = true;
+  return ptr;
+}
 
 ResourceManager::ResourceManager() : JsonStore("resources/manager.json") {
-  _add(new configItem("core_path", &core_path, itemType::string));
-  _add(new configItem("resources_path", &resources_path, itemType::string));
   symlinks_supported = true;
   load_control_must = true;
   this->Load();

@@ -9,7 +9,20 @@ namespace Configs {
     ProfileManager *profileManager = new ProfileManager();
 
     ProfileManager::ProfileManager() : JsonStore("groups/pm.json") {
-        _add(new configItem("groups", &groupsTabOrder, itemType::integerList));
+    }
+
+    #ifndef  d_add
+    #define  d_add(X, Y, B) _put(ptr, X, &this->Y, B)
+    #endif
+
+    ConfJsMap& ProfileManager::_map(){
+        static ConfJsMap ptr;
+        static bool init = false;
+        if (init) return ptr;
+        d_add("groups", 
+            groupsTabOrder, integerList);
+        init = true;
+        return ptr;
     }
 
     QList<int> filterIntJsonFile(const QString &path) {
@@ -158,6 +171,8 @@ namespace Configs {
 
         if (type == "socks") {
             bean = new Configs::SocksHttpBean(Configs::SocksHttpBean::type_Socks5);
+        } else if (type == "mieru"){
+            bean = new Configs::MieruBean();  
         } else if (type == "http") {
             bean = new Configs::SocksHttpBean(Configs::SocksHttpBean::type_HTTP);
         } else if (type == "shadowsocks") {
