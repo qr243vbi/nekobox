@@ -148,8 +148,9 @@ Solution:
 They are located at the [ruleset](https://github.com/qr243vbi/ruleset/tree/routeprofiles) repository.
 
 ## Contact Us
-  - Use GitHub issue.
-  - Use Telegram [@qr243vbi](https://t.me/qr243vbi)
+  - Write GitHub issue.
+  - Or use Matrix [@qr243vbi:g24.at](https://matrix.to/#/@qr243vbi:g24.at)
+  - Or use Telegram [@qr243vbi](https://t.me/qr243vbi)
 
 ## License
 
