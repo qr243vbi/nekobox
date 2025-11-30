@@ -9,6 +9,7 @@ namespace Configs {
 
     class Routing : public JsonStore {
     public:
+        virtual ConfJsMap & _map() override;
         int current_route_id = 0;
 
         // DNS
@@ -34,6 +35,8 @@ namespace Configs {
     class Shortcuts : public JsonStore
     {
     public:
+        virtual ConfJsMap& _map() override;
+
         QMap<QString, QKeySequence> shortcuts;
 
         QStringList keyVal;
@@ -46,8 +49,8 @@ namespace Configs {
 
     class DataStore : public JsonStore {
     public:
+        virtual ConfJsMap & _map() override;
         // Running
-
         int core_port = 19810;
         int started_id = -1919;
         bool core_running = false;

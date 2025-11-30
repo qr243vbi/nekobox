@@ -7,15 +7,24 @@
 namespace Configs {
     AbstractBean::AbstractBean(int version) {
         this->version = version;
-        _add(new configItem("_v", &this->version, itemType::integer));
-        _add(new configItem("name", &name, itemType::string));
-        _add(new configItem("addr", &serverAddress, itemType::string));
-        _add(new configItem("port", &serverPort, itemType::integer));
-        _add(new configItem("c_cfg", &custom_config, itemType::string));
-        _add(new configItem("c_out", &custom_outbound, itemType::string));
-        _add(new configItem("mux", &mux_state, itemType::integer));
-        _add(new configItem("enable_brutal", &enable_brutal, itemType::boolean));
-        _add(new configItem("brutal_speed", &brutal_speed, itemType::integer));
+    }
+    #undef d_add
+    #define d_add(X, Y, B) _put(ptr, X, &this->Y, B)
+    ConfJsMap & AbstractBean::_map(){
+        static ConfJsMap ptr;
+        static bool init = false;
+        if (init) return ptr;
+        d_add("_v", version, itemType::integer);
+        d_add("name", name, itemType::string);
+        d_add("addr", serverAddress, itemType::string);
+        d_add("port", serverPort, itemType::integer);
+        d_add("c_cfg", custom_config, itemType::string);
+        d_add("c_out", custom_outbound, itemType::string);
+        d_add("mux", mux_state, itemType::integer);
+        d_add("enable_brutal", enable_brutal, itemType::boolean);
+        d_add("brutal_speed", brutal_speed, itemType::integer);
+        init = true;
+        return ptr;
     }
 
     QString AbstractBean::ToNekorayShareLink(const QString &type) {

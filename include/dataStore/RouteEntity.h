@@ -58,6 +58,7 @@ namespace Configs {
 
         RouteRule(const RouteRule& other);
 
+        virtual ConfJsMap & _map() override;
         QString name = "";
         int type = custom;
         int simpleAction;
@@ -117,6 +118,8 @@ namespace Configs {
     public:
         int id = -1;
         QString name = "";
+        virtual ConfJsMap & _map() override;
+
         QList<std::shared_ptr<RouteRule>> Rules;
         QList<JsonStore*> castedRules;
         int defaultOutboundID = proxyID;

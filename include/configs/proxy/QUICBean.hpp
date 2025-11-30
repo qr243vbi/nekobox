@@ -60,42 +60,70 @@ namespace Configs {
         QString caText = "";
         bool disableSni = false;
 
+        #undef _add
+        #define _add(X, Y, B, T) _put(X, Y, &this->B, T);
+
+        virtual ConfJsMap & _map() override{
+            static ConfJsMap hys1, hys2, tuic;
+            static bool init = false;
+            if (!init){
+                init = true;
+                _add(tuic, "forceExternal", forceExternal, itemType::boolean);
+            // TLS
+                _add(tuic, "allowInsecure",  allowInsecure, itemType::boolean);
+                _add(tuic, "sni", sni, itemType::string);
+                _add(tuic, "alpn", alpn, itemType::string);
+                _add(tuic, "caText", caText, itemType::string);
+                _add(tuic, "disableSni", disableSni, itemType::boolean);
+
+                hys1 = ConfJsMap(tuic);
+                _add(hys1, "authPayload", authPayload, itemType::string);
+                _add(hys1, "obfsPassword", obfsPassword, itemType::string);
+                _add(hys1, "uploadMbps", uploadMbps, itemType::integer);
+                _add(hys1, "downloadMbps", downloadMbps, itemType::integer);
+                _add(hys1, "streamReceiveWindow", streamReceiveWindow, itemType::integer64);
+                _add(hys1, "connectionReceiveWindow", connectionReceiveWindow, itemType::integer64);
+                _add(hys1, "disableMtuDiscovery", disableMtuDiscovery, itemType::boolean);
+                _add(hys1, "server_ports", serverPorts, itemType::stringList);
+                _add(hys1, "hop_interval", hop_interval, itemType::string);                
+
+                hys2 = ConfJsMap(hys1);
+
+                _add(hys1, "authPayloadType", authPayloadType, itemType::integer);
+                _add(hys1, "protocol", hyProtocol, itemType::integer);
+
+                _add(hys2, "password", password, itemType::string);
+
+                _add(tuic, "uuid", uuid, itemType::string);
+                _add(tuic, "password", password, itemType::string);
+                _add(tuic, "congestionControl", congestionControl, itemType::string);
+                _add(tuic, "udpRelayMode", udpRelayMode, itemType::string);
+                _add(tuic, "zeroRttHandshake", zeroRttHandshake, itemType::boolean);
+                _add(tuic, "heartbeat", heartbeat, itemType::string);
+                _add(tuic, "uos", uos, itemType::boolean);
+
+            }
+            if (proxy_type == proxy_TUIC) {
+                return tuic;
+            } else if (proxy_type == proxy_Hysteria) {
+                return hys1;
+            } else {
+                return hys2;
+            }
+        }
+
+        #undef _add
+
         explicit QUICBean(int _proxy_type) : AbstractBean(0) {
             proxy_type = _proxy_type;
             if (proxy_type == proxy_Hysteria || proxy_type == proxy_Hysteria2) {
-                _add(new configItem("authPayload", &authPayload, itemType::string));
-                _add(new configItem("obfsPassword", &obfsPassword, itemType::string));
-                _add(new configItem("uploadMbps", &uploadMbps, itemType::integer));
-                _add(new configItem("downloadMbps", &downloadMbps, itemType::integer));
-                _add(new configItem("streamReceiveWindow", &streamReceiveWindow, itemType::integer64));
-                _add(new configItem("connectionReceiveWindow", &connectionReceiveWindow, itemType::integer64));
-                _add(new configItem("disableMtuDiscovery", &disableMtuDiscovery, itemType::boolean));
-                _add(new configItem("server_ports", &serverPorts, itemType::stringList));
-                _add(new configItem("hop_interval", &hop_interval, itemType::string));
                 if (proxy_type == proxy_Hysteria) { // hy1
-                    _add(new configItem("authPayloadType", &authPayloadType, itemType::integer));
-                    _add(new configItem("protocol", &hyProtocol, itemType::integer));
                 } else { // hy2
                     uploadMbps = 0;
                     downloadMbps = 0;
-                    _add(new configItem("password", &password, itemType::string));
                 }
             } else if (proxy_type == proxy_TUIC) {
-                _add(new configItem("uuid", &uuid, itemType::string));
-                _add(new configItem("password", &password, itemType::string));
-                _add(new configItem("congestionControl", &congestionControl, itemType::string));
-                _add(new configItem("udpRelayMode", &udpRelayMode, itemType::string));
-                _add(new configItem("zeroRttHandshake", &zeroRttHandshake, itemType::boolean));
-                _add(new configItem("heartbeat", &heartbeat, itemType::string));
-                _add(new configItem("uos", &uos, itemType::boolean));
             }
-            _add(new configItem("forceExternal", &forceExternal, itemType::boolean));
-            // TLS
-            _add(new configItem("allowInsecure", &allowInsecure, itemType::boolean));
-            _add(new configItem("sni", &sni, itemType::string));
-            _add(new configItem("alpn", &alpn, itemType::string));
-            _add(new configItem("caText", &caText, itemType::string));
-            _add(new configItem("disableSni", &disableSni, itemType::boolean));
         };
 
         QString DisplayAddress() override {

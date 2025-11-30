@@ -28,27 +28,31 @@ namespace Configs {
         int transport_packet_magic_header = 0;
 
         WireguardBean() : AbstractBean(0) {
-            _add(new configItem("private_key", &privateKey, itemType::string));
-            _add(new configItem("public_key", &publicKey, itemType::string));
-            _add(new configItem("pre_shared_key", &preSharedKey, itemType::string));
-            _add(new configItem("reserved", &reserved, itemType::integerList));
-            _add(new configItem("persistent_keepalive", &persistentKeepalive, itemType::integer));
-            _add(new configItem("local_address", &localAddress, itemType::stringList));
-            _add(new configItem("mtu", &MTU, itemType::integer));
-            _add(new configItem("use_system_proxy", &useSystemInterface, itemType::boolean));
-            _add(new configItem("worker_count", &workerCount, itemType::integer));
+        }
+        #define _add(X, Y, B) ADD_MAP(X, Y, B)
 
-            _add(new configItem("enable_amnezia", &enable_amnezia, itemType::boolean));
-            _add(new configItem("junk_packet_count", &junk_packet_count, itemType::integer));
-            _add(new configItem("junk_packet_min_size", &junk_packet_min_size, itemType::integer));
-            _add(new configItem("junk_packet_max_size", &junk_packet_max_size, itemType::integer));
-            _add(new configItem("init_packet_junk_size", &init_packet_junk_size, itemType::integer));
-            _add(new configItem("response_packet_junk_size", &response_packet_junk_size, itemType::integer));
-            _add(new configItem("init_packet_magic_header", &init_packet_magic_header, itemType::integer));
-            _add(new configItem("response_packet_magic_header", &response_packet_magic_header, itemType::integer));
-            _add(new configItem("underload_packet_magic_header", &underload_packet_magic_header, itemType::integer));
-            _add(new configItem("transport_packet_magic_header", &transport_packet_magic_header, itemType::integer));
-        };
+        INIT_MAP
+            _add("private_key", privateKey, string);
+            _add("public_key", publicKey, string);
+            _add("pre_shared_key", preSharedKey, string);
+            _add("reserved", reserved, integerList);
+            _add("persistent_keepalive", persistentKeepalive, integer);
+            _add("local_address", localAddress, stringList);
+            _add("mtu", MTU, integer);
+            _add("use_system_proxy", useSystemInterface, boolean);
+            _add("worker_count", workerCount, integer);
+
+            _add("enable_amnezia", enable_amnezia, boolean);
+            _add("junk_packet_count", junk_packet_count, integer);
+            _add("junk_packet_min_size", junk_packet_min_size, integer);
+            _add("junk_packet_max_size", junk_packet_max_size, integer);
+            _add("init_packet_junk_size", init_packet_junk_size, integer);
+            _add("response_packet_junk_size", response_packet_junk_size, integer);
+            _add("init_packet_magic_header", init_packet_magic_header, integer);
+            _add("response_packet_magic_header", response_packet_magic_header, integer);
+            _add("underload_packet_magic_header", underload_packet_magic_header, integer);
+            _add("transport_packet_magic_header", transport_packet_magic_header, integer);
+        STOP_MAP
 
         QString FormatReserved() {
             QString res = "";

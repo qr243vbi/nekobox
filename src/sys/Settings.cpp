@@ -5,6 +5,8 @@
 #include <QDir>
 #include <QTemporaryFile>
 #include <QFontDatabase>
+#include <qcontainerfwd.h>
+#include <qsettings.h>
 
 QSettings getSettings() {
   return QSettings(CONFIG_INI_PATH, QSettings::IniFormat);
@@ -166,4 +168,32 @@ bool isDirectoryWritable(QString dirPath) {
     // Failed to create/open the file, directory is likely not writable
     return false;
   }
+}
+
+void MainWindowTableSettings::Save(QSettings &settings){
+  settings.setValue("manually_column_width", this->manually_column_width);
+  QStringList list ;
+  list << QString::number(this->column_width[0]);
+  list << QString::number(this->column_width[1]);
+  list << QString::number(this->column_width[2]);
+  list << QString::number(this->column_width[3]);
+  list << QString::number(this->column_width[4]);
+  settings.setValue("column_width", list);
+};
+void MainWindowTableSettings::Load(QSettings &settings){
+  this->manually_column_width = settings.value(
+    "manually_column_width", false).toBool();
+  QStringList list = settings.value("column_width").toStringList();
+  for (int i = list.size(); i < 5; i ++){
+    list << "-1";
+  }
+  this->column_width[0] = list[0].toInt();
+  this->column_width[1] = list[1].toInt();
+  this->column_width[2] = list[2].toInt();
+  this->column_width[3] = list[3].toInt();
+  this->column_width[4] = list[4].toInt();
+};
+
+namespace Configs{
+  MainWindowTableSettings tableSettings;
 }

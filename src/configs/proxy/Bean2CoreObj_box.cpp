@@ -409,5 +409,22 @@ namespace Configs {
         result.outbound = outbound;
         return result;
     }
+    
+    CoreObjOutboundBuildResult MieruBean::BuildCoreObjSingBox()
+    {
+        CoreObjOutboundBuildResult result;
+        QJsonObject outbound {
+            {"type", "mieru"},
+            {"server", this->serverAddress},
+            {"server_port", this->serverPort},
+            {"server_ports", QListStr2QJsonArray(this->serverPorts)},
+            {"transport", "TCP"},
+            {"username", this->username},
+            {"password", this->password},
+            {"multiplexing", this->multiplexing},
+        };
+        result.outbound = outbound;
+        return result;
+    }
 
 } // namespace Configs

@@ -143,6 +143,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
         if (settings.value("maximized", false).toBool()){
             showMaximized();
         }
+        Configs::tableSettings.Load(settings);
     }
 
     // init shortcuts
@@ -374,14 +375,12 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     });
     connect(ui->proxyListTable->horizontalHeader(), &QHeaderView::sectionResized, this, [=, this](int logicalIndex, int oldSize, int newSize) {
         auto group = Configs::profileManager->CurrentGroup();
-        if (Configs::dataStore->refreshing_group || group == nullptr || !group->manually_column_width) return;
+        if (Configs::dataStore->refreshing_group || group == nullptr || !Configs::tableSettings.manually_column_width) return;
         // save manually column width
-        group->column_width.clear();
         for (int i = 0; i < ui->proxyListTable->horizontalHeader()->count(); i++) {
-            group->column_width.push_back(ui->proxyListTable->horizontalHeader()->sectionSize(i));
+            Configs::tableSettings.column_width[i] = (ui->proxyListTable->horizontalHeader()->sectionSize(i));
         }
-        group->column_width[logicalIndex] = newSize;
-        group->Save();
+        Configs::tableSettings.column_width[logicalIndex] = newSize;
     });
     ui->proxyListTable->verticalHeader()->setDefaultSectionSize(24);
     ui->proxyListTable->setTabKeyNavigation(false);
@@ -870,10 +869,10 @@ void MainWindow::show_group(int gid) {
         // Make headers resizable on proxy list table
         QHeaderView* header = ui->proxyListTable->horizontalHeader();
         header->setSectionsMovable(true); // Allow moving sections
-        if (group->manually_column_width) {
+        if (Configs::tableSettings.manually_column_width) {
             for (int i = 0; i <= 4; i++) {
                 header->setSectionResizeMode(i, QHeaderView::Interactive);
-                auto size = group->column_width.value(i);
+                int size = Configs::tableSettings.column_width[i];
                 if (size <= 0) size = header->defaultSectionSize();
                 header->resizeSection(i, size);
             }
@@ -903,7 +902,7 @@ void MainWindow::dialog_message_impl(const QString &sender, const QString &info)
         refresh_status();
     }
     bool updateCorePath = (info.contains("UpdateCorePath"));
-    if (info.contains("UpdateDataStore")) {
+    if (info.contains("UpdateDataStore") || updateCorePath) {
         if (info.contains("UpdateDisableTray")) {
             tray->setVisible(!Configs::dataStore->disable_tray);
         }
@@ -1092,6 +1091,8 @@ void MainWindow::on_commitDataRequest() {
             settings.setValue("X", x);
             settings.setValue("Y", y);
         }
+        Configs::tableSettings.Save(settings);
+        settings.sync();
     }
     //
     Configs::dataStore->splitter_state = ui->splitter->saveState().toBase64();

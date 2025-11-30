@@ -24,39 +24,52 @@ namespace Configs {
     }
 
     RouteRule::RouteRule() {
-        _add(new configItem("name", &name, itemType::string));
-        _add(new configItem("ip_version", &ip_version, itemType::string));
-        _add(new configItem("network", &network, itemType::string));
-        _add(new configItem("protocol", &protocol, itemType::string));
-        _add(new configItem("inbound", &inbound, itemType::stringList));
-        _add(new configItem("domain", &domain, itemType::stringList));
-        _add(new configItem("domain_suffix", &domain_suffix, itemType::stringList));
-        _add(new configItem("domain_keyword", &domain_keyword, itemType::stringList));
-        _add(new configItem("domain_regex", &domain_regex, itemType::stringList));
-        _add(new configItem("source_ip_cidr", &source_ip_cidr, itemType::stringList));
-        _add(new configItem("source_ip_is_private", &source_ip_is_private, itemType::boolean));
-        _add(new configItem("ip_cidr", &ip_cidr, itemType::stringList));
-        _add(new configItem("ip_is_private", &ip_is_private, itemType::boolean));
-        _add(new configItem("source_port", &source_port, itemType::stringList));
-        _add(new configItem("source_port_range", &source_port_range, itemType::stringList));
-        _add(new configItem("port", &port, itemType::stringList));
-        _add(new configItem("port_range", &port_range, itemType::stringList));
-        _add(new configItem("process_name", &process_name, itemType::stringList));
-        _add(new configItem("process_path", &process_path, itemType::stringList));
-        _add(new configItem("process_path_regex", &process_path_regex, itemType::stringList));
-        _add(new configItem("rule_set", &rule_set, itemType::stringList));
-        _add(new configItem("invert", &invert, itemType::boolean));
-        _add(new configItem("outboundID", &outboundID, itemType::integer));
-        _add(new configItem("actionType", &action, itemType::string));
-        _add(new configItem("rejectMethod", &rejectMethod, itemType::string));
-        _add(new configItem("noDrop", &no_drop, itemType::boolean));
-        _add(new configItem("override_address", &override_address, itemType::string));
-        _add(new configItem("override_port", &override_port, itemType::integer));
-        _add(new configItem("sniffers", &sniffers, itemType::stringList));
-        _add(new configItem("sniffOverrideDest", &sniffOverrideDest, itemType::boolean));
-        _add(new configItem("strategy", &strategy, itemType::string));
-        _add(new configItem("type", &type, itemType::integer));
-        _add(new configItem("simple_action", &simpleAction, itemType::integer));
+    }
+    
+
+    #ifndef  d_add
+    #define  d_add(X, Y, B) _put(ptr, X, &this->Y, B)
+    #endif
+
+    ConfJsMap & RouteRule::_map(){
+        static ConfJsMap ptr;
+        static bool init = false;
+        if (init) return ptr;
+        d_add("name", name, string);
+        d_add("ip_version", ip_version, string);
+        d_add("network", network, string);
+        d_add("protocol", protocol, string);
+        d_add("inbound", inbound, stringList);
+        d_add("domain", domain, stringList);
+        d_add("domain_suffix", domain_suffix, stringList);
+        d_add("domain_keyword", domain_keyword, stringList);
+        d_add("domain_regex", domain_regex, stringList);
+        d_add("source_ip_cidr", source_ip_cidr, stringList);
+        d_add("source_ip_is_private", source_ip_is_private, boolean);
+        d_add("ip_cidr", ip_cidr, stringList);
+        d_add("ip_is_private", ip_is_private, boolean);
+        d_add("source_port", source_port, stringList);
+        d_add("source_port_range", source_port_range, stringList);
+        d_add("port", port, stringList);
+        d_add("port_range", port_range, stringList);
+        d_add("process_name", process_name, stringList);
+        d_add("process_path", process_path, stringList);
+        d_add("process_path_regex", process_path_regex, stringList);
+        d_add("rule_set", rule_set, stringList);
+        d_add("invert", invert, boolean);
+        d_add("outboundID", outboundID, integer);
+        d_add("actionType", action, string);
+        d_add("rejectMethod", rejectMethod, string);
+        d_add("noDrop", no_drop, boolean);
+        d_add("override_address", override_address, string);
+        d_add("override_port", override_port, integer);
+        d_add("sniffers", sniffers, stringList);
+        d_add("sniffOverrideDest", sniffOverrideDest, boolean);
+        d_add("strategy", strategy, string);
+        d_add("type", type, integer);
+        d_add("simple_action", simpleAction, integer);
+        init = true;
+        return ptr;
     }
 
     RouteRule::RouteRule(const RouteRule& other) {
@@ -93,40 +106,6 @@ namespace Configs {
         strategy = other.strategy;
         type = other.type;
         simpleAction = other.simpleAction;
-
-        _add(new configItem("name", &name, itemType::string));
-        _add(new configItem("ip_version", &ip_version, itemType::string));
-        _add(new configItem("network", &network, itemType::string));
-        _add(new configItem("protocol", &protocol, itemType::string));
-        _add(new configItem("inbound", &inbound, itemType::stringList));
-        _add(new configItem("domain", &domain, itemType::stringList));
-        _add(new configItem("domain_suffix", &domain_suffix, itemType::stringList));
-        _add(new configItem("domain_keyword", &domain_keyword, itemType::stringList));
-        _add(new configItem("domain_regex", &domain_regex, itemType::stringList));
-        _add(new configItem("source_ip_cidr", &source_ip_cidr, itemType::stringList));
-        _add(new configItem("source_ip_is_private", &source_ip_is_private, itemType::boolean));
-        _add(new configItem("ip_cidr", &ip_cidr, itemType::stringList));
-        _add(new configItem("ip_is_private", &ip_is_private, itemType::boolean));
-        _add(new configItem("source_port", &source_port, itemType::stringList));
-        _add(new configItem("source_port_range", &source_port_range, itemType::stringList));
-        _add(new configItem("port", &port, itemType::stringList));
-        _add(new configItem("port_range", &port_range, itemType::stringList));
-        _add(new configItem("process_name", &process_name, itemType::stringList));
-        _add(new configItem("process_path", &process_path, itemType::stringList));
-        _add(new configItem("process_path_regex", &process_path_regex, itemType::stringList));
-        _add(new configItem("rule_set", &rule_set, itemType::stringList));
-        _add(new configItem("invert", &invert, itemType::boolean));
-        _add(new configItem("outboundID", &outboundID, itemType::integer));
-        _add(new configItem("actionType", &action, itemType::string));
-        _add(new configItem("rejectMethod", &rejectMethod, itemType::string));
-        _add(new configItem("noDrop", &no_drop, itemType::boolean));
-        _add(new configItem("override_address", &override_address, itemType::string));
-        _add(new configItem("override_port", &override_port, itemType::integer));
-        _add(new configItem("sniffers", &sniffers, itemType::stringList));
-        _add(new configItem("sniffOverrideDest", &sniffOverrideDest, itemType::boolean));
-        _add(new configItem("strategy", &strategy, itemType::string));
-        _add(new configItem("type", &type, itemType::integer));
-        _add(new configItem("simple_action", &simpleAction, itemType::integer));
     }
 
     QJsonObject RouteRule::get_rule_json(bool forView, const QString& outboundTag) {
@@ -804,10 +783,18 @@ namespace Configs {
     }
 
     RoutingChain::RoutingChain() {
-        _add(new configItem("id", &id, itemType::integer));
-        _add(new configItem("name", &name, itemType::string));
-        _add(new configItem("rules", &castedRules, itemType::jsonStoreList));
-        _add(new configItem("default_outbound", &defaultOutboundID, itemType::integer));
+    }
+
+    ConfJsMap & RoutingChain::_map() {
+        static ConfJsMap ptr;
+        static bool init = false;
+        if (init) return ptr;
+        d_add("id", id, integer);
+        d_add("name", name, string);
+        d_add("rules", castedRules, jsonStoreList);
+        d_add("default_outbound", defaultOutboundID, integer);
+        init = true;
+        return ptr;
     }
 
     RoutingChain::RoutingChain(const RoutingChain& other)  : JsonStore(other) {
@@ -818,11 +805,6 @@ namespace Configs {
         }
         fn = QString(other.fn);
         defaultOutboundID = other.defaultOutboundID;
-
-        _add(new configItem("id", &id, itemType::integer));
-        _add(new configItem("name", &name, itemType::string));
-        _add(new configItem("default_outbound", &defaultOutboundID, itemType::integer));
-        _add(new configItem("rules", &castedRules, itemType::jsonStoreList));
     }
 
     bool RoutingChain::Save() {
@@ -834,6 +816,7 @@ namespace Configs {
     }
 
     void RoutingChain::FromJson(QJsonObject object) {
+        auto & _map = this->_map();
         for (const auto &key: object.keys()) {
             if (_map.count(key) == 0) {
                 continue;

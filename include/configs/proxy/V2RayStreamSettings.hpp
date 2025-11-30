@@ -34,30 +34,34 @@ namespace Configs {
         QString reality_pbk = "";
         QString reality_sid = "";
 
+        #define d_add(X, Y, B) _put(ptr, X, &this->Y, itemType::B)
+        
         V2rayStreamSettings() : JsonStore() {
-            _add(new configItem("net", &network, itemType::string));
-            _add(new configItem("sec", &security, itemType::string));
-            _add(new configItem("pac_enc", &packet_encoding, itemType::string));
-            _add(new configItem("path", &path, itemType::string));
-            _add(new configItem("host", &host, itemType::string));
-            _add(new configItem("sni", &sni, itemType::string));
-            _add(new configItem("alpn", &alpn, itemType::string));
-            _add(new configItem("cert", &certificate, itemType::string));
-            _add(new configItem("insecure", &allow_insecure, itemType::boolean));
-            _add(new configItem("headers", &headers, itemType::string));
-            _add(new configItem("h_type", &header_type, itemType::string));
-            _add(new configItem("method", &method, itemType::string));
-            _add(new configItem("ed_name", &ws_early_data_name, itemType::string));
-            _add(new configItem("ed_len", &ws_early_data_length, itemType::integer));
-            _add(new configItem("xhttp_mode", &xhttp_mode, itemType::string));
-            _add(new configItem("xhttp_extra", &xhttp_extra, itemType::string));
-            _add(new configItem("utls", &utlsFingerprint, itemType::string));
-            _add(new configItem("tls_frag", &enable_tls_fragment, itemType::boolean));
-            _add(new configItem("tls_frag_fall_delay", &tls_fragment_fallback_delay, itemType::string));
-            _add(new configItem("tls_record_frag", &enable_tls_record_fragment, itemType::boolean));
-            _add(new configItem("pbk", &reality_pbk, itemType::string));
-            _add(new configItem("sid", &reality_sid, itemType::string));
         }
+        INIT_MAP_1
+            d_add("net", network, string);
+            d_add("sec", security, string);
+            d_add("pac_enc", packet_encoding, string);
+            d_add("path", path, string);
+            d_add("host", host, string);
+            d_add("sni", sni, string);
+            d_add("alpn", alpn, string);
+            d_add("cert", certificate, string);
+            d_add("insecure", allow_insecure, boolean);
+            d_add("headers", headers, string);
+            d_add("h_type", header_type, string);
+            d_add("method", method, string);
+            d_add("ed_name", ws_early_data_name, string);
+            d_add("ed_len", ws_early_data_length, integer);
+            d_add("xhttp_mode", xhttp_mode, string);
+            d_add("xhttp_extra", xhttp_extra, string);
+            d_add("utls", utlsFingerprint, string);
+            d_add("tls_frag", enable_tls_fragment, boolean);
+            d_add("tls_frag_fall_delay", tls_fragment_fallback_delay, string);
+            d_add("tls_record_frag", enable_tls_record_fragment, boolean);
+            d_add("pbk", reality_pbk, string);
+            d_add("sid", reality_sid, string);
+        STOP_MAP
 
         void BuildStreamSettingsSingBox(QJsonObject *outbound);
 
@@ -116,7 +120,7 @@ namespace Configs {
         if (bean == nullptr) return nullptr;
         auto stream_item = bean->_get("stream");
         if (stream_item != nullptr) {
-            auto stream_store = (JsonStore *) stream_item->ptr;
+            auto stream_store = *(JsonStore **) stream_item->getPtr(bean);
             auto stream = (Configs::V2rayStreamSettings *) stream_store;
             return stream;
         }

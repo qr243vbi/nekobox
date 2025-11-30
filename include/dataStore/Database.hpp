@@ -11,6 +11,7 @@ namespace Configs {
     class ProfileManager : private JsonStore {
     public:
         // JsonStore
+        virtual ConfJsMap & _map() override;
 
         // order -> id
         QList<int> groupsTabOrder;

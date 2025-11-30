@@ -4,6 +4,7 @@
 #include "include/global/CountryHelper.hpp"
 #include "include/stats/traffic/TrafficData.hpp"
 #include "include/configs/proxy/AbstractBean.hpp"
+#include "include/configs/proxy/MieruBean.hpp"
 #include "include/configs/proxy/ExtraCore.h"
 
 namespace Configs {
@@ -34,7 +35,12 @@ namespace Configs {
 
 namespace Configs {
     class ProxyEntity : public JsonStore {
+    private:
+        Stats::TrafficData * traffic_data_pointer = nullptr;
+        Configs::AbstractBean * bean_pointer = nullptr; 
     public:
+        virtual ConfJsMap & _map() override;
+
         QString type;
 
         int id = -1;
@@ -76,6 +82,10 @@ namespace Configs {
 
         [[nodiscard]] Configs::NaiveBean *NaiveBean() const {
             return (Configs::NaiveBean *) bean.get();
+        };
+
+        [[nodiscard]] Configs::MieruBean *MieruBean() const {
+            return (Configs::MieruBean *) bean.get();
         };
 
         [[nodiscard]] Configs::QUICBean *QUICBean() const {

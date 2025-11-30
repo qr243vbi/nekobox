@@ -24,4 +24,14 @@ QString getApplicationPath();
 bool isFileAppendable(QString filePath);
 bool isDirectoryWritable(QString filePath);
 
+struct MainWindowTableSettings{
+    bool manually_column_width = false;
+    int column_width[5];
+    void Save(QSettings & settings);
+    void Load(QSettings & settings);
+};
+namespace Configs{
+    extern MainWindowTableSettings tableSettings;
+}
+
 #endif

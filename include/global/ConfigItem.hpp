@@ -14,22 +14,30 @@ namespace Configs_ConfigItem {
     };
 
     class configItem {
+    private:
+        size_t ptr;
     public:
         QString name;
-        void *ptr;
         itemType type;
 
-        configItem(QString n, void *p, itemType t) {
+        configItem(QString n, size_t p, itemType t) {
             name = std::move(n);
             ptr = p;
             type = t;
         }
+        void * getPtr(void * obj);
+        friend class JsonStore;
     };
 
     class JsonStore {
     public:
         virtual ~JsonStore() = default;
-        QMap<QString, std::shared_ptr<configItem>> _map;
+   //     QMap<QString, std::shared_ptr<configItem>> _map;
+        void _put(QMap<QString, std::shared_ptr<configItem>> & _map, 
+            QString str, void *, itemType type
+        );
+
+        virtual QMap<QString, std::shared_ptr<configItem>> & _map() = 0;
 
         std::function<void()> callback_after_load = nullptr;
         std::function<void()> callback_before_save = nullptr;
@@ -46,13 +54,15 @@ namespace Configs_ConfigItem {
             fn = std::move(fileName);
         }
 
-        void _add(configItem *item);
+        void _setValue(const QString &name, void *p);
+
+   //     void _add(configItem *item);
 
         QString _name(void *p);
 
         std::shared_ptr<configItem> _get(const QString &name);
 
-        void _setValue(const QString &name, void *p);
+//        void _setValue(const QString &name, void *p);
 
         QJsonObject ToJson(const QStringList &without = {});
 
@@ -69,3 +79,4 @@ namespace Configs_ConfigItem {
 } // namespace Configs_ConfigItem
 
 using namespace Configs_ConfigItem;
+typedef QMap<QString, std::shared_ptr<configItem>> ConfJsMap;

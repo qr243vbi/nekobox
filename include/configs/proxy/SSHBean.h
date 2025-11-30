@@ -15,15 +15,20 @@ namespace Configs {
         QString clientVersion;
 
         SSHBean() : AbstractBean(0) {
-            _add(new configItem("user", &user, itemType::string));
-            _add(new configItem("password", &password, itemType::string));
-            _add(new configItem("privateKey", &privateKey, itemType::string));
-            _add(new configItem("privateKeyPath", &privateKeyPath, itemType::string));
-            _add(new configItem("privateKeyPass", &privateKeyPass, itemType::string));
-            _add(new configItem("hostKey", &hostKey, itemType::stringList));
-            _add(new configItem("hostKeyAlgs", &hostKeyAlgs, itemType::stringList));
-            _add(new configItem("clientVersion", &clientVersion, itemType::string));
-        };
+        }
+#define _add(X, Y, B) ADD_MAP(X, Y, B)
+
+        INIT_MAP
+            _add("user", user, string);
+            _add("password", password, string);
+            _add("privateKey", privateKey, string);
+            _add("privateKeyPath", privateKeyPath, string);
+            _add("privateKeyPass", privateKeyPass, string);
+            _add("hostKey", hostKey, stringList);
+            _add("hostKeyAlgs", hostKeyAlgs, stringList);
+            _add("clientVersion", clientVersion, string);
+        STOP_MAP
+        #undef _add
 
         QString DisplayType() override { return "SSH"; };
 

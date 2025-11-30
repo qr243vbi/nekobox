@@ -13,14 +13,15 @@ namespace Configs {
         bool noLogs;
 
         ExtraCoreBean() : AbstractBean(0) {
-            _add(new configItem("socks_address", &socksAddress, itemType::string));
-            _add(new configItem("socks_port", &socksPort, itemType::integer));
-            _add(new configItem("extra_core_path", &extraCorePath, itemType::string));
-            _add(new configItem("extra_core_args", &extraCoreArgs, itemType::string));
-            _add(new configItem("extra_core_conf", &extraCoreConf, itemType::string));
-            _add(new configItem("no_logs", &noLogs, itemType::boolean));
-        };
-
+        }
+        INIT_MAP
+            ADD_MAP("socks_address", socksAddress, string);
+            ADD_MAP("socks_port", socksPort, integer);
+            ADD_MAP("extra_core_path", extraCorePath, string);
+            ADD_MAP("extra_core_args", extraCoreArgs, string);
+            ADD_MAP("extra_core_conf", extraCoreConf, string);
+            ADD_MAP("no_logs", noLogs, boolean);
+        STOP_MAP
         QString DisplayType() override { return "ExtraCore"; };
 
         CoreObjOutboundBuildResult BuildCoreObjSingBox() override;

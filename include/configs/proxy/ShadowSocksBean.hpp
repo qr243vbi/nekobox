@@ -6,6 +6,8 @@
 
 namespace Configs {
     class ShadowSocksBean : public AbstractBean {
+    private:
+        V2rayStreamSettings * streamPtr;
     public:
         QString method = "aes-128-gcm";
         QString password = "";
@@ -15,12 +17,16 @@ namespace Configs {
         std::shared_ptr<V2rayStreamSettings> stream = std::make_shared<V2rayStreamSettings>();
 
         ShadowSocksBean() : AbstractBean(0) {
-            _add(new configItem("method", &method, itemType::string));
-            _add(new configItem("pass", &password, itemType::string));
-            _add(new configItem("plugin", &plugin, itemType::string));
-            _add(new configItem("uot", &uot, itemType::integer));
-            _add(new configItem("stream", dynamic_cast<JsonStore *>(stream.get()), itemType::jsonStore));
-        };
+            streamPtr = stream.get();
+        }
+
+        INIT_MAP
+            ADD_MAP("method", method, string);
+            ADD_MAP("pass", password, string);
+            ADD_MAP("plugin", plugin, string);
+            ADD_MAP("uot", uot, integer);
+            ADD_MAP("stream", streamPtr, jsonStore);
+        STOP_MAP
 
         bool IsValid() {
             return Preset::SingBox::ShadowsocksMethods.contains(method);
