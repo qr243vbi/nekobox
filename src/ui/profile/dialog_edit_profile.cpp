@@ -12,6 +12,7 @@
 #include "include/ui/profile/edit_ssh.h"
 #include "include/ui/profile/edit_custom.h"
 #include "include/ui/profile/edit_extra_core.h"
+#include "include/ui/profile/edit_mieru.h"
 
 #include "include/configs/proxy/includes.h"
 #include "include/configs/proxy/Preset.hpp"
@@ -194,6 +195,7 @@ DialogEditProfile::DialogEditProfile(const QString &_type, int profileOrGroupId,
         LOAD_TYPE("hysteria2")
         LOAD_TYPE("tuic")
         LOAD_TYPE("anytls")
+        LOAD_TYPE("mieru")
         LOAD_TYPE("wireguard")
         LOAD_TYPE("tailscale")
         LOAD_TYPE("ssh")
@@ -292,6 +294,10 @@ void DialogEditProfile::typeSelected(const QString &newType) {
         innerWidget = _innerWidget;
         innerEditor = _innerWidget;
         ui->apply_to_group->hide();
+    } else if (type == "mieru"){
+        auto _innerWidget = new EditMieru(this);
+        innerWidget = _innerWidget;
+        innerEditor = _innerWidget;
     } else {
         validType = false;
     }

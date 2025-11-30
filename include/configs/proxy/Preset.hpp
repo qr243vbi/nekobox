@@ -1,4 +1,5 @@
 #pragma once
+#include <QStringList>
 
 namespace Preset::SingBox {
   inline QStringList VpnImplementation = {"system", "gvisor", "mixed"};

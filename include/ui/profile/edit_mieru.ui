@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>EditMieru</class>
+ <widget class="QWidget" name="EditMieru">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>442</width>
+    <height>347</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>EditMieru</string>
+  </property>
+  <layout class="QFormLayout" name="formLayout">
+   <item row="0" column="0">
+    <widget class="QLabel" name="user_l">
+     <property name="text">
+      <string>Username</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="1">
+    <widget class="QLineEdit" name="username"/>
+   </item>
+   <item row="1" column="0">
+    <widget class="QLabel" name="password_l">
+     <property name="text">
+      <string>Password</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="1">
+    <widget class="QLineEdit" name="password"/>
+   </item>
+   <item row="3" column="0">
+    <widget class="QLabel" name="port_range_l">
+     <property name="text">
+      <string>Port range</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="1">
+    <widget class="QTextEdit" name="port_range"/>
+   </item>
+   <item row="4" column="0" colspan="2">
+    <widget class="QWidget" name="widget" native="true">
+     <layout class="QGridLayout" name="gridLayout"/>
+    </widget>
+   </item>
+   <item row="2" column="0">
+    <widget class="QLabel" name="multiplexing_l">
+     <property name="text">
+      <string>Multiplexing</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="1">
+    <widget class="QComboBox" name="multiplexing">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <item>
+      <property name="text">
+       <string>MULTIPLEXING_OFF</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>MULTIPLEXING_LOW</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>MULTIPLEXING_MIDDLE</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>MULTIPLEXING_HIGH</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

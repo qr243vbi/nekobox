@@ -5,6 +5,30 @@
 
 #include "include/global/Configs.hpp"
 
+
+#ifndef ADD_MAP
+
+
+#define INIT_MAP_1 virtual ConfJsMap & _map() override {   \
+static ConfJsMap ptr;                   \
+static bool init = false;               \
+if (init) return ptr;                    
+
+#define INIT_MAP INIT_MAP_1              \
+ptr = AbstractBean::_map();   
+
+#define STOP_MAP \
+init = true;     \
+return ptr;      \
+}
+
+#define ADD_MAP(X, Y, B) _put(ptr, X, &this->Y, itemType::B)
+#define _add(X, Y, B) ADD_MAP(X, Y, B)
+#endif
+#ifndef _add
+#define _add(X, Y, B) ADD_MAP(X, Y, B)
+#endif
+
 namespace Configs {
     struct CoreObjOutboundBuildResult {
     public:
@@ -15,6 +39,7 @@ namespace Configs {
     class AbstractBean : public JsonStore {
     public:
         int version;
+        virtual ConfJsMap& _map() override;
 
         QString name = "";
         QString serverAddress = "127.0.0.1";

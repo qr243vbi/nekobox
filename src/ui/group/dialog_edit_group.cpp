@@ -2,7 +2,7 @@
 
 #include "include/dataStore/Database.hpp"
 #include "include/ui/mainwindow_interface.h"
-
+#include "include/sys/Settings.h"
 #include <QHeaderView>
 #include <QClipboard>
 #include <QStringListModel>
@@ -29,7 +29,7 @@ DialogEditGroup::DialogEditGroup(const std::shared_ptr<Configs::Group> &ent, QWi
     ui->url->setText(ent->url);
     ui->type->setCurrentIndex(ent->url.isEmpty() ? 0 : 1);
     ui->type->currentIndexChanged(ui->type->currentIndex());
-    ui->manually_column_width->setChecked(ent->manually_column_width);
+    ui->manually_column_width->setChecked(Configs::tableSettings.manually_column_width);
 
     bool disable_share = true;
 
@@ -347,7 +347,7 @@ void DialogEditGroup::accept() {
     ent->url = ui->url->text();
     ent->archive = ui->archive->isChecked();
     ent->skip_auto_update = ui->skip_auto_update->isChecked();
-    ent->manually_column_width = ui->manually_column_width->isChecked();
+    Configs::tableSettings.manually_column_width = ui->manually_column_width->isChecked();
     if (CACHE.edited){
         ent->landing_proxy_id = CACHE.landing_proxy_id;
         ent->front_proxy_id = CACHE.front_proxy_id;

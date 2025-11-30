@@ -13,13 +13,15 @@ namespace Configs {
         int socks_port = 0;
 
         CustomBean() : AbstractBean(0) {
-            _add(new configItem("core", &core, itemType::string));
-            _add(new configItem("cmd", &command, itemType::stringList));
-            _add(new configItem("cs", &config_simple, itemType::string));
-            _add(new configItem("cs_suffix", &config_suffix, itemType::string));
-            _add(new configItem("mapping_port", &mapping_port, itemType::integer));
-            _add(new configItem("socks_port", &socks_port, itemType::integer));
-        };
+        }
+        INIT_MAP
+            ADD_MAP("core", core, string);
+            ADD_MAP("cmd", command, stringList);
+            ADD_MAP("cs", config_simple, string);
+            ADD_MAP("cs_suffix", config_suffix, string);
+            ADD_MAP("mapping_port", mapping_port, integer);
+            ADD_MAP("socks_port", socks_port, integer);
+        STOP_MAP
 
         QString DisplayType() override {
             if (core == "internal") {

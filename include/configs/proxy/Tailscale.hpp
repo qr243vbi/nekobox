@@ -18,18 +18,23 @@ namespace Configs {
         bool globalDNS = false;
 
         explicit TailscaleBean() : AbstractBean(0) {
-            _add(new configItem("state_directory", &state_directory, itemType::string));
-            _add(new configItem("auth_key", &auth_key, itemType::string));
-            _add(new configItem("control_url", &control_url, itemType::string));
-            _add(new configItem("ephemeral", &ephemeral, itemType::boolean));
-            _add(new configItem("hostname", &hostname, itemType::string));
-            _add(new configItem("accept_routes", &accept_routes, itemType::boolean));
-            _add(new configItem("exit_node", &exit_node, itemType::string));
-            _add(new configItem("exit_node_allow_lan_access", &exit_node_allow_lan_access, itemType::boolean));
-            _add(new configItem("advertise_routes", &advertise_routes, itemType::stringList));
-            _add(new configItem("advertise_exit_node", &advertise_exit_node, itemType::boolean));
-            _add(new configItem("globalDNS", &globalDNS, itemType::boolean));
-        };
+        }
+        #define _add(X, Y, B) ADD_MAP(X, Y, B)
+
+        INIT_MAP
+            _add("state_directory", state_directory, string);
+            _add("auth_key", auth_key, string);
+            _add("control_url", control_url, string);
+            _add("ephemeral", ephemeral, boolean);
+            _add("hostname", hostname, string);
+            _add("accept_routes", accept_routes, boolean);
+            _add("exit_node", exit_node, string);
+            _add("exit_node_allow_lan_access", exit_node_allow_lan_access, boolean);
+            _add("advertise_routes", advertise_routes, stringList);
+            _add("advertise_exit_node", advertise_exit_node, boolean);
+            _add("globalDNS", globalDNS, boolean);
+        STOP_MAP
+        
 
         QString DisplayType() override { return "Tailscale"; }
 

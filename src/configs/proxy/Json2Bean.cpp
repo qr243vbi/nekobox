@@ -283,4 +283,24 @@ namespace Configs
         return false;
     }
 
+    bool MieruBean::TryParseJson(const QJsonObject& obj)
+    {
+        name = obj["tag"].toString();
+        serverAddress = obj["server"].toString();
+        serverPort = obj["server_port"].toInt();
+        password = obj["password"].toString();
+        username = obj["username"].toString();
+        multiplexing = obj["multiplexing"].toString();
+        auto & ports = serverPorts;
+        ports.clear();
+        
+        auto json_ports = obj["server_ports"];
+        if (json_ports.isArray()){
+            for (auto  val : obj["server_ports"].toArray()){
+                ports.append(val.toString());
+            };
+        }
+
+        return true;
+    }
 }

@@ -19,9 +19,19 @@ namespace Stats {
 
         explicit TrafficData(std::string tag) {
             this->tag = std::move(tag);
-            _add(new configItem("dl", &downlink, itemType::integer64));
-            _add(new configItem("ul", &uplink, itemType::integer64));
         };
+        
+    #define d_put(map1, X, Y, B) _put(map1, X, &this->Y, B)
+
+        virtual ConfJsMap & _map(){
+            static ConfJsMap map1;
+            static bool mapinit = false;
+            if (!mapinit){
+                d_put(map1, "dl", downlink, itemType::integer64);
+                d_put(map1, "ul", uplink, itemType::integer64);
+            }
+            return map1;
+        }
 
         void Reset() {
             downlink = 0;
