@@ -98,6 +98,12 @@ Various formats are supported, including share links, JSON array of outbounds an
 - Terminal UI
 - Remote control
 - Support for all platforms that supported by sing-box and Qt
+- Add more protocols
+- Dynamic UI
+
+## Changelog Channel
+
+https://t.me/nekobox_group
 
 ## FAQ
 **What is AppImage?** <br/>
@@ -140,3 +146,13 @@ Solution:
 
 **Where are the downloadable route profiles/rulesets coming from?**<br/>
 They are located at the [ruleset](https://github.com/qr243vbi/ruleset/tree/routeprofiles) repository.
+
+## Contact Us
+  - Use GitHub issue.
+  - Use Telegram [@qr243vbi](https://t.me/qr243vbi)
+
+## License
+
+Use of this software is subject to the GPL-3 license.
+
+[![Star History Chart](https://api.star-history.com/svg?repos=qr243vbi/nekobox&type=Date)](https://www.star-history.com/#qr243vbi/nekobox&Date)
