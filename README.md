@@ -104,7 +104,7 @@ Various formats are supported, including share links, JSON array of outbounds an
 
 ## Changelog Channel
 
-https://t.me/nekobox_group
+https://t.me/nekobox_qr243vbi
 
 ## FAQ
 **What is AppImage?** <br/>
@@ -151,7 +151,7 @@ They are located at the [ruleset](https://github.com/qr243vbi/ruleset/tree/route
 ## Contact Us
   - Write GitHub issue.
   - Or use Matrix [@qr243vbi:g24.at](https://matrix.to/#/@qr243vbi:g24.at)
-  - Or use Telegram [@qr243vbi](https://t.me/qr243vbi)
+  - Or use Telegram [@qr243vbi](https://t.me/qr243vbii)
 
 ## License
 
