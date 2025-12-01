@@ -617,9 +617,9 @@ namespace Configs {
             inboundObj["mtu"] = dataStore->vpn_mtu;
             inboundObj["stack"] = dataStore->vpn_implementation;
             inboundObj["strict_route"] = dataStore->vpn_strict_route;
-#ifdef Q_OS_UNIX
-            inboundObj["auto_redirect"] = true;
-#endif
+//#ifdef Q_OS_UNIX
+//            inboundObj["auto_redirect"] = true;
+//#endif
             auto tunAddress = QJsonArray{"172.19.0.1/24"};
             if (dataStore->vpn_ipv6) tunAddress += "fdfe:dcba:9876::1/96";
             inboundObj["address"] = tunAddress;
