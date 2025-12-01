@@ -179,6 +179,13 @@ namespace Subscription {
             if (!ok) return;
         }
 
+        // Trojan
+        if (str.startsWith("mieru://")) {
+            ent = Configs::ProfileManager::NewProxyEntity("mieru");
+            auto ok = ent->MieruBean()->TryParseLink(str);
+            if (!ok) return;
+        }
+
         // AnyTLS
         if (str.startsWith("anytls://")) {
             ent = Configs::ProfileManager::NewProxyEntity("anytls");
