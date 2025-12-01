@@ -1166,7 +1166,14 @@ void MainWindow::on_menu_exit_triggered() {
 #endif
         list << Configs::GetBasePath() + "/" + this->archive_name;
         list << updateDir;
-        list += QApplication::arguments();
+        auto arguments = Configs::dataStore->argv;
+        if (arguments.length() > 0) {
+            arguments.removeFirst();
+            arguments.removeAll("-tray");
+            arguments.removeAll("-flag_restart_tun_on");
+            arguments.removeAll("-flag_restart_dns_set");
+        }
+        list += arguments;
         QString sourceFilePath = getUpdaterPath();
         QDir tempdir;
         tempdir.mkpath("temp");
