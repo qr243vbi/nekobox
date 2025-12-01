@@ -39,6 +39,7 @@ Starting with version 5.8.0, we have discontinued support for MacOS. NekoRay liv
 - Hysteria
 - Hysteria2
 - AnyTLS
+- Mieru
 - Wireguard
 - SSH
 - Custom Outbound
