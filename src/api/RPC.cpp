@@ -58,6 +58,11 @@ std::unique_ptr<QGrpcCallReply> call = client.X(request);           \
             *rpcOK = false;
             return "";
         }
+
+//        qDebug() << "Start Proxy";
+//        qDebug() << request.coreConfig().toStdString().c_str();
+//        qDebug() << "END";
+
         CHANNEL(Start, ErrorResp)
 
         if(status.isOk()) {

@@ -419,18 +419,18 @@ namespace Configs {
 
     QJsonObject BuildDnsObject(QString address, bool tunEnabled)
     {
-        bool usingSystemdResolved = false;
-#ifdef Q_OS_LINUX
-        usingSystemdResolved = ReadFileText("/etc/resolv.conf").contains("systemd-resolved");
-#endif
+//        bool usingSystemdResolved = false;
+//#ifdef Q_OS_LINUX
+//        usingSystemdResolved = ReadFileText("/etc/resolv.conf").contains("systemd-resolved");
+//#endif
         if (address.startsWith("local"))
         {
-            if (tunEnabled && usingSystemdResolved)
-            {
-                return {
-                    {"type", "underlying"}
-                };
-            }
+ //           if (tunEnabled && usingSystemdResolved)
+ //           {
+ //               return {
+ //                   {"type", "underlying"}
+ //               };
+ //           }
             return {
             {"type", "local"}
             };

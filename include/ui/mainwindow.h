@@ -9,7 +9,7 @@
 #include "include/global/Configs.hpp"
 #include "include/stats/connections/connectionLister.hpp"
 #include "3rdparty/qv2ray/v2/ui/widgets/speedchart/SpeedWidget.hpp"
-#ifdef Q_OS_LINUX
+#ifdef Q_OS_UNIX
 #include <QtDBus>
 #endif
 
@@ -316,7 +316,7 @@ inline MainWindow *GetMainWindow() {
 
 void UI_InitMainWindow();
 
-#ifdef Q_OS_LINUX
+#ifdef Q_OS_UNIX
 /*
  * Proxy class for interface org.freedesktop.portal.Request
  */
