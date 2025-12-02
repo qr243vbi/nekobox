@@ -1,4 +1,5 @@
 #include <include/dataStore/ProxyEntity.hpp>
+#include <qnamespace.h>
 
 namespace Configs
 {
@@ -14,7 +15,7 @@ namespace Configs
             d_put(map1, "type", type, itemType::string);
             d_put(map1, "id", id, itemType::integer);
             d_put(map1, "gid", gid, itemType::integer);
-            d_put(map1, "yc", latency, itemType::integer);
+            d_put(map1, "yc", latencyInt, itemType::integer);
             d_put(map1, "dl", dl_speed, itemType::string);
             d_put(map1, "ul", ul_speed, itemType::string);
             d_put(map1, "report", full_test_report, itemType::string);
@@ -44,32 +45,54 @@ namespace Configs
 
     QString ProxyEntity::DisplayTestResult() const {
         QString result;
-        if (latency < 0) {
+        if (latencyInt < 0) {
             result = QCoreApplication::translate("MainWindow", "Unavailable");
-        } else if (latency > 0) {
+        } else if (latencyInt > 0) {
             if (!test_country.isEmpty()) result += UNICODE_LRO + CountryCodeToFlag(test_country) + " ";
-            result += QString("%1 ms").arg(latency);
+            result += QString("%1 ms").arg(latencyInt);
         }
         if (!dl_speed.isEmpty() && dl_speed != "N/A") result += " ↓" + dl_speed;
         if (!ul_speed.isEmpty() && ul_speed != "N/A") result += " ↑" + ul_speed;
         return result;
     }
 
+    std::list<ColorRule> latencyColorList = {  
+        {1, 5, 0, 0, false, Qt::darkGreen},
+        {6, 5, 0, 0, false, QColor(128, 0, 128)},
+        {0,0,0,0, false, QColor(255, 165, 0)},
+        {0, 0, 0, 0, true, Qt::red}  
+    };
+
     QColor ProxyEntity::DisplayLatencyColor() const {
-        if (latency < 0) {
-            return Qt::red;
-        } else if (latency > 0) {
-            if (latency <= 120) {
-                return Qt::green;
-            } else if (latency <= 250){
-                return Qt::darkGreen;
-            } else if (latency <= 420){
-                return Qt::darkYellow;
-            } else {
-                return Qt::darkGray;
+        if (latencyInt < 0){
+            for (auto & color: latencyColorList){
+                if (color.unavailable){
+                    return color.color;
+                }
             }
         } else {
-            return {};
+            for (auto & color: latencyColorList){
+                if (!color.unavailable){
+                    if (color.orderRange > 0){
+                        if (latencyOrder < color.orderMin){
+                            continue;
+                        }
+                        if (latencyOrder > (color.orderMin + color.orderRange)){
+                            continue;
+                        }
+                    }
+                    if (color.latencyRange > 0){
+                        if (latencyInt < color.latencyMin){
+                            continue;
+                        }
+                        if (latencyInt > (color.latencyMin + color.latencyRange)){
+                            continue;
+                        }
+                    }
+                    return color.color;
+                }
+            }
         }
+        return Qt::black;
     }
 }

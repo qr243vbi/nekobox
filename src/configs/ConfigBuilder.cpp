@@ -134,7 +134,7 @@ namespace Configs {
             }
             if (!IsValid(item)) {
                 MW_show_log("Skipping invalid config: " + item->bean->name);
-                item->latency = -1;
+                item->latencyInt = -1;
                 continue;
             }
             auto res = BuildConfig(item, true, false, ++index);

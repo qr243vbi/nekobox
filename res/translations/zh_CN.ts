@@ -1904,6 +1904,14 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>URL 测试选定项</translation>
     </message>
     <message>
+        <source>Clear Test Result Selected</source>
+        <translation>清除选定的测试结果</translation>
+    </message>
+    <message>
+        <source>Current group</source>
+        <translation>当前组</translation>
+    </message>
+    <message>
         <source>Ctrl+Shift+S</source>
         <translation>Ctrl+Shift+S</translation>
     </message>
@@ -2215,7 +2223,7 @@ Deleted %3 Profiles:
 %4</translation>
     </message>
     <message>
-        <source>Mixed: %1</source>
+        <source>IP address: %1</source>
         <translation>混合: %1</translation>
     </message>
     <message>

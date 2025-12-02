@@ -630,22 +630,31 @@
      <addaction name="menu_copy_links"/>
      <addaction name="menu_copy_links_nkr"/>
     </widget>
+    <widget class="QMenu" name="menuCurrent_group">
+     <property name="title">
+      <string>Current group</string>
+     </property>
+     <addaction name="separator"/>
+    </widget>
     <addaction name="menu_add_from_input"/>
     <addaction name="menu_add_from_clipboard"/>
+    <addaction name="actionAdd_new_Group"/>
     <addaction name="separator"/>
     <addaction name="menu_start"/>
     <addaction name="menu_stop"/>
     <addaction name="separator"/>
     <addaction name="menu_select_all"/>
     <addaction name="menu_clone"/>
-    <addaction name="menu_reset_traffic"/>
     <addaction name="menu_delete"/>
-    <addaction name="menu_share_item"/>
-    <addaction name="separator"/>
-    <addaction name="actionUrl_Test_Selected"/>
-    <addaction name="menu_resolve_selected"/>
     <addaction name="actionSpeedtest_Current"/>
+    <addaction name="separator"/>
+    <addaction name="menu_share_item"/>
+    <addaction name="actionUrl_Test_Selected"/>
+    <addaction name="actionUrl_Test_Clear"/>
+    <addaction name="menu_resolve_selected"/>
+    <addaction name="menu_reset_traffic"/>
     <addaction name="actionSpeedtest_Selected"/>
+    <addaction name="menuCurrent_group"/>
    </widget>
    <widget class="QMenu" name="menuHidden_menu">
     <property name="title">
@@ -1013,6 +1022,14 @@
     <bool>true</bool>
    </property>
   </action>
+  <action name="actionUrl_Test_Clear">
+   <property name="text">
+    <string>Clear Test Result Selected</string>
+   </property>
+   <property name="visible">
+    <bool>true</bool>
+   </property>
+  </action>
   <action name="actionUrl_Test_Group">
    <property name="enabled">
     <bool>true</bool>
@@ -1074,6 +1091,11 @@
   <action name="actionAdd_profile_from_File">
    <property name="text">
     <string>Add profile from File</string>
+   </property>
+  </action>
+  <action name="actionAdd_new_Group">
+   <property name="text">
+    <string>Add new Group</string>
    </property>
   </action>
  </widget>
