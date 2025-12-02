@@ -34,6 +34,17 @@ namespace Configs {
 }; // namespace Configs
 
 namespace Configs {
+    struct ColorRule{
+        uint orderMin;
+        uint orderRange;
+        uint latencyMin;
+        uint latencyRange;
+        bool unavailable;
+        QColor color;
+    };
+
+    extern std::list<ColorRule> latencyColorList;
+
     class ProxyEntity : public JsonStore {
     private:
         Stats::TrafficData * traffic_data_pointer = nullptr;
@@ -45,7 +56,8 @@ namespace Configs {
 
         int id = -1;
         int gid = 0;
-        int latency = 0;
+        int latencyInt = 0;
+        int latencyOrder = 0;
         QString dl_speed;
         QString ul_speed;
         QString test_country;

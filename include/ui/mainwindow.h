@@ -155,7 +155,7 @@ private slots:
 
     void on_menu_scan_qr_triggered();
 
-    void on_menu_clear_test_result_triggered();
+    void on_menu_clear_test_result_triggered(bool isSelectedOnly=false);
 
     void on_menu_manage_groups_triggered();
 

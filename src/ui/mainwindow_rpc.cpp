@@ -75,12 +75,12 @@ void MainWindow::runURLTest(const QString& config, bool useDefault, const QStrin
                 }
                 QString error = (res.error());
                 if (error.isEmpty()) {
-                    ent->latency = res.latencyMs();
+                    ent->latencyInt = res.latencyMs();
                 } else {
                     if (error.contains("test aborted") ||
-                        error.contains("context canceled")) ent->latency=0;
+                        error.contains("context canceled")) ent->latencyInt=0;
                     else {
-                        ent->latency = -1;
+                        ent->latencyInt = -1;
                         MW_show_log(tr("[%1] test error: %2").arg(
                             ent->bean->DisplayTypeAndName(), error));
                     }
@@ -121,12 +121,12 @@ void MainWindow::runURLTest(const QString& config, bool useDefault, const QStrin
         }
         auto error = (res.error());
         if (error.isEmpty()) {
-            ent->latency = res.latencyMs();
+            ent->latencyInt = res.latencyMs();
         } else {
             if (error.contains("test aborted") ||
-                error.contains("context canceled")) ent->latency=0;
+                error.contains("context canceled")) ent->latencyInt=0;
             else {
-                ent->latency = -1;
+                ent->latencyInt = -1;
                 MW_show_log(tr("[%1] test error: %2").arg(
                 ent->bean->DisplayTypeAndName(), error));
             }
@@ -306,7 +306,7 @@ void MainWindow::querySpeedtest(QDateTime lastProxyListUpdate, const QMap<QStrin
             auto country = result.serverCountry();
             if (!dl_speed.isEmpty()) profile->dl_speed = (dl_speed);
             if (!ul_speed.isEmpty()) profile->ul_speed = (ul_speed);
-            if (profile->latency <= 0 && latency > 0) profile->latency = latency;
+            if (profile->latencyInt <= 0 && latency > 0) profile->latencyInt = latency;
             if (!country.isEmpty()) profile->test_country = CountryNameToCode((country));
             refresh_proxy_list(profile->id);
             lastProxyListUpdate = QDateTime::currentDateTime();
@@ -337,7 +337,7 @@ void MainWindow::queryCountryTest(const QMap<QString, int>& tag2entID, bool test
             {
                 auto latency = result.latency();
                 auto country = result.serverCountry();
-                if (profile->latency <= 0 && latency > 0) profile->latency = latency;
+                if (profile->latencyInt <= 0 && latency > 0) profile->latencyInt = latency;
                 if (!country.isEmpty()) profile->test_country = CountryNameToCode(
                     (country));
                 refresh_proxy_list(profile->id);
@@ -425,14 +425,14 @@ void MainWindow::runSpeedTest(const QString& config, bool useDefault, bool testC
             ent->dl_speed = (res.dlSpeed());
             ent->ul_speed = (res.ulSpeed());
             auto latency = res.latency();
-            if (ent->latency <= 0 && latency > 0) ent->latency = latency;
+            if (ent->latencyInt <= 0 && latency > 0) ent->latencyInt = latency;
             auto country = res.serverCountry();
             if (!country.isEmpty()) ent->test_country = 
                 CountryNameToCode(country);
         } else {
             ent->dl_speed = "N/A";
             ent->ul_speed = "N/A";
-            ent->latency = -1;
+            ent->latencyInt = -1;
             ent->test_country = "";
             MW_show_log(tr("[%1] speed test error: %2").arg(
                 ent->bean->DisplayTypeAndName(), (res.error())));
