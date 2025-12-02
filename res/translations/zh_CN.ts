@@ -2224,7 +2224,7 @@ Deleted %3 Profiles:
     </message>
     <message>
         <source>IP address: %1</source>
-        <translation>混合: %1</translation>
+        <translation>IP地址: %1</translation>
     </message>
     <message>
         <source>Proxy: %1
