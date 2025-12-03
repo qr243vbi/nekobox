@@ -65,9 +65,15 @@ namespace Configs {
 
         virtual ConfJsMap & _map() override{
             static ConfJsMap hys1, hys2, tuic;
+            static ConfJsMap ptr;
             static bool init = false;
             if (!init){
                 init = true;
+                // Add base AbstractBean fields
+                _add(tuic, "name", name, itemType::string);
+                _add(tuic, "addr", serverAddress, itemType::string);
+                _add(tuic, "port", serverPort, itemType::integer);
+                
                 _add(tuic, "forceExternal", forceExternal, itemType::boolean);
             // TLS
                 _add(tuic, "allowInsecure",  allowInsecure, itemType::boolean);

@@ -7,6 +7,8 @@
 #include <QApplication>
 #include <QFile>
 #include <QFileInfo>
+#include <QDir>
+#include <QStandardPaths>
 namespace Configs {
     QString genTunName() {
         auto tun_name = "nekobox-tun";
@@ -624,7 +626,15 @@ namespace Configs {
             if (dataStore->vpn_ipv6) tunAddress += "fdfe:dcba:9876::1/96";
             inboundObj["address"] = tunAddress;
 
-            QJsonArray routeExcludeAddrs = {"127.0.0.0/8"};
+            QJsonArray routeExcludeAddrs = {
+                "127.0.0.0/8",
+                "10.0.0.0/8", //private class a,b,c
+                "172.16.0.0/12",
+                "192.168.0.0/16",
+                "169.254.0.0/16",
+                "224.0.0.0/4",
+                "255.255.255.255/32"
+            };
             QJsonArray routeExcludeSets;
             if (dataStore->enable_tun_routing)
             {
@@ -963,10 +973,13 @@ namespace Configs {
                 experimentalObj["clash_api"] = clash_api;
             }
 
+            auto cachePath = QStandardPaths::writableLocation(QStandardPaths::CacheLocation);
+            QDir().mkpath(cachePath);//create parent dir tree
             QJsonObject cache_file = {
                 {"enabled", true},
                 {"store_fakeip", true},
-                {"store_rdrc", true}
+                {"store_rdrc", true},
+                {"path", cachePath + "/cache.db"}
             };
             experimentalObj["cache_file"] = cache_file;
         }
