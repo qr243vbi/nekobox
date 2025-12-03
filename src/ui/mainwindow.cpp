@@ -64,6 +64,7 @@
 #include <3rdparty/QHotkey/qhotkey.h>
 #include <3rdparty/qv2ray/v2/proxy/QvProxyConfigurator.hpp>
 #include <QDir>
+#include <QStandardPaths>
 #include <QFileDialog>
 #include <QMimeData>
 #include <QToolTip>
@@ -290,17 +291,22 @@ MainWindow::MainWindow(QWidget *parent)
   software_name = "nekobox";
   software_core_name = "sing-box";
   //
-  if (auto dashDir = QDir("dashboard");
-      !dashDir.exists("dashboard") && QDir().mkdir("dashboard")) {
-    if (auto dashFile = QFile(":/nekobox/dashboard-notice.html");
-        dashFile.exists() && dashFile.open(QIODevice::ReadOnly)) {
-      auto data = dashFile.readAll();
-      if (auto dest = QFile("dashboard/index.html");
-          dest.open(QIODevice::Truncate | QIODevice::WriteOnly)) {
-        dest.write(data);
-        dest.close();
+  {
+    auto appDataPath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
+    QDir().mkpath(appDataPath + "/dashboard");
+    auto dashboardDir = QDir(appDataPath + "/dashboard");
+    
+    if (!dashboardDir.exists("index.html")) {
+      if (auto dashFile = QFile(":/nekobox/dashboard-notice.html");
+          dashFile.exists() && dashFile.open(QIODevice::ReadOnly)) {
+        auto data = dashFile.readAll();
+        if (auto dest = QFile(dashboardDir.filePath("index.html"));
+            dest.open(QIODevice::Truncate | QIODevice::WriteOnly)) {
+          dest.write(data);
+          dest.close();
+        }
+        dashFile.close();
       }
-      dashFile.close();
     }
   }
 

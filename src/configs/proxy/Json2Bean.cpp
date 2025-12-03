@@ -10,8 +10,8 @@ namespace Configs
             name = obj["tag"].toString();
             proxy_type = proxy_Hysteria;
 
-            serverAddress = obj["server"].isString() ? obj["server"].toString() : "127.0.0.1";
-            serverPort = obj["server_port"].isDouble() ? obj["server_port"].toInt() : 1080;
+            serverAddress = obj["server"].toString();
+            serverPort = obj["server_port"].toInt();
             serverPorts = obj["server_ports"].isArray() ? QJsonArray2QListString(obj["server_ports"].toArray()) : QStringList();
             hop_interval = obj["hop_interval"].toString();
             uploadMbps = obj["up_mbps"].isDouble() ? obj["up_mbps"].toInt() : 0;
@@ -33,8 +33,8 @@ namespace Configs
             name = obj["tag"].toString();
             proxy_type = proxy_Hysteria2;
 
-            serverAddress = obj["server"].isString() ? obj["server"].toString() : "127.0.0.1";
-            serverPort = obj["server_port"].isDouble() ? obj["server_port"].toInt() : 1080;
+            serverAddress = obj["server"].toString();
+            serverPort = obj["server_port"].toInt();
             serverPorts = obj["server_ports"].isArray() ? QJsonArray2QListString(obj["server_ports"].toArray()) : QStringList();
             hop_interval = obj["hop_interval"].toString();
             uploadMbps = obj["up_mbps"].isDouble() ? obj["up_mbps"].toInt() : 0;
@@ -52,8 +52,8 @@ namespace Configs
             name = obj["tag"].toString();
             proxy_type = proxy_TUIC;
 
-            serverAddress = obj["server"].isString() ? obj["server"].toString() : "127.0.0.1";
-            serverPort = obj["server_port"].isDouble() ? obj["server_port"].toInt() : 1080;
+            serverAddress = obj["server"].toString();
+            serverPort = obj["server_port"].toInt();
             uuid = obj["uuid"].toString();
             password = obj["password"].toString();
             congestionControl = obj["congestion_control"].toString();
