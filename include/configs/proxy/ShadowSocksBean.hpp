@@ -12,6 +12,7 @@ namespace Configs {
         QString method = "aes-128-gcm";
         QString password = "";
         QString plugin = "";
+        QString plugin_opts = "";
         int uot = 0;
 
         std::shared_ptr<V2rayStreamSettings> stream = std::make_shared<V2rayStreamSettings>();
@@ -24,6 +25,7 @@ namespace Configs {
             ADD_MAP("method", method, string);
             ADD_MAP("pass", password, string);
             ADD_MAP("plugin", plugin, string);
+            ADD_MAP("plugin_opts", plugin_opts, string);
             ADD_MAP("uot", uot, integer);
             ADD_MAP("stream", streamPtr, jsonStore);
         STOP_MAP
