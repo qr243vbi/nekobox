@@ -91,6 +91,13 @@ namespace Subscription {
             return;
         }
 
+        // SIP008
+        if (str.contains("version") && str.contains("servers"))
+        {
+            updateSIP008(str);
+            return;
+        }
+
         // Multi line
         if (str.count("\n") > 0 && needParse) {
             auto list = Disect(str);
@@ -179,8 +186,8 @@ namespace Subscription {
             if (!ok) return;
         }
 
-        // Trojan
-        if (str.startsWith("mieru://")) {
+        // Mieru simple 
+        if (str.startsWith("mierus://")) {
             ent = Configs::ProfileManager::NewProxyEntity("mieru");
             auto ok = ent->MieruBean()->TryParseLink(str);
             if (!ok) return;
@@ -242,6 +249,26 @@ namespace Subscription {
         updated_order += ent;
     }
 
+    void RawUpdater::updateSIP008(const QString& str)
+    {
+        auto json = QString2QJsonObject(str);
+
+        for (auto o : json["servers"].toArray())
+        {
+            auto out = o.toObject();
+            if (out.isEmpty())
+            {
+                MW_show_log("invalid server object");
+                continue;
+            }
+
+            auto ent = Configs::ProfileManager::NewProxyEntity("shadowsocks");
+            auto ok = ent->ShadowSocksBean()->TryParseFromSIP008(out);
+            if (!ok) continue;
+            updated_order += ent;
+        }
+    }
+
     void RawUpdater::updateSingBox(const QString& str)
     {
         auto json = QString2QJsonObject(str);
@@ -294,6 +321,13 @@ namespace Subscription {
             if (out["type"] == "vmess") {
                 ent = Configs::ProfileManager::NewProxyEntity("vmess");
                 auto ok = ent->VMessBean()->TryParseJson(out);
+                if (!ok) continue;
+            }
+
+            // Mieru
+            if (out["type"] == "mieru") {
+                ent = Configs::ProfileManager::NewProxyEntity("mieru");
+                auto ok = ent->MieruBean()->TryParseJson(out);
                 if (!ok) continue;
             }
 

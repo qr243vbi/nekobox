@@ -79,8 +79,28 @@ namespace Configs
         password = obj["password"].toString();
         plugin = obj["plugin"].toString();
         uot = obj["udp_over_tcp"].toBool();
+
+        if (obj.contains("method")) method = obj["method"].toString();
+        if (obj.contains("password")) password = obj["password"].toString();
+        if (obj.contains("plugin")) plugin = obj["plugin"].toString();
+        if (obj.contains("plugin_opts")) plugin_opts = obj["plugin_opts"].toString();
+        if (obj.contains("uot"))
+        {
+            QJsonValue uot_obj = obj["uot"];
+            if (uot_obj.isDouble()) uot = uot_obj.toInt();
+            if (uot_obj.isBool()) uot = uot_obj.toBool();
+            if (uot_obj.isObject()) uot = uot_obj.toObject()["enabled"].toBool();
+        }
+
         mux_state = obj["multiplex"].isObject() ? (obj["multiplex"].toObject()["enabled"].toBool() ? 1 : 2) : 0;
         return true;
+    }
+
+    bool ShadowSocksBean::TryParseFromSIP008(const QJsonObject& object){
+        if (object.isEmpty()) return false;
+        TryParseJson(object);
+        if (object.contains("remarks")) name = object["remarks"].toString();
+        return !( this->serverAddress.isEmpty() || method.isEmpty() || password.isEmpty());
     }
 
     bool SocksHttpBean::TryParseJson(const QJsonObject& obj)
