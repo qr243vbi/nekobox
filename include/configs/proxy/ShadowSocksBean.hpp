@@ -40,6 +40,8 @@ namespace Configs {
 
         bool TryParseJson(const QJsonObject &obj);
 
+        bool TryParseFromSIP008(const QJsonObject& object);
+
         QString ToShareLink() override;
     };
 } // namespace Configs
