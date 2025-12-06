@@ -33,35 +33,107 @@
           <bool>true</bool>
          </property>
          <layout class="QGridLayout" name="gridLayout">
-          <item row="0" column="0">
-           <widget class="QLabel" name="route_name_l">
-            <property name="text">
-             <string>Name</string>
+          <item row="4" column="0">
+           <widget class="QGroupBox" name="groupBox_2">
+            <property name="title">
+             <string/>
             </property>
+            <property name="flat">
+             <bool>true</bool>
+            </property>
+            <layout class="QGridLayout" name="gridLayout_2">
+             <property name="leftMargin">
+              <number>0</number>
+             </property>
+             <property name="topMargin">
+              <number>0</number>
+             </property>
+             <property name="rightMargin">
+              <number>0</number>
+             </property>
+             <property name="bottomMargin">
+              <number>0</number>
+             </property>
+             <item row="1" column="1">
+              <widget class="QLineEdit" name="route_name"/>
+             </item>
+             <item row="2" column="0">
+              <widget class="QLabel" name="def_out_l">
+               <property name="text">
+                <string>Default outbound</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="0">
+              <widget class="QLabel" name="route_name_l">
+               <property name="text">
+                <string>Name</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="1">
+              <widget class="QComboBox" name="def_out">
+               <item>
+                <property name="text">
+                 <string>Proxy</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Direct</string>
+                </property>
+               </item>
+              </widget>
+             </item>
+             <item row="3" column="0">
+              <widget class="QLabel" name="url_l">
+               <property name="text">
+                <string>Update url</string>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="1">
+              <widget class="QLineEdit" name="url"/>
+             </item>
+            </layout>
            </widget>
           </item>
-          <item row="0" column="1">
-           <widget class="QLineEdit" name="route_name"/>
-          </item>
-          <item row="2" column="1">
-           <widget class="QComboBox" name="def_out">
-            <item>
-             <property name="text">
-              <string>Proxy</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>Direct</string>
-             </property>
-            </item>
-           </widget>
-          </item>
-          <item row="2" column="0">
-           <widget class="QLabel" name="def_out_l">
-            <property name="text">
-             <string>Default outbound</string>
+          <item row="5" column="0">
+           <widget class="QGroupBox" name="update_group">
+            <property name="title">
+             <string/>
             </property>
+            <property name="flat">
+             <bool>true</bool>
+            </property>
+            <layout class="QHBoxLayout" name="horizontalLayout_7">
+             <property name="leftMargin">
+              <number>0</number>
+             </property>
+             <property name="topMargin">
+              <number>0</number>
+             </property>
+             <property name="rightMargin">
+              <number>0</number>
+             </property>
+             <property name="bottomMargin">
+              <number>0</number>
+             </property>
+             <item>
+              <widget class="QCheckBox" name="skip_update">
+               <property name="text">
+                <string>Skip update</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="update_manually">
+               <property name="text">
+                <string>Update manually</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
            </widget>
           </item>
          </layout>

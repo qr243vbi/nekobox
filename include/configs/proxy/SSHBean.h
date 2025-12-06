@@ -16,19 +16,17 @@ namespace Configs {
 
         SSHBean() : AbstractBean(0) {
         }
-#define _add(X, Y, B) ADD_MAP(X, Y, B)
 
         INIT_MAP
-            _add("user", user, string);
-            _add("password", password, string);
-            _add("privateKey", privateKey, string);
-            _add("privateKeyPath", privateKeyPath, string);
-            _add("privateKeyPass", privateKeyPass, string);
-            _add("hostKey", hostKey, stringList);
-            _add("hostKeyAlgs", hostKeyAlgs, stringList);
-            _add("clientVersion", clientVersion, string);
+            ADD_MAP("user", user, string);
+            ADD_MAP("password", password, string);
+            ADD_MAP("privateKey", privateKey, string);
+            ADD_MAP("privateKeyPath", privateKeyPath, string);
+            ADD_MAP("privateKeyPass", privateKeyPass, string);
+            ADD_MAP("hostKey", hostKey, stringList);
+            ADD_MAP("hostKeyAlgs", hostKeyAlgs, stringList);
+            ADD_MAP("clientVersion", clientVersion, string);
         STOP_MAP
-        #undef _add
 
         QString DisplayType() override { return "SSH"; };
 

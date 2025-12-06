@@ -24,7 +24,7 @@ namespace Configs
 
         Group();
 
-        virtual ConfJsMap & _map() override;
+        virtual ConfJsMap _map() override;
 
         [[nodiscard]] QList<int> Profiles() const;
 

@@ -62,7 +62,10 @@ namespace Configs {
         if (!sni1.isEmpty()) stream->sni = sni1;
         if (!sni2.isEmpty()) stream->sni = sni2;
         stream->alpn = GetQueryValue(query, "alpn");
-        stream->allow_insecure = QStringList{"1", "true"}.contains(query.queryItemValue("insecure"));
+        
+        stream->allow_insecure = !QStringList{"0", "false"}.contains(query.queryItemValue("insecure"));
+        
+
         stream->reality_pbk = GetQueryValue(query, "pbk", "");
         stream->reality_sid = GetQueryValue(query, "sid", "");
         stream->utlsFingerprint = GetQueryValue(query, "fp", "");

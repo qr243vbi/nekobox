@@ -636,6 +636,19 @@
      </property>
      <addaction name="separator"/>
     </widget>
+    <widget class="QMenu" name="menuCurrent_selected">
+     <property name="title">
+      <string>Current selected</string>
+     </property>
+     <addaction name="menu_clone"/>
+     <addaction name="menu_delete"/>
+     <addaction name="separator"/>
+     <addaction name="actionUrl_Test_Selected"/>
+     <addaction name="actionUrl_Test_Clear"/>
+     <addaction name="menu_resolve_selected"/>
+     <addaction name="menu_reset_traffic"/>
+     <addaction name="actionSpeedtest_Selected"/>
+    </widget>
     <addaction name="menu_add_from_input"/>
     <addaction name="menu_add_from_clipboard"/>
     <addaction name="actionAdd_new_Group"/>
@@ -645,14 +658,8 @@
     <addaction name="menu_select_all"/>
     <addaction name="actionSpeedtest_Current"/>
     <addaction name="separator"/>
-    <addaction name="menu_clone"/>
-    <addaction name="menu_delete"/>
     <addaction name="menu_share_item"/>
-    <addaction name="actionUrl_Test_Selected"/>
-    <addaction name="actionUrl_Test_Clear"/>
-    <addaction name="menu_resolve_selected"/>
-    <addaction name="menu_reset_traffic"/>
-    <addaction name="actionSpeedtest_Selected"/>
+    <addaction name="menuCurrent_selected"/>
     <addaction name="menuCurrent_group"/>
    </widget>
    <widget class="QMenu" name="menuHidden_menu">

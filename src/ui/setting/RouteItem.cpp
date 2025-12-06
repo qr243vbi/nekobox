@@ -3,6 +3,9 @@
 #include "include/dataStore/RouteEntity.h"
 #include "include/dataStore/Database.hpp"
 #include "include/api/RPC.h"
+#include "include/configs/ConfigBuilder.hpp"
+#include <qnamespace.h>
+#include <include/global/HTTPRequestHelper.hpp>
 
 QList<QString> default_outbound_choose = {"proxy", "direct"};
 
@@ -65,6 +68,44 @@ RouteItem::RouteItem(QWidget *parent, const std::shared_ptr<Configs::RoutingChai
         routeItem->action = "hijack-dns";
         chain->Rules << routeItem;
     }
+    connect(ui->update_manually, &QPushButton::clicked, this, [this](){
+        runOnNewThread( [this] () {
+        auto url = chain->update_url;
+        if (!url.isEmpty()) {
+            url = Configs::get_jsdelivr_link(url);
+            auto response = NetworkRequestHelper::HttpGet(url);
+            QString error = response.error;
+            if (error.isEmpty() && !response.data.isEmpty()) {
+                auto array = QString2QJsonArray(response.data);
+                if (array.isEmpty()){
+                    goto label1;
+                }
+                auto parsed = Configs::RoutingChain::parseJsonArray(
+                      array, &error);
+                if (error.isEmpty()) {
+                    chain->Rules.clear();
+                    chain->Rules << parsed;
+
+                runOnUiThread([=,this]{
+                    MessageBoxInfo(
+                    QCoreApplication::translate("MainWindow", "Update Response"),
+                    QCoreApplication::translate("MainWindow", "Updated %1 routing profiles").arg(
+                              "1"));
+                });
+                }
+            } else {
+                label1:
+                runOnUiThread([=,this]{
+                    MessageBoxWarning(
+                        QCoreApplication::translate("MainWindow", "Update Response"),
+                        QCoreApplication::translate("MainWindow", "No routing profiles are updated")); 
+                    });
+            }
+        }
+    });
+    });
+
+    ui->skip_update->setChecked( (chain->skip_update) ? Qt::Checked : Qt::Unchecked);
 
     // setup rule set helper
     for (const auto& item : ruleSetMap) {
@@ -114,7 +155,8 @@ RouteItem::RouteItem(QWidget *parent, const std::shared_ptr<Configs::RoutingChai
         outboundMap[outboundMap.size()] = item.second->id;
     }
 
-    ui->route_name->setText(chain->name);
+    ui->route_name->setText(chain->chain_name);
+    ui->url->setText(chain->update_url);
     ui->rule_attr->addItems(Configs::RouteRule::get_attributes());
     adjustComboBoxWidth(ui->rule_attr);
     ui->rule_attr_text->hide();
@@ -289,9 +331,11 @@ RouteItem::~RouteItem() {
 }
 
 void RouteItem::accept() {
-    chain->name = ui->route_name->text();
+    chain->chain_name = ui->route_name->text();
+    chain->update_url = ui->url->text();
+    chain->skip_update = ui->skip_update->isChecked();
 
-    if (chain->name == "") {
+    if (chain->chain_name == "") {
         MessageBoxWarning(tr("Invalid operation"), tr("Cannot create Route Profile with empty name"));
         return;
     }

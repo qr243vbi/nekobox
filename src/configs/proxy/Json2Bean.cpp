@@ -75,9 +75,9 @@ namespace Configs
         name = obj["tag"].toString();
         serverAddress = obj["server"].toString();
         serverPort = obj["server_port"].toInt();
-        method = obj["method"].toString();
-        password = obj["password"].toString();
-        plugin = obj["plugin"].toString();
+//        method = obj["method"].toString();
+//        password = obj["password"].toString();
+//        plugin = obj["plugin"].toString();
         uot = obj["udp_over_tcp"].toBool();
 
         if (obj.contains("method")) method = obj["method"].toString();

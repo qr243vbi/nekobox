@@ -128,11 +128,14 @@ public:
             if (orientation == Qt::Horizontal) {
                 switch (section) {
                     case 0:
-                        return tr("Type");
+                        return QCoreApplication::translate(
+        "MainWindow","Type");
                     case 1:
-                        return tr("Address");
+                        return QCoreApplication::translate(
+        "MainWindow","Address");
                     case 2:
-                        return tr("Name");
+                        return QCoreApplication::translate(
+        "MainWindow","Name");
                 }
             } else if (orientation == Qt::Vertical) {
                 return QString::number(group->profiles[section]);
@@ -395,8 +398,10 @@ void DialogEditGroup::on_refresh_proxy_items(int index){
             auto window = new DialogGroupChooseProxy(this);
             QObject::connect(window, &DialogGroupChooseProxy::set_proxy, 
                 this, &DialogEditGroup::set_front_proxy);
-            window->setWindowTitle(tr("Front proxy for group %1").arg(ent->name));
-            window->ui->proxy_label->setText(tr("Front proxy: "));
+            window->setWindowTitle(QCoreApplication::translate(
+        "DialogGroupChooseProxy","Front proxy for group %1").arg(ent->name));
+            window->ui->proxy_label->setText(QCoreApplication::translate(
+        "DialogGroupChooseProxy","Front proxy: "));
             window->profile_selected(ent->front_proxy_id, true);
             window->show();
     });
@@ -406,8 +411,10 @@ void DialogEditGroup::on_refresh_proxy_items(int index){
             auto window = new DialogGroupChooseProxy(this);
             QObject::connect(window, &DialogGroupChooseProxy::set_proxy, 
                 this, &DialogEditGroup::set_landing_proxy);
-            window->setWindowTitle(tr("Landing proxy for group %1").arg(ent->name));
-            window->ui->proxy_label->setText(tr("Landing proxy: "));
+            window->setWindowTitle(QCoreApplication::translate(
+        "DialogGroupChooseProxy","Landing proxy for group %1").arg(ent->name));
+            window->ui->proxy_label->setText(QCoreApplication::translate(
+        "DialogGroupChooseProxy","Landing proxy: "));
             window->profile_selected(ent->landing_proxy_id, true);
             window->show();
     });
@@ -417,11 +424,12 @@ QString DialogEditGroup::get_proxy_name(int id) {
     std::shared_ptr<Configs::ProxyEntity> profile;
     if (id < 0 ||
         (profile = Configs::profileManager->GetProfile(id)) == nullptr){
-        return tr("None");
+        return QCoreApplication::translate(
+        "DialogGroupChooseProxy", "None");
     } else {
         QString str = profile->bean->name;
         if (str.isEmpty()){
-            return tr("Id: ")+ QString::number(id);
+            return QString("ID: ")+ QString::number(id);
         } else {
             return str;
         }

@@ -22,12 +22,11 @@ namespace Configs {
             proxy_type = _proxy_type;
             streamPtr = stream.get();
         }
-#define _add(X, Y, B) ADD_MAP(X, Y, B)
 
         INIT_MAP
-            _add("pass", password, string);
-            _add("flow", flow, string);
-            _add("stream", streamPtr, jsonStore);
+            ADD_MAP("pass", password, string);
+            ADD_MAP("flow", flow, string);
+            ADD_MAP("stream", streamPtr, jsonStore);
         STOP_MAP
 
         QString DisplayType() override { return proxy_type == proxy_VLESS ? "VLESS" : "Trojan"; };

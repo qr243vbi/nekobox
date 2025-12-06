@@ -2,6 +2,8 @@
 #include <QFile>
 #include "include/ui/profile/dialog_edit_profile.h"
 #include "include/global/Utils.hpp"
+#include "include/configs/proxy/AbstractBean.hpp"
+
 
 namespace Configs
 {
@@ -22,26 +24,21 @@ namespace Configs
     #define  d_add(X, Y, B) _put(ptr, X, &this->Y, B)
     #endif
 
-    ConfJsMap & Group::_map(){
-        static ConfJsMap ptr;
-        static bool init = false;
-        if (init) return ptr;
-        d_add("id", id, integer);
-        d_add("front_proxy_id", front_proxy_id, integer);
-        d_add("landing_proxy_id", landing_proxy_id, integer);
-        d_add("archive", archive, boolean);
-        d_add("skip_auto_update", skip_auto_update, boolean);
-        d_add("name", name, string);
-        d_add("profiles", profiles, integerList);
-        d_add("url", url, string);
-        d_add("info", info, string);
+    DECL_MAP(Group)
+        ADD_MAP("id", id, integer);
+        ADD_MAP("front_proxy_id", front_proxy_id, integer);
+        ADD_MAP("landing_proxy_id", landing_proxy_id, integer);
+        ADD_MAP("archive", archive, boolean);
+        ADD_MAP("skip_auto_update", skip_auto_update, boolean);
+        ADD_MAP("name", name, string);
+        ADD_MAP("profiles", profiles, integerList);
+        ADD_MAP("url", url, string);
+        ADD_MAP("info", info, string);
     //    _add(new configItem("notes", &notes, string));
-        d_add("lastup", sub_last_update, integer64);
+        ADD_MAP("lastup", sub_last_update, integer64);
     //    d_add("manually_column_width", manually_column_width, boolean);
     //    d_add("column_width", column_width, integerList);
-        init = true;
-        return ptr;
-    }
+    STOP_MAP
 
     QList<int> Group::Profiles() const {
         return profiles;

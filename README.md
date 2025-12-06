@@ -28,24 +28,8 @@ Starting with version 5.8.0, we have discontinued support for MacOS. NekoRay liv
 )](https://community.chocolatey.org/packages/nekobox)
 
 ## Supported protocols
-
-- SOCKS
-- HTTP(S)
-- Shadowsocks
-- Trojan
-- VMess
-- VLESS
-- TUIC
-- Hysteria
-- Hysteria2
-- AnyTLS
-- Mieru
-- Wireguard
-- SSH
-- Custom Outbound
-- Custom Config
-- Chaining outbounds
-- Extra Core
+ 
+  SOCKS ; HTTP(S) ; Shadowsocks ; Trojan ; VMess ; VLESS ; TUIC ; Hysteria ; Hysteria2 ; AnyTLS ; Mieru ; Wireguard ; SSH ; Custom Outbound ; Custom Config ; Chaining outbounds ; Extra Core
 
 ## Subscription Formats
 
@@ -53,6 +37,7 @@ Various formats are supported, including share links, JSON array of outbounds an
 
 ## Credits
 
+- [enfein/mieru](https://github.com/enfein/mbox)
 - [SagerNet/sing-box](https://github.com/SagerNet/sing-box)
 - [Qv2ray](https://github.com/Qv2ray/Qv2ray)
 - [Qt](https://www.qt.io/)

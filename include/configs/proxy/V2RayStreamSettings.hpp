@@ -33,34 +33,32 @@ namespace Configs {
         // reality
         QString reality_pbk = "";
         QString reality_sid = "";
-
-        #define d_add(X, Y, B) _put(ptr, X, &this->Y, itemType::B)
-        
+                
         V2rayStreamSettings() : JsonStore() {
         }
         INIT_MAP_1
-            d_add("net", network, string);
-            d_add("sec", security, string);
-            d_add("pac_enc", packet_encoding, string);
-            d_add("path", path, string);
-            d_add("host", host, string);
-            d_add("sni", sni, string);
-            d_add("alpn", alpn, string);
-            d_add("cert", certificate, string);
-            d_add("insecure", allow_insecure, boolean);
-            d_add("headers", headers, string);
-            d_add("h_type", header_type, string);
-            d_add("method", method, string);
-            d_add("ed_name", ws_early_data_name, string);
-            d_add("ed_len", ws_early_data_length, integer);
-            d_add("xhttp_mode", xhttp_mode, string);
-            d_add("xhttp_extra", xhttp_extra, string);
-            d_add("utls", utlsFingerprint, string);
-            d_add("tls_frag", enable_tls_fragment, boolean);
-            d_add("tls_frag_fall_delay", tls_fragment_fallback_delay, string);
-            d_add("tls_record_frag", enable_tls_record_fragment, boolean);
-            d_add("pbk", reality_pbk, string);
-            d_add("sid", reality_sid, string);
+            ADD_MAP("net", network, string);
+            ADD_MAP("sec", security, string);
+            ADD_MAP("pac_enc", packet_encoding, string);
+            ADD_MAP("path", path, string);
+            ADD_MAP("host", host, string);
+            ADD_MAP("sni", sni, string);
+            ADD_MAP("alpn", alpn, string);
+            ADD_MAP("cert", certificate, string);
+            ADD_MAP("insecure", allow_insecure, boolean);
+            ADD_MAP("headers", headers, string);
+            ADD_MAP("h_type", header_type, string);
+            ADD_MAP("method", method, string);
+            ADD_MAP("ed_name", ws_early_data_name, string);
+            ADD_MAP("ed_len", ws_early_data_length, integer);
+            ADD_MAP("xhttp_mode", xhttp_mode, string);
+            ADD_MAP("xhttp_extra", xhttp_extra, string);
+            ADD_MAP("utls", utlsFingerprint, string);
+            ADD_MAP("tls_frag", enable_tls_fragment, boolean);
+            ADD_MAP("tls_frag_fall_delay", tls_fragment_fallback_delay, string);
+            ADD_MAP("tls_record_frag", enable_tls_record_fragment, boolean);
+            ADD_MAP("pbk", reality_pbk, string);
+            ADD_MAP("sid", reality_sid, string);
         STOP_MAP
 
         void BuildStreamSettingsSingBox(QJsonObject *outbound);

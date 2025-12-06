@@ -13,6 +13,7 @@
 #include <memory>
 #include <functional>
 #include <QCoreApplication>
+#include <QLocale>
 
 JsHTTPRequest::JsHTTPRequest(const QString& url): QObject(nullptr){
     init(url);
@@ -96,6 +97,10 @@ QVariantMap JsHTTPRequest::get_header() const {
     return m_header;
 }
 
+QString JsUpdaterWindow::get_locale() const {
+    return QLocale().name();
+}
+
 void getString(QJSEngine& engine, QString name, QString * value){
     *value = engine.globalObject().property(name).toString();
 }
@@ -149,6 +154,20 @@ bool jsInit(
     return true;
 }
 
+
+QMap<QString, QString> jsValueToQMap(const QJSValue &jsValue) {
+    QMap<QString, QString> resultMap;
+    // Check if jsValue is an object
+    if (jsValue.isObject()) {
+        // Iterate through the keys
+        for (const auto &key : jsValue.toVariant().toMap().asKeyValueRange()) {
+            resultMap[key.first] = key.second.toString();           
+        }
+    }
+
+    return resultMap;
+}
+
 QStringList jsArrayToQStringList(const QJSValue &jsArray) {
     QStringList stringList;
 
@@ -172,15 +191,19 @@ bool jsRouteProfileGetter(
     JsUpdaterWindow * factory,
     QString * updater_js,
     QStringList * list,
-    std::function<QString(QString)> * func
+    QMap<QString, QString> * names,
+    std::function<QString(QString, QString *)> * func
     ){
     std::shared_ptr<QJSEngine> ctx = std::make_shared<QJSEngine>();
     if (!jsInit(ctx.get(), updater_js, factory)){
         return false;
     };
 
-    *list = jsArrayToQStringList(ctx->globalObject().property("route_profiles"));
-    *func = [ctx] (QString profile) -> QString {
+    auto global = ctx->globalObject();
+
+    *list = jsArrayToQStringList(global.property("route_profiles"));
+    *names = jsValueToQMap(global.property("route_profile_names"));
+    *func = [ctx] (QString profile, QString * url) -> QString {
             QJSValue jsFunction = ctx->globalObject().property("route_profile_get_json");
             if (jsFunction.isError()) {
                qWarning() <<  "Error in JavaScript code: " << jsFunction.toString();
@@ -194,7 +217,13 @@ bool jsRouteProfileGetter(
             if (result.isError()) {
                qWarning() << "Error calling JavaScript function: " << result.toString();
                return "";
-            }
+            } else if (result.isArray()){
+                QJSValue key = result.property(1);
+                if (key.isString()){
+                    *url = key.toString();
+                }
+                return result.property(0).toString();
+            } 
             return result.toString();
     };
     return true;

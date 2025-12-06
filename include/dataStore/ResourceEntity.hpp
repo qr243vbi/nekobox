@@ -13,7 +13,7 @@ public:
   bool saveLink(QString str, QString path);
   bool symlinks_supported;
 
-  virtual ConfJsMap & _map() override;
+  virtual ConfJsMap _map() override;
 };
 
 extern ResourceManager *resourceManager;

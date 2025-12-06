@@ -356,6 +356,41 @@
     </message>
 </context>
 <context>
+    <name>DialogGroupChooseProxy</name>
+    <message>
+        <source>Search:</source>
+        <translation>搜索：</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>无</translation>
+    </message>
+    <message>
+        <source>Front proxy: </source>
+        <translation>前端代理：</translation>
+    </message>
+    <message>
+        <source>Front proxy for group %1</source>
+        <translation>组 %1 的前端代理</translation>
+    </message>
+    <message>
+        <source>Landing proxy: </source>
+        <translation>着陆代理：</translation>
+    </message>
+    <message>
+        <source>Landing proxy for group %1</source>
+        <translation>为组 %1 设置代理服务器</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>弃置</translation>
+    </message>
+    <message>
+        <source>Restore Defaults</source>
+        <translation>恢复默认设置</translation>
+    </message>
+</context>
+<context>
     <name>DialogEditGroup</name>
     <message>
         <source>Edit Group</source>
@@ -502,7 +537,7 @@
     </message>
     <message>
         <source>Allow insecure</source>
-        <translation>允许不安全</translation>
+        <translation>允许不安全连接</translation>
     </message>
     <message>
         <source>Certificate</source>
@@ -1127,7 +1162,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     </message>
     <message>
         <source>Allow Insecure</source>
-        <translation>允许不安全</translation>
+        <translation>允许不安全连接</translation>
     </message>
     <message>
         <source>Upload (Mbps)</source>
@@ -1556,6 +1591,34 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>隐藏窗口</translation>
     </message>
     <message>
+        <source>No routing profiles are updated</source>
+        <translation>没有更新的个人资料</translation>
+    </message>
+    <message>
+        <source>Failed to update rulesets</source>
+        <translation>规则集更新失败</translation>
+    </message>
+    <message>
+        <source>Update Response</source>
+        <translation>更新响应</translation>
+    </message>
+    <message>
+        <source>Edit Routing Profiles</source>
+        <translation>编辑路由配置文件</translation>
+    </message>
+    <message>
+        <source>Update Routing Profiles</source>
+        <translation>更新路由配置文件</translation>
+    </message>
+    <message>
+        <source>Requesting rule-set list error: %1</source>
+        <translation>請求規則集清單錯誤：%1</translation>
+    </message>
+    <message>
+        <source>Update RuleSet</source>
+        <translation>更新规则集</translation>
+    </message>
+    <message>
         <source>Enable AdBlock</source>
         <translation>启用广告拦截</translation>
     </message>
@@ -1904,8 +1967,20 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>URL 测试选定项</translation>
     </message>
     <message>
+        <source>Rulesets updated successfully</source>
+        <translation>規則集更新成功</translation>
+    </message>
+    <message>
         <source>Clear Test Result Selected</source>
         <translation>清除选定的测试结果</translation>
+    </message>
+    <message>
+        <source>Updated %1 routing profiles</source>
+        <translation>更新了 %1 個設定檔</translation>
+    </message>
+    <message>
+        <source>Current selected</source>
+        <translation>目前選取</translation>
     </message>
     <message>
         <source>Current group</source>
@@ -2342,7 +2417,7 @@ Release note:
     </message>
     <message>
         <source>Download Profiles</source>
-        <translation>下载配置档</translation>
+        <translation>下载路由集</translation>
     </message>
     <message>
         <source>Requesting profile error: %1</source>
@@ -2381,7 +2456,7 @@ Release note:
     </message>
     <message>
         <source>OK</source>
-        <translation>好的</translation>
+        <translation>确定</translation>
     </message>
 </context>
 <context>
@@ -2393,6 +2468,18 @@ Release note:
 </context>
 <context>
     <name>RouteItem</name>
+    <message>
+        <source>Update url</source>
+        <translation>更新網址</translation>
+    </message>
+    <message>
+        <source>Update manually</source>
+        <translation>手動更新</translation>
+    </message>
+    <message>
+        <source>Skip update</source>
+        <translation>跳過更新</translation>
+    </message>
     <message>
         <source>Route Profile</source>
         <translation>路由配置档</translation>

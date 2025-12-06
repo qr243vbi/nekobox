@@ -51,7 +51,7 @@ namespace Configs {
 
         // config format
 
-        QJsonArray routingRules;
+    //    QJsonArray routingRules;
         QJsonArray inbounds;
         QJsonArray outbounds;
         QJsonArray endpoints;

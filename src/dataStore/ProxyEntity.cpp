@@ -6,9 +6,9 @@ namespace Configs
 
     #define d_put(map1, X, Y, B) _put(map1, X, &this->Y, B)
 
-    ConfJsMap & ProxyEntity::_map(){
-        static ConfJsMap map1;
-        static ConfJsMap map2;
+    ConfJsMap ProxyEntity::_map(){
+        static ConfJsMapStat map1;
+        static ConfJsMapStat map2;
         static bool map1_init = true;
         if (map1_init ){
             map1_init = false;
@@ -21,7 +21,7 @@ namespace Configs
             d_put(map1, "report", full_test_report, itemType::string);
             d_put(map1, "country", test_country, itemType::string);
 
-            map2 = ConfJsMap(map1);
+            map2.insert(map1);
             d_put(map2, "bean", bean_pointer, itemType::jsonStore);
             d_put(map2, "traffic", traffic_data_pointer, itemType::jsonStore);
         }

@@ -19,20 +19,19 @@ namespace Configs {
 
         explicit TailscaleBean() : AbstractBean(0) {
         }
-        #define _add(X, Y, B) ADD_MAP(X, Y, B)
 
         INIT_MAP
-            _add("state_directory", state_directory, string);
-            _add("auth_key", auth_key, string);
-            _add("control_url", control_url, string);
-            _add("ephemeral", ephemeral, boolean);
-            _add("hostname", hostname, string);
-            _add("accept_routes", accept_routes, boolean);
-            _add("exit_node", exit_node, string);
-            _add("exit_node_allow_lan_access", exit_node_allow_lan_access, boolean);
-            _add("advertise_routes", advertise_routes, stringList);
-            _add("advertise_exit_node", advertise_exit_node, boolean);
-            _add("globalDNS", globalDNS, boolean);
+            ADD_MAP("state_directory", state_directory, string);
+            ADD_MAP("auth_key", auth_key, string);
+            ADD_MAP("control_url", control_url, string);
+            ADD_MAP("ephemeral", ephemeral, boolean);
+            ADD_MAP("hostname", hostname, string);
+            ADD_MAP("accept_routes", accept_routes, boolean);
+            ADD_MAP("exit_node", exit_node, string);
+            ADD_MAP("exit_node_allow_lan_access", exit_node_allow_lan_access, boolean);
+            ADD_MAP("advertise_routes", advertise_routes, stringList);
+            ADD_MAP("advertise_exit_node", advertise_exit_node, boolean);
+            ADD_MAP("globalDNS", globalDNS, boolean);
         STOP_MAP
         
 
