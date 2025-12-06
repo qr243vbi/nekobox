@@ -8,24 +8,17 @@ namespace Configs {
     AbstractBean::AbstractBean(int version) {
         this->version = version;
     }
-    #undef d_add
-    #define d_add(X, Y, B) _put(ptr, X, &this->Y, B)
-    ConfJsMap & AbstractBean::_map(){
-        static ConfJsMap ptr;
-        static bool init = false;
-        if (init) return ptr;
-        d_add("_v", version, itemType::integer);
-        d_add("name", name, itemType::string);
-        d_add("addr", serverAddress, itemType::string);
-        d_add("port", serverPort, itemType::integer);
-        d_add("c_cfg", custom_config, itemType::string);
-        d_add("c_out", custom_outbound, itemType::string);
-        d_add("mux", mux_state, itemType::integer);
-        d_add("enable_brutal", enable_brutal, itemType::boolean);
-        d_add("brutal_speed", brutal_speed, itemType::integer);
-        init = true;
-        return ptr;
-    }
+    DECL_MAP(AbstractBean)
+        ADD_MAP("_v", version, integer);
+        ADD_MAP("name", name, string);
+        ADD_MAP("addr", serverAddress, string);
+        ADD_MAP("port", serverPort, integer);
+        ADD_MAP("c_cfg", custom_config, string);
+        ADD_MAP("c_out", custom_outbound, string);
+        ADD_MAP("mux", mux_state, integer);
+        ADD_MAP("enable_brutal", enable_brutal, boolean);
+        ADD_MAP("brutal_speed", brutal_speed, integer);
+    STOP_MAP
 
     QString AbstractBean::ToNekorayShareLink(const QString &type) {
         auto b = ToJson();

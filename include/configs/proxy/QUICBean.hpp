@@ -63,9 +63,11 @@ namespace Configs {
         #undef _add
         #define _add(X, Y, B, T) _put(X, Y, &this->B, T);
 
-        virtual ConfJsMap & _map() override{
-            static ConfJsMap hys1, hys2, tuic;
-            static ConfJsMap ptr;
+        virtual ConfJsMap  _map() override{
+            static ConfJsMapStat 
+                hys1 , 
+                hys2 , 
+                tuic ;
             static bool init = false;
             if (!init){
                 init = true;
@@ -82,7 +84,7 @@ namespace Configs {
                 _add(tuic, "caText", caText, itemType::string);
                 _add(tuic, "disableSni", disableSni, itemType::boolean);
 
-                hys1 = ConfJsMap(tuic);
+                hys1.insert(tuic);
                 _add(hys1, "authPayload", authPayload, itemType::string);
                 _add(hys1, "obfsPassword", obfsPassword, itemType::string);
                 _add(hys1, "uploadMbps", uploadMbps, itemType::integer);
@@ -93,7 +95,7 @@ namespace Configs {
                 _add(hys1, "server_ports", serverPorts, itemType::stringList);
                 _add(hys1, "hop_interval", hop_interval, itemType::string);                
 
-                hys2 = ConfJsMap(hys1);
+                hys2.insert(hys1);
 
                 _add(hys1, "authPayloadType", authPayloadType, itemType::integer);
                 _add(hys1, "protocol", hyProtocol, itemType::integer);

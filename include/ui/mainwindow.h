@@ -147,6 +147,10 @@ private slots:
 
     void on_menu_copy_links_triggered();
 
+    bool getRuleSet();
+
+    int updateRouteProfiles();
+
     void on_menu_copy_links_nkr_triggered();
 
     void on_menu_export_config_triggered();
@@ -180,6 +184,7 @@ private slots:
     void on_tabWidget_customContextMenuRequested(const QPoint& p);
 
 private:
+    bool dialog_is_using = false;
 
     Ui::MainWindow *ui;
     QSystemTrayIcon *tray;
@@ -230,8 +235,9 @@ private:
     // shortcuts
     QList<QShortcut*> hiddenMenuShortcuts;
 
+    QMap<QString, QString> remoteRouteProfileNames;
     QStringList remoteRouteProfiles;
-    std::function<QString(QString)> remoteRouteProfileGetter;
+    std::function<QString(QString, QString*)> remoteRouteProfileGetter;
     QMutex mu_remoteRouteProfiles;
 
     // search

@@ -1,6 +1,7 @@
 #include "include/dataStore/Database.hpp"
 
 #include "include/configs/proxy/includes.h"
+#include "include/configs/proxy/AbstractBean.hpp"
 
 #include <QDir>
 
@@ -15,15 +16,10 @@ namespace Configs {
     #define  d_add(X, Y, B) _put(ptr, X, &this->Y, B)
     #endif
 
-    ConfJsMap& ProfileManager::_map(){
-        static ConfJsMap ptr;
-        static bool init = false;
-        if (init) return ptr;
-        d_add("groups", 
+    DECL_MAP(ProfileManager)
+        ADD_MAP("groups", 
             groupsTabOrder, integerList);
-        init = true;
-        return ptr;
-    }
+    STOP_MAP
 
     QList<int> filterIntJsonFile(const QString &path) {
         QList<int> result;

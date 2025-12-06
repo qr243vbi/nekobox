@@ -18,7 +18,6 @@ namespace Configs {
         VMessBean() : AbstractBean(0) {
             streamPtr = stream.get();
         }
-        #define _add(X, Y, B) ADD_MAP(X, Y, B)
 
         INIT_MAP
             ADD_MAP("id", uuid, string);

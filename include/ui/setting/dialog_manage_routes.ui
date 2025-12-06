@@ -15,7 +15,7 @@
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
-    <widget class="QTabWidget" name="tabWidget">
+    <widget class="QTabWidget" name="routes_tab">
      <property name="currentIndex">
       <number>0</number>
      </property>
@@ -605,7 +605,7 @@ For more information, see the document &quot;Configuration/DNS&quot;.</string>
   </layout>
  </widget>
  <tabstops>
-  <tabstop>tabWidget</tabstop>
+  <tabstop>routes_tab</tabstop>
   <tabstop>sniffing_mode</tabstop>
   <tabstop>domainStrategyCombo</tabstop>
   <tabstop>outbound_domain_strategy</tabstop>

@@ -22,7 +22,7 @@ class DialogManageRoutes : public QDialog {
     Q_OBJECT
 
 public:
-    explicit DialogManageRoutes(QWidget *parent = nullptr);
+    explicit DialogManageRoutes(QWidget *parent = nullptr, bool EditRouteProfiles = false);
 
     ~DialogManageRoutes() override;
 

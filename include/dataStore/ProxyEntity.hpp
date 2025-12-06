@@ -50,7 +50,7 @@ namespace Configs {
         Stats::TrafficData * traffic_data_pointer = nullptr;
         Configs::AbstractBean * bean_pointer = nullptr; 
     public:
-        virtual ConfJsMap & _map() override;
+        virtual ConfJsMap _map() override;
 
         QString type;
 

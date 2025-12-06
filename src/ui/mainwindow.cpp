@@ -64,9 +64,9 @@
 #include <3rdparty/QHotkey/qhotkey.h>
 #include <3rdparty/qv2ray/v2/proxy/QvProxyConfigurator.hpp>
 #include <QDir>
-#include <QStandardPaths>
 #include <QFileDialog>
 #include <QMimeData>
+#include <QStandardPaths>
 #include <QToolTip>
 #include <include/global/HTTPRequestHelper.hpp>
 #include <random>
@@ -292,10 +292,11 @@ MainWindow::MainWindow(QWidget *parent)
   software_core_name = "sing-box";
   //
   {
-    auto appDataPath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
+    auto appDataPath =
+        QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
     QDir().mkpath(appDataPath + "/dashboard");
     auto dashboardDir = QDir(appDataPath + "/dashboard");
-    
+
     if (!dashboardDir.exists("index.html")) {
       if (auto dashFile = QFile(":/nekobox/dashboard-notice.html");
           dashFile.exists() && dashFile.open(QIODevice::ReadOnly)) {
@@ -590,28 +591,7 @@ MainWindow::MainWindow(QWidget *parent)
     ruleSetMap = jsonToMap(byteArray);
   } else {
     delete srslist;
-    auto getRuleSet = [=, this] {
-      QString err;
-      for (int retry = 0; retry < 5; retry++) {
-        auto resp = NetworkRequestHelper::HttpGet(
-            Configs::get_jsdelivr_link("https://github.com/qr243vbi/ruleset/"
-                                       "raw/refs/heads/rule-set/srslist.json"));
-        if (resp.error.isEmpty()) {
-          ruleSetMap = jsonToMap(resp.data);
-          QFile file;
-          file.setFileName("srslist.json");
-          if (file.open(QIODevice::ReadWrite | QIODevice::Truncate)) {
-            file.write(resp.data);
-            file.close();
-          }
-          return;
-        } else
-          err = resp.error;
-        QThread::sleep(30);
-      }
-      MW_show_log(QObject::tr("Requesting rule-set list error: %1").arg(err));
-    };
-    runOnNewThread(getRuleSet);
+    runOnNewThread([this](){getRuleSet();});
   }
 
   auto getRemoteRouteProfiles = [=, this] {
@@ -665,6 +645,7 @@ MainWindow::MainWindow(QWidget *parent)
             auto bQueue = createJsUpdaterWindow();
             mu_remoteRouteProfiles.lock();
             jsRouteProfileGetter(bQueue, &updater_js, &remoteRouteProfiles,
+                                 &remoteRouteProfileNames,
                                  &remoteRouteProfileGetter);
             mu_remoteRouteProfiles.unlock();
           }
@@ -680,20 +661,99 @@ MainWindow::MainWindow(QWidget *parent)
     if (remoteRouteProfiles.isEmpty())
       runOnNewThread(getRemoteRouteProfiles);
     ui->menuRouting_Menu->clear();
-    ui->menuRouting_Menu->addAction(ui->menu_routing_settings);
+
+    auto *actionProfiles = new QAction(ui->menuRouting_Menu);
+    actionProfiles->setText(QCoreApplication::translate(
+      "MainWindow", "Edit Routing Profiles"));
+    ui->menuRouting_Menu->addAction(actionProfiles);
+    connect(
+      actionProfiles, &QAction::triggered, this,
+      [this]() {
+        if (dialog_is_using)
+          return;
+        dialog_is_using = true;
+        auto dialog = new DialogManageRoutes(this, true);
+        connect(dialog, &QDialog::finished, this, [=, this] {
+          dialog->deleteLater();
+          dialog_is_using = false;
+        });
+        dialog->show();
+      },
+      Qt::SingleShotConnection);
+
+    ui->menuRouting_Menu->addSeparator();
+    // ui->menuRouting_Menu->addAction(ui->menu_routing_settings);
+
+
+    auto *actionUpdateProfiles = new QAction(ui->menuRouting_Menu);
+    actionUpdateProfiles->setText(QCoreApplication::translate(
+        "MainWindow", "Update Routing Profiles"));
+    ui->menuRouting_Menu->addAction(actionUpdateProfiles);
+    connect(
+        actionUpdateProfiles, &QAction::triggered, this,
+        [=, this]() {
+          runOnNewThread([=, this] {
+            int profiles_count = updateRouteProfiles();
+
+            runOnUiThread([profiles_count, this] {
+              if (profiles_count == 0){
+                
+                MessageBoxWarning(tr("Update Response"),
+                             tr("No routing profiles are updated"));
+              } else {
+                MessageBoxInfo(tr("Update Response"),
+                             tr("Updated %1 routing profiles").arg(
+                              QString::number(profiles_count)));
+              }
+            });
+          });
+        },
+        Qt::SingleShotConnection);
+
+
+    auto *actionUpdateRuleSet = new QAction(ui->menuRouting_Menu);
+    actionUpdateRuleSet->setText(QCoreApplication::translate(
+      "MainWindow", "Update RuleSet"));
+    ui->menuRouting_Menu->addAction(actionUpdateRuleSet);
+    connect(
+      actionUpdateRuleSet, &QAction::triggered, this,
+      [=, this]() {
+        runOnNewThread([=, this] {
+          bool ruleset_updated = getRuleSet();
+          if (!ruleset_updated){
+            runOnUiThread([this] {
+              MessageBoxWarning(tr("Update Response"),
+                                tr("Failed to update rulesets"));
+            });
+          } else {
+            runOnUiThread([this] {
+              MessageBoxInfo(tr("Update Response"),
+                             tr("Rulesets updated successfully"));
+            });
+          }
+        });
+      },
+      Qt::SingleShotConnection);
+
+
+
+    ui->menuRouting_Menu->addSeparator();
 
     auto *actionAdblock = new QAction(ui->menuRouting_Menu);
     actionAdblock->setText(
         QCoreApplication::translate("MainWindow", "Enable AdBlock"));
     actionAdblock->setCheckable(true);
     actionAdblock->setChecked(Configs::dataStore->adblock_enable);
-    connect(actionAdblock, &QAction::triggered, this, [=, this](bool checked) {
-      Configs::dataStore->adblock_enable = checked;
-      actionAdblock->setChecked(checked);
-      Configs::dataStore->Save();
-      if (Configs::dataStore->started_id >= 0)
-        profile_start(Configs::dataStore->started_id);
-    });
+    connect(
+        actionAdblock, &QAction::triggered, this,
+        [=, this](bool checked) {
+          Configs::dataStore->adblock_enable = checked;
+          actionAdblock->setChecked(checked);
+          Configs::dataStore->Save();
+          if (Configs::dataStore->started_id >= 0)
+            profile_start(Configs::dataStore->started_id);
+        },
+        Qt::SingleShotConnection);
     ui->menuRouting_Menu->addAction(actionAdblock);
 
     mu_remoteRouteProfiles.lock();
@@ -702,29 +762,32 @@ MainWindow::MainWindow(QWidget *parent)
           ui->menuRouting_Menu->addMenu(QObject::tr("Download Profiles"));
       for (const auto &profile : remoteRouteProfiles) {
         auto *action = new QAction(profilesMenu);
-        action->setText(profile);
+        action->setText(remoteRouteProfileNames.value(profile, profile));
         connect(action, &QAction::triggered, this, [=, this]() {
-          auto resp = remoteRouteProfileGetter(profile);
+          QString url = "";
+          auto resp = remoteRouteProfileGetter(profile, &url);
           if (resp.isEmpty()) {
             return;
           } else {
             qDebug() << resp;
           }
-
-          auto err = new QString;
+          QString err;
           auto parsed = Configs::RoutingChain::parseJsonArray(
-              QString2QJsonArray(resp), err);
-          if (!err->isEmpty()) {
+              QString2QJsonArray(resp), &err);
+          if (!err.isEmpty()) {
             runOnUiThread([=, this] {
               MessageBoxInfo(tr("Invalid JSON Array"),
                              tr("The provided input cannot be parsed to a "
                                 "valid route rule array:\n") +
-                                 *err);
+                                 err);
             });
             return;
           }
-          auto chain = Configs::ProfileManager::NewRouteChain();
-          chain->name = QString(profile).replace('_', ' ');
+          std::shared_ptr<Configs::RoutingChain> chain =
+              Configs::ProfileManager::NewRouteChain();
+          chain->chain_name =
+              this->remoteRouteProfileNames.value(profile, profile);
+          chain->update_url = url;
           chain->defaultOutboundID =
               profile.startsWith("bypass", Qt::CaseInsensitive)
                   ? Configs::proxyID
@@ -741,7 +804,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->menuRouting_Menu->addSeparator();
     for (const auto &route : Configs::profileManager->routes) {
       auto *action = new QAction(ui->menuRouting_Menu);
-      action->setText(route.second->name);
+      action->setText(route.second->chain_name);
       action->setData(route.second->id);
       action->setCheckable(true);
       action->setChecked(Configs::dataStore->routing->current_route_id ==
@@ -855,6 +918,52 @@ void MainWindow::closeEvent(QCloseEvent *event) {
   } else {
     on_menu_exit_triggered();
   }
+}
+
+int MainWindow::updateRouteProfiles(){
+  auto profiles = Configs::profileManager->routes;
+            int profiles_count = 0;
+            for (const auto &item : profiles) {
+              auto &chain = item.second;
+              if (chain->skip_update){
+                continue;
+              }
+              auto url = chain->update_url;
+              if (!url.isEmpty()) {
+                url = Configs::get_jsdelivr_link(url);
+                auto response = NetworkRequestHelper::HttpGet(url);
+                if (response.error.isEmpty()) {
+                  QString err;
+                  auto parsed = Configs::RoutingChain::parseJsonArray(
+                      QString2QJsonArray(response.data), &err);
+                  if (err.isEmpty()) {
+                    chain->Rules.clear();
+                    chain->Rules << parsed;
+                    profiles_count ++;
+                  }
+                }
+              }
+            }
+            return profiles_count;
+}
+
+bool MainWindow::getRuleSet(){
+      QString err;
+      for (int retry = 0; retry < 5; retry++) {
+        auto err = NetworkRequestHelper::DownloadAsset(
+            Configs::get_jsdelivr_link(Configs::dataStore->ruleset_json_url), "srslist.json");
+        if (err.isEmpty()) {
+          QFile file("srslist.json");
+          if (file.open(QIODevice::ReadOnly)){
+            auto resp_data = file.readAll();
+            ruleSetMap = jsonToMap(resp_data);
+          }
+          return true;
+        } else
+        QThread::sleep(30);
+      }
+      MW_show_log(QObject::tr("Requesting rule-set list error: %1").arg(err));
+      return false;
 }
 
 void MainWindow::dragEnterEvent(QDragEnterEvent *event) {
@@ -1118,8 +1227,6 @@ void MainWindow::dialog_message_impl(const QString &sender,
 }
 
 // top bar & tray menu
-
-inline bool dialog_is_using = false;
 
 #define USE_DIALOG(a)                                                          \
   if (dialog_is_using)                                                         \
@@ -2733,17 +2840,20 @@ void MainWindow::on_tabWidget_customContextMenuRequested(const QPoint &p) {
     if (clickedIndex == -1) {
       menu = new QMenu(this);
       auto *addAction = new QAction(tr("Add new Group"), this);
-      connect(addAction, &QAction::triggered, this, [=, this] {
-        auto ent = Configs::ProfileManager::NewGroup();
-        auto dialog = new DialogEditGroup(ent, this);
-        int ret = dialog->exec();
-        dialog->deleteLater();
+      connect(
+          addAction, &QAction::triggered, this,
+          [=, this] {
+            auto ent = Configs::ProfileManager::NewGroup();
+            auto dialog = new DialogEditGroup(ent, this);
+            int ret = dialog->exec();
+            dialog->deleteLater();
 
-        if (ret == QDialog::Accepted) {
-          Configs::profileManager->AddGroup(ent);
-          MW_dialog_message(Dialog_DialogManageGroups, "refresh-1");
-        }
-      }, Qt::SingleShotConnection);
+            if (ret == QDialog::Accepted) {
+              Configs::profileManager->AddGroup(ent);
+              MW_dialog_message(Dialog_DialogManageGroups, "refresh-1");
+            }
+          },
+          Qt::SingleShotConnection);
 
       menu->addAction(addAction);
       menu->exec(ui->tabWidget->tabBar()->mapToGlobal(p));
@@ -2757,51 +2867,63 @@ void MainWindow::on_tabWidget_customContextMenuRequested(const QPoint &p) {
     clickedIndex = ui->tabWidget->currentIndex();
   }
 
-
   bool profile_action = (menu != ui->menuCurrent_group);
 
-  QAction * addAction;
-  if (profile_action) addAction = new QAction(tr("Add new Group"), this);
+  QAction *addAction;
+  if (profile_action)
+    addAction = new QAction(tr("Add new Group"), this);
   auto *deleteAction = new QAction(tr("Delete selected Group"), this);
   auto *editAction = new QAction(tr("Edit selected Group"), this);
-  
-  connect(profile_action ? addAction : ui->actionAdd_new_Group, &QAction::triggered, this, [=, this] {
-    auto ent = Configs::ProfileManager::NewGroup();
-    auto dialog = new DialogEditGroup(ent, this);
-    int ret = dialog->exec();
-    dialog->deleteLater();
 
-    if (ret == QDialog::Accepted) {
-      Configs::profileManager->AddGroup(ent);
-      MW_dialog_message(Dialog_DialogManageGroups, "refresh-1");
-    }
-  }, Qt::SingleShotConnection);
-  connect(deleteAction, &QAction::triggered, this, [=, this] {
-    auto id = Configs::profileManager->groupsTabOrder[clickedIndex];
-    if (QMessageBox::question(
-            this, tr("Confirmation"),
-            tr("Remove %1?").arg(Configs::profileManager->groups[id]->name)) ==
-        QMessageBox::StandardButton::Yes) {
-      Configs::profileManager->DeleteGroup(id);
-      MW_dialog_message(Dialog_DialogManageGroups, "refresh-1");
-    }
-  }, Qt::SingleShotConnection);
-  connect(editAction, &QAction::triggered, this, [=, this] {
-    auto id = Configs::profileManager->groupsTabOrder[clickedIndex];
-    auto ent = Configs::profileManager->groups[id];
-    auto dialog = new DialogEditGroup(ent, this);
-    connect(dialog, &QDialog::finished, this, [=, this] {
-      if (dialog->result() == QDialog::Accepted) {
-        ent->Save();
-        MW_dialog_message(Dialog_DialogManageGroups,
-                          "refresh" + Int2String(ent->id));
-      }
-      dialog->deleteLater();
-    });
-    dialog->show();
-  }, Qt::SingleShotConnection);
-  
-  if (profile_action) menu->addAction(addAction);
+  connect(
+      profile_action ? addAction : ui->actionAdd_new_Group, &QAction::triggered,
+      this,
+      [=, this] {
+        auto ent = Configs::ProfileManager::NewGroup();
+        auto dialog = new DialogEditGroup(ent, this);
+        int ret = dialog->exec();
+        dialog->deleteLater();
+
+        if (ret == QDialog::Accepted) {
+          Configs::profileManager->AddGroup(ent);
+          MW_dialog_message(Dialog_DialogManageGroups, "refresh-1");
+        }
+      },
+      Qt::SingleShotConnection);
+  connect(
+      deleteAction, &QAction::triggered, this,
+      [=, this] {
+        auto id = Configs::profileManager->groupsTabOrder[clickedIndex];
+        if (QMessageBox::question(
+                this, tr("Confirmation"),
+                tr("Remove %1?")
+                    .arg(Configs::profileManager->groups[id]->name)) ==
+            QMessageBox::StandardButton::Yes) {
+          Configs::profileManager->DeleteGroup(id);
+          MW_dialog_message(Dialog_DialogManageGroups, "refresh-1");
+        }
+      },
+      Qt::SingleShotConnection);
+  connect(
+      editAction, &QAction::triggered, this,
+      [=, this] {
+        auto id = Configs::profileManager->groupsTabOrder[clickedIndex];
+        auto ent = Configs::profileManager->groups[id];
+        auto dialog = new DialogEditGroup(ent, this);
+        connect(dialog, &QDialog::finished, this, [=, this] {
+          if (dialog->result() == QDialog::Accepted) {
+            ent->Save();
+            MW_dialog_message(Dialog_DialogManageGroups,
+                              "refresh" + Int2String(ent->id));
+          }
+          dialog->deleteLater();
+        });
+        dialog->show();
+      },
+      Qt::SingleShotConnection);
+
+  if (profile_action)
+    menu->addAction(addAction);
   menu->addAction(editAction);
   auto group =
       Configs::profileManager->GetGroup(Configs::dataStore->current_group);

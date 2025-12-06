@@ -2,6 +2,7 @@
 #include "include/sys/Settings.h"
 #include <QString>
 #include <qcoreapplication.h>
+#include "include/configs/proxy/AbstractBean.hpp"
 
 static inline QString _ent(QString name) {
   name = name.replace("/", "_P");
@@ -14,22 +15,10 @@ static inline QString _ent(QString name) {
 
 namespace Configs {
 
-ConfJsMap & ResourceManager::_map(){
-  static ConfJsMap  ptr;
-  static bool init = false;
-
-    #ifndef  d_add
-    #define  d_add(X, Y, B) _put(ptr, X, &this->Y, B)
-    #endif
-
-  if (init) return ptr;
-  {
-    d_add( "core_path", core_path, string);
-    d_add( "resources_path", resources_path, string);
-  }
-  init = true;
-  return ptr;
-}
+DECL_MAP(ResourceManager)
+    ADD_MAP( "core_path", core_path, string);
+    ADD_MAP( "resources_path", resources_path, string);
+STOP_MAP
 
 ResourceManager::ResourceManager() : JsonStore("resources/manager.json") {
   symlinks_supported = true;

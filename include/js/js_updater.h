@@ -19,6 +19,7 @@ public:
     Q_INVOKABLE bool file_exists(const QVariant file);
     Q_INVOKABLE QString get_jsdelivr_link(const QVariant value);
     Q_INVOKABLE QString translate(const QVariant value);
+    Q_INVOKABLE QString get_locale() const;
 signals:
     void log_signal(const QString &value, const QString &title);
     void warning_signal(const QString &value, const QString &title);
@@ -67,7 +68,8 @@ bool jsRouteProfileGetter(
     JsUpdaterWindow * factory,
     QString * updater_js,
     QStringList * list,
-    std::function<QString(QString)> * func
+    QMap<QString, QString> * names,
+    std::function<QString(QString, QString *)> * func
 );
 
 #endif

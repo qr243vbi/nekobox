@@ -34,6 +34,10 @@ function file_exists(message){
     return window.file_exists(_n(message));
 }
 
+function get_locale(){
+    return window.get_locale();
+}
+
 function httpget(url, message, title){
     if (message === undefined){
         message = 'Requesting update error: %1';

@@ -1,4 +1,16 @@
-// DO NOT INCLUDE THIS
+#pragma once
+#include <QString>
+#include <QJsonObject>
+
+namespace Configs_ConfigItem{
+    class configItem;
+}
+
+typedef QMap<QString, std::shared_ptr<Configs_ConfigItem::configItem>> ConfJsMapStat;
+typedef ConfJsMapStat & ConfJsMap;
+//inline ConfJsMap initConfJsMap() { 
+//    return std::make_shared<QMap<QString, std::shared_ptr<Configs_ConfigItem::configItem>>>(); 
+//}
 
 namespace Configs_ConfigItem {
     // config 工具
@@ -33,11 +45,13 @@ namespace Configs_ConfigItem {
     public:
         virtual ~JsonStore() = default;
    //     QMap<QString, std::shared_ptr<configItem>> _map;
-        void _put(QMap<QString, std::shared_ptr<configItem>> & _map, 
+        void _put(ConfJsMap _map, 
             QString str, void *, itemType type
         );
 
-        virtual QMap<QString, std::shared_ptr<configItem>> & _map() = 0;
+        
+
+        virtual ConfJsMap _map() = 0;
 
         std::function<void()> callback_after_load = nullptr;
         std::function<void()> callback_before_save = nullptr;
@@ -79,4 +93,3 @@ namespace Configs_ConfigItem {
 } // namespace Configs_ConfigItem
 
 using namespace Configs_ConfigItem;
-typedef QMap<QString, std::shared_ptr<configItem>> ConfJsMap;

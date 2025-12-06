@@ -38,7 +38,7 @@
       <item row="0" column="0">
        <widget class="QLabel" name="proxy_label">
         <property name="text">
-         <string>Landing Proxy: </string>
+         <string>Landing Proxy:</string>
         </property>
        </widget>
       </item>

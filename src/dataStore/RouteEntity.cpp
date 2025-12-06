@@ -27,50 +27,41 @@ namespace Configs {
     }
     
 
-    #ifndef  d_add
-    #define  d_add(X, Y, B) _put(ptr, X, &this->Y, B)
-    #endif
-
-    ConfJsMap & RouteRule::_map(){
-        static ConfJsMap ptr;
-        static bool init = false;
-        if (init) return ptr;
-        d_add("name", name, string);
-        d_add("ip_version", ip_version, string);
-        d_add("network", network, string);
-        d_add("protocol", protocol, string);
-        d_add("inbound", inbound, stringList);
-        d_add("domain", domain, stringList);
-        d_add("domain_suffix", domain_suffix, stringList);
-        d_add("domain_keyword", domain_keyword, stringList);
-        d_add("domain_regex", domain_regex, stringList);
-        d_add("source_ip_cidr", source_ip_cidr, stringList);
-        d_add("source_ip_is_private", source_ip_is_private, boolean);
-        d_add("ip_cidr", ip_cidr, stringList);
-        d_add("ip_is_private", ip_is_private, boolean);
-        d_add("source_port", source_port, stringList);
-        d_add("source_port_range", source_port_range, stringList);
-        d_add("port", port, stringList);
-        d_add("port_range", port_range, stringList);
-        d_add("process_name", process_name, stringList);
-        d_add("process_path", process_path, stringList);
-        d_add("process_path_regex", process_path_regex, stringList);
-        d_add("rule_set", rule_set, stringList);
-        d_add("invert", invert, boolean);
-        d_add("outboundID", outboundID, integer);
-        d_add("actionType", action, string);
-        d_add("rejectMethod", rejectMethod, string);
-        d_add("noDrop", no_drop, boolean);
-        d_add("override_address", override_address, string);
-        d_add("override_port", override_port, integer);
-        d_add("sniffers", sniffers, stringList);
-        d_add("sniffOverrideDest", sniffOverrideDest, boolean);
-        d_add("strategy", strategy, string);
-        d_add("type", type, integer);
-        d_add("simple_action", simpleAction, integer);
-        init = true;
-        return ptr;
-    }
+    DECL_MAP(RouteRule)
+        ADD_MAP("name", name, string);
+        ADD_MAP("ip_version", ip_version, string);
+        ADD_MAP("network", network, string);
+        ADD_MAP("protocol", protocol, string);
+        ADD_MAP("inbound", inbound, stringList);
+        ADD_MAP("domain", domain, stringList);
+        ADD_MAP("domain_suffix", domain_suffix, stringList);
+        ADD_MAP("domain_keyword", domain_keyword, stringList);
+        ADD_MAP("domain_regex", domain_regex, stringList);
+        ADD_MAP("source_ip_cidr", source_ip_cidr, stringList);
+        ADD_MAP("source_ip_is_private", source_ip_is_private, boolean);
+        ADD_MAP("ip_cidr", ip_cidr, stringList);
+        ADD_MAP("ip_is_private", ip_is_private, boolean);
+        ADD_MAP("source_port", source_port, stringList);
+        ADD_MAP("source_port_range", source_port_range, stringList);
+        ADD_MAP("port", port, stringList);
+        ADD_MAP("port_range", port_range, stringList);
+        ADD_MAP("process_name", process_name, stringList);
+        ADD_MAP("process_path", process_path, stringList);
+        ADD_MAP("process_path_regex", process_path_regex, stringList);
+        ADD_MAP("rule_set", rule_set, stringList);
+        ADD_MAP("invert", invert, boolean);
+        ADD_MAP("outboundID", outboundID, integer);
+        ADD_MAP("actionType", action, string);
+        ADD_MAP("rejectMethod", rejectMethod, string);
+        ADD_MAP("noDrop", no_drop, boolean);
+        ADD_MAP("override_address", override_address, string);
+        ADD_MAP("override_port", override_port, integer);
+        ADD_MAP("sniffers", sniffers, stringList);
+        ADD_MAP("sniffOverrideDest", sniffOverrideDest, boolean);
+        ADD_MAP("strategy", strategy, string);
+        ADD_MAP("type", type, integer);
+        ADD_MAP("simple_action", simpleAction, integer);
+    STOP_MAP
 
     RouteRule::RouteRule(const RouteRule& other) {
         name = other.name;
@@ -577,7 +568,8 @@ namespace Configs {
 
     std::shared_ptr<RoutingChain> RoutingChain::GetDefaultChain() {
         auto defaultChain = std::make_shared<RoutingChain>();
-        defaultChain->name = "Default";
+        defaultChain->chain_name = "Default";
+        defaultChain->update_url = "";
         auto defaultRule = std::make_shared<RouteRule>();
         defaultRule->name = "Route DNS";
         defaultRule->action = "hijack-dns";
@@ -785,21 +777,20 @@ namespace Configs {
     RoutingChain::RoutingChain() {
     }
 
-    ConfJsMap & RoutingChain::_map() {
-        static ConfJsMap ptr;
-        static bool init = false;
-        if (init) return ptr;
-        d_add("id", id, integer);
-        d_add("name", name, string);
-        d_add("rules", castedRules, jsonStoreList);
-        d_add("default_outbound", defaultOutboundID, integer);
-        init = true;
-        return ptr;
-    }
+    DECL_MAP(RoutingChain)
+        ADD_MAP("id", id, integer);
+        ADD_MAP("name", chain_name, string);
+        ADD_MAP("update_url", update_url, string);
+        ADD_MAP("skip_update", skip_update, boolean);
+        ADD_MAP("rules", castedRules, jsonStoreList);
+        ADD_MAP("default_outbound", defaultOutboundID, integer);
+    STOP_MAP
 
     RoutingChain::RoutingChain(const RoutingChain& other)  : JsonStore(other) {
         id = other.id;
-        name = QString(other.name);
+        chain_name = QString(other.chain_name);
+        update_url = QString(other.update_url);
+        skip_update = other.skip_update;
         for (const auto& item: other.Rules) {
             Rules.push_back(std::make_shared<RouteRule>(*item));
         }
@@ -816,14 +807,14 @@ namespace Configs {
     }
 
     void RoutingChain::FromJson(QJsonObject object) {
-        auto & _map = this->_map();
+        auto _map = this->_map();
         for (const auto &key: object.keys()) {
             if (_map.count(key) == 0) {
                 continue;
             }
 
             auto value = object[key];
-            auto item = _map[key].get();
+            auto item = _map.value(key).get();
 
             if (item == nullptr) continue;
             if (item->type == itemType::jsonStoreList) {

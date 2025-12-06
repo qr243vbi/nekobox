@@ -58,7 +58,7 @@ namespace Configs {
 
         RouteRule(const RouteRule& other);
 
-        virtual ConfJsMap & _map() override;
+        virtual ConfJsMap _map() override;
         QString name = "";
         int type = custom;
         int simpleAction;
@@ -117,8 +117,10 @@ namespace Configs {
     class RoutingChain : public JsonStore {
     public:
         int id = -1;
-        QString name = "";
-        virtual ConfJsMap & _map() override;
+        QString chain_name = "";
+        QString update_url = "";
+        bool skip_update = false;
+        virtual ConfJsMap _map() override;
 
         QList<std::shared_ptr<RouteRule>> Rules;
         QList<JsonStore*> castedRules;

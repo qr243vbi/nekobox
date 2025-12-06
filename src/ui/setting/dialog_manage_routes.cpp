@@ -37,8 +37,8 @@ void DialogManageRoutes::reloadProfileItems() {
     bool selectedChainGone = true;
     int i=0;
     for (const auto &item: chainList) {
-        ui->route_prof->addItem(item->name);
-        ui->route_profiles->addItem(item->name);
+        ui->route_prof->addItem(item->chain_name);
+        ui->route_profiles->addItem(item->chain_name);
         if (item == currentRoute) {
             ui->route_prof->setCurrentIndex(i);
             selectedChainGone=false;
@@ -68,7 +68,7 @@ bool DialogManageRoutes::validate_dns_rules(const QString &rawString) {
     return true;
 }
 
-DialogManageRoutes::DialogManageRoutes(QWidget *parent) : QDialog(parent), ui(new Ui::DialogManageRoutes) {
+DialogManageRoutes::DialogManageRoutes(QWidget *parent, bool EditRouteProfiles) : QDialog(parent), ui(new Ui::DialogManageRoutes) {
     ui->setupUi(this);
     auto profiles = Configs::profileManager->routes;
     for (const auto &item: profiles) {
@@ -180,6 +180,10 @@ DialogManageRoutes::DialogManageRoutes(QWidget *parent) : QDialog(parent), ui(ne
         ui->redirect_listenport->setEnabled(state);
     });
 
+    if (EditRouteProfiles){
+        ui->routes_tab->setCurrentIndex(3);
+    }
+
     ADD_ASTERISK(this)
 }
 
@@ -279,7 +283,7 @@ void DialogManageRoutes::on_clone_route_clicked() {
     if (idx < 0) return;
 
     auto chainCopy = std::make_shared<Configs::RoutingChain>(*chainList[idx]);
-    chainCopy->name = chainCopy->name + " clone";
+    chainCopy->chain_name = chainCopy->chain_name + " clone";
     chainCopy->id = -1;
     chainCopy->save_control_no_save = false;
     chainList.append(chainCopy);

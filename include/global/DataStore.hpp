@@ -1,6 +1,7 @@
 // DO NOT INCLUDE THIS
 
 #include "Const.hpp"
+#include "ConfigItem.hpp"
 #ifdef Q_OS_WIN
 #include "include/sys/windows/WinVersion.h"
 #endif
@@ -9,7 +10,7 @@ namespace Configs {
 
     class Routing : public JsonStore {
     public:
-        virtual ConfJsMap & _map() override;
+        virtual ConfJsMap _map() override;
         int current_route_id = 0;
 
         // DNS
@@ -35,7 +36,7 @@ namespace Configs {
     class Shortcuts : public JsonStore
     {
     public:
-        virtual ConfJsMap& _map() override;
+        virtual ConfJsMap _map() override;
 
         QMap<QString, QKeySequence> shortcuts;
 
@@ -49,7 +50,7 @@ namespace Configs {
 
     class DataStore : public JsonStore {
     public:
-        virtual ConfJsMap & _map() override;
+        virtual ConfJsMap _map() override;
         // Running
         int core_port = 19810;
         int started_id = -1919;
@@ -167,6 +168,8 @@ namespace Configs {
         int dns_server_listen_port = 53;
         QString dns_v4_resp = "127.0.0.1";
         QString dns_v6_resp = "::1";
+        QString ruleset_json_url = "https://github.com/qr243vbi/ruleset/"
+            "raw/refs/heads/rule-set/srslist.json";
         QStringList dns_server_rules = {};
         bool enable_redirect = false;
         QString redirect_listen_address = "127.0.0.1";

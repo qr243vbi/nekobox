@@ -23,12 +23,11 @@ namespace Configs {
             streamPtr = stream.get();
         }
         INIT_MAP
-            _add("v", socks_http_type, integer);
-            _add("username", username, string);
-            _add("password", password, string);
-            _add("stream", streamPtr, jsonStore);
+            ADD_MAP("v", socks_http_type, integer);
+            ADD_MAP("username", username, string);
+            ADD_MAP("password", password, string);
+            ADD_MAP("stream", streamPtr, jsonStore);
         STOP_MAP
-        #undef _add
 
         QString DisplayType() override { return socks_http_type == type_HTTP ? "HTTP" : "Socks"; };
 
