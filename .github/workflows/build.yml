@@ -82,6 +82,12 @@ jobs:
           cache-dependency-path: |
             core/server/go.sum
             core/updater/go.sum
+      - name: Linux - Install apt dependencies
+        if: github.event.inputs.build_ubuntu == 'true' && github.event.inputs.source != 'true'
+        uses: awalsh128/cache-apt-pkgs-action@latest
+        with:
+          packages: thrift
+          version: 1.0
       - name: Install Protoc
         if: matrix.cross_os == 'public' || ( github.event.inputs.source != 'true' && matrix.allow == 'true' )
         run: |
