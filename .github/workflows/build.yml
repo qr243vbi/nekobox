@@ -186,6 +186,30 @@ jobs:
           cmake --build build --config Release --verbose
           ./script/deploy_windows.sh "new-${{ matrix.target }}"
 
+      - name: Build Installer with NSIS for windows64
+        shell: cmd
+        if: github.event.inputs.build_windows == 'true' && matrix.target == 'x86_64' && github.event.inputs.source != 'true'
+        run: |
+          cp .\script\windows_installer.nsi .
+          makensis.exe windows_installer.nsi
+          install -D nekobox_setup.exe deployment/nekobox_setup.exe
+
+      - name: Build Installer with NSIS for windows32
+        shell: cmd
+        if: github.event.inputs.build_windows == 'true' && matrix.target == 'i686' && github.event.inputs.source != 'true'
+        run: |
+          cp .\script\windows_installer.nsi .
+          makensis "/DDIRECTORY=windows32"  windows_installer.nsi
+          install -D nekobox_setup.exe deployment/nekobox_setup32.exe
+
+      - name: Build Installer with NSIS for windows-arm64
+        shell: cmd
+        if: github.event.inputs.build_windows == 'true' && matrix.target == 'arm64' && github.event.inputs.source != 'true'
+        run: |
+          cp .\script\windows_installer.nsi .
+          makensis "/DDIRECTORY=windows-arm64" windows_installer.nsi
+          install -D nekobox_setup.exe deployment/nekobox_setup_arm64.exe
+
       - name: Tar files
         shell: bash
         if: github.event.inputs.build_windows == 'true' && github.event.inputs.source != 'true'
