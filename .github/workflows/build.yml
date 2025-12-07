@@ -53,13 +53,14 @@ jobs:
             cross_arch: arm64
             go_version: "1.25.0"
             allow: ${{ github.event.inputs.build_ubuntu }}
-          - cross_os: windows
-            cross_arch: amd64
-            go_version: "1.25.0"
-            allow: ${{ github.event.inputs.build_windows }}
+#          - cross_os: windows
+#            cross_arch: amd64
+#            go_version: "1.25.0"
+#            allow: ${{ github.event.inputs.build_windows }}
           - cross_os: windows
             cross_arch: arm64
             go_version: "1.25.0"
+            allow: ${{ github.event.inputs.build_windows }}
       fail-fast: false
     runs-on: ubuntu-latest
     steps:
@@ -124,10 +125,10 @@ jobs:
       max-parallel: 1
       matrix:
         include:
-          - platform: windows-2022
-            target: x86_64
-            qt_version: 6.10.0
-            triplet: x64-windows
+#          - platform: windows-2022
+#            target: x86_64
+#            qt_version: 6.10.0
+#            triplet: x64-windows
           - platform: windows-11-arm
             target: arm64
             qt_version: 6.10.0
@@ -149,7 +150,7 @@ jobs:
         id: vcpkg
         with:
           pkgs: thrift
-          triplet: ${{ github.event.inputs.triplet }}
+          triplet: ${{ matrix.triplet }}
           token: ${{ github.token }}
 
       - name: Install Chocolatey Packages
@@ -178,7 +179,7 @@ jobs:
           version: ${{ matrix.qt_version }}
           setup-python: true
           cache: true
-          modules: qtcharts qtgrpc
+          modules: qtcharts
           cache-key-prefix: QtCache-${{ matrix.platform }}-${{ matrix.target }}
 
       - name: Install MSVC compiler
@@ -192,7 +193,7 @@ jobs:
         shell: bash
         run: |
           if [[ ${{ github.event.inputs.updater }} == 'true' ]]; then export SKIP_UPDATE_BUTTON=ON; else export SKIP_UPDATE_BUTTON=OFF; fi
-          cmake -GNinja -DSKIP_UPDATE_BUTTON="${SKIP_UPDATE_BUTTON}" -DCMAKE_BUILD_TYPE=Release -S . -B build
+          cmake  -DCMAKE_TOOLCHAIN_FILE=${{ github.workspace }}/vcpkg/scripts/buildsystems/vcpkg.cmake -DVCPKG_TARGET_TRIPLET=${{ matrix.triplet }} -DVCPKG_MANIFEST_MODE=OFF -GNinja -DSKIP_UPDATE_BUTTON="${SKIP_UPDATE_BUTTON}" -DCMAKE_BUILD_TYPE=Release -S . -B build
           cmake --build build --verbose
           ./script/deploy_windows.sh "new-${{ matrix.target }}"
 
