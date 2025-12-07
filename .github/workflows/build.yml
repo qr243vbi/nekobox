@@ -40,6 +40,7 @@ jobs:
     permissions:
       contents: read
     strategy:
+      max-parallel: 1
       matrix:
         include:
           - cross_os: public
@@ -53,10 +54,10 @@ jobs:
             cross_arch: arm64
             go_version: "1.25.0"
             allow: ${{ github.event.inputs.build_ubuntu }}
-#          - cross_os: windows
-#            cross_arch: amd64
-#            go_version: "1.25.0"
-#            allow: ${{ github.event.inputs.build_windows }}
+          - cross_os: windows
+            cross_arch: amd64
+            go_version: "1.25.0"
+            allow: ${{ github.event.inputs.build_windows }}
           - cross_os: windows
             cross_arch: arm64
             go_version: "1.25.0"
@@ -119,10 +120,10 @@ jobs:
       max-parallel: 1
       matrix:
         include:
-#          - platform: windows-2022
-#            target: x86_64
-#            qt_version: 6.10.0
-#            triplet: x64-windows
+          - platform: windows-2022
+            target: x86_64
+            qt_version: 6.10.0
+            triplet: x64-windows
           - platform: windows-11-arm
             target: arm64
             qt_version: 6.10.0
@@ -206,10 +207,10 @@ jobs:
       matrix:
         include:
           - platform: ubuntu-24.04
-            qt_version: "6.10.1"
+            qt_version: "6.10.0"
             target: amd64
           - platform: ubuntu-24.04-arm
-            qt_version: "6.10.1"
+            qt_version: "6.10.0"
             target: arm64
       fail-fast: false
     runs-on: ${{ matrix.platform }}
@@ -236,7 +237,7 @@ jobs:
           version: ${{ matrix.qt_version }}
           setup-python: true
           cache: true
-          modules: qtcharts qtgrpc
+          modules: qtcharts
           cache-key-prefix: QtCache-${{ matrix.platform }}-${{ matrix.target }}
 
       - name: Download Srslist
@@ -250,7 +251,7 @@ jobs:
         if: github.event.inputs.build_ubuntu == 'true' && github.event.inputs.source != 'true'
         uses: awalsh128/cache-apt-pkgs-action@latest
         with:
-          packages: libfuse2 patchelf squashfs-tools openssl-dev openssl protobuf-compiler
+          packages: libfuse2 patchelf squashfs-tools openssl-dev openssl thrift-compiler libthrift-dev
           version: 1.0
 
       - name: Linux - Generate MakeFile and Build
