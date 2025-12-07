@@ -9,6 +9,7 @@ version.txt
 /run.cmd
 /vcpkg_installed
 nekobox_core
+/deployment
 /libcore*.qpb.h
 compile_commands.json
 *~
