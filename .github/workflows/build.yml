@@ -57,9 +57,9 @@ jobs:
             cross_arch: amd64
             go_version: "1.25.0"
             allow: ${{ github.event.inputs.build_windows }}
-#          - cross_os: windows
- #           cross_arch: arm64
-  #          go_version: "1.25.0"
+          - cross_os: windows
+            cross_arch: arm64
+            go_version: "1.25.0"
       fail-fast: false
     runs-on: ubuntu-latest
     steps:
@@ -126,10 +126,12 @@ jobs:
         include:
           - platform: windows-2022
             target: x86_64
-            qt_version: 6.10.1
-#          - platform: windows-11-arm
- #           target: arm64
-  #          qt_version: 6.10.0
+            qt_version: 6.10.0
+            triplet: x64-windows
+          - platform: windows-11-arm
+            target: arm64
+            qt_version: 6.10.0
+            triplet: arm64-windows
       fail-fast: false
     runs-on: ${{ matrix.platform }}
     env:
@@ -141,6 +143,14 @@ jobs:
         uses: actions/checkout@v4.2.2
         with:
           submodules: "recursive"
+
+      - name: vcpkg build
+        uses: johnwason/vcpkg-action@v7
+        id: vcpkg
+        with:
+          pkgs: thrift
+          triplet: ${{ github.event.inputs.triplet }}
+          token: ${{ github.token }}
 
       - name: Install Chocolatey Packages
         if: github.event.inputs.build_windows == 'true' && github.event.inputs.source != 'true'
