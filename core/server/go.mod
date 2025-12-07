@@ -1,6 +1,6 @@
 module Core
 
-go 1.25.4
+go 1.25.0
 
 replace github.com/sagernet/sing-box => github.com/qr243vbi/sing-box v1.12.13-0.20251125233828-e37a746830d7
 
