@@ -7,15 +7,17 @@ import (
 	"context"
 	"errors"
 	"fmt"
-	"github.com/Mahdi-zarei/speedtest-go/speedtest"
-	"github.com/sagernet/sing-box/adapter"
-	"github.com/sagernet/sing/common/metadata"
-	"github.com/sagernet/sing/service"
 	"io"
 	"net"
 	"net/http"
 	"sync"
 	"time"
+
+	"Core/speedtest"
+
+	"github.com/sagernet/sing-box/adapter"
+	"github.com/sagernet/sing/common/metadata"
+	"github.com/sagernet/sing/service"
 )
 
 var testCtx context.Context

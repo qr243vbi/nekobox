@@ -11,9 +11,17 @@
 #include <QPushButton>
 #include <QDesktopServices>
 #include <QMessageBox>
+#include <QStringList>
 
 // rpc
 using namespace API;
+
+void qstringlist_to_vector(std::vector<std::string> &vec, const QStringList &list){
+    vec.clear();
+    for (QString str : list){
+        vec.push_back(str.toStdString());
+    }
+}
 
 void MainWindow::setup_rpc() {
     // Setup Connection
@@ -35,13 +43,13 @@ void MainWindow::runURLTest(const QString& config, bool useDefault, const QStrin
     }
 
     libcore::TestReq req;
-    req.setOutboundTags(outboundTags);
+    qstringlist_to_vector(req.outbound_tags, outboundTags);
 
-    req.setConfig(config);
-    req.setUrl(Configs::dataStore->test_latency_url);
-    req.setUseDefaultOutbound(useDefault);
-    req.setMaxConcurrency(Configs::dataStore->test_concurrent);
-    req.setTestTimeoutMs(Configs::dataStore->url_test_timeout_ms);
+    req.config = (config.toStdString());
+    req.url = (Configs::dataStore->test_latency_url.toStdString());
+    req.use_default_outbound = (useDefault);
+    req.max_concurrency = (Configs::dataStore->test_concurrent);
+    req.test_timeout_ms = (Configs::dataStore->url_test_timeout_ms);
 
     auto done = new QMutex;
     done->lock();
@@ -53,17 +61,17 @@ void MainWindow::runURLTest(const QString& config, bool useDefault, const QStrin
             QThread::msleep(200);
             if (done->try_lock()) break;
             auto resp = defaultClient->QueryURLTest(&ok);
-            if (!ok || resp->results().isEmpty() )
+            if (!ok || resp->results.empty() )
             {
                 continue;
             }
 
             bool needRefresh = false;
-            for (const auto& res : resp->results())
+            for (const auto& res : resp->results)
             {
                 int entid = -1;
                 if (!tag2entID.isEmpty()) {
-                    QString tag = (res.outboundTag());
+                    auto tag = QString::fromStdString(res.outbound_tag);
                     entid = tag2entID.count(tag) == 0 ? -1 : tag2entID[tag];
                 }
                 if (entid == -1) {
@@ -73,9 +81,9 @@ void MainWindow::runURLTest(const QString& config, bool useDefault, const QStrin
                 if (ent == nullptr) {
                     continue;
                 }
-                QString error = (res.error());
+                auto error = QString::fromStdString(res.error);
                 if (error.isEmpty()) {
-                    ent->latencyInt = res.latencyMs();
+                    ent->latencyInt = res.latency_ms;
                 } else {
                     if (error.contains("test aborted") ||
                         error.contains("context canceled")) ent->latencyInt=0;
@@ -102,11 +110,11 @@ void MainWindow::runURLTest(const QString& config, bool useDefault, const QStrin
     auto result = defaultClient->Test(&rpcOK, req);
     done->unlock();
     //
-    if (!rpcOK || result->results().isEmpty()) return;
+    if (!rpcOK || result->results.empty()) return;
 
-    for (const auto &res: result->results()) {
+    for (const auto &res: result->results) {
         if (!tag2entID.isEmpty()) {
-            auto tag = (res.outboundTag());
+            auto tag = QString::fromStdString(res.outbound_tag);
             entID = tag2entID.count(tag) == 0 ? -1 : tag2entID[tag];
         }
         if (entID == -1) {
@@ -119,9 +127,9 @@ void MainWindow::runURLTest(const QString& config, bool useDefault, const QStrin
             MW_show_log(tr("Profile manager data is corrupted, try again."));
             continue;
         }
-        auto error = (res.error());
+        auto error = QString::fromStdString(res.error);
         if (error.isEmpty()) {
-            ent->latencyInt = res.latencyMs();
+            ent->latencyInt = res.latency_ms;
         } else {
             if (error.contains("test aborted") ||
                 error.contains("context canceled")) ent->latencyInt=0;
@@ -205,21 +213,21 @@ void MainWindow::url_test_current() {
 
     runOnNewThread([=,this] {
         libcore::TestReq req;
-        req.setTestCurrent(true);
-        req.setUrl(Configs::dataStore->test_latency_url);
+        req.test_current = (true);
+        req.url = (Configs::dataStore->test_latency_url.toStdString());
 
         bool rpcOK;
         auto result = defaultClient->Test(&rpcOK, req);
-        if (!rpcOK || result->results().isEmpty() ) return;
+        if (!rpcOK || result->results.empty() ) return;
 
-        auto results_0 = result->results().at(0);
-        auto latency = results_0.latencyMs();
+        auto results_0 = result->results.at(0);
+        auto latency = results_0.latency_ms;
         last_test_time = QDateTime::currentSecsSinceEpoch();
 
         runOnUiThread([=,this] {
-            if (!results_0.error().isEmpty()) {
+            if (!results_0.error.empty()) {
                 MW_show_log(QString("UrlTest error: %1").arg(
-                    (results_0.error())));
+                    (results_0.error)));
             }
             if (latency <= 0) {
                 ui->label_running->setText(tr("Test Result") + ": " + tr("Unavailable"));
@@ -278,13 +286,13 @@ void MainWindow::querySpeedtest(QDateTime lastProxyListUpdate, const QMap<QStrin
 {
     bool ok;
     auto res = defaultClient->QueryCurrentSpeedTests(&ok);
-    if (!ok || !res->isRunning())
+    if (!ok || !res->is_running)
     {
         return;
     }
     auto profile = testCurrent ? running : 
         Configs::profileManager->GetProfile(
-            tag2entID[(res->result().outboundTag())]);
+            tag2entID[QString::fromStdString(res->result.outbound_tag)]);
     if (profile == nullptr)
     {
         return;
@@ -293,17 +301,16 @@ void MainWindow::querySpeedtest(QDateTime lastProxyListUpdate, const QMap<QStrin
     {
         showSpeedtestData = true;
         currentSptProfileName = profile->bean->name;
-        currentTestResult = res->result();
+        auto result = currentTestResult = res->result;
         UpdateDataView();
-        auto result = res->result();
 
-        if (result.error().isEmpty() && !result.cancelled() && 
+        if (result.error.empty() && !result.cancelled && 
             lastProxyListUpdate.msecsTo(QDateTime::currentDateTime()) >= 500)
         {
-            auto dl_speed = result.dlSpeed();
-            auto ul_speed = result.ulSpeed();
-            auto latency = result.latency();
-            auto country = result.serverCountry();
+            auto dl_speed = QString::fromStdString(result.dl_speed);
+            auto ul_speed = QString::fromStdString(result.ul_speed);
+            auto latency = result.latency;
+            auto country = QString::fromStdString(result.server_country);
             if (!dl_speed.isEmpty()) profile->dl_speed = (dl_speed);
             if (!ul_speed.isEmpty()) profile->ul_speed = (ul_speed);
             if (profile->latencyInt <= 0 && latency > 0) profile->latencyInt = latency;
@@ -318,25 +325,25 @@ void MainWindow::queryCountryTest(const QMap<QString, int>& tag2entID, bool test
 {
     bool ok;
     auto res = defaultClient->QueryCountryTestResults(&ok);
-    if (!ok || res->results().isEmpty())
+    if (!ok || res->results.empty())
     {
         return;
     }
-    for (const auto& result : res->results())
+    for (const auto& result : res->results)
     {
         auto profile = testCurrent ? running : 
         Configs::profileManager->GetProfile(tag2entID[
-            (result.outboundTag())]);
+            (QString::fromStdString(result.outbound_tag))]);
         if (profile == nullptr)
         {
             return;
         }
         runOnUiThread([=, this]
         {
-            if (result.error().isEmpty() && !result.cancelled())
+            if (result.error.empty() && !result.cancelled)
             {
-                auto latency = result.latency();
-                auto country = result.serverCountry();
+                auto latency = result.latency;
+                auto country = QString::fromStdString(result.server_country);
                 if (profile->latencyInt <= 0 && latency > 0) profile->latencyInt = latency;
                 if (!country.isEmpty()) profile->test_country = CountryNameToCode(
                     (country));
@@ -356,17 +363,17 @@ void MainWindow::runSpeedTest(const QString& config, bool useDefault, bool testC
 
     libcore::SpeedTestRequest req;
     auto speedtestConf = Configs::dataStore->speed_test_mode;
-    req.setOutboundTags(outboundTags);
-    req.setConfig(config);
-    req.setUseDefaultOutbound(useDefault);
-    req.setTestDownload (speedtestConf == Configs::TestConfig::FULL || speedtestConf == Configs::TestConfig::DL);
-    req.setTestUpload (speedtestConf == Configs::TestConfig::FULL || speedtestConf == Configs::TestConfig::UL);
-    req.setSimpleDownload( speedtestConf == Configs::TestConfig::SIMPLEDL);
-    req.setSimpleDownloadAddr( Configs::dataStore->simple_dl_url);
-    req.setTestCurrent( testCurrent);
-    req.setTimeoutMs( Configs::dataStore->speed_test_timeout_ms);
-    req.setOnlyCountry( speedtestConf == Configs::TestConfig::COUNTRY);
-    req.setCountryConcurrency( Configs::dataStore->test_concurrent);
+    qstringlist_to_vector(req.outbound_tags, outboundTags);
+    req.config = (config.toStdString());
+    req.use_default_outbound = (useDefault);
+    req.test_download = (speedtestConf == Configs::TestConfig::FULL || speedtestConf == Configs::TestConfig::DL);
+    req.test_upload = (speedtestConf == Configs::TestConfig::FULL || speedtestConf == Configs::TestConfig::UL);
+    req.simple_download = ( speedtestConf == Configs::TestConfig::SIMPLEDL);
+    req.simple_download_addr = ( Configs::dataStore->simple_dl_url).toStdString();
+    req.test_current = ( testCurrent);
+    req.timeout_ms = ( Configs::dataStore->speed_test_timeout_ms);
+    req.only_country = ( speedtestConf == Configs::TestConfig::COUNTRY);
+    req.country_concurrency = ( Configs::dataStore->test_concurrent);
 
     // loop query result
     auto doneMu = new QMutex;
@@ -400,12 +407,12 @@ void MainWindow::runSpeedTest(const QString& config, bool useDefault, bool testC
     auto result = defaultClient->SpeedTest(&rpcOK, req);
     doneMu->unlock();
     //
-    if (!rpcOK || result->results().isEmpty() ) return;
+    if (!rpcOK || result->results.empty() ) return;
 
-    for (const auto &res: result->results()) {
+    for (const auto &res: result->results) {
         if (testCurrent) entID = running ? running->id : -1;
         else {
-            auto tag = (res.outboundTag());
+            auto tag = QString::fromStdString(res.outbound_tag);
             entID = tag2entID.count(tag) == 0 ? -1 : tag2entID[tag];
         }
         if (entID == -1) {
@@ -419,15 +426,15 @@ void MainWindow::runSpeedTest(const QString& config, bool useDefault, bool testC
             continue;
         }
 
-        if (res.cancelled()) continue;
+        if (res.cancelled) continue;
 
-        if (res.error().isEmpty()) {
-            ent->dl_speed = (res.dlSpeed());
-            ent->ul_speed = (res.ulSpeed());
-            auto latency = res.latency();
+        if (res.error.empty()) {
+            ent->dl_speed = QString::fromStdString(res.dl_speed);
+            ent->ul_speed = QString::fromStdString(res.ul_speed);
+            auto latency = res.latency;
             if (ent->latencyInt <= 0 && latency > 0) ent->latencyInt = latency;
-            auto country = res.serverCountry();
-            if (!country.isEmpty()) ent->test_country = 
+            auto country = res.server_country;
+            if (!country.empty()) ent->test_country = 
                 CountryNameToCode(country);
         } else {
             ent->dl_speed = "N/A";
@@ -435,7 +442,7 @@ void MainWindow::runSpeedTest(const QString& config, bool useDefault, bool testC
             ent->latencyInt = -1;
             ent->test_country = "";
             MW_show_log(tr("[%1] speed test error: %2").arg(
-                ent->bean->DisplayTypeAndName(), (res.error())));
+                ent->bean->DisplayTypeAndName(), (res.error)));
         }
         ent->Save();
     }
@@ -497,16 +504,16 @@ void MainWindow::profile_start(int _id) {
 
     auto profile_start_stage2 = [=, this] {
         libcore::LoadConfigReq req;
-        req.setCoreConfig(QJsonObject2QString(result->coreConfig, true));
-        req.setDisableStats(Configs::dataStore->disable_traffic_stats);
+        req.core_config = (QJsonObject2QString(result->coreConfig, true)).toStdString();
+        req.disable_stats = (Configs::dataStore->disable_traffic_stats);
         if (ent->type == "extracore")
         {
-            req.setNeedExtraProcess(true);
-            req.setExtraProcessPath(result->extraCoreData->path);
-            req.setExtraProcessArgs(result->extraCoreData->args);
-            req.setExtraProcessConf(result->extraCoreData->config);
-            req.setExtraProcessConfDir(result->extraCoreData->configDir);
-            req.setExtraNoOut(result->extraCoreData->noLog);
+            req.need_extra_process = (true);
+            req.extra_process_path = (result->extraCoreData->path).toStdString();
+            req.extra_process_args = (result->extraCoreData->args).toStdString();
+            req.extra_process_conf = (result->extraCoreData->config).toStdString();
+            req.extra_process_conf_dir = (result->extraCoreData->configDir).toStdString();
+            req.extra_no_out = (result->extraCoreData->noLog);
         }
         //
         bool rpcOK;

@@ -49,7 +49,7 @@ $GOCMD build -o $DEST/updater"${EXT}" -trimpath -ldflags "-w -s"
 pushd core/server
 (
 cd gen
-protoc -I . --go_out=. --go-grpc_out=. libcore.proto
+./update_libs.sh
 ) || :
 VERSION_SINGBOX="${VERSION_SINGBOX:-$(go list -m -f '{{.Version}}' github.com/sagernet/sing-box)}"
 [ "$GO_MOD_TIDY" == yes ] && $GOCMD mod tidy

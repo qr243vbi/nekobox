@@ -1,21 +1,34 @@
 #include "include/api/RPC.h"
 #include "include/global/Configs.hpp"
 #include <QDebug>
-
-#include <QGrpcHttp2Channel>
-#include <qtgrpcnamespace.h>
-
 #include <optional>
 #include <qnamespace.h>
 
+//Thrift libraries
+#include <thrift/protocol/TBinaryProtocol.h>             
+#include <thrift/server/TSimpleServer.h>
+#include <thrift/transport/TSocket.h>                    
+#include <thrift/transport/TBufferTransports.h>          
+#include <thrift/transport/TTransportUtils.h>
+
+#include <gen-cpp/libcore_types.h>
+
+using namespace apache::thrift;
+using namespace apache::thrift::protocol;
+using namespace apache::thrift::transport;
+
+struct Status{
+    bool ok = false;
+    std::string what = "";
+    bool isOk(){ return ok; }
+    QString message() { return QString::fromStdString(what); }
+};
+
 namespace API {
 
-    Client::Client(std::function<void(const QString &)> onError, const QString &host, int port) {
-        QString address = "http://";
-        address += host;          
-        address += ":";                         
-        address += QString::number(port);
-        this->address = address;
+    Client::Client(std::function<void(const QString &)> onError, const QString &host, int port) {                         
+        this->port = (port);
+        this->domain = host.toStdString();
         this->onError = std::move(onError);
     }
 
@@ -25,26 +38,30 @@ if (!Configs::dataStore->core_running) {                                        
     MW_show_log("Cannot invoke method " + QString(method) + ", core is not running");  \
     is_running = false; \
 } else {    \
-  /*  qDebug() << "Invoke" << QString(method);*/  \
 }
 
-#define CHANNEL(X, VAL)                                            \
-libcore::LibcoreService::Client client;                             \
-auto channel = std::make_shared<QGrpcHttp2Channel>(                 \
-    this->address                                                   \
-); client.attachChannel(channel);                                   \
-std::unique_ptr<QGrpcCallReply> call = client.X(request);           \
-        QEventLoop GrpcLoop;                                        \
-        QGrpcStatus status;                                         \
-        QObject::connect(call.get(),                                \
-    &QGrpcCallReply::finished,                                      \
-    &GrpcLoop, [&status, &GrpcLoop]( const QGrpcStatus & stat){           \
-        status = stat; GrpcLoop.exit();                             \
-    },                                                              \
-    Qt::SingleShotConnection);                                      \
-        GrpcLoop.exec();                                            \
-        auto reply = call->read<libcore::VAL>();
-            
+
+
+#define CHANNEL(X, VAL)                                                                 \
+std::shared_ptr<TTransport> socket(new TSocket(domain, port));                     \
+std::shared_ptr<TTransport> transport(new TBufferedTransport(socket));                  \
+std::shared_ptr<TProtocol> protocol(new TBinaryProtocol(transport));                    \
+libcore::LibcoreServiceClient client(protocol);                                         \
+Status status;                                                                          \
+std::optional<libcore::VAL> reply = std::nullopt;                                       \
+try{                                                                                    \
+    transport->open();                                                                  \
+    status.ok = true;                                                                   \
+    libcore::VAL resp;                                                                  \
+    client.X(resp, request);                                                            \
+    transport->close();                                                                 \
+    reply = std::make_optional(resp);                                                   \
+} catch (TException e){                                                                 \
+    status.ok = false;                                                                  \
+    qDebug() << "HI CRUEL WORLD";                                                       \
+    status.what = e.what();                                                             \
+    qDebug() << status.what;                                                            \
+}
 
 #define NOT_OK                                                      \
     *rpcOK = false;                                                 \
@@ -59,15 +76,11 @@ std::unique_ptr<QGrpcCallReply> call = client.X(request);           \
             return "";
         }
 
-//        qDebug() << "Start Proxy";
-//        qDebug() << request.coreConfig().toStdString().c_str();
-//        qDebug() << "END";
-
         CHANNEL(Start, ErrorResp)
 
         if(status.isOk()) {
             *rpcOK = true;
-            return (reply->error());
+            return QString::fromStdString(reply->error);
         } else {
             NOT_OK
             return  status.message();
@@ -85,7 +98,7 @@ std::unique_ptr<QGrpcCallReply> call = client.X(request);           \
         
         if(status.isOk()) {
             *rpcOK = true;
-            return (reply->error());
+            return QString::fromStdString(reply->error);
         } else {
             NOT_OK
             return status.message();
@@ -99,7 +112,6 @@ std::unique_ptr<QGrpcCallReply> call = client.X(request);           \
         }
         libcore::EmptyReq request;
         CHANNEL(QueryStats, QueryStatsResp)
-
 
         if(status.isOk()) {
             return reply;
@@ -171,7 +183,7 @@ std::unique_ptr<QGrpcCallReply> call = client.X(request);           \
         }
         
         libcore::SetSystemDNSRequest request;
-        request.setClear(clear);
+        request.clear = (clear);
         libcore::EmptyResp resp;
         CHANNEL(SetSystemDNS, EmptyResp)
 
@@ -213,12 +225,12 @@ std::unique_ptr<QGrpcCallReply> call = client.X(request);           \
             return "";
         }
         libcore::LoadConfigReq request;
-        request.setCoreConfig(config);
+        request.core_config = (config.toStdString());
         CHANNEL(CheckConfig, ErrorResp)
         if(status.isOk())
         {
             *rpcOK = true;
-            return (reply->error());
+            return QString::fromStdString(reply->error);
         } else
         {
             NOT_OK
@@ -235,10 +247,11 @@ std::unique_ptr<QGrpcCallReply> call = client.X(request);           \
         }
 
         libcore::EmptyReq request;
+        request.start = true;
         CHANNEL(IsPrivileged, IsPrivilegedResponse)
         if(status.isOk()) {
             *rpcOK = true;
-            return reply->hasPrivilege();
+            return reply->has_privilege;
         } else {
             NOT_OK
             return false;

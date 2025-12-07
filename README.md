@@ -1,10 +1,7 @@
 # [NekoBox](https://github.com/qr243vbi/nekobox) for PC 
-### Warning: someone gained unrestricted access to profile and this repository and deleted all data twice. This repository has been restored from a backup.
+
 Qt based Desktop cross-platform GUI proxy utility, empowered by [Sing-box](https://github.com/SagerNet/sing-box)
 Supports Windows 11/10 (arm64, x86_64) / Linux  out of the box.
-
-<img width="888" height="716" alt="image" src="https://github.com/user-attachments/assets/78539901-976a-4efb-8ea7-3f4a012f5807" />
-
 
 ### GitHub Releases (Portable ZIPs, Windows installers, [AppImages](https://github.com/qr243vbi/nekobox/discussions/41))
 

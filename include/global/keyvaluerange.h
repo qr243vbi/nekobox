@@ -1,5 +1,7 @@
 #ifndef KEY_VALUE_RANGE
 #define KEY_VALUE_RANGE
+#include <type_traits>
+#include <utility>
 template<typename T> class KeyValueRange {
 private:
     T iterable; // This is either a reference or a moved-in value. The map data isn't copied.

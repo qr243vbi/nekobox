@@ -33,8 +33,8 @@ var debug bool
 
 // server is used to implement myservice.MyServiceServer.
 type server struct {
-	gen.UnimplementedLibcoreServiceServer
 }
+
 
 // To returns a pointer to the given value.
 func To[T any](v T) *T {
@@ -62,7 +62,7 @@ func (s *server) Start(ctx context.Context, in *gen.LoadConfigReq) (*gen.ErrorRe
 	}
 
 	if in.NeedExtraProcess {
-		args, e := shlex.Split(in.GetExtraProcessArgs())
+		args, e := shlex.Split(in.GetExtraProcessArgs_())
 		if e != nil {
 			err = E.Cause(e, "Failed to parse args")
 			return out, nil
@@ -191,7 +191,7 @@ func (s *server) Test(ctx context.Context, in *gen.TestReq) (*gen.TestResp, erro
 	if maxConcurrency >= 500 || maxConcurrency == 0 {
 		maxConcurrency = MaxConcurrentTests
 	}
-	results := BatchURLTest(testCtx, testInstance, outboundTags, in.Url,
+	results := BatchURLTest(testCtx, testInstance, outboundTags, in.URL,
 		int(maxConcurrency), twice, time.Duration(in.TestTimeoutMs)*time.Millisecond)
 
 	res := make([]*gen.URLTestResp, 0)
@@ -296,7 +296,7 @@ func (s *server) ListConnections(ctx context.Context, in *gen.EmptyReq) (*gen.Li
 			process = spl[len(spl)-1]
 		}
 		r := &gen.ConnectionMetaData{
-			Id:        (c.ID.String()),
+			ID:        (c.ID.String()),
 			CreatedAt: (c.CreatedAt.UnixMilli()),
 			Upload:    (c.Upload.Load()),
 			Download:  (c.Download.Load()),
@@ -324,7 +324,7 @@ func (s *server) SpeedTest(ctx context.Context, in *gen.SpeedTestRequest) (*gen.
 	var err error
 	if in.TestCurrent {
 		if boxInstance == nil {
-			out.Results = []*gen.SpeedTestResult{{
+			out.Results = []*gen.SpeedTestResult_{{
 				OutboundTag: ("proxy"),
 				Error:       ("Instance is not running"),
 			}}
@@ -350,13 +350,13 @@ func (s *server) SpeedTest(ctx context.Context, in *gen.SpeedTestRequest) (*gen.
 		in.SimpleDownloadAddr, time.Duration(in.TimeoutMs)*time.Millisecond,
 		in.OnlyCountry, in.CountryConcurrency)
 
-	res := make([]*gen.SpeedTestResult, 0)
+	res := make([]*gen.SpeedTestResult_, 0)
 	for _, data := range results {
 		errStr := ""
 		if data.Error != nil {
 			errStr = data.Error.Error()
 		}
-		res = append(res, &gen.SpeedTestResult{
+		res = append(res, &gen.SpeedTestResult_{
 			DlSpeed:       (data.DlSpeed),
 			UlSpeed:       (data.UlSpeed),
 			Latency:       (data.Latency),
@@ -379,7 +379,7 @@ func (s *server) QuerySpeedTest(ctx context.Context, in *gen.EmptyReq) (*gen.Que
 	if res.Error != nil {
 		errStr = res.Error.Error()
 	}
-	out.Result = &gen.SpeedTestResult{
+	out.Result_ = &gen.SpeedTestResult_{
 		DlSpeed:       (res.DlSpeed),
 		UlSpeed:       (res.UlSpeed),
 		Latency:       (res.Latency),
@@ -401,7 +401,7 @@ func (s *server) QueryCountryTest(ctx context.Context, in *gen.EmptyReq) (*gen.Q
 		if res.Error != nil {
 			errStr = res.Error.Error()
 		}
-		out.Results = append(out.Results, &gen.SpeedTestResult{
+		out.Results = append(out.Results, &gen.SpeedTestResult_{
 			DlSpeed:       (res.DlSpeed),
 			UlSpeed:       (res.UlSpeed),
 			Latency:       (res.Latency),

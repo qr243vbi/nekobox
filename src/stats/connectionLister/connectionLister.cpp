@@ -48,20 +48,20 @@ namespace Stats
         QMap<QString, ConnectionMetadata> toAdd;
         QSet<QString> newState;
         QList<ConnectionMetadata> sorted;
-        auto conns = resp->connections();
+        auto conns = resp->connections;
         for (auto conn : conns)
         {
             auto c = ConnectionMetadata();
-            c.id = (conn.id_proto());
-            c.createdAtMs = conn.createdAt();
-            c.dest = (conn.dest());
-            c.upload = conn.upload();
-            c.download = conn.download();
-            c.domain = (conn.domain());
-            c.network = (conn.network());
-            c.outbound = (conn.outbound());
-            c.process = (conn.process());
-            c.protocol = (conn.protocol());
+            c.id = QString::fromStdString(conn.id);
+            c.createdAtMs = conn.created_at;
+            c.dest = QString::fromStdString(conn.dest);
+            c.upload = conn.upload;
+            c.download = conn.download;
+            c.domain = QString::fromStdString(conn.domain);
+            c.network = QString::fromStdString(conn.network);
+            c.outbound = QString::fromStdString(conn.outbound);
+            c.process = QString::fromStdString(conn.process);
+            c.protocol = QString::fromStdString(conn.protocol);
             if (sort == Default)
             {
                 if (state->contains(c.id))

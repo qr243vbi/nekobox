@@ -1,8 +1,8 @@
 #pragma once
 
 #ifndef Q_MOC_RUN
-#include <libcore_client.grpc.qpb.h>
-namespace libcore = gen;
+#include <gen-cpp/LibcoreService.h>
+#include <gen-cpp/libcore_types.h>
 #endif
 #include <QString>
 
@@ -40,7 +40,8 @@ namespace API {
         std::optional<libcore::QueryCountryTestResponse> QueryCountryTestResults(bool *rpcOK);
 
     private:
-        QString address;
+        std::string domain;
+        int port;
         std::function<void(const QString &)> onError;
     };
 
