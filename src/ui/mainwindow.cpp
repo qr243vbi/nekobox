@@ -15,6 +15,10 @@
 #include <include/js/version.h>
 #include <qnamespace.h>
 #include <set>
+#ifdef _WIN32
+#include <winsock2.h>
+#include <windows.h>
+#endif
 
 #include "include/ui/group/dialog_manage_groups.h"
 #include "include/ui/profile/dialog_edit_profile.h"
@@ -1388,7 +1392,7 @@ void MainWindow::on_menu_exit_triggered() {
 #ifdef Q_OS_WIN
       if (!isDirectoryWritable(updateDir)) {
         WinCommander::runProcessElevated(destinationFilePath, list, "",
-                                         WinCommander::SW_NORMAL, false);
+                                        SW_NORMAL, false);
       } else {
 #endif
         QProcess::startDetached(destinationFilePath, list);
@@ -1421,7 +1425,7 @@ void MainWindow::on_menu_exit_triggered() {
         arguments << "-flag_restart_dns_set";
 #ifdef Q_OS_WIN
       WinCommander::runProcessElevated(program, arguments, "",
-                                       WinCommander::SW_NORMAL, false);
+                                       SW_NORMAL, false);
 #else
       QProcess::startDetached(program, arguments);
 #endif

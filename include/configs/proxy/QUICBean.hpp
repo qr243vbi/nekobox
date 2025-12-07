@@ -61,7 +61,7 @@ namespace Configs {
         bool disableSni = false;
 
         #undef _add
-        #define _add(X, Y, B, T) _put(X, Y, &this->B, T);
+        #define _add(X, Y, B, T) _put(X, Y, &this->B, ITEM_TYPE(T));
 
         virtual ConfJsMap  _map() override{
             static ConfJsMapStat 
@@ -72,43 +72,43 @@ namespace Configs {
             if (!init){
                 init = true;
                 // Add base AbstractBean fields
-                _add(tuic, "name", name, itemType::string);
-                _add(tuic, "addr", serverAddress, itemType::string);
-                _add(tuic, "port", serverPort, itemType::integer);
+                _add(tuic, "name", name, string);
+                _add(tuic, "addr", serverAddress, string);
+                _add(tuic, "port", serverPort, integer);
                 
-                _add(tuic, "forceExternal", forceExternal, itemType::boolean);
+                _add(tuic, "forceExternal", forceExternal, boolean);
             // TLS
-                _add(tuic, "allowInsecure",  allowInsecure, itemType::boolean);
-                _add(tuic, "sni", sni, itemType::string);
-                _add(tuic, "alpn", alpn, itemType::string);
-                _add(tuic, "caText", caText, itemType::string);
-                _add(tuic, "disableSni", disableSni, itemType::boolean);
+                _add(tuic, "allowInsecure",  allowInsecure, boolean);
+                _add(tuic, "sni", sni, string);
+                _add(tuic, "alpn", alpn, string);
+                _add(tuic, "caText", caText, string);
+                _add(tuic, "disableSni", disableSni, boolean);
 
                 hys1.insert(tuic);
-                _add(hys1, "authPayload", authPayload, itemType::string);
-                _add(hys1, "obfsPassword", obfsPassword, itemType::string);
-                _add(hys1, "uploadMbps", uploadMbps, itemType::integer);
-                _add(hys1, "downloadMbps", downloadMbps, itemType::integer);
-                _add(hys1, "streamReceiveWindow", streamReceiveWindow, itemType::integer64);
-                _add(hys1, "connectionReceiveWindow", connectionReceiveWindow, itemType::integer64);
-                _add(hys1, "disableMtuDiscovery", disableMtuDiscovery, itemType::boolean);
-                _add(hys1, "server_ports", serverPorts, itemType::stringList);
-                _add(hys1, "hop_interval", hop_interval, itemType::string);                
+                _add(hys1, "authPayload", authPayload, string);
+                _add(hys1, "obfsPassword", obfsPassword, string);
+                _add(hys1, "uploadMbps", uploadMbps, integer);
+                _add(hys1, "downloadMbps", downloadMbps, integer);
+                _add(hys1, "streamReceiveWindow", streamReceiveWindow, integer64);
+                _add(hys1, "connectionReceiveWindow", connectionReceiveWindow, integer64);
+                _add(hys1, "disableMtuDiscovery", disableMtuDiscovery, boolean);
+                _add(hys1, "server_ports", serverPorts, stringList);
+                _add(hys1, "hop_interval", hop_interval, string);                
 
                 hys2.insert(hys1);
 
-                _add(hys1, "authPayloadType", authPayloadType, itemType::integer);
-                _add(hys1, "protocol", hyProtocol, itemType::integer);
+                _add(hys1, "authPayloadType", authPayloadType, integer);
+                _add(hys1, "protocol", hyProtocol, integer);
 
-                _add(hys2, "password", password, itemType::string);
+                _add(hys2, "password", password, string);
 
-                _add(tuic, "uuid", uuid, itemType::string);
-                _add(tuic, "password", password, itemType::string);
-                _add(tuic, "congestionControl", congestionControl, itemType::string);
-                _add(tuic, "udpRelayMode", udpRelayMode, itemType::string);
-                _add(tuic, "zeroRttHandshake", zeroRttHandshake, itemType::boolean);
-                _add(tuic, "heartbeat", heartbeat, itemType::string);
-                _add(tuic, "uos", uos, itemType::boolean);
+                _add(tuic, "uuid", uuid, string);
+                _add(tuic, "password", password, string);
+                _add(tuic, "congestionControl", congestionControl, string);
+                _add(tuic, "udpRelayMode", udpRelayMode, string);
+                _add(tuic, "zeroRttHandshake", zeroRttHandshake, boolean);
+                _add(tuic, "heartbeat", heartbeat, string);
+                _add(tuic, "uos", uos, boolean);
 
             }
             if (proxy_type == proxy_TUIC) {

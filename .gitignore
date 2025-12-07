@@ -4,6 +4,10 @@ SingBox.Version
 version.txt
 /config
 /updater
+/vcpkg*
+/versions
+/run.cmd
+/vcpkg_installed
 nekobox_core
 /libcore*.qpb.h
 compile_commands.json

@@ -1,3 +1,7 @@
+#ifdef _WIN32
+#include <winsock2.h>
+#include <windows.h>
+#endif
 #include "include/configs/ConfigBuilder.hpp"
 #include "include/dataStore/Database.hpp"
 #include "include/configs/proxy/includes.h"

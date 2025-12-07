@@ -1,4 +1,8 @@
 #pragma once
+#ifdef _WIN32
+#include <winsock2.h>
+#include <windows.h>
+#endif
 
 #include <QJsonObject>
 #include <QJsonArray>
@@ -8,7 +12,7 @@
 
 #ifndef ADD_MAP
 
-
+#define ITEM_TYPE(X) itemType::type_##X 
 #define MAP_BODY \
 static ConfJsMapStat ptr ; \
 static bool init = false;               \
@@ -29,7 +33,7 @@ init = true;     \
 return ptr;      \
 }
 
-#define ADD_MAP(X, Y, B) _put(ptr, X, &this->Y, itemType::B)
+#define ADD_MAP(X, Y, B) _put(ptr, X, &this->Y, ITEM_TYPE(B))
 #endif
 
 

@@ -1,10 +1,11 @@
 #include <include/dataStore/ProxyEntity.hpp>
+#include <include/configs/proxy/AbstractBean.hpp>
 #include <qnamespace.h>
 
 namespace Configs
 {
 
-    #define d_put(map1, X, Y, B) _put(map1, X, &this->Y, B)
+    #define _add(map1, X, Y, B) _put(map1, X, &this->Y, ITEM_TYPE(B))
 
     ConfJsMap ProxyEntity::_map(){
         static ConfJsMapStat map1;
@@ -12,20 +13,20 @@ namespace Configs
         static bool map1_init = true;
         if (map1_init ){
             map1_init = false;
-            d_put(map1, "type", type, itemType::string);
-            d_put(map1, "id", id, itemType::integer);
-            d_put(map1, "gid", gid, itemType::integer);
-            d_put(map1, "yc", latencyInt, itemType::integer);
-            d_put(map1, "dl", dl_speed, itemType::string);
-            d_put(map1, "ul", ul_speed, itemType::string);
-            d_put(map1, "report", full_test_report, itemType::string);
-            d_put(map1, "country", test_country, itemType::string);
+            _add(map1, "type", type, string);
+            _add(map1, "id", id, integer);
+            _add(map1, "gid", gid, integer);
+            _add(map1, "yc", latencyInt, integer);
+            _add(map1, "dl", dl_speed, string);
+            _add(map1, "ul", ul_speed, string);
+            _add(map1, "report", full_test_report, string);
+            _add(map1, "country", test_country, string);
 
             map2.insert(map1);
-            d_put(map2, "bean", bean_pointer, itemType::jsonStore);
-            d_put(map2, "traffic", traffic_data_pointer, itemType::jsonStore);
+            _add(map2, "bean", bean_pointer, jsonStore);
+            _add(map2, "traffic", traffic_data_pointer, jsonStore);
         }
-        #undef d_put
+        #undef _add
         
         if (bean_pointer == nullptr){
             return map1;
@@ -74,18 +75,18 @@ namespace Configs
             for (auto & color: latencyColorList){
                 if (!color.unavailable){
                     if (color.orderRange > 0){
-                        if (latencyOrder < color.orderMin){
+                        if (latencyOrder < (int)color.orderMin){
                             continue;
                         }
-                        if (latencyOrder > (color.orderMin + color.orderRange)){
+                        if (latencyOrder > (int)(color.orderMin + color.orderRange)){
                             continue;
                         }
                     }
                     if (color.latencyRange > 0){
-                        if (latencyInt < color.latencyMin){
+                        if (latencyInt < (int)color.latencyMin){
                             continue;
                         }
-                        if (latencyInt > (color.latencyMin + color.latencyRange)){
+                        if (latencyInt > (int)(color.latencyMin + color.latencyRange)){
                             continue;
                         }
                     }

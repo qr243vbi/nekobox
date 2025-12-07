@@ -1,5 +1,9 @@
-#pragma once
 
+#pragma once
+#ifdef _WIN32
+#include <winsock2.h>
+#include <windows.h>
+#endif
 #include "Const.hpp"
 #include "Utils.hpp"
 #include "ConfigItem.hpp"

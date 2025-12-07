@@ -1,4 +1,8 @@
 #pragma once
+#ifdef _WIN32
+#include <winsock2.h>
+#include <windows.h>
+#endif
 #include <QString>
 #include <QJsonObject>
 
@@ -15,14 +19,14 @@ typedef ConfJsMapStat & ConfJsMap;
 namespace Configs_ConfigItem {
     // config 工具
     enum itemType {
-        string,
-        integer,
-        integer64,
-        boolean,
-        stringList,
-        integerList,
-        jsonStore,
-        jsonStoreList,
+        type_string,
+        type_integer,
+        type_integer64,
+        type_boolean,
+        type_stringList,
+        type_integerList,
+        type_jsonStore,
+        type_jsonStoreList,
     };
 
     class configItem {

@@ -539,9 +539,9 @@ static void finder_scan(struct quirc *q, unsigned int y)
 	unsigned int run_length = 0;
 	unsigned int run_count = 0;
 	unsigned int pb[5];
-
+	unsigned int q_w = (unsigned int) q->w;
 	memset(pb, 0, sizeof(pb));
-	for (x = 0; x < q->w; x++) {
+	for (x = 0; x < q_w; x++) {
 		int color = row[x] ? 1 : 0;
 
 		if (x && color != last_color) {

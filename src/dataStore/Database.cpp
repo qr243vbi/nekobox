@@ -1,3 +1,7 @@
+#ifdef _WIN32
+#include <winsock2.h>
+#include <windows.h>
+#endif
 #include "include/dataStore/Database.hpp"
 
 #include "include/configs/proxy/includes.h"
@@ -11,10 +15,6 @@ namespace Configs {
 
     ProfileManager::ProfileManager() : JsonStore("groups/pm.json") {
     }
-
-    #ifndef  d_add
-    #define  d_add(X, Y, B) _put(ptr, X, &this->Y, B)
-    #endif
 
     DECL_MAP(ProfileManager)
         ADD_MAP("groups", 

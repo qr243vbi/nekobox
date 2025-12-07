@@ -205,7 +205,7 @@ DialogGroupChooseProxy::DialogGroupChooseProxy(QWidget * parent): QDialog(parent
         auto cur_group = i.second;
         if (id == curid){
             current_tab = widget;
-            tabid = groups.size();
+            tabid = (int)groups.size();
             current_group = cur_group;
         }
         groups.push_back(id);
