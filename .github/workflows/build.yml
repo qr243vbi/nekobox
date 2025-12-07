@@ -335,7 +335,7 @@ jobs:
           rm core/server/go.sum
           mv deployment/go.mod core/server/
           mv deployment/go.sum core/server/
-          mv deployment/gen/*.go core/server/gen/
+          mv deployment/gen/* core/server/gen/
           mv deployment/srslist* ./
           echo "${INPUT_VERSION}" > version.txt
           git add -f srslist* version.txt core/server/gen/*.go core/server/vendor SingBox.Version
@@ -404,96 +404,7 @@ jobs:
         with:
           name: Deployment-${{ github.sha }}
           path: deployment
-   #   - name: PreRelease
-   #     if: github.event.inputs.publish == 'p'
-   #     run: |
-   #       ./ghr -prerelease -delete -t "${{ github.token }}" -b "${{ github.event.inputs.text }}" -n "${{ github.event.inputs.tag }}" "${{ github.event.inputs.tag }}" deployment
       - name: Release
         run: |
           ./ghr -delete -t "${{ github.token }}" -b "${{ github.event.inputs.text }}" -n "${{ github.event.inputs.tag }}" "${{ github.event.inputs.tag }}" deployment
-  webhook:
-    name: Trigger Open Build Service
-    runs-on: ubuntu-latest
-    needs:
-      - publish
-    permissions:
-      contents: read
-      actions: read
-    if: github.event.inputs.publish == 'true'
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.13'
-          cache: 'pip'
 
-      - name: Linux - Install apt dependencies
-        uses: awalsh128/cache-apt-pkgs-action@latest
-        with:
-          packages: makepkg
-          version: 1.0
-
-      - name: Trigger Open Build Service and Copr
-        shell: bash
-        run: |
-          pip install osc copr
-          export OBS_USER="${{ secrets.OBS_USER }}"
-          export OBS_PASSWORD="${{ secrets.OBS_PASSWORD }}"
-          export OBS_HOOK_TOKEN="${{ secrets.OBS_HOOK_TOKEN }}"
-          export COPR_LOGIN="${{ secrets.COPR_LOGIN }}",
-          export COPR_TOKEN="${{ secrets.COPR_TOKEN }}"
-          export INPUT_VERSION=${{ github.event.inputs.tag }}
-          bash ./script/trigger_open_build_service.sh
-          python3 ./script/trigger_community_projects.py ||:
-          bash ./script/generate_pkgbuild.sh
-
-#      - name: Set up SSH
-#        if: github.event.inputs.publish == 'r'
-#        run: |
-#          mkdir -p ~/.ssh
-#          echo "${{ secrets.AUR_SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
-#          chmod 600 ~/.ssh/id_rsa
-#          ssh-keyscan aur.archlinux.org >> ~/.ssh/known_hosts
-#      - name: Push to AUR
-#        if: github.event.inputs.publish == 'r'
-#        run: |
-#          git clone ssh://aur@aur.archlinux.org/nekobox.git nekobox_git
-#          cp PKGBUILD nekobox_git/NEKOBOX
-#          cd nekobox_git
-#          makepkg --printsrcinfo > .SRCINFO
-#          git add --all
-#          git commit -am update
-#          git push
-
-      - name: Publish AUR package
-        uses: KSXGitHub/github-actions-deploy-aur@v4.1.1
-        with:
-          pkgname: nekobox
-          pkgbuild: ./PKGBUILD
-          commit_username: ${{ github.actor }}
-          commit_email: email@email.email
-          ssh_private_key: ${{ secrets.AUR_SSH_PRIVATE_KEY }}
-          commit_message: Update AUR package
-          ssh_keyscan_types: rsa,ecdsa,ed25519
-
-  publish_chocolatey:
-    name: Publish Chocolatey Package
-    runs-on: windows-latest
-    needs:
-      - publish
-    permissions:
-      contents: read
-      actions: read
-    if: github.event.inputs.publish == 'true' && github.event.inputs.source != 'true' && github.event.inputs.build_windows == 'true' && github.event.inputs.publish_chocolatey == 'true'
-    steps:
-      - uses: actions/checkout@v4
-      - uses: ConorMacBride/install-package@v1
-        with:
-          choco: curl jq sed
-      - name: Upload Chocolatey Package
-        shell: bash
-        run: |
-          cd ./script/
-          export INPUT_VERSION=${{ github.event.inputs.tag }}
-          export CHOCOLATEY_API_KEY=${{ secrets.CHOCOLATEY_API_TOKEN }}
-          bash -x chocolatey_push.sh

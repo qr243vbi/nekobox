@@ -1,10 +1,9 @@
 source script/env_deploy.sh
 
 pushd "$SRC_ROOT"/core/server
-mkdir -p "$DEPLOYMENT/gen"
+mkdir -p "$DEPLOYMENT"
 pushd gen
-  protoc -I . --go_out="." --protorpc_out="." libcore.proto
-  protoc -I . --go_out="$DEPLOYMENT/gen" --go-grpc_out="$DEPLOYMENT/gen" libcore.proto
+  thrift --gen go -out "$DEPLOYMENT" libcore.thrift
 popd
 
 curl -fLso "$DEPLOYMENT/srslist.json" "https://github.com/qr243vbi/ruleset/raw/refs/heads/rule-set/srslist.json"
@@ -12,8 +11,8 @@ curl -fLso "$DEPLOYMENT/srslist.json" "https://github.com/qr243vbi/ruleset/raw/r
 go mod tidy
 go mod vendor
 mv -T vendor "$DEPLOYMENT/vendor"
-mv go.mod "$DEPLOYMENT/go.mod"
-mv go.sum "$DEPLOYMENT/go.sum"
+cp go.mod "$DEPLOYMENT/go.mod"
+cp go.sum "$DEPLOYMENT/go.sum"
 curl https://api.github.com/repos/sagernet/sing-box/releases/latest | jq -r '.name' > "$DEPLOYMENT/Sagernet.SingBox.Version.txt"
 popd
 
