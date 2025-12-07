@@ -97,7 +97,6 @@ CMakeLists.txt.user*
 out
 /libs
 /core/server/vendor
-/core/server/gen/*.go
 /core/server/Core
 *.AppImage
 download-artifact

@@ -14,7 +14,7 @@ if (NOT CMAKE_CXX_COMPILER_ID STREQUAL "GNU" AND WIN32)
 	endif ()
 endif ()
 
-find_package(Qt6 REQUIRED COMPONENTS Widgets Network LinguistTools DBus Grpc)
+find_package(Qt6 REQUIRED COMPONENTS Widgets Network LinguistTools DBus)
 
 if (NKR_CROSS)
     set_property(TARGET Qt6::moc PROPERTY IMPORTED_LOCATION /usr/bin/moc)
@@ -49,7 +49,6 @@ find_package(Threads)
 
 option(SKIP_UPDATE_BUTTON "Always hide update button" OFF)
 option(SKIP_JS_UPDATER "Skip JS update checker" OFF)
-option(USE_QT_GRPC "Use gRPC provided by QT" ON)
 
 if (NKR_PACKAGE)
     nkr_add_compile_definitions(NKR_CPP_USE_APPDATA)
@@ -58,10 +57,32 @@ endif ()
 set(BUILD_SHARED_LIBS OFF)
 list(APPEND NKR_EXTERNAL_TARGETS qhotkey)
 
+
+find_program(THRIFT_COMPILER thrift REQUIRED)
+set(THRIFT_FILE "${CMAKE_CURRENT_SOURCE_DIR}/core/server/gen/libcore.thrift")
+set(THRIFT_GEN_DIR "${CMAKE_CURRENT_BINARY_DIR}/gen-cpp")
+file(MAKE_DIRECTORY "${THRIFT_GEN_DIR}")
+add_custom_command(
+    OUTPUT "${THRIFT_GEN_DIR}/LibcoreService.h" "${THRIFT_GEN_DIR}/LibcoreService.cpp"
+    COMMAND ${THRIFT_COMPILER} --gen cpp --out "${THRIFT_GEN_DIR}" "${THRIFT_FILE}"
+    DEPENDS "${THRIFT_FILE}"
+    COMMENT "Generating Thrift C++ code for Libcore"
+)
+
+# Add a custom target to ensure the code generation runs
+add_custom_target(generate_thrift_code ALL DEPENDS "${THRIFT_GEN_DIR}/LibcoreService.h")
+
+# Include the generated files in your project
+include_directories("${THRIFT_GEN_DIR}")
+set(THRIFT_GENERATED_SOURCES
+    "src/libcore.cpp"
+ #   "${THRIFT_GEN_DIR}/LibcoreService.cpp"
+)
+
 # Sources
 set(PROJECT_SOURCES
         ${PLATFORM_SOURCES}
-
+        ${THRIFT_GENERATED_SOURCES}
         src/main.cpp
         src/global/Configs.cpp
         src/global/Utils.cpp
@@ -245,15 +266,6 @@ else()
     target_sources(nekobox PRIVATE src/js/js_updater.cpp include/js/js_updater.h res/nekobox_updater.qrc)
 endif()
 
-set(PROTO_FILES
-    core/server/gen/libcore.proto
-)
-
-qt_add_grpc(nekobox CLIENT PROTO_FILES ${PROTO_FILES})
-
-qt_add_protobuf(nekobox PROTO_FILES ${PROTO_FILES})
-
-target_link_libraries(nekobox PRIVATE Qt6::Grpc Qt6::Protobuf)
 
 target_include_directories(nekobox PRIVATE
     ${Qt6Protobuf_PRIVATE_INCLUDE_DIRS}
@@ -278,6 +290,12 @@ qt_add_lrelease(nekobox TS_FILES ${TS_FILES} QM_FILES_OUTPUT_VARIABLE QM_FILES)
 
 configure_file(res/translations/translations.qrc ${CMAKE_BINARY_DIR} COPYONLY)
 target_sources(nekobox PRIVATE ${CMAKE_BINARY_DIR}/translations.qrc)
+
+find_package(PkgConfig REQUIRED)
+pkg_check_modules(THRIFT thrift REQUIRED)
+
+target_include_directories(nekobox PRIVATE ${THRIFT_INCLUDE_DIRS})
+target_link_libraries(nekobox PRIVATE ${THRIFT_LIBRARIES})
 
 # Target Link
 

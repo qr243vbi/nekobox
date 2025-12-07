@@ -23,11 +23,11 @@ void TrafficLooper::UpdateAll() {
 
   int proxyUp = 0, proxyDown = 0;
   if (resp.has_value()) {
-    auto ups = resp->ups();
-    auto downs = resp->downs();
+    auto & ups = resp->ups;
+    auto & downs = resp->downs;
 
     for (const auto &item : this->items) {
-      auto tag = QString::fromStdString(item->tag);
+      auto tag = (item->tag);
       if (!ups.contains(tag))
         continue;
       auto now = elapsedTimer.elapsed();
@@ -35,8 +35,8 @@ void TrafficLooper::UpdateAll() {
       item->last_update = now;
       if (interval <= 0)
         continue;
-      auto up = ups.value(tag);
-      auto down = downs.value(tag);
+      auto up = ups[tag];
+      auto down = downs[tag];
       if (item->tag == "proxy") {
         proxyUp = up;
         proxyDown = down;

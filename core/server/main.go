@@ -1,72 +1,81 @@
 package main
 
 import (
-	"Core/gen"
 	"Core/internal/boxmain"
+	_ "Core/internal/distro/all"
 	"context"
 	"flag"
 	"fmt"
 	"log"
 	"net"
-	"strconv"
 	"os"
-	"google.golang.org/grpc"
 	"runtime"
 	runtimeDebug "runtime/debug"
+	"strconv"
 	"time"
-	_ "Core/internal/distro/all"
+	gen "Core/gen"
+	"github.com/apache/thrift/lib/go/thrift"
 	C "github.com/sagernet/sing-box/constant"
 )
 
-func RunCore(_port * int, _debug * bool) {
+func RunCore(_port *int, _debug *bool) {
 	debug = *_debug
 	boxmain.DisableColor()
+	addr := "127.0.0.1:" + strconv.Itoa(*_port)
 	// RPC
 	go func() {
 		for {
 			time.Sleep(100 * time.Millisecond)
-			conn, err := net.Dial("tcp", "127.0.0.1:"+strconv.Itoa(*_port))
+			conn, err := net.Dial("tcp", addr)
 			if err == nil {
 				conn.Close()
-				fmt.Printf("Core listening at %v\n", "127.0.0.1:"+strconv.Itoa(*_port))
+				fmt.Printf("Core listening at %v\n", addr)
 				return
 			}
 		}
 	}()
 	{
-		lis, err := net.Listen("tcp", ":"+strconv.Itoa(*_port))
+		transportFactory := thrift.NewTBufferedTransportFactory(8192)
+		config := &thrift.TConfiguration{
+			ConnectTimeout:  time.Second * 2, // 2 second connection timeout
+			SocketTimeout:   time.Second * 10, // 10 second socket read/write timeout
+			MaxMessageSize:  1024 * 1024 * 50, // 50 MB maximum message size
+		}
+
+		// 2. Create the TBinaryProtocolFactory using the configuration
+		protocolFactory := thrift.NewTBinaryProtocolFactoryConf(config)
+
+		transport, err := thrift.NewTServerSocket(addr)
 		if err != nil {
-			log.Fatalf("failed to listen: %v", err)
+			log.Println("error running thrift server: ", err)
 		}
-		s := grpc.NewServer()
-		gen.RegisterLibcoreServiceServer(s, &server{})
-		log.Println("Server is running at :50051")
-		if err := s.Serve(lis); err != nil {
-			log.Fatalf("failed to serve: %v", err)
-		}
+		handler := &server{}
+		processor := gen.NewLibcoreServiceProcessor(handler)
+		server := thrift.NewTSimpleServer4(processor, transport, transportFactory, protocolFactory)
+		server.Serve()
 	}
 }
 
 func main() {
-	var _admin *bool;
-	var _waitpid *int;
+	var _admin *bool
+	var _waitpid *int
 	_port := flag.Int("port", 19810, "")
 	_debug := flag.Bool("debug", false, "")
-	
-	if runtime.GOOS == "windows" || runtime.GOOS == "linux"{
+
+	if runtime.GOOS == "windows" || runtime.GOOS == "linux" {
 		_admin = flag.Bool("admin", false, "Run in admin mode")
 	}
 
 	_waitpid = flag.Int("waitpid", 0, "After pid finished, force quit")
-	
+
 	redirectOutput := flag.String("redirect-output", "", "Path to redirect stdout (e.g. named pipe or file)")
 	redirectError := flag.String("redirect-error", "", "Path to redirect stderr (e.g. named pipe or file)")
 
 	flag.CommandLine.Parse(os.Args[1:])
-    
+
 	if runtime.GOOS == "linux" {
-		if (*_admin){
-			restartAsAdmin();
+		if *_admin {
+			restartAsAdmin()
 		}
 	}
 
@@ -81,7 +90,7 @@ func main() {
 		os.Stderr = errFile
 		log.SetOutput(errFile)
 	}
-	
+
 	// Redirect stdout if flag is provided
 	if *redirectOutput != "" {
 		outFile, err := os.OpenFile(*redirectOutput, os.O_WRONLY, 0)
@@ -92,9 +101,9 @@ func main() {
 		defer outFile.Close()
 		os.Stdout = outFile
 	}
-	
-	pid := *_waitpid;
-	if (pid != 0){
+
+	pid := *_waitpid
+	if pid != 0 {
 		go func() {
 			err := WaitForProcessExit(pid)
 			if err != nil {
@@ -105,8 +114,7 @@ func main() {
 			os.Exit(1) // Exit the whole program when done
 		}()
 	}
-	
-	
+
 	runtimeDebug.SetMemoryLimit(2 * 1024 * 1024 * 1024) // 2GB
 	go func() {
 		var memStats runtime.MemStats
@@ -119,20 +127,20 @@ func main() {
 			}
 		}
 	}()
-	
+
 	if runtime.GOOS == "windows" {
-		if *_admin{
-			elevated, _ := isElevated();
-			if (!elevated){
+		if *_admin {
+			elevated, _ := isElevated()
+			if !elevated {
 				code, err := runAdmin(_port, _debug)
-				if (err != nil){
+				if err != nil {
 					fmt.Fprintf(os.Stderr, "Failed to run as admin: %v\n", err)
 				}
 				os.Exit(code)
 			}
 		}
 	}
-	
+
 	fmt.Println("sing-box:", C.Version)
 	fmt.Println()
 
