@@ -120,14 +120,14 @@ jobs:
       max-parallel: 1
       matrix:
         include:
-          - platform: windows-2022
-            target: x86_64
-            qt_version: 6.10.0
-            triplet: x64-windows
           - platform: windows-11-arm
             target: arm64
             qt_version: 6.10.0
             triplet: arm64-windows
+          - platform: windows-2022
+            target: x86_64
+            qt_version: 6.10.0
+            triplet: x64-windows
       fail-fast: false
     runs-on: ${{ matrix.platform }}
     env:
