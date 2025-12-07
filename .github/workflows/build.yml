@@ -117,7 +117,6 @@ jobs:
     needs:
       - build-go
     strategy:
-      max-parallel: 1
       matrix:
         include:
           - platform: windows-11-arm
@@ -142,6 +141,7 @@ jobs:
 
       - name: vcpkg build
         uses: johnwason/vcpkg-action@v7
+        if: github.event.inputs.build_windows == 'true' && github.event.inputs.source != 'true'
         id: vcpkg
         with:
           pkgs: thrift
