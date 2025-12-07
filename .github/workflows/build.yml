@@ -151,7 +151,7 @@ jobs:
         if: github.event.inputs.build_windows == 'true' && github.event.inputs.source != 'true'
         uses: ConorMacBride/install-package@v1
         with:
-          choco: protoc
+          choco: ninja
 
       - name: Download Artifacts
         if: github.event.inputs.build_windows == 'true' && github.event.inputs.source != 'true'
