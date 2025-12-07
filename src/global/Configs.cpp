@@ -1,3 +1,7 @@
+#ifdef _WIN32
+#include <winsock2.h>
+#include <windows.h>
+#endif
 #include "include/global/Configs.hpp"
 #include "include/configs/proxy/Preset.hpp"
 #include "include/configs/proxy/AbstractBean.hpp"
@@ -51,7 +55,6 @@ namespace Configs_ConfigItem {
         };
 
     std::shared_ptr<configItem> JsonStore::_get(const QString &name) {
-        // 直接 [] 会设置一个 nullptr ，所以先判断是否存在
         auto _map = this->_map();
         if (_map.contains(name)) {
             return _map.value(name);
@@ -72,41 +75,40 @@ namespace Configs_ConfigItem {
 
             void * ptr = (void*)(((size_t)(void*)this) + item->ptr);
             switch (item->type) {
-                case itemType::string:
+                case itemType::type_string:
                     // Allow Empty
                     object.insert(name, *(QString *) ptr);
                     break;
-                case itemType::integer:
+                case itemType::type_integer:
                     object.insert(name, *(int *) ptr);
                     break;
-                case itemType::integer64:
+                case itemType::type_integer64:
                     object.insert(name, *(long long *) ptr);
                     break;
-                case itemType::boolean:
+                case itemType::type_boolean:
                     object.insert(name, *(bool *) ptr);
                     break;
-                case itemType::stringList: {
+                case itemType::type_stringList: {
                     auto jsonarray = QListStr2QJsonArray(*(QList<QString> *) ptr);
                     if (jsonarray.isEmpty()) continue;
                     object.insert(name, jsonarray);
                     break;
                 }
-                case itemType::integerList: {
+                case itemType::type_integerList: {
                     auto jsonarray = QListInt2QJsonArray(*(QList<int> *) ptr);
                     if (jsonarray.isEmpty()) continue;
                     object.insert(name, jsonarray);
                     break;
                 }
-                case itemType::jsonStore:
+                case itemType::type_jsonStore:
                     {
-                    //  的指针
                         JsonStore * store = *(JsonStore**)ptr;
                         if (store != nullptr){
                             object.insert(name, store->ToJson());
                         }
                     } 
                     break;
-                case itemType::jsonStoreList:
+                case itemType::type_jsonStoreList:
                     QJsonArray jsonArray;
                     auto arr = *(QList<JsonStore*> *) ptr;
                     for ( JsonStore* obj : arr) {
@@ -146,43 +148,43 @@ namespace Configs_ConfigItem {
 
             auto ptr = (void*)(((size_t)(void*)this) + item->ptr);
             switch (item->type) {
-                case itemType::string:
+                case itemType::type_string:
                     if (value.type() != QJsonValue::String) {
                         continue;
                     }
                     *(QString *) ptr = value.toString();
                     break;
-                case itemType::integer:
+                case itemType::type_integer:
                     if (value.type() != QJsonValue::Double) {
                         continue;
                     }
                     *(int *) ptr = value.toInt();
                     break;
-                case itemType::integer64:
+                case itemType::type_integer64:
                     if (value.type() != QJsonValue::Double) {
                         continue;
                     }
                     *(long long *) ptr = value.toDouble();
                     break;
-                case itemType::boolean:
+                case itemType::type_boolean:
                     if (value.type() != QJsonValue::Bool) {
                         continue;
                     }
                     *(bool *) ptr = value.toBool();
                     break;
-                case itemType::stringList:
+                case itemType::type_stringList:
                     if (value.type() != QJsonValue::Array) {
                         continue;
                     }
                     *(QList<QString> *) ptr = QJsonArray2QListString(value.toArray());
                     break;
-                case itemType::integerList:
+                case itemType::type_integerList:
                     if (value.type() != QJsonValue::Array) {
                         continue;
                     }
                     *(QList<int> *) ptr = QJsonArray2QListInt(value.toArray());
                     break;
-                case itemType::jsonStore:
+                case itemType::type_jsonStore:
                     if (value.type() != QJsonValue::Object) {
                         continue;
                     }
@@ -194,7 +196,7 @@ namespace Configs_ConfigItem {
                         store->FromJson(value.toObject());
                     }
                     break;
-                case itemType::jsonStoreList:
+                case itemType::type_jsonStoreList:
                     break;
             }
         }
@@ -209,16 +211,16 @@ namespace Configs_ConfigItem {
         void *ptr = (void*)((size_t)(void*)this + item->ptr);
 
         switch (item->type) {
-            case itemType::string:
+            case itemType::type_string:
                 *(QString *) ptr = *(QString *) p;
                 break;
-            case itemType::boolean:
+            case itemType::type_boolean:
                 *(bool *) ptr = *(bool *) p;
                 break;
-            case itemType::integer:
+            case itemType::type_integer:
                 *(int *) ptr = *(int *) p;
                 break;
-            case itemType::integer64:
+            case itemType::type_integer64:
                 *(long long *) ptr = *(long long *) p;
                 break;
             // others...
@@ -291,8 +293,6 @@ namespace Configs {
     DataStore::DataStore() : JsonStore() {
 
     }
-
-    #define d_add(X, Y, B) _put(ptr, X, &this->Y, itemType::B)
 
     DECL_MAP(DataStore)
         ADD_MAP("user_agent2", user_agent, string);

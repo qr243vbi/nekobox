@@ -1,5 +1,6 @@
 #include <QJsonObject>
 #include <QJsonArray>
+#include "include/configs/proxy/AbstractBean.hpp"
 #include "include/dataStore/RouteEntity.h"
 #include "include/dataStore/Database.hpp"
 #include "include/configs/proxy/Preset.hpp"
@@ -817,7 +818,7 @@ namespace Configs {
             auto item = _map.value(key).get();
 
             if (item == nullptr) continue;
-            if (item->type == itemType::jsonStoreList) {
+            if (item->type == ITEM_TYPE(jsonStoreList)) {
                 // it is of rule type
                 if (!value.isArray()) continue;
                 Rules.clear();

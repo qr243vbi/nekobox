@@ -1,10 +1,8 @@
 #pragma once
-
-#ifndef Q_MOC_RUN
-#include <gen-cpp/LibcoreService.h>
 #include <gen-cpp/libcore_types.h>
-#endif
+#include <optional>
 #include <QString>
+
 
 namespace API {
     class Client {

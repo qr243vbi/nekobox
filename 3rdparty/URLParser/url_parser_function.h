@@ -39,14 +39,14 @@ public:
 		char first[1024] = { 0, };
 		char second[1024] = { 0, };
 
-		int st = str.find(delim, 0);
+		int st = (int)str.find(delim, 0);
 		if (st > 1024) {
 			key = str;
 			value = "";
 			return true;
 		} else {
 			memcpy(first, &str[0], st);
-			int st2 =  str.length() - st;
+			int st2 =  (int)(str.length() - st);
 			if (st2 > 1024) st2 = 1024;
 			if (st2 < 0) st2 = 0;
 

@@ -57,7 +57,6 @@ endif ()
 set(BUILD_SHARED_LIBS OFF)
 list(APPEND NKR_EXTERNAL_TARGETS qhotkey)
 
-
 find_program(THRIFT_COMPILER thrift REQUIRED)
 set(THRIFT_FILE "${CMAKE_CURRENT_SOURCE_DIR}/core/server/gen/libcore.thrift")
 set(THRIFT_GEN_DIR "${CMAKE_CURRENT_BINARY_DIR}/gen-cpp")
@@ -78,6 +77,7 @@ set(THRIFT_GENERATED_SOURCES
     "src/libcore.cpp"
  #   "${THRIFT_GEN_DIR}/LibcoreService.cpp"
 )
+
 
 # Sources
 set(PROJECT_SOURCES
@@ -292,7 +292,12 @@ configure_file(res/translations/translations.qrc ${CMAKE_BINARY_DIR} COPYONLY)
 target_sources(nekobox PRIVATE ${CMAKE_BINARY_DIR}/translations.qrc)
 
 find_package(PkgConfig REQUIRED)
+if (MSVC)
+find_package(Thrift REQUIRED)
+set(THRIFT_LIBRARIES thrift::thrift)
+else()
 pkg_check_modules(THRIFT thrift REQUIRED)
+endif()
 
 target_include_directories(nekobox PRIVATE ${THRIFT_INCLUDE_DIRS})
 target_link_libraries(nekobox PRIVATE ${THRIFT_LIBRARIES})

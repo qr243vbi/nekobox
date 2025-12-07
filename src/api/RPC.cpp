@@ -1,3 +1,7 @@
+#ifdef _WIN32
+#include <winsock2.h>
+#include <windows.h>
+#endif
 #include "include/api/RPC.h"
 #include "include/global/Configs.hpp"
 #include <QDebug>
@@ -10,7 +14,7 @@
 #include <thrift/transport/TSocket.h>                    
 #include <thrift/transport/TBufferTransports.h>          
 #include <thrift/transport/TTransportUtils.h>
-
+#include <gen-cpp/LibcoreService.h>
 #include <gen-cpp/libcore_types.h>
 
 using namespace apache::thrift;
@@ -43,18 +47,18 @@ if (!Configs::dataStore->core_running) {                                        
 
 
 #define CHANNEL(X, VAL)                                                                 \
-std::shared_ptr<TTransport> socket(new TSocket(domain, port));                     \
-std::shared_ptr<TTransport> transport(new TBufferedTransport(socket));                  \
-std::shared_ptr<TProtocol> protocol(new TBinaryProtocol(transport));                    \
-libcore::LibcoreServiceClient client(protocol);                                         \
+std::shared_ptr<TTransport> socketAA(new TSocket(domain, port));                     \
+std::shared_ptr<TTransport> transportAA(new TBufferedTransport(socketAA));                  \
+std::shared_ptr<TProtocol> protocolAA(new TBinaryProtocol(transportAA));                    \
+libcore::LibcoreServiceClient client(protocolAA);                                         \
 Status status;                                                                          \
 std::optional<libcore::VAL> reply = std::nullopt;                                       \
 try{                                                                                    \
-    transport->open();                                                                  \
+    transportAA->open();                                                                  \
     status.ok = true;                                                                   \
     libcore::VAL resp;                                                                  \
     client.X(resp, request);                                                            \
-    transport->close();                                                                 \
+    transportAA->close();                                                                 \
     reply = std::make_optional(resp);                                                   \
 } catch (TException e){                                                                 \
     status.ok = false;                                                                  \
