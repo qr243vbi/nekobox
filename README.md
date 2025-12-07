@@ -32,6 +32,7 @@ Various formats are supported, including share links, JSON array of outbounds an
 
 ## Credits
 
+- [Thrift](https://thrift.apache.org/)
 - [enfein/mieru](https://github.com/enfein/mbox)
 - [SagerNet/sing-box](https://github.com/SagerNet/sing-box)
 - [Qv2ray](https://github.com/Qv2ray/Qv2ray)
