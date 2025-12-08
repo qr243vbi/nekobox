@@ -1107,7 +1107,7 @@
           <item row="0" column="1">
            <widget class="QLineEdit" name="window_width">
             <property name="sizePolicy">
-             <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
+             <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
               <horstretch>0</horstretch>
               <verstretch>0</verstretch>
              </sizepolicy>
@@ -1161,7 +1161,7 @@
           <item row="1" column="3">
            <widget class="QLineEdit" name="window_Y">
             <property name="sizePolicy">
-             <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
+             <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
               <horstretch>0</horstretch>
               <verstretch>0</verstretch>
              </sizepolicy>
@@ -1171,7 +1171,7 @@
           <item row="1" column="1">
            <widget class="QLineEdit" name="window_X">
             <property name="sizePolicy">
-             <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
+             <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
               <horstretch>0</horstretch>
               <verstretch>0</verstretch>
              </sizepolicy>
@@ -1207,7 +1207,7 @@
           <item row="0" column="3">
            <widget class="QLineEdit" name="window_height">
             <property name="sizePolicy">
-             <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
+             <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
               <horstretch>0</horstretch>
               <verstretch>0</verstretch>
              </sizepolicy>
@@ -1384,7 +1384,7 @@
           <item>
            <widget class="QLineEdit" name="core_path">
             <property name="sizePolicy">
-             <sizepolicy hsizetype="Expanding" vsizetype="Ignored">
+             <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
               <horstretch>0</horstretch>
               <verstretch>0</verstretch>
              </sizepolicy>
@@ -1552,7 +1552,7 @@
           <item>
            <widget class="QLineEdit" name="icons_path">
             <property name="sizePolicy">
-             <sizepolicy hsizetype="Expanding" vsizetype="Ignored">
+             <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
               <horstretch>0</horstretch>
               <verstretch>0</verstretch>
              </sizepolicy>
