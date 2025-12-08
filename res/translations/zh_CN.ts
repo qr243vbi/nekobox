@@ -362,6 +362,22 @@
         <translation>搜索：</translation>
     </message>
     <message>
+        <source>Proxy</source>
+        <translation>代理</translation>
+    </message>
+    <message>
+        <source>Direct</source>
+        <translation>直连</translation>
+    </message>
+    <message>
+        <source>Outbound</source>
+        <translation>出站</translation>
+    </message>
+    <message>
+        <source>Outbound: </source>
+        <translation>出站：</translation>
+    </message>
+    <message>
         <source>None</source>
         <translation>无</translation>
     </message>
