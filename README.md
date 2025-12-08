@@ -132,8 +132,7 @@ They are located at the [ruleset](https://github.com/qr243vbi/ruleset/tree/route
 
 ## Contact Us
   - Write GitHub issue.
-  - Or use Matrix [@qr243vbi:g24.at](https://matrix.to/#/@qr243vbi:g24.at)
-  - Or use Telegram [@qr243vbii](https://t.me/qr243vbii)
+  - Or use Matrix [@fgvxd:matrix.org](https://matrix.to/#/@fgvxd:matrix.org)
 
 ## License
 
