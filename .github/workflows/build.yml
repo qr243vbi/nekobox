@@ -408,3 +408,29 @@ jobs:
         run: |
           ./ghr -delete -t "${{ github.token }}" -b "${{ github.event.inputs.text }}" -n "${{ github.event.inputs.tag }}" "${{ github.event.inputs.tag }}" deployment
 
+  webhook:
+    name: Trigger Open Build Service
+    runs-on: ubuntu-latest
+    needs:
+      - publish
+    permissions:
+      contents: read
+      actions: read
+    if: github.event.inputs.publish == 'true'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+          cache: 'pip'
+
+      - name: Trigger Open Build Service and Copr
+        shell: bash
+        run: |
+          pip install osc copr
+          export OBS_USER="${{ secrets.OBS_USER }}"
+          export OBS_PASSWORD="${{ secrets.OBS_PASSWORD }}"
+          export OBS_HOOK_TOKEN="${{ secrets.OBS_HOOK_TOKEN }}"
+          export INPUT_VERSION=${{ github.event.inputs.tag }}
+          bash ./script/trigger_open_build_service.sh
+          bash ./script/generate_pkgbuild.sh

@@ -27,7 +27,7 @@ public:
 
     ~DialogEditGroup() override;
 
-   static QString get_proxy_name(int id);
+   static QString get_proxy_name(int id, bool is_for_routeprofile =  false);
 private:
     Ui::DialogEditGroup *ui;
     struct {

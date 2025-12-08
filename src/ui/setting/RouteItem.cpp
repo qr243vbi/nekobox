@@ -1,11 +1,13 @@
 #include "include/ui/setting/RouteItem.h"
 #include "include/ui/setting/dialog_manage_routes.h"
+#include "include/ui/group/dialog_edit_group.h"
 #include "include/dataStore/RouteEntity.h"
 #include "include/dataStore/Database.hpp"
 #include "include/api/RPC.h"
 #include "include/configs/ConfigBuilder.hpp"
 #include <qnamespace.h>
 #include <include/global/HTTPRequestHelper.hpp>
+#include <QRadioButton>
 
 QList<QString> default_outbound_choose = {"proxy", "direct"};
 
@@ -117,10 +119,62 @@ RouteItem::RouteItem(QWidget *parent, const std::shared_ptr<Configs::RoutingChai
     rule_set_editor->hide();
 
 
-    proxy_chooser = new QPushButton("None", this);
+    proxy_chooser = new QPushButton(DialogEditGroup::get_proxy_name(-1), this);
     ui->rule_attr_data->layout()->addWidget(proxy_chooser);
     ui->rule_attr_data->adjustSize();
     proxy_chooser->hide();
+
+    connect(proxy_chooser, &QPushButton::clicked, this, [this]()->void{
+        auto window = new DialogGroupChooseProxy(this);
+        auto ruleItem = chain->Rules[currentIndex];
+        int outbound_id = ruleItem->outboundID;
+        window->profile_selected(outbound_id, true);
+        window->setWindowTitle(QCoreApplication::translate(
+        "DialogGroupChooseProxy","Select outbound"));
+        window->ui->proxy_label->setText(QCoreApplication::translate(
+        "DialogGroupChooseProxy","Outbound: "));
+        
+        QRadioButton *radio1 = new QRadioButton(QCoreApplication::translate(
+        "DialogGroupChooseProxy","Proxy"));
+        QRadioButton *radio2 = new QRadioButton(QCoreApplication::translate(
+        "DialogGroupChooseProxy","Direct"));
+        QRadioButton *radio3 = new QRadioButton(QCoreApplication::translate(
+        "DialogGroupChooseProxy","Outbound"));
+
+        // Create a layout and add radio buttons
+        QHBoxLayout *layout = new QHBoxLayout();
+        layout->addWidget(radio1);
+        layout->addWidget(radio2);
+        layout->addWidget(radio3);
+        
+        auto groupbox = window->ui->groupBox;
+        groupbox->setLayout(layout);
+        switch(outbound_id){
+            case -1:
+                radio1->setChecked(true);
+                break;
+            case -2:
+                radio2->setChecked(true);
+                break;
+            default:
+                radio3->setChecked(true);
+                break;
+        }
+
+        connect(window, &DialogGroupChooseProxy::set_proxy, 
+                this, [ruleItem, this, radio1, radio2, radio3](int id)->void{
+            if (radio1->isChecked()){
+                id = -1;
+            } else if (radio2->isChecked()){
+                id = -2;
+            }
+            proxy_chooser->setText(DialogEditGroup::get_proxy_name(id, true));
+            ruleItem->outboundID = id;
+            chain->Rules[currentIndex]->set_field_value("outbound", {QString::number(id)});
+            updateRulePreview();
+        });
+        window->show();
+    });
 
     connect(rule_set_editor, &QPlainTextEdit::textChanged, this, [=,this]{
         if (currentIndex == -1) return;
@@ -153,14 +207,14 @@ RouteItem::RouteItem(QWidget *parent, const std::shared_ptr<Configs::RoutingChai
         ui->route_items->addItem(item->name);
     }
 
-    outbounds = {"proxy", "direct"};
-    outbounds << get_all_outbounds();
+   // outbounds = {"proxy", "direct"};
+   // outbounds << get_all_outbounds();
     // init outbound map
-    outboundMap[0] = -1;
-    outboundMap[1] = -2;
-    for (const auto& item: Configs::profileManager->profiles) {
-        outboundMap[outboundMap.size()] = item.second->id;
-    }
+   // outboundMap[0] = -1;
+   // outboundMap[1] = -2;
+   // for (const auto& item: Configs::profileManager->profiles) {
+   //     outboundMap[outboundMap.size()] = item.second->id;
+   // }
 
     ui->route_name->setText(chain->chain_name);
     ui->url->setText(chain->update_url);
@@ -290,12 +344,12 @@ RouteItem::RouteItem(QWidget *parent, const std::shared_ptr<Configs::RoutingChai
 
     connect(ui->rule_attr_selector, &QComboBox::currentTextChanged, this, [=,this](const QString& text){
        if (currentIndex == -1) return;
-       if (ui->rule_attr->currentText() == "outbound")
+     /*  if (ui->rule_attr->currentText() == "outbound")
        {
            chain->Rules[currentIndex]->set_field_value("outbound", {QString::number(outboundMap[ui->rule_attr_selector->currentIndex()])});
            updateRulePreview();
            return;
-       }
+       }*/
        chain->Rules[currentIndex]->set_field_value(ui->rule_attr->currentText(), {QString(text)});
        updateRulePreview();
     });
@@ -410,7 +464,12 @@ void RouteItem::updateRuleSection() {
             if (currentAttr == "outbound")
             {
                 // due to the need for mapping, we handle this in a different way...
-                showSelectItem(outbounds, get_outbound_name(ruleItem->outboundID));
+                proxy_chooser->setText(DialogEditGroup::get_proxy_name(ruleItem->outboundID, true));
+                proxy_chooser->show();
+                ui->rule_attr_text->hide();
+                ui->rule_attr_selector->hide();
+                rule_set_editor->hide();
+              //  showSelectItem(outbounds, get_outbound_name(ruleItem->outboundID));
                 break;
             }
             auto items = Configs::RouteRule::get_values_for_field(currentAttr);
@@ -444,6 +503,7 @@ void RouteItem::setDefaultRuleData(const QString& currentData) {
 void RouteItem::showSelectItem(const QStringList& items, const QString& currentItem) {
     ui->rule_attr_text->hide();
     rule_set_editor->hide();
+    proxy_chooser->hide();
     ui->rule_attr_selector->clear();
     ui->rule_attr_selector->show();
     ui->rule_attr_selector->addItems(items);
@@ -454,6 +514,7 @@ void RouteItem::showSelectItem(const QStringList& items, const QString& currentI
 
 void RouteItem::showTextEnterItem(const QStringList& items, bool isRuleSet) {
     ui->rule_attr_selector->hide();
+    proxy_chooser->hide();
     if (isRuleSet) {
         ui->rule_attr_text->hide();
         rule_set_editor->clear();
