@@ -431,6 +431,18 @@ jobs:
           export OBS_USER="${{ secrets.OBS_USER }}"
           export OBS_PASSWORD="${{ secrets.OBS_PASSWORD }}"
           export OBS_HOOK_TOKEN="${{ secrets.OBS_HOOK_TOKEN }}"
-          echo export INPUT_VERSION=${{ github.event.inputs.tag }}
+          export INPUT_VERSION=${{ github.event.inputs.tag }}
           bash ./script/trigger_open_build_service.sh
-          echo bash ./script/generate_pkgbuild.sh
+          bash ./script/generate_pkgbuild.sh
+
+      - name: Publish AUR package
+        uses: KSXGitHub/github-actions-deploy-aur@v4.1.1
+        with:
+          pkgname: nekobox
+          pkgbuild: ./PKGBUILD
+          commit_username: ${{ github.actor }}
+          commit_email: email@email.email
+          ssh_private_key: ${{ secrets.AUR_SSH_PRIVATE_KEY }}
+          commit_message: Update AUR package
+          ssh_keyscan_types: rsa,ecdsa,ed25519
+
