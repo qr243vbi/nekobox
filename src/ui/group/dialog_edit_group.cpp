@@ -420,10 +420,19 @@ void DialogEditGroup::on_refresh_proxy_items(int index){
     });
 }
 
-QString DialogEditGroup::get_proxy_name(int id) {
+QString DialogEditGroup::get_proxy_name(int id, bool is_for_routeprofile ) {
     std::shared_ptr<Configs::ProxyEntity> profile;
     if (id < 0 ||
         (profile = Configs::profileManager->GetProfile(id)) == nullptr){
+        if (is_for_routeprofile ){
+            if (id == -1){
+                return QCoreApplication::translate(
+        "DialogGroupChooseProxy", "Proxy");
+            } else if (id == -2){
+                return QCoreApplication::translate(
+        "DialogGroupChooseProxy", "Direct");
+            }
+        }
         return QCoreApplication::translate(
         "DialogGroupChooseProxy", "None");
     } else {

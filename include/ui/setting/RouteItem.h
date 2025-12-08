@@ -53,9 +53,9 @@ private:
 
     QShortcut* deleteShortcut;
 
-    QStringList outbounds;
+ //   QStringList outbounds;
 
-    std::map<int,int> outboundMap;
+ //   std::map<int,int> outboundMap;
 
     AutoCompleteTextEdit* simpleDirect;
 
