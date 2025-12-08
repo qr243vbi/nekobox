@@ -115,6 +115,13 @@ RouteItem::RouteItem(QWidget *parent, const std::shared_ptr<Configs::RoutingChai
     ui->rule_attr_data->layout()->addWidget(rule_set_editor);
     ui->rule_attr_data->adjustSize();
     rule_set_editor->hide();
+
+
+    proxy_chooser = new QPushButton("None", this);
+    ui->rule_attr_data->layout()->addWidget(proxy_chooser);
+    ui->rule_attr_data->adjustSize();
+    proxy_chooser->hide();
+
     connect(rule_set_editor, &QPlainTextEdit::textChanged, this, [=,this]{
         if (currentIndex == -1) return;
         auto currentVal = rule_set_editor->toPlainText().split('\n');

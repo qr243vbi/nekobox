@@ -137,15 +137,37 @@ QString getLocale(){
 
 void updateEmojiFont(){
 #if QT_VERSION >= QT_VERSION_CHECK(6,9,0)
-    int fontId = QFontDatabase::addApplicationFont(getResource("emoji.ttf"));
+QString font = getResource("emoji.ttf");
+    static int latestFont = -1;
 
+    qDebug() << "Font path is : " << font ;
+    int fontId = QFontDatabase::addApplicationFont(font);
     if (fontId >= 0)
     {
+      if (latestFont >= 0){
+        QFontDatabase::removeApplicationFont(latestFont);
+      }
+      latestFont = fontId;
         QStringList fontFamilies = QFontDatabase::applicationFontFamilies(fontId);
         QFontDatabase::setApplicationEmojiFontFamilies(fontFamilies);
+        QApplication::processEvents();
+
+        QSettings settings = getSettings();
+  QString font_family = settings.value("font_family", "").toString();
+  int font_size = settings.value("font_size", 0).toInt();
+
+  if (!font_family.isEmpty()) {
+    auto font = qApp->font();
+    font.setFamily(font_family);
+    qApp->setFont(font);
+  }
+  if (font_size != 0) {
+    auto font = qApp->font();
+    font.setPointSize(font_size);
+    qApp->setFont(font);
+  }
     } else
     {
-        qDebug() << "could not load noto font!";
     }
 #endif
 }
