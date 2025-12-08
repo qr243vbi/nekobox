@@ -54,7 +54,11 @@ DialogBasicSettings::DialogBasicSettings(MainWindow *parent)
     ui->proxy_scheme->setCurrentText(Configs::dataStore->proxy_scheme);
 
     #define UPDATE_ICON CACHE.updateIcon = true
-    #define UPDATE_FONT CACHE.updateFont = true
+    #define UPDATE_FONT {               \
+        CACHE.updateFont = true;         \
+        updateEmojiFont();               \
+                adjustSize();               \
+    }                   
     
     LINK_RESOURCE_MANAGER("icon.png", icon, UPDATE_ICON);
     LINK_RESOURCE_MANAGER("emoji.ttf", emoji, UPDATE_FONT);
@@ -374,10 +378,7 @@ void DialogBasicSettings::accept() {
     if (CACHE.updateDisableTray) str << "UpdateDisableTray";
     if (CACHE.updateSystemDns) str << "UpdateSystemDns";
     if (needChoosePort) str << "NeedChoosePort";
-    if (CACHE.updateIcon) str << "UpdateIcon";
-    if (CACHE.updateFont) {
-        updateEmojiFont();
-    }
+    if (CACHE.updateIcon || CACHE.updateFont) str << "UpdateIcon";
     if (need_core_restart) str << "UpdateCorePath";
     MW_dialog_message(Dialog_DialogBasicSettings, str.join(","));
     QDialog::accept();

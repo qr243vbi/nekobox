@@ -41,6 +41,7 @@ private:
     int currentIndex = -1;
 
     int lastNum = 0;
+    QPushButton * proxy_chooser;
 
     QStringList geo_items;
 

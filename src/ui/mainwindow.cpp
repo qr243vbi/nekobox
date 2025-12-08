@@ -1100,7 +1100,10 @@ void MainWindow::dialog_message_impl(const QString &sender,
   // info
   if (info.contains("UpdateIcon")) {
     icon_status = -1;
-    refresh_status();
+    runOnUiThread([this](){
+      refresh_status();
+      refresh_proxy_list(-1);
+    });
   }
   bool updateCorePath = (info.contains("UpdateCorePath"));
   if (info.contains("UpdateDataStore") || updateCorePath) {
