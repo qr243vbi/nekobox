@@ -1,5 +1,5 @@
 name: Bug report
-description: "Report Throne bug"
+description: "Report NekoBox bug"
 body:
   - type: dropdown
     attributes:
@@ -20,18 +20,18 @@ body:
   - type: dropdown
     attributes:
       label: Installation type
-      description: Please provide the Throne installation type
+      description: Please provide the NekoBox installation type
       options:
         - zip
         - exe
-        - deb
+        - AppImage
         - package manager
     validations:
       required: true
   - type: input
     attributes:
       label: Version
-      description: Throne version.
+      description: NekoBox version.
     validations:
       required: true
   - type: textarea
