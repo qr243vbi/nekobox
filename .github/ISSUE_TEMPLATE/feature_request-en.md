@@ -1,6 +1,6 @@
 ---
 name: 'Feature Request'
-about: 'Make suggestions for new features of the software'
+about: 'Make suggestions for new features of the NekoBox software'
 title: ''
 labels: ''
 assignees: ''
