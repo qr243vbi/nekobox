@@ -227,7 +227,7 @@ void MainWindow::url_test_current() {
         runOnUiThread([=,this] {
             if (!results_0.error.empty()) {
                 MW_show_log(QString("UrlTest error: %1").arg(
-                    (results_0.error)));
+                    QString::fromStdString(results_0.error)));
             }
             if (latency <= 0) {
                 ui->label_running->setText(tr("Test Result") + ": " + tr("Unavailable"));
@@ -442,7 +442,7 @@ void MainWindow::runSpeedTest(const QString& config, bool useDefault, bool testC
             ent->latencyInt = -1;
             ent->test_country = "";
             MW_show_log(tr("[%1] speed test error: %2").arg(
-                ent->bean->DisplayTypeAndName(), (res.error)));
+                ent->bean->DisplayTypeAndName(), QString::fromStdString(res.error)));
         }
         ent->Save();
     }
