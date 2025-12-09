@@ -811,9 +811,10 @@ namespace Configs {
             if (dataStore->adblock_enable) {
                 ruleSetArray += QJsonObject{
                     {"type", "remote"},
-                    {"tag", "throne-adblocksingbox"},
+                    {"tag", "nekobox-adblocksingbox"},
                     {"format", "binary"},
-                    {"url", get_jsdelivr_link("https://raw.githubusercontent.com/217heidai/adblockfilters/main/rules/adblocksingbox.srs")},
+                    {"url", get_jsdelivr_link(
+                    QString::fromStdString(ruleSetMap.at("nekobox-adblocksingbox")))},
                 };
             }
             routeObj["rule_set"] = ruleSetArray;
