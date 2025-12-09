@@ -86,7 +86,7 @@ Various formats are supported, including share links, JSON array of outbounds an
 
 ## Changelog Channel
 
-https://t.me/nekobox_qr243vbi
+https://t.me/nekobox_ex
 
 ## FAQ
 **What is AppImage?** <br/>
