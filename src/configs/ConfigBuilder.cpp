@@ -809,12 +809,18 @@ namespace Configs {
                     }
             }
             if (dataStore->adblock_enable) {
+                std::string str;
+                if (ruleSetMap.contains("nekobox-addblocksingbox")){
+                    str = ruleSetMap.at("nekobox-addblocksingbox");
+                } else {
+                    str = "https://raw.githubusercontent.com/217heidai/adblockfilters/main/rules/adblocksingbox.srs";
+                }
                 ruleSetArray += QJsonObject{
                     {"type", "remote"},
                     {"tag", "nekobox-adblocksingbox"},
                     {"format", "binary"},
                     {"url", get_jsdelivr_link(
-                    QString::fromStdString(ruleSetMap.at("nekobox-adblocksingbox")))},
+                    QString::fromStdString(str))},
                 };
             }
             routeObj["rule_set"] = ruleSetArray;
