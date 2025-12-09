@@ -1575,13 +1575,14 @@ void MainWindow::UpdateDataView(bool force) {
             "<span style='color: #86C43F;'>Ul↑ %3</span>"
             "</div>"
             "<p style='text-align:center;margin:0;'>Server: %4%5, %6</p>")
-            .arg(currentSptProfileName, currentTestResult.dl_speed,
-                 currentTestResult.ul_speed,
+            .arg(currentSptProfileName, 
+              QString::fromStdString(currentTestResult.dl_speed),
+              QString::fromStdString(currentTestResult.ul_speed),
                  CountryCodeToFlag(
                      CountryNameToCode(
                       (currentTestResult.server_country))),
-                 currentTestResult.server_country,
-                 currentTestResult.server_name);
+              QString::fromStdString(currentTestResult.server_country),
+              QString::fromStdString(currentTestResult.server_name));
   }
   ui->data_view->setHtml(html);
   lastUpdated = QDateTime::currentDateTime();
