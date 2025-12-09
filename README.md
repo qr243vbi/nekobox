@@ -85,7 +85,7 @@ Various formats are supported, including share links, JSON array of outbounds an
 - Dynamic UI
 
 ## Changelog Channel
-- matrix: https://matrix.to/#/#nekobox:opensuse.org
+- matrix: https://matrix.to/#/#nekobox_ex:opensuse.org
 - telegram: https://t.me/nekobox_ex
 
 ## FAQ
