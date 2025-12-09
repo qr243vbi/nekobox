@@ -54,10 +54,10 @@ DialogBasicSettings::DialogBasicSettings(MainWindow *parent)
     ui->proxy_scheme->setCurrentText(Configs::dataStore->proxy_scheme);
 
     #define UPDATE_ICON CACHE.updateIcon = true
-    #define UPDATE_FONT {               \
-        CACHE.updateFont = true;         \
-        updateEmojiFont();               \
-                adjustSize();               \
+    #define UPDATE_FONT {                   \
+        CACHE.updateFont = true;            \
+        updateEmojiFont();                  \
+        adjustSize();                       \
     }                   
     
     LINK_RESOURCE_MANAGER("icon.png", icon, UPDATE_ICON);
