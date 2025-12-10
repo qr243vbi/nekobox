@@ -71,7 +71,7 @@ DialogBasicSettings::DialogBasicSettings(MainWindow *parent)
     D_LOAD_INT(test_concurrent)
     D_LOAD_STRING(test_latency_url)
     D_LOAD_BOOL(disable_tray)
-    ui->set_text_under_menu_icons->setChecked(settings.value("text_under_buttons", false).toBool());
+    ui->set_text_under_menu_icons->setChecked(settings.value("text_under_buttons", true).toBool());
     connect(ui->set_text_under_menu_icons, STATE_CHANGED, this, [=,this]
     {
         CACHE.updateMenuIcon = true;
