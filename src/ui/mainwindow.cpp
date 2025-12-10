@@ -489,8 +489,9 @@ MainWindow::MainWindow(QWidget *parent)
   connect(ui->menu_open_config_folder, &QAction::triggered, this, [=, this] {
     QDesktopServices::openUrl(QUrl::fromLocalFile(QDir::currentPath()));
   });
-  connect(ui->menu_add_from_clipboard2, &QAction::triggered,
-          ui->menu_add_from_clipboard, &QAction::trigger);
+  ui->toolButton_server->hide();
+//  connect(ui->menu_add_from_clipboard2, &QAction::triggered,
+//          ui->menu_add_from_clipboard, &QAction::trigger);
   connect(ui->actionRestart_Proxy, &QAction::triggered, this, [=, this] {
     if (Configs::dataStore->started_id >= 0)
       profile_start(Configs::dataStore->started_id);
