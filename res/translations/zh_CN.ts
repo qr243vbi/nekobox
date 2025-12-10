@@ -343,6 +343,10 @@
         <translation>显示系统 DNS 选项</translation>
     </message>
     <message>
+        <source>Set text under menu icons</source>
+        <translation>在菜单图标下方设置文本</translation>
+    </message>
+    <message>
         <source>Enable sending HWID, device model, and OS version when updating subscription</source>
         <translation>启用在更新订阅时发送 HWID、设备型号以及 OS 版本</translation>
     </message>
@@ -1601,6 +1605,17 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     </message>
 </context>
 <context>
+    <name>SpinnerDialog</name>
+    <message>
+        <source>Fetching information</source>
+        <translation>获取信息</translation>
+    </message>
+    <message>
+        <source>Download Profiles</source>
+        <translation>下载路由集</translation>
+    </message>
+</context>
+<context>
     <name>MainWindow</name>
     <message>
         <source>Hide window</source>
@@ -2087,7 +2102,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>请在打开的终端中输入您的密码，然后重试</translation>
     </message>
     <message>
-        <source>Application</source>
+        <source>NekoBox</source>
         <translation>应用程序</translation>
     </message>
     <message>
@@ -2430,10 +2445,6 @@ Release note:
     <message>
         <source>Process complete, applying...</source>
         <translation>处理完成，正在应用...</translation>
-    </message>
-    <message>
-        <source>Download Profiles</source>
-        <translation>下载路由集</translation>
     </message>
     <message>
         <source>Requesting profile error: %1</source>

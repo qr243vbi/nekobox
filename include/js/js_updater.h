@@ -69,7 +69,7 @@ bool jsRouteProfileGetter(
     QString * updater_js,
     QStringList * list,
     QMap<QString, QString> * names,
-    std::function<QString(QString, QString *)> * func
+    std::function<QString(QString, QString *, bool*)> * func
 );
 
 #endif

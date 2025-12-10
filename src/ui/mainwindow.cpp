@@ -77,9 +77,202 @@
 
 #include <map>
 #include <string>
+
 extern std::map<std::string, std::string> ruleSetMap;
 
 void setAppIcon(Icon::TrayIconStatus, QSystemTrayIcon *, MainWindow *window);
+
+void MainWindow::set_icons(){
+  QSettings settings = getSettings();
+  set_icons(settings);
+}
+
+    void SpinnerDialog::addItem(QString item, QString name) {
+        listWidget->addItem(name);
+        list << (item);
+    }
+
+    void SpinnerDialog::onOk() {
+        auto ids = listWidget->selectedItems();
+        for (auto item : ids){
+          QString url = "";
+          QString profile = list[listWidget->indexFromItem(item).row()];
+          bool proxy = false;
+          auto resp = window->remoteRouteProfileGetter(profile, &url, &proxy);
+          if (resp.isEmpty()) {
+            return;
+          } else {
+            qDebug() << resp;
+          }
+          QString err;
+          auto parsed = Configs::RoutingChain::parseJsonArray(
+              QString2QJsonArray(resp), &err);
+          if (!err.isEmpty()) {
+            runOnUiThread([=, this] {
+              MessageBoxInfo(tr("Invalid JSON Array"),
+                             tr("The provided input cannot be parsed to a "
+                                "valid route rule array:\n") +
+                                 err);
+            });
+            return;
+          }
+          std::shared_ptr<Configs::RoutingChain> chain =
+              Configs::ProfileManager::NewRouteChain();
+          chain->chain_name =
+              window->remoteRouteProfileNames.value(profile, profile);
+          chain->update_url = url;
+          chain->defaultOutboundID =
+              //profile.startsWith("bypass", Qt::CaseInsensitive)
+                  proxy
+                  ? Configs::proxyID
+                  : Configs::directID;
+          chain->Rules.clear();
+          chain->Rules << parsed;
+          Configs::profileManager->AddRouteChain(chain);
+        }
+    }
+
+    void SpinnerDialog::onCancel() {
+      this->close();
+    }
+
+void MainWindow::getRemoteRouteProfiles(){
+   {
+#ifdef SKIP_JS_UPDATER
+    auto resp =
+        NetworkRequestHelper::HttpGet("https://api.github.com/repos/qr243vbi/"
+                                      "ruleset/git/trees/routeprofiles");
+    if (resp.error.isEmpty()) {
+      QStringList newRemoteRouteProfiles;
+      QJsonObject release = QString2QJsonObject(resp.data);
+      for (const QJsonValue asset : release["tree"].toArray()) {
+        auto profile = asset["path"].toString();
+        if (profile.section('.', -1) == QString("json") &&
+            (profile.startsWith("bypass", Qt::CaseInsensitive) ||
+             profile.startsWith("proxy", Qt::CaseInsensitive))) {
+          profile.chop(5);
+          newRemoteRouteProfiles.push_back(profile);
+        }
+      }
+      mu_remoteRouteProfiles.lock();
+      remoteRouteProfiles = newRemoteRouteProfiles;
+
+      remoteRouteProfileGetter = [=, this](QString profile) -> QString {
+        NetworkRequestHelper::HttpGet(
+            Configs::get_jsdelivr_link("https://raw.githubusercontent.com/"
+                                       "qr243vbi/ruleset/routeprofiles/" +
+                                       profile + ".json"));
+        if (!resp.error.isEmpty()) {
+          runOnUiThread([=, this] {
+            MessageBoxWarning(QObject::tr("Download Profiles"),
+                              QObject::tr("Requesting profile error: %1")
+                                  .arg(resp.error + "\n" + resp.data));
+          });
+          return "";
+        }
+        return resp.data;
+      };
+      mu_remoteRouteProfiles.unlock();
+    }
+#else
+    QString updater_js = "";
+    {
+      QFile file(getResource("check_routeprofiles.js"));
+
+      if (file.exists()) {
+        if (file.open(QIODevice::ReadOnly | QIODevice::Text)) {
+          QTextStream in(&file);
+          updater_js = in.readAll().toUtf8().constData();
+          file.close();
+          {
+            auto bQueue = createJsUpdaterWindow();
+            mu_remoteRouteProfiles.lock();
+            jsRouteProfileGetter(bQueue, &updater_js, &remoteRouteProfiles,
+                                 &remoteRouteProfileNames,
+                                 &remoteRouteProfileGetter);
+            mu_remoteRouteProfiles.unlock();
+          }
+        }
+      }
+    }
+
+#endif
+  };
+}
+
+SpinnerDialog::SpinnerDialog(MainWindow * window){
+        this->window = window;
+        setWindowTitle(tr("Fetching information"));
+
+        // Create the main layout
+        QVBoxLayout *mainLayout = new QVBoxLayout(this);
+
+        // Create a list widget
+        listWidget = new QListWidget(this);
+
+        runOnUiThread([window = this->window, this](){
+          if (window->remoteRouteProfiles.isEmpty()){
+            window->getRemoteRouteProfiles();
+          }
+          for (auto profile: window->remoteRouteProfiles){
+            this->addItem(profile, window->remoteRouteProfileNames.value(
+              profile, profile));
+          }
+          setWindowTitle(tr("Download Profiles"));
+        });
+
+        // Connect double-click signal
+        connect(listWidget, &QListWidget::itemDoubleClicked, this, &SpinnerDialog::onOk);
+
+        // Create a button box with OK and Cancel buttons
+        QDialogButtonBox *buttonBox = new QDialogButtonBox(this);
+        auto okbutton = buttonBox->addButton(QDialogButtonBox::Ok);
+        auto cancelbutton = buttonBox->addButton(QDialogButtonBox::Cancel);
+
+        // Connect signals to slots
+        connect(okbutton, &QPushButton::clicked, this, &SpinnerDialog::onOk);
+        connect(cancelbutton, &QPushButton::clicked, this, &SpinnerDialog::onCancel);
+
+        // Add widgets to the main layout
+        mainLayout->addWidget(listWidget);
+        mainLayout->addWidget(buttonBox);
+
+        // Set the layout to the window
+        setLayout(mainLayout);
+        resize(300, 200);
+}
+
+void MainWindow::set_icons(QSettings& settings){
+  bool text_under_buttons = settings.value("text_under_buttons", false).toBool();
+  set_icons(text_under_buttons);
+}
+
+void MainWindow::set_icons(bool text_under_buttons){
+  QSize button_size;
+  Qt::ToolButtonStyle button_style;
+  if (text_under_buttons){
+      button_size.setHeight(24);
+      button_size.setWidth(24);
+      button_style = Qt::ToolButtonStyle::ToolButtonTextUnderIcon;
+  } else {
+      button_size.setHeight(37);
+      button_size.setWidth(32);
+      button_style = Qt::ToolButtonStyle::ToolButtonIconOnly;
+  }
+
+  // styling
+  for ( auto button : {
+    ui->toolButton_preferences, 
+    ui->toolButton_program,
+    ui->toolButton_routing,
+    ui->toolButton_server,
+    ui->toolButton_update
+  }){
+    button->setToolButtonStyle(button_style);
+    button->setIconSize(button_size);
+  }
+  // top bar set_icons
+}
 
 void UI_InitMainWindow() { mainwindow = new MainWindow; }
 
@@ -315,10 +508,10 @@ MainWindow::MainWindow(QWidget *parent)
     }
   }
 
-  // top bar
+  set_icons(settings);
   ui->toolButton_program->setMenu(ui->menu_program);
   ui->toolButton_preferences->setMenu(ui->menu_preferences);
-  ui->toolButton_server->setMenu(ui->menu_server);
+  ui->toolButton_server->setMenu(ui->menu_profiles);
   ui->toolButton_routing->setMenu(ui->menuRouting_Menu);
   ui->menubar->setVisible(false);
 #ifndef SKIP_UPDATE_BUTTON
@@ -489,7 +682,7 @@ MainWindow::MainWindow(QWidget *parent)
   connect(ui->menu_open_config_folder, &QAction::triggered, this, [=, this] {
     QDesktopServices::openUrl(QUrl::fromLocalFile(QDir::currentPath()));
   });
-  ui->toolButton_server->hide();
+//  ui->toolButton_server->hide();
 //  connect(ui->menu_add_from_clipboard2, &QAction::triggered,
 //          ui->menu_add_from_clipboard, &QAction::trigger);
   connect(ui->actionRestart_Proxy, &QAction::triggered, this, [=, this] {
@@ -599,72 +792,13 @@ MainWindow::MainWindow(QWidget *parent)
     runOnNewThread([this](){getRuleSet();});
   }
 
-  auto getRemoteRouteProfiles = [=, this] {
-#ifdef SKIP_JS_UPDATER
-    auto resp =
-        NetworkRequestHelper::HttpGet("https://api.github.com/repos/qr243vbi/"
-                                      "ruleset/git/trees/routeprofiles");
-    if (resp.error.isEmpty()) {
-      QStringList newRemoteRouteProfiles;
-      QJsonObject release = QString2QJsonObject(resp.data);
-      for (const QJsonValue asset : release["tree"].toArray()) {
-        auto profile = asset["path"].toString();
-        if (profile.section('.', -1) == QString("json") &&
-            (profile.startsWith("bypass", Qt::CaseInsensitive) ||
-             profile.startsWith("proxy", Qt::CaseInsensitive))) {
-          profile.chop(5);
-          newRemoteRouteProfiles.push_back(profile);
-        }
-      }
-      mu_remoteRouteProfiles.lock();
-      remoteRouteProfiles = newRemoteRouteProfiles;
+//  runOnUiThread(getRemoteRouteProfiles);
 
-      remoteRouteProfileGetter = [=, this](QString profile) -> QString {
-        NetworkRequestHelper::HttpGet(
-            Configs::get_jsdelivr_link("https://raw.githubusercontent.com/"
-                                       "qr243vbi/ruleset/routeprofiles/" +
-                                       profile + ".json"));
-        if (!resp.error.isEmpty()) {
-          runOnUiThread([=, this] {
-            MessageBoxWarning(QObject::tr("Download Profiles"),
-                              QObject::tr("Requesting profile error: %1")
-                                  .arg(resp.error + "\n" + resp.data));
-          });
-          return "";
-        }
-        return resp.data;
-      };
-      mu_remoteRouteProfiles.unlock();
-    }
-#else
-    QString updater_js = "";
-    {
-      QFile file(getResource("check_routeprofiles.js"));
-
-      if (file.exists()) {
-        if (file.open(QIODevice::ReadOnly | QIODevice::Text)) {
-          QTextStream in(&file);
-          updater_js = in.readAll().toUtf8().constData();
-          file.close();
-          {
-            auto bQueue = createJsUpdaterWindow();
-            mu_remoteRouteProfiles.lock();
-            jsRouteProfileGetter(bQueue, &updater_js, &remoteRouteProfiles,
-                                 &remoteRouteProfileNames,
-                                 &remoteRouteProfileGetter);
-            mu_remoteRouteProfiles.unlock();
-          }
-        }
-      }
-    }
-
-#endif
-  };
-  runOnNewThread(getRemoteRouteProfiles);
+//  QFile file_route(getResource("check_routeprofiles.js"));
 
   connect(ui->menuRouting_Menu, &QMenu::aboutToShow, this, [=, this]() {
-    if (remoteRouteProfiles.isEmpty())
-      runOnNewThread(getRemoteRouteProfiles);
+//    if (remoteRouteProfiles.isEmpty())
+//      runOnNewThread(getRemoteRouteProfiles);
     ui->menuRouting_Menu->clear();
 
     auto *actionProfiles = new QAction(ui->menuRouting_Menu);
@@ -762,6 +896,24 @@ MainWindow::MainWindow(QWidget *parent)
     ui->menuRouting_Menu->addAction(actionAdblock);
 
     mu_remoteRouteProfiles.lock();
+    #ifndef SKIP_JS_UPDATER
+    QFile file_route(getResource("check_routeprofiles.js"));
+    if (file_route.exists()){
+    #endif
+      auto *actionRoute = new QAction(ui->menuRouting_Menu);
+      actionRoute->setText(QCoreApplication::translate(
+      "SpinnerDialog","Download Profiles"));
+      connect(actionRoute, &QAction::triggered, this, 
+      [=, this](){
+        std::shared_ptr<SpinnerDialog> dialog = std::make_shared<SpinnerDialog>(this);
+        dialog->show();
+        dialog->exec();
+      });
+      ui->menuRouting_Menu->addAction(actionRoute);
+    #ifndef SKIP_JS_UPDATER
+    }
+    #endif
+    /*
     if (!remoteRouteProfiles.isEmpty()) {
       QMenu *profilesMenu =
           ui->menuRouting_Menu->addMenu(QObject::tr("Download Profiles"));
@@ -770,7 +922,8 @@ MainWindow::MainWindow(QWidget *parent)
         action->setText(remoteRouteProfileNames.value(profile, profile));
         connect(action, &QAction::triggered, this, [=, this]() {
           QString url = "";
-          auto resp = remoteRouteProfileGetter(profile, &url);
+          bool proxy = false;
+          auto resp = remoteRouteProfileGetter(profile, &url, &proxy);
           if (resp.isEmpty()) {
             return;
           } else {
@@ -794,7 +947,8 @@ MainWindow::MainWindow(QWidget *parent)
               this->remoteRouteProfileNames.value(profile, profile);
           chain->update_url = url;
           chain->defaultOutboundID =
-              profile.startsWith("bypass", Qt::CaseInsensitive)
+              //profile.startsWith("bypass", Qt::CaseInsensitive)
+                  proxy
                   ? Configs::proxyID
                   : Configs::directID;
           chain->Rules.clear();
@@ -804,6 +958,8 @@ MainWindow::MainWindow(QWidget *parent)
         profilesMenu->addAction(action);
       }
     }
+      */
+    
     mu_remoteRouteProfiles.unlock();
 
     ui->menuRouting_Menu->addSeparator();
@@ -1104,6 +1260,7 @@ void MainWindow::dialog_message_impl(const QString &sender,
     runOnUiThread([this](){
       refresh_status();
       refresh_proxy_list(-1);
+      set_icons();
     });
   }
   bool updateCorePath = (info.contains("UpdateCorePath"));

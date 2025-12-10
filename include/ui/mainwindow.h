@@ -47,6 +47,41 @@ class JsUpdaterWindow;
 #include <include/js/js_updater.h>
 #endif
 
+
+#include <QApplication>
+#include <QListWidget>
+#include <QPushButton>
+#include <QVBoxLayout>
+#include <QHBoxLayout>
+#include <QWidget>
+#include <QDialogButtonBox>
+#include <QMessageBox>
+#include <QLineEdit>
+#include <QInputDialog>
+
+class MainWindow;
+
+class SpinnerDialog : public QDialog {
+    Q_OBJECT
+
+public:
+    SpinnerDialog(MainWindow * window);
+
+private slots:
+    void addItem(QString item, QString name) ;
+
+    void onOk();
+
+    void onCancel();
+
+private:
+    QListWidget *listWidget;
+    QStringList list;
+    MainWindow * window;
+};
+
+
+
 //class MessageQueue;
 
 namespace Configs_sys {
@@ -63,6 +98,8 @@ class MainWindow : public QMainWindow {
     Q_OBJECT
 
 public:
+    friend class SpinnerDialog;
+
     explicit MainWindow(QWidget *parent = nullptr);
 
     ~MainWindow() override;
@@ -80,6 +117,12 @@ public:
     void update_traffic_graph(int proxyDl, int proxyUp, int directDl, int directUp);
 
     void profile_start(int _id = -1);
+
+    void set_icons();
+
+    void set_icons(QSettings & settings);
+
+    void set_icons(bool set);
 
     void profile_stop(bool crash = false, bool block = false, bool manual = false);
 
@@ -237,12 +280,14 @@ private:
 
     QMap<QString, QString> remoteRouteProfileNames;
     QStringList remoteRouteProfiles;
-    std::function<QString(QString, QString*)> remoteRouteProfileGetter;
+    std::function<QString(QString, QString*, bool*)> remoteRouteProfileGetter;
     QMutex mu_remoteRouteProfiles;
 
     // search
     bool searchEnabled = false;
     QString searchString;
+
+    void getRemoteRouteProfiles();
 
     void setSearchState(bool enable);
 

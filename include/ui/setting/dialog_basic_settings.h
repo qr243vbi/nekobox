@@ -41,6 +41,7 @@ private:
         bool updateSystemDns = false;
         bool updateIcon = false;
         bool updateFont = false;
+        bool updateMenuIcon = false;
     } CACHE;
 
 private slots:
