@@ -84,7 +84,7 @@ void setAppIcon(Icon::TrayIconStatus, QSystemTrayIcon *, MainWindow *window);
 
 void MainWindow::set_icons(){
   QSettings settings = getSettings();
-  set_icons(settings);
+  set_icons_from_settings(settings);
 }
 
     void SpinnerDialog::addItem(QString item, QString name) {
@@ -242,12 +242,12 @@ SpinnerDialog::SpinnerDialog(MainWindow * window){
         resize(300, 200);
 }
 
-void MainWindow::set_icons(QSettings& settings){
+void MainWindow::set_icons_from_settings(QSettings& settings){
   bool text_under_buttons = settings.value("text_under_buttons", true).toBool();
-  set_icons(text_under_buttons);
+  set_icons_from_flag(text_under_buttons);
 }
 
-void MainWindow::set_icons(bool text_under_buttons){
+void MainWindow::set_icons_from_flag(bool text_under_buttons){
   QSize button_size;
   Qt::ToolButtonStyle button_style;
   if (text_under_buttons){
@@ -508,7 +508,7 @@ MainWindow::MainWindow(QWidget *parent)
     }
   }
 
-  set_icons(settings);
+  set_icons_from_settings(settings);
   ui->toolButton_program->setMenu(ui->menu_program);
   ui->toolButton_preferences->setMenu(ui->menu_preferences);
   ui->toolButton_server->setMenu(ui->menu_profiles);

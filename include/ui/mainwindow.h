@@ -120,9 +120,9 @@ public:
 
     void set_icons();
 
-    void set_icons(QSettings & settings);
+    void set_icons_from_settings(QSettings & settings);
 
-    void set_icons(bool set);
+    void set_icons_from_flag(bool set);
 
     void profile_stop(bool crash = false, bool block = false, bool manual = false);
 
