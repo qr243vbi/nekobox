@@ -2908,6 +2908,7 @@ void MainWindow::keyPressEvent(QKeyEvent *event) {
     // take over by shortcut_esc
     break;
   case Qt::Key_Enter:
+  case 16777220:
     profile_start();
     break;
   default:
