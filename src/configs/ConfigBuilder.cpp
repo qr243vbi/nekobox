@@ -798,20 +798,23 @@ namespace Configs {
                         {"url", item},
                     };
                 }
-                else
-                    if(ruleSetMap.count(item.toStdString()) > 0) {
+                else {
+                    auto iter = ruleSetMap.find(item.toStdString());
+                    if(iter != ruleSetMap.end()) {
                         ruleSetArray += QJsonObject{
                             {"type", "remote"},
                             {"tag", item},
                             {"format", "binary"},
-                            {"url", get_jsdelivr_link(QString::fromStdString(ruleSetMap.at(item.toStdString())))},
+                            {"url", get_jsdelivr_link(QString::fromStdString(iter->second))},
                         };
                     }
+                }
             }
             if (dataStore->adblock_enable) {
                 std::string str;
-                if (ruleSetMap.contains("nekobox-addblocksingbox")){
-                    str = ruleSetMap.at("nekobox-addblocksingbox");
+                auto iter = ruleSetMap.find("nekobox-addblocksingbox");
+                if (iter != ruleSetMap.end()){
+                    str = iter->second;
                 } else {
                     str = "https://raw.githubusercontent.com/217heidai/adblockfilters/main/rules/adblocksingbox.srs";
                 }

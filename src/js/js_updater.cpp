@@ -192,7 +192,7 @@ bool jsRouteProfileGetter(
     QString * updater_js,
     QStringList * list,
     QMap<QString, QString> * names,
-    std::function<QString(QString, QString *)> * func
+    std::function<QString(QString, QString *, bool*)> * func
     ){
     std::shared_ptr<QJSEngine> ctx = std::make_shared<QJSEngine>();
     if (!jsInit(ctx.get(), updater_js, factory)){
@@ -203,7 +203,7 @@ bool jsRouteProfileGetter(
 
     *list = jsArrayToQStringList(global.property("route_profiles"));
     *names = jsValueToQMap(global.property("route_profile_names"));
-    *func = [ctx] (QString profile, QString * url) -> QString {
+    *func = [ctx] (QString profile, QString * url, bool * proxy) -> QString {
             QJSValue jsFunction = ctx->globalObject().property("route_profile_get_json");
             if (jsFunction.isError()) {
                qWarning() <<  "Error in JavaScript code: " << jsFunction.toString();
@@ -212,7 +212,8 @@ bool jsRouteProfileGetter(
             qDebug() << "jsFunction " << jsFunction.toString();
             QJSValueList args ;
             args << profile ;
-
+            bool proxy_set = false;
+            
             QJSValue result = jsFunction.call(args);
             if (result.isError()) {
                qWarning() << "Error calling JavaScript function: " << result.toString();
@@ -222,9 +223,18 @@ bool jsRouteProfileGetter(
                 if (key.isString()){
                     *url = key.toString();
                 }
-                return result.property(0).toString();
-            } 
-            return result.toString();
+                QJSValue pr = result.property(2);
+                if (pr.isBool()){
+                    *proxy = pr.toBool();
+                    proxy_set = true;
+                }
+                result = result.property(0);
+            }
+            QString str = result.toString();
+            if (!proxy_set){
+                *proxy = str.toLower().startsWith("bypass");
+            }
+            return str;
     };
     return true;
 }

@@ -26,7 +26,10 @@
       <item>
        <widget class="QToolButton" name="toolButton_program">
         <property name="toolTip">
-         <string>Application</string>
+         <string>NekoBox</string>
+        </property>
+        <property name="text">
+         <string>NekoBox</string>
         </property>
         <property name="icon">
          <iconset theme="b-system-run"/>
@@ -40,36 +43,18 @@
         <property name="popupMode">
          <enum>QToolButton::ToolButtonPopupMode::InstantPopup</enum>
         </property>
-        <property name="toolButtonStyle">
+
+        <!--property name="toolButtonStyle">
          <enum>Qt::ToolButtonStyle::ToolButtonIconOnly</enum>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QToolButton" name="toolButton_preferences">
-        <property name="toolTip">
-         <string>Settings</string>
-        </property>
-        <property name="icon">
-         <iconset theme="b-preferences"/>
-        </property>
-        <property name="iconSize">
-         <size>
-          <width>32</width>
-          <height>37</height>
-         </size>
-        </property>
-        <property name="popupMode">
-         <enum>QToolButton::ToolButtonPopupMode::InstantPopup</enum>
-        </property>
-        <property name="toolButtonStyle">
-         <enum>Qt::ToolButtonStyle::ToolButtonIconOnly</enum>
-        </property>
+        </property-->
        </widget>
       </item>
       <item>
        <widget class="QToolButton" name="toolButton_server">
         <property name="toolTip">
+         <string>Profiles</string>
+        </property>
+        <property name="text">
          <string>Profiles</string>
         </property>
         <property name="icon">
@@ -84,14 +69,42 @@
         <property name="popupMode">
          <enum>QToolButton::ToolButtonPopupMode::InstantPopup</enum>
         </property>
-        <property name="toolButtonStyle">
+        <!--property name="toolButtonStyle">
          <enum>Qt::ToolButtonStyle::ToolButtonIconOnly</enum>
+        </property-->
+       </widget>
+      </item>
+      <item>
+       <widget class="QToolButton" name="toolButton_preferences">
+        <property name="toolTip">
+         <string>Settings</string>
         </property>
+        <property name="text">
+         <string>Settings</string>
+        </property>
+        <property name="icon">
+         <iconset theme="b-preferences"/>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>32</width>
+          <height>37</height>
+         </size>
+        </property>
+        <property name="popupMode">
+         <enum>QToolButton::ToolButtonPopupMode::InstantPopup</enum>
+        </property>
+        <!--property name="toolButtonStyle">
+         <enum>Qt::ToolButtonStyle::ToolButtonIconOnly</enum>
+        </property-->
        </widget>
       </item>
       <item>
        <widget class="QToolButton" name="toolButton_routing">
         <property name="toolTip">
+         <string>Routing</string>
+        </property>
+        <property name="text">
          <string>Routing</string>
         </property>
         <property name="icon">
@@ -106,14 +119,17 @@
         <property name="popupMode">
          <enum>QToolButton::ToolButtonPopupMode::InstantPopup</enum>
         </property>
-        <property name="toolButtonStyle">
+        <!--property name="toolButtonStyle">
          <enum>Qt::ToolButtonStyle::ToolButtonIconOnly</enum>
-        </property>
+        </property-->
        </widget>
       </item>
       <item>
        <widget class="QToolButton" name="toolButton_update">
         <property name="toolTip">
+         <string>Update</string>
+        </property>
+        <property name="text">
          <string>Update</string>
         </property>
         <property name="icon">
@@ -128,9 +144,9 @@
         <property name="popupMode">
          <enum>QToolButton::ToolButtonPopupMode::InstantPopup</enum>
         </property>
-        <property name="toolButtonStyle">
+        <!--property name="toolButtonStyle">
          <enum>Qt::ToolButtonStyle::ToolButtonIconOnly</enum>
-        </property>
+        </property-->
        </widget>
       </item>
       <item>
@@ -592,12 +608,6 @@
     </widget>
     <addaction name="actionHide_window"/>
     <addaction name="separator"/>
-    <addaction name="menu_add_from_input"/>
-    <addaction name="menu_add_from_clipboard"/>
-    <addaction name="actionAdd_new_Group"/>
-    <addaction name="actionAdd_profile_from_File"/>
-    <addaction name="menu_scan_qr"/>
-    <addaction name="separator"/>
     <addaction name="actionStart_with_system"/>
     <addaction name="actionRemember_last_proxy"/>
     <addaction name="actionAllow_LAN"/>
@@ -679,11 +689,22 @@
      <string>Routing Menu</string>
     </property>
    </widget>
+   <widget class="QMenu" name="menu_profiles">
+    <property name="title">
+     <string>Profiles</string>
+    </property>
+    <addaction name="menu_add_from_input"/>
+    <addaction name="menu_add_from_clipboard"/>
+    <addaction name="actionAdd_new_Group"/>
+    <addaction name="actionAdd_profile_from_File"/>
+    <addaction name="menu_scan_qr"/>
+   </widget>
    <addaction name="menu_program"/>
    <addaction name="menu_preferences"/>
    <addaction name="menu_server"/>
    <addaction name="menuHidden_menu"/>
    <addaction name="menuRouting_Menu"/>
+   <addaction name="menu_profiles"/>
   </widget>
   <action name="menu_exit">
    <property name="text">

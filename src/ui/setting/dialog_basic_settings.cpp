@@ -71,6 +71,11 @@ DialogBasicSettings::DialogBasicSettings(MainWindow *parent)
     D_LOAD_INT(test_concurrent)
     D_LOAD_STRING(test_latency_url)
     D_LOAD_BOOL(disable_tray)
+    ui->set_text_under_menu_icons->setChecked(settings.value("text_under_buttons", false).toBool());
+    connect(ui->set_text_under_menu_icons, STATE_CHANGED, this, [=,this]
+    {
+        CACHE.updateMenuIcon = true;
+    });
     ui->url_timeout->setText(Int2String(Configs::dataStore->url_test_timeout_ms));
     ui->speedtest_mode->setCurrentIndex(Configs::dataStore->speed_test_mode);
     ui->test_timeout->setText(Int2String(Configs::dataStore->speed_test_timeout_ms));
@@ -364,7 +369,6 @@ void DialogBasicSettings::accept() {
     if (need_save_manager){
         Configs::resourceManager->Save();
     }
-    settings.sync();
     // Security
 
     D_SAVE_BOOL(skip_cert)
@@ -378,9 +382,13 @@ void DialogBasicSettings::accept() {
     if (CACHE.updateDisableTray) str << "UpdateDisableTray";
     if (CACHE.updateSystemDns) str << "UpdateSystemDns";
     if (needChoosePort) str << "NeedChoosePort";
-    if (CACHE.updateIcon || CACHE.updateFont) str << "UpdateIcon";
+    if (CACHE.updateMenuIcon){
+        settings.setValue("text_under_buttons", ui->set_text_under_menu_icons->isChecked());
+    }
+    if (CACHE.updateMenuIcon || CACHE.updateIcon || CACHE.updateFont) str << "UpdateIcon";
     if (need_core_restart) str << "UpdateCorePath";
     MW_dialog_message(Dialog_DialogBasicSettings, str.join(","));
+    settings.sync();
     QDialog::accept();
 }
 

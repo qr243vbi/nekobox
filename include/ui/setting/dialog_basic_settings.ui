@@ -431,6 +431,13 @@
               </property>
              </widget>
             </item>
+            <item>
+             <widget class="QCheckBox" name="set_text_under_menu_icons">
+              <property name="text">
+               <string>Set text under menu icons</string>
+              </property>
+             </widget>
+            </item>
            </layout>
           </widget>
          </item>
