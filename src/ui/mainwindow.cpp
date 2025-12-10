@@ -243,7 +243,7 @@ SpinnerDialog::SpinnerDialog(MainWindow * window){
 }
 
 void MainWindow::set_icons(QSettings& settings){
-  bool text_under_buttons = settings.value("text_under_buttons", false).toBool();
+  bool text_under_buttons = settings.value("text_under_buttons", true).toBool();
   set_icons(text_under_buttons);
 }
 
