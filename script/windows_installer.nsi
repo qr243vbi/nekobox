@@ -22,6 +22,7 @@ FunctionEnd
 
 !macro customInit
   Var /GLOBAL VCRedistDownload
+  Var /GLOBAL DestinationPath
   Var /GLOBAL isInstalled
   ${IfNot} ${IsNativeARM64}
     ${If} ${RunningX64}
@@ -59,7 +60,7 @@ FunctionEnd
     ; Execute the PowerShell command and wait for it to finish
     ExecWait '"$R0"'
     ;exec installer
-    ExecWait "$TEMP\app-name-setup\vcppredist.exe"
+    ExecWait "$DestinationPath"
   ${EndIf}
 
 
