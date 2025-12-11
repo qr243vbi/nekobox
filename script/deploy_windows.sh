@@ -50,8 +50,8 @@ echo "$INPUT_VERSION" > $DEST/version.txt
 if [[ "$COMPILER" != "MinGW" ]]
 then
 pushd $DEST
-windeployqt nekobox.exe --no-translations --no-system-d3d-compiler --no-opengl-sw --verbose 2
-# --no-compiler-runtime
+windeployqt nekobox.exe --no-translations --no-system-d3d-compiler --no-compiler-runtime --no-opengl-sw --verbose 2
+
 rm -rf dxcompiler.dll dxil.dll ||:
 popd
 fi
