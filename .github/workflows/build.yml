@@ -20,8 +20,13 @@ on:
         description: "Ship binaries without updater"
         type: boolean
         required: false
-      build_windows:
-        description: "Build windows binaries"
+      build_windows_x64:
+        description: "Build windows x64 binaries"
+        type: boolean
+        default: true
+        required: false
+      build_windows_arm64:
+        description: "Build windows ARM64 binaries"
         type: boolean
         default: true
         required: false
@@ -57,11 +62,11 @@ jobs:
           - cross_os: windows
             cross_arch: amd64
             go_version: "1.25.0"
-            allow: ${{ github.event.inputs.build_windows }}
+            allow: ${{ github.event.inputs.build_windows_x64 }}
           - cross_os: windows
             cross_arch: arm64
             go_version: "1.25.0"
-            allow: ${{ github.event.inputs.build_windows }}
+            allow: ${{ github.event.inputs.build_windows_arm64 }}
       fail-fast: false
     runs-on: ubuntu-latest
     steps:
@@ -123,10 +128,12 @@ jobs:
             target: arm64
             qt_version: 6.10.0
             triplet: arm64-windows
+            allow: ${{ github.event.inputs.build_windows_arm64 }}
           - platform: windows-2022
             target: x86_64
             qt_version: 6.10.0
             triplet: x64-windows
+            allow: ${{ github.event.inputs.build_windows_x64 }}
       fail-fast: false
     runs-on: ${{ matrix.platform }}
     env:
@@ -134,14 +141,14 @@ jobs:
       INPUT_VERSION: ${{ github.event.inputs.tag }}
     steps:
       - name: Checking out sources
-        if: github.event.inputs.build_windows == 'true' && github.event.inputs.source != 'true'
+        if: matrix.allow == 'true' && github.event.inputs.source != 'true'
         uses: actions/checkout@v4.2.2
         with:
           submodules: "recursive"
 
       - name: vcpkg build
         uses: johnwason/vcpkg-action@v7
-        if: github.event.inputs.build_windows == 'true' && github.event.inputs.source != 'true'
+        if: matrix.allow == 'true' && github.event.inputs.source != 'true'
         id: vcpkg
         with:
           pkgs: thrift
@@ -149,20 +156,20 @@ jobs:
           token: ${{ github.token }}
           
       - name: Download Artifacts
-        if: github.event.inputs.build_windows == 'true' && github.event.inputs.source != 'true'
+        if: matrix.allow == 'true' && github.event.inputs.source != 'true'
         uses: actions/download-artifact@v4.3.0
         with:
           path: download-artifact
 
       - name: Download Srslist
-        if: github.event.inputs.build_windows == 'true' && github.event.inputs.source != 'true'
+        if: matrix.allow == 'true' && github.event.inputs.source != 'true'
         shell: bash
         run: |
           curl -fLso "srslist.json" "https://github.com/qr243vbi/ruleset/raw/refs/heads/rule-set/srslist.json"
           mkdir build
 
       - name: Install Qt
-        if: github.event.inputs.build_windows == 'true' && github.event.inputs.source != 'true'
+        if: matrix.allow == 'true' && github.event.inputs.source != 'true'
         uses: jurplel/install-qt-action@v4.3.0
         with:
           version: ${{ matrix.qt_version }}
@@ -172,13 +179,13 @@ jobs:
           cache-key-prefix: QtCache-${{ matrix.platform }}-${{ matrix.target }}
 
       - name: Install MSVC compiler
-        if: github.event.inputs.build_windows == 'true' && github.event.inputs.source != 'true'
+        if: matrix.allow == 'true' && github.event.inputs.source != 'true'
         uses: ilammy/msvc-dev-cmd@v1
         with:
           arch: ${{ matrix.target }}
 
       - name: Windows - Generate MakeFile and Build
-        if: github.event.inputs.build_windows == 'true' && github.event.inputs.source != 'true'
+        if: matrix.allow == 'true' && github.event.inputs.source != 'true'
         shell: bash
         run: |
           if [[ ${{ github.event.inputs.updater }} == 'true' ]]; then export SKIP_UPDATE_BUTTON=ON; else export SKIP_UPDATE_BUTTON=OFF; fi
@@ -188,7 +195,7 @@ jobs:
 
       - name: Build Installer with NSIS for windows64
         shell: cmd
-        if: github.event.inputs.build_windows == 'true' && matrix.target == 'x86_64' && github.event.inputs.source != 'true'
+        if: matrix.allow == 'true' && matrix.target == 'x86_64' && github.event.inputs.source != 'true'
         run: |
           cp .\script\windows_installer.nsi .
           makensis.exe windows_installer.nsi
@@ -196,7 +203,7 @@ jobs:
 
       - name: Build Installer with NSIS for windows32
         shell: cmd
-        if: github.event.inputs.build_windows == 'true' && matrix.target == 'i686' && github.event.inputs.source != 'true'
+        if: matrix.allow == 'true' && matrix.target == 'i686' && github.event.inputs.source != 'true'
         run: |
           cp .\script\windows_installer.nsi .
           makensis "/DDIRECTORY=windows32"  windows_installer.nsi
@@ -204,7 +211,7 @@ jobs:
 
       - name: Build Installer with NSIS for windows-arm64
         shell: cmd
-        if: github.event.inputs.build_windows == 'true' && matrix.target == 'arm64' && github.event.inputs.source != 'true'
+        if: matrix.allow == 'true' && matrix.target == 'arm64' && github.event.inputs.source != 'true'
         run: |
           cp .\script\windows_installer.nsi .
           makensis "/DDIRECTORY=windows-arm64" windows_installer.nsi
@@ -212,11 +219,11 @@ jobs:
 
       - name: Tar files
         shell: bash
-        if: github.event.inputs.build_windows == 'true' && github.event.inputs.source != 'true'
+        if: matrix.allow == 'true' && github.event.inputs.source != 'true'
         run: tar czvf artifacts.tgz ./deployment
 
       - name: Uploading Artifact
-        if: github.event.inputs.build_windows == 'true' && github.event.inputs.source != 'true'
+        if: matrix.allow == 'true' && github.event.inputs.source != 'true'
         uses: actions/upload-artifact@v4.6.2
         with:
           name: nekobox-${{ github.sha }}-${{ matrix.platform }}-${{ matrix.target }}-Qt${{ matrix.qt_version }}
