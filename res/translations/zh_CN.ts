@@ -146,7 +146,7 @@
     </message>
     <message>
         <source>Padding</source>
-        <translation>填充</translation>
+        <translation>添加</translation>
     </message>
     <message>
         <source>Loglevel</source>
@@ -834,7 +834,7 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
     </message>
     <message>
         <source>Routing Profile</source>
-        <translation>路由配置档</translation>
+        <translation>国家地理规则</translation>
     </message>
     <message>
         <source>Default DNS server</source>
@@ -846,7 +846,7 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
     </message>
     <message>
         <source>Routing Profiles</source>
-        <translation>路由配置档</translation>
+        <translation>国家地理规则</translation>
     </message>
     <message>
         <source>New</source>
@@ -858,7 +858,7 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
     </message>
     <message>
         <source>Delete</source>
-        <translation>删除此此节点</translation>
+        <translation>删除</translation>
     </message>
     <message>
         <source>Outbound Domain Strategy</source>
@@ -870,7 +870,7 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
     </message>
     <message>
         <source>Remote Rule-set Mirror</source>
-        <translation>远程规则集镜像</translation>
+        <translation>远程更新规则网站</translation>
     </message>
     <message>
         <source>Enable FakeIP</source>
@@ -922,7 +922,7 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
     </message>
     <message>
         <source>Clone</source>
-        <translation>复制此节点</translation>
+        <translation>复制</translation>
     </message>
     <message>
         <source>Export</source>
@@ -1553,7 +1553,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     </message>
     <message>
         <source>Remove</source>
-        <translation>删除此此节点</translation>
+        <translation>删除</translation>
     </message>
     <message>
         <source>Remove %1?</source>
@@ -1742,7 +1742,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     </message>
     <message>
         <source>Scan QR Code</source>
-        <translation>扫描二维码</translation>
+        <translation>从 扫描二维码 导入</translation>
     </message>
     <message>
         <source>Disable</source>
@@ -1826,7 +1826,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     </message>
     <message>
         <source>Remove Unavailable</source>
-        <translation>移除不可用项</translation>
+        <translation>移除 此分组 不可用节点</translation>
     </message>
     <message>
         <source>New profile</source>
@@ -1854,7 +1854,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     </message>
     <message>
         <source>Remove Duplicates</source>
-        <translation>移除重复项</translation>
+        <translation>移除 此分组 重复节点</translation>
     </message>
     <message>
         <source>Select All</source>
@@ -1886,7 +1886,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation>删除此此节点</translation>
+        <translation>删除</translation>
     </message>
     <message>
         <source>Copy links of selected</source>
@@ -1894,7 +1894,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     </message>
     <message>
         <source>Clone</source>
-        <translation>复制此节点</translation>
+        <translation>复制</translation>
     </message>
     <message>
         <source>Update subscription</source>
@@ -1994,7 +1994,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     </message>
     <message>
         <source>Delete selected Group</source>
-        <translation>删除此此节点此分组</translation>
+        <translation>删除此分组</translation>
     </message>
     <message>
         <source>Edit selected Group</source>
@@ -2520,7 +2520,7 @@ Release note:
     </message>
     <message>
         <source>Route Profile</source>
-        <translation>路由配置档</translation>
+        <translation>国家地理规则</translation>
     </message>
     <message>
         <source>Name</source>
@@ -2544,7 +2544,7 @@ Release note:
     </message>
     <message>
         <source>Delete</source>
-        <translation>删除此此节点</translation>
+        <translation>删除</translation>
     </message>
     <message>
         <source>Rule Attributes</source>
