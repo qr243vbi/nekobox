@@ -5,30 +5,26 @@
 #include "Preset.hpp"
 
 namespace Configs {
-    class AnyTLSBean : public AbstractBean {
+    class ShadowTLSBean : public AbstractBean {
     private:
         V2rayStreamSettings * streamPtr;
     public:
         QString password = "";
-        QString idle_session_check_interval = "";
-        QString idle_session_timeout = "";
-        int min_idle_session = 0;
+        int shadowtls_version = 1;
 
         std::shared_ptr<V2rayStreamSettings> stream = std::make_shared<V2rayStreamSettings>();
 
-        AnyTLSBean() : AbstractBean(0) {
+        ShadowTLSBean() : AbstractBean(0) {
             streamPtr = stream.get();
         }
         
         INIT_MAP
             ADD_MAP("password", password, string);
-            ADD_MAP("idle_session_check_interval", idle_session_check_interval, string);
-            ADD_MAP("idle_session_timeout", idle_session_timeout, string);
-            ADD_MAP("min_idle_session", min_idle_session, integer);
+            ADD_MAP("shadowtls_version", shadowtls_version, integer);
             ADD_MAP("stream", streamPtr, jsonStore);
         STOP_MAP
 
-        QString DisplayType() override { return "AnyTLS"; };
+        QString DisplayType() override { return "ShadowTLS"; };
 
         CoreObjOutboundBuildResult BuildCoreObjSingBox() override;
 

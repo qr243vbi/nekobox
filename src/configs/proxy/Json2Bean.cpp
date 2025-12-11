@@ -1,17 +1,64 @@
+#include "include/configs/proxy/V2RayStreamSettings.hpp"
 #include <include/configs/proxy/includes.h>
 
 namespace Configs
 {
+
+    static bool parse_tls(std::shared_ptr<V2rayStreamSettings> stream, const QJsonObject & obj){
+        bool is_tls = obj["tls"].isObject() ;
+        if (is_tls) {
+            QJsonObject tls = obj["tls"].toObject();
+            QJsonObject reality = tls["reality"].toObject();
+            auto alpn = tls["alpn"];
+            stream->security = "tls";
+            stream->reality_pbk = reality["public_key"].toString();
+            stream->reality_sid = reality["short_id"].toString();
+            stream->utlsFingerprint = tls["utls"].toObject()["fingerprint"].toString();
+            stream->enable_tls_fragment = tls["fragment"].toBool();
+            stream->tls_fragment_fallback_delay = tls["fragment_fallback_delay"].toString();
+            stream->enable_tls_record_fragment = tls["record_fragment"].toBool();
+            stream->sni = tls["server_name"].toString();
+            stream->alpn = alpn.isArray() ? QJsonArray2QListString(alpn.toArray()).join(",") : alpn.toString();
+            stream->allow_insecure = tls["insecure"].toBool();
+        } else {
+            stream->security = "";
+        }
+        return true;
+    }
+
+    static bool parse_transport(std::shared_ptr<V2rayStreamSettings> stream, const QJsonObject & obj){
+        auto transport = obj["transport"].toObject();
+        stream->network = transport["type"].toString();
+        if (stream->network == "ws" || stream->network == "httpupgrade")
+        {
+            finalize:
+            stream->path = transport["path"].toString();
+            finalize2:
+            auto host = transport["host"];
+            stream->host = host.isArray() ? QJsonArray2QListString(host.toArray()).join(",") : host.toString();
+            return true;
+        } else if (stream->network == "http")
+        {
+            stream->method = transport["method"].toString();
+            goto finalize;
+        } else if (stream->network == "grpc")
+        {
+            stream->path = transport["service_name"].toString();
+            goto finalize2;
+        } else if (stream->network == "xhttp")
+        {
+            stream->xhttp_mode = transport["mode"].toString();
+            goto finalize;
+        }
+        return false;
+    }
+
     bool QUICBean::TryParseJson(const QJsonObject& obj)
     {
         auto type = obj["type"].toString();
         if (type == "hysteria")
         {
-            name = obj["tag"].toString();
             proxy_type = proxy_Hysteria;
-
-            serverAddress = obj["server"].toString();
-            serverPort = obj["server_port"].toInt();
             serverPorts = obj["server_ports"].isArray() ? QJsonArray2QListString(obj["server_ports"].toArray()) : QStringList();
             hop_interval = obj["hop_interval"].toString();
             uploadMbps = obj["up_mbps"].isDouble() ? obj["up_mbps"].toInt() : 0;
@@ -22,45 +69,37 @@ namespace Configs
             disableMtuDiscovery = obj["disable_mtu_discovery"].toBool();
             connectionReceiveWindow = obj["recv_window_conn"].toInt();
             streamReceiveWindow = obj["recv_window"].toInt();
-            alpn = obj["tls"].toObject()["alpn"].isArray() ? QJsonArray2QListString(obj["tls"].toObject()["alpn"].toArray()).join(",") : obj["tls"].toObject()["alpn"].toString();
-            sni = obj["tls"].toObject()["server_name"].toString();
-            disableSni = obj["tls"].toObject()["disable_sni"].toBool();
-            allowInsecure = obj["tls"].toObject()["insecure"].toBool();
-            return true;
+
+            goto finalize;
         }
         if (type == "hysteria2")
         {
-            name = obj["tag"].toString();
             proxy_type = proxy_Hysteria2;
-
-            serverAddress = obj["server"].toString();
-            serverPort = obj["server_port"].toInt();
             serverPorts = obj["server_ports"].isArray() ? QJsonArray2QListString(obj["server_ports"].toArray()) : QStringList();
             hop_interval = obj["hop_interval"].toString();
             uploadMbps = obj["up_mbps"].isDouble() ? obj["up_mbps"].toInt() : 0;
             downloadMbps = obj["down_mbps"].isDouble() ? obj["down_mbps"].toInt() : 0;
-            password = obj["password"].toString();
             obfsPassword = obj["obfs"].toObject()["password"].toString();
-            alpn = obj["tls"].toObject()["alpn"].isArray() ? QJsonArray2QListString(obj["tls"].toObject()["alpn"].toArray()).join(",") : obj["tls"].toObject()["alpn"].toString();
-            sni = obj["tls"].toObject()["server_name"].toString();
-            disableSni = obj["tls"].toObject()["disable_sni"].toBool();
-            allowInsecure = obj["tls"].toObject()["insecure"].toBool();
-            return true;
+            password = obj["password"].toString();
+
+
+            goto finalize;
         }
         if (type == "tuic")
         {
-            name = obj["tag"].toString();
             proxy_type = proxy_TUIC;
-
-            serverAddress = obj["server"].toString();
-            serverPort = obj["server_port"].toInt();
             uuid = obj["uuid"].toString();
-            password = obj["password"].toString();
             congestionControl = obj["congestion_control"].toString();
             udpRelayMode = obj["udp_relay_mode"].toString();
             uos = obj["udp_over_stream"].toBool();
             zeroRttHandshake = obj["zero_rtt_handshake"].toBool();
             heartbeat = obj["heartbeat"].toString();
+            password = obj["password"].toString();
+
+            finalize:
+            name = obj["tag"].toString();
+            serverAddress = obj["server"].toString();
+            serverPort = obj["server_port"].toInt();
             alpn = obj["tls"].toObject()["alpn"].isArray() ? QJsonArray2QListString(obj["tls"].toObject()["alpn"].toArray()).join(",") : obj["tls"].toObject()["alpn"].toString();
             sni = obj["tls"].toObject()["server_name"].toString();
             disableSni = obj["tls"].toObject()["disable_sni"].toBool();
@@ -111,9 +150,7 @@ namespace Configs
         serverPort = obj["server_port"].toInt();
         username = obj["username"].toString();
         password = obj["password"].toString();
-        stream->security = obj["tls"].isObject() ? "tls" : "";
-        stream->sni = obj["tls"].toObject()["server_name"].toString();
-        stream->allow_insecure = obj["tls"].toObject()["insecure"].toBool();
+        parse_tls(stream, obj);
         return true;
     }
 
@@ -130,6 +167,7 @@ namespace Configs
         hostKey = QJsonArray2QListString(obj["host_key"].toArray());
         hostKeyAlgs = QJsonArray2QListString(obj["host_key_algorithms"].toArray());
         clientVersion = obj["client_version"].toString();
+
         return true;
     }
 
@@ -142,41 +180,12 @@ namespace Configs
         password = obj["password"].toString();
         if (proxy_type == proxy_VLESS) password = obj["uuid"].toString();
         flow = obj["flow"].toString();
-        stream->packet_encoding = obj["packet_encoding"].toString();
         mux_state = obj["multiplex"].isObject() ? (obj["multiplex"].toObject()["enabled"].toBool() ? 1 : 2) : 0;
-        stream->security = obj["tls"].isObject() ? "tls" : "";
-        stream->reality_pbk = obj["tls"].toObject()["reality"].toObject()["public_key"].toString();
-        stream->reality_sid = obj["tls"].toObject()["reality"].toObject()["short_id"].toString();
-        stream->utlsFingerprint = obj["tls"].toObject()["utls"].toObject()["fingerprint"].toString();
-        stream->enable_tls_fragment = obj["tls"].toObject()["fragment"].toBool();
-        stream->tls_fragment_fallback_delay = obj["tls"].toObject()["fragment_fallback_delay"].toString();
-        stream->enable_tls_record_fragment = obj["tls"].toObject()["record_fragment"].toBool();
-        stream->sni = obj["tls"].toObject()["server_name"].toString();
-        stream->alpn = obj["tls"].toObject()["alpn"].isArray() ? QJsonArray2QListString(obj["tls"].toObject()["alpn"].toArray()).join(",") : obj["tls"].toObject()["alpn"].toString();
-        stream->allow_insecure = obj["tls"].toObject()["insecure"].toBool();
-        stream->network = obj["transport"].toObject()["type"].toString();
-        if (stream->network == "ws")
-        {
-            stream->path = obj["transport"].toObject()["path"].toString();
-            stream->host = obj["transport"].toObject()["host"].isArray() ? QJsonArray2QListString(obj["transport"].toObject()["host"].toArray()).join(",") : obj["transport"].toObject()["host"].toString();
-        } else if (stream->network == "http")
-        {
-            stream->path = obj["transport"].toObject()["path"].toString();
-            stream->host = obj["transport"].toObject()["host"].isArray() ? QJsonArray2QListString(obj["transport"].toObject()["host"].toArray()).join(",") : obj["transport"].toObject()["host"].toString();
-            stream->method = obj["transport"].toObject()["method"].toString();
-        } else if (stream->network == "httpupgrade")
-        {
-            stream->path = obj["transport"].toObject()["path"].toString();
-            stream->host = obj["transport"].toObject()["host"].isArray() ? QJsonArray2QListString(obj["transport"].toObject()["host"].toArray()).join(",") : obj["transport"].toObject()["host"].toString();
-        } else if (stream->network == "grpc")
-        {
-            stream->path = obj["transport"].toObject()["service_name"].toString();
-        } else if (stream->network == "xhttp")
-        {
-            stream->path = obj["transport"].toObject()["path"].toString();
-            stream->host = obj["transport"].toObject()["host"].isArray() ? QJsonArray2QListString(obj["transport"].toObject()["host"].toArray()).join(",") : obj["transport"].toObject()["host"].toString();
-            stream->xhttp_mode = obj["transport"].toObject()["mode"].toString();
-        }
+
+        stream->packet_encoding = obj["packet_encoding"].toString();
+
+        parse_tls(stream, obj);
+        parse_transport(stream, obj);
         return true;
     }
 
@@ -188,41 +197,12 @@ namespace Configs
         uuid = obj["uuid"].toString();
         security = obj["security"].toString();
         aid = obj["alter_id"].toInt();
-        stream->packet_encoding = obj["packet_encoding"].toString();
         mux_state = obj["multiplex"].isObject() ? (obj["multiplex"].toObject()["enabled"].toBool() ? 1 : 2) : 0;
-        stream->security = obj["tls"].isObject() ? "tls" : "";
-        stream->reality_pbk = obj["tls"].toObject()["reality"].toObject()["public_key"].toString();
-        stream->reality_sid = obj["tls"].toObject()["reality"].toObject()["short_id"].toString();
-        stream->utlsFingerprint = obj["tls"].toObject()["utls"].toObject()["fingerprint"].toString();
-        stream->enable_tls_fragment = obj["tls"].toObject()["fragment"].toBool();
-        stream->tls_fragment_fallback_delay = obj["tls"].toObject()["fragment_fallback_delay"].toString();
-        stream->enable_tls_record_fragment = obj["tls"].toObject()["record_fragment"].toBool();
-        stream->sni = obj["tls"].toObject()["server_name"].toString();
-        stream->alpn = obj["tls"].toObject()["alpn"].isArray() ? QJsonArray2QListString(obj["tls"].toObject()["alpn"].toArray()).join(",") : obj["tls"].toObject()["alpn"].toString();
-        stream->allow_insecure = obj["tls"].toObject()["insecure"].toBool();
-        stream->network = obj["transport"].toObject()["type"].toString();
-        if (stream->network == "ws")
-        {
-            stream->path = obj["transport"].toObject()["path"].toString();
-            stream->host = obj["transport"].toObject()["host"].isArray() ? QJsonArray2QListString(obj["transport"].toObject()["host"].toArray()).join(",") : obj["transport"].toObject()["host"].toString();
-        } else if (stream->network == "http")
-        {
-            stream->path = obj["transport"].toObject()["path"].toString();
-            stream->host = obj["transport"].toObject()["host"].isArray() ? QJsonArray2QListString(obj["transport"].toObject()["host"].toArray()).join(",") : obj["transport"].toObject()["host"].toString();
-            stream->method = obj["transport"].toObject()["method"].toString();
-        } else if (stream->network == "httpupgrade")
-        {
-            stream->path = obj["transport"].toObject()["path"].toString();
-            stream->host = obj["transport"].toObject()["host"].isArray() ? QJsonArray2QListString(obj["transport"].toObject()["host"].toArray()).join(",") : obj["transport"].toObject()["host"].toString();
-        } else if (stream->network == "grpc")
-        {
-            stream->path = obj["transport"].toObject()["service_name"].toString();
-        } else if (stream->network == "xhttp")
-        {
-            stream->path = obj["transport"].toObject()["path"].toString();
-            stream->host = obj["transport"].toObject()["host"].isArray() ? QJsonArray2QListString(obj["transport"].toObject()["host"].toArray()).join(",") : obj["transport"].toObject()["host"].toString();
-            stream->xhttp_mode = obj["transport"].toObject()["mode"].toString();
-        }
+
+        stream->packet_encoding = obj["packet_encoding"].toString();
+
+        parse_tls(stream, obj);
+        parse_transport(stream, obj);
         return true;
     }
 
@@ -232,19 +212,22 @@ namespace Configs
         serverAddress = obj["server"].toString();
         serverPort = obj["server_port"].toInt();
         password = obj["password"].toString();
-        idle_session_check_interval = obj["idle_session_check_interval"].toInt();
-        idle_session_timeout = obj["idle_session_timeout"].toInt();
+        idle_session_check_interval = obj["idle_session_check_interval"].toString();
+        idle_session_timeout = obj["idle_session_timeout"].toString();
         min_idle_session = obj["min_idle_session"].toInt();
-        stream->security = obj["tls"].isObject() ? "tls" : "";
-        stream->reality_pbk = obj["tls"].toObject()["reality"].toObject()["public_key"].toString();
-        stream->reality_sid = obj["tls"].toObject()["reality"].toObject()["short_id"].toString();
-        stream->utlsFingerprint = obj["tls"].toObject()["utls"].toObject()["fingerprint"].toString();
-        stream->enable_tls_fragment = obj["tls"].toObject()["fragment"].toBool();
-        stream->tls_fragment_fallback_delay = obj["tls"].toObject()["fragment_fallback_delay"].toString();
-        stream->enable_tls_record_fragment = obj["tls"].toObject()["record_fragment"].toBool();
-        stream->sni = obj["tls"].toObject()["server_name"].toString();
-        stream->alpn = obj["tls"].toObject()["alpn"].isArray() ? QJsonArray2QListString(obj["tls"].toObject()["alpn"].toArray()).join(",") : obj["tls"].toObject()["alpn"].toString();
-        stream->allow_insecure = obj["tls"].toObject()["insecure"].toBool();
+        parse_tls(stream, obj);
+        return true;
+    }
+
+
+    bool ShadowTLSBean::TryParseJson(const QJsonObject& obj)
+    {
+        name = obj["tag"].toString();
+        serverAddress = obj["server"].toString();
+        serverPort = obj["server_port"].toInt();
+        password = obj["password"].toString();
+        shadowtls_version = obj["version"].toInt();
+        parse_tls(stream, obj);
         return true;
     }
 

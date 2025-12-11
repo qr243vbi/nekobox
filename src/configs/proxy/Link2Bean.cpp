@@ -1,3 +1,4 @@
+#include "include/configs/proxy/V2RayStreamSettings.hpp"
 #include "include/dataStore/ProxyEntity.hpp"
 #include "include/configs/proxy/includes.h"
 #include "3rdparty/URLParser/url_parser.h"
@@ -43,19 +44,7 @@ namespace Configs {
         return !serverAddress.isEmpty();
     }
 
-    bool AnyTLSBean::TryParseLink(const QString &link) {
-        auto url = QUrl(link);
-        if (!url.isValid()) return false;
-        auto query = GetQuery(url);
-
-        name = url.fragment(QUrl::FullyDecoded);
-        serverAddress = url.host();
-        serverPort = url.port();
-        password = url.userName();
-        if (serverPort == -1) serverPort = 443;
-
-        // security
-
+    static void parse_security(std::shared_ptr<V2rayStreamSettings> stream, QUrlQuery & query){
         stream->security = "tls";
         auto sni1 = GetQueryValue(query, "sni");
         auto sni2 = GetQueryValue(query, "peer");
@@ -75,9 +64,44 @@ namespace Configs {
         if (stream->utlsFingerprint.isEmpty()) {
             stream->utlsFingerprint = dataStore->utlsFingerprint;
         }
+    }
+
+    bool AnyTLSBean::TryParseLink(const QString &link) {
+        auto url = QUrl(link);
+        if (!url.isValid()) return false;
+        auto query = GetQuery(url);
+
+        name = url.fragment(QUrl::FullyDecoded);
+        serverAddress = url.host();
+        serverPort = url.port();
+        password = url.userName();
+        if (serverPort == -1) serverPort = 443;
+        this->idle_session_check_interval = GetQueryValue(query, "idle_session_check_interval", "30s");
+        this->idle_session_timeout = GetQueryValue(query, "idle_session_timeout", "30s");
+        this->min_idle_session = GetQueryValue(query, "min_idle_session", "0").toInt();
+        // security
+        parse_security(stream, query);
 
         return !(password.isEmpty() || serverAddress.isEmpty());
     }
+
+    bool ShadowTLSBean::TryParseLink(const QString &link) {
+        auto url = QUrl(link);
+        if (!url.isValid()) return false;
+        auto query = GetQuery(url);
+
+        name = url.fragment(QUrl::FullyDecoded);
+        serverAddress = url.host();
+        serverPort = url.port();
+        password = url.userName();
+        if (serverPort == -1) serverPort = 443;
+        this->shadowtls_version = GetQueryValue(query, "version", "0").toInt();
+        // security
+        parse_security(stream, query);
+
+        return !(password.isEmpty() || serverAddress.isEmpty());
+    }
+
 
     bool TrojanVLESSBean::TryParseLink(const QString &link) {
         auto url = QUrl(link);

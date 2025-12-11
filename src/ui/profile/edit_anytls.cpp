@@ -1,6 +1,9 @@
 #include "include/ui/profile/edit_anytls.h"
 
 #include "include/configs/proxy/AnyTLSBean.hpp"
+#include "include/ui/profile/edit_shadowtls.h"
+
+#include "include/configs/proxy/ShadowTLSBean.hpp"
 
 #include <QUuid>
 #include <QRegularExpressionValidator>
@@ -8,8 +11,6 @@
 
 EditAnyTLS::EditAnyTLS(QWidget *parent) : QWidget(parent), ui(new Ui::EditAnyTLS) {
     ui->setupUi(this);
-    ui->interval->setValidator(QRegExpValidator_Number);
-    ui->timeout->setValidator(QRegExpValidator_Number);
     ui->min->setValidator(QRegExpValidator_Number);
 }
 
@@ -22,8 +23,8 @@ void EditAnyTLS::onStart(std::shared_ptr<Configs::ProxyEntity> _ent) {
     auto bean = this->ent->AnyTLSBean();
 
     ui->password->setText(bean->password);
-    ui->interval->setText(Int2String(bean->idle_session_check_interval));
-    ui->timeout->setText(Int2String(bean->idle_session_timeout));
+    ui->interval->setText(bean->idle_session_check_interval);
+    ui->timeout->setText(bean->idle_session_timeout);
     ui->min->setText(Int2String(bean->min_idle_session));
 }
 
@@ -31,9 +32,36 @@ bool EditAnyTLS::onEnd() {
     auto bean = this->ent->AnyTLSBean();
 
     bean->password = ui->password->text();
-    bean->idle_session_check_interval = ui->interval->text().toInt();
-    bean->idle_session_timeout = ui->timeout->text().toInt();
+    bean->idle_session_check_interval = ui->interval->text();
+    bean->idle_session_timeout = ui->timeout->text();
     bean->min_idle_session = ui->min->text().toInt();
+
+    return true;
+}
+
+
+EditShadowTLS::EditShadowTLS(QWidget *parent) : QWidget(parent), ui(new Ui::EditShadowTLS) {
+    ui->setupUi(this);
+    ui->shadowtls_version->setValidator(QRegExpValidator_Number);
+}
+
+EditShadowTLS::~EditShadowTLS() {
+    delete ui;
+}
+
+void EditShadowTLS::onStart(std::shared_ptr<Configs::ProxyEntity> _ent) {
+    this->ent = _ent;
+    auto bean = this->ent->ShadowTLSBean();
+
+    ui->password->setText(bean->password);
+    ui->shadowtls_version->setText(Int2String(bean->shadowtls_version));
+}
+
+bool EditShadowTLS::onEnd() {
+    auto bean = this->ent->ShadowTLSBean();
+
+    bean->password = ui->password->text();
+    bean->shadowtls_version = ui->shadowtls_version->text().toInt();
 
     return true;
 }

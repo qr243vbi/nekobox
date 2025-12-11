@@ -1,9 +1,17 @@
+#include "include/configs/proxy/V2RayStreamSettings.hpp"
 #include "include/dataStore/ProxyEntity.hpp"
 #include "include/configs/proxy/includes.h"
 
 #include <QUrlQuery>
 
 namespace Configs {
+
+    static void add_query_nonempty(const char * name, QUrlQuery & query, QString & value){
+        if (!value.isEmpty()){
+            query.addQueryItem(name, value);
+        }
+    }
+
     QString SocksHttpBean::ToShareLink() {
         QUrl url;
         if (socks_http_type == type_HTTP) { // http
@@ -23,6 +31,43 @@ namespace Configs {
         return url.toString(QUrl::FullyEncoded);
     }
 
+    static void add_security(std::shared_ptr<V2rayStreamSettings> stream, QUrlQuery & query){
+        auto security = stream->security;
+        if (security == "tls" && !stream->reality_pbk.trimmed().isEmpty()) security = "reality";
+        query.addQueryItem("security", security == "" ? "none" : security);
+
+        add_query_nonempty("sni", query, stream->sni);
+        add_query_nonempty("alpn", query, stream->alpn);
+        if (stream->allow_insecure) query.addQueryItem("insecure", "1");
+        add_query_nonempty("fp", query, stream->utlsFingerprint);
+        if (stream->enable_tls_fragment) query.addQueryItem("fragment", "1");
+        add_query_nonempty("fragment_fallback_delay", query, stream->tls_fragment_fallback_delay);
+        if (stream->enable_tls_record_fragment) query.addQueryItem("record_fragment", "1");
+
+        if (security == "reality") {
+            query.addQueryItem("pbk", stream->reality_pbk);
+            add_query_nonempty("sid", query, stream->reality_sid);
+        }        
+    }
+
+    QString ShadowTLSBean::ToShareLink() {
+        QUrl url;
+        QUrlQuery query;
+        url.setScheme("shadowtls");
+        url.setUserName(password);
+        url.setHost(serverAddress);
+        url.setPort(serverPort);
+        if (!name.isEmpty()) url.setFragment(name);
+
+        query.addQueryItem("version", QString::number(shadowtls_version));
+
+        //  security
+        add_security(stream, query);
+
+        url.setQuery(query);
+        return url.toString(QUrl::FullyEncoded);
+    }
+
     QString AnyTLSBean::ToShareLink() {
         QUrl url;
         QUrlQuery query;
@@ -32,23 +77,12 @@ namespace Configs {
         url.setPort(serverPort);
         if (!name.isEmpty()) url.setFragment(name);
 
+        add_query_nonempty("idle_session_check_interval", query, idle_session_check_interval);
+        add_query_nonempty("idle_session_timeout", query, idle_session_timeout);
+        if (min_idle_session > 0) query.addQueryItem("min_idle_session", QString::number(min_idle_session));
+
         //  security
-        auto security = stream->security;
-        if (security == "tls" && !stream->reality_pbk.trimmed().isEmpty()) security = "reality";
-        query.addQueryItem("security", security == "" ? "none" : security);
-
-        if (!stream->sni.isEmpty()) query.addQueryItem("sni", stream->sni);
-        if (!stream->alpn.isEmpty()) query.addQueryItem("alpn", stream->alpn);
-        if (stream->allow_insecure) query.addQueryItem("insecure", "1");
-        if (!stream->utlsFingerprint.isEmpty()) query.addQueryItem("fp", stream->utlsFingerprint);
-        if (stream->enable_tls_fragment) query.addQueryItem("fragment", "1");
-        if (!stream->tls_fragment_fallback_delay.isEmpty()) query.addQueryItem("fragment_fallback_delay", stream->tls_fragment_fallback_delay);
-        if (stream->enable_tls_record_fragment) query.addQueryItem("record_fragment", "1");
-
-        if (security == "reality") {
-            query.addQueryItem("pbk", stream->reality_pbk);
-            if (!stream->reality_sid.isEmpty()) query.addQueryItem("sid", stream->reality_sid);
-        }
+        add_security(stream, query);
 
         url.setQuery(query);
         return url.toString(QUrl::FullyEncoded);
@@ -64,46 +98,31 @@ namespace Configs {
         if (!name.isEmpty()) url.setFragment(name);
 
         //  security
-        auto security = stream->security;
-        if (security == "tls" && !stream->reality_pbk.trimmed().isEmpty()) security = "reality";
-        query.addQueryItem("security", security == "" ? "none" : security);
-
-        if (!stream->sni.isEmpty()) query.addQueryItem("sni", stream->sni);
-        if (!stream->alpn.isEmpty()) query.addQueryItem("alpn", stream->alpn);
-        if (stream->allow_insecure) query.addQueryItem("allowInsecure", "1");
-        if (!stream->utlsFingerprint.isEmpty()) query.addQueryItem("fp", stream->utlsFingerprint);
-        if (stream->enable_tls_fragment) query.addQueryItem("fragment", "1");
-        if (!stream->tls_fragment_fallback_delay.isEmpty()) query.addQueryItem("fragment_fallback_delay", stream->tls_fragment_fallback_delay);
-        if (stream->enable_tls_record_fragment) query.addQueryItem("record_fragment", "1");
-
-        if (security == "reality") {
-            query.addQueryItem("pbk", stream->reality_pbk);
-            if (!stream->reality_sid.isEmpty()) query.addQueryItem("sid", stream->reality_sid);
-        }
+        add_security(stream, query);
 
         // type
         query.addQueryItem("type", stream->network);
 
         if (stream->network == "ws" || stream->network == "httpupgrade") {
-            if (!stream->path.isEmpty()) query.addQueryItem("path", stream->path);
-            if (!stream->host.isEmpty()) query.addQueryItem("host", stream->host);
+            add_query_nonempty("path", query, stream->path);
+            add_query_nonempty("host", query, stream->host);
         } else if (stream->network == "http" ) {
-            if (!stream->path.isEmpty()) query.addQueryItem("path", stream->path);
-            if (!stream->host.isEmpty()) query.addQueryItem("host", stream->host);
-            if (!stream->method.isEmpty()) query.addQueryItem("method", stream->method);
+            add_query_nonempty("path", query, stream->path);
+            add_query_nonempty("host", query, stream->host);
+            add_query_nonempty("method", query, stream->method);
         } else if (stream->network == "grpc") {
-            if (!stream->path.isEmpty()) query.addQueryItem("serviceName", stream->path);
+            add_query_nonempty("serviceName", query, stream->path);
         } else if (stream->network == "tcp") {
             if (stream->header_type == "http") {
-                if (!stream->path.isEmpty()) query.addQueryItem("path", stream->path);
+                add_query_nonempty("path", query, stream->path);
                 query.addQueryItem("headerType", "http");
                 query.addQueryItem("host", stream->host);
             }
         } else if (stream->network == "xhttp") {
-            if (!stream->path.isEmpty()) query.addQueryItem("path", stream->path);
-            if (!stream->host.isEmpty()) query.addQueryItem("host", stream->host);
-            if (!stream->xhttp_mode.isEmpty()) query.addQueryItem("mode", stream->xhttp_mode);
-            if (!stream->xhttp_extra.isEmpty()) query.addQueryItem("extra", stream->xhttp_extra);
+            add_query_nonempty("path", query, stream->path);
+            add_query_nonempty("host", query, stream->host);
+            add_query_nonempty("mode", query, stream->xhttp_mode);
+            add_query_nonempty("extra", query, stream->xhttp_extra);
         }
 
         // mux
@@ -115,12 +134,8 @@ namespace Configs {
 
         // protocol
         if (proxy_type == proxy_VLESS) {
-            if (!flow.isEmpty()) {
-                query.addQueryItem("flow", flow);
-            }
-            if (!stream->packet_encoding.isEmpty()) {
-                query.addQueryItem("packetEncoding", stream->packet_encoding);
-            }
+            add_query_nonempty("flow", query, flow);
+            add_query_nonempty("packetEncoding", query, stream->packet_encoding);
             query.addQueryItem("encryption", "none");
         }
 
@@ -142,23 +157,23 @@ namespace Configs {
         url.setHost(serverAddress);
         url.setPort(serverPort);
         if (!name.isEmpty()) url.setFragment(name);
-        QUrlQuery q;
-        if (!plugin.isEmpty()) q.addQueryItem("plugin", plugin);
+        QUrlQuery query;
+        add_query_nonempty("plugin", query, plugin);
 
         // mux
         if (mux_state == 1) {
-            q.addQueryItem("mux", "true");
+            query.addQueryItem("mux", "true");
         } else if (mux_state == 2) {
-            q.addQueryItem("mux", "false");
+            query.addQueryItem("mux", "false");
         }
         // uot
         if (uot == 1) {
-            q.addQueryItem("uot", "1");
+            query.addQueryItem("uot", "1");
         } else if (uot == 2) {
-            q.addQueryItem("uot", "2");
+            query.addQueryItem("uot", "2");
         }
 
-        if (!q.isEmpty()) url.setQuery(q);
+        if (!query.isEmpty()) url.setQuery(query);
         //
         auto link = url.toString(QUrl::FullyEncoded);
         link = link.replace(fixShadowsocksUserNameEncodeMagic, method + ":" + QUrl::toPercentEncoding(password));
@@ -201,20 +216,20 @@ namespace Configs {
         query.addQueryItem("type", stream->network);
 
         if (stream->network == "ws" || stream->network == "http" || stream->network == "httpupgrade") {
-            if (!stream->path.isEmpty()) query.addQueryItem("path", stream->path);
-            if (!stream->host.isEmpty()) query.addQueryItem("host", stream->host);
+            add_query_nonempty("path", query, stream->path);
+            add_query_nonempty("host", query, stream->host);
         } else if (stream->network == "grpc") {
-            if (!stream->path.isEmpty()) query.addQueryItem("serviceName", stream->path);
+            add_query_nonempty("serviceName", query, stream->path);
         } else if (stream->network == "tcp") {
             if (stream->header_type == "http") {
                 query.addQueryItem("headerType", "http");
                 query.addQueryItem("host", stream->host);
             }
         } else if (stream->network == "xhttp") {
-            if (!stream->path.isEmpty()) query.addQueryItem("path", stream->path);
-            if (!stream->host.isEmpty()) query.addQueryItem("host", stream->host);
-            if (!stream->xhttp_mode.isEmpty()) query.addQueryItem("mode", stream->xhttp_mode);
-            if (!stream->xhttp_extra.isEmpty()) query.addQueryItem("extra", stream->xhttp_extra);
+            add_query_nonempty("path", query, stream->path);
+            add_query_nonempty("host", query, stream->host);
+            add_query_nonempty("mode", query, stream->xhttp_mode);
+            add_query_nonempty("extra", query, stream->xhttp_extra);
         }
 
         // mux
@@ -235,21 +250,21 @@ namespace Configs {
             url.setScheme("hysteria");
             url.setHost(serverAddress);
             url.setPort(0);
-            QUrlQuery q;
-            q.addQueryItem("upmbps", Int2String(uploadMbps));
-            q.addQueryItem("downmbps", Int2String(downloadMbps));
+            QUrlQuery query;
+            query.addQueryItem("upmbps", Int2String(uploadMbps));
+            query.addQueryItem("downmbps", Int2String(downloadMbps));
             if (!obfsPassword.isEmpty()) {
-                q.addQueryItem("obfs", "xplus");
-                q.addQueryItem("obfsParam", QUrl::toPercentEncoding(obfsPassword));
+                query.addQueryItem("obfs", "xplus");
+                query.addQueryItem("obfsParam", QUrl::toPercentEncoding(obfsPassword));
             }
-            if (authPayloadType == hysteria_auth_string) q.addQueryItem("auth", authPayload);
-            if (hyProtocol == hysteria_protocol_facktcp) q.addQueryItem("protocol", "faketcp");
-            if (hyProtocol == hysteria_protocol_wechat_video) q.addQueryItem("protocol", "wechat-video");
-            if (allowInsecure) q.addQueryItem("insecure", "1");
-            if (!sni.isEmpty()) q.addQueryItem("peer", sni);
-            if (!alpn.isEmpty()) q.addQueryItem("alpn", alpn);
-            if (connectionReceiveWindow > 0) q.addQueryItem("recv_window", Int2String(connectionReceiveWindow));
-            if (streamReceiveWindow > 0) q.addQueryItem("recv_window_conn", Int2String(streamReceiveWindow));
+            if (authPayloadType == hysteria_auth_string) query.addQueryItem("auth", authPayload);
+            if (hyProtocol == hysteria_protocol_facktcp) query.addQueryItem("protocol", "faketcp");
+            if (hyProtocol == hysteria_protocol_wechat_video) query.addQueryItem("protocol", "wechat-video");
+            if (allowInsecure) query.addQueryItem("insecure", "1");
+            add_query_nonempty("peer", query, sni);
+            add_query_nonempty("alpn", query, alpn);
+            if (connectionReceiveWindow > 0) query.addQueryItem("recv_window", Int2String(connectionReceiveWindow));
+            if (streamReceiveWindow > 0) query.addQueryItem("recv_window_conn", Int2String(streamReceiveWindow));
             if (!serverPorts.empty()) {
                 QStringList portList;
                 for (const auto& range : serverPorts) {
@@ -260,8 +275,8 @@ namespace Configs {
                 portRange = portList.join(",");
             } else
                 url.setPort(serverPort);
-            if (!hop_interval.isEmpty()) q.addQueryItem("hop_interval", hop_interval);
-            if (!q.isEmpty()) url.setQuery(q);
+            if (!hop_interval.isEmpty()) query.addQueryItem("hop_interval", hop_interval);
+            if (!query.isEmpty()) url.setQuery(query);
             if (!name.isEmpty()) url.setFragment(name);
         } else if (proxy_type == proxy_TUIC) {
             url.setScheme("tuic");

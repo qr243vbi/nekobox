@@ -189,6 +189,8 @@ namespace Configs {
             bean = new Configs::QUICBean(Configs::QUICBean::proxy_TUIC);
         } else if (type == "anytls") {
             bean = new Configs::AnyTLSBean();
+        } else if (type == "shadowtls") {
+            bean = new Configs::ShadowTLSBean();
         } else if (type == "wireguard") {
             bean = new Configs::WireguardBean(Configs::WireguardBean());
         } else if (type == "tailscale") {

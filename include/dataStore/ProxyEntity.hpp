@@ -4,7 +4,6 @@
 #include "include/global/CountryHelper.hpp"
 #include "include/stats/traffic/TrafficData.hpp"
 #include "include/configs/proxy/AbstractBean.hpp"
-#include "include/configs/proxy/MieruBean.hpp"
 #include "include/configs/proxy/ExtraCore.h"
 
 namespace Configs {
@@ -21,6 +20,10 @@ namespace Configs {
     class QUICBean;
 
     class AnyTLSBean;
+
+    class MieruBean;
+
+    class ShadowTLSBean;
 
     class WireguardBean;
 
@@ -106,6 +109,10 @@ namespace Configs {
 
         [[nodiscard]] Configs::AnyTLSBean *AnyTLSBean() const {
             return (Configs::AnyTLSBean *) bean.get();
+        };
+
+        [[nodiscard]] Configs::ShadowTLSBean *ShadowTLSBean() const {
+            return (Configs::ShadowTLSBean *) bean.get();
         };
 
         [[nodiscard]] Configs::WireguardBean *WireguardBean() const {

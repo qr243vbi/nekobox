@@ -1,3 +1,4 @@
+#include "include/configs/proxy/V2RayStreamSettings.hpp"
 #include "include/dataStore/ProfileFilter.hpp"
 #include "include/configs/proxy/includes.h"
 #include "include/global/HTTPRequestHelper.hpp"
@@ -200,6 +201,13 @@ namespace Subscription {
             if (!ok) return;
         }
 
+        // ShadowTLS
+        if (str.startsWith("shadowtls://")) {
+            ent = Configs::ProfileManager::NewProxyEntity("shadowtls");
+            auto ok = ent->ShadowTLSBean()->TryParseLink(str);
+            if (!ok) return;
+        }
+
         // Hysteria1
         if (str.startsWith("hysteria://")) {
             needFix = false;
@@ -349,6 +357,13 @@ namespace Subscription {
             if (out["type"] == "anytls") {
                 ent = Configs::ProfileManager::NewProxyEntity("anytls");
                 auto ok = ent->AnyTLSBean()->TryParseJson(out);
+                if (!ok) continue;
+            }
+
+            // ShadowTLS
+            if (out["type"] == "shadowtls") {
+                ent = Configs::ProfileManager::NewProxyEntity("shadowtls");
+                auto ok = ent->ShadowTLSBean()->TryParseJson(out);
                 if (!ok) continue;
             }
 
@@ -680,23 +695,32 @@ namespace Subscription {
                         else if (paths.is_sequence() && paths[0].is_string())
                             bean->stream->path = Node2QString(paths[0]);
                     }
-                } else if (type == "anytls") {
+                } else if (type == "anytls" || type == "shadowtls") {
                     needFix = true;
-                    auto bean = ent->AnyTLSBean();
-                    bean->password = Node2QString(proxy["password"]);
-                    bean->stream->security = "tls";
-                    if (Node2Bool(proxy["skip-cert-verify"])) bean->stream->allow_insecure = true;
-                    bean->stream->sni = FIRST_OR_SECOND(Node2QString(proxy["sni"]), Node2QString(proxy["servername"]));
-                    bean->stream->alpn = Node2QStringList(proxy["alpn"]).join(",");
-                    bean->stream->utlsFingerprint = Node2QString(proxy["client-fingerprint"]);
-                    if (bean->stream->utlsFingerprint.isEmpty()) {
-                        bean->stream->utlsFingerprint = Configs::dataStore->utlsFingerprint;
+                    std::shared_ptr<Configs::V2rayStreamSettings> stream;
+                    if (type == "anytls"){
+                        auto bean = ent->AnyTLSBean();
+                        bean->password = Node2QString(proxy["password"]);
+                        stream = bean->stream;
+                    } else {
+                        auto bean = ent->ShadowTLSBean();
+                        bean->password = Node2QString(proxy["password"]);
+                        bean->shadowtls_version = Node2Int(proxy["version"]);
+                        stream = bean->stream;
+                    }
+                    stream->security = "tls";
+                    if (Node2Bool(proxy["skip-cert-verify"])) stream->allow_insecure = true;
+                    stream->sni = FIRST_OR_SECOND(Node2QString(proxy["sni"]), Node2QString(proxy["servername"]));
+                    stream->alpn = Node2QStringList(proxy["alpn"]).join(",");
+                    stream->utlsFingerprint = Node2QString(proxy["client-fingerprint"]);
+                    if (stream->utlsFingerprint.isEmpty()) {
+                        stream->utlsFingerprint = Configs::dataStore->utlsFingerprint;
                     }
 
                     auto reality = NodeChild(proxy, {"reality-opts"});
                     if (reality.is_mapping()) {
-                        bean->stream->reality_pbk = Node2QString(reality["public-key"]);
-                        bean->stream->reality_sid = Node2QString(reality["short-id"]);
+                        stream->reality_pbk = Node2QString(reality["public-key"]);
+                        stream->reality_sid = Node2QString(reality["short-id"]);
                     }
                 } else if (type == "hysteria") {
                     auto bean = ent->QUICBean();

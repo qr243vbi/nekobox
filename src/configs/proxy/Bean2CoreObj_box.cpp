@@ -163,9 +163,26 @@ namespace Configs {
             {"server", serverAddress},
             {"server_port", serverPort},
             {"password", password},
-            {"idle_session_check_interval", Int2String(idle_session_check_interval)+"s"},
-            {"idle_session_timeout", Int2String(idle_session_timeout)+"s"},
+            {"idle_session_check_interval", idle_session_check_interval},
+            {"idle_session_timeout", idle_session_timeout},
             {"min_idle_session", min_idle_session},
+        };
+
+        stream->BuildStreamSettingsSingBox(&outbound);
+        result.outbound = outbound;
+        return result;
+    }
+
+
+    CoreObjOutboundBuildResult ShadowTLSBean::BuildCoreObjSingBox() {
+        CoreObjOutboundBuildResult result;
+
+        QJsonObject outbound{
+            {"type", "shadowtls"},
+            {"server", serverAddress},
+            {"server_port", serverPort},
+            {"password", password},
+            {"version", shadowtls_version},
         };
 
         stream->BuildStreamSettingsSingBox(&outbound);
