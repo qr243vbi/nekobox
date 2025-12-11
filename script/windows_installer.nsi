@@ -18,16 +18,23 @@ Function .onInit
     ${Else}
         StrCpy $INSTDIR "$PROGRAMFILES\nekobox"
     ${EndIf}
+FunctionEnd
 
+!macro customInit
   Var /GLOBAL VCRedistDownload
   Var /GLOBAL isInstalled
-  ${If} ${RunningX64}
-    ;check H-KEY registry
-    ReadRegDWORD $isInstalled HKLM "SOFTWARE\Wow6432Node\Microsoft\VisualStudio\14.0\VC\Runtimes\x64" "Installed"
-    StrCpy $VCRedistDownload "https://aka.ms/vs/17/release/vc_redist.x64.exe"
+  ${IfNot} ${IsNativeARM64}
+    ${If} ${RunningX64}
+      ;check H-KEY registry
+      ReadRegDWORD $isInstalled HKLM "SOFTWARE\Wow6432Node\Microsoft\VisualStudio\14.0\VC\Runtimes\x64" "Installed"
+      StrCpy $VCRedistDownload "https://aka.ms/vs/17/release/vc_redist.x64.exe"
+    ${Else}
+      ReadRegDWORD $isInstalled HKLM "SOFTWARE\Microsoft\VisualStudio\14.0\VC\Runtimes\x86" "Installed"
+      StrCpy $VCRedistDownload "https://aka.ms/vs/17/release/vc_redist.x86.exe"
+    ${EndIf}
   ${Else}
-    ReadRegDWORD $isInstalled HKLM "SOFTWARE\Microsoft\VisualStudio\14.0\VC\Runtimes\x86" "Installed"
-    StrCpy $VCRedistDownload "https://aka.ms/vs/17/release/vc_redist.x86.exe"
+      ReadRegDWORD $isInstalled HKLM "SOFTWARE\Microsoft\VisualStudio\14.0\VC\Runtimes\ARM64" "Installed"
+      StrCpy $VCRedistDownload "https://aka.ms/vs/17/release/vc_redist.arm64.exe"
   ${EndIf}
 
 
@@ -49,8 +56,7 @@ Function .onInit
 
   VSRedistInstalled:
   ;jumped from message box, nothing to do here
-
-FunctionEnd
+!macroend
 
 !define MUI_ICON "res\nekobox.ico"
 !define MUI_ABORTWARNING
@@ -68,6 +74,9 @@ FunctionEnd
 !insertmacro MUI_LANGUAGE "English"
 
 Section "Install"
+
+  !insertmacro customInit
+
   SetOutPath "$INSTDIR"
   SetOverwrite on
 
