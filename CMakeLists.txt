@@ -137,6 +137,7 @@ set(PROJECT_SOURCES
         src/ui/mainwindow.cpp
         include/ui/mainwindow.h
         include/ui/mainwindow.ui
+        include/ui/profile/edit_shadowtls.ui
 
         include/ui/profile/dialog_edit_profile.h
         src/ui/profile/dialog_edit_profile.cpp
@@ -165,6 +166,7 @@ set(PROJECT_SOURCES
         src/ui/profile/edit_trojan_vless.cpp
         include/ui/profile/edit_trojan_vless.ui
         include/ui/profile/edit_anytls.h
+        include/ui/profile/edit_shadowtls.h
         src/ui/profile/edit_anytls.cpp
         include/ui/profile/edit_anytls.ui
         include/ui/profile/edit_tailscale.h

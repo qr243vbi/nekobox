@@ -1070,6 +1070,17 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     </message>
 </context>
 <context>
+    <name>EditShadowTLS</name>
+    <message>
+        <source>Password</source>
+        <translation>密码</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation>版本</translation>
+    </message>
+</context>
+<context>
     <name>EditChain</name>
     <message>
         <source>Select Profile</source>

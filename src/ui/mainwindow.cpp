@@ -509,6 +509,21 @@ MainWindow::MainWindow(QWidget *parent)
   }
 
   set_icons_from_settings(settings);
+
+  connect(
+      ui->actionAdd_new_Group, &QAction::triggered,
+      this,
+      [this] {
+        auto ent = Configs::ProfileManager::NewGroup();
+        auto dialog = new DialogEditGroup(ent, this);
+        int ret = dialog->exec();
+        dialog->deleteLater();
+
+        if (ret == QDialog::Accepted) {
+          Configs::profileManager->AddGroup(ent);
+          MW_dialog_message(Dialog_DialogManageGroups, "refresh-1");
+        }
+  });
   ui->toolButton_program->setMenu(ui->menu_program);
   ui->toolButton_preferences->setMenu(ui->menu_preferences);
   ui->toolButton_server->setMenu(ui->menu_profiles);
@@ -3039,28 +3054,13 @@ void MainWindow::on_tabWidget_customContextMenuRequested(const QPoint &p) {
 
   QAction *addAction;
   if (profile_action)
-    addAction = new QAction(tr("Add new Group"), this);
+    addAction = ui->actionAdd_new_Group;
   auto *deleteAction = new QAction(tr("Delete selected Group"), this);
   auto *editAction = new QAction(tr("Edit selected Group"), this);
 
   connect(
-      profile_action ? addAction : ui->actionAdd_new_Group, &QAction::triggered,
-      this,
-      [=, this] {
-        auto ent = Configs::ProfileManager::NewGroup();
-        auto dialog = new DialogEditGroup(ent, this);
-        int ret = dialog->exec();
-        dialog->deleteLater();
-
-        if (ret == QDialog::Accepted) {
-          Configs::profileManager->AddGroup(ent);
-          MW_dialog_message(Dialog_DialogManageGroups, "refresh-1");
-        }
-      },
-      Qt::SingleShotConnection);
-  connect(
       deleteAction, &QAction::triggered, this,
-      [=, this] {
+      [clickedIndex, this] {
         auto id = Configs::profileManager->groupsTabOrder[clickedIndex];
         if (QMessageBox::question(
                 this, tr("Confirmation"),

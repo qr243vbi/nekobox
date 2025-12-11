@@ -1,6 +1,7 @@
 #include "include/ui/profile/dialog_edit_profile.h"
 
 #include "include/ui/profile/edit_anytls.h"
+#include "include/ui/profile/edit_shadowtls.h"
 #include "include/ui/profile/edit_chain.h"
 #include "include/ui/profile/edit_custom.h"
 #include "include/ui/profile/edit_extra_core.h"
@@ -207,6 +208,7 @@ DialogEditProfile::DialogEditProfile(const QString &_type, int profileOrGroupId,
     LOAD_TYPE("hysteria2")
     LOAD_TYPE("tuic")
     LOAD_TYPE("anytls")
+    LOAD_TYPE("shadowtls")
     LOAD_TYPE("mieru")
     LOAD_TYPE("wireguard")
     LOAD_TYPE("tailscale")
@@ -278,6 +280,10 @@ void DialogEditProfile::typeSelected(const QString &newType) {
     innerEditor = _innerWidget;
   } else if (type == "anytls") {
     auto _innerWidget = new EditAnyTLS(this);
+    innerWidget = _innerWidget;
+    innerEditor = _innerWidget;
+  } else if (type == "shadowtls") {
+    auto _innerWidget = new EditShadowTLS(this);
     innerWidget = _innerWidget;
     innerEditor = _innerWidget;
   } else if (type == "wireguard") {
@@ -440,7 +446,7 @@ void DialogEditProfile::typeSelected(const QString &newType) {
     ui->network_box->setVisible(false);
   }
   if (type == "vmess" || type == "vless" || type == "trojan" ||
-      type == "http" || type == "anytls") {
+      type == "http" || type == "anytls" || type == "shadowtls") {
     ui->security->setVisible(true);
     ui->security_l->setVisible(true);
   } else {
