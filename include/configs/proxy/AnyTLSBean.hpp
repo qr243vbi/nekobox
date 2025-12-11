@@ -10,8 +10,8 @@ namespace Configs {
         V2rayStreamSettings * streamPtr;
     public:
         QString password = "";
-        QString idle_session_check_interval = "";
-        QString idle_session_timeout = "";
+        QString idle_session_check_interval = "30s";
+        QString idle_session_timeout = "30s";
         int min_idle_session = 0;
 
         std::shared_ptr<V2rayStreamSettings> stream = std::make_shared<V2rayStreamSettings>();
@@ -22,8 +22,8 @@ namespace Configs {
         
         INIT_MAP
             ADD_MAP("password", password, string);
-            ADD_MAP("idle_session_check_interval", idle_session_check_interval, string);
-            ADD_MAP("idle_session_timeout", idle_session_timeout, string);
+            ADD_MAP("session_idle_check_interval", idle_session_check_interval, string);
+            ADD_MAP("session_idle_timeout", idle_session_timeout, string);
             ADD_MAP("min_idle_session", min_idle_session, integer);
             ADD_MAP("stream", streamPtr, jsonStore);
         STOP_MAP
