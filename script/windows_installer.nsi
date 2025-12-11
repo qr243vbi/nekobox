@@ -11,7 +11,6 @@ RequestExecutionLevel admin
 !include MUI2.nsh
 !include LogicLib.nsh
 !include x64.nsh
-!include inetc.nsh
 
 Function .onInit
     ${If} ${RunningX64}
@@ -28,14 +27,14 @@ FunctionEnd
     ${If} ${RunningX64}
       ;check H-KEY registry
       ReadRegDWORD $isInstalled HKLM "SOFTWARE\Wow6432Node\Microsoft\VisualStudio\14.0\VC\Runtimes\x64" "Installed"
-      StrCpy $VCRedistDownload "https://aka.ms/vs/17/release/vc_redist.x64.exe"
+      StrCpy $VCRedistDownload "https://aka.ms/vc14/vc_redist.x64.exe"
     ${Else}
       ReadRegDWORD $isInstalled HKLM "SOFTWARE\Microsoft\VisualStudio\14.0\VC\Runtimes\x86" "Installed"
-      StrCpy $VCRedistDownload "https://aka.ms/vs/17/release/vc_redist.x86.exe"
+      StrCpy $VCRedistDownload "https://aka.ms/vc14/vc_redist.x86.exe"
     ${EndIf}
   ${Else}
       ReadRegDWORD $isInstalled HKLM "SOFTWARE\Microsoft\VisualStudio\14.0\VC\Runtimes\ARM64" "Installed"
-      StrCpy $VCRedistDownload "https://aka.ms/vs/17/release/vc_redist.arm64.exe"
+      StrCpy $VCRedistDownload "https://aka.ms/vc14/vc_redist.arm64.exe"
   ${EndIf}
 
 
@@ -49,7 +48,16 @@ FunctionEnd
     ;create temp dir
     CreateDirectory $TEMP\app-name-setup
     ;download installer
-    inetc::get "$VCRedistDownload" $TEMP\app-name-setup\vcppredist.exe
+    StrCpy $DestinationPath "$TEMP\app-name-setup\vcppredist.exe"
+
+    ; Define the PowerShell command to execute
+    ; We use Invoke-WebRequest to download the file securely via HTTPS
+    ; -OutFile specifies where to save the file
+    ; -UseBasicParsing is often needed to run without a full IE DOM parser
+    StrCpy $R0 "powershell.exe -Command &{Invoke-WebRequest -Uri '$VCRedistDownload' -OutFile '$DestinationPath' -UseBasicParsing}"
+
+    ; Execute the PowerShell command and wait for it to finish
+    ExecWait '"$R0"'
     ;exec installer
     ExecWait "$TEMP\app-name-setup\vcppredist.exe"
   ${EndIf}
