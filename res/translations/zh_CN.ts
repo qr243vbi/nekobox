@@ -343,6 +343,10 @@
         <translation>显示系统 DNS 选项</translation>
     </message>
     <message>
+        <source>Set text under menu icons</source>
+        <translation>在菜单图标下方设置文本</translation>
+    </message>
+    <message>
         <source>Enable sending HWID, device model, and OS version when updating subscription</source>
         <translation>启用在更新订阅时发送 HWID、设备型号以及 OS 版本</translation>
     </message>
@@ -854,7 +858,7 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
     </message>
     <message>
         <source>Delete</source>
-        <translation>删除</translation>
+        <translation>删除此此节点</translation>
     </message>
     <message>
         <source>Outbound Domain Strategy</source>
@@ -918,7 +922,7 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
     </message>
     <message>
         <source>Clone</source>
-        <translation>克隆</translation>
+        <translation>复制此节点</translation>
     </message>
     <message>
         <source>Export</source>
@@ -1538,11 +1542,11 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     </message>
     <message>
         <source>Remove</source>
-        <translation>删除</translation>
+        <translation>删除此此节点</translation>
     </message>
     <message>
         <source>Remove %1?</source>
-        <translation>删除 %1 吗?</translation>
+        <translation>删除此此节点 %1 吗?</translation>
     </message>
     <message>
         <source>Archive</source>
@@ -1601,6 +1605,17 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     </message>
 </context>
 <context>
+    <name>SpinnerDialog</name>
+    <message>
+        <source>Fetching information</source>
+        <translation>获取信息</translation>
+    </message>
+    <message>
+        <source>Download Profiles</source>
+        <translation>选择国家地理规则</translation>
+    </message>
+</context>
+<context>
     <name>MainWindow</name>
     <message>
         <source>Hide window</source>
@@ -1620,11 +1635,11 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     </message>
     <message>
         <source>Edit Routing Profiles</source>
-        <translation>编辑路由配置文件</translation>
+        <translation>编辑路由文件</translation>
     </message>
     <message>
         <source>Update Routing Profiles</source>
-        <translation>更新路由配置文件</translation>
+        <translation>更新路由文件</translation>
     </message>
     <message>
         <source>Requesting rule-set list error: %1</source>
@@ -1640,7 +1655,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     </message>
     <message>
         <source>Add profile from File</source>
-        <translation>添加来自文件的配置档</translation>
+        <translation>从文件导入</translation>
     </message>
     <message>
         <source>Program</source>
@@ -1700,7 +1715,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     </message>
     <message>
         <source>Add profile from clipboard</source>
-        <translation>添加来自剪贴板的配置档</translation>
+        <translation>从剪贴板导入</translation>
     </message>
     <message>
         <source>Debug Info</source>
@@ -1744,7 +1759,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     </message>
     <message>
         <source>Remove %1 item(s) ?</source>
-        <translation>删除 %1 项吗？</translation>
+        <translation>删除此此节点 %1 项吗？</translation>
     </message>
     <message>
         <source>Config copied</source>
@@ -1796,7 +1811,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     </message>
     <message>
         <source>Remember last profile</source>
-        <translation>记住最后的配置档</translation>
+        <translation>记住最后的设置</translation>
     </message>
     <message>
         <source>Remove Unavailable</source>
@@ -1804,7 +1819,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     </message>
     <message>
         <source>New profile</source>
-        <translation>手动新建配置档</translation>
+        <translation>新建单个节点</translation>
     </message>
     <message>
         <source>Hotkey Settings</source>
@@ -1812,7 +1827,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     </message>
     <message>
         <source>QR Code and link</source>
-        <translation>二维码和链接</translation>
+        <translation>查看此节点（ 二维码和链接 ）</translation>
     </message>
     <message>
         <source>Copied %1 item(s)</source>
@@ -1824,7 +1839,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     </message>
     <message>
         <source>Reset Traffic</source>
-        <translation>重置流量</translation>
+        <translation>此节点重置流量</translation>
     </message>
     <message>
         <source>Remove Duplicates</source>
@@ -1860,15 +1875,15 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation>删除</translation>
+        <translation>删除此此节点</translation>
     </message>
     <message>
         <source>Copy links of selected</source>
-        <translation>复制选中项的链接</translation>
+        <translation>复制此节点的链接</translation>
     </message>
     <message>
         <source>Clone</source>
-        <translation>克隆</translation>
+        <translation>复制此节点</translation>
     </message>
     <message>
         <source>Update subscription</source>
@@ -1876,7 +1891,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     </message>
     <message>
         <source>Clone %1 item(s)</source>
-        <translation>克隆 %1 项</translation>
+        <translation>复制此节点 %1 项</translation>
     </message>
     <message>
         <source>Allow other devices to connect</source>
@@ -1964,19 +1979,19 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     </message>
     <message>
         <source>Add new Group</source>
-        <translation>添加新分组</translation>
+        <translation>新建分组</translation>
     </message>
     <message>
         <source>Delete selected Group</source>
-        <translation>删除选定分组</translation>
+        <translation>删除此此节点此分组</translation>
     </message>
     <message>
         <source>Edit selected Group</source>
-        <translation>编辑选定分组</translation>
+        <translation>编辑此分组</translation>
     </message>
     <message>
         <source>Remove %1?</source>
-        <translation>删除 %1 吗?</translation>
+        <translation>删除此此节点 %1 吗?</translation>
     </message>
     <message>
         <source>Url Test Selected</source>
@@ -1988,7 +2003,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     </message>
     <message>
         <source>Clear Test Result Selected</source>
-        <translation>清除选定的测试结果</translation>
+        <translation>清除此节点测试结果</translation>
     </message>
     <message>
         <source>Updated %1 routing profiles</source>
@@ -2020,7 +2035,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     </message>
     <message>
         <source>Resolve Selected Domain</source>
-        <translation>解析选定域名</translation>
+        <translation>解析此节点域名</translation>
     </message>
     <message>
         <source>Remove Invalid</source>
@@ -2087,7 +2102,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>请在打开的终端中输入您的密码，然后重试</translation>
     </message>
     <message>
-        <source>Application</source>
+        <source>NekoBox</source>
         <translation>应用程序</translation>
     </message>
     <message>
@@ -2204,7 +2219,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     </message>
     <message>
         <source>Speedtest Current</source>
-        <translation>速度测试当前项</translation>
+        <translation>此节点( 上传+下载 ) 速度</translation>
     </message>
     <message>
         <source>Speedtest Selected</source>
@@ -2212,7 +2227,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     </message>
     <message>
         <source>Speedtest Group</source>
-        <translation>速度测试该分组</translation>
+        <translation>此分组测试速度</translation>
     </message>
     <message>
         <source>The last url test did not exit completely, please wait. If it persists, please restart the program.</source>
@@ -2310,7 +2325,7 @@ Deleted %3 Profiles:
 %4</source>
         <translation>添加了 %1 个配置档：
 %2
-删除了 %3 个配置档：
+删除此此节点了 %3 个配置档：
 %4</translation>
     </message>
     <message>
@@ -2432,10 +2447,6 @@ Release note:
         <translation>处理完成，正在应用...</translation>
     </message>
     <message>
-        <source>Download Profiles</source>
-        <translation>下载路由集</translation>
-    </message>
-    <message>
         <source>Requesting profile error: %1</source>
         <translation>请求配置档时出错: %1</translation>
     </message>
@@ -2522,7 +2533,7 @@ Release note:
     </message>
     <message>
         <source>Delete</source>
-        <translation>删除</translation>
+        <translation>删除此此节点</translation>
     </message>
     <message>
         <source>Rule Attributes</source>
