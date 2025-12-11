@@ -42,7 +42,6 @@ bool EditAnyTLS::onEnd() {
 
 EditShadowTLS::EditShadowTLS(QWidget *parent) : QWidget(parent), ui(new Ui::EditShadowTLS) {
     ui->setupUi(this);
-    ui->shadowtls_version->setValidator(QRegExpValidator_Number);
 }
 
 EditShadowTLS::~EditShadowTLS() {
@@ -54,14 +53,15 @@ void EditShadowTLS::onStart(std::shared_ptr<Configs::ProxyEntity> _ent) {
     auto bean = this->ent->ShadowTLSBean();
 
     ui->password->setText(bean->password);
-    ui->shadowtls_version->setText(Int2String(bean->shadowtls_version));
+    int ver = bean->shadowtls_version - 1;
+    ver = (ver < 0) ? 0 : (ver > 2 ? 2 : ver);
+    ui->comboBox->setCurrentIndex(ver);
 }
 
 bool EditShadowTLS::onEnd() {
     auto bean = this->ent->ShadowTLSBean();
 
     bean->password = ui->password->text();
-    bean->shadowtls_version = ui->shadowtls_version->text().toInt();
-
+    bean->shadowtls_version = ui->comboBox->currentIndex();
     return true;
 }
