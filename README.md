@@ -85,8 +85,8 @@ Various formats are supported, including share links, JSON array of outbounds an
 - Dynamic UI
 
 ## Changelog Channel
-
-https://t.me/nekobox_qr243vbi
+- matrix: https://matrix.to/#/#nekobox_ex:opensuse.org
+- telegram: https://t.me/nekobox_ex
 
 ## FAQ
 **What is AppImage?** <br/>
