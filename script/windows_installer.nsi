@@ -20,54 +20,6 @@ Function .onInit
     ${EndIf}
 FunctionEnd
 
-!macro customInit
-  Var /GLOBAL VCRedistDownload
-  Var /GLOBAL DestinationPath
-  Var /GLOBAL isInstalled
-  ${IfNot} ${IsNativeARM64}
-    ${If} ${RunningX64}
-      ;check H-KEY registry
-      ReadRegDWORD $isInstalled HKLM "SOFTWARE\Wow6432Node\Microsoft\VisualStudio\14.0\VC\Runtimes\x64" "Installed"
-      StrCpy $VCRedistDownload "https://aka.ms/vc14/vc_redist.x64.exe"
-    ${Else}
-      ReadRegDWORD $isInstalled HKLM "SOFTWARE\Microsoft\VisualStudio\14.0\VC\Runtimes\x86" "Installed"
-      StrCpy $VCRedistDownload "https://aka.ms/vc14/vc_redist.x86.exe"
-    ${EndIf}
-  ${Else}
-      ReadRegDWORD $isInstalled HKLM "SOFTWARE\Microsoft\VisualStudio\14.0\VC\Runtimes\ARM64" "Installed"
-      StrCpy $VCRedistDownload "https://aka.ms/vc14/vc_redist.arm64.exe"
-  ${EndIf}
-
-
-  ${If} $isInstalled != "1"
-    MessageBox MB_YESNO "NOTE: This application requires$\r$\n\
-      'Microsoft Visual C++ Redistributable'$\r$\n\
-      to function properly.$\r$\n$\r$\n\
-      Download and install now?" /SD IDYES IDNO VSRedistInstalled
-
-    ;if no goto executed, install vcredist
-    ;create temp dir
-    CreateDirectory $TEMP\app-name-setup
-    ;download installer
-    StrCpy $DestinationPath "$TEMP\app-name-setup\vcppredist.exe"
-
-    ; Define the PowerShell command to execute
-    ; We use Invoke-WebRequest to download the file securely via HTTPS
-    ; -OutFile specifies where to save the file
-    ; -UseBasicParsing is often needed to run without a full IE DOM parser
-    StrCpy $R0 "powershell.exe -Command &{Invoke-WebRequest -Uri '$VCRedistDownload' -OutFile '$DestinationPath' -UseBasicParsing}"
-
-    ; Execute the PowerShell command and wait for it to finish
-    ExecWait '"$R0"'
-    ;exec installer
-    ExecWait "$DestinationPath"
-  ${EndIf}
-
-
-  VSRedistInstalled:
-  ;jumped from message box, nothing to do here
-!macroend
-
 !define MUI_ICON "res\nekobox.ico"
 !define MUI_ABORTWARNING
 !define MUI_WELCOMEPAGE_TITLE "Welcome to nekobox Installer"
@@ -84,8 +36,6 @@ FunctionEnd
 !insertmacro MUI_LANGUAGE "English"
 
 Section "Install"
-
-  !insertmacro customInit
 
   SetOutPath "$INSTDIR"
   SetOverwrite on
