@@ -768,11 +768,11 @@ MainWindow::MainWindow(QWidget *parent)
   });
 
   connect(ui->menu_server, &QMenu::aboutToShow, this, [=, this]() {
-    if (running) {
-      ui->actionSpeedtest_Current->setEnabled(true);
-    } else {
+  //  if (running) {
+  //    ui->actionSpeedtest_Current->setEnabled(true);
+  //  } else {
       ui->actionSpeedtest_Current->setEnabled(false);
-    }
+  //  }
     if (auto selected = get_now_selected_list(); selected.empty()) {
       ui->actionSpeedtest_Selected->setEnabled(false);
       ui->actionUrl_Test_Selected->setEnabled(false);
