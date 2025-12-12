@@ -54,7 +54,7 @@ void EditShadowTLS::onStart(std::shared_ptr<Configs::ProxyEntity> _ent) {
 
     ui->password->setText(bean->password);
     int ver = bean->shadowtls_version - 1;
-    ver = (ver < 0) ? 0 : (ver > 2 ? 2 : ver);
+    ver = (ver < 0) ? 0 : (ver > 3 ? 2 : ver);
     ui->comboBox->setCurrentIndex(ver);
 }
 
@@ -62,6 +62,6 @@ bool EditShadowTLS::onEnd() {
     auto bean = this->ent->ShadowTLSBean();
 
     bean->password = ui->password->text();
-    bean->shadowtls_version = ui->comboBox->currentIndex();
+    bean->shadowtls_version = ui->comboBox->currentIndex() + 1;
     return true;
 }
