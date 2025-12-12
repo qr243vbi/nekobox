@@ -225,6 +225,41 @@ namespace Qv2ray::components::proxy {
     }
 #endif
 
+    enum XDG_SESSION_DESKTOP {
+        KDE, GNOME
+    };
+
+    static QString & kwriteconfig(){
+        static QString str;
+        static bool init = false;
+        if (init){
+            return str;
+        }
+        {
+            QString version = qEnvironmentVariable("KDE_SESSION_VERSION");
+            str = version == "5" ? "kwriteconfig5" : version == "6" ? "kwriteconfig6" : "kwriteconfig";
+        }
+        return str;
+    }
+
+    static XDG_SESSION_DESKTOP getSessionDesktop(){
+        static bool init = false;
+        static bool isKDE = false;
+
+        if (!init){
+            QString XDG_SESSION_DESKTOP = qEnvironmentVariable("XDG_SESSION_DESKTOP");
+            isKDE = XDG_SESSION_DESKTOP == "KDE" ||
+                    XDG_SESSION_DESKTOP == "plasma"||
+                    XDG_SESSION_DESKTOP == "Trinity"||
+                    XDG_SESSION_DESKTOP == "tde";
+            init = true;
+        }
+        if (isKDE){
+            return XDG_SESSION_DESKTOP::KDE;
+        }
+        return XDG_SESSION_DESKTOP::GNOME;
+    };
+
     void SetSystemProxy(int httpPort, int socksPort, QString scheme) {
         const QString &address = "127.0.0.1";
         bool hasHTTP = (httpPort > 0 && httpPort < 65536);
@@ -272,11 +307,12 @@ namespace Qv2ray::components::proxy {
 #elif defined(Q_OS_UNIX)
         QList<ProcessArgument> actions;
         //
-        bool isKDE = qEnvironmentVariable("XDG_SESSION_DESKTOP") == "KDE" ||
-                     qEnvironmentVariable("XDG_SESSION_DESKTOP") == "plasma"||
-                     qEnvironmentVariable("XDG_SESSION_DESKTOP") == "tde";
+        const bool isKDE = getSessionDesktop() == XDG_SESSION_DESKTOP::KDE;
         const auto configPath = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation);
-        QString kwriteconfigCmd = qEnvironmentVariable("KDE_SESSION_VERSION") == "5" ? "kwriteconfig5" : qEnvironmentVariable("KDE_SESSION_VERSION") == "6" ? "kwriteconfig6" : "kwriteconfig";
+        QString kwriteconfigCmd;
+        if (isKDE){
+            kwriteconfigCmd = kwriteconfig();
+        }
 
         // Configure HTTP Proxies for HTTP, FTP and HTTPS
         if (hasHTTP) {
@@ -367,18 +403,17 @@ namespace Qv2ray::components::proxy {
         }
 #elif defined(Q_OS_UNIX)
         QList<ProcessArgument> actions;
-        const bool isKDE = qEnvironmentVariable("XDG_SESSION_DESKTOP") == "KDE" ||
-                           qEnvironmentVariable("XDG_SESSION_DESKTOP") == "plasma"||
-                           qEnvironmentVariable("XDG_SESSION_DESKTOP") == "tde";
+        const bool isKDE = getSessionDesktop() == XDG_SESSION_DESKTOP::KDE;
         const auto configRoot = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation);
 
         // Setting System Proxy Mode to: None
         // for KDE:
         if (isKDE) {
-            actions << ProcessArgument{qEnvironmentVariable("KDE_SESSION_VERSION") == "5" ? "kwriteconfig5" : qEnvironmentVariable("KDE_SESSION_VERSION") == "6" ? "kwriteconfig6" : "kwriteconfig",
-                                       {"--file", configRoot + "/kioslaverc", //
-                                        "--group", "Proxy Settings",          //
-                                        "--key", "ProxyType", "0"}};
+            actions << ProcessArgument{
+                        kwriteconfig(),
+                       {"--file", configRoot + "/kioslaverc", //
+                        "--group", "Proxy Settings",          //
+                        "--key", "ProxyType", "0"}};
         }
         // for GNOME:
         {
@@ -402,13 +437,7 @@ namespace Qv2ray::components::proxy {
         }
 
 #else
-        for (const auto &service: macOSgetNetworkServices()) {
-            LOG("Clearing proxy for interface: " + service);
-            QProcess::execute("/usr/sbin/networksetup", {"-setautoproxystate", service, "off"});
-            QProcess::execute("/usr/sbin/networksetup", {"-setwebproxystate", service, "off"});
-            QProcess::execute("/usr/sbin/networksetup", {"-setsecurewebproxystate", service, "off"});
-            QProcess::execute("/usr/sbin/networksetup", {"-setsocksfirewallproxystate", service, "off"});
-        }
+
 
 #endif
     }
