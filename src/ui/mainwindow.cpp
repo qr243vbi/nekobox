@@ -771,7 +771,7 @@ MainWindow::MainWindow(QWidget *parent)
   //  if (running) {
   //    ui->actionSpeedtest_Current->setEnabled(true);
   //  } else {
-      ui->actionSpeedtest_Current->setEnabled(false);
+ //     ui->actionSpeedtest_Current->setEnabled(false);
   //  }
     if (auto selected = get_now_selected_list(); selected.empty()) {
       ui->actionSpeedtest_Selected->setEnabled(false);
