@@ -327,7 +327,7 @@ namespace Qv2ray::components::proxy {
                                                 "http://" + address + " " + QSTRN(httpPort)}};
                 }
                 // for GNOME:
-                else {
+                {
                     actions << ProcessArgument{"gsettings",
                                                {"set", "org.gnome.system.proxy." + protocol, "host", address}};
                     actions << ProcessArgument{"gsettings",
@@ -347,7 +347,7 @@ namespace Qv2ray::components::proxy {
                                             "socks://" + address + " " + QSTRN(socksPort)}};
             }
             // for GNOME:
-            else {
+            {
                 actions << ProcessArgument{"gsettings", {"set", "org.gnome.system.proxy.socks", "host", address}};
                 actions << ProcessArgument{"gsettings",
                                            {"set", "org.gnome.system.proxy.socks", "port", QSTRN(socksPort)}};
@@ -363,7 +363,7 @@ namespace Qv2ray::components::proxy {
                                         "--key", "ProxyType", "1"}};
         }
         // for GNOME:
-        else {
+        {
             actions << ProcessArgument{"gsettings", {"set", "org.gnome.system.proxy", "mode", "manual"}};
         }
 
