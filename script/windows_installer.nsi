@@ -11,11 +11,15 @@ RequestExecutionLevel admin
 !include MUI2.nsh
 !include LogicLib.nsh
 !include x64.nsh
+!include WinMessages.nsh ; Required for BM_SETCHECK constant
 
-; --- Global Variable added to track if VC Redist was needed ---
+; --- Global Variables declared at the top level ---
 Var VCRedistNeeded
+Var VCRedistDownload
+Var isInstalled
 
 Function openLinkNewWindow
+  ; (Function body remains the same, it works fine)
   Push $3
   Exch
   Push $2
@@ -63,26 +67,24 @@ Call openLinkNewWindow
 
 
 !macro checkVcRedist
-  Var /GLOBAL VCRedistDownload
-  Var /GLOBAL isInstalled
-
+  ; Variables VCRedistDownload and isInstalled are now declared globally at the top
 ${IfNot} ${IsNativeARM64}
   ${If} ${RunningX64}
     ;check H-KEY registry
     ReadRegDWORD $isInstalled HKLM "SOFTWARE\Wow6432Node\Microsoft\VisualStudio\14.0\VC\Runtimes\x64" "Installed"
-    StrCpy $VCRedistDownload "https://aka.ms/vc14/vc_redist.x64.exe"
+    StrCpy $VCRedistDownload "aka.ms"
   ${Else}
     ReadRegDWORD $isInstalled HKLM "SOFTWARE\Microsoft\VisualStudio\14.0\VC\Runtimes\x86" "Installed"
-    StrCpy $VCRedistDownload "https://aka.ms/vc14/vc_redist.x86.exe"
+    StrCpy $VCRedistDownload "aka.ms"
   ${EndIf}
 ${Else}
     ReadRegDWORD $isInstalled HKLM "SOFTWARE\Microsoft\VisualStudio\14.0\VC\Runtimes\ARM64" "Installed"
-    StrCpy $VCRedistDownload "https://aka.ms/vc14/vc_redist.ARM64.exe"
+    StrCpy $VCRedistDownload "aka.ms"
 ${EndIf}
 
 
   ${If} $isInstalled != "1"
-    StrCpy $VCRedistNeeded "1"
+    StrCpy $VCRedistNeeded "1" ; Mark that it was needed
     MessageBox MB_YESNO "NOTE: This application requires$\r$\n\
       'Microsoft Visual C++ Redistributable'$\r$\n\
       to function properly.$\r$\n$\r$\n\
@@ -90,7 +92,7 @@ ${EndIf}
 
     ${OpenURL} "$VCRedistDownload"
   ${Else}
-    StrCpy $VCRedistNeeded "0"
+    StrCpy $VCRedistNeeded "0" ; Mark that it was not needed
   ${EndIf}
 
 
@@ -98,19 +100,24 @@ ${EndIf}
   ;jumped from message box, nothing to do here
 !macroend
 
-; --- New Function to control the finish page checkbox state ---
+; --- Function to control the finish page checkbox state (Corrected Logic) ---
 Function nsi_FinishPageRunCondition
+  ; This function is called just before the Finish page is displayed.
+
   ; If VCRedistNeeded is "1" (meaning they had to download it),
   ; we assume they need to install it first and shouldn't launch the app yet.
   StrCmp $VCRedistNeeded "1" UncheckLaunch CheckLaunch
 
 CheckLaunch:
-  ; Condition not met, keep the checkbox checked (default behavior if no define used)
+  ; Condition not met (VC++ was already installed), keep the checkbox checked.
+  ; (By default, the box is checked if MUI_FINISHPAGE_RUN is defined, so we do nothing here)
   Goto EndFunc
 
 UncheckLaunch:
-  ; Condition met (VC++ needed), unset the checkbox by setting variable to "0"
-  SendMessage $mui.FinishPage.Run ${BM_SETCHECK} ${BST_CHECKED} 0
+  ; Condition met (VC++ needed), unset the checkbox programmatically.
+  ; BST_UNCHECKED or a value of 0 unchecks the box.
+  SendMessage $mui.FinishPage.Run ${BM_SETCHECK} ${BST_UNCHECKED} 0
+  ; Or simply: SendMessage $mui.FinishPage.Run ${BM_SETCHECK} 0 0
   Goto EndFunc
 
 EndFunc:
@@ -128,8 +135,15 @@ FunctionEnd
 !define MUI_ABORTWARNING
 !define MUI_WELCOMEPAGE_TITLE "Welcome to nekobox Installer"
 !define MUI_WELCOMEPAGE_TEXT "This wizard will guide you through the installation of nekobox."
+
+; --- Finish Page Settings ---
 !define MUI_FINISHPAGE_RUN "$INSTDIR\nekobox.exe"
 !define MUI_FINISHPAGE_RUN_TEXT "Launch nekobox"
+; Use this define to call our custom function before the finish page shows
+!define MUI_FINISHPAGE_CUSTOMFUNCTION_SHOW nsi_FinishPageRunCondition
+; Optional: If you also wanted it to start unchecked by default *before* our function runs
+; !define MUI_FINISHPAGE_RUN_NOTCHECKED
+
 !addplugindir .\script\
 
 !insertmacro MUI_PAGE_WELCOME
@@ -164,7 +178,11 @@ Section "Install"
   WriteRegDWORD HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\nekobox" "NoModify" 1
   WriteRegDWORD HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\nekobox" "NoRepair" 1
   WriteUninstaller "uninstall.exe"
-  Call nsi_FinishPageRunCondition
+
+  ; NOTE: The function call was here in the original script.
+  ; It doesn't belong here, it belongs in the MUI_FINISHPAGE_CUSTOMFUNCTION_SHOW callback
+  ; defined above the pages. The original line below has been removed:
+  ; Call nsi_FinishPageRunCondition
 SectionEnd
 
 Section "Uninstall"
@@ -179,7 +197,3 @@ Section "Uninstall"
 
   DeleteRegKey HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\nekobox"
 SectionEnd
-
-
-
-
