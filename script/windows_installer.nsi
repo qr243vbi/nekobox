@@ -12,6 +12,9 @@ RequestExecutionLevel admin
 !include LogicLib.nsh
 !include x64.nsh
 
+; --- Global Variable added to track if VC Redist was needed ---
+Var VCRedistNeeded
+
 Function openLinkNewWindow
   Push $3
   Exch
@@ -79,12 +82,15 @@ ${EndIf}
 
 
   ${If} $isInstalled != "1"
+    StrCpy $VCRedistNeeded "1"
     MessageBox MB_YESNO "NOTE: This application requires$\r$\n\
       'Microsoft Visual C++ Redistributable'$\r$\n\
       to function properly.$\r$\n$\r$\n\
       Download and install now?" /SD IDYES IDNO VSRedistInstalled
 
     ${OpenURL} "$VCRedistDownload"
+  ${Else}
+    StrCpy $VCRedistNeeded "0"
   ${EndIf}
 
 
@@ -92,6 +98,24 @@ ${EndIf}
   ;jumped from message box, nothing to do here
 !macroend
 
+; --- New Function to control the finish page checkbox state ---
+Function nsi_FinishPageRunCondition
+  ; If VCRedistNeeded is "1" (meaning they had to download it),
+  ; we assume they need to install it first and shouldn't launch the app yet.
+  StrCmp $VCRedistNeeded "1" UncheckLaunch CheckLaunch
+
+CheckLaunch:
+  ; Condition not met, keep the checkbox checked (default behavior if no define used)
+  StrCpy $MUI_FINISHPAGE_RUN_SHORTCUT "1"
+  Goto EndFunc
+
+UncheckLaunch:
+  ; Condition met (VC++ needed), unset the checkbox by setting variable to "0"
+  StrCpy $MUI_FINISHPAGE_RUN_SHORTCUT "0"
+  Goto EndFunc
+
+EndFunc:
+FunctionEnd
 
 Function .onInit
     ${If} ${RunningX64}
@@ -107,6 +131,7 @@ FunctionEnd
 !define MUI_WELCOMEPAGE_TEXT "This wizard will guide you through the installation of nekobox."
 !define MUI_FINISHPAGE_RUN "$INSTDIR\nekobox.exe"
 !define MUI_FINISHPAGE_RUN_TEXT "Launch nekobox"
+!define MUI_FINISHPAGE_RUN_FUNCTION "nsi_FinishPageRunCondition"
 !addplugindir .\script\
 
 !insertmacro MUI_PAGE_WELCOME
