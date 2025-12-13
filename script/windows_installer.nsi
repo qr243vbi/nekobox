@@ -100,28 +100,6 @@ ${EndIf}
   ;jumped from message box, nothing to do here
 !macroend
 
-; --- Function to control the finish page checkbox state (Corrected Logic) ---
-Function nsi_FinishPageRunCondition
-  ; This function is called just before the Finish page is displayed.
-
-  ; If VCRedistNeeded is "1" (meaning they had to download it),
-  ; we assume they need to install it first and shouldn't launch the app yet.
-  StrCmp $VCRedistNeeded "1" UncheckLaunch CheckLaunch
-
-CheckLaunch:
-  ; Condition not met (VC++ was already installed), keep the checkbox checked.
-  ; (By default, the box is checked if MUI_FINISHPAGE_RUN is defined, so we do nothing here)
-  Goto EndFunc
-
-UncheckLaunch:
-  ; Condition met (VC++ needed), unset the checkbox programmatically.
-  ; BST_UNCHECKED or a value of 0 unchecks the box.
-  SendMessage $mui.FinishPage.Run ${BM_SETCHECK} ${BST_UNCHECKED} 0
-  ; Or simply: SendMessage $mui.FinishPage.Run ${BM_SETCHECK} 0 0
-  Goto EndFunc
-
-EndFunc:
-FunctionEnd
 
 Function .onInit
     ${If} ${RunningX64}
@@ -139,10 +117,7 @@ FunctionEnd
 ; --- Finish Page Settings ---
 !define MUI_FINISHPAGE_RUN "$INSTDIR\nekobox.exe"
 !define MUI_FINISHPAGE_RUN_TEXT "Launch nekobox"
-; Use this define to call our custom function before the finish page shows
-!define MUI_FINISHPAGE_CUSTOMFUNCTION_SHOW nsi_FinishPageRunCondition
-; Optional: If you also wanted it to start unchecked by default *before* our function runs
-; !define MUI_FINISHPAGE_RUN_NOTCHECKED
+!define MUI_FINISHPAGE_RUN_NOTCHECKED
 
 !addplugindir .\script\
 
@@ -178,11 +153,6 @@ Section "Install"
   WriteRegDWORD HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\nekobox" "NoModify" 1
   WriteRegDWORD HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\nekobox" "NoRepair" 1
   WriteUninstaller "uninstall.exe"
-
-  ; NOTE: The function call was here in the original script.
-  ; It doesn't belong here, it belongs in the MUI_FINISHPAGE_CUSTOMFUNCTION_SHOW callback
-  ; defined above the pages. The original line below has been removed:
-  ; Call nsi_FinishPageRunCondition
 SectionEnd
 
 Section "Uninstall"
