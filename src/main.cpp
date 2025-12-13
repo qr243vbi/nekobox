@@ -54,6 +54,9 @@ void loadTranslate(const QString& locale) {
     QT_TRANSLATE_NOOP("QPlatformTheme", "Yes");
     QT_TRANSLATE_NOOP("QPlatformTheme", "No");
     QT_TRANSLATE_NOOP("QPlatformTheme", "OK");
+    QT_TRANSLATE_NOOP("QPlatformTheme", "Defaults");
+    QT_TRANSLATE_NOOP("QPlatformTheme", "Restore Defaults");
+    QT_TRANSLATE_NOOP("QPlatformTheme", "Discard");
     if (trans != nullptr) {
         trans->deleteLater();
     }

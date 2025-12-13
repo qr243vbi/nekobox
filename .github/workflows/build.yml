@@ -126,12 +126,12 @@ jobs:
         include:
           - platform: windows-11-arm
             target: arm64
-            qt_version: 6.10.0
+            qt_version: 6.10.1
             triplet: arm64-windows
             allow: ${{ github.event.inputs.build_windows_arm64 }}
-          - platform: windows-2022
+          - platform: windows-latest
             target: x86_64
-            qt_version: 6.10.0
+            qt_version: 6.10.1
             triplet: x64-windows
             allow: ${{ github.event.inputs.build_windows_x64 }}
       fail-fast: false
@@ -145,6 +145,11 @@ jobs:
         uses: actions/checkout@v4.2.2
         with:
           submodules: "recursive"
+
+      - name: Install NSIS
+        id: nsis
+        if: matrix.allow == 'true' && github.event.inputs.source != 'true' && matrix.target == 'x86_64'
+        uses: negrutiu/nsis-install@v2
 
       - name: vcpkg build
         uses: johnwason/vcpkg-action@v7
@@ -238,10 +243,10 @@ jobs:
       matrix:
         include:
           - platform: ubuntu-24.04
-            qt_version: "6.10.0"
+            qt_version: 6.10.1
             target: amd64
           - platform: ubuntu-24.04-arm
-            qt_version: "6.10.0"
+            qt_version: 6.10.1
             target: arm64
       fail-fast: false
     runs-on: ${{ matrix.platform }}
