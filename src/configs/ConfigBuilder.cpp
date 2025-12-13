@@ -13,6 +13,8 @@
 #include <QFileInfo>
 #include <QDir>
 #include <QStandardPaths>
+#include <QDateTime>
+
 namespace Configs {
     QString genTunName() {
         auto tun_name = "nekobox-tun";
@@ -993,7 +995,7 @@ namespace Configs {
                 {"enabled", true},
                 {"store_fakeip", true},
                 {"store_rdrc", true},
-                {"path", cachePath + "/cache.db"}
+                {"path", cachePath + "/nekobox_cache_" + QString::number(QDateTime::currentMSecsSinceEpoch()) + ".db"}
             };
             experimentalObj["cache_file"] = cache_file;
         }

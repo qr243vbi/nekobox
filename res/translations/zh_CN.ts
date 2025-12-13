@@ -395,7 +395,7 @@
     </message>
     <message>
         <source>Landing proxy: </source>
-        <translation>着陆代理：</translation>
+        <translation>前置代理：</translation>
     </message>
     <message>
         <source>Landing proxy for group %1</source>
@@ -407,6 +407,10 @@
     </message>
     <message>
         <source>Restore Defaults</source>
+        <translation>恢复默认设置</translation>
+    </message>
+    <message>
+        <source>Defaults</source>
         <translation>恢复默认设置</translation>
     </message>
 </context>
@@ -1738,7 +1742,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     </message>
     <message>
         <source>Clear Test Result</source>
-        <translation>清理测试结果</translation>
+        <translation>清理 此分组 测试结果</translation>
     </message>
     <message>
         <source>Scan QR Code</source>
@@ -2006,7 +2010,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     </message>
     <message>
         <source>Url Test Selected</source>
-        <translation>URL 测试选定项</translation>
+        <translation>测试此节点URL延迟</translation>
     </message>
     <message>
         <source>Rulesets updated successfully</source>
@@ -2022,7 +2026,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     </message>
     <message>
         <source>Current selected</source>
-        <translation>目前選取</translation>
+        <translation>节点功能选择</translation>
     </message>
     <message>
         <source>Current group</source>
@@ -2034,7 +2038,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     </message>
     <message>
         <source>Url Test Group</source>
-        <translation>URL 测试分组</translation>
+        <translation>此分组测试URL延迟</translation>
     </message>
     <message>
         <source>Ctrl+Shift+G</source>
@@ -2050,7 +2054,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     </message>
     <message>
         <source>Remove Invalid</source>
-        <translation>移除无效项</translation>
+        <translation>移除 此分组 无效节点</translation>
     </message>
     <message>
         <source>Ctrl+Alt+I</source>
@@ -2234,7 +2238,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     </message>
     <message>
         <source>Speedtest Selected</source>
-        <translation>速度测试选定项</translation>
+        <translation>测试此节点（ 上传+下载 ）速度</translation>
     </message>
     <message>
         <source>Speedtest Group</source>
