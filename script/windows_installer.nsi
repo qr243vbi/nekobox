@@ -106,12 +106,11 @@ Function nsi_FinishPageRunCondition
 
 CheckLaunch:
   ; Condition not met, keep the checkbox checked (default behavior if no define used)
-  StrCpy $MUI_FINISHPAGE_RUN_SHORTCUT "1"
   Goto EndFunc
 
 UncheckLaunch:
   ; Condition met (VC++ needed), unset the checkbox by setting variable to "0"
-  StrCpy $MUI_FINISHPAGE_RUN_SHORTCUT "0"
+  SendMessage $mui.FinishPage.Run ${BM_SETCHECK} ${BST_CHECKED} 0
   Goto EndFunc
 
 EndFunc:
@@ -131,7 +130,6 @@ FunctionEnd
 !define MUI_WELCOMEPAGE_TEXT "This wizard will guide you through the installation of nekobox."
 !define MUI_FINISHPAGE_RUN "$INSTDIR\nekobox.exe"
 !define MUI_FINISHPAGE_RUN_TEXT "Launch nekobox"
-!define MUI_FINISHPAGE_RUN_FUNCTION "nsi_FinishPageRunCondition"
 !addplugindir .\script\
 
 !insertmacro MUI_PAGE_WELCOME
@@ -166,6 +164,7 @@ Section "Install"
   WriteRegDWORD HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\nekobox" "NoModify" 1
   WriteRegDWORD HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\nekobox" "NoRepair" 1
   WriteUninstaller "uninstall.exe"
+  Call nsi_FinishPageRunCondition
 SectionEnd
 
 Section "Uninstall"
