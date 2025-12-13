@@ -84,13 +84,7 @@ ${EndIf}
       to function properly.$\r$\n$\r$\n\
       Download and install now?" /SD IDYES IDNO VSRedistInstalled
 
-    ;if no goto executed, install vcredist
-    ;create temp dir
-    CreateDirectory $TEMP\app-name-setup
-    ;download installer
-    inetc::get "$VCRedistDownload" $TEMP\app-name-setup\vcppredist.exe
-    ;exec installer
-    ExecWait "$TEMP\app-name-setup\vcppredist.exe"
+    ${OpenURL} "$VCRedistDownload"
   ${EndIf}
 
 
