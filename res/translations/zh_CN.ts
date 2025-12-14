@@ -442,7 +442,7 @@
     </message>
     <message>
         <source>Subscription</source>
-        <translation>订阅</translation>
+        <translation>订阅地址</translation>
     </message>
     <message>
         <source>URL</source>
@@ -1549,7 +1549,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     </message>
     <message>
         <source>Subscription</source>
-        <translation>订阅地址</translation>
+        <translation>订阅</translation>
     </message>
     <message>
         <source>Confirmation</source>
