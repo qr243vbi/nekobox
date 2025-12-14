@@ -28,7 +28,7 @@ DialogVPNSettings::DialogVPNSettings(QWidget *parent) : QDialog(parent), ui(new 
     ui->vpn_implementation->addItems(Preset::SingBox::VpnImplementation);
     ui->vpn_implementation->setCurrentText(Configs::dataStore->vpn_implementation);
 #endif
-    ui->vpn_mtu->setCurrentText(Int2String(Configs::dataStore->vpn_mtu));
+    ui->vpn_mtu->setCurrentText(QString::number(Configs::dataStore->vpn_mtu));
     ui->vpn_ipv6->setChecked(Configs::dataStore->vpn_ipv6);
     ui->strict_route->setChecked(Configs::dataStore->vpn_strict_route);
     ui->tun_routing->setChecked(Configs::dataStore->enable_tun_routing);

@@ -251,8 +251,8 @@ namespace Configs {
             url.setHost(serverAddress);
             url.setPort(0);
             QUrlQuery query;
-            query.addQueryItem("upmbps", Int2String(uploadMbps));
-            query.addQueryItem("downmbps", Int2String(downloadMbps));
+            query.addQueryItem("upmbps", QString::number(uploadMbps));
+            query.addQueryItem("downmbps", QString::number(downloadMbps));
             if (!obfsPassword.isEmpty()) {
                 query.addQueryItem("obfs", "xplus");
                 query.addQueryItem("obfsParam", QUrl::toPercentEncoding(obfsPassword));

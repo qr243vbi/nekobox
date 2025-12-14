@@ -181,7 +181,7 @@ namespace Configs {
                 if (outbound["tag"] == "direct" || outbound["tag"] == "block" || outbound["tag"] == "dns-out" || outbound["tag"].toString().startsWith("rout")) continue;
                 if (outbound["tag"] == "proxy") {
                     QString tag = "proxy";
-                    if (index > 1) tag += Int2String(index);
+                    if (index > 1) tag += QString::number(index);
                     outbound.insert("tag", tag);
                     if (outbound["type"] == "wireguard" || outbound["type"] == "tailscale")
                     {
@@ -291,13 +291,13 @@ namespace Configs {
 
     QString BuildChainInternal(int chainId, const QList<std::shared_ptr<ProxyEntity>> &ents,
                                const std::shared_ptr<BuildConfigStatus> &status) {
-        QString chainTag = "c-" + Int2String(chainId);
+        QString chainTag = "c-" + QString::number(chainId);
         QString chainTagOut;
         bool lastWasEndpoint = false;
 
         for (int index = 0; index < ents.length(); index++) {
             const auto& ent = ents.at(index);
-            auto tagOut = chainTag + "-" + Int2String(ent->id) + "-" + Int2String(index);
+            auto tagOut = chainTag + "-" + QString::number(ent->id) + "-" + QString::number(index);
 
             // last profile set as "proxy"
             if (index == 0) {
@@ -750,7 +750,7 @@ namespace Configs {
                     return;
                 }
                 QJsonObject currOutbound;
-                QString tag = "rout-" + Int2String(suffix++);
+                QString tag = "rout-" + QString::number(suffix++);
                 BuildOutbound(neededEnt, status, currOutbound, tag);
                 if (neededEnt->type == "wireguard")
                 {

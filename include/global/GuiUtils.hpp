@@ -30,12 +30,12 @@
 #define D_SAVE_STRING_PLAIN(a) Configs::dataStore->a = ui->a->toPlainText();
 
 #define P_LOAD_INT(a)                    \
-    ui->a->setText(Int2String(bean->a)); \
+    ui->a->setText(QString::number(bean->a)); \
     ui->a->setValidator(QRegExpValidator_Number);
 #define P_SAVE_INT(a) bean->a = ui->a->text().toInt();
 
 #define D_LOAD_INT(a)                                  \
-    ui->a->setText(Int2String(Configs::dataStore->a)); \
+    ui->a->setText(QString::number(Configs::dataStore->a)); \
     ui->a->setValidator(QRegExpValidator_Number);
 #define D_SAVE_INT(a) Configs::dataStore->a = ui->a->text().toInt();
 
@@ -73,10 +73,10 @@
 #define D_LOAD_INT_ENABLE(i, e)                             \
     if (Configs::dataStore->i > 0) {                        \
         ui->e->setChecked(true);                            \
-        ui->i->setText(Int2String(Configs::dataStore->i));  \
+        ui->i->setText(QString::number(Configs::dataStore->i));  \
     } else {                                                \
         ui->e->setChecked(false);                           \
-        ui->i->setText(Int2String(-Configs::dataStore->i)); \
+        ui->i->setText(QString::number(-Configs::dataStore->i)); \
     }                                                       \
     ui->i->setValidator(QRegExpValidator_Number);
 #define D_SAVE_INT_ENABLE(i, e)                         \

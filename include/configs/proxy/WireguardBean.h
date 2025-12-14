@@ -56,7 +56,7 @@ namespace Configs {
         QString FormatReserved() {
             QString res = "";
             for (int i=0;i<reserved.size();i++) {
-                res += Int2String(reserved[i]);
+                res += QString::number(reserved[i]);
                 if (i != reserved.size() - 1) {
                     res += "-";
                 }

@@ -147,7 +147,7 @@ DialogManageRoutes::DialogManageRoutes(QWidget *parent, bool EditRouteProfiles) 
     set_dns_hijack_enability(Configs::dataStore->enable_dns_server);
     ui->dnshijack_allow_lan->setChecked(Configs::dataStore->dns_server_listen_lan);
     ui->dnshijack_listenport->setValidator(QRegExpValidator_Number);
-    ui->dnshijack_listenport->setText(Int2String(Configs::dataStore->dns_server_listen_port));
+    ui->dnshijack_listenport->setText(QString::number(Configs::dataStore->dns_server_listen_port));
     ui->dnshijack_v4resp->setText(Configs::dataStore->dns_v4_resp);
     ui->dnshijack_v6resp->setText(Configs::dataStore->dns_v6_resp);
 
@@ -170,7 +170,7 @@ DialogManageRoutes::DialogManageRoutes(QWidget *parent, bool EditRouteProfiles) 
     ui->redirect_listenaddr->setText(Configs::dataStore->redirect_listen_address);
     ui->redirect_listenport->setEnabled(Configs::dataStore->enable_redirect);
     ui->redirect_listenport->setValidator(QRegExpValidator_Number);
-    ui->redirect_listenport->setText(Int2String(Configs::dataStore->redirect_listen_port));
+    ui->redirect_listenport->setText(QString::number(Configs::dataStore->redirect_listen_port));
 
     connect(ui->dnshijack_enable, STATE_CHANGED, this, [=,this](bool state) {
         set_dns_hijack_enability(state);
