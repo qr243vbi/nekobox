@@ -1,4 +1,3 @@
-#ifdef Q_OS_WIN
 
 #pragma once
 
@@ -8,4 +7,3 @@ void Windows_QWidget_SetForegroundWindow(QWidget* w);
 
 bool Windows_IsInAdmin();
 
-#endif
