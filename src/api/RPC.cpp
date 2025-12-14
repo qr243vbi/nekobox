@@ -3,7 +3,7 @@
 #include <windows.h>
 #endif
 #include "include/api/RPC.h"
-#include "include/global/Configs.hpp"
+#include "include/dataStore/Configs.hpp"
 #include <QDebug>
 #include <optional>
 #include <qnamespace.h>

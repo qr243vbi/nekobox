@@ -1,4 +1,4 @@
-
+#ifdef Q_OS_WIN
 #include "include/sys/windows/guihelper.h"
 
 #include <QWidget>
@@ -22,3 +22,4 @@ bool Windows_IsInAdmin() {
     isThisAdmin = IsUserAnAdmin();
     return isThisAdmin;
 }
+#endif

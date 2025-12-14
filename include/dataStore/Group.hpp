@@ -1,7 +1,7 @@
 #pragma once
 
 #include "ProxyEntity.hpp"
-#include "include/global/Configs.hpp"
+#include "include/dataStore/Configs.hpp"
 
 namespace Configs
 {

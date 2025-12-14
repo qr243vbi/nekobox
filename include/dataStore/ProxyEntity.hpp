@@ -1,6 +1,6 @@
 #pragma once
 
-#include "include/global/Configs.hpp"
+#include "include/dataStore/Configs.hpp"
 #include "include/global/CountryHelper.hpp"
 #include "include/stats/traffic/TrafficData.hpp"
 #include "include/configs/proxy/AbstractBean.hpp"

@@ -2,10 +2,11 @@
 #include <winsock2.h>
 #include <windows.h>
 #endif
-#include "include/global/Configs.hpp"
+#include "include/dataStore/Configs.hpp"
 #include "include/configs/proxy/Preset.hpp"
 #include "include/configs/proxy/AbstractBean.hpp"
 #include "include/sys/Settings.h"
+#include "include/global/keyvaluerange.h"
 
 #include <QApplication>
 #include <QDir>

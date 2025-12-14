@@ -5,7 +5,7 @@
 #include "include/ui/setting/ThemeManager.hpp"
 #include "include/ui/setting/Icon.hpp"
 #include "include/global/GuiUtils.hpp"
-#include "include/global/Configs.hpp"
+#include "include/dataStore/Configs.hpp"
 #include "include/global/HTTPRequestHelper.hpp"
 #include "include/global/DeviceDetailsHelper.hpp"
 #include "include/dataStore/ResourceEntity.hpp"
@@ -57,6 +57,7 @@ DialogBasicSettings::DialogBasicSettings(MainWindow *parent)
     #define UPDATE_FONT {                   \
         CACHE.updateFont = true;            \
         updateEmojiFont();                  \
+        CACHE.needRestart = true;           \
         adjustSize();                       \
     }                   
     

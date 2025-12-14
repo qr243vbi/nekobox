@@ -8,7 +8,7 @@
 #include <QFile>
 #include <QApplication>
 
-#include "include/global/Configs.hpp"
+#include "include/dataStore/Configs.hpp"
 #include "include/ui/mainwindow.h"
 #include "include/global/DeviceDetailsHelper.hpp"
 

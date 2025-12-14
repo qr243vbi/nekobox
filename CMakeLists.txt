@@ -84,8 +84,8 @@ set(PROJECT_SOURCES
         ${PLATFORM_SOURCES}
         ${THRIFT_GENERATED_SOURCES}
         src/main.cpp
-        src/global/Configs.cpp
-        src/global/Utils.cpp
+        src/dataStore/Configs.cpp
+        src/dataStore/Utils.cpp
         src/global/HTTPRequestHelper.cpp
         src/global/DeviceDetailsHelper.cpp
         src/global/CountryHelper.cpp

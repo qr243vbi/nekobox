@@ -6,7 +6,7 @@
 #include "include/api/RPC.h"
 #endif
 #include <QSettings>
-#include "include/global/Configs.hpp"
+#include "include/dataStore/Configs.hpp"
 #include "include/stats/connections/connectionLister.hpp"
 #include "3rdparty/qv2ray/v2/ui/widgets/speedchart/SpeedWidget.hpp"
 #ifdef Q_OS_UNIX

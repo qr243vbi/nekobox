@@ -1,5 +1,5 @@
 #pragma once
-#include "include/global/Configs.hpp"
+#include "include/dataStore/Configs.hpp"
 #include <QDir>
 
 namespace Configs {

@@ -1,7 +1,7 @@
 #include <include/dataStore/Group.hpp>
 #include <QFile>
 #include "include/ui/profile/dialog_edit_profile.h"
-#include "include/global/Utils.hpp"
+#include "include/dataStore/Utils.hpp"
 #include "include/configs/proxy/AbstractBean.hpp"
 
 

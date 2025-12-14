@@ -1,3 +1,4 @@
+#ifdef Q_OS_WIN
 #include "include/sys/windows/MiniDump.h"
 
 #ifndef WIN32_LEAN_AND_MEAN
@@ -75,3 +76,6 @@ void Windows_SetCrashHandler() {
     SetErrorMode(SEM_FAILCRITICALERRORS);
     SetUnhandledExceptionFilter(CreateCrashHandler);
 }
+
+
+#endif

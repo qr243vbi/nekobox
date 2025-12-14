@@ -1,4 +1,3 @@
-// DO NOT INCLUDE THIS
 #pragma once
 
 #include <functional>
@@ -13,6 +12,33 @@
 #include <QStyleHints>
 #endif
 //
+
+
+#ifndef ADD_MAP
+
+#define ITEM_TYPE(X) itemType::type_##X 
+#define MAP_BODY \
+static ConfJsMapStat ptr ; \
+static bool init = false;               \
+if (init) return ptr;  
+
+#define DECL_MAP(X)  ConfJsMap X::_map() {   \
+MAP_BODY
+
+
+#define INIT_MAP_1 virtual ConfJsMap _map() override {   \
+MAP_BODY
+
+#define INIT_MAP INIT_MAP_1              \
+ptr = AbstractBean::_map();   
+
+#define STOP_MAP \
+init = true;     \
+return ptr;      \
+}
+
+#define ADD_MAP(X, Y, B) _put(ptr, X, &this->Y, ITEM_TYPE(B))
+#endif
 
 inline QString software_name;
 inline QString software_core_name;

@@ -1,5 +1,6 @@
-#pragma once
+#ifdef Q_OS_WIN
 
+#pragma once
 #include <QAbstractNativeEventFilter>
 #include <QByteArray>
 #include <functional>
@@ -16,3 +17,4 @@ public:
 private:
     std::function<void(int)> cleanUpFunc;
 };
+#endif
