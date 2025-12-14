@@ -127,7 +127,7 @@ DialogManageRoutes::DialogManageRoutes(QWidget *parent, bool EditRouteProfiles) 
     ui->remote_dns_strategy->setCurrentText(Configs::dataStore->routing->remote_dns_strategy);
     ui->direct_dns->setCurrentText(Configs::dataStore->routing->direct_dns);
     ui->direct_dns_strategy->setCurrentText(Configs::dataStore->routing->direct_dns_strategy);
-    ui->dns_final_out->setCurrentText(Configs::dataStore->routing->dns_final_out);
+    ui->dns_final_out->setCurrentIndex(Configs::dataStore->routing->dns_final_out_direct ? 1 : 0);
     reloadProfileItems();
 
     connect(ui->route_profiles, &QListWidget::itemDoubleClicked, this, [=,this](const QListWidgetItem* item){
@@ -216,7 +216,7 @@ void DialogManageRoutes::accept() {
     Configs::dataStore->routing->direct_dns = ui->direct_dns->currentText();
     Configs::dataStore->routing->direct_dns_strategy = ui->direct_dns_strategy->currentText();
     Configs::dataStore->core_box_underlying_dns = ui->local_override->text().trimmed();
-    Configs::dataStore->routing->dns_final_out = ui->dns_final_out->currentText();
+    Configs::dataStore->routing->dns_final_out_direct = ui->dns_final_out->currentIndex() == 1;
     Configs::dataStore->fake_dns = ui->enable_fakeip->isChecked();
 
     Configs::profileManager->UpdateRouteChains(chainList);

@@ -867,7 +867,7 @@ namespace Configs {
         directDnsObj["domain_resolver"] = "dns-local";
 
         // default dns server
-        if (dataStore->routing->dns_final_out == "direct") {
+        if (dataStore->routing->dns_final_out_direct) {
             dnsServers.prepend(directDnsObj);
         } else {
             dnsServers.append(directDnsObj);

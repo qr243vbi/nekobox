@@ -777,6 +777,14 @@
         <translation>禁用</translation>
     </message>
     <message>
+        <source>remote</source>
+        <translation>遠端</translation>
+    </message>
+    <message>
+        <source>direct</source>
+        <translation>直接</translation>
+    </message>
+    <message>
         <source>Sniffing Mode</source>
         <translation>嗅探模式(流量探测)</translation>
     </message>
@@ -2512,6 +2520,47 @@ Release note:
         <source>Defaults</source>
         <translation>恢复默认设置</translation>
     </message>
+
+    <message>
+    <source>Undo</source>
+    <translation>撤消</translation>
+</message>
+<message>
+    <source>Redo</source>
+    <translation>重做</translation>
+</message>
+<message>
+    <source>Cut</source>
+    <translation>剪切</translation>
+</message>
+<message>
+    <source>Copy</source>
+    <translation>复制</translation>
+</message>
+<message>
+    <source>Paste</source>
+    <translation>粘贴</translation>
+</message>
+<message>
+    <source>Delete</source>
+    <translation>删除</translation>
+</message>
+<message>
+    <source>Select All</source>
+    <translation>全选</translation>
+</message>
+<message>
+    <source>Stop</source>
+    <translation>停止</translation>
+</message>
+<message>
+    <source>Clear</source>
+    <translation>清除</translation>
+</message>
+<message>
+    <source>Copy Link Location</source>
+    <translation>复制链接地址</translation>
+</message>
 </context>
 <context>
     <name>Qv2ray::ui::widgets::AutoCompleteTextEdit</name>

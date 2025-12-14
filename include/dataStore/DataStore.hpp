@@ -20,7 +20,7 @@ namespace Configs {
         QString direct_dns_strategy = "";
         bool use_dns_object = false;
         QString dns_object = "";
-        QString dns_final_out = "proxy";
+        bool dns_final_out_direct = false;
 
         // Misc
         QString domain_strategy = "AsIs";

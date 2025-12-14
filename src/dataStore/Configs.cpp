@@ -415,7 +415,7 @@ namespace Configs {
         ADD_MAP("ruleset_mirror", ruleset_mirror, integer);
         ADD_MAP("use_dns_object", use_dns_object, boolean);
         ADD_MAP("dns_object", dns_object, string);
-        ADD_MAP("dns_final_out", dns_final_out, string);
+        ADD_MAP("dns_final_out_direct", dns_final_out_direct, boolean);
     STOP_MAP
 
     #undef d_add
