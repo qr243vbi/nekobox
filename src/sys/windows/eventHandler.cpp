@@ -1,3 +1,4 @@
+#ifdef Q_OS_WIN
 #include "include/sys/windows/eventHandler.h"
 
 #include <QDebug>
@@ -23,3 +24,4 @@ bool PowerOffTaskkillFilter::nativeEventFilter(const QByteArray &eventType, void
     }
     return false;
 }
+#endif

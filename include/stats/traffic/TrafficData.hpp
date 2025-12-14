@@ -1,7 +1,8 @@
 #pragma once
 
-#include "include/global/Configs.hpp"
+#include "include/dataStore/Configs.hpp"
 #include "include/configs/proxy/AbstractBean.hpp"
+#include <QString>
 
 namespace Stats {
     class TrafficData : public JsonStore {

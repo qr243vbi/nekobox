@@ -4,7 +4,7 @@
 #include <QDir>
 
 #include "include/sys/Settings.h"
-#include "include/global/Configs.hpp"
+#include "include/dataStore/Configs.hpp"
 
 
 #ifdef Q_OS_WIN

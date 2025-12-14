@@ -1,7 +1,7 @@
 #pragma once
 
 #include <QDialog>
-#include "include/global/Configs.hpp"
+#include "include/dataStore/Configs.hpp"
 #include "ui_dialog_hotkey.h"
 
 QT_BEGIN_NAMESPACE

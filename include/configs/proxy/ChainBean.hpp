@@ -1,6 +1,5 @@
 #pragma once
 
-#include "include/global/Configs.hpp"
 #include "AbstractBean.hpp"
 
 namespace Configs {

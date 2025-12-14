@@ -1,6 +1,6 @@
 #pragma once
 
-#include "include/global/Configs.hpp"
+#include "include/dataStore/Configs.hpp"
 #include "ProxyEntity.hpp"
 #include "Group.hpp"
 #include "RouteEntity.h"

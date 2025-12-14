@@ -4,7 +4,7 @@
 #include <QMenu>
 
 #include "3rdparty/qv2ray/v2/ui/QvAutoCompleteTextEdit.hpp"
-#include "include/global/Configs.hpp"
+#include "include/dataStore/Configs.hpp"
 #include "include/ui/setting/RouteItem.h"
 #include "ui_dialog_manage_routes.h"
 

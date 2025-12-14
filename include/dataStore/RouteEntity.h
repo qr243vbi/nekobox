@@ -2,7 +2,7 @@
 
 #include <include/configs/proxy/Preset.hpp>
 
-#include "include/global/Configs.hpp"
+#include "include/dataStore/Configs.hpp"
 #include <QUrl>
 
 namespace Configs {

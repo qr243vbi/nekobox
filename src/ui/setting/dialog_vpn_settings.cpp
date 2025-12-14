@@ -2,7 +2,7 @@
 
 #include "include/configs/proxy/Preset.hpp"
 #include "include/global/GuiUtils.hpp"
-#include "include/global/Configs.hpp"
+#include "include/dataStore/Configs.hpp"
 #include "include/ui/mainwindow_interface.h"
 #ifdef Q_OS_WIN
 #include "include/sys/windows/WinVersion.h"

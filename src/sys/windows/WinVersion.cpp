@@ -1,3 +1,4 @@
+#ifdef Q_OS_WIN
 // The MIT License (MIT)
 // Windows Version Detection 1.2.0
 // Copyright (C) 2022 - 2023 by Shao Voon Wong (shaovoon@yahoo.com)
@@ -38,3 +39,4 @@ bool WinVersion::IsBuildNumGreaterOrEqual(unsigned int buildNumber)
 	}
 	return false;
 }
+#endif
