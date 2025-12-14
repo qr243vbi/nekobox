@@ -3,12 +3,23 @@
 #include "include/configs/proxy/includes.h"
 
 #include <QUrlQuery>
+#include <qurlquery.h>
 
 namespace Configs {
 
     static void add_query_nonempty(const char * name, QUrlQuery & query, QString & value){
         if (!value.isEmpty()){
             query.addQueryItem(name, value);
+        }
+    }
+
+    static void add_query_int(const char * name, QUrlQuery & query, int value){
+            query.addQueryItem(name, QString::number(value));
+    }
+
+    static void add_query_int_natural(const char * name, QUrlQuery & query, int value){
+        if (value > 0){
+            add_query_int(name, query, value);
         }
     }
 
@@ -59,7 +70,7 @@ namespace Configs {
         url.setPort(serverPort);
         if (!name.isEmpty()) url.setFragment(name);
 
-        query.addQueryItem("version", QString::number(shadowtls_version));
+        add_query_int("version", query, shadowtls_version);
 
         //  security
         add_security(stream, query);
@@ -79,7 +90,7 @@ namespace Configs {
 
         add_query_nonempty("idle_session_check_interval", query, idle_session_check_interval);
         add_query_nonempty("idle_session_timeout", query, idle_session_timeout);
-        if (min_idle_session > 0) query.addQueryItem("min_idle_session", QString::number(min_idle_session));
+        add_query_int_natural("min_idle_session", query, min_idle_session);
 
         //  security
         add_security(stream, query);
@@ -251,8 +262,8 @@ namespace Configs {
             url.setHost(serverAddress);
             url.setPort(0);
             QUrlQuery query;
-            query.addQueryItem("upmbps", QString::number(uploadMbps));
-            query.addQueryItem("downmbps", QString::number(downloadMbps));
+            add_query_int("upmbps", query, uploadMbps);
+            add_query_int("downmbps", query, downloadMbps);
             if (!obfsPassword.isEmpty()) {
                 query.addQueryItem("obfs", "xplus");
                 query.addQueryItem("obfsParam", QUrl::toPercentEncoding(obfsPassword));
@@ -263,8 +274,8 @@ namespace Configs {
             if (allowInsecure) query.addQueryItem("insecure", "1");
             add_query_nonempty("peer", query, sni);
             add_query_nonempty("alpn", query, alpn);
-            if (connectionReceiveWindow > 0) query.addQueryItem("recv_window", Int2String(connectionReceiveWindow));
-            if (streamReceiveWindow > 0) query.addQueryItem("recv_window_conn", Int2String(streamReceiveWindow));
+            add_query_int_natural("recv_window", query, (connectionReceiveWindow));
+            add_query_int_natural("recv_window_conn", query, (streamReceiveWindow));
             if (!serverPorts.empty()) {
                 QStringList portList;
                 for (const auto& range : serverPorts) {
@@ -337,30 +348,30 @@ namespace Configs {
         url.setHost(serverAddress);
         url.setPort(serverPort);
         if (!name.isEmpty()) url.setFragment(name);
-        QUrlQuery q;
-        q.addQueryItem("private_key", privateKey);
-        q.addQueryItem("peer_public_key", publicKey);
-        q.addQueryItem("pre_shared_key", preSharedKey);
-        q.addQueryItem("reserved", FormatReserved());
-        q.addQueryItem("persistent_keepalive", Int2String(persistentKeepalive));
-        q.addQueryItem("mtu", Int2String(MTU));
-        q.addQueryItem("use_system_interface", useSystemInterface ? "true":"false");
-        q.addQueryItem("local_address", localAddress.join("-"));
-        q.addQueryItem("workers", Int2String(workerCount));
+        QUrlQuery query;
+        query.addQueryItem("private_key", privateKey);
+        query.addQueryItem("peer_public_key", publicKey);
+        query.addQueryItem("pre_shared_key", preSharedKey);
+        query.addQueryItem("reserved", FormatReserved());
+        add_query_int("persistent_keepalive", query, (persistentKeepalive));
+        add_query_int("mtu", query, (MTU));
+        query.addQueryItem("use_system_interface", useSystemInterface ? "true":"false");
+        query.addQueryItem("local_address", localAddress.join("-"));
+        add_query_int("workers", query, (workerCount));
         if (enable_amnezia)
         {
-            q.addQueryItem("enable_amnezia", "true");
-            q.addQueryItem("junk_packet_count", Int2String(junk_packet_count));
-            q.addQueryItem("junk_packet_min_size", Int2String(junk_packet_min_size));
-            q.addQueryItem("junk_packet_max_size", Int2String(junk_packet_max_size));
-            q.addQueryItem("init_packet_junk_size", Int2String(init_packet_junk_size));
-            q.addQueryItem("response_packet_junk_size", Int2String(response_packet_junk_size));
-            q.addQueryItem("init_packet_magic_header", Int2String(init_packet_magic_header));
-            q.addQueryItem("response_packet_magic_header", Int2String(response_packet_magic_header));
-            q.addQueryItem("underload_packet_magic_header", Int2String(underload_packet_magic_header));
-            q.addQueryItem("transport_packet_magic_header", Int2String(transport_packet_magic_header));
+            query.addQueryItem("enable_amnezia", "true");
+            add_query_int("junk_packet_count", query, (junk_packet_count));
+            add_query_int("junk_packet_min_size", query, (junk_packet_min_size));
+            add_query_int("junk_packet_max_size", query, (junk_packet_max_size));
+            add_query_int("init_packet_junk_size", query, (init_packet_junk_size));
+            add_query_int("response_packet_junk_size", query, (response_packet_junk_size));
+            add_query_int("init_packet_magic_header", query, (init_packet_magic_header));
+            add_query_int("response_packet_magic_header", query, (response_packet_magic_header));
+            add_query_int("underload_packet_magic_header", query, (underload_packet_magic_header));
+            add_query_int("transport_packet_magic_header", query, (transport_packet_magic_header));
         }
-        url.setQuery(q);
+        url.setQuery(query);
         return url.toString(QUrl::FullyEncoded);
     }
 
