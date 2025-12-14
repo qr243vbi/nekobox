@@ -387,7 +387,7 @@
     </message>
     <message>
         <source>Front proxy: </source>
-        <translation>前端代理：</translation>
+        <translation>前置代理：</translation>
     </message>
     <message>
         <source>Front proxy for group %1</source>
@@ -395,7 +395,7 @@
     </message>
     <message>
         <source>Landing proxy: </source>
-        <translation>前置代理：</translation>
+        <translation>落地代理：</translation>
     </message>
     <message>
         <source>Landing proxy for group %1</source>
@@ -1549,7 +1549,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     </message>
     <message>
         <source>Subscription</source>
-        <translation>订阅</translation>
+        <translation>订阅地址</translation>
     </message>
     <message>
         <source>Confirmation</source>
@@ -2499,6 +2499,18 @@ Release note:
     <message>
         <source>OK</source>
         <translation>确定</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>弃置</translation>
+    </message>
+    <message>
+        <source>Restore Defaults</source>
+        <translation>恢复默认设置</translation>
+    </message>
+    <message>
+        <source>Defaults</source>
+        <translation>恢复默认设置</translation>
     </message>
 </context>
 <context>
