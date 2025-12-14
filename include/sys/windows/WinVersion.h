@@ -1,4 +1,3 @@
-#ifdef Q_OS_WIN
 
 // The MIT License (MIT)
 // Windows Version Detection 1.2.0
@@ -55,4 +54,3 @@ public:
 	static bool IsBuildNumGreaterOrEqual(unsigned int buildNumber);
 };
 
-#endif

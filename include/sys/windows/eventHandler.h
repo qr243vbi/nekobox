@@ -1,4 +1,3 @@
-#ifdef Q_OS_WIN
 
 #pragma once
 #include <QAbstractNativeEventFilter>
@@ -17,4 +16,3 @@ public:
 private:
     std::function<void(int)> cleanUpFunc;
 };
-#endif
