@@ -79,6 +79,7 @@ namespace Configs {
         bool flag_dns_set = false;
 
         // Saved
+        int cache_timestamp = 0;
 
         // Misc
         QString log_level = "info";

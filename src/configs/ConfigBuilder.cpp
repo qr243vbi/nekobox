@@ -991,11 +991,25 @@ namespace Configs {
 
             auto cachePath = QStandardPaths::writableLocation(QStandardPaths::CacheLocation);
             QDir().mkpath(cachePath);//create parent dir tree
+
+            int cache_timestamp;
+            QString cacheFile;
+            if ((cache_timestamp = Configs::dataStore->cache_timestamp) == 0 ){
+                label1:
+                cache_timestamp = Configs::dataStore->cache_timestamp = QDateTime::currentMSecsSinceEpoch();
+                cacheFile = cachePath + "/nekobox_cache_" + QString::number(cache_timestamp);
+            } else {
+                cacheFile = cachePath + "/nekobox_cache_" + QString::number(cache_timestamp);
+                if (!QFile::exists(cacheFile)){
+                    goto label1;
+                }
+            }
+
             QJsonObject cache_file = {
                 {"enabled", true},
                 {"store_fakeip", true},
                 {"store_rdrc", true},
-                {"path", cachePath + "/nekobox_cache_" + QString::number(QDateTime::currentMSecsSinceEpoch()) + ".db"}
+                {"path", cachePath + "/nekobox_cache_" + QString::number(Configs::dataStore->cache_timestamp) + ".db"}
             };
             experimentalObj["cache_file"] = cache_file;
         }

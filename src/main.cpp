@@ -57,6 +57,17 @@ void loadTranslate(const QString& locale) {
     QT_TRANSLATE_NOOP("QPlatformTheme", "Defaults");
     QT_TRANSLATE_NOOP("QPlatformTheme", "Restore Defaults");
     QT_TRANSLATE_NOOP("QPlatformTheme", "Discard");
+    
+    QT_TRANSLATE_NOOP("QPlatformTheme", "Undo");
+    QT_TRANSLATE_NOOP("QPlatformTheme", "Redo");
+    QT_TRANSLATE_NOOP("QPlatformTheme", "Cut");
+    QT_TRANSLATE_NOOP("QPlatformTheme", "Copy");
+    QT_TRANSLATE_NOOP("QPlatformTheme", "Paste");
+    QT_TRANSLATE_NOOP("QPlatformTheme", "Delete");
+    QT_TRANSLATE_NOOP("QPlatformTheme", "Select All");
+    QT_TRANSLATE_NOOP("QPlatformTheme", "Stop");
+    QT_TRANSLATE_NOOP("QPlatformTheme", "Clear");
+    QT_TRANSLATE_NOOP("QPlatformTheme", "Copy Link Location");
     if (trans != nullptr) {
         trans->deleteLater();
     }

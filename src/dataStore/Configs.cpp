@@ -373,6 +373,7 @@ namespace Configs {
         ADD_MAP("speedtest_timeout_ms", speed_test_timeout_ms, integer);
         ADD_MAP("urltest_timeout_ms", url_test_timeout_ms, integer);
         ADD_MAP("show_system_dns", show_system_dns, boolean);
+        ADD_MAP("cache_timestamp", cache_timestamp, integer);
     STOP_MAP
 
     void DataStore::UpdateStartedId(int id) {

@@ -1914,7 +1914,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     </message>
     <message>
         <source>Resolve domain</source>
-        <translation>解析(服务器)域名</translation>
+        <translation>解析 此分组 服务器域名</translation>
     </message>
     <message>
         <source>Export %1 config</source>
