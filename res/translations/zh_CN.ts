@@ -391,7 +391,7 @@
     </message>
     <message>
         <source>Front proxy for group %1</source>
-        <translation>组 %1 的前端代理</translation>
+        <translation>前置代理 => %1</translation>
     </message>
     <message>
         <source>Landing proxy: </source>
@@ -399,7 +399,7 @@
     </message>
     <message>
         <source>Landing proxy for group %1</source>
-        <translation>为组 %1 设置代理服务器</translation>
+        <translation>落地代理 => %1</translation>
     </message>
     <message>
         <source>Discard</source>
