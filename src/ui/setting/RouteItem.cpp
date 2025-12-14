@@ -189,7 +189,7 @@ RouteItem::RouteItem(QWidget *parent, const std::shared_ptr<Configs::RoutingChai
         int randPart;
         if (baseName == "") {
             randPart = int(GetRandomUint64()%1000);
-            baseName = "rule_" + Int2String(randPart);
+            baseName = "rule_" + QString::number(randPart);
             lastNum = std::max(lastNum, randPart);
         }
         while (true) {
@@ -197,7 +197,7 @@ RouteItem::RouteItem(QWidget *parent, const std::shared_ptr<Configs::RoutingChai
             if (valueMap[baseName] > 1) {
                 valueMap[baseName]--;
                 randPart = int(GetRandomUint64()%1000);
-                baseName = "rule_" + Int2String(randPart);
+                baseName = "rule_" + QString::number(randPart);
                 lastNum = std::max(lastNum, randPart);
                 continue;
             }
@@ -531,7 +531,7 @@ void RouteItem::showTextEnterItem(const QStringList& items, bool isRuleSet) {
 
 void RouteItem::on_new_route_item_clicked() {
     auto routeItem = std::make_shared<Configs::RouteRule>();
-    routeItem->name = "rule_" + Int2String(++lastNum);
+    routeItem->name = "rule_" + QString::number(++lastNum);
     chain->Rules << routeItem;
     currentIndex = chain->Rules.size() - 1;
     ui->rule_name->setText(routeItem->name);

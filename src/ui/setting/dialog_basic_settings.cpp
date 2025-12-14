@@ -77,9 +77,9 @@ DialogBasicSettings::DialogBasicSettings(MainWindow *parent)
     {
         CACHE.updateMenuIcon = true;
     });
-    ui->url_timeout->setText(Int2String(Configs::dataStore->url_test_timeout_ms));
+    ui->url_timeout->setText(QString::number(Configs::dataStore->url_test_timeout_ms));
     ui->speedtest_mode->setCurrentIndex(Configs::dataStore->speed_test_mode);
-    ui->test_timeout->setText(Int2String(Configs::dataStore->speed_test_timeout_ms));
+    ui->test_timeout->setText(QString::number(Configs::dataStore->speed_test_timeout_ms));
     ui->simple_down_url->setText(Configs::dataStore->simple_dl_url);
 
     connect(ui->custom_inbound_edit, &QPushButton::clicked, this, [=,this] {
@@ -134,9 +134,9 @@ DialogBasicSettings::DialogBasicSettings(MainWindow *parent)
         adjustSize();
     });
     for (int i=7;i<=26;i++) {
-        ui->font_size->addItem(Int2String(i));
+        ui->font_size->addItem(QString::number(i));
     }
-    ui->font_size->setCurrentText(Int2String(qApp->font().pointSize()));
+    ui->font_size->setCurrentText(QString::number(qApp->font().pointSize()));
     connect(ui->font_size, &QComboBox::currentTextChanged, this, [=,this](const QString &sizeStr) {
         QSettings settings = getSettings();
         auto font = qApp->font();
@@ -194,7 +194,7 @@ DialogBasicSettings::DialogBasicSettings(MainWindow *parent)
     ui->ntp_port->setEnabled(Configs::dataStore->enable_ntp);
     ui->ntp_interval->setEnabled(Configs::dataStore->enable_ntp);
     ui->ntp_server->setText(Configs::dataStore->ntp_server_address);
-    ui->ntp_port->setText(Int2String(Configs::dataStore->ntp_server_port));
+    ui->ntp_port->setText(QString::number(Configs::dataStore->ntp_server_port));
     ui->ntp_interval->setCurrentText(Configs::dataStore->ntp_interval);
     connect(ui->ntp_enable, STATE_CHANGED, this, [=,this](const bool &state) {
         ui->ntp_server->setEnabled(state);
@@ -412,7 +412,7 @@ void DialogBasicSettings::on_core_settings_clicked() {
     //
     auto core_box_clash_api_l = new QLabel("Clash API Listen Port");
     core_box_clash_api = new MyLineEdit;
-    core_box_clash_api->setText(Configs::dataStore->core_box_clash_api > 0 ? Int2String(Configs::dataStore->core_box_clash_api) : "");
+    core_box_clash_api->setText(Configs::dataStore->core_box_clash_api > 0 ? QString::number(Configs::dataStore->core_box_clash_api) : "");
     layout->addWidget(core_box_clash_api_l, ++line, 0);
     layout->addWidget(core_box_clash_api, line, 1);
     //
