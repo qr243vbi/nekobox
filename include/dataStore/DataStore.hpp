@@ -51,6 +51,9 @@ namespace Configs {
     class DataStore : public JsonStore {
     public:
         virtual ConfJsMap _map() override;
+        // custom hardware info
+        QString sub_custom_hwid_params = ""; 
+        // Custom system parameters: format "hwid=value,os=value,osVersion=value,model=value"
         // Running
         int core_port = 19810;
         int started_id = -1919;

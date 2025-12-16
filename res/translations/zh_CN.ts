@@ -4,6 +4,18 @@
 <context>
     <name>DialogBasicSettings</name>
     <message>
+        <source>Custom System Parameters (optional)</source>
+        <translation>自訂系統參數（可選）</translation>
+    </message>
+    <message>
+             <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Format: hwid=value,os=value,osVersion=value,model=value&lt;/p&gt;&lt;p&gt;Leave empty to use default values. Only specify the parameters you want to override.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;格式： hwid=自訂值,os=自訂作業系統,osVersion=自訂版本,model=自訂型號&lt;/p&gt;&lt;p&gt;若要使用預設值，請留空。僅需指定您要覆寫的參數。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>hwid=custom_value,os=custom_os,osVersion=custom_version,model=custom_model</source>
+        <translation>hwid=自訂值,os=自訂作業系統,osVersion=自訂版本,model=自訂型號</translation>
+    </message>
+    <message>
         <source>Basic Settings</source>
         <translation>基本设置</translation>
     </message>

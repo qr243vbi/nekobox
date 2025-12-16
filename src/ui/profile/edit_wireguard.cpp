@@ -27,18 +27,18 @@ void EditWireguard::onStart(std::shared_ptr<Configs::ProxyEntity> _ent) {
     ui->mtu->setText(Int2String(bean->MTU));
     ui->sys_ifc->setChecked(bean->useSystemInterface);
     ui->local_addr->setText(bean->localAddress.join(","));
-    ui->workers->setText(Int2String(bean->workerCount));
+    ui->workers->setText(QString::number(bean->workerCount));
 
     ui->enable_amnezia->setChecked(bean->enable_amnezia);
-    ui->junk_packet_count->setText(Int2String(bean->junk_packet_count));
-    ui->junk_packet_min_size->setText(Int2String(bean->junk_packet_min_size));
-    ui->junk_packet_max_size->setText(Int2String(bean->junk_packet_max_size));
-    ui->init_packet_junk_size->setText(Int2String(bean->init_packet_junk_size));
+    ui->junk_packet_count->setText(QString::number(bean->junk_packet_count));
+    ui->junk_packet_min_size->setText(QString::number(bean->junk_packet_min_size));
+    ui->junk_packet_max_size->setText(QString::number(bean->junk_packet_max_size));
+    ui->init_packet_junk_size->setText(QString::number(bean->init_packet_junk_size));
     ui->response_packet_junk_size->setText(Int2String(bean->response_packet_junk_size));
-    ui->init_packet_magic_header->setText(Int2String(bean->init_packet_magic_header));
-    ui->response_packet_magic_header->setText(Int2String(bean->response_packet_magic_header));
-    ui->underload_packet_magic_header->setText(Int2String(bean->underload_packet_magic_header));
-    ui->transport_packet_magic_header->setText(Int2String(bean->transport_packet_magic_header));
+    ui->init_packet_magic_header->setText(QString::number(bean->init_packet_magic_header));
+    ui->response_packet_magic_header->setText(QString::number(bean->response_packet_magic_header));
+    ui->underload_packet_magic_header->setText(QString::number(bean->underload_packet_magic_header));
+    ui->transport_packet_magic_header->setText(QString::number(bean->transport_packet_magic_header));
 }
 
 bool EditWireguard::onEnd() {
