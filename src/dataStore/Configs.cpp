@@ -296,6 +296,7 @@ namespace Configs {
     }
 
     DECL_MAP(DataStore)
+        ADD_MAP("sub_custom_hwid_params", sub_custom_hwid_params, string);
         ADD_MAP("user_agent2", user_agent, string);
         ADD_MAP("test_url", test_latency_url, string);
         ADD_MAP("disable_tray", disable_tray, boolean);
