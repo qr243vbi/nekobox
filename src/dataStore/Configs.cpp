@@ -310,7 +310,7 @@ namespace Configs {
         ADD_MAP("mux_padding", mux_padding, boolean);
         ADD_MAP("mux_default_on", mux_default_on, boolean);
         ADD_MAP("test_concurrent", test_concurrent, integer);
-        ADD_MAP("ruleset_json_url", ruleset_json_url, string);
+    //    ADD_MAP("ruleset_json_url", ruleset_json_url, string);
    //     _add(new configItem("theme", &theme, itemType::string));
         ADD_MAP("custom_inbound", custom_inbound, string);
         ADD_MAP("custom_route", custom_route_global, string);
@@ -414,6 +414,7 @@ namespace Configs {
         ADD_MAP("outbound_domain_strategy", outbound_domain_strategy, string);
         ADD_MAP("sniffing_mode", sniffing_mode, integer);
         ADD_MAP("ruleset_mirror", ruleset_mirror, integer);
+        ADD_MAP("ruleset_json_url", ruleset_json_url, string);
         ADD_MAP("use_dns_object", use_dns_object, boolean);
         ADD_MAP("dns_object", dns_object, string);
         ADD_MAP("dns_final_out_direct", dns_final_out_direct, boolean);

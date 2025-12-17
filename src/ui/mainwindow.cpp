@@ -274,6 +274,10 @@ void MainWindow::set_icons_from_flag(bool text_under_buttons){
   // top bar set_icons
 }
 
+bool MainWindow::isShowRuleSetData(){
+  return showRuleSetData;
+}
+
 void UI_InitMainWindow() { mainwindow = new MainWindow; }
 
 std::map<std::string, std::string> jsonToMap(const QByteArray &byteArray) {
@@ -867,12 +871,12 @@ MainWindow::MainWindow(QWidget *parent)
 
     auto *actionUpdateRuleSet = new QAction(ui->menuRouting_Menu);
     actionUpdateRuleSet->setText(QCoreApplication::translate(
-      "MainWindow", "Update RuleSet"));
+      "MainWindow", "Update RuleSet Map"));
     ui->menuRouting_Menu->addAction(actionUpdateRuleSet);
     connect(
       actionUpdateRuleSet, &QAction::triggered, this,
-      [=, this]() {
-        runOnNewThread([=, this] {
+      [this]() {
+        runOnNewThread([this] {
           bool ruleset_updated = getRuleSet();
           if (!ruleset_updated){
             runOnUiThread([this] {
@@ -890,6 +894,44 @@ MainWindow::MainWindow(QWidget *parent)
       Qt::SingleShotConnection);
 
 
+    auto *actionUpdateRuleSetCache = new QAction(ui->menuRouting_Menu);
+    actionUpdateRuleSetCache->setText(QCoreApplication::translate(
+      "MainWindow", "Update RuleSet Cache"));
+    ui->menuRouting_Menu->addAction(actionUpdateRuleSetCache);
+    connect(
+      actionUpdateRuleSetCache, &QAction::triggered, this,
+      [this]() {
+        runOnNewThread([this] {
+          if (mu_download_update.try_lock()){
+            QMutex mut;
+            showRuleSetData = true;
+            for (auto & item : ruleSetMap){
+              QString url (QString::fromStdString(item.second));
+              QString str = Configs::get_cache_from_str(url);
+              mut.lock();
+              runOnUiThread([this,&str,&mut](){
+                this->setDownloadReport(DownloadProgressReport{str, 0, 0}, true);
+                UpdateDataView(true);
+                mut.unlock();
+              });
+              mut.lock();
+              mut.unlock();
+              NetworkRequestHelper::DownloadAsset(Configs::get_jsdelivr_link(url), str);
+            }
+
+            showRuleSetData = false;
+              runOnUiThread([=, this] {
+                MessageBoxInfo(tr("Update Response"),
+                             tr("Rulesets cache is updated"));
+
+               GetMainWindow()->setDownloadReport({}, false);
+               GetMainWindow()->UpdateDataView(true);
+              });
+            mu_download_update.unlock();
+          }
+        });
+      },
+      Qt::SingleShotConnection);
 
     ui->menuRouting_Menu->addSeparator();
 
@@ -1127,7 +1169,7 @@ bool MainWindow::getRuleSet(){
       QString err;
       for (int retry = 0; retry < 5; retry++) {
         auto err = NetworkRequestHelper::DownloadAsset(
-            Configs::get_jsdelivr_link(Configs::dataStore->ruleset_json_url), "srslist.json");
+            Configs::get_jsdelivr_link(Configs::dataStore->routing->ruleset_json_url), "srslist.json");
         if (err.isEmpty()) {
           QFile file("srslist.json");
           if (file.open(QIODevice::ReadOnly)){
@@ -1720,7 +1762,7 @@ void MainWindow::UpdateDataView(bool force) {
     return;
   }
   QString html;
-  if (showDownloadData) {
+  if (showDownloadData || showRuleSetData) {
     qint64 count = 0;
     if (currentDownloadReport.totalSize > 0)
       count = 10 * currentDownloadReport.downloadedSize /
@@ -1734,10 +1776,17 @@ void MainWindow::UpdateDataView(bool force) {
     }
     QString stat = ReadableSize(currentDownloadReport.downloadedSize) + "/" +
                    ReadableSize(currentDownloadReport.totalSize);
-    html =
+    if (showRuleSetData){
+      html =
+        QString(
+            "<p style='text-align:center;margin:0;'>Downloading %1</p>")
+            .arg(currentDownloadReport.fileName);
+    } else {
+      html =
         QString(
             "<p style='text-align:center;margin:0;'>Downloading %1: %2 %3</p>")
             .arg(currentDownloadReport.fileName, stat, progressText);
+    }
   }
   if (showSpeedtestData) {
     html +=

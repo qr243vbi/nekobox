@@ -1,5 +1,3 @@
-// DO NOT INCLUDE THIS
-
 #include "Const.hpp"
 #include "ConfigItem.hpp"
 #ifdef Q_OS_WIN
@@ -21,6 +19,8 @@ namespace Configs {
         bool use_dns_object = false;
         QString dns_object = "";
         bool dns_final_out_direct = false;
+        QString ruleset_json_url = "https://github.com/qr243vbi/ruleset/"
+            "raw/refs/heads/rule-set/srslist.json";
 
         // Misc
         QString domain_strategy = "AsIs";
@@ -172,8 +172,7 @@ namespace Configs {
         int dns_server_listen_port = 53;
         QString dns_v4_resp = "127.0.0.1";
         QString dns_v6_resp = "::1";
-        QString ruleset_json_url = "https://github.com/qr243vbi/ruleset/"
-            "raw/refs/heads/rule-set/srslist.json";
+
         QStringList dns_server_rules = {};
         bool enable_redirect = false;
         QString redirect_listen_address = "127.0.0.1";

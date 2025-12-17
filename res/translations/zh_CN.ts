@@ -1681,7 +1681,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>請求規則集清單錯誤：%1</translation>
     </message>
     <message>
-        <source>Update RuleSet</source>
+        <source>Update RuleSet Map</source>
         <translation>更新规则集</translation>
     </message>
     <message>

@@ -661,6 +661,7 @@
      <addaction name="menu_reset_traffic"/>
      <addaction name="actionSpeedtest_Selected"/>
     </widget-->
+    <addaction name="menu_profiles"/>
     <addaction name="separator"/>
     <addaction name="menu_start"/>
     <addaction name="menu_stop"/>
@@ -699,9 +700,9 @@
     <property name="title">
      <string>Profiles</string>
     </property>
+    <addaction name="menu_add_from_clipboard"/>
     <addaction name="actionAdd_new_Group"/>
     <addaction name="menu_add_from_input"/>
-    <addaction name="menu_add_from_clipboard"/>
     <addaction name="actionAdd_profile_from_File"/>
     <addaction name="menu_scan_qr"/>
     <addaction name="actionSpeedtest_Current"/>

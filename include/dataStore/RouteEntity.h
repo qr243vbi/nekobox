@@ -43,14 +43,25 @@ namespace Configs {
         return {"invalid"};
     }
 
-    inline QString get_rule_set_name(QString ruleSet)
-    {
-        if (auto url = QUrl(ruleSet); url.isValid() && url.fileName().contains(".srs"))
-        {
-            return url.fileName().replace(".srs", "-srs") + "-" + Int2String(qHash(url.toEncoded()));
-        }
-        return ruleSet;
+    QString get_rule_set_name_1(const QString & name);
+
+    inline QString get_rule_set_name( QString  name){
+        return get_rule_set_name_1(name);
+    };
+
+    inline QString get_cache_from_url(QUrl & url){
+        return  "rule_sets/" + 
+                url.scheme()  + "/" +
+                url.host() +
+                url.path();
     }
+
+    inline QString get_cache_from_str(QString & str){
+        QUrl url(str);
+        return get_cache_from_url(url);
+    }
+
+    QJsonObject get_rule_set_json(const QString &ruleSet);
 
     class RouteRule : public JsonStore {
     public:

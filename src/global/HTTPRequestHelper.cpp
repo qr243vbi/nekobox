@@ -147,6 +147,8 @@ namespace Configs_network {
             }
             MW_show_log(QString("SSL Errors: %1 %2").arg(error_str.join(","), Configs::dataStore->net_insecure ? "(Ignored)" : ""));
         });
+        bool show_rule_set;
+        if (!(show_rule_set = GetMainWindow()->isShowRuleSetData())){
         connect(_reply, &QNetworkReply::downloadProgress, _reply, [&](qint64 bytesReceived, qint64 bytesTotal)
         {
             runOnUiThread([=]{
@@ -154,14 +156,17 @@ namespace Configs_network {
                 GetMainWindow()->UpdateDataView();
             });
         });
+        }
         QEventLoop loop;
         connect(_reply, &QNetworkReply::finished, &loop, &QEventLoop::quit);
         loop.exec();
+        if(!show_rule_set){
         runOnUiThread([=]
         {
             GetMainWindow()->setDownloadReport({}, false);
             GetMainWindow()->UpdateDataView(true);
         });
+        }
         _reply->deleteLater();
         if(_reply->error() != QNetworkReply::NetworkError::NoError) {
             return _reply->errorString();
@@ -171,6 +176,13 @@ namespace Configs_network {
         auto file = QFile(filePath);
         if (file.exists()) {
             file.remove();
+        } else {
+            QFileInfo info(file);
+            QString path = info.absolutePath();
+            QDir dir(path);
+            if (!dir.exists()){
+                dir.mkpath(path);
+            }
         }
         if (!file.open(QIODevice::WriteOnly)) {
             return QObject::tr("Could not open file.");
