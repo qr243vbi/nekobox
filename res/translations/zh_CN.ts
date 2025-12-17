@@ -1661,6 +1661,10 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>隐藏窗口</translation>
     </message>
     <message>
+        <source>Rulesets cache is updated</source>
+        <translation>规则集缓存已更新</translation>
+    </message>
+    <message>
         <source>No routing profiles are updated</source>
         <translation>没有更新的个人资料</translation>
     </message>
