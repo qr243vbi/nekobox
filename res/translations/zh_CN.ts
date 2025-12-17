@@ -897,6 +897,10 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
         <translation>远程更新规则网站</translation>
     </message>
     <message>
+        <source>RuleSet download url</source>
+        <translation>规则集下载网址</translation>
+    </message>
+    <message>
         <source>Enable FakeIP</source>
         <translation>启用 FakeIP</translation>
     </message>
@@ -1679,6 +1683,10 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <source>Requesting rule-set list error: %1</source>
         <translation>請求規則集清單錯誤：%1</translation>
+    </message>
+    <message>
+        <source>Update RuleSet Cache</source>
+        <translation>更新规则集缓存</translation>
     </message>
     <message>
         <source>Update RuleSet Map</source>
