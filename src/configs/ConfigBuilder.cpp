@@ -16,6 +16,73 @@
 #include <QDateTime>
 
 namespace Configs {
+
+    QString get_rule_set_name_1(const QString &ruleSet){
+        QUrl url;
+        QString filename;
+        if ((url = QUrl(ruleSet), url.isValid()) && 
+            (filename = url.fileName(), 
+                (filename.endsWith(".srs")) || (filename.endsWith(".json")))
+        )
+        {
+            return filename.replace(".", "-") + "-" + 
+                QString::number(qHash(url.toEncoded()));
+        } else {
+            return ruleSet;
+        }
+    }
+
+    QJsonObject get_rule_set_json(const QString &ruleSet){
+        QString filename;
+        QString format;
+        QUrl url;
+
+        bool json = false;
+        bool binary = false;
+        if ((url = QUrl(ruleSet), url.isValid()) && 
+            (filename = url.fileName(), 
+                (binary = filename.endsWith(".srs")) || (json = filename.endsWith(".json")))
+        )
+        {
+            filename = filename.replace(".", "-") + "-" + 
+                QString::number(qHash(url.toEncoded()));
+            label1:
+            if (json){
+                format = "source";
+            } else if (binary){
+                format = "binary";
+            }
+
+            QFileInfo CachePath (get_cache_from_url(url));
+            if (CachePath.exists() || CachePath.isFile()){
+                return QJsonObject{
+                    {"type", "file"},
+                    {"format", format},
+                    {"tag", filename},
+                    {"file", CachePath.absoluteFilePath()}
+                };
+            }
+        
+            return QJsonObject{
+                {"type", "remote"},
+                {"format", format},
+                {"tag", filename},
+                {"url", get_jsdelivr_link(url.toString())} 
+            };
+        } else {
+            auto iter = ruleSetMap.find(ruleSet.toStdString());
+            auto & second = iter->second;
+            if(iter != ruleSetMap.end() && 
+                ((json = second.ends_with(".json")) || 
+                (binary = second.ends_with(".srs"))) ||
+                (url = QUrl(ruleSet), url.isValid())) {
+                    filename = ruleSet;
+                    goto label1;
+            }
+        }
+        return QJsonObject{};
+    }
+
     QString genTunName() {
         auto tun_name = "nekobox-tun";
         return tun_name;
@@ -792,41 +859,24 @@ namespace Configs {
 
             auto ruleSetArray = QJsonArray();
             for (const auto &item: *neededRuleSets) {
-                if(auto url = QUrl(item); url.isValid() && url.fileName().contains(".srs")) {
-                    ruleSetArray += QJsonObject{
-                        {"type", "remote"},
-                        {"tag", get_rule_set_name(item)},
-                        {"format", "binary"},
-                        {"url", item},
-                    };
-                }
-                else {
-                    auto iter = ruleSetMap.find(item.toStdString());
-                    if(iter != ruleSetMap.end()) {
-                        ruleSetArray += QJsonObject{
-                            {"type", "remote"},
-                            {"tag", item},
-                            {"format", "binary"},
-                            {"url", get_jsdelivr_link(QString::fromStdString(iter->second))},
-                        };
-                    }
+                auto json_object = get_rule_set_json(item);
+                if (!json_object.isEmpty()){
+                    ruleSetArray += json_object;
                 }
             }
             if (dataStore->adblock_enable) {
-                std::string str;
-                auto iter = ruleSetMap.find("nekobox-addblocksingbox");
-                if (iter != ruleSetMap.end()){
-                    str = iter->second;
-                } else {
+                std::string str = "nekobox-addblocksingbox";
+                auto iter = ruleSetMap.find(str);
+                if (iter == ruleSetMap.end()){
                     str = "https://raw.githubusercontent.com/217heidai/adblockfilters/main/rules/adblocksingbox.srs";
+                } else {
+                    str = iter->second;
                 }
-                ruleSetArray += QJsonObject{
-                    {"type", "remote"},
-                    {"tag", "nekobox-adblocksingbox"},
-                    {"format", "binary"},
-                    {"url", get_jsdelivr_link(
-                    QString::fromStdString(str))},
-                };
+                auto item = QString::fromStdString(str);
+                auto json_object = get_rule_set_json(item);
+                if (!json_object.isEmpty()){
+                    ruleSetArray += json_object;
+                }
             }
             routeObj["rule_set"] = ruleSetArray;
         }

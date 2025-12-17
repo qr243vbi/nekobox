@@ -616,6 +616,7 @@ void DialogEditProfile::on_certificate_edit_clicked() {
 
 void DialogEditProfile::on_apply_to_group_clicked() {
   if (apply_to_group_ui.empty()) {
+    apply_to_group_ui[ui->address] = new FloatCheckBox(ui->address, this);
     apply_to_group_ui[ui->multiplex] = new FloatCheckBox(ui->multiplex, this);
     apply_to_group_ui[ui->sni] = new FloatCheckBox(ui->sni, this);
     apply_to_group_ui[ui->alpn] = new FloatCheckBox(ui->alpn, this);
@@ -689,7 +690,13 @@ void DialogEditProfile::do_apply_to_group(
   };
 
   if (bean != nullptr) {
-    if (key == ui->multiplex) {
+    if (key == ui->name){
+      copyBean(&ent->bean->name);
+    } else if (key == ui->port){
+      copyBean(&ent->bean->serverPort);
+    } else if (key == ui->address){
+      copyBean(&ent->bean->serverAddress);
+    } else if (key == ui->multiplex) {
       copyBean(&ent->bean->mux_state);
     } else if (key == ui->brutal_enable) {
       copyBean(&ent->bean->enable_brutal);

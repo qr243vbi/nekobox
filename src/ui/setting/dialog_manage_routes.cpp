@@ -117,6 +117,7 @@ DialogManageRoutes::DialogManageRoutes(QWidget *parent, bool EditRouteProfiles) 
             ui->dns_object->setPlainText(QJsonObject2QString(obj, false));
         }
     });
+    ui->ruleset_json_url->setText(Configs::dataStore->routing->ruleset_json_url);
     ui->sniffing_mode->setCurrentIndex(Configs::dataStore->routing->sniffing_mode);
     ui->ruleset_mirror->setCurrentIndex(Configs::dataStore->routing->ruleset_mirror);
     ui->outbound_domain_strategy->setCurrentText(Configs::dataStore->routing->outbound_domain_strategy);
@@ -204,7 +205,7 @@ void DialogManageRoutes::accept() {
         MessageBoxInfo(tr("Invalid settings"), tr("DNS Rules are not valid"));
         return;
     }
-
+    Configs::dataStore->routing->ruleset_json_url = ui->ruleset_json_url->text();
     Configs::dataStore->routing->sniffing_mode = ui->sniffing_mode->currentIndex();
     Configs::dataStore->routing->ruleset_mirror = ui->ruleset_mirror->currentIndex();
     Configs::dataStore->routing->domain_strategy = ui->domainStrategyCombo->currentText();

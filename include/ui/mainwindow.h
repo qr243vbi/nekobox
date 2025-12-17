@@ -112,6 +112,8 @@ public:
 
     void refresh_groups();
 
+    bool isShowRuleSetData();
+
     void refresh_status(const QString &traffic_update = "");
 
     void update_traffic_graph(int proxyDl, int proxyUp, int directDl, int directUp);
@@ -272,6 +274,8 @@ private:
     QString currentSptProfileName;
     bool showSpeedtestData = false;
     bool showDownloadData = false;
+    bool showRuleSetData = false;
+
     libcore::SpeedTestResult currentTestResult;
     DownloadProgressReport currentDownloadReport; // could use a list, but don't think can show more than one anyways
 
