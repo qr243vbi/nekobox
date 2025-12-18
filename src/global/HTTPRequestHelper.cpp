@@ -7,6 +7,7 @@
 #include <QTimer>
 #include <QFile>
 #include <QApplication>
+#include <QFileInfo>
 #include <QMap>
 #include <QStringList>
 #include "include/dataStore/Configs.hpp"
