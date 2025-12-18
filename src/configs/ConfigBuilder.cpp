@@ -37,16 +37,26 @@ namespace Configs {
         QString format;
         QUrl url;
 
+        bool reset = false;
+
         bool json = false;
         bool binary = false;
-        if ((url = QUrl(ruleSet), url.isValid()) && 
-            (filename = url.fileName(), 
-                (binary = filename.endsWith(".srs")) || (json = filename.endsWith(".json")))
+
+        std::string strUrl;
+
+        label1:
+
+        if ((url = (reset ? QUrl(QString::fromStdString(strUrl)) : QUrl(ruleSet)), url.isValid()) &&
+            (filename = url.fileName(), (binary = filename.endsWith(".srs")) || (json = filename.endsWith(".json")))
         )
         {
-            filename = filename.replace(".", "-") + "-" + 
-                QString::number(qHash(url.toEncoded()));
-            label1:
+            QString tag;
+            if (reset){
+                tag = ruleSet;
+            } else {
+                tag = filename.replace(".", "-") + "-" +
+                    QString::number(qHash(url.toEncoded()));
+            }
             if (json){
                 format = "source";
             } else if (binary){
@@ -62,22 +72,19 @@ namespace Configs {
                     {"file", CachePath.absoluteFilePath()}
                 };
             }
-        
+
             return QJsonObject{
                 {"type", "remote"},
                 {"format", format},
                 {"tag", filename},
                 {"url", get_jsdelivr_link(url.toString())} 
             };
-        } else {
+        } else if (!reset){
             auto iter = ruleSetMap.find(ruleSet.toStdString());
-            auto & second = iter->second;
-            if(iter != ruleSetMap.end() && 
-                ((json = second.ends_with(".json")) || 
-                (binary = second.ends_with(".srs"))) ||
-                (url = QUrl(ruleSet), url.isValid())) {
-                    filename = ruleSet;
-                    goto label1;
+            if(iter != ruleSetMap.end()){
+                reset = true;
+                strUrl = iter->second;
+                goto label1;
             }
         }
         return QJsonObject{};
@@ -89,13 +96,13 @@ namespace Configs {
     }
 
     void MergeJson(const QJsonObject &custom, QJsonObject &outbound) {
-        // 合并
+        //
         if (custom.isEmpty()) return;
         for (const auto &key: custom.keys()) {
             if (outbound.contains(key)) {
                 auto v = custom[key];
                 auto v_orig = outbound[key];
-                if (v.isObject() && v_orig.isObject()) { // isObject 则合并？
+                if (v.isObject() && v_orig.isObject()) { //
                     auto vo = v.toObject();
                     QJsonObject vo_orig = v_orig.toObject();
                     MergeJson(vo, vo_orig);
