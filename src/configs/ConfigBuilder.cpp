@@ -66,24 +66,29 @@ namespace Configs {
             QFileInfo CachePath (get_cache_from_url(url));
             if (CachePath.exists() || CachePath.isFile()){
                 return QJsonObject{
-                    {"type", "file"},
+                    {"type", "local"},
                     {"format", format},
-                    {"tag", filename},
-                    {"file", CachePath.absoluteFilePath()}
+                    {"tag", tag},
+                    {"path", CachePath.absoluteFilePath()}
                 };
             }
 
             return QJsonObject{
                 {"type", "remote"},
                 {"format", format},
-                {"tag", filename},
+                {"tag", tag},
                 {"url", get_jsdelivr_link(url.toString())} 
             };
         } else if (!reset){
+
             auto iter = ruleSetMap.find(ruleSet.toStdString());
             if(iter != ruleSetMap.end()){
                 reset = true;
                 strUrl = iter->second;
+                goto label1;
+            } else if (ruleSet == "nekobox-adblocksingbox"){
+                reset = true;
+                strUrl = "https://raw.githubusercontent.com/217heidai/adblockfilters/main/rules/adblocksingbox.srs";
                 goto label1;
             }
         }
@@ -872,14 +877,8 @@ namespace Configs {
                 }
             }
             if (dataStore->adblock_enable) {
-                std::string str = "nekobox-addblocksingbox";
-                auto iter = ruleSetMap.find(str);
-                if (iter == ruleSetMap.end()){
-                    str = "https://raw.githubusercontent.com/217heidai/adblockfilters/main/rules/adblocksingbox.srs";
-                } else {
-                    str = iter->second;
-                }
-                auto item = QString::fromStdString(str);
+                QString item = "nekobox-adblocksingbox";
+                qDebug() << item;
                 auto json_object = get_rule_set_json(item);
                 if (!json_object.isEmpty()){
                     ruleSetArray += json_object;
