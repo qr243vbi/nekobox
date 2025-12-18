@@ -9,6 +9,7 @@
 #include <QApplication>
 #include <QFileInfo>
 #include <QMap>
+#include <QDir>
 #include <QStringList>
 #include "include/dataStore/Configs.hpp"
 #include "include/ui/mainwindow.h"
