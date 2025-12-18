@@ -617,6 +617,8 @@ void DialogEditProfile::on_certificate_edit_clicked() {
 void DialogEditProfile::on_apply_to_group_clicked() {
   if (apply_to_group_ui.empty()) {
     apply_to_group_ui[ui->address] = new FloatCheckBox(ui->address, this);
+    apply_to_group_ui[ui->name] = new FloatCheckBox(ui->name, this);
+    apply_to_group_ui[ui->port] = new FloatCheckBox(ui->port, this);
     apply_to_group_ui[ui->multiplex] = new FloatCheckBox(ui->multiplex, this);
     apply_to_group_ui[ui->sni] = new FloatCheckBox(ui->sni, this);
     apply_to_group_ui[ui->alpn] = new FloatCheckBox(ui->alpn, this);
