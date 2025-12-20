@@ -9,11 +9,13 @@ public:
   ResourceManager();
   QString core_path;
   QString resources_path;
+  QString latest_path = "";
   QString getLink(QString str);
   bool saveLink(QString str, QString path);
   bool symlinks_supported;
 
   virtual ConfJsMap _map() override;
+  QString getLatestPath();
 };
 
 extern ResourceManager *resourceManager;

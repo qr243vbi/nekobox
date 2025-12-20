@@ -906,20 +906,26 @@ MainWindow::MainWindow(QWidget *parent)
             QMutex mut;
             showRuleSetData = true;
             for (auto & item : ruleSetMap){
-              QString url (QString::fromStdString(item.second));
+              if (!showRuleSetData){
+                break;
+              }
+              QString url(QString::fromStdString(item.second));
               QString str = Configs::get_cache_from_str(url);
-              mut.lock();
-              runOnUiThread([this,&str,&mut](){
-                this->setDownloadReport(DownloadProgressReport{str, 0, 0}, true);
-                UpdateDataView(true);
+              QFile cache_file(str);
+              if (!cache_file.exists()){
+                mut.lock();
+                runOnUiThread([this,&str,&mut](){
+                  this->setDownloadReport(DownloadProgressReport{str, 0, 0}, true);
+                  UpdateDataView(true);
+                  mut.unlock();
+                });
+                mut.lock();
                 mut.unlock();
-              });
-              mut.lock();
-              mut.unlock();
-              NetworkRequestHelper::DownloadAsset(Configs::get_jsdelivr_link(url), str);
+                NetworkRequestHelper::DownloadAsset(Configs::get_jsdelivr_link(url), str);
+              }
             }
-
-            showRuleSetData = false;
+            if (showRuleSetData){
+              showRuleSetData = false;
               runOnUiThread([=, this] {
                 MessageBoxInfo(tr("Update Response"),
                              tr("Rulesets cache is updated"));
@@ -927,11 +933,28 @@ MainWindow::MainWindow(QWidget *parent)
                GetMainWindow()->setDownloadReport({}, false);
                GetMainWindow()->UpdateDataView(true);
               });
+            }
             mu_download_update.unlock();
           }
         });
       },
       Qt::SingleShotConnection);
+
+    auto *actionClearRuleSetCache = new QAction(ui->menuRouting_Menu);
+    actionClearRuleSetCache->setText(QCoreApplication::translate(
+      "MainWindow", "Clear RuleSet Cache"));
+    ui->menuRouting_Menu->addAction(actionClearRuleSetCache);
+    connect(
+      actionClearRuleSetCache, &QAction::triggered, this,
+      [this]() {
+        runOnNewThread([this] {
+          showRuleSetData = false;
+          mu_download_update.lock();
+          mu_download_update.unlock();
+          MoveDirToTrash("rule_sets");
+        });
+      }, Qt::SingleShotConnection
+    );
 
     ui->menuRouting_Menu->addSeparator();
 
@@ -3729,15 +3752,16 @@ skip1:
         }
         qDebug() << release_download_url;
         QString errors;
+        QString archive_path = QString("temp/") + archive_name;
         if (!release_download_url.isEmpty()) {
 
           qDebug() << "REQUEST 1";
-          QFile archive_file1(archive_name);
+          QFile archive_file1(archive_path);
           qDebug() << archive_file1.fileName();
           if (!archive_file1.exists()) {
             qDebug() << "REQUEST 2";
             auto res = NetworkRequestHelper::DownloadAsset(release_download_url,
-                                                           archive_name);
+                                                           archive_path);
             if (!res.isEmpty()) {
               errors += res;
             }
@@ -3751,7 +3775,7 @@ skip1:
                 QObject::tr("Update is ready, restart to install?"));
             if (q == QMessageBox::StandardButton::Yes) {
               this->exit_reason = 1;
-              this->archive_name = archive_name;
+              this->archive_name = archive_path;
               on_menu_exit_triggered();
             }
           } else {

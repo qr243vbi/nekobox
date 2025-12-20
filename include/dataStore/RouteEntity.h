@@ -162,6 +162,10 @@ namespace Configs {
         QString GetSimpleRules(simpleAction action);
 
         QString UpdateSimpleRules(const QString& content, simpleAction action);
+
+        QString getNotes() const;
+
+        bool saveNotes(const QString&);
     private:
         static bool need_add_simple_rule_item(const QString& content, ruleType type);
 

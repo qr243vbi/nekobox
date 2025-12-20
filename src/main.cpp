@@ -108,7 +108,8 @@ int main(int argc, char** argv) {
             Configs::dataStore->appdataDir = Configs::dataStore->argv.at(appdataIndex + 1);
         }
     }
-    if (Configs::dataStore->argv.contains("-tray")) Configs::dataStore->flag_tray = true;
+    
+    if (Configs::dataStore->auto_hide || Configs::dataStore->argv.contains("-tray")) Configs::dataStore->flag_tray = true;
     if (Configs::dataStore->argv.contains("-debug")) Configs::dataStore->flag_debug = true;
     if (Configs::dataStore->argv.contains("-flag_restart_tun_on")) Configs::dataStore->flag_restart_tun_on = true;
     if (Configs::dataStore->argv.contains("-flag_restart_dns_set")) Configs::dataStore->flag_dns_set = true;
@@ -144,7 +145,7 @@ int main(int argc, char** argv) {
 	{
 		QString wd_abs = wd.absoluteFilePath("config");
 		QDir::setCurrent(wd_abs);
-		QDir("temp").removeRecursively();
+		MoveDirToTrash("temp");
 		dir = QDir(wd_abs);
 	
 		QFileInfo fileInfo(wd_abs);

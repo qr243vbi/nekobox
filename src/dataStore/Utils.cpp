@@ -2,7 +2,8 @@
 
 #include "3rdparty/base64.h"
 #include "3rdparty/QThreadCreateThread.hpp"
-
+#include <QDir>
+#include <QFileInfo>
 #include <random>
 
 #include <QApplication>
@@ -66,13 +67,22 @@ QString GetQueryValue(const QUrlQuery &q, const QString &key, const QString &def
     return a;
 }
 
+void MoveDirToTrash(const QString &path){
+    QDir dir(path);
+    if (dir.exists()){
+        if (!QFile::moveToTrash(path)){
+            dir.removeRecursively();
+        }
+    }
+};
+
 QString GetRandomString(int randomStringLength) {
-    std::random_device rd;
-    std::mt19937 mt(rd());
+    static std::random_device rd;
+    static std::mt19937 mt(rd());
 
-    const QString possibleCharacters("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789");
+    static const QString possibleCharacters("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789");
 
-    std::uniform_int_distribution<int> dist(0, possibleCharacters.length() - 1);
+    static std::uniform_int_distribution<int> dist(0, possibleCharacters.length() - 1);
 
     QString randomString;
     for (int i = 0; i < randomStringLength; ++i) {
@@ -83,9 +93,9 @@ QString GetRandomString(int randomStringLength) {
 }
 
 quint64 GetRandomUint64() {
-    std::random_device rd;
-    std::mt19937 mt(rd());
-    std::uniform_int_distribution<quint64> dist;
+    static std::random_device rd;
+    static std::mt19937 mt(rd());
+    static std::uniform_int_distribution<quint64> dist;
     return dist(mt);
 }
 
@@ -179,15 +189,29 @@ bool WriteFileText(const QString &path, const QString &notes){
     return WriteFileText(file, notes);
 }
 
-bool WriteFileText(QFile &file, const QString &notes){
-    if (file.open(QIODevice::WriteOnly)){
-        QTextStream out(&file);
-        out << notes;
-        file.close();
-        return true;
-    } else {
-        return false;
+bool WriteFile(const QString &path, const QByteArray &notes){
+    QFile file(path);
+    return WriteFile(file, notes);
+}
+
+bool WriteFile(QFile &file, const QByteArray &notes){
+    QDir dir = QFileInfo(file).absoluteDir();
+    if (!dir.exists()) {
+        if (!dir.mkpath(".")) {  
+            return false;
+        }
     }
+    bool ret = false;
+    if (file.open(QIODevice::WriteOnly)){
+        ret = file.write(notes) > -1;
+        file.close();
+    } 
+    return ret;
+}
+
+bool WriteFileText(QFile &file, const QString &notes){
+    QByteArray array = notes.toUtf8();
+    return WriteFile(file, array);
 }
 
 int MkPort() {

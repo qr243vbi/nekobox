@@ -787,6 +787,16 @@ namespace Configs {
         ADD_MAP("default_outbound", defaultOutboundID, integer);
     STOP_MAP
 
+    bool RoutingChain::saveNotes(const QString &notes){
+        QString path = ("notes/route_profiles/" + QString::number(this->id) + ".note.txt");
+        return WriteFileText(path, notes);
+    }
+
+    QString RoutingChain::getNotes() const{
+        QString str = ("notes/route_profiles/" + QString::number(this->id) + ".note.txt");
+        return ReadFileText(str);
+    };
+
     RoutingChain::RoutingChain(const RoutingChain& other)  : JsonStore(other) {
         id = other.id;
         chain_name = QString(other.chain_name);

@@ -72,6 +72,7 @@ DialogBasicSettings::DialogBasicSettings(MainWindow *parent)
     D_LOAD_INT(test_concurrent)
     D_LOAD_STRING(test_latency_url)
     D_LOAD_BOOL(disable_tray)
+    D_LOAD_BOOL(auto_hide)
     ui->set_text_under_menu_icons->setChecked(settings.value("text_under_buttons", true).toBool());
     connect(ui->set_text_under_menu_icons, STATE_CHANGED, this, [=,this]
     {
@@ -319,6 +320,7 @@ void DialogBasicSettings::accept() {
     Configs::dataStore->net_skip_proxy = !ui->net_use_proxy->isChecked();
     D_SAVE_BOOL(sub_clear)
     D_SAVE_BOOL(net_insecure)
+    D_SAVE_BOOL(auto_hide)
     D_SAVE_BOOL(sub_send_hwid)
     D_SAVE_STRING(sub_custom_hwid_params)
     D_SAVE_INT_ENABLE(sub_auto_update, sub_auto_update_enable)

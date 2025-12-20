@@ -8,12 +8,13 @@
 namespace Configs
 {
     bool Group::saveNotes(const QString &notes){
-        QString path = ("groups/" + QString::number(this->id) + ".note.txt");
+ //       qDebug() << "OnSaveNotes";
+        QString path = ("notes/groups/" + QString::number(this->id) + ".note.txt");
         return WriteFileText(path, notes);
     }
 
     QString Group::getNotes() const{
-        QString str = ("groups/" + QString::number(this->id) + ".note.txt");
+        QString str = ("notes/groups/" + QString::number(this->id) + ".note.txt");
         return ReadFileText(str);
     };
 

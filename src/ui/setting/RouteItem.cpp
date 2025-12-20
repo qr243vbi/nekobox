@@ -9,7 +9,7 @@
 #include <include/global/HTTPRequestHelper.hpp>
 #include <QRadioButton>
 
-QList<QString> default_outbound_choose = {"proxy", "direct"};
+QList<QString> default_outbound_choose = {"proxy", "direct", "block"};
 
 void adjustComboBoxWidth(const QComboBox *comboBox) {
     int maxWidth = 0;
@@ -250,9 +250,18 @@ RouteItem::RouteItem(QWidget *parent, const std::shared_ptr<Configs::RoutingChai
     simpleBlock->setPlainText(chain->GetSimpleRules(Configs::block));
     simpleProxy->setPlainText(chain->GetSimpleRules(Configs::proxy));
 
-    connect(ui->tabWidget->tabBar(), &QTabBar::currentChanged, this, [=,this]()
+    connect(ui->tabWidget->tabBar(), &QTabBar::currentChanged, this, [this]()
     {
-        if (ui->tabWidget->tabBar()->currentIndex() == 1)
+        auto tabBar = ui->tabWidget->tabBar();
+        int index = tabBar->currentIndex();
+
+        if (!route_item_on_notes){
+            if (index == 3){
+                ui->notes->setPlainText(this->chain->getNotes());
+                route_item_on_notes = true;
+            }    
+        }
+        if (index == 2)
         {
             QString res;
             res += chain->UpdateSimpleRules(simpleDirect->toPlainText(), Configs::direct);
@@ -395,6 +404,10 @@ void RouteItem::accept() {
     chain->chain_name = ui->route_name->text();
     chain->update_url = ui->url->text();
     chain->skip_update = ui->skip_update->isChecked();
+
+    if (route_item_on_notes){
+        this->chain->saveNotes(ui->notes->toPlainText());
+    }
 
     if (chain->chain_name == "") {
         MessageBoxWarning(tr("Invalid operation"), tr("Cannot create Route Profile with empty name"));

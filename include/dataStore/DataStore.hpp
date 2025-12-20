@@ -77,12 +77,13 @@ namespace Configs {
         bool flag_use_appdata = false;
         bool flag_many = false;
         bool flag_tray = false;
+        bool auto_hide = false;
         bool flag_debug = false;
         bool flag_restart_tun_on = false;
         bool flag_dns_set = false;
 
         // Saved
-        int cache_timestamp = 0;
+        QString cache_database = "";
 
         // Misc
         QString log_level = "info";

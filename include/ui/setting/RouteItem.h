@@ -63,6 +63,8 @@ private:
 
     AutoCompleteTextEdit* simpleProxy;
 
+    bool route_item_on_notes = false;
+
     [[nodiscard]] int getIndexOf(const QString& name) const;
 
     void showSelectItem(const QStringList& items, const QString& currentItem);
