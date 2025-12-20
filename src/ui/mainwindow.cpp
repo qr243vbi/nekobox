@@ -955,7 +955,17 @@ MainWindow::MainWindow(QWidget *parent)
           MoveDirToTrash("rule_sets/ftp");
           MoveDirToTrash("rule_sets/http");
           MoveDirToTrash("rule_sets/https");
-          UpdateDataView(true);
+          
+          QMutex mut;
+          mut.lock();
+          runOnUiThread([this, &mut](){
+            showRuleSetData = false;
+            setDownloadReport({}, false);
+            UpdateDataView(true);
+            mut.unlock();
+          });
+          mut.lock();
+          mut.unlock();
         });
       }, Qt::SingleShotConnection
     );
