@@ -109,7 +109,7 @@ int main(int argc, char** argv) {
         }
     }
     
-    if (Configs::dataStore->auto_hide || Configs::dataStore->argv.contains("-tray")) Configs::dataStore->flag_tray = true;
+    if (Configs::dataStore->argv.contains("-tray")) Configs::dataStore->flag_tray = true;
     if (Configs::dataStore->argv.contains("-debug")) Configs::dataStore->flag_debug = true;
     if (Configs::dataStore->argv.contains("-flag_restart_tun_on")) Configs::dataStore->flag_restart_tun_on = true;
     if (Configs::dataStore->argv.contains("-flag_restart_dns_set")) Configs::dataStore->flag_dns_set = true;
