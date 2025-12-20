@@ -98,6 +98,8 @@ QString GetQueryValue(const QUrlQuery &q, const QString &key, const QString &def
 
 QString GetRandomString(int randomStringLength);
 
+void MoveDirToTrash(const QString &path);
+
 quint64 GetRandomUint64();
 
 // JSON
@@ -140,6 +142,9 @@ QString ReadFileText( QFile &path);
 
 bool WriteFileText(const QString &path, const QString &text);
 bool WriteFileText(QFile &file, const QString &notes);
+
+bool WriteFile(const QString &path, const QByteArray &text);
+bool WriteFile(QFile &file, const QByteArray &notes);
 // Validators
 
 bool IsIpAddress(const QString &str);
@@ -147,6 +152,7 @@ bool IsIpAddress(const QString &str);
 bool IsIpAddressV4(const QString &str);
 
 bool IsIpAddressV6(const QString &str);
+
 
 // [2001:4860:4860::8888] -> 2001:4860:4860::8888
 inline QString UnwrapIPV6Host(QString &str) {

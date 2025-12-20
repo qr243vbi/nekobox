@@ -129,6 +129,10 @@
         <translation>安全</translation>
     </message>
     <message>
+        <source>Hide at startup</source>
+        <translation>啟動時隱藏</translation>
+    </message>
+    <message>
         <source>Connection statistics</source>
         <translation>连接统计</translation>
     </message>
@@ -1691,6 +1695,10 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <source>Update RuleSet Cache</source>
         <translation>更新规则集缓存</translation>
+    </message>
+    <message>
+        <source>Clear RuleSet Cache</source>
+        <translation>清除規則集快取</translation>
     </message>
     <message>
         <source>Update RuleSet Map</source>

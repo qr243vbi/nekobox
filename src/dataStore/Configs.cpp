@@ -292,7 +292,6 @@ namespace Configs {
     // datastore
 
     DataStore::DataStore() : JsonStore() {
-
     }
 
     DECL_MAP(DataStore)
@@ -301,6 +300,7 @@ namespace Configs {
         ADD_MAP("test_url", test_latency_url, string);
         ADD_MAP("disable_tray", disable_tray, boolean);
         ADD_MAP("current_group", current_group, integer);
+        ADD_MAP("auto_hide", auto_hide, boolean);
         ADD_MAP("inbound_address", inbound_address, string);
         ADD_MAP("inbound_socks_port", inbound_socks_port, integer);
         ADD_MAP("random_inbound_port", random_inbound_port, boolean);
@@ -374,7 +374,7 @@ namespace Configs {
         ADD_MAP("speedtest_timeout_ms", speed_test_timeout_ms, integer);
         ADD_MAP("urltest_timeout_ms", url_test_timeout_ms, integer);
         ADD_MAP("show_system_dns", show_system_dns, boolean);
-        ADD_MAP("cache_timestamp", cache_timestamp, integer);
+        ADD_MAP("cache_database", cache_database, string);
     STOP_MAP
 
     void DataStore::UpdateStartedId(int id) {

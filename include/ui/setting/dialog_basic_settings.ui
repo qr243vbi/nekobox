@@ -39,7 +39,7 @@
       </size>
      </property>
      <property name="currentIndex">
-      <number>0</number>
+      <number>1</number>
      </property>
      <widget class="QWidget" name="tab_1">
       <attribute name="title">
@@ -379,31 +379,14 @@
          </item>
          <item>
           <widget class="QGroupBox" name="connection_statistics_box">
-           <layout class="QHBoxLayout" name="horizontalLayout_15">
+           <layout class="QVBoxLayout" name="verticalLayout_7">
             <item>
-             <widget class="QLabel" name="label_9">
+             <widget class="QCheckBox" name="connection_statistics">
               <property name="text">
                <string>Connection statistics</string>
               </property>
              </widget>
             </item>
-            <item>
-             <widget class="QCheckBox" name="connection_statistics">
-              <property name="text">
-               <string>Enable</string>
-              </property>
-             </widget>
-            </item>
-           </layout>
-          </widget>
-         </item>
-        </layout>
-       </item>
-       <item row="3" column="0">
-        <layout class="QHBoxLayout" name="style_h_3">
-         <item>
-          <widget class="QGroupBox" name="horizontalGroupBox_5">
-           <layout class="QVBoxLayout" name="verticalLayout_5">
             <item>
              <widget class="QCheckBox" name="start_minimal">
               <property name="sizePolicy">
@@ -418,6 +401,23 @@
              </widget>
             </item>
             <item>
+             <widget class="QCheckBox" name="show_sys_dns">
+              <property name="text">
+               <string>Show System DNS option</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="3" column="0">
+        <layout class="QHBoxLayout" name="style_h_3">
+         <item>
+          <widget class="QGroupBox" name="horizontalGroupBox_5">
+           <layout class="QVBoxLayout" name="verticalLayout_5">
+            <item>
              <widget class="QCheckBox" name="disable_tray">
               <property name="text">
                <string>Disable tray</string>
@@ -425,16 +425,16 @@
              </widget>
             </item>
             <item>
-             <widget class="QCheckBox" name="show_sys_dns">
+             <widget class="QCheckBox" name="set_text_under_menu_icons">
               <property name="text">
-               <string>Show System DNS option</string>
+               <string>Set text under menu icons</string>
               </property>
              </widget>
             </item>
             <item>
-             <widget class="QCheckBox" name="set_text_under_menu_icons">
+             <widget class="QCheckBox" name="auto_hide">
               <property name="text">
-               <string>Set text under menu icons</string>
+               <string>Hide at startup</string>
               </property>
              </widget>
             </item>
@@ -626,14 +626,13 @@
          </property>
         </widget>
        </item>
-       
        <item row="4" column="0">
         <widget class="QLabel" name="label_custom_hwid_params">
-         <property name="text">
-          <string>Custom System Parameters (optional)</string>
-         </property>
          <property name="toolTip">
           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Format: hwid=value,os=value,osVersion=value,model=value&lt;/p&gt;&lt;p&gt;Leave empty to use default values. Only specify the parameters you want to override.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+         <property name="text">
+          <string>Custom System Parameters (optional)</string>
          </property>
         </widget>
        </item>
@@ -644,7 +643,6 @@
          </property>
         </widget>
        </item>
-
        <item row="0" column="0">
         <widget class="QLabel" name="label_20">
          <property name="sizePolicy">

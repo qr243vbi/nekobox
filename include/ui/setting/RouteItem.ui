@@ -83,6 +83,11 @@
                  <string>Direct</string>
                 </property>
                </item>
+               <item>
+                <property name="text">
+                 <string>Block</string>
+                </property>
+               </item>
               </widget>
              </item>
              <item row="3" column="0">
@@ -361,6 +366,16 @@
           </item>
          </layout>
         </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tab_4">
+      <attribute name="title">
+       <string>Notes</string>
+      </attribute>
+      <layout class="QHBoxLayout" name="horizontalLayout_8">
+       <item>
+        <widget class="QTextEdit" name="notes"/>
        </item>
       </layout>
      </widget>

@@ -56,11 +56,11 @@
 
 #define EMPTY_JOB {}
 
-#define CREATE_LINK(name) { \
-    QString fileName = QFileDialog::getOpenFileName(this,   \
-        QObject::tr("Select"), QDir::currentPath(),         \
-        "", nullptr, QFileDialog::Option::ReadOnly);        \
-    Configs::resourceManager->saveLink(name, fileName);     \
+#define CREATE_LINK(name) {                                                 \
+    QString fileName = QFileDialog::getOpenFileName(this,                   \
+        QObject::tr("Select"), Configs::resourceManager->getLatestPath(),   \
+        "", nullptr, QFileDialog::Option::ReadOnly);                        \
+    Configs::resourceManager->saveLink(name, fileName);                     \
 }
 
 #define LINK_RESOURCE_MANAGER(name, id, job) {                  \
