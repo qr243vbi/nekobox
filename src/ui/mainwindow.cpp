@@ -951,7 +951,11 @@ MainWindow::MainWindow(QWidget *parent)
           showRuleSetData = false;
           mu_download_update.lock();
           mu_download_update.unlock();
-          MoveDirToTrash("rule_sets");
+          MoveDirToTrash("rule_sets/ftps");
+          MoveDirToTrash("rule_sets/ftp");
+          MoveDirToTrash("rule_sets/http");
+          MoveDirToTrash("rule_sets/https");
+          UpdateDataView(true);
         });
       }, Qt::SingleShotConnection
     );
