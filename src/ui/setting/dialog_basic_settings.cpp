@@ -72,7 +72,7 @@ DialogBasicSettings::DialogBasicSettings(MainWindow *parent)
     D_LOAD_INT(test_concurrent)
     D_LOAD_STRING(test_latency_url)
     D_LOAD_BOOL(disable_tray)
-    D_LOAD_BOOL(auto_hide)
+    S_LOAD_BOOL(auto_hide, false)
     ui->set_text_under_menu_icons->setChecked(settings.value("text_under_buttons", true).toBool());
     connect(ui->set_text_under_menu_icons, STATE_CHANGED, this, [=,this]
     {
@@ -316,11 +316,11 @@ void DialogBasicSettings::accept() {
         TM_auto_update_subsctiption_Reset_Minute(0);
     }
 
-    Configs::dataStore->user_agent = ui->user_agent->text();
+    D_SAVE_STRING(user_agent)
     Configs::dataStore->net_skip_proxy = !ui->net_use_proxy->isChecked();
     D_SAVE_BOOL(sub_clear)
     D_SAVE_BOOL(net_insecure)
-    D_SAVE_BOOL(auto_hide)
+    S_SAVE_BOOL(auto_hide);
     D_SAVE_BOOL(sub_send_hwid)
     D_SAVE_STRING(sub_custom_hwid_params)
     D_SAVE_INT_ENABLE(sub_auto_update, sub_auto_update_enable)
@@ -343,8 +343,8 @@ void DialogBasicSettings::accept() {
     int width, height, X, Y;
     // Startup
     settings.setValue("language", locale);
-    settings.setValue("save_geometry", ui->save_geometry->isChecked());
-    settings.setValue("save_position", ui->save_position->isChecked());
+    S_SAVE_BOOL(save_geometry);
+    S_SAVE_BOOL(save_position);
     settings.setValue("width", width = ui->window_width->text().toInt());
     settings.setValue("height", height = ui->window_height->text().toInt());
     settings.setValue("X", X = ui->window_X->text().toInt());

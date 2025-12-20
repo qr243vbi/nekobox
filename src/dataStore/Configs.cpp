@@ -300,7 +300,6 @@ namespace Configs {
         ADD_MAP("test_url", test_latency_url, string);
         ADD_MAP("disable_tray", disable_tray, boolean);
         ADD_MAP("current_group", current_group, integer);
-        ADD_MAP("auto_hide", auto_hide, boolean);
         ADD_MAP("inbound_address", inbound_address, string);
         ADD_MAP("inbound_socks_port", inbound_socks_port, integer);
         ADD_MAP("random_inbound_port", random_inbound_port, boolean);

@@ -1160,8 +1160,12 @@ MainWindow::MainWindow(QWidget *parent)
           [&] { UI_update_all_groups(true); });
   TM_auto_update_subsctiption_Reset_Minute(Configs::dataStore->sub_auto_update);
 
-  if (!Configs::dataStore->flag_tray)
-    show();
+  if ((!Configs::dataStore->flag_tray) && ( 
+        !settings.value("auto_hide", false).toBool() ) ){
+    {
+      show();
+    }
+  }
 
   ui->data_view->setStyleSheet("background: transparent; border: none;");
 }

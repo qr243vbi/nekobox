@@ -39,6 +39,11 @@
     ui->a->setValidator(QRegExpValidator_Number);
 #define D_SAVE_INT(a) Configs::dataStore->a = ui->a->text().toInt();
 
+#define S_LOAD_INT(a, b)                                  \
+    ui->a->setText(settings.value(#a, b).toInt()); \
+    ui->a->setValidator(QRegExpValidator_Number);
+#define S_SAVE_INT(a) settings.setValue(#a, ui->a->text().toInt());
+
 #define P_LOAD_COMBO_STRING(a) ui->a->setCurrentText(bean->a);
 #define P_SAVE_COMBO_STRING(a) bean->a = ui->a->currentText();
 
@@ -49,7 +54,9 @@
 #define P_SAVE_COMBO_INT(a) bean->a = ui->a->currentIndex();
 
 #define D_LOAD_BOOL(a) ui->a->setChecked(Configs::dataStore->a);
+#define S_LOAD_BOOL(a, b) ui->a->setChecked(settings.value(#a, b).toBool());
 #define D_SAVE_BOOL(a) Configs::dataStore->a = ui->a->isChecked();
+#define S_SAVE_BOOL(a) settings.setValue(#a, ui->a->isChecked());
 
 #define P_LOAD_BOOL(a) ui->a->setChecked(bean->a);
 #define P_SAVE_BOOL(a) bean->a = ui->a->isChecked();
