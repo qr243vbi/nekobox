@@ -1,6 +1,6 @@
-#include "include/ui/profile/edit_socks_http.h"
+#include "nekobox/ui/profile/edit_socks_http.h"
 
-#include "include/configs/proxy/SocksHttpBean.hpp"
+#include "nekobox/configs/proxy/SocksHttpBean.hpp"
 
 EditSocksHttp::EditSocksHttp(QWidget *parent) : QWidget(parent),
                                                 ui(new Ui::EditSocksHttp) {

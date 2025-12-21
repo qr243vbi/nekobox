@@ -1,6 +1,6 @@
-#include "include/ui/profile/edit_vmess.h"
+#include "nekobox/ui/profile/edit_vmess.h"
 
-#include "include/configs/proxy/VMessBean.hpp"
+#include "nekobox/configs/proxy/VMessBean.hpp"
 
 #include <QUuid>
 
@@ -18,7 +18,7 @@ void EditVMess::onStart(std::shared_ptr<Configs::ProxyEntity> _ent) {
     auto bean = this->ent->VMessBean();
 
     ui->uuid->setText(bean->uuid);
-    ui->aid->setText(Int2String(bean->aid));
+    ui->aid->setText(QString::number(bean->aid));
     ui->security->setCurrentText(bean->security);
 }
 

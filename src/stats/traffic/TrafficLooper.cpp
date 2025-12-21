@@ -1,7 +1,7 @@
-#include "include/stats/traffic/TrafficLooper.hpp"
+#include "nekobox/stats/traffic/TrafficLooper.hpp"
 
-#include "include/api/RPC.h"
-#include "include/ui/mainwindow_interface.h"
+#include "nekobox/api/RPC.h"
+#include "nekobox/ui/mainwindow_interface.h"
 
 #include <QElapsedTimer>
 #include <QJsonDocument>

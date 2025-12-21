@@ -1,10 +1,10 @@
-#include "include/ui/mainwindow.h"
+#include "nekobox/ui/mainwindow.h"
 
-#include "include/dataStore/Database.hpp"
-#include "include/configs/ConfigBuilder.hpp"
-#include "include/stats/traffic/TrafficLooper.hpp"
-#include "include/api/RPC.h"
-#include "include/ui/utils//MessageBoxTimer.h"
+#include "nekobox/dataStore/Database.hpp"
+#include "nekobox/configs/ConfigBuilder.hpp"
+#include "nekobox/stats/traffic/TrafficLooper.hpp"
+#include "nekobox/api/RPC.h"
+#include "nekobox/ui/utils//MessageBoxTimer.h"
 #include "3rdparty/qv2ray/v2/proxy/QvProxyConfigurator.hpp"
 
 #include <QInputDialog>

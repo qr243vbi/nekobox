@@ -1,4 +1,4 @@
-#include <include/js/version.h>
+#include <nekobox/js/version.h>
 
 #ifdef NKR_DYNAMIC_VERSION
 
@@ -6,7 +6,7 @@
 #include <QFile>
 #include <QTextStream>
 #include <QDebug>
-#include "include/sys/Settings.h"
+#include "nekobox/sys/Settings.h"
 
 const char * getVersionString(){
     static const char * VERSION = nullptr;

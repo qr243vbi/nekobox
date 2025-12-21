@@ -1,11 +1,11 @@
-#include "include/sys/Process.hpp"
-#include "include/dataStore/Configs.hpp"
+#include "nekobox/sys/Process.hpp"
+#include "nekobox/dataStore/Configs.hpp"
 
 #include <QTimer>
 #include <QDir>
 #include <QApplication>
 #include <QCoreApplication>
-#include "include/ui/mainwindow.h"
+#include "nekobox/ui/mainwindow.h"
 
 #undef ELEVATE_METHOD
 #ifdef Q_OS_UNIX
@@ -36,7 +36,7 @@ namespace Configs_sys {
                 if (log.contains("Core listening at")) {
                     // The core really started
                     Configs::dataStore->core_running = true;
-                    MW_dialog_message("ExternalProcess", "CoreStarted," + Int2String(start_profile_when_core_is_up));
+                    MW_dialog_message("ExternalProcess", "CoreStarted," + QString::number(start_profile_when_core_is_up));
                     start_profile_when_core_is_up = -1;
                 } else if (log.contains("failed to serve")) {
                     // The core failed to start

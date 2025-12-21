@@ -1,10 +1,10 @@
-#include "include/sys/AutoRun.hpp"
+#include "nekobox/sys/AutoRun.hpp"
 
 #include <QApplication>
 #include <QDir>
 
-#include "include/sys/Settings.h"
-#include "include/dataStore/Configs.hpp"
+#include "nekobox/sys/Settings.h"
+#include "nekobox/dataStore/Configs.hpp"
 
 
 #ifdef Q_OS_WIN

@@ -1,6 +1,6 @@
-#include "include/configs/proxy/V2RayStreamSettings.hpp"
-#include "include/dataStore/ProxyEntity.hpp"
-#include "include/configs/proxy/includes.h"
+#include "nekobox/configs/proxy/V2RayStreamSettings.hpp"
+#include "nekobox/dataStore/ProxyEntity.hpp"
+#include "nekobox/configs/proxy/includes.h"
 
 #include <QUrlQuery>
 #include <qurlquery.h>

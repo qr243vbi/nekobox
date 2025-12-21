@@ -14,6 +14,8 @@ if (NOT CMAKE_CXX_COMPILER_ID STREQUAL "GNU" AND WIN32)
 	endif ()
 endif ()
 
+set(NEKOBOX_INCLUDE "src/nekobox")
+
 find_package(Qt6 REQUIRED COMPONENTS Widgets Network LinguistTools DBus)
 
 if (NKR_CROSS)
@@ -72,7 +74,7 @@ add_custom_command(
 add_custom_target(generate_thrift_code ALL DEPENDS "${THRIFT_GEN_DIR}/LibcoreService.h")
 
 # Include the generated files in your project
-include_directories("${THRIFT_GEN_DIR}")
+include_directories("${THRIFT_GEN_DIR}" "${CMAKE_CURRENT_SOURCE_DIR}/src")
 set(THRIFT_GENERATED_SOURCES
     "src/libcore.cpp"
  #   "${THRIFT_GEN_DIR}/LibcoreService.cpp"
@@ -120,127 +122,127 @@ set(PROJECT_SOURCES
         src/configs/proxy/Bean2CoreObj_box.cpp
         src/configs/proxy/Bean2Link.cpp
         src/configs/proxy/Link2Bean.cpp
-        include/configs/proxy/ChainBean.hpp # translate
+        ${NEKOBOX_INCLUDE}/configs/proxy/ChainBean.hpp # translate
 
-        include/configs/sub/GroupUpdater.hpp
+        ${NEKOBOX_INCLUDE}/configs/sub/GroupUpdater.hpp
         src/configs/sub/GroupUpdater.cpp
 
-        include/sys/Process.hpp
+        ${NEKOBOX_INCLUDE}/sys/Process.hpp
         src/sys/Process.cpp
         src/sys/AutoRun.cpp
 
-        include/ui/setting/ThemeManager.hpp
+        ${NEKOBOX_INCLUDE}/ui/setting/ThemeManager.hpp
         src/ui/setting/ThemeManager.cpp
         src/ui/setting/Icon.cpp
 
         src/ui/mainwindow_rpc.cpp
         src/ui/mainwindow.cpp
-        include/ui/mainwindow.h
-        include/ui/mainwindow.ui
-        include/ui/profile/edit_shadowtls.ui
+        ${NEKOBOX_INCLUDE}/ui/mainwindow.h
+        ${NEKOBOX_INCLUDE}/ui/mainwindow.ui
+        ${NEKOBOX_INCLUDE}/ui/profile/edit_shadowtls.ui
 
-        include/ui/profile/dialog_edit_profile.h
+        ${NEKOBOX_INCLUDE}/ui/profile/dialog_edit_profile.h
         src/ui/profile/dialog_edit_profile.cpp
-        include/ui/profile/dialog_edit_profile.ui
-        include/ui/group/dialog_edit_group.h
+        ${NEKOBOX_INCLUDE}/ui/profile/dialog_edit_profile.ui
+        ${NEKOBOX_INCLUDE}/ui/group/dialog_edit_group.h
         src/ui/group/dialog_edit_group.cpp
-        include/ui/group/dialog_edit_group.ui
-        include/ui/group/dialog_group_choose_proxy.ui
+        ${NEKOBOX_INCLUDE}/ui/group/dialog_edit_group.ui
+        ${NEKOBOX_INCLUDE}/ui/group/dialog_group_choose_proxy.ui
 
-        include/ui/profile/edit_chain.h
+        ${NEKOBOX_INCLUDE}/ui/profile/edit_chain.h
         src/ui/profile/edit_chain.cpp
-        include/ui/profile/edit_chain.ui
-        include/ui/profile/edit_socks_http.h
+        ${NEKOBOX_INCLUDE}/ui/profile/edit_chain.ui
+        ${NEKOBOX_INCLUDE}/ui/profile/edit_socks_http.h
         src/ui/profile/edit_socks_http.cpp
-        include/ui/profile/edit_socks_http.ui
-        include/ui/profile/edit_shadowsocks.h
+        ${NEKOBOX_INCLUDE}/ui/profile/edit_socks_http.ui
+        ${NEKOBOX_INCLUDE}/ui/profile/edit_shadowsocks.h
         src/ui/profile/edit_shadowsocks.cpp
-        include/ui/profile/edit_shadowsocks.ui
-        include/ui/profile/edit_vmess.h
+        ${NEKOBOX_INCLUDE}/ui/profile/edit_shadowsocks.ui
+        ${NEKOBOX_INCLUDE}/ui/profile/edit_vmess.h
         src/ui/profile/edit_vmess.cpp
-        include/ui/profile/edit_vmess.ui
-        include/ui/profile/edit_mieru.h
+        ${NEKOBOX_INCLUDE}/ui/profile/edit_vmess.ui
+        ${NEKOBOX_INCLUDE}/ui/profile/edit_mieru.h
         src/ui/profile/edit_mieru.cpp
-        include/ui/profile/edit_mieru.ui
-        include/ui/profile/edit_trojan_vless.h
+        ${NEKOBOX_INCLUDE}/ui/profile/edit_mieru.ui
+        ${NEKOBOX_INCLUDE}/ui/profile/edit_trojan_vless.h
         src/ui/profile/edit_trojan_vless.cpp
-        include/ui/profile/edit_trojan_vless.ui
-        include/ui/profile/edit_anytls.h
-        include/ui/profile/edit_shadowtls.h
+        ${NEKOBOX_INCLUDE}/ui/profile/edit_trojan_vless.ui
+        ${NEKOBOX_INCLUDE}/ui/profile/edit_anytls.h
+        ${NEKOBOX_INCLUDE}/ui/profile/edit_shadowtls.h
         src/ui/profile/edit_anytls.cpp
-        include/ui/profile/edit_anytls.ui
-        include/ui/profile/edit_tailscale.h
+        ${NEKOBOX_INCLUDE}/ui/profile/edit_anytls.ui
+        ${NEKOBOX_INCLUDE}/ui/profile/edit_tailscale.h
         src/ui/profile/edit_tailscale.cpp
-        include/ui/profile/edit_tailscale.ui
-        include/configs/proxy/Tailscale.hpp
+        ${NEKOBOX_INCLUDE}/ui/profile/edit_tailscale.ui
+        ${NEKOBOX_INCLUDE}/configs/proxy/Tailscale.hpp
 
-        include/ui/profile/edit_quic.h
+        ${NEKOBOX_INCLUDE}/ui/profile/edit_quic.h
         src/ui/profile/edit_quic.cpp
-        include/ui/profile/edit_quic.ui
+        ${NEKOBOX_INCLUDE}/ui/profile/edit_quic.ui
 
-        include/ui/profile/edit_custom.h
+        ${NEKOBOX_INCLUDE}/ui/profile/edit_custom.h
         src/ui/profile/edit_custom.cpp
-        include/ui/profile/edit_custom.ui
+        ${NEKOBOX_INCLUDE}/ui/profile/edit_custom.ui
 
-        include/ui/profile/edit_extra_core.h
+        ${NEKOBOX_INCLUDE}/ui/profile/edit_extra_core.h
         src/ui/profile/edit_extra_core.cpp
-        include/ui/profile/edit_extra_core.ui
+        ${NEKOBOX_INCLUDE}/ui/profile/edit_extra_core.ui
 
-        include/ui/profile/edit_wireguard.h
+        ${NEKOBOX_INCLUDE}/ui/profile/edit_wireguard.h
         src/ui/profile/edit_wireguard.cpp
-        include/ui/profile/edit_wireguard.ui
+        ${NEKOBOX_INCLUDE}/ui/profile/edit_wireguard.ui
 
         src/ui/setting/dialog_basic_settings.cpp
-        include/ui/setting/dialog_basic_settings.h
-        include/ui/setting/dialog_basic_settings.ui
+        ${NEKOBOX_INCLUDE}/ui/setting/dialog_basic_settings.h
+        ${NEKOBOX_INCLUDE}/ui/setting/dialog_basic_settings.ui
 
         src/ui/group/dialog_manage_groups.cpp
-        include/ui/group/dialog_manage_groups.h
-        include/ui/group/dialog_manage_groups.ui
+        ${NEKOBOX_INCLUDE}/ui/group/dialog_manage_groups.h
+        ${NEKOBOX_INCLUDE}/ui/group/dialog_manage_groups.ui
 
         src/ui/setting/dialog_manage_routes.cpp
-        include/ui/setting/dialog_manage_routes.h
-        include/ui/setting/dialog_manage_routes.ui
+        ${NEKOBOX_INCLUDE}/ui/setting/dialog_manage_routes.h
+        ${NEKOBOX_INCLUDE}/ui/setting/dialog_manage_routes.ui
 
         src/ui/setting/dialog_vpn_settings.cpp
-        include/ui/setting/dialog_vpn_settings.h
-        include/ui/setting/dialog_vpn_settings.ui
+        ${NEKOBOX_INCLUDE}/ui/setting/dialog_vpn_settings.h
+        ${NEKOBOX_INCLUDE}/ui/setting/dialog_vpn_settings.ui
 
         src/ui/setting/dialog_hotkey.cpp
-        include/ui/setting/dialog_hotkey.h
-        include/ui/setting/dialog_hotkey.ui
+        ${NEKOBOX_INCLUDE}/ui/setting/dialog_hotkey.h
+        ${NEKOBOX_INCLUDE}/ui/setting/dialog_hotkey.ui
 
         src/ui/profile/ProxyItem.cpp
-        include/ui/profile/ProxyItem.h
-        include/ui/profile/ProxyItem.ui
+        ${NEKOBOX_INCLUDE}/ui/profile/ProxyItem.h
+        ${NEKOBOX_INCLUDE}/ui/profile/ProxyItem.ui
         src/ui/group/GroupItem.cpp
-        include/ui/group/GroupItem.h
-        include/ui/group/GroupItem.ui
+        ${NEKOBOX_INCLUDE}/ui/group/GroupItem.h
+        ${NEKOBOX_INCLUDE}/ui/group/GroupItem.ui
         src/ui/setting/RouteItem.cpp
-        include/ui/setting/RouteItem.h
-        include/ui/setting/RouteItem.ui
+        ${NEKOBOX_INCLUDE}/ui/setting/RouteItem.h
+        ${NEKOBOX_INCLUDE}/ui/setting/RouteItem.ui
 
         res/nekobox.qrc
         ${QV2RAY_RC}
-        include/dataStore/RouteEntity.h
+        ${NEKOBOX_INCLUDE}/dataStore/RouteEntity.h
         src/dataStore/RouteEntity.cpp
         src/dataStore/ResourceEntity.cpp
         res/darkstyle.qrc
         src/ui/profile/edit_ssh.cpp
-        include/ui/profile/edit_ssh.h
-        include/ui/profile/edit_ssh.ui
-        include/configs/proxy/SSHBean.h
+        ${NEKOBOX_INCLUDE}/ui/profile/edit_ssh.h
+        ${NEKOBOX_INCLUDE}/ui/profile/edit_ssh.ui
+        ${NEKOBOX_INCLUDE}/configs/proxy/SSHBean.h
         src/sys/Settings.cpp
 
         src/sys/linux/LinuxCap.cpp
 
         src/sys/AutoRun.cpp
         src/sys/Process.cpp
-        include/ui/mainwindow_interface.h
-        include/stats/connections/connectionLister.hpp
+        ${NEKOBOX_INCLUDE}/ui/mainwindow_interface.h
+        ${NEKOBOX_INCLUDE}/stats/connections/connectionLister.hpp
         src/stats/connectionLister/connectionLister.cpp
         src/configs/proxy/Json2Bean.cpp
-        include/sys/windows/eventHandler.h
+        ${NEKOBOX_INCLUDE}/sys/windows/eventHandler.h
         src/dataStore/Group.cpp
         src/dataStore/ProxyEntity.cpp
 )
@@ -265,7 +267,7 @@ if(SKIP_JS_UPDATER)
 else()
     find_package(Qt6 REQUIRED COMPONENTS Qml)
     target_link_libraries(nekobox PRIVATE Qt6::Qml)
-    target_sources(nekobox PRIVATE src/js/js_updater.cpp include/js/js_updater.h res/nekobox_updater.qrc)
+    target_sources(nekobox PRIVATE src/js/js_updater.cpp ${NEKOBOX_INCLUDE}/js/js_updater.h res/nekobox_updater.qrc)
 endif()
 
 

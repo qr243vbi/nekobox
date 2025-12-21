@@ -2,8 +2,8 @@
 #include <winsock2.h>
 #include <windows.h>
 #endif
-#include "include/api/RPC.h"
-#include "include/dataStore/Configs.hpp"
+#include "nekobox/api/RPC.h"
+#include "nekobox/dataStore/Configs.hpp"
 #include <QDebug>
 #include <optional>
 #include <qnamespace.h>

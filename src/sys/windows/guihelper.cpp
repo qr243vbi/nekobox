@@ -1,4 +1,4 @@
-#include "include/sys/windows/guihelper.h"
+#include "nekobox/sys/windows/guihelper.h"
 
 #include <QWidget>
 

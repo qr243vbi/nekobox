@@ -2,11 +2,11 @@
 #include <winsock2.h>
 #include <windows.h>
 #endif
-#include "include/dataStore/Configs.hpp"
-#include "include/configs/proxy/Preset.hpp"
-#include "include/configs/proxy/AbstractBean.hpp"
-#include "include/sys/Settings.h"
-#include "include/global/keyvaluerange.h"
+#include "nekobox/dataStore/Configs.hpp"
+#include "nekobox/configs/proxy/Preset.hpp"
+#include "nekobox/configs/proxy/AbstractBean.hpp"
+#include "nekobox/sys/Settings.h"
+#include "nekobox/global/keyvaluerange.h"
 
 #include <QApplication>
 #include <QDir>
@@ -20,16 +20,16 @@
 #include <QStandardPaths>
 #include <memory>
 #include <utility>
-#include <include/api/RPC.h>
+#include <nekobox/api/RPC.h>
 
-#include <include/js/version.h>
+#include <nekobox/js/version.h>
 #include <QCryptographicHash>
 
 #ifdef Q_OS_WIN
-#include "include/sys/windows/guihelper.h"
+#include "nekobox/sys/windows/guihelper.h"
 #else
 #ifdef Q_OS_UNIX
-#include <include/sys/linux/LinuxCap.h>
+#include <nekobox/sys/linux/LinuxCap.h>
 #endif
 #include <unistd.h>
 #include <sys/types.h>
@@ -313,7 +313,7 @@ namespace Configs {
    //     _add(new configItem("theme", &theme, itemType::string));
         ADD_MAP("custom_inbound", custom_inbound, string);
         ADD_MAP("custom_route", custom_route_global, string);
-        ADD_MAP("net_skip_proxy", net_skip_proxy, boolean);
+        ADD_MAP("network_use_proxy", net_use_proxy, boolean);
         ADD_MAP("remember_id", remember_id, integer);
         ADD_MAP("remember_enable", remember_enable, boolean);
    //     _add(new configItem("language", &language, itemType::integer));
@@ -361,8 +361,8 @@ namespace Configs {
         ADD_MAP("redirect_listen_port", redirect_listen_port, integer);
         ADD_MAP("system_dns_set", system_dns_set, boolean);
         ADD_MAP("windows_set_admin", windows_set_admin, boolean);
-        ADD_MAP("disable_win_admin", disable_run_admin, boolean);
-        ADD_MAP("enable_stats", enable_stats, boolean);
+        ADD_MAP("disable_win_admin", windows_no_admin, boolean);
+        ADD_MAP("enable_stats", connection_statistics, boolean);
         ADD_MAP("stats_tab", stats_tab, integer);
         ADD_MAP("proxy_scheme", proxy_scheme, string);
         ADD_MAP("disable_privilege_req", disable_privilege_req, boolean);
@@ -373,7 +373,7 @@ namespace Configs {
         ADD_MAP("speedtest_timeout_ms", speed_test_timeout_ms, integer);
         ADD_MAP("urltest_timeout_ms", url_test_timeout_ms, integer);
         ADD_MAP("show_system_dns", show_system_dns, boolean);
-        ADD_MAP("cache_database", cache_database, string);
+        ADD_MAP("cache_database_name", cache_database, string);
     STOP_MAP
 
     void DataStore::UpdateStartedId(int id) {

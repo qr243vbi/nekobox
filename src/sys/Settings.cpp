@@ -1,6 +1,6 @@
-#include "include/sys/Settings.h"
+#include "nekobox/sys/Settings.h"
 
-#include "include/dataStore/ResourceEntity.hpp"
+#include "nekobox/dataStore/ResourceEntity.hpp"
 #include <QApplication>
 #include <QDir>
 #include <QTemporaryFile>

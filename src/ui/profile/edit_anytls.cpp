@@ -1,13 +1,13 @@
-#include "include/ui/profile/edit_anytls.h"
+#include "nekobox/ui/profile/edit_anytls.h"
 
-#include "include/configs/proxy/AnyTLSBean.hpp"
-#include "include/ui/profile/edit_shadowtls.h"
+#include "nekobox/configs/proxy/AnyTLSBean.hpp"
+#include "nekobox/ui/profile/edit_shadowtls.h"
 
-#include "include/configs/proxy/ShadowTLSBean.hpp"
+#include "nekobox/configs/proxy/ShadowTLSBean.hpp"
 
 #include <QUuid>
 #include <QRegularExpressionValidator>
-#include "include/global/GuiUtils.hpp"
+#include "nekobox/global/GuiUtils.hpp"
 
 EditAnyTLS::EditAnyTLS(QWidget *parent) : QWidget(parent), ui(new Ui::EditAnyTLS) {
     ui->setupUi(this);
@@ -25,7 +25,7 @@ void EditAnyTLS::onStart(std::shared_ptr<Configs::ProxyEntity> _ent) {
     ui->password->setText(bean->password);
     ui->interval->setText(bean->idle_session_check_interval);
     ui->timeout->setText(bean->idle_session_timeout);
-    ui->min->setText(Int2String(bean->min_idle_session));
+    ui->min->setText(QString::number(bean->min_idle_session));
 }
 
 bool EditAnyTLS::onEnd() {

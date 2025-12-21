@@ -1,7 +1,7 @@
 #include <QThread>
-#include <include/api/RPC.h>
-#include "include/ui/mainwindow_interface.h"
-#include <include/stats/connections/connectionLister.hpp>
+#include <nekobox/api/RPC.h>
+#include "nekobox/ui/mainwindow_interface.h"
+#include <nekobox/stats/connections/connectionLister.hpp>
 
 namespace Stats
 {
@@ -27,7 +27,7 @@ namespace Stats
             if (stop) return;
             QThread::msleep(1000);
 
-            if (suspend || !Configs::dataStore->enable_stats) continue;
+            if (suspend || !Configs::dataStore->connection_statistics) continue;
 
             mu.lock();
             update();

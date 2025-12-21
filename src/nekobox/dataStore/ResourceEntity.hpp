@@ -1,0 +1,22 @@
+#pragma once
+#include "nekobox/dataStore/Configs.hpp"
+#include <QDir>
+
+namespace Configs {
+
+class ResourceManager : public JsonStore {
+public:
+  ResourceManager();
+  QString core_path;
+  QString resources_path;
+  QString latest_path = "";
+  QString getLink(QString str);
+  bool saveLink(QString str, QString path);
+  bool symlinks_supported;
+
+  virtual ConfJsMap _map() override;
+  QString getLatestPath();
+};
+
+extern ResourceManager *resourceManager;
+} // namespace Configs

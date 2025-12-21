@@ -1,7 +1,7 @@
-#include "include/ui/profile/edit_mieru.h"
+#include "nekobox/ui/profile/edit_mieru.h"
 #include <QFileDialog>
 
-#include "include/configs/proxy/MieruBean.hpp"
+#include "nekobox/configs/proxy/MieruBean.hpp"
 
 EditMieru::EditMieru(QWidget *parent) : QWidget(parent), ui(new Ui::EditMieru) {
     ui->setupUi(this);

@@ -3,7 +3,7 @@
 #include <QFile>
 #include <QPalette>
 
-#include "include/ui/setting/ThemeManager.hpp"
+#include "nekobox/ui/setting/ThemeManager.hpp"
 #include "iostream"
 
 ThemeManager *themeManager = new ThemeManager;

@@ -1,14 +1,14 @@
-#include "include/ui/setting/dialog_basic_settings.h"
+#include "nekobox/ui/setting/dialog_basic_settings.h"
 
 #include "3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.hpp"
-#include "include/configs/proxy/Preset.hpp"
-#include "include/ui/setting/ThemeManager.hpp"
-#include "include/ui/setting/Icon.hpp"
-#include "include/global/GuiUtils.hpp"
-#include "include/dataStore/Configs.hpp"
-#include "include/global/HTTPRequestHelper.hpp"
-#include "include/global/DeviceDetailsHelper.hpp"
-#include "include/dataStore/ResourceEntity.hpp"
+#include "nekobox/configs/proxy/Preset.hpp"
+#include "nekobox/ui/setting/ThemeManager.hpp"
+#include "nekobox/ui/setting/Icon.hpp"
+#include "nekobox/global/GuiUtils.hpp"
+#include "nekobox/dataStore/Configs.hpp"
+#include "nekobox/global/HTTPRequestHelper.hpp"
+#include "nekobox/global/DeviceDetailsHelper.hpp"
+#include "nekobox/dataStore/ResourceEntity.hpp"
 
 #include <QStyleFactory>
 #include <QFileDialog>
@@ -16,11 +16,11 @@
 #include <QMessageBox>
 #include <QTimer>
 #include <qfontdatabase.h>
-#include "include/sys/Settings.h"
-#include "include/dataStore/ResourceEntity.hpp"
+#include "nekobox/sys/Settings.h"
+#include "nekobox/dataStore/ResourceEntity.hpp"
 #include <QString>
 
-#include "include/ui/mainwindow.h"
+#include "nekobox/ui/mainwindow.h"
 
 
 QList<QString> locales = {
@@ -68,7 +68,7 @@ DialogBasicSettings::DialogBasicSettings(MainWindow *parent)
     D_LOAD_COMBO_STRING(log_level)
     CACHE.custom_inbound = Configs::dataStore->custom_inbound;
     D_LOAD_INT(inbound_socks_port)
-    ui->random_listen_port->setChecked(Configs::dataStore->random_inbound_port);
+    D_LOAD_BOOL(random_inbound_port);
     D_LOAD_INT(test_concurrent)
     D_LOAD_STRING(test_latency_url)
     D_LOAD_BOOL(disable_tray)
@@ -78,10 +78,10 @@ DialogBasicSettings::DialogBasicSettings(MainWindow *parent)
     {
         CACHE.updateMenuIcon = true;
     });
-    ui->url_timeout->setText(QString::number(Configs::dataStore->url_test_timeout_ms));
+    D_LOAD_INT(url_test_timeout_ms)
     ui->speedtest_mode->setCurrentIndex(Configs::dataStore->speed_test_mode);
-    ui->test_timeout->setText(QString::number(Configs::dataStore->speed_test_timeout_ms));
-    ui->simple_down_url->setText(Configs::dataStore->simple_dl_url);
+    D_LOAD_INT(speed_test_timeout_ms);
+    D_LOAD_STRING(simple_dl_url)
 
     connect(ui->custom_inbound_edit, &QPushButton::clicked, this, [=,this] {
         C_EDIT_JSON_ALLOW_EMPTY(custom_inbound)
@@ -89,7 +89,7 @@ DialogBasicSettings::DialogBasicSettings(MainWindow *parent)
     connect(ui->disable_tray, STATE_CHANGED, this, [=,this](const bool &) {
         CACHE.updateDisableTray = true;
     });
-    connect(ui->random_listen_port, STATE_CHANGED, this, [=,this](const bool &state)
+    connect(ui->random_inbound_port, STATE_CHANGED, this, [=,this](const bool &state)
     {
         if (state)
         {
@@ -107,14 +107,16 @@ DialogBasicSettings::DialogBasicSettings(MainWindow *parent)
 #endif
 
     // Style
-    ui->connection_statistics->setChecked(Configs::dataStore->enable_stats);
-    ui->show_sys_dns->setChecked(Configs::dataStore->show_system_dns);
-    connect(ui->show_sys_dns, STATE_CHANGED, this, [=,this]
+    D_LOAD_BOOL(connection_statistics)
+
+#ifndef Q_OS_WIN
+    ui->show_system_dns->hide();
+#else
+    D_LOAD_BOOL(show_system_dns)
+    connect(ui->show_system_dns, STATE_CHANGED, this, [=,this]
     {
         CACHE.updateSystemDns = true;
     });
-#ifndef Q_OS_WIN
-    ui->show_sys_dns->hide();
 #endif
     //
     D_LOAD_BOOL(start_minimal)
@@ -165,9 +167,9 @@ DialogBasicSettings::DialogBasicSettings(MainWindow *parent)
 
     // Subscription
 
-    ui->user_agent->setText(Configs::dataStore->user_agent);
+    D_LOAD_STRING(user_agent)
     ui->user_agent->setPlaceholderText(Configs::dataStore->GetUserAgent(true));
-    ui->net_use_proxy->setChecked(!Configs::dataStore->net_skip_proxy);
+    D_LOAD_BOOL(net_use_proxy);
     D_LOAD_BOOL(sub_clear)
     D_LOAD_BOOL(net_insecure)
     D_LOAD_BOOL(sub_send_hwid)
@@ -207,9 +209,9 @@ DialogBasicSettings::DialogBasicSettings(MainWindow *parent)
     // Security
 
     ui->utlsFingerprint->addItems(Preset::SingBox::UtlsFingerPrint);
-    ui->disable_priv_req->setChecked(Configs::dataStore->disable_privilege_req);
-    ui->windows_no_admin->setChecked(Configs::dataStore->disable_run_admin);
-    ui->mozilla_cert->setChecked(Configs::dataStore->use_mozilla_certs);
+    D_LOAD_BOOL(disable_privilege_req)
+    D_LOAD_BOOL(windows_no_admin)
+    D_LOAD_BOOL(use_mozilla_certs)
 
     D_LOAD_BOOL(skip_cert)
     ui->utlsFingerprint->setCurrentText(Configs::dataStore->utlsFingerprint);
@@ -231,21 +233,19 @@ DialogBasicSettings::DialogBasicSettings(MainWindow *parent)
     connect(this, &DialogBasicSettings::size_changed, parent, &MainWindow::size_changed);
     connect(this, &DialogBasicSettings::point_changed, parent, &MainWindow::point_changed);
     connect(ui->apply_now, &QPushButton::clicked, this, [=,this]{
-        emit size_changed(ui->window_width->text().toInt(), ui->window_height->text().toInt());
-        emit point_changed(ui->window_X->text().toInt(), ui->window_Y->text().toInt());
+        emit size_changed(ui->width->text().toInt(), ui->height->text().toInt());
+        emit point_changed(ui->X->text().toInt(), ui->Y->text().toInt());
     });
 
     auto validator = new QIntValidator(0, 0xfffffff, this);
-    ui->save_geometry->setChecked(settings.value("save_geometry", true).toBool());
-    ui->save_position->setChecked(settings.value("save_position", true).toBool());
-    ui->window_width->setText(QString::number(settings.value("width", 0).toInt()));
-    ui->window_height->setText(QString::number(settings.value("height", 0).toInt()));
-    ui->window_X->setText(QString::number(settings.value("X", 0).toInt()));
-    ui->window_Y->setText(QString::number(settings.value("Y", 0).toInt()));
-    ui->window_width->setValidator(validator);
-    ui->window_height->setValidator(validator);
-    ui->window_X->setValidator(validator);
-    ui->window_Y->setValidator(validator);
+    S_LOAD_BOOL(save_geometry, true)
+    S_LOAD_BOOL(save_position, true)
+
+    S_LOAD_INT(width, 0)
+    S_LOAD_INT(height, 0)
+    S_LOAD_INT(X, 0)
+    S_LOAD_INT(Y, 0)
+    
 
     QString core_path = Configs::resourceManager->core_path;
     QString icons_path = Configs::resourceManager->resources_path;
@@ -278,23 +278,23 @@ void DialogBasicSettings::accept() {
     D_SAVE_COMBO_STRING(log_level)
     Configs::dataStore->custom_inbound = CACHE.custom_inbound;
     D_SAVE_INT(inbound_socks_port)
-    if (!Configs::dataStore->random_inbound_port && ui->random_listen_port->isChecked())
+    if (!Configs::dataStore->random_inbound_port && ui->random_inbound_port->isChecked())
     {
         needChoosePort = true;
     }
-    Configs::dataStore->random_inbound_port = ui->random_listen_port->isChecked();
+    D_SAVE_BOOL(random_inbound_port);
     D_SAVE_INT(test_concurrent)
     D_SAVE_STRING(test_latency_url)
     D_SAVE_BOOL(disable_tray)
     Configs::dataStore->proxy_scheme = ui->proxy_scheme->currentText().toLower();
     Configs::dataStore->speed_test_mode = ui->speedtest_mode->currentIndex();
-    Configs::dataStore->simple_dl_url = ui->simple_down_url->text();
-    Configs::dataStore->url_test_timeout_ms = ui->url_timeout->text().toInt();
-    Configs::dataStore->speed_test_timeout_ms = ui->test_timeout->text().toInt();
+    D_SAVE_STRING(simple_dl_url)
+    D_SAVE_INT(url_test_timeout_ms)
+    D_SAVE_INT(speed_test_timeout_ms)
 
     // Style
 
-    Configs::dataStore->enable_stats = ui->connection_statistics->isChecked();
+    D_SAVE_BOOL(connection_statistics);
     QString locale = "";
     int locale_index = ui->language->currentIndex();
     if (locale_index >= 0){
@@ -302,7 +302,9 @@ void DialogBasicSettings::accept() {
     }
     D_SAVE_BOOL(start_minimal)
     D_SAVE_INT(max_log_line)
-    Configs::dataStore->show_system_dns = ui->show_sys_dns->isChecked();
+    #ifdef Q_OS_WIN
+    D_SAVE_BOOL(show_system_dns);
+    #endif
 
     if (Configs::dataStore->max_log_line <= 0) {
         Configs::dataStore->max_log_line = 200;
@@ -317,7 +319,7 @@ void DialogBasicSettings::accept() {
     }
 
     D_SAVE_STRING(user_agent)
-    Configs::dataStore->net_skip_proxy = !ui->net_use_proxy->isChecked();
+    D_SAVE_BOOL(net_use_proxy);
     D_SAVE_BOOL(sub_clear)
     D_SAVE_BOOL(net_insecure)
     S_SAVE_BOOL(auto_hide);
@@ -345,10 +347,10 @@ void DialogBasicSettings::accept() {
     settings.setValue("language", locale);
     S_SAVE_BOOL(save_geometry);
     S_SAVE_BOOL(save_position);
-    settings.setValue("width", width = ui->window_width->text().toInt());
-    settings.setValue("height", height = ui->window_height->text().toInt());
-    settings.setValue("X", X = ui->window_X->text().toInt());
-    settings.setValue("Y", Y = ui->window_Y->text().toInt());
+    S_SAVE_INT(width)
+    S_SAVE_INT(height)
+    S_SAVE_INT(X)
+    S_SAVE_INT(Y)
     QString core_path_text, resources_path;
     bool need_save_manager = false;
     bool need_core_restart = false;
@@ -378,9 +380,9 @@ void DialogBasicSettings::accept() {
 
     D_SAVE_BOOL(skip_cert)
     Configs::dataStore->utlsFingerprint = ui->utlsFingerprint->currentText();
-    Configs::dataStore->disable_privilege_req = ui->disable_priv_req->isChecked();
-    Configs::dataStore->disable_run_admin = ui->windows_no_admin->isChecked();
-    Configs::dataStore->use_mozilla_certs = ui->mozilla_cert->isChecked();
+    D_SAVE_BOOL(disable_privilege_req);
+    D_SAVE_BOOL(windows_no_admin);
+    Configs::dataStore->use_mozilla_certs = ui->use_mozilla_certs->isChecked();
 
     QStringList str{"UpdateDataStore"};
     if (CACHE.needRestart) str << "NeedRestart";

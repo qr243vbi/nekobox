@@ -1,6 +1,6 @@
-#include "include/ui/profile/edit_wireguard.h"
+#include "nekobox/ui/profile/edit_wireguard.h"
 
-#include "include/configs/proxy/WireguardBean.h"
+#include "nekobox/configs/proxy/WireguardBean.h"
 
 EditWireguard::EditWireguard(QWidget *parent) : QWidget(parent), ui(new Ui::EditWireguard) {
     ui->setupUi(this);
@@ -23,8 +23,8 @@ void EditWireguard::onStart(std::shared_ptr<Configs::ProxyEntity> _ent) {
     ui->preshared_key->setText(bean->preSharedKey);
     auto reservedStr = bean->FormatReserved().replace("-", ",");
     ui->reserved->setText(reservedStr);
-    ui->persistent_keepalive->setText(Int2String(bean->persistentKeepalive));
-    ui->mtu->setText(Int2String(bean->MTU));
+    ui->persistent_keepalive->setText(QString::number(bean->persistentKeepalive));
+    ui->mtu->setText(QString::number(bean->MTU));
     ui->sys_ifc->setChecked(bean->useSystemInterface);
     ui->local_addr->setText(bean->localAddress.join(","));
     ui->workers->setText(QString::number(bean->workerCount));
@@ -34,7 +34,7 @@ void EditWireguard::onStart(std::shared_ptr<Configs::ProxyEntity> _ent) {
     ui->junk_packet_min_size->setText(QString::number(bean->junk_packet_min_size));
     ui->junk_packet_max_size->setText(QString::number(bean->junk_packet_max_size));
     ui->init_packet_junk_size->setText(QString::number(bean->init_packet_junk_size));
-    ui->response_packet_junk_size->setText(Int2String(bean->response_packet_junk_size));
+    ui->response_packet_junk_size->setText(QString::number(bean->response_packet_junk_size));
     ui->init_packet_magic_header->setText(QString::number(bean->init_packet_magic_header));
     ui->response_packet_magic_header->setText(QString::number(bean->response_packet_magic_header));
     ui->underload_packet_magic_header->setText(QString::number(bean->underload_packet_magic_header));
