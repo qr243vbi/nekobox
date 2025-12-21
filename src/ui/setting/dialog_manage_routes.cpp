@@ -1,19 +1,19 @@
-#include "include/ui/setting/dialog_manage_routes.h"
+#include "nekobox/ui/setting/dialog_manage_routes.h"
 
 #include <QClipboard>
 
-#include "include/dataStore/Database.hpp"
+#include "nekobox/dataStore/Database.hpp"
 
 #include "3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.hpp"
-#include "include/global/GuiUtils.hpp"
-#include "include/configs/proxy/Preset.hpp"
+#include "nekobox/global/GuiUtils.hpp"
+#include "nekobox/configs/proxy/Preset.hpp"
 
 #include <QFile>
 #include <QMessageBox>
 #include <QShortcut>
 #include <QTimer>
 #include <QToolTip>
-#include <include/api/RPC.h>
+#include <nekobox/api/RPC.h>
 
 #include <QtGlobal> // For QT_VERSION_CHECK
 

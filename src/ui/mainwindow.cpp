@@ -1,18 +1,18 @@
-#include "include/ui/mainwindow.h"
+#include "nekobox/ui/mainwindow.h"
 
-#include "include/configs/ConfigBuilder.hpp"
-#include "include/configs/sub/GroupUpdater.hpp"
-#include "include/dataStore/ProfileFilter.hpp"
-#include "include/dataStore/ResourceEntity.hpp"
-#include "include/dataStore/Utils.hpp"
-#include "include/sys/AutoRun.hpp"
-#include "include/sys/Process.hpp"
+#include "nekobox/configs/ConfigBuilder.hpp"
+#include "nekobox/configs/sub/GroupUpdater.hpp"
+#include "nekobox/dataStore/ProfileFilter.hpp"
+#include "nekobox/dataStore/ResourceEntity.hpp"
+#include "nekobox/dataStore/Utils.hpp"
+#include "nekobox/sys/AutoRun.hpp"
+#include "nekobox/sys/Process.hpp"
 
 #include <QJsonDocument>
 #include <QMutex>
 #include <QQueue>
 #include <QWaitCondition>
-#include <include/js/version.h>
+#include <nekobox/js/version.h>
 #include <qnamespace.h>
 #include <set>
 #ifdef _WIN32
@@ -20,26 +20,26 @@
 #include <windows.h>
 #endif
 
-#include "include/ui/group/dialog_manage_groups.h"
-#include "include/ui/profile/dialog_edit_profile.h"
-#include "include/ui/setting/Icon.hpp"
-#include "include/ui/setting/ThemeManager.hpp"
-#include "include/ui/setting/dialog_basic_settings.h"
-#include "include/ui/setting/dialog_hotkey.h"
-#include "include/ui/setting/dialog_manage_routes.h"
-#include "include/ui/setting/dialog_vpn_settings.h"
+#include "nekobox/ui/group/dialog_manage_groups.h"
+#include "nekobox/ui/profile/dialog_edit_profile.h"
+#include "nekobox/ui/setting/Icon.hpp"
+#include "nekobox/ui/setting/ThemeManager.hpp"
+#include "nekobox/ui/setting/dialog_basic_settings.h"
+#include "nekobox/ui/setting/dialog_hotkey.h"
+#include "nekobox/ui/setting/dialog_manage_routes.h"
+#include "nekobox/ui/setting/dialog_vpn_settings.h"
 
 #include "3rdparty/QrDecoder.h"
 #include "3rdparty/qrcodegen.hpp"
 #include "3rdparty/qv2ray/v2/ui/LogHighlighter.hpp"
-#include "include/ui/group/dialog_edit_group.h"
+#include "nekobox/ui/group/dialog_edit_group.h"
 
 #ifdef Q_OS_WIN
 #include "3rdparty/WinCommander.hpp"
-#include "include/sys/windows/WinVersion.h"
+#include "nekobox/sys/windows/WinVersion.h"
 #else
 #ifdef Q_OS_UNIX
-#include "include/sys/linux/LinuxCap.h"
+#include "nekobox/sys/linux/LinuxCap.h"
 #include <QDBusInterface>
 #include <QDBusReply>
 #include <QUuid>
@@ -63,8 +63,8 @@
 #if QT_VERSION >= QT_VERSION_CHECK(6, 5, 0)
 #include <QStyleHints>
 #endif
-#include "include/global/DeviceDetailsHelper.hpp"
-#include "include/sys/Settings.h"
+#include "nekobox/global/DeviceDetailsHelper.hpp"
+#include "nekobox/sys/Settings.h"
 #include <3rdparty/QHotkey/qhotkey.h>
 #include <3rdparty/qv2ray/v2/proxy/QvProxyConfigurator.hpp>
 #include <QDir>
@@ -72,7 +72,7 @@
 #include <QMimeData>
 #include <QStandardPaths>
 #include <QToolTip>
-#include <include/global/HTTPRequestHelper.hpp>
+#include <nekobox/global/HTTPRequestHelper.hpp>
 #include <random>
 
 #include <map>
@@ -422,7 +422,7 @@ MainWindow::MainWindow(QWidget *parent)
 
   QStringList args;
   args.push_back("-port");
-  args.push_back(Int2String(Configs::dataStore->core_port));
+  args.push_back(QString::number(Configs::dataStore->core_port));
   if (Configs::dataStore->log_level == "debug")
     args.push_back("-debug");
 
@@ -2393,7 +2393,7 @@ void MainWindow::refresh_table_item(
 
   // Check state
   auto check = f0->clone();
-  check->setText(isRunning ? "✓" : Int2String(row + 1) + "  ");
+  check->setText(isRunning ? "✓" : QString::number(row + 1) + "  ");
   ui->proxyListTable->setVerticalHeaderItem(row, check);
 
   // C0: Type
@@ -3041,7 +3041,7 @@ void MainWindow::show_log_impl(const QString &log) {
 
   QString trimmed;
   if (log.size() > 20000) {
-    trimmed = ("Ignored massive log of size: " + Int2String(log.size()));
+    trimmed = ("Ignored massive log of size: " + QString::number(log.size()));
   } else {
     trimmed = log.trimmed();
   }
@@ -3172,7 +3172,7 @@ void MainWindow::on_tabWidget_customContextMenuRequested(const QPoint &p) {
           if (dialog->result() == QDialog::Accepted) {
             ent->Save();
             MW_dialog_message(Dialog_DialogManageGroups,
-                              "refresh" + Int2String(ent->id));
+                              "refresh" + QString::number(ent->id));
           }
           dialog->deleteLater();
         });
@@ -3535,7 +3535,7 @@ bool isNewer(QString assetName) {
 
 #ifndef SKIP_UPDATE_BUTTON
 #ifndef SKIP_JS_UPDATER
-#include <include/js/js_updater.h>
+#include <nekobox/js/js_updater.h>
 #include <iostream>
 #endif
 void MainWindow::CheckUpdate() {

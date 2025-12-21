@@ -1,4 +1,4 @@
-#include "include/dataStore/Utils.hpp"
+#include "nekobox/dataStore/Utils.hpp"
 
 #include "3rdparty/base64.h"
 #include "3rdparty/QThreadCreateThread.hpp"
@@ -20,7 +20,7 @@
 #include <QLocale>
 
 #ifdef Q_OS_WIN
-#include "include/sys/windows/guihelper.h"
+#include "nekobox/sys/windows/guihelper.h"
 #endif
 
 QStringList SplitLines(const QString &_string) {
@@ -99,17 +99,6 @@ quint64 GetRandomUint64() {
     return dist(mt);
 }
 
-// QString >> QJson
-QJsonObject QString2QJsonObject(const QString &jsonString) {
-    QJsonDocument jsonDocument = QJsonDocument::fromJson(jsonString.toUtf8());
-    QJsonObject jsonObject = jsonDocument.object();
-    return jsonObject;
-}
-
-// QJson >> QString
-QString QJsonObject2QString(const QJsonObject &jsonObject, bool compact) {
-    return QJsonDocument(jsonObject).toJson(compact ? QJsonDocument::Compact : QJsonDocument::Indented);
-}
 
 QJsonArray QListStr2QJsonArray(const QList<QString> &list) {
     QVariantList list2;

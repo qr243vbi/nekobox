@@ -1,5 +1,5 @@
-#include <include/dataStore/ProxyEntity.hpp>
-#include <include/configs/proxy/AbstractBean.hpp>
+#include <nekobox/dataStore/ProxyEntity.hpp>
+#include <nekobox/configs/proxy/AbstractBean.hpp>
 #include <qnamespace.h>
 
 namespace Configs

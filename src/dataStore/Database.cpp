@@ -2,10 +2,10 @@
 #include <winsock2.h>
 #include <windows.h>
 #endif
-#include "include/dataStore/Database.hpp"
+#include "nekobox/dataStore/Database.hpp"
 
-#include "include/configs/proxy/includes.h"
-#include "include/configs/proxy/AbstractBean.hpp"
+#include "nekobox/configs/proxy/includes.h"
+#include "nekobox/configs/proxy/AbstractBean.hpp"
 
 #include <QDir>
 

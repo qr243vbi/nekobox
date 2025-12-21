@@ -4,7 +4,7 @@ set(NKR_DEFAULT_VERSION "1.0.0" CACHE STRING "A custom version string for applic
 if(NKR_VERSION STREQUAL "DYNAMIC")
     add_compile_definitions(NKR_DYNAMIC_VERSION)
     add_compile_definitions(NKR_DEFAULT_VERSION=\"${NKR_DEFAULT_VERSION}\")
-    list(APPEND PLATFORM_SOURCES include/js/version.h src/js/version.cpp)
+    list(APPEND PLATFORM_SOURCES ${NEKOBOX_INCLUDE}/js/version.h src/js/version.cpp)
 else()
     add_compile_definitions(NKR_VERSION=\"${NKR_VERSION}\")
 endif()

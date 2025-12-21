@@ -1,7 +1,7 @@
-#include "include/ui/profile/edit_ssh.h"
+#include "nekobox/ui/profile/edit_ssh.h"
 #include <QFileDialog>
 
-#include "include/configs/proxy/SSHBean.h"
+#include "nekobox/configs/proxy/SSHBean.h"
 
 EditSSH::EditSSH(QWidget *parent) : QWidget(parent), ui(new Ui::EditSSH) {
     ui->setupUi(this);

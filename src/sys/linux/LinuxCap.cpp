@@ -1,4 +1,4 @@
-#include "include/sys/linux/LinuxCap.h"
+#include "nekobox/sys/linux/LinuxCap.h"
 
 #include <QDebug>
 #include <QProcess>

@@ -1,12 +1,12 @@
-#include "include/ui/setting/RouteItem.h"
-#include "include/ui/setting/dialog_manage_routes.h"
-#include "include/ui/group/dialog_edit_group.h"
-#include "include/dataStore/RouteEntity.h"
-#include "include/dataStore/Database.hpp"
-#include "include/api/RPC.h"
-#include "include/configs/ConfigBuilder.hpp"
+#include "nekobox/ui/setting/RouteItem.h"
+#include "nekobox/ui/setting/dialog_manage_routes.h"
+#include "nekobox/ui/group/dialog_edit_group.h"
+#include "nekobox/dataStore/RouteEntity.h"
+#include "nekobox/dataStore/Database.hpp"
+#include "nekobox/api/RPC.h"
+#include "nekobox/configs/ConfigBuilder.hpp"
 #include <qnamespace.h>
-#include <include/global/HTTPRequestHelper.hpp>
+#include <nekobox/global/HTTPRequestHelper.hpp>
 #include <QRadioButton>
 
 QList<QString> default_outbound_choose = {"proxy", "direct", "block"};

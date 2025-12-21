@@ -1,8 +1,8 @@
-#include "include/ui/group/dialog_edit_group.h"
+#include "nekobox/ui/group/dialog_edit_group.h"
 
-#include "include/dataStore/Database.hpp"
-#include "include/ui/mainwindow_interface.h"
-#include "include/sys/Settings.h"
+#include "nekobox/dataStore/Database.hpp"
+#include "nekobox/ui/mainwindow_interface.h"
+#include "nekobox/sys/Settings.h"
 #include <QHeaderView>
 #include <QClipboard>
 #include <QStringListModel>

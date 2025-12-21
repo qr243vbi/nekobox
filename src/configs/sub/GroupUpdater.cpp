@@ -1,9 +1,9 @@
-#include "include/configs/proxy/V2RayStreamSettings.hpp"
-#include "include/dataStore/ProfileFilter.hpp"
-#include "include/configs/proxy/includes.h"
-#include "include/global/HTTPRequestHelper.hpp"
+#include "nekobox/configs/proxy/V2RayStreamSettings.hpp"
+#include "nekobox/dataStore/ProfileFilter.hpp"
+#include "nekobox/configs/proxy/includes.h"
+#include "nekobox/global/HTTPRequestHelper.hpp"
 
-#include "include/configs/sub/GroupUpdater.hpp"
+#include "nekobox/configs/sub/GroupUpdater.hpp"
 
 #include <QInputDialog>
 #include <QUrlQuery>
@@ -800,7 +800,7 @@ namespace Subscription {
                     bean->password = Node2QString(proxy["password"]);
 
                     if (Node2Int(proxy["heartbeat-interval"]) != 0) {
-                        bean->heartbeat = Int2String(Node2Int(proxy["heartbeat-interval"])) + "ms";
+                        bean->heartbeat = QString::number(Node2Int(proxy["heartbeat-interval"])) + "ms";
                     }
 
                     bean->udpRelayMode = Node2QString(proxy["udp-relay-mode"], bean->udpRelayMode);
@@ -950,7 +950,7 @@ namespace Subscription {
                     }
                 } else
                 {
-                    notice_added += QString("[+] ") + "added " + Int2String(only_out.size()) + "\n";
+                    notice_added += QString("[+] ") + "added " + QString::number(only_out.size()) + "\n";
                 }
                 if (only_in.size() < 1000)
                 {
@@ -959,7 +959,7 @@ namespace Subscription {
                     }
                 } else
                 {
-                    notice_deleted += QString("[-] ") + "deleted " + Int2String(only_in.size()) + "\n";
+                    notice_deleted += QString("[-] ") + "deleted " + QString::number(only_in.size()) + "\n";
                 }
 
 

@@ -1,7 +1,7 @@
-#include "include/ui/profile/edit_trojan_vless.h"
+#include "nekobox/ui/profile/edit_trojan_vless.h"
 
-#include "include/configs/proxy/TrojanVLESSBean.hpp"
-#include "include/configs/proxy/Preset.hpp"
+#include "nekobox/configs/proxy/TrojanVLESSBean.hpp"
+#include "nekobox/configs/proxy/Preset.hpp"
 
 EditTrojanVLESS::EditTrojanVLESS(QWidget *parent) : QWidget(parent), ui(new Ui::EditTrojanVLESS) {
     ui->setupUi(this);

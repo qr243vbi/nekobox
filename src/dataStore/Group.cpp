@@ -1,8 +1,8 @@
-#include <include/dataStore/Group.hpp>
+#include <nekobox/dataStore/Group.hpp>
 #include <QFile>
-#include "include/ui/profile/dialog_edit_profile.h"
-#include "include/dataStore/Utils.hpp"
-#include "include/configs/proxy/AbstractBean.hpp"
+#include "nekobox/ui/profile/dialog_edit_profile.h"
+#include "nekobox/dataStore/Utils.hpp"
+#include "nekobox/configs/proxy/AbstractBean.hpp"
 
 
 namespace Configs

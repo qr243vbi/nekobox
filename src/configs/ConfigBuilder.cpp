@@ -2,11 +2,11 @@
 #include <winsock2.h>
 #include <windows.h>
 #endif
-#include "include/configs/ConfigBuilder.hpp"
-#include "include/dataStore/Database.hpp"
-#include "include/configs/proxy/includes.h"
-#include "include/configs/proxy/Preset.hpp"
-#include "include/api/RPC.h"
+#include "nekobox/configs/ConfigBuilder.hpp"
+#include "nekobox/dataStore/Database.hpp"
+#include "nekobox/configs/proxy/includes.h"
+#include "nekobox/configs/proxy/Preset.hpp"
+#include "nekobox/api/RPC.h"
 
 #include <QApplication>
 #include <QFile>
@@ -794,7 +794,7 @@ namespace Configs {
             routeObj["auto_detect_interface"] = true;
         }
         if (!status->forTest) {
-            if (dataStore->enable_stats)
+            if (dataStore->connection_statistics)
             {
                 routeObj["find_process"] = true;
             }
@@ -1035,12 +1035,12 @@ namespace Configs {
         {
             if (dataStore->core_box_clash_api > 0){
                 clash_api = {
-                {"external_controller", dataStore->core_box_clash_listen_addr + ":" + Int2String(dataStore->core_box_clash_api)},
+                {"external_controller", dataStore->core_box_clash_listen_addr + ":" + QString::number(dataStore->core_box_clash_api)},
                 {"secret", dataStore->core_box_clash_api_secret},
                 {"external_ui", "dashboard"},
                 };
             }
-            if (dataStore->core_box_clash_api > 0 || dataStore->enable_stats)
+            if (dataStore->core_box_clash_api > 0 || dataStore->connection_statistics)
             {
                 experimentalObj["clash_api"] = clash_api;
             }

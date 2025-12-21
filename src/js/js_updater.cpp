@@ -1,11 +1,11 @@
-#include <include/js/js_updater.h>
+#include <nekobox/js/js_updater.h>
 #include <QJSEngine>
 #include <QVariantMap>
-#include <include/global/HTTPRequestHelper.hpp>
+#include <nekobox/global/HTTPRequestHelper.hpp>
 #include <QFile>
 #include <iostream>
-#include "include/configs/ConfigBuilder.hpp"
-#include <include/js/version.h>
+#include "nekobox/configs/ConfigBuilder.hpp"
+#include <nekobox/js/version.h>
 #include <iostream>
 #include <QString>
 #include <QProcessEnvironment>

@@ -1,6 +1,6 @@
-#include "include/ui/profile/edit_tailscale.h"
+#include "nekobox/ui/profile/edit_tailscale.h"
 
-#include "include/configs/proxy/Tailscale.hpp"
+#include "nekobox/configs/proxy/Tailscale.hpp"
 
 EditTailScale::EditTailScale(QWidget *parent) : QWidget(parent), ui(new Ui::EditTailScale) {
     ui->setupUi(this);

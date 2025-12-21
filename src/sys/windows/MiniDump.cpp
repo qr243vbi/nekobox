@@ -1,4 +1,4 @@
-#include "include/sys/windows/MiniDump.h"
+#include "nekobox/sys/windows/MiniDump.h"
 
 #ifndef WIN32_LEAN_AND_MEAN
 #define WIN32_LEAN_AND_MEAN
@@ -12,7 +12,7 @@
 #include <QDateTime>
 #include <QMessageBox>
 
-#include <include/js/version.h>
+#include <nekobox/js/version.h>
 
 typedef BOOL(WINAPI *MINIDUMPWRITEDUMP)(
     HANDLE hProcess,

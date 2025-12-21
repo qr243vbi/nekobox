@@ -1,4 +1,4 @@
-#include "include/global/HTTPRequestHelper.hpp"
+#include "nekobox/global/HTTPRequestHelper.hpp"
 
 #include <QNetworkProxy>
 #include <QNetworkAccessManager>
@@ -11,9 +11,9 @@
 #include <QMap>
 #include <QDir>
 #include <QStringList>
-#include "include/dataStore/Configs.hpp"
-#include "include/ui/mainwindow.h"
-#include "include/global/DeviceDetailsHelper.hpp"
+#include "nekobox/dataStore/Configs.hpp"
+#include "nekobox/ui/mainwindow.h"
+#include "nekobox/global/DeviceDetailsHelper.hpp"
 
 static inline void InitializeRequest(
     QNetworkRequest & request, 
@@ -22,7 +22,7 @@ static inline void InitializeRequest(
     QString & error,
     bool sendHwid
 ){
-        bool net_use_proxy = !Configs::dataStore->net_skip_proxy;
+        bool net_use_proxy = Configs::dataStore->net_use_proxy;
         bool proxy_started = Configs::dataStore->started_id >= 0;
         net_use_proxy &= proxy_started;
         net_use_proxy |= Configs::dataStore->spmode_system_proxy;

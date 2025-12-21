@@ -20,16 +20,16 @@
 #include <windows.h>
 
 #include <iostream>
-#include "include/sys/windows/MiniDump.h"
-#include "include/sys/windows/eventHandler.h"
-#include "include/sys/windows/WinVersion.h"
+#include "nekobox/sys/windows/MiniDump.h"
+#include "nekobox/sys/windows/eventHandler.h"
+#include "nekobox/sys/windows/WinVersion.h"
 #include <qfontdatabase.h>
 #endif
 
-#include "include/sys/Settings.h"
-#include "include/dataStore/ResourceEntity.hpp"
+#include "nekobox/sys/Settings.h"
+#include "nekobox/dataStore/ResourceEntity.hpp"
 
-#include "include/ui/mainwindow_interface.h"
+#include "nekobox/ui/mainwindow_interface.h"
 
 std::map<std::string, std::string> ruleSetMap;
 

@@ -1,8 +1,8 @@
-#include "include/dataStore/ResourceEntity.hpp"
-#include "include/sys/Settings.h"
+#include "nekobox/dataStore/ResourceEntity.hpp"
+#include "nekobox/sys/Settings.h"
 #include <QString>
 #include <qcoreapplication.h>
-#include "include/configs/proxy/AbstractBean.hpp"
+#include "nekobox/configs/proxy/AbstractBean.hpp"
 
 static inline QString _ent(QString name) {
   name = name.replace("/", "_P");

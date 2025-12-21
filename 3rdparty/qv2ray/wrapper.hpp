@@ -4,6 +4,8 @@
 
 #include <QJsonDocument>
 #include <QDebug>
+#include <QJsonDocument>
+#include <QJsonObject>
 
 #define LOG(...) qDebug() << __VA_ARGS__
 #define DEBUG(...) qDebug() << __VA_ARGS__
@@ -14,9 +16,20 @@ namespace Qv2ray {
     } // namespace base
 } // namespace Qv2ray
 
+// QString >> QJson
+inline QJsonObject QString2QJsonObject(const QString &jsonString) {
+    QJsonDocument jsonDocument = QJsonDocument::fromJson(jsonString.toUtf8());
+    QJsonObject jsonObject = jsonDocument.object();
+    return jsonObject;
+}
+
+// QJson >> QString
+inline QString QJsonObject2QString(const QJsonObject &jsonObject, bool compact) {
+    return QJsonDocument(jsonObject).toJson(compact ? QJsonDocument::Compact : QJsonDocument::Indented);
+}
+
 #define JsonToString(a) QJsonObject2QString(a, false)
 #define JsonFromString(a) QString2QJsonObject(a)
-#define QvMessageBoxWarn(a, b, c) MessageBoxWarning(b, c)
 
 inline QString VerifyJsonString(const QString &source) {
     QJsonParseError error{};

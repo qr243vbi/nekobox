@@ -1,10 +1,10 @@
-#include "include/ui/profile/edit_chain.h"
+#include "nekobox/ui/profile/edit_chain.h"
 
-#include "include/ui/mainwindow_interface.h"
-#include "include/ui/profile/ProxyItem.h"
+#include "nekobox/ui/mainwindow_interface.h"
+#include "nekobox/ui/profile/ProxyItem.h"
 
-#include "include/dataStore/Database.hpp"
-#include "include/configs/proxy/ChainBean.hpp"
+#include "nekobox/dataStore/Database.hpp"
+#include "nekobox/configs/proxy/ChainBean.hpp"
 
 EditChain::EditChain(QWidget *parent) : QWidget(parent), ui(new Ui::EditChain) {
     ui->setupUi(this);

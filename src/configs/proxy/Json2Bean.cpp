@@ -1,5 +1,5 @@
-#include "include/configs/proxy/V2RayStreamSettings.hpp"
-#include <include/configs/proxy/includes.h>
+#include "nekobox/configs/proxy/V2RayStreamSettings.hpp"
+#include <nekobox/configs/proxy/includes.h>
 
 namespace Configs
 {

@@ -1,4 +1,4 @@
-#include "include/global/DeviceDetailsHelper.hpp"
+#include "nekobox/global/DeviceDetailsHelper.hpp"
 
 #include <QString>
 #include <QSysInfo>
@@ -8,8 +8,8 @@
 
 #ifdef Q_OS_WIN
 #include <windows.h>
-#include "include/sys/windows/WinVersion.h"
-#include <include/sys/Process.hpp>
+#include "nekobox/sys/windows/WinVersion.h"
+#include <nekobox/sys/Process.hpp>
 #include <Wbemidl.h>
 #pragma comment(lib, "wbemuuid.lib")
 #endif

@@ -1,10 +1,10 @@
-#include "include/ui/group/dialog_manage_groups.h"
+#include "nekobox/ui/group/dialog_manage_groups.h"
 
-#include "include/dataStore/Database.hpp"
-#include "include/configs/sub/GroupUpdater.hpp"
-#include "include/global/GuiUtils.hpp"
-#include "include/ui/group/GroupItem.h"
-#include "include/ui/group/dialog_edit_group.h"
+#include "nekobox/dataStore/Database.hpp"
+#include "nekobox/configs/sub/GroupUpdater.hpp"
+#include "nekobox/global/GuiUtils.hpp"
+#include "nekobox/ui/group/GroupItem.h"
+#include "nekobox/ui/group/dialog_edit_group.h"
 
 #include <QInputDialog>
 #include <QListWidgetItem>

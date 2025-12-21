@@ -1,11 +1,11 @@
-#include "include/ui/setting/dialog_vpn_settings.h"
+#include "nekobox/ui/setting/dialog_vpn_settings.h"
 
-#include "include/configs/proxy/Preset.hpp"
-#include "include/global/GuiUtils.hpp"
-#include "include/dataStore/Configs.hpp"
-#include "include/ui/mainwindow_interface.h"
+#include "nekobox/configs/proxy/Preset.hpp"
+#include "nekobox/global/GuiUtils.hpp"
+#include "nekobox/dataStore/Configs.hpp"
+#include "nekobox/ui/mainwindow_interface.h"
 #ifdef Q_OS_WIN
-#include "include/sys/windows/WinVersion.h"
+#include "nekobox/sys/windows/WinVersion.h"
 #endif
 
 #include <QMessageBox>
