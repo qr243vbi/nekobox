@@ -5,10 +5,14 @@
 
 #define CONFIG_INI_PATH  QDir::current().absolutePath() + "/window.ini"
 
+#define GLOBAL_INI_PATH  getResource("global.ini")
+
+
 void updateEmojiFont();
 
 bool createSymlink(const QString &targetPath, const QString &linkPath);
 QSettings getSettings();
+QSettings getGlobal();
 QString getLocale();
 QString getResourcesDir();
 QString getResource(QString);
