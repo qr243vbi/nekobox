@@ -6,6 +6,7 @@
 #include <iostream>
 #include "nekobox/configs/ConfigBuilder.hpp"
 #include <nekobox/js/version.h>
+#include <nekobox/sys/Settings.h>
 #include <iostream>
 #include <QString>
 #include <QProcessEnvironment>
@@ -135,6 +136,15 @@ bool jsInit(
 
     ctx->globalObject().setProperty("NKR_VERSION", NKR_VERSION);
     ctx->globalObject().setProperty("APPLICATION_DIR_PATH", QCoreApplication::applicationDirPath());
+
+    QJSValue optionsObject = ctx->newObject();
+    QSettings settings = getGlobal();
+    QStringList keys = settings.allKeys();
+    for (const QString &key : keys) {
+        optionsObject.setProperty(key, ctx->toScriptValue<QVariant>(settings.value(key)));
+    }
+
+    ctx->globalObject().setProperty("GlobalMap", optionsObject);
 
     QString script;
 

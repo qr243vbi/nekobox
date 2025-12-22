@@ -3,6 +3,7 @@
 #include "nekobox/dataStore/ResourceEntity.hpp"
 #include <QApplication>
 #include <QDir>
+#include <QVariantMap>
 #include <QTemporaryFile>
 #include <QFontDatabase>
 #include <qcontainerfwd.h>
@@ -10,6 +11,17 @@
 
 QSettings getSettings() {
   return QSettings(CONFIG_INI_PATH, QSettings::IniFormat);
+}
+
+QSettings getGlobal(){
+  return QSettings(GLOBAL_INI_PATH, QSettings::IniFormat);
+  /*
+  QStringList keys = settings.allKeys();
+  for (const QString &key : keys) {
+    map.insert(key, settings.value(key));
+  }
+  return map;
+  */
 }
 
 QString getResourcesDir() {
