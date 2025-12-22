@@ -7,6 +7,7 @@
 #include "nekobox/dataStore/Utils.hpp"
 #include "nekobox/sys/AutoRun.hpp"
 #include "nekobox/sys/Process.hpp"
+#include "nekobox/global/keyvaluerange.h"
 
 #include <QJsonDocument>
 #include <QMutex>
@@ -3397,6 +3398,35 @@ JsUpdaterWindow *MainWindow::createJsUpdaterWindow() {
   connect(bQueue, &JsUpdaterWindow::info_signal, this,
           [=, this](const QString &message, const QString &title) {
             runOnUiThread([=, this] { MessageBoxInfo(title, message); });
+          });
+
+  // Connect the signal to a lambda function
+  connect(bQueue, &JsUpdaterWindow::ask_signal, this,
+          [=, this](const QString &message, const QString &title, const QMap<int, QString> &list, int * buttonIndex) {
+            QMutex mut;
+            mut.lock();
+            *buttonIndex = 0;
+            runOnUiThread([buttonIndex, this, &mut, &title, &message, &list] {
+              QMessageBox box(QMessageBox::Question,
+                              title,
+                              message);
+
+              QMap<QPushButton*, int> buttons;
+              for (auto [k, str] : asKeyValueRange(list)){
+                buttons[box.addButton(str, QMessageBox::ActionRole)] = k;
+              }
+              box.exec();
+              auto button = box.clickedButton();
+              for (auto [btn, i]: asKeyValueRange(buttons)){
+                if (btn == button){
+                  *buttonIndex = i;
+                  break;
+                }
+              }
+              mut.unlock();
+            });
+            mut.lock();
+            mut.unlock();
           });
 
   return bQueue;
