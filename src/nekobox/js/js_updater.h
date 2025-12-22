@@ -5,6 +5,7 @@
 #include <QObject>
 #include <QVariantMap>
 #include <functional>
+#include <QStringList>
 #include <nekobox/global/HTTPRequestHelper.hpp>
 
 class JsUpdaterWindow : public QObject
@@ -24,6 +25,7 @@ signals:
     void log_signal(const QString &value, const QString &title);
     void warning_signal(const QString &value, const QString &title);
     void info_signal(const QString &value, const QString &title);
+    void ask_signal(const QString &value, const QString &title, const QMap<int, QString> &map, int * ret);
 };
 
 class JsHTTPRequest : public QObject
