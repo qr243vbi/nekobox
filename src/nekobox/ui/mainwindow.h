@@ -272,6 +272,7 @@ private:
     // for data view
     QString softwarePath;
     QString softwareFilePath;
+    QString updaterPath;
 
     QDateTime lastUpdated = QDateTime::currentDateTime();
     QString currentSptProfileName;
