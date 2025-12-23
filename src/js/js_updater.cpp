@@ -54,6 +54,20 @@ void JsUpdaterWindow::warning(const QVariant value, const QVariant title){
     emit warning_signal(value1, title1);
  //   queue->Push(MessagePart{value.toString(), title.toString(), 2});
 }
+void JsUpdaterWindow::unlock(){
+    mutex.unlock();
+};
+int JsUpdaterWindow::ask(const QVariant value, const QVariant title, const QVariant map){
+    QString value1 = value.toString();
+    QString title1 = title.toString();
+    QStringList map1 = map.toStringList();
+    int ret;
+    mutex.lock();
+    emit ask_signal(value1, title1, map1, &ret);
+    mutex.lock();
+    mutex.unlock();
+    return ret;
+}
 void JsUpdaterWindow::info(const QVariant value, const QVariant title){
     QString value1 = value.toString();
     QString title1 = title.toString();
