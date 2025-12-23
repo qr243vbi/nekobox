@@ -3402,31 +3402,28 @@ JsUpdaterWindow *MainWindow::createJsUpdaterWindow() {
 
   // Connect the signal to a lambda function
   connect(bQueue, &JsUpdaterWindow::ask_signal, this,
-          [=, this](const QString &message, const QString &title, const QMap<int, QString> &list, int * buttonIndex) {
-            QMutex mut;
-            mut.lock();
-            *buttonIndex = 0;
-            runOnUiThread([buttonIndex, this, &mut, &title, &message, &list] {
+          [=, this](const QString &message, const QString &title, const QStringList &list, 
+              int* ret) {
+        //    runOnUiThread([ret, this, &mut, &title, &message, &list] {
               QMessageBox box(QMessageBox::Question,
                               title,
                               message);
 
               QMap<QPushButton*, int> buttons;
-              for (auto [k, str] : asKeyValueRange(list)){
+              for (auto [k, str] : asListRange(list)){
                 buttons[box.addButton(str, QMessageBox::ActionRole)] = k;
               }
               box.exec();
               auto button = box.clickedButton();
               for (auto [btn, i]: asKeyValueRange(buttons)){
                 if (btn == button){
-                  *buttonIndex = i;
+                  *ret = i;
                   break;
                 }
               }
-              mut.unlock();
-            });
-            mut.lock();
-            mut.unlock();
+              
+              bQueue->unlock();
+         //   });
           });
 
   return bQueue;

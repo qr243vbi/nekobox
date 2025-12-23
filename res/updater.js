@@ -1,13 +1,19 @@
-function _n(string){
-    if (string === undefined){
-        return "";
-    } else {
-        return "" + string;
-    }
+function _n(value) {
+    return value == null ? "" : String(value);
+}
+
+function _a(value) {
+    if (value == null) return [];
+    if (Array.isArray(value)) return value.map(_n);
+    return [_n(value)];
 }
 
 function print(string){
     window.print(_n(string));
+}
+
+function ask(message, title, array){
+    return window.ask(_n(message), _n(title), _a(array));
 }
 
 function warning(message, title){

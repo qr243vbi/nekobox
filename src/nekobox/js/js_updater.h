@@ -18,14 +18,19 @@ public:
     Q_INVOKABLE void warning(const QVariant message, const QVariant title);
     Q_INVOKABLE void info(const QVariant message, const QVariant title);
     Q_INVOKABLE bool file_exists(const QVariant file);
+    Q_INVOKABLE int ask(const QVariant value, const QVariant title, const QVariant map);
     Q_INVOKABLE QString get_jsdelivr_link(const QVariant value);
     Q_INVOKABLE QString translate(const QVariant value);
     Q_INVOKABLE QString get_locale() const;
+
+    QMutex mutex;
 signals:
     void log_signal(const QString &value, const QString &title);
     void warning_signal(const QString &value, const QString &title);
     void info_signal(const QString &value, const QString &title);
-    void ask_signal(const QString &value, const QString &title, const QMap<int, QString> &map, int * ret);
+    void ask_signal(const QString &value, const QString &title, const QStringList &map, int * ret);
+public slots:
+    void unlock();
 };
 
 class JsHTTPRequest : public QObject
