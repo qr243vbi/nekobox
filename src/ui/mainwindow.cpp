@@ -356,8 +356,8 @@ MainWindow::MainWindow(QWidget *parent)
   loadShortcuts();
 
   // setup log
- // ui->splitter->restoreState(
- //     DecodeB64IfValid(Configs::dataStore->splitter_state));
+  ui->splitter->restoreState(
+      DecodeB64IfValid(settings.value("splitter_state", "").toString()));
   new SyntaxHighlighter(isDarkMode() || theme.toLower() == "qdarkstyle",
                         qvLogDocument);
   qvLogDocument->setUndoRedoEnabled(false);
@@ -1560,11 +1560,11 @@ void MainWindow::on_commitDataRequest() {
       settings.setValue("X", x);
       settings.setValue("Y", y);
     }
+    settings.setValue("splitter_state", ui->splitter->saveState().toBase64());
     Configs::tableSettings.Save(settings);
     settings.sync();
   }
   //
-  // Configs::dataStore->splitter_state = ui->splitter->saveState().toBase64();
   //
   auto last_id = Configs::dataStore->started_id;
   if (Configs::dataStore->remember_enable && last_id >= 0) {
@@ -1640,7 +1640,7 @@ void MainWindow::on_menu_exit_triggered() {
       arguments.removeAll("-flag_restart_dns_set");
     }
     list += arguments;
-    QString sourceFilePath = getUpdaterPath();
+    QString sourceFilePath = updaterPath;
     QDir tempdir;
     tempdir.mkpath("temp");
     QString destinationFilePath = Configs::GetBasePath();
@@ -3666,6 +3666,8 @@ void MainWindow::CheckUpdate() {
 
 end_search_define:
 
+  updaterPath = getUpdaterPath();
+
 bool allow_updater = true;
 #ifndef Q_OS_WIN
 #ifdef Q_OS_UNIX
@@ -3676,7 +3678,7 @@ if (isAppImage()) {
   #endif
   allow_updater = isDirectoryWritable(softwarePath);
   if (allow_updater){
-    if (!QFile::exists(getUpdaterPath())){
+    if (!QFile::exists(updaterPath)){
       allow_updater = false;
     }
   }

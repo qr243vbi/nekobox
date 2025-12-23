@@ -163,7 +163,7 @@ if (resp.error){
             release_note += ar[0] + ': ' + ar[1];
         }
     }
-archive_name = assets_name;
+archive_name = "temp/" + assets_name;
 
 let release_download_url_flag = (release_download_url == '');
 
