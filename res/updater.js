@@ -16,6 +16,14 @@ function ask(message, title, array){
     return window.ask(_n(message), _n(title), _a(array));
 }
 
+function tempdir(){
+    return window.tempdir();
+}
+
+function download(url, fileName){
+    return window.download(_n(url), _n(fileName));
+}
+
 function warning(message, title){
     window.warning(_n(message), _n(title));
 }

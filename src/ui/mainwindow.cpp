@@ -3400,6 +3400,19 @@ JsUpdaterWindow *MainWindow::createJsUpdaterWindow() {
             runOnUiThread([=, this] { MessageBoxInfo(title, message); });
           });
 
+  connect(bQueue, &JsUpdaterWindow::download_signal, this, 
+          [=, this](const QString &url, const QString &fileName, QString &ret){
+            QMutex mut;
+            mut.lock();
+            runOnUiThread([this, &url, &fileName,  &mut, &ret]{
+              ret = NetworkRequestHelper::DownloadAsset(url, fileName);
+              mut.unlock();
+            });
+            mut.lock();
+            mut.unlock();
+            bQueue->unlock();
+          });
+
   // Connect the signal to a lambda function
   connect(bQueue, &JsUpdaterWindow::ask_signal, this,
           [=, this](const QString &message, const QString &title, const QStringList &list, 

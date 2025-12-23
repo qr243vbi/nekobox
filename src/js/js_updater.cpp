@@ -15,6 +15,7 @@
 #include <functional>
 #include <QCoreApplication>
 #include <QLocale>
+#include <QDir>
 
 JsHTTPRequest::JsHTTPRequest(const QString& url): QObject(nullptr){
     init(url);
@@ -57,6 +58,23 @@ void JsUpdaterWindow::warning(const QVariant value, const QVariant title){
 void JsUpdaterWindow::unlock(){
     mutex.unlock();
 };
+
+QString JsUpdaterWindow::tempdir(){
+    QDir dir("temp");
+    return dir.absolutePath();
+}
+
+QString JsUpdaterWindow::download(const QVariant value, const QVariant title){
+    QString url = value.toString();
+    QString fileName = tempdir() + "/" + title.toString();
+    QString ret;
+    mutex.lock();
+    emit download_signal(url, fileName, ret);
+    mutex.lock();
+    mutex.unlock();
+    return ret;
+}
+
 int JsUpdaterWindow::ask(const QVariant value, const QVariant title, const QVariant map){
     QString value1 = value.toString();
     QString title1 = title.toString();
