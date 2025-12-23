@@ -3,7 +3,7 @@ let exitFlag = false;
 let resp = new HTTPResponse("https://api.github.com/repos/qr243vbi/nekobox/releases");
 var archive_extension = ".zip"
 
-//window.ask("title", "message", ["a", "B"]);
+//info(ask("title", "message", ["a", "B"]));
 
 if (file_exists(env["APPIMAGE"])){
   if (file_exists(APPLICATION_DIR_PATH + "/" + env["NEKOBOX_APPIMAGE_CUSTOM_EXECUTABLE"])){
