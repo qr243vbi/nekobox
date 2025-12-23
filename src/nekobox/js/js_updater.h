@@ -22,12 +22,14 @@ public:
     Q_INVOKABLE QString get_jsdelivr_link(const QVariant value);
     Q_INVOKABLE QString translate(const QVariant value);
     Q_INVOKABLE QString get_locale() const;
-
+    Q_INVOKABLE QString download(const QVariant url, const QVariant fileName);
+    Q_INVOKABLE QString tempdir();
     QMutex mutex;
 signals:
     void log_signal(const QString &value, const QString &title);
     void warning_signal(const QString &value, const QString &title);
     void info_signal(const QString &value, const QString &title);
+    void download_signal(const QString &url, const QString &asset, QString &ret);
     void ask_signal(const QString &value, const QString &title, const QStringList &map, int * ret);
 public slots:
     void unlock();
