@@ -2,6 +2,10 @@ function _n(value) {
     return value == null ? "" : String(value);
 }
 
+function _b(value) {
+    return ! (! (value));
+}
+
 function _a(value) {
     if (value == null) return [];
     if (Array.isArray(value)) return value.map(_n);
@@ -20,8 +24,18 @@ function tempdir(){
     return window.tempdir();
 }
 
-function download(url, fileName){
-    return window.download(_n(url), _n(fileName));
+function tempdir_path(filename){
+    return window.tempdir() + '/' + _n(filename);
+}
+
+function open_url(url){
+    return window.open_url(url);
+}
+
+window.tempdir_path = tempdir_path;
+
+function download(url, fileName, ifexists){
+    return window.download(_n(url), _n(fileName), _b(ifexists));
 }
 
 function warning(message, title){
@@ -71,3 +85,4 @@ function httpget(url, message, title){
     };
     return p;
 }
+

@@ -170,8 +170,40 @@ let release_download_url_flag = (release_download_url == '');
 log(translate("assets version is" + (is_newer ? "": " not") + " newer" + ((is_newer && release_download_url_flag) ? ", but download url is empty" : "") ), "Warn");
 
 if (release_download_url_flag || !is_newer){
-    warning("No update", "Update");
+    warning(translate("No update"), translate("Update"));
     is_newer = false;
+} else {
+    let array = [translate("Cancel"), translate("Open in browser")];
+    if (UpdaterExists){
+        array.push(translate("Update"));
+    }
+    let index = ask(
+        translate("Update found: %1\nRelease note:\n%2").
+            replace('%1', assets_name).replace('%2', release_note),
+        translate("Update"),
+            array
+    );
+    if (index == 1){
+        open_url(release_url);
+    }
+    if (index == 2){
+        let errors = download(release_download_url, archive_name, true);
+        if (errors == ''){
+            let index2 = ask(
+                translate("Update is ready, restart to install?"),
+                translate("Update"),
+                [translate("Yes"), translate("No")]
+            );
+            if (index2 != 0){
+                is_newer = false;
+            }
+        } else {
+            warning(errors, translate("Failed to download update assets"));
+            is_newer = false;
+        }
+    } else {
+        is_newer = false;
+    };
 }
 
 }

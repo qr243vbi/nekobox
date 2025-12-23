@@ -43,6 +43,8 @@ return ptr;      \
 
 inline QString software_name;
 inline QString software_core_name;
+inline QString root_directory;
+inline QString software_path;
 
 // MainWindow functions
 class QWidget;

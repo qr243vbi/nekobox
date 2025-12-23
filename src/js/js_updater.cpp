@@ -5,6 +5,7 @@
 #include <QFile>
 #include <iostream>
 #include "nekobox/configs/ConfigBuilder.hpp"
+#include "nekobox/dataStore/Utils.hpp"
 #include <nekobox/js/version.h>
 #include <nekobox/sys/Settings.h>
 #include <iostream>
@@ -16,6 +17,8 @@
 #include <QCoreApplication>
 #include <QLocale>
 #include <QDir>
+#include <QDesktopServices>
+#include <QUrl>
 
 JsHTTPRequest::JsHTTPRequest(const QString& url): QObject(nullptr){
     init(url);
@@ -64,12 +67,23 @@ QString JsUpdaterWindow::tempdir(){
     return dir.absolutePath();
 }
 
-QString JsUpdaterWindow::download(const QVariant value, const QVariant title){
+void JsUpdaterWindow::open_url(const QVariant url){
+    QDesktopServices::openUrl(QUrl(url.toString()));
+}
+
+QString JsUpdaterWindow::download(const QVariant value, const QVariant title, const QVariant skipIfExists){
+    bool skip_if_exists = skipIfExists.toBool();
     QString url = value.toString();
-    QString fileName = tempdir() + "/" + title.toString();
+    QString fileName = "./" + title.toString();
     QString ret;
+    if (skip_if_exists){
+        QFile asset(fileName);
+        if (asset.exists()){
+            return "";
+        };
+    }
     mutex.lock();
-    emit download_signal(url, fileName, ret);
+    emit download_signal(url, fileName, &ret);
     mutex.lock();
     mutex.unlock();
     return ret;
@@ -167,7 +181,7 @@ bool jsInit(
     ctx->globalObject().setProperty("archive_name", "nekobox.zip");
 
     ctx->globalObject().setProperty("NKR_VERSION", NKR_VERSION);
-    ctx->globalObject().setProperty("APPLICATION_DIR_PATH", QCoreApplication::applicationDirPath());
+    ctx->globalObject().setProperty("APPLICATION_DIR_PATH", root_directory);
 
     QJSValue optionsObject = ctx->newObject();
     QSettings settings = getGlobal();
@@ -177,6 +191,7 @@ bool jsInit(
     }
 
     ctx->globalObject().setProperty("GlobalMap", optionsObject);
+    ctx->globalObject().setProperty("UpdaterExists", QFile::exists(getUpdaterPath()));
 
     QString script;
 
