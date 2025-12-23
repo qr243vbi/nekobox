@@ -270,6 +270,9 @@ private:
     SpeedWidget *speedChartWidget;
     //
     // for data view
+    QString softwarePath;
+    QString softwareFilePath;
+
     QDateTime lastUpdated = QDateTime::currentDateTime();
     QString currentSptProfileName;
     bool showSpeedtestData = false;

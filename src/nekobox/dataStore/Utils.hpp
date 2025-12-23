@@ -43,8 +43,9 @@ return ptr;      \
 
 inline QString software_name;
 inline QString software_core_name;
-inline QString root_directory;
-inline QString software_path;
+
+#define root_directory  QApplication::applicationDirPath()
+#define software_path   QApplication::applicationFilePath()
 
 // MainWindow functions
 class QWidget;

@@ -97,9 +97,6 @@ int main(int argc, char** argv) {
     QApplication::setQuitOnLastWindowClosed(false);
     QApplication a(argc, argv);
 
-    root_directory = QCoreApplication::applicationDirPath();
-    software_path = QApplication::applicationFilePath();
-
     // Flags
     Configs::dataStore->argv = QApplication::arguments();
     if (Configs::dataStore->argv.contains("-many")) Configs::dataStore->flag_many = true;

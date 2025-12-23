@@ -312,6 +312,9 @@ MainWindow::MainWindow(QWidget *parent)
     runOnUiThread([=, this] { dialog_message_impl(a, b); });
   };
 
+  softwareFilePath = getApplicationPath();
+  softwarePath = root_directory;
+
   QSettings settings = getSettings();
   // Load Manager
   Configs::profileManager->LoadManager();
@@ -1620,10 +1623,10 @@ void MainWindow::on_menu_exit_triggered() {
     QString updateDir;
 #ifdef Q_OS_UNIX
     if (isAppImage()) {
-      updateDir = getApplicationPath();
+      updateDir = softwareFilePath;
     } else {
 #endif
-      updateDir = root_directory;
+      updateDir = softwarePath;
 #ifdef Q_OS_UNIX
     }
 #endif
@@ -1665,7 +1668,7 @@ void MainWindow::on_menu_exit_triggered() {
     }
 #endif
   } else if (exit_reason == 2 || exit_reason == 3 || exit_reason == 4) {
-    QDir::setCurrent(root_directory);
+    QDir::setCurrent(softwarePath);
 
     auto arguments = Configs::dataStore->argv;
     if (arguments.length() > 0) {
@@ -1674,7 +1677,7 @@ void MainWindow::on_menu_exit_triggered() {
       arguments.removeAll("-flag_restart_tun_on");
       arguments.removeAll("-flag_restart_dns_set");
     }
-    auto program = getApplicationPath();
+    auto program = softwareFilePath;
 
     qDebug() << "Will Be Restarted: " << program;
 
@@ -3668,10 +3671,10 @@ bool allow_updater = true;
 #ifdef Q_OS_UNIX
 if (isAppImage()) {
   allow_updater =
-  (access(getApplicationPath().toUtf8().constData(), W_OK) == 0);
+  (access(softwareFilePath.toUtf8().constData(), W_OK) == 0);
 } else {
   #endif
-  allow_updater = isDirectoryWritable(root_directory);
+  allow_updater = isDirectoryWritable(softwarePath);
   if (allow_updater){
     if (!QFile::exists(getUpdaterPath())){
       allow_updater = false;
