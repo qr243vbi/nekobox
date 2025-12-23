@@ -7,7 +7,6 @@
 
 #define GLOBAL_INI_PATH  getResource("global.ini")
 
-
 void updateEmojiFont();
 
 bool createSymlink(const QString &targetPath, const QString &linkPath);

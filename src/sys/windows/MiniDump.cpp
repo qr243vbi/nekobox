@@ -13,6 +13,8 @@
 #include <QMessageBox>
 
 #include <nekobox/js/version.h>
+#include "nekobox/dataStore/Utils.hpp"
+
 
 typedef BOOL(WINAPI *MINIDUMPWRITEDUMP)(
     HANDLE hProcess,
@@ -24,7 +26,7 @@ typedef BOOL(WINAPI *MINIDUMPWRITEDUMP)(
     CONST PMINIDUMP_CALLBACK_INFORMATION CallbackParam);
 
 LONG __stdcall CreateCrashHandler(EXCEPTION_POINTERS *pException) {
-    QDir::setCurrent(QApplication::applicationDirPath());
+    QDir::setCurrent(root_directory);
 
     HMODULE DllHandle = NULL;
     DllHandle = LoadLibrary(_T("DBGHELP.DLL"));

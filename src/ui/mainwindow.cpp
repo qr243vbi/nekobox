@@ -353,8 +353,8 @@ MainWindow::MainWindow(QWidget *parent)
   loadShortcuts();
 
   // setup log
-  ui->splitter->restoreState(
-      DecodeB64IfValid(Configs::dataStore->splitter_state));
+ // ui->splitter->restoreState(
+ //     DecodeB64IfValid(Configs::dataStore->splitter_state));
   new SyntaxHighlighter(isDarkMode() || theme.toLower() == "qdarkstyle",
                         qvLogDocument);
   qvLogDocument->setUndoRedoEnabled(false);
@@ -1561,7 +1561,7 @@ void MainWindow::on_commitDataRequest() {
     settings.sync();
   }
   //
-  Configs::dataStore->splitter_state = ui->splitter->saveState().toBase64();
+  // Configs::dataStore->splitter_state = ui->splitter->saveState().toBase64();
   //
   auto last_id = Configs::dataStore->started_id;
   if (Configs::dataStore->remember_enable && last_id >= 0) {
@@ -1623,7 +1623,7 @@ void MainWindow::on_menu_exit_triggered() {
       updateDir = getApplicationPath();
     } else {
 #endif
-      updateDir = QApplication::applicationDirPath();
+      updateDir = root_directory;
 #ifdef Q_OS_UNIX
     }
 #endif
@@ -1665,7 +1665,7 @@ void MainWindow::on_menu_exit_triggered() {
     }
 #endif
   } else if (exit_reason == 2 || exit_reason == 3 || exit_reason == 4) {
-    QDir::setCurrent(QApplication::applicationDirPath());
+    QDir::setCurrent(root_directory);
 
     auto arguments = Configs::dataStore->argv;
     if (arguments.length() > 0) {
@@ -3401,15 +3401,8 @@ JsUpdaterWindow *MainWindow::createJsUpdaterWindow() {
           });
 
   connect(bQueue, &JsUpdaterWindow::download_signal, this, 
-          [=, this](const QString &url, const QString &fileName, QString &ret){
-            QMutex mut;
-            mut.lock();
-            runOnUiThread([this, &url, &fileName,  &mut, &ret]{
-              ret = NetworkRequestHelper::DownloadAsset(url, fileName);
-              mut.unlock();
-            });
-            mut.lock();
-            mut.unlock();
+          [=, this](const QString &url, const QString &fileName, QString *ret){
+            *ret = NetworkRequestHelper::DownloadAsset(url, fileName);;
             bQueue->unlock();
           });
 
@@ -3670,6 +3663,25 @@ void MainWindow::CheckUpdate() {
 
 end_search_define:
 
+bool allow_updater = true;
+#ifndef Q_OS_WIN
+#ifdef Q_OS_UNIX
+if (isAppImage()) {
+  allow_updater =
+  (access(getApplicationPath().toUtf8().constData(), W_OK) == 0);
+} else {
+  #endif
+  allow_updater = isDirectoryWritable(root_directory);
+  if (allow_updater){
+    if (!QFile::exists(getUpdaterPath())){
+      allow_updater = false;
+    }
+  }
+  #ifdef Q_OS_UNIX
+}
+#endif
+#endif
+
 #ifndef SKIP_JS_UPDATER
   JsUpdaterWindow *bQueue;
   QString updater_js = "";
@@ -3761,41 +3773,36 @@ skip1:
 #else
   if (!is_newer) {
     return;
+  } else {
+    QString archive_path = QString("./") + archive_name;
+    this->exit_reason = 1;
+    this->archive_name = archive_path;
+
+    qDebug() << "ARCHIVE PATH" << archive_path;
+
+    runOnNewThread([=, this] {
+      on_menu_exit_triggered();
+    });
   }
 
 #endif
 
+#ifdef SKIP_JS_UPDATER
   runOnUiThread([=, this] {
-    auto allow_updater = true;
-#ifndef Q_OS_WIN
-#ifdef Q_OS_UNIX
-    if (isAppImage()) {
-      allow_updater =
-          (access(getApplicationPath().toUtf8().constData(), W_OK) == 0);
-    } else {
-#endif
-      allow_updater = isDirectoryWritable(QApplication::applicationDirPath());
-#ifdef Q_OS_UNIX
-    }
-#endif
-#endif
+
 
     QMessageBox box(QMessageBox::Question,
                     QObject::tr("Update") + note_pre_release,
                     QObject::tr("Update found: %1\nRelease note:\n%2")
                         .arg(assets_name, release_note));
     //
+    box.addButton(QObject::tr("Close"), QMessageBox::RejectRole);
+    QAbstractButton *btn2 =
+      box.addButton(QObject::tr("Open in browser"), QMessageBox::AcceptRole);
     QAbstractButton *btn1 = nullptr;
     if (allow_updater) {
-      if (QFile::exists(getUpdaterPath())) {
-        btn1 = box.addButton(QObject::tr("Update"), QMessageBox::AcceptRole);
-      } else {
-        allow_updater = false;
-      }
+      btn1 = box.addButton(QObject::tr("Update"), QMessageBox::AcceptRole);
     }
-    QAbstractButton *btn2 =
-        box.addButton(QObject::tr("Open in browser"), QMessageBox::AcceptRole);
-    box.addButton(QObject::tr("Close"), QMessageBox::RejectRole);
     box.exec();
     //
     if (btn1 == box.clickedButton() && allow_updater) {
@@ -3845,5 +3852,7 @@ skip1:
       QDesktopServices::openUrl(QUrl(release_url));
     }
   });
+#endif
+
 }
 #endif

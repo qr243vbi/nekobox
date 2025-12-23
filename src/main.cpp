@@ -30,6 +30,7 @@
 #include "nekobox/dataStore/ResourceEntity.hpp"
 
 #include "nekobox/ui/mainwindow_interface.h"
+#include "nekobox/dataStore/Utils.hpp"
 
 std::map<std::string, std::string> ruleSetMap;
 
@@ -96,6 +97,9 @@ int main(int argc, char** argv) {
     QApplication::setQuitOnLastWindowClosed(false);
     QApplication a(argc, argv);
 
+    root_directory = QCoreApplication::applicationDirPath();
+    software_path = QApplication::applicationFilePath();
+
     // Flags
     Configs::dataStore->argv = QApplication::arguments();
     if (Configs::dataStore->argv.contains("-many")) Configs::dataStore->flag_many = true;
@@ -125,7 +129,7 @@ int main(int argc, char** argv) {
     bool dir_success = true;
     QDir dir;
 	// dirs & clean
-    auto wd = QDir(QApplication::applicationDirPath());
+    auto wd = QDir(root_directory);
     if (Configs::dataStore->flag_use_appdata) {
         if (!Configs::dataStore->appdataDir.isEmpty()) {
             wd.setPath(Configs::dataStore->appdataDir);
@@ -200,7 +204,7 @@ int main(int argc, char** argv) {
 
     
 #ifdef Q_OS_UNIX
-    QApplication::addLibraryPath(QApplication::applicationDirPath() + "/usr/plugins");
+    QApplication::addLibraryPath(root_directory + "/usr/plugins");
 #endif
 
     
