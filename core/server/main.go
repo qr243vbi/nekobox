@@ -1,8 +1,8 @@
 package main
 
 import (
-	"Core/internal/boxmain"
-	_ "Core/internal/distro/all"
+	"nekobox_core/internal/boxmain"
+	_ "nekobox_core/internal/distro/all"
 	"context"
 	"flag"
 	"fmt"
@@ -13,7 +13,7 @@ import (
 	runtimeDebug "runtime/debug"
 	"strconv"
 	"time"
-	gen "Core/gen"
+	"nekobox_core/gen"
 	"github.com/apache/thrift/lib/go/thrift"
 	C "github.com/sagernet/sing-box/constant"
 )

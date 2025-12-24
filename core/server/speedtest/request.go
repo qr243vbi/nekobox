@@ -1,7 +1,7 @@
 package speedtest
 
 import (
-	"Core/speedtest/transport"
+	"nekobox_core/speedtest/transport"
 	"context"
 	"errors"
 	"fmt"

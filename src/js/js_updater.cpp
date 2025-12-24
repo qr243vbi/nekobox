@@ -187,6 +187,16 @@ void getBoolean(QJSEngine& engine, QString name, bool * value){
     *value = engine.globalObject().property(name).toBool();
 }
 
+void exposeGlobalVariables(QJSEngine * ctx){
+    QJSValue optionsObject = ctx->newObject();
+    QSettings settings = getGlobal();
+    QStringList keys = settings.allKeys();
+    for (const QString &key : keys) {
+        optionsObject.setProperty(key, ctx->toScriptValue<QVariant>(settings.value(key)));
+    }
+    ctx->globalObject().setProperty("GlobalMap", optionsObject);
+}
+
 void exposeEnvironmentVariables(QJSEngine *engine) {
     QProcessEnvironment env = QProcessEnvironment::systemEnvironment();
     QJSValue envObject = engine->newObject();
@@ -214,14 +224,6 @@ bool jsInit(
     ctx->globalObject().setProperty("NKR_VERSION", NKR_VERSION);
     ctx->globalObject().setProperty("APPLICATION_DIR_PATH", root_directory);
 
-    QJSValue optionsObject = ctx->newObject();
-    QSettings settings = getGlobal();
-    QStringList keys = settings.allKeys();
-    for (const QString &key : keys) {
-        optionsObject.setProperty(key, ctx->toScriptValue<QVariant>(settings.value(key)));
-    }
-
-    ctx->globalObject().setProperty("GlobalMap", optionsObject);
 
     QString script;
 
@@ -229,6 +231,7 @@ bool jsInit(
     script = script + QString::fromUtf8(Configs::dataStore->ToJsonBytes());
     ctx->evaluate(script);
 
+    exposeGlobalVariables(ctx);
     exposeEnvironmentVariables(ctx);
 
     script = [&] { QFile f(":/updater.js"); return f.open(QIODevice::ReadOnly) ? QTextStream(&f).readAll() : QString(); }();
