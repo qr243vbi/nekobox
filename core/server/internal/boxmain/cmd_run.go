@@ -1,7 +1,7 @@
 package boxmain
 
 import (
-	"Core/internal/boxbox"
+	"nekobox_core/internal/boxbox"
 	"context"
 	"os"
 	"os/signal"

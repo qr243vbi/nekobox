@@ -1167,9 +1167,9 @@ MainWindow::MainWindow(QWidget *parent)
 
   if ((!Configs::dataStore->flag_tray) && ( 
         !settings.value("auto_hide", false).toBool() ) ){
-    {
-      show();
-    }
+    show();
+  } else {
+    hide();
   }
 
   ui->data_view->setStyleSheet("background: transparent; border: none;");

@@ -1,5 +1,5 @@
 package all
 
 import (
-	_ "Core/internal/boxdns"
+	_ "nekobox_core/internal/boxdns"
 )

@@ -1,8 +1,6 @@
-module Core
+module nekobox_core
 
 go 1.24.1
-
-replace github.com/sagernet/sing-box => github.com/qr243vbi/sing-box v1.12.13-0.20251125233828-e37a746830d7
 
 require (
 	github.com/NullYing/npipe v0.0.0-20250430055250-2d2a4d962cf7
@@ -11,10 +9,10 @@ require (
 	github.com/gofrs/uuid/v5 v5.4.0
 	github.com/google/shlex v0.0.0-20191202100458-e7afc7fbc510
 	github.com/sagernet/sing v0.7.13
-	github.com/sagernet/sing-box v0.0.0-00010101000000-000000000000
+	github.com/sagernet/sing-box v1.12.13
 	github.com/sagernet/sing-tun v0.7.3
 	github.com/spf13/cobra v1.10.2
-	golang.org/x/sys v0.38.0
+	golang.org/x/sys v0.39.0
 	kernel.org/pub/linux/libs/security/libcap/cap v1.2.77
 )
 
@@ -33,6 +31,7 @@ require (
 	github.com/cretz/bine v0.2.0 // indirect
 	github.com/dblohm7/wingoes v0.0.0-20240119213807-a09d6be7affa // indirect
 	github.com/digitalocean/go-smbios v0.0.0-20180907143718-390a4f403a8e // indirect
+	github.com/enfein/mieru/v3 v3.21.0 // indirect
 	github.com/fsnotify/fsnotify v1.7.0 // indirect
 	github.com/fxamacker/cbor/v2 v2.7.0 // indirect
 	github.com/gaissmai/bart v0.11.1 // indirect
@@ -46,7 +45,7 @@ require (
 	github.com/golang/groupcache v0.0.0-20210331224755-41bb18bfe9da // indirect
 	github.com/google/btree v1.1.3 // indirect
 	github.com/google/go-cmp v0.7.0 // indirect
-	github.com/google/nftables v0.3.0 // indirect
+	github.com/google/nftables v0.2.1-0.20240414091927-5e242ec57806 // indirect
 	github.com/google/uuid v1.6.0 // indirect
 	github.com/gorilla/csrf v1.7.3-0.20250123201450-9dd6af1f6d30 // indirect
 	github.com/gorilla/securecookie v1.1.2 // indirect
@@ -75,7 +74,6 @@ require (
 	github.com/pierrec/lz4/v4 v4.1.21 // indirect
 	github.com/prometheus-community/pro-bing v0.4.0 // indirect
 	github.com/quic-go/qpack v0.5.1 // indirect
-	github.com/quic-go/quic-go v0.55.0 // indirect
 	github.com/safchain/ethtool v0.3.0 // indirect
 	github.com/sagernet/bbolt v0.0.0-20231014093535-ea5cb2fe9f0a // indirect
 	github.com/sagernet/cors v1.2.1 // indirect
@@ -130,3 +128,5 @@ require (
 	kernel.org/pub/linux/libs/security/libcap/psx v1.2.77 // indirect
 	lukechampine.com/blake3 v1.3.0 // indirect
 )
+
+replace github.com/sagernet/sing-box => github.com/qr243vbi/sing-box v1.12.14
