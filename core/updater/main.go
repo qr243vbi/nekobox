@@ -8,6 +8,7 @@ import (
 	"path/filepath"
 	"time"
 	"runtime"
+	"flag"
 )
 
 func main() {
@@ -17,10 +18,17 @@ func main() {
 		panic(err.Error())
 	}
 
+	verbose := flag.Bool("verbose", false, "verbose mode")
 
-	wd := os.Args[2]
+	// Parse the flags
+	flag.Parse()
+
+	// Get the positional arguments
+	args := flag.Args()
+
+	wd := args[1]
 	os.Chdir(wd)
-	box := os.Args[1]
+	box := args[0]
 	exe = filepath.Base(os.Args[0])
 	log.Println("exe:", exe, "exe dir:", wd, "box: ", box)
 	{
@@ -28,12 +36,12 @@ func main() {
 		{
 			os.Chdir(wd)
 			// 1. update files
-			Updater(box)
+			Updater(box, *verbose)
 			// 2. start
 			if runtime.GOOS == "windows" {
-				exec.Command("./nekobox.exe",  os.Args[3:]...).Start()
+				exec.Command("./nekobox.exe",  args[2:]...).Start()
 			} else {
-				exec.Command("./nekobox",  os.Args[3:]...).Start()
+				exec.Command("./nekobox",  args[2:]...).Start()
 			}
 		}
 		return
