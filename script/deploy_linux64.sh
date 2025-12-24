@@ -102,14 +102,22 @@ exec "$(dirname $0)"/"${NEKOBOX_APPIMAGE_CUSTOM_EXECUTABLE}" "${@}"
 EOF
 cat << 'EOF' > updater
 #!/bin/sh -x
+while [[ "$1" != "--" ]]
+do
+  shift
+done
+shift
+
 APPIMAGE="${2}"
 B=1
 OLD=${APPIMAGE}.old.${OLD}.AppImage
+
 while [[ -e "${OLD}" ]];
 do
   B=$((B + 1))
   OLD=${APPIMAGE}.old.${OLD}.AppImage
 done
+
 mv "${APPIMAGE}" "${OLD}"
 cp "${1}" "${APPIMAGE}"
 chmod 755 "${APPIMAGE}"

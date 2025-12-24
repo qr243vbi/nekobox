@@ -158,8 +158,9 @@ void MainWindow::getRemoteRouteProfiles(){
       mu_remoteRouteProfiles.lock();
       remoteRouteProfiles = newRemoteRouteProfiles;
 
-      remoteRouteProfileGetter = [=, this](QString profile) -> QString {
-        NetworkRequestHelper::HttpGet(
+      remoteRouteProfileGetter = [=, this](QString profile, QString * url, bool *proxy) -> QString {
+        *proxy = profile.toLower().startsWith("bypass");
+        auto resp = NetworkRequestHelper::HttpGet( *url =
             Configs::get_jsdelivr_link("https://raw.githubusercontent.com/"
                                        "qr243vbi/ruleset/routeprofiles/" +
                                        profile + ".json"));
@@ -1630,6 +1631,8 @@ void MainWindow::on_menu_exit_triggered() {
 #ifdef Q_OS_UNIX
     }
 #endif
+    list << this->updater_args;
+    list << "--";
     list << Configs::GetBasePath() + "/" + this->archive_name;
     list << updateDir;
     auto arguments = Configs::dataStore->argv;
@@ -3576,9 +3579,16 @@ bool isNewer(QString assetName) {
 #endif
 void MainWindow::CheckUpdate() {
   bool is_newer = false;
-  QString archive_name = "nekobox.zip", assets_name = "",
-          release_download_url = "", release_url = "", release_note = "",
-          note_pre_release = "", search = "";
+
+  QString archive_name = "nekobox.zip",
+#ifdef SKIP_JS_UPDATER
+          assets_name = "",
+          release_download_url = "",
+          release_url = "",
+          release_note = "",
+          note_pre_release = "",
+#endif
+          search = "";
 
 #define SEARCHDEF(X)                                                           \
   search = X;                                                                  \
@@ -3707,9 +3717,8 @@ if (isAppImage()) {
 
   bQueue = createJsUpdaterWindow();
 
-  jsUpdater(bQueue, &updater_js, &search, &assets_name, &release_download_url,
-            &release_url, &release_note, &note_pre_release, &archive_name,
-            &is_newer);
+  jsUpdater(bQueue, &updater_js, &search, &archive_name,
+            &is_newer, &updater_args, allow_updater);
 #endif
 skip1:
 
@@ -3779,11 +3788,10 @@ skip1:
   if (!is_newer) {
     return;
   } else {
-    QString archive_path = QString("./") + archive_name;
     this->exit_reason = 1;
-    this->archive_name = archive_path;
+    this->archive_name = archive_name;
 
-    qDebug() << "ARCHIVE PATH" << archive_path;
+    qDebug() << "ARCHIVE PATH" << archive_name;
 
     runOnNewThread([=, this] {
       on_menu_exit_triggered();

@@ -17,6 +17,7 @@ func main() {
 		panic(err.Error())
 	}
 
+
 	wd := os.Args[2]
 	os.Chdir(wd)
 	box := os.Args[1]

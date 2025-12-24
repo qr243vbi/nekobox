@@ -241,7 +241,6 @@ private:
     QMutex speedtestRunning;
     QMutex logLock;
     bool logClear = false;
-    QString archive_name;
     bool stop_logs = false;
     //
     Configs_sys::CoreProcess *core_process;
@@ -273,6 +272,9 @@ private:
     QString softwarePath;
     QString softwareFilePath;
     QString updaterPath;
+
+    QString archive_name;
+    QStringList updater_args;
 
     QDateTime lastUpdated = QDateTime::currentDateTime();
     QString currentSptProfileName;
