@@ -20,6 +20,37 @@
 #include <QDesktopServices>
 #include <QUrl>
 
+JsTextWriter::JsTextWriter()
+: QObject() {}
+
+bool JsTextWriter::open(const QVariant path) {
+    close();
+    if (path.canConvert<QString>()) {
+        file.setFileName(path.toString());
+        if (file.open(QIODevice::WriteOnly | QIODevice::Text)) {
+            stream.setDevice(&file);
+            return true;
+        }
+    }
+    return false;
+}
+
+void JsTextWriter::write(const QVariant text) {
+    if (file.isOpen() && text.canConvert<QString>()) {
+        stream << text.toString();
+    }
+}
+
+void JsTextWriter::close() {
+    if (file.isOpen()) {
+        file.close();
+    }
+}
+
+JsTextWriter::~JsTextWriter() {
+    close();
+}
+
 JsHTTPRequest::JsHTTPRequest(const QString& url): QObject(nullptr){
     init(url);
 }
@@ -62,7 +93,7 @@ void JsUpdaterWindow::unlock(){
     mutex.unlock();
 };
 
-QString JsUpdaterWindow::tempdir(){
+QString JsUpdaterWindow::curdir(){
     QDir dir("temp");
     return dir.absolutePath();
 }
@@ -191,7 +222,6 @@ bool jsInit(
     }
 
     ctx->globalObject().setProperty("GlobalMap", optionsObject);
-    ctx->globalObject().setProperty("UpdaterExists", QFile::exists(getUpdaterPath()));
 
     QString script;
 
@@ -242,6 +272,11 @@ QStringList jsArrayToQStringList(const QJSValue &jsArray) {
     }
 
     return stringList;
+}
+
+void getStringList(QJSEngine& engine, QString name, QStringList * value){
+    QJSValue jsvalue = engine.globalObject().property(name);
+    *value = jsArrayToQStringList(jsvalue);
 }
 
 bool jsRouteProfileGetter(
@@ -300,27 +335,27 @@ bool jsRouteProfileGetter(
 bool jsUpdater( JsUpdaterWindow* factory,
                 QString * updater_js,
                 QString * search,
-                QString * assets_name,
+        /*        QString * assets_name,
                 QString * release_download_url,
                 QString * release_url,
                 QString * release_note,
-                QString * note_pre_release,
+                QString * note_pre_release, */
                 QString * archive_name,
-                bool * is_newer){
+                bool * is_newer,
+                QStringList * args,
+                bool allow_updater){
     QJSEngine ctx;
     ctx.globalObject().setProperty("search", *search);
+    ctx.globalObject().setProperty("UpdaterExists", allow_updater);
+
     if (!jsInit(&ctx, updater_js, factory)){
         return false;
     };
 
-    getString(ctx, "assets_name", assets_name);
-    getString(ctx, "release_download_url", release_download_url);
-    getString(ctx, "release_url", release_url);
-    getString(ctx, "release_note", release_note);
-    getString(ctx, "note_pre_release", note_pre_release);
     getString(ctx, "archive_name", archive_name);
     getString(ctx, "search", search);
     getBoolean(ctx, "is_newer", is_newer);
+    getStringList(ctx, "updater_args", args);
 
     return true;
 };

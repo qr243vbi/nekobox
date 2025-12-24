@@ -20,7 +20,7 @@ func Updater( updatePackagePath string) {
 	}
 
 	// find update package
-	if ! Exist(os.Args[1]) {
+	if ! Exist(updatePackagePath) {
 		log.Fatalln("no update")
 	}
 	log.Println("updating from", updatePackagePath)

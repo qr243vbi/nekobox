@@ -20,12 +20,12 @@ function ask(message, title, array){
     return window.ask(_n(message), _n(title), _a(array));
 }
 
-function tempdir(){
+function curdir(){
     return window.tempdir();
 }
 
-function tempdir_path(filename){
-    return window.tempdir() + '/' + _n(filename);
+function curdir_path(filename){
+    return window.curdir() + '/' + _n(filename);
 }
 
 function open_url(url){

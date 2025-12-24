@@ -4,6 +4,8 @@
 #include <QString>
 #include <QObject>
 #include <QVariantMap>
+#include <QFile>
+#include <QTextStream>
 #include <functional>
 #include <QStringList>
 #include <nekobox/global/HTTPRequestHelper.hpp>
@@ -23,7 +25,7 @@ public:
     Q_INVOKABLE QString translate(const QVariant value);
     Q_INVOKABLE QString get_locale() const;
     Q_INVOKABLE QString download(const QVariant url, const QVariant fileName, const QVariant skipIfExists);
-    Q_INVOKABLE QString tempdir();
+    Q_INVOKABLE QString curdir();
     Q_INVOKABLE void open_url(const QVariant url);
     QMutex mutex;
 signals:
@@ -34,6 +36,20 @@ signals:
     void ask_signal(const QString &value, const QString &title, const QStringList &map, int * ret);
 public slots:
     void unlock();
+};
+
+class JsTextWriter : public QObject
+{
+    Q_OBJECT
+public:
+    Q_INVOKABLE explicit JsTextWriter();
+    Q_INVOKABLE bool open(const QVariant path);
+    Q_INVOKABLE void write(const QVariant text);
+    Q_INVOKABLE void close();
+    virtual ~JsTextWriter() override;
+private:
+    QFile file;
+    QTextStream stream;
 };
 
 class JsHTTPRequest : public QObject
@@ -66,13 +82,10 @@ private:
 bool jsUpdater( JsUpdaterWindow* bQueue,
   QString * updater_js,
   QString * search,
-  QString * assets_name,
-  QString * release_download_url,
-  QString * release_url,
-  QString * release_note,
-  QString * note_pre_release,
   QString * archive_name,
-  bool * is_newer);
+  bool * is_newer,
+  QStringList * args,
+  bool allow_updater);
 
 bool jsRouteProfileGetter(
     JsUpdaterWindow * factory,

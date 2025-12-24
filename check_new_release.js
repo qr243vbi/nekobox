@@ -1,5 +1,6 @@
 let allow_beta_update = configs['allow_beta_update'];
 let exitFlag = false;
+var simple_mode = true;
 let resp = new HTTPResponse("https://api.github.com/repos/qr243vbi/nekobox/releases");
 var archive_extension = ".zip"
 
