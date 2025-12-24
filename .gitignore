@@ -1,5 +1,7 @@
 # This file is used to ignore files which are generated
 # ----------------------------------------------------------------------------
+core/server/gen/libcore_service-remote
+core/server/gen/*.go
 SingBox.Version
 version.txt
 /config

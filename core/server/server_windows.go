@@ -1,14 +1,14 @@
 package main
 
 import (
-	"Core/gen"
-	"Core/internal/boxdns"
 	"context"
 	"crypto/rand"
 	"fmt"
 	"io"
 	"log"
 	"math/big"
+	"nekobox_core/gen"
+	"nekobox_core/internal/boxdns"
 	"os"
 	"sync"
 	"syscall"

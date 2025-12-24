@@ -1,17 +1,18 @@
 package boxdns
 
 import (
-	"Core/internal/boxdns/winipcfg"
 	"encoding/binary"
+	"log"
+	"nekobox_core/internal/boxdns/winipcfg"
+	"net/netip"
+	"strings"
+
 	"github.com/gofrs/uuid/v5"
 	"github.com/sagernet/sing/common/control"
 	E "github.com/sagernet/sing/common/exceptions"
 	"github.com/sagernet/sing/common/windnsapi"
 	"golang.org/x/sys/windows"
 	"golang.org/x/sys/windows/registry"
-	"log"
-	"net/netip"
-	"strings"
 )
 
 const (

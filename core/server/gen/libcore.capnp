@@ -2,7 +2,7 @@
 
 using Go = import "/capnp/go.capnp";
 $Go.package("gen");
-$Go.import("Core/gen");
+$Go.import("nekobox_core/gen");
 
 using Cxx = import "/capnp/c++.capnp";
 $Cxx.namespace("gen");

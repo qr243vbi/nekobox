@@ -315,7 +315,7 @@ jobs:
 
   publish:
     name: Pack & Publish Release
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     needs:
       - build-cpp
       - build-cpp-windows
