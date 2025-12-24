@@ -151,14 +151,8 @@ void JsHTTPRequest::init(const QString& url)
     m_header.clear();
 
     for (const auto& pair : resp.header) {
-        // Convert the key from QByteArray to QString using UTF-8
         QString key = QString::fromUtf8(pair.first);
-
-        // Convert the value from QByteArray to QVariant
-        // Here, we store it as a QByteArray within the QVariant.
         QVariant value = QString::fromUtf8(pair.second);
-
-        // Insert the key-value pair into the map
         m_header.insert(key, value);
     }
 }
