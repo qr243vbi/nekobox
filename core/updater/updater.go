@@ -11,7 +11,7 @@ import (
 	"github.com/codeclysm/extract/v4"
 )
 
-func Updater( updatePackagePath string) {
+func Updater( updatePackagePath string, verbose bool) {
 	pre_cleanup := func() {
 		if runtime.GOOS == "linux" {
 			os.RemoveAll("./usr")
