@@ -37,7 +37,7 @@ std::map<std::string, std::string> ruleSetMap;
 #ifdef Q_OS_UNIX
 #include <qfontdatabase.h>
 #endif
-
+#define disable_run_admin windows_no_admin
 
 void signal_handler(int signum) {
     if (GetMainWindow()) {
