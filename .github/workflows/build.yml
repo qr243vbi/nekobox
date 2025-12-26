@@ -340,6 +340,7 @@ jobs:
         with:
           path: download-artifact
       - name: Pack
+        shell: bash
         run: |
           zip --help
           curl -Lo - https://github.com/tcnksm/ghr/releases/download/v0.17.0/ghr_v0.17.0_linux_amd64.tar.gz | tar xzv
@@ -416,6 +417,7 @@ jobs:
             rm -rf nekobox windowslegacy64
           fi
       - name: Clean Up
+        shell: bash
         run: |
           cd deployment
           rm -rf *.pdb ||:
@@ -425,6 +427,7 @@ jobs:
           name: Deployment-${{ github.sha }}
           path: deployment
       - name: Release
+        shell: bash
         run: |
           ./ghr -delete -t "${{ github.token }}" -b "${{ github.event.inputs.text }}" -n "${{ github.event.inputs.tag }}" "${{ github.event.inputs.tag }}" deployment
 
