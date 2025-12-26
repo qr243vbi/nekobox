@@ -22,6 +22,7 @@ echo $INPUT_VERSION > version.txt
 git add -f srslist* version.txt core/server/gen/*.go core/server/gen/libcore_service-remote core/server/vendor SingBox.Version
 git commit -am "New Update"
 
+mkdir "$DEPLOYMENT"
 git ls-files --recurse-submodules | tar --transform="s,^,nekobox-unified-source-$INPUT_VERSION/,S" -c --xz -f "$DEPLOYMENT/nekobox-unified-source-$INPUT_VERSION.tar.xz" -T-
 sha256sum "$DEPLOYMENT/nekobox-unified-source-$INPUT_VERSION.tar.xz" > "$DEPLOYMENT/nekobox-unified-source-$INPUT_VERSION.tar.xz.sha256sum"
 
