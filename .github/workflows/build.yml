@@ -352,6 +352,7 @@ jobs:
       - name: Pack
         shell: bash
         run: |
+          git config --global core.autocrlf false
           unzip --help
           zip --help
           sha256sum --help
