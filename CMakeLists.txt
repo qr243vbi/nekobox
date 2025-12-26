@@ -301,11 +301,10 @@ set(THRIFT_LIBRARIES thrift::thrift)
 else()
 find_package(PkgConfig REQUIRED)
 pkg_check_modules(THRIFT thrift REQUIRED)
-pkg_check_modules(MINIZIPNG minizip-ng REQUIRED)
 endif()
 
-target_include_directories(nekobox PRIVATE ${THRIFT_INCLUDE_DIRS} ${MINIZIPNG_INCLUDE_DIRS})
-target_link_libraries(nekobox PRIVATE ${THRIFT_LIBRARIES} ${MINIZIPNG_LIBRARIES})
+target_include_directories(nekobox PRIVATE ${THRIFT_INCLUDE_DIRS})
+target_link_libraries(nekobox PRIVATE ${THRIFT_LIBRARIES})
 
 # Target Link
 
