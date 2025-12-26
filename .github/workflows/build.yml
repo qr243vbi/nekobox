@@ -31,7 +31,12 @@ on:
         default: true
         required: false
       build_ubuntu:
-        description: "Build linux binaries"
+        description: "Build linux x64 binaries"
+        type: boolean
+        default: true
+        required: false
+      build_ubuntu_arm:
+        description: "Build linux ARM64 binaries"
         type: boolean
         default: true
         required: false
@@ -58,7 +63,7 @@ jobs:
           - cross_os: linux
             cross_arch: arm64
             go_version: "1.25.0"
-            allow: ${{ github.event.inputs.build_ubuntu }}
+            allow: ${{ github.event.inputs.build_ubuntu_arm }}
           - cross_os: windows
             cross_arch: amd64
             go_version: "1.25.0"
@@ -245,9 +250,11 @@ jobs:
           - platform: ubuntu-24.04
             qt_version: 6.10.1
             target: amd64
+            allow: ${{ github.event.inputs.build_ubuntu }}
           - platform: ubuntu-24.04-arm
             qt_version: 6.10.1
             target: arm64
+            allow: ${{ github.event.inputs.build_ubuntu_arm }}
       fail-fast: false
     runs-on: ${{ matrix.platform }}
     env:
@@ -255,19 +262,19 @@ jobs:
       INPUT_VERSION: ${{ github.event.inputs.tag }}
     steps:
       - name: Checking out sources
-        if: github.event.inputs.build_ubuntu == 'true' && github.event.inputs.source != 'true'
+        if: matrix.allow == 'true' && github.event.inputs.source != 'true'
         uses: actions/checkout@v4.2.2
         with:
           submodules: "recursive"
 
       - name: Download Artifacts
-        if: github.event.inputs.build_ubuntu == 'true' && github.event.inputs.source != 'true'
+        if: matrix.allow == 'true' && github.event.inputs.source != 'true'
         uses: actions/download-artifact@v4.3.0
         with:
           path: download-artifact
 
       - name: Install Qt
-        if: github.event.inputs.build_ubuntu == 'true' && github.event.inputs.source != 'true'
+        if: matrix.allow == 'true' && github.event.inputs.source != 'true'
         uses: jurplel/install-qt-action@v4.3.0
         with:
           version: ${{ matrix.qt_version }}
@@ -277,21 +284,21 @@ jobs:
           cache-key-prefix: QtCache-${{ matrix.platform }}-${{ matrix.target }}
 
       - name: Download Srslist
-        if: github.event.inputs.build_ubuntu == 'true' && github.event.inputs.source != 'true'
+        if: matrix.allow == 'true' && github.event.inputs.source != 'true'
         shell: bash
         run: |
           curl -fLso "srslist.json" "https://github.com/qr243vbi/ruleset/raw/refs/heads/rule-set/srslist.json"
           mkdir build
 
       - name: Linux - Install apt dependencies
-        if: github.event.inputs.build_ubuntu == 'true' && github.event.inputs.source != 'true'
+        if: matrix.allow == 'true' && github.event.inputs.source != 'true'
         uses: awalsh128/cache-apt-pkgs-action@latest
         with:
           packages: libfuse2 patchelf squashfs-tools openssl-dev openssl thrift-compiler libthrift-dev
           version: 1.0
 
       - name: Linux - Generate MakeFile and Build
-        if: github.event.inputs.build_ubuntu == 'true' && github.event.inputs.source != 'true'
+        if: matrix.allow == 'true' && github.event.inputs.source != 'true'
         shell: bash
         run: |
           cd build
@@ -302,12 +309,12 @@ jobs:
           bash -x ./script/deploy_linux64.sh
 
       - name: Tar files
-        if: github.event.inputs.build_ubuntu == 'true' && github.event.inputs.source != 'true'
+        if: matrix.allow == 'true' && github.event.inputs.source != 'true'
         shell: bash
         run: tar czvf artifacts.tgz ./deployment
 
       - name: Uploading Artifact
-        if: github.event.inputs.build_ubuntu == 'true' && github.event.inputs.source != 'true'
+        if: matrix.allow == 'true' && github.event.inputs.source != 'true'
         uses: actions/upload-artifact@v4.6.2
         with:
           name: nekobox-${{ github.sha }}-${{ matrix.platform }}-${{ matrix.target }}-Qt${{ matrix.qt_version }}
