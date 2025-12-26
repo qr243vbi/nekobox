@@ -334,6 +334,7 @@ jobs:
           path: download-artifact
       - name: Pack
         run: |
+          zip --help
           curl -Lo - https://github.com/tcnksm/ghr/releases/download/v0.17.0/ghr_v0.17.0_linux_amd64.tar.gz | tar xzv
           mv ghr*linux_amd64/ghr .
           source script/env_deploy.sh
