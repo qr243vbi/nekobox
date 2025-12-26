@@ -1,5 +1,4 @@
 #!/bin/bash
-set -e
 
 source script/env_deploy.sh
 if [[ "$GOOS" == "windows" && "$GOARCH" == "amd64" ]]; then
