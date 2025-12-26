@@ -339,6 +339,10 @@ jobs:
         uses: actions/download-artifact@v4.3.0
         with:
           path: download-artifact
+      - name: Install Zip, Curl
+        uses: ConorMacBride/install-package@v1
+        with:
+          choco: zip nsis curl
       - name: Pack
         shell: bash
         run: |
