@@ -346,7 +346,7 @@ jobs:
         with:
           choco: zip nsis curl
 
-      - name: Download a Raspberry Pi OS image
+      - name: Download a ghr
         uses: ethanjli/cached-download-action@v0.1.3
         with:
           url: https://github.com/tcnksm/ghr/releases/download/v0.17.0/ghr_v0.17.0_windows_amd64.zip

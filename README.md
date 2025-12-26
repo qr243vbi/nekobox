@@ -50,6 +50,7 @@ Various formats are supported, including share links, JSON array of outbounds an
 - [Install Package Github Action](https://github.com/ConorMacBride/install-package)
 - [Publish Aur Github Action](https://github.com/KSXGitHub/github-actions-deploy-aur)
 - [Setup MinGW Github Action](https://github.com/bwoodsend/setup-winlibs-action)
+- [Cached Download Github Action](https://github.com/ethanjli/cached-download-action)
 - [Setup MSVC Github Action](https://github.com/ilammy/msvc-dev-cmd)
 - [Setup Ninja Github Action](https://github.com/seanmiddleditch/gha-setup-ninja)
 - [Cache Apt Pkgs Github Action](https://github.com/awalsh128/cache-apt-pkgs-action)
