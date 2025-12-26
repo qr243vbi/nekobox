@@ -357,28 +357,12 @@ jobs:
           zip --help
           sha256sum --help
           unzip ghr_windows_amd64.zip
-          mv ghr*windows_amd64/ghr .
+          mv ghr*windows_amd64/ghr.exe .
           source script/env_deploy.sh
           find . -name artifacts.tgz | xargs -n1 tar xvzf
           ##
-          mkdir -pv core/server/gen ||:
-          rm -rfv core/server/vendor ||:
-          mv deployment/Sagernet.SingBox.Version.txt SingBox.Version
-          mv -T deployment/vendor core/server/vendor
-          rm core/server/go.mod
-          rm core/server/go.sum
-          mv deployment/go.mod core/server/
-          mv deployment/go.sum core/server/
-          mv deployment/gen/* core/server/gen/
-          mv deployment/srslist* ./
-          echo "${INPUT_VERSION}" > version.txt
-          git add -f srslist* version.txt core/server/gen/*.go core/server/vendor SingBox.Version
-          ##
-          git ls-files --recurse-submodules | tar --transform="s,^,nekobox-unified-source-${{ github.event.inputs.tag }}/,S" -c --xz -f "deployment/nekobox-unified-source-${{ github.event.inputs.tag }}.tar.xz" -T-
-          ##
           cd deployment
           rm -rf *.pdb ||:
-          sha256sum "nekobox-unified-source-${{ github.event.inputs.tag }}.tar.xz" > "nekobox-unified-source-${{ github.event.inputs.tag }}.tar.xz.sha256sum"
           ####
           if [[ -d linux-amd64 ]]; then
             mv linux-amd64 nekobox
@@ -452,7 +436,7 @@ jobs:
       - name: Release
         shell: bash
         run: |
-          ./ghr -delete -t "${{ github.token }}" -b "${{ github.event.inputs.text }}" -n "${{ github.event.inputs.tag }}" "${{ github.event.inputs.tag }}" deployment
+          ./ghr.exe -delete -t "${{ github.token }}" -b "${{ github.event.inputs.text }}" -n "${{ github.event.inputs.tag }}" "${{ github.event.inputs.tag }}" deployment
 
   webhook:
     name: Trigger Open Build Service
