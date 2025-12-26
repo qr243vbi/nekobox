@@ -398,11 +398,20 @@ jobs:
           fi
           ####
           if [[ -f nekobox_setup.exe ]]; then
+            CHECKSUM=$(sha256sum nekobox_setup.exe)
+            export sha_x64="${CHECKSUM%% *}"
             mv nekobox_setup.exe $version_standalone-windows64-installer.exe
             mv windows64 nekobox
             rm nekobox/config
             zip -9 -r $version_standalone-windows64.zip nekobox
             rm -rf nekobox windows64
+          fi
+          if [[ -n $sha_x64 ]]; then
+            (
+              cd ../script
+              source build_chocolatey.sh
+              mv nekobox/*.nupkg ../deployment/
+            )
           fi
           ####
           if [[ -f nekobox_setup_arm64.exe ]]; then
