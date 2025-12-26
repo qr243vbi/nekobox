@@ -113,7 +113,7 @@ jobs:
         if: steps.cache-common.outputs.cache-hit != 'true' && matrix.cross_os == 'public'
         shell: bash
         run: |
-          bash -x ./script/deploy_vendor.sh
+          env INPUT_VERSION=${{ github.event.inputs.tag }} bash -x ./script/deploy_vendor.sh
       - name: Tar files
         if: ( matrix.cross_os == 'public' || ( github.event.inputs.source != 'true' && matrix.allow == 'true' ) ) && steps.cache-common.outputs.cache-hit != 'true'
         run: tar czvf artifacts.tgz ./deployment
@@ -354,7 +354,6 @@ jobs:
       - name: Pack
         shell: bash
         run: |
-          git config --global core.autocrlf false
           unzip --help
           zip --help
           sha256sum --help
