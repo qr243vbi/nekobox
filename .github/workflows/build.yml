@@ -343,13 +343,20 @@ jobs:
         uses: ConorMacBride/install-package@v1
         with:
           choco: zip nsis curl
+
+      - name: Download a Raspberry Pi OS image
+        uses: ethanjli/cached-download-action@v0.1.3
+        with:
+          url: https://github.com/tcnksm/ghr/releases/download/v0.17.0/ghr_v0.17.0_windows_amd64.zip
+          destination: ghr_windows_amd64.zip
       - name: Pack
         shell: bash
         run: |
+          unzip --help
           zip --help
           sha256sum --help
-          curl -Lo - https://github.com/tcnksm/ghr/releases/download/v0.17.0/ghr_v0.17.0_linux_amd64.tar.gz | tar xzv
-          mv ghr*linux_amd64/ghr .
+          unzip ghr_windows_amd64.zip
+          mv ghr*windows_amd64/ghr .
           source script/env_deploy.sh
           find . -name artifacts.tgz | xargs -n1 tar xvzf
           ##
