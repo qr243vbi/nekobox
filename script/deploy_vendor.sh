@@ -20,7 +20,7 @@ fi
 echo $INPUT_VERSION > version.txt
 
 git add -f srslist* version.txt core/server/gen/*.go core/server/gen/libcore_service-remote core/server/vendor SingBox.Version
-git commit -am "New Update"
+git commit -am "New Update" --author "My Name <myname@myemail.io>"
 
 if [[ ! -e "$DEPLOYMENT" ]]
 then
