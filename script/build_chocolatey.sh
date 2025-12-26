@@ -4,7 +4,7 @@
 #url_x86="$(echo "$asset_x86" | jq -r '.browser_download_url')"
 url_x64="https://github.com/qr243vbi/nekobox/releases/download/${INPUT_VERSION}/nekobox-${INPUT_VERSION}-windows64-installer.exe"
 #sha_x86="$(echo "$asset_x86" | jq -r '.digest' | sed 's~sha256:~~g')"
-sha_x64="$(echo "$asset_x64" | jq -r '.digest' | sed 's~sha256:~~g')"
+#sha_x64="$(echo "$asset_x64" | jq -r '.digest' | sed 's~sha256:~~g')"
 
 
 # 'https://github.com/qr243vbi/nekobox/releases/download/@VERSION@/nekobox-@VERSION@-windows32-installer.exe'
@@ -13,10 +13,10 @@ sha_x64="$(echo "$asset_x64" | jq -r '.digest' | sed 's~sha256:~~g')"
 cp -Rfv nekobox_template nekobox
 #choco new nekobox --force --maintainer qr243vbi --version "$INPUT_VERSION" installertype=exe Url64="$url_x64" Url="$url_x86" Checksum="$sha_x86" Checksum64="$sha_x64" SilentArgs='/S /D=C:\tools\nekobox'
 
-if [[ -n "$CHOCOLATEY_API_KEY" ]]
-then
-choco apikey add --source 'https://push.chocolatey.org/' --key "$CHOCOLATEY_API_KEY"
-fi
+#if [[ -n "$CHOCOLATEY_API_KEY" ]]
+#then
+#choco apikey add --source 'https://push.chocolatey.org/' --key "$CHOCOLATEY_API_KEY"
+#fi
 
 (
 cd nekobox
@@ -29,7 +29,7 @@ sed -i "s~<version>.*</version>~<version>${INPUT_VERSION}</version>~g;" nekobox.
 #cat "${nekobox_yaml}" | yq e "(.package.metadata.version) = \"$INPUT_VERSION\"" -p xml -o xml > "${nekobox_yaml}"
 
 choco pack
-choco push nekobox*.nupkg --source 'https://push.chocolatey.org/'
+#choco push nekobox*.nupkg --source 'https://push.chocolatey.org/'
 )
 
 
