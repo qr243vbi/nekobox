@@ -49,6 +49,8 @@ jobs:
   build-go:
     permissions:
       contents: read
+    env:
+      INPUT_VERSION: ${{ github.event.inputs.tag }}
     strategy:
       max-parallel: 1
       matrix:
