@@ -1,18 +1,28 @@
 source script/env_deploy.sh
 
 pushd "$SRC_ROOT"/core/server
-mkdir -p "$DEPLOYMENT"
 pushd gen
-  thrift --gen go -out "$DEPLOYMENT" libcore.thrift
+    ./update_libs.sh
 popd
-
-curl -fLso "$DEPLOYMENT/srslist.json" "https://github.com/qr243vbi/ruleset/raw/refs/heads/rule-set/srslist.json"
-
+curl -fLso "$SRC_ROOT/srslist.json" "https://github.com/qr243vbi/ruleset/raw/refs/heads/rule-set/srslist.json"
 go mod tidy
 go mod vendor
-mv -T vendor "$DEPLOYMENT/vendor"
-cp go.mod "$DEPLOYMENT/go.mod"
-cp go.sum "$DEPLOYMENT/go.sum"
-curl https://api.github.com/repos/sagernet/sing-box/releases/latest | jq -r '.name' > "$DEPLOYMENT/Sagernet.SingBox.Version.txt"
+go list -m -f '{{.Version}}' github.com/sagernet/sing-box > "$SRC_ROOT/SingBox.Version"
 popd
 
+if [[ ! -d "$SRC_ROOT"/.git ]]
+then
+git init
+git add --all
+git commit -am "initial commit"
+fi
+
+echo $INPUT_VERSION > version.txt
+
+git add -f srslist* version.txt core/server/gen/*.go core/server/gen/libcore_service-remote core/server/vendor SingBox.Version
+git commit -am "New Update"
+
+git ls-files --recurse-submodules | tar --transform="s,^,nekobox-unified-source-$INPUT_VERSION/,S" -c --xz -f "$DEPLOYMENT/nekobox-unified-source-$INPUT_VERSION.tar.xz" -T-
+sha256sum "$DEPLOYMENT/nekobox-unified-source-$INPUT_VERSION.tar.xz" > "$DEPLOYMENT/nekobox-unified-source-$INPUT_VERSION.tar.xz.sha256sum"
+
+git reset --hard HEAD^1
