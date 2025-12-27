@@ -195,6 +195,14 @@ jobs:
         uses: ilammy/msvc-dev-cmd@v1
         with:
           arch: ${{ matrix.target }}
+          
+      - name: Cache Builds
+        id: cache-common
+        if: github.event.inputs.source != 'true' && matrix.allow == 'true'
+        uses: actions/cache@v4.2.3
+        with:
+          path: build
+          key: CommonCache-${{ matrix.platform }}-${{ matrix.target }}-${{ github.event.inputs.tag }}
 
       - name: Windows - Generate MakeFile and Build
         if: matrix.allow == 'true' && github.event.inputs.source != 'true'
@@ -298,6 +306,14 @@ jobs:
         with:
           packages: libfuse2 patchelf squashfs-tools openssl-dev openssl thrift-compiler libthrift-dev
           version: 1.0
+
+      - name: Cache Builds
+        id: cache-common
+        if: github.event.inputs.source != 'true' && matrix.allow == 'true'
+        uses: actions/cache@v4.2.3
+        with:
+          path: build
+          key: CommonCache-${{ matrix.platform }}-${{ matrix.target }}-${{ github.event.inputs.tag }}
 
       - name: Linux - Generate MakeFile and Build
         if: matrix.allow == 'true' && github.event.inputs.source != 'true'
