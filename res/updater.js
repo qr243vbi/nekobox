@@ -12,6 +12,11 @@ function _a(value) {
     return [_n(value)];
 }
 
+function _o(value) {
+    if (value == null) return {};
+    return Object.fromEntries(Object.entries(value))
+}
+
 function print(string){
     window.print(_n(string));
 }
@@ -86,3 +91,71 @@ function httpget(url, message, title){
     return p;
 }
 
+
+
+function utf8Encode(str) {
+  let bytes = [];
+  let i = 0;
+
+  while (i < str.length) {
+    let codePoint = str.codePointAt(i);
+
+    // Advance by 2 if surrogate pair, else 1
+    i += codePoint > 0xFFFF ? 2 : 1;
+
+    if (codePoint <= 0x7F) {
+      // 1 byte
+      bytes.push(codePoint);
+    } else if (codePoint <= 0x7FF) {
+      // 2 bytes
+      bytes.push(
+        0xC0 | (codePoint >> 6),
+        0x80 | (codePoint & 0x3F)
+      );
+    } else if (codePoint <= 0xFFFF) {
+      // 3 bytes
+      bytes.push(
+        0xE0 | (codePoint >> 12),
+        0x80 | ((codePoint >> 6) & 0x3F),
+        0x80 | (codePoint & 0x3F)
+      );
+    } else {
+      // 4 bytes
+      bytes.push(
+        0xF0 | (codePoint >> 18),
+        0x80 | ((codePoint >> 12) & 0x3F),
+        0x80 | ((codePoint >> 6) & 0x3F),
+        0x80 | (codePoint & 0x3F)
+      );
+    }
+  }
+
+  return bytes; // Array of byte values (0–255)
+}
+
+function customPadStart(str, targetLength, padString) {
+  if (str.length >= targetLength) return str;
+  padString = padString || ' ';
+  let padLength = targetLength - str.length;
+  let pad = '';
+  while (pad.length < padLength) {
+    pad += padString;
+  }
+  return pad.slice(0, padLength) + str;
+}
+
+function utf8EncodeHex(str) {
+  let bytes = utf8Encode(_n(str));
+  let hex = '';
+
+  // Convert each byte to hex and concatenate
+  for (let i = 0; i < bytes.length; i++) {
+    hex += customPadStart(bytes[i].toString(16), 2, '0'); // Pad to 2 digits
+  }
+
+  return hex;
+}
+
+function stringToHex(str){
+    return utf8EncodeHex(str);
+}
