@@ -36,7 +36,7 @@ static inline void InitializeRequest(
             }
             QNetworkProxy p;
             p.setType(QNetworkProxy::HttpProxy);
-            p.setHostName("127.0.0.1");
+            p.setHostName(Configs::dataStore->inbound_address == "::" ? "127.0.0.1" : Configs::dataStore->inbound_address);
             p.setPort(Configs::dataStore->inbound_socks_port);
             accessManager.setProxy(p);
         }
