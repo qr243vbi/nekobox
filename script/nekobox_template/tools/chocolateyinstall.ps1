@@ -12,8 +12,21 @@ $packageArgs = @{
   checksumType  = 'sha256'
   checksum64    = '@SHA_x64@'
   checksumType64= 'sha256'
-  silentArgs    = "/S /D=C:\tools\nekobox"
+  silentArgs    = "/S"
   validExitCodes= @(0, 3010, 1641)
 }
 
 Install-ChocolateyPackage @packageArgs 
+
+
+$nekobox_path = Join-Path $env:ProgramFiles "nekobox"
+
+if (Test-Path "$nekobox_path" -PathType Container) {
+    $global_ini_path = Join-Path $nekobox_path "global.ini"
+@"
+[General]
+chocolatey_package=true
+"@ | Set-Content "$global_ini_path"
+
+} 
+

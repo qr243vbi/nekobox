@@ -17,23 +17,14 @@ func main() {
 	if err != nil {
 		panic(err.Error())
 	}
-	var chocolatey * string
-
+	
 	verbose := flag.Bool("verbose", false, "verbose mode")
-
-	if runtime.GOOS == "windows" {
-		chocolatey = flag.String("chocolatey", "", "chocolatey package")
-	}
+	json_str := flag.String("options", "{}", "json options")
 
 	// Parse the flags
 	flag.Parse()
-
-	if runtime.GOOS == "windows" {
-		nupkg := *chocolatey
-		if nupkg != "" {
-
-		}
-	}
+	
+	run_json(*json_str);
 
 	// Get the positional arguments
 	args := flag.Args()
