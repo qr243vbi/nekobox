@@ -418,6 +418,8 @@ MainWindow::MainWindow(QWidget *parent)
   // init HWID data
   runOnNewThread([=, this] { GetDeviceDetails(); });
 
+  proxyAutoTester = std::make_unique<Stats::ProxyAutoTester>(this);
+
   // Prepare core
   Configs::dataStore->core_port = MkPort();
   if (Configs::dataStore->core_port <= 0)

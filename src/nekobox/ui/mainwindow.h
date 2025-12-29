@@ -8,6 +8,7 @@
 #include <QSettings>
 #include "nekobox/dataStore/Configs.hpp"
 #include "nekobox/stats/connections/connectionLister.hpp"
+#include "nekobox/stats/autotester/ProxyAutoTester.hpp"
 #include "3rdparty/qv2ray/v2/ui/widgets/speedchart/SpeedWidget.hpp"
 #ifdef Q_OS_UNIX
 #include <QtDBus>
@@ -99,6 +100,7 @@ class MainWindow : public QMainWindow {
 
 public:
     friend class SpinnerDialog;
+    std::unique_ptr<Stats::ProxyAutoTester> proxyAutoTester;
 
     explicit MainWindow(QWidget *parent = nullptr);
 

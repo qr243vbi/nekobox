@@ -71,6 +71,9 @@ namespace Configs {
 
         ProxyEntity(Configs::AbstractBean *bean, const QString &type_);
 
+        bool is_working = false;
+        qint64 last_auto_test_time = 0;
+
         [[nodiscard]] QString DisplayTestResult() const;
 
         [[nodiscard]] QColor DisplayLatencyColor() const;
