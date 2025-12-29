@@ -35,6 +35,74 @@
         <source>Emoji Font</source>
         <translation>表情符号字体</translation>
     </message>
+        <message>
+        <source>Auto-Testing</source>
+        <translation>自动测试</translation>
+    </message>
+    <message>
+        <source>Enable Auto-Testing</source>
+        <translation>启用自动测试</translation>
+    </message>
+    <message>
+        <source>Automatically test proxies in the background and maintain a pool of working proxies</source>
+        <translation>在后台自动测试代理，并维护一个可用代理池</translation>
+    </message>
+    <message>
+        <source>Test Interval (seconds)</source>
+        <translation>测试间隔（秒）</translation>
+    </message>
+    <message>
+        <source>How often to run the test cycle</source>
+        <translation>测试循环的执行频率</translation>
+    </message>
+    <message>
+        <source>Proxies Per Cycle</source>
+        <translation>每轮测试的代理数量</translation>
+    </message>
+    <message>
+        <source>Number of proxies to test in each cycle</source>
+        <translation>每个测试周期中要测试的代理数量</translation>
+    </message>
+    <message>
+        <source>Working Pool Size</source>
+        <translation>可用代理池大小</translation>
+    </message>
+    <message>
+        <source>Maximum number of verified working proxies to maintain</source>
+        <translation>维护的已验证可用代理的最大数量</translation>
+    </message>
+    <message>
+        <source>Latency Threshold (ms)</source>
+        <translation>延迟阈值（毫秒）</translation>
+    </message>
+    <message>
+        <source>Maximum latency to consider a proxy as working</source>
+        <translation>判定代理为可用的最大延迟</translation>
+    </message>
+    <message>
+        <source>Failure Retry Count</source>
+        <translation>失败重试次数</translation>
+    </message>
+    <message>
+        <source>Number of retry attempts before considering a proxy as failed</source>
+        <translation>在判定代理失败前的重试次数</translation>
+    </message>
+    <message>
+        <source>Test Target URL</source>
+        <translation>测试目标 URL</translation>
+    </message>
+    <message>
+        <source>URL to test proxies against</source>
+        <translation>用于测试代理的目标网址</translation>
+    </message>
+    <message>
+        <source>Enable TUN Failover</source>
+        <translation>启用 TUN 故障切换</translation>
+    </message>
+    <message>
+        <source>Automatically switch to another working proxy when TUN mode proxy fails</source>
+        <translation>TUN 模式代理失效时自动切换到其他可用代理</translation>
+    </message>
     <message>
         <source>Startup</source>
         <translation>启动</translation>

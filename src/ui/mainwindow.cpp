@@ -1410,6 +1410,17 @@ void MainWindow::dialog_message_impl(const QString &sender,
       }
       profile_start(Configs::dataStore->started_id);
     }
+
+    if (proxyAutoTester) {
+        if (Configs::dataStore->auto_test_enable) {
+            proxyAutoTester->Reset();
+            proxyAutoTester->Start();
+            MW_show_log("[Auto-Test] Restarted with new settings");
+        } else {
+            proxyAutoTester->Stop();
+        }
+    }
+
     refresh_status();
   }
   if (info.contains("DNSServerChanged")) {
