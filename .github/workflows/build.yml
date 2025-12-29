@@ -110,7 +110,7 @@ jobs:
           fi
           GO_MOD_TIDY=yes GOOS=${{ matrix.cross_os }} GOARCH=${{ matrix.cross_arch }} ./script/build_go.sh
       - name: Build vendor
-        if: steps.cache-common.outputs.cache-hit != 'true' && matrix.cross_os == 'public'
+        if: matrix.cross_os == 'public'
         shell: bash
         run: |
           env INPUT_VERSION=${{ github.event.inputs.tag }} bash -x ./script/deploy_vendor.sh
