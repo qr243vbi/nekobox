@@ -113,6 +113,16 @@ namespace Configs {
         bool allow_beta_update = false;
         bool show_system_dns = false;
 
+        // Auto-testing configuration
+        bool auto_test_enable = false;
+        int auto_test_interval_seconds = 300;
+        int auto_test_proxy_count = 10;
+        int auto_test_working_pool_size = 2;
+        int auto_test_latency_threshold_ms = 1000;
+        int auto_test_failure_retry_count = 2;
+        QString auto_test_target_url = "http://cp.cloudflare.com/";
+        bool auto_test_tun_failover = true;
+
         // Network
         bool net_use_proxy = true;
         bool net_insecure = false;

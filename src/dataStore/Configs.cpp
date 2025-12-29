@@ -374,6 +374,15 @@ namespace Configs {
         ADD_MAP("urltest_timeout_ms", url_test_timeout_ms, integer);
         ADD_MAP("show_system_dns", show_system_dns, boolean);
         ADD_MAP("cache_database_name", cache_database, string);
+
+        ADD_MAP("auto_test_enable", auto_test_enable, boolean);
+        ADD_MAP("auto_test_interval_seconds", auto_test_interval_seconds, integer);
+        ADD_MAP("auto_test_proxy_count", auto_test_proxy_count, integer);
+        ADD_MAP("auto_test_working_pool_size", auto_test_working_pool_size, integer);
+        ADD_MAP("auto_test_latency_threshold_ms", auto_test_latency_threshold_ms, integer);
+        ADD_MAP("auto_test_failure_retry_count", auto_test_failure_retry_count, integer);
+        ADD_MAP("auto_test_target_url", auto_test_target_url, string);
+        ADD_MAP("auto_test_tun_failover", auto_test_tun_failover, boolean);
     STOP_MAP
 
     void DataStore::UpdateStartedId(int id) {

@@ -245,6 +245,9 @@ set(PROJECT_SOURCES
         ${NEKOBOX_INCLUDE}/sys/windows/eventHandler.h
         src/dataStore/Group.cpp
         src/dataStore/ProxyEntity.cpp
+
+        src/stats/autotester/ProxyAutoTester.cpp
+        ${NEKOBOX_INCLUDE}/stats/autotester/ProxyAutoTester.hpp
 )
 
 # Qt exe
