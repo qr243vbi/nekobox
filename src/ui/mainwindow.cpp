@@ -1084,7 +1084,11 @@ MainWindow::MainWindow(QWidget *parent)
     }
   });
   connect(ui->actionUrl_Test_Selected, &QAction::triggered, this,
-          [=, this]() { urltest_current_group(get_now_selected_list()); });
+          [this]() {
+
+      qDebug() << "Url Test Selected Clicked";
+      urltest_current_group(get_now_selected_list());
+  });
   connect(ui->actionUrl_Test_Clear, &QAction::triggered, this,
           [=, this]() { on_menu_clear_test_result_triggered(true); });
   connect(ui->actionUrl_Test_Group, &QAction::triggered, this, [=, this]() {
@@ -3320,7 +3324,18 @@ void MainWindow::RegisterHiddenMenuShortcuts(bool unregister) {
   for (const auto &action : ui->menuHidden_menu->actions()) {
     if (!action->shortcut().toString().isEmpty()) {
       hiddenMenuShortcuts.append(new QShortcut(
-          action->shortcut(), this, [=, this]() { action->trigger(); }));
+          action->shortcut(), this, [=, this]() {
+          action->trigger();
+      }));
+    }
+  }
+
+  for (const auto &action : ui->menu_server->actions()) {
+    if (!action->shortcut().toString().isEmpty()) {
+      hiddenMenuShortcuts.append(new QShortcut(
+          action->shortcut(), this, [=, this]() {
+          action->trigger();
+      }));
     }
   }
 }
@@ -3352,6 +3367,7 @@ void MainWindow::setActionsData() {
 
 QList<QAction *> MainWindow::getActionsForShortcut() {
   QList<QAction *> list;
+
   QList<QAction *> actions = findChildren<QAction *>();
 
   for (QAction *action : actions) {
@@ -3359,6 +3375,7 @@ QList<QAction *> MainWindow::getActionsForShortcut() {
       continue;
     list.append(action);
   }
+
   return list;
 }
 
@@ -3456,6 +3473,7 @@ JsUpdaterWindow *MainWindow::createJsUpdaterWindow() {
 #endif
 
 void MainWindow::HotkeyEvent(const QString &key) {
+  qDebug() << "Hot Key Pressed" << key;
   if (key.isEmpty())
     return;
   runOnUiThread([=, this] {

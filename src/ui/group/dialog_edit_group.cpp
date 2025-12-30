@@ -252,8 +252,11 @@ void DialogGroupChooseProxy::dialog_button(QAbstractButton * button){
 }
 
 void DialogGroupChooseProxy::profile_selected(int profile, bool def){
+    if (this->selected_id != profile) {
+        emit select_proxy(profile);
+    }
     this->selected_id = profile;
-    this->ui->profile_label->setText(DialogEditGroup::get_proxy_name(profile));
+    this->ui->profile_label->setText(DialogEditGroup::get_proxy_name(profile, this->is_for_routeprofile));
     if (def){
         this->default_id = profile;
     }

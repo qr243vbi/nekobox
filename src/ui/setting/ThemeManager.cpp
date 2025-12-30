@@ -4,7 +4,6 @@
 #include <QPalette>
 
 #include "nekobox/ui/setting/ThemeManager.hpp"
-#include "iostream"
 
 ThemeManager *themeManager = new ThemeManager;
 
