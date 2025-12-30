@@ -39,35 +39,11 @@ Var UnpackOnly
   !insertmacro PowerShellExecFileMacro "$PLUGINSDIR\tempfile.ps1"
 !macroend
  
-!macro PowerShellExecLogMacro PSCommand
-  InitPluginsDir
-  ;Save command in a temp file
-  Push $R1
-  FileOpen $R1 $PLUGINSDIR\tempfile.ps1 w
-  FileWrite $R1 "${PSCommand}"
-  FileClose $R1
-  Pop $R1
- 
-  !insertmacro PowerShellExecFileLogMacro "$PLUGINSDIR\tempfile.ps1"
-!macroend
- 
 !macro PowerShellExecFileMacro PSFile
-  !define PSExecID ${__LINE__}
-
-  ExecWait 'cmd /c powershell -NoProfile -ExecutionPolicy Bypass -File "${PSFile}"' $0
-
-  IntCmp $0 0 finish_${PSExecID}
-    SetErrorLevel 2
-
-finish_${PSExecID}:
-  !undef PSExecID
-!macroend
- 
-!macro PowerShellExecFileLogMacro PSFile
   !define PSExecID ${__LINE__}
   Push $R0
  
-  nsExec::ExecToLog 'powershell -inputformat none -NoProfile -ExecutionPolicy Bypass -File "${PSFile}"  '
+  nsExec::ExecToLog 'powershell -NoLogo -InputFormat none -NoProfile -ExecutionPolicy Bypass -File "${PSFile}"  '
   Pop $R0 ;return value is on stack
   IntCmp $R0 0 finish_${PSExecID}
   SetErrorLevel 2
@@ -78,9 +54,7 @@ finish_${PSExecID}:
 !macroend
  
 !define PowerShellExec `!insertmacro PowerShellExecMacro`
-!define PowerShellExecLog `!insertmacro PowerShellExecLogMacro`
 !define PowerShellExecFile `!insertmacro PowerShellExecFileMacro`
-!define PowerShellExecFileLog `!insertmacro PowerShellExecFileLogMacro`
  
 !endif
 
@@ -238,7 +212,7 @@ Section "Install"
 		Start-Process $$path -Wait ;							\
 	}; 															\
 	$$procs = Get-CimInstance Win32_Process | Where-Object { 	\
-		$$_.ExecutablePath -like $\"$INSTDIR*$\" ;				\
+		$$_.ExecutablePath -like $\"$INSTDIR\*.exe$\" ;			\
 	}; 															\
 	foreach ($$proc in $$procs) { 								\
 		Write-Host $\"!! $$proc$\" ;							\
