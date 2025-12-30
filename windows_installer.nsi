@@ -21,6 +21,7 @@ Var VCRedistFile
 Var isInstalled
 Var isAdmin
 Var Winget
+Var UnpackOnly
 
 
 !ifndef PSEXEC_INCLUDED
@@ -177,7 +178,7 @@ ${EndIf}
 
 Function .onInit
     !insertmacro HasFlag "/WINGET=" $Winget
-	
+	!insertmacro HasFlag "/UNPACK=" $UnpackOnly
 	UserInfo::GetAccountType 
 	Pop $0 
 	${If} $0 != "Admin" 
@@ -256,17 +257,19 @@ Section "Install"
 	File ".\script\nekobox_winget\global.ini"
   ${EndIf}
 
-  CreateShortcut "$desktop\nekobox.lnk" "$INSTDIR\nekobox.exe" "" "$INSTDIR\nekobox.exe" 0
-  CreateShortcut "$SMPROGRAMS\nekobox.lnk" "$INSTDIR\nekobox.exe" "" "$INSTDIR\nekobox.exe" 0
+  ${If} "$UnpackOnly" != "1"
+    CreateShortcut "$desktop\nekobox.lnk" "$INSTDIR\nekobox.exe" "" "$INSTDIR\nekobox.exe" 0
+    CreateShortcut "$SMPROGRAMS\nekobox.lnk" "$INSTDIR\nekobox.exe" "" "$INSTDIR\nekobox.exe" 0
 
-  WriteRegStr HKCU "Software\nekobox" "InstallPath" "$INSTDIR"
+    WriteRegStr HKCU "Software\nekobox" "InstallPath" "$INSTDIR"
 
-  WriteRegStr HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\nekobox" "DisplayName" "nekobox"
-  WriteRegStr HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\nekobox" "UninstallString" "$INSTDIR\uninstall.exe"
-  WriteRegStr HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\nekobox" "InstallLocation" "$INSTDIR"
-  WriteRegDWORD HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\nekobox" "NoModify" 1
-  WriteRegDWORD HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\nekobox" "NoRepair" 1
-  WriteUninstaller "uninstall.exe"
+    WriteRegStr HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\nekobox" "DisplayName" "nekobox"
+    WriteRegStr HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\nekobox" "UninstallString" "$INSTDIR\uninstall.exe"
+    WriteRegStr HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\nekobox" "InstallLocation" "$INSTDIR"
+    WriteRegDWORD HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\nekobox" "NoModify" 1
+    WriteRegDWORD HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\nekobox" "NoRepair" 1
+    WriteUninstaller "uninstall.exe"
+  ${EndIf}
 SectionEnd
 
 Section "Uninstall"
