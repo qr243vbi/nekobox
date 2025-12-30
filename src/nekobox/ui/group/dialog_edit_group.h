@@ -5,6 +5,7 @@
 #include <QString>
 #include <QEvent>
 #include <qtmetamacros.h>
+#include "nekobox/ui/setting/RouteItem.h"
 #include "nekobox/dataStore/Group.hpp"
 #include <vector>
 #include "ui_dialog_edit_group.h"
@@ -58,14 +59,18 @@ private:
     std::vector<int> groups;
     int selected_id = -1;
     int default_id = -1;
+    int last_id = -1;
+    bool is_for_routeprofile = false;
 
 public:
+    friend class RouteItem;
     Ui::DialogGroupChooseProxy *ui;
     explicit DialogGroupChooseProxy(QWidget *parent = nullptr);
 
     ~DialogGroupChooseProxy() override;
 signals: 
     void set_proxy(int id);
+    void select_proxy(int id);
 
 public slots:
     void change_tab(int id);

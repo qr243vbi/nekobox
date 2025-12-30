@@ -129,6 +129,7 @@ RouteItem::RouteItem(QWidget *parent, const std::shared_ptr<Configs::RoutingChai
         auto ruleItem = chain->Rules[currentIndex];
         int outbound_id = ruleItem->outboundID;
         window->profile_selected(outbound_id, true);
+        window->last_id = outbound_id;
         window->setWindowTitle(QCoreApplication::translate(
         "DialogGroupChooseProxy","Select outbound"));
         window->ui->proxy_label->setText(QCoreApplication::translate(
@@ -161,13 +162,36 @@ RouteItem::RouteItem(QWidget *parent, const std::shared_ptr<Configs::RoutingChai
                 break;
         }
 
+        window->is_for_routeprofile = true;
+
+        connect(radio1, &QRadioButton::clicked, this, [window](bool b)->void{
+            window->profile_selected(-1);
+        });
+
+        connect(radio2, &QRadioButton::clicked, this, [window](bool b)->void{
+            window->profile_selected(-2);
+        });
+
+        connect(radio3, &QRadioButton::clicked, this, [window](bool b)->void{
+            window->profile_selected(window->last_id);
+        });
+
+        connect(window, &DialogGroupChooseProxy::select_proxy,
+                this, [radio3, window](int id)->void{
+            if (id >= 0){
+                window->last_id = id;
+                radio3->click();
+            }
+        });
+
         connect(window, &DialogGroupChooseProxy::set_proxy, 
-                this, [ruleItem, this, radio1, radio2, radio3](int id)->void{
+                this, [radio1, radio2, ruleItem, this](int id)->void{
             if (radio1->isChecked()){
                 id = -1;
             } else if (radio2->isChecked()){
                 id = -2;
             }
+
             proxy_chooser->setText(DialogEditGroup::get_proxy_name(id, true));
             ruleItem->outboundID = id;
             chain->Rules[currentIndex]->set_field_value("outbound", {QString::number(id)});
