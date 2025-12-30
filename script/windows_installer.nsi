@@ -101,13 +101,13 @@ ${EndIf}
 !macroend
 
 
-Function .onInit
-    ${If} ${RunningX64}
-        StrCpy $INSTDIR "$PROGRAMFILES64\nekobox"
-    ${Else}
-        StrCpy $INSTDIR "$PROGRAMFILES\nekobox"
-    ${EndIf}
-FunctionEnd
+;Function .onInit
+;    ${If} ${RunningX64}
+;        StrCpy $INSTDIR "$PROGRAMFILES64\nekobox"
+;    ${Else}
+;        StrCpy $INSTDIR "$PROGRAMFILES\nekobox"
+;    ${EndIf}
+;FunctionEnd
 
 !define MUI_ICON "res\nekobox.ico"
 !define MUI_ABORTWARNING
@@ -136,7 +136,7 @@ Section "Install"
   !insertmacro "checkVcRedist"
 
   !ifdef DIRECTORY
-    File /r  ".\deployment\${DIRECTORY}\*"
+    File /r  ".\${DIRECTORY}\*"
     ;/x "updater.exe"
   !else
     File /r  ".\deployment\windows64\*"

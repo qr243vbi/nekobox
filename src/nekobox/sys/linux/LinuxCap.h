@@ -1,5 +1,5 @@
 #pragma once
 
-#include <QString>
-
 bool Linux_HavePkexec();
+
+void Unix_SetCrashHandler();
