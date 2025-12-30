@@ -35,7 +35,7 @@
 std::map<std::string, std::string> ruleSetMap;
 
 #ifdef Q_OS_UNIX
-#include <include/sys/linux/LinuxCap.h>
+#include <nekobox/sys/linux/LinuxCap.h>
 #include <qfontdatabase.h>
 #endif
 #define disable_run_admin windows_no_admin
