@@ -10,6 +10,7 @@ url_x64="https://github.com/qr243vbi/nekobox/releases/download/${INPUT_VERSION}/
 # 'https://github.com/qr243vbi/nekobox/releases/download/@VERSION@/nekobox-@VERSION@-windows32-installer.exe'
 # 'https://github.com/qr243vbi/nekobox/releases/download/@VERSION@/nekobox-@VERSION@-windows64-installer.exe'
 
+cd "$(dirname `realpath $0`)"
 cp -Rfv nekobox_template nekobox
 #choco new nekobox --force --maintainer qr243vbi --version "$INPUT_VERSION" installertype=exe Url64="$url_x64" Url="$url_x86" Checksum="$sha_x86" Checksum64="$sha_x64" SilentArgs='/S /D=C:\tools\nekobox'
 
