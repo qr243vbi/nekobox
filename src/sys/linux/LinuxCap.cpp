@@ -1,8 +1,16 @@
-#include "nekobox/sys/linux/LinuxCap.h"
-
+#include <nekobox/sys/linux/LinuxCap.h>
 #include <QDebug>
 #include <QProcess>
 #include <QStandardPaths>
+#include <QString>
+#include <sys/resource.h>
+
+void Unix_SetCrashHandler() {
+    rlimit rl;
+    rl.rlim_cur = RLIM_INFINITY;
+    rl.rlim_max = RLIM_INFINITY;
+    setrlimit(RLIMIT_CORE, &rl);
+}
 
 bool Linux_HavePkexec() {
     QProcess p;

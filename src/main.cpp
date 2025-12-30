@@ -35,6 +35,7 @@
 std::map<std::string, std::string> ruleSetMap;
 
 #ifdef Q_OS_UNIX
+#include <include/sys/linux/LinuxCap.h>
 #include <qfontdatabase.h>
 #endif
 #define disable_run_admin windows_no_admin
@@ -91,6 +92,9 @@ int main(int argc, char** argv) {
     // Core dump
 #ifdef Q_OS_WIN
     Windows_SetCrashHandler();
+#endif
+#ifdef Q_OS_LINUX
+    Unix_SetCrashHandler();
 #endif
 
     QApplication::setAttribute(Qt::AA_DontUseNativeDialogs);

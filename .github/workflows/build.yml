@@ -226,7 +226,7 @@ jobs:
         if: matrix.allow == 'true' && matrix.target == 'i686' && github.event.inputs.source != 'true'
         run: |
           cp .\script\windows_installer.nsi .
-          makensis "/DDIRECTORY=windows32"  windows_installer.nsi
+          makensis "/DDIRECTORY=deployment\windows32" windows_installer.nsi
           install -D nekobox_setup.exe deployment/nekobox_setup32.exe
 
       - name: Build Installer with NSIS for windows-arm64
@@ -234,7 +234,7 @@ jobs:
         if: matrix.allow == 'true' && matrix.target == 'arm64' && github.event.inputs.source != 'true'
         run: |
           cp .\script\windows_installer.nsi .
-          makensis "/DDIRECTORY=windows-arm64" windows_installer.nsi
+          makensis "/DDIRECTORY=deployment\windows-arm64" windows_installer.nsi
           install -D nekobox_setup.exe deployment/nekobox_setup_arm64.exe
 
       - name: Tar files
