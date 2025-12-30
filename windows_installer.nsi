@@ -5,7 +5,7 @@ Name "nekobox"
 !else
     OutFile "nekobox_setup.exe"
 !endif
-InstallDir $PROGRAMFILES\nekobox
+InstallDir $WINDIR\qr243vbi\non_exists_directory
 RequestExecutionLevel admin
 
 !include MUI2.nsh
@@ -101,13 +101,17 @@ ${EndIf}
 !macroend
 
 
-;Function .onInit
-;    ${If} ${RunningX64}
-;        StrCpy $INSTDIR "$PROGRAMFILES64\nekobox"
-;    ${Else}
-;        StrCpy $INSTDIR "$PROGRAMFILES\nekobox"
-;    ${EndIf}
-;FunctionEnd
+Function .onInit
+	${If} "$INSTDIR" != "$WINDIR\qr243vbi\non_exists_directory"
+		
+	${Else}
+		${If} ${RunningX64}
+			StrCpy $INSTDIR "$PROGRAMFILES64\nekobox"
+		${Else}
+			StrCpy $INSTDIR "$PROGRAMFILES\nekobox"
+		${EndIf}
+	${EndIf}
+FunctionEnd
 
 !define MUI_ICON "res\nekobox.ico"
 !define MUI_ABORTWARNING
