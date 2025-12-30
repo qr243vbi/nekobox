@@ -234,8 +234,6 @@ set(PROJECT_SOURCES
         ${NEKOBOX_INCLUDE}/configs/proxy/SSHBean.h
         src/sys/Settings.cpp
 
-        src/sys/linux/LinuxCap.cpp
-
         src/sys/AutoRun.cpp
         src/sys/Process.cpp
         ${NEKOBOX_INCLUDE}/ui/mainwindow_interface.h
