@@ -1,31 +1,65 @@
 package main
 
 import (
-	"encoding/json"
-	"encoding/hex"
-	"os/exec"
+	"flag"
 	"fmt"
+	"log"
+	"os"
+	"os/exec"
+	"path/filepath"
+	"time"
 )
 
-func run_json(text string){
-	var m map[string]interface{}
-	text2, err := hex.DecodeString(text);
-	
-	if err != nil { 
-		panic(err)
+func LaunchCmd(cmd *exec.Cmd) error {
+	cmd.Stdout = os.Stdout
+	cmd.Stderr = os.Stderr
+	return cmd.Run()
+}
+
+func Launch(Path string, Args ...string) error {
+	cmd := exec.Command(Path, Args...)
+	return LaunchCmd(cmd)
+}
+
+func main() {
+	// update & launcher
+	exe, err := os.Executable()
+	if err != nil {
+		panic(err.Error())
 	}
-	
-	data := []byte(text2)
-	err = json.Unmarshal(data, &m); 
-	
-	if err != nil { 
-		panic(err)
+	version := flag.String("version", "", "version")
+	chocolatey_source := flag.String("chocolatey_source", "", "install with chocolatey from source")
+	winget_install := flag.Bool("winget_install", false, "install with winget")
+	verbose := flag.Bool("verbose", false, "verbose mode")
+	// Parse the flags
+	flag.Parse()
+	// Get the positional arguments
+	args := flag.Args()
+	wd := args[1]
+	box := args[0]
+	exe = filepath.Base(os.Args[0])
+	log.Println("exe:", exe, "exe dir:", wd, "box: ", box)
+	time.Sleep(2 * time.Second)
+	// 1. update files
+	LaunchInstaller(box, wd, *version, *chocolatey_source, *winget_install, *verbose)
+	// 2. start
+	os.Chdir(wd)
+	exec.Command("./nekobox.exe", args[2:]...).Start()
+}
+
+func LaunchInstaller(updatePackagePath string, installPath string, version string, chocolatey_source string, winget_install bool, verbose bool) {
+	if winget_install {
+		Launch("winget", "install", "--version", version, updatePackagePath)
+	} else {
+		if chocolatey_source != "" {
+			run_chocolatey(version, chocolatey_source)
+		}
+		Launch(updatePackagePath, "/S", "/UNPACK=1", "/D="+installPath)
 	}
-	
-	version := m["version"].(string);
-	source := m["chocolatey_source"].(string);
-	
-	if (source != ""){
+}
+
+func run_chocolatey(version string, source string) {
+	if source != "" {
 		command := exec.Command("powershell.exe", "-NoProfile", "-ExecutionPolicy", "Bypass", "-Command", `
 $source="`+source+`"
 $version="`+version+`"
@@ -55,6 +89,6 @@ exit ;
 		fmt.Println("<<<<Run command>>>>")
 		fmt.Println(command)
 		fmt.Println("<<<>>>")
-		command.Run()
+		LaunchCmd(command)
 	}
 }

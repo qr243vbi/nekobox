@@ -5,22 +5,19 @@ import (
 	"log"
 	"os"
 	"path/filepath"
-	"runtime"
 	"strings"
 
 	"github.com/codeclysm/extract/v4"
 )
 
-func Updater( updatePackagePath string, verbose bool) {
+func Updater(updatePackagePath string, verbose bool) {
 	pre_cleanup := func() {
-		if runtime.GOOS == "linux" {
-			os.RemoveAll("./usr")
-		}
+		os.RemoveAll("./usr")
 		os.RemoveAll("./nekobox_update")
 	}
 
 	// find update package
-	if ! Exist(updatePackagePath) {
+	if !Exist(updatePackagePath) {
 		log.Fatalln("no update")
 	}
 	log.Println("updating from", updatePackagePath)
@@ -55,7 +52,7 @@ func Updater( updatePackagePath string, verbose bool) {
 	}
 
 	// remove old file
-	removeAll("./*.dll")	
+	removeAll("./*.dll")
 	removeAll("./*.dmp")
 	removeAll("./*.js")
 	removeAll("./*.json")

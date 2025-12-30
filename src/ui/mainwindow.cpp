@@ -1650,7 +1650,7 @@ void MainWindow::on_menu_exit_triggered() {
 #endif
     list << this->updater_args;
     list << "--";
-    list << Configs::GetBasePath() + "/" + this->archive_name;
+    list << this->archive_name;
     list << updateDir;
     auto arguments = Configs::dataStore->argv;
     if (arguments.length() > 0) {
@@ -3884,7 +3884,7 @@ skip1:
                 QObject::tr("Update is ready, restart to install?"));
             if (q == QMessageBox::StandardButton::Yes) {
               this->exit_reason = 1;
-              this->archive_name = archive_path;
+              this->archive_name = Configs::GetBasePath() + "/temp/" + archive_path;
               on_menu_exit_triggered();
             }
           } else {
