@@ -217,7 +217,6 @@ jobs:
         shell: cmd
         if: matrix.allow == 'true' && matrix.target == 'x86_64' && github.event.inputs.source != 'true'
         run: |
-          cp .\script\windows_installer.nsi .
           makensis.exe windows_installer.nsi
           install -D nekobox_setup.exe deployment/nekobox_setup.exe
 
@@ -225,7 +224,6 @@ jobs:
         shell: cmd
         if: matrix.allow == 'true' && matrix.target == 'i686' && github.event.inputs.source != 'true'
         run: |
-          cp .\script\windows_installer.nsi .
           makensis "/DDIRECTORY=deployment\windows32" windows_installer.nsi
           install -D nekobox_setup.exe deployment/nekobox_setup32.exe
 
@@ -233,7 +231,6 @@ jobs:
         shell: cmd
         if: matrix.allow == 'true' && matrix.target == 'arm64' && github.event.inputs.source != 'true'
         run: |
-          cp .\script\windows_installer.nsi .
           makensis "/DDIRECTORY=deployment\windows-arm64" windows_installer.nsi
           install -D nekobox_setup.exe deployment/nekobox_setup_arm64.exe
 
