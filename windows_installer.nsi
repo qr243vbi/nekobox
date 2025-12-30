@@ -218,7 +218,6 @@ Section "Install"
 		Write-Host $\"!! $$proc$\" ;							\
 		Stop-Process -Id $$proc.ProcessId -Force ; 				\
 	}; 															\
-	sleep 2														\
 	"
 
   !ifdef DIRECTORY

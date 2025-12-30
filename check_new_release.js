@@ -14,8 +14,6 @@ var options = {};
 var release_download_url = '';
 var archive_name = '';
 var latest_tag_name = '';
-var chocolatey_package = (GlobalMap['chocolatey_package'] == 'true');
-var winget_package = (GlobalMap['winget_package'] == 'true');
 
 log("Checking new version", "Info");
 
@@ -126,6 +124,15 @@ function getLatestWingetVersion(packageId) {
     return versions[versions.length - 1];
 }
 
+var chocolatey_package = false;
+var winget_package = false;
+
+if (search.includes('windows')){
+	archive_extension = '-installer.exe';	
+	chocolatey_package = (GlobalMap['chocolatey_package'] == 'true');
+	winget_package = (GlobalMap['winget_package'] == 'true');
+}
+
 if (file_exists(env["APPIMAGE"])){
   if (file_exists(APPLICATION_DIR_PATH + "/" + env["NEKOBOX_APPIMAGE_CUSTOM_EXECUTABLE"])){
     archive_extension = ".AppImage";
@@ -204,7 +211,7 @@ if (resp_error){
         for (let asset of release["assets"]) {
             let asset_name = asset["name"];
 
-            if (asset_name.includes(search) && asset_name.endsWith(archive_extension)) {       
+            if (asset_name.includes(search) && asset_name.endsWith(archive_extension)) {
 				if (bound == '' || !isNewerAsset(asset_name, bound) ){
 				if (exitFlag){
                     let tag_name = release['tag_name'];
@@ -285,7 +292,7 @@ if (release_download_url_flag || !is_newer){
 				}
 			}
 		} else {
-			options['custom_script'] = 'true';
+			options['winget_install'] = 'true';
 		}
         if (errors == ''){
             let index2 = ask(
@@ -296,7 +303,10 @@ if (release_download_url_flag || !is_newer){
 			if (index2 == 0){
 				if (Object.keys(options).length > 0){
 					options['version'] = latest_tag_name;
-					updater_args = ['-options', utf8EncodeHex(JSON.stringify(options))]
+					for (const [key, value] of options) { 
+						updater_args.push('-' + key);
+						updater_args.push(value);
+					}
 				}
 				is_newer = true;
 			}
