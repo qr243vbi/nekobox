@@ -4,6 +4,7 @@ gen-cpp
 core/server/gen/libcore_service-remote
 core/server/gen/*.go
 SingBox.Version
+/script/nekobox
 version.txt
 /config
 /updater
