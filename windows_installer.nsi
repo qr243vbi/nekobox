@@ -16,7 +16,69 @@ RequestExecutionLevel admin
 ; --- Global Variables declared at the top level ---
 Var VCRedistNeeded
 Var VCRedistDownload
+Var VCRedistFile
 Var isInstalled
+
+
+!ifndef PSEXEC_INCLUDED
+!define PSEXEC_INCLUDED
+ 
+!macro PowerShellExecMacro PSCommand
+  InitPluginsDir
+  ;Save command in a temp file
+  Push $R1
+  FileOpen $R1 $PLUGINSDIR\tempfile.ps1 w
+  FileWrite $R1 "${PSCommand}"
+  FileClose $R1
+  Pop $R1
+ 
+  !insertmacro PowerShellExecFileMacro "$PLUGINSDIR\tempfile.ps1"
+!macroend
+ 
+!macro PowerShellExecLogMacro PSCommand
+  InitPluginsDir
+  ;Save command in a temp file
+  Push $R1
+  FileOpen $R1 $PLUGINSDIR\tempfile.ps1 w
+  FileWrite $R1 "${PSCommand}"
+  FileClose $R1
+  Pop $R1
+ 
+  !insertmacro PowerShellExecFileLogMacro "$PLUGINSDIR\tempfile.ps1"
+!macroend
+ 
+!macro PowerShellExecFileMacro PSFile
+  !define PSExecID ${__LINE__}
+
+  ExecWait 'cmd /c powershell -NoProfile -ExecutionPolicy Bypass -File "${PSFile}"' $0
+
+  IntCmp $0 0 finish_${PSExecID}
+    SetErrorLevel 2
+
+finish_${PSExecID}:
+  !undef PSExecID
+!macroend
+ 
+!macro PowerShellExecFileLogMacro PSFile
+  !define PSExecID ${__LINE__}
+  Push $R0
+ 
+  nsExec::ExecToLog 'powershell -inputformat none -NoProfile -ExecutionPolicy Bypass -File "${PSFile}"  '
+  Pop $R0 ;return value is on stack
+  IntCmp $R0 0 finish_${PSExecID}
+  SetErrorLevel 2
+ 
+finish_${PSExecID}:
+  Pop $R0
+  !undef PSExecID
+!macroend
+ 
+!define PowerShellExec `!insertmacro PowerShellExecMacro`
+!define PowerShellExecLog `!insertmacro PowerShellExecLogMacro`
+!define PowerShellExecFile `!insertmacro PowerShellExecFileMacro`
+!define PowerShellExecFileLog `!insertmacro PowerShellExecFileLogMacro`
+ 
+!endif
 
 Function openLinkNewWindow
   ; (Function body remains the same, it works fine)
@@ -72,32 +134,34 @@ ${IfNot} ${IsNativeARM64}
   ${If} ${RunningX64}
     ;check H-KEY registry
     ReadRegDWORD $isInstalled HKLM "SOFTWARE\Wow6432Node\Microsoft\VisualStudio\14.0\VC\Runtimes\x64" "Installed"
-    StrCpy $VCRedistDownload "aka.ms"
+    StrCpy $VCRedistDownload "https://aka.ms/vc14/vc_redist.x64.exe"
+	StrCpy $VCRedistFile "vc14_redist.x64.exe"
   ${Else}
     ReadRegDWORD $isInstalled HKLM "SOFTWARE\Microsoft\VisualStudio\14.0\VC\Runtimes\x86" "Installed"
-    StrCpy $VCRedistDownload "aka.ms"
+    StrCpy $VCRedistDownload "https://aka.ms/vc14/vc_redist.x86.exe"
+	StrCpy $VCRedistFile "vc14_redist.x86.exe"
   ${EndIf}
 ${Else}
     ReadRegDWORD $isInstalled HKLM "SOFTWARE\Microsoft\VisualStudio\14.0\VC\Runtimes\ARM64" "Installed"
-    StrCpy $VCRedistDownload "aka.ms"
+    StrCpy $VCRedistDownload "https://aka.ms/vc14/vc_redist.arm64.exe"
+	StrCpy $VCRedistFile "vc14_redist.arm64.exe"
 ${EndIf}
 
 
   ${If} $isInstalled != "1"
-    StrCpy $VCRedistNeeded "1" ; Mark that it was needed
     MessageBox MB_YESNO "NOTE: This application requires$\r$\n\
       'Microsoft Visual C++ Redistributable'$\r$\n\
       to function properly.$\r$\n$\r$\n\
       Download and install now?" /SD IDYES IDNO VSRedistInstalled
 
-    ${OpenURL} "$VCRedistDownload"
+   ; ${OpenURL} "$VCRedistDownload"
+    StrCpy $VCRedistNeeded "1" ; Mark that it was needed
   ${Else}
     StrCpy $VCRedistNeeded "0" ; Mark that it was not needed
   ${EndIf}
 
 
   VSRedistInstalled:
-  ;jumped from message box, nothing to do here
 !macroend
 
 
@@ -121,7 +185,7 @@ FunctionEnd
 ; --- Finish Page Settings ---
 !define MUI_FINISHPAGE_RUN "$INSTDIR\nekobox.exe"
 !define MUI_FINISHPAGE_RUN_TEXT "Launch nekobox"
-!define MUI_FINISHPAGE_RUN_NOTCHECKED
+;!define MUI_FINISHPAGE_RUN_NOTCHECKED
 
 !addplugindir .\script\
 
@@ -129,7 +193,6 @@ FunctionEnd
 !insertmacro MUI_PAGE_DIRECTORY
 !insertmacro MUI_PAGE_INSTFILES
 !insertmacro MUI_PAGE_FINISH
-
 !insertmacro MUI_LANGUAGE "English"
 
 Section "Install"
@@ -138,13 +201,34 @@ Section "Install"
   SetOverwrite on
 
   !insertmacro "checkVcRedist"
+  
+  ${PowerShellExec} "\
+    Write-Host $\"=> $INSTDIR$\" ;				\
+	if ($\"$VCRedistNeeded$\" -eq $\"1$\") {					\
+		$$url = $\"$VCRedistDownload$\" ;						\
+		$$download=$$env:USERPROFILE + $\"\Downloads$\"	;		\
+		$$path = $\"$$download\$VCRedistFile$\" ;				\
+		if (-not (Test-Path $$path)) {							\
+			Invoke-WebRequest -Uri $\"$$url$\" -OutFile $$path;	\
+		} ;														\
+		Start-Process $$path -Wait ;							\
+	}; 															\
+	$$procs = Get-CimInstance Win32_Process | Where-Object { 	\
+		$$_.ExecutablePath -like $\"$INSTDIR*$\" ;				\
+	}; 															\
+	foreach ($$proc in $$procs) { 								\
+		Write-Host $\"!! $$proc$\" ;							\
+		Stop-Process -Id $$proc.ProcessId -Force ; 				\
+	}; 															\
+	sleep 2														\
+	"
 
   !ifdef DIRECTORY
     File /r  ".\${DIRECTORY}\*"
-    ;/x "updater.exe"
   !else
     File /r  ".\deployment\windows64\*"
   !endif
+  
 
   CreateShortcut "$desktop\nekobox.lnk" "$INSTDIR\nekobox.exe" "" "$INSTDIR\nekobox.exe" 0
   CreateShortcut "$SMPROGRAMS\nekobox.lnk" "$INSTDIR\nekobox.exe" "" "$INSTDIR\nekobox.exe" 0
