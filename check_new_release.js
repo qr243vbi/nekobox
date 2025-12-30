@@ -291,8 +291,10 @@ if (release_download_url_flag || !is_newer){
 					options['chocolatey_source'] = curdir_path('downloads');
 				}
 			}
+			archive_name = curdir_path(archive_name);
 		} else {
-			options['winget_install'] = 'true';
+			options['winget_install'] = true;
+			archive_name = 'qr243vbi.NekoBox';
 		}
         if (errors == ''){
             let index2 = ask(
@@ -305,7 +307,9 @@ if (release_download_url_flag || !is_newer){
 					options['version'] = latest_tag_name;
 					for (const [key, value] of options) { 
 						updater_args.push('-' + key);
-						updater_args.push(value);
+						if (!(value === true)){
+							updater_args.push(value);
+						}
 					}
 				}
 				is_newer = true;
