@@ -188,8 +188,11 @@ if (resp_error){
         translate('Update'));
 } else {
     var array = JSON.parse(resp.text);
+	var bound = '';
 	
-	bound = getLatestWingetVersion('qr243vbi.NekoBox')
+	if (winget_package){
+		bound = getLatestWingetVersion('qr243vbi.NekoBox');
+	}
 	
     for (let release of array){
         if (!allow_beta_update) {
@@ -282,7 +285,7 @@ if (release_download_url_flag || !is_newer){
 				}
 			}
 		} else {
-			options['winget_package'] = 'true';
+			options['custom_script'] = 'true';
 		}
         if (errors == ''){
             let index2 = ask(
