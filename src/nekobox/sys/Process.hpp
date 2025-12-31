@@ -13,9 +13,10 @@
 #endif
 
 namespace Configs_sys {
-    class CoreProcess : public QProcess
+    class CoreProcess: public QObject
     {
     public:
+        QProcess process;
         QString tag;
         QString program;
         QStringList arguments;

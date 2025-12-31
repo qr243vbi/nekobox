@@ -6,25 +6,21 @@
 #include <QFile>
 #include <QTextStream>
 #include <QDebug>
-#include "nekobox/sys/Settings.h"
+#include <nekobox/sys/Settings.h>
 
 const char * getVersionString(){
     static const char * VERSION = nullptr;
     if (VERSION == nullptr){
-        QString filePath = getResource("version.txt");
-        QFile file(filePath);
+        auto filePath = getGlobal();
         QString source;
-        if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
+            source = filePath.value("software_version",
 #ifdef NKR_DEFAULT_VERSION
-            source = NKR_DEFAULT_VERSION;
+                                    NKR_DEFAULT_VERSION
 #else
-            source = "1.0.0";
+                                    "1.0.0"
 #endif
-        } else {
-            QTextStream in(&file);
-            source = in.readAll();
-            file.close();
-        }
+            ).toString();
+
         QByteArray tempByteArray = source.simplified().toUtf8();
         VERSION = strdup(tempByteArray.constData());
     }

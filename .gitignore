@@ -6,6 +6,7 @@ core/server/gen/*.go
 SingBox.Version
 /script/nekobox
 version.txt
+global.ini
 /config
 /updater
 /vcpkg*

@@ -227,7 +227,14 @@ Section "Install"
   !endif
   
   ${If} "$Winget" == "1"
-	File ".\script\nekobox_winget\global.ini"
+    ${If} ${FileExists} "$INSTDIR\global.ini"
+        FileOpen $0 "$INSTDIR\global.ini" a
+    ${Else}
+        FileOpen $0 "$INSTDIR\global.ini" w
+        FileWrite $0 "[General]"
+    ${EndIf}
+    FileWrite $0 "\nwinget_package=true\n"
+    FileClose $0
   ${EndIf}
 
   ${If} "$UnpackOnly" != "1"
