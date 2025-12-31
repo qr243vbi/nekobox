@@ -1,4 +1,8 @@
-Name "nekobox"
+!ifdef SOFTWARE_NAME
+    Name "${SOFTWARE_NAME}"
+!else
+    Name "nekobox"
+!endif
 
 !ifdef OUTFILE
     OutFile "${OUTFILE}.exe"

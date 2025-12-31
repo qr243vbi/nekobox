@@ -496,8 +496,13 @@ MainWindow::MainWindow(QWidget *parent)
   //
 
   // software_name
-  software_name = "nekobox";
-  software_core_name = "sing-box";
+  {
+    QSettings globalSettings = getGlobal();
+    software_name = globalSettings.value(
+                "software_name", "nekobox").toString();
+    software_core_name = globalSettings.value(
+                "software_core_name", "sing-box").toString();
+  }
   //
   {
     auto appDataPath =
