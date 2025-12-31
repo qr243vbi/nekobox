@@ -64,10 +64,9 @@ package_nekobox() {
 
     cd "nekobox-unified-source-${pkgver}"
     install -Dm644 srslist.json -t "${pkgdir}/usr/lib/NekoBox"
+    install -Dm644 global.ini -t "${pkgdir}/usr/lib/NekoBox"
     cp *.js "${pkgdir}/usr/lib/NekoBox"
     cp -RfvT "res/public" "${pkgdir}/usr/lib/NekoBox/public"
-    echo "[General]" > "${pkgdir}/usr/lib/NekoBox/global.ini"
-    echo "software_version=${pkgver}" >> "${pkgdir}/usr/lib/NekoBox/global.ini"
     install -Dm644 res/public/icon.png "${pkgdir}/usr/share/pixmaps/nekobox.png"
 }
 
