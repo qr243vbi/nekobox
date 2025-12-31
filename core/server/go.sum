@@ -143,8 +143,8 @@ github.com/pmezard/go-difflib v1.0.1-0.20181226105442-5d4384ee4fb2 h1:Jamvg5psRI
 github.com/pmezard/go-difflib v1.0.1-0.20181226105442-5d4384ee4fb2/go.mod h1:iKH77koFhYxTK1pcRnkKkqfTogsbg7gZNVY4sRDYZ/4=
 github.com/prometheus-community/pro-bing v0.4.0 h1:YMbv+i08gQz97OZZBwLyvmmQEEzyfyrrjEaAchdy3R4=
 github.com/prometheus-community/pro-bing v0.4.0/go.mod h1:b7wRYZtCcPmt4Sz319BykUU241rWLe1VFXyiyWK/dH4=
-github.com/qr243vbi/sing-box v1.12.14 h1:JNrnsVLxYUB+jTyywKwxMAzvC0emgEkENgUlJGn9J5Q=
-github.com/qr243vbi/sing-box v1.12.14/go.mod h1:cCxx34aXIIAtPU62CwieDyRwYvvmVRtHawVg+QDKqWs=
+github.com/qr243vbi/sing-box v1.12.15 h1:wvdALe/UueczvFIb2rVSj5O0Nw8UKnx27vQj50xn8Ks=
+github.com/qr243vbi/sing-box v1.12.15/go.mod h1:sofJyK+ZTfqaj56+t0Mmez+gWdi7kVbn5N55jRI1CLU=
 github.com/quic-go/qpack v0.5.1 h1:giqksBPnT/HDtZ6VhtFKgoLOWmlyo9Ei6u9PqzIMbhI=
 github.com/quic-go/qpack v0.5.1/go.mod h1:+PC4XFrEskIVkcLzpEkbLqq1uCoxPhQuvK5rH1ZgaEg=
 github.com/russross/blackfriday/v2 v2.1.0/go.mod h1:+Rmxgy9KzJVeS9/2gXHxylqXiyQDYRxCVz55jmeOWTM=
@@ -165,8 +165,8 @@ github.com/sagernet/nftables v0.3.0-beta.4/go.mod h1:OQXAjvjNGGFxaTgVCSTRIhYB5/l
 github.com/sagernet/quic-go v0.52.0-sing-box-mod.3 h1:ySqffGm82rPqI1TUPqmtHIYd12pfEGScygnOxjTL56w=
 github.com/sagernet/quic-go v0.52.0-sing-box-mod.3/go.mod h1:OV+V5kEBb8kJS7k29MzDu6oj9GyMc7HA07sE1tedxz4=
 github.com/sagernet/sing v0.6.9/go.mod h1:ARkL0gM13/Iv5VCZmci/NuoOlePoIsW0m7BWfln/Hak=
-github.com/sagernet/sing v0.7.13 h1:XNYgd8e3cxMULs/LLJspdn/deHrnPWyrrglNHeCUAYM=
-github.com/sagernet/sing v0.7.13/go.mod h1:ARkL0gM13/Iv5VCZmci/NuoOlePoIsW0m7BWfln/Hak=
+github.com/sagernet/sing v0.7.14 h1:5QQRDCUvYNOMyVp3LuK/hYEBAIv0VsbD3x/l9zH467s=
+github.com/sagernet/sing v0.7.14/go.mod h1:ARkL0gM13/Iv5VCZmci/NuoOlePoIsW0m7BWfln/Hak=
 github.com/sagernet/sing-mux v0.3.3 h1:YFgt9plMWzH994BMZLmyKL37PdIVaIilwP0Jg+EcLfw=
 github.com/sagernet/sing-mux v0.3.3/go.mod h1:pht8iFY4c9Xltj7rhVd208npkNaeCxzyXCgulDPLUDA=
 github.com/sagernet/sing-quic v0.5.2-0.20250909083218-00a55617c0fb h1:5Wx3XeTiKrrrcrAky7Hc1bO3CGxrvho2Vu5b/adlEIM=

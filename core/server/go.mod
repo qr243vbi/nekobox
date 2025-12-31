@@ -8,7 +8,7 @@ require (
 	github.com/dustin/go-humanize v1.0.1
 	github.com/gofrs/uuid/v5 v5.4.0
 	github.com/google/shlex v0.0.0-20191202100458-e7afc7fbc510
-	github.com/sagernet/sing v0.7.13
+	github.com/sagernet/sing v0.7.14
 	github.com/sagernet/sing-box v1.12.14
 	github.com/sagernet/sing-tun v0.7.3
 	github.com/spf13/cobra v1.10.2
