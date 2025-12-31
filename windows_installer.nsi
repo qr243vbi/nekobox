@@ -6,8 +6,9 @@ Name "nekobox"
     OutFile "nekobox_setup.exe"
 !endif
 InstallDir $WINDIR\qr243vbi\non_exists_directory
-RequestExecutionLevel admin
+RequestExecutionLevel user
 
+!include FileFunc.nsh
 !include MUI2.nsh
 !include LogicLib.nsh
 !include x64.nsh
@@ -18,6 +19,8 @@ Var VCRedistNeeded
 Var VCRedistDownload
 Var VCRedistFile
 Var isInstalled
+Var isAdmin
+Var Winget
 
 
 !ifndef PSEXEC_INCLUDED
@@ -165,14 +168,34 @@ ${EndIf}
 !macroend
 
 
+!macro HasFlag FLAG OUTVAR
+    ${GetParameters} $R9
+    ${GetOptions} $R9 "${FLAG}" $R8
+    StrCpy ${OUTVAR} $R8
+!macroend
+
+
 Function .onInit
+    !insertmacro HasFlag "/WINGET=" $Winget
+	
+	UserInfo::GetAccountType 
+	Pop $0 
+	${If} $0 != "Admin" 
+		StrCpy $isAdmin "0"
+	${Else}
+		StrCpy $isAdmin "1"
+	${EndIf}
 	${If} "$INSTDIR" != "$WINDIR\qr243vbi\non_exists_directory"
 		
 	${Else}
-		${If} ${RunningX64}
-			StrCpy $INSTDIR "$PROGRAMFILES64\nekobox"
+		${If} "$isAdmin" == "1"
+			${If} ${RunningX64}
+				StrCpy $INSTDIR "$PROGRAMFILES64\nekobox"
+			${Else}
+				StrCpy $INSTDIR "$PROGRAMFILES\nekobox"
+			${EndIf}
 		${Else}
-			StrCpy $INSTDIR "$PROGRAMFILES\nekobox"
+			StrCpy $INSTDIR "$APPDATA\NekoBox"
 		${EndIf}
 	${EndIf}
 FunctionEnd
@@ -229,6 +252,9 @@ Section "Install"
     File /r  ".\deployment\windows64\*"
   !endif
   
+  ${If} "$Winget" == "1"
+	File ".\script\nekobox_winget\global.ini"
+  ${EndIf}
 
   CreateShortcut "$desktop\nekobox.lnk" "$INSTDIR\nekobox.exe" "" "$INSTDIR\nekobox.exe" 0
   CreateShortcut "$SMPROGRAMS\nekobox.lnk" "$INSTDIR\nekobox.exe" "" "$INSTDIR\nekobox.exe" 0

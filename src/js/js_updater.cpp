@@ -209,10 +209,13 @@ bool jsInit(
     QJSValue jsFactory = ctx->newQObject(factory);
 
     ctx->globalObject().setProperty("window", jsFactory);
-    jsFactory = ctx->newQMetaObject(&JsHTTPRequest::staticMetaObject);
-
-
+    
+	jsFactory = ctx->newQMetaObject(&JsHTTPRequest::staticMetaObject);
     ctx->globalObject().setProperty("HTTPResponse", jsFactory);
+	
+	jsFactory = ctx->newQMetaObject(&JsTextWriter::staticMetaObject);
+    ctx->globalObject().setProperty("TextWriter", jsFactory);
+	
     ctx->globalObject().setProperty("archive_name", "nekobox.zip");
 
     ctx->globalObject().setProperty("NKR_VERSION", NKR_VERSION);
