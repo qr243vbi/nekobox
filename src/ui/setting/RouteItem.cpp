@@ -177,10 +177,12 @@ RouteItem::RouteItem(QWidget *parent, const std::shared_ptr<Configs::RoutingChai
         });
 
         connect(window, &DialogGroupChooseProxy::select_proxy,
-                this, [radio3, window](int id)->void{
+                this, [=](int id)->void{
             if (id >= 0){
                 window->last_id = id;
-                radio3->click();
+                runOnUiThread([radio3]()->void{
+                    radio3->setChecked(true);
+                });
             }
         });
 
