@@ -1,7 +1,6 @@
 var allow_beta_update = configs['allow_beta_update'];
 var exitFlag = false;
 var simple_mode = true;
-var resp = new HTTPResponse("https://api.github.com/repos/qr243vbi/nekobox/releases");
 var archive_extension = ".zip"
 var updater_args = [];
 var release_array = [];
@@ -16,48 +15,16 @@ var release_download_url = '';
 var archive_name = '';
 var latest_tag_name = '';
 var chocolatey_package = (GlobalMap['chocolatey_package'] == 'true');
+var winget_package = (GlobalMap['winget_package'] == 'true');
 
-if (file_exists(env["APPIMAGE"])){
-  if (file_exists(APPLICATION_DIR_PATH + "/" + env["NEKOBOX_APPIMAGE_CUSTOM_EXECUTABLE"])){
-    archive_extension = ".AppImage";
-    if (search == "linux-amd64"){
-      search = "x86_64-linux";
-    } else if (search == "linux-arm64"){
-      search = "aarch64-linux";
-    } else if (search == "linux-arm32"){
-      search = "armhf-linux";
-    } else if (search == "linux-i386"){
-      search = "i686-linux";
-    } else {
-      archive_extension = ".zip"
-    }
-  }
-}
+log("Checking new version", "Info");
 
-function isNewer(assetName) {
-    let curver = NKR_VERSION.trim();
-    if (!curver) {
-        return false;
-    }
-
-    const spl = assetName.split('-');
-    if (spl.length < 2) {
-        return false;
-    }
-
-    let version = spl[1]; // Extract version: 1.2.3
-    if (spl.length >= 3) {
-        const spl_2 = spl[2];
-        if (spl_2.includes("beta") || spl_2.includes("alpha") || spl_2.includes("rc")) {
-            version += "." + spl_2;
-        }
-    }
-
-    const parts = version.split('.'); // [1, 2, 3, beta, 13]
-    const currentParts = curver.split('.').map(part => part.replace("-", "."));
+function isNewerVersion(curver, version){
+    const parts = version.replace('-', '.').split('.'); // [1, 2, 3, beta, 13]
+    const currentParts = curver.replace("-", ".").split('.');
 
     if (parts.length < 3 || currentParts.length < 3) {
-        log("1. Version strings seem to be invalid: " + curver + " and " + version);
+      //  log("1. Version strings seem to be invalid: " + curver + " and " + version);
         return false;
     }
 
@@ -82,7 +49,7 @@ function isNewer(assetName) {
     }
 
     if (verNums.length < 3 || currNums.length < 3) {
-        log("2. Version strings seem to be invalid: " + curver + " and " + version);
+      //  log("2. Version strings seem to be invalid: " + curver + " and " + version);
         return false;
     }
 
@@ -107,14 +74,122 @@ function isNewer(assetName) {
     return false;
 }
 
+function getLatestWingetVersion(packageId) {
+    // Split "Publisher.Package"
+    var parts = packageId.split(".");
+    var publisher = parts[0];
+    var packageName = parts[1];
+    var firstLetter = publisher.charAt(0).toLowerCase();
+
+    // GitHub API URL for winget manifests
+    var url = "https://api.github.com/repos/microsoft/winget-pkgs/contents/manifests/"
+              + firstLetter + "/" + publisher + "/" + packageName;
+
+    // Synchronous HTTP request using your class
+    var res = new HTTPResponse(url);
+
+    if (res.error) {
+        return '0.0.0';
+    }
+
+    // Parse JSON
+    var data;
+    try {
+        data = JSON.parse(res.text);
+    } catch (e) {
+        return '0.0.0';
+    }
+
+    // Extract version folder names
+    var versions = [];
+    for (var i = 0; i < data.length; i++) {
+        if (data[i].type === "dir") {
+            versions.push(data[i].name);
+        }
+    }
+
+    if (versions.length === 0) {
+        return '0.0.0';
+    }
+
+    // Natural sort (numeric-aware)
+    versions.sort(function(a, b) {
+		if (a == b ) return 0;
+		if (isNewerVersion(a, b)){
+			return -1;
+		} else {
+			return 1;
+		}
+    });
+	
+    // Latest version is the last one
+    return versions[versions.length - 1];
+}
+
+if (file_exists(env["APPIMAGE"])){
+  if (file_exists(APPLICATION_DIR_PATH + "/" + env["NEKOBOX_APPIMAGE_CUSTOM_EXECUTABLE"])){
+    archive_extension = ".AppImage";
+    if (search == "linux-amd64"){
+      search = "x86_64-linux";
+    } else if (search == "linux-arm64"){
+      search = "aarch64-linux";
+    } else if (search == "linux-arm32"){
+      search = "armhf-linux";
+    } else if (search == "linux-i386"){
+      search = "i686-linux";
+    } else {
+      archive_extension = ".zip"
+    }
+  }
+}
+
+function isNewerAsset(assetName, curver) {
+	if (!curver){
+		curver = NKR_VERSION;
+	}
+	curver = curver.trim();
+    if (!curver) {
+        return false;
+    }
+
+    const spl = assetName.split('-');
+    if (spl.length < 2) {
+        return false;
+    }
+
+    let version = spl[1]; // Extract version: 1.2.3
+    if (spl.length >= 3) {
+        const spl_2 = spl[2];
+        if (spl_2.includes("beta") || spl_2.includes("alpha") || spl_2.includes("rc")) {
+            version += "." + spl_2;
+        }
+    }
+
+	return isNewerVersion(curver, version);
+}
 
 
-if (resp.error){
+var resp = new HTTPResponse("https://api.github.com/repos/qr243vbi/nekobox/releases");
+var data;
+var resp_error;
+if (!resp.error){	
+    try {
+        data = JSON.parse(resp.text);
+    } catch (e) {
+        resp_error = "Invalid JSON from GitHub";
+    }
+} else {
+	resp_error = resp.error;
+}
+
+if (resp_error){
     warning(
-        translate('Requesting update error: %1').replace('%1', resp.error),
+        translate('Requesting update error: %1').replace('%1', resp_error),
         translate('Update'));
 } else {
-    let array = JSON.parse(resp.text);
+    var array = JSON.parse(resp.text);
+	
+	bound = getLatestWingetVersion('qr243vbi.NekoBox')
 	
     for (let release of array){
         if (!allow_beta_update) {
@@ -126,11 +201,11 @@ if (resp.error){
         for (let asset of release["assets"]) {
             let asset_name = asset["name"];
 
-            if (asset_name.includes(search) && asset_name.endsWith(archive_extension)) {
-                
+            if (asset_name.includes(search) && asset_name.endsWith(archive_extension)) {       
+				if (bound == '' || !isNewerAsset(asset_name, bound) ){
 				if (exitFlag){
                     let tag_name = release['tag_name'];
-                    if (isNewer(asset_name)) {
+                    if (isNewerAsset(asset_name)) {
                         release_array.push([tag_name, release['body']]);
                     } else {
                         stopFlag = true;
@@ -144,10 +219,11 @@ if (resp.error){
                     release_array.push([latest_tag_name, release_note]);
                     release_download_url = asset["browser_download_url"];
                     exitFlag = true;
-                    is_newer = isNewer(assets_name);
+                    is_newer = isNewerAsset(assets_name);
                     stopFlag = !is_newer;
                 }
                 break;
+				}
             }
         }
         if (exitFlag) {
@@ -193,15 +269,20 @@ if (release_download_url_flag || !is_newer){
 	
     if (index == 2){
 		is_newer = false;
-        let errors = download(release_download_url, archive_name, true);
-		if (chocolatey_package){
-			let nupkg_errors = download(
-				"https://github.com/qr243vbi/nekobox/releases/download/"+
-				latest_tag_name+"/nekobox."+latest_tag_name+".nupkg", 
-				"downloads/nekobox."+latest_tag_name+".nupkg", true);
-			if (nupkg_errors == ''){
-				options['chocolatey_source'] = curdir_path('downloads');
+		let errors = '';
+		if (!winget_package){
+			errors = download(release_download_url, archive_name, true);
+			if (chocolatey_package){
+				let nupkg_errors = download(
+					"https://github.com/qr243vbi/nekobox/releases/download/"+
+					latest_tag_name+"/nekobox."+latest_tag_name+".nupkg", 
+					"downloads/nekobox."+latest_tag_name+".nupkg", true);
+				if (nupkg_errors == ''){
+					options['chocolatey_source'] = curdir_path('downloads');
+				}
 			}
+		} else {
+			options['winget_package'] = 'true';
 		}
         if (errors == ''){
             let index2 = ask(
