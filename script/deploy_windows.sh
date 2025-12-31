@@ -45,7 +45,8 @@ cp $CURDIR/*.js $DEST
 cp $BUILD/nekobox.exe $DEST || cp $BUILD/Release/nekobox.exe $DEST
 echo 'DeleteToUseThisDirectoryForConfig' > $DEST/config
 cp -RT $CURDIR/res/public $DEST/public
-echo "$INPUT_VERSION" > $DEST/version.txt
+echo "[General]" > $DEST/global.ini
+echo "software_version=$INPUT_VERSION" >> $DEST/global.ini
 
 if [[ "$COMPILER" != "MinGW" ]]
 then

@@ -20,8 +20,8 @@ namespace Configs_sys {
     }
 
     void CoreProcess::Kill() {
-        kill();
-        waitForFinished();
+        process.kill();
+        process.waitForFinished();
     }
 
     CoreProcess::CoreProcess(const QString &core_path, const QStringList &args) {
@@ -30,8 +30,8 @@ namespace Configs_sys {
         arguments << "-waitpid";
         arguments << QString::number(QCoreApplication::applicationPid());
 
-        connect(this, &QProcess::readyReadStandardOutput, this, [&]() {
-            auto log = readAllStandardOutput();
+        connect(&process, &QProcess::readyReadStandardOutput, this, [&]() {
+            auto log = process.readAllStandardOutput();
             if (!Configs::dataStore->core_running) {
                 if (log.contains("Core listening at")) {
                     // The core really started
@@ -40,7 +40,7 @@ namespace Configs_sys {
                     start_profile_when_core_is_up = -1;
                 } else if (log.contains("failed to serve")) {
                     // The core failed to start
-                    kill();
+                    process.kill();
                 }
             }
             if (log.contains("Extra process exited unexpectedly"))
@@ -51,23 +51,23 @@ namespace Configs_sys {
             if (logCounter.fetchAndAddRelaxed(log.count("\n")) > Configs::dataStore->max_log_line) return;
             MW_show_log(log);
         });
-        connect(this, &QProcess::readyReadStandardError, this, [&]() {
-            auto log = readAllStandardError().trimmed();
+        connect(&process, &QProcess::readyReadStandardError, this, [&]() {
+            auto log = process.readAllStandardError().trimmed();
             MW_show_log(log);
         });
-        connect(this, &QProcess::errorOccurred, this, [&](ProcessError error) {
-            if (error == FailedToStart) {
+        connect(&process, &QProcess::errorOccurred, this, [&](QProcess::ProcessError error) {
+            if (error == QProcess::FailedToStart) {
                 failed_to_start = true;
-                MW_show_log("start core error occurred: " + errorString() + "\n");
+                MW_show_log("start core error occurred: " + process.errorString() + "\n");
             }
         });
-        connect(this, &QProcess::stateChanged, this, [&](ProcessState state) {
-            if (state == NotRunning) {
+        connect(&process, &QProcess::stateChanged, this, [&](QProcess::ProcessState state) {
+            if (state == QProcess::NotRunning) {
                 Configs::dataStore->core_running = false;
                 qDebug() << "Core stated changed to not running";
             }
 
-            if (!Configs::dataStore->prepare_exit && state == NotRunning) {
+            if (!Configs::dataStore->prepare_exit && state == QProcess::NotRunning) {
                 if (failed_to_start) return; // no retry
                 if (restarting) return;
 
@@ -98,14 +98,14 @@ namespace Configs_sys {
         started = true;
         QStringList list = QProcessEnvironment::systemEnvironment().toStringList();
         list << "NEKOBOX_APPIMAGE_CUSTOM_EXECUTABLE=nekobox_core";
-        setEnvironment(list);
-        start(program, arguments);
+        process.setEnvironment(list);
+        process.start(program, arguments);
     }
 
     void CoreProcess::Restart() {
         restarting = true;
-        kill();
-        waitForFinished(500);
+        process.kill();
+        process.waitForFinished(500);
         started = false;
         Start();
         restarting = false;

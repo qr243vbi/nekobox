@@ -17,9 +17,10 @@ then
  git commit -am "initial commit"
 fi
 
-echo $INPUT_VERSION > version.txt
+echo "[General]" > global.ini
+echo "software_version=$INPUT_VERSION" >> global.ini
 
-git add -f srslist* version.txt core/server/gen/*.go core/server/gen/libcore_service-remote core/server/vendor SingBox.Version
+git add -f srslist* global.ini core/server/gen/*.go core/server/gen/libcore_service-remote core/server/vendor SingBox.Version
 
 git -c user.name="qr243vbi" -c user.email="my@email.org" commit -am "New Update"
 
