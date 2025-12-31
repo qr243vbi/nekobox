@@ -300,19 +300,30 @@ if (release_download_url_flag || !is_newer){
             let index2 = ask(
                 translate("Update is ready, restart to install?"),
                 translate("Update"),
-                [translate("Yes"), translate("No")]
+                [translate("No"), translate("Yes")]
             );
-			if (index2 == 0){
-				if (Object.keys(options).length > 0){
-					options['version'] = latest_tag_name;
-					for (const [key, value] of options) { 
+			if (index2 == 1){
+				
+				try{
+					var object_keys = Object.keys(options);
+				if (object_keys.length > 0){
+					for (var key of object_keys) {
+						var value = options[key];
 						updater_args.push('-' + key);
 						if (!(value === true)){
 							updater_args.push(value);
 						}
 					}
+					updater_args.push('-version')
+					updater_args.push(latest_tag_name);
+					
+					is_newer = true;
 				}
-				is_newer = true;
+				} catch (e){
+					info(e);
+					is_newer = false;
+				}
+				
 			}
         } else {
             warning(errors, translate("Failed to download update assets"));
