@@ -202,7 +202,7 @@ jobs:
         uses: actions/cache@v4.2.3
         with:
           path: build
-          key: CommonCache-${{ matrix.platform }}-${{ matrix.target }}-${{ github.event.inputs.tag }}
+          key: CommonCache-Builds-${{ matrix.platform }}-${{ matrix.target }}-${{ github.event.inputs.tag }}
 
       - name: Windows - Generate MakeFile and Build
         if: matrix.allow == 'true' && github.event.inputs.source != 'true'
@@ -289,7 +289,7 @@ jobs:
         uses: actions/cache@v4.2.3
         with:
           path: build
-          key: CommonCache-${{ matrix.platform }}-${{ matrix.target }}-${{ github.event.inputs.tag }}
+          key: CommonCache-Builds-${{ matrix.platform }}-${{ matrix.target }}-${{ github.event.inputs.tag }}
 
       - name: Linux - Generate MakeFile and Build
         if: matrix.allow == 'true' && github.event.inputs.source != 'true'
@@ -446,6 +446,29 @@ jobs:
         with:
           python-version: '3.13'
           cache: 'pip'
+
+      - name: Cache winget-pkgs
+        id: cache-common
+        if: github.event.inputs.build_windows_arm64 == 'true' && github.event.inputs.build_windows_x64 == 'true'
+        uses: actions/cache@v4.2.3
+        with:
+          path: winget-pkgs
+          key: CommonCache-WingetPkgs-${{ github.event.inputs.tag }}
+
+      - name: Linux - Install apt dependencies
+        if: matrix.allow == 'true' && github.event.inputs.source != 'true'
+        uses: awalsh128/cache-apt-pkgs-action@latest
+        with:
+          packages: curl jq git gh
+          version: 1.0
+
+      - name: Run winget-pkgs
+        id: cache-common
+        if: github.event.inputs.build_windows_arm64 == 'true' && github.event.inputs.build_windows_x64 == 'true'
+        shell: bash
+        run: |
+          export GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}
+          bash ./script/trigger_winget_pkgs.sh
 
       - name: Trigger Open Build Service and Copr
         shell: bash
