@@ -69,6 +69,12 @@ uint WinCommander::runProcessElevated(const QString &path,
                                       const QStringList &parameters,
                                       const QString &workingDir,
                                       int nShow, bool aWait) {
+    return runProcess(path, parameters, workingDir, nShow, aWait, true);
+}
+uint WinCommander::runProcess(const QString &path,
+                                          const QStringList &parameters,
+                                          const QString &workingDir,
+                                int nShow, bool aWait, bool elevated) {
     uint result = 0;
 
 #ifdef Q_OS_WIN
@@ -94,7 +100,7 @@ uint WinCommander::runProcessElevated(const QString &path,
     shex.cbSize       = sizeof(shex);
     shex.fMask        = SEE_MASK_NOCLOSEPROCESS;
     shex.hwnd         = hwnd;
-    shex.lpVerb       = TEXT("runas");
+    shex.lpVerb       = elevated ? TEXT("runas") : TEXT("open");
     shex.lpFile       = pszPath;
     shex.lpParameters = pszParameters;
     shex.lpDirectory  = pszDirectory;
