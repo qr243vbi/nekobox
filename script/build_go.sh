@@ -26,7 +26,7 @@ if [ -z $DEST ]; then
 fi
 
 echo "DESTINATION IS $DEST FOR MACHINE $GOARCH with platform $GOOS"
-TAGS="with_clash_api,with_gvisor,with_quic,with_wireguard,with_utls,with_dhcp,with_tailscale"
+TAGS="with_clash_api,with_gvisor,with_quic,with_wireguard,with_utls,with_dhcp,with_tailscale,with_shadowtls"
 
 GOCMD="${GOCMD:-go}"
 

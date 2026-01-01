@@ -39,6 +39,14 @@ return ptr;      \
 #define ADD_MAP(X, Y, B) _put(ptr, X, &this->Y, ITEM_TYPE(B))
 #endif
 
+#ifndef NKR_VERSION
+inline QString software_version;
+const char * _getSoftwareVersion();
+#define NKR_VERSION _getSoftwareVersion()
+#define NKR_DYNAMIC_VERSION dynamic
+#endif
+
+inline QString software_build_date;
 inline QString software_name;
 inline QString software_core_name;
 

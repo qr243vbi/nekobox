@@ -209,7 +209,7 @@ jobs:
         shell: bash
         run: |
           if [[ ${{ github.event.inputs.updater }} == 'true' ]]; then export SKIP_UPDATE_BUTTON=ON; else export SKIP_UPDATE_BUTTON=OFF; fi
-          cmake  -DCMAKE_TOOLCHAIN_FILE='${{ github.workspace }}/vcpkg/scripts/buildsystems/vcpkg.cmake' '-DVCPKG_TARGET_TRIPLET=${{ matrix.triplet }}' -DVCPKG_MANIFEST_MODE=OFF -DSKIP_UPDATE_BUTTON="${SKIP_UPDATE_BUTTON}" -DCMAKE_BUILD_TYPE=Release -S . -B build
+          cmake  -DCMAKE_TOOLCHAIN_FILE='${{ github.workspace }}/vcpkg/scripts/buildsystems/vcpkg.cmake' '-DVCPKG_TARGET_TRIPLET=${{ matrix.triplet }}' -DVCPKG_MANIFEST_MODE=OFF -DSKIP_UPDATE_BUTTON="${SKIP_UPDATE_BUTTON}" -DCMAKE_BUILD_TYPE=Release "-DNKR_DEFAULT_VERSION=${INPUT_VERSION}" -S . -B build
           cmake --build build --config Release --verbose
           ./script/deploy_windows.sh "new-${{ matrix.target }}"
 
@@ -297,7 +297,7 @@ jobs:
         run: |
           cd build
           if [[ ${{ github.event.inputs.updater }} == 'true' ]]; then export SKIP_UPDATE_BUTTON=ON; else export SKIP_UPDATE_BUTTON=OFF; fi
-          cmake -GNinja -DSKIP_UPDATE_BUTTON="${SKIP_UPDATE_BUTTON}" -DCMAKE_BUILD_TYPE=Release ..
+          cmake -GNinja -DSKIP_UPDATE_BUTTON="${SKIP_UPDATE_BUTTON}" -DCMAKE_BUILD_TYPE=Release "-DNKR_DEFAULT_VERSION=${INPUT_VERSION}" ..
           ninja
           cd ..
           bash -x ./script/deploy_linux64.sh
