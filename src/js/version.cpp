@@ -7,6 +7,7 @@
 #include <QTextStream>
 #include <QDebug>
 #include <nekobox/sys/Settings.h>
+#define _CRT_NONSTDC_NO_WARNINGS
 
 const char * getVersionString(){
     static const char * VERSION = nullptr;
