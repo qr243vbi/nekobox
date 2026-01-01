@@ -24,7 +24,7 @@ fi
 
 echo "[General]" > global.ini
 echo "software_version=$INPUT_VERSION" >> global.ini
-echo "software_name=IblisBox" >> global.ini
+echo "software_name=RahuBox" >> global.ini
 
 git add -f srslist* global.ini core/server/gen/*.go core/server/gen/libcore_service-remote core/server/vendor SingBox.Version
 

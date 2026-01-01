@@ -278,3 +278,12 @@ QString DisplayTime(long long time, int formatType) {
     t.setMSecsSinceEpoch(time * 1000);
     return QLocale().toString(t, QLocale::FormatType(formatType));
 }
+
+
+const char * _getSoftwareVersion(){
+    static const char * VERSION_STATIC = nullptr;
+    if (VERSION_STATIC == nullptr){
+        VERSION_STATIC = strdup(software_version.toUtf8().constData());
+    }
+    return VERSION_STATIC;
+}

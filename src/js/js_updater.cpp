@@ -221,6 +221,7 @@ bool jsInit(
     ctx->globalObject().setProperty("NKR_VERSION", NKR_VERSION);
     ctx->globalObject().setProperty("APPLICATION_DIR_PATH", root_directory);
 
+    ctx->globalObject().setProperty("NKR_SOFTWARE_NAME", software_name);
 
     QString script;
 

@@ -13,7 +13,6 @@
 #include <QMutex>
 #include <QQueue>
 #include <QWaitCondition>
-#include <nekobox/js/version.h>
 #include <qnamespace.h>
 #include <set>
 #ifdef _WIN32
@@ -308,7 +307,34 @@ std::map<std::string, std::string> jsonToMap(const QByteArray &byteArray) {
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent), ui(new Ui::MainWindow) {
   mainwindow = this;
+  // software_name
+  {
+    QSettings globalSettings = getGlobal();
+#ifdef NKR_DYNAMIC_VERSION
+    software_version = globalSettings.value("software_version",
+#ifdef NKR_DEFAULT_VERSION
+                            NKR_DEFAULT_VERSION
+#else
+                            "1.0.0"
+#endif
+            ).toString();
+#endif
+    qDebug() << NKR_VERSION << software_version;
+    software_build_date = globalSettings.value("software_build_date", "").toString();
+#ifdef NKR_TIMESTAMP
+    if (software_build_date.isEmpty()){
+        software_build_date = NKR_TIMESTAMP;
+    }
+#endif
+    software_name = globalSettings.value(
+                "software_name", "nekobox").toString();
+    software_core_name = globalSettings.value(
+                "software_core_name", "sing-box").toString();
+  }
+
   setAcceptDrops(true);
+
+
   MW_dialog_message = [=, this](const QString &a, const QString &b) {
     runOnUiThread([=, this] { dialog_message_impl(a, b); });
   };
@@ -496,15 +522,6 @@ MainWindow::MainWindow(QWidget *parent)
   //
   RegisterHotkey(false);
   //
-
-  // software_name
-  {
-    QSettings globalSettings = getGlobal();
-    software_name = globalSettings.value(
-                "software_name", "nekobox").toString();
-    software_core_name = globalSettings.value(
-                "software_core_name", "sing-box").toString();
-  }
   //
   {
     auto appDataPath =
@@ -2157,8 +2174,12 @@ void MainWindow::refresh_status(const QString &traffic_update) {
         Configs::dataStore->spmode_system_proxy)
       tt << "[Tun+" + tr("System Proxy") + "]";
     tt << software_name;
-    if (!isTray)
+    if (!isTray) {
       tt << QString(NKR_VERSION);
+      if (!software_build_date.isEmpty()){
+          tt << software_build_date;
+      }
+    }
     if (!Configs::dataStore->active_routing.isEmpty() &&
         Configs::dataStore->active_routing != "Default") {
       tt << "[" + Configs::dataStore->active_routing + "]";
