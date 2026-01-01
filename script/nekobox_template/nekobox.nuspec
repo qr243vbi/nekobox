@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
-    <id>RahuBox</id>
+    <id>nekobox</id>
     <version>5.1.18</version>
-    <title>RahuBox (Install)</title>
+    <title>NekoBox (Install)</title>
     <authors>qr243vbi</authors>
 	<licenseUrl>https://www.gnu.org/licenses/gpl-3.0.txt</licenseUrl>
 	<iconUrl>https://raw.githubusercontent.com/qr243vbi/nekobox/refs/heads/main/res/public/Tun.png</iconUrl>
@@ -16,7 +16,7 @@
     <mailingListUrl>https://github.com/qr243vbi/nekobox/discussions</mailingListUrl>
     <docsUrl>https://github.com/qr243vbi/nekobox/blob/main/README.md</docsUrl>
     <bugTrackerUrl>https://github.com/qr243vbi/nekobox/issues</bugTrackerUrl>
-    <description>RahuBox, the Original NekoBox Rebranded, Qt based cross-platform GUI proxy configuration manager (backend: sing-box)</description>
+    <description>The Original NekoBox Rebranded, Qt based cross-platform GUI proxy configuration manager (backend: sing-box)</description>
 	<dependencies>
      <dependency id="vcredist140" version="14.0.0"/>
     </dependencies>
