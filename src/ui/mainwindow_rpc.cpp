@@ -480,6 +480,7 @@ bool MainWindow::set_system_dns(bool set, bool save_set) {
 }
 
 void MainWindow::profile_start(int _id) {
+    
     if (Configs::dataStore->prepare_exit) return;
 #ifdef Q_OS_UNIX
     if (Configs::dataStore->enable_dns_server && Configs::dataStore->dns_server_listen_port <= 1024) {
@@ -489,6 +490,8 @@ void MainWindow::profile_start(int _id) {
         }
     }
 #endif
+     
+    qDebug() << "profile starting: " << _id;
 
     auto ents = get_now_selected_list();
     auto ent = (_id < 0 && !ents.isEmpty()) ? ents.first() : Configs::profileManager->GetProfile(_id);
@@ -497,7 +500,9 @@ void MainWindow::profile_start(int _id) {
     if (select_mode) {
         emit profile_selected(ent->id);
         select_mode = false;
-        refresh_status();
+        runOnUiThread([this](){
+            refresh_status();
+        });
         return;
     }
 
@@ -506,7 +511,9 @@ void MainWindow::profile_start(int _id) {
 
     auto result = BuildConfig(ent, false, false);
     if (!result->error.isEmpty()) {
-        MessageBoxWarning(tr("BuildConfig return error"), result->error);
+        runOnUiThread([this, err=result->error](){
+            MessageBoxWarning(tr("BuildConfig return error"), err);
+        });
         return;
     }
 
@@ -576,11 +583,17 @@ void MainWindow::profile_start(int _id) {
     };
 
     if (!mu_starting.tryLock()) {
-        MessageBoxWarning(software_name, tr("Another profile is starting..."));
+        
+        runOnUiThread([](){
+            MessageBoxWarning(software_name, tr("Another profile is starting..."));
+        });
         return;
     }
     if (!mu_stopping.tryLock()) {
-        MessageBoxWarning(software_name, tr("Another profile is stopping..."));
+        
+        runOnUiThread([](){
+            MessageBoxWarning(software_name, tr("Another profile is stopping..."));
+        });
         mu_starting.unlock();
         return;
     }

@@ -213,24 +213,6 @@ jobs:
           cmake --build build --config Release --verbose
           ./script/deploy_windows.sh "new-${{ matrix.target }}"
 
-      - name: Build Installer with NSIS for windows64
-        shell: cmd
-        if: matrix.allow == 'true' && matrix.target == 'x86_64' && github.event.inputs.source != 'true'
-        run: |
-          makensis.exe "/DOUTFILE=deployment\nekobox_setup.exe" "/NOCD" script\windows_installer.nsi
-
-      - name: Build Installer with NSIS for windows32
-        shell: cmd
-        if: matrix.allow == 'true' && matrix.target == 'i686' && github.event.inputs.source != 'true'
-        run: |
-          makensis.exe "/DOUTFILE=deployment\nekobox_setup32.exe" "/DDIRECTORY=deployment\windows32" "/NOCD" script\windows_installer.nsi
-
-      - name: Build Installer with NSIS for windows-arm64
-        shell: cmd
-        if: matrix.allow == 'true' && matrix.target == 'arm64' && github.event.inputs.source != 'true'
-        run: |
-          makensis.exe "/DOUTFILE=deployment\nekobox_setup_arm64.exe" "/DDIRECTORY=deployment\windows-arm64" "/NOCD" script\windows_installer.nsi
-
       - name: Tar files
         shell: bash
         if: matrix.allow == 'true' && github.event.inputs.source != 'true'
@@ -378,7 +360,7 @@ jobs:
           if [[ -d linux-amd64 ]]; then
             mv linux-amd64 nekobox
             if [[ -f nekobox/nekobox-x86_64.AppImage ]]; then
-                mv nekobox/nekobox-x86_64.AppImage ./nekobox-${{ github.event.inputs.tag }}-x86_64-linux.AppImage
+                mv nekobox/nekobox-x86_64.AppImage ./IblisBox-${{ github.event.inputs.tag }}-x86_64-linux.AppImage
             fi
             zip -9 -r $version_standalone-linux-amd64.zip nekobox
             rm -rf nekobox linux-amd64
@@ -387,7 +369,7 @@ jobs:
           if [[ -d linux-arm64 ]]; then
             mv linux-arm64 nekobox
             if [[ -f nekobox/nekobox-aarch64.AppImage ]]; then
-                mv nekobox/nekobox-aarch64.AppImage ./nekobox-${{ github.event.inputs.tag }}-aarch64-linux.AppImage
+                mv nekobox/nekobox-aarch64.AppImage ./IblisBox-${{ github.event.inputs.tag }}-aarch64-linux.AppImage
             fi
             zip -9 -r $version_standalone-linux-arm64.zip nekobox
             rm -rf nekobox linux-arm64

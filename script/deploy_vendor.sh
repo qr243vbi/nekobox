@@ -4,7 +4,12 @@ pushd "$SRC_ROOT"/core/server
 pushd gen
  ./update_libs.sh
 popd
+
+if [[ ! -f srslist.json ]]
+then
 curl -fLso "$SRC_ROOT/srslist.json" "https://github.com/qr243vbi/ruleset/raw/refs/heads/rule-set/srslist.json"
+fi
+
 go mod tidy
 go mod vendor
 go list -m -f '{{.Version}}' github.com/sagernet/sing-box > "$SRC_ROOT/SingBox.Version"
@@ -23,6 +28,7 @@ echo "software_version=$INPUT_VERSION" >> global.ini
 git add -f srslist* global.ini core/server/gen/*.go core/server/gen/libcore_service-remote core/server/vendor SingBox.Version
 
 git -c user.name="qr243vbi" -c user.email="my@email.org" commit -am "New Update"
+
 
 if [[ ! -e "$DEPLOYMENT" ]]
 then
