@@ -1,6 +1,7 @@
 !ifdef SOFTWARE_NAME
     Name "${SOFTWARE_NAME}"
 !else
+!define SOFTWARE_NAME nekobox
     Name "nekobox"
 !endif
 
@@ -181,12 +182,12 @@ FunctionEnd
 
 !define MUI_ICON "res\nekobox.ico"
 !define MUI_ABORTWARNING
-!define MUI_WELCOMEPAGE_TITLE "Welcome to nekobox Installer"
-!define MUI_WELCOMEPAGE_TEXT "This wizard will guide you through the installation of nekobox."
+!define MUI_WELCOMEPAGE_TITLE "Welcome to ${SOFTWARE_NAME} Installer"
+!define MUI_WELCOMEPAGE_TEXT "This wizard will guide you through the installation of ${SOFTWARE_NAME}."
 
 ; --- Finish Page Settings ---
 !define MUI_FINISHPAGE_RUN "$INSTDIR\nekobox.exe"
-!define MUI_FINISHPAGE_RUN_TEXT "Launch nekobox"
+!define MUI_FINISHPAGE_RUN_TEXT "Launch ${SOFTWARE_NAME}"
 ;!define MUI_FINISHPAGE_RUN_NOTCHECKED
 
 !addplugindir .\script\
@@ -196,6 +197,30 @@ FunctionEnd
 !insertmacro MUI_PAGE_INSTFILES
 !insertmacro MUI_PAGE_FINISH
 !insertmacro MUI_LANGUAGE "English"
+
+!macro RegString NAME TARGET ICON 
+	${If} "$isAdmin" == "0" 
+		WriteRegStr HKCU ${NAME} ${TARGET} ${ICON}
+	${Else}
+		WriteRegStr HKLM ${NAME} ${TARGET} ${ICON}
+	${EndIf}
+!macroend
+
+!macro RegInteger NAME TARGET ICON 
+	${If} "$isAdmin" == "0" 
+		WriteRegDWORD HKCU ${NAME} ${TARGET} ${ICON}
+	${Else}
+		WriteRegDWORD HKLM ${NAME} ${TARGET} ${ICON}
+	${EndIf}
+!macroend
+
+!macro DropReg NAME 
+	${If} "$isAdmin" == "0" 
+		DeleteRegKey HKCU ${NAME}
+	${Else}
+		DeleteRegKey HKLM ${NAME}
+	${EndIf}
+!macroend
 
 Section "Install"
 
@@ -242,16 +267,19 @@ Section "Install"
   ${EndIf}
 
   ${If} "$UnpackOnly" != "1"
-    CreateShortcut "$desktop\nekobox.lnk" "$INSTDIR\nekobox.exe" "" "$INSTDIR\nekobox.exe" 0
-    CreateShortcut "$SMPROGRAMS\nekobox.lnk" "$INSTDIR\nekobox.exe" "" "$INSTDIR\nekobox.exe" 0
+    CreateShortcut "$desktop\${SOFTWARE_NAME}.lnk" "$INSTDIR\nekobox.exe" "" "$INSTDIR\nekobox.exe" 0
+    CreateShortcut "$SMPROGRAMS\${SOFTWARE_NAME}.lnk" "$INSTDIR\nekobox.exe" "" "$INSTDIR\nekobox.exe" 0
 
-    WriteRegStr HKCU "Software\nekobox" "InstallPath" "$INSTDIR"
-
-    WriteRegStr HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\nekobox" "DisplayName" "nekobox"
-    WriteRegStr HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\nekobox" "UninstallString" "$INSTDIR\uninstall.exe"
-    WriteRegStr HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\nekobox" "InstallLocation" "$INSTDIR"
-    WriteRegDWORD HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\nekobox" "NoModify" 1
-    WriteRegDWORD HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\nekobox" "NoRepair" 1
+    !insertmacro RegString "Software\nekobox" "InstallPath" "$INSTDIR"
+    !insertmacro RegString "Software\Microsoft\Windows\CurrentVersion\Uninstall\nekobox" "DisplayName" "${SOFTWARE_NAME}"
+	!insertmacro RegString "Software\Microsoft\Windows\CurrentVersion\Uninstall\nekobox" "DisplayIcon" "$INSTDIR\nekobox.exe"
+    !insertmacro RegString "Software\Microsoft\Windows\CurrentVersion\Uninstall\nekobox" "UninstallString" "$INSTDIR\uninstall.exe"
+    !insertmacro RegString "Software\Microsoft\Windows\CurrentVersion\Uninstall\nekobox" "InstallLocation" "$INSTDIR"
+    !insertmacro RegString "Software\Microsoft\Windows\CurrentVersion\Uninstall\nekobox" "Publisher" "qr243vbi"
+	${GetSize} "$INSTDIR" "/S=0K" $0 $1 $2
+    !insertmacro RegInteger "Software\Microsoft\Windows\CurrentVersion\Uninstall\nekobox" "EstimatedSize" $0
+    !insertmacro RegInteger "Software\Microsoft\Windows\CurrentVersion\Uninstall\nekobox" "NoModify" 1
+    !insertmacro RegInteger "Software\Microsoft\Windows\CurrentVersion\Uninstall\nekobox" "NoRepair" 1
     WriteUninstaller "uninstall.exe"
   ${EndIf}
 SectionEnd
@@ -266,5 +294,6 @@ Section "Uninstall"
 
   Delete "$INSTDIR\uninstall.exe"
 
-  DeleteRegKey HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\nekobox"
+  !insertmacro DropReg "Software\Microsoft\Windows\CurrentVersion\Uninstall\nekobox"
+  
 SectionEnd

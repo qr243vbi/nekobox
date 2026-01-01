@@ -217,22 +217,19 @@ jobs:
         shell: cmd
         if: matrix.allow == 'true' && matrix.target == 'x86_64' && github.event.inputs.source != 'true'
         run: |
-          makensis.exe windows_installer.nsi
-          install -D nekobox_setup.exe deployment/nekobox_setup.exe
+          makensis.exe "/DOUTFILE=deployment\nekobox_setup.exe" "/NOCD" script\windows_installer.nsi
 
       - name: Build Installer with NSIS for windows32
         shell: cmd
         if: matrix.allow == 'true' && matrix.target == 'i686' && github.event.inputs.source != 'true'
         run: |
-          makensis "/DDIRECTORY=deployment\windows32" windows_installer.nsi
-          install -D nekobox_setup.exe deployment/nekobox_setup32.exe
+          makensis.exe "/DOUTFILE=deployment\nekobox_setup32.exe" "/DDIRECTORY=deployment\windows32" "/NOCD" script\windows_installer.nsi
 
       - name: Build Installer with NSIS for windows-arm64
         shell: cmd
         if: matrix.allow == 'true' && matrix.target == 'arm64' && github.event.inputs.source != 'true'
         run: |
-          makensis "/DDIRECTORY=deployment\windows-arm64" windows_installer.nsi
-          install -D nekobox_setup.exe deployment/nekobox_setup_arm64.exe
+          makensis.exe "/DOUTFILE=deployment\nekobox_setup_arm64.exe" "/DDIRECTORY=deployment\windows-arm64" "/NOCD" script\windows_installer.nsi
 
       - name: Tar files
         shell: bash
