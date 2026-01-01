@@ -602,12 +602,16 @@ void MainWindow::profile_start(int _id) {
     auto restartMsgbox = new QMessageBox(QMessageBox::Question, software_name, tr("If there is no response for a long time, it is recommended to restart the software."), QMessageBox::Yes | QMessageBox::No, this);
     connect(restartMsgbox, &QMessageBox::accepted, this, [=,this] { MW_dialog_message("", "RestartProgram"); });
     auto restartMsgboxTimer = new MessageBoxTimer(this, restartMsgbox, 10000);
-
+    QMutex * mutex = new QMutex();
+    mutex->lock();
+    runOnUiThread([this, mutex](){
+        profile_stop(false, true, true);
+        mutex->unlock();
+    });
     runOnNewThread([=, this] {
-        // stop current running
-        if (running != nullptr) {
-            profile_stop(false, true, true);
-        }
+        mutex->lock();
+        mutex->unlock();
+        delete mutex;
         // do start
         MW_show_log(">>>>>>>> " + tr("Starting profile %1").arg(ent->bean->DisplayTypeAndName()));
         if (!profile_start_stage2()) {

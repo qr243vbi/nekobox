@@ -4,7 +4,6 @@
 #endif
 #include <csignal>
 
-#include <QApplication>
 #include <QCryptographicHash>
 #include <QDir>
 #include <QTranslator>
@@ -14,6 +13,7 @@
 #include <QLocalServer>
 #include <QThread>
 #include <QFileInfo>
+#include <QApplication>
 
 
 #ifdef Q_OS_WIN
