@@ -45,6 +45,26 @@ execution or wait for the exit of the launched process
 \n
 Returns the return value of the executed command
 */
+
+QString escapeSpecialCharacters(const QString &arg) {
+    QString escapedArg = arg;
+
+    // Escape double quotes
+    escapedArg.replace("\"", "\\\"");  // Replace " with \"
+
+    // Escape other special characters
+    escapedArg.replace("&", "^&");  // Escape &
+    escapedArg.replace("|", "^|");  // Escape |
+    escapedArg.replace("<", "^<");   // Escape <
+    escapedArg.replace(">", "^>");   // Escape >
+    escapedArg.replace("(", "^(");   // Escape (
+    escapedArg.replace(")", "^)");   // Escape )
+    escapedArg.replace("^", "^^");    // Escape ^
+    escapedArg.replace("%", "^^^%");   // Escape % in batch files
+
+    return escapedArg;
+}
+
 uint WinCommander::runProcessElevated(const QString &path,
                                       const QStringList &parameters,
                                       const QString &workingDir,
@@ -56,7 +76,7 @@ uint WinCommander::runProcessElevated(const QString &path,
     HWND hwnd = NULL;
     LPCTSTR pszPath = (LPCTSTR)path.utf16();
     foreach(QString item, parameters)
-        params += "\"" + item + "\" ";
+        params += "\"" + escapeSpecialCharacters(item) + "\" ";
 
     LPCTSTR pszParameters = (LPCTSTR)params.utf16();
     QString dir;
