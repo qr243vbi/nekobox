@@ -321,7 +321,9 @@ void DialogEditProfile::typeSelected(const QString &newType) {
   }
 
   if (!validType) {
-    MessageBoxWarning(newType, "Wrong type");
+    runOnUiThread([newType, this](){
+      QMessageBox::warning(newType, "Wrong type");
+    });
     return;
   }
 
@@ -553,7 +555,10 @@ void DialogEditProfile::accept() {
   if (newEnt) {
     auto ok = Configs::profileManager->AddProfile(ent);
     if (!ok) {
-      MessageBoxWarning("???", "id exists");
+      
+    runOnUiThread([this](){
+      QMessageBox::warning("???", "id exists");
+    });
     }
   } else {
     auto changed = ent->Save();
@@ -637,14 +642,20 @@ void DialogEditProfile::on_apply_to_group_clicked() {
   } else {
     auto group = Configs::profileManager->GetGroup(ent->gid);
     if (group == nullptr) {
-      MessageBoxWarning("failed", "unknown group");
+      
+    runOnUiThread([this](){
+      QMessageBox::warning("failed", "unknown group");
+    });
+      
       return;
     }
     // save this
     if (onEnd()) {
       ent->Save();
     } else {
-      MessageBoxWarning("failed", "failed to save");
+    runOnUiThread([this](){
+      QMessageBox::warning("failed","failed to save");
+    });
       return;
     }
     // copy keys

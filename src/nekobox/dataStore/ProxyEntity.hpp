@@ -4,6 +4,7 @@
 #include "nekobox/global/CountryHelper.hpp"
 #include "nekobox/stats/traffic/TrafficData.hpp"
 #include "nekobox/configs/proxy/AbstractBean.hpp"
+#include <QColor>
 #include "nekobox/configs/proxy/ExtraCore.h"
 
 namespace Configs {
@@ -37,6 +38,8 @@ namespace Configs {
 }; // namespace Configs
 
 namespace Configs {
+
+    
     struct ColorRule{
         uint orderMin;
         uint orderRange;
@@ -45,6 +48,7 @@ namespace Configs {
         bool unavailable;
         QColor color;
     };
+    
 
     extern std::list<ColorRule> latencyColorList;
 

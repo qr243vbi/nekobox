@@ -22,6 +22,7 @@ class JsUpdaterWindow;
 #include <nekobox/js/js_updater.h>
 #endif
 
+extern QWidget *mainwindow;
 
 #ifndef MW_INTERFACE
 

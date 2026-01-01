@@ -2,7 +2,7 @@
 #include "nekobox/dataStore/ProxyEntity.hpp"
 #include "nekobox/dataStore/Database.hpp"
 #include "nekobox/dataStore/Configs.hpp"
-#include "nekobox/dataStore/Utils.hpp"
+#include "nekobox/dataStore/GuiUtils.hpp"
 #include "nekobox/ui/mainwindow.h"
 #include "nekobox/api/RPC.h"
 

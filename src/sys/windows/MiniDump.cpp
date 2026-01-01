@@ -13,7 +13,7 @@
 #include <QMessageBox>
 
 #include <nekobox/js/version.h>
-#include "nekobox/dataStore/Utils.hpp"
+#include "nekobox/global/GuiUtils.hpp"
 
 
 typedef BOOL(WINAPI *MINIDUMPWRITEDUMP)(

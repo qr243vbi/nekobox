@@ -4,7 +4,7 @@
 #include "nekobox/configs/sub/GroupUpdater.hpp"
 #include "nekobox/dataStore/ProfileFilter.hpp"
 #include "nekobox/dataStore/ResourceEntity.hpp"
-#include "nekobox/dataStore/Utils.hpp"
+#include "nekobox/global/GuiUtils.hpp"
 #include "nekobox/sys/AutoRun.hpp"
 #include "nekobox/sys/Process.hpp"
 #include "nekobox/global/keyvaluerange.h"
@@ -110,7 +110,7 @@ void MainWindow::set_icons(){
               QString2QJsonArray(resp), &err);
           if (!err.isEmpty()) {
             runOnUiThread([=, this] {
-              MessageBoxInfo(tr("Invalid JSON Array"),
+              QMessageBox::information(this, tr("Invalid JSON Array"),
                              tr("The provided input cannot be parsed to a "
                                 "valid route rule array:\n") +
                                  err);
@@ -474,7 +474,9 @@ MainWindow::MainWindow(QWidget *parent)
   parallelCoreCallPool->setMaxThreadCount(10); // constant value
   //
   connect(ui->menu_start, &QAction::triggered, this,
-          [=, this]() { profile_start(); });
+          [=, this]() { 
+            profile_start();
+          });
   connect(ui->menu_stop, &QAction::triggered, this,
           [=, this]() { profile_stop(false, false, true); });
   connect(ui->tabWidget->tabBar(), &QTabBar::tabMoved, this,
@@ -868,10 +870,10 @@ MainWindow::MainWindow(QWidget *parent)
             runOnUiThread([profiles_count, this] {
               if (profiles_count == 0){
                 
-                MessageBoxWarning(tr("Update Response"),
+                QMessageBox::warning(this, tr("Update Response"),
                              tr("No routing profiles are updated"));
               } else {
-                MessageBoxInfo(tr("Update Response"),
+                QMessageBox::information(this, tr("Update Response"),
                              tr("Updated %1 routing profiles").arg(
                               QString::number(profiles_count)));
               }
@@ -890,17 +892,15 @@ MainWindow::MainWindow(QWidget *parent)
       [this]() {
         runOnNewThread([this] {
           bool ruleset_updated = getRuleSet();
+            runOnUiThread([this, ruleset_updated] {
           if (!ruleset_updated){
-            runOnUiThread([this] {
-              MessageBoxWarning(tr("Update Response"),
+              QMessageBox::warning(this, tr("Update Response"),
                                 tr("Failed to update rulesets"));
-            });
           } else {
-            runOnUiThread([this] {
-              MessageBoxInfo(tr("Update Response"),
+              QMessageBox::information(this, tr("Update Response"),
                              tr("Rulesets updated successfully"));
-            });
           }
+            });
         });
       },
       Qt::SingleShotConnection);
@@ -939,11 +939,11 @@ MainWindow::MainWindow(QWidget *parent)
             if (showRuleSetData){
               showRuleSetData = false;
               runOnUiThread([=, this] {
-                MessageBoxInfo(tr("Update Response"),
+                QMessageBox::information(this, tr("Update Response"),
                              tr("Rulesets cache is updated"));
 
-               GetMainWindow()->setDownloadReport({}, false);
-               GetMainWindow()->UpdateDataView(true);
+               this->setDownloadReport({}, false);
+               this->UpdateDataView(true);
               });
             }
             mu_download_update.unlock();
@@ -1321,7 +1321,10 @@ void MainWindow::show_group(int gid) {
 
   auto group = Configs::profileManager->GetGroup(gid);
   if (group == nullptr) {
-    MessageBoxWarning(tr("Error"), QString("No such group: %1").arg(gid));
+    runOnUiThread([this, gid](){
+      QMessageBox::warning(this, tr("Error"), 
+        QString("No such group: %1").arg(gid));
+    });
     Configs::dataStore->refreshing_group = false;
     return;
   }
@@ -1405,8 +1408,10 @@ void MainWindow::dialog_message_impl(const QString &sender,
     }
     refresh_proxy_list();
     if (info.contains("VPNChanged") && Configs::dataStore->spmode_vpn) {
-      MessageBoxWarning(tr("Tun Settings changed"),
+      runOnUiThread([this](){
+      QMessageBox::warning(this, tr("Tun Settings changed"),
                         tr("Restart Tun to take effect."));
+                        });
     }
     if ((info.contains("NeedChoosePort") || updateCorePath ||
          suggestRestartProxy) &&
@@ -2795,7 +2800,7 @@ void MainWindow::parseQrImage(const QPixmap *image) {
   const QVector<QString> texts = QrDecoder().decode(
       image->toImage().convertToFormat(QImage::Format_Grayscale8));
   if (texts.isEmpty()) {
-    MessageBoxInfo(software_name, tr("QR Code not found"));
+    QMessageBox::information(this, software_name, tr("QR Code not found"));
   } else {
     for (const QString &text : texts) {
       show_log_impl("QR Code Result:\n" + text);
@@ -2815,7 +2820,7 @@ void MainWindow::on_menu_scan_qr_triggered() {
   if (ok) {
     parseQrImage(&qpx);
   } else {
-    MessageBoxInfo(software_name, tr("Unable to capture screen"));
+    QMessageBox::information(this, software_name, tr("Unable to capture screen"));
   }
 }
 
@@ -3432,13 +3437,13 @@ JsUpdaterWindow *MainWindow::createJsUpdaterWindow() {
   // Connect the signal to a lambda function
   connect(bQueue, &JsUpdaterWindow::warning_signal, this,
           [=, this](const QString &message, const QString &title) {
-            runOnUiThread([=, this] { MessageBoxWarning(title, message); });
+            runOnUiThread([=, this] { QMessageBox::warning(this, title, message); });
           });
 
   // Connect the signal to a lambda function
   connect(bQueue, &JsUpdaterWindow::info_signal, this,
           [=, this](const QString &message, const QString &title) {
-            runOnUiThread([=, this] { MessageBoxInfo(title, message); });
+            runOnUiThread([=, this] { QMessageBox::information(this, title, message); });
           });
 
   connect(bQueue, &JsUpdaterWindow::download_signal, this, 
@@ -3760,7 +3765,7 @@ skip1:
 
   if (search.isEmpty()) {
     runOnUiThread([=, this] {
-      MessageBoxWarning(QObject::tr("Update"),
+      QMessageBox::warning(this, QObject::tr("Update"),
                         QObject::tr("Not official support platform"));
     });
     return;

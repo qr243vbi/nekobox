@@ -88,6 +88,7 @@ set(PROJECT_SOURCES
         src/main.cpp
         src/dataStore/Configs.cpp
         src/dataStore/Utils.cpp
+        src/global/GuiUtils.cpp
         src/global/HTTPRequestHelper.cpp
         src/global/DeviceDetailsHelper.cpp
         src/global/CountryHelper.cpp

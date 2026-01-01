@@ -6,8 +6,6 @@
 #include <QObject>
 #include <QString>
 #include <QDebug>
-#include <QApplication>
-#include <QStyle>
 #include <QFile>
 #if QT_VERSION >= QT_VERSION_CHECK(6, 5, 0)
 #include <QStyleHints>
@@ -48,8 +46,6 @@ inline QString software_core_name;
 #define software_path   QApplication::applicationFilePath()
 
 // MainWindow functions
-class QWidget;
-inline QWidget *mainwindow;
 inline std::function<void(QString)> MW_show_log;
 inline std::function<void(QString, QString)> MW_dialog_message;
 
@@ -185,41 +181,6 @@ inline bool IsValidPort(int port) {
     return InRange(port, 1, 65535);
 }
 
-// UI
-
-QWidget *GetMessageBoxParent();
-
-int MessageBoxWarning(const QString &title, const QString &text);
-
-int MessageBoxInfo(const QString &title, const QString &text);
-
-void ActivateWindow(QWidget *w);
-
-void ToggleWindow(QWidget *w);
-
-void runOnUiThread(const std::function<void()> &callback);
-
 void runOnNewThread(const std::function<void()> &callback);
 
 void runOnThread(const std::function<void()> &callback, QObject *parent);
-
-template<typename EMITTER, typename SIGNAL, typename RECEIVER, typename ReceiverFunc>
-inline void connectOnce(EMITTER *emitter, SIGNAL signal, RECEIVER *receiver, ReceiverFunc f,
-                        Qt::ConnectionType connectionType = Qt::AutoConnection) {
-    auto connection = std::make_shared<QMetaObject::Connection>();
-    auto onTriggered = [connection, f](auto... arguments) {
-        std::invoke(f, arguments...);
-        QObject::disconnect(*connection);
-    };
-
-    *connection = QObject::connect(emitter, signal, receiver, onTriggered, connectionType);
-}
-
-void setTimeout(const std::function<void()> &callback, QObject *obj, int timeout = 0);
-
-inline bool isDarkMode() {
-#if QT_VERSION >= QT_VERSION_CHECK(6, 5, 0)
-    return qApp->styleHints()->colorScheme() == Qt::ColorScheme::Dark;
-#endif
-    return qApp->style()->standardPalette().window().color().lightness() < qApp->style()->standardPalette().windowText().color().lightness();
-}
