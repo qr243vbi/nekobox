@@ -827,9 +827,9 @@ namespace Subscription {
                 updated_order += ent;
             }
         } catch (const fkyaml::exception &ex) {
-            runOnUiThread([=,this] {
-                MessageBoxWarning("YAML Exception", ex.what());
-            });
+   //         runOnUiThread([=,this] {
+                qDebug() << ("YAML Exception") <<  ex.what();
+     //       });
         }
     }
 

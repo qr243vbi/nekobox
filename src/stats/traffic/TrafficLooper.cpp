@@ -1,6 +1,7 @@
 #include "nekobox/stats/traffic/TrafficLooper.hpp"
 
 #include "nekobox/api/RPC.h"
+#include "nekobox/global/GuiUtils.hpp"
 #include "nekobox/ui/mainwindow_interface.h"
 
 #include <QElapsedTimer>

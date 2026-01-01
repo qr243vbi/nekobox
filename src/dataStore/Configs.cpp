@@ -272,7 +272,7 @@ namespace Configs_ConfigItem {
         bool ok = file.open(QIODevice::ReadOnly);
         if (!ok) {
             if (load_control_must){
-                MessageBoxWarning("error", "can not open config " + fn + "\n" + file.errorString());
+                qDebug() << ("can not open config " + fn + "\n" + file.errorString());
             }
         } else {
             last_save_content = file.readAll();

@@ -1,47 +1,78 @@
 #pragma once
+#include "nekobox/configs/ConfigBuilder.hpp"
+#include <QString>
 #include <gen-cpp/libcore_types.h>
 #include <optional>
-#include <QString>
-
 
 namespace API {
-    class Client {
-    public:
-        explicit Client(std::function<void(const QString &)> onError, const QString &host, int port);
+class Client {
+public:
+  explicit Client(std::function<void(const QString &)> onError,
+                  const QString &host, int port);
 
-        // QString returns is error string
+  // QString returns is error string
 
-        QString Start(bool *rpcOK, const libcore::LoadConfigReq &request);
+  QString Start(bool *rpcOK, const libcore::LoadConfigReq &request);
 
-        QString Stop(bool *rpcOK);
+  std::tuple<QString, std::shared_ptr<Configs::BuildConfigResult>> StartEntity(bool *rpcOK,
+                      const std::shared_ptr<Configs::ProxyEntity> ent) {
+    std::shared_ptr<Configs::BuildConfigResult> result =
+        Configs::BuildConfig(ent, false, false);
+    if (!result->error.isEmpty()) {
+      *rpcOK = false;
+      return std::make_tuple(result->error, result);
+    }
 
-        std::optional<libcore::QueryStatsResp> QueryStats();
+    libcore::LoadConfigReq req;
+    req.core_config =
+        (QJsonObject2QString(result->coreConfig, true)).toStdString();
+    req.disable_stats = (Configs::dataStore->disable_traffic_stats);
+    if (ent->type == "extracore") {
+      req.need_extra_process = (true);
+      req.extra_process_path = (result->extraCoreData->path).toStdString();
+      req.extra_process_args = (result->extraCoreData->args).toStdString();
+      req.extra_process_conf = (result->extraCoreData->config).toStdString();
+      req.extra_process_conf_dir =
+          (result->extraCoreData->configDir).toStdString();
+      req.extra_no_out = (result->extraCoreData->noLog);
+    }
+    return std::make_tuple(Start(rpcOK, req), result);
+  };
 
-        std::optional<libcore::TestResp> Test(bool *rpcOK, const libcore::TestReq &request);
+  QString Stop(bool *rpcOK);
 
-        void StopTests(bool *rpcOK);
+  std::optional<libcore::QueryStatsResp> QueryStats();
 
-        std::optional<libcore::QueryURLTestResponse> QueryURLTest(bool *rpcOK);
+  std::optional<libcore::TestResp> Test(bool *rpcOK,
+                                        const libcore::TestReq &request);
 
-        QString SetSystemDNS(bool *rpcOK, bool clear) const;
+  void StopTests(bool *rpcOK);
 
-        std::optional<libcore::ListConnectionsResp> ListConnections(bool *rpcOK) const;
+  std::optional<libcore::QueryURLTestResponse> QueryURLTest(bool *rpcOK);
 
-        QString CheckConfig(bool *rpcOK, const QString& config) const;
+  QString SetSystemDNS(bool *rpcOK, bool clear) const;
 
-        bool IsPrivileged(bool *rpcOK) const;
+  std::optional<libcore::ListConnectionsResp>
+  ListConnections(bool *rpcOK) const;
 
-        std::optional<libcore::SpeedTestResponse> SpeedTest(bool *rpcOK, const libcore::SpeedTestRequest &request);
+  QString CheckConfig(bool *rpcOK, const QString &config) const;
 
-        std::optional<libcore::QuerySpeedTestResponse> QueryCurrentSpeedTests(bool *rpcOK);
+  bool IsPrivileged(bool *rpcOK) const;
 
-        std::optional<libcore::QueryCountryTestResponse> QueryCountryTestResults(bool *rpcOK);
+  std::optional<libcore::SpeedTestResponse>
+  SpeedTest(bool *rpcOK, const libcore::SpeedTestRequest &request);
 
-    private:
-        std::string domain;
-        int port;
-        std::function<void(const QString &)> onError;
-    };
+  std::optional<libcore::QuerySpeedTestResponse>
+  QueryCurrentSpeedTests(bool *rpcOK);
 
-    inline Client *defaultClient;
+  std::optional<libcore::QueryCountryTestResponse>
+  QueryCountryTestResults(bool *rpcOK);
+
+private:
+  std::string domain;
+  int port;
+  std::function<void(const QString &)> onError;
+};
+
+inline Client *defaultClient;
 } // namespace API

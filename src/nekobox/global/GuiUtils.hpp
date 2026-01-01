@@ -1,5 +1,26 @@
 #pragma once
 
+#include "3rdparty/qv2ray/wrapper.hpp"
+#include "3rdparty/QThreadCreateThread.hpp"
+#include <nekobox/dataStore/Utils.hpp>
+#include <functional>
+#include <memory>
+#include <QObject>
+#include <QApplication>
+#include <QTimer>
+#include <QString>
+#include <QDebug>
+#include <QWidget>
+#include <QThread>
+#include <QFile>
+#include <QStyle>
+#if QT_VERSION >= QT_VERSION_CHECK(6, 5, 0)
+#include <QStyleHints>
+#endif
+
+#ifdef Q_OS_WIN
+#include "nekobox/sys/windows/guihelper.h"
+#endif
 // Dialogs
 
 #define Dialog_DialogBasicSettings "DialogBasicSettings"
@@ -115,3 +136,43 @@
             checkBox->setText(text + "*");                           \
         }                                                            \
     }
+
+
+// UI
+extern QWidget *mainwindow;
+
+QWidget *GetMessageBoxParent();
+
+//int MessageBoxWarning(const QString &title, const QString &text);
+
+//int MessageBoxInfo(const QString &title, const QString &text);
+
+void ActivateWindow(QWidget *w);
+
+void ToggleWindow(QWidget *w);
+
+void runOnUiThread(const std::function<void()> &callback);
+
+
+template<typename EMITTER, typename SIGNAL, typename RECEIVER, typename ReceiverFunc>
+inline void connectOnce(EMITTER *emitter, SIGNAL signal, RECEIVER *receiver, ReceiverFunc f,
+                        Qt::ConnectionType connectionType = Qt::AutoConnection) {
+    auto connection = std::make_shared<QMetaObject::Connection>();
+    auto onTriggered = [connection, f](auto... arguments) {
+        std::invoke(f, arguments...);
+        QObject::disconnect(*connection);
+    };
+
+    *connection = QObject::connect(emitter, signal, receiver, onTriggered, connectionType);
+}
+
+void setTimeout(const std::function<void()> &callback, QObject *obj, int timeout = 0);
+
+
+inline bool isDarkMode() {
+#if QT_VERSION >= QT_VERSION_CHECK(6, 5, 0)
+    return qApp->styleHints()->colorScheme() == Qt::ColorScheme::Dark;
+#else
+    return qApp->style()->standardPalette().window().color().lightness() < qApp->style()->standardPalette().windowText().color().lightness();
+#endif
+}

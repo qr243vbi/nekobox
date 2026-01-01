@@ -6,7 +6,7 @@
 #include "nekobox/api/RPC.h"
 #include "nekobox/ui/utils//MessageBoxTimer.h"
 #include "3rdparty/qv2ray/v2/proxy/QvProxyConfigurator.hpp"
-
+#include <nekobox/global/GuiUtils.hpp>
 #include <QInputDialog>
 #include <QPushButton>
 #include <QDesktopServices>
@@ -156,7 +156,9 @@ void MainWindow::urltest_current_group(const QList<std::shared_ptr<Configs::Prox
         return;
     }
     if (!speedtestRunning.tryLock()) {
-        MessageBoxWarning(software_name, tr("The last url test did not exit completely, please wait. If it persists, please restart the program."));
+        runOnUiThread([this](){
+            QMessageBox::warning(this, software_name, tr("The last url test did not exit completely, please wait. If it persists, please restart the program."));
+        });
         return;
     }
 
@@ -253,7 +255,9 @@ void MainWindow::speedtest_current_group(const QList<std::shared_ptr<Configs::Pr
         return;
     }
     if (!speedtestRunning.tryLock()) {
-        MessageBoxWarning(software_name, tr("The last speed test did not exit completely, please wait. If it persists, please restart the program."));
+        runOnUiThread([this](){
+            QMessageBox::warning(this, software_name, tr("The last speed test did not exit completely, please wait. If it persists, please restart the program."));
+        });
         return;
     }
 
@@ -496,7 +500,7 @@ void MainWindow::profile_start(int _id) {
     auto ents = get_now_selected_list();
     auto ent = (_id < 0 && !ents.isEmpty()) ? ents.first() : Configs::profileManager->GetProfile(_id);
     if (ent == nullptr) return;
-
+/*
     if (select_mode) {
         emit profile_selected(ent->id);
         select_mode = false;
@@ -505,34 +509,14 @@ void MainWindow::profile_start(int _id) {
         });
         return;
     }
-
+*/
     auto group = Configs::profileManager->GetGroup(ent->gid);
     if (group == nullptr || group->archive) return;
 
-    auto result = BuildConfig(ent, false, false);
-    if (!result->error.isEmpty()) {
-        runOnUiThread([this, err=result->error](){
-            MessageBoxWarning(tr("BuildConfig return error"), err);
-        });
-        return;
-    }
-
     auto profile_start_stage2 = [=, this] {
-        libcore::LoadConfigReq req;
-        req.core_config = (QJsonObject2QString(result->coreConfig, true)).toStdString();
-        req.disable_stats = (Configs::dataStore->disable_traffic_stats);
-        if (ent->type == "extracore")
-        {
-            req.need_extra_process = (true);
-            req.extra_process_path = (result->extraCoreData->path).toStdString();
-            req.extra_process_args = (result->extraCoreData->args).toStdString();
-            req.extra_process_conf = (result->extraCoreData->config).toStdString();
-            req.extra_process_conf_dir = (result->extraCoreData->configDir).toStdString();
-            req.extra_no_out = (result->extraCoreData->noLog);
-        }
         //
         bool rpcOK;
-        QString error = defaultClient->Start(&rpcOK, req);
+        auto [error, result] = defaultClient->StartEntity(&rpcOK, ent);
         if (!rpcOK) {
             return false;
         }
@@ -560,7 +544,9 @@ void MainWindow::profile_start(int _id) {
                 });
                 return false;
             }
-            runOnUiThread([=,this] { MessageBoxWarning("LoadConfig return error", error); });
+            runOnUiThread([error,this] { 
+               QMessageBox::warning(this, "LoadConfig return error", error); 
+            });
             return false;
         }
         //
@@ -584,15 +570,15 @@ void MainWindow::profile_start(int _id) {
 
     if (!mu_starting.tryLock()) {
         
-        runOnUiThread([](){
-            MessageBoxWarning(software_name, tr("Another profile is starting..."));
+        runOnUiThread([this](){
+            QMessageBox::warning(this, software_name, tr("Another profile is starting..."));
         });
         return;
     }
     if (!mu_stopping.tryLock()) {
         
-        runOnUiThread([](){
-            MessageBoxWarning(software_name, tr("Another profile is stopping..."));
+        runOnUiThread([this](){
+            QMessageBox::warning(this, software_name, tr("Another profile is stopping..."));
         });
         mu_starting.unlock();
         return;
@@ -670,7 +656,9 @@ void MainWindow::profile_stop(bool crash, bool block, bool manual) {
             bool rpcOK;
             QString error = defaultClient->Stop(&rpcOK);
             if (rpcOK && !error.isEmpty()) {
-                runOnUiThread([=,this] { MessageBoxWarning(tr("Stop return error"), error); });
+                runOnUiThread([=,this] { 
+                    QMessageBox::warning(this, tr("Stop return error"), error); 
+                });
                 return false;
             } else if (!rpcOK) {
                 return false;

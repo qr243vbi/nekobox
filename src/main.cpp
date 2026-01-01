@@ -15,6 +15,7 @@
 #include <QThread>
 #include <QFileInfo>
 
+
 #ifdef Q_OS_WIN
 #include <3rdparty/WinCommander.hpp>
 #include <windows.h>
@@ -30,9 +31,10 @@
 #include "nekobox/dataStore/ResourceEntity.hpp"
 
 #include "nekobox/ui/mainwindow_interface.h"
-#include "nekobox/dataStore/Utils.hpp"
+#include "nekobox/global/GuiUtils.hpp"
 
 std::map<std::string, std::string> ruleSetMap;
+QWidget *mainwindow;
 
 #ifdef Q_OS_UNIX
 #include <nekobox/sys/linux/LinuxCap.h>
