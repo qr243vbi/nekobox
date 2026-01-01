@@ -1776,7 +1776,7 @@ skip_start_elevate_process:
 start_elevate_process: {
   StopVPNProcess();
   core_process->elevateCoreProcessProgram();
-  {
+  runOnUiThread([=,this](){
     if (reason == 3) {
       bool save = false;
       if (pointer != nullptr) {
@@ -1784,7 +1784,7 @@ start_elevate_process: {
       }
       set_spmode_vpn(true, save, false);
     }
-  }
+  });
   return false;
 }
 skip_start_elevate_process:
