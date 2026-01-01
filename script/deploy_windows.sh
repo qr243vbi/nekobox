@@ -20,7 +20,7 @@ else if [[ $1 == "arm64" ]]; then
   DEST=$DEPLOYMENT/windowslegacy-arm64
 fi; fi; fi; fi; fi;
 
-rm -rf $DEST
+#rm -rf $DEST
 mkdir -p $DEST
 
 #### get the pdb ####
@@ -57,12 +57,13 @@ rm -rf dxcompiler.dll dxil.dll ||:
 popd
 fi
 
-cd download-artifact
-ls
-cd *$ARCH
-tar xvzf artifacts.tgz -C ../../
-cd ../..
-
+if [[ -d download-artifact ]]
+then
+ cd download-artifact
+ cd *$ARCH
+ tar xvzf artifacts.tgz -C ../../
+ cd ../..
+fi
 
 
 #(
