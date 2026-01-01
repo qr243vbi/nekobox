@@ -1700,14 +1700,12 @@ void MainWindow::on_menu_exit_triggered() {
       qDebug() << "File copied successfully from" << sourceFilePath << "to"
                << destinationFilePath;
 #ifdef Q_OS_WIN
-      if (!isDirectoryWritable(updateDir)) {
-        WinCommander::runProcessElevated(destinationFilePath, list, "",
-                                        SW_NORMAL, false);
-      } else {
+      WinCommander::runProcess(destinationFilePath, list, "",
+                                      SW_NORMAL, false,
+                                (!isDirectoryWritable(updateDir)));
 #endif
-        QProcess::startDetached(destinationFilePath, list);
-#ifdef Q_OS_WIN
-      }
+#else
+      QProcess::startDetached(destinationFilePath, list);
 #endif
     } else {
       qDebug() << "Failed to copy file from" << sourceFilePath << "to"

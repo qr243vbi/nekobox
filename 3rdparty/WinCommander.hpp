@@ -32,6 +32,12 @@
 class WinCommander {
 public:
 
+    static uint runProcess(const QString &path,
+                                   const QStringList &parameters = QStringList(),
+                                   const QString &workingDir = QString(),
+                                   int nShow = SW_SHOWMINIMIZED, bool aWait = true,
+                           bool elevated = false);
+
     static uint runProcessElevated(const QString &path,
                                    const QStringList &parameters = QStringList(),
                                    const QString &workingDir = QString(),
