@@ -1,7 +1,8 @@
 #include <QThread>
 #include <nekobox/api/RPC.h>
-#include "nekobox/ui/mainwindow_interface.h"
+#include <nekobox/ui/mainwindow_interface.h>
 #include <nekobox/stats/connections/connectionLister.hpp>
+#include <nekobox/global/GuiUtils.hpp>
 
 namespace Stats
 {

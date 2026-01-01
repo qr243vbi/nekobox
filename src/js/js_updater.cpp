@@ -5,7 +5,7 @@
 #include <QFile>
 #include <iostream>
 #include "nekobox/configs/ConfigBuilder.hpp"
-#include "nekobox/dataStore/GuiUtils.hpp"
+#include "nekobox/global/GuiUtils.hpp"
 #include <nekobox/js/version.h>
 #include <nekobox/sys/Settings.h>
 #include <iostream>

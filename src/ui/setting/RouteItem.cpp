@@ -4,6 +4,7 @@
 #include "nekobox/dataStore/RouteEntity.h"
 #include "nekobox/dataStore/Database.hpp"
 #include "nekobox/api/RPC.h"
+#include "nekobox/global/GuiUtils.hpp"
 #include "nekobox/configs/ConfigBuilder.hpp"
 #include <qnamespace.h>
 #include <nekobox/global/HTTPRequestHelper.hpp>

@@ -1,9 +1,8 @@
 #include <nekobox/dataStore/Group.hpp>
 #include <QFile>
-#include "nekobox/ui/profile/dialog_edit_profile.h"
 #include "nekobox/dataStore/Utils.hpp"
 #include "nekobox/configs/proxy/AbstractBean.hpp"
-
+#include "nekobox/dataStore/Database.hpp"
 
 namespace Configs
 {

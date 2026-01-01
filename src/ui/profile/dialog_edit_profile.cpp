@@ -322,7 +322,7 @@ void DialogEditProfile::typeSelected(const QString &newType) {
 
   if (!validType) {
     runOnUiThread([newType, this](){
-      QMessageBox::warning(newType, "Wrong type");
+      QMessageBox::warning(this, newType, "Wrong type");
     });
     return;
   }
@@ -557,7 +557,7 @@ void DialogEditProfile::accept() {
     if (!ok) {
       
     runOnUiThread([this](){
-      QMessageBox::warning("???", "id exists");
+      QMessageBox::warning(this, "???", "id exists");
     });
     }
   } else {
@@ -644,7 +644,7 @@ void DialogEditProfile::on_apply_to_group_clicked() {
     if (group == nullptr) {
       
     runOnUiThread([this](){
-      QMessageBox::warning("failed", "unknown group");
+      QMessageBox::warning(this, "failed", "unknown group");
     });
       
       return;
@@ -654,7 +654,7 @@ void DialogEditProfile::on_apply_to_group_clicked() {
       ent->Save();
     } else {
     runOnUiThread([this](){
-      QMessageBox::warning("failed","failed to save");
+      QMessageBox::warning(this, "failed","failed to save");
     });
       return;
     }

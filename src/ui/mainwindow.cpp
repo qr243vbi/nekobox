@@ -1750,7 +1750,9 @@ bool MainWindow::get_elevated_permissions(int reason, void *pointer) {
 
 #ifdef Q_OS_UNIX
   if (!Linux_HavePkexec()) {
-    MessageBoxWarning(software_name, "Please install \"pkexec\" first.");
+    runOnUiThread([this](){
+        QMessageBox::warning(this, software_name, "Please install \"pkexec\" first.");
+    });
     return false;
   }
 #define ELEVATE_CORE_PROGRAM
