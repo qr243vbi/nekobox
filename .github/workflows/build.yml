@@ -202,7 +202,7 @@ jobs:
         uses: actions/cache@v4.2.3
         with:
           path: build
-          key: CommonCache-Builds-${{ matrix.platform }}-${{ matrix.target }}-${{ github.event.inputs.tag }}
+          key: CommonCache-${{ matrix.platform }}-${{ matrix.target }}-${{ github.event.inputs.tag }}
 
       - name: Windows - Generate MakeFile and Build
         if: matrix.allow == 'true' && github.event.inputs.source != 'true'
@@ -289,7 +289,7 @@ jobs:
         uses: actions/cache@v4.2.3
         with:
           path: build
-          key: CommonCache-Builds-${{ matrix.platform }}-${{ matrix.target }}-${{ github.event.inputs.tag }}
+          key: CommonCache-${{ matrix.platform }}-${{ matrix.target }}-${{ github.event.inputs.tag }}
 
       - name: Linux - Generate MakeFile and Build
         if: matrix.allow == 'true' && github.event.inputs.source != 'true'
@@ -447,13 +447,16 @@ jobs:
           python-version: '3.13'
           cache: 'pip'
 
-      - name: Cache winget-pkgs
-        id: cache-common
-        if: github.event.inputs.build_windows_arm64 == 'true' && github.event.inputs.build_windows_x64 == 'true'
-        uses: actions/cache@v4.2.3
-        with:
-          path: winget-pkgs
-          key: CommonCache-WingetPkgs-${{ github.event.inputs.tag }}
+      - name: Trigger Open Build Service and Copr
+        shell: bash
+        run: |
+          pip install osc
+          export OBS_USER="${{ secrets.OBS_USER }}"
+          export OBS_PASSWORD="${{ secrets.OBS_PASSWORD }}"
+          export OBS_HOOK_TOKEN="${{ secrets.OBS_HOOK_TOKEN }}"
+          export INPUT_VERSION=${{ github.event.inputs.tag }}
+          bash ./script/trigger_open_build_service.sh
+          bash ./script/generate_pkgbuild.sh
 
       - name: Linux - Install apt dependencies
         if: matrix.allow == 'true' && github.event.inputs.source != 'true'
@@ -469,17 +472,6 @@ jobs:
         run: |
           export GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}
           bash ./script/trigger_winget_pkgs.sh
-
-      - name: Trigger Open Build Service and Copr
-        shell: bash
-        run: |
-          pip install osc
-          export OBS_USER="${{ secrets.OBS_USER }}"
-          export OBS_PASSWORD="${{ secrets.OBS_PASSWORD }}"
-          export OBS_HOOK_TOKEN="${{ secrets.OBS_HOOK_TOKEN }}"
-          export INPUT_VERSION=${{ github.event.inputs.tag }}
-          bash ./script/trigger_open_build_service.sh
-          bash ./script/generate_pkgbuild.sh
 
       - name: Publish AUR package
         uses: KSXGitHub/github-actions-deploy-aur@v4.1.1
