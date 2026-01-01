@@ -8,6 +8,10 @@
 namespace Configs {
     const int INVALID_ID = -99999;
 
+    class ProfileManager;
+
+    extern ProfileManager *profileManager;
+
     class ProfileManager : private JsonStore {
     public:
         // JsonStore

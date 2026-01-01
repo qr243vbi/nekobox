@@ -13,6 +13,7 @@
 #include <QWidget>
 #include <QThread>
 #include <QFile>
+#include <QMessageBox>
 #include <QStyle>
 #if QT_VERSION >= QT_VERSION_CHECK(6, 5, 0)
 #include <QStyleHints>
@@ -143,9 +144,15 @@ extern QWidget *mainwindow;
 
 QWidget *GetMessageBoxParent();
 
-//int MessageBoxWarning(const QString &title, const QString &text);
+#define MessageBoxWarning(T, X) \
+    runOnUiThread([=, this](){                                      \
+      QMessageBox::warning(this, T, X) ;                            \
+})                                                                  \
 
-//int MessageBoxInfo(const QString &title, const QString &text);
+#define MessageBoxInfo(T, X) \
+    runOnUiThread([=, this](){                                      \
+      QMessageBox::information(this, T, X) ;                        \
+})                                                                  \
 
 void ActivateWindow(QWidget *w);
 

@@ -4,11 +4,13 @@
 #include "nekobox/ui/mainwindow_interface.h"
 #include "nekobox/sys/Settings.h"
 #include <QHeaderView>
+#include <nekobox/global/GuiUtils.hpp>
 #include <QClipboard>
 #include <QStringListModel>
 #include <QCompleter>
 #include <QTableView>
 #include <qdialog.h>
+#include <functional>
 #include <qdialogbuttonbox.h>
 #include <qnamespace.h>
 
@@ -40,23 +42,28 @@ DialogEditGroup::DialogEditGroup(const std::shared_ptr<Configs::Group> &ent, QWi
         }
     }
 
-    connect(ui->copy_links, &QPushButton::clicked, this, [=,this] {
+    std::function<void(bool)> copy_click = [id=ent->id, this] (bool neko){
         QStringList links;
         for (const auto &[_, profile]: Configs::profileManager->profiles) {
-            if (profile->gid != ent->id) continue;
-            links += profile->bean->ToShareLink();
+            if (profile->gid != id) continue;
+            if (neko){
+                links += profile->bean->ToNekorayShareLink(profile->type);
+            } else {
+                links += profile->bean->ToShareLink();
+            }
         }
         QApplication::clipboard()->setText(links.join("\n"));
-        MessageBoxInfo(software_name, tr("Copied"));
+        runOnUiThread([this](){
+            QMessageBox::information(this, software_name, tr("Copied"));
+        });
+    };
+
+    connect(ui->copy_links, &QPushButton::clicked, this, [copy_click](){
+        copy_click(false);
     });
-    connect(ui->copy_links_nkr, &QPushButton::clicked, this, [=,this] {
-        QStringList links;
-        for (const auto &[_, profile]: Configs::profileManager->profiles) {
-            if (profile->gid != ent->id) continue;
-            links += profile->bean->ToNekorayShareLink(profile->type);
-        }
-        QApplication::clipboard()->setText(links.join("\n"));
-        MessageBoxInfo(software_name, tr("Copied"));
+
+    connect(ui->copy_links_nkr, &QPushButton::clicked, this, [copy_click](){
+        copy_click(true);
     });
 
     ui->name->setFocus();
@@ -345,7 +352,9 @@ DialogEditGroup::~DialogEditGroup() {
 void DialogEditGroup::accept() {
     if (ent->id >= 0) { // already a group
         if (!ent->url.isEmpty() && ui->url->text().isEmpty()) {
-            MessageBoxWarning(tr("Warning"), tr("Please input URL"));
+            runOnUiThread([this](){
+                QMessageBox::warning(this, tr("Warning"), tr("Please input URL"));
+            });
             return;
         }
     }
