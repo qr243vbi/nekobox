@@ -76,6 +76,7 @@ mv ./usr/lib2 ./usr/lib
 cp $CURDIR/*.js $DEST
 cp -RT $CURDIR/res/public $DEST/public
 echo "[General]" > $DEST/global.ini
+echo "software_name=IblisBox" >> $DEST/global.ini
 echo "software_version=$INPUT_VERSION" >> $DEST/global.ini
 
 cd $DEST

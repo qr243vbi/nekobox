@@ -3,6 +3,7 @@
 gen-cpp
 core/server/gen/libcore_service-remote
 core/server/gen/*.go
+run.cmd
 SingBox.Version
 /script/nekobox
 version.txt

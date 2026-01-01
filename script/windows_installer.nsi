@@ -250,7 +250,7 @@ Section "Install"
 	"
 
   !ifdef DIRECTORY
-    File /r  ".\${DIRECTORY}\*"
+    File /r  "${DIRECTORY}\*"
   !else
     File /r  ".\deployment\windows64\*"
   !endif
