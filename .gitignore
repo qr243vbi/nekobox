@@ -6,6 +6,7 @@ core/server/gen/*.go
 run.cmd
 SingBox.Version
 /script/nekobox
+/winget-pkgs
 version.txt
 global.ini
 /config

@@ -18,10 +18,13 @@ PATTERN="s~$OLDVER~$INPUT_VERSION~g;s~2025-12-07~$(date +%Y-%m-%d)~g;$(echo $ass
           git config --local user.name "GitHub Action"
 
 
-NEW_BRANCH_NAME="branch-$INPUT_VERSION"    
+NEW_BRANCH_NAME="NekoBox-branch-$INPUT_VERSION"    
     git clone --depth 10 "https://${USERNAME}:${GITHUB_TOKEN}@github.com/${USERNAME}/winget-pkgs" ||:
+
     # Navigate to the local repository directory
     cd "$(basename "$REPO_TO_FORK")" || { echo "Failed to change directory"; exit 1; }
+
+    git remote set-url origin "https://${USERNAME}:${GITHUB_TOKEN}@github.com/${USERNAME}/winget-pkgs"
 
     # Fetch latest changes from the upstream repository
     git fetch origin
