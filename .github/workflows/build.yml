@@ -480,6 +480,14 @@ jobs:
         with:
           packages: curl jq git gh
           version: 1.0
+          
+      - name: Cache winget-pkgs
+        id: cache-common
+        if: github.event.inputs.build_windows_arm64 == 'true' && github.event.inputs.build_windows_x64 == 'true' && github.event.inputs.publish_winget == 'true'
+        uses: actions/cache@v4.2.3
+        with:
+          path: build
+          key: CommonCache-WingetPkgs
 
       - name: Run winget-pkgs
         id: cache-common
