@@ -253,10 +253,13 @@ namespace Configs {
             auto net = objN["net"].toString();
             if (!net.isEmpty()) {
                 if (net == "h2") {
+					net_type_ret:
                     net = "http";
                 }
                 stream->network = net;
-            }
+            } else if (objN["type"].toString() == "http"){
+				goto net_type_ret;
+			}
             auto scy = objN["scy"].toString();
             if (!scy.isEmpty()) security = scy;
             // TLS (XTLS?)
