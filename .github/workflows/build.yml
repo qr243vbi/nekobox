@@ -458,6 +458,17 @@ jobs:
           bash ./script/trigger_open_build_service.sh
           bash ./script/generate_pkgbuild.sh
 
+      - name: Publish AUR package
+        uses: KSXGitHub/github-actions-deploy-aur@v4.1.1
+        with:
+          pkgname: nekobox
+          pkgbuild: ./PKGBUILD
+          commit_username: ${{ github.actor }}
+          commit_email: email@email.email
+          ssh_private_key: ${{ secrets.AUR_SSH_PRIVATE_KEY }}
+          commit_message: Update AUR package
+          ssh_keyscan_types: rsa,ecdsa,ed25519
+
       - name: Linux - Install apt dependencies
         if: matrix.allow == 'true' && github.event.inputs.source != 'true'
         uses: awalsh128/cache-apt-pkgs-action@latest
@@ -470,19 +481,9 @@ jobs:
         if: github.event.inputs.build_windows_arm64 == 'true' && github.event.inputs.build_windows_x64 == 'true'
         shell: bash
         run: |
-          export GITHUB_TOKEN="${{ secrets.GITHUB_TOKEN }}"
+          export GITHUB_TOKEN="${{ secrets.WINGET_TOKEN }}"
           export INPUT_VERSION="${{ github.event.inputs.tag }}"
           export EMAIL="${{ secrets.EMAIL }}"
           bash ./script/trigger_winget_pkgs.sh
 
-      - name: Publish AUR package
-        uses: KSXGitHub/github-actions-deploy-aur@v4.1.1
-        with:
-          pkgname: nekobox
-          pkgbuild: ./PKGBUILD
-          commit_username: ${{ github.actor }}
-          commit_email: email@email.email
-          ssh_private_key: ${{ secrets.AUR_SSH_PRIVATE_KEY }}
-          commit_message: Update AUR package
-          ssh_keyscan_types: rsa,ecdsa,ed25519
 
