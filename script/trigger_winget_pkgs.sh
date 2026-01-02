@@ -12,7 +12,7 @@ text="$(curl -s -H "Accept: application/vnd.github.v3+json" https://api.github.c
 asset_res="$(echo "$text"  | jq '.assets[] | select(.browser_download_url | endswith("-installer.exe"))')"
 
 
-PATTERN="s~$OLDVER~$INPUT_VERSION~g;s~2025-12-07~$(date +%Y-%m-%d)~g;$(echo $asset_res | jq -r '"\(.name)_\(.digest)"' | sed 's~.*arm64.*:\(.*\)~s@FED32109A84E94FDE258F48EF40366111F4CDAEECA617CC3611217EDD38BC701@\1@g;~g;s~.*windows64.*:\(.*\)~s@AA5AC2B7862929F4F078E81FB71A3286DC457B4B0BE9B84B318441FBBDAF2947@\1@g;~g;' | sed ':a;N;$!ba;s/\n//g')"
+PATTERN="s~$OLDVER~$INPUT_VERSION~g;s~2025-12-07~$(date +%Y-%m-%d)~g;$(echo $asset_res | jq -r '"\(.name)_\(.digest | ascii_upcase)"' | sed 's~.*arm64.*:\(.*\)~s@FED32109A84E94FDE258F48EF40366111F4CDAEECA617CC3611217EDD38BC701@\1@g;~g;s~.*windows64.*:\(.*\)~s@AA5AC2B7862929F4F078E81FB71A3286DC457B4B0BE9B84B318441FBBDAF2947@\1@g;~g;' | sed ':a;N;$!ba;s/\n//g')"
 
           git config --local user.email "github-action@users.noreply.github.com"
           git config --local user.name "GitHub Action"
