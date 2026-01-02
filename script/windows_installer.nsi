@@ -1,7 +1,7 @@
 !ifdef SOFTWARE_NAME
     Name "${SOFTWARE_NAME}"
 !else
-!define SOFTWARE_NAME nekobox
+	!define SOFTWARE_NAME nekobox
     Name "nekobox"
 !endif
 
@@ -12,6 +12,19 @@
 !endif
 InstallDir $WINDIR\qr243vbi\non_exists_directory
 RequestExecutionLevel user
+
+!ifdef SOFTWARE_VERSION
+!else
+!define SOFTWARE_VERSION "1.0.0"
+!endif
+
+; Optional: version info for Windows file properties 
+VIProductVersion "${SOFTWARE_VERSION}.0" 
+VIAddVersionKey "ProductName" "${SOFTWARE_NAME}" 
+VIAddVersionKey "ProductVersion" "${SOFTWARE_VERSION}" 
+VIAddVersionKey "CompanyName" "qr243vbi" 
+VIAddVersionKey "FileDescription" "Installer for ${SOFTWARE_NAME}" 
+VIAddVersionKey "LegalCopyright" "© 2026 qr243vbi"
 
 !include FileFunc.nsh
 !include MUI2.nsh

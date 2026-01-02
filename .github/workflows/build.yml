@@ -45,6 +45,11 @@ on:
         type: boolean
         default: false
         required: false
+      publish_winget:
+        description: "Publish WinGet manifest"
+        type: boolean
+        default: true
+        required: false
 jobs:
   build-go:
     permissions:
@@ -470,7 +475,7 @@ jobs:
           ssh_keyscan_types: rsa,ecdsa,ed25519
 
       - name: Linux - Install apt dependencies
-        if: matrix.allow == 'true' && github.event.inputs.source != 'true'
+        if: github.event.inputs.build_windows_arm64 == 'true' && github.event.inputs.build_windows_x64 == 'true' && github.event.inputs.publish_winget == 'true'
         uses: awalsh128/cache-apt-pkgs-action@latest
         with:
           packages: curl jq git gh
@@ -478,7 +483,7 @@ jobs:
 
       - name: Run winget-pkgs
         id: cache-common
-        if: github.event.inputs.build_windows_arm64 == 'true' && github.event.inputs.build_windows_x64 == 'true'
+        if: github.event.inputs.build_windows_arm64 == 'true' && github.event.inputs.build_windows_x64 == 'true' && github.event.inputs.publish_winget == 'true'
         shell: bash
         run: |
           export GITHUB_TOKEN="${{ secrets.WINGET_TOKEN }}"
