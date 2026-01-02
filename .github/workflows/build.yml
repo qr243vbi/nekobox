@@ -472,6 +472,7 @@ jobs:
         run: |
           export GITHUB_TOKEN="${{ secrets.GITHUB_TOKEN }}"
           export INPUT_VERSION="${{ github.event.inputs.tag }}"
+          export EMAIL="${{ secrets.EMAIL }}"
           bash ./script/trigger_winget_pkgs.sh
 
       - name: Publish AUR package
