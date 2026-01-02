@@ -222,6 +222,33 @@ FunctionEnd
 	${EndIf}
 !macroend
 
+
+Function WriteToFile
+Exch $0 ;file to write to
+Exch
+Exch $1 ;text to write
+ 
+  FileOpen $0 $0 a #open file
+  FileSeek $0 0 END #go to end
+  FileWrite $0 $1 #write to file
+  FileClose $0
+ 
+Pop $1
+Pop $0
+FunctionEnd
+ 
+!macro WriteToFile NewLine File String
+  !if `${NewLine}` == true
+  Push `${String}$\r$\n`
+  !else
+  Push `${String}`
+  !endif
+  Push `${File}`
+  Call WriteToFile
+!macroend
+!define WriteToFile `!insertmacro WriteToFile false`
+!define WriteLineToFile `!insertmacro WriteToFile true`
+
 Section "Install"
 
   SetOutPath "$INSTDIR"
@@ -257,13 +284,12 @@ Section "Install"
   
   ${If} "$Winget" == "1"
     ${If} ${FileExists} "$INSTDIR\global.ini"
-        FileOpen $0 "$INSTDIR\global.ini" a
     ${Else}
         FileOpen $0 "$INSTDIR\global.ini" w
-        FileWrite $0 "[General]"
+        FileWrite $0 "[General]$\n"
+		FileClose $0
     ${EndIf}
-    FileWrite $0 "\nwinget_package=true\n"
-    FileClose $0
+    ${WriteLineToFile} "$INSTDIR\global.ini" "winget_package=true$\n"
   ${EndIf}
 
   ${If} "$UnpackOnly" != "1"
