@@ -5,7 +5,7 @@ BASE_BRANCH="master"
 USERNAME="qr243vbi"
 PROGID="NekoBox"
 A='q'
-OLDVER='5.9.9'
+OLDVER='5.9.24'
 
 text="$(curl -s -H "Accept: application/vnd.github.v3+json" https://api.github.com/repos/qr243vbi/nekobox/releases/tags/$INPUT_VERSION)"
 asset_res="$(echo "$text"  | jq '.assets[] | select(.browser_download_url | endswith("-installer.exe"))')"
@@ -53,5 +53,5 @@ git commit -am update
 git push --set-upstream origin "$NEW_BRANCH_NAME"
 
 gh repo set-default "$REPO_TO_FORK"
-gh pr create --base "$BASE_BRANCH" --head "$USERNAME:$NEW_BRANCH_NAME" --title "$NEW_BRANCH_NAME" --body ""
+gh pr create --base "$BASE_BRANCH" --head "$USERNAME:$NEW_BRANCH_NAME" --title "New version: qr243vbi.NekoBox version ${INPUT_VERSION}" --body ""
 
