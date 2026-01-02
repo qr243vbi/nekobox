@@ -3,6 +3,7 @@
 gen-cpp
 core/server/gen/libcore_service-remote
 core/server/gen/*.go
+script/winget-pkgs
 run.cmd
 SingBox.Version
 /script/nekobox
