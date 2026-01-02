@@ -165,7 +165,7 @@ DialogBasicSettings::DialogBasicSettings(MainWindow *parent)
     ui->theme->addItems(QStyleFactory::keys());
     ui->theme->addItem("QDarkStyle");
     //
-    bool ok;
+//    bool ok;
     ui->theme->setCurrentText(settings.value("theme", "").toString());
     //
     connect(ui->theme, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, [=,this](int index) {
@@ -363,7 +363,7 @@ void DialogBasicSettings::accept() {
     Configs::dataStore->ntp_server_port = ui->ntp_port->text().toInt();
     Configs::dataStore->ntp_interval = ui->ntp_interval->currentText();
 
-    int width, height, X, Y;
+ //   int width, height, X, Y;
     // Startup
     settings.setValue("language", locale);
     S_SAVE_BOOL(save_geometry);

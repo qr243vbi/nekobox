@@ -318,8 +318,9 @@ if (release_download_url_flag || !is_newer){
 					updater_args.push(latest_tag_name);
 					updater_args.push('-name');
                     updater_args.push(NKR_SOFTWARE_NAME);
-					is_newer = true;
 				}
+				
+					is_newer = true;
 				} catch (e){
 					info(e);
 					is_newer = false;

@@ -1701,9 +1701,8 @@ void MainWindow::on_menu_exit_triggered() {
                << destinationFilePath;
 #ifdef Q_OS_WIN
       WinCommander::runProcess(destinationFilePath, list, "",
-                                      SW_NORMAL, false,
+                                      SW_NORMAL, false, 
                                 (!isDirectoryWritable(updateDir)));
-#endif
 #else
       QProcess::startDetached(destinationFilePath, list);
 #endif

@@ -94,8 +94,7 @@ void JsUpdaterWindow::unlock(){
 };
 
 QString JsUpdaterWindow::curdir(){
-    QDir dir("temp");
-    return dir.absolutePath();
+    return QDir::currentPath();
 }
 
 void JsUpdaterWindow::open_url(const QVariant url){

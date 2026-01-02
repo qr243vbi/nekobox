@@ -280,10 +280,16 @@ QString DisplayTime(long long time, int formatType) {
 }
 
 
-const char * _getSoftwareVersion(){
+const char * getSoftwareVersion(){
     static const char * VERSION_STATIC = nullptr;
     if (VERSION_STATIC == nullptr){
-        VERSION_STATIC = strdup(software_version.toUtf8().constData());
+        VERSION_STATIC = 	
+#ifdef _MSC_VER
+	_strdup
+#else
+	strdup
+#endif
+		(software_version.toUtf8().constData());
     }
     return VERSION_STATIC;
 }
