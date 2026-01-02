@@ -454,7 +454,7 @@ jobs:
           export OBS_USER="${{ secrets.OBS_USER }}"
           export OBS_PASSWORD="${{ secrets.OBS_PASSWORD }}"
           export OBS_HOOK_TOKEN="${{ secrets.OBS_HOOK_TOKEN }}"
-          export INPUT_VERSION=${{ github.event.inputs.tag }}
+          export INPUT_VERSION="${{ github.event.inputs.tag }}"
           bash ./script/trigger_open_build_service.sh
           bash ./script/generate_pkgbuild.sh
 
@@ -470,7 +470,8 @@ jobs:
         if: github.event.inputs.build_windows_arm64 == 'true' && github.event.inputs.build_windows_x64 == 'true'
         shell: bash
         run: |
-          export GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}
+          export GITHUB_TOKEN="${{ secrets.GITHUB_TOKEN }}"
+          export INPUT_VERSION="${{ github.event.inputs.tag }}"
           bash ./script/trigger_winget_pkgs.sh
 
       - name: Publish AUR package
