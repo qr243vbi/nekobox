@@ -10,7 +10,7 @@ if [[ $1 == "new-x86_64" || -z $1 ]]; then
 else if [[ $1 == "new-arm64" || -z $1 ]]; then
   ARCH="windows-arm64"
   DEST="$DEPLOYMENT/windows-arm64"
-  INST="$deployment/nekobox_setup_arm64"
+  INST="$DEPLOYMENT/nekobox_setup_arm64"
 else if [[ $1 == 'i686' ]]; then
   ARCH="windowslegacy-386"
   DEST="$DEPLOYMENT/windows32"
@@ -18,11 +18,11 @@ else if [[ $1 == 'i686' ]]; then
 else if [[ $1 == 'x86_64' ]]; then
   ARCH="windowslegacy-amd64"
   DEST="$DEPLOYMENT/windowslegacy64"
-  INST="$deployment/nekobox_setup_legacy"
+  INST="$DEPLOYMENT/nekobox_setup_legacy"
 else if [[ $1 == "arm64" ]]; then
   ARCH="windowslegacy-arm64"
   DEST="$DEPLOYMENT/windowslegacy-arm64"
-  INST="$deployment/nekobox_setup_legacy_arm64"
+  INST="$DEPLOYMENT/nekobox_setup_legacy_arm64"
 fi; fi; fi; fi; fi;
 
 #rm -rf $DEST
