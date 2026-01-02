@@ -11,7 +11,7 @@ text="$(curl -s -H "Accept: application/vnd.github.v3+json" https://api.github.c
 asset_res="$(echo "$text"  | jq '.assets[] | select(.browser_download_url | endswith("-installer.exe"))')"
 
 
-PATTERN="s~$OLDVER~$INPUT_VERSION~g;s~2025-12-07~$(date +%Y-%m-%d)~g;$(echo $asset_res | jq -r '"\(.name)_\(.digest | ascii_upcase)"' | sed 's~.*arm64.*:\(.*\)~s@FED32109A84E94FDE258F48EF40366111F4CDAEECA617CC3611217EDD38BC701@\1@g;~g;s~.*windows64.*:\(.*\)~s@AA5AC2B7862929F4F078E81FB71A3286DC457B4B0BE9B84B318441FBBDAF2947@\1@g;~g;' | sed ':a;N;$!ba;s/\n//g')"
+PATTERN="s~$OLDVER~$INPUT_VERSION~g;s~2025-12-07~$(date +%Y-%m-%d)~g;$(echo $asset_res | jq -r '"\(.name)_\(.digest | ascii_upcase)"' | sed 's~.*arm64.*:\(.*\)~s@A2F759FBB32C5140078A80B6B9411361BAB63783064DF86BBB3AE1DBF761AED9@\1@g;~g;s~.*windows64.*:\(.*\)~s@472FF1BE6A74A36DBCB6FEC267E783072E92CC1BCCC31B3E05BFE21D389FBEE5@\1@g;~g;' | sed ':a;N;$!ba;s/\n//g')"
 
 NEW_BRANCH_NAME="NekoBox-branch-$INPUT_VERSION"
 git clone --depth 10 "https://${USERNAME}:${GITHUB_TOKEN}@github.com/${USERNAME}/winget-pkgs" ||:
