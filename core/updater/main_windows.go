@@ -17,6 +17,7 @@ func LaunchCmd(cmd *exec.Cmd) error {
 }
 
 func Launch(Path string, Args ...string) error {
+	log.Println(Path, Args)
 	cmd := exec.Command(Path, Args...)
 	return LaunchCmd(cmd)
 }
@@ -27,6 +28,8 @@ func main() {
 	if err != nil {
 		panic(err.Error())
 	}
+	log.Println(os.Args);
+
 	version := flag.String("version", "", "version")
 	chocolatey_source := flag.String("chocolatey_source", "", "install with chocolatey from source")
 	winget_install := flag.Bool("winget_install", false, "install with winget")
@@ -40,7 +43,7 @@ func main() {
 	box := args[0]
 	exe = filepath.Base(os.Args[0])
 	log.Println("exe:", exe, "exe dir:", wd, "box: ", box)
-	time.Sleep(2 * time.Second)
+	time.Sleep(1 * time.Second)
 	// 1. update files
 	LaunchInstaller(box, wd, *version, *chocolatey_source, *winget_install, *verbose, *name)
 	// 2. start
@@ -55,7 +58,7 @@ func LaunchInstaller(updatePackagePath string, installPath string, version strin
 		if chocolatey_source != "" {
 			run_chocolatey(version, chocolatey_source, name)
 		}
-		Launch(updatePackagePath, "/S", "/UNPACK=1", "/D="+installPath)
+		Launch(updatePackagePath, "/S", "/UNPACK=1", "/D="+filepath.Clean(installPath))
 	}
 }
 

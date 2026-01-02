@@ -41,8 +41,8 @@ return ptr;      \
 
 #ifndef NKR_VERSION
 inline QString software_version;
-const char * _getSoftwareVersion();
-#define NKR_VERSION _getSoftwareVersion()
+const char * getSoftwareVersion();
+#define NKR_VERSION getSoftwareVersion()
 #define NKR_DYNAMIC_VERSION dynamic
 #endif
 

@@ -79,5 +79,5 @@ fi
 (
 cd "$CURDIR"
 pwd
-makensis.exe "-DSOFTWARE_NAME=IblisBox" "-DDIRECTORY=$DEST" "-DOUTFILE=$INST" "-NOCD" 'script/windows_installer.nsi'
+makensis.exe "-DSOFTWARE_NAME=NekoBox" "-DDIRECTORY=$DEST" "-DOUTFILE=$INST" "-NOCD" 'script/windows_installer.nsi'
 )
