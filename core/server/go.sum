@@ -143,8 +143,8 @@ github.com/pmezard/go-difflib v1.0.1-0.20181226105442-5d4384ee4fb2 h1:Jamvg5psRI
 github.com/pmezard/go-difflib v1.0.1-0.20181226105442-5d4384ee4fb2/go.mod h1:iKH77koFhYxTK1pcRnkKkqfTogsbg7gZNVY4sRDYZ/4=
 github.com/prometheus-community/pro-bing v0.4.0 h1:YMbv+i08gQz97OZZBwLyvmmQEEzyfyrrjEaAchdy3R4=
 github.com/prometheus-community/pro-bing v0.4.0/go.mod h1:b7wRYZtCcPmt4Sz319BykUU241rWLe1VFXyiyWK/dH4=
-github.com/qr243vbi/sing-box v1.12.14-mod2 h1:B2MMrD99/7qXNCuDAUsqysEmBxid06SusTrAxetnzaE=
-github.com/qr243vbi/sing-box v1.12.14-mod2/go.mod h1:FPOaYg1QLehRrNhCuPvMjcR8bceCVaJ0R+MiLojB+lI=
+github.com/qr243vbi/sing-box v1.12.18 h1:Q8IZuZtYuUzPEiSXYWudmAP/2Q7Uz0SKU9GNUM3l+MY=
+github.com/qr243vbi/sing-box v1.12.18/go.mod h1:FPOaYg1QLehRrNhCuPvMjcR8bceCVaJ0R+MiLojB+lI=
 github.com/quic-go/qpack v0.5.1 h1:giqksBPnT/HDtZ6VhtFKgoLOWmlyo9Ei6u9PqzIMbhI=
 github.com/quic-go/qpack v0.5.1/go.mod h1:+PC4XFrEskIVkcLzpEkbLqq1uCoxPhQuvK5rH1ZgaEg=
 github.com/russross/blackfriday/v2 v2.1.0/go.mod h1:+Rmxgy9KzJVeS9/2gXHxylqXiyQDYRxCVz55jmeOWTM=
