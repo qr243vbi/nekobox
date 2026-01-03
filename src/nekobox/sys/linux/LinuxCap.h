@@ -1,5 +1,5 @@
 #pragma once
 
-bool Linux_HavePkexec();
+bool Unix_HavePkexec();
 
 void Unix_SetCrashHandler();
