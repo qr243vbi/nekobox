@@ -8,18 +8,21 @@ on:
       publish:
         description: "Publish Release"
         type: boolean
-        required: false
+        default: false
+        required: true
       text:
         description: "Release Description"
         required: false
-      source:
+      source_only:
         description: "Skip building binaries, distribute only unified source"
         type: boolean
+        default: false
         required: false
       updater:
         description: "Ship binaries without updater"
         type: boolean
         required: false
+        default: false
       build_windows_x64:
         description: "Build windows x64 binaries"
         type: boolean
@@ -83,17 +86,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checking out sources
-        if: matrix.cross_os == 'public' || ( github.event.inputs.source != 'true' && matrix.allow == 'true' )
+        if: matrix.cross_os == 'public' || ( github.event.inputs.source_only  != 'true' && matrix.allow == 'true' )
         uses: actions/checkout@v4.2.2
       - name: Cache Common Download
         id: cache-common
-        if: matrix.cross_os != 'public' && ( github.event.inputs.source != 'true' && matrix.allow == 'true' )
+        if: matrix.cross_os != 'public' && ( github.event.inputs.source_only  != 'true' && matrix.allow == 'true' )
         uses: actions/cache@v4.2.3
         with:
           path: artifacts.tgz
           key: CommonCache-${{ matrix.cross_os }}-${{ matrix.cross_arch }}-${{ hashFiles('script/build_go.sh', 'core/*') }}-${{ matrix.go_version }}
       - name: Install Golang
-        if: ( matrix.cross_os == 'public' || ( github.event.inputs.source != 'true' && matrix.allow == 'true' ) ) && steps.cache-common.outputs.cache-hit != 'true'
+        if: ( matrix.cross_os == 'public' || ( github.event.inputs.source_only  != 'true' && matrix.allow == 'true' ) ) && steps.cache-common.outputs.cache-hit != 'true'
         uses: actions/setup-go@v5.5.0
         with:
           go-version: ${{ matrix.go_version }}
@@ -101,13 +104,13 @@ jobs:
             core/server/go.sum
             core/updater/go.sum
       - name: Linux - Install apt dependencies
-        if: matrix.cross_os == 'public' || ( github.event.inputs.source != 'true' && matrix.allow == 'true' )
+        if: matrix.cross_os == 'public' || ( github.event.inputs.source_only  != 'true' && matrix.allow == 'true' )
         uses: awalsh128/cache-apt-pkgs-action@latest
         with:
           packages: thrift-compiler
           version: 1.0
       - name: Build golang parts
-        if: steps.cache-common.outputs.cache-hit != 'true' && matrix.cross_os != 'public' && ( github.event.inputs.source != 'true' && matrix.allow == 'true' )
+        if: steps.cache-common.outputs.cache-hit != 'true' && matrix.cross_os != 'public' && ( github.event.inputs.source_only  != 'true' && matrix.allow == 'true' )
         shell: bash
         run: |
           if [[ ${{ github.event.inputs.updater }} == 'true' ]]; then
@@ -120,10 +123,10 @@ jobs:
         run: |
           env INPUT_VERSION=${{ github.event.inputs.tag }} bash -x ./script/deploy_vendor.sh
       - name: Tar files
-        if: matrix.cross_os == 'public' || ( github.event.inputs.source != 'true' && matrix.allow == 'true' && steps.cache-common.outputs.cache-hit != 'true' )
+        if: matrix.cross_os == 'public' || ( github.event.inputs.source_only  != 'true' && matrix.allow == 'true' && steps.cache-common.outputs.cache-hit != 'true' )
         run: tar czvf artifacts.tgz ./deployment
       - name: Uploading Artifact
-        if: matrix.cross_os == 'public' || ( github.event.inputs.source != 'true' && matrix.allow == 'true' )
+        if: matrix.cross_os == 'public' || ( github.event.inputs.source_only  != 'true' && matrix.allow == 'true' )
         uses: actions/upload-artifact@v4.6.2
         with:
           name: nekobox-${{ github.sha }}-Common-${{ matrix.cross_os }}-${{ matrix.cross_arch }}
@@ -153,19 +156,19 @@ jobs:
       INPUT_VERSION: ${{ github.event.inputs.tag }}
     steps:
       - name: Checking out sources
-        if: matrix.allow == 'true' && github.event.inputs.source != 'true'
+        if: matrix.allow == 'true' && github.event.inputs.source_only  != 'true'
         uses: actions/checkout@v4.2.2
         with:
           submodules: "recursive"
 
       - name: Install NSIS
         id: nsis
-        if: matrix.allow == 'true' && github.event.inputs.source != 'true' && matrix.target == 'x86_64'
+        if: matrix.allow == 'true' && github.event.inputs.source_only  != 'true' && matrix.target == 'x86_64'
         uses: negrutiu/nsis-install@v2
 
       - name: vcpkg build
         uses: johnwason/vcpkg-action@v7
-        if: matrix.allow == 'true' && github.event.inputs.source != 'true'
+        if: matrix.allow == 'true' && github.event.inputs.source_only  != 'true'
         id: vcpkg
         with:
           pkgs: thrift
@@ -173,20 +176,20 @@ jobs:
           token: ${{ github.token }}
           
       - name: Download Artifacts
-        if: matrix.allow == 'true' && github.event.inputs.source != 'true'
+        if: matrix.allow == 'true' && github.event.inputs.source_only  != 'true'
         uses: actions/download-artifact@v4.3.0
         with:
           path: download-artifact
 
       - name: Download Srslist
-        if: matrix.allow == 'true' && github.event.inputs.source != 'true'
+        if: matrix.allow == 'true' && github.event.inputs.source_only  != 'true'
         shell: bash
         run: |
           curl -fLso "srslist.json" "https://github.com/qr243vbi/ruleset/raw/refs/heads/rule-set/srslist.json"
           mkdir build
 
       - name: Install Qt
-        if: matrix.allow == 'true' && github.event.inputs.source != 'true'
+        if: matrix.allow == 'true' && github.event.inputs.source_only  != 'true'
         uses: jurplel/install-qt-action@v4.3.0
         with:
           version: ${{ matrix.qt_version }}
@@ -196,21 +199,21 @@ jobs:
           cache-key-prefix: QtCache-${{ matrix.platform }}-${{ matrix.target }}
 
       - name: Install MSVC compiler
-        if: matrix.allow == 'true' && github.event.inputs.source != 'true'
+        if: matrix.allow == 'true' && github.event.inputs.source_only  != 'true'
         uses: ilammy/msvc-dev-cmd@v1
         with:
           arch: ${{ matrix.target }}
           
       - name: Cache Builds
         id: cache-common
-        if: github.event.inputs.source != 'true' && matrix.allow == 'true'
+        if: github.event.inputs.source_only  != 'true' && matrix.allow == 'true'
         uses: actions/cache@v4.2.3
         with:
           path: build
           key: CommonCache-${{ matrix.platform }}-${{ matrix.target }}-${{ github.event.inputs.tag }}
 
       - name: Windows - Generate MakeFile and Build
-        if: matrix.allow == 'true' && github.event.inputs.source != 'true'
+        if: matrix.allow == 'true' && github.event.inputs.source_only  != 'true'
         shell: bash
         run: |
           if [[ ${{ github.event.inputs.updater }} == 'true' ]]; then export SKIP_UPDATE_BUTTON=ON; else export SKIP_UPDATE_BUTTON=OFF; fi
@@ -220,11 +223,11 @@ jobs:
 
       - name: Tar files
         shell: bash
-        if: matrix.allow == 'true' && github.event.inputs.source != 'true'
+        if: matrix.allow == 'true' && github.event.inputs.source_only  != 'true'
         run: tar czvf artifacts.tgz ./deployment
 
       - name: Uploading Artifact
-        if: matrix.allow == 'true' && github.event.inputs.source != 'true'
+        if: matrix.allow == 'true' && github.event.inputs.source_only  != 'true'
         uses: actions/upload-artifact@v4.6.2
         with:
           name: nekobox-${{ github.sha }}-${{ matrix.platform }}-${{ matrix.target }}-Qt${{ matrix.qt_version }}
@@ -253,19 +256,19 @@ jobs:
       INPUT_VERSION: ${{ github.event.inputs.tag }}
     steps:
       - name: Checking out sources
-        if: matrix.allow == 'true' && github.event.inputs.source != 'true'
+        if: matrix.allow == 'true' && github.event.inputs.source_only  != 'true'
         uses: actions/checkout@v4.2.2
         with:
           submodules: "recursive"
 
       - name: Download Artifacts
-        if: matrix.allow == 'true' && github.event.inputs.source != 'true'
+        if: matrix.allow == 'true' && github.event.inputs.source_only  != 'true'
         uses: actions/download-artifact@v4.3.0
         with:
           path: download-artifact
 
       - name: Install Qt
-        if: matrix.allow == 'true' && github.event.inputs.source != 'true'
+        if: matrix.allow == 'true' && github.event.inputs.source_only  != 'true'
         uses: jurplel/install-qt-action@v4.3.0
         with:
           version: ${{ matrix.qt_version }}
@@ -275,14 +278,14 @@ jobs:
           cache-key-prefix: QtCache-${{ matrix.platform }}-${{ matrix.target }}
 
       - name: Download Srslist
-        if: matrix.allow == 'true' && github.event.inputs.source != 'true'
+        if: matrix.allow == 'true' && github.event.inputs.source_only  != 'true'
         shell: bash
         run: |
           curl -fLso "srslist.json" "https://github.com/qr243vbi/ruleset/raw/refs/heads/rule-set/srslist.json"
           mkdir build
 
       - name: Linux - Install apt dependencies
-        if: matrix.allow == 'true' && github.event.inputs.source != 'true'
+        if: matrix.allow == 'true' && github.event.inputs.source_only  != 'true'
         uses: awalsh128/cache-apt-pkgs-action@latest
         with:
           packages: libfuse2 patchelf squashfs-tools openssl-dev openssl thrift-compiler libthrift-dev
@@ -290,14 +293,14 @@ jobs:
 
       - name: Cache Builds
         id: cache-common
-        if: github.event.inputs.source != 'true' && matrix.allow == 'true'
+        if: github.event.inputs.source_only  != 'true' && matrix.allow == 'true'
         uses: actions/cache@v4.2.3
         with:
           path: build
           key: CommonCache-${{ matrix.platform }}-${{ matrix.target }}-${{ github.event.inputs.tag }}
 
       - name: Linux - Generate MakeFile and Build
-        if: matrix.allow == 'true' && github.event.inputs.source != 'true'
+        if: matrix.allow == 'true' && github.event.inputs.source_only  != 'true'
         shell: bash
         run: |
           cd build
@@ -308,12 +311,12 @@ jobs:
           bash -x ./script/deploy_linux64.sh
 
       - name: Tar files
-        if: matrix.allow == 'true' && github.event.inputs.source != 'true'
+        if: matrix.allow == 'true' && github.event.inputs.source_only  != 'true'
         shell: bash
         run: tar czvf artifacts.tgz ./deployment
 
       - name: Uploading Artifact
-        if: matrix.allow == 'true' && github.event.inputs.source != 'true'
+        if: matrix.allow == 'true' && github.event.inputs.source_only  != 'true'
         uses: actions/upload-artifact@v4.6.2
         with:
           name: nekobox-${{ github.sha }}-${{ matrix.platform }}-${{ matrix.target }}-Qt${{ matrix.qt_version }}
