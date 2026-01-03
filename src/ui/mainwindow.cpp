@@ -3784,7 +3784,7 @@ if (isAppImage()) {
   bQueue = createJsUpdaterWindow();
 
   jsUpdater(bQueue, &updater_js, &search, &archive_name,
-            &is_newer, &updater_args, allow_updater, &keep_running);
+            &is_newer, &updater_args, allow_updater, &this->keep_running);
 #endif
 skip1:
 
