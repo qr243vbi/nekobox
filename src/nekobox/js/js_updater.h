@@ -85,7 +85,9 @@ bool jsUpdater( JsUpdaterWindow* bQueue,
   QString * archive_name,
   bool * is_newer,
   QStringList * args,
-  bool allow_updater);
+  bool allow_updater,
+  bool * keep_running
+);
 
 bool jsRouteProfileGetter(
     JsUpdaterWindow * factory,

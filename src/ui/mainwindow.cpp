@@ -1740,6 +1740,10 @@ void MainWindow::on_menu_exit_triggered() {
       QProcess::startDetached(program, arguments);
     }
   }
+  if (this->keep_running){
+    this->keep_running = false;
+    return;
+  }
   QCoreApplication::quit();
 }
 
@@ -3780,7 +3784,7 @@ if (isAppImage()) {
   bQueue = createJsUpdaterWindow();
 
   jsUpdater(bQueue, &updater_js, &search, &archive_name,
-            &is_newer, &updater_args, allow_updater);
+            &is_newer, &updater_args, allow_updater, &keep_running);
 #endif
 skip1:
 
