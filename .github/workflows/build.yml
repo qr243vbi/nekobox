@@ -8,7 +8,7 @@ on:
       publish:
         description: "Publish Release"
         type: boolean
-        default: false
+        default: true
         required: true
       text:
         description: "Release Description"
