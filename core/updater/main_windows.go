@@ -53,7 +53,7 @@ func main() {
 
 func LaunchInstaller(updatePackagePath string, installPath string, version string, chocolatey_source string, winget_install bool, verbose bool, name string) {
 	if winget_install {
-		Launch("winget", "install", "--version", version, updatePackagePath, "--override", "/S /WINGET=1 /UNPACK=1")
+		Launch("winget", "install", "--version", version, updatePackagePath, "--override", "/S /WINGET=1 /UNPACK=1 /D="+filepath.Clean(installPath))
 	} else {
 		if chocolatey_source != "" {
 			run_chocolatey(version, chocolatey_source, name)
