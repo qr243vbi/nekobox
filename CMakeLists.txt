@@ -123,12 +123,53 @@ set(PROJECT_SOURCES
         src/configs/proxy/Bean2CoreObj_box.cpp
         src/configs/proxy/Bean2Link.cpp
         src/configs/proxy/Link2Bean.cpp
-        ${NEKOBOX_INCLUDE}/configs/proxy/ChainBean.hpp # translate
-
+        ${NEKOBOX_INCLUDE}/configs/proxy/AbstractBean.hpp
+        ${NEKOBOX_INCLUDE}/configs/proxy/AnyTLSBean.hpp
+        ${NEKOBOX_INCLUDE}/configs/proxy/ChainBean.hpp
+        ${NEKOBOX_INCLUDE}/configs/proxy/CustomBean.hpp
+        ${NEKOBOX_INCLUDE}/configs/proxy/ExtraCore.h
+        ${NEKOBOX_INCLUDE}/configs/proxy/includes.h
+        ${NEKOBOX_INCLUDE}/configs/proxy/MieruBean.hpp
+        ${NEKOBOX_INCLUDE}/configs/proxy/Preset.hpp
+        ${NEKOBOX_INCLUDE}/configs/proxy/QUICBean.hpp
+        ${NEKOBOX_INCLUDE}/configs/proxy/ShadowSocksBean.hpp
+        ${NEKOBOX_INCLUDE}/configs/proxy/ShadowTLSBean.hpp
+        ${NEKOBOX_INCLUDE}/configs/proxy/SocksHttpBean.hpp
+        ${NEKOBOX_INCLUDE}/configs/proxy/SSHBean.h
+        ${NEKOBOX_INCLUDE}/configs/proxy/Tailscale.hpp
+        ${NEKOBOX_INCLUDE}/configs/proxy/TrojanVLESSBean.hpp
+        ${NEKOBOX_INCLUDE}/configs/proxy/V2RayStreamSettings.hpp
+        ${NEKOBOX_INCLUDE}/configs/proxy/VMessBean.hpp
+        ${NEKOBOX_INCLUDE}/configs/proxy/WireguardBean.h
         ${NEKOBOX_INCLUDE}/configs/sub/GroupUpdater.hpp
-        src/configs/sub/GroupUpdater.cpp
+        ${NEKOBOX_INCLUDE}/configs/ConfigBuilder.hpp
+        ${NEKOBOX_INCLUDE}/api/RPC.h
+        ${NEKOBOX_INCLUDE}/dataStore/ConfigItem.hpp
+        ${NEKOBOX_INCLUDE}/dataStore/Configs.hpp
+        ${NEKOBOX_INCLUDE}/dataStore/Const.hpp
+        ${NEKOBOX_INCLUDE}/dataStore/Database.hpp
+        ${NEKOBOX_INCLUDE}/dataStore/DataStore.hpp
+        ${NEKOBOX_INCLUDE}/dataStore/Group.hpp
+        ${NEKOBOX_INCLUDE}/dataStore/ProfileFilter.hpp
+        ${NEKOBOX_INCLUDE}/dataStore/ProxyEntity.hpp
+        ${NEKOBOX_INCLUDE}/dataStore/ResourceEntity.hpp
+        ${NEKOBOX_INCLUDE}/dataStore/RouteEntity.h
+        ${NEKOBOX_INCLUDE}/dataStore/Utils.hpp
 
+        ${NEKOBOX_INCLUDE}/global/CountryHelper.hpp
+        ${NEKOBOX_INCLUDE}/global/DeviceDetailsHelper.hpp
+        ${NEKOBOX_INCLUDE}/global/GuiUtils.hpp
+        ${NEKOBOX_INCLUDE}/global/HTTPRequestHelper.hpp
+        ${NEKOBOX_INCLUDE}/global/keyvaluerange.h
+
+        ${NEKOBOX_INCLUDE}/stats/traffic/TrafficData.hpp
+        ${NEKOBOX_INCLUDE}/stats/traffic/TrafficLooper.hpp
+
+        src/configs/sub/GroupUpdater.cpp
+        ${NEKOBOX_INCLUDE}/sys/AutoRun.hpp
         ${NEKOBOX_INCLUDE}/sys/Process.hpp
+        ${NEKOBOX_INCLUDE}/sys/Settings.h
+
         src/sys/Process.cpp
         src/sys/AutoRun.cpp
 
@@ -175,7 +216,6 @@ set(PROJECT_SOURCES
         ${NEKOBOX_INCLUDE}/ui/profile/edit_tailscale.h
         src/ui/profile/edit_tailscale.cpp
         ${NEKOBOX_INCLUDE}/ui/profile/edit_tailscale.ui
-        ${NEKOBOX_INCLUDE}/configs/proxy/Tailscale.hpp
 
         ${NEKOBOX_INCLUDE}/ui/profile/edit_quic.h
         src/ui/profile/edit_quic.cpp
@@ -225,14 +265,12 @@ set(PROJECT_SOURCES
 
         res/nekobox.qrc
         ${QV2RAY_RC}
-        ${NEKOBOX_INCLUDE}/dataStore/RouteEntity.h
         src/dataStore/RouteEntity.cpp
         src/dataStore/ResourceEntity.cpp
         res/darkstyle.qrc
         src/ui/profile/edit_ssh.cpp
         ${NEKOBOX_INCLUDE}/ui/profile/edit_ssh.h
         ${NEKOBOX_INCLUDE}/ui/profile/edit_ssh.ui
-        ${NEKOBOX_INCLUDE}/configs/proxy/SSHBean.h
         src/sys/Settings.cpp
 
         src/sys/AutoRun.cpp
@@ -241,7 +279,6 @@ set(PROJECT_SOURCES
         ${NEKOBOX_INCLUDE}/stats/connections/connectionLister.hpp
         src/stats/connectionLister/connectionLister.cpp
         src/configs/proxy/Json2Bean.cpp
-        ${NEKOBOX_INCLUDE}/sys/windows/eventHandler.h
         src/dataStore/Group.cpp
         src/dataStore/ProxyEntity.cpp
 
@@ -269,7 +306,17 @@ if(SKIP_JS_UPDATER)
 else()
     find_package(Qt6 REQUIRED COMPONENTS Qml)
     target_link_libraries(nekobox PRIVATE Qt6::Qml)
-    target_sources(nekobox PRIVATE src/js/js_updater.cpp ${NEKOBOX_INCLUDE}/js/js_updater.h res/nekobox_updater.qrc)
+    target_sources(nekobox
+            PRIVATE
+            src/js/js_updater.cpp
+            ${NEKOBOX_INCLUDE}/js/js_updater.h
+            ${NEKOBOX_INCLUDE}/js/blocking_queue.h
+            ${NEKOBOX_INCLUDE}/js/js_updater.h
+            ${NEKOBOX_INCLUDE}/js/message_queue.h
+            ${NEKOBOX_INCLUDE}/js/version.h
+
+            res/nekobox_updater.qrc
+    )
 endif()
 
 
