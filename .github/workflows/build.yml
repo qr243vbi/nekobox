@@ -368,19 +368,21 @@ jobs:
           if [[ -d linux-amd64 ]]; then
             mv linux-amd64 nekobox
             if [[ -f nekobox/nekobox-x86_64.AppImage ]]; then
-                mv nekobox/nekobox-x86_64.AppImage ./IblisBox-${{ github.event.inputs.tag }}-x86_64-linux.AppImage
+                mv nekobox/nekobox-x86_64.AppImage $version_standalone-x86_64-linux.AppImage
             fi
-            zip -9 -r $version_standalone-linux-amd64.zip nekobox
-            rm -rf nekobox linux-amd64
+            if [[ -f nekobox/nekobox-x86_64.tar.gz ]]; then
+                mv nekobox/nekobox-x86_64.tar.gz $version_standalone-linux-amd64.tar.gz
+            fi
           fi
           ####
           if [[ -d linux-arm64 ]]; then
             mv linux-arm64 nekobox
             if [[ -f nekobox/nekobox-aarch64.AppImage ]]; then
-                mv nekobox/nekobox-aarch64.AppImage ./IblisBox-${{ github.event.inputs.tag }}-aarch64-linux.AppImage
+                mv nekobox/nekobox-aarch64.AppImage $version_standalone-aarch64-linux.AppImage
             fi
-            zip -9 -r $version_standalone-linux-arm64.zip nekobox
-            rm -rf nekobox linux-arm64
+            if [[ -f nekobox/nekobox-aarch64.tar.gz ]]; then
+                mv nekobox/nekobox-aarch64.tar.gz $version_standalone-linux-arm64.tar.gz
+            fi
           fi
           ####
           if [[ -f nekobox_setup.exe ]]; then

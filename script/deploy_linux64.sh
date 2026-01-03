@@ -87,12 +87,18 @@ patchelf --set-rpath '$ORIGIN/usr/lib' ./nekobox
 
 shopt -s extglob
 
+rm -rfv nekobox_directory
+mkdir nekobox_directory
+mv !(nekobox_directory) nekobox_directory
+mv nekobox_directory nekobox
+tar -czvf nekobox-${ARCH1}.tar.gz nekobox
+
 mkdir -p appimage/AppDir
 cd appimage
 
 
 chmod 755 *
-cp -Rfv ../!(updater|appimage|nekobox-${ARCH1}.AppImage) ./AppDir
+cp -Rfv ../nekobox/!(updater|appimage|nekobox-${ARCH1}.AppImage) ./AppDir
 (
 cd AppDir
 mv nekobox_core .nekobox_core_binary_file
@@ -150,3 +156,4 @@ $CURDIR/appimagetool-${ARCH1}.AppImage AppDir ../nekobox-${ARCH1}.AppImage --run
 
 cd ../
 rm -rfv appimage
+rm -rfv nekobox
