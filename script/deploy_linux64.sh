@@ -69,11 +69,11 @@ patchelf --set-rpath '$ORIGIN/../../lib' ./usr/plugins/platformthemes/libqgtk3.s
 patchelf --set-rpath '$ORIGIN/../../lib' ./usr/plugins/platformthemes/libqxdgdesktopportal.so ||:
 
 # fix extra libs...
-mkdir ./usr/lib2
-ls ./usr/lib/
-cp ./usr/lib/libQt* ./usr/lib/libxcb-cursor* ./usr/lib/libxcb-util* ./usr/lib/libicuuc* ./usr/lib/libicui18n* ./usr/lib/libicudata* ./usr/lib2 ||:
-rm -r ./usr/lib ||:
-mv ./usr/lib2 ./usr/lib
+#mkdir ./usr/lib2
+#ls ./usr/lib/
+#cp ./usr/lib/libQt* ./usr/lib/libxcb-cursor* ./usr/lib/libxcb-util* ./usr/lib/libicuuc* ./usr/lib/libicui18n* ./usr/lib/libicudata* ./usr/lib2 ||:
+#rm -r ./usr/lib ||:
+#mv ./usr/lib2 ./usr/lib
 
 # fix lib rpath
 cp $CURDIR/*.js $DEST
