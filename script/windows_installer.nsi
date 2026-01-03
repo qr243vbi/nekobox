@@ -309,6 +309,10 @@ Section "Install"
   ${EndIf}
 
   ${If} "$UnpackOnly" != "1"
+    FileOpen $0 "$INSTDIR\config" w
+    FileWrite $0 "DeleteToUseThisDirectoryForConfig"
+	FileClose $0
+
     CreateShortcut "$desktop\${SOFTWARE_NAME}.lnk" "$INSTDIR\nekobox.exe" "" "$INSTDIR\nekobox.exe" 0
     CreateShortcut "$SMPROGRAMS\${SOFTWARE_NAME}.lnk" "$INSTDIR\nekobox.exe" "" "$INSTDIR\nekobox.exe" 0
 

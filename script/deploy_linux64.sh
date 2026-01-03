@@ -91,7 +91,7 @@ rm -rfv nekobox_directory
 mkdir nekobox_directory
 mv !(nekobox_directory) nekobox_directory
 mv nekobox_directory nekobox
-tar -czvf nekobox-${ARCH1}.tar.gz nekobox
+tar -czvf $DEPLOYMENT/$version_standalone-linux-${ARCH}.tar.gz nekobox
 
 mkdir -p appimage/AppDir
 cd appimage
@@ -152,8 +152,9 @@ Exec=nekobox
 Icon=Tun
 EOF
 rm -rfv *.old.* ||:
-$CURDIR/appimagetool-${ARCH1}.AppImage AppDir ../nekobox-${ARCH1}.AppImage --runtime-file $CURDIR/runtime-${ARCH1}
+$CURDIR/appimagetool-${ARCH1}.AppImage AppDir $DEPLOYMENT/$version_standalone-${ARCH1}-linux.AppImage --runtime-file $CURDIR/runtime-${ARCH1}
 
 cd ../
 rm -rfv appimage
 rm -rfv nekobox
+rmdir $DEST ||:
