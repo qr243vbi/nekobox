@@ -40,7 +40,7 @@ Var isInstalled
 Var isAdmin
 Var Winget
 Var UnpackOnly
-
+Var NoScript
 
 !ifndef PSEXEC_INCLUDED
 !define PSEXEC_INCLUDED
@@ -171,6 +171,7 @@ ${EndIf}
 Function .onInit
     !insertmacro HasFlag "/WINGET=" $Winget
 	!insertmacro HasFlag "/UNPACK=" $UnpackOnly
+	!insertmacro HasFlag "/NOSCRIPT=" $NoScript
 	UserInfo::GetAccountType 
 	Pop $0 
 	${If} $0 != "Admin" 
@@ -269,6 +270,9 @@ Section "Install"
 
   !insertmacro "checkVcRedist"
   
+
+  ${If} "$Winget" != "1"
+  ${If} "$NoScript" != "1"
   ${PowerShellExec} "\
     Write-Host $\"=> $INSTDIR$\" ;				\
 	if ($\"$VCRedistNeeded$\" -eq $\"1$\") {					\
@@ -288,6 +292,8 @@ Section "Install"
 		Stop-Process -Id $$proc.ProcessId -Force ; 				\
 	}; 															\
 	"
+  ${EndIf}
+  ${EndIf}
 
   !ifdef DIRECTORY
     File /r  "${DIRECTORY}\*"
