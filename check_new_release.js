@@ -158,7 +158,7 @@ function isNewerAsset(assetName, curver) {
 	}
 	curver = curver.trim();
     if (!curver) {
-        return false;
+        return '0.0.0';
     }
 
     const spl = assetName.split('-');
