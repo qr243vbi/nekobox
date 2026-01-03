@@ -1,7 +1,7 @@
 var allow_beta_update = configs['allow_beta_update'];
 var exitFlag = false;
 var simple_mode = true;
-var archive_extension = ".zip"
+var archive_extension = ".tar.gz"
 var updater_args = [];
 var release_array = [];
 var is_newer = false;
@@ -128,13 +128,6 @@ function getLatestWingetVersion(packageId) {
 var chocolatey_package = false;
 var winget_package = false;
 
-if (search.includes('windows')){
-	archive_extension = '-installer.exe';	
-	chocolatey_package = (GlobalMap['chocolatey_package'] == 'true');
-	winget_package = (GlobalMap['winget_package'] == 'true');
-    keep_running = true;
-}
-
 if (file_exists(env["APPIMAGE"])){
   if (file_exists(APPLICATION_DIR_PATH + "/" + env["NEKOBOX_APPIMAGE_CUSTOM_EXECUTABLE"])){
     archive_extension = ".AppImage";
@@ -147,9 +140,16 @@ if (file_exists(env["APPIMAGE"])){
     } else if (search == "linux-i386"){
       search = "i686-linux";
     } else {
-      archive_extension = ".zip"
+      archive_extension = ".tar.gz"
     }
   }
+}
+
+if (search.includes('windows')){
+    archive_extension = '-installer.exe';
+    chocolatey_package = (GlobalMap['chocolatey_package'] == 'true');
+    winget_package = (GlobalMap['winget_package'] == 'true');
+    keep_running = true;
 }
 
 function isNewerAsset(assetName, curver) {
