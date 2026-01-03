@@ -12,7 +12,7 @@ void Unix_SetCrashHandler() {
     setrlimit(RLIMIT_CORE, &rl);
 }
 
-bool Linux_HavePkexec() {
+bool Unix_HavePkexec() {
     QProcess p;
     p.setProgram("pkexec");
     p.setArguments({"--help"});
