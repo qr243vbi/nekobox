@@ -365,32 +365,11 @@ jobs:
           cd deployment
           rm -rf *.pdb ||:
           ####
-          if [[ -d linux-amd64 ]]; then
-            mv linux-amd64 nekobox
-            if [[ -f nekobox/nekobox-x86_64.AppImage ]]; then
-                mv nekobox/nekobox-x86_64.AppImage $version_standalone-x86_64-linux.AppImage
-            fi
-            if [[ -f nekobox/nekobox-x86_64.tar.gz ]]; then
-                mv nekobox/nekobox-x86_64.tar.gz $version_standalone-linux-amd64.tar.gz
-            fi
-          fi
-          ####
-          if [[ -d linux-arm64 ]]; then
-            mv linux-arm64 nekobox
-            if [[ -f nekobox/nekobox-aarch64.AppImage ]]; then
-                mv nekobox/nekobox-aarch64.AppImage $version_standalone-aarch64-linux.AppImage
-            fi
-            if [[ -f nekobox/nekobox-aarch64.tar.gz ]]; then
-                mv nekobox/nekobox-aarch64.tar.gz $version_standalone-linux-arm64.tar.gz
-            fi
-          fi
-          ####
           if [[ -f nekobox_setup.exe ]]; then
             CHECKSUM=$(sha256sum nekobox_setup.exe)
             export sha_x64="${CHECKSUM%% *}"
             mv nekobox_setup.exe $version_standalone-windows64-installer.exe
             mv windows64 nekobox
-            rm nekobox/config
             zip -9 -r $version_standalone-windows64.zip nekobox
             rm -rf nekobox windows64
           fi
@@ -405,7 +384,6 @@ jobs:
           if [[ -f nekobox_setup_arm64.exe ]]; then
             mv nekobox_setup_arm64.exe $version_standalone-windows-arm64-installer.exe
             mv windows-arm64 nekobox
-            rm nekobox/config
             zip -9 -r $version_standalone-windows-arm64.zip nekobox
             rm -rf nekobox windows-arm64
           fi
@@ -413,7 +391,6 @@ jobs:
           if [[ -f nekobox_setup32.exe ]]; then
             mv nekobox_setup32.exe $version_standalone-windows32-installer.exe
             mv windows32 nekobox
-            rm nekobox/config
             zip -9 -r $version_standalone-windows32.zip nekobox
             rm -rf nekobox windows32
           fi
@@ -421,7 +398,6 @@ jobs:
           if [[ -f nekobox_setup_legacy.exe ]]; then
             mv nekobox_setup_legacy.exe $version_standalone-windowslegacy64-installer.exe
             mv windowslegacy64 nekobox
-            rm nekobox/config
             zip -9 -r $version_standalone-windowslegacy64.zip nekobox
             rm -rf nekobox windowslegacy64
           fi
