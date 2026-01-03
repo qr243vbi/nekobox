@@ -270,8 +270,6 @@ Section "Install"
 
   !insertmacro "checkVcRedist"
   
-
-  ${If} "$Winget" != "1"
   ${If} "$NoScript" != "1"
   ${PowerShellExec} "\
     Write-Host $\"=> $INSTDIR$\" ;				\
@@ -292,7 +290,6 @@ Section "Install"
 		Stop-Process -Id $$proc.ProcessId -Force ; 				\
 	}; 															\
 	"
-  ${EndIf}
   ${EndIf}
 
   !ifdef DIRECTORY

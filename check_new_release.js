@@ -14,6 +14,7 @@ var options = {};
 var release_download_url = '';
 var archive_name = '';
 var latest_tag_name = '';
+var keep_running = false;
 
 log("Checking new version", "Info");
 
@@ -131,6 +132,7 @@ if (search.includes('windows')){
 	archive_extension = '-installer.exe';	
 	chocolatey_package = (GlobalMap['chocolatey_package'] == 'true');
 	winget_package = (GlobalMap['winget_package'] == 'true');
+    keep_running = true;
 }
 
 if (file_exists(env["APPIMAGE"])){
