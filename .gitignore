@@ -1,7 +1,15 @@
 # This file is used to ignore files which are generated
 # ----------------------------------------------------------------------------
+gen-cpp
+core/server/gen/libcore_service-remote
+core/server/gen/*.go
+script/winget-pkgs
+run.cmd
 SingBox.Version
+/script/nekobox
+/winget-pkgs
 version.txt
+global.ini
 /config
 /updater
 /vcpkg*

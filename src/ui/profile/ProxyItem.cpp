@@ -1,4 +1,4 @@
-#include "include/ui/profile/ProxyItem.h"
+#include "nekobox/ui/profile/ProxyItem.h"
 
 #include <QMessageBox>
 

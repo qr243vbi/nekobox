@@ -9,7 +9,7 @@
 // 1.1.0: Added IsBuildNumGreaterOrEqual()
 // 1.2.0: Removed the Windows 11 build number check to set major version to 11.
 
-#include "include/sys/windows/WinVersion.h"
+#include "nekobox/sys/windows/WinVersion.h"
 #include <Windows.h>
 
 extern "C" NTSTATUS __stdcall RtlGetVersion(OSVERSIONINFOEXW * lpVersionInformation);

@@ -1,10 +1,10 @@
-#include "include/ui/profile/edit_extra_core.h"
+#include "nekobox/ui/profile/edit_extra_core.h"
 
 #include <QFileDialog>
 
-#include "include/configs/proxy/ExtraCore.h"
-#include "include/configs/proxy/Preset.hpp"
-#include "include/ui/profile/dialog_edit_profile.h"
+#include "nekobox/configs/proxy/ExtraCore.h"
+#include "nekobox/configs/proxy/Preset.hpp"
+#include "nekobox/ui/profile/dialog_edit_profile.h"
 
 EditExtraCore::EditExtraCore(QWidget *parent) : QWidget(parent),
                                                 ui(new Ui::EditExtraCore) {
@@ -21,7 +21,7 @@ void EditExtraCore::onStart(std::shared_ptr<Configs::ProxyEntity> _ent) {
     auto bean = ent->ExtraCoreBean();
     ui->socks_address->setText(bean->socksAddress);
     ui->socks_port->setValidator(new QIntValidator(1, 65534));
-    ui->socks_port->setText(Int2String(bean->socksPort));
+    ui->socks_port->setText(QString::number(bean->socksPort));
     ui->config->setPlainText(bean->extraCoreConf);
     ui->args->setText(bean->extraCoreArgs);
     ui->path_combo->addItems(Configs::profileManager->GetExtraCorePaths());

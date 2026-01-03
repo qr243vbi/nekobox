@@ -1,4 +1,4 @@
-#include "include/global/HTTPRequestHelper.hpp"
+#include "nekobox/global/HTTPRequestHelper.hpp"
 
 #include <QNetworkProxy>
 #include <QNetworkAccessManager>
@@ -7,10 +7,13 @@
 #include <QTimer>
 #include <QFile>
 #include <QApplication>
-
-#include "include/global/Configs.hpp"
-#include "include/ui/mainwindow.h"
-#include "include/global/DeviceDetailsHelper.hpp"
+#include <QFileInfo>
+#include <QMap>
+#include <QDir>
+#include <QStringList>
+#include "nekobox/dataStore/Configs.hpp"
+#include "nekobox/ui/mainwindow.h"
+#include "nekobox/global/DeviceDetailsHelper.hpp"
 
 static inline void InitializeRequest(
     QNetworkRequest & request, 
@@ -19,7 +22,7 @@ static inline void InitializeRequest(
     QString & error,
     bool sendHwid
 ){
-        bool net_use_proxy = !Configs::dataStore->net_skip_proxy;
+        bool net_use_proxy = Configs::dataStore->net_use_proxy;
         bool proxy_started = Configs::dataStore->started_id >= 0;
         net_use_proxy &= proxy_started;
         net_use_proxy |= Configs::dataStore->spmode_system_proxy;
@@ -33,7 +36,7 @@ static inline void InitializeRequest(
             }
             QNetworkProxy p;
             p.setType(QNetworkProxy::HttpProxy);
-            p.setHostName("127.0.0.1");
+            p.setHostName(Configs::dataStore->inbound_address == "::" ? "127.0.0.1" : Configs::dataStore->inbound_address);
             p.setPort(Configs::dataStore->inbound_socks_port);
             accessManager.setProxy(p);
         }
@@ -49,10 +52,42 @@ static inline void InitializeRequest(
         if (sendHwid) {
             auto details = GetDeviceDetails();
            
-            if (!details.hwid.isEmpty()) request.setRawHeader("x-hwid", details.hwid.toUtf8());
-            if (!details.os.isEmpty()) request.setRawHeader("x-device-os", details.os.toUtf8());
-            if (!details.osVersion.isEmpty()) request.setRawHeader("x-ver-os", details.osVersion.toUtf8());
-            if (!details.model.isEmpty()) request.setRawHeader("x-device-model", details.model.toUtf8());
+            
+            // Parse custom parameters if provided
+            QMap<QString, QString> customParams;
+            if (!Configs::dataStore->sub_custom_hwid_params.isEmpty()) {
+                QStringList pairs = Configs::dataStore->sub_custom_hwid_params.split(',');
+                for (const QString &pair : pairs) {
+                    QString trimmed = pair.trimmed();
+                    int eqPos = trimmed.indexOf('=');
+                    if (eqPos > 0) {
+                        QString key = trimmed.left(eqPos).trimmed();
+                        QString value = trimmed.mid(eqPos + 1).trimmed();
+                        // Validate: key must be one of the allowed parameters, value must not contain newlines
+                        if (!key.isEmpty() && !value.isEmpty() &&
+                            !value.contains('\n') && !value.contains('\r') &&
+                            value.length() < 1000) { // Reasonable length limit
+                            QString lowerKey = key.toLower();
+                            // Only accept known parameter keys
+                            if (lowerKey == "hwid" || lowerKey == "os" ||
+                                lowerKey == "osversion" || lowerKey == "model") {
+                                customParams[lowerKey] = value;
+                            }
+                        }
+                    }
+                }
+            }
+
+            // Use custom values if provided, otherwise use default values
+            QString hwid = customParams.contains("hwid") ? customParams["hwid"] : details.hwid;
+            QString os = customParams.contains("os") ? customParams["os"] : details.os;
+            QString osVersion = customParams.contains("osversion") ? customParams["osversion"] : details.osVersion;
+            QString model = customParams.contains("model") ? customParams["model"] : details.model;
+
+            if (!hwid.isEmpty()) request.setRawHeader("x-hwid", hwid.toUtf8());
+            if (!os.isEmpty()) request.setRawHeader("x-device-os", os.toUtf8());
+            if (!osVersion.isEmpty()) request.setRawHeader("x-ver-os", osVersion.toUtf8());
+            if (!model.isEmpty()) request.setRawHeader("x-device-model", model.toUtf8());
         }
 }
 
@@ -114,6 +149,8 @@ namespace Configs_network {
             }
             MW_show_log(QString("SSL Errors: %1 %2").arg(error_str.join(","), Configs::dataStore->net_insecure ? "(Ignored)" : ""));
         });
+        bool show_rule_set;
+        if (!(show_rule_set = GetMainWindow()->isShowRuleSetData())){
         connect(_reply, &QNetworkReply::downloadProgress, _reply, [&](qint64 bytesReceived, qint64 bytesTotal)
         {
             runOnUiThread([=]{
@@ -121,14 +158,17 @@ namespace Configs_network {
                 GetMainWindow()->UpdateDataView();
             });
         });
+        }
         QEventLoop loop;
         connect(_reply, &QNetworkReply::finished, &loop, &QEventLoop::quit);
         loop.exec();
+        if(!show_rule_set){
         runOnUiThread([=]
         {
             GetMainWindow()->setDownloadReport({}, false);
             GetMainWindow()->UpdateDataView(true);
         });
+        }
         _reply->deleteLater();
         if(_reply->error() != QNetworkReply::NetworkError::NoError) {
             return _reply->errorString();
@@ -138,6 +178,13 @@ namespace Configs_network {
         auto file = QFile(filePath);
         if (file.exists()) {
             file.remove();
+        } else {
+            QFileInfo info(file);
+            QString path = info.absolutePath();
+            QDir dir(path);
+            if (!dir.exists()){
+                dir.mkpath(path);
+            }
         }
         if (!file.open(QIODevice::WriteOnly)) {
             return QObject::tr("Could not open file.");

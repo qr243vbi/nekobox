@@ -1,11 +1,11 @@
 package main
 
 import (
-	"Core/gen"
-	"Core/internal/boxbox"
-	"Core/internal/boxmain"
-	"Core/internal/process"
-	"Core/internal/sys"
+	"nekobox_core/gen"
+	"nekobox_core/internal/boxbox"
+	"nekobox_core/internal/boxmain"
+	"nekobox_core/internal/process"
+	"nekobox_core/internal/sys"
 	"context"
 	"errors"
 	"fmt"

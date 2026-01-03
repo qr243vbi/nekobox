@@ -5,22 +5,27 @@ export CURDIR=$PWD
 source script/env_deploy.sh
 if [[ $1 == "new-x86_64" || -z $1 ]]; then
   ARCH="windows-amd64"
-  DEST=$DEPLOYMENT/windows64
+  DEST="$DEPLOYMENT/windows64"
+  INST="$DEPLOYMENT/nekobox_setup"
 else if [[ $1 == "new-arm64" || -z $1 ]]; then
   ARCH="windows-arm64"
-  DEST=$DEPLOYMENT/windows-arm64
+  DEST="$DEPLOYMENT/windows-arm64"
+  INST="$DEPLOYMENT/nekobox_setup_arm64"
 else if [[ $1 == 'i686' ]]; then
   ARCH="windowslegacy-386"
-  DEST=$DEPLOYMENT/windows32
+  DEST="$DEPLOYMENT/windows32"
+  INST="$DEPLOYMENT/nekobox_setup32"
 else if [[ $1 == 'x86_64' ]]; then
   ARCH="windowslegacy-amd64"
-  DEST=$DEPLOYMENT/windowslegacy64
+  DEST="$DEPLOYMENT/windowslegacy64"
+  INST="$DEPLOYMENT/nekobox_setup_legacy"
 else if [[ $1 == "arm64" ]]; then
   ARCH="windowslegacy-arm64"
-  DEST=$DEPLOYMENT/windowslegacy-arm64
+  DEST="$DEPLOYMENT/windowslegacy-arm64"
+  INST="$DEPLOYMENT/nekobox_setup_legacy_arm64"
 fi; fi; fi; fi; fi;
 
-rm -rf $DEST
+#rm -rf $DEST
 mkdir -p $DEST
 
 #### get the pdb ####
@@ -38,6 +43,10 @@ mv nekobox.pdb $DEST
 fi
 
 #### copy srslist ####
+if [[ ! -f srslist.json ]]
+then
+curl -fLso srslist.json "https://github.com/qr243vbi/ruleset/raw/refs/heads/rule-set/srslist.json"
+fi
 cp srslist.json $DEST/srslist.json
 
 #### copy exe ####
@@ -45,7 +54,9 @@ cp $CURDIR/*.js $DEST
 cp $BUILD/nekobox.exe $DEST || cp $BUILD/Release/nekobox.exe $DEST
 echo 'DeleteToUseThisDirectoryForConfig' > $DEST/config
 cp -RT $CURDIR/res/public $DEST/public
-echo "$INPUT_VERSION" > $DEST/version.txt
+echo "[General]" > $DEST/global.ini
+echo "software_name=NekoBox" >> $DEST/global.ini
+echo "software_version=$INPUT_VERSION" >> $DEST/global.ini
 
 if [[ "$COMPILER" != "MinGW" ]]
 then
@@ -56,43 +67,17 @@ rm -rf dxcompiler.dll dxil.dll ||:
 popd
 fi
 
-cd download-artifact
-ls
-cd *$ARCH
-tar xvzf artifacts.tgz -C ../../
-cd ../..
+if [[ -d download-artifact ]]
+then
+ cd download-artifact
+ cd *$ARCH
+ tar xvzf artifacts.tgz -C ../../
+ cd ../..
+fi
 
 
-
-#(
-#cd "$CURDIR"
-#cp '.\script\windows_installer.nsi' .
-
-#if [[ "$ARCH" == "windows-amd64" ]];
-#then
-#makensis.exe windows_installer.nsi
-#install -D nekobox_setup.exe deployment/nekobox_setup.exe
-#else
-#if [[ "$ARCH" == "windowslegacy-386" ]];
-#then
-#makensis "/DDIRECTORY=windows32"  windows_installer.nsi
-#install -D nekobox_setup.exe deployment/nekobox_setup32.exe
-#else
-#if [[ "$ARCH" == "windows-arm64" ]];
-#then
-#makensis "/DDIRECTORY=windows-arm64" windows_installer.nsi
-#install -D nekobox_setup.exe deployment/nekobox_setup_arm64.exe
-#else
-#if [[ "$ARCH" == "windowslegacy-amd64" ]]; then
-#makensis "/DDIRECTORY=windowslegacy64" windows_installer.nsi
-#install -D nekobox_setup.exe deployment/nekobox_setup_legacy.exe
-#else
-#if [[ "$ARCH" == "windowslegacy-arm64" ]]; then
-#makensis "/DDIRECTORY=windowslegacy-arm64" windows_installer.nsi
-#install -D nekobox_setup.exe deployment/nekobox_setup_legacy_arm64.exe
-#fi
-#fi
-#fi
-#fi
-#fi
-#)
+(
+cd "$CURDIR"
+pwd
+makensis.exe "-DSOFTWARE_VERSION=$INPUT_VERSION" "-DSOFTWARE_NAME=NekoBox" "-DDIRECTORY=$DEST" "-DOUTFILE=$INST" "-NOCD" 'script/windows_installer.nsi'
+)

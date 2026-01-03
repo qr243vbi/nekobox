@@ -1,4 +1,4 @@
-#include "include/configs/proxy/includes.h"
+#include "nekobox/configs/proxy/includes.h"
 
 #include <QApplication>
 #include <QHostInfo>

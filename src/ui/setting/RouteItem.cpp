@@ -1,15 +1,16 @@
-#include "include/ui/setting/RouteItem.h"
-#include "include/ui/setting/dialog_manage_routes.h"
-#include "include/ui/group/dialog_edit_group.h"
-#include "include/dataStore/RouteEntity.h"
-#include "include/dataStore/Database.hpp"
-#include "include/api/RPC.h"
-#include "include/configs/ConfigBuilder.hpp"
+#include "nekobox/ui/setting/RouteItem.h"
+#include "nekobox/ui/setting/dialog_manage_routes.h"
+#include "nekobox/ui/group/dialog_edit_group.h"
+#include "nekobox/dataStore/RouteEntity.h"
+#include "nekobox/dataStore/Database.hpp"
+#include "nekobox/api/RPC.h"
+#include "nekobox/global/GuiUtils.hpp"
+#include "nekobox/configs/ConfigBuilder.hpp"
 #include <qnamespace.h>
-#include <include/global/HTTPRequestHelper.hpp>
+#include <nekobox/global/HTTPRequestHelper.hpp>
 #include <QRadioButton>
 
-QList<QString> default_outbound_choose = {"proxy", "direct"};
+QList<QString> default_outbound_choose = {"proxy", "direct", "block"};
 
 void adjustComboBoxWidth(const QComboBox *comboBox) {
     int maxWidth = 0;
@@ -129,6 +130,7 @@ RouteItem::RouteItem(QWidget *parent, const std::shared_ptr<Configs::RoutingChai
         auto ruleItem = chain->Rules[currentIndex];
         int outbound_id = ruleItem->outboundID;
         window->profile_selected(outbound_id, true);
+        window->last_id = outbound_id;
         window->setWindowTitle(QCoreApplication::translate(
         "DialogGroupChooseProxy","Select outbound"));
         window->ui->proxy_label->setText(QCoreApplication::translate(
@@ -161,13 +163,38 @@ RouteItem::RouteItem(QWidget *parent, const std::shared_ptr<Configs::RoutingChai
                 break;
         }
 
+        window->is_for_routeprofile = true;
+
+        connect(radio1, &QRadioButton::clicked, this, [window](bool b)->void{
+            window->profile_selected(-1);
+        });
+
+        connect(radio2, &QRadioButton::clicked, this, [window](bool b)->void{
+            window->profile_selected(-2);
+        });
+
+        connect(radio3, &QRadioButton::clicked, this, [window](bool b)->void{
+            window->profile_selected(window->last_id);
+        });
+
+        connect(window, &DialogGroupChooseProxy::select_proxy,
+                this, [=](int id)->void{
+            if (id >= 0){
+                window->last_id = id;
+                runOnUiThread([radio3]()->void{
+                    radio3->setChecked(true);
+                });
+            }
+        });
+
         connect(window, &DialogGroupChooseProxy::set_proxy, 
-                this, [ruleItem, this, radio1, radio2, radio3](int id)->void{
+                this, [radio1, radio2, ruleItem, this](int id)->void{
             if (radio1->isChecked()){
                 id = -1;
             } else if (radio2->isChecked()){
                 id = -2;
             }
+
             proxy_chooser->setText(DialogEditGroup::get_proxy_name(id, true));
             ruleItem->outboundID = id;
             chain->Rules[currentIndex]->set_field_value("outbound", {QString::number(id)});
@@ -189,7 +216,7 @@ RouteItem::RouteItem(QWidget *parent, const std::shared_ptr<Configs::RoutingChai
         int randPart;
         if (baseName == "") {
             randPart = int(GetRandomUint64()%1000);
-            baseName = "rule_" + Int2String(randPart);
+            baseName = "rule_" + QString::number(randPart);
             lastNum = std::max(lastNum, randPart);
         }
         while (true) {
@@ -197,7 +224,7 @@ RouteItem::RouteItem(QWidget *parent, const std::shared_ptr<Configs::RoutingChai
             if (valueMap[baseName] > 1) {
                 valueMap[baseName]--;
                 randPart = int(GetRandomUint64()%1000);
-                baseName = "rule_" + Int2String(randPart);
+                baseName = "rule_" + QString::number(randPart);
                 lastNum = std::max(lastNum, randPart);
                 continue;
             }
@@ -250,9 +277,18 @@ RouteItem::RouteItem(QWidget *parent, const std::shared_ptr<Configs::RoutingChai
     simpleBlock->setPlainText(chain->GetSimpleRules(Configs::block));
     simpleProxy->setPlainText(chain->GetSimpleRules(Configs::proxy));
 
-    connect(ui->tabWidget->tabBar(), &QTabBar::currentChanged, this, [=,this]()
+    connect(ui->tabWidget->tabBar(), &QTabBar::currentChanged, this, [this]()
     {
-        if (ui->tabWidget->tabBar()->currentIndex() == 1)
+        auto tabBar = ui->tabWidget->tabBar();
+        int index = tabBar->currentIndex();
+
+        if (!route_item_on_notes){
+            if (index == 3){
+                ui->notes->setPlainText(this->chain->getNotes());
+                route_item_on_notes = true;
+            }    
+        }
+        if (index == 2)
         {
             QString res;
             res += chain->UpdateSimpleRules(simpleDirect->toPlainText(), Configs::direct);
@@ -396,6 +432,10 @@ void RouteItem::accept() {
     chain->update_url = ui->url->text();
     chain->skip_update = ui->skip_update->isChecked();
 
+    if (route_item_on_notes){
+        this->chain->saveNotes(ui->notes->toPlainText());
+    }
+
     if (chain->chain_name == "") {
         MessageBoxWarning(tr("Invalid operation"), tr("Cannot create Route Profile with empty name"));
         return;
@@ -531,7 +571,7 @@ void RouteItem::showTextEnterItem(const QStringList& items, bool isRuleSet) {
 
 void RouteItem::on_new_route_item_clicked() {
     auto routeItem = std::make_shared<Configs::RouteRule>();
-    routeItem->name = "rule_" + Int2String(++lastNum);
+    routeItem->name = "rule_" + QString::number(++lastNum);
     chain->Rules << routeItem;
     currentIndex = chain->Rules.size() - 1;
     ui->rule_name->setText(routeItem->name);

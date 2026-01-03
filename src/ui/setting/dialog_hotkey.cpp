@@ -1,9 +1,9 @@
-#include "include/ui/setting/dialog_hotkey.h"
+#include "nekobox/ui/setting/dialog_hotkey.h"
 
-#include <include/global/GuiUtils.hpp>
+#include <nekobox/global/GuiUtils.hpp>
 
-#include "include/ui/mainwindow_interface.h"
-#include <include/global/keyvaluerange.h>
+#include "nekobox/ui/mainwindow_interface.h"
+#include <nekobox/global/keyvaluerange.h>
 #include <QAction>
 
 DialogHotkey::DialogHotkey(QWidget *parent, const QList<QAction*>& actions) : QDialog(parent), ui(new Ui::DialogHotkey) {

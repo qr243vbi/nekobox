@@ -1,10 +1,12 @@
 #pragma once
 
-#include "3rdparty/qv2ray/wrapper.hpp"
-#include "3rdparty/qv2ray/v2/ui/widgets/common/QJsonModel.hpp"
+#include "../../../../wrapper.hpp"
+#include "../common/QJsonModel.hpp"
 #include "ui_w_JsonEditor.h"
-
+#include <QMessageBox>
 #include <QDialog>
+
+#define QvMessageBoxWarn(a, b, c) QMessageBox::warning(a, b, c)
 
 class JsonEditor
     : public QDialog,

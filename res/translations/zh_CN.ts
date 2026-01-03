@@ -4,6 +4,18 @@
 <context>
     <name>DialogBasicSettings</name>
     <message>
+        <source>Custom System Parameters (optional)</source>
+        <translation>自訂系統參數（可選）</translation>
+    </message>
+    <message>
+             <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Format: hwid=value,os=value,osVersion=value,model=value&lt;/p&gt;&lt;p&gt;Leave empty to use default values. Only specify the parameters you want to override.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;格式： hwid=自訂值,os=自訂作業系統,osVersion=自訂版本,model=自訂型號&lt;/p&gt;&lt;p&gt;若要使用預設值，請留空。僅需指定您要覆寫的參數。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>hwid=custom_value,os=custom_os,osVersion=custom_version,model=custom_model</source>
+        <translation>hwid=自訂值,os=自訂作業系統,osVersion=自訂版本,model=自訂型號</translation>
+    </message>
+    <message>
         <source>Basic Settings</source>
         <translation>基本设置</translation>
     </message>
@@ -22,6 +34,74 @@
     <message>
         <source>Emoji Font</source>
         <translation>表情符号字体</translation>
+    </message>
+        <message>
+        <source>Auto-Testing</source>
+        <translation>自动测试</translation>
+    </message>
+    <message>
+        <source>Enable Auto-Testing</source>
+        <translation>启用自动测试</translation>
+    </message>
+    <message>
+        <source>Automatically test proxies in the background and maintain a pool of working proxies</source>
+        <translation>在后台自动测试代理，并维护一个可用代理池</translation>
+    </message>
+    <message>
+        <source>Test Interval (seconds)</source>
+        <translation>测试间隔（秒）</translation>
+    </message>
+    <message>
+        <source>How often to run the test cycle</source>
+        <translation>测试循环的执行频率</translation>
+    </message>
+    <message>
+        <source>Proxies Per Cycle</source>
+        <translation>每轮测试的代理数量</translation>
+    </message>
+    <message>
+        <source>Number of proxies to test in each cycle</source>
+        <translation>每个测试周期中要测试的代理数量</translation>
+    </message>
+    <message>
+        <source>Working Pool Size</source>
+        <translation>可用代理池大小</translation>
+    </message>
+    <message>
+        <source>Maximum number of verified working proxies to maintain</source>
+        <translation>维护的已验证可用代理的最大数量</translation>
+    </message>
+    <message>
+        <source>Latency Threshold (ms)</source>
+        <translation>延迟阈值（毫秒）</translation>
+    </message>
+    <message>
+        <source>Maximum latency to consider a proxy as working</source>
+        <translation>判定代理为可用的最大延迟</translation>
+    </message>
+    <message>
+        <source>Failure Retry Count</source>
+        <translation>失败重试次数</translation>
+    </message>
+    <message>
+        <source>Number of retry attempts before considering a proxy as failed</source>
+        <translation>在判定代理失败前的重试次数</translation>
+    </message>
+    <message>
+        <source>Test Target URL</source>
+        <translation>测试目标 URL</translation>
+    </message>
+    <message>
+        <source>URL to test proxies against</source>
+        <translation>用于测试代理的目标网址</translation>
+    </message>
+    <message>
+        <source>Enable TUN Failover</source>
+        <translation>启用 TUN 故障切换</translation>
+    </message>
+    <message>
+        <source>Automatically switch to another working proxy when TUN mode proxy fails</source>
+        <translation>TUN 模式代理失效时自动切换到其他可用代理</translation>
     </message>
     <message>
         <source>Startup</source>
@@ -115,6 +195,10 @@
     <message>
         <source>Security</source>
         <translation>安全</translation>
+    </message>
+    <message>
+        <source>Hide at startup</source>
+        <translation>啟動時隱藏</translation>
     </message>
     <message>
         <source>Connection statistics</source>
@@ -387,19 +471,19 @@
     </message>
     <message>
         <source>Front proxy: </source>
-        <translation>前端代理：</translation>
+        <translation>前置代理：</translation>
     </message>
     <message>
         <source>Front proxy for group %1</source>
-        <translation>组 %1 的前端代理</translation>
+        <translation>前置代理 => %1</translation>
     </message>
     <message>
         <source>Landing proxy: </source>
-        <translation>着陆代理：</translation>
+        <translation>落地代理：</translation>
     </message>
     <message>
         <source>Landing proxy for group %1</source>
-        <translation>为组 %1 设置代理服务器</translation>
+        <translation>落地代理 => %1</translation>
     </message>
     <message>
         <source>Discard</source>
@@ -407,6 +491,10 @@
     </message>
     <message>
         <source>Restore Defaults</source>
+        <translation>恢复默认设置</translation>
+    </message>
+    <message>
+        <source>Defaults</source>
         <translation>恢复默认设置</translation>
     </message>
 </context>
@@ -438,7 +526,7 @@
     </message>
     <message>
         <source>Subscription</source>
-        <translation>订阅</translation>
+        <translation>订阅地址</translation>
     </message>
     <message>
         <source>URL</source>
@@ -773,6 +861,14 @@
         <translation>禁用</translation>
     </message>
     <message>
+        <source>remote</source>
+        <translation>遠端</translation>
+    </message>
+    <message>
+        <source>direct</source>
+        <translation>直接</translation>
+    </message>
+    <message>
         <source>Sniffing Mode</source>
         <translation>嗅探模式(流量探测)</translation>
     </message>
@@ -871,6 +967,10 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
     <message>
         <source>Remote Rule-set Mirror</source>
         <translation>远程更新规则网站</translation>
+    </message>
+    <message>
+        <source>RuleSet download url</source>
+        <translation>规则集下载网址</translation>
     </message>
     <message>
         <source>Enable FakeIP</source>
@@ -1633,6 +1733,10 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>隐藏窗口</translation>
     </message>
     <message>
+        <source>Rulesets cache is updated</source>
+        <translation>规则集缓存已更新</translation>
+    </message>
+    <message>
         <source>No routing profiles are updated</source>
         <translation>没有更新的个人资料</translation>
     </message>
@@ -1657,7 +1761,15 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>請求規則集清單錯誤：%1</translation>
     </message>
     <message>
-        <source>Update RuleSet</source>
+        <source>Update RuleSet Cache</source>
+        <translation>更新规则集缓存</translation>
+    </message>
+    <message>
+        <source>Clear RuleSet Cache</source>
+        <translation>清除規則集快取</translation>
+    </message>
+    <message>
+        <source>Update RuleSet Map</source>
         <translation>更新规则集</translation>
     </message>
     <message>
@@ -1738,7 +1850,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     </message>
     <message>
         <source>Clear Test Result</source>
-        <translation>清理测试结果</translation>
+        <translation>清理 此分组 测试结果</translation>
     </message>
     <message>
         <source>Scan QR Code</source>
@@ -1910,7 +2022,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     </message>
     <message>
         <source>Resolve domain</source>
-        <translation>解析(服务器)域名</translation>
+        <translation>解析 此分组 服务器域名</translation>
     </message>
     <message>
         <source>Export %1 config</source>
@@ -2006,7 +2118,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     </message>
     <message>
         <source>Url Test Selected</source>
-        <translation>URL 测试选定项</translation>
+        <translation>测试此节点URL延迟</translation>
     </message>
     <message>
         <source>Rulesets updated successfully</source>
@@ -2022,7 +2134,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     </message>
     <message>
         <source>Current selected</source>
-        <translation>目前選取</translation>
+        <translation>节点功能选择</translation>
     </message>
     <message>
         <source>Current group</source>
@@ -2034,7 +2146,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     </message>
     <message>
         <source>Url Test Group</source>
-        <translation>URL 测试分组</translation>
+        <translation>此分组测试URL延迟</translation>
     </message>
     <message>
         <source>Ctrl+Shift+G</source>
@@ -2050,7 +2162,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     </message>
     <message>
         <source>Remove Invalid</source>
-        <translation>移除无效项</translation>
+        <translation>移除 此分组 无效节点</translation>
     </message>
     <message>
         <source>Ctrl+Alt+I</source>
@@ -2234,7 +2346,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     </message>
     <message>
         <source>Speedtest Selected</source>
-        <translation>速度测试选定项</translation>
+        <translation>测试此节点（ 上传+下载 ）速度</translation>
     </message>
     <message>
         <source>Speedtest Group</source>
@@ -2496,6 +2608,59 @@ Release note:
         <source>OK</source>
         <translation>确定</translation>
     </message>
+    <message>
+        <source>Discard</source>
+        <translation>弃置</translation>
+    </message>
+    <message>
+        <source>Restore Defaults</source>
+        <translation>恢复默认设置</translation>
+    </message>
+    <message>
+        <source>Defaults</source>
+        <translation>恢复默认设置</translation>
+    </message>
+
+    <message>
+    <source>Undo</source>
+    <translation>撤消</translation>
+</message>
+<message>
+    <source>Redo</source>
+    <translation>重做</translation>
+</message>
+<message>
+    <source>Cut</source>
+    <translation>剪切</translation>
+</message>
+<message>
+    <source>Copy</source>
+    <translation>复制</translation>
+</message>
+<message>
+    <source>Paste</source>
+    <translation>粘贴</translation>
+</message>
+<message>
+    <source>Delete</source>
+    <translation>删除</translation>
+</message>
+<message>
+    <source>Select All</source>
+    <translation>全选</translation>
+</message>
+<message>
+    <source>Stop</source>
+    <translation>停止</translation>
+</message>
+<message>
+    <source>Clear</source>
+    <translation>清除</translation>
+</message>
+<message>
+    <source>Copy Link Location</source>
+    <translation>复制链接地址</translation>
+</message>
 </context>
 <context>
     <name>Qv2ray::ui::widgets::AutoCompleteTextEdit</name>

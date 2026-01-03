@@ -1,12 +1,12 @@
-#include "include/ui/mainwindow.h"
+#include "nekobox/ui/mainwindow.h"
 
-#include "include/dataStore/Database.hpp"
-#include "include/configs/ConfigBuilder.hpp"
-#include "include/stats/traffic/TrafficLooper.hpp"
-#include "include/api/RPC.h"
-#include "include/ui/utils//MessageBoxTimer.h"
+#include "nekobox/dataStore/Database.hpp"
+#include "nekobox/configs/ConfigBuilder.hpp"
+#include "nekobox/stats/traffic/TrafficLooper.hpp"
+#include "nekobox/api/RPC.h"
+#include "nekobox/ui/utils//MessageBoxTimer.h"
 #include "3rdparty/qv2ray/v2/proxy/QvProxyConfigurator.hpp"
-
+#include <nekobox/global/GuiUtils.hpp>
 #include <QInputDialog>
 #include <QPushButton>
 #include <QDesktopServices>
@@ -34,6 +34,14 @@ void MainWindow::setup_rpc() {
     // Looper
     runOnNewThread([=] { Stats::trafficLooper->Loop(); });
     runOnNewThread([=] {Stats::connection_lister->Loop(); });
+
+    // Start auto-testing if enabled (access via GetMainWindow since this is static)
+    auto mw = GetMainWindow();
+    if (Configs::dataStore->auto_test_enable && mw && mw->proxyAutoTester) {
+        mw->proxyAutoTester->Start();
+        MW_show_log("[Auto-Test] Started with interval of " +
+                    QString::number(Configs::dataStore->auto_test_interval_seconds) + " seconds");
+    }
 }
 
 void MainWindow::runURLTest(const QString& config, bool useDefault, const QStringList& outboundTags, const QMap<QString, int>& tag2entID, int entID) {
@@ -148,7 +156,9 @@ void MainWindow::urltest_current_group(const QList<std::shared_ptr<Configs::Prox
         return;
     }
     if (!speedtestRunning.tryLock()) {
-        MessageBoxWarning(software_name, tr("The last url test did not exit completely, please wait. If it persists, please restart the program."));
+        runOnUiThread([this](){
+            QMessageBox::warning(this, software_name, tr("The last url test did not exit completely, please wait. If it persists, please restart the program."));
+        });
         return;
     }
 
@@ -245,7 +255,9 @@ void MainWindow::speedtest_current_group(const QList<std::shared_ptr<Configs::Pr
         return;
     }
     if (!speedtestRunning.tryLock()) {
-        MessageBoxWarning(software_name, tr("The last speed test did not exit completely, please wait. If it persists, please restart the program."));
+        runOnUiThread([this](){
+            QMessageBox::warning(this, software_name, tr("The last speed test did not exit completely, please wait. If it persists, please restart the program."));
+        });
         return;
     }
 
@@ -472,6 +484,7 @@ bool MainWindow::set_system_dns(bool set, bool save_set) {
 }
 
 void MainWindow::profile_start(int _id) {
+    
     if (Configs::dataStore->prepare_exit) return;
 #ifdef Q_OS_UNIX
     if (Configs::dataStore->enable_dns_server && Configs::dataStore->dns_server_listen_port <= 1024) {
@@ -481,43 +494,29 @@ void MainWindow::profile_start(int _id) {
         }
     }
 #endif
+     
+    qDebug() << "profile starting: " << _id;
 
     auto ents = get_now_selected_list();
     auto ent = (_id < 0 && !ents.isEmpty()) ? ents.first() : Configs::profileManager->GetProfile(_id);
     if (ent == nullptr) return;
-
+/*
     if (select_mode) {
         emit profile_selected(ent->id);
         select_mode = false;
-        refresh_status();
+        runOnUiThread([this](){
+            refresh_status();
+        });
         return;
     }
-
+*/
     auto group = Configs::profileManager->GetGroup(ent->gid);
     if (group == nullptr || group->archive) return;
 
-    auto result = BuildConfig(ent, false, false);
-    if (!result->error.isEmpty()) {
-        MessageBoxWarning(tr("BuildConfig return error"), result->error);
-        return;
-    }
-
     auto profile_start_stage2 = [=, this] {
-        libcore::LoadConfigReq req;
-        req.core_config = (QJsonObject2QString(result->coreConfig, true)).toStdString();
-        req.disable_stats = (Configs::dataStore->disable_traffic_stats);
-        if (ent->type == "extracore")
-        {
-            req.need_extra_process = (true);
-            req.extra_process_path = (result->extraCoreData->path).toStdString();
-            req.extra_process_args = (result->extraCoreData->args).toStdString();
-            req.extra_process_conf = (result->extraCoreData->config).toStdString();
-            req.extra_process_conf_dir = (result->extraCoreData->configDir).toStdString();
-            req.extra_no_out = (result->extraCoreData->noLog);
-        }
         //
         bool rpcOK;
-        QString error = defaultClient->Start(&rpcOK, req);
+        auto [error, result] = defaultClient->StartEntity(&rpcOK, ent);
         if (!rpcOK) {
             return false;
         }
@@ -545,7 +544,9 @@ void MainWindow::profile_start(int _id) {
                 });
                 return false;
             }
-            runOnUiThread([=,this] { MessageBoxWarning("LoadConfig return error", error); });
+            runOnUiThread([error,this] { 
+               QMessageBox::warning(this, "LoadConfig return error", error); 
+            });
             return false;
         }
         //
@@ -568,11 +569,17 @@ void MainWindow::profile_start(int _id) {
     };
 
     if (!mu_starting.tryLock()) {
-        MessageBoxWarning(software_name, tr("Another profile is starting..."));
+        
+        runOnUiThread([this](){
+            QMessageBox::warning(this, software_name, tr("Another profile is starting..."));
+        });
         return;
     }
     if (!mu_stopping.tryLock()) {
-        MessageBoxWarning(software_name, tr("Another profile is stopping..."));
+        
+        runOnUiThread([this](){
+            QMessageBox::warning(this, software_name, tr("Another profile is stopping..."));
+        });
         mu_starting.unlock();
         return;
     }
@@ -595,12 +602,16 @@ void MainWindow::profile_start(int _id) {
     auto restartMsgbox = new QMessageBox(QMessageBox::Question, software_name, tr("If there is no response for a long time, it is recommended to restart the software."), QMessageBox::Yes | QMessageBox::No, this);
     connect(restartMsgbox, &QMessageBox::accepted, this, [=,this] { MW_dialog_message("", "RestartProgram"); });
     auto restartMsgboxTimer = new MessageBoxTimer(this, restartMsgbox, 10000);
-
+    QMutex * mutex = new QMutex();
+    mutex->lock();
+    runOnUiThread([this, mutex](){
+        profile_stop(false, true, true);
+        mutex->unlock();
+    });
     runOnNewThread([=, this] {
-        // stop current running
-        if (running != nullptr) {
-            profile_stop(false, true, true);
-        }
+        mutex->lock();
+        mutex->unlock();
+        delete mutex;
         // do start
         MW_show_log(">>>>>>>> " + tr("Starting profile %1").arg(ent->bean->DisplayTypeAndName()));
         if (!profile_start_stage2()) {
@@ -649,7 +660,9 @@ void MainWindow::profile_stop(bool crash, bool block, bool manual) {
             bool rpcOK;
             QString error = defaultClient->Stop(&rpcOK);
             if (rpcOK && !error.isEmpty()) {
-                runOnUiThread([=,this] { MessageBoxWarning(tr("Stop return error"), error); });
+                runOnUiThread([=,this] { 
+                    QMessageBox::warning(this, tr("Stop return error"), error); 
+                });
                 return false;
             } else if (!rpcOK) {
                 return false;

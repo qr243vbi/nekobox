@@ -1,4 +1,4 @@
-#include "include/sys/windows/MiniDump.h"
+#include "nekobox/sys/windows/MiniDump.h"
 
 #ifndef WIN32_LEAN_AND_MEAN
 #define WIN32_LEAN_AND_MEAN
@@ -12,7 +12,9 @@
 #include <QDateTime>
 #include <QMessageBox>
 
-#include <include/js/version.h>
+#include <nekobox/js/version.h>
+#include "nekobox/global/GuiUtils.hpp"
+
 
 typedef BOOL(WINAPI *MINIDUMPWRITEDUMP)(
     HANDLE hProcess,
@@ -24,7 +26,7 @@ typedef BOOL(WINAPI *MINIDUMPWRITEDUMP)(
     CONST PMINIDUMP_CALLBACK_INFORMATION CallbackParam);
 
 LONG __stdcall CreateCrashHandler(EXCEPTION_POINTERS *pException) {
-    QDir::setCurrent(QApplication::applicationDirPath());
+    QDir::setCurrent(root_directory);
 
     HMODULE DllHandle = NULL;
     DllHandle = LoadLibrary(_T("DBGHELP.DLL"));
@@ -75,3 +77,5 @@ void Windows_SetCrashHandler() {
     SetErrorMode(SEM_FAILCRITICALERRORS);
     SetUnhandledExceptionFilter(CreateCrashHandler);
 }
+
+

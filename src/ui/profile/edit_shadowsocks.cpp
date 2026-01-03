@@ -1,7 +1,7 @@
-#include "include/ui/profile/edit_shadowsocks.h"
+#include "nekobox/ui/profile/edit_shadowsocks.h"
 
-#include "include/configs/proxy/ShadowSocksBean.hpp"
-#include "include/configs/proxy/Preset.hpp"
+#include "nekobox/configs/proxy/ShadowSocksBean.hpp"
+#include "nekobox/configs/proxy/Preset.hpp"
 
 EditShadowSocks::EditShadowSocks(QWidget *parent) : QWidget(parent),
                                                     ui(new Ui::EditShadowSocks) {

@@ -2,10 +2,10 @@
 #include <winsock2.h>
 #include <windows.h>
 #endif
-#include "include/dataStore/Database.hpp"
+#include "nekobox/dataStore/Database.hpp"
 
-#include "include/configs/proxy/includes.h"
-#include "include/configs/proxy/AbstractBean.hpp"
+#include "nekobox/configs/proxy/includes.h"
+#include "nekobox/configs/proxy/AbstractBean.hpp"
 
 #include <QDir>
 
@@ -81,11 +81,18 @@ namespace Configs {
             groups[id] = ent;
             if (ent->profiles.isEmpty()) needToCheckGroups << id;
         }
+        QList<int> orphanProfiles;
         for (const auto& [id, proxy] : profiles)
         {
             // corrupted data
-            if (groups.count(proxy->gid) < 1 || !needToCheckGroups.contains(proxy->gid)) continue;
-            groups[proxy->gid]->AddProfile(id);
+            if (!groups.contains(proxy->gid) || (!needToCheckGroups.contains(proxy->gid) && !groups[proxy->gid]->HasProfile(id))) {
+                orphanProfiles << id;
+                continue;
+            }
+            if (needToCheckGroups.contains(proxy->gid)) groups[proxy->gid]->AddProfile(id);
+        }
+        for (int id : orphanProfiles) {
+            deleteProfile(id);
         }
         for (const auto groupID : needToCheckGroups)
         {

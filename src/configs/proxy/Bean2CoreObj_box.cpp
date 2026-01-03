@@ -1,5 +1,5 @@
-#include "include/dataStore/ProxyEntity.hpp"
-#include "include/configs/proxy/includes.h"
+#include "nekobox/dataStore/ProxyEntity.hpp"
+#include "nekobox/configs/proxy/includes.h"
 #include <qjsonobject.h>
 
 namespace Configs {

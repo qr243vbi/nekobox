@@ -1,8 +1,8 @@
-#include "include/ui/group/GroupItem.h"
+#include "nekobox/ui/group/GroupItem.h"
 
-#include "include/ui/group/dialog_edit_group.h"
-#include "include/global/GuiUtils.hpp"
-#include "include/configs/sub/GroupUpdater.hpp"
+#include "nekobox/ui/group/dialog_edit_group.h"
+#include "nekobox/global/GuiUtils.hpp"
+#include "nekobox/configs/sub/GroupUpdater.hpp"
 
 #include <QMessageBox>
 
@@ -64,7 +64,7 @@ void GroupItem::refresh_data() {
 
     auto type = ent->url.isEmpty() ? tr("Basic") : tr("Subscription");
     if (ent->archive) type = tr("Archive") + " " + type;
-    type += " (" + Int2String(ent->Profiles().length()) + ")";
+    type += " (" + QString::number(ent->Profiles().length()) + ")";
     ui->type->setText(type);
 
     if (ent->url.isEmpty()) {
@@ -107,7 +107,7 @@ void GroupItem::on_edit_clicked() {
         if (dialog->result() == QDialog::Accepted) {
             ent->Save();
             refresh_data();
-            MW_dialog_message(Dialog_DialogManageGroups, "refresh" + Int2String(ent->id));
+            MW_dialog_message(Dialog_DialogManageGroups, "refresh" + QString::number(ent->id));
         }
         dialog->deleteLater();
     });

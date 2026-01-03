@@ -15,7 +15,7 @@ import (
 	"sync"
 	"time"
 
-	"Core/speedtest/transport"
+	"nekobox_core/speedtest/transport"
 )
 
 const (

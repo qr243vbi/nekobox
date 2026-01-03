@@ -2,31 +2,112 @@
 #include <winsock2.h>
 #include <windows.h>
 #endif
-#include "include/configs/ConfigBuilder.hpp"
-#include "include/dataStore/Database.hpp"
-#include "include/configs/proxy/includes.h"
-#include "include/configs/proxy/Preset.hpp"
-#include "include/api/RPC.h"
+#include "nekobox/configs/ConfigBuilder.hpp"
+#include "nekobox/dataStore/Database.hpp"
+#include "nekobox/configs/proxy/includes.h"
+#include "nekobox/configs/proxy/Preset.hpp"
+#include "nekobox/api/RPC.h"
 
 #include <QApplication>
 #include <QFile>
 #include <QFileInfo>
 #include <QDir>
 #include <QStandardPaths>
+#include <QDateTime>
+
 namespace Configs {
+
+    QString get_rule_set_name_1(const QString &ruleSet){
+        QUrl url;
+        QString filename;
+        if ((url = QUrl(ruleSet), url.isValid()) && 
+            (filename = url.fileName(), 
+                (filename.endsWith(".srs")) || (filename.endsWith(".json")))
+        )
+        {
+            return filename.replace(".", "-") + "-" + 
+                QString::number(qHash(url.toEncoded()));
+        } else {
+            return ruleSet;
+        }
+    }
+
+    QJsonObject get_rule_set_json(const QString &ruleSet){
+        QString filename;
+        QString format;
+        QUrl url;
+
+        bool reset = false;
+
+        bool json = false;
+        bool binary = false;
+
+        std::string strUrl;
+
+        label1:
+
+        if ((url = (reset ? QUrl(QString::fromStdString(strUrl)) : QUrl(ruleSet)), url.isValid()) &&
+            (filename = url.fileName(), (binary = filename.endsWith(".srs")) || (json = filename.endsWith(".json")))
+        )
+        {
+            QString tag;
+            if (reset){
+                tag = ruleSet;
+            } else {
+                tag = filename.replace(".", "-") + "-" +
+                    QString::number(qHash(url.toEncoded()));
+            }
+            if (json){
+                format = "source";
+            } else if (binary){
+                format = "binary";
+            }
+
+            QFileInfo CachePath (get_cache_from_url(url));
+            if (CachePath.exists() || CachePath.isFile()){
+                return QJsonObject{
+                    {"type", "local"},
+                    {"format", format},
+                    {"tag", tag},
+                    {"path", CachePath.absoluteFilePath()}
+                };
+            }
+
+            return QJsonObject{
+                {"type", "remote"},
+                {"format", format},
+                {"tag", tag},
+                {"url", get_jsdelivr_link(url.toString())} 
+            };
+        } else if (!reset){
+
+            auto iter = ruleSetMap.find(ruleSet.toStdString());
+            if(iter != ruleSetMap.end()){
+                reset = true;
+                strUrl = iter->second;
+                goto label1;
+            } else if (ruleSet == "nekobox-adblocksingbox"){
+                reset = true;
+                strUrl = "https://raw.githubusercontent.com/217heidai/adblockfilters/main/rules/adblocksingbox.srs";
+                goto label1;
+            }
+        }
+        return QJsonObject{};
+    }
+
     QString genTunName() {
         auto tun_name = "nekobox-tun";
         return tun_name;
     }
 
     void MergeJson(const QJsonObject &custom, QJsonObject &outbound) {
-        // 合并
+        //
         if (custom.isEmpty()) return;
         for (const auto &key: custom.keys()) {
             if (outbound.contains(key)) {
                 auto v = custom[key];
                 auto v_orig = outbound[key];
-                if (v.isObject() && v_orig.isObject()) { // isObject 则合并？
+                if (v.isObject() && v_orig.isObject()) { //
                     auto vo = v.toObject();
                     QJsonObject vo_orig = v_orig.toObject();
                     MergeJson(vo, vo_orig);
@@ -179,7 +260,7 @@ namespace Configs {
                 if (outbound["tag"] == "direct" || outbound["tag"] == "block" || outbound["tag"] == "dns-out" || outbound["tag"].toString().startsWith("rout")) continue;
                 if (outbound["tag"] == "proxy") {
                     QString tag = "proxy";
-                    if (index > 1) tag += Int2String(index);
+                    if (index > 1) tag += QString::number(index);
                     outbound.insert("tag", tag);
                     if (outbound["type"] == "wireguard" || outbound["type"] == "tailscale")
                     {
@@ -289,13 +370,13 @@ namespace Configs {
 
     QString BuildChainInternal(int chainId, const QList<std::shared_ptr<ProxyEntity>> &ents,
                                const std::shared_ptr<BuildConfigStatus> &status) {
-        QString chainTag = "c-" + Int2String(chainId);
+        QString chainTag = "c-" + QString::number(chainId);
         QString chainTagOut;
         bool lastWasEndpoint = false;
 
         for (int index = 0; index < ents.length(); index++) {
             const auto& ent = ents.at(index);
-            auto tagOut = chainTag + "-" + Int2String(ent->id) + "-" + Int2String(index);
+            auto tagOut = chainTag + "-" + QString::number(ent->id) + "-" + QString::number(index);
 
             // last profile set as "proxy"
             if (index == 0) {
@@ -713,7 +794,7 @@ namespace Configs {
             routeObj["auto_detect_interface"] = true;
         }
         if (!status->forTest) {
-            if (dataStore->enable_stats)
+            if (dataStore->connection_statistics)
             {
                 routeObj["find_process"] = true;
             }
@@ -748,7 +829,7 @@ namespace Configs {
                     return;
                 }
                 QJsonObject currOutbound;
-                QString tag = "rout-" + Int2String(suffix++);
+                QString tag = "rout-" + QString::number(suffix++);
                 BuildOutbound(neededEnt, status, currOutbound, tag);
                 if (neededEnt->type == "wireguard")
                 {
@@ -790,41 +871,18 @@ namespace Configs {
 
             auto ruleSetArray = QJsonArray();
             for (const auto &item: *neededRuleSets) {
-                if(auto url = QUrl(item); url.isValid() && url.fileName().contains(".srs")) {
-                    ruleSetArray += QJsonObject{
-                        {"type", "remote"},
-                        {"tag", get_rule_set_name(item)},
-                        {"format", "binary"},
-                        {"url", item},
-                    };
-                }
-                else {
-                    auto iter = ruleSetMap.find(item.toStdString());
-                    if(iter != ruleSetMap.end()) {
-                        ruleSetArray += QJsonObject{
-                            {"type", "remote"},
-                            {"tag", item},
-                            {"format", "binary"},
-                            {"url", get_jsdelivr_link(QString::fromStdString(iter->second))},
-                        };
-                    }
+                auto json_object = get_rule_set_json(item);
+                if (!json_object.isEmpty()){
+                    ruleSetArray += json_object;
                 }
             }
             if (dataStore->adblock_enable) {
-                std::string str;
-                auto iter = ruleSetMap.find("nekobox-addblocksingbox");
-                if (iter != ruleSetMap.end()){
-                    str = iter->second;
-                } else {
-                    str = "https://raw.githubusercontent.com/217heidai/adblockfilters/main/rules/adblocksingbox.srs";
+                QString item = "nekobox-adblocksingbox";
+                qDebug() << item;
+                auto json_object = get_rule_set_json(item);
+                if (!json_object.isEmpty()){
+                    ruleSetArray += json_object;
                 }
-                ruleSetArray += QJsonObject{
-                    {"type", "remote"},
-                    {"tag", "nekobox-adblocksingbox"},
-                    {"format", "binary"},
-                    {"url", get_jsdelivr_link(
-                    QString::fromStdString(str))},
-                };
             }
             routeObj["rule_set"] = ruleSetArray;
         }
@@ -865,7 +923,7 @@ namespace Configs {
         directDnsObj["domain_resolver"] = "dns-local";
 
         // default dns server
-        if (dataStore->routing->dns_final_out == "direct") {
+        if (dataStore->routing->dns_final_out_direct) {
             dnsServers.prepend(directDnsObj);
         } else {
             dnsServers.append(directDnsObj);
@@ -977,23 +1035,37 @@ namespace Configs {
         {
             if (dataStore->core_box_clash_api > 0){
                 clash_api = {
-                {"external_controller", dataStore->core_box_clash_listen_addr + ":" + Int2String(dataStore->core_box_clash_api)},
+                {"external_controller", dataStore->core_box_clash_listen_addr + ":" + QString::number(dataStore->core_box_clash_api)},
                 {"secret", dataStore->core_box_clash_api_secret},
                 {"external_ui", "dashboard"},
                 };
             }
-            if (dataStore->core_box_clash_api > 0 || dataStore->enable_stats)
+            if (dataStore->core_box_clash_api > 0 || dataStore->connection_statistics)
             {
                 experimentalObj["clash_api"] = clash_api;
             }
 
             auto cachePath = QStandardPaths::writableLocation(QStandardPaths::CacheLocation);
             QDir().mkpath(cachePath);//create parent dir tree
+
+            QString cache_database;
+            QString cacheFile;
+            if ((cache_database = Configs::dataStore->cache_database) == "" ){
+                label1:
+                cache_database = Configs::dataStore->cache_database = GetRandomString(16);
+                cacheFile = cachePath + "/nekobox_cache_" + cache_database;
+            } else {
+                cacheFile = cachePath + "/nekobox_cache_" + cache_database;
+                if (!QFile::exists(cacheFile)){
+                    goto label1;
+                }
+            }
+
             QJsonObject cache_file = {
                 {"enabled", true},
                 {"store_fakeip", true},
                 {"store_rdrc", true},
-                {"path", cachePath + "/cache.db"}
+                {"path", cacheFile + ".db"}
             };
             experimentalObj["cache_file"] = cache_file;
         }

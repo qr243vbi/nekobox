@@ -4,7 +4,6 @@
 #endif
 #include <csignal>
 
-#include <QApplication>
 #include <QCryptographicHash>
 #include <QDir>
 #include <QTranslator>
@@ -14,29 +13,34 @@
 #include <QLocalServer>
 #include <QThread>
 #include <QFileInfo>
+#include <QApplication>
+
 
 #ifdef Q_OS_WIN
 #include <3rdparty/WinCommander.hpp>
 #include <windows.h>
 
 #include <iostream>
-#include "include/sys/windows/MiniDump.h"
-#include "include/sys/windows/eventHandler.h"
-#include "include/sys/windows/WinVersion.h"
+#include "nekobox/sys/windows/MiniDump.h"
+#include "nekobox/sys/windows/eventHandler.h"
+#include "nekobox/sys/windows/WinVersion.h"
 #include <qfontdatabase.h>
 #endif
 
-#include "include/sys/Settings.h"
-#include "include/dataStore/ResourceEntity.hpp"
+#include "nekobox/sys/Settings.h"
+#include "nekobox/dataStore/ResourceEntity.hpp"
 
-#include "include/ui/mainwindow_interface.h"
+#include "nekobox/ui/mainwindow_interface.h"
+#include "nekobox/global/GuiUtils.hpp"
 
 std::map<std::string, std::string> ruleSetMap;
+QWidget *mainwindow;
 
 #ifdef Q_OS_UNIX
+#include <nekobox/sys/linux/LinuxCap.h>
 #include <qfontdatabase.h>
 #endif
-
+#define disable_run_admin windows_no_admin
 
 void signal_handler(int signum) {
     if (GetMainWindow()) {
@@ -54,6 +58,20 @@ void loadTranslate(const QString& locale) {
     QT_TRANSLATE_NOOP("QPlatformTheme", "Yes");
     QT_TRANSLATE_NOOP("QPlatformTheme", "No");
     QT_TRANSLATE_NOOP("QPlatformTheme", "OK");
+    QT_TRANSLATE_NOOP("QPlatformTheme", "Defaults");
+    QT_TRANSLATE_NOOP("QPlatformTheme", "Restore Defaults");
+    QT_TRANSLATE_NOOP("QPlatformTheme", "Discard");
+    
+    QT_TRANSLATE_NOOP("QPlatformTheme", "Undo");
+    QT_TRANSLATE_NOOP("QPlatformTheme", "Redo");
+    QT_TRANSLATE_NOOP("QPlatformTheme", "Cut");
+    QT_TRANSLATE_NOOP("QPlatformTheme", "Copy");
+    QT_TRANSLATE_NOOP("QPlatformTheme", "Paste");
+    QT_TRANSLATE_NOOP("QPlatformTheme", "Delete");
+    QT_TRANSLATE_NOOP("QPlatformTheme", "Select All");
+    QT_TRANSLATE_NOOP("QPlatformTheme", "Stop");
+    QT_TRANSLATE_NOOP("QPlatformTheme", "Clear");
+    QT_TRANSLATE_NOOP("QPlatformTheme", "Copy Link Location");
     if (trans != nullptr) {
         trans->deleteLater();
     }
@@ -77,6 +95,9 @@ int main(int argc, char** argv) {
 #ifdef Q_OS_WIN
     Windows_SetCrashHandler();
 #endif
+#ifdef Q_OS_LINUX
+    Unix_SetCrashHandler();
+#endif
 
     QApplication::setAttribute(Qt::AA_DontUseNativeDialogs);
     QApplication::setQuitOnLastWindowClosed(false);
@@ -94,6 +115,7 @@ int main(int argc, char** argv) {
             Configs::dataStore->appdataDir = Configs::dataStore->argv.at(appdataIndex + 1);
         }
     }
+    
     if (Configs::dataStore->argv.contains("-tray")) Configs::dataStore->flag_tray = true;
     if (Configs::dataStore->argv.contains("-debug")) Configs::dataStore->flag_debug = true;
     if (Configs::dataStore->argv.contains("-flag_restart_tun_on")) Configs::dataStore->flag_restart_tun_on = true;
@@ -110,7 +132,7 @@ int main(int argc, char** argv) {
     bool dir_success = true;
     QDir dir;
 	// dirs & clean
-    auto wd = QDir(QApplication::applicationDirPath());
+    auto wd = QDir(root_directory);
     if (Configs::dataStore->flag_use_appdata) {
         if (!Configs::dataStore->appdataDir.isEmpty()) {
             wd.setPath(Configs::dataStore->appdataDir);
@@ -130,7 +152,7 @@ int main(int argc, char** argv) {
 	{
 		QString wd_abs = wd.absoluteFilePath("config");
 		QDir::setCurrent(wd_abs);
-		QDir("temp").removeRecursively();
+		MoveDirToTrash("temp");
 		dir = QDir(wd_abs);
 	
 		QFileInfo fileInfo(wd_abs);
@@ -185,7 +207,7 @@ int main(int argc, char** argv) {
 
     
 #ifdef Q_OS_UNIX
-    QApplication::addLibraryPath(QApplication::applicationDirPath() + "/usr/plugins");
+    QApplication::addLibraryPath(root_directory + "/usr/plugins");
 #endif
 
     

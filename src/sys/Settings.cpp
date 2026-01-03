@@ -1,15 +1,29 @@
-#include "include/sys/Settings.h"
+#include "nekobox/sys/Settings.h"
 
-#include "include/dataStore/ResourceEntity.hpp"
+#include "nekobox/dataStore/ResourceEntity.hpp"
+#include "nekobox/dataStore/Utils.hpp"
 #include <QApplication>
 #include <QDir>
+#include <QVariantMap>
 #include <QTemporaryFile>
 #include <QFontDatabase>
 #include <qcontainerfwd.h>
 #include <qsettings.h>
 
+
 QSettings getSettings() {
   return QSettings(CONFIG_INI_PATH, QSettings::IniFormat);
+}
+
+QSettings getGlobal(){
+  return QSettings(GLOBAL_INI_PATH, QSettings::IniFormat);
+  /*
+  QStringList keys = settings.allKeys();
+  for (const QString &key : keys) {
+    map.insert(key, settings.value(key));
+  }
+  return map;
+  */
 }
 
 QString getResourcesDir() {
@@ -40,7 +54,7 @@ QString getResource(QString str) {
 }
 
 QString getRootResource(QString str) {
-  QString dir = QApplication::applicationDirPath();
+  QString dir = root_directory;
   dir += "/";
   dir += str;
   return dir;
@@ -82,11 +96,11 @@ QString getApplicationPath() {
   if (appimage != "") {
     return appimage;
   } else {
-    return QApplication::applicationFilePath();
+    return software_path;
   }
 }
 #else
-QString getApplicationPath() { return QApplication::applicationFilePath(); }
+QString getApplicationPath() { return software_path; }
 #endif
 
 QString getCorePath() {

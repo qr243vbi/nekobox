@@ -1,11 +1,16 @@
-#include "include/ui/setting/dialog_vpn_settings.h"
+#ifdef _WIN32
+#include <winsock2.h>
+#include <windows.h>
+#endif
 
-#include "include/configs/proxy/Preset.hpp"
-#include "include/global/GuiUtils.hpp"
-#include "include/global/Configs.hpp"
-#include "include/ui/mainwindow_interface.h"
+#include "nekobox/ui/setting/dialog_vpn_settings.h"
+
+#include "nekobox/configs/proxy/Preset.hpp"
+#include "nekobox/global/GuiUtils.hpp"
+#include "nekobox/dataStore/Configs.hpp"
+#include "nekobox/ui/mainwindow_interface.h"
 #ifdef Q_OS_WIN
-#include "include/sys/windows/WinVersion.h"
+#include "nekobox/sys/windows/WinVersion.h"
 #endif
 
 #include <QMessageBox>
@@ -28,7 +33,7 @@ DialogVPNSettings::DialogVPNSettings(QWidget *parent) : QDialog(parent), ui(new 
     ui->vpn_implementation->addItems(Preset::SingBox::VpnImplementation);
     ui->vpn_implementation->setCurrentText(Configs::dataStore->vpn_implementation);
 #endif
-    ui->vpn_mtu->setCurrentText(Int2String(Configs::dataStore->vpn_mtu));
+    ui->vpn_mtu->setCurrentText(QString::number(Configs::dataStore->vpn_mtu));
     ui->vpn_ipv6->setChecked(Configs::dataStore->vpn_ipv6);
     ui->strict_route->setChecked(Configs::dataStore->vpn_strict_route);
     ui->tun_routing->setChecked(Configs::dataStore->enable_tun_routing);

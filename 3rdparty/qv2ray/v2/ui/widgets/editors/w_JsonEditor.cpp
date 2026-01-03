@@ -1,6 +1,5 @@
 #include "w_JsonEditor.hpp"
 
-#include "include/global/Configs.hpp"
 
 JsonEditor::JsonEditor(const QJsonObject& rootObject, QWidget* parent) : QDialog(parent) {
     setupUi(this);

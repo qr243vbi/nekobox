@@ -17,8 +17,6 @@
 #include <QProcess>
 
 #include "3rdparty/qv2ray/wrapper.hpp"
-#include "include/configs/proxy/Preset.hpp"
-#include "include/global/Configs.hpp"
 
 #define QV_MODULE_NAME "SystemProxy"
 
@@ -291,7 +289,7 @@ namespace Qv2ray::components::proxy {
         if (scheme == "http") scheme = "http://{ip}:{port}";
         else if (scheme == "socks") scheme = "socks={ip}:{port}";
         scheme = scheme.replace("{ip}", address)
-                  .replace("{port}", Int2String(socksPort));
+                  .replace("{port}", QString::number(socksPort));
         //
         LOG("Windows proxy string: " + scheme);
         auto proxyStrW = new WCHAR[scheme.length() + 1];
@@ -435,10 +433,6 @@ namespace Qv2ray::components::proxy {
             // print out the commands and result codes
             DEBUG(QString("[%1] Program: %2, Args: %3").arg(returnCode).arg(action.first).arg(action.second.join(";")));
         }
-
-#else
-
-
 #endif
     }
 } // namespace Qv2ray::components::proxy

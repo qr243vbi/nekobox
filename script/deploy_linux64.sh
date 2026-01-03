@@ -26,11 +26,14 @@ cp $BUILD/nekobox $DEST
 #### copy nekobox.png ####
 cp ./res/nekobox.ico $DEST/nekobox.ico
 
+if [[ -d download-artifact ]]
+then
 (
 cd download-artifact
 cd *linux-$ARCH
 tar xvzf artifacts.tgz -C ../../
 ) ||:
+fi
 
 [[ -x linuxdeploy-$ARCH1.AppImage ]] || wget -c https://github.com/linuxdeploy/linuxdeploy/releases/download/1-alpha-20250213-2/linuxdeploy-$ARCH1.AppImage
 [[ -x linuxdeploy-plugin-qt-$ARCH1.AppImage ]] || wget -c https://github.com/linuxdeploy/linuxdeploy-plugin-qt/releases/download/1-alpha-20250213-1/linuxdeploy-plugin-qt-$ARCH1.AppImage
@@ -75,7 +78,9 @@ mv ./usr/lib2 ./usr/lib
 # fix lib rpath
 cp $CURDIR/*.js $DEST
 cp -RT $CURDIR/res/public $DEST/public
-echo "$INPUT_VERSION" > $DEST/version.txt
+echo "[General]" > $DEST/global.ini
+echo "software_name=NekoBox" >> $DEST/global.ini
+echo "software_version=$INPUT_VERSION" >> $DEST/global.ini
 
 cd $DEST
 patchelf --set-rpath '$ORIGIN/usr/lib' ./nekobox
@@ -102,14 +107,22 @@ exec "$(dirname $0)"/"${NEKOBOX_APPIMAGE_CUSTOM_EXECUTABLE}" "${@}"
 EOF
 cat << 'EOF' > updater
 #!/bin/sh -x
+while [[ "$1" != "--" ]]
+do
+  shift
+done
+shift
+
 APPIMAGE="${2}"
 B=1
 OLD=${APPIMAGE}.old.${OLD}.AppImage
+
 while [[ -e "${OLD}" ]];
 do
   B=$((B + 1))
   OLD=${APPIMAGE}.old.${OLD}.AppImage
 done
+
 mv "${APPIMAGE}" "${OLD}"
 cp "${1}" "${APPIMAGE}"
 chmod 755 "${APPIMAGE}"

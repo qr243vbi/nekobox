@@ -1,19 +1,19 @@
-#include <include/dataStore/Group.hpp>
+#include <nekobox/dataStore/Group.hpp>
 #include <QFile>
-#include "include/ui/profile/dialog_edit_profile.h"
-#include "include/global/Utils.hpp"
-#include "include/configs/proxy/AbstractBean.hpp"
-
+#include "nekobox/dataStore/Utils.hpp"
+#include "nekobox/configs/proxy/AbstractBean.hpp"
+#include "nekobox/dataStore/Database.hpp"
 
 namespace Configs
 {
     bool Group::saveNotes(const QString &notes){
-        QString path = ("groups/" + QString::number(this->id) + ".note.txt");
+ //       qDebug() << "OnSaveNotes";
+        QString path = ("notes/groups/" + QString::number(this->id) + ".note.txt");
         return WriteFileText(path, notes);
     }
 
     QString Group::getNotes() const{
-        QString str = ("groups/" + QString::number(this->id) + ".note.txt");
+        QString str = ("notes/groups/" + QString::number(this->id) + ".note.txt");
         return ReadFileText(str);
     };
 

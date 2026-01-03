@@ -1,6 +1,6 @@
-#include "include/ui/profile/edit_quic.h"
+#include "nekobox/ui/profile/edit_quic.h"
 
-#include "include/configs/proxy/QUICBean.hpp"
+#include "nekobox/configs/proxy/QUICBean.hpp"
 
 #include <QInputDialog>
 #include <QUuid>

@@ -1,11 +1,13 @@
-#include <include/js/js_updater.h>
+#include <nekobox/js/js_updater.h>
 #include <QJSEngine>
 #include <QVariantMap>
-#include <include/global/HTTPRequestHelper.hpp>
+#include <nekobox/global/HTTPRequestHelper.hpp>
 #include <QFile>
 #include <iostream>
-#include "include/configs/ConfigBuilder.hpp"
-#include <include/js/version.h>
+#include "nekobox/configs/ConfigBuilder.hpp"
+#include "nekobox/global/GuiUtils.hpp"
+#include <nekobox/js/version.h>
+#include <nekobox/sys/Settings.h>
 #include <iostream>
 #include <QString>
 #include <QProcessEnvironment>
@@ -14,6 +16,40 @@
 #include <functional>
 #include <QCoreApplication>
 #include <QLocale>
+#include <QDir>
+#include <QDesktopServices>
+#include <QUrl>
+
+JsTextWriter::JsTextWriter()
+: QObject() {}
+
+bool JsTextWriter::open(const QVariant path) {
+    close();
+    if (path.canConvert<QString>()) {
+        file.setFileName(path.toString());
+        if (file.open(QIODevice::WriteOnly | QIODevice::Text)) {
+            stream.setDevice(&file);
+            return true;
+        }
+    }
+    return false;
+}
+
+void JsTextWriter::write(const QVariant text) {
+    if (file.isOpen() && text.canConvert<QString>()) {
+        stream << text.toString();
+    }
+}
+
+void JsTextWriter::close() {
+    if (file.isOpen()) {
+        file.close();
+    }
+}
+
+JsTextWriter::~JsTextWriter() {
+    close();
+}
 
 JsHTTPRequest::JsHTTPRequest(const QString& url): QObject(nullptr){
     init(url);
@@ -53,6 +89,47 @@ void JsUpdaterWindow::warning(const QVariant value, const QVariant title){
     emit warning_signal(value1, title1);
  //   queue->Push(MessagePart{value.toString(), title.toString(), 2});
 }
+void JsUpdaterWindow::unlock(){
+    mutex.unlock();
+};
+
+QString JsUpdaterWindow::curdir(){
+    return QDir::currentPath();
+}
+
+void JsUpdaterWindow::open_url(const QVariant url){
+    QDesktopServices::openUrl(QUrl(url.toString()));
+}
+
+QString JsUpdaterWindow::download(const QVariant value, const QVariant title, const QVariant skipIfExists){
+    bool skip_if_exists = skipIfExists.toBool();
+    QString url = value.toString();
+    QString fileName = "./" + title.toString();
+    QString ret;
+    if (skip_if_exists){
+        QFile asset(fileName);
+        if (asset.exists()){
+            return "";
+        };
+    }
+    mutex.lock();
+    emit download_signal(url, fileName, &ret);
+    mutex.lock();
+    mutex.unlock();
+    return ret;
+}
+
+int JsUpdaterWindow::ask(const QVariant value, const QVariant title, const QVariant map){
+    QString value1 = value.toString();
+    QString title1 = title.toString();
+    QStringList map1 = map.toStringList();
+    int ret;
+    mutex.lock();
+    emit ask_signal(value1, title1, map1, &ret);
+    mutex.lock();
+    mutex.unlock();
+    return ret;
+}
 void JsUpdaterWindow::info(const QVariant value, const QVariant title){
     QString value1 = value.toString();
     QString title1 = title.toString();
@@ -73,14 +150,8 @@ void JsHTTPRequest::init(const QString& url)
     m_header.clear();
 
     for (const auto& pair : resp.header) {
-        // Convert the key from QByteArray to QString using UTF-8
         QString key = QString::fromUtf8(pair.first);
-
-        // Convert the value from QByteArray to QVariant
-        // Here, we store it as a QByteArray within the QVariant.
         QVariant value = QString::fromUtf8(pair.second);
-
-        // Insert the key-value pair into the map
         m_header.insert(key, value);
     }
 }
@@ -109,6 +180,16 @@ void getBoolean(QJSEngine& engine, QString name, bool * value){
     *value = engine.globalObject().property(name).toBool();
 }
 
+void exposeGlobalVariables(QJSEngine * ctx){
+    QJSValue optionsObject = ctx->newObject();
+    QSettings settings = getGlobal();
+    QStringList keys = settings.allKeys();
+    for (const QString &key : keys) {
+        optionsObject.setProperty(key, ctx->toScriptValue<QVariant>(settings.value(key)));
+    }
+    ctx->globalObject().setProperty("GlobalMap", optionsObject);
+}
+
 void exposeEnvironmentVariables(QJSEngine *engine) {
     QProcessEnvironment env = QProcessEnvironment::systemEnvironment();
     QJSValue envObject = engine->newObject();
@@ -127,14 +208,19 @@ bool jsInit(
     QJSValue jsFactory = ctx->newQObject(factory);
 
     ctx->globalObject().setProperty("window", jsFactory);
-    jsFactory = ctx->newQMetaObject(&JsHTTPRequest::staticMetaObject);
-
-
+    
+	jsFactory = ctx->newQMetaObject(&JsHTTPRequest::staticMetaObject);
     ctx->globalObject().setProperty("HTTPResponse", jsFactory);
+	
+	jsFactory = ctx->newQMetaObject(&JsTextWriter::staticMetaObject);
+    ctx->globalObject().setProperty("TextWriter", jsFactory);
+	
     ctx->globalObject().setProperty("archive_name", "nekobox.zip");
 
     ctx->globalObject().setProperty("NKR_VERSION", NKR_VERSION);
-    ctx->globalObject().setProperty("APPLICATION_DIR_PATH", QCoreApplication::applicationDirPath());
+    ctx->globalObject().setProperty("APPLICATION_DIR_PATH", root_directory);
+
+    ctx->globalObject().setProperty("NKR_SOFTWARE_NAME", software_name);
 
     QString script;
 
@@ -142,6 +228,7 @@ bool jsInit(
     script = script + QString::fromUtf8(Configs::dataStore->ToJsonBytes());
     ctx->evaluate(script);
 
+    exposeGlobalVariables(ctx);
     exposeEnvironmentVariables(ctx);
 
     script = [&] { QFile f(":/updater.js"); return f.open(QIODevice::ReadOnly) ? QTextStream(&f).readAll() : QString(); }();
@@ -185,6 +272,11 @@ QStringList jsArrayToQStringList(const QJSValue &jsArray) {
     }
 
     return stringList;
+}
+
+void getStringList(QJSEngine& engine, QString name, QStringList * value){
+    QJSValue jsvalue = engine.globalObject().property(name);
+    *value = jsArrayToQStringList(jsvalue);
 }
 
 bool jsRouteProfileGetter(
@@ -243,27 +335,27 @@ bool jsRouteProfileGetter(
 bool jsUpdater( JsUpdaterWindow* factory,
                 QString * updater_js,
                 QString * search,
-                QString * assets_name,
+        /*        QString * assets_name,
                 QString * release_download_url,
                 QString * release_url,
                 QString * release_note,
-                QString * note_pre_release,
+                QString * note_pre_release, */
                 QString * archive_name,
-                bool * is_newer){
+                bool * is_newer,
+                QStringList * args,
+                bool allow_updater){
     QJSEngine ctx;
     ctx.globalObject().setProperty("search", *search);
+    ctx.globalObject().setProperty("UpdaterExists", allow_updater);
+
     if (!jsInit(&ctx, updater_js, factory)){
         return false;
     };
 
-    getString(ctx, "assets_name", assets_name);
-    getString(ctx, "release_download_url", release_download_url);
-    getString(ctx, "release_url", release_url);
-    getString(ctx, "release_note", release_note);
-    getString(ctx, "note_pre_release", note_pre_release);
     getString(ctx, "archive_name", archive_name);
     getString(ctx, "search", search);
     getBoolean(ctx, "is_newer", is_newer);
+    getStringList(ctx, "updater_args", args);
 
     return true;
 };

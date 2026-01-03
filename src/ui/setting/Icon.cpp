@@ -1,12 +1,11 @@
-#include "include/ui/setting/Icon.hpp"
+#include "nekobox/ui/setting/Icon.hpp"
 
-#include "include/global/Configs.hpp"
 #include <QCoreApplication>
 #include <QPainter>
 #include <QDir>
 
 #ifndef SYSTRAY_ICON_DIR
-#include "include/sys/Settings.h"
+#include "nekobox/sys/Settings.h"
 #define SYSTRAY_ICON(X) getResource(X)
 #endif
 

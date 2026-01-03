@@ -1,6 +1,5 @@
 #!/bin/bash
 set -e
-
 source script/env_deploy.sh
 if [[ "$GOOS" == "windows" && "$GOARCH" == "amd64" ]]; then
   DEST=$DEPLOYMENT/windows64
@@ -27,7 +26,7 @@ if [ -z $DEST ]; then
 fi
 
 echo "DESTINATION IS $DEST FOR MACHINE $GOARCH with platform $GOOS"
-TAGS="with_clash_api,with_gvisor,with_quic,with_wireguard,with_utls,with_dhcp,with_tailscale"
+TAGS="with_clash_api,with_gvisor,with_quic,with_wireguard,with_utls,with_dhcp,with_tailscale,with_shadowtls"
 
 GOCMD="${GOCMD:-go}"
 
@@ -36,13 +35,11 @@ mkdir -p $DEST ||:
 export CGO_ENABLED=0
 export GOTOOLCHAIN=local
 
-[ "$GOOS" == "windows" ] && EXT=".exe" || EXT=''
-
 #### Go: updater ####
 [ "$SKIP_UPDATER" == y ] || (
 cd core/updater
 [ "$GO_MOD_TIDY" == yes ] && $GOCMD mod tidy
-$GOCMD build -o $DEST/updater"${EXT}" -trimpath -ldflags "-w -s"
+$GOCMD build -o "$DEST/" -trimpath -ldflags "-w -s"
 ) ||:
 
 #### Go: core ####
@@ -53,5 +50,5 @@ cd gen
 ) || :
 VERSION_SINGBOX="${VERSION_SINGBOX:-$(go list -m -f '{{.Version}}' github.com/sagernet/sing-box)}"
 [ "$GO_MOD_TIDY" == yes ] && $GOCMD mod tidy
-$GOCMD build -v -o $DEST/nekobox_core$EXT -trimpath -ldflags "-w -s -X 'github.com/sagernet/sing-box/constant.Version=${VERSION_SINGBOX}'" -tags "$TAGS"
+$GOCMD build -v -o "$DEST/" -trimpath -ldflags "-w -s -X 'github.com/sagernet/sing-box/constant.Version=${VERSION_SINGBOX}'" -tags "$TAGS"
 popd

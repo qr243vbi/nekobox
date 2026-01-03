@@ -1,9 +1,9 @@
 #include <QJsonObject>
 #include <QJsonArray>
-#include "include/configs/proxy/AbstractBean.hpp"
-#include "include/dataStore/RouteEntity.h"
-#include "include/dataStore/Database.hpp"
-#include "include/configs/proxy/Preset.hpp"
+#include "nekobox/configs/proxy/AbstractBean.hpp"
+#include "nekobox/dataStore/RouteEntity.h"
+#include "nekobox/dataStore/Database.hpp"
+#include "nekobox/configs/proxy/Preset.hpp"
 #include <iostream>
 
 namespace Configs {
@@ -300,7 +300,7 @@ namespace Configs {
         }
         if (fieldName == "outbound")
         {
-            return {Int2String(outboundID)};
+            return {QString::number(outboundID)};
         }
         if (fieldName == "inbound") return inbound;
         if (fieldName == "domain") return domain;
@@ -529,7 +529,7 @@ namespace Configs {
                     rule->set_field_value(key, {val.toBool() ? "true":"false"});
                 }
             }
-            rule->name = "imported rule #" + Int2String(ruleID++);
+            rule->name = "imported rule #" + QString::number(ruleID++);
             rules << rule;
         }
 
@@ -786,6 +786,16 @@ namespace Configs {
         ADD_MAP("rules", castedRules, jsonStoreList);
         ADD_MAP("default_outbound", defaultOutboundID, integer);
     STOP_MAP
+
+    bool RoutingChain::saveNotes(const QString &notes){
+        QString path = ("notes/route_profiles/" + QString::number(this->id) + ".note.txt");
+        return WriteFileText(path, notes);
+    }
+
+    QString RoutingChain::getNotes() const{
+        QString str = ("notes/route_profiles/" + QString::number(this->id) + ".note.txt");
+        return ReadFileText(str);
+    };
 
     RoutingChain::RoutingChain(const RoutingChain& other)  : JsonStore(other) {
         id = other.id;

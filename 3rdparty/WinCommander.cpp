@@ -45,10 +45,36 @@ execution or wait for the exit of the launched process
 \n
 Returns the return value of the executed command
 */
+
+QString escapeSpecialCharacters(const QString &arg) {
+    QString escapedArg = arg;
+
+    // Escape double quotes
+    escapedArg.replace("\"", "\\\"");  // Replace " with \"
+
+    // Escape other special characters
+    escapedArg.replace("&", "^&");  // Escape &
+    escapedArg.replace("|", "^|");  // Escape |
+    escapedArg.replace("<", "^<");   // Escape <
+    escapedArg.replace(">", "^>");   // Escape >
+    escapedArg.replace("(", "^(");   // Escape (
+    escapedArg.replace(")", "^)");   // Escape )
+    escapedArg.replace("^", "^^");    // Escape ^
+    escapedArg.replace("%", "^^^%");   // Escape % in batch files
+
+    return escapedArg;
+}
+
 uint WinCommander::runProcessElevated(const QString &path,
                                       const QStringList &parameters,
                                       const QString &workingDir,
                                       int nShow, bool aWait) {
+    return runProcess(path, parameters, workingDir, nShow, aWait, true);
+}
+uint WinCommander::runProcess(const QString &path,
+                                          const QStringList &parameters,
+                                          const QString &workingDir,
+                                int nShow, bool aWait, bool elevated) {
     uint result = 0;
 
 #ifdef Q_OS_WIN
@@ -56,7 +82,7 @@ uint WinCommander::runProcessElevated(const QString &path,
     HWND hwnd = NULL;
     LPCTSTR pszPath = (LPCTSTR)path.utf16();
     foreach(QString item, parameters)
-        params += "\"" + item + "\" ";
+        params += "\"" + escapeSpecialCharacters(item) + "\" ";
 
     LPCTSTR pszParameters = (LPCTSTR)params.utf16();
     QString dir;
@@ -74,7 +100,7 @@ uint WinCommander::runProcessElevated(const QString &path,
     shex.cbSize       = sizeof(shex);
     shex.fMask        = SEE_MASK_NOCLOSEPROCESS;
     shex.hwnd         = hwnd;
-    shex.lpVerb       = TEXT("runas");
+    shex.lpVerb       = elevated ? TEXT("runas") : TEXT("open");
     shex.lpFile       = pszPath;
     shex.lpParameters = pszParameters;
     shex.lpDirectory  = pszDirectory;

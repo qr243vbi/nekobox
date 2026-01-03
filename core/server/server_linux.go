@@ -1,7 +1,7 @@
 package main
 
 import (
-	"Core/gen"
+	"nekobox_core/gen"
 	"context"
 	"fmt"
 	"log"

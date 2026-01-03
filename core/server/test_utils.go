@@ -1,8 +1,8 @@
 package main
 
 import (
-	"Core/internal"
-	"Core/internal/boxbox"
+	"nekobox_core/internal"
+	"nekobox_core/internal/boxbox"
 	"bytes"
 	"context"
 	"errors"
@@ -13,7 +13,7 @@ import (
 	"sync"
 	"time"
 
-	"Core/speedtest"
+	"nekobox_core/speedtest"
 
 	"github.com/sagernet/sing-box/adapter"
 	"github.com/sagernet/sing/common/metadata"

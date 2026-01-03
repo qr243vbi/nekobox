@@ -1,7 +1,7 @@
 package speedtest
 
 import (
-	"Core/speedtest/internal"
+	"nekobox_core/speedtest/internal"
 	"bytes"
 	"context"
 	"errors"

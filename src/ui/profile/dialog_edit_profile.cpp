@@ -1,25 +1,25 @@
-#include "include/ui/profile/dialog_edit_profile.h"
+#include "nekobox/ui/profile/dialog_edit_profile.h"
 
-#include "include/ui/profile/edit_anytls.h"
-#include "include/ui/profile/edit_shadowtls.h"
-#include "include/ui/profile/edit_chain.h"
-#include "include/ui/profile/edit_custom.h"
-#include "include/ui/profile/edit_extra_core.h"
-#include "include/ui/profile/edit_mieru.h"
-#include "include/ui/profile/edit_quic.h"
-#include "include/ui/profile/edit_shadowsocks.h"
-#include "include/ui/profile/edit_socks_http.h"
-#include "include/ui/profile/edit_ssh.h"
-#include "include/ui/profile/edit_tailscale.h"
-#include "include/ui/profile/edit_trojan_vless.h"
-#include "include/ui/profile/edit_vmess.h"
-#include "include/ui/profile/edit_wireguard.h"
+#include "nekobox/ui/profile/edit_anytls.h"
+#include "nekobox/ui/profile/edit_shadowtls.h"
+#include "nekobox/ui/profile/edit_chain.h"
+#include "nekobox/ui/profile/edit_custom.h"
+#include "nekobox/ui/profile/edit_extra_core.h"
+#include "nekobox/ui/profile/edit_mieru.h"
+#include "nekobox/ui/profile/edit_quic.h"
+#include "nekobox/ui/profile/edit_shadowsocks.h"
+#include "nekobox/ui/profile/edit_socks_http.h"
+#include "nekobox/ui/profile/edit_ssh.h"
+#include "nekobox/ui/profile/edit_tailscale.h"
+#include "nekobox/ui/profile/edit_trojan_vless.h"
+#include "nekobox/ui/profile/edit_vmess.h"
+#include "nekobox/ui/profile/edit_wireguard.h"
 
-#include "include/configs/proxy/Preset.hpp"
-#include "include/configs/proxy/includes.h"
+#include "nekobox/configs/proxy/Preset.hpp"
+#include "nekobox/configs/proxy/includes.h"
 
 #include "3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.hpp"
-#include "include/global/GuiUtils.hpp"
+#include "nekobox/global/GuiUtils.hpp"
 
 #include <QApplication>
 #include <QDebug>
@@ -321,7 +321,9 @@ void DialogEditProfile::typeSelected(const QString &newType) {
   }
 
   if (!validType) {
-    MessageBoxWarning(newType, "Wrong type");
+    runOnUiThread([newType, this](){
+      QMessageBox::warning(this, newType, "Wrong type");
+    });
     return;
   }
 
@@ -364,7 +366,7 @@ void DialogEditProfile::typeSelected(const QString &newType) {
     ui->header_type->setCurrentText(stream->header_type);
     ui->headers->setText(stream->headers);
     ui->ws_early_data_name->setText(stream->ws_early_data_name);
-    ui->ws_early_data_length->setText(Int2String(stream->ws_early_data_length));
+    ui->ws_early_data_length->setText(QString::number(stream->ws_early_data_length));
     ui->xhttp_mode->setCurrentText(stream->xhttp_mode);
     ui->xhttp_extra->setText(stream->xhttp_extra);
     ui->reality_pbk->setText(stream->reality_pbk);
@@ -373,7 +375,7 @@ void DialogEditProfile::typeSelected(const QString &newType) {
     ui->brutal_enable->setCheckState(ent->bean->enable_brutal
                                          ? Qt::CheckState::Checked
                                          : Qt::CheckState::Unchecked);
-    ui->brutal_speed->setText(Int2String(ent->bean->brutal_speed));
+    ui->brutal_speed->setText(QString::number(ent->bean->brutal_speed));
     CACHE.certificate = stream->certificate;
   } else {
     ui->right_all_w->setVisible(false);
@@ -423,7 +425,7 @@ void DialogEditProfile::typeSelected(const QString &newType) {
   // 左边 common
   ui->name->setText(ent->bean->name);
   ui->address->setText(ent->bean->serverAddress);
-  ui->port->setText(Int2String(ent->bean->serverPort));
+  ui->port->setText(QString::number(ent->bean->serverPort));
   ui->port->setValidator(QRegExpValidator_Number);
 
   // 星号
@@ -553,7 +555,10 @@ void DialogEditProfile::accept() {
   if (newEnt) {
     auto ok = Configs::profileManager->AddProfile(ent);
     if (!ok) {
-      MessageBoxWarning("???", "id exists");
+      
+    runOnUiThread([this](){
+      QMessageBox::warning(this, "???", "id exists");
+    });
     }
   } else {
     auto changed = ent->Save();
@@ -616,6 +621,9 @@ void DialogEditProfile::on_certificate_edit_clicked() {
 
 void DialogEditProfile::on_apply_to_group_clicked() {
   if (apply_to_group_ui.empty()) {
+    apply_to_group_ui[ui->address] = new FloatCheckBox(ui->address, this);
+    apply_to_group_ui[ui->name] = new FloatCheckBox(ui->name, this);
+    apply_to_group_ui[ui->port] = new FloatCheckBox(ui->port, this);
     apply_to_group_ui[ui->multiplex] = new FloatCheckBox(ui->multiplex, this);
     apply_to_group_ui[ui->sni] = new FloatCheckBox(ui->sni, this);
     apply_to_group_ui[ui->alpn] = new FloatCheckBox(ui->alpn, this);
@@ -634,14 +642,20 @@ void DialogEditProfile::on_apply_to_group_clicked() {
   } else {
     auto group = Configs::profileManager->GetGroup(ent->gid);
     if (group == nullptr) {
-      MessageBoxWarning("failed", "unknown group");
+      
+    runOnUiThread([this](){
+      QMessageBox::warning(this, "failed", "unknown group");
+    });
+      
       return;
     }
     // save this
     if (onEnd()) {
       ent->Save();
     } else {
-      MessageBoxWarning("failed", "failed to save");
+    runOnUiThread([this](){
+      QMessageBox::warning(this, "failed","failed to save");
+    });
       return;
     }
     // copy keys
@@ -689,7 +703,13 @@ void DialogEditProfile::do_apply_to_group(
   };
 
   if (bean != nullptr) {
-    if (key == ui->multiplex) {
+    if (key == ui->name){
+      copyBean(&ent->bean->name);
+    } else if (key == ui->port){
+      copyBean(&ent->bean->serverPort);
+    } else if (key == ui->address){
+      copyBean(&ent->bean->serverAddress);
+    } else if (key == ui->multiplex) {
       copyBean(&ent->bean->mux_state);
     } else if (key == ui->brutal_enable) {
       copyBean(&ent->bean->enable_brutal);

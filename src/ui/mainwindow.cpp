@@ -1,18 +1,18 @@
-#include "include/ui/mainwindow.h"
+#include "nekobox/ui/mainwindow.h"
 
-#include "include/configs/ConfigBuilder.hpp"
-#include "include/configs/sub/GroupUpdater.hpp"
-#include "include/dataStore/ProfileFilter.hpp"
-#include "include/dataStore/ResourceEntity.hpp"
-#include "include/global/Utils.hpp"
-#include "include/sys/AutoRun.hpp"
-#include "include/sys/Process.hpp"
+#include "nekobox/configs/ConfigBuilder.hpp"
+#include "nekobox/configs/sub/GroupUpdater.hpp"
+#include "nekobox/dataStore/ProfileFilter.hpp"
+#include "nekobox/dataStore/ResourceEntity.hpp"
+#include "nekobox/global/GuiUtils.hpp"
+#include "nekobox/sys/AutoRun.hpp"
+#include "nekobox/sys/Process.hpp"
+#include "nekobox/global/keyvaluerange.h"
 
 #include <QJsonDocument>
 #include <QMutex>
 #include <QQueue>
 #include <QWaitCondition>
-#include <include/js/version.h>
 #include <qnamespace.h>
 #include <set>
 #ifdef _WIN32
@@ -20,26 +20,26 @@
 #include <windows.h>
 #endif
 
-#include "include/ui/group/dialog_manage_groups.h"
-#include "include/ui/profile/dialog_edit_profile.h"
-#include "include/ui/setting/Icon.hpp"
-#include "include/ui/setting/ThemeManager.hpp"
-#include "include/ui/setting/dialog_basic_settings.h"
-#include "include/ui/setting/dialog_hotkey.h"
-#include "include/ui/setting/dialog_manage_routes.h"
-#include "include/ui/setting/dialog_vpn_settings.h"
+#include "nekobox/ui/group/dialog_manage_groups.h"
+#include "nekobox/ui/profile/dialog_edit_profile.h"
+#include "nekobox/ui/setting/Icon.hpp"
+#include "nekobox/ui/setting/ThemeManager.hpp"
+#include "nekobox/ui/setting/dialog_basic_settings.h"
+#include "nekobox/ui/setting/dialog_hotkey.h"
+#include "nekobox/ui/setting/dialog_manage_routes.h"
+#include "nekobox/ui/setting/dialog_vpn_settings.h"
 
 #include "3rdparty/QrDecoder.h"
 #include "3rdparty/qrcodegen.hpp"
 #include "3rdparty/qv2ray/v2/ui/LogHighlighter.hpp"
-#include "include/ui/group/dialog_edit_group.h"
+#include "nekobox/ui/group/dialog_edit_group.h"
 
 #ifdef Q_OS_WIN
 #include "3rdparty/WinCommander.hpp"
-#include "include/sys/windows/WinVersion.h"
+#include "nekobox/sys/windows/WinVersion.h"
 #else
 #ifdef Q_OS_UNIX
-#include "include/sys/linux/LinuxCap.h"
+#include "nekobox/sys/linux/LinuxCap.h"
 #include <QDBusInterface>
 #include <QDBusReply>
 #include <QUuid>
@@ -63,8 +63,8 @@
 #if QT_VERSION >= QT_VERSION_CHECK(6, 5, 0)
 #include <QStyleHints>
 #endif
-#include "include/global/DeviceDetailsHelper.hpp"
-#include "include/sys/Settings.h"
+#include "nekobox/global/DeviceDetailsHelper.hpp"
+#include "nekobox/sys/Settings.h"
 #include <3rdparty/QHotkey/qhotkey.h>
 #include <3rdparty/qv2ray/v2/proxy/QvProxyConfigurator.hpp>
 #include <QDir>
@@ -72,7 +72,7 @@
 #include <QMimeData>
 #include <QStandardPaths>
 #include <QToolTip>
-#include <include/global/HTTPRequestHelper.hpp>
+#include <nekobox/global/HTTPRequestHelper.hpp>
 #include <random>
 
 #include <map>
@@ -109,7 +109,7 @@ void MainWindow::set_icons(){
               QString2QJsonArray(resp), &err);
           if (!err.isEmpty()) {
             runOnUiThread([=, this] {
-              MessageBoxInfo(tr("Invalid JSON Array"),
+              QMessageBox::information(this, tr("Invalid JSON Array"),
                              tr("The provided input cannot be parsed to a "
                                 "valid route rule array:\n") +
                                  err);
@@ -157,8 +157,9 @@ void MainWindow::getRemoteRouteProfiles(){
       mu_remoteRouteProfiles.lock();
       remoteRouteProfiles = newRemoteRouteProfiles;
 
-      remoteRouteProfileGetter = [=, this](QString profile) -> QString {
-        NetworkRequestHelper::HttpGet(
+      remoteRouteProfileGetter = [=, this](QString profile, QString * url, bool *proxy) -> QString {
+        *proxy = profile.toLower().startsWith("bypass");
+        auto resp = NetworkRequestHelper::HttpGet( *url =
             Configs::get_jsdelivr_link("https://raw.githubusercontent.com/"
                                        "qr243vbi/ruleset/routeprofiles/" +
                                        profile + ".json"));
@@ -274,6 +275,10 @@ void MainWindow::set_icons_from_flag(bool text_under_buttons){
   // top bar set_icons
 }
 
+bool MainWindow::isShowRuleSetData(){
+  return showRuleSetData;
+}
+
 void UI_InitMainWindow() { mainwindow = new MainWindow; }
 
 std::map<std::string, std::string> jsonToMap(const QByteArray &byteArray) {
@@ -302,10 +307,40 @@ std::map<std::string, std::string> jsonToMap(const QByteArray &byteArray) {
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent), ui(new Ui::MainWindow) {
   mainwindow = this;
+  // software_name
+  {
+    QSettings globalSettings = getGlobal();
+#ifdef NKR_DYNAMIC_VERSION
+    software_version = globalSettings.value("software_version",
+#ifdef NKR_DEFAULT_VERSION
+                            NKR_DEFAULT_VERSION
+#else
+                            "1.0.0"
+#endif
+            ).toString();
+#endif
+    qDebug() << NKR_VERSION << software_version;
+    software_build_date = globalSettings.value("software_build_date", "").toString();
+#ifdef NKR_TIMESTAMP
+    if (software_build_date.isEmpty()){
+        software_build_date = NKR_TIMESTAMP;
+    }
+#endif
+    software_name = globalSettings.value(
+                "software_name", "nekobox").toString();
+    software_core_name = globalSettings.value(
+                "software_core_name", "sing-box").toString();
+  }
+
   setAcceptDrops(true);
+
+
   MW_dialog_message = [=, this](const QString &a, const QString &b) {
     runOnUiThread([=, this] { dialog_message_impl(a, b); });
   };
+
+  softwareFilePath = getApplicationPath();
+  softwarePath = root_directory;
 
   QSettings settings = getSettings();
   // Load Manager
@@ -349,7 +384,7 @@ MainWindow::MainWindow(QWidget *parent)
 
   // setup log
   ui->splitter->restoreState(
-      DecodeB64IfValid(Configs::dataStore->splitter_state));
+      DecodeB64IfValid(settings.value("splitter_state", "").toString()));
   new SyntaxHighlighter(isDarkMode() || theme.toLower() == "qdarkstyle",
                         qvLogDocument);
   qvLogDocument->setUndoRedoEnabled(false);
@@ -409,6 +444,8 @@ MainWindow::MainWindow(QWidget *parent)
   // init HWID data
   runOnNewThread([=, this] { GetDeviceDetails(); });
 
+  proxyAutoTester = std::make_unique<Stats::ProxyAutoTester>(this);
+
   // Prepare core
   Configs::dataStore->core_port = MkPort();
   if (Configs::dataStore->core_port <= 0)
@@ -418,7 +455,7 @@ MainWindow::MainWindow(QWidget *parent)
 
   QStringList args;
   args.push_back("-port");
-  args.push_back(Int2String(Configs::dataStore->core_port));
+  args.push_back(QString::number(Configs::dataStore->core_port));
   if (Configs::dataStore->log_level == "debug")
     args.push_back("-debug");
 
@@ -463,7 +500,9 @@ MainWindow::MainWindow(QWidget *parent)
   parallelCoreCallPool->setMaxThreadCount(10); // constant value
   //
   connect(ui->menu_start, &QAction::triggered, this,
-          [=, this]() { profile_start(); });
+          [=, this]() { 
+            profile_start();
+          });
   connect(ui->menu_stop, &QAction::triggered, this,
           [=, this]() { profile_stop(false, false, true); });
   connect(ui->tabWidget->tabBar(), &QTabBar::tabMoved, this,
@@ -483,10 +522,6 @@ MainWindow::MainWindow(QWidget *parent)
   //
   RegisterHotkey(false);
   //
-
-  // software_name
-  software_name = "nekobox";
-  software_core_name = "sing-box";
   //
   {
     auto appDataPath =
@@ -852,10 +887,10 @@ MainWindow::MainWindow(QWidget *parent)
             runOnUiThread([profiles_count, this] {
               if (profiles_count == 0){
                 
-                MessageBoxWarning(tr("Update Response"),
+                QMessageBox::warning(this, tr("Update Response"),
                              tr("No routing profiles are updated"));
               } else {
-                MessageBoxInfo(tr("Update Response"),
+                QMessageBox::information(this, tr("Update Response"),
                              tr("Updated %1 routing profiles").arg(
                               QString::number(profiles_count)));
               }
@@ -867,29 +902,102 @@ MainWindow::MainWindow(QWidget *parent)
 
     auto *actionUpdateRuleSet = new QAction(ui->menuRouting_Menu);
     actionUpdateRuleSet->setText(QCoreApplication::translate(
-      "MainWindow", "Update RuleSet"));
+      "MainWindow", "Update RuleSet Map"));
     ui->menuRouting_Menu->addAction(actionUpdateRuleSet);
     connect(
       actionUpdateRuleSet, &QAction::triggered, this,
-      [=, this]() {
-        runOnNewThread([=, this] {
+      [this]() {
+        runOnNewThread([this] {
           bool ruleset_updated = getRuleSet();
+            runOnUiThread([this, ruleset_updated] {
           if (!ruleset_updated){
-            runOnUiThread([this] {
-              MessageBoxWarning(tr("Update Response"),
+              QMessageBox::warning(this, tr("Update Response"),
                                 tr("Failed to update rulesets"));
-            });
           } else {
-            runOnUiThread([this] {
-              MessageBoxInfo(tr("Update Response"),
+              QMessageBox::information(this, tr("Update Response"),
                              tr("Rulesets updated successfully"));
-            });
           }
+            });
         });
       },
       Qt::SingleShotConnection);
 
 
+    auto *actionUpdateRuleSetCache = new QAction(ui->menuRouting_Menu);
+    actionUpdateRuleSetCache->setText(QCoreApplication::translate(
+      "MainWindow", "Update RuleSet Cache"));
+    ui->menuRouting_Menu->addAction(actionUpdateRuleSetCache);
+    connect(
+      actionUpdateRuleSetCache, &QAction::triggered, this,
+      [this]() {
+        runOnNewThread([this] {
+          if (mu_download_update.try_lock()){
+            QMutex mut;
+            showRuleSetData = true;
+            for (auto & item : ruleSetMap){
+              if (!showRuleSetData){
+                break;
+              }
+              QString url(QString::fromStdString(item.second));
+              QString str = Configs::get_cache_from_str(url);
+              QFile cache_file(str);
+              if (!cache_file.exists()){
+                mut.lock();
+                runOnUiThread([this,&str,&mut](){
+                  this->setDownloadReport(DownloadProgressReport{str, 0, 0}, true);
+                  UpdateDataView(true);
+                  mut.unlock();
+                });
+                mut.lock();
+                mut.unlock();
+                NetworkRequestHelper::DownloadAsset(Configs::get_jsdelivr_link(url), str);
+              }
+            }
+            if (showRuleSetData){
+              showRuleSetData = false;
+              runOnUiThread([=, this] {
+                QMessageBox::information(this, tr("Update Response"),
+                             tr("Rulesets cache is updated"));
+
+               this->setDownloadReport({}, false);
+               this->UpdateDataView(true);
+              });
+            }
+            mu_download_update.unlock();
+          }
+        });
+      },
+      Qt::SingleShotConnection);
+
+    auto *actionClearRuleSetCache = new QAction(ui->menuRouting_Menu);
+    actionClearRuleSetCache->setText(QCoreApplication::translate(
+      "MainWindow", "Clear RuleSet Cache"));
+    ui->menuRouting_Menu->addAction(actionClearRuleSetCache);
+    connect(
+      actionClearRuleSetCache, &QAction::triggered, this,
+      [this]() {
+        runOnNewThread([this] {
+          showRuleSetData = false;
+          mu_download_update.lock();
+          mu_download_update.unlock();
+          MoveDirToTrash("rule_sets/ftps");
+          MoveDirToTrash("rule_sets/ftp");
+          MoveDirToTrash("rule_sets/http");
+          MoveDirToTrash("rule_sets/https");
+          
+          QMutex mut;
+          mut.lock();
+          runOnUiThread([this, &mut](){
+            showRuleSetData = false;
+            setDownloadReport({}, false);
+            UpdateDataView(true);
+            mut.unlock();
+          });
+          mut.lock();
+          mut.unlock();
+        });
+      }, Qt::SingleShotConnection
+    );
 
     ui->menuRouting_Menu->addSeparator();
 
@@ -998,7 +1106,11 @@ MainWindow::MainWindow(QWidget *parent)
     }
   });
   connect(ui->actionUrl_Test_Selected, &QAction::triggered, this,
-          [=, this]() { urltest_current_group(get_now_selected_list()); });
+          [this]() {
+
+      qDebug() << "Url Test Selected Clicked";
+      urltest_current_group(get_now_selected_list());
+  });
   connect(ui->actionUrl_Test_Clear, &QAction::triggered, this,
           [=, this]() { on_menu_clear_test_result_triggered(true); });
   connect(ui->actionUrl_Test_Group, &QAction::triggered, this, [=, this]() {
@@ -1081,8 +1193,12 @@ MainWindow::MainWindow(QWidget *parent)
           [&] { UI_update_all_groups(true); });
   TM_auto_update_subsctiption_Reset_Minute(Configs::dataStore->sub_auto_update);
 
-  if (!Configs::dataStore->flag_tray)
+  if ((!Configs::dataStore->flag_tray) && ( 
+        !settings.value("auto_hide", false).toBool() ) ){
     show();
+  } else {
+    hide();
+  }
 
   ui->data_view->setStyleSheet("background: transparent; border: none;");
 }
@@ -1127,7 +1243,7 @@ bool MainWindow::getRuleSet(){
       QString err;
       for (int retry = 0; retry < 5; retry++) {
         auto err = NetworkRequestHelper::DownloadAsset(
-            Configs::get_jsdelivr_link(Configs::dataStore->ruleset_json_url), "srslist.json");
+            Configs::get_jsdelivr_link(Configs::dataStore->routing->ruleset_json_url), "srslist.json");
         if (err.isEmpty()) {
           QFile file("srslist.json");
           if (file.open(QIODevice::ReadOnly)){
@@ -1222,7 +1338,10 @@ void MainWindow::show_group(int gid) {
 
   auto group = Configs::profileManager->GetGroup(gid);
   if (group == nullptr) {
-    MessageBoxWarning(tr("Error"), QString("No such group: %1").arg(gid));
+    runOnUiThread([this, gid](){
+      QMessageBox::warning(this, tr("Error"), 
+        QString("No such group: %1").arg(gid));
+    });
     Configs::dataStore->refreshing_group = false;
     return;
   }
@@ -1306,8 +1425,10 @@ void MainWindow::dialog_message_impl(const QString &sender,
     }
     refresh_proxy_list();
     if (info.contains("VPNChanged") && Configs::dataStore->spmode_vpn) {
-      MessageBoxWarning(tr("Tun Settings changed"),
+      runOnUiThread([this](){
+      QMessageBox::warning(this, tr("Tun Settings changed"),
                         tr("Restart Tun to take effect."));
+                        });
     }
     if ((info.contains("NeedChoosePort") || updateCorePath ||
          suggestRestartProxy) &&
@@ -1320,6 +1441,17 @@ void MainWindow::dialog_message_impl(const QString &sender,
       }
       profile_start(Configs::dataStore->started_id);
     }
+
+    if (proxyAutoTester) {
+        if (Configs::dataStore->auto_test_enable) {
+            proxyAutoTester->Reset();
+            proxyAutoTester->Start();
+            MW_show_log("[Auto-Test] Restarted with new settings");
+        } else {
+            proxyAutoTester->Stop();
+        }
+    }
+
     refresh_status();
   }
   if (info.contains("DNSServerChanged")) {
@@ -1473,11 +1605,11 @@ void MainWindow::on_commitDataRequest() {
       settings.setValue("X", x);
       settings.setValue("Y", y);
     }
+    settings.setValue("splitter_state", ui->splitter->saveState().toBase64());
     Configs::tableSettings.Save(settings);
     settings.sync();
   }
   //
-  Configs::dataStore->splitter_state = ui->splitter->saveState().toBase64();
   //
   auto last_id = Configs::dataStore->started_id;
   if (Configs::dataStore->remember_enable && last_id >= 0) {
@@ -1536,14 +1668,16 @@ void MainWindow::on_menu_exit_triggered() {
     QString updateDir;
 #ifdef Q_OS_UNIX
     if (isAppImage()) {
-      updateDir = getApplicationPath();
+      updateDir = softwareFilePath;
     } else {
 #endif
-      updateDir = QApplication::applicationDirPath();
+      updateDir = softwarePath;
 #ifdef Q_OS_UNIX
     }
 #endif
-    list << Configs::GetBasePath() + "/" + this->archive_name;
+    list << this->updater_args;
+    list << "--";
+    list << this->archive_name;
     list << updateDir;
     auto arguments = Configs::dataStore->argv;
     if (arguments.length() > 0) {
@@ -1553,7 +1687,7 @@ void MainWindow::on_menu_exit_triggered() {
       arguments.removeAll("-flag_restart_dns_set");
     }
     list += arguments;
-    QString sourceFilePath = getUpdaterPath();
+    QString sourceFilePath = updaterPath;
     QDir tempdir;
     tempdir.mkpath("temp");
     QString destinationFilePath = Configs::GetBasePath();
@@ -1566,14 +1700,11 @@ void MainWindow::on_menu_exit_triggered() {
       qDebug() << "File copied successfully from" << sourceFilePath << "to"
                << destinationFilePath;
 #ifdef Q_OS_WIN
-      if (!isDirectoryWritable(updateDir)) {
-        WinCommander::runProcessElevated(destinationFilePath, list, "",
-                                        SW_NORMAL, false);
-      } else {
-#endif
-        QProcess::startDetached(destinationFilePath, list);
-#ifdef Q_OS_WIN
-      }
+      WinCommander::runProcess(destinationFilePath, list, "",
+                                      SW_NORMAL, false, 
+                                (!isDirectoryWritable(updateDir)));
+#else
+      QProcess::startDetached(destinationFilePath, list);
 #endif
     } else {
       qDebug() << "Failed to copy file from" << sourceFilePath << "to"
@@ -1581,7 +1712,7 @@ void MainWindow::on_menu_exit_triggered() {
     }
 #endif
   } else if (exit_reason == 2 || exit_reason == 3 || exit_reason == 4) {
-    QDir::setCurrent(QApplication::applicationDirPath());
+    QDir::setCurrent(softwarePath);
 
     auto arguments = Configs::dataStore->argv;
     if (arguments.length() > 0) {
@@ -1590,7 +1721,7 @@ void MainWindow::on_menu_exit_triggered() {
       arguments.removeAll("-flag_restart_tun_on");
       arguments.removeAll("-flag_restart_dns_set");
     }
-    auto program = getApplicationPath();
+    auto program = softwareFilePath;
 
     qDebug() << "Will Be Restarted: " << program;
 
@@ -1633,7 +1764,9 @@ bool MainWindow::get_elevated_permissions(int reason, void *pointer) {
 
 #ifdef Q_OS_UNIX
   if (!Linux_HavePkexec()) {
-    MessageBoxWarning(software_name, "Please install \"pkexec\" first.");
+    runOnUiThread([this](){
+        QMessageBox::warning(this, software_name, "Please install \"pkexec\" first.");
+    });
     return false;
   }
 #define ELEVATE_CORE_PROGRAM
@@ -1657,7 +1790,7 @@ skip_start_elevate_process:
 start_elevate_process: {
   StopVPNProcess();
   core_process->elevateCoreProcessProgram();
-  {
+  runOnUiThread([=,this](){
     if (reason == 3) {
       bool save = false;
       if (pointer != nullptr) {
@@ -1665,7 +1798,7 @@ start_elevate_process: {
       }
       set_spmode_vpn(true, save, false);
     }
-  }
+  });
   return false;
 }
 skip_start_elevate_process:
@@ -1720,7 +1853,7 @@ void MainWindow::UpdateDataView(bool force) {
     return;
   }
   QString html;
-  if (showDownloadData) {
+  if (showDownloadData || showRuleSetData) {
     qint64 count = 0;
     if (currentDownloadReport.totalSize > 0)
       count = 10 * currentDownloadReport.downloadedSize /
@@ -1734,10 +1867,17 @@ void MainWindow::UpdateDataView(bool force) {
     }
     QString stat = ReadableSize(currentDownloadReport.downloadedSize) + "/" +
                    ReadableSize(currentDownloadReport.totalSize);
-    html =
+    if (showRuleSetData){
+      html =
+        QString(
+            "<p style='text-align:center;margin:0;'>Downloading %1</p>")
+            .arg(currentDownloadReport.fileName);
+    } else {
+      html =
         QString(
             "<p style='text-align:center;margin:0;'>Downloading %1: %2 %3</p>")
             .arg(currentDownloadReport.fileName, stat, progressText);
+    }
   }
   if (showSpeedtestData) {
     html +=
@@ -2031,8 +2171,12 @@ void MainWindow::refresh_status(const QString &traffic_update) {
         Configs::dataStore->spmode_system_proxy)
       tt << "[Tun+" + tr("System Proxy") + "]";
     tt << software_name;
-    if (!isTray)
+    if (!isTray) {
       tt << QString(NKR_VERSION);
+      if (!software_build_date.isEmpty()){
+          tt << software_build_date;
+      }
+    }
     if (!Configs::dataStore->active_routing.isEmpty() &&
         Configs::dataStore->active_routing != "Default") {
       tt << "[" + Configs::dataStore->active_routing + "]";
@@ -2245,6 +2389,7 @@ void MainWindow::refresh_proxy_list_impl_refresh_data(const int &id,
                                                       bool stopping) {
   ui->proxyListTable->setUpdatesEnabled(false);
   auto currentGroup = Configs::profileManager->CurrentGroup();
+  if (currentGroup == nullptr) return;
   if (id >= 0) {
     if (!currentGroup->HasProfile(id)) {
       ui->proxyListTable->setUpdatesEnabled(true);
@@ -2303,7 +2448,7 @@ void MainWindow::refresh_table_item(
 
   // Check state
   auto check = f0->clone();
-  check->setText(isRunning ? "✓" : Int2String(row + 1) + "  ");
+  check->setText(isRunning ? "✓" : QString::number(row + 1) + "  ");
   ui->proxyListTable->setVerticalHeaderItem(row, check);
 
   // C0: Type
@@ -2676,7 +2821,7 @@ void MainWindow::parseQrImage(const QPixmap *image) {
   const QVector<QString> texts = QrDecoder().decode(
       image->toImage().convertToFormat(QImage::Format_Grayscale8));
   if (texts.isEmpty()) {
-    MessageBoxInfo(software_name, tr("QR Code not found"));
+    QMessageBox::information(this, software_name, tr("QR Code not found"));
   } else {
     for (const QString &text : texts) {
       show_log_impl("QR Code Result:\n" + text);
@@ -2696,7 +2841,7 @@ void MainWindow::on_menu_scan_qr_triggered() {
   if (ok) {
     parseQrImage(&qpx);
   } else {
-    MessageBoxInfo(software_name, tr("Unable to capture screen"));
+    QMessageBox::information(this, software_name, tr("Unable to capture screen"));
   }
 }
 
@@ -2951,7 +3096,7 @@ void MainWindow::show_log_impl(const QString &log) {
 
   QString trimmed;
   if (log.size() > 20000) {
-    trimmed = ("Ignored massive log of size: " + Int2String(log.size()));
+    trimmed = ("Ignored massive log of size: " + QString::number(log.size()));
   } else {
     trimmed = log.trimmed();
   }
@@ -3082,7 +3227,7 @@ void MainWindow::on_tabWidget_customContextMenuRequested(const QPoint &p) {
           if (dialog->result() == QDialog::Accepted) {
             ent->Save();
             MW_dialog_message(Dialog_DialogManageGroups,
-                              "refresh" + Int2String(ent->id));
+                              "refresh" + QString::number(ent->id));
           }
           dialog->deleteLater();
         });
@@ -3210,7 +3355,18 @@ void MainWindow::RegisterHiddenMenuShortcuts(bool unregister) {
   for (const auto &action : ui->menuHidden_menu->actions()) {
     if (!action->shortcut().toString().isEmpty()) {
       hiddenMenuShortcuts.append(new QShortcut(
-          action->shortcut(), this, [=, this]() { action->trigger(); }));
+          action->shortcut(), this, [=, this]() {
+          action->trigger();
+      }));
+    }
+  }
+
+  for (const auto &action : ui->menu_server->actions()) {
+    if (!action->shortcut().toString().isEmpty()) {
+      hiddenMenuShortcuts.append(new QShortcut(
+          action->shortcut(), this, [=, this]() {
+          action->trigger();
+      }));
     }
   }
 }
@@ -3242,6 +3398,7 @@ void MainWindow::setActionsData() {
 
 QList<QAction *> MainWindow::getActionsForShortcut() {
   QList<QAction *> list;
+
   QList<QAction *> actions = findChildren<QAction *>();
 
   for (QAction *action : actions) {
@@ -3249,6 +3406,7 @@ QList<QAction *> MainWindow::getActionsForShortcut() {
       continue;
     list.append(action);
   }
+
   return list;
 }
 
@@ -3300,13 +3458,45 @@ JsUpdaterWindow *MainWindow::createJsUpdaterWindow() {
   // Connect the signal to a lambda function
   connect(bQueue, &JsUpdaterWindow::warning_signal, this,
           [=, this](const QString &message, const QString &title) {
-            runOnUiThread([=, this] { MessageBoxWarning(title, message); });
+            runOnUiThread([=, this] { QMessageBox::warning(this, title, message); });
           });
 
   // Connect the signal to a lambda function
   connect(bQueue, &JsUpdaterWindow::info_signal, this,
           [=, this](const QString &message, const QString &title) {
-            runOnUiThread([=, this] { MessageBoxInfo(title, message); });
+            runOnUiThread([=, this] { QMessageBox::information(this, title, message); });
+          });
+
+  connect(bQueue, &JsUpdaterWindow::download_signal, this, 
+          [=, this](const QString &url, const QString &fileName, QString *ret){
+            *ret = NetworkRequestHelper::DownloadAsset(url, fileName);;
+            bQueue->unlock();
+          });
+
+  // Connect the signal to a lambda function
+  connect(bQueue, &JsUpdaterWindow::ask_signal, this,
+          [=, this](const QString &message, const QString &title, const QStringList &list, 
+              int* ret) {
+        //    runOnUiThread([ret, this, &mut, &title, &message, &list] {
+              QMessageBox box(QMessageBox::Question,
+                              title,
+                              message);
+
+              QMap<QPushButton*, int> buttons;
+              for (auto [k, str] : asListRange(list)){
+                buttons[box.addButton(str, QMessageBox::ActionRole)] = k;
+              }
+              box.exec();
+              auto button = box.clickedButton();
+              for (auto [btn, i]: asKeyValueRange(buttons)){
+                if (btn == button){
+                  *ret = i;
+                  break;
+                }
+              }
+              
+              bQueue->unlock();
+         //   });
           });
 
   return bQueue;
@@ -3314,6 +3504,7 @@ JsUpdaterWindow *MainWindow::createJsUpdaterWindow() {
 #endif
 
 void MainWindow::HotkeyEvent(const QString &key) {
+  qDebug() << "Hot Key Pressed" << key;
   if (key.isEmpty())
     return;
   runOnUiThread([=, this] {
@@ -3445,14 +3636,21 @@ bool isNewer(QString assetName) {
 
 #ifndef SKIP_UPDATE_BUTTON
 #ifndef SKIP_JS_UPDATER
-#include <include/js/js_updater.h>
+#include <nekobox/js/js_updater.h>
 #include <iostream>
 #endif
 void MainWindow::CheckUpdate() {
   bool is_newer = false;
-  QString archive_name = "nekobox.zip", assets_name = "",
-          release_download_url = "", release_url = "", release_note = "",
-          note_pre_release = "", search = "";
+
+  QString archive_name = "nekobox.zip",
+#ifdef SKIP_JS_UPDATER
+          assets_name = "",
+          release_download_url = "",
+          release_url = "",
+          release_note = "",
+          note_pre_release = "",
+#endif
+          search = "";
 
 #define SEARCHDEF(X)                                                           \
   search = X;                                                                  \
@@ -3540,6 +3738,27 @@ void MainWindow::CheckUpdate() {
 
 end_search_define:
 
+  updaterPath = getUpdaterPath();
+
+bool allow_updater = true;
+#ifndef Q_OS_WIN
+#ifdef Q_OS_UNIX
+if (isAppImage()) {
+  allow_updater =
+  (access(softwareFilePath.toUtf8().constData(), W_OK) == 0);
+} else {
+  #endif
+  allow_updater = isDirectoryWritable(softwarePath);
+  if (allow_updater){
+    if (!QFile::exists(updaterPath)){
+      allow_updater = false;
+    }
+  }
+  #ifdef Q_OS_UNIX
+}
+#endif
+#endif
+
 #ifndef SKIP_JS_UPDATER
   JsUpdaterWindow *bQueue;
   QString updater_js = "";
@@ -3560,15 +3779,14 @@ end_search_define:
 
   bQueue = createJsUpdaterWindow();
 
-  jsUpdater(bQueue, &updater_js, &search, &assets_name, &release_download_url,
-            &release_url, &release_note, &note_pre_release, &archive_name,
-            &is_newer);
+  jsUpdater(bQueue, &updater_js, &search, &archive_name,
+            &is_newer, &updater_args, allow_updater);
 #endif
 skip1:
 
   if (search.isEmpty()) {
     runOnUiThread([=, this] {
-      MessageBoxWarning(QObject::tr("Update"),
+      QMessageBox::warning(this, QObject::tr("Update"),
                         QObject::tr("Not official support platform"));
     });
     return;
@@ -3631,41 +3849,35 @@ skip1:
 #else
   if (!is_newer) {
     return;
+  } else {
+    this->exit_reason = 1;
+    this->archive_name = archive_name;
+
+    qDebug() << "ARCHIVE PATH" << archive_name;
+
+    runOnNewThread([=, this] {
+      on_menu_exit_triggered();
+    });
   }
 
 #endif
 
+#ifdef SKIP_JS_UPDATER
   runOnUiThread([=, this] {
-    auto allow_updater = true;
-#ifndef Q_OS_WIN
-#ifdef Q_OS_UNIX
-    if (isAppImage()) {
-      allow_updater =
-          (access(getApplicationPath().toUtf8().constData(), W_OK) == 0);
-    } else {
-#endif
-      allow_updater = isDirectoryWritable(QApplication::applicationDirPath());
-#ifdef Q_OS_UNIX
-    }
-#endif
-#endif
+
 
     QMessageBox box(QMessageBox::Question,
                     QObject::tr("Update") + note_pre_release,
                     QObject::tr("Update found: %1\nRelease note:\n%2")
                         .arg(assets_name, release_note));
     //
+    box.addButton(QObject::tr("Close"), QMessageBox::RejectRole);
+    QAbstractButton *btn2 =
+      box.addButton(QObject::tr("Open in browser"), QMessageBox::AcceptRole);
     QAbstractButton *btn1 = nullptr;
     if (allow_updater) {
-      if (QFile::exists(getUpdaterPath())) {
-        btn1 = box.addButton(QObject::tr("Update"), QMessageBox::AcceptRole);
-      } else {
-        allow_updater = false;
-      }
+      btn1 = box.addButton(QObject::tr("Update"), QMessageBox::AcceptRole);
     }
-    QAbstractButton *btn2 =
-        box.addButton(QObject::tr("Open in browser"), QMessageBox::AcceptRole);
-    box.addButton(QObject::tr("Close"), QMessageBox::RejectRole);
     box.exec();
     //
     if (btn1 == box.clickedButton() && allow_updater) {
@@ -3680,15 +3892,16 @@ skip1:
         }
         qDebug() << release_download_url;
         QString errors;
+        QString archive_path = QString("temp/") + archive_name;
         if (!release_download_url.isEmpty()) {
 
           qDebug() << "REQUEST 1";
-          QFile archive_file1(archive_name);
+          QFile archive_file1(archive_path);
           qDebug() << archive_file1.fileName();
           if (!archive_file1.exists()) {
             qDebug() << "REQUEST 2";
             auto res = NetworkRequestHelper::DownloadAsset(release_download_url,
-                                                           archive_name);
+                                                           archive_path);
             if (!res.isEmpty()) {
               errors += res;
             }
@@ -3702,7 +3915,7 @@ skip1:
                 QObject::tr("Update is ready, restart to install?"));
             if (q == QMessageBox::StandardButton::Yes) {
               this->exit_reason = 1;
-              this->archive_name = archive_name;
+              this->archive_name = Configs::GetBasePath() + "/temp/" + archive_path;
               on_menu_exit_triggered();
             }
           } else {
@@ -3714,5 +3927,7 @@ skip1:
       QDesktopServices::openUrl(QUrl(release_url));
     }
   });
+#endif
+
 }
 #endif

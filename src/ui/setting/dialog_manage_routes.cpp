@@ -1,19 +1,19 @@
-#include "include/ui/setting/dialog_manage_routes.h"
+#include "nekobox/ui/setting/dialog_manage_routes.h"
 
 #include <QClipboard>
 
-#include "include/dataStore/Database.hpp"
+#include "nekobox/dataStore/Database.hpp"
 
 #include "3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.hpp"
-#include "include/global/GuiUtils.hpp"
-#include "include/configs/proxy/Preset.hpp"
+#include "nekobox/global/GuiUtils.hpp"
+#include "nekobox/configs/proxy/Preset.hpp"
 
 #include <QFile>
 #include <QMessageBox>
 #include <QShortcut>
 #include <QTimer>
 #include <QToolTip>
-#include <include/api/RPC.h>
+#include <nekobox/api/RPC.h>
 
 #include <QtGlobal> // For QT_VERSION_CHECK
 
@@ -117,6 +117,7 @@ DialogManageRoutes::DialogManageRoutes(QWidget *parent, bool EditRouteProfiles) 
             ui->dns_object->setPlainText(QJsonObject2QString(obj, false));
         }
     });
+    ui->ruleset_json_url->setText(Configs::dataStore->routing->ruleset_json_url);
     ui->sniffing_mode->setCurrentIndex(Configs::dataStore->routing->sniffing_mode);
     ui->ruleset_mirror->setCurrentIndex(Configs::dataStore->routing->ruleset_mirror);
     ui->outbound_domain_strategy->setCurrentText(Configs::dataStore->routing->outbound_domain_strategy);
@@ -127,7 +128,7 @@ DialogManageRoutes::DialogManageRoutes(QWidget *parent, bool EditRouteProfiles) 
     ui->remote_dns_strategy->setCurrentText(Configs::dataStore->routing->remote_dns_strategy);
     ui->direct_dns->setCurrentText(Configs::dataStore->routing->direct_dns);
     ui->direct_dns_strategy->setCurrentText(Configs::dataStore->routing->direct_dns_strategy);
-    ui->dns_final_out->setCurrentText(Configs::dataStore->routing->dns_final_out);
+    ui->dns_final_out->setCurrentIndex(Configs::dataStore->routing->dns_final_out_direct ? 1 : 0);
     reloadProfileItems();
 
     connect(ui->route_profiles, &QListWidget::itemDoubleClicked, this, [=,this](const QListWidgetItem* item){
@@ -147,7 +148,7 @@ DialogManageRoutes::DialogManageRoutes(QWidget *parent, bool EditRouteProfiles) 
     set_dns_hijack_enability(Configs::dataStore->enable_dns_server);
     ui->dnshijack_allow_lan->setChecked(Configs::dataStore->dns_server_listen_lan);
     ui->dnshijack_listenport->setValidator(QRegExpValidator_Number);
-    ui->dnshijack_listenport->setText(Int2String(Configs::dataStore->dns_server_listen_port));
+    ui->dnshijack_listenport->setText(QString::number(Configs::dataStore->dns_server_listen_port));
     ui->dnshijack_v4resp->setText(Configs::dataStore->dns_v4_resp);
     ui->dnshijack_v6resp->setText(Configs::dataStore->dns_v6_resp);
 
@@ -170,7 +171,7 @@ DialogManageRoutes::DialogManageRoutes(QWidget *parent, bool EditRouteProfiles) 
     ui->redirect_listenaddr->setText(Configs::dataStore->redirect_listen_address);
     ui->redirect_listenport->setEnabled(Configs::dataStore->enable_redirect);
     ui->redirect_listenport->setValidator(QRegExpValidator_Number);
-    ui->redirect_listenport->setText(Int2String(Configs::dataStore->redirect_listen_port));
+    ui->redirect_listenport->setText(QString::number(Configs::dataStore->redirect_listen_port));
 
     connect(ui->dnshijack_enable, STATE_CHANGED, this, [=,this](bool state) {
         set_dns_hijack_enability(state);
@@ -204,7 +205,7 @@ void DialogManageRoutes::accept() {
         MessageBoxInfo(tr("Invalid settings"), tr("DNS Rules are not valid"));
         return;
     }
-
+    Configs::dataStore->routing->ruleset_json_url = ui->ruleset_json_url->text();
     Configs::dataStore->routing->sniffing_mode = ui->sniffing_mode->currentIndex();
     Configs::dataStore->routing->ruleset_mirror = ui->ruleset_mirror->currentIndex();
     Configs::dataStore->routing->domain_strategy = ui->domainStrategyCombo->currentText();
@@ -216,7 +217,7 @@ void DialogManageRoutes::accept() {
     Configs::dataStore->routing->direct_dns = ui->direct_dns->currentText();
     Configs::dataStore->routing->direct_dns_strategy = ui->direct_dns_strategy->currentText();
     Configs::dataStore->core_box_underlying_dns = ui->local_override->text().trimmed();
-    Configs::dataStore->routing->dns_final_out = ui->dns_final_out->currentText();
+    Configs::dataStore->routing->dns_final_out_direct = ui->dns_final_out->currentIndex() == 1;
     Configs::dataStore->fake_dns = ui->enable_fakeip->isChecked();
 
     Configs::profileManager->UpdateRouteChains(chainList);

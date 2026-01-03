@@ -1,6 +1,7 @@
-#include <include/dataStore/ProxyEntity.hpp>
-#include <include/configs/proxy/AbstractBean.hpp>
+#include <nekobox/dataStore/ProxyEntity.hpp>
+#include <nekobox/configs/proxy/AbstractBean.hpp>
 #include <qnamespace.h>
+#include <QCoreApplication>
 
 namespace Configs
 {
@@ -21,6 +22,8 @@ namespace Configs
             _add(map1, "ul", ul_speed, string);
             _add(map1, "report", full_test_report, string);
             _add(map1, "country", test_country, string);
+            _add(map1, "is_working", is_working, boolean);
+            _add(map1, "last_auto_test_time", last_auto_test_time, integer64);
 
             map2.insert(map1);
             _add(map2, "bean", bean_pointer, jsonStore);

@@ -1,8 +1,8 @@
-#include "include/dataStore/ResourceEntity.hpp"
-#include "include/sys/Settings.h"
+#include "nekobox/dataStore/ResourceEntity.hpp"
+#include "nekobox/sys/Settings.h"
 #include <QString>
 #include <qcoreapplication.h>
-#include "include/configs/proxy/AbstractBean.hpp"
+#include "nekobox/configs/proxy/AbstractBean.hpp"
 
 static inline QString _ent(QString name) {
   name = name.replace("/", "_P");
@@ -18,6 +18,7 @@ namespace Configs {
 DECL_MAP(ResourceManager)
     ADD_MAP( "core_path", core_path, string);
     ADD_MAP( "resources_path", resources_path, string);
+    ADD_MAP("latest_path", latest_path, string);
 STOP_MAP
 
 ResourceManager::ResourceManager() : JsonStore("resources/manager.json") {
@@ -26,8 +27,22 @@ ResourceManager::ResourceManager() : JsonStore("resources/manager.json") {
   this->Load();
 }
 
+QString ResourceManager::getLatestPath(){
+  QString latest = latest_path;
+  if (latest == ""){
+    ret_label:
+    return QDir::currentPath();
+  }
+  QDir dir(latest);
+  if (!dir.exists()){
+    goto ret_label;
+  }
+  return latest;
+}
+
 bool ResourceManager::saveLink(QString str, QString path){
   str = _ent(str);
+  latest_path = QFileInfo(path).absolutePath();
   if (symlinks_supported) {
     QString file("resources/" + str + ".ent.lnk");
     QFile::remove(file);
