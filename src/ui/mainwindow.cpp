@@ -1610,6 +1610,8 @@ void MainWindow::on_commitDataRequest() {
     settings.sync();
   }
   //
+
+  qDebug() << "Something?";
   //
   auto last_id = Configs::dataStore->started_id;
   if (Configs::dataStore->remember_enable && last_id >= 0) {
@@ -1631,8 +1633,6 @@ void MainWindow::prepare_exit() {
     mu_exit.unlock();
     return;
   }
-  hide();
-  tray->hide();
   Configs::dataStore->prepare_exit = true;
   //
   RegisterHiddenMenuShortcuts(true);
