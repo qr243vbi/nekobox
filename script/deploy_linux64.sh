@@ -79,7 +79,7 @@ patchelf --set-rpath '$ORIGIN/../../lib' ./usr/plugins/platformthemes/libqxdgdes
 cp $CURDIR/*.js $DEST
 cp -RT $CURDIR/res/public $DEST/public
 echo "[General]" > $DEST/global.ini
-echo "software_name=NekoBox" >> $DEST/global.ini
+echo "software_name=NelBox" >> $DEST/global.ini
 echo "software_version=$INPUT_VERSION" >> $DEST/global.ini
 
 cd $DEST
