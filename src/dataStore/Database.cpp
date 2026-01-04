@@ -12,6 +12,8 @@
 namespace Configs {
 
     ProfileManager *profileManager = new ProfileManager();
+    
+    QMap<QString, QString> profileDisplayNames;
 
     ProfileManager::ProfileManager() : JsonStore("groups/pm.json") {
     }
@@ -167,10 +169,22 @@ namespace Configs {
         return routingChain;
     }
 
-    //  新建的不给 fn 和 id
 
-    std::shared_ptr<ProxyEntity> ProfileManager::NewProxyEntity(const QString &type) {
-        Configs::AbstractBean *bean;
+    QString ProfileManager::GetDisplayName(const QString & type){
+        QString ret = profileDisplayNames.value(type, "");
+        if (ret == ""){
+            auto proxy = NewProxyEntity(type, true);
+            if (proxy != nullptr){
+                ret = proxy->bean->DisplayName();
+                proxy.reset();
+                profileDisplayNames[type] = ret;
+            }
+        }
+        return ret;
+    }
+
+    std::shared_ptr<ProxyEntity> ProfileManager::NewProxyEntity(const QString &type, bool nullok) {
+        Configs::AbstractBean *bean = nullptr;
 
         if (type == "socks") {
             bean = new Configs::SocksHttpBean(Configs::SocksHttpBean::type_Socks5);
@@ -208,13 +222,22 @@ namespace Configs {
             bean = new Configs::CustomBean();
         } else if (type == "extracore") {
             bean = new Configs::ExtraCoreBean();
+        } else if (type == "tor"){
+            bean = new Configs::TorBean();
         } else {
-            bean = new Configs::AbstractBean(-114514);
+            if (!nullok){
+                bean = new Configs::AbstractBean(-114514);
+            } else {
+                return nullptr;
+            }
         }
-
         auto ent = std::make_shared<ProxyEntity>(bean, type);
         return ent;
     }
+
+    std::shared_ptr<ProxyEntity> ProfileManager::NewProxyEntity(const QString &type) {
+        return NewProxyEntity(type, false);
+    } 
 
     std::shared_ptr<Group> ProfileManager::NewGroup() {
         auto ent = std::make_shared<Group>();
