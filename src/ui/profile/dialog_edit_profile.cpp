@@ -46,7 +46,7 @@
       this);
 #define LOAD_TYPE(a)                                                           \
   ui->type->addItem(                                                           \
-      Configs::ProfileManager::NewProxyEntity(a)->bean->DisplayType(), a);
+      Configs::ProfileManager::GetDisplayName(a), a);
 
 DialogEditProfile::DialogEditProfile(const QString &_type, int profileOrGroupId,
                                      QWidget *parent)
@@ -219,6 +219,7 @@ DialogEditProfile::DialogEditProfile(const QString &_type, int profileOrGroupId,
                       "internal-full");
     ui->type->addItem(tr("Extra Core"), "extracore");
     LOAD_TYPE("chain")
+    LOAD_TYPE("tor")
 
     // type changed
     connect(ui->type, &QComboBox::currentIndexChanged, this,

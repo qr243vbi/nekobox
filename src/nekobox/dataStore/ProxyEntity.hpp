@@ -32,6 +32,8 @@ namespace Configs {
 
     class SSHBean;
 
+    class TorBean;
+
     class CustomBean;
 
     class ChainBean;

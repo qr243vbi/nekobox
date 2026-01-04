@@ -12,6 +12,8 @@ namespace Configs {
 
     extern ProfileManager *profileManager;
 
+    extern QMap<QString, QString> profileDisplayNames; 
+
     class ProfileManager : private JsonStore {
     public:
         // JsonStore
@@ -32,6 +34,10 @@ namespace Configs {
         void LoadManager();
 
         void SaveManager();
+
+        [[nodiscard]] static QString GetDisplayName(const QString & type);
+
+        [[nodiscard]] static std::shared_ptr<ProxyEntity> NewProxyEntity(const QString &type, bool nullok);
 
         [[nodiscard]] static std::shared_ptr<ProxyEntity> NewProxyEntity(const QString &type);
 
