@@ -17,7 +17,7 @@ typedef ConfJsMapStat & ConfJsMap;
 //}
 
 namespace Configs_ConfigItem {
-    // config 工具
+    // config
     enum itemType {
         type_string,
         type_integer,
@@ -27,6 +27,7 @@ namespace Configs_ConfigItem {
         type_integerList,
         type_jsonStore,
         type_jsonStoreList,
+        type_stringMap
     };
 
     class configItem {
@@ -74,13 +75,9 @@ namespace Configs_ConfigItem {
 
         void _setValue(const QString &name, void *p);
 
-   //     void _add(configItem *item);
-
         QString _name(void *p);
 
         std::shared_ptr<configItem> _get(const QString &name);
-
-//        void _setValue(const QString &name, void *p);
 
         QJsonObject ToJson(const QStringList &without = {});
 

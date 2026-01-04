@@ -293,3 +293,86 @@ const char * getSoftwareVersion(){
     }
     return VERSION_STATIC;
 }
+
+int GetQueryIntValue(const QUrlQuery &q, const QString &key, int def){
+    QString str = GetQueryValue(q, key);
+    if (!str.isEmpty()){
+        return str.toInt();
+    } else {
+        return def;
+    }
+};
+
+QString SubStrBefore(QString str, const QString &sub) {
+    if (!str.contains(sub)) return str;
+    return str.left(str.indexOf(sub));
+}
+
+QString SubStrAfter(QString str, const QString &sub) {
+    if (!str.contains(sub)) return str;
+    return str.right(str.length() - str.indexOf(sub) - sub.length());
+}
+
+
+// [2001:4860:4860::8888] -> 2001:4860:4860::8888
+QString UnwrapIPV6Host(QString &str) {
+    return str.replace("[", "").replace("]", "");
+}
+
+// [2001:4860:4860::8888] or 2001:4860:4860::8888 -> [2001:4860:4860::8888]
+QString WrapIPV6Host(QString &str) {
+    if (!IsIpAddressV6(str)) return str;
+    return "[" + UnwrapIPV6Host(str) + "]";
+}
+
+QString DisplayAddress(QString serverAddress, int serverPort) {
+    if (serverAddress.isEmpty() && serverPort == 0) return {};
+    return WrapIPV6Host(serverAddress) + ":" + QString::number(serverPort);
+}
+
+QString DisplayDest(const QString& dest, QString domain)
+{
+    if (domain.isEmpty() || dest.split(":").first() == domain) return dest;
+    return dest + " (" + domain + ")";
+}
+
+bool InRange(unsigned x, unsigned low, unsigned high) {
+    return (low <= x && x <= high);
+}
+
+bool IsValidPort(int port) {
+    return InRange(port, 1, 65535);
+}
+
+void AddQueryString(const char * name, QUrlQuery & query, const QString & value){
+    if (!value.isEmpty()){
+        query.addQueryItem(name, value);
+    }
+}
+
+void AddQueryStringList(const char * name, QUrlQuery & query, const QStringList & value){
+    if (!value.isEmpty()){
+        add_query_nonempty(name, query,
+                           QString::fromUtf8(QJsonDocument(QListStr2QJsonArray(value)).toJson())
+        );
+    }
+}
+
+void AddQueryMap(const char * name, QUrlQuery & query, const QVariantMap & value){
+    if (!value.isEmpty()){
+        add_query_nonempty(name, query,
+                           QString::fromUtf8(QJsonDocument(QJsonObject::fromVariantMap(value)).toJson())
+        );
+    }
+}
+
+void AddQueryInt(const char * name, QUrlQuery & query, int value){
+    query.addQueryItem(name, QString::number(value));
+}
+
+
+void AddQueryNatural(const char * name, QUrlQuery & query, int value){
+    if (value > 0){
+        add_query_int(name, query, value);
+    }
+}

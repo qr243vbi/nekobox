@@ -445,4 +445,18 @@ namespace Configs {
         return result;
     }
 
+
+    CoreObjOutboundBuildResult TorBean::BuildCoreObjSingBox()
+    {
+        CoreObjOutboundBuildResult result;
+        QJsonObject outbound {
+            {"type", "tor"},
+            {"executable_path", this->executable_path},
+            {"extra_args", QListStr2QJsonArray(this->extra_args)},
+            {"data_directory", this->data_directory},
+            {"torrc", QJsonObject::fromVariantMap(this->torrc)}
+        };
+        result.outbound = outbound;
+        return result;
+    }
 } // namespace Configs

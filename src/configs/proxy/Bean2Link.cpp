@@ -3,26 +3,10 @@
 #include "nekobox/configs/proxy/includes.h"
 
 #include <QUrlQuery>
+#include <QProcess>
 #include <qurlquery.h>
 
 namespace Configs {
-
-    static void add_query_nonempty(const char * name, QUrlQuery & query, QString & value){
-        if (!value.isEmpty()){
-            query.addQueryItem(name, value);
-        }
-    }
-
-    static void add_query_int(const char * name, QUrlQuery & query, int value){
-            query.addQueryItem(name, QString::number(value));
-    }
-
-    static void add_query_int_natural(const char * name, QUrlQuery & query, int value){
-        if (value > 0){
-            add_query_int(name, query, value);
-        }
-    }
-
     QString SocksHttpBean::ToShareLink() {
         QUrl url;
         if (socks_http_type == type_HTTP) { // http
@@ -382,17 +366,17 @@ namespace Configs {
         url.setHost("tailscale");
         if (!name.isEmpty()) url.setFragment(name);
         QUrlQuery q;
-        q.addQueryItem("state_directory", QUrl::toPercentEncoding(state_directory));
-        q.addQueryItem("auth_key", QUrl::toPercentEncoding(auth_key));
-        q.addQueryItem("control_url", QUrl::toPercentEncoding(control_url));
-        q.addQueryItem("ephemeral", ephemeral ? "true" : "false");
-        q.addQueryItem("hostname", QUrl::toPercentEncoding(hostname));
-        q.addQueryItem("accept_routes", accept_routes ? "true" : "false");
-        q.addQueryItem("exit_node", exit_node);
-        q.addQueryItem("exit_node_allow_lan_access", exit_node_allow_lan_access ? "true" : "false");
-        q.addQueryItem("advertise_routes", QUrl::toPercentEncoding(advertise_routes.join(",")));
-        q.addQueryItem("advertise_exit_node", advertise_exit_node ? "true" : "false");
-        q.addQueryItem("global_dns", globalDNS ? "true" : "false");
+        add_query_nonempty("state_directory", q, QUrl::toPercentEncoding(state_directory));
+        add_query_nonempty("auth_key", q, QUrl::toPercentEncoding(auth_key));
+        add_query_nonempty("control_url", q, QUrl::toPercentEncoding(control_url));
+        add_query_nonempty("ephemeral", q, ephemeral ? "true" : "false");
+        add_query_nonempty("hostname", q, QUrl::toPercentEncoding(hostname));
+        add_query_nonempty("accept_routes", q, accept_routes ? "true" : "false");
+        add_query_nonempty("exit_node", q, exit_node);
+        add_query_nonempty("exit_node_allow_lan_access", q, exit_node_allow_lan_access ? "true" : "false");
+        add_query_nonempty("advertise_routes", q, QUrl::toPercentEncoding(advertise_routes.join(",")));
+        add_query_nonempty("advertise_exit_node", q, advertise_exit_node ? "true" : "false");
+        add_query_nonempty("global_dns", q, globalDNS ? "true" : "false");
         url.setQuery(q);
         return url.toString(QUrl::FullyEncoded);
     }
@@ -404,22 +388,22 @@ namespace Configs {
         url.setPort(serverPort);
         if (!name.isEmpty()) url.setFragment(name);
         QUrlQuery q;
-        q.addQueryItem("user", user);
-        q.addQueryItem("password", password);
-        q.addQueryItem("private_key", privateKey.toUtf8().toBase64(QByteArray::OmitTrailingEquals));
-        q.addQueryItem("private_key_path", privateKeyPath);
-        q.addQueryItem("private_key_passphrase", privateKeyPass);
+        add_query_nonempty("user", q, user);
+        add_query_nonempty("password", q, password);
+        add_query_nonempty("private_key", q, privateKey.toUtf8().toBase64(QByteArray::OmitTrailingEquals));
+        add_query_nonempty("private_key_path", q, privateKeyPath);
+        add_query_nonempty("private_key_passphrase", q, privateKeyPass);
         QStringList b64HostKeys = {};
         for (const auto& item: hostKey) {
             b64HostKeys << item.toUtf8().toBase64(QByteArray::OmitTrailingEquals);
         }
-        q.addQueryItem("host_key", b64HostKeys.join("-"));
+        add_query_nonempty("host_key", q, b64HostKeys.join("-"));
         QStringList b64HostKeyAlgs = {};
         for (const auto& item: hostKeyAlgs) {
             b64HostKeyAlgs << item.toUtf8().toBase64(QByteArray::OmitTrailingEquals);
         }
-        q.addQueryItem("host_key_algorithms", b64HostKeyAlgs.join("-"));
-        q.addQueryItem("client_version", clientVersion);
+        add_query_nonempty("host_key_algorithms", q, b64HostKeyAlgs.join("-"));
+        add_query_nonempty("client_version", q, clientVersion);
         url.setQuery(q);
         return url.toString(QUrl::FullyEncoded);
     }
@@ -429,6 +413,20 @@ namespace Configs {
         return "Unsupported for now";
     }
 
+    QString TorBean::ToShareLink(){
+        QUrl url;
+        url.setScheme("tor");
+        url.setHost("tor");
+        QUrlQuery q;
+        add_query_args_nonempty( "extra_args", q, extra_args);
+        add_query_nonempty("executable_path", q, executable_path);
+        add_query_nonempty("data_directory", q, data_directory);
+        add_query_map_nonempty("torrc", q, torrc);
+
+        url.setQuery(q);
+        return url.toString(QUrl::FullyEncoded);
+    }
+
     QString MieruBean::ToShareLink(){
         QUrl url;
         url.setScheme("mieru");
@@ -436,11 +434,11 @@ namespace Configs {
         url.setPort(serverPort);
         if (!name.isEmpty()) url.setFragment(name);
         QUrlQuery q;
-        q.addQueryItem("username", username);
-        q.addQueryItem("password", password);
-        q.addQueryItem("transport", "TCP");
-        q.addQueryItem("multiplexing", multiplexing);
-        q.addQueryItem("server_ports", serverPorts.join(","));
+        add_query_nonempty( "username", q, username);
+        add_query_nonempty( "password", q, password);
+        add_query_nonempty( "transport", q, "TCP");
+        add_query_nonempty( "multiplexing", q, multiplexing);
+        add_query_nonempty( "server_ports", q, serverPorts.join(","));
         url.setQuery(q);
 
         return url.toString(QUrl::FullyEncoded);

@@ -78,7 +78,7 @@ namespace Configs {
         if (serverPort == -1) serverPort = 443;
         this->idle_session_check_interval = GetQueryValue(query, "idle_session_check_interval", "30s");
         this->idle_session_timeout = GetQueryValue(query, "idle_session_timeout", "30s");
-        this->min_idle_session = GetQueryValue(query, "min_idle_session", "0").toInt();
+        this->min_idle_session = GetQueryIntValue(query, "min_idle_session", 0);
         // security
         parse_security(stream, query);
 
@@ -95,7 +95,7 @@ namespace Configs {
         serverPort = url.port();
         password = url.userName();
         if (serverPort == -1) serverPort = 443;
-        this->shadowtls_version = GetQueryValue(query, "version", "0").toInt();
+        this->shadowtls_version = GetQueryIntValue(query, "version", 0);
         // security
         parse_security(stream, query);
 
@@ -363,8 +363,8 @@ namespace Configs {
             if (serverPort > 0) serverPort = url.port();
             obfsPassword = QUrl::fromPercentEncoding(query.queryItemValue("obfsParam").toUtf8());
             allowInsecure = QStringList{"1", "true"}.contains(query.queryItemValue("insecure"));
-            uploadMbps = query.queryItemValue("upmbps").toInt();
-            downloadMbps = query.queryItemValue("downmbps").toInt();
+            uploadMbps = GetQueryIntValue(query, "upmbps");
+            downloadMbps = GetQueryIntValue(query, "downmbps");
 
             auto protocolStr = (query.hasQueryItem("protocol") ? query.queryItemValue("protocol") : "udp").toLower();
             if (protocolStr == "faketcp") {
@@ -381,8 +381,8 @@ namespace Configs {
             alpn = query.queryItemValue("alpn");
             sni = FIRST_OR_SECOND(query.queryItemValue("peer"), query.queryItemValue("sni"));
 
-            connectionReceiveWindow = query.queryItemValue("recv_window").toInt();
-            streamReceiveWindow = query.queryItemValue("recv_window_conn").toInt();
+            connectionReceiveWindow = GetQueryIntValue(query, "recv_window");
+            streamReceiveWindow = GetQueryIntValue(query, "recv_window_conn");
 
             if (query.hasQueryItem("mport")) {
                 serverPorts = query.queryItemValue("mport").split(",");
@@ -456,21 +456,21 @@ namespace Configs {
         if (!rawLocalAddr.isEmpty()) {
             for (const auto &item: rawLocalAddr.split("-")) localAddress += item;
         }
-        persistentKeepalive = query.queryItemValue("persistent_keepalive").toInt();
-        MTU = query.queryItemValue("mtu").toInt();
+        persistentKeepalive = GetQueryIntValue(query, "persistent_keepalive");
+        MTU = GetQueryIntValue(query, "mtu");
         useSystemInterface = query.queryItemValue("use_system_interface") == "true";
-        workerCount = query.queryItemValue("workers").toInt();
+        workerCount = GetQueryIntValue(query, "workers");
 
         enable_amnezia = query.queryItemValue("enable_amnezia") == "true";
-        junk_packet_count = query.queryItemValue("junk_packet_count").toInt();
-        junk_packet_min_size = query.queryItemValue("junk_packet_min_size").toInt();
-        junk_packet_max_size = query.queryItemValue("junk_packet_max_size").toInt();
-        init_packet_junk_size = query.queryItemValue("init_packet_junk_size").toInt();
-        response_packet_junk_size = query.queryItemValue("response_packet_junk_size").toInt();
-        init_packet_magic_header = query.queryItemValue("init_packet_magic_header").toInt();
-        response_packet_magic_header = query.queryItemValue("response_packet_magic_header").toInt();
-        underload_packet_magic_header = query.queryItemValue("underload_packet_magic_header").toInt();
-        transport_packet_magic_header = query.queryItemValue("transport_packet_magic_header").toInt();
+        junk_packet_count = GetQueryIntValue(query, "junk_packet_count");
+        junk_packet_min_size = GetQueryIntValue(query, "junk_packet_min_size");
+        junk_packet_max_size = GetQueryIntValue(query, "junk_packet_max_size");
+        init_packet_junk_size = GetQueryIntValue(query, "init_packet_junk_size");
+        response_packet_junk_size = GetQueryIntValue(query, "response_packet_junk_size");
+        init_packet_magic_header = GetQueryIntValue(query, "init_packet_magic_header");
+        response_packet_magic_header = GetQueryIntValue(query, "response_packet_magic_header");
+        underload_packet_magic_header = GetQueryIntValue(query, "underload_packet_magic_header");
+        transport_packet_magic_header = GetQueryIntValue(query, "transport_packet_magic_header");
 
         return true;
     }
@@ -529,6 +529,10 @@ namespace Configs {
     {
         return false;
     }
+
+    bool TorBean::TryParseLink(const QString &link){
+        return true;
+    };
 
     bool MieruBean::TryParseLink(const QString& link)
     {

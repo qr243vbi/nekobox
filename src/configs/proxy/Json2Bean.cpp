@@ -286,6 +286,10 @@ namespace Configs
         return false;
     }
 
+    bool TryParseJson(const QJsonObject &obj){
+        return true;
+    };
+
     bool MieruBean::TryParseJson(const QJsonObject& obj)
     {
         name = obj["tag"].toString();

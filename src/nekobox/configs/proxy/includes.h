@@ -15,3 +15,4 @@
 #include "ExtraCore.h"
 #include "MieruBean.hpp"
 #include "ShadowTLSBean.hpp"
+#include "TorBean.hpp"
