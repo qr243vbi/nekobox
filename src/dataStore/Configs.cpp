@@ -21,7 +21,7 @@
 #include <memory>
 #include <utility>
 #include <nekobox/api/RPC.h>
-
+#include <QVariantMap>
 #include <nekobox/js/version.h>
 #include <QCryptographicHash>
 
@@ -109,6 +109,11 @@ namespace Configs_ConfigItem {
                         }
                     } 
                     break;
+                case itemType::type_stringMap:
+                    {
+                        object.insert(name, QJsonObject::fromVariantMap( *(QVariantMap *) ptr ));
+                    }
+                    break;
                 case itemType::type_jsonStoreList:
                     QJsonArray jsonArray;
                     auto arr = *(QList<JsonStore*> *) ptr;
@@ -145,7 +150,7 @@ namespace Configs_ConfigItem {
             auto item = _map.value(key).get();
 
             if (item == nullptr)
-                continue; // 故意忽略
+                continue;
 
             auto ptr = (void*)(((size_t)(void*)this) + item->ptr);
             switch (item->type) {
@@ -197,6 +202,13 @@ namespace Configs_ConfigItem {
                         store->FromJson(value.toObject());
                     }
                     break;
+                case itemType::type_stringMap:
+                    if (value.type() != QJsonValue::Object){
+                        continue;
+                    }
+                    {
+                        *(QVariantMap*) ptr = value.toObject().toVariantMap();
+                    }
                 case itemType::type_jsonStoreList:
                     break;
             }
@@ -223,6 +235,15 @@ namespace Configs_ConfigItem {
                 break;
             case itemType::type_integer64:
                 *(long long *) ptr = *(long long *) p;
+                break;
+            case itemType::type_integerList:
+                *(QList<int> *) ptr = *(QList<int> *) p;
+                break;
+            case itemType::type_stringList:
+                *(QList<QString> *) ptr = *(QList<QString> *) p;
+                break;
+            case itemType::type_stringMap:
+                *(QVariantMap *) ptr = *(QVariantMap *) p;
                 break;
             // others...
             default:
