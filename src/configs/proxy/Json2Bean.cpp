@@ -286,7 +286,12 @@ namespace Configs
         return false;
     }
 
-    bool TryParseJson(const QJsonObject &obj){
+    bool TorBean::TryParseJson(const QJsonObject &obj){
+        name = obj["tag"].toString();
+        executable_path = obj["executable_path"].toString();
+        extra_args = QJsonArray2QListString(obj["extra_args"].toArray());
+        data_directory = obj["data_directory"].toString();
+        torrc = obj["torrc"].toObject().toVariantMap();
         return true;
     };
 
