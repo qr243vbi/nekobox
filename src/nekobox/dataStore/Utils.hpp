@@ -189,4 +189,6 @@ void AddQueryNatural( QUrlQuery & query, const QString & name, int value);
 
 QStringList GetQueryListValue(const QUrlQuery &q, const QString &key);
 
+QVariantMap QString2QMap(const QString &key);
+
 QVariantMap GetQueryMapValue(const QUrlQuery &q, const QString &key);

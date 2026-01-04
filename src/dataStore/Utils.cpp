@@ -381,13 +381,17 @@ QStringList GetQueryListValue(const QUrlQuery &q, const QString &key){
     return QJsonArray2QListString(QString2QJsonArray(GetQueryValue(q, key)));
 }
 
-QVariantMap GetQueryMapValue(const QUrlQuery &q, const QString &key){
-    QJsonDocument doc = QJsonDocument::fromJson(GetQueryValue(q, key, "{}").toUtf8());
+QVariantMap QString2QMap(const QString &key){
+    QJsonDocument doc = QJsonDocument::fromJson(key.toUtf8());
 
     QVariantMap map;
     if (!doc.isNull() && doc.isObject()) {
         map = doc.object().toVariantMap();
     }
     return map;
+}
+
+QVariantMap GetQueryMapValue(const QUrlQuery &q, const QString &key){
+    return QString2QMap(GetQueryValue(q, key, "{}"));
 }
 
