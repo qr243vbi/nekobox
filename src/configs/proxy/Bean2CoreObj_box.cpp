@@ -28,7 +28,12 @@ namespace Configs {
 
     static QJsonObject getXbadoptionRange(const QJsonValue & value){
         QJsonObject obj ;
-        if (value.isObject()){
+        if (value.isString()){
+            QString str = value.toString();
+            auto ptr = str.split("-");
+            obj.insert("from", ptr[0].toInt());
+            obj.insert("to", ptr[1].toInt());
+        } else if (value.isObject()){
             auto objv = value.toObject();
             obj.insert("from", objv.value("from").toInt());
             obj.insert("to", objv.value("to").toInt());
@@ -39,11 +44,12 @@ namespace Configs {
         return obj;
     }
 
-    static void parseExtraXhttp(QJsonObject & transport, const QString & extra){
-        
+    static void parseExtraXhttp(QJsonObject & transport, QString extra){
+        qDebug()  << "EXTRA: "<< extra;
+        extra = extra.replace("+", "");
         for (auto [k, value]: QJsonDocument::fromJson(extra.toUtf8()).object().asKeyValueRange()){
             QString key = k.toString().toLower().replace("_", "");
-           
+            qDebug() << key;
             if (key == "xpaddingbytes"){
                 transport["x_padding_bytes"] = getXbadoptionRange(value);
             } else if (key == "nogrpcheader"){
