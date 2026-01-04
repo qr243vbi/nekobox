@@ -135,6 +135,10 @@ namespace Configs {
             return (Configs::SSHBean *) bean.get();
         };
 
+        [[nodiscard]] Configs::TorBean *TorBean() const {
+            return (Configs::TorBean *) bean.get();
+        };
+
         [[nodiscard]] Configs::CustomBean *CustomBean() const {
             return (Configs::CustomBean *) bean.get();
         };
