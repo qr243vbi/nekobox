@@ -7,6 +7,13 @@
 #include <qurlquery.h>
 
 namespace Configs {
+
+    inline void add_query_int_natural(const char * name, QUrlQuery & query, int value){ AddQueryNatural(query, name, value); };
+    inline void add_query_int(const char * name, QUrlQuery & query, int value){ AddQueryInt(query, name, value); };
+    inline void add_query_nonempty(const char * name, QUrlQuery & query, const QString &value){ AddQueryString(query, name, value); };
+    inline void add_query_args_nonempty(const char * name, QUrlQuery & query, const QStringList & value) { AddQueryStringList(query, name, value); };
+    inline void add_query_map_nonempty(const char * name, QUrlQuery & query, const QVariantMap & value) { AddQueryMap(query, name, value); };
+
     QString SocksHttpBean::ToShareLink() {
         QUrl url;
         if (socks_http_type == type_HTTP) { // http

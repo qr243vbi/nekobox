@@ -344,35 +344,50 @@ bool IsValidPort(int port) {
     return InRange(port, 1, 65535);
 }
 
-void AddQueryString(const char * name, QUrlQuery & query, const QString & value){
+void AddQueryString( QUrlQuery & query, const QString& name, const QString & value){
     if (!value.isEmpty()){
         query.addQueryItem(name, value);
     }
 }
 
-void AddQueryStringList(const char * name, QUrlQuery & query, const QStringList & value){
+void AddQueryStringList( QUrlQuery & query, const QString& name, const QStringList & value){
     if (!value.isEmpty()){
-        add_query_nonempty(name, query,
-                           QString::fromUtf8(QJsonDocument(QListStr2QJsonArray(value)).toJson())
+        AddQueryString(query, name,
+            QString::fromUtf8(QJsonDocument(QListStr2QJsonArray(value)).toJson())
         );
     }
 }
 
-void AddQueryMap(const char * name, QUrlQuery & query, const QVariantMap & value){
+void AddQueryMap( QUrlQuery & query, const QString& name, const QVariantMap & value){
     if (!value.isEmpty()){
-        add_query_nonempty(name, query,
-                           QString::fromUtf8(QJsonDocument(QJsonObject::fromVariantMap(value)).toJson())
+        AddQueryString(query, name,
+            QString::fromUtf8(QJsonDocument(QJsonObject::fromVariantMap(value)).toJson())
         );
     }
 }
 
-void AddQueryInt(const char * name, QUrlQuery & query, int value){
+void AddQueryInt( QUrlQuery & query, const QString& name, int value){
     query.addQueryItem(name, QString::number(value));
 }
 
 
-void AddQueryNatural(const char * name, QUrlQuery & query, int value){
+void AddQueryNatural( QUrlQuery & query, const QString& name,int value){
     if (value > 0){
-        add_query_int(name, query, value);
+        AddQueryInt(query, name, value);
     }
 }
+
+QStringList GetQueryListValue(const QUrlQuery &q, const QString &key){
+    return QJsonArray2QListString(QString2QJsonArray(GetQueryValue(q, key)));
+}
+
+QVariantMap GetQueryMapValue(const QUrlQuery &q, const QString &key){
+    QJsonDocument doc = QJsonDocument::fromJson(GetQueryValue(q, key, "{}").toUtf8());
+
+    QVariantMap map;
+    if (!doc.isNull() && doc.isObject()) {
+        map = doc.object().toVariantMap();
+    }
+    return map;
+}
+
