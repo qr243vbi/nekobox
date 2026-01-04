@@ -100,6 +100,7 @@ class QUrlQuery;
 QString GetQueryValue(const QUrlQuery &q, const QString &key, const QString &def = "");
 
 int GetQueryIntValue(const QUrlQuery &q, const QString &key, int def = 0);
+QStringList GetQueryListValue(const QUrlQuery &q, const QString &key);
 
 QString GetRandomString(int randomStringLength);
 
@@ -176,22 +177,16 @@ void runOnNewThread(const std::function<void()> &callback);
 
 void runOnThread(const std::function<void()> &callback, QObject *parent);
 
-void AddQueryString(const char * name, QUrlQuery & query, const QString & value);
+void AddQueryString(QUrlQuery & query, const QString & name, const QString & value);
 
-#define add_query_nonempty AddQueryString
+void AddQueryStringList( QUrlQuery & query, const QString & name, const QStringList & value);
 
-void AddQueryStringList(const char * name, QUrlQuery & query, const QStringList & value);
+void AddQueryMap( QUrlQuery & query, const QString &  name, const QVariantMap & value);
 
-#define add_query_args_nonempty AddQueryStringList
+void AddQueryInt( QUrlQuery & query, const QString &  name, int value);
 
-void AddQueryMap(const char * name, QUrlQuery & query, const QVariantMap & value);
+void AddQueryNatural( QUrlQuery & query, const QString & name, int value);
 
-#define add_query_map_nonempty AddQueryMap
+QStringList GetQueryListValue(const QUrlQuery &q, const QString &key);
 
-void AddQueryInt(const char * name, QUrlQuery & query, int value);
-
-#define add_query_int AddQueryInt
-
-void AddQueryNatural(const char * name, QUrlQuery & query, int value);
-
-#define add_query_int_natural AddQueryNatural
+QVariantMap GetQueryMapValue(const QUrlQuery &q, const QString &key);

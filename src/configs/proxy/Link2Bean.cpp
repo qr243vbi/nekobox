@@ -531,6 +531,14 @@ namespace Configs {
     }
 
     bool TorBean::TryParseLink(const QString &link){
+        auto url = QUrl(link);
+        if (!url.isValid()) return false;
+        auto q = GetQuery(url);
+
+        extra_args = GetQueryListValue(q, "extra_args");
+        executable_path = GetQueryValue(q, "executable_path");
+        data_directory = GetQueryValue(q, "data_directory");
+        torrc = GetQueryMapValue(q, "torrc");
         return true;
     };
 
