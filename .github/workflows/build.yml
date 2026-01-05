@@ -456,21 +456,21 @@ jobs:
           ssh_keyscan_types: rsa,ecdsa,ed25519
 
       - name: Linux - Install apt dependencies
-        if: github.event.inputs.build_windows_arm64 == 'true' && github.event.inputs.build_windows_x64 == 'true' && github.event.inputs.publish_winget == 'true'
+        if: github.event.inputs.build_windows_arm64 == 'true' && github.event.inputs.build_windows_x64 == 'true' && github.event.inputs.publish_winget == 'true' && github.event.inputs.source_only  != 'true'
         uses: awalsh128/cache-apt-pkgs-action@latest
         with:
           packages: curl jq git gh
           version: 1.0
           
       - name: Cache winget-pkgs
-        if: github.event.inputs.build_windows_arm64 == 'true' && github.event.inputs.build_windows_x64 == 'true' && github.event.inputs.publish_winget == 'true'
+        if: github.event.inputs.build_windows_arm64 == 'true' && github.event.inputs.build_windows_x64 == 'true' && github.event.inputs.publish_winget == 'true' && github.event.inputs.source_only  != 'true'
         uses: actions/cache@v4.2.3
         with:
           path: build
           key: CommonCache-WingetPkgs-Cache
 
       - name: Run winget-pkgs
-        if: github.event.inputs.build_windows_arm64 == 'true' && github.event.inputs.build_windows_x64 == 'true' && github.event.inputs.publish_winget == 'true'
+        if: github.event.inputs.build_windows_arm64 == 'true' && github.event.inputs.build_windows_x64 == 'true' && github.event.inputs.publish_winget == 'true' && github.event.inputs.source_only  != 'true'
         shell: bash
         run: |
           export GITHUB_TOKEN="${{ secrets.WINGET_TOKEN }}"
