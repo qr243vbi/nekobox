@@ -60,43 +60,4 @@ namespace Configs
         return result;
     }
 
-    std::list<ColorRule> latencyColorList = {  
-        {1, 5, 0, 0, false, Qt::darkGreen},
-        {6, 5, 0, 0, false, QColor(128, 0, 128)},
-        {0,0,0,0, false, QColor(255, 165, 0)},
-        {0, 0, 0, 0, true, Qt::red}  
-    };
-
-    QColor ProxyEntity::DisplayLatencyColor() const {
-        if (latencyInt < 0){
-            for (auto & color: latencyColorList){
-                if (color.unavailable){
-                    return color.color;
-                }
-            }
-        } else {
-            for (auto & color: latencyColorList){
-                if (!color.unavailable){
-                    if (color.orderRange > 0){
-                        if (latencyOrder < (int)color.orderMin){
-                            continue;
-                        }
-                        if (latencyOrder > (int)(color.orderMin + color.orderRange)){
-                            continue;
-                        }
-                    }
-                    if (color.latencyRange > 0){
-                        if (latencyInt < (int)color.latencyMin){
-                            continue;
-                        }
-                        if (latencyInt > (int)(color.latencyMin + color.latencyRange)){
-                            continue;
-                        }
-                    }
-                    return color.color;
-                }
-            }
-        }
-        return Qt::black;
-    }
 }
