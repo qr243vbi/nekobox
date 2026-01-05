@@ -1,15 +1,15 @@
 package main
 
 import (
+	"context"
+	"errors"
+	"fmt"
+	"log"
 	"nekobox_core/gen"
 	"nekobox_core/internal/boxbox"
 	"nekobox_core/internal/boxmain"
 	"nekobox_core/internal/process"
 	"nekobox_core/internal/sys"
-	"context"
-	"errors"
-	"fmt"
-	"log"
 	"os"
 	"strings"
 	"time"
@@ -34,7 +34,6 @@ var debug bool
 // server is used to implement myservice.MyServiceServer.
 type server struct {
 }
-
 
 // To returns a pointer to the given value.
 func To[T any](v T) *T {

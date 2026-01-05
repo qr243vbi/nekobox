@@ -45,11 +45,9 @@ namespace Configs {
     }
 
     static void parseExtraXhttp(QJsonObject & transport, QString extra){
-        qDebug()  << "EXTRA: "<< extra;
         extra = extra.replace("+", "");
         for (auto [k, value]: QJsonDocument::fromJson(extra.toUtf8()).object().asKeyValueRange()){
             QString key = k.toString().toLower().replace("_", "");
-            qDebug() << key;
             if (key == "xpaddingbytes"){
                 transport["x_padding_bytes"] = getXbadoptionRange(value);
             } else if (key == "nogrpcheader"){
