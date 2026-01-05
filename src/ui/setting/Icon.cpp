@@ -1,5 +1,5 @@
 #include "nekobox/ui/setting/Icon.hpp"
-
+#include "nekobox/global/GuiUtils.hpp"
 #include <QCoreApplication>
 #include <QPainter>
 #include <QDir>
@@ -15,24 +15,16 @@ QPixmap Icon::GetTrayIcon(TrayIconStatus status) {
     QPixmap pixmap;
     auto pixmap_read = QPixmap(SYSTRAY_ICON("icon.png"), FORMAT);
     if (!pixmap_read.isNull()) pixmap = pixmap_read;
-
-    if (status == TrayIconStatus::NONE) return pixmap;
+    if (!indicatorRuleMap.contains(status)) return pixmap;
+    auto rule = indicatorRuleMap[status];
 
     auto p = QPainter(&pixmap);
     auto side = pixmap.width();
-    auto radius = side * 0.4;
-    auto d = side * 0.4;
-    auto margin = side * 0.04;
-
-    if (status == TrayIconStatus::RUNNING) {
-        p.setBrush(QBrush(Qt::darkGreen));
-    } else if (status == TrayIconStatus::SYSTEM_PROXY) {
-        p.setBrush(QBrush(Qt::blue));
-    } else if (status == TrayIconStatus::VPN) {
-        p.setBrush(QBrush(QColor(165, 42, 42)));
-    } else if (status == TrayIconStatus::DNS) {
-        p.setBrush(QBrush(Qt::darkMagenta));
-    }
+    auto radius = side * rule.radius;
+    auto d = side * rule.diameter;
+    auto margin = side * rule.margin;
+    
+    p.setBrush(QBrush(rule.color));
     p.drawRoundedRect(
         QRect(side - d - margin,
               side - d - margin,
@@ -41,6 +33,5 @@ QPixmap Icon::GetTrayIcon(TrayIconStatus status) {
               radius,
               radius);
     p.end();
-
     return pixmap;
 }

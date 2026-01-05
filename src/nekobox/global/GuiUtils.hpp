@@ -2,6 +2,8 @@
 
 #include "3rdparty/qv2ray/wrapper.hpp"
 #include "3rdparty/QThreadCreateThread.hpp"
+#include <nekobox/ui/setting/Icon.hpp>
+#include <nekobox/dataStore/ProxyEntity.hpp>
 #include <nekobox/dataStore/Utils.hpp>
 #include <functional>
 #include <memory>
@@ -183,3 +185,26 @@ inline bool isDarkMode() {
     return qApp->style()->standardPalette().window().color().lightness() < qApp->style()->standardPalette().windowText().color().lightness();
 #endif
 }
+
+struct ProxyColorRule{
+    uint orderMin;
+    uint orderRange;
+    uint latencyMin;
+    uint latencyRange;
+    bool unavailable;
+    QColor color;
+};
+
+struct IndicatorRule{
+    double radius;
+    double margin;
+    double diameter;
+    QColor color;
+};
+
+extern std::list<ProxyColorRule> latencyColorList;
+
+extern std::map<Icon::TrayIconStatus, IndicatorRule> indicatorRuleMap;
+
+QColor DisplayLatencyColor(Configs::ProxyEntity *e);
+

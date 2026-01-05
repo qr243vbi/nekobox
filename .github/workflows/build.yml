@@ -441,7 +441,7 @@ jobs:
           export OBS_PASSWORD="${{ secrets.OBS_PASSWORD }}"
           export OBS_HOOK_TOKEN="${{ secrets.OBS_HOOK_TOKEN }}"
           export INPUT_VERSION="${{ github.event.inputs.tag }}"
-          bash ./script/trigger_open_build_service.sh
+          bash ./script/trigger_open_build_service.sh ||:
           bash ./script/generate_pkgbuild.sh
 
       - name: Publish AUR package
