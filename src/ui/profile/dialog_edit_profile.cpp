@@ -6,6 +6,7 @@
 #include "nekobox/ui/profile/edit_custom.h"
 #include "nekobox/ui/profile/edit_extra_core.h"
 #include "nekobox/ui/profile/edit_mieru.h"
+#include "nekobox/ui/profile/edit_tor.h"
 #include "nekobox/ui/profile/edit_quic.h"
 #include "nekobox/ui/profile/edit_shadowsocks.h"
 #include "nekobox/ui/profile/edit_socks_http.h"
@@ -317,6 +318,10 @@ void DialogEditProfile::typeSelected(const QString &newType) {
     auto _innerWidget = new EditMieru(this);
     innerWidget = _innerWidget;
     innerEditor = _innerWidget;
+  } else if (type == "tor") {
+      auto _innerWidget = new EditTor(this);
+      innerWidget = _innerWidget;
+      innerEditor = _innerWidget;
   } else {
     validType = false;
   }
