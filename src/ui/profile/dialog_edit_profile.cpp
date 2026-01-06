@@ -46,7 +46,7 @@
       this);
 #define LOAD_TYPE(a)                                                           \
   ui->type->addItem(                                                           \
-      Configs::ProfileManager::GetDisplayName(a), a);
+      Configs::ProfileManager::GetDisplayType(a), a);
 
 DialogEditProfile::DialogEditProfile(const QString &_type, int profileOrGroupId,
                                      QWidget *parent)

@@ -191,4 +191,6 @@ QStringList GetQueryListValue(const QUrlQuery &q, const QString &key);
 
 QVariantMap QString2QMap(const QString &key);
 
+QString QMap2QString(const QVariantMap &map);
+
 QVariantMap GetQueryMapValue(const QUrlQuery &q, const QString &key);

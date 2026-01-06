@@ -207,6 +207,9 @@ set(PROJECT_SOURCES
         ${NEKOBOX_INCLUDE}/ui/profile/edit_mieru.h
         src/ui/profile/edit_mieru.cpp
         ${NEKOBOX_INCLUDE}/ui/profile/edit_mieru.ui
+        ${NEKOBOX_INCLUDE}/ui/profile/edit_tor.h
+        src/ui/profile/edit_tor.cpp
+        ${NEKOBOX_INCLUDE}/ui/profile/edit_tor.ui
         ${NEKOBOX_INCLUDE}/ui/profile/edit_trojan_vless.h
         src/ui/profile/edit_trojan_vless.cpp
         ${NEKOBOX_INCLUDE}/ui/profile/edit_trojan_vless.ui

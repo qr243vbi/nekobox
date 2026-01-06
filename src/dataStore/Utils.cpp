@@ -395,3 +395,9 @@ QVariantMap GetQueryMapValue(const QUrlQuery &q, const QString &key){
     return QString2QMap(GetQueryValue(q, key, "{}"));
 }
 
+QString QMap2QString(const QVariantMap &map) {
+    QJsonObject jsonObject = QJsonObject::fromVariantMap(map);
+    QJsonDocument jsonDoc(jsonObject);
+    return jsonDoc.toJson(QJsonDocument::Indented);  // Use Compact for a minified string
+}
+
