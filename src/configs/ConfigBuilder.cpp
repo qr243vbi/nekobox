@@ -2,11 +2,11 @@
 #include <winsock2.h>
 #include <windows.h>
 #endif
-#include "nekobox/configs/ConfigBuilder.hpp"
-#include "nekobox/dataStore/Database.hpp"
-#include "nekobox/configs/proxy/includes.h"
-#include "nekobox/configs/proxy/Preset.hpp"
-#include "nekobox/api/RPC.h"
+#include <nekobox/configs/ConfigBuilder.hpp>
+#include <nekobox/dataStore/Database.hpp>
+#include <nekobox/configs/proxy/includes.h>
+#include <nekobox/configs/proxy/Preset.hpp>
+#include <nekobox/api/RPC.h>
 
 #include <QApplication>
 #include <QFile>
@@ -1035,9 +1035,9 @@ namespace Configs {
         {
             if (dataStore->core_box_clash_api > 0){
                 clash_api = {
-                {"external_controller", dataStore->core_box_clash_listen_addr + ":" + QString::number(dataStore->core_box_clash_api)},
-                {"secret", dataStore->core_box_clash_api_secret},
-                {"external_ui", "dashboard"},
+                    {"external_controller", dataStore->core_box_clash_listen_addr + ":" + QString::number(dataStore->core_box_clash_api)},
+                    {"secret", dataStore->core_box_clash_api_secret},
+                    {"external_ui", "dashboard"},
                 };
             }
             if (dataStore->core_box_clash_api > 0 || dataStore->connection_statistics)
@@ -1048,24 +1048,12 @@ namespace Configs {
             auto cachePath = QStandardPaths::writableLocation(QStandardPaths::CacheLocation);
             QDir().mkpath(cachePath);//create parent dir tree
 
-            QString cache_database;
-            QString cacheFile;
-            if ((cache_database = Configs::dataStore->cache_database) == "" ){
-                label1:
-                cache_database = Configs::dataStore->cache_database = GetRandomString(16);
-                cacheFile = cachePath + "/nekobox_cache_" + cache_database;
-            } else {
-                cacheFile = cachePath + "/nekobox_cache_" + cache_database;
-                if (!QFile::exists(cacheFile)){
-                    goto label1;
-                }
-            }
 
             QJsonObject cache_file = {
                 {"enabled", true},
                 {"store_fakeip", true},
                 {"store_rdrc", true},
-                {"path", cacheFile + ".db"}
+                {"path", cachePath + "/nekobox_cache_" + GetRandomString(17) + ".db"}
             };
             experimentalObj["cache_file"] = cache_file;
         }
