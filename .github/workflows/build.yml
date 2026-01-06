@@ -18,7 +18,7 @@ on:
         type: boolean
         default: false
         required: false
-      updater:
+      skip_updater:
         description: "Ship binaries without updater"
         type: boolean
         required: false
@@ -113,7 +113,7 @@ jobs:
         if: steps.cache-common.outputs.cache-hit != 'true' && matrix.cross_os != 'public' && ( github.event.inputs.source_only  != 'true' && matrix.allow == 'true' )
         shell: bash
         run: |
-          if [[ ${{ github.event.inputs.updater }} == 'true' ]]; then
+          if [[ ${{ github.event.inputs.skip_updater }} == 'true' ]]; then
             export SKIP_UPDATER=y
           fi
           GO_MOD_TIDY=yes GOOS=${{ matrix.cross_os }} GOARCH=${{ matrix.cross_arch }} ./script/build_go.sh
@@ -216,7 +216,7 @@ jobs:
         if: matrix.allow == 'true' && github.event.inputs.source_only  != 'true'
         shell: bash
         run: |
-          if [[ ${{ github.event.inputs.updater }} == 'true' ]]; then export SKIP_UPDATE_BUTTON=ON; else export SKIP_UPDATE_BUTTON=OFF; fi
+          if [[ ${{ github.event.inputs.skip_updater }} == 'true' ]]; then export SKIP_UPDATE_BUTTON=ON; else export SKIP_UPDATE_BUTTON=OFF; fi
           cmake  -DCMAKE_TOOLCHAIN_FILE='${{ github.workspace }}/vcpkg/scripts/buildsystems/vcpkg.cmake' '-DVCPKG_TARGET_TRIPLET=${{ matrix.triplet }}' -DVCPKG_MANIFEST_MODE=OFF -DSKIP_UPDATE_BUTTON="${SKIP_UPDATE_BUTTON}" -DCMAKE_BUILD_TYPE=Release "-DNKR_DEFAULT_VERSION=${INPUT_VERSION}" -S . -B build
           cmake --build build --config Release --verbose
           ./script/deploy_windows.sh "new-${{ matrix.target }}"
@@ -304,7 +304,7 @@ jobs:
         shell: bash
         run: |
           cd build
-          if [[ ${{ github.event.inputs.updater }} == 'true' ]]; then export SKIP_UPDATE_BUTTON=ON; else export SKIP_UPDATE_BUTTON=OFF; fi
+          if [[ ${{ github.event.inputs.skip_updater }} == 'true' ]]; then export SKIP_UPDATE_BUTTON=ON; else export SKIP_UPDATE_BUTTON=OFF; fi
           cmake -GNinja -DSKIP_UPDATE_BUTTON="${SKIP_UPDATE_BUTTON}" -DCMAKE_BUILD_TYPE=Release "-DNKR_DEFAULT_VERSION=${INPUT_VERSION}" ..
           ninja
           cd ..
