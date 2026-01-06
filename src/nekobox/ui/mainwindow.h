@@ -260,6 +260,7 @@ private:
     //
     int proxy_last_order = -1;
     bool select_mode = false;
+    bool keep_running = false;
     QMutex mu_starting;
     QMutex mu_stopping;
     QMutex mu_exit;

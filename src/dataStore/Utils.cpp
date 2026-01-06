@@ -293,3 +293,111 @@ const char * getSoftwareVersion(){
     }
     return VERSION_STATIC;
 }
+
+int GetQueryIntValue(const QUrlQuery &q, const QString &key, int def){
+    QString str = GetQueryValue(q, key);
+    if (!str.isEmpty()){
+        return str.toInt();
+    } else {
+        return def;
+    }
+};
+
+QString SubStrBefore(QString str, const QString &sub) {
+    if (!str.contains(sub)) return str;
+    return str.left(str.indexOf(sub));
+}
+
+QString SubStrAfter(QString str, const QString &sub) {
+    if (!str.contains(sub)) return str;
+    return str.right(str.length() - str.indexOf(sub) - sub.length());
+}
+
+
+// [2001:4860:4860::8888] -> 2001:4860:4860::8888
+QString UnwrapIPV6Host(QString &str) {
+    return str.replace("[", "").replace("]", "");
+}
+
+// [2001:4860:4860::8888] or 2001:4860:4860::8888 -> [2001:4860:4860::8888]
+QString WrapIPV6Host(QString &str) {
+    if (!IsIpAddressV6(str)) return str;
+    return "[" + UnwrapIPV6Host(str) + "]";
+}
+
+QString DisplayAddress(QString serverAddress, int serverPort) {
+    if (serverAddress.isEmpty() && serverPort == 0) return {};
+    return WrapIPV6Host(serverAddress) + ":" + QString::number(serverPort);
+}
+
+QString DisplayDest(const QString& dest, QString domain)
+{
+    if (domain.isEmpty() || dest.split(":").first() == domain) return dest;
+    return dest + " (" + domain + ")";
+}
+
+bool InRange(unsigned x, unsigned low, unsigned high) {
+    return (low <= x && x <= high);
+}
+
+bool IsValidPort(int port) {
+    return InRange(port, 1, 65535);
+}
+
+void AddQueryString( QUrlQuery & query, const QString& name, const QString & value){
+    if (!value.isEmpty()){
+        query.addQueryItem(name, value);
+    }
+}
+
+void AddQueryStringList( QUrlQuery & query, const QString& name, const QStringList & value){
+    if (!value.isEmpty()){
+        AddQueryString(query, name,
+            QString::fromUtf8(QJsonDocument(QListStr2QJsonArray(value)).toJson())
+        );
+    }
+}
+
+void AddQueryMap( QUrlQuery & query, const QString& name, const QVariantMap & value){
+    if (!value.isEmpty()){
+        AddQueryString(query, name,
+            QString::fromUtf8(QJsonDocument(QJsonObject::fromVariantMap(value)).toJson())
+        );
+    }
+}
+
+void AddQueryInt( QUrlQuery & query, const QString& name, int value){
+    query.addQueryItem(name, QString::number(value));
+}
+
+
+void AddQueryNatural( QUrlQuery & query, const QString& name,int value){
+    if (value > 0){
+        AddQueryInt(query, name, value);
+    }
+}
+
+QStringList GetQueryListValue(const QUrlQuery &q, const QString &key){
+    return QJsonArray2QListString(QString2QJsonArray(GetQueryValue(q, key)));
+}
+
+QVariantMap QString2QMap(const QString &key){
+    QJsonDocument doc = QJsonDocument::fromJson(key.toUtf8());
+
+    QVariantMap map;
+    if (!doc.isNull() && doc.isObject()) {
+        map = doc.object().toVariantMap();
+    }
+    return map;
+}
+
+QVariantMap GetQueryMapValue(const QUrlQuery &q, const QString &key){
+    return QString2QMap(GetQueryValue(q, key, "{}"));
+}
+
+QString QMap2QString(const QVariantMap &map) {
+    QJsonObject jsonObject = QJsonObject::fromVariantMap(map);
+    QJsonDocument jsonDoc(jsonObject);
+    return jsonDoc.toJson(QJsonDocument::Indented);  // Use Compact for a minified string
+}
+

@@ -52,12 +52,6 @@ func Updater(updatePackagePath string, verbose bool) {
 	}
 
 	// remove old file
-	removeAll("./*.dll")
-	removeAll("./*.dmp")
-	removeAll("./*.js")
-	removeAll("./*.json")
-	removeAll("./*.txt")
-	os.RemoveAll("./nekobox_update/nekobox/public")
 
 	// update move
 	err = Mv("./nekobox_update/nekobox", "./")
@@ -107,6 +101,7 @@ func Mv(src, dst string) error {
 		if err != nil {
 			return err
 		}
+		os.RemoveAll(dst)
 		err = os.Rename(src, dst)
 		if err != nil {
 			return err
@@ -114,10 +109,11 @@ func Mv(src, dst string) error {
 	}
 	return nil
 }
-
+/*
 func removeAll(glob string) {
 	files, _ := filepath.Glob(glob)
 	for _, f := range files {
 		os.Remove(f)
 	}
 }
+*/

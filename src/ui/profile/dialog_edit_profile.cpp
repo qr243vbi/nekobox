@@ -6,6 +6,7 @@
 #include "nekobox/ui/profile/edit_custom.h"
 #include "nekobox/ui/profile/edit_extra_core.h"
 #include "nekobox/ui/profile/edit_mieru.h"
+#include "nekobox/ui/profile/edit_tor.h"
 #include "nekobox/ui/profile/edit_quic.h"
 #include "nekobox/ui/profile/edit_shadowsocks.h"
 #include "nekobox/ui/profile/edit_socks_http.h"
@@ -46,7 +47,7 @@
       this);
 #define LOAD_TYPE(a)                                                           \
   ui->type->addItem(                                                           \
-      Configs::ProfileManager::NewProxyEntity(a)->bean->DisplayType(), a);
+      Configs::ProfileManager::GetDisplayType(a), a);
 
 DialogEditProfile::DialogEditProfile(const QString &_type, int profileOrGroupId,
                                      QWidget *parent)
@@ -219,6 +220,7 @@ DialogEditProfile::DialogEditProfile(const QString &_type, int profileOrGroupId,
                       "internal-full");
     ui->type->addItem(tr("Extra Core"), "extracore");
     LOAD_TYPE("chain")
+    LOAD_TYPE("tor")
 
     // type changed
     connect(ui->type, &QComboBox::currentIndexChanged, this,
@@ -316,6 +318,10 @@ void DialogEditProfile::typeSelected(const QString &newType) {
     auto _innerWidget = new EditMieru(this);
     innerWidget = _innerWidget;
     innerEditor = _innerWidget;
+  } else if (type == "tor") {
+      auto _innerWidget = new EditTor(this);
+      innerWidget = _innerWidget;
+      innerEditor = _innerWidget;
   } else {
     validType = false;
   }

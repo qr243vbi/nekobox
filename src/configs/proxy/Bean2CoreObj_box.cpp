@@ -3,6 +3,75 @@
 #include <qjsonobject.h>
 
 namespace Configs {
+    static QJsonObject getXbadoptionRange(const QJsonValue & value);
+
+    static QJsonObject getXmux(const QJsonValue & value){
+        QJsonObject obj;
+        for (auto [k, value]: value.toObject().asKeyValueRange()){
+            QString key = k.toString().toLower().replace("_", "");
+            if (key == "maxconcurrency"){
+                obj["max_concurrency"] = getXbadoptionRange(value);
+            } else if (key == "maxconnections"){
+                obj["max_connections"] = getXbadoptionRange(value);
+            } else if (key == "cmaxreusetimes"){
+                obj["c_max_reuse_times"] = getXbadoptionRange(value);
+            } else if (key == "hmaxrequesttimes"){
+                obj["h_max_request_times"] = getXbadoptionRange(value);
+            } else if (key == "hmaxreusablesecs"){
+                obj["h_max_reusable_secs"] = getXbadoptionRange(value);
+            } else if (key == "hkeepaliveperiod"){
+                obj["h_keep_alive_period"] = value.toInteger();
+            }
+        }
+        return obj;
+    }
+
+    static QJsonObject getXbadoptionRange(const QJsonValue & value){
+        QJsonObject obj ;
+        if (value.isString()){
+            QString str = value.toString();
+            auto ptr = str.split("-");
+            obj.insert("from", ptr[0].toInt());
+            obj.insert("to", ptr[1].toInt());
+        } else if (value.isObject()){
+            auto objv = value.toObject();
+            obj.insert("from", objv.value("from").toInt());
+            obj.insert("to", objv.value("to").toInt());
+        } else {
+            obj.insert("from", value.toInt());
+            obj.insert("to", value.toInt());
+        }
+        return obj;
+    }
+
+    static void parseExtraXhttp(QJsonObject & transport, QString extra){
+        extra = extra.replace("+", "");
+        for (auto [k, value]: QJsonDocument::fromJson(extra.toUtf8()).object().asKeyValueRange()){
+            QString key = k.toString().toLower().replace("_", "");
+            if (key == "xpaddingbytes"){
+                transport["x_padding_bytes"] = getXbadoptionRange(value);
+            } else if (key == "nogrpcheader"){
+                transport["no_grpc_header"] = value.toBool();
+            } else if (key == "nosseheader"){
+                transport["no_sse_header"] = value.toBool();
+            } else if (key == "scmaxeachpostbytes"){
+                transport["sc_max_each_post_bytes"] = getXbadoptionRange(value);
+            } else if (key == "scminpostsintervalms"){
+                transport["sc_min_posts_interval_ms"] = getXbadoptionRange(value);
+            } else if (key == "scmaxbufferedposts"){
+                transport["sc_max_buffered_posts"] = value.toInteger();
+            } else if (key == "scstreamupserversecs"){
+                transport["sc_stream_up_server_secs"] = getXbadoptionRange(value);
+            } else if (key == "domainstrategy"){
+                transport["domain_strategy"] = value.toInt();
+            } else if (key == "headers"){
+                transport["headers"] = value.toObject();
+            } else if (key == "xmux"){
+                transport["xmux"] = getXmux(value);
+            }
+        }
+    }
+
     void V2rayStreamSettings::BuildStreamSettingsSingBox(QJsonObject *outbound) {
         // https://sing-box.sagernet.org/configuration/shared/v2ray-transport
 
@@ -54,6 +123,7 @@ namespace Configs {
                 if (!path.isEmpty()) transport["path"] = path;
                 if (!host.isEmpty()) transport["host"] = host;
                 transport["mode"] = xhttp_mode;
+                parseExtraXhttp(transport, xhttp_extra);
             }
             if (!network.trimmed().isEmpty()) outbound->insert("transport", transport);
         } else if (header_type == "http") {
@@ -445,4 +515,18 @@ namespace Configs {
         return result;
     }
 
+
+    CoreObjOutboundBuildResult TorBean::BuildCoreObjSingBox()
+    {
+        CoreObjOutboundBuildResult result;
+        QJsonObject outbound {
+            {"type", "tor"},
+            {"executable_path", this->executable_path},
+            {"extra_args", QListStr2QJsonArray(this->extra_args)},
+            {"data_directory", this->data_directory},
+            {"torrc", QJsonObject::fromVariantMap(this->torrc)}
+        };
+        result.outbound = outbound;
+        return result;
+    }
 } // namespace Configs

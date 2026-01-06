@@ -27,5 +27,8 @@ func main() {
 	time.Sleep(2 * time.Second)
 	os.Chdir(wd)
 	Updater(box, *verbose)
+	os.Chmod("nekobox", 0755)
+	os.Chmod("nekobox_core", 0755)
+	os.Chmod("updater", 0755)
 	exec.Command("./nekobox", args[2:]...).Start()
 }

@@ -69,17 +69,17 @@ patchelf --set-rpath '$ORIGIN/../../lib' ./usr/plugins/platformthemes/libqgtk3.s
 patchelf --set-rpath '$ORIGIN/../../lib' ./usr/plugins/platformthemes/libqxdgdesktopportal.so ||:
 
 # fix extra libs...
-mkdir ./usr/lib2
-ls ./usr/lib/
-cp ./usr/lib/libQt* ./usr/lib/libxcb-cursor* ./usr/lib/libxcb-util* ./usr/lib/libicuuc* ./usr/lib/libicui18n* ./usr/lib/libicudata* ./usr/lib2 ||:
-rm -r ./usr/lib ||:
-mv ./usr/lib2 ./usr/lib
+#mkdir ./usr/lib2
+#ls ./usr/lib/
+#cp ./usr/lib/libQt* ./usr/lib/libxcb-cursor* ./usr/lib/libxcb-util* ./usr/lib/libicuuc* ./usr/lib/libicui18n* ./usr/lib/libicudata* ./usr/lib2 ||:
+#rm -r ./usr/lib ||:
+#mv ./usr/lib2 ./usr/lib
 
 # fix lib rpath
 cp $CURDIR/*.js $DEST
 cp -RT $CURDIR/res/public $DEST/public
 echo "[General]" > $DEST/global.ini
-echo "software_name=NekoBox" >> $DEST/global.ini
+echo "software_name=NelBox" >> $DEST/global.ini
 echo "software_version=$INPUT_VERSION" >> $DEST/global.ini
 
 cd $DEST
@@ -87,12 +87,18 @@ patchelf --set-rpath '$ORIGIN/usr/lib' ./nekobox
 
 shopt -s extglob
 
+rm -rfv nekobox_directory
+mkdir nekobox_directory
+mv !(nekobox_directory) nekobox_directory
+mv nekobox_directory nekobox
+tar -czvf $DEPLOYMENT/$version_standalone-linux-${ARCH}.tar.gz nekobox
+
 mkdir -p appimage/AppDir
 cd appimage
 
 
 chmod 755 *
-cp -Rfv ../!(updater|appimage|nekobox-${ARCH1}.AppImage) ./AppDir
+cp -Rfv ../nekobox/!(updater|appimage|nekobox-${ARCH1}.AppImage) ./AppDir
 (
 cd AppDir
 mv nekobox_core .nekobox_core_binary_file
@@ -146,7 +152,9 @@ Exec=nekobox
 Icon=Tun
 EOF
 rm -rfv *.old.* ||:
-$CURDIR/appimagetool-${ARCH1}.AppImage AppDir ../nekobox-${ARCH1}.AppImage --runtime-file $CURDIR/runtime-${ARCH1}
+$CURDIR/appimagetool-${ARCH1}.AppImage AppDir $DEPLOYMENT/$version_standalone-${ARCH1}-linux.AppImage --runtime-file $CURDIR/runtime-${ARCH1}
 
 cd ../
 rm -rfv appimage
+rm -rfv nekobox
+rmdir $DEST ||:

@@ -2,6 +2,8 @@
 
 #include "3rdparty/qv2ray/wrapper.hpp"
 #include "3rdparty/QThreadCreateThread.hpp"
+#include <nekobox/ui/setting/Icon.hpp>
+#include <nekobox/dataStore/ProxyEntity.hpp>
 #include <nekobox/dataStore/Utils.hpp>
 #include <functional>
 #include <memory>
@@ -11,6 +13,7 @@
 #include <QString>
 #include <QDebug>
 #include <QWidget>
+#include <QProcess>
 #include <QThread>
 #include <QFile>
 #include <QMessageBox>
@@ -41,9 +44,28 @@
 #define D_C_LOAD_STRING(a) CACHE.a = Configs::dataStore->a;
 #define D_C_SAVE_STRING(a) Configs::dataStore->a = CACHE.a;
 
+
+inline QString joinCommand(const QStringList &arguments) {
+    QString command;
+    for (QString arg : arguments) {
+        // Check for spaces or special characters
+        if (arg.contains(' ') || arg.contains('"')) {
+            command += '"' + arg.replace("\"", "\\\"") + "\" ";  // Escape existing quotes
+        } else {
+            command += arg + " ";
+        }
+    }
+    return command.trimmed(); // Remove trailing space
+}
+
+
 #define P_LOAD_STRING(a) ui->a->setText(bean->a);
+#define P_LOAD_STRINGLIST(a) ui->a->setText(joinCommand(bean->a));
+#define P_LOAD_STRINGMAP(a) ui->a->setText(QMap2QString(bean->a));
 #define P_LOAD_STRING_PLAIN(a) ui->a->setPlainText(bean->a);
 #define P_SAVE_STRING(a) bean->a = ui->a->text();
+#define P_SAVE_STRINGMAP(a) bean->a = QString2QMap(ui->a->toPlainText());
+#define P_SAVE_STRINGLIST(a) bean->a = QProcess::splitCommand(ui->a->text());
 #define P_SAVE_STRING_PLAIN(a) bean->a = ui->a->toPlainText();
 
 #define D_LOAD_STRING(a) ui->a->setText(Configs::dataStore->a);
@@ -183,3 +205,26 @@ inline bool isDarkMode() {
     return qApp->style()->standardPalette().window().color().lightness() < qApp->style()->standardPalette().windowText().color().lightness();
 #endif
 }
+
+struct ProxyColorRule{
+    uint orderMin;
+    uint orderRange;
+    uint latencyMin;
+    uint latencyRange;
+    bool unavailable;
+    QColor color;
+};
+
+struct IndicatorRule{
+    double radius;
+    double margin;
+    double diameter;
+    QColor color;
+};
+
+extern std::list<ProxyColorRule> latencyColorList;
+
+extern std::map<Icon::TrayIconStatus, IndicatorRule> indicatorRuleMap;
+
+QColor DisplayLatencyColor(Configs::ProxyEntity *e);
+

@@ -343,7 +343,9 @@ bool jsUpdater( JsUpdaterWindow* factory,
                 QString * archive_name,
                 bool * is_newer,
                 QStringList * args,
-                bool allow_updater){
+                bool allow_updater,
+                bool * keep_running
+){
     QJSEngine ctx;
     ctx.globalObject().setProperty("search", *search);
     ctx.globalObject().setProperty("UpdaterExists", allow_updater);
@@ -355,6 +357,7 @@ bool jsUpdater( JsUpdaterWindow* factory,
     getString(ctx, "archive_name", archive_name);
     getString(ctx, "search", search);
     getBoolean(ctx, "is_newer", is_newer);
+    getBoolean(ctx, "keep_running", keep_running);
     getStringList(ctx, "updater_args", args);
 
     return true;

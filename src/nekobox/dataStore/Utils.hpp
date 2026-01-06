@@ -5,6 +5,9 @@
 #include <memory>
 #include <QObject>
 #include <QString>
+#include <QUrlQuery>
+#include <QJsonArray>
+#include <QVariantMap>
 #include <QDebug>
 #include <QFile>
 #if QT_VERSION >= QT_VERSION_CHECK(6, 5, 0)
@@ -74,15 +77,9 @@ inline std::function<void(int)> TM_auto_update_subsctiption_Reset_Minute;
 
 inline const QString UNICODE_LRO = QString::fromUtf8(QByteArray::fromHex("E280AD"));
 
-inline QString SubStrBefore(QString str, const QString &sub) {
-    if (!str.contains(sub)) return str;
-    return str.left(str.indexOf(sub));
-}
+QString SubStrBefore(QString str, const QString &sub);
 
-inline QString SubStrAfter(QString str, const QString &sub) {
-    if (!str.contains(sub)) return str;
-    return str.right(str.length() - str.indexOf(sub) - sub.length());
-}
+QString SubStrAfter(QString str, const QString &sub);
 
 QString QStringList2Command(const QStringList &list);
 
@@ -101,6 +98,9 @@ class QUrlQuery;
 #define GetQuery(url) QUrlQuery((url).query(QUrl::ComponentFormattingOption::FullyDecoded));
 
 QString GetQueryValue(const QUrlQuery &q, const QString &key, const QString &def = "");
+
+int GetQueryIntValue(const QUrlQuery &q, const QString &key, int def = 0);
+QStringList GetQueryListValue(const QUrlQuery &q, const QString &key);
 
 QString GetRandomString(int randomStringLength);
 
@@ -152,26 +152,14 @@ bool IsIpAddressV6(const QString &str);
 
 
 // [2001:4860:4860::8888] -> 2001:4860:4860::8888
-inline QString UnwrapIPV6Host(QString &str) {
-    return str.replace("[", "").replace("]", "");
-}
+QString UnwrapIPV6Host(QString &str);
 
 // [2001:4860:4860::8888] or 2001:4860:4860::8888 -> [2001:4860:4860::8888]
-inline QString WrapIPV6Host(QString &str) {
-    if (!IsIpAddressV6(str)) return str;
-    return "[" + UnwrapIPV6Host(str) + "]";
-}
+QString WrapIPV6Host(QString &str);
 
-inline QString DisplayAddress(QString serverAddress, int serverPort) {
-    if (serverAddress.isEmpty() && serverPort == 0) return {};
-    return WrapIPV6Host(serverAddress) + ":" + QString::number(serverPort);
-}
+QString DisplayAddress(QString serverAddress, int serverPort);
 
-inline QString DisplayDest(const QString& dest, QString domain)
-{
-    if (domain.isEmpty() || dest.split(":").first() == domain) return dest;
-    return dest + " (" + domain + ")";
-}
+QString DisplayDest(const QString& dest, QString domain);
 
 // Format & Misc
 
@@ -181,14 +169,28 @@ QString DisplayTime(long long time, int formatType = 0);
 
 QString ReadableSize(const qint64 &size);
 
-inline bool InRange(unsigned x, unsigned low, unsigned high) {
-    return (low <= x && x <= high);
-}
+bool InRange(unsigned x, unsigned low, unsigned high);
 
-inline bool IsValidPort(int port) {
-    return InRange(port, 1, 65535);
-}
+bool IsValidPort(int port);
 
 void runOnNewThread(const std::function<void()> &callback);
 
 void runOnThread(const std::function<void()> &callback, QObject *parent);
+
+void AddQueryString(QUrlQuery & query, const QString & name, const QString & value);
+
+void AddQueryStringList( QUrlQuery & query, const QString & name, const QStringList & value);
+
+void AddQueryMap( QUrlQuery & query, const QString &  name, const QVariantMap & value);
+
+void AddQueryInt( QUrlQuery & query, const QString &  name, int value);
+
+void AddQueryNatural( QUrlQuery & query, const QString & name, int value);
+
+QStringList GetQueryListValue(const QUrlQuery &q, const QString &key);
+
+QVariantMap QString2QMap(const QString &key);
+
+QString QMap2QString(const QVariantMap &map);
+
+QVariantMap GetQueryMapValue(const QUrlQuery &q, const QString &key);

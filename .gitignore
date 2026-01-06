@@ -5,6 +5,8 @@ core/server/gen/libcore_service-remote
 core/server/gen/*.go
 script/winget-pkgs
 run.cmd
+run86.cmd
+*.zip
 SingBox.Version
 /script/nekobox
 /winget-pkgs

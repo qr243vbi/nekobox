@@ -248,6 +248,14 @@ namespace Subscription {
             if (!ok) return;
         }
 
+        // tor
+        if (str.startsWith("tor://")) {
+            needFix = false;
+            ent = Configs::ProfileManager::NewProxyEntity("tor");
+            auto ok = ent->TorBean()->TryParseLink(str);
+            if (!ok) return;
+        }
+
         if (ent == nullptr) return;
 
         // Fix
@@ -399,6 +407,13 @@ namespace Subscription {
             if (out["type"] == "ssh") {
                 ent = Configs::ProfileManager::NewProxyEntity("ssh");
                 auto ok = ent->SSHBean()->TryParseJson(out);
+                if (!ok) continue;
+            }
+
+            // Tor
+            if (out["type"] == "tor") {
+                ent = Configs::ProfileManager::NewProxyEntity("tor");
+                auto ok = ent->TorBean()->TryParseJson(out);
                 if (!ok) continue;
             }
 
@@ -833,7 +848,7 @@ namespace Subscription {
         }
     }
 
-    // 在新的 thread 运行
+    //
     void GroupUpdater::AsyncUpdate(const QString &str, int _sub_gid, const std::function<void()> &finish) {
         auto content = str.trimmed();
         bool asURL = false;
@@ -871,19 +886,19 @@ namespace Subscription {
     }
 
     void GroupUpdater::Update(const QString &_str, int _sub_gid, bool _not_sub_as_url) {
-        // 创建 rawUpdater
+        //
         Configs::dataStore->imported_count = 0;
         auto rawUpdater = std::make_unique<RawUpdater>();
         rawUpdater->gid_add_to = _sub_gid;
 
-        // 准备
+        //
         QString sub_user_info;
-        bool asURL = _sub_gid >= 0 || _not_sub_as_url; // 把 _str 当作 url 处理（下载内容）
+        bool asURL = _sub_gid >= 0 || _not_sub_as_url;
         auto content = _str.trimmed();
         auto group = Configs::profileManager->GetGroup(_sub_gid);
         if (group != nullptr && group->archive) return;
 
-        // 网络请求
+        //
         if (asURL) {
             auto groupName = group == nullptr ? content : group->name;
             MW_show_log(">>>>>>>> " + QObject::tr("Requesting subscription: %1").arg(groupName));
@@ -900,13 +915,13 @@ namespace Subscription {
             MW_show_log("<<<<<<<< " + QObject::tr("Subscription request fininshed: %1").arg(groupName));
         }
 
-        QList<std::shared_ptr<Configs::ProxyEntity>> in;          // 更新前
-        QList<std::shared_ptr<Configs::ProxyEntity>> out_all;     // 更新前 + 更新后
-        QList<std::shared_ptr<Configs::ProxyEntity>> out;         // 更新后
-        QList<std::shared_ptr<Configs::ProxyEntity>> only_in;     // 只在更新前有的
-        QList<std::shared_ptr<Configs::ProxyEntity>> only_out;    // 只在更新后有的
-        QList<std::shared_ptr<Configs::ProxyEntity>> update_del;  // 更新前后都有的，需要删除的新配置
-        QList<std::shared_ptr<Configs::ProxyEntity>> update_keep; // 更新前后都有的，被保留的旧配置
+        QList<std::shared_ptr<Configs::ProxyEntity>> in;          //
+        QList<std::shared_ptr<Configs::ProxyEntity>> out_all;     //
+        QList<std::shared_ptr<Configs::ProxyEntity>> out;         //
+        QList<std::shared_ptr<Configs::ProxyEntity>> only_in;     //
+        QList<std::shared_ptr<Configs::ProxyEntity>> only_out;    //
+        QList<std::shared_ptr<Configs::ProxyEntity>> update_del;  //
+        QList<std::shared_ptr<Configs::ProxyEntity>> update_keep; //
 
         if (group != nullptr) {
             in = group->GetProfileEnts();

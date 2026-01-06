@@ -32,26 +32,14 @@ namespace Configs {
 
     class SSHBean;
 
+    class TorBean;
+
     class CustomBean;
 
     class ChainBean;
 }; // namespace Configs
 
 namespace Configs {
-
-    
-    struct ColorRule{
-        uint orderMin;
-        uint orderRange;
-        uint latencyMin;
-        uint latencyRange;
-        bool unavailable;
-        QColor color;
-    };
-    
-
-    extern std::list<ColorRule> latencyColorList;
-
     class ProxyEntity : public JsonStore {
     private:
         Stats::TrafficData * traffic_data_pointer = nullptr;
@@ -80,7 +68,7 @@ namespace Configs {
 
         [[nodiscard]] QString DisplayTestResult() const;
 
-        [[nodiscard]] QColor DisplayLatencyColor() const;
+   //     [[nodiscard]] QColor DisplayLatencyColor() const;
 
         [[nodiscard]] Configs::ChainBean *ChainBean() const {
             return (Configs::ChainBean *) bean.get();
@@ -133,6 +121,10 @@ namespace Configs {
 
         [[nodiscard]] Configs::SSHBean *SSHBean() const {
             return (Configs::SSHBean *) bean.get();
+        };
+
+        [[nodiscard]] Configs::TorBean *TorBean() const {
+            return (Configs::TorBean *) bean.get();
         };
 
         [[nodiscard]] Configs::CustomBean *CustomBean() const {

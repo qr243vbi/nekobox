@@ -130,6 +130,7 @@ set(PROJECT_SOURCES
         ${NEKOBOX_INCLUDE}/configs/proxy/ExtraCore.h
         ${NEKOBOX_INCLUDE}/configs/proxy/includes.h
         ${NEKOBOX_INCLUDE}/configs/proxy/MieruBean.hpp
+        ${NEKOBOX_INCLUDE}/configs/proxy/TorBean.hpp
         ${NEKOBOX_INCLUDE}/configs/proxy/Preset.hpp
         ${NEKOBOX_INCLUDE}/configs/proxy/QUICBean.hpp
         ${NEKOBOX_INCLUDE}/configs/proxy/ShadowSocksBean.hpp
@@ -206,6 +207,9 @@ set(PROJECT_SOURCES
         ${NEKOBOX_INCLUDE}/ui/profile/edit_mieru.h
         src/ui/profile/edit_mieru.cpp
         ${NEKOBOX_INCLUDE}/ui/profile/edit_mieru.ui
+        ${NEKOBOX_INCLUDE}/ui/profile/edit_tor.h
+        src/ui/profile/edit_tor.cpp
+        ${NEKOBOX_INCLUDE}/ui/profile/edit_tor.ui
         ${NEKOBOX_INCLUDE}/ui/profile/edit_trojan_vless.h
         src/ui/profile/edit_trojan_vless.cpp
         ${NEKOBOX_INCLUDE}/ui/profile/edit_trojan_vless.ui
