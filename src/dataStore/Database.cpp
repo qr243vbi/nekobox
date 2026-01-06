@@ -170,12 +170,12 @@ namespace Configs {
     }
 
 
-    QString ProfileManager::GetDisplayName(const QString & type){
+    QString ProfileManager::GetDisplayType(const QString & type){
         QString ret = profileDisplayNames.value(type, "");
         if (ret == ""){
             auto proxy = NewProxyEntity(type, true);
             if (proxy != nullptr){
-                ret = proxy->bean->DisplayName();
+                ret = proxy->bean->DisplayType();
                 proxy.reset();
                 profileDisplayNames[type] = ret;
             }

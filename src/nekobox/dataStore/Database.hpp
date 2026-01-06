@@ -35,7 +35,7 @@ namespace Configs {
 
         void SaveManager();
 
-        [[nodiscard]] static QString GetDisplayName(const QString & type);
+        [[nodiscard]] static QString GetDisplayType(const QString & type);
 
         [[nodiscard]] static std::shared_ptr<ProxyEntity> NewProxyEntity(const QString &type, bool nullok);
 
