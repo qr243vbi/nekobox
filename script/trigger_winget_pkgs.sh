@@ -13,7 +13,7 @@ asset_res="$(echo "$text"  | jq '.assets[] | select(.browser_download_url | ends
 
 PATTERN="s~/S /WINGET=1~/S /NOSCRIPT=1 /WINGET=1~g;s~$OLDVER~$INPUT_VERSION~g;s~2025-01-03~$(date +%Y-%m-%d)~g;$(echo $asset_res | jq -r '"\(.name)_\(.digest | ascii_upcase)"' | sed 's~.*arm64.*:\(.*\)~s@55DE53FA4B6CA5C3DC4DCB9A0EDE9AB933511C206E1289930DD35075E9C22147@\1@g;~g;s~.*windows64.*:\(.*\)~s@0AC94CBAA96CE3F101B9C8773E7227ABD053BE7DA18A84A3F3D6B6DBD7632CC5@\1@g;~g;' | sed ':a;N;$!ba;s/\n//g')"
 
-NEW_BRANCH_NAME="NekoBox-branch-$INPUT_VERSION"
+NEW_BRANCH_NAME="NekoBox-branch-$INPUT_VERSION-$(date +'%Y%m%d%H%M%S')"
 git clone --depth 10 "https://${USERNAME}:${GITHUB_TOKEN}@github.com/${USERNAME}/winget-pkgs" ||:
 
 cd "$(basename "$REPO_TO_FORK")" || { echo "Failed to change directory"; exit 1; }
