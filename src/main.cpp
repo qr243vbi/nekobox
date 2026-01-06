@@ -201,7 +201,8 @@ int main(int argc, char** argv) {
     }
     
     Configs::resourceManager->Load();
-    if (Configs::resourceManager->symlinks_supported = createSymlink(getApplicationPath(), "resources/qr243vbi.lnk.lnk")){
+    bool supported = Configs::resourceManager->symlinks_supported = createSymlink(getApplicationPath(), "resources/qr243vbi.lnk.lnk");
+    if (supported){
         QFile::remove("resources/qr243vbi.lnk.lnk");
     };
 

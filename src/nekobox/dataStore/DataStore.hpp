@@ -82,7 +82,7 @@ namespace Configs {
         bool flag_dns_set = false;
 
         // Saved
-        QString cache_database = "";
+   //     QString cache_database = "";
 
         // Misc
         QString log_level = "info";

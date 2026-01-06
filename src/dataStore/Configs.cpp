@@ -394,7 +394,7 @@ namespace Configs {
         ADD_MAP("speedtest_timeout_ms", speed_test_timeout_ms, integer);
         ADD_MAP("urltest_timeout_ms", url_test_timeout_ms, integer);
         ADD_MAP("show_system_dns", show_system_dns, boolean);
-        ADD_MAP("cache_database_name", cache_database, string);
+   //     ADD_MAP("cache_database_name", cache_database, string);
 
         ADD_MAP("auto_test_enable", auto_test_enable, boolean);
         ADD_MAP("auto_test_interval_seconds", auto_test_interval_seconds, integer);
