@@ -88,6 +88,8 @@ jobs:
       - name: Checking out sources
         if: matrix.cross_os == 'public' || ( github.event.inputs.source_only  != 'true' && matrix.allow == 'true' )
         uses: actions/checkout@v4.2.2
+        with:
+          submodules: 'true'
       - name: Cache Common Download
         id: cache-common
         if: matrix.cross_os != 'public' && ( github.event.inputs.source_only  != 'true' && matrix.allow == 'true' )
