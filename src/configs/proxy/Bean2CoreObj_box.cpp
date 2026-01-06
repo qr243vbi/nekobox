@@ -1,5 +1,6 @@
-#include "nekobox/dataStore/ProxyEntity.hpp"
-#include "nekobox/configs/proxy/includes.h"
+#include <nekobox/dataStore/ProxyEntity.hpp>
+#include <nekobox/configs/proxy/includes.h>
+
 #include <qjsonobject.h>
 
 namespace Configs {
@@ -7,7 +8,7 @@ namespace Configs {
 
     static QJsonObject getXmux(const QJsonValue & value){
         QJsonObject obj;
-        for (auto [k, value]: value.toObject().asKeyValueRange()){
+        for (auto [k, value]: asKeyValueRange(value.toObject())){
             QString key = k.toString().toLower().replace("_", "");
             if (key == "maxconcurrency"){
                 obj["max_concurrency"] = getXbadoptionRange(value);
@@ -46,7 +47,7 @@ namespace Configs {
 
     static void parseExtraXhttp(QJsonObject & transport, QString extra){
         extra = extra.replace("+", "");
-        for (auto [k, value]: QJsonDocument::fromJson(extra.toUtf8()).object().asKeyValueRange()){
+        for (auto [k, value]: asKeyValueRange(QJsonDocument::fromJson(extra.toUtf8()).object())){
             QString key = k.toString().toLower().replace("_", "");
             if (key == "xpaddingbytes"){
                 transport["x_padding_bytes"] = getXbadoptionRange(value);
