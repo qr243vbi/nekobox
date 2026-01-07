@@ -20,9 +20,9 @@ public:
 
     public slots:
 
-    void accept();
+    void accept() override;
 
-    void reject();
+    void reject() override;
 
 private:
     void generateShortcutItems(const QList<QAction*>& actions);
