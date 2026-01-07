@@ -29,9 +29,16 @@ public:
     auto end() const { return iterable.keyValueEnd(); }
 };
 
-template <typename T> auto asKeyValueRange(T &iterable) { return KeyValueRange<T &>(iterable); }
-template <typename T> auto asKeyValueRange(const T &iterable) { return KeyValueRange<const T &>(iterable); }
-template <typename T> auto asKeyValueRange(T &&iterable) noexcept { return KeyValueRange<T>(std::move(iterable)); }
+
+template<typename T, typename = std::enable_if_t<!std::is_same_v<T, QJsonObject>>>
+auto asKeyValueRange(T &iterable) { return KeyValueRange<T &>(iterable); }
+
+template<typename T, typename = std::enable_if_t<!std::is_same_v<T, QJsonObject>>>
+auto asKeyValueRange(const T &iterable) { return KeyValueRange<const T &>(iterable); }
+
+template<typename T, typename = std::enable_if_t<!std::is_same_v<T, QJsonObject>>>
+auto asKeyValueRange(T &&iterable) noexcept { return KeyValueRange<T>(std::move(iterable)); }
+
 
 
 #include <QList>
