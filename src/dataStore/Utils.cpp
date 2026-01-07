@@ -416,8 +416,10 @@ QString QJsonType2QString(QJsonValue::Type type){
         case QJsonValue::Type::Object:
             return "Object";
         case QJsonValue::Type::Undefined:
-            return "Undefined";
+        default:
+            break;
     };
+    return "Undefined";
 }
 
 
