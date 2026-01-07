@@ -141,7 +141,7 @@ public:
 
     void show_log_impl(const QString &log);
 
-    void start_select_mode(QObject *context, const std::function<void(int)> &callback);
+ //   void start_select_mode(QObject *context, const std::function<void(int)> &callback);
 
     void RegisterHotkey(bool unregister);
 
@@ -154,10 +154,6 @@ public:
     void UpdateDataView(bool force = false);
 
     void setDownloadReport(const DownloadProgressReport& report, bool show);
-
-signals:
-
-    void profile_selected(int id);
 
 public slots:
     void on_commitDataRequest();
@@ -259,7 +255,7 @@ private:
     qint64 last_test_time = 0;
     //
     int proxy_last_order = -1;
-    bool select_mode = false;
+  //  bool select_mode = false;
     bool keep_running = false;
     QMutex mu_starting;
     QMutex mu_stopping;

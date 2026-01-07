@@ -671,13 +671,10 @@ MainWindow::MainWindow(QWidget *parent)
             refresh_proxy_list(-1);
           });
   connect(shortcut_esc, &QShortcut::activated, this, [=, this] {
-    if (select_mode) {
-      emit profile_selected(-1);
-      select_mode = false;
-      refresh_status();
-    }
-    if (searchEnabled)
+
+    if (searchEnabled){
       setSearchState(false);
+    }
   });
 
   // refresh
@@ -2132,21 +2129,14 @@ void MainWindow::refresh_status(const QString &traffic_update) {
   //
   ui->checkBox_VPN->setChecked(Configs::dataStore->spmode_vpn);
   ui->checkBox_SystemProxy->setChecked(Configs::dataStore->spmode_system_proxy);
-  if (select_mode) {
-    ui->label_running->setText(tr("Select") + " *");
-    ui->label_running->setToolTip(
-        tr("Select mode, double-click or press Enter to select a profile, "
-           "press ESC to exit."));
-  } else {
+
     ui->label_running->setToolTip({});
-  }
+
 
   auto make_title = [=, this](bool isTray) {
     QStringList tt;
     if (!isTray && Configs::IsAdmin())
       tt << "[Admin]";
-    if (select_mode)
-      tt << "[" + tr("Select") + "]";
     if (!title_error.isEmpty())
       tt << "[" + title_error + "]";
     if (Configs::dataStore->spmode_vpn &&
@@ -2479,16 +2469,10 @@ void MainWindow::refresh_table_item(
   ui->proxyListTable->setItem(row, 4, f);
 }
 
-// table菜单相关
+// table
 
 void MainWindow::on_proxyListTable_itemDoubleClicked(QTableWidgetItem *item) {
   auto id = item->data(114514).toInt();
-  if (select_mode) {
-    emit profile_selected(id);
-    select_mode = false;
-    refresh_status();
-    return;
-  }
   auto dialog = new DialogEditProfile("", id, this);
   connect(dialog, &QDialog::finished, dialog, &QDialog::deleteLater);
 }
@@ -3282,14 +3266,6 @@ bool MainWindow::eventFilter(QObject *obj, QEvent *event) {
   return QMainWindow::eventFilter(obj, event);
 }
 
-// profile selector
-
-void MainWindow::start_select_mode(QObject *context,
-                                   const std::function<void(int)> &callback) {
-  select_mode = true;
-  connectOnce(this, &MainWindow::profile_selected, context, callback);
-  refresh_status();
-}
 
 inline QJsonArray last_arr; // format is nekoray_connections_json
 

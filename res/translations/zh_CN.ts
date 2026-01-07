@@ -1058,6 +1058,16 @@
         <source>Defaults</source>
         <translation type="vanished">恢复默认设置</translation>
     </message>
+    <message>
+        <location filename="../../src/ui/profile/edit_chain.cpp" line="46"/>
+        <source>Add proxy</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/profile/edit_chain.cpp" line="66"/>
+        <source>Replace %1 proxy</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>DialogHotkey</name>
@@ -2288,39 +2298,39 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>隐藏窗口</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="947"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="944"/>
         <source>Rulesets cache is updated</source>
         <translation>规则集缓存已更新</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="877"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="874"/>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="104"/>
         <source>No routing profiles are updated</source>
         <translation>没有更新的个人资料</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="901"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="898"/>
         <source>Failed to update rulesets</source>
         <translation>规则集更新失败</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="876"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="880"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="873"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="877"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="897"/>
         <location filename="../../src/ui/mainwindow.cpp" line="900"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="903"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="946"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="943"/>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="94"/>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="103"/>
         <source>Update Response</source>
         <translation>更新响应</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="843"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="840"/>
         <source>Edit Routing Profiles</source>
         <translation>编辑路由文件</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="865"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="862"/>
         <source>Update Routing Profiles</source>
         <translation>更新路由文件</translation>
     </message>
@@ -2329,22 +2339,22 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation type="vanished">請求規則集清單錯誤：%1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="913"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="910"/>
         <source>Update RuleSet Cache</source>
         <translation>更新规则集缓存</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="961"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="958"/>
         <source>Clear RuleSet Cache</source>
         <translation>清除規則集快取</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="891"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="888"/>
         <source>Update RuleSet Map</source>
         <translation>更新规则集</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="993"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="990"/>
         <source>Enable AdBlock</source>
         <translation>启用广告拦截</translation>
     </message>
@@ -2402,8 +2412,8 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="177"/>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="603"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="2157"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="2160"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2147"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2150"/>
         <source>System Proxy</source>
         <translation>系统代理</translation>
     </message>
@@ -2429,8 +2439,8 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="752"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3134"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3142"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3118"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3126"/>
         <source>Stop</source>
         <translation>停止</translation>
     </message>
@@ -2465,29 +2475,29 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>禁用</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1329"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1326"/>
         <source>Error</source>
         <translation>错误</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1423"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="1480"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="2564"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="2898"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="2951"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="2998"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3201"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1420"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1477"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2548"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2882"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2935"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2982"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3185"/>
         <source>Confirmation</source>
         <translation>确认</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1424"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="1481"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1421"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1478"/>
         <source>Settings changed, restart proxy?</source>
         <translation>设置已改变，重启代理吗？</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1495"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1492"/>
         <source>Imported %1 profile(s)</source>
         <translation>导入了 %1 个配置档</translation>
     </message>
@@ -2498,12 +2508,12 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>不可用</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2565"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2549"/>
         <source>Remove %1 item(s) ?</source>
         <translation>删除此此节点 %1 项吗？</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2627"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2611"/>
         <source>Config copied</source>
         <translation>配置已复制</translation>
     </message>
@@ -2514,7 +2524,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>[%1] 测试错误: %2</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3132"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3116"/>
         <source>Clear</source>
         <translation>清除</translation>
     </message>
@@ -2537,13 +2547,11 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>更新</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2136"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="2149"/>
         <source>Select</source>
-        <translation>选择</translation>
+        <translation type="vanished">选择</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2813"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2797"/>
         <source>QR Code not found</source>
         <translation>未找到二维码</translation>
     </message>
@@ -2593,8 +2601,8 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>查看此节点（ 二维码和链接 ）</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2600"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="2612"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2584"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2596"/>
         <source>Copied %1 item(s)</source>
         <translation>复制了 %1 项</translation>
     </message>
@@ -2634,19 +2642,19 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>启用 Tun</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1416"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1413"/>
         <source>Tun Settings changed</source>
         <translation>Tun 设置已改变</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1417"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1414"/>
         <source>Restart Tun to take effect.</source>
         <translation>重启 Tun 以生效。</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="744"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3134"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3142"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3118"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3126"/>
         <source>Start</source>
         <translation>启动</translation>
     </message>
@@ -2662,7 +2670,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="977"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="2512"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2496"/>
         <source>Clone</source>
         <translation>复制</translation>
     </message>
@@ -2672,7 +2680,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>更新订阅</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2513"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2497"/>
         <source>Clone %1 item(s)</source>
         <translation>复制此节点 %1 项</translation>
     </message>
@@ -2688,7 +2696,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="823"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="1136"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1133"/>
         <source>Export %1 config</source>
         <translation>导出 %1 配置</translation>
     </message>
@@ -2708,7 +2716,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>重启程序</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2125"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2122"/>
         <source>Not Running</source>
         <translation>未在运行</translation>
     </message>
@@ -2727,12 +2735,12 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>显示窗口</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1452"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1449"/>
         <source>Settings changed</source>
         <translation>设置已改变</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1453"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1450"/>
         <source>Restart the program to take effect.</source>
         <translation>重启程序以生效。</translation>
     </message>
@@ -2758,9 +2766,8 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>如果长时间没有反应，建议重启软件。</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2138"/>
         <source>Select mode, double-click or press Enter to select a profile, press ESC to exit.</source>
-        <translation>选择模式，双击或按回车键选择一个配置档，按 ESC 键退出。</translation>
+        <translation type="vanished">选择模式，双击或按回车键选择一个配置档，按 ESC 键退出。</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1040"/>
@@ -2784,22 +2791,22 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1127"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3160"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3144"/>
         <source>Add new Group</source>
         <translation>新建分组</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3193"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3177"/>
         <source>Delete selected Group</source>
         <translation>删除此分组</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3194"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3178"/>
         <source>Edit selected Group</source>
         <translation>编辑此分组</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3202"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3186"/>
         <source>Remove %1?</source>
         <translation>删除此此节点 %1 吗?</translation>
     </message>
@@ -2809,7 +2816,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>测试此节点URL延迟</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="904"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="901"/>
         <source>Rulesets updated successfully</source>
         <translation>規則集更新成功</translation>
     </message>
@@ -2819,7 +2826,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>清除此节点测试结果</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="881"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="878"/>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="95"/>
         <source>Updated %1 routing profiles</source>
         <translation>更新了 %1 個設定檔</translation>
@@ -2874,27 +2881,27 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>如果启动 VPN 时有问题，您可以在这里强制重置 Core 进程，然后再次尝试启动配置档。错误是 %1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2546"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2530"/>
         <source> Confirmation </source>
         <translation> 确认 </translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2547"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2531"/>
         <source> Remove %1 item(s) ? </source>
         <translation> 移除 %1 项吗？ </translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2899"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2883"/>
         <source>Remove %1 Unavailable item(s) ?</source>
         <translation>移除 %1 个不可用项吗？</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2952"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2936"/>
         <source>Remove %1 Invalid item(s) ?</source>
         <translation>移除 %1 个无效项吗？</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2999"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2983"/>
         <source>Replace domain server addresses with their resolved IPs?</source>
         <translation>替换域名服务器地址为其解析后的 IP 地址吗？</translation>
     </message>
@@ -2924,7 +2931,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>日志</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1800"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1797"/>
         <source>Please give the core root privileges</source>
         <translation>请赋予核心根(root)权限</translation>
     </message>
@@ -3059,22 +3066,22 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>停止返回错误</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2629"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2613"/>
         <source>Copy core config</source>
         <translation>复制核心配置</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2631"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2615"/>
         <source>Copy test config</source>
         <translation>复制测试配置</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3867"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3843"/>
         <source>Cannot start</source>
         <translation>无法启动</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3868"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3844"/>
         <source>Last download request has not finished yet</source>
         <translation>上次的下载请求尚未完成</translation>
     </message>
@@ -3084,7 +3091,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>流量图</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3902"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3878"/>
         <source>Failed to download update assets</source>
         <translation>下载更新资产失败</translation>
     </message>
@@ -3124,12 +3131,12 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>[%1] 速度测试错误：%2</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1748"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1745"/>
         <source>User opted for no privilege req, some features may not work</source>
         <translation>用户选择无权限请求，某些功能可能不起作用</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2834"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2818"/>
         <source>Unable to capture screen</source>
         <translation>无法捕获屏幕</translation>
     </message>
@@ -3197,19 +3204,19 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="864"/>
+        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="865"/>
         <source>url detected</source>
         <translation>检测到 URL</translation>
     </message>
     <message>
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="865"/>
+        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="866"/>
         <source>%1
 How to update?</source>
         <translation>%1
 如何更新？</translation>
     </message>
     <message>
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="1004"/>
+        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="1005"/>
         <source>Added %1 profiles:
 %2
 Deleted %3 Profiles:
@@ -3220,13 +3227,13 @@ Deleted %3 Profiles:
 %4</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2130"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2127"/>
         <source>IP address: %1</source>
         <translation>IP地址: %1</translation>
     </message>
     <message>
         <location filename="../../src/stats/traffic/TrafficLooper.cpp" line="115"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="2093"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2090"/>
         <source>Proxy: %1
 Direct: %2</source>
         <translation>代理: %1
@@ -3238,27 +3245,27 @@ Direct: %2</source>
         <translation>已用 %1 剩余 %2 过期 %3</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3772"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3783"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3827"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3849"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3858"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3893"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3748"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3759"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3803"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3825"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3834"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3869"/>
         <source>Update</source>
         <translation>更新</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3827"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3803"/>
         <source>No update</source>
         <translation>无更新</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3855"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3831"/>
         <source>Open in browser</source>
         <translation>在浏览器打开</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3853"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3829"/>
         <source>Close</source>
         <translation>关闭</translation>
     </message>
@@ -3268,17 +3275,17 @@ Direct: %2</source>
         <translation type="unfinished">选择国家地理规则</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1244"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1241"/>
         <source>Requesting rule-set list error: %1</source>
         <translation type="unfinished">請求規則集清單錯誤：%1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3894"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3870"/>
         <source>Update is ready, restart to install?</source>
         <translation>更新已准备好，重启进行安装吗？</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3850"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3826"/>
         <source>Update found: %1
 Release note:
 %2</source>
@@ -3297,22 +3304,22 @@ Release note:
         <translation>链式代理</translation>
     </message>
     <message>
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="904"/>
+        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="905"/>
         <source>Requesting subscription: %1</source>
         <translation>正在请求订阅: %1</translation>
     </message>
     <message>
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="908"/>
+        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="909"/>
         <source>Requesting subscription %1 error: %2</source>
         <translation>请求订阅 %1 时出错: %2</translation>
     </message>
     <message>
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="1009"/>
+        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="1010"/>
         <source>Nothing</source>
         <translation>无</translation>
     </message>
     <message>
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="1012"/>
+        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="1013"/>
         <source>Change of %1:</source>
         <translation>%1 的变化:</translation>
     </message>
@@ -3324,12 +3331,12 @@ Release note:
         <translation>选择</translation>
     </message>
     <message>
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="933"/>
+        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="934"/>
         <source>Clearing servers...</source>
         <translation>正在清理服务器...</translation>
     </message>
     <message>
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="915"/>
+        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="916"/>
         <source>Subscription request fininshed: %1</source>
         <translation>订阅请求完成: %1</translation>
     </message>
@@ -3344,12 +3351,12 @@ Release note:
         <translation>默认</translation>
     </message>
     <message>
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="859"/>
+        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="860"/>
         <source>Add profiles to this group</source>
         <translation>添加配置档到这个分组</translation>
     </message>
     <message>
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="860"/>
+        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="861"/>
         <source>Create new subscription group</source>
         <translation>创建新的订阅分组</translation>
     </message>
@@ -3359,12 +3366,12 @@ Release note:
         <translation>无法打开文件。</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3773"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3749"/>
         <source>Not official support platform</source>
         <translation>非官方支持平台</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3784"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3760"/>
         <source>Requesting update error: %1</source>
         <translation>请求更新时出错：%1</translation>
     </message>
@@ -3374,12 +3381,12 @@ Release note:
         <translation>Tun 模式不能与自定义配置一起使用</translation>
     </message>
     <message>
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="938"/>
+        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="939"/>
         <source>Processing subscription data...</source>
         <translation>正在处理订阅数据...</translation>
     </message>
     <message>
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="941"/>
+        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="942"/>
         <source>Process complete, applying...</source>
         <translation>处理完成，正在应用...</translation>
     </message>
@@ -3716,7 +3723,7 @@ Release note:
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="218"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="1015"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1012"/>
         <source>Download Profiles</source>
         <translation>选择国家地理规则</translation>
     </message>

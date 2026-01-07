@@ -1,0 +1,4230 @@
+diff --git a/.github/workflows/build.yml b/.github/workflows/build.yml
+index f2699d2d..0428a795 100755
+--- a/.github/workflows/build.yml
++++ b/.github/workflows/build.yml
+@@ -8,18 +8,21 @@ on:
+       publish:
+         description: "Publish Release"
+         type: boolean
+-        required: false
++        default: true
++        required: true
+       text:
+         description: "Release Description"
+         required: false
+-      source:
++      source_only:
+         description: "Skip building binaries, distribute only unified source"
+         type: boolean
++        default: false
+         required: false
+-      updater:
++      skip_updater:
+         description: "Ship binaries without updater"
+         type: boolean
+         required: false
++        default: false
+       build_windows_x64:
+         description: "Build windows x64 binaries"
+         type: boolean
+@@ -45,6 +48,11 @@ on:
+         type: boolean
+         default: false
+         required: false
++      publish_winget:
++        description: "Publish WinGet manifest"
++        type: boolean
++        default: true
++        required: false
+ jobs:
+   build-go:
+     permissions:
+@@ -78,17 +86,17 @@ jobs:
+     runs-on: ubuntu-latest
+     steps:
+       - name: Checking out sources
+-        if: matrix.cross_os == 'public' || ( github.event.inputs.source != 'true' && matrix.allow == 'true' )
++        if: matrix.cross_os == 'public' || ( github.event.inputs.source_only  != 'true' && matrix.allow == 'true' )
+         uses: actions/checkout@v4.2.2
+       - name: Cache Common Download
+         id: cache-common
+-        if: matrix.cross_os != 'public' && ( github.event.inputs.source != 'true' && matrix.allow == 'true' )
++        if: matrix.cross_os != 'public' && ( github.event.inputs.source_only  != 'true' && matrix.allow == 'true' )
+         uses: actions/cache@v4.2.3
+         with:
+           path: artifacts.tgz
+           key: CommonCache-${{ matrix.cross_os }}-${{ matrix.cross_arch }}-${{ hashFiles('script/build_go.sh', 'core/*') }}-${{ matrix.go_version }}
+       - name: Install Golang
+-        if: ( matrix.cross_os == 'public' || ( github.event.inputs.source != 'true' && matrix.allow == 'true' ) ) && steps.cache-common.outputs.cache-hit != 'true'
++        if: ( matrix.cross_os == 'public' || ( github.event.inputs.source_only  != 'true' && matrix.allow == 'true' ) ) && steps.cache-common.outputs.cache-hit != 'true'
+         uses: actions/setup-go@v5.5.0
+         with:
+           go-version: ${{ matrix.go_version }}
+@@ -96,16 +104,16 @@ jobs:
+             core/server/go.sum
+             core/updater/go.sum
+       - name: Linux - Install apt dependencies
+-        if: matrix.cross_os == 'public' || ( github.event.inputs.source != 'true' && matrix.allow == 'true' )
++        if: matrix.cross_os == 'public' || ( github.event.inputs.source_only  != 'true' && matrix.allow == 'true' )
+         uses: awalsh128/cache-apt-pkgs-action@latest
+         with:
+           packages: thrift-compiler
+           version: 1.0
+       - name: Build golang parts
+-        if: steps.cache-common.outputs.cache-hit != 'true' && matrix.cross_os != 'public' && ( github.event.inputs.source != 'true' && matrix.allow == 'true' )
++        if: steps.cache-common.outputs.cache-hit != 'true' && matrix.cross_os != 'public' && ( github.event.inputs.source_only  != 'true' && matrix.allow == 'true' )
+         shell: bash
+         run: |
+-          if [[ ${{ github.event.inputs.updater }} == 'true' ]]; then
++          if [[ ${{ github.event.inputs.skip_updater }} == 'true' ]]; then
+             export SKIP_UPDATER=y
+           fi
+           GO_MOD_TIDY=yes GOOS=${{ matrix.cross_os }} GOARCH=${{ matrix.cross_arch }} ./script/build_go.sh
+@@ -115,10 +123,10 @@ jobs:
+         run: |
+           env INPUT_VERSION=${{ github.event.inputs.tag }} bash -x ./script/deploy_vendor.sh
+       - name: Tar files
+-        if: matrix.cross_os == 'public' || ( github.event.inputs.source != 'true' && matrix.allow == 'true' && steps.cache-common.outputs.cache-hit != 'true' )
++        if: matrix.cross_os == 'public' || ( github.event.inputs.source_only  != 'true' && matrix.allow == 'true' && steps.cache-common.outputs.cache-hit != 'true' )
+         run: tar czvf artifacts.tgz ./deployment
+       - name: Uploading Artifact
+-        if: matrix.cross_os == 'public' || ( github.event.inputs.source != 'true' && matrix.allow == 'true' )
++        if: matrix.cross_os == 'public' || ( github.event.inputs.source_only  != 'true' && matrix.allow == 'true' )
+         uses: actions/upload-artifact@v4.6.2
+         with:
+           name: nekobox-${{ github.sha }}-Common-${{ matrix.cross_os }}-${{ matrix.cross_arch }}
+@@ -148,19 +156,19 @@ jobs:
+       INPUT_VERSION: ${{ github.event.inputs.tag }}
+     steps:
+       - name: Checking out sources
+-        if: matrix.allow == 'true' && github.event.inputs.source != 'true'
++        if: matrix.allow == 'true' && github.event.inputs.source_only  != 'true'
+         uses: actions/checkout@v4.2.2
+         with:
+           submodules: "recursive"
+ 
+       - name: Install NSIS
+         id: nsis
+-        if: matrix.allow == 'true' && github.event.inputs.source != 'true' && matrix.target == 'x86_64'
++        if: matrix.allow == 'true' && github.event.inputs.source_only  != 'true' && matrix.target == 'x86_64'
+         uses: negrutiu/nsis-install@v2
+ 
+       - name: vcpkg build
+         uses: johnwason/vcpkg-action@v7
+-        if: matrix.allow == 'true' && github.event.inputs.source != 'true'
++        if: matrix.allow == 'true' && github.event.inputs.source_only  != 'true'
+         id: vcpkg
+         with:
+           pkgs: thrift
+@@ -168,20 +176,20 @@ jobs:
+           token: ${{ github.token }}
+           
+       - name: Download Artifacts
+-        if: matrix.allow == 'true' && github.event.inputs.source != 'true'
++        if: matrix.allow == 'true' && github.event.inputs.source_only  != 'true'
+         uses: actions/download-artifact@v4.3.0
+         with:
+           path: download-artifact
+ 
+       - name: Download Srslist
+-        if: matrix.allow == 'true' && github.event.inputs.source != 'true'
++        if: matrix.allow == 'true' && github.event.inputs.source_only  != 'true'
+         shell: bash
+         run: |
+           curl -fLso "srslist.json" "https://github.com/qr243vbi/ruleset/raw/refs/heads/rule-set/srslist.json"
+           mkdir build
+ 
+       - name: Install Qt
+-        if: matrix.allow == 'true' && github.event.inputs.source != 'true'
++        if: matrix.allow == 'true' && github.event.inputs.source_only  != 'true'
+         uses: jurplel/install-qt-action@v4.3.0
+         with:
+           version: ${{ matrix.qt_version }}
+@@ -191,35 +199,35 @@ jobs:
+           cache-key-prefix: QtCache-${{ matrix.platform }}-${{ matrix.target }}
+ 
+       - name: Install MSVC compiler
+-        if: matrix.allow == 'true' && github.event.inputs.source != 'true'
++        if: matrix.allow == 'true' && github.event.inputs.source_only  != 'true'
+         uses: ilammy/msvc-dev-cmd@v1
+         with:
+           arch: ${{ matrix.target }}
+           
+       - name: Cache Builds
+         id: cache-common
+-        if: github.event.inputs.source != 'true' && matrix.allow == 'true'
++        if: github.event.inputs.source_only  != 'true' && matrix.allow == 'true'
+         uses: actions/cache@v4.2.3
+         with:
+           path: build
+           key: CommonCache-${{ matrix.platform }}-${{ matrix.target }}-${{ github.event.inputs.tag }}
+ 
+       - name: Windows - Generate MakeFile and Build
+-        if: matrix.allow == 'true' && github.event.inputs.source != 'true'
++        if: matrix.allow == 'true' && github.event.inputs.source_only  != 'true'
+         shell: bash
+         run: |
+-          if [[ ${{ github.event.inputs.updater }} == 'true' ]]; then export SKIP_UPDATE_BUTTON=ON; else export SKIP_UPDATE_BUTTON=OFF; fi
++          if [[ ${{ github.event.inputs.skip_updater }} == 'true' ]]; then export SKIP_UPDATE_BUTTON=ON; else export SKIP_UPDATE_BUTTON=OFF; fi
+           cmake  -DCMAKE_TOOLCHAIN_FILE='${{ github.workspace }}/vcpkg/scripts/buildsystems/vcpkg.cmake' '-DVCPKG_TARGET_TRIPLET=${{ matrix.triplet }}' -DVCPKG_MANIFEST_MODE=OFF -DSKIP_UPDATE_BUTTON="${SKIP_UPDATE_BUTTON}" -DCMAKE_BUILD_TYPE=Release "-DNKR_DEFAULT_VERSION=${INPUT_VERSION}" -S . -B build
+           cmake --build build --config Release --verbose
+           ./script/deploy_windows.sh "new-${{ matrix.target }}"
+ 
+       - name: Tar files
+         shell: bash
+-        if: matrix.allow == 'true' && github.event.inputs.source != 'true'
++        if: matrix.allow == 'true' && github.event.inputs.source_only  != 'true'
+         run: tar czvf artifacts.tgz ./deployment
+ 
+       - name: Uploading Artifact
+-        if: matrix.allow == 'true' && github.event.inputs.source != 'true'
++        if: matrix.allow == 'true' && github.event.inputs.source_only  != 'true'
+         uses: actions/upload-artifact@v4.6.2
+         with:
+           name: nekobox-${{ github.sha }}-${{ matrix.platform }}-${{ matrix.target }}-Qt${{ matrix.qt_version }}
+@@ -248,19 +256,19 @@ jobs:
+       INPUT_VERSION: ${{ github.event.inputs.tag }}
+     steps:
+       - name: Checking out sources
+-        if: matrix.allow == 'true' && github.event.inputs.source != 'true'
++        if: matrix.allow == 'true' && github.event.inputs.source_only  != 'true'
+         uses: actions/checkout@v4.2.2
+         with:
+           submodules: "recursive"
+ 
+       - name: Download Artifacts
+-        if: matrix.allow == 'true' && github.event.inputs.source != 'true'
++        if: matrix.allow == 'true' && github.event.inputs.source_only  != 'true'
+         uses: actions/download-artifact@v4.3.0
+         with:
+           path: download-artifact
+ 
+       - name: Install Qt
+-        if: matrix.allow == 'true' && github.event.inputs.source != 'true'
++        if: matrix.allow == 'true' && github.event.inputs.source_only  != 'true'
+         uses: jurplel/install-qt-action@v4.3.0
+         with:
+           version: ${{ matrix.qt_version }}
+@@ -270,14 +278,14 @@ jobs:
+           cache-key-prefix: QtCache-${{ matrix.platform }}-${{ matrix.target }}
+ 
+       - name: Download Srslist
+-        if: matrix.allow == 'true' && github.event.inputs.source != 'true'
++        if: matrix.allow == 'true' && github.event.inputs.source_only  != 'true'
+         shell: bash
+         run: |
+           curl -fLso "srslist.json" "https://github.com/qr243vbi/ruleset/raw/refs/heads/rule-set/srslist.json"
+           mkdir build
+ 
+       - name: Linux - Install apt dependencies
+-        if: matrix.allow == 'true' && github.event.inputs.source != 'true'
++        if: matrix.allow == 'true' && github.event.inputs.source_only  != 'true'
+         uses: awalsh128/cache-apt-pkgs-action@latest
+         with:
+           packages: libfuse2 patchelf squashfs-tools openssl-dev openssl thrift-compiler libthrift-dev
+@@ -285,30 +293,30 @@ jobs:
+ 
+       - name: Cache Builds
+         id: cache-common
+-        if: github.event.inputs.source != 'true' && matrix.allow == 'true'
++        if: github.event.inputs.source_only  != 'true' && matrix.allow == 'true'
+         uses: actions/cache@v4.2.3
+         with:
+           path: build
+           key: CommonCache-${{ matrix.platform }}-${{ matrix.target }}-${{ github.event.inputs.tag }}
+ 
+       - name: Linux - Generate MakeFile and Build
+-        if: matrix.allow == 'true' && github.event.inputs.source != 'true'
++        if: matrix.allow == 'true' && github.event.inputs.source_only  != 'true'
+         shell: bash
+         run: |
+           cd build
+-          if [[ ${{ github.event.inputs.updater }} == 'true' ]]; then export SKIP_UPDATE_BUTTON=ON; else export SKIP_UPDATE_BUTTON=OFF; fi
++          if [[ ${{ github.event.inputs.skip_updater }} == 'true' ]]; then export SKIP_UPDATE_BUTTON=ON; else export SKIP_UPDATE_BUTTON=OFF; fi
+           cmake -GNinja -DSKIP_UPDATE_BUTTON="${SKIP_UPDATE_BUTTON}" -DCMAKE_BUILD_TYPE=Release "-DNKR_DEFAULT_VERSION=${INPUT_VERSION}" ..
+           ninja
+           cd ..
+           bash -x ./script/deploy_linux64.sh
+ 
+       - name: Tar files
+-        if: matrix.allow == 'true' && github.event.inputs.source != 'true'
++        if: matrix.allow == 'true' && github.event.inputs.source_only  != 'true'
+         shell: bash
+         run: tar czvf artifacts.tgz ./deployment
+ 
+       - name: Uploading Artifact
+-        if: matrix.allow == 'true' && github.event.inputs.source != 'true'
++        if: matrix.allow == 'true' && github.event.inputs.source_only  != 'true'
+         uses: actions/upload-artifact@v4.6.2
+         with:
+           name: nekobox-${{ github.sha }}-${{ matrix.platform }}-${{ matrix.target }}-Qt${{ matrix.qt_version }}
+@@ -357,30 +365,11 @@ jobs:
+           cd deployment
+           rm -rf *.pdb ||:
+           ####
+-          if [[ -d linux-amd64 ]]; then
+-            mv linux-amd64 nekobox
+-            if [[ -f nekobox/nekobox-x86_64.AppImage ]]; then
+-                mv nekobox/nekobox-x86_64.AppImage ./IblisBox-${{ github.event.inputs.tag }}-x86_64-linux.AppImage
+-            fi
+-            zip -9 -r $version_standalone-linux-amd64.zip nekobox
+-            rm -rf nekobox linux-amd64
+-          fi
+-          ####
+-          if [[ -d linux-arm64 ]]; then
+-            mv linux-arm64 nekobox
+-            if [[ -f nekobox/nekobox-aarch64.AppImage ]]; then
+-                mv nekobox/nekobox-aarch64.AppImage ./IblisBox-${{ github.event.inputs.tag }}-aarch64-linux.AppImage
+-            fi
+-            zip -9 -r $version_standalone-linux-arm64.zip nekobox
+-            rm -rf nekobox linux-arm64
+-          fi
+-          ####
+           if [[ -f nekobox_setup.exe ]]; then
+             CHECKSUM=$(sha256sum nekobox_setup.exe)
+             export sha_x64="${CHECKSUM%% *}"
+             mv nekobox_setup.exe $version_standalone-windows64-installer.exe
+             mv windows64 nekobox
+-            rm nekobox/config
+             zip -9 -r $version_standalone-windows64.zip nekobox
+             rm -rf nekobox windows64
+           fi
+@@ -395,7 +384,6 @@ jobs:
+           if [[ -f nekobox_setup_arm64.exe ]]; then
+             mv nekobox_setup_arm64.exe $version_standalone-windows-arm64-installer.exe
+             mv windows-arm64 nekobox
+-            rm nekobox/config
+             zip -9 -r $version_standalone-windows-arm64.zip nekobox
+             rm -rf nekobox windows-arm64
+           fi
+@@ -403,7 +391,6 @@ jobs:
+           if [[ -f nekobox_setup32.exe ]]; then
+             mv nekobox_setup32.exe $version_standalone-windows32-installer.exe
+             mv windows32 nekobox
+-            rm nekobox/config
+             zip -9 -r $version_standalone-windows32.zip nekobox
+             rm -rf nekobox windows32
+           fi
+@@ -411,7 +398,6 @@ jobs:
+           if [[ -f nekobox_setup_legacy.exe ]]; then
+             mv nekobox_setup_legacy.exe $version_standalone-windowslegacy64-installer.exe
+             mv windowslegacy64 nekobox
+-            rm nekobox/config
+             zip -9 -r $version_standalone-windowslegacy64.zip nekobox
+             rm -rf nekobox windowslegacy64
+           fi
+@@ -455,7 +441,7 @@ jobs:
+           export OBS_PASSWORD="${{ secrets.OBS_PASSWORD }}"
+           export OBS_HOOK_TOKEN="${{ secrets.OBS_HOOK_TOKEN }}"
+           export INPUT_VERSION="${{ github.event.inputs.tag }}"
+-          bash ./script/trigger_open_build_service.sh
++          bash ./script/trigger_open_build_service.sh ||:
+           bash ./script/generate_pkgbuild.sh
+ 
+       - name: Publish AUR package
+@@ -470,15 +456,21 @@ jobs:
+           ssh_keyscan_types: rsa,ecdsa,ed25519
+ 
+       - name: Linux - Install apt dependencies
+-        if: matrix.allow == 'true' && github.event.inputs.source != 'true'
++        if: github.event.inputs.build_windows_arm64 == 'true' && github.event.inputs.build_windows_x64 == 'true' && github.event.inputs.publish_winget == 'true' && github.event.inputs.source_only  != 'true'
+         uses: awalsh128/cache-apt-pkgs-action@latest
+         with:
+           packages: curl jq git gh
+           version: 1.0
++          
++      - name: Cache winget-pkgs
++        if: github.event.inputs.build_windows_arm64 == 'true' && github.event.inputs.build_windows_x64 == 'true' && github.event.inputs.publish_winget == 'true' && github.event.inputs.source_only  != 'true'
++        uses: actions/cache@v4.2.3
++        with:
++          path: build
++          key: CommonCache-WingetPkgs-Cache
+ 
+       - name: Run winget-pkgs
+-        id: cache-common
+-        if: github.event.inputs.build_windows_arm64 == 'true' && github.event.inputs.build_windows_x64 == 'true'
++        if: github.event.inputs.build_windows_arm64 == 'true' && github.event.inputs.build_windows_x64 == 'true' && github.event.inputs.publish_winget == 'true' && github.event.inputs.source_only  != 'true'
+         shell: bash
+         run: |
+           export GITHUB_TOKEN="${{ secrets.WINGET_TOKEN }}"
+diff --git a/.gitignore b/.gitignore
+index 549ff451..f1ef15e1 100755
+--- a/.gitignore
++++ b/.gitignore
+@@ -3,7 +3,10 @@
+ gen-cpp
+ core/server/gen/libcore_service-remote
+ core/server/gen/*.go
++script/winget-pkgs
+ run.cmd
++run86.cmd
++*.zip
+ SingBox.Version
+ /script/nekobox
+ /winget-pkgs
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 7ec4858f..8ded9f25 100755
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -123,12 +123,54 @@ set(PROJECT_SOURCES
+         src/configs/proxy/Bean2CoreObj_box.cpp
+         src/configs/proxy/Bean2Link.cpp
+         src/configs/proxy/Link2Bean.cpp
+-        ${NEKOBOX_INCLUDE}/configs/proxy/ChainBean.hpp # translate
+-
++        ${NEKOBOX_INCLUDE}/configs/proxy/AbstractBean.hpp
++        ${NEKOBOX_INCLUDE}/configs/proxy/AnyTLSBean.hpp
++        ${NEKOBOX_INCLUDE}/configs/proxy/ChainBean.hpp
++        ${NEKOBOX_INCLUDE}/configs/proxy/CustomBean.hpp
++        ${NEKOBOX_INCLUDE}/configs/proxy/ExtraCore.h
++        ${NEKOBOX_INCLUDE}/configs/proxy/includes.h
++        ${NEKOBOX_INCLUDE}/configs/proxy/MieruBean.hpp
++        ${NEKOBOX_INCLUDE}/configs/proxy/TorBean.hpp
++        ${NEKOBOX_INCLUDE}/configs/proxy/Preset.hpp
++        ${NEKOBOX_INCLUDE}/configs/proxy/QUICBean.hpp
++        ${NEKOBOX_INCLUDE}/configs/proxy/ShadowSocksBean.hpp
++        ${NEKOBOX_INCLUDE}/configs/proxy/ShadowTLSBean.hpp
++        ${NEKOBOX_INCLUDE}/configs/proxy/SocksHttpBean.hpp
++        ${NEKOBOX_INCLUDE}/configs/proxy/SSHBean.h
++        ${NEKOBOX_INCLUDE}/configs/proxy/Tailscale.hpp
++        ${NEKOBOX_INCLUDE}/configs/proxy/TrojanVLESSBean.hpp
++        ${NEKOBOX_INCLUDE}/configs/proxy/V2RayStreamSettings.hpp
++        ${NEKOBOX_INCLUDE}/configs/proxy/VMessBean.hpp
++        ${NEKOBOX_INCLUDE}/configs/proxy/WireguardBean.h
+         ${NEKOBOX_INCLUDE}/configs/sub/GroupUpdater.hpp
+-        src/configs/sub/GroupUpdater.cpp
++        ${NEKOBOX_INCLUDE}/configs/ConfigBuilder.hpp
++        ${NEKOBOX_INCLUDE}/api/RPC.h
++        ${NEKOBOX_INCLUDE}/dataStore/ConfigItem.hpp
++        ${NEKOBOX_INCLUDE}/dataStore/Configs.hpp
++        ${NEKOBOX_INCLUDE}/dataStore/Const.hpp
++        ${NEKOBOX_INCLUDE}/dataStore/Database.hpp
++        ${NEKOBOX_INCLUDE}/dataStore/DataStore.hpp
++        ${NEKOBOX_INCLUDE}/dataStore/Group.hpp
++        ${NEKOBOX_INCLUDE}/dataStore/ProfileFilter.hpp
++        ${NEKOBOX_INCLUDE}/dataStore/ProxyEntity.hpp
++        ${NEKOBOX_INCLUDE}/dataStore/ResourceEntity.hpp
++        ${NEKOBOX_INCLUDE}/dataStore/RouteEntity.h
++        ${NEKOBOX_INCLUDE}/dataStore/Utils.hpp
++
++        ${NEKOBOX_INCLUDE}/global/CountryHelper.hpp
++        ${NEKOBOX_INCLUDE}/global/DeviceDetailsHelper.hpp
++        ${NEKOBOX_INCLUDE}/global/GuiUtils.hpp
++        ${NEKOBOX_INCLUDE}/global/HTTPRequestHelper.hpp
++        ${NEKOBOX_INCLUDE}/global/keyvaluerange.h
+ 
++        ${NEKOBOX_INCLUDE}/stats/traffic/TrafficData.hpp
++        ${NEKOBOX_INCLUDE}/stats/traffic/TrafficLooper.hpp
++
++        src/configs/sub/GroupUpdater.cpp
++        ${NEKOBOX_INCLUDE}/sys/AutoRun.hpp
+         ${NEKOBOX_INCLUDE}/sys/Process.hpp
++        ${NEKOBOX_INCLUDE}/sys/Settings.h
++
+         src/sys/Process.cpp
+         src/sys/AutoRun.cpp
+ 
+@@ -165,6 +207,9 @@ set(PROJECT_SOURCES
+         ${NEKOBOX_INCLUDE}/ui/profile/edit_mieru.h
+         src/ui/profile/edit_mieru.cpp
+         ${NEKOBOX_INCLUDE}/ui/profile/edit_mieru.ui
++        ${NEKOBOX_INCLUDE}/ui/profile/edit_tor.h
++        src/ui/profile/edit_tor.cpp
++        ${NEKOBOX_INCLUDE}/ui/profile/edit_tor.ui
+         ${NEKOBOX_INCLUDE}/ui/profile/edit_trojan_vless.h
+         src/ui/profile/edit_trojan_vless.cpp
+         ${NEKOBOX_INCLUDE}/ui/profile/edit_trojan_vless.ui
+@@ -175,7 +220,6 @@ set(PROJECT_SOURCES
+         ${NEKOBOX_INCLUDE}/ui/profile/edit_tailscale.h
+         src/ui/profile/edit_tailscale.cpp
+         ${NEKOBOX_INCLUDE}/ui/profile/edit_tailscale.ui
+-        ${NEKOBOX_INCLUDE}/configs/proxy/Tailscale.hpp
+ 
+         ${NEKOBOX_INCLUDE}/ui/profile/edit_quic.h
+         src/ui/profile/edit_quic.cpp
+@@ -225,14 +269,12 @@ set(PROJECT_SOURCES
+ 
+         res/nekobox.qrc
+         ${QV2RAY_RC}
+-        ${NEKOBOX_INCLUDE}/dataStore/RouteEntity.h
+         src/dataStore/RouteEntity.cpp
+         src/dataStore/ResourceEntity.cpp
+         res/darkstyle.qrc
+         src/ui/profile/edit_ssh.cpp
+         ${NEKOBOX_INCLUDE}/ui/profile/edit_ssh.h
+         ${NEKOBOX_INCLUDE}/ui/profile/edit_ssh.ui
+-        ${NEKOBOX_INCLUDE}/configs/proxy/SSHBean.h
+         src/sys/Settings.cpp
+ 
+         src/sys/AutoRun.cpp
+@@ -241,7 +283,6 @@ set(PROJECT_SOURCES
+         ${NEKOBOX_INCLUDE}/stats/connections/connectionLister.hpp
+         src/stats/connectionLister/connectionLister.cpp
+         src/configs/proxy/Json2Bean.cpp
+-        ${NEKOBOX_INCLUDE}/sys/windows/eventHandler.h
+         src/dataStore/Group.cpp
+         src/dataStore/ProxyEntity.cpp
+ 
+@@ -269,7 +310,17 @@ if(SKIP_JS_UPDATER)
+ else()
+     find_package(Qt6 REQUIRED COMPONENTS Qml)
+     target_link_libraries(nekobox PRIVATE Qt6::Qml)
+-    target_sources(nekobox PRIVATE src/js/js_updater.cpp ${NEKOBOX_INCLUDE}/js/js_updater.h res/nekobox_updater.qrc)
++    target_sources(nekobox
++            PRIVATE
++            src/js/js_updater.cpp
++            ${NEKOBOX_INCLUDE}/js/js_updater.h
++            ${NEKOBOX_INCLUDE}/js/blocking_queue.h
++            ${NEKOBOX_INCLUDE}/js/js_updater.h
++            ${NEKOBOX_INCLUDE}/js/message_queue.h
++            ${NEKOBOX_INCLUDE}/js/version.h
++
++            res/nekobox_updater.qrc
++    )
+ endif()
+ 
+ 
+diff --git a/README.md b/README.md
+index 42438aa5..d8bc625f 100755
+--- a/README.md
++++ b/README.md
+@@ -18,7 +18,7 @@ Supports Windows 11/10 (arm64, x86_64) / Linux  out of the box.
+ [NekoBox repository](https://copr.fedorainfracloud.org/coprs/qr243vbi/NekoBox/) for various linux distributions ([RedHat](https://www.redhat.com), [Centos](https://www.centos.org), [OpenSUSE](https://get.opensuse.org/), [Fedora](https://fedoraproject.org/), [Mageia](https://www.mageia.org/), [Almalinux](https://almalinux.org/)).
+ 
+ ### WinGet Package
+-- [WinGet Page](https://winget.ragerworks.com/package/qr243vbi.NekoBox)
++- [![WinGet Page](https://img.shields.io/winget/v/qr243vbi.NekoBox)](https://winget.ragerworks.com/package/qr243vbi.NekoBox)
+ 
+ ### Aur package
+ - [source](https://aur.archlinux.org/packages/nekobox)
+diff --git a/check_new_release.js b/check_new_release.js
+index 4cd21f0c..04866dd1 100755
+--- a/check_new_release.js
++++ b/check_new_release.js
+@@ -1,7 +1,7 @@
+ var allow_beta_update = configs['allow_beta_update'];
+ var exitFlag = false;
+ var simple_mode = true;
+-var archive_extension = ".zip"
++var archive_extension = ".tar.gz"
+ var updater_args = [];
+ var release_array = [];
+ var is_newer = false;
+@@ -14,6 +14,7 @@ var options = {};
+ var release_download_url = '';
+ var archive_name = '';
+ var latest_tag_name = '';
++var keep_running = false;
+ 
+ log("Checking new version", "Info");
+ 
+@@ -127,12 +128,6 @@ function getLatestWingetVersion(packageId) {
+ var chocolatey_package = false;
+ var winget_package = false;
+ 
+-if (search.includes('windows')){
+-	archive_extension = '-installer.exe';	
+-	chocolatey_package = (GlobalMap['chocolatey_package'] == 'true');
+-	winget_package = (GlobalMap['winget_package'] == 'true');
+-}
+-
+ if (file_exists(env["APPIMAGE"])){
+   if (file_exists(APPLICATION_DIR_PATH + "/" + env["NEKOBOX_APPIMAGE_CUSTOM_EXECUTABLE"])){
+     archive_extension = ".AppImage";
+@@ -145,18 +140,25 @@ if (file_exists(env["APPIMAGE"])){
+     } else if (search == "linux-i386"){
+       search = "i686-linux";
+     } else {
+-      archive_extension = ".zip"
++      archive_extension = ".tar.gz"
+     }
+   }
+ }
+ 
++if (search.includes('windows')){
++    archive_extension = '-installer.exe';
++    chocolatey_package = (GlobalMap['chocolatey_package'] == 'true');
++    winget_package = (GlobalMap['winget_package'] == 'true');
++    keep_running = true;
++}
++
+ function isNewerAsset(assetName, curver) {
+ 	if (!curver){
+ 		curver = NKR_VERSION;
+ 	}
+ 	curver = curver.trim();
+     if (!curver) {
+-        return false;
++        return '0.0.0';
+     }
+ 
+     const spl = assetName.split('-');
+diff --git a/cmake/unix/unix.cmake b/cmake/unix/unix.cmake
+index a4dc9f57..25e39f8b 100755
+--- a/cmake/unix/unix.cmake
++++ b/cmake/unix/unix.cmake
+@@ -1,2 +1,5 @@
+-set(PLATFORM_SOURCES src/sys/linux/LinuxCap.cpp)
++set(PLATFORM_SOURCES
++    src/sys/linux/LinuxCap.cpp
++    ${NEKOBOX_INCLUDE}/sys/linux/LinuxCap.h
++)
+ set(PLATFORM_LIBRARIES dl)
+diff --git a/core/server/go.mod b/core/server/go.mod
+index b691dc76..e8b87615 100644
+--- a/core/server/go.mod
++++ b/core/server/go.mod
+@@ -27,15 +27,15 @@ require (
+ 	github.com/caddyserver/certmagic v0.23.0 // indirect
+ 	github.com/caddyserver/zerossl v0.1.3 // indirect
+ 	github.com/coder/websocket v1.8.13 // indirect
+-	github.com/coreos/go-iptables v0.7.1-0.20240112124308-65c67c9f46e6 // indirect
++	github.com/coreos/go-iptables v0.8.0 // indirect
+ 	github.com/cretz/bine v0.2.0 // indirect
+ 	github.com/dblohm7/wingoes v0.0.0-20240119213807-a09d6be7affa // indirect
+ 	github.com/digitalocean/go-smbios v0.0.0-20180907143718-390a4f403a8e // indirect
+ 	github.com/enfein/mieru/v3 v3.21.0 // indirect
+-	github.com/fsnotify/fsnotify v1.7.0 // indirect
++	github.com/fsnotify/fsnotify v1.9.0 // indirect
+ 	github.com/fxamacker/cbor/v2 v2.7.0 // indirect
+ 	github.com/gaissmai/bart v0.11.1 // indirect
+-	github.com/go-chi/chi/v5 v5.2.2 // indirect
++	github.com/go-chi/chi/v5 v5.2.3 // indirect
+ 	github.com/go-chi/render v1.0.3 // indirect
+ 	github.com/go-json-experiment/json v0.0.0-20250103232110-6a9a0fde9288 // indirect
+ 	github.com/go-ole/go-ole v1.3.0 // indirect
+@@ -93,6 +93,7 @@ require (
+ 	github.com/sagernet/wireguard-go v0.0.1-beta.7 // indirect
+ 	github.com/sagernet/ws v0.0.0-20231204124109-acfe8907c854 // indirect
+ 	github.com/spf13/pflag v1.0.9 // indirect
++	github.com/stretchr/testify v1.11.0 // indirect
+ 	github.com/tailscale/certstore v0.1.1-0.20231202035212-d3fa0460f47e // indirect
+ 	github.com/tailscale/go-winio v0.0.0-20231025203758-c4f33415bf55 // indirect
+ 	github.com/tailscale/golang-x-crypto v0.0.0-20240604161659-3fde5e568aa4 // indirect
+@@ -129,4 +130,4 @@ require (
+ 	lukechampine.com/blake3 v1.3.0 // indirect
+ )
+ 
+-replace github.com/sagernet/sing-box => github.com/qr243vbi/sing-box v1.12.15
++replace github.com/sagernet/sing-box => github.com/qr243vbi/sing-box v1.12.18
+diff --git a/core/server/go.sum b/core/server/go.sum
+index bb3909e8..143f298c 100644
+--- a/core/server/go.sum
++++ b/core/server/go.sum
+@@ -24,8 +24,8 @@ github.com/cilium/ebpf v0.15.0 h1:7NxJhNiBT3NG8pZJ3c+yfrVdHY8ScgKD27sScgjLMMk=
+ github.com/cilium/ebpf v0.15.0/go.mod h1:DHp1WyrLeiBh19Cf/tfiSMhqheEiK8fXFZ4No0P1Hso=
+ github.com/coder/websocket v1.8.13 h1:f3QZdXy7uGVz+4uCJy2nTZyM0yTBj8yANEHhqlXZ9FE=
+ github.com/coder/websocket v1.8.13/go.mod h1:LNVeNrXQZfe5qhS9ALED3uA+l5pPqvwXg3CKoDBB2gs=
+-github.com/coreos/go-iptables v0.7.1-0.20240112124308-65c67c9f46e6 h1:8h5+bWd7R6AYUslN6c6iuZWTKsKxUFDlpnmilO6R2n0=
+-github.com/coreos/go-iptables v0.7.1-0.20240112124308-65c67c9f46e6/go.mod h1:Qe8Bv2Xik5FyTXwgIbLAnv2sWSBmvWdFETJConOQ//Q=
++github.com/coreos/go-iptables v0.8.0 h1:MPc2P89IhuVpLI7ETL/2tx3XZ61VeICZjYqDEgNsPRc=
++github.com/coreos/go-iptables v0.8.0/go.mod h1:Qe8Bv2Xik5FyTXwgIbLAnv2sWSBmvWdFETJConOQ//Q=
+ github.com/cpuguy83/go-md2man/v2 v2.0.6/go.mod h1:oOW0eioCTA6cOiMLiUPZOpcVxMig6NIQQ7OS05n1F4g=
+ github.com/cretz/bine v0.2.0 h1:8GiDRGlTgz+o8H9DSnsl+5MeBK4HsExxgl6WgzOCuZo=
+ github.com/cretz/bine v0.2.0/go.mod h1:WU4o9QR9wWp8AVKtTM1XD5vUHkEqnf2vVSo6dBqbetI=
+@@ -41,16 +41,16 @@ github.com/dustin/go-humanize v1.0.1 h1:GzkhY7T5VNhEkwH0PVJgjz+fX1rhBrR7pRT3mDkp
+ github.com/dustin/go-humanize v1.0.1/go.mod h1:Mu1zIs6XwVuF/gI1OepvI0qD18qycQx+mFykh5fBlto=
+ github.com/enfein/mieru/v3 v3.21.0 h1:t1EBT3Szyj8Fi/kWRI/soVHf6ubJ2ijIPGgNC3BGf88=
+ github.com/enfein/mieru/v3 v3.21.0/go.mod h1:zJBUCsi5rxyvHM8fjFf+GLaEl4OEjjBXr1s5F6Qd3hM=
+-github.com/fsnotify/fsnotify v1.7.0 h1:8JEhPFa5W2WU7YfeZzPNqzMP6Lwt7L2715Ggo0nosvA=
+-github.com/fsnotify/fsnotify v1.7.0/go.mod h1:40Bi/Hjc2AVfZrqy+aj+yEI+/bRxZnMJyTJwOpGvigM=
++github.com/fsnotify/fsnotify v1.9.0 h1:2Ml+OJNzbYCTzsxtv8vKSFD9PbJjmhYF14k/jKC7S9k=
++github.com/fsnotify/fsnotify v1.9.0/go.mod h1:8jBTzvmWwFyi3Pb8djgCCO5IBqzKJ/Jwo8TRcHyHii0=
+ github.com/fxamacker/cbor/v2 v2.7.0 h1:iM5WgngdRBanHcxugY4JySA0nk1wZorNOpTgCMedv5E=
+ github.com/fxamacker/cbor/v2 v2.7.0/go.mod h1:pxXPTn3joSm21Gbwsv0w9OSA2y1HFR9qXEeXQVeNoDQ=
+ github.com/gaissmai/bart v0.11.1 h1:5Uv5XwsaFBRo4E5VBcb9TzY8B7zxFf+U7isDxqOrRfc=
+ github.com/gaissmai/bart v0.11.1/go.mod h1:KHeYECXQiBjTzQz/om2tqn3sZF1J7hw9m6z41ftj3fg=
+ github.com/github/fakeca v0.1.0 h1:Km/MVOFvclqxPM9dZBC4+QE564nU4gz4iZ0D9pMw28I=
+ github.com/github/fakeca v0.1.0/go.mod h1:+bormgoGMMuamOscx7N91aOuUST7wdaJ2rNjeohylyo=
+-github.com/go-chi/chi/v5 v5.2.2 h1:CMwsvRVTbXVytCk1Wd72Zy1LAsAh9GxMmSNWLHCG618=
+-github.com/go-chi/chi/v5 v5.2.2/go.mod h1:L2yAIGWB3H+phAw1NxKwWM+7eUH/lU8pOMm5hHcoops=
++github.com/go-chi/chi/v5 v5.2.3 h1:WQIt9uxdsAbgIYgid+BpYc+liqQZGMHRaUwp0JUcvdE=
++github.com/go-chi/chi/v5 v5.2.3/go.mod h1:L2yAIGWB3H+phAw1NxKwWM+7eUH/lU8pOMm5hHcoops=
+ github.com/go-chi/render v1.0.3 h1:AsXqd2a1/INaIfUSKq3G5uA8weYx20FOsM7uSoCyyt4=
+ github.com/go-chi/render v1.0.3/go.mod h1:/gr3hVkmYR0YlEy3LxCuVRFzEu9Ruok+gFqbIofjao0=
+ github.com/go-json-experiment/json v0.0.0-20250103232110-6a9a0fde9288 h1:KbX3Z3CgiYlbaavUq3Cj9/MjpO+88S7/AGXzynVDv84=
+@@ -143,8 +143,8 @@ github.com/pmezard/go-difflib v1.0.1-0.20181226105442-5d4384ee4fb2 h1:Jamvg5psRI
+ github.com/pmezard/go-difflib v1.0.1-0.20181226105442-5d4384ee4fb2/go.mod h1:iKH77koFhYxTK1pcRnkKkqfTogsbg7gZNVY4sRDYZ/4=
+ github.com/prometheus-community/pro-bing v0.4.0 h1:YMbv+i08gQz97OZZBwLyvmmQEEzyfyrrjEaAchdy3R4=
+ github.com/prometheus-community/pro-bing v0.4.0/go.mod h1:b7wRYZtCcPmt4Sz319BykUU241rWLe1VFXyiyWK/dH4=
+-github.com/qr243vbi/sing-box v1.12.15 h1:wvdALe/UueczvFIb2rVSj5O0Nw8UKnx27vQj50xn8Ks=
+-github.com/qr243vbi/sing-box v1.12.15/go.mod h1:sofJyK+ZTfqaj56+t0Mmez+gWdi7kVbn5N55jRI1CLU=
++github.com/qr243vbi/sing-box v1.12.18 h1:Q8IZuZtYuUzPEiSXYWudmAP/2Q7Uz0SKU9GNUM3l+MY=
++github.com/qr243vbi/sing-box v1.12.18/go.mod h1:FPOaYg1QLehRrNhCuPvMjcR8bceCVaJ0R+MiLojB+lI=
+ github.com/quic-go/qpack v0.5.1 h1:giqksBPnT/HDtZ6VhtFKgoLOWmlyo9Ei6u9PqzIMbhI=
+ github.com/quic-go/qpack v0.5.1/go.mod h1:+PC4XFrEskIVkcLzpEkbLqq1uCoxPhQuvK5rH1ZgaEg=
+ github.com/russross/blackfriday/v2 v2.1.0/go.mod h1:+Rmxgy9KzJVeS9/2gXHxylqXiyQDYRxCVz55jmeOWTM=
+@@ -202,8 +202,8 @@ github.com/stretchr/testify v1.7.1/go.mod h1:6Fq8oRcR53rry900zMqJjRRixrwX3KX962/
+ github.com/stretchr/testify v1.8.0/go.mod h1:yNjHg4UonilssWZ8iaSj1OCr/vHnekPRkoO+kdMU+MU=
+ github.com/stretchr/testify v1.8.4/go.mod h1:sz/lmYIOXD/1dqDmKjjqLyZ2RngseejIcXlSw2iwfAo=
+ github.com/stretchr/testify v1.9.0/go.mod h1:r2ic/lqez/lEtzL7wO/rwa5dbSLXVDPFyf8C91i36aY=
+-github.com/stretchr/testify v1.10.0 h1:Xv5erBjTwe/5IxqUQTdXv5kgmIvbHo3QQyRwhJsOfJA=
+-github.com/stretchr/testify v1.10.0/go.mod h1:r2ic/lqez/lEtzL7wO/rwa5dbSLXVDPFyf8C91i36aY=
++github.com/stretchr/testify v1.11.0 h1:ib4sjIrwZKxE5u/Japgo/7SJV3PvgjGiRNAvTVGqQl8=
++github.com/stretchr/testify v1.11.0/go.mod h1:wZwfW3scLgRK+23gO65QZefKpKQRnfz6sD981Nm4B6U=
+ github.com/tailscale/certstore v0.1.1-0.20231202035212-d3fa0460f47e h1:PtWT87weP5LWHEY//SWsYkSO3RWRZo4OSWagh3YD2vQ=
+ github.com/tailscale/certstore v0.1.1-0.20231202035212-d3fa0460f47e/go.mod h1:XrBNfAFN+pwoWuksbFS9Ccxnopa15zJGgXRFN90l3K4=
+ github.com/tailscale/go-winio v0.0.0-20231025203758-c4f33415bf55 h1:Gzfnfk2TWrk8Jj4P4c1a3CtQyMaTVCznlkLZI++hok4=
+diff --git a/core/server/server.go b/core/server/server.go
+index efaa9b8c..3c12efff 100755
+--- a/core/server/server.go
++++ b/core/server/server.go
+@@ -1,15 +1,15 @@
+ package main
+ 
+ import (
++	"context"
++	"errors"
++	"fmt"
++	"log"
+ 	"nekobox_core/gen"
+ 	"nekobox_core/internal/boxbox"
+ 	"nekobox_core/internal/boxmain"
+ 	"nekobox_core/internal/process"
+ 	"nekobox_core/internal/sys"
+-	"context"
+-	"errors"
+-	"fmt"
+-	"log"
+ 	"os"
+ 	"strings"
+ 	"time"
+@@ -35,7 +35,6 @@ var debug bool
+ type server struct {
+ }
+ 
+-
+ // To returns a pointer to the given value.
+ func To[T any](v T) *T {
+ 	return &v
+diff --git a/core/updater/go.mod b/core/updater/go.mod
+old mode 100755
+new mode 100644
+index 8d635d73..0928af43
+--- a/core/updater/go.mod
++++ b/core/updater/go.mod
+@@ -1,14 +1,16 @@
+ module updater
+ 
+-go 1.23
+-
+-toolchain go1.24.4
++go 1.24.1
+ 
+ require github.com/codeclysm/extract/v4 v4.0.0
+ 
+ require (
+ 	github.com/h2non/filetype v1.1.3 // indirect
+-	github.com/juju/errors v1.0.0 // indirect
+-	github.com/klauspost/compress v1.18.2 // indirect
+-	github.com/ulikunitz/xz v0.5.15 // indirect
++	github.com/juju/errors v0.0.0-20181118221551-089d3ea4e4d5 // indirect
++	github.com/juju/loggo v1.0.0 // indirect
++	github.com/klauspost/compress v1.15.13 // indirect
++	github.com/kr/text v0.2.0 // indirect
++	github.com/ulikunitz/xz v0.5.12 // indirect
++	gopkg.in/mgo.v2 v2.0.0-20190816093944-a6b53ec6cb22 // indirect
++	gopkg.in/yaml.v2 v2.4.0 // indirect
+ )
+diff --git a/core/updater/go.sum b/core/updater/go.sum
+old mode 100755
+new mode 100644
+index c0553c37..712671ff
+--- a/core/updater/go.sum
++++ b/core/updater/go.sum
+@@ -2,33 +2,42 @@ github.com/arduino/go-paths-helper v1.12.1 h1:WkxiVUxBjKWlLMiMuYy8DcmVrkxdP7aKxQ
+ github.com/arduino/go-paths-helper v1.12.1/go.mod h1:jcpW4wr0u69GlXhTYydsdsqAjLaYK5n7oWHfKqOG6LM=
+ github.com/codeclysm/extract/v4 v4.0.0 h1:H87LFsUNaJTu2e/8p/oiuiUsOK/TaPQ5wxsjPnwPEIY=
+ github.com/codeclysm/extract/v4 v4.0.0/go.mod h1:SFju1lj6as7FvUgalpSct7torJE0zttbJUWtryPRG6s=
++github.com/creack/pty v1.1.9/go.mod h1:oKZEueFk5CKHvIhNR5MUki03XCEU+Q6VDXinZuGJ33E=
+ github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c=
+ github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
+ github.com/h2non/filetype v1.1.3 h1:FKkx9QbD7HR/zjK1Ia5XiBsq9zdLi5Kf3zGyFTAFkGg=
+ github.com/h2non/filetype v1.1.3/go.mod h1:319b3zT68BvV+WRj7cwy856M2ehB3HqNOt6sy1HndBY=
+-github.com/juju/errors v0.0.0-20220331221717-b38fca44723b h1:AxFeSQJfcm2O3ov1wqAkTKYFsnMw2g1B4PkYujfAdkY=
+-github.com/juju/errors v0.0.0-20220331221717-b38fca44723b/go.mod h1:jMGj9DWF/qbo91ODcfJq6z/RYc3FX3taCBZMCcpI4Ls=
+-github.com/juju/errors v1.0.0 h1:yiq7kjCLll1BiaRuNY53MGI0+EQ3rF6GB+wvboZDefM=
+-github.com/juju/errors v1.0.0/go.mod h1:B5x9thDqx0wIMH3+aLIMP9HjItInYWObRovoCFM5Qe8=
++github.com/juju/ansiterm v0.0.0-20180109212912-720a0952cc2a/go.mod h1:UJSiEoRfvx3hP73CvoARgeLjaIOjybY9vj8PUPPFGeU=
++github.com/juju/errors v0.0.0-20181118221551-089d3ea4e4d5 h1:rhqTjzJlm7EbkELJDKMTU7udov+Se0xZkWmugr6zGok=
++github.com/juju/errors v0.0.0-20181118221551-089d3ea4e4d5/go.mod h1:W54LbzXuIE0boCoNJfwqpmkKJ1O4TCTZMetAt6jGk7Q=
++github.com/juju/loggo v1.0.0 h1:Y6ZMQOGR9Aj3BGkiWx7HBbIx6zNwNkxhVNOHU2i1bl0=
++github.com/juju/loggo v1.0.0/go.mod h1:NIXFioti1SmKAlKNuUwbMenNdef59IF52+ZzuOmHYkg=
++github.com/juju/testing v0.0.0-20200510222523-6c8c298c77a0 h1:+WWUkhnTjV6RNOxkcwk79qrjeyHEHvBzlneueBsatX4=
++github.com/juju/testing v0.0.0-20200510222523-6c8c298c77a0/go.mod h1:hpGvhGHPVbNBraRLZEhoQwFLMrjK8PSlO4D3nDjKYXo=
+ github.com/klauspost/compress v1.15.13 h1:NFn1Wr8cfnenSJSA46lLq4wHCcBzKTSjnBIexDMMOV0=
+ github.com/klauspost/compress v1.15.13/go.mod h1:QPwzmACJjUTFsnSHH934V6woptycfrDDJnH7hvFVbGM=
+-github.com/klauspost/compress v1.18.2 h1:iiPHWW0YrcFgpBYhsA6D1+fqHssJscY/Tm/y2Uqnapk=
+-github.com/klauspost/compress v1.18.2/go.mod h1:R0h/fSBs8DE4ENlcrlib3PsXS61voFxhIs2DeRhCvJ4=
+-github.com/kr/pretty v0.2.1 h1:Fmg33tUaq4/8ym9TJN1x7sLJnHVwhP33CNkpYV/7rwI=
+-github.com/kr/pretty v0.2.1/go.mod h1:ipq/a2n7PKx3OHsz4KJII5eveXtPO4qwEXGdVfWzfnI=
+ github.com/kr/text v0.2.0 h1:5Nx0Ya0ZqY2ygV366QzturHI13Jq95ApcVaJBhpS+AY=
+ github.com/kr/text v0.2.0/go.mod h1:eLer722TekiGuMkidMxC/pM04lWEeraHUUmBw8l2grE=
++github.com/lunixbochs/vtclean v0.0.0-20160125035106-4fbf7632a2c6/go.mod h1:pHhQNgMf3btfWnGBVipUOjRYhoOsdGqdm/+2c2E2WMI=
++github.com/mattn/go-colorable v0.0.6/go.mod h1:9vuHe8Xs5qXnSaW/c/ABM9alt+Vo+STaOChaDxuIBZU=
++github.com/mattn/go-isatty v0.0.0-20160806122752-66b8e73f3f5c/go.mod h1:M+lRXTBqGeGNdLjl/ufCoiOlB5xdOkqRJdNxMWT7Zi4=
++github.com/niemeyer/pretty v0.0.0-20200227124842-a10e7caefd8e h1:fD57ERR4JtEqsWbfPhv4DMiApHyliiK5xCTNVSPiaAs=
++github.com/niemeyer/pretty v0.0.0-20200227124842-a10e7caefd8e/go.mod h1:zD1mROLANZcx1PVRCS0qkT7pwLkGfwJo4zjcN/Tysno=
+ github.com/pmezard/go-difflib v1.0.0 h1:4DBwDE0NGyQoBHbLQYPwSUPoCMWR5BEzIk/f1lZbAQM=
+ github.com/pmezard/go-difflib v1.0.0/go.mod h1:iKH77koFhYxTK1pcRnkKkqfTogsbg7gZNVY4sRDYZ/4=
+ github.com/stretchr/testify v1.9.0 h1:HtqpIVDClZ4nwg75+f6Lvsy/wHu+3BoSGCbBAcpTsTg=
+ github.com/stretchr/testify v1.9.0/go.mod h1:r2ic/lqez/lEtzL7wO/rwa5dbSLXVDPFyf8C91i36aY=
+ github.com/ulikunitz/xz v0.5.12 h1:37Nm15o69RwBkXM0J6A5OlE67RZTfzUxTj8fB3dfcsc=
+ github.com/ulikunitz/xz v0.5.12/go.mod h1:nbz6k7qbPmH4IRqmfOplQw/tblSgqTqBwxkY0oWt/14=
+-github.com/ulikunitz/xz v0.5.15 h1:9DNdB5s+SgV3bQ2ApL10xRc35ck0DuIX/isZvIk+ubY=
+-github.com/ulikunitz/xz v0.5.15/go.mod h1:nbz6k7qbPmH4IRqmfOplQw/tblSgqTqBwxkY0oWt/14=
+ golang.org/x/sys v0.16.0 h1:xWw16ngr6ZMtmxDyKyIgsE93KNKz5HKmMa3b8ALHidU=
+ golang.org/x/sys v0.16.0/go.mod h1:/VUhepiaJMQUp4+oa/7Zr1D23ma6VTLIYjOOTFZPUcA=
+-gopkg.in/check.v1 v1.0.0-20201130134442-10cb98267c6c h1:Hei/4ADfdWqJk1ZMxUNpqntNwaWcugrBjAiHlqqRiVk=
+-gopkg.in/check.v1 v1.0.0-20201130134442-10cb98267c6c/go.mod h1:JHkPIbrfpd72SG/EVd6muEfDQjcINNoR0C8j2r3qZ4Q=
++gopkg.in/check.v1 v0.0.0-20161208181325-20d25e280405/go.mod h1:Co6ibVJAznAaIkqp8huTwlJQCZ016jof/cbN4VW5Yz0=
++gopkg.in/check.v1 v1.0.0-20160105164936-4f90aeace3a2/go.mod h1:Co6ibVJAznAaIkqp8huTwlJQCZ016jof/cbN4VW5Yz0=
++gopkg.in/check.v1 v1.0.0-20200227125254-8fa46927fb4f h1:BLraFXnmrev5lT+xlilqcH8XK9/i0At2xKjWk4p6zsU=
++gopkg.in/check.v1 v1.0.0-20200227125254-8fa46927fb4f/go.mod h1:Co6ibVJAznAaIkqp8huTwlJQCZ016jof/cbN4VW5Yz0=
++gopkg.in/mgo.v2 v2.0.0-20190816093944-a6b53ec6cb22 h1:VpOs+IwYnYBaFnrNAeB8UUWtL3vEUnzSCL1nVjPhqrw=
++gopkg.in/mgo.v2 v2.0.0-20190816093944-a6b53ec6cb22/go.mod h1:yeKp02qBN3iKW1OzL3MGk2IdtZzaj7SFntXj72NppTA=
++gopkg.in/yaml.v2 v2.4.0 h1:D8xgwECY7CYvx+Y2n4sBz93Jn9JRvxdiyyo8CTfuKaY=
++gopkg.in/yaml.v2 v2.4.0/go.mod h1:RDklbk79AGWmwhnvt/jBztapEOGDOx6ZbXqjP6csGnQ=
+ gopkg.in/yaml.v3 v3.0.1 h1:fxVm/GzAzEWqLHuvctI91KS9hhNmmWOoWu0XTYJS7CA=
+ gopkg.in/yaml.v3 v3.0.1/go.mod h1:K4uyk7z7BCEPqu6E+C64Yfv1cQ7kz7rIZviUmN+EgEM=
+diff --git a/core/updater/main_linux.go b/core/updater/main_linux.go
+index 7da4a8aa..b78db62b 100644
+--- a/core/updater/main_linux.go
++++ b/core/updater/main_linux.go
+@@ -27,5 +27,8 @@ func main() {
+ 	time.Sleep(2 * time.Second)
+ 	os.Chdir(wd)
+ 	Updater(box, *verbose)
++	os.Chmod("nekobox", 0755)
++	os.Chmod("nekobox_core", 0755)
++	os.Chmod("updater", 0755)
+ 	exec.Command("./nekobox", args[2:]...).Start()
+ }
+diff --git a/core/updater/main_windows.go b/core/updater/main_windows.go
+index 4f3e42e6..ec69d451 100644
+--- a/core/updater/main_windows.go
++++ b/core/updater/main_windows.go
+@@ -53,7 +53,7 @@ func main() {
+ 
+ func LaunchInstaller(updatePackagePath string, installPath string, version string, chocolatey_source string, winget_install bool, verbose bool, name string) {
+ 	if winget_install {
+-		Launch("winget", "install", "--version", version, updatePackagePath)
++		Launch("winget", "install", "--version", version, updatePackagePath, "--override", "/S /WINGET=1 /UNPACK=1 /D="+filepath.Clean(installPath))
+ 	} else {
+ 		if chocolatey_source != "" {
+ 			run_chocolatey(version, chocolatey_source, name)
+@@ -91,9 +91,7 @@ try {
+ 
+ exit ;
+ `)
+-		fmt.Println("<<<<Run command>>>>")
+-		fmt.Println(command)
+-		fmt.Println("<<<>>>")
++		fmt.Println("<<<<Run Chocolatey Install>>>>")
+ 		LaunchCmd(command)
+ 	}
+ }
+diff --git a/core/updater/updater_linux.go b/core/updater/updater_linux.go
+index fad36093..047b672c 100644
+--- a/core/updater/updater_linux.go
++++ b/core/updater/updater_linux.go
+@@ -52,12 +52,6 @@ func Updater(updatePackagePath string, verbose bool) {
+ 	}
+ 
+ 	// remove old file
+-	removeAll("./*.dll")
+-	removeAll("./*.dmp")
+-	removeAll("./*.js")
+-	removeAll("./*.json")
+-	removeAll("./*.txt")
+-	os.RemoveAll("./nekobox_update/nekobox/public")
+ 
+ 	// update move
+ 	err = Mv("./nekobox_update/nekobox", "./")
+@@ -107,6 +101,7 @@ func Mv(src, dst string) error {
+ 		if err != nil {
+ 			return err
+ 		}
++		os.RemoveAll(dst)
+ 		err = os.Rename(src, dst)
+ 		if err != nil {
+ 			return err
+@@ -114,10 +109,11 @@ func Mv(src, dst string) error {
+ 	}
+ 	return nil
+ }
+-
++/*
+ func removeAll(glob string) {
+ 	files, _ := filepath.Glob(glob)
+ 	for _, f := range files {
+ 		os.Remove(f)
+ 	}
+ }
++*/
+diff --git a/script/deploy_linux64.sh b/script/deploy_linux64.sh
+index f5642e1a..bedf4fb3 100755
+--- a/script/deploy_linux64.sh
++++ b/script/deploy_linux64.sh
+@@ -69,17 +69,17 @@ patchelf --set-rpath '$ORIGIN/../../lib' ./usr/plugins/platformthemes/libqgtk3.s
+ patchelf --set-rpath '$ORIGIN/../../lib' ./usr/plugins/platformthemes/libqxdgdesktopportal.so ||:
+ 
+ # fix extra libs...
+-mkdir ./usr/lib2
+-ls ./usr/lib/
+-cp ./usr/lib/libQt* ./usr/lib/libxcb-cursor* ./usr/lib/libxcb-util* ./usr/lib/libicuuc* ./usr/lib/libicui18n* ./usr/lib/libicudata* ./usr/lib2 ||:
+-rm -r ./usr/lib ||:
+-mv ./usr/lib2 ./usr/lib
++#mkdir ./usr/lib2
++#ls ./usr/lib/
++#cp ./usr/lib/libQt* ./usr/lib/libxcb-cursor* ./usr/lib/libxcb-util* ./usr/lib/libicuuc* ./usr/lib/libicui18n* ./usr/lib/libicudata* ./usr/lib2 ||:
++#rm -r ./usr/lib ||:
++#mv ./usr/lib2 ./usr/lib
+ 
+ # fix lib rpath
+ cp $CURDIR/*.js $DEST
+ cp -RT $CURDIR/res/public $DEST/public
+ echo "[General]" > $DEST/global.ini
+-echo "software_name=NekoBox" >> $DEST/global.ini
++echo "software_name=NelBox" >> $DEST/global.ini
+ echo "software_version=$INPUT_VERSION" >> $DEST/global.ini
+ 
+ cd $DEST
+@@ -87,12 +87,18 @@ patchelf --set-rpath '$ORIGIN/usr/lib' ./nekobox
+ 
+ shopt -s extglob
+ 
++rm -rfv nekobox_directory
++mkdir nekobox_directory
++mv !(nekobox_directory) nekobox_directory
++mv nekobox_directory nekobox
++tar -czvf $DEPLOYMENT/$version_standalone-linux-${ARCH}.tar.gz nekobox
++
+ mkdir -p appimage/AppDir
+ cd appimage
+ 
+ 
+ chmod 755 *
+-cp -Rfv ../!(updater|appimage|nekobox-${ARCH1}.AppImage) ./AppDir
++cp -Rfv ../nekobox/!(updater|appimage|nekobox-${ARCH1}.AppImage) ./AppDir
+ (
+ cd AppDir
+ mv nekobox_core .nekobox_core_binary_file
+@@ -146,7 +152,9 @@ Exec=nekobox
+ Icon=Tun
+ EOF
+ rm -rfv *.old.* ||:
+-$CURDIR/appimagetool-${ARCH1}.AppImage AppDir ../nekobox-${ARCH1}.AppImage --runtime-file $CURDIR/runtime-${ARCH1}
++$CURDIR/appimagetool-${ARCH1}.AppImage AppDir $DEPLOYMENT/$version_standalone-${ARCH1}-linux.AppImage --runtime-file $CURDIR/runtime-${ARCH1}
+ 
+ cd ../
+ rm -rfv appimage
++rm -rfv nekobox
++rmdir $DEST ||:
+diff --git a/script/deploy_windows.sh b/script/deploy_windows.sh
+index 42e36617..d9e1a7c6 100755
+--- a/script/deploy_windows.sh
++++ b/script/deploy_windows.sh
+@@ -52,10 +52,9 @@ cp srslist.json $DEST/srslist.json
+ #### copy exe ####
+ cp $CURDIR/*.js $DEST
+ cp $BUILD/nekobox.exe $DEST || cp $BUILD/Release/nekobox.exe $DEST
+-echo 'DeleteToUseThisDirectoryForConfig' > $DEST/config
+ cp -RT $CURDIR/res/public $DEST/public
+ echo "[General]" > $DEST/global.ini
+-echo "software_name=NekoBox" >> $DEST/global.ini
++echo "software_name=NelBox" >> $DEST/global.ini
+ echo "software_version=$INPUT_VERSION" >> $DEST/global.ini
+ 
+ if [[ "$COMPILER" != "MinGW" ]]
+@@ -79,5 +78,5 @@ fi
+ (
+ cd "$CURDIR"
+ pwd
+-makensis.exe "-DSOFTWARE_NAME=NekoBox" "-DDIRECTORY=$DEST" "-DOUTFILE=$INST" "-NOCD" 'script/windows_installer.nsi'
++makensis.exe "-DSOFTWARE_VERSION=$INPUT_VERSION" "-DSOFTWARE_NAME=NekoBox" "-DDIRECTORY=$DEST" "-DOUTFILE=$INST" "-NOCD" 'script/windows_installer.nsi'
+ )
+diff --git a/script/trigger_winget_pkgs.sh b/script/trigger_winget_pkgs.sh
+index 046f98dc..17eaafc4 100755
+--- a/script/trigger_winget_pkgs.sh
++++ b/script/trigger_winget_pkgs.sh
+@@ -5,15 +5,15 @@ BASE_BRANCH="master"
+ USERNAME="qr243vbi"
+ PROGID="NekoBox"
+ A='q'
+-OLDVER='5.9.9'
++OLDVER='5.9.25'
+ 
+ text="$(curl -s -H "Accept: application/vnd.github.v3+json" https://api.github.com/repos/qr243vbi/nekobox/releases/tags/$INPUT_VERSION)"
+ asset_res="$(echo "$text"  | jq '.assets[] | select(.browser_download_url | endswith("-installer.exe"))')"
+ 
+ 
+-PATTERN="s~$OLDVER~$INPUT_VERSION~g;s~2025-12-07~$(date +%Y-%m-%d)~g;$(echo $asset_res | jq -r '"\(.name)_\(.digest | ascii_upcase)"' | sed 's~.*arm64.*:\(.*\)~s@FED32109A84E94FDE258F48EF40366111F4CDAEECA617CC3611217EDD38BC701@\1@g;~g;s~.*windows64.*:\(.*\)~s@AA5AC2B7862929F4F078E81FB71A3286DC457B4B0BE9B84B318441FBBDAF2947@\1@g;~g;' | sed ':a;N;$!ba;s/\n//g')"
++PATTERN="s~/S /WINGET=1~/S /NOSCRIPT=1 /WINGET=1~g;s~$OLDVER~$INPUT_VERSION~g;s~2025-01-03~$(date +%Y-%m-%d)~g;$(echo $asset_res | jq -r '"\(.name)_\(.digest | ascii_upcase)"' | sed 's~.*arm64.*:\(.*\)~s@55DE53FA4B6CA5C3DC4DCB9A0EDE9AB933511C206E1289930DD35075E9C22147@\1@g;~g;s~.*windows64.*:\(.*\)~s@0AC94CBAA96CE3F101B9C8773E7227ABD053BE7DA18A84A3F3D6B6DBD7632CC5@\1@g;~g;' | sed ':a;N;$!ba;s/\n//g')"
+ 
+-NEW_BRANCH_NAME="NekoBox-branch-$INPUT_VERSION"
++NEW_BRANCH_NAME="NekoBox-branch-$INPUT_VERSION-$(date +'%Y%m%d%H%M%S')"
+ git clone --depth 10 "https://${USERNAME}:${GITHUB_TOKEN}@github.com/${USERNAME}/winget-pkgs" ||:
+ 
+ cd "$(basename "$REPO_TO_FORK")" || { echo "Failed to change directory"; exit 1; }
+@@ -53,5 +53,5 @@ git commit -am update
+ git push --set-upstream origin "$NEW_BRANCH_NAME"
+ 
+ gh repo set-default "$REPO_TO_FORK"
+-gh pr create --base "$BASE_BRANCH" --head "$USERNAME:$NEW_BRANCH_NAME" --title "$NEW_BRANCH_NAME" --body ""
++gh pr create --base "$BASE_BRANCH" --head "$USERNAME:$NEW_BRANCH_NAME" --title "New version: qr243vbi.NekoBox version ${INPUT_VERSION}" --body ""
+ 
+diff --git a/script/windows_installer.nsi b/script/windows_installer.nsi
+index 8f281084..40252da8 100644
+--- a/script/windows_installer.nsi
++++ b/script/windows_installer.nsi
+@@ -1,7 +1,7 @@
+ !ifdef SOFTWARE_NAME
+     Name "${SOFTWARE_NAME}"
+ !else
+-!define SOFTWARE_NAME nekobox
++	!define SOFTWARE_NAME nekobox
+     Name "nekobox"
+ !endif
+ 
+@@ -13,6 +13,19 @@
+ InstallDir $WINDIR\qr243vbi\non_exists_directory
+ RequestExecutionLevel user
+ 
++!ifdef SOFTWARE_VERSION
++!else
++!define SOFTWARE_VERSION "1.0.0"
++!endif
++
++; Optional: version info for Windows file properties 
++VIProductVersion "${SOFTWARE_VERSION}.0" 
++VIAddVersionKey "ProductName" "${SOFTWARE_NAME}" 
++VIAddVersionKey "ProductVersion" "${SOFTWARE_VERSION}" 
++VIAddVersionKey "CompanyName" "qr243vbi" 
++VIAddVersionKey "FileDescription" "Installer for ${SOFTWARE_NAME}" 
++VIAddVersionKey "LegalCopyright" "© 2026 qr243vbi"
++
+ !include FileFunc.nsh
+ !include MUI2.nsh
+ !include LogicLib.nsh
+@@ -27,7 +40,7 @@ Var isInstalled
+ Var isAdmin
+ Var Winget
+ Var UnpackOnly
+-
++Var NoScript
+ 
+ !ifndef PSEXEC_INCLUDED
+ !define PSEXEC_INCLUDED
+@@ -158,6 +171,7 @@ ${EndIf}
+ Function .onInit
+     !insertmacro HasFlag "/WINGET=" $Winget
+ 	!insertmacro HasFlag "/UNPACK=" $UnpackOnly
++	!insertmacro HasFlag "/NOSCRIPT=" $NoScript
+ 	UserInfo::GetAccountType 
+ 	Pop $0 
+ 	${If} $0 != "Admin" 
+@@ -222,6 +236,33 @@ FunctionEnd
+ 	${EndIf}
+ !macroend
+ 
++
++Function WriteToFile
++Exch $0 ;file to write to
++Exch
++Exch $1 ;text to write
++ 
++  FileOpen $0 $0 a #open file
++  FileSeek $0 0 END #go to end
++  FileWrite $0 $1 #write to file
++  FileClose $0
++ 
++Pop $1
++Pop $0
++FunctionEnd
++ 
++!macro WriteToFile NewLine File String
++  !if `${NewLine}` == true
++  Push `${String}$\r$\n`
++  !else
++  Push `${String}`
++  !endif
++  Push `${File}`
++  Call WriteToFile
++!macroend
++!define WriteToFile `!insertmacro WriteToFile false`
++!define WriteLineToFile `!insertmacro WriteToFile true`
++
+ Section "Install"
+ 
+   SetOutPath "$INSTDIR"
+@@ -229,6 +270,7 @@ Section "Install"
+ 
+   !insertmacro "checkVcRedist"
+   
++  ${If} "$NoScript" != "1"
+   ${PowerShellExec} "\
+     Write-Host $\"=> $INSTDIR$\" ;				\
+ 	if ($\"$VCRedistNeeded$\" -eq $\"1$\") {					\
+@@ -248,6 +290,7 @@ Section "Install"
+ 		Stop-Process -Id $$proc.ProcessId -Force ; 				\
+ 	}; 															\
+ 	"
++  ${EndIf}
+ 
+   !ifdef DIRECTORY
+     File /r  "${DIRECTORY}\*"
+@@ -257,16 +300,19 @@ Section "Install"
+   
+   ${If} "$Winget" == "1"
+     ${If} ${FileExists} "$INSTDIR\global.ini"
+-        FileOpen $0 "$INSTDIR\global.ini" a
+     ${Else}
+         FileOpen $0 "$INSTDIR\global.ini" w
+-        FileWrite $0 "[General]"
++        FileWrite $0 "[General]$\n"
++		FileClose $0
+     ${EndIf}
+-    FileWrite $0 "\nwinget_package=true\n"
+-    FileClose $0
++    ${WriteLineToFile} "$INSTDIR\global.ini" "winget_package=true$\n"
+   ${EndIf}
+ 
+   ${If} "$UnpackOnly" != "1"
++    FileOpen $0 "$INSTDIR\config" w
++    FileWrite $0 "DeleteToUseThisDirectoryForConfig"
++	FileClose $0
++
+     CreateShortcut "$desktop\${SOFTWARE_NAME}.lnk" "$INSTDIR\nekobox.exe" "" "$INSTDIR\nekobox.exe" 0
+     CreateShortcut "$SMPROGRAMS\${SOFTWARE_NAME}.lnk" "$INSTDIR\nekobox.exe" "" "$INSTDIR\nekobox.exe" 0
+ 
+diff --git a/src/api/RPC.cpp b/src/api/RPC.cpp
+index 87f3b4c3..134abe15 100755
+--- a/src/api/RPC.cpp
++++ b/src/api/RPC.cpp
+@@ -318,4 +318,28 @@ try{
+         }
+     }
+ 
++    std::tuple<QString, std::shared_ptr<Configs::BuildConfigResult>> Client::StartEntity(bool *rpcOK,
++                            const std::shared_ptr<Configs::ProxyEntity> ent) {
++        std::shared_ptr<Configs::BuildConfigResult> result = Configs::BuildConfig(ent, false, false);
++
++        if (!result->error.isEmpty()) {
++            *rpcOK = false;
++            return std::make_tuple(result->error, result);
++        }
++
++        libcore::LoadConfigReq req;
++        req.core_config =
++        (QJsonObject2QString(result->coreConfig, true)).toStdString();
++        req.disable_stats = (Configs::dataStore->disable_traffic_stats);
++        if (ent->type == "extracore") {
++            req.need_extra_process = (true);
++            req.extra_process_path = (result->extraCoreData->path).toStdString();
++            req.extra_process_args = (result->extraCoreData->args).toStdString();
++            req.extra_process_conf = (result->extraCoreData->config).toStdString();
++            req.extra_process_conf_dir = (result->extraCoreData->configDir).toStdString();
++            req.extra_no_out = (result->extraCoreData->noLog);
++        }
++        return std::make_tuple(Start(rpcOK, req), result);
++    };
++
+ } // namespace API
+diff --git a/src/configs/proxy/Bean2CoreObj_box.cpp b/src/configs/proxy/Bean2CoreObj_box.cpp
+index 9ff15182..62e02f9b 100755
+--- a/src/configs/proxy/Bean2CoreObj_box.cpp
++++ b/src/configs/proxy/Bean2CoreObj_box.cpp
+@@ -1,8 +1,78 @@
+-#include "nekobox/dataStore/ProxyEntity.hpp"
+-#include "nekobox/configs/proxy/includes.h"
++#include <nekobox/dataStore/ProxyEntity.hpp>
++#include <nekobox/configs/proxy/includes.h>
++
+ #include <qjsonobject.h>
+ 
+ namespace Configs {
++    static QJsonObject getXbadoptionRange(const QJsonValue & value);
++
++    static QJsonObject getXmux(const QJsonValue & value){
++        QJsonObject obj;
++        for (auto [k, value]: asKeyValueRange(value.toObject())){
++            QString key = k.toString().toLower().replace("_", "");
++            if (key == "maxconcurrency"){
++                obj["max_concurrency"] = getXbadoptionRange(value);
++            } else if (key == "maxconnections"){
++                obj["max_connections"] = getXbadoptionRange(value);
++            } else if (key == "cmaxreusetimes"){
++                obj["c_max_reuse_times"] = getXbadoptionRange(value);
++            } else if (key == "hmaxrequesttimes"){
++                obj["h_max_request_times"] = getXbadoptionRange(value);
++            } else if (key == "hmaxreusablesecs"){
++                obj["h_max_reusable_secs"] = getXbadoptionRange(value);
++            } else if (key == "hkeepaliveperiod"){
++                obj["h_keep_alive_period"] = value.toInteger();
++            }
++        }
++        return obj;
++    }
++
++    static QJsonObject getXbadoptionRange(const QJsonValue & value){
++        QJsonObject obj ;
++        if (value.isString()){
++            QString str = value.toString();
++            auto ptr = str.split("-");
++            obj.insert("from", ptr[0].toInt());
++            obj.insert("to", ptr[1].toInt());
++        } else if (value.isObject()){
++            auto objv = value.toObject();
++            obj.insert("from", objv.value("from").toInt());
++            obj.insert("to", objv.value("to").toInt());
++        } else {
++            obj.insert("from", value.toInt());
++            obj.insert("to", value.toInt());
++        }
++        return obj;
++    }
++
++    static void parseExtraXhttp(QJsonObject & transport, QString extra){
++        extra = extra.replace("+", "");
++        for (auto [k, value]: asKeyValueRange(QJsonDocument::fromJson(extra.toUtf8()).object())){
++            QString key = k.toString().toLower().replace("_", "");
++            if (key == "xpaddingbytes"){
++                transport["x_padding_bytes"] = getXbadoptionRange(value);
++            } else if (key == "nogrpcheader"){
++                transport["no_grpc_header"] = value.toBool();
++            } else if (key == "nosseheader"){
++                transport["no_sse_header"] = value.toBool();
++            } else if (key == "scmaxeachpostbytes"){
++                transport["sc_max_each_post_bytes"] = getXbadoptionRange(value);
++            } else if (key == "scminpostsintervalms"){
++                transport["sc_min_posts_interval_ms"] = getXbadoptionRange(value);
++            } else if (key == "scmaxbufferedposts"){
++                transport["sc_max_buffered_posts"] = value.toInteger();
++            } else if (key == "scstreamupserversecs"){
++                transport["sc_stream_up_server_secs"] = getXbadoptionRange(value);
++            } else if (key == "domainstrategy"){
++                transport["domain_strategy"] = value.toInt();
++            } else if (key == "headers"){
++                transport["headers"] = value.toObject();
++            } else if (key == "xmux"){
++                transport["xmux"] = getXmux(value);
++            }
++        }
++    }
++
+     void V2rayStreamSettings::BuildStreamSettingsSingBox(QJsonObject *outbound) {
+         // https://sing-box.sagernet.org/configuration/shared/v2ray-transport
+ 
+@@ -54,6 +124,7 @@ namespace Configs {
+                 if (!path.isEmpty()) transport["path"] = path;
+                 if (!host.isEmpty()) transport["host"] = host;
+                 transport["mode"] = xhttp_mode;
++                parseExtraXhttp(transport, xhttp_extra);
+             }
+             if (!network.trimmed().isEmpty()) outbound->insert("transport", transport);
+         } else if (header_type == "http") {
+@@ -445,4 +516,18 @@ namespace Configs {
+         return result;
+     }
+ 
++
++    CoreObjOutboundBuildResult TorBean::BuildCoreObjSingBox()
++    {
++        CoreObjOutboundBuildResult result;
++        QJsonObject outbound {
++            {"type", "tor"},
++            {"executable_path", this->executable_path},
++            {"extra_args", QListStr2QJsonArray(this->extra_args)},
++            {"data_directory", this->data_directory},
++            {"torrc", QJsonObject::fromVariantMap(this->torrc)}
++        };
++        result.outbound = outbound;
++        return result;
++    }
+ } // namespace Configs
+diff --git a/src/configs/proxy/Bean2Link.cpp b/src/configs/proxy/Bean2Link.cpp
+index 9f4a30cc..4407e120 100755
+--- a/src/configs/proxy/Bean2Link.cpp
++++ b/src/configs/proxy/Bean2Link.cpp
+@@ -3,25 +3,16 @@
+ #include "nekobox/configs/proxy/includes.h"
+ 
+ #include <QUrlQuery>
++#include <QProcess>
+ #include <qurlquery.h>
+ 
+ namespace Configs {
+ 
+-    static void add_query_nonempty(const char * name, QUrlQuery & query, QString & value){
+-        if (!value.isEmpty()){
+-            query.addQueryItem(name, value);
+-        }
+-    }
+-
+-    static void add_query_int(const char * name, QUrlQuery & query, int value){
+-            query.addQueryItem(name, QString::number(value));
+-    }
+-
+-    static void add_query_int_natural(const char * name, QUrlQuery & query, int value){
+-        if (value > 0){
+-            add_query_int(name, query, value);
+-        }
+-    }
++    inline void add_query_int_natural(const char * name, QUrlQuery & query, int value){ AddQueryNatural(query, name, value); };
++    inline void add_query_int(const char * name, QUrlQuery & query, int value){ AddQueryInt(query, name, value); };
++    inline void add_query_nonempty(const char * name, QUrlQuery & query, const QString &value){ AddQueryString(query, name, value); };
++    inline void add_query_args_nonempty(const char * name, QUrlQuery & query, const QStringList & value) { AddQueryStringList(query, name, value); };
++    inline void add_query_map_nonempty(const char * name, QUrlQuery & query, const QVariantMap & value) { AddQueryMap(query, name, value); };
+ 
+     QString SocksHttpBean::ToShareLink() {
+         QUrl url;
+@@ -382,17 +373,17 @@ namespace Configs {
+         url.setHost("tailscale");
+         if (!name.isEmpty()) url.setFragment(name);
+         QUrlQuery q;
+-        q.addQueryItem("state_directory", QUrl::toPercentEncoding(state_directory));
+-        q.addQueryItem("auth_key", QUrl::toPercentEncoding(auth_key));
+-        q.addQueryItem("control_url", QUrl::toPercentEncoding(control_url));
+-        q.addQueryItem("ephemeral", ephemeral ? "true" : "false");
+-        q.addQueryItem("hostname", QUrl::toPercentEncoding(hostname));
+-        q.addQueryItem("accept_routes", accept_routes ? "true" : "false");
+-        q.addQueryItem("exit_node", exit_node);
+-        q.addQueryItem("exit_node_allow_lan_access", exit_node_allow_lan_access ? "true" : "false");
+-        q.addQueryItem("advertise_routes", QUrl::toPercentEncoding(advertise_routes.join(",")));
+-        q.addQueryItem("advertise_exit_node", advertise_exit_node ? "true" : "false");
+-        q.addQueryItem("global_dns", globalDNS ? "true" : "false");
++        add_query_nonempty("state_directory", q, QUrl::toPercentEncoding(state_directory));
++        add_query_nonempty("auth_key", q, QUrl::toPercentEncoding(auth_key));
++        add_query_nonempty("control_url", q, QUrl::toPercentEncoding(control_url));
++        add_query_nonempty("ephemeral", q, ephemeral ? "true" : "false");
++        add_query_nonempty("hostname", q, QUrl::toPercentEncoding(hostname));
++        add_query_nonempty("accept_routes", q, accept_routes ? "true" : "false");
++        add_query_nonempty("exit_node", q, exit_node);
++        add_query_nonempty("exit_node_allow_lan_access", q, exit_node_allow_lan_access ? "true" : "false");
++        add_query_nonempty("advertise_routes", q, QUrl::toPercentEncoding(advertise_routes.join(",")));
++        add_query_nonempty("advertise_exit_node", q, advertise_exit_node ? "true" : "false");
++        add_query_nonempty("global_dns", q, globalDNS ? "true" : "false");
+         url.setQuery(q);
+         return url.toString(QUrl::FullyEncoded);
+     }
+@@ -404,22 +395,22 @@ namespace Configs {
+         url.setPort(serverPort);
+         if (!name.isEmpty()) url.setFragment(name);
+         QUrlQuery q;
+-        q.addQueryItem("user", user);
+-        q.addQueryItem("password", password);
+-        q.addQueryItem("private_key", privateKey.toUtf8().toBase64(QByteArray::OmitTrailingEquals));
+-        q.addQueryItem("private_key_path", privateKeyPath);
+-        q.addQueryItem("private_key_passphrase", privateKeyPass);
++        add_query_nonempty("user", q, user);
++        add_query_nonempty("password", q, password);
++        add_query_nonempty("private_key", q, privateKey.toUtf8().toBase64(QByteArray::OmitTrailingEquals));
++        add_query_nonempty("private_key_path", q, privateKeyPath);
++        add_query_nonempty("private_key_passphrase", q, privateKeyPass);
+         QStringList b64HostKeys = {};
+         for (const auto& item: hostKey) {
+             b64HostKeys << item.toUtf8().toBase64(QByteArray::OmitTrailingEquals);
+         }
+-        q.addQueryItem("host_key", b64HostKeys.join("-"));
++        add_query_nonempty("host_key", q, b64HostKeys.join("-"));
+         QStringList b64HostKeyAlgs = {};
+         for (const auto& item: hostKeyAlgs) {
+             b64HostKeyAlgs << item.toUtf8().toBase64(QByteArray::OmitTrailingEquals);
+         }
+-        q.addQueryItem("host_key_algorithms", b64HostKeyAlgs.join("-"));
+-        q.addQueryItem("client_version", clientVersion);
++        add_query_nonempty("host_key_algorithms", q, b64HostKeyAlgs.join("-"));
++        add_query_nonempty("client_version", q, clientVersion);
+         url.setQuery(q);
+         return url.toString(QUrl::FullyEncoded);
+     }
+@@ -429,6 +420,20 @@ namespace Configs {
+         return "Unsupported for now";
+     }
+ 
++    QString TorBean::ToShareLink(){
++        QUrl url;
++        url.setScheme("tor");
++        url.setHost("tor");
++        QUrlQuery q;
++        add_query_args_nonempty( "extra_args", q, extra_args);
++        add_query_nonempty("executable_path", q, executable_path);
++        add_query_nonempty("data_directory", q, data_directory);
++        add_query_map_nonempty("torrc", q, torrc);
++
++        url.setQuery(q);
++        return url.toString(QUrl::FullyEncoded);
++    }
++
+     QString MieruBean::ToShareLink(){
+         QUrl url;
+         url.setScheme("mieru");
+@@ -436,11 +441,11 @@ namespace Configs {
+         url.setPort(serverPort);
+         if (!name.isEmpty()) url.setFragment(name);
+         QUrlQuery q;
+-        q.addQueryItem("username", username);
+-        q.addQueryItem("password", password);
+-        q.addQueryItem("transport", "TCP");
+-        q.addQueryItem("multiplexing", multiplexing);
+-        q.addQueryItem("server_ports", serverPorts.join(","));
++        add_query_nonempty( "username", q, username);
++        add_query_nonempty( "password", q, password);
++        add_query_nonempty( "transport", q, "TCP");
++        add_query_nonempty( "multiplexing", q, multiplexing);
++        add_query_nonempty( "server_ports", q, serverPorts.join(","));
+         url.setQuery(q);
+ 
+         return url.toString(QUrl::FullyEncoded);
+diff --git a/src/configs/proxy/Json2Bean.cpp b/src/configs/proxy/Json2Bean.cpp
+index 4ec337d5..58c1246d 100755
+--- a/src/configs/proxy/Json2Bean.cpp
++++ b/src/configs/proxy/Json2Bean.cpp
+@@ -286,6 +286,15 @@ namespace Configs
+         return false;
+     }
+ 
++    bool TorBean::TryParseJson(const QJsonObject &obj){
++        name = obj["tag"].toString();
++        executable_path = obj["executable_path"].toString();
++        extra_args = QJsonArray2QListString(obj["extra_args"].toArray());
++        data_directory = obj["data_directory"].toString();
++        torrc = obj["torrc"].toObject().toVariantMap();
++        return true;
++    };
++
+     bool MieruBean::TryParseJson(const QJsonObject& obj)
+     {
+         name = obj["tag"].toString();
+diff --git a/src/configs/proxy/Link2Bean.cpp b/src/configs/proxy/Link2Bean.cpp
+index 68692fc9..2ca03d9b 100755
+--- a/src/configs/proxy/Link2Bean.cpp
++++ b/src/configs/proxy/Link2Bean.cpp
+@@ -78,7 +78,7 @@ namespace Configs {
+         if (serverPort == -1) serverPort = 443;
+         this->idle_session_check_interval = GetQueryValue(query, "idle_session_check_interval", "30s");
+         this->idle_session_timeout = GetQueryValue(query, "idle_session_timeout", "30s");
+-        this->min_idle_session = GetQueryValue(query, "min_idle_session", "0").toInt();
++        this->min_idle_session = GetQueryIntValue(query, "min_idle_session", 0);
+         // security
+         parse_security(stream, query);
+ 
+@@ -95,7 +95,7 @@ namespace Configs {
+         serverPort = url.port();
+         password = url.userName();
+         if (serverPort == -1) serverPort = 443;
+-        this->shadowtls_version = GetQueryValue(query, "version", "0").toInt();
++        this->shadowtls_version = GetQueryIntValue(query, "version", 0);
+         // security
+         parse_security(stream, query);
+ 
+@@ -253,10 +253,13 @@ namespace Configs {
+             auto net = objN["net"].toString();
+             if (!net.isEmpty()) {
+                 if (net == "h2") {
++					net_type_ret:
+                     net = "http";
+                 }
+                 stream->network = net;
+-            }
++            } else if (objN["type"].toString() == "http"){
++				goto net_type_ret;
++			}
+             auto scy = objN["scy"].toString();
+             if (!scy.isEmpty()) security = scy;
+             // TLS (XTLS?)
+@@ -360,8 +363,8 @@ namespace Configs {
+             if (serverPort > 0) serverPort = url.port();
+             obfsPassword = QUrl::fromPercentEncoding(query.queryItemValue("obfsParam").toUtf8());
+             allowInsecure = QStringList{"1", "true"}.contains(query.queryItemValue("insecure"));
+-            uploadMbps = query.queryItemValue("upmbps").toInt();
+-            downloadMbps = query.queryItemValue("downmbps").toInt();
++            uploadMbps = GetQueryIntValue(query, "upmbps");
++            downloadMbps = GetQueryIntValue(query, "downmbps");
+ 
+             auto protocolStr = (query.hasQueryItem("protocol") ? query.queryItemValue("protocol") : "udp").toLower();
+             if (protocolStr == "faketcp") {
+@@ -378,8 +381,8 @@ namespace Configs {
+             alpn = query.queryItemValue("alpn");
+             sni = FIRST_OR_SECOND(query.queryItemValue("peer"), query.queryItemValue("sni"));
+ 
+-            connectionReceiveWindow = query.queryItemValue("recv_window").toInt();
+-            streamReceiveWindow = query.queryItemValue("recv_window_conn").toInt();
++            connectionReceiveWindow = GetQueryIntValue(query, "recv_window");
++            streamReceiveWindow = GetQueryIntValue(query, "recv_window_conn");
+ 
+             if (query.hasQueryItem("mport")) {
+                 serverPorts = query.queryItemValue("mport").split(",");
+@@ -453,21 +456,21 @@ namespace Configs {
+         if (!rawLocalAddr.isEmpty()) {
+             for (const auto &item: rawLocalAddr.split("-")) localAddress += item;
+         }
+-        persistentKeepalive = query.queryItemValue("persistent_keepalive").toInt();
+-        MTU = query.queryItemValue("mtu").toInt();
++        persistentKeepalive = GetQueryIntValue(query, "persistent_keepalive");
++        MTU = GetQueryIntValue(query, "mtu");
+         useSystemInterface = query.queryItemValue("use_system_interface") == "true";
+-        workerCount = query.queryItemValue("workers").toInt();
++        workerCount = GetQueryIntValue(query, "workers");
+ 
+         enable_amnezia = query.queryItemValue("enable_amnezia") == "true";
+-        junk_packet_count = query.queryItemValue("junk_packet_count").toInt();
+-        junk_packet_min_size = query.queryItemValue("junk_packet_min_size").toInt();
+-        junk_packet_max_size = query.queryItemValue("junk_packet_max_size").toInt();
+-        init_packet_junk_size = query.queryItemValue("init_packet_junk_size").toInt();
+-        response_packet_junk_size = query.queryItemValue("response_packet_junk_size").toInt();
+-        init_packet_magic_header = query.queryItemValue("init_packet_magic_header").toInt();
+-        response_packet_magic_header = query.queryItemValue("response_packet_magic_header").toInt();
+-        underload_packet_magic_header = query.queryItemValue("underload_packet_magic_header").toInt();
+-        transport_packet_magic_header = query.queryItemValue("transport_packet_magic_header").toInt();
++        junk_packet_count = GetQueryIntValue(query, "junk_packet_count");
++        junk_packet_min_size = GetQueryIntValue(query, "junk_packet_min_size");
++        junk_packet_max_size = GetQueryIntValue(query, "junk_packet_max_size");
++        init_packet_junk_size = GetQueryIntValue(query, "init_packet_junk_size");
++        response_packet_junk_size = GetQueryIntValue(query, "response_packet_junk_size");
++        init_packet_magic_header = GetQueryIntValue(query, "init_packet_magic_header");
++        response_packet_magic_header = GetQueryIntValue(query, "response_packet_magic_header");
++        underload_packet_magic_header = GetQueryIntValue(query, "underload_packet_magic_header");
++        transport_packet_magic_header = GetQueryIntValue(query, "transport_packet_magic_header");
+ 
+         return true;
+     }
+@@ -527,6 +530,18 @@ namespace Configs {
+         return false;
+     }
+ 
++    bool TorBean::TryParseLink(const QString &link){
++        auto url = QUrl(link);
++        if (!url.isValid()) return false;
++        auto q = GetQuery(url);
++
++        extra_args = GetQueryListValue(q, "extra_args");
++        executable_path = GetQueryValue(q, "executable_path");
++        data_directory = GetQueryValue(q, "data_directory");
++        torrc = GetQueryMapValue(q, "torrc");
++        return true;
++    };
++
+     bool MieruBean::TryParseLink(const QString& link)
+     {
+         auto url = QUrl(link);
+diff --git a/src/configs/sub/GroupUpdater.cpp b/src/configs/sub/GroupUpdater.cpp
+index 522475b9..38315f6e 100755
+--- a/src/configs/sub/GroupUpdater.cpp
++++ b/src/configs/sub/GroupUpdater.cpp
+@@ -248,6 +248,14 @@ namespace Subscription {
+             if (!ok) return;
+         }
+ 
++        // tor
++        if (str.startsWith("tor://")) {
++            needFix = false;
++            ent = Configs::ProfileManager::NewProxyEntity("tor");
++            auto ok = ent->TorBean()->TryParseLink(str);
++            if (!ok) return;
++        }
++
+         if (ent == nullptr) return;
+ 
+         // Fix
+@@ -402,6 +410,13 @@ namespace Subscription {
+                 if (!ok) continue;
+             }
+ 
++            // Tor
++            if (out["type"] == "tor") {
++                ent = Configs::ProfileManager::NewProxyEntity("tor");
++                auto ok = ent->TorBean()->TryParseJson(out);
++                if (!ok) continue;
++            }
++
+             if (ent == nullptr) continue;
+ 
+             updated_order += ent;
+@@ -833,7 +848,7 @@ namespace Subscription {
+         }
+     }
+ 
+-    // 在新的 thread 运行
++    //
+     void GroupUpdater::AsyncUpdate(const QString &str, int _sub_gid, const std::function<void()> &finish) {
+         auto content = str.trimmed();
+         bool asURL = false;
+@@ -871,19 +886,19 @@ namespace Subscription {
+     }
+ 
+     void GroupUpdater::Update(const QString &_str, int _sub_gid, bool _not_sub_as_url) {
+-        // 创建 rawUpdater
++        //
+         Configs::dataStore->imported_count = 0;
+         auto rawUpdater = std::make_unique<RawUpdater>();
+         rawUpdater->gid_add_to = _sub_gid;
+ 
+-        // 准备
++        //
+         QString sub_user_info;
+-        bool asURL = _sub_gid >= 0 || _not_sub_as_url; // 把 _str 当作 url 处理（下载内容）
++        bool asURL = _sub_gid >= 0 || _not_sub_as_url;
+         auto content = _str.trimmed();
+         auto group = Configs::profileManager->GetGroup(_sub_gid);
+         if (group != nullptr && group->archive) return;
+ 
+-        // 网络请求
++        //
+         if (asURL) {
+             auto groupName = group == nullptr ? content : group->name;
+             MW_show_log(">>>>>>>> " + QObject::tr("Requesting subscription: %1").arg(groupName));
+@@ -900,13 +915,13 @@ namespace Subscription {
+             MW_show_log("<<<<<<<< " + QObject::tr("Subscription request fininshed: %1").arg(groupName));
+         }
+ 
+-        QList<std::shared_ptr<Configs::ProxyEntity>> in;          // 更新前
+-        QList<std::shared_ptr<Configs::ProxyEntity>> out_all;     // 更新前 + 更新后
+-        QList<std::shared_ptr<Configs::ProxyEntity>> out;         // 更新后
+-        QList<std::shared_ptr<Configs::ProxyEntity>> only_in;     // 只在更新前有的
+-        QList<std::shared_ptr<Configs::ProxyEntity>> only_out;    // 只在更新后有的
+-        QList<std::shared_ptr<Configs::ProxyEntity>> update_del;  // 更新前后都有的，需要删除的新配置
+-        QList<std::shared_ptr<Configs::ProxyEntity>> update_keep; // 更新前后都有的，被保留的旧配置
++        QList<std::shared_ptr<Configs::ProxyEntity>> in;          //
++        QList<std::shared_ptr<Configs::ProxyEntity>> out_all;     //
++        QList<std::shared_ptr<Configs::ProxyEntity>> out;         //
++        QList<std::shared_ptr<Configs::ProxyEntity>> only_in;     //
++        QList<std::shared_ptr<Configs::ProxyEntity>> only_out;    //
++        QList<std::shared_ptr<Configs::ProxyEntity>> update_del;  //
++        QList<std::shared_ptr<Configs::ProxyEntity>> update_keep; //
+ 
+         if (group != nullptr) {
+             in = group->GetProfileEnts();
+diff --git a/src/dataStore/Configs.cpp b/src/dataStore/Configs.cpp
+index ab67bb0f..5c0c4688 100755
+--- a/src/dataStore/Configs.cpp
++++ b/src/dataStore/Configs.cpp
+@@ -21,7 +21,7 @@
+ #include <memory>
+ #include <utility>
+ #include <nekobox/api/RPC.h>
+-
++#include <QVariantMap>
+ #include <nekobox/js/version.h>
+ #include <QCryptographicHash>
+ 
+@@ -109,6 +109,11 @@ namespace Configs_ConfigItem {
+                         }
+                     } 
+                     break;
++                case itemType::type_stringMap:
++                    {
++                        object.insert(name, QJsonObject::fromVariantMap( *(QVariantMap *) ptr ));
++                    }
++                    break;
+                 case itemType::type_jsonStoreList:
+                     QJsonArray jsonArray;
+                     auto arr = *(QList<JsonStore*> *) ptr;
+@@ -145,7 +150,7 @@ namespace Configs_ConfigItem {
+             auto item = _map.value(key).get();
+ 
+             if (item == nullptr)
+-                continue; // 故意忽略
++                continue;
+ 
+             auto ptr = (void*)(((size_t)(void*)this) + item->ptr);
+             switch (item->type) {
+@@ -197,6 +202,13 @@ namespace Configs_ConfigItem {
+                         store->FromJson(value.toObject());
+                     }
+                     break;
++                case itemType::type_stringMap:
++                    if (value.type() != QJsonValue::Object){
++                        continue;
++                    }
++                    {
++                        *(QVariantMap*) ptr = value.toObject().toVariantMap();
++                    }
+                 case itemType::type_jsonStoreList:
+                     break;
+             }
+@@ -224,6 +236,15 @@ namespace Configs_ConfigItem {
+             case itemType::type_integer64:
+                 *(long long *) ptr = *(long long *) p;
+                 break;
++            case itemType::type_integerList:
++                *(QList<int> *) ptr = *(QList<int> *) p;
++                break;
++            case itemType::type_stringList:
++                *(QList<QString> *) ptr = *(QList<QString> *) p;
++                break;
++            case itemType::type_stringMap:
++                *(QVariantMap *) ptr = *(QVariantMap *) p;
++                break;
+             // others...
+             default:
+                 break;
+diff --git a/src/dataStore/Database.cpp b/src/dataStore/Database.cpp
+index 33ea68d0..eb00aeb8 100755
+--- a/src/dataStore/Database.cpp
++++ b/src/dataStore/Database.cpp
+@@ -12,6 +12,8 @@
+ namespace Configs {
+ 
+     ProfileManager *profileManager = new ProfileManager();
++    
++    QMap<QString, QString> profileDisplayNames;
+ 
+     ProfileManager::ProfileManager() : JsonStore("groups/pm.json") {
+     }
+@@ -167,10 +169,22 @@ namespace Configs {
+         return routingChain;
+     }
+ 
+-    //  新建的不给 fn 和 id
+ 
+-    std::shared_ptr<ProxyEntity> ProfileManager::NewProxyEntity(const QString &type) {
+-        Configs::AbstractBean *bean;
++    QString ProfileManager::GetDisplayType(const QString & type){
++        QString ret = profileDisplayNames.value(type, "");
++        if (ret == ""){
++            auto proxy = NewProxyEntity(type, true);
++            if (proxy != nullptr){
++                ret = proxy->bean->DisplayType();
++                proxy.reset();
++                profileDisplayNames[type] = ret;
++            }
++        }
++        return ret;
++    }
++
++    std::shared_ptr<ProxyEntity> ProfileManager::NewProxyEntity(const QString &type, bool nullok) {
++        Configs::AbstractBean *bean = nullptr;
+ 
+         if (type == "socks") {
+             bean = new Configs::SocksHttpBean(Configs::SocksHttpBean::type_Socks5);
+@@ -208,14 +222,23 @@ namespace Configs {
+             bean = new Configs::CustomBean();
+         } else if (type == "extracore") {
+             bean = new Configs::ExtraCoreBean();
++        } else if (type == "tor"){
++            bean = new Configs::TorBean();
+         } else {
+-            bean = new Configs::AbstractBean(-114514);
++            if (!nullok){
++                bean = new Configs::AbstractBean(-114514);
++            } else {
++                return nullptr;
++            }
+         }
+-
+         auto ent = std::make_shared<ProxyEntity>(bean, type);
+         return ent;
+     }
+ 
++    std::shared_ptr<ProxyEntity> ProfileManager::NewProxyEntity(const QString &type) {
++        return NewProxyEntity(type, false);
++    } 
++
+     std::shared_ptr<Group> ProfileManager::NewGroup() {
+         auto ent = std::make_shared<Group>();
+         return ent;
+diff --git a/src/dataStore/ProxyEntity.cpp b/src/dataStore/ProxyEntity.cpp
+index 4354cbcc..b0d4a950 100755
+--- a/src/dataStore/ProxyEntity.cpp
++++ b/src/dataStore/ProxyEntity.cpp
+@@ -60,43 +60,4 @@ namespace Configs
+         return result;
+     }
+ 
+-    std::list<ColorRule> latencyColorList = {  
+-        {1, 5, 0, 0, false, Qt::darkGreen},
+-        {6, 5, 0, 0, false, QColor(128, 0, 128)},
+-        {0,0,0,0, false, QColor(255, 165, 0)},
+-        {0, 0, 0, 0, true, Qt::red}  
+-    };
+-
+-    QColor ProxyEntity::DisplayLatencyColor() const {
+-        if (latencyInt < 0){
+-            for (auto & color: latencyColorList){
+-                if (color.unavailable){
+-                    return color.color;
+-                }
+-            }
+-        } else {
+-            for (auto & color: latencyColorList){
+-                if (!color.unavailable){
+-                    if (color.orderRange > 0){
+-                        if (latencyOrder < (int)color.orderMin){
+-                            continue;
+-                        }
+-                        if (latencyOrder > (int)(color.orderMin + color.orderRange)){
+-                            continue;
+-                        }
+-                    }
+-                    if (color.latencyRange > 0){
+-                        if (latencyInt < (int)color.latencyMin){
+-                            continue;
+-                        }
+-                        if (latencyInt > (int)(color.latencyMin + color.latencyRange)){
+-                            continue;
+-                        }
+-                    }
+-                    return color.color;
+-                }
+-            }
+-        }
+-        return Qt::black;
+-    }
+ }
+diff --git a/src/dataStore/Utils.cpp b/src/dataStore/Utils.cpp
+index f952e9b3..2a1b13d3 100755
+--- a/src/dataStore/Utils.cpp
++++ b/src/dataStore/Utils.cpp
+@@ -293,3 +293,111 @@ const char * getSoftwareVersion(){
+     }
+     return VERSION_STATIC;
+ }
++
++int GetQueryIntValue(const QUrlQuery &q, const QString &key, int def){
++    QString str = GetQueryValue(q, key);
++    if (!str.isEmpty()){
++        return str.toInt();
++    } else {
++        return def;
++    }
++};
++
++QString SubStrBefore(QString str, const QString &sub) {
++    if (!str.contains(sub)) return str;
++    return str.left(str.indexOf(sub));
++}
++
++QString SubStrAfter(QString str, const QString &sub) {
++    if (!str.contains(sub)) return str;
++    return str.right(str.length() - str.indexOf(sub) - sub.length());
++}
++
++
++// [2001:4860:4860::8888] -> 2001:4860:4860::8888
++QString UnwrapIPV6Host(QString &str) {
++    return str.replace("[", "").replace("]", "");
++}
++
++// [2001:4860:4860::8888] or 2001:4860:4860::8888 -> [2001:4860:4860::8888]
++QString WrapIPV6Host(QString &str) {
++    if (!IsIpAddressV6(str)) return str;
++    return "[" + UnwrapIPV6Host(str) + "]";
++}
++
++QString DisplayAddress(QString serverAddress, int serverPort) {
++    if (serverAddress.isEmpty() && serverPort == 0) return {};
++    return WrapIPV6Host(serverAddress) + ":" + QString::number(serverPort);
++}
++
++QString DisplayDest(const QString& dest, QString domain)
++{
++    if (domain.isEmpty() || dest.split(":").first() == domain) return dest;
++    return dest + " (" + domain + ")";
++}
++
++bool InRange(unsigned x, unsigned low, unsigned high) {
++    return (low <= x && x <= high);
++}
++
++bool IsValidPort(int port) {
++    return InRange(port, 1, 65535);
++}
++
++void AddQueryString( QUrlQuery & query, const QString& name, const QString & value){
++    if (!value.isEmpty()){
++        query.addQueryItem(name, value);
++    }
++}
++
++void AddQueryStringList( QUrlQuery & query, const QString& name, const QStringList & value){
++    if (!value.isEmpty()){
++        AddQueryString(query, name,
++            QString::fromUtf8(QJsonDocument(QListStr2QJsonArray(value)).toJson())
++        );
++    }
++}
++
++void AddQueryMap( QUrlQuery & query, const QString& name, const QVariantMap & value){
++    if (!value.isEmpty()){
++        AddQueryString(query, name,
++            QString::fromUtf8(QJsonDocument(QJsonObject::fromVariantMap(value)).toJson())
++        );
++    }
++}
++
++void AddQueryInt( QUrlQuery & query, const QString& name, int value){
++    query.addQueryItem(name, QString::number(value));
++}
++
++
++void AddQueryNatural( QUrlQuery & query, const QString& name,int value){
++    if (value > 0){
++        AddQueryInt(query, name, value);
++    }
++}
++
++QStringList GetQueryListValue(const QUrlQuery &q, const QString &key){
++    return QJsonArray2QListString(QString2QJsonArray(GetQueryValue(q, key)));
++}
++
++QVariantMap QString2QMap(const QString &key){
++    QJsonDocument doc = QJsonDocument::fromJson(key.toUtf8());
++
++    QVariantMap map;
++    if (!doc.isNull() && doc.isObject()) {
++        map = doc.object().toVariantMap();
++    }
++    return map;
++}
++
++QVariantMap GetQueryMapValue(const QUrlQuery &q, const QString &key){
++    return QString2QMap(GetQueryValue(q, key, "{}"));
++}
++
++QString QMap2QString(const QVariantMap &map) {
++    QJsonObject jsonObject = QJsonObject::fromVariantMap(map);
++    QJsonDocument jsonDoc(jsonObject);
++    return jsonDoc.toJson(QJsonDocument::Indented);  // Use Compact for a minified string
++}
++
+diff --git a/src/global/GuiUtils.cpp b/src/global/GuiUtils.cpp
+index d89ae7a6..b1c43a08 100644
+--- a/src/global/GuiUtils.cpp
++++ b/src/global/GuiUtils.cpp
+@@ -1,14 +1,14 @@
+ #include <nekobox/global/GuiUtils.hpp>
+-
+-
++#include <qnamespace.h>
+ 
+ QWidget *GetMessageBoxParent() {
+-    auto activeWindow = QApplication::activeWindow();
+-    if (activeWindow == nullptr && mainwindow != nullptr) {
+-        if (mainwindow->isVisible()) return mainwindow;
+-        return nullptr;
+-    }
+-    return activeWindow;
++  auto activeWindow = QApplication::activeWindow();
++  if (activeWindow == nullptr && mainwindow != nullptr) {
++    if (mainwindow->isVisible())
++      return mainwindow;
++    return nullptr;
++  }
++  return activeWindow;
+ }
+ /*
+ int MessageBoxWarning(const QString &title, const QString &text) {
+@@ -19,48 +19,97 @@ int MessageBoxInfo(const QString &title, const QString &text) {
+     return QMessageBox::information(GetMessageBoxParent(), title, text);
+ }
+ */
+-void ActivateWindow(QWidget *w) {
+-    ToggleWindow(w);
+-}
++void ActivateWindow(QWidget *w) { ToggleWindow(w); }
+ 
+ void ToggleWindow(QWidget *w) {
+-    if (w->isVisible() && !(w->windowState() & Qt::WindowMinimized)) {
+-        // Window is visible → minimize / hide
+-        w->hide();
+-    } else {
+-        // Window is hidden or minimized → show
+-        w->setWindowState(w->windowState() & ~Qt::WindowMinimized);
+-        w->setVisible(true);
++  if (w->isVisible() && !(w->windowState() & Qt::WindowMinimized)) {
++    // Window is visible → minimize / hide
++    w->hide();
++  } else {
++    // Window is hidden or minimized → show
++    w->setWindowState(w->windowState() & ~Qt::WindowMinimized);
++    w->setVisible(true);
+ #ifdef Q_OS_WIN
+-        Windows_QWidget_SetForegroundWindow(w);
++    Windows_QWidget_SetForegroundWindow(w);
+ #endif
+-        w->raise();
+-        w->activateWindow();
+-    }
++    w->raise();
++    w->activateWindow();
++  }
+ }
+ 
+ void runOnUiThread(const std::function<void()> &callback) {
+-    // any thread
+-    auto *timer = new QTimer();
+-    auto thread = mainwindow->thread();
+-    timer->moveToThread(thread);
+-    timer->setSingleShot(true);
+-    QObject::connect(timer, &QTimer::timeout, [=]() {
+-        // main thread
+-        callback();
+-        timer->deleteLater();
+-    });
+-    QMetaObject::invokeMethod(timer, "start", Qt::QueuedConnection, Q_ARG(int, 0));
++  // any thread
++  auto *timer = new QTimer();
++  auto thread = mainwindow->thread();
++  timer->moveToThread(thread);
++  timer->setSingleShot(true);
++  QObject::connect(timer, &QTimer::timeout, [=]() {
++    // main thread
++    callback();
++    timer->deleteLater();
++  });
++  QMetaObject::invokeMethod(timer, "start", Qt::QueuedConnection,
++                            Q_ARG(int, 0));
+ }
+ 
++void setTimeout(const std::function<void()> &callback, QObject *obj,
++                int timeout) {
++  auto t = new QTimer;
++  QObject::connect(t, &QTimer::timeout, obj, [=] {
++    callback();
++    t->deleteLater();
++  });
++  t->setSingleShot(true);
++  t->setInterval(timeout);
++  t->start();
++}
++
++std::list<ProxyColorRule> latencyColorList = {
++    {1, 5, 0, 0, false, Qt::darkGreen},
++    {6, 5, 0, 0, false, QColor(128, 0, 128)},
++    {0, 0, 0, 0, false, QColor(255, 165, 0)},
++    {0, 0, 0, 0, true, Qt::red}};
++
+ 
+-void setTimeout(const std::function<void()> &callback, QObject *obj, int timeout) {
+-    auto t = new QTimer;
+-    QObject::connect(t, &QTimer::timeout, obj, [=] {
+-        callback();
+-        t->deleteLater();
+-    });
+-    t->setSingleShot(true);
+-    t->setInterval(timeout);
+-    t->start();
++QColor DisplayLatencyColor(Configs::ProxyEntity *e) {
++  if (e != nullptr) {
++    if (e->latencyInt < 0) {
++      for (auto &color : latencyColorList) {
++        if (color.unavailable) {
++          return color.color;
++        }
++      }
++    } else {
++      for (auto &color : latencyColorList) {
++        if (!color.unavailable) {
++          if (color.orderRange > 0) {
++            if (e->latencyOrder < (int)color.orderMin) {
++              continue;
++            }
++            if (e->latencyOrder > (int)(color.orderMin + color.orderRange)) {
++              continue;
++            }
++          }
++          if (color.latencyRange > 0) {
++            if (e->latencyInt < (int)color.latencyMin) {
++              continue;
++            }
++            if (e->latencyInt > (int)(color.latencyMin + color.latencyRange)) {
++              continue;
++            }
++          }
++          return color.color;
++        }
++      }
++    }
++  }
++  return Qt::black;
+ }
++
++std::map<Icon::TrayIconStatus, IndicatorRule> indicatorRuleMap = {
++    {Icon::TrayIconStatus::VPN, {0.4, 0.04, 0.4, QColor(165, 42, 42)}},
++    {Icon::TrayIconStatus::DNS, {0.4, 0.04, 0.4, Qt::darkMagenta}},
++    {Icon::TrayIconStatus::SYSTEM_PROXY, {0.4, 0.04, 0.4, Qt::blue}},
++    {Icon::TrayIconStatus::SYSTEM_PROXY_DNS, {0.4, 0.04, 0.4, Qt::darkMagenta}},
++    {Icon::TrayIconStatus::RUNNING, {0.4, 0.04, 0.4, Qt::darkGreen}}
++};
+diff --git a/src/js/js_updater.cpp b/src/js/js_updater.cpp
+index ad5737ab..fd3d52a7 100755
+--- a/src/js/js_updater.cpp
++++ b/src/js/js_updater.cpp
+@@ -343,7 +343,9 @@ bool jsUpdater( JsUpdaterWindow* factory,
+                 QString * archive_name,
+                 bool * is_newer,
+                 QStringList * args,
+-                bool allow_updater){
++                bool allow_updater,
++                bool * keep_running
++){
+     QJSEngine ctx;
+     ctx.globalObject().setProperty("search", *search);
+     ctx.globalObject().setProperty("UpdaterExists", allow_updater);
+@@ -355,6 +357,7 @@ bool jsUpdater( JsUpdaterWindow* factory,
+     getString(ctx, "archive_name", archive_name);
+     getString(ctx, "search", search);
+     getBoolean(ctx, "is_newer", is_newer);
++    getBoolean(ctx, "keep_running", keep_running);
+     getStringList(ctx, "updater_args", args);
+ 
+     return true;
+diff --git a/src/main.cpp b/src/main.cpp
+index f50dfe75..fa096a4c 100755
+--- a/src/main.cpp
++++ b/src/main.cpp
+@@ -30,8 +30,8 @@
+ #include "nekobox/sys/Settings.h"
+ #include "nekobox/dataStore/ResourceEntity.hpp"
+ 
+-#include "nekobox/ui/mainwindow_interface.h"
+-#include "nekobox/global/GuiUtils.hpp"
++#include <nekobox/ui/mainwindow_interface.h>
++#include <nekobox/global/GuiUtils.hpp>
+ 
+ std::map<std::string, std::string> ruleSetMap;
+ QWidget *mainwindow;
+diff --git a/src/nekobox/api/RPC.h b/src/nekobox/api/RPC.h
+index de07af91..079ffcb5 100755
+--- a/src/nekobox/api/RPC.h
++++ b/src/nekobox/api/RPC.h
+@@ -15,29 +15,7 @@ public:
+   QString Start(bool *rpcOK, const libcore::LoadConfigReq &request);
+ 
+   std::tuple<QString, std::shared_ptr<Configs::BuildConfigResult>> StartEntity(bool *rpcOK,
+-                      const std::shared_ptr<Configs::ProxyEntity> ent) {
+-    std::shared_ptr<Configs::BuildConfigResult> result =
+-        Configs::BuildConfig(ent, false, false);
+-    if (!result->error.isEmpty()) {
+-      *rpcOK = false;
+-      return std::make_tuple(result->error, result);
+-    }
+-
+-    libcore::LoadConfigReq req;
+-    req.core_config =
+-        (QJsonObject2QString(result->coreConfig, true)).toStdString();
+-    req.disable_stats = (Configs::dataStore->disable_traffic_stats);
+-    if (ent->type == "extracore") {
+-      req.need_extra_process = (true);
+-      req.extra_process_path = (result->extraCoreData->path).toStdString();
+-      req.extra_process_args = (result->extraCoreData->args).toStdString();
+-      req.extra_process_conf = (result->extraCoreData->config).toStdString();
+-      req.extra_process_conf_dir =
+-          (result->extraCoreData->configDir).toStdString();
+-      req.extra_no_out = (result->extraCoreData->noLog);
+-    }
+-    return std::make_tuple(Start(rpcOK, req), result);
+-  };
++                      const std::shared_ptr<Configs::ProxyEntity> ent);
+ 
+   QString Stop(bool *rpcOK);
+ 
+diff --git a/src/nekobox/configs/proxy/Preset.hpp b/src/nekobox/configs/proxy/Preset.hpp
+index c893a498..589b6be0 100755
+--- a/src/nekobox/configs/proxy/Preset.hpp
++++ b/src/nekobox/configs/proxy/Preset.hpp
+@@ -24,7 +24,7 @@ namespace Preset::SingBox {
+     "chacha20-ietf", 
+     "xchacha20"
+   };
+-  inline QStringList V2RAYTransports = {"http", "grpc", "quic", "httpupgrade", "ws", "tcp"};
++  inline QStringList V2RAYTransports = {"http", "grpc", "quic", "httpupgrade", "ws", "tcp", "xhttp", "kcp"};
+   inline QStringList Flows = {"xtls-rprx-vision"};
+   inline QStringList SniffProtocols = {"http", "tls", "quic", "stun", "dns", "bittorrent", "dtls", "ssh", "rdp"};
+   inline QStringList ActionTypes = {"route", "reject", "hijack-dns", "route-options", "sniff", "resolve"};
+diff --git a/src/nekobox/configs/proxy/TorBean.hpp b/src/nekobox/configs/proxy/TorBean.hpp
+new file mode 100755
+index 00000000..45ef6d1a
+--- /dev/null
++++ b/src/nekobox/configs/proxy/TorBean.hpp
+@@ -0,0 +1,35 @@
++#pragma once
++
++#include "AbstractBean.hpp"
++#include "V2RayStreamSettings.hpp"
++#include "Preset.hpp"
++
++namespace Configs {
++    class TorBean : public AbstractBean {
++    public:
++        QString executable_path;
++        QStringList extra_args;
++        QString data_directory;
++        QVariantMap torrc;
++
++        TorBean() : AbstractBean(0) {
++        }
++        
++        INIT_MAP
++            ADD_MAP("executable_path", executable_path, string);
++            ADD_MAP("extra_args", extra_args, stringList);
++            ADD_MAP("data_directory", data_directory, string);
++            ADD_MAP("torrc", torrc, stringMap);
++        STOP_MAP
++
++        QString DisplayType() override { return "Tor"; };
++
++        CoreObjOutboundBuildResult BuildCoreObjSingBox() override;
++
++        bool TryParseLink(const QString &link);
++
++        bool TryParseJson(const QJsonObject &obj);
++
++        QString ToShareLink() override;
++    };
++} // namespace Configs
+diff --git a/src/nekobox/configs/proxy/includes.h b/src/nekobox/configs/proxy/includes.h
+index 0b6a224d..760a47c4 100755
+--- a/src/nekobox/configs/proxy/includes.h
++++ b/src/nekobox/configs/proxy/includes.h
+@@ -15,3 +15,4 @@
+ #include "ExtraCore.h"
+ #include "MieruBean.hpp"
+ #include "ShadowTLSBean.hpp"
++#include "TorBean.hpp"
+diff --git a/src/nekobox/dataStore/ConfigItem.hpp b/src/nekobox/dataStore/ConfigItem.hpp
+index 2c036d2b..2e71b12b 100755
+--- a/src/nekobox/dataStore/ConfigItem.hpp
++++ b/src/nekobox/dataStore/ConfigItem.hpp
+@@ -17,7 +17,7 @@ typedef ConfJsMapStat & ConfJsMap;
+ //}
+ 
+ namespace Configs_ConfigItem {
+-    // config 工具
++    // config
+     enum itemType {
+         type_string,
+         type_integer,
+@@ -27,6 +27,7 @@ namespace Configs_ConfigItem {
+         type_integerList,
+         type_jsonStore,
+         type_jsonStoreList,
++        type_stringMap
+     };
+ 
+     class configItem {
+@@ -74,14 +75,10 @@ namespace Configs_ConfigItem {
+ 
+         void _setValue(const QString &name, void *p);
+ 
+-   //     void _add(configItem *item);
+-
+         QString _name(void *p);
+ 
+         std::shared_ptr<configItem> _get(const QString &name);
+ 
+-//        void _setValue(const QString &name, void *p);
+-
+         QJsonObject ToJson(const QStringList &without = {});
+ 
+         QByteArray ToJsonBytes();
+@@ -96,4 +93,4 @@ namespace Configs_ConfigItem {
+     };
+ } // namespace Configs_ConfigItem
+ 
+-using namespace Configs_ConfigItem;
+\ No newline at end of file
++using namespace Configs_ConfigItem;
+diff --git a/src/nekobox/dataStore/Database.hpp b/src/nekobox/dataStore/Database.hpp
+index b106837f..1c2be67b 100755
+--- a/src/nekobox/dataStore/Database.hpp
++++ b/src/nekobox/dataStore/Database.hpp
+@@ -12,6 +12,8 @@ namespace Configs {
+ 
+     extern ProfileManager *profileManager;
+ 
++    extern QMap<QString, QString> profileDisplayNames; 
++
+     class ProfileManager : private JsonStore {
+     public:
+         // JsonStore
+@@ -33,6 +35,10 @@ namespace Configs {
+ 
+         void SaveManager();
+ 
++        [[nodiscard]] static QString GetDisplayType(const QString & type);
++
++        [[nodiscard]] static std::shared_ptr<ProxyEntity> NewProxyEntity(const QString &type, bool nullok);
++
+         [[nodiscard]] static std::shared_ptr<ProxyEntity> NewProxyEntity(const QString &type);
+ 
+         [[nodiscard]] static std::shared_ptr<Group> NewGroup();
+diff --git a/src/nekobox/dataStore/ProxyEntity.hpp b/src/nekobox/dataStore/ProxyEntity.hpp
+index 1213b34c..45782257 100755
+--- a/src/nekobox/dataStore/ProxyEntity.hpp
++++ b/src/nekobox/dataStore/ProxyEntity.hpp
+@@ -32,26 +32,14 @@ namespace Configs {
+ 
+     class SSHBean;
+ 
++    class TorBean;
++
+     class CustomBean;
+ 
+     class ChainBean;
+ }; // namespace Configs
+ 
+ namespace Configs {
+-
+-    
+-    struct ColorRule{
+-        uint orderMin;
+-        uint orderRange;
+-        uint latencyMin;
+-        uint latencyRange;
+-        bool unavailable;
+-        QColor color;
+-    };
+-    
+-
+-    extern std::list<ColorRule> latencyColorList;
+-
+     class ProxyEntity : public JsonStore {
+     private:
+         Stats::TrafficData * traffic_data_pointer = nullptr;
+@@ -80,7 +68,7 @@ namespace Configs {
+ 
+         [[nodiscard]] QString DisplayTestResult() const;
+ 
+-        [[nodiscard]] QColor DisplayLatencyColor() const;
++   //     [[nodiscard]] QColor DisplayLatencyColor() const;
+ 
+         [[nodiscard]] Configs::ChainBean *ChainBean() const {
+             return (Configs::ChainBean *) bean.get();
+@@ -135,6 +123,10 @@ namespace Configs {
+             return (Configs::SSHBean *) bean.get();
+         };
+ 
++        [[nodiscard]] Configs::TorBean *TorBean() const {
++            return (Configs::TorBean *) bean.get();
++        };
++
+         [[nodiscard]] Configs::CustomBean *CustomBean() const {
+             return (Configs::CustomBean *) bean.get();
+         };
+diff --git a/src/nekobox/dataStore/Utils.hpp b/src/nekobox/dataStore/Utils.hpp
+index 60e313d5..6f09c551 100755
+--- a/src/nekobox/dataStore/Utils.hpp
++++ b/src/nekobox/dataStore/Utils.hpp
+@@ -5,6 +5,9 @@
+ #include <memory>
+ #include <QObject>
+ #include <QString>
++#include <QUrlQuery>
++#include <QJsonArray>
++#include <QVariantMap>
+ #include <QDebug>
+ #include <QFile>
+ #if QT_VERSION >= QT_VERSION_CHECK(6, 5, 0)
+@@ -12,6 +15,95 @@
+ #endif
+ //
+ 
++#ifndef KEY_VALUE_RANGE
++#define KEY_VALUE_RANGE
++#include <type_traits>
++#include <utility>
++template<typename T> class KeyValueRange {
++private:
++    T iterable; // This is either a reference or a moved-in value. The map data isn't copied.
++public:
++    KeyValueRange(T &iterable) : iterable(iterable) { }
++    KeyValueRange(std::remove_reference_t<T> &&iterable) noexcept : iterable(std::move(iterable)) { }
++    auto begin() const { return iterable.keyValueBegin(); }
++    auto end() const { return iterable.keyValueEnd(); }
++};
++
++template <typename T> auto asKeyValueRange(T &iterable) { return KeyValueRange<T &>(iterable); }
++template <typename T> auto asKeyValueRange(const T &iterable) { return KeyValueRange<const T &>(iterable); }
++template <typename T> auto asKeyValueRange(T &&iterable) noexcept { return KeyValueRange<T>(std::move(iterable)); }
++
++
++#include <QList>
++#include <cstddef>
++
++template<typename T>
++class ListRange {
++private:
++    T list;
++
++public:
++    ListRange(T &iterable) : list(iterable) { }
++    ListRange(std::remove_reference_t<T> &&iterable) noexcept : list(std::move(iterable)) { }
++
++    class iterator {
++        using ListType =
++        std::remove_reference_t<T>;
++        using BaseIter =
++        std::conditional_t<
++        std::is_const_v<ListType>,
++        typename ListType::const_iterator,
++        typename ListType::iterator>;
++
++        BaseIter it;
++        std::size_t index;
++
++    public:
++        iterator(BaseIter it, std::size_t index)
++        : it(it), index(index) {}
++
++        auto operator*() const {
++            return std::pair<std::size_t, decltype(*it)>(index, *it);
++        }
++
++        iterator& operator++() {
++            ++it;
++            ++index;
++            return *this;
++        }
++
++        bool operator!=(const iterator& other) const {
++            return it != other.it;
++        }
++    };
++
++    auto begin() {
++        return iterator(list.begin(), 0);
++    }
++
++    auto end() {
++        return iterator(list.end(), 0);
++    }
++};
++
++template<typename T>
++auto asListRange(QList<T>& list) {
++    return ListRange<QList<T>&>(list);
++}
++
++template<typename T>
++auto asListRange(const QList<T>& list) {
++    return ListRange<const QList<T>&>(list);
++}
++
++template<typename T>
++auto asListRange(QList<T>&& list) {
++    return ListRange<QList<T>>(std::move(list));
++}
++
++#endif
++
++
+ 
+ #ifndef ADD_MAP
+ 
+@@ -74,15 +166,9 @@ inline std::function<void(int)> TM_auto_update_subsctiption_Reset_Minute;
+ 
+ inline const QString UNICODE_LRO = QString::fromUtf8(QByteArray::fromHex("E280AD"));
+ 
+-inline QString SubStrBefore(QString str, const QString &sub) {
+-    if (!str.contains(sub)) return str;
+-    return str.left(str.indexOf(sub));
+-}
++QString SubStrBefore(QString str, const QString &sub);
+ 
+-inline QString SubStrAfter(QString str, const QString &sub) {
+-    if (!str.contains(sub)) return str;
+-    return str.right(str.length() - str.indexOf(sub) - sub.length());
+-}
++QString SubStrAfter(QString str, const QString &sub);
+ 
+ QString QStringList2Command(const QStringList &list);
+ 
+@@ -102,6 +188,9 @@ class QUrlQuery;
+ 
+ QString GetQueryValue(const QUrlQuery &q, const QString &key, const QString &def = "");
+ 
++int GetQueryIntValue(const QUrlQuery &q, const QString &key, int def = 0);
++QStringList GetQueryListValue(const QUrlQuery &q, const QString &key);
++
+ QString GetRandomString(int randomStringLength);
+ 
+ void MoveDirToTrash(const QString &path);
+@@ -152,26 +241,14 @@ bool IsIpAddressV6(const QString &str);
+ 
+ 
+ // [2001:4860:4860::8888] -> 2001:4860:4860::8888
+-inline QString UnwrapIPV6Host(QString &str) {
+-    return str.replace("[", "").replace("]", "");
+-}
++QString UnwrapIPV6Host(QString &str);
+ 
+ // [2001:4860:4860::8888] or 2001:4860:4860::8888 -> [2001:4860:4860::8888]
+-inline QString WrapIPV6Host(QString &str) {
+-    if (!IsIpAddressV6(str)) return str;
+-    return "[" + UnwrapIPV6Host(str) + "]";
+-}
++QString WrapIPV6Host(QString &str);
+ 
+-inline QString DisplayAddress(QString serverAddress, int serverPort) {
+-    if (serverAddress.isEmpty() && serverPort == 0) return {};
+-    return WrapIPV6Host(serverAddress) + ":" + QString::number(serverPort);
+-}
++QString DisplayAddress(QString serverAddress, int serverPort);
+ 
+-inline QString DisplayDest(const QString& dest, QString domain)
+-{
+-    if (domain.isEmpty() || dest.split(":").first() == domain) return dest;
+-    return dest + " (" + domain + ")";
+-}
++QString DisplayDest(const QString& dest, QString domain);
+ 
+ // Format & Misc
+ 
+@@ -181,14 +258,28 @@ QString DisplayTime(long long time, int formatType = 0);
+ 
+ QString ReadableSize(const qint64 &size);
+ 
+-inline bool InRange(unsigned x, unsigned low, unsigned high) {
+-    return (low <= x && x <= high);
+-}
++bool InRange(unsigned x, unsigned low, unsigned high);
+ 
+-inline bool IsValidPort(int port) {
+-    return InRange(port, 1, 65535);
+-}
++bool IsValidPort(int port);
+ 
+ void runOnNewThread(const std::function<void()> &callback);
+ 
+ void runOnThread(const std::function<void()> &callback, QObject *parent);
++
++void AddQueryString(QUrlQuery & query, const QString & name, const QString & value);
++
++void AddQueryStringList( QUrlQuery & query, const QString & name, const QStringList & value);
++
++void AddQueryMap( QUrlQuery & query, const QString &  name, const QVariantMap & value);
++
++void AddQueryInt( QUrlQuery & query, const QString &  name, int value);
++
++void AddQueryNatural( QUrlQuery & query, const QString & name, int value);
++
++QStringList GetQueryListValue(const QUrlQuery &q, const QString &key);
++
++QVariantMap QString2QMap(const QString &key);
++
++QString QMap2QString(const QVariantMap &map);
++
++QVariantMap GetQueryMapValue(const QUrlQuery &q, const QString &key);
+diff --git a/src/nekobox/global/GuiUtils.hpp b/src/nekobox/global/GuiUtils.hpp
+index b810001e..d05ca535 100755
+--- a/src/nekobox/global/GuiUtils.hpp
++++ b/src/nekobox/global/GuiUtils.hpp
+@@ -2,6 +2,8 @@
+ 
+ #include "3rdparty/qv2ray/wrapper.hpp"
+ #include "3rdparty/QThreadCreateThread.hpp"
++#include <nekobox/ui/setting/Icon.hpp>
++#include <nekobox/dataStore/ProxyEntity.hpp>
+ #include <nekobox/dataStore/Utils.hpp>
+ #include <functional>
+ #include <memory>
+@@ -11,6 +13,7 @@
+ #include <QString>
+ #include <QDebug>
+ #include <QWidget>
++#include <QProcess>
+ #include <QThread>
+ #include <QFile>
+ #include <QMessageBox>
+@@ -41,9 +44,28 @@
+ #define D_C_LOAD_STRING(a) CACHE.a = Configs::dataStore->a;
+ #define D_C_SAVE_STRING(a) Configs::dataStore->a = CACHE.a;
+ 
++
++inline QString joinCommand(const QStringList &arguments) {
++    QString command;
++    for (QString arg : arguments) {
++        // Check for spaces or special characters
++        if (arg.contains(' ') || arg.contains('"')) {
++            command += '"' + arg.replace("\"", "\\\"") + "\" ";  // Escape existing quotes
++        } else {
++            command += arg + " ";
++        }
++    }
++    return command.trimmed(); // Remove trailing space
++}
++
++
+ #define P_LOAD_STRING(a) ui->a->setText(bean->a);
++#define P_LOAD_STRINGLIST(a) ui->a->setText(joinCommand(bean->a));
++#define P_LOAD_STRINGMAP(a) ui->a->setText(QMap2QString(bean->a));
+ #define P_LOAD_STRING_PLAIN(a) ui->a->setPlainText(bean->a);
+ #define P_SAVE_STRING(a) bean->a = ui->a->text();
++#define P_SAVE_STRINGMAP(a) bean->a = QString2QMap(ui->a->toPlainText());
++#define P_SAVE_STRINGLIST(a) bean->a = QProcess::splitCommand(ui->a->text());
+ #define P_SAVE_STRING_PLAIN(a) bean->a = ui->a->toPlainText();
+ 
+ #define D_LOAD_STRING(a) ui->a->setText(Configs::dataStore->a);
+@@ -183,3 +205,26 @@ inline bool isDarkMode() {
+     return qApp->style()->standardPalette().window().color().lightness() < qApp->style()->standardPalette().windowText().color().lightness();
+ #endif
+ }
++
++struct ProxyColorRule{
++    uint orderMin;
++    uint orderRange;
++    uint latencyMin;
++    uint latencyRange;
++    bool unavailable;
++    QColor color;
++};
++
++struct IndicatorRule{
++    double radius;
++    double margin;
++    double diameter;
++    QColor color;
++};
++
++extern std::list<ProxyColorRule> latencyColorList;
++
++extern std::map<Icon::TrayIconStatus, IndicatorRule> indicatorRuleMap;
++
++QColor DisplayLatencyColor(Configs::ProxyEntity *e);
++
+diff --git a/src/nekobox/global/keyvaluerange.h b/src/nekobox/global/keyvaluerange.h
+index 636beac4..7b45df59 100755
+--- a/src/nekobox/global/keyvaluerange.h
++++ b/src/nekobox/global/keyvaluerange.h
+@@ -1,87 +1,2 @@
+-#ifndef KEY_VALUE_RANGE
+-#define KEY_VALUE_RANGE
+-#include <type_traits>
+-#include <utility>
+-template<typename T> class KeyValueRange {
+-private:
+-    T iterable; // This is either a reference or a moved-in value. The map data isn't copied.
+-public:
+-    KeyValueRange(T &iterable) : iterable(iterable) { }
+-    KeyValueRange(std::remove_reference_t<T> &&iterable) noexcept : iterable(std::move(iterable)) { }
+-    auto begin() const { return iterable.keyValueBegin(); }
+-    auto end() const { return iterable.keyValueEnd(); }
+-};
+-
+-template <typename T> auto asKeyValueRange(T &iterable) { return KeyValueRange<T &>(iterable); }
+-template <typename T> auto asKeyValueRange(const T &iterable) { return KeyValueRange<const T &>(iterable); }
+-template <typename T> auto asKeyValueRange(T &&iterable) noexcept { return KeyValueRange<T>(std::move(iterable)); }
+-
+-
+-#include <QList>
+-#include <cstddef>
+-
+-template<typename T>
+-class ListRange {
+-private:
+-    T list;
+-
+-public:
+-    ListRange(T &iterable) : list(iterable) { }
+-    ListRange(std::remove_reference_t<T> &&iterable) noexcept : list(std::move(iterable)) { }
+-
+-    class iterator {
+-        using ListType =
+-            std::remove_reference_t<T>;
+-        using BaseIter =
+-            std::conditional_t<
+-                std::is_const_v<ListType>,
+-                typename ListType::const_iterator,
+-                typename ListType::iterator>;
+-
+-        BaseIter it;
+-        std::size_t index;
+-
+-    public:
+-        iterator(BaseIter it, std::size_t index)
+-            : it(it), index(index) {}
+-
+-        auto operator*() const {
+-            return std::pair<std::size_t, decltype(*it)>(index, *it);
+-        }
+-
+-        iterator& operator++() {
+-            ++it;
+-            ++index;
+-            return *this;
+-        }
+-
+-        bool operator!=(const iterator& other) const {
+-            return it != other.it;
+-        }
+-    };
+-
+-    auto begin() {
+-        return iterator(list.begin(), 0);
+-    }
+-
+-    auto end() {
+-        return iterator(list.end(), 0);
+-    }
+-};
+-
+-template<typename T>
+-auto asListRange(QList<T>& list) {
+-    return ListRange<QList<T>&>(list);
+-}
+-
+-template<typename T>
+-auto asListRange(const QList<T>& list) {
+-    return ListRange<const QList<T>&>(list);
+-}
+-
+-template<typename T>
+-auto asListRange(QList<T>&& list) {
+-    return ListRange<QList<T>>(std::move(list));
+-}
+-
+-#endif
++#pragma once
++#include "nekobox/dataStore/Utils.hpp"
+diff --git a/src/nekobox/js/js_updater.h b/src/nekobox/js/js_updater.h
+index bc067a3d..fa09dfb0 100755
+--- a/src/nekobox/js/js_updater.h
++++ b/src/nekobox/js/js_updater.h
+@@ -85,7 +85,9 @@ bool jsUpdater( JsUpdaterWindow* bQueue,
+   QString * archive_name,
+   bool * is_newer,
+   QStringList * args,
+-  bool allow_updater);
++  bool allow_updater,
++  bool * keep_running
++);
+ 
+ bool jsRouteProfileGetter(
+     JsUpdaterWindow * factory,
+diff --git a/src/nekobox/sys/linux/LinuxCap.h b/src/nekobox/sys/linux/LinuxCap.h
+index f82593af..53dfd267 100755
+--- a/src/nekobox/sys/linux/LinuxCap.h
++++ b/src/nekobox/sys/linux/LinuxCap.h
+@@ -1,5 +1,6 @@
+ #pragma once
+ 
+-bool Linux_HavePkexec();
+ 
+-void Unix_SetCrashHandler();
+\ No newline at end of file
++bool Unix_HavePkexec();
++
++void Unix_SetCrashHandler();
+diff --git a/src/nekobox/ui/mainwindow.h b/src/nekobox/ui/mainwindow.h
+index 45af97f8..a52b8f74 100755
+--- a/src/nekobox/ui/mainwindow.h
++++ b/src/nekobox/ui/mainwindow.h
+@@ -260,6 +260,7 @@ private:
+     //
+     int proxy_last_order = -1;
+     bool select_mode = false;
++    bool keep_running = false;
+     QMutex mu_starting;
+     QMutex mu_stopping;
+     QMutex mu_exit;
+diff --git a/src/nekobox/ui/profile/edit_tor.h b/src/nekobox/ui/profile/edit_tor.h
+new file mode 100755
+index 00000000..20c54512
+--- /dev/null
++++ b/src/nekobox/ui/profile/edit_tor.h
+@@ -0,0 +1,27 @@
++#pragma once
++
++#include <QWidget>
++#include "profile_editor.h"
++#include "ui_edit_tor.h"
++
++QT_BEGIN_NAMESPACE
++namespace Ui {
++    class EditTor;
++}
++QT_END_NAMESPACE
++
++class EditTor : public QWidget, public ProfileEditor {
++    Q_OBJECT
++
++public:
++    explicit EditTor(QWidget *parent = nullptr);
++    ~EditTor() override;
++
++    void onStart(std::shared_ptr<Configs::ProxyEntity> _ent) override;
++
++    bool onEnd() override;
++
++private:
++    Ui::EditTor *ui;
++    std::shared_ptr<Configs::ProxyEntity> ent;
++};
+diff --git a/src/nekobox/ui/profile/edit_tor.ui b/src/nekobox/ui/profile/edit_tor.ui
+new file mode 100755
+index 00000000..19a54ab8
+--- /dev/null
++++ b/src/nekobox/ui/profile/edit_tor.ui
+@@ -0,0 +1,66 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<ui version="4.0">
++ <class>EditTor</class>
++ <widget class="QWidget" name="EditTor">
++  <property name="geometry">
++   <rect>
++    <x>0</x>
++    <y>0</y>
++    <width>441</width>
++    <height>330</height>
++   </rect>
++  </property>
++  <property name="windowTitle">
++   <string>EditTor</string>
++  </property>
++  <layout class="QFormLayout" name="formLayout">
++   <item row="0" column="0">
++    <widget class="QLabel" name="user_l">
++     <property name="text">
++      <string>Custom Path</string>
++     </property>
++    </widget>
++   </item>
++   <item row="0" column="1">
++    <widget class="QLineEdit" name="executable_path"/>
++   </item>
++   <item row="1" column="0">
++    <widget class="QLabel" name="password_l">
++     <property name="text">
++      <string>Extra Args</string>
++     </property>
++    </widget>
++   </item>
++   <item row="1" column="1">
++    <widget class="QLineEdit" name="extra_args"/>
++   </item>
++   <item row="3" column="0">
++    <widget class="QLabel" name="port_range_l">
++     <property name="text">
++      <string>Tor Config</string>
++     </property>
++    </widget>
++   </item>
++   <item row="3" column="1">
++    <widget class="QTextEdit" name="torrc"/>
++   </item>
++   <item row="4" column="0" colspan="2">
++    <widget class="QWidget" name="widget" native="true">
++     <layout class="QGridLayout" name="gridLayout"/>
++    </widget>
++   </item>
++   <item row="2" column="0">
++    <widget class="QLabel" name="multiplexing_l">
++     <property name="text">
++      <string>Data DIr</string>
++     </property>
++    </widget>
++   </item>
++   <item row="2" column="1">
++    <widget class="QLineEdit" name="data_directory"/>
++   </item>
++  </layout>
++ </widget>
++ <resources/>
++ <connections/>
++</ui>
+diff --git a/src/sys/linux/LinuxCap.cpp b/src/sys/linux/LinuxCap.cpp
+index ae3f0221..ee9f1d80 100755
+--- a/src/sys/linux/LinuxCap.cpp
++++ b/src/sys/linux/LinuxCap.cpp
+@@ -12,7 +12,7 @@ void Unix_SetCrashHandler() {
+     setrlimit(RLIMIT_CORE, &rl);
+ }
+ 
+-bool Linux_HavePkexec() {
++bool Unix_HavePkexec() {
+     QProcess p;
+     p.setProgram("pkexec");
+     p.setArguments({"--help"});
+diff --git a/src/ui/mainwindow.cpp b/src/ui/mainwindow.cpp
+index 5453f553..cdcd1a22 100755
+--- a/src/ui/mainwindow.cpp
++++ b/src/ui/mainwindow.cpp
+@@ -3,11 +3,11 @@
+ #include "nekobox/configs/ConfigBuilder.hpp"
+ #include "nekobox/configs/sub/GroupUpdater.hpp"
+ #include "nekobox/dataStore/ProfileFilter.hpp"
++#include <nekobox/global/GuiUtils.hpp>
+ #include "nekobox/dataStore/ResourceEntity.hpp"
+-#include "nekobox/global/GuiUtils.hpp"
++#include "nekobox/global/keyvaluerange.h"
+ #include "nekobox/sys/AutoRun.hpp"
+ #include "nekobox/sys/Process.hpp"
+-#include "nekobox/global/keyvaluerange.h"
+ 
+ #include <QJsonDocument>
+ #include <QMutex>
+@@ -16,8 +16,8 @@
+ #include <qnamespace.h>
+ #include <set>
+ #ifdef _WIN32
+-#include <winsock2.h>
+ #include <windows.h>
++#include <winsock2.h>
+ #endif
+ 
+ #include "nekobox/ui/group/dialog_manage_groups.h"
+@@ -82,62 +82,57 @@ extern std::map<std::string, std::string> ruleSetMap;
+ 
+ void setAppIcon(Icon::TrayIconStatus, QSystemTrayIcon *, MainWindow *window);
+ 
+-void MainWindow::set_icons(){
++void MainWindow::set_icons() {
+   QSettings settings = getSettings();
+   set_icons_from_settings(settings);
+ }
+ 
+-    void SpinnerDialog::addItem(QString item, QString name) {
+-        listWidget->addItem(name);
+-        list << (item);
+-    }
++void SpinnerDialog::addItem(QString item, QString name) {
++  listWidget->addItem(name);
++  list << (item);
++}
+ 
+-    void SpinnerDialog::onOk() {
+-        auto ids = listWidget->selectedItems();
+-        for (auto item : ids){
+-          QString url = "";
+-          QString profile = list[listWidget->indexFromItem(item).row()];
+-          bool proxy = false;
+-          auto resp = window->remoteRouteProfileGetter(profile, &url, &proxy);
+-          if (resp.isEmpty()) {
+-            return;
+-          } else {
+-            qDebug() << resp;
+-          }
+-          QString err;
+-          auto parsed = Configs::RoutingChain::parseJsonArray(
+-              QString2QJsonArray(resp), &err);
+-          if (!err.isEmpty()) {
+-            runOnUiThread([=, this] {
+-              QMessageBox::information(this, tr("Invalid JSON Array"),
+-                             tr("The provided input cannot be parsed to a "
+-                                "valid route rule array:\n") +
+-                                 err);
+-            });
+-            return;
+-          }
+-          std::shared_ptr<Configs::RoutingChain> chain =
+-              Configs::ProfileManager::NewRouteChain();
+-          chain->chain_name =
+-              window->remoteRouteProfileNames.value(profile, profile);
+-          chain->update_url = url;
+-          chain->defaultOutboundID =
+-              //profile.startsWith("bypass", Qt::CaseInsensitive)
+-                  proxy
+-                  ? Configs::proxyID
+-                  : Configs::directID;
+-          chain->Rules.clear();
+-          chain->Rules << parsed;
+-          Configs::profileManager->AddRouteChain(chain);
+-        }
++void SpinnerDialog::onOk() {
++  auto ids = listWidget->selectedItems();
++  for (auto item : ids) {
++    QString url = "";
++    QString profile = list[listWidget->indexFromItem(item).row()];
++    bool proxy = false;
++    auto resp = window->remoteRouteProfileGetter(profile, &url, &proxy);
++    if (resp.isEmpty()) {
++      return;
++    } else {
++      qDebug() << resp;
+     }
+-
+-    void SpinnerDialog::onCancel() {
+-      this->close();
++    QString err;
++    auto parsed =
++        Configs::RoutingChain::parseJsonArray(QString2QJsonArray(resp), &err);
++    if (!err.isEmpty()) {
++      runOnUiThread([=, this] {
++        QMessageBox::information(this, tr("Invalid JSON Array"),
++                                 tr("The provided input cannot be parsed to a "
++                                    "valid route rule array:\n") +
++                                     err);
++      });
++      return;
+     }
++    std::shared_ptr<Configs::RoutingChain> chain =
++        Configs::ProfileManager::NewRouteChain();
++    chain->chain_name = window->remoteRouteProfileNames.value(profile, profile);
++    chain->update_url = url;
++    chain->defaultOutboundID =
++        // profile.startsWith("bypass", Qt::CaseInsensitive)
++        proxy ? Configs::proxyID : Configs::directID;
++    chain->Rules.clear();
++    chain->Rules << parsed;
++    Configs::profileManager->AddRouteChain(chain);
++  }
++}
+ 
+-void MainWindow::getRemoteRouteProfiles(){
+-   {
++void SpinnerDialog::onCancel() { this->close(); }
++
++void MainWindow::getRemoteRouteProfiles() {
++  {
+ #ifdef SKIP_JS_UPDATER
+     auto resp =
+         NetworkRequestHelper::HttpGet("https://api.github.com/repos/qr243vbi/"
+@@ -156,13 +151,14 @@ void MainWindow::getRemoteRouteProfiles(){
+       }
+       mu_remoteRouteProfiles.lock();
+       remoteRouteProfiles = newRemoteRouteProfiles;
+-
+-      remoteRouteProfileGetter = [=, this](QString profile, QString * url, bool *proxy) -> QString {
++      remoteRouteProfileGetter = [=, this](QString profile, QString *url,
++                                           bool *proxy) -> QString {
+         *proxy = profile.toLower().startsWith("bypass");
+-        auto resp = NetworkRequestHelper::HttpGet( *url =
+-            Configs::get_jsdelivr_link("https://raw.githubusercontent.com/"
+-                                       "qr243vbi/ruleset/routeprofiles/" +
+-                                       profile + ".json"));
++        auto resp = NetworkRequestHelper::HttpGet(
++                *url = Configs::get_jsdelivr_link(
++                    "https://raw.githubusercontent.com/"
++                    "qr243vbi/ruleset/routeprofiles/" +
++                    profile + ".json"));
+         if (!resp.error.isEmpty()) {
+           runOnUiThread([=, this] {
+             MessageBoxWarning(QObject::tr("Download Profiles"),
+@@ -201,83 +197,78 @@ void MainWindow::getRemoteRouteProfiles(){
+   };
+ }
+ 
+-SpinnerDialog::SpinnerDialog(MainWindow * window){
+-        this->window = window;
+-        setWindowTitle(tr("Fetching information"));
++SpinnerDialog::SpinnerDialog(MainWindow *window) {
++  this->window = window;
++  setWindowTitle(tr("Fetching information"));
+ 
+-        // Create the main layout
+-        QVBoxLayout *mainLayout = new QVBoxLayout(this);
++  // Create the main layout
++  QVBoxLayout *mainLayout = new QVBoxLayout(this);
+ 
+-        // Create a list widget
+-        listWidget = new QListWidget(this);
++  // Create a list widget
++  listWidget = new QListWidget(this);
+ 
+-        runOnUiThread([window = this->window, this](){
+-          if (window->remoteRouteProfiles.isEmpty()){
+-            window->getRemoteRouteProfiles();
+-          }
+-          for (auto profile: window->remoteRouteProfiles){
+-            this->addItem(profile, window->remoteRouteProfileNames.value(
+-              profile, profile));
+-          }
+-          setWindowTitle(tr("Download Profiles"));
+-        });
++  runOnUiThread([window = this->window, this]() {
++    if (window->remoteRouteProfiles.isEmpty()) {
++      window->getRemoteRouteProfiles();
++    }
++    for (auto profile : window->remoteRouteProfiles) {
++      this->addItem(profile,
++                    window->remoteRouteProfileNames.value(profile, profile));
++    }
++    setWindowTitle(tr("Download Profiles"));
++  });
+ 
+-        // Connect double-click signal
+-        connect(listWidget, &QListWidget::itemDoubleClicked, this, &SpinnerDialog::onOk);
++  // Connect double-click signal
++  connect(listWidget, &QListWidget::itemDoubleClicked, this,
++          &SpinnerDialog::onOk);
+ 
+-        // Create a button box with OK and Cancel buttons
+-        QDialogButtonBox *buttonBox = new QDialogButtonBox(this);
+-        auto okbutton = buttonBox->addButton(QDialogButtonBox::Ok);
+-        auto cancelbutton = buttonBox->addButton(QDialogButtonBox::Cancel);
++  // Create a button box with OK and Cancel buttons
++  QDialogButtonBox *buttonBox = new QDialogButtonBox(this);
++  auto okbutton = buttonBox->addButton(QDialogButtonBox::Ok);
++  auto cancelbutton = buttonBox->addButton(QDialogButtonBox::Cancel);
+ 
+-        // Connect signals to slots
+-        connect(okbutton, &QPushButton::clicked, this, &SpinnerDialog::onOk);
+-        connect(cancelbutton, &QPushButton::clicked, this, &SpinnerDialog::onCancel);
++  // Connect signals to slots
++  connect(okbutton, &QPushButton::clicked, this, &SpinnerDialog::onOk);
++  connect(cancelbutton, &QPushButton::clicked, this, &SpinnerDialog::onCancel);
+ 
+-        // Add widgets to the main layout
+-        mainLayout->addWidget(listWidget);
+-        mainLayout->addWidget(buttonBox);
++  // Add widgets to the main layout
++  mainLayout->addWidget(listWidget);
++  mainLayout->addWidget(buttonBox);
+ 
+-        // Set the layout to the window
+-        setLayout(mainLayout);
+-        resize(300, 200);
++  // Set the layout to the window
++  setLayout(mainLayout);
++  resize(300, 200);
+ }
+ 
+-void MainWindow::set_icons_from_settings(QSettings& settings){
++void MainWindow::set_icons_from_settings(QSettings &settings) {
+   bool text_under_buttons = settings.value("text_under_buttons", true).toBool();
+   set_icons_from_flag(text_under_buttons);
+ }
+ 
+-void MainWindow::set_icons_from_flag(bool text_under_buttons){
++void MainWindow::set_icons_from_flag(bool text_under_buttons) {
+   QSize button_size;
+   Qt::ToolButtonStyle button_style;
+-  if (text_under_buttons){
+-      button_size.setHeight(24);
+-      button_size.setWidth(24);
+-      button_style = Qt::ToolButtonStyle::ToolButtonTextUnderIcon;
++  if (text_under_buttons) {
++    button_size.setHeight(24);
++    button_size.setWidth(24);
++    button_style = Qt::ToolButtonStyle::ToolButtonTextUnderIcon;
+   } else {
+-      button_size.setHeight(37);
+-      button_size.setWidth(32);
+-      button_style = Qt::ToolButtonStyle::ToolButtonIconOnly;
++    button_size.setHeight(37);
++    button_size.setWidth(32);
++    button_style = Qt::ToolButtonStyle::ToolButtonIconOnly;
+   }
+ 
+   // styling
+-  for ( auto button : {
+-    ui->toolButton_preferences, 
+-    ui->toolButton_program,
+-    ui->toolButton_routing,
+-    ui->toolButton_server,
+-    ui->toolButton_update
+-  }){
++  for (auto button :
++       {ui->toolButton_preferences, ui->toolButton_program,
++        ui->toolButton_routing, ui->toolButton_server, ui->toolButton_update}) {
+     button->setToolButtonStyle(button_style);
+     button->setIconSize(button_size);
+   }
+   // top bar set_icons
+ }
+ 
+-bool MainWindow::isShowRuleSetData(){
+-  return showRuleSetData;
+-}
++bool MainWindow::isShowRuleSetData() { return showRuleSetData; }
+ 
+ void UI_InitMainWindow() { mainwindow = new MainWindow; }
+ 
+@@ -311,30 +302,31 @@ MainWindow::MainWindow(QWidget *parent)
+   {
+     QSettings globalSettings = getGlobal();
+ #ifdef NKR_DYNAMIC_VERSION
+-    software_version = globalSettings.value("software_version",
++    software_version = globalSettings
++                           .value("software_version",
+ #ifdef NKR_DEFAULT_VERSION
+-                            NKR_DEFAULT_VERSION
++                                  NKR_DEFAULT_VERSION
+ #else
+-                            "1.0.0"
++                                  "1.0.0"
+ #endif
+-            ).toString();
++                                  )
++                           .toString();
+ #endif
+     qDebug() << NKR_VERSION << software_version;
+-    software_build_date = globalSettings.value("software_build_date", "").toString();
++    software_build_date =
++        globalSettings.value("software_build_date", "").toString();
+ #ifdef NKR_TIMESTAMP
+-    if (software_build_date.isEmpty()){
+-        software_build_date = NKR_TIMESTAMP;
++    if (software_build_date.isEmpty()) {
++      software_build_date = NKR_TIMESTAMP;
+     }
+ #endif
+-    software_name = globalSettings.value(
+-                "software_name", "nekobox").toString();
+-    software_core_name = globalSettings.value(
+-                "software_core_name", "sing-box").toString();
++    software_name = globalSettings.value("software_name", "nekobox").toString();
++    software_core_name =
++        globalSettings.value("software_core_name", "sing-box").toString();
+   }
+ 
+   setAcceptDrops(true);
+ 
+-
+   MW_dialog_message = [=, this](const QString &a, const QString &b) {
+     runOnUiThread([=, this] { dialog_message_impl(a, b); });
+   };
+@@ -500,9 +492,7 @@ MainWindow::MainWindow(QWidget *parent)
+   parallelCoreCallPool->setMaxThreadCount(10); // constant value
+   //
+   connect(ui->menu_start, &QAction::triggered, this,
+-          [=, this]() { 
+-            profile_start();
+-          });
++          [=, this]() { profile_start(); });
+   connect(ui->menu_stop, &QAction::triggered, this,
+           [=, this]() { profile_stop(false, false, true); });
+   connect(ui->tabWidget->tabBar(), &QTabBar::tabMoved, this,
+@@ -545,19 +535,16 @@ MainWindow::MainWindow(QWidget *parent)
+ 
+   set_icons_from_settings(settings);
+ 
+-  connect(
+-      ui->actionAdd_new_Group, &QAction::triggered,
+-      this,
+-      [this] {
+-        auto ent = Configs::ProfileManager::NewGroup();
+-        auto dialog = new DialogEditGroup(ent, this);
+-        int ret = dialog->exec();
+-        dialog->deleteLater();
++  connect(ui->actionAdd_new_Group, &QAction::triggered, this, [this] {
++    auto ent = Configs::ProfileManager::NewGroup();
++    auto dialog = new DialogEditGroup(ent, this);
++    int ret = dialog->exec();
++    dialog->deleteLater();
+ 
+-        if (ret == QDialog::Accepted) {
+-          Configs::profileManager->AddGroup(ent);
+-          MW_dialog_message(Dialog_DialogManageGroups, "refresh-1");
+-        }
++    if (ret == QDialog::Accepted) {
++      Configs::profileManager->AddGroup(ent);
++      MW_dialog_message(Dialog_DialogManageGroups, "refresh-1");
++    }
+   });
+   ui->toolButton_program->setMenu(ui->menu_program);
+   ui->toolButton_preferences->setMenu(ui->menu_preferences);
+@@ -732,9 +719,9 @@ MainWindow::MainWindow(QWidget *parent)
+   connect(ui->menu_open_config_folder, &QAction::triggered, this, [=, this] {
+     QDesktopServices::openUrl(QUrl::fromLocalFile(QDir::currentPath()));
+   });
+-//  ui->toolButton_server->hide();
+-//  connect(ui->menu_add_from_clipboard2, &QAction::triggered,
+-//          ui->menu_add_from_clipboard, &QAction::trigger);
++  //  ui->toolButton_server->hide();
++  //  connect(ui->menu_add_from_clipboard2, &QAction::triggered,
++  //          ui->menu_add_from_clipboard, &QAction::trigger);
+   connect(ui->actionRestart_Proxy, &QAction::triggered, this, [=, this] {
+     if (Configs::dataStore->started_id >= 0)
+       profile_start(Configs::dataStore->started_id);
+@@ -803,11 +790,11 @@ MainWindow::MainWindow(QWidget *parent)
+   });
+ 
+   connect(ui->menu_server, &QMenu::aboutToShow, this, [=, this]() {
+-  //  if (running) {
+-  //    ui->actionSpeedtest_Current->setEnabled(true);
+-  //  } else {
+- //     ui->actionSpeedtest_Current->setEnabled(false);
+-  //  }
++    //  if (running) {
++    //    ui->actionSpeedtest_Current->setEnabled(true);
++    //  } else {
++    //     ui->actionSpeedtest_Current->setEnabled(false);
++    //  }
+     if (auto selected = get_now_selected_list(); selected.empty()) {
+       ui->actionSpeedtest_Selected->setEnabled(false);
+       ui->actionUrl_Test_Selected->setEnabled(false);
+@@ -839,44 +826,43 @@ MainWindow::MainWindow(QWidget *parent)
+     ruleSetMap = jsonToMap(byteArray);
+   } else {
+     delete srslist;
+-    runOnNewThread([this](){getRuleSet();});
++    runOnNewThread([this]() { getRuleSet(); });
+   }
+ 
+-//  runOnUiThread(getRemoteRouteProfiles);
++  //  runOnUiThread(getRemoteRouteProfiles);
+ 
+-//  QFile file_route(getResource("check_routeprofiles.js"));
++  //  QFile file_route(getResource("check_routeprofiles.js"));
+ 
+   connect(ui->menuRouting_Menu, &QMenu::aboutToShow, this, [=, this]() {
+-//    if (remoteRouteProfiles.isEmpty())
+-//      runOnNewThread(getRemoteRouteProfiles);
++    //    if (remoteRouteProfiles.isEmpty())
++    //      runOnNewThread(getRemoteRouteProfiles);
+     ui->menuRouting_Menu->clear();
+ 
+     auto *actionProfiles = new QAction(ui->menuRouting_Menu);
+-    actionProfiles->setText(QCoreApplication::translate(
+-      "MainWindow", "Edit Routing Profiles"));
++    actionProfiles->setText(
++        QCoreApplication::translate("MainWindow", "Edit Routing Profiles"));
+     ui->menuRouting_Menu->addAction(actionProfiles);
+     connect(
+-      actionProfiles, &QAction::triggered, this,
+-      [this]() {
+-        if (dialog_is_using)
+-          return;
+-        dialog_is_using = true;
+-        auto dialog = new DialogManageRoutes(this, true);
+-        connect(dialog, &QDialog::finished, this, [=, this] {
+-          dialog->deleteLater();
+-          dialog_is_using = false;
+-        });
+-        dialog->show();
+-      },
+-      Qt::SingleShotConnection);
++        actionProfiles, &QAction::triggered, this,
++        [this]() {
++          if (dialog_is_using)
++            return;
++          dialog_is_using = true;
++          auto dialog = new DialogManageRoutes(this, true);
++          connect(dialog, &QDialog::finished, this, [=, this] {
++            dialog->deleteLater();
++            dialog_is_using = false;
++          });
++          dialog->show();
++        },
++        Qt::SingleShotConnection);
+ 
+     ui->menuRouting_Menu->addSeparator();
+     // ui->menuRouting_Menu->addAction(ui->menu_routing_settings);
+ 
+-
+     auto *actionUpdateProfiles = new QAction(ui->menuRouting_Menu);
+-    actionUpdateProfiles->setText(QCoreApplication::translate(
+-        "MainWindow", "Update Routing Profiles"));
++    actionUpdateProfiles->setText(
++        QCoreApplication::translate("MainWindow", "Update Routing Profiles"));
+     ui->menuRouting_Menu->addAction(actionUpdateProfiles);
+     connect(
+         actionUpdateProfiles, &QAction::triggered, this,
+@@ -885,119 +871,120 @@ MainWindow::MainWindow(QWidget *parent)
+             int profiles_count = updateRouteProfiles();
+ 
+             runOnUiThread([profiles_count, this] {
+-              if (profiles_count == 0){
+-                
++              if (profiles_count == 0) {
++
+                 QMessageBox::warning(this, tr("Update Response"),
+-                             tr("No routing profiles are updated"));
++                                     tr("No routing profiles are updated"));
+               } else {
+-                QMessageBox::information(this, tr("Update Response"),
+-                             tr("Updated %1 routing profiles").arg(
+-                              QString::number(profiles_count)));
++                QMessageBox::information(
++                    this, tr("Update Response"),
++                    tr("Updated %1 routing profiles")
++                        .arg(QString::number(profiles_count)));
+               }
+             });
+           });
+         },
+         Qt::SingleShotConnection);
+ 
+-
+     auto *actionUpdateRuleSet = new QAction(ui->menuRouting_Menu);
+-    actionUpdateRuleSet->setText(QCoreApplication::translate(
+-      "MainWindow", "Update RuleSet Map"));
++    actionUpdateRuleSet->setText(
++        QCoreApplication::translate("MainWindow", "Update RuleSet Map"));
+     ui->menuRouting_Menu->addAction(actionUpdateRuleSet);
+     connect(
+-      actionUpdateRuleSet, &QAction::triggered, this,
+-      [this]() {
+-        runOnNewThread([this] {
+-          bool ruleset_updated = getRuleSet();
++        actionUpdateRuleSet, &QAction::triggered, this,
++        [this]() {
++          runOnNewThread([this] {
++            bool ruleset_updated = getRuleSet();
+             runOnUiThread([this, ruleset_updated] {
+-          if (!ruleset_updated){
+-              QMessageBox::warning(this, tr("Update Response"),
+-                                tr("Failed to update rulesets"));
+-          } else {
+-              QMessageBox::information(this, tr("Update Response"),
+-                             tr("Rulesets updated successfully"));
+-          }
++              if (!ruleset_updated) {
++                QMessageBox::warning(this, tr("Update Response"),
++                                     tr("Failed to update rulesets"));
++              } else {
++                QMessageBox::information(this, tr("Update Response"),
++                                         tr("Rulesets updated successfully"));
++              }
+             });
+-        });
+-      },
+-      Qt::SingleShotConnection);
+-
++          });
++        },
++        Qt::SingleShotConnection);
+ 
+     auto *actionUpdateRuleSetCache = new QAction(ui->menuRouting_Menu);
+-    actionUpdateRuleSetCache->setText(QCoreApplication::translate(
+-      "MainWindow", "Update RuleSet Cache"));
++    actionUpdateRuleSetCache->setText(
++        QCoreApplication::translate("MainWindow", "Update RuleSet Cache"));
+     ui->menuRouting_Menu->addAction(actionUpdateRuleSetCache);
+     connect(
+-      actionUpdateRuleSetCache, &QAction::triggered, this,
+-      [this]() {
+-        runOnNewThread([this] {
+-          if (mu_download_update.try_lock()){
+-            QMutex mut;
+-            showRuleSetData = true;
+-            for (auto & item : ruleSetMap){
+-              if (!showRuleSetData){
+-                break;
+-              }
+-              QString url(QString::fromStdString(item.second));
+-              QString str = Configs::get_cache_from_str(url);
+-              QFile cache_file(str);
+-              if (!cache_file.exists()){
+-                mut.lock();
+-                runOnUiThread([this,&str,&mut](){
+-                  this->setDownloadReport(DownloadProgressReport{str, 0, 0}, true);
+-                  UpdateDataView(true);
++        actionUpdateRuleSetCache, &QAction::triggered, this,
++        [this]() {
++          runOnNewThread([this] {
++            if (mu_download_update.try_lock()) {
++              QMutex mut;
++              showRuleSetData = true;
++              for (auto &item : ruleSetMap) {
++                if (!showRuleSetData) {
++                  break;
++                }
++                QString url(QString::fromStdString(item.second));
++                QString str = Configs::get_cache_from_str(url);
++                QFile cache_file(str);
++                if (!cache_file.exists()) {
++                  mut.lock();
++                  runOnUiThread([this, &str, &mut]() {
++                    this->setDownloadReport(DownloadProgressReport{str, 0, 0},
++                                            true);
++                    UpdateDataView(true);
++                    mut.unlock();
++                  });
++                  mut.lock();
+                   mut.unlock();
++                  NetworkRequestHelper::DownloadAsset(
++                      Configs::get_jsdelivr_link(url), str);
++                }
++              }
++              if (showRuleSetData) {
++                showRuleSetData = false;
++                runOnUiThread([=, this] {
++                  QMessageBox::information(this, tr("Update Response"),
++                                           tr("Rulesets cache is updated"));
++
++                  this->setDownloadReport({}, false);
++                  this->UpdateDataView(true);
+                 });
+-                mut.lock();
+-                mut.unlock();
+-                NetworkRequestHelper::DownloadAsset(Configs::get_jsdelivr_link(url), str);
+               }
++              mu_download_update.unlock();
+             }
+-            if (showRuleSetData){
+-              showRuleSetData = false;
+-              runOnUiThread([=, this] {
+-                QMessageBox::information(this, tr("Update Response"),
+-                             tr("Rulesets cache is updated"));
+-
+-               this->setDownloadReport({}, false);
+-               this->UpdateDataView(true);
+-              });
+-            }
+-            mu_download_update.unlock();
+-          }
+-        });
+-      },
+-      Qt::SingleShotConnection);
++          });
++        },
++        Qt::SingleShotConnection);
+ 
+     auto *actionClearRuleSetCache = new QAction(ui->menuRouting_Menu);
+-    actionClearRuleSetCache->setText(QCoreApplication::translate(
+-      "MainWindow", "Clear RuleSet Cache"));
++    actionClearRuleSetCache->setText(
++        QCoreApplication::translate("MainWindow", "Clear RuleSet Cache"));
+     ui->menuRouting_Menu->addAction(actionClearRuleSetCache);
+     connect(
+-      actionClearRuleSetCache, &QAction::triggered, this,
+-      [this]() {
+-        runOnNewThread([this] {
+-          showRuleSetData = false;
+-          mu_download_update.lock();
+-          mu_download_update.unlock();
+-          MoveDirToTrash("rule_sets/ftps");
+-          MoveDirToTrash("rule_sets/ftp");
+-          MoveDirToTrash("rule_sets/http");
+-          MoveDirToTrash("rule_sets/https");
+-          
+-          QMutex mut;
+-          mut.lock();
+-          runOnUiThread([this, &mut](){
++        actionClearRuleSetCache, &QAction::triggered, this,
++        [this]() {
++          runOnNewThread([this] {
+             showRuleSetData = false;
+-            setDownloadReport({}, false);
+-            UpdateDataView(true);
++            mu_download_update.lock();
++            mu_download_update.unlock();
++            MoveDirToTrash("rule_sets/ftps");
++            MoveDirToTrash("rule_sets/ftp");
++            MoveDirToTrash("rule_sets/http");
++            MoveDirToTrash("rule_sets/https");
++
++            QMutex mut;
++            mut.lock();
++            runOnUiThread([this, &mut]() {
++              showRuleSetData = false;
++              setDownloadReport({}, false);
++              UpdateDataView(true);
++              mut.unlock();
++            });
++            mut.lock();
+             mut.unlock();
+           });
+-          mut.lock();
+-          mut.unlock();
+-        });
+-      }, Qt::SingleShotConnection
+-    );
++        },
++        Qt::SingleShotConnection);
+ 
+     ui->menuRouting_Menu->addSeparator();
+ 
+@@ -1019,23 +1006,23 @@ MainWindow::MainWindow(QWidget *parent)
+     ui->menuRouting_Menu->addAction(actionAdblock);
+ 
+     mu_remoteRouteProfiles.lock();
+-    #ifndef SKIP_JS_UPDATER
++#ifndef SKIP_JS_UPDATER
+     QFile file_route(getResource("check_routeprofiles.js"));
+-    if (file_route.exists()){
+-    #endif
++    if (file_route.exists()) {
++#endif
+       auto *actionRoute = new QAction(ui->menuRouting_Menu);
+-      actionRoute->setText(QCoreApplication::translate(
+-      "SpinnerDialog","Download Profiles"));
+-      connect(actionRoute, &QAction::triggered, this, 
+-      [=, this](){
+-        std::shared_ptr<SpinnerDialog> dialog = std::make_shared<SpinnerDialog>(this);
++      actionRoute->setText(
++          QCoreApplication::translate("SpinnerDialog", "Download Profiles"));
++      connect(actionRoute, &QAction::triggered, this, [=, this]() {
++        std::shared_ptr<SpinnerDialog> dialog =
++            std::make_shared<SpinnerDialog>(this);
+         dialog->show();
+         dialog->exec();
+       });
+       ui->menuRouting_Menu->addAction(actionRoute);
+-    #ifndef SKIP_JS_UPDATER
++#ifndef SKIP_JS_UPDATER
+     }
+-    #endif
++#endif
+     /*
+     if (!remoteRouteProfiles.isEmpty()) {
+       QMenu *profilesMenu =
+@@ -1082,7 +1069,7 @@ MainWindow::MainWindow(QWidget *parent)
+       }
+     }
+       */
+-    
++
+     mu_remoteRouteProfiles.unlock();
+ 
+     ui->menuRouting_Menu->addSeparator();
+@@ -1105,11 +1092,9 @@ MainWindow::MainWindow(QWidget *parent)
+       ui->menuRouting_Menu->addAction(action);
+     }
+   });
+-  connect(ui->actionUrl_Test_Selected, &QAction::triggered, this,
+-          [this]() {
+-
+-      qDebug() << "Url Test Selected Clicked";
+-      urltest_current_group(get_now_selected_list());
++  connect(ui->actionUrl_Test_Selected, &QAction::triggered, this, [this]() {
++    qDebug() << "Url Test Selected Clicked";
++    urltest_current_group(get_now_selected_list());
+   });
+   connect(ui->actionUrl_Test_Clear, &QAction::triggered, this,
+           [=, this]() { on_menu_clear_test_result_triggered(true); });
+@@ -1193,8 +1178,8 @@ MainWindow::MainWindow(QWidget *parent)
+           [&] { UI_update_all_groups(true); });
+   TM_auto_update_subsctiption_Reset_Minute(Configs::dataStore->sub_auto_update);
+ 
+-  if ((!Configs::dataStore->flag_tray) && ( 
+-        !settings.value("auto_hide", false).toBool() ) ){
++  if ((!Configs::dataStore->flag_tray) &&
++      (!settings.value("auto_hide", false).toBool())) {
+     show();
+   } else {
+     hide();
+@@ -1212,50 +1197,52 @@ void MainWindow::closeEvent(QCloseEvent *event) {
+   }
+ }
+ 
+-int MainWindow::updateRouteProfiles(){
++int MainWindow::updateRouteProfiles() {
+   auto profiles = Configs::profileManager->routes;
+-            int profiles_count = 0;
+-            for (const auto &item : profiles) {
+-              auto &chain = item.second;
+-              if (chain->skip_update){
+-                continue;
+-              }
+-              auto url = chain->update_url;
+-              if (!url.isEmpty()) {
+-                url = Configs::get_jsdelivr_link(url);
+-                auto response = NetworkRequestHelper::HttpGet(url);
+-                if (response.error.isEmpty()) {
+-                  QString err;
+-                  auto parsed = Configs::RoutingChain::parseJsonArray(
+-                      QString2QJsonArray(response.data), &err);
+-                  if (err.isEmpty()) {
+-                    chain->Rules.clear();
+-                    chain->Rules << parsed;
+-                    profiles_count ++;
+-                  }
+-                }
+-              }
+-            }
+-            return profiles_count;
++  int profiles_count = 0;
++  for (const auto &item : profiles) {
++    auto &chain = item.second;
++    if (chain->skip_update) {
++      continue;
++    }
++    auto url = chain->update_url;
++    if (!url.isEmpty()) {
++      url = Configs::get_jsdelivr_link(url);
++      auto response = NetworkRequestHelper::HttpGet(url);
++      if (response.error.isEmpty()) {
++        QString err;
++        auto parsed = Configs::RoutingChain::parseJsonArray(
++            QString2QJsonArray(response.data), &err);
++        if (err.isEmpty()) {
++          chain->Rules.clear();
++          chain->Rules << parsed;
++          profiles_count++;
++        }
++      }
++    }
++  }
++  return profiles_count;
+ }
+ 
+-bool MainWindow::getRuleSet(){
+-      QString err;
+-      for (int retry = 0; retry < 5; retry++) {
+-        auto err = NetworkRequestHelper::DownloadAsset(
+-            Configs::get_jsdelivr_link(Configs::dataStore->routing->ruleset_json_url), "srslist.json");
+-        if (err.isEmpty()) {
+-          QFile file("srslist.json");
+-          if (file.open(QIODevice::ReadOnly)){
+-            auto resp_data = file.readAll();
+-            ruleSetMap = jsonToMap(resp_data);
+-          }
+-          return true;
+-        } else
+-        QThread::sleep(30);
++bool MainWindow::getRuleSet() {
++  QString err;
++  for (int retry = 0; retry < 5; retry++) {
++    auto err = NetworkRequestHelper::DownloadAsset(
++        Configs::get_jsdelivr_link(
++            Configs::dataStore->routing->ruleset_json_url),
++        "srslist.json");
++    if (err.isEmpty()) {
++      QFile file("srslist.json");
++      if (file.open(QIODevice::ReadOnly)) {
++        auto resp_data = file.readAll();
++        ruleSetMap = jsonToMap(resp_data);
+       }
+-      MW_show_log(QObject::tr("Requesting rule-set list error: %1").arg(err));
+-      return false;
++      return true;
++    } else
++      QThread::sleep(30);
++  }
++  MW_show_log(QObject::tr("Requesting rule-set list error: %1").arg(err));
++  return false;
+ }
+ 
+ void MainWindow::dragEnterEvent(QDragEnterEvent *event) {
+@@ -1338,9 +1325,9 @@ void MainWindow::show_group(int gid) {
+ 
+   auto group = Configs::profileManager->GetGroup(gid);
+   if (group == nullptr) {
+-    runOnUiThread([this, gid](){
+-      QMessageBox::warning(this, tr("Error"), 
+-        QString("No such group: %1").arg(gid));
++    runOnUiThread([this, gid]() {
++      QMessageBox::warning(this, tr("Error"),
++                           QString("No such group: %1").arg(gid));
+     });
+     Configs::dataStore->refreshing_group = false;
+     return;
+@@ -1391,7 +1378,7 @@ void MainWindow::dialog_message_impl(const QString &sender,
+   // info
+   if (info.contains("UpdateIcon")) {
+     icon_status = -1;
+-    runOnUiThread([this](){
++    runOnUiThread([this]() {
+       refresh_status();
+       refresh_proxy_list(-1);
+       set_icons();
+@@ -1425,10 +1412,10 @@ void MainWindow::dialog_message_impl(const QString &sender,
+     }
+     refresh_proxy_list();
+     if (info.contains("VPNChanged") && Configs::dataStore->spmode_vpn) {
+-      runOnUiThread([this](){
+-      QMessageBox::warning(this, tr("Tun Settings changed"),
+-                        tr("Restart Tun to take effect."));
+-                        });
++      runOnUiThread([this]() {
++        QMessageBox::warning(this, tr("Tun Settings changed"),
++                             tr("Restart Tun to take effect."));
++      });
+     }
+     if ((info.contains("NeedChoosePort") || updateCorePath ||
+          suggestRestartProxy) &&
+@@ -1443,13 +1430,13 @@ void MainWindow::dialog_message_impl(const QString &sender,
+     }
+ 
+     if (proxyAutoTester) {
+-        if (Configs::dataStore->auto_test_enable) {
+-            proxyAutoTester->Reset();
+-            proxyAutoTester->Start();
+-            MW_show_log("[Auto-Test] Restarted with new settings");
+-        } else {
+-            proxyAutoTester->Stop();
+-        }
++      if (Configs::dataStore->auto_test_enable) {
++        proxyAutoTester->Reset();
++        proxyAutoTester->Start();
++        MW_show_log("[Auto-Test] Restarted with new settings");
++      } else {
++        proxyAutoTester->Stop();
++      }
+     }
+ 
+     refresh_status();
+@@ -1610,6 +1597,8 @@ void MainWindow::on_commitDataRequest() {
+     settings.sync();
+   }
+   //
++
++  qDebug() << "Something?";
+   //
+   auto last_id = Configs::dataStore->started_id;
+   if (Configs::dataStore->remember_enable && last_id >= 0) {
+@@ -1631,8 +1620,6 @@ void MainWindow::prepare_exit() {
+     mu_exit.unlock();
+     return;
+   }
+-  hide();
+-  tray->hide();
+   Configs::dataStore->prepare_exit = true;
+   //
+   RegisterHiddenMenuShortcuts(true);
+@@ -1700,9 +1687,8 @@ void MainWindow::on_menu_exit_triggered() {
+       qDebug() << "File copied successfully from" << sourceFilePath << "to"
+                << destinationFilePath;
+ #ifdef Q_OS_WIN
+-      WinCommander::runProcess(destinationFilePath, list, "",
+-                                      SW_NORMAL, false, 
+-                                (!isDirectoryWritable(updateDir)));
++      WinCommander::runProcess(destinationFilePath, list, "", SW_NORMAL, false,
++                               (!isDirectoryWritable(updateDir)));
+ #else
+       QProcess::startDetached(destinationFilePath, list);
+ #endif
+@@ -1731,8 +1717,8 @@ void MainWindow::on_menu_exit_triggered() {
+       if (exit_reason == 4)
+         arguments << "-flag_restart_dns_set";
+ #ifdef Q_OS_WIN
+-      WinCommander::runProcessElevated(program, arguments, "",
+-                                       SW_NORMAL, false);
++      WinCommander::runProcessElevated(program, arguments, "", SW_NORMAL,
++                                       false);
+ #else
+       QProcess::startDetached(program, arguments);
+ #endif
+@@ -1740,6 +1726,10 @@ void MainWindow::on_menu_exit_triggered() {
+       QProcess::startDetached(program, arguments);
+     }
+   }
++  if (this->keep_running) {
++    this->keep_running = false;
++    return;
++  }
+   QCoreApplication::quit();
+ }
+ 
+@@ -1763,9 +1753,10 @@ bool MainWindow::get_elevated_permissions(int reason, void *pointer) {
+ #undef ELEVATE_CORE_PROGRAM
+ 
+ #ifdef Q_OS_UNIX
+-  if (!Linux_HavePkexec()) {
+-    runOnUiThread([this](){
+-        QMessageBox::warning(this, software_name, "Please install \"pkexec\" first.");
++  if (!Unix_HavePkexec()) {
++    runOnUiThread([this]() {
++      QMessageBox::warning(this, software_name,
++                           "Please install \"pkexec\" first.");
+     });
+     return false;
+   }
+@@ -1790,7 +1781,7 @@ skip_start_elevate_process:
+ start_elevate_process: {
+   StopVPNProcess();
+   core_process->elevateCoreProcessProgram();
+-  runOnUiThread([=,this](){
++  runOnUiThread([=, this]() {
+     if (reason == 3) {
+       bool save = false;
+       if (pointer != nullptr) {
+@@ -1867,16 +1858,14 @@ void MainWindow::UpdateDataView(bool force) {
+     }
+     QString stat = ReadableSize(currentDownloadReport.downloadedSize) + "/" +
+                    ReadableSize(currentDownloadReport.totalSize);
+-    if (showRuleSetData){
++    if (showRuleSetData) {
+       html =
+-        QString(
+-            "<p style='text-align:center;margin:0;'>Downloading %1</p>")
+-            .arg(currentDownloadReport.fileName);
++          QString("<p style='text-align:center;margin:0;'>Downloading %1</p>")
++              .arg(currentDownloadReport.fileName);
+     } else {
+-      html =
+-        QString(
+-            "<p style='text-align:center;margin:0;'>Downloading %1: %2 %3</p>")
+-            .arg(currentDownloadReport.fileName, stat, progressText);
++      html = QString("<p style='text-align:center;margin:0;'>Downloading %1: "
++                     "%2 %3</p>")
++                 .arg(currentDownloadReport.fileName, stat, progressText);
+     }
+   }
+   if (showSpeedtestData) {
+@@ -1888,14 +1877,13 @@ void MainWindow::UpdateDataView(bool force) {
+             "<span style='color: #86C43F;'>Ul↑ %3</span>"
+             "</div>"
+             "<p style='text-align:center;margin:0;'>Server: %4%5, %6</p>")
+-            .arg(currentSptProfileName, 
+-              QString::fromStdString(currentTestResult.dl_speed),
+-              QString::fromStdString(currentTestResult.ul_speed),
++            .arg(currentSptProfileName,
++                 QString::fromStdString(currentTestResult.dl_speed),
++                 QString::fromStdString(currentTestResult.ul_speed),
+                  CountryCodeToFlag(
+-                     CountryNameToCode(
+-                      (currentTestResult.server_country))),
+-              QString::fromStdString(currentTestResult.server_country),
+-              QString::fromStdString(currentTestResult.server_name));
++                     CountryNameToCode((currentTestResult.server_country))),
++                 QString::fromStdString(currentTestResult.server_country),
++                 QString::fromStdString(currentTestResult.server_name));
+   }
+   ui->data_view->setHtml(html);
+   lastUpdated = QDateTime::currentDateTime();
+@@ -2173,8 +2161,8 @@ void MainWindow::refresh_status(const QString &traffic_update) {
+     tt << software_name;
+     if (!isTray) {
+       tt << QString(NKR_VERSION);
+-      if (!software_build_date.isEmpty()){
+-          tt << software_build_date;
++      if (!software_build_date.isEmpty()) {
++        tt << software_build_date;
+       }
+     }
+     if (!Configs::dataStore->active_routing.isEmpty() &&
+@@ -2389,6 +2377,8 @@ void MainWindow::refresh_proxy_list_impl_refresh_data(const int &id,
+                                                       bool stopping) {
+   ui->proxyListTable->setUpdatesEnabled(false);
+   auto currentGroup = Configs::profileManager->CurrentGroup();
++  if (currentGroup == nullptr)
++    return;
+   if (id >= 0) {
+     if (!currentGroup->HasProfile(id)) {
+       ui->proxyListTable->setUpdatesEnabled(true);
+@@ -2474,7 +2464,7 @@ void MainWindow::refresh_table_item(
+   // C3: Test Result
+   f = f0->clone();
+   if (profile->full_test_report.isEmpty()) {
+-    auto color = profile->DisplayLatencyColor();
++    auto color = DisplayLatencyColor(profile.get());
+     if (color.isValid())
+       f->setForeground(color);
+     f->setText(profile->DisplayTestResult());
+@@ -2840,7 +2830,8 @@ void MainWindow::on_menu_scan_qr_triggered() {
+   if (ok) {
+     parseQrImage(&qpx);
+   } else {
+-    QMessageBox::information(this, software_name, tr("Unable to capture screen"));
++    QMessageBox::information(this, software_name,
++                             tr("Unable to capture screen"));
+   }
+ }
+ 
+@@ -3354,18 +3345,14 @@ void MainWindow::RegisterHiddenMenuShortcuts(bool unregister) {
+   for (const auto &action : ui->menuHidden_menu->actions()) {
+     if (!action->shortcut().toString().isEmpty()) {
+       hiddenMenuShortcuts.append(new QShortcut(
+-          action->shortcut(), this, [=, this]() {
+-          action->trigger();
+-      }));
++          action->shortcut(), this, [=, this]() { action->trigger(); }));
+     }
+   }
+ 
+   for (const auto &action : ui->menu_server->actions()) {
+     if (!action->shortcut().toString().isEmpty()) {
+       hiddenMenuShortcuts.append(new QShortcut(
+-          action->shortcut(), this, [=, this]() {
+-          action->trigger();
+-      }));
++          action->shortcut(), this, [=, this]() { action->trigger(); }));
+     }
+   }
+ }
+@@ -3457,45 +3444,46 @@ JsUpdaterWindow *MainWindow::createJsUpdaterWindow() {
+   // Connect the signal to a lambda function
+   connect(bQueue, &JsUpdaterWindow::warning_signal, this,
+           [=, this](const QString &message, const QString &title) {
+-            runOnUiThread([=, this] { QMessageBox::warning(this, title, message); });
++            runOnUiThread(
++                [=, this] { QMessageBox::warning(this, title, message); });
+           });
+ 
+   // Connect the signal to a lambda function
+   connect(bQueue, &JsUpdaterWindow::info_signal, this,
+           [=, this](const QString &message, const QString &title) {
+-            runOnUiThread([=, this] { QMessageBox::information(this, title, message); });
++            runOnUiThread(
++                [=, this] { QMessageBox::information(this, title, message); });
+           });
+ 
+-  connect(bQueue, &JsUpdaterWindow::download_signal, this, 
+-          [=, this](const QString &url, const QString &fileName, QString *ret){
+-            *ret = NetworkRequestHelper::DownloadAsset(url, fileName);;
++  connect(bQueue, &JsUpdaterWindow::download_signal, this,
++          [=, this](const QString &url, const QString &fileName, QString *ret) {
++            *ret = NetworkRequestHelper::DownloadAsset(url, fileName);
++            ;
+             bQueue->unlock();
+           });
+ 
+   // Connect the signal to a lambda function
+   connect(bQueue, &JsUpdaterWindow::ask_signal, this,
+-          [=, this](const QString &message, const QString &title, const QStringList &list, 
+-              int* ret) {
+-        //    runOnUiThread([ret, this, &mut, &title, &message, &list] {
+-              QMessageBox box(QMessageBox::Question,
+-                              title,
+-                              message);
+-
+-              QMap<QPushButton*, int> buttons;
+-              for (auto [k, str] : asListRange(list)){
+-                buttons[box.addButton(str, QMessageBox::ActionRole)] = k;
+-              }
+-              box.exec();
+-              auto button = box.clickedButton();
+-              for (auto [btn, i]: asKeyValueRange(buttons)){
+-                if (btn == button){
+-                  *ret = i;
+-                  break;
+-                }
++          [=, this](const QString &message, const QString &title,
++                    const QStringList &list, int *ret) {
++            //    runOnUiThread([ret, this, &mut, &title, &message, &list] {
++            QMessageBox box(QMessageBox::Question, title, message);
++
++            QMap<QPushButton *, int> buttons;
++            for (auto [k, str] : asListRange(list)) {
++              buttons[box.addButton(str, QMessageBox::ActionRole)] = k;
++            }
++            box.exec();
++            auto button = box.clickedButton();
++            for (auto [btn, i] : asKeyValueRange(buttons)) {
++              if (btn == button) {
++                *ret = i;
++                break;
+               }
+-              
+-              bQueue->unlock();
+-         //   });
++            }
++
++            bQueue->unlock();
++            //   });
+           });
+ 
+   return bQueue;
+@@ -3635,19 +3623,16 @@ bool isNewer(QString assetName) {
+ 
+ #ifndef SKIP_UPDATE_BUTTON
+ #ifndef SKIP_JS_UPDATER
+-#include <nekobox/js/js_updater.h>
+ #include <iostream>
++#include <nekobox/js/js_updater.h>
+ #endif
+ void MainWindow::CheckUpdate() {
+   bool is_newer = false;
+ 
+   QString archive_name = "nekobox.zip",
+ #ifdef SKIP_JS_UPDATER
+-          assets_name = "",
+-          release_download_url = "",
+-          release_url = "",
+-          release_note = "",
+-          note_pre_release = "",
++          assets_name = "", release_download_url = "", release_url = "",
++          release_note = "", note_pre_release = "",
+ #endif
+           search = "";
+ 
+@@ -3739,22 +3724,21 @@ end_search_define:
+ 
+   updaterPath = getUpdaterPath();
+ 
+-bool allow_updater = true;
++  bool allow_updater = true;
+ #ifndef Q_OS_WIN
+ #ifdef Q_OS_UNIX
+-if (isAppImage()) {
+-  allow_updater =
+-  (access(softwareFilePath.toUtf8().constData(), W_OK) == 0);
+-} else {
+-  #endif
+-  allow_updater = isDirectoryWritable(softwarePath);
+-  if (allow_updater){
+-    if (!QFile::exists(updaterPath)){
+-      allow_updater = false;
++  if (isAppImage()) {
++    allow_updater = (access(softwareFilePath.toUtf8().constData(), W_OK) == 0);
++  } else {
++#endif
++    allow_updater = isDirectoryWritable(softwarePath);
++    if (allow_updater) {
++      if (!QFile::exists(updaterPath)) {
++        allow_updater = false;
++      }
+     }
++#ifdef Q_OS_UNIX
+   }
+-  #ifdef Q_OS_UNIX
+-}
+ #endif
+ #endif
+ 
+@@ -3778,15 +3762,15 @@ if (isAppImage()) {
+ 
+   bQueue = createJsUpdaterWindow();
+ 
+-  jsUpdater(bQueue, &updater_js, &search, &archive_name,
+-            &is_newer, &updater_args, allow_updater);
++  jsUpdater(bQueue, &updater_js, &search, &archive_name, &is_newer,
++            &updater_args, allow_updater, &this->keep_running);
+ #endif
+ skip1:
+ 
+   if (search.isEmpty()) {
+     runOnUiThread([=, this] {
+       QMessageBox::warning(this, QObject::tr("Update"),
+-                        QObject::tr("Not official support platform"));
++                           QObject::tr("Not official support platform"));
+     });
+     return;
+   }
+@@ -3854,17 +3838,13 @@ skip1:
+ 
+     qDebug() << "ARCHIVE PATH" << archive_name;
+ 
+-    runOnNewThread([=, this] {
+-      on_menu_exit_triggered();
+-    });
++    runOnNewThread([=, this] { on_menu_exit_triggered(); });
+   }
+ 
+ #endif
+ 
+ #ifdef SKIP_JS_UPDATER
+   runOnUiThread([=, this] {
+-
+-
+     QMessageBox box(QMessageBox::Question,
+                     QObject::tr("Update") + note_pre_release,
+                     QObject::tr("Update found: %1\nRelease note:\n%2")
+@@ -3872,7 +3852,7 @@ skip1:
+     //
+     box.addButton(QObject::tr("Close"), QMessageBox::RejectRole);
+     QAbstractButton *btn2 =
+-      box.addButton(QObject::tr("Open in browser"), QMessageBox::AcceptRole);
++        box.addButton(QObject::tr("Open in browser"), QMessageBox::AcceptRole);
+     QAbstractButton *btn1 = nullptr;
+     if (allow_updater) {
+       btn1 = box.addButton(QObject::tr("Update"), QMessageBox::AcceptRole);
+@@ -3914,7 +3894,8 @@ skip1:
+                 QObject::tr("Update is ready, restart to install?"));
+             if (q == QMessageBox::StandardButton::Yes) {
+               this->exit_reason = 1;
+-              this->archive_name = Configs::GetBasePath() + "/temp/" + archive_path;
++              this->archive_name =
++                  Configs::GetBasePath() + "/temp/" + archive_path;
+               on_menu_exit_triggered();
+             }
+           } else {
+@@ -3927,6 +3908,5 @@ skip1:
+     }
+   });
+ #endif
+-
+ }
+ #endif
+diff --git a/src/ui/profile/dialog_edit_profile.cpp b/src/ui/profile/dialog_edit_profile.cpp
+index a886b4c3..8852fb76 100755
+--- a/src/ui/profile/dialog_edit_profile.cpp
++++ b/src/ui/profile/dialog_edit_profile.cpp
+@@ -6,6 +6,7 @@
+ #include "nekobox/ui/profile/edit_custom.h"
+ #include "nekobox/ui/profile/edit_extra_core.h"
+ #include "nekobox/ui/profile/edit_mieru.h"
++#include "nekobox/ui/profile/edit_tor.h"
+ #include "nekobox/ui/profile/edit_quic.h"
+ #include "nekobox/ui/profile/edit_shadowsocks.h"
+ #include "nekobox/ui/profile/edit_socks_http.h"
+@@ -46,7 +47,7 @@
+       this);
+ #define LOAD_TYPE(a)                                                           \
+   ui->type->addItem(                                                           \
+-      Configs::ProfileManager::NewProxyEntity(a)->bean->DisplayType(), a);
++      Configs::ProfileManager::GetDisplayType(a), a);
+ 
+ DialogEditProfile::DialogEditProfile(const QString &_type, int profileOrGroupId,
+                                      QWidget *parent)
+@@ -219,6 +220,7 @@ DialogEditProfile::DialogEditProfile(const QString &_type, int profileOrGroupId,
+                       "internal-full");
+     ui->type->addItem(tr("Extra Core"), "extracore");
+     LOAD_TYPE("chain")
++    LOAD_TYPE("tor")
+ 
+     // type changed
+     connect(ui->type, &QComboBox::currentIndexChanged, this,
+@@ -316,6 +318,10 @@ void DialogEditProfile::typeSelected(const QString &newType) {
+     auto _innerWidget = new EditMieru(this);
+     innerWidget = _innerWidget;
+     innerEditor = _innerWidget;
++  } else if (type == "tor") {
++      auto _innerWidget = new EditTor(this);
++      innerWidget = _innerWidget;
++      innerEditor = _innerWidget;
+   } else {
+     validType = false;
+   }
+diff --git a/src/ui/profile/edit_tor.cpp b/src/ui/profile/edit_tor.cpp
+new file mode 100755
+index 00000000..99095058
+--- /dev/null
++++ b/src/ui/profile/edit_tor.cpp
+@@ -0,0 +1,29 @@
++#include "nekobox/ui/profile/edit_tor.h"
++#include <QFileDialog>
++
++#include "nekobox/configs/proxy/TorBean.hpp"
++
++EditTor::EditTor(QWidget *parent) : QWidget(parent), ui(new Ui::EditTor) {
++    ui->setupUi(this);
++}
++
++EditTor::~EditTor() {
++    delete ui;
++}
++
++void EditTor::onStart(std::shared_ptr<Configs::ProxyEntity> _ent) {
++    this->ent = _ent;
++    auto bean = this->ent->TorBean();
++    P_LOAD_STRINGLIST(extra_args)
++    P_LOAD_STRING(executable_path)
++    P_LOAD_STRING(data_directory)
++
++}
++
++bool EditTor::onEnd() {
++    auto bean = this->ent->TorBean();
++    P_SAVE_STRING(executable_path)
++    P_SAVE_STRING(data_directory)
++    P_SAVE_STRINGLIST(extra_args)
++    return true;
++}
+diff --git a/src/ui/setting/Icon.cpp b/src/ui/setting/Icon.cpp
+index aa92c070..8ad39012 100755
+--- a/src/ui/setting/Icon.cpp
++++ b/src/ui/setting/Icon.cpp
+@@ -1,5 +1,5 @@
+ #include "nekobox/ui/setting/Icon.hpp"
+-
++#include "nekobox/global/GuiUtils.hpp"
+ #include <QCoreApplication>
+ #include <QPainter>
+ #include <QDir>
+@@ -15,24 +15,16 @@ QPixmap Icon::GetTrayIcon(TrayIconStatus status) {
+     QPixmap pixmap;
+     auto pixmap_read = QPixmap(SYSTRAY_ICON("icon.png"), FORMAT);
+     if (!pixmap_read.isNull()) pixmap = pixmap_read;
+-
+-    if (status == TrayIconStatus::NONE) return pixmap;
++    if (!indicatorRuleMap.contains(status)) return pixmap;
++    auto rule = indicatorRuleMap[status];
+ 
+     auto p = QPainter(&pixmap);
+     auto side = pixmap.width();
+-    auto radius = side * 0.4;
+-    auto d = side * 0.4;
+-    auto margin = side * 0.04;
+-
+-    if (status == TrayIconStatus::RUNNING) {
+-        p.setBrush(QBrush(Qt::darkGreen));
+-    } else if (status == TrayIconStatus::SYSTEM_PROXY) {
+-        p.setBrush(QBrush(Qt::blue));
+-    } else if (status == TrayIconStatus::VPN) {
+-        p.setBrush(QBrush(QColor(165, 42, 42)));
+-    } else if (status == TrayIconStatus::DNS) {
+-        p.setBrush(QBrush(Qt::darkMagenta));
+-    }
++    auto radius = side * rule.radius;
++    auto d = side * rule.diameter;
++    auto margin = side * rule.margin;
++    
++    p.setBrush(QBrush(rule.color));
+     p.drawRoundedRect(
+         QRect(side - d - margin,
+               side - d - margin,
+@@ -41,6 +33,5 @@ QPixmap Icon::GetTrayIcon(TrayIconStatus status) {
+               radius,
+               radius);
+     p.end();
+-
+     return pixmap;
+ }
