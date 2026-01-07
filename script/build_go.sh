@@ -1,5 +1,12 @@
 #!/bin/bash
 set -e
+
+if [[ ! -f core/server/sing-box/box.go ]]
+then
+  git submodule init ||:
+  git submodule update ||:
+fi
+
 source script/env_deploy.sh
 if [[ "$GOOS" == "windows" && "$GOARCH" == "amd64" ]]; then
   DEST=$DEPLOYMENT/windows64
