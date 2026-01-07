@@ -1053,6 +1053,16 @@
         <source>Outbound</source>
         <translation type="unfinished">خروجی</translation>
     </message>
+    <message>
+        <location filename="../../src/ui/profile/edit_chain.cpp" line="46"/>
+        <source>Add proxy</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/profile/edit_chain.cpp" line="66"/>
+        <source>Replace %1 proxy</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>DialogHotkey</name>
@@ -2297,8 +2307,8 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="177"/>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="603"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="2157"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="2160"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2147"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2150"/>
         <source>System Proxy</source>
         <translation>پروکسی سیستمی</translation>
     </message>
@@ -2370,15 +2380,15 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="744"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3134"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3142"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3118"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3126"/>
         <source>Start</source>
         <translation>آغازکردن</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="752"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3134"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3142"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3118"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3126"/>
         <source>Stop</source>
         <translation>متوقف کردن</translation>
     </message>
@@ -2419,7 +2429,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="823"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="1136"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1133"/>
         <source>Export %1 config</source>
         <translation>استخراج پیکربندی %1</translation>
     </message>
@@ -2507,7 +2517,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="977"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="2512"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2496"/>
         <source>Clone</source>
         <translation>همزادسازی</translation>
     </message>
@@ -2537,149 +2547,147 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>پوشه Config باز شود</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="843"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="840"/>
         <source>Edit Routing Profiles</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="865"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="862"/>
         <source>Update Routing Profiles</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="876"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="880"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="873"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="877"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="897"/>
         <location filename="../../src/ui/mainwindow.cpp" line="900"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="903"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="946"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="943"/>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="94"/>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="103"/>
         <source>Update Response</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="877"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="874"/>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="104"/>
         <source>No routing profiles are updated</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="881"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="878"/>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="95"/>
         <source>Updated %1 routing profiles</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="891"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="888"/>
         <source>Update RuleSet Map</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="901"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="898"/>
         <source>Failed to update rulesets</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="904"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="901"/>
         <source>Rulesets updated successfully</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="913"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="910"/>
         <source>Update RuleSet Cache</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="947"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="944"/>
         <source>Rulesets cache is updated</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="961"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="958"/>
         <source>Clear RuleSet Cache</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="993"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="990"/>
         <source>Enable AdBlock</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1329"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1326"/>
         <source>Error</source>
         <translation>خطا</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1416"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1413"/>
         <source>Tun Settings changed</source>
         <translation>تنظیمات Tun تغییر کرد</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1417"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1414"/>
         <source>Restart Tun to take effect.</source>
         <translation>Tun را مجدداً راه اندازی کنید تا اعمال شود.</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1423"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="1480"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="2564"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="2898"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="2951"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="2998"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3201"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1420"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1477"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2548"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2882"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2935"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2982"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3185"/>
         <source>Confirmation</source>
         <translation>تائیدیه</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1424"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="1481"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1421"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1478"/>
         <source>Settings changed, restart proxy?</source>
         <translation>تنظیمات تغییر کرد، پراکسی راه اندازی مجدد شود؟</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1495"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1492"/>
         <source>Imported %1 profile(s)</source>
         <translation>%1 نمایه وارد شد</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2125"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2122"/>
         <source>Not Running</source>
         <translation>در حال اجرا نیست</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2136"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="2149"/>
         <source>Select</source>
-        <translation>انتخاب</translation>
+        <translation type="vanished">انتخاب</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2513"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2497"/>
         <source>Clone %1 item(s)</source>
         <translation>همزادسازی %1 مورد</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2565"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2549"/>
         <source>Remove %1 item(s) ?</source>
         <translation>حذف %1 مورد؟</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2600"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="2612"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2584"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2596"/>
         <source>Copied %1 item(s)</source>
         <translation>%1 مورد کپی شد</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2627"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2611"/>
         <source>Config copied</source>
         <translation>کانفیگ کپی شد</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2813"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2797"/>
         <source>QR Code not found</source>
         <translation>کد QR یافت نشد</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3132"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3116"/>
         <source>Clear</source>
         <translation>پاک کردن</translation>
     </message>
@@ -2715,7 +2723,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation type="vanished">نمایش پنجره برنامه</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1452"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1449"/>
         <source>Settings changed</source>
         <translation>تنظیمات تغییر کرد</translation>
     </message>
@@ -2741,12 +2749,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>توقف ناموفق بود ، لطفا برنامه را دوباره اجرا کنید</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2138"/>
-        <source>Select mode, double-click or press Enter to select a profile, press ESC to exit.</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1453"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1450"/>
         <source>Restart the program to take effect.</source>
         <translation>برای مشاهده نتیجه برنامه را دوباره راه اندازی کنید</translation>
     </message>
@@ -2772,22 +2775,22 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1127"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3160"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3144"/>
         <source>Add new Group</source>
         <translation>افزودن گروه جدید</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3193"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3177"/>
         <source>Delete selected Group</source>
         <translation>حذف گروه انتخاب‌شده</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3194"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3178"/>
         <source>Edit selected Group</source>
         <translation>ویرایش گروه انتخاب‌شده</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3202"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3186"/>
         <source>Remove %1?</source>
         <translation>حذف %1?</translation>
     </message>
@@ -2837,27 +2840,27 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>اگر در راه‌اندازی VPN مشکل دارید، می‌توانید فرآیند هسته را اینجا بازنشانی کنید و سپس دوباره نمایه را راه‌اندازی کنید. خطا: %1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2546"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2530"/>
         <source> Confirmation </source>
         <translation>تأیید</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2547"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2531"/>
         <source> Remove %1 item(s) ? </source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2899"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2883"/>
         <source>Remove %1 Unavailable item(s) ?</source>
         <translation>حذف %1 مورد غیرقابل دسترس؟</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2952"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2936"/>
         <source>Remove %1 Invalid item(s) ?</source>
         <translation>حذف %1 مورد نادرست؟</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2999"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2983"/>
         <source>Replace domain server addresses with their resolved IPs?</source>
         <translation>جایگزینی نشانی‌های سرور دامنه با IPهای حل‌شده آن‌ها؟</translation>
     </message>
@@ -2887,7 +2890,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>گزارش‌ها</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1800"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1797"/>
         <source>Please give the core root privileges</source>
         <translation>لطفاً به هسته دسترسی ریشه بدهید</translation>
     </message>
@@ -3025,22 +3028,22 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>خطای بازگشت توقف</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2629"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2613"/>
         <source>Copy core config</source>
         <translation>کپی پیکربندی هسته</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2631"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2615"/>
         <source>Copy test config</source>
         <translation>کپی پیکربندی تست</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3867"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3843"/>
         <source>Cannot start</source>
         <translation>نمی‌توان شروع کرد</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3868"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3844"/>
         <source>Last download request has not finished yet</source>
         <translation>آخرین درخواست بارگیری هنوز به پایان نرسیده است</translation>
     </message>
@@ -3050,7 +3053,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>نمودار ترافیک</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3902"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3878"/>
         <source>Failed to download update assets</source>
         <translation>بارگیری منابع به‌روزرسانی ناموفق بود</translation>
     </message>
@@ -3090,12 +3093,12 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>خطای تست سرعت [%1]: %2</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1748"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1745"/>
         <source>User opted for no privilege req, some features may not work</source>
         <translation>کاربر درخواست دسترسی را غیرفعال کرده است، برخی ویژگی‌ها ممکن است کار نکنند</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2834"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2818"/>
         <source>Unable to capture screen</source>
         <translation>ناتوانی در ضبط صفحه</translation>
     </message>
@@ -3181,22 +3184,22 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>انتخاب کردن</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3772"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3783"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3827"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3849"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3858"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3893"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3748"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3759"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3803"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3825"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3834"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3869"/>
         <source>Update</source>
         <translation>بروزرسانی</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3827"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3803"/>
         <source>No update</source>
         <translation>بدون بروزرسانی جدید</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3850"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3826"/>
         <source>Update found: %1
 Release note:
 %2</source>
@@ -3205,58 +3208,58 @@ Release note:
 %2</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3855"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3831"/>
         <source>Open in browser</source>
         <translation>در مرور گر باز شود</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3853"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3829"/>
         <source>Close</source>
         <translation>بستن</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1244"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1241"/>
         <source>Requesting rule-set list error: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2130"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2127"/>
         <source>IP address: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3894"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3870"/>
         <source>Update is ready, restart to install?</source>
         <translation>به روز رسانی آماده است، برای نصب مجدد راه اندازی شود؟</translation>
     </message>
     <message>
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="864"/>
+        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="865"/>
         <source>url detected</source>
         <translation>آدرس شناسایی شد</translation>
     </message>
     <message>
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="865"/>
+        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="866"/>
         <source>%1
 How to update?</source>
         <translation>چگونه بروزرسانی کنم ؟</translation>
     </message>
     <message>
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="904"/>
+        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="905"/>
         <source>Requesting subscription: %1</source>
         <translation>درخواست اشتراک: %1</translation>
     </message>
     <message>
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="908"/>
+        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="909"/>
         <source>Requesting subscription %1 error: %2</source>
         <translation>خطای درخواست اشتراک %1: %2</translation>
     </message>
     <message>
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="933"/>
+        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="934"/>
         <source>Clearing servers...</source>
         <translation>در حال پاک کردن سرورها...</translation>
     </message>
     <message>
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="1004"/>
+        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="1005"/>
         <source>Added %1 profiles:
 %2
 Deleted %3 Profiles:
@@ -3267,12 +3270,12 @@ Deleted %3 Profiles:
 %4</translation>
     </message>
     <message>
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="1009"/>
+        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="1010"/>
         <source>Nothing</source>
         <translation>خالی</translation>
     </message>
     <message>
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="1012"/>
+        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="1013"/>
         <source>Change of %1:</source>
         <translation>تغییر %1:</translation>
     </message>
@@ -3283,7 +3286,7 @@ Deleted %3 Profiles:
     </message>
     <message>
         <location filename="../../src/stats/traffic/TrafficLooper.cpp" line="115"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="2093"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2090"/>
         <source>Proxy: %1
 Direct: %2</source>
         <translation>پروکسی: %1 مستقیم: %2</translation>
@@ -3294,7 +3297,7 @@ Direct: %2</source>
         <translation>درخواست با پروکسی اما هیچ نمایه‌ای شروع نشده است.</translation>
     </message>
     <message>
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="915"/>
+        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="916"/>
         <source>Subscription request fininshed: %1</source>
         <translation>درخواست اشتراک به پایان رسید: %1</translation>
     </message>
@@ -3309,12 +3312,12 @@ Direct: %2</source>
         <translation>پیش فرض</translation>
     </message>
     <message>
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="859"/>
+        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="860"/>
         <source>Add profiles to this group</source>
         <translation>افزودن نمایه‌ها به این گروه</translation>
     </message>
     <message>
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="860"/>
+        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="861"/>
         <source>Create new subscription group</source>
         <translation>ایجاد گروه اشتراک جدید</translation>
     </message>
@@ -3324,12 +3327,12 @@ Direct: %2</source>
         <translation>نمی‌توان پرونده را باز کرد.</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3773"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3749"/>
         <source>Not official support platform</source>
         <translation>پلتفرم پشتیبانی رسمی نیست</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3784"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3760"/>
         <source>Requesting update error: %1</source>
         <translation>خطای درخواست به‌روزرسانی: %1</translation>
     </message>
@@ -3339,12 +3342,12 @@ Direct: %2</source>
         <translation>حالت Tun با پیکربندی‌های سفارشی قابل استفاده نیست</translation>
     </message>
     <message>
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="938"/>
+        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="939"/>
         <source>Processing subscription data...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="941"/>
+        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="942"/>
         <source>Process complete, applying...</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3683,7 +3686,7 @@ Direct: %2</source>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="218"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="1015"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1012"/>
         <source>Download Profiles</source>
         <translation type="unfinished"></translation>
     </message>

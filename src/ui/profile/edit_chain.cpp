@@ -1,10 +1,10 @@
-#include "nekobox/ui/profile/edit_chain.h"
+#include <nekobox/ui/profile/edit_chain.h>
 
-#include "nekobox/ui/mainwindow_interface.h"
-#include "nekobox/ui/profile/ProxyItem.h"
-
-#include "nekobox/dataStore/Database.hpp"
-#include "nekobox/configs/proxy/ChainBean.hpp"
+#include <nekobox/ui/mainwindow_interface.h>
+#include <nekobox/ui/profile/ProxyItem.h>
+#include <nekobox/ui/group/dialog_edit_group.h>
+#include <nekobox/dataStore/Database.hpp>
+#include <nekobox/configs/proxy/ChainBean.hpp>
 
 EditChain::EditChain(QWidget *parent) : QWidget(parent), ui(new Ui::EditChain) {
     ui->setupUi(this);
@@ -41,11 +41,15 @@ bool EditChain::onEnd() {
 }
 
 void EditChain::on_select_profile_clicked() {
-    get_edit_dialog()->hide();
-    GetMainWindow()->start_select_mode(this, [=,this](int id) {
-        get_edit_dialog()->show();
-        AddProfileToListIfExist(id);
+  //  get_edit_dialog()->hide();
+    auto window = new DialogGroupChooseProxy(this);
+    window->setWindowTitle(QCoreApplication::translate(
+        "DialogGroupChooseProxy","Add proxy"));
+    QObject::connect(window, &DialogGroupChooseProxy::set_proxy,
+        this, [this](int id) {
+            AddProfileToListIfExist(id);
     });
+    window->show();
 }
 
 void EditChain::AddProfileToListIfExist(int profileId) {
@@ -58,11 +62,14 @@ void EditChain::AddProfileToListIfExist(int profileId) {
         ui->listWidget->setItemWidget(wI, w);
         // change button
         connect(w->get_change_button(), &QPushButton::clicked, w, [=,this] {
-            get_edit_dialog()->hide();
-            GetMainWindow()->start_select_mode(w, [=,this](int newId) {
-                get_edit_dialog()->show();
-                ReplaceProfile(w, newId);
+            auto window = new DialogGroupChooseProxy(this);
+            window->setWindowTitle(QCoreApplication::translate(
+                "DialogGroupChooseProxy","Replace %1 proxy").arg( w->ent->bean->DisplayName() ));
+            QObject::connect(window, &DialogGroupChooseProxy::set_proxy,
+                this, [w, this](int newId) {
+                    ReplaceProfile(w, newId);
             });
+            window->show();
         });
     }
 }

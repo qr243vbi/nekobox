@@ -1,0 +1,8 @@
+FROM opensuse/tumbleweed
+WORKDIR /app
+
+ADD https://codefloe.com/qr243vbi/nekobox/raw/branch/main/nekobox.spec /app/nekobox.spec
+
+RUN zypper -n in findutils rpm-build grep
+
+RUN ["sh", "-c", "rpmspec -q --buildrequires nekobox.spec | sed 's@\\(.*\\)@in \\1@g;' |  zypper -n shell"]

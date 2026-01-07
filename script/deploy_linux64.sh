@@ -104,7 +104,7 @@ cd AppDir
 mv nekobox_core .nekobox_core_binary_file
 cat << 'EOF' > nekobox_core
 #!/bin/sh
-exec env --argv0="${APPIMAGE}" "$(dirname $0)"/".nekobox_core_binary_file" "${@}"
+exec "$(dirname $0)"/".nekobox_core_binary_file" -argv0 "${APPIMAGE}" "${@}"
 EOF
 cat << 'EOF' > AppRun
 #!/bin/sh

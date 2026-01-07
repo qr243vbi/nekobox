@@ -59,8 +59,9 @@ func RunCore(_port *int, _debug *bool) {
 func main() {
 	var _admin *bool
 	var _waitpid *int
-	_port := flag.Int("port", 19810, "")
-	_debug := flag.Bool("debug", false, "")
+	_port := flag.Int("port", 19810, "Port")
+	_debug := flag.Bool("debug", false, "Debug mode")
+	_arg0 := flag.String("argv0", os.Args[0], "Replace first argument")
 
 	if runtime.GOOS == "windows" || runtime.GOOS == "linux" {
 		_admin = flag.Bool("admin", false, "Run in admin mode")
@@ -72,6 +73,8 @@ func main() {
 	redirectError := flag.String("redirect-error", "", "Path to redirect stderr (e.g. named pipe or file)")
 
 	flag.CommandLine.Parse(os.Args[1:])
+
+	os.Args[0] = *_arg0
 
 	if runtime.GOOS == "linux" {
 		if *_admin {

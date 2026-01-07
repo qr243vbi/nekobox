@@ -417,7 +417,7 @@ jobs:
       - name: Release
         shell: bash
         run: |
-          ./ghr.exe -delete -t "${{ github.token }}" -b "${{ github.event.inputs.text }}" -n "${{ github.event.inputs.tag }}" "${{ github.event.inputs.tag }}" deployment
+          ./ghr.exe -delete -t "${{ github.token }}" -b "$(echo -e "${{ github.event.inputs.text }}")" -n "${{ github.event.inputs.tag }}" "${{ github.event.inputs.tag }}" deployment
 
   webhook:
     name: Trigger Open Build Service
