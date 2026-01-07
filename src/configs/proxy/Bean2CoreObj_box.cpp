@@ -8,8 +8,9 @@ namespace Configs {
 
     static QJsonObject getXmux(const QJsonValue & value){
         QJsonObject obj;
-        for (auto [k, value]: asKeyValueRange(value.toObject())){
-            QString key = k.toString().toLower().replace("_", "");
+        for (auto [k, v]: asKeyValueRange(value.toObject().toVariantMap()) ){
+            QString key = k.toLower().replace("_", "");
+            QJsonValue value = v.toJsonValue();
             if (key == "maxconcurrency"){
                 obj["max_concurrency"] = getXbadoptionRange(value);
             } else if (key == "maxconnections"){
@@ -47,8 +48,9 @@ namespace Configs {
 
     static void parseExtraXhttp(QJsonObject & transport, QString extra){
         extra = extra.replace("+", "");
-        for (auto [k, value]: asKeyValueRange(QJsonDocument::fromJson(extra.toUtf8()).object())){
-            QString key = k.toString().toLower().replace("_", "");
+        for (auto [k, v]: asKeyValueRange(QJsonDocument::fromJson(extra.toUtf8()).object().toVariantMap())){
+            QString key = k.toLower().replace("_", "");
+            QJsonValue value = v.toJsonValue();
             if (key == "xpaddingbytes"){
                 transport["x_padding_bytes"] = getXbadoptionRange(value);
             } else if (key == "nogrpcheader"){
