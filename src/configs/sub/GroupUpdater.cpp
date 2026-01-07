@@ -1,10 +1,9 @@
-#include "nekobox/configs/proxy/V2RayStreamSettings.hpp"
-#include "nekobox/dataStore/ProfileFilter.hpp"
-#include "nekobox/configs/proxy/includes.h"
-#include "nekobox/global/HTTPRequestHelper.hpp"
-
-#include "nekobox/configs/sub/GroupUpdater.hpp"
-
+#include <nekobox/configs/proxy/V2RayStreamSettings.hpp>
+#include <nekobox/dataStore/ProfileFilter.hpp>
+#include <nekobox/dataStore/Utils.hpp>
+#include <nekobox/configs/proxy/includes.h>
+#include <nekobox/global/HTTPRequestHelper.hpp>
+#include <nekobox/configs/sub/GroupUpdater.hpp>
 #include <QInputDialog>
 #include <QUrlQuery>
 
@@ -307,7 +306,9 @@ namespace Subscription {
             auto out = o.toObject();
             if (out.isEmpty())
             {
-                MW_show_log("invalid outbound of type: " + o.type());
+                MW_show_log(
+                    QString("invalid outbound of type: ") +
+                    QJsonType2QString(o.type()));
                 continue;
             }
 

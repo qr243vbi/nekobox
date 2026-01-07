@@ -1,6 +1,9 @@
 #pragma once
 
-#include "nekobox/dataStore/Database.hpp"
+#include <nekobox/dataStore/Database.hpp>
+#include <QJsonValue>
+#include <QObject>
+
 
 namespace Subscription {
     class RawUpdater {
@@ -22,7 +25,6 @@ namespace Subscription {
 
     class GroupUpdater : public QObject {
         Q_OBJECT
-
     public:
         void AsyncUpdate(const QString &str, int _sub_gid = -1, const std::function<void()> &finish = nullptr);
 

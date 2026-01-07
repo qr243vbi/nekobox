@@ -401,3 +401,23 @@ QString QMap2QString(const QVariantMap &map) {
     return jsonDoc.toJson(QJsonDocument::Indented);  // Use Compact for a minified string
 }
 
+QString QJsonType2QString(QJsonValue::Type type){
+    switch (type){
+        case QJsonValue::Type::String:
+            return "String";
+        case QJsonValue::Type::Array:
+            return "Array";
+        case QJsonValue::Type::Bool:
+            return "Bool";
+        case QJsonValue::Type::Double:
+            return "Double";
+        case QJsonValue::Type::Null:
+            return "Null";
+        case QJsonValue::Type::Object:
+            return "Object";
+        case QJsonValue::Type::Undefined:
+            return "Undefined";
+    };
+}
+
+
