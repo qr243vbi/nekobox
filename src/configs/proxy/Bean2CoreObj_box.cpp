@@ -2,6 +2,7 @@
 #include <nekobox/configs/proxy/includes.h>
 
 #include <qjsonobject.h>
+#include <QStandardPaths>
 
 namespace Configs {
     static QJsonObject getXbadoptionRange(const QJsonValue & value);
@@ -522,9 +523,14 @@ namespace Configs {
     CoreObjOutboundBuildResult TorBean::BuildCoreObjSingBox()
     {
         CoreObjOutboundBuildResult result;
+        QString path = this->executable_path;
+        if (!path.isEmpty() || !QFile::exists(path)){
+            path = QStandardPaths::findExecutable("tor");
+        }
+
         QJsonObject outbound {
             {"type", "tor"},
-            {"executable_path", this->executable_path},
+            {"executable_path", path},
             {"extra_args", QListStr2QJsonArray(this->extra_args)},
             {"data_directory", this->data_directory},
             {"torrc", QJsonObject::fromVariantMap(this->torrc)}
