@@ -122,11 +122,13 @@ namespace Configs {
         if (isValidStrArray(process_name)) obj["process_name"] = get_as_array(process_name);
         if (isValidStrArray(process_path)) obj["process_path"] = get_as_array(process_path);
         if (isValidStrArray(process_path_regex)) obj["process_path_regex"] = get_as_array(process_path_regex);
-        if (isValidStrArray(rule_set))
-            if (forView)
+        if (isValidStrArray(rule_set)){
+            if (forView){
                 obj["rule_set"] = get_as_array(rule_set);
-            else
+            } else {
                 obj["rule_set"] = get_as_array(rule_set, false, get_rule_set_name);
+            }
+        }
         if (invert) obj["invert"] = invert;
         // fix action type
         if (action == "route")
