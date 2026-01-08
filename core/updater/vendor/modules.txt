@@ -1,0 +1,35 @@
+# github.com/codeclysm/extract/v4 v4.0.0
+## explicit; go 1.22
+github.com/codeclysm/extract/v4
+# github.com/h2non/filetype v1.1.3
+## explicit; go 1.13
+github.com/h2non/filetype
+github.com/h2non/filetype/matchers
+github.com/h2non/filetype/matchers/isobmff
+github.com/h2non/filetype/types
+# github.com/juju/errors v0.0.0-20181118221551-089d3ea4e4d5
+## explicit
+github.com/juju/errors
+# github.com/juju/loggo v1.0.0
+## explicit; go 1.14
+# github.com/klauspost/compress v1.15.13
+## explicit; go 1.17
+github.com/klauspost/compress
+github.com/klauspost/compress/fse
+github.com/klauspost/compress/huff0
+github.com/klauspost/compress/internal/cpuinfo
+github.com/klauspost/compress/internal/snapref
+github.com/klauspost/compress/zstd
+github.com/klauspost/compress/zstd/internal/xxhash
+# github.com/kr/text v0.2.0
+## explicit
+# github.com/ulikunitz/xz v0.5.12
+## explicit; go 1.12
+github.com/ulikunitz/xz
+github.com/ulikunitz/xz/internal/hash
+github.com/ulikunitz/xz/internal/xlog
+github.com/ulikunitz/xz/lzma
+# gopkg.in/mgo.v2 v2.0.0-20190816093944-a6b53ec6cb22
+## explicit
+# gopkg.in/yaml.v2 v2.4.0
+## explicit; go 1.15

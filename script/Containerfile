@@ -1,4 +1,4 @@
-FROM opensuse/leap:latest
+FROM opensuse/tumbleweed:latest
 WORKDIR /app
 
 ADD https://codefloe.com/qr243vbi/nekobox/raw/branch/main/nekobox.spec /app/nekobox.spec
@@ -10,4 +10,6 @@ RUN ( rpmspec -q --buildrequires nekobox.spec | sed 's@\(.*\)@BuildRequires: \1@
 RUN rpmbuild -bs buildreqs.spec "-D_topdir $PWD"
 
 RUN zypper -n source-install --no-recommends -d SRPMS/buildreqs-1.0-0.src.rpm
+RUN zypper -n in tar
 
+CMD ["bash", "-c", "/app/script/build_docker.sh"] 
