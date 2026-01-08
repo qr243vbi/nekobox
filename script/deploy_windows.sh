@@ -52,6 +52,9 @@ cp srslist.json $DEST/srslist.json
 #### copy exe ####
 cp $CURDIR/*.js $DEST
 cp $BUILD/nekobox.exe $DEST || cp $BUILD/Release/nekobox.exe $DEST
+cp $BUILD/nekobox_core.exe $DEST ||: 
+cp $BUILD/updater.exe $DEST ||:
+
 cp -RT $CURDIR/res/public $DEST/public
 echo "[General]" > $DEST/global.ini
 echo "software_name=NelBox" >> $DEST/global.ini
