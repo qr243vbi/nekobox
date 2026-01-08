@@ -3,6 +3,7 @@
 #include <memory>
 #include <QElapsedTimer>
 #include <QProcess>
+#include <QMutex>
 
 #undef ELEVATE_METHOD
 #ifdef Q_OS_UNIX
@@ -42,7 +43,7 @@ namespace Configs_sys {
     private:
         bool show_stderr = false;
         bool failed_to_start = false;
-        bool restarting = false;
+        QMutex restarting;
 
         QElapsedTimer coreRestartTimer;
 

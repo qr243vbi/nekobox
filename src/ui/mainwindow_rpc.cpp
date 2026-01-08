@@ -589,9 +589,9 @@ void MainWindow::profile_start(int _id) {
     if (!Configs::dataStore->core_running) {
         runOnThread(
             [=, this] {
-                MW_show_log(tr("Try to start the config, but the core has not listened to the RPC port, so restart it..."));
+//                MW_show_log(tr("Try to start the config, but the core has not listened to the RPC port, so restart it..."));
                 core_process->start_profile_when_core_is_up = ent->id;
-                core_process->Restart();
+ //               core_process->Restart();
             },
             DS_cores);
         mu_starting.unlock();
