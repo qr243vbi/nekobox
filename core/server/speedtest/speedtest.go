@@ -108,10 +108,25 @@ func WithUserConfig(userConfig *UserConfig) Option {
 	}
 }
 
+func cloneDefaultClient() *http.Client {
+	newClient := *http.DefaultClient
+	newClient.Transport = &http.Transport{
+		Proxy:                 http.ProxyFromEnvironment,
+		DialContext:           nil,
+		ForceAttemptHTTP2:     true,
+		MaxIdleConns:          100,
+		IdleConnTimeout:       90 * time.Second,
+		TLSHandshakeTimeout:   10 * time.Second,
+		ExpectContinueTimeout: 1 * time.Second,
+	}
+
+	return &newClient
+}
+
 // New creates a new speedtest client.
 func New(opts ...Option) *Speedtest {
 	s := &Speedtest{
-		doer:    http.DefaultClient,
+		doer:    cloneDefaultClient(),
 		Manager: NewDataManager(),
 	}
 	// load default config
