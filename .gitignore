@@ -112,6 +112,7 @@ CMakeLists.txt.user*
 out
 /libs
 /core/server/vendor
+/core/updater/vendor
 /core/server/gen/*.go
 /core/server/gen/libcore_server-remote
 /core/server/Core
