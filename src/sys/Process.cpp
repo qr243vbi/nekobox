@@ -16,6 +16,7 @@
 #endif
 
 namespace Configs_sys {
+
     CoreProcess::~CoreProcess() {
     }
 
@@ -32,10 +33,9 @@ namespace Configs_sys {
 
         connect(&process, &QProcess::readyReadStandardOutput, this, [&]() {
             auto log = process.readAllStandardOutput();
-            if (!Configs::dataStore->core_running) {
+            if (start_profile_when_core_is_up >= 0) {
                 if (log.contains("Core listening at")) {
                     // The core really started
-                    Configs::dataStore->core_running = true;
                     MW_dialog_message("ExternalProcess", "CoreStarted," + QString::number(start_profile_when_core_is_up));
                     start_profile_when_core_is_up = -1;
                 } else if (log.contains("failed to serve")) {
@@ -62,6 +62,10 @@ namespace Configs_sys {
             }
         });
         connect(&process, &QProcess::stateChanged, this, [&](QProcess::ProcessState state) {
+            if (state == QProcess::Running){
+                Configs::dataStore->core_running = true;
+            }
+
             if (state == QProcess::NotRunning) {
                 Configs::dataStore->core_running = false;
                 qDebug() << "Core stated changed to not running";
@@ -69,6 +73,8 @@ namespace Configs_sys {
 
             if (!Configs::dataStore->prepare_exit && state == QProcess::NotRunning) {
                 if (failed_to_start) return; // no retry
+                bool restarting = !this->restarting.tryLock();
+
                 if (restarting) return;
 
                 MW_show_log("[Fatal] " + QObject::tr("Core exited, cleaning up..."));
@@ -88,6 +94,7 @@ namespace Configs_sys {
                 // Restart
                 start_profile_when_core_is_up = Configs::dataStore->started_id;
                 MW_show_log("[Warn] " + QObject::tr("Restarting the core ..."));
+                this->restarting.unlock();
                 setTimeout([=,this] { Restart(); }, this, 200);
             }
         });
@@ -103,12 +110,12 @@ namespace Configs_sys {
     }
 
     void CoreProcess::Restart() {
-        restarting = true;
+        if (!restarting.tryLock()) return;
         process.kill();
         process.waitForFinished(500);
         started = false;
         Start();
-        restarting = false;
+        restarting.unlock();
     }
 
 #ifdef ELEVATE_METHOD
