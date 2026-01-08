@@ -15,6 +15,11 @@ go mod vendor
 go list -m -f '{{.Version}}' github.com/sagernet/sing-box > "$SRC_ROOT/SingBox.Version"
 popd
 
+pushd "$SRC_ROOT"/core/updater
+go mod tidy
+go mod vendor
+popd
+
 if [[ ! -d "$SRC_ROOT"/.git ]]
 then
  git init

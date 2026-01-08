@@ -1,8 +1,13 @@
-FROM opensuse/tumbleweed
+FROM opensuse/leap:latest
 WORKDIR /app
 
 ADD https://codefloe.com/qr243vbi/nekobox/raw/branch/main/nekobox.spec /app/nekobox.spec
 
-RUN zypper -n in findutils rpm-build grep
+RUN zypper -n in findutils rpm-build grep rpmdevtools
 
-RUN ["sh", "-c", "rpmspec -q --buildrequires nekobox.spec | sed 's@\\(.*\\)@in \\1@g;' |  zypper -n shell"]
+RUN ( rpmspec -q --buildrequires nekobox.spec | sed 's@\(.*\)@BuildRequires: \1@g;' ; echo "$(rpmdev-newspec buildreqs  -o - -t dummy)") > buildreqs.spec
+
+RUN rpmbuild -bs buildreqs.spec "-D_topdir $PWD"
+
+RUN zypper -n source-install --no-recommends -d SRPMS/buildreqs-1.0-0.src.rpm
+

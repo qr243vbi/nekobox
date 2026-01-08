@@ -22,6 +22,8 @@ cp srslist.json $DEST/srslist.json
 
 #### copy binary ####
 cp $BUILD/nekobox $DEST
+cp $BUILD/nekobox_core $DEST ||:
+cp $BUILD/updater $DEST ||:
 
 #### copy nekobox.png ####
 cp ./res/nekobox.ico $DEST/nekobox.ico
