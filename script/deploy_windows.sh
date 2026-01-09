@@ -1,5 +1,6 @@
 #!/bin/bash
 set -e
+pushd "$SRC_ROOT"
 export CURDIR=$PWD
 
 source script/env_deploy.sh
@@ -83,3 +84,5 @@ cd "$CURDIR"
 pwd
 makensis.exe "-DSOFTWARE_VERSION=$INPUT_VERSION" "-DSOFTWARE_NAME=NekoBox" "-DDIRECTORY=$DEST" "-DOUTFILE=$INST" "-NOCD" 'script/windows_installer.nsi'
 )
+
+popd
