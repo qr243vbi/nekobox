@@ -33,14 +33,14 @@ echo "software_name=HelBox" >> global.ini
 
 git add -f srslist* global.ini core/server/gen/*.go core/server/gen/libcore_service-remote core/server/vendor SingBox.Version
 
-git -c user.name="qr243vbi" -c user.email="my@email.org" commit -am "New Update"
+git -c user.name="a" -c user.email="my@email.org" commit -am "New Update"
 
 
 if [[ ! -e "$DEPLOYMENT" ]]
 then
  mkdir "$DEPLOYMENT"
 fi
-git ls-files --recurse-submodules | tar --transform="s,^,nekobox-unified-source-$INPUT_VERSION/,S" -c --xz -f "$DEPLOYMENT/nekobox-unified-source-$INPUT_VERSION.tar.xz" -T-
-sha256sum "$DEPLOYMENT/nekobox-unified-source-$INPUT_VERSION.tar.xz" > "$DEPLOYMENT/nekobox-unified-source-$INPUT_VERSION.tar.xz.sha256sum"
+git ls-files --recurse-submodules | tar --transform="s,^,$archive_standalone/,S" -c --xz -f "$DEPLOYMENT/$archive_standalone.tar.xz" -T-
+sha256sum "$DEPLOYMENT/$archive_standalone.tar.xz" > "$DEPLOYMENT/$archive_standalone.tar.xz.sha256sum"
 
-git reset --hard HEAD^1
+git reset --soft HEAD^1

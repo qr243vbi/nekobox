@@ -1,0 +1,1126 @@
+# filippo.io/edwards25519 v1.1.0
+## explicit; go 1.20
+filippo.io/edwards25519
+filippo.io/edwards25519/field
+# github.com/NullYing/npipe v0.0.0-20250430055250-2d2a4d962cf7
+## explicit
+github.com/NullYing/npipe
+# github.com/ajg/form v1.5.1
+## explicit
+github.com/ajg/form
+# github.com/akutz/memconn v0.1.0
+## explicit
+github.com/akutz/memconn
+# github.com/alexbrainman/sspi v0.0.0-20231016080023-1a75b4708caa
+## explicit; go 1.13
+github.com/alexbrainman/sspi
+github.com/alexbrainman/sspi/internal/common
+github.com/alexbrainman/sspi/negotiate
+# github.com/andybalholm/brotli v1.1.0
+## explicit; go 1.13
+github.com/andybalholm/brotli
+github.com/andybalholm/brotli/matchfinder
+# github.com/anytls/sing-anytls v0.0.11
+## explicit; go 1.23.1
+github.com/anytls/sing-anytls
+github.com/anytls/sing-anytls/padding
+github.com/anytls/sing-anytls/pipe
+github.com/anytls/sing-anytls/session
+github.com/anytls/sing-anytls/skiplist
+github.com/anytls/sing-anytls/util
+# github.com/apache/thrift v0.22.0
+## explicit; go 1.23
+github.com/apache/thrift/lib/go/thrift
+# github.com/bits-and-blooms/bitset v1.13.0
+## explicit; go 1.16
+github.com/bits-and-blooms/bitset
+# github.com/caddyserver/certmagic v0.23.0
+## explicit; go 1.23.0
+github.com/caddyserver/certmagic
+github.com/caddyserver/certmagic/internal/atomicfile
+# github.com/caddyserver/zerossl v0.1.3
+## explicit; go 1.21.0
+github.com/caddyserver/zerossl
+# github.com/coder/websocket v1.8.13
+## explicit; go 1.19
+github.com/coder/websocket
+github.com/coder/websocket/internal/bpool
+github.com/coder/websocket/internal/errd
+github.com/coder/websocket/internal/util
+github.com/coder/websocket/internal/wsjs
+# github.com/coreos/go-iptables v0.7.1-0.20240112124308-65c67c9f46e6
+## explicit; go 1.16
+github.com/coreos/go-iptables/iptables
+# github.com/cretz/bine v0.2.0
+## explicit; go 1.15
+github.com/cretz/bine/control
+github.com/cretz/bine/process
+github.com/cretz/bine/tor
+github.com/cretz/bine/torutil
+github.com/cretz/bine/torutil/ed25519
+github.com/cretz/bine/torutil/ed25519/internal/edwards25519
+# github.com/dblohm7/wingoes v0.0.0-20240119213807-a09d6be7affa
+## explicit; go 1.21
+github.com/dblohm7/wingoes
+github.com/dblohm7/wingoes/com
+github.com/dblohm7/wingoes/com/automation
+github.com/dblohm7/wingoes/internal
+github.com/dblohm7/wingoes/pe
+# github.com/digitalocean/go-smbios v0.0.0-20180907143718-390a4f403a8e
+## explicit
+github.com/digitalocean/go-smbios/smbios
+# github.com/dustin/go-humanize v1.0.1
+## explicit; go 1.16
+github.com/dustin/go-humanize
+# github.com/enfein/mieru/v3 v3.26.2
+## explicit; go 1.20
+github.com/enfein/mieru/v3/apis/client
+github.com/enfein/mieru/v3/apis/common
+github.com/enfein/mieru/v3/apis/constant
+github.com/enfein/mieru/v3/apis/internal
+github.com/enfein/mieru/v3/apis/model
+github.com/enfein/mieru/v3/pkg/appctl/appctlcommon
+github.com/enfein/mieru/v3/pkg/appctl/appctlpb
+github.com/enfein/mieru/v3/pkg/cipher
+github.com/enfein/mieru/v3/pkg/common
+github.com/enfein/mieru/v3/pkg/congestion
+github.com/enfein/mieru/v3/pkg/deque
+github.com/enfein/mieru/v3/pkg/log
+github.com/enfein/mieru/v3/pkg/mathext
+github.com/enfein/mieru/v3/pkg/metrics
+github.com/enfein/mieru/v3/pkg/metrics/metricspb
+github.com/enfein/mieru/v3/pkg/protocol
+github.com/enfein/mieru/v3/pkg/replay
+github.com/enfein/mieru/v3/pkg/rng
+github.com/enfein/mieru/v3/pkg/sockopts
+github.com/enfein/mieru/v3/pkg/stderror
+github.com/enfein/mieru/v3/pkg/version
+# github.com/fsnotify/fsnotify v1.7.0
+## explicit; go 1.17
+github.com/fsnotify/fsnotify
+# github.com/fxamacker/cbor/v2 v2.7.0
+## explicit; go 1.17
+github.com/fxamacker/cbor/v2
+# github.com/gaissmai/bart v0.11.1
+## explicit; go 1.21
+github.com/gaissmai/bart
+# github.com/go-chi/chi/v5 v5.2.2
+## explicit; go 1.20
+github.com/go-chi/chi/v5
+github.com/go-chi/chi/v5/middleware
+# github.com/go-chi/render v1.0.3
+## explicit; go 1.16
+github.com/go-chi/render
+# github.com/go-json-experiment/json v0.0.0-20250103232110-6a9a0fde9288
+## explicit; go 1.23
+github.com/go-json-experiment/json
+github.com/go-json-experiment/json/internal
+github.com/go-json-experiment/json/internal/jsonflags
+github.com/go-json-experiment/json/internal/jsonopts
+github.com/go-json-experiment/json/internal/jsonwire
+github.com/go-json-experiment/json/jsontext
+# github.com/go-ole/go-ole v1.3.0
+## explicit; go 1.12
+github.com/go-ole/go-ole
+github.com/go-ole/go-ole/oleutil
+# github.com/gobwas/httphead v0.1.0
+## explicit; go 1.15
+github.com/gobwas/httphead
+# github.com/gobwas/pool v0.2.1
+## explicit
+github.com/gobwas/pool
+github.com/gobwas/pool/internal/pmath
+github.com/gobwas/pool/pbufio
+github.com/gobwas/pool/pbytes
+# github.com/godbus/dbus/v5 v5.1.1-0.20230522191255-76236955d466
+## explicit; go 1.12
+github.com/godbus/dbus/v5
+# github.com/gofrs/uuid/v5 v5.4.0
+## explicit; go 1.19
+github.com/gofrs/uuid/v5
+# github.com/golang/groupcache v0.0.0-20210331224755-41bb18bfe9da
+## explicit
+github.com/golang/groupcache/lru
+# github.com/google/btree v1.1.3
+## explicit; go 1.18
+github.com/google/btree
+# github.com/google/go-cmp v0.7.0
+## explicit; go 1.21
+github.com/google/go-cmp/cmp
+github.com/google/go-cmp/cmp/internal/diff
+github.com/google/go-cmp/cmp/internal/flags
+github.com/google/go-cmp/cmp/internal/function
+github.com/google/go-cmp/cmp/internal/value
+# github.com/google/nftables v0.3.0
+## explicit; go 1.21
+github.com/google/nftables
+github.com/google/nftables/alignedbuff
+github.com/google/nftables/binaryutil
+github.com/google/nftables/expr
+github.com/google/nftables/internal/parseexprfunc
+github.com/google/nftables/userdata
+github.com/google/nftables/xt
+# github.com/google/shlex v0.0.0-20191202100458-e7afc7fbc510
+## explicit; go 1.13
+github.com/google/shlex
+# github.com/google/uuid v1.6.0
+## explicit
+github.com/google/uuid
+# github.com/gorilla/csrf v1.7.3-0.20250123201450-9dd6af1f6d30
+## explicit; go 1.20
+github.com/gorilla/csrf
+# github.com/gorilla/securecookie v1.1.2
+## explicit; go 1.20
+github.com/gorilla/securecookie
+# github.com/hashicorp/yamux v0.1.2
+## explicit; go 1.20
+github.com/hashicorp/yamux
+# github.com/hdevalence/ed25519consensus v0.2.0
+## explicit; go 1.19
+github.com/hdevalence/ed25519consensus
+# github.com/illarion/gonotify/v2 v2.0.3
+## explicit; go 1.12
+github.com/illarion/gonotify/v2
+# github.com/inconshreveable/mousetrap v1.1.0
+## explicit; go 1.18
+github.com/inconshreveable/mousetrap
+# github.com/insomniacslk/dhcp v0.0.0-20250417080101-5f8cf70e8c5f
+## explicit; go 1.23.0
+github.com/insomniacslk/dhcp/dhcpv4
+github.com/insomniacslk/dhcp/iana
+github.com/insomniacslk/dhcp/interfaces
+github.com/insomniacslk/dhcp/rfc1035label
+# github.com/jsimonetti/rtnetlink v1.4.0
+## explicit; go 1.20
+github.com/jsimonetti/rtnetlink
+github.com/jsimonetti/rtnetlink/internal/unix
+# github.com/klauspost/compress v1.17.11
+## explicit; go 1.21
+github.com/klauspost/compress
+github.com/klauspost/compress/fse
+github.com/klauspost/compress/huff0
+github.com/klauspost/compress/internal/cpuinfo
+github.com/klauspost/compress/internal/snapref
+github.com/klauspost/compress/zstd
+github.com/klauspost/compress/zstd/internal/xxhash
+# github.com/klauspost/cpuid/v2 v2.2.10
+## explicit; go 1.22
+github.com/klauspost/cpuid/v2
+# github.com/kortschak/wol v0.0.0-20200729010619-da482cc4850a
+## explicit; go 1.12
+github.com/kortschak/wol
+# github.com/libdns/alidns v1.0.5-libdns.v1.beta1
+## explicit; go 1.16
+github.com/libdns/alidns
+# github.com/libdns/cloudflare v0.2.2-0.20250708034226-c574dccb31a6
+## explicit; go 1.18
+github.com/libdns/cloudflare
+# github.com/libdns/libdns v1.1.0
+## explicit; go 1.18
+github.com/libdns/libdns
+# github.com/logrusorgru/aurora v2.0.3+incompatible
+## explicit
+github.com/logrusorgru/aurora
+# github.com/mdlayher/genetlink v1.3.2
+## explicit; go 1.18
+github.com/mdlayher/genetlink
+# github.com/mdlayher/netlink v1.7.3-0.20250113171957-fbb4dce95f42
+## explicit; go 1.21
+github.com/mdlayher/netlink
+github.com/mdlayher/netlink/nlenc
+github.com/mdlayher/netlink/nltest
+# github.com/mdlayher/sdnotify v1.0.0
+## explicit; go 1.18
+github.com/mdlayher/sdnotify
+# github.com/mdlayher/socket v0.5.1
+## explicit; go 1.20
+github.com/mdlayher/socket
+# github.com/metacubex/tfo-go v0.0.0-20250921095601-b102db4216c0
+## explicit; go 1.20
+github.com/metacubex/tfo-go
+# github.com/metacubex/utls v1.8.3
+## explicit; go 1.20
+github.com/metacubex/utls
+github.com/metacubex/utls/dicttls
+github.com/metacubex/utls/internal/boring
+github.com/metacubex/utls/internal/byteorder
+github.com/metacubex/utls/internal/cpu
+github.com/metacubex/utls/internal/fips140tls
+github.com/metacubex/utls/internal/helper
+github.com/metacubex/utls/internal/hkdf
+github.com/metacubex/utls/internal/hpke
+github.com/metacubex/utls/internal/mlkem
+github.com/metacubex/utls/internal/quicvarint
+github.com/metacubex/utls/internal/quicvarint/protocol
+github.com/metacubex/utls/internal/ratelimit
+github.com/metacubex/utls/internal/tls12
+github.com/metacubex/utls/internal/tls13
+# github.com/mholt/acmez/v3 v3.1.2
+## explicit; go 1.21.0
+github.com/mholt/acmez/v3
+github.com/mholt/acmez/v3/acme
+# github.com/miekg/dns v1.1.67
+## explicit; go 1.23.0
+github.com/miekg/dns
+# github.com/mitchellh/go-ps v1.0.0
+## explicit; go 1.13
+github.com/mitchellh/go-ps
+# github.com/pierrec/lz4/v4 v4.1.21
+## explicit; go 1.14
+github.com/pierrec/lz4/v4
+github.com/pierrec/lz4/v4/internal/lz4block
+github.com/pierrec/lz4/v4/internal/lz4errors
+github.com/pierrec/lz4/v4/internal/lz4stream
+github.com/pierrec/lz4/v4/internal/xxh32
+# github.com/prometheus-community/pro-bing v0.4.0
+## explicit; go 1.19
+github.com/prometheus-community/pro-bing
+# github.com/quic-go/qpack v0.5.1
+## explicit; go 1.22
+github.com/quic-go/qpack
+# github.com/safchain/ethtool v0.3.0
+## explicit; go 1.16
+github.com/safchain/ethtool
+# github.com/sagernet/bbolt v0.0.0-20231014093535-ea5cb2fe9f0a
+## explicit; go 1.20
+github.com/sagernet/bbolt
+github.com/sagernet/bbolt/errors
+github.com/sagernet/bbolt/internal/common
+# github.com/sagernet/cors v1.2.1
+## explicit; go 1.14
+github.com/sagernet/cors
+# github.com/sagernet/fswatch v0.1.1
+## explicit; go 1.20
+github.com/sagernet/fswatch
+# github.com/sagernet/gvisor v0.0.0-20250325023245-7a9c0f5725fb
+## explicit; go 1.23.1
+github.com/sagernet/gvisor/pkg/atomicbitops
+github.com/sagernet/gvisor/pkg/bits
+github.com/sagernet/gvisor/pkg/buffer
+github.com/sagernet/gvisor/pkg/context
+github.com/sagernet/gvisor/pkg/cpuid
+github.com/sagernet/gvisor/pkg/gohacks
+github.com/sagernet/gvisor/pkg/goid
+github.com/sagernet/gvisor/pkg/linewriter
+github.com/sagernet/gvisor/pkg/log
+github.com/sagernet/gvisor/pkg/rand
+github.com/sagernet/gvisor/pkg/rawfile
+github.com/sagernet/gvisor/pkg/refs
+github.com/sagernet/gvisor/pkg/sleep
+github.com/sagernet/gvisor/pkg/state
+github.com/sagernet/gvisor/pkg/state/wire
+github.com/sagernet/gvisor/pkg/sync
+github.com/sagernet/gvisor/pkg/sync/locking
+github.com/sagernet/gvisor/pkg/tcpip
+github.com/sagernet/gvisor/pkg/tcpip/adapters/gonet
+github.com/sagernet/gvisor/pkg/tcpip/checksum
+github.com/sagernet/gvisor/pkg/tcpip/hash/jenkins
+github.com/sagernet/gvisor/pkg/tcpip/header
+github.com/sagernet/gvisor/pkg/tcpip/header/parse
+github.com/sagernet/gvisor/pkg/tcpip/internal/tcp
+github.com/sagernet/gvisor/pkg/tcpip/link/channel
+github.com/sagernet/gvisor/pkg/tcpip/link/fdbased
+github.com/sagernet/gvisor/pkg/tcpip/link/qdisc/fifo
+github.com/sagernet/gvisor/pkg/tcpip/link/stopfd
+github.com/sagernet/gvisor/pkg/tcpip/network/hash
+github.com/sagernet/gvisor/pkg/tcpip/network/internal/fragmentation
+github.com/sagernet/gvisor/pkg/tcpip/network/internal/ip
+github.com/sagernet/gvisor/pkg/tcpip/network/internal/multicast
+github.com/sagernet/gvisor/pkg/tcpip/network/ipv4
+github.com/sagernet/gvisor/pkg/tcpip/network/ipv6
+github.com/sagernet/gvisor/pkg/tcpip/ports
+github.com/sagernet/gvisor/pkg/tcpip/seqnum
+github.com/sagernet/gvisor/pkg/tcpip/stack
+github.com/sagernet/gvisor/pkg/tcpip/stack/gro
+github.com/sagernet/gvisor/pkg/tcpip/transport
+github.com/sagernet/gvisor/pkg/tcpip/transport/icmp
+github.com/sagernet/gvisor/pkg/tcpip/transport/internal/network
+github.com/sagernet/gvisor/pkg/tcpip/transport/internal/noop
+github.com/sagernet/gvisor/pkg/tcpip/transport/packet
+github.com/sagernet/gvisor/pkg/tcpip/transport/raw
+github.com/sagernet/gvisor/pkg/tcpip/transport/tcp
+github.com/sagernet/gvisor/pkg/tcpip/transport/tcpconntrack
+github.com/sagernet/gvisor/pkg/tcpip/transport/udp
+github.com/sagernet/gvisor/pkg/waiter
+# github.com/sagernet/netlink v0.0.0-20240612041022-b9a21c07ac6a
+## explicit; go 1.18
+github.com/sagernet/netlink
+github.com/sagernet/netlink/nl
+# github.com/sagernet/nftables v0.3.0-beta.4
+## explicit; go 1.18
+github.com/sagernet/nftables
+github.com/sagernet/nftables/alignedbuff
+github.com/sagernet/nftables/binaryutil
+github.com/sagernet/nftables/expr
+github.com/sagernet/nftables/internal/parseexprfunc
+github.com/sagernet/nftables/userdata
+github.com/sagernet/nftables/xt
+# github.com/sagernet/quic-go v0.52.0-sing-box-mod.3
+## explicit; go 1.23
+github.com/sagernet/quic-go
+github.com/sagernet/quic-go/congestion
+github.com/sagernet/quic-go/http3
+github.com/sagernet/quic-go/internal/ackhandler
+github.com/sagernet/quic-go/internal/congestion
+github.com/sagernet/quic-go/internal/flowcontrol
+github.com/sagernet/quic-go/internal/handshake
+github.com/sagernet/quic-go/internal/protocol
+github.com/sagernet/quic-go/internal/qerr
+github.com/sagernet/quic-go/internal/utils
+github.com/sagernet/quic-go/internal/utils/linkedlist
+github.com/sagernet/quic-go/internal/utils/ringbuffer
+github.com/sagernet/quic-go/internal/utils/tree
+github.com/sagernet/quic-go/internal/wire
+github.com/sagernet/quic-go/logging
+github.com/sagernet/quic-go/quicvarint
+# github.com/sagernet/sing v0.7.14
+## explicit; go 1.20
+github.com/sagernet/sing/common
+github.com/sagernet/sing/common/abx
+github.com/sagernet/sing/common/abx/internal
+github.com/sagernet/sing/common/atomic
+github.com/sagernet/sing/common/auth
+github.com/sagernet/sing/common/baderror
+github.com/sagernet/sing/common/batch
+github.com/sagernet/sing/common/binary
+github.com/sagernet/sing/common/buf
+github.com/sagernet/sing/common/bufio
+github.com/sagernet/sing/common/bufio/deadline
+github.com/sagernet/sing/common/byteformats
+github.com/sagernet/sing/common/cache
+github.com/sagernet/sing/common/canceler
+github.com/sagernet/sing/common/control
+github.com/sagernet/sing/common/debug
+github.com/sagernet/sing/common/domain
+github.com/sagernet/sing/common/exceptions
+github.com/sagernet/sing/common/format
+github.com/sagernet/sing/common/json
+github.com/sagernet/sing/common/json/badjson
+github.com/sagernet/sing/common/json/badoption
+github.com/sagernet/sing/common/json/badoption/internal/my_time
+github.com/sagernet/sing/common/json/internal/contextjson
+github.com/sagernet/sing/common/logger
+github.com/sagernet/sing/common/memory
+github.com/sagernet/sing/common/metadata
+github.com/sagernet/sing/common/network
+github.com/sagernet/sing/common/ntp
+github.com/sagernet/sing/common/observable
+github.com/sagernet/sing/common/pipe
+github.com/sagernet/sing/common/random
+github.com/sagernet/sing/common/ranges
+github.com/sagernet/sing/common/replay
+github.com/sagernet/sing/common/rw
+github.com/sagernet/sing/common/shell
+github.com/sagernet/sing/common/task
+github.com/sagernet/sing/common/tls
+github.com/sagernet/sing/common/udpnat
+github.com/sagernet/sing/common/udpnat2
+github.com/sagernet/sing/common/uot
+github.com/sagernet/sing/common/varbin
+github.com/sagernet/sing/common/windnsapi
+github.com/sagernet/sing/common/wininet
+github.com/sagernet/sing/common/winiphlpapi
+github.com/sagernet/sing/common/winpowrprof
+github.com/sagernet/sing/common/x/collections
+github.com/sagernet/sing/common/x/constraints
+github.com/sagernet/sing/common/x/linkedhashmap
+github.com/sagernet/sing/common/x/list
+github.com/sagernet/sing/contrab/freelru
+github.com/sagernet/sing/contrab/maphash
+github.com/sagernet/sing/protocol/http
+github.com/sagernet/sing/protocol/socks
+github.com/sagernet/sing/protocol/socks/socks4
+github.com/sagernet/sing/protocol/socks/socks5
+github.com/sagernet/sing/service
+github.com/sagernet/sing/service/filemanager
+github.com/sagernet/sing/service/pause
+# github.com/sagernet/sing-box v1.12.14 => ./sing-box
+## explicit; go 1.24
+github.com/sagernet/sing-box
+github.com/sagernet/sing-box/adapter
+github.com/sagernet/sing-box/adapter/endpoint
+github.com/sagernet/sing-box/adapter/inbound
+github.com/sagernet/sing-box/adapter/outbound
+github.com/sagernet/sing-box/adapter/service
+github.com/sagernet/sing-box/common/badtls
+github.com/sagernet/sing-box/common/badversion
+github.com/sagernet/sing-box/common/certificate
+github.com/sagernet/sing-box/common/compatible
+github.com/sagernet/sing-box/common/conntrack
+github.com/sagernet/sing-box/common/dialer
+github.com/sagernet/sing-box/common/interrupt
+github.com/sagernet/sing-box/common/ja3
+github.com/sagernet/sing-box/common/listener
+github.com/sagernet/sing-box/common/mux
+github.com/sagernet/sing-box/common/process
+github.com/sagernet/sing-box/common/redir
+github.com/sagernet/sing-box/common/settings
+github.com/sagernet/sing-box/common/sniff
+github.com/sagernet/sing-box/common/sniff/internal/qtls
+github.com/sagernet/sing-box/common/srs
+github.com/sagernet/sing-box/common/taskmonitor
+github.com/sagernet/sing-box/common/tls
+github.com/sagernet/sing-box/common/tlsfragment
+github.com/sagernet/sing-box/common/uot
+github.com/sagernet/sing-box/common/urltest
+github.com/sagernet/sing-box/common/vision
+github.com/sagernet/sing-box/common/xray
+github.com/sagernet/sing-box/common/xray/buf
+github.com/sagernet/sing-box/common/xray/bytespool
+github.com/sagernet/sing-box/common/xray/crypto
+github.com/sagernet/sing-box/common/xray/errors
+github.com/sagernet/sing-box/common/xray/json/badoption
+github.com/sagernet/sing-box/common/xray/net
+github.com/sagernet/sing-box/common/xray/pipe
+github.com/sagernet/sing-box/common/xray/serial
+github.com/sagernet/sing-box/common/xray/signal
+github.com/sagernet/sing-box/common/xray/signal/done
+github.com/sagernet/sing-box/common/xray/signal/semaphore
+github.com/sagernet/sing-box/common/xray/stat
+github.com/sagernet/sing-box/common/xray/stats
+github.com/sagernet/sing-box/common/xray/task
+github.com/sagernet/sing-box/common/xray/uuid
+github.com/sagernet/sing-box/constant
+github.com/sagernet/sing-box/constant/goos
+github.com/sagernet/sing-box/dns
+github.com/sagernet/sing-box/dns/transport
+github.com/sagernet/sing-box/dns/transport/dhcp
+github.com/sagernet/sing-box/dns/transport/fakeip
+github.com/sagernet/sing-box/dns/transport/hosts
+github.com/sagernet/sing-box/dns/transport/local
+github.com/sagernet/sing-box/dns/transport/quic
+github.com/sagernet/sing-box/experimental
+github.com/sagernet/sing-box/experimental/cachefile
+github.com/sagernet/sing-box/experimental/clashapi
+github.com/sagernet/sing-box/experimental/clashapi/trafficontrol
+github.com/sagernet/sing-box/experimental/deprecated
+github.com/sagernet/sing-box/experimental/libbox/platform
+github.com/sagernet/sing-box/experimental/locale
+github.com/sagernet/sing-box/experimental/v2rayapi
+github.com/sagernet/sing-box/include
+github.com/sagernet/sing-box/log
+github.com/sagernet/sing-box/option
+github.com/sagernet/sing-box/protocol/anytls
+github.com/sagernet/sing-box/protocol/block
+github.com/sagernet/sing-box/protocol/direct
+github.com/sagernet/sing-box/protocol/dns
+github.com/sagernet/sing-box/protocol/group
+github.com/sagernet/sing-box/protocol/http
+github.com/sagernet/sing-box/protocol/hysteria
+github.com/sagernet/sing-box/protocol/hysteria2
+github.com/sagernet/sing-box/protocol/mieru
+github.com/sagernet/sing-box/protocol/mixed
+github.com/sagernet/sing-box/protocol/naive
+github.com/sagernet/sing-box/protocol/naive/quic
+github.com/sagernet/sing-box/protocol/redirect
+github.com/sagernet/sing-box/protocol/shadowsocks
+github.com/sagernet/sing-box/protocol/shadowtls
+github.com/sagernet/sing-box/protocol/socks
+github.com/sagernet/sing-box/protocol/ssh
+github.com/sagernet/sing-box/protocol/tailscale
+github.com/sagernet/sing-box/protocol/tor
+github.com/sagernet/sing-box/protocol/trojan
+github.com/sagernet/sing-box/protocol/tuic
+github.com/sagernet/sing-box/protocol/tun
+github.com/sagernet/sing-box/protocol/vless
+github.com/sagernet/sing-box/protocol/vmess
+github.com/sagernet/sing-box/protocol/wireguard
+github.com/sagernet/sing-box/route
+github.com/sagernet/sing-box/route/rule
+github.com/sagernet/sing-box/service/derp
+github.com/sagernet/sing-box/service/resolved
+github.com/sagernet/sing-box/service/ssmapi
+github.com/sagernet/sing-box/transport/simple-obfs
+github.com/sagernet/sing-box/transport/sip003
+github.com/sagernet/sing-box/transport/trojan
+github.com/sagernet/sing-box/transport/v2ray
+github.com/sagernet/sing-box/transport/v2raygrpc
+github.com/sagernet/sing-box/transport/v2raygrpc/credentials
+github.com/sagernet/sing-box/transport/v2raygrpclite
+github.com/sagernet/sing-box/transport/v2rayhttp
+github.com/sagernet/sing-box/transport/v2rayhttpupgrade
+github.com/sagernet/sing-box/transport/v2raykcp
+github.com/sagernet/sing-box/transport/v2rayquic
+github.com/sagernet/sing-box/transport/v2raywebsocket
+github.com/sagernet/sing-box/transport/v2rayxhttp
+github.com/sagernet/sing-box/transport/wireguard
+# github.com/sagernet/sing-mux v0.3.3
+## explicit; go 1.18
+github.com/sagernet/sing-mux
+# github.com/sagernet/sing-quic v0.5.2-0.20250909083218-00a55617c0fb
+## explicit; go 1.23.0
+github.com/sagernet/sing-quic
+github.com/sagernet/sing-quic/congestion_meta1
+github.com/sagernet/sing-quic/congestion_meta2
+github.com/sagernet/sing-quic/hysteria
+github.com/sagernet/sing-quic/hysteria/congestion
+github.com/sagernet/sing-quic/hysteria2
+github.com/sagernet/sing-quic/hysteria2/internal/protocol
+github.com/sagernet/sing-quic/tuic
+# github.com/sagernet/sing-shadowsocks v0.2.8
+## explicit; go 1.18
+github.com/sagernet/sing-shadowsocks
+github.com/sagernet/sing-shadowsocks/shadowaead
+github.com/sagernet/sing-shadowsocks/shadowaead_2022
+# github.com/sagernet/sing-shadowsocks2 v0.2.1
+## explicit; go 1.18
+github.com/sagernet/sing-shadowsocks2
+github.com/sagernet/sing-shadowsocks2/cipher
+github.com/sagernet/sing-shadowsocks2/internal/legacykey
+github.com/sagernet/sing-shadowsocks2/internal/shadowio
+github.com/sagernet/sing-shadowsocks2/shadowaead
+github.com/sagernet/sing-shadowsocks2/shadowaead_2022
+github.com/sagernet/sing-shadowsocks2/shadowstream
+# github.com/sagernet/sing-shadowtls v0.2.1-0.20250503051639-fcd445d33c11
+## explicit; go 1.20
+github.com/sagernet/sing-shadowtls
+# github.com/sagernet/sing-tun v0.7.3
+## explicit; go 1.20
+github.com/sagernet/sing-tun
+github.com/sagernet/sing-tun/internal/fdbased_darwin
+github.com/sagernet/sing-tun/internal/gtcpip
+github.com/sagernet/sing-tun/internal/gtcpip/checksum
+github.com/sagernet/sing-tun/internal/gtcpip/header
+github.com/sagernet/sing-tun/internal/gtcpip/seqnum
+github.com/sagernet/sing-tun/internal/rawfile_darwin
+github.com/sagernet/sing-tun/internal/stopfd_darwin
+github.com/sagernet/sing-tun/internal/tschecksum
+github.com/sagernet/sing-tun/internal/winfw
+github.com/sagernet/sing-tun/internal/winipcfg
+github.com/sagernet/sing-tun/internal/winsys
+github.com/sagernet/sing-tun/internal/wintun
+github.com/sagernet/sing-tun/internal/wintun/memmod
+# github.com/sagernet/sing-vmess v0.2.7
+## explicit; go 1.20
+github.com/sagernet/sing-vmess
+github.com/sagernet/sing-vmess/packetaddr
+github.com/sagernet/sing-vmess/vless
+# github.com/sagernet/smux v1.5.34-mod.2
+## explicit; go 1.13
+github.com/sagernet/smux
+# github.com/sagernet/tailscale v1.80.3-sing-box-1.12-mod.2
+## explicit; go 1.23.1
+github.com/sagernet/tailscale
+github.com/sagernet/tailscale/appc
+github.com/sagernet/tailscale/atomicfile
+github.com/sagernet/tailscale/client/tailscale
+github.com/sagernet/tailscale/client/tailscale/apitype
+github.com/sagernet/tailscale/client/web
+github.com/sagernet/tailscale/clientupdate
+github.com/sagernet/tailscale/clientupdate/distsign
+github.com/sagernet/tailscale/control/controlbase
+github.com/sagernet/tailscale/control/controlclient
+github.com/sagernet/tailscale/control/controlhttp
+github.com/sagernet/tailscale/control/controlhttp/controlhttpcommon
+github.com/sagernet/tailscale/control/controlknobs
+github.com/sagernet/tailscale/derp
+github.com/sagernet/tailscale/derp/derphttp
+github.com/sagernet/tailscale/disco
+github.com/sagernet/tailscale/doctor
+github.com/sagernet/tailscale/doctor/ethtool
+github.com/sagernet/tailscale/doctor/permissions
+github.com/sagernet/tailscale/doctor/routetable
+github.com/sagernet/tailscale/drive
+github.com/sagernet/tailscale/envknob
+github.com/sagernet/tailscale/envknob/featureknob
+github.com/sagernet/tailscale/feature
+github.com/sagernet/tailscale/feature/capture
+github.com/sagernet/tailscale/feature/condregister
+github.com/sagernet/tailscale/feature/tap
+github.com/sagernet/tailscale/feature/wakeonlan
+github.com/sagernet/tailscale/health
+github.com/sagernet/tailscale/health/healthmsg
+github.com/sagernet/tailscale/hostinfo
+github.com/sagernet/tailscale/internal/noiseconn
+github.com/sagernet/tailscale/ipn
+github.com/sagernet/tailscale/ipn/conffile
+github.com/sagernet/tailscale/ipn/ipnauth
+github.com/sagernet/tailscale/ipn/ipnlocal
+github.com/sagernet/tailscale/ipn/ipnstate
+github.com/sagernet/tailscale/ipn/localapi
+github.com/sagernet/tailscale/ipn/policy
+github.com/sagernet/tailscale/ipn/store
+github.com/sagernet/tailscale/ipn/store/kubestore
+github.com/sagernet/tailscale/ipn/store/mem
+github.com/sagernet/tailscale/kube/kubeapi
+github.com/sagernet/tailscale/kube/kubeclient
+github.com/sagernet/tailscale/kube/kubetypes
+github.com/sagernet/tailscale/licenses
+github.com/sagernet/tailscale/log/filelogger
+github.com/sagernet/tailscale/log/sockstatlog
+github.com/sagernet/tailscale/logpolicy
+github.com/sagernet/tailscale/logtail
+github.com/sagernet/tailscale/logtail/backoff
+github.com/sagernet/tailscale/logtail/filch
+github.com/sagernet/tailscale/metrics
+github.com/sagernet/tailscale/net/bakedroots
+github.com/sagernet/tailscale/net/captivedetection
+github.com/sagernet/tailscale/net/connstats
+github.com/sagernet/tailscale/net/dns
+github.com/sagernet/tailscale/net/dns/publicdns
+github.com/sagernet/tailscale/net/dns/recursive
+github.com/sagernet/tailscale/net/dns/resolvconffile
+github.com/sagernet/tailscale/net/dns/resolver
+github.com/sagernet/tailscale/net/dnscache
+github.com/sagernet/tailscale/net/dnsfallback
+github.com/sagernet/tailscale/net/flowtrack
+github.com/sagernet/tailscale/net/ipset
+github.com/sagernet/tailscale/net/memnet
+github.com/sagernet/tailscale/net/netaddr
+github.com/sagernet/tailscale/net/netcheck
+github.com/sagernet/tailscale/net/neterror
+github.com/sagernet/tailscale/net/netkernelconf
+github.com/sagernet/tailscale/net/netknob
+github.com/sagernet/tailscale/net/netmon
+github.com/sagernet/tailscale/net/netns
+github.com/sagernet/tailscale/net/netstat
+github.com/sagernet/tailscale/net/netutil
+github.com/sagernet/tailscale/net/packet
+github.com/sagernet/tailscale/net/packet/checksum
+github.com/sagernet/tailscale/net/ping
+github.com/sagernet/tailscale/net/portmapper
+github.com/sagernet/tailscale/net/proxymux
+github.com/sagernet/tailscale/net/routetable
+github.com/sagernet/tailscale/net/socks5
+github.com/sagernet/tailscale/net/sockstats
+github.com/sagernet/tailscale/net/stun
+github.com/sagernet/tailscale/net/tcpinfo
+github.com/sagernet/tailscale/net/tlsdial
+github.com/sagernet/tailscale/net/tlsdial/blockblame
+github.com/sagernet/tailscale/net/tsaddr
+github.com/sagernet/tailscale/net/tsdial
+github.com/sagernet/tailscale/net/tshttpproxy
+github.com/sagernet/tailscale/net/tstun
+github.com/sagernet/tailscale/net/wsconn
+github.com/sagernet/tailscale/omit
+github.com/sagernet/tailscale/paths
+github.com/sagernet/tailscale/portlist
+github.com/sagernet/tailscale/posture
+github.com/sagernet/tailscale/proxymap
+github.com/sagernet/tailscale/safesocket
+github.com/sagernet/tailscale/syncs
+github.com/sagernet/tailscale/tailcfg
+github.com/sagernet/tailscale/taildrop
+github.com/sagernet/tailscale/tempfork/acme
+github.com/sagernet/tailscale/tempfork/heap
+github.com/sagernet/tailscale/tempfork/httprec
+github.com/sagernet/tailscale/tka
+github.com/sagernet/tailscale/tsconst
+github.com/sagernet/tailscale/tsd
+github.com/sagernet/tailscale/tsnet
+github.com/sagernet/tailscale/tstime
+github.com/sagernet/tailscale/tstime/mono
+github.com/sagernet/tailscale/tstime/rate
+github.com/sagernet/tailscale/tsweb
+github.com/sagernet/tailscale/tsweb/varz
+github.com/sagernet/tailscale/types/appctype
+github.com/sagernet/tailscale/types/dnstype
+github.com/sagernet/tailscale/types/empty
+github.com/sagernet/tailscale/types/ipproto
+github.com/sagernet/tailscale/types/key
+github.com/sagernet/tailscale/types/lazy
+github.com/sagernet/tailscale/types/logger
+github.com/sagernet/tailscale/types/logid
+github.com/sagernet/tailscale/types/netlogtype
+github.com/sagernet/tailscale/types/netmap
+github.com/sagernet/tailscale/types/nettype
+github.com/sagernet/tailscale/types/opt
+github.com/sagernet/tailscale/types/persist
+github.com/sagernet/tailscale/types/preftype
+github.com/sagernet/tailscale/types/ptr
+github.com/sagernet/tailscale/types/result
+github.com/sagernet/tailscale/types/structs
+github.com/sagernet/tailscale/types/tkatype
+github.com/sagernet/tailscale/types/views
+github.com/sagernet/tailscale/util/cibuild
+github.com/sagernet/tailscale/util/clientmetric
+github.com/sagernet/tailscale/util/cloudenv
+github.com/sagernet/tailscale/util/cmpver
+github.com/sagernet/tailscale/util/ctxkey
+github.com/sagernet/tailscale/util/deephash
+github.com/sagernet/tailscale/util/dirwalk
+github.com/sagernet/tailscale/util/dnsname
+github.com/sagernet/tailscale/util/execqueue
+github.com/sagernet/tailscale/util/goroutines
+github.com/sagernet/tailscale/util/groupmember
+github.com/sagernet/tailscale/util/hashx
+github.com/sagernet/tailscale/util/httphdr
+github.com/sagernet/tailscale/util/httpm
+github.com/sagernet/tailscale/util/lineiter
+github.com/sagernet/tailscale/util/linuxfw
+github.com/sagernet/tailscale/util/mak
+github.com/sagernet/tailscale/util/multierr
+github.com/sagernet/tailscale/util/must
+github.com/sagernet/tailscale/util/nocasemaps
+github.com/sagernet/tailscale/util/osdiag
+github.com/sagernet/tailscale/util/osdiag/internal/wsc
+github.com/sagernet/tailscale/util/osshare
+github.com/sagernet/tailscale/util/osuser
+github.com/sagernet/tailscale/util/progresstracking
+github.com/sagernet/tailscale/util/race
+github.com/sagernet/tailscale/util/racebuild
+github.com/sagernet/tailscale/util/rands
+github.com/sagernet/tailscale/util/ringbuffer
+github.com/sagernet/tailscale/util/set
+github.com/sagernet/tailscale/util/singleflight
+github.com/sagernet/tailscale/util/slicesx
+github.com/sagernet/tailscale/util/syspolicy
+github.com/sagernet/tailscale/util/syspolicy/internal
+github.com/sagernet/tailscale/util/syspolicy/internal/loggerx
+github.com/sagernet/tailscale/util/syspolicy/internal/metrics
+github.com/sagernet/tailscale/util/syspolicy/rsop
+github.com/sagernet/tailscale/util/syspolicy/setting
+github.com/sagernet/tailscale/util/syspolicy/source
+github.com/sagernet/tailscale/util/sysresources
+github.com/sagernet/tailscale/util/systemd
+github.com/sagernet/tailscale/util/testenv
+github.com/sagernet/tailscale/util/truncate
+github.com/sagernet/tailscale/util/usermetric
+github.com/sagernet/tailscale/util/vizerror
+github.com/sagernet/tailscale/util/winutil
+github.com/sagernet/tailscale/util/winutil/authenticode
+github.com/sagernet/tailscale/util/winutil/gp
+github.com/sagernet/tailscale/util/winutil/policy
+github.com/sagernet/tailscale/util/winutil/winenv
+github.com/sagernet/tailscale/util/zstdframe
+github.com/sagernet/tailscale/version
+github.com/sagernet/tailscale/version/distro
+github.com/sagernet/tailscale/wgengine
+github.com/sagernet/tailscale/wgengine/filter
+github.com/sagernet/tailscale/wgengine/filter/filtertype
+github.com/sagernet/tailscale/wgengine/magicsock
+github.com/sagernet/tailscale/wgengine/netlog
+github.com/sagernet/tailscale/wgengine/netstack
+github.com/sagernet/tailscale/wgengine/netstack/gro
+github.com/sagernet/tailscale/wgengine/router
+github.com/sagernet/tailscale/wgengine/wgcfg
+github.com/sagernet/tailscale/wgengine/wgcfg/nmcfg
+github.com/sagernet/tailscale/wgengine/wgint
+github.com/sagernet/tailscale/wgengine/wglog
+github.com/sagernet/tailscale/wgengine/winnet
+# github.com/sagernet/wireguard-go v0.0.1-beta.7
+## explicit; go 1.20
+github.com/sagernet/wireguard-go/conn
+github.com/sagernet/wireguard-go/device
+github.com/sagernet/wireguard-go/ipc
+github.com/sagernet/wireguard-go/ipc/namedpipe
+github.com/sagernet/wireguard-go/ratelimiter
+github.com/sagernet/wireguard-go/replay
+github.com/sagernet/wireguard-go/rwcancel
+github.com/sagernet/wireguard-go/tai64n
+github.com/sagernet/wireguard-go/tun
+# github.com/sagernet/ws v0.0.0-20231204124109-acfe8907c854
+## explicit; go 1.15
+github.com/sagernet/ws
+github.com/sagernet/ws/wsutil
+# github.com/spf13/cobra v1.10.2
+## explicit; go 1.15
+github.com/spf13/cobra
+# github.com/spf13/pflag v1.0.9
+## explicit; go 1.12
+github.com/spf13/pflag
+# github.com/tailscale/certstore v0.1.1-0.20231202035212-d3fa0460f47e
+## explicit; go 1.20
+github.com/tailscale/certstore
+# github.com/tailscale/go-winio v0.0.0-20231025203758-c4f33415bf55
+## explicit; go 1.17
+github.com/tailscale/go-winio
+github.com/tailscale/go-winio/internal/fs
+github.com/tailscale/go-winio/internal/socket
+github.com/tailscale/go-winio/internal/stringbuffer
+github.com/tailscale/go-winio/pkg/guid
+# github.com/tailscale/golang-x-crypto v0.0.0-20240604161659-3fde5e568aa4
+## explicit; go 1.18
+github.com/tailscale/golang-x-crypto/internal/poly1305
+github.com/tailscale/golang-x-crypto/ssh
+github.com/tailscale/golang-x-crypto/ssh/internal/bcrypt_pbkdf
+# github.com/tailscale/goupnp v1.0.1-0.20210804011211-c64d0f06ea05
+## explicit; go 1.16
+github.com/tailscale/goupnp
+github.com/tailscale/goupnp/dcps/internetgateway2
+github.com/tailscale/goupnp/httpu
+github.com/tailscale/goupnp/scpd
+github.com/tailscale/goupnp/soap
+github.com/tailscale/goupnp/ssdp
+# github.com/tailscale/hujson v0.0.0-20221223112325-20486734a56a
+## explicit; go 1.18
+github.com/tailscale/hujson
+# github.com/tailscale/netlink v1.1.1-0.20240822203006-4d49adab4de7
+## explicit; go 1.12
+github.com/tailscale/netlink
+github.com/tailscale/netlink/nl
+# github.com/tailscale/peercred v0.0.0-20250107143737-35a0c7bd7edc
+## explicit; go 1.18
+github.com/tailscale/peercred
+# github.com/tailscale/web-client-prebuilt v0.0.0-20250124233751-d4cd19a26976
+## explicit; go 1.21
+github.com/tailscale/web-client-prebuilt
+# github.com/u-root/uio v0.0.0-20240224005618-d2acac8f3701
+## explicit; go 1.21
+github.com/u-root/uio/rand
+github.com/u-root/uio/uio
+# github.com/vishvananda/netns v0.0.5
+## explicit; go 1.17
+github.com/vishvananda/netns
+# github.com/x448/float16 v0.8.4
+## explicit; go 1.11
+github.com/x448/float16
+# github.com/zeebo/blake3 v0.2.4
+## explicit; go 1.18
+github.com/zeebo/blake3
+github.com/zeebo/blake3/internal/alg
+github.com/zeebo/blake3/internal/alg/compress
+github.com/zeebo/blake3/internal/alg/compress/compress_pure
+github.com/zeebo/blake3/internal/alg/compress/compress_sse41
+github.com/zeebo/blake3/internal/alg/hash
+github.com/zeebo/blake3/internal/alg/hash/hash_avx2
+github.com/zeebo/blake3/internal/alg/hash/hash_pure
+github.com/zeebo/blake3/internal/consts
+github.com/zeebo/blake3/internal/utils
+# go.uber.org/multierr v1.11.0
+## explicit; go 1.19
+go.uber.org/multierr
+# go.uber.org/zap v1.27.0
+## explicit; go 1.19
+go.uber.org/zap
+go.uber.org/zap/buffer
+go.uber.org/zap/internal
+go.uber.org/zap/internal/bufferpool
+go.uber.org/zap/internal/color
+go.uber.org/zap/internal/exit
+go.uber.org/zap/internal/pool
+go.uber.org/zap/internal/stacktrace
+go.uber.org/zap/zapcore
+# go.uber.org/zap/exp v0.3.0
+## explicit; go 1.19
+go.uber.org/zap/exp/zapslog
+# go4.org/mem v0.0.0-20240501181205-ae6ca9944745
+## explicit; go 1.14
+go4.org/mem
+# go4.org/netipx v0.0.0-20231129151722-fdeea329fbba
+## explicit; go 1.18
+go4.org/netipx
+# golang.org/x/crypto v0.41.0
+## explicit; go 1.23.0
+golang.org/x/crypto/argon2
+golang.org/x/crypto/blake2b
+golang.org/x/crypto/blake2s
+golang.org/x/crypto/blowfish
+golang.org/x/crypto/chacha20
+golang.org/x/crypto/chacha20poly1305
+golang.org/x/crypto/cryptobyte
+golang.org/x/crypto/cryptobyte/asn1
+golang.org/x/crypto/curve25519
+golang.org/x/crypto/ed25519
+golang.org/x/crypto/hkdf
+golang.org/x/crypto/internal/alias
+golang.org/x/crypto/internal/poly1305
+golang.org/x/crypto/nacl/box
+golang.org/x/crypto/nacl/secretbox
+golang.org/x/crypto/ocsp
+golang.org/x/crypto/pbkdf2
+golang.org/x/crypto/poly1305
+golang.org/x/crypto/salsa20/salsa
+golang.org/x/crypto/sha3
+golang.org/x/crypto/ssh
+golang.org/x/crypto/ssh/internal/bcrypt_pbkdf
+# golang.org/x/exp v0.0.0-20250506013437-ce4c2cf36ca6
+## explicit; go 1.23.0
+golang.org/x/exp/constraints
+golang.org/x/exp/maps
+golang.org/x/exp/slices
+# golang.org/x/mod v0.27.0
+## explicit; go 1.23.0
+golang.org/x/mod/internal/lazyregexp
+golang.org/x/mod/module
+golang.org/x/mod/semver
+# golang.org/x/net v0.43.0
+## explicit; go 1.23.0
+golang.org/x/net/bpf
+golang.org/x/net/dns/dnsmessage
+golang.org/x/net/http/httpguts
+golang.org/x/net/http/httpproxy
+golang.org/x/net/http2
+golang.org/x/net/http2/h2c
+golang.org/x/net/http2/hpack
+golang.org/x/net/icmp
+golang.org/x/net/idna
+golang.org/x/net/internal/httpcommon
+golang.org/x/net/internal/iana
+golang.org/x/net/internal/socket
+golang.org/x/net/internal/socks
+golang.org/x/net/internal/timeseries
+golang.org/x/net/ipv4
+golang.org/x/net/ipv6
+golang.org/x/net/proxy
+golang.org/x/net/publicsuffix
+golang.org/x/net/route
+golang.org/x/net/trace
+# golang.org/x/sync v0.16.0
+## explicit; go 1.23.0
+golang.org/x/sync/errgroup
+# golang.org/x/sys v0.39.0
+## explicit; go 1.24.0
+golang.org/x/sys/cpu
+golang.org/x/sys/plan9
+golang.org/x/sys/unix
+golang.org/x/sys/windows
+golang.org/x/sys/windows/registry
+golang.org/x/sys/windows/svc
+golang.org/x/sys/windows/svc/mgr
+# golang.org/x/term v0.34.0
+## explicit; go 1.23.0
+golang.org/x/term
+# golang.org/x/text v0.28.0
+## explicit; go 1.23.0
+golang.org/x/text/secure/bidirule
+golang.org/x/text/transform
+golang.org/x/text/unicode/bidi
+golang.org/x/text/unicode/norm
+# golang.org/x/time v0.9.0
+## explicit; go 1.18
+golang.org/x/time/rate
+# golang.org/x/tools v0.36.0
+## explicit; go 1.23.0
+golang.org/x/tools/go/ast/astutil
+golang.org/x/tools/go/gcexportdata
+golang.org/x/tools/go/packages
+golang.org/x/tools/go/types/objectpath
+golang.org/x/tools/go/types/typeutil
+golang.org/x/tools/imports
+golang.org/x/tools/internal/aliases
+golang.org/x/tools/internal/event
+golang.org/x/tools/internal/event/core
+golang.org/x/tools/internal/event/keys
+golang.org/x/tools/internal/event/label
+golang.org/x/tools/internal/gcimporter
+golang.org/x/tools/internal/gocommand
+golang.org/x/tools/internal/gopathwalk
+golang.org/x/tools/internal/imports
+golang.org/x/tools/internal/modindex
+golang.org/x/tools/internal/packagesinternal
+golang.org/x/tools/internal/pkgbits
+golang.org/x/tools/internal/stdlib
+golang.org/x/tools/internal/typeparams
+golang.org/x/tools/internal/typesinternal
+golang.org/x/tools/internal/versions
+# golang.zx2c4.com/wintun v0.0.0-20230126152724-0fa3db229ce2
+## explicit; go 1.17
+golang.zx2c4.com/wintun
+# golang.zx2c4.com/wireguard/windows v0.5.3
+## explicit; go 1.18
+golang.zx2c4.com/wireguard/windows/tunnel/winipcfg
+# google.golang.org/genproto/googleapis/rpc v0.0.0-20250324211829-b45e905df463
+## explicit; go 1.23.0
+google.golang.org/genproto/googleapis/rpc/status
+# google.golang.org/grpc v1.73.0
+## explicit; go 1.23.0
+google.golang.org/grpc
+google.golang.org/grpc/attributes
+google.golang.org/grpc/backoff
+google.golang.org/grpc/balancer
+google.golang.org/grpc/balancer/base
+google.golang.org/grpc/balancer/endpointsharding
+google.golang.org/grpc/balancer/grpclb/state
+google.golang.org/grpc/balancer/pickfirst
+google.golang.org/grpc/balancer/pickfirst/internal
+google.golang.org/grpc/balancer/pickfirst/pickfirstleaf
+google.golang.org/grpc/balancer/roundrobin
+google.golang.org/grpc/binarylog/grpc_binarylog_v1
+google.golang.org/grpc/channelz
+google.golang.org/grpc/codes
+google.golang.org/grpc/connectivity
+google.golang.org/grpc/credentials
+google.golang.org/grpc/credentials/insecure
+google.golang.org/grpc/encoding
+google.golang.org/grpc/encoding/proto
+google.golang.org/grpc/experimental/stats
+google.golang.org/grpc/grpclog
+google.golang.org/grpc/grpclog/internal
+google.golang.org/grpc/internal
+google.golang.org/grpc/internal/backoff
+google.golang.org/grpc/internal/balancer/gracefulswitch
+google.golang.org/grpc/internal/balancerload
+google.golang.org/grpc/internal/binarylog
+google.golang.org/grpc/internal/buffer
+google.golang.org/grpc/internal/channelz
+google.golang.org/grpc/internal/credentials
+google.golang.org/grpc/internal/envconfig
+google.golang.org/grpc/internal/grpclog
+google.golang.org/grpc/internal/grpcsync
+google.golang.org/grpc/internal/grpcutil
+google.golang.org/grpc/internal/idle
+google.golang.org/grpc/internal/metadata
+google.golang.org/grpc/internal/pretty
+google.golang.org/grpc/internal/proxyattributes
+google.golang.org/grpc/internal/resolver
+google.golang.org/grpc/internal/resolver/delegatingresolver
+google.golang.org/grpc/internal/resolver/dns
+google.golang.org/grpc/internal/resolver/dns/internal
+google.golang.org/grpc/internal/resolver/passthrough
+google.golang.org/grpc/internal/resolver/unix
+google.golang.org/grpc/internal/serviceconfig
+google.golang.org/grpc/internal/stats
+google.golang.org/grpc/internal/status
+google.golang.org/grpc/internal/syscall
+google.golang.org/grpc/internal/transport
+google.golang.org/grpc/internal/transport/networktype
+google.golang.org/grpc/keepalive
+google.golang.org/grpc/mem
+google.golang.org/grpc/metadata
+google.golang.org/grpc/peer
+google.golang.org/grpc/resolver
+google.golang.org/grpc/resolver/dns
+google.golang.org/grpc/serviceconfig
+google.golang.org/grpc/stats
+google.golang.org/grpc/status
+google.golang.org/grpc/tap
+# google.golang.org/protobuf v1.36.6
+## explicit; go 1.22
+google.golang.org/protobuf/encoding/protojson
+google.golang.org/protobuf/encoding/prototext
+google.golang.org/protobuf/encoding/protowire
+google.golang.org/protobuf/internal/descfmt
+google.golang.org/protobuf/internal/descopts
+google.golang.org/protobuf/internal/detrand
+google.golang.org/protobuf/internal/editiondefaults
+google.golang.org/protobuf/internal/encoding/defval
+google.golang.org/protobuf/internal/encoding/json
+google.golang.org/protobuf/internal/encoding/messageset
+google.golang.org/protobuf/internal/encoding/tag
+google.golang.org/protobuf/internal/encoding/text
+google.golang.org/protobuf/internal/errors
+google.golang.org/protobuf/internal/filedesc
+google.golang.org/protobuf/internal/filetype
+google.golang.org/protobuf/internal/flags
+google.golang.org/protobuf/internal/genid
+google.golang.org/protobuf/internal/impl
+google.golang.org/protobuf/internal/order
+google.golang.org/protobuf/internal/pragma
+google.golang.org/protobuf/internal/protolazy
+google.golang.org/protobuf/internal/set
+google.golang.org/protobuf/internal/strs
+google.golang.org/protobuf/internal/version
+google.golang.org/protobuf/proto
+google.golang.org/protobuf/protoadapt
+google.golang.org/protobuf/reflect/protoreflect
+google.golang.org/protobuf/reflect/protoregistry
+google.golang.org/protobuf/runtime/protoiface
+google.golang.org/protobuf/runtime/protoimpl
+google.golang.org/protobuf/types/known/anypb
+google.golang.org/protobuf/types/known/durationpb
+google.golang.org/protobuf/types/known/timestamppb
+# gopkg.in/natefinch/npipe.v2 v2.0.0-20160621034901-c1b8fa8bdcce
+## explicit
+# kernel.org/pub/linux/libs/security/libcap/cap v1.2.77
+## explicit; go 1.11
+kernel.org/pub/linux/libs/security/libcap/cap
+# kernel.org/pub/linux/libs/security/libcap/psx v1.2.77
+## explicit; go 1.11
+kernel.org/pub/linux/libs/security/libcap/psx
+# lukechampine.com/blake3 v1.3.0
+## explicit; go 1.17
+lukechampine.com/blake3
+lukechampine.com/blake3/bao
+lukechampine.com/blake3/guts
+# github.com/sagernet/sing-box => ./sing-box
