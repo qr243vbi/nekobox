@@ -1,6 +1,6 @@
 #!/bin/bash
 set -e
-pushd "$SRC_ROOT"
+
 export CURDIR=$PWD
 
 source script/env_deploy.sh
@@ -26,7 +26,18 @@ else if [[ $1 == "arm64" ]]; then
   INST="$DEPLOYMENT/nekobox_setup_legacy_arm64"
 fi; fi; fi; fi; fi;
 
-#rm -rf $DEST
+if [[ -d download-artifact ]]
+then
+(
+ cd download-artifact
+ cd *linux-$ARCH
+ tar xvzf artifacts.tgz -C .
+ mv deployment/* $DEPLOYMENT
+) ||:
+fi
+
+pushd "$SRC_ROOT"
+
 mkdir -p $DEST
 
 #### get the pdb ####
