@@ -1,0 +1,275 @@
+site_name: sing-box
+site_author: nekohasekai
+repo_url: https://github.com/SagerNet/sing-box
+repo_name: SagerNet/sing-box
+copyright: Copyright &copy; 2022 nekohasekai
+site_description: The universal proxy platform.
+remote_branch: docs
+edit_uri: ""
+theme:
+  name: material
+  logo: assets/icon.svg
+  favicon: assets/icon.svg
+  palette:
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/link
+        name: Switch to light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: white
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: black
+      toggle:
+        icon: material/toggle-switch-off
+        name: Switch to system preference
+  features:
+    #    - navigation.instant
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.indexes
+    - navigation.expand
+    - navigation.sections
+    - header.autohide
+    - content.code.copy
+    - content.code.select
+    - content.code.annotate
+  icon:
+    admonition:
+      question: material/new-box
+nav:
+  - Home:
+      - index.md
+      - Change Log: changelog.md
+      - Migration: migration.md
+      - Deprecated: deprecated.md
+      - Support: support.md
+      - Sponsors: sponsors.md
+  - Installation:
+      - Package Manager: installation/package-manager.md
+      - Docker: installation/docker.md
+      - Build from source: installation/build-from-source.md
+  - Graphical Clients:
+      - clients/index.md
+      - Android:
+          - clients/android/index.md
+          - Features: clients/android/features.md
+      - Apple platforms:
+          - clients/apple/index.md
+          - Features: clients/apple/features.md
+      - General: clients/general.md
+      - Privacy policy: clients/privacy.md
+  - Manual:
+      - Proxy:
+          - Server: manual/proxy/server.md
+          - Client: manual/proxy/client.md
+      #          - TUN: manual/proxy/tun.md
+      - Proxy Protocol:
+          - Shadowsocks: manual/proxy-protocol/shadowsocks.md
+          - Trojan: manual/proxy-protocol/trojan.md
+          - Hysteria 2: manual/proxy-protocol/hysteria2.md
+      - Misc:
+          - TunnelVision: manual/misc/tunnelvision.md
+  - Configuration:
+      - configuration/index.md
+      - Log:
+          - configuration/log/index.md
+      - DNS:
+          - configuration/dns/index.md
+          - DNS Server:
+              - configuration/dns/server/index.md
+              - Legacy: configuration/dns/server/legacy.md
+              - Local: configuration/dns/server/local.md
+              - Hosts: configuration/dns/server/hosts.md
+              - TCP: configuration/dns/server/tcp.md
+              - UDP: configuration/dns/server/udp.md
+              - TLS: configuration/dns/server/tls.md
+              - QUIC: configuration/dns/server/quic.md
+              - HTTPS: configuration/dns/server/https.md
+              - HTTP3: configuration/dns/server/http3.md
+              - DHCP: configuration/dns/server/dhcp.md
+              - FakeIP: configuration/dns/server/fakeip.md
+              - Tailscale: configuration/dns/server/tailscale.md
+              - Resolved: configuration/dns/server/resolved.md
+          - DNS Rule: configuration/dns/rule.md
+          - DNS Rule Action: configuration/dns/rule_action.md
+          - FakeIP: configuration/dns/fakeip.md
+      - NTP: configuration/ntp/index.md
+      - Certificate: configuration/certificate/index.md
+      - Route:
+          - configuration/route/index.md
+          - GeoIP: configuration/route/geoip.md
+          - Geosite: configuration/route/geosite.md
+          - Route Rule: configuration/route/rule.md
+          - Rule Action: configuration/route/rule_action.md
+          - Protocol Sniff: configuration/route/sniff.md
+      - Rule Set:
+          - configuration/rule-set/index.md
+          - Source Format: configuration/rule-set/source-format.md
+          - Headless Rule: configuration/rule-set/headless-rule.md
+          - AdGuard DNS Filer: configuration/rule-set/adguard.md
+      - Experimental:
+          - configuration/experimental/index.md
+          - Cache File: configuration/experimental/cache-file.md
+          - Clash API: configuration/experimental/clash-api.md
+          - V2Ray API: configuration/experimental/v2ray-api.md
+      - Shared:
+          - Listen Fields: configuration/shared/listen.md
+          - Dial Fields: configuration/shared/dial.md
+          - TLS: configuration/shared/tls.md
+          - DNS01 Challenge Fields: configuration/shared/dns01_challenge.md
+          - Multiplex: configuration/shared/multiplex.md
+          - V2Ray Transport: configuration/shared/v2ray-transport.md
+          - UDP over TCP: configuration/shared/udp-over-tcp.md
+          - TCP Brutal: configuration/shared/tcp-brutal.md
+      - Endpoint:
+          - configuration/endpoint/index.md
+          - WireGuard: configuration/endpoint/wireguard.md
+          - Tailscale: configuration/endpoint/tailscale.md
+      - Inbound:
+          - configuration/inbound/index.md
+          - Direct: configuration/inbound/direct.md
+          - Mixed: configuration/inbound/mixed.md
+          - SOCKS: configuration/inbound/socks.md
+          - HTTP: configuration/inbound/http.md
+          - Shadowsocks: configuration/inbound/shadowsocks.md
+          - VMess: configuration/inbound/vmess.md
+          - Trojan: configuration/inbound/trojan.md
+          - Naive: configuration/inbound/naive.md
+          - Hysteria: configuration/inbound/hysteria.md
+          - ShadowTLS: configuration/inbound/shadowtls.md
+          - VLESS: configuration/inbound/vless.md
+          - TUIC: configuration/inbound/tuic.md
+          - Hysteria2: configuration/inbound/hysteria2.md
+          - AnyTLS: configuration/inbound/anytls.md
+          - Tun: configuration/inbound/tun.md
+          - Redirect: configuration/inbound/redirect.md
+          - TProxy: configuration/inbound/tproxy.md
+      - Outbound:
+          - configuration/outbound/index.md
+          - Direct: configuration/outbound/direct.md
+          - Block: configuration/outbound/block.md
+          - SOCKS: configuration/outbound/socks.md
+          - HTTP: configuration/outbound/http.md
+          - Shadowsocks: configuration/outbound/shadowsocks.md
+          - VMess: configuration/outbound/vmess.md
+          - Trojan: configuration/outbound/trojan.md
+          - WireGuard: configuration/outbound/wireguard.md
+          - Hysteria: configuration/outbound/hysteria.md
+          - ShadowTLS: configuration/outbound/shadowtls.md
+          - VLESS: configuration/outbound/vless.md
+          - TUIC: configuration/outbound/tuic.md
+          - Hysteria2: configuration/outbound/hysteria2.md
+          - AnyTLS: configuration/outbound/anytls.md
+          - Tor: configuration/outbound/tor.md
+          - SSH: configuration/outbound/ssh.md
+          - DNS: configuration/outbound/dns.md
+          - Selector: configuration/outbound/selector.md
+          - URLTest: configuration/outbound/urltest.md
+      - Service:
+          - configuration/service/index.md
+          - DERP: configuration/service/derp.md
+          - Resolved: configuration/service/resolved.md
+          - SSM API: configuration/service/ssm-api.md
+markdown_extensions:
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.details
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.magiclink
+  - admonition
+  - attr_list
+  - md_in_html
+  - footnotes
+  - def_list
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/SagerNet/sing-box
+  generator: false
+plugins:
+  - search
+  - i18n:
+      docs_structure: suffix
+      fallback_to_default: true
+      languages:
+        - build: true
+          default: true
+          locale: en
+          name: English
+        - build: true
+          default: false
+          locale: zh
+          name: 简体中文
+          nav_translations:
+            Home: 开始
+            Change Log: 更新日志
+            Migration: 迁移指南
+            Deprecated: 废弃功能列表
+            Support: 支持
+
+            Installation: 安装
+            Package Manager: 包管理器
+            Build from source: 从源代码构建
+
+            Graphical Clients: 图形界面客户端
+            Features: 特性
+            Apple platforms: Apple 平台
+            General: 通用
+            Privacy policy: 隐私政策
+
+            Configuration: 配置
+            Log: 日志
+            DNS Server: DNS 服务器
+            DNS Rule: DNS 规则
+            DNS Rule Action: DNS 规则动作
+
+            Route: 路由
+            Route Rule: 路由规则
+            Rule Action: 规则动作
+            Protocol Sniff: 协议探测
+
+            Rule Set: 规则集
+            Source Format: 源文件格式
+            Headless Rule: 无头规则
+
+            Experimental: 实验性
+            Cache File: 缓存文件
+
+            Shared: 通用
+            Listen Fields: 监听字段
+            Dial Fields: 拨号字段
+            DNS01 Challenge Fields: DNS01 验证字段
+            Multiplex: 多路复用
+            V2Ray Transport: V2Ray 传输层
+
+            Endpoint: 端点
+            Inbound: 入站
+            Outbound: 出站
+
+            Manual: 手册
+      reconfigure_material: true
+      reconfigure_search: true
