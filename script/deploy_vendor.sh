@@ -1,6 +1,7 @@
 source script/env_deploy.sh
+pushd "$SRC_ROOT"
 
-pushd "$SRC_ROOT"/core/server
+pushd core/server
 pushd gen
  ./update_libs.sh
 popd
@@ -44,3 +45,5 @@ git ls-files --recurse-submodules | tar --transform="s,^,$archive_standalone/,S"
 sha256sum "$DEPLOYMENT/$archive_standalone.tar.xz" > "$DEPLOYMENT/$archive_standalone.tar.xz.sha256sum"
 
 git reset --soft HEAD^1
+
+popd
