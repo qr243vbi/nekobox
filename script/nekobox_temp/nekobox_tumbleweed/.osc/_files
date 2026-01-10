@@ -1,7 +1,0 @@
-<directory name="nekobox" rev="3" vrev="1" srcmd5="047569d92bf5135cb8afee231230fc0a">
-  <entry name="nekobox-unified-source-5.9.31.tar.xz" md5="1016eb6007ec0bbf1875af0e88c1eb3f" size="9547656" mtime="1768027108" />
-  <entry name="nekobox.changes" md5="ab8f88d203053b4dff372b562cba3dd5" size="149" mtime="1767818877" />
-  <entry name="nekobox.desktop" md5="22b24f64d54e6766f9423b460d860227" size="316" mtime="1764969128" />
-  <entry name="nekobox.spec" md5="94a1b025b07155a07e13005db7910d51" size="3721" mtime="1768027360" />
-  <entry name="start.sh" md5="72bd9200f25e0ae1c08d10d15980aab5" size="30" mtime="1764969134" />
-</directory>

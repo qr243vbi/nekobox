@@ -1,6 +1,0 @@
-<directory name="nekobox" rev="3" vrev="3" srcmd5="ee0a08342ccf1133e16328dee183cbc2">
-  <serviceinfo code="succeeded" xsrcmd5="073490a553e81a90339b30893e8db08c" />
-  <entry name="_constraints" md5="14ba00abfc4450421f00ef6a2bcfe75a" size="167" mtime="1762805257" />
-  <entry name="_service" md5="23be47801abf6dce49410e5679a7a675" size="661" mtime="1767704013" />
-  <entry name="version.txt" md5="7167d5987c614ada50bc6f9216a61faf" size="7" mtime="1768025731" />
-</directory>
