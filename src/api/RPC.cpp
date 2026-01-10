@@ -16,6 +16,7 @@
 #include <thrift/transport/TTransportUtils.h>
 #include <gen-cpp/LibcoreService.h>
 #include <gen-cpp/libcore_types.h>
+#include <QString>
 
 using namespace apache::thrift;
 using namespace apache::thrift::protocol;
@@ -64,7 +65,7 @@ try{                                                                            
     status.ok = false;                                                                  \
     qDebug() << "HI CRUEL WORLD";                                                       \
     status.what = e.what();                                                             \
-    qDebug() << status.what;                                                            \
+    qDebug() << QString::fromStdString(status.what);                                    \
 }
 
 #define NOT_OK                                                      \
