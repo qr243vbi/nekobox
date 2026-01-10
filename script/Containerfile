@@ -10,6 +10,6 @@ RUN ( rpmspec -q --buildrequires nekobox.spec | sed 's@\(.*\)@BuildRequires: \1@
 RUN rpmbuild -bs buildreqs.spec "-D_topdir $PWD"
 
 RUN zypper -n source-install --no-recommends -d SRPMS/buildreqs-1.0-0.src.rpm
-RUN zypper -n in tar
+RUN zypper -n in tar desktop-file-utils linuxdeploy linuxdeploy-plugin-qt appimagetool
 
 CMD ["bash", "-c", "/app/script/build_docker.sh"] 
