@@ -11,10 +11,11 @@ echo 'credentials_mgr_class=osc.credentials.ObfuscatedConfigFileCredentialsManag
 install -Dm644 oscrc "$HOME"/.config/osc/oscrc
 fi
 
-(
+
 . PKGBUILD
 mkdir nekobox_temp
-cd nekobox_temp
+pushd nekobox_temp
+
 pkgurl="$(echo ${source[0]} | sed "s@$pkgver@%{version}@g;" )"
 
 osc co home:juzbun:NekoBox/nekobox -o nekobox
@@ -33,10 +34,13 @@ rm *.tar.xz
 rm nekobox.spec
 
 wget https://codefloe.com/qr243vbi/nekobox/raw/branch/main/nekobox.spec
+
 sed -i "s@Source0:.*@Source0: $pkgurl@g; s@Version:.*@Version: $pkgver@g;" nekobox.spec
+
 wget "${source[0]}"
 osc addremove
 osc ci -m update 
 )
 
-)
+
+popd

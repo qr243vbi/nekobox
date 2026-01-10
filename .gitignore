@@ -116,6 +116,10 @@ out
 /core/server/gen/*.go
 /core/server/gen/libcore_server-remote
 /core/server/Core
+/script/nekobox_temp
+/script/PKGBUILD
+PKGBUILD
+nekobox_temp
 *.AppImage
 download-artifact
 deployment
