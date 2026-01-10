@@ -3,7 +3,7 @@ then
   git submodule init ||:
   git submodule update ||:
 fi
-. .ENV ||: 
+[[ -f .ENV ]] && . .ENV ||: 
 SRC_ROOT="${SRC_ROOT:-$PWD}"
 DEPLOYMENT="${DEPLOYMENT:-$SRC_ROOT/deployment}"
 BUILD="${BUILD:-$SRC_ROOT/build}"
