@@ -1,0 +1,2 @@
+#!@SH@
+@MAIN@ -appdata "${@}"

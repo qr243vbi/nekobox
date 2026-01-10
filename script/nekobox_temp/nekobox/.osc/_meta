@@ -1,0 +1,10 @@
+<package name="nekobox" project="home:juzbun:NekoBox">
+  <title/>
+  <description/>
+  <build>
+    <disable arch="armv6l" repository="Debian_13"/>
+    <disable arch="armv7l" repository="Debian_13"/>
+    <disable arch="armv6l" repository="openSUSE_Factory_ARM"/>
+  </build>
+</package>
+
