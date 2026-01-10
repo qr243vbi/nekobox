@@ -1,6 +1,6 @@
 module updater
 
-go 1.23
+go 1.24.0
 
 require github.com/codeclysm/extract/v4 v4.0.0
 
@@ -11,6 +11,7 @@ require (
 	github.com/klauspost/compress v1.15.13 // indirect
 	github.com/kr/text v0.2.0 // indirect
 	github.com/ulikunitz/xz v0.5.12 // indirect
+	golang.org/x/sys v0.40.0
 	gopkg.in/mgo.v2 v2.0.0-20190816093944-a6b53ec6cb22 // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect
 )

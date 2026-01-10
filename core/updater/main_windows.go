@@ -22,27 +22,44 @@ func Launch(Path string, Args ...string) error {
 	return LaunchCmd(cmd)
 }
 
+//func InstallVcRedist() {
+
+//}
+
 func main() {
 	// update & launcher
 	exe, err := os.Executable()
 	if err != nil {
 		panic(err.Error())
 	}
-	log.Println(os.Args);
+	log.Println(os.Args)
 
 	version := flag.String("version", "", "version")
 	chocolatey_source := flag.String("chocolatey_source", "", "install with chocolatey from source")
 	winget_install := flag.Bool("winget_install", false, "install with winget")
 	verbose := flag.Bool("verbose", false, "verbose mode")
 	name := flag.String("name", "nekobox", "software name")
+
+	//	nsis_installer_mode := flag.Bool("kill_processes", false, "Kill Processes from directory")
+	//	install_vcredist := flag.Bool("install_vcredist", false, "Install VcRedist")
 	// Parse the flags
 	flag.Parse()
+
+	//	if *install_vcredist {
+	//		InstallVcRedist()
+	//	}
+
 	// Get the positional arguments
 	args := flag.Args()
 	wd := args[1]
 	box := args[0]
 	exe = filepath.Base(os.Args[0])
 	log.Println("exe:", exe, "exe dir:", wd, "box: ", box)
+
+	//	if *nsis_installer_mode {
+	//		KillProcesses(wd)
+	//	}
+
 	time.Sleep(1 * time.Second)
 	// 1. update files
 	LaunchInstaller(box, wd, *version, *chocolatey_source, *winget_install, *verbose, *name)
@@ -53,12 +70,22 @@ func main() {
 
 func LaunchInstaller(updatePackagePath string, installPath string, version string, chocolatey_source string, winget_install bool, verbose bool, name string) {
 	if winget_install {
+		winget_install = version != "" && updatePackagePath != "" && installPath != ""
+	}
+	if chocolatey_source != "" {
+		if name == "" || version == "" {
+			chocolatey_source = ""
+		}
+	}
+	if winget_install {
 		Launch("winget", "install", "--version", version, updatePackagePath, "--override", "/S /WINGET=1 /UNPACK=1 /D="+filepath.Clean(installPath))
 	} else {
 		if chocolatey_source != "" {
 			run_chocolatey(version, chocolatey_source, name)
 		}
-		Launch(updatePackagePath, "/S", "/UNPACK=1", "/D="+filepath.Clean(installPath))
+		if updatePackagePath != "" && installPath != "" {
+			Launch(updatePackagePath, "/S", "/UNPACK=1", "/D="+filepath.Clean(installPath))
+		}
 	}
 }
 
