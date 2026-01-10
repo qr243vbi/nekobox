@@ -1,6 +1,6 @@
 module nekobox_core
 
-go 1.24.0
+go 1.23
 
 require (
 	github.com/NullYing/npipe v0.0.0-20250430055250-2d2a4d962cf7
