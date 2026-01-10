@@ -34,13 +34,15 @@ VIAddVersionKey "LegalCopyright" "© 2026 qr243vbi"
 
 ; --- Global Variables declared at the top level ---
 Var VCRedistNeeded
-Var VCRedistDownload
-Var VCRedistFile
+;Var VCRedistDownload
+;Var VCRedistFile
 Var isInstalled
 Var isAdmin
 Var Winget
 Var UnpackOnly
 Var NoScript
+
+Var RandomGUID
 
 !ifndef PSEXEC_INCLUDED
 !define PSEXEC_INCLUDED
@@ -75,6 +77,21 @@ finish_${PSExecID}:
 !define PowerShellExecFile `!insertmacro PowerShellExecFileMacro`
  
 !endif
+
+Function GenerateGUID
+    System::Call 'ole32::CoCreateGuid(g .r0)'
+    System::Call 'ole32::StringFromGUID2(g r0, w .r1, i 39)'
+    System::Call 'ole32::CoTaskMemFree(p r0)'
+    Push $1
+FunctionEnd
+
+!define CreateGUID `!insertmacro _CreateGUID`
+!macro _CreateGUID _RetVar
+    Call CreateGUID
+    !if ${_RetVar} != s
+        Pop ${_RetVar}
+    !endif
+!macroend
 
 Function openLinkNewWindow
   ; (Function body remains the same, it works fine)
@@ -130,17 +147,17 @@ ${IfNot} ${IsNativeARM64}
   ${If} ${RunningX64}
     ;check H-KEY registry
     ReadRegDWORD $isInstalled HKLM "SOFTWARE\Wow6432Node\Microsoft\VisualStudio\14.0\VC\Runtimes\x64" "Installed"
-    StrCpy $VCRedistDownload "https://aka.ms/vc14/vc_redist.x64.exe"
-	StrCpy $VCRedistFile "vc14_redist.x64.exe"
+;    StrCpy $VCRedistDownload "https://aka.ms/vc14/vc_redist.x64.exe"
+;	StrCpy $VCRedistFile "vc14_redist.x64.exe"
   ${Else}
     ReadRegDWORD $isInstalled HKLM "SOFTWARE\Microsoft\VisualStudio\14.0\VC\Runtimes\x86" "Installed"
-    StrCpy $VCRedistDownload "https://aka.ms/vc14/vc_redist.x86.exe"
-	StrCpy $VCRedistFile "vc14_redist.x86.exe"
+;    StrCpy $VCRedistDownload "https://aka.ms/vc14/vc_redist.x86.exe"
+;	StrCpy $VCRedistFile "vc14_redist.x86.exe"
   ${EndIf}
 ${Else}
     ReadRegDWORD $isInstalled HKLM "SOFTWARE\Microsoft\VisualStudio\14.0\VC\Runtimes\ARM64" "Installed"
-    StrCpy $VCRedistDownload "https://aka.ms/vc14/vc_redist.arm64.exe"
-	StrCpy $VCRedistFile "vc14_redist.arm64.exe"
+;    StrCpy $VCRedistDownload "https://aka.ms/vc14/vc_redist.arm64.exe"
+;	StrCpy $VCRedistFile "vc14_redist.arm64.exe"
 ${EndIf}
 
 
@@ -192,6 +209,8 @@ Function .onInit
 			StrCpy $INSTDIR "$APPDATA\NekoBox"
 		${EndIf}
 	${EndIf}
+
+	${GenerateGUID} $RandomGUID
 FunctionEnd
 
 !define MUI_ICON "res\nekobox.ico"
@@ -265,39 +284,62 @@ FunctionEnd
 
 Section "Install"
 
-  SetOutPath "$INSTDIR"
-  SetOverwrite on
-
   !insertmacro "checkVcRedist"
   
   ${If} "$NoScript" != "1"
-  ${PowerShellExec} "\
-    Write-Host $\"=> $INSTDIR$\" ;				\
-	if ($\"$VCRedistNeeded$\" -eq $\"1$\") {					\
-		$$url = $\"$VCRedistDownload$\" ;						\
-		$$download=$$env:USERPROFILE + $\"\Downloads$\"	;		\
-		$$path = $\"$$download\$VCRedistFile$\" ;				\
-		if (-not (Test-Path $$path)) {							\
-			Invoke-WebRequest -Uri $\"$$url$\" -OutFile $$path;	\
-		} ;														\
-		Start-Process $$path -Wait ;							\
-	}; 															\
-	$$procs = Get-CimInstance Win32_Process | Where-Object { 	\
-		$$_.ExecutablePath -like $\"$INSTDIR\*.exe$\" ;			\
-	}; 															\
-	foreach ($$proc in $$procs) { 								\
-		Write-Host $\"!! $$proc$\" ;							\
-		Stop-Process -Id $$proc.ProcessId -Force ; 				\
-	}; 															\
-	"
+
+  SetOutPath "$INSTDIR\$RandomGUID"
+  SetOverwrite on
+
+  !ifdef DIRECTORY
+    File /r  "${DIRECTORY}\nekobox_core.exe"
+  !else
+    File /r  ".\deployment\windows64\nekobox_core.exe"
+  !endif
+
+  ${If} "$VCRedistNeeded" != "1"
+    nsExec::ExecToLog '"$INSTDIR\$RandomGUID\nekobox_core.exe" installer_mode -kill_processes "$INSTDIR" '
+  ${Else}
+    nsExec::ExecToLog '"$INSTDIR\$RandomGUID\nekobox_core.exe" installer_mode -kill_processes "$INSTDIR" -vcredist_install '
+  ${EndIf}
+;  ${PowerShellExec} "\
+;    Write-Host $\"=> $INSTDIR$\" ;				\
+;	if ($\"$VCRedistNeeded$\" -eq $\"1$\") {					\
+;		$$url = $\"$VCRedistDownload$\" ;						\
+;		$$download=$$env:USERPROFILE + $\"\Downloads$\"	;		\
+;		$$path = $\"$$download\$VCRedistFile$\" ;				\
+;		if (-not (Test-Path $$path)) {							\
+;			Invoke-WebRequest -Uri $\"$$url$\" -OutFile $$path;	\
+;		} ;														\
+;		Start-Process $$path -Wait ;							\
+;	}; 															\
+;	$$procs = Get-CimInstance Win32_Process | Where-Object { 	\
+;		$$_.ExecutablePath -like $\"$INSTDIR\*.exe$\" ;			\
+;	}; 															\
+;	foreach ($$proc in $$procs) { 								\
+;		Write-Host $\"!! $$proc$\" ;							\
+;		Stop-Process -Id $$proc.ProcessId -Force ; 				\
+;	}; 															\
+;	"
   ${EndIf}
 
+  SetOutPath "$INSTDIR"
+  SetOverwrite on
+
+  ${If} "$NoScript" != "1"
+  !ifdef DIRECTORY
+    File /r  "${DIRECTORY}\*" /x nekobox_core.exe
+  !else
+    File /r  ".\deployment\windows64\*" /x nekobox_core.exe
+  !endif
+  ${Else}
   !ifdef DIRECTORY
     File /r  "${DIRECTORY}\*"
   !else
     File /r  ".\deployment\windows64\*"
   !endif
-  
+  ${EndIf}
+
   ${If} "$Winget" == "1"
     ${If} ${FileExists} "$INSTDIR\global.ini"
     ${Else}
