@@ -1,6 +1,6 @@
 module nekobox_core
 
-go 1.23
+go 1.24.1
 
 require (
 	github.com/NullYing/npipe v0.0.0-20250430055250-2d2a4d962cf7
@@ -9,10 +9,10 @@ require (
 	github.com/gofrs/uuid/v5 v5.4.0
 	github.com/google/shlex v0.0.0-20191202100458-e7afc7fbc510
 	github.com/sagernet/sing v0.7.14
-	github.com/sagernet/sing-box v1.12.14
+	github.com/sagernet/sing-box v1.12.15
 	github.com/sagernet/sing-tun v0.7.3
 	github.com/spf13/cobra v1.10.2
-	golang.org/x/sys v0.39.0
+	golang.org/x/sys v0.40.0
 	kernel.org/pub/linux/libs/security/libcap/cap v1.2.77
 )
 
@@ -27,15 +27,15 @@ require (
 	github.com/caddyserver/certmagic v0.23.0 // indirect
 	github.com/caddyserver/zerossl v0.1.3 // indirect
 	github.com/coder/websocket v1.8.13 // indirect
-	github.com/coreos/go-iptables v0.7.1-0.20240112124308-65c67c9f46e6 // indirect
+	github.com/coreos/go-iptables v0.8.0 // indirect
 	github.com/cretz/bine v0.2.0 // indirect
 	github.com/dblohm7/wingoes v0.0.0-20240119213807-a09d6be7affa // indirect
 	github.com/digitalocean/go-smbios v0.0.0-20180907143718-390a4f403a8e // indirect
 	github.com/enfein/mieru/v3 v3.26.2 // indirect
-	github.com/fsnotify/fsnotify v1.7.0 // indirect
+	github.com/fsnotify/fsnotify v1.9.0 // indirect
 	github.com/fxamacker/cbor/v2 v2.7.0 // indirect
 	github.com/gaissmai/bart v0.11.1 // indirect
-	github.com/go-chi/chi/v5 v5.2.2 // indirect
+	github.com/go-chi/chi/v5 v5.2.3 // indirect
 	github.com/go-chi/render v1.0.3 // indirect
 	github.com/go-json-experiment/json v0.0.0-20250103232110-6a9a0fde9288 // indirect
 	github.com/go-ole/go-ole v1.3.0 // indirect
@@ -93,6 +93,7 @@ require (
 	github.com/sagernet/wireguard-go v0.0.1-beta.7 // indirect
 	github.com/sagernet/ws v0.0.0-20231204124109-acfe8907c854 // indirect
 	github.com/spf13/pflag v1.0.9 // indirect
+	github.com/stretchr/testify v1.11.0 // indirect
 	github.com/tailscale/certstore v0.1.1-0.20231202035212-d3fa0460f47e // indirect
 	github.com/tailscale/go-winio v0.0.0-20231025203758-c4f33415bf55 // indirect
 	github.com/tailscale/golang-x-crypto v0.0.0-20240604161659-3fde5e568aa4 // indirect
