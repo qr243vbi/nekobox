@@ -22,7 +22,7 @@ else if [[ "$GOOS" == "linux" && "$GOARCH" == "386" ]]; then
 fi; fi; fi; fi; fi; fi; fi; fi; fi;
 
 if [ -z $DEST ]; then
-  DEST=$PWD/build
+  DEST=$BUILD
 fi
 
 echo "DESTINATION IS $DEST FOR MACHINE $GOARCH with platform $GOOS"

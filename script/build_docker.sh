@@ -20,15 +20,18 @@ then
    BUILD="$SRC_ROOT/build"
    GOFLAGS="-mod=vendor $GOFLAGS"
    VERSION_SINGBOX="$(cat $SRC_ROOT/SingBox.Version)"
-   LAST_ACTION='rm -rf $SRC_ROOT'
+   LAST_ACTION='rm -rf "$SRC_ROOT"'
    popd
 else
   LAST_ACTION="echo fine"
 fi 
 
+
+( . script/build_go.sh; )
+
 cmake -S $SRC_ROOT -B "$BUILD" -GNinja -DNKR_DEFAULT_VERSION="${INPUT_VERSION:-5.0.0}"
 cmake --build "$BUILD" -v
-( . script/build_go.sh; )
+
 ( . script/deploy_linux64.sh; )
 
 eval "$LAST_ACTION"
