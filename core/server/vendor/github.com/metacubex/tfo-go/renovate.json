@@ -1,0 +1,14 @@
+{
+    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+    "commitMessagePrefix": "🔼",
+    "extends": [
+        "config:base",
+        ":automergeBranch",
+        ":automergeDigest",
+        ":automergeMinor",
+        ":disableRateLimiting"
+    ],
+    "postUpdateOptions": [
+        "gomodTidy"
+    ]
+}

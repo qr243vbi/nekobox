@@ -1,0 +1,15 @@
+linters:
+  disable-all: true
+  enable:
+    - gofumpt
+    - govet
+    - gci
+    - staticcheck
+
+linters-settings:
+  gci:
+    custom-order: true
+    sections:
+      - standard
+      - prefix(github.com/sagernet/)
+      - default
