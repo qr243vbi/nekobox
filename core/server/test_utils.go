@@ -1,13 +1,13 @@
 package main
 
 import (
-	"nekobox_core/internal"
-	"nekobox_core/internal/boxbox"
 	"bytes"
 	"context"
 	"errors"
 	"fmt"
 	"io"
+	"nekobox_core/internal"
+	"nekobox_core/internal/boxbox"
 	"net"
 	"net/http"
 	"sync"
@@ -205,10 +205,11 @@ func BatchSpeedTest(ctx context.Context, i *boxbox.Box, outboundTags []string, t
 		queuer = make(chan struct{}, countryConcurrency)
 	}
 
+loop_tags:
 	for _, tag := range outboundTags {
 		select {
 		case <-ctx.Done():
-			break
+			break loop_tags
 		default:
 		}
 		outbound, exists := outbounds.Outbound(tag)

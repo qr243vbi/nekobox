@@ -89,7 +89,7 @@ func runShellExec(command string, arguments string) (int, error) {
 
 	err := shellExecuteEx(sei)
 	if err != nil {
-		return 1, fmt.Errorf("Failed to start elevated process:", err)
+		return 1, fmt.Errorf("Failed to start elevated process: %s", err.Error())
 	}
 
 	// Wait for the process to finish
@@ -98,7 +98,7 @@ func runShellExec(command string, arguments string) (int, error) {
 	// Get exit code
 	exitCode, err := getExitCode(sei.hProcess)
 	if err != nil {
-		return 1, fmt.Errorf("Failed to get exit code:", err)
+		return 1, fmt.Errorf("Failed to get exit code: %s", err.Error())
 	}
 
 	return int(exitCode), nil
@@ -385,7 +385,7 @@ func DownloadWithProgress(url, outPath string) error {
 		return err
 	}
 
-	fmt.Println("\nDownload complete\n")
+	fmt.Println("\nDownload complete")
 	return nil
 }
 
@@ -444,27 +444,28 @@ func InstallerMode() {
 
 	var tags []uint32
 
-	flag.Func("tag", "ignore pids", func(value string) error {
+	flag.Func("ignore-pid", "", func(value string) error {
 		tags = append(tags, mustAtoi(value))
 		return nil
 	})
 
 	flag.CommandLine.Parse(os.Args[2:])
 
-	var tagmap map[uint32]bool
+	tagmap := make(map[uint32]bool)
 
 	var curpid uint32 = uint32(os.Getpid())
-	var ppid uint32 = uint32(os.Getppid())
+	//var ppid uint32 = uint32(os.Getppid())
 
 	fmt.Printf("Current PID %d\n", curpid)
-	fmt.Printf("Parent PID %d\n", ppid)
+	//	fmt.Printf("Parent PID %d\n", ppid)
 
 	for _, i := range tags {
 		tagmap[i] = true
+		fmt.Printf("Ignore PID %d\n", i)
 	}
 
 	tagmap[curpid] = true
-	tagmap[ppid] = true
+	//	tagmap[ppid] = true
 
 	if *install_vcpkg {
 		InstallVcRedist()

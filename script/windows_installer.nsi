@@ -178,7 +178,7 @@ Function un._GetProcessInfo
 FunctionEnd
 
 !endif ;GETPROCESSINFO_INCLUDED
-Version for Unicode NSIS
+;Version for Unicode NSIS
 ; NSIS PROCESS INFO LIBRARY - GetProcessInfo.nsh
 ; Version 1.1 - Mar 28th, 2011
 ;

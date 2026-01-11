@@ -159,5 +159,4 @@ func main() {
 	testCtx, cancelTests = context.WithCancel(context.Background())
 
 	RunCore(_port, _debug)
-	return
 }
