@@ -1,5 +1,7 @@
 # This file is used to ignore files which are generated
 # ----------------------------------------------------------------------------
+.ENV
+global.ini
 TEMP
 gen-cpp
 core/server/gen/libcore_service-remote
