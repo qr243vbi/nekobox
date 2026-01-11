@@ -422,6 +422,7 @@ configure_file(
 
 install(
     FILES "${CMAKE_SOURCE_DIR}/res/public/icon.png"
+    RENAME=nekobox.png
     DESTINATION "${CMAKE_INSTALL_DATADIR}/icons/hicolor/256x256/apps"
 )
 

@@ -1,9 +1,9 @@
 #!/bin/bash
 set -e
 
-export CURDIR=$PWD
-
 source script/env_deploy.sh
+export CURDIR=$SRC_ROOT
+
 if [[ $1 == "new-x86_64" || -z $1 ]]; then
   ARCH="windows-amd64"
   DEST="$DEPLOYMENT/windows64"
