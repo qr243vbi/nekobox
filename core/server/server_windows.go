@@ -3,13 +3,20 @@ package main
 import (
 	"context"
 	"crypto/rand"
+	"errors"
+	"flag"
 	"fmt"
 	"io"
 	"log"
 	"math/big"
 	"nekobox_core/gen"
 	"nekobox_core/internal/boxdns"
+	"net/http"
 	"os"
+	"os/exec"
+	"path/filepath"
+	"runtime"
+	"strings"
 	"sync"
 	"syscall"
 	"unsafe"
@@ -257,4 +264,190 @@ func (s *server) IsPrivileged(ctx context.Context, in *gen.EmptyReq) (*gen.IsPri
 }
 
 func restartAsAdmin() {
+}
+
+func getProcessPath(pid uint32) (string, error) {
+	h, err := windows.OpenProcess(
+		windows.PROCESS_QUERY_LIMITED_INFORMATION,
+		false,
+		pid,
+	)
+	if err != nil {
+		return "", err
+	}
+	defer windows.CloseHandle(h)
+
+	buf := make([]uint16, windows.MAX_PATH)
+	size := uint32(len(buf))
+
+	err = windows.QueryFullProcessImageName(
+		h,
+		0,
+		&buf[0],
+		&size,
+	)
+	if err != nil {
+		return "", err
+	}
+
+	return windows.UTF16ToString(buf[:size]), nil
+}
+
+func KillPid(pid uint32) {
+	p, err := os.FindProcess(int(pid))
+	if err != nil {
+		fmt.Printf("Killing %d process error: %s\n", pid, err.Error())
+	}
+	err = p.Kill()
+	if err != nil {
+		fmt.Printf("Killing %d process error: %s\n", pid, err.Error())
+	}
+
+	fmt.Printf("Killing %d process success\n", pid)
+}
+
+func KillProcesses(prefix string) {
+	prefix = strings.ToLower(filepath.Clean(prefix))
+
+	var curpid uint32 = uint32(os.Getpid())
+	var ppid uint32 = uint32(os.Getppid())
+
+	fmt.Printf("Current PID %d\n", curpid)
+	fmt.Printf("Parent PID %d\n", ppid)
+
+	// Enumerate all PIDs
+	var pids [1024]uint32
+	var bytesReturned uint32
+
+	err := windows.EnumProcesses(pids[:], &bytesReturned)
+	if err != nil {
+		panic(err)
+	}
+
+	count := bytesReturned / 4
+
+	for i := uint32(0); i < count; i++ {
+		pid := pids[i]
+		if pid == 0 {
+			continue
+		}
+
+		path, err := getProcessPath(pid)
+		if err != nil || path == "" {
+			continue
+		}
+
+		if strings.HasPrefix(strings.ToLower(filepath.Clean(path)), prefix) {
+			if curpid != pid && ppid != pid {
+				fmt.Printf("Process %s => %d \n", path, pid)
+				KillPid(pid)
+			}
+		}
+	}
+}
+
+var (
+	DownloadDirNames []string = []string{"downloads", "download"}
+)
+
+func getDownloadDir() string {
+	var downloadDir string = ""
+
+	homeDir, err := os.UserHomeDir()
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	for _, ddn := range DownloadDirNames {
+		var dir = filepath.Join(homeDir, ddn)
+
+		if _, err := os.Stat(dir); os.IsNotExist(err) {
+		} else {
+			downloadDir = dir
+			break
+		}
+	}
+	return downloadDir
+}
+
+func DownloadWithProgress(url, outPath string) error {
+
+	fmt.Printf("\nDownload from url %s to file %s\n", url, outPath)
+	resp, err := http.Get(url)
+	if err != nil {
+		return err
+	}
+	defer resp.Body.Close()
+
+	out, err := os.Create(outPath)
+	if err != nil {
+		return err
+	}
+	defer out.Close()
+
+	_, err = io.Copy(out, resp.Body)
+	if err != nil {
+		return err
+	}
+
+	fmt.Println("\nDownload complete\n")
+	return nil
+}
+
+func fileExists(path string) bool {
+	info, err := os.Stat(path)
+	if err != nil {
+		if errors.Is(err, os.ErrNotExist) {
+			return false
+		}
+		return false
+	}
+	return !info.IsDir()
+}
+
+func InstallVcRedist() {
+	var download string = getDownloadDir()
+	var VCRedistDownload string = ""
+	var VCRedistFile string = ""
+	if download == "" {
+	} else {
+		if runtime.GOARCH == "amd64" {
+			VCRedistDownload = "https://aka.ms/vc14/vc_redist.x64.exe"
+			VCRedistFile = "vc14_redist.x64.exe"
+		} else if runtime.GOARCH == "arm64" {
+			VCRedistDownload = "https://aka.ms/vc14/vc_redist.arm64.exe"
+			VCRedistFile = "vc14_redist.arm64.exe"
+		} else if runtime.GOARCH == "386" {
+			VCRedistDownload = "https://aka.ms/vc14/vc_redist.x86.exe"
+			VCRedistFile = "vc14_redist.x86.exe"
+		}
+		VCRedistFile = filepath.Join(getDownloadDir(), VCRedistFile)
+		if !fileExists(VCRedistFile) {
+			var err error = DownloadWithProgress(VCRedistDownload, VCRedistFile)
+			if err != nil {
+				fmt.Printf("Download failed: %s", err.Error())
+				os.Exit(1)
+			}
+		}
+		cmd := exec.Command(VCRedistFile)
+		cmd.Run()
+	}
+}
+
+func InstallerMode() {
+
+	kill_processes := flag.String("kill-processes", "", "Kill processes from directory")
+	install_vcpkg := flag.Bool("vcredist-install", false, "Install VcRedist")
+
+	flag.CommandLine.Parse(os.Args[2:])
+
+	if *install_vcpkg {
+		InstallVcRedist()
+	}
+
+	if *kill_processes != "" {
+		KillProcesses(*kill_processes)
+	}
+
+	os.Exit(0)
 }
