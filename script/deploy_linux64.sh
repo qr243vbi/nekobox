@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 source script/env_deploy.sh
-export CURDIR=$SRC_ROOT
+export CURDIR="$SRC_ROOT"
 
 UNAME="${UNAME:-$(uname -m)}"
 
@@ -17,32 +17,32 @@ if [[ -d download-artifact ]]
 then
 (
  cd download-artifact
- cd *linux-$ARCH
+ cd *"linux-$ARCH"
  tar xvzf artifacts.tgz -C .
- mv deployment/* $DEPLOYMENT
+ mv deployment/* "$DEPLOYMENT"
 ) ||:
 fi
 
 pushd "$SRC_ROOT"
 
 source script/env_deploy.sh
-DEST=$DEPLOYMENT/linux-$ARCH
+DEST="$DEPLOYMENT/linux-$ARCH"
 mkdir -p $DEST ||:
 
 #### copy srslist ####
 [[ -f srslist.json ]] || wget -c https://github.com/qr243vbi/ruleset/raw/refs/heads/rule-set/srslist.json
-cp srslist.json $DEST/srslist.json
+cp srslist.json "$DEST/srslist.json"
 
 #### copy binary ####
-cp $BUILD/nekobox $DEST
-cp $BUILD/nekobox_core $DEST ||:
-cp $BUILD/updater $DEST ||:
+cp "$BUILD/nekobox" "$DEST"
+[[ -f "$BUILD/nekobox_core" ]] && cp "$BUILD/nekobox_core" "$DEST"
+[[ -f "$BUILD/updater" ]] && cp "$BUILD/updater" "$DEST"
 
 #### copy nekobox.png ####
-cp ./res/nekobox.ico $DEST/nekobox.ico
+cp ./res/nekobox.ico "$DEST/nekobox.ico"
 
-command -v linuxdeploy  && ln -s `which linuxdeploy` linuxdeploy-$ARCH1.AppImage ||:
-command -v linuxdeploy-plugin-qt  && ln -s `which linuxdeploy-plugin-qt` linuxdeploy-plugin-qt-$ARCH1.AppImage ||:
+command -v linuxdeploy  && ln -s `which linuxdeploy` "linuxdeploy-$ARCH1.AppImage" ||:
+command -v linuxdeploy-plugin-qt  && ln -s `which linuxdeploy-plugin-qt` "linuxdeploy-plugin-qt-$ARCH1.AppImage" ||:
 if command -v appimagetool 
 then
   ln -s `which appimagetool` appimagetool-$ARCH1.AppImage ||:
@@ -59,7 +59,7 @@ chmod +x *.AppImage ||:
 
 export EXTRA_QT_PLUGINS="iconengines;wayland-shell-integration;wayland-decoration-client;"
 export EXTRA_PLATFORM_PLUGINS="libqwayland.so;"
-$CURDIR/linuxdeploy-$ARCH1.AppImage --appdir $DEST --executable $DEST/nekobox --plugin qt
+"$CURDIR/linuxdeploy-$ARCH1.AppImage" --appdir $DEST --executable $DEST/nekobox --plugin qt
 
 cd $DEST
 rm -r ./usr/translations ||:
@@ -92,13 +92,13 @@ patchelf --set-rpath '$ORIGIN/../../lib' ./usr/plugins/platformthemes/libqxdgdes
 #mv ./usr/lib2 ./usr/lib
 
 # fix lib rpath
-cp $CURDIR/*.js $DEST
-cp -RT $CURDIR/res/public $DEST/public
-echo "[General]" > $DEST/global.ini
-echo "software_name=NelBox" >> $DEST/global.ini
-echo "software_version=$INPUT_VERSION" >> $DEST/global.ini
+cp "$CURDIR/"*.js "$DEST"
+cp -RT "$CURDIR/res/public" "$DEST/public"
+echo "[General]" > "$DEST/global.ini"
+echo "software_name=NekoBox" >> "$DEST/global.ini"
+echo "software_version=$INPUT_VERSION" >> "$DEST/global.ini"
 
-cd $DEST
+cd "$DEST"
 patchelf --set-rpath '$ORIGIN/usr/lib' ./nekobox
 
 shopt -s extglob
@@ -114,6 +114,7 @@ cd appimage
 
 
 chmod 755 *
+
 cp -Rfv ../nekobox/!(updater|appimage|nekobox-${ARCH1}.AppImage) ./AppDir
 (
 cd AppDir
