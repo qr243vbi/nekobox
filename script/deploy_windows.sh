@@ -5,40 +5,36 @@ source script/env_deploy.sh
 export CURDIR="$SRC_ROOT"
 
 if [[ $1 == "new-x86_64" || -z $1 ]]; then
-  ARCH="windows-amd64"
-  DEST="$DEPLOYMENT/windows64"
+  ARCH="windows64"
   INST="$DEPLOYMENT/nekobox_setup"
 else if [[ $1 == "new-arm64" || -z $1 ]]; then
   ARCH="windows-arm64"
-  DEST="$DEPLOYMENT/windows-arm64"
   INST="$DEPLOYMENT/nekobox_setup_arm64"
 else if [[ $1 == 'i686' ]]; then
-  ARCH="windowslegacy-386"
-  DEST="$DEPLOYMENT/windows32"
+  ARCH="windows32"
   INST="$DEPLOYMENT/nekobox_setup32"
 else if [[ $1 == 'x86_64' ]]; then
-  ARCH="windowslegacy-amd64"
-  DEST="$DEPLOYMENT/windowslegacy64"
+  ARCH="windowslegacy64"
   INST="$DEPLOYMENT/nekobox_setup_legacy"
 else if [[ $1 == "arm64" ]]; then
   ARCH="windowslegacy-arm64"
-  DEST="$DEPLOYMENT/windowslegacy-arm64"
   INST="$DEPLOYMENT/nekobox_setup_legacy_arm64"
 fi; fi; fi; fi; fi;
+
+export DEST="$DEPLOYMENT/$ARCH"
+mkdir -p "$DEST"
 
 if [[ -d download-artifact ]]
 then
 (
  cd download-artifact
- cd *"linux-$ARCH"
+ cd *"$ARCH"
  tar xvzf artifacts.tgz -C .
- mv deployment/* "$DEPLOYMENT"
+ mv deployment/*"$ARCH/"* "$DEST"
 ) ||:
 fi
 
 pushd "$SRC_ROOT"
-
-mkdir -p $DEST
 
 #### get the pdb ####
 if [[ "$COMPILER" == "MinGW" ]]
@@ -65,7 +61,7 @@ cp srslist.json "$DEST/srslist.json"
 cp "$CURDIR/"*.js $DEST
 cp "$BUILD/nekobox.exe" "$DEST" || cp "$BUILD/Release/nekobox.exe" "$DEST"
 [[ -f "$BUILD/nekobox_core.exe" ]] && cp "$BUILD/nekobox_core.exe" "$DEST" 
-[[ -f "$BUILD/updater.exe" ]] cp "$BUILD/updater.exe" "$DEST"
+[[ -f "$BUILD/updater.exe" ]] && cp "$BUILD/updater.exe" "$DEST"
 
 cp -RT "$CURDIR/res/public" "$DEST/public"
 echo "[General]" > "$DEST/global.ini"
@@ -76,19 +72,9 @@ if [[ "$COMPILER" != "MinGW" ]]
 then
 pushd $DEST
 windeployqt nekobox.exe --no-translations --no-system-d3d-compiler --no-compiler-runtime --no-opengl-sw --verbose 2
-
 rm -rf dxcompiler.dll dxil.dll ||:
 popd
 fi
-
-if [[ -d download-artifact ]]
-then
- cd download-artifact
- cd *$ARCH
- tar xvzf artifacts.tgz -C ../../
- cd ../..
-fi
-
 
 (
 cd "$CURDIR"
