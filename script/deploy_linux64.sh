@@ -1,6 +1,6 @@
 #!/bin/bash
 set -e
-
+source script/env_deploy.sh
 export CURDIR=$SRC_ROOT
 
 UNAME="${UNAME:-$(uname -m)}"
