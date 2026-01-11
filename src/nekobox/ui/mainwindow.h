@@ -347,9 +347,11 @@ private:
 
     void url_test_current();
 
-    void speedtest_current_group(const QList<std::shared_ptr<Configs::ProxyEntity>>& profiles, bool testCurrent = false);
+    void speedtest_current_group(const QList<std::shared_ptr<Configs::ProxyEntity>>& profiles, 
+        bool testCurrent = false, int testmode = -1);
 
-    void runSpeedTest(const QString& config, bool useDefault, bool testCurrent, const QStringList& outboundTags, const QMap<QString, int>& tag2entID, int entID = -1);
+    void runSpeedTest(const QString& config, bool useDefault, bool testCurrent, 
+        const QStringList& outboundTags, const QMap<QString, int>& tag2entID, int entID , int testmode);
 
     bool set_system_dns(bool set, bool save_set = true);
 #ifndef SKIP_UPDATE_BUTTON
