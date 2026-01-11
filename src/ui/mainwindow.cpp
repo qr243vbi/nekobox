@@ -491,12 +491,23 @@ MainWindow::MainWindow(QWidget *parent)
 
   parallelCoreCallPool->setMaxThreadCount(10); // constant value
   //
+  connect(ui->menu_edit, &QAction::triggered, this, 
+          [this]()->void {
+            QTableWidgetItem * item = nullptr;
+            auto Items = ui->proxyListTable->selectedItems();
+            if (Items.count() > 0){
+              item = Items.at(0);
+            }
+            if (item != nullptr){
+              on_proxyListTable_itemDoubleClicked(item);
+            }
+          });
   connect(ui->menu_start, &QAction::triggered, this,
-          [=, this]() { profile_start(); });
+          [this]() { profile_start(); });
   connect(ui->menu_stop, &QAction::triggered, this,
-          [=, this]() { profile_stop(false, false, true); });
+          [this]() { profile_stop(false, false, true); });
   connect(ui->tabWidget->tabBar(), &QTabBar::tabMoved, this,
-          [=, this](int from, int to) {
+          [this](int from, int to) {
             // use tabData to track tab & gid
             Configs::profileManager->groupsTabOrder.clear();
             for (int i = 0; i < ui->tabWidget->tabBar()->count(); i++) {
@@ -792,17 +803,22 @@ MainWindow::MainWindow(QWidget *parent)
     //  } else {
     //     ui->actionSpeedtest_Current->setEnabled(false);
     //  }
+    bool selected_profile = true;
     if (auto selected = get_now_selected_list(); selected.empty()) {
-      ui->actionSpeedtest_Selected->setEnabled(false);
-      ui->actionUrl_Test_Selected->setEnabled(false);
-      ui->actionUrl_Test_Clear->setEnabled(false);
-      ui->menu_resolve_selected->setEnabled(false);
-    } else {
-      ui->actionSpeedtest_Selected->setEnabled(true);
-      ui->actionUrl_Test_Selected->setEnabled(true);
-      ui->menu_resolve_selected->setEnabled(true);
-      ui->actionUrl_Test_Clear->setEnabled(true);
-    }
+      selected_profile = false;
+    } 
+      
+      ui->actionSpeedtest_Selected->setEnabled(selected_profile);
+      ui->actionUrl_Test_Selected->setEnabled(selected_profile);
+      ui->actionUrl_Test_Clear->setEnabled(selected_profile);
+      ui->menu_resolve_selected->setEnabled(selected_profile);
+      ui->menu_start->setEnabled(selected_profile);
+      ui->menu_edit->setEnabled(selected_profile);
+      ui->menu_share_item->setEnabled(selected_profile);
+      ui->menu_delete->setEnabled(selected_profile);
+      ui->menu_clone->setEnabled(selected_profile);
+      ui->menu_reset_traffic->setEnabled(selected_profile);
+
     if (!speedtestRunning.tryLock()) {
       ui->menu_server->addAction(ui->menu_stop_testing);
     } else {
