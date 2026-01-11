@@ -4,6 +4,8 @@ gen-cpp
 core/server/gen/libcore_service-remote
 core/server/gen/*.go
 script/winget-pkgs
+srslist.json
+*.Version
 run.cmd
 run86.cmd
 *.zip

@@ -68,7 +68,7 @@ func (s *server) Start(ctx context.Context, in *gen.LoadConfigReq) (*gen.ErrorRe
 		}
 		if in.ExtraProcessConf != "" {
 			extraConfPath := in.ExtraProcessConfDir + string(os.PathSeparator) + "extra.conf"
-			f, e := os.OpenFile(extraConfPath, os.O_CREATE|os.O_TRUNC|os.O_RDWR, 700)
+			f, e := os.OpenFile(extraConfPath, os.O_CREATE|os.O_TRUNC|os.O_RDWR, 0700)
 			if e != nil {
 				err = E.Cause(e, "Failed to open extra.conf")
 				return out, nil
