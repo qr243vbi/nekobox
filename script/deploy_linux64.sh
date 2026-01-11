@@ -13,20 +13,20 @@ else
   ARCH1="x86_64"
 fi
 
+DEST="$DEPLOYMENT/linux-$ARCH"
+mkdir -p $DEST ||:
+
 if [[ -d download-artifact ]]
 then
 (
  cd download-artifact
  cd *"linux-$ARCH"
  tar xvzf artifacts.tgz -C .
- mv deployment/* "$DEST"
+ mv deployment/*"linux-$ARCH/"* "$DEST"
 ) ||:
 fi
 
 pushd "$SRC_ROOT"
-
-DEST="$DEPLOYMENT/linux-$ARCH"
-mkdir -p $DEST ||:
 
 #### copy srslist ####
 [[ -f srslist.json ]] || wget -c https://github.com/qr243vbi/ruleset/raw/refs/heads/rule-set/srslist.json
