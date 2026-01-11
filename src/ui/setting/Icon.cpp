@@ -3,6 +3,7 @@
 #include <QCoreApplication>
 #include <QPainter>
 #include <QDir>
+#include <qicon.h>
 
 #ifndef SYSTRAY_ICON_DIR
 #include "nekobox/sys/Settings.h"
@@ -12,13 +13,23 @@
 #define FORMAT nullptr
 
 QPixmap Icon::GetTrayIcon(TrayIconStatus status) {
-    QPixmap pixmap;
-    auto pixmap_read = QPixmap(SYSTRAY_ICON("icon.png"), FORMAT);
-    if (!pixmap_read.isNull()) pixmap = pixmap_read;
-    if (!indicatorRuleMap.contains(status)) return pixmap;
-    auto rule = indicatorRuleMap[status];
+    QPixmap pixmap(256, 256);
 
+    auto pixmap_read = QPixmap(SYSTRAY_ICON("icon.png"), FORMAT);
+    bool pixmap_read_isnull = pixmap_read.isNull();
+    if (!pixmap_read_isnull){
+        pixmap = pixmap_read;
+    }
+    if (!indicatorRuleMap.contains(status)) {
+        return pixmap;
+    }
+    auto rule = indicatorRuleMap[status];
     auto p = QPainter(&pixmap);
+    if (pixmap_read_isnull){
+        QIcon icon = QIcon::fromTheme("nekobox");
+        icon.paint(&p, QRect(0, 0, 256, 256));
+    }
+
     auto side = pixmap.width();
     auto radius = side * rule.radius;
     auto d = side * rule.diameter;
