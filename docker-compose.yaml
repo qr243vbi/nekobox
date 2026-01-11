@@ -1,0 +1,11 @@
+version: '3.9'
+
+services:
+  myapp:
+    build:
+      context: script
+      dockerfile: script/Containerfile
+    volumes:
+      - .:/app   # bind current directory to /app in container
+    working_dir: /app
+    tty: true    # optional, keeps container running for interactive shell
