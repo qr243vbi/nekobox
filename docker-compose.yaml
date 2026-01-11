@@ -4,8 +4,8 @@ services:
   myapp:
     build:
       context: script
-      dockerfile: script/Containerfile
+      dockerfile: Dockerfile
     volumes:
-      - .:/app   # bind current directory to /app in container
+      - .:/app:Z   # bind current directory to /app in container
     working_dir: /app
     tty: true    # optional, keeps container running for interactive shell
