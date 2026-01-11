@@ -337,11 +337,11 @@ func KillProcesses(prefix string) {
 			continue
 		}
 
-		if strings.HasPrefix(strings.ToLower(filepath.Clean(path)), prefix) {
-			if curpid != pid && ppid != pid {
-				fmt.Printf("Process %s => %d \n", path, pid)
-				KillPid(pid)
-			}
+		path = strings.ToLower(filepath.Clean(path))
+
+		if curpid != pid && ppid != pid && strings.HasPrefix(path, prefix) {
+			fmt.Printf("Process %s => %d \n", path, pid)
+			KillPid(pid)
 		}
 	}
 }
