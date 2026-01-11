@@ -1,19 +1,20 @@
 package main
 
 import (
-	"nekobox_core/internal/boxmain"
-	_ "nekobox_core/internal/distro/all"
 	"context"
 	"flag"
 	"fmt"
 	"log"
+	"nekobox_core/gen"
+	"nekobox_core/internal/boxmain"
+	_ "nekobox_core/internal/distro/all"
 	"net"
 	"os"
 	"runtime"
 	runtimeDebug "runtime/debug"
 	"strconv"
 	"time"
-	"nekobox_core/gen"
+
 	"github.com/apache/thrift/lib/go/thrift"
 	C "github.com/sagernet/sing-box/constant"
 )
@@ -37,9 +38,9 @@ func RunCore(_port *int, _debug *bool) {
 	{
 		transportFactory := thrift.NewTBufferedTransportFactory(8192)
 		config := &thrift.TConfiguration{
-			ConnectTimeout:  time.Second * 2, // 2 second connection timeout
-			SocketTimeout:   time.Second * 10, // 10 second socket read/write timeout
-			MaxMessageSize:  1024 * 1024 * 50, // 50 MB maximum message size
+			ConnectTimeout: time.Second * 2,  // 2 second connection timeout
+			SocketTimeout:  time.Second * 10, // 10 second socket read/write timeout
+			MaxMessageSize: 1024 * 1024 * 50, // 50 MB maximum message size
 		}
 
 		// 2. Create the TBinaryProtocolFactory using the configuration
@@ -57,6 +58,14 @@ func RunCore(_port *int, _debug *bool) {
 }
 
 func main() {
+	if len(os.Args) > 0 {
+		if os.Args[1] == "-installer-mode" {
+			fmt.Println("nekobox_core installer mode")
+			InstallerMode()
+			return
+		}
+	}
+
 	var _admin *bool
 	var _waitpid *int
 	_port := flag.Int("port", 19810, "Port")

@@ -1,10 +1,10 @@
 package main
 
 import (
-	"nekobox_core/gen"
 	"context"
 	"fmt"
 	"log"
+	"nekobox_core/gen"
 	"os"
 	"os/exec"
 	"syscall"
@@ -82,4 +82,8 @@ func restartAsAdmin() {
 		fmt.Println("Error executing 'pkexec':", err)
 		os.Exit(1)
 	}
+}
+
+func InstallerMode() {
+
 }
