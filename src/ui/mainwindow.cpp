@@ -2,6 +2,7 @@
 
 #include "nekobox/configs/ConfigBuilder.hpp"
 #include "nekobox/configs/sub/GroupUpdater.hpp"
+#include "nekobox/dataStore/Const.hpp"
 #include "nekobox/dataStore/ProfileFilter.hpp"
 #include <nekobox/global/GuiUtils.hpp>
 #include "nekobox/dataStore/ResourceEntity.hpp"
@@ -337,9 +338,27 @@ MainWindow::MainWindow(QWidget *parent)
   QSettings settings = getSettings();
   // Load Manager
   Configs::profileManager->LoadManager();
-  QString theme = settings.value("theme", "System").toString();
-  QString font_family = settings.value("font_family", "").toString();
-  int font_size = settings.value("font_size", 0).toInt();
+  QString theme = settings.value("theme", 
+  #ifdef Q_OS_WIN
+    "System"
+  #else
+    "Fusion"
+  #endif
+  ).toString();
+  QString font_family = settings.value("font_family", 
+  #ifdef Q_OS_WIN
+    ""
+  #else
+    "Noto Sans"
+  #endif
+  ).toString();
+  int font_size = settings.value("font_size", 
+  #ifdef Q_OS_WIN
+    0
+  #else
+    11
+  #endif
+  ).toInt();
   // Setup misc UI
   // migrate old themes
   themeManager->ApplyTheme(theme);
@@ -808,7 +827,7 @@ MainWindow::MainWindow(QWidget *parent)
       selected_profile = false;
     } 
       
-      ui->actionSpeedtest_Selected->setEnabled(selected_profile);
+      ui->menu_test->setEnabled(selected_profile);
       ui->actionUrl_Test_Selected->setEnabled(selected_profile);
       ui->actionUrl_Test_Clear->setEnabled(selected_profile);
       ui->menu_resolve_selected->setEnabled(selected_profile);
@@ -1120,8 +1139,20 @@ MainWindow::MainWindow(QWidget *parent)
       speedtest_current_group({}, true);
     }
   });
+
   connect(ui->actionSpeedtest_Selected, &QAction::triggered, this,
-          [=, this]() { speedtest_current_group(get_now_selected_list()); });
+          [=, this]() { speedtest_current_group(get_now_selected_list(), false,
+             Configs::TestConfig::FULL); });
+
+  connect(ui->actionDownloadtest_Selected, &QAction::triggered, this,
+          [=, this]() { speedtest_current_group(get_now_selected_list(), false, 
+            Configs::TestConfig::DL); });
+
+  connect(ui->actionUploadtest_Selected, &QAction::triggered, this,
+          [=, this]() { speedtest_current_group(get_now_selected_list(), false, 
+          Configs::TestConfig::UL); });
+
+
   connect(ui->actionSpeedtest_Group, &QAction::triggered, this, [=, this]() {
     speedtest_current_group(
         Configs::profileManager->CurrentGroup()->GetProfileEnts());

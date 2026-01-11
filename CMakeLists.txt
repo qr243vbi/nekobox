@@ -376,6 +376,67 @@ endif ()
 
 qt_finalize_executable(nekobox)
 
+if (UNIX)
+set(FILE_URL "https://github.com/qr243vbi/ruleset/raw/refs/heads/rule-set/srslist.json")
+set(DEST_FILE "${CMAKE_SOURCE_DIR}/srslist.json")
+
+if(NOT EXISTS "${DEST_FILE}")
+    message(STATUS "srslist.json not found in source dir, downloading: ${DEST_FILE}")
+
+    file(DOWNLOAD
+        "${FILE_URL}"
+        "${DEST_FILE}"
+        SHOW_PROGRESS
+        STATUS download_status
+        LOG download_log
+    )
+
+    list(GET download_status 0 status_code)
+    if(NOT status_code EQUAL 0)
+        message(STATUS
+            "Download failed: ${download_status}\n${download_log}"
+        )
+    endif()
+else()
+    message(STATUS "File already exists: ${DEST_FILE}")
+endif()
+
+set(START "${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_BINDIR}/nekobox")
+set(MAIN "${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_LIBEXECDIR}/nekobox/nekobox")
+set(ICON "${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_DATADIR}/icons/hicolor/256x256/apps/nekobox.png")
+
+# Configure the desktop file
+configure_file(
+    "${CMAKE_SOURCE_DIR}/nekobox.desktop.in"
+    "${CMAKE_BINARY_DIR}/nekobox.desktop"
+    @ONLY
+)
+
+# Configure the desktop file
+configure_file(
+    "${CMAKE_SOURCE_DIR}/start.sh.in"
+    "${CMAKE_BINARY_DIR}/start.sh"
+    @ONLY
+)
+
+
+install(
+    FILES "${CMAKE_SOURCE_DIR}/res/public/icon.png"
+    DESTINATION "${CMAKE_INSTALL_DATADIR}/icons/hicolor/256x256/apps"
+)
+
+install(
+    FILES "${CMAKE_BINARY_DIR}/nekobox.desktop"
+    DESTINATION "${CMAKE_INSTALL_DATADIR}/applications"
+)
+
+install(
+    PROGRAMS "${CMAKE_BINARY_DIR}/start.sh"
+    RENAME "nekobox"
+    DESTINATION "${CMAKE_INSTALL_BINDIR}"
+)
 
 install(TARGETS nekobox DESTINATION ${CMAKE_INSTALL_LIBEXECDIR}/nekobox)
-install(FILES res/public/icon.png check_routeprofiles.js res/public/emoji.ttf DESTINATION ${CMAKE_INSTALL_LIBEXECDIR}/nekobox/public)
+install(FILES srslist.json check_routeprofiles.js DESTINATION ${CMAKE_INSTALL_LIBEXECDIR}/nekobox/public)
+
+endif()

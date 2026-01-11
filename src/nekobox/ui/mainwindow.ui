@@ -648,19 +648,16 @@
      </property>
      <addaction name="separator"/>
     </widget>
-    <!--widget class="QMenu" name="menuCurrent_selected">
+    <widget class="QMenu" name="menu_test">
      <property name="title">
-      <string>Current selected</string>
+      <string>Test</string>
      </property>
-     <addaction name="menu_clone"/>
-     <addaction name="menu_delete"/>
-     <addaction name="separator"/>
      <addaction name="actionUrl_Test_Selected"/>
      <addaction name="actionUrl_Test_Clear"/>
-     <addaction name="menu_resolve_selected"/>
-     <addaction name="menu_reset_traffic"/>
      <addaction name="actionSpeedtest_Selected"/>
-    </widget-->
+     <addaction name="actionDownloadtest_Selected"/>
+     <addaction name="actionUploadtest_Selected"/>
+    </widget>
     <addaction name="menu_profiles"/>
     <addaction name="separator"/>
     <addaction name="menu_start"/>
@@ -672,11 +669,9 @@
     <addaction name="menu_clone"/>
     <addaction name="menu_delete"/>
     <addaction name="separator"/>
-    <addaction name="actionUrl_Test_Selected"/>
-    <addaction name="actionUrl_Test_Clear"/>
     <addaction name="menu_resolve_selected"/>
     <addaction name="menu_reset_traffic"/>
-    <addaction name="actionSpeedtest_Selected"/>
+    <addaction name="menu_test"/>
     <addaction name="menuCurrent_group"/>
    </widget>
    <widget class="QMenu" name="menuHidden_menu">
@@ -1114,6 +1109,18 @@
   <action name="actionSpeedtest_Selected">
    <property name="text">
     <string>Speedtest Selected</string>
+   </property>
+  </action>
+
+  <action name="actionDownloadtest_Selected">
+   <property name="text">
+    <string>Download test Selected</string>
+   </property>
+  </action>
+
+  <action name="actionUploadtest_Selected">
+   <property name="text">
+    <string>Upload test Selected</string>
    </property>
   </action>
   <action name="actionSpeedtest_Group">

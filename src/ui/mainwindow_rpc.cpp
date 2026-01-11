@@ -249,7 +249,8 @@ void MainWindow::url_test_current() {
     });
 }
 
-void MainWindow::speedtest_current_group(const QList<std::shared_ptr<Configs::ProxyEntity>>& profiles, bool testCurrent)
+void MainWindow::speedtest_current_group(const QList<std::shared_ptr<Configs::ProxyEntity>>& profiles, 
+    bool testCurrent, int testmode)
 {
     if (profiles.isEmpty() && !testCurrent) {
         return;
@@ -261,9 +262,11 @@ void MainWindow::speedtest_current_group(const QList<std::shared_ptr<Configs::Pr
         return;
     }
 
-    runOnNewThread([this, profiles, testCurrent]() {
+    runOnNewThread([=, this]() {
         if (!testCurrent)
         {
+
+            qDebug()<<(testmode);
             auto buildObject = Configs::BuildTestConfig(profiles);
             if (!buildObject->error.isEmpty()) {
                 MW_show_log(tr("Failed to build test config: ") + buildObject->error);
@@ -274,16 +277,19 @@ void MainWindow::speedtest_current_group(const QList<std::shared_ptr<Configs::Pr
             stopSpeedtest.store(false);
             for (const auto &entID: buildObject->fullConfigs.keys()) {
                 auto configStr = buildObject->fullConfigs[entID];
-                runSpeedTest(configStr, true, false, {}, {}, entID);
+                runSpeedTest(configStr, true, false, {}, {}, entID, 
+                    testmode);
             }
 
             if (!buildObject->outboundTags.isEmpty()) {
-                runSpeedTest(QJsonObject2QString(buildObject->coreConfig, false), false, false, buildObject->outboundTags, buildObject->tag2entID);
+                runSpeedTest(QJsonObject2QString(buildObject->coreConfig, false), false, false, 
+                buildObject->outboundTags, buildObject->tag2entID, -1, testmode);
             }
         } else
         {
             stopSpeedtest.store(false);
-            runSpeedTest("", true, true, {}, {});
+            runSpeedTest("", true, true, {}, {}, -1, 
+                testmode);
         }
 
         speedtestRunning.unlock();
@@ -366,15 +372,24 @@ void MainWindow::queryCountryTest(const QMap<QString, int>& tag2entID, bool test
 }
 
 
-void MainWindow::runSpeedTest(const QString& config, bool useDefault, bool testCurrent, const QStringList& outboundTags, const QMap<QString, int>& tag2entID, int entID)
+void MainWindow::runSpeedTest(const QString& config, bool useDefault, bool testCurrent, 
+    const QStringList& outboundTags, const QMap<QString, int>& tag2entID, int entID, const int testmode)
 {
     if (stopSpeedtest.load()) {
         MW_show_log(tr("Profile speed test aborted"));
         return;
     }
 
+    qDebug() << "Speed Test" ;
     libcore::SpeedTestRequest req;
-    auto speedtestConf = Configs::dataStore->speed_test_mode;
+    int speedtestConf = testmode;
+    if (speedtestConf < 0) {
+        qDebug() << speedtestConf ;
+        speedtestConf = Configs::dataStore->speed_test_mode;
+    }
+
+    qDebug() << speedtestConf ;
+
     qstringlist_to_vector(req.outbound_tags, outboundTags);
     req.config = (config.toStdString());
     req.use_default_outbound = (useDefault);
