@@ -2,7 +2,7 @@
 set -e
 
 source script/env_deploy.sh
-export CURDIR=$SRC_ROOT
+export CURDIR="$SRC_ROOT"
 
 if [[ $1 == "new-x86_64" || -z $1 ]]; then
   ARCH="windows-amd64"
@@ -30,9 +30,9 @@ if [[ -d download-artifact ]]
 then
 (
  cd download-artifact
- cd *linux-$ARCH
+ cd *"linux-$ARCH"
  tar xvzf artifacts.tgz -C .
- mv deployment/* $DEPLOYMENT
+ mv deployment/* "$DEPLOYMENT"
 ) ||:
 fi
 
@@ -59,18 +59,18 @@ if [[ ! -f srslist.json ]]
 then
 curl -fLso srslist.json "https://github.com/qr243vbi/ruleset/raw/refs/heads/rule-set/srslist.json"
 fi
-cp srslist.json $DEST/srslist.json
+cp srslist.json "$DEST/srslist.json"
 
 #### copy exe ####
-cp $CURDIR/*.js $DEST
-cp $BUILD/nekobox.exe $DEST || cp $BUILD/Release/nekobox.exe $DEST
-cp $BUILD/nekobox_core.exe $DEST ||: 
-cp $BUILD/updater.exe $DEST ||:
+cp "$CURDIR/"*.js $DEST
+cp "$BUILD/nekobox.exe" "$DEST" || cp "$BUILD/Release/nekobox.exe" "$DEST"
+[[ -f "$BUILD/nekobox_core.exe" ]] && cp "$BUILD/nekobox_core.exe" "$DEST" 
+[[ -f "$BUILD/updater.exe" ]] cp "$BUILD/updater.exe" "$DEST"
 
-cp -RT $CURDIR/res/public $DEST/public
-echo "[General]" > $DEST/global.ini
-echo "software_name=NelBox" >> $DEST/global.ini
-echo "software_version=$INPUT_VERSION" >> $DEST/global.ini
+cp -RT "$CURDIR/res/public" "$DEST/public"
+echo "[General]" > "$DEST/global.ini"
+echo "software_name=NelBox" >> "$DEST/global.ini"
+echo "software_version=$INPUT_VERSION" >> "$DEST/global.ini"
 
 if [[ "$COMPILER" != "MinGW" ]]
 then
