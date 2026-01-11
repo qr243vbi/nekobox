@@ -19,13 +19,12 @@ then
  cd download-artifact
  cd *"linux-$ARCH"
  tar xvzf artifacts.tgz -C .
- mv deployment/* "$DEPLOYMENT"
+ mv deployment/* "$DEST"
 ) ||:
 fi
 
 pushd "$SRC_ROOT"
 
-source script/env_deploy.sh
 DEST="$DEPLOYMENT/linux-$ARCH"
 mkdir -p $DEST ||:
 
@@ -40,6 +39,8 @@ cp "$BUILD/nekobox" "$DEST"
 
 #### copy nekobox.png ####
 cp ./res/nekobox.ico "$DEST/nekobox.ico"
+
+ls "$DEST"
 
 command -v linuxdeploy  && ln -s `which linuxdeploy` "linuxdeploy-$ARCH1.AppImage" ||:
 command -v linuxdeploy-plugin-qt  && ln -s `which linuxdeploy-plugin-qt` "linuxdeploy-plugin-qt-$ARCH1.AppImage" ||:
