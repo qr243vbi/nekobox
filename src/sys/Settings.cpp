@@ -4,32 +4,29 @@
 #include "nekobox/dataStore/Utils.hpp"
 #include <QApplication>
 #include <QDir>
-#include <QVariantMap>
-#include <QTemporaryFile>
 #include <QFontDatabase>
+#include <QTemporaryFile>
+#include <QVariantMap>
 #include <qcontainerfwd.h>
 #include <qsettings.h>
-
 
 QSettings getSettings() {
   return QSettings(CONFIG_INI_PATH, QSettings::IniFormat);
 }
 
-QSettings getGlobal(){
+QSettings getGlobal() {
   return QSettings(GLOBAL_INI_PATH, QSettings::IniFormat);
-  /*
-  QStringList keys = settings.allKeys();
-  for (const QString &key : keys) {
-    map.insert(key, settings.value(key));
-  }
-  return map;
-  */
 }
 
 QString getResourcesDir() {
   QString str = Configs::resourceManager->resources_path;
+
   if (str == "") {
+#ifdef NKR_DEFAULT_RESOURCE_DIRECTORY
+    str = NKR_DEFAULT_RESOURCE_DIRECTORY;
+#else
     str = getRootResource("public");
+#endif
   }
   return str;
 };
@@ -37,7 +34,7 @@ QString getResourcesDir() {
 QString getResource(QString str) {
   {
     auto link = Configs::resourceManager->getLink(str);
-   // qDebug() << "Link for " << str << " is " << link;
+    // qDebug() << "Link for " << str << " is " << link;
     if (!link.isEmpty()) {
       return link;
     }
@@ -49,7 +46,13 @@ QString getResource(QString str) {
   if (file.exists()) {
     return dir;
   } else {
-    return getRootResource(str);
+    str = getRootResource(str);
+    QFile file2(str);
+    if (file2.exists()) {
+      return str;
+    } else {
+      return "";
+    }
   }
 }
 
@@ -144,45 +147,43 @@ bool createSymlink(const QString &targetPath, const QString &linkPath) {
   }
 }
 
-QString getLocale(){
+QString getLocale() {
   auto settings = getSettings();
   return settings.value("language", QLocale().name()).toString();
 }
 
-void updateEmojiFont(){
-#if QT_VERSION >= QT_VERSION_CHECK(6,9,0)
-QString font = getResource("emoji.ttf");
-    static int latestFont = -1;
+void updateEmojiFont() {
+#if QT_VERSION >= QT_VERSION_CHECK(6, 9, 0)
+  QString font = getResource("emoji.ttf");
+  static int latestFont = -1;
 
-    qDebug() << "Font path is : " << font ;
-    int fontId = QFontDatabase::addApplicationFont(font);
-    if (fontId >= 0)
-    {
-      if (latestFont >= 0){
-        QFontDatabase::removeApplicationFont(latestFont);
-      }
-      latestFont = fontId;
-        QStringList fontFamilies = QFontDatabase::applicationFontFamilies(fontId);
-        QFontDatabase::setApplicationEmojiFontFamilies(fontFamilies);
-        QApplication::processEvents();
-
-        QSettings settings = getSettings();
-  QString font_family = settings.value("font_family", "").toString();
-  int font_size = settings.value("font_size", 0).toInt();
-
-  if (!font_family.isEmpty()) {
-    auto font = qApp->font();
-    font.setFamily(font_family);
-    qApp->setFont(font);
-  }
-  if (font_size != 0) {
-    auto font = qApp->font();
-    font.setPointSize(font_size);
-    qApp->setFont(font);
-  }
-    } else
-    {
+  qDebug() << "Font path is : " << font;
+  int fontId = QFontDatabase::addApplicationFont(font);
+  if (fontId >= 0) {
+    if (latestFont >= 0) {
+      QFontDatabase::removeApplicationFont(latestFont);
     }
+    latestFont = fontId;
+    QStringList fontFamilies = QFontDatabase::applicationFontFamilies(fontId);
+    QFontDatabase::setApplicationEmojiFontFamilies(fontFamilies);
+    QApplication::processEvents();
+
+    QSettings settings = getSettings();
+    QString font_family = settings.value("font_family", "").toString();
+    int font_size = settings.value("font_size", 0).toInt();
+
+    if (!font_family.isEmpty()) {
+      auto font = qApp->font();
+      font.setFamily(font_family);
+      qApp->setFont(font);
+    }
+    if (font_size != 0) {
+      auto font = qApp->font();
+      font.setPointSize(font_size);
+      qApp->setFont(font);
+    }
+  } else {
+  }
 #endif
 }
 
@@ -206,9 +207,9 @@ bool isDirectoryWritable(QString dirPath) {
   }
 }
 
-void MainWindowTableSettings::Save(QSettings &settings){
+void MainWindowTableSettings::Save(QSettings &settings) {
   settings.setValue("manually_column_width", this->manually_column_width);
-  QStringList list ;
+  QStringList list;
   list << QString::number(this->column_width[0]);
   list << QString::number(this->column_width[1]);
   list << QString::number(this->column_width[2]);
@@ -216,11 +217,11 @@ void MainWindowTableSettings::Save(QSettings &settings){
   list << QString::number(this->column_width[4]);
   settings.setValue("column_width", list);
 };
-void MainWindowTableSettings::Load(QSettings &settings){
-  this->manually_column_width = settings.value(
-    "manually_column_width", false).toBool();
+void MainWindowTableSettings::Load(QSettings &settings) {
+  this->manually_column_width =
+      settings.value("manually_column_width", false).toBool();
   QStringList list = settings.value("column_width").toStringList();
-  for (int i = list.size(); i < 5; i ++){
+  for (int i = list.size(); i < 5; i++) {
     list << "-1";
   }
   this->column_width[0] = list[0].toInt();
@@ -230,6 +231,6 @@ void MainWindowTableSettings::Load(QSettings &settings){
   this->column_width[4] = list[4].toInt();
 };
 
-namespace Configs{
-  MainWindowTableSettings tableSettings;
+namespace Configs {
+MainWindowTableSettings tableSettings;
 }
