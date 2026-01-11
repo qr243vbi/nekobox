@@ -4,6 +4,8 @@
 global.ini
 TEMP
 gen-cpp
+core/updater/vendor/*
+core/server/vendor/*
 core/server/gen/libcore_service-remote
 core/server/gen/*.go
 script/winget-pkgs
