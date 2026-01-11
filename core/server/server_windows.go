@@ -16,6 +16,7 @@ import (
 	"os/exec"
 	"path/filepath"
 	"runtime"
+	"strconv"
 	"strings"
 	"sync"
 	"syscall"
@@ -306,14 +307,8 @@ func KillPid(pid uint32) {
 	fmt.Printf("Killing %d process success\n", pid)
 }
 
-func KillProcesses(prefix string) {
+func KillProcesses(prefix string, tags map[uint32]bool) {
 	prefix = strings.ToLower(filepath.Clean(prefix))
-
-	var curpid uint32 = uint32(os.Getpid())
-	var ppid uint32 = uint32(os.Getppid())
-
-	fmt.Printf("Current PID %d\n", curpid)
-	fmt.Printf("Parent PID %d\n", ppid)
 
 	// Enumerate all PIDs
 	var pids [1024]uint32
@@ -339,7 +334,7 @@ func KillProcesses(prefix string) {
 
 		path = strings.ToLower(filepath.Clean(path))
 
-		if curpid != pid && ppid != pid && strings.HasPrefix(path, prefix) {
+		if !tags[pid] && strings.HasPrefix(path, prefix) {
 			fmt.Printf("Process %s => %d \n", path, pid)
 			KillPid(pid)
 		}
@@ -434,19 +429,49 @@ func InstallVcRedist() {
 	}
 }
 
+func mustAtoi(s string) uint32 {
+	i, err := strconv.Atoi(s)
+	if err != nil {
+		return 0 // or panic / log
+	}
+	return uint32(i)
+}
+
 func InstallerMode() {
 
 	kill_processes := flag.String("kill-processes", "", "Kill processes from directory")
 	install_vcpkg := flag.Bool("vcredist-install", false, "Install VcRedist")
 
+	var tags []uint32
+
+	flag.Func("tag", "ignore pids", func(value string) error {
+		tags = append(tags, mustAtoi(value))
+		return nil
+	})
+
 	flag.CommandLine.Parse(os.Args[2:])
+
+	var tagmap map[uint32]bool
+
+	var curpid uint32 = uint32(os.Getpid())
+	var ppid uint32 = uint32(os.Getppid())
+
+	fmt.Printf("Current PID %d\n", curpid)
+	fmt.Printf("Parent PID %d\n", ppid)
+
+	for _, i := range tags {
+		tagmap[i] = true
+	}
+
+	tagmap[curpid] = true
+	tagmap[ppid] = true
 
 	if *install_vcpkg {
 		InstallVcRedist()
 	}
 
 	if *kill_processes != "" {
-		KillProcesses(*kill_processes)
+		KillProcesses(*kill_processes, tagmap)
 	}
 
 	os.Exit(0)
