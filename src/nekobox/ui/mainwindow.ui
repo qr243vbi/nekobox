@@ -1133,7 +1133,7 @@
   </action>
   <action name="actionSimpledl_Selected">
    <property name="text">
-    <string>Country test Selected</string>
+    <string>Simple download test Selected</string>
    </property>
   </action>
   
