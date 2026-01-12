@@ -657,6 +657,8 @@
      <addaction name="actionSpeedtest_Selected"/>
      <addaction name="actionDownloadtest_Selected"/>
      <addaction name="actionUploadtest_Selected"/>
+     <addaction name="actionCountrytest_Selected"/>
+     <addaction name="actionSimpledl_Selected"/>
     </widget>
     <addaction name="menu_profiles"/>
     <addaction name="separator"/>
@@ -1108,7 +1110,7 @@
   </action>
   <action name="actionSpeedtest_Selected">
    <property name="text">
-    <string>Speedtest Selected</string>
+    <string>Full test Selected</string>
    </property>
   </action>
 
@@ -1123,6 +1125,18 @@
     <string>Upload test Selected</string>
    </property>
   </action>
+  
+  <action name="actionCountrytest_Selected">
+   <property name="text">
+    <string>Country test Selected</string>
+   </property>
+  </action>
+  <action name="actionSimpledl_Selected">
+   <property name="text">
+    <string>Country test Selected</string>
+   </property>
+  </action>
+  
   <action name="actionSpeedtest_Group">
    <property name="text">
     <string>Speedtest Group</string>
