@@ -38,6 +38,7 @@ Various formats are supported, including share links, JSON array of outbounds an
 
 ## Credits
 
+- [starifly/NekoBoxForAndroid](https://github.com/starifly/NekoBoxForAndroid)
 - [Thrift](https://thrift.apache.org/)
 - [enfein/mieru](https://github.com/enfein/mbox)
 - [SagerNet/sing-box](https://github.com/SagerNet/sing-box)
