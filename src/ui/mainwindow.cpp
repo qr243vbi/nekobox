@@ -1147,6 +1147,14 @@ MainWindow::MainWindow(QWidget *parent)
   connect(ui->actionDownloadtest_Selected, &QAction::triggered, this,
           [=, this]() { speedtest_current_group(get_now_selected_list(), false, 
             Configs::TestConfig::DL); });
+            
+  connect(ui->actionCountrytest_Selected, &QAction::triggered, this,
+          [=, this]() { speedtest_current_group(get_now_selected_list(), false, 
+            Configs::TestConfig::COUNTRY); });
+            
+  connect(ui->actionSimpledl_Selected, &QAction::triggered, this,
+          [=, this]() { speedtest_current_group(get_now_selected_list(), false, 
+            Configs::TestConfig::SIMPLEDL); });
 
   connect(ui->actionUploadtest_Selected, &QAction::triggered, this,
           [=, this]() { speedtest_current_group(get_now_selected_list(), false, 
