@@ -14,17 +14,17 @@
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="635"/>
         <source>Custom System Parameters (optional)</source>
-        <translation>自訂系統參數（可選）</translation>
+        <translation>自定义系統参数（可选）</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="632"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Format: hwid=value,os=value,osVersion=value,model=value&lt;/p&gt;&lt;p&gt;Leave empty to use default values. Only specify the parameters you want to override.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;格式： hwid=自訂值,os=自訂作業系統,osVersion=自訂版本,model=自訂型號&lt;/p&gt;&lt;p&gt;若要使用預設值，請留空。僅需指定您要覆寫的參數。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;格式： hwid=自定义值,os=自定义操作系統,osVersion=自定义版本,model=自定义型号&lt;/p&gt;&lt;p&gt;若要使用预设值，请留空。仅需指定您要覆写的参数。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="642"/>
         <source>hwid=custom_value,os=custom_os,osVersion=custom_version,model=custom_model</source>
-        <translation>hwid=自訂值,os=自訂作業系統,osVersion=自訂版本,model=自訂型號</translation>
+        <translation>hwid=自定义值,os=自定义操作系統,osVersion=自定义版本,model=自定义型号</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="20"/>
@@ -289,7 +289,7 @@
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="437"/>
         <source>Hide at startup</source>
-        <translation>啟動時隱藏</translation>
+        <translation>启动时隐藏</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="386"/>
@@ -1154,7 +1154,7 @@
     </message>
     <message>
         <source>remote</source>
-        <translation type="vanished">遠端</translation>
+        <translation type="vanished">远端</translation>
     </message>
     <message>
         <source>direct</source>
@@ -1833,12 +1833,12 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="60"/>
         <source>Host Key</source>
-        <translation>主机钥匙</translation>
+        <translation>主机密钥</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="70"/>
         <source>Host Key Algorithms</source>
-        <translation>主机钥匙算法</translation>
+        <translation>主机密钥算法</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="80"/>
@@ -1945,7 +1945,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="30"/>
         <source>Auth key</source>
-        <translation>验证钥匙</translation>
+        <translation>验证密钥</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="40"/>
@@ -1960,7 +1960,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="60"/>
         <source>Accept routes</source>
-        <translation>接受路由</translation>
+        <translation>放行路由</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="74"/>
@@ -2092,7 +2092,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="43"/>
         <source>Pre Shared Key</source>
-        <translation>预共享钥匙</translation>
+        <translation>预共享密钥</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="116"/>
@@ -2336,7 +2336,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     </message>
     <message>
         <source>Requesting rule-set list error: %1</source>
-        <translation type="vanished">請求規則集清單錯誤：%1</translation>
+        <translation type="vanished">请求规则集清单错误：%1</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="910"/>
@@ -2346,7 +2346,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="958"/>
         <source>Clear RuleSet Cache</source>
-        <translation>清除規則集快取</translation>
+        <translation>清除规则集缓存</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="888"/>
@@ -2538,7 +2538,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="222"/>
         <source>Testing</source>
-        <translation>正在测试</translation>
+        <translation>正在测试中</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="130"/>
@@ -2818,7 +2818,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="901"/>
         <source>Rulesets updated successfully</source>
-        <translation>規則集更新成功</translation>
+        <translation>规则集更新成功</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1056"/>
@@ -2829,7 +2829,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <location filename="../../src/ui/mainwindow.cpp" line="878"/>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="95"/>
         <source>Updated %1 routing profiles</source>
-        <translation>更新了 %1 個設定檔</translation>
+        <translation>更新了 %1 个设定值</translation>
     </message>
     <message>
         <source>Current selected</source>
@@ -2933,7 +2933,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1797"/>
         <source>Please give the core root privileges</source>
-        <translation>请赋予核心根(root)权限</translation>
+        <translation>请给核心赋予根(root)权限</translation>
     </message>
     <message>
         <source>Requesting permission</source>
@@ -3277,7 +3277,7 @@ Direct: %2</source>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1241"/>
         <source>Requesting rule-set list error: %1</source>
-        <translation type="unfinished">請求規則集清單錯誤：%1</translation>
+        <translation type="unfinished">请求规则集清单错误：%1</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3870"/>
@@ -3520,17 +3520,17 @@ Release note:
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="96"/>
         <source>Update url</source>
-        <translation>更新網址</translation>
+        <translation>更新网址</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="137"/>
         <source>Update manually</source>
-        <translation>手動更新</translation>
+        <translation>手动更新</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="130"/>
         <source>Skip update</source>
-        <translation>跳過更新</translation>
+        <translation>跳过更新</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="14"/>
