@@ -64,7 +64,7 @@ Various formats are supported, including share links, JSON array of outbounds an
 - [MinGW](https://www.mingw-w64.org)
 - [MSVC](https://visualstudio.microsoft.com/)
 - [go](https://go.dev/)
-- [nekoray](https://github.com/MatsuriDayo/nekoray)
+- [MatsuriDayo/nekoray](https://github.com/MatsuriDayo/nekoray)
 - [Open Build Service](https://openbuildservice.org/)
 - [Github](https://github.com)
 - [cv2pdb](https://github.com/rainers/cv2pdb)
