@@ -228,7 +228,7 @@
       <item>
        <widget class="QPushButton" name="url_test_button">
         <property name="text">
-         <string>Url test</string>
+         <string>URL Test</string>
         </property>
         <property name="flat">
          <bool>false</bool>
