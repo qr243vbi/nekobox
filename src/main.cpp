@@ -14,8 +14,6 @@
 #include <QThread>
 #include <QFileInfo>
 #include <QApplication>
-
-
 #ifdef Q_OS_WIN
 #include <3rdparty/WinCommander.hpp>
 #include <windows.h>

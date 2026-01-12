@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
+    <width>850</width>
     <height>600</height>
    </rect>
   </property>
@@ -43,10 +43,6 @@
         <property name="popupMode">
          <enum>QToolButton::ToolButtonPopupMode::InstantPopup</enum>
         </property>
-
-        <!--property name="toolButtonStyle">
-         <enum>Qt::ToolButtonStyle::ToolButtonIconOnly</enum>
-        </property-->
        </widget>
       </item>
       <item>
@@ -69,9 +65,6 @@
         <property name="popupMode">
          <enum>QToolButton::ToolButtonPopupMode::InstantPopup</enum>
         </property>
-        <!--property name="toolButtonStyle">
-         <enum>Qt::ToolButtonStyle::ToolButtonIconOnly</enum>
-        </property-->
        </widget>
       </item>
       <item>
@@ -94,9 +87,6 @@
         <property name="popupMode">
          <enum>QToolButton::ToolButtonPopupMode::InstantPopup</enum>
         </property>
-        <!--property name="toolButtonStyle">
-         <enum>Qt::ToolButtonStyle::ToolButtonIconOnly</enum>
-        </property-->
        </widget>
       </item>
       <item>
@@ -119,9 +109,6 @@
         <property name="popupMode">
          <enum>QToolButton::ToolButtonPopupMode::InstantPopup</enum>
         </property>
-        <!--property name="toolButtonStyle">
-         <enum>Qt::ToolButtonStyle::ToolButtonIconOnly</enum>
-        </property-->
        </widget>
       </item>
       <item>
@@ -144,9 +131,6 @@
         <property name="popupMode">
          <enum>QToolButton::ToolButtonPopupMode::InstantPopup</enum>
         </property>
-        <!--property name="toolButtonStyle">
-         <enum>Qt::ToolButtonStyle::ToolButtonIconOnly</enum>
-        </property-->
        </widget>
       </item>
       <item>
@@ -240,6 +224,16 @@
       </item>
       <item>
        <widget class="QLineEdit" name="search_input"/>
+      </item>
+      <item>
+       <widget class="QPushButton" name="url_test_button">
+        <property name="text">
+         <string>Url test</string>
+        </property>
+        <property name="flat">
+         <bool>false</bool>
+        </property>
+       </widget>
       </item>
      </layout>
     </item>
@@ -590,8 +584,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
-     <height>33</height>
+     <width>850</width>
+     <height>26</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu_program">
@@ -660,7 +654,6 @@
      <addaction name="actionCountrytest_Selected"/>
      <addaction name="actionSimpledl_Selected"/>
     </widget>
-    <addaction name="menu_profiles"/>
     <addaction name="separator"/>
     <addaction name="menu_start"/>
     <addaction name="menu_stop"/>
@@ -1113,19 +1106,16 @@
     <string>Full test Selected</string>
    </property>
   </action>
-
   <action name="actionDownloadtest_Selected">
    <property name="text">
     <string>Download test Selected</string>
    </property>
   </action>
-
   <action name="actionUploadtest_Selected">
    <property name="text">
     <string>Upload test Selected</string>
    </property>
   </action>
-  
   <action name="actionCountrytest_Selected">
    <property name="text">
     <string>Country test Selected</string>
@@ -1136,7 +1126,6 @@
     <string>Simple download test Selected</string>
    </property>
   </action>
-  
   <action name="actionSpeedtest_Group">
    <property name="text">
     <string>Speedtest Group</string>

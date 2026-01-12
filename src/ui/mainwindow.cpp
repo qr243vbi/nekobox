@@ -254,7 +254,7 @@ void MainWindow::set_icons_from_flag(bool text_under_buttons) {
     button_size.setWidth(24);
     button_style = Qt::ToolButtonStyle::ToolButtonTextUnderIcon;
   } else {
-    button_size.setHeight(37);
+    button_size.setHeight(34);
     button_size.setWidth(32);
     button_style = Qt::ToolButtonStyle::ToolButtonIconOnly;
   }
@@ -266,7 +266,6 @@ void MainWindow::set_icons_from_flag(bool text_under_buttons) {
     button->setToolButtonStyle(button_style);
     button->setIconSize(button_size);
   }
-  // top bar set_icons
 }
 
 bool MainWindow::isShowRuleSetData() { return showRuleSetData; }
@@ -415,6 +414,13 @@ MainWindow::MainWindow(QWidget *parent)
   connect(ui->data_view, &QTextBrowser::textChanged, [this]() {
     QTextDocument *document = ui->data_view->document();
     ui->data_view->setMaximumHeight(document->size().height());
+    if (!searchEnabled){
+      if (document->isEmpty()){
+        ui->url_test_button->show();
+      } else {
+        ui->url_test_button->hide();
+      }
+    }
   });
 
   connect(themeManager, &ThemeManager::themeChanged, this,
@@ -1130,10 +1136,14 @@ MainWindow::MainWindow(QWidget *parent)
   });
   connect(ui->actionUrl_Test_Clear, &QAction::triggered, this,
           [=, this]() { on_menu_clear_test_result_triggered(true); });
-  connect(ui->actionUrl_Test_Group, &QAction::triggered, this, [=, this]() {
+          
+  auto url_test_group_action = [=, this]() {
     urltest_current_group(
         Configs::profileManager->CurrentGroup()->GetProfileEnts());
-  });
+  };
+  connect(ui->actionUrl_Test_Group, &QAction::triggered, this, url_test_group_action);
+  connect(ui->url_test_button, &QPushButton::clicked, this, url_test_group_action);
+  
   connect(ui->actionSpeedtest_Current, &QAction::triggered, this, [=, this]() {
     if (running != nullptr) {
       speedtest_current_group({}, true);
@@ -2101,17 +2111,24 @@ void MainWindow::setSearchState(bool enable) {
   searchEnabled = enable;
   if (enable) {
     ui->data_view->hide();
+    ui->url_test_button->hide();
     ui->search_input->show();
   } else {
     ui->search_input->blockSignals(true);
     ui->search_input->clear();
     ui->search_input->blockSignals(false);
-
+    
     ui->search_input->hide();
     ui->data_view->show();
     if (!searchString.isEmpty()) {
       searchString.clear();
       refresh_proxy_list(-1);
+    }
+    
+    if (ui->data_view->toPlainText().trimmed().isEmpty()) {
+      ui->url_test_button->show();
+    } else {
+      ui->url_test_button->hide();
     }
   }
 }
@@ -3411,6 +3428,11 @@ void MainWindow::setActionsData() {
   ui->actionUrl_Test_Selected->setData(QString("m22"));
   ui->actionHide_window->setData(QString("m23"));
   ui->actionAdd_profile_from_File->setData(QString("m24"));
+  
+  ui->actionDownloadtest_Selected->setData(QString("m25"));
+  ui->actionUploadtest_Selected->setData(QString("m26"));
+  ui->actionCountrytest_Selected->setData(QString("m27"));
+  ui->actionSimpledl_Selected->setData(QString("m28"));
 }
 
 QList<QAction *> MainWindow::getActionsForShortcut() {
