@@ -6,20 +6,13 @@ export CURDIR="$SRC_ROOT"
 
 if [[ $1 == "new-x86_64" || -z $1 ]]; then
   ARCH="windows64"
+  CROSS="windows-amd64"
   INST="$DEPLOYMENT/nekobox_setup"
 else if [[ $1 == "new-arm64" || -z $1 ]]; then
   ARCH="windows-arm64"
+  CROSS=$ARCH
   INST="$DEPLOYMENT/nekobox_setup_arm64"
-else if [[ $1 == 'i686' ]]; then
-  ARCH="windows32"
-  INST="$DEPLOYMENT/nekobox_setup32"
-else if [[ $1 == 'x86_64' ]]; then
-  ARCH="windowslegacy64"
-  INST="$DEPLOYMENT/nekobox_setup_legacy"
-else if [[ $1 == "arm64" ]]; then
-  ARCH="windowslegacy-arm64"
-  INST="$DEPLOYMENT/nekobox_setup_legacy_arm64"
-fi; fi; fi; fi; fi;
+fi; fi;
 
 export DEST="$DEPLOYMENT/$ARCH"
 mkdir -p "$DEST"
@@ -28,9 +21,9 @@ if [[ -d download-artifact ]]
 then
 (
  cd download-artifact
- cd *"$ARCH"
+ cd *"windows-$CROSS"
  tar xvzf artifacts.tgz -C .
- mv deployment/*"$ARCH/"* "$DEST"
+ mv "deployment/$ARCH/"* "$DEST"
 ) ||:
 fi
 
