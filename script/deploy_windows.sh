@@ -21,7 +21,7 @@ if [[ -d download-artifact ]]
 then
 (
  cd download-artifact
- cd *"windows-$CROSS"
+ cd *"$CROSS"
  tar xvzf artifacts.tgz -C .
  mv "deployment/$ARCH/"* "$DEST"
 ) ||:
