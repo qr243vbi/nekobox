@@ -520,7 +520,7 @@
               </item>
               <item>
                <property name="text">
-                <string>עברית</string>
+                <string notr="true">עברית</string>
                </property>
               </item>
               <item>
