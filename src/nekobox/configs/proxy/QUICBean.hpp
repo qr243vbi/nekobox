@@ -61,7 +61,8 @@ namespace Configs {
         bool disableSni = false;
 
         #undef _add
-        #define _add(X, Y, B, T) _put(X, Y, &this->B, ITEM_TYPE(T));
+        #define _add(X, Y, B, T) _put(X, Y, &this->B) 
+            //, ITEM_TYPE(T));
 
         virtual ConfJsMap  _map() override{
             static ConfJsMapStat 

@@ -6,7 +6,8 @@
 namespace Configs
 {
 
-    #define _add(map1, X, Y, B) _put(map1, X, &this->Y, ITEM_TYPE(B))
+    #define _add(map1, X, Y, B) _put(map1, X, &this->Y)
+    //, ITEM_TYPE(B))
 
     ConfJsMap ProxyEntity::_map(){
         static ConfJsMapStat map1;

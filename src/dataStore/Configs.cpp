@@ -37,7 +37,7 @@
 #endif
 
 namespace Configs_ConfigItem {
-
+/*
     void JsonStore::_put(ConfJsMap items, 
             QString str, void* p, itemType type
     ){
@@ -46,11 +46,11 @@ namespace Configs_ConfigItem {
         Q_ASSERT(!items.contains(h));
         items.insert(h, item);
     };
+    */
 
          QString JsonStore::_name(void *p){
-            size_t ptr = ((size_t)(p) - (size_t) (this));
             for (auto & item: _map()){
-                if (item->ptr == ptr){
+                if (item->getPtr(this) == p){
                     return item->name;
                 }
             }
@@ -77,10 +77,12 @@ namespace Configs_ConfigItem {
             if (item == nullptr){
                 continue;
             }
-            QString name = item->name;
+            const QString & name = item->name;
             if (without.contains(name)) continue;
 
-            void * ptr = (void*)(((size_t)(void*)this) + item->ptr);
+            object.insert(name, item->getNode(this));
+            //void * ptr = (void*)(((size_t)(void*)this) + item->ptr);
+            /*
             switch (item->type) {
                 case itemType::type_string:
                     // Allow Empty
@@ -132,6 +134,7 @@ namespace Configs_ConfigItem {
                     object.insert(name, jsonArray);
                     break;
             }
+                    */
         }
         return object;
     }
@@ -142,7 +145,7 @@ namespace Configs_ConfigItem {
         return document.toJson(QJsonDocument::Compact);
     }
 
-    void * configItem::getPtr(void * p){
+    void * configItem::getPtr(JsonStore * p){
         return (void*)((size_t)p + ptr);
     }
 
@@ -163,7 +166,10 @@ namespace Configs_ConfigItem {
                 continue;
             }
 
-            auto ptr = (void*)(((size_t)(void*)this) + item->ptr);
+            item->setNode(this, value);
+        //    auto ptr = (void*)(((size_t)(void*)this) + item->ptr);
+
+/*
             switch (item->type) {
                 case itemType::type_string:
                     if (value.type() != QJsonValue::String) {
@@ -223,15 +229,26 @@ namespace Configs_ConfigItem {
                 case itemType::type_jsonStoreList:
                     break;
             }
+                    */
         }
 
         if (callback_after_load != nullptr) callback_after_load();
     }
 
-    void JsonStore::_setValue(const QString &name, void *p) {
+    void JsonStore::_setValue(JsonStore * store, const void *p){
+        for (auto & item: store->_map()){
+            if (item->getPtr(store) == p){
+                this->_setValue(item->name, item->getNode(store));
+            }
+        }
+    }
+
+    void JsonStore::_setValue(const QString &name, const QJsonValue & node) {
         auto item = _get(name);
         if (item == nullptr) return;
 
+        item->setNode(this, node);
+/*
         void *ptr = (void*)((size_t)(void*)this + item->ptr);
 
         switch (item->type) {
@@ -260,6 +277,7 @@ namespace Configs_ConfigItem {
             default:
                 break;
         }
+                */
     }
 
     void JsonStore::FromJsonBytes(const QByteArray &data) {

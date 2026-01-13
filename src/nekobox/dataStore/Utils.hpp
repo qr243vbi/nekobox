@@ -135,7 +135,8 @@ init = true;     \
 return ptr;      \
 }
 
-#define ADD_MAP(X, Y, B) _put(ptr, X, &this->Y, ITEM_TYPE(B))
+#define ADD_MAP(X, Y, B) _put(ptr, X, &this->Y )
+//, ITEM_TYPE(B))
 #endif
 
 #ifndef NKR_VERSION
