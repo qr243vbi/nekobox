@@ -175,11 +175,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="523"/>
-        <source>עברית</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="552"/>
         <source>Icon</source>
         <translation type="unfinished"></translation>
@@ -2273,23 +2268,23 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="599"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="593"/>
         <source>Program</source>
         <translation>برنامه</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="622"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="616"/>
         <source>Preferences</source>
         <translation>تنظیمات</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="633"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="627"/>
         <source>Server</source>
         <translation>سرور</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="130"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="133"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="117"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="120"/>
         <source>Update</source>
         <translation>بروزرسانی</translation>
     </message>
@@ -2300,359 +2295,374 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="163"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="147"/>
         <source>Tun Mode</source>
         <translation>حالتvpn</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="177"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="603"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="2147"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="2150"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="161"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="597"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2219"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2222"/>
         <source>System Proxy</source>
         <translation>پروکسی سیستمی</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="315"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="231"/>
+        <source>URL Test</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="309"/>
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="138"/>
         <source>Type</source>
         <translation>نوع</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="320"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="314"/>
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="141"/>
         <source>Address</source>
         <translation>آدرس</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="325"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="319"/>
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="144"/>
         <source>Name</source>
         <translation>اسم</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="330"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="324"/>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="243"/>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="245"/>
         <source>Test Result</source>
         <translation>نتیجه تست</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="335"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="495"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="329"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="489"/>
         <source>Traffic</source>
         <translation>ترافیک</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="637"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="631"/>
         <source>Share</source>
         <translation>اشتراک گذاری</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="647"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="641"/>
         <source>Current group</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="719"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="647"/>
+        <source>Test</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="710"/>
         <source>Exit</source>
         <translation>خروج</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="724"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="715"/>
         <source>Toggle Window</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="729"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="720"/>
         <source>Basic Settings</source>
         <translation>تنظیمات پایه</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="734"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="725"/>
         <source>New profile</source>
         <translation>نمایه جدید</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="739"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="730"/>
         <source>Groups</source>
         <translation>گروه ها</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="744"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3118"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3126"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="735"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3190"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3198"/>
         <source>Start</source>
         <translation>آغازکردن</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="752"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3118"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3126"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="743"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3190"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3198"/>
         <source>Stop</source>
         <translation>متوقف کردن</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="760"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="751"/>
+        <source>Edit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="759"/>
         <source>Routing Settings</source>
         <translation>تنظیمات مسیریابی</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="765"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="764"/>
         <source>Add profile from clipboard</source>
         <translation>افزودن نمایه از کلیپ بورد</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="773"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="772"/>
         <source>Delete</source>
         <translation>از بین بردن</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="781"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="780"/>
         <source>Debug Info</source>
         <translation>اطلاعات اشکال زدایی</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="786"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="785"/>
         <source>QR Code and link</source>
         <translation>کد QR و پیوند</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="794"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="793"/>
         <source>Copy Link</source>
         <translation>لینک را کپی کنید</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="815"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="814"/>
         <source>Clear Test Result</source>
         <translation>نتایج تست پاک شود</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="823"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="1133"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="822"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1198"/>
         <source>Export %1 config</source>
         <translation>استخراج پیکربندی %1</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="831"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="830"/>
         <source>Reset Traffic</source>
         <translation>بازنشانی ترافیک</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="839"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="838"/>
         <source>Scan QR Code</source>
         <translation>کد QR را اسکن کنید</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="847"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="846"/>
         <source>Enable System Proxy</source>
         <translation>پروکسی سیستم را فعال کنید</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="855"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="854"/>
         <source>Disable</source>
         <translation>غیرفعال کردن</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="860"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="859"/>
         <source>Remove Duplicates</source>
         <translation>موارد تکراری را حذف کردن</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="868"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="945"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="953"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="867"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="944"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="952"/>
         <source>fake</source>
         <translation>جعلی</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="876"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="875"/>
         <source>Move</source>
         <translation>جابجایی</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="887"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="886"/>
         <source>Start with system</source>
         <translation>با سیستم شروع شود</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="895"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="894"/>
         <source>Remember last profile</source>
         <translation>آخرین نمایه را به خاطر بسپار</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="903"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="902"/>
         <source>Allow other devices to connect</source>
         <translation>به دستگاه های دیگر اجازه اتصال دهید</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="908"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="907"/>
         <source>Remove Unavailable</source>
         <translation>غیرقابل دستیابی پاک شود</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="916"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="915"/>
         <source>Full Test</source>
         <translation>تست کامل</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="924"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="923"/>
         <source>Hotkey Settings</source>
         <translation>تنظیمات کلید میانبر</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="929"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="928"/>
         <source>Select All</source>
         <translation>انتخاب همه</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="961"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="960"/>
         <source>Copy links of selected</source>
         <translation>لینک های انتخاب شده را کپی کنید</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="972"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="971"/>
         <source>Enable Tun</source>
         <translation>فعال کردن tun</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="977"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="2496"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="976"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2568"/>
         <source>Clone</source>
         <translation>همزادسازی</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="985"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="984"/>
         <source>Update subscription</source>
         <translation>اشتراک را به روز کنید</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="996"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="995"/>
         <source>Resolve domain</source>
         <translation>دامنه را حل کنید</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1004"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1003"/>
         <source>Tun Settings</source>
         <translation>تنظیمات vpn</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1009"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1008"/>
         <source>Restart Program</source>
         <translation>اجرا دوباره برنامه</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1014"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1013"/>
         <source>Open Config Folder</source>
         <translation>پوشه Config باز شود</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="840"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="881"/>
         <source>Edit Routing Profiles</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="862"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="903"/>
         <source>Update Routing Profiles</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="873"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="877"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="897"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="900"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="943"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="914"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="918"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="938"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="941"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="984"/>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="94"/>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="103"/>
         <source>Update Response</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="874"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="915"/>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="104"/>
         <source>No routing profiles are updated</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="878"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="919"/>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="95"/>
         <source>Updated %1 routing profiles</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="888"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="929"/>
         <source>Update RuleSet Map</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="898"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="939"/>
         <source>Failed to update rulesets</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="901"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="942"/>
         <source>Rulesets updated successfully</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="910"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="951"/>
         <source>Update RuleSet Cache</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="944"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="985"/>
         <source>Rulesets cache is updated</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="958"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="999"/>
         <source>Clear RuleSet Cache</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="990"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1031"/>
         <source>Enable AdBlock</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1326"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1391"/>
         <source>Error</source>
         <translation>خطا</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1413"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1478"/>
         <source>Tun Settings changed</source>
         <translation>تنظیمات Tun تغییر کرد</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1414"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1479"/>
         <source>Restart Tun to take effect.</source>
         <translation>Tun را مجدداً راه اندازی کنید تا اعمال شود.</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1420"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="1477"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="2548"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="2882"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="2935"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="2982"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3185"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1485"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1542"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2620"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2954"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3007"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3054"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3257"/>
         <source>Confirmation</source>
         <translation>تائیدیه</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1421"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="1478"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1486"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1543"/>
         <source>Settings changed, restart proxy?</source>
         <translation>تنظیمات تغییر کرد، پراکسی راه اندازی مجدد شود؟</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1492"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1557"/>
         <source>Imported %1 profile(s)</source>
         <translation>%1 نمایه وارد شد</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2122"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2194"/>
         <source>Not Running</source>
         <translation>در حال اجرا نیست</translation>
     </message>
@@ -2661,33 +2671,33 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation type="vanished">انتخاب</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2497"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2569"/>
         <source>Clone %1 item(s)</source>
         <translation>همزادسازی %1 مورد</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2549"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2621"/>
         <source>Remove %1 item(s) ?</source>
         <translation>حذف %1 مورد؟</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2584"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="2596"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2656"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2668"/>
         <source>Copied %1 item(s)</source>
         <translation>%1 مورد کپی شد</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2611"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2683"/>
         <source>Config copied</source>
         <translation>کانفیگ کپی شد</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2797"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2869"/>
         <source>QR Code not found</source>
         <translation>کد QR یافت نشد</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3116"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3188"/>
         <source>Clear</source>
         <translation>پاک کردن</translation>
     </message>
@@ -2709,12 +2719,12 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>غیرقایل دسترسی</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="616"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="631"/>
         <source>Starting profile %1</source>
         <translation>اغاز نمایه %1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="704"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="719"/>
         <source>Stopping profile %1</source>
         <translation>متوقف کردن نمایه %1</translation>
     </message>
@@ -2723,174 +2733,174 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation type="vanished">نمایش پنجره برنامه</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1449"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1514"/>
         <source>Settings changed</source>
         <translation>تنظیمات تغییر کرد</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1035"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1034"/>
         <source>Restart Proxy</source>
         <translation>راه اندازی مجدد پروکسی</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="602"/>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="681"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="617"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="696"/>
         <source>If there is no response for a long time, it is recommended to restart the software.</source>
         <translation>اگر برای مدت زمان طولانی هیچ پاسخی دریافت نشد ، پیشنهاد میشود که نرم افزار را دوباره اجرا کنید</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="618"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="633"/>
         <source>Failed to start profile %1</source>
         <translation>راه‌اندازی نمایه %1 ناموفق بود</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="706"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="721"/>
         <source>Failed to stop, please restart the program.</source>
         <translation>توقف ناموفق بود ، لطفا برنامه را دوباره اجرا کنید</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1450"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1515"/>
         <source>Restart the program to take effect.</source>
         <translation>برای مشاهده نتیجه برنامه را دوباره راه اندازی کنید</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1040"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1039"/>
         <source>Stop Testing</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="529"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="544"/>
         <source>Tun device misbehaving</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="534"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="549"/>
         <source>Reset</source>
         <translation>بازنشانی</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="535"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="550"/>
         <source>Cancel</source>
         <translation>لغو کردن</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1127"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3144"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1146"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3216"/>
         <source>Add new Group</source>
         <translation>افزودن گروه جدید</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3177"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3249"/>
         <source>Delete selected Group</source>
         <translation>حذف گروه انتخاب‌شده</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3178"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3250"/>
         <source>Edit selected Group</source>
         <translation>ویرایش گروه انتخاب‌شده</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3186"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3258"/>
         <source>Remove %1?</source>
         <translation>حذف %1?</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1045"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1044"/>
         <source>Url Test Selected</source>
         <translation>تست نشانی انتخاب‌شده</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1048"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1047"/>
         <source>Ctrl+Shift+S</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1067"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1066"/>
         <source>Url Test Group</source>
         <translation>تست نشانی گروه</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1070"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1069"/>
         <source>Ctrl+Shift+G</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="683"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="674"/>
         <source>Hidden menu</source>
         <translation>منوی مخفی</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1078"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1077"/>
         <source>Resolve Selected Domain</source>
         <translation>حل دامنه انتخاب‌شده</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1086"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1085"/>
         <source>Remove Invalid</source>
         <translation>حذف موارد نادرست</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1089"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1088"/>
         <source>Ctrl+Alt+I</source>
         <translation>Ctrl+Alt+I</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="530"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="545"/>
         <source>If you have trouble starting VPN, you can force reset Core process here and then try starting the profile again. The error is %1</source>
         <translation>اگر در راه‌اندازی VPN مشکل دارید، می‌توانید فرآیند هسته را اینجا بازنشانی کنید و سپس دوباره نمایه را راه‌اندازی کنید. خطا: %1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2530"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2602"/>
         <source> Confirmation </source>
         <translation>تأیید</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2531"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2603"/>
         <source> Remove %1 item(s) ? </source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2883"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2955"/>
         <source>Remove %1 Unavailable item(s) ?</source>
         <translation>حذف %1 مورد غیرقابل دسترس؟</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2936"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3008"/>
         <source>Remove %1 Invalid item(s) ?</source>
         <translation>حذف %1 مورد نادرست؟</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2983"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3055"/>
         <source>Replace domain server addresses with their resolved IPs?</source>
         <translation>جایگزینی نشانی‌های سرور دامنه با IPهای حل‌شده آن‌ها؟</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="170"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="154"/>
         <source>System DNS</source>
         <translation>دی‌ان‌اس سیستم</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="435"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="429"/>
         <source>Connections</source>
         <translation>اتصال‌ها</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="466"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="460"/>
         <source>Click To Disable Sorting</source>
         <translation>برای غیرفعال کردن مرتب‌سازی کلیک کنید</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="479"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="473"/>
         <source>Protocol</source>
         <translation>پروتکل</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="400"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="394"/>
         <source>Logs</source>
         <translation>گزارش‌ها</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1797"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1862"/>
         <source>Please give the core root privileges</source>
         <translation>لطفاً به هسته دسترسی ریشه بدهید</translation>
     </message>
@@ -2907,51 +2917,51 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation type="vanished">برنامه</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="80"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="83"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="73"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="76"/>
         <source>Settings</source>
         <translation>تنظیمات</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="55"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="58"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="701"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="51"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="54"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="692"/>
         <source>Profiles</source>
         <translation>نمایه‌ها</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="105"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="108"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="95"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="98"/>
         <source>Routing</source>
         <translation>مسیریابی</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="463"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="457"/>
         <source>Destination (Domain)</source>
         <translation>مقصد (دامنه)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="471"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="465"/>
         <source>Process</source>
         <translation>فرآیند</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="474"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="468"/>
         <source>Click To Sort By Process</source>
         <translation>برای مرتب‌سازی بر اساس فرآیند کلیک کنید</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="696"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="687"/>
         <source>Routing Menu</source>
         <translation>منوی مسیریابی</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1056"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1055"/>
         <source>Clear Test Result Selected</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1097"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1096"/>
         <source>Open Manager</source>
         <translation>باز کردن مدیر</translation>
     </message>
@@ -2962,29 +2972,29 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="129"/>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="431"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="446"/>
         <source>Something is very wrong, the subject ent cannot be found!</source>
         <translation>مشکلی جدی وجود دارد، موضوع موردنظر یافت نشد!</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="135"/>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="437"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="452"/>
         <source>Profile manager data is corrupted, try again.</source>
         <translation>داده‌های مدیر نمایه خراب شده‌اند، دوباره امتحان کنید.</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="259"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="260"/>
         <source>The last speed test did not exit completely, please wait. If it persists, please restart the program.</source>
         <translation>آخرین تست سرعت به‌طور کامل پایان نیافته است، لطفاً صبر کنید. اگر ادامه یافت، برنامه را دوباره راه‌اندازی کنید.</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="168"/>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="269"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="272"/>
         <source>Failed to build test config: </source>
         <translation>ساخت پیکربندی تست ناموفق بود: </translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="292"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="298"/>
         <source>Speedtest finished!</source>
         <translation>تست سرعت به پایان رسید!</translation>
     </message>
@@ -2994,12 +3004,12 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>توقف تست‌ها ناموفق بود</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="465"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="480"/>
         <source>You need to enable hijack DNS server first</source>
         <translation>ابتدا باید سرور دی‌ان‌اس ربایش را فعال کنید</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="479"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="494"/>
         <source>Failed to set system dns: </source>
         <translation>تنظیم دی‌ان‌اس سیستم ناموفق بود: </translation>
     </message>
@@ -3008,67 +3018,65 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation type="vanished">خطای بازگشت BuildConfig</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="574"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="589"/>
         <source>Another profile is starting...</source>
         <translation>نمایه دیگری در حال راه‌اندازی است...</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="581"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="596"/>
         <source>Another profile is stopping...</source>
         <translation>نمایه دیگری در حال توقف است...</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="592"/>
         <source>Try to start the config, but the core has not listened to the RPC port, so restart it...</source>
-        <translation>تلاش برای شروع پیکربندی، اما هسته به پورت RPC گوش نداده است، بنابراین آن را دوباره راه‌اندازی کنید...</translation>
+        <translation type="vanished">تلاش برای شروع پیکربندی، اما هسته به پورت RPC گوش نداده است، بنابراین آن را دوباره راه‌اندازی کنید...</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="664"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="679"/>
         <source>Stop return error</source>
         <translation>خطای بازگشت توقف</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2613"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2685"/>
         <source>Copy core config</source>
         <translation>کپی پیکربندی هسته</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2615"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2687"/>
         <source>Copy test config</source>
         <translation>کپی پیکربندی تست</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3843"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3920"/>
         <source>Cannot start</source>
         <translation>نمی‌توان شروع کرد</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3844"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3921"/>
         <source>Last download request has not finished yet</source>
         <translation>آخرین درخواست بارگیری هنوز به پایان نرسیده است</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="507"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="501"/>
         <source>Traffic Graph</source>
         <translation>نمودار ترافیک</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3878"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3955"/>
         <source>Failed to download update assets</source>
         <translation>بارگیری منابع به‌روزرسانی ناموفق بود</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1102"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1101"/>
         <source>Speedtest Current</source>
         <translation>تست سرعت کنونی</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1107"/>
         <source>Speedtest Selected</source>
-        <translation>تست سرعت انتخاب‌شده</translation>
+        <translation type="vanished">تست سرعت انتخاب‌شده</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1112"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1131"/>
         <source>Speedtest Group</source>
         <translation>تست سرعت گروه</translation>
     </message>
@@ -3083,37 +3091,37 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>تست نشانی به پایان رسید!</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="372"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="379"/>
         <source>Profile speed test aborted</source>
         <translation>تست سرعت نمایه لغو شد</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="456"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="471"/>
         <source>[%1] speed test error: %2</source>
         <translation>خطای تست سرعت [%1]: %2</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1745"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1810"/>
         <source>User opted for no privilege req, some features may not work</source>
         <translation>کاربر درخواست دسترسی را غیرفعال کرده است، برخی ویژگی‌ها ممکن است کار نکنند</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2818"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2890"/>
         <source>Unable to capture screen</source>
         <translation>ناتوانی در ضبط صفحه</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="487"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="481"/>
         <source>Outbound</source>
         <translation>خروجی</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="498"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="492"/>
         <source>Click To Toggle sort by Traffic</source>
         <translation>برای تغییر مرتب‌سازی بر اساس ترافیک کلیک کنید</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="937"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="936"/>
         <source>Copy links of selected (Custom Links)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3128,22 +3136,47 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
 </translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="482"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="476"/>
         <source>Click To Sort By Protocol</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="490"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="484"/>
         <source>Click To Sort By Outbound</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1117"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1106"/>
+        <source>Full test Selected</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1111"/>
+        <source>Download test Selected</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1116"/>
+        <source>Upload test Selected</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1121"/>
+        <source>Country test Selected</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1126"/>
+        <source>Simple download test Selected</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1136"/>
         <source>Hide window</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1122"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1141"/>
         <source>Add profile from File</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3164,7 +3197,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
 <context>
     <name>QGuiApplication</name>
     <message>
-        <location filename="../../src/main.cpp" line="268"/>
+        <location filename="../../src/main.cpp" line="266"/>
         <source>QT_LAYOUT_DIRECTION</source>
         <translation>RTL</translation>
     </message>
@@ -3184,22 +3217,22 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>انتخاب کردن</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3748"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3759"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3803"/>
         <location filename="../../src/ui/mainwindow.cpp" line="3825"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3834"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3869"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3836"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3880"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3902"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3911"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3946"/>
         <source>Update</source>
         <translation>بروزرسانی</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3803"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3880"/>
         <source>No update</source>
         <translation>بدون بروزرسانی جدید</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3826"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3903"/>
         <source>Update found: %1
 Release note:
 %2</source>
@@ -3208,27 +3241,27 @@ Release note:
 %2</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3831"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3908"/>
         <source>Open in browser</source>
         <translation>در مرور گر باز شود</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3829"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3906"/>
         <source>Close</source>
         <translation>بستن</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1241"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1306"/>
         <source>Requesting rule-set list error: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2127"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2199"/>
         <source>IP address: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3870"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3947"/>
         <source>Update is ready, restart to install?</source>
         <translation>به روز رسانی آماده است، برای نصب مجدد راه اندازی شود؟</translation>
     </message>
@@ -3286,7 +3319,7 @@ Deleted %3 Profiles:
     </message>
     <message>
         <location filename="../../src/stats/traffic/TrafficLooper.cpp" line="115"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="2090"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2162"/>
         <source>Proxy: %1
 Direct: %2</source>
         <translation>پروکسی: %1 مستقیم: %2</translation>
@@ -3302,7 +3335,7 @@ Direct: %2</source>
         <translation>درخواست اشتراک به پایان رسید: %1</translation>
     </message>
     <message>
-        <location filename="../../src/sys/Process.cpp" line="81"/>
+        <location filename="../../src/sys/Process.cpp" line="87"/>
         <source>Core exits too frequently, stop automatic restart this profile.</source>
         <translation>هسته بیش از حد متوقف می‌شود، راه‌اندازی خودکار این نمایه متوقف شود.</translation>
     </message>
@@ -3327,12 +3360,12 @@ Direct: %2</source>
         <translation>نمی‌توان پرونده را باز کرد.</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3749"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3826"/>
         <source>Not official support platform</source>
         <translation>پلتفرم پشتیبانی رسمی نیست</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3760"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3837"/>
         <source>Requesting update error: %1</source>
         <translation>خطای درخواست به‌روزرسانی: %1</translation>
     </message>
@@ -3352,22 +3385,22 @@ Direct: %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="164"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="165"/>
         <source>Download Profiles</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="165"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="166"/>
         <source>Requesting profile error: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/sys/Process.cpp" line="74"/>
+        <location filename="../../src/sys/Process.cpp" line="80"/>
         <source>Core exited, cleaning up...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/sys/Process.cpp" line="90"/>
+        <location filename="../../src/sys/Process.cpp" line="96"/>
         <source>Restarting the core ...</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3380,92 +3413,92 @@ Direct: %2</source>
 <context>
     <name>QPlatformTheme</name>
     <message>
-        <location filename="../../src/main.cpp" line="56"/>
+        <location filename="../../src/main.cpp" line="54"/>
         <source>Cancel</source>
         <translation>لغو کردن</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="57"/>
+        <location filename="../../src/main.cpp" line="55"/>
         <source>Apply</source>
         <translation>به‌کار بردن</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="58"/>
+        <location filename="../../src/main.cpp" line="56"/>
         <source>Yes</source>
         <translation>بله</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="59"/>
+        <location filename="../../src/main.cpp" line="57"/>
         <source>No</source>
         <translation>خیر</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="60"/>
+        <location filename="../../src/main.cpp" line="58"/>
         <source>OK</source>
         <translation>تایید</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="61"/>
+        <location filename="../../src/main.cpp" line="59"/>
         <source>Defaults</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="62"/>
+        <location filename="../../src/main.cpp" line="60"/>
         <source>Restore Defaults</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="63"/>
+        <location filename="../../src/main.cpp" line="61"/>
         <source>Discard</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="65"/>
+        <location filename="../../src/main.cpp" line="63"/>
         <source>Undo</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="66"/>
+        <location filename="../../src/main.cpp" line="64"/>
         <source>Redo</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="67"/>
+        <location filename="../../src/main.cpp" line="65"/>
         <source>Cut</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="68"/>
+        <location filename="../../src/main.cpp" line="66"/>
         <source>Copy</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="69"/>
+        <location filename="../../src/main.cpp" line="67"/>
         <source>Paste</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="70"/>
+        <location filename="../../src/main.cpp" line="68"/>
         <source>Delete</source>
         <translation type="unfinished">از بین بردن</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="71"/>
+        <location filename="../../src/main.cpp" line="69"/>
         <source>Select All</source>
         <translation type="unfinished">انتخاب همه</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="72"/>
+        <location filename="../../src/main.cpp" line="70"/>
         <source>Stop</source>
         <translation type="unfinished">متوقف کردن</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="73"/>
+        <location filename="../../src/main.cpp" line="71"/>
         <source>Clear</source>
         <translation type="unfinished">پاک کردن</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="74"/>
+        <location filename="../../src/main.cpp" line="72"/>
         <source>Copy Link Location</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3668,25 +3701,25 @@ Direct: %2</source>
 <context>
     <name>SpinnerDialog</name>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="112"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="113"/>
         <source>Invalid JSON Array</source>
         <translation type="unfinished">آرایه JSON نادرست</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="113"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="114"/>
         <source>The provided input cannot be parsed to a valid route rule array:
 </source>
         <translation type="unfinished">ورودی ارائه‌شده نمی‌تواند به آرایه قوانین مسیر معتبر تجزیه شود:
 </translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="202"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="203"/>
         <source>Fetching information</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="218"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="1012"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="219"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1053"/>
         <source>Download Profiles</source>
         <translation type="unfinished"></translation>
     </message>
