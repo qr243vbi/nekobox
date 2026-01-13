@@ -2,6 +2,7 @@
 
 #include <nekobox/configs/proxy/Preset.hpp>
 
+#include "nekobox/dataStore/ConfigItem.hpp"
 #include "nekobox/dataStore/Configs.hpp"
 #include <QUrl>
 
@@ -134,7 +135,7 @@ namespace Configs {
         virtual ConfJsMap _map() override;
 
         QList<std::shared_ptr<RouteRule>> Rules;
-        QList<JsonStore*> castedRules;
+        QJsonStoreList<RouteRule> castedRules;
         int defaultOutboundID = proxyID;
 
         RoutingChain();
@@ -145,7 +146,7 @@ namespace Configs {
 
         bool Save() override;
 
-        void FromJson(QJsonObject object) override;
+   //     void FromJson(QJsonObject object) override;
 
         QJsonArray get_route_rules(bool forView = false, std::map<int, QString> outboundMap = {});
 

@@ -5,6 +5,7 @@
 #endif
 #include <QString>
 #include <QJsonObject>
+#include <functional>
 
 namespace Configs_ConfigItem{
     class configItem;
@@ -18,6 +19,7 @@ typedef ConfJsMapStat & ConfJsMap;
 
 namespace Configs_ConfigItem {
     // config
+/*
     enum itemType {
         type_string,
         type_integer,
@@ -29,32 +31,69 @@ namespace Configs_ConfigItem {
         type_jsonStoreList,
         type_stringMap
     };
+*/ 
 
-    class configItem {
-    private:
-        size_t ptr;
-    public:
-        QString name;
-        itemType type;
+    class JsonStore;
 
-        configItem(QString n, size_t p, itemType t) {
-            name = std::move(n);
-            ptr = p;
-            type = t;
-        }
-        void * getPtr(void * obj);
-        friend class JsonStore;
+    class QJsonStoreListBase: public QList<JsonStore*> {
+        public:
+        virtual JsonStore* createJsonStore() = 0;
     };
+
+
+    template<typename T = JsonStore>
+    class QJsonStoreList: public QJsonStoreListBase {
+        JsonStore * createJsonStore() override{
+            return new T();
+        }
+    };
+
+    struct configItem {
+        virtual QJsonValue getNode(JsonStore * store) = 0;
+        virtual void setNode(JsonStore * store, const QJsonValue & value) = 0;
+        size_t ptr;
+        QString name;
+        virtual void * getPtr(JsonStore * store);
+    };
+
+    #define PTR_ITEM(X)                            \
+    struct X##Item: public configItem {                        \
+        QJsonValue getNode(JsonStore * store) override;     \
+        void setNode(JsonStore * store, const QJsonValue & value) override; \
+    };
+
+    PTR_ITEM(int)
+    PTR_ITEM(long)
+    PTR_ITEM(str)
+    PTR_ITEM(bool)
+    PTR_ITEM(strList)
+    PTR_ITEM(intList)
+    PTR_ITEM(jsonStore)
+    PTR_ITEM(jsonStoreList)
+    PTR_ITEM(strMap)
 
     class JsonStore {
     public:
         virtual ~JsonStore() = default;
    //     QMap<QString, std::shared_ptr<configItem>> _map;
-        void _put(ConfJsMap _map, 
-            QString str, void *, itemType type
-        );
-
         
+    //    void _put<T>(ConfJsMap _map, 
+    //        QString str, T * ptr
+    //    );
+        void _put(ConfJsMap _map, const QString& str, int*);
+        void _put(ConfJsMap _map, const QString& str, long long*);
+        void _put(ConfJsMap _map, const QString& str, QString*);
+        void _put(ConfJsMap _map, const QString& str, bool *);
+        void _put(ConfJsMap _map, const QString& str, QStringList *);
+        void _put(ConfJsMap _map, const QString& str, QList<int> *);
+        void _put(ConfJsMap _map, const QString& str, JsonStore **);
+        void _put(ConfJsMap _map, const QString& str, QVariantMap *);
+        void _put(ConfJsMap _map, const QString& str, QJsonStoreListBase *);
+
+        template<typename T = JsonStore>
+        void _put(ConfJsMap _map, const QString& str, T ** type){
+            _put(_map, str, (JsonStore **) type);
+        }
 
         virtual ConfJsMap _map() = 0;
 
@@ -71,7 +110,8 @@ namespace Configs_ConfigItem {
             fn = std::move(fileName);
         }
 
-        void _setValue(const QString &name, void *p);
+        void _setValue(const QString &name, const QJsonValue &p);
+        void _setValue(JsonStore * store, const void *p);
 
         QString _name(void *p);
 
@@ -89,6 +129,8 @@ namespace Configs_ConfigItem {
 
         bool Load();
     };
+
+
 } // namespace Configs_ConfigItem
 
 using namespace Configs_ConfigItem;

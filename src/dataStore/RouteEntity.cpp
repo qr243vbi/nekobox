@@ -818,7 +818,7 @@ namespace Configs {
         }
         return JsonStore::Save();
     }
-
+/*
     void RoutingChain::FromJson(QJsonObject object) {
         auto _map = this->_map();
         for (const auto &key: object.keys()) {
@@ -845,4 +845,5 @@ namespace Configs {
         }
         JsonStore::FromJson(object);
     }
+    */
 }

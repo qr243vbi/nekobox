@@ -96,6 +96,7 @@ set(PROJECT_SOURCES
         ${THRIFT_GENERATED_SOURCES}
         src/main.cpp
         src/dataStore/Configs.cpp
+        src/dataStore/ConfigItem.cpp
         src/dataStore/Utils.cpp
         src/global/GuiUtils.cpp
         src/global/HTTPRequestHelper.cpp

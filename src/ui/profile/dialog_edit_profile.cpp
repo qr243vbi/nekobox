@@ -690,10 +690,9 @@ void DialogEditProfile::do_apply_to_group(
       if (profile->bean.get() == nullptr)
         continue;
       auto newStream = GetStreamSettings(profile->bean.get());
-      QString name = stream->_name(p);
       if (newStream == nullptr || stream == newStream)
         continue;
-      newStream->_setValue(name, p);
+      newStream->_setValue(stream, p);
       profile->Save();
     }
   };
@@ -702,8 +701,7 @@ void DialogEditProfile::do_apply_to_group(
     for (const auto &profile : group->GetProfileEnts()) {
       if (profile == ent || profile->bean.get() == nullptr)
         continue;
-      QString name = bean->_name(p);
-      profile->bean->_setValue(name, p);
+      profile->bean->_setValue(bean, p);
       profile->Save();
     }
   };
