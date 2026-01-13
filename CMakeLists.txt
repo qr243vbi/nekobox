@@ -347,6 +347,7 @@ set(TS_FILES
         res/translations/zh_CN.ts
         res/translations/fa_IR.ts
         res/translations/ru_RU.ts
+        res/translations/he_IL.ts
 )
 set(LUPDATE_OPTIONS
         -locations none -no-obsolete
