@@ -822,12 +822,13 @@ namespace Configs {
     void RoutingChain::FromJson(QJsonObject object) {
         auto _map = this->_map();
         for (const auto &key: object.keys()) {
-            if (_map.count(key) == 0) {
+            auto h = Configs::hash(key);
+            if (_map.count(h) == 0) {
                 continue;
             }
 
             auto value = object[key];
-            auto item = _map.value(key).get();
+            auto item = _map.value(h).get();
 
             if (item == nullptr) continue;
             if (item->type == ITEM_TYPE(jsonStoreList)) {

@@ -42,7 +42,9 @@ namespace Configs_ConfigItem {
             QString str, void* p, itemType type
     ){
         auto item = std::make_shared<configItem>(str, (size_t)((size_t)p - (size_t)(void*)this), type);
-        items.insert(str, item);
+        auto h = Configs::hash(str);
+        Q_ASSERT(!items.contains(h));
+        items.insert(h, item);
     };
 
          QString JsonStore::_name(void *p){
@@ -57,8 +59,12 @@ namespace Configs_ConfigItem {
 
     std::shared_ptr<configItem> JsonStore::_get(const QString &name) {
         auto _map = this->_map();
-        if (_map.contains(name)) {
-            return _map.value(name);
+        auto h = Configs::hash(name);
+        if (_map.contains(h)) {
+            auto ret =  _map.value(h);
+            if (ret->name == name){
+                return ret;
+            }
         }
         return nullptr;
     }
@@ -133,7 +139,7 @@ namespace Configs_ConfigItem {
     QByteArray JsonStore::ToJsonBytes() {
         QJsonDocument document;
         document.setObject(ToJson());
-        return document.toJson(save_control_compact ? QJsonDocument::Compact : QJsonDocument::Indented);
+        return document.toJson(QJsonDocument::Compact);
     }
 
     void * configItem::getPtr(void * p){
@@ -143,14 +149,19 @@ namespace Configs_ConfigItem {
     void JsonStore::FromJson(QJsonObject object) {
         auto  _map = this->_map();
         for (const auto &key: object.keys()) {
-            if (_map.count(key) == 0) {
+            auto h = Configs::hash(key);
+            if (_map.count(h) == 0) {
                 continue;
             }
             auto value = object[key];
-            auto item = _map.value(key).get();
+            auto item = _map.value(h).get();
 
-            if (item == nullptr)
+            if (item == nullptr){
                 continue;
+            } 
+            if (item->name != key){
+                continue;
+            }
 
             auto ptr = (void*)(((size_t)(void*)this) + item->ptr);
             switch (item->type) {
@@ -270,8 +281,6 @@ namespace Configs_ConfigItem {
         auto save_content = ToJsonBytes();
         auto save_content_hash = 
             QCryptographicHash::hash(save_content, QCryptographicHash::Sha3_224);
-        auto changed = last_save_content != save_content_hash;
-        last_save_content = save_content_hash;
 
         QFile file;
         file.setFileName(fn);
@@ -280,7 +289,7 @@ namespace Configs_ConfigItem {
         }
         file.close();
 
-        return changed;
+        return true;
     }
 
     bool JsonStore::Load() {
@@ -296,7 +305,7 @@ namespace Configs_ConfigItem {
                 qDebug() << ("can not open config " + fn + "\n" + file.errorString());
             }
         } else {
-            last_save_content = file.readAll();
+            auto last_save_content = file.readAll();
             FromJsonBytes(last_save_content);
         }
 
@@ -307,6 +316,21 @@ namespace Configs_ConfigItem {
 } // namespace Configs_ConfigItem
 
 namespace Configs {
+
+    // Source - https://stackoverflow.com/a
+// Posted by Kuba hasn't forgotten Monica
+// Retrieved 2026-01-13, License - CC BY-SA 3.0
+
+QByteArray hash(const QString & str)
+{
+  QByteArray hash = QCryptographicHash::hash(
+    QByteArray::fromRawData((const char*)str.utf16(), str.length()*2),
+    QCryptographicHash::Blake2s_128
+  );
+  Q_ASSERT(hash.size() == 16);
+  return hash;
+}
+
 
     DataStore *dataStore = new DataStore();
 

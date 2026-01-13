@@ -10,7 +10,7 @@ namespace Configs_ConfigItem{
     class configItem;
 }
 
-typedef QMap<QString, std::shared_ptr<Configs_ConfigItem::configItem>> ConfJsMapStat;
+typedef QMap<QByteArray, std::shared_ptr<Configs_ConfigItem::configItem>> ConfJsMapStat;
 typedef ConfJsMapStat & ConfJsMap;
 //inline ConfJsMap initConfJsMap() { 
 //    return std::make_shared<QMap<QString, std::shared_ptr<Configs_ConfigItem::configItem>>>(); 
@@ -62,10 +62,8 @@ namespace Configs_ConfigItem {
         std::function<void()> callback_before_save = nullptr;
 
         QString fn;
-        bool load_control_must = false; // must load from file
-        bool save_control_compact = false;
+        bool load_control_must = false; 
         bool save_control_no_save = false;
-        QByteArray last_save_content;
 
         JsonStore() = default;
 
