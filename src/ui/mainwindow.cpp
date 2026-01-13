@@ -1947,6 +1947,18 @@ void MainWindow::UpdateDataView(bool force) {
                  QString::fromStdString(currentTestResult.server_country),
                  QString::fromStdString(currentTestResult.server_name));
   }
+  if (!html.isEmpty()){
+    QFont f = QApplication::font();
+
+    QString css = QString(
+    "body { font-family: \"%1\"; font-size: %2pt; }"
+    ).arg(f.family())
+    .arg(f.pointSize());
+
+    ui->data_view->document()->setDefaultStyleSheet(css);
+    html = QString("<html><head><style>%2</style></head><body>%1</body></html>").arg(html, css);
+  }
+
   ui->data_view->setHtml(html);
   lastUpdated = QDateTime::currentDateTime();
 }

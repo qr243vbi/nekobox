@@ -654,6 +654,7 @@
      <addaction name="actionCountrytest_Selected"/>
      <addaction name="actionSimpledl_Selected"/>
     </widget>
+    <addaction name="menu_profiles"/>
     <addaction name="separator"/>
     <addaction name="menu_start"/>
     <addaction name="menu_stop"/>
