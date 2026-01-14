@@ -924,7 +924,7 @@
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="578"/>
         <source>header type</source>
-        <translation>标头类型</translation>
+        <translation>请求头类型</translation>
     </message>
     <message>
         <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="221"/>
@@ -1004,7 +1004,7 @@
     <message>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="134"/>
         <source>Select outbound</source>
-        <translation>选择外向</translation>
+        <translation>选择出站</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="143"/>
@@ -2301,7 +2301,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <location filename="../../src/ui/mainwindow.cpp" line="915"/>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="104"/>
         <source>No routing profiles are updated</source>
-        <translation>没有更新的个人资料</translation>
+        <translation>没有可用的更新</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="939"/>
@@ -2487,27 +2487,27 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1107"/>
         <source>Full test Selected</source>
-        <translation>完整测试已选定</translation>
+        <translation>完整测试（选中项）</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1112"/>
         <source>Download test Selected</source>
-        <translation>下载测试选定项</translation>
+        <translation>下载测试（选中项）</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1117"/>
         <source>Upload test Selected</source>
-        <translation>上传测试选定</translation>
+        <translation>上传测试（选中项）</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1122"/>
         <source>Country test Selected</source>
-        <translation>国家测试已选定</translation>
+        <translation>国家测试（选中项）</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1127"/>
         <source>Simple download test Selected</source>
-        <translation>简单下载测试已选中</translation>
+        <translation>简单下载测试（选中项）</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1391"/>
@@ -2701,7 +2701,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="961"/>
         <source>Copy links of selected</source>
-        <translation>复制此节点的链接</translation>
+        <translation>复制此节点的链接（URI）</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="977"/>
@@ -3127,7 +3127,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3974"/>
         <source>Failed to download update assets</source>
-        <translation>下载更新资产失败</translation>
+        <translation>下载更新资源失败</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1102"/>
@@ -3186,7 +3186,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="937"/>
         <source>Copy links of selected (Custom Links)</source>
-        <translation>复制选定项的链接(自定义链接)</translation>
+        <translation>复制选定项的链接(nekoray链接)</translation>
     </message>
     <message>
         <source>Invalid JSON Array</source>
@@ -3673,7 +3673,7 @@ Release note:
     </message>
     <message>
         <source>Simple rule manual</source>
-        <translation type="vanished">简单规则手册</translation>
+        <translation type="vanished">简易规则手册</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="357"/>
