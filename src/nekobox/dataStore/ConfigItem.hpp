@@ -8,7 +8,7 @@
 #include <functional>
 
 namespace Configs_ConfigItem{
-    class configItem;
+    struct configItem;
 }
 
 typedef QMap<QByteArray, std::shared_ptr<Configs_ConfigItem::configItem>> ConfJsMapStat;
