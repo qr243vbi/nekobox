@@ -13,40 +13,69 @@ static void _put_store(ConfJsMap _map, const QString & str, void * value,
 #define SET_BIN(X) void X##Item::setBin(JsonStore * store, const libcore::JsonValue & value) 
 #define SET_NODE(X) void X##Item::setNode(JsonStore * store, const QJsonValue & value) 
 
-SET_BIN(jsonStoreList){
 
+void JsonStore::FromBin(const libcore::JsonValue & value){
+    if (value.__isset.jsonstore){
+        auto map = _map();
+    }
+}
+
+libcore::JsonValue JsonStore::ToBin(const QStringList &without ){
+    
+}
+
+SET_BIN(jsonStoreList){
+    if (value.__isset.jsonstorelist){
+        
+    }
 }
 
 SET_BIN(jsonStore){
-
+    if (value.__isset.jsonstore){
+        
+    }
 }
 
 SET_BIN(strMap){
-
+    if (value.__isset.textmap){
+        
+    }
 }
 
 SET_BIN(intList){
-
+    if (value.__isset.numberlist){
+        
+    }
 }
 
 SET_BIN(strList){
-
+    if (value.__isset.textlist){
+        
+    }
 }
 
 SET_BIN(bool){
-
+    if (value.__isset.flag){
+        * (bool*)this->getPtr(store) = value.flag;
+    }
 }
 
 SET_BIN(str){
-
+    if (value.__isset.text){
+        * (QString*)this->getPtr(store) = QString::fromStdString(value.text);
+    }
 }
 
 SET_BIN(long){
-
+    if (value.__isset.number64){
+        * (long long*)this->getPtr(store) = value.number64;
+    }
 }
 
 SET_BIN(int){
-
+    if (value.__isset.number){
+        * (int*)this->getPtr(store) = value.number;
+    }
 }
 
 SET_NODE(int){
@@ -199,7 +228,6 @@ GET_BIN(long){
 GET_BIN(int){
 
 }
-
 
 #define PUT_STORE(X) _put_store(_map, str, value, std::make_shared<X##Item>(), this);
 

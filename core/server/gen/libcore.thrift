@@ -125,8 +125,8 @@ union JsonValue {
   5: list<string> textlist;
   6: list<i32> numberlist;
   7: map<string, string> textmap;
-  8: map<binary, JsonValue> jsonstore;
-  9: list<map<binary, JsonValue>> jsonstorelist;
+  8: map<string, JsonValue> jsonstore;
+  9: list<map<string, JsonValue>> jsonstorelist;
 }
 
 service LibcoreService {

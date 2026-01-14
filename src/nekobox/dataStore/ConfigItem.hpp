@@ -144,6 +144,9 @@ namespace Configs_ConfigItem {
         virtual void FromJson(QJsonObject object);
 
         void FromJsonBytes(const QByteArray &data);
+        
+        void FromBin(const libcore::JsonValue & value);
+        libcore::JsonValue ToBin(const QStringList &without = {});
 
         virtual bool Save();
 
