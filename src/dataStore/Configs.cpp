@@ -39,17 +39,6 @@
 #endif
 
 namespace Configs_ConfigItem {
-/*
-    void JsonStore::_put(ConfJsMap items, 
-            QString str, void* p, itemType type
-    ){
-        auto item = std::make_shared<configItem>(str, (size_t)((size_t)p - (size_t)(void*)this), type);
-        auto h = Configs::hash(str);
-        Q_ASSERT(!items.contains(h));
-        items.insert(h, item);
-    };
-    */
-
          QString JsonStore::_name(void *p){
             for (auto & item: _map()){
                 if (item->getPtr(this) == p){
@@ -83,60 +72,6 @@ namespace Configs_ConfigItem {
             if (without.contains(name)) continue;
 
             object.insert(name, item->getNode(this));
-            //void * ptr = (void*)(((size_t)(void*)this) + item->ptr);
-            /*
-            switch (item->type) {
-                case itemType::type_string:
-                    // Allow Empty
-                    object.insert(name, *(QString *) ptr);
-                    break;
-                case itemType::type_integer:
-                    object.insert(name, *(int *) ptr);
-                    break;
-                case itemType::type_integer64:
-                    object.insert(name, *(long long *) ptr);
-                    break;
-                case itemType::type_boolean:
-                    object.insert(name, *(bool *) ptr);
-                    break;
-                case itemType::type_stringList: {
-                    auto jsonarray = QListStr2QJsonArray(*(QList<QString> *) ptr);
-                    if (jsonarray.isEmpty()) continue;
-                    object.insert(name, jsonarray);
-                    break;
-                }
-                case itemType::type_integerList: {
-                    auto jsonarray = QListInt2QJsonArray(*(QList<int> *) ptr);
-                    if (jsonarray.isEmpty()) continue;
-                    object.insert(name, jsonarray);
-                    break;
-                }
-                case itemType::type_jsonStore:
-                    {
-                        JsonStore * store = *(JsonStore**)ptr;
-                        if (store != nullptr){
-                            object.insert(name, store->ToJson());
-                        }
-                    } 
-                    break;
-                case itemType::type_stringMap:
-                    {
-                        object.insert(name, QJsonObject::fromVariantMap( *(QVariantMap *) ptr ));
-                    }
-                    break;
-                case itemType::type_jsonStoreList:
-                    QJsonArray jsonArray;
-                    auto arr = *(QList<JsonStore*> *) ptr;
-                    for ( JsonStore* obj : arr) {
-                        if (obj ==  nullptr){
-                            continue;
-                        }
-                        jsonArray.push_back(obj->ToJson());
-                    }
-                    object.insert(name, jsonArray);
-                    break;
-            }
-                    */
         }
         return object;
     }
@@ -169,69 +104,7 @@ namespace Configs_ConfigItem {
             }
 
             item->setNode(this, value);
-        //    auto ptr = (void*)(((size_t)(void*)this) + item->ptr);
 
-/*
-            switch (item->type) {
-                case itemType::type_string:
-                    if (value.type() != QJsonValue::String) {
-                        continue;
-                    }
-                    *(QString *) ptr = value.toString();
-                    break;
-                case itemType::type_integer:
-                    if (value.type() != QJsonValue::Double) {
-                        continue;
-                    }
-                    *(int *) ptr = value.toInt();
-                    break;
-                case itemType::type_integer64:
-                    if (value.type() != QJsonValue::Double) {
-                        continue;
-                    }
-                    *(long long *) ptr = value.toDouble();
-                    break;
-                case itemType::type_boolean:
-                    if (value.type() != QJsonValue::Bool) {
-                        continue;
-                    }
-                    *(bool *) ptr = value.toBool();
-                    break;
-                case itemType::type_stringList:
-                    if (value.type() != QJsonValue::Array) {
-                        continue;
-                    }
-                    *(QList<QString> *) ptr = QJsonArray2QListString(value.toArray());
-                    break;
-                case itemType::type_integerList:
-                    if (value.type() != QJsonValue::Array) {
-                        continue;
-                    }
-                    *(QList<int> *) ptr = QJsonArray2QListInt(value.toArray());
-                    break;
-                case itemType::type_jsonStore:
-                    if (value.type() != QJsonValue::Object) {
-                        continue;
-                    }
-                    {
-                        JsonStore * store = *(JsonStore**) ptr;
-                        if (ptr == nullptr){
-                            continue;
-                        }
-                        store->FromJson(value.toObject());
-                    }
-                    break;
-                case itemType::type_stringMap:
-                    if (value.type() != QJsonValue::Object){
-                        continue;
-                    }
-                    {
-                        *(QVariantMap*) ptr = value.toObject().toVariantMap();
-                    }
-                case itemType::type_jsonStoreList:
-                    break;
-            }
-                    */
         }
 
         if (callback_after_load != nullptr) callback_after_load();
@@ -250,36 +123,6 @@ namespace Configs_ConfigItem {
         if (item == nullptr) return;
 
         item->setNode(this, node);
-/*
-        void *ptr = (void*)((size_t)(void*)this + item->ptr);
-
-        switch (item->type) {
-            case itemType::type_string:
-                *(QString *) ptr = *(QString *) p;
-                break;
-            case itemType::type_boolean:
-                *(bool *) ptr = *(bool *) p;
-                break;
-            case itemType::type_integer:
-                *(int *) ptr = *(int *) p;
-                break;
-            case itemType::type_integer64:
-                *(long long *) ptr = *(long long *) p;
-                break;
-            case itemType::type_integerList:
-                *(QList<int> *) ptr = *(QList<int> *) p;
-                break;
-            case itemType::type_stringList:
-                *(QList<QString> *) ptr = *(QList<QString> *) p;
-                break;
-            case itemType::type_stringMap:
-                *(QVariantMap *) ptr = *(QVariantMap *) p;
-                break;
-            // others...
-            default:
-                break;
-        }
-                */
     }
 
     void JsonStore::FromJsonBytes(const QByteArray &data) {
@@ -331,17 +174,9 @@ namespace Configs_ConfigItem {
                 bin.payload = file.readAll();
                 FromBin(bin);
             } else {
-  //          try{
-  //              value = BytesToJsonValue(last_save_content);
-  //              goto l1;
-  //          } catch (...){
                 last_save_content.append(file.readAll());
                 FromJsonBytes(last_save_content);
             }
-  //          }
-  //          goto l2;
-  //          l1:
-  //          FromBin(value);
         }
   //      l2:
         file.close();
@@ -351,10 +186,6 @@ namespace Configs_ConfigItem {
 } // namespace Configs_ConfigItem
 
 namespace Configs {
-
-    // Source - https://stackoverflow.com/a
-// Posted by Kuba hasn't forgotten Monica
-// Retrieved 2026-01-13, License - CC BY-SA 3.0
 
 QByteArray hash(const QString & input)
 {
