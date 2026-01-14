@@ -51,6 +51,9 @@ namespace Configs_ConfigItem {
     struct configItem {
         virtual QJsonValue getNode(JsonStore * store) = 0;
         virtual void setNode(JsonStore * store, const QJsonValue & value) = 0;
+        virtual QByteArray getBin(JsonStore * store) = 0;
+        virtual int type() = 0;
+        virtual void setBin(JsonStore * store, const QByteArray & value) = 0;
         size_t ptr;
         QString name;
         virtual void * getPtr(JsonStore * store);
@@ -60,6 +63,22 @@ namespace Configs_ConfigItem {
     struct X##Item: public configItem {                        \
         QJsonValue getNode(JsonStore * store) override;     \
         void setNode(JsonStore * store, const QJsonValue & value) override; \
+        QByteArray getBin(JsonStore * store) override; \
+        void setBin(JsonStore * store, const QByteArray & value) override; \
+        int type() override { return ConfigItemType::type_##X; } ; \
+    };
+
+    enum ConfigItemType{
+        type_end,
+        type_int, 
+        type_long, 
+        type_str, 
+        type_bool, 
+        type_strList, 
+        type_intList, 
+        type_jsonStore, 
+        type_jsonStoreList, 
+        type_strMap
     };
 
     PTR_ITEM(int)
@@ -119,11 +138,15 @@ namespace Configs_ConfigItem {
 
         QJsonObject ToJson(const QStringList &without = {});
 
-        QByteArray ToJsonBytes();
+        QByteArray ToJsonBytes(const QStringList &without = {});
+
+        QByteArray ToBytes(const QStringList &without = {});
 
         virtual void FromJson(QJsonObject object);
 
         void FromJsonBytes(const QByteArray &data);
+
+        void FromBytes(const QByteArray &data);
 
         virtual bool Save();
 

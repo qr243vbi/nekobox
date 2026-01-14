@@ -69,6 +69,66 @@ namespace Configs_ConfigItem {
         return nullptr;
     }
 
+    QByteArray JsonStore::ToBytes(const QStringList &without){
+        QByteArray buffer;
+        QDataStream out(&buffer, QIODevice::WriteOnly);
+        out.writeBytes("nbox", 4);
+        unsigned char type ;
+        auto _map = this->_map();
+        for (auto [key, _item]: asKeyValueRange(_map)) {
+            auto item = _item.get();
+            if (item == nullptr){
+                continue;
+            }
+            if (without.contains(item->name)) continue;
+            type = item->type();
+            out << type;
+            out.writeBytes(key.data(), 16);
+            QByteArray value = item->getBin(this);
+            unsigned short len = value.size();
+            out << len;
+            out.writeBytes(value, len);
+        }
+        type = ConfigItemType::type_end;
+        out << type;
+        return buffer;
+    }
+
+    void JsonStore::FromBytes(const QByteArray &data){
+        QByteArray buffer = data;
+        QDataStream out(&buffer, QIODevice::ReadOnly);
+        char * bt = new char[5];
+        bt[4] = 0;
+        auto map = _map();
+        out.readRawData(bt, 4);
+        if (QString("neko") == QString(bt)){
+            loop_back:
+            std::shared_ptr<configItem> item;
+            unsigned char type;
+            unsigned short len;
+            QByteArray key;
+            QByteArray value;
+            out >> type;
+            if (type == ConfigItemType::type_end){
+                goto loop_back2;
+            }
+            key.resize(16);
+            out.readRawData(key.data(), 16);
+            out >> len;
+            value.resize(len);
+            out.readRawData(value.data(), len);
+
+            item = map[key];
+            if (item->type() == type){
+                item->setBin(this, value);
+            }
+            goto loop_back;
+        }
+
+        loop_back2:
+        return;
+    }
+
     QJsonObject JsonStore::ToJson(const QStringList &without) {
         QJsonObject object;
         auto _map = this->_map();
@@ -139,9 +199,9 @@ namespace Configs_ConfigItem {
         return object;
     }
 
-    QByteArray JsonStore::ToJsonBytes() {
+    QByteArray JsonStore::ToJsonBytes(const QStringList &without) {
         QJsonDocument document;
-        document.setObject(ToJson());
+        document.setObject(ToJson(without));
         return document.toJson(QJsonDocument::Compact);
     }
 

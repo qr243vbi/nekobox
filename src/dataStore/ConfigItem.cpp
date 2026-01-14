@@ -1,3 +1,4 @@
+#include "nekobox/dataStore/ConfigItem.hpp"
 #include "nekobox/dataStore/Configs.hpp"
 #include "nekobox/dataStore/Utils.hpp"
 #include <qcontainerfwd.h>
@@ -9,7 +10,44 @@ static void _put_store(ConfJsMap _map, const QString & str, void * value,
     _map[Configs::hash(str)] = item;
 }
 
+#define SET_BIN(X) void X##Item::setBin(JsonStore * store, const QByteArray & value) 
 #define SET_NODE(X) void X##Item::setNode(JsonStore * store, const QJsonValue & value) 
+
+SET_BIN(jsonStoreList){
+
+}
+
+SET_BIN(jsonStore){
+
+}
+
+SET_BIN(strMap){
+
+}
+
+SET_BIN(intList){
+
+}
+
+SET_BIN(strList){
+
+}
+
+SET_BIN(bool){
+
+}
+
+SET_BIN(str){
+
+}
+
+SET_BIN(long){
+
+}
+
+SET_BIN(int){
+
+}
 
 SET_NODE(int){
     if (value.isDouble()){
@@ -81,6 +119,8 @@ SET_NODE(jsonStoreList){
 }
 
 #define GET_NODE(X) QJsonValue X##Item::getNode(JsonStore * store)
+#define GET_BIN(X) QByteArray X##Item::getBin(JsonStore * store)
+
 GET_NODE(jsonStoreList){
     auto list = (QJsonStoreListBase*) this->getPtr(store);
     QJsonArray array;
@@ -122,6 +162,42 @@ GET_NODE(long){
 
 GET_NODE(int) {
     return *(int*)getPtr(store);
+}
+
+GET_BIN(jsonStoreList){
+    
+}
+
+GET_BIN(jsonStore){
+
+}
+
+GET_BIN(strMap){
+
+}
+
+GET_BIN(intList){
+
+}
+
+GET_BIN(strList){
+
+}
+
+GET_BIN(bool){
+
+}
+
+GET_BIN(str){
+
+}
+
+GET_BIN(long){
+
+}
+
+GET_BIN(int){
+
 }
 
 
