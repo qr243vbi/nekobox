@@ -3415,6 +3415,13 @@ void MainWindow::RegisterHiddenMenuShortcuts(bool unregister) {
           action->shortcut(), this, [=, this]() { action->trigger(); }));
     }
   }
+
+  for (const auto &action : ui->menu_test->actions()) {
+    if (!action->shortcut().toString().isEmpty()) {
+      hiddenMenuShortcuts.append(new QShortcut(
+          action->shortcut(), this, [=, this]() { action->trigger(); }));
+    }
+  }
 }
 
 void MainWindow::setActionsData() {
