@@ -10,7 +10,7 @@ static void _put_store(ConfJsMap _map, const QString & str, void * value,
     _map[Configs::hash(str)] = item;
 }
 
-#define SET_BIN(X) void X##Item::setBin(JsonStore * store, const QByteArray & value) 
+#define SET_BIN(X) void X##Item::setBin(JsonStore * store, const libcore::JsonValue & value) 
 #define SET_NODE(X) void X##Item::setNode(JsonStore * store, const QJsonValue & value) 
 
 SET_BIN(jsonStoreList){
@@ -119,7 +119,7 @@ SET_NODE(jsonStoreList){
 }
 
 #define GET_NODE(X) QJsonValue X##Item::getNode(JsonStore * store)
-#define GET_BIN(X) QByteArray X##Item::getBin(JsonStore * store)
+#define GET_BIN(X) libcore::JsonValue X##Item::getBin(JsonStore * store)
 
 GET_NODE(jsonStoreList){
     auto list = (QJsonStoreListBase*) this->getPtr(store);

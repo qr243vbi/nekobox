@@ -6,6 +6,7 @@
 #include <QString>
 #include <QJsonObject>
 #include <functional>
+#include <gen-cpp/libcore_types.h>
 
 namespace Configs_ConfigItem{
     class configItem;
@@ -51,9 +52,9 @@ namespace Configs_ConfigItem {
     struct configItem {
         virtual QJsonValue getNode(JsonStore * store) = 0;
         virtual void setNode(JsonStore * store, const QJsonValue & value) = 0;
-        virtual QByteArray getBin(JsonStore * store) = 0;
+        virtual libcore::JsonValue getBin(JsonStore * store) = 0;
+        virtual void setBin(JsonStore * store, const libcore::JsonValue & value) = 0;
         virtual int type() = 0;
-        virtual void setBin(JsonStore * store, const QByteArray & value) = 0;
         size_t ptr;
         QString name;
         virtual void * getPtr(JsonStore * store);
@@ -63,8 +64,8 @@ namespace Configs_ConfigItem {
     struct X##Item: public configItem {                        \
         QJsonValue getNode(JsonStore * store) override;     \
         void setNode(JsonStore * store, const QJsonValue & value) override; \
-        QByteArray getBin(JsonStore * store) override; \
-        void setBin(JsonStore * store, const QByteArray & value) override; \
+        libcore::JsonValue getBin(JsonStore * store) override; \
+        void setBin(JsonStore * store, const libcore::JsonValue & value) override; \
         int type() override { return ConfigItemType::type_##X; } ; \
     };
 
@@ -140,13 +141,9 @@ namespace Configs_ConfigItem {
 
         QByteArray ToJsonBytes(const QStringList &without = {});
 
-        QByteArray ToBytes(const QStringList &without = {});
-
         virtual void FromJson(QJsonObject object);
 
         void FromJsonBytes(const QByteArray &data);
-
-        void FromBytes(const QByteArray &data);
 
         virtual bool Save();
 
