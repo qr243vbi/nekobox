@@ -1,5 +1,4 @@
 #include "nekobox/dataStore/ConfigItem.hpp"
-#include <netinet/in.h>
 #ifdef _WIN32
 #include <winsock2.h>
 #include <windows.h>
