@@ -38,7 +38,14 @@ SET_BIN(jsonStore){
 
 SET_BIN(strMap){
     if (value.__isset.textmap){
-        
+        auto map = (QVariantMap*) this->getPtr(store) ;
+        map->clear();
+        for (const auto& [key, value] : value.textmap) {
+            map->insert(
+                QString::fromStdString(key),
+                QString::fromStdString(value)
+            );
+        }
     }
 }
 
@@ -138,6 +145,7 @@ SET_NODE(jsonStoreList){
         QJsonArray array = value.toArray();
         if (!array.isEmpty()){
             auto list = (QJsonStoreListBase*) this->getPtr(store);
+            list->clear();
             for (auto ptr : array){
                 JsonStore * store = list->createJsonStore();
                 store->FromJson(ptr.toObject());
