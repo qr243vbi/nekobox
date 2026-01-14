@@ -2,6 +2,7 @@
 
 #include "nekobox/dataStore/Database.hpp"
 #include "nekobox/configs/ConfigBuilder.hpp"
+#include "nekobox/dataStore/Utils.hpp"
 #include "nekobox/stats/traffic/TrafficLooper.hpp"
 #include "nekobox/api/RPC.h"
 #include "nekobox/ui/utils//MessageBoxTimer.h"
@@ -16,12 +17,6 @@
 // rpc
 using namespace API;
 
-void qstringlist_to_vector(std::vector<std::string> &vec, const QStringList &list){
-    vec.clear();
-    for (QString str : list){
-        vec.push_back(str.toStdString());
-    }
-}
 
 void MainWindow::setup_rpc() {
     // Setup Connection
@@ -51,7 +46,7 @@ void MainWindow::runURLTest(const QString& config, bool useDefault, const QStrin
     }
 
     libcore::TestReq req;
-    qstringlist_to_vector(req.outbound_tags, outboundTags);
+    req.outbound_tags = QListStr2VectorStr(outboundTags);
 
     req.config = (config.toStdString());
     req.url = (Configs::dataStore->test_latency_url.toStdString());
@@ -390,7 +385,7 @@ void MainWindow::runSpeedTest(const QString& config, bool useDefault, bool testC
 
     qDebug() << speedtestConf ;
 
-    qstringlist_to_vector(req.outbound_tags, outboundTags);
+    req.outbound_tags = QListStr2VectorStr(outboundTags);
     req.config = (config.toStdString());
     req.use_default_outbound = (useDefault);
     req.test_download = (speedtestConf == Configs::TestConfig::FULL || speedtestConf == Configs::TestConfig::DL);
