@@ -2335,8 +2335,8 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="161"/>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="597"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="2219"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="2222"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2231"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2234"/>
         <source>System Proxy</source>
         <translation>Системный прокси</translation>
     </message>
@@ -2377,7 +2377,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>Поделиться</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="710"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="711"/>
         <source>Exit</source>
         <translation>Выход</translation>
     </message>
@@ -2386,81 +2386,81 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation type="vanished">Показать окно</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="715"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="716"/>
         <source>Toggle Window</source>
         <translation>Показать окно</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="720"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="721"/>
         <source>Basic Settings</source>
         <translation>Основные настройки</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="725"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="726"/>
         <source>New profile</source>
         <translation>Новый профиль</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="730"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="731"/>
         <source>Groups</source>
         <translation>Группы</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="735"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3190"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3198"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="736"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3202"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3210"/>
         <source>Start</source>
         <translation>Запустить</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="743"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3190"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3198"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="744"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3202"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3210"/>
         <source>Stop</source>
         <translation>Остановить</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="759"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="760"/>
         <source>Routing Settings</source>
         <translation>Настройки маршрутизации</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1055"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1056"/>
         <source>Clear Test Result Selected</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1106"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1107"/>
         <source>Full test Selected</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1111"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1112"/>
         <source>Download test Selected</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1116"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1117"/>
         <source>Upload test Selected</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1121"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1122"/>
         <source>Country test Selected</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1126"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1127"/>
         <source>Simple download test Selected</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1136"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1137"/>
         <source>Hide window</source>
         <translation>Скрыть окно</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="764"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="765"/>
         <source>Add profile from clipboard</source>
         <translation>Добавить профиль из буфера обмена</translation>
     </message>
@@ -2486,156 +2486,156 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="751"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="752"/>
         <source>Edit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="772"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="773"/>
         <source>Delete</source>
         <translation>Удалить</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="780"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="781"/>
         <source>Debug Info</source>
         <translation>Отладочная информация</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="785"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="786"/>
         <source>QR Code and link</source>
         <translation>QR-код и ссылка</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="793"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="794"/>
         <source>Copy Link</source>
         <translation>Скопировать ссылку</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="814"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="815"/>
         <source>Clear Test Result</source>
         <translation>Очистить результат теста</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="822"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="823"/>
         <location filename="../../src/ui/mainwindow.cpp" line="1198"/>
         <source>Export %1 config</source>
         <translation>Экспортировать конфигурацию %1</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="830"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="831"/>
         <source>Reset Traffic</source>
         <translation>Сбросить трафик</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="838"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="839"/>
         <source>Scan QR Code</source>
         <translation>Сканировать QR-код</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="846"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="847"/>
         <source>Enable System Proxy</source>
         <translation>Активировать системный прокси</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="854"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="855"/>
         <source>Disable</source>
         <translation>Отключить</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="859"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="860"/>
         <source>Remove Duplicates</source>
         <translation>Удалить дубликаты</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="867"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="944"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="952"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="868"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="945"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="953"/>
         <source>fake</source>
         <translation>фейк</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="875"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="876"/>
         <source>Move</source>
         <translation>Переместить</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="886"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="887"/>
         <source>Start with system</source>
         <translation>Запускать вместе с системой</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="894"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="895"/>
         <source>Remember last profile</source>
         <translation>Запомнить последний профиль</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="902"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="903"/>
         <source>Allow other devices to connect</source>
         <translation>Разрешить подключаться другим устройствам</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="907"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="908"/>
         <source>Remove Unavailable</source>
         <translation>Удалить недоступные</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="915"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="916"/>
         <source>Full Test</source>
         <translation>Полный тест</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="923"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="924"/>
         <source>Hotkey Settings</source>
         <translation>Настройки горячих клавиш</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="928"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="929"/>
         <source>Select All</source>
         <translation>Выбрать все</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="960"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="961"/>
         <source>Copy links of selected</source>
         <translation>Скопировать ссылки выбранных</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="971"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="972"/>
         <source>Enable Tun</source>
         <translation>Включить режим TUN</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="976"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="2568"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="977"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2580"/>
         <source>Clone</source>
         <translation>Клонировать</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="984"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="985"/>
         <source>Update subscription</source>
         <translation>Обновить подписку</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="995"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="996"/>
         <source>Resolve domain</source>
         <translation>Разрешить домен</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1003"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1004"/>
         <source>Tun Settings</source>
         <translation>Настройки режима TUN</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1008"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1009"/>
         <source>Restart Program</source>
         <translation>Перезапустить программу</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1013"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1014"/>
         <source>Open Config Folder</source>
         <translation>Открыть папку конфигурации</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1034"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1035"/>
         <source>Restart Proxy</source>
         <translation>Перезапустить прокси</translation>
     </message>
@@ -2720,11 +2720,11 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1485"/>
         <location filename="../../src/ui/mainwindow.cpp" line="1542"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="2620"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="2954"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3007"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3054"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3257"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2632"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2966"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3019"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3066"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3269"/>
         <source>Confirmation</source>
         <translation>Подтверждение</translation>
     </message>
@@ -2750,7 +2750,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>Импортирован(ы) %1 профиль(ей)</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2194"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2206"/>
         <source>Not Running</source>
         <translation>Не запущен</translation>
     </message>
@@ -2763,33 +2763,33 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation type="vanished">Режим выбора: дважды кликните или нажмите Enter для выбора профиля, нажмите ESC для выхода.</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2569"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2581"/>
         <source>Clone %1 item(s)</source>
         <translation>Клонировать %1 записей</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2621"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2633"/>
         <source>Remove %1 item(s) ?</source>
         <translation>Удалить %1 записей?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2656"/>
         <location filename="../../src/ui/mainwindow.cpp" line="2668"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2680"/>
         <source>Copied %1 item(s)</source>
         <translation>Скопировано %1 записей</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2683"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2695"/>
         <source>Config copied</source>
         <translation>Конфигурация скопирована</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2869"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2881"/>
         <source>QR Code not found</source>
         <translation>QR-код не найден</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3188"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3200"/>
         <source>Clear</source>
         <translation>Очистить</translation>
     </message>
@@ -2805,7 +2805,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>Проверка...</translation>
     </message>
     <message>
-        <location filename="../../src/dataStore/ProxyEntity.cpp" line="53"/>
+        <location filename="../../src/dataStore/ProxyEntity.cpp" line="54"/>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="243"/>
         <source>Unavailable</source>
         <translation>Недоступен</translation>
@@ -2837,7 +2837,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>Не удалось остановить, пожалуйста, перезапустите приложение.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1039"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1040"/>
         <source>Stop Testing</source>
         <translation>Остановить тестирование</translation>
     </message>
@@ -2857,63 +2857,63 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>Отмена</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1146"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3216"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1147"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3228"/>
         <source>Add new Group</source>
         <translation>Добавить новую группу</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3249"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3261"/>
         <source>Delete selected Group</source>
         <translation>Удалить выбранную группу</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3250"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3262"/>
         <source>Edit selected Group</source>
         <translation>Редактировать выбранную группу</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3258"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3270"/>
         <source>Remove %1?</source>
         <translation>Удалить %1?</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1044"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1045"/>
         <source>Url Test Selected</source>
         <translation>Тест задержки выбранного профиля</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1047"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1048"/>
         <source>Ctrl+Shift+S</source>
         <translation>Ctrl+Shift+S</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1066"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1067"/>
         <source>Url Test Group</source>
         <translation>Тест задержки всей группы</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1069"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1070"/>
         <source>Ctrl+Shift+G</source>
         <translation>Ctrl+Shift+G</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="674"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="675"/>
         <source>Hidden menu</source>
         <translation>Скрытое меню</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1077"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1078"/>
         <source>Resolve Selected Domain</source>
         <translation>Разрешить выбранный домен</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1085"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1086"/>
         <source>Remove Invalid</source>
         <translation>Удалить недействительные</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1088"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1089"/>
         <source>Ctrl+Alt+I</source>
         <translation>Ctrl+Alt+I</translation>
     </message>
@@ -2923,27 +2923,27 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>Если у вас возникли проблемы с запуском режима TUN, можете принудительно сбросить процесс ядра здесь и попробовать перезапустить профиль. Ошибка: %1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2602"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2614"/>
         <source> Confirmation </source>
         <translation> Подтверждение </translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2603"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2615"/>
         <source> Remove %1 item(s) ? </source>
         <translation> Удалить %1 элемент(ов)? </translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2955"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2967"/>
         <source>Remove %1 Unavailable item(s) ?</source>
         <translation>Удалить %1 недоступных элемент(ов)?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3008"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3020"/>
         <source>Remove %1 Invalid item(s) ?</source>
         <translation>Удалить %1 неверных элемент(ов)?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3055"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3067"/>
         <source>Replace domain server addresses with their resolved IPs?</source>
         <translation>Заменить домены в адресах серверов на их разрешённые IP-адреса?</translation>
     </message>
@@ -2998,7 +2998,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="51"/>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="54"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="692"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="693"/>
         <source>Profiles</source>
         <translation>Профили</translation>
     </message>
@@ -3024,12 +3024,12 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>Нажмите для сортировки по процессу</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="687"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="688"/>
         <source>Routing Menu</source>
         <translation>Меню маршрутизации</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1096"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1097"/>
         <source>Open Manager</source>
         <translation>Открыть менеджер</translation>
     </message>
@@ -3105,22 +3105,22 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>Ошибка остановки</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2685"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2697"/>
         <source>Copy core config</source>
         <translation>Копировать конфигурацию ядра</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2687"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2699"/>
         <source>Copy test config</source>
         <translation>Копировать тестовую конфигурацию</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3920"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3939"/>
         <source>Cannot start</source>
         <translation>Невозможно запустить</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3921"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3940"/>
         <source>Last download request has not finished yet</source>
         <translation>Последний запрос на загрузку еще не завершён</translation>
     </message>
@@ -3130,12 +3130,12 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>График соединения</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3955"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3974"/>
         <source>Failed to download update assets</source>
         <translation>Не удалось загрузить обновлённые ресурсы</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1101"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1102"/>
         <source>Speedtest Current</source>
         <translation>Тест скорости текущего профиля</translation>
     </message>
@@ -3144,7 +3144,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation type="vanished">Тест скорости выбранного профиля</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1131"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1132"/>
         <source>Speedtest Group</source>
         <translation>Тест скорости всей группы</translation>
     </message>
@@ -3174,7 +3174,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>Пользователь решил не запрашивать привилегии, некоторые функции могут не работать</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2890"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2902"/>
         <source>Unable to capture screen</source>
         <translation>Невозможно захватить экран</translation>
     </message>
@@ -3189,7 +3189,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>Нажмите для сортировки по трафику</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="936"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="937"/>
         <source>Copy links of selected (Custom Links)</source>
         <translation>Скопировать ссылки выбранных профилей (польз. ссылки)</translation>
     </message>
@@ -3218,7 +3218,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>Нажмите для сортировки по Outbound</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1141"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1142"/>
         <source>Add profile from File</source>
         <translation>Добавить профиль из файла</translation>
     </message>
@@ -3248,7 +3248,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <name>QObject</name>
     <message>
         <location filename="../../src/stats/traffic/TrafficLooper.cpp" line="115"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="2162"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2174"/>
         <source>Proxy: %1
 Direct: %2</source>
         <translation>Прокси: %1
@@ -3330,22 +3330,22 @@ Deleted %3 Profiles:
         <translation>Выбор</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3825"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3836"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3880"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3902"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3911"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3946"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3844"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3855"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3899"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3921"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3930"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3965"/>
         <source>Update</source>
         <translation>Обновление</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3880"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3899"/>
         <source>No update</source>
         <translation>Обновлений нет</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3903"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3922"/>
         <source>Update found: %1
 Release note:
 %2</source>
@@ -3354,12 +3354,12 @@ Release note:
 %2</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3908"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3927"/>
         <source>Open in browser</source>
         <translation>Открыть в браузере</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3906"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3925"/>
         <source>Close</source>
         <translation>Закрыть</translation>
     </message>
@@ -3369,12 +3369,12 @@ Release note:
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2199"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2211"/>
         <source>IP address: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3947"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3966"/>
         <source>Update is ready, restart to install?</source>
         <translation>Обновление готово, перезапустить программу для установки?</translation>
     </message>
@@ -3404,12 +3404,12 @@ Release note:
         <translation>Не удалось открыть файл.</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3826"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3845"/>
         <source>Not official support platform</source>
         <translation>Платформа официально не поддерживается</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3837"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3856"/>
         <source>Requesting update error: %1</source>
         <translation>Ошибка запроса обновления: %1</translation>
     </message>
