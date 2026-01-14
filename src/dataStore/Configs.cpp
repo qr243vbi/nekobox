@@ -1,3 +1,5 @@
+#include "nekobox/dataStore/ConfigItem.hpp"
+#include <netinet/in.h>
 #ifdef _WIN32
 #include <winsock2.h>
 #include <windows.h>
@@ -296,14 +298,13 @@ namespace Configs_ConfigItem {
         if (callback_before_save != nullptr) callback_before_save();
         if (save_control_no_save) return false;
 
-        auto save_content = ToJsonBytes();
-        auto save_content_hash = 
-            QCryptographicHash::hash(save_content, QCryptographicHash::Sha3_224);
-
+        auto save_content = this->ToBin();//JsonValueToBytes(this->ToBin());
+        
         QFile file;
         file.setFileName(fn);
         if (file.open(QIODevice::ReadWrite | QIODevice::Truncate)){
-            file.write(save_content);
+            file.write("NekoBox");
+            file.write(save_content.payload);
         }
         file.close();
 
@@ -323,10 +324,26 @@ namespace Configs_ConfigItem {
                 qDebug() << ("can not open config " + fn + "\n" + file.errorString());
             }
         } else {
-            auto last_save_content = file.readAll();
-            FromJsonBytes(last_save_content);
+            auto last_save_content = file.read(7);
+            if (last_save_content == "NekoBox"){
+                Bin bin;
+                bin.type = ConfigItemType::type_jsonStore;
+                bin.payload = file.readAll();
+                FromBin(bin);
+            } else {
+  //          try{
+  //              value = BytesToJsonValue(last_save_content);
+  //              goto l1;
+  //          } catch (...){
+                last_save_content.append(file.readAll());
+                FromJsonBytes(last_save_content);
+            }
+  //          }
+  //          goto l2;
+  //          l1:
+  //          FromBin(value);
         }
-
+  //      l2:
         file.close();
         return ok;
     }

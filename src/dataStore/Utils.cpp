@@ -146,7 +146,40 @@ QList<int> QJsonArray2QListInt(const QJsonArray &arr) {
     return list2;
 }
 
-QList<QString> QJsonArray2QListString(const QJsonArray &arr) {
+std::vector<std::string> QListStr2VectorStr(const QStringList &list){
+    std::vector<std::string> vec;
+    for (QString str : list){
+        vec.push_back(str.toStdString());
+    }
+    return vec;
+}
+
+QStringList VectorStr2QListStr(const std::vector<std::string> &list){
+    QStringList vec;
+    for (std::string str : list){
+        vec.append(QString::fromStdString(str));
+    }
+    return vec;
+}
+
+
+std::vector<int> QListInt2VectorInt(const QList<int> &list){
+    std::vector<int> vec;
+    for (int str : list){
+        vec.push_back(str);
+    }
+    return vec;
+}
+
+QList<int> VectorInt2QListInt(const std::vector<int> &list){
+    QList<int> vec;
+    for (int str : list){
+        vec.append(str);
+    }
+    return vec;
+}
+
+QList<QString> QJsonArray2QListStr(const QJsonArray &arr) {
     QList<QString> list2;
     for (auto item: arr)
         list2.append(item.toString());
@@ -378,7 +411,7 @@ void AddQueryNatural( QUrlQuery & query, const QString& name,int value){
 }
 
 QStringList GetQueryListValue(const QUrlQuery &q, const QString &key){
-    return QJsonArray2QListString(QString2QJsonArray(GetQueryValue(q, key)));
+    return QJsonArray2QListStr(QString2QJsonArray(GetQueryValue(q, key)));
 }
 
 QVariantMap QString2QMap(const QString &key){

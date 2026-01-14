@@ -117,18 +117,6 @@ struct QueryURLTestResponse {
   1: list<URLTestResp> results
 }
 
-union JsonValue {
-  1: i32 number;
-  2: i64 number64;
-  3: string text;
-  4: bool flag;
-  5: list<string> textlist;
-  6: list<i32> numberlist;
-  7: map<string, string> textmap;
-  8: map<string, JsonValue> jsonstore;
-  9: list<map<string, JsonValue>> jsonstorelist;
-}
-
 service LibcoreService {
   ErrorResp Start(1: LoadConfigReq req),
   ErrorResp Stop(1: EmptyReq req),

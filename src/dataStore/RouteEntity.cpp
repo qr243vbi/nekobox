@@ -524,7 +524,7 @@ namespace Configs {
                         rule->outboundID = id;
                     }
                 } else if (val.isArray()) {
-                    rule->set_field_value(key, QJsonArray2QListString(val.toArray()));
+                    rule->set_field_value(key, QJsonArray2QListStr(val.toArray()));
                 } else if (val.isString()) {
                     rule->set_field_value(key, {val.toString()});
                 } else if (val.isBool()) {
