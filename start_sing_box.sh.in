@@ -1,2 +1,2 @@
 #!/bin/sh
-@MAIN@_core sing-box "${@}"
+exec @MAIN@_core sing-box "${@}"
