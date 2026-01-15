@@ -366,7 +366,7 @@ QByteArray hash = QCryptographicHash::hash(
     }
 
     bool DataStore::Load() {
-        auto ret = DataStore::Load();
+        auto ret = JsonStore::Load();
         ForceJsonConfigs = this->force_json_configs;
         return ret;
     }
