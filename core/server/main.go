@@ -66,10 +66,11 @@ func main() {
 			InstallerMode()
 			return
 		}
-                if os.Args[1] == "sing-box" {
+        if os.Args[1] == "sing-box" {
 			os.Args = os.Args[1:]
 			main_sing.MainFunc();
-                }
+			return
+        }
 	}
 
 	var _admin *bool
