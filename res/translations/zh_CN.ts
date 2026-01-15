@@ -2669,7 +2669,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="231"/>
         <source>URL Test</source>
-        <translation>测试URL真延迟</translation>
+        <translation>测试真延迟</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="147"/>
