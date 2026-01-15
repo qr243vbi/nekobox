@@ -54,169 +54,174 @@
         <translation>表情符号字体</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="953"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="960"/>
         <source>Auto-Testing</source>
         <translation>自动测试</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="962"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="969"/>
         <source>Enable Auto-Testing</source>
         <translation>启用自动测试</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="959"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="966"/>
         <source>Automatically test proxies in the background and maintain a pool of working proxies</source>
         <translation>在后台自动测试代理，并维护一个可用代理池</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="969"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="946"/>
+        <source>Use Json instead binary for configs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="976"/>
         <source>Test Interval (seconds)</source>
         <translation>测试间隔（秒）</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="976"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="983"/>
         <source>How often to run the test cycle</source>
         <translation>测试循环的执行频率</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="992"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="999"/>
         <source>Proxies Per Cycle</source>
         <translation>每轮测试的代理数量</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="999"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1006"/>
         <source>Number of proxies to test in each cycle</source>
         <translation>每个测试周期中要测试的代理数量</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1015"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1022"/>
         <source>Working Pool Size</source>
         <translation>可用代理池大小</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1022"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1029"/>
         <source>Maximum number of verified working proxies to maintain</source>
         <translation>维护的已验证可用代理的最大数量</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1038"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1045"/>
         <source>Latency Threshold (ms)</source>
         <translation>延迟阈值（毫秒）</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1045"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1052"/>
         <source>Maximum latency to consider a proxy as working</source>
         <translation>判定代理为可用的最大延迟</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1064"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1071"/>
         <source>Failure Retry Count</source>
         <translation>失败重试次数</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1071"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1078"/>
         <source>Number of retry attempts before considering a proxy as failed</source>
         <translation>在判定代理失败前的重试次数</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1087"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1094"/>
         <source>Test Target URL</source>
         <translation>测试目标 URL</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1094"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1101"/>
         <source>URL to test proxies against</source>
         <translation>用于测试代理的目标网址</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1097"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1104"/>
         <source>http://cp.cloudflare.com/</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1107"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1114"/>
         <source>Enable TUN Failover</source>
         <translation>启用 TUN 故障切换</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1677"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1684"/>
         <source>Resource Manager</source>
         <translation>资源管理器</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1104"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1111"/>
         <source>Automatically switch to another working proxy when TUN mode proxy fails</source>
         <translation>TUN 模式代理失效时自动切换到其他可用代理</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1115"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1122"/>
         <source>Startup</source>
         <translation>启动</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1170"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1177"/>
         <source>Geometry</source>
         <translation>几何学</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1199"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1206"/>
         <source>Autosave geometry</source>
         <translation>保持几何形状</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1206"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1213"/>
         <source>Autosave position</source>
         <translation>保持位置</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1226"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1233"/>
         <source>Apply now</source>
         <translation>立即应用</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1336"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1343"/>
         <source>Width</source>
         <translation>宽度</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1349"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1356"/>
         <source>X</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1382"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1389"/>
         <source>Y</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1395"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1402"/>
         <source>Height</source>
         <translation>高度</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1502"/>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1670"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1509"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1677"/>
         <source>Use default</source>
         <translation>使用默认值</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1509"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1516"/>
         <source>Remote Control</source>
         <translation>遥控器</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1535"/>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1703"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1542"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1710"/>
         <source>Select</source>
         <translation>选择</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1473"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1480"/>
         <source>Core Executable Path</source>
         <translation>通往核心之路</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1641"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1648"/>
         <source>Resources Directory</source>
         <translation>资源目录</translation>
     </message>
@@ -2393,8 +2398,8 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="324"/>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="243"/>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="245"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="238"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="240"/>
         <source>Test Result</source>
         <translation>测试结果</translation>
     </message>
@@ -2538,7 +2543,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     </message>
     <message>
         <location filename="../../src/dataStore/ProxyEntity.cpp" line="54"/>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="243"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="238"/>
         <source>Unavailable</source>
         <translation>不可用</translation>
     </message>
@@ -2553,8 +2558,8 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>配置已复制</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="100"/>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="146"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="95"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="141"/>
         <source>[%1] test error: %2</source>
         <translation>[%1] 测试错误: %2</translation>
     </message>
@@ -2571,7 +2576,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="222"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="217"/>
         <source>Testing</source>
         <translation>正在测试中</translation>
     </message>
@@ -2596,12 +2601,12 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>移动</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="631"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="626"/>
         <source>Starting profile %1</source>
         <translation>正在启动配置档 %1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="719"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="714"/>
         <source>Stopping profile %1</source>
         <translation>正在停止配置档 %1</translation>
     </message>
@@ -2785,18 +2790,18 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>重启代理</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="633"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="628"/>
         <source>Failed to start profile %1</source>
         <translation>启动配置档 %1 失败</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="721"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="716"/>
         <source>Failed to stop, please restart the program.</source>
         <translation>停止失败，请重启程序。</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="617"/>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="696"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="612"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="691"/>
         <source>If there is no response for a long time, it is recommended to restart the software.</source>
         <translation>如果长时间没有反应，建议重启软件。</translation>
     </message>
@@ -2810,17 +2815,17 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>停止测试</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="544"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="539"/>
         <source>Tun device misbehaving</source>
         <translation>Tun 设备运行异常</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="549"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="544"/>
         <source>Reset</source>
         <translation>重置</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="550"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="545"/>
         <source>Cancel</source>
         <translation>取消</translation>
     </message>
@@ -2911,7 +2916,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>Ctrl+Alt+I</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="545"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="540"/>
         <source>If you have trouble starting VPN, you can force reset Core process here and then try starting the profile again. The error is %1</source>
         <translation>如果启动 VPN 时有问题，您可以在这里强制重置 Core 进程，然后再次尝试启动配置档。错误是 %1</translation>
     </message>
@@ -3029,50 +3034,50 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>打开管理器</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="49"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="44"/>
         <source>Profile test aborted</source>
         <translation>配置档测试中止</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="129"/>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="446"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="124"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="441"/>
         <source>Something is very wrong, the subject ent cannot be found!</source>
         <translation>发生了非常严重的问题，找不到主题 ent！</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="135"/>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="452"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="130"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="447"/>
         <source>Profile manager data is corrupted, try again.</source>
         <translation>配置档管理器数据损坏，请重试。</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="260"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="255"/>
         <source>The last speed test did not exit completely, please wait. If it persists, please restart the program.</source>
         <translation>上次的测速未完全退出，请稍候。如果持续存在，请重启程序。</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="168"/>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="272"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="163"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="267"/>
         <source>Failed to build test config: </source>
         <translation>构建测试配置失败： </translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="298"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="293"/>
         <source>Speedtest finished!</source>
         <translation>测速完成！</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="216"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="211"/>
         <source>Failed to stop tests</source>
         <translation>停止测试失败</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="480"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="475"/>
         <source>You need to enable hijack DNS server first</source>
         <translation>您需要先启用劫持 DNS 服务器</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="494"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="489"/>
         <source>Failed to set system dns: </source>
         <translation>设置系统 DNS 失败： </translation>
     </message>
@@ -3081,12 +3086,12 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation type="vanished">BuildConfig 返回错误</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="589"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="584"/>
         <source>Another profile is starting...</source>
         <translation>另一个配置档正在启动...</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="596"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="591"/>
         <source>Another profile is stopping...</source>
         <translation>另一个配置档正在停止...</translation>
     </message>
@@ -3095,7 +3100,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation type="vanished">尝试启动该配置，但核心尚未监听到 RPC 端口，因此请重启它...</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="679"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="674"/>
         <source>Stop return error</source>
         <translation>停止返回错误</translation>
     </message>
@@ -3144,22 +3149,22 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>此分组测试速度</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="160"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="155"/>
         <source>The last url test did not exit completely, please wait. If it persists, please restart the program.</source>
         <translation>上次的 URL 测试未完全退出，请稍候。如果持续存在，则请重启程序。</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="205"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="200"/>
         <source>URL test finished!</source>
         <translation>URL 测试完成！</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="379"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="374"/>
         <source>Profile speed test aborted</source>
         <translation>配置档速度测试已中止</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="471"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="466"/>
         <source>[%1] speed test error: %2</source>
         <translation>[%1] 速度测试错误：%2</translation>
     </message>
@@ -3359,7 +3364,7 @@ Release note:
     <message>
         <location filename="../../src/nekobox/global/GuiUtils.hpp" line="112"/>
         <location filename="../../src/ui/profile/edit_ssh.cpp" line="28"/>
-        <location filename="../../src/ui/setting/dialog_basic_settings.cpp" line="235"/>
+        <location filename="../../src/ui/setting/dialog_basic_settings.cpp" line="236"/>
         <source>Select</source>
         <translation>选择</translation>
     </message>
@@ -3443,7 +3448,7 @@ Release note:
         <translation>正在重新启动核心...</translation>
     </message>
     <message>
-        <location filename="../../src/ui/setting/dialog_basic_settings.cpp" line="240"/>
+        <location filename="../../src/ui/setting/dialog_basic_settings.cpp" line="241"/>
         <source>Select a Folder</source>
         <translation>选择一个文件夹</translation>
     </message>
