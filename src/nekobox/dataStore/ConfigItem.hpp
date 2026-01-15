@@ -154,7 +154,7 @@ namespace Configs_ConfigItem {
 
         virtual bool Save();
 
-        bool Load();
+        virtual bool Load();
     };
 
 } // namespace Configs_ConfigItem

@@ -818,6 +818,18 @@ namespace Configs {
         }
         return JsonStore::Save();
     }
+
+    bool RoutingChain::Load(){
+        castedRules.clear();
+        bool ret = JsonStore::Load();
+
+        for (auto item: castedRules) {
+            std::shared_ptr<RouteRule> ptr((RouteRule*)item);
+            Rules.push_back(ptr);
+        }
+        castedRules.clear();
+        return ret;
+    }
 /*
     void RoutingChain::FromJson(QJsonObject object) {
         auto _map = this->_map();
