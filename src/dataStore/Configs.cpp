@@ -76,9 +76,7 @@ namespace Configs_ConfigItem {
     }
 
     QByteArray JsonStore::ToJsonBytes(const QStringList &without) {
-        QJsonDocument document;
-        document.setObject(ToJson(without));
-        return document.toJson(QJsonDocument::Indented);
+        return QJsonObject2QString(ToJson(without), false).toUtf8();
     }
 
     void * configItem::getPtr(JsonStore * p){

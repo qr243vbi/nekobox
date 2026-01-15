@@ -32,7 +32,7 @@ echo "[General]" > global.ini
 echo "software_version=$INPUT_VERSION" >> global.ini
 echo "software_name=HelBox" >> global.ini
 
-git add -f srslist* global.ini core/server/gen/*.go core/server/gen/libcore_service-remote core/server/vendor SingBox.Version
+git add -f srslist* global.ini core/server/{gen/{libcore_service-remote,main_sing,*.go},vendor} SingBox.Version
 
 git -c user.name="a" -c user.email="my@email.org" commit -am "New Update"
 
