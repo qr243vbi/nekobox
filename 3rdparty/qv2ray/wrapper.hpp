@@ -24,7 +24,8 @@ inline QJsonObject QString2QJsonObject(const QString &jsonString) {
 }
 
 // QJson >> QString
-inline QString QJsonObject2QString(const QJsonObject &jsonObject, bool compact) {
+inline QString 
+QJsonObject2QString(const QJsonObject &jsonObject, bool compact) {
     return QJsonDocument(jsonObject).toJson(compact ? QJsonDocument::Compact : QJsonDocument::Indented);
 }
 
