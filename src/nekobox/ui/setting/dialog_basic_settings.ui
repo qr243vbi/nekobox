@@ -39,7 +39,7 @@
       </size>
      </property>
      <property name="currentIndex">
-      <number>0</number>
+      <number>4</number>
      </property>
      <widget class="QWidget" name="tab_1">
       <attribute name="title">
@@ -937,6 +937,13 @@
          </property>
          <property name="text">
           <string>Always Start as Standard User</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="force_json_configs">
+         <property name="text">
+          <string>Use Json instead binary for configs</string>
          </property>
         </widget>
        </item>
