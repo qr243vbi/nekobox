@@ -15,6 +15,8 @@ import (
 	"strconv"
 	"time"
 
+	main_sing "nekobox_core/gen/main_sing"
+
 	"github.com/apache/thrift/lib/go/thrift"
 	C "github.com/sagernet/sing-box/constant"
 )
@@ -64,6 +66,10 @@ func main() {
 			InstallerMode()
 			return
 		}
+                if os.Args[1] == "sing-box" {
+			os.Args = os.Args[1:]
+			main_sing.MainFunc();
+                }
 	}
 
 	var _admin *bool
