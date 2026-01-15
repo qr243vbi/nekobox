@@ -18,7 +18,7 @@ namespace Configs
             stream->tls_fragment_fallback_delay = tls["fragment_fallback_delay"].toString();
             stream->enable_tls_record_fragment = tls["record_fragment"].toBool();
             stream->sni = tls["server_name"].toString();
-            stream->alpn = alpn.isArray() ? QJsonArray2QListString(alpn.toArray()).join(",") : alpn.toString();
+            stream->alpn = alpn.isArray() ? QJsonArray2QListStr(alpn.toArray()).join(",") : alpn.toString();
             stream->allow_insecure = tls["insecure"].toBool();
         } else {
             stream->security = "";
@@ -35,7 +35,7 @@ namespace Configs
             stream->path = transport["path"].toString();
             finalize2:
             auto host = transport["host"];
-            stream->host = host.isArray() ? QJsonArray2QListString(host.toArray()).join(",") : host.toString();
+            stream->host = host.isArray() ? QJsonArray2QListStr(host.toArray()).join(",") : host.toString();
             return true;
         } else if (stream->network == "http")
         {
@@ -59,7 +59,7 @@ namespace Configs
         if (type == "hysteria")
         {
             proxy_type = proxy_Hysteria;
-            serverPorts = obj["server_ports"].isArray() ? QJsonArray2QListString(obj["server_ports"].toArray()) : QStringList();
+            serverPorts = obj["server_ports"].isArray() ? QJsonArray2QListStr(obj["server_ports"].toArray()) : QStringList();
             hop_interval = obj["hop_interval"].toString();
             uploadMbps = obj["up_mbps"].isDouble() ? obj["up_mbps"].toInt() : 0;
             downloadMbps = obj["down_mbps"].isDouble() ? obj["down_mbps"].toInt() : 0;
@@ -75,7 +75,7 @@ namespace Configs
         if (type == "hysteria2")
         {
             proxy_type = proxy_Hysteria2;
-            serverPorts = obj["server_ports"].isArray() ? QJsonArray2QListString(obj["server_ports"].toArray()) : QStringList();
+            serverPorts = obj["server_ports"].isArray() ? QJsonArray2QListStr(obj["server_ports"].toArray()) : QStringList();
             hop_interval = obj["hop_interval"].toString();
             uploadMbps = obj["up_mbps"].isDouble() ? obj["up_mbps"].toInt() : 0;
             downloadMbps = obj["down_mbps"].isDouble() ? obj["down_mbps"].toInt() : 0;
@@ -100,7 +100,7 @@ namespace Configs
             name = obj["tag"].toString();
             serverAddress = obj["server"].toString();
             serverPort = obj["server_port"].toInt();
-            alpn = obj["tls"].toObject()["alpn"].isArray() ? QJsonArray2QListString(obj["tls"].toObject()["alpn"].toArray()).join(",") : obj["tls"].toObject()["alpn"].toString();
+            alpn = obj["tls"].toObject()["alpn"].isArray() ? QJsonArray2QListStr(obj["tls"].toObject()["alpn"].toArray()).join(",") : obj["tls"].toObject()["alpn"].toString();
             sni = obj["tls"].toObject()["server_name"].toString();
             disableSni = obj["tls"].toObject()["disable_sni"].toBool();
             allowInsecure = obj["tls"].toObject()["insecure"].toBool();
@@ -164,8 +164,8 @@ namespace Configs
         privateKey = obj["private_key"].toString();
         privateKeyPath = obj["private_key_path"].toString();
         privateKeyPass = obj["private_key_passphrase"].toString();
-        hostKey = QJsonArray2QListString(obj["host_key"].toArray());
-        hostKeyAlgs = QJsonArray2QListString(obj["host_key_algorithms"].toArray());
+        hostKey = QJsonArray2QListStr(obj["host_key"].toArray());
+        hostKeyAlgs = QJsonArray2QListStr(obj["host_key_algorithms"].toArray());
         clientVersion = obj["client_version"].toString();
 
         return true;
@@ -243,7 +243,7 @@ namespace Configs
         persistentKeepalive = peers[0].toObject()["persistent_keepalive_interval"].toInt();
         workerCount = obj["workers"].toInt();
         privateKey = obj["private_key"].toString();
-        localAddress = QJsonArray2QListString(obj["address"].toArray());
+        localAddress = QJsonArray2QListStr(obj["address"].toArray());
         MTU = obj["mtu"].toInt();
         useSystemInterface = obj["system"].toBool();
 
@@ -275,7 +275,7 @@ namespace Configs
         accept_routes = obj["accept_routes"].toBool();
         exit_node = obj["exit_node"].toString();
         exit_node_allow_lan_access = obj["exit_node_allow_lan_access"].toBool();
-        advertise_routes = QJsonArray2QListString(obj["advertise_routes"].toArray());
+        advertise_routes = QJsonArray2QListStr(obj["advertise_routes"].toArray());
         advertise_exit_node = obj["advertise_exit_node"].toBool();
 
         return true;
@@ -289,7 +289,7 @@ namespace Configs
     bool TorBean::TryParseJson(const QJsonObject &obj){
         name = obj["tag"].toString();
         executable_path = obj["executable_path"].toString();
-        extra_args = QJsonArray2QListString(obj["extra_args"].toArray());
+        extra_args = QJsonArray2QListStr(obj["extra_args"].toArray());
         data_directory = obj["data_directory"].toString();
         torrc = obj["torrc"].toObject().toVariantMap();
         return true;

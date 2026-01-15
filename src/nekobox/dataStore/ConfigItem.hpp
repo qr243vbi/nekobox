@@ -8,7 +8,7 @@
 #include <functional>
 
 namespace Configs_ConfigItem{
-    class configItem;
+    struct configItem;
 }
 
 typedef QMap<QByteArray, std::shared_ptr<Configs_ConfigItem::configItem>> ConfJsMapStat;
@@ -35,6 +35,11 @@ namespace Configs_ConfigItem {
 
     class JsonStore;
 
+    struct Bin{
+        unsigned short type;
+        QByteArray payload;
+    };
+
     class QJsonStoreListBase: public QList<JsonStore*> {
         public:
         virtual JsonStore* createJsonStore() = 0;
@@ -51,9 +56,9 @@ namespace Configs_ConfigItem {
     struct configItem {
         virtual QJsonValue getNode(JsonStore * store) = 0;
         virtual void setNode(JsonStore * store, const QJsonValue & value) = 0;
-        virtual QByteArray getBin(JsonStore * store) = 0;
-        virtual int type() = 0;
-        virtual void setBin(JsonStore * store, const QByteArray & value) = 0;
+        virtual Bin getBin(JsonStore * store) = 0;
+        virtual void setBin(JsonStore * store, const Bin & value) = 0;
+        virtual unsigned short type() = 0;
         size_t ptr;
         QString name;
         virtual void * getPtr(JsonStore * store);
@@ -63,9 +68,9 @@ namespace Configs_ConfigItem {
     struct X##Item: public configItem {                        \
         QJsonValue getNode(JsonStore * store) override;     \
         void setNode(JsonStore * store, const QJsonValue & value) override; \
-        QByteArray getBin(JsonStore * store) override; \
-        void setBin(JsonStore * store, const QByteArray & value) override; \
-        int type() override { return ConfigItemType::type_##X; } ; \
+        Bin getBin(JsonStore * store) override; \
+        void setBin(JsonStore * store, const Bin & value) override; \
+        unsigned short type() override { return ConfigItemType::type_##X; } ; \
     };
 
     enum ConfigItemType{
@@ -140,19 +145,17 @@ namespace Configs_ConfigItem {
 
         QByteArray ToJsonBytes(const QStringList &without = {});
 
-        QByteArray ToBytes(const QStringList &without = {});
-
         virtual void FromJson(QJsonObject object);
 
         void FromJsonBytes(const QByteArray &data);
-
-        void FromBytes(const QByteArray &data);
+        
+        void FromBin(const Bin & value);
+        Bin ToBin(const QStringList &without = {});
 
         virtual bool Save();
 
-        bool Load();
+        virtual bool Load();
     };
-
 
 } // namespace Configs_ConfigItem
 
