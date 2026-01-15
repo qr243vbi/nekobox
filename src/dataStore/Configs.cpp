@@ -140,13 +140,18 @@ namespace Configs_ConfigItem {
         if (callback_before_save != nullptr) callback_before_save();
         if (save_control_no_save) return false;
 
-        auto save_content = this->ToBin();//JsonValueToBytes(this->ToBin());
+        bool force_json_configs = Configs::ForceJsonConfigs;
+
+        auto save_content = 
+            (force_json_configs) ? this->ToJsonBytes() : this->ToBin().payload;//JsonValueToBytes(this->ToBin());
         
         QFile file;
         file.setFileName(fn);
         if (file.open(QIODevice::ReadWrite | QIODevice::Truncate)){
-            file.write("NekoBox");
-            file.write(save_content.payload);
+            if (!force_json_configs) {
+                file.write("NekoBox");
+            }
+            file.write(save_content);
         }
         file.close();
 
@@ -196,6 +201,7 @@ QByteArray hash = QCryptographicHash::hash(
   return hash;
 }
 
+    bool ForceJsonConfigs = true;
 
     DataStore *dataStore = new DataStore();
 
@@ -359,6 +365,12 @@ QByteArray hash = QCryptographicHash::hash(
         }
 
         return JsonStore::Save();
+    }
+
+    bool DataStore::Load() {
+        auto ret = DataStore::Load();
+        ForceJsonConfigs = this->force_json_configs;
+        return ret;
     }
 
     bool Shortcuts::Load() {

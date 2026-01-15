@@ -93,6 +93,7 @@ DialogBasicSettings::DialogBasicSettings(MainWindow *parent)
     ui->speedtest_mode->setCurrentIndex(Configs::dataStore->speed_test_mode);
     D_LOAD_INT(speed_test_timeout_ms);
     D_LOAD_STRING(simple_dl_url)
+    D_LOAD_BOOL(force_json_configs)
 
     connect(ui->custom_inbound_edit, &QPushButton::clicked, this, [=,this] {
         C_EDIT_JSON_ALLOW_EMPTY(custom_inbound)
@@ -310,6 +311,8 @@ void DialogBasicSettings::accept() {
     Configs::dataStore->proxy_scheme = ui->proxy_scheme->currentText().toLower();
     Configs::dataStore->speed_test_mode = ui->speedtest_mode->currentIndex();
     D_SAVE_STRING(simple_dl_url)
+    D_SAVE_BOOL(force_json_configs)
+    Configs::ForceJsonConfigs = Configs::dataStore->force_json_configs;
     D_SAVE_INT(url_test_timeout_ms)
     D_SAVE_INT(speed_test_timeout_ms)
 
