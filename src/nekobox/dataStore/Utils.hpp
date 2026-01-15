@@ -222,7 +222,7 @@ QJsonObject QMapString2QJsonObject(const QMap<QString,QString> &mp);
 #define QJSONOBJECT_COPY2(src, dst, src_key, dst_key) \
     if (src.contains(src_key)) dst[dst_key] = src[src_key];
 
-QList<QString> QJsonArray2QListString(const QJsonArray &arr);
+QList<QString> QJsonArray2QListStr(const QJsonArray &arr);
 
 QJsonArray QString2QJsonArray(const QString& str);
 
@@ -293,3 +293,12 @@ QString QMap2QString(const QVariantMap &map);
 QVariantMap GetQueryMapValue(const QUrlQuery &q, const QString &key);
 
 QString QJsonType2QString(QJsonValue::Type type);
+
+std::vector<std::string> QListStr2VectorStr(const QStringList &list);
+
+QStringList VectorStr2QListStr(const std::vector<std::string> &list);
+
+std::vector<int> QListInt2VectorInt(const QList<int> &list);
+
+QList<int> VectorInt2QListInt(const std::vector<int> &list);
+

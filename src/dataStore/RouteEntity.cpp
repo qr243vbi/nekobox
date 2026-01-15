@@ -524,7 +524,7 @@ namespace Configs {
                         rule->outboundID = id;
                     }
                 } else if (val.isArray()) {
-                    rule->set_field_value(key, QJsonArray2QListString(val.toArray()));
+                    rule->set_field_value(key, QJsonArray2QListStr(val.toArray()));
                 } else if (val.isString()) {
                     rule->set_field_value(key, {val.toString()});
                 } else if (val.isBool()) {
@@ -817,6 +817,18 @@ namespace Configs {
             castedRules.push_back(item.get());
         }
         return JsonStore::Save();
+    }
+
+    bool RoutingChain::Load(){
+        castedRules.clear();
+        bool ret = JsonStore::Load();
+
+        for (auto item: castedRules) {
+            std::shared_ptr<RouteRule> ptr((RouteRule*)item);
+            Rules.push_back(ptr);
+        }
+        castedRules.clear();
+        return ret;
     }
 /*
     void RoutingChain::FromJson(QJsonObject object) {

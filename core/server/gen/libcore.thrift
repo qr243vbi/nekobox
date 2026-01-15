@@ -117,7 +117,6 @@ struct QueryURLTestResponse {
   1: list<URLTestResp> results
 }
 
-
 service LibcoreService {
   ErrorResp Start(1: LoadConfigReq req),
   ErrorResp Stop(1: EmptyReq req),
