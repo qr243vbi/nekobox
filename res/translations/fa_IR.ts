@@ -3330,11 +3330,6 @@ Direct: %2</source>
         <translation>پروکسی: %1 مستقیم: %2</translation>
     </message>
     <message>
-        <location filename="../../src/global/HTTPRequestHelper.cpp" line="34"/>
-        <source>Request with proxy but no profile started.</source>
-        <translation>درخواست با پروکسی اما هیچ نمایه‌ای شروع نشده است.</translation>
-    </message>
-    <message>
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="916"/>
         <source>Subscription request fininshed: %1</source>
         <translation>درخواست اشتراک به پایان رسید: %1</translation>

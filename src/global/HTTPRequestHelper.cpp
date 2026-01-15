@@ -24,20 +24,19 @@ static inline void InitializeRequest(
 ){
         bool net_use_proxy = Configs::dataStore->net_use_proxy;
         bool proxy_started = Configs::dataStore->started_id >= 0;
-        net_use_proxy &= proxy_started;
         net_use_proxy |= Configs::dataStore->spmode_system_proxy;
         
         accessManager.setTransferTimeout(10000);
         request.setUrl(url);
         if (net_use_proxy) {
-            if (!proxy_started) {
-                error = QObject::tr("Request with proxy but no profile started.");
-                return;
-            }
             QNetworkProxy p;
-            p.setType(QNetworkProxy::HttpProxy);
-            p.setHostName(Configs::dataStore->inbound_address == "::" ? "127.0.0.1" : Configs::dataStore->inbound_address);
-            p.setPort(Configs::dataStore->inbound_socks_port);
+            if (proxy_started) {
+                p.setType(QNetworkProxy::HttpProxy);
+                p.setHostName(Configs::dataStore->inbound_address == "::" ? "127.0.0.1" : Configs::dataStore->inbound_address);
+                p.setPort(Configs::dataStore->inbound_socks_port);
+            } else {
+                p.setType(QNetworkProxy::NoProxy);
+            }
             accessManager.setProxy(p);
         }
         // Set attribute

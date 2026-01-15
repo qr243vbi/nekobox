@@ -3337,11 +3337,6 @@ Release note:
 %2</translation>
     </message>
     <message>
-        <location filename="../../src/global/HTTPRequestHelper.cpp" line="34"/>
-        <source>Request with proxy but no profile started.</source>
-        <translation>使用代理请求，但未启动代理配置档。</translation>
-    </message>
-    <message>
         <location filename="../../src/nekobox/configs/proxy/ChainBean.hpp" line="17"/>
         <source>Chain Proxy</source>
         <translation>链式代理</translation>
