@@ -2689,7 +2689,7 @@ void MainWindow::on_menu_export_config_triggered() {
     return;
 
   auto result = BuildConfig(ent, false, true);
-  QString config_core = QJsonObject2QString(result->coreConfig, true);
+  QString config_core = QJsonObject2QString(result->coreConfig, false);
   QApplication::clipboard()->setText(config_core);
 
   QMessageBox msg(QMessageBox::Information, tr("Config copied"), config_core);
@@ -2703,11 +2703,11 @@ void MainWindow::on_menu_export_config_triggered() {
   msg.exec();
   if (msg.clickedButton() == button_1) {
     result = BuildConfig(ent, false, false);
-    config_core = QJsonObject2QString(result->coreConfig, true);
+    config_core = QJsonObject2QString(result->coreConfig, false);
     QApplication::clipboard()->setText(config_core);
   } else if (msg.clickedButton() == button_2) {
     result = BuildConfig(ent, true, false);
-    config_core = QJsonObject2QString(result->coreConfig, true);
+    config_core = QJsonObject2QString(result->coreConfig, false);
     QApplication::clipboard()->setText(config_core);
   }
 }
