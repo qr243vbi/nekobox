@@ -105,12 +105,10 @@ int main(int argc, char** argv) {
     Configs::dataStore->argv = QApplication::arguments();
     if (Configs::dataStore->argv.contains("-many")) Configs::dataStore->flag_many = true;
     if (Configs::dataStore->argv.contains("-appdata")) {
-#ifndef NKR_CPP_USE_APPDATA
         Configs::dataStore->flag_use_appdata = true;
-#endif
-        int appdataIndex = Configs::dataStore->argv.indexOf("-appdata");
-        if (Configs::dataStore->argv.size() > appdataIndex + 1 && !Configs::dataStore->argv.at(appdataIndex + 1).startsWith("-")) {
-            Configs::dataStore->appdataDir = Configs::dataStore->argv.at(appdataIndex + 1);
+        int appdataIndex = Configs::dataStore->argv.lastIndexOf("-appdata") + 1;
+        if (Configs::dataStore->argv.size() > appdataIndex && !Configs::dataStore->argv.at(appdataIndex).startsWith("-")) {
+            Configs::dataStore->appdataDir = Configs::dataStore->argv.at(appdataIndex);
         }
     }
     
@@ -118,9 +116,6 @@ int main(int argc, char** argv) {
     if (Configs::dataStore->argv.contains("-debug")) Configs::dataStore->flag_debug = true;
     if (Configs::dataStore->argv.contains("-flag_restart_tun_on")) Configs::dataStore->flag_restart_tun_on = true;
     if (Configs::dataStore->argv.contains("-flag_restart_dns_set")) Configs::dataStore->flag_dns_set = true;
-#ifdef NKR_CPP_USE_APPDATA
-    Configs::dataStore->flag_use_appdata = true; // Example: Package
-#endif
 #ifdef NKR_CPP_DEBUG
     Configs::dataStore->flag_debug = true;
 #endif
