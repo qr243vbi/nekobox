@@ -23,11 +23,15 @@ done
 cat << 'EOF' > main_sing/main_sing.go
 package main_sing
 
-import "github.com/sagernet/sing-box/log"
+import (
+        "github.com/sagernet/sing-box/log"
+        "os"
+)
 
 func MainFunc() {
         if err := mainCommand.Execute(); err != nil {
                 log.Fatal(err)
         }
+        os.Exit(0);
 }
 EOF
