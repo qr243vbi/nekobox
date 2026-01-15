@@ -3198,11 +3198,6 @@ Deleted %3 Profiles:
         <translation>Default</translation>
     </message>
     <message>
-        <location filename="../../src/global/HTTPRequestHelper.cpp" line="34"/>
-        <source>Request with proxy but no profile started.</source>
-        <translation>Request with proxy but no profile started.</translation>
-    </message>
-    <message>
         <location filename="../../src/global/HTTPRequestHelper.cpp" line="190"/>
         <source>Could not open file.</source>
         <translation>Could not open file.</translation>

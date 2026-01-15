@@ -3265,11 +3265,6 @@ Direct: %2</source>
         <translation>Цепочка прокси</translation>
     </message>
     <message>
-        <location filename="../../src/global/HTTPRequestHelper.cpp" line="34"/>
-        <source>Request with proxy but no profile started.</source>
-        <translation>Запрос через прокси, но профиль не запущен.</translation>
-    </message>
-    <message>
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="865"/>
         <source>url detected</source>
         <translation>Обнаружен URL</translation>
