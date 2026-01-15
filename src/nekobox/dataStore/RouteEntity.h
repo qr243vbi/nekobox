@@ -145,6 +145,7 @@ namespace Configs {
         static QList<std::shared_ptr<RouteRule>> parseJsonArray(const QJsonArray& arr, QString* parseError);
 
         bool Save() override;
+        bool Load() override;
 
    //     void FromJson(QJsonObject object) override;
 
