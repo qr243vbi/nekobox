@@ -285,6 +285,7 @@ QByteArray hash = QCryptographicHash::hash(
         ADD_MAP("show_system_dns", show_system_dns, boolean);
    //     ADD_MAP("cache_database_name", cache_database, string);
 
+        ADD_MAP("simple_dl_url", simple_dl_url, string);
         ADD_MAP("auto_test_enable", auto_test_enable, boolean);
         ADD_MAP("auto_test_interval_seconds", auto_test_interval_seconds, integer);
         ADD_MAP("auto_test_proxy_count", auto_test_proxy_count, integer);
