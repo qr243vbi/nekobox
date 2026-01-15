@@ -924,7 +924,7 @@
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="578"/>
         <source>header type</source>
-        <translation>请求头类型</translation>
+        <translation>头部类型</translation>
     </message>
     <message>
         <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="221"/>
