@@ -32,6 +32,5 @@ func MainFunc() {
         if err := mainCommand.Execute(); err != nil {
                 log.Fatal(err)
         }
-        os.Exit(0);
 }
 EOF
