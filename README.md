@@ -1,5 +1,8 @@
 # [HelBox](https://github.com/qr243vbi/nekobox) / [NekoBox](https://github.com/qr243vbi/nekobox) for PC 
 
+Sing-Box command line mode is available now! Just type for additional information:
+`nekobox_core sing-box --help`
+ 
 Qt based Desktop cross-platform GUI proxy utility, empowered by [Sing-box](https://github.com/SagerNet/sing-box)
 Supports Windows 11/10 (arm64, x86_64) / Linux  out of the box.
 
