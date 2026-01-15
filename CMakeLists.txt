@@ -428,6 +428,13 @@ configure_file(
     @ONLY
 )
 
+# Configure the desktop file
+configure_file(
+    "${CMAKE_SOURCE_DIR}/start_sing_box.sh.in"
+    "${CMAKE_BINARY_DIR}/start_sing_box.sh"
+    @ONLY
+)
+
 
 install(
     FILES "${CMAKE_SOURCE_DIR}/res/public/icon.png"
@@ -443,6 +450,12 @@ install(
 install(
     PROGRAMS "${CMAKE_BINARY_DIR}/start.sh"
     RENAME "nekobox"
+    DESTINATION "${CMAKE_INSTALL_BINDIR}"
+)
+
+install(
+    PROGRAMS "${CMAKE_BINARY_DIR}/start_sing_box.sh"
+    RENAME "sing-box"
     DESTINATION "${CMAKE_INSTALL_BINDIR}"
 )
 
