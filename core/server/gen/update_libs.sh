@@ -25,7 +25,6 @@ package main_sing
 
 import (
         "github.com/sagernet/sing-box/log"
-        "os"
 )
 
 func MainFunc() {
