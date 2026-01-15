@@ -36,6 +36,6 @@ function route_profile_get_json(profile){
     } else {
         info( translate("Requesting profile success: %1").replace("%1", route_profile_names[profile] || profile), translate("Download Profiles"));
     }
-    return [text, url];
+    return [text, url, profile.toLowerCase().startsWith("bypas")];
 }
 
