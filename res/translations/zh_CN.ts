@@ -2667,6 +2667,11 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>全选</translation>
     </message>
     <message>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="231"/>
+        <source>URL Test</source>
+        <translation>测试URL真延迟</translation>
+    </message>
+    <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="147"/>
         <source>Tun Mode</source>
         <translation>Tun 模式</translation>
