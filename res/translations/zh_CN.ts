@@ -1156,12 +1156,14 @@
         <translation>禁用</translation>
     </message>
     <message>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="375"/>
         <source>remote</source>
-        <translation type="vanished">远端</translation>
+        <translation>远程</translation>
     </message>
     <message>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="380"/>
         <source>direct</source>
-        <translation type="vanished">直接</translation>
+        <translation>直连</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="42"/>
@@ -2338,8 +2340,9 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>更新路由文件</translation>
     </message>
     <message>
+        <location filename="../../src/ui/mainwindow.cpp" line="1306"/>
         <source>Requesting rule-set list error: %1</source>
-        <translation type="vanished">请求规则集清单错误：%1</translation>
+        <translation>请求规则集清单错误：%1</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="951"/>
