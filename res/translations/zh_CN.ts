@@ -1047,16 +1047,19 @@
         <translation>落地代理 =&gt; %1</translation>
     </message>
     <message>
+        <location filename="../../src/main.cpp" line="61"/>                                                        
         <source>Discard</source>
-        <translation type="vanished">弃置</translation>
+        <translation>弃置</translation>
     </message>
     <message>
+        <location filename="../../src/main.cpp" line="60"/>
         <source>Restore Defaults</source>
-        <translation type="vanished">恢复默认设置</translation>
+        <translation>恢复默认设置</translation>
     </message>
     <message>
+        <location filename="../../src/main.cpp" line="59"/>
         <source>Defaults</source>
-        <translation type="vanished">恢复默认设置</translation>
+        <translation type="vanished">默认设置</translation>
     </message>
     <message>
         <location filename="../../src/ui/profile/edit_chain.cpp" line="46"/>
