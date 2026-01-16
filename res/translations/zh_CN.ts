@@ -2235,7 +2235,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="119"/>
         <source>Remove %1?</source>
-        <translation>删除此此节点 %1 吗?</translation>
+        <translation>删除选中节点 %1 吗?</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="66"/>
@@ -2551,7 +2551,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2633"/>
         <source>Remove %1 item(s) ?</source>
-        <translation>删除此此节点 %1 项吗？</translation>
+        <translation>删除选中节点 %1 项吗？</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2695"/>
@@ -2655,7 +2655,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="831"/>
         <source>Reset Traffic</source>
-        <translation>此节点重置流量</translation>
+        <translation>选中节点重置流量</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="860"/>
@@ -2712,7 +2712,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="961"/>
         <source>Copy links of selected</source>
-        <translation>复制此节点的链接（URI）</translation>
+        <translation>复制选中节点的链接（URI）</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="977"/>
@@ -2728,7 +2728,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2581"/>
         <source>Clone %1 item(s)</source>
-        <translation>复制此节点 %1 项</translation>
+        <translation>复制选中节点 %1 项</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="903"/>
@@ -2854,12 +2854,12 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3270"/>
         <source>Remove %1?</source>
-        <translation>删除此此节点 %1 吗?</translation>
+        <translation>删除选中节点 %1 吗?</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1045"/>
         <source>Url Test Selected</source>
-        <translation>测试此节点URL延迟</translation>
+        <translation>测试选中节点URL延迟</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="942"/>
@@ -2869,7 +2869,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1056"/>
         <source>Clear Test Result Selected</source>
-        <translation>清除此节点测试结果</translation>
+        <translation>清除选中节点测试结果</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="919"/>
@@ -2909,7 +2909,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1078"/>
         <source>Resolve Selected Domain</source>
-        <translation>解析此节点域名</translation>
+        <translation>解析选中节点域名</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1086"/>
@@ -3267,7 +3267,7 @@ Deleted %3 Profiles:
 %4</source>
         <translation>添加了 %1 个配置档：
 %2
-删除此此节点了 %3 个配置档：
+删除选中节点了 %3 个配置档：
 %4</translation>
     </message>
     <message>
