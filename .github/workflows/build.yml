@@ -56,7 +56,8 @@ on:
 jobs:
   build-go:
     permissions:
-      contents: read
+      contents: write
+      actions: read
     env:
       INPUT_VERSION: ${{ github.event.inputs.tag }}
     strategy:
