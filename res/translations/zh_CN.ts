@@ -136,7 +136,7 @@
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1104"/>
         <source>http://cp.cloudflare.com/</source>
-        <translation>http://cp.cloudflare.com/</translation>
+        <translation>http://cp.cloudflare.com</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1114"/>
