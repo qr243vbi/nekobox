@@ -6,8 +6,6 @@
 
 namespace Configs {
     class VMessBean : public AbstractBean {
-    private:
-        V2rayStreamSettings * streamPtr;
     public:
         QString uuid = "";
         int aid = 0;
@@ -16,14 +14,13 @@ namespace Configs {
         std::shared_ptr<V2rayStreamSettings> stream = std::make_shared<V2rayStreamSettings>();
 
         VMessBean() : AbstractBean(0) {
-            streamPtr = stream.get();
         }
 
         INIT_MAP
             ADD_MAP("id", uuid, string);
             ADD_MAP("aid", aid, integer);
             ADD_MAP("sec", security, string);
-            ADD_MAP("stream", streamPtr, jsonStore);
+            ADD_MAP("stream", stream, jsonStore);
         STOP_MAP
 
         QString DisplayType() override { return "VMess"; };

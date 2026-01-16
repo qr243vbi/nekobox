@@ -41,9 +41,6 @@ namespace Configs {
 
 namespace Configs {
     class ProxyEntity : public JsonStore {
-    private:
-        Stats::TrafficData * traffic_data_pointer = nullptr;
-        Configs::AbstractBean * bean_pointer = nullptr; 
     public:
         virtual ConfJsMap _map() override;
 

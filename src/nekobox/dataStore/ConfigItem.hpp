@@ -35,16 +35,10 @@ namespace Configs_ConfigItem {
 
     class JsonStore;
 
-    struct Bin{
-        unsigned short type;
-        QByteArray payload;
-    };
-
     class QJsonStoreListBase: public QList<JsonStore*> {
         public:
         virtual JsonStore* createJsonStore() = 0;
     };
-
 
     template<typename T = JsonStore>
     class QJsonStoreList: public QJsonStoreListBase {
@@ -56,34 +50,52 @@ namespace Configs_ConfigItem {
     struct configItem {
         virtual QJsonValue getNode(JsonStore * store) = 0;
         virtual void setNode(JsonStore * store, const QJsonValue & value) = 0;
-        virtual Bin getBin(JsonStore * store) = 0;
-        virtual void setBin(JsonStore * store, const Bin & value) = 0;
+        virtual void serialize(QDataStream & data, JsonStore * store) const = 0;
+        virtual void deserialize(QDataStream & data, JsonStore * store) = 0;
         virtual unsigned short type() = 0;
         size_t ptr;
         QString name;
-        virtual void * getPtr(JsonStore * store);
+        virtual void * getPtr(JsonStore * store) const;
     };
 
-    #define PTR_ITEM(X)                            \
-    struct X##Item: public configItem {                        \
-        QJsonValue getNode(JsonStore * store) override;     \
-        void setNode(JsonStore * store, const QJsonValue & value) override; \
-        Bin getBin(JsonStore * store) override; \
-        void setBin(JsonStore * store, const Bin & value) override; \
-        unsigned short type() override { return ConfigItemType::type_##X; } ; \
+    struct Bin{
+        configItem * item;
+        JsonStore * store;
+    };
+
+// Serialization function
+inline QDataStream &operator<<(QDataStream &out, const Bin &p) {
+    p.item->serialize(out, p.store);
+    return out;
+}
+
+// Deserialization function
+inline QDataStream &operator>>(QDataStream &in, Bin &p) {
+    p.item->deserialize(in, p.store);
+    return in;
+}
+
+    #define PTR_ITEM(X)                                                         \
+    struct X##Item: public configItem {                                         \
+        QJsonValue getNode(JsonStore * store) override;                         \
+        void setNode(JsonStore * store, const QJsonValue & value) override;     \
+        void serialize(QDataStream & data, JsonStore * store) const override;   \
+        void deserialize(QDataStream & data, JsonStore * store) override;       \
+        unsigned short type() override { return ConfigItemType::type_##X; } ;   \
     };
 
     enum ConfigItemType{
-        type_end,
-        type_int, 
-        type_long, 
-        type_str, 
-        type_bool, 
-        type_strList, 
-        type_intList, 
-        type_jsonStore, 
-        type_jsonStoreList, 
-        type_strMap
+        type_int = 0, 
+        type_long = 1, 
+        type_str = 2, 
+        type_bool = 3, 
+        type_strList = 4, 
+        type_intList = 5, 
+        type_jsonStore = 6, 
+        type_jsonStoreList = 7, 
+        type_strMap = 8,
+        type_boolPtr = 9,
+        type_jsonShared = 10
     };
 
     PTR_ITEM(int)
@@ -95,6 +107,8 @@ namespace Configs_ConfigItem {
     PTR_ITEM(jsonStore)
     PTR_ITEM(jsonStoreList)
     PTR_ITEM(strMap)
+    PTR_ITEM(boolPtr)
+    PTR_ITEM(jsonShared)
 
     class JsonStore {
     public:
@@ -111,12 +125,17 @@ namespace Configs_ConfigItem {
         void _put(ConfJsMap _map, const QString& str, QStringList *);
         void _put(ConfJsMap _map, const QString& str, QList<int> *);
         void _put(ConfJsMap _map, const QString& str, JsonStore **);
+        void _put(ConfJsMap _map, const QString& str, std::shared_ptr<JsonStore>*);
         void _put(ConfJsMap _map, const QString& str, QVariantMap *);
         void _put(ConfJsMap _map, const QString& str, QJsonStoreListBase *);
-
-        template<typename T = JsonStore>
+        void _put(ConfJsMap _map, const QString& str, bool **);
+        template<typename T, typename = typename std::enable_if<std::is_base_of<JsonStore, T>::value>::type>
         void _put(ConfJsMap _map, const QString& str, T ** type){
             _put(_map, str, (JsonStore **) type);
+        }
+        template<typename T, typename = typename std::enable_if<std::is_base_of<JsonStore, T>::value>::type>
+        void _put(ConfJsMap _map, const QString& str, std::shared_ptr<T>* type){
+            _put(_map, str, (std::shared_ptr<JsonStore>*) type);
         }
 
         virtual ConfJsMap _map() = 0;
@@ -145,17 +164,21 @@ namespace Configs_ConfigItem {
 
         QByteArray ToJsonBytes(const QStringList &without = {});
 
-        virtual void FromJson(QJsonObject object);
+        void FromJson(QJsonObject object);
 
         void FromJsonBytes(const QByteArray &data);
-        
-        void FromBin(const Bin & value);
-        Bin ToBin(const QStringList &without = {});
 
+        void FromBytes(const QByteArray &data);
+
+        QByteArray ToBytes(const QStringList &without = {});
+        
         virtual bool Save();
 
         virtual bool Load();
+        
     };
+
+    std::shared_ptr<configItem> getConfigItem(int i);
 
 } // namespace Configs_ConfigItem
 

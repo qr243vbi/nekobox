@@ -2,400 +2,410 @@
 #include "libcore_types.h"
 #include "nekobox/dataStore/Configs.hpp"
 #include "nekobox/dataStore/Utils.hpp"
+#include <qbuffer.h>
 #include <qcborcommon.h>
 #include <qcontainerfwd.h>
 
-static void _put_store(ConfJsMap _map, const QString & str, void * value, 
-        std::shared_ptr<configItem> item, JsonStore * store){
-    item->name = str;
-    item->ptr = (size_t)(value) - (size_t)(store);
-    _map[Configs::hash(str)] = item;
+static void _put_store(ConfJsMap _map, const QString &str, void *value,
+                       std::shared_ptr<configItem> item, JsonStore *store) {
+  item->name = str;
+  item->ptr = (size_t)(value) - (size_t)(store);
+  _map[Configs::hash(str)] = item;
 }
 
-#define SET_BIN(X) void X##Item::setBin(JsonStore * store, const Bin & value) 
-#define SET_NODE(X) void X##Item::setNode(JsonStore * store, const QJsonValue & value) 
+#define GET_PTR_OR_RETURN                                                      \
+  void *ptr = this->getPtr(store);                                             \
+  if (ptr == nullptr)                                                          \
+    return;
+#define SET_NODE(X)                                                            \
+  void X##Item::setNode(JsonStore *store, const QJsonValue &value)
+
+QString readString(QDataStream &stream) {
+  unsigned int i;
+  stream.readRawData((char *)&i, sizeof(unsigned int));
+  QByteArray array;
+  array.resize(i);
+  stream.readRawData(array.data(), i);
+  return QString::fromUtf8(array);
+}
+
+void appendString(QByteArray &array, const QString &str) {
+  QByteArray ar = str.toUtf8();
+  unsigned int i = ar.size();
+  array.append((char *)&i, sizeof(unsigned int));
+  array.append(ar);
+}
+
+SET_NODE(int) {
+  GET_PTR_OR_RETURN
+  if (value.isDouble()) {
+    *(int *)ptr = value.toInt();
+  }
+}
+
+SET_NODE(long) {
+  GET_PTR_OR_RETURN
+  if (value.isDouble()) {
+    *(long long *)ptr = value.toInteger();
+  }
+}
+
+SET_NODE(str) {
+  GET_PTR_OR_RETURN
+  if (value.isString()) {
+    *(QString *)ptr = value.toString();
+  }
+}
+
+SET_NODE(bool) {
+  GET_PTR_OR_RETURN
+  if (value.isBool()) {
+    *(bool *)ptr = value.toBool();
+  }
+}
+
+SET_NODE(boolPtr) {
+  GET_PTR_OR_RETURN
+  if (value.isBool()) {
+    **(bool **)ptr = value.toBool();
+  }
+}
 
 
-void JsonStore::FromBin(const Bin & value){
-    if (value.type == ConfigItemType::type_jsonStore){
-        auto map = _map();
-        QDataStream stream(value.payload);
-        while (true){
-            unsigned short type;
-            unsigned int size;
-            QByteArray key;
-            QByteArray payload;
-            key.resize(16);
-            stream.readRawData((char*)&type, sizeof(unsigned short));
-            if (type == ConfigItemType::type_end){
-                break;
-            }
-            stream.readRawData(key.data(), 16);
-            stream.readRawData((char*)&size, sizeof(unsigned int));
-            payload.resize(size);
-            stream.readRawData(payload.data(), size);
-            Bin bin;
-            bin.payload = payload;
-            bin.type = type;
-            if (map.contains(key)){
-                map[key]->setBin(this, bin);
-            }
-        }
+SET_NODE(strList) {
+  GET_PTR_OR_RETURN
+  if (value.isArray()) {
+    QJsonArray array = value.toArray();
+    if (!array.isEmpty()) {
+      *(QStringList *)ptr = QJsonArray2QListStr(array);
     }
+  }
 }
 
-Bin JsonStore::ToBin(const QStringList &without ){
-    Bin bin;
-    bin.type = ConfigItemType::type_jsonStore;
-    for (auto [key, value] : asKeyValueRange(_map())){
+SET_NODE(intList) {
+  GET_PTR_OR_RETURN
+  if (value.isArray()) {
+    QJsonArray array = value.toArray();
+    if (!array.isEmpty()) {
+      *(QList<int> *)ptr = QJsonArray2QListInt(array);
+    }
+  }
+}
+
+SET_NODE(strMap) {
+  GET_PTR_OR_RETURN
+  if (value.isObject()) {
+    *(QVariantMap *)ptr = value.toObject().toVariantMap();
+  }
+}
+
+SET_NODE(jsonStore) {
+  GET_PTR_OR_RETURN
+  JsonStore *st = *(JsonStore **)ptr;
+  if (st != nullptr) {
+    st->FromJson(value.toObject());
+  }
+}
+
+SET_NODE(jsonShared) {
+  GET_PTR_OR_RETURN
+  std::shared_ptr<JsonStore> st = *(std::shared_ptr<JsonStore> *)ptr;
+  if (st != nullptr) {
+    st->FromJson(value.toObject());
+  }
+}
+
+
+SET_NODE(jsonStoreList) {
+  if (value.isArray()) {
+    QJsonArray array = value.toArray();
+    if (!array.isEmpty()) {
+      auto list = (QJsonStoreListBase *)this->getPtr(store);
+      if (list == nullptr) {
+        return;
+      }
+      list->clear();
+      for (auto ptr : array) {
+        JsonStore *store = list->createJsonStore();
+        store->FromJson(ptr.toObject());
+        list->append(store);
+      }
+    }
+  }
+}
+
+#define GET_NODE(X) QJsonValue X##Item::getNode(JsonStore *store)
+
+GET_NODE(jsonStoreList) {
+  auto list = (QJsonStoreListBase *)this->getPtr(store);
+  QJsonArray array;
+  for (auto st : *list) {
+    array.append(st->ToJson());
+  }
+  return array;
+}
+GET_NODE(jsonStore) {
+  JsonStore *st = *(JsonStore **)(this->getPtr(store));
+  if (st != nullptr) {
+    return st->ToJson();
+  } else {
+    return QJsonValue::Null;
+  }
+}
+GET_NODE(jsonShared) {
+  std::shared_ptr<JsonStore> st = *(std::shared_ptr<JsonStore> *)(this->getPtr(store));
+  if (st != nullptr) {
+    return st->ToJson();
+  } else {
+    return QJsonValue::Null;
+  }
+}
+GET_NODE(strMap) {
+  return QJsonObject::fromVariantMap(*(QVariantMap *)this->getPtr(store));
+}
+GET_NODE(intList) {
+  return QListInt2QJsonArray(*(QList<int> *)this->getPtr(store));
+}
+
+GET_NODE(strList) {
+  return QListStr2QJsonArray(*(QList<QString> *)this->getPtr(store));
+}
+
+GET_NODE(bool) { return *(bool *)getPtr(store); }
+
+GET_NODE(boolPtr) { return **(bool **)getPtr(store); }
+
+GET_NODE(str) { return *(QString *)getPtr(store); }
+
+GET_NODE(long) { return *(long long *)getPtr(store); }
+
+GET_NODE(int) { return *(int *)getPtr(store); }
+
+#define CASE_TYPE(X)                                                           \
+  case ConfigItemType::type_##X:                                               \
+    return std::make_shared<X##Item>();
+
+std::shared_ptr<configItem> Configs_ConfigItem::getConfigItem(int i) {
+  switch (i) {
+    CASE_TYPE(int)
+    CASE_TYPE(long)
+    CASE_TYPE(bool)
+    CASE_TYPE(str)
+    CASE_TYPE(strList)
+    CASE_TYPE(intList)
+    CASE_TYPE(jsonStore)
+    CASE_TYPE(strMap)
+    CASE_TYPE(jsonStoreList)
+    CASE_TYPE(boolPtr)
+    CASE_TYPE(jsonShared)
+  default:
+    return std::make_shared<jsonStoreItem>();
+  }
+};
+
+QByteArray JsonStore::ToBytes(const QStringList &without){
+    QByteArray byteArray;
+    QBuffer buffer(&byteArray); // Create a buffer to write to QByteArray
+    buffer.open(QIODevice::WriteOnly);
+    QDataStream out(&buffer); 
+
+    for (auto [key, value] : asKeyValueRange(this->_map()) ){
         if (!without.contains(value->name)){
-            auto & payload = bin.payload;
-            unsigned short type = value->type();
-            payload.append((const char *)&type, sizeof(type));
-            payload.append(key);
-            Bin another = value->getBin(this);
-            unsigned int size = another.payload.size();
-            payload.append((const char *)&size, sizeof(unsigned int));
-            payload.append(another.payload);
-        }
-    }
-    bin.payload.append(ConfigItemType::type_end);
-    return bin;
-}
-
-QString readString(QDataStream & stream){
-            unsigned int i;
-            stream.readRawData((char*)&i, sizeof(unsigned int));
-            QByteArray array;
-            array.resize(i);
-            stream.readRawData(array.data(), i);
-            return QString::fromUtf8(array);
-}
-
-void appendString(QByteArray & array, const QString & str){
-    QByteArray ar = str.toUtf8();
-    unsigned int i = ar.size();
-    array.append((char*)&i, sizeof(unsigned int));
-    array.append(ar);
-}
-
-SET_BIN(jsonStoreList){
-    if (value.type == ConfigItemType::type_jsonStoreList){
-        QDataStream stream(value.payload);
-        QJsonStoreListBase * base = (QJsonStoreListBase*) this->getPtr(store);
-        while (!stream.atEnd()){
-            unsigned int i;
-            stream.readRawData((char*)&i, sizeof(unsigned int));
-            
+            out << key;
+            unsigned char type = value->type();
+            out << type;
             Bin bin;
-            bin.type = ConfigItemType::type_jsonStore;
-            bin.payload.resize(i);
-            stream.readRawData(bin.payload.data(), i);
-
-            JsonStore * st = base->createJsonStore();
-            base->append(st);
-            st->FromBin(bin);
+            bin.item = value.get();
+            bin.store = this;
+            out << bin;
         }
     }
-}
+    buffer.close();
+    return byteArray;
+};
 
-SET_BIN(jsonStore){
-    if (value.type == ConfigItemType::type_jsonStore){
-        JsonStore * st = *(JsonStore**) this->getPtr(store);
-        if (st != nullptr){
-            st->FromBin(value);
-        }
+void JsonStore::FromBytes(const QByteArray &data) {
+  QDataStream stream(data);
+  auto _map = this->_map();
+  while (!stream.atEnd()) {
+    QByteArray key;
+    stream >> key;
+    unsigned char type;
+    stream >> type;
+    auto iter = _map.find(key);
+    std::shared_ptr<configItem> value = nullptr;
+    JsonStore *store = this;
+    if (iter != _map.end()) {
+      value = iter.value();
     }
-}
-
-SET_BIN(strMap){
-    if (value.type == ConfigItemType::type_strMap){
-        QVariantMap * m = (QVariantMap*) this->getPtr(store);
-        QDataStream stream(value.payload);
-        m->clear();
-        while (!stream.atEnd()){
-            auto key = readString(stream);
-            auto value = readString(stream);
-            m->insert(key, value);
-        }
+    if (value.get() == nullptr || value->type() != type) {
+      value = getConfigItem(type);
+      store = nullptr;
     }
-}
-
-SET_BIN(intList){
-    if (value.type == ConfigItemType::type_intList){
-        QList<int> * list = (QList<int>*)this->getPtr(store);
-        QDataStream stream(value.payload);
-        list->clear();
-        while (!stream.atEnd()){
-            int i;
-            stream.readRawData((char*)&i, sizeof(int));
-            list->append(i);
-        }
+    if (value.get() == nullptr){
+      qDebug() << "SOMETHING STRANGE HERE: JsonStore::FromBytes";
+      qDebug() << type;
     }
-}
-
-SET_BIN(strList){
-    if (value.type == ConfigItemType::type_strList){
-        QStringList *list = (QStringList*)this->getPtr(store);
-        QDataStream stream(value.payload);
-        list->clear();
-        while (!stream.atEnd()){
-            list->append(readString(stream));
-        }
-    }
-}
-
-SET_BIN(bool){
-    if (value.type == ConfigItemType::type_bool){
-        *(bool *) this->getPtr(store) = value.payload.at(0);
-    }
-}
-
-SET_BIN(str){
-    if (value.type == ConfigItemType::type_str){
-        *(QString *) this->getPtr(store) = QString::fromUtf8(value.payload);
-    }
-}
-
-SET_BIN(long){
-    if (value.type == ConfigItemType::type_long){
-        *(long long *) this->getPtr(store) = *(long long*)value.payload.data();
-    }
-}
-
-SET_BIN(int){
-    if (value.type == ConfigItemType::type_int){
-        *(int*) this->getPtr(store) = *(int*)value.payload.data();
-    } 
-}
-
-SET_NODE(int){
-    if (value.isDouble()){
-        * (int*)this->getPtr(store) = value.toInt();
-    }
-}
-
-SET_NODE(long){
-    if (value.isDouble()){
-        * (long long*) this->getPtr(store) = value.toInteger();
-    }
-}
-
-SET_NODE(str){
-    if (value.isString()){
-        * (QString*) this->getPtr(store) = value.toString();
-    }
-}
-
-SET_NODE(bool){
-    if (value.isBool()){
-        * (bool *) this->getPtr(store) = value.toBool();
-    }
-}
-
-SET_NODE(strList){
-    if (value.isArray()){
-        QJsonArray array = value.toArray();
-        if (!array.isEmpty()){
-            *(QStringList*) this->getPtr(store) =  QJsonArray2QListStr(array);
-        }
-    }
-}
-
-SET_NODE(intList){
-    if (value.isArray()){
-        QJsonArray array = value.toArray();
-        if (!array.isEmpty()){
-            *(QList<int>*) this->getPtr(store) =  QJsonArray2QListInt(array);
-        }
-    }
-}
-
-SET_NODE(strMap){
-    if (value.isObject()){
-        *(QVariantMap*) this->getPtr(store) = value.toObject().toVariantMap();
-    }
-}
-
-SET_NODE(jsonStore){
-    JsonStore * st = *(JsonStore**) this->getPtr(store);
-    if (st != nullptr){
-        st->FromJson(value.toObject());
-    }
-}
-
-SET_NODE(jsonStoreList){
-    if (value.isArray()){
-        QJsonArray array = value.toArray();
-        if (!array.isEmpty()){
-            auto list = (QJsonStoreListBase*) this->getPtr(store);
-            list->clear();
-            for (auto ptr : array){
-                JsonStore * store = list->createJsonStore();
-                store->FromJson(ptr.toObject());
-                list->append(store);
-            }
-        }
-    }
-}
-
-#define GET_NODE(X) QJsonValue X##Item::getNode(JsonStore * store)
-#define GET_BIN(X) Bin X##Item::getBin(JsonStore * store)
-
-GET_NODE(jsonStoreList){
-    auto list = (QJsonStoreListBase*) this->getPtr(store);
-    QJsonArray array;
-    for (auto st : *list){
-        array.append(st->ToJson());
-    }
-    return array;
-}
-GET_NODE(jsonStore){
-    JsonStore * st = *(JsonStore**) (this->getPtr(store));
-    if (st != nullptr){
-        return st->ToJson();
-    } else {
-        return QJsonValue::Null;
-    }
-}
-GET_NODE(strMap){
-    return QJsonObject::fromVariantMap( *(QVariantMap *) this->getPtr(store) );
-}
-GET_NODE(intList){
-    return QListInt2QJsonArray(*(QList<int> *) this->getPtr(store));
-}
-
-GET_NODE(strList){
-    return QListStr2QJsonArray(*(QList<QString> *) this->getPtr(store));
-}
-
-GET_NODE(bool){
-    return *(bool*) getPtr(store);
-}
-
-GET_NODE(str){
-    return *(QString*) getPtr(store);
-}
-
-GET_NODE(long){
-    return *(long long*) getPtr(store);
-}
-
-GET_NODE(int) {
-    return *(int*)getPtr(store);
-}
-
-GET_BIN(jsonStoreList){
     Bin bin;
-    bin.type = ConfigItemType::type_jsonStoreList;
-    QJsonStoreListBase * base = (QJsonStoreListBase*) this->getPtr(store);
-    for (JsonStore * st: *base){
-        Bin another = st->ToBin();
-        unsigned int i = another.payload.size();
-        bin.payload.append((char*)&i, sizeof(unsigned int));
-        bin.payload.append(another.payload);
-    }
-    return bin;
+    bin.item = value.get();
+    bin.store = store;
+    stream >> bin;
+  }
+};
+
+#define PUT_STORE(X)                                                           \
+  _put_store(_map, str, value, std::make_shared<X##Item>(), this);
+
+void JsonStore::_put(ConfJsMap _map, const QString &str, int *value) {
+  PUT_STORE(int)
+};
+void JsonStore::_put(ConfJsMap _map, const QString &str, long long *value) {
+  PUT_STORE(long)
+};
+void JsonStore::_put(ConfJsMap _map, const QString &str, QString *value) {
+  PUT_STORE(str)
+};
+void JsonStore::_put(ConfJsMap _map, const QString &str, bool *value) {
+  PUT_STORE(bool)
+};
+void JsonStore::_put(ConfJsMap _map, const QString &str, QStringList *value) {
+  PUT_STORE(strList)
+};
+void JsonStore::_put(ConfJsMap _map, const QString &str, QList<int> *value) {
+  PUT_STORE(intList)
+};
+void JsonStore::_put(ConfJsMap _map, const QString &str, JsonStore **value) {
+  PUT_STORE(jsonStore)
+};
+void JsonStore::_put(ConfJsMap _map, const QString &str, QVariantMap *value) {
+  PUT_STORE(strMap)
+};
+void JsonStore::_put(ConfJsMap _map, const QString &str,
+                     QJsonStoreListBase *value) {
+  PUT_STORE(jsonStoreList)
+};
+void JsonStore::_put(ConfJsMap _map, const QString &str, bool **value) {
+  PUT_STORE(boolPtr)
+};
+void JsonStore::_put(ConfJsMap _map, const QString &str, std::shared_ptr<JsonStore>*value) {
+  PUT_STORE(jsonShared)
+};
+
+
+#define SET_BIN(X)                                                             \
+  void X##Item::deserialize(QDataStream &data, JsonStore *store)
+#define GET_BIN(X)                                                             \
+  void X##Item::serialize(QDataStream &data, JsonStore *store) const
+
+GET_BIN(int) { data << *(int *)this->getPtr(store); }
+GET_BIN(long) { data << *(long long *)this->getPtr(store); }
+GET_BIN(str) { data << *(QString *)this->getPtr(store); }
+GET_BIN(bool) { data << *(bool *)this->getPtr(store); }
+GET_BIN(boolPtr) { data << **(bool **)this->getPtr(store); }
+GET_BIN(strList) { data << *(QStringList *)this->getPtr(store); }
+GET_BIN(intList) { data << *(QList<int> *)this->getPtr(store); }
+GET_BIN(strMap) { data << *(QVariantMap *)this->getPtr(store); }
+GET_BIN(jsonStore) {
+  QByteArray array;
+  JsonStore *st = *(JsonStore **)this->getPtr(store);
+  if (st != nullptr) {
+    array = st->ToBytes();
+  }
+  data << array;
 }
-
-GET_BIN(jsonStore){
-    JsonStore * st = *(JsonStore**) this->getPtr(store);
-    
-    if (st != nullptr) return st->ToBin();
-    else {
-        Bin bin;
-        bin.type = ConfigItemType::type_jsonStore;
-        bin.payload.append(ConfigItemType::type_end);
-        return bin;
-    }
+GET_BIN(jsonShared) {
+  QByteArray array;
+  std::shared_ptr<JsonStore> st = *(std::shared_ptr<JsonStore>*)this->getPtr(store);
+  if (st != nullptr) {
+    array = st->ToBytes();
+  }
+  data << array;
 }
-
-GET_BIN(strMap){
-    Bin bin;
-    bin.type = ConfigItemType::type_strMap;
-    QVariantMap variant = *(QVariantMap*) this->getPtr(store);
-    for (auto [key, value]: asKeyValueRange(variant)){
-        appendString(bin.payload, key);
-        appendString(bin.payload, value.toString());
-    }
-    return bin;
+GET_BIN(jsonStoreList) {
+  QList<QByteArray> value;
+  for (JsonStore *st : *(QJsonStoreListBase *)this->getPtr(store)) {
+    value.append(st->ToBytes());
+  }
+  data << value;
 }
-
-GET_BIN(intList){
-    Bin bin;
-    bin.type = ConfigItemType::type_intList;
-    QList<int> list = *(QList<int>*) this->getPtr(store);
-    for (int i : list){
-        bin.payload.append((char*)&i, sizeof(int));
-    }
-    return bin;
+SET_BIN(jsonStoreList) {
+  QList<QByteArray> value;
+  data >> value;
+  GET_PTR_OR_RETURN;
+  QJsonStoreListBase *base = (QJsonStoreListBase *)this->getPtr(store);
+  base->clear();
+  for (QByteArray &array : value) {
+    JsonStore *st = base->createJsonStore();
+    base->append(st);
+    st->FromBytes(array);
+  }
 }
-
-GET_BIN(strList){
-    Bin bin;
-    bin.type = ConfigItemType::type_strList;
-    QList<QString> list = *(QList<QString>*) this->getPtr(store);
-    for (QString i : list){
-        appendString(bin.payload, i);
-    }
-    return bin;
+SET_BIN(jsonStore) {
+  QByteArray value;
+  data >> value;
+  GET_PTR_OR_RETURN
+  JsonStore *st = *(JsonStore **)ptr;
+  if (st != nullptr) {
+    st->FromBytes(value);
+  }
 }
-
-GET_BIN(bool){
-    Bin bin;
-    bin.type = ConfigItemType::type_bool;
-    bin.payload.append(*(bool*)this->getPtr(store));
-    return bin;
+SET_BIN(jsonShared) {
+  QByteArray value;
+  data >> value;
+  GET_PTR_OR_RETURN
+  std::shared_ptr<JsonStore> st = *(std::shared_ptr<JsonStore> *)ptr;
+  if (st != nullptr) {
+    st->FromBytes(value);
+  }
 }
-
-GET_BIN(str){
-    Bin bin;
-    bin.type = ConfigItemType::type_str;
-    bin.payload.append(((QString*)this->getPtr(store))->toUtf8());
-    return bin;
+SET_BIN(strMap) {
+  QVariantMap value;
+  data >> value;
+  GET_PTR_OR_RETURN
+  *(QVariantMap *)ptr = value;
 }
-
-GET_BIN(long){
-    Bin bin;
-    bin.type = ConfigItemType::type_long;
-    bin.payload.append( (char*)this->getPtr(store), sizeof(long long) );
-    return bin;
+SET_BIN(intList) {
+  QList<int> value;
+  data >> value;
+  GET_PTR_OR_RETURN
+  *(QList<int> *)ptr = value;
 }
-
-GET_BIN(int){
-    Bin bin;
-    bin.type = ConfigItemType::type_int;
-    bin.payload.append( (char*)this->getPtr(store), sizeof(int) );
-    return bin;
+SET_BIN(strList) {
+  QStringList value;
+  data >> value;
+  GET_PTR_OR_RETURN
+  *(QStringList *)ptr = value;
 }
-
-#define PUT_STORE(X) _put_store(_map, str, value, std::make_shared<X##Item>(), this);
-
-        void JsonStore::_put(ConfJsMap _map, const QString& str, int* value){
-            PUT_STORE(int)
-        };
-        void JsonStore::_put(ConfJsMap _map, const QString& str, long long* value){
-            PUT_STORE(long)
-        };
-        void JsonStore::_put(ConfJsMap _map, const QString& str, QString* value){
-            PUT_STORE(str)
-        };
-        void JsonStore::_put(ConfJsMap _map, const QString& str, bool * value){
-            PUT_STORE(bool)
-        };
-        void JsonStore::_put(ConfJsMap _map, const QString& str, QStringList * value){
-            PUT_STORE(strList)
-        };
-        void JsonStore::_put(ConfJsMap _map, const QString& str, QList<int> * value){
-            PUT_STORE(intList)
-        };
-        void JsonStore::_put(ConfJsMap _map, const QString& str, JsonStore ** value){
-            PUT_STORE(jsonStore)
-        };
-        void JsonStore::_put(ConfJsMap _map, const QString& str, QVariantMap * value){
-            PUT_STORE(strMap)
-        };
-        void JsonStore::_put(ConfJsMap _map, const QString& str, QJsonStoreListBase * value){
-            PUT_STORE(jsonStoreList)
-        };
-
+SET_BIN(bool) {
+  bool value;
+  data >> value;
+  GET_PTR_OR_RETURN
+  *(bool *)ptr = value;
+}
+SET_BIN(boolPtr) {
+  bool value;
+  data >> value;
+  qDebug() << "BINBIN";
+  GET_PTR_OR_RETURN
+  qDebug() << value;
+  qDebug() << **(bool **)ptr;
+  **(bool **)ptr = value;
+}
+SET_BIN(str) {
+  QString value;
+  data >> value;
+  GET_PTR_OR_RETURN
+  *(QString *)ptr = value;
+}
+SET_BIN(long) {
+  long long value;
+  data >> value;
+  GET_PTR_OR_RETURN
+  *(long long *)ptr = value;
+}
+SET_BIN(int) {
+  int value;
+  data >> value;
+  GET_PTR_OR_RETURN
+  *(int *)ptr = value;
+}

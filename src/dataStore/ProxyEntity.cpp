@@ -27,12 +27,12 @@ namespace Configs
             _add(map1, "last_auto_test_time", last_auto_test_time, integer64);
 
             map2.insert(map1);
-            _add(map2, "bean", bean_pointer, jsonStore);
-            _add(map2, "traffic", traffic_data_pointer, jsonStore);
+            _add(map2, "bean", bean, jsonStore);
+            _add(map2, "traffic", traffic_data, jsonStore);
         }
         #undef _add
         
-        if (bean_pointer == nullptr){
+        if (bean.get() == nullptr){
             return map1;
         } else {
             return map2;
@@ -43,8 +43,6 @@ namespace Configs
         if (type_ != nullptr) this->type = type_;
         if (bean != nullptr) {
             this->bean = std::shared_ptr<Configs::AbstractBean>(bean);
-            bean_pointer = bean;
-            traffic_data_pointer = traffic_data.get();
         }
     };
 

@@ -15,7 +15,7 @@ namespace Configs {
     
     QMap<QString, QString> profileDisplayNames;
 
-    ProfileManager::ProfileManager() : JsonStore("groups/pm.json") {
+    ProfileManager::ProfileManager() : JsonStore("profiles.cfg") {
     }
 
     DECL_MAP(ProfileManager)
@@ -29,8 +29,8 @@ namespace Configs {
         auto entryList = dr.entryList(QDir::Files);
         for (auto e: entryList) {
             e = e.toLower();
-            if (!e.endsWith(".json", Qt::CaseInsensitive)) continue;
-            e = e.remove(".json", Qt::CaseInsensitive);
+            if (!e.endsWith(".cfg", Qt::CaseInsensitive)) continue;
+            e = e.remove(".cfg", Qt::CaseInsensitive);
             bool ok;
             auto id = e.toInt(&ok);
             if (ok) {
@@ -53,7 +53,7 @@ namespace Configs {
         // Load Proxys
         QList<int> delProfile;
         for (auto id: profilesIdOrder) {
-            auto ent = LoadProxyEntity(QString("profiles/%1.json").arg(id));
+            auto ent = LoadProxyEntity(QString("profiles/%1.cfg").arg(id));
             // Corrupted profile?
             if (ent == nullptr || ent->bean == nullptr || ent->bean->version == -114514) {
                 delProfile << id;
@@ -71,7 +71,7 @@ namespace Configs {
         groupsTabOrder = {};
         auto needToCheckGroups = QSet<int>();
         for (auto id: groupsIdOrder) {
-            auto ent = LoadGroup(QString("groups/%1.json").arg(id));
+            auto ent = LoadGroup(QString("groups/%1.cfg").arg(id));
             // Corrupted group?
             if (ent->id != id) {
                 continue;
@@ -108,9 +108,9 @@ namespace Configs {
         }
         // Load Routing profiles
         for (auto id : routesIdOrder) {
-            auto route = LoadRouteChain(QString("route_profiles/%1.json").arg(id));
+            auto route = LoadRouteChain(QString("route_profiles/%1.cfg").arg(id));
             if (route == nullptr) {
-                MW_show_log(QString("File route_profiles/%1.json is corrupted, consider manually handling it").arg(id));
+                MW_show_log(QString("File route_profiles/%1.cfg is corrupted, consider delete it").arg(id));
                 continue;
             }
 
@@ -272,7 +272,7 @@ namespace Configs {
         profiles[ent->id] = ent;
         profilesIdOrder.push_back(ent->id);
 
-        ent->fn = QString("profiles/%1.json").arg(ent->id);
+        ent->fn = QString("profiles/%1.cfg").arg(ent->id);
         ent->Save();
         return true;
     }
@@ -290,7 +290,7 @@ namespace Configs {
             group->AddProfile(ent->id);
             profiles[ent->id] = ent;
             profilesIdOrder.push_back(ent->id);
-            ent->fn = QString("profiles/%1.json").arg(ent->id);
+            ent->fn = QString("profiles/%1.cfg").arg(ent->id);
         }
         group->Save();
         runOnNewThread([=,this]
@@ -343,7 +343,7 @@ namespace Configs {
 
         runOnNewThread([=,this]
         {
-           for (int id : deleted_ids) QFile(QString("profiles/%1.json").arg(id)).remove();
+           for (int id : deleted_ids) QFile(QString("profiles/%1.cfg").arg(id)).remove();
         });
     }
 
@@ -352,7 +352,7 @@ namespace Configs {
     {
         profiles.erase(id);
         profilesIdOrder.removeAll(id);
-        QFile(QString("profiles/%1.json").arg(id)).remove();
+        QFile(QString("profiles/%1.cfg").arg(id)).remove();
     }
 
 
@@ -400,7 +400,7 @@ namespace Configs {
         groupsIdOrder.push_back(ent->id);
         groupsTabOrder.push_back(ent->id);
 
-        ent->fn = QString("groups/%1.json").arg(ent->id);
+        ent->fn = QString("groups/%1.cfg").arg(ent->id);
         ent->Save();
         return true;
     }
@@ -415,7 +415,7 @@ namespace Configs {
         groups.erase(gid);
         groupsIdOrder.removeAll(gid);
         groupsTabOrder.removeAll(gid);
-        QFile(QString("groups/%1.json").arg(gid)).remove();
+        QFile(QString("groups/%1.cfg").arg(gid)).remove();
     }
 
     std::shared_ptr<Group> ProfileManager::GetGroup(int id) {
@@ -444,7 +444,7 @@ namespace Configs {
         }
 
         chain->id = NewRouteChainID();
-        chain->fn = QString("route_profiles/%1.json").arg(chain->id);
+        chain->fn = QString("route_profiles/%1.cfg").arg(chain->id);
         routes[chain->id] = chain;
         routesIdOrder.push_back(chain->id);
         chain->Save();
@@ -470,7 +470,7 @@ namespace Configs {
         auto currFiles = filterIntJsonFile("route_profiles");
         for (const auto &item: currFiles) { // clean up removed route profiles
             if (!routes.count(item)) {
-                QFile(QString(ROUTES_PREFIX+"%1.json").arg(item)).remove();
+                QFile(QString("route_profiles/%1.cfg").arg(item)).remove();
             }
         }
     }

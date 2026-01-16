@@ -5,8 +5,6 @@
 
 namespace Configs {
     class SocksHttpBean : public AbstractBean {
-    private:
-        V2rayStreamSettings * streamPtr;
     public:
         static constexpr int type_HTTP = -80;
         static constexpr int type_Socks4 = 4;
@@ -20,13 +18,12 @@ namespace Configs {
 
         explicit SocksHttpBean(int _socks_http_type) : AbstractBean(0) {
             this->socks_http_type = _socks_http_type;
-            streamPtr = stream.get();
         }
         INIT_MAP
             ADD_MAP("v", socks_http_type, integer);
             ADD_MAP("username", username, string);
             ADD_MAP("password", password, string);
-            ADD_MAP("stream", streamPtr, jsonStore);
+            ADD_MAP("stream", stream, jsonStore);
         STOP_MAP
 
         QString DisplayType() override { return socks_http_type == type_HTTP ? "HTTP" : "Socks"; };
