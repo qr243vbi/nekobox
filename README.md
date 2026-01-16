@@ -1,4 +1,4 @@
-# [HelBox](https://github.com/qr243vbi/nekobox) / [NekoBox](https://github.com/qr243vbi/nekobox) for PC 
+# [NyameBox](https://github.com/qr243vbi/nekobox) / [NekoBox](https://github.com/qr243vbi/nekobox) for PC 
 
 Sing-Box command line mode is available now! Just type for additional information: </br>
 `nekobox_core sing-box --help`
