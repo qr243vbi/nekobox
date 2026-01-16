@@ -1655,7 +1655,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="14"/>
         <source>EditMieru</source>
-        <translation>编辑Tor</translation>
+        <translation>编辑Mieru</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="20"/>
