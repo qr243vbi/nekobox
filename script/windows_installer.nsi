@@ -933,7 +933,7 @@ Section "Install"
   ${EndIf}
 
   ${If} "$UnpackOnly" != "1"
-    FileOpen $0 "$INSTDIR\config" w
+    FileOpen $0 "$INSTDIR\settings" w
     FileWrite $0 "DeleteToUseThisDirectoryForConfig"
 	FileClose $0
 
