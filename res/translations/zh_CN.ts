@@ -71,7 +71,7 @@
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="946"/>
         <source>Use Json instead binary for configs</source>
-        <translation type="unfinished"></translation>
+        <translation>使用 JSON 格式替代二进制格式进行配置</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="976"/>
@@ -136,7 +136,7 @@
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1104"/>
         <source>http://cp.cloudflare.com/</source>
-        <translation type="unfinished"></translation>
+        <translation>http://cp.cloudflare.com/</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1114"/>
@@ -186,12 +186,12 @@
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1356"/>
         <source>X</source>
-        <translation type="unfinished"></translation>
+        <translation>X</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1389"/>
         <source>Y</source>
-        <translation type="unfinished"></translation>
+        <translation>Y</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1402"/>
@@ -972,7 +972,7 @@
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="14"/>
         <source>Landing proxy for group Group2</source>
-        <translation type="unfinished"></translation>
+        <translation>为分组2配置落地代理</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="41"/>
@@ -987,12 +987,12 @@
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="68"/>
         <source>Group1</source>
-        <translation type="unfinished"></translation>
+        <translation>分组1</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="74"/>
         <source>Group2</source>
-        <translation type="unfinished"></translation>
+        <translation>分组2</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="441"/>
@@ -1655,47 +1655,47 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="14"/>
         <source>EditMieru</source>
-        <translation type="unfinished"></translation>
+        <translation>编辑Tor</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="20"/>
         <source>Username</source>
-        <translation type="unfinished">用户名</translation>
+        <translation>用户名</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="30"/>
         <source>Password</source>
-        <translation type="unfinished">密码</translation>
+        <translation>密码</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="40"/>
         <source>Port range</source>
-        <translation type="unfinished">端口范围</translation>
+        <translation>端口范围</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="55"/>
         <source>Multiplexing</source>
-        <translation type="unfinished"></translation>
+        <translation>多路复用</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="69"/>
         <source>MULTIPLEXING_OFF</source>
-        <translation type="unfinished"></translation>
+        <translation>不启用多路复用</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="74"/>
         <source>MULTIPLEXING_LOW</source>
-        <translation type="unfinished"></translation>
+        <translation>低_多路复用</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="79"/>
         <source>MULTIPLEXING_MIDDLE</source>
-        <translation type="unfinished"></translation>
+        <translation>中_多路复用</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="84"/>
         <source>MULTIPLEXING_HIGH</source>
-        <translation type="unfinished"></translation>
+        <translation>高_多路复用</translation>
     </message>
 </context>
 <context>
@@ -1899,17 +1899,17 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="38"/>
         <source>1</source>
-        <translation type="unfinished"></translation>
+        <translation>1</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="43"/>
         <source>2</source>
-        <translation type="unfinished"></translation>
+        <translation>2</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="48"/>
         <source>3</source>
-        <translation type="unfinished"></translation>
+        <translation>3</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="20"/>
@@ -2013,27 +2013,27 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="14"/>
         <source>EditTor</source>
-        <translation type="unfinished"></translation>
+        <translation>编辑Tor</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="20"/>
         <source>Custom Path</source>
-        <translation type="unfinished"></translation>
+        <translation>自定义路径</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="30"/>
         <source>Extra Args</source>
-        <translation type="unfinished"></translation>
+        <translation>附加参数</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="40"/>
         <source>Tor Config</source>
-        <translation type="unfinished"></translation>
+        <translation>Tor配置</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="55"/>
         <source>Data DIr</source>
-        <translation type="unfinished"></translation>
+        <translation>数据目录</translation>
     </message>
 </context>
 <context>
@@ -2416,11 +2416,6 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <location filename="../../src/ui/mainwindow.cpp" line="2234"/>
         <source>System Proxy</source>
         <translation>系统代理</translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="231"/>
-        <source>URL Test</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="631"/>
