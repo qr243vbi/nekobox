@@ -129,6 +129,36 @@ jobs:
         run: |
           go install github.com/tcnksm/ghr@latest
           ghr -delete -t "${{ github.token }}" -b "$(echo -e "${{ github.event.inputs.text }}")" -n "${{ github.event.inputs.tag }}" "${{ github.event.inputs.tag }}" deployment
+      - uses: actions/setup-python@v5
+        if: matrix.cross_os == 'public'
+        with:
+          python-version: '3.13'
+          cache: 'pip'
+
+      - name: Trigger Open Build Service and Copr
+        shell: bash
+        if: matrix.cross_os == 'public'
+        run: |
+          pip install osc
+          export OBS_USER="${{ secrets.OBS_USER }}"
+          export OBS_PASSWORD="${{ secrets.OBS_PASSWORD }}"
+          export OBS_HOOK_TOKEN="${{ secrets.OBS_HOOK_TOKEN }}"
+          export INPUT_VERSION="${{ github.event.inputs.tag }}"
+          bash ./script/generate_pkgbuild.sh
+          bash ./script/trigger_open_build_service.sh
+
+      - name: Publish AUR package
+        if: matrix.cross_os == 'public'
+        uses: KSXGitHub/github-actions-deploy-aur@v4.1.1
+        with:
+          pkgname: nekobox
+          pkgbuild: ./PKGBUILD
+          commit_username: ${{ github.actor }}
+          commit_email: email@email.email
+          ssh_private_key: ${{ secrets.AUR_SSH_PRIVATE_KEY }}
+          commit_message: Update AUR package
+          ssh_keyscan_types: rsa,ecdsa,ed25519
+
       - name: Tar files
         if: matrix.cross_os != 'public' && ( github.event.inputs.source_only  != 'true' && matrix.allow == 'true' && steps.cache-common.outputs.cache-hit != 'true' )
         run: tar czvf artifacts.tgz ./deployment
@@ -424,7 +454,7 @@ jobs:
         run: |
           ./ghr.exe -replace -t "${{ github.token }}" -b "$(echo -e "${{ github.event.inputs.text }}")" -n "${{ github.event.inputs.tag }}" "${{ github.event.inputs.tag }}" deployment
 
-  webhook:
+  upload_winget:
     name: Trigger Open Build Service
     runs-on: ubuntu-latest
     needs:
@@ -435,33 +465,6 @@ jobs:
     if: github.event.inputs.publish == 'true'
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.13'
-          cache: 'pip'
-
-      - name: Trigger Open Build Service and Copr
-        shell: bash
-        run: |
-          pip install osc
-          export OBS_USER="${{ secrets.OBS_USER }}"
-          export OBS_PASSWORD="${{ secrets.OBS_PASSWORD }}"
-          export OBS_HOOK_TOKEN="${{ secrets.OBS_HOOK_TOKEN }}"
-          export INPUT_VERSION="${{ github.event.inputs.tag }}"
-          bash ./script/generate_pkgbuild.sh
-          bash ./script/trigger_open_build_service.sh 
-
-      - name: Publish AUR package
-        uses: KSXGitHub/github-actions-deploy-aur@v4.1.1
-        with:
-          pkgname: nekobox
-          pkgbuild: ./PKGBUILD
-          commit_username: ${{ github.actor }}
-          commit_email: email@email.email
-          ssh_private_key: ${{ secrets.AUR_SSH_PRIVATE_KEY }}
-          commit_message: Update AUR package
-          ssh_keyscan_types: rsa,ecdsa,ed25519
-
       - name: Linux - Install apt dependencies
         if: github.event.inputs.build_windows_arm64 == 'true' && github.event.inputs.build_windows_x64 == 'true' && github.event.inputs.publish_winget == 'true' && github.event.inputs.source_only  != 'true'
         uses: awalsh128/cache-apt-pkgs-action@latest
