@@ -1059,7 +1059,7 @@
     <message>
         <location filename="../../src/main.cpp" line="59"/>
         <source>Defaults</source>
-        <translation type="vanished">默认设置</translation>
+        <translation>默认设置</translation>
     </message>
     <message>
         <location filename="../../src/ui/profile/edit_chain.cpp" line="46"/>
