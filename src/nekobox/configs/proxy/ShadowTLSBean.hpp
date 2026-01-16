@@ -6,8 +6,6 @@
 
 namespace Configs {
     class ShadowTLSBean : public AbstractBean {
-    private:
-        V2rayStreamSettings * streamPtr;
     public:
         QString password = "";
         int shadowtls_version = 1;
@@ -15,13 +13,12 @@ namespace Configs {
         std::shared_ptr<V2rayStreamSettings> stream = std::make_shared<V2rayStreamSettings>();
 
         ShadowTLSBean() : AbstractBean(0) {
-            streamPtr = stream.get();
         }
         
         INIT_MAP
             ADD_MAP("password", password, string);
             ADD_MAP("shadowtls_version", shadowtls_version, integer);
-            ADD_MAP("stream", streamPtr, jsonStore);
+            ADD_MAP("stream", stream, jsonStore);
         STOP_MAP
 
         QString DisplayType() override { return "ShadowTLS"; };

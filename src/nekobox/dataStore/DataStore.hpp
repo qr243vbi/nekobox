@@ -100,7 +100,7 @@ namespace Configs {
         bool mux_default_on = false;
  //       QString theme = "0";
  //       int language = 0;
-        bool force_json_configs = true;
+        bool * force_json_configs = &Configs::ForceJsonConfigs;
  //       QString font = "";
   //      int font_size = 0;
  //       QString mw_size = "";
@@ -212,8 +212,6 @@ namespace Configs {
         DataStore();
 
         void UpdateStartedId(int id);
-
-        virtual bool Load() override;
 
         [[nodiscard]] QString GetUserAgent(bool isDefault = false) const;
     };

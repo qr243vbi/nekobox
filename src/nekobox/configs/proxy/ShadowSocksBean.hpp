@@ -6,8 +6,6 @@
 
 namespace Configs {
     class ShadowSocksBean : public AbstractBean {
-    private:
-        V2rayStreamSettings * streamPtr;
     public:
         QString method = "aes-128-gcm";
         QString password = "";
@@ -18,7 +16,6 @@ namespace Configs {
         std::shared_ptr<V2rayStreamSettings> stream = std::make_shared<V2rayStreamSettings>();
 
         ShadowSocksBean() : AbstractBean(0) {
-            streamPtr = stream.get();
         }
 
         INIT_MAP
@@ -27,7 +24,7 @@ namespace Configs {
             ADD_MAP("plugin", plugin, string);
             ADD_MAP("plugin_opts", plugin_opts, string);
             ADD_MAP("uot", uot, integer);
-            ADD_MAP("stream", streamPtr, jsonStore);
+            ADD_MAP("stream", stream, jsonStore);
         STOP_MAP
 
         bool IsValid() {

@@ -138,12 +138,12 @@ int main(int argc, char** argv) {
     dir_success = true;
     
     if (!wd.exists()) wd.mkpath(wd.absolutePath());
-    if (!wd.exists("config")) {
-        dir_success &= wd.mkdir("config");
+    if (!wd.exists("settings")) {
+        dir_success &= wd.mkdir("settings");
     }
     
 	{
-		QString wd_abs = wd.absoluteFilePath("config");
+		QString wd_abs = wd.absoluteFilePath("settings");
 		QDir::setCurrent(wd_abs);
 		MoveDirToTrash("temp");
 		dir = QDir(wd_abs);
@@ -165,8 +165,8 @@ int main(int argc, char** argv) {
     if (!dir.exists("resources")) {
         dir_success &= dir.mkdir("resources");
     }
-    if (!dir.exists(ROUTES_PREFIX_NAME)) {
-        dir_success &= dir.mkdir(ROUTES_PREFIX_NAME);
+    if (!dir.exists("route_profiles")) {
+        dir_success &= dir.mkdir("route_profiles");
     }
     if (!dir_success) {
         loop_back_2:
@@ -174,20 +174,12 @@ int main(int argc, char** argv) {
             Configs::dataStore->flag_use_appdata = true;
             goto loop_back_1;
         }
-        QMessageBox::critical(nullptr, "Error", "No permission to write " + wd.absoluteFilePath("config"));
+        QMessageBox::critical(nullptr, "Error", "No permission to write " + wd.absoluteFilePath("settings"));
         return 1;
     }
 
-    // migrate the old config file
-    if (QFile::exists("groups/nekobox.json")) {
-        QFile::rename("groups/nekobox.json", "configs.json");
-    } else if (QFile::exists("groups/nekoray.json")) {
-        QFile::rename("groups/nekoray.json", "configs.json");
-    } else if (QFile::exists("groups/Throne.json")) {
-        QFile::rename("groups/Throne.json", "configs.json");
-    }
     
-    dir_success &= isFileAppendable("configs.json");
+    dir_success &= isFileAppendable("nekobox.cfg");
     
     if (!dir_success){
         goto loop_back_2;
@@ -215,7 +207,7 @@ int main(int argc, char** argv) {
     });
     
     // Load dataStore
-    Configs::dataStore->fn = "configs.json";
+    Configs::dataStore->fn = "nekobox.cfg";
     auto isLoaded = Configs::dataStore->Load();
     if (!isLoaded) {
         Configs::dataStore->Save();
@@ -243,14 +235,14 @@ int main(int argc, char** argv) {
 
     // load routing and shortcuts
     Configs::dataStore->routing = std::make_unique<Configs::Routing>();
-    Configs::dataStore->routing->fn = ROUTES_PREFIX + "Default";
+    Configs::dataStore->routing->fn = "default_route_profile.cfg";
     isLoaded = Configs::dataStore->routing->Load();
     if (!isLoaded) {
         Configs::dataStore->routing->Save();
     }
 
     Configs::dataStore->shortcuts = std::make_unique<Configs::Shortcuts>();
-    Configs::dataStore->shortcuts->fn = "shortcuts.json";
+    Configs::dataStore->shortcuts->fn = "shortcuts.cfg";
     isLoaded = Configs::dataStore->shortcuts->Load();
     if (!isLoaded) {
         Configs::dataStore->shortcuts->Save();

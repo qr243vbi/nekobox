@@ -79,7 +79,7 @@ namespace Configs_ConfigItem {
         return QJsonObject2QString(ToJson(without), false).toUtf8();
     }
 
-    void * configItem::getPtr(JsonStore * p){
+    void * configItem::getPtr(JsonStore * p) const {
         return (void*)((size_t)p + ptr);
     }
 
@@ -141,7 +141,7 @@ namespace Configs_ConfigItem {
         bool force_json_configs = Configs::ForceJsonConfigs;
 
         auto save_content = 
-            (force_json_configs) ? this->ToJsonBytes() : this->ToBin().payload;//JsonValueToBytes(this->ToBin());
+            (force_json_configs) ? this->ToJsonBytes() : this->ToBytes();//JsonValueToBytes(this->ToBin());
         
         QFile file;
         file.setFileName(fn);
@@ -171,10 +171,8 @@ namespace Configs_ConfigItem {
         } else {
             auto last_save_content = file.read(7);
             if (last_save_content == "NekoBox"){
-                Bin bin;
-                bin.type = ConfigItemType::type_jsonStore;
-                bin.payload = file.readAll();
-                FromBin(bin);
+                last_save_content = file.readAll();
+                FromBytes(last_save_content);
             } else {
                 last_save_content.append(file.readAll());
                 FromJsonBytes(last_save_content);
@@ -290,7 +288,7 @@ QByteArray hash = QCryptographicHash::hash(
    //     ADD_MAP("cache_database_name", cache_database, string);
 
         ADD_MAP("simple_dl_url", simple_dl_url, string);
-        ADD_MAP("force_json_configs", force_json_configs, boolean);
+        ADD_MAP("use_json_configs", force_json_configs, booleanPtr);
         ADD_MAP("auto_test_enable", auto_test_enable, boolean);
         ADD_MAP("auto_test_interval_seconds", auto_test_interval_seconds, integer);
         ADD_MAP("auto_test_proxy_count", auto_test_proxy_count, integer);
@@ -318,9 +316,6 @@ QByteArray hash = QCryptographicHash::hash(
         }
         return user_agent;
     }
-
-    #undef d_add
-    #define d_add(X, Y, B) _put(ptr, X, &this->Y, itemType::B)
 
     // preset routing
     Routing::Routing(int preset) : JsonStore() {
@@ -364,12 +359,6 @@ QByteArray hash = QCryptographicHash::hash(
         }
 
         return JsonStore::Save();
-    }
-
-    bool DataStore::Load() {
-        auto ret = JsonStore::Load();
-        ForceJsonConfigs = this->force_json_configs;
-        return ret;
     }
 
     bool Shortcuts::Load() {

@@ -6,8 +6,6 @@
 
 namespace Configs {
     class AnyTLSBean : public AbstractBean {
-    private:
-        V2rayStreamSettings * streamPtr;
     public:
         QString password = "";
         QString idle_session_check_interval = "30s";
@@ -17,7 +15,6 @@ namespace Configs {
         std::shared_ptr<V2rayStreamSettings> stream = std::make_shared<V2rayStreamSettings>();
 
         AnyTLSBean() : AbstractBean(0) {
-            streamPtr = stream.get();
         }
         
         INIT_MAP
@@ -25,7 +22,7 @@ namespace Configs {
             ADD_MAP("session_idle_check_interval", idle_session_check_interval, string);
             ADD_MAP("session_idle_timeout", idle_session_timeout, string);
             ADD_MAP("min_idle_session", min_idle_session, integer);
-            ADD_MAP("stream", streamPtr, jsonStore);
+            ADD_MAP("stream", stream, jsonStore);
         STOP_MAP
 
         QString DisplayType() override { return "AnyTLS"; };

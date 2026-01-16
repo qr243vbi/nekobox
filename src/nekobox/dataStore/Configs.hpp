@@ -26,6 +26,3 @@ namespace Configs {
 
     QString GetBasePath();
 } // namespace Configs
-
-#define ROUTES_PREFIX_NAME QString("route_profiles")
-#define ROUTES_PREFIX QString(ROUTES_PREFIX_NAME + "/")

@@ -21,7 +21,7 @@ DECL_MAP(ResourceManager)
     ADD_MAP("latest_path", latest_path, string);
 STOP_MAP
 
-ResourceManager::ResourceManager() : JsonStore("resources/manager.json") {
+ResourceManager::ResourceManager() : JsonStore("resource_manager.cfg") {
   symlinks_supported = true;
   load_control_must = true;
   this->Load();

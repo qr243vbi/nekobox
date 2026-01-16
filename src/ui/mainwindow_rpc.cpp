@@ -80,7 +80,7 @@ void MainWindow::runURLTest(const QString& config, bool useDefault, const QStrin
                 if (entid == -1) {
                     continue;
                 }
-                auto ent = Configs::profileManager->GetProfile(entid);
+                std::shared_ptr<Configs::ProxyEntity> ent = Configs::profileManager->GetProfile(entid);
                 if (ent == nullptr) {
                     continue;
                 }
