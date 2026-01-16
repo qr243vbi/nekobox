@@ -125,7 +125,7 @@ jobs:
         run: |
           env INPUT_VERSION=${{ github.event.inputs.tag }} bash -x ./script/deploy_vendor.sh
       - name: Installing ghr
-        if: matrix.cross_os == 'public'
+        if: matrix.cross_os == 'public' && github.event.inputs.publish == 'true'
         run: |
           go install github.com/tcnksm/ghr@latest
           ghr -delete -t "${{ github.token }}" -b "$(echo -e "${{ github.event.inputs.text }}")" -n "${{ github.event.inputs.tag }}" "${{ github.event.inputs.tag }}" deployment
@@ -137,7 +137,7 @@ jobs:
 
       - name: Trigger Open Build Service and Copr
         shell: bash
-        if: matrix.cross_os == 'public'
+        if: matrix.cross_os == 'public' && github.event.inputs.publish == 'true'
         run: |
           pip install osc
           export OBS_USER="${{ secrets.OBS_USER }}"
@@ -148,7 +148,7 @@ jobs:
           bash ./script/trigger_open_build_service.sh
 
       - name: Publish AUR package
-        if: matrix.cross_os == 'public'
+        if: matrix.cross_os == 'public' && github.event.inputs.publish == 'true'
         uses: KSXGitHub/github-actions-deploy-aur@v4.1.1
         with:
           pkgname: nekobox
