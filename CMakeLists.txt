@@ -25,7 +25,7 @@ endif()
 
 set(NEKOBOX_INCLUDE "src/nekobox")
 
-find_package(Qt6 REQUIRED COMPONENTS Widgets Network LinguistTools DBus)
+find_package(Qt6 REQUIRED COMPONENTS Widgets Network LinguistTools)
 
 if (NKR_CROSS)
     set_property(TARGET Qt6::moc PROPERTY IMPORTED_LOCATION /usr/bin/moc)
@@ -373,7 +373,7 @@ target_link_libraries(nekobox PRIVATE ${THRIFT_LIBRARIES})
 # Target Link
 
 target_link_libraries(nekobox PRIVATE
-        Qt6::Widgets Qt6::Network Qt6::DBus
+        Qt6::Widgets Qt6::Network 
         Threads::Threads
         ${NKR_EXTERNAL_TARGETS}
         ${PLATFORM_LIBRARIES}
