@@ -12,7 +12,11 @@ else if [[ $1 == "new-arm64" || -z $1 ]]; then
   ARCH="windows-arm64"
   CROSS=$ARCH
   INST="$DEPLOYMENT/nekobox_setup_arm64"
-fi; fi;
+else if [[ $1 == "386" || -z $1 ]]; then
+  ARCH="windows32"
+  CROSS="windows-i386"
+  INST="$DEPLOYMENT/nekobox_setup_i386"
+fi; fi; fi;
 
 export DEST="$DEPLOYMENT/$ARCH"
 mkdir -p "$DEST"
