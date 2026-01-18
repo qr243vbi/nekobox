@@ -184,12 +184,12 @@ jobs:
         include:
           - platform: windows-11-arm
             target: arm64
-            qt_version: 6.10.1
+            qt_version: 6.10.2
             triplet: arm64-windows
             allow: ${{ github.event.inputs.build_windows_arm64 }}
           - platform: windows-latest
             target: x86_64
-            qt_version: 6.10.1
+            qt_version: 6.10.0
             triplet: x64-windows
             allow: ${{ github.event.inputs.build_windows_x64 }}
       fail-fast: false
@@ -231,8 +231,14 @@ jobs:
           curl -fLso "srslist.json" "https://github.com/qr243vbi/ruleset/raw/refs/heads/rule-set/srslist.json"
           mkdir build
 
+      - name: Install Customized Qt
+        if: 
+        uses: qr243vbi/qt6windows7@main
+        with:
+          version: ${{ matrix.qt_version }}_${{ matrix.target }}
+
       - name: Install Qt
-        if: matrix.allow == 'true' && github.event.inputs.source_only  != 'true'
+        if: matrix.allow == 'true' && github.event.inputs.source_only  != 'true' && matrix.platform == 'windows-11-arm'
         uses: jurplel/install-qt-action@v4.3.0
         with:
           version: ${{ matrix.qt_version }}
@@ -285,11 +291,11 @@ jobs:
       matrix:
         include:
           - platform: ubuntu-24.04
-            qt_version: 6.10.1
+            qt_version: 6.10.2
             target: amd64
             allow: ${{ github.event.inputs.build_ubuntu }}
           - platform: ubuntu-24.04-arm
-            qt_version: 6.10.1
+            qt_version: 6.10.2
             target: arm64
             allow: ${{ github.event.inputs.build_ubuntu_arm }}
       fail-fast: false
