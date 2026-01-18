@@ -145,6 +145,7 @@ jobs:
       contents: read
     needs:
       - build-go
+    runs-on: ubuntu-latest
     if: github.event.inputs.publish == 'true'
     steps:
       - uses: actions/setup-python@v5
