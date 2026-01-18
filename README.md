@@ -4,7 +4,7 @@ Sing-Box command line mode is available now! Just type for additional informatio
 `nekobox_core sing-box --help`
  
 Qt based Desktop cross-platform GUI proxy utility, empowered by [Sing-box](https://github.com/SagerNet/sing-box)
-Supports Windows 11/10 (arm64, x86_64) / Linux  out of the box.
+Supports Windows 11/10/8.1/8/7 (arm64, x86_64) / Linux  out of the box.
 
 <img width="888" height="722" alt="image" src="https://github.com/user-attachments/assets/74393224-963e-4465-8892-d563b9b49b60" />
 
@@ -114,7 +114,7 @@ Throne powers the infrastructure that creators need to better engage and monetiz
 Started in 2021, Throne has revolutionized creator gifting through its Wishlist product. Today, Throne is leveraging the relationships it has built with creators and brands to give creators even more tools to engage with their fans in a safe, fun and enjoyable way. In this way, Throne is a three-sided marketplace connecting world-class brands with creators and their fans. Throne has offices in the US and Germany.
 
 **I have computer with Windows 7, or Window 8, or Windows 8.1. Which version of [NekoBox](https://github.com/qr243vbi/nekobox) should I download?** <br/>
-For Windows 7, Windows 8 and Windows 8.1 it is recommended to install 32 bit [NekoBox](https://github.com/qr243vbi/nekobox), even if you run Windows with x64 cpu support. In generally, 64 bit executables does not means run faster than 32 bit unless program needs more than 2Gb of ram memory, which is not the case with [NekoBox](https://github.com/qr243vbi/nekobox). 64 bit executables are built with latest Qt and does support Windows 10/11 dark theme. You can read more about 32 bit software at [Reddit topic](https://www.reddit.com/r/AskComputerScience/comments/15aqv4o/are_there_any_advantages_to_32_bit_software_or_64/)
+Although Qt and Go have discontinued support for Windows 7, Windows 8, and Windows 8.1, [NekoBox](https://github.com/qr243vbi/nekobox) continues to run seamlessly on these platforms. This is because [NekoBox](https://github.com/qr243vbi/nekobox) uses modified toolchain to ensure compatibility with these operating systems.
 
 **I got the msvcp140.dll not found error on windows** <br/>
 The "msvcp140.dll not found" error usually means that the Microsoft Visual C++ Redistributable is missing or corrupted. To fix this, try install or reinstall the Microsoft Visual C++ Redistributable from the official Microsoft website
