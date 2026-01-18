@@ -66,22 +66,22 @@ jobs:
         include:
           - cross_os: public
             cross_arch: public
-            go_version: "1.25.0"
+            go_version: "1.20.0"
           - cross_os: linux
             cross_arch: amd64
-            go_version: "1.25.0"
+            go_version: "1.20.0"
             allow: ${{ github.event.inputs.build_ubuntu }}
           - cross_os: linux
             cross_arch: arm64
-            go_version: "1.25.0"
+            go_version: "1.20.0"
             allow: ${{ github.event.inputs.build_ubuntu_arm }}
           - cross_os: windows
             cross_arch: amd64
-            go_version: "1.25.0"
+            go_version: "1.20.0"
             allow: ${{ github.event.inputs.build_windows_x64 }}
           - cross_os: windows
             cross_arch: arm64
-            go_version: "1.25.0"
+            go_version: "1.20.0"
             allow: ${{ github.event.inputs.build_windows_arm64 }}
       fail-fast: false
     runs-on: ubuntu-latest
@@ -100,7 +100,7 @@ jobs:
           key: CommonCache-${{ matrix.cross_os }}-${{ matrix.cross_arch }}-${{ hashFiles('script/build_go.sh', 'core/*') }}-${{ matrix.go_version }}
       - name: Install Golang
         if: ( matrix.cross_os == 'public' || ( github.event.inputs.source_only  != 'true' && matrix.allow == 'true' ) ) && steps.cache-common.outputs.cache-hit != 'true'
-        uses: actions/setup-go@v5.5.0
+        uses: qr243vbi/setup-go@main
         with:
           go-version: ${{ matrix.go_version }}
           cache-dependency-path: |
