@@ -41,6 +41,7 @@ Various formats are supported, including share links, JSON array of outbounds an
 
 ## Credits
 
+- []
 - [starifly/NekoBoxForAndroid](https://github.com/starifly/NekoBoxForAndroid)
 - [Thrift](https://thrift.apache.org/)
 - [enfein/mieru](https://github.com/enfein/mbox)
@@ -68,9 +69,11 @@ Various formats are supported, including share links, JSON array of outbounds an
 - [MinGW](https://www.mingw-w64.org)
 - [MSVC](https://visualstudio.microsoft.com/)
 - [go](https://go.dev/)
+- [qt6windows7](https://github.com/qr243vbi/qt6windows7)
 - [MatsuriDayo/nekoray](https://github.com/MatsuriDayo/nekoray)
 - [Open Build Service](https://openbuildservice.org/)
 - [Github](https://github.com)
+- [go-legacy-win7](https://github.com/thongtech/go-legacy-win7)
 - [cv2pdb](https://github.com/rainers/cv2pdb)
 - [cmake](https://gitlab.kitware.com/cmake/cmake)
 - [ninja-build](https://ninja-build.org/)
