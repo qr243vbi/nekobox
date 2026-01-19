@@ -157,6 +157,10 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event.inputs.publish == 'true'
     steps:
+      - name: Checking out sources
+        uses: actions/checkout@v4.2.2
+        with:
+          submodules: 'false'
       - name: Create requirements.txt
         shell: bash
         run: |
@@ -220,7 +224,7 @@ jobs:
         if: matrix.allow == 'true' && github.event.inputs.source_only != 'true'
         uses: actions/checkout@v4.2.2
         with:
-          submodules: "recursive"
+          submodules: "false"
 
       - name: Install NSIS x64
         if: matrix.allow == 'true' && github.event.inputs.source_only != 'true' && matrix.target == 'x86_64'
@@ -337,7 +341,7 @@ jobs:
         if: matrix.allow == 'true' && github.event.inputs.source_only  != 'true'
         uses: actions/checkout@v4.2.2
         with:
-          submodules: "recursive"
+          submodules: "false"
 
       - name: Download Artifacts
         if: matrix.allow == 'true' && github.event.inputs.source_only  != 'true'
@@ -415,6 +419,8 @@ jobs:
     steps:
       - name: Checking out sources
         uses: actions/checkout@v4.2.2
+        with:
+          submodules: "false"
       - name: Download Artifacts
         uses: actions/download-artifact@v4.3.0
         with:
