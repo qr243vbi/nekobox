@@ -280,7 +280,7 @@ jobs:
         if: matrix.allow == 'true' && github.event.inputs.source_only != 'true' && matrix.target == 'i686'
         uses: ilammy/msvc-dev-cmd@v1
         with:
-          arch: x86
+          arch: amd64_x86
           
       - name: Install MSVC compiler
         if: matrix.allow == 'true' && github.event.inputs.source_only != 'true' && matrix.target != 'i686'
