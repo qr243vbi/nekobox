@@ -219,14 +219,12 @@ jobs:
           submodules: "recursive"
 
       - name: Install NSIS x64
-        id: nsis
         if: matrix.allow == 'true' && github.event.inputs.source_only != 'true' && matrix.target == 'x86_64'
         uses: negrutiu/nsis-install@v2
         with:
           arch: x64
 
       - name: Install NSIS x86
-        id: nsis
         if: matrix.allow == 'true' && github.event.inputs.source_only != 'true' && matrix.target == 'i686'
         uses: negrutiu/nsis-install@v2
         with:
