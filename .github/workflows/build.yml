@@ -33,6 +33,11 @@ on:
         type: boolean
         default: true
         required: false
+      build_windows_i686:
+        description: "Build windows i686 binaries"
+        type: boolean
+        default: true
+        required: false
       build_ubuntu:
         description: "Build linux x64 binaries"
         type: boolean
@@ -83,6 +88,10 @@ jobs:
             cross_arch: arm64
             go_version: "1.25.6"
             allow: ${{ github.event.inputs.build_windows_arm64 }}
+          - cross_os: windows
+            cross_arch: 386
+            go_version: "1.25.6"
+            allow: ${{ github.event.inputs.build_windows_i686 }}
       fail-fast: false
     runs-on: ubuntu-latest
     steps:
@@ -192,6 +201,11 @@ jobs:
             qt_version: 6.10.0
             triplet: x64-windows
             allow: ${{ github.event.inputs.build_windows_x64 }}
+          - platform: windows-latest
+            target: i686
+            qt_version: 6.10.0
+            triplet: x86-windows
+            allow: ${{ github.event.inputs.build_windows_x86 }}
       fail-fast: false
     runs-on: ${{ matrix.platform }}
     env:
@@ -199,24 +213,33 @@ jobs:
       INPUT_VERSION: ${{ github.event.inputs.tag }}
     steps:
       - name: Checking out sources
-        if: matrix.allow == 'true' && github.event.inputs.source_only  != 'true'
+        if: matrix.allow == 'true' && github.event.inputs.source_only != 'true'
         uses: actions/checkout@v4.2.2
         with:
           submodules: "recursive"
 
-      - name: Install NSIS
+      - name: Install NSIS x64
         id: nsis
-        if: matrix.allow == 'true' && github.event.inputs.source_only  != 'true' && matrix.target == 'x86_64'
+        if: matrix.allow == 'true' && github.event.inputs.source_only != 'true' && matrix.target == 'x86_64'
         uses: negrutiu/nsis-install@v2
+        with:
+          arch: x64
+
+      - name: Install NSIS x86
+        id: nsis
+        if: matrix.allow == 'true' && github.event.inputs.source_only != 'true' && matrix.target == 'i686'
+        uses: negrutiu/nsis-install@v2
+        with:
+          arch: x86
 
       - name: Install Customized Qt
-        if: matrix.allow == 'true' && github.event.inputs.source_only  != 'true' && matrix.target == 'x86_64'
+        if: matrix.allow == 'true' && github.event.inputs.source_only != 'true' && matrix.target != 'arm64'
         uses: qr243vbi/qt6windows7@main
         with:
           version: ${{ matrix.qt_version }}_${{ matrix.target }}
 
       - name: Install Qt
-        if: matrix.allow == 'true' && github.event.inputs.source_only  != 'true' && matrix.target == 'arm64'
+        if: matrix.allow == 'true' && github.event.inputs.source_only != 'true' && matrix.target == 'arm64'
         uses: jurplel/install-qt-action@v4.3.0
         with:
           version: ${{ matrix.qt_version }}
@@ -241,18 +264,22 @@ jobs:
           path: download-artifact
 
       - name: Download Srslist
-        if: matrix.allow == 'true' && github.event.inputs.source_only  != 'true'
+        if: matrix.allow == 'true' && github.event.inputs.source_only != 'true'
         shell: bash
         run: |
           curl -fLso "srslist.json" "https://github.com/qr243vbi/ruleset/raw/refs/heads/rule-set/srslist.json"
           mkdir build
 
-      - name: Install MSVC compiler
-        if: matrix.allow == 'true' && github.event.inputs.source_only  != 'true'
+      - name: Install MSVC compiler (x86)
+        if: matrix.allow == 'true' && github.event.inputs.source_only != 'true' && matrix.target == 'i686'
         uses: ilammy/msvc-dev-cmd@v1
         with:
-          arch: ${{ matrix.target }}
+          arch: x86
           
+      - name: Install MSVC compiler
+        if: matrix.allow == 'true' && github.event.inputs.source_only != 'true' && matrix.target != 'i686'
+        uses: ilammy/msvc-dev-cmd@v1
+
       - name: Cache Builds
         id: cache-common
         if: github.event.inputs.source_only  != 'true' && matrix.allow == 'true'

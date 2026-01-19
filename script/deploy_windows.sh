@@ -12,10 +12,10 @@ else if [[ $1 == "new-arm64" || -z $1 ]]; then
   ARCH="windows-arm64"
   CROSS=$ARCH
   INST="$DEPLOYMENT/nekobox_setup_arm64"
-else if [[ $1 == "386" || -z $1 ]]; then
+else if [[ $1 == "i686" || -z $1 ]]; then
   ARCH="windows32"
-  CROSS="windows-i386"
-  INST="$DEPLOYMENT/nekobox_setup_i386"
+  CROSS="windows-i686"
+  INST="$DEPLOYMENT/nekobox_setup_i686"
 fi; fi; fi;
 
 export DEST="$DEPLOYMENT/$ARCH"
