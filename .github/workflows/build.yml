@@ -201,11 +201,11 @@ jobs:
             qt_version: 6.10.0
             triplet: x64-windows
             allow: ${{ github.event.inputs.build_windows_x64 }}
-          - platform: windows-2022
+          - platform: windows-latest
             target: i686
             qt_version: 6.10.0
             triplet: x86-windows
-            allow: ${{ github.event.inputs.build_windows_x86 }}
+            allow: ${{ github.event.inputs.build_windows_i686 }}
       fail-fast: false
     runs-on: ${{ matrix.platform }}
     env:
@@ -224,11 +224,11 @@ jobs:
         with:
           arch: x64
 
-#      - name: Install NSIS x86
- #       if: matrix.allow == 'true' && github.event.inputs.source_only != 'true' && matrix.target == 'i686'
-  #      uses: negrutiu/nsis-install@v2
-   #     with:
-    #      arch: x86
+      - name: Install NSIS x86
+        if: matrix.allow == 'true' && github.event.inputs.source_only != 'true' && matrix.target == 'i686'
+        uses: negrutiu/nsis-install@v2
+        with:
+          arch: x86
 
       - name: Install Customized Qt
         if: matrix.allow == 'true' && github.event.inputs.source_only != 'true' && matrix.target != 'arm64'
