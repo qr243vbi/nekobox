@@ -157,6 +157,10 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event.inputs.publish == 'true'
     steps:
+      - name: Create requirements.txt
+        shell: bash
+        run: |
+          echo osc copr > requirements.txt
       - uses: actions/setup-python@v5
         with:
           python-version: '3.13'
