@@ -35,14 +35,16 @@ DialogVPNSettings::DialogVPNSettings(QWidget *parent) : QDialog(parent), ui(new 
     ui->vpn_implementation->addItems(Preset::SingBox::VpnImplementation);
     ui->vpn_implementation->setCurrentText(Configs::dataStore->vpn_implementation);
 //#endif
-    connect(ui->vpn_ipv6, &QCheckBox::checkStateChanged, this, [this](int state) {
+    auto lambda =  [this](int state) {
         bool hidden = (state != Qt::Checked);
         ui->label_3->setHidden(hidden);
         ui->tun_address_6->setHidden(hidden);
-    });
-
+    };
+    connect(ui->vpn_ipv6, &QCheckBox::checkStateChanged, this, lambda);
+    bool ipv6;
     ui->vpn_mtu->setCurrentText(QString::number(Configs::dataStore->vpn_mtu));
-    ui->vpn_ipv6->setChecked(Configs::dataStore->vpn_ipv6);
+    ui->vpn_ipv6->setChecked(ipv6 = Configs::dataStore->vpn_ipv6);
+    lambda( ipv6 ? Qt::Checked : Qt::Unchecked );
     ui->strict_route->setChecked(Configs::dataStore->vpn_strict_route);
     ui->tun_routing->setChecked(Configs::dataStore->enable_tun_routing);
     ui->auto_redirect->hide();
