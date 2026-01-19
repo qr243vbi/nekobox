@@ -296,7 +296,7 @@ jobs:
           if [[ ${{ github.event.inputs.skip_updater }} == 'true' ]]; then export SKIP_UPDATE_BUTTON=ON; else export SKIP_UPDATE_BUTTON=OFF; fi
           cmake $CMAKE_OPTS -DCMAKE_TOOLCHAIN_FILE='${{ github.workspace }}/vcpkg/scripts/buildsystems/vcpkg.cmake' '-DVCPKG_TARGET_TRIPLET=${{ matrix.triplet }}' -DVCPKG_MANIFEST_MODE=OFF -DSKIP_UPDATE_BUTTON="${SKIP_UPDATE_BUTTON}" -DCMAKE_BUILD_TYPE=Release "-DNKR_DEFAULT_VERSION=${INPUT_VERSION}" -S . -B build
           cmake --build build --config Release --verbose
-          ./script/deploy_windows.sh "new-${{ matrix.target }}"
+          ./script/deploy_windows.sh "${{ matrix.target }}"
 
       - name: Tar files
         shell: bash
@@ -472,13 +472,6 @@ jobs:
             mv windows32 nekobox
             zip -9 -r $version_standalone-windows32.zip nekobox
             rm -rf nekobox windows32
-          fi
-          ####
-          if [[ -f nekobox_setup_legacy.exe ]]; then
-            mv nekobox_setup_legacy.exe $version_standalone-windowslegacy64-installer.exe
-            mv windowslegacy64 nekobox
-            zip -9 -r $version_standalone-windowslegacy64.zip nekobox
-            rm -rf nekobox windowslegacy64
           fi
 
       - name: Clean Up
