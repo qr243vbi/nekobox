@@ -201,7 +201,7 @@ jobs:
             qt_version: 6.10.0
             triplet: x64-windows
             allow: ${{ github.event.inputs.build_windows_x64 }}
-          - platform: windows-latest
+          - platform: windows-2022
             target: i686
             qt_version: 6.10.0
             triplet: x86-windows
@@ -224,11 +224,11 @@ jobs:
         with:
           arch: x64
 
-      - name: Install NSIS x86
-        if: matrix.allow == 'true' && github.event.inputs.source_only != 'true' && matrix.target == 'i686'
-        uses: negrutiu/nsis-install@v2
-        with:
-          arch: x86
+#      - name: Install NSIS x86
+ #       if: matrix.allow == 'true' && github.event.inputs.source_only != 'true' && matrix.target == 'i686'
+  #      uses: negrutiu/nsis-install@v2
+   #     with:
+    #      arch: x86
 
       - name: Install Customized Qt
         if: matrix.allow == 'true' && github.event.inputs.source_only != 'true' && matrix.target != 'arm64'
@@ -248,7 +248,7 @@ jobs:
 
       - name: vcpkg build
         uses: johnwason/vcpkg-action@v7
-        if: matrix.allow == 'true' && github.event.inputs.source_only  != 'true'
+        if: matrix.allow == 'true' && github.event.inputs.source_only != 'true'
         id: vcpkg
         with:
           pkgs: thrift
@@ -256,7 +256,7 @@ jobs:
           token: ${{ github.token }}
           
       - name: Download Artifacts
-        if: matrix.allow == 'true' && github.event.inputs.source_only  != 'true'
+        if: matrix.allow == 'true' && github.event.inputs.source_only != 'true'
         uses: actions/download-artifact@v4.3.0
         with:
           path: download-artifact
