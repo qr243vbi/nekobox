@@ -254,6 +254,16 @@ jobs:
           modules: qtcharts
           cache-key-prefix: QtCache-${{ matrix.platform }}-${{ matrix.target }}
 
+      - name: Install MSVC compiler (x86)
+        if: matrix.allow == 'true' && github.event.inputs.source_only != 'true' && matrix.target == 'i686'
+        uses: ilammy/msvc-dev-cmd@v1
+        with:
+          arch: amd64_x86
+
+      - name: Install MSVC compiler
+        if: matrix.allow == 'true' && github.event.inputs.source_only != 'true' && matrix.target != 'i686'
+        uses: ilammy/msvc-dev-cmd@v1
+
       - name: vcpkg build
         uses: johnwason/vcpkg-action@v7
         if: matrix.allow == 'true' && github.event.inputs.source_only != 'true'
@@ -275,16 +285,6 @@ jobs:
         run: |
           curl -fLso "srslist.json" "https://github.com/qr243vbi/ruleset/raw/refs/heads/rule-set/srslist.json"
           mkdir build
-
-      - name: Install MSVC compiler (x86)
-        if: matrix.allow == 'true' && github.event.inputs.source_only != 'true' && matrix.target == 'i686'
-        uses: ilammy/msvc-dev-cmd@v1
-        with:
-          arch: amd64_x86
-          
-      - name: Install MSVC compiler
-        if: matrix.allow == 'true' && github.event.inputs.source_only != 'true' && matrix.target != 'i686'
-        uses: ilammy/msvc-dev-cmd@v1
 
       - name: Cache Builds
         id: cache-common
