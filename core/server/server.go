@@ -98,15 +98,15 @@ func (s *server) Start(ctx context.Context, in *gen.LoadConfigReq) (*gen.ErrorRe
 	if err != nil {
 		return out, nil
 	}
-	if strings.Contains(
-		in.CoreConfig, "tun-in") && strings.Contains(
-		in.CoreConfig, "172.19.0.1/24") {
-		err := sys.SetSystemDNS("172.19.0.2", boxInstance.Network().InterfaceMonitor())
-		if err != nil {
-			log.Println("Failed to set system DNS:", err)
-		}
-		needUnsetDNS = true
-	}
+//	if strings.Contains(
+//		in.CoreConfig, "tun-in") && strings.Contains(
+//		in.CoreConfig, "172.19.0.1/24") {
+//		err := sys.SetSystemDNS("172.19.0.2", boxInstance.Network().InterfaceMonitor())
+//		if err != nil {
+//			log.Println("Failed to set system DNS:", err)
+//		}
+//		needUnsetDNS = true
+//	}
 
 	return out, nil
 }
@@ -125,13 +125,13 @@ func (s *server) Stop(ctx context.Context, in *gen.EmptyReq) (*gen.ErrorResp, er
 		return out, err
 	}
 
-	if needUnsetDNS {
-		needUnsetDNS = false
-		err := sys.SetSystemDNS("Empty", boxInstance.Network().InterfaceMonitor())
-		if err != nil {
-			log.Println("Failed to unset system DNS:", err)
-		}
-	}
+//	if needUnsetDNS {
+//		needUnsetDNS = false
+//		err := sys.SetSystemDNS("Empty", boxInstance.Network().InterfaceMonitor())
+//		if err != nil {
+//			log.Println("Failed to unset system DNS:", err)
+//		}
+//	}
 	boxInstance.CloseWithTimeout(instanceCancel, time.Second*2, log.Println)
 
 	boxInstance = nil

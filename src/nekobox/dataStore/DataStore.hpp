@@ -66,6 +66,10 @@ namespace Configs {
         bool need_keep_vpn_off = false;
         QString appdataDir = "";
         QStringList ignoreConnTag = {};
+  //      bool auto_redirect = false;
+        QString tun_name = "nekobox-tun";
+        QString tun_address = "172.19.0.1/24";
+        QString tun_address_6 = "fdfe:dcba:9876::1/96";
         QString proxy_scheme = "{ip}:{port}";
 
         std::unique_ptr<Routing> routing;

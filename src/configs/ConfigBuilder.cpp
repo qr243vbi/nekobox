@@ -95,9 +95,19 @@ namespace Configs {
         return QJsonObject{};
     }
 
-    QString genTunName() {
-        auto tun_name = "nekobox-tun";
-        return tun_name;
+    QString getTunAddress(){
+        if (Configs::dataStore->tun_address.isEmpty()) return "172.19.0.1/24";
+        return Configs::dataStore->tun_address;
+    }
+
+    QString getTunAddress6(){
+        if (Configs::dataStore->tun_address_6.isEmpty()) return "fdfe:dcba:9876::1/96";
+        return Configs::dataStore->tun_address_6;
+    }
+
+    QString getTunName() {
+        if (Configs::dataStore->tun_name.isEmpty()) return "nekobox-tun";
+        return Configs::dataStore->tun_name;
     }
 
     void MergeJson(const QJsonObject &custom, QJsonObject &outbound) {
@@ -699,16 +709,20 @@ namespace Configs {
             QJsonObject inboundObj;
             inboundObj["tag"] = "tun-in";
             inboundObj["type"] = "tun";
-            inboundObj["interface_name"] = genTunName();
+            inboundObj["interface_name"] = getTunName();
             inboundObj["auto_route"] = true;
             inboundObj["mtu"] = dataStore->vpn_mtu;
             inboundObj["stack"] = dataStore->vpn_implementation;
             inboundObj["strict_route"] = dataStore->vpn_strict_route;
+
+   //         if (dataStore->auto_redirect){
+//                inboundObj["auto_redirect"] = true;
+   //         }
 //#ifdef Q_OS_UNIX
 //            inboundObj["auto_redirect"] = true;
 //#endif
-            auto tunAddress = QJsonArray{"172.19.0.1/24"};
-            if (dataStore->vpn_ipv6) tunAddress += "fdfe:dcba:9876::1/96";
+            auto tunAddress = QJsonArray{getTunAddress()};
+            if (dataStore->vpn_ipv6) tunAddress += getTunAddress6();
             inboundObj["address"] = tunAddress;
 
             QJsonArray routeExcludeAddrs = {
