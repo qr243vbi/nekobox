@@ -75,6 +75,10 @@ namespace Configs {
 
     void BuildOutbound(const std::shared_ptr<ProxyEntity> &ent, const std::shared_ptr<BuildConfigStatus> &status, QJsonObject& outbound, const QString& tag);
 
+    QString getTunName();
+    QString getTunAddress();
+    QString getTunAddress6();
+
     inline QString get_jsdelivr_link(QString link)
     {
         if(dataStore->routing->ruleset_mirror == Mirrors::GITHUB)

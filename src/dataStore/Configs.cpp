@@ -297,6 +297,8 @@ QByteArray hash = QCryptographicHash::hash(
         ADD_MAP("auto_test_failure_retry_count", auto_test_failure_retry_count, integer);
         ADD_MAP("auto_test_target_url", auto_test_target_url, string);
         ADD_MAP("auto_test_tun_failover", auto_test_tun_failover, boolean);
+  //      ADD_MAP("auto_redirect", auto_redirect, boolean);
+        ADD_MAP("tun_name", tun_name, string);
     STOP_MAP
 
     void DataStore::UpdateStartedId(int id) {

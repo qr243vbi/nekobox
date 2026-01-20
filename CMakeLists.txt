@@ -381,7 +381,7 @@ target_link_libraries(nekobox PRIVATE
 
 if (MSVC)
     target_compile_options(nekobox PRIVATE "/std:c++20")       # add c++20 feature
-endif ()
+endif()
 
 qt_finalize_executable(nekobox)
 

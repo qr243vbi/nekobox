@@ -6,12 +6,6 @@ if [[ "$GOOS" == "windows" && "$GOARCH" == "amd64" ]]; then
 else if [[ "$GOOS" == "windows" && "$GOARCH" == "arm64" ]]; then
   DEST=$DEPLOYMENT/windows-arm64
 else if [[ "$GOOS" == "windows" && "$GOARCH" == "386" ]]; then
-  DEST=$DEPLOYMENT/windowsnew32
-else if [[ "$GOOS" == "windowslegacy" && "$GOARCH" == "amd64" ]]; then
-  DEST=$DEPLOYMENT/windowslegacy64
-else if [[ "$GOOS" == "windowslegacy" && "$GOARCH" == "arm64" ]]; then
-  DEST=$DEPLOYMENT/windowslegacy-arm64
-else if [[ "$GOOS" == "windowslegacy" && "$GOARCH" == "386" ]]; then
   DEST=$DEPLOYMENT/windows32
 else if [[ "$GOOS" == "linux" && "$GOARCH" == "amd64" ]]; then
   DEST=$DEPLOYMENT/linux-amd64
@@ -19,7 +13,7 @@ else if [[ "$GOOS" == "linux" && "$GOARCH" == "arm64" ]]; then
   DEST=$DEPLOYMENT/linux-arm64
 else if [[ "$GOOS" == "linux" && "$GOARCH" == "386" ]]; then
   DEST=$DEPLOYMENT/linux-i386
-fi; fi; fi; fi; fi; fi; fi; fi; fi;
+fi; fi; fi; fi; fi; fi;
 
 if [ -z $DEST ]; then
   DEST=$BUILD

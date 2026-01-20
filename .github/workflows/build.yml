@@ -33,6 +33,11 @@ on:
         type: boolean
         default: true
         required: false
+      build_windows_i686:
+        description: "Build windows i686 binaries"
+        type: boolean
+        default: true
+        required: false
       build_ubuntu:
         description: "Build linux x64 binaries"
         type: boolean
@@ -61,28 +66,32 @@ jobs:
     env:
       INPUT_VERSION: ${{ github.event.inputs.tag }}
     strategy:
-      max-parallel: 1
+  #    max-parallel: 1
       matrix:
         include:
           - cross_os: public
             cross_arch: public
-            go_version: "1.25.0"
+            go_version: "1.25.6"
           - cross_os: linux
             cross_arch: amd64
-            go_version: "1.25.0"
+            go_version: "1.25.6"
             allow: ${{ github.event.inputs.build_ubuntu }}
           - cross_os: linux
             cross_arch: arm64
-            go_version: "1.25.0"
+            go_version: "1.25.6"
             allow: ${{ github.event.inputs.build_ubuntu_arm }}
           - cross_os: windows
             cross_arch: amd64
-            go_version: "1.25.0"
+            go_version: "1.25.6"
             allow: ${{ github.event.inputs.build_windows_x64 }}
           - cross_os: windows
             cross_arch: arm64
-            go_version: "1.25.0"
+            go_version: "1.25.6"
             allow: ${{ github.event.inputs.build_windows_arm64 }}
+          - cross_os: windows
+            cross_arch: 386
+            go_version: "1.25.6"
+            allow: ${{ github.event.inputs.build_windows_i686 }}
       fail-fast: false
     runs-on: ubuntu-latest
     steps:
@@ -100,7 +109,7 @@ jobs:
           key: CommonCache-${{ matrix.cross_os }}-${{ matrix.cross_arch }}-${{ hashFiles('script/build_go.sh', 'core/*') }}-${{ matrix.go_version }}
       - name: Install Golang
         if: ( matrix.cross_os == 'public' || ( github.event.inputs.source_only  != 'true' && matrix.allow == 'true' ) ) && steps.cache-common.outputs.cache-hit != 'true'
-        uses: actions/setup-go@v5.5.0
+        uses: qr243vbi/setup-go@main
         with:
           go-version: ${{ matrix.go_version }}
           cache-dependency-path: |
@@ -130,35 +139,6 @@ jobs:
         run: |
           go install github.com/tcnksm/ghr@latest
           ghr -delete -t "${{ github.token }}" -b "$(echo -e "${{ github.event.inputs.text }}")" -n "${{ github.event.inputs.tag }}" "${{ github.event.inputs.tag }}" deployment
-      - uses: actions/setup-python@v5
-        if: matrix.cross_os == 'public'
-        with:
-          python-version: '3.13'
-          cache: 'pip'
-
-      - name: Trigger Open Build Service and Copr
-        shell: bash
-        if: matrix.cross_os == 'public' && github.event.inputs.publish == 'true'
-        run: |
-          pip install osc
-          export OBS_USER="${{ secrets.OBS_USER }}"
-          export OBS_PASSWORD="${{ secrets.OBS_PASSWORD }}"
-          export OBS_HOOK_TOKEN="${{ secrets.OBS_HOOK_TOKEN }}"
-          export INPUT_VERSION="${{ github.event.inputs.tag }}"
-          bash ./script/generate_pkgbuild.sh
-          bash ./script/trigger_open_build_service.sh
-
-      - name: Publish AUR package
-        if: matrix.cross_os == 'public' && github.event.inputs.publish == 'true'
-        uses: KSXGitHub/github-actions-deploy-aur@v4.1.1
-        with:
-          pkgname: nekobox
-          pkgbuild: ./PKGBUILD
-          commit_username: ${{ github.actor }}
-          commit_email: email@email.email
-          ssh_private_key: ${{ secrets.AUR_SSH_PRIVATE_KEY }}
-          commit_message: Update AUR package
-          ssh_keyscan_types: rsa,ecdsa,ed25519
 
       - name: Tar files
         if: matrix.cross_os != 'public' && ( github.event.inputs.source_only  != 'true' && matrix.allow == 'true' && steps.cache-common.outputs.cache-hit != 'true' )
@@ -169,6 +149,48 @@ jobs:
         with:
           name: nekobox-${{ github.sha }}-Common-${{ matrix.cross_os }}-${{ matrix.cross_arch }}
           path: artifacts.tgz
+  upload_aur:
+    permissions:
+      contents: read
+    needs:
+      - build-go
+    runs-on: ubuntu-latest
+    if: github.event.inputs.publish == 'true'
+    steps:
+      - name: Checking out sources
+        uses: actions/checkout@v4.2.2
+        with:
+          submodules: 'false'
+      - name: Create requirements.txt
+        shell: bash
+        run: |
+          echo osc copr > requirements.txt
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+          cache: 'pip'
+
+      - name: Trigger Open Build Service and Copr
+        shell: bash
+        run: |
+          pip install osc
+          export OBS_USER="${{ secrets.OBS_USER }}"
+          export OBS_PASSWORD="${{ secrets.OBS_PASSWORD }}"
+          export OBS_HOOK_TOKEN="${{ secrets.OBS_HOOK_TOKEN }}"
+          export INPUT_VERSION="${{ github.event.inputs.tag }}"
+          bash ./script/generate_pkgbuild.sh
+          bash ./script/trigger_open_build_service.sh
+
+      - name: Publish AUR package
+        uses: KSXGitHub/github-actions-deploy-aur@v4.1.1
+        with:
+          pkgname: nekobox
+          pkgbuild: ./PKGBUILD
+          commit_username: ${{ github.actor }}
+          commit_email: email@email.email
+          ssh_private_key: ${{ secrets.AUR_SSH_PRIVATE_KEY }}
+          commit_message: Update AUR package
+          ssh_keyscan_types: rsa,ecdsa,ed25519
   build-cpp-windows:
     permissions:
       contents: read
@@ -179,14 +201,19 @@ jobs:
         include:
           - platform: windows-11-arm
             target: arm64
-            qt_version: 6.10.1
+            qt_version: 6.10.2
             triplet: arm64-windows
             allow: ${{ github.event.inputs.build_windows_arm64 }}
           - platform: windows-latest
             target: x86_64
-            qt_version: 6.10.1
+            qt_version: 6.10.0
             triplet: x64-windows
             allow: ${{ github.event.inputs.build_windows_x64 }}
+          - platform: windows-latest
+            target: i686
+            qt_version: 6.10.0
+            triplet: x86-windows
+            allow: ${{ github.event.inputs.build_windows_i686 }}
       fail-fast: false
     runs-on: ${{ matrix.platform }}
     env:
@@ -194,40 +221,31 @@ jobs:
       INPUT_VERSION: ${{ github.event.inputs.tag }}
     steps:
       - name: Checking out sources
-        if: matrix.allow == 'true' && github.event.inputs.source_only  != 'true'
+        if: matrix.allow == 'true' && github.event.inputs.source_only != 'true'
         uses: actions/checkout@v4.2.2
         with:
-          submodules: "recursive"
+          submodules: "false"
 
-      - name: Install NSIS
-        id: nsis
-        if: matrix.allow == 'true' && github.event.inputs.source_only  != 'true' && matrix.target == 'x86_64'
+      - name: Install NSIS x64
+        if: matrix.allow == 'true' && github.event.inputs.source_only != 'true' && matrix.target == 'x86_64'
         uses: negrutiu/nsis-install@v2
-
-      - name: vcpkg build
-        uses: johnwason/vcpkg-action@v7
-        if: matrix.allow == 'true' && github.event.inputs.source_only  != 'true'
-        id: vcpkg
         with:
-          pkgs: thrift
-          triplet: ${{ matrix.triplet }}
-          token: ${{ github.token }}
-          
-      - name: Download Artifacts
-        if: matrix.allow == 'true' && github.event.inputs.source_only  != 'true'
-        uses: actions/download-artifact@v4.3.0
-        with:
-          path: download-artifact
+          arch: x64
 
-      - name: Download Srslist
-        if: matrix.allow == 'true' && github.event.inputs.source_only  != 'true'
-        shell: bash
-        run: |
-          curl -fLso "srslist.json" "https://github.com/qr243vbi/ruleset/raw/refs/heads/rule-set/srslist.json"
-          mkdir build
+      - name: Install NSIS x86
+        if: matrix.allow == 'true' && github.event.inputs.source_only != 'true' && matrix.target == 'i686'
+        uses: negrutiu/nsis-install@v2
+        with:
+          arch: x86
+
+      - name: Install Customized Qt
+        if: matrix.allow == 'true' && github.event.inputs.source_only != 'true' && matrix.target != 'arm64'
+        uses: qr243vbi/qt6windows7@main
+        with:
+          version: ${{ matrix.qt_version }}_${{ matrix.target }}
 
       - name: Install Qt
-        if: matrix.allow == 'true' && github.event.inputs.source_only  != 'true'
+        if: matrix.allow == 'true' && github.event.inputs.source_only != 'true' && matrix.target == 'arm64'
         uses: jurplel/install-qt-action@v4.3.0
         with:
           version: ${{ matrix.qt_version }}
@@ -237,11 +255,31 @@ jobs:
           cache-key-prefix: QtCache-${{ matrix.platform }}-${{ matrix.target }}
 
       - name: Install MSVC compiler
-        if: matrix.allow == 'true' && github.event.inputs.source_only  != 'true'
+        if: matrix.allow == 'true' && github.event.inputs.source_only != 'true'
         uses: ilammy/msvc-dev-cmd@v1
+
+      - name: vcpkg build
+        uses: johnwason/vcpkg-action@v7
+        if: matrix.allow == 'true' && github.event.inputs.source_only != 'true'
+        id: vcpkg
         with:
-          arch: ${{ matrix.target }}
+          pkgs: thrift
+          triplet: ${{ matrix.triplet }}
+          token: ${{ github.token }}
           
+      - name: Download Artifacts
+        if: matrix.allow == 'true' && github.event.inputs.source_only != 'true'
+        uses: actions/download-artifact@v4.3.0
+        with:
+          path: download-artifact
+
+      - name: Download Srslist
+        if: matrix.allow == 'true' && github.event.inputs.source_only != 'true'
+        shell: bash
+        run: |
+          curl -fLso "srslist.json" "https://github.com/qr243vbi/ruleset/raw/refs/heads/rule-set/srslist.json"
+          mkdir build
+
       - name: Cache Builds
         id: cache-common
         if: github.event.inputs.source_only  != 'true' && matrix.allow == 'true'
@@ -254,10 +292,11 @@ jobs:
         if: matrix.allow == 'true' && github.event.inputs.source_only  != 'true'
         shell: bash
         run: |
+          if [[ ${{ matrix.target }} == 'i686' ]]; then export CMAKE_OPTS="-A Win32"; fi
           if [[ ${{ github.event.inputs.skip_updater }} == 'true' ]]; then export SKIP_UPDATE_BUTTON=ON; else export SKIP_UPDATE_BUTTON=OFF; fi
-          cmake  -DCMAKE_TOOLCHAIN_FILE='${{ github.workspace }}/vcpkg/scripts/buildsystems/vcpkg.cmake' '-DVCPKG_TARGET_TRIPLET=${{ matrix.triplet }}' -DVCPKG_MANIFEST_MODE=OFF -DSKIP_UPDATE_BUTTON="${SKIP_UPDATE_BUTTON}" -DCMAKE_BUILD_TYPE=Release "-DNKR_DEFAULT_VERSION=${INPUT_VERSION}" -S . -B build
+          cmake $CMAKE_OPTS -DCMAKE_TOOLCHAIN_FILE='${{ github.workspace }}/vcpkg/scripts/buildsystems/vcpkg.cmake' '-DVCPKG_TARGET_TRIPLET=${{ matrix.triplet }}' -DVCPKG_MANIFEST_MODE=OFF -DSKIP_UPDATE_BUTTON="${SKIP_UPDATE_BUTTON}" -DCMAKE_BUILD_TYPE=Release "-DNKR_DEFAULT_VERSION=${INPUT_VERSION}" -S . -B build
           cmake --build build --config Release --verbose
-          ./script/deploy_windows.sh "new-${{ matrix.target }}"
+          ./script/deploy_windows.sh "${{ matrix.target }}"
 
       - name: Tar files
         shell: bash
@@ -280,11 +319,11 @@ jobs:
       matrix:
         include:
           - platform: ubuntu-24.04
-            qt_version: 6.10.1
+            qt_version: 6.10.2
             target: amd64
             allow: ${{ github.event.inputs.build_ubuntu }}
           - platform: ubuntu-24.04-arm
-            qt_version: 6.10.1
+            qt_version: 6.10.2
             target: arm64
             allow: ${{ github.event.inputs.build_ubuntu_arm }}
       fail-fast: false
@@ -297,7 +336,7 @@ jobs:
         if: matrix.allow == 'true' && github.event.inputs.source_only  != 'true'
         uses: actions/checkout@v4.2.2
         with:
-          submodules: "recursive"
+          submodules: "false"
 
       - name: Download Artifacts
         if: matrix.allow == 'true' && github.event.inputs.source_only  != 'true'
@@ -375,6 +414,8 @@ jobs:
     steps:
       - name: Checking out sources
         uses: actions/checkout@v4.2.2
+        with:
+          submodules: "false"
       - name: Download Artifacts
         uses: actions/download-artifact@v4.3.0
         with:
@@ -432,13 +473,6 @@ jobs:
             zip -9 -r $version_standalone-windows32.zip nekobox
             rm -rf nekobox windows32
           fi
-          ####
-          if [[ -f nekobox_setup_legacy.exe ]]; then
-            mv nekobox_setup_legacy.exe $version_standalone-windowslegacy64-installer.exe
-            mv windowslegacy64 nekobox
-            zip -9 -r $version_standalone-windowslegacy64.zip nekobox
-            rm -rf nekobox windowslegacy64
-          fi
 
       - name: Clean Up
         shell: bash
@@ -456,32 +490,29 @@ jobs:
           ./ghr.exe -replace -t "${{ github.token }}" -b "$(echo -e "${{ github.event.inputs.text }}")" -n "${{ github.event.inputs.tag }}" "${{ github.event.inputs.tag }}" deployment
 
   upload_winget:
-    name: Trigger Open Build Service
+    name: Trigger WingetPkgs
     runs-on: ubuntu-latest
     needs:
       - publish
     permissions:
       contents: read
       actions: read
-    if: github.event.inputs.publish == 'true'
+    if: github.event.inputs.publish == 'true' && github.event.inputs.build_windows_arm64 == 'true' && github.event.inputs.build_windows_x64 == 'true' && github.event.inputs.publish_winget == 'true' && github.event.inputs.source_only != 'true'
     steps:
       - uses: actions/checkout@v4
       - name: Linux - Install apt dependencies
-        if: github.event.inputs.build_windows_arm64 == 'true' && github.event.inputs.build_windows_x64 == 'true' && github.event.inputs.publish_winget == 'true' && github.event.inputs.source_only  != 'true'
         uses: awalsh128/cache-apt-pkgs-action@latest
         with:
           packages: curl jq git gh
           version: 1.0
           
       - name: Cache winget-pkgs
-        if: github.event.inputs.build_windows_arm64 == 'true' && github.event.inputs.build_windows_x64 == 'true' && github.event.inputs.publish_winget == 'true' && github.event.inputs.source_only  != 'true'
         uses: actions/cache@v4.2.3
         with:
           path: build
           key: CommonCache-WingetPkgs-Cache
 
       - name: Run winget-pkgs
-        if: github.event.inputs.build_windows_arm64 == 'true' && github.event.inputs.build_windows_x64 == 'true' && github.event.inputs.publish_winget == 'true' && github.event.inputs.source_only  != 'true'
         shell: bash
         run: |
           export GITHUB_TOKEN="${{ secrets.WINGET_TOKEN }}"
