@@ -44,7 +44,7 @@ DialogVPNSettings::DialogVPNSettings(QWidget *parent) : QDialog(parent), ui(new 
     bool ipv6;
     ui->vpn_mtu->setCurrentText(QString::number(Configs::dataStore->vpn_mtu));
     ui->vpn_ipv6->setChecked(ipv6 = Configs::dataStore->vpn_ipv6);
-    lambda( ipv6 ? Qt::Checked : Qt::Unchecked );
+
     ui->strict_route->setChecked(Configs::dataStore->vpn_strict_route);
     ui->tun_routing->setChecked(Configs::dataStore->enable_tun_routing);
     ui->auto_redirect->hide();
@@ -53,6 +53,10 @@ DialogVPNSettings::DialogVPNSettings(QWidget *parent) : QDialog(parent), ui(new 
     ui->tun_address->setText(Configs::getTunAddress());
     ui->tun_address_6->setText(Configs::getTunAddress6());
     ADJUST_SIZE
+
+    if (!ipv6){
+        lambda(Qt::Unchecked);
+    }
 }
 
 DialogVPNSettings::~DialogVPNSettings() {
