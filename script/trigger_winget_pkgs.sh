@@ -5,13 +5,17 @@ BASE_BRANCH="master"
 USERNAME="qr243vbi"
 PROGID="NekoBox"
 A='q'
-OLDVER='5.9.25'
+OLDVER='5.10.2'
 
 text="$(curl -s -H "Accept: application/vnd.github.v3+json" https://api.github.com/repos/qr243vbi/nekobox/releases/tags/$INPUT_VERSION)"
 asset_res="$(echo "$text"  | jq '.assets[] | select(.browser_download_url | endswith("-installer.exe"))')"
 
+OLD_SHA_32='0AE140E83036DFC0E573A8955D31540149816ABF7FBBAE1E86339AD830F03FC0'
+OLD_SHA_64='153A91B21C1D2EC0CA7628FECB01855DC3EEE740F68F42654B295B9CF5A8C79C'
+OLD_SHA_ARM64='F58B1EFF96D115FB5125B64E2E4BE532912C19F1236D0B1BC8FEF501FBA59A26'
+OLD_DATE='2026-01-03'
 
-PATTERN="s~/S /WINGET=1~/S /NOSCRIPT=1 /WINGET=1~g;s~$OLDVER~$INPUT_VERSION~g;s~2025-01-03~$(date +%Y-%m-%d)~g;$(echo $asset_res | jq -r '"\(.name)_\(.digest | ascii_upcase)"' | sed 's~.*arm64.*:\(.*\)~s@55DE53FA4B6CA5C3DC4DCB9A0EDE9AB933511C206E1289930DD35075E9C22147@\1@g;~g;s~.*windows64.*:\(.*\)~s@0AC94CBAA96CE3F101B9C8773E7227ABD053BE7DA18A84A3F3D6B6DBD7632CC5@\1@g;~g;' | sed ':a;N;$!ba;s/\n//g')"
+PATTERN="s~/S /WINGET=1~/S /NOSCRIPT=1 /WINGET=1~g;s~$OLDVER~$INPUT_VERSION~g;s~$OLD_DATE~$(date +%Y-%m-%d)~g;$(echo $asset_res | jq -r '"\(.name)_\(.digest | ascii_upcase)"' | sed "s~.*windows32.*:\(.*\)~s@$OLD_SHA_32@\1@g;~g;s~.*arm64.*:\(.*\)~s@$OLD_SHA_ARM64@\1@g;~g;s~.*windows64.*:\(.*\)~s@$OLD_SHA_64@\1@g;~g;" | sed ':a;N;$!ba;s/\n//g')"
 
 NEW_BRANCH_NAME="NekoBox-branch-$INPUT_VERSION-$(date +'%Y%m%d%H%M%S')"
 git clone --depth 10 "https://${USERNAME}:${GITHUB_TOKEN}@github.com/${USERNAME}/winget-pkgs" ||:
