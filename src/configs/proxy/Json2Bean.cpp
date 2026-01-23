@@ -302,6 +302,7 @@ namespace Configs
         serverPort = obj["server_port"].toInt();
         password = obj["password"].toString();
         username = obj["username"].toString();
+        transport = obj["transport"].toString();
         multiplexing = obj["multiplexing"].toString();
         auto & ports = serverPorts;
         ports.clear();

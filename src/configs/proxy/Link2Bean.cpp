@@ -553,6 +553,7 @@ namespace Configs {
         serverPort = url.port();
         username = query.queryItemValue("username");
         password = query.queryItemValue("password");
+        transport = query.queryItemValue("transport");
         multiplexing = query.queryItemValue("multiplexing");
         serverPorts = query.queryItemValue("server_ports").split(",");
         return true;
