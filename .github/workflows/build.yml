@@ -1,4 +1,4 @@
-name: nekobox build matrix
+name: Iblis build matrix
 on:
   workflow_dispatch:
     inputs:
