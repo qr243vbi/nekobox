@@ -56,7 +56,7 @@ on:
       publish_winget:
         description: "Publish WinGet manifest"
         type: boolean
-        default: true
+        default: false
         required: false
 jobs:
   build-go:
