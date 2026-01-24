@@ -320,7 +320,7 @@ MainWindow::MainWindow(QWidget *parent)
       software_build_date = NKR_TIMESTAMP;
     }
 #endif
-    software_name = globalSettings.value("software_name", "nekobox").toString();
+    software_name = globalSettings.value("software_name", "Iblis").toString();
     software_core_name =
         globalSettings.value("software_core_name", "sing-box").toString();
   }
@@ -3394,6 +3394,15 @@ void MainWindow::RegisterHotkey(bool unregister) {
   }
 }
 
+void MainWindow::RegisterHiddenMenuShortcuts(QMenu * menu){
+  for (const auto &action : menu->actions()) {
+    if (!action->shortcut().toString().isEmpty()) {
+      hiddenMenuShortcuts.append(new QShortcut(
+          action->shortcut(), this, [=, this]() { action->trigger(); }));
+    }
+  }
+}
+
 void MainWindow::RegisterHiddenMenuShortcuts(bool unregister) {
   for (const auto s : hiddenMenuShortcuts)
     s->deleteLater();
@@ -3402,26 +3411,10 @@ void MainWindow::RegisterHiddenMenuShortcuts(bool unregister) {
   if (unregister)
     return;
 
-  for (const auto &action : ui->menuHidden_menu->actions()) {
-    if (!action->shortcut().toString().isEmpty()) {
-      hiddenMenuShortcuts.append(new QShortcut(
-          action->shortcut(), this, [=, this]() { action->trigger(); }));
-    }
-  }
-
-  for (const auto &action : ui->menu_server->actions()) {
-    if (!action->shortcut().toString().isEmpty()) {
-      hiddenMenuShortcuts.append(new QShortcut(
-          action->shortcut(), this, [=, this]() { action->trigger(); }));
-    }
-  }
-
-  for (const auto &action : ui->menu_test->actions()) {
-    if (!action->shortcut().toString().isEmpty()) {
-      hiddenMenuShortcuts.append(new QShortcut(
-          action->shortcut(), this, [=, this]() { action->trigger(); }));
-    }
-  }
+  RegisterHiddenMenuShortcuts(ui->menuHidden_menu);
+  RegisterHiddenMenuShortcuts(ui->menu_server);
+  RegisterHiddenMenuShortcuts(ui->menu_test);
+  RegisterHiddenMenuShortcuts(ui->menu_share_item);
 }
 
 void MainWindow::setActionsData() {

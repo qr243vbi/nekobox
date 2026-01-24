@@ -62,7 +62,7 @@ cp "$BUILD/nekobox.exe" "$DEST" || cp "$BUILD/Release/nekobox.exe" "$DEST"
 
 cp -RT "$CURDIR/res/public" "$DEST/public"
 echo "[General]" > "$DEST/global.ini"
-echo "software_name=NelBox" >> "$DEST/global.ini"
+echo "software_name=Iblis" >> "$DEST/global.ini"
 echo "software_version=$INPUT_VERSION" >> "$DEST/global.ini"
 
 if [[ "$COMPILER" != "MinGW" ]]
@@ -76,7 +76,7 @@ fi
 (
 cd "$CURDIR"
 pwd
-makensis.exe "-DSOFTWARE_VERSION=$INPUT_VERSION" "-DSOFTWARE_NAME=NekoBox" "-DDIRECTORY=$DEST" "-DOUTFILE=$INST" "-NOCD" 'script/windows_installer.nsi'
+makensis.exe "-DSOFTWARE_VERSION=$INPUT_VERSION" "-DSOFTWARE_NAME=Iblis" "-DDIRECTORY=$DEST" "-DOUTFILE=$INST" "-NOCD" 'script/windows_installer.nsi'
 )
 
 popd

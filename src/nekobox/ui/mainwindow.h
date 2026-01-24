@@ -329,6 +329,8 @@ private:
 
     void RegisterHiddenMenuShortcuts(bool unregister = false);
 
+    void RegisterHiddenMenuShortcuts(QMenu * menu);
+
     void setActionsData();
 
     QList<QAction*> getActionsForShortcut();

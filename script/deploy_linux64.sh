@@ -96,7 +96,7 @@ patchelf --set-rpath '$ORIGIN/../../lib' ./usr/plugins/platformthemes/libqxdgdes
 cp "$CURDIR/"*.js "$DEST"
 cp -RT "$CURDIR/res/public" "$DEST/public"
 echo "[General]" > "$DEST/global.ini"
-echo "software_name=NekoBox" >> "$DEST/global.ini"
+echo "software_name=Iblis" >> "$DEST/global.ini"
 echo "software_version=$INPUT_VERSION" >> "$DEST/global.ini"
 
 cd "$DEST"
@@ -163,7 +163,7 @@ cat << EOF > ./AppDir/nekobox.desktop
 Version=1.0
 Terminal=false
 Type=Application
-Name=nekobox
+Name=Iblis
 Categories=Network;
 Keywords=Internet;VPN;Proxy;sing-box;
 Exec=nekobox
