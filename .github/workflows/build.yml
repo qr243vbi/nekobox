@@ -1,4 +1,4 @@
-name: Iblis build matrix
+name: NyameBox build matrix
 on:
   workflow_dispatch:
     inputs:
