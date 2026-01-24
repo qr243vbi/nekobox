@@ -160,7 +160,7 @@ cat << EOF > ./AppDir/nekobox.desktop
 Version=1.0
 Terminal=false
 Type=Application
-Name=Iblis
+Name=NekoBox
 Categories=Network;
 Keywords=Internet;VPN;Proxy;sing-box;
 Exec=nekobox

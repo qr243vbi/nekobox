@@ -1,8 +1,8 @@
 !ifdef SOFTWARE_NAME
     Name "${SOFTWARE_NAME}"
 !else
-	!define SOFTWARE_NAME Iblis
-    Name "Iblis"
+	!define SOFTWARE_NAME NekoBox
+    Name "NekoBox"
 !endif
 
 !ifdef OUTFILE
