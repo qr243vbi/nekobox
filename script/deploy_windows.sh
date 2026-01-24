@@ -61,9 +61,6 @@ cp "$BUILD/nekobox.exe" "$DEST" || cp "$BUILD/Release/nekobox.exe" "$DEST"
 [[ -f "$BUILD/updater.exe" ]] && cp "$BUILD/updater.exe" "$DEST"
 
 cp -RT "$CURDIR/res/public" "$DEST/public"
-echo "[General]" > "$DEST/global.ini"
-echo "software_name=Iblis" >> "$DEST/global.ini"
-echo "software_version=$INPUT_VERSION" >> "$DEST/global.ini"
 
 if [[ "$COMPILER" != "MinGW" ]]
 then
