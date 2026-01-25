@@ -1281,6 +1281,7 @@ bool MainWindow::getRuleSet() {
   }
   bool first_attempt = true;
   for (QString str : urls){
+    MW_show_log(QObject::tr("Check Rule Sets: %1").arg(str));
     for (int retry = 0; retry < 5; retry++) {
       auto body = NetworkRequestHelper::HttpGet(
         Configs::get_jsdelivr_link(str));
@@ -1294,13 +1295,15 @@ bool MainWindow::getRuleSet() {
         for (auto [key, value] : asKeyValueRange(QString2QMap(body.data))){
           ruleSetMap[key] = value;
         };
-        continue;
+        goto continue_loop1;
       } else {
         QThread::sleep(30);
       }
     }
     MW_show_log(QObject::tr("Requesting rule-set list error: %1").arg(err));
     return false;
+    continue_loop1:
+    continue;
   }
   if (!first_attempt){
     QVariantMap qvar;
