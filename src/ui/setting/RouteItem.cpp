@@ -111,8 +111,8 @@ RouteItem::RouteItem(QWidget *parent, const std::shared_ptr<Configs::RoutingChai
     ui->skip_update->setChecked( (chain->skip_update) ? Qt::Checked : Qt::Unchecked);
 
     // setup rule set helper
-    for (const auto& item : ruleSetMap) {
-        geo_items.append(QString::fromStdString(item.first));
+    for (const auto& item : ruleSetMap.keys()) {
+        geo_items.append(item);
     }
     rule_set_editor = new AutoCompleteTextEdit("", geo_items, this);
     ui->rule_attr_data->layout()->addWidget(rule_set_editor);
@@ -259,8 +259,8 @@ RouteItem::RouteItem(QWidget *parent, const std::shared_ptr<Configs::RoutingChai
 
     // simple rules setup
     QStringList ruleItems = {"domain:", "suffix:", "regex:", "keyword:", "ip:", "processName:", "processPath:", "ruleset:"};
-    for (const auto& item : ruleSetMap) {
-        ruleItems.append("ruleset:" + QString::fromStdString(item.first));
+    for (const auto& item : ruleSetMap.keys()) {
+        ruleItems.append("ruleset:" +item);
     }
     simpleDirect = new AutoCompleteTextEdit("", ruleItems, this);
     simpleBlock = new AutoCompleteTextEdit("", ruleItems, this);

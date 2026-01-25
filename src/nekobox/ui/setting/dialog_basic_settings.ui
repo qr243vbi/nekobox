@@ -196,6 +196,13 @@
             </property>
            </widget>
           </item>
+          <item>
+           <widget class="QCheckBox" name="startup_update">
+            <property name="text">
+             <string>Request update at startup</string>
+            </property>
+           </widget>
+          </item>
          </layout>
         </widget>
        </item>
@@ -1143,6 +1150,12 @@
           <bool>true</bool>
          </property>
          <layout class="QHBoxLayout" name="horizontalLayout_8">
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
           <item>
            <spacer name="horizontalSpacer_9">
             <property name="orientation">
@@ -1271,7 +1284,13 @@
           <bool>true</bool>
          </property>
          <layout class="QGridLayout" name="gridLayout_11">
+          <property name="topMargin">
+           <number>0</number>
+          </property>
           <property name="rightMargin">
+           <number>0</number>
+          </property>
+          <property name="bottomMargin">
            <number>0</number>
           </property>
           <property name="horizontalSpacing">
@@ -1446,6 +1465,15 @@
           <bool>true</bool>
          </property>
          <layout class="QHBoxLayout" name="horizontalLayout_9">
+          <property name="spacing">
+           <number>6</number>
+          </property>
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
           <item>
            <spacer name="horizontalSpacer_4">
             <property name="orientation">
@@ -1580,6 +1608,12 @@
           <bool>true</bool>
          </property>
          <layout class="QHBoxLayout" name="horizontalLayout_7">
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
           <item>
            <widget class="QLineEdit" name="core_path">
             <property name="sizePolicy">
@@ -1748,6 +1782,12 @@
           <bool>true</bool>
          </property>
          <layout class="QHBoxLayout" name="horizontalLayout_6">
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
           <item>
            <widget class="QLineEdit" name="icons_path">
             <property name="sizePolicy">

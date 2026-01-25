@@ -16,7 +16,7 @@ class RouteItem;
 #include <map>
 #include <string>
 #include <QList>
-extern  std::map<std::string, std::string> ruleSetMap;
+extern  QVariantMap ruleSetMap;
 extern  QList<QString> default_outbound_choose;
 
 QT_BEGIN_NAMESPACE

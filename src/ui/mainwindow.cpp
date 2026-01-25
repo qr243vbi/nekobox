@@ -1,5 +1,6 @@
 #include "nekobox/ui/mainwindow.h"
 
+#include "3rdparty/qv2ray/wrapper.hpp"
 #include "nekobox/configs/ConfigBuilder.hpp"
 #include "nekobox/configs/sub/GroupUpdater.hpp"
 #include "nekobox/dataStore/Const.hpp"
@@ -14,6 +15,7 @@
 #include <QMutex>
 #include <QQueue>
 #include <QWaitCondition>
+#include <qcontainerfwd.h>
 #include <qnamespace.h>
 #include <set>
 #ifdef _WIN32
@@ -79,7 +81,7 @@
 #include <map>
 #include <string>
 
-extern std::map<std::string, std::string> ruleSetMap;
+extern QVariantMap ruleSetMap;
 
 void setAppIcon(Icon::TrayIconStatus, QSystemTrayIcon *, MainWindow *window);
 
@@ -272,28 +274,6 @@ bool MainWindow::isShowRuleSetData() { return showRuleSetData; }
 
 void UI_InitMainWindow() { mainwindow = new MainWindow; }
 
-std::map<std::string, std::string> jsonToMap(const QByteArray &byteArray) {
-  std::map<std::string, std::string> result;
-
-  // Convert QByteArray to QJsonDocument
-  QJsonDocument jsonDoc = QJsonDocument::fromJson(byteArray);
-
-  // Check if conversion was successful
-  if (!jsonDoc.isNull() && jsonDoc.isObject()) {
-    QJsonObject jsonObj = jsonDoc.object();
-
-    // Iterate over the QJsonObject and populate the std::map
-    for (const auto &key : jsonObj.keys()) {
-      result[key.toStdString()] =
-          jsonObj[key].toVariant().toString().toStdString();
-    }
-  } else {
-    // Handle error
-    qWarning() << "Failed to convert QByteArray to QJsonDocument.";
-  }
-
-  return result;
-}
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent), ui(new Ui::MainWindow) {
@@ -861,7 +841,7 @@ MainWindow::MainWindow(QWidget *parent)
     QByteArray byteArray = srslist->readAll();
     srslist->close();
     delete srslist;
-    ruleSetMap = jsonToMap(byteArray);
+    ruleSetMap = QString2QMap(byteArray);
   } else {
     delete srslist;
     runOnNewThread([this]() { getRuleSet(); });
@@ -957,11 +937,11 @@ MainWindow::MainWindow(QWidget *parent)
             if (mu_download_update.try_lock()) {
               QMutex mut;
               showRuleSetData = true;
-              for (auto &item : ruleSetMap) {
+              for (auto &item : ruleSetMap.values()) {
                 if (!showRuleSetData) {
                   break;
                 }
-                QString url(QString::fromStdString(item.second));
+                QString url(item.toString());
                 QString str = Configs::get_cache_from_str(url);
                 QFile cache_file(str);
                 if (!cache_file.exists()) {
@@ -1288,23 +1268,48 @@ int MainWindow::updateRouteProfiles() {
 
 bool MainWindow::getRuleSet() {
   QString err;
-  for (int retry = 0; retry < 5; retry++) {
-    auto err = NetworkRequestHelper::DownloadAsset(
-        Configs::get_jsdelivr_link(
-            Configs::dataStore->routing->ruleset_json_url),
-        "srslist.json");
-    if (err.isEmpty()) {
-      QFile file("srslist.json");
-      if (file.open(QIODevice::ReadOnly)) {
-        auto resp_data = file.readAll();
-        ruleSetMap = jsonToMap(resp_data);
-      }
-      return true;
-    } else
-      QThread::sleep(30);
+  QStringList urls;
+  QJsonDocument doc = QJsonDocument::fromJson(
+    Configs::dataStore->routing->ruleset_json_url.toUtf8());
+  if (doc.isArray()){
+    urls = QJsonArray2QListStr(doc.array());
+  } else {
+    QUrl url(Configs::dataStore->routing->ruleset_json_url);
+    if (url.isValid()){
+      urls << url.toString();
+    }
   }
-  MW_show_log(QObject::tr("Requesting rule-set list error: %1").arg(err));
-  return false;
+  bool first_attempt = true;
+  for (QString str : urls){
+    for (int retry = 0; retry < 5; retry++) {
+      auto body = NetworkRequestHelper::HttpGet(
+        Configs::get_jsdelivr_link(str));
+
+      err = body.error;
+      if (err.isEmpty()) {
+        if (first_attempt){
+          first_attempt = false;
+          ruleSetMap.clear();
+        }
+        for (auto [key, value] : asKeyValueRange(QString2QMap(body.data))){
+          ruleSetMap[key] = value;
+        };
+        continue;
+      } else {
+        QThread::sleep(30);
+      }
+    }
+    MW_show_log(QObject::tr("Requesting rule-set list error: %1").arg(err));
+    return false;
+  }
+  if (!first_attempt){
+    QVariantMap qvar;
+    for (auto [key, value]: asKeyValueRange(ruleSetMap)){
+      qvar.insert(key, value);
+    }
+    WriteFileText("srslist.json", QMap2QString(qvar));
+  }
+  return true;
 }
 
 void MainWindow::dragEnterEvent(QDragEnterEvent *event) {
