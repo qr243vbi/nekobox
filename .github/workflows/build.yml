@@ -51,12 +51,12 @@ on:
       publish_chocolatey:
         description: "Publish chocolatey packages"
         type: boolean
-        default: false
+        default: true
         required: false
       publish_winget:
         description: "Publish WinGet manifest"
         type: boolean
-        default: false
+        default: true
         required: false
 jobs:
   build-go:
@@ -448,19 +448,10 @@ jobs:
           rm -rf *.pdb ||:
           ####
           if [[ -f nekobox_setup.exe ]]; then
-            CHECKSUM=$(sha256sum nekobox_setup.exe)
-            export sha_x64="${CHECKSUM%% *}"
             mv nekobox_setup.exe $version_standalone-windows64-installer.exe
             mv windows64 nekobox
             zip -9 -r $version_standalone-windows64.zip nekobox
             rm -rf nekobox windows64
-          fi
-          if [[ -n $sha_x64 ]]; then
-            (
-              cd ../script
-              source build_chocolatey.sh
-              mv nekobox/*.nupkg ../deployment/
-            )
           fi
           ####
           if [[ -f nekobox_setup_arm64.exe ]]; then
@@ -493,14 +484,14 @@ jobs:
           ./ghr.exe -replace -t "${{ github.token }}" -b "$(echo -e "${{ github.event.inputs.text }}")" -n "${{ github.event.inputs.tag }}" "${{ github.event.inputs.tag }}" deployment
 
   upload_winget:
-    name: Trigger WingetPkgs
+    name: Trigger WingetPkgs and Chocolatey
     runs-on: ubuntu-latest
     needs:
       - publish
     permissions:
       contents: read
       actions: read
-    if: github.event.inputs.publish == 'true' && github.event.inputs.build_windows_arm64 == 'true' && github.event.inputs.build_windows_x86 == 'true' && github.event.inputs.build_windows_x64 == 'true' && github.event.inputs.publish_winget == 'true' && github.event.inputs.source_only != 'true'
+    if: github.event.inputs.publish == 'true' && github.event.inputs.build_windows_arm64 == 'true' && github.event.inputs.build_windows_x86 == 'true' && github.event.inputs.build_windows_x64 == 'true' && github.event.inputs.source_only != 'true'
     steps:
       - uses: actions/checkout@v4
       - name: Linux - Install apt dependencies
@@ -508,12 +499,6 @@ jobs:
         with:
           packages: curl jq git gh
           version: 1.0
-          
-      - name: Cache winget-pkgs
-        uses: actions/cache@v4.2.3
-        with:
-          path: build
-          key: CommonCache-WingetPkgs-Cache
 
       - name: Run winget-pkgs
         shell: bash
@@ -521,6 +506,17 @@ jobs:
           export GITHUB_TOKEN="${{ secrets.WINGET_TOKEN }}"
           export INPUT_VERSION="${{ github.event.inputs.tag }}"
           export EMAIL="${{ secrets.EMAIL }}"
-          bash ./script/trigger_winget_pkgs.sh
+          export UPLOAD_WITH_GH=yes
+          if [[ '${{ github.event.inputs.publish_winget }}' == 'true' ]]
+          then
+            bash ./script/trigger_winget_pkgs.sh
+          fi
+          if [[ '${{ github.event.inputs.publish_chocolatey }}' == 'true' ]]
+          then
+            pushd script
+            bash chocolatey_push.sh
+            popd
+          fi
+
 
 

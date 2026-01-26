@@ -14,11 +14,11 @@ $packageArgs = @{
   packageName   = $env:ChocolateyPackageName
   unzipLocation = $toolsDir
   fileType      = 'exe'
-#  url           = '@URL_x86@'
+  url           = '@URL_x86@'
   url64bit      = '@URL_x64@'
   softwareName  = 'nekobox*'
-#  checksum      = '@SHA_x86@'
-#  checksumType  = 'sha256'
+  checksum      = '@SHA_x86@'
+  checksumType  = 'sha256'
   checksum64    = '@SHA_x64@'
   checksumType64= 'sha256'
   silentArgs    = "/S /D=C:\tools\NekoBox"
