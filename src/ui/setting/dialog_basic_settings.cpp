@@ -252,7 +252,11 @@ DialogBasicSettings::DialogBasicSettings(MainWindow *parent)
     auto validator = new QIntValidator(0, 0xfffffff, this);
     S_LOAD_BOOL(save_geometry, true)
     S_LOAD_BOOL(save_position, true)
-    S_LOAD_BOOL(startup_update, false)
+    if (Configs::dataStore->startup_update != 4){
+        S_LOAD_BOOL(startup_update, false)
+    } else {
+        ui->startup_update->hide();
+    }
     S_LOAD_INT(width, 0)
     S_LOAD_INT(height, 0)
     S_LOAD_INT(X, 0)
@@ -325,6 +329,7 @@ void DialogBasicSettings::accept() {
     }
     D_SAVE_BOOL(start_minimal)
     D_SAVE_INT(max_log_line)
+    S_SAVE_INT(max_log_line)
     #ifdef Q_OS_WIN
     D_SAVE_BOOL(show_system_dns);
     #endif
@@ -343,7 +348,10 @@ void DialogBasicSettings::accept() {
 
     D_SAVE_STRING(user_agent)
     D_SAVE_BOOL(net_use_proxy)
-    S_SAVE_BOOL(startup_update)
+
+    if (!ui->startup_update->isHidden()){
+        S_SAVE_BOOL(startup_update)
+    }
     D_SAVE_BOOL(sub_clear)
     D_SAVE_BOOL(net_insecure)
     S_SAVE_BOOL(auto_hide)

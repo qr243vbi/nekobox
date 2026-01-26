@@ -349,6 +349,8 @@ MainWindow::MainWindow(QWidget *parent)
   {
     int width, height, x, y;
     this->stop_logs = !(settings.value("logs_enabled", true).toBool());
+    Configs::dataStore->startup_update = settings.value("startup_update", false).toBool();
+    Configs::dataStore->max_log_line = settings.value("max_log_line", 200).toInt();
     width = settings.value("width", 0).toInt();
     height = settings.value("height", 0).toInt();
     x = settings.value("X", 0).toInt();
@@ -573,12 +575,19 @@ MainWindow::MainWindow(QWidget *parent)
           [=, this] { runOnNewThread([=, this] { CheckUpdate(); }); });
 #ifndef SKIP_JS_UPDATER
   if (!QFile::exists(getResource("check_new_release.js"))) {
-    ui->toolButton_update->hide();
+    goto updater_hide;
   }
 #endif
 #else
-  ui->toolButton_update->hide();
+  goto updater_hide;
 #endif
+
+  goto skip_updater_hide;
+  updater_hide:
+  ui->toolButton_update->hide();
+  Configs::dataStore->startup_update = 4;
+
+  skip_updater_hide:
 
   // setup connection UI
   setupConnectionList();
