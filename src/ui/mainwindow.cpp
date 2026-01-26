@@ -7,6 +7,7 @@
 #include "nekobox/dataStore/ProfileFilter.hpp"
 #include <nekobox/global/GuiUtils.hpp>
 #include "nekobox/dataStore/ResourceEntity.hpp"
+#include "nekobox/dataStore/Utils.hpp"
 #include "nekobox/global/keyvaluerange.h"
 #include "nekobox/sys/AutoRun.hpp"
 #include "nekobox/sys/Process.hpp"
@@ -1292,7 +1293,9 @@ bool MainWindow::getRuleSet() {
           first_attempt = false;
           ruleSetMap.clear();
         }
-        for (auto [key, value] : asKeyValueRange(QString2QMap(body.data))){
+        QVariantMap map1 = QString2QMap(body.data);
+        MW_show_log(QObject::tr("Rule Sets Count: %1").arg(QString::number(map1.size())));
+        for (auto [key, value] : asKeyValueRange(map1)){
           ruleSetMap[key] = value;
         };
         goto continue_loop1;

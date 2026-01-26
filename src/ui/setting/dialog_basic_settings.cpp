@@ -252,7 +252,7 @@ DialogBasicSettings::DialogBasicSettings(MainWindow *parent)
     auto validator = new QIntValidator(0, 0xfffffff, this);
     S_LOAD_BOOL(save_geometry, true)
     S_LOAD_BOOL(save_position, true)
-
+    S_LOAD_BOOL(startup_update, false)
     S_LOAD_INT(width, 0)
     S_LOAD_INT(height, 0)
     S_LOAD_INT(X, 0)
@@ -342,10 +342,11 @@ void DialogBasicSettings::accept() {
     }
 
     D_SAVE_STRING(user_agent)
-    D_SAVE_BOOL(net_use_proxy);
+    D_SAVE_BOOL(net_use_proxy)
+    S_SAVE_BOOL(startup_update)
     D_SAVE_BOOL(sub_clear)
     D_SAVE_BOOL(net_insecure)
-    S_SAVE_BOOL(auto_hide);
+    S_SAVE_BOOL(auto_hide)
     D_SAVE_BOOL(sub_send_hwid)
     D_SAVE_STRING(sub_custom_hwid_params)
     D_SAVE_INT_ENABLE(sub_auto_update, sub_auto_update_enable)

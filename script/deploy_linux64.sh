@@ -175,3 +175,10 @@ rm -rfv nekobox
 rmdir $DEST ||:
 
 popd
+
+
+if [[ "${UPLOAD_WITH_GH}" == 'yes' ]]
+then
+  gh release upload "${INPUT_VERSION}" "${DEPLOYMENT}/${version_standalone}-${ARCH1}-linux.AppImage"
+  gh release upload "${INPUT_VERSION}" "${DEPLOYMENT}/${version_standalone}-linux-${ARCH}.tar.gz"
+fi
