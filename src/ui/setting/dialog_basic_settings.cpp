@@ -255,7 +255,8 @@ DialogBasicSettings::DialogBasicSettings(MainWindow *parent)
     if (Configs::dataStore->startup_update != 4){
         S_LOAD_BOOL(startup_update, false)
     } else {
-        ui->startup_update->hide();
+        ui->startup_update->setHidden(true);
+        ui->startup_update->setDisabled(true);
     }
     S_LOAD_INT(width, 0)
     S_LOAD_INT(height, 0)

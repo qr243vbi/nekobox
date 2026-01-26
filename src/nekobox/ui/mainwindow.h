@@ -121,7 +121,7 @@ public:
 
     void update_traffic_graph(int proxyDl, int proxyUp, int directDl, int directUp);
 
-    void profile_start(int _id = -1);
+    void profile_start(int _id = -1, bool do_not_test = false);
 
     void set_icons();
 
@@ -357,7 +357,7 @@ private:
 
     bool set_system_dns(bool set, bool save_set = true);
 #ifndef SKIP_UPDATE_BUTTON
-    void CheckUpdate();
+    void CheckUpdate(bool button_clicked = false);
 #endif
 #ifndef SKIP_JS_UPDATER
     JsUpdaterWindow* createJsUpdaterWindow();

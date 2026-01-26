@@ -493,7 +493,7 @@ bool MainWindow::set_system_dns(bool set, bool save_set) {
     return true;
 }
 
-void MainWindow::profile_start(int _id) {
+void MainWindow::profile_start(int _id, bool do_not_test) {
     
     if (Configs::dataStore->prepare_exit) return;
 #ifdef Q_OS_UNIX

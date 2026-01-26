@@ -261,7 +261,9 @@ let release_download_url_flag = (release_download_url == '');
 log(translate("assets version is" + (is_newer ? "": " not") + " newer" + ((is_newer && release_download_url_flag) ? ", but download url is empty" : "") ), "Warn");
 
 if (release_download_url_flag || !is_newer){
-    warning(translate("No update"), translate("Update"));
+    if (ButtonClicked){
+        warning(translate("No update"), translate("Update"));
+    }
 	is_newer = false;
 } else {
 	is_newer = false;

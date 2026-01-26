@@ -572,7 +572,7 @@ MainWindow::MainWindow(QWidget *parent)
   ui->menubar->setVisible(false);
 #ifndef SKIP_UPDATE_BUTTON
   connect(ui->toolButton_update, &QToolButton::clicked, this,
-          [=, this] { runOnNewThread([=, this] { CheckUpdate(); }); });
+          [=, this] { runOnNewThread([=, this] { CheckUpdate(true); }); });
 #ifndef SKIP_JS_UPDATER
   if (!QFile::exists(getResource("check_new_release.js"))) {
     goto updater_hide;
@@ -1235,6 +1235,10 @@ MainWindow::MainWindow(QWidget *parent)
     show();
   } else {
     hide();
+  }
+
+  if (Configs::dataStore->startup_update == true){
+    runOnNewThread([=, this] { CheckUpdate(); });
   }
 
   ui->data_view->setStyleSheet("background: transparent; border: none;");
@@ -3711,7 +3715,7 @@ bool isNewer(QString assetName) {
 #include <iostream>
 #include <nekobox/js/js_updater.h>
 #endif
-void MainWindow::CheckUpdate() {
+void MainWindow::CheckUpdate(bool button_clicked) {
   bool is_newer = false;
 
   QString archive_name = "nekobox.zip",
@@ -3848,7 +3852,7 @@ end_search_define:
   bQueue = createJsUpdaterWindow();
 
   jsUpdater(bQueue, &updater_js, &search, &archive_name, &is_newer,
-            &updater_args, allow_updater, &this->keep_running);
+            &updater_args, allow_updater, &this->keep_running, button_clicked);
 #endif
 skip1:
 

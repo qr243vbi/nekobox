@@ -166,10 +166,7 @@
          <property name="flat">
           <bool>true</bool>
          </property>
-         <layout class="QHBoxLayout" name="horizontalLayout_11">
-          <property name="spacing">
-           <number>0</number>
-          </property>
+         <layout class="QGridLayout" name="gridLayout_13">
           <property name="leftMargin">
            <number>0</number>
           </property>
@@ -182,24 +179,31 @@
           <property name="bottomMargin">
            <number>0</number>
           </property>
-          <item>
+          <item row="0" column="0">
            <widget class="QCheckBox" name="net_use_proxy">
             <property name="text">
              <string>Use proxy when activated</string>
             </property>
            </widget>
           </item>
-          <item>
-           <widget class="QCheckBox" name="net_insecure">
+          <item row="1" column="0">
+           <widget class="QCheckBox" name="checkBox">
             <property name="text">
-             <string>Ignore TLS errors</string>
+             <string>Test before profile start</string>
             </property>
            </widget>
           </item>
-          <item>
+          <item row="1" column="1">
            <widget class="QCheckBox" name="startup_update">
             <property name="text">
              <string>Request update at startup</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QCheckBox" name="net_insecure">
+            <property name="text">
+             <string>Ignore TLS errors</string>
             </property>
            </widget>
           </item>
