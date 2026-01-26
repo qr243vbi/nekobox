@@ -187,9 +187,9 @@
            </widget>
           </item>
           <item row="1" column="0">
-           <widget class="QCheckBox" name="checkBox">
+           <widget class="QCheckBox" name="test_after_start">
             <property name="text">
-             <string>Test before profile start</string>
+             <string>URL Test after profile start</string>
             </property>
            </widget>
           </item>

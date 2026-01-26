@@ -500,7 +500,7 @@ jobs:
     permissions:
       contents: read
       actions: read
-    if: github.event.inputs.publish == 'true' && github.event.inputs.build_windows_arm64 == 'true' && github.event.inputs.build_windows_x64 == 'true' && github.event.inputs.publish_winget == 'true' && github.event.inputs.source_only != 'true'
+    if: github.event.inputs.publish == 'true' && github.event.inputs.build_windows_arm64 == 'true' && github.event.inputs.build_windows_x86 == 'true' && github.event.inputs.build_windows_x64 == 'true' && github.event.inputs.publish_winget == 'true' && github.event.inputs.source_only != 'true'
     steps:
       - uses: actions/checkout@v4
       - name: Linux - Install apt dependencies

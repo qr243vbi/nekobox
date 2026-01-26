@@ -39,13 +39,13 @@ QList<QString> locales = {
 #endif
 #include <QDir>
 
+#define settings Configs::windowSettings
+
 DialogBasicSettings::DialogBasicSettings(MainWindow *parent)
     : QDialog(parent), ui(new Ui::DialogBasicSettings) {
     ui->setupUi(this);
     ADD_ASTERISK(this);
     this->parent = parent;
-
-    QSettings settings = getSettings();
 
     // Auto-testing
     D_LOAD_BOOL(auto_test_enable)
@@ -83,8 +83,8 @@ DialogBasicSettings::DialogBasicSettings(MainWindow *parent)
     D_LOAD_INT(test_concurrent)
     D_LOAD_STRING(test_latency_url)
     D_LOAD_BOOL(disable_tray)
-    S_LOAD_BOOL(auto_hide, false)
-    ui->set_text_under_menu_icons->setChecked(settings.value("text_under_buttons", true).toBool());
+    S_LOAD_BOOL(auto_hide)
+    ui->set_text_under_menu_icons->setChecked(settings->text_under_buttons);
     connect(ui->set_text_under_menu_icons, STATE_CHANGED, this, [=,this]
     {
         CACHE.updateMenuIcon = true;
@@ -132,7 +132,7 @@ DialogBasicSettings::DialogBasicSettings(MainWindow *parent)
 #endif
     //
     D_LOAD_BOOL(start_minimal)
-    D_LOAD_INT(max_log_line)
+    S_LOAD_INT(max_log_line)
     //
     auto language = ui->language;
     language->setCurrentIndex(locales.indexOf(getLocale()));
@@ -140,12 +140,11 @@ DialogBasicSettings::DialogBasicSettings(MainWindow *parent)
         CACHE.needRestart = true;
     });
     connect(ui->font, &QComboBox::currentTextChanged, this, [=,this](const QString &fontName) {
-        QSettings settings = getSettings();
         auto font = qApp->font();
         font.setFamily(fontName);
         qApp->setFont(font);
-        settings.setValue("font_family", fontName);
-        settings.sync();
+        settings->font_family =  fontName;
+        settings->Save();
         adjustSize();
     });
     for (int i=7;i<=26;i++) {
@@ -153,13 +152,12 @@ DialogBasicSettings::DialogBasicSettings(MainWindow *parent)
     }
     ui->font_size->setCurrentText(QString::number(qApp->font().pointSize()));
     connect(ui->font_size, &QComboBox::currentTextChanged, this, [=,this](const QString &sizeStr) {
-        QSettings settings = getSettings();
         auto font = qApp->font();
         int font_size = sizeStr.toInt();
         font.setPointSize(font_size);
         qApp->setFont(font);
-        settings.setValue("font_size", font_size);
-        settings.sync();
+        settings->font_size = font_size;
+        settings->Save();
         adjustSize();
     });
     //
@@ -167,14 +165,13 @@ DialogBasicSettings::DialogBasicSettings(MainWindow *parent)
     ui->theme->addItem("QDarkStyle");
     //
 //    bool ok;
-    ui->theme->setCurrentText(settings.value("theme", "").toString());
+    ui->theme->setCurrentText(settings->theme);
     //
     connect(ui->theme, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, [=,this](int index) {
-        QSettings settings = getSettings();
         QString ui_theme_text = ui->theme->currentText();
         themeManager->ApplyTheme(ui_theme_text);
-        settings.setValue("theme", ui_theme_text);
-        settings.sync();
+        settings->theme = ui_theme_text;
+        settings->Save();
     });
 
     // Subscription
@@ -250,18 +247,19 @@ DialogBasicSettings::DialogBasicSettings(MainWindow *parent)
     });
 
     auto validator = new QIntValidator(0, 0xfffffff, this);
-    S_LOAD_BOOL(save_geometry, true)
-    S_LOAD_BOOL(save_position, true)
-    if (Configs::dataStore->startup_update != 4){
-        S_LOAD_BOOL(startup_update, false)
+    S_LOAD_BOOL(save_geometry)
+    S_LOAD_BOOL(save_position)
+    S_LOAD_BOOL(test_after_start)
+    if (settings->startup_update != 4){
+        S_LOAD_BOOL(startup_update)
     } else {
         ui->startup_update->setHidden(true);
         ui->startup_update->setDisabled(true);
     }
-    S_LOAD_INT(width, 0)
-    S_LOAD_INT(height, 0)
-    S_LOAD_INT(X, 0)
-    S_LOAD_INT(Y, 0)
+    S_LOAD_INT(width)
+    S_LOAD_INT(height)
+    S_LOAD_INT(X)
+    S_LOAD_INT(Y)
     
 
     QString core_path = Configs::resourceManager->core_path;
@@ -287,7 +285,6 @@ DialogBasicSettings::~DialogBasicSettings() {
 }
 
 void DialogBasicSettings::accept() {
-    QSettings settings = getSettings();
     // Auto-testing
     D_SAVE_BOOL(auto_test_enable)
     Configs::dataStore->auto_test_interval_seconds = ui->auto_test_interval_seconds->value();
@@ -329,14 +326,13 @@ void DialogBasicSettings::accept() {
         locale = (locales[locale_index]);
     }
     D_SAVE_BOOL(start_minimal)
-    D_SAVE_INT(max_log_line)
     S_SAVE_INT(max_log_line)
     #ifdef Q_OS_WIN
     D_SAVE_BOOL(show_system_dns);
     #endif
 
-    if (Configs::dataStore->max_log_line <= 0) {
-        Configs::dataStore->max_log_line = 200;
+    if (settings->max_log_line <= 0) {
+        settings->max_log_line = 200;
     }
 
     // Subscription
@@ -350,6 +346,7 @@ void DialogBasicSettings::accept() {
     D_SAVE_STRING(user_agent)
     D_SAVE_BOOL(net_use_proxy)
 
+    S_SAVE_BOOL(test_after_start)
     if (!ui->startup_update->isHidden()){
         S_SAVE_BOOL(startup_update)
     }
@@ -377,7 +374,7 @@ void DialogBasicSettings::accept() {
 
  //   int width, height, X, Y;
     // Startup
-    settings.setValue("language", locale);
+    settings->language = locale;
     S_SAVE_BOOL(save_geometry);
     S_SAVE_BOOL(save_position);
     S_SAVE_INT(width)
@@ -423,12 +420,12 @@ void DialogBasicSettings::accept() {
     if (CACHE.updateSystemDns) str << "UpdateSystemDns";
     if (needChoosePort) str << "NeedChoosePort";
     if (CACHE.updateMenuIcon){
-        settings.setValue("text_under_buttons", ui->set_text_under_menu_icons->isChecked());
+        settings->text_under_buttons = (ui->set_text_under_menu_icons->isChecked());
     }
     if (CACHE.updateMenuIcon || CACHE.updateIcon || CACHE.updateFont) str << "UpdateIcon";
     if (need_core_restart) str << "UpdateCorePath";
     MW_dialog_message(Dialog_DialogBasicSettings, str.join(","));
-    settings.sync();
+    settings->Save();
     QDialog::accept();
 }
 

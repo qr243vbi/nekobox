@@ -121,11 +121,11 @@ public:
 
     void update_traffic_graph(int proxyDl, int proxyUp, int directDl, int directUp);
 
-    void profile_start(int _id = -1, bool do_not_test = false);
+    void profile_start(int _id, bool do_not_test);
 
     void set_icons();
 
-    void set_icons_from_settings(QSettings & settings);
+    void set_icons_from_settings();
 
     void set_icons_from_flag(bool set);
 
@@ -240,7 +240,6 @@ private:
     QMutex speedtestRunning;
     QMutex logLock;
     bool logClear = false;
-    bool stop_logs = false;
     //
     Configs_sys::CoreProcess *core_process;
     qint64 vpn_pid = 0;
@@ -340,6 +339,8 @@ private:
     // rpc
 
     static void setup_rpc();
+
+    void urltest_profile(std::shared_ptr<Configs::ProxyEntity> entity);
 
     void urltest_current_group(const QList<std::shared_ptr<Configs::ProxyEntity>>& profiles);
 

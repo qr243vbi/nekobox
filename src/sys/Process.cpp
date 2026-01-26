@@ -5,6 +5,7 @@
 #include <QDir>
 #include <QApplication>
 #include <QCoreApplication>
+#include "nekobox/sys/Settings.h"
 #include "nekobox/ui/mainwindow.h"
 
 #undef ELEVATE_METHOD
@@ -48,7 +49,7 @@ namespace Configs_sys {
                 MW_show_log("Extra Core exited, stopping profile...");
                 MW_dialog_message("ExternalProcess", "Crashed");
             }
-            if (logCounter.fetchAndAddRelaxed(log.count("\n")) > Configs::dataStore->max_log_line) return;
+            if (logCounter.fetchAndAddRelaxed(log.count("\n")) > Configs::windowSettings->max_log_line) return;
             MW_show_log(log);
         });
         connect(&process, &QProcess::readyReadStandardError, this, [&]() {

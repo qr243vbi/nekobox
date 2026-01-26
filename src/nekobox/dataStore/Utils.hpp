@@ -15,6 +15,8 @@
 #endif
 //
 
+QString defStr(const QString & value, const QString def);
+
 #ifndef KEY_VALUE_RANGE
 #define KEY_VALUE_RANGE
 #include <type_traits>
