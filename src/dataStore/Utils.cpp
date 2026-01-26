@@ -21,6 +21,13 @@
 #include <functional>
 #include <QLocale>
 
+QString defStr(const QString & value, const QString def){
+    if (value.isEmpty()){
+        return def;
+    } else {
+        return value;
+    }
+}
 
 void runOnNewThread(const std::function<void()> &callback) {
     createQThread(callback)->start();

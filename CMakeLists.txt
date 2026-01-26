@@ -416,21 +416,21 @@ set(ICON "${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_DATADIR}/icons/hicolor/256x256
 
 # Configure the desktop file
 configure_file(
-    "${CMAKE_SOURCE_DIR}/nekobox.desktop.in"
+    "${CMAKE_SOURCE_DIR}/script/nekobox.desktop.in"
     "${CMAKE_BINARY_DIR}/nekobox.desktop"
     @ONLY
 )
 
 # Configure the desktop file
 configure_file(
-    "${CMAKE_SOURCE_DIR}/start.sh.in"
+    "${CMAKE_SOURCE_DIR}/script/start.sh.in"
     "${CMAKE_BINARY_DIR}/start.sh"
     @ONLY
 )
 
 # Configure the desktop file
 configure_file(
-    "${CMAKE_SOURCE_DIR}/start_sing_box.sh.in"
+    "${CMAKE_SOURCE_DIR}/script/start_sing_box.sh.in"
     "${CMAKE_BINARY_DIR}/start_sing_box.sh"
     @ONLY
 )

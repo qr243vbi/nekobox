@@ -443,7 +443,7 @@ namespace Configs {
         QUrlQuery q;
         add_query_nonempty( "username", q, username);
         add_query_nonempty( "password", q, password);
-        add_query_nonempty( "transport", q, "TCP");
+        add_query_nonempty( "transport", q, transport);
         add_query_nonempty( "multiplexing", q, multiplexing);
         add_query_nonempty( "server_ports", q, serverPorts.join(","));
         url.setQuery(q);

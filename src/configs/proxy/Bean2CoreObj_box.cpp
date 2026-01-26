@@ -510,7 +510,7 @@ namespace Configs {
             {"server", this->serverAddress},
             {"server_port", this->serverPort},
             {"server_ports", QListStr2QJsonArray(this->serverPorts)},
-            {"transport", "TCP"},
+            {"transport", this->transport},
             {"username", this->username},
             {"password", this->password},
             {"multiplexing", this->multiplexing},

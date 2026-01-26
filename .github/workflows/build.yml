@@ -1,4 +1,4 @@
-name: nekobox build matrix
+name: NyameBox build matrix
 on:
   workflow_dispatch:
     inputs:
@@ -56,7 +56,7 @@ on:
       publish_winget:
         description: "Publish WinGet manifest"
         type: boolean
-        default: true
+        default: false
         required: false
 jobs:
   build-go:
@@ -191,7 +191,7 @@ jobs:
           ssh_private_key: ${{ secrets.AUR_SSH_PRIVATE_KEY }}
           commit_message: Update AUR package
           ssh_keyscan_types: rsa,ecdsa,ed25519
-  build-cpp-windows:
+  build-cpp:
     permissions:
       contents: read
     needs:
@@ -310,7 +310,7 @@ jobs:
           name: nekobox-${{ github.sha }}-${{ matrix.platform }}-${{ matrix.target }}-Qt${{ matrix.qt_version }}
           path: artifacts.tgz
 
-  build-cpp:
+  build-cpp-linux:
     permissions:
       contents: read
     needs:
@@ -385,26 +385,29 @@ jobs:
           cmake -GNinja -DSKIP_UPDATE_BUTTON="${SKIP_UPDATE_BUTTON}" -DCMAKE_BUILD_TYPE=Release "-DNKR_DEFAULT_VERSION=${INPUT_VERSION}" ..
           ninja
           cd ..
+          if [[ "${{ github.event.inputs.publish }}" == "true" ]]
+          then
+            export UPLOAD_WITH_GH=yes
+          fi
           bash -x ./script/deploy_linux64.sh
 
-      - name: Tar files
-        if: matrix.allow == 'true' && github.event.inputs.source_only  != 'true'
-        shell: bash
-        run: tar czvf artifacts.tgz ./deployment
+#      - name: Tar files
+#        if: matrix.allow == 'true' && github.event.inputs.source_only  != 'true'
+#        shell: bash
+#        run: tar czvf artifacts.tgz ./deployment
 
-      - name: Uploading Artifact
-        if: matrix.allow == 'true' && github.event.inputs.source_only  != 'true'
-        uses: actions/upload-artifact@v4.6.2
-        with:
-          name: nekobox-${{ github.sha }}-${{ matrix.platform }}-${{ matrix.target }}-Qt${{ matrix.qt_version }}
-          path: artifacts.tgz
+#      - name: Uploading Artifact
+#        if: matrix.allow == 'true' && github.event.inputs.source_only  != 'true'
+#        uses: actions/upload-artifact@v4.6.2
+#        with:
+#          name: nekobox-${{ github.sha }}-${{ matrix.platform }}-${{ matrix.target }}-Qt${{ matrix.qt_version }}
+#          path: artifacts.tgz
 
   publish:
     name: Pack & Publish Release
     runs-on: windows-latest
     needs:
       - build-cpp
-      - build-cpp-windows
     permissions:
       contents: write
       actions: read
@@ -497,7 +500,7 @@ jobs:
     permissions:
       contents: read
       actions: read
-    if: github.event.inputs.publish == 'true' && github.event.inputs.build_windows_arm64 == 'true' && github.event.inputs.build_windows_x64 == 'true' && github.event.inputs.publish_winget == 'true' && github.event.inputs.source_only != 'true'
+    if: github.event.inputs.publish == 'true' && github.event.inputs.build_windows_arm64 == 'true' && github.event.inputs.build_windows_x86 == 'true' && github.event.inputs.build_windows_x64 == 'true' && github.event.inputs.publish_winget == 'true' && github.event.inputs.source_only != 'true'
     steps:
       - uses: actions/checkout@v4
       - name: Linux - Install apt dependencies

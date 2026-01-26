@@ -17,6 +17,7 @@ void EditMieru::onStart(std::shared_ptr<Configs::ProxyEntity> _ent) {
 
     P_LOAD_STRING(username)
     P_LOAD_STRING(password)
+    P_LOAD_COMBO_STRING(transport)
     P_LOAD_COMBO_STRING(multiplexing)
     ui->port_range->setText(bean->serverPorts.join(","));
 }
@@ -25,6 +26,7 @@ bool EditMieru::onEnd() {
     auto bean = this->ent->MieruBean();
     P_SAVE_STRING(username)
     P_SAVE_STRING(password)
+    P_SAVE_COMBO_STRING(transport)
     P_SAVE_COMBO_STRING(multiplexing)
     bean->serverPorts = ui->port_range->toPlainText().split(",");
     return true;
