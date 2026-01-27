@@ -8,11 +8,11 @@ if [[ $1 == "x86_64" || -z $1 ]]; then
   ARCH="windows64"
   CROSS="windows-amd64"
   INST="$DEPLOYMENT/nekobox_setup"
-else if [[ $1 == "arm64" || -z $1 ]]; then
+else if [[ $1 == "arm64" ]]; then
   ARCH="windows-arm64"
   CROSS=$ARCH
   INST="$DEPLOYMENT/nekobox_setup_arm64"
-else if [[ $1 == "i686" || -z $1 ]]; then
+else if [[ $1 == "i686" || $1 == "x86" ]]; then
   ARCH="windows32"
   CROSS="windows-386"
   INST="$DEPLOYMENT/nekobox_setup32"
