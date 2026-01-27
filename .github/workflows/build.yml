@@ -432,32 +432,22 @@ jobs:
       - name: Install Zip, Curl
         uses: ConorMacBride/install-package@v1
         with:
-          choco: zip nsis curl jq
-
-      - name: Download a ghr
-        uses: ethanjli/cached-download-action@v0.1.3
-        with:
-          url: https://github.com/tcnksm/ghr/releases/download/v0.17.0/ghr_v0.17.0_windows_amd64.zip
-          destination: ghr_windows_amd64.zip
+          choco: zip curl jq
       - name: Pack
         shell: bash
         run: |
-          unzip --help
-          zip --help
-          sha256sum --help
-          unzip ghr_windows_amd64.zip
-          mv ghr*windows_amd64/ghr.exe .
           source script/env_deploy.sh
           find . -name artifacts.tgz | xargs -n1 tar xvzf
           ##
           cd deployment
-          rm -rf *.pdb ||:
           ####
           if [[ -f nekobox_setup.exe ]]; then
             mv nekobox_setup.exe $version_standalone-windows64-installer.exe
             mv windows64 nekobox
             zip -9 -r $version_standalone-windows64.zip nekobox
             rm -rf nekobox windows64
+            gh release upload "${INPUT_VERSION}" $version_standalone-windows64-installer.exe
+            gh release upload "${INPUT_VERSION}" $version_standalone-windows64.zip
           fi
           ####
           if [[ -f nekobox_setup_arm64.exe ]]; then
@@ -465,6 +455,8 @@ jobs:
             mv windows-arm64 nekobox
             zip -9 -r $version_standalone-windows-arm64.zip nekobox
             rm -rf nekobox windows-arm64
+            gh release upload "${INPUT_VERSION}" $version_standalone-windows-arm64-installer.exe
+            gh release upload "${INPUT_VERSION}" $version_standalone-windows-arm64.zip
           fi
           ####
           if [[ -f nekobox_setup32.exe ]]; then
@@ -472,39 +464,25 @@ jobs:
             mv windows32 nekobox
             zip -9 -r $version_standalone-windows32.zip nekobox
             rm -rf nekobox windows32
+            gh release upload "${INPUT_VERSION}" $version_standalone-windows32-installer.exe
+            gh release upload "${INPUT_VERSION}" $version_standalone-windows32.zip
           fi
 
-      - name: Clean Up
-        shell: bash
-        run: |
-          cd deployment
-          rm -rf *.pdb ||:
-      - name: Uploading Artifact
-        uses: actions/upload-artifact@v4.6.2
-        with:
-          name: Deployment-${{ github.sha }}
-          path: deployment
-      - name: Release
-        shell: bash
-        run: |
-          ./ghr.exe -replace -t "${{ secrets.UPLOAD_TOKEN }}" -b "$(echo -e "${{ github.event.inputs.text }}")" -n "${{ github.event.inputs.tag }}" "${{ github.event.inputs.tag }}" deployment
-
-      - name: Run winget-pkgs
-        if: github.event.inputs.build_windows_arm64 == 'true' && github.event.inputs.build_windows_x86 == 'true' && github.event.inputs.build_windows_x64 == 'true'
-        shell: bash
-        run: |
           export GITHUB_TOKEN="${{ secrets.WINGET_TOKEN }}"
           export INPUT_VERSION="${{ github.event.inputs.tag }}"
           export EMAIL="${{ secrets.EMAIL }}"
           export UPLOAD_WITH_GH=yes
+          export CHOCOLATEY_API_KEY="${{ secrets.CHOCOLATEY_API_KEY }}"
           export GH_TOKEN='${{ secrets.UPLOAD_TOKEN }}'
-          if [[ '${{ github.event.inputs.publish_winget }}' == 'true' ]]
+          if [[ '${{ github.event.inputs.publish_winget }}' == 'true' && -f $version_standalone-windows32.zip && -f $version_standalone-windows64.zip && -f $version_standalone-windows-arm64.zip ]]
           then
+            pushd ..
             bash ./script/trigger_winget_pkgs.sh
+            popd
           fi
-          if [[ '${{ github.event.inputs.publish_chocolatey }}' == 'true' ]]
+          if [[ '${{ github.event.inputs.publish_chocolatey }}' == 'true' && -f $version_standalone-windows32.zip && -f $version_standalone-windows64.zip ]]
           then
-            pushd script
+            pushd ../script
             bash chocolatey_push.sh
             popd
           fi
