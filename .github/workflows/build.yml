@@ -226,6 +226,10 @@ jobs:
         with:
           submodules: "false"
 
+      - name: Setup Ninja
+        if: matrix.allow == 'true' && github.event.inputs.source_only != 'true'
+        uses: qr243vbi/setup-ninja@master
+
       - name: Install NSIS x64
         if: matrix.allow == 'true' && github.event.inputs.source_only != 'true' && matrix.target == 'x86_64'
         uses: negrutiu/nsis-install@v2
