@@ -26,7 +26,7 @@ Supports Windows 11/10/8.1/8/7 (arm64, x86_64, x86) / Linux  out of the box.
 ### Aur package
 - [source](https://aur.archlinux.org/packages/nekobox)
 
-### Chocolatey Package (not approved yet)
+### Chocolatey Package
 
 [![Chocolatey Package For Windows](https://img.shields.io/chocolatey/dt/nekobox?style=flat-square&logo=chocolatey&label=downloads-total
 )](https://community.chocolatey.org/packages/nekobox)
