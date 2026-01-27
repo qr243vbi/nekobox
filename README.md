@@ -4,7 +4,7 @@ Sing-Box command line mode is available now! Just type for additional informatio
 `nekobox_core sing-box --help`
  
 Qt based Desktop cross-platform GUI proxy utility, empowered by [Sing-box](https://github.com/SagerNet/sing-box)
-Supports Windows 11/10/8.1/8/7 (arm64, x86_64) / Linux  out of the box.
+Supports Windows 11/10/8.1/8/7 (arm64, x86_64, x86) / Linux  out of the box.
 
 <img width="888" height="722" alt="image" src="https://github.com/user-attachments/assets/74393224-963e-4465-8892-d563b9b49b60" />
 
@@ -26,7 +26,7 @@ Supports Windows 11/10/8.1/8/7 (arm64, x86_64) / Linux  out of the box.
 ### Aur package
 - [source](https://aur.archlinux.org/packages/nekobox)
 
-### Chocolatey Package (not approved yet)
+### Chocolatey Package
 
 [![Chocolatey Package For Windows](https://img.shields.io/chocolatey/dt/nekobox?style=flat-square&logo=chocolatey&label=downloads-total
 )](https://community.chocolatey.org/packages/nekobox)
@@ -60,7 +60,8 @@ Various formats are supported, including share links, JSON array of outbounds an
 - [Setup MinGW Github Action](https://github.com/bwoodsend/setup-winlibs-action)
 - [Cached Download Github Action](https://github.com/ethanjli/cached-download-action)
 - [Setup MSVC Github Action](https://github.com/ilammy/msvc-dev-cmd)
-- [Setup Ninja Github Action](https://github.com/seanmiddleditch/gha-setup-ninja)
+- [Setup Go Github Action](https://github.com/qr243vbi/setup-go)
+- [Setup Ninja Github Action](https://github.com/qr243vbi/setup-ninja)
 - [Cache Apt Pkgs Github Action](https://github.com/awalsh128/cache-apt-pkgs-action)
 - [Setup Qt Github Action](https://github.com/jurplel/install-qt-action)
 - [Setup gRPC Github Action](https://github.com/marketplace/actions/setup-grpc)

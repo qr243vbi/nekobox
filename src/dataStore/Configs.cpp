@@ -250,9 +250,9 @@ QByteArray hash = QCryptographicHash::hash(
         ADD_MAP("net_insecure", net_insecure, boolean);
         ADD_MAP("sub_auto_update", sub_auto_update, integer);
         ADD_MAP("sub_send_hwid", sub_send_hwid, boolean);
-        ADD_MAP("start_minimal", start_minimal, boolean);
-        ADD_MAP("max_log_line", max_log_line, integer);
-        ADD_MAP("splitter_state", splitter_state, string);
+   //     ADD_MAP("start_minimal", start_minimal, boolean);
+   //     ADD_MAP("max_log_line", max_log_line, integer);
+   //     ADD_MAP("splitter_state", splitter_state, string);
         ADD_MAP("utlsFingerprint", utlsFingerprint, string);
         ADD_MAP("core_box_clash_api", core_box_clash_api, integer);
         ADD_MAP("core_box_clash_listen_addr", core_box_clash_listen_addr, string);

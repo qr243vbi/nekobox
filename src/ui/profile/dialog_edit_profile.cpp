@@ -369,6 +369,7 @@ void DialogEditProfile::typeSelected(const QString &newType) {
     ui->tls_frag_fall_delay->setText(stream->tls_fragment_fallback_delay);
     ui->tls_rec_frag->setChecked(stream->enable_tls_record_fragment);
     ui->insecure->setChecked(stream->allow_insecure);
+    ui->enable_ech->setChecked(stream->enable_ech);
     ui->header_type->setCurrentText(stream->header_type);
     ui->headers->setText(stream->headers);
     ui->ws_early_data_name->setText(stream->ws_early_data_name);
@@ -383,6 +384,7 @@ void DialogEditProfile::typeSelected(const QString &newType) {
                                          : Qt::CheckState::Unchecked);
     ui->brutal_speed->setText(QString::number(ent->bean->brutal_speed));
     CACHE.certificate = stream->certificate;
+    CACHE.ech_config = stream->ech_config;
   } else {
     ui->right_all_w->setVisible(false);
   }
@@ -520,6 +522,7 @@ bool DialogEditProfile::onEnd() {
     stream->tls_fragment_fallback_delay = ui->tls_frag_fall_delay->text();
     stream->enable_tls_record_fragment = ui->tls_rec_frag->isChecked();
     stream->allow_insecure = ui->insecure->isChecked();
+    stream->enable_ech = ui->enable_ech->isChecked();
     stream->headers = ui->headers->text();
     stream->header_type = ui->header_type->currentText();
     stream->method = ui->method->text();
@@ -533,6 +536,7 @@ bool DialogEditProfile::onEnd() {
     ent->bean->enable_brutal = ui->brutal_enable->isChecked();
     ent->bean->brutal_speed = ui->brutal_speed->text().toInt();
     stream->certificate = CACHE.certificate;
+    stream->ech_config = CACHE.ech_config;
 
     bool validHeaders;
     stream->GetHeaderPairs(&validHeaders);
@@ -584,6 +588,11 @@ void DialogEditProfile::editor_cache_updated_impl() {
   } else {
     ui->certificate_edit->setText(tr("Already set"));
   }
+  if (CACHE.ech_config.isEmpty()) {
+    ui->ech_config_edit->setText(tr("Not set"));
+  } else {
+    ui->ech_config_edit->setText(tr("Already set"));
+  }
   if (CACHE.custom_outbound.isEmpty()) {
     ui->custom_outbound_edit->setText(tr("Not set"));
   } else {
@@ -625,6 +634,17 @@ void DialogEditProfile::on_certificate_edit_clicked() {
   }
 }
 
+
+void DialogEditProfile::on_ech_config_edit_clicked() {
+  bool ok;
+  auto txt = QInputDialog::getMultiLineText(this, tr("ECH Config"), "",
+                                            CACHE.certificate, &ok);
+  if (ok) {
+    CACHE.ech_config = txt;
+    editor_cache_updated_impl();
+  }
+}
+
 void DialogEditProfile::on_apply_to_group_clicked() {
   if (apply_to_group_ui.empty()) {
     apply_to_group_ui[ui->address] = new FloatCheckBox(ui->address, this);
@@ -637,9 +657,12 @@ void DialogEditProfile::on_apply_to_group_clicked() {
     apply_to_group_ui[ui->path] = new FloatCheckBox(ui->path, this);
     apply_to_group_ui[ui->utlsFingerprint] =
         new FloatCheckBox(ui->utlsFingerprint, this);
+    apply_to_group_ui[ui->enable_ech] = new FloatCheckBox(ui->enable_ech, this);
     apply_to_group_ui[ui->insecure] = new FloatCheckBox(ui->insecure, this);
     apply_to_group_ui[ui->certificate_edit] =
         new FloatCheckBox(ui->certificate_edit, this);
+    apply_to_group_ui[ui->ech_config_edit] =
+        new FloatCheckBox(ui->ech_config_edit, this);
     apply_to_group_ui[ui->custom_config_edit] =
         new FloatCheckBox(ui->custom_config_edit, this);
     apply_to_group_ui[ui->custom_outbound_edit] =
@@ -725,7 +748,9 @@ void DialogEditProfile::do_apply_to_group(
       copyBean(&ent->bean->custom_outbound);
     } else {
       if (stream != nullptr) {
-        if (key == ui->certificate_edit) {
+        if (key == ui->ech_config_edit) {
+          copyStream(&stream->ech_config);
+        } else if (key == ui->certificate_edit) {
           copyStream(&stream->certificate);
         } else if (key == ui->sni) {
           copyStream(&stream->sni);
@@ -739,6 +764,8 @@ void DialogEditProfile::do_apply_to_group(
           copyStream(&stream->utlsFingerprint);
         } else if (key == ui->insecure) {
           copyStream(&stream->allow_insecure);
+        } else if (key == ui->enable_ech){
+          copyStream(&stream->enable_ech);
         }
       }
     }

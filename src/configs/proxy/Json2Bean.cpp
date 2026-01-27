@@ -10,6 +10,12 @@ namespace Configs
             QJsonObject tls = obj["tls"].toObject();
             QJsonObject reality = tls["reality"].toObject();
             auto alpn = tls["alpn"];
+            auto ech_config = tls["ech_config"];
+            if (!ech_config.isNull()){
+                stream->enable_ech = true;
+                stream->ech_config = ech_config.isArray() ? QJsonArray2QListStr(ech_config.toArray()).join("\n") : ech_config.toString();
+                stream->query_server_name = tls["query_server_name"].toString();
+            }
             stream->security = "tls";
             stream->reality_pbk = reality["public_key"].toString();
             stream->reality_sid = reality["short_id"].toString();
@@ -302,6 +308,7 @@ namespace Configs
         serverPort = obj["server_port"].toInt();
         password = obj["password"].toString();
         username = obj["username"].toString();
+        transport = obj["transport"].toString();
         multiplexing = obj["multiplexing"].toString();
         auto & ports = serverPorts;
         ports.clear();

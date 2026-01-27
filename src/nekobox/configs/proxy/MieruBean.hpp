@@ -9,6 +9,7 @@ namespace Configs {
     public:
         QString password = "";
         QString username = "";
+        QString transport = "TCP";
         QString multiplexing = "MULTIPLEXING_LOW";
         QStringList serverPorts;
 
@@ -19,6 +20,7 @@ namespace Configs {
             ADD_MAP("password", password, string);
             ADD_MAP("username", username, string);
             ADD_MAP("multiplexing", multiplexing, string);
+            ADD_MAP("transport", transport, stringList);
             ADD_MAP("server_ports", serverPorts, stringList);
         STOP_MAP
 

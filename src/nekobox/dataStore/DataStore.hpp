@@ -110,8 +110,6 @@ namespace Configs {
  //       QString mw_size = "";
         QStringList log_ignore = {};
         bool start_minimal = false;
-        int max_log_line = 200;
-        QString splitter_state = "";
         bool connection_statistics = true;
         int stats_tab = 0; // either connection or log
         int speed_test_mode = TestConfig::FULL;

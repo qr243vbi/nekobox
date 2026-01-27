@@ -8,9 +8,10 @@
 #include "nekobox/ui/setting/RouteItem.h"
 #include "ui_dialog_manage_routes.h"
 
-#include <map>
+#include <QVariantMap>
 #include <string>
-extern  std::map<std::string, std::string> ruleSetMap;
+
+extern QVariantMap ruleSetMap;
 
 QT_BEGIN_NAMESPACE
 namespace Ui {

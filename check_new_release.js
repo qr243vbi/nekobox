@@ -261,7 +261,9 @@ let release_download_url_flag = (release_download_url == '');
 log(translate("assets version is" + (is_newer ? "": " not") + " newer" + ((is_newer && release_download_url_flag) ? ", but download url is empty" : "") ), "Warn");
 
 if (release_download_url_flag || !is_newer){
-    warning(translate("No update"), translate("Update"));
+    if (ButtonClicked){
+        warning(translate("No update"), translate("Update"));
+    }
 	is_newer = false;
 } else {
 	is_newer = false;
@@ -319,7 +321,7 @@ if (release_download_url_flag || !is_newer){
 					updater_args.push('-version')
 					updater_args.push(latest_tag_name);
 					updater_args.push('-name');
-                    updater_args.push(NKR_SOFTWARE_NAME);
+                    updater_args.push('nekobox'); //NKR_SOFTWARE_NAME
 				}
 				
 					is_newer = true;

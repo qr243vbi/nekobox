@@ -51,9 +51,12 @@ namespace Configs {
         if (!sni1.isEmpty()) stream->sni = sni1;
         if (!sni2.isEmpty()) stream->sni = sni2;
         stream->alpn = GetQueryValue(query, "alpn");
-        
         stream->allow_insecure = !QStringList{"0", "false"}.contains(query.queryItemValue("insecure"));
-        
+        auto ech_config = GetQueryValue(query, "ech_config");
+        if ((stream->enable_ech = (!ech_config.isEmpty()))){
+            stream->ech_config = ech_config;
+            stream->query_server_name = GetQueryValue(query, "query_server_name");
+        }
 
         stream->reality_pbk = GetQueryValue(query, "pbk", "");
         stream->reality_sid = GetQueryValue(query, "sid", "");
@@ -553,6 +556,7 @@ namespace Configs {
         serverPort = url.port();
         username = query.queryItemValue("username");
         password = query.queryItemValue("password");
+        transport = query.queryItemValue("transport");
         multiplexing = query.queryItemValue("multiplexing");
         serverPorts = query.queryItemValue("server_ports").split(",");
         return true;

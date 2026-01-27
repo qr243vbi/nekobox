@@ -32,6 +32,8 @@ private slots:
 
     void on_certificate_edit_clicked();
 
+    void on_ech_config_edit_clicked();
+
     void on_apply_to_group_clicked();
 
 private:
@@ -52,6 +54,7 @@ private:
     struct {
         QString custom_outbound;
         QString custom_config;
+        QString ech_config;
         QString certificate;
     } CACHE;
 

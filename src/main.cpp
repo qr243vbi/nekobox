@@ -31,7 +31,7 @@
 #include <nekobox/ui/mainwindow_interface.h>
 #include <nekobox/global/GuiUtils.hpp>
 
-std::map<std::string, std::string> ruleSetMap;
+QVariantMap ruleSetMap;
 QWidget *mainwindow;
 
 #ifdef Q_OS_UNIX

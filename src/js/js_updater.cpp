@@ -344,10 +344,12 @@ bool jsUpdater( JsUpdaterWindow* factory,
                 bool * is_newer,
                 QStringList * args,
                 bool allow_updater,
-                bool * keep_running
+                bool * keep_running,
+                bool button_clicked
 ){
     QJSEngine ctx;
     ctx.globalObject().setProperty("search", *search);
+    ctx.globalObject().setProperty("ButtonClicked", button_clicked);
     ctx.globalObject().setProperty("UpdaterExists", allow_updater);
 
     if (!jsInit(&ctx, updater_js, factory)){

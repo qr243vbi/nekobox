@@ -42,11 +42,11 @@ namespace Configs {
         bool json = false;
         bool binary = false;
 
-        std::string strUrl;
+        QString strUrl;
 
         label1:
 
-        if ((url = (reset ? QUrl(QString::fromStdString(strUrl)) : QUrl(ruleSet)), url.isValid()) &&
+        if ((url = (reset ? QUrl(strUrl) : QUrl(ruleSet)), url.isValid()) &&
             (filename = url.fileName(), (binary = filename.endsWith(".srs")) || (json = filename.endsWith(".json")))
         )
         {
@@ -81,10 +81,10 @@ namespace Configs {
             };
         } else if (!reset){
 
-            auto iter = ruleSetMap.find(ruleSet.toStdString());
+            auto iter = ruleSetMap.find(ruleSet);
             if(iter != ruleSetMap.end()){
                 reset = true;
-                strUrl = iter->second;
+                strUrl = iter.value().toString();
                 goto label1;
             } else if (ruleSet == "nekobox-adblocksingbox"){
                 reset = true;

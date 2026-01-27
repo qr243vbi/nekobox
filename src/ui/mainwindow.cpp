@@ -1,11 +1,13 @@
 #include "nekobox/ui/mainwindow.h"
 
+#include "3rdparty/qv2ray/wrapper.hpp"
 #include "nekobox/configs/ConfigBuilder.hpp"
 #include "nekobox/configs/sub/GroupUpdater.hpp"
 #include "nekobox/dataStore/Const.hpp"
 #include "nekobox/dataStore/ProfileFilter.hpp"
 #include <nekobox/global/GuiUtils.hpp>
 #include "nekobox/dataStore/ResourceEntity.hpp"
+#include "nekobox/dataStore/Utils.hpp"
 #include "nekobox/global/keyvaluerange.h"
 #include "nekobox/sys/AutoRun.hpp"
 #include "nekobox/sys/Process.hpp"
@@ -14,6 +16,7 @@
 #include <QMutex>
 #include <QQueue>
 #include <QWaitCondition>
+#include <qcontainerfwd.h>
 #include <qnamespace.h>
 #include <set>
 #ifdef _WIN32
@@ -79,13 +82,12 @@
 #include <map>
 #include <string>
 
-extern std::map<std::string, std::string> ruleSetMap;
+extern QVariantMap ruleSetMap;
 
 void setAppIcon(Icon::TrayIconStatus, QSystemTrayIcon *, MainWindow *window);
 
 void MainWindow::set_icons() {
-  QSettings settings = getSettings();
-  set_icons_from_settings(settings);
+  set_icons_from_settings();
 }
 
 void SpinnerDialog::addItem(QString item, QString name) {
@@ -241,8 +243,8 @@ SpinnerDialog::SpinnerDialog(MainWindow *window) {
   resize(300, 200);
 }
 
-void MainWindow::set_icons_from_settings(QSettings &settings) {
-  bool text_under_buttons = settings.value("text_under_buttons", true).toBool();
+void MainWindow::set_icons_from_settings() {
+  bool text_under_buttons = Configs::windowSettings->text_under_buttons;
   set_icons_from_flag(text_under_buttons);
 }
 
@@ -272,32 +274,11 @@ bool MainWindow::isShowRuleSetData() { return showRuleSetData; }
 
 void UI_InitMainWindow() { mainwindow = new MainWindow; }
 
-std::map<std::string, std::string> jsonToMap(const QByteArray &byteArray) {
-  std::map<std::string, std::string> result;
-
-  // Convert QByteArray to QJsonDocument
-  QJsonDocument jsonDoc = QJsonDocument::fromJson(byteArray);
-
-  // Check if conversion was successful
-  if (!jsonDoc.isNull() && jsonDoc.isObject()) {
-    QJsonObject jsonObj = jsonDoc.object();
-
-    // Iterate over the QJsonObject and populate the std::map
-    for (const auto &key : jsonObj.keys()) {
-      result[key.toStdString()] =
-          jsonObj[key].toVariant().toString().toStdString();
-    }
-  } else {
-    // Handle error
-    qWarning() << "Failed to convert QByteArray to QJsonDocument.";
-  }
-
-  return result;
-}
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent), ui(new Ui::MainWindow) {
   mainwindow = this;
+  Configs::windowSettings->Load();
   // software_name
   {
     QSettings globalSettings = getGlobal();
@@ -320,7 +301,7 @@ MainWindow::MainWindow(QWidget *parent)
       software_build_date = NKR_TIMESTAMP;
     }
 #endif
-    software_name = globalSettings.value("software_name", "nekobox").toString();
+    software_name = globalSettings.value("software_name", "NekoBox").toString();
     software_core_name =
         globalSettings.value("software_core_name", "sing-box").toString();
   }
@@ -334,30 +315,11 @@ MainWindow::MainWindow(QWidget *parent)
   softwareFilePath = getApplicationPath();
   softwarePath = root_directory;
 
-  QSettings settings = getSettings();
   // Load Manager
   Configs::profileManager->LoadManager();
-  QString theme = settings.value("theme", 
-  #ifdef Q_OS_WIN
-    "System"
-  #else
-    "Fusion"
-  #endif
-  ).toString();
-  QString font_family = settings.value("font_family", 
-  #ifdef Q_OS_WIN
-    ""
-  #else
-    "Noto Sans"
-  #endif
-  ).toString();
-  int font_size = settings.value("font_size", 
-  #ifdef Q_OS_WIN
-    0
-  #else
-    11
-  #endif
-  ).toInt();
+  QString theme = Configs::windowSettings->theme;
+  QString font_family = Configs::windowSettings->font_family;
+  int font_size = Configs::windowSettings->font_size;
   // Setup misc UI
   // migrate old themes
   themeManager->ApplyTheme(theme);
@@ -367,11 +329,10 @@ MainWindow::MainWindow(QWidget *parent)
   // restore size and geometry
   {
     int width, height, x, y;
-    this->stop_logs = !(settings.value("logs_enabled", true).toBool());
-    width = settings.value("width", 0).toInt();
-    height = settings.value("height", 0).toInt();
-    x = settings.value("X", 0).toInt();
-    y = settings.value("Y", 0).toInt();
+    width = Configs::windowSettings->width;
+    height = Configs::windowSettings->height;
+    x = Configs::windowSettings->X;
+    y = Configs::windowSettings->Y;
     if (width > 0) {
       if (height > 0) {
         resize(width, height);
@@ -382,10 +343,10 @@ MainWindow::MainWindow(QWidget *parent)
         move(x, y);
       }
     }
-    if (settings.value("maximized", false).toBool()) {
+    if (Configs::windowSettings->maximized) {
       showMaximized();
     }
-    Configs::tableSettings.Load(settings);
+    Configs::tableSettings.Load(Configs::windowSettings);
   }
 
   // init shortcuts
@@ -394,7 +355,7 @@ MainWindow::MainWindow(QWidget *parent)
 
   // setup log
   ui->splitter->restoreState(
-      DecodeB64IfValid(settings.value("splitter_state", "").toString()));
+      DecodeB64IfValid(Configs::windowSettings->splitter_state));
   new SyntaxHighlighter(isDarkMode() || theme.toLower() == "qdarkstyle",
                         qvLogDocument);
   qvLogDocument->setUndoRedoEnabled(false);
@@ -528,7 +489,7 @@ MainWindow::MainWindow(QWidget *parent)
             }
           });
   connect(ui->menu_start, &QAction::triggered, this,
-          [this]() { profile_start(); });
+          [this]() { profile_start(-1, !Configs::windowSettings->test_after_start); });
   connect(ui->menu_stop, &QAction::triggered, this,
           [this]() { profile_stop(false, false, true); });
   connect(ui->tabWidget->tabBar(), &QTabBar::tabMoved, this,
@@ -569,7 +530,7 @@ MainWindow::MainWindow(QWidget *parent)
     }
   }
 
-  set_icons_from_settings(settings);
+  set_icons_from_settings();
 
   connect(ui->actionAdd_new_Group, &QAction::triggered, this, [this] {
     auto ent = Configs::ProfileManager::NewGroup();
@@ -589,15 +550,22 @@ MainWindow::MainWindow(QWidget *parent)
   ui->menubar->setVisible(false);
 #ifndef SKIP_UPDATE_BUTTON
   connect(ui->toolButton_update, &QToolButton::clicked, this,
-          [=, this] { runOnNewThread([=, this] { CheckUpdate(); }); });
+          [=, this] { runOnNewThread([=, this] { CheckUpdate(true); }); });
 #ifndef SKIP_JS_UPDATER
   if (!QFile::exists(getResource("check_new_release.js"))) {
-    ui->toolButton_update->hide();
+    goto updater_hide;
   }
 #endif
 #else
-  ui->toolButton_update->hide();
+  goto updater_hide;
 #endif
+
+  goto skip_updater_hide;
+  updater_hide:
+  ui->toolButton_update->hide();
+  Configs::windowSettings->startup_update = 4;
+
+  skip_updater_hide:
 
   // setup connection UI
   setupConnectionList();
@@ -757,7 +725,7 @@ MainWindow::MainWindow(QWidget *parent)
   //          ui->menu_add_from_clipboard, &QAction::trigger);
   connect(ui->actionRestart_Proxy, &QAction::triggered, this, [=, this] {
     if (Configs::dataStore->started_id >= 0)
-      profile_start(Configs::dataStore->started_id);
+      profile_start(Configs::dataStore->started_id, !Configs::windowSettings->test_after_start);
   });
   connect(ui->actionRestart_Program, &QAction::triggered, this,
           [=, this] { MW_dialog_message("", "RestartProgram"); });
@@ -861,7 +829,7 @@ MainWindow::MainWindow(QWidget *parent)
     QByteArray byteArray = srslist->readAll();
     srslist->close();
     delete srslist;
-    ruleSetMap = jsonToMap(byteArray);
+    ruleSetMap = QString2QMap(byteArray);
   } else {
     delete srslist;
     runOnNewThread([this]() { getRuleSet(); });
@@ -957,11 +925,11 @@ MainWindow::MainWindow(QWidget *parent)
             if (mu_download_update.try_lock()) {
               QMutex mut;
               showRuleSetData = true;
-              for (auto &item : ruleSetMap) {
+              for (auto &item : ruleSetMap.values()) {
                 if (!showRuleSetData) {
                   break;
                 }
-                QString url(QString::fromStdString(item.second));
+                QString url(item.toString());
                 QString str = Configs::get_cache_from_str(url);
                 QFile cache_file(str);
                 if (!cache_file.exists()) {
@@ -1038,7 +1006,7 @@ MainWindow::MainWindow(QWidget *parent)
           actionAdblock->setChecked(checked);
           Configs::dataStore->Save();
           if (Configs::dataStore->started_id >= 0)
-            profile_start(Configs::dataStore->started_id);
+            profile_start(Configs::dataStore->started_id, !Configs::windowSettings->test_after_start);
         },
         Qt::SingleShotConnection);
     ui->menuRouting_Menu->addAction(actionAdblock);
@@ -1125,7 +1093,7 @@ MainWindow::MainWindow(QWidget *parent)
         Configs::dataStore->routing->current_route_id = routeID;
         Configs::dataStore->routing->Save();
         if (Configs::dataStore->started_id >= 0)
-          profile_start(Configs::dataStore->started_id);
+          profile_start(Configs::dataStore->started_id, !Configs::windowSettings->test_after_start);
       });
       ui->menuRouting_Menu->addAction(action);
     }
@@ -1241,12 +1209,16 @@ MainWindow::MainWindow(QWidget *parent)
   TM_auto_update_subsctiption_Reset_Minute(Configs::dataStore->sub_auto_update);
 
   if ((!Configs::dataStore->flag_tray) &&
-      (!settings.value("auto_hide", false).toBool())) {
+      (!Configs::windowSettings->auto_hide)) {
     show();
   } else {
     hide();
   }
-
+#ifndef SKIP_UPDATE_BUTTON
+  if (Configs::windowSettings->startup_update == true){
+    runOnNewThread([=, this] { CheckUpdate(); });
+  }
+#endif
   ui->data_view->setStyleSheet("background: transparent; border: none;");
 }
 
@@ -1288,23 +1260,53 @@ int MainWindow::updateRouteProfiles() {
 
 bool MainWindow::getRuleSet() {
   QString err;
-  for (int retry = 0; retry < 5; retry++) {
-    auto err = NetworkRequestHelper::DownloadAsset(
-        Configs::get_jsdelivr_link(
-            Configs::dataStore->routing->ruleset_json_url),
-        "srslist.json");
-    if (err.isEmpty()) {
-      QFile file("srslist.json");
-      if (file.open(QIODevice::ReadOnly)) {
-        auto resp_data = file.readAll();
-        ruleSetMap = jsonToMap(resp_data);
-      }
-      return true;
-    } else
-      QThread::sleep(30);
+  QStringList urls;
+  QJsonDocument doc = QJsonDocument::fromJson(
+    Configs::dataStore->routing->ruleset_json_url.toUtf8());
+  if (doc.isArray()){
+    urls = QJsonArray2QListStr(doc.array());
+  } else {
+    QUrl url(Configs::dataStore->routing->ruleset_json_url);
+    if (url.isValid()){
+      urls << url.toString();
+    }
   }
-  MW_show_log(QObject::tr("Requesting rule-set list error: %1").arg(err));
-  return false;
+  bool first_attempt = true;
+  for (QString str : urls){
+    MW_show_log(QObject::tr("Check Rule Sets: %1").arg(str));
+    for (int retry = 0; retry < 5; retry++) {
+      auto body = NetworkRequestHelper::HttpGet(
+        Configs::get_jsdelivr_link(str));
+
+      err = body.error;
+      if (err.isEmpty()) {
+        if (first_attempt){
+          first_attempt = false;
+          ruleSetMap.clear();
+        }
+        QVariantMap map1 = QString2QMap(body.data);
+        MW_show_log(QObject::tr("Rule Sets Count: %1").arg(QString::number(map1.size())));
+        for (auto [key, value] : asKeyValueRange(map1)){
+          ruleSetMap[key] = value;
+        };
+        goto continue_loop1;
+      } else {
+        QThread::sleep(30);
+      }
+    }
+    MW_show_log(QObject::tr("Requesting rule-set list error: %1").arg(err));
+    return false;
+    continue_loop1:
+    continue;
+  }
+  if (!first_attempt){
+    QVariantMap qvar;
+    for (auto [key, value]: asKeyValueRange(ruleSetMap)){
+      qvar.insert(key, value);
+    }
+    WriteFileText("srslist.json", QMap2QString(qvar));
+  }
+  return true;
 }
 
 void MainWindow::dragEnterEvent(QDragEnterEvent *event) {
@@ -1488,7 +1490,7 @@ void MainWindow::dialog_message_impl(const QString &sender,
       if (updateCorePath) {
         StopVPNProcess();
       }
-      profile_start(Configs::dataStore->started_id);
+      profile_start(Configs::dataStore->started_id, !Configs::windowSettings->test_after_start);
     }
 
     if (proxyAutoTester) {
@@ -1542,7 +1544,7 @@ void MainWindow::dialog_message_impl(const QString &sender,
         if (QMessageBox::question(GetMessageBoxParent(), tr("Confirmation"),
                                   tr("Settings changed, restart proxy?")) ==
             QMessageBox::StandardButton::Yes) {
-          profile_start(Configs::dataStore->started_id);
+          profile_start(Configs::dataStore->started_id, !Configs::windowSettings->test_after_start);
         }
       }
     }
@@ -1576,7 +1578,7 @@ void MainWindow::dialog_message_impl(const QString &sender,
         set_system_dns(true);
       }
       if (auto id = info.split(",")[1].toInt(); id >= 0) {
-        profile_start(id);
+        profile_start(id, !Configs::windowSettings->test_after_start);
       }
       if (Configs::dataStore->system_dns_set) {
         set_system_dns(true);
@@ -1636,27 +1638,26 @@ void MainWindow::on_commitDataRequest() {
     QPoint position;
     QSize geometry;
 
-    QSettings settings = getSettings();
+    auto settings = Configs::windowSettings;
 
-    if (settings.value("save_geometry", true).toBool()) {
-      settings.setValue("maximized", isMaximized());
+    if (settings->save_geometry) {
+      settings->maximized = isMaximized();
       geometry = size();
       width = geometry.width();
       height = geometry.height();
-      settings.setValue("width", width);
-      settings.setValue("height", height);
-      settings.sync();
+      settings->width = width;
+      settings->height = height;
     }
-    if (settings.value("save_position", true).toBool()) {
+    if (settings->save_position) {
       position = pos();
       x = position.x();
       y = position.y();
-      settings.setValue("X", x);
-      settings.setValue("Y", y);
+      settings->X = x;
+      settings->Y = y;
     }
-    settings.setValue("splitter_state", ui->splitter->saveState().toBase64());
+    settings->splitter_state = ui->splitter->saveState().toBase64();
     Configs::tableSettings.Save(settings);
-    settings.sync();
+    settings->Save();
   }
   //
 
@@ -1670,6 +1671,7 @@ void MainWindow::on_commitDataRequest() {
     running->Save();
   //
   Configs::dataStore->Save();
+  Configs::windowSettings->Save();
   Configs::profileManager->SaveManager();
   qDebug() << "End of data save";
 }
@@ -1897,7 +1899,7 @@ void MainWindow::set_spmode_vpn(bool enable, bool save, bool requestAdmin) {
   if (requestAdmin) {
     refresh_status();
     if (Configs::dataStore->started_id >= 0)
-      profile_start(Configs::dataStore->started_id);
+      profile_start(Configs::dataStore->started_id, !Configs::windowSettings->test_after_start);
   }
 }
 
@@ -3127,7 +3129,7 @@ void MainWindow::keyPressEvent(QKeyEvent *event) {
     break;
   case Qt::Key_Enter:
   case 16777220:
-    profile_start();
+    profile_start(-1, !Configs::windowSettings->test_after_start);
     break;
   default:
     QMainWindow::keyPressEvent(event);
@@ -3146,7 +3148,7 @@ inline void FastAppendTextDocument(const QString &message, QTextDocument *doc) {
 }
 
 void MainWindow::show_log_impl(const QString &log) {
-  if (this->stop_logs) {
+  if (!Configs::windowSettings->logs_enabled) {
     return;
   }
 
@@ -3199,18 +3201,16 @@ void MainWindow::on_masterLogBrowser_customContextMenuRequested(
   auto action_stop = new QAction(this);
   action_clear->setText(tr("Clear"));
 
-  action_stop->setText((!this->stop_logs) ? tr("Stop") : tr("Start"));
+  action_stop->setText((Configs::windowSettings->logs_enabled) ? tr("Stop") : tr("Start"));
 
   connect(action_clear, &QAction::triggered, this, [=, this] {
     qvLogDocument->clear();
     ui->masterLogBrowser->clear();
   });
   connect(action_stop, &QAction::triggered, this, [=, this] {
-    bool stop = this->stop_logs;
+    bool stop = !Configs::windowSettings->logs_enabled;
     action_stop->setText(stop ? tr("Stop") : tr("Start"));
-    this->stop_logs = !stop;
-    QSettings settings = getSettings();
-    settings.setValue("logs_enabled", stop);
+    Configs::windowSettings->logs_enabled = stop;
   });
   menu->addAction(action_clear);
   menu->addAction(action_stop);
@@ -3394,6 +3394,15 @@ void MainWindow::RegisterHotkey(bool unregister) {
   }
 }
 
+void MainWindow::RegisterHiddenMenuShortcuts(QMenu * menu){
+  for (const auto &action : menu->actions()) {
+    if (!action->shortcut().toString().isEmpty()) {
+      hiddenMenuShortcuts.append(new QShortcut(
+          action->shortcut(), this, [=, this]() { action->trigger(); }));
+    }
+  }
+}
+
 void MainWindow::RegisterHiddenMenuShortcuts(bool unregister) {
   for (const auto s : hiddenMenuShortcuts)
     s->deleteLater();
@@ -3402,26 +3411,10 @@ void MainWindow::RegisterHiddenMenuShortcuts(bool unregister) {
   if (unregister)
     return;
 
-  for (const auto &action : ui->menuHidden_menu->actions()) {
-    if (!action->shortcut().toString().isEmpty()) {
-      hiddenMenuShortcuts.append(new QShortcut(
-          action->shortcut(), this, [=, this]() { action->trigger(); }));
-    }
-  }
-
-  for (const auto &action : ui->menu_server->actions()) {
-    if (!action->shortcut().toString().isEmpty()) {
-      hiddenMenuShortcuts.append(new QShortcut(
-          action->shortcut(), this, [=, this]() { action->trigger(); }));
-    }
-  }
-
-  for (const auto &action : ui->menu_test->actions()) {
-    if (!action->shortcut().toString().isEmpty()) {
-      hiddenMenuShortcuts.append(new QShortcut(
-          action->shortcut(), this, [=, this]() { action->trigger(); }));
-    }
-  }
+  RegisterHiddenMenuShortcuts(ui->menuHidden_menu);
+  RegisterHiddenMenuShortcuts(ui->menu_server);
+  RegisterHiddenMenuShortcuts(ui->menu_test);
+  RegisterHiddenMenuShortcuts(ui->menu_share_item);
 }
 
 void MainWindow::setActionsData() {
@@ -3698,7 +3691,7 @@ bool isNewer(QString assetName) {
 #include <iostream>
 #include <nekobox/js/js_updater.h>
 #endif
-void MainWindow::CheckUpdate() {
+void MainWindow::CheckUpdate(bool button_clicked) {
   bool is_newer = false;
 
   QString archive_name = "nekobox.zip",
@@ -3835,7 +3828,7 @@ end_search_define:
   bQueue = createJsUpdaterWindow();
 
   jsUpdater(bQueue, &updater_js, &search, &archive_name, &is_newer,
-            &updater_args, allow_updater, &this->keep_running);
+            &updater_args, allow_updater, &this->keep_running, button_clicked);
 #endif
 skip1:
 

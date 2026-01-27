@@ -207,7 +207,7 @@ void ProxyAutoTester::HandleProxyFailure(int proxyId, int attemptCount) {
             runOnUiThread([=] {
                 MW_show_log(QString("[Auto-Test] Active proxy failed, switching to: %1").arg(proxyName));
                 auto mw = GetMainWindow();
-                if (mw) mw->profile_start(nextProxyId);
+                if (mw) mw->profile_start(nextProxyId, true);
             });
 
             activeProxyFailureCount = 0;
@@ -474,7 +474,7 @@ void ProxyAutoTester::performTest(const QList<int> &proxyIds) {
                             .arg(proxyName).arg(proxyToStart));
                         auto mw = GetMainWindow();
                         if (mw) {
-                            mw->profile_start(proxyToStart);
+                            mw->profile_start(proxyToStart, true);
                         } else {
                             MW_show_log("[Auto-Test] ERROR: Could not get MainWindow instance");
                         }

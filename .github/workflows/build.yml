@@ -1,4 +1,4 @@
-name: nekobox build matrix
+name: NyameBox build matrix
 on:
   workflow_dispatch:
     inputs:
@@ -33,8 +33,8 @@ on:
         type: boolean
         default: true
         required: false
-      build_windows_i686:
-        description: "Build windows i686 binaries"
+      build_windows_x86:
+        description: "Build windows x86 binaries"
         type: boolean
         default: true
         required: false
@@ -51,7 +51,7 @@ on:
       publish_chocolatey:
         description: "Publish chocolatey packages"
         type: boolean
-        default: false
+        default: true
         required: false
       publish_winget:
         description: "Publish WinGet manifest"
@@ -91,14 +91,15 @@ jobs:
           - cross_os: windows
             cross_arch: 386
             go_version: "1.25.6"
-            allow: ${{ github.event.inputs.build_windows_i686 }}
+            allow: ${{ github.event.inputs.build_windows_x86 }}
       fail-fast: false
     runs-on: ubuntu-latest
     steps:
       - name: Checking out sources
         if: matrix.cross_os == 'public' || ( github.event.inputs.source_only  != 'true' && matrix.allow == 'true' )
-        uses: actions/checkout@v4.2.2
+        uses: actions/checkout@main
         with:
+          ref: 'main'
           submodules: 'true'
       - name: Cache Common Download
         id: cache-common
@@ -138,18 +139,19 @@ jobs:
         if: matrix.cross_os == 'public' && github.event.inputs.publish == 'true'
         run: |
           go install github.com/tcnksm/ghr@latest
-          ghr -delete -t "${{ github.token }}" -b "$(echo -e "${{ github.event.inputs.text }}")" -n "${{ github.event.inputs.tag }}" "${{ github.event.inputs.tag }}" deployment
+          ghr -delete -t "${{ secrets.UPLOAD_TOKEN }}" -b "$(echo -e "${{ github.event.inputs.text }}")" -n "${{ github.event.inputs.tag }}" "${{ github.event.inputs.tag }}" deployment
 
       - name: Tar files
-        if: matrix.cross_os != 'public' && ( github.event.inputs.source_only  != 'true' && matrix.allow == 'true' && steps.cache-common.outputs.cache-hit != 'true' )
+        if: matrix.cross_os == 'public' || ( github.event.inputs.source_only  != 'true' && matrix.allow == 'true' && steps.cache-common.outputs.cache-hit != 'true' )
         run: tar czvf artifacts.tgz ./deployment
       - name: Uploading Artifact
-        if: matrix.cross_os != 'public' || ( github.event.inputs.source_only  != 'true' && matrix.allow == 'true' )
+        if: matrix.cross_os == 'public' || ( github.event.inputs.source_only  != 'true' && matrix.allow == 'true' )
         uses: actions/upload-artifact@v4.6.2
         with:
           name: nekobox-${{ github.sha }}-Common-${{ matrix.cross_os }}-${{ matrix.cross_arch }}
           path: artifacts.tgz
   upload_aur:
+    name: Upload to Open Build Service and Aur
     permissions:
       contents: read
     needs:
@@ -158,8 +160,9 @@ jobs:
     if: github.event.inputs.publish == 'true'
     steps:
       - name: Checking out sources
-        uses: actions/checkout@v4.2.2
+        uses: actions/checkout@main
         with:
+          ref: 'main'
           submodules: 'false'
       - name: Create requirements.txt
         shell: bash
@@ -191,7 +194,8 @@ jobs:
           ssh_private_key: ${{ secrets.AUR_SSH_PRIVATE_KEY }}
           commit_message: Update AUR package
           ssh_keyscan_types: rsa,ecdsa,ed25519
-  build-cpp-windows:
+  build-cpp:
+    name: Build windows binaries
     permissions:
       contents: read
     needs:
@@ -210,10 +214,10 @@ jobs:
             triplet: x64-windows
             allow: ${{ github.event.inputs.build_windows_x64 }}
           - platform: windows-latest
-            target: i686
+            target: x86
             qt_version: 6.10.0
             triplet: x86-windows
-            allow: ${{ github.event.inputs.build_windows_i686 }}
+            allow: ${{ github.event.inputs.build_windows_x86 }}
       fail-fast: false
     runs-on: ${{ matrix.platform }}
     env:
@@ -222,21 +226,20 @@ jobs:
     steps:
       - name: Checking out sources
         if: matrix.allow == 'true' && github.event.inputs.source_only != 'true'
-        uses: actions/checkout@v4.2.2
+        uses: actions/checkout@main
         with:
+          ref: 'main'
           submodules: "false"
 
-      - name: Install NSIS x64
-        if: matrix.allow == 'true' && github.event.inputs.source_only != 'true' && matrix.target == 'x86_64'
-        uses: negrutiu/nsis-install@v2
-        with:
-          arch: x64
+      - name: Setup Ninja
+        if: matrix.allow == 'true' && github.event.inputs.source_only != 'true'
+        uses: qr243vbi/setup-ninja@master
 
-      - name: Install NSIS x86
-        if: matrix.allow == 'true' && github.event.inputs.source_only != 'true' && matrix.target == 'i686'
+      - name: Install NSIS x64
+        if: matrix.allow == 'true' && github.event.inputs.source_only != 'true' && matrix.target != 'arm64'
         uses: negrutiu/nsis-install@v2
         with:
-          arch: x86
+          arch: ${{ matrix.target }}
 
       - name: Install Customized Qt
         if: matrix.allow == 'true' && github.event.inputs.source_only != 'true' && matrix.target != 'arm64'
@@ -257,6 +260,8 @@ jobs:
       - name: Install MSVC compiler
         if: matrix.allow == 'true' && github.event.inputs.source_only != 'true'
         uses: ilammy/msvc-dev-cmd@v1
+        with:
+          arch: ${{ matrix.target }}
 
       - name: vcpkg build
         uses: johnwason/vcpkg-action@v7
@@ -265,7 +270,7 @@ jobs:
         with:
           pkgs: thrift
           triplet: ${{ matrix.triplet }}
-          token: ${{ github.token }}
+          token: ${{ secrets.UPLOAD_TOKEN }}
           
       - name: Download Artifacts
         if: matrix.allow == 'true' && github.event.inputs.source_only != 'true'
@@ -286,15 +291,14 @@ jobs:
         uses: actions/cache@v4.2.3
         with:
           path: build
-          key: CommonCache-${{ matrix.platform }}-${{ matrix.target }}-${{ github.event.inputs.tag }}
+          key: NinjaCache-${{ matrix.platform }}-${{ matrix.target }}-${{ github.event.inputs.tag }}
 
       - name: Windows - Generate MakeFile and Build
         if: matrix.allow == 'true' && github.event.inputs.source_only  != 'true'
         shell: bash
         run: |
-          if [[ ${{ matrix.target }} == 'i686' ]]; then export CMAKE_OPTS="-A Win32"; fi
           if [[ ${{ github.event.inputs.skip_updater }} == 'true' ]]; then export SKIP_UPDATE_BUTTON=ON; else export SKIP_UPDATE_BUTTON=OFF; fi
-          cmake $CMAKE_OPTS -DCMAKE_TOOLCHAIN_FILE='${{ github.workspace }}/vcpkg/scripts/buildsystems/vcpkg.cmake' '-DVCPKG_TARGET_TRIPLET=${{ matrix.triplet }}' -DVCPKG_MANIFEST_MODE=OFF -DSKIP_UPDATE_BUTTON="${SKIP_UPDATE_BUTTON}" -DCMAKE_BUILD_TYPE=Release "-DNKR_DEFAULT_VERSION=${INPUT_VERSION}" -S . -B build
+          cmake -GNinja -DCMAKE_TOOLCHAIN_FILE='${{ github.workspace }}/vcpkg/scripts/buildsystems/vcpkg.cmake' '-DVCPKG_TARGET_TRIPLET=${{ matrix.triplet }}' -DVCPKG_MANIFEST_MODE=OFF -DSKIP_UPDATE_BUTTON="${SKIP_UPDATE_BUTTON}" -DCMAKE_BUILD_TYPE=Release "-DNKR_DEFAULT_VERSION=${INPUT_VERSION}" -S . -B build
           cmake --build build --config Release --verbose
           ./script/deploy_windows.sh "${{ matrix.target }}"
 
@@ -310,9 +314,11 @@ jobs:
           name: nekobox-${{ github.sha }}-${{ matrix.platform }}-${{ matrix.target }}-Qt${{ matrix.qt_version }}
           path: artifacts.tgz
 
-  build-cpp:
+  build-cpp-linux:
+    name: Build linux binaries
     permissions:
-      contents: read
+      contents: write
+      actions: read
     needs:
       - build-go
     strategy:
@@ -334,8 +340,9 @@ jobs:
     steps:
       - name: Checking out sources
         if: matrix.allow == 'true' && github.event.inputs.source_only  != 'true'
-        uses: actions/checkout@v4.2.2
+        uses: actions/checkout@main
         with:
+          ref: 'main'
           submodules: "false"
 
       - name: Download Artifacts
@@ -385,6 +392,11 @@ jobs:
           cmake -GNinja -DSKIP_UPDATE_BUTTON="${SKIP_UPDATE_BUTTON}" -DCMAKE_BUILD_TYPE=Release "-DNKR_DEFAULT_VERSION=${INPUT_VERSION}" ..
           ninja
           cd ..
+          if [[ "${{ github.event.inputs.publish }}" == "true" ]]
+          then
+            export UPLOAD_WITH_GH=yes
+            export GH_TOKEN='${{ secrets.UPLOAD_TOKEN }}'
+          fi
           bash -x ./script/deploy_linux64.sh
 
       - name: Tar files
@@ -404,60 +416,48 @@ jobs:
     runs-on: windows-latest
     needs:
       - build-cpp
-      - build-cpp-windows
     permissions:
       contents: write
       actions: read
     env:
       INPUT_VERSION: ${{ github.event.inputs.tag }}
-    if: github.event.inputs.publish == 'true'
+    if: github.event.inputs.publish == 'true' && github.event.inputs.source_only != 'true'
     steps:
       - name: Checking out sources
-        uses: actions/checkout@v4.2.2
+        uses: actions/checkout@main
         with:
+          ref: 'main'
           submodules: "false"
       - name: Download Artifacts
         uses: actions/download-artifact@v4.3.0
         with:
           path: download-artifact
-      - name: Install Zip, Curl
+      - name: Install Zip, Curl, Jq
         uses: ConorMacBride/install-package@v1
         with:
-          choco: zip nsis curl
-
-      - name: Download a ghr
-        uses: ethanjli/cached-download-action@v0.1.3
-        with:
-          url: https://github.com/tcnksm/ghr/releases/download/v0.17.0/ghr_v0.17.0_windows_amd64.zip
-          destination: ghr_windows_amd64.zip
+          choco: zip curl jq
       - name: Pack
         shell: bash
         run: |
-          unzip --help
-          zip --help
-          sha256sum --help
-          unzip ghr_windows_amd64.zip
-          mv ghr*windows_amd64/ghr.exe .
+          export GITHUB_TOKEN="${{ secrets.WINGET_TOKEN }}"
+          export INPUT_VERSION="${{ github.event.inputs.tag }}"
+          export EMAIL="${{ secrets.EMAIL }}"
+          export UPLOAD_WITH_GH=yes
+          export CHOCOLATEY_API_KEY="${{ secrets.CHOCOLATEY_API_KEY }}"
+          export GH_TOKEN='${{ secrets.UPLOAD_TOKEN }}'
+
           source script/env_deploy.sh
           find . -name artifacts.tgz | xargs -n1 tar xvzf
           ##
           cd deployment
-          rm -rf *.pdb ||:
           ####
           if [[ -f nekobox_setup.exe ]]; then
-            CHECKSUM=$(sha256sum nekobox_setup.exe)
-            export sha_x64="${CHECKSUM%% *}"
             mv nekobox_setup.exe $version_standalone-windows64-installer.exe
             mv windows64 nekobox
             zip -9 -r $version_standalone-windows64.zip nekobox
             rm -rf nekobox windows64
-          fi
-          if [[ -n $sha_x64 ]]; then
-            (
-              cd ../script
-              source build_chocolatey.sh
-              mv nekobox/*.nupkg ../deployment/
-            )
+            gh release upload "${INPUT_VERSION}" $version_standalone-windows64-installer.exe
+            gh release upload "${INPUT_VERSION}" $version_standalone-windows64.zip
           fi
           ####
           if [[ -f nekobox_setup_arm64.exe ]]; then
@@ -465,6 +465,8 @@ jobs:
             mv windows-arm64 nekobox
             zip -9 -r $version_standalone-windows-arm64.zip nekobox
             rm -rf nekobox windows-arm64
+            gh release upload "${INPUT_VERSION}" $version_standalone-windows-arm64-installer.exe
+            gh release upload "${INPUT_VERSION}" $version_standalone-windows-arm64.zip
           fi
           ####
           if [[ -f nekobox_setup32.exe ]]; then
@@ -472,52 +474,21 @@ jobs:
             mv windows32 nekobox
             zip -9 -r $version_standalone-windows32.zip nekobox
             rm -rf nekobox windows32
+            gh release upload "${INPUT_VERSION}" $version_standalone-windows32-installer.exe
+            gh release upload "${INPUT_VERSION}" $version_standalone-windows32.zip
+          fi
+          if [[ '${{ github.event.inputs.publish_winget }}' == 'true' && -f $version_standalone-windows32.zip && -f $version_standalone-windows64.zip && -f $version_standalone-windows-arm64.zip ]]
+          then
+            pushd ..
+            bash ./script/trigger_winget_pkgs.sh
+            popd
+          fi
+          if [[ '${{ github.event.inputs.publish_chocolatey }}' == 'true' && -f $version_standalone-windows32.zip && -f $version_standalone-windows64.zip ]]
+          then
+            pushd ../script
+            bash chocolatey_push.sh
+            popd
           fi
 
-      - name: Clean Up
-        shell: bash
-        run: |
-          cd deployment
-          rm -rf *.pdb ||:
-      - name: Uploading Artifact
-        uses: actions/upload-artifact@v4.6.2
-        with:
-          name: Deployment-${{ github.sha }}
-          path: deployment
-      - name: Release
-        shell: bash
-        run: |
-          ./ghr.exe -replace -t "${{ github.token }}" -b "$(echo -e "${{ github.event.inputs.text }}")" -n "${{ github.event.inputs.tag }}" "${{ github.event.inputs.tag }}" deployment
-
-  upload_winget:
-    name: Trigger WingetPkgs
-    runs-on: ubuntu-latest
-    needs:
-      - publish
-    permissions:
-      contents: read
-      actions: read
-    if: github.event.inputs.publish == 'true' && github.event.inputs.build_windows_arm64 == 'true' && github.event.inputs.build_windows_x64 == 'true' && github.event.inputs.publish_winget == 'true' && github.event.inputs.source_only != 'true'
-    steps:
-      - uses: actions/checkout@v4
-      - name: Linux - Install apt dependencies
-        uses: awalsh128/cache-apt-pkgs-action@latest
-        with:
-          packages: curl jq git gh
-          version: 1.0
-          
-      - name: Cache winget-pkgs
-        uses: actions/cache@v4.2.3
-        with:
-          path: build
-          key: CommonCache-WingetPkgs-Cache
-
-      - name: Run winget-pkgs
-        shell: bash
-        run: |
-          export GITHUB_TOKEN="${{ secrets.WINGET_TOKEN }}"
-          export INPUT_VERSION="${{ github.event.inputs.tag }}"
-          export EMAIL="${{ secrets.EMAIL }}"
-          bash ./script/trigger_winget_pkgs.sh
 
 

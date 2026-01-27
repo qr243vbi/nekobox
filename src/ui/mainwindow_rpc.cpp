@@ -1,7 +1,9 @@
+#include "nekobox/dataStore/ProxyEntity.hpp"
 #include "nekobox/ui/mainwindow.h"
 
 #include "nekobox/dataStore/Database.hpp"
 #include "nekobox/configs/ConfigBuilder.hpp"
+#include "nekobox/sys/Settings.h"
 #include "nekobox/dataStore/Utils.hpp"
 #include "nekobox/stats/traffic/TrafficLooper.hpp"
 #include "nekobox/api/RPC.h"
@@ -146,6 +148,12 @@ void MainWindow::runURLTest(const QString& config, bool useDefault, const QStrin
     }
 }
 
+void MainWindow::urltest_profile(std::shared_ptr<Configs::ProxyEntity> entity){
+    QList<std::shared_ptr<Configs::ProxyEntity>> list;
+    list << entity;
+    urltest_current_group(list);
+}
+
 void MainWindow::urltest_current_group(const QList<std::shared_ptr<Configs::ProxyEntity>>& profiles) {
     if (profiles.isEmpty()) {
         return;
@@ -261,7 +269,6 @@ void MainWindow::speedtest_current_group(const QList<std::shared_ptr<Configs::Pr
         if (!testCurrent)
         {
 
-            qDebug()<<(testmode);
             auto buildObject = Configs::BuildTestConfig(profiles);
             if (!buildObject->error.isEmpty()) {
                 MW_show_log(tr("Failed to build test config: ") + buildObject->error);
@@ -375,15 +382,11 @@ void MainWindow::runSpeedTest(const QString& config, bool useDefault, bool testC
         return;
     }
 
-    qDebug() << "Speed Test" ;
     libcore::SpeedTestRequest req;
     int speedtestConf = testmode;
     if (speedtestConf < 0) {
-        qDebug() << speedtestConf ;
         speedtestConf = Configs::dataStore->speed_test_mode;
     }
-
-    qDebug() << speedtestConf ;
 
     req.outbound_tags = QListStr2VectorStr(outboundTags);
     req.config = (config.toStdString());
@@ -493,7 +496,7 @@ bool MainWindow::set_system_dns(bool set, bool save_set) {
     return true;
 }
 
-void MainWindow::profile_start(int _id) {
+void MainWindow::profile_start(int _id, bool do_not_test) {
     
     if (Configs::dataStore->prepare_exit) return;
 #ifdef Q_OS_UNIX
@@ -505,8 +508,6 @@ void MainWindow::profile_start(int _id) {
     }
 #endif
      
-    qDebug() << "profile starting: " << _id;
-
     auto ents = get_now_selected_list();
     auto ent = (_id < 0 && !ents.isEmpty()) ? ents.first() : Configs::profileManager->GetProfile(_id);
     if (ent == nullptr) return;
@@ -628,6 +629,9 @@ void MainWindow::profile_start(int _id) {
             MW_show_log("<<<<<<<< " + tr("Failed to start profile %1").arg(ent->bean->DisplayTypeAndName()));
         }
         mu_starting.unlock();
+        if (!do_not_test) {
+            urltest_profile(ent);
+        }
         // cancel timeout
         runOnUiThread([=,this] {
             restartMsgboxTimer->cancel();

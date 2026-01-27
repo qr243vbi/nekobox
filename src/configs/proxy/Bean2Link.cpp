@@ -40,6 +40,10 @@ namespace Configs {
 
         add_query_nonempty("sni", query, stream->sni);
         add_query_nonempty("alpn", query, stream->alpn);
+        if (stream->enable_ech){
+            add_query_nonempty("ech_config", query, stream->ech_config);
+            add_query_nonempty("query_server_name", query, stream->query_server_name);
+        }
         if (stream->allow_insecure) query.addQueryItem("insecure", "1");
         add_query_nonempty("fp", query, stream->utlsFingerprint);
         if (stream->enable_tls_fragment) query.addQueryItem("fragment", "1");
@@ -443,7 +447,7 @@ namespace Configs {
         QUrlQuery q;
         add_query_nonempty( "username", q, username);
         add_query_nonempty( "password", q, password);
-        add_query_nonempty( "transport", q, "TCP");
+        add_query_nonempty( "transport", q, transport);
         add_query_nonempty( "multiplexing", q, multiplexing);
         add_query_nonempty( "server_ports", q, serverPorts.join(","));
         url.setQuery(q);
