@@ -432,13 +432,20 @@ jobs:
         uses: actions/download-artifact@v4.3.0
         with:
           path: download-artifact
-      - name: Install Zip, Curl
+      - name: Install Zip, Curl, Jq
         uses: ConorMacBride/install-package@v1
         with:
           choco: zip curl jq
       - name: Pack
         shell: bash
         run: |
+          export GITHUB_TOKEN="${{ secrets.WINGET_TOKEN }}"
+          export INPUT_VERSION="${{ github.event.inputs.tag }}"
+          export EMAIL="${{ secrets.EMAIL }}"
+          export UPLOAD_WITH_GH=yes
+          export CHOCOLATEY_API_KEY="${{ secrets.CHOCOLATEY_API_KEY }}"
+          export GH_TOKEN='${{ secrets.UPLOAD_TOKEN }}'
+
           source script/env_deploy.sh
           find . -name artifacts.tgz | xargs -n1 tar xvzf
           ##
@@ -470,13 +477,6 @@ jobs:
             gh release upload "${INPUT_VERSION}" $version_standalone-windows32-installer.exe
             gh release upload "${INPUT_VERSION}" $version_standalone-windows32.zip
           fi
-
-          export GITHUB_TOKEN="${{ secrets.WINGET_TOKEN }}"
-          export INPUT_VERSION="${{ github.event.inputs.tag }}"
-          export EMAIL="${{ secrets.EMAIL }}"
-          export UPLOAD_WITH_GH=yes
-          export CHOCOLATEY_API_KEY="${{ secrets.CHOCOLATEY_API_KEY }}"
-          export GH_TOKEN='${{ secrets.UPLOAD_TOKEN }}'
           if [[ '${{ github.event.inputs.publish_winget }}' == 'true' && -f $version_standalone-windows32.zip && -f $version_standalone-windows64.zip && -f $version_standalone-windows-arm64.zip ]]
           then
             pushd ..
