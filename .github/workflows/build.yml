@@ -97,8 +97,9 @@ jobs:
     steps:
       - name: Checking out sources
         if: matrix.cross_os == 'public' || ( github.event.inputs.source_only  != 'true' && matrix.allow == 'true' )
-        uses: actions/checkout@v4.2.2
+        uses: actions/checkout@main
         with:
+          ref: 'main'
           submodules: 'true'
       - name: Cache Common Download
         id: cache-common
@@ -158,8 +159,9 @@ jobs:
     if: github.event.inputs.publish == 'true'
     steps:
       - name: Checking out sources
-        uses: actions/checkout@v4.2.2
+        uses: actions/checkout@main
         with:
+          ref: 'main'
           submodules: 'false'
       - name: Create requirements.txt
         shell: bash
@@ -222,8 +224,9 @@ jobs:
     steps:
       - name: Checking out sources
         if: matrix.allow == 'true' && github.event.inputs.source_only != 'true'
-        uses: actions/checkout@v4.2.2
+        uses: actions/checkout@main
         with:
+          ref: 'main'
           submodules: "false"
 
       - name: Setup Ninja
@@ -335,8 +338,9 @@ jobs:
     steps:
       - name: Checking out sources
         if: matrix.allow == 'true' && github.event.inputs.source_only  != 'true'
-        uses: actions/checkout@v4.2.2
+        uses: actions/checkout@main
         with:
+          ref: 'main'
           submodules: "false"
 
       - name: Download Artifacts
@@ -418,8 +422,9 @@ jobs:
     if: github.event.inputs.publish == 'true'
     steps:
       - name: Checking out sources
-        uses: actions/checkout@v4.2.2
+        uses: actions/checkout@main
         with:
+          ref: 'main'
           submodules: "false"
       - name: Download Artifacts
         uses: actions/download-artifact@v4.3.0
@@ -495,7 +500,10 @@ jobs:
       actions: read
     if: github.event.inputs.publish == 'true' && github.event.inputs.build_windows_arm64 == 'true' && github.event.inputs.build_windows_x86 == 'true' && github.event.inputs.build_windows_x64 == 'true' && github.event.inputs.source_only != 'true'
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@main
+        with:
+          ref: 'main'
+          submodules: 'false'
       - name: Linux - Install apt dependencies
         uses: awalsh128/cache-apt-pkgs-action@latest
         with:
