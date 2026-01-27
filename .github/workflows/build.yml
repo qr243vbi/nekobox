@@ -294,7 +294,7 @@ jobs:
         run: |
           if [[ ${{ matrix.target }} == 'i686' ]]; then export CMAKE_OPTS="-A Win32"; fi
           if [[ ${{ github.event.inputs.skip_updater }} == 'true' ]]; then export SKIP_UPDATE_BUTTON=ON; else export SKIP_UPDATE_BUTTON=OFF; fi
-          cmake $CMAKE_OPTS -DCMAKE_TOOLCHAIN_FILE='${{ github.workspace }}/vcpkg/scripts/buildsystems/vcpkg.cmake' '-DVCPKG_TARGET_TRIPLET=${{ matrix.triplet }}' -DVCPKG_MANIFEST_MODE=OFF -DSKIP_UPDATE_BUTTON="${SKIP_UPDATE_BUTTON}" -DCMAKE_BUILD_TYPE=Release "-DNKR_DEFAULT_VERSION=${INPUT_VERSION}" -S . -B build
+          cmake $CMAKE_OPTS -GNinja -DCMAKE_TOOLCHAIN_FILE='${{ github.workspace }}/vcpkg/scripts/buildsystems/vcpkg.cmake' '-DVCPKG_TARGET_TRIPLET=${{ matrix.triplet }}' -DVCPKG_MANIFEST_MODE=OFF -DSKIP_UPDATE_BUTTON="${SKIP_UPDATE_BUTTON}" -DCMAKE_BUILD_TYPE=Release "-DNKR_DEFAULT_VERSION=${INPUT_VERSION}" -S . -B build
           cmake --build build --config Release --verbose
           ./script/deploy_windows.sh "${{ matrix.target }}"
 
@@ -312,7 +312,8 @@ jobs:
 
   build-cpp-linux:
     permissions:
-      contents: read
+      contents: write
+      actions: read
     needs:
       - build-go
     strategy:
@@ -490,7 +491,7 @@ jobs:
     needs:
       - publish
     permissions:
-      contents: read
+      contents: write
       actions: read
     if: github.event.inputs.publish == 'true' && github.event.inputs.build_windows_arm64 == 'true' && github.event.inputs.build_windows_i686 == 'true' && github.event.inputs.build_windows_x64 == 'true' && github.event.inputs.source_only != 'true'
     steps:
