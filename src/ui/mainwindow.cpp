@@ -1214,11 +1214,11 @@ MainWindow::MainWindow(QWidget *parent)
   } else {
     hide();
   }
-
+#ifndef SKIP_UPDATE_BUTTON
   if (Configs::windowSettings->startup_update == true){
     runOnNewThread([=, this] { CheckUpdate(); });
   }
-
+#endif
   ui->data_view->setStyleSheet("background: transparent; border: none;");
 }
 
