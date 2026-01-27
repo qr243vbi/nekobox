@@ -33,8 +33,8 @@ on:
         type: boolean
         default: true
         required: false
-      build_windows_i686:
-        description: "Build windows i686 binaries"
+      build_windows_x86:
+        description: "Build windows x86 binaries"
         type: boolean
         default: true
         required: false
@@ -91,7 +91,7 @@ jobs:
           - cross_os: windows
             cross_arch: 386
             go_version: "1.25.6"
-            allow: ${{ github.event.inputs.build_windows_i686 }}
+            allow: ${{ github.event.inputs.build_windows_x86 }}
       fail-fast: false
     runs-on: ubuntu-latest
     steps:
@@ -210,10 +210,10 @@ jobs:
             triplet: x64-windows
             allow: ${{ github.event.inputs.build_windows_x64 }}
           - platform: windows-latest
-            target: i686
+            target: x86
             qt_version: 6.10.0
             triplet: x86-windows
-            allow: ${{ github.event.inputs.build_windows_i686 }}
+            allow: ${{ github.event.inputs.build_windows_x86 }}
       fail-fast: false
     runs-on: ${{ matrix.platform }}
     env:
@@ -231,16 +231,10 @@ jobs:
         uses: qr243vbi/setup-ninja@master
 
       - name: Install NSIS x64
-        if: matrix.allow == 'true' && github.event.inputs.source_only != 'true' && matrix.target == 'x86_64'
+        if: matrix.allow == 'true' && github.event.inputs.source_only != 'true' && matrix.target != 'arm64'
         uses: negrutiu/nsis-install@v2
         with:
-          arch: x64
-
-      - name: Install NSIS x86
-        if: matrix.allow == 'true' && github.event.inputs.source_only != 'true' && matrix.target == 'i686'
-        uses: negrutiu/nsis-install@v2
-        with:
-          arch: x86
+          arch: ${{ matrix.target }}
 
       - name: Install Customized Qt
         if: matrix.allow == 'true' && github.event.inputs.source_only != 'true' && matrix.target != 'arm64'
@@ -298,7 +292,7 @@ jobs:
         if: matrix.allow == 'true' && github.event.inputs.source_only  != 'true'
         shell: bash
         run: |
-          #if [[ ${{ matrix.target }} == 'i686' ]]; then export CMAKE_OPTS="-A Win32"; fi
+          #if [[ ${{ matrix.target }} == 'x86' ]]; then export CMAKE_OPTS="-A Win32"; fi
           if [[ ${{ github.event.inputs.skip_updater }} == 'true' ]]; then export SKIP_UPDATE_BUTTON=ON; else export SKIP_UPDATE_BUTTON=OFF; fi
           cmake $CMAKE_OPTS -GNinja -DCMAKE_TOOLCHAIN_FILE='${{ github.workspace }}/vcpkg/scripts/buildsystems/vcpkg.cmake' '-DVCPKG_TARGET_TRIPLET=${{ matrix.triplet }}' -DVCPKG_MANIFEST_MODE=OFF -DSKIP_UPDATE_BUTTON="${SKIP_UPDATE_BUTTON}" -DCMAKE_BUILD_TYPE=Release "-DNKR_DEFAULT_VERSION=${INPUT_VERSION}" -S . -B build
           cmake --build build --config Release --verbose
@@ -499,7 +493,7 @@ jobs:
     permissions:
       contents: write
       actions: read
-    if: github.event.inputs.publish == 'true' && github.event.inputs.build_windows_arm64 == 'true' && github.event.inputs.build_windows_i686 == 'true' && github.event.inputs.build_windows_x64 == 'true' && github.event.inputs.source_only != 'true'
+    if: github.event.inputs.publish == 'true' && github.event.inputs.build_windows_arm64 == 'true' && github.event.inputs.build_windows_x86 == 'true' && github.event.inputs.build_windows_x64 == 'true' && github.event.inputs.source_only != 'true'
     steps:
       - uses: actions/checkout@v4
       - name: Linux - Install apt dependencies
