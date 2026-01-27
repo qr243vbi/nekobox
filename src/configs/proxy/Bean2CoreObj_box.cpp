@@ -147,9 +147,11 @@ namespace Configs {
             if (enable_ech){
                 QJsonObject ech{
                     {"enabled", true},
-                    {"query_server_name", query_server_name},
                     {"config", QListStr2QJsonArray(ech_config.trimmed().split("\n"))}
                 };
+                if (!query_server_name.isEmpty()){
+                    ech["query_server_name"] = query_server_name;
+                }
                 tls["ech"] = ech;
             }
             if (allow_insecure || Configs::dataStore->skip_cert) tls["insecure"] = true;
