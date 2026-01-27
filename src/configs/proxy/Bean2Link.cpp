@@ -40,6 +40,10 @@ namespace Configs {
 
         add_query_nonempty("sni", query, stream->sni);
         add_query_nonempty("alpn", query, stream->alpn);
+        if (stream->enable_ech){
+            add_query_nonempty("ech_config", query, stream->ech_config);
+            add_query_nonempty("query_server_name", query, stream->query_server_name);
+        }
         if (stream->allow_insecure) query.addQueryItem("insecure", "1");
         add_query_nonempty("fp", query, stream->utlsFingerprint);
         if (stream->enable_tls_fragment) query.addQueryItem("fragment", "1");

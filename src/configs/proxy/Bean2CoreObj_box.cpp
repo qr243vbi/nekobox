@@ -144,6 +144,14 @@ namespace Configs {
         // tls
         if (security == "tls") {
             QJsonObject tls{{"enabled", true}};
+            if (enable_ech){
+                QJsonObject ech{
+                    {"enabled", true},
+                    {"query_server_name", query_server_name},
+                    {"config", QListStr2QJsonArray(ech_config.trimmed().split("\n"))}
+                };
+                tls["ech"] = ech;
+            }
             if (allow_insecure || Configs::dataStore->skip_cert) tls["insecure"] = true;
             if (!sni.trimmed().isEmpty()) tls["server_name"] = sni;
             if (!certificate.trimmed().isEmpty()) {

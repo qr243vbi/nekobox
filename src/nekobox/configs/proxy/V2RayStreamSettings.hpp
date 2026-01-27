@@ -6,6 +6,10 @@
 namespace Configs {
     class V2rayStreamSettings : public JsonStore {
     public:
+        QString ech_config = "";
+        bool enable_ech = false;
+        QString query_server_name = "";
+
         QString network = "tcp";
         QString security = "";
         QString packet_encoding = "";
