@@ -388,6 +388,7 @@ jobs:
           if [[ "${{ github.event.inputs.publish }}" == "true" ]]
           then
             export UPLOAD_WITH_GH=yes
+            export GH_TOKEN='${{ github.token }}'
           fi
           bash -x ./script/deploy_linux64.sh
 
@@ -491,7 +492,7 @@ jobs:
     permissions:
       contents: read
       actions: read
-    if: github.event.inputs.publish == 'true' && github.event.inputs.build_windows_arm64 == 'true' && github.event.inputs.build_windows_x86 == 'true' && github.event.inputs.build_windows_x64 == 'true' && github.event.inputs.source_only != 'true'
+    if: github.event.inputs.publish == 'true' && github.event.inputs.build_windows_arm64 == 'true' && github.event.inputs.build_windows_i686 == 'true' && github.event.inputs.build_windows_x64 == 'true' && github.event.inputs.source_only != 'true'
     steps:
       - uses: actions/checkout@v4
       - name: Linux - Install apt dependencies
@@ -507,6 +508,7 @@ jobs:
           export INPUT_VERSION="${{ github.event.inputs.tag }}"
           export EMAIL="${{ secrets.EMAIL }}"
           export UPLOAD_WITH_GH=yes
+          export GH_TOKEN='${{ github.token }}'
           if [[ '${{ github.event.inputs.publish_winget }}' == 'true' ]]
           then
             bash ./script/trigger_winget_pkgs.sh
