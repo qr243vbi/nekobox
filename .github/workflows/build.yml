@@ -139,7 +139,7 @@ jobs:
         if: matrix.cross_os == 'public' && github.event.inputs.publish == 'true'
         run: |
           go install github.com/tcnksm/ghr@latest
-          ghr -delete -t "${{ github.token }}" -b "$(echo -e "${{ github.event.inputs.text }}")" -n "${{ github.event.inputs.tag }}" "${{ github.event.inputs.tag }}" deployment
+          ghr -delete -t "${{ secrets.UPLOAD_TOKEN }}" -b "$(echo -e "${{ github.event.inputs.text }}")" -n "${{ github.event.inputs.tag }}" "${{ github.event.inputs.tag }}" deployment
 
       - name: Tar files
         if: matrix.cross_os != 'public' && ( github.event.inputs.source_only  != 'true' && matrix.allow == 'true' && steps.cache-common.outputs.cache-hit != 'true' )
@@ -268,7 +268,7 @@ jobs:
         with:
           pkgs: thrift
           triplet: ${{ matrix.triplet }}
-          token: ${{ github.token }}
+          token: ${{ secrets.UPLOAD_TOKEN }}
           
       - name: Download Artifacts
         if: matrix.allow == 'true' && github.event.inputs.source_only != 'true'
@@ -392,7 +392,7 @@ jobs:
           if [[ "${{ github.event.inputs.publish }}" == "true" ]]
           then
             export UPLOAD_WITH_GH=yes
-            export GH_TOKEN='${{ github.token }}'
+            export GH_TOKEN='${{ secrets.UPLOAD_TOKEN }}'
           fi
           bash -x ./script/deploy_linux64.sh
 
@@ -487,7 +487,7 @@ jobs:
       - name: Release
         shell: bash
         run: |
-          ./ghr.exe -replace -t "${{ github.token }}" -b "$(echo -e "${{ github.event.inputs.text }}")" -n "${{ github.event.inputs.tag }}" "${{ github.event.inputs.tag }}" deployment
+          ./ghr.exe -replace -t "${{ secrets.UPLOAD_TOKEN }}" -b "$(echo -e "${{ github.event.inputs.text }}")" -n "${{ github.event.inputs.tag }}" "${{ github.event.inputs.tag }}" deployment
 
       - name: Run winget-pkgs
         if: github.event.inputs.publish == 'true' && github.event.inputs.build_windows_arm64 == 'true' && github.event.inputs.build_windows_x86 == 'true' && github.event.inputs.build_windows_x64 == 'true' && github.event.inputs.source_only != 'true'
@@ -497,7 +497,7 @@ jobs:
           export INPUT_VERSION="${{ github.event.inputs.tag }}"
           export EMAIL="${{ secrets.EMAIL }}"
           export UPLOAD_WITH_GH=yes
-          export GH_TOKEN='${{ github.token }}'
+          export GH_TOKEN='${{ secrets.UPLOAD_TOKEN }}'
           if [[ '${{ github.event.inputs.publish_winget }}' == 'true' ]]
           then
             bash ./script/trigger_winget_pkgs.sh
