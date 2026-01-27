@@ -489,27 +489,8 @@ jobs:
         run: |
           ./ghr.exe -replace -t "${{ github.token }}" -b "$(echo -e "${{ github.event.inputs.text }}")" -n "${{ github.event.inputs.tag }}" "${{ github.event.inputs.tag }}" deployment
 
-  upload_winget:
-    name: Trigger WingetPkgs and Chocolatey
-    runs-on: ubuntu-latest
-    needs:
-      - publish
-    permissions:
-      contents: write
-      actions: read
-    if: github.event.inputs.publish == 'true' && github.event.inputs.build_windows_arm64 == 'true' && github.event.inputs.build_windows_x86 == 'true' && github.event.inputs.build_windows_x64 == 'true' && github.event.inputs.source_only != 'true'
-    steps:
-      - uses: actions/checkout@main
-        with:
-          ref: 'main'
-          submodules: 'false'
-      - name: Linux - Install apt dependencies
-        uses: awalsh128/cache-apt-pkgs-action@latest
-        with:
-          packages: curl jq git gh
-          version: 1.0
-
       - name: Run winget-pkgs
+        if: github.event.inputs.publish == 'true' && github.event.inputs.build_windows_arm64 == 'true' && github.event.inputs.build_windows_x86 == 'true' && github.event.inputs.build_windows_x64 == 'true' && github.event.inputs.source_only != 'true'
         shell: bash
         run: |
           export GITHUB_TOKEN="${{ secrets.WINGET_TOKEN }}"
