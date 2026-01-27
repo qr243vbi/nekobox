@@ -142,15 +142,16 @@ jobs:
           ghr -delete -t "${{ secrets.UPLOAD_TOKEN }}" -b "$(echo -e "${{ github.event.inputs.text }}")" -n "${{ github.event.inputs.tag }}" "${{ github.event.inputs.tag }}" deployment
 
       - name: Tar files
-        if: matrix.cross_os != 'public' && ( github.event.inputs.source_only  != 'true' && matrix.allow == 'true' && steps.cache-common.outputs.cache-hit != 'true' )
+        if: matrix.cross_os == 'public' || ( github.event.inputs.source_only  != 'true' && matrix.allow == 'true' && steps.cache-common.outputs.cache-hit != 'true' )
         run: tar czvf artifacts.tgz ./deployment
       - name: Uploading Artifact
-        if: matrix.cross_os != 'public' || ( github.event.inputs.source_only  != 'true' && matrix.allow == 'true' )
+        if: matrix.cross_os == 'public' || ( github.event.inputs.source_only  != 'true' && matrix.allow == 'true' )
         uses: actions/upload-artifact@v4.6.2
         with:
           name: nekobox-${{ github.sha }}-Common-${{ matrix.cross_os }}-${{ matrix.cross_arch }}
           path: artifacts.tgz
   upload_aur:
+    name: Upload to Open Build Service and Aur
     permissions:
       contents: read
     needs:
@@ -194,6 +195,7 @@ jobs:
           commit_message: Update AUR package
           ssh_keyscan_types: rsa,ecdsa,ed25519
   build-cpp:
+    name: Build windows binaries
     permissions:
       contents: read
     needs:
@@ -313,6 +315,7 @@ jobs:
           path: artifacts.tgz
 
   build-cpp-linux:
+    name: Build linux binaries
     permissions:
       contents: write
       actions: read
@@ -396,17 +399,17 @@ jobs:
           fi
           bash -x ./script/deploy_linux64.sh
 
-#      - name: Tar files
-#        if: matrix.allow == 'true' && github.event.inputs.source_only  != 'true'
-#        shell: bash
-#        run: tar czvf artifacts.tgz ./deployment
+      - name: Tar files
+        if: matrix.allow == 'true' && github.event.inputs.source_only  != 'true'
+        shell: bash
+        run: tar czvf artifacts.tgz ./deployment
 
-#      - name: Uploading Artifact
-#        if: matrix.allow == 'true' && github.event.inputs.source_only  != 'true'
-#        uses: actions/upload-artifact@v4.6.2
-#        with:
-#          name: nekobox-${{ github.sha }}-${{ matrix.platform }}-${{ matrix.target }}-Qt${{ matrix.qt_version }}
-#          path: artifacts.tgz
+      - name: Uploading Artifact
+        if: matrix.allow == 'true' && github.event.inputs.source_only  != 'true'
+        uses: actions/upload-artifact@v4.6.2
+        with:
+          name: nekobox-${{ github.sha }}-${{ matrix.platform }}-${{ matrix.target }}-Qt${{ matrix.qt_version }}
+          path: artifacts.tgz
 
   publish:
     name: Pack & Publish Release
