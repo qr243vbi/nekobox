@@ -61,7 +61,7 @@ Various formats are supported, including share links, JSON array of outbounds an
 - [Cached Download Github Action](https://github.com/ethanjli/cached-download-action)
 - [Setup MSVC Github Action](https://github.com/ilammy/msvc-dev-cmd)
 - [Setup Go Github Action](https://github.com/qr243vbi/setup-go)
-- [Setup Ninja Github Action](https://github.com/qr243vbi/gha-setup-ninja)
+- [Setup Ninja Github Action](https://github.com/qr243vbi/setup-ninja)
 - [Cache Apt Pkgs Github Action](https://github.com/awalsh128/cache-apt-pkgs-action)
 - [Setup Qt Github Action](https://github.com/jurplel/install-qt-action)
 - [Setup gRPC Github Action](https://github.com/marketplace/actions/setup-grpc)
