@@ -432,7 +432,7 @@ jobs:
       - name: Install Zip, Curl
         uses: ConorMacBride/install-package@v1
         with:
-          choco: zip nsis curl
+          choco: zip nsis curl jq
 
       - name: Download a ghr
         uses: ethanjli/cached-download-action@v0.1.3

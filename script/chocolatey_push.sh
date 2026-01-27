@@ -1,3 +1,6 @@
+#!/bin/bash -x
+
+
 text="$(curl -s -H "Accept: application/vnd.github.v3+json" "https://api.github.com/repos/qr243vbi/nekobox/releases/tags/${INPUT_VERSION}")"
 asset_x86="$(echo "$text"  | jq '.assets[] | select(.browser_download_url | endswith("windows32-installer.exe"))')"
 asset_x64="$(echo "$text"  | jq '.assets[] | select(.browser_download_url | endswith("windows64-installer.exe"))')"
