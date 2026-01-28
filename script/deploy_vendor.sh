@@ -29,8 +29,8 @@ then
 fi
 
 echo "[General]" > global.ini
-echo "software_version=$INPUT_VERSION" >> global.ini
-echo "software_name=NekoBox" >> global.ini
+echo "program_version=$INPUT_VERSION" >> global.ini
+echo "program_name=NekoBox" >> global.ini
 
 git add -f srslist* global.ini core/server/{gen/{libcore_service-remote,main_sing,*.go},vendor} SingBox.Version
 
