@@ -148,20 +148,22 @@ void MainWindow::runURLTest(const QString& config, bool useDefault, const QStrin
     }
 }
 
-void MainWindow::urltest_profile(std::shared_ptr<Configs::ProxyEntity> entity){
+void MainWindow::urltest_profile(std::shared_ptr<Configs::ProxyEntity> entity,  bool skip_last_url_test_warning){
     QList<std::shared_ptr<Configs::ProxyEntity>> list;
     list << entity;
-    urltest_current_group(list);
+    urltest_current_group(list, skip_last_url_test_warning);
 }
 
-void MainWindow::urltest_current_group(const QList<std::shared_ptr<Configs::ProxyEntity>>& profiles) {
+void MainWindow::urltest_current_group(const QList<std::shared_ptr<Configs::ProxyEntity>>& profiles,  bool skip_last_url_test_warning) {
     if (profiles.isEmpty()) {
         return;
     }
     if (!speedtestRunning.tryLock()) {
-        runOnUiThread([this](){
-            QMessageBox::warning(this, software_name, tr("The last url test did not exit completely, please wait. If it persists, please restart the program."));
-        });
+        if (!skip_last_url_test_warning){
+            runOnUiThread([this](){
+                QMessageBox::warning(this, software_name, tr("The last url test did not exit completely, please wait. If it persists, please restart the program."));
+            });
+        }
         return;
     }
 
@@ -630,7 +632,7 @@ void MainWindow::profile_start(int _id, bool do_not_test) {
         }
         mu_starting.unlock();
         if (!do_not_test) {
-            urltest_profile(ent);
+            urltest_profile(ent, true);
         }
         // cancel timeout
         runOnUiThread([=,this] {

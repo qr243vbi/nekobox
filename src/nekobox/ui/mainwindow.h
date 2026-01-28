@@ -340,9 +340,9 @@ private:
 
     static void setup_rpc();
 
-    void urltest_profile(std::shared_ptr<Configs::ProxyEntity> entity);
+    void urltest_profile(std::shared_ptr<Configs::ProxyEntity> entity, bool skip_last_url_test_warning = false);
 
-    void urltest_current_group(const QList<std::shared_ptr<Configs::ProxyEntity>>& profiles);
+    void urltest_current_group(const QList<std::shared_ptr<Configs::ProxyEntity>>& profiles,  bool skip_last_url_test_warning = false);
 
     void stopTests();
 
