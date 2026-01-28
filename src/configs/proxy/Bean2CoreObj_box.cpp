@@ -35,7 +35,7 @@ namespace Configs {
             QString str = value.toString();
             auto ptr = str.split("-");
             obj.insert("from", ptr[0].toInt());
-            obj.insert("to", ptr[1].toInt());
+            obj.insert("to", ptr[(ptr.count()<2)?0:1].toInt());
         } else if (value.isObject()){
             auto objv = value.toObject();
             obj.insert("from", objv.value("from").toInt());
