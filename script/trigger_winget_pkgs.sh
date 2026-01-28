@@ -53,7 +53,7 @@ InstallerSwitches:
 InstallationMetadata:
   DefaultInstallLocation: '"'"'%AppData%\NekoBox'"'"'
 Installers:
-- Architecture: x64
+- Architecture: x86
   InstallerUrl: https://github.com/qr243vbi/nekobox/releases/download/OldVer/nekobox-OldVer-windows32-installer.exe
   InstallerSha256: OldSha32
 - Architecture: x64
