@@ -284,7 +284,7 @@ MainWindow::MainWindow(QWidget *parent)
     QSettings globalSettings = getGlobal();
 #ifdef NKR_DYNAMIC_VERSION
     software_version = globalSettings
-                           .value("software_version",
+                           .value("program_version",
 #ifdef NKR_DEFAULT_VERSION
                                   NKR_DEFAULT_VERSION
 #else
@@ -295,15 +295,15 @@ MainWindow::MainWindow(QWidget *parent)
 #endif
     qDebug() << NKR_VERSION << software_version;
     software_build_date =
-        globalSettings.value("software_build_date", "").toString();
+        globalSettings.value("program_build_date", "").toString();
 #ifdef NKR_TIMESTAMP
     if (software_build_date.isEmpty()) {
       software_build_date = NKR_TIMESTAMP;
     }
 #endif
-    software_name = globalSettings.value("software_name", "NekoBox").toString();
+    software_name = globalSettings.value("program_name", "NekoBox").toString();
     software_core_name =
-        globalSettings.value("software_core_name", "sing-box").toString();
+        globalSettings.value("program_core_name", "sing-box").toString();
   }
 
   setAcceptDrops(true);
