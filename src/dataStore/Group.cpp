@@ -1,5 +1,6 @@
 #include <nekobox/dataStore/Group.hpp>
 #include <QFile>
+#include "nekobox/dataStore/ProxyEntity.hpp"
 #include "nekobox/dataStore/Utils.hpp"
 #include "nekobox/configs/proxy/AbstractBean.hpp"
 #include "nekobox/dataStore/Database.hpp"
@@ -49,7 +50,12 @@ namespace Configs
         auto res = QList<std::shared_ptr<ProxyEntity>>{};
         for (auto id : profiles)
         {
-            res.append(profileManager->GetProfile(id));
+            std::shared_ptr<Configs::ProxyEntity> ent = profileManager->GetProfile(id);
+            if (ent) {
+                res.append(ent);
+            } else {
+                qDebug() << "Found missing profile ID:" << id;
+            }
         }
         return res;
     }

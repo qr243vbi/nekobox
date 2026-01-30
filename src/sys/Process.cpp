@@ -123,6 +123,11 @@ namespace Configs_sys {
     void CoreProcess::elevateCoreProcessProgram(){
         if (!coreProcessProgramElevated){
             arguments.prepend("-admin");
+#ifdef Q_OS_UNIX
+            if (this->save_elevated){
+                arguments.prepend("-save");
+            }
+#endif
             coreProcessProgramElevated = true;
         }
     }

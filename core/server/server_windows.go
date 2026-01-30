@@ -264,7 +264,7 @@ func (s *server) IsPrivileged(ctx context.Context, in *gen.EmptyReq) (*gen.IsPri
 	return out, nil
 }
 
-func restartAsAdmin() {
+func restartAsAdmin(save bool) {
 }
 
 func getProcessPath(pid uint32) (string, error) {

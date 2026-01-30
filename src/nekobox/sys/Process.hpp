@@ -17,6 +17,9 @@ namespace Configs_sys {
     class CoreProcess: public QObject
     {
     public:
+#ifdef Q_OS_UNIX
+        bool save_elevated;
+#endif
         QProcess process;
         QString tag;
         QString program;

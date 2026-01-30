@@ -74,14 +74,16 @@ func main() {
 	}
 
 	var _admin *bool
+	var _save *bool
 	var _waitpid *int
 	_port := flag.Int("port", 19810, "Port")
 	_debug := flag.Bool("debug", false, "Debug mode")
 	_arg0 := flag.String("argv0", os.Args[0], "Replace first argument")
 
-	if runtime.GOOS == "windows" || runtime.GOOS == "linux" {
-		_admin = flag.Bool("admin", false, "Run in admin mode")
+	if runtime.GOOS == "linux" {
+		_save = flag.Bool("save", false, "Set admin capabilities")
 	}
+	_admin = flag.Bool("admin", false, "Run in admin mode")
 
 	_waitpid = flag.Int("waitpid", 0, "After pid finished, force quit")
 
@@ -94,7 +96,7 @@ func main() {
 
 	if runtime.GOOS == "linux" {
 		if *_admin {
-			restartAsAdmin()
+			restartAsAdmin(*_save)
 		}
 	}
 

@@ -1862,10 +1862,18 @@ skip_start_elevate_process:
 
   auto n = QMessageBox::warning(GetMessageBoxParent(), software_name,
                                 tr("Please give the core root privileges"),
+#ifdef Q_OS_UNIX
+                                QMessageBox::Save |
+#endif
                                 QMessageBox::Yes | QMessageBox::No);
   if (n == QMessageBox::Yes) {
     goto start_elevate_process;
   } else {
+#ifdef Q_OS_UNIX
+    if (n == QMessageBox::Save){
+
+    }
+#endif
     if (reason == 3) {
       Configs::dataStore->remember_spmode.removeAll("vpn");
     }
