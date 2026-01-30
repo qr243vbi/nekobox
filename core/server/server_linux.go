@@ -9,26 +9,9 @@ import (
 	"os/exec"
 	"syscall"
 	"time"
-	"github.com/pkg/xattr"
-
 	"kernel.org/pub/linux/libs/security/libcap/cap"
 )
 
-func setCapNetAdmin(binary string){
-		// capability data structure (VFS_CAP_DATA)
-		// version 3, CAP_NET_ADMIN in permitted+effective
-		data := []byte{
-			0x03, 0x00, 0x00, 0x00, // version
-			0x00, 0x00, 0x00, 0x00, // unused
-			0x20, 0x00, 0x00, 0x00, // permitted: CAP_NET_ADMIN (bit 12)
-			0x20, 0x00, 0x00, 0x00, // inheritable (usually 0)
-			0x20, 0x00, 0x00, 0x00, // effective
-		}
-
-		if err := xattr.Set(binary, "security.capability", data); err != nil {
-			log.Fatalf("failed to set capability: %v", err)
-		}
-}
 
 func (s *server) SetSystemDNS(ctx context.Context, in *gen.SetSystemDNSRequest) (*gen.EmptyResp, error) {
 	out := new(gen.EmptyResp)
@@ -73,6 +56,19 @@ func isElevated() (bool, error) {
 func restartAsAdmin(save bool) {
 	elevated, err := isElevated()
 	if elevated {
+		if (save){
+			caps:= cap.NewSet()
+			err = caps.SetFlag(cap.Inheritable, true, cap.NET_ADMIN)
+			err = caps.SetFlag(cap.Effective, true, cap.NET_ADMIN)
+			err = caps.SetFlag(cap.Permitted, true, cap.NET_ADMIN)
+			if (err != nil){
+				panic(err)
+			}
+			err = caps.SetFile(os.Args[0])
+			if (err != nil){
+				panic(err)
+			}
+		}
 		return
 	}
 	var args []string
@@ -87,13 +83,10 @@ func restartAsAdmin(save bool) {
 	}
 
 	executablePath := os.Args[0]
-	if (save){
-		setCapNetAdmin(executablePath)
-	}
 	args = append(args, pkexecPath, "sh", "-c", "exec \"${0}\" \"${@}\"", "env", "NEKOBOX_APPIMAGE_CUSTOM_EXECUTABLE=nekobox_core", executablePath)
 
 	for _, arg := range os.Args[1:] {
-		if arg != "-admin" && arg != "-save" {
+		if arg != "-admin" {
 			args = append(args, arg)
 		}
 	}

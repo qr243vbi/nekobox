@@ -1871,7 +1871,8 @@ skip_start_elevate_process:
   } else {
 #ifdef Q_OS_UNIX
     if (n == QMessageBox::Save){
-
+      core_process->save_elevated = true;
+      goto start_elevate_process;
     }
 #endif
     if (reason == 3) {

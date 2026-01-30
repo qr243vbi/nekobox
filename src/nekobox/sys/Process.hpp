@@ -18,7 +18,7 @@ namespace Configs_sys {
     {
     public:
 #ifdef Q_OS_UNIX
-        bool save_elevated;
+        bool save_elevated = false;
 #endif
         QProcess process;
         QString tag;

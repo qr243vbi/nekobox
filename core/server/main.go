@@ -95,7 +95,7 @@ func main() {
 	os.Args[0] = *_arg0
 
 	if runtime.GOOS == "linux" {
-		if *_admin {
+		if *_admin || *_save{
 			restartAsAdmin(*_save)
 		}
 	}
