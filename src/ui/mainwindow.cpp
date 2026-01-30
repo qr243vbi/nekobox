@@ -1810,6 +1810,11 @@ bool MainWindow::get_elevated_permissions(int reason, void *pointer) {
   if (Configs::dataStore->disable_privilege_req) {
     MW_show_log(
         tr("User opted for no privilege req, some features may not work"));
+
+    if (reason == 3) {
+      Configs::dataStore->spmode_vpn = false;
+      return false;
+    }
     return true;
   }
   if (Configs::IsAdmin())
@@ -1860,10 +1865,18 @@ skip_start_elevate_process:
 #undef ELEVATE_CORE_PROGRAM
 #endif
 
+
+#ifdef Q_OS_UNIX
+  auto save_button = QMessageBox::Save;
+  if (isAppImage()){
+    save_button = QMessageBox::NoButton;
+  }
+#endif
+
   auto n = QMessageBox::warning(GetMessageBoxParent(), software_name,
                                 tr("Please give the core root privileges"),
 #ifdef Q_OS_UNIX
-                                QMessageBox::Save |
+                                save_button |
 #endif
                                 QMessageBox::Yes | QMessageBox::No);
   if (n == QMessageBox::Yes) {

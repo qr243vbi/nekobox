@@ -30,7 +30,7 @@ fi
 ( . script/build_go.sh; )
 
 cmake -S $SRC_ROOT -B "$BUILD" -GNinja -DNKR_DEFAULT_VERSION="${INPUT_VERSION:-5.0.0}"
-cmake --build "$BUILD" -v
+cmake --build "$BUILD" -v -j $(nproc)
 
 ( . script/deploy_linux64.sh; )
 
