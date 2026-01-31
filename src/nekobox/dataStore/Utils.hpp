@@ -147,7 +147,7 @@ const char * getSoftwareVersion();
 #define NKR_VERSION getSoftwareVersion()
 #define NKR_DYNAMIC_VERSION dynamic
 #endif
-
+inline QString serverName;
 inline QString software_build_date;
 inline QString software_name;
 inline QString software_core_name;

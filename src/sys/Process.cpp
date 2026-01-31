@@ -106,6 +106,12 @@ namespace Configs_sys {
         started = true;
         QStringList list = QProcessEnvironment::systemEnvironment().toStringList();
         list << "NEKOBOX_APPIMAGE_CUSTOM_EXECUTABLE=nekobox_core";
+
+
+        auto cachePath = QStandardPaths::writableLocation(QStandardPaths::CacheLocation);
+        QDir().mkpath(cachePath);//create parent dir tree
+        process.setWorkingDirectory(cachePath);
+
         process.setEnvironment(list);
         process.start(program, arguments);
     }

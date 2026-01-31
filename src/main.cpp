@@ -257,7 +257,7 @@ int main(int argc, char** argv) {
     // Check if another instance is running
     QByteArray hashBytes = QCryptographicHash::hash(wd.absolutePath().toUtf8(), QCryptographicHash::Md5).toBase64(QByteArray::OmitTrailingEquals);
     hashBytes.replace('+', '0').replace('/', '1');
-    auto serverName = LOCAL_SERVER_PREFIX + QString::fromUtf8(hashBytes);
+    serverName = LOCAL_SERVER_PREFIX + QString::fromUtf8(hashBytes);
     qDebug() << "server name: " << serverName;
     QLocalSocket socket;
     socket.connectToServer(serverName);

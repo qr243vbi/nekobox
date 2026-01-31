@@ -1058,16 +1058,15 @@ namespace Configs {
             {
                 experimentalObj["clash_api"] = clash_api;
             }
+        }
 
-            auto cachePath = QStandardPaths::writableLocation(QStandardPaths::CacheLocation);
-            QDir().mkpath(cachePath);//create parent dir tree
-
-
+        {
             QJsonObject cache_file = {
                 {"enabled", true},
+                {"cache_id", serverName},
                 {"store_fakeip", true},
                 {"store_rdrc", true},
-                {"path", cachePath + "/nekobox_cache_" + GetRandomString(17) + ".db"}
+    //            {"path", cachePath + "/nekobox_cache.db"}
             };
             experimentalObj["cache_file"] = cache_file;
         }
