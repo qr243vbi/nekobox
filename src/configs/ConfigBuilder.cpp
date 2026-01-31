@@ -143,25 +143,37 @@ namespace Configs {
         result->extraCoreData = std::make_shared<ExtraCoreData>();
         auto status = std::make_shared<BuildConfigStatus>();
         status->ent = ent;
+        
+        /*
+        if (ent != nullptr && ent->bean->DisplayName() == "!!aaaa!!"){
+            status->ent = nullptr;
+        }
+        */
+
         status->result = result;
         status->forTest = forTest;
         status->forExport = forExport;
         status->chainID = chainID;
 
-        auto customBean = dynamic_cast<Configs::CustomBean *>(ent->bean.get());
-        if (customBean != nullptr && customBean->core == "internal-full") {
-            if (dataStore->spmode_vpn)
-            {
-                status->result->error = QObject::tr("Tun mode cannot be used with Custom configs");
-                return result;
+        if (status->ent != nullptr){
+            auto customBean = dynamic_cast<Configs::CustomBean *>(ent->bean.get());
+            if (customBean != nullptr && customBean->core == "internal-full") {
+                if (dataStore->spmode_vpn)
+                {
+                    status->result->error = QObject::tr("Tun mode cannot be used with Custom configs");
+                    return result;
+                }
+                result->coreConfig = QString2QJsonObject(customBean->config_simple);
+            } else {
+                BuildConfigSingBox(status);
             }
-            result->coreConfig = QString2QJsonObject(customBean->config_simple);
-        } else {
-            BuildConfigSingBox(status);
-        }
 
         // apply custom config
-        MergeJson(QString2QJsonObject(ent->bean->custom_config), result->coreConfig);
+            MergeJson(QString2QJsonObject(ent->bean->custom_config), result->coreConfig);
+        } else {
+            qDebug() << "Generating Block Network Config";
+            BuildConfigSingBox(status);
+        }
 
         return result;
     }
@@ -789,10 +801,6 @@ namespace Configs {
         };
         status->result->outboundStats += std::make_shared<Stats::TrafficData>("direct");
 
-        if (blockAll){
-            goto skip_multiple_jobs2;
-        }
-
         // Hijack
         if (dataStore->enable_dns_server && !status->forTest)
         {
@@ -824,7 +832,6 @@ namespace Configs {
         // custom inbound
         if (!status->forTest) QJSONARRAY_ADD(status->inbounds, QString2QJsonObject(dataStore->custom_inbound)["inbounds"].toArray())
 
-        skip_multiple_jobs2:
         // DNS hijack deps
         QJsonArray hijackDomains;
         QJsonArray hijackDomainSuffix;
@@ -836,7 +843,7 @@ namespace Configs {
         if (dataStore->spmode_vpn || blockAll) {
             routeObj["auto_detect_interface"] = true;
         }
-        if (!status->forTest && !blockAll) {
+        if (!status->forTest) {
             if (dataStore->connection_statistics)
             {
                 routeObj["find_process"] = true;
@@ -920,7 +927,7 @@ namespace Configs {
                     ruleSetArray += json_object;
                 }
             }
-            if (dataStore->adblock_enable) {
+            if (dataStore->adblock_enable && !blockAll) {
                 QString item = "nekobox-adblocksingbox";
                 qDebug() << item;
                 auto json_object = get_rule_set_json(item);
@@ -1077,7 +1084,7 @@ namespace Configs {
             {"default_mode", ""} // dummy to make sure it is created
         };
 
-        if (!status->forTest && !blockAll)
+        if (!status->forTest)
         {
             if (dataStore->core_box_clash_api > 0){
                 clash_api = {
