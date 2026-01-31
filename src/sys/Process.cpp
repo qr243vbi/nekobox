@@ -110,6 +110,14 @@ namespace Configs_sys {
 
         auto cachePath = QStandardPaths::writableLocation(QStandardPaths::CacheLocation);
         QDir().mkpath(cachePath);//create parent dir tree
+
+        QFile file(cachePath + QDir::separator() + "cache.db");
+        if (!file.exists()){
+            if (!file.open(QIODevice::WriteOnly | QIODevice::Truncate)) {
+                qDebug() << "Failed to create file:" << file.errorString();
+            }
+        }
+
         process.setWorkingDirectory(cachePath);
 
         process.setEnvironment(list);
