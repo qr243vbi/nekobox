@@ -116,6 +116,9 @@ Throne powers the infrastructure that creators need to better engage and monetiz
 
 Started in 2021, Throne has revolutionized creator gifting through its Wishlist product. Today, Throne is leveraging the relationships it has built with creators and brands to give creators even more tools to engage with their fans in a safe, fun and enjoyable way. In this way, Throne is a three-sided marketplace connecting world-class brands with creators and their fans. Throne has offices in the US and Germany.
 
+**Tun mode does not work for me.** <br/>
+If [NekoBox](https://github.com/qr243vbi/nekobox) does not work in tun mode, then issue might be with tun configurations. Try to open tun settings, set stack to gvisor or set different tun address (for example, 168.19.0.1/24)
+
 **I have computer with Windows 7, or Window 8, or Windows 8.1. Which version of [NekoBox](https://github.com/qr243vbi/nekobox) should I download?** <br/>
 Although Qt and Go have discontinued support for Windows 7, Windows 8, and Windows 8.1, [NekoBox](https://github.com/qr243vbi/nekobox) continues to run seamlessly on these platforms. This is because [NekoBox](https://github.com/qr243vbi/nekobox) uses modified toolchain to ensure compatibility with these operating systems.
 
