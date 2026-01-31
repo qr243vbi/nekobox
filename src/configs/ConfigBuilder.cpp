@@ -1,8 +1,9 @@
-#include "nekobox/dataStore/Utils.hpp"
 #ifdef _WIN32
 #include <winsock2.h>
 #include <windows.h>
 #endif
+#include "nekobox/dataStore/Utils.hpp"
+
 #include <nekobox/configs/ConfigBuilder.hpp>
 #include <nekobox/dataStore/Database.hpp>
 #include <nekobox/configs/proxy/includes.h>
