@@ -1,3 +1,4 @@
+#include "nekobox/dataStore/Utils.hpp"
 #ifdef _WIN32
 #include <winsock2.h>
 #include <windows.h>
@@ -1061,9 +1062,15 @@ namespace Configs {
         }
 
         {
+            QString cache_id = serverName;
+            if (status->forTest){
+                cache_id += "-test.db";
+            } else {
+                cache_id += "-core.db";
+            }
             QJsonObject cache_file = {
                 {"enabled", true},
-                {"cache_id", serverName},
+                {"path", cache_id},
                 {"store_fakeip", true},
                 {"store_rdrc", true},
     //            {"path", cachePath + "/nekobox_cache.db"}

@@ -4,6 +4,7 @@
 #include <QTimer>
 #include <QDir>
 #include <QApplication>
+#include <QStandardPaths>
 #include <QCoreApplication>
 #include "nekobox/sys/Settings.h"
 #include "nekobox/ui/mainwindow.h"
@@ -14,6 +15,28 @@
 #endif
 #ifdef Q_OS_WIN
 #define ELEVATE_METHOD
+#endif
+
+#ifdef Q_OS_UNIX
+#include <sys/stat.h>
+#include <unistd.h>
+#include <QFile>
+
+static bool removeIfDifferentOwner(const QString &path)
+{
+    struct stat st;
+    if (stat(path.toLocal8Bit().constData(), &st) != 0){
+        return false; // file doesn't exist or error
+    }
+
+    uid_t processUid = getuid();   // or geteuid() if needed
+
+    if (st.st_uid != processUid) {
+        return QFile::remove(path);
+    }
+
+    return false; // same owner → keep file
+}
 #endif
 
 namespace Configs_sys {
@@ -111,12 +134,12 @@ namespace Configs_sys {
         auto cachePath = QStandardPaths::writableLocation(QStandardPaths::CacheLocation);
         QDir().mkpath(cachePath);//create parent dir tree
 
-        QFile file(cachePath + QDir::separator() + "cache.db");
-        if (!file.exists()){
-            if (!file.open(QIODevice::WriteOnly | QIODevice::Truncate)) {
-                qDebug() << "Failed to create file:" << file.errorString();
-            }
-        }
+#ifdef Q_OS_UNIX
+        QString cache_id_test = serverName + "-test.db";
+        QString cache_id_core = serverName + "-core.db";
+        removeIfDifferentOwner(cache_id_core);
+        removeIfDifferentOwner(cache_id_test);
+#endif
 
         process.setWorkingDirectory(cachePath);
 
