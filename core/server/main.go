@@ -119,7 +119,7 @@ func main() {
 	internal.SetRulesetCachedir(cachedir);
 
 	if runtime.GOOS == "linux" {
-		if *_admin || *_save || (*_gid > 0) || (*_uid > 0){
+		if *_admin{
  			restartAsAdmin(*_save, *_gid, *_uid)
 		}
 	}
