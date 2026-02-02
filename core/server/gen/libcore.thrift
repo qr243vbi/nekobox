@@ -117,7 +117,18 @@ struct QueryURLTestResponse {
   1: list<URLTestResp> results
 }
 
+struct CacheURLRequest{
+  1: string http_url;
+}
+
+struct CacheURLResult{
+  1: string file_path;
+  2: bool exists;
+}
+
 service LibcoreService {
+  CacheURLResult CacheHTTP(1: CacheURLRequest req),
+
   ErrorResp Start(1: LoadConfigReq req),
   ErrorResp Stop(1: EmptyReq req),
   ErrorResp CheckConfig(1: LoadConfigReq req),

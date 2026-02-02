@@ -9,7 +9,6 @@ require (
 	github.com/gofrs/uuid/v5 v5.4.0
 	github.com/google/shlex v0.0.0-20191202100458-e7afc7fbc510
 	github.com/oschwald/maxminddb-golang v1.13.1
-	github.com/pkg/xattr v0.4.12
 	github.com/sagernet/quic-go v0.52.0-sing-box-mod.3
 	github.com/sagernet/sing v0.7.16
 	github.com/sagernet/sing-box v1.12.18

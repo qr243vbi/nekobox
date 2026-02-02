@@ -6,10 +6,12 @@ import (
 	"fmt"
 	"log"
 	"nekobox_core/gen"
+	"nekobox_core/internal"
 	"nekobox_core/internal/boxbox"
 	"nekobox_core/internal/boxmain"
 	"nekobox_core/internal/process"
-//	"nekobox_core/internal/sys"
+
+	//	"nekobox_core/internal/sys"
 	"os"
 	"strings"
 	"time"
@@ -31,6 +33,7 @@ var systemProxyAddr metadata.Socksaddr
 var instanceCancel context.CancelFunc
 var debug bool
 
+
 // server is used to implement myservice.MyServiceServer.
 type server struct {
 }
@@ -38,6 +41,14 @@ type server struct {
 // To returns a pointer to the given value.
 func To[T any](v T) *T {
 	return &v
+}
+
+func (s *server) CacheHTTP(ctx context.Context, in *gen.CacheURLRequest) (*gen.CacheURLResult_, error) {
+	out := new(gen.CacheURLResult_)
+	var exists bool
+	out.FilePath = internal.CacheHttpBool(in.HTTPURL, &exists)
+	out.Exists = exists
+	return out, nil
 }
 
 func (s *server) Start(ctx context.Context, in *gen.LoadConfigReq) (*gen.ErrorResp, error) {

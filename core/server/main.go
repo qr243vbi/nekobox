@@ -7,6 +7,7 @@ import (
 	"log"
 	"nekobox_core/gen"
 	"nekobox_core/internal/boxmain"
+	"nekobox_core/internal"
 	_ "nekobox_core/internal/distro/all"
 	"net"
 	"os"
@@ -21,8 +22,13 @@ import (
 	C "github.com/sagernet/sing-box/constant"
 )
 
-func RunCore(_port *int, _debug *bool) {
+
+
+func RunCore(_port *int, _debug *bool, _ruleset_cachedir * string) {
 	debug = *_debug
+
+	internal.SetRulesetCachedir(*_ruleset_cachedir);
+
 	boxmain.DisableColor()
 	addr := "127.0.0.1:" + strconv.Itoa(*_port)
 	// RPC
@@ -79,6 +85,8 @@ func main() {
 	_port := flag.Int("port", 19810, "Port")
 	_debug := flag.Bool("debug", false, "Debug mode")
 	_arg0 := flag.String("argv0", os.Args[0], "Replace first argument")
+	_ruleset_cachedir := flag.String("ruleset-cache-directory", "", "Set ruleset cache directory")
+
 
 	if runtime.GOOS == "linux" {
 		_save = flag.Bool("save", false, "Set admin capabilities")
@@ -167,5 +175,5 @@ func main() {
 
 	testCtx, cancelTests = context.WithCancel(context.Background())
 
-	RunCore(_port, _debug)
+	RunCore(_port, _debug, _ruleset_cachedir)
 }
