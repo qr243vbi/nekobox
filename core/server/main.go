@@ -83,6 +83,9 @@ func main() {
 	var _admin *bool
 	var _save *bool
 	var _waitpid *int
+
+	var _gid *int
+	var _uid *int
 	_port := flag.Int("port", 19810, "Port")
 	_debug := flag.Bool("debug", false, "Debug mode")
 	_arg0 := flag.String("argv0", os.Args[0], "Replace first argument")
@@ -90,7 +93,9 @@ func main() {
 
 
 	if runtime.GOOS == "linux" {
-		_save = flag.Bool("save", false, "Set admin capabilities")
+		_save = flag.Bool("save", false, "Set admin capabilities to executable")
+		_gid = flag.Int("gid", 0, "Set gid to process")
+		_uid = flag.Int("uid", 0, "Set uid to process")
 	}
 	_admin = flag.Bool("admin", false, "Run in admin mode")
 
@@ -114,8 +119,8 @@ func main() {
 	internal.SetRulesetCachedir(cachedir);
 
 	if runtime.GOOS == "linux" {
-		if *_admin || *_save{
-			restartAsAdmin(*_save)
+		if *_admin || *_save || (*_gid > 0) || (*_uid > 0){
+ 			restartAsAdmin(*_save, *_gid, *_uid)
 		}
 	}
 

@@ -56,22 +56,32 @@ func isElevated() (bool, error) {
 	return cap, err
 }
 
-func restartAsAdmin(save bool) {
+func restartAsAdmin(save bool, gid int, uid int) {
 	elevated, err := isElevated()
 	if elevated {
+		caps:= cap.NewSet()
+		err = caps.SetFlag(cap.Inheritable, true, cap.NET_ADMIN)
+		err = caps.SetFlag(cap.Effective, true, cap.NET_ADMIN)
+		err = caps.SetFlag(cap.Permitted, true, cap.NET_ADMIN)
+		if (err != nil){
+			panic(err)
+		}
+
+		caps.SetProc();
+
 		if (save){
-			caps:= cap.NewSet()
-			err = caps.SetFlag(cap.Inheritable, true, cap.NET_ADMIN)
-			err = caps.SetFlag(cap.Effective, true, cap.NET_ADMIN)
-			err = caps.SetFlag(cap.Permitted, true, cap.NET_ADMIN)
-			if (err != nil){
-				panic(err)
-			}
 			err = caps.SetFile(os.Args[0])
 			if (err != nil){
 				panic(err)
 			}
 		}
+		if (uid > 0){
+			syscall.Setuid(uid)
+		}
+		if (gid > 0){
+			syscall.Setgid(gid)
+		}
+
 		return
 	}
 	var args []string
