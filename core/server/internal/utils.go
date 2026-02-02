@@ -78,8 +78,9 @@ func CacheHttp(url string) string {
 	return CacheHttpBool(url, nil)
 }
 
-func cacheRuleSet(url string, format string) option.RuleSet{
+func cacheRuleSet(url string, format string, tag string) option.RuleSet{
 	var ruleset option.RuleSet
+	ruleset.Tag = tag
 	ruleset.Type = C.RuleSetTypeLocal
 	ruleset.Format = format
 	path := CacheHttp(url)
@@ -94,7 +95,7 @@ func ModifyRulesets(opt * option.Options){
 	for u, i := range opt.Route.RuleSet {
 		if (i.Type == C.RuleSetTypeRemote){
 			url := i.RemoteOptions.URL
-			opt.Route.RuleSet[u] = cacheRuleSet(url, i.Format)
+			opt.Route.RuleSet[u] = cacheRuleSet(url, i.Format, i.Tag)
 		}
 	}
 }
