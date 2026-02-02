@@ -119,6 +119,9 @@ struct QueryURLTestResponse {
 
 struct CacheURLRequest{
   1: string http_url;
+  2: bool clear;
+  3: bool filepath;
+  4: bool use_default_outbound;
 }
 
 struct CacheURLResult{

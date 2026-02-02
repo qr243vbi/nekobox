@@ -44,10 +44,10 @@ func parseConfig(ctx context.Context, configContent []byte) (*option.Options, er
 		err error
 	)
 	options, err := json.UnmarshalExtendedContext[option.Options](ctx, configContent)
-	internal.ModifyRulesets(&options)
 	if err != nil {
 		return nil, E.Cause(err, "decode config at ", string(configContent))
 	}
+	internal.ModifyRulesets(&options)
 	return &options, nil
 }
 

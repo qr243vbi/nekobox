@@ -125,6 +125,23 @@ try{                                                                            
         }
     }
 
+    std::optional<libcore::CacheURLResult> Client::CacheHTTP(bool * rpcOK, const libcore::CacheURLRequest &request){
+        CHECK("CacheHTTP")
+        if (!is_running){
+            *rpcOK = false;
+            return std::nullopt;
+        }
+        CHANNEL(CacheHTTP, CacheURLResult)
+
+        if(status.isOk()) {
+            *rpcOK = true;
+            return reply;
+        } else {
+            NOT_OK
+            return std::nullopt;
+        }
+    }
+
     std::optional<libcore::TestResp> Client::Test(bool *rpcOK, const libcore::TestReq &request) {
         CHECK("Test")
         if (!is_running){
@@ -318,6 +335,7 @@ try{                                                                            
             return reply;
         }
     }
+
 
     std::tuple<QString, std::shared_ptr<Configs::BuildConfigResult>> Client::StartEntity(bool *rpcOK,
                             const std::shared_ptr<Configs::ProxyEntity> ent) {

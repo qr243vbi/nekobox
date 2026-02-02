@@ -3,12 +3,15 @@ package main
 import (
 	"context"
 	"fmt"
+	"path/filepath"
 	"log"
 	"nekobox_core/gen"
+	"nekobox_core/internal"
 	"os"
 	"os/exec"
 	"syscall"
 	"time"
+
 	"kernel.org/pub/linux/libs/security/libcap/cap"
 )
 
@@ -82,8 +85,8 @@ func restartAsAdmin(save bool) {
 		}
 	}
 
-	executablePath := os.Args[0]
-	args = append(args, pkexecPath, "sh", "-c", "exec \"${0}\" \"${@}\"", "env", "NEKOBOX_APPIMAGE_CUSTOM_EXECUTABLE=nekobox_core", executablePath)
+	executablePath, err := filepath.Abs(os.Args[0])
+	args = append(args, pkexecPath, "sh", "-c", "exec \"${0}\" \"${@}\"", "env", "NEKOBOX_APPIMAGE_CUSTOM_EXECUTABLE=nekobox_core", executablePath, "-ruleset-cache-directory", internal.GetRulesetCachedir())
 
 	for _, arg := range os.Args[1:] {
 		if arg != "-admin" {

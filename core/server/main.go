@@ -24,10 +24,11 @@ import (
 
 
 
-func RunCore(_port *int, _debug *bool, _ruleset_cachedir * string) {
-	debug = *_debug
+func RunCore(_port *int, _debug *bool) {
+	internal.Debug = *_debug
 
-	internal.SetRulesetCachedir(*_ruleset_cachedir);
+
+	log.Printf("Ruleset dir is %s", internal.GetRulesetCachedir())
 
 	boxmain.DisableColor()
 	addr := "127.0.0.1:" + strconv.Itoa(*_port)
@@ -102,6 +103,16 @@ func main() {
 
 	os.Args[0] = *_arg0
 
+
+	var cachedir string
+	cachedir = os.Getenv("NEKOBOX_RULESET_CACHE_DIRECTORY")
+
+	if (cachedir == "") {
+		cachedir = *_ruleset_cachedir
+	}
+
+	internal.SetRulesetCachedir(cachedir);
+
 	if runtime.GOOS == "linux" {
 		if *_admin || *_save{
 			restartAsAdmin(*_save)
@@ -175,5 +186,5 @@ func main() {
 
 	testCtx, cancelTests = context.WithCancel(context.Background())
 
-	RunCore(_port, _debug, _ruleset_cachedir)
+	RunCore(_port, _debug)
 }

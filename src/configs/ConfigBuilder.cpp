@@ -65,7 +65,7 @@ namespace Configs {
             } else if (binary){
                 format = "binary";
             }
-
+/*
             QFileInfo CachePath (get_cache_from_url(url));
             if (CachePath.exists() || CachePath.isFile()){
                 return QJsonObject{
@@ -75,7 +75,7 @@ namespace Configs {
                     {"path", CachePath.absoluteFilePath()}
                 };
             }
-
+*/
             return QJsonObject{
                 {"type", "remote"},
                 {"format", format},
