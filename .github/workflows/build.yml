@@ -249,7 +249,7 @@ jobs:
 
       - name: Install Qt
         if: matrix.allow == 'true' && github.event.inputs.source_only != 'true' && matrix.target != 'x86'
-        uses: jurplel/install-qt-action@master
+        uses: jurplel/install-qt-action@v4.3.0
         with:
           version: ${{ matrix.qt_version }}
           setup-python: true
@@ -353,7 +353,7 @@ jobs:
 
       - name: Install Qt
         if: matrix.allow == 'true' && github.event.inputs.source_only != 'true'
-        uses: jurplel/install-qt-action@master
+        uses: jurplel/install-qt-action@v4.3.0
         with:
           version: ${{ matrix.qt_version }}
           setup-python: true
