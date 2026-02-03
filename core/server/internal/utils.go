@@ -127,19 +127,19 @@ func DownloadFile(originalURL, targetPath string, use_default_outbound bool) err
 }
 
 func urlToPath(url string) string {
-	result := strings.Replace(url, ":/", "/", 1)
-	result = strings.ReplaceAll(url, "_", "_0_")
-	result = strings.ReplaceAll(url, ":", "_1_")
-	result = strings.ReplaceAll(url, "@", "_2_")
-	result = strings.ReplaceAll(url, "?", "_3_")
-	result = strings.ReplaceAll(url, "=", "_4_")
-	result = strings.ReplaceAll(url, "&", "_5_")
-	result = strings.ReplaceAll(url, "\"", "_6_")
-	result = strings.ReplaceAll(url, "'", "_7_")
-	result = strings.ReplaceAll(url, "*", "_8_")
-	result = filepath.Clean(filepath.FromSlash(result))
-	result = filepath.Clean(filepath.Join(ruleset_cachedir, result))
-	return result
+	url = strings.Replace(url, ":/", "/", 1)
+	url = strings.ReplaceAll(url, "_", "_0_")
+	url = strings.ReplaceAll(url, ":", "_1_")
+	url = strings.ReplaceAll(url, "@", "_2_")
+	url = strings.ReplaceAll(url, "?", "_3_")
+	url = strings.ReplaceAll(url, "=", "_4_")
+	url = strings.ReplaceAll(url, "&", "_5_")
+	url = strings.ReplaceAll(url, "\"", "_6_")
+	url = strings.ReplaceAll(url, "'", "_7_")
+	url = strings.ReplaceAll(url, "*", "_8_")
+	url = filepath.Clean(filepath.FromSlash(url))
+	url = filepath.Clean(filepath.Join(ruleset_cachedir, url))
+	return url
 }
 
 func fileExists(path string) bool {
