@@ -8,6 +8,7 @@ import (
 	"nekobox_core/internal/boxbox"
 	"nekobox_core/internal/process"
 	"net/http"
+	"net/url"
 	"os"
 	"path/filepath"
 	"strings"
@@ -56,7 +57,7 @@ func BoxCreateHttpClient(instance *boxbox.Box) * http.Client {
 	return client;
 }
 
-func DownloadFile(url, targetPath string, use_default_outbound bool) error {
+func DownloadFile(originalURL, targetPath string, use_default_outbound bool) error {
 	// Create all necessary directories for the target path
 	dir := filepath.Dir(targetPath)
 	err := os.MkdirAll(dir, 0755)
@@ -84,7 +85,35 @@ func DownloadFile(url, targetPath string, use_default_outbound bool) error {
 	client = &http.Client{}
 	skip_def_cli:
 
-	resp, err := client.Get(url)
+	parsedURL, err := url.Parse(originalURL)
+	if err != nil {
+		return fmt.Errorf("error parsing URL: %v", err)
+	}
+
+	// Extract credentials (if available)
+	var username, password string
+	if parsedURL.User != nil {
+		username = parsedURL.User.Username()
+		password, _ = parsedURL.User.Password()
+		// Remove the credentials from the URL (we don't need them in the URL anymore)
+		parsedURL.User = nil
+	}
+
+	// Rebuild the cleaned URL without credentials
+	cleanedURL := parsedURL.String()
+
+	// Create a new GET request with the cleaned URL
+	req, err := http.NewRequest("GET", cleanedURL, nil)
+	if err != nil {
+		return fmt.Errorf("error creating request: %v", err)
+	}
+
+	// If credentials were found, set Basic Authentication header
+	if username != "" && password != "" {
+		req.SetBasicAuth(username, password)
+	}
+
+	resp, err := client.Do(req)
 	if err != nil {
 		return fmt.Errorf("failed to download file: %v", err)
 	}
@@ -99,6 +128,15 @@ func DownloadFile(url, targetPath string, use_default_outbound bool) error {
 
 func urlToPath(url string) string {
 	result := strings.Replace(url, ":/", "/", 1)
+	result = strings.ReplaceAll(url, "_", "_0_")
+	result = strings.ReplaceAll(url, ":", "_1_")
+	result = strings.ReplaceAll(url, "@", "_2_")
+	result = strings.ReplaceAll(url, "?", "_3_")
+	result = strings.ReplaceAll(url, "=", "_4_")
+	result = strings.ReplaceAll(url, "&", "_5_")
+	result = strings.ReplaceAll(url, "\"", "_6_")
+	result = strings.ReplaceAll(url, "'", "_7_")
+	result = strings.ReplaceAll(url, "*", "_8_")
 	result = filepath.Clean(filepath.FromSlash(result))
 	result = filepath.Clean(filepath.Join(ruleset_cachedir, result))
 	return result
