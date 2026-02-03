@@ -1288,7 +1288,7 @@ bool MainWindow::getRuleSet() {
           ruleSetMap.clear();
         }
         QVariantMap map1 = QString2QMap(body.data);
-        MW_show_log(QObject::tr("Rule Sets Count: %1").arg(QString::number(map1.size())));
+    //    MW_show_log(QObject::tr("Rule Sets Count: %1").arg(QString::number(map1.size())));
         for (auto [key, value] : asKeyValueRange(map1)){
           ruleSetMap[key] = value;
         };

@@ -210,7 +210,8 @@ QByteArray JsonStore::ToBytes(const QStringList &without){
     QDataStream out(&buffer); 
 
     for (auto [key, value] : asKeyValueRange(this->_map()) ){
-        if (!without.contains(value->name)){
+        QString name = value->name;
+        if (!without.contains(name)){
             out << key;
             unsigned char type = value->type();
             out << type;

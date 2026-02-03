@@ -197,7 +197,7 @@ QByteArray hash = QCryptographicHash::hash(
   return hash;
 }
 
-    bool ForceJsonConfigs = true;
+    bool ForceJsonConfigs = false;
 
     DataStore *dataStore = new DataStore();
 
