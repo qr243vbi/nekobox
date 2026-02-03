@@ -386,7 +386,6 @@ SET_BIN(bool) {
 SET_BIN(boolPtr) {
   bool value;
   data >> value;
-  qDebug() << "BINBIN";
   GET_PTR_OR_RETURN
   qDebug() << value;
   qDebug() << **(bool **)ptr;
