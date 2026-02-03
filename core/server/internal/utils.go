@@ -115,8 +115,8 @@ func CacheHttpBool(url string, use_default_outbound bool, s * bool) string {
 		return ""
 	}
 	path := urlToPath(url)
-	log.Printf("Cache ruleset: %s", url);
 	if !fileExists(path) {
+		log.Printf("Downloading %s", url)
 		err := DownloadFile(url, path, use_default_outbound)
 		if (err != nil){
 			log.Fatalf("Error while downloading: %s", err.Error())
@@ -125,6 +125,7 @@ func CacheHttpBool(url string, use_default_outbound bool, s * bool) string {
 			*s = true
 		}
 	} else if s != nil {
+		log.Printf("Cached %s", url);
 		*s = false
 	}
 	return path
