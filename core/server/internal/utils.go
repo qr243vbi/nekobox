@@ -116,7 +116,12 @@ func CacheHttpBool(url string, use_default_outbound bool, s * bool) string {
 	}
 	path := urlToPath(url)
 	if !fileExists(path) {
-		log.Printf("Downloading %s", url)
+		log.Printf("Downloading %s %s", url, func() string {
+			if use_default_outbound {
+				return "with proxy"
+			}
+			return "without proxy"
+		}() )
 		err := DownloadFile(url, path, use_default_outbound)
 		if (err != nil){
 			log.Fatalf("Error while downloading: %s", err.Error())
