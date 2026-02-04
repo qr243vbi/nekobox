@@ -49,7 +49,7 @@ namespace Configs {
     inline QString get_rule_set_name( QString  name){
         return get_rule_set_name_1(name);
     };
-
+/*
     inline QString get_cache_from_url(QUrl & url){
         return  "rule_sets/" + 
                 url.scheme()  + "/" +
@@ -57,11 +57,12 @@ namespace Configs {
                 url.path();
     }
 
+
     inline QString get_cache_from_str(QString & str){
         QUrl url(str);
         return get_cache_from_url(url);
     }
-
+*/
     QJsonObject get_rule_set_json(const QString &ruleSet);
 
     class RouteRule : public JsonStore {

@@ -128,6 +128,11 @@ namespace Configs_sys {
         if (started) return;
         started = true;
         QStringList list = QProcessEnvironment::systemEnvironment().toStringList();
+
+        QString rulesets = QDir("rule_sets").absolutePath();
+        list << "NEKOBOX_RULESET_CACHE_DIRECTORY=" + rulesets;
+        qDebug() << rulesets;
+
         list << "NEKOBOX_APPIMAGE_CUSTOM_EXECUTABLE=nekobox_core";
 
 

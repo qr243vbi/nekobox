@@ -115,6 +115,10 @@ public:
 
     void refresh_groups();
 
+    void clear_ruleset_cache();
+
+    bool fetch_ruleset_cache(const QString &url);
+
     bool isShowRuleSetData();
 
     void refresh_status(const QString &traffic_update = "");

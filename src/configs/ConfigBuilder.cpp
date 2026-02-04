@@ -1,3 +1,4 @@
+#include "nekobox/dataStore/RouteEntity.h"
 #ifdef _WIN32
 #include <winsock2.h>
 #include <windows.h>
@@ -64,7 +65,7 @@ namespace Configs {
             } else if (binary){
                 format = "binary";
             }
-
+/*
             QFileInfo CachePath (get_cache_from_url(url));
             if (CachePath.exists() || CachePath.isFile()){
                 return QJsonObject{
@@ -74,7 +75,7 @@ namespace Configs {
                     {"path", CachePath.absoluteFilePath()}
                 };
             }
-
+*/
             return QJsonObject{
                 {"type", "remote"},
                 {"format", format},
@@ -142,25 +143,37 @@ namespace Configs {
         result->extraCoreData = std::make_shared<ExtraCoreData>();
         auto status = std::make_shared<BuildConfigStatus>();
         status->ent = ent;
+        
+        /*
+        if (ent != nullptr && ent->bean->DisplayName() == "!!aaaa!!"){
+            status->ent = nullptr;
+        }
+        */
+
         status->result = result;
         status->forTest = forTest;
         status->forExport = forExport;
         status->chainID = chainID;
 
-        auto customBean = dynamic_cast<Configs::CustomBean *>(ent->bean.get());
-        if (customBean != nullptr && customBean->core == "internal-full") {
-            if (dataStore->spmode_vpn)
-            {
-                status->result->error = QObject::tr("Tun mode cannot be used with Custom configs");
-                return result;
+        if (status->ent != nullptr){
+            auto customBean = dynamic_cast<Configs::CustomBean *>(ent->bean.get());
+            if (customBean != nullptr && customBean->core == "internal-full") {
+                if (dataStore->spmode_vpn)
+                {
+                    status->result->error = QObject::tr("Tun mode cannot be used with Custom configs");
+                    return result;
+                }
+                result->coreConfig = QString2QJsonObject(customBean->config_simple);
+            } else {
+                BuildConfigSingBox(status);
             }
-            result->coreConfig = QString2QJsonObject(customBean->config_simple);
-        } else {
-            BuildConfigSingBox(status);
-        }
 
         // apply custom config
-        MergeJson(QString2QJsonObject(ent->bean->custom_config), result->coreConfig);
+            MergeJson(QString2QJsonObject(ent->bean->custom_config), result->coreConfig);
+        } else {
+            qDebug() << "Generating Block Network Config";
+            BuildConfigSingBox(status);
+        }
 
         return result;
     }
@@ -383,7 +396,7 @@ namespace Configs {
     QString BuildChainInternal(int chainId, const QList<std::shared_ptr<ProxyEntity>> &ents,
                                const std::shared_ptr<BuildConfigStatus> &status) {
         QString chainTag = "c-" + QString::number(chainId);
-        QString chainTagOut;
+        QString chainTagOut = "";
         bool lastWasEndpoint = false;
 
         for (int index = 0; index < ents.length(); index++) {
@@ -597,29 +610,77 @@ namespace Configs {
         return res;
     }
 
+    QJsonObject BuildTunInbound(const QStringList &directIPSets, const QStringList &directIPCIDRs){
+        QJsonObject inboundObj;
+        inboundObj["tag"] = "tun-in";
+        inboundObj["type"] = "tun";
+        inboundObj["interface_name"] = getTunName();
+        inboundObj["auto_route"] = true;
+        inboundObj["mtu"] = dataStore->vpn_mtu;
+        inboundObj["stack"] = dataStore->vpn_implementation;
+        inboundObj["strict_route"] = dataStore->vpn_strict_route;
+
+   //         if (dataStore->auto_redirect){
+//                inboundObj["auto_redirect"] = true;
+   //         }
+//#ifdef Q_OS_UNIX
+//            inboundObj["auto_redirect"] = true;
+//#endif
+        auto tunAddress = QJsonArray{getTunAddress()};
+        if (dataStore->vpn_ipv6) tunAddress += getTunAddress6();
+        inboundObj["address"] = tunAddress;
+
+        QJsonArray routeExcludeAddrs = {
+            "127.0.0.0/8",
+            "10.0.0.0/8", //private class a,b,c
+            "172.16.0.0/12",
+            "192.168.0.0/16",
+            "169.254.0.0/16",
+            "224.0.0.0/4",
+            "255.255.255.255/32"
+        };
+        QJsonArray routeExcludeSets;
+        if (dataStore->enable_tun_routing)
+        {
+            for (auto item:directIPCIDRs) routeExcludeAddrs << item;
+            for (auto item: directIPSets) routeExcludeSets << item;
+        }
+        //    if (routeChain->defaultOutboundID != proxyID)
+        {
+            inboundObj["route_exclude_address"] = routeExcludeAddrs;
+            if (!routeExcludeSets.isEmpty()) inboundObj["route_exclude_address_set"] = routeExcludeSets;
+        }
+        return inboundObj;
+    }
 
     void BuildConfigSingBox(const std::shared_ptr<BuildConfigStatus> &status) {
+        bool blockAll = (status->ent == nullptr);
         // Prefetch
-        auto routeChain = profileManager->GetRouteChain(dataStore->routing->current_route_id);
+        std::shared_ptr<RoutingChain> routeChain;
+        if (!blockAll) {
+            routeChain = profileManager->GetRouteChain(dataStore->routing->current_route_id);
+        } else {
+            routeChain = RoutingChain::GetDefaultChain();
+            routeChain->defaultOutboundID = blockID;
+        }
+
         if (routeChain == nullptr) {
             status->result->error = "Routing profile does not exist, try resetting the route profile in Routing Settings";
             return;
         }
 
-        // will be removed on November 1st, 2025
-        for (auto ruleItem = routeChain->Rules.begin(); ruleItem != routeChain->Rules.end(); ++ruleItem) {
-            for (auto ruleSetItem = (*ruleItem)->rule_set.begin(); ruleSetItem != (*ruleItem)->rule_set.end(); ++ruleSetItem) {
+        /*
+        for (auto ruleItem: routeChain->Rules) {
+            for (auto ruleSetItem = (ruleItem)->rule_set.begin(); ruleSetItem != (ruleItem)->rule_set.end(); ++ruleSetItem) {
                 if ((*ruleSetItem).endsWith("_IP")) {
-                    *ruleSetItem = "geoip-" + (*ruleSetItem).left((*ruleSetItem).length() - 3);
-                }
-                if ((*ruleSetItem).endsWith("_SITE")) {
-                    *ruleSetItem = "geosite-" + (*ruleSetItem).left((*ruleSetItem).length() - 5);
+                    *ruleSetItem = "geoip-" + ruleSetItem->left(ruleSetItem->length() - 3);
+                } else if ((*ruleSetItem).endsWith("_SITE")) {
+                    *ruleSetItem = "geosite-" + ruleSetItem->left(ruleSetItem->length() - 5);
                 }
             }
         }
         routeChain->Save();
 
-        /*
         if (dataStore->core_box_underlying_dns.isEmpty() && dataStore->spmode_vpn)
         {
             status->result->error = QObject::tr("Local DNS and Tun mode do not work together, please set an IP to be used as the Local DNS server in the Routing Settings -> Local override");
@@ -630,8 +691,26 @@ namespace Configs {
         // copy for modification
         routeChain = std::make_shared<RoutingChain>(*routeChain);
 
+        // Direct domains
+        bool needDirectDnsRules = false;
+        QJsonArray directDomains;
+        QJsonArray directRuleSets;
+        QJsonArray directSuffixes;
+        QJsonArray directKeywords;
+        QJsonArray directRegexes;
+        // Direct IPs
+        QStringList directIPSets;
+        QStringList directIPCIDRs;
+        QStringList sets;
+        QStringList directIPraw;
+        QString tagProxy;
+
+        if (blockAll){
+            tagProxy = "block";
+            goto skip_multiple_jobs;
+        }
         // Outbounds
-        auto tagProxy = BuildChain(status->chainID, status);
+        tagProxy = BuildChain(status->chainID, status);
         if (!status->result->error.isEmpty()) return;
         if (status->ent->type == "extracore")
         {
@@ -644,13 +723,6 @@ namespace Configs {
             routeChain->Rules << RouteRule::get_processPath_direct_rule(status->result->extraCoreData->path);
         }
 
-        // Direct domains
-        bool needDirectDnsRules = false;
-        QJsonArray directDomains;
-        QJsonArray directRuleSets;
-        QJsonArray directSuffixes;
-        QJsonArray directKeywords;
-        QJsonArray directRegexes;
 
         // server addresses
         for (const auto &item: status->domainListDNSDirect) {
@@ -658,7 +730,7 @@ namespace Configs {
             needDirectDnsRules = true;
         }
 
-        auto sets = routeChain->get_direct_sites();
+        sets = routeChain->get_direct_sites();
         for (const auto &item: sets) {
             if (item.startsWith("ruleset:")) {
                 directRuleSets << item.mid(8);
@@ -677,12 +749,8 @@ namespace Configs {
             }
             needDirectDnsRules = true;
         }
-
-        // Direct IPs
-        QJsonArray directIPSets;
-        QJsonArray directIPCIDRs;
-
-        auto directIPraw = routeChain->get_direct_ips();
+        
+        directIPraw = routeChain->get_direct_ips();
         for (const auto &item: directIPraw)
         {
             if (item.startsWith("ruleset:"))
@@ -695,9 +763,10 @@ namespace Configs {
             }
         }
 
+        skip_multiple_jobs:
         // Inbounds
         // mixed-in
-        if (IsValidPort(dataStore->inbound_socks_port) && !status->forTest) {
+        if (IsValidPort(dataStore->inbound_socks_port) && (!status->forTest || blockAll)) {
             QJsonObject inboundObj;
             inboundObj["tag"] = "mixed-in";
             inboundObj["type"] = "mixed";
@@ -707,51 +776,12 @@ namespace Configs {
         }
 
         // tun-in
-        if (dataStore->spmode_vpn && !status->forTest) {
-            QJsonObject inboundObj;
-            inboundObj["tag"] = "tun-in";
-            inboundObj["type"] = "tun";
-            inboundObj["interface_name"] = getTunName();
-            inboundObj["auto_route"] = true;
-            inboundObj["mtu"] = dataStore->vpn_mtu;
-            inboundObj["stack"] = dataStore->vpn_implementation;
-            inboundObj["strict_route"] = dataStore->vpn_strict_route;
-
-   //         if (dataStore->auto_redirect){
-//                inboundObj["auto_redirect"] = true;
-   //         }
-//#ifdef Q_OS_UNIX
-//            inboundObj["auto_redirect"] = true;
-//#endif
-            auto tunAddress = QJsonArray{getTunAddress()};
-            if (dataStore->vpn_ipv6) tunAddress += getTunAddress6();
-            inboundObj["address"] = tunAddress;
-
-            QJsonArray routeExcludeAddrs = {
-                "127.0.0.0/8",
-                "10.0.0.0/8", //private class a,b,c
-                "172.16.0.0/12",
-                "192.168.0.0/16",
-                "169.254.0.0/16",
-                "224.0.0.0/4",
-                "255.255.255.255/32"
-            };
-            QJsonArray routeExcludeSets;
-            if (dataStore->enable_tun_routing)
-            {
-                for (auto item:directIPCIDRs) routeExcludeAddrs << item;
-                for (auto item: directIPSets) routeExcludeSets << item;
-            }
-            if (routeChain->defaultOutboundID == proxyID)
-            {
-                inboundObj["route_exclude_address"] = routeExcludeAddrs;
-                if (!routeExcludeSets.isEmpty()) inboundObj["route_exclude_address_set"] = routeExcludeSets;
-            }
-            status->inbounds += inboundObj;
+        if ((dataStore->spmode_vpn && !status->forTest) || blockAll) {
+            status->inbounds += BuildTunInbound(directIPSets, directIPCIDRs);
         }
 
         // ntp
-        if (dataStore->enable_ntp) {
+        if (dataStore->enable_ntp && !blockAll) {
             QJsonObject ntpObj;
             ntpObj["enabled"] = true;
             ntpObj["server"] = dataStore->ntp_server_address;
@@ -764,6 +794,10 @@ namespace Configs {
         status->outbounds += QJsonObject{
             {"type", "direct"},
             {"tag", "direct"},
+        };
+        status->outbounds += QJsonObject{
+            {"type", "block"},
+            {"tag", "block"},
         };
         status->result->outboundStats += std::make_shared<Stats::TrafficData>("direct");
 
@@ -806,7 +840,7 @@ namespace Configs {
 
         // manage routing section
         auto routeObj = QJsonObject();
-        if (dataStore->spmode_vpn) {
+        if (dataStore->spmode_vpn || blockAll) {
             routeObj["auto_detect_interface"] = true;
         }
         if (!status->forTest) {
@@ -834,8 +868,9 @@ namespace Configs {
             auto neededOutbounds = routeChain->get_used_outbounds();
             auto neededRuleSets = routeChain->get_used_rule_sets();
             std::map<int, QString> outboundMap;
-            outboundMap[-1] = "proxy";
-            outboundMap[-2] = "direct";
+            outboundMap[proxyID] = "proxy";
+            outboundMap[directID] = "direct";
+            outboundMap[blockID] = "block";
             int suffix = 0;
             for (const auto &item: *neededOutbounds) {
                 if (item < 0) continue;
@@ -892,7 +927,7 @@ namespace Configs {
                     ruleSetArray += json_object;
                 }
             }
-            if (dataStore->adblock_enable) {
+            if (dataStore->adblock_enable && !blockAll) {
                 QString item = "nekobox-adblocksingbox";
                 qDebug() << item;
                 auto json_object = get_rule_set_json(item);
@@ -914,7 +949,9 @@ namespace Configs {
         };
 
         // Remote
-        if (status->ent->type == "tailscale")
+        if (blockAll){
+
+        } else if (status->ent->type == "tailscale")
         {
             auto tailDns = QJsonObject{
                 {"type", "tailscale"},
@@ -963,7 +1000,7 @@ namespace Configs {
         };
 
         // Hijack
-        if (dataStore->enable_dns_server && !status->forTest) {
+        if (dataStore->enable_dns_server && !status->forTest && !blockAll) {
             dnsRules += QJsonObject{
                 {"rule_set", hijackGeoAssets},
                 {"domain", hijackDomains},
@@ -998,7 +1035,7 @@ namespace Configs {
         }
 
         // Fakedns
-        if (dataStore->fake_dns) {
+        if (dataStore->fake_dns && !blockAll) {
             dnsServers += QJsonObject{
                 {"tag", "dns-fake"},
                 {"type", "fakeip"},
@@ -1016,7 +1053,7 @@ namespace Configs {
             dns["independent_cache"] = true;
         }
 
-        if (needDirectDnsRules) {
+        if (needDirectDnsRules && !blockAll) {
             dnsRules += QJsonObject{
                 {"rule_set", directRuleSets},
                 {"domain", directDomains},
@@ -1062,7 +1099,7 @@ namespace Configs {
             }
         }
 
-        {
+        if (!blockAll){
             QString cache_id = serverName;
             if (status->forTest){
                 cache_id += "-test.db";

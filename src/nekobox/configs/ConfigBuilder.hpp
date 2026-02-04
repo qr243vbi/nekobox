@@ -73,6 +73,8 @@ namespace Configs {
     QString BuildChainInternal(int chainId, const QList<std::shared_ptr<ProxyEntity>> &ents,
                                const std::shared_ptr<BuildConfigStatus> &status);
 
+
+
     void BuildOutbound(const std::shared_ptr<ProxyEntity> &ent, const std::shared_ptr<BuildConfigStatus> &status, QJsonObject& outbound, const QString& tag);
 
     QString getTunName();
@@ -111,4 +113,7 @@ namespace Configs {
         }
         return link;
     }
+
+    QJsonObject BuildTunInbound(const QStringList &directIPSets, const QStringList &directIPCIDRs);
+
 } // namespace Configs

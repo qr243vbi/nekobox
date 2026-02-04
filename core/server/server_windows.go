@@ -21,7 +21,7 @@ import (
 	"sync"
 	"syscall"
 	"unsafe"
-
+	"nekobox_core/internal"
 	"github.com/NullYing/npipe"
 	"golang.org/x/sys/windows"
 )
@@ -163,9 +163,9 @@ func runAdmin(_port *int, _debug *bool) (int, error) {
 
 	stdout_pipe := `\\.\pipe\nekobox_core_stdout_` + randstr
 	stderr_pipe := `\\.\pipe\nekobox_core_stderr_` + randstr
-	flag := ""
+	flag := " -ruleset-cache-directory "+ internal.GetRulesetCachedir()
 	if *_debug {
-		flag = " \"-debug\""
+		flag += " -debug"
 	}
 
 	var pid int
@@ -264,7 +264,7 @@ func (s *server) IsPrivileged(ctx context.Context, in *gen.EmptyReq) (*gen.IsPri
 	return out, nil
 }
 
-func restartAsAdmin(save bool) {
+func restartAsAdmin(save bool, gid int, uid int) {
 }
 
 func getProcessPath(pid uint32) (string, error) {

@@ -929,23 +929,23 @@ MainWindow::MainWindow(QWidget *parent)
                 if (!showRuleSetData) {
                   break;
                 }
-                QString url(item.toString());
-                QString str = Configs::get_cache_from_str(url);
-                QFile cache_file(str);
-                if (!cache_file.exists()) {
-                  mut.lock();
-                  runOnUiThread([this, &str, &mut]() {
-                    this->setDownloadReport(DownloadProgressReport{str, 0, 0},
-                                            true);
-                    UpdateDataView(true);
-                    mut.unlock();
-                  });
-                  mut.lock();
+                QString url(Configs::get_jsdelivr_link(item.toString()));
+        //        QFile cache_file(str);
+          //      if (!cache_file.exists()) {
+                mut.lock();
+                runOnUiThread([this, &url, &mut]() {
+                  this->setDownloadReport(DownloadProgressReport{
+                    url, 0, 0}, true);
+                  UpdateDataView(true);
                   mut.unlock();
-                  NetworkRequestHelper::DownloadAsset(
-                      Configs::get_jsdelivr_link(url), str);
-                }
+                });
+                mut.lock();
+                mut.unlock();
+                this->fetch_ruleset_cache(url);
+     //           NetworkRequestHelper::DownloadAsset(
+     //               Configs::get_jsdelivr_link(url), str);
               }
+          //    }
               if (showRuleSetData) {
                 showRuleSetData = false;
                 runOnUiThread([=, this] {
@@ -969,6 +969,8 @@ MainWindow::MainWindow(QWidget *parent)
     connect(
         actionClearRuleSetCache, &QAction::triggered, this,
         [this]() {
+          clear_ruleset_cache();
+          /*
           runOnNewThread([this] {
             showRuleSetData = false;
             mu_download_update.lock();
@@ -989,6 +991,7 @@ MainWindow::MainWindow(QWidget *parent)
             mut.lock();
             mut.unlock();
           });
+          */
         },
         Qt::SingleShotConnection);
 
@@ -1285,7 +1288,7 @@ bool MainWindow::getRuleSet() {
           ruleSetMap.clear();
         }
         QVariantMap map1 = QString2QMap(body.data);
-        MW_show_log(QObject::tr("Rule Sets Count: %1").arg(QString::number(map1.size())));
+    //    MW_show_log(QObject::tr("Rule Sets Count: %1").arg(QString::number(map1.size())));
         for (auto [key, value] : asKeyValueRange(map1)){
           ruleSetMap[key] = value;
         };

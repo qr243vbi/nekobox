@@ -1,3 +1,4 @@
+#include "libcore_types.h"
 #include "nekobox/dataStore/ProxyEntity.hpp"
 #include "nekobox/ui/mainwindow.h"
 
@@ -39,6 +40,28 @@ void MainWindow::setup_rpc() {
         MW_show_log("[Auto-Test] Started with interval of " +
                     QString::number(Configs::dataStore->auto_test_interval_seconds) + " seconds");
     }
+}
+
+void MainWindow::clear_ruleset_cache(){
+    bool isok;
+    libcore::CacheURLRequest req;
+    req.filepath = false;
+    req.clear = true;
+    req.use_default_outbound = false;
+    req.http_url = "";
+    defaultClient->CacheHTTP(&isok, req);
+}
+
+
+bool MainWindow::fetch_ruleset_cache(const QString & url){
+    bool isok;
+    libcore::CacheURLRequest req;
+    req.clear = false;
+    req.filepath = false;
+    req.use_default_outbound = Configs::dataStore->net_use_proxy;
+    req.http_url = url.toStdString();
+    defaultClient->CacheHTTP(&isok, req);
+    return isok;
 }
 
 void MainWindow::runURLTest(const QString& config, bool useDefault, const QStringList& outboundTags, const QMap<QString, int>& tag2entID, int entID) {

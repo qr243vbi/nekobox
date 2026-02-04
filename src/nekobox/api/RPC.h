@@ -23,6 +23,8 @@ public:
 
   std::optional<libcore::QueryStatsResp> QueryStats();
 
+  std::optional<libcore::CacheURLResult> CacheHTTP(bool * rpcOK, const libcore::CacheURLRequest &request);
+
   std::optional<libcore::TestResp> Test(bool *rpcOK,
                                         const libcore::TestReq &request);
 

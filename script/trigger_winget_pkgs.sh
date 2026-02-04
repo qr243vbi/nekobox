@@ -53,19 +53,21 @@ InstallerSwitches:
 InstallationMetadata:
   DefaultInstallLocation: '"'"'%AppData%\NekoBox'"'"'
 Installers:
-- Architecture: x86
-  InstallerUrl: https://github.com/qr243vbi/nekobox/releases/download/OldVer/nekobox-OldVer-windows32-installer.exe
-  InstallerSha256: OldSha32
 - Architecture: x64
   InstallerUrl: https://github.com/qr243vbi/nekobox/releases/download/OldVer/nekobox-OldVer-windows64-installer.exe
   InstallerSha256: OldSha64
-- Architecture: arm64
-  InstallerUrl: https://github.com/qr243vbi/nekobox/releases/download/OldVer/nekobox-OldVer-windows-arm64-installer.exe
-  InstallerSha256: OldShaArm
 ManifestType: installer
 ManifestVersion: 1.10.0
 
 '
+
+
+#- Architecture: arm64
+#  InstallerUrl: https://github.com/qr243vbi/nekobox/releases/download/OldVer/nekobox-OldVer-windows-arm64-installer.exe
+#  InstallerSha256: OldShaArm
+#- Architecture: x86
+#  InstallerUrl: https://github.com/qr243vbi/nekobox/releases/download/OldVer/nekobox-OldVer-windows32-installer.exe
+#  InstallerSha256: OldSha32
 
 MANIFEST3='# yaml-language-server: $schema=https://aka.ms/winget-manifest.defaultLocale.1.10.0.schema.json
 PackageIdentifier: qr243vbi.NekoBox

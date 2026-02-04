@@ -7,6 +7,7 @@ import (
 	"log"
 	"nekobox_core/gen"
 	"nekobox_core/internal/boxmain"
+	"nekobox_core/internal"
 	_ "nekobox_core/internal/distro/all"
 	"net"
 	"os"
@@ -21,8 +22,14 @@ import (
 	C "github.com/sagernet/sing-box/constant"
 )
 
+
+
 func RunCore(_port *int, _debug *bool) {
-	debug = *_debug
+	internal.Debug = *_debug
+
+
+	log.Printf("Ruleset dir is %s", internal.GetRulesetCachedir())
+
 	boxmain.DisableColor()
 	addr := "127.0.0.1:" + strconv.Itoa(*_port)
 	// RPC
@@ -76,12 +83,19 @@ func main() {
 	var _admin *bool
 	var _save *bool
 	var _waitpid *int
+
+	var _gid *int
+	var _uid *int
 	_port := flag.Int("port", 19810, "Port")
 	_debug := flag.Bool("debug", false, "Debug mode")
 	_arg0 := flag.String("argv0", os.Args[0], "Replace first argument")
+	_ruleset_cachedir := flag.String("ruleset-cache-directory", "", "Set ruleset cache directory")
+
 
 	if runtime.GOOS == "linux" {
-		_save = flag.Bool("save", false, "Set admin capabilities")
+		_save = flag.Bool("save", false, "Set admin capabilities to executable")
+		_gid = flag.Int("gid", 0, "Set gid to process")
+		_uid = flag.Int("uid", 0, "Set uid to process")
 	}
 	_admin = flag.Bool("admin", false, "Run in admin mode")
 
@@ -94,9 +108,19 @@ func main() {
 
 	os.Args[0] = *_arg0
 
+
+	var cachedir string
+	cachedir = os.Getenv("NEKOBOX_RULESET_CACHE_DIRECTORY")
+
+	if (cachedir == "") {
+		cachedir = *_ruleset_cachedir
+	}
+
+	internal.SetRulesetCachedir(cachedir);
+
 	if runtime.GOOS == "linux" {
-		if *_admin || *_save{
-			restartAsAdmin(*_save)
+		if *_admin{
+ 			restartAsAdmin(*_save, *_gid, *_uid)
 		}
 	}
 

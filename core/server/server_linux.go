@@ -5,10 +5,14 @@ import (
 	"fmt"
 	"log"
 	"nekobox_core/gen"
+	"nekobox_core/internal"
 	"os"
 	"os/exec"
+	"path/filepath"
+	"strconv"
 	"syscall"
 	"time"
+
 	"kernel.org/pub/linux/libs/security/libcap/cap"
 )
 
@@ -53,22 +57,57 @@ func isElevated() (bool, error) {
 	return cap, err
 }
 
-func restartAsAdmin(save bool) {
+func restartAsAdmin(save bool, gid int, uid int) {
 	elevated, err := isElevated()
 	if elevated {
+		caps:= cap.NewSet()
+		err = caps.SetFlag(cap.Inheritable, true, cap.NET_ADMIN)
+		err = caps.SetFlag(cap.Effective, true, cap.NET_ADMIN)
+		err = caps.SetFlag(cap.Permitted, true, cap.NET_ADMIN)
+		if (err != nil){
+			panic(err)
+		}
+
 		if (save){
-			caps:= cap.NewSet()
-			err = caps.SetFlag(cap.Inheritable, true, cap.NET_ADMIN)
-			err = caps.SetFlag(cap.Effective, true, cap.NET_ADMIN)
-			err = caps.SetFlag(cap.Permitted, true, cap.NET_ADMIN)
-			if (err != nil){
-				panic(err)
-			}
 			err = caps.SetFile(os.Args[0])
 			if (err != nil){
 				panic(err)
 			}
 		}
+
+		if (gid > 0){
+			syscall.Setegid(gid)
+		}
+
+		if (uid > 0){
+			syscall.Seteuid(uid)
+		}
+
+
+		// 1. Get the capability set for the current process
+		// This captures Permitted, Effective, and Inheritable sets.
+		c := cap.GetProc()
+
+		// 2. Define the capability we want to enable
+		netAdmin := cap.NET_ADMIN
+
+		// 3. Set the NET_ADMIN bit in the Effective set
+		// Since we are root, it is already in our Permitted set.
+		if err := c.SetFlag(cap.Effective, true, netAdmin); err != nil {
+			log.Fatalf("failed to set flag: %v", err)
+		}
+
+
+		if err := c.SetFlag(cap.Permitted, true, netAdmin); err != nil {
+			log.Fatalf("failed to set flag: %v", err)
+		}
+
+		// 4. Apply these capabilities to EVERY thread in the Go process
+		// The libcap wrapper uses the nptl:setxid mechanism to sync threads.
+		if err := c.SetProc(); err != nil {
+			log.Fatalf("failed to apply capabilities: %v (Are you root?)", err)
+		}
+
 		return
 	}
 	var args []string
@@ -82,14 +121,11 @@ func restartAsAdmin(save bool) {
 		}
 	}
 
-	executablePath := os.Args[0]
-	args = append(args, pkexecPath, "sh", "-c", "exec \"${0}\" \"${@}\"", "env", "NEKOBOX_APPIMAGE_CUSTOM_EXECUTABLE=nekobox_core", executablePath)
+	executablePath, err := filepath.Abs(os.Args[0])
+	args = append(args, pkexecPath, "sh", "-c", "exec \"${0}\" \"${@}\"", "env", "NEKOBOX_APPIMAGE_CUSTOM_EXECUTABLE=nekobox_core", executablePath, "-ruleset-cache-directory", internal.GetRulesetCachedir(), "-gid", strconv.Itoa(syscall.Getgid()), "-uid", strconv.Itoa(syscall.Getuid()) )
 
-	for _, arg := range os.Args[1:] {
-		if arg != "-admin" {
-			args = append(args, arg)
-		}
-	}
+	args = append(args, os.Args[1:]...)
+
 	err = syscall.Exec(pkexecPath, args, os.Environ())
 	if err != nil {
 		// This part of the code will only be reached if syscall.Exec fails

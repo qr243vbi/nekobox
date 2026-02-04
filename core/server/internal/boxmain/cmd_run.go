@@ -2,6 +2,7 @@ package boxmain
 
 import (
 	"nekobox_core/internal/boxbox"
+	"nekobox_core/internal"
 	"context"
 	"os"
 	"os/signal"
@@ -46,6 +47,7 @@ func parseConfig(ctx context.Context, configContent []byte) (*option.Options, er
 	if err != nil {
 		return nil, E.Cause(err, "decode config at ", string(configContent))
 	}
+	internal.ModifyRulesets(&options)
 	return &options, nil
 }
 
