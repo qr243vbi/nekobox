@@ -10,9 +10,9 @@ require (
 	github.com/google/shlex v0.0.0-20191202100458-e7afc7fbc510
 	github.com/oschwald/maxminddb-golang v1.13.1
 	github.com/sagernet/quic-go v0.52.0-sing-box-mod.3
-	github.com/sagernet/sing v0.7.16
-	github.com/sagernet/sing-box v1.12.18
-	github.com/sagernet/sing-tun v0.7.9
+	github.com/sagernet/sing v0.7.18
+	github.com/sagernet/sing-box v1.12.19
+	github.com/sagernet/sing-tun v0.7.11
 	github.com/spf13/cobra v1.10.2
 	golang.org/x/sys v0.40.0
 	golang.zx2c4.com/wireguard/wgctrl v0.0.0-20241231184526-a9ab2273dd10
