@@ -585,7 +585,7 @@
      <x>0</x>
      <y>0</y>
      <width>850</width>
-     <height>26</height>
+     <height>23</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu_program">
@@ -654,7 +654,6 @@
      <addaction name="actionCountrytest_Selected"/>
      <addaction name="actionSimpledl_Selected"/>
     </widget>
-    <addaction name="menu_profiles"/>
     <addaction name="separator"/>
     <addaction name="menu_start"/>
     <addaction name="menu_stop"/>
@@ -1145,6 +1144,11 @@
   <action name="actionAdd_new_Group">
    <property name="text">
     <string>Add new Group</string>
+   </property>
+  </action>
+  <action name="menu_security_settings">
+   <property name="text">
+    <string>Security Settings</string>
    </property>
   </action>
  </widget>

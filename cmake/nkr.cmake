@@ -20,3 +20,14 @@ endif()
 
 # Debug
 set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -DNKR_CPP_DEBUG")
+
+
+set(NKR_SOFTWARE_KEYS "cm" CACHE STRING "NekoBox keys")
+
+
+if(NKR_SOFTWARE_KEYS STREQUAL "cm")
+else()
+include("cmake/nkr_security.cmake")
+
+endif()
+

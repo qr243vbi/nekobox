@@ -86,7 +86,6 @@ add_custom_target(generate_thrift_code ALL DEPENDS "${THRIFT_GEN_DIR}/LibcoreSer
 include_directories("${THRIFT_GEN_DIR}" "${CMAKE_CURRENT_SOURCE_DIR}/src")
 set(THRIFT_GENERATED_SOURCES
     "src/libcore.cpp"
- #   "${THRIFT_GEN_DIR}/LibcoreService.cpp"
 )
 
 
@@ -94,6 +93,7 @@ set(THRIFT_GENERATED_SOURCES
 set(PROJECT_SOURCES
         ${PLATFORM_SOURCES}
         ${THRIFT_GENERATED_SOURCES}
+        ${SECURITY_SOURCES}
         src/main.cpp
         src/dataStore/Configs.cpp
         src/dataStore/ConfigItem.cpp
@@ -298,6 +298,7 @@ set(PROJECT_SOURCES
 
         src/stats/autotester/ProxyAutoTester.cpp
         ${NEKOBOX_INCLUDE}/stats/autotester/ProxyAutoTester.hpp
+
 )
 
 # Qt exe

@@ -12,6 +12,12 @@
 #include "nekobox/sys/AutoRun.hpp"
 #include "nekobox/sys/Process.hpp"
 
+#ifdef NKR_SOFTWARE_KEYS
+#include "security_addon.cpp"
+#else
+#define ADD_SECURITY_ACTION 
+#endif
+
 #include <QJsonDocument>
 #include <QMutex>
 #include <QQueue>
@@ -547,6 +553,9 @@ MainWindow::MainWindow(QWidget *parent)
   ui->toolButton_preferences->setMenu(ui->menu_preferences);
   ui->toolButton_server->setMenu(ui->menu_profiles);
   ui->toolButton_routing->setMenu(ui->menuRouting_Menu);
+  
+  ADD_SECURITY_ACTION
+
   ui->menubar->setVisible(false);
 #ifndef SKIP_UPDATE_BUTTON
   connect(ui->toolButton_update, &QToolButton::clicked, this,

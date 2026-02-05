@@ -134,3 +134,10 @@ download-artifact
 deployment
 srslist.json
 runtime-*
+
+src/nekobox/ui/security/security.ui
+src/nekobox/ui/security/change_password.ui
+src/nekobox/ui/security/security.h
+src/ui/security_addon.cpp
+src/nekobox/ui/security_addon.h
+cmake/nkr_security.cmake
