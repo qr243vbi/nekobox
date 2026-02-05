@@ -11,6 +11,7 @@
 #include "nekobox/global/keyvaluerange.h"
 #include "nekobox/sys/AutoRun.hpp"
 #include "nekobox/sys/Process.hpp"
+#include "nekobox/ui/group/GroupItem.h"
 
 #ifdef NKR_SOFTWARE_KEYS
 #include "security_addon.cpp"
@@ -1193,7 +1194,7 @@ MainWindow::MainWindow(QWidget *parent)
             if (file.open(QIODevice::ReadOnly)) {
               auto contents = file.readAll();
               file.close();
-              Subscription::groupUpdater->AsyncUpdate(contents);
+              Subscription::groupUpdater->AsyncUpdate(contents, &chooseUpdateGroup);
             }
           });
 
@@ -1217,7 +1218,7 @@ MainWindow::MainWindow(QWidget *parent)
       TM_auto_update_subsctiption->start(m * 60 * 1000);
   };
   connect(TM_auto_update_subsctiption, &QTimer::timeout, this,
-          [&] { UI_update_all_groups(true); });
+          [&] { UI_update_all_groups(true, &chooseUpdateGroup); });
   TM_auto_update_subsctiption_Reset_Minute(Configs::dataStore->sub_auto_update);
 
   if ((!Configs::dataStore->flag_tray) &&
@@ -1350,7 +1351,7 @@ void MainWindow::dropEvent(QDropEvent *event) {
           }
           auto contents = file.readAll();
           file.close();
-          Subscription::groupUpdater->AsyncUpdate(contents);
+          Subscription::groupUpdater->AsyncUpdate(contents, &chooseUpdateGroup);
         }
       }
     }
@@ -1359,7 +1360,7 @@ void MainWindow::dropEvent(QDropEvent *event) {
   }
 
   if (mimeData->hasText()) {
-    Subscription::groupUpdater->AsyncUpdate(mimeData->text());
+    Subscription::groupUpdater->AsyncUpdate(mimeData->text(), &chooseUpdateGroup);
     event->acceptProposedAction();
     return;
   }
@@ -2605,7 +2606,7 @@ void MainWindow::on_menu_add_from_input_triggered() {
 
 void MainWindow::on_menu_add_from_clipboard_triggered() {
   auto clipboard = QApplication::clipboard()->text();
-  Subscription::groupUpdater->AsyncUpdate(clipboard);
+  Subscription::groupUpdater->AsyncUpdate(clipboard,  &chooseUpdateGroup);
 }
 
 void MainWindow::on_menu_clone_triggered() {
@@ -2623,7 +2624,7 @@ void MainWindow::on_menu_clone_triggered() {
     sls << ent->bean->ToNekorayShareLink(ent->type);
   }
 
-  Subscription::groupUpdater->AsyncUpdate(sls.join("\n"));
+  Subscription::groupUpdater->AsyncUpdate(sls.join("\n"), &chooseUpdateGroup);
 }
 
 void MainWindow::on_menu_delete_repeat_triggered() {
@@ -2918,7 +2919,7 @@ void MainWindow::parseQrImage(const QPixmap *image) {
   } else {
     for (const QString &text : texts) {
       show_log_impl("QR Code Result:\n" + text);
-      Subscription::groupUpdater->AsyncUpdate(text);
+      Subscription::groupUpdater->AsyncUpdate(text, &chooseUpdateGroup);
     }
   }
 }
@@ -2973,7 +2974,7 @@ void MainWindow::on_menu_update_subscription_triggered() {
   if (mw_sub_updating)
     return;
   mw_sub_updating = true;
-  Subscription::groupUpdater->AsyncUpdate(group->url, group->id,
+  Subscription::groupUpdater->AsyncUpdate(group->url, &chooseUpdateGroup,  group->id,
                                           [&] { mw_sub_updating = false; });
 }
 

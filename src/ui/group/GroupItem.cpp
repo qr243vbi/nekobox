@@ -6,6 +6,68 @@
 
 #include <QMessageBox>
 
+#include <QInputDialog>
+#include <QUrlQuery>
+#include <QComboBox>
+#include <QVBoxLayout>
+#include <QLabel>
+#include <QDialogButtonBox>
+
+#define getGroupName chooseUpdateGroup
+
+QString getGroupName(bool * ok, bool * createNewGroup, const QString& content){
+    QDialog dlg;
+    dlg.setWindowTitle(QObject::tr("URL detected"));
+
+    auto layout = new QVBoxLayout(&dlg);
+
+    layout->addWidget(new QLabel(
+        QObject::tr("%1\nHow to update?").arg(content)));
+
+    auto combo = new QComboBox();
+    combo->addItems({
+        QObject::tr("Create new subscription group"),
+                    QObject::tr("Add profiles to this group"),
+    });
+    layout->addWidget(combo);
+
+    auto lineEdit = new QLineEdit;
+    lineEdit->setPlaceholderText(QObject::tr("Group name"));
+    layout->addWidget(lineEdit);
+
+    auto buttons = new QDialogButtonBox(
+        QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
+    layout->addWidget(buttons);
+
+    QObject::connect(buttons, &QDialogButtonBox::accepted,
+                     &dlg, &QDialog::accept);
+    QObject::connect(buttons, &QDialogButtonBox::rejected,
+                     &dlg, &QDialog::reject);
+
+    QObject::connect(combo, &QComboBox::currentIndexChanged,
+                     &dlg, [lineEdit](int index) {
+                         lineEdit->setVisible(index == 0 );
+                     });
+
+    int index;
+
+    if (dlg.exec() == QDialog::Accepted) {
+        index = combo->currentIndex();
+        *ok = true;
+        if (index == 0){
+            *createNewGroup = true;
+            return lineEdit->text();
+        } else {
+            *createNewGroup = false;
+            return "";
+        }
+    } else {
+        *ok = false;
+        *createNewGroup = false;
+        return "";
+    }
+}
+
 QString ParseSubInfo(const QString &info) {
     if (info.trimmed().isEmpty()) return "";
 
@@ -98,7 +160,9 @@ void GroupItem::refresh_data() {
 }
 
 void GroupItem::on_update_sub_clicked() {
-    Subscription::groupUpdater->AsyncUpdate(ent->url, ent->id);
+    QString url = ent->url;
+
+    Subscription::groupUpdater->AsyncUpdate(url, &chooseUpdateGroup, ent->id);
 }
 
 void GroupItem::on_edit_clicked() {

@@ -43,7 +43,7 @@ extern QWidget *mainwindow;
 #include "nekobox/configs/ConfigBuilder.hpp"
 #include "nekobox/global/GuiUtils.hpp"
 #include "ui_mainwindow.h"
-#include "security_addon.h"
+
 
 #endif
 #ifndef SKIP_JS_UPDATER

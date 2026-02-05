@@ -208,12 +208,22 @@ QByteArray JsonStore::ToBytes(const QStringList &without){
     QBuffer buffer(&byteArray); // Create a buffer to write to QByteArray
     buffer.open(QIODevice::WriteOnly);
     QDataStream out(&buffer); 
+    auto _map = this->_map();
 
-    for (auto [key, value] : asKeyValueRange(this->_map()) ){
+    for (auto value: _map.values() ){
+      if (value->name == nullptr){
+        qDebug() << "INVALID ITEM ::: UNKNOWN NAME" ;
+        continue;
+      }
+        if (value == nullptr){
+          qDebug() << "INVALID ITEM :::" << value->name;
+          continue;
+        }
         QString name = value->name;
+        auto key = Configs::hash(name);
+        unsigned char type = value->type();
         if (!without.contains(name)){
             out << key;
-            unsigned char type = value->type();
             out << type;
             Bin bin;
             bin.item = value.get();

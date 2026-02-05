@@ -26,7 +26,7 @@ namespace Subscription {
     class GroupUpdater : public QObject {
         Q_OBJECT
     public:
-        void AsyncUpdate(const QString &str, int _sub_gid = -1, const std::function<void()> &finish = nullptr);
+        void AsyncUpdate(const QString &str, const std::function<QString(bool*,bool*,const QString&)> &info, int _sub_gid = -1, const std::function<void()> &finish = nullptr);
 
         void Update(const QString &_str, int _sub_gid = -1, bool _not_sub_as_url = false);
 
@@ -38,4 +38,4 @@ namespace Subscription {
     extern GroupUpdater *groupUpdater;
 } // namespace Subscription
 
-void UI_update_all_groups(bool onlyAllowed = false);
+void UI_update_all_groups(bool onlyAllowed, const std::function<QString(bool*, bool*,const QString&)> &info);
