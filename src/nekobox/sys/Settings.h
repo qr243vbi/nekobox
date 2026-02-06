@@ -20,7 +20,7 @@ void Configs::Settings##Bin##Value::Save(QSettings &settings, SettingsStore *sto
 void Configs::SettingsStore::_put(QList<std::shared_ptr<Configs::SettingsValue>> & list, const QString & str, X * value) {  \
     std::shared_ptr<Configs::SettingsValue> val = std::make_shared<Configs::Settings##T##Value>();       \
     size_t ptr = (size_t)(void*)(value) - (size_t)(void*)(this);                                         \
-    val->ptr = ptr; val->name = str;                                                                                     \
+    val->ptr = ptr; val->name = str;                                                                     \
     list << val;                                                                                         \
 }
 
