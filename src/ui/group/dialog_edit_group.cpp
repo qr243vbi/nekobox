@@ -17,6 +17,7 @@
 #define ADJUST_SIZE runOnThread([=,this] { adjustSize(); adjustPosition(mainwindow); }, this);
 
 DialogEditGroup::DialogEditGroup(const std::shared_ptr<Configs::Group> &ent, QWidget *parent) : QDialog(parent), ui(new Ui::DialogEditGroup) {
+    CHECK_SETTINGS_ACCESS
     ui->setupUi(this);
     this->ent = ent;
 

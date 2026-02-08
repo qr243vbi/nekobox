@@ -17,6 +17,7 @@
 #include <QMessageBox>
 #define ADJUST_SIZE runOnThread([=,this] { adjustSize(); adjustPosition(mainwindow); }, this);
 DialogVPNSettings::DialogVPNSettings(QWidget *parent) : QDialog(parent), ui(new Ui::DialogVPNSettings) {
+    CHECK_SETTINGS_ACCESS
     ui->setupUi(this);
     ADD_ASTERISK(this);
 /*

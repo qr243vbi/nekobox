@@ -9,13 +9,11 @@ import (
 	"os"
 	"os/exec"
 	"path/filepath"
-	"strconv"
 	"syscall"
 	"time"
 
 	"kernel.org/pub/linux/libs/security/libcap/cap"
 )
-
 
 func (s *server) SetSystemDNS(ctx context.Context, in *gen.SetSystemDNSRequest) (*gen.EmptyResp, error) {
 	out := new(gen.EmptyResp)
@@ -57,33 +55,32 @@ func isElevated() (bool, error) {
 	return cap, err
 }
 
-func restartAsAdmin(save bool, gid int, uid int) {
+func restartAsAdmin(save bool) {
 	elevated, err := isElevated()
 	if elevated {
-		caps:= cap.NewSet()
+		caps := cap.NewSet()
 		err = caps.SetFlag(cap.Inheritable, true, cap.NET_ADMIN)
 		err = caps.SetFlag(cap.Effective, true, cap.NET_ADMIN)
 		err = caps.SetFlag(cap.Permitted, true, cap.NET_ADMIN)
-		if (err != nil){
+		if err != nil {
 			panic(err)
 		}
 
-		if (save){
+		if save {
 			err = caps.SetFile(os.Args[0])
-			if (err != nil){
+			if err != nil {
 				panic(err)
 			}
 		}
+		/*
+			if gid > 0 {
+				syscall.Setgid(gid)
+			}
 
-		if (gid > 0){
-			syscall.Setegid(gid)
-		}
-
-		if (uid > 0){
-			syscall.Seteuid(uid)
-		}
-
-
+			if uid > 0 {
+				syscall.Seteuid(uid)
+			}
+		*/
 		// 1. Get the capability set for the current process
 		// This captures Permitted, Effective, and Inheritable sets.
 		c := cap.GetProc()
@@ -96,7 +93,6 @@ func restartAsAdmin(save bool, gid int, uid int) {
 		if err := c.SetFlag(cap.Effective, true, netAdmin); err != nil {
 			log.Fatalf("failed to set flag: %v", err)
 		}
-
 
 		if err := c.SetFlag(cap.Permitted, true, netAdmin); err != nil {
 			log.Fatalf("failed to set flag: %v", err)
@@ -122,7 +118,7 @@ func restartAsAdmin(save bool, gid int, uid int) {
 	}
 
 	executablePath, err := filepath.Abs(os.Args[0])
-	args = append(args, pkexecPath, "sh", "-c", "exec \"${0}\" \"${@}\"", "env", "NEKOBOX_APPIMAGE_CUSTOM_EXECUTABLE=nekobox_core", executablePath, "-ruleset-cache-directory", internal.GetRulesetCachedir(), "-gid", strconv.Itoa(syscall.Getgid()), "-uid", strconv.Itoa(syscall.Getuid()) )
+	args = append(args, pkexecPath, "sh", "-c", "exec \"${0}\" \"${@}\"", "env", "NEKOBOX_APPIMAGE_CUSTOM_EXECUTABLE=nekobox_core", executablePath, "-ruleset-cache-directory", internal.GetRulesetCachedir())
 
 	args = append(args, os.Args[1:]...)
 

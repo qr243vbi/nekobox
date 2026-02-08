@@ -15,6 +15,7 @@
 #include "nekobox/ui/profile/edit_trojan_vless.h"
 #include "nekobox/ui/profile/edit_vmess.h"
 #include "nekobox/ui/profile/edit_wireguard.h"
+#include "nekobox/ui/mainwindow_interface.h"
 
 #include "nekobox/configs/proxy/Preset.hpp"
 #include "nekobox/configs/proxy/includes.h"
@@ -53,6 +54,7 @@ DialogEditProfile::DialogEditProfile(const QString &_type, int profileOrGroupId,
                                      QWidget *parent)
     : QDialog(parent), ui(new Ui::DialogEditProfile) {
   // setup UI
+  CHECK_SETTINGS_ACCESS
   ui->setupUi(this);
   ui->dialog_layout->setAlignment(ui->left, Qt::AlignTop);
 

@@ -14,6 +14,7 @@
 #include <QTimer>
 #include <QToolTip>
 #include <nekobox/api/RPC.h>
+#include "nekobox/ui/mainwindow.h"
 
 #include <QtGlobal> // For QT_VERSION_CHECK
 
@@ -69,6 +70,7 @@ bool DialogManageRoutes::validate_dns_rules(const QString &rawString) {
 }
 
 DialogManageRoutes::DialogManageRoutes(QWidget *parent, bool EditRouteProfiles) : QDialog(parent), ui(new Ui::DialogManageRoutes) {
+    CHECK_SETTINGS_ACCESS
     ui->setupUi(this);
     auto profiles = Configs::profileManager->routes;
     for (const auto &item: profiles) {

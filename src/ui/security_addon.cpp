@@ -23,6 +23,14 @@ QSettings *local_keys = nullptr;
 QByteArray default_password;
 QStringList userlist;
 
+static QByteArray hashPassword(const QString &password)
+{
+    return QCryptographicHash::hash(
+        password.toUtf8(),
+        QCryptographicHash::Sha256
+    );
+}
+
 class SimpleListModel : public QAbstractListModel {
 public:
   explicit SimpleListModel(QObject *parent = nullptr)
@@ -81,13 +89,15 @@ static long long * getTimePointer(LockValue val){
 }
 
 bool confirmLock(LockValue val){
+  bool ret = !(getLocked(val));
+  if (ret) return true;
+
   auto seconds = QDateTime::currentSecsSinceEpoch();
   long long * ptr = getTimePointer(val);
   if (ptr == nullptr) return false;
   if (*ptr > seconds) return true;
 
   auto confirm = new ConfirmForm();
-  bool ret = false;
 
   QObject::connect(confirm->ui->buttonBox, &QDialogButtonBox::rejected, confirm, [confirm](){
     confirm->close();
@@ -95,8 +105,18 @@ bool confirmLock(LockValue val){
 
   QObject::connect(confirm->ui->buttonBox, &QDialogButtonBox::accepted, confirm, [val, confirm, &ret, ptr](){
     auto username = confirm->ui->username->text();
-    auto password = confirm->ui->password->text();
-    auto checked = checkPassword(username, password);
+    QString password;
+    bool checked;
+    if (!userlist.contains(username)) {
+      qDebug() << "Username " << username << " is not exists";
+      goto skip_timing;
+    }
+    password = confirm->ui->password->text();
+    checked = checkPassword(username, password);
+    if (!checked) {
+      qDebug() << "passwords does not match";
+      goto skip_timing;
+    }
     ret = !(getLocked(val, username));
     if (ret){
       int seconds = confirm->ui->spinBox->text().toInt();
@@ -111,6 +131,7 @@ bool confirmLock(LockValue val){
   });
 
   confirm->show();
+  confirm->exec();
   return ret;
 };
 
@@ -178,8 +199,7 @@ void init_keys() {
     return;
   initialized = true;
   local_keys = new QSettings(KEYS_INI_PATH, QSettings::IniFormat);
-  default_password = QCryptographicHash::hash(NKR_DEFAULT_PASSWORD,
-                                              QCryptographicHash::Sha256);
+  default_password = hashPassword(NKR_DEFAULT_PASSWORD);
   if (local_keys->contains("userlist")) {
     userlist = local_keys->value("userlist", "").toStringList();
   }
@@ -242,17 +262,19 @@ void addUser(const QString &username) {
 
 QByteArray getPasswordHash(const QString &username) {
   init_keys();
-  if (local_keys->contains(username)) {
-    return local_keys->value("user_" + username, "").toByteArray();
+  QString user = "user_" + username;
+  if (local_keys->contains(user)) {
+    return local_keys->value(user, "").toByteArray();
   } else {
     return default_password;
   }
 };
 
 bool checkPassword(const QString &username, const QString &password) {
-  auto oldhash = getPasswordHash(username);
-  auto newhash =
-      QCryptographicHash::hash(password.toUtf8(), QCryptographicHash::Sha256);
+  QByteArray oldhash = getPasswordHash(username);
+  QByteArray newhash = hashPassword(password);
+  qDebug() << oldhash;
+  qDebug() << newhash;
   return oldhash == newhash;
 };
 
@@ -277,7 +299,7 @@ void setPassword(const QString &username, const QString &password) {
   addUser(username);
   local_keys->setValue(
       "user_" + username,
-      QCryptographicHash::hash(password.toUtf8(), QCryptographicHash::Sha256));
+      hashPassword(password));
   local_keys->sync();
 };
 
@@ -285,8 +307,10 @@ static inline void modify_security_action(MainWindow *win, QAction *sec) {
   sec->setText(QAction::tr("Security Settings"));
 
   QObject::connect(sec, &QAction::triggered, win, [win]() {
-    auto sec = new SecurityForm(false, win);
-    sec->show();
+    if (confirmLock(LockValue::LockSettings)){
+      auto sec = new SecurityForm(false, win);
+      sec->show();
+    }
   });
 }
 
@@ -460,8 +484,3 @@ SecurityForm::SecurityForm(bool is_user_defined, QWidget *parent) {
         sec->show();
       });
 }
-
-#define ADD_SECURITY_ACTION                                                    \
-  QAction *sec = new QAction();                                                \
-  ui->menu_preferences->addAction(sec);                                        \
-  modify_security_action(this, sec);

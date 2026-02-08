@@ -20,7 +20,8 @@
 #include "nekobox/dataStore/ResourceEntity.hpp"
 #include <QString>
 
-#include "nekobox/ui/mainwindow.h"
+#include "nekobox/ui/mainwindow_interface.h"
+
 
 
 QList<QString> locales = {
@@ -43,6 +44,7 @@ QList<QString> locales = {
 
 DialogBasicSettings::DialogBasicSettings(MainWindow *parent)
     : QDialog(parent), ui(new Ui::DialogBasicSettings) {
+    CHECK_SETTINGS_ACCESS
     ui->setupUi(this);
     ADD_ASTERISK(this);
     this->parent = parent;

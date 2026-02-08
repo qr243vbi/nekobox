@@ -5,6 +5,15 @@
 #include <QSettings>
 #include "nekobox/ui/security/security.h"
 
+#define CHECK_SETTINGS_ACCESS \
+  if (!confirmLock(LockValue::LockSettings)) { this->destroy(); return; }
+
+#define ADD_SECURITY_ACTION                                                    \
+  QAction *sec = new QAction();                                                \
+  ui->menu_preferences->addAction(sec);                                        \
+  modify_security_action(this, sec);
+
+
 #define KEYS_INI_PATH QDir::current().absolutePath() + "/keys.ini"
 
 extern QSettings * local_keys;

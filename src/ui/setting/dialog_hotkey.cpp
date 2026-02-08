@@ -7,6 +7,7 @@
 #include <QAction>
 
 DialogHotkey::DialogHotkey(QWidget *parent, const QList<QAction*>& actions) : QDialog(parent), ui(new Ui::DialogHotkey) {
+    CHECK_SETTINGS_ACCESS
     ui->setupUi(this);
     ui->show_mainwindow->setKeySequence(Configs::dataStore->hotkey_mainwindow);
     ui->show_groups->setKeySequence(Configs::dataStore->hotkey_group);

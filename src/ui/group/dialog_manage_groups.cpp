@@ -5,6 +5,7 @@
 #include "nekobox/global/GuiUtils.hpp"
 #include "nekobox/ui/group/GroupItem.h"
 #include "nekobox/ui/group/dialog_edit_group.h"
+#include "nekobox/ui/mainwindow_interface.h"
 
 #include <QInputDialog>
 #include <QListWidgetItem>
@@ -21,6 +22,7 @@
     }
 
 DialogManageGroups::DialogManageGroups(QWidget *parent) : QDialog(parent), ui(new Ui::DialogManageGroups) {
+    CHECK_SETTINGS_ACCESS
     ui->setupUi(this);
 
     for (auto id: Configs::profileManager->groupsTabOrder) {

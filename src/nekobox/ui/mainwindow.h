@@ -15,6 +15,12 @@
 #endif
 
 
+#ifdef NKR_SOFTWARE_KEYS
+#include "nekobox/ui/security_addon.h"
+#else
+#define CHECK_SETTINGS_ACCESS 
+#endif
+
 #ifndef SKIP_JS_UPDATER
 class JsUpdaterWindow;
 
