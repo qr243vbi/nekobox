@@ -223,6 +223,9 @@ QByteArray hash = QCryptographicHash::hash(
         ADD_MAP("test_concurrent", test_concurrent, integer);
     //    ADD_MAP("ruleset_json_url", ruleset_json_url, string);
    //     _add(new configItem("theme", &theme, itemType::string));
+        ADD_MAP("inbound_username", inbound_username, string);
+        ADD_MAP("inbound_password", inbound_password, string);
+
         ADD_MAP("custom_inbound", custom_inbound, string);
         ADD_MAP("custom_route", custom_route_global, string);
         ADD_MAP("network_use_proxy", net_use_proxy, boolean);

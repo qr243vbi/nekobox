@@ -8,27 +8,24 @@
 #define KEYS_INI_PATH QDir::current().absolutePath() + "/keys.ini"
 
 extern QSettings * local_keys;
-extern QSettings * global_keys;
 
-QByteArray EncryptData(const QByteArray & value, const QByteArray & keys);
-QByteArray DecryptData(const QByteArray & value, const QByteArray & keys);
-
-QByteArray GetSoftwareKeys();
-
-QByteArray ResetEncryptionKeys();
-
-void SaveBackup(QFile file);
-
-QByteArray GetEncryptionKeys();
-
-QByteArray GetPassword();
-
-void SetPassword(const QByteArray &array);
-
-QByteArray DecryptData(const QByteArray &array);
-
-QByteArray EncryptData(const QByteArray &array);
-
-inline void SaveBackup(const QString &path){
-    SaveBackup(QFile(path));
+enum LockValue{
+    LockStartup,
+    LockSettings,
+    LockSystray 
 };
+
+bool getLocked(LockValue key, const QString & username = "");
+
+void setLocked(LockValue key, bool value, const QString & username = "");
+
+QByteArray getPasswordHash(const QString &username);
+
+bool checkPassword(const QByteArray& hash);
+
+void setPassword(const QString &username, const QString& password);
+
+void setInboundPassword(const QString &username, const QString& password);
+
+void addUser(const QString & username);
+void delUser(const QString & username);

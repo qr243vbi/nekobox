@@ -42,7 +42,7 @@
        <number>0</number>
       </property>
       <item>
-       <widget class="QGroupBox" name="groupBox_3">
+       <widget class="QGroupBox" name="checkbox_group">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
           <horstretch>0</horstretch>
@@ -59,14 +59,14 @@
          <item>
           <widget class="QCheckBox" name="auth_startup">
            <property name="text">
-            <string>Authenticate at startup</string>
+            <string>Lock at startup</string>
            </property>
           </widget>
          </item>
          <item>
           <widget class="QCheckBox" name="encrypt_settings">
            <property name="text">
-            <string>Encrypt settings</string>
+            <string>Lock Settings</string>
            </property>
           </widget>
          </item>
@@ -81,7 +81,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QGroupBox" name="groupBox_4">
+       <widget class="QGroupBox" name="button_group">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
           <horstretch>0</horstretch>
@@ -108,16 +108,16 @@
           <number>0</number>
          </property>
          <item>
-          <widget class="QPushButton" name="custom_inbound">
+          <widget class="QPushButton" name="reset_settings">
            <property name="text">
-            <string>Custom Inbound</string>
+            <string>Delete Users</string>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="reset_settings">
+          <widget class="QPushButton" name="edit_users">
            <property name="text">
-            <string>Reset Settings</string>
+            <string>Edit User Roles</string>
            </property>
           </widget>
          </item>

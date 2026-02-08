@@ -157,6 +157,9 @@ namespace Configs {
         bool random_inbound_port = false;
         QString custom_inbound = "{\"inbounds\": []}";
 
+        QString inbound_username = "";
+        QString inbound_password = "";
+
         // Routing
         QString custom_route_global = "{\"rules\": []}";
         QString active_routing = "Default";
