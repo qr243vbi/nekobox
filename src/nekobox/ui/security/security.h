@@ -25,7 +25,7 @@ class SecurityForm : public QWidget {
     Q_OBJECT
 public:
     Ui::SecurityForm *ui;
-    explicit SecurityForm(QWidget *parent = nullptr);
+    explicit SecurityForm(bool is_user_defined, QWidget *parent = nullptr);
 };
 
 class PasswordForm : public QDialog {

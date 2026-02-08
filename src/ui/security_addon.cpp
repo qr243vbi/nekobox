@@ -8,6 +8,7 @@
 #include <QSettings>
 #include <QtTranslation>
 #include <qlineedit.h>
+#include <qnamespace.h>
 #include <qpushbutton.h>
 
 #ifndef NKR_DEFAULT_PASSWORD
@@ -21,6 +22,102 @@
 QSettings *local_keys = nullptr;
 QByteArray default_password;
 QStringList userlist;
+
+class SimpleListModel : public QAbstractListModel {
+public:
+  explicit SimpleListModel(QObject *parent = nullptr)
+      : QAbstractListModel(parent) {}
+
+  int rowCount(const QModelIndex &parent = QModelIndex()) const override {
+    if (parent.isValid()) {
+      return 0;
+    }
+    return userlist.size();
+  }
+
+  QVariant data(const QModelIndex &index, int role) const override {
+    if (!index.isValid())
+      return QVariant();
+
+    const auto &item = userlist.at(index.row());
+
+    switch (role) {
+    case Qt::DisplayRole:
+      return item;
+    default:
+      return QVariant();
+    }
+  }
+
+  bool setData(const QModelIndex &index, const QVariant &value,
+               int role) override {
+    return false;
+  }
+
+  Qt::ItemFlags flags(const QModelIndex &index) const override {
+    if (!index.isValid()) {
+      return Qt::NoItemFlags;
+    }
+    return Qt::ItemIsEnabled | Qt::ItemIsSelectable;
+  }
+};
+
+class CheckableListModel : public QAbstractListModel {
+
+public:
+  QMap<QString, bool> SelectedList;
+
+  explicit CheckableListModel(QObject *parent = nullptr)
+      : QAbstractListModel(parent) {}
+
+  int rowCount(const QModelIndex &parent = QModelIndex()) const override {
+    if (parent.isValid()) {
+      return 0;
+    }
+    return userlist.size();
+  }
+
+  QVariant data(const QModelIndex &index, int role) const override {
+    if (!index.isValid())
+      return QVariant();
+
+    const auto &item = userlist.at(index.row());
+
+    switch (role) {
+    case Qt::DisplayRole:
+      return item;
+    case Qt::CheckStateRole:
+      return SelectedList[item] ? Qt::Checked : Qt::Unchecked;
+    default:
+      return QVariant();
+    }
+  }
+
+  bool setData(const QModelIndex &index, const QVariant &value,
+               int role) override {
+    if (!index.isValid()) {
+      return false;
+    }
+
+    auto &item = userlist[index.row()];
+
+    if (role == Qt::CheckStateRole) {
+      bool item_checked = (value.toInt() == Qt::Checked);
+      SelectedList[item] = item_checked;
+      emit dataChanged(index, index, {Qt::CheckStateRole});
+      return true;
+    }
+
+    return false;
+  }
+
+  Qt::ItemFlags flags(const QModelIndex &index) const override {
+    if (!index.isValid()) {
+      return Qt::NoItemFlags;
+    }
+    return Qt::ItemIsEnabled | Qt::ItemIsSelectable | Qt::ItemIsUserCheckable;
+  }
+};
 
 void init_keys() {
   static bool initialized = false;
@@ -135,7 +232,7 @@ static inline void modify_security_action(MainWindow *win, QAction *sec) {
   sec->setText(QAction::tr("Security Settings"));
 
   QObject::connect(sec, &QAction::triggered, win, [win]() {
-    auto sec = new SecurityForm(win);
+    auto sec = new SecurityForm(false, win);
     sec->show();
   });
 }
@@ -155,25 +252,94 @@ UsersForm::UsersForm(QWidget *parent) {
   ui->setupUi(this);
 }
 
-SecurityForm::SecurityForm(QWidget *parent) {
+SecurityForm::SecurityForm(bool is_user_defined, QWidget *parent) {
   ui = new Ui::SecurityForm();
   ui->setupUi(this);
+
+  if (is_user_defined) {
+    ui->button_group->hide();
+    ui->groupBox->hide();
+    return;
+  }
 
   ui->auth_startup->setChecked(getLocked(LockValue::LockStartup));
   ui->encrypt_settings->setChecked(getLocked(LockValue::LockSettings));
   ui->lock_system_tray->setChecked(getLocked(LockValue::LockSystray));
 
-  QObject::connect(ui->reset_settings, &QPushButton::clicked, this,
-                   [this]() -> void {
-                     auto users = new UsersForm();
-                     users->show();
-                   });
+  QObject::connect(
+      ui->reset_settings, &QPushButton::clicked, this, [this]() -> void {
+        auto users = new UsersForm();
+        auto model = new CheckableListModel();
+        users->ui->listView->setModel(model);
+        QObject::connect(users->ui->buttonBox, &QDialogButtonBox::rejected,
+                         this, [users]() -> void { users->close(); });
+        QObject::connect(
+            users->ui->buttonBox, &QDialogButtonBox::accepted, this,
+            [users, model]() -> void {
+              users->close();
+              for (auto [key, value] : asKeyValueRange(model->SelectedList)) {
+                if (value) {
+                  delUser(key);
+                }
+              }
+            },
+            Qt::SingleShotConnection);
+        users->show();
+      });
 
-  QObject::connect(ui->edit_users, &QPushButton::clicked, this,
-                   [this]() -> void {
-                     auto users = new UsersForm();
-                     users->show();
-                   });
+  QObject::connect(
+      ui->edit_users, &QPushButton::clicked, this, [this]() -> void {
+        auto users = new UsersForm();
+        auto model = new SimpleListModel();
+        users->ui->listView->setModel(model);
+        users->ui->buttonBox->setStandardButtons(QDialogButtonBox::Ok);
+
+        QObject::connect(
+            users->ui->listView, &QListView::doubleClicked, this,
+            [users, model](const QModelIndex &index) -> void {
+              if (!index.isValid()) {
+                return;
+              }
+              QString text = index.data(Qt::DisplayRole).toString();
+              if (text != "") {
+                auto sec = new SecurityForm(true, users);
+                auto buttons = new QDialogButtonBox();
+                buttons->setStandardButtons(QDialogButtonBox::Ok |
+                                            QDialogButtonBox::Cancel);
+                auto ui = sec->ui;
+                ui->auth_startup->setChecked(
+                    getLocked(LockValue::LockStartup, text));
+                ui->encrypt_settings->setChecked(
+                    getLocked(LockValue::LockSettings, text));
+                ui->lock_system_tray->setChecked(
+                    getLocked(LockValue::LockSystray, text));
+                QObject::connect(
+                    buttons, &QDialogButtonBox::rejected, sec,
+                    [sec]() -> void { sec->close(); },
+                    Qt::SingleShotConnection);
+                QObject::connect(
+                    buttons, &QDialogButtonBox::accepted, sec,
+                    [sec, text]() -> void {
+                      bool lock_settings, lock_system_tray, lock_startup;
+                      lock_startup = sec->ui->auth_startup->isChecked();
+                      lock_system_tray = sec->ui->lock_system_tray->isChecked();
+                      lock_settings = sec->ui->encrypt_settings->isChecked();
+                      setLocked(LockValue::LockStartup, lock_startup, text);
+                      setLocked(LockValue::LockSystray, lock_system_tray, text);
+                      setLocked(LockValue::LockSettings, lock_settings, text);
+                      sec->close();
+                    },
+                    Qt::SingleShotConnection);
+                sec->layout()->addWidget(buttons);
+                sec->show();
+              }
+            });
+
+        QObject::connect(
+            users->ui->buttonBox, &QDialogButtonBox::accepted, this,
+            [users]() -> void { users->close(); }, Qt::SingleShotConnection);
+        users->show();
+      });
 
   QObject::connect(ui->auth_startup, &QCheckBox::clicked, this,
                    [this]() -> void {
@@ -197,38 +363,45 @@ SecurityForm::SecurityForm(QWidget *parent) {
                    });
 
   QObject::connect(
-      ui->change_proxy_password, &QPushButton::clicked, this, [this]() {
+      ui->change_proxy_password, &QPushButton::clicked, this, [this]() -> void {
         auto sec = new PasswordForm(this);
-        QObject::connect(sec->ui->buttonBox, &QDialogButtonBox::accepted, this,
-                         [sec, this]() -> void {
-                           QString password = sec->ui->confpass->text();
-                           if (password == sec->ui->newpass->text()) {
-                             QString username = sec->ui->curpass->text();
-                             setInboundPassword(username, password);
-                           }
-                           sec->close();
-                         });
-        QObject::connect(sec->ui->buttonBox, &QDialogButtonBox::rejected, this,
-                         [this, sec]() -> void { sec->close(); });
+        QObject::connect(
+            sec->ui->buttonBox, &QDialogButtonBox::accepted, this,
+            [sec, this]() -> void {
+              QString password = sec->ui->confpass->text();
+              if (password == sec->ui->newpass->text()) {
+                QString username = sec->ui->curpass->text();
+                setInboundPassword(username, password);
+              }
+              sec->close();
+            },
+            Qt::SingleShotConnection);
+        QObject::connect(
+            sec->ui->buttonBox, &QDialogButtonBox::rejected, this,
+            [this, sec]() -> void { sec->close(); }, Qt::SingleShotConnection);
         sec->show();
       });
 
   QObject::connect(
-      ui->change_ui_password, &QPushButton::clicked, this, [this]() {
+      ui->change_ui_password, &QPushButton::clicked, this, [this]() -> void {
         auto sec = new PasswordForm(this);
-        QObject::connect(sec->ui->buttonBox, &QDialogButtonBox::accepted, this,
-                         [sec, this]() -> void {
-                           QString password = sec->ui->confpass->text();
-                           if (password == sec->ui->newpass->text()) {
-                             QString username = sec->ui->curpass->text();
-                             if (username == "")
-                               username = NKR_DEFAULT_USERNAME;
-                             setPassword(username, password);
-                           }
-                           sec->close();
-                         });
-        QObject::connect(sec->ui->buttonBox, &QDialogButtonBox::rejected, this,
-                         [this, sec]() -> void { sec->close(); });
+        QObject::connect(
+            sec->ui->buttonBox, &QDialogButtonBox::accepted, this,
+            [sec, this]() -> void {
+              QString password = sec->ui->confpass->text();
+              if (password == sec->ui->newpass->text()) {
+                QString username = sec->ui->curpass->text();
+                if (username == "") {
+                  username = NKR_DEFAULT_USERNAME;
+                }
+                setPassword(username, password);
+              }
+              sec->close();
+            },
+            Qt::SingleShotConnection);
+        QObject::connect(
+            sec->ui->buttonBox, &QDialogButtonBox::rejected, this,
+            [this, sec]() -> void { sec->close(); }, Qt::SingleShotConnection);
         sec->show();
       });
 }
