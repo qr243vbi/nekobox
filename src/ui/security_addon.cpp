@@ -62,6 +62,59 @@ public:
   }
 };
 
+
+ long long time_startup = 0;
+ long long time_settings = 0;
+ long long time_systray = 0;
+
+static long long * getTimePointer(LockValue val){
+  switch (val){
+    case LockValue::LockSettings:
+    return &time_settings;
+    case LockValue::LockStartup:
+    return &time_startup;
+    case LockValue::LockSystray:
+    return &time_systray;
+    default: 
+    return nullptr;
+  }
+}
+
+bool confirmLock(LockValue val){
+  auto seconds = QDateTime::currentSecsSinceEpoch();
+  long long * ptr = getTimePointer(val);
+  if (ptr == nullptr) return false;
+  if (*ptr > seconds) return true;
+
+  auto confirm = new ConfirmForm();
+  bool ret = false;
+
+  QObject::connect(confirm->ui->buttonBox, &QDialogButtonBox::rejected, confirm, [confirm](){
+    confirm->close();
+  });
+
+  QObject::connect(confirm->ui->buttonBox, &QDialogButtonBox::accepted, confirm, [val, confirm, &ret, ptr](){
+    auto username = confirm->ui->username->text();
+    auto password = confirm->ui->password->text();
+    auto checked = checkPassword(username, password);
+    ret = !(getLocked(val, username));
+    if (ret){
+      int seconds = confirm->ui->spinBox->text().toInt();
+      if (seconds <= 0) goto skip_timing; 
+      for (int n = confirm->ui->comboBox->currentIndex(); n > 0; n --){
+        seconds *= 60;
+      }
+      *ptr = QDateTime::currentSecsSinceEpoch() + seconds;
+    }
+    skip_timing:
+    confirm->close();
+  });
+
+  confirm->show();
+  return ret;
+};
+
+
 class CheckableListModel : public QAbstractListModel {
 
 public:
@@ -255,6 +308,8 @@ UsersForm::UsersForm(QWidget *parent) {
 SecurityForm::SecurityForm(bool is_user_defined, QWidget *parent) {
   ui = new Ui::SecurityForm();
   ui->setupUi(this);
+  ui->auth_startup->hide();
+  ui->lock_system_tray->hide();
 
   if (is_user_defined) {
     ui->button_group->hide();

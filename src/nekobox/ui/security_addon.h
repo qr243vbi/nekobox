@@ -15,13 +15,19 @@ enum LockValue{
     LockSystray 
 };
 
+extern long long time_startup;
+extern long long time_settings;
+extern long long time_systray;
+
+bool confirmLock(LockValue val);
+
 bool getLocked(LockValue key, const QString & username = "");
 
 void setLocked(LockValue key, bool value, const QString & username = "");
 
 QByteArray getPasswordHash(const QString &username);
 
-bool checkPassword(const QByteArray& hash);
+bool checkPassword(const QString &username, const QString &password);
 
 void setPassword(const QString &username, const QString& password);
 
