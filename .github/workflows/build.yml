@@ -113,21 +113,15 @@ jobs:
         uses: qr243vbi/setup-go@main
         with:
           go-version: ${{ matrix.go_version }}
-          cache: false
-    #      cache-dependency-path: |
-    #        core/server/go.sum
-    #        core/updater/go.sum
+          cache-dependency-path: |
+            core/server/go.sum
+            core/updater/go.sum
       - name: Linux - Install apt dependencies
         if: matrix.cross_os == 'public' || ( github.event.inputs.source_only  != 'true' && matrix.allow == 'true' )
         uses: awalsh128/cache-apt-pkgs-action@latest
         with:
           packages: thrift-compiler
           version: 1.0
-      - name: Installing ghr
-        if: matrix.cross_os == 'public' && github.event.inputs.publish == 'true'
-        run: |
-          go install github.com/tcnksm/ghr@latest
-          ghr -delete -t "${{ secrets.UPLOAD_TOKEN }}" -b "$(echo -e "${{ github.event.inputs.text }}")" -n "${{ github.event.inputs.tag }}" "${{ github.event.inputs.tag }}" deployment
       - name: Build golang parts
         if: steps.cache-common.outputs.cache-hit != 'true' && matrix.cross_os != 'public' && ( github.event.inputs.source_only  != 'true' && matrix.allow == 'true' )
         shell: bash
@@ -141,6 +135,12 @@ jobs:
         shell: bash
         run: |
           env INPUT_VERSION=${{ github.event.inputs.tag }} bash -x ./script/deploy_vendor.sh
+      - name: Installing ghr
+        if: matrix.cross_os == 'public' && github.event.inputs.publish == 'true'
+        run: |
+          go install github.com/tcnksm/ghr@v0.17.0
+          ghr -delete -t "${{ secrets.UPLOAD_TOKEN }}" -b "$(echo -e "${{ github.event.inputs.text }}")" -n "${{ github.event.inputs.tag }}" "${{ github.event.inputs.tag }}" deployment
+
       - name: Tar files
         if: matrix.cross_os == 'public' || ( github.event.inputs.source_only  != 'true' && matrix.allow == 'true' && steps.cache-common.outputs.cache-hit != 'true' )
         run: tar czvf artifacts.tgz ./deployment
