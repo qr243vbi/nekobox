@@ -113,9 +113,9 @@ jobs:
         uses: qr243vbi/setup-go@main
         with:
           go-version: ${{ matrix.go_version }}
-          cache-dependency-path: |
-            core/server/go.sum
-            core/updater/go.sum
+    #      cache-dependency-path: |
+    #        core/server/go.sum
+    #        core/updater/go.sum
       - name: Linux - Install apt dependencies
         if: matrix.cross_os == 'public' || ( github.event.inputs.source_only  != 'true' && matrix.allow == 'true' )
         uses: awalsh128/cache-apt-pkgs-action@latest
