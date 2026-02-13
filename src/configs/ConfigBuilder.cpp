@@ -11,6 +11,7 @@
 #include <nekobox/configs/proxy/Preset.hpp>
 #include <nekobox/api/RPC.h>
 
+
 #include <QApplication>
 #include <QFile>
 #include <QFileInfo>
@@ -109,7 +110,7 @@ namespace Configs {
     }
 
     QString getTunName() {
-        if (Configs::dataStore->tun_name.isEmpty()) return "nekobox-tun";
+        if (Configs::dataStore->tun_name.isEmpty()) return "tun-" + GetRandomString(16);
         return Configs::dataStore->tun_name;
     }
 

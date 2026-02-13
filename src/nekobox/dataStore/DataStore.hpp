@@ -1,5 +1,6 @@
 #include "Const.hpp"
 #include "ConfigItem.hpp"
+#include "Utils.hpp"
 #ifdef Q_OS_WIN
 #include "nekobox/sys/windows/WinVersion.h"
 #endif
@@ -67,7 +68,7 @@ namespace Configs {
         QString appdataDir = "";
         QStringList ignoreConnTag = {};
   //      bool auto_redirect = false;
-        QString tun_name = "nekobox-tun";
+        QString tun_name = "";
         QString tun_address = "172.19.0.1/24";
         QString tun_address_6 = "fdfe:dcba:9876::1/96";
         QString proxy_scheme = "{ip}:{port}";
