@@ -2,6 +2,44 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="zh_CN">
 <context>
+    <name>ConfirmForm</name>
+    <message>
+        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="14"/>
+        <source>Dialog</source>
+        <translation type="unfinished">对话</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="20"/>
+        <source>Username</source>
+        <translation type="unfinished">用户名</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="37"/>
+        <source>Password</source>
+        <translation type="unfinished">密码</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="78"/>
+        <source>Remember</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="102"/>
+        <source>seconds</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="107"/>
+        <source>minutes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="112"/>
+        <source>hours</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>Dialog</name>
     <message>
         <location filename="../../src/nekobox/ui/setting/resource_manager.ui" line="14"/>
@@ -12,17 +50,17 @@
 <context>
     <name>DialogBasicSettings</name>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="635"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="646"/>
         <source>Custom System Parameters (optional)</source>
         <translation>自定义系統参数（可选）</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="632"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="643"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Format: hwid=value,os=value,osVersion=value,model=value&lt;/p&gt;&lt;p&gt;Leave empty to use default values. Only specify the parameters you want to override.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;格式： hwid=自定义值,os=自定义操作系統,osVersion=自定义版本,model=自定义型号&lt;/p&gt;&lt;p&gt;若要使用预设值，请留空。仅需指定您要覆写的参数。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="642"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="653"/>
         <source>hwid=custom_value,os=custom_os,osVersion=custom_version,model=custom_model</source>
         <translation>hwid=自定义值,os=自定义操作系統,osVersion=自定义版本,model=自定义型号</translation>
     </message>
@@ -33,201 +71,211 @@
         <translation>基本设置</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="491"/>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="513"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="502"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="524"/>
         <source>System</source>
         <translation>系统</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="662"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="673"/>
         <source>User Agent</source>
         <translation>用户代理</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="552"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="563"/>
         <source>Icon</source>
         <translation>图标</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="559"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="570"/>
         <source>Emoji Font</source>
         <translation>表情符号字体</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="960"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="971"/>
         <source>Auto-Testing</source>
         <translation>自动测试</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="969"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="980"/>
         <source>Enable Auto-Testing</source>
         <translation>启用自动测试</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="966"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="977"/>
         <source>Automatically test proxies in the background and maintain a pool of working proxies</source>
         <translation>在后台自动测试代理，并维护一个可用代理池</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="946"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="192"/>
+        <source>URL Test after profile start</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="199"/>
+        <source>Request update at startup</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="957"/>
         <source>Use Json instead binary for configs</source>
         <translation>使用 JSON 格式替代二进制格式进行配置</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="976"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="987"/>
         <source>Test Interval (seconds)</source>
         <translation>测试间隔（秒）</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="983"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="994"/>
         <source>How often to run the test cycle</source>
         <translation>测试循环的执行频率</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="999"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1010"/>
         <source>Proxies Per Cycle</source>
         <translation>每轮测试的代理数量</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1006"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1017"/>
         <source>Number of proxies to test in each cycle</source>
         <translation>每个测试周期中要测试的代理数量</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1022"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1033"/>
         <source>Working Pool Size</source>
         <translation>可用代理池大小</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1029"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1040"/>
         <source>Maximum number of verified working proxies to maintain</source>
         <translation>维护的已验证可用代理的最大数量</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1045"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1056"/>
         <source>Latency Threshold (ms)</source>
         <translation>延迟阈值（毫秒）</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1052"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1063"/>
         <source>Maximum latency to consider a proxy as working</source>
         <translation>判定代理为可用的最大延迟</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1071"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1082"/>
         <source>Failure Retry Count</source>
         <translation>失败重试次数</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1078"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1089"/>
         <source>Number of retry attempts before considering a proxy as failed</source>
         <translation>在判定代理失败前的重试次数</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1094"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1105"/>
         <source>Test Target URL</source>
         <translation>测试目标 URL</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1101"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1112"/>
         <source>URL to test proxies against</source>
         <translation>用于测试代理的目标网址</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1104"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1115"/>
         <source>http://cp.cloudflare.com/</source>
         <translation>http://cp.cloudflare.com</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1114"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1125"/>
         <source>Enable TUN Failover</source>
         <translation>启用 TUN 故障切换</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1684"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1722"/>
         <source>Resource Manager</source>
         <translation>资源管理器</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1111"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1122"/>
         <source>Automatically switch to another working proxy when TUN mode proxy fails</source>
         <translation>TUN 模式代理失效时自动切换到其他可用代理</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1122"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1133"/>
         <source>Startup</source>
         <translation>启动</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1177"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1194"/>
         <source>Geometry</source>
         <translation>几何学</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1206"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1223"/>
         <source>Autosave geometry</source>
         <translation>保持几何形状</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1213"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1230"/>
         <source>Autosave position</source>
         <translation>保持位置</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1233"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1250"/>
         <source>Apply now</source>
         <translation>立即应用</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1343"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1366"/>
         <source>Width</source>
         <translation>宽度</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1356"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1379"/>
         <source>X</source>
         <translation>X</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1389"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1412"/>
         <source>Y</source>
         <translation>Y</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1402"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1425"/>
         <source>Height</source>
         <translation>高度</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1509"/>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1677"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1541"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1715"/>
         <source>Use default</source>
         <translation>使用默认值</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1516"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1548"/>
         <source>Remote Control</source>
         <translation>遥控器</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1542"/>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1710"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1574"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1748"/>
         <source>Select</source>
         <translation>选择</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1480"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1512"/>
         <source>Core Executable Path</source>
         <translation>通往核心之路</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1648"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1686"/>
         <source>Resources Directory</source>
         <translation>资源目录</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="586"/>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="792"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="597"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="803"/>
         <source>Enable</source>
         <translation>启用</translation>
     </message>
@@ -237,7 +285,7 @@
         <translation>监听地址</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="742"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="753"/>
         <source>concurrency</source>
         <translation>并发</translation>
     </message>
@@ -247,22 +295,22 @@
         <translation>通用</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="349"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="360"/>
         <source>Style</source>
         <translation>样式</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="483"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="494"/>
         <source>Theme</source>
         <translation>主题</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="572"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="583"/>
         <source>Subscription</source>
         <translation>订阅</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="670"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="681"/>
         <source>Core</source>
         <translation>核心</translation>
     </message>
@@ -277,82 +325,82 @@
         <translation>自定义入站</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="282"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="293"/>
         <source>Concurrent</source>
         <translation>并发</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="865"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="876"/>
         <source>Security</source>
         <translation>安全</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="437"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="448"/>
         <source>Hide at startup</source>
         <translation>启动时隐藏</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="386"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="397"/>
         <source>Connection statistics</source>
         <translation>连接统计</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="615"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="626"/>
         <source>Clear servers before updating subscription</source>
         <translation>更新订阅前清除服务器</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="399"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="410"/>
         <source>Hide dashboard at startup</source>
         <translation>启动时隐藏仪表盘</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="450"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="461"/>
         <source>Max log lines</source>
         <translation>最多日志行数限制</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="885"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="896"/>
         <source>Skip TLS certificate authentication by default (allowInsecure)</source>
         <translation>默认跳过 TLS 证书验证 (allowInsecure)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="913"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="924"/>
         <source>Default uTLS Fingerprint</source>
         <translation>默认 uTLS 指纹</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="771"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="782"/>
         <source>Core Options</source>
         <translation>核心选项</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="752"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="763"/>
         <source>Padding</source>
         <translation>添加</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="730"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="741"/>
         <source>Loglevel</source>
         <translation>日志级别</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="759"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="770"/>
         <source>Default On</source>
         <translation>默认开启</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="723"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="734"/>
         <source>Multiplex (mux)</source>
         <translation>多路复用(Mux)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="268"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="279"/>
         <source>Latency Test URL</source>
         <translation>延迟测试 URL</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="423"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="434"/>
         <source>Disable tray</source>
         <translation>禁用托盘</translation>
     </message>
@@ -361,52 +409,52 @@
         <translation type="vanished">防止应用在窗口关闭时最小化到托盘。相反应用将退出</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="655"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="666"/>
         <source>Automatic update</source>
         <translation>自动更新</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="593"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="604"/>
         <source>Interval (minute, invalid if less than 30)</source>
         <translation>时间间隔 (分钟，少于 30 则无效)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="714"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="725"/>
         <source>Disable Traffic Stats</source>
         <translation>禁用流量统计</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="786"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="797"/>
         <source>NTP Settings</source>
         <translation>NTP 设置</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="801"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="812"/>
         <source>server</source>
         <translation>服务器</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="811"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="822"/>
         <source>Port</source>
         <translation>端口</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="828"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="839"/>
         <source>sync interval</source>
         <translation>同步间隔</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="841"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="852"/>
         <source>5m</source>
         <translation>5m</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="846"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="857"/>
         <source>10m</source>
         <translation>10m</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="851"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="862"/>
         <source>30m</source>
         <translation>30m</translation>
     </message>
@@ -424,24 +472,24 @@
 </translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="370"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="381"/>
         <source>Font Size</source>
         <translation>字体大小</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="360"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="371"/>
         <source>Font</source>
         <translation>字体</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="709"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="720"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Might
                                                                             Improve Ping and Performance&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                                                                         </source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;可能改善延迟和性能&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="781"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="792"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Settings for the
                                             sing-box&apos;s built-in NTP client&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                                         </source>
@@ -449,7 +497,7 @@
 </translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="835"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="846"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;In
                                                                 minutes&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                                                             </source>
@@ -461,52 +509,52 @@
         <translation>代理格式</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="505"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="516"/>
         <source>Language</source>
         <translation>语言</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="275"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="286"/>
         <source>Speedtest mode</source>
         <translation>速度测试模式</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="240"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="251"/>
         <source>Download + Upload</source>
         <translation>下载 + 上传</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="245"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="256"/>
         <source>Only Download</source>
         <translation>仅下载</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="250"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="261"/>
         <source>Only Upload</source>
         <translation>仅上传</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="871"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="882"/>
         <source>Disable Privilege request</source>
         <translation>禁止权限请求</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="255"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="266"/>
         <source>Simple Download</source>
         <translation>简单下载</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="232"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="243"/>
         <source>Simple Download URL</source>
         <translation>简单下载 URL</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="936"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="947"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Do not attempt to start as Admin unless explicitly requested&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;除非明确要求，否则不要尝试以管理员身份启动&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="939"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="950"/>
         <source>Always Start as Standard User</source>
         <translation>始终以标准用户身份启动</translation>
     </message>
@@ -521,7 +569,7 @@
         <translation>随机端口</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="878"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="889"/>
         <source>Use Mozilla Certificate Store</source>
         <translation>使用 Mozilla 证书存储库</translation>
     </message>
@@ -535,58 +583,58 @@
         <translation>网络设置</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="188"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="185"/>
         <source>Use proxy when activated</source>
         <translation>启用时使用代理</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="195"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="206"/>
         <source>Ignore TLS errors</source>
         <translation>忽略 TLS 错误</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="205"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="216"/>
         <source>Test Settings</source>
         <translation>测试设置</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="292"/>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="305"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="303"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="316"/>
         <source>Timeout</source>
         <translation>超时</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="289"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="300"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;timeout in milliseconds&lt;br/&gt;applies to all tests individually&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;毫秒为单位的超时值&lt;br/&gt;分别应用于所有测试&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="302"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="313"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Timeout for URLtest in ms&lt;br/&gt;Note that muxed connections take a much longer time for their initial request, and setting this value too low will cause the test to falsely report that the config is not working&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;以毫秒为单位的 URL 测试的超时&lt;br/&gt;注意，复用连接在其初始请求时耗时更长，而且这个值设置过低将会导致测试误报该配置无效&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="406"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="417"/>
         <source>Show System DNS option</source>
         <translation>显示系统 DNS 选项</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="430"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="441"/>
         <source>Set text under menu icons</source>
         <translation>在菜单图标下方设置文本</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="625"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="636"/>
         <source>Enable sending HWID, device model, and OS version when updating subscription</source>
         <translation>启用在更新订阅时发送 HWID、设备型号以及 OS 版本</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="622"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="633"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;HWID=%1&lt;/p&gt;&lt;p&gt;OS=%2&lt;/p&gt;&lt;p&gt;OS Version=%3&lt;/p&gt;&lt;p&gt;Model=%4&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;HWID=%1&lt;/p&gt;&lt;p&gt;OS=%2&lt;/p&gt;&lt;p&gt;OS Version=%3&lt;/p&gt;&lt;p&gt;Model=%4&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="260"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="271"/>
         <source>Only Country</source>
         <translation>仅国别</translation>
     </message>
@@ -641,12 +689,12 @@
         <translation>存档</translation>
     </message>
     <message>
-        <location filename="../../src/ui/group/dialog_edit_group.cpp" line="356"/>
+        <location filename="../../src/ui/group/dialog_edit_group.cpp" line="357"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../../src/ui/group/dialog_edit_group.cpp" line="356"/>
+        <location filename="../../src/ui/group/dialog_edit_group.cpp" line="357"/>
         <source>Please input URL</source>
         <translation>请输入 URL</translation>
     </message>
@@ -656,7 +704,7 @@
         <translation>复制配置档分享链接</translation>
     </message>
     <message>
-        <location filename="../../src/ui/group/dialog_edit_group.cpp" line="57"/>
+        <location filename="../../src/ui/group/dialog_edit_group.cpp" line="58"/>
         <source>Copied</source>
         <translation>已复制</translation>
     </message>
@@ -700,6 +748,7 @@
     <name>DialogEditProfile</name>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="26"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="662"/>
         <source>Edit</source>
         <translation>编辑</translation>
     </message>
@@ -759,44 +808,46 @@
         <translation>用于实现 UDP FullCone 等特性的 UDF FullCone 数据包编码。需要服务器支持，若选错则无法连接。不懂请留空。</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="608"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="638"/>
         <source>When enabled, V2Ray will not check the validity of the TLS certificate provided by the remote host (the security is equivalent to plaintext)</source>
         <translation>启用时，V2Ray 将不会检查远端主机所提供的 TLS 证书的有效性 (安全性相当于明文)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="655"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="680"/>
         <source>Server name indication, clear text.</source>
         <translation>服务器名称指示，明文。</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="665"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="693"/>
         <source>Application layer protocol negotiation, clear text. Please separate them with commas.</source>
         <translation>应用层协议协商，明文。多项则请用英文逗号分隔。</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="611"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="641"/>
         <source>Allow insecure</source>
         <translation>允许不安全连接</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="634"/>
-        <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="620"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="611"/>
+        <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="627"/>
         <source>Certificate</source>
         <translation>证书</translation>
-    </message>
-    <message>
-        <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="583"/>
-        <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="588"/>
-        <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="593"/>
-        <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="601"/>
-        <source>Not set</source>
-        <translation>未设置</translation>
     </message>
     <message>
         <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="585"/>
         <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="590"/>
         <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="595"/>
-        <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="603"/>
+        <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="600"/>
+        <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="608"/>
+        <source>Not set</source>
+        <translation>未设置</translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="587"/>
+        <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="592"/>
+        <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="597"/>
+        <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="602"/>
+        <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="610"/>
         <source>Already set</source>
         <translation>已设置</translation>
     </message>
@@ -816,22 +867,22 @@
         <translation>TLS 安全设置</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="689"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="720"/>
         <source>TLS Camouflage Settings</source>
         <translation>TLS 伪装设置</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="808"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="839"/>
         <source>Reality public key. If not empty, turn TLS into REALITY.</source>
         <translation>Reality 公钥。如果不为空则将 TLS 变为 REALITY。</translation>
     </message>
     <message>
-        <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="217"/>
+        <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="219"/>
         <source>Custom (%1 outbound)</source>
         <translation>自定义 (%1 出站)</translation>
     </message>
     <message>
-        <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="219"/>
+        <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="221"/>
         <source>Custom (%1 config)</source>
         <translation>自定义 (%1 配置)</translation>
     </message>
@@ -847,7 +898,7 @@
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="381"/>
-        <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="675"/>
+        <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="696"/>
         <source>Apply settings to this group</source>
         <translation>应用设置到这个分组</translation>
     </message>
@@ -872,7 +923,7 @@
         <translation>关闭</translation>
     </message>
     <message>
-        <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="647"/>
+        <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="668"/>
         <source>Confirm</source>
         <translation>确认</translation>
     </message>
@@ -922,7 +973,23 @@
         <translation>方法</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="824"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="648"/>
+        <source>Enable ECH</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="655"/>
+        <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="638"/>
+        <source>ECH Config</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="673"/>
+        <source>QSN</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="855"/>
         <source>Reality SID</source>
         <translation>Reality SID</translation>
     </message>
@@ -932,37 +999,37 @@
         <translation>头部类型</translation>
     </message>
     <message>
-        <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="221"/>
+        <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="223"/>
         <source>Extra Core</source>
         <translation>额外核心</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="743"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="774"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;May degrade performance, try record fragment first&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;可能降低性能，请先尝试记录片段&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="746"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="777"/>
         <source>Enable TLS fragment</source>
         <translation>启用 TLS 片段</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="753"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="784"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;time format, like 500ms, 10ms etc&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;时间格式，如 500ms, 10ms 等&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="756"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="787"/>
         <source>Fallback Delay</source>
         <translation>回退延时</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="769"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="800"/>
         <source>Enable TLS Record Fragment</source>
         <translation>启用 TLS 记录片段</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="821"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="852"/>
         <source>Reality short id. Accept only one value.</source>
         <translation>Reality 短 ID。 仅接受一个值。</translation>
     </message>
@@ -995,71 +1062,68 @@
         <translation>分组2</translation>
     </message>
     <message>
-        <location filename="../../src/ui/group/dialog_edit_group.cpp" line="441"/>
-        <location filename="../../src/ui/setting/RouteItem.cpp" line="139"/>
+        <location filename="../../src/ui/group/dialog_edit_group.cpp" line="442"/>
+        <location filename="../../src/ui/setting/RouteItem.cpp" line="140"/>
         <source>Proxy</source>
         <translation>代理</translation>
     </message>
     <message>
-        <location filename="../../src/ui/group/dialog_edit_group.cpp" line="444"/>
-        <location filename="../../src/ui/setting/RouteItem.cpp" line="141"/>
+        <location filename="../../src/ui/group/dialog_edit_group.cpp" line="445"/>
+        <location filename="../../src/ui/setting/RouteItem.cpp" line="142"/>
         <source>Direct</source>
         <translation>直连</translation>
     </message>
     <message>
-        <location filename="../../src/ui/setting/RouteItem.cpp" line="134"/>
+        <location filename="../../src/ui/setting/RouteItem.cpp" line="135"/>
         <source>Select outbound</source>
         <translation>选择出站</translation>
     </message>
     <message>
-        <location filename="../../src/ui/setting/RouteItem.cpp" line="143"/>
+        <location filename="../../src/ui/setting/RouteItem.cpp" line="144"/>
         <source>Outbound</source>
         <translation>出站</translation>
     </message>
     <message>
-        <location filename="../../src/ui/setting/RouteItem.cpp" line="136"/>
+        <location filename="../../src/ui/setting/RouteItem.cpp" line="137"/>
         <source>Outbound: </source>
         <translation>出站：</translation>
     </message>
     <message>
-        <location filename="../../src/ui/group/dialog_edit_group.cpp" line="448"/>
+        <location filename="../../src/ui/group/dialog_edit_group.cpp" line="449"/>
         <source>None</source>
         <translation>无</translation>
     </message>
     <message>
-        <location filename="../../src/ui/group/dialog_edit_group.cpp" line="415"/>
+        <location filename="../../src/ui/group/dialog_edit_group.cpp" line="416"/>
         <source>Front proxy: </source>
         <translation>前置代理：</translation>
     </message>
     <message>
-        <location filename="../../src/ui/group/dialog_edit_group.cpp" line="413"/>
+        <location filename="../../src/ui/group/dialog_edit_group.cpp" line="414"/>
         <source>Front proxy for group %1</source>
         <translation>前置代理 =&gt; %1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/group/dialog_edit_group.cpp" line="428"/>
+        <location filename="../../src/ui/group/dialog_edit_group.cpp" line="429"/>
         <source>Landing proxy: </source>
         <translation>落地代理：</translation>
     </message>
     <message>
-        <location filename="../../src/ui/group/dialog_edit_group.cpp" line="426"/>
+        <location filename="../../src/ui/group/dialog_edit_group.cpp" line="427"/>
         <source>Landing proxy for group %1</source>
         <translation>落地代理 =&gt; %1</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="61"/>                                                        
         <source>Discard</source>
-        <translation>弃置</translation>
+        <translation type="vanished">弃置</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="60"/>
         <source>Restore Defaults</source>
-        <translation>恢复默认设置</translation>
+        <translation type="vanished">恢复默认设置</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="59"/>
         <source>Defaults</source>
-        <translation>默认设置</translation>
+        <translation type="vanished">默认设置</translation>
     </message>
     <message>
         <location filename="../../src/ui/profile/edit_chain.cpp" line="46"/>
@@ -1133,12 +1197,12 @@
         <translation>更新所有订阅</translation>
     </message>
     <message>
-        <location filename="../../src/ui/group/dialog_manage_groups.cpp" line="54"/>
+        <location filename="../../src/ui/group/dialog_manage_groups.cpp" line="56"/>
         <source>Confirmation</source>
         <translation>确认</translation>
     </message>
     <message>
-        <location filename="../../src/ui/group/dialog_manage_groups.cpp" line="54"/>
+        <location filename="../../src/ui/group/dialog_manage_groups.cpp" line="56"/>
         <source>Update all subscriptions?</source>
         <translation>更新所有订阅吗？</translation>
     </message>
@@ -1156,14 +1220,12 @@
         <translation>禁用</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="375"/>
         <source>remote</source>
-        <translation>远程</translation>
+        <translation type="vanished">远程</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="380"/>
         <source>direct</source>
-        <translation>直连</translation>
+        <translation type="vanished">直连</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="42"/>
@@ -1367,38 +1429,38 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
         <translation>导出</translation>
     </message>
     <message>
-        <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="29"/>
+        <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="30"/>
         <source>Invalid state</source>
         <translation>无效状态</translation>
     </message>
     <message>
-        <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="29"/>
+        <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="30"/>
         <source>The list of routing profiles is empty, this should be an unreachable state, crashes may occur now</source>
         <translation>路由配置档列表为空，这应该是一个不可达的状态，现在可能会发生崩溃</translation>
     </message>
     <message>
-        <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="201"/>
-        <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="205"/>
+        <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="203"/>
+        <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="207"/>
         <source>Invalid settings</source>
         <translation>无效设置</translation>
     </message>
     <message>
-        <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="201"/>
+        <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="203"/>
         <source>Routing profile cannot be empty</source>
         <translation>路由配置档不能为空</translation>
     </message>
     <message>
-        <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="205"/>
+        <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="207"/>
         <source>DNS Rules are not valid</source>
         <translation>DNS 规则无效</translation>
     </message>
     <message>
-        <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="313"/>
+        <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="315"/>
         <source>Invalid operation</source>
         <translation>无效操作</translation>
     </message>
     <message>
-        <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="313"/>
+        <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="315"/>
         <source>Routing Profiles cannot be empty, try adding another profile or editing this one</source>
         <translation>路由配置档不能为空，请尝试添加另一个配置档或编辑这个配置档</translation>
     </message>
@@ -1476,13 +1538,33 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
         <translation>Tun 启用 IPv6</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="114"/>
-        <location filename="../../src/ui/setting/dialog_vpn_settings.cpp" line="68"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="109"/>
+        <source>AutoRedirect</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="131"/>
+        <source>Tun device name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="141"/>
+        <source>Tun address</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="154"/>
+        <source>Tun ipv6 address</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="166"/>
+        <location filename="../../src/ui/setting/dialog_vpn_settings.cpp" line="94"/>
         <source>Troubleshooting</source>
         <translation>排除故障</translation>
     </message>
     <message>
-        <location filename="../../src/ui/setting/dialog_vpn_settings.cpp" line="69"/>
+        <location filename="../../src/ui/setting/dialog_vpn_settings.cpp" line="95"/>
         <source>If you have trouble starting VPN, you can force reset Core process here.
 
 If still not working, see documentation for more information.
@@ -1493,12 +1575,12 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</source>
 https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     </message>
     <message>
-        <location filename="../../src/ui/setting/dialog_vpn_settings.cpp" line="75"/>
+        <location filename="../../src/ui/setting/dialog_vpn_settings.cpp" line="101"/>
         <source>Reset</source>
         <translation>重置</translation>
     </message>
     <message>
-        <location filename="../../src/ui/setting/dialog_vpn_settings.cpp" line="76"/>
+        <location filename="../../src/ui/setting/dialog_vpn_settings.cpp" line="102"/>
         <source>Cancel</source>
         <translation>取消</translation>
     </message>
@@ -1683,24 +1765,25 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>多路复用</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="69"/>
+        <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="92"/>
+        <source>Transport</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>MULTIPLEXING_OFF</source>
-        <translation>不启用多路复用</translation>
+        <translation type="vanished">不启用多路复用</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="74"/>
         <source>MULTIPLEXING_LOW</source>
-        <translation>低_多路复用</translation>
+        <translation type="vanished">低_多路复用</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="79"/>
         <source>MULTIPLEXING_MIDDLE</source>
-        <translation>中_多路复用</translation>
+        <translation type="vanished">中_多路复用</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="84"/>
         <source>MULTIPLEXING_HIGH</source>
-        <translation>高_多路复用</translation>
+        <translation type="vanished">高_多路复用</translation>
     </message>
 </context>
 <context>
@@ -2213,17 +2296,17 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>编辑</translation>
     </message>
     <message>
-        <location filename="../../src/ui/group/GroupItem.cpp" line="65"/>
+        <location filename="../../src/ui/group/GroupItem.cpp" line="127"/>
         <source>Basic</source>
         <translation>基本</translation>
     </message>
     <message>
-        <location filename="../../src/ui/group/GroupItem.cpp" line="65"/>
+        <location filename="../../src/ui/group/GroupItem.cpp" line="127"/>
         <source>Subscription</source>
         <translation>订阅</translation>
     </message>
     <message>
-        <location filename="../../src/ui/group/GroupItem.cpp" line="119"/>
+        <location filename="../../src/ui/group/GroupItem.cpp" line="183"/>
         <source>Confirmation</source>
         <translation>确认</translation>
     </message>
@@ -2233,17 +2316,17 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>删除</translation>
     </message>
     <message>
-        <location filename="../../src/ui/group/GroupItem.cpp" line="119"/>
+        <location filename="../../src/ui/group/GroupItem.cpp" line="183"/>
         <source>Remove %1?</source>
         <translation>删除选中节点 %1 吗?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/group/GroupItem.cpp" line="66"/>
+        <location filename="../../src/ui/group/GroupItem.cpp" line="128"/>
         <source>Archive</source>
         <translation>存档</translation>
     </message>
     <message>
-        <location filename="../../src/ui/group/GroupItem.cpp" line="78"/>
+        <location filename="../../src/ui/group/GroupItem.cpp" line="140"/>
         <source>Last update: %1</source>
         <translation>最后更新 %1</translation>
     </message>
@@ -2303,64 +2386,63 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>隐藏窗口</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="985"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1029"/>
         <source>Rulesets cache is updated</source>
         <translation>规则集缓存已更新</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="915"/>
-        <location filename="../../src/ui/setting/RouteItem.cpp" line="104"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="957"/>
+        <location filename="../../src/ui/setting/RouteItem.cpp" line="105"/>
         <source>No routing profiles are updated</source>
         <translation>没有可用的更新</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="939"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="982"/>
         <source>Failed to update rulesets</source>
         <translation>规则集更新失败</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="914"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="918"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="938"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="941"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="956"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="960"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="981"/>
         <location filename="../../src/ui/mainwindow.cpp" line="984"/>
-        <location filename="../../src/ui/setting/RouteItem.cpp" line="94"/>
-        <location filename="../../src/ui/setting/RouteItem.cpp" line="103"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1028"/>
+        <location filename="../../src/ui/setting/RouteItem.cpp" line="95"/>
+        <location filename="../../src/ui/setting/RouteItem.cpp" line="104"/>
         <source>Update Response</source>
         <translation>更新响应</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="881"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="922"/>
         <source>Edit Routing Profiles</source>
         <translation>编辑路由文件</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="903"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="944"/>
         <source>Update Routing Profiles</source>
         <translation>更新路由文件</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1306"/>
         <source>Requesting rule-set list error: %1</source>
-        <translation>请求规则集清单错误：%1</translation>
+        <translation type="vanished">请求规则集清单错误：%1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="951"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="994"/>
         <source>Update RuleSet Cache</source>
         <translation>更新规则集缓存</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="999"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1043"/>
         <source>Clear RuleSet Cache</source>
         <translation>清除规则集缓存</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="929"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="971"/>
         <source>Update RuleSet Map</source>
         <translation>更新规则集</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1031"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1079"/>
         <source>Enable AdBlock</source>
         <translation>启用广告拦截</translation>
     </message>
@@ -2386,26 +2468,26 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="309"/>
-        <location filename="../../src/ui/group/dialog_edit_group.cpp" line="138"/>
+        <location filename="../../src/ui/group/dialog_edit_group.cpp" line="139"/>
         <source>Type</source>
         <translation>类型</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="314"/>
-        <location filename="../../src/ui/group/dialog_edit_group.cpp" line="141"/>
+        <location filename="../../src/ui/group/dialog_edit_group.cpp" line="142"/>
         <source>Address</source>
         <translation>地址</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="319"/>
-        <location filename="../../src/ui/group/dialog_edit_group.cpp" line="144"/>
+        <location filename="../../src/ui/group/dialog_edit_group.cpp" line="145"/>
         <source>Name</source>
         <translation>名称</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="324"/>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="238"/>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="240"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="283"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="285"/>
         <source>Test Result</source>
         <translation>测试结果</translation>
     </message>
@@ -2418,8 +2500,8 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="161"/>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="597"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="2231"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="2234"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2344"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2347"/>
         <source>System Proxy</source>
         <translation>系统代理</translation>
     </message>
@@ -2450,8 +2532,8 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="744"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3202"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3210"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3335"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3346"/>
         <source>Stop</source>
         <translation>停止</translation>
     </message>
@@ -2516,56 +2598,61 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>简单下载测试（选中项）</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1391"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1152"/>
+        <source>Security Settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/mainwindow.cpp" line="1483"/>
         <source>Error</source>
         <translation>错误</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1485"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="1542"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="2632"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="2966"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3019"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3066"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3269"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1577"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1635"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2754"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3097"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3151"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3199"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3404"/>
         <source>Confirmation</source>
         <translation>确认</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1486"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="1543"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1578"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1636"/>
         <source>Settings changed, restart proxy?</source>
         <translation>设置已改变，重启代理吗？</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1557"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1651"/>
         <source>Imported %1 profile(s)</source>
         <translation>导入了 %1 个配置档</translation>
     </message>
     <message>
-        <location filename="../../src/dataStore/ProxyEntity.cpp" line="54"/>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="238"/>
+        <location filename="../../src/dataStore/ProxyEntity.cpp" line="52"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="283"/>
         <source>Unavailable</source>
         <translation>不可用</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2633"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2755"/>
         <source>Remove %1 item(s) ?</source>
         <translation>删除选中节点 %1 项吗？</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2695"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2821"/>
         <source>Config copied</source>
         <translation>配置已复制</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="95"/>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="141"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="132"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="178"/>
         <source>[%1] test error: %2</source>
         <translation>[%1] 测试错误: %2</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3200"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3333"/>
         <source>Clear</source>
         <translation>清除</translation>
     </message>
@@ -2577,7 +2664,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="217"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="262"/>
         <source>Testing</source>
         <translation>正在测试中</translation>
     </message>
@@ -2592,7 +2679,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation type="vanished">选择</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2881"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3008"/>
         <source>QR Code not found</source>
         <translation>未找到二维码</translation>
     </message>
@@ -2602,12 +2689,12 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>移动</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="626"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="664"/>
         <source>Starting profile %1</source>
         <translation>正在启动配置档 %1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="714"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="755"/>
         <source>Stopping profile %1</source>
         <translation>正在停止配置档 %1</translation>
     </message>
@@ -2642,8 +2729,8 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>查看此节点（ 二维码和链接 ）</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2668"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="2680"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2792"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2805"/>
         <source>Copied %1 item(s)</source>
         <translation>复制了 %1 项</translation>
     </message>
@@ -2688,19 +2775,19 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>启用 Tun</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1478"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1570"/>
         <source>Tun Settings changed</source>
         <translation>Tun 设置已改变</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1479"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1571"/>
         <source>Restart Tun to take effect.</source>
         <translation>重启 Tun 以生效。</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="736"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3202"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3210"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3336"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3346"/>
         <source>Start</source>
         <translation>启动</translation>
     </message>
@@ -2716,7 +2803,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="977"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="2580"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2700"/>
         <source>Clone</source>
         <translation>复制</translation>
     </message>
@@ -2726,7 +2813,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>更新订阅</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2581"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2701"/>
         <source>Clone %1 item(s)</source>
         <translation>复制选中节点 %1 项</translation>
     </message>
@@ -2742,7 +2829,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="823"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="1198"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1271"/>
         <source>Export %1 config</source>
         <translation>导出 %1 配置</translation>
     </message>
@@ -2762,7 +2849,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>重启程序</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2206"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2320"/>
         <source>Not Running</source>
         <translation>未在运行</translation>
     </message>
@@ -2781,12 +2868,12 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>显示窗口</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1514"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1607"/>
         <source>Settings changed</source>
         <translation>设置已改变</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1515"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1608"/>
         <source>Restart the program to take effect.</source>
         <translation>重启程序以生效。</translation>
     </message>
@@ -2796,18 +2883,18 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>重启代理</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="628"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="666"/>
         <source>Failed to start profile %1</source>
         <translation>启动配置档 %1 失败</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="716"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="757"/>
         <source>Failed to stop, please restart the program.</source>
         <translation>停止失败，请重启程序。</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="612"/>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="691"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="650"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="732"/>
         <source>If there is no response for a long time, it is recommended to restart the software.</source>
         <translation>如果长时间没有反应，建议重启软件。</translation>
     </message>
@@ -2821,38 +2908,38 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>停止测试</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="539"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="577"/>
         <source>Tun device misbehaving</source>
         <translation>Tun 设备运行异常</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="544"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="582"/>
         <source>Reset</source>
         <translation>重置</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="545"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="583"/>
         <source>Cancel</source>
         <translation>取消</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1147"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3228"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3362"/>
         <source>Add new Group</source>
         <translation>新建分组</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3261"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3395"/>
         <source>Delete selected Group</source>
         <translation>删除此分组</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3262"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3396"/>
         <source>Edit selected Group</source>
         <translation>编辑此分组</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3270"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3405"/>
         <source>Remove %1?</source>
         <translation>删除选中节点 %1 吗?</translation>
     </message>
@@ -2862,7 +2949,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>测试选中节点URL延迟</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="942"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="985"/>
         <source>Rulesets updated successfully</source>
         <translation>规则集更新成功</translation>
     </message>
@@ -2872,8 +2959,8 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>清除选中节点测试结果</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="919"/>
-        <location filename="../../src/ui/setting/RouteItem.cpp" line="95"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="961"/>
+        <location filename="../../src/ui/setting/RouteItem.cpp" line="96"/>
         <source>Updated %1 routing profiles</source>
         <translation>更新了 %1 个设定值</translation>
     </message>
@@ -2922,32 +3009,32 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>Ctrl+Alt+I</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="540"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="578"/>
         <source>If you have trouble starting VPN, you can force reset Core process here and then try starting the profile again. The error is %1</source>
         <translation>如果启动 VPN 时有问题，您可以在这里强制重置 Core 进程，然后再次尝试启动配置档。错误是 %1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2614"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2735"/>
         <source> Confirmation </source>
         <translation> 确认 </translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2615"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2736"/>
         <source> Remove %1 item(s) ? </source>
         <translation> 移除 %1 项吗？ </translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2967"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3098"/>
         <source>Remove %1 Unavailable item(s) ?</source>
         <translation>移除 %1 个不可用项吗？</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3020"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3152"/>
         <source>Remove %1 Invalid item(s) ?</source>
         <translation>移除 %1 个无效项吗？</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3067"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3200"/>
         <source>Replace domain server addresses with their resolved IPs?</source>
         <translation>替换域名服务器地址为其解析后的 IP 地址吗？</translation>
     </message>
@@ -2977,7 +3064,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>日志</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1862"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1966"/>
         <source>Please give the core root privileges</source>
         <translation>请给核心赋予根(root)权限</translation>
     </message>
@@ -3040,50 +3127,50 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>打开管理器</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="44"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="81"/>
         <source>Profile test aborted</source>
         <translation>配置档测试中止</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="124"/>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="441"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="161"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="481"/>
         <source>Something is very wrong, the subject ent cannot be found!</source>
         <translation>发生了非常严重的问题，找不到主题 ent！</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="130"/>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="447"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="167"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="487"/>
         <source>Profile manager data is corrupted, try again.</source>
         <translation>配置档管理器数据损坏，请重试。</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="255"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="300"/>
         <source>The last speed test did not exit completely, please wait. If it persists, please restart the program.</source>
         <translation>上次的测速未完全退出，请稍候。如果持续存在，请重启程序。</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="163"/>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="267"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="208"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="311"/>
         <source>Failed to build test config: </source>
         <translation>构建测试配置失败： </translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="293"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="337"/>
         <source>Speedtest finished!</source>
         <translation>测速完成！</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="211"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="256"/>
         <source>Failed to stop tests</source>
         <translation>停止测试失败</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="475"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="515"/>
         <source>You need to enable hijack DNS server first</source>
         <translation>您需要先启用劫持 DNS 服务器</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="489"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="529"/>
         <source>Failed to set system dns: </source>
         <translation>设置系统 DNS 失败： </translation>
     </message>
@@ -3092,12 +3179,12 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation type="vanished">BuildConfig 返回错误</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="584"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="622"/>
         <source>Another profile is starting...</source>
         <translation>另一个配置档正在启动...</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="591"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="629"/>
         <source>Another profile is stopping...</source>
         <translation>另一个配置档正在停止...</translation>
     </message>
@@ -3106,27 +3193,27 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation type="vanished">尝试启动该配置，但核心尚未监听到 RPC 端口，因此请重启它...</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="674"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="715"/>
         <source>Stop return error</source>
         <translation>停止返回错误</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2697"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2823"/>
         <source>Copy core config</source>
         <translation>复制核心配置</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2699"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2825"/>
         <source>Copy test config</source>
         <translation>复制测试配置</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3939"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4088"/>
         <source>Cannot start</source>
         <translation>无法启动</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3940"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4089"/>
         <source>Last download request has not finished yet</source>
         <translation>上次的下载请求尚未完成</translation>
     </message>
@@ -3136,7 +3223,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>流量图</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3974"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4123"/>
         <source>Failed to download update assets</source>
         <translation>下载更新资源失败</translation>
     </message>
@@ -3155,32 +3242,32 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>此分组测试速度</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="155"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="199"/>
         <source>The last url test did not exit completely, please wait. If it persists, please restart the program.</source>
         <translation>上次的 URL 测试未完全退出，请稍候。如果持续存在，则请重启程序。</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="200"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="245"/>
         <source>URL test finished!</source>
         <translation>URL 测试完成！</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="374"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="418"/>
         <source>Profile speed test aborted</source>
         <translation>配置档速度测试已中止</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="466"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="506"/>
         <source>[%1] speed test error: %2</source>
         <translation>[%1] 速度测试错误：%2</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1810"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1902"/>
         <source>User opted for no privilege req, some features may not work</source>
         <translation>用户选择无权限请求，某些功能可能不起作用</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2902"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3029"/>
         <source>Unable to capture screen</source>
         <translation>无法捕获屏幕</translation>
     </message>
@@ -3225,6 +3312,29 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     </message>
 </context>
 <context>
+    <name>PasswordForm</name>
+    <message>
+        <location filename="../../src/nekobox/ui/security/change_password.ui" line="14"/>
+        <source>Dialog</source>
+        <translation type="unfinished">对话</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/security/change_password.ui" line="20"/>
+        <source>Username</source>
+        <translation type="unfinished">用户名</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/security/change_password.ui" line="37"/>
+        <source>New Password</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/security/change_password.ui" line="54"/>
+        <source>Confirm Password</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>ProxyItem</name>
     <message>
         <location filename="../../src/ui/profile/ProxyItem.cpp" line="39"/>
@@ -3238,9 +3348,17 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     </message>
 </context>
 <context>
+    <name>QAction</name>
+    <message>
+        <location filename="../../src/ui/security_addon.cpp" line="321"/>
+        <source>Security Settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>QGuiApplication</name>
     <message>
-        <location filename="../../src/main.cpp" line="266"/>
+        <location filename="../../src/main.cpp" line="253"/>
         <source>QT_LAYOUT_DIRECTION</source>
         <translation>LTR</translation>
     </message>
@@ -3248,19 +3366,28 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="865"/>
         <source>url detected</source>
-        <translation>检测到 URL</translation>
+        <translation type="vanished">检测到 URL</translation>
     </message>
     <message>
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="866"/>
+        <location filename="../../src/ui/group/GroupItem.cpp" line="20"/>
+        <source>URL detected</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/group/GroupItem.cpp" line="25"/>
         <source>%1
 How to update?</source>
         <translation>%1
 如何更新？</translation>
     </message>
     <message>
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="1005"/>
+        <location filename="../../src/ui/group/GroupItem.cpp" line="35"/>
+        <source>Group name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="1002"/>
         <source>Added %1 profiles:
 %2
 Deleted %3 Profiles:
@@ -3271,65 +3398,70 @@ Deleted %3 Profiles:
 %4</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2211"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2325"/>
         <source>IP address: %1</source>
         <translation>IP地址: %1</translation>
     </message>
     <message>
         <location filename="../../src/stats/traffic/TrafficLooper.cpp" line="115"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="2174"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2288"/>
         <source>Proxy: %1
 Direct: %2</source>
         <translation>代理: %1
 直连: %2</translation>
     </message>
     <message>
-        <location filename="../../src/ui/group/GroupItem.cpp" line="37"/>
+        <location filename="../../src/ui/group/GroupItem.cpp" line="99"/>
         <source>Used: %1 Remain: %2 Expire: %3</source>
         <translation>已用 %1 剩余 %2 过期 %3</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3844"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3855"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3899"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3921"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3930"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3965"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3993"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4004"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4048"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4070"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4079"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4114"/>
         <source>Update</source>
         <translation>更新</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3899"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4048"/>
         <source>No update</source>
         <translation>无更新</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3927"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4076"/>
         <source>Open in browser</source>
         <translation>在浏览器打开</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3925"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4074"/>
         <source>Close</source>
         <translation>关闭</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="165"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="178"/>
         <source>Download Profiles</source>
         <translation>选择国家地理规则</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1306"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1364"/>
+        <source>Check Rule Sets: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/mainwindow.cpp" line="1386"/>
         <source>Requesting rule-set list error: %1</source>
         <translation>请求规则集清单错误：%1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3966"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4115"/>
         <source>Update is ready, restart to install?</source>
         <translation>更新已准备好，重启进行安装吗？</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3922"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4071"/>
         <source>Update found: %1
 Release note:
 %2</source>
@@ -3343,44 +3475,44 @@ Release note:
         <translation>链式代理</translation>
     </message>
     <message>
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="905"/>
+        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="902"/>
         <source>Requesting subscription: %1</source>
         <translation>正在请求订阅: %1</translation>
     </message>
     <message>
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="909"/>
+        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="906"/>
         <source>Requesting subscription %1 error: %2</source>
         <translation>请求订阅 %1 时出错: %2</translation>
     </message>
     <message>
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="1010"/>
+        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="1007"/>
         <source>Nothing</source>
         <translation>无</translation>
     </message>
     <message>
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="1013"/>
+        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="1010"/>
         <source>Change of %1:</source>
         <translation>%1 的变化:</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/global/GuiUtils.hpp" line="112"/>
         <location filename="../../src/ui/profile/edit_ssh.cpp" line="28"/>
-        <location filename="../../src/ui/setting/dialog_basic_settings.cpp" line="236"/>
+        <location filename="../../src/ui/setting/dialog_basic_settings.cpp" line="235"/>
         <source>Select</source>
         <translation>选择</translation>
     </message>
     <message>
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="934"/>
+        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="931"/>
         <source>Clearing servers...</source>
         <translation>正在清理服务器...</translation>
     </message>
     <message>
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="916"/>
+        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="913"/>
         <source>Subscription request fininshed: %1</source>
         <translation>订阅请求完成: %1</translation>
     </message>
     <message>
-        <location filename="../../src/sys/Process.cpp" line="87"/>
+        <location filename="../../src/sys/Process.cpp" line="111"/>
         <source>Core exits too frequently, stop automatic restart this profile.</source>
         <translation>Core 退出太频繁，停止自动重启这个配置档。</translation>
     </message>
@@ -3390,47 +3522,47 @@ Release note:
         <translation>默认</translation>
     </message>
     <message>
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="860"/>
+        <location filename="../../src/ui/group/GroupItem.cpp" line="30"/>
         <source>Add profiles to this group</source>
         <translation>添加配置档到这个分组</translation>
     </message>
     <message>
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="861"/>
+        <location filename="../../src/ui/group/GroupItem.cpp" line="29"/>
         <source>Create new subscription group</source>
         <translation>创建新的订阅分组</translation>
     </message>
     <message>
-        <location filename="../../src/global/HTTPRequestHelper.cpp" line="190"/>
+        <location filename="../../src/global/HTTPRequestHelper.cpp" line="189"/>
         <source>Could not open file.</source>
         <translation>无法打开文件。</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3845"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3994"/>
         <source>Not official support platform</source>
         <translation>非官方支持平台</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3856"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4005"/>
         <source>Requesting update error: %1</source>
         <translation>请求更新时出错：%1</translation>
     </message>
     <message>
-        <location filename="../../src/configs/ConfigBuilder.cpp" line="142"/>
+        <location filename="../../src/configs/ConfigBuilder.cpp" line="163"/>
         <source>Tun mode cannot be used with Custom configs</source>
         <translation>Tun 模式不能与自定义配置一起使用</translation>
     </message>
     <message>
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="939"/>
+        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="936"/>
         <source>Processing subscription data...</source>
         <translation>正在处理订阅数据...</translation>
     </message>
     <message>
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="942"/>
+        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="939"/>
         <source>Process complete, applying...</source>
         <translation>处理完成，正在应用...</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="166"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="179"/>
         <source>Requesting profile error: %1</source>
         <translation>请求配置档时出错: %1</translation>
     </message>
@@ -3439,19 +3571,29 @@ Release note:
         <translation type="vanished">本地 NDS 和 Tun 模式不能同时使用，请在「路由设置 → 本地覆盖」中设置一个 IP 用作本地 DNS 服务器</translation>
     </message>
     <message>
-        <location filename="../../src/sys/Process.cpp" line="80"/>
+        <location filename="../../src/sys/Process.cpp" line="104"/>
         <source>Core exited, cleaning up...</source>
         <translation>核心已退出，正在清理...</translation>
     </message>
     <message>
-        <location filename="../../src/sys/Process.cpp" line="96"/>
+        <location filename="../../src/sys/Process.cpp" line="120"/>
         <source>Restarting the core ...</source>
         <translation>正在重新启动核心...</translation>
     </message>
     <message>
-        <location filename="../../src/ui/setting/dialog_basic_settings.cpp" line="241"/>
+        <location filename="../../src/ui/setting/dialog_basic_settings.cpp" line="240"/>
         <source>Select a Folder</source>
         <translation>选择一个文件夹</translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/security_addon.cpp" line="20"/>
+        <source>Access denied</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/security_addon.cpp" line="21"/>
+        <source>OK</source>
+        <translation type="unfinished">确定</translation>
     </message>
 </context>
 <context>
@@ -3665,13 +3807,13 @@ Release note:
         <translation>高级</translation>
     </message>
     <message>
-        <location filename="../../src/ui/setting/RouteItem.cpp" line="301"/>
-        <location filename="../../src/ui/setting/RouteItem.cpp" line="468"/>
+        <location filename="../../src/ui/setting/RouteItem.cpp" line="302"/>
+        <location filename="../../src/ui/setting/RouteItem.cpp" line="469"/>
         <source>Invalid rules</source>
         <translation>无效规则</translation>
     </message>
     <message>
-        <location filename="../../src/ui/setting/RouteItem.cpp" line="301"/>
+        <location filename="../../src/ui/setting/RouteItem.cpp" line="302"/>
         <source>Some rules could not be added:
 </source>
         <translation>无法添加某些规则：
@@ -3682,39 +3824,39 @@ Release note:
         <translation type="vanished">简易规则手册</translation>
     </message>
     <message>
-        <location filename="../../src/ui/setting/RouteItem.cpp" line="357"/>
+        <location filename="../../src/ui/setting/RouteItem.cpp" line="358"/>
         <source>Invalid JSON Array</source>
         <translation>无效 JSON 数组</translation>
     </message>
     <message>
-        <location filename="../../src/ui/setting/RouteItem.cpp" line="357"/>
+        <location filename="../../src/ui/setting/RouteItem.cpp" line="358"/>
         <source>The provided input cannot be parsed to a valid route rule array:
 </source>
         <translation>提供的输入无法解析为有效的路由规则数组：
 </translation>
     </message>
     <message>
-        <location filename="../../src/ui/setting/RouteItem.cpp" line="440"/>
+        <location filename="../../src/ui/setting/RouteItem.cpp" line="441"/>
         <source>Invalid operation</source>
         <translation>无效操作</translation>
     </message>
     <message>
-        <location filename="../../src/ui/setting/RouteItem.cpp" line="440"/>
+        <location filename="../../src/ui/setting/RouteItem.cpp" line="441"/>
         <source>Cannot create Route Profile with empty name</source>
         <translation>无法使用空名称创建路由配置档</translation>
     </message>
     <message>
-        <location filename="../../src/ui/setting/RouteItem.cpp" line="456"/>
+        <location filename="../../src/ui/setting/RouteItem.cpp" line="457"/>
         <source>Empty Route Profile</source>
         <translation>空路由配置档</translation>
     </message>
     <message>
-        <location filename="../../src/ui/setting/RouteItem.cpp" line="456"/>
+        <location filename="../../src/ui/setting/RouteItem.cpp" line="457"/>
         <source>No valid rules are in the profile</source>
         <translation>配置档中没有有效的规则</translation>
     </message>
     <message>
-        <location filename="../../src/ui/setting/RouteItem.cpp" line="468"/>
+        <location filename="../../src/ui/setting/RouteItem.cpp" line="469"/>
         <source>Some rules could not be added, fix them before saving:
 </source>
         <translation>某些规则无法添加，请在保存前修复它们：
@@ -3732,6 +3874,49 @@ Release note:
     </message>
 </context>
 <context>
+    <name>SecurityForm</name>
+    <message>
+        <location filename="../../src/nekobox/ui/security/security.ui" line="14"/>
+        <source>Security Settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/security/security.ui" line="62"/>
+        <source>Lock Actions</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/security/security.ui" line="69"/>
+        <source>Lock Settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/security/security.ui" line="76"/>
+        <source>Lock System Tray</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/security/security.ui" line="113"/>
+        <source>Delete Users</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/security/security.ui" line="120"/>
+        <source>Edit User Roles</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/security/security.ui" line="163"/>
+        <source>Change UI Password</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/security/security.ui" line="170"/>
+        <source>Set Proxy Credentials</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>SpeedWidget</name>
     <message>
         <source>Proxy</source>
@@ -3745,26 +3930,34 @@ Release note:
 <context>
     <name>SpinnerDialog</name>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="113"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="126"/>
         <source>Invalid JSON Array</source>
         <translation>无效 JSON 数组</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="114"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="127"/>
         <source>The provided input cannot be parsed to a valid route rule array:
 </source>
         <translation>提供的输入无法解析为有效的路由规则数组：</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="203"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="250"/>
         <source>Fetching information</source>
         <translation>获取信息</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="219"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="1053"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="266"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1103"/>
         <source>Download Profiles</source>
         <translation>选择国家地理规则</translation>
+    </message>
+</context>
+<context>
+    <name>UsersForm</name>
+    <message>
+        <location filename="../../src/nekobox/ui/security/delete_or_edit_users.ui" line="14"/>
+        <source>Form</source>
+        <translation type="unfinished">表单</translation>
     </message>
 </context>
 </TS>

@@ -492,10 +492,6 @@ void DialogEditProfile::typeSelected(const QString &newType) {
   editor_cache_updated_impl();
   ADJUST_SIZE
 
-  // 第一次显示
-  if (isHidden()) {
-    runOnThread([=, this] { show(); }, this);
-  }
 }
 
 bool DialogEditProfile::onEnd() {

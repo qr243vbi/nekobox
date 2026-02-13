@@ -17,6 +17,18 @@
 #include <QMessageBox>
 #include <QStringList>
 
+
+#ifndef NKR_SOFTWARE_KEYS
+#define ADD_SECURITY_ACTION
+#define CHECK_SETTINGS_ACCESS_W
+#define CHECK_SETTINGS_ACCESS
+#define CHECK_ACTION_ACCESS_W
+#define CHECK_ACTION_ACCESS
+#else
+#include "nekobox/ui/security_addon.h"
+#endif
+
+
 // rpc
 using namespace API;
 

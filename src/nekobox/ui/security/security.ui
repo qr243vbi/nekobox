@@ -59,7 +59,7 @@
          <item>
           <widget class="QCheckBox" name="auth_startup">
            <property name="text">
-            <string>Lock at startup</string>
+            <string>Lock Actions</string>
            </property>
           </widget>
          </item>

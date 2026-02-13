@@ -146,6 +146,8 @@ public:
 
     void toggle_system_proxy();
 
+    void set_misc_checkboxes();
+
     void set_spmode_vpn(bool enable, bool save = true, bool requestAdmin = true);
 
     bool get_elevated_permissions(int reason = 3, void * pointer = nullptr);
@@ -188,9 +190,13 @@ private slots:
 
     void on_menu_hotkey_settings_triggered();
 
+    void on_menu_add_new_group_triggered();
+
+    void on_menu_add_from_file();
+
     void on_menu_add_from_input_triggered();
 
-    static void on_menu_add_from_clipboard_triggered();
+    void on_menu_add_from_clipboard_triggered();
 
     void on_menu_clone_triggered();
 

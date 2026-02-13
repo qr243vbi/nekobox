@@ -1,4 +1,3 @@
-#pragma once
 #include "nekobox/ui/security_addon.h"
 #include "nekobox/dataStore/Utils.hpp"
 #include "nekobox/ui/mainwindow.h"
@@ -11,17 +10,20 @@
 #include <qnamespace.h>
 #include <qpushbutton.h>
 
-#ifndef NKR_DEFAULT_PASSWORD
-#define NKR_DEFAULT_PASSWORD NKR_SOFTWARE_KEYS
-#endif
-
-#ifndef NKR_DEFAULT_USERNAME
-#define NKR_DEFAULT_USERNAME "admin"
-#endif
 
 QSettings *local_keys = nullptr;
 QByteArray default_password;
 QStringList userlist;
+
+void set_access_denied(QWidget * w){
+  auto l1 = new QVBoxLayout();
+  auto l2 = new QLabel(QObject::tr("Access denied"));
+  auto l3 = new QPushButton(QObject::tr("OK"));
+  l1->addWidget(l2); l1->addWidget(l3); w->setLayout(l1);
+  QObject::connect(l3, &QPushButton::clicked, w, [w] {
+    w->close();
+  });
+};
 
 static QByteArray hashPassword(const QString &password)
 {
@@ -89,6 +91,11 @@ static long long * getTimePointer(LockValue val){
 }
 
 bool confirmLock(LockValue val){
+  init_keys();
+  if (userlist.isEmpty()){
+    return true;
+  }
+
   bool ret = !(getLocked(val));
   if (ret) return true;
 
@@ -128,6 +135,7 @@ bool confirmLock(LockValue val){
     }
     skip_timing:
     confirm->close();
+    return true;
   });
 
   confirm->show();
@@ -223,6 +231,7 @@ static QString getLockPart(LockValue key) {
 }
 
 bool getLocked(LockValue key, const QString &username) {
+  init_keys();
   QString part = getLockPart(key);
   if (part == "")
     return false;
@@ -234,11 +243,13 @@ bool getLocked(LockValue key, const QString &username) {
 };
 
 void setInboundPassword(const QString &username, const QString &password) {
+  init_keys();
   Configs::dataStore->inbound_password = password;
   Configs::dataStore->inbound_username = username;
 }
 
 void setLocked(LockValue key, bool value, const QString &username) {
+  init_keys();
   QString part = getLockPart(key);
   if (part == "")
     return;
@@ -246,7 +257,6 @@ void setLocked(LockValue key, bool value, const QString &username) {
     part = "lock_" + part + "_" + username;
   else
     part = "lock_" + part;
-  qDebug() << part << value;
   local_keys->setValue(part, value);
   local_keys->sync();
 };
@@ -271,10 +281,12 @@ QByteArray getPasswordHash(const QString &username) {
 };
 
 bool checkPassword(const QString &username, const QString &password) {
+  init_keys();
+  if (userlist.isEmpty()){
+    return true;
+  }
   QByteArray oldhash = getPasswordHash(username);
   QByteArray newhash = hashPassword(password);
-  qDebug() << oldhash;
-  qDebug() << newhash;
   return oldhash == newhash;
 };
 
@@ -292,6 +304,7 @@ void delUser(const QString &username) {
 };
 
 void setPassword(const QString &username, const QString &password) {
+  init_keys();
   if (password == "") {
     delUser(username);
     return;
@@ -303,7 +316,8 @@ void setPassword(const QString &username, const QString &password) {
   local_keys->sync();
 };
 
-static inline void modify_security_action(MainWindow *win, QAction *sec) {
+void modify_security_action(MainWindow *win, QAction *sec) {
+  init_keys();
   sec->setText(QAction::tr("Security Settings"));
 
   QObject::connect(sec, &QAction::triggered, win, [win]() {
@@ -332,7 +346,7 @@ UsersForm::UsersForm(QWidget *parent) {
 SecurityForm::SecurityForm(bool is_user_defined, QWidget *parent) {
   ui = new Ui::SecurityForm();
   ui->setupUi(this);
-  ui->auth_startup->hide();
+//  ui->auth_startup->hide();
   ui->lock_system_tray->hide();
 
   if (is_user_defined) {
