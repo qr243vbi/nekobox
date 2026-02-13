@@ -4,6 +4,7 @@
 #include <windows.h>
 #endif
 
+#include <QDir>
 #include "nekobox/ui/security_addon.h"
 #include "nekobox/dataStore/Utils.hpp"
 #include "nekobox/ui/mainwindow.h"
