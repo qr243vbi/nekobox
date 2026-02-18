@@ -23,6 +23,7 @@
 #define ADD_SECURITY_ACTION
 #define CHECK_SETTINGS_ACCESS_W
 #define CHECK_SETTINGS_ACCESS
+#define CHECK_ACTION_ACCESS_R
 #define CHECK_ACTION_ACCESS_W
 #define CHECK_ACTION_ACCESS
 #else
@@ -790,7 +791,10 @@ skip_updater_hide:
       }
   });
   connect(ui->actionRestart_Program, &QAction::triggered, this,
-          [=, this] { CHECK_ACTION_ACCESS_W MW_dialog_message("", "RestartProgram"); });
+          [=, this] { 
+            CHECK_ACTION_ACCESS_R
+            MW_dialog_message("", "RestartProgram");
+          });
   connect(ui->actionToggle_window, &QAction::triggered, this,
           [=, this] {
             CHECK_SETTINGS_ACCESS_W 
@@ -1800,7 +1804,7 @@ void MainWindow::point_changed(int width, int height) {
 }
 
 void MainWindow::on_menu_exit_triggered() {
-  CHECK_ACTION_ACCESS_W
+  CHECK_ACTION_ACCESS_R
   prepare_exit();
   //
   if (exit_reason == 1) {

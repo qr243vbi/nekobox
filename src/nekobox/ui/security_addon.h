@@ -17,13 +17,29 @@
 
 void set_access_denied(QWidget * w);
 
-
 #define CHECK_ACCESS_W(X) \
   if (!confirmLock(LockValue::Lock##X)) { \
     QWidget * wd = new QDialog(); \
     set_access_denied(wd); \
     wd->show(); \
     return; \
+  }
+
+#define CHECK_ACCESS_R(X) \
+  if (!confirmLock(LockValue::Lock##X, true)) { \
+    QWidget * wd = new QDialog(); \
+    set_access_denied(wd); \
+    wd->show(); \
+    return; \
+  }
+
+
+#define CHECK_ACCESS_M(X) \
+  if (!confirmLock(LockValue::Lock##X, true)) { \
+    QWidget * wd = new QDialog(); \
+    set_access_denied(wd); \
+    wd->show(); \
+    return 1; \
   }
 
 #define CHECK_ACCESS(X) \
@@ -57,13 +73,18 @@ enum LockValue{
 
 
 #define CHECK_ACTION_ACCESS_W CHECK_ACCESS_W(Startup)
+#define CHECK_ACTION_ACCESS_R CHECK_ACCESS_R(Startup)
 #define CHECK_ACTION_ACCESS CHECK_ACCESS(Startup)
+
+#define CHECK_STARTUP_ACCESS_M CHECK_ACCESS_M(Systray)
 
 extern long long time_startup;
 extern long long time_settings;
 extern long long time_systray;
+extern long long time_line;
+extern long long time_type;
 
-bool confirmLock(LockValue val);
+bool confirmLock(LockValue val, bool restart = false);
 
 bool getLocked(LockValue key, const QString & username = "");
 

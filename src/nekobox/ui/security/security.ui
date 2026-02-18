@@ -73,7 +73,7 @@
          <item>
           <widget class="QCheckBox" name="lock_system_tray">
            <property name="text">
-            <string>Lock System Tray</string>
+            <string>Lock Startup</string>
            </property>
           </widget>
          </item>

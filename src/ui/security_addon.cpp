@@ -83,6 +83,9 @@ public:
  long long time_startup = 0;
  long long time_settings = 0;
  long long time_systray = 0;
+ long long time_line = 0;
+ long long time_type = 0;
+
 
 static long long * getTimePointer(LockValue val){
   switch (val){
@@ -97,7 +100,7 @@ static long long * getTimePointer(LockValue val){
   }
 }
 
-bool confirmLock(LockValue val){
+bool confirmLock(LockValue val, bool restart){
   init_keys();
   if (userlist.isEmpty()){
     return true;
@@ -112,12 +115,17 @@ bool confirmLock(LockValue val){
   if (*ptr > seconds) return true;
 
   auto confirm = new ConfirmForm();
-
+  confirm->ui->comboBox->setCurrentIndex(time_type);
+  confirm->ui->spinBox->setValue(time_line);
+  if (restart){
+    confirm->ui->spinBox->setValue(999999);
+    confirm->ui->label_group->hide();
+  }
   QObject::connect(confirm->ui->buttonBox, &QDialogButtonBox::rejected, confirm, [confirm](){
     confirm->close();
   });
 
-  QObject::connect(confirm->ui->buttonBox, &QDialogButtonBox::accepted, confirm, [val, confirm, &ret, ptr](){
+  QObject::connect(confirm->ui->buttonBox, &QDialogButtonBox::accepted, confirm, [val, confirm, &ret, ptr, restart](){
     auto username = confirm->ui->username->text();
     QString password;
     bool checked;
@@ -134,10 +142,13 @@ bool confirmLock(LockValue val){
     ret = !(getLocked(val, username));
     if (ret){
       int seconds = confirm->ui->spinBox->text().toInt();
+      if (!restart) time_line = seconds;
       if (seconds <= 0) goto skip_timing; 
-      for (int n = confirm->ui->comboBox->currentIndex(); n > 0; n --){
+      int curind = confirm->ui->comboBox->currentIndex();
+      for (int n = curind; n > 0; n --){
         seconds *= 60;
       }
+      if (!restart) time_type = curind; 
       *ptr = QDateTime::currentSecsSinceEpoch() + seconds;
     }
     skip_timing:
@@ -354,7 +365,7 @@ SecurityForm::SecurityForm(bool is_user_defined, QWidget *parent) {
   ui = new Ui::SecurityForm();
   ui->setupUi(this);
 //  ui->auth_startup->hide();
-  ui->lock_system_tray->hide();
+//  ui->lock_system_tray->hide();
 
   if (is_user_defined) {
     ui->button_group->hide();

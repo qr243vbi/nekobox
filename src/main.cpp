@@ -25,6 +25,13 @@
 #include <qfontdatabase.h>
 #endif
 
+
+#ifndef NKR_SOFTWARE_KEYS
+#define CHECK_STARTUP_ACCESS_M
+#else
+#include "nekobox/ui/security_addon.h"
+#endif
+
 #include "nekobox/sys/Settings.h"
 #include "nekobox/dataStore/ResourceEntity.hpp"
 
@@ -100,6 +107,8 @@ int main(int argc, char** argv) {
     QApplication::setAttribute(Qt::AA_DontUseNativeDialogs);
     QApplication::setQuitOnLastWindowClosed(false);
     QApplication a(argc, argv);
+
+    CHECK_STARTUP_ACCESS_M
 
     // Flags
     Configs::dataStore->argv = QApplication::arguments();
