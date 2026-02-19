@@ -1,7 +1,7 @@
 
 #ifdef _WIN32
-#include <windows.h>
 #include <winsock2.h>
+#include <windows.h>
 #endif
 
 #include "nekobox/ui/mainwindow.h"

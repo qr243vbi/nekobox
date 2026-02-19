@@ -2,19 +2,22 @@
 
 #include <QMainWindow>
 #include <nekobox/global/HTTPRequestHelper.hpp>
+
 #ifndef Q_MOC_RUN
 #include "nekobox/api/RPC.h"
 #endif
+
 #include <QSettings>
 #include "nekobox/dataStore/Configs.hpp"
 #include "nekobox/stats/connections/connectionLister.hpp"
 #include "nekobox/stats/autotester/ProxyAutoTester.hpp"
 #include "3rdparty/qv2ray/v2/ui/widgets/speedchart/SpeedWidget.hpp"
+
 #ifdef Q_OS_UNIX
 #include <QtDBus>
-#include <nekobox/dataStore/Database.hpp>
-
 #endif
+
+#include <nekobox/dataStore/Database.hpp>
 
 
 #ifdef NKR_SOFTWARE_KEYS
