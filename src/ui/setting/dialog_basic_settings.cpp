@@ -177,7 +177,9 @@ DialogBasicSettings::DialogBasicSettings(MainWindow *parent)
     });
 
     // Subscription
-
+    connect(ui->sub_url_test, STATE_CHANGED, this, [=,this](const bool &c) {
+        ui->sub_rm_unavailable->setEnabled(c);
+    });
     D_LOAD_STRING(user_agent)
     ui->user_agent->setPlaceholderText(Configs::dataStore->GetUserAgent(true));
     D_LOAD_BOOL(net_use_proxy);
@@ -363,6 +365,7 @@ void DialogBasicSettings::accept() {
     D_SAVE_STRING(sub_custom_hwid_params)
     D_SAVE_BOOL(sub_rm_invalid)
     D_SAVE_BOOL(sub_url_test)
+
     D_SAVE_BOOL(sub_rm_duplicates)
     D_SAVE_BOOL(sub_rm_unavailable)
     D_SAVE_INT_ENABLE(sub_auto_update, sub_auto_update_enable)

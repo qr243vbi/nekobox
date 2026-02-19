@@ -108,8 +108,6 @@ int main(int argc, char** argv) {
     QApplication::setQuitOnLastWindowClosed(false);
     QApplication a(argc, argv);
 
-    CHECK_STARTUP_ACCESS_M
-
     // Flags
     Configs::dataStore->argv = QApplication::arguments();
     if (Configs::dataStore->argv.contains("-many")) Configs::dataStore->flag_many = true;
@@ -193,6 +191,8 @@ int main(int argc, char** argv) {
     if (!dir_success){
         goto loop_back_2;
     }
+
+    CHECK_STARTUP_ACCESS_M
     
     Configs::resourceManager->Load();
     bool supported = Configs::resourceManager->symlinks_supported = createSymlink(getApplicationPath(), "resources/qr243vbi.lnk.lnk");
@@ -203,9 +203,7 @@ int main(int argc, char** argv) {
     
 #ifdef Q_OS_UNIX
     QApplication::addLibraryPath(root_directory + "/usr/plugins");
-#endif
-
-    
+#endif    
     // dispatchers
     DS_cores = new QThread;
     DS_cores->start();

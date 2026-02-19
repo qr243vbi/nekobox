@@ -142,13 +142,19 @@ bool confirmLock(LockValue val, bool restart){
     ret = !(getLocked(val, username));
     if (ret){
       int seconds = confirm->ui->spinBox->text().toInt();
-      if (!restart) time_line = seconds;
+      if (!restart) {
+        local_keys->setValue("remember_time", seconds);
+        time_line = seconds;
+      }
       if (seconds <= 0) goto skip_timing; 
       int curind = confirm->ui->comboBox->currentIndex();
       for (int n = curind; n > 0; n --){
         seconds *= 60;
       }
-      if (!restart) time_type = curind; 
+      if (!restart) {
+        local_keys->setValue("remember_type", curind);
+        time_type = curind;
+      } 
       *ptr = QDateTime::currentSecsSinceEpoch() + seconds;
     }
     skip_timing:
@@ -221,14 +227,17 @@ public:
 
 void init_keys() {
   static bool initialized = false;
-  if (initialized)
+  if (initialized){
     return;
+  }
   initialized = true;
   local_keys = new QSettings(KEYS_INI_PATH, QSettings::IniFormat);
   default_password = hashPassword(NKR_DEFAULT_PASSWORD);
   if (local_keys->contains("userlist")) {
     userlist = local_keys->value("userlist", "").toStringList();
   }
+  time_line = local_keys->value("remember_time", 0).toInt();
+  time_type = local_keys->value("remember_type", 0).toInt();
 }
 
 static QString getLockPart(LockValue key) {
@@ -348,21 +357,25 @@ void modify_security_action(MainWindow *win, QAction *sec) {
 
 ConfirmForm::ConfirmForm(QWidget *parent) {
   ui = new Ui::ConfirmForm();
+  this->setWindowTitle(software_name);
   ui->setupUi(this);
 }
 
 PasswordForm::PasswordForm(QWidget *parent) {
   ui = new Ui::PasswordForm();
+  this->setWindowTitle(software_name);
   ui->setupUi(this);
 }
 
 UsersForm::UsersForm(QWidget *parent) {
   ui = new Ui::UsersForm();
+  this->setWindowTitle(software_name);
   ui->setupUi(this);
 }
 
 SecurityForm::SecurityForm(bool is_user_defined, QWidget *parent) {
   ui = new Ui::SecurityForm();
+  this->setWindowTitle(software_name);
   ui->setupUi(this);
 //  ui->auth_startup->hide();
 //  ui->lock_system_tray->hide();

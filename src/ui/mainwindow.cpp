@@ -434,7 +434,7 @@ MainWindow::MainWindow(QWidget *parent)
       software_build_date = NKR_TIMESTAMP;
     }
 #endif
-    software_name = globalSettings.value("program_name", "NekoBox").toString();
+    software_name = globalSettings.value("program_name", "Iblis").toString();
     software_core_name =
         globalSettings.value("program_core_name", "sing-box").toString();
   }
