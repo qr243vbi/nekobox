@@ -357,26 +357,26 @@ void modify_security_action(MainWindow *win, QAction *sec) {
 
 ConfirmForm::ConfirmForm(QWidget *parent) {
   ui = new Ui::ConfirmForm();
-  this->setWindowTitle(software_name);
   ui->setupUi(this);
+  this->setWindowTitle(software_name);
 }
 
 PasswordForm::PasswordForm(QWidget *parent) {
   ui = new Ui::PasswordForm();
-  this->setWindowTitle(software_name);
   ui->setupUi(this);
+  this->setWindowTitle(software_name);
 }
 
 UsersForm::UsersForm(QWidget *parent) {
   ui = new Ui::UsersForm();
-  this->setWindowTitle(software_name);
   ui->setupUi(this);
+  this->setWindowTitle(software_name);
 }
 
 SecurityForm::SecurityForm(bool is_user_defined, QWidget *parent) {
   ui = new Ui::SecurityForm();
-  this->setWindowTitle(software_name);
   ui->setupUi(this);
+  this->setWindowTitle(software_name);
 //  ui->auth_startup->hide();
 //  ui->lock_system_tray->hide();
 
