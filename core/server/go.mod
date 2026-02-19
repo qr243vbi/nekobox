@@ -11,7 +11,7 @@ require (
 	github.com/oschwald/maxminddb-golang v1.13.1
 	github.com/sagernet/quic-go v0.52.0-sing-box-mod.3
 	github.com/sagernet/sing v0.7.18
-	github.com/sagernet/sing-box v1.12.21
+	github.com/sagernet/sing-box v1.12.22
 	github.com/sagernet/sing-tun v0.7.11
 	github.com/spf13/cobra v1.10.2
 	golang.org/x/sys v0.41.0

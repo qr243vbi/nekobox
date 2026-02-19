@@ -1,7 +1,7 @@
 
 #ifdef _WIN32
-#include <winsock2.h>
 #include <windows.h>
+#include <winsock2.h>
 #endif
 
 #include "nekobox/ui/mainwindow.h"
@@ -228,7 +228,7 @@ void MainWindow::on_menu_add_from_file() {
   if (file.open(QIODevice::ReadOnly)) {
     auto contents = file.readAll();
     file.close();
-    Subscription::groupUpdater->AsyncUpdate(contents, &chooseUpdateGroup);
+    Subscription::groupUpdater->AsyncUpdate(this->post_update_job, contents, &chooseUpdateGroup);
   }
 }
 
@@ -318,7 +318,7 @@ void MainWindow::set_icons_from_flag(bool text_under_buttons) {
 
 bool MainWindow::isShowRuleSetData() { return showRuleSetData; }
 
-void MainWindow::set_misc_checkboxes(){
+void MainWindow::set_misc_checkboxes() {
   // Misc menu
   ui->actionRemember_last_proxy->setChecked(
       Configs::dataStore->remember_enable);
@@ -331,6 +331,85 @@ void UI_InitMainWindow() { mainwindow = new MainWindow; }
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent), ui(new Ui::MainWindow) {
+
+  post_update_job = [this](std::shared_ptr<Configs::Group> group) {
+    QList<std::shared_ptr<Configs::ProxyEntity>> out_all;
+    QString change_text;
+    if (Configs::dataStore->sub_rm_duplicates) {
+      out_all = group->GetProfileEnts();
+      QList<std::shared_ptr<Configs::ProxyEntity>> out;
+      QList<std::shared_ptr<Configs::ProxyEntity>> out_del;
+
+      Configs::ProfileFilter::Uniq(out_all, out, true, false);
+      Configs::ProfileFilter::OnlyInSrc_ByPointer(out_all, out, out_del);
+
+      change_text +=
+          QObject::tr("\nDeleted %1 Duplicates").arg(out_del.length());
+      if (!out_del.empty()) {
+        QList<int> del_ids;
+        for (const auto &ent : out_del) {
+          del_ids += ent->id;
+        }
+        Configs::profileManager->BatchDeleteProfiles(del_ids);
+      }
+    }
+    if (Configs::dataStore->sub_rm_invalid) {
+      out_all = group->GetProfileEnts();
+      QList<std::shared_ptr<Configs::ProxyEntity>> out_del;
+      QThreadPool *parallelCoreCallPool = new QThreadPool(this);
+
+      std::atomic counter(0);
+      QMutex mu;
+      QMutex access;
+      int profileSize = out_all.size();
+      mu.lock();
+      for (const auto &profile : out_all) {
+        parallelCoreCallPool->start(
+            [&out_del, profile, &counter, &mu, profileSize, &access] {
+              if (!Configs::IsValid(profile)) {
+                access.lock();
+                out_del += profile;
+                access.unlock();
+              }
+              if (++counter == profileSize)
+                mu.unlock();
+            });
+      }
+      mu.lock();
+      mu.unlock();
+
+      change_text += QObject::tr("\nDeleted %1 Invalid").arg(out_del.length());
+      if (!out_del.empty()) {
+        QList<int> del_ids;
+        for (const auto &ent : out_del) {
+          del_ids += ent->id;
+        }
+        Configs::profileManager->BatchDeleteProfiles(del_ids);
+      }
+    }
+    if (Configs::dataStore->sub_url_test) {
+      urltest_current_group(group->GetProfileEnts(), true, [group](
+          const QList<std::shared_ptr<Configs::ProxyEntity>>&){
+        if (Configs::dataStore->sub_rm_unavailable) {
+        QList<int> out_del;
+        int gid = group->id;
+        for (const auto &[_, profile] : Configs::profileManager->profiles) {
+          if (gid != profile->gid) {
+            continue;
+          }
+          if (profile->latencyInt < 0) {
+            out_del += profile->id;
+          }
+        }
+        QString text = QObject::tr("\nDeleted %1 Unavailable").arg(out_del.length());
+        Configs::profileManager->BatchDeleteProfiles(out_del);
+        MW_show_log(text);
+      }
+      });
+    }
+    MW_show_log(change_text);
+  };
+
   mainwindow = this;
   Configs::windowSettings->Load();
   // software_name
@@ -546,8 +625,8 @@ MainWindow::MainWindow(QWidget *parent)
     profile_start(-1, !Configs::windowSettings->test_after_start);
   });
   connect(ui->menu_stop, &QAction::triggered, this, [this]() {
-    CHECK_ACTION_ACCESS_W 
-    profile_stop(false, false, true); 
+    CHECK_ACTION_ACCESS_W
+    profile_stop(false, false, true);
   });
   connect(ui->tabWidget->tabBar(), &QTabBar::tabMoved, this,
           [this](int from, int to) {
@@ -589,9 +668,8 @@ MainWindow::MainWindow(QWidget *parent)
 
   set_icons_from_settings();
 
-  connect(ui->actionAdd_new_Group, &QAction::triggered, this, [this] { 
-    this->on_menu_add_new_group_triggered(); 
-  });
+  connect(ui->actionAdd_new_Group, &QAction::triggered, this,
+          [this] { this->on_menu_add_new_group_triggered(); });
   ui->toolButton_program->setMenu(ui->menu_program);
   ui->toolButton_preferences->setMenu(ui->menu_preferences);
   ui->toolButton_server->setMenu(ui->menu_profiles);
@@ -740,20 +818,18 @@ skip_updater_hide:
   setAppIcon(Icon::NONE, tray, this);
   auto *trayMenu = new QMenu();
 
-  
-  connect(trayMenu, &QMenu::aboutToShow, this,
-          [this, trayMenu]() { 
-            trayMenu->clear();
-            trayMenu->addAction(ui->actionToggle_window);
-            bool skip = true;
-            for (auto i : ui->menu_program->actions()){
-              if (skip){
-                skip = false;
-              } else {
-                trayMenu->addAction(i);
-              }
-            }
-          });
+  connect(trayMenu, &QMenu::aboutToShow, this, [this, trayMenu]() {
+    trayMenu->clear();
+    trayMenu->addAction(ui->actionToggle_window);
+    bool skip = true;
+    for (auto i : ui->menu_program->actions()) {
+      if (skip) {
+        skip = false;
+      } else {
+        trayMenu->addAction(i);
+      }
+    }
+  });
 
   tray->setVisible(!Configs::dataStore->disable_tray);
   tray->setContextMenu(trayMenu);
@@ -785,21 +861,19 @@ skip_updater_hide:
   //          ui->menu_add_from_clipboard, &QAction::trigger);
   connect(ui->actionRestart_Proxy, &QAction::triggered, this, [this] {
     if (Configs::dataStore->started_id >= 0) {
-        CHECK_ACTION_ACCESS_W
-        profile_start(Configs::dataStore->started_id,
+      CHECK_ACTION_ACCESS_W
+      profile_start(Configs::dataStore->started_id,
                     !Configs::windowSettings->test_after_start);
-      }
+    }
   });
-  connect(ui->actionRestart_Program, &QAction::triggered, this,
-          [=, this] { 
-            CHECK_ACTION_ACCESS_R
-            MW_dialog_message("", "RestartProgram");
-          });
-  connect(ui->actionToggle_window, &QAction::triggered, this,
-          [=, this] {
-            CHECK_SETTINGS_ACCESS_W 
-            ActivateWindow(this); 
-          });
+  connect(ui->actionRestart_Program, &QAction::triggered, this, [=, this] {
+    CHECK_ACTION_ACCESS_R
+    MW_dialog_message("", "RestartProgram");
+  });
+  connect(ui->actionToggle_window, &QAction::triggered, this, [=, this] {
+    CHECK_SETTINGS_ACCESS_W
+    ActivateWindow(this);
+  });
   connect(ui->actionRemember_last_proxy, &QAction::triggered, this,
           [=, this](bool checked) {
             ui->actionRemember_last_proxy->setChecked(!checked);
@@ -824,10 +898,13 @@ skip_updater_hide:
             MW_dialog_message("", "UpdateDataStore");
           });
   //
-  connect(ui->checkBox_VPN, &QCheckBox::clicked, this,
-          [=, this](bool checked) { CHECK_ACTION_ACCESS_W set_spmode_vpn(checked); });
+  connect(ui->checkBox_VPN, &QCheckBox::clicked, this, [=, this](bool checked) {
+    CHECK_ACTION_ACCESS_W set_spmode_vpn(checked);
+  });
   connect(ui->checkBox_SystemProxy, &QCheckBox::clicked, this,
-          [=, this](bool checked) { CHECK_ACTION_ACCESS_W set_spmode_system_proxy(checked); });
+          [=, this](bool checked) {
+            CHECK_ACTION_ACCESS_W set_spmode_system_proxy(checked);
+          });
   connect(ui->menu_spmode, &QMenu::aboutToShow, this, [=, this]() {
     ui->menu_spmode_disabled->setChecked(
         !(Configs::dataStore->spmode_system_proxy ||
@@ -837,9 +914,13 @@ skip_updater_hide:
     ui->menu_spmode_vpn->setChecked(Configs::dataStore->spmode_vpn);
   });
   connect(ui->menu_spmode_system_proxy, &QAction::triggered, this,
-          [=, this](bool checked) { CHECK_ACTION_ACCESS_W set_spmode_system_proxy(checked); });
+          [=, this](bool checked) {
+            CHECK_ACTION_ACCESS_W set_spmode_system_proxy(checked);
+          });
   connect(ui->menu_spmode_vpn, &QAction::triggered, this,
-          [=, this](bool checked) { CHECK_ACTION_ACCESS_W set_spmode_vpn(checked); });
+          [=, this](bool checked) {
+            CHECK_ACTION_ACCESS_W set_spmode_vpn(checked);
+          });
   connect(ui->menu_spmode_disabled, &QAction::triggered, this, [=, this]() {
     CHECK_ACTION_ACCESS_W
     set_spmode_system_proxy(false);
@@ -1190,9 +1271,8 @@ skip_updater_hide:
     CHECK_ACTION_ACCESS_W
     urltest_current_group(get_now_selected_list());
   });
-  connect(ui->actionUrl_Test_Clear, &QAction::triggered, this, [=, this]() { 
-    on_menu_clear_test_result_triggered(true); 
-  });
+  connect(ui->actionUrl_Test_Clear, &QAction::triggered, this,
+          [=, this]() { on_menu_clear_test_result_triggered(true); });
 
   auto url_test_group_action = [=, this]() {
     CHECK_ACTION_ACCESS_W
@@ -1249,11 +1329,10 @@ skip_updater_hide:
     speedtest_current_group(
         Configs::profileManager->CurrentGroup()->GetProfileEnts());
   });
-  connect(ui->menu_stop_testing, &QAction::triggered, this,
-          [=, this]() { 
-            CHECK_ACTION_ACCESS_W
-            stopTests(); 
-          });
+  connect(ui->menu_stop_testing, &QAction::triggered, this, [=, this]() {
+    CHECK_ACTION_ACCESS_W
+    stopTests();
+  });
   //
   auto set_selected_or_group = [=, this](int mode) {
     // 0=group 1=select 2=unknown(menu is hide)
@@ -1297,7 +1376,7 @@ skip_updater_hide:
       TM_auto_update_subsctiption->start(m * 60 * 1000);
   };
   connect(TM_auto_update_subsctiption, &QTimer::timeout, this,
-          [&] { UI_update_all_groups(true, &chooseUpdateGroup); });
+          [&] { UI_update_all_groups(this->post_update_job, true, &chooseUpdateGroup); });
   TM_auto_update_subsctiption_Reset_Minute(Configs::dataStore->sub_auto_update);
 
   if ((!Configs::dataStore->flag_tray) &&
@@ -1431,7 +1510,8 @@ void MainWindow::dropEvent(QDropEvent *event) {
           }
           auto contents = file.readAll();
           file.close();
-          Subscription::groupUpdater->AsyncUpdate(contents, &chooseUpdateGroup);
+          Subscription::groupUpdater->AsyncUpdate(this->post_update_job, 
+            contents, &chooseUpdateGroup);
         }
       }
     }
@@ -1440,7 +1520,7 @@ void MainWindow::dropEvent(QDropEvent *event) {
   }
 
   if (mimeData->hasText()) {
-    Subscription::groupUpdater->AsyncUpdate(mimeData->text(),
+    Subscription::groupUpdater->AsyncUpdate(this->post_update_job, mimeData->text(),
                                             &chooseUpdateGroup);
     event->acceptProposedAction();
     return;
@@ -2692,7 +2772,7 @@ void MainWindow::on_menu_add_from_input_triggered() {
 void MainWindow::on_menu_add_from_clipboard_triggered() {
   CHECK_SETTINGS_ACCESS_W
   auto clipboard = QApplication::clipboard()->text();
-  Subscription::groupUpdater->AsyncUpdate(clipboard, &chooseUpdateGroup);
+  Subscription::groupUpdater->AsyncUpdate(this->post_update_job, clipboard, &chooseUpdateGroup);
 }
 
 void MainWindow::on_menu_clone_triggered() {
@@ -2711,7 +2791,7 @@ void MainWindow::on_menu_clone_triggered() {
     sls << ent->bean->ToNekorayShareLink(ent->type);
   }
 
-  Subscription::groupUpdater->AsyncUpdate(sls.join("\n"), &chooseUpdateGroup);
+  Subscription::groupUpdater->AsyncUpdate(this->post_update_job, sls.join("\n"), &chooseUpdateGroup);
 }
 
 void MainWindow::on_menu_delete_repeat_triggered() {
@@ -3013,7 +3093,7 @@ void MainWindow::parseQrImage(const QPixmap *image) {
   } else {
     for (const QString &text : texts) {
       show_log_impl("QR Code Result:\n" + text);
-      Subscription::groupUpdater->AsyncUpdate(text, &chooseUpdateGroup);
+      Subscription::groupUpdater->AsyncUpdate(this->post_update_job, text, &chooseUpdateGroup);
     }
   }
 }
@@ -3065,14 +3145,13 @@ bool mw_sub_updating = false;
 void MainWindow::on_menu_update_subscription_triggered() {
   CHECK_SETTINGS_ACCESS_W
   auto group = Configs::profileManager->CurrentGroup();
-  if (group->url.isEmpty())
+  if (group->url.isEmpty() || mw_sub_updating) {
     return;
-  if (mw_sub_updating)
-    return;
+  }
   mw_sub_updating = true;
-  Subscription::groupUpdater->AsyncUpdate(group->url, &chooseUpdateGroup,
-                                          group->id,
-                                          [&] { mw_sub_updating = false; });
+  Subscription::groupUpdater->AsyncUpdate(this->post_update_job, 
+      group->url, &chooseUpdateGroup, group->id,
+      [&, group, this] { mw_sub_updating = false; });
 }
 
 void MainWindow::on_menu_remove_unavailable_triggered() {
@@ -3831,14 +3910,14 @@ bool isNewer(QString assetName) {
 #include <nekobox/js/js_updater.h>
 #endif
 void MainWindow::CheckUpdate(bool button_clicked) {
-  #ifdef NKR_SOFTWARE_KEYS
+#ifdef NKR_SOFTWARE_KEYS
   QMutex mut;
   mut.lock();
   auto b = new bool[1];
   *b = false;
-  runOnUiThread([b, &mut](){
+  runOnUiThread([b, &mut]() {
     if (!confirmLock(LockValue::LockSettings)) {
-      QWidget * wd = new QDialog();
+      QWidget *wd = new QDialog();
       set_access_denied(wd);
       *b = true;
       wd->show();
@@ -3847,10 +3926,10 @@ void MainWindow::CheckUpdate(bool button_clicked) {
   });
   mut.lock();
   mut.unlock();
-  if (*b){
+  if (*b) {
     return;
   }
-  #endif
+#endif
 
   bool is_newer = false;
 

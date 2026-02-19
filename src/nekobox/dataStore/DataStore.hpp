@@ -138,6 +138,10 @@ namespace Configs {
         int sub_auto_update = -30;
         bool sub_clear = false;
         bool sub_send_hwid = false;
+        bool sub_rm_unavailable = false;
+        bool sub_rm_duplicates = false;
+        bool sub_url_test = false;
+        bool sub_rm_invalid = false;
 
         // Security
         bool skip_cert = false;

@@ -12,6 +12,8 @@
 #include "3rdparty/qv2ray/v2/ui/widgets/speedchart/SpeedWidget.hpp"
 #ifdef Q_OS_UNIX
 #include <QtDBus>
+#include <nekobox/dataStore/Database.hpp>
+
 #endif
 
 
@@ -106,7 +108,8 @@ QT_END_NAMESPACE
 class MainWindow : public QMainWindow {
     Q_OBJECT
 
-public:
+public: 
+    std::function<void(std::shared_ptr<Configs::Group>)> post_update_job;
     friend class SpinnerDialog;
     std::unique_ptr<Stats::ProxyAutoTester> proxyAutoTester;
 
@@ -243,7 +246,6 @@ private slots:
     void on_tabWidget_currentChanged(int index);
 
     void on_tabWidget_customContextMenuRequested(const QPoint& p);
-
 private:
     bool dialog_is_using = false;
 
@@ -251,6 +253,7 @@ private:
     QSystemTrayIcon *tray;
     QShortcut *shortcut_ctrl_f = new QShortcut(QKeySequence("Ctrl+F"), this);
     QShortcut *shortcut_esc = new QShortcut(QKeySequence("Esc"), this);
+
     //
     QThreadPool *parallelCoreCallPool = new QThreadPool(this);
     std::atomic<bool> stopSpeedtest = false;
@@ -357,9 +360,11 @@ private:
 
     static void setup_rpc();
 
-    void urltest_profile(std::shared_ptr<Configs::ProxyEntity> entity, bool skip_last_url_test_warning = false);
+    void urltest_profile(std::shared_ptr<Configs::ProxyEntity> entity, 
+        bool skip_last_url_test_warning = false, const std::function<void(const QList<std::shared_ptr<Configs::ProxyEntity>>&)> &finish = nullptr);
 
-    void urltest_current_group(const QList<std::shared_ptr<Configs::ProxyEntity>>& profiles,  bool skip_last_url_test_warning = false);
+    void urltest_current_group(const QList<std::shared_ptr<Configs::ProxyEntity>>& profiles, 
+        bool skip_last_url_test_warning = false, const std::function<void(const QList<std::shared_ptr<Configs::ProxyEntity>>&)> &finish = nullptr);
 
     void stopTests();
 

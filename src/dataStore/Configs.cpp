@@ -250,6 +250,12 @@ QByteArray hash = QCryptographicHash::hash(
         ADD_MAP("vpn_ipv6", vpn_ipv6, boolean);
         ADD_MAP("vpn_strict_route", vpn_strict_route, boolean);
         ADD_MAP("sub_clear", sub_clear, boolean);
+        
+        ADD_MAP("sub_rm_invalid", sub_rm_invalid, boolean);
+        ADD_MAP("sub_url_test", sub_url_test, boolean);
+        ADD_MAP("sub_rm_duplicates", sub_rm_duplicates, boolean);
+        ADD_MAP("sub_rm_unavailable", sub_rm_unavailable, boolean);
+
         ADD_MAP("net_insecure", net_insecure, boolean);
         ADD_MAP("sub_auto_update", sub_auto_update, integer);
         ADD_MAP("sub_send_hwid", sub_send_hwid, boolean);

@@ -11,6 +11,8 @@
 #include <QComboBox>
 #include <QVBoxLayout>
 #include <QLabel>
+#include "nekobox/ui/mainwindow_interface.h"
+
 #include <QDialogButtonBox>
 
 #define getGroupName chooseUpdateGroup
@@ -162,7 +164,8 @@ void GroupItem::refresh_data() {
 void GroupItem::on_update_sub_clicked() {
     QString url = ent->url;
 
-    Subscription::groupUpdater->AsyncUpdate(url, &chooseUpdateGroup, ent->id);
+    Subscription::groupUpdater->AsyncUpdate(GetMainWindow()->post_update_job,
+    url, &chooseUpdateGroup, ent->id);
 }
 
 void GroupItem::on_edit_clicked() {

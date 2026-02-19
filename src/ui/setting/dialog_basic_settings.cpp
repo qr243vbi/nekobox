@@ -185,6 +185,10 @@ DialogBasicSettings::DialogBasicSettings(MainWindow *parent)
     D_LOAD_BOOL(net_insecure)
     D_LOAD_BOOL(sub_send_hwid)
     D_LOAD_STRING(sub_custom_hwid_params)
+    D_LOAD_BOOL(sub_rm_invalid)
+    D_LOAD_BOOL(sub_url_test)
+    D_LOAD_BOOL(sub_rm_duplicates)
+    D_LOAD_BOOL(sub_rm_unavailable)
     D_LOAD_INT_ENABLE(sub_auto_update, sub_auto_update_enable)
     auto details = GetDeviceDetails();
 	ui->sub_send_hwid->setToolTip(
@@ -357,6 +361,10 @@ void DialogBasicSettings::accept() {
     S_SAVE_BOOL(auto_hide)
     D_SAVE_BOOL(sub_send_hwid)
     D_SAVE_STRING(sub_custom_hwid_params)
+    D_SAVE_BOOL(sub_rm_invalid)
+    D_SAVE_BOOL(sub_url_test)
+    D_SAVE_BOOL(sub_rm_duplicates)
+    D_SAVE_BOOL(sub_rm_unavailable)
     D_SAVE_INT_ENABLE(sub_auto_update, sub_auto_update_enable)
 
     // Core
