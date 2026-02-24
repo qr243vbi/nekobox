@@ -95,7 +95,8 @@ inline QDataStream &operator>>(QDataStream &in, Bin &p) {
         type_jsonStoreList = 7, 
         type_strMap = 8,
         type_boolPtr = 9,
-        type_jsonShared = 10
+        type_jsonShared = 10,
+        type_double = 11
     };
 
     PTR_ITEM(int)
@@ -109,6 +110,7 @@ inline QDataStream &operator>>(QDataStream &in, Bin &p) {
     PTR_ITEM(strMap)
     PTR_ITEM(boolPtr)
     PTR_ITEM(jsonShared)
+    PTR_ITEM(double)
 
     class JsonStore {
     public:
@@ -129,6 +131,7 @@ inline QDataStream &operator>>(QDataStream &in, Bin &p) {
         void _put(ConfJsMap _map, const QString& str, QVariantMap *);
         void _put(ConfJsMap _map, const QString& str, QJsonStoreListBase *);
         void _put(ConfJsMap _map, const QString& str, bool **);
+        void _put(ConfJsMap _map, const QString& str, double *);
         template<typename T, typename = typename std::enable_if<std::is_base_of<JsonStore, T>::value>::type>
         void _put(ConfJsMap _map, const QString& str, T ** type){
             _put(_map, str, (JsonStore **) type);

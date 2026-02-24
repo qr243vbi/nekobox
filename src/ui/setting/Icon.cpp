@@ -31,7 +31,7 @@ QPixmap Icon::GetTrayIcon(TrayIconStatus status) {
     auto d = side * rule.diameter;
     auto margin = side * rule.margin;
 
-    p.setBrush(QBrush(rule.color));
+    p.setBrush(QBrush(QListInt2Color(rule.color)));
     p.drawRoundedRect(QRect(side - d - margin, 
         side - d - margin, d, d), radius,
                       radius);
