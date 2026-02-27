@@ -10,23 +10,21 @@
 #include <qcontainerfwd.h>
 #include <qsettings.h>
 
-
 QSettings Configs::WindowSettings::settings() {
   return QSettings(CONFIG_INI_PATH, QSettings::IniFormat);
 }
 
-
-void Configs::SettingsStore::Save(){
+void Configs::SettingsStore::Save() {
   QSettings store = settings();
-  for (auto val : _map()){
+  for (auto val : _map()) {
     val->Save(store, this);
   }
   store.sync();
 }
 
-void Configs::SettingsStore::Load(){
+void Configs::SettingsStore::Load() {
   QSettings store = settings();
-  for (auto val : _map()){
+  for (auto val : _map()) {
     val->Load(store, this);
   }
 }
@@ -38,69 +36,71 @@ SETTINGS_PUT(char, Chr)
 SETTINGS_PUT(QStringList, StrList)
 
 INIT_LIST(WindowSettings)
-  ADD_LIST(theme)
-  ADD_LIST(font_family)
-  ADD_LIST(font_size)
-  ADD_LIST(logs_enabled)
-  ADD_LIST(test_after_start)
-  ADD_LIST(startup_update)
-  ADD_LIST(max_log_line)
-  ADD_LIST(width)
-  ADD_LIST(height)
-  ADD_LIST(X)
-  ADD_LIST(Y)
-  ADD_LIST(maximized)
-  ADD_LIST(splitter_state)
-  ADD_LIST(auto_hide)
-  ADD_LIST(save_position)
-  ADD_LIST(save_geometry)
-  ADD_LIST(text_under_buttons)
-  ADD_LIST(language)
-  ADD_LIST(manually_column_width)
-  ADD_LIST(column_width)
+ADD_LIST(theme)
+ADD_LIST(font_family)
+ADD_LIST(font_size)
+ADD_LIST(logs_enabled)
+ADD_LIST(test_after_start)
+ADD_LIST(startup_update)
+ADD_LIST(max_log_line)
+ADD_LIST(width)
+ADD_LIST(height)
+ADD_LIST(X)
+ADD_LIST(Y)
+ADD_LIST(maximized)
+ADD_LIST(splitter_state)
+ADD_LIST(auto_hide)
+ADD_LIST(save_position)
+ADD_LIST(save_geometry)
+ADD_LIST(text_under_buttons)
+ADD_LIST(language)
+ADD_LIST(manually_column_width)
+ADD_LIST(column_width)
 END_LIST
 
-SETTINGS_VALUE_LOAD(Bool){
-  *(bool*) (void*) (ptr + (size_t)(void*)store) = settings.value(
-    name, *(bool*) (void*) (ptr + (size_t)(void*)store)
-  ).toBool();
+SETTINGS_VALUE_LOAD(Bool) {
+  *(bool *)(void *)(ptr + (size_t)(void *)store) =
+      settings.value(name, *(bool *)(void *)(ptr + (size_t)(void *)store))
+          .toBool();
 }
-SETTINGS_VALUE_LOAD(Str){
-  *(QString*) (void*) (ptr + (size_t)(void*)store) = settings.value(
-    name, *(QString*) (void*) (ptr + (size_t)(void*)store)
-  ).toString();
+SETTINGS_VALUE_LOAD(Str) {
+  *(QString *)(void *)(ptr + (size_t)(void *)store) =
+      settings.value(name, *(QString *)(void *)(ptr + (size_t)(void *)store))
+          .toString();
 }
-SETTINGS_VALUE_LOAD(StrList){
-  *(QStringList*) (void*) (ptr + (size_t)(void*)store) = settings.value(
-    name, *(QStringList*) (void*) (ptr + (size_t)(void*)store)
-  ).toStringList();
+SETTINGS_VALUE_LOAD(StrList) {
+  *(QStringList *)(void *)(ptr + (size_t)(void *)store) =
+      settings
+          .value(name, *(QStringList *)(void *)(ptr + (size_t)(void *)store))
+          .toStringList();
 }
-SETTINGS_VALUE_LOAD(Int){
-  *(int*) (void*) (ptr + (size_t)(void*)store) = settings.value(
-    name, *(int*) (void*) (ptr + (size_t)(void*)store)
-  ).toInt();
+SETTINGS_VALUE_LOAD(Int) {
+  *(int *)(void *)(ptr + (size_t)(void *)store) =
+      settings.value(name, *(int *)(void *)(ptr + (size_t)(void *)store))
+          .toInt();
 }
-SETTINGS_VALUE_LOAD(Chr){
-  *(char*) (void*) (ptr + (size_t)(void*)store) = settings.value(
-    name, (bool) *(char*) (void*) (ptr + (size_t)(void*)store)
-  ).toBool();
+SETTINGS_VALUE_LOAD(Chr) {
+  *(char *)(void *)(ptr + (size_t)(void *)store) =
+      settings.value(name, (bool)*(char *)(void *)(ptr + (size_t)(void *)store))
+          .toBool();
 }
 
-SETTINGS_VALUE_SAVE(Bool){
-  settings.setValue(name, *(bool*) (void*) (ptr + (size_t)(void*)store));
+SETTINGS_VALUE_SAVE(Bool) {
+  settings.setValue(name, *(bool *)(void *)(ptr + (size_t)(void *)store));
 }
-SETTINGS_VALUE_SAVE(Str){
-  settings.setValue(name, *(QString*) (void*) (ptr + (size_t)(void*)store));
+SETTINGS_VALUE_SAVE(Str) {
+  settings.setValue(name, *(QString *)(void *)(ptr + (size_t)(void *)store));
 }
-SETTINGS_VALUE_SAVE(StrList){
-  settings.setValue(name, *(QStringList*) (void*) (ptr + (size_t)(void*)store));
+SETTINGS_VALUE_SAVE(StrList) {
+  settings.setValue(name,
+                    *(QStringList *)(void *)(ptr + (size_t)(void *)store));
 }
-SETTINGS_VALUE_SAVE(Int){
-  settings.setValue(name, *(int*) (void*) (ptr + (size_t)(void*)store));
+SETTINGS_VALUE_SAVE(Int) {
+  settings.setValue(name, *(int *)(void *)(ptr + (size_t)(void *)store));
 }
-SETTINGS_VALUE_SAVE(Chr){
-  char ch = *(char*) (void*) (ptr + (size_t)(void*)store);
-  if (ch == true || ch == false){
+SETTINGS_VALUE_SAVE(Chr) {
+  char ch = *(char *)(void *)(ptr + (size_t)(void *)store);
+  if (ch == true || ch == false) {
     settings.setValue(name, (bool)ch);
   }
 }
@@ -296,9 +296,10 @@ bool isDirectoryWritable(QString dirPath) {
   }
 }
 
-void Configs::MainWindowTableSettings::Save(std::shared_ptr<WindowSettings>settings) {
+void Configs::MainWindowTableSettings::Save(
+    std::shared_ptr<WindowSettings> settings) {
   settings->manually_column_width = this->manually_column_width;
-  QStringList & list = settings->column_width;
+  QStringList &list = settings->column_width;
   list.clear();
   list << QString::number(this->column_width[0]);
   list << QString::number(this->column_width[1]);
@@ -306,9 +307,10 @@ void Configs::MainWindowTableSettings::Save(std::shared_ptr<WindowSettings>setti
   list << QString::number(this->column_width[3]);
   list << QString::number(this->column_width[4]);
 };
-void Configs::MainWindowTableSettings::Load(std::shared_ptr<WindowSettings>settings) {
+void Configs::MainWindowTableSettings::Load(
+    std::shared_ptr<WindowSettings> settings) {
   this->manually_column_width = settings->manually_column_width;
-  QStringList & list = settings->column_width;
+  QStringList &list = settings->column_width;
   for (int i = list.size(); i < 5; i++) {
     list << "-1";
   }
@@ -319,9 +321,59 @@ void Configs::MainWindowTableSettings::Load(std::shared_ptr<WindowSettings>setti
   this->column_width[4] = list[4].toInt();
 };
 
+/*
+    "",
+    "C",
+    "he_IL",
+    "zh_CN",
+    "fa_IR",
+    "ru_RU"
+*/
+
+#define ADD(X, Y) { \
+  std::shared_ptr<LanguageValue> val = std::make_shared<LanguageValue>();  \
+  val->code = X;      \
+  val->name = Y;      \
+  val->index = index; \
+  index++;            \
+  langs.append(val);  \
+}
+
+QList<std::shared_ptr<LanguageValue>> &languageCodes() {
+  static QList<std::shared_ptr<LanguageValue>> langs;
+  static bool readed = false;
+  if (!readed) {
+    readed = true;
+    int index = 0;
+    ADD("", QObject::tr("System"))
+    QString path = getResource("languages.txt");
+    if (path == "") {
+      ADD("C", "English")
+      ADD("zh_CN", "简体中文")
+      ADD("he_IL", "עברית")
+      ADD("fa_IR", "فارسی")
+      ADD("ru_RU", "Русский")
+    } else {
+      QString text = ReadFileText(path);
+      QStringList list = text.split("\n");
+      for (QString str : list) {
+        int ind = str.indexOf(':');
+        if (ind > 0) {
+          QString key = str.slice(0, ind);
+          QString value = str.slice(ind + 1);
+          if (!(key.isEmpty() || value.isEmpty())){
+            ADD(key, value)
+          }
+        }
+      }
+    }
+  }
+  return langs;
+}
 
 namespace Configs {
 
-std::shared_ptr<WindowSettings> windowSettings = std::make_shared<WindowSettings>();
+std::shared_ptr<WindowSettings> windowSettings =
+    std::make_shared<WindowSettings>();
 MainWindowTableSettings tableSettings;
-}
+} // namespace Configs

@@ -1,41 +1,45 @@
 #ifndef NEKOBOX_SETTINGS
 #define NEKOBOX_SETTINGS
 #include <QList>
+#include <QMap>
 #include <QSettings>
+#include <nekobox/dataStore/Utils.hpp>
 
 #define CONFIG_INI_PATH QDir::current().absolutePath() + "/window.ini"
 
 #define GLOBAL_INI_PATH getResource("global.ini")
 
+#define SETTINGS_VALUE_LOAD(Bin)                                               \
+  void Configs::Settings##Bin##Value::Load(QSettings &settings,                \
+                                           SettingsStore *store)
 
+#define SETTINGS_VALUE_SAVE(Bin)                                               \
+  void Configs::Settings##Bin##Value::Save(QSettings &settings,                \
+                                           SettingsStore *store)
 
-#define SETTINGS_VALUE_LOAD(Bin)            \
-void Configs::Settings##Bin##Value::Load(QSettings &settings, SettingsStore *store)
-
-#define SETTINGS_VALUE_SAVE(Bin)            \
-void Configs::Settings##Bin##Value::Save(QSettings &settings, SettingsStore *store)
-
-
-#define SETTINGS_PUT(X, T)         \
-void Configs::SettingsStore::_put(QList<std::shared_ptr<Configs::SettingsValue>> & list, const QString & str, X * value) {  \
-    std::shared_ptr<Configs::SettingsValue> val = std::make_shared<Configs::Settings##T##Value>();       \
-    size_t ptr = (size_t)(void*)(value) - (size_t)(void*)(this);                                         \
-    val->ptr = ptr; val->name = str;                                                                     \
-    list << val;                                                                                         \
-}
+#define SETTINGS_PUT(X, T)                                                     \
+  void Configs::SettingsStore::_put(                                           \
+      QList<std::shared_ptr<Configs::SettingsValue>> &list,                    \
+      const QString &str, X *value) {                                          \
+    std::shared_ptr<Configs::SettingsValue> val =                              \
+        std::make_shared<Configs::Settings##T##Value>();                       \
+    size_t ptr = (size_t)(void *)(value) - (size_t)(void *)(this);             \
+    val->ptr = ptr;                                                            \
+    val->name = str;                                                           \
+    list << val;                                                               \
+  }
 
 #define ADD_LIST(X) _put(list, #X, &X);
 
-#define INIT_LIST(X)                                                        \
-QList<std::shared_ptr<Configs::SettingsValue>> & Configs::X::_map() {       \
-    static QList<std::shared_ptr<Configs::SettingsValue>> list;             \
-    if (list.isEmpty()){
+#define INIT_LIST(X)                                                           \
+  QList<std::shared_ptr<Configs::SettingsValue>> &Configs::X::_map() {         \
+    static QList<std::shared_ptr<Configs::SettingsValue>> list;                \
+    if (list.isEmpty()) {
 
-#define END_LIST                                                            \
-    }                                                                       \
-    return list;                                                            \
-}
-
+#define END_LIST                                                               \
+  }                                                                            \
+  return list;                                                                 \
+  }
 
 #define SETTINGS_VALUE(Bin)                                                    \
   class Settings##Bin##Value : public SettingsValue {                          \
@@ -52,11 +56,16 @@ public:
   virtual QSettings settings() = 0;
   virtual void Load();
   virtual void Save();
-  void _put(QList<std::shared_ptr<SettingsValue>> & list, const QString & str, int * ptr);
-  void _put(QList<std::shared_ptr<SettingsValue>> & list, const QString & str, char * ptr);
-  void _put(QList<std::shared_ptr<SettingsValue>> & list, const QString & str, bool * ptr);
-  void _put(QList<std::shared_ptr<SettingsValue>> & list, const QString & str, QString * ptr);
-  void _put(QList<std::shared_ptr<SettingsValue>> & list, const QString & str, QStringList * ptr);
+  void _put(QList<std::shared_ptr<SettingsValue>> &list, const QString &str,
+            int *ptr);
+  void _put(QList<std::shared_ptr<SettingsValue>> &list, const QString &str,
+            char *ptr);
+  void _put(QList<std::shared_ptr<SettingsValue>> &list, const QString &str,
+            bool *ptr);
+  void _put(QList<std::shared_ptr<SettingsValue>> &list, const QString &str,
+            QString *ptr);
+  void _put(QList<std::shared_ptr<SettingsValue>> &list, const QString &str,
+            QStringList *ptr);
 };
 
 class SettingsValue {
@@ -142,15 +151,23 @@ bool isFileAppendable(QString filePath);
 bool isDirectoryWritable(QString filePath);
 
 namespace Configs {
-    struct MainWindowTableSettings {
-        bool manually_column_width = false;
-        int column_width[5];
-        void Save(std::shared_ptr<WindowSettings> settings);
-        void Load(std::shared_ptr<WindowSettings> settings);
-    };
+struct MainWindowTableSettings {
+  bool manually_column_width = false;
+  int column_width[5];
+  void Save(std::shared_ptr<WindowSettings> settings);
+  void Load(std::shared_ptr<WindowSettings> settings);
+};
 
 extern std::shared_ptr<WindowSettings> windowSettings;
 extern MainWindowTableSettings tableSettings;
-}
+} // namespace Configs
+
+struct LanguageValue{
+      QString code;
+      QString name;
+      int index;
+};
+
+QList<std::shared_ptr<LanguageValue>> &languageCodes();
 
 #endif

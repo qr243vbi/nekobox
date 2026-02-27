@@ -7,8 +7,6 @@
 #include "nekobox/ui/mainwindow.h"
 
 
-extern QList<QString> locales;
-
 namespace Ui {
     class DialogBasicSettings;
 }

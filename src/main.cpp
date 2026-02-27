@@ -193,7 +193,8 @@ int main(int argc, char** argv) {
     }
 
     CHECK_STARTUP_ACCESS_M
-    
+
+    Configs::windowSettings->Load();
     Configs::resourceManager->Load();
     bool supported = Configs::resourceManager->symlinks_supported = createSymlink(getApplicationPath(), "resources/qr243vbi.lnk.lnk");
     if (supported){
@@ -257,6 +258,7 @@ int main(int argc, char** argv) {
 
     // Translate
     QString locale = getLocale();
+    qDebug() << "Language is: " << locale;
     QGuiApplication::tr("QT_LAYOUT_DIRECTION");
     if (locale == "") locale = QLocale().name();
     loadTranslate(locale);

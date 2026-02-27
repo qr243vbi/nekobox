@@ -23,16 +23,6 @@
 #include "nekobox/ui/mainwindow_interface.h"
 
 
-
-QList<QString> locales = {
-    "",
-    "C",
-    "he_IL",
-    "zh_CN",
-    "fa_IR",
-    "ru_RU"
-};
-
 #if QT_VERSION >= QT_VERSION_CHECK(6, 6, 0)
 #define STATE_CHANGED &QCheckBox::checkStateChanged
 #else
@@ -137,7 +127,17 @@ DialogBasicSettings::DialogBasicSettings(MainWindow *parent)
     S_LOAD_INT(max_log_line)
     //
     auto language = ui->language;
-    language->setCurrentIndex(locales.indexOf(getLocale()));
+    language->clear();
+    auto locale = getLocale();
+    auto & codes = languageCodes();
+    int index = 0;
+    for (auto u : codes){
+        language->addItem(u->name);
+        if (u->code == locale){
+            index = language->count() - 1;
+        }
+    } 
+    //    language->setCurrentIndex(locales.indexOf(getLocale()));
     connect(language, &QComboBox::currentIndexChanged, this, [=,this](int index) {
         CACHE.needRestart = true;
     });
@@ -331,7 +331,7 @@ void DialogBasicSettings::accept() {
     QString locale = "";
     int locale_index = ui->language->currentIndex();
     if (locale_index >= 0){
-        locale = (locales[locale_index]);
+        locale = languageCodes()[locale_index]->code;
     }
     D_SAVE_BOOL(start_minimal)
     S_SAVE_INT(max_log_line)
@@ -388,6 +388,7 @@ void DialogBasicSettings::accept() {
  //   int width, height, X, Y;
     // Startup
     settings->language = locale;
+    qDebug() << "Save language as: " << locale;
     S_SAVE_BOOL(save_geometry);
     S_SAVE_BOOL(save_position);
     S_SAVE_INT(width)

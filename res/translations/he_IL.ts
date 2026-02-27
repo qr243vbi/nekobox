@@ -24,17 +24,17 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="102"/>
+        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="105"/>
         <source>seconds</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="107"/>
+        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="110"/>
         <source>minutes</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="112"/>
+        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="115"/>
         <source>hours</source>
         <translation type="unfinished"></translation>
     </message>
@@ -277,63 +277,91 @@
         <translation>Subscription</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="597"/>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="803"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="611"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="831"/>
         <source>Enable</source>
         <translation>Enable</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="604"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="618"/>
         <source>Interval (minute, invalid if less than 30)</source>
         <translation>Interval (minute, invalid if less than 30)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="626"/>
         <source>Clear servers before updating subscription</source>
-        <translation>Clear servers before updating subscription</translation>
+        <translation type="vanished">Clear servers before updating subscription</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="633"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="661"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;HWID=%1&lt;/p&gt;&lt;p&gt;OS=%2&lt;/p&gt;&lt;p&gt;OS Version=%3&lt;/p&gt;&lt;p&gt;Model=%4&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;HWID=%1&lt;/p&gt;&lt;p&gt;OS=%2&lt;/p&gt;&lt;p&gt;OS Version=%3&lt;/p&gt;&lt;p&gt;Model=%4&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="636"/>
         <source>Enable sending HWID, device model, and OS version when updating subscription</source>
-        <translation>Enable sending HWID, device model, and OS version when updating subscription</translation>
+        <translation type="vanished">Enable sending HWID, device model, and OS version when updating subscription</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="643"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="684"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Format: hwid=value,os=value,osVersion=value,model=value&lt;/p&gt;&lt;p&gt;Leave empty to use default values. Only specify the parameters you want to override.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Format: hwid=value,os=value,osVersion=value,model=value&lt;/p&gt;&lt;p&gt;Leave empty to use default values. Only specify the parameters you want to override.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="646"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="687"/>
         <source>Custom System Parameters (optional)</source>
         <translation>Custom System Parameters (optional)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="653"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="644"/>
         <source>hwid=custom_value,os=custom_os,osVersion=custom_version,model=custom_model</source>
         <translation>hwid=custom_value,os=custom_os,osVersion=custom_version,model=custom_model</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="666"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="677"/>
         <source>Automatic update</source>
         <translation>Automatic update</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="673"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="651"/>
         <source>User Agent</source>
         <translation>User Agent</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="681"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="589"/>
+        <source>Clear servers before update</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="596"/>
+        <source>URL Test after update</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="637"/>
+        <source>Remove Duplicates</source>
+        <translation type="unfinished">Remove Duplicates</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="664"/>
+        <source>Send System Parameters</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="694"/>
+        <source>Remove Invalid</source>
+        <translation type="unfinished">Remove Invalid</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="701"/>
+        <source>Remove Unavailable</source>
+        <translation type="unfinished">Remove Unavailable</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="709"/>
         <source>Core</source>
         <translation>Core</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="720"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="748"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Might
                                                                             Improve Ping and Performance&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                                                                         </source>
@@ -342,42 +370,42 @@
                                                                         </translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="725"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="753"/>
         <source>Disable Traffic Stats</source>
         <translation>Disable Traffic Stats</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="734"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="762"/>
         <source>Multiplex (mux)</source>
         <translation>Multiplex (mux)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="741"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="769"/>
         <source>Loglevel</source>
         <translation>Loglevel</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="753"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="781"/>
         <source>concurrency</source>
         <translation>concurrency</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="763"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="791"/>
         <source>Padding</source>
         <translation>Padding</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="770"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="798"/>
         <source>Default On</source>
         <translation>Default On</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="782"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="810"/>
         <source>Core Options</source>
         <translation>Core Options</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="792"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="820"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Settings for the
                                             sing-box&apos;s built-in NTP client&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                                         </source>
@@ -386,27 +414,27 @@
                                         </translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="797"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="825"/>
         <source>NTP Settings</source>
         <translation>NTP Settings</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="812"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="840"/>
         <source>server</source>
         <translation>server</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="822"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="850"/>
         <source>Port</source>
         <translation>Port</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="839"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="867"/>
         <source>sync interval</source>
         <translation>sync interval</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="846"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="874"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;In
                                                                 minutes&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                                                             </source>
@@ -415,224 +443,224 @@
                                                             </translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="852"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="880"/>
         <source>5m</source>
         <translation>5m</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="857"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="885"/>
         <source>10m</source>
         <translation>10m</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="862"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="890"/>
         <source>30m</source>
         <translation>30m</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="876"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="904"/>
         <source>Security</source>
         <translation>Security</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="882"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="910"/>
         <source>Disable Privilege request</source>
         <translation>Disable Privilege request</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="889"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="917"/>
         <source>Use Mozilla Certificate Store</source>
         <translation>Use Mozilla Certificate Store</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="896"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="924"/>
         <source>Skip TLS certificate authentication by default (allowInsecure)</source>
         <translation>Skip TLS certificate authentication by default (allowInsecure)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="924"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="952"/>
         <source>Default uTLS Fingerprint</source>
         <translation>Default uTLS Fingerprint</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="947"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="975"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Do not attempt to start as Admin unless explicitly requested&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Do not attempt to start as Admin unless explicitly requested&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="950"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="978"/>
         <source>Always Start as Standard User</source>
         <translation>Always Start as Standard User</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="957"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="985"/>
         <source>Use Json instead binary for configs</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="971"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="999"/>
         <source>Auto-Testing</source>
         <translation>Auto-Testing</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="977"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1005"/>
         <source>Automatically test proxies in the background and maintain a pool of working proxies</source>
         <translation>Automatically test proxies in the background and maintain a pool of working proxies</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="980"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1008"/>
         <source>Enable Auto-Testing</source>
         <translation>Enable Auto-Testing</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="987"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1015"/>
         <source>Test Interval (seconds)</source>
         <translation>Test Interval (seconds)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="994"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1022"/>
         <source>How often to run the test cycle</source>
         <translation>How often to run the test cycle</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1010"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1038"/>
         <source>Proxies Per Cycle</source>
         <translation>Proxies Per Cycle</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1017"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1045"/>
         <source>Number of proxies to test in each cycle</source>
         <translation>Number of proxies to test in each cycle</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1033"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1061"/>
         <source>Working Pool Size</source>
         <translation>Working Pool Size</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1040"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1068"/>
         <source>Maximum number of verified working proxies to maintain</source>
         <translation>Maximum number of verified working proxies to maintain</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1056"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1084"/>
         <source>Latency Threshold (ms)</source>
         <translation>Latency Threshold (ms)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1063"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1091"/>
         <source>Maximum latency to consider a proxy as working</source>
         <translation>Maximum latency to consider a proxy as working</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1082"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1110"/>
         <source>Failure Retry Count</source>
         <translation>Failure Retry Count</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1089"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1117"/>
         <source>Number of retry attempts before considering a proxy as failed</source>
         <translation>Number of retry attempts before considering a proxy as failed</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1105"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1133"/>
         <source>Test Target URL</source>
         <translation>Test Target URL</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1112"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1140"/>
         <source>URL to test proxies against</source>
         <translation>URL to test proxies against</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1115"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1143"/>
         <source>http://cp.cloudflare.com/</source>
         <translation>http://cp.cloudflare.com/</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1122"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1150"/>
         <source>Automatically switch to another working proxy when TUN mode proxy fails</source>
         <translation>Automatically switch to another working proxy when TUN mode proxy fails</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1125"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1153"/>
         <source>Enable TUN Failover</source>
         <translation>Enable TUN Failover</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1133"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1161"/>
         <source>Startup</source>
         <translation>Startup</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1194"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1222"/>
         <source>Geometry</source>
         <translation>Geometry</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1223"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1251"/>
         <source>Autosave geometry</source>
         <translation>Autosave geometry</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1230"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1258"/>
         <source>Autosave position</source>
         <translation>Autosave position</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1250"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1278"/>
         <source>Apply now</source>
         <translation>Apply now</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1366"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1394"/>
         <source>Width</source>
         <translation>Width</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1379"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1407"/>
         <source>X</source>
         <translation>X</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1412"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1440"/>
         <source>Y</source>
         <translation>Y</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1425"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1453"/>
         <source>Height</source>
         <translation>Height</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1512"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1540"/>
         <source>Core Executable Path</source>
         <translation>Core Executable Path</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1541"/>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1715"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1569"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1743"/>
         <source>Use default</source>
         <translation>Use default</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1548"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1576"/>
         <source>Remote Control</source>
         <translation>Remote Control</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1574"/>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1748"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1602"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1776"/>
         <source>Select</source>
         <translation>Select</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1686"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1714"/>
         <source>Resources Directory</source>
         <translation>Resources Directory</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1722"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1750"/>
         <source>Resource Manager</source>
         <translation>Resource Manager</translation>
     </message>
@@ -2275,32 +2303,32 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>Remove</translation>
     </message>
     <message>
-        <location filename="../../src/ui/group/GroupItem.cpp" line="127"/>
+        <location filename="../../src/ui/group/GroupItem.cpp" line="129"/>
         <source>Basic</source>
         <translation>Basic</translation>
     </message>
     <message>
-        <location filename="../../src/ui/group/GroupItem.cpp" line="127"/>
+        <location filename="../../src/ui/group/GroupItem.cpp" line="129"/>
         <source>Subscription</source>
         <translation>Subscription</translation>
     </message>
     <message>
-        <location filename="../../src/ui/group/GroupItem.cpp" line="128"/>
+        <location filename="../../src/ui/group/GroupItem.cpp" line="130"/>
         <source>Archive</source>
         <translation>Archive</translation>
     </message>
     <message>
-        <location filename="../../src/ui/group/GroupItem.cpp" line="140"/>
+        <location filename="../../src/ui/group/GroupItem.cpp" line="142"/>
         <source>Last update: %1</source>
         <translation>Last update: %1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/group/GroupItem.cpp" line="183"/>
+        <location filename="../../src/ui/group/GroupItem.cpp" line="186"/>
         <source>Confirmation</source>
         <translation>Confirmation</translation>
     </message>
     <message>
-        <location filename="../../src/ui/group/GroupItem.cpp" line="183"/>
+        <location filename="../../src/ui/group/GroupItem.cpp" line="186"/>
         <source>Remove %1?</source>
         <translation>Remove %1?</translation>
     </message>
@@ -2351,8 +2379,8 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="161"/>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="597"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="2344"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="2347"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2428"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2431"/>
         <source>System Proxy</source>
         <translation>System Proxy</translation>
     </message>
@@ -2381,8 +2409,8 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="324"/>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="283"/>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="285"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="294"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="296"/>
         <source>Test Result</source>
         <translation>Test Result</translation>
     </message>
@@ -2519,15 +2547,15 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="736"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3336"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3346"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3419"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3429"/>
         <source>Start</source>
         <translation>Start</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="744"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3335"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3346"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3418"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3429"/>
         <source>Stop</source>
         <translation>Stop</translation>
     </message>
@@ -2573,7 +2601,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="823"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="1271"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1354"/>
         <source>Export %1 config</source>
         <translation>Export %1 config</translation>
     </message>
@@ -2666,7 +2694,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="977"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="2700"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2784"/>
         <source>Clone</source>
         <translation>Clone</translation>
     </message>
@@ -2797,7 +2825,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1147"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3362"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3445"/>
         <source>Add new Group</source>
         <translation>Add new Group</translation>
     </message>
@@ -2808,378 +2836,378 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     </message>
     <message>
         <location filename="../../src/dataStore/ProxyEntity.cpp" line="52"/>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="283"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="294"/>
         <source>Unavailable</source>
         <translation>Unavailable</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="922"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1007"/>
         <source>Edit Routing Profiles</source>
         <translation>Edit Routing Profiles</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="944"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1029"/>
         <source>Update Routing Profiles</source>
         <translation>Update Routing Profiles</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="956"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="960"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="981"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="984"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="1028"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1041"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1045"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1066"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1069"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1113"/>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="95"/>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="104"/>
         <source>Update Response</source>
         <translation>Update Response</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="957"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1042"/>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="105"/>
         <source>No routing profiles are updated</source>
         <translation>No routing profiles are updated</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="961"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1046"/>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="96"/>
         <source>Updated %1 routing profiles</source>
         <translation>Updated %1 routing profiles</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="971"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1056"/>
         <source>Update RuleSet Map</source>
         <translation>Update RuleSet Map</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="982"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1067"/>
         <source>Failed to update rulesets</source>
         <translation>Failed to update rulesets</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="985"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1070"/>
         <source>Rulesets updated successfully</source>
         <translation>Rulesets updated successfully</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="994"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1079"/>
         <source>Update RuleSet Cache</source>
         <translation>Update RuleSet Cache</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1029"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1114"/>
         <source>Rulesets cache is updated</source>
         <translation>Rulesets cache is updated</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1043"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1128"/>
         <source>Clear RuleSet Cache</source>
         <translation>Clear RuleSet Cache</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1079"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1164"/>
         <source>Enable AdBlock</source>
         <translation>Enable AdBlock</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1483"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1567"/>
         <source>Error</source>
         <translation>Error</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1570"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1654"/>
         <source>Tun Settings changed</source>
         <translation>Tun Settings changed</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1571"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1655"/>
         <source>Restart Tun to take effect.</source>
         <translation>Restart Tun to take effect.</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1577"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="1635"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="2754"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3097"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3151"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3199"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3404"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1661"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1719"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2838"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3180"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3234"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3282"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3487"/>
         <source>Confirmation</source>
         <translation>Confirmation</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1578"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="1636"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1662"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1720"/>
         <source>Settings changed, restart proxy?</source>
         <translation>Settings changed, restart proxy?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1607"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1691"/>
         <source>Settings changed</source>
         <translation>Settings changed</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1608"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1692"/>
         <source>Restart the program to take effect.</source>
         <translation>Restart the program to take effect.</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1651"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1735"/>
         <source>Imported %1 profile(s)</source>
         <translation>Imported %1 profile(s)</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1902"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1986"/>
         <source>User opted for no privilege req, some features may not work</source>
         <translation>User opted for no privilege req, some features may not work</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1966"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2050"/>
         <source>Please give the core root privileges</source>
         <translation>Please give the core root privileges</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2320"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2404"/>
         <source>Not Running</source>
         <translation>Not Running</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2701"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2785"/>
         <source>Clone %1 item(s)</source>
         <translation>Clone %1 item(s)</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2735"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2819"/>
         <source> Confirmation </source>
         <translation> Confirmation </translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2736"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2820"/>
         <source> Remove %1 item(s) ? </source>
         <translation> Remove %1 item(s) ? </translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2755"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2839"/>
         <source>Remove %1 item(s) ?</source>
         <translation>Remove %1 item(s) ?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2792"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="2805"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2876"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2889"/>
         <source>Copied %1 item(s)</source>
         <translation>Copied %1 item(s)</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2821"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2905"/>
         <source>Config copied</source>
         <translation>Config copied</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2823"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2907"/>
         <source>Copy core config</source>
         <translation>Copy core config</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2825"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2909"/>
         <source>Copy test config</source>
         <translation>Copy test config</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3008"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3092"/>
         <source>QR Code not found</source>
         <translation>QR Code not found</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3029"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3113"/>
         <source>Unable to capture screen</source>
         <translation>Unable to capture screen</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3098"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3181"/>
         <source>Remove %1 Unavailable item(s) ?</source>
         <translation>Remove %1 Unavailable item(s) ?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3152"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3235"/>
         <source>Remove %1 Invalid item(s) ?</source>
         <translation>Remove %1 Invalid item(s) ?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3200"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3283"/>
         <source>Replace domain server addresses with their resolved IPs?</source>
         <translation>Replace domain server addresses with their resolved IPs?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3333"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3416"/>
         <source>Clear</source>
         <translation>Clear</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3395"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3478"/>
         <source>Delete selected Group</source>
         <translation>Delete selected Group</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3396"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3479"/>
         <source>Edit selected Group</source>
         <translation>Edit selected Group</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3405"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3488"/>
         <source>Remove %1?</source>
         <translation>Remove %1?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4088"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4171"/>
         <source>Cannot start</source>
         <translation>Cannot start</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4089"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4172"/>
         <source>Last download request has not finished yet</source>
         <translation>Last download request has not finished yet</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4123"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4206"/>
         <source>Failed to download update assets</source>
         <translation>Failed to download update assets</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="81"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="86"/>
         <source>Profile test aborted</source>
         <translation>Profile test aborted</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="132"/>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="178"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="137"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="183"/>
         <source>[%1] test error: %2</source>
         <translation>[%1] test error: %2</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="161"/>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="481"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="166"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="492"/>
         <source>Something is very wrong, the subject ent cannot be found!</source>
         <translation>Something is very wrong, the subject ent cannot be found!</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="167"/>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="487"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="172"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="498"/>
         <source>Profile manager data is corrupted, try again.</source>
         <translation>Profile manager data is corrupted, try again.</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="199"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="206"/>
         <source>The last url test did not exit completely, please wait. If it persists, please restart the program.</source>
         <translation>The last url test did not exit completely, please wait. If it persists, please restart the program.</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="208"/>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="311"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="215"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="322"/>
         <source>Failed to build test config: </source>
         <translation>Failed to build test config: </translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="245"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="256"/>
         <source>URL test finished!</source>
         <translation>URL test finished!</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="256"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="267"/>
         <source>Failed to stop tests</source>
         <translation>Failed to stop tests</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="262"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="273"/>
         <source>Testing</source>
         <translation>Testing</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="300"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="311"/>
         <source>The last speed test did not exit completely, please wait. If it persists, please restart the program.</source>
         <translation>The last speed test did not exit completely, please wait. If it persists, please restart the program.</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="337"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="348"/>
         <source>Speedtest finished!</source>
         <translation>Speedtest finished!</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="418"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="429"/>
         <source>Profile speed test aborted</source>
         <translation>Profile speed test aborted</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="506"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="517"/>
         <source>[%1] speed test error: %2</source>
         <translation>[%1] speed test error: %2</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="515"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="526"/>
         <source>You need to enable hijack DNS server first</source>
         <translation>You need to enable hijack DNS server first</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="529"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="540"/>
         <source>Failed to set system dns: </source>
         <translation>Failed to set system dns: </translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="577"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="588"/>
         <source>Tun device misbehaving</source>
         <translation>Tun device misbehaving</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="578"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="589"/>
         <source>If you have trouble starting VPN, you can force reset Core process here and then try starting the profile again. The error is %1</source>
         <translation>If you have trouble starting VPN, you can force reset Core process here and then try starting the profile again. The error is %1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="582"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="593"/>
         <source>Reset</source>
         <translation>Reset</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="583"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="594"/>
         <source>Cancel</source>
         <translation>Cancel</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="622"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="633"/>
         <source>Another profile is starting...</source>
         <translation>Another profile is starting...</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="629"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="640"/>
         <source>Another profile is stopping...</source>
         <translation>Another profile is stopping...</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="650"/>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="732"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="661"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="743"/>
         <source>If there is no response for a long time, it is recommended to restart the software.</source>
         <translation>If there is no response for a long time, it is recommended to restart the software.</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="664"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="675"/>
         <source>Starting profile %1</source>
         <translation>Starting profile %1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="666"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="677"/>
         <source>Failed to start profile %1</source>
         <translation>Failed to start profile %1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="715"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="726"/>
         <source>Stop return error</source>
         <translation>Stop return error</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="755"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="766"/>
         <source>Stopping profile %1</source>
         <translation>Stopping profile %1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="757"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="768"/>
         <source>Failed to stop, please restart the program.</source>
         <translation>Failed to stop, please restart the program.</translation>
     </message>
@@ -3223,7 +3251,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
 <context>
     <name>QAction</name>
     <message>
-        <location filename="../../src/ui/security_addon.cpp" line="321"/>
+        <location filename="../../src/ui/security_addon.cpp" line="348"/>
         <source>Security Settings</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3231,7 +3259,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
 <context>
     <name>QGuiApplication</name>
     <message>
-        <location filename="../../src/main.cpp" line="253"/>
+        <location filename="../../src/main.cpp" line="262"/>
         <source>QT_LAYOUT_DIRECTION</source>
         <translation>QT_LAYOUT_DIRECTION</translation>
     </message>
@@ -3239,27 +3267,27 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../../src/configs/ConfigBuilder.cpp" line="163"/>
+        <location filename="../../src/configs/ConfigBuilder.cpp" line="164"/>
         <source>Tun mode cannot be used with Custom configs</source>
         <translation>Tun mode cannot be used with Custom configs</translation>
     </message>
     <message>
-        <location filename="../../src/ui/group/GroupItem.cpp" line="20"/>
+        <location filename="../../src/ui/group/GroupItem.cpp" line="22"/>
         <source>URL detected</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/group/GroupItem.cpp" line="30"/>
+        <location filename="../../src/ui/group/GroupItem.cpp" line="32"/>
         <source>Add profiles to this group</source>
         <translation>Add profiles to this group</translation>
     </message>
     <message>
-        <location filename="../../src/ui/group/GroupItem.cpp" line="35"/>
+        <location filename="../../src/ui/group/GroupItem.cpp" line="37"/>
         <source>Group name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/group/GroupItem.cpp" line="29"/>
+        <location filename="../../src/ui/group/GroupItem.cpp" line="31"/>
         <source>Create new subscription group</source>
         <translation>Create new subscription group</translation>
     </message>
@@ -3268,44 +3296,44 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation type="vanished">url detected</translation>
     </message>
     <message>
-        <location filename="../../src/ui/group/GroupItem.cpp" line="25"/>
+        <location filename="../../src/ui/group/GroupItem.cpp" line="27"/>
         <source>%1
 How to update?</source>
         <translation>%1
 How to update?</translation>
     </message>
     <message>
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="902"/>
+        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="913"/>
         <source>Requesting subscription: %1</source>
         <translation>Requesting subscription: %1</translation>
     </message>
     <message>
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="906"/>
+        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="917"/>
         <source>Requesting subscription %1 error: %2</source>
         <translation>Requesting subscription %1 error: %2</translation>
     </message>
     <message>
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="913"/>
+        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="924"/>
         <source>Subscription request fininshed: %1</source>
         <translation>Subscription request fininshed: %1</translation>
     </message>
     <message>
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="931"/>
+        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="942"/>
         <source>Clearing servers...</source>
         <translation>Clearing servers...</translation>
     </message>
     <message>
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="936"/>
+        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="947"/>
         <source>Processing subscription data...</source>
         <translation>Processing subscription data...</translation>
     </message>
     <message>
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="939"/>
+        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="950"/>
         <source>Process complete, applying...</source>
         <translation>Process complete, applying...</translation>
     </message>
     <message>
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="1002"/>
+        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="1013"/>
         <source>Added %1 profiles:
 %2
 Deleted %3 Profiles:
@@ -3316,12 +3344,12 @@ Deleted %3 Profiles:
 %4</translation>
     </message>
     <message>
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="1007"/>
+        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="1018"/>
         <source>Nothing</source>
         <translation>Nothing</translation>
     </message>
     <message>
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="1010"/>
+        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="1021"/>
         <source>Change of %1:</source>
         <translation>Change of %1:</translation>
     </message>
@@ -3343,13 +3371,13 @@ Deleted %3 Profiles:
     <message>
         <location filename="../../src/nekobox/global/GuiUtils.hpp" line="112"/>
         <location filename="../../src/ui/profile/edit_ssh.cpp" line="28"/>
-        <location filename="../../src/ui/setting/dialog_basic_settings.cpp" line="235"/>
+        <location filename="../../src/ui/setting/dialog_basic_settings.cpp" line="241"/>
         <source>Select</source>
         <translation>Select</translation>
     </message>
     <message>
         <location filename="../../src/stats/traffic/TrafficLooper.cpp" line="115"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="2288"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2372"/>
         <source>Proxy: %1
 Direct: %2</source>
         <translation>Proxy: %1
@@ -3371,62 +3399,80 @@ Direct: %2</translation>
         <translation>Restarting the core ...</translation>
     </message>
     <message>
-        <location filename="../../src/ui/group/GroupItem.cpp" line="99"/>
+        <location filename="../../src/ui/group/GroupItem.cpp" line="101"/>
         <source>Used: %1 Remain: %2 Expire: %3</source>
         <translation>Used: %1 Remain: %2 Expire: %3</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="178"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="179"/>
         <source>Download Profiles</source>
         <translation>Download Profiles</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="179"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="180"/>
         <source>Requesting profile error: %1</source>
         <translation>Requesting profile error: %1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1364"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="347"/>
+        <source>
+Deleted %1 Duplicates</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/mainwindow.cpp" line="381"/>
+        <source>
+Deleted %1 Invalid</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/mainwindow.cpp" line="404"/>
+        <source>
+Deleted %1 Unavailable</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/mainwindow.cpp" line="1447"/>
         <source>Check Rule Sets: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1386"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1469"/>
         <source>Requesting rule-set list error: %1</source>
         <translation>Requesting rule-set list error: %1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2325"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2409"/>
         <source>IP address: %1</source>
         <translation>IP address: %1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3993"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="4004"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="4048"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="4070"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="4079"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="4114"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4076"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4087"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4131"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4153"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4162"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4197"/>
         <source>Update</source>
         <translation>Update</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3994"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4077"/>
         <source>Not official support platform</source>
         <translation>Not official support platform</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4005"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4088"/>
         <source>Requesting update error: %1</source>
         <translation>Requesting update error: %1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4048"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4131"/>
         <source>No update</source>
         <translation>No update</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4071"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4154"/>
         <source>Update found: %1
 Release note:
 %2</source>
@@ -3435,125 +3481,130 @@ Release note:
 %2</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4074"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4157"/>
         <source>Close</source>
         <translation>Close</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4076"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4159"/>
         <source>Open in browser</source>
         <translation>Open in browser</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4115"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4198"/>
         <source>Update is ready, restart to install?</source>
         <translation>Update is ready, restart to install?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/setting/dialog_basic_settings.cpp" line="240"/>
+        <location filename="../../src/ui/setting/dialog_basic_settings.cpp" line="246"/>
         <source>Select a Folder</source>
         <translation>Select a Folder</translation>
     </message>
     <message>
-        <location filename="../../src/ui/security_addon.cpp" line="20"/>
+        <location filename="../../src/ui/security_addon.cpp" line="27"/>
         <source>Access denied</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/security_addon.cpp" line="21"/>
+        <location filename="../../src/ui/security_addon.cpp" line="28"/>
         <source>OK</source>
         <translation type="unfinished">OK</translation>
+    </message>
+    <message>
+        <location filename="../../src/sys/Settings.cpp" line="348"/>
+        <source>System</source>
+        <translation type="unfinished">System</translation>
     </message>
 </context>
 <context>
     <name>QPlatformTheme</name>
     <message>
-        <location filename="../../src/main.cpp" line="54"/>
+        <location filename="../../src/main.cpp" line="61"/>
         <source>Cancel</source>
         <translation>Cancel</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="55"/>
+        <location filename="../../src/main.cpp" line="62"/>
         <source>Apply</source>
         <translation>Apply</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="56"/>
+        <location filename="../../src/main.cpp" line="63"/>
         <source>Yes</source>
         <translation>Yes</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="57"/>
+        <location filename="../../src/main.cpp" line="64"/>
         <source>No</source>
         <translation>No</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="58"/>
+        <location filename="../../src/main.cpp" line="65"/>
         <source>OK</source>
         <translation>OK</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="59"/>
+        <location filename="../../src/main.cpp" line="66"/>
         <source>Defaults</source>
         <translation>Defaults</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="60"/>
+        <location filename="../../src/main.cpp" line="67"/>
         <source>Restore Defaults</source>
         <translation>Restore Defaults</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="61"/>
+        <location filename="../../src/main.cpp" line="68"/>
         <source>Discard</source>
         <translation>Discard</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="63"/>
+        <location filename="../../src/main.cpp" line="70"/>
         <source>Undo</source>
         <translation>Undo</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="64"/>
+        <location filename="../../src/main.cpp" line="71"/>
         <source>Redo</source>
         <translation>Redo</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="65"/>
+        <location filename="../../src/main.cpp" line="72"/>
         <source>Cut</source>
         <translation>Cut</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="66"/>
+        <location filename="../../src/main.cpp" line="73"/>
         <source>Copy</source>
         <translation>Copy</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="67"/>
+        <location filename="../../src/main.cpp" line="74"/>
         <source>Paste</source>
         <translation>Paste</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="68"/>
+        <location filename="../../src/main.cpp" line="75"/>
         <source>Delete</source>
         <translation>Delete</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="69"/>
+        <location filename="../../src/main.cpp" line="76"/>
         <source>Select All</source>
         <translation>Select All</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="70"/>
+        <location filename="../../src/main.cpp" line="77"/>
         <source>Stop</source>
         <translation>Stop</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="71"/>
+        <location filename="../../src/main.cpp" line="78"/>
         <source>Clear</source>
         <translation>Clear</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="72"/>
+        <location filename="../../src/main.cpp" line="79"/>
         <source>Copy Link Location</source>
         <translation>Copy Link Location</translation>
     </message>
@@ -3746,7 +3797,7 @@ Release note:
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/security.ui" line="76"/>
-        <source>Lock System Tray</source>
+        <source>Lock Startup</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3773,25 +3824,25 @@ Release note:
 <context>
     <name>SpinnerDialog</name>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="126"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="127"/>
         <source>Invalid JSON Array</source>
         <translation>Invalid JSON Array</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="127"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="128"/>
         <source>The provided input cannot be parsed to a valid route rule array:
 </source>
         <translation>The provided input cannot be parsed to a valid route rule array:
 </translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="250"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="251"/>
         <source>Fetching information</source>
         <translation>Fetching information</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="266"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="1103"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="267"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1188"/>
         <source>Download Profiles</source>
         <translation>Download Profiles</translation>
     </message>
