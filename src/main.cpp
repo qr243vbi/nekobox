@@ -55,7 +55,7 @@ void signal_handler(int signum) {
 }
 
 QTranslator* trans = nullptr;
-QTranslator* trans_qt = nullptr;
+//QTranslator* trans_qt = nullptr;
 
 void loadTranslate(const QString& locale) {
     QT_TRANSLATE_NOOP("QPlatformTheme", "Cancel");
@@ -80,15 +80,15 @@ void loadTranslate(const QString& locale) {
     if (trans != nullptr) {
         trans->deleteLater();
     }
-    if (trans_qt != nullptr) {
-        trans_qt->deleteLater();
-    }
+ //   if (trans_qt != nullptr) {
+ //       trans_qt->deleteLater();
+ //   }
     //
     trans = new QTranslator;
-    trans_qt = new QTranslator;
+ //   trans_qt = new QTranslator;
     QLocale::setDefault(QLocale(locale));
     //
-    if (trans->load(":/translations/" + locale + ".qm")) {
+    if (trans->load(getResource(locale + ".qm"))) {
         QCoreApplication::installTranslator(trans);
     }
 }

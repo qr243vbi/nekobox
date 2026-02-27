@@ -137,7 +137,7 @@ bool createSymlink(const QString &targetPath, const QString &linkPath);
 QSettings getGlobal();
 QString getLocale();
 QString getResourcesDir();
-QString getResource(QString);
+QString getResource(QString, QStringList dirs = {});
 #ifndef SKIP_UPDATER_BUTTON
 QString getUpdaterPath();
 #endif

@@ -122,12 +122,19 @@ QString getResourcesDir() {
   return str;
 };
 
-QString getResource(QString str) {
+QString getResource(QString str, QStringList dirs) {
   {
     auto link = Configs::resourceManager->getLink(str);
     // qDebug() << "Link for " << str << " is " << link;
     if (!link.isEmpty()) {
       return link;
+    }
+  }
+  for (QString dir : dirs){
+    QString path = dir + "/" + str;
+    QFile file(path);
+    if (file.exists()){
+      return path;
     }
   }
   QString dir = getResourcesDir();
