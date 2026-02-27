@@ -1,5 +1,6 @@
 # This file is used to ignore files which are generated
 # ----------------------------------------------------------------------------
+!languages.txt
 run.ps1
 .ENV
 global.ini

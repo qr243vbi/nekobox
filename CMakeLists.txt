@@ -461,6 +461,6 @@ install(
 )
 
 install(TARGETS nekobox DESTINATION ${CMAKE_INSTALL_LIBEXECDIR}/nekobox)
-install(FILES srslist.json check_routeprofiles.js DESTINATION ${CMAKE_INSTALL_LIBEXECDIR}/nekobox/public)
+install(FILES zh_CN.qm fa_IR.qm ru_RU.qm he_IL.qm srslist.json check_routeprofiles.js languages.txt DESTINATION ${CMAKE_INSTALL_LIBEXECDIR}/nekobox/public)
 
 endif()

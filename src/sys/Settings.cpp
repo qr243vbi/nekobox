@@ -366,9 +366,11 @@ QList<std::shared_ptr<LanguageValue>> &languageCodes() {
       for (QString str : list) {
         int ind = str.indexOf(':');
         if (ind > 0) {
-          QString key = str.slice(0, ind);
-          QString value = str.slice(ind + 1);
-          if (!(key.isEmpty() || value.isEmpty())){
+          QString key = str;
+          key.slice(0, ind);
+          QString value = str;
+          value.slice(ind + 1, str.size() - ind - 1);
+          if (!key.isEmpty() && !value.isEmpty()){
             ADD(key, value)
           }
         }

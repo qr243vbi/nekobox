@@ -1,0 +1,5 @@
+C:English
+zh_CN:简体中文
+he_IL:עברית
+fa_IR:فارسی
+ru_RU:Русский
