@@ -154,6 +154,10 @@ QString getResource(QString str, QStringList dirs) {
   }
 }
 
+QString getLangResource(const QString &locale){
+  return getResource(locale + ".qm");
+}
+
 QString getRootResource(QString str) {
   QString dir = root_directory;
   dir += "/";
@@ -337,7 +341,7 @@ void Configs::MainWindowTableSettings::Load(
     "ru_RU"
 */
 
-#define ADD(X, Y) { \
+#define ADD(X, Y) if (getLangResource(X) == ""){ \
   std::shared_ptr<LanguageValue> val = std::make_shared<LanguageValue>();  \
   val->code = X;      \
   val->name = Y;      \
@@ -369,7 +373,7 @@ QList<std::shared_ptr<LanguageValue>> &languageCodes() {
           QString key = str;
           key.slice(0, ind);
           QString value = str;
-          value.slice(ind + 1, str.size() - ind - 1);
+          value.slice(ind + 1);
           if (!key.isEmpty() && !value.isEmpty()){
             ADD(key, value)
           }
@@ -386,3 +390,4 @@ std::shared_ptr<WindowSettings> windowSettings =
     std::make_shared<WindowSettings>();
 MainWindowTableSettings tableSettings;
 } // namespace Configs
+

@@ -55,12 +55,12 @@ fi
 cp srslist.json "$DEST/srslist.json"
 
 #### copy exe ####
-cp "$CURDIR/"*.js $DEST
 cp "$BUILD/nekobox.exe" "$DEST" || cp "$BUILD/Release/nekobox.exe" "$DEST"
 [[ -f "$BUILD/nekobox_core.exe" ]] && cp "$BUILD/nekobox_core.exe" "$DEST" 
 [[ -f "$BUILD/updater.exe" ]] && cp "$BUILD/updater.exe" "$DEST"
 
 cp -RT "$CURDIR/res/public" "$DEST/public"
+cp "$BUILD/"*.qm "$CURDIR/languages.txt" "$CURDIR/"*.js "$DEST/public/"
 
 if [[ "$COMPILER" != "MinGW" ]]
 then
