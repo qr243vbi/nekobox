@@ -20,22 +20,22 @@
     <message>
         <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="78" />
         <source>Remember</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">记住</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="105" />
         <source>seconds</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">秒</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="110" />
         <source>minutes</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">分钟</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="115" />
         <source>hours</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">小时</translation>
     </message>
 </context>
 <context>
@@ -107,22 +107,22 @@
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="192" />
         <source>URL Test after profile start</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">配置文件启动后进行 URL 测试</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="199" />
         <source>Request update at startup</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">启动时请求更新</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="558" />
         <source>Clear servers before update</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">更新前清除服务器</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="565" />
         <source>URL Test after update</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">更新后的URL测试</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="606" />
@@ -132,7 +132,7 @@
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="633" />
         <source>Send System Parameters</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">发送系统参数</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="663" />
@@ -1001,18 +1001,18 @@
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="648" />
         <source>Enable ECH</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">启用ECH</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="655" />
         <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="638" />
         <source>ECH Config</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ECH配置</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="673" />
         <source>QSN</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">QSN</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="855" />
@@ -1513,32 +1513,32 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="107" />
         <source>GitHub</source>
-        <translation />
+        <translation>GitHub</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="112" />
         <source>jsDelivr(Cloudflare)</source>
-        <translation />
+        <translation>jsDelivr(Cloudflare)</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="117" />
         <source>jsDelivr(Gcore)</source>
-        <translation />
+        <translation>jsDelivr(Gcore)</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="122" />
         <source>jsDelivr(Quantil)</source>
-        <translation />
+        <translation>jsDelivr(Quantil)</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="127" />
         <source>jsDelivr(Fastly)</source>
-        <translation />
+        <translation>jsDelivr(快速)</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="132" />
         <source>jsDelivr(CDN)</source>
-        <translation />
+        <translation>jsDelivr(CDN)</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="440" />
@@ -1566,22 +1566,22 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="109" />
         <source>AutoRedirect</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">自动重定向</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="150" />
         <source>Exclude CIDR's</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">排除 CIDR</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="125" />
         <source>Tun address</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">屯地址</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="135" />
         <source>Tun ipv6 address</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">隧道ipv6地址</translation>
     </message>
     <message>
         <source>Troubleshooting</source>
@@ -1788,7 +1788,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="92" />
         <source>Transport</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">运输</translation>
     </message>
     <message>
         <source>MULTIPLEXING_OFF</source>
@@ -2163,12 +2163,12 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_vmess.ui" line="59" />
         <source>Alter Id</source>
-        <translation />
+        <translation>更改 ID</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_vmess.ui" line="66" />
         <source>UUID</source>
-        <translation />
+        <translation>通用唯一标识符</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_vmess.ui" line="100" />
@@ -2621,7 +2621,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1152" />
         <source>Security Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">安全设置</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1561" />
@@ -2681,7 +2681,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="945" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="953" />
         <source>fake</source>
-        <translation />
+        <translation>伪造的</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="268" />
@@ -3344,12 +3344,12 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/nekobox/ui/security/change_password.ui" line="37" />
         <source>New Password</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">新密码</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/change_password.ui" line="54" />
         <source>Confirm Password</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">确认密码</translation>
     </message>
 </context>
 <context>
@@ -3370,7 +3370,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/ui/security_addon.cpp" line="342" />
         <source>Security Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">安全设置</translation>
     </message>
 </context>
 <context>
@@ -3390,7 +3390,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="22" />
         <source>URL detected</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">检测到 URL</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="27" />
@@ -3402,7 +3402,7 @@ How to update?</source>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="37" />
         <source>Group name</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">团体名称</translation>
     </message>
     <message>
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="1013" />
@@ -3467,24 +3467,24 @@ Direct: %2</source>
         <location filename="../../src/ui/mainwindow.cpp" line="341" />
         <source>
 Deleted %1 Duplicates</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">已删除 %1 个重复项</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="375" />
         <source>
 Deleted %1 Invalid</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">已删除 %1 无效</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="398" />
         <source>
 Deleted %1 Unavailable</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">已删除 %1 不可用</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1441" />
         <source>Check Rule Sets: %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">检查规则集：%1</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1463" />
@@ -3639,7 +3639,7 @@ Release note:
     <message>
         <location filename="../../src/ui/security_addon.cpp" line="21" />
         <source>Access denied</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">拒绝访问</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2914" />
@@ -3656,7 +3656,7 @@ Release note:
     <message>
         <location filename="../../src/ui/setting/dialog_vpn_settings.cpp" line="37" />
         <source>Exclude CIDR's</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">排除 CIDR</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/dialog_vpn_settings.cpp" line="46" />
@@ -3946,42 +3946,42 @@ Release note:
     <message>
         <location filename="../../src/nekobox/ui/security/security.ui" line="14" />
         <source>Security Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">安全设置</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/security.ui" line="62" />
         <source>Lock Actions</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">锁定操作</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/security.ui" line="69" />
         <source>Lock Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">锁定设置</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/security.ui" line="76" />
         <source>Lock Startup</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">锁定启动</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/security.ui" line="113" />
         <source>Delete Users</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">删除用户</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/security.ui" line="120" />
         <source>Edit User Roles</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">编辑用户角色</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/security.ui" line="163" />
         <source>Change UI Password</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">更改用户界面密码</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/security.ui" line="170" />
         <source>Set Proxy Credentials</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">设置代理凭证</translation>
     </message>
 </context>
 <context>
