@@ -58,6 +58,11 @@ on:
         type: boolean
         default: true
         required: false
+      publish_suse:
+        description: "Publish to openSUSE Factory"
+        type: boolean
+        default: true
+        required: false
 jobs:
   build-go:
     permissions:
@@ -177,6 +182,8 @@ jobs:
         shell: bash
         run: |
           pip install osc
+          export MESSAGE="${{ github.event.inputs.text }}"
+          export SUBMIT_FACTORY=${{ github.event.inputs.publish_suse }}
           export OBS_USER="${{ secrets.OBS_USER }}"
           export OBS_PASSWORD="${{ secrets.OBS_PASSWORD }}"
           export OBS_HOOK_TOKEN="${{ secrets.OBS_HOOK_TOKEN }}"
