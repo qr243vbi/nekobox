@@ -6,7 +6,7 @@
     <message>
         <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="14"/>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Диалог</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="20"/>
@@ -21,22 +21,22 @@
     <message>
         <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="78"/>
         <source>Remember</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Помнить</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="105"/>
         <source>seconds</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">секунды</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="110"/>
         <source>minutes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">минуты</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="115"/>
         <source>hours</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">часы</translation>
     </message>
 </context>
 <context>
@@ -44,7 +44,7 @@
     <message>
         <location filename="../../src/nekobox/ui/setting/resource_manager.ui" line="14"/>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Диалог</translation>
     </message>
 </context>
 <context>
@@ -60,289 +60,292 @@
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Socks
                                                                 + HTTP Proxy&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                                                             </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Носки
++ HTTP-прокси&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="192"/>
         <source>URL Test after profile start</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Проверка URL-адреса после запуска профиля</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="199"/>
         <source>Request update at startup</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Запросить обновление при запуске</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="441"/>
         <source>Set text under menu icons</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Установить текст под значками меню</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="448"/>
         <source>Hide at startup</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Скрыть при запуске</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="502"/>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="524"/>
         <source>System</source>
         <translation>Система</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="563"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="532"/>
         <source>Icon</source>
         <translation>Иконка</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="570"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="539"/>
         <source>Emoji Font</source>
         <translation>Эмоджи шрифт</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="684"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="653"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Format: hwid=value,os=value,osVersion=value,model=value&lt;/p&gt;&lt;p&gt;Leave empty to use default values. Only specify the parameters you want to override.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Формат: hwid=value,os=value,osVersion=value,model=value&lt;/p&gt;&lt;p&gt;Оставьте пустым, чтобы использовать значения по умолчанию.Укажите только те параметры, которые хотите переопределить.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="687"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="656"/>
         <source>Custom System Parameters (optional)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Пользовательские параметры системы (необязательно)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="644"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="613"/>
         <source>hwid=custom_value,os=custom_os,osVersion=custom_version,model=custom_model</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">hwid=custom_value,os=custom_os,osVersion=custom_version,model=custom_model</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="589"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="558"/>
         <source>Clear servers before update</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Очистите серверы перед обновлением</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="596"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="565"/>
         <source>URL Test after update</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Проверка URL-адреса после обновления</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="637"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="606"/>
         <source>Remove Duplicates</source>
         <translation type="unfinished">Удалить дубликаты</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="664"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="633"/>
         <source>Send System Parameters</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Отправить системные параметры</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="694"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="663"/>
         <source>Remove Invalid</source>
         <translation type="unfinished">Удалить недействительные</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="701"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="670"/>
         <source>Remove Unavailable</source>
         <translation type="unfinished">Удалить недоступные</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="748"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="717"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Might
                                                                             Improve Ping and Performance&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                                                                         </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Может
+Улучшите пинг и производительность&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="769"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="738"/>
         <source>Loglevel</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Уровень журнала</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="791"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="760"/>
         <source>Padding</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Заполнение</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="820"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="789"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Settings for the
                                             sing-box&apos;s built-in NTP client&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                                         </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Настройки для
+встроенный NTP-клиент Sing-Box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="874"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="843"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;In
                                                                 minutes&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                                                             </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;В
+минут&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="985"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="954"/>
         <source>Use Json instead binary for configs</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Используйте Json вместо двоичного файла для конфигураций</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="999"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="968"/>
         <source>Auto-Testing</source>
         <translation>Авто-Тестирование</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1008"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="977"/>
         <source>Enable Auto-Testing</source>
         <translation>Включить Авто-Тестирование</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1015"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="984"/>
         <source>Test Interval (seconds)</source>
         <translation>Интервал для проверки (в секундах)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1022"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="991"/>
         <source>How often to run the test cycle</source>
         <translation>Как часто следует проводить цикл тестирования?</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1038"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1007"/>
         <source>Proxies Per Cycle</source>
         <translation>Прокси в цикле</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1045"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1014"/>
         <source>Number of proxies to test in each cycle</source>
         <translation>Количество прокси, проверяемых за один цикл</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1061"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1030"/>
         <source>Working Pool Size</source>
         <translation>Размер рабочего пула</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1068"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1037"/>
         <source>Maximum number of verified working proxies to maintain</source>
         <translation>Максимальное количество рабочих прокси для сохранения в списке</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1084"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1053"/>
         <source>Latency Threshold (ms)</source>
         <translation>Порог задержки (мс)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1091"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1060"/>
         <source>Maximum latency to consider a proxy as working</source>
         <translation>Максимальная задержка, при которой прокси считается рабочим</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1110"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1079"/>
         <source>Failure Retry Count</source>
         <translation>Число неудачных попыток</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1117"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1086"/>
         <source>Number of retry attempts before considering a proxy as failed</source>
         <translation>Количество попыток повторного подключения до того, как прокси-сервер будет признан неисправным.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1133"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1102"/>
         <source>Test Target URL</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Проверить целевой URL-адрес</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1140"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1109"/>
         <source>URL to test proxies against</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">URL для тестирования прокси</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1143"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1112"/>
         <source>http://cp.cloudflare.com/</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1150"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1119"/>
         <source>Automatically switch to another working proxy when TUN mode proxy fails</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Автоматически переключаться на другой рабочий прокси-сервер при сбое прокси-сервера в режиме TUN.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1153"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1122"/>
         <source>Enable TUN Failover</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Включить аварийное переключение TUN</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1161"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1130"/>
         <source>Startup</source>
         <translation>Запуск</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1222"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1191"/>
         <source>Geometry</source>
         <translation>Геометрия</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1251"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1220"/>
         <source>Autosave geometry</source>
         <translation>Сохранить геометрию</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1258"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1227"/>
         <source>Autosave position</source>
         <translation>Сохранить позицию</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1278"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1247"/>
         <source>Apply now</source>
         <translation>Применить сейчас</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1394"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1363"/>
         <source>Width</source>
         <translation>Ширина</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1407"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1376"/>
         <source>X</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Х</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1440"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1409"/>
         <source>Y</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Да</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1453"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1422"/>
         <source>Height</source>
         <translation>Высота</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1569"/>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1743"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1538"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1712"/>
         <source>Use default</source>
         <translation>Использовать по умолчанию</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1576"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1545"/>
         <source>Remote Control</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Пульт дистанционного управления</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1602"/>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1776"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1571"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1745"/>
         <source>Select</source>
         <translation>Выбрать</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1750"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1719"/>
         <source>Resource Manager</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Менеджер ресурсов</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1540"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1509"/>
         <source>Core Executable Path</source>
         <translation>Путь к ядру</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1005"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="974"/>
         <source>Automatically test proxies in the background and maintain a pool of working proxies</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Автоматически тестируйте прокси в фоновом режиме и поддерживайте пул рабочих прокси.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1714"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1683"/>
         <source>Resources Directory</source>
         <translation>Директория с ресурсами</translation>
     </message>
@@ -357,7 +360,7 @@
         <translation>Прослушиваемый адрес</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="651"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="620"/>
         <source>User Agent</source>
         <translation>Пользовательский агент</translation>
     </message>
@@ -372,8 +375,8 @@
         <translation>Изменить</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="611"/>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="831"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="580"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="800"/>
         <source>Enable</source>
         <translation>Включить</translation>
     </message>
@@ -431,7 +434,7 @@
         <translation>Макс. кол-во строк в логах</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="583"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="552"/>
         <source>Subscription</source>
         <translation>Подписка</translation>
     </message>
@@ -454,107 +457,107 @@
         <translation type="vanished">Включить отправку HWID, модели устройства и версии ОС при обновлении подписки</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="661"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="630"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;HWID=%1&lt;/p&gt;&lt;p&gt;OS=%2&lt;/p&gt;&lt;p&gt;OS Version=%3&lt;/p&gt;&lt;p&gt;Model=%4&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;HWID=%1&lt;/p&gt;&lt;p&gt;ОС=%2&lt;/p&gt;&lt;p&gt;Версия ОС=%3&lt;/p&gt;&lt;p&gt;Модель=%4&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="709"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="678"/>
         <source>Core</source>
         <translation>Ядро</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="762"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="731"/>
         <source>Multiplex (mux)</source>
         <translation>Протокол мультиплексирования</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="781"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="750"/>
         <source>concurrency</source>
         <translation>Кол-во потоков</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="798"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="767"/>
         <source>Default On</source>
         <translation>Вкл. по умолчанию</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="810"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="779"/>
         <source>Core Options</source>
         <translation>Параметры ядра</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="904"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="873"/>
         <source>Security</source>
         <translation>Безопасность</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="924"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="893"/>
         <source>Skip TLS certificate authentication by default (allowInsecure)</source>
         <translation>Пропустить проверку подлинности TLS-сертификатов по умолчанию (allowInsecure)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="952"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="921"/>
         <source>Default uTLS Fingerprint</source>
         <translation>Отпечаток uTLS по умолчанию</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="978"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="947"/>
         <source>Always Start as Standard User</source>
         <translation>Всегда запускать NekoBox от имени обычного пользователя</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="975"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="944"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Do not attempt to start as Admin unless explicitly requested&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Не пытаться запускать приложение от имени администратора, если явно не запрошено&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="677"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="646"/>
         <source>Automatic update</source>
         <translation>Автоматическое обновление</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="618"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="587"/>
         <source>Interval (minute, invalid if less than 30)</source>
         <translation>Интервал (в минутах; неверно, если значение меньше 30)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="753"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="722"/>
         <source>Disable Traffic Stats</source>
         <translation>Отключить статистику трафика</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="825"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="794"/>
         <source>NTP Settings</source>
         <translation>Настройки NTP</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="840"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="809"/>
         <source>server</source>
         <translation>Сервер</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="850"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="819"/>
         <source>Port</source>
         <translation>Порт</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="867"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="836"/>
         <source>sync interval</source>
         <translation>Интервал синхронизации</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="880"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="849"/>
         <source>5m</source>
         <translation>5 мин.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="885"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="854"/>
         <source>10m</source>
         <translation>10 мин.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="890"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="859"/>
         <source>30m</source>
         <translation>30 мин.</translation>
     </message>
@@ -636,7 +639,7 @@
         <translation>Только загрузка</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="910"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="879"/>
         <source>Disable Privilege request</source>
         <translation>Откл. привилегированный запрос</translation>
     </message>
@@ -656,7 +659,7 @@
         <translation>Случайный порт</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="917"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="886"/>
         <source>Use Mozilla Certificate Store</source>
         <translation>Исп. хранилище сертификатов Mozilla</translation>
     </message>
@@ -718,7 +721,7 @@
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="194"/>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="221"/>
         <source>None</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Никто</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="253"/>
@@ -1037,18 +1040,18 @@
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="648"/>
         <source>Enable ECH</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Включить ЭХХ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="655"/>
         <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="638"/>
         <source>ECH Config</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Конфигурация ЭХХ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="673"/>
         <source>QSN</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">QSN</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="855"/>
@@ -1101,47 +1104,47 @@
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="14"/>
         <source>Landing proxy for group Group2</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Лендинг прокси для группы Group2</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="41"/>
         <source>Proxy:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Прокси:</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="48"/>
         <source>Search:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Поиск:</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="68"/>
         <source>Group1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Группа1</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="74"/>
         <source>Group2</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Группа2</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="414"/>
         <source>Front proxy for group %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Передний прокси для группы %1</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="416"/>
         <source>Front proxy: </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Фронтальный прокси:</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="427"/>
         <source>Landing proxy for group %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Целевой прокси для группы %1</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="429"/>
         <source>Landing proxy: </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Лендинг прокси:</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="442"/>
@@ -1158,17 +1161,17 @@
     <message>
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="449"/>
         <source>None</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Никто</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="135"/>
         <source>Select outbound</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Выберите исходящий</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="137"/>
         <source>Outbound: </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Исходящие:</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="144"/>
@@ -1178,12 +1181,12 @@
     <message>
         <location filename="../../src/ui/profile/edit_chain.cpp" line="46"/>
         <source>Add proxy</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Добавить прокси</translation>
     </message>
     <message>
         <location filename="../../src/ui/profile/edit_chain.cpp" line="66"/>
         <source>Replace %1 proxy</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Заменить %1 прокси</translation>
     </message>
 </context>
 <context>
@@ -1357,7 +1360,7 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="178"/>
         <source>RuleSet download url</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">URL-адрес загрузки набора правил</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="367"/>
@@ -1582,49 +1585,44 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="109"/>
         <source>AutoRedirect</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Автоперенаправление</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="131"/>
-        <source>Tun device name</source>
-        <translation type="unfinished"></translation>
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="150"/>
+        <source>Exclude CIDR&apos;s</source>
+        <translation type="unfinished">Исключить CIDR</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="141"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="125"/>
         <source>Tun address</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Тун-адрес</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="154"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="135"/>
         <source>Tun ipv6 address</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Настройка IPv6-адреса</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="166"/>
-        <location filename="../../src/ui/setting/dialog_vpn_settings.cpp" line="94"/>
         <source>Troubleshooting</source>
-        <translation>Диагностика</translation>
+        <translation type="vanished">Диагностика</translation>
     </message>
     <message>
-        <location filename="../../src/ui/setting/dialog_vpn_settings.cpp" line="95"/>
         <source>If you have trouble starting VPN, you can force reset Core process here.
 
 If still not working, see documentation for more information.
 https://matsuridayo.github.io/n-configuration/#vpn-tun</source>
-        <translation>Если возникают проблемы с запуском режима TUN, здесь вы можете принудительно сбросить процесс ядра.
+        <translation type="vanished">Если возникают проблемы с запуском режима TUN, здесь вы можете принудительно сбросить процесс ядра.
 
 Если ничего по-прежнему не работает, ознакомьтесь с документацией:
 https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     </message>
     <message>
-        <location filename="../../src/ui/setting/dialog_vpn_settings.cpp" line="101"/>
         <source>Reset</source>
-        <translation>Сброс</translation>
+        <translation type="vanished">Сброс</translation>
     </message>
     <message>
-        <location filename="../../src/ui/setting/dialog_vpn_settings.cpp" line="102"/>
         <source>Cancel</source>
-        <translation>Отмена</translation>
+        <translation type="vanished">Отмена</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="92"/>
@@ -1784,7 +1782,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="14"/>
         <source>EditMieru</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">РедактироватьМиеру</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="20"/>
@@ -1804,12 +1802,12 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="55"/>
         <source>Multiplexing</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Мультиплексирование</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="92"/>
         <source>Transport</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Транспорт</translation>
     </message>
 </context>
 <context>
@@ -2018,17 +2016,17 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="38"/>
         <source>1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">1</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="43"/>
         <source>2</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">2</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="48"/>
         <source>3</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">3</translation>
     </message>
 </context>
 <context>
@@ -2127,27 +2125,27 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="14"/>
         <source>EditTor</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Редактор</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="20"/>
         <source>Custom Path</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Пользовательский путь</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="30"/>
         <source>Extra Args</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Дополнительные аргументы</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="40"/>
         <source>Tor Config</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Конфигурация Тора</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="55"/>
         <source>Data DIr</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Каталог данных</translation>
     </message>
 </context>
 <context>
@@ -2412,7 +2410,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>Программа</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1164"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1158"/>
         <source>Enable AdBlock</source>
         <translation>Включить AdBlock</translation>
     </message>
@@ -2440,8 +2438,8 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="161"/>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="597"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="2428"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="2431"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2422"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2425"/>
         <source>System Proxy</source>
         <translation>Системный прокси</translation>
     </message>
@@ -2465,8 +2463,8 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="324"/>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="294"/>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="296"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="289"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="291"/>
         <source>Test Result</source>
         <translation>Результат теста</translation>
     </message>
@@ -2512,15 +2510,15 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="736"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3419"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3429"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3442"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3452"/>
         <source>Start</source>
         <translation>Запустить</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="744"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3418"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3429"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3441"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3452"/>
         <source>Stop</source>
         <translation>Остановить</translation>
     </message>
@@ -2532,32 +2530,32 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1056"/>
         <source>Clear Test Result Selected</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Очистить выбранный результат теста</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1107"/>
         <source>Full test Selected</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Полный тест Выбрано</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1112"/>
         <source>Download test Selected</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Скачать тест Выбрано</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1117"/>
         <source>Upload test Selected</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Загрузить тест Выбрано</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1122"/>
         <source>Country test Selected</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Страновой тест Выбрано</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1127"/>
         <source>Simple download test Selected</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Простой тест загрузки Выбрано</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1137"/>
@@ -2573,27 +2571,27 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="29"/>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="32"/>
         <source>NekoBox</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">НекоБокс</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="231"/>
         <source>URL Test</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">URL-тест</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="641"/>
         <source>Current group</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Текущая группа</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="647"/>
         <source>Test</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Тест</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="752"/>
         <source>Edit</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Редактировать</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="773"/>
@@ -2622,7 +2620,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="823"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="1354"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1348"/>
         <source>Export %1 config</source>
         <translation>Экспортировать конфигурацию %1</translation>
     </message>
@@ -2710,7 +2708,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="977"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="2784"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2778"/>
         <source>Clone</source>
         <translation>Клонировать</translation>
     </message>
@@ -2747,120 +2745,120 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1152"/>
         <source>Security Settings</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Настройки безопасности</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1007"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1001"/>
         <source>Edit Routing Profiles</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Редактировать профили маршрутизации</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1029"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1023"/>
         <source>Update Routing Profiles</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Обновление профилей маршрутизации</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1041"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="1045"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="1066"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="1069"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="1113"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1035"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1039"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1060"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1063"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1107"/>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="95"/>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="104"/>
         <source>Update Response</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Обновить ответ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1042"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1036"/>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="105"/>
         <source>No routing profiles are updated</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Профили маршрутизации не обновляются.</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1046"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1040"/>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="96"/>
         <source>Updated %1 routing profiles</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Обновлены профили маршрутизации %1.</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1056"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1050"/>
         <source>Update RuleSet Map</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Обновить карту набора правил</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1067"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1061"/>
         <source>Failed to update rulesets</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Не удалось обновить наборы правил.</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1070"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1064"/>
         <source>Rulesets updated successfully</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Наборы правил успешно обновлены.</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1079"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1073"/>
         <source>Update RuleSet Cache</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Обновить кэш набора правил</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1114"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1108"/>
         <source>Rulesets cache is updated</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Кэш наборов правил обновлен.</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1128"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1122"/>
         <source>Clear RuleSet Cache</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Очистить кэш набора правил</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1567"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1561"/>
         <source>Error</source>
         <translation>Ошибка</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1654"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1648"/>
         <source>Tun Settings changed</source>
         <translation>Настройки TUN изменены</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1655"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1649"/>
         <source>Restart Tun to take effect.</source>
         <translation>Перезапустите TUN, чтобы изменения вступили в силу.</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1661"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="1719"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="2838"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3180"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3234"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3282"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3487"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1655"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1713"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2832"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3203"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3257"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3305"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3510"/>
         <source>Confirmation</source>
         <translation>Подтверждение</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1662"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="1720"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1656"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1714"/>
         <source>Settings changed, restart proxy?</source>
         <translation>Настройки изменены, перезапустить прокси?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1691"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1685"/>
         <source>Settings changed</source>
         <translation>Настройки изменены</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1692"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1686"/>
         <source>Restart the program to take effect.</source>
         <translation>Перезапустите программу, чтобы изменения вступили в силу.</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1735"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1729"/>
         <source>Imported %1 profile(s)</source>
         <translation>Импортирован(ы) %1 профиль(ей)</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2404"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2398"/>
         <source>Not Running</source>
         <translation>Не запущен</translation>
     </message>
@@ -2873,76 +2871,75 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation type="vanished">Режим выбора: дважды кликните или нажмите Enter для выбора профиля, нажмите ESC для выхода.</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2785"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2779"/>
         <source>Clone %1 item(s)</source>
         <translation>Клонировать %1 записей</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2839"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2833"/>
         <source>Remove %1 item(s) ?</source>
         <translation>Удалить %1 записей?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2876"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="2889"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2870"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2883"/>
         <source>Copied %1 item(s)</source>
         <translation>Скопировано %1 записей</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2905"/>
         <source>Config copied</source>
-        <translation>Конфигурация скопирована</translation>
+        <translation type="vanished">Конфигурация скопирована</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3092"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3115"/>
         <source>QR Code not found</source>
         <translation>QR-код не найден</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3416"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3439"/>
         <source>Clear</source>
         <translation>Очистить</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="137"/>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="183"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="132"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="178"/>
         <source>[%1] test error: %2</source>
         <translation>[%1] ошибка теста: %2</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="273"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="268"/>
         <source>Testing</source>
         <translation>Проверка...</translation>
     </message>
     <message>
         <location filename="../../src/dataStore/ProxyEntity.cpp" line="52"/>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="294"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="289"/>
         <source>Unavailable</source>
         <translation>Недоступен</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="661"/>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="743"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="656"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="738"/>
         <source>If there is no response for a long time, it is recommended to restart the software.</source>
         <translation>Если нет ответа в течении долгого времени, рекомендуем перезапустить приложение.</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="675"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="670"/>
         <source>Starting profile %1</source>
         <translation>Запуск профиля %1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="677"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="672"/>
         <source>Failed to start profile %1</source>
         <translation>Не удалось запустить профиль %1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="766"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="761"/>
         <source>Stopping profile %1</source>
         <translation>Остановка профиля %1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="768"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="763"/>
         <source>Failed to stop, please restart the program.</source>
         <translation>Не удалось остановить, пожалуйста, перезапустите приложение.</translation>
     </message>
@@ -2952,38 +2949,38 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>Остановить тестирование</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="588"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="583"/>
         <source>Tun device misbehaving</source>
         <translation>Некорректное поведение устройства TUN</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="593"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="588"/>
         <source>Reset</source>
         <translation>Сброс</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="594"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="589"/>
         <source>Cancel</source>
         <translation>Отмена</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1147"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3445"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3468"/>
         <source>Add new Group</source>
         <translation>Добавить новую группу</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3478"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3501"/>
         <source>Delete selected Group</source>
         <translation>Удалить выбранную группу</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3479"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3502"/>
         <source>Edit selected Group</source>
         <translation>Редактировать выбранную группу</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3488"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3511"/>
         <source>Remove %1?</source>
         <translation>Удалить %1?</translation>
     </message>
@@ -3028,32 +3025,32 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>Ctrl+Alt+I</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="589"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="584"/>
         <source>If you have trouble starting VPN, you can force reset Core process here and then try starting the profile again. The error is %1</source>
         <translation>Если у вас возникли проблемы с запуском режима TUN, можете принудительно сбросить процесс ядра здесь и попробовать перезапустить профиль. Ошибка: %1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2819"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2813"/>
         <source> Confirmation </source>
         <translation> Подтверждение </translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2820"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2814"/>
         <source> Remove %1 item(s) ? </source>
         <translation> Удалить %1 элемент(ов)? </translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3181"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3204"/>
         <source>Remove %1 Unavailable item(s) ?</source>
         <translation>Удалить %1 недоступных элемент(ов)?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3235"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3258"/>
         <source>Remove %1 Invalid item(s) ?</source>
         <translation>Удалить %1 неверных элемент(ов)?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3283"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3306"/>
         <source>Replace domain server addresses with their resolved IPs?</source>
         <translation>Заменить домены в адресах серверов на их разрешённые IP-адреса?</translation>
     </message>
@@ -3083,7 +3080,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>Логи</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2050"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2044"/>
         <source>Please give the core root privileges</source>
         <translation>Пожалуйста, предоставьте ядру права root.</translation>
     </message>
@@ -3144,50 +3141,50 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>Открыть менеджер</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="86"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="81"/>
         <source>Profile test aborted</source>
         <translation>Тест профиля прерван</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="166"/>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="492"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="161"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="487"/>
         <source>Something is very wrong, the subject ent cannot be found!</source>
         <translation>Что-то явно не так, объект ent не может быть найден!</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="172"/>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="498"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="167"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="493"/>
         <source>Profile manager data is corrupted, try again.</source>
         <translation>Данные менеджера профилей повреждены, попробуйте еще раз.</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="311"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="306"/>
         <source>The last speed test did not exit completely, please wait. If it persists, please restart the program.</source>
         <translation>Последний тест скорости не завершился полностью, пожалуйста, подождите. Если проблема сохраняется, пожалуйста, перезапустите программу.</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="215"/>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="322"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="210"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="317"/>
         <source>Failed to build test config: </source>
         <translation>Не удалось создать тестовую конфигурацию: </translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="348"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="343"/>
         <source>Speedtest finished!</source>
         <translation>Тест скорости завершён!</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="267"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="262"/>
         <source>Failed to stop tests</source>
         <translation>Не удалось остановить тест</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="526"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="521"/>
         <source>You need to enable hijack DNS server first</source>
         <translation>Сначала необходимо включить перехват DNS-сервера</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="540"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="535"/>
         <source>Failed to set system dns: </source>
         <translation>Не удалось установить системный DNS: </translation>
     </message>
@@ -3196,12 +3193,12 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation type="vanished">Ошибка BuildConfig</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="633"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="628"/>
         <source>Another profile is starting...</source>
         <translation>Другой профиль запускается...</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="640"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="635"/>
         <source>Another profile is stopping...</source>
         <translation>Другой профиль останавливается...</translation>
     </message>
@@ -3210,27 +3207,25 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation type="vanished">Попытка запустить конфигурацию — ядро не прослушивает порт RPC, поэтому перезапустите его...</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="726"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="721"/>
         <source>Stop return error</source>
         <translation>Ошибка остановки</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2907"/>
         <source>Copy core config</source>
-        <translation>Копировать конфигурацию ядра</translation>
+        <translation type="vanished">Копировать конфигурацию ядра</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2909"/>
         <source>Copy test config</source>
-        <translation>Копировать тестовую конфигурацию</translation>
+        <translation type="vanished">Копировать тестовую конфигурацию</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4171"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4194"/>
         <source>Cannot start</source>
         <translation>Невозможно запустить</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4172"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4195"/>
         <source>Last download request has not finished yet</source>
         <translation>Последний запрос на загрузку еще не завершён</translation>
     </message>
@@ -3240,7 +3235,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>График соединения</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4206"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4229"/>
         <source>Failed to download update assets</source>
         <translation>Не удалось загрузить обновлённые ресурсы</translation>
     </message>
@@ -3259,32 +3254,32 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>Тест скорости всей группы</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="206"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="201"/>
         <source>The last url test did not exit completely, please wait. If it persists, please restart the program.</source>
         <translation>Тест задержки не завершился до конца —&#xa0;пожалуйста, подождите. Если такое поведение повторяется, перезапустите программу</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="256"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="251"/>
         <source>URL test finished!</source>
         <translation>Тест задержки завершён!</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="429"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="424"/>
         <source>Profile speed test aborted</source>
         <translation>Тест скорости профиля был отменён</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="517"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="512"/>
         <source>[%1] speed test error: %2</source>
         <translation>[%1] ошибка теста скорости: %2</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1986"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1980"/>
         <source>User opted for no privilege req, some features may not work</source>
         <translation>Пользователь решил не запрашивать привилегии, некоторые функции могут не работать</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3113"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3136"/>
         <source>Unable to capture screen</source>
         <translation>Невозможно захватить экран</translation>
     </message>
@@ -3338,7 +3333,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/nekobox/ui/security/change_password.ui" line="14"/>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Диалог</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/change_password.ui" line="20"/>
@@ -3348,12 +3343,12 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/nekobox/ui/security/change_password.ui" line="37"/>
         <source>New Password</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Новый пароль</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/change_password.ui" line="54"/>
         <source>Confirm Password</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Подтвердите пароль</translation>
     </message>
 </context>
 <context>
@@ -3372,15 +3367,15 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
 <context>
     <name>QAction</name>
     <message>
-        <location filename="../../src/ui/security_addon.cpp" line="348"/>
+        <location filename="../../src/ui/security_addon.cpp" line="342"/>
         <source>Security Settings</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Настройки безопасности</translation>
     </message>
 </context>
 <context>
     <name>QGuiApplication</name>
     <message>
-        <location filename="../../src/main.cpp" line="262"/>
+        <location filename="../../src/main.cpp" line="258"/>
         <source>QT_LAYOUT_DIRECTION</source>
         <translation>QT_LAYOUT_DIRECTION</translation>
     </message>
@@ -3389,7 +3384,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <name>QObject</name>
     <message>
         <location filename="../../src/stats/traffic/TrafficLooper.cpp" line="115"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="2372"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2366"/>
         <source>Proxy: %1
 Direct: %2</source>
         <translation>Прокси: %1
@@ -3407,7 +3402,7 @@ Direct: %2</source>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="22"/>
         <source>URL detected</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">URL-адрес обнаружен</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="27"/>
@@ -3419,7 +3414,7 @@ How to update?</source>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="37"/>
         <source>Group name</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Название группы</translation>
     </message>
     <message>
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="913"/>
@@ -3475,22 +3470,22 @@ Deleted %3 Profiles:
         <translation>Выбор</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4076"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="4087"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="4131"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="4153"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="4162"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="4197"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4099"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4110"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4154"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4176"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4185"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4220"/>
         <source>Update</source>
         <translation>Обновление</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4131"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4154"/>
         <source>No update</source>
         <translation>Обновлений нет</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4154"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4177"/>
         <source>Update found: %1
 Release note:
 %2</source>
@@ -3499,50 +3494,65 @@ Release note:
 %2</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4159"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4182"/>
         <source>Open in browser</source>
         <translation>Открыть в браузере</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4157"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4180"/>
         <source>Close</source>
         <translation>Закрыть</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="347"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="341"/>
         <source>
 Deleted %1 Duplicates</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Удалены дубликаты: %1.</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="381"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="375"/>
         <source>
 Deleted %1 Invalid</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Удалено %1 Недействительно</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="404"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="398"/>
         <source>
 Deleted %1 Unavailable</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Удалено %1 Недоступно</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1447"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1441"/>
         <source>Check Rule Sets: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Проверить наборы правил: %1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1469"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1463"/>
         <source>Requesting rule-set list error: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ошибка запроса списка наборов правил: %1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2409"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2403"/>
         <source>IP address: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">IP-адрес: %1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4198"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2901"/>
+        <source>Config copied</source>
+        <translation type="unfinished">Конфигурация скопирована</translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/mainwindow.cpp" line="2912"/>
+        <source>Copy core config</source>
+        <translation type="unfinished">Копировать конфигурацию ядра</translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/mainwindow.cpp" line="2913"/>
+        <source>Copy test config</source>
+        <translation type="unfinished">Копировать тестовую конфигурацию</translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/mainwindow.cpp" line="4221"/>
         <source>Update is ready, restart to install?</source>
         <translation>Обновление готово, перезапустить программу для установки?</translation>
     </message>
@@ -3552,7 +3562,7 @@ Deleted %1 Unavailable</source>
         <translation>Использовано: %1, осталось: %2, истекает: %3</translation>
     </message>
     <message>
-        <location filename="../../src/dataStore/Database.cpp" line="123"/>
+        <location filename="../../src/dataStore/Database.cpp" line="119"/>
         <source>Default</source>
         <translation>По умолчанию</translation>
     </message>
@@ -3572,17 +3582,17 @@ Deleted %1 Unavailable</source>
         <translation>Не удалось открыть файл.</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4077"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4100"/>
         <source>Not official support platform</source>
         <translation>Платформа официально не поддерживается</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4088"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4111"/>
         <source>Requesting update error: %1</source>
         <translation>Ошибка запроса обновления: %1</translation>
     </message>
     <message>
-        <location filename="../../src/configs/ConfigBuilder.cpp" line="164"/>
+        <location filename="../../src/configs/ConfigBuilder.cpp" line="159"/>
         <source>Tun mode cannot be used with Custom configs</source>
         <translation>Режим TUN нельзя использовать с польз. конфигурациями</translation>
     </message>
@@ -3597,12 +3607,12 @@ Deleted %1 Unavailable</source>
         <translation>Процесс завершён, применение...</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="179"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="173"/>
         <source>Download Profiles</source>
         <translation>Загрузка профилей</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="180"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="174"/>
         <source>Requesting profile error: %1</source>
         <translation>Ошибка запроса профиля: %1</translation>
     </message>
@@ -3626,112 +3636,124 @@ Deleted %1 Unavailable</source>
         <translation>Выбрать папку</translation>
     </message>
     <message>
-        <location filename="../../src/ui/security_addon.cpp" line="27"/>
+        <location filename="../../src/ui/security_addon.cpp" line="21"/>
         <source>Access denied</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Доступ запрещен</translation>
     </message>
     <message>
-        <location filename="../../src/ui/security_addon.cpp" line="28"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2914"/>
+        <location filename="../../src/ui/security_addon.cpp" line="22"/>
+        <location filename="../../src/ui/setting/dialog_vpn_settings.cpp" line="45"/>
         <source>OK</source>
         <translation type="unfinished">ОК</translation>
     </message>
     <message>
-        <location filename="../../src/sys/Settings.cpp" line="348"/>
+        <location filename="../../src/sys/Settings.cpp" line="361"/>
         <source>System</source>
         <translation type="unfinished">Система</translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/setting/dialog_vpn_settings.cpp" line="37"/>
+        <source>Exclude CIDR&apos;s</source>
+        <translation type="unfinished">Исключить CIDR</translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/setting/dialog_vpn_settings.cpp" line="46"/>
+        <source>Cancel</source>
+        <translation type="unfinished">Отмена</translation>
     </message>
 </context>
 <context>
     <name>QPlatformTheme</name>
     <message>
-        <location filename="../../src/main.cpp" line="61"/>
+        <location filename="../../src/main.cpp" line="57"/>
         <source>Cancel</source>
         <translation>Отмена</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="62"/>
+        <location filename="../../src/main.cpp" line="58"/>
         <source>Apply</source>
         <translation>Применить</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="63"/>
+        <location filename="../../src/main.cpp" line="59"/>
         <source>Yes</source>
         <translation>Да</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="64"/>
+        <location filename="../../src/main.cpp" line="60"/>
         <source>No</source>
         <translation>Нет</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="65"/>
+        <location filename="../../src/main.cpp" line="61"/>
         <source>OK</source>
         <translation>ОК</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="66"/>
+        <location filename="../../src/main.cpp" line="62"/>
         <source>Defaults</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">По умолчанию</translation>
+    </message>
+    <message>
+        <location filename="../../src/main.cpp" line="63"/>
+        <source>Restore Defaults</source>
+        <translation type="unfinished">Восстановить настройки по умолчанию</translation>
+    </message>
+    <message>
+        <location filename="../../src/main.cpp" line="64"/>
+        <source>Discard</source>
+        <translation type="unfinished">Отказаться</translation>
+    </message>
+    <message>
+        <location filename="../../src/main.cpp" line="66"/>
+        <source>Undo</source>
+        <translation type="unfinished">Отменить</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="67"/>
-        <source>Restore Defaults</source>
-        <translation type="unfinished"></translation>
+        <source>Redo</source>
+        <translation type="unfinished">Повторить</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="68"/>
-        <source>Discard</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/main.cpp" line="70"/>
-        <source>Undo</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/main.cpp" line="71"/>
-        <source>Redo</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/main.cpp" line="72"/>
         <source>Cut</source>
         <translation>Вырезать</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="73"/>
+        <location filename="../../src/main.cpp" line="69"/>
         <source>Copy</source>
         <translation>Скопировать</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="74"/>
+        <location filename="../../src/main.cpp" line="70"/>
         <source>Paste</source>
         <translation>Вставить</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="75"/>
+        <location filename="../../src/main.cpp" line="71"/>
         <source>Delete</source>
         <translation>Удалить</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="76"/>
+        <location filename="../../src/main.cpp" line="72"/>
         <source>Select All</source>
         <translation>Выбрать все</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="77"/>
+        <location filename="../../src/main.cpp" line="73"/>
         <source>Stop</source>
         <translation>Остановить</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="78"/>
+        <location filename="../../src/main.cpp" line="74"/>
         <source>Clear</source>
         <translation>Очистить</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="79"/>
+        <location filename="../../src/main.cpp" line="75"/>
         <source>Copy Link Location</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Копировать расположение ссылки</translation>
     </message>
 </context>
 <context>
@@ -3757,17 +3779,17 @@ Deleted %1 Unavailable</source>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="96"/>
         <source>Update url</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Обновить URL</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="130"/>
         <source>Skip update</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Пропустить обновление</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="137"/>
         <source>Update manually</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Обновить вручную</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="267"/>
@@ -3882,13 +3904,13 @@ Deleted %1 Unavailable</source>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="302"/>
         <source>Some rules could not be added:
 </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Не удалось добавить некоторые правила:</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="358"/>
         <source>The provided input cannot be parsed to a valid route rule array:
 </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Предоставленные входные данные невозможно преобразовать в действительный массив правил маршрутизации:</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="441"/>
@@ -3914,7 +3936,7 @@ Deleted %1 Unavailable</source>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="469"/>
         <source>Some rules could not be added, fix them before saving:
 </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Некоторые правила не удалось добавить, исправьте их перед сохранением:</translation>
     </message>
     <message>
         <source>Some rules could not be added, fix them before saving:
@@ -3938,42 +3960,42 @@ Deleted %1 Unavailable</source>
     <message>
         <location filename="../../src/nekobox/ui/security/security.ui" line="14"/>
         <source>Security Settings</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Настройки безопасности</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/security.ui" line="62"/>
         <source>Lock Actions</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Блокировка действий</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/security.ui" line="69"/>
         <source>Lock Settings</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Блокировка настроек</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/security.ui" line="76"/>
         <source>Lock Startup</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Блокировка запуска</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/security.ui" line="113"/>
         <source>Delete Users</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Удаление пользователей</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/security.ui" line="120"/>
         <source>Edit User Roles</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Редактировать роли пользователей</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/security.ui" line="163"/>
         <source>Change UI Password</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Изменить пароль пользовательского интерфейса</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/security.ui" line="170"/>
         <source>Set Proxy Credentials</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Установите учетные данные прокси-сервера</translation>
     </message>
 </context>
 <context>
@@ -3990,7 +4012,7 @@ Deleted %1 Unavailable</source>
 <context>
     <name>SpinnerDialog</name>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="127"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="121"/>
         <source>Invalid JSON Array</source>
         <translation>Неверный массив JSON</translation>
     </message>
@@ -4001,19 +4023,19 @@ Deleted %1 Unavailable</source>
             </translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="128"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="122"/>
         <source>The provided input cannot be parsed to a valid route rule array:
 </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Предоставленные входные данные невозможно преобразовать в действительный массив правил маршрутизации:</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="251"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="245"/>
         <source>Fetching information</source>
         <translation>Получение информации</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="267"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="1188"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="261"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1182"/>
         <source>Download Profiles</source>
         <translation>Загрузка профилей</translation>
     </message>

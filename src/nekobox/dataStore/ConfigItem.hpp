@@ -1,8 +1,5 @@
 #pragma once
-#ifdef _WIN32
-#include <winsock2.h>
-#include <windows.h>
-#endif
+
 #include <QString>
 #include <QJsonObject>
 #include <functional>

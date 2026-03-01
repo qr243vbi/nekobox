@@ -1,8 +1,4 @@
 #include "nekobox/dataStore/ConfigItem.hpp"
-#ifdef _WIN32
-#include <winsock2.h>
-#include <windows.h>
-#endif
 #include "nekobox/dataStore/Configs.hpp"
 #include "nekobox/configs/proxy/Preset.hpp"
 #include "nekobox/configs/proxy/AbstractBean.hpp"
@@ -245,7 +241,7 @@ QByteArray hash = QCryptographicHash::hash(
         ADD_MAP("active_routing", active_routing, string);
    //     _add(new configItem("mw_size", &mw_size, itemType::string));
         ADD_MAP("disable_traffic_stats", disable_traffic_stats, boolean);
-        ADD_MAP("vpn_impl", vpn_implementation, string);
+        ADD_MAP("vpn_stack", vpn_implementation, string);
         ADD_MAP("vpn_mtu", vpn_mtu, integer);
         ADD_MAP("vpn_ipv6", vpn_ipv6, boolean);
         ADD_MAP("vpn_strict_route", vpn_strict_route, boolean);
@@ -294,8 +290,7 @@ QByteArray hash = QCryptographicHash::hash(
         ADD_MAP("speedtest_timeout_ms", speed_test_timeout_ms, integer);
         ADD_MAP("urltest_timeout_ms", url_test_timeout_ms, integer);
         ADD_MAP("show_system_dns", show_system_dns, boolean);
-   //     ADD_MAP("cache_database_name", cache_database, string);
-
+  //      ADD_MAP("cache_database_name", cache_database, string);
         ADD_MAP("simple_dl_url", simple_dl_url, string);
         ADD_MAP("use_json_configs", force_json_configs, booleanPtr);
         ADD_MAP("auto_test_enable", auto_test_enable, boolean);
@@ -307,9 +302,9 @@ QByteArray hash = QCryptographicHash::hash(
         ADD_MAP("auto_test_target_url", auto_test_target_url, string);
         ADD_MAP("auto_test_tun_failover", auto_test_tun_failover, boolean);
   //      ADD_MAP("auto_redirect", auto_redirect, boolean);
-        ADD_MAP("tun_name", tun_name, string);
+        ADD_MAP("route_exclude_addrs", route_exclude_addrs, stringList);
         ADD_MAP("tun_address", tun_address, string);
-        ADD_MAP("tun_address_6", tun_address_6, stringexit);
+        ADD_MAP("tun_address_6", tun_address_6, string);
     STOP_MAP
 
     void DataStore::UpdateStartedId(int id) {

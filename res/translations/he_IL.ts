@@ -1,3858 +1,3805 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="he" sourcelanguage="en_US">
+<?xml version='1.0' encoding='UTF-8'?>
+<TS version="2.1" language="he_IL">
 <context>
     <name>ConfirmForm</name>
     <message>
-        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="14"/>
+        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="14" />
         <source>Dialog</source>
-        <translation type="unfinished">Dialog</translation>
+        <translation type="unfinished">דיאלוג</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="20"/>
+        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="20" />
         <source>Username</source>
-        <translation type="unfinished">Username</translation>
+        <translation type="unfinished">שם משתמש</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="37"/>
+        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="37" />
         <source>Password</source>
-        <translation type="unfinished">Password</translation>
+        <translation type="unfinished">סִיסמָה</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="78"/>
+        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="78" />
         <source>Remember</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">לִזכּוֹר</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="105"/>
+        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="105" />
         <source>seconds</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">שניות</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="110"/>
+        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="110" />
         <source>minutes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">פּרוֹטוֹקוֹל</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="115"/>
+        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="115" />
         <source>hours</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">שעות</translation>
     </message>
 </context>
 <context>
     <name>Dialog</name>
     <message>
-        <location filename="../../src/nekobox/ui/setting/resource_manager.ui" line="14"/>
+        <location filename="../../src/nekobox/ui/setting/resource_manager.ui" line="14" />
         <source>Dialog</source>
-        <translation>Dialog</translation>
+        <translation type="unfinished">דיאלוג</translation>
     </message>
 </context>
 <context>
     <name>DialogBasicSettings</name>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="20"/>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="52"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="20" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="52" />
         <source>Basic Settings</source>
-        <translation>Basic Settings</translation>
+        <translation type="unfinished">הגדרות בסיסיות</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="46"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="46" />
         <source>Common</source>
-        <translation>Common</translation>
+        <translation type="unfinished">מְשׁוּתָף</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="98"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="98" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Socks
                                                                 + HTTP Proxy&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                                                             </source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Socks
-                                                                + HTTP Proxy&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
-                                                            </translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;גרביים
++ פרוקסי HTTP&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="103"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="103" />
         <source>Listen Port</source>
-        <translation>Listen Port</translation>
+        <translation type="unfinished">תקשיב פורט</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="110"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="110" />
         <source>Edit</source>
-        <translation>Edit</translation>
+        <translation type="unfinished">לַעֲרוֹך</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="117"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="117" />
         <source>Custom Inbound</source>
-        <translation>Custom Inbound</translation>
+        <translation type="unfinished">נכנסת מותאמת אישית</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="127"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="127" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Selects a random available port on every run&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Selects a random available port on every run&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;בוחר יציאה זמינה אקראית בכל ריצה&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="130"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="130" />
         <source>Random port</source>
-        <translation>Random port</translation>
+        <translation type="unfinished">יציאה אקראית</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="137"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="137" />
         <source>Proxy Format</source>
-        <translation>Proxy Format</translation>
+        <translation type="unfinished">פורמט פרוקסי</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="144"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="144" />
         <source>Listen Address</source>
-        <translation>Listen Address</translation>
+        <translation type="unfinished">האזנה כתובת</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="164"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="164" />
         <source>Network Settings</source>
-        <translation>Network Settings</translation>
+        <translation type="unfinished">הגדרות רשת</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="185"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="185" />
         <source>Use proxy when activated</source>
-        <translation>Use proxy when activated</translation>
+        <translation type="unfinished">השתמש ב-proxy כאשר הוא מופעל</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="192"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="192" />
         <source>URL Test after profile start</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">בדיקת כתובת URL לאחר תחילת הפרופיל</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="199"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="199" />
         <source>Request update at startup</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">בקש עדכון בעת ​​ההפעלה</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="206"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="206" />
         <source>Ignore TLS errors</source>
-        <translation>Ignore TLS errors</translation>
+        <translation type="unfinished">התעלם משגיאות TLS</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="216"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="216" />
         <source>Test Settings</source>
-        <translation>Test Settings</translation>
+        <translation type="unfinished">הגדרות בדיקה</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="243"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="243" />
         <source>Simple Download URL</source>
-        <translation>Simple Download URL</translation>
+        <translation type="unfinished">כתובת אתר להורדה פשוטה</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="251"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="251" />
         <source>Download + Upload</source>
-        <translation>Download + Upload</translation>
+        <translation type="unfinished">הורדה + העלאה</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="256"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="256" />
         <source>Only Download</source>
-        <translation>Only Download</translation>
+        <translation type="unfinished">רק הורדה</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="261"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="261" />
         <source>Only Upload</source>
-        <translation>Only Upload</translation>
+        <translation type="unfinished">רק העלה</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="266"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="266" />
         <source>Simple Download</source>
-        <translation>Simple Download</translation>
+        <translation type="unfinished">הורדה פשוטה</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="271"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="271" />
         <source>Only Country</source>
-        <translation>Only Country</translation>
+        <translation type="unfinished">רק מדינה</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="279"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="279" />
         <source>Latency Test URL</source>
-        <translation>Latency Test URL</translation>
+        <translation type="unfinished">כתובת האתר של בדיקת השהיה</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="286"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="286" />
         <source>Speedtest mode</source>
-        <translation>Speedtest mode</translation>
+        <translation type="unfinished">מצב בדיקת מהירות</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="293"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="293" />
         <source>Concurrent</source>
-        <translation>Concurrent</translation>
+        <translation type="unfinished">במקביל</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="300"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="300" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;timeout in milliseconds&lt;br/&gt;applies to all tests individually&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;timeout in milliseconds&lt;br/&gt;applies to all tests individually&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;פסק זמן באלפיות שניות&lt;br/&gt;חל על כל הבדיקות בנפרד&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="303"/>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="316"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="303" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="316" />
         <source>Timeout</source>
-        <translation>Timeout</translation>
+        <translation type="unfinished">פסק זמן</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="313"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="313" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Timeout for URLtest in ms&lt;br/&gt;Note that muxed connections take a much longer time for their initial request, and setting this value too low will cause the test to falsely report that the config is not working&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Timeout for URLtest in ms&lt;br/&gt;Note that muxed connections take a much longer time for their initial request, and setting this value too low will cause the test to falsely report that the config is not working&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;זמן קצוב ל-URLtest ב-ms&lt;br/&gt;שים לב שלחיבורים משותפים לוקח הרבה יותר זמן לבקשה הראשונית שלהם, והגדרת ערך זה נמוך מדי תגרום לבדיקה לדווח באופן שגוי שהתצורה לא עובדת&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="360"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="360" />
         <source>Style</source>
-        <translation>Style</translation>
+        <translation type="unfinished">סִגְנוֹן</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="371"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="371" />
         <source>Font</source>
-        <translation>Font</translation>
+        <translation type="unfinished">גוֹפָן</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="381"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="381" />
         <source>Font Size</source>
-        <translation>Font Size</translation>
+        <translation type="unfinished">גודל גופן</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="397"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="397" />
         <source>Connection statistics</source>
-        <translation>Connection statistics</translation>
+        <translation type="unfinished">סטטיסטיקות חיבור</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="410"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="410" />
         <source>Hide dashboard at startup</source>
-        <translation>Hide dashboard at startup</translation>
+        <translation type="unfinished">הסתר את לוח המחוונים בעת ההפעלה</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="417"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="417" />
         <source>Show System DNS option</source>
-        <translation>Show System DNS option</translation>
+        <translation type="unfinished">הצג אפשרות DNS של מערכת</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="434"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="434" />
         <source>Disable tray</source>
-        <translation>Disable tray</translation>
+        <translation type="unfinished">השבת את המגש</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="441"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="441" />
         <source>Set text under menu icons</source>
-        <translation>Set text under menu icons</translation>
+        <translation type="unfinished">הגדר טקסט תחת סמלי התפריט</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="448"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="448" />
         <source>Hide at startup</source>
-        <translation>Hide at startup</translation>
+        <translation type="unfinished">הסתר בעת ההפעלה</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="461"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="461" />
         <source>Max log lines</source>
-        <translation>Max log lines</translation>
+        <translation type="unfinished">מקסימום קווי יומן</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="494"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="494" />
         <source>Theme</source>
-        <translation>Theme</translation>
+        <translation type="unfinished">נוֹשֵׂא</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="502"/>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="524"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="502" />
         <source>System</source>
-        <translation>System</translation>
+        <translation type="unfinished">מַעֲרֶכֶת</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="516"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="516" />
         <source>Language</source>
-        <translation>Language</translation>
+        <translation type="unfinished">שָׂפָה</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="563"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="532" />
         <source>Icon</source>
-        <translation>Icon</translation>
+        <translation type="unfinished">סמל</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="570"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="539" />
         <source>Emoji Font</source>
-        <translation>Emoji Font</translation>
+        <translation type="unfinished">גופן אימוג'י</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="583"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="552" />
         <source>Subscription</source>
-        <translation>Subscription</translation>
+        <translation type="unfinished">מִנוּי</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="611"/>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="831"/>
-        <source>Enable</source>
-        <translation>Enable</translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="618"/>
-        <source>Interval (minute, invalid if less than 30)</source>
-        <translation>Interval (minute, invalid if less than 30)</translation>
-    </message>
-    <message>
-        <source>Clear servers before updating subscription</source>
-        <translation type="vanished">Clear servers before updating subscription</translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="661"/>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;HWID=%1&lt;/p&gt;&lt;p&gt;OS=%2&lt;/p&gt;&lt;p&gt;OS Version=%3&lt;/p&gt;&lt;p&gt;Model=%4&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;HWID=%1&lt;/p&gt;&lt;p&gt;OS=%2&lt;/p&gt;&lt;p&gt;OS Version=%3&lt;/p&gt;&lt;p&gt;Model=%4&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>Enable sending HWID, device model, and OS version when updating subscription</source>
-        <translation type="vanished">Enable sending HWID, device model, and OS version when updating subscription</translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="684"/>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Format: hwid=value,os=value,osVersion=value,model=value&lt;/p&gt;&lt;p&gt;Leave empty to use default values. Only specify the parameters you want to override.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Format: hwid=value,os=value,osVersion=value,model=value&lt;/p&gt;&lt;p&gt;Leave empty to use default values. Only specify the parameters you want to override.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="687"/>
-        <source>Custom System Parameters (optional)</source>
-        <translation>Custom System Parameters (optional)</translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="644"/>
-        <source>hwid=custom_value,os=custom_os,osVersion=custom_version,model=custom_model</source>
-        <translation>hwid=custom_value,os=custom_os,osVersion=custom_version,model=custom_model</translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="677"/>
-        <source>Automatic update</source>
-        <translation>Automatic update</translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="651"/>
-        <source>User Agent</source>
-        <translation>User Agent</translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="589"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="558" />
         <source>Clear servers before update</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">נקה שרתים לפני עדכון</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="596"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="565" />
         <source>URL Test after update</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">בדיקת כתובת URL לאחר עדכון</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="637"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="580" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="800" />
+        <source>Enable</source>
+        <translation type="unfinished">לְאַפשֵׁר</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="587" />
+        <source>Interval (minute, invalid if less than 30)</source>
+        <translation type="unfinished">מרווח (דקה, לא חוקי אם פחות מ-30)</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="606" />
         <source>Remove Duplicates</source>
-        <translation type="unfinished">Remove Duplicates</translation>
+        <translation type="unfinished">הסר כפילויות</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="664"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="613" />
+        <source>hwid=custom_value,os=custom_os,osVersion=custom_version,model=custom_model</source>
+        <translation type="unfinished">hwid=custom_value,os=custom_os,osVersion=custom_version,model=custom_model</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="620" />
+        <source>User Agent</source>
+        <translation type="unfinished">סוכן משתמש</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="630" />
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;HWID=%1&lt;/p&gt;&lt;p&gt;OS=%2&lt;/p&gt;&lt;p&gt;OS Version=%3&lt;/p&gt;&lt;p&gt;Model=%4&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;HWID=%1&lt;/p&gt;&lt;p&gt;OS=%2&lt;/p&gt;&lt;p&gt;OS Version=%3&lt;/p&gt;&lt;p&gt;Model=%4&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="633" />
         <source>Send System Parameters</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">שלח פרמטרים של מערכת</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="694"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="646" />
+        <source>Automatic update</source>
+        <translation type="unfinished">עדכון אוטומטי</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="653" />
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Format: hwid=value,os=value,osVersion=value,model=value&lt;/p&gt;&lt;p&gt;Leave empty to use default values. Only specify the parameters you want to override.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;פורמט: hwid=value,os=value,osVersion=value,model=value&lt;/p&gt;&lt;p&gt;השאר ריק כדי להשתמש בערכי ברירת מחדל.ציין רק את הפרמטרים שברצונך לעקוף.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="656" />
+        <source>Custom System Parameters (optional)</source>
+        <translation type="unfinished">פרמטרי מערכת מותאמים אישית (אופציונלי)</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="663" />
         <source>Remove Invalid</source>
-        <translation type="unfinished">Remove Invalid</translation>
+        <translation type="unfinished">הסר לא חוקי</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="701"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="670" />
         <source>Remove Unavailable</source>
-        <translation type="unfinished">Remove Unavailable</translation>
+        <translation type="unfinished">הסר לא זמין</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="709"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="678" />
         <source>Core</source>
-        <translation>Core</translation>
+        <translation type="unfinished">ליבה</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="748"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="717" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Might
                                                                             Improve Ping and Performance&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                                                                         </source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Might
-                                                                            Improve Ping and Performance&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
-                                                                        </translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;יכול להיות
+שפר את הפינג והביצועים&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="753"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="722" />
         <source>Disable Traffic Stats</source>
-        <translation>Disable Traffic Stats</translation>
+        <translation type="unfinished">השבת את סטטיסטיקת התנועה</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="762"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="731" />
         <source>Multiplex (mux)</source>
-        <translation>Multiplex (mux)</translation>
+        <translation type="unfinished">ריבוי (מקס)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="769"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="738" />
         <source>Loglevel</source>
-        <translation>Loglevel</translation>
+        <translation type="unfinished">רמת יומן</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="781"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="750" />
         <source>concurrency</source>
-        <translation>concurrency</translation>
+        <translation type="unfinished">במקביל</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="791"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="760" />
         <source>Padding</source>
-        <translation>Padding</translation>
+        <translation type="unfinished">ריפוד</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="798"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="767" />
         <source>Default On</source>
-        <translation>Default On</translation>
+        <translation type="unfinished">ברירת מחדל פועל</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="810"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="779" />
         <source>Core Options</source>
-        <translation>Core Options</translation>
+        <translation type="unfinished">אפשרויות ליבה</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="820"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="789" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Settings for the
-                                            sing-box&apos;s built-in NTP client&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
+                                            sing-box's built-in NTP client&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                                         </source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Settings for the
-                                            sing-box&apos;s built-in NTP client&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
-                                        </translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;הגדרות עבור
+לקוח NTP המובנה של sing-box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="825"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="794" />
         <source>NTP Settings</source>
-        <translation>NTP Settings</translation>
+        <translation type="unfinished">הגדרות NTP</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="840"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="809" />
         <source>server</source>
-        <translation>server</translation>
+        <translation type="unfinished">שרת</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="850"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="819" />
         <source>Port</source>
-        <translation>Port</translation>
+        <translation type="unfinished">נָמָל</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="867"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="836" />
         <source>sync interval</source>
-        <translation>sync interval</translation>
+        <translation type="unfinished">מרווח סנכרון</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="874"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="843" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;In
                                                                 minutes&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                                                             </source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;In
-                                                                minutes&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
-                                                            </translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;In
+דקות&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="880"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="849" />
         <source>5m</source>
-        <translation>5m</translation>
+        <translation type="unfinished">5 מ'</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="885"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="854" />
         <source>10m</source>
-        <translation>10m</translation>
+        <translation type="unfinished">10 מ'</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="890"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="859" />
         <source>30m</source>
-        <translation>30m</translation>
+        <translation type="unfinished">30 מ'</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="904"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="873" />
         <source>Security</source>
-        <translation>Security</translation>
+        <translation type="unfinished">בִּטָחוֹן</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="910"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="879" />
         <source>Disable Privilege request</source>
-        <translation>Disable Privilege request</translation>
+        <translation type="unfinished">השבת את בקשת הרשאות</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="917"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="886" />
         <source>Use Mozilla Certificate Store</source>
-        <translation>Use Mozilla Certificate Store</translation>
+        <translation type="unfinished">השתמש בחנות התעודות של Mozilla</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="924"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="893" />
         <source>Skip TLS certificate authentication by default (allowInsecure)</source>
-        <translation>Skip TLS certificate authentication by default (allowInsecure)</translation>
+        <translation type="unfinished">דלג על אימות אישור TLS כברירת מחדל (allowInsecure)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="952"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="921" />
         <source>Default uTLS Fingerprint</source>
-        <translation>Default uTLS Fingerprint</translation>
+        <translation type="unfinished">טביעת אצבע של uTLS המוגדרת כברירת מחדל</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="975"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="944" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Do not attempt to start as Admin unless explicitly requested&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Do not attempt to start as Admin unless explicitly requested&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;אל תנסה להתחיל כמנהל אלא אם כן התבקש מפורשות&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="978"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="947" />
         <source>Always Start as Standard User</source>
-        <translation>Always Start as Standard User</translation>
+        <translation type="unfinished">התחל תמיד כמשתמש רגיל</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="985"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="954" />
         <source>Use Json instead binary for configs</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">השתמש ב-Json במקום בינארי עבור הגדרות</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="999"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="968" />
         <source>Auto-Testing</source>
-        <translation>Auto-Testing</translation>
+        <translation type="unfinished">בדיקה אוטומטית</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1005"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="974" />
         <source>Automatically test proxies in the background and maintain a pool of working proxies</source>
-        <translation>Automatically test proxies in the background and maintain a pool of working proxies</translation>
+        <translation type="unfinished">בדוק אוטומטית פרוקסי ברקע ותחזק מאגר של פרוקסי עובדים</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1008"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="977" />
         <source>Enable Auto-Testing</source>
-        <translation>Enable Auto-Testing</translation>
+        <translation type="unfinished">הפעל בדיקה אוטומטית</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1015"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="984" />
         <source>Test Interval (seconds)</source>
-        <translation>Test Interval (seconds)</translation>
+        <translation type="unfinished">מרווח בדיקה (שניות)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1022"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="991" />
         <source>How often to run the test cycle</source>
-        <translation>How often to run the test cycle</translation>
+        <translation type="unfinished">באיזו תדירות להפעיל את מחזור הבדיקה</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1038"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1007" />
         <source>Proxies Per Cycle</source>
-        <translation>Proxies Per Cycle</translation>
+        <translation type="unfinished">פרוקסי לכל מחזור</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1045"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1014" />
         <source>Number of proxies to test in each cycle</source>
-        <translation>Number of proxies to test in each cycle</translation>
+        <translation type="unfinished">מספר פרוקסי לבדיקה בכל מחזור</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1061"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1030" />
         <source>Working Pool Size</source>
-        <translation>Working Pool Size</translation>
+        <translation type="unfinished">גודל בריכת עבודה</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1068"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1037" />
         <source>Maximum number of verified working proxies to maintain</source>
-        <translation>Maximum number of verified working proxies to maintain</translation>
+        <translation type="unfinished">מספר מרבי של פרוקסי עובדים מאומתים לתחזוקה</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1084"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1053" />
         <source>Latency Threshold (ms)</source>
-        <translation>Latency Threshold (ms)</translation>
+        <translation type="unfinished">סף אחזור (מיליות)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1091"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1060" />
         <source>Maximum latency to consider a proxy as working</source>
-        <translation>Maximum latency to consider a proxy as working</translation>
+        <translation type="unfinished">זמן אחזור מרבי כדי לראות בפרוקסי כעובד</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1110"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1079" />
         <source>Failure Retry Count</source>
-        <translation>Failure Retry Count</translation>
+        <translation type="unfinished">ספירת ניסיון חוזר של כישלונות</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1117"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1086" />
         <source>Number of retry attempts before considering a proxy as failed</source>
-        <translation>Number of retry attempts before considering a proxy as failed</translation>
+        <translation type="unfinished">מספר ניסיונות הנסיונות החוזרים לפני ההתייחסות לשרת proxy ככשל</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1133"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1102" />
         <source>Test Target URL</source>
-        <translation>Test Target URL</translation>
+        <translation type="unfinished">בדוק כתובת אתר יעד</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1140"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1109" />
         <source>URL to test proxies against</source>
-        <translation>URL to test proxies against</translation>
+        <translation type="unfinished">כתובת URL לבדיקת פרוקסי מולם</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1143"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1112" />
         <source>http://cp.cloudflare.com/</source>
-        <translation>http://cp.cloudflare.com/</translation>
+        <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1150"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1119" />
         <source>Automatically switch to another working proxy when TUN mode proxy fails</source>
-        <translation>Automatically switch to another working proxy when TUN mode proxy fails</translation>
+        <translation type="unfinished">עבור אוטומטית ל-proxy עובד אחר כאשר פרוקסי מצב TUN נכשל</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1153"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1122" />
         <source>Enable TUN Failover</source>
-        <translation>Enable TUN Failover</translation>
+        <translation type="unfinished">אפשר TUN Failover</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1161"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1130" />
         <source>Startup</source>
-        <translation>Startup</translation>
+        <translation type="unfinished">הפעלה</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1222"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1191" />
         <source>Geometry</source>
-        <translation>Geometry</translation>
+        <translation type="unfinished">גֵאוֹמֶטרִיָה</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1251"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1220" />
         <source>Autosave geometry</source>
-        <translation>Autosave geometry</translation>
+        <translation type="unfinished">גיאומטריה לשמירה אוטומטית</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1258"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1227" />
         <source>Autosave position</source>
-        <translation>Autosave position</translation>
+        <translation type="unfinished">עמדת שמירה אוטומטית</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1278"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1247" />
         <source>Apply now</source>
-        <translation>Apply now</translation>
+        <translation type="unfinished">הגש בקשה עכשיו</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1394"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1363" />
         <source>Width</source>
-        <translation>Width</translation>
+        <translation type="unfinished">רוֹחַב</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1407"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1376" />
         <source>X</source>
-        <translation>X</translation>
+        <translation type="unfinished">X</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1440"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1409" />
         <source>Y</source>
-        <translation>Y</translation>
+        <translation type="unfinished">י</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1453"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1422" />
         <source>Height</source>
-        <translation>Height</translation>
+        <translation type="unfinished">גוֹבַה</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1540"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1509" />
         <source>Core Executable Path</source>
-        <translation>Core Executable Path</translation>
+        <translation type="unfinished">נתיב הפעלה ליבה</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1569"/>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1743"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1538" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1712" />
         <source>Use default</source>
-        <translation>Use default</translation>
+        <translation type="unfinished">השתמש ברירת מחדל</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1576"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1545" />
         <source>Remote Control</source>
-        <translation>Remote Control</translation>
+        <translation type="unfinished">שְׁלַט רָחוֹק</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1602"/>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1776"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1571" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1745" />
         <source>Select</source>
-        <translation>Select</translation>
+        <translation type="unfinished">לִבחוֹר</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1714"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1683" />
         <source>Resources Directory</source>
-        <translation>Resources Directory</translation>
+        <translation type="unfinished">ספריית משאבים</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1750"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1719" />
         <source>Resource Manager</source>
-        <translation>Resource Manager</translation>
+        <translation type="unfinished">מנהל משאבים</translation>
     </message>
 </context>
 <context>
     <name>DialogEditGroup</name>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="20"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="20" />
         <source>Edit Group</source>
-        <translation>Edit Group</translation>
+        <translation type="unfinished">ערוך קבוצה</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="36"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="36" />
         <source>Common</source>
-        <translation>Common</translation>
+        <translation type="unfinished">מְשׁוּתָף</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="102"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="102" />
         <source>Name</source>
-        <translation>Name</translation>
+        <translation type="unfinished">שֵׁם</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="109"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="109" />
         <source>Type</source>
-        <translation>Type</translation>
+        <translation type="unfinished">סוּג</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="117"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="117" />
         <source>Basic</source>
-        <translation>Basic</translation>
+        <translation type="unfinished">בְּסִיסִי</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="122"/>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="287"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="122" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="287" />
         <source>Subscription</source>
-        <translation>Subscription</translation>
+        <translation type="unfinished">מִנוּי</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="135"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="135" />
         <source>Manually column width</source>
-        <translation>Manually column width</translation>
+        <translation type="unfinished">רוחב עמודה באופן ידני</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="142"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="142" />
         <source>Archive</source>
-        <translation>Archive</translation>
+        <translation type="unfinished">ארכיון</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="155"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="155" />
         <source>Proxy</source>
-        <translation>Proxy</translation>
+        <translation type="unfinished">פרוקסי</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="194"/>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="221"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="194" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="221" />
         <source>None</source>
-        <translation>None</translation>
+        <translation type="unfinished">אַף לֹא אֶחָד</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="201"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="201" />
         <source>Front Proxy</source>
-        <translation>Front Proxy</translation>
+        <translation type="unfinished">פרוקסי קדמי</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="208"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="208" />
         <source>Landing Proxy</source>
-        <translation>Landing Proxy</translation>
+        <translation type="unfinished">פרוקסי נחיתה</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="232"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="232" />
         <source>Share</source>
-        <translation>Share</translation>
+        <translation type="unfinished">לַחֲלוֹק</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="238"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="238" />
         <source>Copy profile share links</source>
-        <translation>Copy profile share links</translation>
+        <translation type="unfinished">העתק קישורי שיתוף פרופיל</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="245"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="245" />
         <source>Copy profile share links (Custom Links)</source>
-        <translation>Copy profile share links (Custom Links)</translation>
+        <translation type="unfinished">העתק קישורי שיתוף פרופיל (קישורים מותאמים אישית)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="253"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="253" />
         <source>Notes</source>
-        <translation>Notes</translation>
+        <translation type="unfinished">הערות</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="314"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="314" />
         <source>Skip automatic update</source>
-        <translation>Skip automatic update</translation>
+        <translation type="unfinished">דלג על עדכון אוטומטי</translation>
     </message>
     <message>
-        <location filename="../../src/ui/group/dialog_edit_group.cpp" line="58"/>
+        <location filename="../../src/ui/group/dialog_edit_group.cpp" line="58" />
         <source>Copied</source>
-        <translation>Copied</translation>
+        <translation type="unfinished">מוּעֲתָק</translation>
     </message>
     <message>
-        <location filename="../../src/ui/group/dialog_edit_group.cpp" line="357"/>
+        <location filename="../../src/ui/group/dialog_edit_group.cpp" line="357" />
         <source>Warning</source>
-        <translation>Warning</translation>
+        <translation type="unfinished">אַזהָרָה</translation>
     </message>
     <message>
-        <location filename="../../src/ui/group/dialog_edit_group.cpp" line="357"/>
+        <location filename="../../src/ui/group/dialog_edit_group.cpp" line="357" />
         <source>Please input URL</source>
-        <translation>Please input URL</translation>
+        <translation type="unfinished">נא להזין כתובת URL</translation>
     </message>
 </context>
 <context>
     <name>DialogEditProfile</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="26"/>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="662"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="26" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="662" />
         <source>Edit</source>
-        <translation>Edit</translation>
+        <translation type="unfinished">לַעֲרוֹך</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="56"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="56" />
         <source>Common</source>
-        <translation>Common</translation>
+        <translation type="unfinished">מְשׁוּתָף</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="73"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="73" />
         <source>Type</source>
-        <translation>Type</translation>
+        <translation type="unfinished">סוּג</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="80"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="80" />
         <source>Port</source>
-        <translation>Port</translation>
+        <translation type="unfinished">נָמָל</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="87"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="87" />
         <source>Address</source>
-        <translation>Address</translation>
+        <translation type="unfinished">כְּתוֹבֶת</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="94"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="94" />
         <source>Name</source>
-        <translation>Name</translation>
+        <translation type="unfinished">שֵׁם</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="139"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="139" />
         <source>Settings</source>
-        <translation>Settings</translation>
+        <translation type="unfinished">הגדרות</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="166"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="166" />
         <source>The underlying transport method. It must be consistent with the server, otherwise, the connection cannot be established.</source>
-        <translation>The underlying transport method. It must be consistent with the server, otherwise, the connection cannot be established.</translation>
+        <translation type="unfinished">שיטת ההובלה הבסיסית.זה חייב להיות עקבי עם השרת, אחרת לא ניתן ליצור את החיבור.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="169"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="169" />
         <source>Network</source>
-        <translation>Network</translation>
+        <translation type="unfinished">רֶשֶׁת</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="226"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="226" />
         <source>Server support is required</source>
-        <translation>Server support is required</translation>
+        <translation type="unfinished">נדרשת תמיכה בשרת</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="229"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="229" />
         <source>Multiplex</source>
-        <translation>Multiplex</translation>
+        <translation type="unfinished">מרובה</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="236"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="236" />
         <source>Transport Layer Security. It must be consistent with the server, otherwise, the connection cannot be established.</source>
-        <translation>Transport Layer Security. It must be consistent with the server, otherwise, the connection cannot be established.</translation>
+        <translation type="unfinished">אבטחת שכבת תחבורה.זה חייב להיות עקבי עם השרת, אחרת לא ניתן ליצור את החיבור.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="239"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="239" />
         <source>Security</source>
-        <translation>Security</translation>
+        <translation type="unfinished">בִּטָחוֹן</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="260"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="260" />
         <source>UDP FullCone Packet encoding for implementing features such as UDP FullCone. Server support is required, if the wrong selection is made, the connection cannot be made. Please leave it blank.</source>
-        <translation>UDP FullCone Packet encoding for implementing features such as UDP FullCone. Server support is required, if the wrong selection is made, the connection cannot be made. Please leave it blank.</translation>
+        <translation type="unfinished">קידוד UDP FullCone Packet ליישום תכונות כגון UDP FullCone.נדרשת תמיכה בשרת, אם בוצעה בחירה שגויה, לא ניתן ליצור את החיבור.אנא השאר אותו ריק.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="263"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="263" />
         <source>Packet Encoding</source>
-        <translation>Packet Encoding</translation>
+        <translation type="unfinished">קידוד מנות</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="271"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="271" />
         <source>Keep Default</source>
-        <translation>Keep Default</translation>
+        <translation type="unfinished">שמור על ברירת מחדל</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="276"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="276" />
         <source>On</source>
-        <translation>On</translation>
+        <translation type="unfinished">עַל</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="281"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="281" />
         <source>Off</source>
-        <translation>Off</translation>
+        <translation type="unfinished">כבוי</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="294"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="294" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Overrides mux to On&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Overrides mux to On&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;עוקף את mux ל-On&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="297"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="297" />
         <source>Enable TCP Brutal</source>
-        <translation>Enable TCP Brutal</translation>
+        <translation type="unfinished">אפשר TCP Brutal</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="311"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="311" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Server to Client TCP Brutal Speed&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Server to Client TCP Brutal Speed&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;מהירות אכזרית TCP משרת ללקוח&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="314"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="314" />
         <source>TCP Brutal Speed</source>
-        <translation>TCP Brutal Speed</translation>
+        <translation type="unfinished">TCP מהירות אכזרית</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="324"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="324" />
         <source>Mb/s</source>
-        <translation>Mb/s</translation>
+        <translation type="unfinished">Mb/s</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="345"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="345" />
         <source>Custom Outbound Settings</source>
-        <translation>Custom Outbound Settings</translation>
+        <translation type="unfinished">הגדרות יוצאות מותאמות אישית</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="361"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="361" />
         <source>Custom Config Settings</source>
-        <translation>Custom Config Settings</translation>
+        <translation type="unfinished">הגדרות תצורה מותאמת אישית</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="381"/>
-        <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="696"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="381" />
+        <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="696" />
         <source>Apply settings to this group</source>
-        <translation>Apply settings to this group</translation>
+        <translation type="unfinished">החל הגדרות על קבוצה זו</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="436"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="436" />
         <source>Network Settings (%1)</source>
-        <translation>Network Settings (%1)</translation>
+        <translation type="unfinished">הגדרות רשת (% 1)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="458"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="458" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="541"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="541" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Method of http request, will be converted to uppercase&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Method of http request, will be converted to uppercase&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;שיטה של ​​בקשת http, תומר לאותיות רישיות&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="544"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="544" />
         <source>Method</source>
-        <translation>Method</translation>
+        <translation type="unfinished">שִׁיטָה</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="578"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="578" />
         <source>header type</source>
-        <translation>header type</translation>
+        <translation type="unfinished">סוג כותרת</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="594"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="594" />
         <source>TLS Security Settings</source>
-        <translation>TLS Security Settings</translation>
+        <translation type="unfinished">הגדרות אבטחה של TLS</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="638"/>
-        <source>When enabled, V2Ray will not check the validity of the TLS certificate provided by the remote host (the security is equivalent to plaintext)</source>
-        <translation>When enabled, V2Ray will not check the validity of the TLS certificate provided by the remote host (the security is equivalent to plaintext)</translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="641"/>
-        <source>Allow insecure</source>
-        <translation>Allow insecure</translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="611"/>
-        <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="627"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="611" />
+        <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="627" />
         <source>Certificate</source>
-        <translation>Certificate</translation>
+        <translation type="unfinished">תְעוּדָה</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="648"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="638" />
+        <source>When enabled, V2Ray will not check the validity of the TLS certificate provided by the remote host (the security is equivalent to plaintext)</source>
+        <translation type="unfinished">כאשר מופעל, V2Ray לא יבדוק את תוקפו של אישור ה-TLS שסופק על ידי המארח המרוחק (האבטחה שווה לטקסט רגיל)</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="641" />
+        <source>Allow insecure</source>
+        <translation type="unfinished">אפשר לא בטוח</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="648" />
         <source>Enable ECH</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">אפשר ECH</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="655"/>
-        <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="638"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="655" />
+        <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="638" />
         <source>ECH Config</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ECH Config</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="673"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="673" />
         <source>QSN</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">QSN</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="680"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="680" />
         <source>Server name indication, clear text.</source>
-        <translation>Server name indication, clear text.</translation>
+        <translation type="unfinished">ציון שם השרת, טקסט ברור.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="693"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="693" />
         <source>Application layer protocol negotiation, clear text. Please separate them with commas.</source>
-        <translation>Application layer protocol negotiation, clear text. Please separate them with commas.</translation>
+        <translation type="unfinished">משא ומתן על פרוטוקול שכבת יישומים, טקסט ברור.נא להפריד ביניהם בפסיקים.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="720"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="720" />
         <source>TLS Camouflage Settings</source>
-        <translation>TLS Camouflage Settings</translation>
+        <translation type="unfinished">הגדרות הסוואה של TLS</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="774"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="774" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;May degrade performance, try record fragment first&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;May degrade performance, try record fragment first&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;עשוי לפגוע בביצועים, נסה תחילה להקליט קטע&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="777"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="777" />
         <source>Enable TLS fragment</source>
-        <translation>Enable TLS fragment</translation>
+        <translation type="unfinished">אפשר מקטע TLS</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="784"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="784" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;time format, like 500ms, 10ms etc&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;time format, like 500ms, 10ms etc&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;פורמט זמן, כמו 500ms, 10ms וכו'&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="787"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="787" />
         <source>Fallback Delay</source>
-        <translation>Fallback Delay</translation>
+        <translation type="unfinished">עיכוב נגיעה</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="800"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="800" />
         <source>Enable TLS Record Fragment</source>
-        <translation>Enable TLS Record Fragment</translation>
+        <translation type="unfinished">אפשר TLS Record Fragment</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="839"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="839" />
         <source>Reality public key. If not empty, turn TLS into REALITY.</source>
-        <translation>Reality public key. If not empty, turn TLS into REALITY.</translation>
+        <translation type="unfinished">מפתח ציבורי של מציאות.אם לא ריק, הפוך TLS למציאות.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="852"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="852" />
         <source>Reality short id. Accept only one value.</source>
-        <translation>Reality short id. Accept only one value.</translation>
+        <translation type="unfinished">מציאות קצר מזהה.קבל רק ערך אחד.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="855"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="855" />
         <source>Reality SID</source>
-        <translation>Reality SID</translation>
+        <translation type="unfinished">מציאות SID</translation>
     </message>
     <message>
-        <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="219"/>
+        <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="219" />
         <source>Custom (%1 outbound)</source>
-        <translation>Custom (%1 outbound)</translation>
+        <translation type="unfinished">מותאם אישית (% 1 יוצא)</translation>
     </message>
     <message>
-        <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="221"/>
+        <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="221" />
         <source>Custom (%1 config)</source>
-        <translation>Custom (%1 config)</translation>
+        <translation type="unfinished">מותאם אישית (תצורה% 1)</translation>
     </message>
     <message>
-        <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="223"/>
+        <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="223" />
         <source>Extra Core</source>
-        <translation>Extra Core</translation>
+        <translation type="unfinished">תוספת ליבה</translation>
     </message>
     <message>
-        <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="585"/>
-        <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="590"/>
-        <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="595"/>
-        <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="600"/>
-        <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="608"/>
+        <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="585" />
+        <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="590" />
+        <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="595" />
+        <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="600" />
+        <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="608" />
         <source>Not set</source>
-        <translation>Not set</translation>
+        <translation type="unfinished">לא מוגדר</translation>
     </message>
     <message>
-        <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="587"/>
-        <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="592"/>
-        <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="597"/>
-        <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="602"/>
-        <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="610"/>
+        <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="587" />
+        <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="592" />
+        <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="597" />
+        <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="602" />
+        <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="610" />
         <source>Already set</source>
-        <translation>Already set</translation>
+        <translation type="unfinished">כבר מוגדר</translation>
     </message>
     <message>
-        <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="668"/>
+        <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="668" />
         <source>Confirm</source>
-        <translation>Confirm</translation>
+        <translation type="unfinished">לְאַשֵׁר</translation>
     </message>
 </context>
 <context>
     <name>DialogGroupChooseProxy</name>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="14"/>
+        <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="14" />
         <source>Landing proxy for group Group2</source>
-        <translation>Landing proxy for group Group2</translation>
+        <translation type="unfinished">פרוקסי נחיתה עבור קבוצה 2</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="41"/>
+        <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="41" />
         <source>Proxy:</source>
-        <translation>Proxy:</translation>
+        <translation type="unfinished">פרוקסי:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="48"/>
+        <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="48" />
         <source>Search:</source>
-        <translation>Search:</translation>
+        <translation type="unfinished">לְחַפֵּשׂ:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="68"/>
+        <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="68" />
         <source>Group1</source>
-        <translation>Group1</translation>
+        <translation type="unfinished">קבוצה 1</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="74"/>
+        <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="74" />
         <source>Group2</source>
-        <translation>Group2</translation>
+        <translation type="unfinished">קבוצה 2</translation>
     </message>
     <message>
-        <location filename="../../src/ui/group/dialog_edit_group.cpp" line="414"/>
+        <location filename="../../src/ui/group/dialog_edit_group.cpp" line="414" />
         <source>Front proxy for group %1</source>
-        <translation>Front proxy for group %1</translation>
+        <translation type="unfinished">פרוקסי קדמי עבור קבוצה %1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/group/dialog_edit_group.cpp" line="416"/>
+        <location filename="../../src/ui/group/dialog_edit_group.cpp" line="416" />
         <source>Front proxy: </source>
-        <translation>Front proxy: </translation>
+        <translation type="unfinished">פרוקסי קדמי:</translation>
     </message>
     <message>
-        <location filename="../../src/ui/group/dialog_edit_group.cpp" line="427"/>
+        <location filename="../../src/ui/group/dialog_edit_group.cpp" line="427" />
         <source>Landing proxy for group %1</source>
-        <translation>Landing proxy for group %1</translation>
+        <translation type="unfinished">פרוקסי נחיתה עבור קבוצה %1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/group/dialog_edit_group.cpp" line="429"/>
+        <location filename="../../src/ui/group/dialog_edit_group.cpp" line="429" />
         <source>Landing proxy: </source>
-        <translation>Landing proxy: </translation>
+        <translation type="unfinished">פרוקסי נחיתה:</translation>
     </message>
     <message>
-        <location filename="../../src/ui/group/dialog_edit_group.cpp" line="442"/>
-        <location filename="../../src/ui/setting/RouteItem.cpp" line="140"/>
+        <location filename="../../src/ui/group/dialog_edit_group.cpp" line="442" />
+        <location filename="../../src/ui/setting/RouteItem.cpp" line="140" />
         <source>Proxy</source>
-        <translation>Proxy</translation>
+        <translation type="unfinished">פרוקסי</translation>
     </message>
     <message>
-        <location filename="../../src/ui/group/dialog_edit_group.cpp" line="445"/>
-        <location filename="../../src/ui/setting/RouteItem.cpp" line="142"/>
+        <location filename="../../src/ui/group/dialog_edit_group.cpp" line="445" />
+        <location filename="../../src/ui/setting/RouteItem.cpp" line="142" />
         <source>Direct</source>
-        <translation>Direct</translation>
+        <translation type="unfinished">יָשִׁיר</translation>
     </message>
     <message>
-        <location filename="../../src/ui/group/dialog_edit_group.cpp" line="449"/>
+        <location filename="../../src/ui/group/dialog_edit_group.cpp" line="449" />
         <source>None</source>
-        <translation>None</translation>
+        <translation type="unfinished">אַף לֹא אֶחָד</translation>
     </message>
     <message>
-        <location filename="../../src/ui/profile/edit_chain.cpp" line="46"/>
+        <location filename="../../src/ui/profile/edit_chain.cpp" line="46" />
         <source>Add proxy</source>
-        <translation>Add proxy</translation>
+        <translation type="unfinished">הוסף פרוקסי</translation>
     </message>
     <message>
-        <location filename="../../src/ui/profile/edit_chain.cpp" line="66"/>
+        <location filename="../../src/ui/profile/edit_chain.cpp" line="66" />
         <source>Replace %1 proxy</source>
-        <translation>Replace %1 proxy</translation>
+        <translation type="unfinished">החלף את %1 proxy</translation>
     </message>
     <message>
-        <location filename="../../src/ui/setting/RouteItem.cpp" line="135"/>
+        <location filename="../../src/ui/setting/RouteItem.cpp" line="135" />
         <source>Select outbound</source>
-        <translation>Select outbound</translation>
+        <translation type="unfinished">בחר יוצא</translation>
     </message>
     <message>
-        <location filename="../../src/ui/setting/RouteItem.cpp" line="137"/>
+        <location filename="../../src/ui/setting/RouteItem.cpp" line="137" />
         <source>Outbound: </source>
-        <translation>Outbound: </translation>
+        <translation type="unfinished">יוצא:</translation>
     </message>
     <message>
-        <location filename="../../src/ui/setting/RouteItem.cpp" line="144"/>
+        <location filename="../../src/ui/setting/RouteItem.cpp" line="144" />
         <source>Outbound</source>
-        <translation>Outbound</translation>
+        <translation type="unfinished">יוצא</translation>
     </message>
 </context>
 <context>
     <name>DialogHotkey</name>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="14"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="14" />
         <source>Hotkey</source>
-        <translation>Hotkey</translation>
+        <translation type="unfinished">מקש קיצור</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="24"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="24" />
         <source>Global</source>
-        <translation>Global</translation>
+        <translation type="unfinished">גלוֹבָּלִי</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="30"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="30" />
         <source>Trigger main window</source>
-        <translation>Trigger main window</translation>
+        <translation type="unfinished">הפעל את החלון הראשי</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="40"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="40" />
         <source>Show groups</source>
-        <translation>Show groups</translation>
+        <translation type="unfinished">הצג קבוצות</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="50"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="50" />
         <source>Show routes</source>
-        <translation>Show routes</translation>
+        <translation type="unfinished">הצג מסלולים</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="60"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="60" />
         <source>Proxy mode</source>
-        <translation>Proxy mode</translation>
+        <translation type="unfinished">מצב פרוקסי</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="70"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="70" />
         <source>Toggle System Proxy</source>
-        <translation>Toggle System Proxy</translation>
+        <translation type="unfinished">החלף את ה-Proxy של המערכת</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="81"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="81" />
         <source>Shortcuts</source>
-        <translation>Shortcuts</translation>
+        <translation type="unfinished">קיצורי דרך</translation>
     </message>
 </context>
 <context>
     <name>DialogManageGroups</name>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_manage_groups.ui" line="17"/>
+        <location filename="../../src/nekobox/ui/group/dialog_manage_groups.ui" line="17" />
         <source>Groups</source>
-        <translation>Groups</translation>
+        <translation type="unfinished">קבוצות</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_manage_groups.ui" line="35"/>
+        <location filename="../../src/nekobox/ui/group/dialog_manage_groups.ui" line="35" />
         <source>New group</source>
-        <translation>New group</translation>
+        <translation type="unfinished">קבוצה חדשה</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_manage_groups.ui" line="45"/>
+        <location filename="../../src/nekobox/ui/group/dialog_manage_groups.ui" line="45" />
         <source>Update all subscriptions</source>
-        <translation>Update all subscriptions</translation>
+        <translation type="unfinished">עדכן את כל המנויים</translation>
     </message>
     <message>
-        <location filename="../../src/ui/group/dialog_manage_groups.cpp" line="56"/>
+        <location filename="../../src/ui/group/dialog_manage_groups.cpp" line="56" />
         <source>Confirmation</source>
-        <translation>Confirmation</translation>
+        <translation type="unfinished">אִשׁוּר</translation>
     </message>
     <message>
-        <location filename="../../src/ui/group/dialog_manage_groups.cpp" line="56"/>
+        <location filename="../../src/ui/group/dialog_manage_groups.cpp" line="56" />
         <source>Update all subscriptions?</source>
-        <translation>Update all subscriptions?</translation>
+        <translation type="unfinished">לעדכן את כל המנויים?</translation>
     </message>
 </context>
 <context>
     <name>DialogManageRoutes</name>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="14"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="14" />
         <source>Routes</source>
-        <translation>Routes</translation>
+        <translation type="unfinished">מסלולים</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="24"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="24" />
         <source>Common</source>
-        <translation>Common</translation>
+        <translation type="unfinished">מְשׁוּתָף</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="39"/>
-        <source>Sniffs the connections intial packet(s?) to identify the protocol and the SNI. Sniff result for destination also rewrites the destionation of the connection to the sniffed SNI. For more data on the sniffed protocol refer to the sing-box&apos;s documentation.</source>
-        <translation>Sniffs the connections intial packet(s?) to identify the protocol and the SNI. Sniff result for destination also rewrites the destionation of the connection to the sniffed SNI. For more data on the sniffed protocol refer to the sing-box&apos;s documentation.</translation>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="39" />
+        <source>Sniffs the connections intial packet(s?) to identify the protocol and the SNI. Sniff result for destination also rewrites the destionation of the connection to the sniffed SNI. For more data on the sniffed protocol refer to the sing-box's documentation.</source>
+        <translation type="unfinished">מרחרח את החבילות הראשוניות של החיבורים כדי לזהות את הפרוטוקול ואת ה-SNI.תוצאת הרחרח ליעד גם משכתבת את יציאת החיבור ל-SNI המרחרח.למידע נוסף על פרוטוקול הרחרח, עיין בתיעוד של sing-box.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="42"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="42" />
         <source>Sniffing Mode</source>
-        <translation>Sniffing Mode</translation>
+        <translation type="unfinished">מצב רחרוח</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="50"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="50" />
         <source>Disable</source>
-        <translation>Disable</translation>
+        <translation type="unfinished">השבת</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="55"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="55" />
         <source>Sniff result for routing</source>
-        <translation>Sniff result for routing</translation>
+        <translation type="unfinished">תוצאת רחרח לניתוב</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="69"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="69" />
         <source>Routing Profile</source>
-        <translation>Routing Profile</translation>
+        <translation type="unfinished">פרופיל ניתוב</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="92"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="92" />
         <source>Inbound Domain Strategy</source>
-        <translation>Inbound Domain Strategy</translation>
+        <translation type="unfinished">אסטרטגיית דומיין נכנס</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="107"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="107" />
         <source>GitHub</source>
-        <translation>GitHub</translation>
+        <translation type="unfinished">GitHub</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="112"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="112" />
         <source>jsDelivr(Cloudflare)</source>
-        <translation>jsDelivr(Cloudflare)</translation>
+        <translation type="unfinished">jsDelivr(Cloudflare)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="117"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="117" />
         <source>jsDelivr(Gcore)</source>
-        <translation>jsDelivr(Gcore)</translation>
+        <translation type="unfinished">jsDelivr(Gcore)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="122"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="122" />
         <source>jsDelivr(Quantil)</source>
-        <translation>jsDelivr(Quantil)</translation>
+        <translation type="unfinished">jsDelivr(Quantil)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="127"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="127" />
         <source>jsDelivr(Fastly)</source>
-        <translation>jsDelivr(Fastly)</translation>
+        <translation type="unfinished">jsDelivr(מהיר)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="132"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="132" />
         <source>jsDelivr(CDN)</source>
-        <translation>jsDelivr(CDN)</translation>
+        <translation type="unfinished">jsDelivr(CDN)‎</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="149"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="149" />
         <source>Remote Rule-set Mirror</source>
-        <translation>Remote Rule-set Mirror</translation>
+        <translation type="unfinished">מראה מרוחקת של סט כללים</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="162"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="162" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Resolve domains to IP before connect, also affects the server address as well&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Resolve domains to IP before connect, also affects the server address as well&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;פתור דומיינים ל-IP לפני החיבור, משפיע גם על כתובת השרת&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="165"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="165" />
         <source>Outbound Domain Strategy</source>
-        <translation>Outbound Domain Strategy</translation>
+        <translation type="unfinished">אסטרטגיית דומיין יוצא</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="178"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="178" />
         <source>RuleSet download url</source>
-        <translation>RuleSet download url</translation>
+        <translation type="unfinished">כתובת אתר להורדה של RuleSet</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="192"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="192" />
         <source>Hijack</source>
-        <translation>Hijack</translation>
+        <translation type="unfinished">לַחטוֹף</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="198"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="198" />
         <source>DNS Server</source>
-        <translation>DNS Server</translation>
+        <translation type="unfinished">שרת DNS</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="216"/>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="312"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="216" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="312" />
         <source>Listen Port</source>
-        <translation>Listen Port</translation>
+        <translation type="unfinished">תקשיב פורט</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="226"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="226" />
         <source>IPv4 Response</source>
-        <translation>IPv4 Response</translation>
+        <translation type="unfinished">תגובת IPv4</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="236"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="236" />
         <source>IPv6 Response</source>
-        <translation>IPv6 Response</translation>
+        <translation type="unfinished">תגובת IPv6</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="246"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="246" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Following format should be used:&lt;br/&gt;domain:a.com&lt;/p&gt;&lt;p&gt;suffix:a.com&lt;/p&gt;&lt;p&gt;regex:someregex&lt;/p&gt;&lt;p&gt;rule_set:nameOfRuleSet&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Following format should be used:&lt;br/&gt;domain:a.com&lt;/p&gt;&lt;p&gt;suffix:a.com&lt;/p&gt;&lt;p&gt;regex:someregex&lt;/p&gt;&lt;p&gt;rule_set:nameOfRuleSet&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;יש להשתמש בפורמט הבא:&lt;br/&gt;domain:a.com&lt;/p&gt;&lt;p&gt;suffix:a.com&lt;/p&gt;&lt;p&gt;regex:someregex&lt;/p&gt;&lt;p&gt;rule_set:nameOfRuleSet&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="249"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="249" />
         <source>Rules</source>
-        <translation>Rules</translation>
+        <translation type="unfinished">כללים</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="280"/>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="319"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="280" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="319" />
         <source>Enable</source>
-        <translation>Enable</translation>
+        <translation type="unfinished">לְאַפשֵׁר</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="287"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="287" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Whether to listen on 0.0.0.0 so that other devices on LAN can use this server&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Whether to listen on 0.0.0.0 so that other devices on LAN can use this server&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;האם להאזין ב-0.0.0.0 כדי שמכשירים אחרים ברשת LAN יוכלו להשתמש בשרת זה&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="290"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="290" />
         <source>Allow Lan to Connect</source>
-        <translation>Allow Lan to Connect</translation>
+        <translation type="unfinished">אפשר ל-LAN להתחבר</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="303"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="303" />
         <source>Redirect Settings</source>
-        <translation>Redirect Settings</translation>
+        <translation type="unfinished">הגדרות הפניה מחדש</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="329"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="329" />
         <source>Listen Address</source>
-        <translation>Listen Address</translation>
+        <translation type="unfinished">האזנה כתובת</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="340"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="340" />
         <source>DNS</source>
-        <translation>DNS</translation>
+        <translation type="unfinished">DNS</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="346"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="346" />
         <source>Simple DNS Settings</source>
-        <translation>Simple DNS Settings</translation>
+        <translation type="unfinished">הגדרות DNS פשוטות</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="352"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="352" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;examples:&lt;br/&gt;tls://8.8.8.8&lt;br/&gt;https://domain/path&lt;/p&gt;&lt;p&gt;tcp://8.8.8.8:1234&lt;/p&gt;&lt;p&gt;dhcp://auto&lt;/p&gt;&lt;p&gt;h3://domain/path&lt;/p&gt;&lt;p&gt;quic://domain:4632&lt;/p&gt;&lt;p&gt;etc&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;examples:&lt;br/&gt;tls://8.8.8.8&lt;br/&gt;https://domain/path&lt;/p&gt;&lt;p&gt;tcp://8.8.8.8:1234&lt;/p&gt;&lt;p&gt;dhcp://auto&lt;/p&gt;&lt;p&gt;h3://domain/path&lt;/p&gt;&lt;p&gt;quic://domain:4632&lt;/p&gt;&lt;p&gt;etc&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;דוגמאות:&lt;br/&gt;tls://8.8.8.8&lt;br/&gt;https://domain/path&lt;/p&gt;&lt;p&gt;tcp://8.8.8.8:1234&lt;/p&gt;&lt;p&gt;dhcp://auto&lt;/p&gt;&lt;p&gt;h3://domain/path&lt;/p&gt;&lt;p&gt;quic://et://et&lt;/p&gt;&lt;p&gt;html</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="355"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="355" />
         <source>Remote DNS</source>
-        <translation>Remote DNS</translation>
+        <translation type="unfinished">DNS מרוחק</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="367"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="367" />
         <source>Default DNS server</source>
-        <translation>Default DNS server</translation>
+        <translation type="unfinished">שרת DNS ברירת מחדל</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="428"/>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="502"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="428" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="502" />
         <source>Query Strategy</source>
-        <translation>Query Strategy</translation>
+        <translation type="unfinished">אסטרטגיית שאילתות</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="440"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="440" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Local DNS can not be used in some configurations, you will have to set an ip here to be used as local dns in such situations&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Local DNS can not be used in some configurations, you will have to set an ip here to be used as local dns in such situations&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;לא ניתן להשתמש ב-DNS מקומי בתצורות מסוימות, תצטרך להגדיר כאן IP כדי לשמש כ-DNS מקומי במצבים כאלה&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="443"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="443" />
         <source>Local Override</source>
-        <translation>Local Override</translation>
+        <translation type="unfinished">עקיפה מקומית</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="450"/>
-        <source>This is especially important and it is recommended to use the default value of &quot;localhost&quot;.
-If the default value does not work, try changing it to &quot;223.5.5.5&quot;.
-For more information, see the document &quot;Configuration/DNS&quot;.</source>
-        <translation>This is especially important and it is recommended to use the default value of &quot;localhost&quot;.
-If the default value does not work, try changing it to &quot;223.5.5.5&quot;.
-For more information, see the document &quot;Configuration/DNS&quot;.</translation>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="450" />
+        <source>This is especially important and it is recommended to use the default value of "localhost".
+If the default value does not work, try changing it to "223.5.5.5".
+For more information, see the document "Configuration/DNS".</source>
+        <translation type="unfinished">זה חשוב במיוחד ומומלץ להשתמש בערך ברירת המחדל של "localhost".
+אם ערך ברירת המחדל לא עובד, נסה לשנות אותו ל-"223.5.5.5".
+למידע נוסף, עיין במסמך "תצורה/DNS".</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="455"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="455" />
         <source>Direct DNS</source>
-        <translation>Direct DNS</translation>
+        <translation type="unfinished">DNS ישיר</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="514"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="514" />
         <source>Enable FakeIP</source>
-        <translation>Enable FakeIP</translation>
+        <translation type="unfinished">אפשר FakeIP</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="524"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="524" />
         <source>DNS Object Settings</source>
-        <translation>DNS Object Settings</translation>
+        <translation type="unfinished">הגדרות אובייקט DNS</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="532"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="532" />
         <source>Use DNS Object</source>
-        <translation>Use DNS Object</translation>
+        <translation type="unfinished">השתמש באובייקט DNS</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="545"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="545" />
         <source>Format</source>
-        <translation>Format</translation>
+        <translation type="unfinished">פוּרמָט</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="558"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="558" />
         <source>Document</source>
-        <translation>Document</translation>
+        <translation type="unfinished">מִסְמָך</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="574"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="574" />
         <source>Route</source>
-        <translation>Route</translation>
+        <translation type="unfinished">מַסלוּל</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="580"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="580" />
         <source>Routing Profiles</source>
-        <translation>Routing Profiles</translation>
+        <translation type="unfinished">ניתוב פרופילים</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="592"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="592" />
         <source>New</source>
-        <translation>New</translation>
+        <translation type="unfinished">חָדָשׁ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="599"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="599" />
         <source>Clone</source>
-        <translation>Clone</translation>
+        <translation type="unfinished">שיבוט</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="606"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="606" />
         <source>Export</source>
-        <translation>Export</translation>
+        <translation type="unfinished">יְצוּא</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="613"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="613" />
         <source>Edit</source>
-        <translation>Edit</translation>
+        <translation type="unfinished">לַעֲרוֹך</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="620"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="620" />
         <source>Delete</source>
-        <translation>Delete</translation>
+        <translation type="unfinished">לִמְחוֹק</translation>
     </message>
     <message>
-        <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="30"/>
+        <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="30" />
         <source>Invalid state</source>
-        <translation>Invalid state</translation>
+        <translation type="unfinished">מצב לא חוקי</translation>
     </message>
     <message>
-        <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="30"/>
+        <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="30" />
         <source>The list of routing profiles is empty, this should be an unreachable state, crashes may occur now</source>
-        <translation>The list of routing profiles is empty, this should be an unreachable state, crashes may occur now</translation>
+        <translation type="unfinished">רשימת פרופילי הניתוב ריקה, זה אמור להיות מצב בלתי ניתן להשגה, עלולות להתרחש קריסות כעת</translation>
     </message>
     <message>
-        <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="203"/>
-        <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="207"/>
+        <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="203" />
+        <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="207" />
         <source>Invalid settings</source>
-        <translation>Invalid settings</translation>
+        <translation type="unfinished">הגדרות לא חוקיות</translation>
     </message>
     <message>
-        <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="203"/>
+        <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="203" />
         <source>Routing profile cannot be empty</source>
-        <translation>Routing profile cannot be empty</translation>
+        <translation type="unfinished">פרופיל הניתוב לא יכול להיות ריק</translation>
     </message>
     <message>
-        <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="207"/>
+        <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="207" />
         <source>DNS Rules are not valid</source>
-        <translation>DNS Rules are not valid</translation>
+        <translation type="unfinished">כללי DNS אינם תקפים</translation>
     </message>
     <message>
-        <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="315"/>
+        <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="315" />
         <source>Invalid operation</source>
-        <translation>Invalid operation</translation>
+        <translation type="unfinished">פעולה לא חוקית</translation>
     </message>
     <message>
-        <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="315"/>
+        <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="315" />
         <source>Routing Profiles cannot be empty, try adding another profile or editing this one</source>
-        <translation>Routing Profiles cannot be empty, try adding another profile or editing this one</translation>
+        <translation type="unfinished">פרופילי ניתוב לא יכולים להיות ריקים, נסה להוסיף פרופיל אחר או לערוך את הפרופיל הזה</translation>
     </message>
 </context>
 <context>
     <name>DialogVPNSettings</name>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="14"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="14" />
         <source>Tun Settings</source>
-        <translation>Tun Settings</translation>
+        <translation type="unfinished">הגדרות Tun</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="85"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="85" />
         <source>Tun Enable IPv6</source>
-        <translation>Tun Enable IPv6</translation>
+        <translation type="unfinished">Tun Enable IPv6</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="92"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="92" />
         <source>Strict Route</source>
-        <translation>Strict Route</translation>
+        <translation type="unfinished">מסלול קפדני</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="99"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="99" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;When enabled, Direct IP CIDRs and rule sets will also be added to the Tun setting to be excluded at OS routing level. IMPORTANT: Large rule sets have been reported to cause massive CPU usage in windows, please enable this option with caution.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;When enabled, Direct IP CIDRs and rule sets will also be added to the Tun setting to be excluded at OS routing level. IMPORTANT: Large rule sets have been reported to cause massive CPU usage in windows, please enable this option with caution.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;כאשר מופעל, CIDRs וערכות כללים של IP ישיר יתווספו גם להגדרת Tun כדי לא להיכלל ברמת ניתוב מערכת ההפעלה.חשוב: ערכות כללים גדולות דווחו שגורמות לשימוש מסיבי ב-CPU בחלונות, אנא הפעל אפשרות זו בזהירות.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="102"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="102" />
         <source>Enable Tun Routing</source>
-        <translation>Enable Tun Routing</translation>
+        <translation type="unfinished">הפעל Tun Routing</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="109"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="109" />
         <source>AutoRedirect</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">הפנייה אוטומטית</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="131"/>
-        <source>Tun device name</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="141"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="125" />
         <source>Tun address</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">כתובת טון</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="154"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="135" />
         <source>Tun ipv6 address</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tun כתובת IPv6</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="166"/>
-        <location filename="../../src/ui/setting/dialog_vpn_settings.cpp" line="94"/>
-        <source>Troubleshooting</source>
-        <translation>Troubleshooting</translation>
-    </message>
-    <message>
-        <location filename="../../src/ui/setting/dialog_vpn_settings.cpp" line="95"/>
-        <source>If you have trouble starting VPN, you can force reset Core process here.
-
-If still not working, see documentation for more information.
-https://matsuridayo.github.io/n-configuration/#vpn-tun</source>
-        <translation>If you have trouble starting VPN, you can force reset Core process here.
-
-If still not working, see documentation for more information.
-https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
-    </message>
-    <message>
-        <location filename="../../src/ui/setting/dialog_vpn_settings.cpp" line="101"/>
-        <source>Reset</source>
-        <translation>Reset</translation>
-    </message>
-    <message>
-        <location filename="../../src/ui/setting/dialog_vpn_settings.cpp" line="102"/>
-        <source>Cancel</source>
-        <translation>Cancel</translation>
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="150" />
+        <source>Exclude CIDR's</source>
+        <translation type="unfinished">אל תכלול CIDR's</translation>
     </message>
 </context>
 <context>
     <name>EditAnyTLS</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_anytls.ui" line="20"/>
+        <location filename="../../src/nekobox/ui/profile/edit_anytls.ui" line="20" />
         <source>Password</source>
-        <translation>Password</translation>
+        <translation type="unfinished">סִיסמָה</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_anytls.ui" line="30"/>
+        <location filename="../../src/nekobox/ui/profile/edit_anytls.ui" line="30" />
         <source>Idle Session Check Interval</source>
-        <translation>Idle Session Check Interval</translation>
+        <translation type="unfinished">מרווח בדיקת הפעלה סרק</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_anytls.ui" line="40"/>
+        <location filename="../../src/nekobox/ui/profile/edit_anytls.ui" line="40" />
         <source>Idle Session Timeout</source>
-        <translation>Idle Session Timeout</translation>
+        <translation type="unfinished">פסק זמן של פעילות סרק</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_anytls.ui" line="50"/>
+        <location filename="../../src/nekobox/ui/profile/edit_anytls.ui" line="50" />
         <source>Min Idle Session</source>
-        <translation>Min Idle Session</translation>
+        <translation type="unfinished">סשן סרק מינימלי</translation>
     </message>
 </context>
 <context>
     <name>EditChain</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_chain.ui" line="20"/>
+        <location filename="../../src/nekobox/ui/profile/edit_chain.ui" line="20" />
         <source>Traffic order is from top to bottom</source>
-        <translation>Traffic order is from top to bottom</translation>
+        <translation type="unfinished">סדר התנועה הוא מלמעלה למטה</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_chain.ui" line="49"/>
+        <location filename="../../src/nekobox/ui/profile/edit_chain.ui" line="49" />
         <source>Select Profile</source>
-        <translation>Select Profile</translation>
+        <translation type="unfinished">בחר פרופיל</translation>
     </message>
     <message>
-        <location filename="../../src/ui/profile/edit_chain.cpp" line="28"/>
+        <location filename="../../src/ui/profile/edit_chain.cpp" line="28" />
         <source>Name cannot be empty.</source>
-        <translation>Name cannot be empty.</translation>
+        <translation type="unfinished">השם לא יכול להיות ריק.</translation>
     </message>
 </context>
 <context>
     <name>EditCustom</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_custom.ui" line="28"/>
+        <location filename="../../src/nekobox/ui/profile/edit_custom.ui" line="28" />
         <source>Core</source>
-        <translation>Core</translation>
+        <translation type="unfinished">ליבה</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_custom.ui" line="41"/>
+        <location filename="../../src/nekobox/ui/profile/edit_custom.ui" line="41" />
         <source>Json Editor</source>
-        <translation>Json Editor</translation>
+        <translation type="unfinished">עורך Json</translation>
     </message>
     <message>
-        <location filename="../../src/ui/profile/edit_custom.cpp" line="53"/>
+        <location filename="../../src/ui/profile/edit_custom.cpp" line="53" />
         <source>Outbound JSON, please read the documentation.</source>
-        <translation>Outbound JSON, please read the documentation.</translation>
+        <translation type="unfinished">JSON יוצא, אנא קרא את התיעוד.</translation>
     </message>
     <message>
-        <location filename="../../src/ui/profile/edit_custom.cpp" line="55"/>
+        <location filename="../../src/ui/profile/edit_custom.cpp" line="55" />
         <source>Please fill the complete config.</source>
-        <translation>Please fill the complete config.</translation>
+        <translation type="unfinished">נא למלא את התצורה המלאה.</translation>
     </message>
     <message>
-        <location filename="../../src/ui/profile/edit_custom.cpp" line="64"/>
+        <location filename="../../src/ui/profile/edit_custom.cpp" line="64" />
         <source>Name cannot be empty.</source>
-        <translation>Name cannot be empty.</translation>
+        <translation type="unfinished">השם לא יכול להיות ריק.</translation>
     </message>
 </context>
 <context>
     <name>EditExtraCore</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="14"/>
+        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="14" />
         <source>Form</source>
-        <translation>Form</translation>
+        <translation type="unfinished">טוֹפֶס</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="29"/>
+        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="29" />
         <source>Socks address</source>
-        <translation>Socks address</translation>
+        <translation type="unfinished">כתובת גרביים</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="36"/>
+        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="36" />
         <source>127.0.0.1</source>
-        <translation>127.0.0.1</translation>
+        <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="43"/>
+        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="43" />
         <source>Socks port</source>
-        <translation>Socks port</translation>
+        <translation type="unfinished">יציאת גרביים</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="50"/>
+        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="50" />
         <source>1080</source>
-        <translation>1080</translation>
+        <translation type="unfinished">1080</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="78"/>
+        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="78" />
         <source>Core path</source>
-        <translation>Core path</translation>
+        <translation type="unfinished">נתיב ליבה</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="95"/>
+        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="95" />
         <source>Choose from file</source>
-        <translation>Choose from file</translation>
+        <translation type="unfinished">בחר מתוך קובץ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="114"/>
+        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="114" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;args to pass to the executable. You can insert a single %s and it will be replaced with the path to a file containing the config entered below.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;args to pass to the executable. You can insert a single %s and it will be replaced with the path to a file containing the config entered below.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;args כדי להעביר לקובץ ההפעלה.אתה יכול להוסיף %s בודד והוא יוחלף בנתיב לקובץ המכיל את התצורה שהוזנה למטה.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="117"/>
+        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="117" />
         <source>Args</source>
-        <translation>Args</translation>
+        <translation type="unfinished">ארגוס</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="124"/>
+        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="124" />
         <source>run -confPath %s</source>
-        <translation>run -confPath %s</translation>
+        <translation type="unfinished">הרץ -confPath %s</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="131"/>
+        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="131" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;contents of the config file that will be passed to the extra core process if %s is specified in the args&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;contents of the config file that will be passed to the extra core process if %s is specified in the args&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;התוכן של קובץ התצורה שיועבר לתהליך הליבה הנוסף אם יצוין %s ב-args&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="134"/>
+        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="134" />
         <source>Config</source>
-        <translation>Config</translation>
+        <translation type="unfinished">Config</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="144"/>
+        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="144" />
         <source>No logs</source>
-        <translation>No logs</translation>
+        <translation type="unfinished">אין יומנים</translation>
     </message>
 </context>
 <context>
     <name>EditMieru</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="14"/>
+        <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="14" />
         <source>EditMieru</source>
-        <translation>EditMieru</translation>
+        <translation type="unfinished">EditMieru</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="20"/>
+        <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="20" />
         <source>Username</source>
-        <translation>Username</translation>
+        <translation type="unfinished">שם משתמש</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="30"/>
+        <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="30" />
         <source>Password</source>
-        <translation>Password</translation>
+        <translation type="unfinished">סִיסמָה</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="40"/>
+        <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="40" />
         <source>Port range</source>
-        <translation>Port range</translation>
+        <translation type="unfinished">טווח נמלים</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="55"/>
+        <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="55" />
         <source>Multiplexing</source>
-        <translation>Multiplexing</translation>
+        <translation type="unfinished">רִבּוּב</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="92"/>
+        <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="92" />
         <source>Transport</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>MULTIPLEXING_OFF</source>
-        <translation type="vanished">MULTIPLEXING_OFF</translation>
-    </message>
-    <message>
-        <source>MULTIPLEXING_LOW</source>
-        <translation type="vanished">MULTIPLEXING_LOW</translation>
-    </message>
-    <message>
-        <source>MULTIPLEXING_MIDDLE</source>
-        <translation type="vanished">MULTIPLEXING_MIDDLE</translation>
-    </message>
-    <message>
-        <source>MULTIPLEXING_HIGH</source>
-        <translation type="vanished">MULTIPLEXING_HIGH</translation>
+        <translation type="unfinished">תַחְבּוּרָה</translation>
     </message>
 </context>
 <context>
     <name>EditQUIC</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="24"/>
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="24" />
         <source>Heartbeat</source>
-        <translation>Heartbeat</translation>
+        <translation type="unfinished">דוֹפֶק</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="45"/>
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="45" />
         <source>Download (Mbps)</source>
-        <translation>Download (Mbps)</translation>
+        <translation type="unfinished">הורדה (Mbps)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="69"/>
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="69" />
         <source>Upload (Mbps)</source>
-        <translation>Upload (Mbps)</translation>
+        <translation type="unfinished">העלאה (Mbps)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="81"/>
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="81" />
         <source>Zero Rtt Handshake</source>
-        <translation>Zero Rtt Handshake</translation>
+        <translation type="unfinished">לחיצת יד אפס Rtt</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="90"/>
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="90" />
         <source>UDP Relay Mode</source>
-        <translation>UDP Relay Mode</translation>
+        <translation type="unfinished">מצב ממסר UDP</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="115"/>
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="115" />
         <source>Congestion Control</source>
-        <translation>Congestion Control</translation>
+        <translation type="unfinished">בקרת גודש</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="147"/>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="177"/>
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="147" />
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="177" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Comma seperated ranges: 100:200,500:600&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Comma seperated ranges: 100:200,500:600&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;טווחים מופרדים בפסיקים: 100:200,500:600&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="154"/>
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="154" />
         <source>Obfs Password</source>
-        <translation>Obfs Password</translation>
+        <translation type="unfinished">סיסמת Obfs</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="170"/>
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="170" />
         <source>Disable MTU Discovery</source>
-        <translation>Disable MTU Discovery</translation>
+        <translation type="unfinished">השבת את MTU Discovery</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="180"/>
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="180" />
         <source>Port range</source>
-        <translation>Port range</translation>
+        <translation type="unfinished">טווח נמלים</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="190"/>
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="190" />
         <source>Hop Interval</source>
-        <translation>Hop Interval</translation>
+        <translation type="unfinished">מרווח הופ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="197"/>
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="197" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;100ms&lt;br/&gt;1s&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;100ms&lt;br/&gt;1s&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;100ms&lt;br/&gt;1s&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="217"/>
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="217" />
         <source>Auth Type</source>
-        <translation>Auth Type</translation>
+        <translation type="unfinished">סוג אישור</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="230"/>
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="230" />
         <source>Auth Payload</source>
-        <translation>Auth Payload</translation>
+        <translation type="unfinished">מטען אישור</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="243"/>
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="243" />
         <source>Password</source>
-        <translation>Password</translation>
+        <translation type="unfinished">סִיסמָה</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="257"/>
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="257" />
         <source>Generate UUID</source>
-        <translation>Generate UUID</translation>
+        <translation type="unfinished">צור UUID</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="293"/>
-        <location filename="../../src/ui/profile/edit_quic.cpp" line="149"/>
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="293" />
+        <location filename="../../src/ui/profile/edit_quic.cpp" line="149" />
         <source>Certificate</source>
-        <translation>Certificate</translation>
+        <translation type="unfinished">תְעוּדָה</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="310"/>
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="310" />
         <source>Disable SNI</source>
-        <translation>Disable SNI</translation>
+        <translation type="unfinished">השבת את SNI</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="327"/>
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="327" />
         <source>SNI</source>
-        <translation>SNI</translation>
+        <translation type="unfinished">SNI</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="334"/>
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="334" />
         <source>Allow Insecure</source>
-        <translation>Allow Insecure</translation>
+        <translation type="unfinished">אפשר Insecure</translation>
     </message>
 </context>
 <context>
     <name>EditSSH</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="14"/>
+        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="14" />
         <source>EditSSH</source>
-        <translation>EditSSH</translation>
+        <translation type="unfinished">EditSSH</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="20"/>
+        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="20" />
         <source>User</source>
-        <translation>User</translation>
+        <translation type="unfinished">מִשׁתַמֵשׁ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="30"/>
+        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="30" />
         <source>Password</source>
-        <translation>Password</translation>
+        <translation type="unfinished">סִיסמָה</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="40"/>
+        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="40" />
         <source>Private Key</source>
-        <translation>Private Key</translation>
+        <translation type="unfinished">מפתח פרטי</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="50"/>
+        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="50" />
         <source>Private Key Password</source>
-        <translation>Private Key Password</translation>
+        <translation type="unfinished">סיסמת מפתח פרטי</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="60"/>
+        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="60" />
         <source>Host Key</source>
-        <translation>Host Key</translation>
+        <translation type="unfinished">מפתח מארח</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="70"/>
+        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="70" />
         <source>Host Key Algorithms</source>
-        <translation>Host Key Algorithms</translation>
+        <translation type="unfinished">אלגוריתמי מפתח מארח</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="80"/>
+        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="80" />
         <source>Client Version</source>
-        <translation>Client Version</translation>
+        <translation type="unfinished">גרסת לקוח</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="93"/>
+        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="93" />
         <source>Private Key Path</source>
-        <translation>Private Key Path</translation>
+        <translation type="unfinished">נתיב מפתח פרטי</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="103"/>
+        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="103" />
         <source>Choose File</source>
-        <translation>Choose File</translation>
+        <translation type="unfinished">בחר קובץ</translation>
     </message>
 </context>
 <context>
     <name>EditShadowSocks</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="30"/>
+        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="30" />
         <source>Plugin</source>
-        <translation>Plugin</translation>
+        <translation type="unfinished">תוסף</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="37"/>
+        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="37" />
         <source>Encryption</source>
-        <translation>Encryption</translation>
+        <translation type="unfinished">הצפנה</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="44"/>
+        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="44" />
         <source>Plugin Args</source>
-        <translation>Plugin Args</translation>
+        <translation type="unfinished">פלאגין Args</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="54"/>
+        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="54" />
         <source>Password</source>
-        <translation>Password</translation>
+        <translation type="unfinished">סִיסמָה</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="80"/>
+        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="80" />
         <source>Version of UDP over TCP protocol, server support is required.</source>
-        <translation>Version of UDP over TCP protocol, server support is required.</translation>
+        <translation type="unfinished">גרסה של UDP על פרוטוקול TCP, נדרשת תמיכה בשרת.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="94"/>
+        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="94" />
         <source>Off</source>
-        <translation>Off</translation>
+        <translation type="unfinished">כבוי</translation>
     </message>
 </context>
 <context>
     <name>EditShadowTLS</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="20"/>
+        <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="20" />
         <source>Version</source>
-        <translation>Version</translation>
+        <translation type="unfinished">גִרְסָה</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="27"/>
+        <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="27" />
         <source>Password</source>
-        <translation>Password</translation>
+        <translation type="unfinished">סִיסמָה</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="38"/>
+        <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="38" />
         <source>1</source>
-        <translation>1</translation>
+        <translation type="unfinished">1</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="43"/>
+        <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="43" />
         <source>2</source>
-        <translation>2</translation>
+        <translation type="unfinished">2</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="48"/>
+        <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="48" />
         <source>3</source>
-        <translation>3</translation>
+        <translation type="unfinished">3</translation>
     </message>
 </context>
 <context>
     <name>EditSocksHttp</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="20"/>
+        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="20" />
         <source>Version</source>
-        <translation>Version</translation>
+        <translation type="unfinished">גִרְסָה</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="33"/>
+        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="33" />
         <source>Username</source>
-        <translation>Username</translation>
+        <translation type="unfinished">שם משתמש</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="54"/>
+        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="54" />
         <source>Password</source>
-        <translation>Password</translation>
+        <translation type="unfinished">סִיסמָה</translation>
     </message>
 </context>
 <context>
     <name>EditTailScale</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="14"/>
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="14" />
         <source>Form</source>
-        <translation>Form</translation>
+        <translation type="unfinished">טוֹפֶס</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="20"/>
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="20" />
         <source>State directory</source>
-        <translation>State directory</translation>
+        <translation type="unfinished">ספריית המדינה</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="30"/>
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="30" />
         <source>Auth key</source>
-        <translation>Auth key</translation>
+        <translation type="unfinished">מפתח אישור</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="40"/>
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="40" />
         <source>Control URL</source>
-        <translation>Control URL</translation>
+        <translation type="unfinished">כתובת URL לשלוט</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="50"/>
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="50" />
         <source>Hostname</source>
-        <translation>Hostname</translation>
+        <translation type="unfinished">שם מארח</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="60"/>
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="60" />
         <source>Accept routes</source>
-        <translation>Accept routes</translation>
+        <translation type="unfinished">קבל מסלולים</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="67"/>
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="67" />
         <source>Ephemeral</source>
-        <translation>Ephemeral</translation>
+        <translation type="unfinished">חֲלוֹף</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="74"/>
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="74" />
         <source>Exit node allow lan access</source>
-        <translation>Exit node allow lan access</translation>
+        <translation type="unfinished">צומת יציאה אפשר גישה לרשת LAN</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="81"/>
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="81" />
         <source>Advertise exit node</source>
-        <translation>Advertise exit node</translation>
+        <translation type="unfinished">פרסם צומת יציאה</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="88"/>
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="88" />
         <source>Exit node</source>
-        <translation>Exit node</translation>
+        <translation type="unfinished">צומת יציאה</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="98"/>
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="98" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;comma seperated list of subnets&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;comma seperated list of subnets&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;רשימה מופרדת בפסיק של רשתות משנה&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="101"/>
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="101" />
         <source>Advertise routes</source>
-        <translation>Advertise routes</translation>
+        <translation type="unfinished">פרסם מסלולים</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="111"/>
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="111" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;use tailscale dns as the remote dns&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;use tailscale dns as the remote dns&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;השתמש ב-DNS בקנה מידה tailscale כ-DNS המרוחק&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="114"/>
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="114" />
         <source>Global DNS</source>
-        <translation>Global DNS</translation>
+        <translation type="unfinished">DNS גלובלי</translation>
     </message>
 </context>
 <context>
     <name>EditTor</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="14"/>
+        <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="14" />
         <source>EditTor</source>
-        <translation>EditTor</translation>
+        <translation type="unfinished">עוֹרֵך</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="20"/>
+        <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="20" />
         <source>Custom Path</source>
-        <translation>Custom Path</translation>
+        <translation type="unfinished">נתיב מותאם אישית</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="30"/>
+        <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="30" />
         <source>Extra Args</source>
-        <translation>Extra Args</translation>
+        <translation type="unfinished">אקסטרה ארגוס</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="40"/>
+        <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="40" />
         <source>Tor Config</source>
-        <translation>Tor Config</translation>
+        <translation type="unfinished">Tor Config</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="55"/>
+        <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="55" />
         <source>Data DIr</source>
-        <translation>Data DIr</translation>
+        <translation type="unfinished">DIr</translation>
     </message>
 </context>
 <context>
     <name>EditTrojanVLESS</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_trojan_vless.ui" line="23"/>
+        <location filename="../../src/nekobox/ui/profile/edit_trojan_vless.ui" line="23" />
         <source>Password</source>
-        <translation>Password</translation>
+        <translation type="unfinished">סִיסמָה</translation>
     </message>
 </context>
 <context>
     <name>EditVMess</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_vmess.ui" line="52"/>
+        <location filename="../../src/nekobox/ui/profile/edit_vmess.ui" line="52" />
         <source>Security</source>
-        <translation>Security</translation>
+        <translation type="unfinished">בִּטָחוֹן</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_vmess.ui" line="59"/>
+        <location filename="../../src/nekobox/ui/profile/edit_vmess.ui" line="59" />
         <source>Alter Id</source>
-        <translation>Alter Id</translation>
+        <translation type="unfinished">אלטר זיהוי</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_vmess.ui" line="66"/>
+        <location filename="../../src/nekobox/ui/profile/edit_vmess.ui" line="66" />
         <source>UUID</source>
-        <translation>UUID</translation>
+        <translation type="unfinished">UUID</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_vmess.ui" line="100"/>
+        <location filename="../../src/nekobox/ui/profile/edit_vmess.ui" line="100" />
         <source>Generate UUID</source>
-        <translation>Generate UUID</translation>
+        <translation type="unfinished">צור UUID</translation>
     </message>
 </context>
 <context>
     <name>EditWireguard</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="14"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="14" />
         <source>EditWireguard</source>
-        <translation>EditWireguard</translation>
+        <translation type="unfinished">EditWireguard</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="23"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="23" />
         <source>Private Key</source>
-        <translation>Private Key</translation>
+        <translation type="unfinished">מפתח פרטי</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="33"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="33" />
         <source>Public Key</source>
-        <translation>Public Key</translation>
+        <translation type="unfinished">מפתח ציבורי</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="43"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="43" />
         <source>Pre Shared Key</source>
-        <translation>Pre Shared Key</translation>
+        <translation type="unfinished">מפתח משותף מראש</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="53"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="53" />
         <source>Reserved</source>
-        <translation>Reserved</translation>
+        <translation type="unfinished">שָׁמוּר</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="63"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="63" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;persistent_keepalive_interval in seconds&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;persistent_keepalive_interval in seconds&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;persistent_keepalive_interval בשניות&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="66"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="66" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="69"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="69" />
         <source>Persistent Keepalive</source>
-        <translation>Persistent Keepalive</translation>
+        <translation type="unfinished">Keepalive מתמשך</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="79"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="79" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;comma seperated list of subnets&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;comma seperated list of subnets&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;רשימה מופרדת בפסיק של רשתות משנה&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="82"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="82" />
         <source>Local Address</source>
-        <translation>Local Address</translation>
+        <translation type="unfinished">כתובת מקומית</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="92"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="92" />
         <source>MTU</source>
-        <translation>MTU</translation>
+        <translation type="unfinished">MTU</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="99"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="99" />
         <source>1420</source>
-        <translation>1420</translation>
+        <translation type="unfinished">1420</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="106"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="106" />
         <source>Workers</source>
-        <translation>Workers</translation>
+        <translation type="unfinished">עובדים</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="116"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="116" />
         <source>Use System Interface</source>
-        <translation>Use System Interface</translation>
+        <translation type="unfinished">השתמש בממשק המערכת</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="126"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="126" />
         <source>Amnezia Settings</source>
-        <translation>Amnezia Settings</translation>
+        <translation type="unfinished">הגדרות אמנזיה</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="132"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="132" />
         <source>Enable</source>
-        <translation>Enable</translation>
+        <translation type="unfinished">לְאַפשֵׁר</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="139"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="139" />
         <source>Junk Packet Count</source>
-        <translation>Junk Packet Count</translation>
+        <translation type="unfinished">ספירת מנות זבל</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="149"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="149" />
         <source>Junk Packet Min Size</source>
-        <translation>Junk Packet Min Size</translation>
+        <translation type="unfinished">גודל מינימלי של חבילת זבל</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="159"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="159" />
         <source>Junk Packet Max Size</source>
-        <translation>Junk Packet Max Size</translation>
+        <translation type="unfinished">גודל מקסימלי של חבילות זבל</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="169"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="169" />
         <source>Init Packet Junk Size</source>
-        <translation>Init Packet Junk Size</translation>
+        <translation type="unfinished">Init Packet Junk Size</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="179"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="179" />
         <source>Response Packet Junk Size</source>
-        <translation>Response Packet Junk Size</translation>
+        <translation type="unfinished">גודל זבל של חבילת תגובה</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="189"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="189" />
         <source>Init Packet Magic Header</source>
-        <translation>Init Packet Magic Header</translation>
+        <translation type="unfinished">Init Packet Magic Header</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="199"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="199" />
         <source>Response Packet Magic Header</source>
-        <translation>Response Packet Magic Header</translation>
+        <translation type="unfinished">כותרת קסם של חבילת תגובה</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="209"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="209" />
         <source>Underload Packet Magic Header</source>
-        <translation>Underload Packet Magic Header</translation>
+        <translation type="unfinished">Underload Packet Magic Header</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="219"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="219" />
         <source>Transport Header Magic Header</source>
-        <translation>Transport Header Magic Header</translation>
+        <translation type="unfinished">Transport Header Magic Header</translation>
     </message>
 </context>
 <context>
     <name>GroupItem</name>
     <message>
-        <location filename="../../src/nekobox/ui/group/GroupItem.ui" line="63"/>
+        <location filename="../../src/nekobox/ui/group/GroupItem.ui" line="63" />
         <source>Update Subscription</source>
-        <translation>Update Subscription</translation>
+        <translation type="unfinished">עדכון מנוי</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/GroupItem.ui" line="76"/>
+        <location filename="../../src/nekobox/ui/group/GroupItem.ui" line="76" />
         <source>Edit</source>
-        <translation>Edit</translation>
+        <translation type="unfinished">לַעֲרוֹך</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/GroupItem.ui" line="89"/>
+        <location filename="../../src/nekobox/ui/group/GroupItem.ui" line="89" />
         <source>Remove</source>
-        <translation>Remove</translation>
+        <translation type="unfinished">לְהַסִיר</translation>
     </message>
     <message>
-        <location filename="../../src/ui/group/GroupItem.cpp" line="129"/>
+        <location filename="../../src/ui/group/GroupItem.cpp" line="129" />
         <source>Basic</source>
-        <translation>Basic</translation>
+        <translation type="unfinished">בְּסִיסִי</translation>
     </message>
     <message>
-        <location filename="../../src/ui/group/GroupItem.cpp" line="129"/>
+        <location filename="../../src/ui/group/GroupItem.cpp" line="129" />
         <source>Subscription</source>
-        <translation>Subscription</translation>
+        <translation type="unfinished">מִנוּי</translation>
     </message>
     <message>
-        <location filename="../../src/ui/group/GroupItem.cpp" line="130"/>
+        <location filename="../../src/ui/group/GroupItem.cpp" line="130" />
         <source>Archive</source>
-        <translation>Archive</translation>
+        <translation type="unfinished">ארכיון</translation>
     </message>
     <message>
-        <location filename="../../src/ui/group/GroupItem.cpp" line="142"/>
+        <location filename="../../src/ui/group/GroupItem.cpp" line="142" />
         <source>Last update: %1</source>
-        <translation>Last update: %1</translation>
+        <translation type="unfinished">עדכון אחרון: %1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/group/GroupItem.cpp" line="186"/>
+        <location filename="../../src/ui/group/GroupItem.cpp" line="186" />
         <source>Confirmation</source>
-        <translation>Confirmation</translation>
+        <translation type="unfinished">אִשׁוּר</translation>
     </message>
     <message>
-        <location filename="../../src/ui/group/GroupItem.cpp" line="186"/>
+        <location filename="../../src/ui/group/GroupItem.cpp" line="186" />
         <source>Remove %1?</source>
-        <translation>Remove %1?</translation>
+        <translation type="unfinished">להסיר את% 1?</translation>
     </message>
 </context>
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="29"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="32"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="29" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="32" />
         <source>NekoBox</source>
-        <translation>NekoBox</translation>
+        <translation type="unfinished">NekoBox</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="51"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="54"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="693"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="51" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="54" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="693" />
         <source>Profiles</source>
-        <translation>Profiles</translation>
+        <translation type="unfinished">פרופילים</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="73"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="76"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="73" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="76" />
         <source>Settings</source>
-        <translation>Settings</translation>
+        <translation type="unfinished">הגדרות</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="95"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="98"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="95" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="98" />
         <source>Routing</source>
-        <translation>Routing</translation>
+        <translation type="unfinished">ניתוב</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="117"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="120"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="117" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="120" />
         <source>Update</source>
-        <translation>Update</translation>
+        <translation type="unfinished">לְעַדְכֵּן</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="147"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="147" />
         <source>Tun Mode</source>
-        <translation>Tun Mode</translation>
+        <translation type="unfinished">מצב Tun</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="154"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="154" />
         <source>System DNS</source>
-        <translation>System DNS</translation>
+        <translation type="unfinished">מערכת DNS</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="161"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="597"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="2428"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="2431"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="161" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="597" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2422" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2425" />
         <source>System Proxy</source>
-        <translation>System Proxy</translation>
+        <translation type="unfinished">פרוקסי מערכת</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="231"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="231" />
         <source>URL Test</source>
-        <translation>URL Test</translation>
+        <translation type="unfinished">בדיקת כתובת URL</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="309"/>
-        <location filename="../../src/ui/group/dialog_edit_group.cpp" line="139"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="309" />
+        <location filename="../../src/ui/group/dialog_edit_group.cpp" line="139" />
         <source>Type</source>
-        <translation>Type</translation>
+        <translation type="unfinished">סוּג</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="314"/>
-        <location filename="../../src/ui/group/dialog_edit_group.cpp" line="142"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="314" />
+        <location filename="../../src/ui/group/dialog_edit_group.cpp" line="142" />
         <source>Address</source>
-        <translation>Address</translation>
+        <translation type="unfinished">כְּתוֹבֶת</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="319"/>
-        <location filename="../../src/ui/group/dialog_edit_group.cpp" line="145"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="319" />
+        <location filename="../../src/ui/group/dialog_edit_group.cpp" line="145" />
         <source>Name</source>
-        <translation>Name</translation>
+        <translation type="unfinished">שֵׁם</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="324"/>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="294"/>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="296"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="324" />
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="289" />
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="291" />
         <source>Test Result</source>
-        <translation>Test Result</translation>
+        <translation type="unfinished">תוצאת הבדיקה</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="329"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="489"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="329" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="489" />
         <source>Traffic</source>
-        <translation>Traffic</translation>
+        <translation type="unfinished">תְנוּעָה</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="394"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="394" />
         <source>Logs</source>
-        <translation>Logs</translation>
+        <translation type="unfinished">יומנים</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="429"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="429" />
         <source>Connections</source>
-        <translation>Connections</translation>
+        <translation type="unfinished">חיבורים</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="457"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="457" />
         <source>Destination (Domain)</source>
-        <translation>Destination (Domain)</translation>
+        <translation type="unfinished">יעד (דומיין)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="460"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="460" />
         <source>Click To Disable Sorting</source>
-        <translation>Click To Disable Sorting</translation>
+        <translation type="unfinished">לחץ כדי להשבית מיון</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="465"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="465" />
         <source>Process</source>
-        <translation>Process</translation>
+        <translation type="unfinished">תַהֲלִיך</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="468"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="468" />
         <source>Click To Sort By Process</source>
-        <translation>Click To Sort By Process</translation>
+        <translation type="unfinished">לחץ כדי למיין לפי תהליך</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="473"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="473" />
         <source>Protocol</source>
-        <translation>Protocol</translation>
+        <translation type="unfinished">פּרוֹטוֹקוֹל</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="476"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="476" />
         <source>Click To Sort By Protocol</source>
-        <translation>Click To Sort By Protocol</translation>
+        <translation type="unfinished">לחץ כדי למיין לפי פרוטוקול</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="481"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="481" />
         <source>Outbound</source>
-        <translation>Outbound</translation>
+        <translation type="unfinished">יוצא</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="484"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="484" />
         <source>Click To Sort By Outbound</source>
-        <translation>Click To Sort By Outbound</translation>
+        <translation type="unfinished">לחץ כדי למיין לפי יוצא</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="492"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="492" />
         <source>Click To Toggle sort by Traffic</source>
-        <translation>Click To Toggle sort by Traffic</translation>
+        <translation type="unfinished">לחץ כדי להחליף מיון לפי תנועה</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="501"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="501" />
         <source>Traffic Graph</source>
-        <translation>Traffic Graph</translation>
+        <translation type="unfinished">גרף תנועה</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="593"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="593" />
         <source>Program</source>
-        <translation>Program</translation>
+        <translation type="unfinished">תָכְנִית</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="616"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="616" />
         <source>Preferences</source>
-        <translation>Preferences</translation>
+        <translation type="unfinished">העדפות</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="627"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="627" />
         <source>Server</source>
-        <translation>Server</translation>
+        <translation type="unfinished">שרת</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="631"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="631" />
         <source>Share</source>
-        <translation>Share</translation>
+        <translation type="unfinished">לַחֲלוֹק</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="641"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="641" />
         <source>Current group</source>
-        <translation>Current group</translation>
+        <translation type="unfinished">הקבוצה הנוכחית</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="647"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="647" />
         <source>Test</source>
-        <translation>Test</translation>
+        <translation type="unfinished">מִבְחָן</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="675"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="675" />
         <source>Hidden menu</source>
-        <translation>Hidden menu</translation>
+        <translation type="unfinished">תפריט נסתר</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="688"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="688" />
         <source>Routing Menu</source>
-        <translation>Routing Menu</translation>
+        <translation type="unfinished">תפריט ניתוב</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="711"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="711" />
         <source>Exit</source>
-        <translation>Exit</translation>
+        <translation type="unfinished">יְצִיאָה</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="716"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="716" />
         <source>Toggle Window</source>
-        <translation>Toggle Window</translation>
+        <translation type="unfinished">החלף חלון</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="721"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="721" />
         <source>Basic Settings</source>
-        <translation>Basic Settings</translation>
+        <translation type="unfinished">הגדרות בסיסיות</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="726"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="726" />
         <source>New profile</source>
-        <translation>New profile</translation>
+        <translation type="unfinished">פרופיל חדש</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="731"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="731" />
         <source>Groups</source>
-        <translation>Groups</translation>
+        <translation type="unfinished">קבוצות</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="736"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3419"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3429"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="736" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3442" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3452" />
         <source>Start</source>
-        <translation>Start</translation>
+        <translation type="unfinished">הַתחָלָה</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="744"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3418"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3429"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="744" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3441" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3452" />
         <source>Stop</source>
-        <translation>Stop</translation>
+        <translation type="unfinished">לְהַפְסִיק</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="752"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="752" />
         <source>Edit</source>
-        <translation>Edit</translation>
+        <translation type="unfinished">לַעֲרוֹך</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="760"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="760" />
         <source>Routing Settings</source>
-        <translation>Routing Settings</translation>
+        <translation type="unfinished">הגדרות ניתוב</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="765"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="765" />
         <source>Add profile from clipboard</source>
-        <translation>Add profile from clipboard</translation>
+        <translation type="unfinished">הוסף פרופיל מהלוח</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="773"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="773" />
         <source>Delete</source>
-        <translation>Delete</translation>
+        <translation type="unfinished">לִמְחוֹק</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="781"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="781" />
         <source>Debug Info</source>
-        <translation>Debug Info</translation>
+        <translation type="unfinished">מידע על ניפוי באגים</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="786"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="786" />
         <source>QR Code and link</source>
-        <translation>QR Code and link</translation>
+        <translation type="unfinished">קוד QR וקישור</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="794"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="794" />
         <source>Copy Link</source>
-        <translation>Copy Link</translation>
+        <translation type="unfinished">העתק קישור</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="815"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="815" />
         <source>Clear Test Result</source>
-        <translation>Clear Test Result</translation>
+        <translation type="unfinished">תוצאת בדיקה ברורה</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="823"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="1354"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="823" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1348" />
         <source>Export %1 config</source>
-        <translation>Export %1 config</translation>
+        <translation type="unfinished">ייצא את התצורה של %1</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="831"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="831" />
         <source>Reset Traffic</source>
-        <translation>Reset Traffic</translation>
+        <translation type="unfinished">אפס את התנועה</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="839"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="839" />
         <source>Scan QR Code</source>
-        <translation>Scan QR Code</translation>
+        <translation type="unfinished">סרוק קוד QR</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="847"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="847" />
         <source>Enable System Proxy</source>
-        <translation>Enable System Proxy</translation>
+        <translation type="unfinished">הפעל פרוקסי מערכת</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="855"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="855" />
         <source>Disable</source>
-        <translation>Disable</translation>
+        <translation type="unfinished">השבת</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="860"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="860" />
         <source>Remove Duplicates</source>
-        <translation>Remove Duplicates</translation>
+        <translation type="unfinished">הסר כפילויות</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="868"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="945"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="953"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="868" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="945" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="953" />
         <source>fake</source>
-        <translation>fake</translation>
+        <translation type="unfinished">מְזוּיָף</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="876"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="876" />
         <source>Move</source>
-        <translation>Move</translation>
+        <translation type="unfinished">מַהֲלָך</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="887"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="887" />
         <source>Start with system</source>
-        <translation>Start with system</translation>
+        <translation type="unfinished">התחל עם המערכת</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="895"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="895" />
         <source>Remember last profile</source>
-        <translation>Remember last profile</translation>
+        <translation type="unfinished">זכור את הפרופיל האחרון</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="903"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="903" />
         <source>Allow other devices to connect</source>
-        <translation>Allow other devices to connect</translation>
+        <translation type="unfinished">אפשר להתקנים אחרים להתחבר</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="908"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="908" />
         <source>Remove Unavailable</source>
-        <translation>Remove Unavailable</translation>
+        <translation type="unfinished">הסר לא זמין</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="916"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="916" />
         <source>Full Test</source>
-        <translation>Full Test</translation>
+        <translation type="unfinished">מבחן מלא</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="924"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="924" />
         <source>Hotkey Settings</source>
-        <translation>Hotkey Settings</translation>
+        <translation type="unfinished">הגדרות מקשי קיצור</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="929"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="929" />
         <source>Select All</source>
-        <translation>Select All</translation>
+        <translation type="unfinished">בחר הכל</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="937"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="937" />
         <source>Copy links of selected (Custom Links)</source>
-        <translation>Copy links of selected (Custom Links)</translation>
+        <translation type="unfinished">העתק קישורים של נבחרים (קישורים מותאמים אישית)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="961"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="961" />
         <source>Copy links of selected</source>
-        <translation>Copy links of selected</translation>
+        <translation type="unfinished">העתק קישורים של נבחרים</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="972"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="972" />
         <source>Enable Tun</source>
-        <translation>Enable Tun</translation>
+        <translation type="unfinished">אפשר Tun</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="977"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="2784"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="977" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2778" />
         <source>Clone</source>
-        <translation>Clone</translation>
+        <translation type="unfinished">שיבוט</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="985"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="985" />
         <source>Update subscription</source>
-        <translation>Update subscription</translation>
+        <translation type="unfinished">עדכן מנוי</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="996"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="996" />
         <source>Resolve domain</source>
-        <translation>Resolve domain</translation>
+        <translation type="unfinished">פתור דומיין</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1004"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1004" />
         <source>Tun Settings</source>
-        <translation>Tun Settings</translation>
+        <translation type="unfinished">הגדרות Tun</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1009"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1009" />
         <source>Restart Program</source>
-        <translation>Restart Program</translation>
+        <translation type="unfinished">הפעל מחדש את התוכנית</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1014"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1014" />
         <source>Open Config Folder</source>
-        <translation>Open Config Folder</translation>
+        <translation type="unfinished">פתח את תיקיית Config</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1035"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1035" />
         <source>Restart Proxy</source>
-        <translation>Restart Proxy</translation>
+        <translation type="unfinished">הפעל מחדש את ה-Proxy</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1040"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1040" />
         <source>Stop Testing</source>
-        <translation>Stop Testing</translation>
+        <translation type="unfinished">תפסיק את הבדיקה</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1045"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1045" />
         <source>Url Test Selected</source>
-        <translation>Url Test Selected</translation>
+        <translation type="unfinished">בדיקת כתובת URL נבחרה</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1048"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1048" />
         <source>Ctrl+Shift+S</source>
-        <translation>Ctrl+Shift+S</translation>
+        <translation type="unfinished">Ctrl+Shift+S</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1056"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1056" />
         <source>Clear Test Result Selected</source>
-        <translation>Clear Test Result Selected</translation>
+        <translation type="unfinished">נקה את תוצאת הבדיקה שנבחרה</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1067"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1067" />
         <source>Url Test Group</source>
-        <translation>Url Test Group</translation>
+        <translation type="unfinished">קבוצת בדיקת כתובת URL</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1070"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1070" />
         <source>Ctrl+Shift+G</source>
-        <translation>Ctrl+Shift+G</translation>
+        <translation type="unfinished">Ctrl+Shift+G</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1078"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1078" />
         <source>Resolve Selected Domain</source>
-        <translation>Resolve Selected Domain</translation>
+        <translation type="unfinished">פתור דומיין נבחר</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1086"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1086" />
         <source>Remove Invalid</source>
-        <translation>Remove Invalid</translation>
+        <translation type="unfinished">הסר לא חוקי</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1089"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1089" />
         <source>Ctrl+Alt+I</source>
-        <translation>Ctrl+Alt+I</translation>
+        <translation type="unfinished">Ctrl+Alt+I</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1097"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1097" />
         <source>Open Manager</source>
-        <translation>Open Manager</translation>
+        <translation type="unfinished">פתח את מנהל</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1102"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1102" />
         <source>Speedtest Current</source>
-        <translation>Speedtest Current</translation>
+        <translation type="unfinished">זרם המהירות ביותר</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1107"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1107" />
         <source>Full test Selected</source>
-        <translation>Full test Selected</translation>
+        <translation type="unfinished">מבחן מלא נבחר</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1112"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1112" />
         <source>Download test Selected</source>
-        <translation>Download test Selected</translation>
+        <translation type="unfinished">בדיקת הורדה נבחרה</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1117"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1117" />
         <source>Upload test Selected</source>
-        <translation>Upload test Selected</translation>
+        <translation type="unfinished">בדיקת העלאה נבחרה</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1122"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1122" />
         <source>Country test Selected</source>
-        <translation>Country test Selected</translation>
+        <translation type="unfinished">מבחן מדינה נבחר</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1127"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1127" />
         <source>Simple download test Selected</source>
-        <translation>Simple download test Selected</translation>
+        <translation type="unfinished">מבחן הורדה פשוט נבחר</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1132"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1132" />
         <source>Speedtest Group</source>
-        <translation>Speedtest Group</translation>
+        <translation type="unfinished">קבוצת בדיקת מהירות</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1137"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1137" />
         <source>Hide window</source>
-        <translation>Hide window</translation>
+        <translation type="unfinished">הסתר חלון</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1142"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1142" />
         <source>Add profile from File</source>
-        <translation>Add profile from File</translation>
+        <translation type="unfinished">הוסף פרופיל מקובץ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1147"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3445"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1147" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3468" />
         <source>Add new Group</source>
-        <translation>Add new Group</translation>
+        <translation type="unfinished">הוסף קבוצה חדשה</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1152"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1152" />
         <source>Security Settings</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">הגדרות אבטחה</translation>
     </message>
     <message>
-        <location filename="../../src/dataStore/ProxyEntity.cpp" line="52"/>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="294"/>
+        <location filename="../../src/dataStore/ProxyEntity.cpp" line="52" />
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="289" />
         <source>Unavailable</source>
-        <translation>Unavailable</translation>
+        <translation type="unfinished">לא זמין</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1007"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1001" />
         <source>Edit Routing Profiles</source>
-        <translation>Edit Routing Profiles</translation>
+        <translation type="unfinished">ערוך פרופילי ניתוב</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1029"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1023" />
         <source>Update Routing Profiles</source>
-        <translation>Update Routing Profiles</translation>
+        <translation type="unfinished">עדכון פרופילי ניתוב</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1041"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="1045"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="1066"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="1069"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="1113"/>
-        <location filename="../../src/ui/setting/RouteItem.cpp" line="95"/>
-        <location filename="../../src/ui/setting/RouteItem.cpp" line="104"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1035" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1039" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1060" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1063" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1107" />
+        <location filename="../../src/ui/setting/RouteItem.cpp" line="95" />
+        <location filename="../../src/ui/setting/RouteItem.cpp" line="104" />
         <source>Update Response</source>
-        <translation>Update Response</translation>
+        <translation type="unfinished">עדכן תגובה</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1042"/>
-        <location filename="../../src/ui/setting/RouteItem.cpp" line="105"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1036" />
+        <location filename="../../src/ui/setting/RouteItem.cpp" line="105" />
         <source>No routing profiles are updated</source>
-        <translation>No routing profiles are updated</translation>
+        <translation type="unfinished">אין פרופילי ניתוב מעודכנים</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1046"/>
-        <location filename="../../src/ui/setting/RouteItem.cpp" line="96"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1040" />
+        <location filename="../../src/ui/setting/RouteItem.cpp" line="96" />
         <source>Updated %1 routing profiles</source>
-        <translation>Updated %1 routing profiles</translation>
+        <translation type="unfinished">עודכן %1 פרופילי ניתוב</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1056"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1050" />
         <source>Update RuleSet Map</source>
-        <translation>Update RuleSet Map</translation>
+        <translation type="unfinished">עדכן את מפת סט הכללים</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1067"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1061" />
         <source>Failed to update rulesets</source>
-        <translation>Failed to update rulesets</translation>
+        <translation type="unfinished">עדכון ערכי הכללים נכשל</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1070"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1064" />
         <source>Rulesets updated successfully</source>
-        <translation>Rulesets updated successfully</translation>
+        <translation type="unfinished">ערכות הכללים עודכנו בהצלחה</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1079"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1073" />
         <source>Update RuleSet Cache</source>
-        <translation>Update RuleSet Cache</translation>
+        <translation type="unfinished">עדכן RuleSet Cache</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1114"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1108" />
         <source>Rulesets cache is updated</source>
-        <translation>Rulesets cache is updated</translation>
+        <translation type="unfinished">המטמון של ערכות החוקים מעודכן</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1128"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1122" />
         <source>Clear RuleSet Cache</source>
-        <translation>Clear RuleSet Cache</translation>
+        <translation type="unfinished">נקה מטמון RuleSet</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1164"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1158" />
         <source>Enable AdBlock</source>
-        <translation>Enable AdBlock</translation>
+        <translation type="unfinished">הפעל את AdBlock</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1567"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1561" />
         <source>Error</source>
-        <translation>Error</translation>
+        <translation type="unfinished">שְׁגִיאָה</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1654"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1648" />
         <source>Tun Settings changed</source>
-        <translation>Tun Settings changed</translation>
+        <translation type="unfinished">הגדרות Tun שונו</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1655"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1649" />
         <source>Restart Tun to take effect.</source>
-        <translation>Restart Tun to take effect.</translation>
+        <translation type="unfinished">הפעל מחדש את Tun כדי להיכנס לתוקף.</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1661"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="1719"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="2838"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3180"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3234"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3282"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3487"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1655" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1713" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2832" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3203" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3257" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3305" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3510" />
         <source>Confirmation</source>
-        <translation>Confirmation</translation>
+        <translation type="unfinished">אִשׁוּר</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1662"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="1720"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1656" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1714" />
         <source>Settings changed, restart proxy?</source>
-        <translation>Settings changed, restart proxy?</translation>
+        <translation type="unfinished">ההגדרות השתנו, להפעיל מחדש את ה-proxy?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1691"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1685" />
         <source>Settings changed</source>
-        <translation>Settings changed</translation>
+        <translation type="unfinished">ההגדרות השתנו</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1692"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1686" />
         <source>Restart the program to take effect.</source>
-        <translation>Restart the program to take effect.</translation>
+        <translation type="unfinished">הפעל מחדש את התוכנית כדי להיכנס לתוקף.</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1735"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1729" />
         <source>Imported %1 profile(s)</source>
-        <translation>Imported %1 profile(s)</translation>
+        <translation type="unfinished">%1 פרופיל(ים) מיובאים</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1986"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1980" />
         <source>User opted for no privilege req, some features may not work</source>
-        <translation>User opted for no privilege req, some features may not work</translation>
+        <translation type="unfinished">המשתמש בחר ללא דרישת הרשאות, ייתכן שחלק מהתכונות לא יפעלו</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2050"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2044" />
         <source>Please give the core root privileges</source>
-        <translation>Please give the core root privileges</translation>
+        <translation type="unfinished">אנא תן את הרשאות שורש הליבה</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2404"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2398" />
         <source>Not Running</source>
-        <translation>Not Running</translation>
+        <translation type="unfinished">לא רץ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2785"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2779" />
         <source>Clone %1 item(s)</source>
-        <translation>Clone %1 item(s)</translation>
+        <translation type="unfinished">שיבוט %1 פריט(ים)</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2819"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2813" />
         <source> Confirmation </source>
-        <translation> Confirmation </translation>
+        <translation type="unfinished">אִשׁוּר</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2820"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2814" />
         <source> Remove %1 item(s) ? </source>
-        <translation> Remove %1 item(s) ? </translation>
+        <translation type="unfinished">להסיר %1 פריטים ?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2839"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2833" />
         <source>Remove %1 item(s) ?</source>
-        <translation>Remove %1 item(s) ?</translation>
+        <translation type="unfinished">להסיר %1 פריטים?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2876"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="2889"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2870" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2883" />
         <source>Copied %1 item(s)</source>
-        <translation>Copied %1 item(s)</translation>
+        <translation type="unfinished">הועתקו %1 פריט(ים)</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2905"/>
-        <source>Config copied</source>
-        <translation>Config copied</translation>
-    </message>
-    <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2907"/>
-        <source>Copy core config</source>
-        <translation>Copy core config</translation>
-    </message>
-    <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2909"/>
-        <source>Copy test config</source>
-        <translation>Copy test config</translation>
-    </message>
-    <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3092"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3115" />
         <source>QR Code not found</source>
-        <translation>QR Code not found</translation>
+        <translation type="unfinished">קוד QR לא נמצא</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3113"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3136" />
         <source>Unable to capture screen</source>
-        <translation>Unable to capture screen</translation>
+        <translation type="unfinished">לא מצליח לצלם מסך</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3181"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3204" />
         <source>Remove %1 Unavailable item(s) ?</source>
-        <translation>Remove %1 Unavailable item(s) ?</translation>
+        <translation type="unfinished">להסיר את %1 פריטים לא זמינים ?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3235"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3258" />
         <source>Remove %1 Invalid item(s) ?</source>
-        <translation>Remove %1 Invalid item(s) ?</translation>
+        <translation type="unfinished">להסיר את %1 פריטים לא חוקיים?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3283"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3306" />
         <source>Replace domain server addresses with their resolved IPs?</source>
-        <translation>Replace domain server addresses with their resolved IPs?</translation>
+        <translation type="unfinished">להחליף את כתובות שרת הדומיין בכתובות ה-IP שנפתרו?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3416"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3439" />
         <source>Clear</source>
-        <translation>Clear</translation>
+        <translation type="unfinished">בָּרוּר</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3478"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3501" />
         <source>Delete selected Group</source>
-        <translation>Delete selected Group</translation>
+        <translation type="unfinished">מחק את הקבוצה שנבחרה</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3479"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3502" />
         <source>Edit selected Group</source>
-        <translation>Edit selected Group</translation>
+        <translation type="unfinished">ערוך את הקבוצה שנבחרה</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3488"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3511" />
         <source>Remove %1?</source>
-        <translation>Remove %1?</translation>
+        <translation type="unfinished">להסיר את% 1?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4171"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4194" />
         <source>Cannot start</source>
-        <translation>Cannot start</translation>
+        <translation type="unfinished">לא ניתן להתחיל</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4172"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4195" />
         <source>Last download request has not finished yet</source>
-        <translation>Last download request has not finished yet</translation>
+        <translation type="unfinished">בקשת ההורדה האחרונה עדיין לא הסתיימה</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4206"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4229" />
         <source>Failed to download update assets</source>
-        <translation>Failed to download update assets</translation>
+        <translation type="unfinished">הורדת נכסי העדכון נכשלה</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="86"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="81" />
         <source>Profile test aborted</source>
-        <translation>Profile test aborted</translation>
+        <translation type="unfinished">בדיקת הפרופיל הופסקה</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="137"/>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="183"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="132" />
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="178" />
         <source>[%1] test error: %2</source>
-        <translation>[%1] test error: %2</translation>
+        <translation type="unfinished">[%1] שגיאת בדיקה: %2</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="166"/>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="492"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="161" />
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="487" />
         <source>Something is very wrong, the subject ent cannot be found!</source>
-        <translation>Something is very wrong, the subject ent cannot be found!</translation>
+        <translation type="unfinished">משהו מאוד לא בסדר, לא ניתן למצוא את נושא הנושא!</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="172"/>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="498"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="167" />
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="493" />
         <source>Profile manager data is corrupted, try again.</source>
-        <translation>Profile manager data is corrupted, try again.</translation>
+        <translation type="unfinished">נתוני מנהל הפרופיל פגומים, נסה שוב.</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="206"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="201" />
         <source>The last url test did not exit completely, please wait. If it persists, please restart the program.</source>
-        <translation>The last url test did not exit completely, please wait. If it persists, please restart the program.</translation>
+        <translation type="unfinished">בדיקת כתובת האתר האחרונה לא יצאה לחלוטין, אנא המתן.אם זה ממשיך, אנא הפעל מחדש את התוכנית.</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="215"/>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="322"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="210" />
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="317" />
         <source>Failed to build test config: </source>
-        <translation>Failed to build test config: </translation>
+        <translation type="unfinished">בניית תצורת הבדיקה נכשלה:</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="256"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="251" />
         <source>URL test finished!</source>
-        <translation>URL test finished!</translation>
+        <translation type="unfinished">בדיקת כתובת האתר הסתיימה!</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="267"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="262" />
         <source>Failed to stop tests</source>
-        <translation>Failed to stop tests</translation>
+        <translation type="unfinished">נכשל בהפסקת הבדיקות</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="273"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="268" />
         <source>Testing</source>
-        <translation>Testing</translation>
+        <translation type="unfinished">בּוֹחֵן</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="311"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="306" />
         <source>The last speed test did not exit completely, please wait. If it persists, please restart the program.</source>
-        <translation>The last speed test did not exit completely, please wait. If it persists, please restart the program.</translation>
+        <translation type="unfinished">בדיקת המהירות האחרונה לא יצאה לחלוטין, אנא המתן.אם זה ממשיך, אנא הפעל מחדש את התוכנית.</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="348"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="343" />
         <source>Speedtest finished!</source>
-        <translation>Speedtest finished!</translation>
+        <translation type="unfinished">מבחן המהירות הסתיים!</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="429"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="424" />
         <source>Profile speed test aborted</source>
-        <translation>Profile speed test aborted</translation>
+        <translation type="unfinished">בדיקת מהירות הפרופיל בוטלה</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="517"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="512" />
         <source>[%1] speed test error: %2</source>
-        <translation>[%1] speed test error: %2</translation>
+        <translation type="unfinished">[%1] שגיאת בדיקת מהירות: %2</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="526"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="521" />
         <source>You need to enable hijack DNS server first</source>
-        <translation>You need to enable hijack DNS server first</translation>
+        <translation type="unfinished">תחילה עליך להפעיל את שרת ה-DNS של חטיפתו</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="540"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="535" />
         <source>Failed to set system dns: </source>
-        <translation>Failed to set system dns: </translation>
+        <translation type="unfinished">נכשל הגדרת ה-DNS של המערכת:</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="588"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="583" />
         <source>Tun device misbehaving</source>
-        <translation>Tun device misbehaving</translation>
+        <translation type="unfinished">מכשיר טון מתנהג בצורה לא נכונה</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="589"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="584" />
         <source>If you have trouble starting VPN, you can force reset Core process here and then try starting the profile again. The error is %1</source>
-        <translation>If you have trouble starting VPN, you can force reset Core process here and then try starting the profile again. The error is %1</translation>
+        <translation type="unfinished">אם אתה מתקשה להפעיל VPN, אתה יכול לכפות איפוס תהליך Core כאן ולאחר מכן לנסות להפעיל את הפרופיל שוב.השגיאה היא %1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="593"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="588" />
         <source>Reset</source>
-        <translation>Reset</translation>
+        <translation type="unfinished">אִתחוּל</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="594"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="589" />
         <source>Cancel</source>
-        <translation>Cancel</translation>
+        <translation type="unfinished">לְבַטֵל</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="633"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="628" />
         <source>Another profile is starting...</source>
-        <translation>Another profile is starting...</translation>
+        <translation type="unfinished">פרופיל נוסף מתחיל...</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="640"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="635" />
         <source>Another profile is stopping...</source>
-        <translation>Another profile is stopping...</translation>
+        <translation type="unfinished">פרופיל נוסף עוצר...</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="661"/>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="743"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="656" />
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="738" />
         <source>If there is no response for a long time, it is recommended to restart the software.</source>
-        <translation>If there is no response for a long time, it is recommended to restart the software.</translation>
+        <translation type="unfinished">אם אין תגובה במשך זמן רב, מומלץ להפעיל מחדש את התוכנה.</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="675"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="670" />
         <source>Starting profile %1</source>
-        <translation>Starting profile %1</translation>
+        <translation type="unfinished">מתחיל את הפרופיל% 1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="677"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="672" />
         <source>Failed to start profile %1</source>
-        <translation>Failed to start profile %1</translation>
+        <translation type="unfinished">הפעלת הפרופיל% 1 נכשלה</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="726"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="721" />
         <source>Stop return error</source>
-        <translation>Stop return error</translation>
+        <translation type="unfinished">שגיאת עצור החזרה</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="766"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="761" />
         <source>Stopping profile %1</source>
-        <translation>Stopping profile %1</translation>
+        <translation type="unfinished">עצירת פרופיל% 1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="768"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="763" />
         <source>Failed to stop, please restart the program.</source>
-        <translation>Failed to stop, please restart the program.</translation>
+        <translation type="unfinished">עצירה נכשלה, אנא הפעל מחדש את התוכנית.</translation>
     </message>
 </context>
 <context>
     <name>PasswordForm</name>
     <message>
-        <location filename="../../src/nekobox/ui/security/change_password.ui" line="14"/>
+        <location filename="../../src/nekobox/ui/security/change_password.ui" line="14" />
         <source>Dialog</source>
-        <translation type="unfinished">Dialog</translation>
+        <translation type="unfinished">דיאלוג</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/change_password.ui" line="20"/>
+        <location filename="../../src/nekobox/ui/security/change_password.ui" line="20" />
         <source>Username</source>
-        <translation type="unfinished">Username</translation>
+        <translation type="unfinished">שם משתמש</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/change_password.ui" line="37"/>
+        <location filename="../../src/nekobox/ui/security/change_password.ui" line="37" />
         <source>New Password</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">סיסמה חדשה</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/change_password.ui" line="54"/>
+        <location filename="../../src/nekobox/ui/security/change_password.ui" line="54" />
         <source>Confirm Password</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">אשר את הסיסמה</translation>
     </message>
 </context>
 <context>
     <name>ProxyItem</name>
     <message>
-        <location filename="../../src/ui/profile/ProxyItem.cpp" line="39"/>
+        <location filename="../../src/ui/profile/ProxyItem.cpp" line="39" />
         <source>Confirmation</source>
-        <translation>Confirmation</translation>
+        <translation type="unfinished">אִשׁוּר</translation>
     </message>
     <message>
-        <location filename="../../src/ui/profile/ProxyItem.cpp" line="39"/>
+        <location filename="../../src/ui/profile/ProxyItem.cpp" line="39" />
         <source>Remove %1?</source>
-        <translation>Remove %1?</translation>
+        <translation type="unfinished">להסיר את% 1?</translation>
     </message>
 </context>
 <context>
     <name>QAction</name>
     <message>
-        <location filename="../../src/ui/security_addon.cpp" line="348"/>
+        <location filename="../../src/ui/security_addon.cpp" line="342" />
         <source>Security Settings</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">הגדרות אבטחה</translation>
     </message>
 </context>
 <context>
     <name>QGuiApplication</name>
     <message>
-        <location filename="../../src/main.cpp" line="262"/>
+        <location filename="../../src/main.cpp" line="258" />
         <source>QT_LAYOUT_DIRECTION</source>
-        <translation>QT_LAYOUT_DIRECTION</translation>
+        <translation type="unfinished">QT_LAYOUT_DIRECTION</translation>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../../src/configs/ConfigBuilder.cpp" line="164"/>
+        <location filename="../../src/configs/ConfigBuilder.cpp" line="159" />
         <source>Tun mode cannot be used with Custom configs</source>
-        <translation>Tun mode cannot be used with Custom configs</translation>
+        <translation type="unfinished">לא ניתן להשתמש במצב Tun עם הגדרות מותאמות אישית</translation>
     </message>
     <message>
-        <location filename="../../src/ui/group/GroupItem.cpp" line="22"/>
-        <source>URL detected</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/ui/group/GroupItem.cpp" line="32"/>
-        <source>Add profiles to this group</source>
-        <translation>Add profiles to this group</translation>
-    </message>
-    <message>
-        <location filename="../../src/ui/group/GroupItem.cpp" line="37"/>
-        <source>Group name</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/ui/group/GroupItem.cpp" line="31"/>
-        <source>Create new subscription group</source>
-        <translation>Create new subscription group</translation>
-    </message>
-    <message>
-        <source>url detected</source>
-        <translation type="vanished">url detected</translation>
-    </message>
-    <message>
-        <location filename="../../src/ui/group/GroupItem.cpp" line="27"/>
-        <source>%1
-How to update?</source>
-        <translation>%1
-How to update?</translation>
-    </message>
-    <message>
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="913"/>
+        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="913" />
         <source>Requesting subscription: %1</source>
-        <translation>Requesting subscription: %1</translation>
+        <translation type="unfinished">מבקש מנוי: %1</translation>
     </message>
     <message>
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="917"/>
+        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="917" />
         <source>Requesting subscription %1 error: %2</source>
-        <translation>Requesting subscription %1 error: %2</translation>
+        <translation type="unfinished">בקשת מנוי %1 שגיאה: %2</translation>
     </message>
     <message>
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="924"/>
+        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="924" />
         <source>Subscription request fininshed: %1</source>
-        <translation>Subscription request fininshed: %1</translation>
+        <translation type="unfinished">בקשת המנוי הסתיימה: %1</translation>
     </message>
     <message>
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="942"/>
+        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="942" />
         <source>Clearing servers...</source>
-        <translation>Clearing servers...</translation>
+        <translation type="unfinished">מנקה שרתים...</translation>
     </message>
     <message>
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="947"/>
+        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="947" />
         <source>Processing subscription data...</source>
-        <translation>Processing subscription data...</translation>
+        <translation type="unfinished">מעבד נתוני מנוי...</translation>
     </message>
     <message>
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="950"/>
+        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="950" />
         <source>Process complete, applying...</source>
-        <translation>Process complete, applying...</translation>
+        <translation type="unfinished">התהליך הושלם, יישום...</translation>
     </message>
     <message>
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="1013"/>
+        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="1013" />
         <source>Added %1 profiles:
 %2
 Deleted %3 Profiles:
 %4</source>
-        <translation>Added %1 profiles:
+        <translation type="unfinished">נוספו %1 פרופילים:
 %2
-Deleted %3 Profiles:
+נמחקו %3 פרופילים:
 %4</translation>
     </message>
     <message>
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="1018"/>
+        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="1018" />
         <source>Nothing</source>
-        <translation>Nothing</translation>
+        <translation type="unfinished">שׁוּם דָבָר</translation>
     </message>
     <message>
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="1021"/>
+        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="1021" />
         <source>Change of %1:</source>
-        <translation>Change of %1:</translation>
+        <translation type="unfinished">שינוי של% 1:</translation>
     </message>
     <message>
-        <location filename="../../src/dataStore/Database.cpp" line="123"/>
+        <location filename="../../src/dataStore/Database.cpp" line="119" />
         <source>Default</source>
-        <translation>Default</translation>
+        <translation type="unfinished">בְּרִירַת מֶחדָל</translation>
     </message>
     <message>
-        <location filename="../../src/global/HTTPRequestHelper.cpp" line="189"/>
+        <location filename="../../src/global/HTTPRequestHelper.cpp" line="189" />
         <source>Could not open file.</source>
-        <translation>Could not open file.</translation>
+        <translation type="unfinished">לא ניתן היה לפתוח את הקובץ.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/configs/proxy/ChainBean.hpp" line="17"/>
+        <location filename="../../src/nekobox/configs/proxy/ChainBean.hpp" line="17" />
         <source>Chain Proxy</source>
-        <translation>Chain Proxy</translation>
+        <translation type="unfinished">שרשרת פרוקסי</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/global/GuiUtils.hpp" line="112"/>
-        <location filename="../../src/ui/profile/edit_ssh.cpp" line="28"/>
-        <location filename="../../src/ui/setting/dialog_basic_settings.cpp" line="241"/>
+        <location filename="../../src/nekobox/global/GuiUtils.hpp" line="112" />
+        <location filename="../../src/ui/profile/edit_ssh.cpp" line="28" />
+        <location filename="../../src/ui/setting/dialog_basic_settings.cpp" line="241" />
         <source>Select</source>
-        <translation>Select</translation>
+        <translation type="unfinished">לִבחוֹר</translation>
     </message>
     <message>
-        <location filename="../../src/stats/traffic/TrafficLooper.cpp" line="115"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="2372"/>
+        <location filename="../../src/stats/traffic/TrafficLooper.cpp" line="115" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2366" />
         <source>Proxy: %1
 Direct: %2</source>
-        <translation>Proxy: %1
-Direct: %2</translation>
+        <translation type="unfinished">פרוקסי: %1
+ישיר: %2</translation>
     </message>
     <message>
-        <location filename="../../src/sys/Process.cpp" line="104"/>
+        <location filename="../../src/sys/Process.cpp" line="104" />
         <source>Core exited, cleaning up...</source>
-        <translation>Core exited, cleaning up...</translation>
+        <translation type="unfinished">הליבה יצאה, מנקה...</translation>
     </message>
     <message>
-        <location filename="../../src/sys/Process.cpp" line="111"/>
+        <location filename="../../src/sys/Process.cpp" line="111" />
         <source>Core exits too frequently, stop automatic restart this profile.</source>
-        <translation>Core exits too frequently, stop automatic restart this profile.</translation>
+        <translation type="unfinished">הליבה יוצאת בתדירות גבוהה מדי, הפסק את ההפעלה מחדש האוטומטית של פרופיל זה.</translation>
     </message>
     <message>
-        <location filename="../../src/sys/Process.cpp" line="120"/>
+        <location filename="../../src/sys/Process.cpp" line="120" />
         <source>Restarting the core ...</source>
-        <translation>Restarting the core ...</translation>
+        <translation type="unfinished">מפעיל מחדש את הליבה...</translation>
     </message>
     <message>
-        <location filename="../../src/ui/group/GroupItem.cpp" line="101"/>
+        <location filename="../../src/sys/Settings.cpp" line="361" />
+        <source>System</source>
+        <translation type="unfinished">מַעֲרֶכֶת</translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/group/GroupItem.cpp" line="22" />
+        <source>URL detected</source>
+        <translation type="unfinished">זוהתה כתובת אתר</translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/group/GroupItem.cpp" line="27" />
+        <source>%1
+How to update?</source>
+        <translation type="unfinished">%1
+איך לעדכן?</translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/group/GroupItem.cpp" line="31" />
+        <source>Create new subscription group</source>
+        <translation type="unfinished">צור קבוצת מנויים חדשה</translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/group/GroupItem.cpp" line="32" />
+        <source>Add profiles to this group</source>
+        <translation type="unfinished">הוסף פרופילים לקבוצה זו</translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/group/GroupItem.cpp" line="37" />
+        <source>Group name</source>
+        <translation type="unfinished">שם הקבוצה</translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/group/GroupItem.cpp" line="101" />
         <source>Used: %1 Remain: %2 Expire: %3</source>
-        <translation>Used: %1 Remain: %2 Expire: %3</translation>
+        <translation type="unfinished">בשימוש: %1 נשאר: %2 תוקף: %3</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="179"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="173" />
         <source>Download Profiles</source>
-        <translation>Download Profiles</translation>
+        <translation type="unfinished">הורד פרופילים</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="180"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="174" />
         <source>Requesting profile error: %1</source>
-        <translation>Requesting profile error: %1</translation>
+        <translation type="unfinished">שגיאת פרופיל מבקש: %1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="347"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="341" />
         <source>
 Deleted %1 Duplicates</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">נמחקו %1 כפילויות</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="381"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="375" />
         <source>
 Deleted %1 Invalid</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">נמחק % 1 לא חוקי</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="404"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="398" />
         <source>
 Deleted %1 Unavailable</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">נמחק% 1 לא זמין</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1447"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1441" />
         <source>Check Rule Sets: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">בדוק ערכות כללים: %1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1469"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1463" />
         <source>Requesting rule-set list error: %1</source>
-        <translation>Requesting rule-set list error: %1</translation>
+        <translation type="unfinished">שגיאת רשימה של קבוצת כללים מבקשת: %1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2409"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2403" />
         <source>IP address: %1</source>
-        <translation>IP address: %1</translation>
+        <translation type="unfinished">כתובת IP: %1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4076"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="4087"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="4131"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="4153"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="4162"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="4197"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2901" />
+        <source>Config copied</source>
+        <translation type="unfinished">התצורה הועתקה</translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/mainwindow.cpp" line="2912" />
+        <source>Copy core config</source>
+        <translation type="unfinished">העתק את תצורת הליבה</translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/mainwindow.cpp" line="2913" />
+        <source>Copy test config</source>
+        <translation type="unfinished">העתק את תצורת הבדיקה</translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/mainwindow.cpp" line="2914" />
+        <location filename="../../src/ui/security_addon.cpp" line="22" />
+        <location filename="../../src/ui/setting/dialog_vpn_settings.cpp" line="45" />
+        <source>OK</source>
+        <translation type="unfinished">בְּסֵדֶר</translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/mainwindow.cpp" line="4099" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4110" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4154" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4176" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4185" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4220" />
         <source>Update</source>
-        <translation>Update</translation>
+        <translation type="unfinished">לְעַדְכֵּן</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4077"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4100" />
         <source>Not official support platform</source>
-        <translation>Not official support platform</translation>
+        <translation type="unfinished">לא פלטפורמת תמיכה רשמית</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4088"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4111" />
         <source>Requesting update error: %1</source>
-        <translation>Requesting update error: %1</translation>
+        <translation type="unfinished">שגיאת בקשה לעדכון: %1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4131"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4154" />
         <source>No update</source>
-        <translation>No update</translation>
+        <translation type="unfinished">אין עדכון</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4154"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4177" />
         <source>Update found: %1
 Release note:
 %2</source>
-        <translation>Update found: %1
-Release note:
+        <translation type="unfinished">נמצא עדכון: %1
+הערת שחרור:
 %2</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4157"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4180" />
         <source>Close</source>
-        <translation>Close</translation>
+        <translation type="unfinished">לִסְגוֹר</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4159"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4182" />
         <source>Open in browser</source>
-        <translation>Open in browser</translation>
+        <translation type="unfinished">פתח בדפדפן</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4198"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4221" />
         <source>Update is ready, restart to install?</source>
-        <translation>Update is ready, restart to install?</translation>
+        <translation type="unfinished">העדכון מוכן, להפעיל מחדש כדי להתקין?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/setting/dialog_basic_settings.cpp" line="246"/>
-        <source>Select a Folder</source>
-        <translation>Select a Folder</translation>
-    </message>
-    <message>
-        <location filename="../../src/ui/security_addon.cpp" line="27"/>
+        <location filename="../../src/ui/security_addon.cpp" line="21" />
         <source>Access denied</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">הגִישָׁה נִדחֲתָה</translation>
     </message>
     <message>
-        <location filename="../../src/ui/security_addon.cpp" line="28"/>
-        <source>OK</source>
-        <translation type="unfinished">OK</translation>
+        <location filename="../../src/ui/setting/dialog_basic_settings.cpp" line="246" />
+        <source>Select a Folder</source>
+        <translation type="unfinished">בחר תיקיה</translation>
     </message>
     <message>
-        <location filename="../../src/sys/Settings.cpp" line="348"/>
-        <source>System</source>
-        <translation type="unfinished">System</translation>
+        <location filename="../../src/ui/setting/dialog_vpn_settings.cpp" line="37" />
+        <source>Exclude CIDR's</source>
+        <translation type="unfinished">אל תכלול CIDR's</translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/setting/dialog_vpn_settings.cpp" line="46" />
+        <source>Cancel</source>
+        <translation type="unfinished">לְבַטֵל</translation>
     </message>
 </context>
 <context>
     <name>QPlatformTheme</name>
     <message>
-        <location filename="../../src/main.cpp" line="61"/>
+        <location filename="../../src/main.cpp" line="57" />
         <source>Cancel</source>
-        <translation>Cancel</translation>
+        <translation type="unfinished">לְבַטֵל</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="62"/>
+        <location filename="../../src/main.cpp" line="58" />
         <source>Apply</source>
-        <translation>Apply</translation>
+        <translation type="unfinished">לִפְנוֹת</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="63"/>
+        <location filename="../../src/main.cpp" line="59" />
         <source>Yes</source>
-        <translation>Yes</translation>
+        <translation type="unfinished">כֵּן</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="64"/>
+        <location filename="../../src/main.cpp" line="60" />
         <source>No</source>
-        <translation>No</translation>
+        <translation type="unfinished">לֹא</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="65"/>
+        <location filename="../../src/main.cpp" line="61" />
         <source>OK</source>
-        <translation>OK</translation>
+        <translation type="unfinished">בְּסֵדֶר</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="66"/>
+        <location filename="../../src/main.cpp" line="62" />
         <source>Defaults</source>
-        <translation>Defaults</translation>
+        <translation type="unfinished">ברירות מחדל</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="67"/>
+        <location filename="../../src/main.cpp" line="63" />
         <source>Restore Defaults</source>
-        <translation>Restore Defaults</translation>
+        <translation type="unfinished">שחזר ברירות מחדל</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="68"/>
+        <location filename="../../src/main.cpp" line="64" />
         <source>Discard</source>
-        <translation>Discard</translation>
+        <translation type="unfinished">לְהַשְׁלִיך</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="70"/>
+        <location filename="../../src/main.cpp" line="66" />
         <source>Undo</source>
-        <translation>Undo</translation>
+        <translation type="unfinished">לְבַטֵל</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="71"/>
+        <location filename="../../src/main.cpp" line="67" />
         <source>Redo</source>
-        <translation>Redo</translation>
+        <translation type="unfinished">לַעֲשׂוֹת שׁוּב</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="72"/>
+        <location filename="../../src/main.cpp" line="68" />
         <source>Cut</source>
-        <translation>Cut</translation>
+        <translation type="unfinished">גְזִירָה</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="73"/>
+        <location filename="../../src/main.cpp" line="69" />
         <source>Copy</source>
-        <translation>Copy</translation>
+        <translation type="unfinished">לְהַעְתִיק</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="74"/>
+        <location filename="../../src/main.cpp" line="70" />
         <source>Paste</source>
-        <translation>Paste</translation>
+        <translation type="unfinished">לְהַדבִּיק</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="75"/>
+        <location filename="../../src/main.cpp" line="71" />
         <source>Delete</source>
-        <translation>Delete</translation>
+        <translation type="unfinished">לִמְחוֹק</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="76"/>
+        <location filename="../../src/main.cpp" line="72" />
         <source>Select All</source>
-        <translation>Select All</translation>
+        <translation type="unfinished">בחר הכל</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="77"/>
+        <location filename="../../src/main.cpp" line="73" />
         <source>Stop</source>
-        <translation>Stop</translation>
+        <translation type="unfinished">לְהַפְסִיק</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="78"/>
+        <location filename="../../src/main.cpp" line="74" />
         <source>Clear</source>
-        <translation>Clear</translation>
+        <translation type="unfinished">בָּרוּר</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="79"/>
+        <location filename="../../src/main.cpp" line="75" />
         <source>Copy Link Location</source>
-        <translation>Copy Link Location</translation>
+        <translation type="unfinished">העתק את מיקום הקישור</translation>
     </message>
 </context>
 <context>
     <name>RouteItem</name>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="14"/>
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="14" />
         <source>Route Profile</source>
-        <translation>Route Profile</translation>
+        <translation type="unfinished">פרופיל מסלול</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="24"/>
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="24" />
         <source>General</source>
-        <translation>General</translation>
+        <translation type="unfinished">כְּלָלִי</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="63"/>
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="63" />
         <source>Default outbound</source>
-        <translation>Default outbound</translation>
+        <translation type="unfinished">ברירת מחדל יוצאת</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="70"/>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="319"/>
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="70" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="319" />
         <source>Name</source>
-        <translation>Name</translation>
+        <translation type="unfinished">שֵׁם</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="78"/>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="187"/>
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="78" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="187" />
         <source>Proxy</source>
-        <translation>Proxy</translation>
+        <translation type="unfinished">פרוקסי</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="83"/>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="217"/>
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="83" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="217" />
         <source>Direct</source>
-        <translation>Direct</translation>
+        <translation type="unfinished">יָשִׁיר</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="88"/>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="157"/>
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="88" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="157" />
         <source>Block</source>
-        <translation>Block</translation>
+        <translation type="unfinished">לַחסוֹם</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="96"/>
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="96" />
         <source>Update url</source>
-        <translation>Update url</translation>
+        <translation type="unfinished">עדכן כתובת אתר</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="130"/>
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="130" />
         <source>Skip update</source>
-        <translation>Skip update</translation>
+        <translation type="unfinished">דלג על עדכון</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="137"/>
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="137" />
         <source>Update manually</source>
-        <translation>Update manually</translation>
+        <translation type="unfinished">עדכן באופן ידני</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="151"/>
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="151" />
         <source>Basic</source>
-        <translation>Basic</translation>
+        <translation type="unfinished">בְּסִיסִי</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="248"/>
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="248" />
         <source>Advanced</source>
-        <translation>Advanced</translation>
+        <translation type="unfinished">מִתקַדֵם</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="257"/>
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="257" />
         <source>Import JSON</source>
-        <translation>Import JSON</translation>
+        <translation type="unfinished">ייבוא ​​JSON</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="267"/>
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="267" />
         <source>Rules</source>
-        <translation>Rules</translation>
+        <translation type="unfinished">כללים</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="279"/>
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="279" />
         <source>New</source>
-        <translation>New</translation>
+        <translation type="unfinished">חָדָשׁ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="286"/>
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="286" />
         <source>Move Up</source>
-        <translation>Move Up</translation>
+        <translation type="unfinished">לזוז למעלה</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="293"/>
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="293" />
         <source>Move Down</source>
-        <translation>Move Down</translation>
+        <translation type="unfinished">לזוז למטה</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="300"/>
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="300" />
         <source>Delete</source>
-        <translation>Delete</translation>
+        <translation type="unfinished">לִמְחוֹק</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="310"/>
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="310" />
         <source>Rule Attributes</source>
-        <translation>Rule Attributes</translation>
+        <translation type="unfinished">תכונות כלל</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="329"/>
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="329" />
         <source>Attribute</source>
-        <translation>Attribute</translation>
+        <translation type="unfinished">תְכוּנָה</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="342"/>
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="342" />
         <source>Name_Placeholder</source>
-        <translation>Name_Placeholder</translation>
+        <translation type="unfinished">Name_Placeholder</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="374"/>
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="374" />
         <source>Notes</source>
-        <translation>Notes</translation>
+        <translation type="unfinished">הערות</translation>
     </message>
     <message>
-        <location filename="../../src/ui/setting/RouteItem.cpp" line="302"/>
-        <location filename="../../src/ui/setting/RouteItem.cpp" line="469"/>
+        <location filename="../../src/ui/setting/RouteItem.cpp" line="302" />
+        <location filename="../../src/ui/setting/RouteItem.cpp" line="469" />
         <source>Invalid rules</source>
-        <translation>Invalid rules</translation>
+        <translation type="unfinished">כללים לא חוקיים</translation>
     </message>
     <message>
-        <location filename="../../src/ui/setting/RouteItem.cpp" line="302"/>
+        <location filename="../../src/ui/setting/RouteItem.cpp" line="302" />
         <source>Some rules could not be added:
 </source>
-        <translation>Some rules could not be added:
-</translation>
+        <translation type="unfinished">לא ניתן היה להוסיף כמה כללים:</translation>
     </message>
     <message>
-        <location filename="../../src/ui/setting/RouteItem.cpp" line="358"/>
+        <location filename="../../src/ui/setting/RouteItem.cpp" line="358" />
         <source>Invalid JSON Array</source>
-        <translation>Invalid JSON Array</translation>
+        <translation type="unfinished">מערך JSON לא חוקי</translation>
     </message>
     <message>
-        <location filename="../../src/ui/setting/RouteItem.cpp" line="358"/>
+        <location filename="../../src/ui/setting/RouteItem.cpp" line="358" />
         <source>The provided input cannot be parsed to a valid route rule array:
 </source>
-        <translation>The provided input cannot be parsed to a valid route rule array:
-</translation>
+        <translation type="unfinished">לא ניתן לנתח את הקלט שסופק למערך חוקי מסלול חוקי:</translation>
     </message>
     <message>
-        <location filename="../../src/ui/setting/RouteItem.cpp" line="441"/>
+        <location filename="../../src/ui/setting/RouteItem.cpp" line="441" />
         <source>Invalid operation</source>
-        <translation>Invalid operation</translation>
+        <translation type="unfinished">פעולה לא חוקית</translation>
     </message>
     <message>
-        <location filename="../../src/ui/setting/RouteItem.cpp" line="441"/>
+        <location filename="../../src/ui/setting/RouteItem.cpp" line="441" />
         <source>Cannot create Route Profile with empty name</source>
-        <translation>Cannot create Route Profile with empty name</translation>
+        <translation type="unfinished">לא ניתן ליצור פרופיל מסלול עם שם ריק</translation>
     </message>
     <message>
-        <location filename="../../src/ui/setting/RouteItem.cpp" line="457"/>
+        <location filename="../../src/ui/setting/RouteItem.cpp" line="457" />
         <source>Empty Route Profile</source>
-        <translation>Empty Route Profile</translation>
+        <translation type="unfinished">פרופיל מסלול ריק</translation>
     </message>
     <message>
-        <location filename="../../src/ui/setting/RouteItem.cpp" line="457"/>
+        <location filename="../../src/ui/setting/RouteItem.cpp" line="457" />
         <source>No valid rules are in the profile</source>
-        <translation>No valid rules are in the profile</translation>
+        <translation type="unfinished">אין כללים חוקיים בפרופיל</translation>
     </message>
     <message>
-        <location filename="../../src/ui/setting/RouteItem.cpp" line="469"/>
+        <location filename="../../src/ui/setting/RouteItem.cpp" line="469" />
         <source>Some rules could not be added, fix them before saving:
 </source>
-        <translation>Some rules could not be added, fix them before saving:
-</translation>
+        <translation type="unfinished">לא ניתן היה להוסיף חלק מהכללים, תקן אותם לפני השמירה:</translation>
     </message>
 </context>
 <context>
     <name>SecurityForm</name>
     <message>
-        <location filename="../../src/nekobox/ui/security/security.ui" line="14"/>
+        <location filename="../../src/nekobox/ui/security/security.ui" line="14" />
         <source>Security Settings</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">הגדרות אבטחה</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/security.ui" line="62"/>
+        <location filename="../../src/nekobox/ui/security/security.ui" line="62" />
         <source>Lock Actions</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">נעילת פעולות</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/security.ui" line="69"/>
+        <location filename="../../src/nekobox/ui/security/security.ui" line="69" />
         <source>Lock Settings</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">הגדרות נעילה</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/security.ui" line="76"/>
+        <location filename="../../src/nekobox/ui/security/security.ui" line="76" />
         <source>Lock Startup</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">נעל את ההפעלה</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/security.ui" line="113"/>
+        <location filename="../../src/nekobox/ui/security/security.ui" line="113" />
         <source>Delete Users</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">מחק משתמשים</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/security.ui" line="120"/>
+        <location filename="../../src/nekobox/ui/security/security.ui" line="120" />
         <source>Edit User Roles</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ערוך תפקידי משתמש</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/security.ui" line="163"/>
+        <location filename="../../src/nekobox/ui/security/security.ui" line="163" />
         <source>Change UI Password</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">שנה את סיסמת ממשק המשתמש</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/security.ui" line="170"/>
+        <location filename="../../src/nekobox/ui/security/security.ui" line="170" />
         <source>Set Proxy Credentials</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">הגדר אישורי פרוקסי</translation>
     </message>
 </context>
 <context>
     <name>SpinnerDialog</name>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="127"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="121" />
         <source>Invalid JSON Array</source>
-        <translation>Invalid JSON Array</translation>
+        <translation type="unfinished">מערך JSON לא חוקי</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="128"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="122" />
         <source>The provided input cannot be parsed to a valid route rule array:
 </source>
-        <translation>The provided input cannot be parsed to a valid route rule array:
-</translation>
+        <translation type="unfinished">לא ניתן לנתח את הקלט שסופק למערך חוקי מסלול חוקי:</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="251"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="245" />
         <source>Fetching information</source>
-        <translation>Fetching information</translation>
+        <translation type="unfinished">שואב מידע</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="267"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="1188"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="261" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1182" />
         <source>Download Profiles</source>
-        <translation>Download Profiles</translation>
+        <translation type="unfinished">הורד פרופילים</translation>
     </message>
 </context>
 <context>
     <name>UsersForm</name>
     <message>
-        <location filename="../../src/nekobox/ui/security/delete_or_edit_users.ui" line="14"/>
+        <location filename="../../src/nekobox/ui/security/delete_or_edit_users.ui" line="14" />
         <source>Form</source>
-        <translation type="unfinished">Form</translation>
+        <translation type="unfinished">טוֹפֶס</translation>
     </message>
 </context>
 </TS>

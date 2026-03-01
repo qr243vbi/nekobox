@@ -1,9 +1,3 @@
-
-#ifdef _WIN32
-#include <winsock2.h>
-#include <windows.h>
-#endif
-
 #include "nekobox/ui/mainwindow.h"
 
 #include "3rdparty/qv2ray/wrapper.hpp"
@@ -2902,24 +2896,53 @@ void MainWindow::on_menu_export_config_triggered() {
   QString config_core = QJsonObject2QString(result->coreConfig, false);
   QApplication::clipboard()->setText(config_core);
 
-  QMessageBox msg(QMessageBox::Information, tr("Config copied"), config_core);
-  QPushButton *button_1 =
-      msg.addButton(tr("Copy core config"), QMessageBox::YesRole);
-  QPushButton *button_2 =
-      msg.addButton(tr("Copy test config"), QMessageBox::YesRole);
-  msg.addButton(QMessageBox::Ok);
-  msg.setEscapeButton(QMessageBox::Ok);
-  msg.setDefaultButton(QMessageBox::Ok);
-  msg.exec();
-  if (msg.clickedButton() == button_1) {
-    result = BuildConfig(ent, false, false);
-    config_core = QJsonObject2QString(result->coreConfig, false);
-    QApplication::clipboard()->setText(config_core);
-  } else if (msg.clickedButton() == button_2) {
-    result = BuildConfig(ent, true, false);
-    config_core = QJsonObject2QString(result->coreConfig, false);
-    QApplication::clipboard()->setText(config_core);
-  }
+{
+    QDialog dialog;
+    dialog.setWindowTitle(QObject::tr("Config copied"));
+    dialog.resize(500, 300);
+    dialog.setSizeGripEnabled(true);
+    dialog.setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+
+    // Detailed text area
+    QTextEdit *textEdit = new QTextEdit(&dialog);
+    textEdit->setReadOnly(true);
+    textEdit->setText(config_core);
+
+    // Buttons
+    QPushButton *copyCoreButton = new QPushButton(QObject::tr("Copy core config"));
+    QPushButton *copyTestButton = new QPushButton(QObject::tr("Copy test config"));
+    QPushButton *okButton = new QPushButton(QObject::tr("OK"));
+
+    // Button layout
+    QHBoxLayout *buttonLayout = new QHBoxLayout();
+    buttonLayout->addWidget(copyCoreButton);
+    buttonLayout->addWidget(copyTestButton);
+    buttonLayout->addStretch();
+    buttonLayout->addWidget(okButton);
+
+    // Main layout
+    QVBoxLayout *mainLayout = new QVBoxLayout(&dialog);
+    mainLayout->addWidget(textEdit);
+    mainLayout->addLayout(buttonLayout);
+
+    QObject::connect(copyCoreButton, &QPushButton::clicked, [&]() {
+        auto result = BuildConfig(ent, false, false);
+        QString coreConfigStr = QJsonObject2QString(result->coreConfig, false);
+        QApplication::clipboard()->setText(coreConfigStr);
+        textEdit->setText(coreConfigStr);
+    });
+
+    QObject::connect(copyTestButton, &QPushButton::clicked, [&]() {
+        auto result = BuildConfig(ent, true, false);
+        QString coreConfigStr = QJsonObject2QString(result->coreConfig, false);
+        QApplication::clipboard()->setText(coreConfigStr);
+        textEdit->setText(coreConfigStr);
+    });
+
+    QObject::connect(okButton, &QPushButton::clicked, &dialog, &QDialog::accept);
+
+    dialog.exec();
+}
 }
 
 void MainWindow::display_qr_link(bool nkrFormat) {

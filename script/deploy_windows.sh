@@ -60,7 +60,7 @@ cp "$BUILD/nekobox.exe" "$DEST" || cp "$BUILD/Release/nekobox.exe" "$DEST"
 [[ -f "$BUILD/updater.exe" ]] && cp "$BUILD/updater.exe" "$DEST"
 
 cp -RT "$CURDIR/res/public" "$DEST/public"
-cp "$BUILD/"*.qm "$CURDIR/languages.txt" "$CURDIR/"*.js "$DEST/public/"
+cp "$BUILD/"*.qm "$CURDIR/res/languages.txt" "$CURDIR/"*.js "$DEST/public/"
 
 if [[ "$COMPILER" != "MinGW" ]]
 then

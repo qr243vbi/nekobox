@@ -202,7 +202,12 @@ QString GetQueryValue(const QUrlQuery &q, const QString &key,
 int GetQueryIntValue(const QUrlQuery &q, const QString &key, int def = 0);
 QStringList GetQueryListValue(const QUrlQuery &q, const QString &key);
 
-QString GetRandomString(int randomStringLength);
+inline const int ExcludeDigits = 1;
+inline const int ExcludeLetters = 2;
+inline const int ExcludeLowercase = 4;
+inline const int ExcludeUppercase = 8;
+
+QString GetRandomString(int randomStringLength, int flags = 0);
 
 void MoveDirToTrash(const QString &path);
 

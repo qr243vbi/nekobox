@@ -94,7 +94,7 @@ patchelf --set-rpath '$ORIGIN/../../lib' ./usr/plugins/platformthemes/libqxdgdes
 
 # fix lib rpath
 cp -RT "$CURDIR/res/public" "$DEST/public"
-cp "$BUILD/"*.qm "$CURDIR/languages.txt" "$CURDIR/"*.js "$DEST/public/"
+cp "$BUILD/"*.qm "$CURDIR/res/languages.txt" "$CURDIR/"*.js "$DEST/public/"
 
 cd "$DEST"
 patchelf --set-rpath '$ORIGIN/usr/lib' ./nekobox

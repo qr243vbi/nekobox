@@ -68,7 +68,15 @@ namespace Configs {
         QString appdataDir = "";
         QStringList ignoreConnTag = {};
   //      bool auto_redirect = false;
-        QString tun_name = "";
+        QStringList route_exclude_addrs = {
+            "127.0.0.0/8",
+            "10.0.0.0/8", //private class a,b,c
+            "172.16.0.0/12",
+            "192.168.0.0/16",
+            "169.254.0.0/16",
+            "224.0.0.0/4",
+            "255.255.255.255/32"
+        };
         QString tun_address = "172.19.0.1/24";
         QString tun_address_6 = "fdfe:dcba:9876::1/96";
         QString proxy_scheme = "{ip}:{port}";
@@ -173,11 +181,7 @@ namespace Configs {
         // VPN
         bool fake_dns = false;
         bool enable_tun_routing = false;
-#if defined(Q_OS_WIN)
-        QString vpn_implementation = WinVersion::IsBuildNumGreaterOrEqual(BuildNumber::Windows_10_1507) ? "system" : "gvisor";
-#else
-        QString vpn_implementation = "system";
-#endif
+        QString vpn_implementation = "gvisor";
         int vpn_mtu = 1500;
         bool vpn_ipv6 = false;
         bool vpn_strict_route = true;

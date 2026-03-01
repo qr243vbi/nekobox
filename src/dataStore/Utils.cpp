@@ -4,7 +4,7 @@
 #include "3rdparty/base64.h"
 #include <QDir>
 #include <QFileInfo>
-#include <random>
+#include <QRandomGenerator>
 
 #include <QApplication>
 #include <QDateTime>
@@ -111,22 +111,53 @@ void MoveDirToTrash(const QString &path) {
   }
 };
 
-QString GetRandomString(int randomStringLength) {
-  static std::random_device rd;
-  static std::mt19937 mt(rd());
+QString GetRandomString(int length, int flags)
+{
+    int digitStart = -1;
+    int lowerStart = -1;
+    int upperStart = -1;
+    int boundShift = 0;
 
-  static const QString possibleCharacters(
-      "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789");
+    if (!(flags & ExcludeDigits)) {
+        digitStart = boundShift;
+        boundShift += 10;
+    }
 
-  static std::uniform_int_distribution<int> dist(
-      0, possibleCharacters.length() - 1);
+    if (!(flags & ExcludeLetters)) {
+        if (!(flags & ExcludeLowercase)) {
+            lowerStart = boundShift;
+            boundShift += 26;
+        }
+        if (!(flags & ExcludeUppercase)) {
+            upperStart = boundShift;
+            boundShift += 26;
+        }
+    }
 
-  QString randomString;
-  for (int i = 0; i < randomStringLength; ++i) {
-    QChar nextChar = possibleCharacters.at(dist(mt));
-    randomString.append(nextChar);
-  }
-  return randomString;
+    if (boundShift == 0)
+        return QString();
+
+    QString result;
+    result.resize(length);
+
+    for (int i = 0; i < length; ++i)
+    {
+        int r = QRandomGenerator::global()->bounded(boundShift);
+        if (upperStart >= 0 && r >= upperStart)
+        {
+            result[i] = QChar('A' + (r - upperStart));
+        }
+        else if (lowerStart >= 0 && r >= lowerStart)
+        {
+            result[i] = QChar('a' + (r - lowerStart));
+        }
+        else
+        {
+            result[i] = QChar('0' + r);
+        }
+    }
+
+    return result;
 }
 
 quint64 GetRandomUint64() {

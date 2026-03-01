@@ -1,9 +1,3 @@
-
-#ifdef _WIN32
-#include <winsock2.h>
-#include <windows.h>
-#endif
-
 #include <QDir>
 #include "nekobox/ui/security_addon.h"
 #include "nekobox/dataStore/Utils.hpp"

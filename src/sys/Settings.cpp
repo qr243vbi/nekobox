@@ -100,7 +100,7 @@ SETTINGS_VALUE_SAVE(Int) {
 }
 SETTINGS_VALUE_SAVE(Chr) {
   char ch = *(char *)(void *)(ptr + (size_t)(void *)store);
-  if (ch == true || ch == false) {
+  if (static_cast<bool>(ch) == true || static_cast<bool>(ch) == false) {
     settings.setValue(name, (bool)ch);
   }
 }
@@ -341,7 +341,7 @@ void Configs::MainWindowTableSettings::Load(
     "ru_RU"
 */
 
-#define ADD(X, Y) if (getLangResource(X) == ""){ \
+#define ADD(X, Y) { \
   std::shared_ptr<LanguageValue> val = std::make_shared<LanguageValue>();  \
   val->code = X;      \
   val->name = Y;      \
@@ -350,6 +350,8 @@ void Configs::MainWindowTableSettings::Load(
   langs.append(val);  \
 }
 
+#define ADDIF(X, Y) if (getLangResource(X) != "") ADD(X, Y)
+
 QList<std::shared_ptr<LanguageValue>> &languageCodes() {
   static QList<std::shared_ptr<LanguageValue>> langs;
   static bool readed = false;
@@ -357,13 +359,14 @@ QList<std::shared_ptr<LanguageValue>> &languageCodes() {
     readed = true;
     int index = 0;
     ADD("", QObject::tr("System"))
+    ADD("C", "English")
     QString path = getResource("languages.txt");
     if (path == "") {
-      ADD("C", "English")
-      ADD("zh_CN", "简体中文")
-      ADD("he_IL", "עברית")
-      ADD("fa_IR", "فارسی")
-      ADD("ru_RU", "Русский")
+      qDebug() << "languages.txt path not found";
+      ADDIF("zh_CN", "简体中文")
+      ADDIF("he_IL", "עברית")
+      ADDIF("fa_IR", "فارسی")
+      ADDIF("ru_RU", "Русский")
     } else {
       QString text = ReadFileText(path);
       QStringList list = text.split("\n");
@@ -374,8 +377,9 @@ QList<std::shared_ptr<LanguageValue>> &languageCodes() {
           key.slice(0, ind);
           QString value = str;
           value.slice(ind + 1);
+          qDebug() << "Language: " << key << value ;
           if (!key.isEmpty() && !value.isEmpty()){
-            ADD(key, value)
+            ADDIF(key, value)
           }
         }
       }

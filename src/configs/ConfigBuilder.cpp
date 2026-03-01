@@ -1,8 +1,4 @@
 #include "nekobox/dataStore/RouteEntity.h"
-#ifdef _WIN32
-#include <winsock2.h>
-#include <windows.h>
-#endif
 #include "nekobox/dataStore/Utils.hpp"
 
 #include <nekobox/configs/ConfigBuilder.hpp>
@@ -110,8 +106,7 @@ namespace Configs {
     }
 
     QString getTunName() {
-        if (Configs::dataStore->tun_name.isEmpty()) return "tun-" + GetRandomString(16);
-        return Configs::dataStore->tun_name;
+        return "nb_" + GetRandomString(10, ExcludeUppercase | ExcludeDigits);
     }
 
     void MergeJson(const QJsonObject &custom, QJsonObject &outbound) {
@@ -631,15 +626,7 @@ namespace Configs {
         if (dataStore->vpn_ipv6) tunAddress += getTunAddress6();
         inboundObj["address"] = tunAddress;
 
-        QJsonArray routeExcludeAddrs = {
-            "127.0.0.0/8",
-            "10.0.0.0/8", //private class a,b,c
-            "172.16.0.0/12",
-            "192.168.0.0/16",
-            "169.254.0.0/16",
-            "224.0.0.0/4",
-            "255.255.255.255/32"
-        };
+        QJsonArray routeExcludeAddrs = QListStr2QJsonArray(Configs::dataStore->route_exclude_addrs);
         QJsonArray routeExcludeSets;
         if (dataStore->enable_tun_routing)
         {

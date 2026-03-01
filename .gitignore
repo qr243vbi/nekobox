@@ -4,6 +4,7 @@
 run.ps1
 .ENV
 global.ini
+translate.py
 TEMP
 gen-cpp
 core/updater/vendor/*

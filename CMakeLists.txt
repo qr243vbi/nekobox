@@ -345,12 +345,17 @@ set_target_properties(nekobox PROPERTIES
 
 # Target Source Translations
 
-set(TS_FILES
-        res/translations/zh_CN.ts
-        res/translations/fa_IR.ts
-        res/translations/ru_RU.ts
-        res/translations/he_IL.ts
-)
+file(GLOB TS_FILES "res/translations/*.ts")
+
+foreach(TS_FILE ${TS_FILES})
+    # Get the base name of the file without the extension
+    get_filename_component(QM_FILE ${TS_FILE} NAME_WE)
+    # Define the output path for .qm files
+    set(QM_FILE_PATH "${CMAKE_BINARY_DIR}/${QM_FILE}.qm")
+    # Add the generated .qm file to the list
+    list(APPEND QM_FILES ${QM_FILE_PATH})
+endforeach()
+
 set(LUPDATE_OPTIONS
         -locations none -no-obsolete
 )
@@ -460,7 +465,11 @@ install(
     DESTINATION "${CMAKE_INSTALL_BINDIR}"
 )
 
+install(FILES ${QM_FILES} DESTINATION ${CMAKE_INSTALL_LIBEXECDIR}/nekobox/public)
 install(TARGETS nekobox DESTINATION ${CMAKE_INSTALL_LIBEXECDIR}/nekobox)
-install(FILES zh_CN.qm fa_IR.qm ru_RU.qm he_IL.qm srslist.json check_routeprofiles.js languages.txt DESTINATION ${CMAKE_INSTALL_LIBEXECDIR}/nekobox/public)
+install(FILES 
+    ${CMAKE_SOURCE_DIR}/srslist.json 
+    ${CMAKE_SOURCE_DIR}/check_routeprofiles.js 
+    ${CMAKE_SOURCE_DIR}/res/languages.txt DESTINATION ${CMAKE_INSTALL_LIBEXECDIR}/nekobox/public)
 
 endif()
