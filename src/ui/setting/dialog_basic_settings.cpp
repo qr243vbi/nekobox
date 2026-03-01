@@ -130,13 +130,16 @@ DialogBasicSettings::DialogBasicSettings(MainWindow *parent)
     language->clear();
     auto locale = getLocale();
     auto & codes = languageCodes();
-    int index = 0;
+    int index = -1;
     for (auto u : codes){
         language->addItem(u->name);
         if (u->code == locale){
             index = language->count() - 1;
         }
     } 
+    if (index >= 0){
+        language->setCurrentIndex(index);
+    }
     //    language->setCurrentIndex(locales.indexOf(getLocale()));
     connect(language, &QComboBox::currentIndexChanged, this, [=,this](int index) {
         CACHE.needRestart = true;

@@ -74,9 +74,6 @@ ml_IN:മലയാളം
 ro_RO:Română
 ta_IN:தமிழ்
 pa_IN:ਪੰਜਾਬੀ
-zh_HK:繁體中文
-zh_TW:繁體中文
-pa_PK:پنجابی
 ne_NP:नेपाली
 sd_PK:سنڌي
 el_GR:Ελληνικά
