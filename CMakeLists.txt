@@ -86,7 +86,6 @@ add_custom_target(generate_thrift_code ALL DEPENDS "${THRIFT_GEN_DIR}/LibcoreSer
 include_directories("${THRIFT_GEN_DIR}" "${CMAKE_CURRENT_SOURCE_DIR}/src")
 set(THRIFT_GENERATED_SOURCES
     "src/libcore.cpp"
- #   "${THRIFT_GEN_DIR}/LibcoreService.cpp"
 )
 
 
@@ -94,6 +93,7 @@ set(THRIFT_GENERATED_SOURCES
 set(PROJECT_SOURCES
         ${PLATFORM_SOURCES}
         ${THRIFT_GENERATED_SOURCES}
+        ${SECURITY_SOURCES}
         src/main.cpp
         src/dataStore/Configs.cpp
         src/dataStore/ConfigItem.cpp
@@ -298,6 +298,7 @@ set(PROJECT_SOURCES
 
         src/stats/autotester/ProxyAutoTester.cpp
         ${NEKOBOX_INCLUDE}/stats/autotester/ProxyAutoTester.hpp
+
 )
 
 # Qt exe
@@ -344,20 +345,25 @@ set_target_properties(nekobox PROPERTIES
 
 # Target Source Translations
 
-set(TS_FILES
-        res/translations/zh_CN.ts
-        res/translations/fa_IR.ts
-        res/translations/ru_RU.ts
-        res/translations/he_IL.ts
-)
+file(GLOB TS_FILES "res/translations/*.ts")
+
+foreach(TS_FILE ${TS_FILES})
+    # Get the base name of the file without the extension
+    get_filename_component(QM_FILE ${TS_FILE} NAME_WE)
+    # Define the output path for .qm files
+    set(QM_FILE_PATH "${CMAKE_BINARY_DIR}/${QM_FILE}.qm")
+    # Add the generated .qm file to the list
+    list(APPEND QM_FILES ${QM_FILE_PATH})
+endforeach()
+
 set(LUPDATE_OPTIONS
         -locations none -no-obsolete
 )
 qt_add_lupdate(nekobox TS_FILES ${TS_FILES} OPTIONS ${LUPDATE_OPTIONS})
 qt_add_lrelease(nekobox TS_FILES ${TS_FILES} QM_FILES_OUTPUT_VARIABLE QM_FILES)
 
-configure_file(res/translations/translations.qrc ${CMAKE_BINARY_DIR} COPYONLY)
-target_sources(nekobox PRIVATE ${CMAKE_BINARY_DIR}/translations.qrc)
+# configure_file(res/translations/translations.qrc ${CMAKE_BINARY_DIR} COPYONLY)
+# target_sources(nekobox PRIVATE ${CMAKE_BINARY_DIR}/translations.qrc)
 
 if (MSVC)
 find_package(Thrift REQUIRED)
@@ -459,7 +465,11 @@ install(
     DESTINATION "${CMAKE_INSTALL_BINDIR}"
 )
 
+install(FILES ${QM_FILES} DESTINATION ${CMAKE_INSTALL_LIBEXECDIR}/nekobox/public)
 install(TARGETS nekobox DESTINATION ${CMAKE_INSTALL_LIBEXECDIR}/nekobox)
-install(FILES srslist.json check_routeprofiles.js DESTINATION ${CMAKE_INSTALL_LIBEXECDIR}/nekobox/public)
+install(FILES 
+    ${CMAKE_SOURCE_DIR}/srslist.json 
+    ${CMAKE_SOURCE_DIR}/check_routeprofiles.js 
+    ${CMAKE_SOURCE_DIR}/res/languages.txt DESTINATION ${CMAKE_INSTALL_LIBEXECDIR}/nekobox/public)
 
 endif()

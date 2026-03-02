@@ -1,8 +1,10 @@
 # This file is used to ignore files which are generated
 # ----------------------------------------------------------------------------
+!languages.txt
 run.ps1
 .ENV
 global.ini
+translate.py
 TEMP
 gen-cpp
 core/updater/vendor/*
@@ -134,3 +136,4 @@ download-artifact
 deployment
 srslist.json
 runtime-*
+

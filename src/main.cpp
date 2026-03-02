@@ -1,7 +1,3 @@
-#ifdef _WIN32
-#include <winsock2.h>
-#include <windows.h>
-#endif
 #include <csignal>
 
 #include <QCryptographicHash>
@@ -23,6 +19,13 @@
 #include "nekobox/sys/windows/eventHandler.h"
 #include "nekobox/sys/windows/WinVersion.h"
 #include <qfontdatabase.h>
+#endif
+
+
+#ifndef NKR_SOFTWARE_KEYS
+#define CHECK_STARTUP_ACCESS_M
+#else
+#include "nekobox/ui/security_addon.h"
 #endif
 
 #include "nekobox/sys/Settings.h"
@@ -48,7 +51,7 @@ void signal_handler(int signum) {
 }
 
 QTranslator* trans = nullptr;
-QTranslator* trans_qt = nullptr;
+//QTranslator* trans_qt = nullptr;
 
 void loadTranslate(const QString& locale) {
     QT_TRANSLATE_NOOP("QPlatformTheme", "Cancel");
@@ -73,15 +76,15 @@ void loadTranslate(const QString& locale) {
     if (trans != nullptr) {
         trans->deleteLater();
     }
-    if (trans_qt != nullptr) {
-        trans_qt->deleteLater();
-    }
+ //   if (trans_qt != nullptr) {
+ //       trans_qt->deleteLater();
+ //   }
     //
     trans = new QTranslator;
-    trans_qt = new QTranslator;
+ //   trans_qt = new QTranslator;
     QLocale::setDefault(QLocale(locale));
     //
-    if (trans->load(":/translations/" + locale + ".qm")) {
+    if (trans->load(getLangResource(locale))) {
         QCoreApplication::installTranslator(trans);
     }
 }
@@ -184,7 +187,10 @@ int main(int argc, char** argv) {
     if (!dir_success){
         goto loop_back_2;
     }
-    
+
+    CHECK_STARTUP_ACCESS_M
+
+    Configs::windowSettings->Load();
     Configs::resourceManager->Load();
     bool supported = Configs::resourceManager->symlinks_supported = createSymlink(getApplicationPath(), "resources/qr243vbi.lnk.lnk");
     if (supported){
@@ -194,9 +200,7 @@ int main(int argc, char** argv) {
     
 #ifdef Q_OS_UNIX
     QApplication::addLibraryPath(root_directory + "/usr/plugins");
-#endif
-
-    
+#endif    
     // dispatchers
     DS_cores = new QThread;
     DS_cores->start();
@@ -250,6 +254,7 @@ int main(int argc, char** argv) {
 
     // Translate
     QString locale = getLocale();
+    qDebug() << "Language is: " << locale;
     QGuiApplication::tr("QT_LAYOUT_DIRECTION");
     if (locale == "") locale = QLocale().name();
     loadTranslate(locale);

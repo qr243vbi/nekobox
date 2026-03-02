@@ -206,21 +206,28 @@ inline bool isDarkMode() {
 #endif
 }
 
-struct ProxyColorRule{
-    uint orderMin;
-    uint orderRange;
-    uint latencyMin;
-    uint latencyRange;
+struct ProxyColorRule : public JsonStore {
+    virtual ConfJsMap _map() override;
+    ProxyColorRule(int, int, int, int, bool, QColor);
+    int orderMin;
+    int orderRange;
+    int latencyMin;
+    int latencyRange;
     bool unavailable;
-    QColor color;
+    QList<int> color;
 };
 
-struct IndicatorRule{
+struct IndicatorRule : public JsonStore {
+    virtual ConfJsMap _map() override;
+    IndicatorRule(double, double, double, QColor);
+    IndicatorRule();
     double radius;
     double margin;
     double diameter;
-    QColor color;
+    QList<int> color;
 };
+
+QColor QListInt2Color(QList<int>);
 
 extern std::list<ProxyColorRule> latencyColorList;
 

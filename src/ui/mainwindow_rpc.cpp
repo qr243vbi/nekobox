@@ -17,6 +17,18 @@
 #include <QMessageBox>
 #include <QStringList>
 
+
+#ifndef NKR_SOFTWARE_KEYS
+#define ADD_SECURITY_ACTION
+#define CHECK_SETTINGS_ACCESS_W
+#define CHECK_SETTINGS_ACCESS
+#define CHECK_ACTION_ACCESS_W
+#define CHECK_ACTION_ACCESS
+#else
+#include "nekobox/ui/security_addon.h"
+#endif
+
+
 // rpc
 using namespace API;
 
@@ -171,13 +183,15 @@ void MainWindow::runURLTest(const QString& config, bool useDefault, const QStrin
     }
 }
 
-void MainWindow::urltest_profile(std::shared_ptr<Configs::ProxyEntity> entity,  bool skip_last_url_test_warning){
+void MainWindow::urltest_profile(std::shared_ptr<Configs::ProxyEntity> entity,  
+        bool skip_last_url_test_warning, const std::function<void(const QList<std::shared_ptr<Configs::ProxyEntity>>&)> &finish){
     QList<std::shared_ptr<Configs::ProxyEntity>> list;
     list << entity;
-    urltest_current_group(list, skip_last_url_test_warning);
+    urltest_current_group(list, skip_last_url_test_warning, finish);
 }
 
-void MainWindow::urltest_current_group(const QList<std::shared_ptr<Configs::ProxyEntity>>& profiles,  bool skip_last_url_test_warning) {
+void MainWindow::urltest_current_group(const QList<std::shared_ptr<Configs::ProxyEntity>>& profiles,  
+        bool skip_last_url_test_warning, const std::function<void(const QList<std::shared_ptr<Configs::ProxyEntity>>&)> &finish) {
     if (profiles.isEmpty()) {
         return;
     }
@@ -190,7 +204,7 @@ void MainWindow::urltest_current_group(const QList<std::shared_ptr<Configs::Prox
         return;
     }
 
-    runOnNewThread([this, profiles]() {
+    runOnNewThread([this, profiles, finish]() {
         auto buildObject = Configs::BuildTestConfig(profiles);
         if (!buildObject->error.isEmpty()) {
             MW_show_log(tr("Failed to build test config: ") + buildObject->error);
@@ -216,7 +230,8 @@ void MainWindow::urltest_current_group(const QList<std::shared_ptr<Configs::Prox
 
         if (!buildObject->outboundTags.isEmpty()) {
             auto func = [this, &buildObject, &counter, testCount]() {
-                MainWindow::runURLTest(QJsonObject2QString(buildObject->coreConfig, false), false, buildObject->outboundTags, buildObject->tag2entID);
+                MainWindow::runURLTest(QJsonObject2QString(buildObject->coreConfig, false), 
+                    false, buildObject->outboundTags, buildObject->tag2entID);
                 counter++;
                 if (counter.load() == testCount) {
                     speedtestRunning.unlock();
@@ -228,6 +243,9 @@ void MainWindow::urltest_current_group(const QList<std::shared_ptr<Configs::Prox
 
         speedtestRunning.lock();
         speedtestRunning.unlock();
+        if (finish != nullptr){
+            finish(profiles);
+        }
         runOnUiThread([=,this]{
             refresh_proxy_list();
             MW_show_log(tr("URL test finished!"));

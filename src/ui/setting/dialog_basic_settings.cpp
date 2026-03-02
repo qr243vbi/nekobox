@@ -20,17 +20,8 @@
 #include "nekobox/dataStore/ResourceEntity.hpp"
 #include <QString>
 
-#include "nekobox/ui/mainwindow.h"
+#include "nekobox/ui/mainwindow_interface.h"
 
-
-QList<QString> locales = {
-    "",
-    "C",
-    "he_IL",
-    "zh_CN",
-    "fa_IR",
-    "ru_RU"
-};
 
 #if QT_VERSION >= QT_VERSION_CHECK(6, 6, 0)
 #define STATE_CHANGED &QCheckBox::checkStateChanged
@@ -43,6 +34,7 @@ QList<QString> locales = {
 
 DialogBasicSettings::DialogBasicSettings(MainWindow *parent)
     : QDialog(parent), ui(new Ui::DialogBasicSettings) {
+    CHECK_SETTINGS_ACCESS
     ui->setupUi(this);
     ADD_ASTERISK(this);
     this->parent = parent;
@@ -135,7 +127,20 @@ DialogBasicSettings::DialogBasicSettings(MainWindow *parent)
     S_LOAD_INT(max_log_line)
     //
     auto language = ui->language;
-    language->setCurrentIndex(locales.indexOf(getLocale()));
+    language->clear();
+    auto locale = getLocale();
+    auto & codes = languageCodes();
+    int index = -1;
+    for (auto u : codes){
+        language->addItem(u->name);
+        if (u->code == locale){
+            index = language->count() - 1;
+        }
+    } 
+    if (index >= 0){
+        language->setCurrentIndex(index);
+    }
+    //    language->setCurrentIndex(locales.indexOf(getLocale()));
     connect(language, &QComboBox::currentIndexChanged, this, [=,this](int index) {
         CACHE.needRestart = true;
     });
@@ -175,7 +180,9 @@ DialogBasicSettings::DialogBasicSettings(MainWindow *parent)
     });
 
     // Subscription
-
+    connect(ui->sub_url_test, STATE_CHANGED, this, [=,this](const bool &c) {
+        ui->sub_rm_unavailable->setEnabled(c);
+    });
     D_LOAD_STRING(user_agent)
     ui->user_agent->setPlaceholderText(Configs::dataStore->GetUserAgent(true));
     D_LOAD_BOOL(net_use_proxy);
@@ -183,6 +190,10 @@ DialogBasicSettings::DialogBasicSettings(MainWindow *parent)
     D_LOAD_BOOL(net_insecure)
     D_LOAD_BOOL(sub_send_hwid)
     D_LOAD_STRING(sub_custom_hwid_params)
+    D_LOAD_BOOL(sub_rm_invalid)
+    D_LOAD_BOOL(sub_url_test)
+    D_LOAD_BOOL(sub_rm_duplicates)
+    D_LOAD_BOOL(sub_rm_unavailable)
     D_LOAD_INT_ENABLE(sub_auto_update, sub_auto_update_enable)
     auto details = GetDeviceDetails();
 	ui->sub_send_hwid->setToolTip(
@@ -323,7 +334,7 @@ void DialogBasicSettings::accept() {
     QString locale = "";
     int locale_index = ui->language->currentIndex();
     if (locale_index >= 0){
-        locale = (locales[locale_index]);
+        locale = languageCodes()[locale_index]->code;
     }
     D_SAVE_BOOL(start_minimal)
     S_SAVE_INT(max_log_line)
@@ -355,6 +366,11 @@ void DialogBasicSettings::accept() {
     S_SAVE_BOOL(auto_hide)
     D_SAVE_BOOL(sub_send_hwid)
     D_SAVE_STRING(sub_custom_hwid_params)
+    D_SAVE_BOOL(sub_rm_invalid)
+    D_SAVE_BOOL(sub_url_test)
+
+    D_SAVE_BOOL(sub_rm_duplicates)
+    D_SAVE_BOOL(sub_rm_unavailable)
     D_SAVE_INT_ENABLE(sub_auto_update, sub_auto_update_enable)
 
     // Core
@@ -375,6 +391,7 @@ void DialogBasicSettings::accept() {
  //   int width, height, X, Y;
     // Startup
     settings->language = locale;
+    qDebug() << "Save language as: " << locale;
     S_SAVE_BOOL(save_geometry);
     S_SAVE_BOOL(save_position);
     S_SAVE_INT(width)

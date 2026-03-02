@@ -6,6 +6,8 @@
 #include "nekobox/dataStore/Database.hpp"
 #include "ui_GroupItem.h"
 
+QString chooseUpdateGroup(bool *, bool *, const QString& content);
+
 QT_BEGIN_NAMESPACE
 namespace Ui {
     class GroupItem;

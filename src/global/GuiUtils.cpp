@@ -64,19 +64,72 @@ void setTimeout(const std::function<void()> &callback, QObject *obj,
   t->start();
 }
 
+DECL_MAP(ProxyColorRule)
+  ADD_MAP("order_min", orderMin, integer);
+  ADD_MAP("order_range", orderRange, integer);
+  ADD_MAP("latency_min", latencyMin, integer);
+  ADD_MAP("latency_range", latencyRange, integer);
+  ADD_MAP("unavailable", unavailable, boolean);
+  ADD_MAP("color", color, integerList);
+STOP_MAP
+
+DECL_MAP(IndicatorRule)
+  ADD_MAP("radius", radius, double);
+  ADD_MAP("margin", margin, double);
+  ADD_MAP("diameter", diameter, double);
+  ADD_MAP("color", color, integerList);
+STOP_MAP
+
+IndicatorRule::IndicatorRule(double a1, double a2, double a3, QColor a4){
+  int c1,c2,c3,c4;
+  a4.getRgb(&c1, &c2, &c3, &c4);
+  this->radius        = a1;
+  this->margin        = a2;
+  this->diameter      = a3;
+  this->color         = {c1,c2,c3,c4};
+}
+
+IndicatorRule::IndicatorRule(){}
+
+ProxyColorRule::ProxyColorRule(int a1, int a2, int a3, int a4, bool a5, QColor a6){
+  int c1,c2,c3,c4;
+  a6.getRgb(&c1, &c2, &c3, &c4);
+  this->orderMin      = a1;
+  this->orderRange    = a2;
+  this->latencyMin    = a3;
+  this->latencyRange  = a4;
+  this->unavailable   = a5;
+  this->color         = {c1,c2,c3,c4};
+}
+
 std::list<ProxyColorRule> latencyColorList = {
     {1, 5, 0, 0, false, Qt::darkGreen},
     {6, 5, 0, 0, false, QColor(128, 0, 128)},
     {0, 0, 0, 0, false, QColor(255, 165, 0)},
     {0, 0, 0, 0, true, Qt::red}};
 
+QColor QListInt2Color(QList<int> l){
+  int l_size = l.size();
+  if (l_size < 3){
+    return Qt::black;
+  }
+  int r,g,b,a;
+  r = l[0];
+  g = l[1];
+  b = l[2];
+  a = 255;
+  if (l_size >= 4){
+    a = l[3];
+  }
+  return QColor::fromRgb(r,g,b,a);
+}
 
 QColor DisplayLatencyColor(Configs::ProxyEntity *e) {
   if (e != nullptr) {
     if (e->latencyInt < 0) {
       for (auto &color : latencyColorList) {
         if (color.unavailable) {
-          return color.color;
+          return QListInt2Color(color.color);
         }
       }
     } else {
@@ -98,7 +151,7 @@ QColor DisplayLatencyColor(Configs::ProxyEntity *e) {
               continue;
             }
           }
-          return color.color;
+          return QListInt2Color(color.color);
         }
       }
     }

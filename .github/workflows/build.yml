@@ -58,6 +58,11 @@ on:
         type: boolean
         default: true
         required: false
+      publish_suse:
+        description: "Publish to openSUSE Factory"
+        type: boolean
+        default: true
+        required: false
 jobs:
   build-go:
     permissions:
@@ -71,26 +76,26 @@ jobs:
         include:
           - cross_os: public
             cross_arch: public
-            go_version: "1.25.6"
+            go_version: "1.26.0"
           - cross_os: linux
             cross_arch: amd64
-            go_version: "1.25.6"
+            go_version: "1.26.0"
             allow: ${{ github.event.inputs.build_ubuntu }}
           - cross_os: linux
             cross_arch: arm64
-            go_version: "1.25.6"
+            go_version: "1.26.0"
             allow: ${{ github.event.inputs.build_ubuntu_arm }}
           - cross_os: windows
             cross_arch: amd64
-            go_version: "1.25.6"
+            go_version: "1.26.0"
             allow: ${{ github.event.inputs.build_windows_x64 }}
           - cross_os: windows
             cross_arch: arm64
-            go_version: "1.25.6"
+            go_version: "1.26.0"
             allow: ${{ github.event.inputs.build_windows_arm64 }}
           - cross_os: windows
             cross_arch: 386
-            go_version: "1.25.6"
+            go_version: "1.26.0"
             allow: ${{ github.event.inputs.build_windows_x86 }}
       fail-fast: false
     runs-on: ubuntu-latest
@@ -138,7 +143,7 @@ jobs:
       - name: Installing ghr
         if: matrix.cross_os == 'public' && github.event.inputs.publish == 'true'
         run: |
-          go install github.com/tcnksm/ghr@latest
+          go install github.com/tcnksm/ghr@v0.17.0
           ghr -delete -t "${{ secrets.UPLOAD_TOKEN }}" -b "$(echo -e "${{ github.event.inputs.text }}")" -n "${{ github.event.inputs.tag }}" "${{ github.event.inputs.tag }}" deployment
 
       - name: Tar files
@@ -177,6 +182,8 @@ jobs:
         shell: bash
         run: |
           pip install osc
+          export MESSAGE="${{ github.event.inputs.text }}"
+          export SUBMIT_FACTORY=${{ github.event.inputs.publish_suse }}
           export OBS_USER="${{ secrets.OBS_USER }}"
           export OBS_PASSWORD="${{ secrets.OBS_PASSWORD }}"
           export OBS_HOOK_TOKEN="${{ secrets.OBS_HOOK_TOKEN }}"

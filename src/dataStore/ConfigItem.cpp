@@ -43,6 +43,13 @@ SET_NODE(int) {
   }
 }
 
+SET_NODE(double) {
+  GET_PTR_OR_RETURN
+  if (value.isDouble()) {
+    *(double *)ptr = value.toDouble();
+  }
+}
+
 SET_NODE(long) {
   GET_PTR_OR_RETURN
   if (value.isDouble()) {
@@ -115,7 +122,6 @@ SET_NODE(jsonShared) {
   }
 }
 
-
 SET_NODE(jsonStoreList) {
   if (value.isArray()) {
     QJsonArray array = value.toArray();
@@ -181,6 +187,8 @@ GET_NODE(long) { return *(long long *)getPtr(store); }
 
 GET_NODE(int) { return *(int *)getPtr(store); }
 
+GET_NODE(double) { return *(double *)getPtr(store); }
+
 #define CASE_TYPE(X)                                                           \
   case ConfigItemType::type_##X:                                               \
     return std::make_shared<X##Item>();
@@ -208,12 +216,22 @@ QByteArray JsonStore::ToBytes(const QStringList &without){
     QBuffer buffer(&byteArray); // Create a buffer to write to QByteArray
     buffer.open(QIODevice::WriteOnly);
     QDataStream out(&buffer); 
+    auto _map = this->_map();
 
-    for (auto [key, value] : asKeyValueRange(this->_map()) ){
+    for (auto value: _map.values() ){
+      if (value->name == nullptr){
+        qDebug() << "INVALID ITEM ::: UNKNOWN NAME" ;
+        continue;
+      }
+        if (value == nullptr){
+          qDebug() << "INVALID ITEM :::" << value->name;
+          continue;
+        }
         QString name = value->name;
+        auto key = Configs::hash(name);
+        unsigned char type = value->type();
         if (!without.contains(name)){
             out << key;
-            unsigned char type = value->type();
             out << type;
             Bin bin;
             bin.item = value.get();
@@ -260,6 +278,9 @@ void JsonStore::FromBytes(const QByteArray &data) {
 void JsonStore::_put(ConfJsMap _map, const QString &str, int *value) {
   PUT_STORE(int)
 };
+void JsonStore::_put(ConfJsMap _map, const QString &str, double *value) {
+  PUT_STORE(double)
+};
 void JsonStore::_put(ConfJsMap _map, const QString &str, long long *value) {
   PUT_STORE(long)
 };
@@ -299,6 +320,7 @@ void JsonStore::_put(ConfJsMap _map, const QString &str, std::shared_ptr<JsonSto
   void X##Item::serialize(QDataStream &data, JsonStore *store) const
 
 GET_BIN(int) { data << *(int *)this->getPtr(store); }
+GET_BIN(double) { data << *(double *)this->getPtr(store); }
 GET_BIN(long) { data << *(long long *)this->getPtr(store); }
 GET_BIN(str) { data << *(QString *)this->getPtr(store); }
 GET_BIN(bool) { data << *(bool *)this->getPtr(store); }
@@ -408,4 +430,11 @@ SET_BIN(int) {
   data >> value;
   GET_PTR_OR_RETURN
   *(int *)ptr = value;
+}
+
+SET_BIN(double) {
+  double value;
+  data >> value;
+  GET_PTR_OR_RETURN
+  *(double *)ptr = value;
 }

@@ -1,5 +1,6 @@
 #include "Const.hpp"
 #include "ConfigItem.hpp"
+#include "Utils.hpp"
 #ifdef Q_OS_WIN
 #include "nekobox/sys/windows/WinVersion.h"
 #endif
@@ -67,7 +68,15 @@ namespace Configs {
         QString appdataDir = "";
         QStringList ignoreConnTag = {};
   //      bool auto_redirect = false;
-        QString tun_name = "nekobox-tun";
+        QStringList route_exclude_addrs = {
+            "127.0.0.0/8",
+            "10.0.0.0/8", //private class a,b,c
+            "172.16.0.0/12",
+            "192.168.0.0/16",
+            "169.254.0.0/16",
+            "224.0.0.0/4",
+            "255.255.255.255/32"
+        };
         QString tun_address = "172.19.0.1/24";
         QString tun_address_6 = "fdfe:dcba:9876::1/96";
         QString proxy_scheme = "{ip}:{port}";
@@ -137,6 +146,10 @@ namespace Configs {
         int sub_auto_update = -30;
         bool sub_clear = false;
         bool sub_send_hwid = false;
+        bool sub_rm_unavailable = false;
+        bool sub_rm_duplicates = false;
+        bool sub_url_test = false;
+        bool sub_rm_invalid = false;
 
         // Security
         bool skip_cert = false;
@@ -157,6 +170,9 @@ namespace Configs {
         bool random_inbound_port = false;
         QString custom_inbound = "{\"inbounds\": []}";
 
+        QString inbound_username = "";
+        QString inbound_password = "";
+
         // Routing
         QString custom_route_global = "{\"rules\": []}";
         QString active_routing = "Default";
@@ -165,11 +181,7 @@ namespace Configs {
         // VPN
         bool fake_dns = false;
         bool enable_tun_routing = false;
-#if defined(Q_OS_WIN)
-        QString vpn_implementation = WinVersion::IsBuildNumGreaterOrEqual(BuildNumber::Windows_10_1507) ? "system" : "gvisor";
-#else
-        QString vpn_implementation = "system";
-#endif
+        QString vpn_implementation = "gvisor";
         int vpn_mtu = 1500;
         bool vpn_ipv6 = false;
         bool vpn_strict_route = true;

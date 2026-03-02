@@ -10,6 +10,7 @@ import (
 	"log"
 	"math/big"
 	"nekobox_core/gen"
+	"nekobox_core/internal"
 	"nekobox_core/internal/boxdns"
 	"net/http"
 	"os"
@@ -21,7 +22,7 @@ import (
 	"sync"
 	"syscall"
 	"unsafe"
-	"nekobox_core/internal"
+
 	"github.com/NullYing/npipe"
 	"golang.org/x/sys/windows"
 )
@@ -163,7 +164,7 @@ func runAdmin(_port *int, _debug *bool) (int, error) {
 
 	stdout_pipe := `\\.\pipe\nekobox_core_stdout_` + randstr
 	stderr_pipe := `\\.\pipe\nekobox_core_stderr_` + randstr
-	flag := " -ruleset-cache-directory "+ internal.GetRulesetCachedir()
+	flag := " -ruleset-cache-directory " + internal.GetRulesetCachedir()
 	if *_debug {
 		flag += " -debug"
 	}
@@ -264,7 +265,7 @@ func (s *server) IsPrivileged(ctx context.Context, in *gen.EmptyReq) (*gen.IsPri
 	return out, nil
 }
 
-func restartAsAdmin(save bool, gid int, uid int) {
+func restartAsAdmin(save bool) {
 }
 
 func getProcessPath(pid uint32) (string, error) {

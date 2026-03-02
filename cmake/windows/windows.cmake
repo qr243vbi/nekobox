@@ -6,8 +6,8 @@ generate_product_version(
         QV2RAY_RC
         ICON "${CMAKE_SOURCE_DIR}/res/nekobox.ico"
         NAME "nekobox"
-        BUNDLE "nekobox"
-        COMPANY_NAME "nekobox"
+        BUNDLE "Iblis"
+        COMPANY_NAME "Iblis Corporation"
         COMPANY_COPYRIGHT "nekobox"
         FILE_DESCRIPTION "nekobox"
 )
@@ -21,5 +21,5 @@ elseif (MSVC)
     add_compile_options(/permissive-)
     add_compile_options("/utf-8")
     add_compile_options("/wd4702")
-    add_definitions(-D_WIN32_WINNT=0x600 -D_SCL_SECURE_NO_WARNINGS -D_CRT_SECURE_NO_WARNINGS)
+    add_definitions(-D_WIN32_WINNT=0x600 -D_SCL_SECURE_NO_WARNINGS -D_CRT_SECURE_NO_WARNINGS -DWIN32_LEAN_AND_MEAN)
 endif ()
