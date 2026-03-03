@@ -2644,7 +2644,7 @@ Kwa habari zaidi, angalia hati "Usanidi/DNS".</translation>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="972" />
         <source>Enable Tun</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Washa Tun</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="977" />
@@ -2655,12 +2655,12 @@ Kwa habari zaidi, angalia hati "Usanidi/DNS".</translation>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="985" />
         <source>Update subscription</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Sasisha usajili</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="996" />
         <source>Resolve domain</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tatua kikoa</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1004" />
@@ -2670,37 +2670,37 @@ Kwa habari zaidi, angalia hati "Usanidi/DNS".</translation>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1009" />
         <source>Restart Program</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Anzisha tena Programu</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1014" />
         <source>Open Config Folder</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Fungua Folda ya Usanidi</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1035" />
         <source>Restart Proxy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Anzisha tena Wakala</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1040" />
         <source>Stop Testing</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Acha Kujaribu</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1048" />
         <source>Ctrl+Shift+S</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ctrl+Shift+S</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1067" />
         <source>Url Test Group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kikundi cha Jaribio la Url</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1070" />
         <source>Ctrl+Shift+G</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ctrl+Shift+G</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1086" />
@@ -2710,79 +2710,79 @@ Kwa habari zaidi, angalia hati "Usanidi/DNS".</translation>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1089" />
         <source>Ctrl+Alt+I</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ctrl+Alt+I</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1102" />
         <source>Speedtest Current</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Speedtest ya Sasa</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1107" />
         <source>Full test Selected</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Jaribio kamili limechaguliwa</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1112" />
         <source>Download test Selected</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Upakuaji wa jaribio Umechaguliwa</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1117" />
         <source>Upload test Selected</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Upakiaji wa jaribio Umechaguliwa</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1122" />
         <source>Country test Selected</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Jaribio la nchi Limechaguliwa</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1127" />
         <source>Simple download test Selected</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Jaribio rahisi la upakuaji Umechaguliwa</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1132" />
         <source>Speedtest Group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kikundi cha Speedtest</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1137" />
         <source>Hide window</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ficha dirisha</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1142" />
         <source>Add profile from File</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ongeza wasifu kutoka kwa Faili</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1147" />
         <location filename="../../src/ui/mainwindow.cpp" line="3470" />
         <source>Add new Group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ongeza Kikundi kipya</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1152" />
         <source>Security Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Mipangilio ya Usalama</translation>
     </message>
     <message>
         <location filename="../../src/dataStore/ProxyEntity.cpp" line="52" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="289" />
         <source>Unavailable</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Haipatikani</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1003" />
         <source>Edit Routing Profiles</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Hariri Wasifu wa Uelekezaji</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1025" />
         <source>Update Routing Profiles</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Sasisha Wasifu wa Uelekezaji</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1037" />
@@ -2793,69 +2793,69 @@ Kwa habari zaidi, angalia hati "Usanidi/DNS".</translation>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="95" />
         <location filename="../../src/ui/setting/RouteItem.cpp" line="104" />
         <source>Update Response</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Sasisha Majibu</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1038" />
         <location filename="../../src/ui/setting/RouteItem.cpp" line="105" />
         <source>No routing profiles are updated</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Hakuna wasifu wa uelekezaji unaosasishwa</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1042" />
         <location filename="../../src/ui/setting/RouteItem.cpp" line="96" />
         <source>Updated %1 routing profiles</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ilisasisha wasifu %1 wa uelekezaji</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1052" />
         <source>Update RuleSet Map</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Sasisha Ramani ya RuleSet</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1063" />
         <source>Failed to update rulesets</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Imeshindwa kusasisha kanuni</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1066" />
         <source>Rulesets updated successfully</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kanuni zimesasishwa</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1075" />
         <source>Update RuleSet Cache</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Sasisha Akiba ya RuleSet</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1110" />
         <source>Rulesets cache is updated</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Akiba ya kanuni za sheria imesasishwa</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1124" />
         <source>Clear RuleSet Cache</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Futa Akiba ya RuleSet</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1160" />
         <source>Enable AdBlock</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Washa AdBlock</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1563" />
         <source>Error</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Hitilafu</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1650" />
         <source>Tun Settings changed</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Mipangilio ya Tun imebadilishwa</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1651" />
         <source>Restart Tun to take effect.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Anzisha tena Tun ili kufanya kazi.</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1657" />
@@ -2872,263 +2872,263 @@ Kwa habari zaidi, angalia hati "Usanidi/DNS".</translation>
         <location filename="../../src/ui/mainwindow.cpp" line="1658" />
         <location filename="../../src/ui/mainwindow.cpp" line="1716" />
         <source>Settings changed, restart proxy?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Mipangilio imebadilishwa, uwashe tena seva mbadala?</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1687" />
         <source>Settings changed</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Mipangilio imebadilishwa</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1688" />
         <source>Restart the program to take effect.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Anzisha tena programu ili uanze kutumika.</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1731" />
         <source>Imported %1 profile(s)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Imeingiza wasifu %1</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1982" />
         <source>User opted for no privilege req, some features may not work</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Mtumiaji amechagua kutokuwepo kwa marupurupu req, baadhi ya vipengele huenda visifanye kazi</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2046" />
         <source>Please give the core root privileges</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tafadhali toa mapendeleo ya msingi</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2400" />
         <source>Not Running</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Sio Kukimbia</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2781" />
         <source>Clone %1 item(s)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Sambaza bidhaa %1</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2815" />
         <source> Confirmation </source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Uthibitisho</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2816" />
         <source> Remove %1 item(s) ? </source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ungependa kuondoa kipengee %1 ?</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2835" />
         <source>Remove %1 item(s) ?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ungependa kuondoa kipengee %1 ?</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2872" />
         <location filename="../../src/ui/mainwindow.cpp" line="2885" />
         <source>Copied %1 item(s)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Imenakili kipengee %1</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3117" />
         <source>QR Code not found</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Msimbo wa QR haujapatikana</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3138" />
         <source>Unable to capture screen</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Imeshindwa kunasa skrini</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3206" />
         <source>Remove %1 Unavailable item(s) ?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ungependa kuondoa bidhaa %1 ambazo hazipatikani?</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3260" />
         <source>Remove %1 Invalid item(s) ?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ungependa kuondoa kipengee %1 kisicho sahihi ?</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3308" />
         <source>Replace domain server addresses with their resolved IPs?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Je, ungependa kubadilisha anwani za seva za kikoa na IP zilizosuluhishwa?</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3441" />
         <source>Clear</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Wazi</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3503" />
         <source>Delete selected Group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Futa Kikundi kilichochaguliwa</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3504" />
         <source>Edit selected Group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Badilisha Kikundi kilichochaguliwa</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3513" />
         <source>Remove %1?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ungependa kuondoa %1?</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="4196" />
         <source>Cannot start</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Haiwezi kuanza</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="4197" />
         <source>Last download request has not finished yet</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ombi la mwisho la upakuaji bado halijakamilika</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="4231" />
         <source>Failed to download update assets</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Imeshindwa kupakua vipengee vya sasisho</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="81" />
         <source>Profile test aborted</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Jaribio la wasifu limeghairiwa</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="132" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="178" />
         <source>[%1] test error: %2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">[%1] hitilafu ya jaribio: %2</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="161" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="487" />
         <source>Something is very wrong, the subject ent cannot be found!</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kuna kitu kibaya sana, mada haiwezi kupatikana!</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="167" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="493" />
         <source>Profile manager data is corrupted, try again.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Data ya kidhibiti wasifu imeharibika, jaribu tena.</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="201" />
         <source>The last url test did not exit completely, please wait. If it persists, please restart the program.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Jaribio la mwisho la url halikutoka kabisa, tafadhali subiri.Ikiendelea, tafadhali anzisha upya programu.</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="210" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="317" />
         <source>Failed to build test config: </source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Imeshindwa kuunda usanidi wa jaribio:</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="251" />
         <source>URL test finished!</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Jaribio la URL limekamilika!</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="262" />
         <source>Failed to stop tests</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Imeshindwa kusimamisha majaribio</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="268" />
         <source>Testing</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kupima</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="306" />
         <source>The last speed test did not exit completely, please wait. If it persists, please restart the program.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Jaribio la kasi la mwisho halikutoka kabisa, tafadhali subiri.Ikiendelea, tafadhali anzisha upya programu.</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="343" />
         <source>Speedtest finished!</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Speedtest imekamilika!</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="424" />
         <source>Profile speed test aborted</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Jaribio la kasi ya wasifu limeghairiwa</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="512" />
         <source>[%1] speed test error: %2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">[%1] hitilafu ya jaribio la kasi: %2</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="521" />
         <source>You need to enable hijack DNS server first</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Unahitaji kuwezesha utekaji nyara seva ya DNS kwanza</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="535" />
         <source>Failed to set system dns: </source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Imeshindwa kuweka mfumo wa dns:</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="583" />
         <source>Tun device misbehaving</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tun kifaa utovu wa nidhamu</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="584" />
         <source>If you have trouble starting VPN, you can force reset Core process here and then try starting the profile again. The error is %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ikiwa unatatizika kuanzisha VPN, unaweza kulazimisha kuweka upya mchakato wa Msingi hapa kisha ujaribu kuanzisha wasifu tena.Hitilafu ni %1</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="588" />
         <source>Reset</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Weka upya</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="589" />
         <source>Cancel</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ghairi</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="628" />
         <source>Another profile is starting...</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Wasifu mwingine unaanza...</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="635" />
         <source>Another profile is stopping...</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Wasifu mwingine unasimama...</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="656" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="738" />
         <source>If there is no response for a long time, it is recommended to restart the software.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ikiwa hakuna majibu kwa muda mrefu, inashauriwa kuanzisha upya programu.</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="670" />
         <source>Starting profile %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Inaanzisha wasifu %1</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="672" />
         <source>Failed to start profile %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Imeshindwa kuanzisha wasifu %1</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="721" />
         <source>Stop return error</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Komesha kosa la kurudi</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="761" />
         <source>Stopping profile %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Inasimamisha wasifu %1</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="763" />
         <source>Failed to stop, please restart the program.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Imeshindwa kusimamisha, tafadhali anzisha upya programu.</translation>
     </message>
 </context>
 <context>
@@ -3146,12 +3146,12 @@ Kwa habari zaidi, angalia hati "Usanidi/DNS".</translation>
     <message>
         <location filename="../../src/nekobox/ui/security/change_password.ui" line="37" />
         <source>New Password</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Nenosiri Mpya</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/change_password.ui" line="54" />
         <source>Confirm Password</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Thibitisha Nenosiri</translation>
     </message>
 </context>
 <context>
@@ -3164,7 +3164,7 @@ Kwa habari zaidi, angalia hati "Usanidi/DNS".</translation>
     <message>
         <location filename="../../src/ui/profile/ProxyItem.cpp" line="39" />
         <source>Remove %1?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ungependa kuondoa %1?</translation>
     </message>
 </context>
 <context>
@@ -3172,7 +3172,7 @@ Kwa habari zaidi, angalia hati "Usanidi/DNS".</translation>
     <message>
         <location filename="../../src/ui/security_addon.cpp" line="342" />
         <source>Security Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Mipangilio ya Usalama</translation>
     </message>
 </context>
 <context>
@@ -3180,7 +3180,7 @@ Kwa habari zaidi, angalia hati "Usanidi/DNS".</translation>
     <message>
         <location filename="../../src/main.cpp" line="258" />
         <source>QT_LAYOUT_DIRECTION</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">QT_LAYOUT_DIRECTION</translation>
     </message>
 </context>
 <context>
@@ -3188,32 +3188,32 @@ Kwa habari zaidi, angalia hati "Usanidi/DNS".</translation>
     <message>
         <location filename="../../src/configs/ConfigBuilder.cpp" line="159" />
         <source>Tun mode cannot be used with Custom configs</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Hali ya tun haiwezi kutumika na usanidi Maalum</translation>
     </message>
     <message>
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="913" />
         <source>Requesting subscription: %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Inaomba usajili: %1</translation>
     </message>
     <message>
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="917" />
         <source>Requesting subscription %1 error: %2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Hitilafu %1 ya kuomba usajili: %2</translation>
     </message>
     <message>
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="924" />
         <source>Subscription request fininshed: %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ombi la usajili limekamilishwa: %1</translation>
     </message>
     <message>
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="942" />
         <source>Clearing servers...</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Inafuta seva...</translation>
     </message>
     <message>
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="947" />
         <source>Processing subscription data...</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Inachakata data ya usajili...</translation>
     </message>
     <message>
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="950" />
