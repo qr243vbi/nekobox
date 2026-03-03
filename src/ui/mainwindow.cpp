@@ -552,7 +552,6 @@ MainWindow::MainWindow(QWidget *parent)
   proxyAutoTester = std::make_unique<Stats::ProxyAutoTester>(this);
   
   if (Configs::windowSettings->use_tcp){
-  // Prepare core
     Configs::dataStore->core_port = MkPort();
     Configs::dataStore->core_domain = "127.0.0.1";
   } else {
