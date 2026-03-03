@@ -3233,157 +3233,159 @@ Delevit% III Profile:
     <message>
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="1018" />
         <source>Nothing</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Nihil</translation>
     </message>
     <message>
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="1021" />
         <source>Change of %1:</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Mutatio %I:</translation>
     </message>
     <message>
         <location filename="../../src/dataStore/Database.cpp" line="119" />
         <source>Default</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Default</translation>
     </message>
     <message>
         <location filename="../../src/global/HTTPRequestHelper.cpp" line="189" />
         <source>Could not open file.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">File aperire non potuit.</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/configs/proxy/ChainBean.hpp" line="17" />
         <source>Chain Proxy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Catena Proxy</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/global/GuiUtils.hpp" line="112" />
         <location filename="../../src/ui/profile/edit_ssh.cpp" line="28" />
         <location filename="../../src/ui/setting/dialog_basic_settings.cpp" line="245" />
         <source>Select</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Lego</translation>
     </message>
     <message>
         <location filename="../../src/stats/traffic/TrafficLooper.cpp" line="115" />
         <location filename="../../src/ui/mainwindow.cpp" line="2368" />
         <source>Proxy: %1
 Direct: %2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Proxy: %1
+Direct: %2</translation>
     </message>
     <message>
         <location filename="../../src/sys/Process.cpp" line="104" />
         <source>Core exited, cleaning up...</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Core exivit, redigit...</translation>
     </message>
     <message>
         <location filename="../../src/sys/Process.cpp" line="111" />
         <source>Core exits too frequently, stop automatic restart this profile.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Core nimis frequenter exit, hoc profile sistendum sileo latis.</translation>
     </message>
     <message>
         <location filename="../../src/sys/Process.cpp" line="120" />
         <source>Restarting the core ...</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Restarting core...</translation>
     </message>
     <message>
         <location filename="../../src/sys/Settings.cpp" line="362" />
         <source>System</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Systema</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="22" />
         <source>URL detected</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">URL detectum</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="27" />
         <source>%1
 How to update?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">%1
+Quomodo renovatio?</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="31" />
         <source>Create new subscription group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Novam subscriptionem group</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="32" />
         <source>Add profiles to this group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Adde profiles huic coetui</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="37" />
         <source>Group name</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Group nomen</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="101" />
         <source>Used: %1 Remain: %2 Expire: %3</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Usus: %1 Mane: %2 Exspira: %3</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="173" />
         <source>Download Profiles</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Download Profiles</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="174" />
         <source>Requesting profile error: %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Profile errorem postulans: %1</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="341" />
         <source>
 Deleted %1 Duplicates</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Deletum% I Effingo</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="375" />
         <source>
 Deleted %1 Invalid</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Deletum% I invalida</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="398" />
         <source>
 Deleted %1 Unavailable</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Deletum% I Unavailable</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1443" />
         <source>Check Rule Sets: %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Reprehendo regula Sets:% 1</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1465" />
         <source>Requesting rule-set list error: %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Postulantes regulae-set album errorem: %1</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2405" />
         <source>IP address: %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">IP oratio: %1</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2903" />
         <source>Config copied</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Mando copied</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2914" />
         <source>Copy core config</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Effingo core aboutconfig</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2915" />
         <source>Copy test config</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Effingo test aboutconfig</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2916" />
         <location filename="../../src/ui/security_addon.cpp" line="22" />
         <location filename="../../src/ui/setting/dialog_vpn_settings.cpp" line="45" />
         <source>OK</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">OK</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="4101" />
@@ -3393,64 +3395,66 @@ Deleted %1 Unavailable</source>
         <location filename="../../src/ui/mainwindow.cpp" line="4187" />
         <location filename="../../src/ui/mainwindow.cpp" line="4222" />
         <source>Update</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Renovatio</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="4102" />
         <source>Not official support platform</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Non firmamentum officialis platform</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="4113" />
         <source>Requesting update error: %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Error update postulantes: %1</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="4156" />
         <source>No update</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Nulla renovatio</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="4179" />
         <source>Update found: %1
 Release note:
 %2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Renovatio invenitur: %1
+Dimitte nota:
+%2</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="4182" />
         <source>Close</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Close</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="4184" />
         <source>Open in browser</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Apertum in pasco</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="4223" />
         <source>Update is ready, restart to install?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Renovatio parata est, sileo ut install?</translation>
     </message>
     <message>
         <location filename="../../src/ui/security_addon.cpp" line="21" />
         <source>Access denied</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Accessum negavit</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/dialog_basic_settings.cpp" line="250" />
         <source>Select a Folder</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Folder eligere</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/dialog_vpn_settings.cpp" line="37" />
         <source>Exclude CIDR's</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Excludere CIDR's</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/dialog_vpn_settings.cpp" line="46" />
         <source>Cancel</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Cancel</translation>
     </message>
 </context>
 <context>
@@ -3458,92 +3462,92 @@ Release note:
     <message>
         <location filename="../../src/main.cpp" line="57" />
         <source>Cancel</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Cancel</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="58" />
         <source>Apply</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Applicare</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="59" />
         <source>Yes</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ita</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="60" />
         <source>No</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">No</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="61" />
         <source>OK</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">OK</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="62" />
         <source>Defaults</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Defaltis</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="63" />
         <source>Restore Defaults</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Restitue Defalte</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="64" />
         <source>Discard</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Relinquere</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="66" />
         <source>Undo</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Undo</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="67" />
         <source>Redo</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Redo</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="68" />
         <source>Cut</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Cut</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="69" />
         <source>Copy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Copy</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="70" />
         <source>Paste</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Crustulum</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="71" />
         <source>Delete</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Delere</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="72" />
         <source>Select All</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Lego All</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="73" />
         <source>Stop</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Subsisto</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="74" />
         <source>Clear</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Patet</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="75" />
         <source>Copy Link Location</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Exemplar Link Location</translation>
     </message>
 </context>
 <context>
@@ -3551,165 +3555,165 @@ Release note:
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="14" />
         <source>Route Profile</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Iter Profile</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="24" />
         <source>General</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">General</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="63" />
         <source>Default outbound</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Default outbound</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="70" />
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="319" />
         <source>Name</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Nomen</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="78" />
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="187" />
         <source>Proxy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Proxy</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="83" />
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="217" />
         <source>Direct</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Direct</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="88" />
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="157" />
         <source>Block</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Obstructionum</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="96" />
         <source>Update url</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Renovatio URL</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="130" />
         <source>Skip update</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Skip update</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="137" />
         <source>Update manually</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Update manually</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="151" />
         <source>Basic</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Basic</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="248" />
         <source>Advanced</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Provecta</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="257" />
         <source>Import JSON</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Import JSON</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="267" />
         <source>Rules</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Rules</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="279" />
         <source>New</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">New</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="286" />
         <source>Move Up</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Movere</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="293" />
         <source>Move Down</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Movere</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="300" />
         <source>Delete</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Delere</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="310" />
         <source>Rule Attributes</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Regula attributa</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="329" />
         <source>Attribute</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">attributum</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="342" />
         <source>Name_Placeholder</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Name_Placeholder</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="374" />
         <source>Notes</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Notae</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="302" />
         <location filename="../../src/ui/setting/RouteItem.cpp" line="469" />
         <source>Invalid rules</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Aliquam praecepta</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="302" />
         <source>Some rules could not be added:
 </source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Quaedam praecepta non possunt addi;</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="358" />
         <source>Invalid JSON Array</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Aliquam JSON Forum</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="358" />
         <source>The provided input cannot be parsed to a valid route rule array:
 </source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Provisum initus non potest parsed ad validam viam regulae ordinata:</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="441" />
         <source>Invalid operation</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Aliquam operatio</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="441" />
         <source>Cannot create Route Profile with empty name</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Potest creare Route Profile inanis nomine</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="457" />
         <source>Empty Route Profile</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Vana Route Profile</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="457" />
         <source>No valid rules are in the profile</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Nulla valida praecepta sunt in profile</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="469" />
         <source>Some rules could not be added, fix them before saving:
 </source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Nonnullae regulae addi non poterant, eas ante salutaris fige;</translation>
     </message>
 </context>
 <context>
@@ -3717,42 +3721,42 @@ Release note:
     <message>
         <location filename="../../src/nekobox/ui/security/security.ui" line="14" />
         <source>Security Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Securitatis Occasus</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/security.ui" line="62" />
         <source>Lock Actions</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Cincinno actiones</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/security.ui" line="69" />
         <source>Lock Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Cincinno Optiones</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/security.ui" line="76" />
         <source>Lock Startup</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Satus cincinno</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/security.ui" line="113" />
         <source>Delete Users</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Delere Users</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/security.ui" line="120" />
         <source>Edit User Roles</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Recensere User Roles</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/security.ui" line="163" />
         <source>Change UI Password</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Mutatio III Password</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/security.ui" line="170" />
         <source>Set Proxy Credentials</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Set proxy Credentials</translation>
     </message>
 </context>
 <context>
@@ -3760,13 +3764,13 @@ Release note:
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="121" />
         <source>Invalid JSON Array</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Aliquam JSON Forum</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="122" />
         <source>The provided input cannot be parsed to a valid route rule array:
 </source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Provisum initus non potest parsed ad validam viam regulae ordinata:</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="245" />
