@@ -47,7 +47,7 @@ void MainWindow::setup_rpc() {
             MW_show_log("[Error] Core: " + errStr);
         },
         domain,
-        Configs::dataStore->core_port
+        port
     );
 
     // Looper
