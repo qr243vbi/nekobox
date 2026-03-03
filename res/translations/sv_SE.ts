@@ -5,7 +5,7 @@
     <message>
         <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="14" />
         <source>Dialog</source>
-        <translation type="unfinished">Dialog</translation>
+        <translation type="unfinished" />
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="20" />
@@ -43,7 +43,7 @@
     <message>
         <location filename="../../src/nekobox/ui/setting/resource_manager.ui" line="14" />
         <source>Dialog</source>
-        <translation type="unfinished">Dialog</translation>
+        <translation type="unfinished" />
     </message>
 </context>
 <context>
@@ -95,7 +95,7 @@
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="137" />
         <source>Proxy Format</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Proxy-format</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="144" />
@@ -120,7 +120,7 @@
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="199" />
         <source>Request update at startup</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Begär uppdatering vid start</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="206" />
@@ -241,7 +241,7 @@
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="461" />
         <source>Max log lines</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Max stocklinjer</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="494" />
@@ -287,7 +287,7 @@
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="580" />
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="800" />
         <source>Enable</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Aktivera</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="587" />
@@ -436,12 +436,12 @@ minuter&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="854" />
         <source>10m</source>
-        <translation type="unfinished">10m</translation>
+        <translation type="unfinished" />
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="859" />
         <source>30m</source>
-        <translation type="unfinished">30m</translation>
+        <translation type="unfinished" />
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="873" />
@@ -862,7 +862,7 @@ minuter&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="311" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Server to Client TCP Brutal Speed&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Server till klient TCP Brutal Speed&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="314" />
@@ -1005,7 +1005,7 @@ minuter&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="855" />
         <source>Reality SID</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Verkligheten SID</translation>
     </message>
     <message>
         <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="219" />
@@ -1071,7 +1071,7 @@ minuter&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="74" />
         <source>Group2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Grupp 2</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="414" />
@@ -1242,7 +1242,7 @@ minuter&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="69" />
         <source>Routing Profile</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Routningsprofil</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="92" />
@@ -1252,32 +1252,32 @@ minuter&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="107" />
         <source>GitHub</source>
-        <translation type="unfinished">GitHub</translation>
+        <translation type="unfinished" />
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="112" />
         <source>jsDelivr(Cloudflare)</source>
-        <translation type="unfinished">jsDelivr(Cloudflare)</translation>
+        <translation type="unfinished" />
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="117" />
         <source>jsDelivr(Gcore)</source>
-        <translation type="unfinished">jsDelivr(Gcore)</translation>
+        <translation type="unfinished" />
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="122" />
         <source>jsDelivr(Quantil)</source>
-        <translation type="unfinished">jsDelivr(Quantil)</translation>
+        <translation type="unfinished" />
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="127" />
         <source>jsDelivr(Fastly)</source>
-        <translation type="unfinished">jsDelivr(Snabbt)</translation>
+        <translation type="unfinished" />
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="132" />
         <source>jsDelivr(CDN)</source>
-        <translation type="unfinished">jsDelivr(CDN)</translation>
+        <translation type="unfinished" />
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="149" />
@@ -1505,7 +1505,7 @@ För mer information, se dokumentet "Konfiguration/DNS".</translation>
     <message>
         <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="315" />
         <source>Invalid operation</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ogiltig operation</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="315" />
@@ -1665,7 +1665,7 @@ För mer information, se dokumentet "Konfiguration/DNS".</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="95" />
         <source>Choose from file</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Välj från fil</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="114" />
@@ -1695,7 +1695,7 @@ För mer information, se dokumentet "Konfiguration/DNS".</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="144" />
         <source>No logs</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Inga loggar</translation>
     </message>
 </context>
 <context>
@@ -1703,7 +1703,7 @@ För mer information, se dokumentet "Konfiguration/DNS".</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="14" />
         <source>EditMieru</source>
-        <translation type="unfinished">EditMieru</translation>
+        <translation type="unfinished" />
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="20" />
@@ -1841,7 +1841,7 @@ För mer information, se dokumentet "Konfiguration/DNS".</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="14" />
         <source>EditSSH</source>
-        <translation type="unfinished">RedigeraSSH</translation>
+        <translation type="unfinished" />
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="20" />
@@ -1904,7 +1904,7 @@ För mer information, se dokumentet "Konfiguration/DNS".</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="44" />
         <source>Plugin Args</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Plugin Args</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="54" />
@@ -1988,7 +1988,7 @@ För mer information, se dokumentet "Konfiguration/DNS".</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="40" />
         <source>Control URL</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Styr URL</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="50" />
@@ -2046,7 +2046,7 @@ För mer information, se dokumentet "Konfiguration/DNS".</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="14" />
         <source>EditTor</source>
-        <translation type="unfinished">Redaktör</translation>
+        <translation type="unfinished" />
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="20" />
@@ -2105,7 +2105,7 @@ För mer information, se dokumentet "Konfiguration/DNS".</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="14" />
         <source>EditWireguard</source>
-        <translation type="unfinished">EditWireguard</translation>
+        <translation type="unfinished" />
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="23" />
@@ -2185,7 +2185,7 @@ För mer information, se dokumentet "Konfiguration/DNS".</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="139" />
         <source>Junk Packet Count</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Antal skräppaket</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="149" />
@@ -2220,7 +2220,7 @@ För mer information, se dokumentet "Konfiguration/DNS".</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="209" />
         <source>Underload Packet Magic Header</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Underload Packet Magic Header</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="219" />
@@ -2282,7 +2282,7 @@ För mer information, se dokumentet "Konfiguration/DNS".</translation>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="29" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="32" />
         <source>NekoBox</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">NekoBox</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="51" />
@@ -2322,8 +2322,8 @@ För mer information, se dokumentet "Konfiguration/DNS".</translation>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="161" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="597" />
-        <location filename="../../src/ui/mainwindow.cpp" line="2422" />
-        <location filename="../../src/ui/mainwindow.cpp" line="2425" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2424" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2427" />
         <source>System Proxy</source>
         <translation type="unfinished">Systemproxy</translation>
     </message>
@@ -2490,15 +2490,15 @@ För mer information, se dokumentet "Konfiguration/DNS".</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="736" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3442" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3452" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3444" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3454" />
         <source>Start</source>
         <translation type="unfinished">Start</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="744" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3441" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3452" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3443" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3454" />
         <source>Stop</source>
         <translation type="unfinished">Stopp</translation>
     </message>
@@ -2510,7 +2510,7 @@ För mer information, se dokumentet "Konfiguration/DNS".</translation>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="760" />
         <source>Routing Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Routinginställningar</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="765" />
@@ -2539,12 +2539,13 @@ För mer information, se dokumentet "Konfiguration/DNS".</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="815" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1056" />
         <source>Clear Test Result</source>
         <translation type="unfinished">Rensa testresultat</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="823" />
-        <location filename="../../src/ui/mainwindow.cpp" line="1348" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1350" />
         <source>Export %1 config</source>
         <translation type="unfinished">Exportera %1-konfiguration</translation>
     </message>
@@ -2622,13 +2623,31 @@ För mer information, se dokumentet "Konfiguration/DNS".</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="937" />
-        <source>Copy links of selected (Custom Links)</source>
-        <translation type="unfinished">Kopiera länkar för valda (anpassade länkar)</translation>
+        <source>Copy Custom Links</source>
+        <translation type="unfinished">Kopiera anpassade länkar</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="961" />
+        <source>Copy links</source>
+        <translation type="unfinished">Kopiera länkar</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1045" />
+        <source>Url Test</source>
+        <translation type="unfinished">Url-test</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1078" />
+        <source>Resolve Domain</source>
+        <translation type="unfinished">Lös domän</translation>
+    </message>
+    <message>
+        <source>Copy links of selected (Custom Links)</source>
+        <translation type="obsolete">Kopiera länkar för valda (anpassade länkar)</translation>
+    </message>
+    <message>
         <source>Copy links of selected</source>
-        <translation type="unfinished">Kopiera länkar för valda</translation>
+        <translation type="obsolete">Kopiera länkar för valda</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="972" />
@@ -2637,7 +2656,7 @@ För mer information, se dokumentet "Konfiguration/DNS".</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="977" />
-        <location filename="../../src/ui/mainwindow.cpp" line="2778" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2780" />
         <source>Clone</source>
         <translation type="unfinished">Klona</translation>
     </message>
@@ -2677,9 +2696,8 @@ För mer information, se dokumentet "Konfiguration/DNS".</translation>
         <translation type="unfinished">Sluta testa</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1045" />
         <source>Url Test Selected</source>
-        <translation type="unfinished">Url-test har valts</translation>
+        <translation type="obsolete">Url-test har valts</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1048" />
@@ -2687,9 +2705,8 @@ För mer information, se dokumentet "Konfiguration/DNS".</translation>
         <translation type="unfinished">Ctrl+Skift+S</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1056" />
         <source>Clear Test Result Selected</source>
-        <translation type="unfinished">Rensa testresultat valt</translation>
+        <translation type="obsolete">Rensa testresultat valt</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1067" />
@@ -2702,9 +2719,8 @@ För mer information, se dokumentet "Konfiguration/DNS".</translation>
         <translation type="unfinished">Ctrl+Skift+G</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1078" />
         <source>Resolve Selected Domain</source>
-        <translation type="unfinished">Lös vald domän</translation>
+        <translation type="obsolete">Lös vald domän</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1086" />
@@ -2717,9 +2733,8 @@ För mer information, se dokumentet "Konfiguration/DNS".</translation>
         <translation type="unfinished">Ctrl+Alt+I</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1097" />
         <source>Open Manager</source>
-        <translation type="unfinished">Öppna Manager</translation>
+        <translation type="obsolete">Öppna Manager</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1102" />
@@ -2768,7 +2783,7 @@ För mer information, se dokumentet "Konfiguration/DNS".</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1147" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3468" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3470" />
         <source>Add new Group</source>
         <translation type="unfinished">Lägg till ny grupp</translation>
     </message>
@@ -2784,218 +2799,218 @@ För mer information, se dokumentet "Konfiguration/DNS".</translation>
         <translation type="unfinished">Inte tillgänglig</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1001" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1003" />
         <source>Edit Routing Profiles</source>
         <translation type="unfinished">Redigera routingprofiler</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1023" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1025" />
         <source>Update Routing Profiles</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Uppdatera routingprofiler</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1035" />
-        <location filename="../../src/ui/mainwindow.cpp" line="1039" />
-        <location filename="../../src/ui/mainwindow.cpp" line="1060" />
-        <location filename="../../src/ui/mainwindow.cpp" line="1063" />
-        <location filename="../../src/ui/mainwindow.cpp" line="1107" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1037" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1041" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1062" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1065" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1109" />
         <location filename="../../src/ui/setting/RouteItem.cpp" line="95" />
         <location filename="../../src/ui/setting/RouteItem.cpp" line="104" />
         <source>Update Response</source>
         <translation type="unfinished">Uppdatera svar</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1036" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1038" />
         <location filename="../../src/ui/setting/RouteItem.cpp" line="105" />
         <source>No routing profiles are updated</source>
         <translation type="unfinished">Inga routingprofiler uppdateras</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1040" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1042" />
         <location filename="../../src/ui/setting/RouteItem.cpp" line="96" />
         <source>Updated %1 routing profiles</source>
         <translation type="unfinished">Uppdaterade %1 routingprofiler</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1050" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1052" />
         <source>Update RuleSet Map</source>
         <translation type="unfinished">Uppdatera RuleSet Map</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1061" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1063" />
         <source>Failed to update rulesets</source>
         <translation type="unfinished">Det gick inte att uppdatera regeluppsättningar</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1064" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1066" />
         <source>Rulesets updated successfully</source>
         <translation type="unfinished">Regeluppsättningar har uppdaterats</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1073" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1075" />
         <source>Update RuleSet Cache</source>
         <translation type="unfinished">Uppdatera RuleSet Cache</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1108" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1110" />
         <source>Rulesets cache is updated</source>
         <translation type="unfinished">Rulesets cache uppdateras</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1122" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1124" />
         <source>Clear RuleSet Cache</source>
         <translation type="unfinished">Rensa RuleSet Cache</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1158" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1160" />
         <source>Enable AdBlock</source>
         <translation type="unfinished">Aktivera AdBlock</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1561" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1563" />
         <source>Error</source>
         <translation type="unfinished">Fel</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1648" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1650" />
         <source>Tun Settings changed</source>
         <translation type="unfinished">Tun Inställningar ändrade</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1649" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1651" />
         <source>Restart Tun to take effect.</source>
         <translation type="unfinished">Starta om Tun för att träda i kraft.</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1655" />
-        <location filename="../../src/ui/mainwindow.cpp" line="1713" />
-        <location filename="../../src/ui/mainwindow.cpp" line="2832" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3203" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3257" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3305" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3510" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1657" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1715" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2834" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3205" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3259" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3307" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3512" />
         <source>Confirmation</source>
         <translation type="unfinished">Bekräftelse</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1656" />
-        <location filename="../../src/ui/mainwindow.cpp" line="1714" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1658" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1716" />
         <source>Settings changed, restart proxy?</source>
         <translation type="unfinished">Inställningar ändrade, starta om proxy?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1685" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1687" />
         <source>Settings changed</source>
         <translation type="unfinished">Inställningar ändrade</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1686" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1688" />
         <source>Restart the program to take effect.</source>
         <translation type="unfinished">Starta om programmet för att träda i kraft.</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1729" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1731" />
         <source>Imported %1 profile(s)</source>
         <translation type="unfinished">Importerade %1 profil(er)</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1980" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1982" />
         <source>User opted for no privilege req, some features may not work</source>
         <translation type="unfinished">Användaren valde ingen behörighetskrav, vissa funktioner kanske inte fungerar</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2044" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2046" />
         <source>Please give the core root privileges</source>
         <translation type="unfinished">Vänligen ge core root-privilegier</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2398" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2400" />
         <source>Not Running</source>
         <translation type="unfinished">Springer inte</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2779" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2781" />
         <source>Clone %1 item(s)</source>
         <translation type="unfinished">Klona %1 objekt</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2813" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2815" />
         <source> Confirmation </source>
         <translation type="unfinished">Bekräftelse</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2814" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2816" />
         <source> Remove %1 item(s) ? </source>
         <translation type="unfinished">Ta bort %1 objekt?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2833" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2835" />
         <source>Remove %1 item(s) ?</source>
         <translation type="unfinished">Ta bort %1 objekt?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2870" />
-        <location filename="../../src/ui/mainwindow.cpp" line="2883" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2872" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2885" />
         <source>Copied %1 item(s)</source>
         <translation type="unfinished">Kopierade %1 objekt(er)</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3115" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3117" />
         <source>QR Code not found</source>
         <translation type="unfinished">QR-koden hittades inte</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3136" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3138" />
         <source>Unable to capture screen</source>
         <translation type="unfinished">Det gick inte att fånga skärmen</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3204" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3206" />
         <source>Remove %1 Unavailable item(s) ?</source>
         <translation type="unfinished">Ta bort %1 otillgängliga objekt?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3258" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3260" />
         <source>Remove %1 Invalid item(s) ?</source>
         <translation type="unfinished">Ta bort %1 Ogiltig(a) objekt?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3306" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3308" />
         <source>Replace domain server addresses with their resolved IPs?</source>
         <translation type="unfinished">Ersätta domänserveradresser med deras lösta IP-adresser?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3439" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3441" />
         <source>Clear</source>
         <translation type="unfinished">Rensa</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3501" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3503" />
         <source>Delete selected Group</source>
         <translation type="unfinished">Ta bort vald grupp</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3502" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3504" />
         <source>Edit selected Group</source>
         <translation type="unfinished">Redigera vald grupp</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3511" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3513" />
         <source>Remove %1?</source>
         <translation type="unfinished">Vill du ta bort %1?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4194" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4196" />
         <source>Cannot start</source>
         <translation type="unfinished">Kan inte starta</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4195" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4197" />
         <source>Last download request has not finished yet</source>
         <translation type="unfinished">Senaste nedladdningsbegäran har inte avslutats ännu</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4229" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4231" />
         <source>Failed to download update assets</source>
         <translation type="unfinished">Det gick inte att ladda ned uppdateringstillgångar</translation>
     </message>
@@ -3145,7 +3160,7 @@ För mer information, se dokumentet "Konfiguration/DNS".</translation>
     <message>
         <location filename="../../src/nekobox/ui/security/change_password.ui" line="14" />
         <source>Dialog</source>
-        <translation type="unfinished">Dialog</translation>
+        <translation type="unfinished" />
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/change_password.ui" line="20" />
@@ -3155,7 +3170,7 @@ För mer information, se dokumentet "Konfiguration/DNS".</translation>
     <message>
         <location filename="../../src/nekobox/ui/security/change_password.ui" line="37" />
         <source>New Password</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Nytt lösenord</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/change_password.ui" line="54" />
@@ -3197,7 +3212,7 @@ För mer information, se dokumentet "Konfiguration/DNS".</translation>
     <message>
         <location filename="../../src/configs/ConfigBuilder.cpp" line="159" />
         <source>Tun mode cannot be used with Custom configs</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tun-läget kan inte användas med anpassade konfigurationer</translation>
     </message>
     <message>
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="913" />
@@ -3274,7 +3289,7 @@ Raderade %3 profiler:
     </message>
     <message>
         <location filename="../../src/stats/traffic/TrafficLooper.cpp" line="115" />
-        <location filename="../../src/ui/mainwindow.cpp" line="2366" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2368" />
         <source>Proxy: %1
 Direct: %2</source>
         <translation type="unfinished">Proxy: %1
@@ -3361,69 +3376,69 @@ Deleted %1 Unavailable</source>
         <translation type="unfinished">Borttagen %1 Ej tillgänglig</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1441" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1443" />
         <source>Check Rule Sets: %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kontrollera regeluppsättningar: %1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1463" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1465" />
         <source>Requesting rule-set list error: %1</source>
         <translation type="unfinished">Begärande av regeluppsättningslistfel: %1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2403" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2405" />
         <source>IP address: %1</source>
         <translation type="unfinished">IP-adress: %1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2901" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2903" />
         <source>Config copied</source>
         <translation type="unfinished">Konfiguration kopierad</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2912" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2914" />
         <source>Copy core config</source>
         <translation type="unfinished">Kopiera kärnkonfiguration</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2913" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2915" />
         <source>Copy test config</source>
         <translation type="unfinished">Kopiera testkonfiguration</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2914" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2916" />
         <location filename="../../src/ui/security_addon.cpp" line="22" />
         <location filename="../../src/ui/setting/dialog_vpn_settings.cpp" line="45" />
         <source>OK</source>
         <translation type="unfinished">OK</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4099" />
-        <location filename="../../src/ui/mainwindow.cpp" line="4110" />
-        <location filename="../../src/ui/mainwindow.cpp" line="4154" />
-        <location filename="../../src/ui/mainwindow.cpp" line="4176" />
-        <location filename="../../src/ui/mainwindow.cpp" line="4185" />
-        <location filename="../../src/ui/mainwindow.cpp" line="4220" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4101" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4112" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4156" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4178" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4187" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4222" />
         <source>Update</source>
         <translation type="unfinished">Uppdatera</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4100" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4102" />
         <source>Not official support platform</source>
         <translation type="unfinished">Inte officiell supportplattform</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4111" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4113" />
         <source>Requesting update error: %1</source>
         <translation type="unfinished">Begär uppdateringsfel: %1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4154" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4156" />
         <source>No update</source>
         <translation type="unfinished">Ingen uppdatering</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4177" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4179" />
         <source>Update found: %1
 Release note:
 %2</source>
@@ -3432,17 +3447,17 @@ Releasenota:
 %2</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4180" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4182" />
         <source>Close</source>
         <translation type="unfinished">Nära</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4182" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4184" />
         <source>Open in browser</source>
         <translation type="unfinished">Öppna i webbläsaren</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4221" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4223" />
         <source>Update is ready, restart to install?</source>
         <translation type="unfinished">Uppdateringen är klar, starta om för att installera?</translation>
     </message>
@@ -3789,7 +3804,7 @@ Releasenota:
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="261" />
-        <location filename="../../src/ui/mainwindow.cpp" line="1182" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1184" />
         <source>Download Profiles</source>
         <translation type="unfinished">Ladda ner profiler</translation>
     </message>

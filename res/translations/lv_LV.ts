@@ -15,27 +15,27 @@
     <message>
         <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="37" />
         <source>Password</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Parole</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="78" />
         <source>Remember</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Atcerieties</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="105" />
         <source>seconds</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">sekundes</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="110" />
         <source>minutes</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">minūtes</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="115" />
         <source>hours</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">stundas</translation>
     </message>
 </context>
 <context>
@@ -52,34 +52,35 @@
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="20" />
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="52" />
         <source>Basic Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Pamatiestatījumi</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="46" />
         <source>Common</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Bieži</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="98" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Socks
                                                                 + HTTP Proxy&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                                                             </source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Zeķes
++ HTTP starpniekserveris&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="103" />
         <source>Listen Port</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Klausieties Portu</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="110" />
         <source>Edit</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Rediģēt</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="117" />
         <source>Custom Inbound</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Pielāgota ienākošā</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="127" />
@@ -89,42 +90,42 @@
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="130" />
         <source>Random port</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Izlases ports</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="137" />
         <source>Proxy Format</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Starpniekservera formāts</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="144" />
         <source>Listen Address</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Klausieties Adrese</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="164" />
         <source>Network Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tīkla iestatījumi</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="185" />
         <source>Use proxy when activated</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Izmantojiet starpniekserveri, kad tas ir aktivizēts</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="192" />
         <source>URL Test after profile start</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">URL pārbaude pēc profila palaišanas</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="199" />
         <source>Request update at startup</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Pieprasiet atjauninājumu startēšanas laikā</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="206" />
         <source>Ignore TLS errors</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ignorēt TLS kļūdas</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="216" />
@@ -134,88 +135,88 @@
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="243" />
         <source>Simple Download URL</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Vienkāršs lejupielādes URL</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="251" />
         <source>Download + Upload</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Lejupielādēt + augšupielādēt</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="256" />
         <source>Only Download</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tikai lejupielādēt</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="261" />
         <source>Only Upload</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tikai augšupielāde</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="266" />
         <source>Simple Download</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Vienkārša lejupielāde</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="271" />
         <source>Only Country</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Vienīgā valsts</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="279" />
         <source>Latency Test URL</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Latenta testa URL</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="286" />
         <source>Speedtest mode</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ātruma pārbaudes režīms</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="293" />
         <source>Concurrent</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Vienlaicīgi</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="300" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;timeout in milliseconds&lt;br/&gt;applies to all tests individually&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;noildze milisekundēs&lt;br/&gt;attiecas uz visiem testiem atsevišķi&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="303" />
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="316" />
         <source>Timeout</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Taimauts</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="313" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Timeout for URLtest in ms&lt;br/&gt;Note that muxed connections take a much longer time for their initial request, and setting this value too low will cause the test to falsely report that the config is not working&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;URL testa noildze ms.&lt;br/&gt;Ņemiet vērā, ka sajauktiem savienojumiem ir nepieciešams daudz ilgāks laiks sākotnējā pieprasījuma saņemšanai, un, iestatot šo vērtību pārāk zemu, tests nepatiesi ziņos, ka konfigurācija nedarbojas.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="360" />
         <source>Style</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Stils</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="371" />
         <source>Font</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Fonts</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="381" />
         <source>Font Size</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Fonta lielums</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="397" />
         <source>Connection statistics</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Savienojuma statistika</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="410" />
         <source>Hide dashboard at startup</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Startēšanas laikā paslēpt informācijas paneli</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="417" />
@@ -225,57 +226,57 @@
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="434" />
         <source>Disable tray</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Atspējot paplāti</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="441" />
         <source>Set text under menu icons</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Iestatiet tekstu zem izvēlnes ikonām</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="448" />
         <source>Hide at startup</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Paslēpt startēšanas laikā</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="461" />
         <source>Max log lines</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Maksimālās baļķu līnijas</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="494" />
         <source>Theme</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tēma</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="502" />
         <source>System</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Sistēma</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="516" />
         <source>Language</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Valoda</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="532" />
         <source>Icon</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ikona</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="539" />
         <source>Emoji Font</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Emoji fonts</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="552" />
         <source>Subscription</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Abonēšana</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="558" />
         <source>Clear servers before update</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Pirms atjaunināšanas notīriet serverus</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="565" />
@@ -286,27 +287,27 @@
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="580" />
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="800" />
         <source>Enable</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Iespējot</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="587" />
         <source>Interval (minute, invalid if less than 30)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Intervāls (minūte, nederīgs, ja mazāks par 30)</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="606" />
         <source>Remove Duplicates</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Noņemiet dublikātus</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="613" />
         <source>hwid=custom_value,os=custom_os,osVersion=custom_version,model=custom_model</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">hwid=custom_value,os=custom_os,osVersion=custom_version,model=pielāgots_modelis</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="620" />
         <source>User Agent</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Lietotāja aģents</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="630" />
@@ -316,113 +317,116 @@
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="633" />
         <source>Send System Parameters</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Sūtīt sistēmas parametrus</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="646" />
         <source>Automatic update</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Automātiska atjaunināšana</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="653" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Format: hwid=value,os=value,osVersion=value,model=value&lt;/p&gt;&lt;p&gt;Leave empty to use default values. Only specify the parameters you want to override.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Formāts: hwid=value,os=value,osVersion=value,model=value&lt;/p&gt;&lt;p&gt;Atstājiet tukšu, lai izmantotu noklusējuma vērtības.Norādiet tikai tos parametrus, kurus vēlaties ignorēt.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="656" />
         <source>Custom System Parameters (optional)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Pielāgoti sistēmas parametri (pēc izvēles)</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="663" />
         <source>Remove Invalid</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Noņemt nederīgu</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="670" />
         <source>Remove Unavailable</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Noņemt Nav pieejams</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="678" />
         <source>Core</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kodols</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="717" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Might
                                                                             Improve Ping and Performance&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                                                                         </source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Varētu
+Uzlabojiet testēšanu un veiktspēju&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="722" />
         <source>Disable Traffic Stats</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Atspējot satiksmes statistiku</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="731" />
         <source>Multiplex (mux)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Multiplekss (mux)</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="738" />
         <source>Loglevel</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Žurnāla līmenis</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="750" />
         <source>concurrency</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">vienlaicīgums</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="760" />
         <source>Padding</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Polsterējums</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="767" />
         <source>Default On</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Noklusējums Ieslēgts</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="779" />
         <source>Core Options</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Galvenās opcijas</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="789" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Settings for the
                                             sing-box's built-in NTP client&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                                         </source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Iestatījumi
+sing-box iebūvētais NTP klients&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="794" />
         <source>NTP Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">NTP iestatījumi</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="809" />
         <source>server</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">serveris</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="819" />
         <source>Port</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Osta</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="836" />
         <source>sync interval</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">sinhronizācijas intervāls</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="843" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;In
                                                                 minutes&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                                                             </source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Iekšā
+minūtes&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="849" />
@@ -442,72 +446,72 @@
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="873" />
         <source>Security</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Drošība</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="879" />
         <source>Disable Privilege request</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Atspējot privilēģiju pieprasījumu</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="886" />
         <source>Use Mozilla Certificate Store</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Izmantojiet Mozilla Certificate Store</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="893" />
         <source>Skip TLS certificate authentication by default (allowInsecure)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Pēc noklusējuma izlaist TLS sertifikāta autentifikāciju (allowInsecure)</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="921" />
         <source>Default uTLS Fingerprint</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Noklusējuma uTLS pirksta nospiedums</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="944" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Do not attempt to start as Admin unless explicitly requested&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Nemēģiniet sākt kā administrators, ja vien tas nav skaidri pieprasīts&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="947" />
         <source>Always Start as Standard User</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Vienmēr sāciet kā standarta lietotājs</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="954" />
         <source>Use Json instead binary for configs</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Konfigurācijām izmantojiet Json, nevis bināro</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="968" />
         <source>Auto-Testing</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Automātiskā pārbaude</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="974" />
         <source>Automatically test proxies in the background and maintain a pool of working proxies</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Automātiski testējiet starpniekserverus fonā un uzturiet strādājošu starpniekserveru kopu</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="977" />
         <source>Enable Auto-Testing</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Iespējot automātisko testēšanu</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="984" />
         <source>Test Interval (seconds)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Pārbaudes intervāls (sekundēs)</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="991" />
         <source>How often to run the test cycle</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Cik bieži palaist testa ciklu</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1007" />
         <source>Proxies Per Cycle</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Starpniekserveri ciklā</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1014" />
@@ -517,37 +521,37 @@
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1030" />
         <source>Working Pool Size</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Darba baseina izmērs</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1037" />
         <source>Maximum number of verified working proxies to maintain</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Maksimālais verificēto darba starpniekserveru skaits, kas jāuztur</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1053" />
         <source>Latency Threshold (ms)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Latenta slieksnis (ms)</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1060" />
         <source>Maximum latency to consider a proxy as working</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Maksimālais latentums, lai uzskatītu, ka starpniekserveris darbojas</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1079" />
         <source>Failure Retry Count</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Neveiksmju Atkārtoto mēģinājumu skaits</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1086" />
         <source>Number of retry attempts before considering a proxy as failed</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Atkārtoto mēģinājumu skaits, pirms starpniekserveris tiek uzskatīts par neveiksmīgu</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1102" />
         <source>Test Target URL</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Pārbaudīt mērķa URL</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1109" />
@@ -562,37 +566,37 @@
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1119" />
         <source>Automatically switch to another working proxy when TUN mode proxy fails</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Automātiski pārslēdzieties uz citu strādājošu starpniekserveri, ja TUN režīma starpniekserveris neizdodas</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1122" />
         <source>Enable TUN Failover</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Iespējot TUN kļūmjpārlēci</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1130" />
         <source>Startup</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Startēšana</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1191" />
         <source>Geometry</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ģeometrija</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1220" />
         <source>Autosave geometry</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Automātiski saglabāt ģeometriju</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1227" />
         <source>Autosave position</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Automātiski saglabāt pozīciju</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1247" />
         <source>Apply now</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Piesakies tagad</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1363" />
@@ -602,39 +606,39 @@
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1376" />
         <source>X</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">X</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1409" />
         <source>Y</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Y</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1422" />
         <source>Height</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Augstums</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1509" />
         <source>Core Executable Path</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Galvenais izpildāmais ceļš</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1538" />
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1712" />
         <source>Use default</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Izmantot noklusējumu</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1545" />
         <source>Remote Control</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tālvadības pults</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1571" />
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1745" />
         <source>Select</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Izvēlieties</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1683" />
@@ -644,7 +648,7 @@
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1719" />
         <source>Resource Manager</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Resursu pārvaldnieks</translation>
     </message>
 </context>
 <context>
@@ -652,54 +656,54 @@
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="20" />
         <source>Edit Group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Rediģēt grupu</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="36" />
         <source>Common</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Bieži</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="102" />
         <source>Name</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Vārds</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="109" />
         <source>Type</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tips</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="117" />
         <source>Basic</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Pamata</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="122" />
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="287" />
         <source>Subscription</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Abonēšana</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="135" />
         <source>Manually column width</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Manuāli kolonnas platums</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="142" />
         <source>Archive</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Arhīvs</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="155" />
         <source>Proxy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Starpniekserveris</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="194" />
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="221" />
         <source>None</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Nav</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="201" />
@@ -709,37 +713,37 @@
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="208" />
         <source>Landing Proxy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Nosēšanās starpniekserveris</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="232" />
         <source>Share</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Dalīties</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="238" />
         <source>Copy profile share links</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kopējiet profila kopīgošanas saites</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="245" />
         <source>Copy profile share links (Custom Links)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kopēt profila kopīgošanas saites (pielāgotas saites)</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="253" />
         <source>Notes</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Piezīmes</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="314" />
         <source>Skip automatic update</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Izlaist automātisko atjaunināšanu</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="58" />
         <source>Copied</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kopēts</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="357" />
@@ -758,22 +762,22 @@
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="26" />
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="662" />
         <source>Edit</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Rediģēt</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="56" />
         <source>Common</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Bieži</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="73" />
         <source>Type</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tips</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="80" />
         <source>Port</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Osta</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="87" />
@@ -783,7 +787,7 @@
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="94" />
         <source>Name</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Vārds</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="139" />
@@ -818,7 +822,7 @@
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="239" />
         <source>Security</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Drošība</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="260" />
@@ -1093,7 +1097,7 @@
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="442" />
         <location filename="../../src/ui/setting/RouteItem.cpp" line="140" />
         <source>Proxy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Starpniekserveris</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="445" />
@@ -1104,7 +1108,7 @@
     <message>
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="449" />
         <source>None</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Nav</translation>
     </message>
     <message>
         <location filename="../../src/ui/profile/edit_chain.cpp" line="46" />
@@ -1213,7 +1217,7 @@
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="24" />
         <source>Common</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Bieži</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="39" />
@@ -1309,7 +1313,7 @@
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="216" />
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="312" />
         <source>Listen Port</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Klausieties Portu</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="226" />
@@ -1335,7 +1339,7 @@
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="280" />
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="319" />
         <source>Enable</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Iespējot</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="287" />
@@ -1355,7 +1359,7 @@
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="329" />
         <source>Listen Address</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Klausieties Adrese</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="340" />
@@ -1463,7 +1467,7 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="613" />
         <source>Edit</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Rediģēt</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="620" />
@@ -1560,7 +1564,7 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_anytls.ui" line="20" />
         <source>Password</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Parole</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_anytls.ui" line="30" />
@@ -1601,7 +1605,7 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_custom.ui" line="28" />
         <source>Core</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kodols</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_custom.ui" line="41" />
@@ -1707,7 +1711,7 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="30" />
         <source>Password</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Parole</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="40" />
@@ -1801,7 +1805,7 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="243" />
         <source>Password</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Parole</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="257" />
@@ -1845,7 +1849,7 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="30" />
         <source>Password</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Parole</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="40" />
@@ -1903,7 +1907,7 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="54" />
         <source>Password</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Parole</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="80" />
@@ -1926,7 +1930,7 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="27" />
         <source>Password</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Parole</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="38" />
@@ -1959,7 +1963,7 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="54" />
         <source>Password</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Parole</translation>
     </message>
 </context>
 <context>
@@ -2068,7 +2072,7 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_trojan_vless.ui" line="23" />
         <source>Password</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Parole</translation>
     </message>
 </context>
 <context>
@@ -2076,7 +2080,7 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_vmess.ui" line="52" />
         <source>Security</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Drošība</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_vmess.ui" line="59" />
@@ -2174,7 +2178,7 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="132" />
         <source>Enable</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Iespējot</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="139" />
@@ -2232,7 +2236,7 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/group/GroupItem.ui" line="76" />
         <source>Edit</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Rediģēt</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/GroupItem.ui" line="89" />
@@ -2242,17 +2246,17 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="129" />
         <source>Basic</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Pamata</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="129" />
         <source>Subscription</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Abonēšana</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="130" />
         <source>Archive</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Arhīvs</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="142" />
@@ -2316,8 +2320,8 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="161" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="597" />
-        <location filename="../../src/ui/mainwindow.cpp" line="2422" />
-        <location filename="../../src/ui/mainwindow.cpp" line="2425" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2424" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2427" />
         <source>System Proxy</source>
         <translation type="unfinished" />
     </message>
@@ -2330,7 +2334,7 @@ For more information, see the document "Configuration/DNS".</source>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="309" />
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="139" />
         <source>Type</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tips</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="314" />
@@ -2342,7 +2346,7 @@ For more information, see the document "Configuration/DNS".</source>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="319" />
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="145" />
         <source>Name</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Vārds</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="324" />
@@ -2435,7 +2439,7 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="631" />
         <source>Share</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Dalīties</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="641" />
@@ -2470,7 +2474,7 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="721" />
         <source>Basic Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Pamatiestatījumi</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="726" />
@@ -2484,22 +2488,22 @@ For more information, see the document "Configuration/DNS".</source>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="736" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3442" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3452" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3444" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3454" />
         <source>Start</source>
         <translation type="unfinished" />
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="744" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3441" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3452" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3443" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3454" />
         <source>Stop</source>
         <translation type="unfinished" />
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="752" />
         <source>Edit</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Rediģēt</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="760" />
@@ -2533,12 +2537,13 @@ For more information, see the document "Configuration/DNS".</source>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="815" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1056" />
         <source>Clear Test Result</source>
         <translation type="unfinished" />
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="823" />
-        <location filename="../../src/ui/mainwindow.cpp" line="1348" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1350" />
         <source>Export %1 config</source>
         <translation type="unfinished" />
     </message>
@@ -2565,7 +2570,7 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="860" />
         <source>Remove Duplicates</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Noņemiet dublikātus</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="868" />
@@ -2597,7 +2602,7 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="908" />
         <source>Remove Unavailable</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Noņemt Nav pieejams</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="916" />
@@ -2616,12 +2621,22 @@ For more information, see the document "Configuration/DNS".</source>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="937" />
-        <source>Copy links of selected (Custom Links)</source>
+        <source>Copy Custom Links</source>
         <translation type="unfinished" />
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="961" />
-        <source>Copy links of selected</source>
+        <source>Copy links</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1045" />
+        <source>Url Test</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1078" />
+        <source>Resolve Domain</source>
         <translation type="unfinished" />
     </message>
     <message>
@@ -2631,7 +2646,7 @@ For more information, see the document "Configuration/DNS".</source>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="977" />
-        <location filename="../../src/ui/mainwindow.cpp" line="2778" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2780" />
         <source>Clone</source>
         <translation type="unfinished" />
     </message>
@@ -2671,18 +2686,8 @@ For more information, see the document "Configuration/DNS".</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1045" />
-        <source>Url Test Selected</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1048" />
         <source>Ctrl+Shift+S</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1056" />
-        <source>Clear Test Result Selected</source>
         <translation type="unfinished" />
     </message>
     <message>
@@ -2696,23 +2701,13 @@ For more information, see the document "Configuration/DNS".</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1078" />
-        <source>Resolve Selected Domain</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1086" />
         <source>Remove Invalid</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Noņemt nederīgu</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1089" />
         <source>Ctrl+Alt+I</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1097" />
-        <source>Open Manager</source>
         <translation type="unfinished" />
     </message>
     <message>
@@ -2762,7 +2757,7 @@ For more information, see the document "Configuration/DNS".</source>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1147" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3468" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3470" />
         <source>Add new Group</source>
         <translation type="unfinished" />
     </message>
@@ -2778,218 +2773,218 @@ For more information, see the document "Configuration/DNS".</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1001" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1003" />
         <source>Edit Routing Profiles</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1023" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1025" />
         <source>Update Routing Profiles</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1035" />
-        <location filename="../../src/ui/mainwindow.cpp" line="1039" />
-        <location filename="../../src/ui/mainwindow.cpp" line="1060" />
-        <location filename="../../src/ui/mainwindow.cpp" line="1063" />
-        <location filename="../../src/ui/mainwindow.cpp" line="1107" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1037" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1041" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1062" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1065" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1109" />
         <location filename="../../src/ui/setting/RouteItem.cpp" line="95" />
         <location filename="../../src/ui/setting/RouteItem.cpp" line="104" />
         <source>Update Response</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1036" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1038" />
         <location filename="../../src/ui/setting/RouteItem.cpp" line="105" />
         <source>No routing profiles are updated</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1040" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1042" />
         <location filename="../../src/ui/setting/RouteItem.cpp" line="96" />
         <source>Updated %1 routing profiles</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1050" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1052" />
         <source>Update RuleSet Map</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1061" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1063" />
         <source>Failed to update rulesets</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1064" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1066" />
         <source>Rulesets updated successfully</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1073" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1075" />
         <source>Update RuleSet Cache</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1108" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1110" />
         <source>Rulesets cache is updated</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1122" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1124" />
         <source>Clear RuleSet Cache</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1158" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1160" />
         <source>Enable AdBlock</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1561" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1563" />
         <source>Error</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1648" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1650" />
         <source>Tun Settings changed</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1649" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1651" />
         <source>Restart Tun to take effect.</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1655" />
-        <location filename="../../src/ui/mainwindow.cpp" line="1713" />
-        <location filename="../../src/ui/mainwindow.cpp" line="2832" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3203" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3257" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3305" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3510" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1657" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1715" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2834" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3205" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3259" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3307" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3512" />
         <source>Confirmation</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1656" />
-        <location filename="../../src/ui/mainwindow.cpp" line="1714" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1658" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1716" />
         <source>Settings changed, restart proxy?</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1685" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1687" />
         <source>Settings changed</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1686" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1688" />
         <source>Restart the program to take effect.</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1729" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1731" />
         <source>Imported %1 profile(s)</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1980" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1982" />
         <source>User opted for no privilege req, some features may not work</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2044" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2046" />
         <source>Please give the core root privileges</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2398" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2400" />
         <source>Not Running</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2779" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2781" />
         <source>Clone %1 item(s)</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2813" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2815" />
         <source> Confirmation </source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2814" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2816" />
         <source> Remove %1 item(s) ? </source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2833" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2835" />
         <source>Remove %1 item(s) ?</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2870" />
-        <location filename="../../src/ui/mainwindow.cpp" line="2883" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2872" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2885" />
         <source>Copied %1 item(s)</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3115" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3117" />
         <source>QR Code not found</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3136" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3138" />
         <source>Unable to capture screen</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3204" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3206" />
         <source>Remove %1 Unavailable item(s) ?</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3258" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3260" />
         <source>Remove %1 Invalid item(s) ?</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3306" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3308" />
         <source>Replace domain server addresses with their resolved IPs?</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3439" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3441" />
         <source>Clear</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3501" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3503" />
         <source>Delete selected Group</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3502" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3504" />
         <source>Edit selected Group</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3511" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3513" />
         <source>Remove %1?</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4194" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4196" />
         <source>Cannot start</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4195" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4197" />
         <source>Last download request has not finished yet</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4229" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4231" />
         <source>Failed to download update assets</source>
         <translation type="unfinished" />
     </message>
@@ -3261,11 +3256,11 @@ Deleted %3 Profiles:
         <location filename="../../src/ui/profile/edit_ssh.cpp" line="28" />
         <location filename="../../src/ui/setting/dialog_basic_settings.cpp" line="244" />
         <source>Select</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Izvēlieties</translation>
     </message>
     <message>
         <location filename="../../src/stats/traffic/TrafficLooper.cpp" line="115" />
-        <location filename="../../src/ui/mainwindow.cpp" line="2366" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2368" />
         <source>Proxy: %1
 Direct: %2</source>
         <translation type="unfinished" />
@@ -3288,7 +3283,7 @@ Direct: %2</source>
     <message>
         <location filename="../../src/sys/Settings.cpp" line="361" />
         <source>System</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Sistēma</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="22" />
@@ -3350,86 +3345,86 @@ Deleted %1 Unavailable</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1441" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1443" />
         <source>Check Rule Sets: %1</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1463" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1465" />
         <source>Requesting rule-set list error: %1</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2403" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2405" />
         <source>IP address: %1</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2901" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2903" />
         <source>Config copied</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2912" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2914" />
         <source>Copy core config</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2913" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2915" />
         <source>Copy test config</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2914" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2916" />
         <location filename="../../src/ui/security_addon.cpp" line="22" />
         <location filename="../../src/ui/setting/dialog_vpn_settings.cpp" line="45" />
         <source>OK</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4099" />
-        <location filename="../../src/ui/mainwindow.cpp" line="4110" />
-        <location filename="../../src/ui/mainwindow.cpp" line="4154" />
-        <location filename="../../src/ui/mainwindow.cpp" line="4176" />
-        <location filename="../../src/ui/mainwindow.cpp" line="4185" />
-        <location filename="../../src/ui/mainwindow.cpp" line="4220" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4101" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4112" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4156" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4178" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4187" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4222" />
         <source>Update</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4100" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4102" />
         <source>Not official support platform</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4111" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4113" />
         <source>Requesting update error: %1</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4154" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4156" />
         <source>No update</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4177" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4179" />
         <source>Update found: %1
 Release note:
 %2</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4180" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4182" />
         <source>Close</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4182" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4184" />
         <source>Open in browser</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4221" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4223" />
         <source>Update is ready, restart to install?</source>
         <translation type="unfinished" />
     </message>
@@ -3568,13 +3563,13 @@ Release note:
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="70" />
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="319" />
         <source>Name</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Vārds</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="78" />
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="187" />
         <source>Proxy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Starpniekserveris</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="83" />
@@ -3606,7 +3601,7 @@ Release note:
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="151" />
         <source>Basic</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Pamata</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="248" />
@@ -3661,7 +3656,7 @@ Release note:
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="374" />
         <source>Notes</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Piezīmes</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="302" />
@@ -3776,7 +3771,7 @@ Release note:
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="261" />
-        <location filename="../../src/ui/mainwindow.cpp" line="1182" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1184" />
         <source>Download Profiles</source>
         <translation type="unfinished" />
     </message>

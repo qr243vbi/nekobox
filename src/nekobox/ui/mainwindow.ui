@@ -934,7 +934,7 @@
   </action>
   <action name="menu_copy_links_nkr">
    <property name="text">
-    <string>Copy links of selected (Custom Links)</string>
+    <string>Copy Custom Links</string>
    </property>
    <property name="shortcut">
     <string notr="true">Ctrl+Alt+C</string>
@@ -958,7 +958,7 @@
   </action>
   <action name="menu_copy_links">
    <property name="text">
-    <string>Copy links of selected</string>
+    <string>Copy links</string>
    </property>
    <property name="shortcut">
     <string notr="true">Ctrl+C</string>
@@ -1042,7 +1042,7 @@
   </action>
   <action name="actionUrl_Test_Selected">
    <property name="text">
-    <string>Url Test Selected</string>
+    <string>Url Test</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+Shift+S</string>
@@ -1053,7 +1053,7 @@
   </action>
   <action name="actionUrl_Test_Clear">
    <property name="text">
-    <string>Clear Test Result Selected</string>
+    <string>Clear Test Result</string>
    </property>
    <property name="visible">
     <bool>true</bool>
@@ -1075,7 +1075,7 @@
   </action>
   <action name="menu_resolve_selected">
    <property name="text">
-    <string>Resolve Selected Domain</string>
+    <string>Resolve Domain</string>
    </property>
    <property name="visible">
     <bool>true</bool>
@@ -1092,11 +1092,11 @@
     <enum>QAction::MenuRole::TextHeuristicRole</enum>
    </property>
   </action>
-  <action name="menu_open_routing_manager">
+  <!--action name="menu_open_routing_manager">
    <property name="text">
     <string>Open Manager</string>
    </property>
-  </action>
+  </action-->
   <action name="actionSpeedtest_Current">
    <property name="text">
     <string>Speedtest Current</string>

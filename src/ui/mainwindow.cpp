@@ -866,7 +866,9 @@ skip_updater_hide:
   });
   connect(ui->actionToggle_window, &QAction::triggered, this, [=, this] {
     CHECK_SETTINGS_ACCESS_W
-    ActivateWindow(this);
+    do {
+      ToggleWindow(this);
+    } while (this->isHidden());
   });
   connect(ui->actionRemember_last_proxy, &QAction::triggered, this,
           [=, this](bool checked) {
