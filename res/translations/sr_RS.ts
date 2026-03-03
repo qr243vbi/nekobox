@@ -3300,92 +3300,93 @@ Direct: %2</source>
         <location filename="../../src/ui/group/GroupItem.cpp" line="27" />
         <source>%1
 How to update?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">%1
+Како ажурирати?</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="31" />
         <source>Create new subscription group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Креирајте нову групу за претплату</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="32" />
         <source>Add profiles to this group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Додајте профиле овој групи</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="37" />
         <source>Group name</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Назив групе</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="101" />
         <source>Used: %1 Remain: %2 Expire: %3</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Коришћено: %1 Остало: %2 Истек: %3</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="173" />
         <source>Download Profiles</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Преузми профиле</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="174" />
         <source>Requesting profile error: %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Грешка у тражењу профила: %1</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="341" />
         <source>
 Deleted %1 Duplicates</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Избрисано је %1 дупликата</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="375" />
         <source>
 Deleted %1 Invalid</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Избрисано %1 неважеће</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="398" />
         <source>
 Deleted %1 Unavailable</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Избрисано %1 недоступно</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1443" />
         <source>Check Rule Sets: %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Проверите скупове правила: %1</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1465" />
         <source>Requesting rule-set list error: %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Грешка у тражењу листе правила: %1</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2405" />
         <source>IP address: %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ИП адреса: %1</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2903" />
         <source>Config copied</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Конфигурација је копирана</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2914" />
         <source>Copy core config</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Копирајте конфигурацију језгра</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2915" />
         <source>Copy test config</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Копирајте пробну конфигурацију</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2916" />
         <location filename="../../src/ui/security_addon.cpp" line="22" />
         <location filename="../../src/ui/setting/dialog_vpn_settings.cpp" line="45" />
         <source>OK</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ОК</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="4101" />
@@ -3395,64 +3396,66 @@ Deleted %1 Unavailable</source>
         <location filename="../../src/ui/mainwindow.cpp" line="4187" />
         <location filename="../../src/ui/mainwindow.cpp" line="4222" />
         <source>Update</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ажурирај</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="4102" />
         <source>Not official support platform</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Није званична платформа за подршку</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="4113" />
         <source>Requesting update error: %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Грешка при захтеву за ажурирање: %1</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="4156" />
         <source>No update</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Нема ажурирања</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="4179" />
         <source>Update found: %1
 Release note:
 %2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Пронађено ажурирање: %1
+Напомена о издању:
+%2</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="4182" />
         <source>Close</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Затвори</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="4184" />
         <source>Open in browser</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Отворите у претраживачу</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="4223" />
         <source>Update is ready, restart to install?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ажурирање је спремно, поново покренути да бисте инсталирали?</translation>
     </message>
     <message>
         <location filename="../../src/ui/security_addon.cpp" line="21" />
         <source>Access denied</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Приступ одбијен</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/dialog_basic_settings.cpp" line="249" />
         <source>Select a Folder</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Изаберите фасциклу</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/dialog_vpn_settings.cpp" line="37" />
         <source>Exclude CIDR's</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Искључите ЦИДР-ове</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/dialog_vpn_settings.cpp" line="46" />
         <source>Cancel</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Откажи</translation>
     </message>
 </context>
 <context>
@@ -3460,92 +3463,92 @@ Release note:
     <message>
         <location filename="../../src/main.cpp" line="57" />
         <source>Cancel</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Откажи</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="58" />
         <source>Apply</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Пријавите се</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="59" />
         <source>Yes</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Да</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="60" />
         <source>No</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">бр</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="61" />
         <source>OK</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ОК</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="62" />
         <source>Defaults</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Дефаултс</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="63" />
         <source>Restore Defaults</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Врати подразумеване вредности</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="64" />
         <source>Discard</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Одбаци</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="66" />
         <source>Undo</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Поништи</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="67" />
         <source>Redo</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Понови</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="68" />
         <source>Cut</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Цут</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="69" />
         <source>Copy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Копирај</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="70" />
         <source>Paste</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Залепите</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="71" />
         <source>Delete</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Избриши</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="72" />
         <source>Select All</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Изаберите Све</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="73" />
         <source>Stop</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Стани</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="74" />
         <source>Clear</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Јасно</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="75" />
         <source>Copy Link Location</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Копирај локацију везе</translation>
     </message>
 </context>
 <context>
@@ -3553,165 +3556,165 @@ Release note:
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="14" />
         <source>Route Profile</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Профил руте</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="24" />
         <source>General</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">генерал</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="63" />
         <source>Default outbound</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Дефаулт оутбоунд</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="70" />
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="319" />
         <source>Name</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Име</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="78" />
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="187" />
         <source>Proxy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Прокси</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="83" />
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="217" />
         <source>Direct</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Директно</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="88" />
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="157" />
         <source>Block</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Блокирај</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="96" />
         <source>Update url</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ажурирајте УРЛ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="130" />
         <source>Skip update</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Прескочи ажурирање</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="137" />
         <source>Update manually</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ажурирајте ручно</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="151" />
         <source>Basic</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Басиц</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="248" />
         <source>Advanced</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Напредно</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="257" />
         <source>Import JSON</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Увези ЈСОН</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="267" />
         <source>Rules</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Правила</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="279" />
         <source>New</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ново</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="286" />
         <source>Move Up</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Мове Уп</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="293" />
         <source>Move Down</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Мове Довн</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="300" />
         <source>Delete</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Избриши</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="310" />
         <source>Rule Attributes</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Атрибути правила</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="329" />
         <source>Attribute</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Атрибут</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="342" />
         <source>Name_Placeholder</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Наме_Плацехолдер</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="374" />
         <source>Notes</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Напомене</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="302" />
         <location filename="../../src/ui/setting/RouteItem.cpp" line="469" />
         <source>Invalid rules</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Неважећа правила</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="302" />
         <source>Some rules could not be added:
 </source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Нека правила нису могла да се додају:</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="358" />
         <source>Invalid JSON Array</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Неважећи ЈСОН низ</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="358" />
         <source>The provided input cannot be parsed to a valid route rule array:
 </source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Наведени унос се не може рашчланити на важећи низ правила руте:</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="441" />
         <source>Invalid operation</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Неважећа операција</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="441" />
         <source>Cannot create Route Profile with empty name</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Није могуће креирати профил руте са празним именом</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="457" />
         <source>Empty Route Profile</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Празан профил руте</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="457" />
         <source>No valid rules are in the profile</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">У профилу нема важећих правила</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="469" />
         <source>Some rules could not be added, fix them before saving:
 </source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Нека правила нису могла да се додају, поправите их пре чувања:</translation>
     </message>
 </context>
 <context>
@@ -3719,42 +3722,42 @@ Release note:
     <message>
         <location filename="../../src/nekobox/ui/security/security.ui" line="14" />
         <source>Security Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Сигурносна подешавања</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/security.ui" line="62" />
         <source>Lock Actions</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Радње закључавања</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/security.ui" line="69" />
         <source>Lock Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Подешавања закључавања</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/security.ui" line="76" />
         <source>Lock Startup</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Закључајте покретање</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/security.ui" line="113" />
         <source>Delete Users</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Обриши кориснике</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/security.ui" line="120" />
         <source>Edit User Roles</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Уредите корисничке улоге</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/security.ui" line="163" />
         <source>Change UI Password</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Промените лозинку корисничког интерфејса</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/security.ui" line="170" />
         <source>Set Proxy Credentials</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Подесите проки акредитиве</translation>
     </message>
 </context>
 <context>
@@ -3762,24 +3765,24 @@ Release note:
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="121" />
         <source>Invalid JSON Array</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Неважећи ЈСОН низ</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="122" />
         <source>The provided input cannot be parsed to a valid route rule array:
 </source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Наведени унос се не може рашчланити на важећи низ правила руте:</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="245" />
         <source>Fetching information</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Преузимање информација</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="261" />
         <location filename="../../src/ui/mainwindow.cpp" line="1184" />
         <source>Download Profiles</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Преузми профиле</translation>
     </message>
 </context>
 <context>
@@ -3787,7 +3790,7 @@ Release note:
     <message>
         <location filename="../../src/nekobox/ui/security/delete_or_edit_users.ui" line="14" />
         <source>Form</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Форма</translation>
     </message>
 </context>
 </TS>
