@@ -42,10 +42,16 @@ if (!Configs::dataStore->core_running) {                                        
 } else {    \
 }
 
-
+static std::shared_ptr<TTransport> getThriftTransport(const std::string & domain, int port){
+    if (port > 0){
+        return std::shared_ptr<TTransport> (new TSocket(domain.toStdString(), port));
+    } else {
+        return std::shared_ptr<TTransport> (new TPipe(domain.toStdString()));
+    }
+}
 
 #define CHANNEL(X, VAL)                                                                 \
-std::shared_ptr<TTransport> socketAA(new TPipe(domain));                     \
+std::shared_ptr<TTransport> socketAA(getThriftTransport(domain, port));                     \
 std::shared_ptr<TTransport> transportAA(new TBufferedTransport(socketAA));                  \
 std::shared_ptr<TProtocol> protocolAA(new TBinaryProtocol(transportAA));                    \
 libcore::LibcoreServiceClient client(protocolAA);                                         \
