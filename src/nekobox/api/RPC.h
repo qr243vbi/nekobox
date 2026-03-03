@@ -10,7 +10,7 @@ namespace API {
 class Client {
 public:
   explicit Client(std::function<void(const QString &)> onError,
-                  const QString &host, int port);
+                  const QString &host);
 
   // QString returns is error string
 
