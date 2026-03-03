@@ -2750,44 +2750,44 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1132" />
         <source>Speedtest Group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Брзина група</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1137" />
         <source>Hide window</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Сокриј го прозорецот</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1142" />
         <source>Add profile from File</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Додајте профил од Датотека</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1147" />
         <location filename="../../src/ui/mainwindow.cpp" line="3470" />
         <source>Add new Group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Додадете нова група</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1152" />
         <source>Security Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Поставки за безбедност</translation>
     </message>
     <message>
         <location filename="../../src/dataStore/ProxyEntity.cpp" line="52" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="291" />
         <source>Unavailable</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Недостапно</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1003" />
         <source>Edit Routing Profiles</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Уредете ги профилите за рутирање</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1025" />
         <source>Update Routing Profiles</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ажурирајте ги профилите за рутирање</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1037" />
@@ -2798,69 +2798,69 @@ For more information, see the document "Configuration/DNS".</source>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="95" />
         <location filename="../../src/ui/setting/RouteItem.cpp" line="104" />
         <source>Update Response</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ажурирајте го одговорот</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1038" />
         <location filename="../../src/ui/setting/RouteItem.cpp" line="105" />
         <source>No routing profiles are updated</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Не се ажурирани профили за рутирање</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1042" />
         <location filename="../../src/ui/setting/RouteItem.cpp" line="96" />
         <source>Updated %1 routing profiles</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ажурирани %1 профили за рутирање</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1052" />
         <source>Update RuleSet Map</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ажурирајте ја картата на RuleSet</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1063" />
         <source>Failed to update rulesets</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Не успеа да се ажурираат правилата</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1066" />
         <source>Rulesets updated successfully</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Правилата се ажурирани успешно</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1075" />
         <source>Update RuleSet Cache</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ажурирајте го кешот на RuleSet</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1110" />
         <source>Rulesets cache is updated</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Кешот на множества на правила е ажуриран</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1124" />
         <source>Clear RuleSet Cache</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Исчистете го кешот на RuleSet</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1160" />
         <source>Enable AdBlock</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Овозможи AdBlock</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1563" />
         <source>Error</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Грешка</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1650" />
         <source>Tun Settings changed</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Поставките за прилагодување се сменија</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1651" />
         <source>Restart Tun to take effect.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Рестартирајте го Tun за да стапи на сила.</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1657" />
@@ -2871,269 +2871,269 @@ For more information, see the document "Configuration/DNS".</source>
         <location filename="../../src/ui/mainwindow.cpp" line="3307" />
         <location filename="../../src/ui/mainwindow.cpp" line="3512" />
         <source>Confirmation</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Потврда</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1658" />
         <location filename="../../src/ui/mainwindow.cpp" line="1716" />
         <source>Settings changed, restart proxy?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Поставките се сменија, рестартирај прокси?</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1687" />
         <source>Settings changed</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Поставките се сменија</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1688" />
         <source>Restart the program to take effect.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Рестартирајте ја програмата за да стапи на сила.</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1731" />
         <source>Imported %1 profile(s)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Увезени % 1 профил(и)</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1982" />
         <source>User opted for no privilege req, some features may not work</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Корисникот избра без барање за привилегии, некои функции може да не работат</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2046" />
         <source>Please give the core root privileges</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ве молиме дајте ги основните права за root</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2400" />
         <source>Not Running</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Не трчање</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2781" />
         <source>Clone %1 item(s)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Клонирајте % 1 ставка(и)</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2815" />
         <source> Confirmation </source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Потврда</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2816" />
         <source> Remove %1 item(s) ? </source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Да се ​​отстрани %1 ставка(и)?</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2835" />
         <source>Remove %1 item(s) ?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Да се ​​отстрани %1 ставка(и)?</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2872" />
         <location filename="../../src/ui/mainwindow.cpp" line="2885" />
         <source>Copied %1 item(s)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Копирани %1 ставки</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3117" />
         <source>QR Code not found</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">QR-кодот не е пронајден</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3138" />
         <source>Unable to capture screen</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Не може да се сними екранот</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3206" />
         <source>Remove %1 Unavailable item(s) ?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Отстрани % 1 Недостапни ставки?</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3260" />
         <source>Remove %1 Invalid item(s) ?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Отстрани %1 неважечки ставки?</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3308" />
         <source>Replace domain server addresses with their resolved IPs?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Да се ​​заменат адресите на серверот на доменот со нивните решени IP-адреси?</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3441" />
         <source>Clear</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Јасно</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3503" />
         <source>Delete selected Group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Избришете ја избраната група</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3504" />
         <source>Edit selected Group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Уредете ја избраната група</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3513" />
         <source>Remove %1?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Да се ​​отстрани %1?</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="4196" />
         <source>Cannot start</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Не може да започне</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="4197" />
         <source>Last download request has not finished yet</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Последното барање за преземање сè уште не е завршено</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="4231" />
         <source>Failed to download update assets</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Не успеа да се преземат средствата за ажурирање</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="83" />
         <source>Profile test aborted</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Тестот на профилот е прекинат</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="134" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="180" />
         <source>[%1] test error: %2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">[% 1] грешка во тестот: % 2</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="163" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="489" />
         <source>Something is very wrong, the subject ent cannot be found!</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Нешто не е многу погрешно, предметот не може да се најде!</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="169" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="495" />
         <source>Profile manager data is corrupted, try again.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Податоците за менаџерот на профили се оштетени, обидете се повторно.</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="203" />
         <source>The last url test did not exit completely, please wait. If it persists, please restart the program.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Последниот тест на URL-то не излезе целосно, ве молиме почекајте.Ако продолжи, ве молиме рестартирајте ја програмата.</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="212" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="319" />
         <source>Failed to build test config: </source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Не успеа да се изгради тест конфигурација:</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="253" />
         <source>URL test finished!</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Тестот за URL-то е завршен!</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="264" />
         <source>Failed to stop tests</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Тестовите не успеаја да се запрат</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="270" />
         <source>Testing</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Тестирање</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="308" />
         <source>The last speed test did not exit completely, please wait. If it persists, please restart the program.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Последниот тест за брзина не излезе целосно, ве молиме почекајте.Ако продолжи, ве молиме рестартирајте ја програмата.</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="345" />
         <source>Speedtest finished!</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Заврши најбрзиот!</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="426" />
         <source>Profile speed test aborted</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Тестот за брзина на профилот е прекинат</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="514" />
         <source>[%1] speed test error: %2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">[% 1] грешка во тестот за брзина: % 2</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="523" />
         <source>You need to enable hijack DNS server first</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Прво треба да овозможите киднапирање на DNS-сервер</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="537" />
         <source>Failed to set system dns: </source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Не успеа да се постави системски dns:</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="585" />
         <source>Tun device misbehaving</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Прилагодете го лошото однесување на уредот</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="586" />
         <source>If you have trouble starting VPN, you can force reset Core process here and then try starting the profile again. The error is %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ако имате проблеми со стартување на VPN, можете да присилите да го ресетирате процесот Core овде и потоа да се обидете повторно да го стартувате профилот.Грешката е % 1</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="590" />
         <source>Reset</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ресетирај</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="591" />
         <source>Cancel</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Откажи</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="630" />
         <source>Another profile is starting...</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Почнува уште еден профил...</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="637" />
         <source>Another profile is stopping...</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Друг профил запира...</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="658" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="740" />
         <source>If there is no response for a long time, it is recommended to restart the software.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ако нема одговор долго време, се препорачува да го рестартирате софтверот.</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="672" />
         <source>Starting profile %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Почетен профил % 1</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="674" />
         <source>Failed to start profile %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Не успеа да започне профилот % 1</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="723" />
         <source>Stop return error</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Грешка за стоп враќање</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="763" />
         <source>Stopping profile %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Запирање на профилот % 1</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="765" />
         <source>Failed to stop, please restart the program.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Не успеа да се запре, рестартирајте ја програмата.</translation>
     </message>
 </context>
 <context>
@@ -3146,17 +3146,17 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/security/change_password.ui" line="20" />
         <source>Username</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Корисничко име</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/change_password.ui" line="37" />
         <source>New Password</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Нова лозинка</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/change_password.ui" line="54" />
         <source>Confirm Password</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Потврдете ја лозинката</translation>
     </message>
 </context>
 <context>
@@ -3164,12 +3164,12 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/ui/profile/ProxyItem.cpp" line="39" />
         <source>Confirmation</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Потврда</translation>
     </message>
     <message>
         <location filename="../../src/ui/profile/ProxyItem.cpp" line="39" />
         <source>Remove %1?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Да се ​​отстрани %1?</translation>
     </message>
 </context>
 <context>
@@ -3177,7 +3177,7 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/ui/security_addon.cpp" line="342" />
         <source>Security Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Поставки за безбедност</translation>
     </message>
 </context>
 <context>
@@ -3185,7 +3185,7 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/main.cpp" line="258" />
         <source>QT_LAYOUT_DIRECTION</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">QT_LAYOUT_DIRECTION</translation>
     </message>
 </context>
 <context>
@@ -3193,37 +3193,37 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/configs/ConfigBuilder.cpp" line="159" />
         <source>Tun mode cannot be used with Custom configs</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Режимот Tun не може да се користи со прилагодени конфигурации</translation>
     </message>
     <message>
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="913" />
         <source>Requesting subscription: %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Барање претплата: % 1</translation>
     </message>
     <message>
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="917" />
         <source>Requesting subscription %1 error: %2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Се бара претплата % 1 грешка: % 2</translation>
     </message>
     <message>
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="924" />
         <source>Subscription request fininshed: %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Барањето за претплата е завршено: %1</translation>
     </message>
     <message>
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="942" />
         <source>Clearing servers...</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Се бришат сервери...</translation>
     </message>
     <message>
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="947" />
         <source>Processing subscription data...</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Се обработуваат податоците за претплатата...</translation>
     </message>
     <message>
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="950" />
         <source>Process complete, applying...</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Процесот е завршен, аплицирање...</translation>
     </message>
     <message>
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="1013" />
@@ -3231,71 +3231,75 @@ For more information, see the document "Configuration/DNS".</source>
 %2
 Deleted %3 Profiles:
 %4</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Додадени % 1 профили:
+% 2
+Избришани %3 профили:
+% 4</translation>
     </message>
     <message>
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="1018" />
         <source>Nothing</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ништо</translation>
     </message>
     <message>
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="1021" />
         <source>Change of %1:</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Промена на % 1:</translation>
     </message>
     <message>
         <location filename="../../src/dataStore/Database.cpp" line="119" />
         <source>Default</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Стандардно</translation>
     </message>
     <message>
         <location filename="../../src/global/HTTPRequestHelper.cpp" line="189" />
         <source>Could not open file.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Не може да се отвори датотеката.</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/configs/proxy/ChainBean.hpp" line="17" />
         <source>Chain Proxy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Синџир прокси</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/global/GuiUtils.hpp" line="112" />
         <location filename="../../src/ui/profile/edit_ssh.cpp" line="28" />
         <location filename="../../src/ui/setting/dialog_basic_settings.cpp" line="245" />
         <source>Select</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Изберете</translation>
     </message>
     <message>
         <location filename="../../src/stats/traffic/TrafficLooper.cpp" line="115" />
         <location filename="../../src/ui/mainwindow.cpp" line="2368" />
         <source>Proxy: %1
 Direct: %2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Прокси: % 1
+Директно: %2</translation>
     </message>
     <message>
         <location filename="../../src/sys/Process.cpp" line="104" />
         <source>Core exited, cleaning up...</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Јадрото излезе, се чисти...</translation>
     </message>
     <message>
         <location filename="../../src/sys/Process.cpp" line="111" />
         <source>Core exits too frequently, stop automatic restart this profile.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Јадрото излегува премногу често, запрете го автоматското рестартирање на овој профил.</translation>
     </message>
     <message>
         <location filename="../../src/sys/Process.cpp" line="120" />
         <source>Restarting the core ...</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Рестартирање на јадрото ...</translation>
     </message>
     <message>
         <location filename="../../src/sys/Settings.cpp" line="362" />
         <source>System</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Систем</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="22" />
         <source>URL detected</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Откриена е URL-адреса</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="27" />

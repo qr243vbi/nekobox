@@ -159,6 +159,7 @@ int main(int argc, char** argv) {
 		}
 	}
         // Dir
+    dir_success &= dir.mkdir("temp");
     if (!dir.exists("profiles")) {
         dir_success &= dir.mkdir("profiles");
     }
