@@ -39,8 +39,8 @@ void MainWindow::setup_rpc() {
         [=](const QString &errStr) {
             MW_show_log("[Error] Core: " + errStr);
         },
-        QString("127.0.0.1") + ":" +
-        QString::number(Configs::dataStore->core_port)
+        QString("127.0.0.1"),
+        Configs::dataStore->core_port
     );
 
     // Looper
