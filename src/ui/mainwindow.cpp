@@ -550,13 +550,17 @@ MainWindow::MainWindow(QWidget *parent)
   runOnNewThread([=, this] { GetDeviceDetails(); });
 
   proxyAutoTester = std::make_unique<Stats::ProxyAutoTester>(this);
-
   
-  Configs::dataStore->core_unix_domain_socket = MkUDS();
+  if (Configs::windowSettings->use_tcp){
   // Prepare core
-  Configs::dataStore->core_port = MkPort();
-  if (Configs::dataStore->core_port <= 0)
-    Configs::dataStore->core_port = 19810;
+    Configs::dataStore->core_port = MkPort();
+    if (Configs::dataStore->core_port <= 0) {
+      Configs::dataStore->core_port = 19810;
+    }
+  } else {
+    Configs::dataStore->core_port = -1;
+    Configs::dataStore->core_domain = MkUDS();
+  }
 
   QString core_path = getCorePath();
 
