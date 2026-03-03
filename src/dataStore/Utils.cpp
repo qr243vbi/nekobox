@@ -317,6 +317,7 @@ QString MkUDS(){
       + "_" + GetRandomString(16) 
       + ".sock";
   #endif
+  return ret;
 }
 
 int MkPort() {
