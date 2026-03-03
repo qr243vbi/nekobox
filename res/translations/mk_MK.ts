@@ -2220,17 +2220,17 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="199" />
         <source>Response Packet Magic Header</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Магичен заглавие на пакети за одговор</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="209" />
         <source>Underload Packet Magic Header</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Магично заглавие на пакети под оптоварување</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="219" />
         <source>Transport Header Magic Header</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Транспортно заглавие Magic Header</translation>
     </message>
 </context>
 <context>
@@ -2238,47 +2238,47 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/group/GroupItem.ui" line="63" />
         <source>Update Subscription</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ажурирајте ја претплатата</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/GroupItem.ui" line="76" />
         <source>Edit</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Уреди</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/GroupItem.ui" line="89" />
         <source>Remove</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Отстрани</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="129" />
         <source>Basic</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Основни</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="129" />
         <source>Subscription</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Претплата</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="130" />
         <source>Archive</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Архива</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="142" />
         <source>Last update: %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Последно ажурирање: % 1</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="186" />
         <source>Confirmation</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Потврда</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="186" />
         <source>Remove %1?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Да се ​​отстрани %1?</translation>
     </message>
 </context>
 <context>
@@ -2287,42 +2287,42 @@ For more information, see the document "Configuration/DNS".</source>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="29" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="32" />
         <source>NekoBox</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">NekoBox</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="51" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="54" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="693" />
         <source>Profiles</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Профили</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="73" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="76" />
         <source>Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Поставки</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="95" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="98" />
         <source>Routing</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Рутирање</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="117" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="120" />
         <source>Update</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ажурирање</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="147" />
         <source>Tun Mode</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Режим на подесување</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="154" />
         <source>System DNS</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Системски DNS</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="161" />
@@ -2330,422 +2330,422 @@ For more information, see the document "Configuration/DNS".</source>
         <location filename="../../src/ui/mainwindow.cpp" line="2424" />
         <location filename="../../src/ui/mainwindow.cpp" line="2427" />
         <source>System Proxy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Системски прокси</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="231" />
         <source>URL Test</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Тест за URL</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="309" />
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="139" />
         <source>Type</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Тип</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="314" />
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="142" />
         <source>Address</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Адреса</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="319" />
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="145" />
         <source>Name</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Име</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="324" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="291" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="293" />
         <source>Test Result</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Резултат од тестот</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="329" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="489" />
         <source>Traffic</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Сообраќајот</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="394" />
         <source>Logs</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Дневници</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="429" />
         <source>Connections</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Врски</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="457" />
         <source>Destination (Domain)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Дестинација (домен)</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="460" />
         <source>Click To Disable Sorting</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Кликнете За да го исклучите сортирањето</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="465" />
         <source>Process</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Процес</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="468" />
         <source>Click To Sort By Process</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Кликнете за да подредите по процес</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="473" />
         <source>Protocol</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Протокол</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="476" />
         <source>Click To Sort By Protocol</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Кликнете за подредување по протокол</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="481" />
         <source>Outbound</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Излез</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="484" />
         <source>Click To Sort By Outbound</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Кликнете за да подредите по излезни</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="492" />
         <source>Click To Toggle sort by Traffic</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Кликнете за да вклучите сортирање по сообраќај</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="501" />
         <source>Traffic Graph</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">График на сообраќај</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="593" />
         <source>Program</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Програма</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="616" />
         <source>Preferences</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Преференци</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="627" />
         <source>Server</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Сервер</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="631" />
         <source>Share</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Споделете</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="641" />
         <source>Current group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Тековна група</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="647" />
         <source>Test</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Тест</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="675" />
         <source>Hidden menu</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Скриено мени</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="688" />
         <source>Routing Menu</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Мени за рутирање</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="711" />
         <source>Exit</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Излезете</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="716" />
         <source>Toggle Window</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Вклучете го прозорецот</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="721" />
         <source>Basic Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Основни поставки</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="726" />
         <source>New profile</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Нов профил</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="731" />
         <source>Groups</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Групи</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="736" />
         <location filename="../../src/ui/mainwindow.cpp" line="3444" />
         <location filename="../../src/ui/mainwindow.cpp" line="3454" />
         <source>Start</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Започнете</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="744" />
         <location filename="../../src/ui/mainwindow.cpp" line="3443" />
         <location filename="../../src/ui/mainwindow.cpp" line="3454" />
         <source>Stop</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Стоп</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="752" />
         <source>Edit</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Уреди</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="760" />
         <source>Routing Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Поставки за рутирање</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="765" />
         <source>Add profile from clipboard</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Додајте профил од таблата со исечоци</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="773" />
         <source>Delete</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Избриши</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="781" />
         <source>Debug Info</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Информации за отстранување грешки</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="786" />
         <source>QR Code and link</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">QR код и врска</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="794" />
         <source>Copy Link</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Копирај врска</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="815" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1056" />
         <source>Clear Test Result</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Исчистете го резултатот од тестот</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="823" />
         <location filename="../../src/ui/mainwindow.cpp" line="1350" />
         <source>Export %1 config</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Извези % 1 конфигурација</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="831" />
         <source>Reset Traffic</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ресетирајте го сообраќајот</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="839" />
         <source>Scan QR Code</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Скенирајте QR-код</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="847" />
         <source>Enable System Proxy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Овозможи системски прокси</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="855" />
         <source>Disable</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Оневозможи</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="860" />
         <source>Remove Duplicates</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Отстранете ги дупликатите</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="868" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="945" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="953" />
         <source>fake</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">лажен</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="876" />
         <source>Move</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Премести</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="887" />
         <source>Start with system</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Започнете со системот</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="895" />
         <source>Remember last profile</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Запомнете го последниот профил</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="903" />
         <source>Allow other devices to connect</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Дозволете други уреди да се поврзат</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="908" />
         <source>Remove Unavailable</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Отстрани Недостапно</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="916" />
         <source>Full Test</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Целосен тест</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="924" />
         <source>Hotkey Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Поставки за копчињата</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="929" />
         <source>Select All</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Изберете Сите</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="937" />
         <source>Copy Custom Links</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Копирајте прилагодени врски</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="961" />
         <source>Copy links</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Копирај врски</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1045" />
         <source>Url Test</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">УРЛ тест</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1078" />
         <source>Resolve Domain</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Решавање на домен</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="972" />
         <source>Enable Tun</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Овозможи Tun</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="977" />
         <location filename="../../src/ui/mainwindow.cpp" line="2780" />
         <source>Clone</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Клон</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="985" />
         <source>Update subscription</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ажурирајте ја претплатата</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="996" />
         <source>Resolve domain</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Решавање на доменот</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1004" />
         <source>Tun Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Прилагодете ги поставките</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1009" />
         <source>Restart Program</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Рестартирајте ја програмата</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1014" />
         <source>Open Config Folder</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Отворете ја папката за конфигурација</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1035" />
         <source>Restart Proxy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Рестартирајте го прокси</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1040" />
         <source>Stop Testing</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Стоп за тестирање</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1048" />
         <source>Ctrl+Shift+S</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ctrl+Shift+S</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1067" />
         <source>Url Test Group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">УРЛ тест група</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1070" />
         <source>Ctrl+Shift+G</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ctrl+Shift+G</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1086" />
         <source>Remove Invalid</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Отстрани неважечки</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1089" />
         <source>Ctrl+Alt+I</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ctrl+Alt+I</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1102" />
         <source>Speedtest Current</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Најбрзина струја</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1107" />
         <source>Full test Selected</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Целосен тест е избран</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1112" />
         <source>Download test Selected</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Избран е тест за преземање</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1117" />
         <source>Upload test Selected</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Тестот за поставување е избран</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1122" />
         <source>Country test Selected</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Тест за земја е избран</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1127" />
         <source>Simple download test Selected</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Избран е едноставен тест за преземање</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1132" />
