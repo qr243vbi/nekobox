@@ -611,28 +611,28 @@
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1409" />
         <source>Y</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ю</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1422" />
         <source>Height</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Висота</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1509" />
         <source>Core Executable Path</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Основний шлях до виконуваного файлу</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1538" />
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1712" />
         <source>Use default</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Використовувати за замовчуванням</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1545" />
         <source>Remote Control</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Пульт дистанційного керування</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1571" />
@@ -643,12 +643,12 @@
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1683" />
         <source>Resources Directory</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Каталог ресурсів</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1719" />
         <source>Resource Manager</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Менеджер ресурсів</translation>
     </message>
 </context>
 <context>
@@ -656,12 +656,12 @@
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="20" />
         <source>Edit Group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Редагувати групу</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="36" />
         <source>Common</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Поширений</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="102" />
@@ -687,7 +687,7 @@
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="135" />
         <source>Manually column width</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ширина стовпця вручну</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="142" />
@@ -697,23 +697,23 @@
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="155" />
         <source>Proxy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Проксі</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="194" />
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="221" />
         <source>None</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Жодного</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="201" />
         <source>Front Proxy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Передній проксі</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="208" />
         <source>Landing Proxy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Landing Proxy</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="232" />
@@ -723,12 +723,12 @@
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="238" />
         <source>Copy profile share links</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Копіювати посилання для спільного доступу до профілю</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="245" />
         <source>Copy profile share links (Custom Links)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Копіювати посилання для спільного використання профілю (користувацькі посилання)</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="253" />
@@ -738,22 +738,22 @@
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="314" />
         <source>Skip automatic update</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Пропустити автоматичне оновлення</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="58" />
         <source>Copied</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Скопійовано</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="357" />
         <source>Warning</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">УВАГА</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="357" />
         <source>Please input URL</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Будь ласка, введіть URL</translation>
     </message>
 </context>
 <context>
@@ -767,7 +767,7 @@
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="56" />
         <source>Common</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Поширений</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="73" />
@@ -777,7 +777,7 @@
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="80" />
         <source>Port</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Порт</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="87" />
@@ -797,27 +797,27 @@
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="166" />
         <source>The underlying transport method. It must be consistent with the server, otherwise, the connection cannot be established.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Основний спосіб транспортування.Воно має відповідати серверу, інакше з’єднання не вдасться встановити.</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="169" />
         <source>Network</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Мережа</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="226" />
         <source>Server support is required</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Потрібна підтримка сервера</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="229" />
         <source>Multiplex</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Мультиплекс</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="236" />
         <source>Transport Layer Security. It must be consistent with the server, otherwise, the connection cannot be established.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Безпека транспортного рівня.Воно має відповідати серверу, інакше з’єднання не вдасться встановити.</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="239" />
@@ -827,22 +827,22 @@
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="260" />
         <source>UDP FullCone Packet encoding for implementing features such as UDP FullCone. Server support is required, if the wrong selection is made, the connection cannot be made. Please leave it blank.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Кодування пакетів UDP FullCone для реалізації таких функцій, як UDP FullCone.Потрібна підтримка сервера, якщо зроблено неправильний вибір, підключення не вдасться встановити.Залиште це поле порожнім.</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="263" />
         <source>Packet Encoding</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Кодування пакетів</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="271" />
         <source>Keep Default</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Залишити за замовчуванням</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="276" />
         <source>On</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Увімкнено</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="281" />
@@ -852,48 +852,48 @@
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="294" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Overrides mux to On&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Замінює мультиплексор на Увімк.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="297" />
         <source>Enable TCP Brutal</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Увімкніть TCP Brutal</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="311" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Server to Client TCP Brutal Speed&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Надзвичайна швидкість TCP між сервером і клієнтом&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="314" />
         <source>TCP Brutal Speed</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Жорстока швидкість TCP</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="324" />
         <source>Mb/s</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Мбіт/с</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="345" />
         <source>Custom Outbound Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Користувацькі вихідні налаштування</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="361" />
         <source>Custom Config Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Спеціальні параметри конфігурації</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="381" />
         <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="696" />
         <source>Apply settings to this group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Застосувати налаштування до цієї групи</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="436" />
         <source>Network Settings (%1)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Налаштування мережі (%1)</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="458" />
@@ -903,22 +903,22 @@
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="541" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Method of http request, will be converted to uppercase&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Метод http-запиту буде перетворено на верхній регістр&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="544" />
         <source>Method</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">метод</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="578" />
         <source>header type</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">тип заголовка</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="594" />
         <source>TLS Security Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Параметри безпеки TLS</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="611" />
@@ -929,98 +929,98 @@
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="638" />
         <source>When enabled, V2Ray will not check the validity of the TLS certificate provided by the remote host (the security is equivalent to plaintext)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Якщо ввімкнено, V2Ray не перевірятиме дійсність сертифіката TLS, наданого віддаленим хостом (безпека еквівалентна відкритому тексту)</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="641" />
         <source>Allow insecure</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Дозволити небезпечно</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="648" />
         <source>Enable ECH</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Увімкнути ECH</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="655" />
         <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="638" />
         <source>ECH Config</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Конфігурація ECH</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="673" />
         <source>QSN</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">QSN</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="680" />
         <source>Server name indication, clear text.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Індикація імені сервера, відкритий текст.</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="693" />
         <source>Application layer protocol negotiation, clear text. Please separate them with commas.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Узгодження протоколу прикладного рівня, відкритий текст.Будь ласка, розділіть їх комами.</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="720" />
         <source>TLS Camouflage Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Налаштування TLS Camouflage</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="774" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;May degrade performance, try record fragment first&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Може погіршити продуктивність, спробуйте спочатку записати фрагмент&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="777" />
         <source>Enable TLS fragment</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Увімкнути фрагмент TLS</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="784" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;time format, like 500ms, 10ms etc&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;формат часу, наприклад 500 мс, 10 мс тощо&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="787" />
         <source>Fallback Delay</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Резервна затримка</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="800" />
         <source>Enable TLS Record Fragment</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Увімкнути фрагмент запису TLS</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="839" />
         <source>Reality public key. If not empty, turn TLS into REALITY.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Відкритий ключ реальності.Якщо не пусто, перетворите TLS на РЕАЛЬНІСТЬ.</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="852" />
         <source>Reality short id. Accept only one value.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Короткий ідентифікатор реальності.Приймайте лише одне значення.</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="855" />
         <source>Reality SID</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Реальність SID</translation>
     </message>
     <message>
         <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="219" />
         <source>Custom (%1 outbound)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Спеціальний (%1 вихідний)</translation>
     </message>
     <message>
         <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="221" />
         <source>Custom (%1 config)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Спеціальний (%1 конфігурація)</translation>
     </message>
     <message>
         <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="223" />
         <source>Extra Core</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Додаткове ядро</translation>
     </message>
     <message>
         <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="585" />
@@ -1029,7 +1029,7 @@
         <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="600" />
         <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="608" />
         <source>Not set</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Не встановлено</translation>
     </message>
     <message>
         <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="587" />
@@ -1038,12 +1038,12 @@
         <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="602" />
         <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="610" />
         <source>Already set</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Вже встановлено</translation>
     </message>
     <message>
         <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="668" />
         <source>Confirm</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Підтвердити</translation>
     </message>
 </context>
 <context>
@@ -1051,84 +1051,84 @@
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="14" />
         <source>Landing proxy for group Group2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Посадковий проксі для групи Group2</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="41" />
         <source>Proxy:</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Проксі:</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="48" />
         <source>Search:</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">пошук:</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="68" />
         <source>Group1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Група1</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="74" />
         <source>Group2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Група2</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="414" />
         <source>Front proxy for group %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Фронтальний проксі для групи %1</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="416" />
         <source>Front proxy: </source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Front proxy:</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="427" />
         <source>Landing proxy for group %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Цільовий проксі для групи %1</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="429" />
         <source>Landing proxy: </source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Посадковий проксі:</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="442" />
         <location filename="../../src/ui/setting/RouteItem.cpp" line="140" />
         <source>Proxy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Проксі</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="445" />
         <location filename="../../src/ui/setting/RouteItem.cpp" line="142" />
         <source>Direct</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Прямий</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="449" />
         <source>None</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Жодного</translation>
     </message>
     <message>
         <location filename="../../src/ui/profile/edit_chain.cpp" line="46" />
         <source>Add proxy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Додати проксі</translation>
     </message>
     <message>
         <location filename="../../src/ui/profile/edit_chain.cpp" line="66" />
         <source>Replace %1 proxy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Замінити %1 проксі</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="135" />
         <source>Select outbound</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Виберіть вихідний</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="137" />
         <source>Outbound: </source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Вихідний:</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="144" />
@@ -1141,42 +1141,42 @@
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="14" />
         <source>Hotkey</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Гаряча клавіша</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="24" />
         <source>Global</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Глобальний</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="30" />
         <source>Trigger main window</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Запустити головне вікно</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="40" />
         <source>Show groups</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Показати групи</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="50" />
         <source>Show routes</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Показати маршрути</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="60" />
         <source>Proxy mode</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Режим проксі</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="70" />
         <source>Toggle System Proxy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Перемкнути системний проксі</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="81" />
         <source>Shortcuts</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ярлики</translation>
     </message>
 </context>
 <context>
@@ -1189,12 +1189,12 @@
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_manage_groups.ui" line="35" />
         <source>New group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Нова група</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_manage_groups.ui" line="45" />
         <source>Update all subscriptions</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Оновити всі підписки</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/dialog_manage_groups.cpp" line="56" />
@@ -1204,7 +1204,7 @@
     <message>
         <location filename="../../src/ui/group/dialog_manage_groups.cpp" line="56" />
         <source>Update all subscriptions?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Оновити всі підписки?</translation>
     </message>
 </context>
 <context>
@@ -1212,22 +1212,22 @@
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="14" />
         <source>Routes</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Маршрути</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="24" />
         <source>Common</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Поширений</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="39" />
         <source>Sniffs the connections intial packet(s?) to identify the protocol and the SNI. Sniff result for destination also rewrites the destionation of the connection to the sniffed SNI. For more data on the sniffed protocol refer to the sing-box's documentation.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Винюхує початковий(і) пакет(и?) підключення, щоб визначити протокол і SNI.Результат Sniff для призначення також переписує призначення підключення до SNI Sniff.Щоб отримати додаткові відомості про протокол нюхання, зверніться до документації sing-box.</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="42" />
         <source>Sniffing Mode</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Режим нюхання</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="50" />
@@ -1237,17 +1237,17 @@
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="55" />
         <source>Sniff result for routing</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Результат нюхання для маршрутизації</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="69" />
         <source>Routing Profile</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Профіль маршрутизації</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="92" />
         <source>Inbound Domain Strategy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Стратегія вхідного домену</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="107" />
