@@ -554,9 +554,7 @@ MainWindow::MainWindow(QWidget *parent)
   if (Configs::windowSettings->use_tcp){
   // Prepare core
     Configs::dataStore->core_port = MkPort();
-    if (Configs::dataStore->core_port <= 0) {
-      Configs::dataStore->core_port = 19810;
-    }
+    Configs::dataStore->core_domain = "127.0.0.1";
   } else {
     Configs::dataStore->core_port = -1;
     Configs::dataStore->core_domain = MkUDS();

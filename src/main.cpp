@@ -158,7 +158,7 @@ int main(int argc, char** argv) {
 			goto loop_back_2;
 		}
 	}
-        // Dir
+    // Dir
     dir_success &= dir.mkdir("temp");
     if (!dir.exists("profiles")) {
         dir_success &= dir.mkdir("profiles");
