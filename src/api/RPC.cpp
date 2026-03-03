@@ -8,6 +8,7 @@
 #include <thrift/protocol/TBinaryProtocol.h>             
 #include <thrift/server/TSimpleServer.h>
 #include <thrift/transport/TSocket.h>                    
+#include <thrift/transport/TPipe.h>                    
 #include <thrift/transport/TBufferTransports.h>          
 #include <thrift/transport/TTransportUtils.h>
 #include <gen-cpp/LibcoreService.h>
@@ -44,7 +45,7 @@ if (!Configs::dataStore->core_running) {                                        
 
 
 #define CHANNEL(X, VAL)                                                                 \
-std::shared_ptr<TTransport> socketAA(new TSocket(domain, port));                     \
+std::shared_ptr<TTransport> socketAA(new TPipe(domain));                     \
 std::shared_ptr<TTransport> transportAA(new TBufferedTransport(socketAA));                  \
 std::shared_ptr<TProtocol> protocolAA(new TBinaryProtocol(transportAA));                    \
 libcore::LibcoreServiceClient client(protocolAA);                                         \
