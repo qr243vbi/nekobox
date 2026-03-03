@@ -2675,114 +2675,114 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1014" />
         <source>Open Config Folder</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">เปิดโฟลเดอร์กำหนดค่า</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1035" />
         <source>Restart Proxy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">รีสตาร์ทพร็อกซี</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1040" />
         <source>Stop Testing</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">หยุดการทดสอบ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1048" />
         <source>Ctrl+Shift+S</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ctrl+Shift+S</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1067" />
         <source>Url Test Group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">กลุ่มทดสอบ URL</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1070" />
         <source>Ctrl+Shift+G</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ctrl+Shift+G</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1086" />
         <source>Remove Invalid</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ลบไม่ถูกต้อง</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1089" />
         <source>Ctrl+Alt+I</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ctrl+Alt+I</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1102" />
         <source>Speedtest Current</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ทดสอบความเร็วปัจจุบัน</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1107" />
         <source>Full test Selected</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">เลือกการทดสอบฉบับเต็มแล้ว</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1112" />
         <source>Download test Selected</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ดาวน์โหลดการทดสอบที่เลือก</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1117" />
         <source>Upload test Selected</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">อัปโหลดการทดสอบที่เลือก</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1122" />
         <source>Country test Selected</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">การทดสอบประเทศ เลือกแล้ว</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1127" />
         <source>Simple download test Selected</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">เลือกการทดสอบการดาวน์โหลดอย่างง่ายแล้ว</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1132" />
         <source>Speedtest Group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">กลุ่มทดสอบความเร็ว</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1137" />
         <source>Hide window</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ซ่อนหน้าต่าง</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1142" />
         <source>Add profile from File</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">เพิ่มโปรไฟล์จากไฟล์</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1147" />
         <location filename="../../src/ui/mainwindow.cpp" line="3470" />
         <source>Add new Group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">เพิ่มกลุ่มใหม่</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1152" />
         <source>Security Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">การตั้งค่าความปลอดภัย</translation>
     </message>
     <message>
         <location filename="../../src/dataStore/ProxyEntity.cpp" line="52" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="289" />
         <source>Unavailable</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ไม่พร้อมใช้งาน</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1003" />
         <source>Edit Routing Profiles</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">แก้ไขโปรไฟล์เส้นทาง</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1025" />
         <source>Update Routing Profiles</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">อัปเดตโปรไฟล์เส้นทาง</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1037" />
@@ -2793,39 +2793,39 @@ For more information, see the document "Configuration/DNS".</source>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="95" />
         <location filename="../../src/ui/setting/RouteItem.cpp" line="104" />
         <source>Update Response</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">อัปเดตการตอบกลับ</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1038" />
         <location filename="../../src/ui/setting/RouteItem.cpp" line="105" />
         <source>No routing profiles are updated</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ไม่มีการอัพเดตโปรไฟล์เส้นทาง</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1042" />
         <location filename="../../src/ui/setting/RouteItem.cpp" line="96" />
         <source>Updated %1 routing profiles</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">อัปเดตโปรไฟล์การกำหนดเส้นทาง %1 รายการ</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1052" />
         <source>Update RuleSet Map</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">อัปเดตแผนที่ชุดกฎ</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1063" />
         <source>Failed to update rulesets</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">อัปเดตชุดกฎไม่สำเร็จ</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1066" />
         <source>Rulesets updated successfully</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">อัปเดตชุดกฎเรียบร้อยแล้ว</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1075" />
         <source>Update RuleSet Cache</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">อัปเดตแคชชุดกฎ</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1110" />
@@ -2835,27 +2835,27 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1124" />
         <source>Clear RuleSet Cache</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ล้างแคชชุดกฎ</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1160" />
         <source>Enable AdBlock</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">เปิดใช้งาน AdBlock</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1563" />
         <source>Error</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ข้อผิดพลาด</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1650" />
         <source>Tun Settings changed</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">การตั้งค่า Tun เปลี่ยนไป</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1651" />
         <source>Restart Tun to take effect.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">รีสตาร์ท Tun เพื่อให้มีผล</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1657" />
@@ -2866,269 +2866,269 @@ For more information, see the document "Configuration/DNS".</source>
         <location filename="../../src/ui/mainwindow.cpp" line="3307" />
         <location filename="../../src/ui/mainwindow.cpp" line="3512" />
         <source>Confirmation</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">การยืนยัน</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1658" />
         <location filename="../../src/ui/mainwindow.cpp" line="1716" />
         <source>Settings changed, restart proxy?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">การตั้งค่าเปลี่ยนไป รีสตาร์ทพร็อกซีไหม</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1687" />
         <source>Settings changed</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">มีการเปลี่ยนแปลงการตั้งค่า</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1688" />
         <source>Restart the program to take effect.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">รีสตาร์ทโปรแกรมเพื่อให้มีผล</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1731" />
         <source>Imported %1 profile(s)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">นำเข้า %1 โปรไฟล์แล้ว</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1982" />
         <source>User opted for no privilege req, some features may not work</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ผู้ใช้เลือกที่จะไม่ต้องใช้สิทธิ์ คุณลักษณะบางอย่างอาจไม่ทำงาน</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2046" />
         <source>Please give the core root privileges</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">โปรดให้สิทธิ์รูทหลัก</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2400" />
         <source>Not Running</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ไม่ทำงาน</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2781" />
         <source>Clone %1 item(s)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">โคลน %1 รายการ</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2815" />
         <source> Confirmation </source>
-        <translation type="unfinished" />
+        <translation type="unfinished">การยืนยัน</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2816" />
         <source> Remove %1 item(s) ? </source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ลบ %1 รายการ ?</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2835" />
         <source>Remove %1 item(s) ?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ลบ %1 รายการ ?</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2872" />
         <location filename="../../src/ui/mainwindow.cpp" line="2885" />
         <source>Copied %1 item(s)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">คัดลอก %1 รายการแล้ว</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3117" />
         <source>QR Code not found</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ไม่พบรหัส QR</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3138" />
         <source>Unable to capture screen</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ไม่สามารถจับภาพหน้าจอได้</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3206" />
         <source>Remove %1 Unavailable item(s) ?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ลบ %1 รายการที่ไม่พร้อมใช้งาน ?</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3260" />
         <source>Remove %1 Invalid item(s) ?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ลบ %1 รายการที่ไม่ถูกต้อง ?</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3308" />
         <source>Replace domain server addresses with their resolved IPs?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">แทนที่ที่อยู่เซิร์ฟเวอร์โดเมนด้วย IP ที่แก้ไขแล้วหรือไม่</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3441" />
         <source>Clear</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ชัดเจน</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3503" />
         <source>Delete selected Group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ลบกลุ่มที่เลือก</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3504" />
         <source>Edit selected Group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">แก้ไขกลุ่มที่เลือก</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3513" />
         <source>Remove %1?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ลบ %1 หรือไม่</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="4196" />
         <source>Cannot start</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ไม่สามารถเริ่มต้นได้</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="4197" />
         <source>Last download request has not finished yet</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">คำขอดาวน์โหลดครั้งล่าสุดยังไม่เสร็จสิ้น</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="4231" />
         <source>Failed to download update assets</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ดาวน์โหลดเนื้อหาอัปเดตไม่สำเร็จ</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="81" />
         <source>Profile test aborted</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">การทดสอบโปรไฟล์ถูกยกเลิก</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="132" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="178" />
         <source>[%1] test error: %2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">[%1] ข้อผิดพลาดในการทดสอบ: %2</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="161" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="487" />
         <source>Something is very wrong, the subject ent cannot be found!</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">มีบางอย่างผิดปกติมาก ไม่พบหัวข้อเรื่อง!</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="167" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="493" />
         <source>Profile manager data is corrupted, try again.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ข้อมูลตัวจัดการโปรไฟล์เสียหาย โปรดลองอีกครั้ง</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="201" />
         <source>The last url test did not exit completely, please wait. If it persists, please restart the program.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">การทดสอบ URL สุดท้ายออกไม่สมบูรณ์ โปรดรอสักครู่หากยังคงอยู่ กรุณารีสตาร์ทโปรแกรม</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="210" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="317" />
         <source>Failed to build test config: </source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ไม่สามารถสร้างการกำหนดค่าการทดสอบ:</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="251" />
         <source>URL test finished!</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">การทดสอบ URL เสร็จสิ้นแล้ว!</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="262" />
         <source>Failed to stop tests</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">หยุดการทดสอบไม่สำเร็จ</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="268" />
         <source>Testing</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">การทดสอบ</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="306" />
         <source>The last speed test did not exit completely, please wait. If it persists, please restart the program.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">การทดสอบความเร็วครั้งล่าสุดยังออกไม่สมบูรณ์ โปรดรอสักครู่หากยังคงอยู่ กรุณารีสตาร์ทโปรแกรม</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="343" />
         <source>Speedtest finished!</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">การทดสอบความเร็วเสร็จสิ้นแล้ว!</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="424" />
         <source>Profile speed test aborted</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">การทดสอบความเร็วโปรไฟล์ถูกยกเลิก</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="512" />
         <source>[%1] speed test error: %2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">[%1] ข้อผิดพลาดในการทดสอบความเร็ว: %2</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="521" />
         <source>You need to enable hijack DNS server first</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">คุณต้องเปิดใช้งานเซิร์ฟเวอร์ DNS จี้ก่อน</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="535" />
         <source>Failed to set system dns: </source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ไม่สามารถตั้งค่า DNS ของระบบได้:</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="583" />
         <source>Tun device misbehaving</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">อุปกรณ์ Tun ทำงานผิดปกติ</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="584" />
         <source>If you have trouble starting VPN, you can force reset Core process here and then try starting the profile again. The error is %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">หากคุณมีปัญหาในการเริ่ม VPN คุณสามารถบังคับรีเซ็ตกระบวนการหลักได้ที่นี่ จากนั้นลองเริ่มโปรไฟล์อีกครั้งข้อผิดพลาดคือ %1</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="588" />
         <source>Reset</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">รีเซ็ต</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="589" />
         <source>Cancel</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ยกเลิก</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="628" />
         <source>Another profile is starting...</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">กำลังเริ่มโปรไฟล์อื่น...</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="635" />
         <source>Another profile is stopping...</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">โปรไฟล์อื่นกำลังหยุด...</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="656" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="738" />
         <source>If there is no response for a long time, it is recommended to restart the software.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">หากไม่มีการตอบสนองเป็นเวลานาน แนะนำให้รีสตาร์ทซอฟต์แวร์</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="670" />
         <source>Starting profile %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">กำลังเริ่มต้นโปรไฟล์ %1</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="672" />
         <source>Failed to start profile %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ไม่สามารถเริ่มโปรไฟล์ %1 ได้</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="721" />
         <source>Stop return error</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">หยุดข้อผิดพลาดในการส่งคืน</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="761" />
         <source>Stopping profile %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">กำลังหยุดโปรไฟล์ %1</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="763" />
         <source>Failed to stop, please restart the program.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ไม่สามารถหยุดได้ โปรดรีสตาร์ทโปรแกรม</translation>
     </message>
 </context>
 <context>
@@ -3146,12 +3146,12 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/security/change_password.ui" line="37" />
         <source>New Password</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">รหัสผ่านใหม่</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/change_password.ui" line="54" />
         <source>Confirm Password</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ยืนยันรหัสผ่าน</translation>
     </message>
 </context>
 <context>
@@ -3159,12 +3159,12 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/ui/profile/ProxyItem.cpp" line="39" />
         <source>Confirmation</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">การยืนยัน</translation>
     </message>
     <message>
         <location filename="../../src/ui/profile/ProxyItem.cpp" line="39" />
         <source>Remove %1?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ลบ %1 หรือไม่</translation>
     </message>
 </context>
 <context>
@@ -3172,7 +3172,7 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/ui/security_addon.cpp" line="342" />
         <source>Security Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">การตั้งค่าความปลอดภัย</translation>
     </message>
 </context>
 <context>
@@ -3180,7 +3180,7 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/main.cpp" line="258" />
         <source>QT_LAYOUT_DIRECTION</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">QT_LAYOUT_DIRECTION</translation>
     </message>
 </context>
 <context>
@@ -3188,37 +3188,37 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/configs/ConfigBuilder.cpp" line="159" />
         <source>Tun mode cannot be used with Custom configs</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">โหมด Tun ไม่สามารถใช้กับการกำหนดค่าแบบกำหนดเองได้</translation>
     </message>
     <message>
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="913" />
         <source>Requesting subscription: %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">กำลังขอสมัครสมาชิก: %1</translation>
     </message>
     <message>
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="917" />
         <source>Requesting subscription %1 error: %2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">การขอสมัครสมาชิก %1 ข้อผิดพลาด: %2</translation>
     </message>
     <message>
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="924" />
         <source>Subscription request fininshed: %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">คำขอสมัครสมาชิกเสร็จสิ้นแล้ว: %1</translation>
     </message>
     <message>
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="942" />
         <source>Clearing servers...</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">กำลังล้างเซิร์ฟเวอร์...</translation>
     </message>
     <message>
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="947" />
         <source>Processing subscription data...</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">กำลังประมวลผลข้อมูลการสมัครสมาชิก...</translation>
     </message>
     <message>
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="950" />
         <source>Process complete, applying...</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">กระบวนการเสร็จสมบูรณ์ กำลังสมัคร...</translation>
     </message>
     <message>
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="1013" />
@@ -3226,7 +3226,10 @@ For more information, see the document "Configuration/DNS".</source>
 %2
 Deleted %3 Profiles:
 %4</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">เพิ่ม %1 โปรไฟล์:
+%2
+ลบ %3 โปรไฟล์:
+%4</translation>
     </message>
     <message>
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="1018" />
