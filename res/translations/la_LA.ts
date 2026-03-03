@@ -3775,13 +3775,13 @@ Dimitte nota:
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="245" />
         <source>Fetching information</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Fetching informationes</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="261" />
         <location filename="../../src/ui/mainwindow.cpp" line="1184" />
         <source>Download Profiles</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Download Profiles</translation>
     </message>
 </context>
 <context>
@@ -3789,7 +3789,7 @@ Dimitte nota:
     <message>
         <location filename="../../src/nekobox/ui/security/delete_or_edit_users.ui" line="14" />
         <source>Form</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Forma</translation>
     </message>
 </context>
 </TS>
