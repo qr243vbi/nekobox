@@ -551,12 +551,12 @@
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1102" />
         <source>Test Target URL</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Тествайте целеви URL адрес</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1109" />
         <source>URL to test proxies against</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">URL за тестване на проксита</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1112" />
@@ -566,89 +566,89 @@
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1119" />
         <source>Automatically switch to another working proxy when TUN mode proxy fails</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Автоматично превключване към друг работещ прокси, когато проксито в режим TUN не успее</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1122" />
         <source>Enable TUN Failover</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Активирайте TUN Failover</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1130" />
         <source>Startup</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Стартиране</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1191" />
         <source>Geometry</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Геометрия</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1220" />
         <source>Autosave geometry</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Автоматично запазване на геометрията</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1227" />
         <source>Autosave position</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Автоматично запазване на позиция</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1247" />
         <source>Apply now</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Кандидатствайте сега</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1363" />
         <source>Width</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ширина</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1376" />
         <source>X</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">X</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1409" />
         <source>Y</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Y</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1422" />
         <source>Height</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Височина</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1509" />
         <source>Core Executable Path</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Основен изпълним път</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1538" />
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1712" />
         <source>Use default</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Използвайте по подразбиране</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1545" />
         <source>Remote Control</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Дистанционно управление</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1571" />
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1745" />
         <source>Select</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Изберете</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1683" />
         <source>Resources Directory</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Директория с ресурси</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1719" />
         <source>Resource Manager</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Мениджър на ресурси</translation>
     </message>
 </context>
 <context>
@@ -656,104 +656,104 @@
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="20" />
         <source>Edit Group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Редактиране на група</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="36" />
         <source>Common</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Чести</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="102" />
         <source>Name</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Име</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="109" />
         <source>Type</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Тип</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="117" />
         <source>Basic</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Основен</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="122" />
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="287" />
         <source>Subscription</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Абонамент</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="135" />
         <source>Manually column width</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ръчно ширина на колоната</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="142" />
         <source>Archive</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Архив</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="155" />
         <source>Proxy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Прокси</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="194" />
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="221" />
         <source>None</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Няма</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="201" />
         <source>Front Proxy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Преден прокси</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="208" />
         <source>Landing Proxy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Прокси за кацане</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="232" />
         <source>Share</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Споделете</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="238" />
         <source>Copy profile share links</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Копиране на връзки за споделяне на профил</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="245" />
         <source>Copy profile share links (Custom Links)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Копиране на връзки за споделяне на профил (персонализирани връзки)</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="253" />
         <source>Notes</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Бележки</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="314" />
         <source>Skip automatic update</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Пропуснете автоматичната актуализация</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="58" />
         <source>Copied</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Копирано</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="357" />
         <source>Warning</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Предупреждение</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="357" />
         <source>Please input URL</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Моля, въведете URL</translation>
     </message>
 </context>
 <context>
@@ -762,265 +762,265 @@
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="26" />
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="662" />
         <source>Edit</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Редактиране</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="56" />
         <source>Common</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Чести</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="73" />
         <source>Type</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Тип</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="80" />
         <source>Port</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Порт</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="87" />
         <source>Address</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Адрес</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="94" />
         <source>Name</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Име</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="139" />
         <source>Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Настройки</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="166" />
         <source>The underlying transport method. It must be consistent with the server, otherwise, the connection cannot be established.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Основният транспортен метод.Трябва да е съвместим със сървъра, в противен случай връзката не може да бъде установена.</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="169" />
         <source>Network</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">мрежа</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="226" />
         <source>Server support is required</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Необходима е поддръжка на сървъра</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="229" />
         <source>Multiplex</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Мултиплекс</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="236" />
         <source>Transport Layer Security. It must be consistent with the server, otherwise, the connection cannot be established.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Сигурност на транспортния слой.Трябва да е съвместим със сървъра, в противен случай връзката не може да бъде установена.</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="239" />
         <source>Security</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">сигурност</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="260" />
         <source>UDP FullCone Packet encoding for implementing features such as UDP FullCone. Server support is required, if the wrong selection is made, the connection cannot be made. Please leave it blank.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">UDP FullCone Пакетно кодиране за внедряване на функции като UDP FullCone.Необходима е поддръжка на сървъра, ако е направен грешен избор, връзката не може да бъде осъществена.Моля, оставете го празно.</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="263" />
         <source>Packet Encoding</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Пакетно кодиране</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="271" />
         <source>Keep Default</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Запази по подразбиране</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="276" />
         <source>On</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">включено</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="281" />
         <source>Off</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Изкл</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="294" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Overrides mux to On&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Заменя mux на On&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="297" />
         <source>Enable TCP Brutal</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Активирайте TCP Brutal</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="311" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Server to Client TCP Brutal Speed&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Брутална TCP скорост от сървър към клиент&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="314" />
         <source>TCP Brutal Speed</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">TCP брутална скорост</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="324" />
         <source>Mb/s</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Mb/s</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="345" />
         <source>Custom Outbound Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Персонализирани изходящи настройки</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="361" />
         <source>Custom Config Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Персонализирани настройки за конфигурация</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="381" />
         <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="696" />
         <source>Apply settings to this group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Прилагане на настройките към тази група</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="436" />
         <source>Network Settings (%1)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Мрежови настройки (%1)</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="458" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="541" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Method of http request, will be converted to uppercase&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Методът на http заявка, ще бъде преобразуван в главни букви&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="544" />
         <source>Method</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Метод</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="578" />
         <source>header type</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">тип заглавка</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="594" />
         <source>TLS Security Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Настройки за сигурност на TLS</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="611" />
         <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="627" />
         <source>Certificate</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Сертификат</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="638" />
         <source>When enabled, V2Ray will not check the validity of the TLS certificate provided by the remote host (the security is equivalent to plaintext)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Когато е активиран, V2Ray няма да проверява валидността на TLS сертификата, предоставен от отдалечения хост (сигурността е еквивалентна на обикновен текст)</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="641" />
         <source>Allow insecure</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Разрешаване на несигурно</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="648" />
         <source>Enable ECH</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Активирайте ECH</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="655" />
         <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="638" />
         <source>ECH Config</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ECH Config</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="673" />
         <source>QSN</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">QSN</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="680" />
         <source>Server name indication, clear text.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Индикация за името на сървъра, ясен текст.</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="693" />
         <source>Application layer protocol negotiation, clear text. Please separate them with commas.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Договаряне на протокола на приложния слой, ясен текст.Моля, отделете ги със запетаи.</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="720" />
         <source>TLS Camouflage Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Настройки на TLS камуфлаж</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="774" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;May degrade performance, try record fragment first&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Може да влоши производителността, опитайте първо да запишете фрагмент&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="777" />
         <source>Enable TLS fragment</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Активиране на TLS фрагмент</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="784" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;time format, like 500ms, 10ms etc&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;формат на времето, като 500ms, 10ms и т.н.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="787" />
         <source>Fallback Delay</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Резервно забавяне</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="800" />
         <source>Enable TLS Record Fragment</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Активиране на фрагмент от TLS запис</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="839" />
         <source>Reality public key. If not empty, turn TLS into REALITY.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Публичен ключ за реалност.Ако не е празен, превърнете TLS в РЕАЛНОСТ.</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="852" />
         <source>Reality short id. Accept only one value.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Реалност кратко ID.Приемете само една стойност.</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="855" />
         <source>Reality SID</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Реалност SID</translation>
     </message>
     <message>
         <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="219" />
         <source>Custom (%1 outbound)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">По избор (%1 изходящ)</translation>
     </message>
     <message>
         <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="221" />
         <source>Custom (%1 config)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">По избор (%1 конфигурация)</translation>
     </message>
     <message>
         <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="223" />
         <source>Extra Core</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Допълнително ядро</translation>
     </message>
     <message>
         <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="585" />
@@ -1029,7 +1029,7 @@
         <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="600" />
         <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="608" />
         <source>Not set</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Не е зададено</translation>
     </message>
     <message>
         <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="587" />
@@ -1038,12 +1038,12 @@
         <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="602" />
         <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="610" />
         <source>Already set</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Вече е зададено</translation>
     </message>
     <message>
         <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="668" />
         <source>Confirm</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Потвърдете</translation>
     </message>
 </context>
 <context>
@@ -1051,32 +1051,32 @@
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="14" />
         <source>Landing proxy for group Group2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Прокси за кацане за група Group2</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="41" />
         <source>Proxy:</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Прокси:</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="48" />
         <source>Search:</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">търсене:</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="68" />
         <source>Group1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Група1</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="74" />
         <source>Group2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Група2</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="414" />
         <source>Front proxy for group %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Преден прокси за група %1</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="416" />
