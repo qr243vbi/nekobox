@@ -111,6 +111,7 @@ public:
       ;
   bool logs_enabled = true;
   bool test_after_start = true;
+  bool unix_domain_socket = false;
   char startup_update = false;
   int max_log_line = 200;
   int width = 0;
