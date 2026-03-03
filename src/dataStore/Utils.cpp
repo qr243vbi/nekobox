@@ -307,7 +307,7 @@ QString MkUDS(){
   QString ret;
   #ifdef Q_OS_WIN
   ret = "\\\\.\\pipe\\";
-  ret += 
+  ret += software_name + "_" + software_core_name + "_" GetRandomString(16);
   #else
   #endif
 }
