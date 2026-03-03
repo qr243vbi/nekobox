@@ -19,7 +19,6 @@ int MessageBoxInfo(const QString &title, const QString &text) {
     return QMessageBox::information(GetMessageBoxParent(), title, text);
 }
 */
-void ActivateWindow(QWidget *w) { ToggleWindow(w); }
 
 void ToggleWindow(QWidget *w) {
   if (w->isVisible() && !(w->windowState() & Qt::WindowMinimized)) {

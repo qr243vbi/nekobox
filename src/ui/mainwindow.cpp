@@ -834,7 +834,7 @@ skip_updater_hide:
           [=, this](QSystemTrayIcon::ActivationReason reason) {
             if (reason == QSystemTrayIcon::Trigger) {
               CHECK_ACTION_ACCESS_W
-              ActivateWindow(this);
+              ToggleWindow(this);
             }
           });
 
@@ -1701,7 +1701,7 @@ void MainWindow::dialog_message_impl(const QString &sender,
     on_menu_exit_triggered();
   }
   if (info == "Raise") {
-    ActivateWindow(this);
+    ToggleWindow(this);
   }
   if (info == "NeedAdmin") {
     get_elevated_permissions();
