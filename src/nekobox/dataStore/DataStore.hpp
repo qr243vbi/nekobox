@@ -58,6 +58,7 @@ namespace Configs {
         QString sub_custom_hwid_params = ""; 
         // Custom system parameters: format "hwid=value,os=value,osVersion=value,model=value"
         // Running
+        bool unix_domain_socket = false;
         int core_port = 19810;
         int started_id = -1919;
         bool core_running = false;

@@ -39,7 +39,7 @@
       </size>
      </property>
      <property name="currentIndex">
-      <number>0</number>
+      <number>3</number>
      </property>
      <widget class="QWidget" name="tab_1">
       <attribute name="title">
@@ -720,6 +720,13 @@
                  </property>
                  <property name="text">
                   <string>Disable Traffic Stats</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QCheckBox" name="checkBox">
+                 <property name="text">
+                  <string>Use Unix Domain Sockets</string>
                  </property>
                 </widget>
                </item>
