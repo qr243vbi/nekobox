@@ -2735,59 +2735,59 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1117" />
         <source>Upload test Selected</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">பதிவேற்ற சோதனை தேர்ந்தெடுக்கப்பட்டது</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1122" />
         <source>Country test Selected</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">நாடு தேர்வு தேர்ந்தெடுக்கப்பட்டது</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1127" />
         <source>Simple download test Selected</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">எளிய பதிவிறக்க சோதனை தேர்ந்தெடுக்கப்பட்டது</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1132" />
         <source>Speedtest Group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">வேக சோதனை குழு</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1137" />
         <source>Hide window</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">சாளரத்தை மறை</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1142" />
         <source>Add profile from File</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">கோப்பிலிருந்து சுயவிவரத்தைச் சேர்க்கவும்</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1147" />
         <location filename="../../src/ui/mainwindow.cpp" line="3470" />
         <source>Add new Group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">புதிய குழுவைச் சேர்க்கவும்</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1152" />
         <source>Security Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">பாதுகாப்பு அமைப்புகள்</translation>
     </message>
     <message>
         <location filename="../../src/dataStore/ProxyEntity.cpp" line="52" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="291" />
         <source>Unavailable</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">கிடைக்கவில்லை</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1003" />
         <source>Edit Routing Profiles</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ரூட்டிங் சுயவிவரங்களைத் திருத்தவும்</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1025" />
         <source>Update Routing Profiles</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ரூட்டிங் சுயவிவரங்களைப் புதுப்பிக்கவும்</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1037" />
@@ -2798,69 +2798,69 @@ For more information, see the document "Configuration/DNS".</source>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="95" />
         <location filename="../../src/ui/setting/RouteItem.cpp" line="104" />
         <source>Update Response</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">பதிலைப் புதுப்பிக்கவும்</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1038" />
         <location filename="../../src/ui/setting/RouteItem.cpp" line="105" />
         <source>No routing profiles are updated</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ரூட்டிங் சுயவிவரங்கள் எதுவும் புதுப்பிக்கப்படவில்லை</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1042" />
         <location filename="../../src/ui/setting/RouteItem.cpp" line="96" />
         <source>Updated %1 routing profiles</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">% 1 ரூட்டிங் சுயவிவரங்கள் புதுப்பிக்கப்பட்டது</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1052" />
         <source>Update RuleSet Map</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">RuleSet வரைபடத்தைப் புதுப்பிக்கவும்</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1063" />
         <source>Failed to update rulesets</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">விதிகளை புதுப்பிக்க முடியவில்லை</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1066" />
         <source>Rulesets updated successfully</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">விதிகள் வெற்றிகரமாக புதுப்பிக்கப்பட்டன</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1075" />
         <source>Update RuleSet Cache</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">RuleSet தற்காலிக சேமிப்பைப் புதுப்பிக்கவும்</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1110" />
         <source>Rulesets cache is updated</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Rulesets தற்காலிக சேமிப்பு புதுப்பிக்கப்பட்டது</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1124" />
         <source>Clear RuleSet Cache</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">RuleSet தற்காலிக சேமிப்பை அழிக்கவும்</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1160" />
         <source>Enable AdBlock</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">AdBlock ஐ இயக்கவும்</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1563" />
         <source>Error</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">பிழை</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1650" />
         <source>Tun Settings changed</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">துன் அமைப்புகள் மாற்றப்பட்டன</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1651" />
         <source>Restart Tun to take effect.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">செயல்பாட்டிற்கு Tun ஐ மீண்டும் தொடங்கவும்.</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1657" />
@@ -2871,269 +2871,269 @@ For more information, see the document "Configuration/DNS".</source>
         <location filename="../../src/ui/mainwindow.cpp" line="3307" />
         <location filename="../../src/ui/mainwindow.cpp" line="3512" />
         <source>Confirmation</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">உறுதிப்படுத்தல்</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1658" />
         <location filename="../../src/ui/mainwindow.cpp" line="1716" />
         <source>Settings changed, restart proxy?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">அமைப்புகள் மாற்றப்பட்டன, ப்ராக்ஸியை மீண்டும் தொடங்கவா?</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1687" />
         <source>Settings changed</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">அமைப்புகள் மாற்றப்பட்டன</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1688" />
         <source>Restart the program to take effect.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">செயல்பாட்டிற்கு நிரலை மீண்டும் தொடங்கவும்.</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1731" />
         <source>Imported %1 profile(s)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">% 1 சுயவிவரம்(கள்) இறக்குமதி செய்யப்பட்டது</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1982" />
         <source>User opted for no privilege req, some features may not work</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">பயனர் சிறப்புரிமைக் கோரிக்கையை தேர்வு செய்யவில்லை, சில அம்சங்கள் வேலை செய்யாமல் போகலாம்</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2046" />
         <source>Please give the core root privileges</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">தயவு செய்து அடிப்படை உரிமைகளை வழங்கவும்</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2400" />
         <source>Not Running</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ஓடவில்லை</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2781" />
         <source>Clone %1 item(s)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">குளோன்% 1 உருப்படி(கள்)</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2815" />
         <source> Confirmation </source>
-        <translation type="unfinished" />
+        <translation type="unfinished">உறுதிப்படுத்தல்</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2816" />
         <source> Remove %1 item(s) ? </source>
-        <translation type="unfinished" />
+        <translation type="unfinished">%1 உருப்படி(களை) அகற்றவா?</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2835" />
         <source>Remove %1 item(s) ?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">%1 உருப்படி(களை) அகற்றவா?</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2872" />
         <location filename="../../src/ui/mainwindow.cpp" line="2885" />
         <source>Copied %1 item(s)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">% 1 உருப்படி(கள்) நகலெடுக்கப்பட்டது</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3117" />
         <source>QR Code not found</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">QR குறியீடு கிடைக்கவில்லை</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3138" />
         <source>Unable to capture screen</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">திரையைப் பிடிக்க முடியவில்லை</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3206" />
         <source>Remove %1 Unavailable item(s) ?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">%1 கிடைக்காத உருப்படியை(களை) அகற்றவா?</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3260" />
         <source>Remove %1 Invalid item(s) ?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">% 1 செல்லாத உருப்படியை(களை) அகற்றவா?</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3308" />
         <source>Replace domain server addresses with their resolved IPs?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">டொமைன் சர்வர் முகவரிகளை அவற்றின் தீர்க்கப்பட்ட ஐபிகளுடன் மாற்றவா?</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3441" />
         <source>Clear</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">தெளிவு</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3503" />
         <source>Delete selected Group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">தேர்ந்தெடுக்கப்பட்ட குழுவை நீக்கவும்</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3504" />
         <source>Edit selected Group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">தேர்ந்தெடுக்கப்பட்ட குழுவைத் திருத்தவும்</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3513" />
         <source>Remove %1?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">% 1ஐ அகற்றவா?</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="4196" />
         <source>Cannot start</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">தொடங்க முடியாது</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="4197" />
         <source>Last download request has not finished yet</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">கடைசிப் பதிவிறக்கக் கோரிக்கை இன்னும் முடிவடையவில்லை</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="4231" />
         <source>Failed to download update assets</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">புதுப்பிப்பு சொத்துகளைப் பதிவிறக்குவதில் தோல்வி</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="83" />
         <source>Profile test aborted</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">சுயவிவர சோதனை நிறுத்தப்பட்டது</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="134" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="180" />
         <source>[%1] test error: %2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">[%1] சோதனைப் பிழை: %2</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="163" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="489" />
         <source>Something is very wrong, the subject ent cannot be found!</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ஏதோ தவறாக உள்ளது, பொருள் கண்டுபிடிக்க முடியவில்லை!</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="169" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="495" />
         <source>Profile manager data is corrupted, try again.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">சுயவிவர மேலாளர் தரவு சிதைந்துள்ளது, மீண்டும் முயற்சிக்கவும்.</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="203" />
         <source>The last url test did not exit completely, please wait. If it persists, please restart the program.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">கடைசி url சோதனை முழுமையாக வெளியேறவில்லை, காத்திருக்கவும்.இது தொடர்ந்தால், நிரலை மீண்டும் தொடங்கவும்.</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="212" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="319" />
         <source>Failed to build test config: </source>
-        <translation type="unfinished" />
+        <translation type="unfinished">சோதனை கட்டமைப்பை உருவாக்க முடியவில்லை:</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="253" />
         <source>URL test finished!</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">URL சோதனை முடிந்தது!</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="264" />
         <source>Failed to stop tests</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">சோதனைகளை நிறுத்த முடியவில்லை</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="270" />
         <source>Testing</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">சோதனை</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="308" />
         <source>The last speed test did not exit completely, please wait. If it persists, please restart the program.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">கடைசி வேக சோதனை முழுமையாக வெளியேறவில்லை, காத்திருக்கவும்.இது தொடர்ந்தால், நிரலை மீண்டும் தொடங்கவும்.</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="345" />
         <source>Speedtest finished!</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">வேக சோதனை முடிந்தது!</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="426" />
         <source>Profile speed test aborted</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">சுயவிவர வேக சோதனை நிறுத்தப்பட்டது</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="514" />
         <source>[%1] speed test error: %2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">[%1] வேக சோதனை பிழை: %2</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="523" />
         <source>You need to enable hijack DNS server first</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">நீங்கள் முதலில் ஹைஜாக் DNS சர்வரை இயக்க வேண்டும்</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="537" />
         <source>Failed to set system dns: </source>
-        <translation type="unfinished" />
+        <translation type="unfinished">சிஸ்டம் டிஎன்எஸ் அமைப்பதில் தோல்வி:</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="585" />
         <source>Tun device misbehaving</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">சாதனம் தவறாக செயல்படும்</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="586" />
         <source>If you have trouble starting VPN, you can force reset Core process here and then try starting the profile again. The error is %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">VPNஐத் தொடங்குவதில் சிக்கல் இருந்தால், இங்கே கோர் செயல்முறையை வலுக்கட்டாயமாக மீட்டமைக்கலாம், பின்னர் சுயவிவரத்தை மீண்டும் தொடங்க முயற்சிக்கவும்.பிழை% 1</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="590" />
         <source>Reset</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">மீட்டமை</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="591" />
         <source>Cancel</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ரத்து செய்</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="630" />
         <source>Another profile is starting...</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">மற்றொரு சுயவிவரம் தொடங்குகிறது...</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="637" />
         <source>Another profile is stopping...</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">மற்றொரு சுயவிவரம் நிறுத்தப்படுகிறது...</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="658" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="740" />
         <source>If there is no response for a long time, it is recommended to restart the software.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">நீண்ட நேரம் பதில் இல்லை என்றால், மென்பொருளை மறுதொடக்கம் செய்ய பரிந்துரைக்கப்படுகிறது.</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="672" />
         <source>Starting profile %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">சுயவிவரம் % 1ஐத் தொடங்குகிறது</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="674" />
         <source>Failed to start profile %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">சுயவிவரம்% 1ஐத் தொடங்குவதில் தோல்வி</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="723" />
         <source>Stop return error</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ஸ்டாப் ரிட்டர்ன் பிழை</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="763" />
         <source>Stopping profile %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">சுயவிவரத்தை நிறுத்துகிறது% 1</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="765" />
         <source>Failed to stop, please restart the program.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">நிறுத்த முடியவில்லை, நிரலை மீண்டும் தொடங்கவும்.</translation>
     </message>
 </context>
 <context>
@@ -3146,17 +3146,17 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/security/change_password.ui" line="20" />
         <source>Username</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">பயனர் பெயர்</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/change_password.ui" line="37" />
         <source>New Password</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">புதிய கடவுச்சொல்</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/change_password.ui" line="54" />
         <source>Confirm Password</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">கடவுச்சொல்லை உறுதிப்படுத்தவும்</translation>
     </message>
 </context>
 <context>
@@ -3164,12 +3164,12 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/ui/profile/ProxyItem.cpp" line="39" />
         <source>Confirmation</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">உறுதிப்படுத்தல்</translation>
     </message>
     <message>
         <location filename="../../src/ui/profile/ProxyItem.cpp" line="39" />
         <source>Remove %1?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">% 1ஐ அகற்றவா?</translation>
     </message>
 </context>
 <context>
@@ -3177,7 +3177,7 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/ui/security_addon.cpp" line="342" />
         <source>Security Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">பாதுகாப்பு அமைப்புகள்</translation>
     </message>
 </context>
 <context>
@@ -3185,7 +3185,7 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/main.cpp" line="258" />
         <source>QT_LAYOUT_DIRECTION</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">QT_LAYOUT_DIRECTION</translation>
     </message>
 </context>
 <context>
@@ -3193,37 +3193,37 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/configs/ConfigBuilder.cpp" line="159" />
         <source>Tun mode cannot be used with Custom configs</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">தனிப்பயன் கட்டமைப்புகளுடன் துன் பயன்முறையைப் பயன்படுத்த முடியாது</translation>
     </message>
     <message>
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="913" />
         <source>Requesting subscription: %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">சந்தாவைக் கோருகிறது: % 1</translation>
     </message>
     <message>
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="917" />
         <source>Requesting subscription %1 error: %2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">சந்தா % 1 பிழை:% 2</translation>
     </message>
     <message>
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="924" />
         <source>Subscription request fininshed: %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">சந்தா கோரிக்கை முடிந்தது: % 1</translation>
     </message>
     <message>
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="942" />
         <source>Clearing servers...</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">சர்வர்களை அழிக்கிறது...</translation>
     </message>
     <message>
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="947" />
         <source>Processing subscription data...</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">சந்தா தரவை செயலாக்குகிறது...</translation>
     </message>
     <message>
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="950" />
         <source>Process complete, applying...</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">செயல்முறை முடிந்தது, விண்ணப்பிக்கிறது...</translation>
     </message>
     <message>
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="1013" />
@@ -3231,56 +3231,60 @@ For more information, see the document "Configuration/DNS".</source>
 %2
 Deleted %3 Profiles:
 %4</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">% 1 சுயவிவரங்கள் சேர்க்கப்பட்டது:
+% 2
+நீக்கப்பட்ட % 3 சுயவிவரங்கள்:
+% 4</translation>
     </message>
     <message>
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="1018" />
         <source>Nothing</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ஒன்றுமில்லை</translation>
     </message>
     <message>
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="1021" />
         <source>Change of %1:</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">% 1 இன் மாற்றம்:</translation>
     </message>
     <message>
         <location filename="../../src/dataStore/Database.cpp" line="119" />
         <source>Default</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">இயல்புநிலை</translation>
     </message>
     <message>
         <location filename="../../src/global/HTTPRequestHelper.cpp" line="189" />
         <source>Could not open file.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">கோப்பை திறக்க முடியவில்லை.</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/configs/proxy/ChainBean.hpp" line="17" />
         <source>Chain Proxy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">செயின் ப்ராக்ஸி</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/global/GuiUtils.hpp" line="112" />
         <location filename="../../src/ui/profile/edit_ssh.cpp" line="28" />
         <location filename="../../src/ui/setting/dialog_basic_settings.cpp" line="245" />
         <source>Select</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">தேர்ந்தெடு</translation>
     </message>
     <message>
         <location filename="../../src/stats/traffic/TrafficLooper.cpp" line="115" />
         <location filename="../../src/ui/mainwindow.cpp" line="2368" />
         <source>Proxy: %1
 Direct: %2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">பதிலாள்:% 1
+நேரடி:% 2</translation>
     </message>
     <message>
         <location filename="../../src/sys/Process.cpp" line="104" />
         <source>Core exited, cleaning up...</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">கோர் வெளியேறியது, சுத்தம் செய்கிறது...</translation>
     </message>
     <message>
         <location filename="../../src/sys/Process.cpp" line="111" />
         <source>Core exits too frequently, stop automatic restart this profile.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">கோர் அடிக்கடி வெளியேறுகிறது, இந்த சுயவிவரத்தை தானாக மறுதொடக்கம் செய்வதை நிறுத்தவும்.</translation>
     </message>
     <message>
         <location filename="../../src/sys/Process.cpp" line="120" />
