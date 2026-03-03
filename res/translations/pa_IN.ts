@@ -286,7 +286,7 @@
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="580"/>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="800"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="807"/>
         <source>Enable</source>
         <translation type="unfinished">ਯੋਗ ਕਰੋ</translation>
     </message>
@@ -364,37 +364,42 @@
         <translation type="unfinished">ਟ੍ਰੈਫਿਕ ਅੰਕੜਿਆਂ ਨੂੰ ਅਸਮਰੱਥ ਬਣਾਓ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="731"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="729"/>
+        <source>Use TCP</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="738"/>
         <source>Multiplex (mux)</source>
         <translation type="unfinished">ਮਲਟੀਪਲੈਕਸ (mux)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="738"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="745"/>
         <source>Loglevel</source>
         <translation type="unfinished">ਲਾਗਲੇਵਲ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="750"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="757"/>
         <source>concurrency</source>
         <translation type="unfinished">ਸਮਰੂਪਤਾ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="760"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="767"/>
         <source>Padding</source>
         <translation type="unfinished">ਪੈਡਿੰਗ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="767"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="774"/>
         <source>Default On</source>
         <translation type="unfinished">ਡਿਫੌਲਟ ਚਾਲੂ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="779"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="786"/>
         <source>Core Options</source>
         <translation type="unfinished">ਮੁੱਖ ਵਿਕਲਪ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="789"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="796"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Settings for the
                                             sing-box&apos;s built-in NTP client&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                                         </source>
@@ -402,27 +407,27 @@
 sing-box ਦਾ ਬਿਲਟ-ਇਨ NTP ਕਲਾਇੰਟ&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="794"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="801"/>
         <source>NTP Settings</source>
         <translation type="unfinished">NTP ਸੈਟਿੰਗਾਂ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="809"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="816"/>
         <source>server</source>
         <translation type="unfinished">ਸਰਵਰ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="819"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="826"/>
         <source>Port</source>
         <translation type="unfinished">ਪੋਰਟ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="836"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="843"/>
         <source>sync interval</source>
         <translation type="unfinished">ਸਿੰਕ ਅੰਤਰਾਲ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="843"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="850"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;In
                                                                 minutes&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                                                             </source>
@@ -430,224 +435,224 @@ sing-box ਦਾ ਬਿਲਟ-ਇਨ NTP ਕਲਾਇੰਟ&lt;/p&gt;&lt;/body&gt
 ਮਿੰਟ&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="849"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="856"/>
         <source>5m</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="854"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="861"/>
         <source>10m</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="859"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="866"/>
         <source>30m</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="873"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="880"/>
         <source>Security</source>
         <translation type="unfinished">ਸੁਰੱਖਿਆ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="879"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="886"/>
         <source>Disable Privilege request</source>
         <translation type="unfinished">ਵਿਸ਼ੇਸ਼ ਅਧਿਕਾਰ ਬੇਨਤੀ ਨੂੰ ਅਯੋਗ ਕਰੋ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="886"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="893"/>
         <source>Use Mozilla Certificate Store</source>
         <translation type="unfinished">ਮੋਜ਼ੀਲਾ ਸਰਟੀਫਿਕੇਟ ਸਟੋਰ ਦੀ ਵਰਤੋਂ ਕਰੋ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="893"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="900"/>
         <source>Skip TLS certificate authentication by default (allowInsecure)</source>
         <translation type="unfinished">ਮੂਲ ਰੂਪ ਵਿੱਚ TLS ਸਰਟੀਫਿਕੇਟ ਪ੍ਰਮਾਣਿਕਤਾ ਛੱਡੋ (ਅਸੁਰੱਖਿਅਤ ਦੀ ਇਜਾਜ਼ਤ ਦਿਓ)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="921"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="928"/>
         <source>Default uTLS Fingerprint</source>
         <translation type="unfinished">ਡਿਫੌਲਟ uTLS ਫਿੰਗਰਪ੍ਰਿੰਟ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="944"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="951"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Do not attempt to start as Admin unless explicitly requested&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;ਜਦੋਂ ਤੱਕ ਸਪਸ਼ਟ ਤੌਰ &apos;ਤੇ ਬੇਨਤੀ ਨਾ ਕੀਤੀ ਜਾਵੇ ਤਾਂ ਪ੍ਰਸ਼ਾਸਕ ਵਜੋਂ ਸ਼ੁਰੂ ਕਰਨ ਦੀ ਕੋਸ਼ਿਸ਼ ਨਾ ਕਰੋ&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="947"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="954"/>
         <source>Always Start as Standard User</source>
         <translation type="unfinished">ਹਮੇਸ਼ਾਂ ਮਿਆਰੀ ਉਪਭੋਗਤਾ ਵਜੋਂ ਸ਼ੁਰੂ ਕਰੋ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="954"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="961"/>
         <source>Use Json instead binary for configs</source>
         <translation type="unfinished">ਸੰਰਚਨਾ ਲਈ ਬਾਈਨਰੀ ਦੀ ਬਜਾਏ Json ਦੀ ਵਰਤੋਂ ਕਰੋ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="968"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="975"/>
         <source>Auto-Testing</source>
         <translation type="unfinished">ਆਟੋ-ਟੈਸਟਿੰਗ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="974"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="981"/>
         <source>Automatically test proxies in the background and maintain a pool of working proxies</source>
         <translation type="unfinished">ਬੈਕਗ੍ਰਾਉਂਡ ਵਿੱਚ ਆਟੋਮੈਟਿਕਲੀ ਪ੍ਰੌਕਸੀਆਂ ਦੀ ਜਾਂਚ ਕਰੋ ਅਤੇ ਕਾਰਜਸ਼ੀਲ ਪ੍ਰੌਕਸੀਆਂ ਦੇ ਪੂਲ ਨੂੰ ਬਣਾਈ ਰੱਖੋ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="977"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="984"/>
         <source>Enable Auto-Testing</source>
         <translation type="unfinished">ਆਟੋ-ਟੈਸਟਿੰਗ ਨੂੰ ਸਮਰੱਥ ਬਣਾਓ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="984"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="991"/>
         <source>Test Interval (seconds)</source>
         <translation type="unfinished">ਟੈਸਟ ਅੰਤਰਾਲ (ਸਕਿੰਟ)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="991"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="998"/>
         <source>How often to run the test cycle</source>
         <translation type="unfinished">ਟੈਸਟ ਚੱਕਰ ਨੂੰ ਕਿੰਨੀ ਵਾਰ ਚਲਾਉਣਾ ਹੈ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1007"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1014"/>
         <source>Proxies Per Cycle</source>
         <translation type="unfinished">ਪ੍ਰੌਕਸੀ ਪ੍ਰਤੀ ਚੱਕਰ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1014"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1021"/>
         <source>Number of proxies to test in each cycle</source>
         <translation type="unfinished">ਹਰੇਕ ਚੱਕਰ ਵਿੱਚ ਟੈਸਟ ਕਰਨ ਲਈ ਪ੍ਰੌਕਸੀ ਦੀ ਸੰਖਿਆ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1030"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1037"/>
         <source>Working Pool Size</source>
         <translation type="unfinished">ਵਰਕਿੰਗ ਪੂਲ ਦਾ ਆਕਾਰ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1037"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1044"/>
         <source>Maximum number of verified working proxies to maintain</source>
         <translation type="unfinished">ਬਣਾਈ ਰੱਖਣ ਲਈ ਪ੍ਰਮਾਣਿਤ ਕਾਰਜਸ਼ੀਲ ਪ੍ਰੌਕਸੀਆਂ ਦੀ ਅਧਿਕਤਮ ਸੰਖਿਆ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1053"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1060"/>
         <source>Latency Threshold (ms)</source>
         <translation type="unfinished">ਲੇਟੈਂਸੀ ਥ੍ਰੈਸ਼ਹੋਲਡ (ms)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1060"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1067"/>
         <source>Maximum latency to consider a proxy as working</source>
         <translation type="unfinished">ਇੱਕ ਪ੍ਰੌਕਸੀ ਨੂੰ ਕੰਮ ਕਰਨ ਲਈ ਅਧਿਕਤਮ ਲੇਟੈਂਸੀ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1079"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1086"/>
         <source>Failure Retry Count</source>
         <translation type="unfinished">ਅਸਫਲਤਾ ਦੀ ਮੁੜ ਕੋਸ਼ਿਸ਼ ਦੀ ਗਿਣਤੀ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1086"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1093"/>
         <source>Number of retry attempts before considering a proxy as failed</source>
         <translation type="unfinished">ਇੱਕ ਪ੍ਰੌਕਸੀ ਨੂੰ ਅਸਫਲ ਮੰਨਣ ਤੋਂ ਪਹਿਲਾਂ ਮੁੜ-ਕੋਸ਼ਿਸ਼ ਕੋਸ਼ਿਸ਼ਾਂ ਦੀ ਸੰਖਿਆ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1102"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1109"/>
         <source>Test Target URL</source>
         <translation type="unfinished">ਟੀਚਾ URL ਦੀ ਜਾਂਚ ਕਰੋ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1109"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1116"/>
         <source>URL to test proxies against</source>
         <translation type="unfinished">ਪਰਾਕਸੀ ਦੇ ਵਿਰੁੱਧ ਜਾਂਚ ਕਰਨ ਲਈ URL</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1112"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1119"/>
         <source>http://cp.cloudflare.com/</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1119"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1126"/>
         <source>Automatically switch to another working proxy when TUN mode proxy fails</source>
         <translation type="unfinished">TUN ਮੋਡ ਪ੍ਰੌਕਸੀ ਫੇਲ ਹੋਣ &apos;ਤੇ ਆਟੋਮੈਟਿਕਲੀ ਕਿਸੇ ਹੋਰ ਕਾਰਜਸ਼ੀਲ ਪ੍ਰੌਕਸੀ &apos;ਤੇ ਸਵਿਚ ਕਰੋ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1122"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1129"/>
         <source>Enable TUN Failover</source>
         <translation type="unfinished">TUN ਫੇਲਓਵਰ ਨੂੰ ਸਮਰੱਥ ਬਣਾਓ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1130"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1137"/>
         <source>Startup</source>
         <translation type="unfinished">ਸ਼ੁਰੂ ਕਰਣਾ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1191"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1198"/>
         <source>Geometry</source>
         <translation type="unfinished">ਜਿਓਮੈਟਰੀ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1220"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1227"/>
         <source>Autosave geometry</source>
         <translation type="unfinished">ਜਿਓਮੈਟਰੀ ਆਟੋ ਸੇਵ ਕਰੋ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1227"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1234"/>
         <source>Autosave position</source>
         <translation type="unfinished">ਆਟੋ-ਸੇਵ ਸਥਿਤੀ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1247"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1254"/>
         <source>Apply now</source>
         <translation type="unfinished">ਹੁਣੇ ਅਪਲਾਈ ਕਰੋ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1363"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1370"/>
         <source>Width</source>
         <translation type="unfinished">ਚੌੜਾਈ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1376"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1383"/>
         <source>X</source>
         <translation type="unfinished">ਐਕਸ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1409"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1416"/>
         <source>Y</source>
         <translation type="unfinished">ਵਾਈ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1422"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1429"/>
         <source>Height</source>
         <translation type="unfinished">ਉਚਾਈ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1509"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1516"/>
         <source>Core Executable Path</source>
         <translation type="unfinished">ਕੋਰ ਐਗਜ਼ੀਕਿਊਟੇਬਲ ਮਾਰਗ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1538"/>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1712"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1545"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1719"/>
         <source>Use default</source>
         <translation type="unfinished">ਡਿਫੌਲਟ ਵਰਤੋ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1545"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1552"/>
         <source>Remote Control</source>
         <translation type="unfinished">ਰਿਮੋਟ ਕੰਟਰੋਲ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1571"/>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1745"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1578"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1752"/>
         <source>Select</source>
         <translation type="unfinished">ਚੁਣੋ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1683"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1690"/>
         <source>Resources Directory</source>
         <translation type="unfinished">ਸਰੋਤ ਡਾਇਰੈਕਟਰੀ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1719"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1726"/>
         <source>Resource Manager</source>
         <translation type="unfinished">ਸਰੋਤ ਪ੍ਰਬੰਧਕ</translation>
     </message>
@@ -2353,8 +2358,8 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="324"/>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="289"/>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="291"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="293"/>
         <source>Test Result</source>
         <translation type="unfinished">ਟੈਸਟ ਦਾ ਨਤੀਜਾ</translation>
     </message>
@@ -2795,7 +2800,7 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
     </message>
     <message>
         <location filename="../../src/dataStore/ProxyEntity.cpp" line="52"/>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="289"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="291"/>
         <source>Unavailable</source>
         <translation type="unfinished">ਅਣਉਪਲਬਧ</translation>
     </message>
@@ -3016,142 +3021,142 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
         <translation type="unfinished">ਅੱਪਡੇਟ ਸੰਪਤੀਆਂ ਨੂੰ ਡਾਊਨਲੋਡ ਕਰਨ ਵਿੱਚ ਅਸਫਲ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="81"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="83"/>
         <source>Profile test aborted</source>
         <translation type="unfinished">ਪ੍ਰੋਫਾਈਲ ਟੈਸਟ ਅਧੂਰਾ ਛੱਡਿਆ ਗਿਆ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="132"/>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="178"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="134"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="180"/>
         <source>[%1] test error: %2</source>
         <translation type="unfinished">[% 1] ਟੈਸਟ ਗਲਤੀ: % 2</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="161"/>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="487"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="163"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="489"/>
         <source>Something is very wrong, the subject ent cannot be found!</source>
         <translation type="unfinished">ਕੁਝ ਬਹੁਤ ਗਲਤ ਹੈ, ਵਿਸ਼ਾ ENT ਲੱਭਿਆ ਨਹੀਂ ਜਾ ਸਕਦਾ!</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="167"/>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="493"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="169"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="495"/>
         <source>Profile manager data is corrupted, try again.</source>
         <translation type="unfinished">ਪ੍ਰੋਫਾਈਲ ਮੈਨੇਜਰ ਡਾਟਾ ਖਰਾਬ ਹੋ ਗਿਆ ਹੈ, ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ।</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="201"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="203"/>
         <source>The last url test did not exit completely, please wait. If it persists, please restart the program.</source>
         <translation type="unfinished">ਆਖਰੀ url ਟੈਸਟ ਪੂਰੀ ਤਰ੍ਹਾਂ ਬਾਹਰ ਨਹੀਂ ਆਇਆ, ਕਿਰਪਾ ਕਰਕੇ ਉਡੀਕ ਕਰੋ।ਜੇਕਰ ਇਹ ਜਾਰੀ ਰਹਿੰਦਾ ਹੈ, ਤਾਂ ਕਿਰਪਾ ਕਰਕੇ ਪ੍ਰੋਗਰਾਮ ਨੂੰ ਮੁੜ ਚਾਲੂ ਕਰੋ।</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="210"/>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="317"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="212"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="319"/>
         <source>Failed to build test config: </source>
         <translation type="unfinished">ਟੈਸਟ ਸੰਰਚਨਾ ਬਣਾਉਣ ਵਿੱਚ ਅਸਫਲ:</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="251"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="253"/>
         <source>URL test finished!</source>
         <translation type="unfinished">URL ਟੈਸਟ ਪੂਰਾ ਹੋਇਆ!</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="262"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="264"/>
         <source>Failed to stop tests</source>
         <translation type="unfinished">ਟੈਸਟਾਂ ਨੂੰ ਰੋਕਣ ਵਿੱਚ ਅਸਫਲ ਰਿਹਾ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="268"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="270"/>
         <source>Testing</source>
         <translation type="unfinished">ਟੈਸਟਿੰਗ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="306"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="308"/>
         <source>The last speed test did not exit completely, please wait. If it persists, please restart the program.</source>
         <translation type="unfinished">ਆਖਰੀ ਸਪੀਡ ਟੈਸਟ ਪੂਰੀ ਤਰ੍ਹਾਂ ਬਾਹਰ ਨਹੀਂ ਆਇਆ, ਕਿਰਪਾ ਕਰਕੇ ਉਡੀਕ ਕਰੋ।ਜੇਕਰ ਇਹ ਜਾਰੀ ਰਹਿੰਦਾ ਹੈ, ਤਾਂ ਕਿਰਪਾ ਕਰਕੇ ਪ੍ਰੋਗਰਾਮ ਨੂੰ ਮੁੜ ਚਾਲੂ ਕਰੋ।</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="343"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="345"/>
         <source>Speedtest finished!</source>
         <translation type="unfinished">ਸਪੀਡ ਟੈਸਟ ਪੂਰਾ ਹੋਇਆ!</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="424"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="426"/>
         <source>Profile speed test aborted</source>
         <translation type="unfinished">ਪ੍ਰੋਫਾਈਲ ਸਪੀਡ ਟੈਸਟ ਅਧੂਰਾ ਛੱਡਿਆ ਗਿਆ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="512"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="514"/>
         <source>[%1] speed test error: %2</source>
         <translation type="unfinished">[% 1] ਸਪੀਡ ਟੈਸਟ ਗਲਤੀ: % 2</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="521"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="523"/>
         <source>You need to enable hijack DNS server first</source>
         <translation type="unfinished">ਤੁਹਾਨੂੰ ਪਹਿਲਾਂ ਹਾਈਜੈਕ DNS ਸਰਵਰ ਨੂੰ ਸਮਰੱਥ ਕਰਨ ਦੀ ਲੋੜ ਹੈ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="535"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="537"/>
         <source>Failed to set system dns: </source>
         <translation type="unfinished">ਸਿਸਟਮ dns ਸੈੱਟ ਕਰਨ ਵਿੱਚ ਅਸਫਲ:</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="583"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="585"/>
         <source>Tun device misbehaving</source>
         <translation type="unfinished">ਟਿਊਨ ਡਿਵਾਈਸ ਦੁਰਵਿਹਾਰ ਕਰ ਰਹੀ ਹੈ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="584"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="586"/>
         <source>If you have trouble starting VPN, you can force reset Core process here and then try starting the profile again. The error is %1</source>
         <translation type="unfinished">ਜੇਕਰ ਤੁਹਾਨੂੰ VPN ਸ਼ੁਰੂ ਕਰਨ ਵਿੱਚ ਮੁਸ਼ਕਲ ਆਉਂਦੀ ਹੈ, ਤਾਂ ਤੁਸੀਂ ਇੱਥੇ ਕੋਰ ਪ੍ਰਕਿਰਿਆ ਨੂੰ ਰੀਸੈਟ ਕਰਨ ਲਈ ਮਜਬੂਰ ਕਰ ਸਕਦੇ ਹੋ ਅਤੇ ਫਿਰ ਪ੍ਰੋਫਾਈਲ ਨੂੰ ਦੁਬਾਰਾ ਸ਼ੁਰੂ ਕਰਨ ਦੀ ਕੋਸ਼ਿਸ਼ ਕਰ ਸਕਦੇ ਹੋ।ਗਲਤੀ % 1 ਹੈ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="588"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="590"/>
         <source>Reset</source>
         <translation type="unfinished">ਰੀਸੈਟ ਕਰੋ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="589"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="591"/>
         <source>Cancel</source>
         <translation type="unfinished">ਰੱਦ ਕਰੋ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="628"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="630"/>
         <source>Another profile is starting...</source>
         <translation type="unfinished">ਇੱਕ ਹੋਰ ਪ੍ਰੋਫਾਈਲ ਸ਼ੁਰੂ ਹੋ ਰਿਹਾ ਹੈ...</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="635"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="637"/>
         <source>Another profile is stopping...</source>
         <translation type="unfinished">ਇੱਕ ਹੋਰ ਪ੍ਰੋਫਾਈਲ ਰੁਕ ਰਿਹਾ ਹੈ...</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="656"/>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="738"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="658"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="740"/>
         <source>If there is no response for a long time, it is recommended to restart the software.</source>
         <translation type="unfinished">ਜੇ ਲੰਬੇ ਸਮੇਂ ਲਈ ਕੋਈ ਜਵਾਬ ਨਹੀਂ ਮਿਲਦਾ, ਤਾਂ ਸੌਫਟਵੇਅਰ ਨੂੰ ਮੁੜ ਚਾਲੂ ਕਰਨ ਦੀ ਸਿਫਾਰਸ਼ ਕੀਤੀ ਜਾਂਦੀ ਹੈ.</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="670"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="672"/>
         <source>Starting profile %1</source>
         <translation type="unfinished">ਪ੍ਰੋਫਾਈਲ % 1 ਸ਼ੁਰੂ ਹੋ ਰਿਹਾ ਹੈ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="672"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="674"/>
         <source>Failed to start profile %1</source>
         <translation type="unfinished">ਪ੍ਰੋਫਾਈਲ % 1 ਸ਼ੁਰੂ ਕਰਨ ਵਿੱਚ ਅਸਫਲ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="721"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="723"/>
         <source>Stop return error</source>
         <translation type="unfinished">ਵਾਪਸੀ ਗਲਤੀ ਨੂੰ ਰੋਕੋ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="761"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="763"/>
         <source>Stopping profile %1</source>
         <translation type="unfinished">ਪ੍ਰੋਫਾਈਲ % 1 ਨੂੰ ਰੋਕਿਆ ਜਾ ਰਿਹਾ ਹੈ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="763"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="765"/>
         <source>Failed to stop, please restart the program.</source>
         <translation type="unfinished">ਰੋਕਣ ਵਿੱਚ ਅਸਫਲ, ਕਿਰਪਾ ਕਰਕੇ ਪ੍ਰੋਗਰਾਮ ਨੂੰ ਮੁੜ ਚਾਲੂ ਕਰੋ।</translation>
     </message>
@@ -3284,7 +3289,7 @@ Deleted %3 Profiles:
     <message>
         <location filename="../../src/nekobox/global/GuiUtils.hpp" line="112"/>
         <location filename="../../src/ui/profile/edit_ssh.cpp" line="28"/>
-        <location filename="../../src/ui/setting/dialog_basic_settings.cpp" line="244"/>
+        <location filename="../../src/ui/setting/dialog_basic_settings.cpp" line="245"/>
         <source>Select</source>
         <translation type="unfinished">ਚੁਣੋ</translation>
     </message>
@@ -3312,7 +3317,7 @@ Direct: %2</source>
         <translation type="unfinished">ਕੋਰ ਨੂੰ ਮੁੜ ਚਾਲੂ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ ...</translation>
     </message>
     <message>
-        <location filename="../../src/sys/Settings.cpp" line="361"/>
+        <location filename="../../src/sys/Settings.cpp" line="362"/>
         <source>System</source>
         <translation type="unfinished">ਸਿਸਟਮ</translation>
     </message>
@@ -3468,7 +3473,7 @@ Release note:
         <translation type="unfinished">ਐਕਸੇਸ ਡਿਨਾਇਡ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/setting/dialog_basic_settings.cpp" line="249"/>
+        <location filename="../../src/ui/setting/dialog_basic_settings.cpp" line="250"/>
         <source>Select a Folder</source>
         <translation type="unfinished">ਇੱਕ ਫੋਲਡਰ ਚੁਣੋ</translation>
     </message>

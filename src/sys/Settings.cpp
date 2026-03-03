@@ -36,7 +36,7 @@ SETTINGS_PUT(char, Chr)
 SETTINGS_PUT(QStringList, StrList)
 
 INIT_LIST(WindowSettings)
-ADD_LIST(unix_domain_socket)
+ADD_LIST(use_tcp)
 ADD_LIST(theme)
 ADD_LIST(font_family)
 ADD_LIST(font_size)
