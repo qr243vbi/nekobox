@@ -724,7 +724,7 @@
                 </widget>
                </item>
                <item>
-                <widget class="QCheckBox" name="checkBox">
+                <widget class="QCheckBox" name="unix_domain_socket">
                  <property name="text">
                   <string>Use Unix Domain Sockets</string>
                  </property>
