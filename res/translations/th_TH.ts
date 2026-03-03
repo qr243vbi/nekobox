@@ -3782,7 +3782,7 @@ Release note:
         <location filename="../../src/ui/mainwindow.cpp" line="261" />
         <location filename="../../src/ui/mainwindow.cpp" line="1184" />
         <source>Download Profiles</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ดาวน์โหลดโปรไฟล์</translation>
     </message>
 </context>
 <context>
@@ -3790,7 +3790,7 @@ Release note:
     <message>
         <location filename="../../src/nekobox/ui/security/delete_or_edit_users.ui" line="14" />
         <source>Form</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">รูปร่าง</translation>
     </message>
 </context>
 </TS>
