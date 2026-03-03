@@ -2740,49 +2740,49 @@ Daugiau informacijos rasite dokumente „Konfigūracija/DNS“.</translation>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1127" />
         <source>Simple download test Selected</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Pasirinktas paprasto atsisiuntimo testas</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1132" />
         <source>Speedtest Group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Greičio testo grupė</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1137" />
         <source>Hide window</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Slėpti langą</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1142" />
         <source>Add profile from File</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Pridėti profilį iš failo</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1147" />
         <location filename="../../src/ui/mainwindow.cpp" line="3470" />
         <source>Add new Group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Pridėti naują grupę</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1152" />
         <source>Security Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Saugos nustatymai</translation>
     </message>
     <message>
         <location filename="../../src/dataStore/ProxyEntity.cpp" line="52" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="289" />
         <source>Unavailable</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Nepasiekiamas</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1003" />
         <source>Edit Routing Profiles</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Redaguoti maršruto profilius</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1025" />
         <source>Update Routing Profiles</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Atnaujinkite maršruto parinkimo profilius</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1037" />
@@ -2793,69 +2793,69 @@ Daugiau informacijos rasite dokumente „Konfigūracija/DNS“.</translation>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="95" />
         <location filename="../../src/ui/setting/RouteItem.cpp" line="104" />
         <source>Update Response</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Atnaujinti atsakymą</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1038" />
         <location filename="../../src/ui/setting/RouteItem.cpp" line="105" />
         <source>No routing profiles are updated</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Jokie maršruto profiliai neatnaujinami</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1042" />
         <location filename="../../src/ui/setting/RouteItem.cpp" line="96" />
         <source>Updated %1 routing profiles</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Atnaujinti %1 maršruto profiliai</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1052" />
         <source>Update RuleSet Map</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Atnaujinkite taisyklių rinkinio žemėlapį</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1063" />
         <source>Failed to update rulesets</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Nepavyko atnaujinti taisyklių rinkinių</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1066" />
         <source>Rulesets updated successfully</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Taisyklių rinkiniai sėkmingai atnaujinti</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1075" />
         <source>Update RuleSet Cache</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Atnaujinkite RuleSet talpyklą</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1110" />
         <source>Rulesets cache is updated</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Taisyklių rinkinių talpykla atnaujinta</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1124" />
         <source>Clear RuleSet Cache</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Išvalykite RuleSet talpyklą</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1160" />
         <source>Enable AdBlock</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Įgalinti AdBlock</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1563" />
         <source>Error</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Klaida</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1650" />
         <source>Tun Settings changed</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tun Nustatymai pakeisti</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1651" />
         <source>Restart Tun to take effect.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Iš naujo paleiskite Tun, kad įsigaliotų.</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1657" />
@@ -2866,84 +2866,84 @@ Daugiau informacijos rasite dokumente „Konfigūracija/DNS“.</translation>
         <location filename="../../src/ui/mainwindow.cpp" line="3307" />
         <location filename="../../src/ui/mainwindow.cpp" line="3512" />
         <source>Confirmation</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Patvirtinimas</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1658" />
         <location filename="../../src/ui/mainwindow.cpp" line="1716" />
         <source>Settings changed, restart proxy?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Nustatymai pakeisti, paleisti tarpinį serverį iš naujo?</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1687" />
         <source>Settings changed</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Nustatymai pakeisti</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1688" />
         <source>Restart the program to take effect.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Iš naujo paleiskite programą, kad įsigaliotų.</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1731" />
         <source>Imported %1 profile(s)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Importuotas % 1 profilis (-ai)</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1982" />
         <source>User opted for no privilege req, some features may not work</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Vartotojas pasirinko nereikalauti privilegijų, kai kurios funkcijos gali neveikti</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2046" />
         <source>Please give the core root privileges</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Suteikite pagrindines root teises</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2400" />
         <source>Not Running</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Nebėgioja</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2781" />
         <source>Clone %1 item(s)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Klonuoti % 1 elementą (-us)</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2815" />
         <source> Confirmation </source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Patvirtinimas</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2816" />
         <source> Remove %1 item(s) ? </source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Pašalinti %1 elementą (-us) ?</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2835" />
         <source>Remove %1 item(s) ?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Pašalinti %1 elementą (-us) ?</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2872" />
         <location filename="../../src/ui/mainwindow.cpp" line="2885" />
         <source>Copied %1 item(s)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Nukopijuotas % 1 elementas (-ai)</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3117" />
         <source>QR Code not found</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">QR kodas nerastas</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3138" />
         <source>Unable to capture screen</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Nepavyko užfiksuoti ekrano</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3206" />
         <source>Remove %1 Unavailable item(s) ?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Pašalinti %1 nepasiekiamas elementas (-iai) ?</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3260" />
@@ -2973,7 +2973,7 @@ Daugiau informacijos rasite dokumente „Konfigūracija/DNS“.</translation>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3513" />
         <source>Remove %1?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Pašalinti %1?</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="4196" />
@@ -3141,7 +3141,7 @@ Daugiau informacijos rasite dokumente „Konfigūracija/DNS“.</translation>
     <message>
         <location filename="../../src/nekobox/ui/security/change_password.ui" line="20" />
         <source>Username</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Vartotojo vardas</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/change_password.ui" line="37" />
@@ -3159,12 +3159,12 @@ Daugiau informacijos rasite dokumente „Konfigūracija/DNS“.</translation>
     <message>
         <location filename="../../src/ui/profile/ProxyItem.cpp" line="39" />
         <source>Confirmation</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Patvirtinimas</translation>
     </message>
     <message>
         <location filename="../../src/ui/profile/ProxyItem.cpp" line="39" />
         <source>Remove %1?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Pašalinti %1?</translation>
     </message>
 </context>
 <context>
@@ -3172,7 +3172,7 @@ Daugiau informacijos rasite dokumente „Konfigūracija/DNS“.</translation>
     <message>
         <location filename="../../src/ui/security_addon.cpp" line="342" />
         <source>Security Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Saugos nustatymai</translation>
     </message>
 </context>
 <context>
@@ -3258,7 +3258,7 @@ Deleted %3 Profiles:
         <location filename="../../src/ui/profile/edit_ssh.cpp" line="28" />
         <location filename="../../src/ui/setting/dialog_basic_settings.cpp" line="244" />
         <source>Select</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Pasirinkite</translation>
     </message>
     <message>
         <location filename="../../src/stats/traffic/TrafficLooper.cpp" line="115" />
@@ -3285,7 +3285,7 @@ Direct: %2</source>
     <message>
         <location filename="../../src/sys/Settings.cpp" line="361" />
         <source>System</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Sistema</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="22" />
@@ -3391,7 +3391,7 @@ Deleted %1 Unavailable</source>
         <location filename="../../src/ui/mainwindow.cpp" line="4187" />
         <location filename="../../src/ui/mainwindow.cpp" line="4222" />
         <source>Update</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Atnaujinti</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="4102" />
@@ -3443,7 +3443,7 @@ Release note:
     <message>
         <location filename="../../src/ui/setting/dialog_vpn_settings.cpp" line="37" />
         <source>Exclude CIDR's</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Išskirkite CIDR</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/dialog_vpn_settings.cpp" line="46" />
@@ -3521,17 +3521,17 @@ Release note:
     <message>
         <location filename="../../src/main.cpp" line="71" />
         <source>Delete</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ištrinti</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="72" />
         <source>Select All</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Pasirinkite Viskas</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="73" />
         <source>Stop</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Sustok</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="74" />
@@ -3565,19 +3565,19 @@ Release note:
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="70" />
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="319" />
         <source>Name</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Vardas</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="78" />
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="187" />
         <source>Proxy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Proxy</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="83" />
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="217" />
         <source>Direct</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tiesioginis</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="88" />
@@ -3603,7 +3603,7 @@ Release note:
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="151" />
         <source>Basic</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Pagrindinis</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="248" />
@@ -3618,12 +3618,12 @@ Release note:
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="267" />
         <source>Rules</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Taisyklės</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="279" />
         <source>New</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Nauja</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="286" />
@@ -3638,7 +3638,7 @@ Release note:
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="300" />
         <source>Delete</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ištrinti</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="310" />
@@ -3658,7 +3658,7 @@ Release note:
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="374" />
         <source>Notes</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Pastabos</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="302" />
@@ -3686,7 +3686,7 @@ Release note:
     <message>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="441" />
         <source>Invalid operation</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Netinkama operacija</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="441" />
@@ -3715,7 +3715,7 @@ Release note:
     <message>
         <location filename="../../src/nekobox/ui/security/security.ui" line="14" />
         <source>Security Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Saugos nustatymai</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/security.ui" line="62" />
@@ -3783,7 +3783,7 @@ Release note:
     <message>
         <location filename="../../src/nekobox/ui/security/delete_or_edit_users.ui" line="14" />
         <source>Form</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Forma</translation>
     </message>
 </context>
 </TS>
