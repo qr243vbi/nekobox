@@ -551,17 +551,17 @@ sing-box-ൻ്റെ ബിൽറ്റ്-ഇൻ NTP ക്ലയൻ്റ്&
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1093" />
         <source>Number of retry attempts before considering a proxy as failed</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ഒരു പ്രോക്‌സി പരാജയപ്പെട്ടതായി പരിഗണിക്കുന്നതിന് മുമ്പ് വീണ്ടും ശ്രമിക്കാനുള്ള ശ്രമങ്ങളുടെ എണ്ണം</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1109" />
         <source>Test Target URL</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ടാർഗെറ്റ് URL പരീക്ഷിക്കുക</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1116" />
         <source>URL to test proxies against</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">പ്രോക്സികളെ പരീക്ഷിക്കുന്നതിനുള്ള URL</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1119" />
@@ -571,89 +571,89 @@ sing-box-ൻ്റെ ബിൽറ്റ്-ഇൻ NTP ക്ലയൻ്റ്&
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1126" />
         <source>Automatically switch to another working proxy when TUN mode proxy fails</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">TUN മോഡ് പ്രോക്സി പരാജയപ്പെടുമ്പോൾ മറ്റൊരു പ്രവർത്തിക്കുന്ന പ്രോക്സിയിലേക്ക് സ്വയമേവ മാറുക</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1129" />
         <source>Enable TUN Failover</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">TUN പരാജയം പ്രവർത്തനക്ഷമമാക്കുക</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1137" />
         <source>Startup</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">സ്റ്റാർട്ടപ്പ്</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1198" />
         <source>Geometry</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ജ്യാമിതി</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1227" />
         <source>Autosave geometry</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ജ്യാമിതി യാന്ത്രികമായി സംരക്ഷിക്കുക</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1234" />
         <source>Autosave position</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">സ്ഥാനം സ്വയമേവ സംരക്ഷിക്കുക</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1254" />
         <source>Apply now</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ഇപ്പോൾ അപേക്ഷിക്കുക</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1370" />
         <source>Width</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">വീതി</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1383" />
         <source>X</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">എക്സ്</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1416" />
         <source>Y</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">വൈ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1429" />
         <source>Height</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ഉയരം</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1516" />
         <source>Core Executable Path</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">കോർ എക്സിക്യൂട്ടബിൾ പാത്ത്</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1545" />
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1719" />
         <source>Use default</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">സ്ഥിരസ്ഥിതി ഉപയോഗിക്കുക</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1552" />
         <source>Remote Control</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">റിമോട്ട് കൺട്രോൾ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1578" />
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1752" />
         <source>Select</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">തിരഞ്ഞെടുക്കുക</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1690" />
         <source>Resources Directory</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">റിസോഴ്‌സ് ഡയറക്ടറി</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1726" />
         <source>Resource Manager</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">റിസോഴ്സ് മാനേജർ</translation>
     </message>
 </context>
 <context>
@@ -661,104 +661,104 @@ sing-box-ൻ്റെ ബിൽറ്റ്-ഇൻ NTP ക്ലയൻ്റ്&
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="20" />
         <source>Edit Group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ഗ്രൂപ്പ് എഡിറ്റ് ചെയ്യുക</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="36" />
         <source>Common</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">സാധാരണ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="102" />
         <source>Name</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">പേര്</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="109" />
         <source>Type</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ടൈപ്പ് ചെയ്യുക</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="117" />
         <source>Basic</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">അടിസ്ഥാനം</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="122" />
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="287" />
         <source>Subscription</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">സബ്സ്ക്രിപ്ഷൻ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="135" />
         <source>Manually column width</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">സ്വമേധയാ കോളം വീതി</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="142" />
         <source>Archive</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ആർക്കൈവ്</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="155" />
         <source>Proxy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">പ്രോക്സി</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="194" />
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="221" />
         <source>None</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ഒന്നുമില്ല</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="201" />
         <source>Front Proxy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ഫ്രണ്ട് പ്രോക്സി</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="208" />
         <source>Landing Proxy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ലാൻഡിംഗ് പ്രോക്സി</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="232" />
         <source>Share</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">പങ്കിടുക</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="238" />
         <source>Copy profile share links</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">പ്രൊഫൈൽ പങ്കിടൽ ലിങ്കുകൾ പകർത്തുക</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="245" />
         <source>Copy profile share links (Custom Links)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">പ്രൊഫൈൽ പങ്കിടൽ ലിങ്കുകൾ പകർത്തുക (ഇഷ്‌ടാനുസൃത ലിങ്കുകൾ)</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="253" />
         <source>Notes</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">കുറിപ്പുകൾ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="314" />
         <source>Skip automatic update</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">യാന്ത്രിക അപ്‌ഡേറ്റ് ഒഴിവാക്കുക</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="58" />
         <source>Copied</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">പകർത്തി</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="357" />
         <source>Warning</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">മുന്നറിയിപ്പ്</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="357" />
         <source>Please input URL</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ദയവായി URL നൽകുക</translation>
     </message>
 </context>
 <context>
@@ -767,112 +767,112 @@ sing-box-ൻ്റെ ബിൽറ്റ്-ഇൻ NTP ക്ലയൻ്റ്&
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="26" />
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="662" />
         <source>Edit</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">എഡിറ്റ് ചെയ്യുക</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="56" />
         <source>Common</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">സാധാരണ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="73" />
         <source>Type</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ടൈപ്പ് ചെയ്യുക</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="80" />
         <source>Port</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">തുറമുഖം</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="87" />
         <source>Address</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">വിലാസം</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="94" />
         <source>Name</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">പേര്</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="139" />
         <source>Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ക്രമീകരണങ്ങൾ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="166" />
         <source>The underlying transport method. It must be consistent with the server, otherwise, the connection cannot be established.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">അടിസ്ഥാന ഗതാഗത രീതി.ഇത് സെർവറുമായി പൊരുത്തപ്പെടണം, അല്ലാത്തപക്ഷം, കണക്ഷൻ സ്ഥാപിക്കാൻ കഴിയില്ല.</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="169" />
         <source>Network</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">നെറ്റ്വർക്ക്</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="226" />
         <source>Server support is required</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">സെർവർ പിന്തുണ ആവശ്യമാണ്</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="229" />
         <source>Multiplex</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">മൾട്ടിപ്ലക്സ്</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="236" />
         <source>Transport Layer Security. It must be consistent with the server, otherwise, the connection cannot be established.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ഗതാഗത പാളി സുരക്ഷ.ഇത് സെർവറുമായി പൊരുത്തപ്പെടണം, അല്ലാത്തപക്ഷം, കണക്ഷൻ സ്ഥാപിക്കാൻ കഴിയില്ല.</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="239" />
         <source>Security</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">സുരക്ഷ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="260" />
         <source>UDP FullCone Packet encoding for implementing features such as UDP FullCone. Server support is required, if the wrong selection is made, the connection cannot be made. Please leave it blank.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">UDP FullCone പോലുള്ള സവിശേഷതകൾ നടപ്പിലാക്കുന്നതിനുള്ള UDP FullCone പാക്കറ്റ് എൻകോഡിംഗ്.സെർവർ പിന്തുണ ആവശ്യമാണ്, തെറ്റായ തിരഞ്ഞെടുപ്പ് നടത്തിയാൽ, കണക്ഷൻ ചെയ്യാൻ കഴിയില്ല.ദയവായി ഇത് ശൂന്യമായി വിടുക.</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="263" />
         <source>Packet Encoding</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">പാക്കറ്റ് എൻകോഡിംഗ്</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="271" />
         <source>Keep Default</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">സ്ഥിരസ്ഥിതിയായി സൂക്ഷിക്കുക</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="276" />
         <source>On</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ഓൺ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="281" />
         <source>Off</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ഓഫ്</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="294" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Overrides mux to On&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;മക്‌സ് ഓൺ എന്നതിലേക്ക് അസാധുവാക്കുന്നു&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="297" />
         <source>Enable TCP Brutal</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">TCP ബ്രൂട്ടൽ പ്രവർത്തനക്ഷമമാക്കുക</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="311" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Server to Client TCP Brutal Speed&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;സെർവർ ടു ക്ലയൻ്റ് TCP ബ്രൂട്ടൽ സ്പീഡ്&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="314" />
         <source>TCP Brutal Speed</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">TCP ക്രൂരമായ വേഗത</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="324" />
@@ -1102,7 +1102,7 @@ sing-box-ൻ്റെ ബിൽറ്റ്-ഇൻ NTP ക്ലയൻ്റ്&
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="442" />
         <location filename="../../src/ui/setting/RouteItem.cpp" line="140" />
         <source>Proxy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">പ്രോക്സി</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="445" />
@@ -1113,7 +1113,7 @@ sing-box-ൻ്റെ ബിൽറ്റ്-ഇൻ NTP ക്ലയൻ്റ്&
     <message>
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="449" />
         <source>None</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ഒന്നുമില്ല</translation>
     </message>
     <message>
         <location filename="../../src/ui/profile/edit_chain.cpp" line="46" />
@@ -1222,7 +1222,7 @@ sing-box-ൻ്റെ ബിൽറ്റ്-ഇൻ NTP ക്ലയൻ്റ്&
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="24" />
         <source>Common</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">സാധാരണ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="39" />
@@ -1318,7 +1318,7 @@ sing-box-ൻ്റെ ബിൽറ്റ്-ഇൻ NTP ക്ലയൻ്റ്&
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="216" />
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="312" />
         <source>Listen Port</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">പോർട്ട് കേൾക്കൂ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="226" />
@@ -1344,7 +1344,7 @@ sing-box-ൻ്റെ ബിൽറ്റ്-ഇൻ NTP ക്ലയൻ്റ്&
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="280" />
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="319" />
         <source>Enable</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">പ്രവർത്തനക്ഷമമാക്കുക</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="287" />
@@ -1364,7 +1364,7 @@ sing-box-ൻ്റെ ബിൽറ്റ്-ഇൻ NTP ക്ലയൻ്റ്&
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="329" />
         <source>Listen Address</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">വിലാസം കേൾക്കുക</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="340" />
@@ -1472,7 +1472,7 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="613" />
         <source>Edit</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">എഡിറ്റ് ചെയ്യുക</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="620" />
@@ -1569,7 +1569,7 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_anytls.ui" line="20" />
         <source>Password</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">രഹസ്യവാക്ക്</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_anytls.ui" line="30" />
@@ -1610,7 +1610,7 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_custom.ui" line="28" />
         <source>Core</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">കോർ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_custom.ui" line="41" />
@@ -1711,12 +1711,12 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="20" />
         <source>Username</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ഉപയോക്തൃനാമം</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="30" />
         <source>Password</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">രഹസ്യവാക്ക്</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="40" />
@@ -1810,7 +1810,7 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="243" />
         <source>Password</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">രഹസ്യവാക്ക്</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="257" />
@@ -1854,7 +1854,7 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="30" />
         <source>Password</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">രഹസ്യവാക്ക്</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="40" />
@@ -1912,7 +1912,7 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="54" />
         <source>Password</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">രഹസ്യവാക്ക്</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="80" />
@@ -1922,7 +1922,7 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="94" />
         <source>Off</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ഓഫ്</translation>
     </message>
 </context>
 <context>
@@ -1935,7 +1935,7 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="27" />
         <source>Password</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">രഹസ്യവാക്ക്</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="38" />
@@ -1963,12 +1963,12 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="33" />
         <source>Username</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ഉപയോക്തൃനാമം</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="54" />
         <source>Password</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">രഹസ്യവാക്ക്</translation>
     </message>
 </context>
 <context>
@@ -2077,7 +2077,7 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_trojan_vless.ui" line="23" />
         <source>Password</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">രഹസ്യവാക്ക്</translation>
     </message>
 </context>
 <context>
@@ -2085,7 +2085,7 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_vmess.ui" line="52" />
         <source>Security</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">സുരക്ഷ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_vmess.ui" line="59" />
@@ -2183,7 +2183,7 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="132" />
         <source>Enable</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">പ്രവർത്തനക്ഷമമാക്കുക</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="139" />
@@ -2241,7 +2241,7 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/group/GroupItem.ui" line="76" />
         <source>Edit</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">എഡിറ്റ് ചെയ്യുക</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/GroupItem.ui" line="89" />
@@ -2251,17 +2251,17 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="129" />
         <source>Basic</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">അടിസ്ഥാനം</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="129" />
         <source>Subscription</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">സബ്സ്ക്രിപ്ഷൻ</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="130" />
         <source>Archive</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ആർക്കൈവ്</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="142" />
@@ -2298,7 +2298,7 @@ For more information, see the document "Configuration/DNS".</source>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="73" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="76" />
         <source>Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ക്രമീകരണങ്ങൾ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="95" />
@@ -2339,19 +2339,19 @@ For more information, see the document "Configuration/DNS".</source>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="309" />
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="139" />
         <source>Type</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ടൈപ്പ് ചെയ്യുക</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="314" />
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="142" />
         <source>Address</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">വിലാസം</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="319" />
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="145" />
         <source>Name</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">പേര്</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="324" />
@@ -2444,7 +2444,7 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="631" />
         <source>Share</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">പങ്കിടുക</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="641" />
@@ -2479,7 +2479,7 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="721" />
         <source>Basic Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">അടിസ്ഥാന ക്രമീകരണങ്ങൾ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="726" />
@@ -2508,7 +2508,7 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="752" />
         <source>Edit</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">എഡിറ്റ് ചെയ്യുക</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="760" />
@@ -2575,7 +2575,7 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="860" />
         <source>Remove Duplicates</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ഡ്യൂപ്ലിക്കേറ്റുകൾ നീക്കം ചെയ്യുക</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="868" />
@@ -2607,7 +2607,7 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="908" />
         <source>Remove Unavailable</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ലഭ്യമല്ലാത്തത് നീക്കം ചെയ്യുക</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="916" />
@@ -2708,7 +2708,7 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1086" />
         <source>Remove Invalid</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">അസാധുവായ നീക്കം ചെയ്യുക</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1089" />
@@ -3144,7 +3144,7 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/security/change_password.ui" line="20" />
         <source>Username</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ഉപയോക്തൃനാമം</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/change_password.ui" line="37" />
@@ -3261,7 +3261,7 @@ Deleted %3 Profiles:
         <location filename="../../src/ui/profile/edit_ssh.cpp" line="28" />
         <location filename="../../src/ui/setting/dialog_basic_settings.cpp" line="245" />
         <source>Select</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">തിരഞ്ഞെടുക്കുക</translation>
     </message>
     <message>
         <location filename="../../src/stats/traffic/TrafficLooper.cpp" line="115" />
@@ -3288,7 +3288,7 @@ Direct: %2</source>
     <message>
         <location filename="../../src/sys/Settings.cpp" line="362" />
         <source>System</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">സിസ്റ്റം</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="22" />
