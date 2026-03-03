@@ -304,7 +304,10 @@ bool WriteFileText(QFile &file, const QString &notes) {
 }
 
 QString MkUDS(){
+  QString ret;
   #ifdef Q_OS_WIN
+  ret = "\\\\.\\pipe\\";
+  ret += 
   #else
   #endif
 }
