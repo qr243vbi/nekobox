@@ -1419,52 +1419,52 @@ Další informace naleznete v dokumentu „Konfigurace/DNS“.</translation>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="514" />
         <source>Enable FakeIP</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Povolit FakeIP</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="524" />
         <source>DNS Object Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Nastavení objektu DNS</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="532" />
         <source>Use DNS Object</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Použít objekt DNS</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="545" />
         <source>Format</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Formát</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="558" />
         <source>Document</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Dokument</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="574" />
         <source>Route</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Trasa</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="580" />
         <source>Routing Profiles</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Směrovací profily</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="592" />
         <source>New</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Nový</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="599" />
         <source>Clone</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Klonovat</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="606" />
         <source>Export</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Vývozní</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="613" />
@@ -1474,43 +1474,43 @@ Další informace naleznete v dokumentu „Konfigurace/DNS“.</translation>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="620" />
         <source>Delete</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Vymazat</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="30" />
         <source>Invalid state</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Neplatný stav</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="30" />
         <source>The list of routing profiles is empty, this should be an unreachable state, crashes may occur now</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Seznam směrovacích profilů je prázdný, tento stav by měl být nedosažitelný, nyní může docházet k pádům</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="203" />
         <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="207" />
         <source>Invalid settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Neplatná nastavení</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="203" />
         <source>Routing profile cannot be empty</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Směrovací profil nemůže být prázdný</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="207" />
         <source>DNS Rules are not valid</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Pravidla DNS nejsou platná</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="315" />
         <source>Invalid operation</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Neplatná operace</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="315" />
         <source>Routing Profiles cannot be empty, try adding another profile or editing this one</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Směrovací profily nemohou být prázdné, zkuste přidat jiný profil nebo upravit tento</translation>
     </message>
 </context>
 <context>
@@ -1518,47 +1518,47 @@ Další informace naleznete v dokumentu „Konfigurace/DNS“.</translation>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="14" />
         <source>Tun Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Nastavení ladění</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="85" />
         <source>Tun Enable IPv6</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tun Enable IPv6</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="92" />
         <source>Strict Route</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Přísná trasa</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="99" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;When enabled, Direct IP CIDRs and rule sets will also be added to the Tun setting to be excluded at OS routing level. IMPORTANT: Large rule sets have been reported to cause massive CPU usage in windows, please enable this option with caution.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Pokud je povoleno, budou do nastavení Tun přidány také přímé IP CIDR a sady pravidel, aby byly vyloučeny na úrovni směrování OS.DŮLEŽITÉ: Bylo hlášeno, že velké sady pravidel způsobují masivní využití procesoru v systému Windows. Povolte tuto možnost opatrně.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="102" />
         <source>Enable Tun Routing</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Povolit směrování Tun</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="109" />
         <source>AutoRedirect</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Automatické přesměrování</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="125" />
         <source>Tun address</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tun adresu</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="135" />
         <source>Tun ipv6 address</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Najdi adresu ipv6</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="150" />
         <source>Exclude CIDR's</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Vyloučit CIDR</translation>
     </message>
 </context>
 <context>
@@ -1571,17 +1571,17 @@ Další informace naleznete v dokumentu „Konfigurace/DNS“.</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_anytls.ui" line="30" />
         <source>Idle Session Check Interval</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Interval kontroly nečinnosti relace</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_anytls.ui" line="40" />
         <source>Idle Session Timeout</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Časový limit nečinné relace</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_anytls.ui" line="50" />
         <source>Min Idle Session</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Minimální nečinná relace</translation>
     </message>
 </context>
 <context>
@@ -1589,17 +1589,17 @@ Další informace naleznete v dokumentu „Konfigurace/DNS“.</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_chain.ui" line="20" />
         <source>Traffic order is from top to bottom</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Pořadí provozu je shora dolů</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_chain.ui" line="49" />
         <source>Select Profile</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Vyberte Profil</translation>
     </message>
     <message>
         <location filename="../../src/ui/profile/edit_chain.cpp" line="28" />
         <source>Name cannot be empty.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Název nemůže být prázdný.</translation>
     </message>
 </context>
 <context>
@@ -1612,22 +1612,22 @@ Další informace naleznete v dokumentu „Konfigurace/DNS“.</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_custom.ui" line="41" />
         <source>Json Editor</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Editor Json</translation>
     </message>
     <message>
         <location filename="../../src/ui/profile/edit_custom.cpp" line="53" />
         <source>Outbound JSON, please read the documentation.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Odchozí JSON, přečtěte si dokumentaci.</translation>
     </message>
     <message>
         <location filename="../../src/ui/profile/edit_custom.cpp" line="55" />
         <source>Please fill the complete config.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Vyplňte prosím kompletní konfiguraci.</translation>
     </message>
     <message>
         <location filename="../../src/ui/profile/edit_custom.cpp" line="64" />
         <source>Name cannot be empty.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Název nemůže být prázdný.</translation>
     </message>
 </context>
 <context>
@@ -1635,12 +1635,12 @@ Další informace naleznete v dokumentu „Konfigurace/DNS“.</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="14" />
         <source>Form</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Formulář</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="29" />
         <source>Socks address</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Adresa ponožek</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="36" />
@@ -1650,52 +1650,52 @@ Další informace naleznete v dokumentu „Konfigurace/DNS“.</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="43" />
         <source>Socks port</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Port na ponožky</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="50" />
         <source>1080</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">1080</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="78" />
         <source>Core path</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Hlavní cesta</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="95" />
         <source>Choose from file</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Vyberte ze souboru</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="114" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;args to pass to the executable. You can insert a single %s and it will be replaced with the path to a file containing the config entered below.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;argumenty pro předání spustitelnému souboru.Můžete vložit jeden %s a ten bude nahrazen cestou k souboru obsahujícímu níže zadanou konfiguraci.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="117" />
         <source>Args</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Args</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="124" />
         <source>run -confPath %s</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">spustit -confPath %s</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="131" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;contents of the config file that will be passed to the extra core process if %s is specified in the args&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;obsah konfiguračního souboru, který bude předán dalšímu základnímu procesu, pokud je v argumentech uvedeno %s&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="134" />
         <source>Config</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Konfigurace</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="144" />
         <source>No logs</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Žádné protokoly</translation>
     </message>
 </context>
 <context>
@@ -1718,17 +1718,17 @@ Další informace naleznete v dokumentu „Konfigurace/DNS“.</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="40" />
         <source>Port range</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Rozsah portů</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="55" />
         <source>Multiplexing</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Multiplexování</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="92" />
         <source>Transport</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Doprava</translation>
     </message>
 </context>
 <context>
@@ -1736,73 +1736,73 @@ Další informace naleznete v dokumentu „Konfigurace/DNS“.</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="24" />
         <source>Heartbeat</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tlukot srdce</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="45" />
         <source>Download (Mbps)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Stáhnout (Mbps)</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="69" />
         <source>Upload (Mbps)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Nahrát (Mb/s)</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="81" />
         <source>Zero Rtt Handshake</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Handshake s nulovým Rtt</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="90" />
         <source>UDP Relay Mode</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Režim přenosu UDP</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="115" />
         <source>Congestion Control</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kontrola přetížení</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="147" />
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="177" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Comma seperated ranges: 100:200,500:600&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Čárkami oddělené rozsahy: 100:200,500:600&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="154" />
         <source>Obfs Password</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Heslo Obfs</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="170" />
         <source>Disable MTU Discovery</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Zakázat MTU Discovery</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="180" />
         <source>Port range</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Rozsah portů</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="190" />
         <source>Hop Interval</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Hop Interval</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="197" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;100ms&lt;br/&gt;1s&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;100 ms&lt;br/&gt;1 s&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="217" />
         <source>Auth Type</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Typ ověření</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="230" />
         <source>Auth Payload</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Auth Payload</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="243" />
@@ -1812,28 +1812,28 @@ Další informace naleznete v dokumentu „Konfigurace/DNS“.</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="257" />
         <source>Generate UUID</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Vygenerovat UUID</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="293" />
         <location filename="../../src/ui/profile/edit_quic.cpp" line="149" />
         <source>Certificate</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Osvědčení</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="310" />
         <source>Disable SNI</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Zakázat SNI</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="327" />
         <source>SNI</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">SNI</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="334" />
         <source>Allow Insecure</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Povolit Nezabezpečené</translation>
     </message>
 </context>
 <context>
@@ -1846,7 +1846,7 @@ Další informace naleznete v dokumentu „Konfigurace/DNS“.</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="20" />
         <source>User</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Uživatel</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="30" />
@@ -1856,37 +1856,37 @@ Další informace naleznete v dokumentu „Konfigurace/DNS“.</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="40" />
         <source>Private Key</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Soukromý klíč</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="50" />
         <source>Private Key Password</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Heslo soukromého klíče</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="60" />
         <source>Host Key</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Klíč hostitele</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="70" />
         <source>Host Key Algorithms</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Algoritmy hostitelského klíče</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="80" />
         <source>Client Version</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Verze klienta</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="93" />
         <source>Private Key Path</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Cesta soukromého klíče</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="103" />
         <source>Choose File</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Vyberte Soubor</translation>
     </message>
 </context>
 <context>
@@ -1894,17 +1894,17 @@ Další informace naleznete v dokumentu „Konfigurace/DNS“.</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="30" />
         <source>Plugin</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Plugin</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="37" />
         <source>Encryption</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Šifrování</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="44" />
         <source>Plugin Args</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Plugin Args</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="54" />
@@ -1914,12 +1914,12 @@ Další informace naleznete v dokumentu „Konfigurace/DNS“.</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="80" />
         <source>Version of UDP over TCP protocol, server support is required.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Verze protokolu UDP přes TCP, je vyžadována podpora serveru.</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="94" />
         <source>Off</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Vypnuto</translation>
     </message>
 </context>
 <context>
@@ -1927,7 +1927,7 @@ Další informace naleznete v dokumentu „Konfigurace/DNS“.</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="20" />
         <source>Version</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Verze</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="27" />
@@ -1937,17 +1937,17 @@ Další informace naleznete v dokumentu „Konfigurace/DNS“.</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="38" />
         <source>1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">1</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="43" />
         <source>2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">2</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="48" />
         <source>3</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">3</translation>
     </message>
 </context>
 <context>
@@ -1955,7 +1955,7 @@ Další informace naleznete v dokumentu „Konfigurace/DNS“.</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="20" />
         <source>Version</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Verze</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="33" />
@@ -1973,57 +1973,57 @@ Další informace naleznete v dokumentu „Konfigurace/DNS“.</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="14" />
         <source>Form</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Formulář</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="20" />
         <source>State directory</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Státní adresář</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="30" />
         <source>Auth key</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ověřovací klíč</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="40" />
         <source>Control URL</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kontrolní URL</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="50" />
         <source>Hostname</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Název hostitele</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="60" />
         <source>Accept routes</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Přijměte trasy</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="67" />
         <source>Ephemeral</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Efemérní</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="74" />
         <source>Exit node allow lan access</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Výstupní uzel umožňuje přístup k místní síti</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="81" />
         <source>Advertise exit node</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Inzerujte výstupní uzel</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="88" />
         <source>Exit node</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Výstupní uzel</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="98" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;comma seperated list of subnets&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;seznam podsítí oddělených čárkami&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="101" />
