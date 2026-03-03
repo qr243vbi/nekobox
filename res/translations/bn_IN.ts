@@ -551,17 +551,17 @@ sing-box এর অন্তর্নির্মিত NTP ক্লায়�
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1093" />
         <source>Number of retry attempts before considering a proxy as failed</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">একটি প্রক্সিকে ব্যর্থ হিসাবে বিবেচনা করার আগে পুনঃপ্রচেষ্টার সংখ্যা</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1109" />
         <source>Test Target URL</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">লক্ষ্য ইউআরএল পরীক্ষা করুন</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1116" />
         <source>URL to test proxies against</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">প্রক্সির বিরুদ্ধে পরীক্ষা করার জন্য URL</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1119" />
@@ -571,89 +571,89 @@ sing-box এর অন্তর্নির্মিত NTP ক্লায়�
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1126" />
         <source>Automatically switch to another working proxy when TUN mode proxy fails</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">TUN মোড প্রক্সি ব্যর্থ হলে স্বয়ংক্রিয়ভাবে অন্য কার্যকরী প্রক্সিতে স্যুইচ করুন</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1129" />
         <source>Enable TUN Failover</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">TUN ফেইলওভার সক্ষম করুন৷</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1137" />
         <source>Startup</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">স্টার্টআপ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1198" />
         <source>Geometry</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">জ্যামিতি</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1227" />
         <source>Autosave geometry</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">অটোসেভ জ্যামিতি</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1234" />
         <source>Autosave position</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">স্বয়ংক্রিয় সংরক্ষণ অবস্থান</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1254" />
         <source>Apply now</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">এখনই আবেদন করুন</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1370" />
         <source>Width</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">প্রস্থ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1383" />
         <source>X</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">এক্স</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1416" />
         <source>Y</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Y</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1429" />
         <source>Height</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">উচ্চতা</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1516" />
         <source>Core Executable Path</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">কোর এক্সিকিউটেবল পাথ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1545" />
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1719" />
         <source>Use default</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ডিফল্ট ব্যবহার করুন</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1552" />
         <source>Remote Control</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">রিমোট কন্ট্রোল</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1578" />
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1752" />
         <source>Select</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">নির্বাচন করুন</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1690" />
         <source>Resources Directory</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">সম্পদ ডিরেক্টরি</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1726" />
         <source>Resource Manager</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">রিসোর্স ম্যানেজার</translation>
     </message>
 </context>
 <context>
@@ -661,12 +661,12 @@ sing-box এর অন্তর্নির্মিত NTP ক্লায়�
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="20" />
         <source>Edit Group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">গ্রুপ সম্পাদনা করুন</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="36" />
         <source>Common</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">সাধারণ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="102" />
@@ -676,7 +676,7 @@ sing-box এর অন্তর্নির্মিত NTP ক্লায়�
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="109" />
         <source>Type</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">টাইপ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="117" />
@@ -687,17 +687,17 @@ sing-box এর অন্তর্নির্মিত NTP ক্লায়�
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="122" />
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="287" />
         <source>Subscription</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">সাবস্ক্রিপশন</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="135" />
         <source>Manually column width</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ম্যানুয়ালি কলামের প্রস্থ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="142" />
         <source>Archive</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">সংরক্ষণাগার</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="155" />
@@ -708,32 +708,32 @@ sing-box এর অন্তর্নির্মিত NTP ক্লায়�
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="194" />
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="221" />
         <source>None</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">কোনোটিই নয়</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="201" />
         <source>Front Proxy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ফ্রন্ট প্রক্সি</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="208" />
         <source>Landing Proxy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ল্যান্ডিং প্রক্সি</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="232" />
         <source>Share</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">শেয়ার করুন</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="238" />
         <source>Copy profile share links</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">প্রোফাইল শেয়ার লিঙ্ক কপি</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="245" />
         <source>Copy profile share links (Custom Links)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">প্রোফাইল শেয়ার লিঙ্ক কপি করুন (কাস্টম লিঙ্ক)</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="253" />
@@ -743,22 +743,22 @@ sing-box এর অন্তর্নির্মিত NTP ক্লায়�
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="314" />
         <source>Skip automatic update</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">স্বয়ংক্রিয় আপডেট এড়িয়ে যান</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="58" />
         <source>Copied</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">কপি করা হয়েছে</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="357" />
         <source>Warning</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">সতর্কতা</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="357" />
         <source>Please input URL</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">অনুগ্রহ করে ইনপুট URL</translation>
     </message>
 </context>
 <context>
@@ -767,27 +767,27 @@ sing-box এর অন্তর্নির্মিত NTP ক্লায়�
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="26" />
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="662" />
         <source>Edit</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">সম্পাদনা করুন</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="56" />
         <source>Common</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">সাধারণ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="73" />
         <source>Type</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">টাইপ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="80" />
         <source>Port</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">বন্দর</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="87" />
         <source>Address</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ঠিকানা</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="94" />
@@ -797,235 +797,235 @@ sing-box এর অন্তর্নির্মিত NTP ক্লায়�
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="139" />
         <source>Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">সেটিংস</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="166" />
         <source>The underlying transport method. It must be consistent with the server, otherwise, the connection cannot be established.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">অন্তর্নিহিত পরিবহন পদ্ধতি।এটি সার্ভারের সাথে সামঞ্জস্যপূর্ণ হতে হবে, অন্যথায়, সংযোগ স্থাপন করা যাবে না।</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="169" />
         <source>Network</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">নেটওয়ার্ক</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="226" />
         <source>Server support is required</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">সার্ভার সমর্থন প্রয়োজন</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="229" />
         <source>Multiplex</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">মাল্টিপ্লেক্স</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="236" />
         <source>Transport Layer Security. It must be consistent with the server, otherwise, the connection cannot be established.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">পরিবহন স্তর নিরাপত্তা.এটি সার্ভারের সাথে সামঞ্জস্যপূর্ণ হতে হবে, অন্যথায়, সংযোগ স্থাপন করা যাবে না।</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="239" />
         <source>Security</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">নিরাপত্তা</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="260" />
         <source>UDP FullCone Packet encoding for implementing features such as UDP FullCone. Server support is required, if the wrong selection is made, the connection cannot be made. Please leave it blank.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">UDP FullCone এর মতো বৈশিষ্ট্যগুলি বাস্তবায়নের জন্য UDP FullCone প্যাকেট এনকোডিং।সার্ভার সমর্থন প্রয়োজন, যদি ভুল নির্বাচন করা হয়, সংযোগ করা যাবে না।এটা ফাঁকা ছেড়ে দিন.</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="263" />
         <source>Packet Encoding</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">প্যাকেট এনকোডিং</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="271" />
         <source>Keep Default</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ডিফল্ট রাখুন</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="276" />
         <source>On</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">চালু</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="281" />
         <source>Off</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">বন্ধ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="294" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Overrides mux to On&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;অন-এ mux ওভাররাইড করে&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="297" />
         <source>Enable TCP Brutal</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">TCP Brutal সক্ষম করুন</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="311" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Server to Client TCP Brutal Speed&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;সার্ভার থেকে ক্লায়েন্ট TCP নৃশংস গতি&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="314" />
         <source>TCP Brutal Speed</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">TCP নৃশংস গতি</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="324" />
         <source>Mb/s</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Mb/s</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="345" />
         <source>Custom Outbound Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">কাস্টম আউটবাউন্ড সেটিংস</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="361" />
         <source>Custom Config Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">কাস্টম কনফিগারেশন সেটিংস</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="381" />
         <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="696" />
         <source>Apply settings to this group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">এই গ্রুপে সেটিংস প্রয়োগ করুন</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="436" />
         <source>Network Settings (%1)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">নেটওয়ার্ক সেটিংস (%1)</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="458" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="541" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Method of http request, will be converted to uppercase&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;http অনুরোধের পদ্ধতি, বড় হাতের অক্ষরে রূপান্তরিত হবে&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="544" />
         <source>Method</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">পদ্ধতি</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="578" />
         <source>header type</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">হেডার টাইপ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="594" />
         <source>TLS Security Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">TLS নিরাপত্তা সেটিংস</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="611" />
         <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="627" />
         <source>Certificate</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">সার্টিফিকেট</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="638" />
         <source>When enabled, V2Ray will not check the validity of the TLS certificate provided by the remote host (the security is equivalent to plaintext)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">সক্রিয় করা হলে, V2Ray দূরবর্তী হোস্ট দ্বারা প্রদত্ত TLS শংসাপত্রের বৈধতা পরীক্ষা করবে না (নিরাপত্তা প্লেইনটেক্সটের সমতুল্য)</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="641" />
         <source>Allow insecure</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">অনিরাপদ অনুমতি দিন</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="648" />
         <source>Enable ECH</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ECH সক্ষম করুন</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="655" />
         <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="638" />
         <source>ECH Config</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ECH কনফিগারেশন</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="673" />
         <source>QSN</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">QSN</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="680" />
         <source>Server name indication, clear text.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">সার্ভার নামের ইঙ্গিত, পরিষ্কার পাঠ্য।</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="693" />
         <source>Application layer protocol negotiation, clear text. Please separate them with commas.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">অ্যাপ্লিকেশন স্তর প্রোটোকল আলোচনা, পরিষ্কার পাঠ্য.অনুগ্রহ করে কমা দিয়ে আলাদা করুন।</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="720" />
         <source>TLS Camouflage Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">TLS ক্যামোফ্লেজ সেটিংস</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="774" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;May degrade performance, try record fragment first&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;কর্মক্ষমতা হ্রাস পেতে পারে, প্রথমে রেকর্ড টুকরো চেষ্টা করুন&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="777" />
         <source>Enable TLS fragment</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">TLS খণ্ড সক্ষম করুন</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="784" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;time format, like 500ms, 10ms etc&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;সময় বিন্যাস, যেমন 500ms, 10ms ইত্যাদি&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="787" />
         <source>Fallback Delay</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ফলব্যাক বিলম্ব</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="800" />
         <source>Enable TLS Record Fragment</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">TLS রেকর্ড ফ্র্যাগমেন্ট সক্ষম করুন</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="839" />
         <source>Reality public key. If not empty, turn TLS into REALITY.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">বাস্তবতা পাবলিক কী।খালি না হলে, TLS কে বাস্তবে পরিণত করুন।</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="852" />
         <source>Reality short id. Accept only one value.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">বাস্তব সংক্ষিপ্ত আইডি।শুধুমাত্র একটি মান গ্রহণ করুন.</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="855" />
         <source>Reality SID</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">বাস্তবতা SID</translation>
     </message>
     <message>
         <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="219" />
         <source>Custom (%1 outbound)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">কাস্টম (% 1 আউটবাউন্ড)</translation>
     </message>
     <message>
         <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="221" />
         <source>Custom (%1 config)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">কাস্টম (% 1 কনফিগারেশন)</translation>
     </message>
     <message>
         <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="223" />
         <source>Extra Core</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">অতিরিক্ত কোর</translation>
     </message>
     <message>
         <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="585" />
@@ -1034,7 +1034,7 @@ sing-box এর অন্তর্নির্মিত NTP ক্লায়�
         <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="600" />
         <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="608" />
         <source>Not set</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">সেট করা হয়নি</translation>
     </message>
     <message>
         <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="587" />
@@ -1043,12 +1043,12 @@ sing-box এর অন্তর্নির্মিত NTP ক্লায়�
         <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="602" />
         <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="610" />
         <source>Already set</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ইতিমধ্যে সেট</translation>
     </message>
     <message>
         <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="668" />
         <source>Confirm</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">নিশ্চিত করুন</translation>
     </message>
 </context>
 <context>
@@ -1056,47 +1056,47 @@ sing-box এর অন্তর্নির্মিত NTP ক্লায়�
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="14" />
         <source>Landing proxy for group Group2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">গ্রুপ গ্রুপ 2 এর জন্য ল্যান্ডিং প্রক্সি</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="41" />
         <source>Proxy:</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">প্রক্সি:</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="48" />
         <source>Search:</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">অনুসন্ধান:</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="68" />
         <source>Group1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">গ্রুপ 1</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="74" />
         <source>Group2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">গ্রুপ 2</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="414" />
         <source>Front proxy for group %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">গ্রুপ %1-এর জন্য সামনের প্রক্সি</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="416" />
         <source>Front proxy: </source>
-        <translation type="unfinished" />
+        <translation type="unfinished">সামনের প্রক্সি:</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="427" />
         <source>Landing proxy for group %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">গ্রুপ %1 এর জন্য ল্যান্ডিং প্রক্সি</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="429" />
         <source>Landing proxy: </source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ল্যান্ডিং প্রক্সি:</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="442" />
@@ -1113,7 +1113,7 @@ sing-box এর অন্তর্নির্মিত NTP ক্লায়�
     <message>
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="449" />
         <source>None</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">কোনোটিই নয়</translation>
     </message>
     <message>
         <location filename="../../src/ui/profile/edit_chain.cpp" line="46" />
