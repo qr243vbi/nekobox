@@ -59,6 +59,7 @@ namespace Configs {
         // Custom system parameters: format "hwid=value,os=value,osVersion=value,model=value"
         // Running
         int core_port = 19810;
+        QString core_pipe_path;
         int started_id = -1919;
         bool core_running = false;
         bool prepare_exit = false;
