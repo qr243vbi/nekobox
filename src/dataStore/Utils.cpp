@@ -304,7 +304,9 @@ bool WriteFileText(QFile &file, const QString &notes) {
 }
 
 QString MkUDS(){
-  return "";
+  #ifdef Q_OS_WIN
+  #else
+  #endif
 }
 
 int MkPort() {
