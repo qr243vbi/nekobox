@@ -40,7 +40,8 @@ void MainWindow::setup_rpc() {
             MW_show_log("[Error] Core: " + errStr);
         },
         QString("127.0.0.1") + ":" +
-        QString::number(Configs::dataStore->core_port));
+        QString::number(Configs::dataStore->core_port)
+    );
 
     // Looper
     runOnNewThread([=] { Stats::trafficLooper->Loop(); });
