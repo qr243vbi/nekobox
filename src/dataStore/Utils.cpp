@@ -307,9 +307,15 @@ QString MkUDS(){
   QString ret;
   #ifdef Q_OS_WIN
   ret = "\\\\.\\pipe\\";
-  ret += software_name + "_" + software_core_name + "_" GetRandomString(16);
+  ret += software_name 
+      + "_" + software_core_name 
+      + "_" GetRandomString(16);
   #else
   ret = Configs::GetBasePath();
+  ret += "/temp/" + software_name 
+      + "_" + software_core_name 
+      + "_" + GetRandomString(16) 
+      + ".sock";
   #endif
 }
 
