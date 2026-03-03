@@ -643,12 +643,12 @@ phút&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1683" />
         <source>Resources Directory</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Thư mục tài nguyên</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1719" />
         <source>Resource Manager</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Trình quản lý tài nguyên</translation>
     </message>
 </context>
 <context>
@@ -656,7 +656,7 @@ phút&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="20" />
         <source>Edit Group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Chỉnh sửa nhóm</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="36" />
@@ -687,7 +687,7 @@ phút&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="135" />
         <source>Manually column width</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Chiều rộng cột thủ công</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="142" />
@@ -708,12 +708,12 @@ phút&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="201" />
         <source>Front Proxy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Proxy trước</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="208" />
         <source>Landing Proxy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Proxy đích</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="232" />
@@ -723,12 +723,12 @@ phút&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="238" />
         <source>Copy profile share links</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Sao chép liên kết chia sẻ hồ sơ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="245" />
         <source>Copy profile share links (Custom Links)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Sao chép liên kết chia sẻ hồ sơ (Liên kết tùy chỉnh)</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="253" />
@@ -738,22 +738,22 @@ phút&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="314" />
         <source>Skip automatic update</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Bỏ qua cập nhật tự động</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="58" />
         <source>Copied</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Đã sao chép</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="357" />
         <source>Warning</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Cảnh báo</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="357" />
         <source>Please input URL</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Vui lòng nhập URL</translation>
     </message>
 </context>
 <context>
@@ -2624,22 +2624,22 @@ Nếu giá trị mặc định không hoạt động, hãy thử thay đổi nó
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="937" />
         <source>Copy Custom Links</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Sao chép liên kết tùy chỉnh</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="961" />
         <source>Copy links</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Sao chép liên kết</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1045" />
         <source>Url Test</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kiểm tra URL</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1078" />
         <source>Resolve Domain</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Giải quyết tên miền</translation>
     </message>
     <message>
         <source>Copy links of selected (Custom Links)</source>
