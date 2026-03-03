@@ -11,32 +11,32 @@
     <message>
         <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="20"/>
         <source>Username</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Felhasználónév</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="37"/>
         <source>Password</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Jelszó</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="78"/>
         <source>Remember</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Emlékezz</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="105"/>
         <source>seconds</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">másodpercig</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="110"/>
         <source>minutes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">jegyzőkönyv</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="115"/>
         <source>hours</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">óra</translation>
     </message>
 </context>
 <context>
@@ -53,377 +53,381 @@
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="20"/>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="52"/>
         <source>Basic Settings</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Alapbeállítások</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="46"/>
         <source>Common</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Közös</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="98"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Socks
                                                                 + HTTP Proxy&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                                                             </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Zokni
++ HTTP-proxy&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="103"/>
         <source>Listen Port</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Figyelj Port</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="110"/>
         <source>Edit</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Szerkesztés</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="117"/>
         <source>Custom Inbound</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Egyéni bejövő</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="127"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Selects a random available port on every run&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Véletlenszerűen elérhető portot választ ki minden futtatásnál&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="130"/>
         <source>Random port</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Véletlenszerű port</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="137"/>
         <source>Proxy Format</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Proxy formátum</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="144"/>
         <source>Listen Address</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Hallgassa meg a címet</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="164"/>
         <source>Network Settings</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Hálózati beállítások</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="185"/>
         <source>Use proxy when activated</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Használjon proxyt, ha aktiválva van</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="192"/>
         <source>URL Test after profile start</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">URL-teszt a profil indítása után</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="199"/>
         <source>Request update at startup</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Frissítés kérése indításkor</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="206"/>
         <source>Ignore TLS errors</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">A TLS hibák figyelmen kívül hagyása</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="216"/>
         <source>Test Settings</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tesztbeállítások</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="243"/>
         <source>Simple Download URL</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Egyszerű letöltési URL</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="251"/>
         <source>Download + Upload</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Letöltés + Feltöltés</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="256"/>
         <source>Only Download</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Csak letöltés</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="261"/>
         <source>Only Upload</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Csak feltöltés</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="266"/>
         <source>Simple Download</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Egyszerű letöltés</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="271"/>
         <source>Only Country</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Csak Ország</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="279"/>
         <source>Latency Test URL</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Látencia teszt URL</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="286"/>
         <source>Speedtest mode</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Sebességteszt mód</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="293"/>
         <source>Concurrent</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Egyidejű</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="300"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;timeout in milliseconds&lt;br/&gt;applies to all tests individually&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;időtúllépés ezredmásodpercben&lt;br/&gt;egyenként minden tesztre vonatkozik&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="303"/>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="316"/>
         <source>Timeout</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Időtúllépés</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="313"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Timeout for URLtest in ms&lt;br/&gt;Note that muxed connections take a much longer time for their initial request, and setting this value too low will cause the test to falsely report that the config is not working&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Időtúllépés az URLteszthez ms-ban&lt;br/&gt;Ne feledje, hogy a kevert kapcsolatok sokkal hosszabb időt vesz igénybe a kezdeti kérés teljesítése, és ha ezt az értéket túl alacsonyra állítja, a teszt hamis jelentést küld arról, hogy a konfiguráció nem működik.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="360"/>
         <source>Style</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Stílus</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="371"/>
         <source>Font</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Betűtípus</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="381"/>
         <source>Font Size</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Betűméret</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="397"/>
         <source>Connection statistics</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Csatlakozási statisztikák</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="410"/>
         <source>Hide dashboard at startup</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Az irányítópult elrejtése indításkor</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="417"/>
         <source>Show System DNS option</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">A Rendszer DNS opció megjelenítése</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="434"/>
         <source>Disable tray</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tálca letiltása</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="441"/>
         <source>Set text under menu icons</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Szöveg beállítása a menüikonok alatt</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="448"/>
         <source>Hide at startup</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Elrejtés indításkor</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="461"/>
         <source>Max log lines</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Max naplósorok</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="494"/>
         <source>Theme</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Téma</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="502"/>
         <source>System</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Rendszer</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="516"/>
         <source>Language</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyelv</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="532"/>
         <source>Icon</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ikon</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="539"/>
         <source>Emoji Font</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Emoji betűtípus</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="552"/>
         <source>Subscription</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Előfizetés</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="558"/>
         <source>Clear servers before update</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Frissítés előtt törölje a szervereket</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="565"/>
         <source>URL Test after update</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">URL-teszt frissítés után</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="580"/>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="800"/>
         <source>Enable</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Engedélyezés</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="587"/>
         <source>Interval (minute, invalid if less than 30)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Időköz (perc, érvénytelen, ha kevesebb, mint 30)</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="606"/>
         <source>Remove Duplicates</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Az ismétlődések eltávolítása</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="613"/>
         <source>hwid=custom_value,os=custom_os,osVersion=custom_version,model=custom_model</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">hwid=egyéni_érték,os=egyéni_os,osVersion=egyéni_verzió,modell=egyéni_modell</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="620"/>
         <source>User Agent</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Felhasználói ügynök</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="630"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;HWID=%1&lt;/p&gt;&lt;p&gt;OS=%2&lt;/p&gt;&lt;p&gt;OS Version=%3&lt;/p&gt;&lt;p&gt;Model=%4&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;HWID=%1&lt;/p&gt;&lt;p&gt;OS=%2&lt;/p&gt;&lt;p&gt;OS verzió=%3&lt;/p&gt;&lt;p&gt;Model=%4&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="633"/>
         <source>Send System Parameters</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Rendszerparaméterek küldése</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="646"/>
         <source>Automatic update</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Automatikus frissítés</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="653"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Format: hwid=value,os=value,osVersion=value,model=value&lt;/p&gt;&lt;p&gt;Leave empty to use default values. Only specify the parameters you want to override.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Formátum: hwid=value,os=value,osVersion=value,model=value&lt;/p&gt;&lt;p&gt;Hagyja üresen az alapértelmezett értékek használatához.Csak a felülírni kívánt paramétereket adja meg.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="656"/>
         <source>Custom System Parameters (optional)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Egyéni rendszerparaméterek (opcionális)</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="663"/>
         <source>Remove Invalid</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Érvénytelen eltávolítás</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="670"/>
         <source>Remove Unavailable</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Eltávolítás Nem elérhető</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="678"/>
         <source>Core</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Mag</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="717"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Might
                                                                             Improve Ping and Performance&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                                                                         </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Talán
+A ping és a teljesítmény javítása&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="722"/>
         <source>Disable Traffic Stats</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Forgalmi statisztikák letiltása</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="731"/>
         <source>Multiplex (mux)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Multiplex (mux)</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="738"/>
         <source>Loglevel</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Naplószint</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="750"/>
         <source>concurrency</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">párhuzamosság</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="760"/>
         <source>Padding</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Párnázás</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="767"/>
         <source>Default On</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Alapértelmezett Be</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="779"/>
         <source>Core Options</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Alapvető opciók</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="789"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Settings for the
                                             sing-box&apos;s built-in NTP client&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                                         </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Beállítások a
+sing-box beépített NTP-kliense&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="794"/>
         <source>NTP Settings</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">NTP beállítások</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="809"/>
         <source>server</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">szerver</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="819"/>
         <source>Port</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Kikötő</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="836"/>
         <source>sync interval</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">szinkronizálási intervallum</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="843"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;In
                                                                 minutes&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                                                             </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Be
+perc&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="849"/>
@@ -443,107 +447,107 @@
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="873"/>
         <source>Security</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Biztonság</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="879"/>
         <source>Disable Privilege request</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">A jogosultságkérés letiltása</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="886"/>
         <source>Use Mozilla Certificate Store</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Használja a Mozilla Certificate Store szolgáltatást</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="893"/>
         <source>Skip TLS certificate authentication by default (allowInsecure)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Alapértelmezés szerint kihagyja a TLS-tanúsítvány-hitelesítést (allowInsecure)</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="921"/>
         <source>Default uTLS Fingerprint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Alapértelmezett uTLS ujjlenyomat</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="944"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Do not attempt to start as Admin unless explicitly requested&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ne próbálja meg rendszergazdaként kezdeni, hacsak nincs kifejezetten kérve&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="947"/>
         <source>Always Start as Standard User</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Mindig normál felhasználóként induljon</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="954"/>
         <source>Use Json instead binary for configs</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Használjon Json helyett binárist a konfigurációkhoz</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="968"/>
         <source>Auto-Testing</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Automatikus tesztelés</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="974"/>
         <source>Automatically test proxies in the background and maintain a pool of working proxies</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Automatikusan tesztelheti a proxykat a háttérben, és karbantarthatja a működő proxyk készletét</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="977"/>
         <source>Enable Auto-Testing</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Automatikus tesztelés engedélyezése</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="984"/>
         <source>Test Interval (seconds)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Teszt intervallum (másodperc)</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="991"/>
         <source>How often to run the test cycle</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Milyen gyakran kell futtatni a tesztciklust</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1007"/>
         <source>Proxies Per Cycle</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Proxy ciklusonként</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1014"/>
         <source>Number of proxies to test in each cycle</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Az egyes ciklusokban tesztelendő proxyk száma</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1030"/>
         <source>Working Pool Size</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Működő medenceméret</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1037"/>
         <source>Maximum number of verified working proxies to maintain</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">A karbantartandó ellenőrzött működő proxyk maximális száma</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1053"/>
         <source>Latency Threshold (ms)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Késési küszöb (ms)</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1060"/>
         <source>Maximum latency to consider a proxy as working</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Maximális késleltetés a proxy működőképesnek tekintéséhez</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1079"/>
         <source>Failure Retry Count</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Sikertelen próbálkozások száma</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1086"/>
         <source>Number of retry attempts before considering a proxy as failed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Az újrapróbálkozások száma, mielőtt a proxyt sikertelennek tekintené</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1102"/>
@@ -658,7 +662,7 @@
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="36"/>
         <source>Common</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Közös</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="102"/>
@@ -679,7 +683,7 @@
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="122"/>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="287"/>
         <source>Subscription</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Előfizetés</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="135"/>
@@ -759,12 +763,12 @@
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="26"/>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="662"/>
         <source>Edit</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Szerkesztés</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="56"/>
         <source>Common</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Közös</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="73"/>
@@ -774,7 +778,7 @@
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="80"/>
         <source>Port</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Kikötő</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="87"/>
@@ -819,7 +823,7 @@
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="239"/>
         <source>Security</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Biztonság</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="260"/>
@@ -1214,7 +1218,7 @@
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="24"/>
         <source>Common</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Közös</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="39"/>
@@ -1310,7 +1314,7 @@
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="216"/>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="312"/>
         <source>Listen Port</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Figyelj Port</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="226"/>
@@ -1336,7 +1340,7 @@
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="280"/>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="319"/>
         <source>Enable</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Engedélyezés</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="287"/>
@@ -1356,7 +1360,7 @@
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="329"/>
         <source>Listen Address</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Hallgassa meg a címet</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="340"/>
@@ -1464,7 +1468,7 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="613"/>
         <source>Edit</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Szerkesztés</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="620"/>
@@ -1561,7 +1565,7 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_anytls.ui" line="20"/>
         <source>Password</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Jelszó</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_anytls.ui" line="30"/>
@@ -1602,7 +1606,7 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_custom.ui" line="28"/>
         <source>Core</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Mag</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_custom.ui" line="41"/>
@@ -1703,12 +1707,12 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="20"/>
         <source>Username</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Felhasználónév</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="30"/>
         <source>Password</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Jelszó</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="40"/>
@@ -1802,7 +1806,7 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="243"/>
         <source>Password</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Jelszó</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="257"/>
@@ -1846,7 +1850,7 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="30"/>
         <source>Password</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Jelszó</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="40"/>
@@ -1904,7 +1908,7 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="54"/>
         <source>Password</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Jelszó</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="80"/>
@@ -1927,7 +1931,7 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="27"/>
         <source>Password</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Jelszó</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="38"/>
@@ -1955,12 +1959,12 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="33"/>
         <source>Username</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Felhasználónév</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="54"/>
         <source>Password</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Jelszó</translation>
     </message>
 </context>
 <context>
@@ -2069,7 +2073,7 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_trojan_vless.ui" line="23"/>
         <source>Password</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Jelszó</translation>
     </message>
 </context>
 <context>
@@ -2077,7 +2081,7 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_vmess.ui" line="52"/>
         <source>Security</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Biztonság</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_vmess.ui" line="59"/>
@@ -2175,7 +2179,7 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="132"/>
         <source>Enable</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Engedélyezés</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="139"/>
@@ -2233,7 +2237,7 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
     <message>
         <location filename="../../src/nekobox/ui/group/GroupItem.ui" line="76"/>
         <source>Edit</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Szerkesztés</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/GroupItem.ui" line="89"/>
@@ -2248,7 +2252,7 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="129"/>
         <source>Subscription</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Előfizetés</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="130"/>
@@ -2471,7 +2475,7 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="721"/>
         <source>Basic Settings</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Alapbeállítások</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="726"/>
@@ -2500,7 +2504,7 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="752"/>
         <source>Edit</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Szerkesztés</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="760"/>
@@ -2567,7 +2571,7 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="860"/>
         <source>Remove Duplicates</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Az ismétlődések eltávolítása</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="868"/>
@@ -2599,7 +2603,7 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="908"/>
         <source>Remove Unavailable</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Eltávolítás Nem elérhető</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="916"/>
@@ -2700,7 +2704,7 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1086"/>
         <source>Remove Invalid</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Érvénytelen eltávolítás</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1089"/>
@@ -3136,7 +3140,7 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
     <message>
         <location filename="../../src/nekobox/ui/security/change_password.ui" line="20"/>
         <source>Username</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Felhasználónév</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/change_password.ui" line="37"/>
@@ -3280,7 +3284,7 @@ Direct: %2</source>
     <message>
         <location filename="../../src/sys/Settings.cpp" line="361"/>
         <source>System</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Rendszer</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="22"/>
