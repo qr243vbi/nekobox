@@ -176,6 +176,8 @@ QWidget *GetMessageBoxParent();
       QMessageBox::information(this, T, X) ;                        \
 })                                                                  \
 
+void ActivateWindow(QWidget *w);
+
 void ToggleWindow(QWidget *w);
 
 void runOnUiThread(const std::function<void()> &callback);

@@ -1118,27 +1118,27 @@ sing-box এর অন্তর্নির্মিত NTP ক্লায়�
     <message>
         <location filename="../../src/ui/profile/edit_chain.cpp" line="46" />
         <source>Add proxy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">প্রক্সি যোগ করুন</translation>
     </message>
     <message>
         <location filename="../../src/ui/profile/edit_chain.cpp" line="66" />
         <source>Replace %1 proxy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">%1 প্রক্সি প্রতিস্থাপন করুন</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="135" />
         <source>Select outbound</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">আউটবাউন্ড নির্বাচন করুন</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="137" />
         <source>Outbound: </source>
-        <translation type="unfinished" />
+        <translation type="unfinished">বহির্গামী:</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="144" />
         <source>Outbound</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">আউটবাউন্ড</translation>
     </message>
 </context>
 <context>
@@ -1146,42 +1146,42 @@ sing-box এর অন্তর্নির্মিত NTP ক্লায়�
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="14" />
         <source>Hotkey</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">হটকি</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="24" />
         <source>Global</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">গ্লোবাল</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="30" />
         <source>Trigger main window</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">প্রধান উইন্ডো ট্রিগার করুন</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="40" />
         <source>Show groups</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">গ্রুপ দেখান</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="50" />
         <source>Show routes</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">রুট দেখান</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="60" />
         <source>Proxy mode</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">প্রক্সি মোড</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="70" />
         <source>Toggle System Proxy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">সিস্টেম প্রক্সি টগল করুন</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="81" />
         <source>Shortcuts</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">শর্টকাট</translation>
     </message>
 </context>
 <context>
@@ -1189,27 +1189,27 @@ sing-box এর অন্তর্নির্মিত NTP ক্লায়�
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_manage_groups.ui" line="17" />
         <source>Groups</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">গোষ্ঠী</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_manage_groups.ui" line="35" />
         <source>New group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">নতুন গ্রুপ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_manage_groups.ui" line="45" />
         <source>Update all subscriptions</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">সমস্ত সদস্যতা আপডেট করুন</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/dialog_manage_groups.cpp" line="56" />
         <source>Confirmation</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">নিশ্চিতকরণ</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/dialog_manage_groups.cpp" line="56" />
         <source>Update all subscriptions?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">সব সদস্যতা আপডেট করবেন?</translation>
     </message>
 </context>
 <context>
@@ -1217,42 +1217,42 @@ sing-box এর অন্তর্নির্মিত NTP ক্লায়�
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="14" />
         <source>Routes</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">রুট</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="24" />
         <source>Common</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">সাধারণ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="39" />
         <source>Sniffs the connections intial packet(s?) to identify the protocol and the SNI. Sniff result for destination also rewrites the destionation of the connection to the sniffed SNI. For more data on the sniffed protocol refer to the sing-box's documentation.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">প্রোটোকল এবং SNI সনাক্ত করতে সংযোগগুলি প্রাথমিক প্যাকেট(গুলি?) স্নিফ করে।গন্তব্যের জন্য স্নিফ ফলাফল স্নিফড এসএনআই-এর সাথে সংযোগের গন্তব্যটিও পুনর্লিখন করে।স্নিফড প্রোটোকলের আরও তথ্যের জন্য সিং-বক্সের ডকুমেন্টেশন পড়ুন।</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="42" />
         <source>Sniffing Mode</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">স্নিফিং মোড</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="50" />
         <source>Disable</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">নিষ্ক্রিয় করুন</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="55" />
         <source>Sniff result for routing</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">রাউটিং জন্য sniff ফলাফল</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="69" />
         <source>Routing Profile</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">রাউটিং প্রোফাইল</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="92" />
         <source>Inbound Domain Strategy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ইনবাউন্ড ডোমেন কৌশল</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="107" />
@@ -1287,53 +1287,53 @@ sing-box এর অন্তর্নির্মিত NTP ক্লায়�
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="149" />
         <source>Remote Rule-set Mirror</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">দূরবর্তী নিয়ম সেট মিরর</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="162" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Resolve domains to IP before connect, also affects the server address as well&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;কানেক্ট করার আগে আইপিতে ডোমেনগুলি সমাধান করুন, সার্ভারের ঠিকানাকেও প্রভাবিত করে&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="165" />
         <source>Outbound Domain Strategy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">আউটবাউন্ড ডোমেন কৌশল</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="178" />
         <source>RuleSet download url</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">RuleSet ডাউনলোড url</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="192" />
         <source>Hijack</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">হাইজ্যাক</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="198" />
         <source>DNS Server</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">DNS সার্ভার</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="216" />
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="312" />
         <source>Listen Port</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">পোর্ট শুনুন</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="226" />
         <source>IPv4 Response</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">IPv4 প্রতিক্রিয়া</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="236" />
         <source>IPv6 Response</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">IPv6 প্রতিক্রিয়া</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="246" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Following format should be used:&lt;br/&gt;domain:a.com&lt;/p&gt;&lt;p&gt;suffix:a.com&lt;/p&gt;&lt;p&gt;regex:someregex&lt;/p&gt;&lt;p&gt;rule_set:nameOfRuleSet&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;নিম্নলিখিত বিন্যাস ব্যবহার করা উচিত:&lt;br/&gt;domain:a.com&lt;/p&gt;&lt;p&gt;suffix:a.com&lt;/p&gt;&lt;p&gt;regex:someregex&lt;/p&gt;&lt;p&gt;rule_set:nameOfRuleSet&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="249" />
@@ -1344,115 +1344,117 @@ sing-box এর অন্তর্নির্মিত NTP ক্লায়�
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="280" />
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="319" />
         <source>Enable</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">সক্ষম করুন</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="287" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Whether to listen on 0.0.0.0 so that other devices on LAN can use this server&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;0.0.0.0 এ শুনতে হবে কিনা যাতে ল্যানের অন্যান্য ডিভাইস এই সার্ভারটি ব্যবহার করতে পারে&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="290" />
         <source>Allow Lan to Connect</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ল্যানকে সংযোগ করার অনুমতি দিন</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="303" />
         <source>Redirect Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">রিডাইরেক্ট সেটিংস</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="329" />
         <source>Listen Address</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ঠিকানা শুনুন</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="340" />
         <source>DNS</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ডিএনএস</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="346" />
         <source>Simple DNS Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">সাধারণ DNS সেটিংস</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="352" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;examples:&lt;br/&gt;tls://8.8.8.8&lt;br/&gt;https://domain/path&lt;/p&gt;&lt;p&gt;tcp://8.8.8.8:1234&lt;/p&gt;&lt;p&gt;dhcp://auto&lt;/p&gt;&lt;p&gt;h3://domain/path&lt;/p&gt;&lt;p&gt;quic://domain:4632&lt;/p&gt;&lt;p&gt;etc&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;উদাহরণ:&lt;br/&gt;tls://8.8.8.8&lt;br/&gt;https://domain/path&lt;/p&gt;&lt;p&gt;tcp://8.8.8.8:1234&lt;/p&gt;&lt;p&gt;dhcp://auto&lt;/p&gt;&lt;p&gt;h3://domain/path&lt;/p&gt;&lt;p&gt;quic://domain:4632/p&gt;&lt;c&gt;&lt;/html&gt;&lt;/p&gt;&lt;c&gt;&lt;/p&gt;&lt;p&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="355" />
         <source>Remote DNS</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">দূরবর্তী DNS</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="367" />
         <source>Default DNS server</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ডিফল্ট DNS সার্ভার</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="428" />
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="502" />
         <source>Query Strategy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">প্রশ্ন কৌশল</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="440" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Local DNS can not be used in some configurations, you will have to set an ip here to be used as local dns in such situations&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;স্থানীয় ডিএনএস কিছু কনফিগারেশনে ব্যবহার করা যাবে না, এই ধরনের পরিস্থিতিতে স্থানীয় ডিএনএস হিসাবে ব্যবহার করার জন্য আপনাকে এখানে একটি আইপি সেট করতে হবে&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="443" />
         <source>Local Override</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">স্থানীয় ওভাররাইড</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="450" />
         <source>This is especially important and it is recommended to use the default value of "localhost".
 If the default value does not work, try changing it to "223.5.5.5".
 For more information, see the document "Configuration/DNS".</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">এটি বিশেষভাবে গুরুত্বপূর্ণ এবং "স্থানীয় হোস্ট" এর ডিফল্ট মান ব্যবহার করার পরামর্শ দেওয়া হয়।
+যদি ডিফল্ট মান কাজ না করে, এটি "223.5.5.5" এ পরিবর্তন করার চেষ্টা করুন।
+আরও তথ্যের জন্য, "কনফিগারেশন/ডিএনএস" নথি দেখুন।</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="455" />
         <source>Direct DNS</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">সরাসরি DNS</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="514" />
         <source>Enable FakeIP</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">FakeIP সক্ষম করুন</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="524" />
         <source>DNS Object Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">DNS অবজেক্ট সেটিংস</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="532" />
         <source>Use DNS Object</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">DNS অবজেক্ট ব্যবহার করুন</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="545" />
         <source>Format</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">বিন্যাস</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="558" />
         <source>Document</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">দলিল</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="574" />
         <source>Route</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">রুট</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="580" />
         <source>Routing Profiles</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">রাউটিং প্রোফাইল</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="592" />
@@ -1462,17 +1464,17 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="599" />
         <source>Clone</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ক্লোন</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="606" />
         <source>Export</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">রপ্তানি</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="613" />
         <source>Edit</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">সম্পাদনা করুন</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="620" />
@@ -1482,28 +1484,28 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="30" />
         <source>Invalid state</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">অবৈধ রাষ্ট্র</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="30" />
         <source>The list of routing profiles is empty, this should be an unreachable state, crashes may occur now</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">রাউটিং প্রোফাইলের তালিকা খালি, এটি একটি পৌঁছানো যায় না এমন অবস্থা হওয়া উচিত, এখন ক্র্যাশ হতে পারে</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="203" />
         <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="207" />
         <source>Invalid settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">অবৈধ সেটিংস৷</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="203" />
         <source>Routing profile cannot be empty</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">রাউটিং প্রোফাইল খালি করা যাবে না</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="207" />
         <source>DNS Rules are not valid</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">DNS নিয়ম বৈধ নয়</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="315" />
@@ -1513,7 +1515,7 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="315" />
         <source>Routing Profiles cannot be empty, try adding another profile or editing this one</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">রাউটিং প্রোফাইলগুলি খালি থাকতে পারে না, অন্য প্রোফাইল যোগ করার চেষ্টা করুন বা এটি সম্পাদনা করুন৷</translation>
     </message>
 </context>
 <context>
@@ -1521,42 +1523,42 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="14" />
         <source>Tun Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">টিউন সেটিংস</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="85" />
         <source>Tun Enable IPv6</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">IPv6 সক্ষম করুন</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="92" />
         <source>Strict Route</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">কঠোর রুট</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="99" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;When enabled, Direct IP CIDRs and rule sets will also be added to the Tun setting to be excluded at OS routing level. IMPORTANT: Large rule sets have been reported to cause massive CPU usage in windows, please enable this option with caution.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;সক্রিয় করা হলে, OS রাউটিং স্তরে বাদ দেওয়ার জন্য ডাইরেক্ট IP CIDR এবং নিয়ম সেটগুলিও Tun সেটিংসে যোগ করা হবে।গুরুত্বপূর্ণ: বড় নিয়ম সেটগুলি উইন্ডোতে ব্যাপক CPU ব্যবহার করার জন্য রিপোর্ট করা হয়েছে, অনুগ্রহ করে সতর্কতার সাথে এই বিকল্পটি সক্ষম করুন।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="102" />
         <source>Enable Tun Routing</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">টুন রাউটিং সক্ষম করুন</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="109" />
         <source>AutoRedirect</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">অটোরিডাইরেক্ট</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="125" />
         <source>Tun address</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">টুন ঠিকানা</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="135" />
         <source>Tun ipv6 address</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ipv6 ঠিকানা টিউন করুন</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="150" />
@@ -1569,22 +1571,22 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_anytls.ui" line="20" />
         <source>Password</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">পাসওয়ার্ড</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_anytls.ui" line="30" />
         <source>Idle Session Check Interval</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">নিষ্ক্রিয় সেশন চেক ব্যবধান</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_anytls.ui" line="40" />
         <source>Idle Session Timeout</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">নিষ্ক্রিয় সেশনের সময়সীমা</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_anytls.ui" line="50" />
         <source>Min Idle Session</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ন্যূনতম নিষ্ক্রিয় সেশন</translation>
     </message>
 </context>
 <context>
@@ -1592,17 +1594,17 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_chain.ui" line="20" />
         <source>Traffic order is from top to bottom</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">উপর থেকে নিচ পর্যন্ত ট্রাফিক অর্ডার</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_chain.ui" line="49" />
         <source>Select Profile</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">প্রোফাইল নির্বাচন করুন</translation>
     </message>
     <message>
         <location filename="../../src/ui/profile/edit_chain.cpp" line="28" />
         <source>Name cannot be empty.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">নাম খালি রাখা যাবে না।</translation>
     </message>
 </context>
 <context>
@@ -1610,27 +1612,27 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_custom.ui" line="28" />
         <source>Core</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">কোর</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_custom.ui" line="41" />
         <source>Json Editor</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">জসন সম্পাদক</translation>
     </message>
     <message>
         <location filename="../../src/ui/profile/edit_custom.cpp" line="53" />
         <source>Outbound JSON, please read the documentation.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">আউটবাউন্ড JSON, ডকুমেন্টেশন পড়ুন দয়া করে.</translation>
     </message>
     <message>
         <location filename="../../src/ui/profile/edit_custom.cpp" line="55" />
         <source>Please fill the complete config.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">সম্পূর্ণ কনফিগারেশন পূরণ করুন.</translation>
     </message>
     <message>
         <location filename="../../src/ui/profile/edit_custom.cpp" line="64" />
         <source>Name cannot be empty.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">নাম খালি রাখা যাবে না।</translation>
     </message>
 </context>
 <context>
@@ -1643,7 +1645,7 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="29" />
         <source>Socks address</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">মোজার ঠিকানা</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="36" />
@@ -1653,52 +1655,52 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="43" />
         <source>Socks port</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">মোজা পোর্ট</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="50" />
         <source>1080</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">1080</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="78" />
         <source>Core path</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">মূল পথ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="95" />
         <source>Choose from file</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ফাইল থেকে চয়ন করুন</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="114" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;args to pass to the executable. You can insert a single %s and it will be replaced with the path to a file containing the config entered below.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;আরগস এক্সিকিউটেবলে পাস করার জন্য।আপনি একটি একক %s সন্নিবেশ করতে পারেন এবং এটি নীচে প্রবেশ করানো কনফিগার সমন্বিত একটি ফাইলের পাথ দিয়ে প্রতিস্থাপিত হবে।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="117" />
         <source>Args</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">আর্গস</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="124" />
         <source>run -confPath %s</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">রান -confPath %s</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="131" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;contents of the config file that will be passed to the extra core process if %s is specified in the args&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;কনফিগার ফাইলের বিষয়বস্তু যা অতিরিক্ত মূল প্রক্রিয়ায় পাঠানো হবে যদি %s আর্গসে নির্দিষ্ট করা থাকে&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="134" />
         <source>Config</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">কনফিগার</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="144" />
         <source>No logs</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">কোন লগ নেই</translation>
     </message>
 </context>
 <context>
@@ -1711,12 +1713,12 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="20" />
         <source>Username</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ব্যবহারকারীর নাম</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="30" />
         <source>Password</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">পাসওয়ার্ড</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="40" />
