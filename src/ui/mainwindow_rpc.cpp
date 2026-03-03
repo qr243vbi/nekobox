@@ -35,11 +35,18 @@ using namespace API;
 
 void MainWindow::setup_rpc() {
     // Setup Connection
+    int port; 
+    QString domain;
+    if (Configs::windowSettings->use_tcp){
+        domain = 
+    } else {
+
+    }
     defaultClient = new Client(
         [=](const QString &errStr) {
             MW_show_log("[Error] Core: " + errStr);
         },
-        QString("127.0.0.1"),
+        domain,
         Configs::dataStore->core_port
     );
 
