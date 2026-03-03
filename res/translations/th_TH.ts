@@ -2115,67 +2115,67 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="33" />
         <source>Public Key</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">กุญแจสาธารณะ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="43" />
         <source>Pre Shared Key</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">คีย์ที่ใช้ร่วมกันล่วงหน้า</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="53" />
         <source>Reserved</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ที่สงวนไว้</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="63" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;persistent_keepalive_interval in seconds&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;persistent_keepalive_interval ในหน่วยวินาที&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="66" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="69" />
         <source>Persistent Keepalive</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Keepalive ถาวร</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="79" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;comma seperated list of subnets&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;รายการเครือข่ายย่อยที่คั่นด้วยเครื่องหมายจุลภาค&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="82" />
         <source>Local Address</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ที่อยู่ในท้องถิ่น</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="92" />
         <source>MTU</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">มธ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="99" />
         <source>1420</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">1420</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="106" />
         <source>Workers</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">คนงาน</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="116" />
         <source>Use System Interface</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ใช้อินเทอร์เฟซระบบ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="126" />
         <source>Amnezia Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">การตั้งค่าความจำเสื่อม</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="132" />
@@ -2185,47 +2185,47 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="139" />
         <source>Junk Packet Count</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">จำนวนแพ็คเก็ตขยะ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="149" />
         <source>Junk Packet Min Size</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ขนาดแพ็คเก็ตขยะขั้นต่ำ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="159" />
         <source>Junk Packet Max Size</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ขนาดสูงสุดของแพ็คเก็ตขยะ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="169" />
         <source>Init Packet Junk Size</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">เริ่มต้นขนาดขยะแพ็คเก็ต</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="179" />
         <source>Response Packet Junk Size</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ขนาดขยะแพ็คเก็ตการตอบกลับ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="189" />
         <source>Init Packet Magic Header</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">เริ่มต้นส่วนหัวของแพ็คเก็ตเมจิก</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="199" />
         <source>Response Packet Magic Header</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">การตอบสนองแพ็คเก็ตเมจิกส่วนหัว</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="209" />
         <source>Underload Packet Magic Header</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Underload แพ็คเก็ตเมจิกเฮดเดอร์</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="219" />
         <source>Transport Header Magic Header</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ส่วนหัวของการขนส่ง ส่วนหัวของเมจิก</translation>
     </message>
 </context>
 <context>
@@ -2233,7 +2233,7 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/group/GroupItem.ui" line="63" />
         <source>Update Subscription</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">อัปเดตการสมัครสมาชิก</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/GroupItem.ui" line="76" />
@@ -2243,12 +2243,12 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/group/GroupItem.ui" line="89" />
         <source>Remove</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ลบ</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="129" />
         <source>Basic</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ขั้นพื้นฐาน</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="129" />
@@ -2258,22 +2258,22 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="130" />
         <source>Archive</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">คลังเก็บเอกสารสำคัญ</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="142" />
         <source>Last update: %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">อัปเดตล่าสุด: %1</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="186" />
         <source>Confirmation</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">การยืนยัน</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="186" />
         <source>Remove %1?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ลบ %1 หรือไม่</translation>
     </message>
 </context>
 <context>
@@ -2282,42 +2282,42 @@ For more information, see the document "Configuration/DNS".</source>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="29" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="32" />
         <source>NekoBox</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">เนโกะบ็อกซ์</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="51" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="54" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="693" />
         <source>Profiles</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">โปรไฟล์</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="73" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="76" />
         <source>Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">การตั้งค่า</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="95" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="98" />
         <source>Routing</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">การกำหนดเส้นทาง</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="117" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="120" />
         <source>Update</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">อัปเดต</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="147" />
         <source>Tun Mode</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">โหมดจูน</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="154" />
         <source>System DNS</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">DNS ของระบบ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="161" />
@@ -2325,153 +2325,153 @@ For more information, see the document "Configuration/DNS".</source>
         <location filename="../../src/ui/mainwindow.cpp" line="2424" />
         <location filename="../../src/ui/mainwindow.cpp" line="2427" />
         <source>System Proxy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">พร็อกซีของระบบ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="231" />
         <source>URL Test</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">การทดสอบ URL</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="309" />
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="139" />
         <source>Type</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">พิมพ์</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="314" />
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="142" />
         <source>Address</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ที่อยู่</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="319" />
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="145" />
         <source>Name</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ชื่อ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="324" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="289" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="291" />
         <source>Test Result</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ผลการทดสอบ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="329" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="489" />
         <source>Traffic</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">การจราจร</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="394" />
         <source>Logs</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">บันทึก</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="429" />
         <source>Connections</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">การเชื่อมต่อ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="457" />
         <source>Destination (Domain)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ปลายทาง (โดเมน)</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="460" />
         <source>Click To Disable Sorting</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">คลิกเพื่อปิดใช้งานการเรียงลำดับ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="465" />
         <source>Process</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">กระบวนการ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="468" />
         <source>Click To Sort By Process</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">คลิกเพื่อจัดเรียงตามกระบวนการ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="473" />
         <source>Protocol</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">โปรโตคอล</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="476" />
         <source>Click To Sort By Protocol</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">คลิกเพื่อจัดเรียงตามโปรโตคอล</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="481" />
         <source>Outbound</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ขาออก</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="484" />
         <source>Click To Sort By Outbound</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">คลิกเพื่อจัดเรียงตามขาออก</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="492" />
         <source>Click To Toggle sort by Traffic</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">คลิกเพื่อสลับการจัดเรียงตามการเข้าชม</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="501" />
         <source>Traffic Graph</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">กราฟจราจร</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="593" />
         <source>Program</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">โปรแกรม</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="616" />
         <source>Preferences</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">การตั้งค่า</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="627" />
         <source>Server</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">เซิร์ฟเวอร์</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="631" />
         <source>Share</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">แบ่งปัน</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="641" />
         <source>Current group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">กลุ่มปัจจุบัน</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="647" />
         <source>Test</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ทดสอบ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="675" />
         <source>Hidden menu</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">เมนูที่ซ่อนอยู่</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="688" />
         <source>Routing Menu</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">เมนูเส้นทาง</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="711" />
         <source>Exit</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ออก</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="716" />
         <source>Toggle Window</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">สลับหน้าต่าง</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="721" />
@@ -2481,26 +2481,26 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="726" />
         <source>New profile</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">โปรไฟล์ใหม่</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="731" />
         <source>Groups</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">กลุ่ม</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="736" />
         <location filename="../../src/ui/mainwindow.cpp" line="3444" />
         <location filename="../../src/ui/mainwindow.cpp" line="3454" />
         <source>Start</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">เริ่ม</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="744" />
         <location filename="../../src/ui/mainwindow.cpp" line="3443" />
         <location filename="../../src/ui/mainwindow.cpp" line="3454" />
         <source>Stop</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">หยุด</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="752" />
@@ -2510,64 +2510,64 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="760" />
         <source>Routing Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">การตั้งค่าเส้นทาง</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="765" />
         <source>Add profile from clipboard</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">เพิ่มโปรไฟล์จากคลิปบอร์ด</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="773" />
         <source>Delete</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ลบ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="781" />
         <source>Debug Info</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ข้อมูลการแก้ไขข้อบกพร่อง</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="786" />
         <source>QR Code and link</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">QR Code และลิงค์</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="794" />
         <source>Copy Link</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">คัดลอกลิงค์</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="815" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1056" />
         <source>Clear Test Result</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ผลการทดสอบที่ชัดเจน</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="823" />
         <location filename="../../src/ui/mainwindow.cpp" line="1350" />
         <source>Export %1 config</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ส่งออกการกำหนดค่า %1</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="831" />
         <source>Reset Traffic</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">รีเซ็ตการรับส่งข้อมูล</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="839" />
         <source>Scan QR Code</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">สแกนรหัส QR</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="847" />
         <source>Enable System Proxy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">เปิดใช้งานพร็อกซีของระบบ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="855" />
         <source>Disable</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ปิดการใช้งาน</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="860" />
@@ -2579,98 +2579,98 @@ For more information, see the document "Configuration/DNS".</source>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="945" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="953" />
         <source>fake</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ปลอม</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="876" />
         <source>Move</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">เคลื่อนไหว</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="887" />
         <source>Start with system</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">เริ่มด้วยระบบ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="895" />
         <source>Remember last profile</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">จำโปรไฟล์ล่าสุด</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="903" />
         <source>Allow other devices to connect</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">อนุญาตให้อุปกรณ์อื่นเชื่อมต่อ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="908" />
         <source>Remove Unavailable</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ลบไม่พร้อมใช้งาน</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="916" />
         <source>Full Test</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">การทดสอบแบบเต็ม</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="924" />
         <source>Hotkey Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">การตั้งค่าปุ่มลัด</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="929" />
         <source>Select All</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">เลือกทั้งหมด</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="937" />
         <source>Copy Custom Links</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">คัดลอกลิงก์ที่กำหนดเอง</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="961" />
         <source>Copy links</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">คัดลอกลิงก์</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1045" />
         <source>Url Test</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">การทดสอบ URL</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1078" />
         <source>Resolve Domain</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">แก้ไขโดเมน</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="972" />
         <source>Enable Tun</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">เปิดใช้งาน Tun</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="977" />
         <location filename="../../src/ui/mainwindow.cpp" line="2780" />
         <source>Clone</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">โคลน</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="985" />
         <source>Update subscription</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">อัปเดตการสมัครสมาชิก</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="996" />
         <source>Resolve domain</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">แก้ปัญหาโดเมน</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1004" />
         <source>Tun Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">การตั้งค่าจูน</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1009" />
         <source>Restart Program</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">รีสตาร์ทโปรแกรม</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1014" />
