@@ -1,5 +1,5 @@
 #include "nekobox/dataStore/Utils.hpp"
-
+#include "nekobox/dataStore/Configs.hpp"
 #include "3rdparty/QThreadCreateThread.hpp"
 #include "3rdparty/base64.h"
 #include <QDir>
@@ -309,6 +309,7 @@ QString MkUDS(){
   ret = "\\\\.\\pipe\\";
   ret += software_name + "_" + software_core_name + "_" GetRandomString(16);
   #else
+  ret = Configs::GetBasePath();
   #endif
 }
 
