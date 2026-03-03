@@ -38,9 +38,11 @@ void MainWindow::setup_rpc() {
     int port; 
     QString domain;
     if (Configs::windowSettings->use_tcp){
-        domain = 
+        domain = QString("127.0.0.1");
+        port = Configs::dataStore->core_port;
     } else {
-
+        domain = Configs::dataStore->core_unix_domain_socket;
+        port = -1;
     }
     defaultClient = new Client(
         [=](const QString &errStr) {
