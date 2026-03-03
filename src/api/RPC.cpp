@@ -44,9 +44,9 @@ if (!Configs::dataStore->core_running) {                                        
 
 static std::shared_ptr<TTransport> getThriftTransport(const std::string & domain, int port){
     if (port > 0){
-        return std::shared_ptr<TTransport> (new TSocket(domain.toStdString(), port));
+        return std::shared_ptr<TTransport> (new TSocket(domain, port));
     } else {
-        return std::shared_ptr<TTransport> (new TPipe(domain.toStdString()));
+        return std::shared_ptr<TTransport> (new TPipe(domain));
     }
 }
 
