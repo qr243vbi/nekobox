@@ -551,6 +551,7 @@ MainWindow::MainWindow(QWidget *parent)
 
   proxyAutoTester = std::make_unique<Stats::ProxyAutoTester>(this);
 
+  Configs::dataStore->core_unix_domain_socket = "";
   // Prepare core
   Configs::dataStore->core_port = MkPort();
   if (Configs::dataStore->core_port <= 0)

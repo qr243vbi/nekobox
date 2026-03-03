@@ -303,6 +303,10 @@ bool WriteFileText(QFile &file, const QString &notes) {
   return WriteFile(file, array);
 }
 
+QString MkUDS(){
+  return "";
+}
+
 int MkPort() {
   QTcpServer s;
   s.listen();

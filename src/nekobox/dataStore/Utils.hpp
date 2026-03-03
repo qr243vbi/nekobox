@@ -268,7 +268,7 @@ QString DisplayAddress(QString serverAddress, int serverPort);
 QString DisplayDest(const QString &dest, QString domain);
 
 // Format & Misc
-
+QString MkUDS();
 int MkPort();
 
 QString DisplayTime(long long time, int formatType = 0);
