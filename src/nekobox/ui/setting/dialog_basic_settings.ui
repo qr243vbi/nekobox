@@ -39,7 +39,7 @@
       </size>
      </property>
      <property name="currentIndex">
-      <number>0</number>
+      <number>1</number>
      </property>
      <widget class="QWidget" name="tab_1">
       <attribute name="title">
@@ -518,7 +518,14 @@
              </widget>
             </item>
             <item row="1" column="1">
-             <widget class="QComboBox" name="language"/>
+             <widget class="QComboBox" name="language">
+              <property name="maxVisibleItems">
+               <number>9</number>
+              </property>
+              <property name="sizeAdjustPolicy">
+               <enum>QComboBox::SizeAdjustPolicy::AdjustToMinimumContentsLengthWithIcon</enum>
+              </property>
+             </widget>
             </item>
            </layout>
           </widget>
