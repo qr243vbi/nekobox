@@ -380,7 +380,7 @@ Ping və Performansı təkmilləşdirin&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</tra
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="760" />
         <source>Padding</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Doldurma</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="767" />
