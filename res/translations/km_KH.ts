@@ -3676,50 +3676,50 @@ Release note:
         <location filename="../../src/ui/setting/RouteItem.cpp" line="302" />
         <location filename="../../src/ui/setting/RouteItem.cpp" line="469" />
         <source>Invalid rules</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ច្បាប់មិនត្រឹមត្រូវ</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="302" />
         <source>Some rules could not be added:
 </source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ច្បាប់មួយចំនួនមិនអាចបន្ថែមបានទេ៖</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="358" />
         <source>Invalid JSON Array</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">អារេ JSON មិនត្រឹមត្រូវ</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="358" />
         <source>The provided input cannot be parsed to a valid route rule array:
 </source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ធាតុបញ្ចូលដែលបានផ្តល់មិនអាចត្រូវបានញែកទៅជាអារេច្បាប់ផ្លូវត្រឹមត្រូវទេ៖</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="441" />
         <source>Invalid operation</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ប្រតិបត្តិការមិនត្រឹមត្រូវ</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="441" />
         <source>Cannot create Route Profile with empty name</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">មិនអាចបង្កើតកម្រងព័ត៌មានផ្លូវដោយប្រើឈ្មោះទទេបានទេ។</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="457" />
         <source>Empty Route Profile</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">កម្រងព័ត៌មានផ្លូវទទេ</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="457" />
         <source>No valid rules are in the profile</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">មិនមានច្បាប់ត្រឹមត្រូវនៅក្នុងប្រវត្តិរូបទេ។</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="469" />
         <source>Some rules could not be added, fix them before saving:
 </source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ច្បាប់មួយចំនួនមិនអាចបន្ថែមបានទេ សូមជួសជុលវាមុនពេលរក្សាទុក៖</translation>
     </message>
 </context>
 <context>
@@ -3727,42 +3727,42 @@ Release note:
     <message>
         <location filename="../../src/nekobox/ui/security/security.ui" line="14" />
         <source>Security Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ការកំណត់សុវត្ថិភាព</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/security.ui" line="62" />
         <source>Lock Actions</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">សកម្មភាពចាក់សោ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/security.ui" line="69" />
         <source>Lock Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ចាក់សោការកំណត់</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/security.ui" line="76" />
         <source>Lock Startup</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ចាក់សោការចាប់ផ្តើម</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/security.ui" line="113" />
         <source>Delete Users</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">លុបអ្នកប្រើប្រាស់</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/security.ui" line="120" />
         <source>Edit User Roles</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">កែសម្រួលតួនាទីអ្នកប្រើប្រាស់</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/security.ui" line="163" />
         <source>Change UI Password</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ផ្លាស់ប្តូរពាក្យសម្ងាត់ UI</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/security.ui" line="170" />
         <source>Set Proxy Credentials</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">កំណត់អត្តសញ្ញាណប្រូកស៊ី</translation>
     </message>
 </context>
 <context>
@@ -3770,24 +3770,24 @@ Release note:
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="121" />
         <source>Invalid JSON Array</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">អារេ JSON មិនត្រឹមត្រូវ</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="122" />
         <source>The provided input cannot be parsed to a valid route rule array:
 </source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ធាតុបញ្ចូលដែលបានផ្តល់មិនអាចត្រូវបានញែកទៅជាអារេច្បាប់ផ្លូវត្រឹមត្រូវទេ៖</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="245" />
         <source>Fetching information</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ការទាញយកព័ត៌មាន</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="261" />
         <location filename="../../src/ui/mainwindow.cpp" line="1187" />
         <source>Download Profiles</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ទាញយកប្រវត្តិរូប</translation>
     </message>
 </context>
 <context>
