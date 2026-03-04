@@ -1336,86 +1336,88 @@ minuto&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="249" />
         <source>Rules</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Mga tuntunin</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="280" />
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="319" />
         <source>Enable</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Paganahin</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="287" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Whether to listen on 0.0.0.0 so that other devices on LAN can use this server&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Kung makikinig sa 0.0.0.0 para magamit ng ibang device sa LAN ang server na ito&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="290" />
         <source>Allow Lan to Connect</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Payagan si Lan na Kumonekta</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="303" />
         <source>Redirect Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Mga Setting ng Pag-redirect</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="329" />
         <source>Listen Address</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Pakinggan ang Address</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="340" />
         <source>DNS</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">DNS</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="346" />
         <source>Simple DNS Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Mga Simpleng Setting ng DNS</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="352" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;examples:&lt;br/&gt;tls://8.8.8.8&lt;br/&gt;https://domain/path&lt;/p&gt;&lt;p&gt;tcp://8.8.8.8:1234&lt;/p&gt;&lt;p&gt;dhcp://auto&lt;/p&gt;&lt;p&gt;h3://domain/path&lt;/p&gt;&lt;p&gt;quic://domain:4632&lt;/p&gt;&lt;p&gt;etc&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;mga halimbawa:&lt;br/&gt;tls://8.8.8.8&lt;br/&gt;https://domain/path&lt;/p&gt;&lt;p&gt;tcp://8.8.8.8:1234&lt;/p&gt;&lt;p&gt;dhcp://auto&lt;/p&gt;&lt;p&gt;h3://domain/path&lt;/p&gt;&lt;p&gt;quic://domain:4632</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="355" />
         <source>Remote DNS</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Malayong DNS</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="367" />
         <source>Default DNS server</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Default na DNS server</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="428" />
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="502" />
         <source>Query Strategy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Diskarte sa Query</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="440" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Local DNS can not be used in some configurations, you will have to set an ip here to be used as local dns in such situations&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Hindi magagamit ang lokal na DNS sa ilang configuration, kakailanganin mong magtakda ng ip dito para magamit bilang lokal na dns sa mga ganitong sitwasyon&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="443" />
         <source>Local Override</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Lokal na Override</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="450" />
         <source>This is especially important and it is recommended to use the default value of "localhost".
 If the default value does not work, try changing it to "223.5.5.5".
 For more information, see the document "Configuration/DNS".</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ito ay lalong mahalaga at inirerekumenda na gamitin ang default na halaga ng "localhost".
+Kung hindi gumana ang default na value, subukang baguhin ito sa "223.5.5.5".
+Para sa higit pang impormasyon, tingnan ang dokumentong "Configuration/DNS".</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="455" />
         <source>Direct DNS</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Direktang DNS</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="514" />
@@ -1430,17 +1432,17 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="532" />
         <source>Use DNS Object</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Gumamit ng DNS Object</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="545" />
         <source>Format</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Format</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="558" />
         <source>Document</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Dokumento</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="574" />
@@ -1450,12 +1452,12 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="580" />
         <source>Routing Profiles</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Mga Profile sa Pagruruta</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="592" />
         <source>New</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Bago</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="599" />
@@ -1470,17 +1472,17 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="613" />
         <source>Edit</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">I-edit</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="620" />
         <source>Delete</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tanggalin</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="30" />
         <source>Invalid state</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Di-wastong estado</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="30" />
@@ -1496,12 +1498,12 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="203" />
         <source>Routing profile cannot be empty</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Hindi maaaring walang laman ang profile sa pagruruta</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="207" />
         <source>DNS Rules are not valid</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ang Mga Panuntunan ng DNS ay hindi wasto</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="315" />
@@ -1511,7 +1513,7 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="315" />
         <source>Routing Profiles cannot be empty, try adding another profile or editing this one</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ang pagruruta ng Mga Profile ay hindi maaaring walang laman, subukang magdagdag ng isa pang profile o i-edit ang isang ito</translation>
     </message>
 </context>
 <context>
@@ -1519,22 +1521,22 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="14" />
         <source>Tun Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Mga Setting ng Tun</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="85" />
         <source>Tun Enable IPv6</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">I-enable ang IPv6</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="92" />
         <source>Strict Route</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Mahigpit na Ruta</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="99" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;When enabled, Direct IP CIDRs and rule sets will also be added to the Tun setting to be excluded at OS routing level. IMPORTANT: Large rule sets have been reported to cause massive CPU usage in windows, please enable this option with caution.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Kapag pinagana, ang mga Direct IP CIDR at set ng panuntunan ay idaragdag din sa setting ng Tun na ibubukod sa antas ng pagruruta ng OS.MAHALAGA: Ang malalaking hanay ng panuntunan ay naiulat na nagdudulot ng napakalaking paggamit ng CPU sa mga bintana, mangyaring paganahin ang opsyong ito nang may pag-iingat.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="102" />
@@ -1544,12 +1546,12 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="109" />
         <source>AutoRedirect</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">AutoRedirect</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="125" />
         <source>Tun address</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Address ni Tun</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="135" />
@@ -1559,7 +1561,7 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="150" />
         <source>Exclude CIDR's</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ibukod ang mga CIDR</translation>
     </message>
 </context>
 <context>
@@ -1567,7 +1569,7 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_anytls.ui" line="20" />
         <source>Password</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Password</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_anytls.ui" line="30" />
@@ -1577,12 +1579,12 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_anytls.ui" line="40" />
         <source>Idle Session Timeout</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Idle Session Timeout</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_anytls.ui" line="50" />
         <source>Min Idle Session</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Min Idle Session</translation>
     </message>
 </context>
 <context>
@@ -1590,12 +1592,12 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_chain.ui" line="20" />
         <source>Traffic order is from top to bottom</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ang pagkakasunud-sunod ng trapiko ay mula sa itaas hanggang sa ibaba</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_chain.ui" line="49" />
         <source>Select Profile</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Piliin ang Profile</translation>
     </message>
     <message>
         <location filename="../../src/ui/profile/edit_chain.cpp" line="28" />
@@ -1608,22 +1610,22 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_custom.ui" line="28" />
         <source>Core</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Core</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_custom.ui" line="41" />
         <source>Json Editor</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Json Editor</translation>
     </message>
     <message>
         <location filename="../../src/ui/profile/edit_custom.cpp" line="53" />
         <source>Outbound JSON, please read the documentation.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Papalabas na JSON, pakibasa ang dokumentasyon.</translation>
     </message>
     <message>
         <location filename="../../src/ui/profile/edit_custom.cpp" line="55" />
         <source>Please fill the complete config.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Mangyaring punan ang kumpletong config.</translation>
     </message>
     <message>
         <location filename="../../src/ui/profile/edit_custom.cpp" line="64" />
@@ -1636,12 +1638,12 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="14" />
         <source>Form</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Form</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="29" />
         <source>Socks address</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Address ng medyas</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="36" />
@@ -1651,12 +1653,12 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="43" />
         <source>Socks port</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Port ng medyas</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="50" />
         <source>1080</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">1080</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="78" />
@@ -1671,17 +1673,17 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="114" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;args to pass to the executable. You can insert a single %s and it will be replaced with the path to a file containing the config entered below.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;args na ipasa sa executable.Maaari kang magpasok ng isang %s at ito ay papalitan ng path sa isang file na naglalaman ng config na ipinasok sa ibaba.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="117" />
         <source>Args</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Args</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="124" />
         <source>run -confPath %s</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">tumakbo -confPath %s</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="131" />
@@ -1691,12 +1693,12 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="134" />
         <source>Config</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Config</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="144" />
         <source>No logs</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Walang mga log</translation>
     </message>
 </context>
 <context>
@@ -1709,12 +1711,12 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="20" />
         <source>Username</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Username</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="30" />
         <source>Password</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Password</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="40" />
@@ -1724,12 +1726,12 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="55" />
         <source>Multiplexing</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Multiplexing</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="92" />
         <source>Transport</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Transportasyon</translation>
     </message>
 </context>
 <context>
@@ -1737,7 +1739,7 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="24" />
         <source>Heartbeat</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tibok ng puso</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="45" />
@@ -1747,43 +1749,43 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="69" />
         <source>Upload (Mbps)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Mag-upload (Mbps)</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="81" />
         <source>Zero Rtt Handshake</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Zero Rtt Kamay</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="90" />
         <source>UDP Relay Mode</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">UDP Relay Mode</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="115" />
         <source>Congestion Control</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Pagkontrol ng kasikipan</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="147" />
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="177" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Comma seperated ranges: 100:200,500:600&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mga hanay na pinaghihiwalay ng kuwit: 100:200,500:600&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="154" />
         <source>Obfs Password</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Password ng Obfs</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="170" />
         <source>Disable MTU Discovery</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">I-disable ang MTU Discovery</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="180" />
         <source>Port range</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Saklaw ng port</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="190" />
@@ -1793,7 +1795,7 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="197" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;100ms&lt;br/&gt;1s&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;100ms&lt;br/&gt;1s&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="217" />
@@ -1803,28 +1805,28 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="230" />
         <source>Auth Payload</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Awth Payload</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="243" />
         <source>Password</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Password</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="257" />
         <source>Generate UUID</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Bumuo ng UUID</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="293" />
         <location filename="../../src/ui/profile/edit_quic.cpp" line="149" />
         <source>Certificate</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Sertipiko</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="310" />
         <source>Disable SNI</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Huwag paganahin ang SNI</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="327" />
@@ -1847,37 +1849,37 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="20" />
         <source>User</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Gumagamit</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="30" />
         <source>Password</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Password</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="40" />
         <source>Private Key</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Pribadong Susi</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="50" />
         <source>Private Key Password</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Pribadong Key Password</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="60" />
         <source>Host Key</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Host Key</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="70" />
         <source>Host Key Algorithms</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Host Key Algorithms</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="80" />
         <source>Client Version</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Bersyon ng Kliyente</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="93" />
@@ -1900,27 +1902,27 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="37" />
         <source>Encryption</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Pag-encrypt</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="44" />
         <source>Plugin Args</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Plugin Args</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="54" />
         <source>Password</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Password</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="80" />
         <source>Version of UDP over TCP protocol, server support is required.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Bersyon ng UDP sa TCP protocol, kinakailangan ang suporta ng server.</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="94" />
         <source>Off</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Naka-off</translation>
     </message>
 </context>
 <context>
@@ -1928,27 +1930,27 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="20" />
         <source>Version</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Bersyon</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="27" />
         <source>Password</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Password</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="38" />
         <source>1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">1</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="43" />
         <source>2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">2</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="48" />
         <source>3</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">3</translation>
     </message>
 </context>
 <context>
@@ -1956,17 +1958,17 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="20" />
         <source>Version</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Bersyon</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="33" />
         <source>Username</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Username</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="54" />
         <source>Password</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Password</translation>
     </message>
 </context>
 <context>
@@ -1974,22 +1976,22 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="14" />
         <source>Form</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Form</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="20" />
         <source>State directory</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Direktoryo ng estado</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="30" />
         <source>Auth key</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Susi ng pagpapatotoo</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="40" />
         <source>Control URL</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kontrolin ang URL</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="50" />
@@ -1999,7 +2001,7 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="60" />
         <source>Accept routes</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tanggapin ang mga ruta</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="67" />
@@ -2009,12 +2011,12 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="74" />
         <source>Exit node allow lan access</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Exit node payagan ang lan access</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="81" />
         <source>Advertise exit node</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Mag-advertise ng exit node</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="88" />
@@ -2029,12 +2031,12 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="101" />
         <source>Advertise routes</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Mag-advertise ng mga ruta</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="111" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;use tailscale dns as the remote dns&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;gumamit ng tailscale dns bilang remote dns&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="114" />
