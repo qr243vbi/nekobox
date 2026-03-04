@@ -140,7 +140,8 @@ DialogBasicSettings::DialogBasicSettings(MainWindow *parent)
     if (index >= 0){
         language->setCurrentIndex(index);
     }
-
+    language->view()->setMaximumHeight(200);
+    language->setStyleSheet("QComboBox QAbstractItemView { max-height: 200px; }");
     language->setMaxVisibleItems(10);
     //    language->setCurrentIndex(locales.indexOf(getLocale()));
     connect(language, &QComboBox::currentIndexChanged, this, [=,this](int index) {
