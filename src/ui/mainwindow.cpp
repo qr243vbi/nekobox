@@ -3325,11 +3325,22 @@ void MainWindow::on_menu_resolve_domain_triggered() {
   }
 }
 
+#define LAST_CLICK                            \
+  auto lastx = this->lastx;                   \
+  auto lasty = this->lasty;                   \
+  if (lastx > -1 || lasty > -1){              \
+    this->lastx = -1;                         \
+    this->lasty = -1;                         \
+    if (pos1.x() == lastx && pos1.y() == lasty){                    \
+      return;                                 \
+    }                                         \
+  }
+
 void MainWindow::on_proxyListTable_customContextMenuRequested(
     const QPoint &pos) {
-  qDebug() << "CONTEXT MENU CLICKED";
-  ui->proxyListTable->viewport()->mapToGlobal(pos);
-  ui->menu_server->popup(pos); // 弹出菜单
+  auto pos1 = ui->proxyListTable->viewport()->mapToGlobal(pos);  
+  LAST_CLICK
+  ui->menu_server->popup(pos1); 
 }
 
 QList<std::shared_ptr<Configs::ProxyEntity>>
@@ -3429,6 +3440,9 @@ void MainWindow::show_log_impl(const QString &log) {
 
 void MainWindow::on_masterLogBrowser_customContextMenuRequested(
     const QPoint &pos) {
+  auto pos1 = ui->masterLogBrowser->viewport()->mapToGlobal(pos);  
+  LAST_CLICK
+
   QMenu *menu = ui->masterLogBrowser->createStandardContextMenu();
 
   auto sep = new QAction(this);
@@ -3456,12 +3470,10 @@ void MainWindow::on_masterLogBrowser_customContextMenuRequested(
   menu->addAction(action_clear);
   menu->addAction(action_stop);
 
-  menu->exec(ui->masterLogBrowser->viewport()->mapToGlobal(pos));
+  menu->exec(pos1);
 }
 
 void MainWindow::on_tabWidget_customContextMenuRequested(const QPoint &p) {
-  qDebug() << "GROUP MENU CLICKED";
-
   QMenu *menu;
   int clickedIndex = 0;
   auto point_x = p.x();
@@ -3487,7 +3499,10 @@ void MainWindow::on_tabWidget_customContextMenuRequested(const QPoint &p) {
           Qt::SingleShotConnection);
 
       menu->addAction(addAction);
-      menu->exec(ui->tabWidget->tabBar()->mapToGlobal(p));
+      auto pos1 = ui->tabWidget->tabBar()->mapToGlobal(p);
+      this->lastx = pos1.x();
+      this->lasty = pos1.y();
+      menu->exec(pos1);
       return;
     }
     ui->tabWidget->setCurrentIndex(clickedIndex);
@@ -3565,7 +3580,10 @@ void MainWindow::on_tabWidget_customContextMenuRequested(const QPoint &p) {
     menu->removeAction(ui->menu_stop_testing);
   }
   if (menu != ui->menuCurrent_group) {
-    menu->exec(ui->tabWidget->tabBar()->mapToGlobal(p));
+    auto pos1 = ui->tabWidget->tabBar()->mapToGlobal(p);
+    this->lastx = pos1.x();
+    this->lasty = pos1.y();
+    menu->exec(pos1);
   }
   return;
 }

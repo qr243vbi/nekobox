@@ -116,6 +116,7 @@ public:
     friend class SpinnerDialog;
     std::unique_ptr<Stats::ProxyAutoTester> proxyAutoTester;
 
+    int lastx = -1, lasty = -1;
     explicit MainWindow(QWidget *parent = nullptr);
 
     ~MainWindow() override;
