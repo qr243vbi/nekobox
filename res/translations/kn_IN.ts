@@ -286,7 +286,7 @@
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="580"/>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="807"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="800"/>
         <source>Enable</source>
         <translation type="unfinished">ಸಕ್ರಿಯಗೊಳಿಸಿ</translation>
     </message>
@@ -364,42 +364,41 @@
         <translation type="unfinished">ಟ್ರಾಫಿಕ್ ಅಂಕಿಅಂಶಗಳನ್ನು ನಿಷ್ಕ್ರಿಯಗೊಳಿಸಿ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="729"/>
         <source>Use TCP</source>
-        <translation type="unfinished">TCP ಬಳಸಿ</translation>
+        <translation type="obsolete">TCP ಬಳಸಿ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="738"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="731"/>
         <source>Multiplex (mux)</source>
         <translation type="unfinished">ಮಲ್ಟಿಪ್ಲೆಕ್ಸ್ (ಮಕ್ಸ್)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="745"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="738"/>
         <source>Loglevel</source>
         <translation type="unfinished">ಲಾಗ್ಲೆವೆಲ್</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="757"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="750"/>
         <source>concurrency</source>
         <translation type="unfinished">ಏಕರೂಪತೆ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="767"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="760"/>
         <source>Padding</source>
         <translation type="unfinished">ಪ್ಯಾಡಿಂಗ್</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="774"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="767"/>
         <source>Default On</source>
         <translation type="unfinished">ಡೀಫಾಲ್ಟ್ ಆನ್</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="786"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="779"/>
         <source>Core Options</source>
         <translation type="unfinished">ಕೋರ್ ಆಯ್ಕೆಗಳು</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="796"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="789"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Settings for the
                                             sing-box&apos;s built-in NTP client&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                                         </source>
@@ -407,27 +406,27 @@
 sing-box ನ ಅಂತರ್ನಿರ್ಮಿತ NTP ಕ್ಲೈಂಟ್&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="801"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="794"/>
         <source>NTP Settings</source>
         <translation type="unfinished">NTP ಸೆಟ್ಟಿಂಗ್‌ಗಳು</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="816"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="809"/>
         <source>server</source>
         <translation type="unfinished">ಸರ್ವರ್</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="826"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="819"/>
         <source>Port</source>
         <translation type="unfinished">ಬಂದರು</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="843"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="836"/>
         <source>sync interval</source>
         <translation type="unfinished">ಸಿಂಕ್ ಮಧ್ಯಂತರ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="850"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="843"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;In
                                                                 minutes&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                                                             </source>
@@ -435,224 +434,224 @@ sing-box ನ ಅಂತರ್ನಿರ್ಮಿತ NTP ಕ್ಲೈಂಟ್&lt;/
 ನಿಮಿಷಗಳು&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="856"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="849"/>
         <source>5m</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="861"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="854"/>
         <source>10m</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="866"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="859"/>
         <source>30m</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="880"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="873"/>
         <source>Security</source>
         <translation type="unfinished">ಭದ್ರತೆ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="886"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="879"/>
         <source>Disable Privilege request</source>
         <translation type="unfinished">ಸವಲತ್ತು ವಿನಂತಿಯನ್ನು ನಿಷ್ಕ್ರಿಯಗೊಳಿಸಿ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="893"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="886"/>
         <source>Use Mozilla Certificate Store</source>
         <translation type="unfinished">ಮೊಜಿಲ್ಲಾ ಪ್ರಮಾಣಪತ್ರ ಅಂಗಡಿಯನ್ನು ಬಳಸಿ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="900"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="893"/>
         <source>Skip TLS certificate authentication by default (allowInsecure)</source>
         <translation type="unfinished">ಡೀಫಾಲ್ಟ್ ಆಗಿ TLS ಪ್ರಮಾಣಪತ್ರ ದೃಢೀಕರಣವನ್ನು ಬಿಟ್ಟುಬಿಡಿ (ಅಸುರಕ್ಷಿತವನ್ನು ಅನುಮತಿಸಿ)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="928"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="921"/>
         <source>Default uTLS Fingerprint</source>
         <translation type="unfinished">ಡೀಫಾಲ್ಟ್ uTLS ಫಿಂಗರ್‌ಪ್ರಿಂಟ್</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="951"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="944"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Do not attempt to start as Admin unless explicitly requested&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;ಸ್ಪಷ್ಟವಾಗಿ ವಿನಂತಿಸದಿದ್ದರೆ ನಿರ್ವಾಹಕರಾಗಿ ಪ್ರಾರಂಭಿಸಲು ಪ್ರಯತ್ನಿಸಬೇಡಿ&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="954"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="947"/>
         <source>Always Start as Standard User</source>
         <translation type="unfinished">ಯಾವಾಗಲೂ ಪ್ರಮಾಣಿತ ಬಳಕೆದಾರರಂತೆ ಪ್ರಾರಂಭಿಸಿ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="961"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="954"/>
         <source>Use Json instead binary for configs</source>
         <translation type="unfinished">ಸಂರಚನೆಗಳಿಗಾಗಿ ಬೈನರಿ ಬದಲಿಗೆ Json ಬಳಸಿ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="975"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="968"/>
         <source>Auto-Testing</source>
         <translation type="unfinished">ಸ್ವಯಂ ಪರೀಕ್ಷೆ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="981"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="974"/>
         <source>Automatically test proxies in the background and maintain a pool of working proxies</source>
         <translation type="unfinished">ಹಿನ್ನೆಲೆಯಲ್ಲಿ ಪ್ರಾಕ್ಸಿಗಳನ್ನು ಸ್ವಯಂಚಾಲಿತವಾಗಿ ಪರೀಕ್ಷಿಸಿ ಮತ್ತು ಕಾರ್ಯನಿರ್ವಹಿಸುವ ಪ್ರಾಕ್ಸಿಗಳ ಪೂಲ್ ಅನ್ನು ನಿರ್ವಹಿಸಿ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="984"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="977"/>
         <source>Enable Auto-Testing</source>
         <translation type="unfinished">ಸ್ವಯಂ ಪರೀಕ್ಷೆಯನ್ನು ಸಕ್ರಿಯಗೊಳಿಸಿ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="991"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="984"/>
         <source>Test Interval (seconds)</source>
         <translation type="unfinished">ಪರೀಕ್ಷಾ ಮಧ್ಯಂತರ (ಸೆಕೆಂಡ್‌ಗಳು)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="998"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="991"/>
         <source>How often to run the test cycle</source>
         <translation type="unfinished">ಪರೀಕ್ಷಾ ಚಕ್ರವನ್ನು ಎಷ್ಟು ಬಾರಿ ಚಲಾಯಿಸಬೇಕು</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1014"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1007"/>
         <source>Proxies Per Cycle</source>
         <translation type="unfinished">ಪ್ರತಿ ಸೈಕಲ್‌ಗೆ ಪ್ರಾಕ್ಸಿಗಳು</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1021"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1014"/>
         <source>Number of proxies to test in each cycle</source>
         <translation type="unfinished">ಪ್ರತಿ ಚಕ್ರದಲ್ಲಿ ಪರೀಕ್ಷಿಸಲು ಪ್ರಾಕ್ಸಿಗಳ ಸಂಖ್ಯೆ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1037"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1030"/>
         <source>Working Pool Size</source>
         <translation type="unfinished">ವರ್ಕಿಂಗ್ ಪೂಲ್ ಗಾತ್ರ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1044"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1037"/>
         <source>Maximum number of verified working proxies to maintain</source>
         <translation type="unfinished">ನಿರ್ವಹಿಸಲು ಗರಿಷ್ಠ ಸಂಖ್ಯೆಯ ಪರಿಶೀಲಿಸಿದ ಕಾರ್ಯ ಪ್ರಾಕ್ಸಿಗಳು</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1060"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1053"/>
         <source>Latency Threshold (ms)</source>
         <translation type="unfinished">ಲೇಟೆನ್ಸಿ ಥ್ರೆಶೋಲ್ಡ್ (ಮಿಸೆ)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1067"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1060"/>
         <source>Maximum latency to consider a proxy as working</source>
         <translation type="unfinished">ಪ್ರಾಕ್ಸಿ ಕಾರ್ಯನಿರ್ವಹಿಸುತ್ತಿದೆ ಎಂದು ಪರಿಗಣಿಸಲು ಗರಿಷ್ಠ ಸುಪ್ತತೆ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1086"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1079"/>
         <source>Failure Retry Count</source>
         <translation type="unfinished">ವೈಫಲ್ಯ ಮರುಪ್ರಯತ್ನ ಎಣಿಕೆ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1093"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1086"/>
         <source>Number of retry attempts before considering a proxy as failed</source>
         <translation type="unfinished">ಪ್ರಾಕ್ಸಿ ವಿಫಲವಾಗಿದೆ ಎಂದು ಪರಿಗಣಿಸುವ ಮೊದಲು ಮರುಪ್ರಯತ್ನಗಳ ಸಂಖ್ಯೆ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1109"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1102"/>
         <source>Test Target URL</source>
         <translation type="unfinished">ಪರೀಕ್ಷಾ ಗುರಿ URL</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1116"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1109"/>
         <source>URL to test proxies against</source>
         <translation type="unfinished">ವಿರುದ್ಧ ಪ್ರಾಕ್ಸಿಗಳನ್ನು ಪರೀಕ್ಷಿಸಲು URL</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1119"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1112"/>
         <source>http://cp.cloudflare.com/</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1126"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1119"/>
         <source>Automatically switch to another working proxy when TUN mode proxy fails</source>
         <translation type="unfinished">TUN ಮೋಡ್ ಪ್ರಾಕ್ಸಿ ವಿಫಲವಾದಾಗ ಸ್ವಯಂಚಾಲಿತವಾಗಿ ಮತ್ತೊಂದು ಕಾರ್ಯನಿರ್ವಹಿಸುವ ಪ್ರಾಕ್ಸಿಗೆ ಬದಲಿಸಿ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1129"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1122"/>
         <source>Enable TUN Failover</source>
         <translation type="unfinished">TUN ವೈಫಲ್ಯವನ್ನು ಸಕ್ರಿಯಗೊಳಿಸಿ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1137"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1130"/>
         <source>Startup</source>
         <translation type="unfinished">ಪ್ರಾರಂಭ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1198"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1191"/>
         <source>Geometry</source>
         <translation type="unfinished">ರೇಖಾಗಣಿತ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1227"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1220"/>
         <source>Autosave geometry</source>
         <translation type="unfinished">ಸ್ವಯಂಸೇವ್ ಜ್ಯಾಮಿತಿ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1234"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1227"/>
         <source>Autosave position</source>
         <translation type="unfinished">ಸ್ವಯಂ ಉಳಿಸುವ ಸ್ಥಾನ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1254"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1247"/>
         <source>Apply now</source>
         <translation type="unfinished">ಈಗಲೇ ಅನ್ವಯಿಸಿ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1370"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1363"/>
         <source>Width</source>
         <translation type="unfinished">ಅಗಲ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1383"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1376"/>
         <source>X</source>
         <translation type="unfinished">X</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1416"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1409"/>
         <source>Y</source>
         <translation type="unfinished">ವೈ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1429"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1422"/>
         <source>Height</source>
         <translation type="unfinished">ಎತ್ತರ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1516"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1509"/>
         <source>Core Executable Path</source>
         <translation type="unfinished">ಕೋರ್ ಎಕ್ಸಿಕ್ಯೂಟಬಲ್ ಪಾತ್</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1545"/>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1719"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1538"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1712"/>
         <source>Use default</source>
         <translation type="unfinished">ಡೀಫಾಲ್ಟ್ ಬಳಸಿ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1552"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1545"/>
         <source>Remote Control</source>
         <translation type="unfinished">ರಿಮೋಟ್ ಕಂಟ್ರೋಲ್</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1578"/>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1752"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1571"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1745"/>
         <source>Select</source>
         <translation type="unfinished">ಆಯ್ಕೆ ಮಾಡಿ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1690"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1683"/>
         <source>Resources Directory</source>
         <translation type="unfinished">ಸಂಪನ್ಮೂಲಗಳ ಡೈರೆಕ್ಟರಿ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1726"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1719"/>
         <source>Resource Manager</source>
         <translation type="unfinished">ಸಂಪನ್ಮೂಲ ವ್ಯವಸ್ಥಾಪಕ</translation>
     </message>
@@ -2328,8 +2327,8 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="161"/>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="597"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="2427"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="2430"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2422"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2425"/>
         <source>System Proxy</source>
         <translation type="unfinished">ಸಿಸ್ಟಮ್ ಪ್ರಾಕ್ಸಿ</translation>
     </message>
@@ -2358,8 +2357,8 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="324"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="291"/>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="293"/>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="295"/>
         <source>Test Result</source>
         <translation type="unfinished">ಪರೀಕ್ಷಾ ಫಲಿತಾಂಶ</translation>
     </message>
@@ -2496,15 +2495,15 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="736"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3447"/>
         <location filename="../../src/ui/mainwindow.cpp" line="3457"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3467"/>
         <source>Start</source>
         <translation type="unfinished">ಪ್ರಾರಂಭಿಸಿ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="744"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3446"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3457"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3456"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3467"/>
         <source>Stop</source>
         <translation type="unfinished">ನಿಲ್ಲಿಸು</translation>
     </message>
@@ -2551,7 +2550,7 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="823"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="1353"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1348"/>
         <source>Export %1 config</source>
         <translation type="unfinished">% 1 ಸಂರಚನೆಯನ್ನು ರಫ್ತು ಮಾಡಿ</translation>
     </message>
@@ -2662,7 +2661,7 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="977"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="2783"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2778"/>
         <source>Clone</source>
         <translation type="unfinished">ಕ್ಲೋನ್</translation>
     </message>
@@ -2789,7 +2788,7 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1147"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3473"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3485"/>
         <source>Add new Group</source>
         <translation type="unfinished">ಹೊಸ ಗುಂಪನ್ನು ಸೇರಿಸಿ</translation>
     </message>
@@ -2800,363 +2799,363 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
     </message>
     <message>
         <location filename="../../src/dataStore/ProxyEntity.cpp" line="52"/>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="293"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="291"/>
         <source>Unavailable</source>
         <translation type="unfinished">ಲಭ್ಯವಿಲ್ಲ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1006"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1001"/>
         <source>Edit Routing Profiles</source>
         <translation type="unfinished">ರೂಟಿಂಗ್ ಪ್ರೊಫೈಲ್‌ಗಳನ್ನು ಸಂಪಾದಿಸಿ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1028"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1023"/>
         <source>Update Routing Profiles</source>
         <translation type="unfinished">ರೂಟಿಂಗ್ ಪ್ರೊಫೈಲ್‌ಗಳನ್ನು ನವೀಕರಿಸಿ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1040"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="1044"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="1065"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="1068"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="1112"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1035"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1039"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1060"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1063"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1107"/>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="95"/>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="104"/>
         <source>Update Response</source>
         <translation type="unfinished">ಪ್ರತಿಕ್ರಿಯೆಯನ್ನು ನವೀಕರಿಸಿ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1041"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1036"/>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="105"/>
         <source>No routing profiles are updated</source>
         <translation type="unfinished">ಯಾವುದೇ ರೂಟಿಂಗ್ ಪ್ರೊಫೈಲ್‌ಗಳನ್ನು ನವೀಕರಿಸಲಾಗಿಲ್ಲ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1045"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1040"/>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="96"/>
         <source>Updated %1 routing profiles</source>
         <translation type="unfinished">% 1 ರೂಟಿಂಗ್ ಪ್ರೊಫೈಲ್‌ಗಳನ್ನು ನವೀಕರಿಸಲಾಗಿದೆ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1055"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1050"/>
         <source>Update RuleSet Map</source>
         <translation type="unfinished">ರೂಲ್‌ಸೆಟ್ ನಕ್ಷೆಯನ್ನು ನವೀಕರಿಸಿ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1066"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1061"/>
         <source>Failed to update rulesets</source>
         <translation type="unfinished">ನಿಯಮಾವಳಿಗಳನ್ನು ನವೀಕರಿಸಲು ವಿಫಲವಾಗಿದೆ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1069"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1064"/>
         <source>Rulesets updated successfully</source>
         <translation type="unfinished">ನಿಯಮಾವಳಿಗಳನ್ನು ಯಶಸ್ವಿಯಾಗಿ ನವೀಕರಿಸಲಾಗಿದೆ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1078"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1073"/>
         <source>Update RuleSet Cache</source>
         <translation type="unfinished">ರೂಲ್‌ಸೆಟ್ ಸಂಗ್ರಹವನ್ನು ನವೀಕರಿಸಿ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1113"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1108"/>
         <source>Rulesets cache is updated</source>
         <translation type="unfinished">ನಿಯಮಗಳ ಸಂಗ್ರಹವನ್ನು ನವೀಕರಿಸಲಾಗಿದೆ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1127"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1122"/>
         <source>Clear RuleSet Cache</source>
         <translation type="unfinished">ರೂಲ್‌ಸೆಟ್ ಸಂಗ್ರಹವನ್ನು ತೆರವುಗೊಳಿಸಿ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1163"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1158"/>
         <source>Enable AdBlock</source>
         <translation type="unfinished">AdBlock ಅನ್ನು ಸಕ್ರಿಯಗೊಳಿಸಿ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1566"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1561"/>
         <source>Error</source>
         <translation type="unfinished">ದೋಷ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1653"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1648"/>
         <source>Tun Settings changed</source>
         <translation type="unfinished">ಟ್ಯೂನ್ ಸೆಟ್ಟಿಂಗ್‌ಗಳನ್ನು ಬದಲಾಯಿಸಲಾಗಿದೆ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1654"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1649"/>
         <source>Restart Tun to take effect.</source>
         <translation type="unfinished">ಪರಿಣಾಮ ಬೀರಲು Tun ಅನ್ನು ಮರುಪ್ರಾರಂಭಿಸಿ.</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1660"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="1718"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="2837"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3208"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3262"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3310"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3515"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1655"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1713"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2832"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3203"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3257"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3305"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3530"/>
         <source>Confirmation</source>
         <translation type="unfinished">ದೃಢೀಕರಣ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1661"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="1719"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1656"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1714"/>
         <source>Settings changed, restart proxy?</source>
         <translation type="unfinished">ಸೆಟ್ಟಿಂಗ್‌ಗಳನ್ನು ಬದಲಾಯಿಸಲಾಗಿದೆ, ಪ್ರಾಕ್ಸಿಯನ್ನು ಮರುಪ್ರಾರಂಭಿಸುವುದೇ?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1690"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1685"/>
         <source>Settings changed</source>
         <translation type="unfinished">ಸೆಟ್ಟಿಂಗ್‌ಗಳನ್ನು ಬದಲಾಯಿಸಲಾಗಿದೆ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1691"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1686"/>
         <source>Restart the program to take effect.</source>
         <translation type="unfinished">ಕಾರ್ಯಗತಗೊಳಿಸಲು ಪ್ರೋಗ್ರಾಂ ಅನ್ನು ಮರುಪ್ರಾರಂಭಿಸಿ.</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1734"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1729"/>
         <source>Imported %1 profile(s)</source>
         <translation type="unfinished">% 1 ಪ್ರೊಫೈಲ್(ಗಳನ್ನು) ಆಮದು ಮಾಡಲಾಗಿದೆ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1985"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1980"/>
         <source>User opted for no privilege req, some features may not work</source>
         <translation type="unfinished">ಬಳಕೆದಾರರು ಯಾವುದೇ ಸವಲತ್ತು ರೀಕ್ಯೂ ಅನ್ನು ಆಯ್ಕೆ ಮಾಡಿಲ್ಲ, ಕೆಲವು ವೈಶಿಷ್ಟ್ಯಗಳು ಕಾರ್ಯನಿರ್ವಹಿಸದೇ ಇರಬಹುದು</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2049"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2044"/>
         <source>Please give the core root privileges</source>
         <translation type="unfinished">ದಯವಿಟ್ಟು ಮೂಲ ಸವಲತ್ತುಗಳನ್ನು ನೀಡಿ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2403"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2398"/>
         <source>Not Running</source>
         <translation type="unfinished">ಓಡುತ್ತಿಲ್ಲ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2784"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2779"/>
         <source>Clone %1 item(s)</source>
         <translation type="unfinished">ಕ್ಲೋನ್ % 1 ಐಟಂ(ಗಳು)</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2818"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2813"/>
         <source> Confirmation </source>
         <translation type="unfinished">ದೃಢೀಕರಣ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2819"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2814"/>
         <source> Remove %1 item(s) ? </source>
         <translation type="unfinished">% 1 ಐಟಂ(ಗಳನ್ನು) ತೆಗೆದುಹಾಕುವುದೇ?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2838"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2833"/>
         <source>Remove %1 item(s) ?</source>
         <translation type="unfinished">% 1 ಐಟಂ(ಗಳನ್ನು) ತೆಗೆದುಹಾಕುವುದೇ?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2875"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="2888"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2870"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2883"/>
         <source>Copied %1 item(s)</source>
         <translation type="unfinished">% 1 ಐಟಂ(ಗಳು) ನಕಲಿಸಲಾಗಿದೆ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3120"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3115"/>
         <source>QR Code not found</source>
         <translation type="unfinished">QR ಕೋಡ್ ಕಂಡುಬಂದಿಲ್ಲ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3141"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3136"/>
         <source>Unable to capture screen</source>
         <translation type="unfinished">ಪರದೆಯನ್ನು ಸೆರೆಹಿಡಿಯಲು ಸಾಧ್ಯವಾಗುತ್ತಿಲ್ಲ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3209"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3204"/>
         <source>Remove %1 Unavailable item(s) ?</source>
         <translation type="unfinished">% 1 ಲಭ್ಯವಿಲ್ಲದ ಐಟಂ(ಗಳನ್ನು) ತೆಗೆದುಹಾಕುವುದೇ?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3263"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3258"/>
         <source>Remove %1 Invalid item(s) ?</source>
         <translation type="unfinished">% 1 ಅಮಾನ್ಯವಾದ ಐಟಂ(ಗಳನ್ನು) ತೆಗೆದುಹಾಕುವುದೇ?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3311"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3306"/>
         <source>Replace domain server addresses with their resolved IPs?</source>
         <translation type="unfinished">ಡೊಮೇನ್ ಸರ್ವರ್ ವಿಳಾಸಗಳನ್ನು ಅವುಗಳ ಪರಿಹರಿಸಿದ IPಗಳೊಂದಿಗೆ ಬದಲಾಯಿಸುವುದೇ?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3444"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3454"/>
         <source>Clear</source>
         <translation type="unfinished">ತೆರವುಗೊಳಿಸಿ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3506"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3521"/>
         <source>Delete selected Group</source>
         <translation type="unfinished">ಆಯ್ಕೆಮಾಡಿದ ಗುಂಪನ್ನು ಅಳಿಸಿ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3507"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3522"/>
         <source>Edit selected Group</source>
         <translation type="unfinished">ಆಯ್ಕೆಮಾಡಿದ ಗುಂಪನ್ನು ಸಂಪಾದಿಸಿ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3516"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3531"/>
         <source>Remove %1?</source>
         <translation type="unfinished">% 1 ತೆಗೆದುಹಾಕುವುದೇ?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4199"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4217"/>
         <source>Cannot start</source>
         <translation type="unfinished">ಪ್ರಾರಂಭಿಸಲು ಸಾಧ್ಯವಿಲ್ಲ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4200"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4218"/>
         <source>Last download request has not finished yet</source>
         <translation type="unfinished">ಕೊನೆಯ ಡೌನ್‌ಲೋಡ್ ವಿನಂತಿಯು ಇನ್ನೂ ಪೂರ್ಣಗೊಂಡಿಲ್ಲ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4234"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4252"/>
         <source>Failed to download update assets</source>
         <translation type="unfinished">ನವೀಕರಣ ಸ್ವತ್ತುಗಳನ್ನು ಡೌನ್‌ಲೋಡ್ ಮಾಡಲು ವಿಫಲವಾಗಿದೆ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="85"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="83"/>
         <source>Profile test aborted</source>
         <translation type="unfinished">ಪ್ರೊಫೈಲ್ ಪರೀಕ್ಷೆಯನ್ನು ಸ್ಥಗಿತಗೊಳಿಸಲಾಗಿದೆ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="136"/>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="182"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="134"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="180"/>
         <source>[%1] test error: %2</source>
         <translation type="unfinished">[%1] ಪರೀಕ್ಷಾ ದೋಷ: %2</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="165"/>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="491"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="163"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="489"/>
         <source>Something is very wrong, the subject ent cannot be found!</source>
         <translation type="unfinished">ಏನೋ ತುಂಬಾ ತಪ್ಪಾಗಿದೆ, ವಿಷಯವು ಕಂಡುಬಂದಿಲ್ಲ!</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="171"/>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="497"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="169"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="495"/>
         <source>Profile manager data is corrupted, try again.</source>
         <translation type="unfinished">ಪ್ರೊಫೈಲ್ ಮ್ಯಾನೇಜರ್ ಡೇಟಾ ದೋಷಪೂರಿತವಾಗಿದೆ, ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="205"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="203"/>
         <source>The last url test did not exit completely, please wait. If it persists, please restart the program.</source>
         <translation type="unfinished">ಕೊನೆಯ url ಪರೀಕ್ಷೆಯು ಸಂಪೂರ್ಣವಾಗಿ ನಿರ್ಗಮಿಸಲಿಲ್ಲ, ದಯವಿಟ್ಟು ನಿರೀಕ್ಷಿಸಿ.ಇದು ಮುಂದುವರಿದರೆ, ದಯವಿಟ್ಟು ಪ್ರೋಗ್ರಾಂ ಅನ್ನು ಮರುಪ್ರಾರಂಭಿಸಿ.</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="214"/>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="321"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="212"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="319"/>
         <source>Failed to build test config: </source>
         <translation type="unfinished">ಪರೀಕ್ಷಾ ಸಂರಚನೆಯನ್ನು ನಿರ್ಮಿಸಲು ವಿಫಲವಾಗಿದೆ:</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="255"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="253"/>
         <source>URL test finished!</source>
         <translation type="unfinished">URL ಪರೀಕ್ಷೆ ಮುಗಿದಿದೆ!</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="266"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="264"/>
         <source>Failed to stop tests</source>
         <translation type="unfinished">ಪರೀಕ್ಷೆಗಳನ್ನು ನಿಲ್ಲಿಸಲು ವಿಫಲವಾಗಿದೆ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="272"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="270"/>
         <source>Testing</source>
         <translation type="unfinished">ಪರೀಕ್ಷೆ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="310"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="308"/>
         <source>The last speed test did not exit completely, please wait. If it persists, please restart the program.</source>
         <translation type="unfinished">ಕೊನೆಯ ವೇಗ ಪರೀಕ್ಷೆಯು ಸಂಪೂರ್ಣವಾಗಿ ನಿರ್ಗಮಿಸಲಿಲ್ಲ, ದಯವಿಟ್ಟು ನಿರೀಕ್ಷಿಸಿ.ಇದು ಮುಂದುವರಿದರೆ, ದಯವಿಟ್ಟು ಪ್ರೋಗ್ರಾಂ ಅನ್ನು ಮರುಪ್ರಾರಂಭಿಸಿ.</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="347"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="345"/>
         <source>Speedtest finished!</source>
         <translation type="unfinished">ವೇಗ ಪರೀಕ್ಷೆ ಮುಗಿದಿದೆ!</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="428"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="426"/>
         <source>Profile speed test aborted</source>
         <translation type="unfinished">ಪ್ರೊಫೈಲ್ ವೇಗ ಪರೀಕ್ಷೆಯನ್ನು ಸ್ಥಗಿತಗೊಳಿಸಲಾಗಿದೆ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="516"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="514"/>
         <source>[%1] speed test error: %2</source>
         <translation type="unfinished">[%1] ವೇಗ ಪರೀಕ್ಷೆ ದೋಷ: %2</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="525"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="523"/>
         <source>You need to enable hijack DNS server first</source>
         <translation type="unfinished">ನೀವು ಮೊದಲು ಹೈಜಾಕ್ DNS ಸರ್ವರ್ ಅನ್ನು ಸಕ್ರಿಯಗೊಳಿಸಬೇಕು</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="539"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="537"/>
         <source>Failed to set system dns: </source>
         <translation type="unfinished">ಸಿಸ್ಟಮ್ ಡಿಎನ್ಎಸ್ ಹೊಂದಿಸಲು ವಿಫಲವಾಗಿದೆ:</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="587"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="585"/>
         <source>Tun device misbehaving</source>
         <translation type="unfinished">ಸಾಧನವು ತಪ್ಪಾಗಿ ವರ್ತಿಸುತ್ತಿದೆ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="588"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="586"/>
         <source>If you have trouble starting VPN, you can force reset Core process here and then try starting the profile again. The error is %1</source>
         <translation type="unfinished">VPN ಅನ್ನು ಪ್ರಾರಂಭಿಸುವಲ್ಲಿ ನಿಮಗೆ ಸಮಸ್ಯೆ ಇದ್ದರೆ, ನೀವು ಇಲ್ಲಿ ಕೋರ್ ಪ್ರಕ್ರಿಯೆಯನ್ನು ಬಲವಂತವಾಗಿ ಮರುಹೊಂದಿಸಬಹುದು ಮತ್ತು ನಂತರ ಮತ್ತೆ ಪ್ರೊಫೈಲ್ ಅನ್ನು ಪ್ರಾರಂಭಿಸಲು ಪ್ರಯತ್ನಿಸಿ.ದೋಷವು% 1 ಆಗಿದೆ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="592"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="590"/>
         <source>Reset</source>
         <translation type="unfinished">ಮರುಹೊಂದಿಸಿ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="593"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="591"/>
         <source>Cancel</source>
         <translation type="unfinished">ರದ್ದುಮಾಡಿ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="632"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="630"/>
         <source>Another profile is starting...</source>
         <translation type="unfinished">ಮತ್ತೊಂದು ಪ್ರೊಫೈಲ್ ಪ್ರಾರಂಭವಾಗುತ್ತಿದೆ...</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="639"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="637"/>
         <source>Another profile is stopping...</source>
         <translation type="unfinished">ಮತ್ತೊಂದು ಪ್ರೊಫೈಲ್ ನಿಲ್ಲುತ್ತಿದೆ...</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="660"/>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="742"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="658"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="740"/>
         <source>If there is no response for a long time, it is recommended to restart the software.</source>
         <translation type="unfinished">ದೀರ್ಘಕಾಲದವರೆಗೆ ಯಾವುದೇ ಪ್ರತಿಕ್ರಿಯೆ ಇಲ್ಲದಿದ್ದರೆ, ಸಾಫ್ಟ್ವೇರ್ ಅನ್ನು ಮರುಪ್ರಾರಂಭಿಸಲು ಸೂಚಿಸಲಾಗುತ್ತದೆ.</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="674"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="672"/>
         <source>Starting profile %1</source>
         <translation type="unfinished">ಪ್ರೊಫೈಲ್ % 1 ಅನ್ನು ಪ್ರಾರಂಭಿಸಲಾಗುತ್ತಿದೆ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="676"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="674"/>
         <source>Failed to start profile %1</source>
         <translation type="unfinished">ಪ್ರೊಫೈಲ್ % 1 ಅನ್ನು ಪ್ರಾರಂಭಿಸಲು ವಿಫಲವಾಗಿದೆ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="725"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="723"/>
         <source>Stop return error</source>
         <translation type="unfinished">ಸ್ಟಾಪ್ ರಿಟರ್ನ್ ದೋಷ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="765"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="763"/>
         <source>Stopping profile %1</source>
         <translation type="unfinished">ಪ್ರೊಫೈಲ್ % 1 ಅನ್ನು ನಿಲ್ಲಿಸಲಾಗುತ್ತಿದೆ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="767"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="765"/>
         <source>Failed to stop, please restart the program.</source>
         <translation type="unfinished">ನಿಲ್ಲಿಸಲು ವಿಫಲವಾಗಿದೆ, ದಯವಿಟ್ಟು ಪ್ರೋಗ್ರಾಂ ಅನ್ನು ಮರುಪ್ರಾರಂಭಿಸಿ.</translation>
     </message>
@@ -3289,13 +3288,13 @@ Deleted %3 Profiles:
     <message>
         <location filename="../../src/nekobox/global/GuiUtils.hpp" line="112"/>
         <location filename="../../src/ui/profile/edit_ssh.cpp" line="28"/>
-        <location filename="../../src/ui/setting/dialog_basic_settings.cpp" line="245"/>
+        <location filename="../../src/ui/setting/dialog_basic_settings.cpp" line="244"/>
         <source>Select</source>
         <translation type="unfinished">ಆಯ್ಕೆ ಮಾಡಿ</translation>
     </message>
     <message>
         <location filename="../../src/stats/traffic/TrafficLooper.cpp" line="115"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="2371"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2366"/>
         <source>Proxy: %1
 Direct: %2</source>
         <translation type="unfinished">ಪ್ರಾಕ್ಸಿ: % 1
@@ -3317,7 +3316,7 @@ Direct: %2</source>
         <translation type="unfinished">ಕೋರ್ ಅನ್ನು ಮರುಪ್ರಾರಂಭಿಸಲಾಗುತ್ತಿದೆ ...</translation>
     </message>
     <message>
-        <location filename="../../src/sys/Settings.cpp" line="362"/>
+        <location filename="../../src/sys/Settings.cpp" line="361"/>
         <source>System</source>
         <translation type="unfinished">ವ್ಯವಸ್ಥೆ</translation>
     </message>
@@ -3382,69 +3381,69 @@ Deleted %1 Unavailable</source>
         <translation type="unfinished">ಅಳಿಸಲಾಗಿದೆ % 1 ಲಭ್ಯವಿಲ್ಲ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1446"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1441"/>
         <source>Check Rule Sets: %1</source>
         <translation type="unfinished">ನಿಯಮ ಸೆಟ್‌ಗಳನ್ನು ಪರಿಶೀಲಿಸಿ: % 1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1468"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1463"/>
         <source>Requesting rule-set list error: %1</source>
         <translation type="unfinished">ನಿಯಮ-ಸೆಟ್ ಪಟ್ಟಿ ದೋಷವನ್ನು ವಿನಂತಿಸಲಾಗುತ್ತಿದೆ: % 1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2408"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2403"/>
         <source>IP address: %1</source>
         <translation type="unfinished">IP ವಿಳಾಸ: % 1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2906"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2901"/>
         <source>Config copied</source>
         <translation type="unfinished">ಸಂರಚನೆಯನ್ನು ನಕಲಿಸಲಾಗಿದೆ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2917"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2912"/>
         <source>Copy core config</source>
         <translation type="unfinished">ಕೋರ್ ಕಾನ್ಫಿಗರ್ ಅನ್ನು ನಕಲಿಸಿ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2918"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2913"/>
         <source>Copy test config</source>
         <translation type="unfinished">ಪರೀಕ್ಷಾ ಸಂರಚನೆಯನ್ನು ನಕಲಿಸಿ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2919"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2914"/>
         <location filename="../../src/ui/security_addon.cpp" line="22"/>
         <location filename="../../src/ui/setting/dialog_vpn_settings.cpp" line="45"/>
         <source>OK</source>
         <translation type="unfinished">ಸರಿ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4104"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="4115"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="4159"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="4181"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="4190"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="4225"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4122"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4133"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4177"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4199"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4208"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4243"/>
         <source>Update</source>
         <translation type="unfinished">ನವೀಕರಿಸಿ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4105"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4123"/>
         <source>Not official support platform</source>
         <translation type="unfinished">ಅಧಿಕೃತ ಬೆಂಬಲ ವೇದಿಕೆ ಅಲ್ಲ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4116"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4134"/>
         <source>Requesting update error: %1</source>
         <translation type="unfinished">ನವೀಕರಣ ದೋಷವನ್ನು ವಿನಂತಿಸಲಾಗುತ್ತಿದೆ: % 1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4159"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4177"/>
         <source>No update</source>
         <translation type="unfinished">ಯಾವುದೇ ನವೀಕರಣವಿಲ್ಲ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4182"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4200"/>
         <source>Update found: %1
 Release note:
 %2</source>
@@ -3453,17 +3452,17 @@ Release note:
 % 2</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4185"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4203"/>
         <source>Close</source>
         <translation type="unfinished">ಮುಚ್ಚಿ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4187"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4205"/>
         <source>Open in browser</source>
         <translation type="unfinished">ಬ್ರೌಸರ್‌ನಲ್ಲಿ ತೆರೆಯಿರಿ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4226"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4244"/>
         <source>Update is ready, restart to install?</source>
         <translation type="unfinished">ನವೀಕರಣ ಸಿದ್ಧವಾಗಿದೆ, ಸ್ಥಾಪಿಸಲು ಮರುಪ್ರಾರಂಭಿಸುವುದೇ?</translation>
     </message>
@@ -3473,7 +3472,7 @@ Release note:
         <translation type="unfinished">ಪ್ರವೇಶವನ್ನು ನಿರಾಕರಿಸಲಾಗಿದೆ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/setting/dialog_basic_settings.cpp" line="250"/>
+        <location filename="../../src/ui/setting/dialog_basic_settings.cpp" line="249"/>
         <source>Select a Folder</source>
         <translation type="unfinished">ಫೋಲ್ಡರ್ ಆಯ್ಕೆಮಾಡಿ</translation>
     </message>
@@ -3810,7 +3809,7 @@ Release note:
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="261"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="1187"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1182"/>
         <source>Download Profiles</source>
         <translation type="unfinished">ಪ್ರೊಫೈಲ್‌ಗಳನ್ನು ಡೌನ್‌ಲೋಡ್ ಮಾಡಿ</translation>
     </message>

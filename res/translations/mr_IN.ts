@@ -286,7 +286,7 @@
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="580"/>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="807"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="800"/>
         <source>Enable</source>
         <translation type="unfinished">सक्षम करा</translation>
     </message>
@@ -364,42 +364,41 @@
         <translation type="unfinished">रहदारी आकडेवारी अक्षम करा</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="729"/>
         <source>Use TCP</source>
-        <translation type="unfinished">TCP वापरा</translation>
+        <translation type="obsolete">TCP वापरा</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="738"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="731"/>
         <source>Multiplex (mux)</source>
         <translation type="unfinished">मल्टिप्लेक्स (mux)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="745"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="738"/>
         <source>Loglevel</source>
         <translation type="unfinished">लॉगलेव्हल</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="757"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="750"/>
         <source>concurrency</source>
         <translation type="unfinished">एकरूपता</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="767"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="760"/>
         <source>Padding</source>
         <translation type="unfinished">पॅडिंग</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="774"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="767"/>
         <source>Default On</source>
         <translation type="unfinished">डीफॉल्ट चालू</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="786"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="779"/>
         <source>Core Options</source>
         <translation type="unfinished">मुख्य पर्याय</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="796"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="789"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Settings for the
                                             sing-box&apos;s built-in NTP client&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                                         </source>
@@ -407,27 +406,27 @@
 sing-box चे अंगभूत NTP क्लायंट&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="801"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="794"/>
         <source>NTP Settings</source>
         <translation type="unfinished">NTP सेटिंग्ज</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="816"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="809"/>
         <source>server</source>
         <translation type="unfinished">सर्व्हर</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="826"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="819"/>
         <source>Port</source>
         <translation type="unfinished">बंदर</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="843"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="836"/>
         <source>sync interval</source>
         <translation type="unfinished">समक्रमण अंतराल</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="850"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="843"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;In
                                                                 minutes&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                                                             </source>
@@ -435,224 +434,224 @@ sing-box चे अंगभूत NTP क्लायंट&lt;/p&gt;&lt;/body&
 मिनिटे&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="856"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="849"/>
         <source>5m</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="861"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="854"/>
         <source>10m</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="866"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="859"/>
         <source>30m</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="880"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="873"/>
         <source>Security</source>
         <translation type="unfinished">सुरक्षा</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="886"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="879"/>
         <source>Disable Privilege request</source>
         <translation type="unfinished">विशेषाधिकार विनंती अक्षम करा</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="893"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="886"/>
         <source>Use Mozilla Certificate Store</source>
         <translation type="unfinished">Mozilla Certificate Store वापरा</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="900"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="893"/>
         <source>Skip TLS certificate authentication by default (allowInsecure)</source>
         <translation type="unfinished">डीफॉल्टनुसार TLS प्रमाणपत्र प्रमाणीकरण वगळा (AllowInsecure)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="928"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="921"/>
         <source>Default uTLS Fingerprint</source>
         <translation type="unfinished">डीफॉल्ट uTLS फिंगरप्रिंट</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="951"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="944"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Do not attempt to start as Admin unless explicitly requested&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;स्पष्टपणे विनंती केल्याशिवाय प्रशासक म्हणून प्रारंभ करण्याचा प्रयत्न करू नका&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="954"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="947"/>
         <source>Always Start as Standard User</source>
         <translation type="unfinished">नेहमी मानक वापरकर्ता म्हणून प्रारंभ करा</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="961"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="954"/>
         <source>Use Json instead binary for configs</source>
         <translation type="unfinished">कॉन्फिगसाठी बायनरीऐवजी Json वापरा</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="975"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="968"/>
         <source>Auto-Testing</source>
         <translation type="unfinished">स्वयं-चाचणी</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="981"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="974"/>
         <source>Automatically test proxies in the background and maintain a pool of working proxies</source>
         <translation type="unfinished">पार्श्वभूमीत प्रॉक्सीची स्वयंचलितपणे चाचणी करा आणि कार्यरत प्रॉक्सींचा पूल राखून ठेवा</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="984"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="977"/>
         <source>Enable Auto-Testing</source>
         <translation type="unfinished">स्वयं-चाचणी सक्षम करा</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="991"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="984"/>
         <source>Test Interval (seconds)</source>
         <translation type="unfinished">चाचणी अंतराल (सेकंद)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="998"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="991"/>
         <source>How often to run the test cycle</source>
         <translation type="unfinished">चाचणी चक्र किती वेळा चालवायचे</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1014"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1007"/>
         <source>Proxies Per Cycle</source>
         <translation type="unfinished">प्रति सायकल प्रॉक्सी</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1021"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1014"/>
         <source>Number of proxies to test in each cycle</source>
         <translation type="unfinished">प्रत्येक चक्रात चाचणी करण्यासाठी प्रॉक्सींची संख्या</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1037"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1030"/>
         <source>Working Pool Size</source>
         <translation type="unfinished">कार्यरत पूल आकार</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1044"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1037"/>
         <source>Maximum number of verified working proxies to maintain</source>
         <translation type="unfinished">देखरेखीसाठी सत्यापित कार्यरत प्रॉक्सींची कमाल संख्या</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1060"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1053"/>
         <source>Latency Threshold (ms)</source>
         <translation type="unfinished">लेटन्सी थ्रेशोल्ड (ms)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1067"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1060"/>
         <source>Maximum latency to consider a proxy as working</source>
         <translation type="unfinished">प्रॉक्सीला कार्यरत मानण्यासाठी कमाल विलंब</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1086"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1079"/>
         <source>Failure Retry Count</source>
         <translation type="unfinished">अयशस्वी पुन्हा प्रयत्न गणना</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1093"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1086"/>
         <source>Number of retry attempts before considering a proxy as failed</source>
         <translation type="unfinished">अयशस्वी म्हणून प्रॉक्सी विचारात घेण्यापूर्वी पुन्हा प्रयत्न केलेल्या प्रयत्नांची संख्या</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1109"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1102"/>
         <source>Test Target URL</source>
         <translation type="unfinished">चाचणी लक्ष्य URL</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1116"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1109"/>
         <source>URL to test proxies against</source>
         <translation type="unfinished">प्रॉक्सी विरुद्ध चाचणी करण्यासाठी URL</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1119"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1112"/>
         <source>http://cp.cloudflare.com/</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1126"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1119"/>
         <source>Automatically switch to another working proxy when TUN mode proxy fails</source>
         <translation type="unfinished">TUN मोड प्रॉक्सी अयशस्वी झाल्यावर स्वयंचलितपणे दुसऱ्या कार्यरत प्रॉक्सीवर स्विच करा</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1129"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1122"/>
         <source>Enable TUN Failover</source>
         <translation type="unfinished">TUN फेलओव्हर सक्षम करा</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1137"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1130"/>
         <source>Startup</source>
         <translation type="unfinished">स्टार्टअप</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1198"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1191"/>
         <source>Geometry</source>
         <translation type="unfinished">भूमिती</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1227"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1220"/>
         <source>Autosave geometry</source>
         <translation type="unfinished">स्वयंसेव्ह भूमिती</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1234"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1227"/>
         <source>Autosave position</source>
         <translation type="unfinished">स्वयंसेव्ह स्थिती</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1254"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1247"/>
         <source>Apply now</source>
         <translation type="unfinished">आता अर्ज करा</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1370"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1363"/>
         <source>Width</source>
         <translation type="unfinished">रुंदी</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1383"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1376"/>
         <source>X</source>
         <translation type="unfinished">एक्स</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1416"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1409"/>
         <source>Y</source>
         <translation type="unfinished">वाय</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1429"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1422"/>
         <source>Height</source>
         <translation type="unfinished">उंची</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1516"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1509"/>
         <source>Core Executable Path</source>
         <translation type="unfinished">कोर एक्झिक्युटेबल पथ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1545"/>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1719"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1538"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1712"/>
         <source>Use default</source>
         <translation type="unfinished">डीफॉल्ट वापरा</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1552"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1545"/>
         <source>Remote Control</source>
         <translation type="unfinished">रिमोट कंट्रोल</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1578"/>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1752"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1571"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1745"/>
         <source>Select</source>
         <translation type="unfinished">निवडा</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1690"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1683"/>
         <source>Resources Directory</source>
         <translation type="unfinished">संसाधने निर्देशिका</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1726"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1719"/>
         <source>Resource Manager</source>
         <translation type="unfinished">संसाधन व्यवस्थापक</translation>
     </message>
@@ -2328,8 +2327,8 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="161"/>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="597"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="2427"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="2430"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2422"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2425"/>
         <source>System Proxy</source>
         <translation type="unfinished">सिस्टम प्रॉक्सी</translation>
     </message>
@@ -2358,8 +2357,8 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="324"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="291"/>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="293"/>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="295"/>
         <source>Test Result</source>
         <translation type="unfinished">चाचणी निकाल</translation>
     </message>
@@ -2496,15 +2495,15 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="736"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3447"/>
         <location filename="../../src/ui/mainwindow.cpp" line="3457"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3467"/>
         <source>Start</source>
         <translation type="unfinished">सुरू करा</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="744"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3446"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3457"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3456"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3467"/>
         <source>Stop</source>
         <translation type="unfinished">थांबा</translation>
     </message>
@@ -2551,7 +2550,7 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="823"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="1353"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1348"/>
         <source>Export %1 config</source>
         <translation type="unfinished">%1 कॉन्फिगरेशन एक्सपोर्ट करा</translation>
     </message>
@@ -2662,7 +2661,7 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="977"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="2783"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2778"/>
         <source>Clone</source>
         <translation type="unfinished">क्लोन</translation>
     </message>
@@ -2785,7 +2784,7 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1147"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3473"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3485"/>
         <source>Add new Group</source>
         <translation type="unfinished">नवीन गट जोडा</translation>
     </message>
@@ -2796,363 +2795,363 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
     </message>
     <message>
         <location filename="../../src/dataStore/ProxyEntity.cpp" line="52"/>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="293"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="291"/>
         <source>Unavailable</source>
         <translation type="unfinished">अनुपलब्ध</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1006"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1001"/>
         <source>Edit Routing Profiles</source>
         <translation type="unfinished">राउटिंग प्रोफाइल संपादित करा</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1028"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1023"/>
         <source>Update Routing Profiles</source>
         <translation type="unfinished">राउटिंग प्रोफाइल अपडेट करा</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1040"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="1044"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="1065"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="1068"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="1112"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1035"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1039"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1060"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1063"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1107"/>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="95"/>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="104"/>
         <source>Update Response</source>
         <translation type="unfinished">प्रतिसाद अद्यतनित करा</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1041"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1036"/>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="105"/>
         <source>No routing profiles are updated</source>
         <translation type="unfinished">कोणतीही राउटिंग प्रोफाइल अपडेट केलेली नाहीत</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1045"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1040"/>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="96"/>
         <source>Updated %1 routing profiles</source>
         <translation type="unfinished">%1 राउटिंग प्रोफाइल अद्यतनित केले</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1055"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1050"/>
         <source>Update RuleSet Map</source>
         <translation type="unfinished">नियम सेट नकाशा अद्यतनित करा</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1066"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1061"/>
         <source>Failed to update rulesets</source>
         <translation type="unfinished">नियम अपडेट करण्यात अयशस्वी</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1069"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1064"/>
         <source>Rulesets updated successfully</source>
         <translation type="unfinished">नियमसेट यशस्वीरित्या अपडेट केले</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1078"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1073"/>
         <source>Update RuleSet Cache</source>
         <translation type="unfinished">RuleSet कॅशे अपडेट करा</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1113"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1108"/>
         <source>Rulesets cache is updated</source>
         <translation type="unfinished">Rulesets कॅशे अद्यतनित केले आहे</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1127"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1122"/>
         <source>Clear RuleSet Cache</source>
         <translation type="unfinished">RuleSet कॅशे साफ करा</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1163"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1158"/>
         <source>Enable AdBlock</source>
         <translation type="unfinished">AdBlock सक्षम करा</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1566"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1561"/>
         <source>Error</source>
         <translation type="unfinished">त्रुटी</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1653"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1648"/>
         <source>Tun Settings changed</source>
         <translation type="unfinished">ट्यून सेटिंग्ज बदलल्या</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1654"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1649"/>
         <source>Restart Tun to take effect.</source>
         <translation type="unfinished">प्रभावी होण्यासाठी Tun रीस्टार्ट करा.</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1660"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="1718"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="2837"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3208"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3262"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3310"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3515"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1655"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1713"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2832"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3203"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3257"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3305"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3530"/>
         <source>Confirmation</source>
         <translation type="unfinished">पुष्टी</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1661"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="1719"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1656"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1714"/>
         <source>Settings changed, restart proxy?</source>
         <translation type="unfinished">सेटिंग्ज बदलली, प्रॉक्सी रीस्टार्ट करायची?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1690"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1685"/>
         <source>Settings changed</source>
         <translation type="unfinished">सेटिंग्ज बदलल्या</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1691"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1686"/>
         <source>Restart the program to take effect.</source>
         <translation type="unfinished">प्रभावी होण्यासाठी प्रोग्राम रीस्टार्ट करा.</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1734"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1729"/>
         <source>Imported %1 profile(s)</source>
         <translation type="unfinished">इंपोर्ट केलेले %1 प्रोफाईल</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1985"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1980"/>
         <source>User opted for no privilege req, some features may not work</source>
         <translation type="unfinished">वापरकर्त्याने विशेषाधिकार विनंतीसाठी निवडले नाही, काही वैशिष्ट्ये कार्य करू शकत नाहीत</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2049"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2044"/>
         <source>Please give the core root privileges</source>
         <translation type="unfinished">कृपया मूळ विशेषाधिकार द्या</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2403"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2398"/>
         <source>Not Running</source>
         <translation type="unfinished">चालत नाही</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2784"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2779"/>
         <source>Clone %1 item(s)</source>
         <translation type="unfinished">% 1 आयटम क्लोन करा</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2818"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2813"/>
         <source> Confirmation </source>
         <translation type="unfinished">पुष्टी</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2819"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2814"/>
         <source> Remove %1 item(s) ? </source>
         <translation type="unfinished">%1 आयटम काढून टाकायचे?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2838"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2833"/>
         <source>Remove %1 item(s) ?</source>
         <translation type="unfinished">%1 आयटम काढून टाकायचे?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2875"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="2888"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2870"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2883"/>
         <source>Copied %1 item(s)</source>
         <translation type="unfinished">% 1 आयटम कॉपी केले</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3120"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3115"/>
         <source>QR Code not found</source>
         <translation type="unfinished">QR कोड सापडला नाही</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3141"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3136"/>
         <source>Unable to capture screen</source>
         <translation type="unfinished">स्क्रीन कॅप्चर करण्यात अक्षम</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3209"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3204"/>
         <source>Remove %1 Unavailable item(s) ?</source>
         <translation type="unfinished">%1 अनुपलब्ध आयटम काढून टाकायचे?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3263"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3258"/>
         <source>Remove %1 Invalid item(s) ?</source>
         <translation type="unfinished">%1 अवैध आयटम काढून टाकायचे?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3311"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3306"/>
         <source>Replace domain server addresses with their resolved IPs?</source>
         <translation type="unfinished">डोमेन सर्व्हर पत्ते त्यांच्या निराकरण केलेल्या IP सह पुनर्स्थित करायचे?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3444"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3454"/>
         <source>Clear</source>
         <translation type="unfinished">साफ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3506"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3521"/>
         <source>Delete selected Group</source>
         <translation type="unfinished">निवडलेला गट हटवा</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3507"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3522"/>
         <source>Edit selected Group</source>
         <translation type="unfinished">निवडलेला गट संपादित करा</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3516"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3531"/>
         <source>Remove %1?</source>
         <translation type="unfinished">%1 काढून टाकायचे?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4199"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4217"/>
         <source>Cannot start</source>
         <translation type="unfinished">सुरू करू शकत नाही</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4200"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4218"/>
         <source>Last download request has not finished yet</source>
         <translation type="unfinished">शेवटची डाउनलोड विनंती अद्याप पूर्ण झालेली नाही</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4234"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4252"/>
         <source>Failed to download update assets</source>
         <translation type="unfinished">अपडेट मालमत्ता डाउनलोड करण्यात अयशस्वी</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="85"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="83"/>
         <source>Profile test aborted</source>
         <translation type="unfinished">प्रोफाइल चाचणी रद्द केली</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="136"/>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="182"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="134"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="180"/>
         <source>[%1] test error: %2</source>
         <translation type="unfinished">[%1] चाचणी त्रुटी: %2</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="165"/>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="491"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="163"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="489"/>
         <source>Something is very wrong, the subject ent cannot be found!</source>
         <translation type="unfinished">काहीतरी खूप चुकीचे आहे, विषय ent सापडत नाही!</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="171"/>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="497"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="169"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="495"/>
         <source>Profile manager data is corrupted, try again.</source>
         <translation type="unfinished">प्रोफाइल व्यवस्थापक डेटा करप्ट झाला आहे, पुन्हा प्रयत्न करा.</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="205"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="203"/>
         <source>The last url test did not exit completely, please wait. If it persists, please restart the program.</source>
         <translation type="unfinished">शेवटची url चाचणी पूर्णपणे बाहेर पडली नाही, कृपया प्रतीक्षा करा.ते कायम राहिल्यास, कृपया प्रोग्राम रीस्टार्ट करा.</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="214"/>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="321"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="212"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="319"/>
         <source>Failed to build test config: </source>
         <translation type="unfinished">चाचणी कॉन्फिगरेशन तयार करण्यात अयशस्वी:</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="255"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="253"/>
         <source>URL test finished!</source>
         <translation type="unfinished">URL चाचणी पूर्ण झाली!</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="266"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="264"/>
         <source>Failed to stop tests</source>
         <translation type="unfinished">चाचण्या थांबवण्यात अयशस्वी</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="272"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="270"/>
         <source>Testing</source>
         <translation type="unfinished">चाचणी</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="310"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="308"/>
         <source>The last speed test did not exit completely, please wait. If it persists, please restart the program.</source>
         <translation type="unfinished">शेवटची गती चाचणी पूर्णपणे बाहेर पडली नाही, कृपया प्रतीक्षा करा.ते कायम राहिल्यास, कृपया प्रोग्राम रीस्टार्ट करा.</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="347"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="345"/>
         <source>Speedtest finished!</source>
         <translation type="unfinished">स्पीडटेस्ट पूर्ण झाली!</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="428"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="426"/>
         <source>Profile speed test aborted</source>
         <translation type="unfinished">प्रोफाइल गती चाचणी रद्द केली</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="516"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="514"/>
         <source>[%1] speed test error: %2</source>
         <translation type="unfinished">[%1] गती चाचणी त्रुटी: %2</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="525"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="523"/>
         <source>You need to enable hijack DNS server first</source>
         <translation type="unfinished">तुम्हाला प्रथम हायजॅक DNS सर्व्हर सक्षम करणे आवश्यक आहे</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="539"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="537"/>
         <source>Failed to set system dns: </source>
         <translation type="unfinished">सिस्टम डीएनएस सेट करण्यात अयशस्वी:</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="587"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="585"/>
         <source>Tun device misbehaving</source>
         <translation type="unfinished">ट्यून डिव्हाइस गैरवर्तन</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="588"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="586"/>
         <source>If you have trouble starting VPN, you can force reset Core process here and then try starting the profile again. The error is %1</source>
         <translation type="unfinished">तुम्हाला VPN सुरू करण्यात समस्या येत असल्यास, तुम्ही येथे सक्तीने कोर प्रक्रिया रीसेट करू शकता आणि नंतर प्रोफाइल पुन्हा सुरू करण्याचा प्रयत्न करू शकता.त्रुटी %1 आहे</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="592"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="590"/>
         <source>Reset</source>
         <translation type="unfinished">रीसेट करा</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="593"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="591"/>
         <source>Cancel</source>
         <translation type="unfinished">रद्द करा</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="632"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="630"/>
         <source>Another profile is starting...</source>
         <translation type="unfinished">दुसरे प्रोफाइल सुरू होत आहे...</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="639"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="637"/>
         <source>Another profile is stopping...</source>
         <translation type="unfinished">दुसरे प्रोफाइल थांबत आहे...</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="660"/>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="742"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="658"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="740"/>
         <source>If there is no response for a long time, it is recommended to restart the software.</source>
         <translation type="unfinished">बराच वेळ प्रतिसाद न मिळाल्यास, सॉफ्टवेअर रीस्टार्ट करण्याची शिफारस केली जाते.</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="674"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="672"/>
         <source>Starting profile %1</source>
         <translation type="unfinished">प्रोफाइल % 1 सुरू करत आहे</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="676"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="674"/>
         <source>Failed to start profile %1</source>
         <translation type="unfinished">प्रोफाइल %1 सुरू करण्यात अयशस्वी</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="725"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="723"/>
         <source>Stop return error</source>
         <translation type="unfinished">रिटर्न एरर थांबवा</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="765"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="763"/>
         <source>Stopping profile %1</source>
         <translation type="unfinished">प्रोफाइल % 1 थांबवत आहे</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="767"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="765"/>
         <source>Failed to stop, please restart the program.</source>
         <translation type="unfinished">थांबवण्यात अयशस्वी, कृपया प्रोग्राम रीस्टार्ट करा.</translation>
     </message>
@@ -3285,13 +3284,13 @@ Deleted %3 Profiles:
     <message>
         <location filename="../../src/nekobox/global/GuiUtils.hpp" line="112"/>
         <location filename="../../src/ui/profile/edit_ssh.cpp" line="28"/>
-        <location filename="../../src/ui/setting/dialog_basic_settings.cpp" line="245"/>
+        <location filename="../../src/ui/setting/dialog_basic_settings.cpp" line="244"/>
         <source>Select</source>
         <translation type="unfinished">निवडा</translation>
     </message>
     <message>
         <location filename="../../src/stats/traffic/TrafficLooper.cpp" line="115"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="2371"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2366"/>
         <source>Proxy: %1
 Direct: %2</source>
         <translation type="unfinished">प्रॉक्सी: % 1
@@ -3313,7 +3312,7 @@ Direct: %2</source>
         <translation type="unfinished">कोर रीस्टार्ट करत आहे...</translation>
     </message>
     <message>
-        <location filename="../../src/sys/Settings.cpp" line="362"/>
+        <location filename="../../src/sys/Settings.cpp" line="361"/>
         <source>System</source>
         <translation type="unfinished">प्रणाली</translation>
     </message>
@@ -3378,69 +3377,69 @@ Deleted %1 Unavailable</source>
         <translation type="unfinished">हटवलेले %1 अनुपलब्ध</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1446"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1441"/>
         <source>Check Rule Sets: %1</source>
         <translation type="unfinished">नियम सेट तपासा: %1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1468"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1463"/>
         <source>Requesting rule-set list error: %1</source>
         <translation type="unfinished">नियम-सेट सूचीची विनंती करताना त्रुटी: %1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2408"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2403"/>
         <source>IP address: %1</source>
         <translation type="unfinished">IP पत्ता: %1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2906"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2901"/>
         <source>Config copied</source>
         <translation type="unfinished">कॉन्फिग कॉपी केले</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2917"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2912"/>
         <source>Copy core config</source>
         <translation type="unfinished">कोर कॉन्फिगरेशन कॉपी करा</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2918"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2913"/>
         <source>Copy test config</source>
         <translation type="unfinished">चाचणी कॉन्फिगरेशन कॉपी करा</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2919"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2914"/>
         <location filename="../../src/ui/security_addon.cpp" line="22"/>
         <location filename="../../src/ui/setting/dialog_vpn_settings.cpp" line="45"/>
         <source>OK</source>
         <translation type="unfinished">ठीक आहे</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4104"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="4115"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="4159"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="4181"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="4190"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="4225"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4122"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4133"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4177"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4199"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4208"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4243"/>
         <source>Update</source>
         <translation type="unfinished">अपडेट करा</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4105"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4123"/>
         <source>Not official support platform</source>
         <translation type="unfinished">अधिकृत समर्थन प्लॅटफॉर्म नाही</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4116"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4134"/>
         <source>Requesting update error: %1</source>
         <translation type="unfinished">अद्यतनाची विनंती करताना त्रुटी: %1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4159"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4177"/>
         <source>No update</source>
         <translation type="unfinished">अपडेट नाही</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4182"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4200"/>
         <source>Update found: %1
 Release note:
 %2</source>
@@ -3449,17 +3448,17 @@ Release note:
 %2</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4185"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4203"/>
         <source>Close</source>
         <translation type="unfinished">बंद करा</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4187"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4205"/>
         <source>Open in browser</source>
         <translation type="unfinished">ब्राउझरमध्ये उघडा</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4226"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4244"/>
         <source>Update is ready, restart to install?</source>
         <translation type="unfinished">अपडेट तयार आहे, इंस्टॉल करण्यासाठी रीस्टार्ट करायचे?</translation>
     </message>
@@ -3469,7 +3468,7 @@ Release note:
         <translation type="unfinished">प्रवेश नाकारला</translation>
     </message>
     <message>
-        <location filename="../../src/ui/setting/dialog_basic_settings.cpp" line="250"/>
+        <location filename="../../src/ui/setting/dialog_basic_settings.cpp" line="249"/>
         <source>Select a Folder</source>
         <translation type="unfinished">फोल्डर निवडा</translation>
     </message>
@@ -3806,7 +3805,7 @@ Release note:
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="261"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="1187"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1182"/>
         <source>Download Profiles</source>
         <translation type="unfinished">प्रोफाइल डाउनलोड करा</translation>
     </message>
