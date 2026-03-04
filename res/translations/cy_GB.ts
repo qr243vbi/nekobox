@@ -2992,51 +2992,51 @@ Am ragor o wybodaeth, gweler y ddogfen "Configuration/DNS".</translation>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="4252" />
         <source>Failed to download update assets</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Wedi methu lawrlwytho asedau diweddaru</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="83" />
         <source>Profile test aborted</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Erthylu prawf proffil</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="134" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="180" />
         <source>[%1] test error: %2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">[% 1] gwall prawf: % 2</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="163" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="489" />
         <source>Something is very wrong, the subject ent cannot be found!</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Mae rhywbeth yn anghywir iawn, ni ellir dod o hyd i'r pwnc!</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="169" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="495" />
         <source>Profile manager data is corrupted, try again.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Mae data rheolwr proffil wedi'i lygru, ceisiwch eto.</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="203" />
         <source>The last url test did not exit completely, please wait. If it persists, please restart the program.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ni ddaeth y prawf url diwethaf i ben yn llwyr, arhoswch.Os bydd yn parhau, ailgychwynnwch y rhaglen.</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="212" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="319" />
         <source>Failed to build test config: </source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Wedi methu ag adeiladu ffurfwedd prawf:</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="253" />
         <source>URL test finished!</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Prawf URL wedi'i orffen!</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="264" />
         <source>Failed to stop tests</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Wedi methu stopio profion</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="270" />
@@ -3046,93 +3046,93 @@ Am ragor o wybodaeth, gweler y ddogfen "Configuration/DNS".</translation>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="308" />
         <source>The last speed test did not exit completely, please wait. If it persists, please restart the program.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ni adawodd y prawf cyflymder diwethaf yn llwyr, arhoswch.Os bydd yn parhau, ailgychwynnwch y rhaglen.</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="345" />
         <source>Speedtest finished!</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Speedtest wedi gorffen!</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="426" />
         <source>Profile speed test aborted</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Erthylu prawf cyflymder proffil</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="514" />
         <source>[%1] speed test error: %2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">[% 1] gwall prawf cyflymder: % 2</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="523" />
         <source>You need to enable hijack DNS server first</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Mae angen i chi alluogi herwgipio gweinydd DNS yn gyntaf</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="537" />
         <source>Failed to set system dns: </source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Wedi methu gosod dns system:</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="585" />
         <source>Tun device misbehaving</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Camymddwyn dyfais tun</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="586" />
         <source>If you have trouble starting VPN, you can force reset Core process here and then try starting the profile again. The error is %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Os ydych chi'n cael trafferth cychwyn VPN, gallwch chi orfodi proses ailosod Craidd yma ac yna ceisiwch ddechrau'r proffil eto.Y gwall yw % 1</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="590" />
         <source>Reset</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ailosod</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="591" />
         <source>Cancel</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Canslo</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="630" />
         <source>Another profile is starting...</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Mae proffil arall yn dechrau...</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="637" />
         <source>Another profile is stopping...</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Mae proffil arall yn stopio ...</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="658" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="740" />
         <source>If there is no response for a long time, it is recommended to restart the software.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Os nad oes ymateb am amser hir, argymhellir ailgychwyn y feddalwedd.</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="672" />
         <source>Starting profile %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Wrthi'n cychwyn proffil % 1</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="674" />
         <source>Failed to start profile %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Methwyd cychwyn proffil % 1</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="723" />
         <source>Stop return error</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Stopio gwall dychwelyd</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="763" />
         <source>Stopping profile %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Atal proffil % 1</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="765" />
         <source>Failed to stop, please restart the program.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Wedi methu â stopio, ailgychwynnwch y rhaglen.</translation>
     </message>
 </context>
 <context>
@@ -3150,12 +3150,12 @@ Am ragor o wybodaeth, gweler y ddogfen "Configuration/DNS".</translation>
     <message>
         <location filename="../../src/nekobox/ui/security/change_password.ui" line="37" />
         <source>New Password</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Cyfrinair Newydd</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/change_password.ui" line="54" />
         <source>Confirm Password</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Cadarnhau Cyfrinair</translation>
     </message>
 </context>
 <context>
@@ -3168,7 +3168,7 @@ Am ragor o wybodaeth, gweler y ddogfen "Configuration/DNS".</translation>
     <message>
         <location filename="../../src/ui/profile/ProxyItem.cpp" line="39" />
         <source>Remove %1?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tynnu % 1?</translation>
     </message>
 </context>
 <context>
@@ -3176,7 +3176,7 @@ Am ragor o wybodaeth, gweler y ddogfen "Configuration/DNS".</translation>
     <message>
         <location filename="../../src/ui/security_addon.cpp" line="342" />
         <source>Security Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Gosodiadau Diogelwch</translation>
     </message>
 </context>
 <context>
@@ -3184,7 +3184,7 @@ Am ragor o wybodaeth, gweler y ddogfen "Configuration/DNS".</translation>
     <message>
         <location filename="../../src/main.cpp" line="259" />
         <source>QT_LAYOUT_DIRECTION</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">QT_LAYOUT_DIRECTION</translation>
     </message>
 </context>
 <context>
@@ -3192,37 +3192,37 @@ Am ragor o wybodaeth, gweler y ddogfen "Configuration/DNS".</translation>
     <message>
         <location filename="../../src/configs/ConfigBuilder.cpp" line="159" />
         <source>Tun mode cannot be used with Custom configs</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ni ellir defnyddio modd Tun gyda Custom configs</translation>
     </message>
     <message>
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="913" />
         <source>Requesting subscription: %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Yn gofyn am danysgrifiad: % 1</translation>
     </message>
     <message>
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="917" />
         <source>Requesting subscription %1 error: %2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Gofyn am danysgrifiad % 1 gwall: % 2</translation>
     </message>
     <message>
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="924" />
         <source>Subscription request fininshed: %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Cais tanysgrifiad wedi ei orffen: % 1</translation>
     </message>
     <message>
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="942" />
         <source>Clearing servers...</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Wrthi'n clirio gweinyddion...</translation>
     </message>
     <message>
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="947" />
         <source>Processing subscription data...</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Wrthi'n prosesu data tanysgrifio...</translation>
     </message>
     <message>
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="950" />
         <source>Process complete, applying...</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Proses wedi'i chwblhau, gwneud cais...</translation>
     </message>
     <message>
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="1013" />
@@ -3230,32 +3230,35 @@ Am ragor o wybodaeth, gweler y ddogfen "Configuration/DNS".</translation>
 %2
 Deleted %3 Profiles:
 %4</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Wedi ychwanegu % 1 proffil:
+% 2
+Wedi dileu % 3 Proffil:
+% 4</translation>
     </message>
     <message>
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="1018" />
         <source>Nothing</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Dim byd</translation>
     </message>
     <message>
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="1021" />
         <source>Change of %1:</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Newid % 1:</translation>
     </message>
     <message>
         <location filename="../../src/dataStore/Database.cpp" line="119" />
         <source>Default</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Diofyn</translation>
     </message>
     <message>
         <location filename="../../src/global/HTTPRequestHelper.cpp" line="189" />
         <source>Could not open file.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Methu agor y ffeil.</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/configs/proxy/ChainBean.hpp" line="17" />
         <source>Chain Proxy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Dirprwy Gadwyn</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/global/GuiUtils.hpp" line="112" />
@@ -3269,22 +3272,23 @@ Deleted %3 Profiles:
         <location filename="../../src/ui/mainwindow.cpp" line="2366" />
         <source>Proxy: %1
 Direct: %2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Dirprwy: % 1
+Uniongyrchol: % 2</translation>
     </message>
     <message>
         <location filename="../../src/sys/Process.cpp" line="104" />
         <source>Core exited, cleaning up...</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Craidd wedi gadael, glanhau...</translation>
     </message>
     <message>
         <location filename="../../src/sys/Process.cpp" line="111" />
         <source>Core exits too frequently, stop automatic restart this profile.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Mae craidd yn gadael yn rhy aml, rhowch y gorau i ailgychwyn y proffil hwn yn awtomatig.</translation>
     </message>
     <message>
         <location filename="../../src/sys/Process.cpp" line="120" />
         <source>Restarting the core ...</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Wrthi'n ailgychwyn y craidd ...</translation>
     </message>
     <message>
         <location filename="../../src/sys/Settings.cpp" line="361" />
@@ -3294,98 +3298,99 @@ Direct: %2</source>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="22" />
         <source>URL detected</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">URL wedi'i ganfod</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="27" />
         <source>%1
 How to update?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">% 1
+Sut i ddiweddaru?</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="31" />
         <source>Create new subscription group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Creu grŵp tanysgrifio newydd</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="32" />
         <source>Add profiles to this group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ychwanegu proffiliau i'r grŵp hwn</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="37" />
         <source>Group name</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Enw grŵp</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="101" />
         <source>Used: %1 Remain: %2 Expire: %3</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Defnyddiwyd: % 1 Aros: % 2 Dod i ben: % 3</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="173" />
         <source>Download Profiles</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Lawrlwythwch Proffiliau</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="174" />
         <source>Requesting profile error: %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Gwall proffil wrth wneud cais: % 1</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="341" />
         <source>
 Deleted %1 Duplicates</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Wedi dileu % 1 Dyblyg</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="375" />
         <source>
 Deleted %1 Invalid</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Wedi dileu % 1 Annilys</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="398" />
         <source>
 Deleted %1 Unavailable</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Wedi dileu % 1 Ddim ar gael</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1441" />
         <source>Check Rule Sets: %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Gwirio Setiau Rheolau: % 1</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1463" />
         <source>Requesting rule-set list error: %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Gofyn am wall rhestr set rheolau: % 1</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2403" />
         <source>IP address: %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Cyfeiriad IP: % 1</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2901" />
         <source>Config copied</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Config wedi'i gopïo</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2912" />
         <source>Copy core config</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Copïo ffurfwedd craidd</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2913" />
         <source>Copy test config</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Copïo ffurfwedd prawf</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2914" />
         <location filename="../../src/ui/security_addon.cpp" line="22" />
         <location filename="../../src/ui/setting/dialog_vpn_settings.cpp" line="45" />
         <source>OK</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">iawn</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="4122" />
@@ -3395,54 +3400,56 @@ Deleted %1 Unavailable</source>
         <location filename="../../src/ui/mainwindow.cpp" line="4208" />
         <location filename="../../src/ui/mainwindow.cpp" line="4243" />
         <source>Update</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Diweddariad</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="4123" />
         <source>Not official support platform</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ddim yn llwyfan cymorth swyddogol</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="4134" />
         <source>Requesting update error: %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Gwall wrth ofyn am ddiweddariad: % 1</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="4177" />
         <source>No update</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Dim diweddariad</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="4200" />
         <source>Update found: %1
 Release note:
 %2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Cafwyd diweddariad: % 1
+Nodyn rhyddhau:
+% 2</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="4203" />
         <source>Close</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Cau</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="4205" />
         <source>Open in browser</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Agor yn y porwr</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="4244" />
         <source>Update is ready, restart to install?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Diweddariad yn barod, ailgychwyn i osod?</translation>
     </message>
     <message>
         <location filename="../../src/ui/security_addon.cpp" line="21" />
         <source>Access denied</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Mynediad wedi'i wrthod</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/dialog_basic_settings.cpp" line="249" />
         <source>Select a Folder</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Dewiswch Ffolder</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/dialog_vpn_settings.cpp" line="37" />
@@ -3452,7 +3459,7 @@ Release note:
     <message>
         <location filename="../../src/ui/setting/dialog_vpn_settings.cpp" line="46" />
         <source>Cancel</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Canslo</translation>
     </message>
 </context>
 <context>
@@ -3460,67 +3467,67 @@ Release note:
     <message>
         <location filename="../../src/main.cpp" line="57" />
         <source>Cancel</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Canslo</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="58" />
         <source>Apply</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ymgeisiwch</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="59" />
         <source>Yes</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Oes</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="60" />
         <source>No</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Nac ydw</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="61" />
         <source>OK</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">iawn</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="62" />
         <source>Defaults</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Rhagosodiadau</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="63" />
         <source>Restore Defaults</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Adfer Rhagosodiadau</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="64" />
         <source>Discard</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Taflwch</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="66" />
         <source>Undo</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Dadwneud</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="67" />
         <source>Redo</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ail-wneud</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="68" />
         <source>Cut</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Torri</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="69" />
         <source>Copy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Copi</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="70" />
         <source>Paste</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Gludo</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="71" />
@@ -3530,22 +3537,22 @@ Release note:
     <message>
         <location filename="../../src/main.cpp" line="72" />
         <source>Select All</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Dewiswch Pawb</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="73" />
         <source>Stop</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Stopio</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="74" />
         <source>Clear</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Clir</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="75" />
         <source>Copy Link Location</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Lleoliad Cyswllt Copïo</translation>
     </message>
 </context>
 <context>
@@ -3553,17 +3560,17 @@ Release note:
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="14" />
         <source>Route Profile</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Proffil Llwybr</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="24" />
         <source>General</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Cyffredinol</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="63" />
         <source>Default outbound</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Allanfa rhagosodedig</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="70" />
@@ -3587,22 +3594,22 @@ Release note:
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="88" />
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="157" />
         <source>Block</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Bloc</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="96" />
         <source>Update url</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Diweddaru url</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="130" />
         <source>Skip update</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Hepgor diweddariad</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="137" />
         <source>Update manually</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Diweddaru â llaw</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="151" />
@@ -3612,12 +3619,12 @@ Release note:
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="248" />
         <source>Advanced</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Uwch</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="257" />
         <source>Import JSON</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Mewnforio JSON</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="267" />
@@ -3632,12 +3639,12 @@ Release note:
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="286" />
         <source>Move Up</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Symud i Fyny</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="293" />
         <source>Move Down</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Symud i Lawr</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="300" />
@@ -3719,7 +3726,7 @@ Release note:
     <message>
         <location filename="../../src/nekobox/ui/security/security.ui" line="14" />
         <source>Security Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Gosodiadau Diogelwch</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/security.ui" line="62" />
