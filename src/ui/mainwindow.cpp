@@ -3328,8 +3328,8 @@ void MainWindow::on_menu_resolve_domain_triggered() {
 void MainWindow::on_proxyListTable_customContextMenuRequested(
     const QPoint &pos) {
   qDebug() << "CONTEXT MENU CLICKED";
-  ui->menu_server->popup(
-      ui->proxyListTable->viewport()->mapToGlobal(pos)); // 弹出菜单
+  ui->proxyListTable->viewport()->mapToGlobal(pos);
+  ui->menu_server->popup(pos); // 弹出菜单
 }
 
 QList<std::shared_ptr<Configs::ProxyEntity>>
