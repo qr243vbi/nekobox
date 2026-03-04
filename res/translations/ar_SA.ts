@@ -251,6 +251,7 @@
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="502"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="523"/>
         <source>System</source>
         <translation type="unfinished">نظام</translation>
     </message>
@@ -260,98 +261,98 @@
         <translation type="unfinished">لغة</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="532"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="536"/>
         <source>Icon</source>
         <translation type="unfinished">رمز</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="539"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="543"/>
         <source>Emoji Font</source>
         <translation type="unfinished">الخط التعبيري</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="552"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="556"/>
         <source>Subscription</source>
         <translation type="unfinished">الاشتراك</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="558"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="562"/>
         <source>Clear servers before update</source>
         <translation type="unfinished">مسح الخوادم قبل التحديث</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="565"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="569"/>
         <source>URL Test after update</source>
         <translation type="unfinished">اختبار URL بعد التحديث</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="580"/>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="800"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="584"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="804"/>
         <source>Enable</source>
         <translation type="unfinished">يُمكَِن</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="587"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="591"/>
         <source>Interval (minute, invalid if less than 30)</source>
         <translation type="unfinished">الفاصل الزمني (دقيقة، غير صالحة إذا كانت أقل من 30)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="606"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="610"/>
         <source>Remove Duplicates</source>
         <translation type="unfinished">إزالة التكرارات</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="613"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="617"/>
         <source>hwid=custom_value,os=custom_os,osVersion=custom_version,model=custom_model</source>
         <translation type="unfinished">hwid=custom_value,os=custom_os,osVersion=custom_version,model=custom_model</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="620"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="624"/>
         <source>User Agent</source>
         <translation type="unfinished">وكيل المستخدم</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="630"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="634"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;HWID=%1&lt;/p&gt;&lt;p&gt;OS=%2&lt;/p&gt;&lt;p&gt;OS Version=%3&lt;/p&gt;&lt;p&gt;Model=%4&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;HWID=%1&lt;/p&gt;&lt;p&gt;OS=%2&lt;/p&gt;&lt;p&gt;إصدار نظام التشغيل=%3&lt;/p&gt;&lt;p&gt;الطراز=%4&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="633"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="637"/>
         <source>Send System Parameters</source>
         <translation type="unfinished">إرسال معلمات النظام</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="646"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="650"/>
         <source>Automatic update</source>
         <translation type="unfinished">التحديث التلقائي</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="653"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="657"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Format: hwid=value,os=value,osVersion=value,model=value&lt;/p&gt;&lt;p&gt;Leave empty to use default values. Only specify the parameters you want to override.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;التنسيق: hwid=value,os=value,osVersion=value,model=value&lt;/p&gt;&lt;p&gt;اتركه فارغًا لاستخدام القيم الافتراضية.حدد فقط المعلمات التي تريد تجاوزها.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="656"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="660"/>
         <source>Custom System Parameters (optional)</source>
         <translation type="unfinished">معلمات النظام المخصصة (اختياري)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="663"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="667"/>
         <source>Remove Invalid</source>
         <translation type="unfinished">إزالة غير صالحة</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="670"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="674"/>
         <source>Remove Unavailable</source>
         <translation type="unfinished">إزالة غير متاح</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="678"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="682"/>
         <source>Core</source>
         <translation type="unfinished">جوهر</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="717"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="721"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Might
                                                                             Improve Ping and Performance&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                                                                         </source>
@@ -359,7 +360,7 @@
 تحسين Ping والأداء&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="722"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="726"/>
         <source>Disable Traffic Stats</source>
         <translation type="unfinished">تعطيل إحصائيات المرور</translation>
     </message>
@@ -368,37 +369,37 @@
         <translation type="obsolete">استخدم بروتوكول التعاون الفني</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="731"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="735"/>
         <source>Multiplex (mux)</source>
         <translation type="unfinished">متعدد (مكس)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="738"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="742"/>
         <source>Loglevel</source>
         <translation type="unfinished">مستوى السجل</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="750"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="754"/>
         <source>concurrency</source>
         <translation type="unfinished">التزامن</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="760"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="764"/>
         <source>Padding</source>
         <translation type="unfinished">حشوة</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="767"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="771"/>
         <source>Default On</source>
         <translation type="unfinished">تشغيل افتراضي</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="779"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="783"/>
         <source>Core Options</source>
         <translation type="unfinished">الخيارات الأساسية</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="789"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="793"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Settings for the
                                             sing-box&apos;s built-in NTP client&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                                         </source>
@@ -406,27 +407,27 @@
 عميل NTP المدمج في Sing-box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="794"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="798"/>
         <source>NTP Settings</source>
         <translation type="unfinished">إعدادات إن تي بي</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="809"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="813"/>
         <source>server</source>
         <translation type="unfinished">الخادم</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="819"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="823"/>
         <source>Port</source>
         <translation type="unfinished">ميناء</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="836"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="840"/>
         <source>sync interval</source>
         <translation type="unfinished">الفاصل الزمني للمزامنة</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="843"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="847"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;In
                                                                 minutes&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                                                             </source>
@@ -434,224 +435,224 @@
 دقيقة&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="849"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="853"/>
         <source>5m</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="854"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="858"/>
         <source>10m</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="859"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="863"/>
         <source>30m</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="873"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="877"/>
         <source>Security</source>
         <translation type="unfinished">حماية</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="879"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="883"/>
         <source>Disable Privilege request</source>
         <translation type="unfinished">تعطيل طلب الامتياز</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="886"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="890"/>
         <source>Use Mozilla Certificate Store</source>
         <translation type="unfinished">استخدم متجر شهادات موزيلا</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="893"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="897"/>
         <source>Skip TLS certificate authentication by default (allowInsecure)</source>
         <translation type="unfinished">تخطي مصادقة شهادة TLS بشكل افتراضي (allowInsecure)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="921"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="925"/>
         <source>Default uTLS Fingerprint</source>
         <translation type="unfinished">بصمة uTLS الافتراضية</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="944"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="948"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Do not attempt to start as Admin unless explicitly requested&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;لا تحاول البدء كمسؤول ما لم يُطلب منك ذلك صراحةً&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="947"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="951"/>
         <source>Always Start as Standard User</source>
         <translation type="unfinished">ابدأ دائمًا كمستخدم قياسي</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="954"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="958"/>
         <source>Use Json instead binary for configs</source>
         <translation type="unfinished">استخدم Json بدلاً من ذلك ثنائيًا للتكوينات</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="968"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="972"/>
         <source>Auto-Testing</source>
         <translation type="unfinished">الاختبار التلقائي</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="974"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="978"/>
         <source>Automatically test proxies in the background and maintain a pool of working proxies</source>
         <translation type="unfinished">اختبار الوكلاء تلقائيًا في الخلفية والحفاظ على مجموعة من الوكلاء العاملين</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="977"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="981"/>
         <source>Enable Auto-Testing</source>
         <translation type="unfinished">تمكين الاختبار التلقائي</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="984"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="988"/>
         <source>Test Interval (seconds)</source>
         <translation type="unfinished">الفاصل الزمني للاختبار (ثواني)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="991"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="995"/>
         <source>How often to run the test cycle</source>
         <translation type="unfinished">كم مرة لتشغيل دورة الاختبار</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1007"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1011"/>
         <source>Proxies Per Cycle</source>
         <translation type="unfinished">الوكلاء لكل دورة</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1014"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1018"/>
         <source>Number of proxies to test in each cycle</source>
         <translation type="unfinished">عدد الوكلاء المطلوب اختبارهم في كل دورة</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1030"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1034"/>
         <source>Working Pool Size</source>
         <translation type="unfinished">حجم حوض العمل</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1037"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1041"/>
         <source>Maximum number of verified working proxies to maintain</source>
         <translation type="unfinished">الحد الأقصى لعدد الوكلاء العاملين الذين تم التحقق منهم للمحافظة عليهم</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1053"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1057"/>
         <source>Latency Threshold (ms)</source>
         <translation type="unfinished">عتبة الكمون (ملي ثانية)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1060"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1064"/>
         <source>Maximum latency to consider a proxy as working</source>
         <translation type="unfinished">الحد الأقصى لوقت الاستجابة لاعتبار الوكيل يعمل</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1079"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1083"/>
         <source>Failure Retry Count</source>
         <translation type="unfinished">عدد مرات إعادة المحاولة الفاشلة</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1086"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1090"/>
         <source>Number of retry attempts before considering a proxy as failed</source>
         <translation type="unfinished">عدد محاولات إعادة المحاولة قبل اعتبار الوكيل فاشلاً</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1102"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1106"/>
         <source>Test Target URL</source>
         <translation type="unfinished">اختبار عنوان URL المستهدف</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1109"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1113"/>
         <source>URL to test proxies against</source>
         <translation type="unfinished">عنوان URL لاختبار الوكلاء ضده</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1112"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1116"/>
         <source>http://cp.cloudflare.com/</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1119"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1123"/>
         <source>Automatically switch to another working proxy when TUN mode proxy fails</source>
         <translation type="unfinished">قم بالتبديل تلقائيًا إلى وكيل عمل آخر عند فشل وكيل وضع TUN</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1122"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1126"/>
         <source>Enable TUN Failover</source>
         <translation type="unfinished">تمكين تجاوز فشل TUN</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1130"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1134"/>
         <source>Startup</source>
         <translation type="unfinished">بدء</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1191"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1195"/>
         <source>Geometry</source>
         <translation type="unfinished">الهندسة</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1220"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1224"/>
         <source>Autosave geometry</source>
         <translation type="unfinished">هندسة الحفظ التلقائي</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1227"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1231"/>
         <source>Autosave position</source>
         <translation type="unfinished">موقف الحفظ التلقائي</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1247"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1251"/>
         <source>Apply now</source>
         <translation type="unfinished">قدم طلبك الآن</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1363"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1367"/>
         <source>Width</source>
         <translation type="unfinished">عرض</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1376"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1380"/>
         <source>X</source>
         <translation type="unfinished">X</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1409"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1413"/>
         <source>Y</source>
         <translation type="unfinished">ي</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1422"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1426"/>
         <source>Height</source>
         <translation type="unfinished">ارتفاع</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1509"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1513"/>
         <source>Core Executable Path</source>
         <translation type="unfinished">المسار القابل للتنفيذ الأساسي</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1538"/>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1712"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1542"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1716"/>
         <source>Use default</source>
         <translation type="unfinished">استخدم الافتراضي</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1545"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1549"/>
         <source>Remote Control</source>
         <translation type="unfinished">التحكم عن بعد</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1571"/>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1745"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1575"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1749"/>
         <source>Select</source>
         <translation type="unfinished">يختار</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1683"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1687"/>
         <source>Resources Directory</source>
         <translation type="unfinished">دليل الموارد</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1719"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1723"/>
         <source>Resource Manager</source>
         <translation type="unfinished">مدير الموارد</translation>
     </message>
@@ -3288,7 +3289,7 @@ Deleted %3 Profiles:
     <message>
         <location filename="../../src/nekobox/global/GuiUtils.hpp" line="112"/>
         <location filename="../../src/ui/profile/edit_ssh.cpp" line="28"/>
-        <location filename="../../src/ui/setting/dialog_basic_settings.cpp" line="244"/>
+        <location filename="../../src/ui/setting/dialog_basic_settings.cpp" line="321"/>
         <source>Select</source>
         <translation type="unfinished">يختار</translation>
     </message>
@@ -3472,7 +3473,7 @@ Release note:
         <translation type="unfinished">تم الرفض</translation>
     </message>
     <message>
-        <location filename="../../src/ui/setting/dialog_basic_settings.cpp" line="249"/>
+        <location filename="../../src/ui/setting/dialog_basic_settings.cpp" line="326"/>
         <source>Select a Folder</source>
         <translation type="unfinished">حدد مجلدًا</translation>
     </message>

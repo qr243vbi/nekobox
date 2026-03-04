@@ -251,6 +251,7 @@
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="502"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="523"/>
         <source>System</source>
         <translation type="unfinished">அமைப்பு</translation>
     </message>
@@ -260,98 +261,98 @@
         <translation type="unfinished">மொழி</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="532"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="536"/>
         <source>Icon</source>
         <translation type="unfinished">ஐகான்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="539"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="543"/>
         <source>Emoji Font</source>
         <translation type="unfinished">ஈமோஜி எழுத்துரு</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="552"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="556"/>
         <source>Subscription</source>
         <translation type="unfinished">சந்தா</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="558"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="562"/>
         <source>Clear servers before update</source>
         <translation type="unfinished">புதுப்பிக்கும் முன் சர்வர்களை அழிக்கவும்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="565"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="569"/>
         <source>URL Test after update</source>
         <translation type="unfinished">புதுப்பித்த பிறகு URL சோதனை</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="580"/>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="800"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="584"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="804"/>
         <source>Enable</source>
         <translation type="unfinished">இயக்கு</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="587"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="591"/>
         <source>Interval (minute, invalid if less than 30)</source>
         <translation type="unfinished">இடைவெளி (நிமிடம், 30க்கு குறைவாக இருந்தால் செல்லாது)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="606"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="610"/>
         <source>Remove Duplicates</source>
         <translation type="unfinished">நகல்களை அகற்று</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="613"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="617"/>
         <source>hwid=custom_value,os=custom_os,osVersion=custom_version,model=custom_model</source>
         <translation type="unfinished">hwid= custom_value,os= custom_os,osVersion= custom_version,model= custom_model</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="620"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="624"/>
         <source>User Agent</source>
         <translation type="unfinished">பயனர் முகவர்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="630"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="634"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;HWID=%1&lt;/p&gt;&lt;p&gt;OS=%2&lt;/p&gt;&lt;p&gt;OS Version=%3&lt;/p&gt;&lt;p&gt;Model=%4&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;HWID=%1&lt;/p&gt;&lt;p&gt;OS=%2&lt;/p&gt;&lt;p&gt;OS பதிப்பு=%3&lt;/p&gt;&lt;p&gt;மாடல்=%4&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="633"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="637"/>
         <source>Send System Parameters</source>
         <translation type="unfinished">கணினி அளவுருக்களை அனுப்பவும்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="646"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="650"/>
         <source>Automatic update</source>
         <translation type="unfinished">தானியங்கி மேம்படுத்தல்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="653"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="657"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Format: hwid=value,os=value,osVersion=value,model=value&lt;/p&gt;&lt;p&gt;Leave empty to use default values. Only specify the parameters you want to override.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;வடிவம்: hwid=value,os=value,osVersion=value,model=value&lt;/p&gt;&lt;p&gt;இயல்புநிலை மதிப்புகளைப் பயன்படுத்த, காலியாக விடவும்.நீங்கள் மேலெழுத விரும்பும் அளவுருக்களை மட்டும் குறிப்பிடவும்.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="656"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="660"/>
         <source>Custom System Parameters (optional)</source>
         <translation type="unfinished">தனிப்பயன் கணினி அளவுருக்கள் (விரும்பினால்)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="663"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="667"/>
         <source>Remove Invalid</source>
         <translation type="unfinished">செல்லாததை அகற்று</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="670"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="674"/>
         <source>Remove Unavailable</source>
         <translation type="unfinished">கிடைக்கவில்லை என்பதை அகற்று</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="678"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="682"/>
         <source>Core</source>
         <translation type="unfinished">கோர்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="717"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="721"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Might
                                                                             Improve Ping and Performance&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                                                                         </source>
@@ -359,7 +360,7 @@
 பிங் மற்றும் செயல்திறனை மேம்படுத்தவும்&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="722"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="726"/>
         <source>Disable Traffic Stats</source>
         <translation type="unfinished">போக்குவரத்து புள்ளிவிவரங்களை முடக்கு</translation>
     </message>
@@ -368,37 +369,37 @@
         <translation type="obsolete">TCP ஐப் பயன்படுத்தவும்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="731"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="735"/>
         <source>Multiplex (mux)</source>
         <translation type="unfinished">மல்டிபிளக்ஸ் (மக்ஸ்)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="738"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="742"/>
         <source>Loglevel</source>
         <translation type="unfinished">லாக்லெவல்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="750"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="754"/>
         <source>concurrency</source>
         <translation type="unfinished">ஒத்திசைவு</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="760"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="764"/>
         <source>Padding</source>
         <translation type="unfinished">திணிப்பு</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="767"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="771"/>
         <source>Default On</source>
         <translation type="unfinished">இயல்புநிலை ஆன்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="779"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="783"/>
         <source>Core Options</source>
         <translation type="unfinished">முக்கிய விருப்பங்கள்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="789"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="793"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Settings for the
                                             sing-box&apos;s built-in NTP client&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                                         </source>
@@ -406,27 +407,27 @@
 sing-box இன் உள்ளமைக்கப்பட்ட NTP கிளையன்ட்&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="794"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="798"/>
         <source>NTP Settings</source>
         <translation type="unfinished">NTP அமைப்புகள்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="809"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="813"/>
         <source>server</source>
         <translation type="unfinished">சர்வர்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="819"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="823"/>
         <source>Port</source>
         <translation type="unfinished">துறைமுகம்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="836"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="840"/>
         <source>sync interval</source>
         <translation type="unfinished">ஒத்திசைவு இடைவெளி</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="843"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="847"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;In
                                                                 minutes&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                                                             </source>
@@ -434,224 +435,224 @@ sing-box இன் உள்ளமைக்கப்பட்ட NTP கிள�
 நிமிடங்கள்&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="849"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="853"/>
         <source>5m</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="854"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="858"/>
         <source>10m</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="859"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="863"/>
         <source>30m</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="873"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="877"/>
         <source>Security</source>
         <translation type="unfinished">பாதுகாப்பு</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="879"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="883"/>
         <source>Disable Privilege request</source>
         <translation type="unfinished">சிறப்புரிமை கோரிக்கையை முடக்கு</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="886"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="890"/>
         <source>Use Mozilla Certificate Store</source>
         <translation type="unfinished">Mozilla சான்றிதழ் கடையைப் பயன்படுத்தவும்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="893"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="897"/>
         <source>Skip TLS certificate authentication by default (allowInsecure)</source>
         <translation type="unfinished">இயல்பாக TLS சான்றிதழ் அங்கீகாரத்தைத் தவிர்க்கவும் (பாதுகாப்பானதை அனுமதிக்கவும்)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="921"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="925"/>
         <source>Default uTLS Fingerprint</source>
         <translation type="unfinished">இயல்புநிலை uTLS கைரேகை</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="944"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="948"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Do not attempt to start as Admin unless explicitly requested&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;வெளிப்படையாகக் கோரும் வரையில் நிர்வாகியாகத் தொடங்க முயற்சிக்காதீர்கள்&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="947"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="951"/>
         <source>Always Start as Standard User</source>
         <translation type="unfinished">எப்போதும் நிலையான பயனராகத் தொடங்கவும்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="954"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="958"/>
         <source>Use Json instead binary for configs</source>
         <translation type="unfinished">கட்டமைப்புகளுக்கு பைனரிக்குப் பதிலாக Json ஐப் பயன்படுத்தவும்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="968"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="972"/>
         <source>Auto-Testing</source>
         <translation type="unfinished">தானியங்கு சோதனை</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="974"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="978"/>
         <source>Automatically test proxies in the background and maintain a pool of working proxies</source>
         <translation type="unfinished">பின்னணியில் ப்ராக்ஸிகளைத் தானாகச் சோதித்து, வேலை செய்யும் ப்ராக்ஸிகளின் தொகுப்பைப் பராமரிக்கவும்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="977"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="981"/>
         <source>Enable Auto-Testing</source>
         <translation type="unfinished">தானியங்கு சோதனையை இயக்கு</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="984"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="988"/>
         <source>Test Interval (seconds)</source>
         <translation type="unfinished">சோதனை இடைவெளி (வினாடிகள்)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="991"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="995"/>
         <source>How often to run the test cycle</source>
         <translation type="unfinished">சோதனை சுழற்சியை எவ்வளவு அடிக்கடி இயக்க வேண்டும்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1007"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1011"/>
         <source>Proxies Per Cycle</source>
         <translation type="unfinished">ஒரு சுழற்சிக்கான பதிலாள்கள்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1014"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1018"/>
         <source>Number of proxies to test in each cycle</source>
         <translation type="unfinished">ஒவ்வொரு சுழற்சியிலும் சோதிக்க வேண்டிய ப்ராக்ஸிகளின் எண்ணிக்கை</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1030"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1034"/>
         <source>Working Pool Size</source>
         <translation type="unfinished">வேலை செய்யும் குளத்தின் அளவு</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1037"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1041"/>
         <source>Maximum number of verified working proxies to maintain</source>
         <translation type="unfinished">பராமரிக்க, சரிபார்க்கப்பட்ட பணிப் பிரதிநிதிகளின் அதிகபட்ச எண்ணிக்கை</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1053"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1057"/>
         <source>Latency Threshold (ms)</source>
         <translation type="unfinished">தாமத வரம்பு (மிவி)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1060"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1064"/>
         <source>Maximum latency to consider a proxy as working</source>
         <translation type="unfinished">ப்ராக்ஸி செயல்படுவதாகக் கருதுவதற்கான அதிகபட்ச தாமதம்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1079"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1083"/>
         <source>Failure Retry Count</source>
         <translation type="unfinished">தோல்வி மீண்டும் முயற்சி எண்ணிக்கை</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1086"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1090"/>
         <source>Number of retry attempts before considering a proxy as failed</source>
         <translation type="unfinished">ப்ராக்ஸி தோல்வியடைந்ததாகக் கருதுவதற்கு முன் மீண்டும் முயற்சி செய்த எண்ணிக்கை</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1102"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1106"/>
         <source>Test Target URL</source>
         <translation type="unfinished">சோதனை இலக்கு URL</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1109"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1113"/>
         <source>URL to test proxies against</source>
         <translation type="unfinished">ப்ராக்ஸிகளை சோதிக்க URL</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1112"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1116"/>
         <source>http://cp.cloudflare.com/</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1119"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1123"/>
         <source>Automatically switch to another working proxy when TUN mode proxy fails</source>
         <translation type="unfinished">TUN பயன்முறை ப்ராக்ஸி தோல்வியடையும் போது தானாகவே மற்றொரு வேலை செய்யும் ப்ராக்ஸிக்கு மாறவும்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1122"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1126"/>
         <source>Enable TUN Failover</source>
         <translation type="unfinished">TUN தோல்வியை இயக்கு</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1130"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1134"/>
         <source>Startup</source>
         <translation type="unfinished">தொடக்கம்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1191"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1195"/>
         <source>Geometry</source>
         <translation type="unfinished">வடிவியல்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1220"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1224"/>
         <source>Autosave geometry</source>
         <translation type="unfinished">வடிவவியலைத் தானாகச் சேமிக்கவும்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1227"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1231"/>
         <source>Autosave position</source>
         <translation type="unfinished">தானாக சேமிக்கும் நிலை</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1247"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1251"/>
         <source>Apply now</source>
         <translation type="unfinished">இப்போதே விண்ணப்பிக்கவும்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1363"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1367"/>
         <source>Width</source>
         <translation type="unfinished">அகலம்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1376"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1380"/>
         <source>X</source>
         <translation type="unfinished">எக்ஸ்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1409"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1413"/>
         <source>Y</source>
         <translation type="unfinished">ஒய்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1422"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1426"/>
         <source>Height</source>
         <translation type="unfinished">உயரம்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1509"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1513"/>
         <source>Core Executable Path</source>
         <translation type="unfinished">கோர் இயங்கக்கூடிய பாதை</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1538"/>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1712"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1542"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1716"/>
         <source>Use default</source>
         <translation type="unfinished">இயல்புநிலையைப் பயன்படுத்தவும்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1545"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1549"/>
         <source>Remote Control</source>
         <translation type="unfinished">ரிமோட் கண்ட்ரோல்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1571"/>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1745"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1575"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1749"/>
         <source>Select</source>
         <translation type="unfinished">தேர்ந்தெடு</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1683"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1687"/>
         <source>Resources Directory</source>
         <translation type="unfinished">வளங்கள் அடைவு</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1719"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1723"/>
         <source>Resource Manager</source>
         <translation type="unfinished">வள மேலாளர்</translation>
     </message>
@@ -3264,7 +3265,7 @@ Deleted %3 Profiles:
     <message>
         <location filename="../../src/nekobox/global/GuiUtils.hpp" line="112"/>
         <location filename="../../src/ui/profile/edit_ssh.cpp" line="28"/>
-        <location filename="../../src/ui/setting/dialog_basic_settings.cpp" line="244"/>
+        <location filename="../../src/ui/setting/dialog_basic_settings.cpp" line="321"/>
         <source>Select</source>
         <translation type="unfinished">தேர்ந்தெடு</translation>
     </message>
@@ -3448,7 +3449,7 @@ Release note:
         <translation type="unfinished">அணுகல் மறுக்கப்பட்டது</translation>
     </message>
     <message>
-        <location filename="../../src/ui/setting/dialog_basic_settings.cpp" line="249"/>
+        <location filename="../../src/ui/setting/dialog_basic_settings.cpp" line="326"/>
         <source>Select a Folder</source>
         <translation type="unfinished">ஒரு கோப்புறையைத் தேர்ந்தெடுக்கவும்</translation>
     </message>

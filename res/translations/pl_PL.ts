@@ -251,6 +251,7 @@
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="502"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="523"/>
         <source>System</source>
         <translation type="unfinished">System</translation>
     </message>
@@ -260,98 +261,98 @@
         <translation type="unfinished">Język</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="532"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="536"/>
         <source>Icon</source>
         <translation type="unfinished">Ikona</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="539"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="543"/>
         <source>Emoji Font</source>
         <translation type="unfinished">Czcionka emoji</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="552"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="556"/>
         <source>Subscription</source>
         <translation type="unfinished">Prenumerata</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="558"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="562"/>
         <source>Clear servers before update</source>
         <translation type="unfinished">Wyczyść serwery przed aktualizacją</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="565"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="569"/>
         <source>URL Test after update</source>
         <translation type="unfinished">Test adresu URL po aktualizacji</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="580"/>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="800"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="584"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="804"/>
         <source>Enable</source>
         <translation type="unfinished">Włączać</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="587"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="591"/>
         <source>Interval (minute, invalid if less than 30)</source>
         <translation type="unfinished">Interwał (minuty, nieprawidłowy, jeśli jest mniejszy niż 30)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="606"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="610"/>
         <source>Remove Duplicates</source>
         <translation type="unfinished">Usuń duplikaty</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="613"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="617"/>
         <source>hwid=custom_value,os=custom_os,osVersion=custom_version,model=custom_model</source>
         <translation type="unfinished">hwid=wartość_niestandardowa,os=niestandardowy_os,osVersion=wersja_niestandardowa,model=model_niestandardowy</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="620"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="624"/>
         <source>User Agent</source>
         <translation type="unfinished">Agent użytkownika</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="630"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="634"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;HWID=%1&lt;/p&gt;&lt;p&gt;OS=%2&lt;/p&gt;&lt;p&gt;OS Version=%3&lt;/p&gt;&lt;p&gt;Model=%4&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;HWID=%1&lt;/p&gt;&lt;p&gt;OS=%2&lt;/p&gt;&lt;p&gt;Wersja systemu operacyjnego=%3&lt;/p&gt;&lt;p&gt;Model=%4&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="633"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="637"/>
         <source>Send System Parameters</source>
         <translation type="unfinished">Wyślij parametry systemu</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="646"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="650"/>
         <source>Automatic update</source>
         <translation type="unfinished">Automatyczna aktualizacja</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="653"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="657"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Format: hwid=value,os=value,osVersion=value,model=value&lt;/p&gt;&lt;p&gt;Leave empty to use default values. Only specify the parameters you want to override.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Format: hwid=wartość,os=wartość,osVersion=wartość,model=wartość&lt;/p&gt;&lt;p&gt;Pozostaw puste, aby użyć wartości domyślnych.Określ tylko parametry, które chcesz zastąpić.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="656"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="660"/>
         <source>Custom System Parameters (optional)</source>
         <translation type="unfinished">Niestandardowe parametry systemu (opcjonalnie)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="663"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="667"/>
         <source>Remove Invalid</source>
         <translation type="unfinished">Usuń nieprawidłowe</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="670"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="674"/>
         <source>Remove Unavailable</source>
         <translation type="unfinished">Usuń Niedostępne</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="678"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="682"/>
         <source>Core</source>
         <translation type="unfinished">Rdzeń</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="717"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="721"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Might
                                                                             Improve Ping and Performance&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                                                                         </source>
@@ -359,7 +360,7 @@
 Popraw ping i wydajność&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="722"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="726"/>
         <source>Disable Traffic Stats</source>
         <translation type="unfinished">Wyłącz statystyki ruchu</translation>
     </message>
@@ -368,37 +369,37 @@ Popraw ping i wydajność&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
         <translation type="obsolete">Użyj protokołu TCP</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="731"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="735"/>
         <source>Multiplex (mux)</source>
         <translation type="unfinished">Multipleks (mux)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="738"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="742"/>
         <source>Loglevel</source>
         <translation type="unfinished">Poziom logowania</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="750"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="754"/>
         <source>concurrency</source>
         <translation type="unfinished">współbieżność</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="760"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="764"/>
         <source>Padding</source>
         <translation type="unfinished">Wyściółka</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="767"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="771"/>
         <source>Default On</source>
         <translation type="unfinished">Domyślnie włączone</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="779"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="783"/>
         <source>Core Options</source>
         <translation type="unfinished">Podstawowe opcje</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="789"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="793"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Settings for the
                                             sing-box&apos;s built-in NTP client&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                                         </source>
@@ -406,27 +407,27 @@ Popraw ping i wydajność&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
 wbudowany klient NTP sing-box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="794"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="798"/>
         <source>NTP Settings</source>
         <translation type="unfinished">Ustawienia NTP</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="809"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="813"/>
         <source>server</source>
         <translation type="unfinished">serwer</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="819"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="823"/>
         <source>Port</source>
         <translation type="unfinished">Port</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="836"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="840"/>
         <source>sync interval</source>
         <translation type="unfinished">interwał synchronizacji</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="843"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="847"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;In
                                                                 minutes&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                                                             </source>
@@ -434,224 +435,224 @@ wbudowany klient NTP sing-box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
 minut&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="849"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="853"/>
         <source>5m</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="854"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="858"/>
         <source>10m</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="859"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="863"/>
         <source>30m</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="873"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="877"/>
         <source>Security</source>
         <translation type="unfinished">Bezpieczeństwo</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="879"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="883"/>
         <source>Disable Privilege request</source>
         <translation type="unfinished">Wyłącz żądanie uprawnień</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="886"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="890"/>
         <source>Use Mozilla Certificate Store</source>
         <translation type="unfinished">Użyj magazynu certyfikatów Mozilli</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="893"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="897"/>
         <source>Skip TLS certificate authentication by default (allowInsecure)</source>
         <translation type="unfinished">Domyślnie pomiń uwierzytelnianie za pomocą certyfikatu TLS (allowInsecure)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="921"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="925"/>
         <source>Default uTLS Fingerprint</source>
         <translation type="unfinished">Domyślny odcisk palca uTLS</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="944"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="948"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Do not attempt to start as Admin unless explicitly requested&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Nie próbuj rozpoczynać jako administrator, chyba że wyraźnie o to poprosisz&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="947"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="951"/>
         <source>Always Start as Standard User</source>
         <translation type="unfinished">Zawsze zaczynaj jako użytkownik standardowy</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="954"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="958"/>
         <source>Use Json instead binary for configs</source>
         <translation type="unfinished">Użyj Jsona zamiast pliku binarnego do konfiguracji</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="968"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="972"/>
         <source>Auto-Testing</source>
         <translation type="unfinished">Automatyczne testowanie</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="974"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="978"/>
         <source>Automatically test proxies in the background and maintain a pool of working proxies</source>
         <translation type="unfinished">Automatycznie testuj serwery proxy w tle i utrzymuj pulę działających serwerów proxy</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="977"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="981"/>
         <source>Enable Auto-Testing</source>
         <translation type="unfinished">Włącz automatyczne testowanie</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="984"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="988"/>
         <source>Test Interval (seconds)</source>
         <translation type="unfinished">Interwał testu (sekundy)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="991"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="995"/>
         <source>How often to run the test cycle</source>
         <translation type="unfinished">Jak często uruchamiać cykl testowy</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1007"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1011"/>
         <source>Proxies Per Cycle</source>
         <translation type="unfinished">Serwery proxy na cykl</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1014"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1018"/>
         <source>Number of proxies to test in each cycle</source>
         <translation type="unfinished">Liczba serwerów proxy do testowania w każdym cyklu</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1030"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1034"/>
         <source>Working Pool Size</source>
         <translation type="unfinished">Rozmiar basenu roboczego</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1037"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1041"/>
         <source>Maximum number of verified working proxies to maintain</source>
         <translation type="unfinished">Maksymalna liczba zweryfikowanych działających serwerów proxy do utrzymania</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1053"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1057"/>
         <source>Latency Threshold (ms)</source>
         <translation type="unfinished">Próg opóźnienia (ms)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1060"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1064"/>
         <source>Maximum latency to consider a proxy as working</source>
         <translation type="unfinished">Maksymalne opóźnienie, aby uznać serwer proxy za działający</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1079"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1083"/>
         <source>Failure Retry Count</source>
         <translation type="unfinished">Liczba ponownych prób niepowodzenia</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1086"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1090"/>
         <source>Number of retry attempts before considering a proxy as failed</source>
         <translation type="unfinished">Liczba ponownych prób przed uznaniem serwera proxy za nieudane</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1102"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1106"/>
         <source>Test Target URL</source>
         <translation type="unfinished">Przetestuj docelowy adres URL</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1109"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1113"/>
         <source>URL to test proxies against</source>
         <translation type="unfinished">Adres URL do testowania serwerów proxy</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1112"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1116"/>
         <source>http://cp.cloudflare.com/</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1119"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1123"/>
         <source>Automatically switch to another working proxy when TUN mode proxy fails</source>
         <translation type="unfinished">Automatycznie przełącz się na inny działający serwer proxy, gdy serwer proxy w trybie TUN ulegnie awarii</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1122"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1126"/>
         <source>Enable TUN Failover</source>
         <translation type="unfinished">Włącz tryb awaryjny TUN</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1130"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1134"/>
         <source>Startup</source>
         <translation type="unfinished">Uruchomienie</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1191"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1195"/>
         <source>Geometry</source>
         <translation type="unfinished">Geometria</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1220"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1224"/>
         <source>Autosave geometry</source>
         <translation type="unfinished">Automatycznie zapisz geometrię</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1227"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1231"/>
         <source>Autosave position</source>
         <translation type="unfinished">Pozycja automatycznego zapisywania</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1247"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1251"/>
         <source>Apply now</source>
         <translation type="unfinished">Złóż wniosek teraz</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1363"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1367"/>
         <source>Width</source>
         <translation type="unfinished">Szerokość</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1376"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1380"/>
         <source>X</source>
         <translation type="unfinished">X</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1409"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1413"/>
         <source>Y</source>
         <translation type="unfinished">Y</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1422"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1426"/>
         <source>Height</source>
         <translation type="unfinished">Wysokość</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1509"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1513"/>
         <source>Core Executable Path</source>
         <translation type="unfinished">Podstawowa ścieżka pliku wykonywalnego</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1538"/>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1712"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1542"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1716"/>
         <source>Use default</source>
         <translation type="unfinished">Użyj domyślnego</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1545"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1549"/>
         <source>Remote Control</source>
         <translation type="unfinished">Zdalne sterowanie</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1571"/>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1745"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1575"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1749"/>
         <source>Select</source>
         <translation type="unfinished">Wybierać</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1683"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1687"/>
         <source>Resources Directory</source>
         <translation type="unfinished">Katalog zasobów</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1719"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1723"/>
         <source>Resource Manager</source>
         <translation type="unfinished">Menedżer zasobów</translation>
     </message>
@@ -3288,7 +3289,7 @@ Usunięto profile %3:
     <message>
         <location filename="../../src/nekobox/global/GuiUtils.hpp" line="112"/>
         <location filename="../../src/ui/profile/edit_ssh.cpp" line="28"/>
-        <location filename="../../src/ui/setting/dialog_basic_settings.cpp" line="244"/>
+        <location filename="../../src/ui/setting/dialog_basic_settings.cpp" line="321"/>
         <source>Select</source>
         <translation type="unfinished">Wybierać</translation>
     </message>
@@ -3472,7 +3473,7 @@ Informacje o wydaniu:
         <translation type="unfinished">Odmowa dostępu</translation>
     </message>
     <message>
-        <location filename="../../src/ui/setting/dialog_basic_settings.cpp" line="249"/>
+        <location filename="../../src/ui/setting/dialog_basic_settings.cpp" line="326"/>
         <source>Select a Folder</source>
         <translation type="unfinished">Wybierz folder</translation>
     </message>

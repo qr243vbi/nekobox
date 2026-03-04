@@ -251,6 +251,7 @@
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="502"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="523"/>
         <source>System</source>
         <translation type="unfinished">সিস্টেম</translation>
     </message>
@@ -260,98 +261,98 @@
         <translation type="unfinished">ভাষা</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="532"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="536"/>
         <source>Icon</source>
         <translation type="unfinished">আইকন</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="539"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="543"/>
         <source>Emoji Font</source>
         <translation type="unfinished">ইমোজি ফন্ট</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="552"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="556"/>
         <source>Subscription</source>
         <translation type="unfinished">সাবস্ক্রিপশন</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="558"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="562"/>
         <source>Clear servers before update</source>
         <translation type="unfinished">আপডেট করার আগে সার্ভার সাফ করুন</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="565"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="569"/>
         <source>URL Test after update</source>
         <translation type="unfinished">আপডেটের পর URL পরীক্ষা</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="580"/>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="800"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="584"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="804"/>
         <source>Enable</source>
         <translation type="unfinished">সক্ষম করুন</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="587"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="591"/>
         <source>Interval (minute, invalid if less than 30)</source>
         <translation type="unfinished">ব্যবধান (মিনিট, 30 এর কম হলে অবৈধ)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="606"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="610"/>
         <source>Remove Duplicates</source>
         <translation type="unfinished">সদৃশ সরান</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="613"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="617"/>
         <source>hwid=custom_value,os=custom_os,osVersion=custom_version,model=custom_model</source>
         <translation type="unfinished">hwid=custom_value,os=custom_os,osVersion=custom_version,model=custom_model</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="620"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="624"/>
         <source>User Agent</source>
         <translation type="unfinished">ব্যবহারকারী এজেন্ট</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="630"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="634"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;HWID=%1&lt;/p&gt;&lt;p&gt;OS=%2&lt;/p&gt;&lt;p&gt;OS Version=%3&lt;/p&gt;&lt;p&gt;Model=%4&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;HWID=%1&lt;/p&gt;&lt;p&gt;OS=%2&lt;/p&gt;&lt;p&gt;OS সংস্করণ=%3&lt;/p&gt;&lt;p&gt;মডেল=%4&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="633"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="637"/>
         <source>Send System Parameters</source>
         <translation type="unfinished">সিস্টেম প্যারামিটার পাঠান</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="646"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="650"/>
         <source>Automatic update</source>
         <translation type="unfinished">স্বয়ংক্রিয় আপডেট</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="653"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="657"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Format: hwid=value,os=value,osVersion=value,model=value&lt;/p&gt;&lt;p&gt;Leave empty to use default values. Only specify the parameters you want to override.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;ফর্ম্যাট: hwid=value,os=value,osVersion=value,model=value&lt;/p&gt;&lt;p&gt;ডিফল্ট মান ব্যবহার করতে খালি ছেড়ে দিন।আপনি যে প্যারামিটারগুলিকে ওভাররাইড করতে চান তা নির্দিষ্ট করুন৷&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;৷</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="656"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="660"/>
         <source>Custom System Parameters (optional)</source>
         <translation type="unfinished">কাস্টম সিস্টেম প্যারামিটার (ঐচ্ছিক)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="663"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="667"/>
         <source>Remove Invalid</source>
         <translation type="unfinished">অবৈধ সরান</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="670"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="674"/>
         <source>Remove Unavailable</source>
         <translation type="unfinished">অনুপলব্ধ সরান</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="678"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="682"/>
         <source>Core</source>
         <translation type="unfinished">কোর</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="717"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="721"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Might
                                                                             Improve Ping and Performance&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                                                                         </source>
@@ -359,7 +360,7 @@
 পিং এবং কর্মক্ষমতা উন্নত করুন&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="722"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="726"/>
         <source>Disable Traffic Stats</source>
         <translation type="unfinished">ট্রাফিক পরিসংখ্যান নিষ্ক্রিয় করুন</translation>
     </message>
@@ -368,37 +369,37 @@
         <translation type="obsolete">TCP ব্যবহার করুন</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="731"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="735"/>
         <source>Multiplex (mux)</source>
         <translation type="unfinished">মাল্টিপ্লেক্স (mux)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="738"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="742"/>
         <source>Loglevel</source>
         <translation type="unfinished">লগলেভেল</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="750"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="754"/>
         <source>concurrency</source>
         <translation type="unfinished">সঙ্গতি</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="760"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="764"/>
         <source>Padding</source>
         <translation type="unfinished">প্যাডিং</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="767"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="771"/>
         <source>Default On</source>
         <translation type="unfinished">ডিফল্ট চালু</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="779"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="783"/>
         <source>Core Options</source>
         <translation type="unfinished">মূল বিকল্প</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="789"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="793"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Settings for the
                                             sing-box&apos;s built-in NTP client&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                                         </source>
@@ -406,27 +407,27 @@
 sing-box এর অন্তর্নির্মিত NTP ক্লায়েন্ট&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="794"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="798"/>
         <source>NTP Settings</source>
         <translation type="unfinished">NTP সেটিংস</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="809"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="813"/>
         <source>server</source>
         <translation type="unfinished">সার্ভার</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="819"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="823"/>
         <source>Port</source>
         <translation type="unfinished">বন্দর</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="836"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="840"/>
         <source>sync interval</source>
         <translation type="unfinished">সিঙ্ক ব্যবধান</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="843"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="847"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;In
                                                                 minutes&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                                                             </source>
@@ -434,224 +435,224 @@ sing-box এর অন্তর্নির্মিত NTP ক্লায়�
 মিনিট&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="849"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="853"/>
         <source>5m</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="854"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="858"/>
         <source>10m</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="859"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="863"/>
         <source>30m</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="873"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="877"/>
         <source>Security</source>
         <translation type="unfinished">নিরাপত্তা</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="879"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="883"/>
         <source>Disable Privilege request</source>
         <translation type="unfinished">বিশেষাধিকার অনুরোধ অক্ষম করুন</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="886"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="890"/>
         <source>Use Mozilla Certificate Store</source>
         <translation type="unfinished">Mozilla সার্টিফিকেট স্টোর ব্যবহার করুন</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="893"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="897"/>
         <source>Skip TLS certificate authentication by default (allowInsecure)</source>
         <translation type="unfinished">ডিফল্টরূপে TLS শংসাপত্র প্রমাণীকরণ এড়িয়ে যান (অনিরাপদ অনুমতি দিন)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="921"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="925"/>
         <source>Default uTLS Fingerprint</source>
         <translation type="unfinished">ডিফল্ট uTLS ফিঙ্গারপ্রিন্ট</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="944"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="948"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Do not attempt to start as Admin unless explicitly requested&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;প্রশাসক হিসাবে শুরু করার চেষ্টা করবেন না যদি না স্পষ্টভাবে অনুরোধ করা হয়&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="947"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="951"/>
         <source>Always Start as Standard User</source>
         <translation type="unfinished">সর্বদা স্ট্যান্ডার্ড ব্যবহারকারী হিসাবে শুরু করুন</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="954"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="958"/>
         <source>Use Json instead binary for configs</source>
         <translation type="unfinished">কনফিগারেশনের জন্য বাইনারি পরিবর্তে Json ব্যবহার করুন</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="968"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="972"/>
         <source>Auto-Testing</source>
         <translation type="unfinished">স্বয়ংক্রিয় পরীক্ষা</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="974"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="978"/>
         <source>Automatically test proxies in the background and maintain a pool of working proxies</source>
         <translation type="unfinished">ব্যাকগ্রাউন্ডে স্বয়ংক্রিয়ভাবে প্রক্সি পরীক্ষা করুন এবং কার্যকরী প্রক্সিগুলির একটি পুল বজায় রাখুন</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="977"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="981"/>
         <source>Enable Auto-Testing</source>
         <translation type="unfinished">স্বয়ংক্রিয় পরীক্ষা সক্ষম করুন৷</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="984"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="988"/>
         <source>Test Interval (seconds)</source>
         <translation type="unfinished">পরীক্ষার ব্যবধান (সেকেন্ড)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="991"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="995"/>
         <source>How often to run the test cycle</source>
         <translation type="unfinished">কতবার পরীক্ষা চক্র চালাতে হবে</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1007"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1011"/>
         <source>Proxies Per Cycle</source>
         <translation type="unfinished">সাইকেল প্রতি প্রক্সি</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1014"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1018"/>
         <source>Number of proxies to test in each cycle</source>
         <translation type="unfinished">প্রতিটি চক্রে পরীক্ষা করার জন্য প্রক্সির সংখ্যা</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1030"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1034"/>
         <source>Working Pool Size</source>
         <translation type="unfinished">ওয়ার্কিং পুলের আকার</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1037"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1041"/>
         <source>Maximum number of verified working proxies to maintain</source>
         <translation type="unfinished">রক্ষণাবেক্ষণের জন্য যাচাইকৃত কাজের প্রক্সিগুলির সর্বাধিক সংখ্যা৷</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1053"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1057"/>
         <source>Latency Threshold (ms)</source>
         <translation type="unfinished">লেটেন্সি থ্রেশহোল্ড (মিসে)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1060"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1064"/>
         <source>Maximum latency to consider a proxy as working</source>
         <translation type="unfinished">একটি প্রক্সিকে কাজ হিসাবে বিবেচনা করার জন্য সর্বাধিক লেটেন্সি৷</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1079"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1083"/>
         <source>Failure Retry Count</source>
         <translation type="unfinished">ব্যর্থতা পুনরায় চেষ্টা গণনা</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1086"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1090"/>
         <source>Number of retry attempts before considering a proxy as failed</source>
         <translation type="unfinished">একটি প্রক্সিকে ব্যর্থ হিসাবে বিবেচনা করার আগে পুনঃপ্রচেষ্টার সংখ্যা</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1102"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1106"/>
         <source>Test Target URL</source>
         <translation type="unfinished">লক্ষ্য ইউআরএল পরীক্ষা করুন</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1109"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1113"/>
         <source>URL to test proxies against</source>
         <translation type="unfinished">প্রক্সির বিরুদ্ধে পরীক্ষা করার জন্য URL</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1112"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1116"/>
         <source>http://cp.cloudflare.com/</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1119"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1123"/>
         <source>Automatically switch to another working proxy when TUN mode proxy fails</source>
         <translation type="unfinished">TUN মোড প্রক্সি ব্যর্থ হলে স্বয়ংক্রিয়ভাবে অন্য কার্যকরী প্রক্সিতে স্যুইচ করুন</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1122"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1126"/>
         <source>Enable TUN Failover</source>
         <translation type="unfinished">TUN ফেইলওভার সক্ষম করুন</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1130"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1134"/>
         <source>Startup</source>
         <translation type="unfinished">স্টার্টআপ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1191"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1195"/>
         <source>Geometry</source>
         <translation type="unfinished">জ্যামিতি</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1220"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1224"/>
         <source>Autosave geometry</source>
         <translation type="unfinished">অটোসেভ জ্যামিতি</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1227"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1231"/>
         <source>Autosave position</source>
         <translation type="unfinished">স্বয়ংক্রিয় সংরক্ষণ অবস্থান</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1247"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1251"/>
         <source>Apply now</source>
         <translation type="unfinished">এখনই আবেদন করুন</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1363"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1367"/>
         <source>Width</source>
         <translation type="unfinished">প্রস্থ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1376"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1380"/>
         <source>X</source>
         <translation type="unfinished">এক্স</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1409"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1413"/>
         <source>Y</source>
         <translation type="unfinished">Y</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1422"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1426"/>
         <source>Height</source>
         <translation type="unfinished">উচ্চতা</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1509"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1513"/>
         <source>Core Executable Path</source>
         <translation type="unfinished">কোর এক্সিকিউটেবল পাথ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1538"/>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1712"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1542"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1716"/>
         <source>Use default</source>
         <translation type="unfinished">ডিফল্ট ব্যবহার করুন</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1545"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1549"/>
         <source>Remote Control</source>
         <translation type="unfinished">রিমোট কন্ট্রোল</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1571"/>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1745"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1575"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1749"/>
         <source>Select</source>
         <translation type="unfinished">নির্বাচন করুন</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1683"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1687"/>
         <source>Resources Directory</source>
         <translation type="unfinished">সম্পদ ডিরেক্টরি</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1719"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1723"/>
         <source>Resource Manager</source>
         <translation type="unfinished">রিসোর্স ম্যানেজার</translation>
     </message>
@@ -3288,7 +3289,7 @@ Deleted %3 Profiles:
     <message>
         <location filename="../../src/nekobox/global/GuiUtils.hpp" line="112"/>
         <location filename="../../src/ui/profile/edit_ssh.cpp" line="28"/>
-        <location filename="../../src/ui/setting/dialog_basic_settings.cpp" line="244"/>
+        <location filename="../../src/ui/setting/dialog_basic_settings.cpp" line="321"/>
         <source>Select</source>
         <translation type="unfinished">নির্বাচন করুন</translation>
     </message>
@@ -3472,7 +3473,7 @@ Release note:
         <translation type="unfinished">অ্যাক্সেস অস্বীকার করা হয়েছে৷</translation>
     </message>
     <message>
-        <location filename="../../src/ui/setting/dialog_basic_settings.cpp" line="249"/>
+        <location filename="../../src/ui/setting/dialog_basic_settings.cpp" line="326"/>
         <source>Select a Folder</source>
         <translation type="unfinished">একটি ফোল্ডার নির্বাচন করুন</translation>
     </message>

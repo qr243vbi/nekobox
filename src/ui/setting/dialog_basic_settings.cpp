@@ -37,6 +37,10 @@ int LanguageModel::rowCount(const QModelIndex &parent ) const {
     return languageList.size(); // The number of items in the list
 }
 
+std::shared_ptr<LanguageValue> LanguageModel::getLanguage(int index) const {
+    return languageList[index];
+}
+
 QVariant LanguageModel::data(const QModelIndex &index, int role ) const 
 {
         if (index.isValid() && index.row() < languageList.size()) {
@@ -44,7 +48,7 @@ QVariant LanguageModel::data(const QModelIndex &index, int role ) const
             if (role == Qt::DisplayRole) {
                 return language->name;
             } else if (role == 9999){
-                return language->code;
+                return language->index;
             }
         }
         return QVariant();
@@ -99,7 +103,7 @@ QVariant LanguageModel::data(const QModelIndex &index, int role ) const
     void LanguageSelectionDialog::onOkClicked() {
         QModelIndex selectedIndex = languageListView->currentIndex();
         if (selectedIndex.isValid()) {
-            selectedLanguage = languageModel->data(selectedIndex, Qt::DisplayRole).value<std::shared_ptr<LanguageValue>>();
+            selectedLanguage = languageModel->getLanguage(languageModel->data(selectedIndex, 9999).value<int>());
             qDebug() << "Selected language:" << selectedLanguage->name;
             accept(); // Close the dialog with acceptance
         } else {
@@ -115,12 +119,24 @@ DialogBasicSettings::DialogBasicSettings(MainWindow *parent)
     ui->setupUi(this);
     ADD_ASTERISK(this);
     this->parent = parent;
+    CACHE.language_code = Configs::windowSettings->language;
     ui->language_button->setStyleSheet("text-align: left;");
+    
+    for (auto lang : languageCodes()){
+        if (lang->code == CACHE.language_code){
+            ui->language_button->setText(lang->name);
+        } 
+    }
 
     connect(ui->language_button, &QPushButton::clicked, this, [=,this] {
         auto select_language = std::make_shared<LanguageSelectionDialog>(this);
         select_language->show();
         select_language->exec();
+        auto pointer = select_language->getSelectedLanguage();
+        if (pointer != nullptr){
+            CACHE.language_code = pointer->code;
+            ui->language_button->setText(pointer->name);
+        }
     });    
 
     // Auto-testing
@@ -486,6 +502,13 @@ void DialogBasicSettings::accept() {
     if (need_save_manager){
         Configs::resourceManager->Save();
     }
+    
+    // Language
+    if (CACHE.language_code != Configs::windowSettings->language){
+        CACHE.needRestart = true;
+        settings->language = CACHE.language_code;
+    }
+
     // Security
 
     D_SAVE_BOOL(skip_cert)

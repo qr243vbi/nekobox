@@ -28,6 +28,9 @@ public:
 
     int rowCount(const QModelIndex &parent = QModelIndex()) const override;
 
+
+    std::shared_ptr<LanguageValue> getLanguage(int index) const ;
+
     QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
 
 private:
@@ -80,7 +83,7 @@ private:
     Ui::DialogBasicSettings *ui;
 
     struct {
-        QString language_core;
+        QString language_code;
         QString custom_inbound;
         bool needRestart = false;
         bool updateDisableTray = false;
