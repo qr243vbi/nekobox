@@ -32,6 +32,23 @@
 
 #define settings Configs::windowSettings
 
+int LanguageModel::rowCount(const QModelIndex &parent ) const {
+    return languageList.size(); // The number of items in the list
+}
+
+QVariant LanguageModel::data(const QModelIndex &index, int role ) const 
+{
+        if (index.isValid() && index.row() < languageList.size()) {
+            const auto &language = languageList[index.row()];
+            if (role == Qt::DisplayRole) {
+                return language->name;
+            } else if (role == 9999){
+                return language->code;
+            }
+        }
+        return QVariant();
+}
+
 DialogBasicSettings::DialogBasicSettings(MainWindow *parent)
     : QDialog(parent), ui(new Ui::DialogBasicSettings) {
     CHECK_SETTINGS_ACCESS

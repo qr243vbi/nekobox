@@ -28,18 +28,7 @@ public:
 
     int rowCount(const QModelIndex &parent = QModelIndex()) const override;
 
-    QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override
-    {
-        if (index.isValid() && index.row() < languageList.size()) {
-            const auto &language = languageList[index.row()];
-            if (role == Qt::DisplayRole) {
-                return language->name;
-            } else if (role == 9999){
-                return language->code;
-            }
-        }
-        return QVariant();
-    }
+    QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
 
 private:
     QList<std::shared_ptr<LanguageValue>> languageList = languageCodes(); // The list of shared pointers
