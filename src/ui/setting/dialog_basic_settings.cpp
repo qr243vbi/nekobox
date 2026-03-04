@@ -89,12 +89,11 @@ QVariant LanguageModel::data(const QModelIndex &index, int role ) const
         setLayout(layout);
     }
 
-    std::shared_ptr<LanguageValue> getSelectedLanguage() const {
+    std::shared_ptr<LanguageValue> LanguageSelectionDialog::getSelectedLanguage() const {
         return selectedLanguage;
     }
 
-    void onOkClicked()
-    {
+    void LanguageSelectionDialog::onOkClicked() {
         QModelIndex selectedIndex = languageListView->currentIndex();
         if (selectedIndex.isValid()) {
             selectedLanguage = languageModel->data(selectedIndex, Qt::DisplayRole).value<std::shared_ptr<LanguageValue>>();

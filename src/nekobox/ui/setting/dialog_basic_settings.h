@@ -41,22 +41,10 @@ class LanguageSelectionDialog : public QDialog
 public:
     LanguageSelectionDialog(QWidget *parent = nullptr);
 
-    std::shared_ptr<LanguageValue> getSelectedLanguage() const {
-        return selectedLanguage;
-    }
+    std::shared_ptr<LanguageValue> getSelectedLanguage() const ;
 
 private slots:
-    void onOkClicked()
-    {
-        QModelIndex selectedIndex = languageListView->currentIndex();
-        if (selectedIndex.isValid()) {
-            selectedLanguage = languageModel->data(selectedIndex, Qt::DisplayRole).value<std::shared_ptr<LanguageValue>>();
-            qDebug() << "Selected language:" << selectedLanguage->name;
-            accept(); // Close the dialog with acceptance
-        } else {
-            qDebug() << "No language selected";
-        }
-    }
+    void onOkClicked();
 
 private:
     QListView *languageListView;
