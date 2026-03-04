@@ -3640,7 +3640,7 @@ Inothi lokukhishwa:
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="293" />
         <source>Move Down</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Hambisa Phansi</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="300" />
