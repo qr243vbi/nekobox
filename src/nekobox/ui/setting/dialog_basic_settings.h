@@ -39,7 +39,7 @@ class LanguageSelectionDialog : public QDialog
     Q_OBJECT
 
 public:
-    LanguageSelectionDialog(const QList<std::shared_ptr<LanguageValue>> &languages, QWidget *parent = nullptr)
+    LanguageSelectionDialog(QWidget *parent = nullptr)
         : QDialog(parent), selectedLanguage(nullptr)
     {
         // Set dialog title

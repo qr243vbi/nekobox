@@ -143,23 +143,7 @@ DialogBasicSettings::DialogBasicSettings(MainWindow *parent)
     D_LOAD_BOOL(start_minimal)
     S_LOAD_INT(max_log_line)
     //
-    auto language = ui->language;
-    language->clear();
-    auto locale = getLocale();
-    auto & codes = languageCodes();
-    int index = -1;
-    for (auto u : codes){
-        language->addItem(u->name);
-        if (u->code == locale){
-            index = language->count() - 1;
-        }
-    } 
-    if (index >= 0){
-        language->setCurrentIndex(index);
-    }
-    connect(language, &QComboBox::currentIndexChanged, this, [=,this](int index) {
-        CACHE.needRestart = true;
-    });
+
     connect(ui->font, &QComboBox::currentTextChanged, this, [=,this](const QString &fontName) {
         auto font = qApp->font();
         font.setFamily(fontName);
@@ -305,9 +289,6 @@ DialogBasicSettings::DialogBasicSettings(MainWindow *parent)
     });
     ui->default_core_path->setChecked(core_path == "");
     ui->default_icons_path->setChecked(icons_path == "");
-
-    language->setMaxVisibleItems(10);
-    language->setMaximumHeight(200);
 }
 
 DialogBasicSettings::~DialogBasicSettings() {
@@ -351,10 +332,6 @@ void DialogBasicSettings::accept() {
 
     D_SAVE_BOOL(connection_statistics);
     QString locale = "";
-    int locale_index = ui->language->currentIndex();
-    if (locale_index >= 0){
-        locale = languageCodes()[locale_index]->code;
-    }
     D_SAVE_BOOL(start_minimal)
     S_SAVE_INT(max_log_line)
     #ifdef Q_OS_WIN
