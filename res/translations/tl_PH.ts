@@ -3149,12 +3149,12 @@ Para sa higit pang impormasyon, tingnan ang dokumentong "Configuration/DNS".</tr
     <message>
         <location filename="../../src/nekobox/ui/security/change_password.ui" line="37" />
         <source>New Password</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Bagong Password</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/change_password.ui" line="54" />
         <source>Confirm Password</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kumpirmahin ang Password</translation>
     </message>
 </context>
 <context>
@@ -3162,12 +3162,12 @@ Para sa higit pang impormasyon, tingnan ang dokumentong "Configuration/DNS".</tr
     <message>
         <location filename="../../src/ui/profile/ProxyItem.cpp" line="39" />
         <source>Confirmation</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kumpirmasyon</translation>
     </message>
     <message>
         <location filename="../../src/ui/profile/ProxyItem.cpp" line="39" />
         <source>Remove %1?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Alisin ang %1?</translation>
     </message>
 </context>
 <context>
@@ -3175,7 +3175,7 @@ Para sa higit pang impormasyon, tingnan ang dokumentong "Configuration/DNS".</tr
     <message>
         <location filename="../../src/ui/security_addon.cpp" line="342" />
         <source>Security Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Mga Setting ng Seguridad</translation>
     </message>
 </context>
 <context>
@@ -3183,7 +3183,7 @@ Para sa higit pang impormasyon, tingnan ang dokumentong "Configuration/DNS".</tr
     <message>
         <location filename="../../src/main.cpp" line="259" />
         <source>QT_LAYOUT_DIRECTION</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">QT_LAYOUT_DIRECTION</translation>
     </message>
 </context>
 <context>
@@ -3191,37 +3191,37 @@ Para sa higit pang impormasyon, tingnan ang dokumentong "Configuration/DNS".</tr
     <message>
         <location filename="../../src/configs/ConfigBuilder.cpp" line="159" />
         <source>Tun mode cannot be used with Custom configs</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Hindi magagamit ang Tun mode sa mga Custom na config</translation>
     </message>
     <message>
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="913" />
         <source>Requesting subscription: %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Humihiling ng subscription: %1</translation>
     </message>
     <message>
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="917" />
         <source>Requesting subscription %1 error: %2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Paghiling ng subscription %1 error: %2</translation>
     </message>
     <message>
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="924" />
         <source>Subscription request fininshed: %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Natapos na ang kahilingan sa subscription: %1</translation>
     </message>
     <message>
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="942" />
         <source>Clearing servers...</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ni-clear ang mga server...</translation>
     </message>
     <message>
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="947" />
         <source>Processing subscription data...</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Pinoproseso ang data ng subscription...</translation>
     </message>
     <message>
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="950" />
         <source>Process complete, applying...</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tapos na ang proseso, nag-a-apply...</translation>
     </message>
     <message>
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="1013" />
@@ -3229,162 +3229,167 @@ Para sa higit pang impormasyon, tingnan ang dokumentong "Configuration/DNS".</tr
 %2
 Deleted %3 Profiles:
 %4</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Nagdagdag ng %1 profile:
+%2
+Tinanggal ang %3 Profile:
+%4</translation>
     </message>
     <message>
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="1018" />
         <source>Nothing</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">wala</translation>
     </message>
     <message>
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="1021" />
         <source>Change of %1:</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Pagbabago ng %1:</translation>
     </message>
     <message>
         <location filename="../../src/dataStore/Database.cpp" line="119" />
         <source>Default</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Default</translation>
     </message>
     <message>
         <location filename="../../src/global/HTTPRequestHelper.cpp" line="189" />
         <source>Could not open file.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Hindi mabuksan ang file.</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/configs/proxy/ChainBean.hpp" line="17" />
         <source>Chain Proxy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Chain Proxy</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/global/GuiUtils.hpp" line="112" />
         <location filename="../../src/ui/profile/edit_ssh.cpp" line="28" />
         <location filename="../../src/ui/setting/dialog_basic_settings.cpp" line="245" />
         <source>Select</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Pumili</translation>
     </message>
     <message>
         <location filename="../../src/stats/traffic/TrafficLooper.cpp" line="115" />
         <location filename="../../src/ui/mainwindow.cpp" line="2371" />
         <source>Proxy: %1
 Direct: %2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Proxy: %1
+Direkta: %2</translation>
     </message>
     <message>
         <location filename="../../src/sys/Process.cpp" line="104" />
         <source>Core exited, cleaning up...</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Lumabas si Core, naglinis...</translation>
     </message>
     <message>
         <location filename="../../src/sys/Process.cpp" line="111" />
         <source>Core exits too frequently, stop automatic restart this profile.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Masyadong madalas na lumalabas ang core, ihinto ang awtomatikong pag-restart ng profile na ito.</translation>
     </message>
     <message>
         <location filename="../../src/sys/Process.cpp" line="120" />
         <source>Restarting the core ...</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">I-restart ang core...</translation>
     </message>
     <message>
         <location filename="../../src/sys/Settings.cpp" line="362" />
         <source>System</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Sistema</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="22" />
         <source>URL detected</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Nakita ang URL</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="27" />
         <source>%1
 How to update?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">%1
+Paano mag-update?</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="31" />
         <source>Create new subscription group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Gumawa ng bagong pangkat ng subscription</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="32" />
         <source>Add profiles to this group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Magdagdag ng mga profile sa pangkat na ito</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="37" />
         <source>Group name</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Pangalan ng pangkat</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="101" />
         <source>Used: %1 Remain: %2 Expire: %3</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ginamit: %1 Manatili: %2 Mag-e-expire: %3</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="173" />
         <source>Download Profiles</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Mag-download ng Mga Profile</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="174" />
         <source>Requesting profile error: %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Humihiling ng error sa profile: %1</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="341" />
         <source>
 Deleted %1 Duplicates</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tinanggal ang %1 Duplicate</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="375" />
         <source>
 Deleted %1 Invalid</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tinanggal %1 Di-wasto</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="398" />
         <source>
 Deleted %1 Unavailable</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tinanggal %1 Hindi magagamit</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1446" />
         <source>Check Rule Sets: %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Suriin ang Mga Set ng Panuntunan: %1</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1468" />
         <source>Requesting rule-set list error: %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Paghiling ng error sa listahan ng set ng panuntunan: %1</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2408" />
         <source>IP address: %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">IP address: %1</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2906" />
         <source>Config copied</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kinopya ang config</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2917" />
         <source>Copy core config</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kopyahin ang core config</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2918" />
         <source>Copy test config</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kopyahin ang config ng pagsubok</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2919" />
         <location filename="../../src/ui/security_addon.cpp" line="22" />
         <location filename="../../src/ui/setting/dialog_vpn_settings.cpp" line="45" />
         <source>OK</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">OK</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="4104" />
@@ -3394,64 +3399,66 @@ Deleted %1 Unavailable</source>
         <location filename="../../src/ui/mainwindow.cpp" line="4190" />
         <location filename="../../src/ui/mainwindow.cpp" line="4225" />
         <source>Update</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Update</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="4105" />
         <source>Not official support platform</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Hindi opisyal na platform ng suporta</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="4116" />
         <source>Requesting update error: %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Humihiling ng error sa pag-update: %1</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="4159" />
         <source>No update</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Walang update</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="4182" />
         <source>Update found: %1
 Release note:
 %2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Nahanap ang update: %1
+Tala sa paglabas:
+%2</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="4185" />
         <source>Close</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Isara</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="4187" />
         <source>Open in browser</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Buksan sa browser</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="4226" />
         <source>Update is ready, restart to install?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Handa na ang pag-update, i-restart upang mai-install?</translation>
     </message>
     <message>
         <location filename="../../src/ui/security_addon.cpp" line="21" />
         <source>Access denied</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tinanggihan ang pag-access</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/dialog_basic_settings.cpp" line="250" />
         <source>Select a Folder</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Pumili ng Folder</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/dialog_vpn_settings.cpp" line="37" />
         <source>Exclude CIDR's</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ibukod ang mga CIDR</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/dialog_vpn_settings.cpp" line="46" />
         <source>Cancel</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kanselahin</translation>
     </message>
 </context>
 <context>
@@ -3459,92 +3466,92 @@ Release note:
     <message>
         <location filename="../../src/main.cpp" line="57" />
         <source>Cancel</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kanselahin</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="58" />
         <source>Apply</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Mag-apply</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="59" />
         <source>Yes</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Oo</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="60" />
         <source>No</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Hindi</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="61" />
         <source>OK</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">OK</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="62" />
         <source>Defaults</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Mga Default</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="63" />
         <source>Restore Defaults</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ibalik ang Mga Default</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="64" />
         <source>Discard</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Itapon</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="66" />
         <source>Undo</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">I-undo</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="67" />
         <source>Redo</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Gawin muli</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="68" />
         <source>Cut</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Putulin</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="69" />
         <source>Copy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kopyahin</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="70" />
         <source>Paste</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Idikit</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="71" />
         <source>Delete</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tanggalin</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="72" />
         <source>Select All</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Piliin ang Lahat</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="73" />
         <source>Stop</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tumigil ka</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="74" />
         <source>Clear</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Maaliwalas</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="75" />
         <source>Copy Link Location</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kopyahin ang Lokasyon ng Link</translation>
     </message>
 </context>
 <context>
@@ -3552,144 +3559,144 @@ Release note:
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="14" />
         <source>Route Profile</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Profile ng Ruta</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="24" />
         <source>General</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Heneral</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="63" />
         <source>Default outbound</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Default na palabas</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="70" />
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="319" />
         <source>Name</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Pangalan</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="78" />
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="187" />
         <source>Proxy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Proxy</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="83" />
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="217" />
         <source>Direct</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Direkta</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="88" />
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="157" />
         <source>Block</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">I-block</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="96" />
         <source>Update url</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">I-update ang url</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="130" />
         <source>Skip update</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Laktawan ang pag-update</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="137" />
         <source>Update manually</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Manu-manong i-update</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="151" />
         <source>Basic</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Basic</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="248" />
         <source>Advanced</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Advanced</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="257" />
         <source>Import JSON</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Mag-import ng JSON</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="267" />
         <source>Rules</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Mga tuntunin</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="279" />
         <source>New</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Bago</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="286" />
         <source>Move Up</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Move Up</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="293" />
         <source>Move Down</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ilipat Pababa</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="300" />
         <source>Delete</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tanggalin</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="310" />
         <source>Rule Attributes</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Mga Katangian ng Panuntunan</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="329" />
         <source>Attribute</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Katangian</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="342" />
         <source>Name_Placeholder</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Pangalan_Placeholder</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="374" />
         <source>Notes</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Mga Tala</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="302" />
         <location filename="../../src/ui/setting/RouteItem.cpp" line="469" />
         <source>Invalid rules</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Mga di-wastong panuntunan</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="302" />
         <source>Some rules could not be added:
 </source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Hindi maidagdag ang ilang panuntunan:</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="358" />
         <source>Invalid JSON Array</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Di-wastong JSON Array</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="358" />
         <source>The provided input cannot be parsed to a valid route rule array:
 </source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ang ibinigay na input ay hindi maaaring i-parse sa isang wastong hanay ng panuntunan ng ruta:</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="441" />
         <source>Invalid operation</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Di-wastong operasyon</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="441" />
