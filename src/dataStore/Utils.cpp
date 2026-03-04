@@ -303,23 +303,6 @@ bool WriteFileText(QFile &file, const QString &notes) {
   return WriteFile(file, array);
 }
 
-QString MkUDS(){
-  QString ret;
-  #ifdef Q_OS_WIN
-  ret = "\\\\.\\pipe\\";
-  ret += software_name 
-      + "_" + software_core_name 
-      + "_" GetRandomString(16);
-  #else
-  ret = Configs::GetBasePath();
-  ret += "/temp/" + software_name 
-      + "_" + software_core_name 
-      + "_" + GetRandomString(16) 
-      + ".sock";
-  #endif
-  return ret;
-}
-
 int MkPort() {
   QTcpServer s;
   s.listen();
