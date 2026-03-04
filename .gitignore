@@ -1,6 +1,8 @@
 # This file is used to ignore files which are generated
 # ----------------------------------------------------------------------------
 !languages.txt
+!CMakeLists.txt
+*.txt
 run.ps1
 .ENV
 global.ini
