@@ -3332,6 +3332,7 @@ void MainWindow::on_menu_resolve_domain_triggered() {
 
 void MainWindow::on_proxyListTable_customContextMenuRequested(
     const QPoint &pos) {
+  qDebug() << "CONTEXT MENU CLICKED";
   ui->menu_server->popup(
       ui->proxyListTable->viewport()->mapToGlobal(pos)); // 弹出菜单
 }
@@ -3464,6 +3465,8 @@ void MainWindow::on_masterLogBrowser_customContextMenuRequested(
 }
 
 void MainWindow::on_tabWidget_customContextMenuRequested(const QPoint &p) {
+  qDebug() << "GROUP MENU CLICKED";
+
   QMenu *menu;
   int clickedIndex = 0;
   if (p.x() != 0 || p.y() != 0) {

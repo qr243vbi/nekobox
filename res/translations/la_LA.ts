@@ -2440,64 +2440,64 @@ Pro maiori documento vide "Configurationis/DNS".</translation>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="627" />
         <source>Server</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Servo</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="631" />
         <source>Share</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Share</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="641" />
         <source>Current group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Current group</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="647" />
         <source>Test</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Test</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="675" />
         <source>Hidden menu</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Occultus menu</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="688" />
         <source>Routing Menu</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">profectus Menu</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="711" />
         <source>Exit</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Exitus</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="716" />
         <source>Toggle Window</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Toggle Fenestra</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="721" />
         <source>Basic Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Basic Occasus</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="726" />
         <source>New profile</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Nova profile</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="731" />
         <source>Groups</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Groups</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="736" />
         <location filename="../../src/ui/mainwindow.cpp" line="3447" />
         <location filename="../../src/ui/mainwindow.cpp" line="3457" />
         <source>Start</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Satus</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="744" />
@@ -2509,12 +2509,12 @@ Pro maiori documento vide "Configurationis/DNS".</translation>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="752" />
         <source>Edit</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Edit</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="760" />
         <source>Routing Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">profectus Optiones</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="765" />
@@ -2529,96 +2529,96 @@ Pro maiori documento vide "Configurationis/DNS".</translation>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="781" />
         <source>Debug Info</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Debug Info</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="786" />
         <source>QR Code and link</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">QR code and link</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="794" />
         <source>Copy Link</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Effingo Link</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="815" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1056" />
         <source>Clear Test Result</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Patet Expertus Ex</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="823" />
         <location filename="../../src/ui/mainwindow.cpp" line="1353" />
         <source>Export %1 config</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Export%1 config</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="831" />
         <source>Reset Traffic</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Reset Traffic</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="839" />
         <source>Scan QR Code</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">QR code Scan</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="847" />
         <source>Enable System Proxy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Admitte Ratio proxy</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="855" />
         <source>Disable</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">inactivare</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="860" />
         <source>Remove Duplicates</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Remove Effingo</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="868" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="945" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="953" />
         <source>fake</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">fictus</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="876" />
         <source>Move</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Movere</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="887" />
         <source>Start with system</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Satus ratio</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="895" />
         <source>Remember last profile</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Memento tandem profile</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="903" />
         <source>Allow other devices to connect</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Alias ​​​​machinas ad coniungere</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="908" />
         <source>Remove Unavailable</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Remove days</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="916" />
         <source>Full Test</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Test</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="924" />
         <source>Hotkey Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Hotkey Optiones</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="929" />
@@ -2628,48 +2628,48 @@ Pro maiori documento vide "Configurationis/DNS".</translation>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="937" />
         <source>Copy Custom Links</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Exemplar Custom Links</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="961" />
         <source>Copy links</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Effingo nexus</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1045" />
         <source>Url Test</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">URL Test</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1078" />
         <source>Resolve Domain</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Propono Domain</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="972" />
         <source>Enable Tun</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Admitte Tun</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="977" />
         <location filename="../../src/ui/mainwindow.cpp" line="2783" />
         <source>Clone</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Clone</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="985" />
         <source>Update subscription</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Update subscriptionis</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="996" />
         <source>Resolve domain</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Propono domain</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1004" />
         <source>Tun Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tun Optiones</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1009" />
@@ -2679,12 +2679,12 @@ Pro maiori documento vide "Configurationis/DNS".</translation>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1014" />
         <source>Open Config Folder</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Open Mando Pellentesque</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1035" />
         <source>Restart Proxy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Sileo proxy</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1040" />
