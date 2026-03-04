@@ -112,6 +112,11 @@ DialogBasicSettings::DialogBasicSettings(MainWindow *parent)
     ui->setupUi(this);
     ADD_ASTERISK(this);
     this->parent = parent;
+    ui->language_button->setStyleSheet("text-align: left;");
+
+    connect(ui->language_button, &QPushButton::clicked, this, [=,this] {
+        auto select_language = std::make_shared<LanguageSelectionDialog>(this);
+    });    
 
     // Auto-testing
     D_LOAD_BOOL(auto_test_enable)
