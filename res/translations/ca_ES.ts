@@ -2955,182 +2955,182 @@ Per a més informació, consulteu el document "Configuració/DNS".</translation>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3311" />
         <source>Replace domain server addresses with their resolved IPs?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Voleu substituir les adreces del servidor de domini per les IP resoltes?</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3444" />
         <source>Clear</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Clar</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3506" />
         <source>Delete selected Group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Suprimeix el grup seleccionat</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3507" />
         <source>Edit selected Group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Edita el grup seleccionat</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3516" />
         <source>Remove %1?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Eliminar % 1?</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="4199" />
         <source>Cannot start</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">No es pot començar</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="4200" />
         <source>Last download request has not finished yet</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">La darrera sol·licitud de descàrrega encara no ha finalitzat</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="4234" />
         <source>Failed to download update assets</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">No s'han pogut baixar els recursos d'actualització</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="85" />
         <source>Profile test aborted</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">La prova del perfil s'ha avortat</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="136" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="182" />
         <source>[%1] test error: %2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Error de prova [%1]: %2</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="165" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="491" />
         <source>Something is very wrong, the subject ent cannot be found!</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Hi ha alguna cosa malament, no es pot trobar l'entrada del tema!</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="171" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="497" />
         <source>Profile manager data is corrupted, try again.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Les dades del gestor de perfils estan malmeses; torna-ho a provar.</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="205" />
         <source>The last url test did not exit completely, please wait. If it persists, please restart the program.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">L'última prova d'URL no s'ha acabat completament, espereu.Si persisteix, reinicieu el programa.</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="214" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="321" />
         <source>Failed to build test config: </source>
-        <translation type="unfinished" />
+        <translation type="unfinished">No s'ha pogut crear la configuració de prova:</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="255" />
         <source>URL test finished!</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">S'ha acabat la prova d'URL!</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="266" />
         <source>Failed to stop tests</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">No s'han pogut aturar les proves</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="272" />
         <source>Testing</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Prova</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="310" />
         <source>The last speed test did not exit completely, please wait. If it persists, please restart the program.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">L'última prova de velocitat no s'ha acabat completament, si us plau, espereu.Si persisteix, reinicieu el programa.</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="347" />
         <source>Speedtest finished!</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Speedtest acabat!</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="428" />
         <source>Profile speed test aborted</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">S'ha avortat la prova de velocitat del perfil</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="516" />
         <source>[%1] speed test error: %2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Error de prova de velocitat [%1]: %2</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="525" />
         <source>You need to enable hijack DNS server first</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Primer heu d'habilitar el segrest del servidor DNS</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="539" />
         <source>Failed to set system dns: </source>
-        <translation type="unfinished" />
+        <translation type="unfinished">No s'ha pogut establir el dns del sistema:</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="587" />
         <source>Tun device misbehaving</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">El dispositiu Tun es porta malament</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="588" />
         <source>If you have trouble starting VPN, you can force reset Core process here and then try starting the profile again. The error is %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Si teniu problemes per iniciar la VPN, podeu forçar el procés de restabliment del Core aquí i, a continuació, provar de tornar a iniciar el perfil.L'error és % 1</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="592" />
         <source>Reset</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Restableix</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="593" />
         <source>Cancel</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Cancel·la</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="632" />
         <source>Another profile is starting...</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Comença un altre perfil...</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="639" />
         <source>Another profile is stopping...</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Un altre perfil s'atura...</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="660" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="742" />
         <source>If there is no response for a long time, it is recommended to restart the software.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Si no hi ha resposta durant molt de temps, es recomana reiniciar el programari.</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="674" />
         <source>Starting profile %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">S'està iniciant el perfil %1</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="676" />
         <source>Failed to start profile %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">No s'ha pogut iniciar el perfil % 1</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="725" />
         <source>Stop return error</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Atura l'error de retorn</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="765" />
         <source>Stopping profile %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">S'està aturant el perfil %1</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="767" />
         <source>Failed to stop, please restart the program.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">No s'ha pogut aturar, reinicieu el programa.</translation>
     </message>
 </context>
 <context>
@@ -3143,17 +3143,17 @@ Per a més informació, consulteu el document "Configuració/DNS".</translation>
     <message>
         <location filename="../../src/nekobox/ui/security/change_password.ui" line="20" />
         <source>Username</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Nom d'usuari</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/change_password.ui" line="37" />
         <source>New Password</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Nova contrasenya</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/change_password.ui" line="54" />
         <source>Confirm Password</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Confirmeu la contrasenya</translation>
     </message>
 </context>
 <context>
@@ -3161,12 +3161,12 @@ Per a més informació, consulteu el document "Configuració/DNS".</translation>
     <message>
         <location filename="../../src/ui/profile/ProxyItem.cpp" line="39" />
         <source>Confirmation</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Confirmació</translation>
     </message>
     <message>
         <location filename="../../src/ui/profile/ProxyItem.cpp" line="39" />
         <source>Remove %1?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Eliminar % 1?</translation>
     </message>
 </context>
 <context>
@@ -3174,7 +3174,7 @@ Per a més informació, consulteu el document "Configuració/DNS".</translation>
     <message>
         <location filename="../../src/ui/security_addon.cpp" line="342" />
         <source>Security Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Configuració de seguretat</translation>
     </message>
 </context>
 <context>
@@ -3182,7 +3182,7 @@ Per a més informació, consulteu el document "Configuració/DNS".</translation>
     <message>
         <location filename="../../src/main.cpp" line="259" />
         <source>QT_LAYOUT_DIRECTION</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">QT_LAYOUT_DIRECTION</translation>
     </message>
 </context>
 <context>
@@ -3190,37 +3190,37 @@ Per a més informació, consulteu el document "Configuració/DNS".</translation>
     <message>
         <location filename="../../src/configs/ConfigBuilder.cpp" line="159" />
         <source>Tun mode cannot be used with Custom configs</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">El mode Tun no es pot utilitzar amb configuracions personalitzades</translation>
     </message>
     <message>
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="913" />
         <source>Requesting subscription: %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">S'està sol·licitant la subscripció: %1</translation>
     </message>
     <message>
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="917" />
         <source>Requesting subscription %1 error: %2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Error en sol·licitar la subscripció %1: %2</translation>
     </message>
     <message>
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="924" />
         <source>Subscription request fininshed: %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">La sol·licitud de subscripció finalitzada: %1</translation>
     </message>
     <message>
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="942" />
         <source>Clearing servers...</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Esborrant servidors...</translation>
     </message>
     <message>
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="947" />
         <source>Processing subscription data...</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">S'estan processant les dades de la subscripció...</translation>
     </message>
     <message>
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="950" />
         <source>Process complete, applying...</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Procés finalitzat, sol·licitant...</translation>
     </message>
     <message>
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="1013" />
@@ -3228,162 +3228,167 @@ Per a més informació, consulteu el document "Configuració/DNS".</translation>
 %2
 Deleted %3 Profiles:
 %4</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">S'han afegit %1 perfils:
+%2
+S'han suprimit %3 perfils:
+%4</translation>
     </message>
     <message>
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="1018" />
         <source>Nothing</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Res</translation>
     </message>
     <message>
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="1021" />
         <source>Change of %1:</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Canvi de %1:</translation>
     </message>
     <message>
         <location filename="../../src/dataStore/Database.cpp" line="119" />
         <source>Default</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Per defecte</translation>
     </message>
     <message>
         <location filename="../../src/global/HTTPRequestHelper.cpp" line="189" />
         <source>Could not open file.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">No s'ha pogut obrir el fitxer.</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/configs/proxy/ChainBean.hpp" line="17" />
         <source>Chain Proxy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Proxy de cadena</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/global/GuiUtils.hpp" line="112" />
         <location filename="../../src/ui/profile/edit_ssh.cpp" line="28" />
         <location filename="../../src/ui/setting/dialog_basic_settings.cpp" line="245" />
         <source>Select</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Seleccioneu</translation>
     </message>
     <message>
         <location filename="../../src/stats/traffic/TrafficLooper.cpp" line="115" />
         <location filename="../../src/ui/mainwindow.cpp" line="2371" />
         <source>Proxy: %1
 Direct: %2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Proxy: %1
+Directe: %2</translation>
     </message>
     <message>
         <location filename="../../src/sys/Process.cpp" line="104" />
         <source>Core exited, cleaning up...</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">S'ha sortit el nucli, netejant...</translation>
     </message>
     <message>
         <location filename="../../src/sys/Process.cpp" line="111" />
         <source>Core exits too frequently, stop automatic restart this profile.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Core surt massa sovint, atura el reinici automàtic d'aquest perfil.</translation>
     </message>
     <message>
         <location filename="../../src/sys/Process.cpp" line="120" />
         <source>Restarting the core ...</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Reiniciant el nucli...</translation>
     </message>
     <message>
         <location filename="../../src/sys/Settings.cpp" line="362" />
         <source>System</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Sistema</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="22" />
         <source>URL detected</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">URL detectat</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="27" />
         <source>%1
 How to update?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">%1
+Com actualitzar?</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="31" />
         <source>Create new subscription group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Crea un grup de subscripció nou</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="32" />
         <source>Add profiles to this group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Afegeix perfils a aquest grup</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="37" />
         <source>Group name</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Nom del grup</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="101" />
         <source>Used: %1 Remain: %2 Expire: %3</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Usat: %1 Restant: %2 Caducitat: %3</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="173" />
         <source>Download Profiles</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Descarrega perfils</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="174" />
         <source>Requesting profile error: %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Error de sol·licitud de perfil: %1</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="341" />
         <source>
 Deleted %1 Duplicates</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">S'han suprimit % 1 duplicats</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="375" />
         <source>
 Deleted %1 Invalid</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">S'ha suprimit % 1 No vàlid</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="398" />
         <source>
 Deleted %1 Unavailable</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">S'ha suprimit % 1 No disponible</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1446" />
         <source>Check Rule Sets: %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Comprova els conjunts de regles: %1</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1468" />
         <source>Requesting rule-set list error: %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">S'està sol·licitant un error de llista de conjunt de regles: %1</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2408" />
         <source>IP address: %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Adreça IP: %1</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2906" />
         <source>Config copied</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">S'ha copiat la configuració</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2917" />
         <source>Copy core config</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Copia la configuració principal</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2918" />
         <source>Copy test config</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Copia la configuració de prova</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2919" />
         <location filename="../../src/ui/security_addon.cpp" line="22" />
         <location filename="../../src/ui/setting/dialog_vpn_settings.cpp" line="45" />
         <source>OK</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">D'acord</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="4104" />
@@ -3393,64 +3398,66 @@ Deleted %1 Unavailable</source>
         <location filename="../../src/ui/mainwindow.cpp" line="4190" />
         <location filename="../../src/ui/mainwindow.cpp" line="4225" />
         <source>Update</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Actualització</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="4105" />
         <source>Not official support platform</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Plataforma de suport no oficial</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="4116" />
         <source>Requesting update error: %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">S'està sol·licitant un error d'actualització: %1</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="4159" />
         <source>No update</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Cap actualització</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="4182" />
         <source>Update found: %1
 Release note:
 %2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Actualització trobada: %1
+Nota de llançament:
+%2</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="4185" />
         <source>Close</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tancar</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="4187" />
         <source>Open in browser</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Obre al navegador</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="4226" />
         <source>Update is ready, restart to install?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">L'actualització està preparada, reinicieu per instal·lar-la?</translation>
     </message>
     <message>
         <location filename="../../src/ui/security_addon.cpp" line="21" />
         <source>Access denied</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Accés denegat</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/dialog_basic_settings.cpp" line="250" />
         <source>Select a Folder</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Seleccioneu una carpeta</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/dialog_vpn_settings.cpp" line="37" />
         <source>Exclude CIDR's</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Exclou els CIDR</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/dialog_vpn_settings.cpp" line="46" />
         <source>Cancel</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Cancel·la</translation>
     </message>
 </context>
 <context>
@@ -3458,47 +3465,47 @@ Release note:
     <message>
         <location filename="../../src/main.cpp" line="57" />
         <source>Cancel</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Cancel·la</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="58" />
         <source>Apply</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Aplicar</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="59" />
         <source>Yes</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Sí</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="60" />
         <source>No</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">No</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="61" />
         <source>OK</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">D'acord</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="62" />
         <source>Defaults</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Per defecte</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="63" />
         <source>Restore Defaults</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Restaura els valors predeterminats</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="64" />
         <source>Discard</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Descartar</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="66" />
         <source>Undo</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Desfer</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="67" />
