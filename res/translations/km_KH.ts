@@ -1777,37 +1777,37 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="154" />
         <source>Obfs Password</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ពាក្យសម្ងាត់ Obfs</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="170" />
         <source>Disable MTU Discovery</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">បិទដំណើរការ MTU Discovery</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="180" />
         <source>Port range</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ជួរច្រក</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="190" />
         <source>Hop Interval</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ចន្លោះពេលលោត</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="197" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;100ms&lt;br/&gt;1s&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;100ms&lt;br/&gt;1s&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="217" />
         <source>Auth Type</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ប្រភេទការផ្ទៀងផ្ទាត់</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="230" />
         <source>Auth Payload</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ការផ្ទៀងផ្ទាត់ភាពត្រឹមត្រូវ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="243" />
@@ -1828,7 +1828,7 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="310" />
         <source>Disable SNI</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">បិទ SNI</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="327" />
@@ -2066,7 +2066,7 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="40" />
         <source>Tor Config</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tor Config</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="55" />
@@ -2135,7 +2135,7 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="63" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;persistent_keepalive_interval in seconds&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;persistent_keepalive_interval ជាវិនាទី&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="66" />
@@ -2190,47 +2190,47 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="139" />
         <source>Junk Packet Count</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ចំនួនកញ្ចប់សំរាម</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="149" />
         <source>Junk Packet Min Size</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ទំហំតូចនៃកញ្ចប់កញ្ចប់</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="159" />
         <source>Junk Packet Max Size</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">កញ្ចប់សំរាមទំហំអតិបរមា</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="169" />
         <source>Init Packet Junk Size</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Init Packet Junk Size</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="179" />
         <source>Response Packet Junk Size</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ទំហំផ្ទុកកញ្ចប់ឆ្លើយតប</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="189" />
         <source>Init Packet Magic Header</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Init Packet Magic Header</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="199" />
         <source>Response Packet Magic Header</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ក្បាលមេវេទមន្ត កញ្ចប់ឆ្លើយតប</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="209" />
         <source>Underload Packet Magic Header</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Underload Packet Magic Header</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="219" />
         <source>Transport Header Magic Header</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ក្បាលដឹកជញ្ជូន Magic Header</translation>
     </message>
 </context>
 <context>
@@ -2599,12 +2599,12 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="895" />
         <source>Remember last profile</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ចងចាំប្រវត្តិរូបចុងក្រោយ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="903" />
         <source>Allow other devices to connect</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">អនុញ្ញាតឱ្យឧបករណ៍ផ្សេងទៀតភ្ជាប់</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="908" />
@@ -2614,98 +2614,98 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="916" />
         <source>Full Test</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ការធ្វើតេស្តពេញលេញ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="924" />
         <source>Hotkey Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ការកំណត់ហតឃី</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="929" />
         <source>Select All</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ជ្រើសរើសទាំងអស់។</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="937" />
         <source>Copy Custom Links</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ចម្លងតំណផ្ទាល់ខ្លួន</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="961" />
         <source>Copy links</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ចម្លងតំណ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1045" />
         <source>Url Test</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">តេស្ត Url</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1078" />
         <source>Resolve Domain</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ដោះស្រាយដែន</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="972" />
         <source>Enable Tun</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">បើក Tun</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="977" />
         <location filename="../../src/ui/mainwindow.cpp" line="2783" />
         <source>Clone</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ក្លូន</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="985" />
         <source>Update subscription</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ធ្វើបច្ចុប្បន្នភាពការជាវ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="996" />
         <source>Resolve domain</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ដោះស្រាយដែន</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1004" />
         <source>Tun Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ការកំណត់ Tun</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1009" />
         <source>Restart Program</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ចាប់ផ្តើមកម្មវិធីឡើងវិញ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1014" />
         <source>Open Config Folder</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">បើកថតកំណត់រចនាសម្ព័ន្ធ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1035" />
         <source>Restart Proxy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ចាប់ផ្ដើមប្រូកស៊ីឡើងវិញ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1040" />
         <source>Stop Testing</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">បញ្ឈប់ការធ្វើតេស្ត</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1048" />
         <source>Ctrl+Shift+S</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">បញ្ជា(Ctrl)+ប្ដូរ(Shift)+ស</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1067" />
         <source>Url Test Group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ក្រុមសាកល្បង Url</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1070" />
         <source>Ctrl+Shift+G</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">បញ្ជា(Ctrl)+ប្ដូរ(Shift)+G</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1086" />
@@ -2715,79 +2715,79 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1089" />
         <source>Ctrl+Alt+I</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">បញ្ជា(Ctrl)+ជំនួស(Alt)+I</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1102" />
         <source>Speedtest Current</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">តេស្តល្បឿនបច្ចុប្បន្ន</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1107" />
         <source>Full test Selected</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ការធ្វើតេស្តពេញលេញត្រូវបានជ្រើសរើស</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1112" />
         <source>Download test Selected</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ទាញយកការធ្វើតេស្តដែលបានជ្រើសរើស</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1117" />
         <source>Upload test Selected</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">បានជ្រើសរើសការសាកល្បងផ្ទុកឡើង</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1122" />
         <source>Country test Selected</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ការធ្វើតេស្តប្រទេសត្រូវបានជ្រើសរើស</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1127" />
         <source>Simple download test Selected</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ការធ្វើតេស្តទាញយកសាមញ្ញត្រូវបានជ្រើសរើស</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1132" />
         <source>Speedtest Group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ក្រុម Speedtest</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1137" />
         <source>Hide window</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">លាក់បង្អួច</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1142" />
         <source>Add profile from File</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">បន្ថែមប្រវត្តិរូបពីឯកសារ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1147" />
         <location filename="../../src/ui/mainwindow.cpp" line="3473" />
         <source>Add new Group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">បន្ថែមក្រុមថ្មី។</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1152" />
         <source>Security Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ការកំណត់សុវត្ថិភាព</translation>
     </message>
     <message>
         <location filename="../../src/dataStore/ProxyEntity.cpp" line="52" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="293" />
         <source>Unavailable</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">មិនអាចប្រើបាន</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1006" />
         <source>Edit Routing Profiles</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">កែសម្រួលទម្រង់ការនាំផ្លូវ</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1028" />
         <source>Update Routing Profiles</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ធ្វើបច្ចុប្បន្នភាពកម្រងព័ត៌មានផ្លូវ</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1040" />
@@ -2798,69 +2798,69 @@ For more information, see the document "Configuration/DNS".</source>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="95" />
         <location filename="../../src/ui/setting/RouteItem.cpp" line="104" />
         <source>Update Response</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ធ្វើបច្ចុប្បន្នភាពការឆ្លើយតប</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1041" />
         <location filename="../../src/ui/setting/RouteItem.cpp" line="105" />
         <source>No routing profiles are updated</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">មិនមានទម្រង់ផ្លូវត្រូវបានធ្វើបច្ចុប្បន្នភាពទេ។</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1045" />
         <location filename="../../src/ui/setting/RouteItem.cpp" line="96" />
         <source>Updated %1 routing profiles</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">បាន​ធ្វើ​បច្ចុប្បន្នភាព​កម្រង​ព័ត៌មាន​កំណត់​ផ្លូវ% 1</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1055" />
         <source>Update RuleSet Map</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">អាប់ដេត RuleSet Map</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1066" />
         <source>Failed to update rulesets</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">បរាជ័យក្នុងការអាប់ដេតច្បាប់</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1069" />
         <source>Rulesets updated successfully</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">បានធ្វើបច្ចុប្បន្នភាពច្បាប់ដោយជោគជ័យ</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1078" />
         <source>Update RuleSet Cache</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ធ្វើបច្ចុប្បន្នភាព RuleSet Cache</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1113" />
         <source>Rulesets cache is updated</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ឃ្លាំងសម្ងាត់ច្បាប់ត្រូវបានធ្វើបច្ចុប្បន្នភាព</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1127" />
         <source>Clear RuleSet Cache</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">សម្អាតឃ្លាំងសម្ងាត់កំណត់ច្បាប់</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1163" />
         <source>Enable AdBlock</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">បើកដំណើរការ AdBlock</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1566" />
         <source>Error</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">កំហុស</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1653" />
         <source>Tun Settings changed</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ការកំណត់ Tun បានផ្លាស់ប្តូរ</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1654" />
         <source>Restart Tun to take effect.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ចាប់ផ្ដើម Tun ឡើងវិញ ដើម្បីមានប្រសិទ្ធភាព។</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1660" />
@@ -2877,103 +2877,103 @@ For more information, see the document "Configuration/DNS".</source>
         <location filename="../../src/ui/mainwindow.cpp" line="1661" />
         <location filename="../../src/ui/mainwindow.cpp" line="1719" />
         <source>Settings changed, restart proxy?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ការកំណត់បានផ្លាស់ប្តូរ ចាប់ផ្ដើមប្រូកស៊ីឡើងវិញ?</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1690" />
         <source>Settings changed</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">បានផ្លាស់ប្តូរការកំណត់</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1691" />
         <source>Restart the program to take effect.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ចាប់ផ្តើមកម្មវិធីឡើងវិញដើម្បីឱ្យមានប្រសិទ្ធភាព។</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1734" />
         <source>Imported %1 profile(s)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">បាន​នាំចូល​កម្រងព័ត៌មាន % 1</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1985" />
         <source>User opted for no privilege req, some features may not work</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">អ្នក​ប្រើ​បាន​ជ្រើស​រើស​មិន​មាន​សិទ្ធិ​ទាមទារ​ទេ មុខងារ​មួយ​ចំនួន​ប្រហែល​ជា​មិន​ដំណើរការ​ទេ។</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2049" />
         <source>Please give the core root privileges</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">សូមផ្តល់សិទ្ធិជា root ស្នូល</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2403" />
         <source>Not Running</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">មិនដំណើរការ</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2784" />
         <source>Clone %1 item(s)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ក្លូន % 1 ធាតុ</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2818" />
         <source> Confirmation </source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ការបញ្ជាក់</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2819" />
         <source> Remove %1 item(s) ? </source>
-        <translation type="unfinished" />
+        <translation type="unfinished">យក​ធាតុ %1 ចេញ?</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2838" />
         <source>Remove %1 item(s) ?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">យក​ធាតុ %1 ចេញ?</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2875" />
         <location filename="../../src/ui/mainwindow.cpp" line="2888" />
         <source>Copied %1 item(s)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">បាន​ចម្លង​ធាតុ% 1</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3120" />
         <source>QR Code not found</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">រកមិនឃើញ QR Code</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3141" />
         <source>Unable to capture screen</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">មិនអាចថតអេក្រង់បានទេ។</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3209" />
         <source>Remove %1 Unavailable item(s) ?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">យក %1 ធាតុដែលមិនអាចប្រើបានចេញ?</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3263" />
         <source>Remove %1 Invalid item(s) ?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">លុប%1 ធាតុមិនត្រឹមត្រូវ?</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3311" />
         <source>Replace domain server addresses with their resolved IPs?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ជំនួសអាសយដ្ឋានម៉ាស៊ីនមេដែនជាមួយនឹង IPs ដែលបានដោះស្រាយរបស់ពួកគេ?</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3444" />
         <source>Clear</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ច្បាស់</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3506" />
         <source>Delete selected Group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">លុបក្រុមដែលបានជ្រើសរើស</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3507" />
         <source>Edit selected Group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">កែសម្រួលក្រុមដែលបានជ្រើសរើស</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3516" />
@@ -2983,66 +2983,66 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="4199" />
         <source>Cannot start</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">មិនអាចចាប់ផ្តើមបានទេ។</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="4200" />
         <source>Last download request has not finished yet</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">សំណើទាញយកចុងក្រោយមិនទាន់បញ្ចប់នៅឡើយទេ</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="4234" />
         <source>Failed to download update assets</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">បានបរាជ័យក្នុងការទាញយកទ្រព្យសម្បត្តិធ្វើបច្ចុប្បន្នភាព</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="85" />
         <source>Profile test aborted</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ការធ្វើតេស្តទម្រង់ត្រូវបានលុបចោល</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="136" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="182" />
         <source>[%1] test error: %2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">[%1] កំហុសក្នុងការសាកល្បង៖ %2</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="165" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="491" />
         <source>Something is very wrong, the subject ent cannot be found!</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">មាន​អ្វី​ខុស​ខ្លាំង រក​មិន​ឃើញ​ប្រធានបទ!</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="171" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="497" />
         <source>Profile manager data is corrupted, try again.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ទិន្នន័យអ្នកគ្រប់គ្រងកម្រងព័ត៌មានត្រូវបានខូច សូមព្យាយាមម្តងទៀត។</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="205" />
         <source>The last url test did not exit completely, please wait. If it persists, please restart the program.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ការធ្វើតេស្ត url ចុងក្រោយមិនបានចេញទាំងស្រុងទេ សូមរង់ចាំ។ប្រសិនបើវានៅតែបន្ត សូមចាប់ផ្តើមកម្មវិធីឡើងវិញ។</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="214" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="321" />
         <source>Failed to build test config: </source>
-        <translation type="unfinished" />
+        <translation type="unfinished">បរាជ័យក្នុងការសាងសង់ការកំណត់រចនាសម្ព័ន្ធសាកល្បង៖</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="255" />
         <source>URL test finished!</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ការធ្វើតេស្ត URL បានបញ្ចប់!</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="266" />
         <source>Failed to stop tests</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">បរាជ័យក្នុងការបញ្ឈប់ការធ្វើតេស្ត</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="272" />
         <source>Testing</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ការធ្វើតេស្ត</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="310" />
