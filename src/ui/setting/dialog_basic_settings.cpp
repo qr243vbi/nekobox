@@ -288,6 +288,9 @@ DialogBasicSettings::DialogBasicSettings(MainWindow *parent)
     });
     ui->default_core_path->setChecked(core_path == "");
     ui->default_icons_path->setChecked(icons_path == "");
+
+    language->setMaxVisibleItems(10);
+    language->setMaximumHeight(200);
 }
 
 DialogBasicSettings::~DialogBasicSettings() {
