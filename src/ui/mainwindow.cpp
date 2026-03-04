@@ -551,13 +551,8 @@ MainWindow::MainWindow(QWidget *parent)
 
   proxyAutoTester = std::make_unique<Stats::ProxyAutoTester>(this);
   
-  if (Configs::windowSettings->use_tcp){
     Configs::dataStore->core_port = MkPort();
     Configs::dataStore->core_domain = "127.0.0.1";
-  } else {
-    Configs::dataStore->core_port = -1;
-    Configs::dataStore->core_domain = MkUDS();
-  }
 
   QString core_path = getCorePath();
 
