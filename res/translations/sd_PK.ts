@@ -3042,47 +3042,47 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="308" />
         <source>The last speed test did not exit completely, please wait. If it persists, please restart the program.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">آخري رفتار ٽيسٽ مڪمل طور تي نه نڪتو، مھرباني ڪري انتظار ڪريو.جيڪڏهن اهو جاري رهي، مهرباني ڪري پروگرام کي ٻيهر شروع ڪريو.</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="345" />
         <source>Speedtest finished!</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">اسپيڊ ٽيسٽ ختم ٿي وئي!</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="426" />
         <source>Profile speed test aborted</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">پروفائل اسپيڊ ٽيسٽ کي ختم ڪيو ويو</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="514" />
         <source>[%1] speed test error: %2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">[%1] اسپيڊ ٽيسٽ غلطي: %2</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="523" />
         <source>You need to enable hijack DNS server first</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">توھان کي پھريائين چالو ڪرڻ جي ضرورت آھي hijack DNS سرور</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="537" />
         <source>Failed to set system dns: </source>
-        <translation type="unfinished" />
+        <translation type="unfinished">سسٽم ڊي اين ايس سيٽ ڪرڻ ۾ ناڪام ٿيو:</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="585" />
         <source>Tun device misbehaving</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ٽون ڊوائيس غلط استعمال ڪندي</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="586" />
         <source>If you have trouble starting VPN, you can force reset Core process here and then try starting the profile again. The error is %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">جيڪڏھن توھان کي وي پي اين شروع ڪرڻ ۾ مشڪل آھي، توھان مجبور ڪري سگھوٿا ري سيٽ ڪور پروسيس هتي ۽ پوءِ پروفائل کي ٻيهر شروع ڪرڻ جي ڪوشش ڪريو.غلطي %1 آهي</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="590" />
         <source>Reset</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ري سيٽ ڪريو</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="591" />
@@ -3092,43 +3092,43 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="630" />
         <source>Another profile is starting...</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ٻيو پروفائل شروع ٿي رهيو آهي ...</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="637" />
         <source>Another profile is stopping...</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ٻيو پروفائل روڪي رهيو آهي ...</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="658" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="740" />
         <source>If there is no response for a long time, it is recommended to restart the software.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">جيڪڏهن هڪ ڊگهي وقت تائين ڪو جواب نه آهي، اهو سافٽ ويئر کي ٻيهر شروع ڪرڻ جي صلاح ڏني وئي آهي.</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="672" />
         <source>Starting profile %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">شروعاتي پروفائل %1</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="674" />
         <source>Failed to start profile %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">پروفائل %1 شروع ڪرڻ ۾ ناڪام</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="723" />
         <source>Stop return error</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">واپسي جي غلطي کي روڪيو</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="763" />
         <source>Stopping profile %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">اسٽاپ پروفائل %1</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="765" />
         <source>Failed to stop, please restart the program.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">روڪڻ ۾ ناڪام ٿيو، مھرباني ڪري پروگرام ٻيهر شروع ڪريو.</translation>
     </message>
 </context>
 <context>
@@ -3146,12 +3146,12 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/security/change_password.ui" line="37" />
         <source>New Password</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">نئون پاسورڊ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/change_password.ui" line="54" />
         <source>Confirm Password</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">پاس ورڊ جي تصديق ڪريو</translation>
     </message>
 </context>
 <context>
@@ -3159,12 +3159,12 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/ui/profile/ProxyItem.cpp" line="39" />
         <source>Confirmation</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">تصديق</translation>
     </message>
     <message>
         <location filename="../../src/ui/profile/ProxyItem.cpp" line="39" />
         <source>Remove %1?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">هٽايو %1؟</translation>
     </message>
 </context>
 <context>
@@ -3180,7 +3180,7 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/main.cpp" line="259" />
         <source>QT_LAYOUT_DIRECTION</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">QT_LAYOUT_DIRECTION</translation>
     </message>
 </context>
 <context>
@@ -3188,37 +3188,37 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/configs/ConfigBuilder.cpp" line="159" />
         <source>Tun mode cannot be used with Custom configs</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tun موڊ ڪسٽم ترتيبن سان استعمال نٿو ڪري سگھجي</translation>
     </message>
     <message>
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="913" />
         <source>Requesting subscription: %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">رڪنيت جي درخواست: %1</translation>
     </message>
     <message>
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="917" />
         <source>Requesting subscription %1 error: %2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">رڪنيت جي درخواست %1 غلطي: %2</translation>
     </message>
     <message>
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="924" />
         <source>Subscription request fininshed: %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">رڪنيت جي درخواست ختم ٿي وئي: %1</translation>
     </message>
     <message>
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="942" />
         <source>Clearing servers...</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">سرور صاف ڪري رهيو آهي...</translation>
     </message>
     <message>
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="947" />
         <source>Processing subscription data...</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">سبسڪرپشن ڊيٽا کي پروسيس ڪري رهيو آهي...</translation>
     </message>
     <message>
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="950" />
         <source>Process complete, applying...</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">عمل مڪمل، لاڳو ٿي رهيو آهي ...</translation>
     </message>
     <message>
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="1013" />
@@ -3226,97 +3226,102 @@ For more information, see the document "Configuration/DNS".</source>
 %2
 Deleted %3 Profiles:
 %4</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">شامل ڪيا ويا %1 پروفائل:
+%2
+حذف ٿيل %3 پروفائل:
+%4</translation>
     </message>
     <message>
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="1018" />
         <source>Nothing</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ڪجھ به نه</translation>
     </message>
     <message>
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="1021" />
         <source>Change of %1:</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">%1 جي تبديلي:</translation>
     </message>
     <message>
         <location filename="../../src/dataStore/Database.cpp" line="119" />
         <source>Default</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ڊفالٽ</translation>
     </message>
     <message>
         <location filename="../../src/global/HTTPRequestHelper.cpp" line="189" />
         <source>Could not open file.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">فائل نه کولي سگھي.</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/configs/proxy/ChainBean.hpp" line="17" />
         <source>Chain Proxy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">زنجير پراکسي</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/global/GuiUtils.hpp" line="112" />
         <location filename="../../src/ui/profile/edit_ssh.cpp" line="28" />
         <location filename="../../src/ui/setting/dialog_basic_settings.cpp" line="244" />
         <source>Select</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">چونڊيو</translation>
     </message>
     <message>
         <location filename="../../src/stats/traffic/TrafficLooper.cpp" line="115" />
         <location filename="../../src/ui/mainwindow.cpp" line="2366" />
         <source>Proxy: %1
 Direct: %2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">پراکسي: %1
+سڌو: %2</translation>
     </message>
     <message>
         <location filename="../../src/sys/Process.cpp" line="104" />
         <source>Core exited, cleaning up...</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ڪور نڪتل، صاف ڪرڻ...</translation>
     </message>
     <message>
         <location filename="../../src/sys/Process.cpp" line="111" />
         <source>Core exits too frequently, stop automatic restart this profile.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ڪور تمام گهڻو نڪرندو آهي، خودڪار طريقي سان روڪيو هن پروفائل کي ٻيهر شروع ڪريو.</translation>
     </message>
     <message>
         <location filename="../../src/sys/Process.cpp" line="120" />
         <source>Restarting the core ...</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ڪور کي ٻيهر شروع ڪري رهيو آهي ...</translation>
     </message>
     <message>
         <location filename="../../src/sys/Settings.cpp" line="361" />
         <source>System</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">سسٽم</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="22" />
         <source>URL detected</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">URL مليل</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="27" />
         <source>%1
 How to update?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">%1
+تازه ڪاري ڪيئن ڪجي؟</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="31" />
         <source>Create new subscription group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">نئون سبسڪرپشن گروپ ٺاهيو</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="32" />
         <source>Add profiles to this group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">هن گروپ ۾ پروفائيل شامل ڪريو</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="37" />
         <source>Group name</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">گروپ جو نالو</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="101" />
         <source>Used: %1 Remain: %2 Expire: %3</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">استعمال ٿيل: %1 باقي: %2 ختم ٿيڻ: %3</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="173" />
@@ -3326,55 +3331,55 @@ How to update?</source>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="174" />
         <source>Requesting profile error: %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">پروفائل جي غلطي جي درخواست ڪئي وئي: %1</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="341" />
         <source>
 Deleted %1 Duplicates</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ڊليٽ ڪيو ويو %1 نقل</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="375" />
         <source>
 Deleted %1 Invalid</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">حذف ٿيل %1 غلط</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="398" />
         <source>
 Deleted %1 Unavailable</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">حذف ٿيل %1 دستياب ناهي</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1441" />
         <source>Check Rule Sets: %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">چيڪ ڪريو قاعدو سيٽ: %1</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1463" />
         <source>Requesting rule-set list error: %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">قاعدي-سيٽ لسٽ جي درخواست ڪرڻ ۾ غلطي: %1</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2403" />
         <source>IP address: %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">IP پتو: %1</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2901" />
         <source>Config copied</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ترتيب نقل ڪئي وئي</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2912" />
         <source>Copy core config</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ڪاپي ڪور ترتيب</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2913" />
         <source>Copy test config</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ڪاپي ٽيسٽ ترتيب</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2914" />
@@ -3391,49 +3396,51 @@ Deleted %1 Unavailable</source>
         <location filename="../../src/ui/mainwindow.cpp" line="4208" />
         <location filename="../../src/ui/mainwindow.cpp" line="4243" />
         <source>Update</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">تازه ڪاري</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="4123" />
         <source>Not official support platform</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">نه سرڪاري سپورٽ پليٽ فارم</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="4134" />
         <source>Requesting update error: %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">تازه ڪاري جي درخواست ۾ غلطي: %1</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="4177" />
         <source>No update</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ڪابه تازه ڪاري</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="4200" />
         <source>Update found: %1
 Release note:
 %2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">اپڊيٽ مليو: %1
+جاري نوٽ:
+%2</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="4203" />
         <source>Close</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">بند</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="4205" />
         <source>Open in browser</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">برائوزر ۾ کوليو</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="4244" />
         <source>Update is ready, restart to install?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">تازه ڪاري تيار آهي، انسٽال ڪرڻ لاء ٻيهر شروع ڪريو؟</translation>
     </message>
     <message>
         <location filename="../../src/ui/security_addon.cpp" line="21" />
         <source>Access denied</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">رسائي رد ڪئي وئي</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/dialog_basic_settings.cpp" line="249" />
@@ -3481,12 +3488,12 @@ Release note:
     <message>
         <location filename="../../src/main.cpp" line="62" />
         <source>Defaults</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ڊفالٽ</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="63" />
         <source>Restore Defaults</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">بحال ڪريو Defaults</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="64" />
@@ -3696,7 +3703,7 @@ Release note:
     <message>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="457" />
         <source>Empty Route Profile</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">خالي روٽ پروفائل</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="457" />
