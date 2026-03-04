@@ -26,10 +26,7 @@ public:
     LanguageModel(QObject *parent = nullptr)
         : QAbstractListModel(parent) {}
 
-    int rowCount(const QModelIndex &parent = QModelIndex()) const override
-    {
-        return languageList.size(); // The number of items in the list
-    }
+    int rowCount(const QModelIndex &parent = QModelIndex()) const override;
 
     QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override
     {

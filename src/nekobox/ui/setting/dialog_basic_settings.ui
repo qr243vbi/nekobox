@@ -518,7 +518,11 @@
              </widget>
             </item>
             <item row="1" column="1">
-             <widget class="QComboBox" name="language"/>
+             <widget class="QPushButton" name="language_button">
+              <property name="text">
+               <string>System</string>
+              </property>
+             </widget>
             </item>
            </layout>
           </widget>
