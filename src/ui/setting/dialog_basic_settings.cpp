@@ -141,10 +141,7 @@ DialogBasicSettings::DialogBasicSettings(MainWindow *parent)
         language->setCurrentIndex(index);
     }
 
-    QListView *view = qobject_cast<QListView *>(language->view());
-    if (view) {
-        view->setMaximumHeight(150);
-    }
+    language->setMaxVisibleItems(10);
     //    language->setCurrentIndex(locales.indexOf(getLocale()));
     connect(language, &QComboBox::currentIndexChanged, this, [=,this](int index) {
         CACHE.needRestart = true;
