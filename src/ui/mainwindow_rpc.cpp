@@ -35,14 +35,12 @@ using namespace API;
 
 void MainWindow::setup_rpc() {
     // Setup Connection
-    int port; 
-    QString domain;
     defaultClient = new Client(
         [=](const QString &errStr) {
             MW_show_log("[Error] Core: " + errStr);
         },
-        domain,
-        port
+        Configs::dataStore->core_domain,
+        Configs::dataStore->core_port
     );
 
     // Looper
