@@ -2617,175 +2617,175 @@ Para sa higit pang impormasyon, tingnan ang dokumentong "Configuration/DNS".</tr
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="924" />
         <source>Hotkey Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Mga Setting ng Hotkey</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="929" />
         <source>Select All</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Piliin ang Lahat</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="937" />
         <source>Copy Custom Links</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kopyahin ang Mga Custom na Link</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="961" />
         <source>Copy links</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kopyahin ang mga link</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1045" />
         <source>Url Test</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Pagsusulit sa Url</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1078" />
         <source>Resolve Domain</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Lutasin ang Domain</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="972" />
         <source>Enable Tun</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Paganahin si Tun</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="977" />
         <location filename="../../src/ui/mainwindow.cpp" line="2783" />
         <source>Clone</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">I-clone</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="985" />
         <source>Update subscription</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">I-update ang subscription</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="996" />
         <source>Resolve domain</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Resolbahin ang domain</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1004" />
         <source>Tun Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Mga Setting ng Tun</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1009" />
         <source>Restart Program</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">I-restart ang Programa</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1014" />
         <source>Open Config Folder</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Buksan ang Config Folder</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1035" />
         <source>Restart Proxy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">I-restart ang Proxy</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1040" />
         <source>Stop Testing</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Itigil ang Pagsubok</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1048" />
         <source>Ctrl+Shift+S</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ctrl+Shift+S</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1067" />
         <source>Url Test Group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Url Test Group</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1070" />
         <source>Ctrl+Shift+G</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ctrl+Shift+G</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1086" />
         <source>Remove Invalid</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Alisin ang Di-wasto</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1089" />
         <source>Ctrl+Alt+I</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ctrl+Alt+I</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1102" />
         <source>Speedtest Current</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Pinakamabilis na Kasalukuyang</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1107" />
         <source>Full test Selected</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Napili ang buong pagsubok</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1112" />
         <source>Download test Selected</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">I-download ang pagsubok na Napili</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1117" />
         <source>Upload test Selected</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Napili ang pag-upload ng pagsubok</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1122" />
         <source>Country test Selected</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Napili ang pagsubok sa bansa</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1127" />
         <source>Simple download test Selected</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Simple download test Napili</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1132" />
         <source>Speedtest Group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Speedtest Group</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1137" />
         <source>Hide window</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Itago ang bintana</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1142" />
         <source>Add profile from File</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Magdagdag ng profile mula sa File</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1147" />
         <location filename="../../src/ui/mainwindow.cpp" line="3473" />
         <source>Add new Group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Magdagdag ng bagong Grupo</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1152" />
         <source>Security Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Mga Setting ng Seguridad</translation>
     </message>
     <message>
         <location filename="../../src/dataStore/ProxyEntity.cpp" line="52" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="293" />
         <source>Unavailable</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Hindi available</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1006" />
         <source>Edit Routing Profiles</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">I-edit ang Mga Profile sa Pagruruta</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1028" />
         <source>Update Routing Profiles</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">I-update ang Mga Profile sa Pagruruta</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1040" />
@@ -2796,69 +2796,69 @@ Para sa higit pang impormasyon, tingnan ang dokumentong "Configuration/DNS".</tr
         <location filename="../../src/ui/setting/RouteItem.cpp" line="95" />
         <location filename="../../src/ui/setting/RouteItem.cpp" line="104" />
         <source>Update Response</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">I-update ang Tugon</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1041" />
         <location filename="../../src/ui/setting/RouteItem.cpp" line="105" />
         <source>No routing profiles are updated</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Walang na-update na mga profile sa pagruruta</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1045" />
         <location filename="../../src/ui/setting/RouteItem.cpp" line="96" />
         <source>Updated %1 routing profiles</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Na-update ang %1 na mga profile sa pagruruta</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1055" />
         <source>Update RuleSet Map</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">I-update ang RuleSet Map</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1066" />
         <source>Failed to update rulesets</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Nabigong i-update ang mga ruleset</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1069" />
         <source>Rulesets updated successfully</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Matagumpay na na-update ang mga panuntunan</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1078" />
         <source>Update RuleSet Cache</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">I-update ang RuleSet Cache</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1113" />
         <source>Rulesets cache is updated</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ang cache ng mga panuntunan ay ina-update</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1127" />
         <source>Clear RuleSet Cache</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">I-clear ang RuleSet Cache</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1163" />
         <source>Enable AdBlock</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Paganahin ang AdBlock</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1566" />
         <source>Error</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Error</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1653" />
         <source>Tun Settings changed</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Binago ang Mga Setting ng Tun</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1654" />
         <source>Restart Tun to take effect.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">I-restart ang Tun para magkabisa.</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1660" />
@@ -2869,269 +2869,269 @@ Para sa higit pang impormasyon, tingnan ang dokumentong "Configuration/DNS".</tr
         <location filename="../../src/ui/mainwindow.cpp" line="3310" />
         <location filename="../../src/ui/mainwindow.cpp" line="3515" />
         <source>Confirmation</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kumpirmasyon</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1661" />
         <location filename="../../src/ui/mainwindow.cpp" line="1719" />
         <source>Settings changed, restart proxy?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Nabago ang mga setting, i-restart ang proxy?</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1690" />
         <source>Settings changed</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Binago ang mga setting</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1691" />
         <source>Restart the program to take effect.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">I-restart ang program para magkabisa.</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1734" />
         <source>Imported %1 profile(s)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Na-import ang %1 (mga) profile</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1985" />
         <source>User opted for no privilege req, some features may not work</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Pinili ng user ang walang kahilingan sa pribilehiyo, maaaring hindi gumana ang ilang feature</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2049" />
         <source>Please give the core root privileges</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Pakibigay ang mga pangunahing pribilehiyo ng ugat</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2403" />
         <source>Not Running</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Hindi Tumatakbo</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2784" />
         <source>Clone %1 item(s)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">I-clone ang %1 (mga) item</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2818" />
         <source> Confirmation </source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kumpirmasyon</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2819" />
         <source> Remove %1 item(s) ? </source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Alisin ang %1 (mga) item ?</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2838" />
         <source>Remove %1 item(s) ?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Alisin ang %1 (mga) item ?</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2875" />
         <location filename="../../src/ui/mainwindow.cpp" line="2888" />
         <source>Copied %1 item(s)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kinopya ang %1 (mga) item</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3120" />
         <source>QR Code not found</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Hindi nakita ang QR Code</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3141" />
         <source>Unable to capture screen</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Hindi makuha ang screen</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3209" />
         <source>Remove %1 Unavailable item(s) ?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Alisin ang %1 (mga) hindi magagamit na item ?</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3263" />
         <source>Remove %1 Invalid item(s) ?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Alisin ang %1 (mga) di-wastong item ?</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3311" />
         <source>Replace domain server addresses with their resolved IPs?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Palitan ang mga address ng domain server ng kanilang mga nalutas na IP?</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3444" />
         <source>Clear</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Maaliwalas</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3506" />
         <source>Delete selected Group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tanggalin ang napiling Grupo</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3507" />
         <source>Edit selected Group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">I-edit ang napiling Grupo</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3516" />
         <source>Remove %1?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Alisin ang %1?</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="4199" />
         <source>Cannot start</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Hindi makapagsimula</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="4200" />
         <source>Last download request has not finished yet</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Hindi pa tapos ang huling kahilingan sa pag-download</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="4234" />
         <source>Failed to download update assets</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Nabigong i-download ang mga update na asset</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="85" />
         <source>Profile test aborted</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Na-abort ang pagsusuri sa profile</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="136" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="182" />
         <source>[%1] test error: %2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">[%1] error sa pagsubok: %2</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="165" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="491" />
         <source>Something is very wrong, the subject ent cannot be found!</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">May mali, hindi mahanap ang subject ent!</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="171" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="497" />
         <source>Profile manager data is corrupted, try again.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Nasira ang data ng manager ng profile, subukang muli.</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="205" />
         <source>The last url test did not exit completely, please wait. If it persists, please restart the program.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ang huling pagsubok sa url ay hindi ganap na lumabas, mangyaring maghintay.Kung magpapatuloy ito, mangyaring i-restart ang program.</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="214" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="321" />
         <source>Failed to build test config: </source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Nabigong bumuo ng test config:</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="255" />
         <source>URL test finished!</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tapos na ang pagsubok sa URL!</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="266" />
         <source>Failed to stop tests</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Nabigong ihinto ang mga pagsubok</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="272" />
         <source>Testing</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Pagsubok</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="310" />
         <source>The last speed test did not exit completely, please wait. If it persists, please restart the program.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ang huling pagsubok sa bilis ay hindi ganap na lumabas, mangyaring maghintay.Kung magpapatuloy ito, mangyaring i-restart ang program.</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="347" />
         <source>Speedtest finished!</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tapos na ang speedtest!</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="428" />
         <source>Profile speed test aborted</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Na-abort ang pagsubok sa bilis ng profile</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="516" />
         <source>[%1] speed test error: %2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">[%1] error sa pagsubok ng bilis: %2</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="525" />
         <source>You need to enable hijack DNS server first</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kailangan mo munang paganahin ang pag-hijack ng DNS server</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="539" />
         <source>Failed to set system dns: </source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Nabigong itakda ang system dns:</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="587" />
         <source>Tun device misbehaving</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Maling kumilos ang Tun device</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="588" />
         <source>If you have trouble starting VPN, you can force reset Core process here and then try starting the profile again. The error is %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kung nagkakaproblema ka sa pagsisimula ng VPN, maaari mong pilitin ang pag-reset ng Core process dito at pagkatapos ay subukang simulan muli ang profile.Ang error ay %1</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="592" />
         <source>Reset</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">I-reset</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="593" />
         <source>Cancel</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kanselahin</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="632" />
         <source>Another profile is starting...</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Nagsisimula na ang isa pang profile...</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="639" />
         <source>Another profile is stopping...</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Huminto ang isa pang profile...</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="660" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="742" />
         <source>If there is no response for a long time, it is recommended to restart the software.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kung walang tugon sa loob ng mahabang panahon, inirerekomenda na i-restart ang software.</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="674" />
         <source>Starting profile %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Panimulang profile %1</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="676" />
         <source>Failed to start profile %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Nabigong simulan ang profile %1</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="725" />
         <source>Stop return error</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Itigil ang pagbabalik ng error</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="765" />
         <source>Stopping profile %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Paghinto ng profile %1</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="767" />
         <source>Failed to stop, please restart the program.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Nabigong huminto, mangyaring i-restart ang program.</translation>
     </message>
 </context>
 <context>
@@ -3144,7 +3144,7 @@ Para sa higit pang impormasyon, tingnan ang dokumentong "Configuration/DNS".</tr
     <message>
         <location filename="../../src/nekobox/ui/security/change_password.ui" line="20" />
         <source>Username</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Username</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/change_password.ui" line="37" />
