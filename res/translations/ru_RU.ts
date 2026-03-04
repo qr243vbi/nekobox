@@ -2415,7 +2415,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>Программа</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1160"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1163"/>
         <source>Enable AdBlock</source>
         <translation>Включить AdBlock</translation>
     </message>
@@ -2443,8 +2443,8 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="161"/>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="597"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="2424"/>
         <location filename="../../src/ui/mainwindow.cpp" line="2427"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2430"/>
         <source>System Proxy</source>
         <translation>Системный прокси</translation>
     </message>
@@ -2468,8 +2468,8 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="324"/>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="291"/>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="293"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="295"/>
         <source>Test Result</source>
         <translation>Результат теста</translation>
     </message>
@@ -2515,15 +2515,15 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="736"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3444"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3454"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3447"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3457"/>
         <source>Start</source>
         <translation>Запустить</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="744"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3443"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3454"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3446"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3457"/>
         <source>Stop</source>
         <translation>Остановить</translation>
     </message>
@@ -2625,7 +2625,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="823"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="1350"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1353"/>
         <source>Export %1 config</source>
         <translation>Экспортировать конфигурацию %1</translation>
     </message>
@@ -2712,7 +2712,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="977"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="2780"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2783"/>
         <source>Clone</source>
         <translation>Клонировать</translation>
     </message>
@@ -2762,117 +2762,117 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation type="unfinished">Настройки безопасности</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1003"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1006"/>
         <source>Edit Routing Profiles</source>
         <translation type="unfinished">Редактировать профили маршрутизации</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1025"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1028"/>
         <source>Update Routing Profiles</source>
         <translation type="unfinished">Обновление профилей маршрутизации</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1037"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="1041"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="1062"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1040"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1044"/>
         <location filename="../../src/ui/mainwindow.cpp" line="1065"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="1109"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1068"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1112"/>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="95"/>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="104"/>
         <source>Update Response</source>
         <translation type="unfinished">Обновить ответ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1038"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1041"/>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="105"/>
         <source>No routing profiles are updated</source>
         <translation type="unfinished">Профили маршрутизации не обновляются.</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1042"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1045"/>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="96"/>
         <source>Updated %1 routing profiles</source>
         <translation type="unfinished">Обновлены профили маршрутизации %1.</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1052"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1055"/>
         <source>Update RuleSet Map</source>
         <translation type="unfinished">Обновить карту набора правил</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1063"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1066"/>
         <source>Failed to update rulesets</source>
         <translation type="unfinished">Не удалось обновить наборы правил.</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1066"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1069"/>
         <source>Rulesets updated successfully</source>
         <translation type="unfinished">Наборы правил успешно обновлены.</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1075"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1078"/>
         <source>Update RuleSet Cache</source>
         <translation type="unfinished">Обновить кэш набора правил</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1110"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1113"/>
         <source>Rulesets cache is updated</source>
         <translation type="unfinished">Кэш наборов правил обновлен.</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1124"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1127"/>
         <source>Clear RuleSet Cache</source>
         <translation type="unfinished">Очистить кэш набора правил</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1563"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1566"/>
         <source>Error</source>
         <translation>Ошибка</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1650"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1653"/>
         <source>Tun Settings changed</source>
         <translation>Настройки TUN изменены</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1651"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1654"/>
         <source>Restart Tun to take effect.</source>
         <translation>Перезапустите TUN, чтобы изменения вступили в силу.</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1657"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="1715"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="2834"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3205"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3259"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3307"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3512"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1660"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1718"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2837"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3208"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3262"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3310"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3515"/>
         <source>Confirmation</source>
         <translation>Подтверждение</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1658"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="1716"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1661"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1719"/>
         <source>Settings changed, restart proxy?</source>
         <translation>Настройки изменены, перезапустить прокси?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1687"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1690"/>
         <source>Settings changed</source>
         <translation>Настройки изменены</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1688"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1691"/>
         <source>Restart the program to take effect.</source>
         <translation>Перезапустите программу, чтобы изменения вступили в силу.</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1731"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1734"/>
         <source>Imported %1 profile(s)</source>
         <translation>Импортирован(ы) %1 профиль(ей)</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2400"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2403"/>
         <source>Not Running</source>
         <translation>Не запущен</translation>
     </message>
@@ -2885,18 +2885,18 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation type="vanished">Режим выбора: дважды кликните или нажмите Enter для выбора профиля, нажмите ESC для выхода.</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2781"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2784"/>
         <source>Clone %1 item(s)</source>
         <translation>Клонировать %1 записей</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2835"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2838"/>
         <source>Remove %1 item(s) ?</source>
         <translation>Удалить %1 записей?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2872"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="2885"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2875"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2888"/>
         <source>Copied %1 item(s)</source>
         <translation>Скопировано %1 записей</translation>
     </message>
@@ -2905,55 +2905,55 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation type="vanished">Конфигурация скопирована</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3117"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3120"/>
         <source>QR Code not found</source>
         <translation>QR-код не найден</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3441"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3444"/>
         <source>Clear</source>
         <translation>Очистить</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="134"/>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="180"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="136"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="182"/>
         <source>[%1] test error: %2</source>
         <translation>[%1] ошибка теста: %2</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="270"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="272"/>
         <source>Testing</source>
         <translation>Проверка...</translation>
     </message>
     <message>
         <location filename="../../src/dataStore/ProxyEntity.cpp" line="52"/>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="291"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="293"/>
         <source>Unavailable</source>
         <translation>Недоступен</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="658"/>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="740"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="660"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="742"/>
         <source>If there is no response for a long time, it is recommended to restart the software.</source>
         <translation>Если нет ответа в течении долгого времени, рекомендуем перезапустить приложение.</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="672"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="674"/>
         <source>Starting profile %1</source>
         <translation>Запуск профиля %1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="674"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="676"/>
         <source>Failed to start profile %1</source>
         <translation>Не удалось запустить профиль %1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="763"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="765"/>
         <source>Stopping profile %1</source>
         <translation>Остановка профиля %1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="765"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="767"/>
         <source>Failed to stop, please restart the program.</source>
         <translation>Не удалось остановить, пожалуйста, перезапустите приложение.</translation>
     </message>
@@ -2963,38 +2963,38 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>Остановить тестирование</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="585"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="587"/>
         <source>Tun device misbehaving</source>
         <translation>Некорректное поведение устройства TUN</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="590"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="592"/>
         <source>Reset</source>
         <translation>Сброс</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="591"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="593"/>
         <source>Cancel</source>
         <translation>Отмена</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1147"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3470"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3473"/>
         <source>Add new Group</source>
         <translation>Добавить новую группу</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3503"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3506"/>
         <source>Delete selected Group</source>
         <translation>Удалить выбранную группу</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3504"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3507"/>
         <source>Edit selected Group</source>
         <translation>Редактировать выбранную группу</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3513"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3516"/>
         <source>Remove %1?</source>
         <translation>Удалить %1?</translation>
     </message>
@@ -3037,32 +3037,32 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>Ctrl+Alt+I</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="586"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="588"/>
         <source>If you have trouble starting VPN, you can force reset Core process here and then try starting the profile again. The error is %1</source>
         <translation>Если у вас возникли проблемы с запуском режима TUN, можете принудительно сбросить процесс ядра здесь и попробовать перезапустить профиль. Ошибка: %1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2815"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2818"/>
         <source> Confirmation </source>
         <translation> Подтверждение </translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2816"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2819"/>
         <source> Remove %1 item(s) ? </source>
         <translation> Удалить %1 элемент(ов)? </translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3206"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3209"/>
         <source>Remove %1 Unavailable item(s) ?</source>
         <translation>Удалить %1 недоступных элемент(ов)?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3260"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3263"/>
         <source>Remove %1 Invalid item(s) ?</source>
         <translation>Удалить %1 неверных элемент(ов)?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3308"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3311"/>
         <source>Replace domain server addresses with their resolved IPs?</source>
         <translation>Заменить домены в адресах серверов на их разрешённые IP-адреса?</translation>
     </message>
@@ -3092,7 +3092,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>Логи</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2046"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2049"/>
         <source>Please give the core root privileges</source>
         <translation>Пожалуйста, предоставьте ядру права root.</translation>
     </message>
@@ -3162,50 +3162,50 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation type="vanished">Открыть менеджер</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="83"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="85"/>
         <source>Profile test aborted</source>
         <translation>Тест профиля прерван</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="163"/>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="489"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="165"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="491"/>
         <source>Something is very wrong, the subject ent cannot be found!</source>
         <translation>Что-то явно не так, объект ent не может быть найден!</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="169"/>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="495"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="171"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="497"/>
         <source>Profile manager data is corrupted, try again.</source>
         <translation>Данные менеджера профилей повреждены, попробуйте еще раз.</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="308"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="310"/>
         <source>The last speed test did not exit completely, please wait. If it persists, please restart the program.</source>
         <translation>Последний тест скорости не завершился полностью, пожалуйста, подождите. Если проблема сохраняется, пожалуйста, перезапустите программу.</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="212"/>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="319"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="214"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="321"/>
         <source>Failed to build test config: </source>
         <translation>Не удалось создать тестовую конфигурацию: </translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="345"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="347"/>
         <source>Speedtest finished!</source>
         <translation>Тест скорости завершён!</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="264"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="266"/>
         <source>Failed to stop tests</source>
         <translation>Не удалось остановить тест</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="523"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="525"/>
         <source>You need to enable hijack DNS server first</source>
         <translation>Сначала необходимо включить перехват DNS-сервера</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="537"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="539"/>
         <source>Failed to set system dns: </source>
         <translation>Не удалось установить системный DNS: </translation>
     </message>
@@ -3214,12 +3214,12 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation type="vanished">Ошибка BuildConfig</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="630"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="632"/>
         <source>Another profile is starting...</source>
         <translation>Другой профиль запускается...</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="637"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="639"/>
         <source>Another profile is stopping...</source>
         <translation>Другой профиль останавливается...</translation>
     </message>
@@ -3228,7 +3228,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation type="vanished">Попытка запустить конфигурацию — ядро не прослушивает порт RPC, поэтому перезапустите его...</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="723"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="725"/>
         <source>Stop return error</source>
         <translation>Ошибка остановки</translation>
     </message>
@@ -3241,12 +3241,12 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation type="vanished">Копировать тестовую конфигурацию</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4196"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4199"/>
         <source>Cannot start</source>
         <translation>Невозможно запустить</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4197"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4200"/>
         <source>Last download request has not finished yet</source>
         <translation>Последний запрос на загрузку еще не завершён</translation>
     </message>
@@ -3256,7 +3256,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>График соединения</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4231"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4234"/>
         <source>Failed to download update assets</source>
         <translation>Не удалось загрузить обновлённые ресурсы</translation>
     </message>
@@ -3275,32 +3275,32 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>Тест скорости всей группы</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="203"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="205"/>
         <source>The last url test did not exit completely, please wait. If it persists, please restart the program.</source>
         <translation>Тест задержки не завершился до конца —&#xa0;пожалуйста, подождите. Если такое поведение повторяется, перезапустите программу</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="253"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="255"/>
         <source>URL test finished!</source>
         <translation>Тест задержки завершён!</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="426"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="428"/>
         <source>Profile speed test aborted</source>
         <translation>Тест скорости профиля был отменён</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="514"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="516"/>
         <source>[%1] speed test error: %2</source>
         <translation>[%1] ошибка теста скорости: %2</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1982"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1985"/>
         <source>User opted for no privilege req, some features may not work</source>
         <translation>Пользователь решил не запрашивать привилегии, некоторые функции могут не работать</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3138"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3141"/>
         <source>Unable to capture screen</source>
         <translation>Невозможно захватить экран</translation>
     </message>
@@ -3395,7 +3395,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
 <context>
     <name>QGuiApplication</name>
     <message>
-        <location filename="../../src/main.cpp" line="258"/>
+        <location filename="../../src/main.cpp" line="259"/>
         <source>QT_LAYOUT_DIRECTION</source>
         <translation>QT_LAYOUT_DIRECTION</translation>
     </message>
@@ -3404,7 +3404,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <name>QObject</name>
     <message>
         <location filename="../../src/stats/traffic/TrafficLooper.cpp" line="115"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="2368"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2371"/>
         <source>Proxy: %1
 Direct: %2</source>
         <translation>Прокси: %1
@@ -3490,22 +3490,22 @@ Deleted %3 Profiles:
         <translation>Выбор</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4101"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="4112"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="4156"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="4178"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="4187"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="4222"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4104"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4115"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4159"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4181"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4190"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4225"/>
         <source>Update</source>
         <translation>Обновление</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4156"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4159"/>
         <source>No update</source>
         <translation>Обновлений нет</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4179"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4182"/>
         <source>Update found: %1
 Release note:
 %2</source>
@@ -3514,12 +3514,12 @@ Release note:
 %2</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4184"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4187"/>
         <source>Open in browser</source>
         <translation>Открыть в браузере</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4182"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4185"/>
         <source>Close</source>
         <translation>Закрыть</translation>
     </message>
@@ -3542,37 +3542,37 @@ Deleted %1 Unavailable</source>
         <translation type="unfinished">Удалено %1 Недоступно</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1443"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1446"/>
         <source>Check Rule Sets: %1</source>
         <translation type="unfinished">Проверить наборы правил: %1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1465"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1468"/>
         <source>Requesting rule-set list error: %1</source>
         <translation type="unfinished">Ошибка запроса списка наборов правил: %1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2405"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2408"/>
         <source>IP address: %1</source>
         <translation type="unfinished">IP-адрес: %1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2903"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2906"/>
         <source>Config copied</source>
         <translation type="unfinished">Конфигурация скопирована</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2914"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2917"/>
         <source>Copy core config</source>
         <translation type="unfinished">Копировать конфигурацию ядра</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2915"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2918"/>
         <source>Copy test config</source>
         <translation type="unfinished">Копировать тестовую конфигурацию</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4223"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4226"/>
         <source>Update is ready, restart to install?</source>
         <translation>Обновление готово, перезапустить программу для установки?</translation>
     </message>
@@ -3602,12 +3602,12 @@ Deleted %1 Unavailable</source>
         <translation>Не удалось открыть файл.</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4102"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4105"/>
         <source>Not official support platform</source>
         <translation>Платформа официально не поддерживается</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4113"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4116"/>
         <source>Requesting update error: %1</source>
         <translation>Ошибка запроса обновления: %1</translation>
     </message>
@@ -3661,7 +3661,7 @@ Deleted %1 Unavailable</source>
         <translation type="unfinished">Доступ запрещен</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2916"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2919"/>
         <location filename="../../src/ui/security_addon.cpp" line="22"/>
         <location filename="../../src/ui/setting/dialog_vpn_settings.cpp" line="45"/>
         <source>OK</source>
@@ -4055,7 +4055,7 @@ Deleted %1 Unavailable</source>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="261"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="1184"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1187"/>
         <source>Download Profiles</source>
         <translation>Загрузка профилей</translation>
     </message>

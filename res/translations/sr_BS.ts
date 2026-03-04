@@ -2328,8 +2328,8 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="161"/>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="597"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="2424"/>
         <location filename="../../src/ui/mainwindow.cpp" line="2427"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2430"/>
         <source>System Proxy</source>
         <translation type="unfinished">Систем Проки</translation>
     </message>
@@ -2358,8 +2358,8 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="324"/>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="291"/>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="293"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="295"/>
         <source>Test Result</source>
         <translation type="unfinished">Тест Ресулт</translation>
     </message>
@@ -2496,15 +2496,15 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="736"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3444"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3454"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3447"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3457"/>
         <source>Start</source>
         <translation type="unfinished">Почни</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="744"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3443"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3454"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3446"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3457"/>
         <source>Stop</source>
         <translation type="unfinished">Стани</translation>
     </message>
@@ -2551,7 +2551,7 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="823"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="1350"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1353"/>
         <source>Export %1 config</source>
         <translation type="unfinished">Извези %1 конфигурацију</translation>
     </message>
@@ -2654,7 +2654,7 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="977"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="2780"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2783"/>
         <source>Clone</source>
         <translation type="unfinished">Клон</translation>
     </message>
@@ -2765,7 +2765,7 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1147"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3470"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3473"/>
         <source>Add new Group</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2776,363 +2776,363 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
     </message>
     <message>
         <location filename="../../src/dataStore/ProxyEntity.cpp" line="52"/>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="291"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="293"/>
         <source>Unavailable</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1003"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1006"/>
         <source>Edit Routing Profiles</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1025"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1028"/>
         <source>Update Routing Profiles</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1037"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="1041"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="1062"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1040"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1044"/>
         <location filename="../../src/ui/mainwindow.cpp" line="1065"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="1109"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1068"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1112"/>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="95"/>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="104"/>
         <source>Update Response</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1038"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1041"/>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="105"/>
         <source>No routing profiles are updated</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1042"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1045"/>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="96"/>
         <source>Updated %1 routing profiles</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1052"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1055"/>
         <source>Update RuleSet Map</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1063"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1066"/>
         <source>Failed to update rulesets</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1066"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1069"/>
         <source>Rulesets updated successfully</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1075"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1078"/>
         <source>Update RuleSet Cache</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1110"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1113"/>
         <source>Rulesets cache is updated</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1124"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1127"/>
         <source>Clear RuleSet Cache</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1160"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1163"/>
         <source>Enable AdBlock</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1563"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1566"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1650"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1653"/>
         <source>Tun Settings changed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1651"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1654"/>
         <source>Restart Tun to take effect.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1657"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="1715"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="2834"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3205"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3259"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3307"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3512"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1660"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1718"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2837"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3208"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3262"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3310"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3515"/>
         <source>Confirmation</source>
         <translation type="unfinished">Потврда</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1658"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="1716"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1661"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1719"/>
         <source>Settings changed, restart proxy?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1687"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1690"/>
         <source>Settings changed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1688"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1691"/>
         <source>Restart the program to take effect.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1731"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1734"/>
         <source>Imported %1 profile(s)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1982"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1985"/>
         <source>User opted for no privilege req, some features may not work</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2046"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2049"/>
         <source>Please give the core root privileges</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2400"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2403"/>
         <source>Not Running</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2781"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2784"/>
         <source>Clone %1 item(s)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2815"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2818"/>
         <source> Confirmation </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2816"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2819"/>
         <source> Remove %1 item(s) ? </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2835"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2838"/>
         <source>Remove %1 item(s) ?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2872"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="2885"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2875"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2888"/>
         <source>Copied %1 item(s)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3117"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3120"/>
         <source>QR Code not found</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3138"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3141"/>
         <source>Unable to capture screen</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3206"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3209"/>
         <source>Remove %1 Unavailable item(s) ?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3260"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3263"/>
         <source>Remove %1 Invalid item(s) ?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3308"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3311"/>
         <source>Replace domain server addresses with their resolved IPs?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3441"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3444"/>
         <source>Clear</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3503"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3506"/>
         <source>Delete selected Group</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3504"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3507"/>
         <source>Edit selected Group</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3513"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3516"/>
         <source>Remove %1?</source>
         <translation type="unfinished">Уклонити %1?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4196"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4199"/>
         <source>Cannot start</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4197"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4200"/>
         <source>Last download request has not finished yet</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4231"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4234"/>
         <source>Failed to download update assets</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="83"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="85"/>
         <source>Profile test aborted</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="134"/>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="180"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="136"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="182"/>
         <source>[%1] test error: %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="163"/>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="489"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="165"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="491"/>
         <source>Something is very wrong, the subject ent cannot be found!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="169"/>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="495"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="171"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="497"/>
         <source>Profile manager data is corrupted, try again.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="203"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="205"/>
         <source>The last url test did not exit completely, please wait. If it persists, please restart the program.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="212"/>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="319"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="214"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="321"/>
         <source>Failed to build test config: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="253"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="255"/>
         <source>URL test finished!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="264"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="266"/>
         <source>Failed to stop tests</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="270"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="272"/>
         <source>Testing</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="308"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="310"/>
         <source>The last speed test did not exit completely, please wait. If it persists, please restart the program.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="345"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="347"/>
         <source>Speedtest finished!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="426"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="428"/>
         <source>Profile speed test aborted</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="514"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="516"/>
         <source>[%1] speed test error: %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="523"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="525"/>
         <source>You need to enable hijack DNS server first</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="537"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="539"/>
         <source>Failed to set system dns: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="585"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="587"/>
         <source>Tun device misbehaving</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="586"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="588"/>
         <source>If you have trouble starting VPN, you can force reset Core process here and then try starting the profile again. The error is %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="590"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="592"/>
         <source>Reset</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="591"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="593"/>
         <source>Cancel</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="630"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="632"/>
         <source>Another profile is starting...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="637"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="639"/>
         <source>Another profile is stopping...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="658"/>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="740"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="660"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="742"/>
         <source>If there is no response for a long time, it is recommended to restart the software.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="672"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="674"/>
         <source>Starting profile %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="674"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="676"/>
         <source>Failed to start profile %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="723"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="725"/>
         <source>Stop return error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="763"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="765"/>
         <source>Stopping profile %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="765"/>
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="767"/>
         <source>Failed to stop, please restart the program.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3184,7 +3184,7 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
 <context>
     <name>QGuiApplication</name>
     <message>
-        <location filename="../../src/main.cpp" line="258"/>
+        <location filename="../../src/main.cpp" line="259"/>
         <source>QT_LAYOUT_DIRECTION</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3268,7 +3268,7 @@ Deleted %3 Profiles:
     </message>
     <message>
         <location filename="../../src/stats/traffic/TrafficLooper.cpp" line="115"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="2368"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2371"/>
         <source>Proxy: %1
 Direct: %2</source>
         <translation type="unfinished"></translation>
@@ -3353,86 +3353,86 @@ Deleted %1 Unavailable</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1443"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1446"/>
         <source>Check Rule Sets: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1465"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1468"/>
         <source>Requesting rule-set list error: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2405"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2408"/>
         <source>IP address: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2903"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2906"/>
         <source>Config copied</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2914"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2917"/>
         <source>Copy core config</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2915"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2918"/>
         <source>Copy test config</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2916"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2919"/>
         <location filename="../../src/ui/security_addon.cpp" line="22"/>
         <location filename="../../src/ui/setting/dialog_vpn_settings.cpp" line="45"/>
         <source>OK</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4101"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="4112"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="4156"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="4178"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="4187"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="4222"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4104"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4115"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4159"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4181"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4190"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4225"/>
         <source>Update</source>
         <translation type="unfinished">Ажурирај</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4102"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4105"/>
         <source>Not official support platform</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4113"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4116"/>
         <source>Requesting update error: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4156"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4159"/>
         <source>No update</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4179"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4182"/>
         <source>Update found: %1
 Release note:
 %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4182"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4185"/>
         <source>Close</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4184"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4187"/>
         <source>Open in browser</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4223"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4226"/>
         <source>Update is ready, restart to install?</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3779,7 +3779,7 @@ Release note:
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="261"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="1184"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1187"/>
         <source>Download Profiles</source>
         <translation type="unfinished"></translation>
     </message>
