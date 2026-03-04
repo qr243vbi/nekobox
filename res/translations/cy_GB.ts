@@ -1664,42 +1664,42 @@ Am ragor o wybodaeth, gweler y ddogfen "Configuration/DNS".</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="78" />
         <source>Core path</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Llwybr craidd</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="95" />
         <source>Choose from file</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Dewiswch o ffeil</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="114" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;args to pass to the executable. You can insert a single %s and it will be replaced with the path to a file containing the config entered below.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;args i drosglwyddo i'r gweithredadwy.Gallwch fewnosod un %s a bydd yn cael ei ddisodli gan y llwybr i ffeil sy'n cynnwys y ffurfwedd a roddwyd isod.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="117" />
         <source>Args</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Args</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="124" />
         <source>run -confPath %s</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">rhedeg -confPath %s</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="131" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;contents of the config file that will be passed to the extra core process if %s is specified in the args&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;cynnwys y ffeil ffurfweddu fydd yn cael ei drosglwyddo i'r broses graidd ychwanegol os yw %s wedi ei nodi yn yr args&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="134" />
         <source>Config</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Config</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="144" />
         <source>No logs</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Dim logiau</translation>
     </message>
 </context>
 <context>
@@ -1712,22 +1712,22 @@ Am ragor o wybodaeth, gweler y ddogfen "Configuration/DNS".</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="20" />
         <source>Username</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Enw defnyddiwr</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="30" />
         <source>Password</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Cyfrinair</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="40" />
         <source>Port range</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ystod porthladd</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="55" />
         <source>Multiplexing</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Amlblecsio</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="92" />
@@ -1786,7 +1786,7 @@ Am ragor o wybodaeth, gweler y ddogfen "Configuration/DNS".</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="180" />
         <source>Port range</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ystod porthladd</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="190" />
@@ -1811,7 +1811,7 @@ Am ragor o wybodaeth, gweler y ddogfen "Configuration/DNS".</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="243" />
         <source>Password</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Cyfrinair</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="257" />
@@ -1822,7 +1822,7 @@ Am ragor o wybodaeth, gweler y ddogfen "Configuration/DNS".</translation>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="293" />
         <location filename="../../src/ui/profile/edit_quic.cpp" line="149" />
         <source>Certificate</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tystysgrif</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="310" />
@@ -1855,7 +1855,7 @@ Am ragor o wybodaeth, gweler y ddogfen "Configuration/DNS".</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="30" />
         <source>Password</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Cyfrinair</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="40" />
@@ -1913,7 +1913,7 @@ Am ragor o wybodaeth, gweler y ddogfen "Configuration/DNS".</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="54" />
         <source>Password</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Cyfrinair</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="80" />
@@ -1923,7 +1923,7 @@ Am ragor o wybodaeth, gweler y ddogfen "Configuration/DNS".</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="94" />
         <source>Off</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">I ffwrdd</translation>
     </message>
 </context>
 <context>
@@ -1936,7 +1936,7 @@ Am ragor o wybodaeth, gweler y ddogfen "Configuration/DNS".</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="27" />
         <source>Password</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Cyfrinair</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="38" />
@@ -1964,12 +1964,12 @@ Am ragor o wybodaeth, gweler y ddogfen "Configuration/DNS".</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="33" />
         <source>Username</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Enw defnyddiwr</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="54" />
         <source>Password</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Cyfrinair</translation>
     </message>
 </context>
 <context>
@@ -1977,7 +1977,7 @@ Am ragor o wybodaeth, gweler y ddogfen "Configuration/DNS".</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="14" />
         <source>Form</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ffurf</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="20" />
@@ -2078,7 +2078,7 @@ Am ragor o wybodaeth, gweler y ddogfen "Configuration/DNS".</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_trojan_vless.ui" line="23" />
         <source>Password</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Cyfrinair</translation>
     </message>
 </context>
 <context>
@@ -2086,7 +2086,7 @@ Am ragor o wybodaeth, gweler y ddogfen "Configuration/DNS".</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_vmess.ui" line="52" />
         <source>Security</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Diogelwch</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_vmess.ui" line="59" />
@@ -2139,7 +2139,7 @@ Am ragor o wybodaeth, gweler y ddogfen "Configuration/DNS".</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="66" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="69" />
@@ -2184,7 +2184,7 @@ Am ragor o wybodaeth, gweler y ddogfen "Configuration/DNS".</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="132" />
         <source>Enable</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Galluogi</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="139" />
@@ -2242,7 +2242,7 @@ Am ragor o wybodaeth, gweler y ddogfen "Configuration/DNS".</translation>
     <message>
         <location filename="../../src/nekobox/ui/group/GroupItem.ui" line="76" />
         <source>Edit</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Golygu</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/GroupItem.ui" line="89" />
@@ -2252,17 +2252,17 @@ Am ragor o wybodaeth, gweler y ddogfen "Configuration/DNS".</translation>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="129" />
         <source>Basic</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Sylfaenol</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="129" />
         <source>Subscription</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tanysgrifiad</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="130" />
         <source>Archive</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Archif</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="142" />
@@ -2272,7 +2272,7 @@ Am ragor o wybodaeth, gweler y ddogfen "Configuration/DNS".</translation>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="186" />
         <source>Confirmation</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Cadarnhad</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="186" />
@@ -2299,7 +2299,7 @@ Am ragor o wybodaeth, gweler y ddogfen "Configuration/DNS".</translation>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="73" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="76" />
         <source>Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Gosodiadau</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="95" />
@@ -2340,19 +2340,19 @@ Am ragor o wybodaeth, gweler y ddogfen "Configuration/DNS".</translation>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="309" />
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="139" />
         <source>Type</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Math</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="314" />
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="142" />
         <source>Address</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Cyfeiriad</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="319" />
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="145" />
         <source>Name</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Enw</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="324" />
@@ -2410,7 +2410,7 @@ Am ragor o wybodaeth, gweler y ddogfen "Configuration/DNS".</translation>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="481" />
         <source>Outbound</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Allan</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="484" />
@@ -2445,7 +2445,7 @@ Am ragor o wybodaeth, gweler y ddogfen "Configuration/DNS".</translation>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="631" />
         <source>Share</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Rhannu</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="641" />
@@ -2480,7 +2480,7 @@ Am ragor o wybodaeth, gweler y ddogfen "Configuration/DNS".</translation>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="721" />
         <source>Basic Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Gosodiadau Sylfaenol</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="726" />
@@ -2490,7 +2490,7 @@ Am ragor o wybodaeth, gweler y ddogfen "Configuration/DNS".</translation>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="731" />
         <source>Groups</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Grwpiau</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="736" />
@@ -2509,7 +2509,7 @@ Am ragor o wybodaeth, gweler y ddogfen "Configuration/DNS".</translation>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="752" />
         <source>Edit</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Golygu</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="760" />
@@ -2524,7 +2524,7 @@ Am ragor o wybodaeth, gweler y ddogfen "Configuration/DNS".</translation>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="773" />
         <source>Delete</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Dileu</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="781" />
@@ -2571,12 +2571,12 @@ Am ragor o wybodaeth, gweler y ddogfen "Configuration/DNS".</translation>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="855" />
         <source>Disable</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Analluogi</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="860" />
         <source>Remove Duplicates</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Dileu Dyblygiadau</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="868" />
@@ -2608,7 +2608,7 @@ Am ragor o wybodaeth, gweler y ddogfen "Configuration/DNS".</translation>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="908" />
         <source>Remove Unavailable</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Dileu Ddim ar gael</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="916" />
@@ -2654,7 +2654,7 @@ Am ragor o wybodaeth, gweler y ddogfen "Configuration/DNS".</translation>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="977" />
         <location filename="../../src/ui/mainwindow.cpp" line="2783" />
         <source>Clone</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Clôn</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="985" />
@@ -2669,7 +2669,7 @@ Am ragor o wybodaeth, gweler y ddogfen "Configuration/DNS".</translation>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1004" />
         <source>Tun Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Gosodiadau Tun</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1009" />
@@ -2709,7 +2709,7 @@ Am ragor o wybodaeth, gweler y ddogfen "Configuration/DNS".</translation>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1086" />
         <source>Remove Invalid</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Dileu Annilys</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1089" />
@@ -2870,7 +2870,7 @@ Am ragor o wybodaeth, gweler y ddogfen "Configuration/DNS".</translation>
         <location filename="../../src/ui/mainwindow.cpp" line="3310" />
         <location filename="../../src/ui/mainwindow.cpp" line="3515" />
         <source>Confirmation</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Cadarnhad</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1661" />
@@ -3145,7 +3145,7 @@ Am ragor o wybodaeth, gweler y ddogfen "Configuration/DNS".</translation>
     <message>
         <location filename="../../src/nekobox/ui/security/change_password.ui" line="20" />
         <source>Username</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Enw defnyddiwr</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/change_password.ui" line="37" />
@@ -3163,7 +3163,7 @@ Am ragor o wybodaeth, gweler y ddogfen "Configuration/DNS".</translation>
     <message>
         <location filename="../../src/ui/profile/ProxyItem.cpp" line="39" />
         <source>Confirmation</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Cadarnhad</translation>
     </message>
     <message>
         <location filename="../../src/ui/profile/ProxyItem.cpp" line="39" />
@@ -3262,7 +3262,7 @@ Deleted %3 Profiles:
         <location filename="../../src/ui/profile/edit_ssh.cpp" line="28" />
         <location filename="../../src/ui/setting/dialog_basic_settings.cpp" line="245" />
         <source>Select</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Dewiswch</translation>
     </message>
     <message>
         <location filename="../../src/stats/traffic/TrafficLooper.cpp" line="115" />
@@ -3289,7 +3289,7 @@ Direct: %2</source>
     <message>
         <location filename="../../src/sys/Settings.cpp" line="362" />
         <source>System</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">System</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="22" />
@@ -3447,7 +3447,7 @@ Release note:
     <message>
         <location filename="../../src/ui/setting/dialog_vpn_settings.cpp" line="37" />
         <source>Exclude CIDR's</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Peidiwch â chynnwys CIDR</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/dialog_vpn_settings.cpp" line="46" />
@@ -3525,7 +3525,7 @@ Release note:
     <message>
         <location filename="../../src/main.cpp" line="71" />
         <source>Delete</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Dileu</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="72" />
@@ -3569,19 +3569,19 @@ Release note:
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="70" />
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="319" />
         <source>Name</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Enw</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="78" />
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="187" />
         <source>Proxy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Dirprwy</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="83" />
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="217" />
         <source>Direct</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Uniongyrchol</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="88" />
@@ -3607,7 +3607,7 @@ Release note:
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="151" />
         <source>Basic</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Sylfaenol</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="248" />
@@ -3622,12 +3622,12 @@ Release note:
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="267" />
         <source>Rules</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Rheolau</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="279" />
         <source>New</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Newydd</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="286" />
@@ -3642,7 +3642,7 @@ Release note:
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="300" />
         <source>Delete</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Dileu</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="310" />
@@ -3662,7 +3662,7 @@ Release note:
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="374" />
         <source>Notes</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Nodiadau</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="302" />
@@ -3690,7 +3690,7 @@ Release note:
     <message>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="441" />
         <source>Invalid operation</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Gweithrediad annilys</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="441" />
@@ -3787,7 +3787,7 @@ Release note:
     <message>
         <location filename="../../src/nekobox/ui/security/delete_or_edit_users.ui" line="14" />
         <source>Form</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ffurf</translation>
     </message>
 </context>
 </TS>
