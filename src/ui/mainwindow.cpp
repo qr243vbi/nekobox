@@ -3464,7 +3464,9 @@ void MainWindow::on_tabWidget_customContextMenuRequested(const QPoint &p) {
 
   QMenu *menu;
   int clickedIndex = 0;
-  if (p.x() != 0 || p.y() != 0) {
+  auto point_x = p.x();
+  auto point_y = p.y();
+  if (point_y != 0 || point_x != 0) {
     clickedIndex = ui->tabWidget->tabBar()->tabAt(p);
     if (clickedIndex == -1) {
       menu = new QMenu(this);
