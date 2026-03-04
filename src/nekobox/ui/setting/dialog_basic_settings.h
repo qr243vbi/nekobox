@@ -39,43 +39,7 @@ class LanguageSelectionDialog : public QDialog
     Q_OBJECT
 
 public:
-    LanguageSelectionDialog(QWidget *parent = nullptr)
-        : QDialog(parent), selectedLanguage(nullptr)
-    {
-        // Set dialog title
-        setWindowTitle("Select Language");
-
-        // Create layout
-        QVBoxLayout *layout = new QVBoxLayout(this);
-
-        // Create the list view to show available languages
-        languageListView = new QListView(this);
-        layout->addWidget(languageListView);
-
-        // Create the model to display the languages
-        languageModel = new LanguageModel(this);
-
-        // Set the model for the list view
-        languageListView->setModel(languageModel);
-
-        // Enable selection
-        languageListView->setSelectionMode(QAbstractItemView::SingleSelection);
-
-        // Create OK and Cancel buttons
-        QPushButton *okButton = new QPushButton("OK", this);
-        QPushButton *cancelButton = new QPushButton("Cancel", this);
-
-        // Connect buttons to actions
-        connect(okButton, &QPushButton::clicked, this, &LanguageSelectionDialog::onOkClicked);
-        connect(cancelButton, &QPushButton::clicked, this, &LanguageSelectionDialog::reject);
-
-        // Add buttons to layout
-        layout->addWidget(okButton);
-        layout->addWidget(cancelButton);
-
-        // Set the layout for the dialog
-        setLayout(layout);
-    }
+    LanguageSelectionDialog(QWidget *parent = nullptr);
 
     std::shared_ptr<LanguageValue> getSelectedLanguage() const {
         return selectedLanguage;

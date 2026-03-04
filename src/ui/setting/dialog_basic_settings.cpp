@@ -49,6 +49,64 @@ QVariant LanguageModel::data(const QModelIndex &index, int role ) const
         return QVariant();
 }
 
+
+    LanguageSelectionDialog::LanguageSelectionDialog(QWidget *parent)
+        : QDialog(parent)
+    {
+        selectedLanguage = nullptr;
+        // Set dialog title
+        setWindowTitle("Select Language");
+
+        // Create layout
+        QVBoxLayout *layout = new QVBoxLayout(this);
+
+        // Create the list view to show available languages
+        languageListView = new QListView(this);
+        layout->addWidget(languageListView);
+
+        // Create the model to display the languages
+        languageModel = new LanguageModel(this);
+
+        // Set the model for the list view
+        languageListView->setModel(languageModel);
+
+        // Enable selection
+        languageListView->setSelectionMode(QAbstractItemView::SingleSelection);
+
+        // Create OK and Cancel buttons
+        QPushButton *okButton = new QPushButton("OK", this);
+        QPushButton *cancelButton = new QPushButton("Cancel", this);
+
+        // Connect buttons to actions
+        connect(okButton, &QPushButton::clicked, this, &LanguageSelectionDialog::onOkClicked);
+        connect(cancelButton, &QPushButton::clicked, this, &LanguageSelectionDialog::reject);
+
+        // Add buttons to layout
+        layout->addWidget(okButton);
+        layout->addWidget(cancelButton);
+
+        // Set the layout for the dialog
+        setLayout(layout);
+    }
+
+    std::shared_ptr<LanguageValue> getSelectedLanguage() const {
+        return selectedLanguage;
+    }
+
+    void onOkClicked()
+    {
+        QModelIndex selectedIndex = languageListView->currentIndex();
+        if (selectedIndex.isValid()) {
+            selectedLanguage = languageModel->data(selectedIndex, Qt::DisplayRole).value<std::shared_ptr<LanguageValue>>();
+            qDebug() << "Selected language:" << selectedLanguage->name;
+            accept(); // Close the dialog with acceptance
+        } else {
+            qDebug() << "No language selected";
+        }
+    }
+
+
+
 DialogBasicSettings::DialogBasicSettings(MainWindow *parent)
     : QDialog(parent), ui(new Ui::DialogBasicSettings) {
     CHECK_SETTINGS_ACCESS

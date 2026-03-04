@@ -1655,47 +1655,47 @@ Ngolwazi oluthe vetshe, bona uxwebhu "Uqwalaselo/DNS".</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="50" />
         <source>1080</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">1080</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="78" />
         <source>Core path</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Indlela engundoqo</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="95" />
         <source>Choose from file</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Khetha kwifayile</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="114" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;args to pass to the executable. You can insert a single %s and it will be replaced with the path to a file containing the config entered below.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;args to pass to executable.Ungafakela enye i-%s kwaye iya kubuyiselwa ngendlela eya kwifayile equlathe uqwalaselo olungeniswa ngezantsi.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="117" />
         <source>Args</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Args</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="124" />
         <source>run -confPath %s</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">sebenzisa -confPath %s</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="131" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;contents of the config file that will be passed to the extra core process if %s is specified in the args&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;mixholo yefayile yoqwalaselo eya kudluliselwa kwinkqubo engundoqo eyongezelelweyo ukuba i-%s icacisiwe kwi-args&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="134" />
         <source>Config</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Qwalasela</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="144" />
         <source>No logs</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Akukho zigodo</translation>
     </message>
 </context>
 <context>
@@ -1708,27 +1708,27 @@ Ngolwazi oluthe vetshe, bona uxwebhu "Uqwalaselo/DNS".</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="20" />
         <source>Username</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Igama lomsebenzisi</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="30" />
         <source>Password</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Inombolo yokuvula</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="40" />
         <source>Port range</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Uluhlu lwezibuko</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="55" />
         <source>Multiplexing</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Multiplexing</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="92" />
         <source>Transport</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ezothutho</translation>
     </message>
 </context>
 <context>
@@ -1736,104 +1736,104 @@ Ngolwazi oluthe vetshe, bona uxwebhu "Uqwalaselo/DNS".</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="24" />
         <source>Heartbeat</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ukubetha kwentliziyo</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="45" />
         <source>Download (Mbps)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Khuphela (Mbps)</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="69" />
         <source>Upload (Mbps)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Layisha (Mbps)</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="81" />
         <source>Zero Rtt Handshake</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Zero Rtt Handshake</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="90" />
         <source>UDP Relay Mode</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">UDP Relay Mode</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="115" />
         <source>Congestion Control</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ulawulo lokuxinana</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="147" />
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="177" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Comma seperated ranges: 100:200,500:600&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Comma separates ranges: 100:200,500:600&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="154" />
         <source>Obfs Password</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Igama lokugqithisa le-Obfs</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="170" />
         <source>Disable MTU Discovery</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Khubaza ukuFumana kwe-MTU</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="180" />
         <source>Port range</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Uluhlu lwezibuko</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="190" />
         <source>Hop Interval</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Isithuba seHop</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="197" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;100ms&lt;br/&gt;1s&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;100ms&lt;br/&gt;1s&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="217" />
         <source>Auth Type</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Uhlobo lwe-Auth</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="230" />
         <source>Auth Payload</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Auth Payload</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="243" />
         <source>Password</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Inombolo yokuvula</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="257" />
         <source>Generate UUID</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Yenza i-UUID</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="293" />
         <location filename="../../src/ui/profile/edit_quic.cpp" line="149" />
         <source>Certificate</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Isatifikethi</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="310" />
         <source>Disable SNI</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Khubaza i-SNI</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="327" />
         <source>SNI</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">SNI</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="334" />
         <source>Allow Insecure</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Vumela Ukungakhuselekanga</translation>
     </message>
 </context>
 <context>
@@ -1846,47 +1846,47 @@ Ngolwazi oluthe vetshe, bona uxwebhu "Uqwalaselo/DNS".</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="20" />
         <source>User</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Umsebenzisi</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="30" />
         <source>Password</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Inombolo yokuvula</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="40" />
         <source>Private Key</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Isitshixo saBucala</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="50" />
         <source>Private Key Password</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Igama Lokugqithisa Elingundoqo laBucala</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="60" />
         <source>Host Key</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Isitshixo somamkeli</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="70" />
         <source>Host Key Algorithms</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ukusingatha ii-algorithms ezingundoqo</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="80" />
         <source>Client Version</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Uguqulelo lwabathengi</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="93" />
         <source>Private Key Path</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Indlela engundoqo yaBucala</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="103" />
         <source>Choose File</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Khetha iFayile</translation>
     </message>
 </context>
 <context>
@@ -1894,32 +1894,32 @@ Ngolwazi oluthe vetshe, bona uxwebhu "Uqwalaselo/DNS".</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="30" />
         <source>Plugin</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Faka iplagi</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="37" />
         <source>Encryption</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Uguqulelo oluntsonkothileyo</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="44" />
         <source>Plugin Args</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Iplagi yeArgs</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="54" />
         <source>Password</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Inombolo yokuvula</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="80" />
         <source>Version of UDP over TCP protocol, server support is required.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Inguqulelo ye-UDP phezu kweprotocol yeTCP, inkxaso yeseva iyafuneka.</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="94" />
         <source>Off</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Cimile</translation>
     </message>
 </context>
 <context>
@@ -1927,27 +1927,27 @@ Ngolwazi oluthe vetshe, bona uxwebhu "Uqwalaselo/DNS".</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="20" />
         <source>Version</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Inguqulelo</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="27" />
         <source>Password</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Inombolo yokuvula</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="38" />
         <source>1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">1</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="43" />
         <source>2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">2</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="48" />
         <source>3</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">3</translation>
     </message>
 </context>
 <context>
@@ -1955,17 +1955,17 @@ Ngolwazi oluthe vetshe, bona uxwebhu "Uqwalaselo/DNS".</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="20" />
         <source>Version</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Inguqulelo</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="33" />
         <source>Username</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Igama lomsebenzisi</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="54" />
         <source>Password</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Inombolo yokuvula</translation>
     </message>
 </context>
 <context>
@@ -1973,72 +1973,72 @@ Ngolwazi oluthe vetshe, bona uxwebhu "Uqwalaselo/DNS".</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="14" />
         <source>Form</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ifom</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="20" />
         <source>State directory</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ulawulo lwelizwe</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="30" />
         <source>Auth key</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Isitshixo sobuBhalo</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="40" />
         <source>Control URL</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Lawula i-URL</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="50" />
         <source>Hostname</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Igama lomamkeli</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="60" />
         <source>Accept routes</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Yamkela iindlela</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="67" />
         <source>Ephemeral</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ephemeral</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="74" />
         <source>Exit node allow lan access</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Indawo yokuphuma vumela ukufikelela kwe-lan</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="81" />
         <source>Advertise exit node</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Yazisa indawo yokuphuma</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="88" />
         <source>Exit node</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Phuma kwindawo</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="98" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;comma seperated list of subnets&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;comma separated list of subnets&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="101" />
         <source>Advertise routes</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Iindlela zentengiso</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="111" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;use tailscale dns as the remote dns&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;sebenzisa tailscale dns as the remote dns&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="114" />
         <source>Global DNS</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">I-DNS yehlabathi jikelele</translation>
     </message>
 </context>
 <context>
@@ -2051,22 +2051,22 @@ Ngolwazi oluthe vetshe, bona uxwebhu "Uqwalaselo/DNS".</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="20" />
         <source>Custom Path</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Indlela yesiko</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="30" />
         <source>Extra Args</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Args ezongezelelweyo</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="40" />
         <source>Tor Config</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tor Config</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="55" />
         <source>Data DIr</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Idatha ye-DIr</translation>
     </message>
 </context>
 <context>
@@ -2074,7 +2074,7 @@ Ngolwazi oluthe vetshe, bona uxwebhu "Uqwalaselo/DNS".</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_trojan_vless.ui" line="23" />
         <source>Password</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Inombolo yokuvula</translation>
     </message>
 </context>
 <context>
@@ -2082,22 +2082,22 @@ Ngolwazi oluthe vetshe, bona uxwebhu "Uqwalaselo/DNS".</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_vmess.ui" line="52" />
         <source>Security</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ukhuseleko</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_vmess.ui" line="59" />
         <source>Alter Id</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Guqula i-Id</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_vmess.ui" line="66" />
         <source>UUID</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">UUID</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_vmess.ui" line="100" />
         <source>Generate UUID</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Yenza i-UUID</translation>
     </message>
 </context>
 <context>
@@ -2110,102 +2110,102 @@ Ngolwazi oluthe vetshe, bona uxwebhu "Uqwalaselo/DNS".</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="23" />
         <source>Private Key</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Isitshixo saBucala</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="33" />
         <source>Public Key</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Isitshixo sikawonke-wonke</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="43" />
         <source>Pre Shared Key</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Isitshixo ekwabelwana ngaso kwangaphambili</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="53" />
         <source>Reserved</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Igciniwe</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="63" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;persistent_keepalive_interval in seconds&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;persistent_keepalive_interval in seconds&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="66" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="69" />
         <source>Persistent Keepalive</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">UGqibezela uGcino</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="79" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;comma seperated list of subnets&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;comma separated list of subnets&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="82" />
         <source>Local Address</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Idilesi yendawo</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="92" />
         <source>MTU</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">MTU</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="99" />
         <source>1420</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">1420</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="106" />
         <source>Workers</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Abasebenzi</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="116" />
         <source>Use System Interface</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Sebenzisa ujongano lwesixokelelwano</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="126" />
         <source>Amnezia Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Izicwangciso ze-Amnezia</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="132" />
         <source>Enable</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Vulela</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="139" />
         <source>Junk Packet Count</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">IJunk Packet Bala</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="149" />
         <source>Junk Packet Min Size</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">I-Junk Packet Min Ubungakanani</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="159" />
         <source>Junk Packet Max Size</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">I-Junk Packet Max Ubungakanani</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="169" />
         <source>Init Packet Junk Size</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Init Packet Ubungakanani beJunk</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="179" />
         <source>Response Packet Junk Size</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ipakethe yempendulo Ubungakanani beJunk</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="189" />
