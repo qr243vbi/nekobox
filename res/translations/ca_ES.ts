@@ -1873,22 +1873,22 @@ Per a més informació, consulteu el document "Configuració/DNS".</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="70" />
         <source>Host Key Algorithms</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Algoritmes clau de l'amfitrió</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="80" />
         <source>Client Version</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Versió del client</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="93" />
         <source>Private Key Path</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ruta de la clau privada</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="103" />
         <source>Choose File</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Trieu Fitxer</translation>
     </message>
 </context>
 <context>
@@ -1896,32 +1896,32 @@ Per a més informació, consulteu el document "Configuració/DNS".</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="30" />
         <source>Plugin</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Connector</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="37" />
         <source>Encryption</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Xifratge</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="44" />
         <source>Plugin Args</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Args del connector</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="54" />
         <source>Password</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Contrasenya</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="80" />
         <source>Version of UDP over TCP protocol, server support is required.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Versió del protocol UDP sobre TCP, cal suport del servidor.</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="94" />
         <source>Off</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Apagat</translation>
     </message>
 </context>
 <context>
@@ -1929,27 +1929,27 @@ Per a més informació, consulteu el document "Configuració/DNS".</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="20" />
         <source>Version</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Versió</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="27" />
         <source>Password</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Contrasenya</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="38" />
         <source>1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">1</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="43" />
         <source>2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">2</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="48" />
         <source>3</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">3</translation>
     </message>
 </context>
 <context>
@@ -1957,17 +1957,17 @@ Per a més informació, consulteu el document "Configuració/DNS".</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="20" />
         <source>Version</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Versió</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="33" />
         <source>Username</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Nom d'usuari</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="54" />
         <source>Password</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Contrasenya</translation>
     </message>
 </context>
 <context>
@@ -1975,72 +1975,72 @@ Per a més informació, consulteu el document "Configuració/DNS".</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="14" />
         <source>Form</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Formulari</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="20" />
         <source>State directory</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Directori estatal</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="30" />
         <source>Auth key</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Clau d'autenticació</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="40" />
         <source>Control URL</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">URL de control</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="50" />
         <source>Hostname</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Nom d'amfitrió</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="60" />
         <source>Accept routes</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Acceptar rutes</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="67" />
         <source>Ephemeral</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Efímer</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="74" />
         <source>Exit node allow lan access</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">El node de sortida permet l'accés a la LAN</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="81" />
         <source>Advertise exit node</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Anuncia el node de sortida</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="88" />
         <source>Exit node</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Node de sortida</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="98" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;comma seperated list of subnets&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;llista de subxarxes separades per comes&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="101" />
         <source>Advertise routes</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Anunciar rutes</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="111" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;use tailscale dns as the remote dns&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;utilitzeu dns d'escala de cua com a dns remot&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="114" />
         <source>Global DNS</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">DNS global</translation>
     </message>
 </context>
 <context>
@@ -2053,22 +2053,22 @@ Per a més informació, consulteu el document "Configuració/DNS".</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="20" />
         <source>Custom Path</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Camí personalitzat</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="30" />
         <source>Extra Args</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Args addicionals</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="40" />
         <source>Tor Config</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tor Config</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="55" />
         <source>Data DIr</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Dades DIr</translation>
     </message>
 </context>
 <context>
@@ -2076,7 +2076,7 @@ Per a més informació, consulteu el document "Configuració/DNS".</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_trojan_vless.ui" line="23" />
         <source>Password</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Contrasenya</translation>
     </message>
 </context>
 <context>
@@ -2084,22 +2084,22 @@ Per a més informació, consulteu el document "Configuració/DNS".</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_vmess.ui" line="52" />
         <source>Security</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Seguretat</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_vmess.ui" line="59" />
         <source>Alter Id</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Alterar Id</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_vmess.ui" line="66" />
         <source>UUID</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">UUID</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_vmess.ui" line="100" />
         <source>Generate UUID</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Genera UUID</translation>
     </message>
 </context>
 <context>
@@ -2112,122 +2112,122 @@ Per a més informació, consulteu el document "Configuració/DNS".</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="23" />
         <source>Private Key</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Clau privada</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="33" />
         <source>Public Key</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Clau pública</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="43" />
         <source>Pre Shared Key</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Clau prèviament compartida</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="53" />
         <source>Reserved</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Reservat</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="63" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;persistent_keepalive_interval in seconds&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;persistent_keepalive_interval en segons&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="66" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="69" />
         <source>Persistent Keepalive</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Keepalive persistent</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="79" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;comma seperated list of subnets&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;llista de subxarxes separades per comes&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="82" />
         <source>Local Address</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Adreça local</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="92" />
         <source>MTU</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">MTU</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="99" />
         <source>1420</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">1420</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="106" />
         <source>Workers</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Treballadors</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="116" />
         <source>Use System Interface</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Utilitzeu la interfície del sistema</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="126" />
         <source>Amnezia Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Configuració d'Amnezia</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="132" />
         <source>Enable</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Activa</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="139" />
         <source>Junk Packet Count</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Recompte de paquets no desitjats</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="149" />
         <source>Junk Packet Min Size</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Mida mínima del paquet no desitjat</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="159" />
         <source>Junk Packet Max Size</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Mida màxima del paquet no desitjat</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="169" />
         <source>Init Packet Junk Size</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Mida de la brossa del paquet d'inici</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="179" />
         <source>Response Packet Junk Size</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Mida de la brossa del paquet de resposta</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="189" />
         <source>Init Packet Magic Header</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Capçalera màgica del paquet d'inici</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="199" />
         <source>Response Packet Magic Header</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Capçalera màgica del paquet de resposta</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="209" />
         <source>Underload Packet Magic Header</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Capçalera màgica del paquet de subcàrrega</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="219" />
         <source>Transport Header Magic Header</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Capçalera de transport Capçalera màgica</translation>
     </message>
 </context>
 <context>
@@ -2235,47 +2235,47 @@ Per a més informació, consulteu el document "Configuració/DNS".</translation>
     <message>
         <location filename="../../src/nekobox/ui/group/GroupItem.ui" line="63" />
         <source>Update Subscription</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Actualitza la subscripció</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/GroupItem.ui" line="76" />
         <source>Edit</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Edita</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/GroupItem.ui" line="89" />
         <source>Remove</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Eliminar</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="129" />
         <source>Basic</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Bàsica</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="129" />
         <source>Subscription</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Subscripció</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="130" />
         <source>Archive</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Arxiu</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="142" />
         <source>Last update: %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Última actualització: %1</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="186" />
         <source>Confirmation</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Confirmació</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="186" />
         <source>Remove %1?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Eliminar % 1?</translation>
     </message>
 </context>
 <context>
@@ -2284,42 +2284,42 @@ Per a més informació, consulteu el document "Configuració/DNS".</translation>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="29" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="32" />
         <source>NekoBox</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">NekoBox</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="51" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="54" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="693" />
         <source>Profiles</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Perfils</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="73" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="76" />
         <source>Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Configuració</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="95" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="98" />
         <source>Routing</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Encaminament</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="117" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="120" />
         <source>Update</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Actualització</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="147" />
         <source>Tun Mode</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Mode Tun</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="154" />
         <source>System DNS</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">DNS del sistema</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="161" />
@@ -2327,103 +2327,103 @@ Per a més informació, consulteu el document "Configuració/DNS".</translation>
         <location filename="../../src/ui/mainwindow.cpp" line="2427" />
         <location filename="../../src/ui/mainwindow.cpp" line="2430" />
         <source>System Proxy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Proxy del sistema</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="231" />
         <source>URL Test</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Prova d'URL</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="309" />
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="139" />
         <source>Type</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tipus</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="314" />
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="142" />
         <source>Address</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Adreça</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="319" />
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="145" />
         <source>Name</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Nom</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="324" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="293" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="295" />
         <source>Test Result</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Resultat de la prova</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="329" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="489" />
         <source>Traffic</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Trànsit</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="394" />
         <source>Logs</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Registres</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="429" />
         <source>Connections</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Connexions</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="457" />
         <source>Destination (Domain)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Destinació (domini)</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="460" />
         <source>Click To Disable Sorting</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Feu clic a Per desactivar l'ordenació</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="465" />
         <source>Process</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Procés</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="468" />
         <source>Click To Sort By Process</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Feu clic per ordenar per procés</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="473" />
         <source>Protocol</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Protocol</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="476" />
         <source>Click To Sort By Protocol</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Feu clic a Per ordenar per protocol</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="481" />
         <source>Outbound</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Sortida</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="484" />
         <source>Click To Sort By Outbound</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Feu clic per ordenar per sortint</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="492" />
         <source>Click To Toggle sort by Traffic</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Feu clic per alternar l'ordenació per trànsit</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="501" />
         <source>Traffic Graph</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Gràfic de trànsit</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="593" />
