@@ -2150,37 +2150,37 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="79" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;comma seperated list of subnets&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;കോമയാൽ വേർതിരിച്ച സബ്‌നെറ്റുകളുടെ ലിസ്റ്റ്&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="82" />
         <source>Local Address</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">പ്രാദേശിക വിലാസം</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="92" />
         <source>MTU</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">എം.ടി.യു</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="99" />
         <source>1420</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">1420</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="106" />
         <source>Workers</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">തൊഴിലാളികൾ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="116" />
         <source>Use System Interface</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">സിസ്റ്റം ഇൻ്റർഫേസ് ഉപയോഗിക്കുക</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="126" />
         <source>Amnezia Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ഓർമ്മക്കുറവ് ക്രമീകരണങ്ങൾ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="132" />
@@ -2190,47 +2190,47 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="139" />
         <source>Junk Packet Count</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ജങ്ക് പാക്കറ്റ് എണ്ണം</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="149" />
         <source>Junk Packet Min Size</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ജങ്ക് പാക്കറ്റ് മിനിമം വലിപ്പം</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="159" />
         <source>Junk Packet Max Size</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ജങ്ക് പാക്കറ്റ് പരമാവധി വലുപ്പം</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="169" />
         <source>Init Packet Junk Size</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Init പാക്കറ്റ് ജങ്ക് സൈസ്</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="179" />
         <source>Response Packet Junk Size</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">പ്രതികരണ പാക്കറ്റ് ജങ്ക് വലുപ്പം</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="189" />
         <source>Init Packet Magic Header</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Init പാക്കറ്റ് മാജിക് ഹെഡർ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="199" />
         <source>Response Packet Magic Header</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">പ്രതികരണ പാക്കറ്റ് മാജിക് ഹെഡർ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="209" />
         <source>Underload Packet Magic Header</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">അണ്ടർലോഡ് പാക്കറ്റ് മാജിക് ഹെഡർ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="219" />
         <source>Transport Header Magic Header</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ഗതാഗത തലക്കെട്ട് മാജിക് തലക്കെട്ട്</translation>
     </message>
 </context>
 <context>
@@ -2238,7 +2238,7 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/group/GroupItem.ui" line="63" />
         <source>Update Subscription</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">സബ്സ്ക്രിപ്ഷൻ അപ്ഡേറ്റ് ചെയ്യുക</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/GroupItem.ui" line="76" />
@@ -2248,7 +2248,7 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/group/GroupItem.ui" line="89" />
         <source>Remove</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">നീക്കം ചെയ്യുക</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="129" />
@@ -2268,17 +2268,17 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="142" />
         <source>Last update: %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">അവസാന അപ്ഡേറ്റ്: % 1</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="186" />
         <source>Confirmation</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">സ്ഥിരീകരണം</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="186" />
         <source>Remove %1?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">% 1 നീക്കം ചെയ്യണോ?</translation>
     </message>
 </context>
 <context>
@@ -2287,14 +2287,14 @@ For more information, see the document "Configuration/DNS".</source>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="29" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="32" />
         <source>NekoBox</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">നെക്കോബോക്സ്</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="51" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="54" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="693" />
         <source>Profiles</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">പ്രൊഫൈലുകൾ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="73" />
@@ -2306,23 +2306,23 @@ For more information, see the document "Configuration/DNS".</source>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="95" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="98" />
         <source>Routing</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">റൂട്ടിംഗ്</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="117" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="120" />
         <source>Update</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">അപ്ഡേറ്റ്</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="147" />
         <source>Tun Mode</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ടൺ മോഡ്</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="154" />
         <source>System DNS</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">സിസ്റ്റം DNS</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="161" />
@@ -2330,12 +2330,12 @@ For more information, see the document "Configuration/DNS".</source>
         <location filename="../../src/ui/mainwindow.cpp" line="2427" />
         <location filename="../../src/ui/mainwindow.cpp" line="2430" />
         <source>System Proxy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">സിസ്റ്റം പ്രോക്സി</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="231" />
         <source>URL Test</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">URL ടെസ്റ്റ്</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="309" />
@@ -2360,88 +2360,88 @@ For more information, see the document "Configuration/DNS".</source>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="293" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="295" />
         <source>Test Result</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ടെസ്റ്റ് ഫലം</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="329" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="489" />
         <source>Traffic</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ഗതാഗതം</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="394" />
         <source>Logs</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">രേഖകൾ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="429" />
         <source>Connections</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">കണക്ഷനുകൾ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="457" />
         <source>Destination (Domain)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ലക്ഷ്യസ്ഥാനം (ഡൊമെയ്ൻ)</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="460" />
         <source>Click To Disable Sorting</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">സോർട്ടിംഗ് പ്രവർത്തനരഹിതമാക്കാൻ ക്ലിക്ക് ചെയ്യുക</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="465" />
         <source>Process</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">പ്രക്രിയ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="468" />
         <source>Click To Sort By Process</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">പ്രക്രിയ പ്രകാരം അടുക്കാൻ ക്ലിക്ക് ചെയ്യുക</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="473" />
         <source>Protocol</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">പ്രോട്ടോക്കോൾ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="476" />
         <source>Click To Sort By Protocol</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">പ്രോട്ടോക്കോൾ പ്രകാരം അടുക്കാൻ ക്ലിക്ക് ചെയ്യുക</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="481" />
         <source>Outbound</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">പുറത്തേക്ക്</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="484" />
         <source>Click To Sort By Outbound</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ഔട്ട്ബൗണ്ട് പ്രകാരം അടുക്കാൻ ക്ലിക്ക് ചെയ്യുക</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="492" />
         <source>Click To Toggle sort by Traffic</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ട്രാഫിക് പ്രകാരം അടുക്കാൻ ടോഗിൾ ചെയ്യാൻ ക്ലിക്ക് ചെയ്യുക</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="501" />
         <source>Traffic Graph</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ട്രാഫിക് ഗ്രാഫ്</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="593" />
         <source>Program</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">പ്രോഗ്രാം</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="616" />
         <source>Preferences</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">മുൻഗണനകൾ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="627" />
         <source>Server</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">സെർവർ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="631" />
@@ -2451,32 +2451,32 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="641" />
         <source>Current group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">നിലവിലെ ഗ്രൂപ്പ്</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="647" />
         <source>Test</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ടെസ്റ്റ്</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="675" />
         <source>Hidden menu</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">മറഞ്ഞിരിക്കുന്ന മെനു</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="688" />
         <source>Routing Menu</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">റൂട്ടിംഗ് മെനു</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="711" />
         <source>Exit</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">പുറത്ത്</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="716" />
         <source>Toggle Window</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">വിൻഡോ ടോഗിൾ ചെയ്യുക</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="721" />
@@ -2486,26 +2486,26 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="726" />
         <source>New profile</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">പുതിയ പ്രൊഫൈൽ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="731" />
         <source>Groups</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ഗ്രൂപ്പുകൾ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="736" />
         <location filename="../../src/ui/mainwindow.cpp" line="3447" />
         <location filename="../../src/ui/mainwindow.cpp" line="3457" />
         <source>Start</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ആരംഭിക്കുക</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="744" />
         <location filename="../../src/ui/mainwindow.cpp" line="3446" />
         <location filename="../../src/ui/mainwindow.cpp" line="3457" />
         <source>Stop</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">നിർത്തുക</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="752" />
@@ -2515,12 +2515,12 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="760" />
         <source>Routing Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">റൂട്ടിംഗ് ക്രമീകരണങ്ങൾ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="765" />
         <source>Add profile from clipboard</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ക്ലിപ്പ്ബോർഡിൽ നിന്ന് പ്രൊഫൈൽ ചേർക്കുക</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="773" />
@@ -2530,49 +2530,49 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="781" />
         <source>Debug Info</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ഡീബഗ് വിവരം</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="786" />
         <source>QR Code and link</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">QR കോഡും ലിങ്കും</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="794" />
         <source>Copy Link</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ലിങ്ക് പകർത്തുക</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="815" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1056" />
         <source>Clear Test Result</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ടെസ്റ്റ് ഫലം മായ്‌ക്കുക</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="823" />
         <location filename="../../src/ui/mainwindow.cpp" line="1353" />
         <source>Export %1 config</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">കയറ്റുമതി% 1 കോൺഫിഗറേഷൻ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="831" />
         <source>Reset Traffic</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ട്രാഫിക് റീസെറ്റ് ചെയ്യുക</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="839" />
         <source>Scan QR Code</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">QR കോഡ് സ്കാൻ ചെയ്യുക</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="847" />
         <source>Enable System Proxy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">സിസ്റ്റം പ്രോക്സി പ്രവർത്തനക്ഷമമാക്കുക</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="855" />
         <source>Disable</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">പ്രവർത്തനരഹിതമാക്കുക</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="860" />
@@ -2584,27 +2584,27 @@ For more information, see the document "Configuration/DNS".</source>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="945" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="953" />
         <source>fake</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">വ്യാജം</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="876" />
         <source>Move</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">നീക്കുക</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="887" />
         <source>Start with system</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">സിസ്റ്റം ഉപയോഗിച്ച് ആരംഭിക്കുക</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="895" />
         <source>Remember last profile</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">അവസാന പ്രൊഫൈൽ ഓർക്കുക</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="903" />
         <source>Allow other devices to connect</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">മറ്റ് ഉപകരണങ്ങളെ ബന്ധിപ്പിക്കാൻ അനുവദിക്കുക</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="908" />
@@ -2614,98 +2614,98 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="916" />
         <source>Full Test</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">പൂർണ്ണ പരിശോധന</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="924" />
         <source>Hotkey Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ഹോട്ട്കീ ക്രമീകരണങ്ങൾ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="929" />
         <source>Select All</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">എല്ലാം തിരഞ്ഞെടുക്കുക</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="937" />
         <source>Copy Custom Links</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ഇഷ്‌ടാനുസൃത ലിങ്കുകൾ പകർത്തുക</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="961" />
         <source>Copy links</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ലിങ്കുകൾ പകർത്തുക</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1045" />
         <source>Url Test</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">യുആർഎൽ ടെസ്റ്റ്</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1078" />
         <source>Resolve Domain</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ഡൊമെയ്ൻ പരിഹരിക്കുക</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="972" />
         <source>Enable Tun</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tun പ്രവർത്തനക്ഷമമാക്കുക</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="977" />
         <location filename="../../src/ui/mainwindow.cpp" line="2783" />
         <source>Clone</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ക്ലോൺ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="985" />
         <source>Update subscription</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">സബ്സ്ക്രിപ്ഷൻ അപ്ഡേറ്റ് ചെയ്യുക</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="996" />
         <source>Resolve domain</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ഡൊമെയ്ൻ പരിഹരിക്കുക</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1004" />
         <source>Tun Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ക്രമീകരണങ്ങൾ ട്യൂൺ ചെയ്യുക</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1009" />
         <source>Restart Program</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">പ്രോഗ്രാം പുനരാരംഭിക്കുക</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1014" />
         <source>Open Config Folder</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">കോൺഫിഗറേഷൻ ഫോൾഡർ തുറക്കുക</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1035" />
         <source>Restart Proxy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">പ്രോക്സി പുനരാരംഭിക്കുക</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1040" />
         <source>Stop Testing</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ടെസ്റ്റിംഗ് നിർത്തുക</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1048" />
         <source>Ctrl+Shift+S</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ctrl+Shift+S</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1067" />
         <source>Url Test Group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Url ടെസ്റ്റ് ഗ്രൂപ്പ്</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1070" />
         <source>Ctrl+Shift+G</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ctrl+Shift+G</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1086" />
@@ -2715,47 +2715,47 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1089" />
         <source>Ctrl+Alt+I</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ctrl+Alt+I</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1102" />
         <source>Speedtest Current</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">സ്പീഡ് ടെസ്റ്റ് കറൻ്റ്</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1107" />
         <source>Full test Selected</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">മുഴുവൻ പരീക്ഷയും തിരഞ്ഞെടുത്തു</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1112" />
         <source>Download test Selected</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ഡൗൺലോഡ് ടെസ്റ്റ് തിരഞ്ഞെടുത്തു</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1117" />
         <source>Upload test Selected</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">അപ്‌ലോഡ് ടെസ്റ്റ് തിരഞ്ഞെടുത്തു</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1122" />
         <source>Country test Selected</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">രാജ്യ പരീക്ഷ തിരഞ്ഞെടുത്തു</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1127" />
         <source>Simple download test Selected</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ലളിതമായ ഡൗൺലോഡ് ടെസ്റ്റ് തിരഞ്ഞെടുത്തു</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1132" />
         <source>Speedtest Group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">സ്പീഡ് ടെസ്റ്റ് ഗ്രൂപ്പ്</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1137" />
         <source>Hide window</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">വിൻഡോ മറയ്ക്കുക</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1142" />
