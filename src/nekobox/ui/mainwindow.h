@@ -122,6 +122,8 @@ public:
 
     void prepare_exit();
 
+    bool context_menu_locked();
+
     void refresh_proxy_list(const int &id = -1);
 
     void show_group(int gid);
