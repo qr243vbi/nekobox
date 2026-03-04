@@ -37,6 +37,8 @@ public:
             const auto &language = languageList[index.row()];
             if (role == Qt::DisplayRole) {
                 return language->name;
+            } else if (role == 9999){
+                return language->code;
             }
         }
         return QVariant();
@@ -65,7 +67,7 @@ public:
         layout->addWidget(languageListView);
 
         // Create the model to display the languages
-        languageModel = new LanguageModel(languages, this);
+        languageModel = new LanguageModel(this);
 
         // Set the model for the list view
         languageListView->setModel(languageModel);
@@ -99,7 +101,7 @@ private slots:
         QModelIndex selectedIndex = languageListView->currentIndex();
         if (selectedIndex.isValid()) {
             selectedLanguage = languageModel->data(selectedIndex, Qt::DisplayRole).value<std::shared_ptr<LanguageValue>>();
-            qDebug() << "Selected language:" << selectedLanguage->languageName;
+            qDebug() << "Selected language:" << selectedLanguage->name;
             accept(); // Close the dialog with acceptance
         } else {
             qDebug() << "No language selected";
