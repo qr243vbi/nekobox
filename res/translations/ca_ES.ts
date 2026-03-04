@@ -2428,363 +2428,363 @@ Per a més informació, consulteu el document "Configuració/DNS".</translation>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="593" />
         <source>Program</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Programa</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="616" />
         <source>Preferences</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Preferències</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="627" />
         <source>Server</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Servidor</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="631" />
         <source>Share</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Comparteix</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="641" />
         <source>Current group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Grup actual</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="647" />
         <source>Test</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Prova</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="675" />
         <source>Hidden menu</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Menú ocult</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="688" />
         <source>Routing Menu</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Menú de ruta</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="711" />
         <source>Exit</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Sortida</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="716" />
         <source>Toggle Window</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Commuta la finestra</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="721" />
         <source>Basic Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Configuració bàsica</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="726" />
         <source>New profile</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Nou perfil</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="731" />
         <source>Groups</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Grups</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="736" />
         <location filename="../../src/ui/mainwindow.cpp" line="3447" />
         <location filename="../../src/ui/mainwindow.cpp" line="3457" />
         <source>Start</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Comença</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="744" />
         <location filename="../../src/ui/mainwindow.cpp" line="3446" />
         <location filename="../../src/ui/mainwindow.cpp" line="3457" />
         <source>Stop</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Atureu-vos</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="752" />
         <source>Edit</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Edita</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="760" />
         <source>Routing Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Configuració d'encaminament</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="765" />
         <source>Add profile from clipboard</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Afegeix un perfil des del porta-retalls</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="773" />
         <source>Delete</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Suprimeix</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="781" />
         <source>Debug Info</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Informació de depuració</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="786" />
         <source>QR Code and link</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Codi QR i enllaç</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="794" />
         <source>Copy Link</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Copia l'enllaç</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="815" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1056" />
         <source>Clear Test Result</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Esborra el resultat de la prova</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="823" />
         <location filename="../../src/ui/mainwindow.cpp" line="1353" />
         <source>Export %1 config</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Exporta la configuració de %1</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="831" />
         <source>Reset Traffic</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Restableix el trànsit</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="839" />
         <source>Scan QR Code</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Escaneja el codi QR</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="847" />
         <source>Enable System Proxy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Habilita el servidor intermediari del sistema</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="855" />
         <source>Disable</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Desactivar</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="860" />
         <source>Remove Duplicates</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Elimina els duplicats</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="868" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="945" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="953" />
         <source>fake</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">fals</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="876" />
         <source>Move</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Mou-te</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="887" />
         <source>Start with system</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Comenceu amb el sistema</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="895" />
         <source>Remember last profile</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Recorda l'últim perfil</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="903" />
         <source>Allow other devices to connect</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Permet que altres dispositius es connectin</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="908" />
         <source>Remove Unavailable</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Elimina no disponible</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="916" />
         <source>Full Test</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Prova completa</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="924" />
         <source>Hotkey Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Configuració de tecles d'accés directe</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="929" />
         <source>Select All</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Seleccioneu Tot</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="937" />
         <source>Copy Custom Links</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Copia enllaços personalitzats</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="961" />
         <source>Copy links</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Copia els enllaços</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1045" />
         <source>Url Test</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Prova d'URL</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1078" />
         <source>Resolve Domain</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Resol domini</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="972" />
         <source>Enable Tun</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Activa Tun</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="977" />
         <location filename="../../src/ui/mainwindow.cpp" line="2783" />
         <source>Clone</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Clonar</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="985" />
         <source>Update subscription</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Actualitza la subscripció</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="996" />
         <source>Resolve domain</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Resol domini</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1004" />
         <source>Tun Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tun Settings</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1009" />
         <source>Restart Program</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Reinicieu el programa</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1014" />
         <source>Open Config Folder</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Obriu la carpeta de configuració</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1035" />
         <source>Restart Proxy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Reinicieu el proxy</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1040" />
         <source>Stop Testing</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Atura la prova</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1048" />
         <source>Ctrl+Shift+S</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ctrl+Maj+S</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1067" />
         <source>Url Test Group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Grup de prova d'URL</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1070" />
         <source>Ctrl+Shift+G</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ctrl+Maj+G</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1086" />
         <source>Remove Invalid</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Elimina No vàlid</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1089" />
         <source>Ctrl+Alt+I</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ctrl+Alt+I</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1102" />
         <source>Speedtest Current</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Corrent de prova de velocitat</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1107" />
         <source>Full test Selected</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Prova completa seleccionada</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1112" />
         <source>Download test Selected</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Descarrega la prova seleccionada</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1117" />
         <source>Upload test Selected</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Prova de càrrega seleccionada</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1122" />
         <source>Country test Selected</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Prova de país seleccionada</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1127" />
         <source>Simple download test Selected</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Prova de descàrrega senzilla seleccionada</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1132" />
         <source>Speedtest Group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Grup Speedtest</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1137" />
         <source>Hide window</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Amaga la finestra</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1142" />
         <source>Add profile from File</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Afegeix un perfil des del fitxer</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1147" />
         <location filename="../../src/ui/mainwindow.cpp" line="3473" />
         <source>Add new Group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Afegeix un grup nou</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1152" />
         <source>Security Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Configuració de seguretat</translation>
     </message>
     <message>
         <location filename="../../src/dataStore/ProxyEntity.cpp" line="52" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="293" />
         <source>Unavailable</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">No disponible</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1006" />
         <source>Edit Routing Profiles</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Edita els perfils d'encaminament</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1028" />
         <source>Update Routing Profiles</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Actualitza els perfils d'encaminament</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1040" />
@@ -2795,69 +2795,69 @@ Per a més informació, consulteu el document "Configuració/DNS".</translation>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="95" />
         <location filename="../../src/ui/setting/RouteItem.cpp" line="104" />
         <source>Update Response</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Actualitza la resposta</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1041" />
         <location filename="../../src/ui/setting/RouteItem.cpp" line="105" />
         <source>No routing profiles are updated</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">No s'actualitza cap perfil d'encaminament</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1045" />
         <location filename="../../src/ui/setting/RouteItem.cpp" line="96" />
         <source>Updated %1 routing profiles</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">S'han actualitzat %1 perfils d'encaminament</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1055" />
         <source>Update RuleSet Map</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Actualitza el mapa del conjunt de regles</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1066" />
         <source>Failed to update rulesets</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">No s'han pogut actualitzar els conjunts de regles</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1069" />
         <source>Rulesets updated successfully</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Regles actualitzades correctament</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1078" />
         <source>Update RuleSet Cache</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Actualitza la memòria cau de RuleSet</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1113" />
         <source>Rulesets cache is updated</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">S'ha actualitzat la memòria cau de conjunts de regles</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1127" />
         <source>Clear RuleSet Cache</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Esborra la memòria cau del conjunt de regles</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1163" />
         <source>Enable AdBlock</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Activa AdBlock</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1566" />
         <source>Error</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Error</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1653" />
         <source>Tun Settings changed</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">La configuració de Tun ha canviat</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1654" />
         <source>Restart Tun to take effect.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Reinicieu Tun perquè tingui efecte.</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1660" />
@@ -2868,89 +2868,89 @@ Per a més informació, consulteu el document "Configuració/DNS".</translation>
         <location filename="../../src/ui/mainwindow.cpp" line="3310" />
         <location filename="../../src/ui/mainwindow.cpp" line="3515" />
         <source>Confirmation</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Confirmació</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1661" />
         <location filename="../../src/ui/mainwindow.cpp" line="1719" />
         <source>Settings changed, restart proxy?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">La configuració ha canviat, reinicieu el servidor intermediari?</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1690" />
         <source>Settings changed</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">La configuració ha canviat</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1691" />
         <source>Restart the program to take effect.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Reinicieu el programa perquè tingui efecte.</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1734" />
         <source>Imported %1 profile(s)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">S'han importat %1 perfils</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1985" />
         <source>User opted for no privilege req, some features may not work</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">L'usuari ha optat per no demanar privilegis, és possible que algunes funcions no funcionin</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2049" />
         <source>Please give the core root privileges</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Si us plau, doneu els privilegis d'arrel bàsic</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2403" />
         <source>Not Running</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">No Corrent</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2784" />
         <source>Clone %1 item(s)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Clonar % 1 element(s)</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2818" />
         <source> Confirmation </source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Confirmació</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2819" />
         <source> Remove %1 item(s) ? </source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Eliminar %1 element(s)?</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2838" />
         <source>Remove %1 item(s) ?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Eliminar %1 element(s)?</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2875" />
         <location filename="../../src/ui/mainwindow.cpp" line="2888" />
         <source>Copied %1 item(s)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">S'han copiat % 1 element(s)</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3120" />
         <source>QR Code not found</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">No s'ha trobat el codi QR</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3141" />
         <source>Unable to capture screen</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">No es pot capturar la pantalla</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3209" />
         <source>Remove %1 Unavailable item(s) ?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Eliminar % 1 Elements no disponibles?</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3263" />
         <source>Remove %1 Invalid item(s) ?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Eliminar % 1 elements no vàlids?</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3311" />
