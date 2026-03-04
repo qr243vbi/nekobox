@@ -140,10 +140,6 @@ DialogBasicSettings::DialogBasicSettings(MainWindow *parent)
     if (index >= 0){
         language->setCurrentIndex(index);
     }
-    language->view()->setMaximumHeight(200);
-    language->setStyleSheet("QComboBox QAbstractItemView { max-height: 200px; }");
-    language->setMaxVisibleItems(10);
-    //    language->setCurrentIndex(locales.indexOf(getLocale()));
     connect(language, &QComboBox::currentIndexChanged, this, [=,this](int index) {
         CACHE.needRestart = true;
     });
@@ -292,6 +288,8 @@ DialogBasicSettings::DialogBasicSettings(MainWindow *parent)
     });
     ui->default_core_path->setChecked(core_path == "");
     ui->default_icons_path->setChecked(icons_path == "");
+    
+    language->setMaxVisibleItems(10);
 }
 
 DialogBasicSettings::~DialogBasicSettings() {
