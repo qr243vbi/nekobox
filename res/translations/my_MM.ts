@@ -2927,213 +2927,213 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2838" />
         <source>Remove %1 item(s) ?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">%1 ပစ္စည်း(s) ကို ဖယ်ရှားမလား။</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2875" />
         <location filename="../../src/ui/mainwindow.cpp" line="2888" />
         <source>Copied %1 item(s)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">%1 ဖိုင်(များ) ကို ကူးယူထားသည်</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3120" />
         <source>QR Code not found</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">QR Code မတွေ့ပါ။</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3141" />
         <source>Unable to capture screen</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">မျက်နှာပြင်ကို ဖမ်းယူ၍မရပါ။</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3209" />
         <source>Remove %1 Unavailable item(s) ?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">%1 မရရှိနိုင်သည့်အရာ(များ)ကို ဖယ်ရှားမလား။</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3263" />
         <source>Remove %1 Invalid item(s) ?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">%1 မမှန်ကန်သည့်အရာ(များ)ကို ဖယ်ရှားမလား။</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3311" />
         <source>Replace domain server addresses with their resolved IPs?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ဒိုမိန်းဆာဗာလိပ်စာများကို ၎င်းတို့၏ဖြေရှင်းထားသော IP များဖြင့် အစားထိုးမလား။</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3444" />
         <source>Clear</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ရှင်းပါတယ်။</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3506" />
         <source>Delete selected Group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ရွေးချယ်ထားသောအဖွဲ့ကို ဖျက်ပါ။</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3507" />
         <source>Edit selected Group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ရွေးချယ်ထားသောအဖွဲ့ကို တည်းဖြတ်ပါ။</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3516" />
         <source>Remove %1?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">%1 ကို ဖယ်ရှားမလား။</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="4199" />
         <source>Cannot start</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">မစတင်နိုင်ပါ။</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="4200" />
         <source>Last download request has not finished yet</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">နောက်ဆုံးဒေါင်းလုဒ်တောင်းဆိုမှု မပြီးဆုံးသေးပါ။</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="4234" />
         <source>Failed to download update assets</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">အပ်ဒိတ်ပိုင်ဆိုင်မှုများကို ဒေါင်းလုဒ်လုပ်ရန် မအောင်မြင်ပါ။</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="85" />
         <source>Profile test aborted</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ပရိုဖိုင်စမ်းသပ်မှုကို ဖျက်သိမ်းလိုက်ပါပြီ။</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="136" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="182" />
         <source>[%1] test error: %2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">[%1] စမ်းသပ်မှု အမှား- %2</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="165" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="491" />
         <source>Something is very wrong, the subject ent cannot be found!</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">တစ်ခုခုမှားနေပြီ၊ အကြောင်းအရာကို ရှာမတွေ့ပါ။</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="171" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="497" />
         <source>Profile manager data is corrupted, try again.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ပရိုဖိုင်မန်နေဂျာဒေတာ ပျက်စီးသွားသည်၊ ထပ်စမ်းကြည့်ပါ။</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="205" />
         <source>The last url test did not exit completely, please wait. If it persists, please restart the program.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">နောက်ဆုံး url စမ်းသပ်မှုသည် လုံး၀ ထွက်မလာပါ၊ ကျေးဇူးပြု၍ စောင့်ပါ။ဆက်ရှိနေပါက ပရိုဂရမ်ကို ပြန်လည်စတင်ပါ။</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="214" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="321" />
         <source>Failed to build test config: </source>
-        <translation type="unfinished" />
+        <translation type="unfinished">စမ်းသပ်မှုပုံစံကို တည်ဆောက်၍မရပါ။</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="255" />
         <source>URL test finished!</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">URL စမ်းသပ်မှုပြီးပါပြီ။</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="266" />
         <source>Failed to stop tests</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">စမ်းသပ်မှုများကို ရပ်ရန် မအောင်မြင်ပါ။</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="272" />
         <source>Testing</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">စမ်းသပ်ခြင်း။</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="310" />
         <source>The last speed test did not exit completely, please wait. If it persists, please restart the program.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">နောက်ဆုံးအမြန်နှုန်းစမ်းသပ်မှုသည် လုံးဝထွက်မလာပါ၊ ကျေးဇူးပြု၍ စောင့်ပါ။ဆက်ရှိနေပါက ပရိုဂရမ်ကို ပြန်လည်စတင်ပါ။</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="347" />
         <source>Speedtest finished!</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Speedtest ပြီးပါပြီ။</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="428" />
         <source>Profile speed test aborted</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ပရိုဖိုင်အမြန်နှုန်းစမ်းသပ်မှုကို ဖျက်သိမ်းလိုက်ပါပြီ။</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="516" />
         <source>[%1] speed test error: %2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">[%1] မြန်နှုန်းစမ်းသပ်မှု အမှား- %2</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="525" />
         <source>You need to enable hijack DNS server first</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">သင်သည် ပထမဆုံး DNS ဆာဗာကို ခိုးယူခြင်းကို ဖွင့်ထားရန် လိုအပ်သည်။</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="539" />
         <source>Failed to set system dns: </source>
-        <translation type="unfinished" />
+        <translation type="unfinished">စနစ် dns ကို သတ်မှတ်ရန် မအောင်မြင်ပါ</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="587" />
         <source>Tun device misbehaving</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ထွန်းစက်သည် အကျင့်ဆိုး</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="588" />
         <source>If you have trouble starting VPN, you can force reset Core process here and then try starting the profile again. The error is %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">VPN ကိုစတင်ရာတွင် ပြဿနာရှိနေပါက၊ သင်သည် ဤနေရာတွင် Core လုပ်ငန်းစဉ်ကို ပြန်လည်သတ်မှတ်ရန် အတင်းအကြပ်လုပ်ဆောင်နိုင်ပြီး ပရိုဖိုင်ကို ထပ်မံစတင်ကြည့်ပါ။အမှားသည် %1 ဖြစ်သည်။</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="592" />
         <source>Reset</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ပြန်လည်သတ်မှတ်ပါ။</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="593" />
         <source>Cancel</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">မလုပ်တော့</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="632" />
         <source>Another profile is starting...</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">နောက်ထပ် ပရိုဖိုင်တစ်ခု စတင်နေပါပြီ...</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="639" />
         <source>Another profile is stopping...</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">အခြားပရိုဖိုင် ရပ်တန့်နေသည်...</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="660" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="742" />
         <source>If there is no response for a long time, it is recommended to restart the software.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">အချိန်အကြာကြီး တုံ့ပြန်မှုမရှိပါက ဆော့ဖ်ဝဲကို ပြန်လည်စတင်ရန် အကြံပြုထားသည်။</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="674" />
         <source>Starting profile %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ပရိုဖိုင် %1 ကို စတင်နေသည်။</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="676" />
         <source>Failed to start profile %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ပရိုဖိုင် %1 ကို စတင်ရန် မအောင်မြင်ပါ။</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="725" />
         <source>Stop return error</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">အမှားအယွင်းကို ရပ်တန့်ပါ။</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="765" />
         <source>Stopping profile %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ပရိုဖိုင် %1 ကို ရပ်နေသည်</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="767" />
         <source>Failed to stop, please restart the program.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ရပ်တန့်ရန် မအောင်မြင်ပါ၊ အစီအစဉ်ကို ပြန်လည်စတင်ပါ။</translation>
     </message>
 </context>
 <context>
@@ -3146,17 +3146,17 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/security/change_password.ui" line="20" />
         <source>Username</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">အသုံးပြုသူအမည်</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/change_password.ui" line="37" />
         <source>New Password</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">စကားဝှက်အသစ်</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/change_password.ui" line="54" />
         <source>Confirm Password</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">စကားဝှက်အတည်ပြုခြင်း</translation>
     </message>
 </context>
 <context>
@@ -3164,12 +3164,12 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/ui/profile/ProxyItem.cpp" line="39" />
         <source>Confirmation</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">အတည်ပြုချက်</translation>
     </message>
     <message>
         <location filename="../../src/ui/profile/ProxyItem.cpp" line="39" />
         <source>Remove %1?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">%1 ကို ဖယ်ရှားမလား။</translation>
     </message>
 </context>
 <context>
@@ -3177,7 +3177,7 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/ui/security_addon.cpp" line="342" />
         <source>Security Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">လုံခြုံရေးဆက်တင်များ</translation>
     </message>
 </context>
 <context>
@@ -3185,7 +3185,7 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/main.cpp" line="259" />
         <source>QT_LAYOUT_DIRECTION</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">QT_LAYOUT_DIRECTION</translation>
     </message>
 </context>
 <context>
@@ -3193,37 +3193,37 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/configs/ConfigBuilder.cpp" line="159" />
         <source>Tun mode cannot be used with Custom configs</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tun mode ကို စိတ်ကြိုက်ပြင်ဆင်မှုများဖြင့် အသုံးမပြုနိုင်ပါ။</translation>
     </message>
     <message>
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="913" />
         <source>Requesting subscription: %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">စာရင်းသွင်းမှုကို တောင်းဆိုနေသည်- %1</translation>
     </message>
     <message>
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="917" />
         <source>Requesting subscription %1 error: %2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">စာရင်းသွင်းမှု %1 အမှားအယွင်းတောင်းဆိုနေသည်- %2</translation>
     </message>
     <message>
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="924" />
         <source>Subscription request fininshed: %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">စာရင်းသွင်းမှု တောင်းဆိုချက် ပြီးပါပြီ- %1</translation>
     </message>
     <message>
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="942" />
         <source>Clearing servers...</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ဆာဗာများကို ရှင်းလင်းနေသည်...</translation>
     </message>
     <message>
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="947" />
         <source>Processing subscription data...</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">စာရင်းသွင်းမှုဒေတာကို လုပ်ဆောင်နေသည်...</translation>
     </message>
     <message>
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="950" />
         <source>Process complete, applying...</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">လုပ်ငန်းစဉ်ပြီးပါပြီ၊ လျှောက်ထားခြင်း...</translation>
     </message>
     <message>
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="1013" />
@@ -3231,46 +3231,50 @@ For more information, see the document "Configuration/DNS".</source>
 %2
 Deleted %3 Profiles:
 %4</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">%1 ပရိုဖိုင်များကို ထည့်ထားသည်-
+%2
+%3 ပရိုဖိုင်များကို ဖျက်လိုက်သည်-
+%4</translation>
     </message>
     <message>
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="1018" />
         <source>Nothing</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ဘာမှမဖြစ်</translation>
     </message>
     <message>
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="1021" />
         <source>Change of %1:</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">%1 ၏ပြောင်းလဲမှု-</translation>
     </message>
     <message>
         <location filename="../../src/dataStore/Database.cpp" line="119" />
         <source>Default</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ပုံသေ</translation>
     </message>
     <message>
         <location filename="../../src/global/HTTPRequestHelper.cpp" line="189" />
         <source>Could not open file.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ဖိုင်ကိုဖွင့်၍မရပါ။</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/configs/proxy/ChainBean.hpp" line="17" />
         <source>Chain Proxy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ကွင်းဆက် ပရောက်စီ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/global/GuiUtils.hpp" line="112" />
         <location filename="../../src/ui/profile/edit_ssh.cpp" line="28" />
         <location filename="../../src/ui/setting/dialog_basic_settings.cpp" line="245" />
         <source>Select</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ရွေးချယ်ပါ။</translation>
     </message>
     <message>
         <location filename="../../src/stats/traffic/TrafficLooper.cpp" line="115" />
         <location filename="../../src/ui/mainwindow.cpp" line="2371" />
         <source>Proxy: %1
 Direct: %2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ပရောက်စီ- %1
+တိုက်ရိုက်- %2</translation>
     </message>
     <message>
         <location filename="../../src/sys/Process.cpp" line="104" />
@@ -3280,113 +3284,114 @@ Direct: %2</source>
     <message>
         <location filename="../../src/sys/Process.cpp" line="111" />
         <source>Core exits too frequently, stop automatic restart this profile.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Core သည် မကြာခဏ ထွက်နေသဖြင့် ဤပရိုဖိုင်ကို အလိုအလျောက် ပြန်လည်စတင်ခြင်းကို ရပ်ပါ။</translation>
     </message>
     <message>
         <location filename="../../src/sys/Process.cpp" line="120" />
         <source>Restarting the core ...</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">အူတိုင်ကို ပြန်လည်စတင်နေသည်...</translation>
     </message>
     <message>
         <location filename="../../src/sys/Settings.cpp" line="362" />
         <source>System</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">စနစ်</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="22" />
         <source>URL detected</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">URL ကို တွေ့ရှိခဲ့သည်။</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="27" />
         <source>%1
 How to update?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">%1
+အပ်ဒိတ်လုပ်နည်း</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="31" />
         <source>Create new subscription group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">စာရင်းသွင်းမှုအဖွဲ့အသစ်ကို ဖန်တီးပါ။</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="32" />
         <source>Add profiles to this group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ဤအဖွဲ့သို့ ပရိုဖိုင်များထည့်ပါ။</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="37" />
         <source>Group name</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">အဖွဲ့အမည်</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="101" />
         <source>Used: %1 Remain: %2 Expire: %3</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">အသုံးပြုထားသည်- %1 ကျန်- %2 သက်တမ်းကုန်- %3</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="173" />
         <source>Download Profiles</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Profiles ကို ဒေါင်းလုဒ်လုပ်ပါ။</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="174" />
         <source>Requesting profile error: %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ပရိုဖိုင် အမှားကို တောင်းဆိုနေသည်- %1</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="341" />
         <source>
 Deleted %1 Duplicates</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ထပ်နေသော %1 ကို ဖျက်လိုက်သည်</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="375" />
         <source>
 Deleted %1 Invalid</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ဖျက်လိုက်သည် %1 မမှန်ကန်ပါ။</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="398" />
         <source>
 Deleted %1 Unavailable</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ဖျက်လိုက်သည် %1 မရနိုင်ပါ။</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1446" />
         <source>Check Rule Sets: %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">စည်းကမ်းသတ်မှတ်မှုများကို စစ်ဆေးပါ- %1</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1468" />
         <source>Requesting rule-set list error: %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">စည်းမျဉ်းသတ်မှတ်မှုစာရင်း အမှားအယွင်းကို တောင်းဆိုနေသည်- %1</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2408" />
         <source>IP address: %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">IP လိပ်စာ- %1</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2906" />
         <source>Config copied</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Config ကို ကူးယူထားသည်။</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2917" />
         <source>Copy core config</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">core config ကို ကူးယူပါ။</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2918" />
         <source>Copy test config</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">စမ်းသပ်မှုပုံစံကို ကူးယူပါ။</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2919" />
         <location filename="../../src/ui/security_addon.cpp" line="22" />
         <location filename="../../src/ui/setting/dialog_vpn_settings.cpp" line="45" />
         <source>OK</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">အိုကေ</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="4104" />
@@ -3396,64 +3401,66 @@ Deleted %1 Unavailable</source>
         <location filename="../../src/ui/mainwindow.cpp" line="4190" />
         <location filename="../../src/ui/mainwindow.cpp" line="4225" />
         <source>Update</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">အပ်ဒိတ်</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="4105" />
         <source>Not official support platform</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">တရားဝင်ပံ့ပိုးမှုပလက်ဖောင်းမဟုတ်ပါ။</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="4116" />
         <source>Requesting update error: %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">အပ်ဒိတ်ကို တောင်းဆိုနေသည့် အမှား- %1</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="4159" />
         <source>No update</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">အပ်ဒိတ်မရှိပါ။</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="4182" />
         <source>Update found: %1
 Release note:
 %2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">အပ်ဒိတ်တွေ့ရှိခဲ့သည်- %1
+ထုတ်ပြန်ချက်-
+%2</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="4185" />
         <source>Close</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ပိတ်လိုက်</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="4187" />
         <source>Open in browser</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ဘရောက်ဆာတွင်ဖွင့်ပါ။</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="4226" />
         <source>Update is ready, restart to install?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">အပ်ဒိတ်အဆင်သင့်ဖြစ်ပြီ၊ ထည့်သွင်းရန် ပြန်လည်စတင်လိုပါသလား။</translation>
     </message>
     <message>
         <location filename="../../src/ui/security_addon.cpp" line="21" />
         <source>Access denied</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ဝင်ရောက်ချိတ်ဆက်ရန်ငြင်းဆိုခြင်း</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/dialog_basic_settings.cpp" line="250" />
         <source>Select a Folder</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Folder တစ်ခုကို ရွေးပါ။</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/dialog_vpn_settings.cpp" line="37" />
         <source>Exclude CIDR's</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">CIDR များကို ဖယ်ထုတ်ပါ။</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/dialog_vpn_settings.cpp" line="46" />
         <source>Cancel</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">မလုပ်တော့</translation>
     </message>
 </context>
 <context>
@@ -3461,22 +3468,22 @@ Release note:
     <message>
         <location filename="../../src/main.cpp" line="57" />
         <source>Cancel</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">မလုပ်တော့</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="58" />
         <source>Apply</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">လျှောက်ထားပါ။</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="59" />
         <source>Yes</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ဟုတ်ကဲ့</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="60" />
         <source>No</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">မရှိ</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="61" />
