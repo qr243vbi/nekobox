@@ -1222,32 +1222,32 @@ sing-box جي بلٽ ان NTP ڪلائنٽ&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="39" />
         <source>Sniffs the connections intial packet(s?) to identify the protocol and the SNI. Sniff result for destination also rewrites the destionation of the connection to the sniffed SNI. For more data on the sniffed protocol refer to the sing-box's documentation.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">پروٽوڪول ۽ SNI کي سڃاڻڻ لاءِ ڪنيڪشن جي شروعاتي پيڪٽ (ص) کي سنيف ڪري ٿو.منزل لاءِ سنيف نتيجو پڻ سنف ٿيل SNI سان ڪنيڪشن جي منزل کي ٻيهر لکندو آهي.سنيف ٿيل پروٽوڪول تي وڌيڪ ڊيٽا لاءِ سنگ باڪس جي دستاويزن جو حوالو ڏيو.</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="42" />
         <source>Sniffing Mode</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">سنفنگ موڊ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="50" />
         <source>Disable</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">نااهل</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="55" />
         <source>Sniff result for routing</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">روٽنگ لاءِ سنيف نتيجو</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="69" />
         <source>Routing Profile</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">روٽنگ پروفائل</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="92" />
         <source>Inbound Domain Strategy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">انبائونڊ ڊومين جي حڪمت عملي</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="107" />
@@ -1282,32 +1282,32 @@ sing-box جي بلٽ ان NTP ڪلائنٽ&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="149" />
         <source>Remote Rule-set Mirror</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Remote Rule-set Mirror</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="162" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Resolve domains to IP before connect, also affects the server address as well&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;ڳنڍڻ کان اڳ ڊومينز کي IP ۾ حل ڪريو، سرور ايڊريس کي پڻ متاثر ڪري ٿو&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="165" />
         <source>Outbound Domain Strategy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">آئوٽ بائونڊ ڊومين جي حڪمت عملي</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="178" />
         <source>RuleSet download url</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">RuleSet ڊائون لوڊ url</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="192" />
         <source>Hijack</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">حجاب</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="198" />
         <source>DNS Server</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">DNS سرور</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="216" />
@@ -1318,17 +1318,17 @@ sing-box جي بلٽ ان NTP ڪلائنٽ&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="226" />
         <source>IPv4 Response</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">IPv4 جواب</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="236" />
         <source>IPv6 Response</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">IPv6 جواب</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="246" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Following format should be used:&lt;br/&gt;domain:a.com&lt;/p&gt;&lt;p&gt;suffix:a.com&lt;/p&gt;&lt;p&gt;regex:someregex&lt;/p&gt;&lt;p&gt;rule_set:nameOfRuleSet&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;هيٺ ڏنل فارميٽ استعمال ڪيو وڃي:&lt;br/&gt;domain:a.com&lt;/p&gt;&lt;p&gt;suffix:a.com&lt;/p&gt;&lt;p&gt;regex:someregex&lt;/p&gt;&lt;p&gt;rule_set:nameOfRuleSet&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="249" />
@@ -1339,115 +1339,117 @@ sing-box جي بلٽ ان NTP ڪلائنٽ&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="280" />
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="319" />
         <source>Enable</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">فعال ڪريو</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="287" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Whether to listen on 0.0.0.0 so that other devices on LAN can use this server&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;ڇا 0.0.0.0 تي ٻڌو وڃي ته جيئن LAN تي ٻيا ڊوائيس هي سرور استعمال ڪري سگهن&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="290" />
         <source>Allow Lan to Connect</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">لين کي ڳنڍڻ جي اجازت ڏيو</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="303" />
         <source>Redirect Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Redirect سيٽنگون</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="329" />
         <source>Listen Address</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ايڊريس ٻڌو</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="340" />
         <source>DNS</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ڊي اين ايس</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="346" />
         <source>Simple DNS Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">سادي DNS سيٽنگون</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="352" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;examples:&lt;br/&gt;tls://8.8.8.8&lt;br/&gt;https://domain/path&lt;/p&gt;&lt;p&gt;tcp://8.8.8.8:1234&lt;/p&gt;&lt;p&gt;dhcp://auto&lt;/p&gt;&lt;p&gt;h3://domain/path&lt;/p&gt;&lt;p&gt;quic://domain:4632&lt;/p&gt;&lt;p&gt;etc&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;مثال:&lt;br/&gt;tls://8.8.8.8&lt;br/&gt;https://domain/path&lt;/p&gt;&lt;p&gt;tcp://8.8.8.8:1234&lt;/p&gt;&lt;p&gt;dhcp://auto&lt;/p&gt;&lt;p&gt;h3://domain/path&lt;/p&gt;&lt;p&gt;quic://domain:4632/p&gt;&lt;/p&gt;&lt;/html&gt;&lt;/p&gt;&lt;/p&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="355" />
         <source>Remote DNS</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ريموٽ DNS</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="367" />
         <source>Default DNS server</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ڊفالٽ DNS سرور</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="428" />
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="502" />
         <source>Query Strategy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">سوال جي حڪمت عملي</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="440" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Local DNS can not be used in some configurations, you will have to set an ip here to be used as local dns in such situations&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;ڪجهه ترتيبن ۾ مقامي DNS استعمال نه ٿي ڪري سگھجي، توھان کي ھتي ھڪ ip مقرر ڪرڻو پوندو ته جيئن اھڙين حالتن ۾ مقامي dns طور استعمال ڪيو وڃي&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="443" />
         <source>Local Override</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">مقامي اوور رائڊ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="450" />
         <source>This is especially important and it is recommended to use the default value of "localhost".
 If the default value does not work, try changing it to "223.5.5.5".
 For more information, see the document "Configuration/DNS".</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">اهو خاص طور تي اهم آهي ۽ اهو "localhost" جي ڊفالٽ قيمت کي استعمال ڪرڻ جي سفارش ڪئي وئي آهي.
+جيڪڏهن ڊفالٽ قدر ڪم نه ڪندو آهي، ان کي تبديل ڪرڻ جي ڪوشش ڪريو "223.5.5.5".
+وڌيڪ معلومات لاءِ، دستاويز ڏسو "Configuration/DNS".</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="455" />
         <source>Direct DNS</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">سڌو DNS</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="514" />
         <source>Enable FakeIP</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">FakeIP کي فعال ڪريو</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="524" />
         <source>DNS Object Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">DNS اعتراض سيٽنگون</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="532" />
         <source>Use DNS Object</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">DNS Object استعمال ڪريو</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="545" />
         <source>Format</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">فارميٽ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="558" />
         <source>Document</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">دستاويز</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="574" />
         <source>Route</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">رستو</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="580" />
         <source>Routing Profiles</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">روٽنگ پروفائلز</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="592" />
@@ -1457,12 +1459,12 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="599" />
         <source>Clone</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ڪلون</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="606" />
         <source>Export</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">برآمد</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="613" />
@@ -1477,28 +1479,28 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="30" />
         <source>Invalid state</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">غلط حالت</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="30" />
         <source>The list of routing profiles is empty, this should be an unreachable state, crashes may occur now</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">روئٽنگ پروفائلز جي لسٽ خالي آھي، ھي ھڪ ناقابل پھچ حالت ھجڻ گھرجي، ھاڻي حادثا ٿي سگھن ٿا</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="203" />
         <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="207" />
         <source>Invalid settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">غلط سيٽنگون</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="203" />
         <source>Routing profile cannot be empty</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">روٽنگ پروفائل خالي نه ٿي سگھي</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="207" />
         <source>DNS Rules are not valid</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">DNS ضابطا صحيح نه آهن</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="315" />
@@ -1508,7 +1510,7 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="315" />
         <source>Routing Profiles cannot be empty, try adding another profile or editing this one</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">روئٽنگ پروفائلز خالي نه ٿا ٿي سگھن، ٻيو پروفائل شامل ڪرڻ جي ڪوشش ڪريو يا ھن کي تبديل ڪريو</translation>
     </message>
 </context>
 <context>
@@ -1516,42 +1518,42 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="14" />
         <source>Tun Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ٽيون سيٽنگون</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="85" />
         <source>Tun Enable IPv6</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">IPv6 کي فعال ڪريو</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="92" />
         <source>Strict Route</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">سخت رستو</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="99" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;When enabled, Direct IP CIDRs and rule sets will also be added to the Tun setting to be excluded at OS routing level. IMPORTANT: Large rule sets have been reported to cause massive CPU usage in windows, please enable this option with caution.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;جڏهن فعال ڪيو ويندو، سڌو IP CIDRs ۽ ضابطا سيٽ پڻ شامل ڪيا ويندا Tun سيٽنگ ۾ شامل ڪيا ويندا OS روٽنگ سطح تي خارج ڪيا ويندا.اهم: وڏين قاعدن جي سيٽن کي ٻڌايو ويو آهي ته ونڊوز ۾ وڏي پئماني تي سي پي يو جي استعمال سبب، مهرباني ڪري هن آپشن کي احتياط سان فعال ڪريو.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="102" />
         <source>Enable Tun Routing</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tun Routing کي فعال ڪريو</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="109" />
         <source>AutoRedirect</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">خودڪار ريڊائريڪٽ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="125" />
         <source>Tun address</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ٽين ايڊريس</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="135" />
         <source>Tun ipv6 address</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ٽيون ipv6 ايڊريس</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="150" />
@@ -1569,17 +1571,17 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_anytls.ui" line="30" />
         <source>Idle Session Check Interval</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">بيڪار سيشن چيڪ وقفو</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_anytls.ui" line="40" />
         <source>Idle Session Timeout</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">بيڪار سيشن جو وقت ختم</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_anytls.ui" line="50" />
         <source>Min Idle Session</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">گھٽ ۾ گھٽ بيڪار سيشن</translation>
     </message>
 </context>
 <context>
@@ -1587,17 +1589,17 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_chain.ui" line="20" />
         <source>Traffic order is from top to bottom</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ٽريفڪ جو حڪم مٿي کان هيٺ تائين آهي</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_chain.ui" line="49" />
         <source>Select Profile</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">پروفائل چونڊيو</translation>
     </message>
     <message>
         <location filename="../../src/ui/profile/edit_chain.cpp" line="28" />
         <source>Name cannot be empty.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">نالو خالي نه ٿو ٿي سگھي.</translation>
     </message>
 </context>
 <context>
@@ -1605,27 +1607,27 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_custom.ui" line="28" />
         <source>Core</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ڪور</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_custom.ui" line="41" />
         <source>Json Editor</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">جيسن ايڊيٽر</translation>
     </message>
     <message>
         <location filename="../../src/ui/profile/edit_custom.cpp" line="53" />
         <source>Outbound JSON, please read the documentation.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ٻاھرين JSON، مھرباني ڪري پڙھو دستاويز.</translation>
     </message>
     <message>
         <location filename="../../src/ui/profile/edit_custom.cpp" line="55" />
         <source>Please fill the complete config.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">مهرباني ڪري مڪمل ترتيب ڀريو.</translation>
     </message>
     <message>
         <location filename="../../src/ui/profile/edit_custom.cpp" line="64" />
         <source>Name cannot be empty.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">نالو خالي نه ٿو ٿي سگھي.</translation>
     </message>
 </context>
 <context>
@@ -1638,7 +1640,7 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="29" />
         <source>Socks address</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">جراب جو پتو</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="36" />
@@ -1648,52 +1650,52 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="43" />
         <source>Socks port</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">جراب جي بندرگاهه</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="50" />
         <source>1080</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">1080</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="78" />
         <source>Core path</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">بنيادي رستو</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="95" />
         <source>Choose from file</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">فائل مان چونڊيو</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="114" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;args to pass to the executable. You can insert a single %s and it will be replaced with the path to a file containing the config entered below.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Args to pass to executeable.توھان ھڪڙو %s داخل ڪري سگھو ٿا ۽ اھو ھڪڙي فائل جي رستي سان تبديل ڪيو ويندو جنھن ۾ ھيٺ ڏنل ترتيب ڏنل آھي.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="117" />
         <source>Args</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ارگس</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="124" />
         <source>run -confPath %s</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">هلائڻ -confPath %s</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="131" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;contents of the config file that will be passed to the extra core process if %s is specified in the args&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;ڪانفگ فائل جو مواد جيڪو اضافي بنيادي عمل ڏانهن منتقل ڪيو ويندو جيڪڏهن %s کي args ۾ بيان ڪيو ويو آهي&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="134" />
         <source>Config</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ترتيب</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="144" />
         <source>No logs</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ڪوبه لاگ</translation>
     </message>
 </context>
 <context>
@@ -1716,17 +1718,17 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="40" />
         <source>Port range</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">پورٽ جي حد</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="55" />
         <source>Multiplexing</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ملٽي پلڪسنگ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="92" />
         <source>Transport</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ٽرانسپورٽ</translation>
     </message>
 </context>
 <context>
@@ -1734,73 +1736,73 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="24" />
         <source>Heartbeat</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">دل جي ڌڙڪن</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="45" />
         <source>Download (Mbps)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ڊائون لوڊ (Mbps)</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="69" />
         <source>Upload (Mbps)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">اپ لوڊ (Mbps)</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="81" />
         <source>Zero Rtt Handshake</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">زيرو Rtt هٿ ملائڻ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="90" />
         <source>UDP Relay Mode</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">UDP رلي موڊ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="115" />
         <source>Congestion Control</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ڪنجيشن ڪنٽرول</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="147" />
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="177" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Comma seperated ranges: 100:200,500:600&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;ڪاما جدا ٿيل حدون: 100:200,500:600&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="154" />
         <source>Obfs Password</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Obfs پاسورڊ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="170" />
         <source>Disable MTU Discovery</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">MTU دريافت کي بند ڪريو</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="180" />
         <source>Port range</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">پورٽ جي حد</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="190" />
         <source>Hop Interval</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">هاپ جو وقفو</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="197" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;100ms&lt;br/&gt;1s&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;100ms&lt;br/&gt;1s&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="217" />
         <source>Auth Type</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">سند جو قسم</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="230" />
         <source>Auth Payload</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">آٿ پي لوڊ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="243" />
@@ -1810,28 +1812,28 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="257" />
         <source>Generate UUID</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">UUID ٺاھيو</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="293" />
         <location filename="../../src/ui/profile/edit_quic.cpp" line="149" />
         <source>Certificate</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">سرٽيفڪيٽ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="310" />
         <source>Disable SNI</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">SNI کي بند ڪريو</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="327" />
         <source>SNI</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">SNI</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="334" />
         <source>Allow Insecure</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">اجازت ڏيو غير محفوظ</translation>
     </message>
 </context>
 <context>
@@ -1844,7 +1846,7 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="20" />
         <source>User</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">استعمال ڪندڙ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="30" />
@@ -1854,12 +1856,12 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="40" />
         <source>Private Key</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">خانگي چاٻي</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="50" />
         <source>Private Key Password</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">پرائيويٽ ڪي پاسورڊ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="60" />
