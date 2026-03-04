@@ -15,6 +15,7 @@
 #include <QInputDialog>
 #include <QMessageBox>
 #include <QTimer>
+#include <qboxlayout.h>
 #include <qfontdatabase.h>
 #include "nekobox/sys/Settings.h"
 #include "nekobox/dataStore/ResourceEntity.hpp"
@@ -81,9 +82,11 @@ QVariant LanguageModel::data(const QModelIndex &index, int role ) const
         connect(okButton, &QPushButton::clicked, this, &LanguageSelectionDialog::onOkClicked);
         connect(cancelButton, &QPushButton::clicked, this, &LanguageSelectionDialog::reject);
 
+        QHBoxLayout *hlayout = new QHBoxLayout(this);
         // Add buttons to layout
-        layout->addWidget(okButton);
-        layout->addWidget(cancelButton);
+        hlayout->addWidget(okButton);
+        hlayout->addWidget(cancelButton);
+        layout->addLayout(hlayout);
 
         // Set the layout for the dialog
         setLayout(layout);
@@ -116,6 +119,8 @@ DialogBasicSettings::DialogBasicSettings(MainWindow *parent)
 
     connect(ui->language_button, &QPushButton::clicked, this, [=,this] {
         auto select_language = std::make_shared<LanguageSelectionDialog>(this);
+        select_language->show();
+        select_language->exec();
     });    
 
     // Auto-testing
