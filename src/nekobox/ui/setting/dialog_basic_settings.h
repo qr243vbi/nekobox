@@ -80,6 +80,7 @@ private:
     Ui::DialogBasicSettings *ui;
 
     struct {
+        QString language_core;
         QString custom_inbound;
         bool needRestart = false;
         bool updateDisableTray = false;

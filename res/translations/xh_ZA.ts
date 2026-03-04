@@ -20,7 +20,7 @@
     <message>
         <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="78" />
         <source>Remember</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Khumbula</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="105" />
@@ -2968,7 +2968,7 @@ Ngolwazi oluthe vetshe, bona uxwebhu "Uqwalaselo/DNS".</translation>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3522" />
         <source>Edit selected Group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Hlela Iqela elikhethiweyo</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3531" />
@@ -3188,7 +3188,7 @@ Ngolwazi oluthe vetshe, bona uxwebhu "Uqwalaselo/DNS".</translation>
     <message>
         <location filename="../../src/configs/ConfigBuilder.cpp" line="159" />
         <source>Tun mode cannot be used with Custom configs</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Imo yeTun ayinakusetyenziswa ngolungelelwaniso lweSiko</translation>
     </message>
     <message>
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="913" />
