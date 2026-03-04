@@ -1239,17 +1239,17 @@
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="55" />
         <source>Sniff result for routing</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Resultat de l'olor per a l'encaminament</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="69" />
         <source>Routing Profile</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Perfil d'encaminament</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="92" />
         <source>Inbound Domain Strategy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Estratègia de domini entrant</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="107" />
@@ -1284,22 +1284,22 @@
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="149" />
         <source>Remote Rule-set Mirror</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Mirall de conjunt de regles remots</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="162" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Resolve domains to IP before connect, also affects the server address as well&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Resol dominis a IP abans de connectar-se, també afecta l'adreça del servidor&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="165" />
         <source>Outbound Domain Strategy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Estratègia de domini sortint</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="178" />
         <source>RuleSet download url</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">URL de descàrrega de RuleSet</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="192" />
@@ -1309,13 +1309,13 @@
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="198" />
         <source>DNS Server</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Servidor DNS</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="216" />
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="312" />
         <source>Listen Port</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Escolta Port</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="226" />
@@ -1325,23 +1325,23 @@
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="236" />
         <source>IPv6 Response</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Resposta IPv6</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="246" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Following format should be used:&lt;br/&gt;domain:a.com&lt;/p&gt;&lt;p&gt;suffix:a.com&lt;/p&gt;&lt;p&gt;regex:someregex&lt;/p&gt;&lt;p&gt;rule_set:nameOfRuleSet&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;S'ha d'utilitzar el format següent:&lt;br/&gt;domain:a.com&lt;/p&gt;&lt;p&gt;sufix:a.com&lt;/p&gt;&lt;p&gt;regex:someregex&lt;/p&gt;&lt;p&gt;rule_set:nameOfRuleSet&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="249" />
         <source>Rules</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Normes</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="280" />
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="319" />
         <source>Enable</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Activa</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="287" />
@@ -1351,80 +1351,82 @@
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="290" />
         <source>Allow Lan to Connect</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Permet que Lan es connecti</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="303" />
         <source>Redirect Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Configuració de redirecció</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="329" />
         <source>Listen Address</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Escolta l'adreça</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="340" />
         <source>DNS</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">DNS</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="346" />
         <source>Simple DNS Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Configuració DNS senzilla</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="352" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;examples:&lt;br/&gt;tls://8.8.8.8&lt;br/&gt;https://domain/path&lt;/p&gt;&lt;p&gt;tcp://8.8.8.8:1234&lt;/p&gt;&lt;p&gt;dhcp://auto&lt;/p&gt;&lt;p&gt;h3://domain/path&lt;/p&gt;&lt;p&gt;quic://domain:4632&lt;/p&gt;&lt;p&gt;etc&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;exemples:&lt;br/&gt;tls://8.8.8.8&lt;br/&gt;https://domain/path&lt;/p&gt;&lt;p&gt;tcp://8.8.8.8:1234&lt;/p&gt;&lt;p&gt;dhcp://auto&lt;/p&gt;&lt;p&gt;h3://domain/path&lt;/p&gt;&lt;p&gt;quic://domain:463.html&gt;&lt;/p&gt;&lt;p&gt;&lt;/body&gt;html&gt;&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="355" />
         <source>Remote DNS</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">DNS remot</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="367" />
         <source>Default DNS server</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Servidor DNS predeterminat</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="428" />
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="502" />
         <source>Query Strategy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Estratègia de consultes</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="440" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Local DNS can not be used in some configurations, you will have to set an ip here to be used as local dns in such situations&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;El DNS local no es pot utilitzar en algunes configuracions, haureu de configurar aquí una ip per utilitzar-la com a DNS local en aquestes situacions&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="443" />
         <source>Local Override</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Anul·lació local</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="450" />
         <source>This is especially important and it is recommended to use the default value of "localhost".
 If the default value does not work, try changing it to "223.5.5.5".
 For more information, see the document "Configuration/DNS".</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Això és especialment important i es recomana utilitzar el valor predeterminat de "localhost".
+Si el valor predeterminat no funciona, proveu de canviar-lo a "223.5.5.5".
+Per a més informació, consulteu el document "Configuració/DNS".</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="455" />
         <source>Direct DNS</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">DNS directe</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="514" />
         <source>Enable FakeIP</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Activa FakeIP</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="524" />
         <source>DNS Object Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Configuració d'objectes DNS</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="532" />
@@ -1449,68 +1451,68 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="580" />
         <source>Routing Profiles</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Perfils d'encaminament</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="592" />
         <source>New</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Nou</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="599" />
         <source>Clone</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Clonar</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="606" />
         <source>Export</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Exporta</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="613" />
         <source>Edit</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Edita</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="620" />
         <source>Delete</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Suprimeix</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="30" />
         <source>Invalid state</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Estat no vàlid</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="30" />
         <source>The list of routing profiles is empty, this should be an unreachable state, crashes may occur now</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">La llista de perfils d'encaminament està buida, aquest hauria de ser un estat inabastable, ara es poden produir bloquejos</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="203" />
         <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="207" />
         <source>Invalid settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Configuració no vàlida</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="203" />
         <source>Routing profile cannot be empty</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">El perfil d'encaminament no pot estar buit</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="207" />
         <source>DNS Rules are not valid</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Les regles DNS no són vàlides</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="315" />
         <source>Invalid operation</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Operació no vàlida</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="315" />
         <source>Routing Profiles cannot be empty, try adding another profile or editing this one</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Els perfils d'encaminament no poden estar buits; proveu d'afegir un altre perfil o editar-lo</translation>
     </message>
 </context>
 <context>
@@ -1518,47 +1520,47 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="14" />
         <source>Tun Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tun Settings</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="85" />
         <source>Tun Enable IPv6</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tun Enable IPv6</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="92" />
         <source>Strict Route</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ruta estricta</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="99" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;When enabled, Direct IP CIDRs and rule sets will also be added to the Tun setting to be excluded at OS routing level. IMPORTANT: Large rule sets have been reported to cause massive CPU usage in windows, please enable this option with caution.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Quan està activat, els CIDR IP directes i els conjunts de regles també s'afegiran a la configuració Tun per excloure's al nivell d'encaminament del sistema operatiu.IMPORTANT: S'ha informat que grans conjunts de regles provoquen un ús massiu de la CPU a Windows; activeu aquesta opció amb precaució.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="102" />
         <source>Enable Tun Routing</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Habilita Tun Routing</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="109" />
         <source>AutoRedirect</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Redirecció automàtica</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="125" />
         <source>Tun address</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Adreça de Tun</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="135" />
         <source>Tun ipv6 address</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tun adreça IPv6</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="150" />
         <source>Exclude CIDR's</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Exclou els CIDR</translation>
     </message>
 </context>
 <context>
@@ -1566,22 +1568,22 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_anytls.ui" line="20" />
         <source>Password</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Contrasenya</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_anytls.ui" line="30" />
         <source>Idle Session Check Interval</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Interval de comprovació de la sessió inactiva</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_anytls.ui" line="40" />
         <source>Idle Session Timeout</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Temps d'espera de la sessió inactiva</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_anytls.ui" line="50" />
         <source>Min Idle Session</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Sessió mínima inactiva</translation>
     </message>
 </context>
 <context>
@@ -1589,17 +1591,17 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_chain.ui" line="20" />
         <source>Traffic order is from top to bottom</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">L'ordre del trànsit és de dalt a baix</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_chain.ui" line="49" />
         <source>Select Profile</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Seleccioneu Perfil</translation>
     </message>
     <message>
         <location filename="../../src/ui/profile/edit_chain.cpp" line="28" />
         <source>Name cannot be empty.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">El nom no pot estar buit.</translation>
     </message>
 </context>
 <context>
@@ -1607,27 +1609,27 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_custom.ui" line="28" />
         <source>Core</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Nucli</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_custom.ui" line="41" />
         <source>Json Editor</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Editor Json</translation>
     </message>
     <message>
         <location filename="../../src/ui/profile/edit_custom.cpp" line="53" />
         <source>Outbound JSON, please read the documentation.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">JSON de sortida, llegiu la documentació.</translation>
     </message>
     <message>
         <location filename="../../src/ui/profile/edit_custom.cpp" line="55" />
         <source>Please fill the complete config.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ompliu la configuració completa.</translation>
     </message>
     <message>
         <location filename="../../src/ui/profile/edit_custom.cpp" line="64" />
         <source>Name cannot be empty.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">El nom no pot estar buit.</translation>
     </message>
 </context>
 <context>
@@ -1635,12 +1637,12 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="14" />
         <source>Form</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Formulari</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="29" />
         <source>Socks address</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Adreça dels mitjons</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="36" />
@@ -1650,12 +1652,12 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="43" />
         <source>Socks port</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Port de mitjons</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="50" />
         <source>1080</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">1080</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="78" />
@@ -1665,7 +1667,7 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="95" />
         <source>Choose from file</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Trieu un fitxer</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="114" />
@@ -1675,17 +1677,17 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="117" />
         <source>Args</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Args</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="124" />
         <source>run -confPath %s</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">executeu -confPath %s</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="131" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;contents of the config file that will be passed to the extra core process if %s is specified in the args&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;contingut del fitxer de configuració que es passarà al procés central addicional si s'especifica %s als arguments&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="134" />
@@ -1695,7 +1697,7 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="144" />
         <source>No logs</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Sense registres</translation>
     </message>
 </context>
 <context>
@@ -1708,27 +1710,27 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="20" />
         <source>Username</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Nom d'usuari</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="30" />
         <source>Password</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Contrasenya</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="40" />
         <source>Port range</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Interval de ports</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="55" />
         <source>Multiplexing</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Multiplexació</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="92" />
         <source>Transport</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Transport</translation>
     </message>
 </context>
 <context>
@@ -1736,27 +1738,27 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="24" />
         <source>Heartbeat</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Batec del cor</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="45" />
         <source>Download (Mbps)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Baixa (Mbps)</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="69" />
         <source>Upload (Mbps)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Carrega (Mbps)</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="81" />
         <source>Zero Rtt Handshake</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Encaixada de mans Zero Rtt</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="90" />
         <source>UDP Relay Mode</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Mode de relé UDP</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="115" />
@@ -1767,73 +1769,73 @@ For more information, see the document "Configuration/DNS".</source>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="147" />
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="177" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Comma seperated ranges: 100:200,500:600&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Intervals separats per comes: 100:200,500:600&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="154" />
         <source>Obfs Password</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Contrasenya obfs</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="170" />
         <source>Disable MTU Discovery</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Desactiva MTU Discovery</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="180" />
         <source>Port range</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Interval de ports</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="190" />
         <source>Hop Interval</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Interval de salt</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="197" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;100ms&lt;br/&gt;1s&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;100 ms&lt;br/&gt;1s&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="217" />
         <source>Auth Type</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tipus d'autenticació</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="230" />
         <source>Auth Payload</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Càrrega útil d'autenticació</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="243" />
         <source>Password</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Contrasenya</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="257" />
         <source>Generate UUID</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Genera UUID</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="293" />
         <location filename="../../src/ui/profile/edit_quic.cpp" line="149" />
         <source>Certificate</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Certificat</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="310" />
         <source>Disable SNI</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Desactiva SNI</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="327" />
         <source>SNI</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">SNI</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="334" />
         <source>Allow Insecure</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Permet insegur</translation>
     </message>
 </context>
 <context>
@@ -1846,27 +1848,27 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="20" />
         <source>User</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Usuari</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="30" />
         <source>Password</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Contrasenya</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="40" />
         <source>Private Key</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Clau privada</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="50" />
         <source>Private Key Password</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Contrasenya de clau privada</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="60" />
         <source>Host Key</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Clau de l'amfitrió</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="70" />
