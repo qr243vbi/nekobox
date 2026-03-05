@@ -1,12 +1,15 @@
 #!/bin/bash
 if [[ ! -e "$HOME"/.config/osc/oscrc ]]
 then
-echo '[general]' > oscrc
-echo 'apiurl=https://api.opensuse.org' >> oscrc
-echo '[https://api.opensuse.org]' >> oscrc
-echo "user=${OBS_USER}" >> oscrc
-echo "pass=${OBS_PASSWORD}" >> oscrc
-echo 'credentials_mgr_class=osc.credentials.ObfuscatedConfigFileCredentialsManager' >> oscrc
+cat << EOFEOF > oscrc
+[general]
+apiurl=https://api.opensuse.org
+
+[https://api.opensuse.org]
+user=${OBS_USER}
+pass=${OBS_PASSWORD}
+credentials_mgr_class=osc.credentials.PlaintextConfigFileCredentialsManager
+EOFEOF
 
 install -Dm644 oscrc "$HOME"/.config/osc/oscrc
 fi
