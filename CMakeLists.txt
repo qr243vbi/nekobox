@@ -387,6 +387,11 @@ target_link_libraries(nekobox PRIVATE
 
 if (MSVC)
     target_compile_options(nekobox PRIVATE "/std:c++20")       # add c++20 feature
+    if(CMAKE_SIZEOF_VOID_P EQUAL 4)
+        set_target_properties(nekobox PROPERTIES
+            MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>"
+        )
+    endif()
 endif()
 
 qt_finalize_executable(nekobox)

@@ -18,11 +18,6 @@ if (MINGW)
         set(MinGW_ROOT "C:/msys64/mingw64")
     endif ()
 elseif (MSVC)
-    if(CMAKE_SIZEOF_VOID_P EQUAL 4)
-        set_target_properties(nekobox PROPERTIES
-            MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>"
-        )
-    endif()
     add_compile_options(/permissive-)
     add_compile_options("/utf-8")
     add_compile_options("/wd4702")
