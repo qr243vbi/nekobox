@@ -9,6 +9,8 @@ run.ps1
 global.ini
 translate.py
 TEMP
+script/PKGBUILD
+script/nekobox_temp
 gen-cpp
 core/updater/vendor/*
 core/server/vendor/*
