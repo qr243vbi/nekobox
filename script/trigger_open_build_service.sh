@@ -1,7 +1,11 @@
 #!/bin/bash
+
 if [[ ! -e "$HOME"/.config/osc/oscrc ]]
 then
-cat << EOFEOF > oscrc
+
+mkdir -p "$HOME"/.config/osc ||:
+
+cat << EFO > "$HOME"/.config/osc/oscrc
 [general]
 apiurl=https://api.opensuse.org
 
@@ -9,11 +13,9 @@ apiurl=https://api.opensuse.org
 user=${OBS_USER}
 pass=${OBS_PASSWORD}
 credentials_mgr_class=osc.credentials.PlaintextConfigFileCredentialsManager
-EOFEOF
+EFO
 
-install -Dm644 oscrc "$HOME"/.config/osc/oscrc
 fi
-
 
 . PKGBUILD
 mkdir nekobox_temp
@@ -22,7 +24,7 @@ pushd nekobox_temp
 pkgurl="$(echo ${source[0]} | sed "s@$pkgver@%{version}@g;" )"
 
 osc co home:juzbun:NekoBox/nekobox -o nekobox
-osc co network:vpn/nekobox -o nekobox_tumbleweed
+osc co network:vpn/nekobox --meta -o nekobox_tumbleweed
 
 (
 cd nekobox
@@ -62,7 +64,8 @@ if len(msg) > 0 and 'Update to $INPUT_VERSION' not in text:
  f=open('nekobox.changes', 'w')
  f.write(text)
  f.close()
-print(text)"
+print(text)
+"
 
 osc ci -m update 
 
