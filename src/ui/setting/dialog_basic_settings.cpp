@@ -250,7 +250,9 @@ DialogBasicSettings::DialogBasicSettings(MainWindow *parent)
     });
     //
     ui->theme->addItems(QStyleFactory::keys());
-    ui->theme->addItem("QDarkStyle");
+    ui->theme->addItem("Dark");
+    ui->theme->addItem("AMOLED");
+    ui->theme->addItem("Aqua");
     //
 //    bool ok;
     ui->theme->setCurrentText(settings->theme);
