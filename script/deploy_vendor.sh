@@ -45,9 +45,12 @@ if [[ ! -e "$DEPLOYMENT" ]]
 then
  mkdir "$DEPLOYMENT"
 fi
-git ls-files --recurse-submodules | tar --transform="s,^,$archive_standalone/,S" -c --xz -f "$DEPLOYMENT/$archive_standalone.tar.xz" -T-
+
+(git ls-files | grep -v core/server/sing-box  ; (cd core/server/sing-box; git ls-files | sed 's@^@core/server/sing-box/@') ) | tar --transform="s,^,$archive_standalone/,S" -c --xz -f "$DEPLOYMENT/$archive_standalone.tar.xz" -T-
 sha256sum "$DEPLOYMENT/$archive_standalone.tar.xz" > "$DEPLOYMENT/$archive_standalone.tar.xz.sha256sum"
 
 git reset --soft HEAD^1
+git rm -rf srslist* global.ini core/server/{gen/{libcore_service-remote,main_sing,*.go},vendor} SingBox.Version
+
 
 popd
