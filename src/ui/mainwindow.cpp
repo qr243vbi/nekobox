@@ -3531,6 +3531,11 @@ void MainWindow::on_tabWidget_customContextMenuRequested(const QPoint &p) {
                 tr("Remove %1?")
                     .arg(Configs::profileManager->groups[id]->name)) ==
             QMessageBox::StandardButton::Yes) {
+          if (running != nullptr) {
+            if (running->gid == id) {
+              profile_stop(false, true, false);
+            }
+          }
           Configs::profileManager->DeleteGroup(id);
           MW_dialog_message(Dialog_DialogManageGroups, "refresh-1");
         }
