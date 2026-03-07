@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>nekobox</id>
+    <version>5.1.18</version>
+    <title>nekobox (Install)</title>
+    <authors>qr243vbi</authors>
+	<licenseUrl>https://www.gnu.org/licenses/gpl-3.0.txt</licenseUrl>
+	<iconUrl>https://raw.githubusercontent.com/qr243vbi/nekobox/refs/heads/main/res/public/Tun.png</iconUrl>
+    <projectUrl>https://github.com/qr243vbi/nekobox</projectUrl>
+    <projectSourceUrl>https://github.com/qr243vbi/nekobox</projectSourceUrl>
+    <packageSourceUrl>https://github.com/qr243vbi/nekobox/tree/main/script/nekobox_template</packageSourceUrl>
+    <tags>nekobox proxy</tags>
+    <summary>Nekobox For PC</summary>
+	<releaseNotes /> 
+    <mailingListUrl>https://github.com/qr243vbi/nekobox/discussions</mailingListUrl>
+    <docsUrl>https://github.com/qr243vbi/nekobox/blob/main/README.md</docsUrl>
+    <bugTrackerUrl>https://github.com/qr243vbi/nekobox/issues</bugTrackerUrl>
+    <description>The Original NekoBox Rebranded, Qt based cross-platform GUI proxy configuration manager (backend: sing-box)</description>
+	<dependencies>
+     <dependency id="vcredist140" version="14.0.0"/>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools"></file>
+  </files>
+</package>

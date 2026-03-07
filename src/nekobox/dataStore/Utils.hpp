@@ -1,0 +1,314 @@
+#pragma once
+
+#include "3rdparty/qv2ray/wrapper.hpp"
+#include <QDebug>
+#include <QFile>
+#include <QJsonArray>
+#include <QObject>
+#include <QString>
+#include <QUrlQuery>
+#include <QVariantMap>
+#include <functional>
+#include <memory>
+#if QT_VERSION >= QT_VERSION_CHECK(6, 5, 0)
+#include <QStyleHints>
+#endif
+//
+
+QString defStr(const QString &value, const QString def);
+
+#ifndef KEY_VALUE_RANGE
+#define KEY_VALUE_RANGE
+#include <type_traits>
+#include <utility>
+template <typename T> class KeyValueRange {
+private:
+  T iterable; // This is either a reference or a moved-in value. The map data
+              // isn't copied.
+public:
+  KeyValueRange(T &iterable) : iterable(iterable) {}
+  KeyValueRange(std::remove_reference_t<T> &&iterable) noexcept
+      : iterable(std::move(iterable)) {}
+  auto begin() const { return iterable.keyValueBegin(); }
+  auto end() const { return iterable.keyValueEnd(); }
+};
+
+template <typename T,
+          typename = std::enable_if_t<!std::is_same_v<T, QJsonObject>>>
+auto asKeyValueRange(T &iterable) {
+  return KeyValueRange<T &>(iterable);
+}
+
+template <typename T,
+          typename = std::enable_if_t<!std::is_same_v<T, QJsonObject>>>
+auto asKeyValueRange(const T &iterable) {
+  return KeyValueRange<const T &>(iterable);
+}
+
+template <typename T,
+          typename = std::enable_if_t<!std::is_same_v<T, QJsonObject>>>
+auto asKeyValueRange(T &&iterable) noexcept {
+  return KeyValueRange<T>(std::move(iterable));
+}
+
+#include <QList>
+#include <cstddef>
+
+template <typename T> class ListRange {
+private:
+  T list;
+
+public:
+  ListRange(T &iterable) : list(iterable) {}
+  ListRange(std::remove_reference_t<T> &&iterable) noexcept
+      : list(std::move(iterable)) {}
+
+  class iterator {
+    using ListType = std::remove_reference_t<T>;
+    using BaseIter = std::conditional_t<std::is_const_v<ListType>,
+                                        typename ListType::const_iterator,
+                                        typename ListType::iterator>;
+
+    BaseIter it;
+    std::size_t index;
+
+  public:
+    iterator(BaseIter it, std::size_t index) : it(it), index(index) {}
+
+    auto operator*() const {
+      return std::pair<std::size_t, decltype(*it)>(index, *it);
+    }
+
+    iterator &operator++() {
+      ++it;
+      ++index;
+      return *this;
+    }
+
+    bool operator!=(const iterator &other) const { return it != other.it; }
+  };
+
+  auto begin() { return iterator(list.begin(), 0); }
+
+  auto end() { return iterator(list.end(), 0); }
+};
+
+template <typename T> auto asListRange(QList<T> &list) {
+  return ListRange<QList<T> &>(list);
+}
+
+template <typename T> auto asListRange(const QList<T> &list) {
+  return ListRange<const QList<T> &>(list);
+}
+
+template <typename T> auto asListRange(QList<T> &&list) {
+  return ListRange<QList<T>>(std::move(list));
+}
+
+#endif
+
+#ifndef ADD_MAP
+
+#define ITEM_TYPE(X) itemType::type_##X
+#define MAP_BODY                                                               \
+  static ConfJsMapStat ptr;                                                    \
+  static bool init = false;                                                    \
+  if (init)                                                                    \
+    return ptr;
+
+#define DECL_MAP(X)                                                            \
+  ConfJsMap X::_map() {                                                        \
+    MAP_BODY
+
+#define INIT_MAP_1                                                             \
+  virtual ConfJsMap _map() override {                                          \
+    MAP_BODY
+
+#define INIT_MAP                                                               \
+  INIT_MAP_1                                                                   \
+  ptr = AbstractBean::_map();
+
+#define STOP_MAP                                                               \
+  init = true;                                                                 \
+  return ptr;                                                                  \
+  }
+
+#define ADD_MAP(X, Y, B) _put(ptr, X, &this->Y)
+//, ITEM_TYPE(B))
+#endif
+
+#ifndef NKR_VERSION
+inline QString software_version;
+const char *getSoftwareVersion();
+#define NKR_VERSION getSoftwareVersion()
+#define NKR_DYNAMIC_VERSION dynamic
+#endif
+inline QString serverName;
+inline QString software_build_date;
+inline QString software_name;
+inline QString software_core_name;
+
+#define root_directory QApplication::applicationDirPath()
+#define software_path QApplication::applicationFilePath()
+
+// MainWindow functions
+inline std::function<void(QString)> MW_show_log;
+inline std::function<void(QString, QString)> MW_dialog_message;
+
+// Dispatchers
+
+class QThread;
+inline QThread *DS_cores;
+
+// Timers
+
+class QTimer;
+inline QTimer *TM_auto_update_subsctiption;
+inline std::function<void(int)> TM_auto_update_subsctiption_Reset_Minute;
+
+// String
+
+#define FIRST_OR_SECOND(a, b) a.isEmpty() ? b : a
+
+inline const QString UNICODE_LRO =
+    QString::fromUtf8(QByteArray::fromHex("E280AD"));
+
+QString SubStrBefore(QString str, const QString &sub);
+
+QString SubStrAfter(QString str, const QString &sub);
+
+QString QStringList2Command(const QStringList &list);
+
+QStringList SplitLines(const QString &_string);
+
+QStringList SplitLinesSkipSharp(const QString &_string, int maxLine = 0);
+
+// Base64
+
+QByteArray DecodeB64IfValid(const QString &input,
+                            QByteArray::Base64Options options =
+                                QByteArray::Base64Option::Base64Encoding);
+
+// URL
+
+class QUrlQuery;
+
+#define GetQuery(url)                                                          \
+  QUrlQuery((url).query(QUrl::ComponentFormattingOption::FullyDecoded));
+
+QString GetQueryValue(const QUrlQuery &q, const QString &key,
+                      const QString &def = "");
+
+int GetQueryIntValue(const QUrlQuery &q, const QString &key, int def = 0);
+QStringList GetQueryListValue(const QUrlQuery &q, const QString &key);
+
+inline const int ExcludeDigits = 1;
+inline const int ExcludeLetters = 2;
+inline const int ExcludeLowercase = 4;
+inline const int ExcludeUppercase = 8;
+
+QString GetRandomString(int randomStringLength, int flags = 0);
+
+void MoveDirToTrash(const QString &path);
+
+quint64 GetRandomUint64();
+
+QJsonArray QListInt2QJsonArray(const QList<int> &list);
+
+QJsonArray QListStr2QJsonArray(const QList<QString> &list);
+
+QList<int> QJsonArray2QListInt(const QJsonArray &arr);
+
+QJsonObject QMapString2QJsonObject(const QMap<QString, QString> &mp);
+
+#define QJSONARRAY_ADD(arr, add)                                               \
+  for (const auto &a : (add)) {                                                \
+    (arr) += a;                                                                \
+  }
+#define QJSONOBJECT_COPY(src, dst, key)                                        \
+  if (src.contains(key))                                                       \
+    dst[key] = src[key];
+#define QJSONOBJECT_COPY2(src, dst, src_key, dst_key)                          \
+  if (src.contains(src_key))                                                   \
+    dst[dst_key] = src[src_key];
+
+QList<QString> QJsonArray2QListStr(const QJsonArray &arr);
+
+QJsonArray QString2QJsonArray(const QString &str);
+
+// Files
+
+QByteArray ReadFile(const QString &path);
+QByteArray ReadFile(QFile &path);
+
+QString ReadFileText(const QString &path);
+QString ReadFileText(QFile &path);
+
+bool WriteFileText(const QString &path, const QString &text);
+bool WriteFileText(QFile &file, const QString &notes);
+
+bool WriteFile(const QString &path, const QByteArray &text);
+bool WriteFile(QFile &file, const QByteArray &notes);
+// Validators
+
+bool IsIpAddress(const QString &str);
+
+bool IsIpAddressV4(const QString &str);
+
+bool IsIpAddressV6(const QString &str);
+
+// [2001:4860:4860::8888] -> 2001:4860:4860::8888
+QString UnwrapIPV6Host(QString &str);
+
+// [2001:4860:4860::8888] or 2001:4860:4860::8888 -> [2001:4860:4860::8888]
+QString WrapIPV6Host(QString &str);
+
+QString DisplayAddress(QString serverAddress, int serverPort);
+
+QString DisplayDest(const QString &dest, QString domain);
+
+// Format & Misc
+int MkPort();
+
+QString DisplayTime(long long time, int formatType = 0);
+
+QString ReadableSize(const qint64 &size);
+
+bool InRange(unsigned x, unsigned low, unsigned high);
+
+bool IsValidPort(int port);
+
+void runOnNewThread(const std::function<void()> &callback);
+
+void runOnThread(const std::function<void()> &callback, QObject *parent);
+
+void AddQueryString(QUrlQuery &query, const QString &name,
+                    const QString &value);
+
+void AddQueryStringList(QUrlQuery &query, const QString &name,
+                        const QStringList &value);
+
+void AddQueryMap(QUrlQuery &query, const QString &name,
+                 const QVariantMap &value);
+
+void AddQueryInt(QUrlQuery &query, const QString &name, int value);
+
+void AddQueryNatural(QUrlQuery &query, const QString &name, int value);
+
+QStringList GetQueryListValue(const QUrlQuery &q, const QString &key);
+
+QVariantMap QString2QMap(const QString &key);
+
+QString QMap2QString(const QVariantMap &map);
+
+QVariantMap GetQueryMapValue(const QUrlQuery &q, const QString &key);
+
+QString QJsonType2QString(QJsonValue::Type type);
+
+std::vector<std::string> QListStr2VectorStr(const QStringList &list);
+
+QStringList VectorStr2QListStr(const std::vector<std::string> &list);
+
+std::vector<int> QListInt2VectorInt(const QList<int> &list);
+
+QList<int> VectorInt2QListInt(const std::vector<int> &list);

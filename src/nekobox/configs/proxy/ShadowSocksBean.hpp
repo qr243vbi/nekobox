@@ -1,0 +1,46 @@
+#pragma once
+
+#include "AbstractBean.hpp"
+#include "V2RayStreamSettings.hpp"
+#include "Preset.hpp"
+
+namespace Configs {
+    class ShadowSocksBean : public AbstractBean {
+    public:
+        QString method = "aes-128-gcm";
+        QString password = "";
+        QString plugin = "";
+        QString plugin_opts = "";
+        int uot = 0;
+
+        std::shared_ptr<V2rayStreamSettings> stream = std::make_shared<V2rayStreamSettings>();
+
+        ShadowSocksBean() : AbstractBean(0) {
+        }
+
+        INIT_MAP
+            ADD_MAP("method", method, string);
+            ADD_MAP("pass", password, string);
+            ADD_MAP("plugin", plugin, string);
+            ADD_MAP("plugin_opts", plugin_opts, string);
+            ADD_MAP("uot", uot, integer);
+            ADD_MAP("stream", stream, jsonStore);
+        STOP_MAP
+
+        bool IsValid() {
+            return Preset::SingBox::ShadowsocksMethods.contains(method);
+        }
+
+        QString DisplayType() override { return "Shadowsocks"; };
+
+        CoreObjOutboundBuildResult BuildCoreObjSingBox() override;
+
+        bool TryParseLink(const QString &link);
+
+        bool TryParseJson(const QJsonObject &obj);
+
+        bool TryParseFromSIP008(const QJsonObject& object);
+
+        QString ToShareLink() override;
+    };
+} // namespace Configs

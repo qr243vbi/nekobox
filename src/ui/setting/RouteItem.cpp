@@ -1,0 +1,613 @@
+#include "nekobox/ui/setting/RouteItem.h"
+#include "nekobox/ui/setting/dialog_manage_routes.h"
+#include "nekobox/ui/group/dialog_edit_group.h"
+#include "nekobox/dataStore/RouteEntity.h"
+#include "nekobox/dataStore/Database.hpp"
+#include "nekobox/api/RPC.h"
+#include "nekobox/global/GuiUtils.hpp"
+#include "nekobox/configs/ConfigBuilder.hpp"
+#include <qnamespace.h>
+#include <nekobox/global/HTTPRequestHelper.hpp>
+#include <QRadioButton>
+
+QList<QString> default_outbound_choose = {"proxy", "direct", "block"};
+
+void adjustComboBoxWidth(const QComboBox *comboBox) {
+    int maxWidth = 0;
+
+    // Iterate over all items and calculate the width required
+    for (int i = 0; i < comboBox->count(); ++i) {
+        QFontMetrics fontMetrics(comboBox->font());
+        int itemWidth = fontMetrics.horizontalAdvance(comboBox->itemText(i));
+        maxWidth = qMax(maxWidth, itemWidth);
+    }
+
+    // Add some padding to the width to avoid text being too close to the edge
+    maxWidth += 30;
+
+    // Set the minimum width for the drop-down menu
+    comboBox->view()->setMinimumWidth(maxWidth);
+}
+
+int RouteItem::getIndexOf(const QString& name) const {
+    for (int i=0;i<chain->Rules.size();i++) {
+        if (chain->Rules[i]->name == name) return i;
+    }
+
+    return -1;
+}
+
+QString get_outbound_name(int id) {
+    // -1 is proxy -2 is direct -3 is block -4 is dns-out
+    if (id == -1) return "proxy";
+    if (id == -2) return "direct";
+    auto profiles = Configs::profileManager->profiles;
+    if (profiles.count(id)) return profiles[id]->bean->name;
+    return "INVALID OUTBOUND";
+}
+
+QStringList get_all_outbounds() {
+    QStringList res;
+    auto profiles = Configs::profileManager->profiles;
+    for (const auto &item: profiles) {
+        res.append(item.second->bean->DisplayName());
+    }
+
+    return res;
+}
+
+RouteItem::RouteItem(QWidget *parent, const std::shared_ptr<Configs::RoutingChain>& routeChain)
+    : QDialog(parent), ui(new Ui::RouteItem) {
+        
+    ui->setupUi(this);
+
+    // make a copy
+    chain = std::make_shared<Configs::RoutingChain>(*routeChain);
+
+    // add the default rule if empty
+    if (chain->Rules.empty()) {
+        auto routeItem = std::make_shared<Configs::RouteRule>();
+        routeItem->name = "dns-hijack";
+        routeItem->protocol = "dns";
+        routeItem->action = "hijack-dns";
+        chain->Rules << routeItem;
+    }
+    connect(ui->update_manually, &QPushButton::clicked, this, [this](){
+        runOnNewThread( [this] () {
+        auto url = chain->update_url;
+        if (!url.isEmpty()) {
+            url = Configs::get_jsdelivr_link(url);
+            auto response = NetworkRequestHelper::HttpGet(url);
+            QString error = response.error;
+            if (error.isEmpty() && !response.data.isEmpty()) {
+                auto array = QString2QJsonArray(response.data);
+                if (array.isEmpty()){
+                    goto label1;
+                }
+                auto parsed = Configs::RoutingChain::parseJsonArray(
+                      array, &error);
+                if (error.isEmpty()) {
+                    chain->Rules.clear();
+                    chain->Rules << parsed;
+
+                runOnUiThread([=,this]{
+                    MessageBoxInfo(
+                    QCoreApplication::translate("MainWindow", "Update Response"),
+                    QCoreApplication::translate("MainWindow", "Updated %1 routing profiles").arg(
+                              "1"));
+                });
+                }
+            } else {
+                label1:
+                runOnUiThread([=,this]{
+                    MessageBoxWarning(
+                        QCoreApplication::translate("MainWindow", "Update Response"),
+                        QCoreApplication::translate("MainWindow", "No routing profiles are updated")); 
+                    });
+            }
+        }
+    });
+    });
+
+    ui->skip_update->setChecked( (chain->skip_update) ? Qt::Checked : Qt::Unchecked);
+
+    // setup rule set helper
+    for (const auto& item : ruleSetMap.keys()) {
+        geo_items.append(item);
+    }
+    rule_set_editor = new AutoCompleteTextEdit("", geo_items, this);
+    ui->rule_attr_data->layout()->addWidget(rule_set_editor);
+    ui->rule_attr_data->adjustSize();
+    rule_set_editor->hide();
+
+
+    proxy_chooser = new QPushButton(DialogEditGroup::get_proxy_name(-1), this);
+    ui->rule_attr_data->layout()->addWidget(proxy_chooser);
+    ui->rule_attr_data->adjustSize();
+    proxy_chooser->hide();
+
+    connect(proxy_chooser, &QPushButton::clicked, this, [this]()->void{
+        auto window = new DialogGroupChooseProxy(this);
+        auto ruleItem = chain->Rules[currentIndex];
+        int outbound_id = ruleItem->outboundID;
+        window->profile_selected(outbound_id, true);
+        window->last_id = outbound_id;
+        window->setWindowTitle(QCoreApplication::translate(
+        "DialogGroupChooseProxy","Select outbound"));
+        window->ui->proxy_label->setText(QCoreApplication::translate(
+        "DialogGroupChooseProxy","Outbound: "));
+        
+        QRadioButton *radio1 = new QRadioButton(QCoreApplication::translate(
+        "DialogGroupChooseProxy","Proxy"));
+        QRadioButton *radio2 = new QRadioButton(QCoreApplication::translate(
+        "DialogGroupChooseProxy","Direct"));
+        QRadioButton *radio3 = new QRadioButton(QCoreApplication::translate(
+        "DialogGroupChooseProxy","Outbound"));
+
+        // Create a layout and add radio buttons
+        QHBoxLayout *layout = new QHBoxLayout();
+        layout->addWidget(radio1);
+        layout->addWidget(radio2);
+        layout->addWidget(radio3);
+        
+        auto groupbox = window->ui->groupBox;
+        groupbox->setLayout(layout);
+        switch(outbound_id){
+            case -1:
+                radio1->setChecked(true);
+                break;
+            case -2:
+                radio2->setChecked(true);
+                break;
+            default:
+                radio3->setChecked(true);
+                break;
+        }
+
+        window->is_for_routeprofile = true;
+
+        connect(radio1, &QRadioButton::clicked, this, [window](bool b)->void{
+            window->profile_selected(-1);
+        });
+
+        connect(radio2, &QRadioButton::clicked, this, [window](bool b)->void{
+            window->profile_selected(-2);
+        });
+
+        connect(radio3, &QRadioButton::clicked, this, [window](bool b)->void{
+            window->profile_selected(window->last_id);
+        });
+
+        connect(window, &DialogGroupChooseProxy::select_proxy,
+                this, [=](int id)->void{
+            if (id >= 0){
+                window->last_id = id;
+                runOnUiThread([radio3]()->void{
+                    radio3->setChecked(true);
+                });
+            }
+        });
+
+        connect(window, &DialogGroupChooseProxy::set_proxy, 
+                this, [radio1, radio2, ruleItem, this](int id)->void{
+            if (radio1->isChecked()){
+                id = -1;
+            } else if (radio2->isChecked()){
+                id = -2;
+            }
+
+            proxy_chooser->setText(DialogEditGroup::get_proxy_name(id, true));
+            ruleItem->outboundID = id;
+            chain->Rules[currentIndex]->set_field_value("outbound", {QString::number(id)});
+            updateRulePreview();
+        });
+        window->show();
+    });
+
+    connect(rule_set_editor, &QPlainTextEdit::textChanged, this, [=,this]{
+        if (currentIndex == -1) return;
+        auto currentVal = rule_set_editor->toPlainText().split('\n');
+        chain->Rules[currentIndex]->set_field_value(ui->rule_attr->currentText(), currentVal);
+        updateRulePreview();
+    });
+
+    std::map<QString, int> valueMap;
+    for (auto &item: chain->Rules) {
+        auto baseName = item->name;
+        int randPart;
+        if (baseName == "") {
+            randPart = int(GetRandomUint64()%1000);
+            baseName = "rule_" + QString::number(randPart);
+            lastNum = std::max(lastNum, randPart);
+        }
+        while (true) {
+            valueMap[baseName]++;
+            if (valueMap[baseName] > 1) {
+                valueMap[baseName]--;
+                randPart = int(GetRandomUint64()%1000);
+                baseName = "rule_" + QString::number(randPart);
+                lastNum = std::max(lastNum, randPart);
+                continue;
+            }
+            item->name = baseName;
+            break;
+        }
+        ui->route_items->addItem(item->name);
+    }
+
+   // outbounds = {"proxy", "direct"};
+   // outbounds << get_all_outbounds();
+    // init outbound map
+   // outboundMap[0] = -1;
+   // outboundMap[1] = -2;
+   // for (const auto& item: Configs::profileManager->profiles) {
+   //     outboundMap[outboundMap.size()] = item.second->id;
+   // }
+
+    ui->route_name->setText(chain->chain_name);
+    ui->url->setText(chain->update_url);
+    ui->rule_attr->addItems(Configs::RouteRule::get_attributes());
+    adjustComboBoxWidth(ui->rule_attr);
+    ui->rule_attr_text->hide();
+    ui->rule_attr_data->setTitle("");
+    ui->rule_preview->setReadOnly(true);
+    updateRuleSection();
+
+    ui->def_out->setCurrentIndex(default_outbound_choose.indexOf(
+        Configs::outboundIDToString(chain->defaultOutboundID)
+    ));
+   // ui->def_out->setCurrentText(Configs::outboundIDToString(chain->defaultOutboundID));
+
+    // simple rules setup
+    QStringList ruleItems = {"domain:", "suffix:", "regex:", "keyword:", "ip:", "processName:", "processPath:", "ruleset:"};
+    for (const auto& item : ruleSetMap.keys()) {
+        ruleItems.append("ruleset:" +item);
+    }
+    simpleDirect = new AutoCompleteTextEdit("", ruleItems, this);
+    simpleBlock = new AutoCompleteTextEdit("", ruleItems, this);
+    simpleProxy = new AutoCompleteTextEdit("", ruleItems, this);
+
+    ui->simple_direct_box->layout()->replaceWidget(ui->simple_direct, simpleDirect);
+    ui->simple_block_box->layout()->replaceWidget(ui->simple_block, simpleBlock);
+    ui->simple_proxy_box->layout()->replaceWidget(ui->simple_proxy, simpleProxy);
+    ui->simple_direct->hide();
+    ui->simple_block->hide();
+    ui->simple_proxy->hide();
+
+    simpleDirect->setPlainText(chain->GetSimpleRules(Configs::direct));
+    simpleBlock->setPlainText(chain->GetSimpleRules(Configs::block));
+    simpleProxy->setPlainText(chain->GetSimpleRules(Configs::proxy));
+
+    connect(ui->tabWidget->tabBar(), &QTabBar::currentChanged, this, [this]()
+    {
+        auto tabBar = ui->tabWidget->tabBar();
+        int index = tabBar->currentIndex();
+
+        if (!route_item_on_notes){
+            if (index == 3){
+                ui->notes->setPlainText(this->chain->getNotes());
+                route_item_on_notes = true;
+            }    
+        }
+        if (index == 2)
+        {
+            QString res;
+            res += chain->UpdateSimpleRules(simpleDirect->toPlainText(), Configs::direct);
+            res += chain->UpdateSimpleRules(simpleBlock->toPlainText(), Configs::block);
+            res += chain->UpdateSimpleRules(simpleProxy->toPlainText(), Configs::proxy);
+            if (!res.isEmpty())
+            {
+                runOnUiThread([=,this]
+                {
+                    MessageBoxWarning(tr("Invalid rules"), tr("Some rules could not be added:\n") + res);
+                });
+            }
+            currentIndex  = -1;
+            updateRouteItemsView();
+            updateRuleSection();
+        } else
+        {
+            // reload
+            updateRouteItemsView();
+            updateRuleSection();
+            simpleDirect->setPlainText(chain->GetSimpleRules(Configs::direct));
+            simpleBlock->setPlainText(chain->GetSimpleRules(Configs::block));
+            simpleProxy->setPlainText(chain->GetSimpleRules(Configs::proxy));
+        }
+    });
+/*
+    connect(ui->howtouse_button, &QPushButton::clicked, this, [=,this]()
+    {
+        runOnUiThread([=,this]
+        {
+            MessageBoxInfo(tr("Simple rule manual"), Configs::Information::SimpleRuleInfo);
+        });
+    });
+*/
+    connect(ui->route_import_json, &QPushButton::clicked, this, [=,this] {
+        auto w = new QDialog(this);
+        w->setWindowTitle("Import JSON Array");
+        w->setWindowModality(Qt::ApplicationModal);
+
+        auto line = 0;
+        auto layout = new QGridLayout;
+        w->setLayout(layout);
+
+        auto *tEdit = new QTextEdit;
+        tEdit->setPlaceholderText("[\n"
+            "      {\n"
+            "        \"action\": \"hijack-dns\",\n"
+            "        \"protocol\": \"dns\"\n"
+            "      },\n"
+            "      {\n"
+            "        \"action\": \"reject\",\n"
+            "        \"protocol\": \"udp\"\n"
+            "      }\n"
+            "    ]");
+        layout->addWidget(tEdit, line++, 0);
+
+        auto *buttons = new QDialogButtonBox;
+        buttons->setOrientation(Qt::Horizontal);
+        buttons->setStandardButtons(QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
+        layout->addWidget(buttons, line, 0);
+
+        connect(buttons, &QDialogButtonBox::accepted, w, [=,this]{
+           auto err = new QString;
+           auto parsed = Configs::RoutingChain::parseJsonArray(QString2QJsonArray(tEdit->toPlainText()), err);
+           if (!err->isEmpty()) {
+               MessageBoxInfo(tr("Invalid JSON Array"), tr("The provided input cannot be parsed to a valid route rule array:\n") + *err);
+               return;
+           }
+           chain->Rules.clear();
+           chain->Rules << parsed;
+           updateRouteItemsView();
+           updateRuleSection();
+
+           w->accept();
+        });
+        connect(buttons, &QDialogButtonBox::rejected, w, &QDialog::reject);
+
+        w->exec();
+        w->deleteLater();
+    });
+
+    connect(ui->rule_name, &QLineEdit::textChanged, this, [=,this](const QString& text) {
+        if (currentIndex == -1) return;
+        chain->Rules[currentIndex]->name = QString(text);
+        auto ruleNameCursorPosition = ui->rule_name->cursorPosition();
+        updateRouteItemsView(); 
+        ui->rule_name->setCursorPosition(ruleNameCursorPosition);
+    });
+
+    connect(ui->rule_attr_selector, &QComboBox::currentTextChanged, this, [=,this](const QString& text){
+       if (currentIndex == -1) return;
+     /*  if (ui->rule_attr->currentText() == "outbound")
+       {
+           chain->Rules[currentIndex]->set_field_value("outbound", {QString::number(outboundMap[ui->rule_attr_selector->currentIndex()])});
+           updateRulePreview();
+           return;
+       }*/
+       chain->Rules[currentIndex]->set_field_value(ui->rule_attr->currentText(), {QString(text)});
+       updateRulePreview();
+    });
+
+    connect(ui->rule_attr_text, &QPlainTextEdit::textChanged, this, [=,this] {
+        if (currentIndex == -1) return;
+        auto currentVal = ui->rule_attr_text->toPlainText().split('\n');
+        chain->Rules[currentIndex]->set_field_value(ui->rule_attr->currentText(), currentVal);
+        updateRulePreview();
+    });
+
+    connect(ui->route_items, &QListWidget::currentRowChanged, this, [=,this](const int idx) {
+        if (idx == -1) return;
+        currentIndex = idx;
+        updateRuleSection();
+    });
+
+    connect(ui->rule_attr, &QComboBox::currentTextChanged, this, [=,this](const QString& text){
+        updateRuleSection();
+    });
+
+    connect(ui->buttonBox, &QDialogButtonBox::accepted, this, [=,this]{
+        accept();
+    });
+    connect(ui->buttonBox, &QDialogButtonBox::rejected, this, [=,this]{
+       QDialog::reject();
+    });
+
+    deleteShortcut = new QShortcut(QKeySequence(Qt::Key_Delete), this);
+
+    connect(deleteShortcut, &QShortcut::activated, this, [=,this]{
+        on_delete_route_item_clicked();
+    });
+
+    adjustSize();
+}
+
+RouteItem::~RouteItem() {
+    delete ui;
+}
+
+void RouteItem::accept() {
+    chain->chain_name = ui->route_name->text();
+    chain->update_url = ui->url->text();
+    chain->skip_update = ui->skip_update->isChecked();
+
+    if (route_item_on_notes){
+        this->chain->saveNotes(ui->notes->toPlainText());
+    }
+
+    if (chain->chain_name == "") {
+        MessageBoxWarning(tr("Invalid operation"), tr("Cannot create Route Profile with empty name"));
+        return;
+    }
+
+    QList<std::shared_ptr<Configs::RouteRule>> tmpChain;
+    for (const auto& item: chain->Rules) {
+        if (!item->isEmpty()) {
+            tmpChain << item;
+        }
+    }
+    chain->Rules.clear();
+    for (const auto& item: tmpChain) {
+        chain->Rules << item;
+    }
+
+    if (chain->Rules.empty()) {
+        MessageBoxInfo(tr("Empty Route Profile"), tr("No valid rules are in the profile"));
+        return;
+    }
+
+    QString res;
+    res += chain->UpdateSimpleRules(simpleDirect->toPlainText(), Configs::direct);
+    res += chain->UpdateSimpleRules(simpleBlock->toPlainText(), Configs::block);
+    res += chain->UpdateSimpleRules(simpleProxy->toPlainText(), Configs::proxy);
+    if (!res.isEmpty())
+    {
+        runOnUiThread([=,this]
+        {
+            MessageBoxWarning(tr("Invalid rules"), tr("Some rules could not be added, fix them before saving:\n") + res);
+        });
+        return;
+    }
+    chain->defaultOutboundID = Configs::stringToOutboundID(
+        default_outbound_choose[ui->def_out->currentIndex()]
+    );
+
+    emit settingsChanged(chain);
+
+    QDialog::accept();
+}
+
+void RouteItem::updateRouteItemsView() {
+    ui->route_items->clear();
+    if (chain->Rules.empty()) return;
+
+    for (const auto& item: chain->Rules) {
+        ui->route_items->addItem(item->name);
+    }
+    if (currentIndex != -1) ui->route_items->setCurrentRow(currentIndex);
+}
+
+void RouteItem::updateRuleSection() {
+    if (currentIndex == -1) return;
+
+    auto ruleItem = chain->Rules[currentIndex];
+    auto currentAttr = ui->rule_attr->currentText();
+    switch (ruleItem->get_input_type(currentAttr)) {
+        case Configs::trufalse: {
+            QStringList items = {"false", "true"};
+            QString currentVal = ruleItem->get_current_value_bool(currentAttr);
+            showSelectItem(items, currentVal);
+            break;
+        }
+        case Configs::select: {
+            if (currentAttr == "outbound")
+            {
+                // due to the need for mapping, we handle this in a different way...
+                proxy_chooser->setText(DialogEditGroup::get_proxy_name(ruleItem->outboundID, true));
+                proxy_chooser->show();
+                ui->rule_attr_text->hide();
+                ui->rule_attr_selector->hide();
+                rule_set_editor->hide();
+              //  showSelectItem(outbounds, get_outbound_name(ruleItem->outboundID));
+                break;
+            }
+            auto items = Configs::RouteRule::get_values_for_field(currentAttr);
+            auto currentVal = ruleItem->get_current_value_string(currentAttr)[0];
+            showSelectItem(items, currentVal);
+            break;
+        }
+        case Configs::text: {
+            auto currentItems = ruleItem->get_current_value_string(currentAttr);
+            showTextEnterItem(currentItems, currentAttr == "rule_set");
+            break;
+        }
+    }
+    ui->rule_name->setText(ruleItem->name);
+
+    updateRulePreview();
+}
+
+void RouteItem::updateRulePreview() {
+    if (currentIndex == -1) return;
+
+    ui->rule_preview->setText(QJsonObject2QString(chain->Rules[currentIndex]->get_rule_json(true), false));
+}
+
+void RouteItem::setDefaultRuleData(const QString& currentData) {
+    ui->rule_attr->setCurrentText("ip_version");
+    ui->rule_attr_data->setTitle("ip_version");
+    showSelectItem(Configs::RouteRule::get_values_for_field("ip_version"), currentData);
+}
+
+void RouteItem::showSelectItem(const QStringList& items, const QString& currentItem) {
+    ui->rule_attr_text->hide();
+    rule_set_editor->hide();
+    proxy_chooser->hide();
+    ui->rule_attr_selector->clear();
+    ui->rule_attr_selector->show();
+    ui->rule_attr_selector->addItems(items);
+    ui->rule_attr_selector->setCurrentText(currentItem);
+    adjustComboBoxWidth(ui->rule_attr_selector);
+    adjustSize();
+}
+
+void RouteItem::showTextEnterItem(const QStringList& items, bool isRuleSet) {
+    ui->rule_attr_selector->hide();
+    proxy_chooser->hide();
+    if (isRuleSet) {
+        ui->rule_attr_text->hide();
+        rule_set_editor->clear();
+        rule_set_editor->show();
+        rule_set_editor->setPlainText(items.join('\n'));
+    } else {
+        rule_set_editor->hide();
+        ui->rule_attr_text->clear();
+        ui->rule_attr_text->show();
+        ui->rule_attr_text->setPlainText(items.join('\n'));
+    }
+    adjustSize();
+}
+
+void RouteItem::on_new_route_item_clicked() {
+    auto routeItem = std::make_shared<Configs::RouteRule>();
+    routeItem->name = "rule_" + QString::number(++lastNum);
+    chain->Rules << routeItem;
+    currentIndex = chain->Rules.size() - 1;
+    ui->rule_name->setText(routeItem->name);
+    currentIndex = chain->Rules.size()-1;
+
+    updateRouteItemsView();
+    updateRuleSection();
+}
+
+void RouteItem::on_moveup_route_item_clicked() {
+    if (currentIndex == -1 || currentIndex == 0) return;
+    auto curr = chain->Rules[currentIndex];
+    chain->Rules[currentIndex] = chain->Rules[currentIndex-1];
+    chain->Rules[currentIndex-1] = curr;
+    currentIndex--;
+    updateRouteItemsView();
+}
+
+void RouteItem::on_movedown_route_item_clicked() {
+    if (currentIndex == -1 || currentIndex == chain->Rules.size() - 1) return;
+    auto curr = chain->Rules[currentIndex];
+    chain->Rules[currentIndex] = chain->Rules[currentIndex+1];
+    chain->Rules[currentIndex+1] = curr;
+    currentIndex++;
+    updateRouteItemsView();
+}
+
+void RouteItem::on_delete_route_item_clicked() {
+    if (currentIndex == -1) return;
+    chain->Rules.removeAt(currentIndex);
+    if (chain->Rules.empty()) currentIndex = -1;
+    else {
+        currentIndex--;
+        if (currentIndex == -1) currentIndex = 0;
+    }
+    updateRouteItemsView();
+    updateRuleSection();
+}
