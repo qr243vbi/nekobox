@@ -1,3 +1,4 @@
+shopt -s globstar
 source script/env_deploy.sh
 pushd "$SRC_ROOT"
 
@@ -32,11 +33,11 @@ echo "[General]" > global.ini
 echo "program_version=$INPUT_VERSION" >> global.ini
 echo "program_name=NekoBox" >> global.ini
 
+rm -fv **/*.so
+rm -fv **/*.a
+rm -fv **/*.dll
+
 git add -f srslist* global.ini core/server/{gen/{libcore_service-remote,main_sing,*.go},vendor} SingBox.Version
-path=core/server/vendor/github.com/sagernet/cronet-go/lib
-git rm "${path}"/*/*.so
-git rm "${path}"/*/*.a
-git rm "${path}"/*/*.dll
 git -c user.name="a" -c user.email="my@email.org" commit -am "New Update"
 
 
