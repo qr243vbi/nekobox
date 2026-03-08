@@ -1045,7 +1045,7 @@
     <string>Url Test</string>
    </property>
    <property name="shortcut">
-    <string>Ctrl+Shift+S</string>
+    <string notr="true">Ctrl+Shift+S</string>
    </property>
    <property name="visible">
     <bool>true</bool>
@@ -1067,7 +1067,7 @@
     <string>Url Test Group</string>
    </property>
    <property name="shortcut">
-    <string>Ctrl+Shift+G</string>
+    <string notr="true">Ctrl+Shift+G</string>
    </property>
    <property name="visible">
     <bool>true</bool>
@@ -1086,7 +1086,7 @@
     <string>Remove Invalid</string>
    </property>
    <property name="shortcut">
-    <string>Ctrl+Alt+I</string>
+    <string notr="true">Ctrl+Alt+I</string>
    </property>
    <property name="menuRole">
     <enum>QAction::MenuRole::TextHeuristicRole</enum>

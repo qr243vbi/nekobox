@@ -850,17 +850,17 @@
               </property>
               <item>
                <property name="text">
-                <string>5m</string>
+                <string notr="true">5m</string>
                </property>
               </item>
               <item>
                <property name="text">
-                <string>10m</string>
+                <string notr="true">10m</string>
                </property>
               </item>
               <item>
                <property name="text">
-                <string>30m</string>
+                <string notr="true">30m</string>
                </property>
               </item>
              </widget>
