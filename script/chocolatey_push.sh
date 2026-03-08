@@ -27,7 +27,7 @@ then
 fi
 if [[ "${UPLOAD_WITH_GH}" == 'yes' ]]
 then
-  gh release upload "${INPUT_VERSION}" nekobox*.nupkg
+  gh release upload "${INPUT_VERSION}" nekobox*.nupkg --clobber
 fi
 )
 

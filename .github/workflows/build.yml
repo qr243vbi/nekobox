@@ -150,7 +150,7 @@ jobs:
           then
             gh release create "${INPUT_VERSION}" --title "${INPUT_VERSION}" --notes "${MESSAGE}"
           fi
-          gh release upload "${INPUT_VERSION}" deployment/*
+          gh release upload "${INPUT_VERSION}" deployment/* --clobber
       - name: Tar files
         if: matrix.cross_os == 'public' || ( github.event.inputs.source_only  != 'true' && matrix.allow == 'true' && steps.cache-common.outputs.cache-hit != 'true' )
         run: tar czvf artifacts.tgz ./deployment
@@ -468,8 +468,8 @@ jobs:
             mv windows64 nekobox
             zip -9 -r $version_standalone-windows64.zip nekobox
             rm -rf nekobox windows64
-            gh release upload "${INPUT_VERSION}" $version_standalone-windows64-installer.exe
-            gh release upload "${INPUT_VERSION}" $version_standalone-windows64.zip
+            gh release upload "${INPUT_VERSION}" $version_standalone-windows64-installer.exe --clobber
+            gh release upload "${INPUT_VERSION}" $version_standalone-windows64.zip --clobber
           fi
           ####
           if [[ -f nekobox_setup_arm64.exe ]]; then
@@ -477,8 +477,8 @@ jobs:
             mv windows-arm64 nekobox
             zip -9 -r $version_standalone-windows-arm64.zip nekobox
             rm -rf nekobox windows-arm64
-            gh release upload "${INPUT_VERSION}" $version_standalone-windows-arm64-installer.exe
-            gh release upload "${INPUT_VERSION}" $version_standalone-windows-arm64.zip
+            gh release upload "${INPUT_VERSION}" $version_standalone-windows-arm64-installer.exe --clobber
+            gh release upload "${INPUT_VERSION}" $version_standalone-windows-arm64.zip --clobber
           fi
           ####
           if [[ -f nekobox_setup32.exe ]]; then
@@ -486,8 +486,8 @@ jobs:
             mv windows32 nekobox
             zip -9 -r $version_standalone-windows32.zip nekobox
             rm -rf nekobox windows32
-            gh release upload "${INPUT_VERSION}" $version_standalone-windows32-installer.exe
-            gh release upload "${INPUT_VERSION}" $version_standalone-windows32.zip
+            gh release upload "${INPUT_VERSION}" $version_standalone-windows32-installer.exe --clobber
+            gh release upload "${INPUT_VERSION}" $version_standalone-windows32.zip --clobber
           fi
           if [[ '${{ github.event.inputs.publish_winget }}' == 'true' && -f $version_standalone-windows32.zip && -f $version_standalone-windows64.zip && -f $version_standalone-windows-arm64.zip ]]
           then
