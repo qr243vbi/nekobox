@@ -435,21 +435,6 @@ Der integrierte NTP-Client von sing-box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</tra
 Minuten&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="853"/>
-        <source>5m</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="858"/>
-        <source>10m</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="863"/>
-        <source>30m</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="877"/>
         <source>Security</source>
         <translation type="unfinished">Sicherheit</translation>
@@ -2706,9 +2691,8 @@ Weitere Informationen finden Sie im Dokument „Konfiguration/DNS“.</translati
         <translation type="obsolete">URL-Test ausgewählt</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1048"/>
         <source>Ctrl+Shift+S</source>
-        <translation type="unfinished">Strg+Umschalt+S</translation>
+        <translation type="obsolete">Strg+Umschalt+S</translation>
     </message>
     <message>
         <source>Clear Test Result Selected</source>
@@ -2720,9 +2704,8 @@ Weitere Informationen finden Sie im Dokument „Konfiguration/DNS“.</translati
         <translation type="unfinished">URL-Testgruppe</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1070"/>
         <source>Ctrl+Shift+G</source>
-        <translation type="unfinished">Strg+Umschalt+G</translation>
+        <translation type="obsolete">Strg+Umschalt+G</translation>
     </message>
     <message>
         <source>Resolve Selected Domain</source>
@@ -2734,9 +2717,8 @@ Weitere Informationen finden Sie im Dokument „Konfiguration/DNS“.</translati
         <translation type="unfinished">Ungültig entfernen</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1089"/>
         <source>Ctrl+Alt+I</source>
-        <translation type="unfinished">Strg+Alt+I</translation>
+        <translation type="obsolete">Strg+Alt+I</translation>
     </message>
     <message>
         <source>Open Manager</source>

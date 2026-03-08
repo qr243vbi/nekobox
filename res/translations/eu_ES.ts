@@ -435,21 +435,6 @@ sing-box-en NTP bezero integratua&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translati
 minutu&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="853"/>
-        <source>5m</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="858"/>
-        <source>10m</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="863"/>
-        <source>30m</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="877"/>
         <source>Security</source>
         <translation type="unfinished">Segurtasuna</translation>
@@ -2694,9 +2679,8 @@ Informazio gehiagorako, ikusi &quot;Konfigurazioa/DNS&quot; dokumentua.</transla
         <translation type="unfinished">Gelditu probak</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1048"/>
         <source>Ctrl+Shift+S</source>
-        <translation type="unfinished">Ktrl+Maius+S</translation>
+        <translation type="obsolete">Ktrl+Maius+S</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1067"/>
@@ -2704,9 +2688,8 @@ Informazio gehiagorako, ikusi &quot;Konfigurazioa/DNS&quot; dokumentua.</transla
         <translation type="unfinished">Url Test taldea</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1070"/>
         <source>Ctrl+Shift+G</source>
-        <translation type="unfinished">Ktrl+Maius+G</translation>
+        <translation type="obsolete">Ktrl+Maius+G</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1086"/>
@@ -2714,9 +2697,8 @@ Informazio gehiagorako, ikusi &quot;Konfigurazioa/DNS&quot; dokumentua.</transla
         <translation type="unfinished">Kendu Baliogabea</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1089"/>
         <source>Ctrl+Alt+I</source>
-        <translation type="unfinished">Ktrl+Alt+I</translation>
+        <translation type="obsolete">Ktrl+Alt+I</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1102"/>

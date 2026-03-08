@@ -435,21 +435,6 @@ klien NTP terbina dalam sing-box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translatio
 minit&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="853"/>
-        <source>5m</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="858"/>
-        <source>10m</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="863"/>
-        <source>30m</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="877"/>
         <source>Security</source>
         <translation type="unfinished">Keselamatan</translation>
@@ -2706,9 +2691,8 @@ Untuk maklumat lanjut, lihat dokumen &quot;Konfigurasi/DNS&quot;.</translation>
         <translation type="obsolete">Ujian Url Dipilih</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1048"/>
         <source>Ctrl+Shift+S</source>
-        <translation type="unfinished">Ctrl+Shift+S</translation>
+        <translation type="obsolete">Ctrl+Shift+S</translation>
     </message>
     <message>
         <source>Clear Test Result Selected</source>
@@ -2720,9 +2704,8 @@ Untuk maklumat lanjut, lihat dokumen &quot;Konfigurasi/DNS&quot;.</translation>
         <translation type="unfinished">Kumpulan Ujian Url</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1070"/>
         <source>Ctrl+Shift+G</source>
-        <translation type="unfinished">Ctrl+Shift+G</translation>
+        <translation type="obsolete">Ctrl+Shift+G</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1086"/>
@@ -2730,9 +2713,8 @@ Untuk maklumat lanjut, lihat dokumen &quot;Konfigurasi/DNS&quot;.</translation>
         <translation type="unfinished">Alih Keluar Tidak Sah</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1089"/>
         <source>Ctrl+Alt+I</source>
-        <translation type="unfinished">Ctrl+Alt+I</translation>
+        <translation type="obsolete">Ctrl+Alt+I</translation>
     </message>
     <message>
         <source>Open Manager</source>

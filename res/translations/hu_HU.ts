@@ -435,21 +435,6 @@ sing-box beépített NTP-kliense&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translatio
 perc&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="853"/>
-        <source>5m</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="858"/>
-        <source>10m</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="863"/>
-        <source>30m</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="877"/>
         <source>Security</source>
         <translation type="unfinished">Biztonság</translation>
@@ -2694,9 +2679,8 @@ További információkért lásd a „Konfiguráció/DNS” dokumentumot.</trans
         <translation type="unfinished">Állítsa le a tesztelést</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1048"/>
         <source>Ctrl+Shift+S</source>
-        <translation type="unfinished">Ctrl+Shift+S</translation>
+        <translation type="obsolete">Ctrl+Shift+S</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1067"/>
@@ -2704,9 +2688,8 @@ További információkért lásd a „Konfiguráció/DNS” dokumentumot.</trans
         <translation type="unfinished">URL tesztcsoport</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1070"/>
         <source>Ctrl+Shift+G</source>
-        <translation type="unfinished">Ctrl+Shift+G</translation>
+        <translation type="obsolete">Ctrl+Shift+G</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1086"/>
@@ -2714,9 +2697,8 @@ További információkért lásd a „Konfiguráció/DNS” dokumentumot.</trans
         <translation type="unfinished">Érvénytelen eltávolítás</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1089"/>
         <source>Ctrl+Alt+I</source>
-        <translation type="unfinished">Ctrl+Alt+I</translation>
+        <translation type="obsolete">Ctrl+Alt+I</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1102"/>

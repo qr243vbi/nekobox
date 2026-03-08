@@ -435,21 +435,6 @@
 នាទី&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="853"/>
-        <source>5m</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="858"/>
-        <source>10m</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="863"/>
-        <source>30m</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="877"/>
         <source>Security</source>
         <translation type="unfinished">សន្តិសុខ</translation>
@@ -2694,9 +2679,8 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
         <translation type="unfinished">បញ្ឈប់ការធ្វើតេស្ត</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1048"/>
         <source>Ctrl+Shift+S</source>
-        <translation type="unfinished">បញ្ជា(Ctrl)+ប្ដូរ(Shift)+ស</translation>
+        <translation type="obsolete">បញ្ជា(Ctrl)+ប្ដូរ(Shift)+ស</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1067"/>
@@ -2704,9 +2688,8 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
         <translation type="unfinished">ក្រុមសាកល្បង Url</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1070"/>
         <source>Ctrl+Shift+G</source>
-        <translation type="unfinished">បញ្ជា(Ctrl)+ប្ដូរ(Shift)+G</translation>
+        <translation type="obsolete">បញ្ជា(Ctrl)+ប្ដូរ(Shift)+G</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1086"/>
@@ -2714,9 +2697,8 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
         <translation type="unfinished">យក​ចេញ​មិន​ត្រឹមត្រូវ។</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1089"/>
         <source>Ctrl+Alt+I</source>
-        <translation type="unfinished">បញ្ជា(Ctrl)+ជំនួស(Alt)+I</translation>
+        <translation type="obsolete">បញ្ជា(Ctrl)+ជំនួស(Alt)+I</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1102"/>

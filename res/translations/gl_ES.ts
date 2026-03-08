@@ -435,21 +435,6 @@ cliente NTP integrado no sing-box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translati
 minutos&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="853"/>
-        <source>5m</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="858"/>
-        <source>10m</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="863"/>
-        <source>30m</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="877"/>
         <source>Security</source>
         <translation type="unfinished">Seguridade</translation>
@@ -2694,9 +2679,8 @@ Para máis información, consulte o documento &quot;Configuración/DNS&quot;.</t
         <translation type="unfinished">Deixar de probar</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1048"/>
         <source>Ctrl+Shift+S</source>
-        <translation type="unfinished">Ctrl+Maiús+S</translation>
+        <translation type="obsolete">Ctrl+Maiús+S</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1067"/>
@@ -2704,9 +2688,8 @@ Para máis información, consulte o documento &quot;Configuración/DNS&quot;.</t
         <translation type="unfinished">Grupo de proba de URL</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1070"/>
         <source>Ctrl+Shift+G</source>
-        <translation type="unfinished">Ctrl+Maiús+G</translation>
+        <translation type="obsolete">Ctrl+Maiús+G</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1086"/>
@@ -2714,9 +2697,8 @@ Para máis información, consulte o documento &quot;Configuración/DNS&quot;.</t
         <translation type="unfinished">Eliminar non válido</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1089"/>
         <source>Ctrl+Alt+I</source>
-        <translation type="unfinished">Ctrl+Alt+I</translation>
+        <translation type="obsolete">Ctrl+Alt+I</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1102"/>

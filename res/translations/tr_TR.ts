@@ -435,21 +435,6 @@ sing-box&apos;ın yerleşik NTP istemcisi&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</t
 dakika&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="853"/>
-        <source>5m</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="858"/>
-        <source>10m</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="863"/>
-        <source>30m</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="877"/>
         <source>Security</source>
         <translation type="unfinished">Güvenlik</translation>
@@ -2706,9 +2691,8 @@ Daha fazla bilgi için &quot;Yapılandırma/DNS&quot; belgesine bakın.</transla
         <translation type="obsolete">Seçilen URL Testi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1048"/>
         <source>Ctrl+Shift+S</source>
-        <translation type="unfinished">Ctrl+Üst Karakter+S</translation>
+        <translation type="obsolete">Ctrl+Üst Karakter+S</translation>
     </message>
     <message>
         <source>Clear Test Result Selected</source>
@@ -2720,9 +2704,8 @@ Daha fazla bilgi için &quot;Yapılandırma/DNS&quot; belgesine bakın.</transla
         <translation type="unfinished">URL Test Grubu</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1070"/>
         <source>Ctrl+Shift+G</source>
-        <translation type="unfinished">Ctrl+Üst Karakter+G</translation>
+        <translation type="obsolete">Ctrl+Üst Karakter+G</translation>
     </message>
     <message>
         <source>Resolve Selected Domain</source>
@@ -2734,9 +2717,8 @@ Daha fazla bilgi için &quot;Yapılandırma/DNS&quot; belgesine bakın.</transla
         <translation type="unfinished">Geçersizi Kaldır</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1089"/>
         <source>Ctrl+Alt+I</source>
-        <translation type="unfinished">Ctrl+Alt+I</translation>
+        <translation type="obsolete">Ctrl+Alt+I</translation>
     </message>
     <message>
         <source>Open Manager</source>

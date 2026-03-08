@@ -435,21 +435,6 @@ sing-box&apos;s ingebouwde NTP-client&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</trans
 minuten&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="853"/>
-        <source>5m</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="858"/>
-        <source>10m</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="863"/>
-        <source>30m</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="877"/>
         <source>Security</source>
         <translation type="unfinished">Beveiliging</translation>
@@ -2706,9 +2691,8 @@ Voor meer informatie, zie het document &quot;Configuratie/DNS&quot;.</translatio
         <translation type="obsolete">URL-test geselecteerd</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1048"/>
         <source>Ctrl+Shift+S</source>
-        <translation type="unfinished">Ctrl+Shift+S</translation>
+        <translation type="obsolete">Ctrl+Shift+S</translation>
     </message>
     <message>
         <source>Clear Test Result Selected</source>
@@ -2720,9 +2704,8 @@ Voor meer informatie, zie het document &quot;Configuratie/DNS&quot;.</translatio
         <translation type="unfinished">URL-testgroep</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1070"/>
         <source>Ctrl+Shift+G</source>
-        <translation type="unfinished">Ctrl+Shift+G</translation>
+        <translation type="obsolete">Ctrl+Shift+G</translation>
     </message>
     <message>
         <source>Resolve Selected Domain</source>
@@ -2734,9 +2717,8 @@ Voor meer informatie, zie het document &quot;Configuratie/DNS&quot;.</translatio
         <translation type="unfinished">Verwijder ongeldig</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1089"/>
         <source>Ctrl+Alt+I</source>
-        <translation type="unfinished">Ctrl+Alt+I</translation>
+        <translation type="obsolete">Ctrl+Alt+I</translation>
     </message>
     <message>
         <source>Open Manager</source>

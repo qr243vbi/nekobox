@@ -435,21 +435,6 @@ sing-box의 내장 NTP 클라이언트&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</tran
 분&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="853"/>
-        <source>5m</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="858"/>
-        <source>10m</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="863"/>
-        <source>30m</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="877"/>
         <source>Security</source>
         <translation type="unfinished">보안</translation>
@@ -2706,9 +2691,8 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
         <translation type="obsolete">URL 테스트가 선택됨</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1048"/>
         <source>Ctrl+Shift+S</source>
-        <translation type="unfinished">Ctrl+Shift+S</translation>
+        <translation type="obsolete">Ctrl+Shift+S</translation>
     </message>
     <message>
         <source>Clear Test Result Selected</source>
@@ -2720,9 +2704,8 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
         <translation type="unfinished">URL 테스트 그룹</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1070"/>
         <source>Ctrl+Shift+G</source>
-        <translation type="unfinished">Ctrl+Shift+G</translation>
+        <translation type="obsolete">Ctrl+Shift+G</translation>
     </message>
     <message>
         <source>Resolve Selected Domain</source>
@@ -2734,9 +2717,8 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
         <translation type="unfinished">잘못된 제거</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1089"/>
         <source>Ctrl+Alt+I</source>
-        <translation type="unfinished">Ctrl+Alt+I</translation>
+        <translation type="obsolete">Ctrl+Alt+I</translation>
     </message>
     <message>
         <source>Open Manager</source>
