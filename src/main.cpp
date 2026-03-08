@@ -196,6 +196,9 @@ int main(int argc, char** argv) {
     bool supported = Configs::resourceManager->symlinks_supported = createSymlink(getApplicationPath(), "resources/qr243vbi.lnk.lnk");
     if (supported){
         QFile::remove("resources/qr243vbi.lnk.lnk");
+        if (Configs::windowSettings->no_symlinks){
+            Configs::resourceManager->symlinks_supported = false;
+        }
     };
 
     

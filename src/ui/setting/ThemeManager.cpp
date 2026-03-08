@@ -4,10 +4,19 @@
 #include <QPalette>
 
 #include "nekobox/ui/setting/ThemeManager.hpp"
+#include "nekobox/dataStore/Utils.hpp"
 
 ThemeManager *themeManager = new ThemeManager;
 
-extern QString ReadFileText(const QString &path);
+QMap<QString, QString> & ThemeManager::getThemes(){
+    static QMap<QString, QString> map;
+    static bool initialized = false;
+    if (!initialized){
+        initialized = true;
+        ReadFileText(":nekobox/qss/styles.list");
+    }
+    return map;
+}
 
 void ThemeManager::ApplyTheme(const QString &theme, bool force) {
     if (this->system_style_name.isEmpty()) {
@@ -28,6 +37,8 @@ void ThemeManager::ApplyTheme(const QString &theme, bool force) {
             if (lowerTheme == "dark"){ path = ":nekobox/qss/MaterialDark.qss"; } 
             else if (lowerTheme == "amoled"){ path = ":nekobox/qss/AMOLED.qss"; } 
             else if (lowerTheme == "aqua") { path = ":nekobox/qss/Aqua.qss"; } 
+            else if (lowerTheme == "aqua") { path = ":nekobox/qss/Aqua.qss"; } 
+            else if (lowerTheme == "kawaii") { path = ":nekobox/qss/Kawaii.qss"; } 
     //        else if (lowerTheme == "elegantdark") { path = ":nekobox/qss/ElegantDark.qss"; } 
     //        else if (lowerTheme == "ubuntu") { path = ":nekobox/qss/Ubuntu.qss"; } 
     //        else if (lowerTheme == "flatdark") { path = ":nekobox/qss/FlatDark.qss"; } 

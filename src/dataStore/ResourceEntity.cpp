@@ -1,8 +1,9 @@
-#include "nekobox/dataStore/ResourceEntity.hpp"
-#include "nekobox/sys/Settings.h"
+#include <nekobox/dataStore/ResourceEntity.hpp>
+#include <nekobox/dataStore/Utils.hpp>
+#include <nekobox/sys/Settings.h>
 #include <QString>
 #include <qcoreapplication.h>
-#include "nekobox/configs/proxy/AbstractBean.hpp"
+#include <nekobox/configs/proxy/AbstractBean.hpp>
 
 static inline QString _ent(QString name) {
   name = name.replace("/", "_P");
@@ -16,8 +17,8 @@ static inline QString _ent(QString name) {
 namespace Configs {
 
 DECL_MAP(ResourceManager)
-    ADD_MAP( "core_path", core_path, string);
-    ADD_MAP( "resources_path", resources_path, string);
+    ADD_MAP("core_path", core_path, string);
+    ADD_MAP("resources_path", resources_path, string);
     ADD_MAP("latest_path", latest_path, string);
 STOP_MAP
 
@@ -42,15 +43,23 @@ QString ResourceManager::getLatestPath(){
 
 bool ResourceManager::saveLink(QString str, QString path){
   str = _ent(str);
-  latest_path = QFileInfo(path).absolutePath();
+  latest_path = QFileInfo(path).absoluteFilePath();
+  QDir this_path (Configs::GetBasePath());
+
+  QString relative = this_path.relativeFilePath(latest_path);
+  if (!relative.startsWith("..")){
+    latest_path = relative;
+    if (symlinks_supported){
+      latest_path = QString("..") + QDir::separator() + latest_path;
+    }
+  }  
   if (symlinks_supported) {
-    QString file("resources/" + str + ".ent.lnk");
+    QString file(this_path.absoluteFilePath(QString("resources") + QDir::separator() + str + ".ent.lnk"));
     QFile::remove(file);
-    return createSymlink(path, file);
+    return createSymlink(latest_path, file);
   } else {
-    QFile file("resources/" + str + ".ent.txt");
-    file.remove();
-    return WriteFileText(file, path);
+    QFile file(this_path.absoluteFilePath(QString("resources") + QDir::separator() + str + ".ent.txt"));
+    return WriteFileText(file, latest_path);
   }
 }
 

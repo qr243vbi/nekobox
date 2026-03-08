@@ -140,12 +140,17 @@ jobs:
         shell: bash
         run: |
           env INPUT_VERSION=${{ github.event.inputs.tag }} bash -x ./script/deploy_vendor.sh
-      - name: Installing ghr
+      - name: Publish sources
         if: matrix.cross_os == 'public' && github.event.inputs.publish == 'true'
         run: |
-          go install github.com/tcnksm/ghr@v0.17.0
-          ghr -delete -t "${{ secrets.UPLOAD_TOKEN }}" -b "$(echo -e "${{ github.event.inputs.text }}")" -n "${{ github.event.inputs.tag }}" "${{ github.event.inputs.tag }}" deployment
-
+          export INPUT_VERSION="${{ github.event.inputs.tag }}"
+          export MESSAGE="$(echo -e "${{ github.event.inputs.text }}")"
+          export GH_TOKEN='${{ secrets.UPLOAD_TOKEN }}'
+          if ! gh release view "${INPUT_VERSION}" >/dev/null 2>&1
+          then
+            gh release create "${INPUT_VERSION}" --title "${INPUT_VERSION}" --notes "${MESSAGE}"
+          fi
+          gh release upload "${INPUT_VERSION}" deployment/*
       - name: Tar files
         if: matrix.cross_os == 'public' || ( github.event.inputs.source_only  != 'true' && matrix.allow == 'true' && steps.cache-common.outputs.cache-hit != 'true' )
         run: tar czvf artifacts.tgz ./deployment
@@ -182,7 +187,7 @@ jobs:
         shell: bash
         run: |
           pip install osc
-          export MESSAGE="${{ github.event.inputs.text }}"
+          export MESSAGE="$(echo -e "${{ github.event.inputs.text }}")"
           export SUBMIT_FACTORY=${{ github.event.inputs.publish_suse }}
           export OBS_USER="${{ secrets.OBS_USER }}"
           export OBS_PASSWORD="${{ secrets.OBS_PASSWORD }}"

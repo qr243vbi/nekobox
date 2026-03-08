@@ -927,7 +927,6 @@ namespace Configs {
             }
             if (dataStore->adblock_enable && !blockAll) {
                 QString item = "nekobox-adblocksingbox";
-                qDebug() << item;
                 auto json_object = get_rule_set_json(item);
                 if (!json_object.isEmpty()){
                     ruleSetArray += json_object;

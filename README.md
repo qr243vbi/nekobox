@@ -90,6 +90,10 @@ Various formats are supported, including share links, JSON array of outbounds an
 - [Aur](https://aur.archlinux.org/)
 - [Protobuf](https://protobuf.dev/)
 - [gRPC](https://grpc.io/)
+- [GTRONICK-QSS](https://github.com/GTRONICK/QSS)
+- [avalon-qss](https://github.com/getavalon/core/tree/master/avalon/style)
+- [qt-stylesheets](https://github.com/xakod/qt-stylesheets)
+- [qss_themes](https://github.com/Ktiseos-Nyx/qss_themes.git)
 
 ## TODO
 - Command line tools

@@ -109,6 +109,7 @@ public:
       11
 #endif
       ;
+  bool no_symlinks = true;
   bool logs_enabled = true;
   bool test_after_start = true;
   char startup_update = false;
@@ -132,7 +133,6 @@ public:
 
 void updateEmojiFont();
 
-bool createSymlink(const QString &targetPath, const QString &linkPath);
 // QSettings getSettings();
 QSettings getGlobal();
 QString getLocale();

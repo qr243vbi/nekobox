@@ -37,6 +37,7 @@ SETTINGS_PUT(QStringList, StrList)
 
 INIT_LIST(WindowSettings)
 ADD_LIST(theme)
+ADD_LIST(no_symlinks)
 ADD_LIST(font_family)
 ADD_LIST(font_size)
 ADD_LIST(logs_enabled)
@@ -241,13 +242,6 @@ bool isFileAppendable(QString filePath) {
   return false;
 }
 
-bool createSymlink(const QString &targetPath, const QString &linkPath) {
-  if (QFile::link(targetPath, linkPath)) {
-    return true;
-  } else {
-    return false;
-  }
-}
 
 QString getLocale() {
   return defStr(Configs::windowSettings->language, QLocale().name());

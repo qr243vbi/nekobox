@@ -972,18 +972,12 @@ skip_updater_hide:
     }
   });
 
-  QFile *srslist = new QFile("srslist.json");
-  if (!srslist->exists()) {
-    delete srslist;
-    srslist = new QFile(getResource("srslist.json"));
-  }
-  if (srslist->exists() && srslist->open(QIODevice::ReadOnly)) {
-    QByteArray byteArray = srslist->readAll();
-    srslist->close();
-    delete srslist;
+  QFile srslist(getResource("srslist.json"));
+  if (srslist.exists() && srslist.open(QIODevice::ReadOnly)) {
+    QByteArray byteArray = srslist.readAll();
+    srslist.close();
     ruleSetMap = QString2QMap(byteArray);
   } else {
-    delete srslist;
     runOnNewThread([this]() { getRuleSet(); });
   }
 
@@ -1471,6 +1465,7 @@ bool MainWindow::getRuleSet() {
       qvar.insert(key, value);
     }
     WriteFileText("srslist.json", QMap2QString(qvar));
+    Configs::resourceManager->saveLink("srslist.json", "srslist.json");
   }
   return true;
 }

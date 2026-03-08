@@ -19,6 +19,7 @@
 #include <QTimer>
 #include <QUrlQuery>
 #include <functional>
+#include <qnamespace.h>
 
 QString defStr(const QString &value, const QString def) {
   if (value.isEmpty()) {
@@ -26,6 +27,24 @@ QString defStr(const QString &value, const QString def) {
   } else {
     return value;
   }
+}
+
+
+bool createSymlink(const QString &targetPath, const QString &linkPath) {
+  if (QFile::link(targetPath, linkPath)) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+bool isFileInDirectoryOrSubdirectory(const QString &filePath, const QString &dirPath) {
+    QDir dir(QDir(dirPath).canonicalPath());     // normalize directory
+    QFileInfo fi(filePath);
+
+    QString relative = dir.relativeFilePath(fi.canonicalFilePath());
+
+    return !relative.startsWith("..");
 }
 
 void runOnNewThread(const std::function<void()> &callback) {

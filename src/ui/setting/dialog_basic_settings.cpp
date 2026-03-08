@@ -120,7 +120,6 @@ DialogBasicSettings::DialogBasicSettings(MainWindow *parent)
     ADD_ASTERISK(this);
     this->parent = parent;
     CACHE.language_code = Configs::windowSettings->language;
-    ui->language_button->setStyleSheet("text-align: left;");
     
     for (auto lang : languageCodes()){
         if (lang->code == CACHE.language_code){
@@ -252,6 +251,7 @@ DialogBasicSettings::DialogBasicSettings(MainWindow *parent)
     ui->theme->addItems(QStyleFactory::keys());
     ui->theme->addItem("Dark");
     ui->theme->addItem("AMOLED");
+    ui->theme->addItem("Kawaii");
     ui->theme->addItem("Aqua");
     //
 //    bool ok;

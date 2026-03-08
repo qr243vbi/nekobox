@@ -15,6 +15,9 @@
 #endif
 //
 
+bool createSymlink(const QString &targetPath, const QString &linkPath);
+
+bool isFileInDirectoryOrSubdirectory(const QString &filePath, const QString &dirPath);
 QString defStr(const QString &value, const QString def);
 
 #ifndef KEY_VALUE_RANGE
