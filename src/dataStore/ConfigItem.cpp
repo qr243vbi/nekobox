@@ -243,6 +243,9 @@ QByteArray JsonStore::ToBytes(const QStringList &without){
     return byteArray;
 };
 
+void JsonStore::UnknownKeyHash(const QByteArray &data){
+}
+
 void JsonStore::FromBytes(const QByteArray &data) {
   QDataStream stream(data);
   auto _map = this->_map();

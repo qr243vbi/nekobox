@@ -175,6 +175,8 @@ inline QDataStream &operator>>(QDataStream &in, Bin &p) {
         virtual bool Save();
 
         virtual bool Load();
+
+        virtual void UnknownKeyHash(const QByteArray &data);
         
     };
 
