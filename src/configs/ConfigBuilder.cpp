@@ -167,7 +167,9 @@ namespace Configs {
         // apply custom config
             MergeJson(QString2QJsonObject(customBean->custom_config), result->coreConfig);
         } else {
+            #ifdef DEBUG_MODE
             qDebug() << "Generating Block Network Config";
+            #endif
             BuildConfigSingBox(status);
         }
 

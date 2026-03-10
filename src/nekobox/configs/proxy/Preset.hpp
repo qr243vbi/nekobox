@@ -4,7 +4,25 @@
 
 namespace Preset::SingBox {
   inline QSet<QString> OutboundTypes = {
-
+        "socks",
+        "mieru",
+        "http",
+        "shadowsocks",
+        "chain",
+        "vmess",
+        "trojan",
+        "vless",
+        "hysteria",
+        "hysteria2",
+        "tuic",
+        "anytls",
+        "shadowtls",
+        "wireguard",
+        "tailscale",
+        "ssh",
+        "custom",
+        "extracore",
+        "tor"
   };
   inline QStringList VpnImplementation = {"system", "gvisor", "mixed"};
   inline QStringList DomainStrategy = {"", "ipv4_only", "ipv6_only", "prefer_ipv4", "prefer_ipv6"};

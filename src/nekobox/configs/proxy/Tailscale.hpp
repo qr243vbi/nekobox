@@ -48,5 +48,10 @@ namespace Configs {
         QString ToShareLink() const override;
 
         bool IsEndpoint() const override {return true;}
+        #ifdef DEBUG_MODE
+        virtual QString type() override {
+            return "tailscale";
+        };
+        #endif
     };
 } // namespace Configs

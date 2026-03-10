@@ -153,5 +153,16 @@ namespace Configs {
         bool TryParseJson(const QJsonObject &obj);
 
         QString ToShareLink() const override;
+        #ifdef DEBUG_MODE
+        virtual QString type() override {
+            if (proxy_type == proxy_TUIC) {
+                return "tuic";
+            } else if (proxy_type == proxy_Hysteria) {
+                return "hysteria";
+            } else {
+                return "hysteria2";
+            }
+        };
+        #endif
     };
 } // namespace Configs

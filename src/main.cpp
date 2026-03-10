@@ -160,17 +160,8 @@ int main(int argc, char** argv) {
 	}
     // Dir
     dir_success &= dir.mkdir("temp");
-    if (!dir.exists("profiles")) {
-        dir_success &= dir.mkdir("profiles");
-    }
-    if (!dir.exists("groups")) {
-        dir_success &= dir.mkdir("groups");
-    }
     if (!dir.exists("resources")) {
         dir_success &= dir.mkdir("resources");
-    }
-    if (!dir.exists("route_profiles")) {
-        dir_success &= dir.mkdir("route_profiles");
     }
     if (!dir_success) {
         loop_back_2:
@@ -258,7 +249,9 @@ int main(int argc, char** argv) {
 
     // Translate
     QString locale = getLocale();
+    #ifdef DEBUG_MODE
     qDebug() << "Language is: " << locale;
+    #endif
     QGuiApplication::tr("QT_LAYOUT_DIRECTION");
     if (locale == "") locale = QLocale().name();
     loadTranslate(locale);
@@ -267,12 +260,16 @@ int main(int argc, char** argv) {
     QByteArray hashBytes = QCryptographicHash::hash(wd.absolutePath().toUtf8(), QCryptographicHash::Md5).toBase64(QByteArray::OmitTrailingEquals);
     hashBytes.replace('+', '0').replace('/', '1');
     serverName = LOCAL_SERVER_PREFIX + QString::fromUtf8(hashBytes);
+    #ifdef DEBUG_MODE
     qDebug() << "server name: " << serverName;
+    #endif
     QLocalSocket socket;
     socket.connectToServer(serverName);
     if (socket.waitForConnected(250))
     {
+        #ifdef DEBUG_MODE
         qDebug() << "Another instance is running, let's wake it up and quit";
+        #endif
         socket.disconnectFromServer();
         return 0;
     }
@@ -286,7 +283,9 @@ int main(int argc, char** argv) {
     }
     QObject::connect(&server, &QLocalServer::newConnection, qApp, [&] {
         auto s = server.nextPendingConnection();
+        #ifdef DEBUG_MODE
         qDebug() << "Another instance tried to wake us up on " << serverName << s;
+        #endif
         s->close();
         // raise main window
         MW_dialog_message("", "Raise");

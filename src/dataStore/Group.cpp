@@ -8,7 +8,9 @@
 namespace Configs
 {
     bool Group::saveNotes(const QString &notes){
- //       qDebug() << "OnSaveNotes";
+        #ifdef DEBUG_MODE
+        qDebug() << "OnSaveNotes";
+        #endif
         QString path = ("notes/groups/" + QString::number(this->id) + ".note.txt");
         return WriteFileText(path, notes);
     }
@@ -53,9 +55,12 @@ namespace Configs
             std::shared_ptr<Configs::ProxyEntity> ent = profileManager->GetProfile(id);
             if (ent) {
                 res.append(ent);
-            } else {
+            } 
+            #ifdef DEBUG_MODE
+            else {
                 qDebug() << "Found missing profile ID:" << id;
             }
+            #endif
         }
         return res;
     }

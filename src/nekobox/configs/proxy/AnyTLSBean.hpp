@@ -16,6 +16,12 @@ namespace Configs {
 
         AnyTLSBean(Configs::ProxyEntity * entity) : AbstractBean(entity, 0) {
         }
+
+        #ifdef DEBUG_MODE
+        virtual QString type() override {
+            return "anytls";
+        };
+        #endif
         
         INIT_MAP
             ADD_MAP("password", password, string);

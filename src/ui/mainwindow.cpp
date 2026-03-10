@@ -110,9 +110,12 @@ void SpinnerDialog::onOk() {
     auto resp = window->remoteRouteProfileGetter(profile, &url, &proxy);
     if (resp.isEmpty()) {
       return;
-    } else {
-      qDebug() << resp;
+    } 
+    #ifdef DEBUG_MODE
+    else {
+      qDebug() << "PROFILE GETTER IS : " << resp;
     }
+    #endif
     QString err;
     auto parsed =
         Configs::RoutingChain::parseJsonArray(QString2QJsonArray(resp), &err);
@@ -420,7 +423,9 @@ MainWindow::MainWindow(QWidget *parent)
                                   )
                            .toString();
 #endif
+#ifdef DEBUG_MODE
     qDebug() << NKR_VERSION << software_version;
+#endif
     software_build_date =
         globalSettings.value("program_build_date", "").toString();
 #ifdef NKR_TIMESTAMP
@@ -566,7 +571,9 @@ MainWindow::MainWindow(QWidget *parent)
   runOnThread(
       [=, this] {
         core_process = new Configs_sys::CoreProcess(core_path, args);
+        #ifdef DEBUG_MODE
         qDebug() << "Core file located at " << core_path;
+        #endif
         // Remember last started
         if (Configs::dataStore->remember_enable &&
             Configs::dataStore->remember_id >= 0) {
@@ -586,7 +593,7 @@ MainWindow::MainWindow(QWidget *parent)
       break;
   }
   if (!Configs::dataStore->core_running)
-    qDebug() << "[Warn] Core is taking too much time to start";
+    qWarning() << "[Warn] Core is taking too much time to start";
 #endif
 
   if (!font_family.isEmpty()) {
@@ -1796,7 +1803,9 @@ void MainWindow::on_menu_hotkey_settings_triggered() {
 }
 
 void MainWindow::on_commitDataRequest() {
+  #ifdef DEBUG_MODE
   qDebug() << "Start of data save";
+  #endif
   {
     // save size and geometry
     int x, y, width, height;
@@ -1835,14 +1844,20 @@ void MainWindow::on_commitDataRequest() {
   Configs::dataStore->Save();
   Configs::windowSettings->Save();
   Configs::profileManager->SaveManager();
+  #ifdef DEBUG_MODE
   qDebug() << "End of data save";
+  #endif
 }
 
 void MainWindow::prepare_exit() {
+  #ifdef DEBUG_MODE
   qDebug() << "prepare for exit...";
+  #endif
   mu_exit.lock();
   if (Configs::dataStore->prepare_exit) {
+  #ifdef DEBUG_MODE
     qDebug() << "prepare exit had already succeeded, ignoring...";
+  #endif
     mu_exit.unlock();
     return;
   }
@@ -1861,7 +1876,9 @@ void MainWindow::prepare_exit() {
   profile_stop(false, true);
 
   mu_exit.unlock();
+  #ifdef DEBUG_MODE
   qDebug() << "prepare exit done!";
+  #endif
 }
 
 void MainWindow::size_changed(int width, int height) {
@@ -1911,8 +1928,10 @@ void MainWindow::on_menu_exit_triggered() {
     destinationFilePath += "/temp/updater";
 #endif
     if (QFile::copy(sourceFilePath, destinationFilePath)) {
+  #ifdef DEBUG_MODE
       qDebug() << "File copied successfully from" << sourceFilePath << "to"
                << destinationFilePath;
+#endif
 #ifdef Q_OS_WIN
       WinCommander::runProcess(destinationFilePath, list, "", SW_NORMAL, false,
                                (!isDirectoryWritable(updateDir)));
@@ -1920,8 +1939,10 @@ void MainWindow::on_menu_exit_triggered() {
       QProcess::startDetached(destinationFilePath, list);
 #endif
     } else {
+  #ifdef DEBUG_MODE
       qDebug() << "Failed to copy file from" << sourceFilePath << "to"
                << destinationFilePath;
+#endif
     }
 #endif
   } else if (exit_reason == 2 || exit_reason == 3 || exit_reason == 4) {
@@ -1936,7 +1957,9 @@ void MainWindow::on_menu_exit_triggered() {
     }
     auto program = softwareFilePath;
 
+  #ifdef DEBUG_MODE
     qDebug() << "Will Be Restarted: " << program;
+#endif
 
     if (exit_reason == 3 || exit_reason == 4) {
       if (exit_reason == 3)
@@ -3278,12 +3301,12 @@ void MainWindow::on_menu_resolve_selected_triggered() {
   for (const auto &profile : profiles) {
     auto bean = profile->unlock(profile->bean());
     bean->ResolveDomainToIP([=, this] {
-      profile->Save();
       if (--Configs::dataStore->resolve_count != 0)
         return;
       refresh_proxy_list();
       mw_sub_updating = false;
     });
+    bean.reset();
   }
 }
 
@@ -3313,12 +3336,12 @@ void MainWindow::on_menu_resolve_domain_triggered() {
     auto profile = Configs::profileManager->GetProfile(id);
     auto bean = profile->unlock(profile->bean());
     bean->ResolveDomainToIP([=, this] {
-      profile->Save();
       if (--Configs::dataStore->resolve_count != 0)
         return;
       refresh_proxy_list();
       mw_sub_updating = false;
     });
+    bean.reset();
   }
 }
 
@@ -3822,7 +3845,9 @@ JsUpdaterWindow *MainWindow::createJsUpdaterWindow() {
 #endif
 
 void MainWindow::HotkeyEvent(const QString &key) {
+  #ifdef DEBUG_MODE
   qDebug() << "Hot Key Pressed" << key;
+  #endif
   if (key.isEmpty())
     return;
   runOnUiThread([=, this] {
@@ -4188,8 +4213,9 @@ skip1:
     this->exit_reason = 1;
     this->archive_name = archive_name;
 
+  #ifdef DEBUG_MODE
     qDebug() << "ARCHIVE PATH" << archive_name;
-
+#endif
     runOnNewThread([=, this] { on_menu_exit_triggered(); });
   }
 

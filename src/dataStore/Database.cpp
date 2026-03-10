@@ -58,6 +58,9 @@ namespace Configs {
         // Load Proxys
         QList<int> delProfile;
         for (auto id: profilesIdOrder) {
+            #ifdef DEBUG_MODE
+                qDebug() << "Load Profile With ID" << id;
+            #endif
             auto ent = LoadProxyEntity(
                 QString("profiles/%1.cfg").arg(id),
                 QString("beans/%1.cfg").arg(id)
@@ -153,15 +156,21 @@ namespace Configs {
         bool validType = ent->Load();
 
         if (!validType) {
+            #ifdef DEBUG_MODE
+            qDebug() << "LOADING FAILED:" << jsonPath;
+            #endif
             ent->invalid = true;
             return ent;
         }
         if (!Preset::SingBox::OutboundTypes.contains(ent->type)){
+            #ifdef DEBUG_MODE
+            qDebug() << "UNKNOWN TYPE:" << ent->type;
+            #endif
             ent->invalid = true;
             return ent;
         }
 
-        validType = ent->invalid;
+        validType = !ent->invalid;
         if (!validType){
             auto bean = ent->unlock(ent->bean());
             auto shr = std::make_shared<Configs::OldProxyEntityCompat>(ent);
@@ -174,7 +183,10 @@ namespace Configs {
             bean->Save();
         }
         ent->bean_cfg = beanPath;
-        if (!validType) ent->Save();
+        if (!validType) {
+            ent->invalid = false;
+            ent->Save();
+        }
         return ent;
     }
 
@@ -301,16 +313,19 @@ namespace Configs {
 
         runOnNewThread([=,this]
         {
-           for (int id : deleted_ids) QFile(QString("profiles/%1.cfg").arg(id)).remove();
+           for (int id : deleted_ids) {
+            QFile(QString("profiles/%1.cfg").arg(id)).remove();
+            QFile(QString("beans/%1.cfg").arg(id)).remove();
+           }
         });
     }
 
 
     void ProfileManager::deleteProfile(int id)
     {
-        profiles.erase(id);
-        profilesIdOrder.removeAll(id);
-        QFile(QString("profiles/%1.cfg").arg(id)).remove();
+        QList<int> ids;
+        ids << id;
+        BatchDeleteProfiles(ids);
     }
 
 

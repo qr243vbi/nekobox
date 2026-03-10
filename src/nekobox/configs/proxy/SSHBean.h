@@ -37,5 +37,10 @@ namespace Configs {
         bool TryParseJson(const QJsonObject &obj);
 
         QString ToShareLink() const override;
+        #ifdef DEBUG_MODE
+        virtual QString type() override {
+            return "ssh";
+        };
+        #endif
     };
 }

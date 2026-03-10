@@ -44,11 +44,11 @@ namespace Configs_ConfigItem {
         };
 
     std::shared_ptr<configItem> JsonStore::_get(const QString &name) {
-        return std::dynamic_pointer_cast<configItem>(this->_get_const_job(name));
+        return std::static_pointer_cast<configItem>(this->_get_const_job(name));
     }
 
     std::shared_ptr<const configItem> JsonStore::_get_const(const QString &name) const {
-        return std::dynamic_pointer_cast<const configItem>(this->_get_const_job(name));
+        return std::static_pointer_cast<const configItem>(this->_get_const_job(name));
     }
 
     std::shared_ptr<configItem> JsonStore::_get_const_job(const QString &name) const {
@@ -133,7 +133,9 @@ namespace Configs_ConfigItem {
         auto document = QJsonDocument::fromJson(data, &error);
 
         if (error.error != error.NoError) {
+            #ifdef DEBUG_MODE
             qDebug() << "QJsonParseError" << error.errorString();
+            #endif
             return;
         }
 
@@ -147,18 +149,9 @@ namespace Configs_ConfigItem {
         bool force_json_configs = Configs::ForceJsonConfigs;
 
         auto save_content = 
-            (force_json_configs) ? this->ToJsonBytes() : this->ToBytes();//JsonValueToBytes(this->ToBin());
+            (force_json_configs) ? this->ToJsonBytes() : this->ToBytes({}, true);
         
-        QFile file;
-        file.setFileName(fn);
-        if (file.open(QIODevice::ReadWrite | QIODevice::Truncate)){
-            if (!force_json_configs) {
-                file.write("NekoBox");
-            }
-            file.write(save_content);
-        }
-        file.close();
-
+        WriteFile(fn, save_content);
         return true;
     }
 
@@ -171,9 +164,10 @@ namespace Configs_ConfigItem {
 
         bool ok = file.open(QIODevice::ReadOnly);
         if (!ok) {
-            if (load_control_must){
+            #ifdef DEBUG_MODE
+    //        if (load_control_must){
                 qDebug() << ("can not open config " + fn + "\n" + file.errorString());
-            }
+            #endif
         } else {
             auto last_save_content = file.read(7);
             if (last_save_content == "NekoBox"){
@@ -203,7 +197,13 @@ QByteArray hash = QCryptographicHash::hash(
   return hash;
 }
 
-    bool ForceJsonConfigs = false;
+    bool ForceJsonConfigs = 
+    #ifdef DEBUG_MODE
+    true
+    #else
+    false
+    #endif
+    ;
 
     DataStore *dataStore = new DataStore();
 

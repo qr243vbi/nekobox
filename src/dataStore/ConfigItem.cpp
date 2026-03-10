@@ -211,7 +211,7 @@ std::shared_ptr<configItem> Configs_ConfigItem::getConfigItem(int i) {
   }
 };
 
-QByteArray JsonStore::ToBytes(const QStringList &without) const {
+QByteArray JsonStore::ToBytes(const QStringList &without, bool header) const {
     QByteArray byteArray;
     QBuffer buffer(&byteArray); // Create a buffer to write to QByteArray
     buffer.open(QIODevice::WriteOnly);
@@ -221,11 +221,15 @@ QByteArray JsonStore::ToBytes(const QStringList &without) const {
 
     for (auto value: _map.values() ){
       if (value->name == nullptr){
+        #ifdef DEBUG_MODE
         qDebug() << "INVALID ITEM ::: UNKNOWN NAME" ;
+        #endif
         continue;
       }
         if (value == nullptr){
+          #ifdef DEBUG_MODE
           qDebug() << "INVALID ITEM :::" << value->name;
+          #endif
           continue;
         }
         QString name = value->name;
@@ -241,6 +245,9 @@ QByteArray JsonStore::ToBytes(const QStringList &without) const {
         }
     }
     buffer.close();
+    if (header){
+      return "NekoBox" + byteArray;
+    }
     return byteArray;
 };
 
@@ -265,10 +272,12 @@ void JsonStore::FromBytes(const QByteArray &data) {
       value = getConfigItem(type);
       store = nullptr;
     }
+    #ifdef DEBUG_MODE
     if (value.get() == nullptr){
       qDebug() << "SOMETHING STRANGE HERE: JsonStore::FromBytes";
       qDebug() << type;
     }
+    #endif
     Bin bin;
     bin.item = value.get();
     bin.store = store;
@@ -413,8 +422,6 @@ SET_BIN(boolPtr) {
   bool value;
   data >> value;
   GET_PTR_OR_RETURN
-  qDebug() << value;
-  qDebug() << **(bool **)ptr;
   **(bool **)ptr = value;
 }
 SET_BIN(str) {

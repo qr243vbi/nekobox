@@ -35,5 +35,10 @@ namespace Configs {
         bool TryParseJson(const QJsonObject &obj);
 
         QString ToShareLink()const override;
+        #ifdef DEBUG_MODE
+        virtual QString type() override {
+            return socks_http_type == type_HTTP ? "http" : "socks"; 
+        };
+        #endif
     };
 } // namespace Configs

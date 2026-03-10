@@ -26,12 +26,20 @@ namespace Configs
                 bean->save_control_no_save = this->save_control_no_save;
                 bean->fn = this->bean_cfg;
                 bean->Save();
+                #ifdef DEBUG_MODE
+                    qDebug() << "Save Bean Entity" << fn << "of type" << bean->type() << "and json" << bean->ToJson();
+                #endif
                 this->strong_bean.reset();
-                bean.reset();
             }
         }
         return JsonStore::Save();
     }
+
+    #ifdef DEBUG_MODE
+        #define cast(X) } else if (type == #X) { qDebug() << "Proxy Type is " << #X ;
+    #else
+        #define cast(X) } else if (type == #X) {
+    #endif
 
     std::shared_ptr<const Configs::AbstractBean> ProxyEntity::bean() const {
         auto ent = (ProxyEntity*)this;
@@ -44,45 +52,48 @@ namespace Configs
         }
         bool skip_load = false;
 
-        if (type == "socks") {
+        if (type == ""){
+          goto unknown_type;
+        cast(socks)
             bean = new Configs::SocksHttpBean(ent, Configs::SocksHttpBean::type_Socks5);
-        } else if (type == "mieru"){
+        cast(mieru)
             bean = new Configs::MieruBean(ent);  
-        } else if (type == "http") {
+        cast(http)
             bean = new Configs::SocksHttpBean(ent, Configs::SocksHttpBean::type_HTTP);
-        } else if (type == "shadowsocks") {
+        cast(shadowsocks)
             bean = new Configs::ShadowSocksBean(ent);
-        } else if (type == "chain") {
+        cast(chain)
             bean = new Configs::ChainBean(ent);
-        } else if (type == "vmess") {
+        cast(vmess)
             bean = new Configs::VMessBean(ent);
-        } else if (type == "trojan") {
+        cast(trojan)
             bean = new Configs::TrojanVLESSBean(ent, Configs::TrojanVLESSBean::proxy_Trojan);
-        } else if (type == "vless") {
+        cast(vless)
             bean = new Configs::TrojanVLESSBean(ent, Configs::TrojanVLESSBean::proxy_VLESS);
-        } else if (type == "hysteria") {
+        cast(hysteria)
             bean = new Configs::QUICBean(ent, Configs::QUICBean::proxy_Hysteria);
-        } else if (type == "hysteria2") {
+        cast(hysteria2)
             bean = new Configs::QUICBean(ent, Configs::QUICBean::proxy_Hysteria2);
-        } else if (type == "tuic") {
+        cast(tuic)
             bean = new Configs::QUICBean(ent, Configs::QUICBean::proxy_TUIC);
-        } else if (type == "anytls") {
+        cast(anytls)
             bean = new Configs::AnyTLSBean(ent);
-        } else if (type == "shadowtls") {
+        cast(shadowtls)
             bean = new Configs::ShadowTLSBean(ent);
-        } else if (type == "wireguard") {
+        cast(wireguard) 
             bean = new Configs::WireguardBean(ent);
-        } else if (type == "tailscale") {
+        cast(tailscale)
             bean = new Configs::TailscaleBean(ent);
-        } else if (type == "ssh") {
+        cast(ssh) 
             bean = new Configs::SSHBean(ent);
-        } else if (type == "custom") {
+        cast(custom)
             bean = new Configs::CustomBean(ent);
-        } else if (type == "extracore") {
+        cast(extracore)
             bean = new Configs::ExtraCoreBean(ent);
-        } else if (type == "tor"){
+        cast(tor)
             bean = new Configs::TorBean(ent);
         } else {
+            unknown_type:
             bean = new Configs::AbstractBean(ent, -114514);
             skip_load = true;
         }
@@ -99,6 +110,9 @@ namespace Configs
             entity->weak_bean = ret;
             if (make_strong_bean){
                 entity->strong_bean = ret;
+                #ifdef DEBUG_MODE
+                qDebug() << "Strong Bean Set" << this->strong_bean.use_count() << entity->strong_bean.use_count();
+                #endif
             }
             return ret;
         }
@@ -141,6 +155,16 @@ namespace Configs
         if (type_ != nullptr) this->type = type_;
     };
 
+    ProxyEntity::~ProxyEntity() {
+        this->strong_bean.reset();
+        auto weak = this->weak_bean.lock();
+        if (!save_control_no_save && (weak != nullptr)){
+            Save();
+            weak->entity = nullptr;
+            weak.reset();
+        }
+    };
+
     QString ProxyEntity::DisplayTestResult() const {
         QString result;
         if (latencyInt < 0) {
@@ -158,7 +182,7 @@ namespace Configs
 
         #define cast_func(X)         \
         std::shared_ptr<const Configs::X##Bean> ProxyEntity::X##Bean() const {           \
-            std::shared_ptr<const Configs::X##Bean> ret = std::dynamic_pointer_cast<const Configs::X##Bean>(bean());    \
+            std::shared_ptr<const Configs::X##Bean> ret = std::static_pointer_cast<const Configs::X##Bean>(bean());    \
             return ret; \
         };
 

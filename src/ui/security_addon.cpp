@@ -124,14 +124,19 @@ bool confirmLock(LockValue val, bool restart){
     QString password;
     bool checked;
     if (!userlist.contains(username)) {
+  #ifdef DEBUG_MODE
       qDebug() << "Username " << username << " is not exists";
+      #endif
       goto skip_timing;
     }
     password = confirm->ui->password->text();
     checked = checkPassword(username, password);
     if (!checked) {
+  #ifdef DEBUG_MODE
       qDebug() << "passwords does not match";
       goto skip_timing;
+            #endif
+
     }
     ret = !(getLocked(val, username));
     if (ret){

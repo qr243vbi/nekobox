@@ -32,5 +32,10 @@ namespace Configs {
         bool TryParseJson(const QJsonObject &obj);
 
         QString ToShareLink() const override;
+        #ifdef DEBUG_MODE
+        virtual QString type() override {
+            return "vmess";
+        };
+        #endif
     };
 } // namespace Configs

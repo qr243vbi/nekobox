@@ -23,6 +23,7 @@ namespace Configs {
     STOP_MAP
 
     QString AbstractBean::ToNekorayShareLink(const QString &type) const {
+        if (this->entity == nullptr) return "";
         auto b = ToJson();
         QUrl url;
         url.setScheme("nekoray");
@@ -32,21 +33,22 @@ namespace Configs {
                             .toBase64(QByteArray::Base64UrlEncoding));
         return url.toString();
     }
-
-    bool AbstractBean::Save() {
-        this->fn = this->entity->bean_cfg;
-        return JsonStore::Save();
+    
+    QString AbstractBean::type() {
+        return "unknown";
     }
 
     AbstractBean::~AbstractBean() {
-        if (!save_control_no_save){
+        #ifdef DEBUG_MODE
+            qDebug() << "DO NOT SAVE BEFORE BLOW" << save_control_no_save; 
+        #endif
+        if (!save_control_no_save && (this->entity != nullptr)){
             this->entity->Save();
-            this->fn = this->entity->bean_cfg;
-            JsonStore::Save();
         }
     }
 
     void AbstractBean::ResolveDomainToIP(const std::function<void()> &onFinished) {
+        if (this->entity == nullptr) return;
         bool noResolve = false;
         auto serverAddress = entity->serverAddress;
         if (dynamic_cast<ChainBean *>(this) != nullptr) noResolve = true;

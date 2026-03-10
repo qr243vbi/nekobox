@@ -29,10 +29,9 @@ namespace Configs {
         Configs::ProxyEntity * entity = nullptr;
 
         ~AbstractBean() override;
-        bool Save() override;
+   //     virtual bool Save() override;
 
         explicit AbstractBean(Configs::ProxyEntity * entity, int version);
-
         //
 
         QString ToNekorayShareLink(const QString &type) const;
@@ -40,7 +39,9 @@ namespace Configs {
         void ResolveDomainToIP(const std::function<void()> &onFinished);
 
         //
-
+        #ifdef DEBUG_MODE
+        virtual QString type() ;
+        #endif
 //        [[nodiscard]] virtual QString DisplayAddress();
 
 //        [[nodiscard]] virtual QString DisplayName();

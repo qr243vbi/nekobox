@@ -147,7 +147,7 @@ inline QDataStream &operator>>(QDataStream &in, Bin &p) {
         std::function<void()> callback_before_save = nullptr;
 
         QString fn;
-        bool load_control_must = false; 
+ //       bool load_control_must = false; 
         bool save_control_no_save = false;
 
         JsonStore() = default;
@@ -174,7 +174,7 @@ inline QDataStream &operator>>(QDataStream &in, Bin &p) {
 
         void FromBytes(const QByteArray &data);
 
-        QByteArray ToBytes(const QStringList &without = {}) const;
+        QByteArray ToBytes(const QStringList &without = {}, bool header = false) const;
         
         virtual bool Save();
 

@@ -251,8 +251,9 @@ void updateEmojiFont() {
 #if QT_VERSION >= QT_VERSION_CHECK(6, 9, 0)
   QString font = getResource("emoji.ttf");
   static int latestFont = -1;
-
+#ifdef DEBUG_MODE
   qDebug() << "Font path is : " << font;
+#endif
   int fontId = QFontDatabase::addApplicationFont(font);
   if (fontId >= 0) {
     if (latestFont >= 0) {
@@ -356,7 +357,9 @@ QList<std::shared_ptr<LanguageValue>> &languageCodes() {
     ADD("C", "English")
     QString path = getResource("languages.txt");
     if (path == "") {
+      #ifdef DEBUG_MODE
       qDebug() << "languages.txt path not found";
+      #endif
       ADDIF("zh_CN", "简体中文")
       ADDIF("he_IL", "עברית")
       ADDIF("fa_IR", "فارسی")
@@ -371,7 +374,9 @@ QList<std::shared_ptr<LanguageValue>> &languageCodes() {
           key.slice(0, ind);
           QString value = str;
           value.slice(ind + 1);
+          #ifdef DEBUG_MODE
           qDebug() << "Language: " << key << value ;
+          #endif
           if (!key.isEmpty() && !value.isEmpty()){
             ADDIF(key, value)
           }

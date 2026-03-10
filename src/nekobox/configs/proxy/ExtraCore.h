@@ -29,6 +29,11 @@ namespace Configs {
         bool TryParseLink(const QString &link);
 
         bool TryParseJson(const QJsonObject &obj);
+        #ifdef DEBUG_MODE
+        virtual QString type() override {
+            return "extra";
+        };
+        #endif
 
         QString ToShareLink() const override;
     };

@@ -45,7 +45,7 @@ namespace Configs {
     class ProxyEntity : public JsonStore {
     private:
         std::weak_ptr<Configs::AbstractBean> weak_bean;
-        std::weak_ptr<Configs::AbstractBean> strong_bean;
+        std::shared_ptr<Configs::AbstractBean> strong_bean;
     public:
         virtual ConfJsMap _map() override;
         virtual bool Save() override;
@@ -73,6 +73,7 @@ namespace Configs {
         QString full_test_report;
 
         ProxyEntity(const QString &type_);
+        virtual ~ProxyEntity() override;
 
         qint64 last_auto_test_time = 0;
 
@@ -83,7 +84,7 @@ namespace Configs {
                 if (ret != nullptr){
                     ret->save_control_no_save = false;
                 }
-                return std::dynamic_pointer_cast<A>(ret);
+                return std::static_pointer_cast<A>(ret);
             }
             return nullptr;
         }

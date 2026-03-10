@@ -24,7 +24,7 @@ STOP_MAP
 
 ResourceManager::ResourceManager() : JsonStore("resource_manager.cfg") {
   symlinks_supported = true;
-  load_control_must = true;
+  //load_control_must = true;
   this->Load();
 }
 

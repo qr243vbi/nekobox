@@ -104,10 +104,14 @@ QVariant LanguageModel::data(const QModelIndex &index, int role ) const
         QModelIndex selectedIndex = languageListView->currentIndex();
         if (selectedIndex.isValid()) {
             selectedLanguage = languageModel->getLanguage(languageModel->data(selectedIndex, 9999).value<int>());
+            #ifdef DEBUG_MODE
             qDebug() << "Selected language:" << selectedLanguage->name;
+            #endif
             accept(); // Close the dialog with acceptance
         } else {
+            #ifdef DEBUG_MODE
             qDebug() << "No language selected";
+            #endif
         }
     }
 
@@ -472,7 +476,9 @@ void DialogBasicSettings::accept() {
  //   int width, height, X, Y;
     // Startup
     settings->language = locale;
+    #ifdef DEBUG_MODE
     qDebug() << "Save language as: " << locale;
+    #endif
     S_SAVE_BOOL(save_geometry);
     S_SAVE_BOOL(save_position);
     S_SAVE_INT(width)

@@ -66,6 +66,11 @@ namespace Configs {
         QString ToShareLink() const override;
 
         bool IsEndpoint() const override {return true;}
+        #ifdef DEBUG_MODE
+        virtual QString type() override {
+            return "wireguard";
+        };
+        #endif
 
     private:
         bool parseWgConfig(const QString &config);

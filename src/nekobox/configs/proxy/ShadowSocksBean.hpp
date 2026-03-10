@@ -42,5 +42,10 @@ namespace Configs {
         bool TryParseFromSIP008(const QJsonObject& object);
 
         QString ToShareLink() const override;
+        #ifdef DEBUG_MODE
+        virtual QString type() override {
+            return "shadowsocks";
+        };
+        #endif
     };
 } // namespace Configs
