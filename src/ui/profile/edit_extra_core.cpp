@@ -46,7 +46,7 @@ void EditExtraCore::onStart(std::shared_ptr<Configs::ProxyEntity> _ent) {
 }
 
 bool EditExtraCore::onEnd() {
-    auto bean = ent->ExtraCoreBean();
+    auto bean = ent->unlock(ent->ExtraCoreBean());
     bean->socksAddress = ui->socks_address->text();
     bean->socksPort = ui->socks_port->text().toInt();
     bean->extraCoreConf = ui->config->toPlainText();

@@ -118,14 +118,18 @@ namespace Configs {
         }
     };
 
-    inline V2rayStreamSettings *GetStreamSettings(AbstractBean *bean) {
+    inline const V2rayStreamSettings *GetStreamSettingsConst(const AbstractBean *bean) {
         if (bean == nullptr) return nullptr;
-        auto stream_item = bean->_get("stream");
+        auto stream_item = bean->_get_const("stream");
         if (stream_item != nullptr) {
-            auto stream_store = *(JsonStore **) stream_item->getPtr(bean);
+            auto stream_store = *(JsonStore **) stream_item->getPtr((JsonStore*)bean);
             auto stream = (Configs::V2rayStreamSettings *) stream_store;
             return stream;
         }
         return nullptr;
+    }
+
+    inline V2rayStreamSettings *GetStreamSettings(AbstractBean *bean) {
+        return (V2rayStreamSettings*) GetStreamSettingsConst(bean);
     }
 } // namespace Configs

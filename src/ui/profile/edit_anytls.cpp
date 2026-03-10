@@ -18,9 +18,9 @@ EditAnyTLS::~EditAnyTLS() {
     delete ui;
 }
 
-void EditAnyTLS::onStart(std::shared_ptr<Configs::ProxyEntity> _ent) {
-    this->ent = _ent;
-    auto bean = this->ent->AnyTLSBean();
+void EditAnyTLS::onStart(std::shared_ptr<Configs::ProxyEntity> ent) {
+    this->ent = ent;
+    auto bean = (ent->AnyTLSBean());
 
     ui->password->setText(bean->password);
     ui->interval->setText(bean->idle_session_check_interval);
@@ -29,7 +29,7 @@ void EditAnyTLS::onStart(std::shared_ptr<Configs::ProxyEntity> _ent) {
 }
 
 bool EditAnyTLS::onEnd() {
-    auto bean = this->ent->AnyTLSBean();
+    auto bean = ent->unlock(ent->AnyTLSBean());
 
     bean->password = ui->password->text();
     bean->idle_session_check_interval = ui->interval->text();
@@ -48,9 +48,9 @@ EditShadowTLS::~EditShadowTLS() {
     delete ui;
 }
 
-void EditShadowTLS::onStart(std::shared_ptr<Configs::ProxyEntity> _ent) {
-    this->ent = _ent;
-    auto bean = this->ent->ShadowTLSBean();
+void EditShadowTLS::onStart(std::shared_ptr<Configs::ProxyEntity> ent) {
+    this->ent = ent;
+    auto bean = ent->ShadowTLSBean();
 
     ui->password->setText(bean->password);
     int ver = bean->shadowtls_version - 1;
@@ -59,7 +59,7 @@ void EditShadowTLS::onStart(std::shared_ptr<Configs::ProxyEntity> _ent) {
 }
 
 bool EditShadowTLS::onEnd() {
-    auto bean = this->ent->ShadowTLSBean();
+    auto bean = ent->unlock(ent->ShadowTLSBean());
 
     bean->password = ui->password->text();
     bean->shadowtls_version = ui->comboBox->currentIndex() + 1;

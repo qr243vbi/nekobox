@@ -15,7 +15,7 @@ namespace Configs {
 
         std::shared_ptr<V2rayStreamSettings> stream = std::make_shared<V2rayStreamSettings>();
 
-        ShadowSocksBean() : AbstractBean(0) {
+        ShadowSocksBean(Configs::ProxyEntity * entity) : AbstractBean(entity, 0) {
         }
 
         INIT_MAP
@@ -30,10 +30,10 @@ namespace Configs {
         bool IsValid() {
             return Preset::SingBox::ShadowsocksMethods.contains(method);
         }
-
+/*/
         QString DisplayType() override { return "Shadowsocks"; };
-
-        CoreObjOutboundBuildResult BuildCoreObjSingBox() override;
+*/
+        CoreObjOutboundBuildResult BuildCoreObjSingBox() const override;
 
         bool TryParseLink(const QString &link);
 
@@ -41,6 +41,6 @@ namespace Configs {
 
         bool TryParseFromSIP008(const QJsonObject& object);
 
-        QString ToShareLink() override;
+        QString ToShareLink() const override;
     };
 } // namespace Configs

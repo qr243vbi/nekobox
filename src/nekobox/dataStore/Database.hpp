@@ -37,8 +37,6 @@ namespace Configs {
 
         [[nodiscard]] static QString GetDisplayType(const QString & type);
 
-        [[nodiscard]] static std::shared_ptr<ProxyEntity> NewProxyEntity(const QString &type, bool nullok);
-
         [[nodiscard]] static std::shared_ptr<ProxyEntity> NewProxyEntity(const QString &type);
 
         [[nodiscard]] static std::shared_ptr<Group> NewGroup();
@@ -86,7 +84,7 @@ namespace Configs {
 
         [[nodiscard]] int NewRouteChainID() const;
 
-        static std::shared_ptr<ProxyEntity> LoadProxyEntity(const QString &jsonPath);
+        static std::shared_ptr<ProxyEntity> LoadProxyEntity(const QString &jsonPath, const QString &beanPath);
 
         static std::shared_ptr<Group> LoadGroup(const QString &jsonPath);
 

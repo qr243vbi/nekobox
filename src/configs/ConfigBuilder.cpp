@@ -152,7 +152,7 @@ namespace Configs {
         status->chainID = chainID;
 
         if (status->ent != nullptr){
-            auto customBean = dynamic_cast<Configs::CustomBean *>(ent->bean.get());
+            auto customBean = ent->CustomBean();
             if (customBean != nullptr && customBean->core == "internal-full") {
                 if (dataStore->spmode_vpn)
                 {
@@ -165,7 +165,7 @@ namespace Configs {
             }
 
         // apply custom config
-            MergeJson(QString2QJsonObject(ent->bean->custom_config), result->coreConfig);
+            MergeJson(QString2QJsonObject(customBean->custom_config), result->coreConfig);
         } else {
             qDebug() << "Generating Block Network Config";
             BuildConfigSingBox(status);
@@ -195,14 +195,14 @@ namespace Configs {
             return true;
         }
         QJsonObject conf;
-        if (ent->type == "custom" && ent->CustomBean()->core == "internal-full")
+        auto bean = ent->bean();
+        if (auto custom = ent->CustomBean(); ent->type == "custom" && ent->CustomBean()->core == "internal-full")
         {
             conf = QString2QJsonObject(ent->CustomBean()->config_simple);
-        } else
-        {
-            auto out = ent->bean->BuildCoreObjSingBox();
+        } else {
+            auto out = bean->BuildCoreObjSingBox();
             auto outArr = QJsonArray{out.outbound};
-            auto key = ent->bean->IsEndpoint() ? "endpoints" : "outbounds";
+            auto key = bean->IsEndpoint() ? "endpoints" : "outbounds";
             conf = {
             {key, outArr},
             };
@@ -216,7 +216,7 @@ namespace Configs {
         }
         if (resp.isEmpty()) return true;
         // else
-        MW_show_log("Invalid ent " + ent->bean->name + ": " + resp);
+        MW_show_log("Invalid ent " + ent->name + ": " + resp);
         return false;
     }
 
@@ -241,7 +241,7 @@ namespace Configs {
                 continue;
             }
             if (!IsValid(item)) {
-                MW_show_log("Skipping invalid config: " + item->bean->name);
+                MW_show_log("Skipping invalid config: " + item->name);
                 item->latencyInt = -1;
                 continue;
             }
@@ -271,7 +271,7 @@ namespace Configs {
             // now we add the outbounds of the current config to the final one
             auto outbounds = res->coreConfig["outbounds"].toArray();
             if (outbounds.isEmpty()) {
-                results->error = QString("outbounds is empty for %1").arg(item->bean->name);
+                results->error = QString("outbounds is empty for %1").arg(item->name);
                 return results;
             }
             auto endpoints = res->coreConfig["endpoints"].toArray();
@@ -422,13 +422,14 @@ namespace Configs {
 
             BuildOutbound(ent, status, outbound, tagOut);
 
+            auto bean = ent->bean();
             // apply custom outbound settings
-            MergeJson(QString2QJsonObject(ent->bean->custom_outbound), outbound);
+            MergeJson(QString2QJsonObject(bean->custom_outbound), outbound);
 
             // Bypass Lookup for the first profile
-            auto serverAddress = ent->bean->serverAddress;
+            auto serverAddress = ent->serverAddress;
 
-            if (auto customBean = dynamic_cast<Configs::CustomBean *>(ent->bean.get()); customBean != nullptr && customBean->core == "internal") {
+            if (auto customBean = ent->CustomBean(); customBean != nullptr && customBean->core == "internal") {
                 auto server = QString2QJsonObject(customBean->config_simple)["server"].toString();
                 if (!server.isEmpty()) serverAddress = server;
             }
@@ -437,7 +438,7 @@ namespace Configs {
                 status->domainListDNSDirect += serverAddress;
             }
 
-            if (ent->bean->IsEndpoint())
+            if (bean->IsEndpoint())
             {
                 status->endpoints += outbound;
                 lastWasEndpoint = true;
@@ -452,6 +453,7 @@ namespace Configs {
     }
 
     void BuildOutbound(const std::shared_ptr<ProxyEntity> &ent, const std::shared_ptr<BuildConfigStatus> &status, QJsonObject& outbound, const QString& tag) {
+        auto bean = ent->bean();
         if (ent->type == "wireguard") {
             if (ent->WireguardBean()->useSystemInterface && !IsAdmin()) {
                 MW_dialog_message("configBuilder" ,"NeedAdmin");
@@ -460,7 +462,7 @@ namespace Configs {
             }
         }
 
-        const auto coreR = ent->bean->BuildCoreObjSingBox();
+        const auto coreR = bean->BuildCoreObjSingBox();
         if (coreR.outbound.isEmpty()) {
             status->result->error = "unsupported outbound";
             return;
@@ -481,16 +483,16 @@ namespace Configs {
         auto needMux = ent->type == "vmess" || ent->type == "trojan" || ent->type == "vless" || ent->type == "shadowsocks";
         needMux &= dataStore->mux_concurrency > 0;
 
-        auto stream = GetStreamSettings(ent->bean.get());
+        auto stream = GetStreamSettingsConst(bean.get());
         if (stream != nullptr) {
             if (stream->network == "grpc" || stream->network == "quic" || stream->network == "anytls" || (stream->network == "http" && stream->security == "tls")) {
                 needMux = false;
             }
         }
 
-        auto mux_state = ent->bean->mux_state;
+        auto mux_state = bean->mux_state;
         if (mux_state == 0) {
-            if (!dataStore->mux_default_on && !ent->bean->enable_brutal) needMux = false;
+            if (!dataStore->mux_default_on && !bean->enable_brutal) needMux = false;
         } else if (mux_state == 1) {
             needMux = true;
         } else if (mux_state == 2) {
@@ -510,11 +512,11 @@ namespace Configs {
                 {"padding", dataStore->mux_padding},
                 {"max_streams", dataStore->mux_concurrency},
             };
-            if (ent->bean->enable_brutal) {
+            if (bean->enable_brutal) {
                 auto brutalObj = QJsonObject{
                     {"enabled", true},
-                    {"up_mbps", ent->bean->brutal_speed},
-                    {"down_mbps", ent->bean->brutal_speed},
+                    {"up_mbps", bean->brutal_speed},
+                    {"down_mbps", bean->brutal_speed},
                 };
                 muxObj["max_connections"] = 1;
                 muxObj["brutal"] = brutalObj;
@@ -890,8 +892,8 @@ namespace Configs {
                 outboundMap[item] = tag;
 
                 // add to dns direct resolve
-                if (!IsIpAddress(neededEnt->bean->serverAddress)) {
-                    directDomains << neededEnt->bean->serverAddress;
+                if (!IsIpAddress(neededEnt->serverAddress)) {
+                    directDomains << neededEnt->serverAddress;
                     needDirectDnsRules = true;
                 }
             }

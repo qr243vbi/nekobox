@@ -10,9 +10,9 @@ EditWireguard::~EditWireguard() {
     delete ui;
 }
 
-void EditWireguard::onStart(std::shared_ptr<Configs::ProxyEntity> _ent) {
-    this->ent = _ent;
-    auto bean = this->ent->WireguardBean();
+void EditWireguard::onStart(std::shared_ptr<Configs::ProxyEntity> ent) {
+    this->ent = ent;
+    auto bean = ent->WireguardBean();
 
 #ifndef Q_OS_UNIX
     adjustSize();
@@ -42,7 +42,7 @@ void EditWireguard::onStart(std::shared_ptr<Configs::ProxyEntity> _ent) {
 }
 
 bool EditWireguard::onEnd() {
-    auto bean = this->ent->WireguardBean();
+    auto bean = ent->unlock(ent->WireguardBean());
 
     bean->privateKey = ui->private_key->text();
     bean->publicKey = ui->public_key->text();

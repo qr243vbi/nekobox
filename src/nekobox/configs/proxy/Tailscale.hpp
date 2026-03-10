@@ -17,7 +17,7 @@ namespace Configs {
         bool advertise_exit_node = false;
         bool globalDNS = false;
 
-        explicit TailscaleBean() : AbstractBean(0) {
+        explicit TailscaleBean(Configs::ProxyEntity * entity) : AbstractBean(entity, 0) {
         }
 
         INIT_MAP
@@ -34,19 +34,19 @@ namespace Configs {
             ADD_MAP("globalDNS", globalDNS, boolean);
         STOP_MAP
         
-
+/*/
         QString DisplayType() override { return "Tailscale"; }
 
         QString DisplayAddress() override {return control_url; }
-
-        CoreObjOutboundBuildResult BuildCoreObjSingBox() override;
+*/
+        CoreObjOutboundBuildResult BuildCoreObjSingBox() const override;
 
         bool TryParseLink(const QString &link);
 
         bool TryParseJson(const QJsonObject &obj);
 
-        QString ToShareLink() override;
+        QString ToShareLink() const override;
 
-        bool IsEndpoint() override {return true;}
+        bool IsEndpoint() const override {return true;}
     };
 } // namespace Configs

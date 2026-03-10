@@ -19,9 +19,9 @@ ProxyItem::~ProxyItem() {
 }
 
 void ProxyItem::refresh_data() {
-    ui->type->setText(ent->bean->DisplayType());
-    ui->name->setText(ent->bean->DisplayName());
-    ui->address->setText(ent->bean->DisplayAddress());
+    ui->type->setText(ent->DisplayType());
+    ui->name->setText(ent->DisplayName());
+    ui->address->setText(ent->DisplayAddress());
     ui->traffic->setText(ent->traffic_data->DisplayTraffic());
     ui->test_result->setText(ent->DisplayTestResult());
 
@@ -36,7 +36,8 @@ void ProxyItem::refresh_data() {
 
 void ProxyItem::on_remove_clicked() {
     if (!this->remove_confirm ||
-        QMessageBox::question(this, tr("Confirmation"), tr("Remove %1?").arg(ent->bean->DisplayName())) == QMessageBox::StandardButton::Yes) {
+        QMessageBox::question(this, tr("Confirmation"), tr("Remove %1?").arg(
+            ent->DisplayName())) == QMessageBox::StandardButton::Yes) {
         // TODO do remove (or not) -> callback
         delete item;
     }

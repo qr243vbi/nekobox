@@ -44,7 +44,16 @@ namespace Configs_ConfigItem {
         };
 
     std::shared_ptr<configItem> JsonStore::_get(const QString &name) {
-        auto _map = this->_map();
+        return std::dynamic_pointer_cast<configItem>(this->_get_const_job(name));
+    }
+
+    std::shared_ptr<const configItem> JsonStore::_get_const(const QString &name) const {
+        return std::dynamic_pointer_cast<const configItem>(this->_get_const_job(name));
+    }
+
+    std::shared_ptr<configItem> JsonStore::_get_const_job(const QString &name) const {
+        JsonStore * store = (JsonStore*) this;
+        auto _map = store->_map();
         auto h = Configs::hash(name);
         if (_map.contains(h)) {
             auto ret =  _map.value(h);
@@ -55,9 +64,10 @@ namespace Configs_ConfigItem {
         return nullptr;
     }
 
-    QJsonObject JsonStore::ToJson(const QStringList &without) {
+    QJsonObject JsonStore::ToJson(const QStringList &without) const {
         QJsonObject object;
-        auto _map = this->_map();
+        JsonStore * store = (JsonStore*) this;
+        auto _map = store->_map();
         for (const auto &_item: _map.values()) {
             auto item = _item.get();
             if (item == nullptr){
@@ -66,16 +76,16 @@ namespace Configs_ConfigItem {
             const QString & name = item->name;
             if (without.contains(name)) continue;
 
-            object.insert(name, item->getNode(this));
+            object.insert(name, item->getNode(store));
         }
         return object;
     }
 
-    QByteArray JsonStore::ToJsonBytes(const QStringList &without) {
+    QByteArray JsonStore::ToJsonBytes(const QStringList &without) const {
         return QJsonObject2QString(ToJson(without), false).toUtf8();
     }
 
-    void * configItem::getPtr(JsonStore * p) const {
+    void * configItem::getPtr(const JsonStore * p) const {
         return (void*)((size_t)p + ptr);
     }
 
@@ -103,10 +113,10 @@ namespace Configs_ConfigItem {
         if (callback_after_load != nullptr) callback_after_load();
     }
 
-    void JsonStore::_setValue(JsonStore * store, const void *p){
-        for (auto & item: store->_map()){
+    void JsonStore::_setValue(const JsonStore * store, const void *p){
+        for (auto & item: ((JsonStore*)store)->_map()){
             if (item->getPtr(store) == p){
-                this->_setValue(item->name, item->getNode(store));
+                this->_setValue(item->name, item->getNode((JsonStore*)store));
             }
         }
     }

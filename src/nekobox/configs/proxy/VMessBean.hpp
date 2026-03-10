@@ -13,7 +13,7 @@ namespace Configs {
 
         std::shared_ptr<V2rayStreamSettings> stream = std::make_shared<V2rayStreamSettings>();
 
-        VMessBean() : AbstractBean(0) {
+        VMessBean(Configs::ProxyEntity * entity) : AbstractBean(entity, 0) {
         }
 
         INIT_MAP
@@ -22,15 +22,15 @@ namespace Configs {
             ADD_MAP("sec", security, string);
             ADD_MAP("stream", stream, jsonStore);
         STOP_MAP
-
+/*/
         QString DisplayType() override { return "VMess"; };
-
-        CoreObjOutboundBuildResult BuildCoreObjSingBox() override;
+*/
+        CoreObjOutboundBuildResult BuildCoreObjSingBox() const override;
 
         bool TryParseLink(const QString &link);
 
         bool TryParseJson(const QJsonObject &obj);
 
-        QString ToShareLink() override;
+        QString ToShareLink() const override;
     };
 } // namespace Configs

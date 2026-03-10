@@ -348,9 +348,9 @@ void DialogEditProfile::typeSelected(const QString &newType) {
   ui->address_l->setVisible(showAddressPort);
   ui->port->setVisible(showAddressPort);
   ui->port_l->setVisible(showAddressPort);
+  auto bean = ent->bean();
 
-  // 右边 stream
-  auto stream = GetStreamSettings(ent->bean.get());
+  auto stream = GetStreamSettingsConst(bean.get());
   if (stream != nullptr) {
     ui->right_all_w->setVisible(true);
     ui->network->setCurrentText(stream->network);
@@ -380,11 +380,11 @@ void DialogEditProfile::typeSelected(const QString &newType) {
     ui->xhttp_extra->setText(stream->xhttp_extra);
     ui->reality_pbk->setText(stream->reality_pbk);
     ui->reality_sid->setText(stream->reality_sid);
-    ui->multiplex->setCurrentIndex(ent->bean->mux_state);
-    ui->brutal_enable->setCheckState(ent->bean->enable_brutal
+    ui->multiplex->setCurrentIndex(bean->mux_state);
+    ui->brutal_enable->setCheckState(bean->enable_brutal
                                          ? Qt::CheckState::Checked
                                          : Qt::CheckState::Unchecked);
-    ui->brutal_speed->setText(QString::number(ent->bean->brutal_speed));
+    ui->brutal_speed->setText(QString::number(bean->brutal_speed));
     CACHE.certificate = stream->certificate;
     CACHE.ech_config = stream->ech_config;
   } else {
@@ -392,8 +392,8 @@ void DialogEditProfile::typeSelected(const QString &newType) {
   }
 
   // left: custom
-  CACHE.custom_config = ent->bean->custom_config;
-  CACHE.custom_outbound = ent->bean->custom_outbound;
+  CACHE.custom_config = bean->custom_config;
+  CACHE.custom_outbound = bean->custom_outbound;
   bool show_custom_config = true;
   bool show_custom_outbound = true;
   if (type == "chain") {
@@ -417,7 +417,7 @@ void DialogEditProfile::typeSelected(const QString &newType) {
   ui->bean->layout()->removeWidget(old);
   innerWidget->layout()->setContentsMargins(0, 0, 0, 0);
   ui->bean->layout()->addWidget(innerWidget);
-  ui->bean->setTitle(ent->bean->DisplayType());
+  ui->bean->setTitle(ent->DisplayType());
   delete old;
 
   // 左边 bean inner editor
@@ -433,9 +433,9 @@ void DialogEditProfile::typeSelected(const QString &newType) {
   innerEditor->onStart(ent);
 
   // 左边 common
-  ui->name->setText(ent->bean->name);
-  ui->address->setText(ent->bean->serverAddress);
-  ui->port->setText(QString::number(ent->bean->serverPort));
+  ui->name->setText(ent->name);
+  ui->address->setText(ent->serverAddress);
+  ui->port->setText(QString::number(ent->serverPort));
   ui->port->setValidator(QRegExpValidator_Number);
 
   // 星号
@@ -501,12 +501,12 @@ bool DialogEditProfile::onEnd() {
   }
 
   // 左边
-  ent->bean->name = ui->name->text();
-  ent->bean->serverAddress = ui->address->text().remove(' ');
-  ent->bean->serverPort = ui->port->text().toInt();
-
-  // 右边 stream
-  auto stream = GetStreamSettings(ent->bean.get());
+  ent->name = ui->name->text();
+  ent->serverAddress = ui->address->text().remove(' ');
+  ent->serverPort = ui->port->text().toInt();
+  auto bean = ent->unlock(ent->bean());
+  //
+  auto stream = GetStreamSettings(bean.get());
   if (stream != nullptr) {
     stream->network = ui->network->currentText();
     stream->security = ui->security->currentText();
@@ -530,9 +530,9 @@ bool DialogEditProfile::onEnd() {
     stream->xhttp_extra = ui->xhttp_extra->text();
     stream->reality_pbk = ui->reality_pbk->text();
     stream->reality_sid = ui->reality_sid->text();
-    ent->bean->mux_state = ui->multiplex->currentIndex();
-    ent->bean->enable_brutal = ui->brutal_enable->isChecked();
-    ent->bean->brutal_speed = ui->brutal_speed->text().toInt();
+    bean->mux_state = ui->multiplex->currentIndex();
+    bean->enable_brutal = ui->brutal_enable->isChecked();
+    bean->brutal_speed = ui->brutal_speed->text().toInt();
     stream->certificate = CACHE.certificate;
     stream->ech_config = CACHE.ech_config;
 
@@ -545,13 +545,13 @@ bool DialogEditProfile::onEnd() {
   }
 
   // cached custom
-  ent->bean->custom_outbound = CACHE.custom_outbound;
-  ent->bean->custom_config = CACHE.custom_config;
-
+  bean->custom_outbound = CACHE.custom_outbound;
+  bean->custom_config = CACHE.custom_config;
   return true;
 }
 
 void DialogEditProfile::accept() {
+  auto bean = ent->bean();
   // save to ent
   if (!onEnd()) {
     return;
@@ -568,6 +568,7 @@ void DialogEditProfile::accept() {
       QMessageBox::warning(this, "???", "id exists");
     });
     }
+    ent->Save();
   } else {
     auto changed = ent->Save();
     if (changed && Configs::dataStore->started_id == ent->id)
@@ -699,51 +700,70 @@ void DialogEditProfile::on_apply_to_group_clicked() {
 
 void DialogEditProfile::do_apply_to_group(
     const std::shared_ptr<Configs::Group> &group, QWidget *key) {
-  Configs::V2rayStreamSettings *stream = nullptr;
-  Configs::AbstractBean *bean = nullptr;
-  bean = ent->bean.get();
+  const Configs::V2rayStreamSettings *stream = nullptr;
+  auto bean = ent->bean();
+
   if (bean != nullptr) {
-    stream = GetStreamSettings(ent->bean.get());
+    stream = GetStreamSettingsConst(bean.get());
   }
 
-  auto copyStream = [=, this](void *p) {
+  QMap<int, std::shared_ptr<Configs::AbstractBean>> to_save;
+
+  #define SAVE_PROFILE       {        \
+        int id = profile->id;         \
+        if (to_save.count(id) == 0) to_save[id] = profile_bean;  \
+      }
+
+  auto copyStream = [=, this](const void *p) {
     for (const auto &profile : group->GetProfileEnts()) {
-      if (profile->bean.get() == nullptr)
+      auto profile_bean = profile->unlock(profile->bean());
+      if (profile_bean == nullptr)
         continue;
-      auto newStream = GetStreamSettings(profile->bean.get());
+      auto newStream = GetStreamSettings(profile_bean.get());
       if (newStream == nullptr || stream == newStream)
         continue;
       newStream->_setValue(stream, p);
-      profile->Save();
+      SAVE_PROFILE
     }
   };
 
-  auto copyBean = [=, this](void *p) {
+  auto copyBean = [=, this](const void *p) {
     for (const auto &profile : group->GetProfileEnts()) {
-      if (profile == ent || profile->bean.get() == nullptr)
+      auto profile_bean = profile->unlock(profile->bean());
+      if (profile == ent || profile_bean == nullptr)
         continue;
-      profile->bean->_setValue(bean, p);
-      profile->Save();
+      profile_bean.get()->_setValue(bean.get(), p);
+      SAVE_PROFILE
+    }
+  };
+
+  auto copyEntity = [=, this](const void *p) {
+    for (const auto &profile : group->GetProfileEnts()) {
+      auto profile_bean = profile->unlock(profile->bean());
+      if (profile == ent || profile_bean.get() == nullptr)
+        continue;
+      profile->_setValue(bean->entity, p);
+      SAVE_PROFILE
     }
   };
 
   if (bean != nullptr) {
     if (key == ui->name){
-      copyBean(&ent->bean->name);
+      copyEntity(&ent->name);
     } else if (key == ui->port){
-      copyBean(&ent->bean->serverPort);
+      copyEntity(&ent->serverPort);
     } else if (key == ui->address){
-      copyBean(&ent->bean->serverAddress);
+      copyEntity(&ent->serverAddress);
     } else if (key == ui->multiplex) {
-      copyBean(&ent->bean->mux_state);
+      copyBean(&bean->mux_state);
     } else if (key == ui->brutal_enable) {
-      copyBean(&ent->bean->enable_brutal);
+      copyBean(&bean->enable_brutal);
     } else if (key == ui->brutal_speed) {
-      copyBean(&ent->bean->brutal_speed);
+      copyBean(&bean->brutal_speed);
     } else if (key == ui->custom_config_edit) {
-      copyBean(&ent->bean->custom_config);
+      copyBean(&bean->custom_config);
     } else if (key == ui->custom_outbound_edit) {
-      copyBean(&ent->bean->custom_outbound);
+      copyBean(&bean->custom_outbound);
     } else {
       if (stream != nullptr) {
         if (key == ui->ech_config_edit) {
@@ -767,5 +787,9 @@ void DialogEditProfile::do_apply_to_group(
         }
       }
     }
+  }
+
+  for (auto ent : to_save.values()){
+    ent->entity->Save();
   }
 }

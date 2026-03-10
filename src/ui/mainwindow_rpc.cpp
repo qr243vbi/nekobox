@@ -132,7 +132,7 @@ void MainWindow::runURLTest(const QString& config, bool useDefault, const QStrin
                     else {
                         ent->latencyInt = -1;
                         MW_show_log(tr("[%1] test error: %2").arg(
-                            ent->bean->DisplayTypeAndName(), error));
+                            ent->DisplayTypeAndName(), error));
                     }
                 }
                 ent->Save();
@@ -178,7 +178,7 @@ void MainWindow::runURLTest(const QString& config, bool useDefault, const QStrin
             else {
                 ent->latencyInt = -1;
                 MW_show_log(tr("[%1] test error: %2").arg(
-                ent->bean->DisplayTypeAndName(), error));
+                ent->DisplayTypeAndName(), error));
             }
         }
         ent->Save();
@@ -365,7 +365,7 @@ void MainWindow::querySpeedtest(QDateTime lastProxyListUpdate, const QMap<QStrin
     runOnUiThread([=, this, &lastProxyListUpdate]
     {
         showSpeedtestData = true;
-        currentSptProfileName = profile->bean->name;
+        currentSptProfileName = profile->name;
         auto result = currentTestResult = res->result;
         UpdateDataView();
 
@@ -512,7 +512,7 @@ void MainWindow::runSpeedTest(const QString& config, bool useDefault, bool testC
             ent->latencyInt = -1;
             ent->test_country = "";
             MW_show_log(tr("[%1] speed test error: %2").arg(
-                ent->bean->DisplayTypeAndName(), QString::fromStdString(res.error)));
+                ent->DisplayTypeAndName(), QString::fromStdString(res.error)));
         }
         ent->Save();
     }
@@ -669,9 +669,9 @@ void MainWindow::profile_start(int _id, bool do_not_test) {
         mutex->unlock();
         delete mutex;
         // do start
-        MW_show_log(">>>>>>>> " + tr("Starting profile %1").arg(ent->bean->DisplayTypeAndName()));
+        MW_show_log(">>>>>>>> " + tr("Starting profile %1").arg(ent->DisplayTypeAndName()));
         if (!profile_start_stage2()) {
-            MW_show_log("<<<<<<<< " + tr("Failed to start profile %1").arg(ent->bean->DisplayTypeAndName()));
+            MW_show_log("<<<<<<<< " + tr("Failed to start profile %1").arg(ent->DisplayTypeAndName()));
         }
         mu_starting.unlock();
         if (!do_not_test) {
@@ -760,7 +760,7 @@ void MainWindow::profile_stop(bool crash, bool block, bool manual) {
 
     runOnNewThread([=, this, &blocker] {
         // do stop
-        MW_show_log(">>>>>>>> " + tr("Stopping profile %1").arg(running->bean->DisplayTypeAndName()));
+        MW_show_log(">>>>>>>> " + tr("Stopping profile %1").arg(running->DisplayTypeAndName()));
         if (!profile_stop_stage2()) {
             MW_show_log("<<<<<<<< " + tr("Failed to stop, please restart the program."));
         }

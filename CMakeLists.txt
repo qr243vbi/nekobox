@@ -130,6 +130,7 @@ set(PROJECT_SOURCES
         src/configs/ConfigBuilder.cpp
 
         src/configs/proxy/AbstractBean.cpp
+        src/configs/proxy/WireguardBean.cpp
         src/configs/proxy/Bean2CoreObj_box.cpp
         src/configs/proxy/Bean2Link.cpp
         src/configs/proxy/Link2Bean.cpp

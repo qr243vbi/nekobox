@@ -120,7 +120,7 @@ template <typename T> auto asListRange(QList<T> &&list) {
     return ptr;
 
 #define DECL_MAP(X)                                                            \
-  ConfJsMap X::_map() {                                                        \
+  ConfJsMap X::_map() {                                                  \
     MAP_BODY
 
 #define INIT_MAP_1                                                             \

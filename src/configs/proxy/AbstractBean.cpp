@@ -1,18 +1,20 @@
-#include "nekobox/configs/proxy/includes.h"
+
+#include <nekobox/dataStore/ProxyEntity.hpp>
+#include <nekobox/configs/proxy/AbstractBean.hpp>
+#include <nekobox/configs/proxy/includes.h>
 
 #include <QApplication>
 #include <QHostInfo>
 #include <QUrl>
 
 namespace Configs {
-    AbstractBean::AbstractBean(int version) {
+    AbstractBean::AbstractBean(Configs::ProxyEntity * entity, int version) {
+        this->entity = entity;
+        this->save_control_no_save = true;
         this->version = version;
     }
     DECL_MAP(AbstractBean)
         ADD_MAP("_v", version, integer);
-        ADD_MAP("name", name, string);
-        ADD_MAP("addr", serverAddress, string);
-        ADD_MAP("port", serverPort, integer);
         ADD_MAP("c_cfg", custom_config, string);
         ADD_MAP("c_out", custom_outbound, string);
         ADD_MAP("mux", mux_state, integer);
@@ -20,7 +22,7 @@ namespace Configs {
         ADD_MAP("brutal_speed", brutal_speed, integer);
     STOP_MAP
 
-    QString AbstractBean::ToNekorayShareLink(const QString &type) {
+    QString AbstractBean::ToNekorayShareLink(const QString &type) const {
         auto b = ToJson();
         QUrl url;
         url.setScheme("nekoray");
@@ -31,23 +33,22 @@ namespace Configs {
         return url.toString();
     }
 
-    QString AbstractBean::DisplayAddress() {
-        return ::DisplayAddress(serverAddress, serverPort);
+    bool AbstractBean::Save() {
+        this->fn = this->entity->bean_cfg;
+        return JsonStore::Save();
     }
 
-    QString AbstractBean::DisplayName() {
-        if (name.isEmpty()) {
-            return DisplayAddress();
+    AbstractBean::~AbstractBean() {
+        if (!save_control_no_save){
+            this->entity->Save();
+            this->fn = this->entity->bean_cfg;
+            JsonStore::Save();
         }
-        return name;
-    }
-
-    QString AbstractBean::DisplayTypeAndName() {
-        return QString("[%1] %2").arg(DisplayType(), DisplayName());
     }
 
     void AbstractBean::ResolveDomainToIP(const std::function<void()> &onFinished) {
         bool noResolve = false;
+        auto serverAddress = entity->serverAddress;
         if (dynamic_cast<ChainBean *>(this) != nullptr) noResolve = true;
         if (dynamic_cast<CustomBean *>(this) != nullptr) noResolve = true;
         if (IsIpAddress(serverAddress)) noResolve = true;
@@ -62,7 +63,7 @@ namespace Configs {
                 auto stream = GetStreamSettings(this);
 
                 // replace serverAddress
-                serverAddress = addr.first().toString();
+                this->entity->serverAddress = addr.first().toString();
 
                 // replace ws tls
                 if (stream != nullptr) {

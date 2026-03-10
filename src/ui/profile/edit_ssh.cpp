@@ -34,7 +34,7 @@ void EditSSH::onStart(std::shared_ptr<Configs::ProxyEntity> _ent) {
 }
 
 bool EditSSH::onEnd() {
-    auto bean = this->ent->SSHBean();
+    auto bean = ent->unlock(ent->SSHBean());
 
     bean->user = ui->user->text();
     bean->password = ui->password->text();

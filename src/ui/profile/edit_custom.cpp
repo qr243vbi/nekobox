@@ -65,7 +65,7 @@ bool EditCustom::onEnd() {
         return false;
     }
 
-    auto bean = this->ent->CustomBean();
+    auto bean = ent->unlock(ent->CustomBean());
 
     P_SAVE_STRING_PLAIN(config_simple)
     bean->core = preset_core;

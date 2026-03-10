@@ -13,7 +13,7 @@ namespace Configs {
         QString multiplexing = "MULTIPLEXING_LOW";
         QStringList serverPorts;
 
-        MieruBean() : AbstractBean(0) {
+        MieruBean(Configs::ProxyEntity * entity) : AbstractBean(entity, 0) {
         }
         
         INIT_MAP
@@ -24,14 +24,14 @@ namespace Configs {
             ADD_MAP("server_ports", serverPorts, stringList);
         STOP_MAP
 
-        QString DisplayType() override { return "Mieru"; };
+ //       QString DisplayType() override { return "Mieru"; };
 
-        CoreObjOutboundBuildResult BuildCoreObjSingBox() override;
+        CoreObjOutboundBuildResult BuildCoreObjSingBox() const override;
 
         bool TryParseLink(const QString &link);
 
         bool TryParseJson(const QJsonObject &obj);
 
-        QString ToShareLink() override;
+        QString ToShareLink() const override;
     };
 } // namespace Configs

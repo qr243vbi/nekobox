@@ -14,7 +14,7 @@ namespace Configs {
 
         std::shared_ptr<V2rayStreamSettings> stream = std::make_shared<V2rayStreamSettings>();
 
-        AnyTLSBean() : AbstractBean(0) {
+        AnyTLSBean(Configs::ProxyEntity * entity) : AbstractBean(entity, 0) {
         }
         
         INIT_MAP
@@ -25,14 +25,14 @@ namespace Configs {
             ADD_MAP("stream", stream, jsonStore);
         STOP_MAP
 
-        QString DisplayType() override { return "AnyTLS"; };
+     //   QString DisplayType() override { return "AnyTLS"; };
 
-        CoreObjOutboundBuildResult BuildCoreObjSingBox() override;
+        CoreObjOutboundBuildResult BuildCoreObjSingBox()const override;
 
         bool TryParseLink(const QString &link);
 
         bool TryParseJson(const QJsonObject &obj);
 
-        QString ToShareLink() override;
+        QString ToShareLink()const override;
     };
 } // namespace Configs

@@ -1,7 +1,11 @@
 #pragma once
 #include <QStringList>
+#include <QSet>
 
 namespace Preset::SingBox {
+  inline QSet<QString> OutboundTypes = {
+
+  };
   inline QStringList VpnImplementation = {"system", "gvisor", "mixed"};
   inline QStringList DomainStrategy = {"", "ipv4_only", "ipv6_only", "prefer_ipv4", "prefer_ipv6"};
   inline QStringList UtlsFingerPrint = {"", "chrome", "firefox", "edge", "safari", "360", "qq", "ios", "android", "random", "randomized"};

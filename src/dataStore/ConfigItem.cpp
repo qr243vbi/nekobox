@@ -211,12 +211,13 @@ std::shared_ptr<configItem> Configs_ConfigItem::getConfigItem(int i) {
   }
 };
 
-QByteArray JsonStore::ToBytes(const QStringList &without){
+QByteArray JsonStore::ToBytes(const QStringList &without) const {
     QByteArray byteArray;
     QBuffer buffer(&byteArray); // Create a buffer to write to QByteArray
     buffer.open(QIODevice::WriteOnly);
-    QDataStream out(&buffer); 
-    auto _map = this->_map();
+    QDataStream out(&buffer);
+    JsonStore * store = (JsonStore*) this; 
+    auto _map = store->_map();
 
     for (auto value: _map.values() ){
       if (value->name == nullptr){
@@ -235,7 +236,7 @@ QByteArray JsonStore::ToBytes(const QStringList &without){
             out << type;
             Bin bin;
             bin.item = value.get();
-            bin.store = this;
+            bin.store = store;
             out << bin;
         }
     }
@@ -278,10 +279,10 @@ void JsonStore::FromBytes(const QByteArray &data) {
 #define PUT_STORE(X)                                                           \
   _put_store(_map, str, value, std::make_shared<X##Item>(), this);
 
-void JsonStore::_put(ConfJsMap _map, const QString &str, int *value) {
+void JsonStore::_put(ConfJsMap _map, const QString &str, int *value)  {
   PUT_STORE(int)
 };
-void JsonStore::_put(ConfJsMap _map, const QString &str, double *value) {
+void JsonStore::_put(ConfJsMap _map, const QString &str, double *value)  {
   PUT_STORE(double)
 };
 void JsonStore::_put(ConfJsMap _map, const QString &str, long long *value) {

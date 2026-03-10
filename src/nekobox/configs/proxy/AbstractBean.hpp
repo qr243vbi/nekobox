@@ -14,47 +14,50 @@ namespace Configs {
         QString error;
     };
 
+    class ProxyEntity;
+
     class AbstractBean : public JsonStore {
     public:
         int version;
         virtual ConfJsMap _map() override;
-
-        QString name = "";
-        QString serverAddress = "127.0.0.1";
-        int serverPort = 1080;
 
         QString custom_config = "";
         QString custom_outbound = "";
         int mux_state = 0;
         bool enable_brutal = false;
         int brutal_speed = 0;
+        Configs::ProxyEntity * entity = nullptr;
 
-        explicit AbstractBean(int version);
+        ~AbstractBean() override;
+        bool Save() override;
+
+        explicit AbstractBean(Configs::ProxyEntity * entity, int version);
 
         //
 
-        QString ToNekorayShareLink(const QString &type);
+        QString ToNekorayShareLink(const QString &type) const;
 
         void ResolveDomainToIP(const std::function<void()> &onFinished);
 
         //
 
-        [[nodiscard]] virtual QString DisplayAddress();
+//        [[nodiscard]] virtual QString DisplayAddress();
 
-        [[nodiscard]] virtual QString DisplayName();
+//        [[nodiscard]] virtual QString DisplayName();
 
-        virtual QString DisplayCoreType() { return software_core_name; };
+//        virtual QString DisplayCoreType() { return software_core_name; };
 
-        virtual QString DisplayType() { return {}; };
+//        virtual QString DisplayType() { return {}; };
 
-        virtual QString DisplayTypeAndName();
+//        virtual QString DisplayTypeAndName();
         //
+        
 
-        virtual CoreObjOutboundBuildResult BuildCoreObjSingBox() { return {}; };
+        virtual CoreObjOutboundBuildResult BuildCoreObjSingBox() const { return {}; };
 
-        virtual QString ToShareLink() { return {}; };
+        virtual QString ToShareLink() const { return {}; };
 
-        virtual bool IsEndpoint() { return false; };
+        virtual bool IsEndpoint() const { return false; };
     };
 
 } // namespace Configs

@@ -16,7 +16,7 @@ namespace Configs {
 
         std::shared_ptr<V2rayStreamSettings> stream = std::make_shared<V2rayStreamSettings>();
 
-        explicit TrojanVLESSBean(int _proxy_type) : AbstractBean(0) {
+        explicit TrojanVLESSBean(Configs::ProxyEntity * entity, int _proxy_type) : AbstractBean(entity, 0) {
             proxy_type = _proxy_type;
         }
 
@@ -25,15 +25,15 @@ namespace Configs {
             ADD_MAP("flow", flow, string);
             ADD_MAP("stream", stream, jsonStore);
         STOP_MAP
-
+/*/
         QString DisplayType() override { return proxy_type == proxy_VLESS ? "VLESS" : "Trojan"; };
-
-        CoreObjOutboundBuildResult BuildCoreObjSingBox() override;
+*/
+        CoreObjOutboundBuildResult BuildCoreObjSingBox() const override;
 
         bool TryParseLink(const QString &link);
 
         bool TryParseJson(const QJsonObject &obj);
 
-        QString ToShareLink() override;
+        QString ToShareLink() const override;
     };
 } // namespace Configs

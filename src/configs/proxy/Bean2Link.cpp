@@ -14,8 +14,16 @@ namespace Configs {
     inline void add_query_args_nonempty(const char * name, QUrlQuery & query, const QStringList & value) { AddQueryStringList(query, name, value); };
     inline void add_query_map_nonempty(const char * name, QUrlQuery & query, const QVariantMap & value) { AddQueryMap(query, name, value); };
 
-    QString SocksHttpBean::ToShareLink() {
+    static void initialize_url(QUrl & url, Configs::ProxyEntity * entity){
+        auto name = entity->name;
+        if (!name.isEmpty()) url.setFragment(name);
+        url.setHost(entity->serverAddress);
+        url.setPort(entity->serverPort);
+    }
+
+    QString SocksHttpBean::ToShareLink() const {
         QUrl url;
+        initialize_url(url, this->entity);
         if (socks_http_type == type_HTTP) { // http
             if (stream->security == "tls") {
                 url.setScheme("https");
@@ -25,11 +33,8 @@ namespace Configs {
         } else {
             url.setScheme(QString("socks%1").arg(socks_http_type));
         }
-        if (!name.isEmpty()) url.setFragment(name);
         if (!username.isEmpty()) url.setUserName(username);
         if (!password.isEmpty()) url.setPassword(password);
-        url.setHost(serverAddress);
-        url.setPort(serverPort);
         return url.toString(QUrl::FullyEncoded);
     }
 
@@ -56,33 +61,24 @@ namespace Configs {
         }        
     }
 
-    QString ShadowTLSBean::ToShareLink() {
+    QString ShadowTLSBean::ToShareLink() const {
         QUrl url;
         QUrlQuery query;
         url.setScheme("shadowtls");
-        url.setUserName(password);
-        url.setHost(serverAddress);
-        url.setPort(serverPort);
-        if (!name.isEmpty()) url.setFragment(name);
-
+        url.setUserName(password);        
+        initialize_url(url, this->entity);
         add_query_int("version", query, shadowtls_version);
-
-        //  security
         add_security(stream, query);
-
         url.setQuery(query);
         return url.toString(QUrl::FullyEncoded);
     }
 
-    QString AnyTLSBean::ToShareLink() {
+    QString AnyTLSBean::ToShareLink() const {
         QUrl url;
         QUrlQuery query;
         url.setScheme("anytls");
-        url.setUserName(password);
-        url.setHost(serverAddress);
-        url.setPort(serverPort);
-        if (!name.isEmpty()) url.setFragment(name);
-
+        url.setUserName(password);        
+        initialize_url(url, this->entity);
         add_query_nonempty("idle_session_check_interval", query, idle_session_check_interval);
         add_query_nonempty("idle_session_timeout", query, idle_session_timeout);
         add_query_int_natural("min_idle_session", query, min_idle_session);
@@ -94,14 +90,12 @@ namespace Configs {
         return url.toString(QUrl::FullyEncoded);
     }
 
-    QString TrojanVLESSBean::ToShareLink() {
+    QString TrojanVLESSBean::ToShareLink() const {
         QUrl url;
         QUrlQuery query;
         url.setScheme(proxy_type == proxy_VLESS ? "vless" : "trojan");
         url.setUserName(password);
-        url.setHost(serverAddress);
-        url.setPort(serverPort);
-        if (!name.isEmpty()) url.setFragment(name);
+        initialize_url(url, this->entity);
 
         //  security
         add_security(stream, query);
@@ -151,7 +145,7 @@ namespace Configs {
 
     const char* fixShadowsocksUserNameEncodeMagic = "fixShadowsocksUserNameEncodeMagic-holder-for-QUrl";
 
-    QString ShadowSocksBean::ToShareLink() {
+    QString ShadowSocksBean::ToShareLink() const {
         QUrl url;
         url.setScheme("ss");
         if (method.startsWith("2022-")) {
@@ -160,9 +154,7 @@ namespace Configs {
             auto method_password = method + ":" + password;
             url.setUserName(method_password.toUtf8().toBase64(QByteArray::Base64Option::Base64UrlEncoding));
         }
-        url.setHost(serverAddress);
-        url.setPort(serverPort);
-        if (!name.isEmpty()) url.setFragment(name);
+        initialize_url(url, this->entity);
         QUrlQuery query;
         add_query_nonempty("plugin", query, plugin);
 
@@ -186,14 +178,12 @@ namespace Configs {
         return link;
     }
 
-    QString VMessBean::ToShareLink() {
+    QString VMessBean::ToShareLink() const {
         QUrl url;
         QUrlQuery query;
         url.setScheme("vmess");
         url.setUserName(uuid);
-        url.setHost(serverAddress);
-        url.setPort(serverPort);
-        if (!name.isEmpty()) url.setFragment(name);
+        initialize_url(url, this->entity);
 
         query.addQueryItem("encryption", security);
 
@@ -249,12 +239,12 @@ namespace Configs {
         return url.toString(QUrl::FullyEncoded);
     }
 
-    QString QUICBean::ToShareLink() {
+    QString QUICBean::ToShareLink() const {
         QUrl url;
         QString portRange;
         if (proxy_type == proxy_Hysteria) {
             url.setScheme("hysteria");
-            url.setHost(serverAddress);
+            url.setHost(entity->serverAddress);
             url.setPort(0);
             QUrlQuery query;
             add_query_int("upmbps", query, uploadMbps);
@@ -280,16 +270,15 @@ namespace Configs {
                 }
                 portRange = portList.join(",");
             } else
-                url.setPort(serverPort);
+                url.setPort(entity->serverPort);
             if (!hop_interval.isEmpty()) query.addQueryItem("hop_interval", hop_interval);
             if (!query.isEmpty()) url.setQuery(query);
-            if (!name.isEmpty()) url.setFragment(name);
+            if (!entity->name.isEmpty()) url.setFragment(entity->name);
         } else if (proxy_type == proxy_TUIC) {
             url.setScheme("tuic");
             url.setUserName(uuid);
             url.setPassword(password);
-            url.setHost(serverAddress);
-            url.setPort(serverPort);
+            initialize_url(url, this->entity);
 
             QUrlQuery q;
             if (!congestionControl.isEmpty()) q.addQueryItem("congestion_control", congestionControl);
@@ -299,10 +288,9 @@ namespace Configs {
             if (allowInsecure) q.addQueryItem("allow_insecure", "1");
             if (disableSni) q.addQueryItem("disable_sni", "1");
             if (!q.isEmpty()) url.setQuery(q);
-            if (!name.isEmpty()) url.setFragment(name);
         } else if (proxy_type == proxy_Hysteria2) {
             url.setScheme("hy2");
-            url.setHost(serverAddress);
+            url.setHost(entity->serverAddress);
             url.setPort(0);
             if (password.contains(":")) {
                 url.setUserName(SubStrBefore(password, ":"));
@@ -326,10 +314,10 @@ namespace Configs {
                 }
                 portRange = portList.join(",");
             } else
-                url.setPort(serverPort);
+                url.setPort(entity->serverPort);
             if (!hop_interval.isEmpty()) q.addQueryItem("hop_interval", hop_interval);
             if (!q.isEmpty()) url.setQuery(q);
-            if (!name.isEmpty()) url.setFragment(name);
+            if (!entity->name.isEmpty()) url.setFragment(entity->name);
         }
         if (portRange.isEmpty())
             return url.toString(QUrl::FullyEncoded);
@@ -337,12 +325,10 @@ namespace Configs {
             return url.toString(QUrl::FullyEncoded).replace(":0?", ":" + portRange + "?");
     }
 
-    QString WireguardBean::ToShareLink() {
+    QString WireguardBean::ToShareLink() const {
         QUrl url;
         url.setScheme("wg");
-        url.setHost(serverAddress);
-        url.setPort(serverPort);
-        if (!name.isEmpty()) url.setFragment(name);
+        initialize_url(url, this->entity);
         QUrlQuery query;
         query.addQueryItem("private_key", privateKey);
         query.addQueryItem("peer_public_key", publicKey);
@@ -370,12 +356,12 @@ namespace Configs {
         return url.toString(QUrl::FullyEncoded);
     }
 
-    QString TailscaleBean::ToShareLink()
+    QString TailscaleBean::ToShareLink() const
     {
         QUrl url;
         url.setScheme("ts");
         url.setHost("tailscale");
-        if (!name.isEmpty()) url.setFragment(name);
+        if (!entity->name.isEmpty()) url.setFragment(entity->name);
         QUrlQuery q;
         add_query_nonempty("state_directory", q, QUrl::toPercentEncoding(state_directory));
         add_query_nonempty("auth_key", q, QUrl::toPercentEncoding(auth_key));
@@ -392,12 +378,10 @@ namespace Configs {
         return url.toString(QUrl::FullyEncoded);
     }
 
-    QString SSHBean::ToShareLink() {
+    QString SSHBean::ToShareLink() const {
         QUrl url;
         url.setScheme("ssh");
-        url.setHost(serverAddress);
-        url.setPort(serverPort);
-        if (!name.isEmpty()) url.setFragment(name);
+        initialize_url(url, this->entity);
         QUrlQuery q;
         add_query_nonempty("user", q, user);
         add_query_nonempty("password", q, password);
@@ -419,12 +403,12 @@ namespace Configs {
         return url.toString(QUrl::FullyEncoded);
     }
 
-    QString ExtraCoreBean::ToShareLink()
+    QString ExtraCoreBean::ToShareLink() const
     {
         return "Unsupported for now";
     }
 
-    QString TorBean::ToShareLink(){
+    QString TorBean::ToShareLink() const {
         QUrl url;
         url.setScheme("tor");
         url.setHost("tor");
@@ -438,12 +422,10 @@ namespace Configs {
         return url.toString(QUrl::FullyEncoded);
     }
 
-    QString MieruBean::ToShareLink(){
+    QString MieruBean::ToShareLink() const {
         QUrl url;
         url.setScheme("mieru");
-        url.setHost(serverAddress);
-        url.setPort(serverPort);
-        if (!name.isEmpty()) url.setFragment(name);
+        initialize_url(url, this->entity);
         QUrlQuery q;
         add_query_nonempty( "username", q, username);
         add_query_nonempty( "password", q, password);

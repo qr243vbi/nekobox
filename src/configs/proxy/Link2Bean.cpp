@@ -7,6 +7,13 @@
 
 namespace Configs {
 
+
+    static void deinitialize_url(QUrl & url, Configs::ProxyEntity * entity){
+        entity->name = url.fragment(QUrl::FullyDecoded);
+        entity->serverAddress = url.host();
+        entity->serverPort = url.port();
+    }
+
 #define DECODE_V2RAY_N_1                                                                                                        \
     QString linkN = DecodeB64IfValid(SubStrBefore(SubStrAfter(link, "://"), "#"), QByteArray::Base64Option::Base64UrlEncoding); \
     if (linkN.isEmpty()) return false;                                                                                          \
@@ -21,12 +28,10 @@ namespace Configs {
 
         if (link.startsWith("socks4")) socks_http_type = type_Socks4;
         if (link.startsWith("http")) socks_http_type = type_HTTP;
-        name = url.fragment(QUrl::FullyDecoded);
-        serverAddress = url.host();
-        serverPort = url.port();
+        deinitialize_url(url, entity);
         username = url.userName();
         password = url.password();
-        if (serverPort == -1) serverPort = socks_http_type == type_HTTP ? 443 : 1080;
+        if (entity->serverPort == -1) entity->serverPort = socks_http_type == type_HTTP ? 443 : 1080;
 
         // v2rayN fmt
         if (password.isEmpty() && !username.isEmpty()) {
@@ -41,7 +46,7 @@ namespace Configs {
         stream->sni = GetQueryValue(query, "sni");
         if (link.startsWith("https")) stream->security = "tls";
 
-        return !serverAddress.isEmpty();
+        return !entity->serverAddress.isEmpty();
     }
 
     static void parse_security(std::shared_ptr<V2rayStreamSettings> stream, QUrlQuery & query){
@@ -73,36 +78,32 @@ namespace Configs {
         auto url = QUrl(link);
         if (!url.isValid()) return false;
         auto query = GetQuery(url);
+        deinitialize_url(url, entity);
 
-        name = url.fragment(QUrl::FullyDecoded);
-        serverAddress = url.host();
-        serverPort = url.port();
         password = url.userName();
-        if (serverPort == -1) serverPort = 443;
+        if (entity->serverPort == -1) entity->serverPort = 443;
         this->idle_session_check_interval = GetQueryValue(query, "idle_session_check_interval", "30s");
         this->idle_session_timeout = GetQueryValue(query, "idle_session_timeout", "30s");
         this->min_idle_session = GetQueryIntValue(query, "min_idle_session", 0);
         // security
         parse_security(stream, query);
 
-        return !(password.isEmpty() || serverAddress.isEmpty());
+        return !(password.isEmpty() || entity->serverAddress.isEmpty());
     }
 
     bool ShadowTLSBean::TryParseLink(const QString &link) {
         auto url = QUrl(link);
         if (!url.isValid()) return false;
         auto query = GetQuery(url);
+        deinitialize_url(url, entity);
 
-        name = url.fragment(QUrl::FullyDecoded);
-        serverAddress = url.host();
-        serverPort = url.port();
         password = url.userName();
-        if (serverPort == -1) serverPort = 443;
+        if (entity->serverPort == -1) entity->serverPort = 443;
         this->shadowtls_version = GetQueryIntValue(query, "version", 0);
         // security
         parse_security(stream, query);
 
-        return !(password.isEmpty() || serverAddress.isEmpty());
+        return !(password.isEmpty() || entity->serverAddress.isEmpty());
     }
 
 
@@ -110,12 +111,10 @@ namespace Configs {
         auto url = QUrl(link);
         if (!url.isValid()) return false;
         auto query = GetQuery(url);
+        deinitialize_url(url, entity);
 
-        name = url.fragment(QUrl::FullyDecoded);
-        serverAddress = url.host();
-        serverPort = url.port();
         password = url.userName();
-        if (serverPort == -1) serverPort = 443;
+        if (entity->serverPort == -1) entity->serverPort = 443;
 
         // security
 
@@ -189,7 +188,7 @@ namespace Configs {
             stream->packet_encoding = GetQueryValue(query, "packetEncoding", "xudp");
         }
 
-        return !(password.isEmpty() || serverAddress.isEmpty());
+        return !(password.isEmpty() || entity->serverAddress.isEmpty());
     }
 
     bool ShadowSocksBean::TryParseLink(const QString &link) {
@@ -197,10 +196,7 @@ namespace Configs {
             // SS
             auto url = QUrl(link);
             if (!url.isValid()) return false;
-
-            name = url.fragment(QUrl::FullyDecoded);
-            serverAddress = url.host();
-            serverPort = url.port();
+            deinitialize_url(url, entity);
 
             if (url.password().isEmpty()) {
                 // traditional format
@@ -227,13 +223,13 @@ namespace Configs {
             // v2rayN
             DECODE_V2RAY_N_1
 
-            if (hasRemarks) name = url.fragment(QUrl::FullyDecoded);
-            serverAddress = url.host();
-            serverPort = url.port();
+            if (hasRemarks) entity->name = url.fragment(QUrl::FullyDecoded);
+            entity->serverAddress = url.host();
+            entity->serverPort = url.port();
             method = url.userName();
             password = url.password();
         }
-        return !(serverAddress.isEmpty() || method.isEmpty() || password.isEmpty());
+        return !(entity->serverAddress.isEmpty() || method.isEmpty() || password.isEmpty());
     }
 
     bool VMessBean::TryParseLink(const QString &link) {
@@ -244,10 +240,10 @@ namespace Configs {
             if (objN.isEmpty()) return false;
             // REQUIRED
             uuid = objN["id"].toString();
-            serverAddress = objN["add"].toString();
-            serverPort = objN["port"].toVariant().toInt();
+            entity->serverAddress = objN["add"].toString();
+            entity->serverPort = objN["port"].toVariant().toInt();
             // OPTIONAL
-            name = objN["ps"].toString();
+            entity->name = objN["ps"].toString();
             aid = objN["aid"].toVariant().toInt();
             stream->host = objN["host"].toString();
             stream->path = objN["path"].toString();
@@ -274,12 +270,10 @@ namespace Configs {
             auto url = QUrl(link);
             if (!url.isValid()) return false;
             auto query = GetQuery(url);
+            deinitialize_url(url, entity);
 
-            name = url.fragment(QUrl::FullyDecoded);
-            serverAddress = url.host();
-            serverPort = url.port();
             uuid = url.userName();
-            if (serverPort == -1) serverPort = 443;
+            if (entity->serverPort == -1) entity->serverPort = 443;
 
             aid = 0; // “此分享标准仅针对 VMess AEAD 和 VLESS。”
             security = GetQueryValue(query, "encryption", "auto");
@@ -338,7 +332,7 @@ namespace Configs {
                 stream->xhttp_mode = GetQueryValue(query, "mode", "auto");
                 stream->xhttp_extra = GetQueryValue(query, "extra", "");
             }
-            return !(uuid.isEmpty() || serverAddress.isEmpty());
+            return !(uuid.isEmpty() || entity->serverAddress.isEmpty());
         }
 
         return false;
@@ -349,7 +343,7 @@ namespace Configs {
         if (!url.isValid()) {
             if(!url.errorString().startsWith("Invalid port"))
                 return false;
-            serverPort = 0;
+            entity->serverPort = 0;
             serverPorts = QString::fromStdString(URLParser::Parse((link.split("?")[0] + "/").toStdString()).port).split(",");
             for (int i=0; i < serverPorts.size(); i++) {
                 serverPorts[i].replace("-", ":");
@@ -361,9 +355,9 @@ namespace Configs {
             // https://hysteria.network/docs/uri-scheme/
             if (!query.hasQueryItem("upmbps") || !query.hasQueryItem("downmbps")) return false;
 
-            name = url.fragment(QUrl::FullyDecoded);
-            serverAddress = url.host();
-            if (serverPort > 0) serverPort = url.port();
+            entity->name = url.fragment(QUrl::FullyDecoded);
+            entity->serverAddress = url.host();
+            if (entity->serverPort > 0) entity->serverPort = url.port();
             obfsPassword = QUrl::fromPercentEncoding(query.queryItemValue("obfsParam").toUtf8());
             allowInsecure = QStringList{"1", "true"}.contains(query.queryItemValue("insecure"));
             uploadMbps = GetQueryIntValue(query, "upmbps");
@@ -397,11 +391,9 @@ namespace Configs {
         } else if (url.scheme() == "tuic") {
             // by daeuniverse
             // https://github.com/daeuniverse/dae/discussions/182
+            deinitialize_url(url, entity);
 
-            name = url.fragment(QUrl::FullyDecoded);
-            serverAddress = url.host();
-            if (serverPort == -1) serverPort = 443;
-            serverPort = url.port();
+            if (entity->serverPort == -1) entity->serverPort = 443;
 
             uuid = url.userName();
             password = url.password();
@@ -413,9 +405,9 @@ namespace Configs {
             allowInsecure = query.queryItemValue("allow_insecure") == "1";
             disableSni = query.queryItemValue("disable_sni") == "1";
         } else if (QStringList{"hy2", "hysteria2"}.contains(url.scheme())) {
-            name = url.fragment(QUrl::FullyDecoded);
-            serverAddress = url.host();
-            if (serverPort > 0) serverPort = url.port();
+            entity->name = url.fragment(QUrl::FullyDecoded);
+            entity->serverAddress = url.host();
+            if (entity->serverPort > 0) entity->serverPort = url.port();
             obfsPassword = QUrl::fromPercentEncoding(query.queryItemValue("obfs-password").toUtf8());
             allowInsecure = QStringList{"1", "true"}.contains(query.queryItemValue("insecure"));
 
@@ -444,10 +436,8 @@ namespace Configs {
         auto url = QUrl(link);
         if (!url.isValid()) return false;
         auto query = GetQuery(url);
+        deinitialize_url(url, entity);
 
-        name = url.fragment(QUrl::FullyDecoded);
-        serverAddress = url.host();
-        serverPort = url.port();
         privateKey = query.queryItemValue("private_key");
         publicKey = query.queryItemValue("peer_public_key");
         preSharedKey = query.queryItemValue("pre_shared_key");
@@ -483,7 +473,7 @@ namespace Configs {
         auto url = QUrl(link);
         if (!url.isValid()) return false;
         auto query = GetQuery(url);
-        name = url.fragment(QUrl::FullyDecoded);
+        entity->name = url.fragment(QUrl::FullyDecoded);
 
         state_directory = QUrl::fromPercentEncoding(query.queryItemValue("state_directory").toUtf8());
         auth_key = QUrl::fromPercentEncoding(query.queryItemValue("auth_key").toUtf8());
@@ -504,10 +494,8 @@ namespace Configs {
         auto url = QUrl(link);
         if (!url.isValid()) return false;
         auto query = GetQuery(url);
+        deinitialize_url(url, entity);
 
-        name = url.fragment(QUrl::FullyDecoded);
-        serverAddress = url.host();
-        serverPort = url.port();
         user = query.queryItemValue("user");
         password = query.queryItemValue("password");
         privateKey = QByteArray::fromBase64(query.queryItemValue("private_key").toUtf8(), QByteArray::OmitTrailingEquals);
@@ -537,6 +525,7 @@ namespace Configs {
         auto url = QUrl(link);
         if (!url.isValid()) return false;
         auto q = GetQuery(url);
+        entity->name = url.fragment(QUrl::FullyDecoded);
 
         extra_args = GetQueryListValue(q, "extra_args");
         executable_path = GetQueryValue(q, "executable_path");
@@ -550,10 +539,8 @@ namespace Configs {
         auto url = QUrl(link);
         if (!url.isValid()) return false;
         auto query = GetQuery(url);
+        deinitialize_url(url, entity);
 
-        name = url.fragment(QUrl::FullyDecoded);
-        serverAddress = url.host();
-        serverPort = url.port();
         username = query.queryItemValue("username");
         password = query.queryItemValue("password");
         transport = query.queryItemValue("transport");

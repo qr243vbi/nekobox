@@ -12,7 +12,7 @@ namespace Configs {
         int mapping_port = 0;
         int socks_port = 0;
 
-        CustomBean() : AbstractBean(0) {
+        CustomBean(Configs::ProxyEntity * entity) : AbstractBean(entity, 0) {
         }
         INIT_MAP
             ADD_MAP("core", core, string);
@@ -22,7 +22,7 @@ namespace Configs {
             ADD_MAP("mapping_port", mapping_port, integer);
             ADD_MAP("socks_port", socks_port, integer);
         STOP_MAP
-
+/*
         QString DisplayType() override {
             if (core == "internal") {
                 auto type = QString2QJsonObject(config_simple)["type"].toString();
@@ -45,7 +45,7 @@ namespace Configs {
             }
             return AbstractBean::DisplayAddress();
         };
-
-        CoreObjOutboundBuildResult BuildCoreObjSingBox() override;
+*/
+        CoreObjOutboundBuildResult BuildCoreObjSingBox() const override;
     };
 } // namespace Configs

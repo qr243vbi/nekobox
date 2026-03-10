@@ -99,7 +99,7 @@ void EditQUIC::onStart(std::shared_ptr<Configs::ProxyEntity> _ent) {
 }
 
 bool EditQUIC::onEnd() {
-    auto bean = this->ent->QUICBean();
+    auto bean = ent->unlock(ent->QUICBean());
 
     // Hysteria
     P_SAVE_INT(uploadMbps);

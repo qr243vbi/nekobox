@@ -29,7 +29,7 @@ bool EditChain::onEnd() {
         return false;
     }
 
-    auto bean = this->ent->ChainBean();
+    auto bean = ent->unlock(ent->ChainBean());
 
     QList<int> idList;
     for (int i = 0; i < ui->listWidget->count(); i++) {
@@ -64,7 +64,7 @@ void EditChain::AddProfileToListIfExist(int profileId) {
         connect(w->get_change_button(), &QPushButton::clicked, w, [=,this] {
             auto window = new DialogGroupChooseProxy(this);
             window->setWindowTitle(QCoreApplication::translate(
-                "DialogGroupChooseProxy","Replace %1 proxy").arg( w->ent->bean->DisplayName() ));
+                "DialogGroupChooseProxy","Replace %1 proxy").arg( w->ent->DisplayName() ));
             QObject::connect(window, &DialogGroupChooseProxy::set_proxy,
                 this, [w, this](int newId) {
                     ReplaceProfile(w, newId);

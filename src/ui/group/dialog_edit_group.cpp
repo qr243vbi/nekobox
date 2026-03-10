@@ -46,11 +46,12 @@ DialogEditGroup::DialogEditGroup(const std::shared_ptr<Configs::Group> &ent, QWi
     std::function<void(bool)> copy_click = [id=ent->id, this] (bool neko){
         QStringList links;
         for (const auto &[_, profile]: Configs::profileManager->profiles) {
+            auto bean = profile->bean();
             if (profile->gid != id) continue;
             if (neko){
-                links += profile->bean->ToNekorayShareLink(profile->type);
+                links += bean->ToNekorayShareLink(profile->type);
             } else {
-                links += profile->bean->ToShareLink();
+                links += bean->ToShareLink();
             }
         }
         QApplication::clipboard()->setText(links.join("\n"));
@@ -168,14 +169,14 @@ public:
             if (column < 3 && column >= 0){
                 int profile_id = profiles.at(row);
                 auto & bean = 
-                    Configs::profileManager->profiles.at(profile_id)->bean;
+                    Configs::profileManager->profiles.at(profile_id);
                 switch(column){
                     case 0:
                     return bean->DisplayType();
                     case 1:
                     return bean->DisplayAddress();
                     case 2:
-                    return bean->name;
+                    return bean->DisplayName();
                 }
             }
         }
@@ -449,7 +450,7 @@ QString DialogEditGroup::get_proxy_name(int id, bool is_for_routeprofile ) {
         return QCoreApplication::translate(
         "DialogGroupChooseProxy", "None");
     } else {
-        QString str = profile->bean->name;
+        QString str = profile->name;
         if (str.isEmpty()){
             return QString("ID: ")+ QString::number(id);
         } else {

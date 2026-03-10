@@ -52,7 +52,7 @@ namespace Configs_ConfigItem {
         virtual unsigned short type() = 0;
         size_t ptr;
         QString name;
-        virtual void * getPtr(JsonStore * store) const;
+        virtual void * getPtr(const JsonStore * store) const;
     };
 
     struct Bin{
@@ -110,6 +110,9 @@ inline QDataStream &operator>>(QDataStream &in, Bin &p) {
     PTR_ITEM(double)
 
     class JsonStore {
+    private:
+
+        std::shared_ptr<configItem> _get_const_job(const QString &name) const;
     public:
         virtual ~JsonStore() = default;
    //     QMap<QString, std::shared_ptr<configItem>> _map;
@@ -154,15 +157,16 @@ inline QDataStream &operator>>(QDataStream &in, Bin &p) {
         }
 
         void _setValue(const QString &name, const QJsonValue &p);
-        void _setValue(JsonStore * store, const void *p);
+        void _setValue(const JsonStore * store, const void *p);
 
         QString _name(void *p);
 
         std::shared_ptr<configItem> _get(const QString &name);
+        std::shared_ptr<const configItem> _get_const(const QString &name) const;
 
-        QJsonObject ToJson(const QStringList &without = {});
+        QJsonObject ToJson(const QStringList &without = {}) const;
 
-        QByteArray ToJsonBytes(const QStringList &without = {});
+        QByteArray ToJsonBytes(const QStringList &without = {}) const;
 
         void FromJson(QJsonObject object);
 
@@ -170,7 +174,7 @@ inline QDataStream &operator>>(QDataStream &in, Bin &p) {
 
         void FromBytes(const QByteArray &data);
 
-        QByteArray ToBytes(const QStringList &without = {});
+        QByteArray ToBytes(const QStringList &without = {}) const;
         
         virtual bool Save();
 

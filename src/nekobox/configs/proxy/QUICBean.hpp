@@ -73,9 +73,6 @@ namespace Configs {
             if (!init){
                 init = true;
                 // Add base AbstractBean fields
-                _add(tuic, "name", name, string);
-                _add(tuic, "addr", serverAddress, string);
-                _add(tuic, "port", serverPort, integer);
                 
                 _add(tuic, "forceExternal", forceExternal, boolean);
             // TLS
@@ -123,7 +120,7 @@ namespace Configs {
 
         #undef _add
 
-        explicit QUICBean(int _proxy_type) : AbstractBean(0) {
+        explicit QUICBean(Configs::ProxyEntity * entity, int _proxy_type) : AbstractBean(entity, 0) {
             proxy_type = _proxy_type;
             if (proxy_type == proxy_Hysteria || proxy_type == proxy_Hysteria2) {
                 if (proxy_type == proxy_Hysteria) { // hy1
@@ -134,7 +131,7 @@ namespace Configs {
             } else if (proxy_type == proxy_TUIC) {
             }
         };
-
+/*
         QString DisplayAddress() override {
             return ::DisplayAddress(serverAddress, serverPort);
         }
@@ -148,13 +145,13 @@ namespace Configs {
                 return "Hysteria2";
             }
         };
-
-        CoreObjOutboundBuildResult BuildCoreObjSingBox() override;
+*/
+        CoreObjOutboundBuildResult BuildCoreObjSingBox() const override;
 
         bool TryParseLink(const QString &link);
 
         bool TryParseJson(const QJsonObject &obj);
 
-        QString ToShareLink() override;
+        QString ToShareLink() const override;
     };
 } // namespace Configs

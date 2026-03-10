@@ -23,7 +23,7 @@ void EditMieru::onStart(std::shared_ptr<Configs::ProxyEntity> _ent) {
 }
 
 bool EditMieru::onEnd() {
-    auto bean = this->ent->MieruBean();
+    auto bean = ent->unlock(ent->MieruBean());
     P_SAVE_STRING(username)
     P_SAVE_STRING(password)
     P_SAVE_COMBO_STRING(transport)

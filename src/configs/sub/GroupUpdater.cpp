@@ -15,8 +15,9 @@ namespace Subscription {
     GroupUpdater *groupUpdater = new GroupUpdater;
 
     void RawUpdater_FixEnt(const std::shared_ptr<Configs::ProxyEntity> &ent) {
+        auto bean = ent->unlock(ent->bean());
         if (ent == nullptr) return;
-        auto stream = Configs::GetStreamSettings(ent->bean.get());
+        auto stream = Configs::GetStreamSettings(bean.get());
         if (stream == nullptr) return;
         // 1. "security"
         if (stream->security == "none" || stream->security == "0" || stream->security == "false") {
@@ -25,7 +26,7 @@ namespace Subscription {
             stream->security = "tls";
         }
         // 2. TLS SNI: v2rayN config builder generate sni like this, so set sni here for their format.
-        if (stream->security == "tls" && IsIpAddress(ent->bean->serverAddress) && (!stream->host.isEmpty()) && stream->sni.isEmpty()) {
+        if (stream->security == "tls" && IsIpAddress(ent->serverAddress) && (!stream->host.isEmpty()) && stream->sni.isEmpty()) {
             stream->sni = stream->host;
         }
     }
@@ -121,17 +122,18 @@ namespace Subscription {
             needFix = false;
             auto link = QUrl(str);
             if (!link.isValid()) return;
+            auto bean = ent->bean();
             ent = Configs::ProfileManager::NewProxyEntity(link.host());
-            if (ent->bean->version == -114514) return;
+            if (bean->version == -114514) return;
             auto j = DecodeB64IfValid(link.fragment().toUtf8(), QByteArray::Base64UrlEncoding);
             if (j.isEmpty()) return;
-            ent->bean->FromJsonBytes(j);
+            ent->unlock(bean)->FromJsonBytes(j);
         }
 
         // Json
         if (str.startsWith('{')) {
             ent = Configs::ProfileManager::NewProxyEntity("custom");
-            auto bean = ent->CustomBean();
+            auto bean = ent->unlock(ent->CustomBean());
             auto obj = QString2QJsonObject(str);
             if (obj.contains("outbounds")) {
                 bean->core = "internal-full";
@@ -148,63 +150,63 @@ namespace Subscription {
         if (str.startsWith("socks5://") || str.startsWith("socks4://") ||
             str.startsWith("socks4a://") || str.startsWith("socks://")) {
             ent = Configs::ProfileManager::NewProxyEntity("socks");
-            auto ok = ent->SocksHTTPBean()->TryParseLink(str);
+            auto ok = ent->unlock(ent->SocksHTTPBean())->TryParseLink(str);
             if (!ok) return;
         }
 
         // HTTP
         if (str.startsWith("http://") || str.startsWith("https://")) {
             ent = Configs::ProfileManager::NewProxyEntity("http");
-            auto ok = ent->SocksHTTPBean()->TryParseLink(str);
+            auto ok = ent->unlock(ent->SocksHTTPBean())->TryParseLink(str);
             if (!ok) return;
         }
 
         // ShadowSocks
         if (str.startsWith("ss://")) {
             ent = Configs::ProfileManager::NewProxyEntity("shadowsocks");
-            auto ok = ent->ShadowSocksBean()->TryParseLink(str);
+            auto ok = ent->unlock(ent->ShadowSocksBean())->TryParseLink(str);
             if (!ok) return;
         }
 
         // VMess
         if (str.startsWith("vmess://")) {
             ent = Configs::ProfileManager::NewProxyEntity("vmess");
-            auto ok = ent->VMessBean()->TryParseLink(str);
+            auto ok = ent->unlock(ent->VMessBean())->TryParseLink(str);
             if (!ok) return;
         }
 
         // VLESS
         if (str.startsWith("vless://")) {
             ent = Configs::ProfileManager::NewProxyEntity("vless");
-            auto ok = ent->TrojanVLESSBean()->TryParseLink(str);
+            auto ok = ent->unlock(ent->TrojanVLESSBean())->TryParseLink(str);
             if (!ok) return;
         }
 
         // Trojan
         if (str.startsWith("trojan://")) {
             ent = Configs::ProfileManager::NewProxyEntity("trojan");
-            auto ok = ent->TrojanVLESSBean()->TryParseLink(str);
+            auto ok = ent->unlock(ent->TrojanVLESSBean())->TryParseLink(str);
             if (!ok) return;
         }
 
         // Mieru simple 
         if (str.startsWith("mierus://")) {
             ent = Configs::ProfileManager::NewProxyEntity("mieru");
-            auto ok = ent->MieruBean()->TryParseLink(str);
+            auto ok = ent->unlock(ent->MieruBean())->TryParseLink(str);
             if (!ok) return;
         }
 
         // AnyTLS
         if (str.startsWith("anytls://")) {
             ent = Configs::ProfileManager::NewProxyEntity("anytls");
-            auto ok = ent->AnyTLSBean()->TryParseLink(str);
+            auto ok = ent->unlock(ent->AnyTLSBean())->TryParseLink(str);
             if (!ok) return;
         }
 
         // ShadowTLS
         if (str.startsWith("shadowtls://")) {
             ent = Configs::ProfileManager::NewProxyEntity("shadowtls");
-            auto ok = ent->ShadowTLSBean()->TryParseLink(str);
+            auto ok = ent->unlock(ent->ShadowTLSBean())->TryParseLink(str);
             if (!ok) return;
         }
 
@@ -212,7 +214,7 @@ namespace Subscription {
         if (str.startsWith("hysteria://")) {
             needFix = false;
             ent = Configs::ProfileManager::NewProxyEntity("hysteria");
-            auto ok = ent->QUICBean()->TryParseLink(str);
+            auto ok = ent->unlock(ent->QUICBean())->TryParseLink(str);
             if (!ok) return;
         }
 
@@ -220,7 +222,7 @@ namespace Subscription {
         if (str.startsWith("hysteria2://") || str.startsWith("hy2://")) {
             needFix = false;
             ent = Configs::ProfileManager::NewProxyEntity("hysteria2");
-            auto ok = ent->QUICBean()->TryParseLink(str);
+            auto ok = ent->unlock(ent->QUICBean())->TryParseLink(str);
             if (!ok) return;
         }
 
@@ -228,7 +230,7 @@ namespace Subscription {
         if (str.startsWith("tuic://")) {
             needFix = false;
             ent = Configs::ProfileManager::NewProxyEntity("tuic");
-            auto ok = ent->QUICBean()->TryParseLink(str);
+            auto ok = ent->unlock(ent->QUICBean())->TryParseLink(str);
             if (!ok) return;
         }
 
@@ -236,7 +238,7 @@ namespace Subscription {
         if (str.startsWith("wg://")) {
             needFix = false;
             ent = Configs::ProfileManager::NewProxyEntity("wireguard");
-            auto ok = ent->WireguardBean()->TryParseLink(str);
+            auto ok = ent->unlock(ent->WireguardBean())->TryParseLink(str);
             if (!ok) return;
         }
 
@@ -244,7 +246,7 @@ namespace Subscription {
         if (str.startsWith("ssh://")) {
             needFix = false;
             ent = Configs::ProfileManager::NewProxyEntity("ssh");
-            auto ok = ent->SSHBean()->TryParseLink(str);
+            auto ok = ent->unlock(ent->SSHBean())->TryParseLink(str);
             if (!ok) return;
         }
 
@@ -252,7 +254,7 @@ namespace Subscription {
         if (str.startsWith("tor://")) {
             needFix = false;
             ent = Configs::ProfileManager::NewProxyEntity("tor");
-            auto ok = ent->TorBean()->TryParseLink(str);
+            auto ok = ent->unlock(ent->TorBean())->TryParseLink(str);
             if (!ok) return;
         }
 
@@ -279,7 +281,7 @@ namespace Subscription {
             }
 
             auto ent = Configs::ProfileManager::NewProxyEntity("shadowsocks");
-            auto ok = ent->ShadowSocksBean()->TryParseFromSIP008(out);
+            auto ok = ent->unlock(ent->ShadowSocksBean())->TryParseFromSIP008(out);
             if (!ok) continue;
             updated_order += ent;
         }
@@ -318,104 +320,104 @@ namespace Subscription {
             // SOCKS
             if (out["type"] == "socks") {
                 ent = Configs::ProfileManager::NewProxyEntity("socks");
-                auto ok = ent->SocksHTTPBean()->TryParseJson(out);
+                auto ok = ent->unlock(ent->SocksHTTPBean())->TryParseJson(out);
                 if (!ok) continue;
             }
 
             // HTTP
             if (out["type"] == "http") {
-                auto ok = ent->SocksHTTPBean()->TryParseJson(out);
+                auto ok = ent->unlock(ent->SocksHTTPBean())->TryParseJson(out);
                 if (!ok) continue;
             }
 
             // ShadowSocks
             if (out["type"] == "shadowsocks") {
                 ent = Configs::ProfileManager::NewProxyEntity("shadowsocks");
-                auto ok = ent->ShadowSocksBean()->TryParseJson(out);
+                auto ok = ent->unlock(ent->ShadowSocksBean())->TryParseJson(out);
                 if (!ok) continue;
             }
 
             // VMess
             if (out["type"] == "vmess") {
                 ent = Configs::ProfileManager::NewProxyEntity("vmess");
-                auto ok = ent->VMessBean()->TryParseJson(out);
+                auto ok = ent->unlock(ent->VMessBean())->TryParseJson(out);
                 if (!ok) continue;
             }
 
             // Mieru
             if (out["type"] == "mieru") {
                 ent = Configs::ProfileManager::NewProxyEntity("mieru");
-                auto ok = ent->MieruBean()->TryParseJson(out);
+                auto ok = ent->unlock(ent->MieruBean())->TryParseJson(out);
                 if (!ok) continue;
             }
 
             // VLESS
             if (out["type"] == "vless") {
                 ent = Configs::ProfileManager::NewProxyEntity("vless");
-                auto ok = ent->TrojanVLESSBean()->TryParseJson(out);
+                auto ok = ent->unlock(ent->TrojanVLESSBean())->TryParseJson(out);
                 if (!ok) continue;
             }
 
             // Trojan
             if (out["type"] == "trojan") {
                 ent = Configs::ProfileManager::NewProxyEntity("trojan");
-                auto ok = ent->TrojanVLESSBean()->TryParseJson(out);
+                auto ok = ent->unlock(ent->TrojanVLESSBean())->TryParseJson(out);
                 if (!ok) continue;
             }
 
             // AnyTLS
             if (out["type"] == "anytls") {
                 ent = Configs::ProfileManager::NewProxyEntity("anytls");
-                auto ok = ent->AnyTLSBean()->TryParseJson(out);
+                auto ok = ent->unlock(ent->AnyTLSBean())->TryParseJson(out);
                 if (!ok) continue;
             }
 
             // ShadowTLS
             if (out["type"] == "shadowtls") {
                 ent = Configs::ProfileManager::NewProxyEntity("shadowtls");
-                auto ok = ent->ShadowTLSBean()->TryParseJson(out);
+                auto ok = ent->unlock(ent->ShadowTLSBean())->TryParseJson(out);
                 if (!ok) continue;
             }
 
             // Hysteria1
             if (out["type"] == "hysteria") {
                 ent = Configs::ProfileManager::NewProxyEntity("hysteria");
-                auto ok = ent->QUICBean()->TryParseJson(out);
+                auto ok = ent->unlock(ent->QUICBean())->TryParseJson(out);
                 if (!ok) continue;
             }
 
             // Hysteria2
             if (out["type"] == "hysteria2") {
                 ent = Configs::ProfileManager::NewProxyEntity("hysteria2");
-                auto ok = ent->QUICBean()->TryParseJson(out);
+                auto ok = ent->unlock(ent->QUICBean())->TryParseJson(out);
                 if (!ok) continue;
             }
 
             // TUIC
             if (out["type"] == "tuic") {
                 ent = Configs::ProfileManager::NewProxyEntity("tuic");
-                auto ok = ent->QUICBean()->TryParseJson(out);
+                auto ok = ent->unlock(ent->QUICBean())->TryParseJson(out);
                 if (!ok) continue;
             }
 
             // Wireguard
             if (out["type"] == "wireguard") {
                 ent = Configs::ProfileManager::NewProxyEntity("wireguard");
-                auto ok = ent->WireguardBean()->TryParseJson(out);
+                auto ok = ent->unlock(ent->WireguardBean())->TryParseJson(out);
                 if (!ok) continue;
             }
 
             // SSH
             if (out["type"] == "ssh") {
                 ent = Configs::ProfileManager::NewProxyEntity("ssh");
-                auto ok = ent->SSHBean()->TryParseJson(out);
+                auto ok = ent->unlock(ent->SSHBean())->TryParseJson(out);
                 if (!ok) continue;
             }
 
             // Tor
             if (out["type"] == "tor") {
                 ent = Configs::ProfileManager::NewProxyEntity("tor");
-                auto ok = ent->TorBean()->TryParseJson(out);
+                auto ok = ent->unlock(ent->TorBean())->TryParseJson(out);
                 if (!ok) continue;
             }
 
@@ -428,7 +430,7 @@ namespace Subscription {
     void RawUpdater::updateWireguardFileConfig(const QString& str)
     {
         auto ent = Configs::ProfileManager::NewProxyEntity("wireguard");
-        auto ok = ent->WireguardBean()->TryParseLink(str);
+        auto ok = ent->unlock(ent->WireguardBean())->TryParseLink(str);
         if (!ok) return;
         updated_order += ent;
     }
@@ -507,16 +509,16 @@ namespace Subscription {
                 if (type == "socks5") type = "socks";
 
                 auto ent = Configs::ProfileManager::NewProxyEntity(type);
-                if (ent->bean->version == -114514) continue;
+                if (ent->invalid) continue;
                 bool needFix = false;
 
                 // common
-                ent->bean->name = Node2QString(proxy["name"]);
-                ent->bean->serverAddress = Node2QString(proxy["server"]);
-                ent->bean->serverPort = Node2Int(proxy["port"]);
+                ent->name = Node2QString(proxy["name"]);
+                ent->serverAddress = Node2QString(proxy["server"]);
+                ent->serverPort = Node2Int(proxy["port"]);
 
                 if (type_clash == "ss") {
-                    auto bean = ent->ShadowSocksBean();
+                    auto bean = ent->unlock(ent->ShadowSocksBean());
                     bean->method = Node2QString(proxy["cipher"]).replace("dummy", "none");
                     bean->password = Node2QString(proxy["password"]);
 
@@ -554,8 +556,9 @@ namespace Subscription {
                     // sing-mux
                     auto smux = NodeChild(proxy, {"smux"});
                     if (!smux.is_null() && Node2Bool(smux["enabled"])) bean->mux_state = 1;
+                    bean.reset();
                 } else if (type == "socks" || type == "http") {
-                    auto bean = ent->SocksHTTPBean();
+                    auto bean = ent->unlock(ent->SocksHTTPBean());
                     bean->username = Node2QString(proxy["username"]);
                     bean->password = Node2QString(proxy["password"]);
                     if (type == "http" && Node2Bool(proxy["tls"])) {
@@ -574,9 +577,10 @@ namespace Subscription {
                             bean->stream->reality_sid = Node2QString(reality["short-id"]);
                         }
                     }
+                    bean.reset();
                 } else if (type == "trojan" || type == "vless") {
                     needFix = true;
-                    auto bean = ent->TrojanVLESSBean();
+                    auto bean = ent->unlock(ent->TrojanVLESSBean());
                     if (type == "vless") {
                         bean->flow = Node2QString(proxy["flow"]);
                         bean->password = Node2QString(proxy["uuid"]);
@@ -634,9 +638,10 @@ namespace Subscription {
                         bean->stream->reality_pbk = Node2QString(reality["public-key"]);
                         bean->stream->reality_sid = Node2QString(reality["short-id"]);
                     }
+                    bean.reset();
                 } else if (type == "vmess") {
                     needFix = true;
-                    auto bean = ent->VMessBean();
+                    auto bean = ent->unlock(ent->VMessBean());
                     bean->uuid = Node2QString(proxy["uuid"]);
                     bean->aid = Node2Int(proxy["alterId"]);
                     bean->security = Node2QString(proxy["cipher"], bean->security);
@@ -712,18 +717,22 @@ namespace Subscription {
                         else if (paths.is_sequence() && paths[0].is_string())
                             bean->stream->path = Node2QString(paths[0]);
                     }
+                    bean.reset();
                 } else if (type == "anytls" || type == "shadowtls") {
+                    std::shared_ptr<Configs::AbstractBean> bean_common;
                     needFix = true;
                     std::shared_ptr<Configs::V2rayStreamSettings> stream;
                     if (type == "anytls"){
-                        auto bean = ent->AnyTLSBean();
+                        auto bean = ent->unlock(ent->AnyTLSBean());
                         bean->password = Node2QString(proxy["password"]);
                         stream = bean->stream;
+                        bean_common = bean;
                     } else {
-                        auto bean = ent->ShadowTLSBean();
+                        auto bean = ent->unlock(ent->ShadowTLSBean());
                         bean->password = Node2QString(proxy["password"]);
                         bean->shadowtls_version = Node2Int(proxy["version"]);
                         stream = bean->stream;
+                        bean_common = bean;
                     }
                     stream->security = "tls";
                     if (Node2Bool(proxy["skip-cert-verify"])) stream->allow_insecure = true;
@@ -739,8 +748,9 @@ namespace Subscription {
                         stream->reality_pbk = Node2QString(reality["public-key"]);
                         stream->reality_sid = Node2QString(reality["short-id"]);
                     }
+                    bean_common.reset();
                 } else if (type == "hysteria") {
-                    auto bean = ent->QUICBean();
+                    auto bean = ent->unlock(ent->QUICBean());
 
                     bean->allowInsecure = Node2Bool(proxy["skip-cert-verify"]);
                     auto alpn = Node2QStringList(proxy["alpn"]);
@@ -783,8 +793,9 @@ namespace Subscription {
                         }
                         bean->serverPorts = serverPorts;
                     }
+                    bean.reset();
                 } else if (type == "hysteria2") {
-                    auto bean = ent->QUICBean();
+                    auto bean = ent->unlock(ent->QUICBean());
 
                     bean->allowInsecure = Node2Bool(proxy["skip-cert-verify"]);
                     bean->caText = Node2QString(proxy["ca-str"]);
@@ -810,8 +821,9 @@ namespace Subscription {
                         }
                         bean->serverPorts = serverPorts;
                     }
+                    bean.reset();
                 } else if (type == "tuic") {
-                    auto bean = ent->QUICBean();
+                    auto bean = ent->unlock(ent->QUICBean());
 
                     bean->uuid = Node2QString(proxy["uuid"]);
                     bean->password = Node2QString(proxy["password"]);
@@ -833,9 +845,10 @@ namespace Subscription {
                     if (Node2Bool(proxy["udp-over-stream"])) bean->uos = true;
 
                     if (!Node2QString(proxy["ip"]).isEmpty()) {
-                        if (bean->sni.isEmpty()) bean->sni = bean->serverAddress;
-                        bean->serverAddress = Node2QString(proxy["ip"]);
+                        if (bean->sni.isEmpty()) bean->sni = bean->entity->serverAddress;
+                        bean->entity->serverAddress = Node2QString(proxy["ip"]);
                     }
+                    bean.reset();
                 } else {
                     continue;
                 }
@@ -957,7 +970,7 @@ namespace Subscription {
             if (Configs::dataStore->sub_clear) {
                 // all is new profile
                 for (const auto &ent: out_all) {
-                    change_text += "[+] " + ent->bean->DisplayTypeAndName() + "\n";
+                    change_text += "[+] " + ent->DisplayTypeAndName() + "\n";
                 }
             } else {
                 // find and delete not updated profile by ProfileFilter
@@ -970,7 +983,7 @@ namespace Subscription {
                 if (only_out.size() < 1000)
                 {
                     for (const auto &ent: only_out) {
-                        notice_added += "[+] " + ent->bean->DisplayTypeAndName() + "\n";
+                        notice_added += "[+] " + ent->DisplayTypeAndName() + "\n";
                     }
                 } else
                 {
@@ -979,7 +992,7 @@ namespace Subscription {
                 if (only_in.size() < 1000)
                 {
                     for (const auto &ent: only_in) {
-                        notice_deleted += "[-] " + ent->bean->DisplayTypeAndName() + "\n";
+                        notice_deleted += "[-] " + ent->DisplayTypeAndName() + "\n";
                     }
                 } else
                 {

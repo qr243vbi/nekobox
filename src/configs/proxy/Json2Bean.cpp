@@ -1,8 +1,14 @@
-#include "nekobox/configs/proxy/V2RayStreamSettings.hpp"
+#include <nekobox/configs/proxy/V2RayStreamSettings.hpp>
 #include <nekobox/configs/proxy/includes.h>
+#include <nekobox/dataStore/ProxyEntity.hpp>
 
 namespace Configs
 {
+    static void initialize_entity(Configs::ProxyEntity * entity, const QJsonObject & obj){
+        entity->name = obj["tag"].toString();
+        entity->serverAddress = obj["server"].toString();
+        entity->serverPort = obj["server_port"].toInt();
+    }    
 
     static bool parse_tls(std::shared_ptr<V2rayStreamSettings> stream, const QJsonObject & obj){
         bool is_tls = obj["tls"].isObject() ;
@@ -103,9 +109,7 @@ namespace Configs
             password = obj["password"].toString();
 
             finalize:
-            name = obj["tag"].toString();
-            serverAddress = obj["server"].toString();
-            serverPort = obj["server_port"].toInt();
+            initialize_entity(this->entity, obj);
             alpn = obj["tls"].toObject()["alpn"].isArray() ? QJsonArray2QListStr(obj["tls"].toObject()["alpn"].toArray()).join(",") : obj["tls"].toObject()["alpn"].toString();
             sni = obj["tls"].toObject()["server_name"].toString();
             disableSni = obj["tls"].toObject()["disable_sni"].toBool();
@@ -117,9 +121,7 @@ namespace Configs
 
     bool ShadowSocksBean::TryParseJson(const QJsonObject& obj)
     {
-        name = obj["tag"].toString();
-        serverAddress = obj["server"].toString();
-        serverPort = obj["server_port"].toInt();
+        initialize_entity(this->entity, obj);
 //        method = obj["method"].toString();
 //        password = obj["password"].toString();
 //        plugin = obj["plugin"].toString();
@@ -144,16 +146,15 @@ namespace Configs
     bool ShadowSocksBean::TryParseFromSIP008(const QJsonObject& object){
         if (object.isEmpty()) return false;
         TryParseJson(object);
-        if (object.contains("remarks")) name = object["remarks"].toString();
-        return !( this->serverAddress.isEmpty() || method.isEmpty() || password.isEmpty());
+        if (object.contains("remarks")) entity->name = object["remarks"].toString();
+        return !( entity->serverAddress.isEmpty() || method.isEmpty() || password.isEmpty());
     }
 
     bool SocksHttpBean::TryParseJson(const QJsonObject& obj)
     {
-        name = obj["tag"].toString();
+        
+        initialize_entity(this->entity, obj);
         socks_http_type = obj["type"] == "http" ? type_HTTP : type_Socks5;
-        serverAddress = obj["server"].toString();
-        serverPort = obj["server_port"].toInt();
         username = obj["username"].toString();
         password = obj["password"].toString();
         parse_tls(stream, obj);
@@ -162,9 +163,7 @@ namespace Configs
 
     bool SSHBean::TryParseJson(const QJsonObject& obj)
     {
-        name = obj["tag"].toString();
-        serverAddress = obj["server"].toString();
-        serverPort = obj["server_port"].toInt();
+        initialize_entity(this->entity, obj);
         user = obj["user"].toString();
         password = obj["password"].toString();
         privateKey = obj["private_key"].toString();
@@ -179,10 +178,8 @@ namespace Configs
 
     bool TrojanVLESSBean::TryParseJson(const QJsonObject& obj)
     {
-        name = obj["tag"].toString();
         proxy_type = obj["type"].toString() == "trojan" ? proxy_Trojan : proxy_VLESS;
-        serverAddress = obj["server"].toString();
-        serverPort = obj["server_port"].toInt();
+        initialize_entity(this->entity, obj);
         password = obj["password"].toString();
         if (proxy_type == proxy_VLESS) password = obj["uuid"].toString();
         flow = obj["flow"].toString();
@@ -197,9 +194,7 @@ namespace Configs
 
     bool VMessBean::TryParseJson(const QJsonObject& obj)
     {
-        name = obj["tag"].toString();
-        serverAddress = obj["server"].toString();
-        serverPort = obj["server_port"].toInt();
+        initialize_entity(this->entity, obj);
         uuid = obj["uuid"].toString();
         security = obj["security"].toString();
         aid = obj["alter_id"].toInt();
@@ -214,9 +209,7 @@ namespace Configs
 
     bool AnyTLSBean::TryParseJson(const QJsonObject& obj)
     {
-        name = obj["tag"].toString();
-        serverAddress = obj["server"].toString();
-        serverPort = obj["server_port"].toInt();
+        initialize_entity(this->entity, obj);
         password = obj["password"].toString();
         idle_session_check_interval = obj["idle_session_check_interval"].toString();
         idle_session_timeout = obj["idle_session_timeout"].toString();
@@ -228,9 +221,7 @@ namespace Configs
 
     bool ShadowTLSBean::TryParseJson(const QJsonObject& obj)
     {
-        name = obj["tag"].toString();
-        serverAddress = obj["server"].toString();
-        serverPort = obj["server_port"].toInt();
+        initialize_entity(this->entity, obj);
         password = obj["password"].toString();
         shadowtls_version = obj["version"].toInt();
         parse_tls(stream, obj);
@@ -239,11 +230,9 @@ namespace Configs
 
     bool WireguardBean::TryParseJson(const QJsonObject& obj)
     {
-        name = obj["tag"].toString();
+        initialize_entity(this->entity, obj);
         auto peers = obj["peers"].toArray();
         if (peers.empty()) return false;
-        serverAddress = peers[0].toObject()["address"].toString();
-        serverPort = peers[0].toObject()["port"].toInt();
         publicKey = peers[0].toObject()["public_key"].toString();
         reserved = QJsonArray2QListInt(peers[0].toObject()["reserved"].toArray());
         persistentKeepalive = peers[0].toObject()["persistent_keepalive_interval"].toInt();
@@ -272,7 +261,7 @@ namespace Configs
 
     bool TailscaleBean::TryParseJson(const QJsonObject& obj)
     {
-        name = obj["tag"].toString();
+        entity->name = obj["tag"].toString();
         state_directory = obj["state_directory"].toString();
         auth_key = obj["auth_key"].toString();
         control_url = obj["control_url"].toString();
@@ -293,7 +282,7 @@ namespace Configs
     }
 
     bool TorBean::TryParseJson(const QJsonObject &obj){
-        name = obj["tag"].toString();
+        entity->name = obj["tag"].toString();
         executable_path = obj["executable_path"].toString();
         extra_args = QJsonArray2QListStr(obj["extra_args"].toArray());
         data_directory = obj["data_directory"].toString();
@@ -303,9 +292,7 @@ namespace Configs
 
     bool MieruBean::TryParseJson(const QJsonObject& obj)
     {
-        name = obj["tag"].toString();
-        serverAddress = obj["server"].toString();
-        serverPort = obj["server_port"].toInt();
+        initialize_entity(this->entity, obj);
         password = obj["password"].toString();
         username = obj["username"].toString();
         transport = obj["transport"].toString();

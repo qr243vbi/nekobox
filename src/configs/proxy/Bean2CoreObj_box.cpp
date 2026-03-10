@@ -191,14 +191,14 @@ namespace Configs {
         }
     }
 
-    CoreObjOutboundBuildResult SocksHttpBean::BuildCoreObjSingBox() {
+    CoreObjOutboundBuildResult SocksHttpBean::BuildCoreObjSingBox() const {
         CoreObjOutboundBuildResult result;
 
         QJsonObject outbound;
         outbound["type"] = socks_http_type == type_HTTP ? "http" : "socks";
         if (socks_http_type == type_Socks4) outbound["version"] = "4";
-        outbound["server"] = serverAddress;
-        outbound["server_port"] = serverPort;
+        outbound["server"] = entity->serverAddress;
+        outbound["server_port"] = entity->serverPort;
 
         if (!username.isEmpty() && !password.isEmpty()) {
             outbound["username"] = username;
@@ -210,12 +210,12 @@ namespace Configs {
         return result;
     }
 
-    CoreObjOutboundBuildResult ShadowSocksBean::BuildCoreObjSingBox() {
+    CoreObjOutboundBuildResult ShadowSocksBean::BuildCoreObjSingBox() const {
         CoreObjOutboundBuildResult result;
 
         QJsonObject outbound{{"type", "shadowsocks"}};
-        outbound["server"] = serverAddress;
-        outbound["server_port"] = serverPort;
+        outbound["server"] = entity->serverAddress;
+        outbound["server_port"] = entity->serverPort;
         outbound["method"] = method;
         outbound["password"] = password;
 
@@ -239,13 +239,13 @@ namespace Configs {
         return result;
     }
 
-    CoreObjOutboundBuildResult AnyTLSBean::BuildCoreObjSingBox() {
+    CoreObjOutboundBuildResult AnyTLSBean::BuildCoreObjSingBox() const {
         CoreObjOutboundBuildResult result;
 
         QJsonObject outbound{
             {"type", "anytls"},
-            {"server", serverAddress},
-            {"server_port", serverPort},
+            {"server", entity->serverAddress},
+            {"server_port", entity->serverPort},
             {"password", password},
             {"idle_session_check_interval", idle_session_check_interval},
             {"idle_session_timeout", idle_session_timeout},
@@ -258,13 +258,13 @@ namespace Configs {
     }
 
 
-    CoreObjOutboundBuildResult ShadowTLSBean::BuildCoreObjSingBox() {
+    CoreObjOutboundBuildResult ShadowTLSBean::BuildCoreObjSingBox() const {
         CoreObjOutboundBuildResult result;
 
         QJsonObject outbound{
             {"type", "shadowtls"},
-            {"server", serverAddress},
-            {"server_port", serverPort},
+            {"server", entity->serverAddress},
+            {"server_port", entity->serverPort},
             {"password", password},
             {"version", shadowtls_version},
         };
@@ -274,13 +274,13 @@ namespace Configs {
         return result;
     }
 
-    CoreObjOutboundBuildResult VMessBean::BuildCoreObjSingBox() {
+    CoreObjOutboundBuildResult VMessBean::BuildCoreObjSingBox() const {
         CoreObjOutboundBuildResult result;
 
         QJsonObject outbound{
             {"type", "vmess"},
-            {"server", serverAddress},
-            {"server_port", serverPort},
+            {"server", entity->serverAddress},
+            {"server_port", entity->serverPort},
             {"uuid", uuid.trimmed()},
             {"alter_id", aid},
             {"security", security},
@@ -291,18 +291,17 @@ namespace Configs {
         return result;
     }
 
-    CoreObjOutboundBuildResult TrojanVLESSBean::BuildCoreObjSingBox() {
+    CoreObjOutboundBuildResult TrojanVLESSBean::BuildCoreObjSingBox() const {
         CoreObjOutboundBuildResult result;
 
         QJsonObject outbound{
             {"type", proxy_type == proxy_VLESS ? "vless" : "trojan"},
-            {"server", serverAddress},
-            {"server_port", serverPort},
+            {"server", entity->serverAddress},
+            {"server_port", entity->serverPort},
         };
-
+        QString flow = this->flow;
         if (proxy_type == proxy_VLESS) {
             if (flow.right(7) == "-udp443") {
-                // 检查末尾是否包含"-udp443"，如果是，则删去
                 flow.chop(7);
             } else if (flow == "none") {
                 // 不使用 flow
@@ -319,7 +318,7 @@ namespace Configs {
         return result;
     }
 
-    CoreObjOutboundBuildResult QUICBean::BuildCoreObjSingBox() {
+    CoreObjOutboundBuildResult QUICBean::BuildCoreObjSingBox() const {
         CoreObjOutboundBuildResult result;
 
         QJsonObject coreTlsObj{
@@ -333,8 +332,8 @@ namespace Configs {
         if (proxy_type == proxy_Hysteria2) coreTlsObj["alpn"] = "h3";
 
         QJsonObject outbound{
-            {"server", serverAddress},
-            {"server_port", serverPort},
+            {"server", entity->serverAddress},
+            {"server_port", entity->serverPort},
             {"tls", coreTlsObj},
         };
 
@@ -407,14 +406,14 @@ namespace Configs {
         return result;
     }
 
-    CoreObjOutboundBuildResult WireguardBean::BuildCoreObjSingBox() {
+    CoreObjOutboundBuildResult WireguardBean::BuildCoreObjSingBox() const {
         CoreObjOutboundBuildResult result;
 
         auto tun_name = "nekobox-wg";
 
         QJsonObject peer{
-            {"address", serverAddress},
-            {"port", serverPort},
+            {"address", entity->serverAddress},
+            {"port", entity->serverPort},
             {"public_key", publicKey},
             {"pre_shared_key", preSharedKey},
             {"reserved", QListInt2QJsonArray(reserved)},
@@ -448,7 +447,7 @@ namespace Configs {
         return result;
     }
 
-    CoreObjOutboundBuildResult TailscaleBean::BuildCoreObjSingBox()
+    CoreObjOutboundBuildResult TailscaleBean::BuildCoreObjSingBox() const
     {
         CoreObjOutboundBuildResult result;
         QJsonObject outbound{
@@ -469,13 +468,13 @@ namespace Configs {
         return result;
     }
 
-    CoreObjOutboundBuildResult SSHBean::BuildCoreObjSingBox(){
+    CoreObjOutboundBuildResult SSHBean::BuildCoreObjSingBox() const {
         CoreObjOutboundBuildResult result;
 
         QJsonObject outbound{
             {"type", "ssh"},
-            {"server", serverAddress},
-            {"server_port", serverPort},
+            {"server", entity->serverAddress},
+            {"server_port", entity->serverPort},
             {"user", user},
             {"password", password},
         };
@@ -490,7 +489,7 @@ namespace Configs {
         return result;
     }
 
-    CoreObjOutboundBuildResult CustomBean::BuildCoreObjSingBox() {
+    CoreObjOutboundBuildResult CustomBean::BuildCoreObjSingBox() const {
         CoreObjOutboundBuildResult result;
 
         if (core == "internal") {
@@ -500,7 +499,7 @@ namespace Configs {
         return result;
     }
 
-    CoreObjOutboundBuildResult ExtraCoreBean::BuildCoreObjSingBox()
+    CoreObjOutboundBuildResult ExtraCoreBean::BuildCoreObjSingBox() const
     {
         CoreObjOutboundBuildResult result;
         QJsonObject outbound{
@@ -512,13 +511,13 @@ namespace Configs {
         return result;
     }
     
-    CoreObjOutboundBuildResult MieruBean::BuildCoreObjSingBox()
+    CoreObjOutboundBuildResult MieruBean::BuildCoreObjSingBox() const
     {
         CoreObjOutboundBuildResult result;
         QJsonObject outbound {
             {"type", "mieru"},
-            {"server", this->serverAddress},
-            {"server_port", this->serverPort},
+            {"server", entity->serverAddress},
+            {"server_port", entity->serverPort},
             {"server_ports", QListStr2QJsonArray(this->serverPorts)},
             {"transport", this->transport},
             {"username", this->username},
@@ -530,7 +529,7 @@ namespace Configs {
     }
 
 
-    CoreObjOutboundBuildResult TorBean::BuildCoreObjSingBox()
+    CoreObjOutboundBuildResult TorBean::BuildCoreObjSingBox() const
     {
         CoreObjOutboundBuildResult result;
         QString path = this->executable_path;
