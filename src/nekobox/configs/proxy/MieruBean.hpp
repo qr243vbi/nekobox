@@ -12,6 +12,7 @@ namespace Configs {
         QString transport = "TCP";
         QString multiplexing = "MULTIPLEXING_LOW";
         QStringList serverPorts;
+        QString traffic_pattern = "";
 
         MieruBean(Configs::ProxyEntity * entity) : AbstractBean(entity, 0) {
         }
@@ -22,6 +23,7 @@ namespace Configs {
             ADD_MAP("multiplexing", multiplexing, string);
             ADD_MAP("transport", transport, stringList);
             ADD_MAP("server_ports", serverPorts, stringList);
+            ADD_MAP("traffic_pattern", traffic_pattern, string);
         STOP_MAP
 
  //       QString DisplayType() override { return "Mieru"; };

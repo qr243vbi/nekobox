@@ -7,6 +7,13 @@
 namespace Configs {
     static QJsonObject getXbadoptionRange(const QJsonValue & value);
 
+    template<typename T>
+    static void add_non_empty(const T & obj, const QString & key, const QString & value){
+        if (!value.isEmpty()){
+            obj[key] = value;
+        }
+    }
+
     static QJsonObject getXmux(const QJsonValue & value){
         QJsonObject obj;
         for (auto [k, v]: asKeyValueRange(value.toObject().toVariantMap()) ){
@@ -84,7 +91,7 @@ namespace Configs {
             if (network == "ws") {
                 // ws path & ed
                 auto pathWithoutEd = SubStrBefore(path, "?ed=");
-                if (!pathWithoutEd.isEmpty()) transport["path"] = pathWithoutEd;
+                add_non_empty(transport, "path", pathWithoutEd);
                 if (pathWithoutEd != path) {
                     if (auto ed = SubStrAfter(path, "?ed=").toInt(); ed > 0) {
                         transport["max_early_data"] = ed;
@@ -96,16 +103,16 @@ namespace Configs {
                 if (!ok) {
                     MW_show_log("Warning: headers could not be parsed, they will not be used");
                 }
-                if (!host.isEmpty()) headerMap["Host"] = host;
+                add_non_empty(headerMap, "Host", host);
                 transport["headers"] = QMapString2QJsonObject(headerMap);
                 if (ws_early_data_length > 0) {
                     transport["max_early_data"] = ws_early_data_length;
                     transport["early_data_header_name"] = ws_early_data_name;
                 }
             } else if (network == "http") {
-                if (!path.isEmpty()) transport["path"] = path;
+                add_non_empty(transport, "path", path);
+                add_non_empty(transport, "method", method.toUpper());
                 if (!host.isEmpty()) transport["host"] = QListStr2QJsonArray(host.split(","));
-                if (!method.isEmpty()) transport["method"] = method.toUpper();
                 bool ok;
                 auto headerMap = GetHeaderPairs(&ok);
                 if (!ok) {
@@ -113,10 +120,10 @@ namespace Configs {
                 }
                 transport["headers"] = QMapString2QJsonObject(headerMap);
             } else if (network == "grpc") {
-                if (!path.isEmpty()) transport["service_name"] = path;
+                add_non_empty(transport, "service_name", path);
             } else if (network == "httpupgrade") {
-                if (!path.isEmpty()) transport["path"] = path;
-                if (!host.isEmpty()) transport["host"] = host;
+                add_non_empty(transport, "path", path);
+                add_non_empty(transport, "host", host);
                 bool ok;
                 auto headerMap = GetHeaderPairs(&ok);
                 if (!ok) {
@@ -124,8 +131,8 @@ namespace Configs {
                 }
                 transport["headers"] = QMapString2QJsonObject(headerMap);
             } else if (network == "xhttp") {
-                if (!path.isEmpty()) transport["path"] = path;
-                if (!host.isEmpty()) transport["host"] = host;
+                add_non_empty(transport, "path", path);
+                add_non_empty(transport, "host", host);
                 transport["mode"] = xhttp_mode;
                 parseExtraXhttp(transport, xhttp_extra);
             }
@@ -149,13 +156,11 @@ namespace Configs {
                     {"enabled", true},
                     {"config", QListStr2QJsonArray(ech_config.trimmed().split("\n"))}
                 };
-                if (!query_server_name.isEmpty()){
-                    ech["query_server_name"] = query_server_name;
-                }
+                add_non_empty(ech, "query_server_name", query_server_name);
                 tls["ech"] = ech;
             }
             if (allow_insecure || Configs::dataStore->skip_cert) tls["insecure"] = true;
-            if (!sni.trimmed().isEmpty()) tls["server_name"] = sni;
+            add_non_empty(tls, "server_name", sni);
             if (!certificate.trimmed().isEmpty()) {
                 tls["certificate"] = certificate.trimmed();
             }
@@ -357,7 +362,7 @@ namespace Configs {
                     }
                 }
                 outbound["server_ports"] = QListStr2QJsonArray(modifiedPorts);
-                if (!hop_interval.isEmpty()) outbound["hop_interval"] = hop_interval;
+                add_non_empty(outbound, "hop_interval", hop_interval);
             }
 
             if (authPayloadType == hysteria_auth_base64) outbound["auth"] = authPayload;
@@ -379,7 +384,7 @@ namespace Configs {
                     }
                 }
                 outbound["server_ports"] = QListStr2QJsonArray(modifiedPorts);
-                if (!hop_interval.isEmpty()) outbound["hop_interval"] = hop_interval;
+                add_non_empty(outbound, "hop_interval", hop_interval);
             }
 
             if (!obfsPassword.isEmpty()) {
@@ -399,7 +404,7 @@ namespace Configs {
                 outbound["udp_relay_mode"] = udpRelayMode;
             }
             outbound["zero_rtt_handshake"] = zeroRttHandshake;
-            if (!heartbeat.trimmed().isEmpty()) outbound["heartbeat"] = heartbeat;
+            add_non_empty(outbound, "heartbeat", heartbeat.trimmed());
         }
 
         result.outbound = outbound;
@@ -478,12 +483,12 @@ namespace Configs {
             {"user", user},
             {"password", password},
         };
-        if (!privateKey.isEmpty()) outbound["private_key"] = privateKey;
-        if (!privateKeyPath.isEmpty()) outbound["private_key_path"] = privateKeyPath;
-        if (!privateKeyPass.isEmpty()) outbound["private_key_passphrase"] = privateKeyPass;
+        add_non_empty(outbound, "private_key", privateKey);
+        add_non_empty(outbound, "private_path", privateKeyPath);
+        add_non_empty(outbound, "private_passphase", privateKeyPass);
         if (!hostKey.isEmpty()) outbound["host_key"] = QListStr2QJsonArray(hostKey);
         if (!hostKeyAlgs.isEmpty()) outbound["host_key_algorithms"] = QListStr2QJsonArray(hostKeyAlgs);
-        if (!clientVersion.isEmpty()) outbound["client_version"] = clientVersion;
+        add_non_empty(outbound, "client_version", clientVersion);
 
         result.outbound = outbound;
         return result;
@@ -524,6 +529,7 @@ namespace Configs {
             {"password", this->password},
             {"multiplexing", this->multiplexing},
         };
+        add_non_empty(outbound, "traffic_pattern", traffic_pattern);
         result.outbound = outbound;
         return result;
     }

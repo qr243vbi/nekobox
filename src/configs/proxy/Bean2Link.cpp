@@ -432,6 +432,7 @@ namespace Configs {
         add_query_nonempty( "transport", q, transport);
         add_query_nonempty( "multiplexing", q, multiplexing);
         add_query_nonempty( "server_ports", q, serverPorts.join(","));
+        add_query_nonempty("traffic_pattern", q, traffic_pattern);
         url.setQuery(q);
 
         return url.toString(QUrl::FullyEncoded);

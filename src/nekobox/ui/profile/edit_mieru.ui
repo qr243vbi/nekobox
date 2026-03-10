@@ -34,17 +34,17 @@
    <item row="1" column="1">
     <widget class="QLineEdit" name="password"/>
    </item>
-   <item row="4" column="0">
+   <item row="5" column="0">
     <widget class="QLabel" name="port_range_l">
      <property name="text">
       <string>Port range</string>
      </property>
     </widget>
    </item>
-   <item row="4" column="1">
+   <item row="5" column="1">
     <widget class="QTextEdit" name="port_range"/>
    </item>
-   <item row="5" column="0" colspan="2">
+   <item row="6" column="0" colspan="2">
     <widget class="QWidget" name="widget" native="true">
      <layout class="QGridLayout" name="gridLayout"/>
     </widget>
@@ -106,6 +106,16 @@
       </property>
      </item>
     </widget>
+   </item>
+   <item row="4" column="0">
+    <widget class="QLabel" name="label_2">
+     <property name="text">
+      <string>Traffic Pattern</string>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="1">
+    <widget class="QLineEdit" name="traffic_pattern"/>
    </item>
   </layout>
  </widget>

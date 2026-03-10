@@ -34,9 +34,11 @@ namespace Configs {
         return url.toString();
     }
     
+    #ifdef DEBUG_MODE
     QString AbstractBean::type() {
         return "unknown";
     }
+    #endif
 
     AbstractBean::~AbstractBean() {
         #ifdef DEBUG_MODE
