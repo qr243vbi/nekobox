@@ -280,7 +280,7 @@ jobs:
         if: matrix.allow == 'true' && github.event.inputs.source_only != 'true'
         id: vcpkg
         with:
-          pkgs: thrift
+          pkgs: thrift boost
           triplet: ${{ matrix.triplet }}
           token: ${{ secrets.UPLOAD_TOKEN }}
           
@@ -384,7 +384,7 @@ jobs:
         if: matrix.allow == 'true' && github.event.inputs.source_only != 'true'
         uses: awalsh128/cache-apt-pkgs-action@latest
         with:
-          packages: libfuse2 patchelf squashfs-tools openssl-dev openssl thrift-compiler libthrift-dev
+          packages: libfuse2 patchelf squashfs-tools openssl-dev openssl thrift-compiler libthrift-dev libboost-dev
           version: 1.0
 
       - name: Cache Builds
