@@ -46,7 +46,6 @@ ta_IN:தமிழ்
 bn_IN:বাংলা
 mr_IN:मराठी
 te_IN:తెలుగు
-pa_IN:ਪੰਜਾਬੀ
 gu_IN:ગુજરાતી
 kn_IN:ಕನ್ನಡ
 or_IN:ଓଡ଼ିଆ
@@ -63,14 +62,11 @@ be_BY:Беларуская
 af_ZA:Afrikaans
 cy_GB:Cymraeg
 hu_HU:Magyar
-sr_RS:Српски
 sk_SK:Slovenčina
 mn_MN:Монгол хэл
 sr_BS:Bosanski
 hr_HR:Hrvatski
 ca_ES:Català
-gl_ES:Galego
-ml_IN:മലയാളം
 ro_RO:Română
 ta_IN:தமிழ்
 pa_IN:ਪੰਜਾਬੀ
@@ -79,7 +75,6 @@ sd_PK:سنڌي
 el_GR:Ελληνικά
 sq_AL:Gjuha Shqipe
 pl_PL:Polski
-fi_FI:Suomi
 be_BY:Беларуская
 bs_BA:Bosanski
 am_ET:አማርኛ

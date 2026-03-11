@@ -368,7 +368,11 @@ QList<std::shared_ptr<LanguageValue>> &languageCodes() {
       QString text = ReadFileText(path);
       QStringList list = text.split("\n");
       for (QString str : list) {
-        int ind = str.indexOf(':');
+        str = str.trimmed();
+        int ind = -1;
+        if (!s.startsWith('#')){
+          ind = str.indexOf(':');
+        }
         if (ind > 0) {
           QString key = str;
           key.slice(0, ind);
