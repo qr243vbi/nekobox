@@ -543,9 +543,9 @@ namespace Configs {
 
         username = query.queryItemValue("username");
         password = query.queryItemValue("password");
-        transport = query.queryItemValue("transport");
+        *transport = query.queryItemValue("transport");
         traffic_pattern = GetQueryValue(query, "traffic_pattern");
-        multiplexing = query.queryItemValue("multiplexing");
+        *multiplexing = query.queryItemValue("multiplexing");
         serverPorts = query.queryItemValue("server_ports").split(",");
         return true;
     }

@@ -24,17 +24,21 @@ QPixmap Icon::GetTrayIcon(TrayIconStatus status) {
   } 
   if (!pixmap_read_isnull){
     p.drawPixmap(0, 0, pixmap_read.pixmap(QSize(256, 256)));
-  }
-  if (indicatorRuleMap.contains(status)) {
-    auto side = pixmap.width();
-    auto radius = side * rule.radius;
-    auto d = side * rule.diameter;
-    auto margin = side * rule.margin;
+    if (indicatorRuleMap.contains(status)) {
+      auto side = pixmap.width();
+      auto radius = side * rule.radius;
+      auto d = side * rule.diameter;
+      auto margin = side * rule.margin;
 
-    p.setBrush(QBrush(QListInt2Color(rule.color)));
-    p.drawRoundedRect(QRect(side - d - margin, 
-        side - d - margin, d, d), radius,
-                      radius);
+#ifdef DEBUG_MODE
+      qDebug() << "ICON side" << side << "radius" << radius << "diameter" << d << "margin" << margin;
+#endif
+      if (radius > 0) {
+        p.setBrush(QBrush(QListInt2Color(rule.color)));
+        p.drawRoundedRect(QRect(side - d - margin,
+           side - d - margin, d, d), radius, radius);
+      }
+    }
   }
   p.end();
   return pixmap;

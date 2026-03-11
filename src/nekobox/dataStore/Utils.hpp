@@ -120,7 +120,7 @@ template <typename T> auto asListRange(QList<T> &&list) {
     return ptr;
 
 #define DECL_MAP(X)                                                            \
-  ConfJsMap X::_map() {                                                  \
+  ConfJsMap X::_map() {                                                        \
     MAP_BODY
 
 #define INIT_MAP_1                                                             \
@@ -135,6 +135,53 @@ template <typename T> auto asListRange(QList<T> &&list) {
   init = true;                                                                 \
   return ptr;                                                                  \
   }
+
+
+
+#ifdef DEBUG_MODE
+
+#define DEBUG_INIT_ENUM qDebug() << "CALLED INIT ENUM" << init;         \
+{                                                                       \
+   std::ostringstream oss;                                              \
+   bool first = true;                                                   \
+   for (auto it = ptr.left.begin(); it != ptr.left.end(); ++it) {       \
+       if (!first) oss << ", ";                                         \
+       oss << it->first << ":" << it->second;                           \
+       first = false;                                                   \
+   }                                                                    \
+   qDebug() <<  oss.str().c_str();                                      \
+}
+
+#else
+#define DEBUG_INIT_ENUM
+#endif
+
+#define STOP_ENUM STOP_MAP ; };
+
+#define INIT_ENUM(Name)                                                  \
+class Name##Enum: public JsonEnum {                               \
+public:                                                                 \
+    template<typename T>                                                \
+    explicit Name##Enum(T t){ this->set(t); };                    \
+    using JsonEnum::operator=;                                          \
+    virtual const boost::bimap<std::string, int>& _map()               \
+        const override{                                                        \
+        static boost::bimap<std::string, int> ptr;                     \
+        static bool init = false;                 DEBUG_INIT_ENUM              \
+        if (init) return ptr;
+
+#ifdef DEBUG_MODE
+#define ADD_ENUM(K, V) ptr.insert({K, V}); qDebug() << "ADD ENUM" << K << V ;
+#else
+#define ADD_ENUM(K, V) ptr.insert({K, V})
+#endif
+#define ADD_ENUM_LIST(K, I)                             \
+{                                                       \
+    int pref = I;                                       \
+    for (int i = 0, n = K.size(); i < n; i ++){         \
+        ADD_ENUM(K.at(i).toStdString(), i + pref);      \
+    }                                                   \
+}
 
 #define ADD_MAP(X, Y, B) _put(ptr, X, &this->Y)
 //, ITEM_TYPE(B))

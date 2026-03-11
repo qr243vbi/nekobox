@@ -10,7 +10,6 @@
 namespace Configs {
     AbstractBean::AbstractBean(Configs::ProxyEntity * entity, int version) {
         this->entity = entity;
-        this->save_control_no_save = true;
         this->version = version;
     }
     DECL_MAP(AbstractBean)
@@ -39,6 +38,14 @@ namespace Configs {
         return "unknown";
     }
     #endif
+
+
+    bool AbstractBean::UnknownKeyHash(const QByteArray & array) {
+        if (array == bean_key){
+            return true;
+        }
+        return false;
+    };
 
     AbstractBean::~AbstractBean() {
         #ifdef DEBUG_MODE

@@ -91,6 +91,10 @@ inline QString joinCommand(const QStringList &arguments) {
 #define P_LOAD_COMBO_STRING(a) ui->a->setCurrentText(bean->a);
 #define P_SAVE_COMBO_STRING(a) bean->a = ui->a->currentText();
 
+
+#define P_LOAD_COMBO_STRING_PTR(a) ui->a->setCurrentText(*bean->a);
+#define P_SAVE_COMBO_STRING_PTR(a) *bean->a = ui->a->currentText();
+
 #define D_LOAD_COMBO_STRING(a) ui->a->setCurrentText(Configs::dataStore->a);
 #define D_SAVE_COMBO_STRING(a) Configs::dataStore->a = ui->a->currentText();
 

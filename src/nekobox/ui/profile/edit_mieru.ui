@@ -64,26 +64,6 @@
        <verstretch>0</verstretch>
       </sizepolicy>
      </property>
-     <item>
-      <property name="text">
-       <string notr="true">MULTIPLEXING_OFF</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string notr="true">MULTIPLEXING_LOW</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string notr="true">MULTIPLEXING_MIDDLE</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string notr="true">MULTIPLEXING_HIGH</string>
-      </property>
-     </item>
     </widget>
    </item>
    <item row="2" column="0">
@@ -94,18 +74,7 @@
     </widget>
    </item>
    <item row="2" column="1">
-    <widget class="QComboBox" name="transport">
-     <item>
-      <property name="text">
-       <string notr="true">TCP</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string notr="true">UDP</string>
-      </property>
-     </item>
-    </widget>
+    <widget class="QComboBox" name="transport"/>
    </item>
    <item row="4" column="0">
     <widget class="QLabel" name="label_2">

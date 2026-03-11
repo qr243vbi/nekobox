@@ -11,15 +11,31 @@ namespace Configs
     #define _add(map1, X, Y, B) _put(map1, X, &this->Y)
     //, ITEM_TYPE(B))
 
-    static QByteArray bean_key = Configs::hash("bean");
+    QByteArray bean_key = Configs::hash("bean");
 
-    void ProxyEntity::UnknownKeyHash(const QByteArray & array) {
+    bool ProxyEntity::UnknownKeyHash(const QByteArray & array) {
+#ifdef DEBUG_MODE
+    qDebug()<<"Invalid Bean";
+#endif
         if (array == bean_key){
-            invalid = true;
+            this->bean_cfg = this->fn;
+            return true;
         }
+        return false;
     };
 
-    bool ProxyEntity::Save() {
+    void ProxyEntity::ResetBeans(){
+        {
+                    this->weak_bean.reset();
+                    this->strong_bean.reset();
+        }
+    }
+
+    bool ProxyEntity::Save(){
+        return SavePrivate();
+    }
+
+    bool ProxyEntity::SavePrivate() {
         auto bean = this->weak_bean.lock();
         if (bean != nullptr){
             if (!this->bean_cfg.isEmpty()){
@@ -45,12 +61,15 @@ namespace Configs
         auto ent = (ProxyEntity*)this;
         Configs::AbstractBean * bean;
         {
-            auto ret1 = this->weak_bean.lock();
+            std::shared_ptr<AbstractBean> ret1 = nullptr;
+            if (ent->weak_bean.use_count() > 0){
+                ret1 = ent->weak_bean.lock();
+            }
             if (ret1 != nullptr){
                 return ret1;
             }
         }
-        bool skip_load = false;
+        bool make_strong_bean = false;
 
         if (type == ""){
           goto unknown_type;
@@ -95,15 +114,23 @@ namespace Configs
         } else {
             unknown_type:
             bean = new Configs::AbstractBean(ent, -114514);
-            skip_load = true;
-        }
-        bool make_strong_bean = false;
-        std::shared_ptr<Configs::AbstractBean> ret(bean);
-        if (!this->bean_cfg.isEmpty() && !skip_load){
-            ret->fn = this->bean_cfg;
-            ret->Load();
-        } else {
             make_strong_bean = true;
+        }
+
+        std::shared_ptr<Configs::AbstractBean> ret(bean);
+#ifdef DEBUG_MODE
+qDebug() << "Type Unknown" << make_strong_bean;
+qDebug() << "Bean Path" << this->bean_cfg;
+#endif
+
+        if (!make_strong_bean){
+            if (!this->bean_cfg.isEmpty()){
+                ret->fn = this->bean_cfg;
+                ret->Load();
+                ret->save_control_no_save = true;
+            } else {
+                make_strong_bean = true;
+            }
         }
         {
             ProxyEntity * entity = (ProxyEntity*)this;
@@ -159,7 +186,7 @@ namespace Configs
         this->strong_bean.reset();
         auto weak = this->weak_bean.lock();
         if (!save_control_no_save && (weak != nullptr)){
-            Save();
+            SavePrivate();
             weak->entity = nullptr;
             weak.reset();
         }

@@ -3,6 +3,7 @@
 #include <QString>
 #include <QJsonObject>
 #include <functional>
+#include <boost/bimap.hpp>
 
 namespace Configs_ConfigItem{
     struct configItem;
@@ -15,20 +16,26 @@ typedef ConfJsMapStat & ConfJsMap;
 //}
 
 namespace Configs_ConfigItem {
-    // config
-/*
-    enum itemType {
-        type_string,
-        type_integer,
-        type_integer64,
-        type_boolean,
-        type_stringList,
-        type_integerList,
-        type_jsonStore,
-        type_jsonStoreList,
-        type_stringMap
-    };
-*/ 
+
+class JsonEnum{
+public:
+    virtual const boost::bimap<std::string, int> & _map() const;
+    JsonEnum& set(int) ;
+    JsonEnum& set(const QString&);
+    JsonEnum& set(const char *);
+    JsonEnum& set(const QByteArray&);
+    JsonEnum& set(const QJsonValue&);
+    operator QJsonValue() const;
+    operator int() const;
+    operator QString() const;
+    operator QByteArray() const;
+
+    template<typename K>
+    JsonEnum& operator=(K val){
+        return this->set(val);
+    }
+    int value;
+};
 
     class JsonStore;
 
@@ -93,7 +100,8 @@ inline QDataStream &operator>>(QDataStream &in, Bin &p) {
         type_strMap = 8,
         type_boolPtr = 9,
         type_jsonShared = 10,
-        type_double = 11
+        type_double = 11,
+        type_enum = 12
     };
 
     PTR_ITEM(int)
@@ -108,6 +116,7 @@ inline QDataStream &operator>>(QDataStream &in, Bin &p) {
     PTR_ITEM(boolPtr)
     PTR_ITEM(jsonShared)
     PTR_ITEM(double)
+    PTR_ITEM(enum)
 
     class JsonStore {
     private:
@@ -128,6 +137,7 @@ inline QDataStream &operator>>(QDataStream &in, Bin &p) {
         void _put(ConfJsMap _map, const QString& str, QList<int> *);
         void _put(ConfJsMap _map, const QString& str, JsonStore **);
         void _put(ConfJsMap _map, const QString& str, std::shared_ptr<JsonStore>*);
+        void _put(ConfJsMap _map, const QString& str, std::shared_ptr<JsonEnum>*);
         void _put(ConfJsMap _map, const QString& str, QVariantMap *);
         void _put(ConfJsMap _map, const QString& str, QJsonStoreListBase *);
         void _put(ConfJsMap _map, const QString& str, bool **);
@@ -136,11 +146,30 @@ inline QDataStream &operator>>(QDataStream &in, Bin &p) {
         void _put(ConfJsMap _map, const QString& str, T ** type){
             _put(_map, str, (JsonStore **) type);
         }
-        template<typename T, typename = typename std::enable_if<std::is_base_of<JsonStore, T>::value>::type>
-        void _put(ConfJsMap _map, const QString& str, std::shared_ptr<T>* type){
-            _put(_map, str, (std::shared_ptr<JsonStore>*) type);
-        }
 
+        template<typename T>
+        requires (std::derived_from<T, JsonStore> || std::derived_from<T, JsonEnum>)
+        void _put(ConfJsMap _map, const QString& str, std::shared_ptr<T> * type){
+            using Base = std::conditional_t<
+                std::derived_from<T, JsonStore>,
+                JsonStore,
+                JsonEnum>;
+            _put(_map, str, (std::shared_ptr<Base> *) type);
+        }
+        /*
+        template<typename T>
+        requires (std::derived_from<T, JsonStore> || std::derived_from<T, JsonEnum>)
+        void _put(ConfJsMap map, const QString& str, std::shared_ptr<T>* value)
+        {
+            using Base = std::conditional_t<
+                std::derived_from<T, JsonStore>,
+                JsonStore,
+                JsonEnum>;
+
+            auto base = std::static_pointer_cast<Base>(*value);
+            _put(map, str, &base);
+        }
+*/
         virtual ConfJsMap _map() = 0;
 
         std::function<void()> callback_after_load = nullptr;
@@ -180,7 +209,7 @@ inline QDataStream &operator>>(QDataStream &in, Bin &p) {
 
         virtual bool Load();
 
-        virtual void UnknownKeyHash(const QByteArray &data);
+        virtual bool UnknownKeyHash(const QByteArray &data);
         
     };
 

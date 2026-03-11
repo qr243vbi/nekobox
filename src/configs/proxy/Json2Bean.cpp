@@ -295,8 +295,8 @@ namespace Configs
         initialize_entity(this->entity, obj);
         password = obj["password"].toString();
         username = obj["username"].toString();
-        transport = obj["transport"].toString();
-        multiplexing = obj["multiplexing"].toString();
+        *transport = obj["transport"].toString();
+        *multiplexing = obj["multiplexing"].toString();
         traffic_pattern = obj["traffic_pattern"].toString();
         auto & ports = serverPorts;
         ports.clear();

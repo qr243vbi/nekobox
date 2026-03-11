@@ -8,7 +8,7 @@ namespace Configs {
     static QJsonObject getXbadoptionRange(const QJsonValue & value);
 
     template<typename T>
-    static void add_non_empty(const T & obj, const QString & key, const QString & value){
+    static void add_non_empty(T & obj, const QString & key, const QString & value){
         if (!value.isEmpty()){
             obj[key] = value;
         }
@@ -524,10 +524,10 @@ namespace Configs {
             {"server", entity->serverAddress},
             {"server_port", entity->serverPort},
             {"server_ports", QListStr2QJsonArray(this->serverPorts)},
-            {"transport", this->transport},
+            {"transport", *this->transport},
             {"username", this->username},
             {"password", this->password},
-            {"multiplexing", this->multiplexing},
+            {"multiplexing", *this->multiplexing},
         };
         add_non_empty(outbound, "traffic_pattern", traffic_pattern);
         result.outbound = outbound;

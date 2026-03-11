@@ -8,6 +8,8 @@
 
 
 namespace Configs {
+    extern QByteArray bean_key;
+
     struct CoreObjOutboundBuildResult {
     public:
         QJsonObject outbound;
@@ -37,6 +39,7 @@ namespace Configs {
         QString ToNekorayShareLink(const QString &type) const;
 
         void ResolveDomainToIP(const std::function<void()> &onFinished);
+        virtual bool UnknownKeyHash(const QByteArray & array) override;
 
         //
         #ifdef DEBUG_MODE

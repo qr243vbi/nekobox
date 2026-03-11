@@ -93,16 +93,18 @@ namespace Configs_ConfigItem {
         auto  _map = this->_map();
         for (const auto &key: object.keys()) {
             auto h = Configs::hash(key);
+            QJsonValue value;
             if (_map.count(h) == 0) {
+                if (UnknownKeyHash(h) && ((value = object[key]).isObject())){
+                    this->FromJson(value.toObject());
+                }
                 continue;
+            } else {
+                value = object[key];
             }
-            auto value = object[key];
             auto item = _map.value(h).get();
 
-            if (item == nullptr){
-                continue;
-            } 
-            if (item->name != key){
+            if ((item == nullptr) || (item->name != key)){
                 continue;
             }
 
@@ -181,6 +183,90 @@ namespace Configs_ConfigItem {
   //      l2:
         file.close();
         return ok;
+    }
+    JsonEnum& JsonEnum::set(int value){
+#ifdef DEBUG_MODE
+            qDebug() << "ENUM IS SETTING" << value;
+#endif
+        this->value = value;
+        return *this;
+    }
+    JsonEnum& JsonEnum::set(const QString& value){
+
+#ifdef DEBUG_MODE
+            qDebug() << " add string (=) " << value;
+#endif
+        auto map = _map();
+
+#ifdef DEBUG_MODE
+            qDebug() << "ENUM IS SETTING" << value;
+#endif
+        try{
+            this->value = map.left.at(value.toStdString());
+        } catch (std::out_of_range){
+#ifdef DEBUG_MODE
+            qDebug() << "ENUM NOT FOUND" << value;
+#endif
+            this->value = 0;
+        }
+
+#ifdef DEBUG_MODE
+            qDebug() << "ENUM IS SET" << this->value;
+#endif
+        return *this;
+    }
+    JsonEnum& JsonEnum::set(const char* value){
+        this->set(QString(value));
+        return *this;
+    }
+    JsonEnum& JsonEnum::set(const QByteArray& value){
+        int val;
+        if (value[0] == '\0'){
+            memcpy(&val, value.constData() + 1, sizeof(val));
+            this->value = val;
+        } else {
+            this->set(QString::fromUtf8(value));
+        }
+        return *this;
+    }
+    JsonEnum& JsonEnum::set(const QJsonValue& val){
+        if (val.isString()){
+            this->set(val.toString());
+        } else if (val.isDouble()){
+            this->set(val.toInt());
+        }
+        return *this;
+    }
+    JsonEnum::operator QJsonValue() const {
+        return (QString)(*this);
+    }
+    JsonEnum::operator int() const {
+        return this->value;
+    }
+    JsonEnum::operator QString() const {
+        auto map = _map();
+        try {
+            return QString::fromStdString(map.right.at(this->value));
+        } catch (std::out_of_range){
+#ifdef DEBUG_MODE
+            qDebug() << this->value << "NOT FOUND";
+#endif
+            return "";
+        }
+    }
+    JsonEnum::operator QByteArray() const {
+        QByteArray arr;
+        arr.append('\0');  // zero prefix
+        arr.append(reinterpret_cast<const char*>(&value), sizeof(value));
+        return arr;
+    }
+    const boost::bimap<std::string, int>& JsonEnum::_map() const {
+#ifdef DEBUG_MODE
+        qDebug() << "NULL BIMAP";
+#endif
+        static boost::bimap<std::string, int> m;
+        static bool initialized = false;
+        return m;
     }
 
 } // namespace Configs_ConfigItem
@@ -432,4 +518,5 @@ QByteArray hash = QCryptographicHash::hash(
     QString GetBasePath() {
         return QDir::currentPath();
     }
+
 } // namespace Configs

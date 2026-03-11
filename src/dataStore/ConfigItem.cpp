@@ -114,6 +114,14 @@ SET_NODE(jsonStore) {
   }
 }
 
+SET_NODE(enum) {
+  GET_PTR_OR_RETURN
+  std::shared_ptr<JsonEnum> st = *(std::shared_ptr<JsonEnum> *)ptr;
+  if (st != nullptr) {
+    *st = value;
+  }
+}
+
 SET_NODE(jsonShared) {
   GET_PTR_OR_RETURN
   std::shared_ptr<JsonStore> st = *(std::shared_ptr<JsonStore> *)ptr;
@@ -166,6 +174,14 @@ GET_NODE(jsonShared) {
     return QJsonValue::Null;
   }
 }
+GET_NODE(enum) {
+  std::shared_ptr<JsonEnum> st = *(std::shared_ptr<JsonEnum> *)(this->getPtr(store));
+  if (st != nullptr) {
+    return (QJsonValue)*st;
+  } else {
+    return "";
+  }
+}
 GET_NODE(strMap) {
   return QJsonObject::fromVariantMap(*(QVariantMap *)this->getPtr(store));
 }
@@ -189,6 +205,7 @@ GET_NODE(int) { return *(int *)getPtr(store); }
 
 GET_NODE(double) { return *(double *)getPtr(store); }
 
+
 #define CASE_TYPE(X)                                                           \
   case ConfigItemType::type_##X:                                               \
     return std::make_shared<X##Item>();
@@ -206,6 +223,7 @@ std::shared_ptr<configItem> Configs_ConfigItem::getConfigItem(int i) {
     CASE_TYPE(jsonStoreList)
     CASE_TYPE(boolPtr)
     CASE_TYPE(jsonShared)
+    CASE_TYPE(enum)
   default:
     return std::make_shared<jsonStoreItem>();
   }
@@ -251,7 +269,8 @@ QByteArray JsonStore::ToBytes(const QStringList &without, bool header) const {
     return byteArray;
 };
 
-void JsonStore::UnknownKeyHash(const QByteArray &data){
+bool JsonStore::UnknownKeyHash(const QByteArray &data){
+    return false;
 }
 
 void JsonStore::FromBytes(const QByteArray &data) {
@@ -263,17 +282,26 @@ void JsonStore::FromBytes(const QByteArray &data) {
     unsigned char type;
     stream >> type;
     auto iter = _map.find(key);
+    bool cont = false;
     std::shared_ptr<configItem> value = nullptr;
     JsonStore *store = this;
     if (iter != _map.end()) {
       value = iter.value();
+    } else {
+        cont = UnknownKeyHash(key);
     }
-    if (value.get() == nullptr || value->type() != type) {
+    if (cont && (type == ConfigItemType::type_jsonStore || type == ConfigItemType::type_jsonShared)){
+        QByteArray array;
+        stream >> array;
+        this->FromBytes(array);
+        continue;
+    }
+    if (value == nullptr || value->type() != type) {
       value = getConfigItem(type);
       store = nullptr;
     }
     #ifdef DEBUG_MODE
-    if (value.get() == nullptr){
+    if (value == nullptr){
       qDebug() << "SOMETHING STRANGE HERE: JsonStore::FromBytes";
       qDebug() << type;
     }
@@ -322,8 +350,13 @@ void JsonStore::_put(ConfJsMap _map, const QString &str,
 void JsonStore::_put(ConfJsMap _map, const QString &str, bool **value) {
   PUT_STORE(boolPtr)
 };
-void JsonStore::_put(ConfJsMap _map, const QString &str, std::shared_ptr<JsonStore>*value) {
+void JsonStore::_put(ConfJsMap _map, const QString &str,
+                     std::shared_ptr<JsonStore>*value) {
   PUT_STORE(jsonShared)
+};
+void JsonStore::_put(ConfJsMap _map, const QString &str,
+                     std::shared_ptr<JsonEnum>*value) {
+  PUT_STORE(enum)
 };
 
 
@@ -357,6 +390,14 @@ GET_BIN(jsonShared) {
   }
   data << array;
 }
+GET_BIN(enum) {
+  QByteArray array;
+  std::shared_ptr<JsonEnum> st = *(std::shared_ptr<JsonEnum>*)this->getPtr(store);
+  if (st != nullptr) {
+    array = (QByteArray)*st;
+  }
+  data << array;
+}
 GET_BIN(jsonStoreList) {
   QList<QByteArray> value;
   for (JsonStore *st : *(QJsonStoreListBase *)this->getPtr(store)) {
@@ -383,6 +424,15 @@ SET_BIN(jsonStore) {
   JsonStore *st = *(JsonStore **)ptr;
   if (st != nullptr) {
     st->FromBytes(value);
+  }
+}
+SET_BIN(enum) {
+  QByteArray value;
+  data >> value;
+  GET_PTR_OR_RETURN
+  std::shared_ptr<JsonEnum> st = *(std::shared_ptr<JsonEnum> *)ptr;
+  if (st != nullptr) {
+    *st = value;
   }
 }
 SET_BIN(jsonShared) {

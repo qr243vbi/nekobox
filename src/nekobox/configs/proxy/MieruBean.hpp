@@ -5,12 +5,20 @@
 #include "Preset.hpp"
 
 namespace Configs {
+    INIT_ENUM(Multiplexing)
+        ADD_ENUM_LIST(Preset::SingBox::MieruMultiplexing, 1);
+    STOP_ENUM
+
+    INIT_ENUM(Transport)
+        ADD_ENUM_LIST(Preset::SingBox::MieruTransport, 1);
+    STOP_ENUM
+
     class MieruBean : public AbstractBean {
     public:
         QString password = "";
         QString username = "";
-        QString transport = "TCP";
-        QString multiplexing = "MULTIPLEXING_LOW";
+        std::shared_ptr<TransportEnum> transport = std::make_shared<TransportEnum>("TCP");
+        std::shared_ptr<MultiplexingEnum> multiplexing = std::make_shared<MultiplexingEnum>("MULTIPLEXING_LOW");
         QStringList serverPorts;
         QString traffic_pattern = "";
 

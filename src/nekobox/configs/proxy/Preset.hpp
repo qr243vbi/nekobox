@@ -25,6 +25,16 @@ namespace Preset::SingBox {
         "tor"
   };
   inline QStringList VpnImplementation = {"system", "gvisor", "mixed"};
+  inline QStringList MieruMultiplexing = {
+      "MULTIPLEXING_OFF",
+      "MULTIPLEXING_LOW",
+      "MULTIPLEXING_MIDDLE",
+      "MULTIPLEXING_HIGH"
+  };
+  inline QStringList MieruTransport = {
+      "TCP",
+      "UDP"
+  };
   inline QStringList DomainStrategy = {"", "ipv4_only", "ipv6_only", "prefer_ipv4", "prefer_ipv6"};
   inline QStringList UtlsFingerPrint = {"", "chrome", "firefox", "edge", "safari", "360", "qq", "ios", "android", "random", "randomized"};
   inline QStringList ShadowsocksMethods = {

@@ -20,4 +20,5 @@ namespace Configs {
     bool isSetuidSet(const std::string& path);
 
     QString GetBasePath();
+ //   bimap::bidirectional_map<std::string, int> map;
 } // namespace Configs

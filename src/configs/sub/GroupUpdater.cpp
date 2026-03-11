@@ -122,12 +122,11 @@ namespace Subscription {
             needFix = false;
             auto link = QUrl(str);
             if (!link.isValid()) return;
-            auto bean = ent->bean();
             ent = Configs::ProfileManager::NewProxyEntity(link.host());
-            if (bean->version == -114514) return;
+            if (!ent->isValid()) return;
             auto j = DecodeB64IfValid(link.fragment().toUtf8(), QByteArray::Base64UrlEncoding);
             if (j.isEmpty()) return;
-            ent->unlock(bean)->FromJsonBytes(j);
+            ent->unlock(ent->bean())->FromJsonBytes(j);
         }
 
         // Json
@@ -509,7 +508,7 @@ namespace Subscription {
                 if (type == "socks5") type = "socks";
 
                 auto ent = Configs::ProfileManager::NewProxyEntity(type);
-                if (ent->invalid) continue;
+                if (!ent->isValid()) continue;
                 bool needFix = false;
 
                 // common

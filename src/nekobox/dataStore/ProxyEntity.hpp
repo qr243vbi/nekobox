@@ -1,13 +1,13 @@
 #pragma once
 
 #include "Utils.hpp"
-#include "nekobox/dataStore/Configs.hpp"
-#include "nekobox/global/CountryHelper.hpp"
-#include "nekobox/stats/traffic/TrafficData.hpp"
-#include "nekobox/configs/proxy/AbstractBean.hpp"
+#include <nekobox/dataStore/Configs.hpp>
+#include <nekobox/global/CountryHelper.hpp>
+#include <nekobox/stats/traffic/TrafficData.hpp>
+#include <nekobox/configs/proxy/AbstractBean.hpp>
 #include <QColor>
 #include <memory>
-#include "nekobox/configs/proxy/ExtraCore.h"
+#include <nekobox/configs/proxy/ExtraCore.h>
 
 namespace Configs {
     class SocksHttpBean;
@@ -46,9 +46,12 @@ namespace Configs {
     private:
         std::weak_ptr<Configs::AbstractBean> weak_bean;
         std::shared_ptr<Configs::AbstractBean> strong_bean;
+        bool SavePrivate();
     public:
         virtual ConfJsMap _map() override;
         virtual bool Save() override;
+
+        bool isValid() const;
 
         QString type;
 
@@ -62,13 +65,12 @@ namespace Configs {
         int latencyOrder = 0;
 
         bool is_working = false;
-        bool invalid = false;
         QString bean_cfg;
         QString dl_speed;
         QString ul_speed;
         QString test_country;
         std::shared_ptr<const Configs::AbstractBean> bean() const;
-        virtual void UnknownKeyHash(const QByteArray & array) override;
+        virtual bool UnknownKeyHash(const QByteArray & array) override;
         std::shared_ptr<Stats::TrafficData> traffic_data = std::make_shared<Stats::TrafficData>("");
         QString full_test_report;
 
@@ -108,6 +110,8 @@ namespace Configs {
         [[nodiscard]] virtual QString DisplayTypeAndName(){
             return this->type + " " + name;
         }
+
+        void ResetBeans();
 
         [[nodiscard]] QString DisplayTestResult() const;
 

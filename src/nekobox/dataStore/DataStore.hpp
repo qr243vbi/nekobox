@@ -1,6 +1,7 @@
 #include "Const.hpp"
 #include "ConfigItem.hpp"
 #include "Utils.hpp"
+#include <nekobox/configs/proxy/Preset.hpp>
 #ifdef Q_OS_WIN
 #include "nekobox/sys/windows/WinVersion.h"
 #endif
@@ -50,6 +51,10 @@ namespace Configs {
 
         virtual bool Load() override;
     };
+
+    INIT_ENUM(VpnImplementation)
+        ADD_ENUM_LIST(Preset::SingBox::VpnImplementation, 1)
+    STOP_ENUM
 
     class DataStore : public JsonStore {
     public:

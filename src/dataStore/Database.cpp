@@ -66,7 +66,7 @@ namespace Configs {
                 QString("beans/%1.cfg").arg(id)
             );
             // Corrupted profile?
-            if (ent == nullptr || ent->invalid) {
+            if (ent == nullptr || !ent->isValid()) {
                 delProfile << id;
                 continue;
             }
@@ -146,6 +146,10 @@ namespace Configs {
         JsonStore::Save();
     }
 
+    bool ProxyEntity::isValid() const {
+        return Preset::SingBox::OutboundTypes.contains(this->type);
+    }
+
     std::shared_ptr<ProxyEntity> ProfileManager::LoadProxyEntity(
             const QString &jsonPath,
             const QString &beanPath
@@ -159,34 +163,34 @@ namespace Configs {
             #ifdef DEBUG_MODE
             qDebug() << "LOADING FAILED:" << jsonPath;
             #endif
-            ent->invalid = true;
+            ent->type = "";
             return ent;
         }
-        if (!Preset::SingBox::OutboundTypes.contains(ent->type)){
+        if (!ent->isValid()){
             #ifdef DEBUG_MODE
             qDebug() << "UNKNOWN TYPE:" << ent->type;
             #endif
-            ent->invalid = true;
             return ent;
         }
-
-        validType = !ent->invalid;
+        validType = (ent->fn != ent->bean_cfg);
+#ifdef DEBUG_MODE
+        qDebug() << "Migration Mode" << !validType;
+#endif
+        std::shared_ptr<AbstractBean> bean;
         if (!validType){
-            auto bean = ent->unlock(ent->bean());
-            auto shr = std::make_shared<Configs::OldProxyEntityCompat>(ent);
-            shr->fn = jsonPath;
-            shr->Load();
-            bean->fn = beanPath;
+            bean = ent->unlock(ent->bean());
+            bean->fn = jsonPath;
             bean->Load();
-            auto shh = std::make_shared<Configs::OldBeanEntityCompat>(bean);
-            shh->Load();
-            bean->Save();
         }
         ent->bean_cfg = beanPath;
-        if (!validType) {
-            ent->invalid = false;
+        if (!validType){
+            bean->Save();
             ent->Save();
         }
+        ent->ResetBeans();
+#ifdef DEBUG_MODE
+        qDebug() << "Profiles loaded, beans resetted" ;
+#endif
         return ent;
     }
 
@@ -219,9 +223,6 @@ namespace Configs {
     std::shared_ptr<ProxyEntity> ProfileManager::NewProxyEntity(const QString &type) {
     //    Configs::AbstractBean *bean = nullptr;
         auto ent = std::make_shared<ProxyEntity>(type);
-        if (!Preset::SingBox::OutboundTypes.contains(type)){
-            ent->invalid = true;
-        }
         return ent;
     }
 

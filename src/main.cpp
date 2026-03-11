@@ -15,9 +15,9 @@
 #include <windows.h>
 
 #include <iostream>
-#include "nekobox/sys/windows/MiniDump.h"
-#include "nekobox/sys/windows/eventHandler.h"
-#include "nekobox/sys/windows/WinVersion.h"
+#include <nekobox/sys/windows/MiniDump.h>
+#include <nekobox/sys/windows/eventHandler.h>
+#include <nekobox/sys/windows/WinVersion.h>
 #include <qfontdatabase.h>
 #endif
 
@@ -25,11 +25,11 @@
 #ifndef NKR_SOFTWARE_KEYS
 #define CHECK_STARTUP_ACCESS_M
 #else
-#include "nekobox/ui/security_addon.h"
+#include <nekobox/ui/security_addon.h>
 #endif
 
-#include "nekobox/sys/Settings.h"
-#include "nekobox/dataStore/ResourceEntity.hpp"
+#include <nekobox/sys/Settings.h>
+#include <nekobox/dataStore/ResourceEntity.hpp>
 
 #include <nekobox/ui/mainwindow_interface.h>
 #include <nekobox/global/GuiUtils.hpp>
