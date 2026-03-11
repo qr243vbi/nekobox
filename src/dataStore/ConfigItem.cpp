@@ -177,7 +177,7 @@ GET_NODE(jsonShared) {
 GET_NODE(enum) {
   std::shared_ptr<JsonEnum> st = *(std::shared_ptr<JsonEnum> *)(this->getPtr(store));
   if (st != nullptr) {
-    return (QJsonValue)*st;
+    return (QString)*st;
   } else {
     return "";
   }
