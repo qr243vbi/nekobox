@@ -8,6 +8,27 @@
 namespace Configs
 {
 
+
+[[nodiscard]]  QString ProxyEntity::DisplayAddress(){
+    return serverAddress + ":" + QString::number(serverPort);
+}
+
+[[nodiscard]]  QString ProxyEntity::DisplayName(){
+    return name;
+}
+
+[[nodiscard]]  QString ProxyEntity::DisplayCoreType(){
+    return software_core_name;
+}
+
+[[nodiscard]]  QString ProxyEntity::DisplayType(){
+    return Preset::SingBox::OutboundTypes[this->type];
+}
+
+[[nodiscard]]  QString ProxyEntity::DisplayTypeAndName(){
+    return "[" + DisplayType() + "]" + name;
+}
+
     #define _add(map1, X, Y, B) _put(map1, X, &this->Y)
     //, ITEM_TYPE(B))
 
@@ -25,10 +46,8 @@ namespace Configs
     };
 
     void ProxyEntity::ResetBeans(){
-        {
-                    this->weak_bean.reset();
-                    this->strong_bean.reset();
-        }
+        this->weak_bean.reset();
+        this->strong_bean.reset();
     }
 
     bool ProxyEntity::Save(){

@@ -56,7 +56,7 @@ namespace Configs {
         QString type;
 
         QString name = "";
-        QString serverAddress = "127.0.0.1";
+        QString serverAddress = "";
         int serverPort = 1080;
 
         int id = -1;
@@ -91,25 +91,15 @@ namespace Configs {
             return nullptr;
         }
 
-        [[nodiscard]] virtual QString DisplayAddress(){
-            return serverAddress + ":" + QString::number(serverPort);
-        }
+        [[nodiscard]]  QString DisplayAddress();
 
-        [[nodiscard]] virtual QString DisplayName(){
-            return name;
-        }
+        [[nodiscard]]  QString DisplayName();
 
-        [[nodiscard]] virtual QString DisplayCoreType(){
-            return software_core_name;
-        }
+        [[nodiscard]]  QString DisplayCoreType();
 
-        [[nodiscard]] virtual QString DisplayType(){
-            return this->type;
-        }
+        [[nodiscard]]  QString DisplayType();
 
-        [[nodiscard]] virtual QString DisplayTypeAndName(){
-            return this->type + " " + name;
-        }
+        [[nodiscard]]  QString DisplayTypeAndName();
 
         void ResetBeans();
 

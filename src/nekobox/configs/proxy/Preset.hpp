@@ -1,28 +1,28 @@
 #pragma once
 #include <QStringList>
-#include <QSet>
+#include <QMap>
 
 namespace Preset::SingBox {
-  inline QSet<QString> OutboundTypes = {
-        "socks",
-        "mieru",
-        "http",
-        "shadowsocks",
-        "chain",
-        "vmess",
-        "trojan",
-        "vless",
-        "hysteria",
-        "hysteria2",
-        "tuic",
-        "anytls",
-        "shadowtls",
-        "wireguard",
-        "tailscale",
-        "ssh",
-        "custom",
-        "extracore",
-        "tor"
+  inline QMap<QString, QString> OutboundTypes = {
+      {"socks", "Socks"},
+      {"mieru", "Mieru"},
+      {"http", "HTTP"},
+      {"shadowsocks", "Shadowsocks"},
+      {"chain", "Chain Proxy"},
+      {"vmess", "VMess"},
+      {"trojan", "Trojan"},
+      {"vless", "VLESS"},
+      {"hysteria", "Hysteria 1"},
+      {"hysteria2", "Hysteria 2"},
+      {"tuic", "TUIC"},
+      {"anytls", "AnyTLS"},
+      {"shadowtls", "ShadowTLS"},
+      {"wireguard", "Wireguard"},
+      {"tailscale", "Tailscale"},
+      {"ssh", "SSH"},
+      {"custom", "Custom"},
+      {"extracore", "Extra Core"},
+      {"tor", "Tor"}
   };
   inline QStringList VpnImplementation = {"system", "gvisor", "mixed"};
   inline QStringList MieruMultiplexing = {

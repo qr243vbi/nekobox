@@ -447,6 +447,7 @@ MainWindow::MainWindow(QWidget *parent)
   softwareFilePath = getApplicationPath();
   softwarePath = root_directory;
 
+
   // Load Manager
   Configs::profileManager->LoadManager();
   QString theme = Configs::windowSettings->theme;
@@ -743,6 +744,9 @@ skip_updater_hide:
     refresh_proxy_list();
     group->Save();
   };
+
+
+  ui->proxyListTable->setAlternatingRowColors(true);
 
   if (auto button = ui->proxyListTable->findChild<QAbstractButton *>(
           QString(), Qt::FindDirectChildrenOnly)) {
@@ -2585,9 +2589,9 @@ void MainWindow::refresh_proxy_list_impl(const int &id,
             QString ms_b;
             if (groupSortAction.method == GroupSortMethod::ByType) {
               ms_a =
-                  Configs::profileManager->GetProfile(a)->DisplayType();
+                  Configs::profileManager->GetProfile(a)->type;
               ms_b =
-                  Configs::profileManager->GetProfile(b)->DisplayType();
+                  Configs::profileManager->GetProfile(b)->type;
             } else if (groupSortAction.method == GroupSortMethod::ByName) {
               ms_a = Configs::profileManager->GetProfile(a)->name;
               ms_b = Configs::profileManager->GetProfile(b)->name;

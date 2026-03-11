@@ -70,6 +70,7 @@ QListWidget {
 
 QListWidget::item {
     padding: 8px 10px;
+    color: #4A148C;
     border-bottom: 1px solid #F3E5F5;
 }
 
@@ -90,6 +91,7 @@ QMenuBar {
 
 QMenuBar::item {
     background: transparent;
+    color: #4A148C;
     padding: 5px 10px;
 }
 
@@ -131,6 +133,66 @@ QScrollBar:horizontal {
     background: #E1BEE7;
     height: 12px;
     border-radius: 6px;
+}/* TABLE VIEW */
+QTableView {
+    background: #FFFFFF;
+    alternate-background-color: #FCE4EC;
+    border: 2px solid #CE93D8;
+    border-radius: 5px;
+    gridline-color: #E1BEE7;
+    color: #4A148C;
+    selection-background-color: #F48FB1;
+    selection-color: #FFFFFF;
+}
+
+/* VIEWPORT (important for Qt tables) */
+QTableView::viewport {
+    background: #FFFFFF;
+}
+
+/* TABLE CELLS */
+QTableView::item {
+    padding: 6px;
+    border-bottom: 1px solid #F3E5F5;
+    color: #4A148C;
+}
+
+/* HOVER ROW */
+QTableView::item:hover {
+    background: #FCE4EC;
+}
+
+/* SELECTED CELL */
+QTableView::item:selected {
+    background: #F48FB1;
+    color: #FFFFFF;
+}
+
+/* HEADERS */
+QHeaderView::section {
+    background: #E1BEE7;
+    color: #4A148C;
+    border: 1px solid #F48FB1;
+    padding: 6px;
+}
+
+/* HEADER HOVER */
+QHeaderView::section:hover {
+    background: #F3E5F5;
+}
+
+/* CORNER BUTTON */
+QTableCornerButton::section {
+    background: #E1BEE7;
+    border: 1px solid #F48FB1;
+}
+
+/* REMOVE FOCUS BORDER */
+QTableView {
+    outline: none;
+}
+QTableView {
+    gridline-color: #E1BEE7;
 }
 
 QScrollBar::handle:horizontal {
