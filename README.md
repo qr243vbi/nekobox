@@ -95,6 +95,7 @@ Various formats are supported, including share links, JSON array of outbounds an
 - [qt-stylesheets](https://github.com/xakod/qt-stylesheets)
 - [qss_themes](https://github.com/Ktiseos-Nyx/qss_themes.git)
 - [Timmifixedit/BidirectionalMap](https://github.com/Timmifixedit/BidirectionalMap)
+- [Boost](https://www.boost.org/)
 
 ## TODO
 - Command line tools
