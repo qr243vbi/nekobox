@@ -189,7 +189,7 @@ jobs:
           pip install osc
           export MESSAGE="$(echo -e "${{ github.event.inputs.text }}")"
           export SUBMIT_FACTORY=${{ github.event.inputs.publish_suse }}
-          export OBS_USER="${{ secrets.OBS_USER }}"
+          export OBS_USERNAME="${{ secrets.OBS_USER }}"
           export OBS_PASSWORD="${{ secrets.OBS_PASSWORD }}"
           export OBS_HOOK_TOKEN="${{ secrets.OBS_HOOK_TOKEN }}"
           export INPUT_VERSION="${{ github.event.inputs.tag }}"
@@ -280,7 +280,7 @@ jobs:
         if: matrix.allow == 'true' && github.event.inputs.source_only != 'true'
         id: vcpkg
         with:
-          pkgs: thrift boost
+          pkgs: thrift boost-headers
           triplet: ${{ matrix.triplet }}
           token: ${{ secrets.UPLOAD_TOKEN }}
           

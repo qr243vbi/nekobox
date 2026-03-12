@@ -12,9 +12,9 @@ cat << EFO > "$HOME"/.config/osc/oscrc
 apiurl=https://api.opensuse.org
 
 [https://api.opensuse.org]
-user=${OBS_USER}
+user=${OBS_USERNAME}
 pass=${OBS_PASSWORD}
-credentials_mgr_class=osc.credentials.PlaintextConfigFileCredentialsManager
+credentials_mgr_class=osc.credentials.ObfuscatedConfigFileCredentialsManager
 EFO
 
 fi

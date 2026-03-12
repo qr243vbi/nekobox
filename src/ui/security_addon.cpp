@@ -6,7 +6,6 @@
 #include <QAction>
 #include <QCryptographicHash>
 #include <QSettings>
-#include <QtTranslation>
 #include <qlineedit.h>
 #include <qnamespace.h>
 #include <qpushbutton.h>
