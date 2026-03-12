@@ -17,12 +17,14 @@ namespace Configs {
     public:
         QString password = "";
         QString username = "";
-        std::shared_ptr<TransportEnum> transport = std::make_shared<TransportEnum>("TCP");
-        std::shared_ptr<MultiplexingEnum> multiplexing = std::make_shared<MultiplexingEnum>("MULTIPLEXING_LOW");
+        std::shared_ptr<TransportEnum> transport ;
+        std::shared_ptr<MultiplexingEnum> multiplexing ;
         QStringList serverPorts;
         QString traffic_pattern = "";
 
         MieruBean(Configs::ProxyEntity * entity) : AbstractBean(entity, 0) {
+            transport = std::make_shared<TransportEnum>("TCP");
+            multiplexing = std::make_shared<MultiplexingEnum>("MULTIPLEXING_LOW");
         }
         
         INIT_MAP
@@ -38,11 +40,11 @@ namespace Configs {
 
         CoreObjOutboundBuildResult BuildCoreObjSingBox() const override;
 
-        bool TryParseLink(const QString &link);
+        bool TryParseLink(const QString &link) override;
 
-        bool TryParseJson(const QJsonObject &obj);
+        bool TryParseJson(const QJsonObject &obj) override;
         #ifdef DEBUG_MODE
-        virtual QString type() override {
+        virtual QString type()const override {
             return "mieru";
         };
         #endif

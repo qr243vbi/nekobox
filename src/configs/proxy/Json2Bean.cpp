@@ -119,25 +119,42 @@ namespace Configs
         return false;
     }
 
+    static int parseUOT(const QJsonObject &obj){
+        int uot = 0;
+
+        uot = obj["udp_over_tcp"].toBool();
+        if (obj.contains("uot"))
+        {
+            QJsonValue uot_obj = obj["uot"];
+            if (uot_obj.isDouble()) uot = uot_obj.toInt();
+            if (uot_obj.isBool()) uot = uot_obj.toBool();
+            if (uot_obj.isObject()) {
+                auto uot_obj_j = uot_obj.toObject();
+                uot = uot_obj_j["enabled"].toBool();
+                if (uot == true){
+                    auto uot_obj_v = uot_obj_j["version"];
+                    if (uot_obj_v.isDouble()){
+                        uot = uot_obj_v.toInt();
+                    }
+                }
+            }
+        }
+        return uot;
+    }
+
     bool ShadowSocksBean::TryParseJson(const QJsonObject& obj)
     {
         initialize_entity(this->entity, obj);
 //        method = obj["method"].toString();
 //        password = obj["password"].toString();
 //        plugin = obj["plugin"].toString();
-        uot = obj["udp_over_tcp"].toBool();
-
+        uot = parseUOT(obj);
         if (obj.contains("method")) method = obj["method"].toString();
         if (obj.contains("password")) password = obj["password"].toString();
         if (obj.contains("plugin")) plugin = obj["plugin"].toString();
         if (obj.contains("plugin_opts")) plugin_opts = obj["plugin_opts"].toString();
-        if (obj.contains("uot"))
-        {
-            QJsonValue uot_obj = obj["uot"];
-            if (uot_obj.isDouble()) uot = uot_obj.toInt();
-            if (uot_obj.isBool()) uot = uot_obj.toBool();
-            if (uot_obj.isObject()) uot = uot_obj.toObject()["enabled"].toBool();
-        }
+
+
 
         mux_state = obj["multiplex"].isObject() ? (obj["multiplex"].toObject()["enabled"].toBool() ? 1 : 2) : 0;
         return true;
@@ -279,6 +296,21 @@ namespace Configs
     bool ExtraCoreBean::TryParseJson(const QJsonObject& obj)
     {
         return false;
+    }
+
+
+    bool NaiveBean::TryParseJson(const QJsonObject& obj)
+    {
+        initialize_entity(this->entity, obj);
+        username = obj["username"].toString();
+        password = obj["password"].toString();
+        insecure_concurrency = obj["insecure_concurrency"].toInt();
+        extra_headers = obj["extra_headers"].toObject().toVariantMap();
+        uot = parseUOT(obj);
+        *quic_congestion_control = obj["quic_congestion_control"].toString();
+        quic = obj["quic"].toBool();
+        parse_tls(stream, obj);
+        return true;
     }
 
     bool TorBean::TryParseJson(const QJsonObject &obj){

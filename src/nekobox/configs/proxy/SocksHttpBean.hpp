@@ -14,10 +14,11 @@ namespace Configs {
         QString username = "";
         QString password = "";
 
-        std::shared_ptr<V2rayStreamSettings> stream = std::make_shared<V2rayStreamSettings>();
+        std::shared_ptr<V2rayStreamSettings> stream ;
 
         explicit SocksHttpBean(Configs::ProxyEntity * entity, int _socks_http_type) : AbstractBean(entity, 0) {
             this->socks_http_type = _socks_http_type;
+             stream = std::make_shared<V2rayStreamSettings>();
         }
         INIT_MAP
             ADD_MAP("v", socks_http_type, integer);
@@ -30,13 +31,13 @@ namespace Configs {
 */
         CoreObjOutboundBuildResult BuildCoreObjSingBox()const override;
 
-        bool TryParseLink(const QString &link);
+        bool TryParseLink(const QString &link) override;
 
-        bool TryParseJson(const QJsonObject &obj);
+        bool TryParseJson(const QJsonObject &obj) override;
 
         QString ToShareLink()const override;
         #ifdef DEBUG_MODE
-        virtual QString type() override {
+        virtual QString type()const override {
             return socks_http_type == type_HTTP ? "http" : "socks"; 
         };
         #endif

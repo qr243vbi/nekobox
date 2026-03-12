@@ -1,16 +1,16 @@
-#include "nekobox/ui/mainwindow.h"
-
-#include "3rdparty/qv2ray/wrapper.hpp"
-#include "nekobox/configs/ConfigBuilder.hpp"
-#include "nekobox/configs/sub/GroupUpdater.hpp"
-#include "nekobox/dataStore/Const.hpp"
-#include "nekobox/dataStore/ProfileFilter.hpp"
-#include "nekobox/dataStore/ResourceEntity.hpp"
-#include "nekobox/dataStore/Utils.hpp"
-#include "nekobox/global/keyvaluerange.h"
-#include "nekobox/sys/AutoRun.hpp"
-#include "nekobox/sys/Process.hpp"
-#include "nekobox/ui/group/GroupItem.h"
+#include <nekobox/ui/mainwindow.h>
+#include <3rdparty/qv2ray/wrapper.hpp>
+#include <nekobox/configs/ConfigBuilder.hpp>
+#include <nekobox/configs/sub/GroupUpdater.hpp>
+#include <nekobox/dataStore/Const.hpp>
+#include <nekobox/dataStore/ProfileFilter.hpp>
+#include <nekobox/dataStore/ResourceEntity.hpp>
+#include <nekobox/dataStore/Utils.hpp>
+#include <nekobox/global/keyvaluerange.h>
+#include <nekobox/sys/AutoRun.hpp>
+#include <nekobox/sys/Process.hpp>
+#include <nekobox/ui/group/GroupItem.h>
+#include <nekobox/ui/utils/MapListModel.hpp>
 #include <nekobox/global/GuiUtils.hpp>
 
 #ifndef NKR_SOFTWARE_KEYS
@@ -92,9 +92,57 @@
 
 extern QVariantMap ruleSetMap;
 
+#include <QVBoxLayout>
+#include <QPushButton>
+#include <QListView>
+#include <QLabel>
+
 void setAppIcon(Icon::TrayIconStatus, QSystemTrayIcon *, MainWindow *window);
 
 void MainWindow::set_icons() { set_icons_from_settings(); }
+
+SelectDialog::SelectDialog(QWidget *parent, std::shared_ptr<QAbstractListModel> model)
+    : QDialog(parent), model(model) {
+    setupUi();
+}
+
+void SelectDialog::setupUi() {
+    // Setup UI elements
+    auto *layout = new QVBoxLayout(this);
+    auto *buttons = new QHBoxLayout(this);
+    auto *listView = new QListView(this);
+    if (model != nullptr){
+        listView->setModel(model.get());
+    }
+
+    auto *okButton = new QPushButton("OK", this);
+    auto *cancelButton = new QPushButton("Cancel", this);
+
+    layout->addWidget(listView);
+    layout->addLayout(buttons);
+    buttons->addWidget(okButton);
+    buttons->addWidget(cancelButton);
+
+    // Connect buttons to slots
+    connect(okButton, &QPushButton::clicked, this, [this, listView]() {
+        int selectedIndex = listView->currentIndex().row();
+        onOk(selectedIndex);
+    });
+
+    connect(cancelButton, &QPushButton::clicked, this, &SelectDialog::onCancel);
+
+    setLayout(layout);
+}
+
+void SelectDialog::onOk(int selectedIndex) {
+    emit confirmed(selectedIndex); // Emit signal for confirmed selection
+    accept(); // Close the dialog with an accepted status
+}
+
+void SelectDialog::onCancel() {
+    emit canceled(); // Emit signal for cancellation
+    reject(); // Close the dialog with a rejected status
+}
 
 void SpinnerDialog::addItem(QString item, QString name) {
   listWidget->addItem(name);
@@ -972,6 +1020,7 @@ skip_updater_hide:
     ui->menu_edit->setEnabled(selected_profile);
     ui->menu_share_item->setEnabled(selected_profile);
     ui->menu_delete->setEnabled(selected_profile);
+    ui->menu_move_profile->setEnabled(selected_profile);
     ui->menu_clone->setEnabled(selected_profile);
     ui->menu_reset_traffic->setEnabled(selected_profile);
 
@@ -2789,6 +2838,37 @@ void MainWindow::on_menu_add_from_clipboard_triggered() {
   CHECK_SETTINGS_ACCESS_W
   auto clipboard = QApplication::clipboard()->text();
   Subscription::groupUpdater->AsyncUpdate(this->post_update_job, clipboard, &chooseUpdateGroup);
+}
+
+void MainWindow::move_selected_profiles(int group_id){
+    Configs::profileManager->MoveProfileBatch(get_now_selected_list(), group_id);
+    refresh_proxy_list();
+}
+
+void MainWindow::on_menu_move_profile_triggered() {
+    auto model = std::make_shared<MapListModel<int, std::shared_ptr<Configs::Group>>>(
+    [](std::map<int, std::shared_ptr<Configs::Group>>::const_iterator it, int role)->QVariant{
+        if (role == Qt::DisplayRole){
+            return it->second->name;
+        } else if (role == ACCEPT_DATA_ROLE){
+            return it->first;
+        }
+        return QVariant();
+    }, &Configs::profileManager->groups
+    );
+    auto select = std::make_shared<SelectDialog>(this, model);
+    select->setWindowTitle(QObject::tr("Move profiles to group"));
+
+    QObject::connect(select.get(), &SelectDialog::confirmed, this, [model, this](int index){
+        auto it = model->map_data(index);
+#ifdef DEBUG_MODE
+      qDebug() << "SELECTED GROUP IS" << it->first << " WITH NAME " << it->second->name;
+#endif
+        this->move_selected_profiles(it->first);
+    }, Qt::SingleShotConnection);
+
+    select->show();
+    select->exec();
 }
 
 void MainWindow::on_menu_clone_triggered() {

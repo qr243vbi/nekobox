@@ -1,16 +1,20 @@
 #include <nekobox/dataStore/ProxyEntity.hpp>
+#include <nekobox/configs/proxy/Preset.hpp>
 #include <nekobox/dataStore/Utils.hpp>
 #include <nekobox/configs/proxy/AbstractBean.hpp>
 #include <qnamespace.h>
 #include <QCoreApplication>
 #include <nekobox/configs/proxy/includes.h>
+#include <nekobox/dataStore/Database.hpp>
+
 
 namespace Configs
 {
 
 
 [[nodiscard]]  QString ProxyEntity::DisplayAddress(){
-    return serverAddress + ":" + QString::number(serverPort);
+    return (type != "chain" && type != "custom" && type != "extracore" &&
+            type != "tailscale" && type != "tor") ? serverAddress + ":" + QString::number(serverPort) : "";
 }
 
 [[nodiscard]]  QString ProxyEntity::DisplayName(){
@@ -22,7 +26,7 @@ namespace Configs
 }
 
 [[nodiscard]]  QString ProxyEntity::DisplayType(){
-    return Preset::SingBox::OutboundTypes[this->type];
+    return ProfileManager::GetDisplayType(this->type);
 }
 
 [[nodiscard]]  QString ProxyEntity::DisplayTypeAndName(){
@@ -130,6 +134,8 @@ namespace Configs
             bean = new Configs::ExtraCoreBean(ent);
         cast(tor)
             bean = new Configs::TorBean(ent);
+        cast(naive)
+            bean = new Configs::NaiveBean(ent);
         } else {
             unknown_type:
             bean = new Configs::AbstractBean(ent, -114514);
@@ -248,5 +254,6 @@ qDebug() << "Bean Path" << this->bean_cfg;
         cast_func(Tor)
         cast_func(Custom)
         cast_func(ExtraCore)
+        cast_func(Naive)
 
 }

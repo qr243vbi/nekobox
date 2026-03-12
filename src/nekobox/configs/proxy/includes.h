@@ -16,3 +16,4 @@
 #include "MieruBean.hpp"
 #include "ShadowTLSBean.hpp"
 #include "TorBean.hpp"
+#include "NaiveBean.hpp"

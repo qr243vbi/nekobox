@@ -78,6 +78,11 @@ inline QString joinCommand(const QStringList &arguments) {
     ui->a->setValidator(QRegExpValidator_Number);
 #define P_SAVE_INT(a) bean->a = ui->a->text().toInt();
 
+
+#define SP_LOAD_INT(a)                    \
+    ui->a->setValue(bean->a);
+#define SP_SAVE_INT(a) bean->a = ui->a->value();
+
 #define D_LOAD_INT(a)                                  \
     ui->a->setText(QString::number(Configs::dataStore->a)); \
     ui->a->setValidator(QRegExpValidator_Number);

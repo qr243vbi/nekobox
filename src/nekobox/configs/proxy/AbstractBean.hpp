@@ -43,7 +43,7 @@ namespace Configs {
 
         //
         #ifdef DEBUG_MODE
-        virtual QString type() ;
+        virtual QString type() const;
         #endif
 //        [[nodiscard]] virtual QString DisplayAddress();
 
@@ -62,6 +62,10 @@ namespace Configs {
         virtual QString ToShareLink() const { return {}; };
 
         virtual bool IsEndpoint() const { return false; };
+
+        virtual bool TryParseLink(const QString &link) { return false; };
+
+        virtual bool TryParseJson(const QJsonObject &obj) { return false; };
     };
 
 } // namespace Configs

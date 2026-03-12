@@ -74,6 +74,8 @@ namespace Configs {
         }
     }
 
+
+
     bool AnyTLSBean::TryParseLink(const QString &link) {
         auto url = QUrl(link);
         if (!url.isValid()) return false;
@@ -534,6 +536,26 @@ namespace Configs {
         return true;
     };
 
+
+    bool NaiveBean::TryParseLink(const QString& link)
+    {
+        auto url = QUrl(link);
+        if (!url.isValid()) return false;
+        auto query = GetQuery(url);
+        deinitialize_url(url, entity);
+
+        username = url.userName();
+        password = url.password();
+
+        *quic_congestion_control = GetQueryValue(query, "quic_congestion_control");
+        quic = (GetQueryValue(query, "quic").localeAwareCompare("true") == 0);
+        uot = GetQueryIntValue(query, "uot", GetQueryIntValue(query, "udp_over_tcp", 0));
+        extra_headers = GetQueryMapValue(query, "extra_headers");
+
+        parse_security(stream, query);
+        return true;
+    }
+
     bool MieruBean::TryParseLink(const QString& link)
     {
         auto url = QUrl(link);
@@ -541,8 +563,8 @@ namespace Configs {
         auto query = GetQuery(url);
         deinitialize_url(url, entity);
 
-        username = query.queryItemValue("username");
-        password = query.queryItemValue("password");
+        username = url.userName();
+        password = url.password();
         *transport = query.queryItemValue("transport");
         traffic_pattern = GetQueryValue(query, "traffic_pattern");
         *multiplexing = query.queryItemValue("multiplexing");

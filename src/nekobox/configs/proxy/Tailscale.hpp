@@ -41,15 +41,15 @@ namespace Configs {
 */
         CoreObjOutboundBuildResult BuildCoreObjSingBox() const override;
 
-        bool TryParseLink(const QString &link);
+        bool TryParseLink(const QString &link) override;
 
-        bool TryParseJson(const QJsonObject &obj);
+        bool TryParseJson(const QJsonObject &obj) override;
 
         QString ToShareLink() const override;
 
         bool IsEndpoint() const override {return true;}
         #ifdef DEBUG_MODE
-        virtual QString type() override {
+        virtual QString type()const override {
             return "tailscale";
         };
         #endif

@@ -6,6 +6,7 @@
 #include "nekobox/ui/profile/edit_custom.h"
 #include "nekobox/ui/profile/edit_extra_core.h"
 #include "nekobox/ui/profile/edit_mieru.h"
+#include "nekobox/ui/profile/edit_naive.h"
 #include "nekobox/ui/profile/edit_tor.h"
 #include "nekobox/ui/profile/edit_quic.h"
 #include "nekobox/ui/profile/edit_shadowsocks.h"
@@ -49,6 +50,13 @@
 #define LOAD_TYPE(a)                                                           \
   ui->type->addItem(                                                           \
       Configs::ProfileManager::GetDisplayType(a), a);
+
+
+
+#define ADJUST_RIGHT_BOX                                                       \
+    auto rightNoBox = (                                                       \
+        ui->network_box->isHidden() && ui->security_group->isHidden());        \
+        ui->right_all_w->setVisible(!rightNoBox);
 
 DialogEditProfile::DialogEditProfile(const QString &_type, int profileOrGroupId,
                                      QWidget *parent)
@@ -168,12 +176,11 @@ DialogEditProfile::DialogEditProfile(const QString &_type, int profileOrGroupId,
   connect(ui->security, &QComboBox::currentTextChanged, this,
           [=, this](const QString &txt) {
             if (txt == "tls") {
-              ui->security_box->setVisible(true);
-              ui->tls_camouflage_box->setVisible(true);
+              ui->security_group->setVisible(true);
             } else {
-              ui->security_box->setVisible(false);
-              ui->tls_camouflage_box->setVisible(false);
+              ui->security_group->setVisible(false);
             }
+            ADJUST_RIGHT_BOX
             ADJUST_SIZE
           });
   emit ui->security->currentTextChanged(ui->security->currentText());
@@ -182,6 +189,7 @@ DialogEditProfile::DialogEditProfile(const QString &_type, int profileOrGroupId,
   connect(ui->tls_frag, STATE_CHANGED, this, [=, this](bool state) {
     ui->tls_frag_fall_delay->setEnabled(state);
   });
+
 
   // mux setting changed
   connect(ui->multiplex, &QComboBox::currentTextChanged, this,
@@ -201,29 +209,30 @@ DialogEditProfile::DialogEditProfile(const QString &_type, int profileOrGroupId,
     this->type = _type;
 
     // load type to combo box
-    LOAD_TYPE("socks")
-    LOAD_TYPE("http")
-    LOAD_TYPE("shadowsocks")
-    LOAD_TYPE("trojan")
-    LOAD_TYPE("vmess")
-    LOAD_TYPE("vless")
-    LOAD_TYPE("hysteria")
-    LOAD_TYPE("hysteria2")
-    LOAD_TYPE("tuic")
-    LOAD_TYPE("anytls")
-    LOAD_TYPE("shadowtls")
-    LOAD_TYPE("mieru")
-    LOAD_TYPE("wireguard")
-    LOAD_TYPE("tailscale")
-    LOAD_TYPE("ssh")
-    ui->type->addItem(tr("Custom (%1 outbound)").arg(software_core_name),
-                      "internal");
-    ui->type->addItem(tr("Custom (%1 config)").arg(software_core_name),
-                      "internal-full");
-    ui->type->addItem(tr("Extra Core"), "extracore");
-    LOAD_TYPE("chain")
-    LOAD_TYPE("tor")
-
+      // load type to combo box
+      LOAD_TYPE("socks")
+      LOAD_TYPE("http")
+      LOAD_TYPE("shadowsocks")
+      LOAD_TYPE("trojan")
+      LOAD_TYPE("vmess")
+      LOAD_TYPE("vless")
+      LOAD_TYPE("hysteria")
+      LOAD_TYPE("hysteria2")
+      LOAD_TYPE("tuic")
+      LOAD_TYPE("anytls")
+      LOAD_TYPE("shadowtls")
+      LOAD_TYPE("mieru")
+      LOAD_TYPE("naive")
+      LOAD_TYPE("wireguard")
+      LOAD_TYPE("tailscale")
+      LOAD_TYPE("ssh")
+      LOAD_TYPE("tor")
+      ui->type->addItem(tr("Custom (%1 outbound)").arg(software_core_name),
+                        "internal");
+      ui->type->addItem(tr("Custom (%1 config)").arg(software_core_name),
+                        "internal-full");
+      LOAD_TYPE("extracore");
+      LOAD_TYPE("chain")
     // type changed
     connect(ui->type, &QComboBox::currentIndexChanged, this,
             [=, this](int index) {
@@ -320,6 +329,10 @@ void DialogEditProfile::typeSelected(const QString &newType) {
     auto _innerWidget = new EditMieru(this);
     innerWidget = _innerWidget;
     innerEditor = _innerWidget;
+  } else if (type == "naive") {
+      auto _innerWidget = new EditNaive(this);
+      innerWidget = _innerWidget;
+      innerEditor = _innerWidget;
   } else if (type == "tor") {
       auto _innerWidget = new EditTor(this);
       innerWidget = _innerWidget;
@@ -343,16 +356,29 @@ void DialogEditProfile::typeSelected(const QString &newType) {
   // hide some widget
   auto showAddressPort = type != "chain" && customType != "internal" &&
                          customType != "internal-full" && type != "extracore" &&
-                         type != "tailscale";
+                         type != "tailscale" && type != "tor";
   ui->address->setVisible(showAddressPort);
   ui->address_l->setVisible(showAddressPort);
   ui->port->setVisible(showAddressPort);
   ui->port_l->setVisible(showAddressPort);
+
   auto bean = ent->bean();
+  #ifdef DEBUG_MODE
+  auto bibi = ent->unlock(bean);
+  qDebug() << "INSPECT MAP OF BEAN OF TYPE" << bibi->type();
+  for (auto key: bibi->_map().values()){
+    qDebug() << key->name;
+  }
+  qDebug() << "END INSPECT";
+  #endif
 
   auto stream = GetStreamSettingsConst(bean.get());
   if (stream != nullptr) {
-    ui->right_all_w->setVisible(true);
+
+    #ifdef DEBUG_MODE
+    qDebug() << "Stream is not nullptr";
+    #endif
+ //   ui->right_all_w->setVisible(true);
     ui->network->setCurrentText(stream->network);
     ui->security->setCurrentText(stream->security);
     ui->packet_encoding->setCurrentText(stream->packet_encoding);
@@ -387,9 +413,9 @@ void DialogEditProfile::typeSelected(const QString &newType) {
     ui->brutal_speed->setText(QString::number(bean->brutal_speed));
     CACHE.certificate = stream->certificate;
     CACHE.ech_config = stream->ech_config;
-  } else {
-    ui->right_all_w->setVisible(false);
-  }
+  } //else {
+  //  ui->right_all_w->setVisible(false);
+ // }
 
   // left: custom
   CACHE.custom_config = bean->custom_config;
@@ -441,53 +467,43 @@ void DialogEditProfile::typeSelected(const QString &newType) {
   // 星号
   ADD_ASTERISK(this)
 
-  if (type == "vmess" || type == "vless") {
-    ui->packet_encoding->setVisible(true);
-    ui->packet_encoding_l->setVisible(true);
-  } else {
-    ui->packet_encoding->setVisible(false);
-    ui->packet_encoding_l->setVisible(false);
+  auto packet_encoding_visible = (type == "vmess" || type == "vless");
+    ui->packet_encoding->setVisible(packet_encoding_visible);
+    ui->packet_encoding_l->setVisible(packet_encoding_visible);
+
+
+  auto network_visible = (type == "vmess" || type == "vless" || type == "trojan");
+    ui->network_l->setVisible(network_visible);
+    ui->network->setVisible(network_visible);
+    ui->network_box->setVisible(network_visible);
+
+  auto security_visible = (type == "vmess" || type == "vless" || type == "trojan" ||
+      type == "http" || type == "anytls" || type == "shadowtls" || type == "naive");
+    ui->security->setVisible(security_visible);
+    ui->security_l->setVisible(security_visible);
+
+  auto naive_hidden = (type != "naive");
+  if (security_visible){
+    ui->tls_camouflage_box->setVisible(naive_hidden);
+    ui->query_server_name->setVisible(naive_hidden);
+    ui->alpn->setVisible(naive_hidden);
+    ui->label_query_server_name->setVisible(naive_hidden);
+    ui->label_alpn->setVisible(naive_hidden);
   }
-  if (type == "vmess" || type == "vless" || type == "trojan") {
-    ui->network_l->setVisible(true);
-    ui->network->setVisible(true);
-    ui->network_box->setVisible(true);
-  } else {
-    ui->network_l->setVisible(false);
-    ui->network->setVisible(false);
-    ui->network_box->setVisible(false);
-  }
-  if (type == "vmess" || type == "vless" || type == "trojan" ||
-      type == "http" || type == "anytls" || type == "shadowtls") {
-    ui->security->setVisible(true);
-    ui->security_l->setVisible(true);
-  } else {
-    ui->security->setVisible(false);
-    ui->security_l->setVisible(false);
-  }
-  if (type == "vmess" || type == "vless" || type == "trojan" ||
-      type == "shadowsocks") {
-    ui->multiplex->setVisible(true);
-    ui->multiplex_l->setVisible(true);
-    ui->brutal_box->setVisible(true);
-  } else {
-    ui->multiplex->setVisible(false);
-    ui->multiplex_l->setVisible(false);
-    ui->brutal_box->setVisible(false);
-  }
+
+  auto brutal_visible = (type == "vmess" || type == "vless" || type == "trojan" ||
+      type == "shadowsocks");
+    ui->multiplex->setVisible(brutal_visible);
+    ui->multiplex_l->setVisible(brutal_visible);
+    ui->brutal_box->setVisible(brutal_visible);
+
   int streamBoxVisible = 0;
   for (auto label : ui->stream_box->findChildren<QLabel *>()) {
     if (!label->isHidden() && label->parent() == ui->stream_box)
       streamBoxVisible++;
   }
   ui->stream_box->setVisible(streamBoxVisible);
-
-  auto rightNoBox =
-      (ui->stream_box->isHidden() && ui->network_box->isHidden() &&
-       ui->security_box->isHidden());
-  if (rightNoBox && !ui->right_all_w->isHidden()) {
-    ui->right_all_w->setVisible(false);
-  }
+  ADJUST_RIGHT_BOX
 
   editor_cache_updated_impl();
   ADJUST_SIZE

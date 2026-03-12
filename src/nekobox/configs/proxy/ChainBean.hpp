@@ -18,7 +18,7 @@ namespace Configs {
 
   //      QString DisplayAddress() override { return ""; };
   #ifdef DEBUG_MODE
-        virtual QString type() override {
+        virtual QString type()const override {
             return "chain";
         };
   #endif

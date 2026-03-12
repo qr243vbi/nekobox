@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>EditNaive</class>
+ <widget class="QWidget" name="EditNaive">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string notr="true">Form</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="2" column="2">
+    <widget class="QComboBox" name="quic_congestion_control"/>
+   </item>
+   <item row="0" column="2">
+    <widget class="QLineEdit" name="username"/>
+   </item>
+   <item row="1" column="0">
+    <widget class="QLabel" name="label_5">
+     <property name="text">
+      <string>Password</string>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="2">
+    <widget class="QComboBox" name="uot">
+     <item>
+      <property name="text">
+       <string>Off</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string notr="true">1</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string notr="true">2</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="3" column="2">
+    <widget class="QSpinBox" name="insecure_concurrency"/>
+   </item>
+   <item row="0" column="0">
+    <widget class="QLabel" name="label_2">
+     <property name="text">
+      <string>Username</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="0">
+    <widget class="QLabel" name="label_3">
+     <property name="acceptDrops">
+      <bool>false</bool>
+     </property>
+     <property name="toolTip">
+      <string>insecure_concurrency - Number of concurrent tunnel connections. </string>
+     </property>
+     <property name="text">
+      <string notr="true">IC</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="2">
+    <widget class="MyLineEdit" name="password"/>
+   </item>
+   <item row="2" column="0">
+    <widget class="QLabel" name="label">
+     <property name="toolTip">
+      <string>quic_congestion_control - QUIC congestion control algorithm.</string>
+     </property>
+     <property name="text">
+      <string notr="true">QUIC</string>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="0">
+    <widget class="QLabel" name="uot_l">
+     <property name="toolTip">
+      <string>Version of UDP over TCP protocol, server support is required.</string>
+     </property>
+     <property name="locale">
+      <locale language="English" country="UnitedStates"/>
+     </property>
+     <property name="text">
+      <string notr="true">UoT</string>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="2">
+    <widget class="QTextEdit" name="extra_headers"/>
+   </item>
+   <item row="6" column="0">
+    <widget class="QLabel" name="label_4">
+     <property name="toolTip">
+      <string>extra_headers - Extra headers to send in HTTP requests.</string>
+     </property>
+     <property name="text">
+      <string>Headers</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>MyLineEdit</class>
+   <extends>QLineEdit</extends>
+   <header>nekobox/ui/utils/MyLineEdit.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

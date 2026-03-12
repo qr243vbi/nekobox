@@ -5,6 +5,8 @@
 
 EditMieru::EditMieru(QWidget *parent) : QWidget(parent), ui(new Ui::EditMieru) {
     ui->setupUi(this);
+    this->ui->multiplexing->addItems(Preset::SingBox::MieruMultiplexing);
+    this->ui->transport->addItems(Preset::SingBox::MieruTransport);
 }
 
 EditMieru::~EditMieru() {
@@ -14,8 +16,6 @@ EditMieru::~EditMieru() {
 void EditMieru::onStart(std::shared_ptr<Configs::ProxyEntity> _ent) {
     this->ent = _ent;
     auto bean = this->ent->MieruBean();
-    this->ui->multiplexing->addItems(Preset::SingBox::MieruMultiplexing);
-    this->ui->transport->addItems(Preset::SingBox::MieruTransport);
 
     P_LOAD_STRING(username)
     P_LOAD_STRING(password)

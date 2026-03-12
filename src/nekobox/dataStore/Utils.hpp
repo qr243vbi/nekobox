@@ -15,6 +15,7 @@
 #endif
 //
 
+
 bool createSymlink(const QString &targetPath, const QString &linkPath);
 
 bool isFileInDirectoryOrSubdirectory(const QString &filePath, const QString &dirPath);

@@ -73,6 +73,7 @@ namespace Configs {
             if (!init){
                 init = true;
                 // Add base AbstractBean fields
+                tuic = AbstractBean::_map();
                 
                 _add(tuic, "forceExternal", forceExternal, boolean);
             // TLS
@@ -148,13 +149,13 @@ namespace Configs {
 */
         CoreObjOutboundBuildResult BuildCoreObjSingBox() const override;
 
-        bool TryParseLink(const QString &link);
+        bool TryParseLink(const QString &link) override;
 
-        bool TryParseJson(const QJsonObject &obj);
+        bool TryParseJson(const QJsonObject &obj) override;
 
         QString ToShareLink() const override;
         #ifdef DEBUG_MODE
-        virtual QString type() override {
+        virtual QString type()const override {
             if (proxy_type == proxy_TUIC) {
                 return "tuic";
             } else if (proxy_type == proxy_Hysteria) {

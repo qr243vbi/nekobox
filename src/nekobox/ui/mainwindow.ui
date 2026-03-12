@@ -642,6 +642,17 @@
      </property>
      <addaction name="separator"/>
     </widget>
+    <widget class="QMenu" name="menu_profiles">
+     <property name="title">
+      <string>Profiles</string>
+     </property>
+     <addaction name="menu_add_from_clipboard"/>
+     <addaction name="actionAdd_new_Group"/>
+     <addaction name="menu_add_from_input"/>
+     <addaction name="actionAdd_profile_from_File"/>
+     <addaction name="menu_scan_qr"/>
+     <addaction name="actionSpeedtest_Current"/>
+    </widget>
     <widget class="QMenu" name="menu_test">
      <property name="title">
       <string>Test</string>
@@ -663,6 +674,7 @@
     <addaction name="separator"/>
     <addaction name="menu_share_item"/>
     <addaction name="menu_clone"/>
+    <addaction name="menu_move_profile"/>
     <addaction name="menu_delete"/>
     <addaction name="separator"/>
     <addaction name="menu_resolve_selected"/>
@@ -688,23 +700,11 @@
      <string>Routing Menu</string>
     </property>
    </widget>
-   <widget class="QMenu" name="menu_profiles">
-    <property name="title">
-     <string>Profiles</string>
-    </property>
-    <addaction name="menu_add_from_clipboard"/>
-    <addaction name="actionAdd_new_Group"/>
-    <addaction name="menu_add_from_input"/>
-    <addaction name="actionAdd_profile_from_File"/>
-    <addaction name="menu_scan_qr"/>
-    <addaction name="actionSpeedtest_Current"/>
-   </widget>
    <addaction name="menu_program"/>
    <addaction name="menu_preferences"/>
    <addaction name="menu_server"/>
    <addaction name="menuHidden_menu"/>
    <addaction name="menuRouting_Menu"/>
-   <addaction name="menu_profiles"/>
   </widget>
   <action name="menu_exit">
    <property name="text">
@@ -1092,11 +1092,6 @@
     <enum>QAction::MenuRole::TextHeuristicRole</enum>
    </property>
   </action>
-  <!--action name="menu_open_routing_manager">
-   <property name="text">
-    <string>Open Manager</string>
-   </property>
-  </action-->
   <action name="actionSpeedtest_Current">
    <property name="text">
     <string>Speedtest Current</string>
@@ -1150,6 +1145,14 @@
   <action name="menu_security_settings">
    <property name="text">
     <string>Security Settings</string>
+   </property>
+  </action>
+  <action name="menu_move_profile">
+   <property name="text">
+    <string>Move</string>
+   </property>
+   <property name="shortcut">
+    <string notr="true">Ctrl+M</string>
    </property>
   </action>
  </widget>

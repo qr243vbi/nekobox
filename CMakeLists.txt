@@ -141,6 +141,7 @@ set(PROJECT_SOURCES
         ${NEKOBOX_INCLUDE}/configs/proxy/ExtraCore.h
         ${NEKOBOX_INCLUDE}/configs/proxy/includes.h
         ${NEKOBOX_INCLUDE}/configs/proxy/MieruBean.hpp
+        ${NEKOBOX_INCLUDE}/configs/proxy/NaiveBean.hpp
         ${NEKOBOX_INCLUDE}/configs/proxy/TorBean.hpp
         ${NEKOBOX_INCLUDE}/configs/proxy/Preset.hpp
         ${NEKOBOX_INCLUDE}/configs/proxy/QUICBean.hpp
@@ -181,6 +182,7 @@ set(PROJECT_SOURCES
         ${NEKOBOX_INCLUDE}/sys/AutoRun.hpp
         ${NEKOBOX_INCLUDE}/sys/Process.hpp
         ${NEKOBOX_INCLUDE}/sys/Settings.h
+        ${NEKOBOX_INCLUDE}/ui/utils/MapListModel.hpp
 
         src/sys/Process.cpp
         src/sys/AutoRun.cpp
@@ -212,6 +214,9 @@ set(PROJECT_SOURCES
         ${NEKOBOX_INCLUDE}/ui/profile/edit_shadowsocks.h
         src/ui/profile/edit_shadowsocks.cpp
         ${NEKOBOX_INCLUDE}/ui/profile/edit_shadowsocks.ui
+        ${NEKOBOX_INCLUDE}/ui/profile/edit_naive.h
+        src/ui/profile/edit_naive.cpp
+        ${NEKOBOX_INCLUDE}/ui/profile/edit_naive.ui
         ${NEKOBOX_INCLUDE}/ui/profile/edit_vmess.h
         src/ui/profile/edit_vmess.cpp
         ${NEKOBOX_INCLUDE}/ui/profile/edit_vmess.ui

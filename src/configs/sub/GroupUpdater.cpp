@@ -195,6 +195,13 @@ namespace Subscription {
             if (!ok) return;
         }
 
+        // Naive
+        if (str.startsWith("naive://")) {
+            ent = Configs::ProfileManager::NewProxyEntity("naive");
+            auto ok = ent->unlock(ent->NaiveBean())->TryParseLink(str);
+            if (!ok) return;
+        }
+
         // AnyTLS
         if (str.startsWith("anytls://")) {
             ent = Configs::ProfileManager::NewProxyEntity("anytls");
@@ -315,108 +322,12 @@ namespace Subscription {
             }
 
             std::shared_ptr<Configs::ProxyEntity> ent;
+            QString out_type = out["type"].toString();
 
-            // SOCKS
-            if (out["type"] == "socks") {
-                ent = Configs::ProfileManager::NewProxyEntity("socks");
-                auto ok = ent->unlock(ent->SocksHTTPBean())->TryParseJson(out);
-                if (!ok) continue;
-            }
-
-            // HTTP
-            if (out["type"] == "http") {
-                auto ok = ent->unlock(ent->SocksHTTPBean())->TryParseJson(out);
-                if (!ok) continue;
-            }
-
-            // ShadowSocks
-            if (out["type"] == "shadowsocks") {
-                ent = Configs::ProfileManager::NewProxyEntity("shadowsocks");
-                auto ok = ent->unlock(ent->ShadowSocksBean())->TryParseJson(out);
-                if (!ok) continue;
-            }
-
-            // VMess
-            if (out["type"] == "vmess") {
-                ent = Configs::ProfileManager::NewProxyEntity("vmess");
-                auto ok = ent->unlock(ent->VMessBean())->TryParseJson(out);
-                if (!ok) continue;
-            }
-
-            // Mieru
-            if (out["type"] == "mieru") {
-                ent = Configs::ProfileManager::NewProxyEntity("mieru");
-                auto ok = ent->unlock(ent->MieruBean())->TryParseJson(out);
-                if (!ok) continue;
-            }
-
-            // VLESS
-            if (out["type"] == "vless") {
-                ent = Configs::ProfileManager::NewProxyEntity("vless");
-                auto ok = ent->unlock(ent->TrojanVLESSBean())->TryParseJson(out);
-                if (!ok) continue;
-            }
-
-            // Trojan
-            if (out["type"] == "trojan") {
-                ent = Configs::ProfileManager::NewProxyEntity("trojan");
-                auto ok = ent->unlock(ent->TrojanVLESSBean())->TryParseJson(out);
-                if (!ok) continue;
-            }
-
-            // AnyTLS
-            if (out["type"] == "anytls") {
-                ent = Configs::ProfileManager::NewProxyEntity("anytls");
-                auto ok = ent->unlock(ent->AnyTLSBean())->TryParseJson(out);
-                if (!ok) continue;
-            }
-
-            // ShadowTLS
-            if (out["type"] == "shadowtls") {
-                ent = Configs::ProfileManager::NewProxyEntity("shadowtls");
-                auto ok = ent->unlock(ent->ShadowTLSBean())->TryParseJson(out);
-                if (!ok) continue;
-            }
-
-            // Hysteria1
-            if (out["type"] == "hysteria") {
-                ent = Configs::ProfileManager::NewProxyEntity("hysteria");
-                auto ok = ent->unlock(ent->QUICBean())->TryParseJson(out);
-                if (!ok) continue;
-            }
-
-            // Hysteria2
-            if (out["type"] == "hysteria2") {
-                ent = Configs::ProfileManager::NewProxyEntity("hysteria2");
-                auto ok = ent->unlock(ent->QUICBean())->TryParseJson(out);
-                if (!ok) continue;
-            }
-
-            // TUIC
-            if (out["type"] == "tuic") {
-                ent = Configs::ProfileManager::NewProxyEntity("tuic");
-                auto ok = ent->unlock(ent->QUICBean())->TryParseJson(out);
-                if (!ok) continue;
-            }
-
-            // Wireguard
-            if (out["type"] == "wireguard") {
-                ent = Configs::ProfileManager::NewProxyEntity("wireguard");
-                auto ok = ent->unlock(ent->WireguardBean())->TryParseJson(out);
-                if (!ok) continue;
-            }
-
-            // SSH
-            if (out["type"] == "ssh") {
-                ent = Configs::ProfileManager::NewProxyEntity("ssh");
-                auto ok = ent->unlock(ent->SSHBean())->TryParseJson(out);
-                if (!ok) continue;
-            }
-
-            // Tor
-            if (out["type"] == "tor") {
-                ent = Configs::ProfileManager::NewProxyEntity("tor");
-                auto ok = ent->unlock(ent->TorBean())->TryParseJson(out);
+            // All Types
+            if (Preset::SingBox::OutboundTypes.contains(out_type)) {
+                ent = Configs::ProfileManager::NewProxyEntity(out_type);
+                auto ok = ent->unlock(ent->bean())->TryParseJson(out);
                 if (!ok) continue;
             }
 

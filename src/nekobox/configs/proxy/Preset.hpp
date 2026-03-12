@@ -1,29 +1,11 @@
 #pragma once
 #include <QStringList>
 #include <QMap>
+#include <QObject>
 
 namespace Preset::SingBox {
-  inline QMap<QString, QString> OutboundTypes = {
-      {"socks", "Socks"},
-      {"mieru", "Mieru"},
-      {"http", "HTTP"},
-      {"shadowsocks", "Shadowsocks"},
-      {"chain", "Chain Proxy"},
-      {"vmess", "VMess"},
-      {"trojan", "Trojan"},
-      {"vless", "VLESS"},
-      {"hysteria", "Hysteria 1"},
-      {"hysteria2", "Hysteria 2"},
-      {"tuic", "TUIC"},
-      {"anytls", "AnyTLS"},
-      {"shadowtls", "ShadowTLS"},
-      {"wireguard", "Wireguard"},
-      {"tailscale", "Tailscale"},
-      {"ssh", "SSH"},
-      {"custom", "Custom"},
-      {"extracore", "Extra Core"},
-      {"tor", "Tor"}
-  };
+  extern QMap<QString, QString> OutboundTypes;
+  inline QStringList QUICCongestionControlAlgorithm = {"bbr", "bbr2", "cubic", "reno"};
   inline QStringList VpnImplementation = {"system", "gvisor", "mixed"};
   inline QStringList MieruMultiplexing = {
       "MULTIPLEXING_OFF",

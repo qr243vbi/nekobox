@@ -12,13 +12,14 @@ namespace Configs {
         QString idle_session_timeout = "30s";
         int min_idle_session = 0;
 
-        std::shared_ptr<V2rayStreamSettings> stream = std::make_shared<V2rayStreamSettings>();
+        std::shared_ptr<V2rayStreamSettings> stream ;
 
         AnyTLSBean(Configs::ProxyEntity * entity) : AbstractBean(entity, 0) {
+            stream = std::make_shared<V2rayStreamSettings>();
         }
 
         #ifdef DEBUG_MODE
-        virtual QString type() override {
+        virtual QString type()const override {
             return "anytls";
         };
         #endif
@@ -35,9 +36,9 @@ namespace Configs {
 
         CoreObjOutboundBuildResult BuildCoreObjSingBox()const override;
 
-        bool TryParseLink(const QString &link);
+        bool TryParseLink(const QString &link) override;
 
-        bool TryParseJson(const QJsonObject &obj);
+        bool TryParseJson(const QJsonObject &obj) override;
 
         QString ToShareLink()const override;
     };

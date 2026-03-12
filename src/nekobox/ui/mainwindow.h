@@ -95,6 +95,24 @@ private:
 };
 
 
+class SelectDialog : public QDialog {
+    Q_OBJECT
+public:
+    SelectDialog(QWidget * parent, std::shared_ptr<QAbstractListModel> model);
+
+signals:
+    void confirmed(int selectedIndex); // Signal for confirmed selection
+    void canceled();                   // Signal for cancellation
+
+private slots:
+    void onOk(int selectedIndex);
+
+    void onCancel();
+
+private:
+    std::shared_ptr<QAbstractListModel> model;
+    void setupUi();
+};
 
 //class MessageQueue;
 
@@ -122,6 +140,8 @@ public:
     ~MainWindow() override;
 
     void prepare_exit();
+
+    void move_selected_profiles(int profile_id);
 
     bool context_menu_locked();
 
@@ -206,6 +226,8 @@ private slots:
     void on_menu_add_from_input_triggered();
 
     void on_menu_add_from_clipboard_triggered();
+
+    void on_menu_move_profile_triggered();
 
     void on_menu_clone_triggered();
 

@@ -12,8 +12,6 @@ namespace Configs {
 
     extern ProfileManager *profileManager;
 
-    extern QMap<QString, QString> profileDisplayNames; 
-
     class ProfileManager : private JsonStore {
     public:
         // JsonStore
@@ -46,6 +44,11 @@ namespace Configs {
         bool AddProfile(const std::shared_ptr<ProxyEntity> &ent, int gid = -1);
 
         bool AddProfileBatch(const QList<std::shared_ptr<ProxyEntity>> &ents, int gid = -1);
+
+        bool MoveProfile(int id, int gid);
+
+        bool MoveProfileBatch(const QList<int>& ids, int gid);
+        bool MoveProfileBatch(const QList<std::shared_ptr<ProxyEntity>>& ids, int gid);
 
         void DeleteProfile(int id);
 

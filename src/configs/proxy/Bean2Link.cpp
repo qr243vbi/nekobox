@@ -7,7 +7,6 @@
 #include <qurlquery.h>
 
 namespace Configs {
-
     inline void add_query_int_natural(const char * name, QUrlQuery & query, int value){ AddQueryNatural(query, name, value); };
     inline void add_query_int(const char * name, QUrlQuery & query, int value){ AddQueryInt(query, name, value); };
     inline void add_query_nonempty(const char * name, QUrlQuery & query, const QString &value){ AddQueryString(query, name, value); };
@@ -19,6 +18,12 @@ namespace Configs {
         if (!name.isEmpty()) url.setFragment(name);
         url.setHost(entity->serverAddress);
         url.setPort(entity->serverPort);
+    }
+
+    inline void add_query_int_range(const char * name, QUrlQuery & query, int value, int begin, int end){
+        if (value >= begin && value <= end){
+            add_query_int(name, query, value);
+        }
     }
 
     QString SocksHttpBean::ToShareLink() const {
@@ -408,6 +413,25 @@ namespace Configs {
         return "Unsupported for now";
     }
 
+
+    QString NaiveBean::ToShareLink() const {
+        QUrl url;
+        url.setScheme("naive");
+        initialize_url(url, this->entity);
+        QUrlQuery q;
+        url.setUserName(username);
+        url.setPassword(password);
+        add_query_nonempty("quic_congestion_control", q, (QString)*quic_congestion_control);
+        add_query_nonempty("quic", q, quic ? "true" : "false");
+        add_query_int_range("uot", q, uot, 1, 2);
+        add_query_map_nonempty("extra_headers", q, extra_headers);
+        add_security(stream, q);
+
+        url.setQuery(q);
+        return url.toString(QUrl::FullyEncoded);
+    }
+
+
     QString TorBean::ToShareLink() const {
         QUrl url;
         url.setScheme("tor");
@@ -427,8 +451,8 @@ namespace Configs {
         url.setScheme("mieru");
         initialize_url(url, this->entity);
         QUrlQuery q;
-        add_query_nonempty( "username", q, username);
-        add_query_nonempty( "password", q, password);
+        url.setUserName(username);
+        url.setPassword(password);
         add_query_nonempty( "transport", q, *transport);
         add_query_nonempty( "multiplexing", q, *multiplexing);
         add_query_nonempty( "server_ports", q, serverPorts.join(","));

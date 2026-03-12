@@ -9,8 +9,6 @@ namespace Configs {
 
     ProfileManager *profileManager = new ProfileManager();
     
-    QMap<QString, QString> profileDisplayNames;
-
     ProfileManager::ProfileManager() : JsonStore("profiles.cfg") {
     }
 
@@ -206,18 +204,7 @@ namespace Configs {
 
 
     QString ProfileManager::GetDisplayType(const QString & type){
-        QString ret = profileDisplayNames.value(type, type);
-/*/
-        if (ret == ""){
-            auto proxy = NewProxyEntity(type, true);
-            if (proxy != nullptr){
-                ret = proxy->bean->DisplayType();
-                proxy.reset();
-                profileDisplayNames[type] = ret;
-            }
-        }
-*/
-        return ret;
+        return Preset::SingBox::OutboundTypes.value(type, type);
     }
 
     std::shared_ptr<ProxyEntity> ProfileManager::NewProxyEntity(const QString &type) {
@@ -268,6 +255,56 @@ namespace Configs {
         {
            for (const auto& ent : ents) ent->Save();
         });
+        return true;
+    }
+
+    bool ProfileManager::MoveProfile(int id, int gid) {
+        QList<int> list;
+        list << id;
+        return ProfileManager::MoveProfileBatch(list, gid);
+    }
+
+    bool ProfileManager::MoveProfileBatch(const QList<int>& ents, int gid)
+    {
+        QList<std::shared_ptr<ProxyEntity>> entsp;
+        for (int i : ents){
+            entsp << this->GetProfile(i);
+        }
+        return this->MoveProfileBatch(entsp, gid);
+    }
+
+    bool ProfileManager::MoveProfileBatch(const QList<std::shared_ptr<ProxyEntity>>& ents, int mgid)
+    {
+        if (this->groups.count(mgid) == 0){
+            return false;
+        }
+        bool added = false;
+        auto group = this->groups[mgid];
+        QSet<std::shared_ptr<Group>> ments;
+        QSet<std::shared_ptr<Group>> grps;
+        for (auto ent : ents){
+            int id = ent->id;
+            int gid = ent->gid;
+            if (gid == mgid){
+                continue;
+            }
+            if (this->groups.count(gid) == 0){
+                continue;
+            }
+            auto grp = this->groups[gid];
+            grp->RemoveProfile(id);
+            grps.insert(grp);
+            group->AddProfile(id);
+            ent->gid = mgid;
+            added = true;
+        }
+        if (added) {
+            grps.insert(group);
+            runOnNewThread([=,this] {
+                for (const auto& grp : grps) grp->Save();
+                for (const auto& ent : ments) ent->Save();
+            });
+        }
         return true;
     }
 

@@ -10,9 +10,10 @@ namespace Configs {
         QString password = "";
         int shadowtls_version = 1;
 
-        std::shared_ptr<V2rayStreamSettings> stream = std::make_shared<V2rayStreamSettings>();
+        std::shared_ptr<V2rayStreamSettings> stream ;
 
         ShadowTLSBean(Configs::ProxyEntity * entity) : AbstractBean(entity, 0) {
+             stream = std::make_shared<V2rayStreamSettings>();
         }
         
         INIT_MAP
@@ -25,13 +26,13 @@ namespace Configs {
 */
         CoreObjOutboundBuildResult BuildCoreObjSingBox() const override;
 
-        bool TryParseLink(const QString &link);
+        bool TryParseLink(const QString &link)  override;
 
-        bool TryParseJson(const QJsonObject &obj);
+        bool TryParseJson(const QJsonObject &obj) override;
 
         QString ToShareLink() const override;
         #ifdef DEBUG_MODE
-        virtual QString type() override {
+        virtual QString type()const override {
             return "shadowtls";
         };
         #endif

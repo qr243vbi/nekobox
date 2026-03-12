@@ -39,6 +39,8 @@ namespace Configs {
     class CustomBean;
 
     class ChainBean;
+
+    class NaiveBean;
 }; // namespace Configs
 
 namespace Configs {
@@ -56,7 +58,7 @@ namespace Configs {
         QString type;
 
         QString name = "";
-        QString serverAddress = "";
+        QString serverAddress = "127.0.0.1";
         int serverPort = 1080;
 
         int id = -1;
@@ -127,6 +129,7 @@ namespace Configs {
         cast_func(Tor)
         cast_func(Custom)
         cast_func(ExtraCore)
+        cast_func(Naive)
 
         #undef cast_func
     };

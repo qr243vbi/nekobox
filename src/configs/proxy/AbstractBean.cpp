@@ -34,7 +34,7 @@ namespace Configs {
     }
     
     #ifdef DEBUG_MODE
-    QString AbstractBean::type() {
+    QString AbstractBean::type()const {
         return "unknown";
     }
     #endif

@@ -47,7 +47,7 @@ namespace Configs {
         };
 */
 #ifdef DEBUG_MODE
-        virtual QString type() override {
+        virtual QString type()const override {
             return "custom";
         };
 #endif

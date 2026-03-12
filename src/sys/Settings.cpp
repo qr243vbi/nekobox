@@ -370,7 +370,7 @@ QList<std::shared_ptr<LanguageValue>> &languageCodes() {
       for (QString str : list) {
         str = str.trimmed();
         int ind = -1;
-        if (!s.startsWith('#')){
+        if (!str.startsWith('#')){
           ind = str.indexOf(':');
         }
         if (ind > 0) {

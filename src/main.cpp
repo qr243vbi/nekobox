@@ -53,6 +53,13 @@ void signal_handler(int signum) {
 QTranslator* trans = nullptr;
 //QTranslator* trans_qt = nullptr;
 
+
+namespace Preset {
+    namespace SingBox {
+         QMap<QString, QString> OutboundTypes;
+    }
+}
+
 void loadTranslate(const QString& locale) {
     QT_TRANSLATE_NOOP("QPlatformTheme", "Cancel");
     QT_TRANSLATE_NOOP("QPlatformTheme", "Apply");
@@ -73,6 +80,8 @@ void loadTranslate(const QString& locale) {
     QT_TRANSLATE_NOOP("QPlatformTheme", "Stop");
     QT_TRANSLATE_NOOP("QPlatformTheme", "Clear");
     QT_TRANSLATE_NOOP("QPlatformTheme", "Copy Link Location");
+
+
     if (trans != nullptr) {
         trans->deleteLater();
     }
@@ -87,6 +96,29 @@ void loadTranslate(const QString& locale) {
     if (trans->load(getLangResource(locale))) {
         QCoreApplication::installTranslator(trans);
     }
+
+    Preset::SingBox::OutboundTypes = {
+            {"socks", "Socks"},
+            {"http", "HTTP"},
+            {"mieru", "Mieru"},
+            {"shadowsocks", "Shadowsocks"},
+            {"chain", QObject::tr("Chain Proxy")},
+            {"vmess", "VMess"},
+            {"trojan", "Trojan"},
+            {"vless", "VLESS"},
+            {"hysteria", "Hysteria 1"},
+            {"hysteria2", "Hysteria 2"},
+            {"tuic", "TUIC"},
+            {"anytls", "AnyTLS"},
+            {"shadowtls", "ShadowTLS"},
+            {"wireguard", "Wireguard"},
+            {"tailscale", "Tailscale"},
+            {"ssh", "SSH"},
+            {"tor", "Tor"},
+            {"naive", "Naive"},
+            {"custom", QObject::tr("Custom")},
+            {"extracore", QObject::tr("Extra Core")},
+        };
 }
 
 #define LOCAL_SERVER_PREFIX "nekobox-"

@@ -85,7 +85,9 @@ namespace Configs {
 
     void V2rayStreamSettings::BuildStreamSettingsSingBox(QJsonObject *outbound) {
         // https://sing-box.sagernet.org/configuration/shared/v2ray-transport
-
+        QString type = outbound->value("type").toString();
+        bool is_naive = type == "naive";
+        if (is_naive) goto skip_network;
         if (network != "tcp") {
             QJsonObject transport{{"type", network}};
             if (network == "ws") {
@@ -147,7 +149,7 @@ namespace Configs {
             };
             if (!network.trimmed().isEmpty()) outbound->insert("transport", transport);
         }
-
+        skip_network:
         // tls
         if (security == "tls") {
             QJsonObject tls{{"enabled", true}};
@@ -163,6 +165,9 @@ namespace Configs {
             add_non_empty(tls, "server_name", sni);
             if (!certificate.trimmed().isEmpty()) {
                 tls["certificate"] = certificate.trimmed();
+            }
+            if (is_naive){
+                return;
             }
             if (!alpn.trimmed().isEmpty()) {
                 tls["alpn"] = QListStr2QJsonArray(alpn.split(","));
@@ -191,7 +196,7 @@ namespace Configs {
             outbound->insert("tls", tls);
         }
 
-        if (outbound->value("type").toString() == "vmess" || outbound->value("type").toString() == "vless") {
+        if (type == "vmess" || type == "vless") {
             outbound->insert("packet_encoding", packet_encoding);
         }
     }
@@ -215,6 +220,20 @@ namespace Configs {
         return result;
     }
 
+
+    static QJsonValue udp_over_tcp_object(int version){
+        QJsonValue val;
+        if (version == 0){
+            val = false;
+        } else {
+            QJsonObject udp_over_tcp{
+                {"enabled", true},
+                {"version", version}
+            };
+        }
+        return val;
+    }
+
     CoreObjOutboundBuildResult ShadowSocksBean::BuildCoreObjSingBox() const {
         CoreObjOutboundBuildResult result;
 
@@ -223,16 +242,7 @@ namespace Configs {
         outbound["server_port"] = entity->serverPort;
         outbound["method"] = method;
         outbound["password"] = password;
-
-        if (uot != 0) {
-            QJsonObject udp_over_tcp{
-                {"enabled", true},
-                {"version", uot},
-            };
-            outbound["udp_over_tcp"] = udp_over_tcp;
-        } else {
-            outbound["udp_over_tcp"] = false;
-        }
+        outbound["udp_over_tcp"] = udp_over_tcp_object(uot);
 
         if (!plugin.trimmed().isEmpty()) {
             outbound["plugin"] = SubStrBefore(plugin, ";");
@@ -534,6 +544,26 @@ namespace Configs {
         return result;
     }
 
+
+    CoreObjOutboundBuildResult NaiveBean::BuildCoreObjSingBox() const
+    {
+        CoreObjOutboundBuildResult result;
+        QJsonObject outbound {
+            {"type", "naive"},
+            {"server", entity->serverAddress},
+            {"server_port", entity->serverPort},
+            {"username", this->username},
+            {"password", this->password},
+            {"insecure_concurrency", this->insecure_concurrency},
+            {"extra_headers", QJsonObject::fromVariantMap(this->extra_headers)},
+            {"udp_over_tcp", udp_over_tcp_object(this->uot)},
+            {"quic", this->quic},
+            {"quic_congestion_control", (QString)*quic_congestion_control}
+        };
+        stream->BuildStreamSettingsSingBox(&outbound);
+        result.outbound = outbound;
+        return result;
+    }
 
     CoreObjOutboundBuildResult TorBean::BuildCoreObjSingBox() const
     {
