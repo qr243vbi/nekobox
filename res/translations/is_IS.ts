@@ -2374,8 +2374,8 @@ Fyrir frekari upplýsingar, sjá skjalið "Configuration/DNS".</translation>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="161" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="597" />
-        <location filename="../../src/ui/mainwindow.cpp" line="2492" />
-        <location filename="../../src/ui/mainwindow.cpp" line="2495" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2493" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2496" />
         <source>System Proxy</source>
         <translation type="unfinished">Kerfis proxy</translation>
     </message>
@@ -2542,15 +2542,15 @@ Fyrir frekari upplýsingar, sjá skjalið "Configuration/DNS".</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="736" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3536" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3546" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3561" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3571" />
         <source>Start</source>
         <translation type="unfinished">Byrjaðu</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="744" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3535" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3546" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3560" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3571" />
         <source>Stop</source>
         <translation type="unfinished">Hættu</translation>
     </message>
@@ -2597,7 +2597,7 @@ Fyrir frekari upplýsingar, sjá skjalið "Configuration/DNS".</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="823" />
-        <location filename="../../src/ui/mainwindow.cpp" line="1401" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1402" />
         <source>Export %1 config</source>
         <translation type="unfinished">Flytja út % 1 stillingar</translation>
     </message>
@@ -2709,7 +2709,7 @@ Fyrir frekari upplýsingar, sjá skjalið "Configuration/DNS".</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="977" />
-        <location filename="../../src/ui/mainwindow.cpp" line="2855" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2880" />
         <source>Clone</source>
         <translation type="unfinished">Klóna</translation>
     </message>
@@ -2821,7 +2821,7 @@ Fyrir frekari upplýsingar, sjá skjalið "Configuration/DNS".</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1142" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3564" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3589" />
         <source>Add new Group</source>
         <translation type="unfinished">Bæta við nýjum hópi</translation>
     </message>
@@ -2831,224 +2831,224 @@ Fyrir frekari upplýsingar, sjá skjalið "Configuration/DNS".</translation>
         <translation type="unfinished">Öryggisstillingar</translation>
     </message>
     <message>
-        <location filename="../../src/dataStore/ProxyEntity.cpp" line="222" />
+        <location filename="../../src/dataStore/ProxyEntity.cpp" line="223" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="291" />
         <source>Unavailable</source>
         <translation type="unfinished">Ekki tiltækt</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1054" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1055" />
         <source>Edit Routing Profiles</source>
         <translation type="unfinished">Breyta leiðarsniðum</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1076" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1077" />
         <source>Update Routing Profiles</source>
         <translation type="unfinished">Uppfærðu leiðarsnið</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1088" />
-        <location filename="../../src/ui/mainwindow.cpp" line="1092" />
-        <location filename="../../src/ui/mainwindow.cpp" line="1113" />
-        <location filename="../../src/ui/mainwindow.cpp" line="1116" />
-        <location filename="../../src/ui/mainwindow.cpp" line="1160" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1089" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1093" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1114" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1117" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1161" />
         <location filename="../../src/ui/setting/RouteItem.cpp" line="95" />
         <location filename="../../src/ui/setting/RouteItem.cpp" line="104" />
         <source>Update Response</source>
         <translation type="unfinished">Uppfærðu svar</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1089" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1090" />
         <location filename="../../src/ui/setting/RouteItem.cpp" line="105" />
         <source>No routing profiles are updated</source>
         <translation type="unfinished">Engir leiðarprófílar eru uppfærðir</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1093" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1094" />
         <location filename="../../src/ui/setting/RouteItem.cpp" line="96" />
         <source>Updated %1 routing profiles</source>
         <translation type="unfinished">Uppfært % 1 leiðarsnið</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1103" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1104" />
         <source>Update RuleSet Map</source>
         <translation type="unfinished">Uppfærðu RuleSet Map</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1114" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1115" />
         <source>Failed to update rulesets</source>
         <translation type="unfinished">Mistókst að uppfæra reglusett</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1117" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1118" />
         <source>Rulesets updated successfully</source>
         <translation type="unfinished">Reglusett uppfært</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1126" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1127" />
         <source>Update RuleSet Cache</source>
         <translation type="unfinished">Uppfærðu RuleSet Cache</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1161" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1162" />
         <source>Rulesets cache is updated</source>
         <translation type="unfinished">Skyndiminni reglna er uppfærð</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1175" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1176" />
         <source>Clear RuleSet Cache</source>
         <translation type="unfinished">Hreinsaðu RuleSet Cache</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1211" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1212" />
         <source>Enable AdBlock</source>
         <translation type="unfinished">Virkjaðu AdBlock</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1615" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1616" />
         <source>Error</source>
         <translation type="unfinished">Villa</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1702" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1703" />
         <source>Tun Settings changed</source>
         <translation type="unfinished">Tun Stillingum breytt</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1703" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1704" />
         <source>Restart Tun to take effect.</source>
         <translation type="unfinished">Endurræstu Tun til að taka gildi.</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1709" />
-        <location filename="../../src/ui/mainwindow.cpp" line="1767" />
-        <location filename="../../src/ui/mainwindow.cpp" line="2909" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3280" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3334" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3383" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3609" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1710" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1768" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2934" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3305" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3359" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3408" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3634" />
         <source>Confirmation</source>
         <translation type="unfinished">Staðfesting</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1710" />
-        <location filename="../../src/ui/mainwindow.cpp" line="1768" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1711" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1769" />
         <source>Settings changed, restart proxy?</source>
         <translation type="unfinished">Stillingum breytt, endurræsa proxy?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1739" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1740" />
         <source>Settings changed</source>
         <translation type="unfinished">Stillingum breytt</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1740" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1741" />
         <source>Restart the program to take effect.</source>
         <translation type="unfinished">Endurræstu forritið til að taka gildi.</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1783" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1784" />
         <source>Imported %1 profile(s)</source>
         <translation type="unfinished">Innflutt % 1 prófíl(ar)</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2050" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2051" />
         <source>User opted for no privilege req, some features may not work</source>
         <translation type="unfinished">Notandi valdi enga réttindakröfu, sumir eiginleikar gætu ekki virka</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2114" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2115" />
         <source>Please give the core root privileges</source>
         <translation type="unfinished">Vinsamlegast gefðu kjarnarótarréttindi</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2468" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2469" />
         <source>Not Running</source>
         <translation type="unfinished">Ekki í gangi</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2856" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2881" />
         <source>Clone %1 item(s)</source>
         <translation type="unfinished">Klóna % 1 atriði</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2890" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2915" />
         <source> Confirmation </source>
         <translation type="unfinished">Staðfesting</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2891" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2916" />
         <source> Remove %1 item(s) ? </source>
         <translation type="unfinished">Fjarlægja % 1 atriði ?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2910" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2935" />
         <source>Remove %1 item(s) ?</source>
         <translation type="unfinished">Fjarlægja % 1 atriði ?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2947" />
-        <location filename="../../src/ui/mainwindow.cpp" line="2960" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2972" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2985" />
         <source>Copied %1 item(s)</source>
         <translation type="unfinished">Afritaði % 1 atriði</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3192" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3217" />
         <source>QR Code not found</source>
         <translation type="unfinished">QR kóða fannst ekki</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3213" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3238" />
         <source>Unable to capture screen</source>
         <translation type="unfinished">Ekki tókst að taka skjáinn</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3281" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3306" />
         <source>Remove %1 Unavailable item(s) ?</source>
         <translation type="unfinished">Fjarlægja % 1 ótiltæk atriði ?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3335" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3360" />
         <source>Remove %1 Invalid item(s) ?</source>
         <translation type="unfinished">Fjarlægja % 1 Ógild atriði ?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3384" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3409" />
         <source>Replace domain server addresses with their resolved IPs?</source>
         <translation type="unfinished">Skipta út netföngum lénsþjóns með uppleystum IP-tölum?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3533" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3558" />
         <source>Clear</source>
         <translation type="unfinished">Hreinsa</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3600" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3625" />
         <source>Delete selected Group</source>
         <translation type="unfinished">Eyða völdum hópi</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3601" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3626" />
         <source>Edit selected Group</source>
         <translation type="unfinished">Breyta völdum hópi</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3610" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3635" />
         <source>Remove %1?</source>
         <translation type="unfinished">Fjarlægja % 1?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4304" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4329" />
         <source>Cannot start</source>
         <translation type="unfinished">Get ekki byrjað</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4305" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4330" />
         <source>Last download request has not finished yet</source>
         <translation type="unfinished">Síðasta niðurhalsbeiðni hefur ekki lokið enn</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4339" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4364" />
         <source>Failed to download update assets</source>
         <translation type="unfinished">Mistókst að hlaða niður uppfærslueignum</translation>
     </message>
@@ -3337,7 +3337,7 @@ Eytt % 3 prófílum:
     </message>
     <message>
         <location filename="../../src/stats/traffic/TrafficLooper.cpp" line="115" />
-        <location filename="../../src/ui/mainwindow.cpp" line="2436" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2437" />
         <source>Proxy: %1
 Direct: %2</source>
         <translation type="unfinished">Umboð: %1
@@ -3396,97 +3396,102 @@ Hvernig á að uppfæra?</translation>
         <translation type="unfinished">Notað: %1 Eftirstöðvar: %2 Rennur út: %3</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="223" />
+        <location filename="../../src/ui/mainwindow.cpp" line="224" />
         <source>Download Profiles</source>
         <translation type="unfinished">Sækja snið</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="224" />
+        <location filename="../../src/ui/mainwindow.cpp" line="225" />
         <source>Requesting profile error: %1</source>
         <translation type="unfinished">Beiðni um prófílvillu: %1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="391" />
+        <location filename="../../src/ui/mainwindow.cpp" line="392" />
         <source>
 Deleted %1 Duplicates</source>
         <translation type="unfinished">Eyddi % 1 afritum</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="425" />
+        <location filename="../../src/ui/mainwindow.cpp" line="426" />
         <source>
 Deleted %1 Invalid</source>
         <translation type="unfinished">Eytt % 1 Ógilt</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="448" />
+        <location filename="../../src/ui/mainwindow.cpp" line="449" />
         <source>
 Deleted %1 Unavailable</source>
         <translation type="unfinished">Eytt % 1 Ekki tiltækt</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1494" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1495" />
         <source>Check Rule Sets: %1</source>
         <translation type="unfinished">Athugaðu reglusett: %1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1516" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1517" />
         <source>Requesting rule-set list error: %1</source>
         <translation type="unfinished">Villu biðja um reglusett lista: %1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2473" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2474" />
         <source>IP address: %1</source>
         <translation type="unfinished">IP-tala: %1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2978" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2860" />
+        <source>Move profiles to group</source>
+        <translation type="unfinished">Færa prófíla í hóp</translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/mainwindow.cpp" line="3003" />
         <source>Config copied</source>
         <translation type="unfinished">Stilling afrituð</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2989" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3014" />
         <source>Copy core config</source>
         <translation type="unfinished">Afritaðu kjarnastillingar</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2990" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3015" />
         <source>Copy test config</source>
         <translation type="unfinished">Afritaðu prófunarstillingar</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2991" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3016" />
         <location filename="../../src/ui/security_addon.cpp" line="22" />
         <location filename="../../src/ui/setting/dialog_vpn_settings.cpp" line="45" />
         <source>OK</source>
         <translation type="unfinished">Allt í lagi</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4208" />
-        <location filename="../../src/ui/mainwindow.cpp" line="4219" />
-        <location filename="../../src/ui/mainwindow.cpp" line="4263" />
-        <location filename="../../src/ui/mainwindow.cpp" line="4286" />
-        <location filename="../../src/ui/mainwindow.cpp" line="4295" />
-        <location filename="../../src/ui/mainwindow.cpp" line="4330" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4233" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4244" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4288" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4311" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4320" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4355" />
         <source>Update</source>
         <translation type="unfinished">Uppfærsla</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4209" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4234" />
         <source>Not official support platform</source>
         <translation type="unfinished">Ekki opinber stuðningsvettvangur</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4220" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4245" />
         <source>Requesting update error: %1</source>
         <translation type="unfinished">Beiðni um uppfærsluvillu: %1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4263" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4288" />
         <source>No update</source>
         <translation type="unfinished">Engin uppfærsla</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4287" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4312" />
         <source>Update found: %1
 Release note:
 %2</source>
@@ -3495,17 +3500,17 @@ Release note:
 %2</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4290" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4315" />
         <source>Close</source>
         <translation type="unfinished">Loka</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4292" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4317" />
         <source>Open in browser</source>
         <translation type="unfinished">Opna í vafra</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4331" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4356" />
         <source>Update is ready, restart to install?</source>
         <translation type="unfinished">Uppfærsla er tilbúin, endurræsa til að setja upp?</translation>
     </message>
@@ -3845,24 +3850,24 @@ Release note:
 <context>
     <name>SpinnerDialog</name>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="171" />
+        <location filename="../../src/ui/mainwindow.cpp" line="172" />
         <source>Invalid JSON Array</source>
         <translation type="unfinished">Ógilt JSON fylki</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="172" />
+        <location filename="../../src/ui/mainwindow.cpp" line="173" />
         <source>The provided input cannot be parsed to a valid route rule array:
 </source>
         <translation type="unfinished">Ekki er hægt að flokka uppgefið inntak í gilt leiðarreglufylki:</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="295" />
+        <location filename="../../src/ui/mainwindow.cpp" line="296" />
         <source>Fetching information</source>
         <translation type="unfinished">Að sækja upplýsingar</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="311" />
-        <location filename="../../src/ui/mainwindow.cpp" line="1235" />
+        <location filename="../../src/ui/mainwindow.cpp" line="312" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1236" />
         <source>Download Profiles</source>
         <translation type="unfinished">Sækja snið</translation>
     </message>

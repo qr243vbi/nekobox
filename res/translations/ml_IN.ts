@@ -2374,8 +2374,8 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="161" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="597" />
-        <location filename="../../src/ui/mainwindow.cpp" line="2492" />
-        <location filename="../../src/ui/mainwindow.cpp" line="2495" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2493" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2496" />
         <source>System Proxy</source>
         <translation type="unfinished">സിസ്റ്റം പ്രോക്സി</translation>
     </message>
@@ -2542,15 +2542,15 @@ For more information, see the document "Configuration/DNS".</source>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="736" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3536" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3546" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3561" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3571" />
         <source>Start</source>
         <translation type="unfinished">ആരംഭിക്കുക</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="744" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3535" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3546" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3560" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3571" />
         <source>Stop</source>
         <translation type="unfinished">നിർത്തുക</translation>
     </message>
@@ -2597,7 +2597,7 @@ For more information, see the document "Configuration/DNS".</source>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="823" />
-        <location filename="../../src/ui/mainwindow.cpp" line="1401" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1402" />
         <source>Export %1 config</source>
         <translation type="unfinished">കയറ്റുമതി% 1 കോൺഫിഗറേഷൻ</translation>
     </message>
@@ -2701,7 +2701,7 @@ For more information, see the document "Configuration/DNS".</source>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="977" />
-        <location filename="../../src/ui/mainwindow.cpp" line="2855" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2880" />
         <source>Clone</source>
         <translation type="unfinished">ക്ലോൺ</translation>
     </message>
@@ -2809,7 +2809,7 @@ For more information, see the document "Configuration/DNS".</source>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1142" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3564" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3589" />
         <source>Add new Group</source>
         <translation type="unfinished">പുതിയ ഗ്രൂപ്പ് ചേർക്കുക</translation>
     </message>
@@ -2819,224 +2819,224 @@ For more information, see the document "Configuration/DNS".</source>
         <translation type="unfinished">സുരക്ഷാ ക്രമീകരണങ്ങൾ</translation>
     </message>
     <message>
-        <location filename="../../src/dataStore/ProxyEntity.cpp" line="222" />
+        <location filename="../../src/dataStore/ProxyEntity.cpp" line="223" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="291" />
         <source>Unavailable</source>
         <translation type="unfinished">ലഭ്യമല്ല</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1054" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1055" />
         <source>Edit Routing Profiles</source>
         <translation type="unfinished">റൂട്ടിംഗ് പ്രൊഫൈലുകൾ എഡിറ്റ് ചെയ്യുക</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1076" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1077" />
         <source>Update Routing Profiles</source>
         <translation type="unfinished">റൂട്ടിംഗ് പ്രൊഫൈലുകൾ അപ്ഡേറ്റ് ചെയ്യുക</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1088" />
-        <location filename="../../src/ui/mainwindow.cpp" line="1092" />
-        <location filename="../../src/ui/mainwindow.cpp" line="1113" />
-        <location filename="../../src/ui/mainwindow.cpp" line="1116" />
-        <location filename="../../src/ui/mainwindow.cpp" line="1160" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1089" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1093" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1114" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1117" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1161" />
         <location filename="../../src/ui/setting/RouteItem.cpp" line="95" />
         <location filename="../../src/ui/setting/RouteItem.cpp" line="104" />
         <source>Update Response</source>
         <translation type="unfinished">പ്രതികരണം അപ്ഡേറ്റ് ചെയ്യുക</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1089" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1090" />
         <location filename="../../src/ui/setting/RouteItem.cpp" line="105" />
         <source>No routing profiles are updated</source>
         <translation type="unfinished">റൂട്ടിംഗ് പ്രൊഫൈലുകളൊന്നും അപ്ഡേറ്റ് ചെയ്തിട്ടില്ല</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1093" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1094" />
         <location filename="../../src/ui/setting/RouteItem.cpp" line="96" />
         <source>Updated %1 routing profiles</source>
         <translation type="unfinished">% 1 റൂട്ടിംഗ് പ്രൊഫൈലുകൾ അപ്ഡേറ്റ് ചെയ്തു</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1103" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1104" />
         <source>Update RuleSet Map</source>
         <translation type="unfinished">റൂൾസെറ്റ് മാപ്പ് അപ്ഡേറ്റ് ചെയ്യുക</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1114" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1115" />
         <source>Failed to update rulesets</source>
         <translation type="unfinished">നിയമങ്ങൾ അപ്ഡേറ്റ് ചെയ്യുന്നതിൽ പരാജയപ്പെട്ടു</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1117" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1118" />
         <source>Rulesets updated successfully</source>
         <translation type="unfinished">റൂൾസെറ്റുകൾ വിജയകരമായി അപ്ഡേറ്റ് ചെയ്തു</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1126" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1127" />
         <source>Update RuleSet Cache</source>
         <translation type="unfinished">RuleSet കാഷെ അപ്ഡേറ്റ് ചെയ്യുക</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1161" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1162" />
         <source>Rulesets cache is updated</source>
         <translation type="unfinished">റൂൾസെറ്റ് കാഷെ അപ്ഡേറ്റ് ചെയ്തു</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1175" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1176" />
         <source>Clear RuleSet Cache</source>
         <translation type="unfinished">RuleSet കാഷെ മായ്‌ക്കുക</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1211" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1212" />
         <source>Enable AdBlock</source>
         <translation type="unfinished">AdBlock പ്രവർത്തനക്ഷമമാക്കുക</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1615" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1616" />
         <source>Error</source>
         <translation type="unfinished">പിശക്</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1702" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1703" />
         <source>Tun Settings changed</source>
         <translation type="unfinished">ടൺ ക്രമീകരണങ്ങൾ മാറ്റി</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1703" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1704" />
         <source>Restart Tun to take effect.</source>
         <translation type="unfinished">പ്രാബല്യത്തിൽ വരാൻ Tun പുനരാരംഭിക്കുക.</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1709" />
-        <location filename="../../src/ui/mainwindow.cpp" line="1767" />
-        <location filename="../../src/ui/mainwindow.cpp" line="2909" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3280" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3334" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3383" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3609" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1710" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1768" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2934" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3305" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3359" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3408" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3634" />
         <source>Confirmation</source>
         <translation type="unfinished">സ്ഥിരീകരണം</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1710" />
-        <location filename="../../src/ui/mainwindow.cpp" line="1768" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1711" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1769" />
         <source>Settings changed, restart proxy?</source>
         <translation type="unfinished">ക്രമീകരണങ്ങൾ മാറ്റി, പ്രോക്സി പുനരാരംഭിക്കണോ?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1739" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1740" />
         <source>Settings changed</source>
         <translation type="unfinished">ക്രമീകരണങ്ങൾ മാറ്റി</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1740" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1741" />
         <source>Restart the program to take effect.</source>
         <translation type="unfinished">പ്രാബല്യത്തിൽ വരാൻ പ്രോഗ്രാം പുനരാരംഭിക്കുക.</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1783" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1784" />
         <source>Imported %1 profile(s)</source>
         <translation type="unfinished">% 1 പ്രൊഫൈൽ(കൾ) ഇറക്കുമതി ചെയ്തു</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2050" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2051" />
         <source>User opted for no privilege req, some features may not work</source>
         <translation type="unfinished">ഉപയോക്താവ് പ്രത്യേകാവകാശം ആവശ്യമില്ല, ചില സവിശേഷതകൾ പ്രവർത്തിച്ചേക്കില്ല</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2114" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2115" />
         <source>Please give the core root privileges</source>
         <translation type="unfinished">ദയവായി കോർ റൂട്ട് പ്രത്യേകാവകാശങ്ങൾ നൽകുക</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2468" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2469" />
         <source>Not Running</source>
         <translation type="unfinished">ഓടുന്നില്ല</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2856" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2881" />
         <source>Clone %1 item(s)</source>
         <translation type="unfinished">% 1 ഇനം(ങ്ങൾ) ക്ലോൺ ചെയ്യുക</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2890" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2915" />
         <source> Confirmation </source>
         <translation type="unfinished">സ്ഥിരീകരണം</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2891" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2916" />
         <source> Remove %1 item(s) ? </source>
         <translation type="unfinished">% 1 ഇനം(ങ്ങൾ) നീക്കം ചെയ്യണോ?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2910" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2935" />
         <source>Remove %1 item(s) ?</source>
         <translation type="unfinished">% 1 ഇനം(ങ്ങൾ) നീക്കം ചെയ്യണോ?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2947" />
-        <location filename="../../src/ui/mainwindow.cpp" line="2960" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2972" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2985" />
         <source>Copied %1 item(s)</source>
         <translation type="unfinished">% 1 ഇനം(കൾ) പകർത്തി</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3192" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3217" />
         <source>QR Code not found</source>
         <translation type="unfinished">QR കോഡ് കണ്ടെത്തിയില്ല</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3213" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3238" />
         <source>Unable to capture screen</source>
         <translation type="unfinished">സ്‌ക്രീൻ ക്യാപ്‌ചർ ചെയ്യാനാവുന്നില്ല</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3281" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3306" />
         <source>Remove %1 Unavailable item(s) ?</source>
         <translation type="unfinished">% 1 ലഭ്യമല്ലാത്ത ഇനം(ങ്ങൾ) നീക്കം ചെയ്യണോ?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3335" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3360" />
         <source>Remove %1 Invalid item(s) ?</source>
         <translation type="unfinished">% 1 അസാധുവായ ഇനം(കൾ) നീക്കം ചെയ്യണോ?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3384" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3409" />
         <source>Replace domain server addresses with their resolved IPs?</source>
         <translation type="unfinished">ഡൊമെയ്ൻ സെർവർ വിലാസങ്ങൾ അവയുടെ പരിഹരിച്ച ഐപികൾ ഉപയോഗിച്ച് മാറ്റിസ്ഥാപിക്കണോ?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3533" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3558" />
         <source>Clear</source>
         <translation type="unfinished">ക്ലിയർ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3600" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3625" />
         <source>Delete selected Group</source>
         <translation type="unfinished">തിരഞ്ഞെടുത്ത ഗ്രൂപ്പ് ഇല്ലാതാക്കുക</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3601" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3626" />
         <source>Edit selected Group</source>
         <translation type="unfinished">തിരഞ്ഞെടുത്ത ഗ്രൂപ്പ് എഡിറ്റ് ചെയ്യുക</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3610" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3635" />
         <source>Remove %1?</source>
         <translation type="unfinished">% 1 നീക്കം ചെയ്യണോ?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4304" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4329" />
         <source>Cannot start</source>
         <translation type="unfinished">ആരംഭിക്കാൻ കഴിയില്ല</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4305" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4330" />
         <source>Last download request has not finished yet</source>
         <translation type="unfinished">അവസാന ഡൗൺലോഡ് അഭ്യർത്ഥന ഇതുവരെ പൂർത്തിയായിട്ടില്ല</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4339" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4364" />
         <source>Failed to download update assets</source>
         <translation type="unfinished">അപ്ഡേറ്റ് അസറ്റുകൾ ഡൗൺലോഡ് ചെയ്യാനായില്ല</translation>
     </message>
@@ -3325,7 +3325,7 @@ Deleted %3 Profiles:
     </message>
     <message>
         <location filename="../../src/stats/traffic/TrafficLooper.cpp" line="115" />
-        <location filename="../../src/ui/mainwindow.cpp" line="2436" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2437" />
         <source>Proxy: %1
 Direct: %2</source>
         <translation type="unfinished">പ്രോക്സി:% 1
@@ -3384,97 +3384,102 @@ How to update?</source>
         <translation type="unfinished">ഉപയോഗിച്ചത്: % 1 ശേഷിക്കുന്നു: % 2 കാലഹരണപ്പെടുന്നു: % 3</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="223" />
+        <location filename="../../src/ui/mainwindow.cpp" line="224" />
         <source>Download Profiles</source>
         <translation type="unfinished">പ്രൊഫൈലുകൾ ഡൗൺലോഡ് ചെയ്യുക</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="224" />
+        <location filename="../../src/ui/mainwindow.cpp" line="225" />
         <source>Requesting profile error: %1</source>
         <translation type="unfinished">പ്രൊഫൈൽ പിശക് അഭ്യർത്ഥിക്കുന്നു:% 1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="391" />
+        <location filename="../../src/ui/mainwindow.cpp" line="392" />
         <source>
 Deleted %1 Duplicates</source>
         <translation type="unfinished">% 1 ഡ്യൂപ്ലിക്കേറ്റുകൾ ഇല്ലാതാക്കി</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="425" />
+        <location filename="../../src/ui/mainwindow.cpp" line="426" />
         <source>
 Deleted %1 Invalid</source>
         <translation type="unfinished">ഇല്ലാതാക്കി % 1 അസാധുവാണ്</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="448" />
+        <location filename="../../src/ui/mainwindow.cpp" line="449" />
         <source>
 Deleted %1 Unavailable</source>
         <translation type="unfinished">ഇല്ലാതാക്കി % 1 ലഭ്യമല്ല</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1494" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1495" />
         <source>Check Rule Sets: %1</source>
         <translation type="unfinished">റൂൾ സെറ്റുകൾ പരിശോധിക്കുക:% 1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1516" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1517" />
         <source>Requesting rule-set list error: %1</source>
         <translation type="unfinished">റൂൾ-സെറ്റ് ലിസ്റ്റ് പിശക് അഭ്യർത്ഥിക്കുന്നു:% 1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2473" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2474" />
         <source>IP address: %1</source>
         <translation type="unfinished">IP വിലാസം:% 1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2978" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2860" />
+        <source>Move profiles to group</source>
+        <translation type="unfinished">പ്രൊഫൈലുകൾ ഗ്രൂപ്പിലേക്ക് നീക്കുക</translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/mainwindow.cpp" line="3003" />
         <source>Config copied</source>
         <translation type="unfinished">കോൺഫിഗറേഷൻ പകർത്തി</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2989" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3014" />
         <source>Copy core config</source>
         <translation type="unfinished">കോർ കോൺഫിഗറേഷൻ പകർത്തുക</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2990" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3015" />
         <source>Copy test config</source>
         <translation type="unfinished">ടെസ്റ്റ് കോൺഫിഗറേഷൻ പകർത്തുക</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2991" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3016" />
         <location filename="../../src/ui/security_addon.cpp" line="22" />
         <location filename="../../src/ui/setting/dialog_vpn_settings.cpp" line="45" />
         <source>OK</source>
         <translation type="unfinished">ശരി</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4208" />
-        <location filename="../../src/ui/mainwindow.cpp" line="4219" />
-        <location filename="../../src/ui/mainwindow.cpp" line="4263" />
-        <location filename="../../src/ui/mainwindow.cpp" line="4286" />
-        <location filename="../../src/ui/mainwindow.cpp" line="4295" />
-        <location filename="../../src/ui/mainwindow.cpp" line="4330" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4233" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4244" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4288" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4311" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4320" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4355" />
         <source>Update</source>
         <translation type="unfinished">അപ്ഡേറ്റ്</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4209" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4234" />
         <source>Not official support platform</source>
         <translation type="unfinished">ഔദ്യോഗിക പിന്തുണ പ്ലാറ്റ്ഫോം അല്ല</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4220" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4245" />
         <source>Requesting update error: %1</source>
         <translation type="unfinished">അപ്ഡേറ്റ് പിശക് അഭ്യർത്ഥിക്കുന്നു:% 1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4263" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4288" />
         <source>No update</source>
         <translation type="unfinished">അപ്ഡേറ്റ് ഇല്ല</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4287" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4312" />
         <source>Update found: %1
 Release note:
 %2</source>
@@ -3483,17 +3488,17 @@ Release note:
 % 2</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4290" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4315" />
         <source>Close</source>
         <translation type="unfinished">അടയ്ക്കുക</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4292" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4317" />
         <source>Open in browser</source>
         <translation type="unfinished">ബ്രൗസറിൽ തുറക്കുക</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4331" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4356" />
         <source>Update is ready, restart to install?</source>
         <translation type="unfinished">അപ്‌ഡേറ്റ് തയ്യാറാണ്, ഇൻസ്റ്റാൾ ചെയ്യാൻ പുനരാരംഭിക്കണോ?</translation>
     </message>
@@ -3833,24 +3838,24 @@ Release note:
 <context>
     <name>SpinnerDialog</name>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="171" />
+        <location filename="../../src/ui/mainwindow.cpp" line="172" />
         <source>Invalid JSON Array</source>
         <translation type="unfinished">അസാധുവായ JSON അറേ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="172" />
+        <location filename="../../src/ui/mainwindow.cpp" line="173" />
         <source>The provided input cannot be parsed to a valid route rule array:
 </source>
         <translation type="unfinished">നൽകിയിരിക്കുന്ന ഇൻപുട്ട് സാധുവായ റൂട്ട് റൂൾ അറേയിലേക്ക് പാഴ്‌സ് ചെയ്യാൻ കഴിയില്ല:</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="295" />
+        <location filename="../../src/ui/mainwindow.cpp" line="296" />
         <source>Fetching information</source>
         <translation type="unfinished">വിവരങ്ങൾ ലഭ്യമാക്കുന്നു</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="311" />
-        <location filename="../../src/ui/mainwindow.cpp" line="1235" />
+        <location filename="../../src/ui/mainwindow.cpp" line="312" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1236" />
         <source>Download Profiles</source>
         <translation type="unfinished">പ്രൊഫൈലുകൾ ഡൗൺലോഡ് ചെയ്യുക</translation>
     </message>

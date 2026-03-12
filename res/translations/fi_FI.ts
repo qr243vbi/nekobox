@@ -2374,8 +2374,8 @@ Katso lisätietoja asiakirjasta "Configuration/DNS".</translation>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="161" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="597" />
-        <location filename="../../src/ui/mainwindow.cpp" line="2492" />
-        <location filename="../../src/ui/mainwindow.cpp" line="2495" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2493" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2496" />
         <source>System Proxy</source>
         <translation type="unfinished">Järjestelmän välityspalvelin</translation>
     </message>
@@ -2542,15 +2542,15 @@ Katso lisätietoja asiakirjasta "Configuration/DNS".</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="736" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3536" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3546" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3561" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3571" />
         <source>Start</source>
         <translation type="unfinished">Aloita</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="744" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3535" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3546" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3560" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3571" />
         <source>Stop</source>
         <translation type="unfinished">Stop</translation>
     </message>
@@ -2597,7 +2597,7 @@ Katso lisätietoja asiakirjasta "Configuration/DNS".</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="823" />
-        <location filename="../../src/ui/mainwindow.cpp" line="1401" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1402" />
         <source>Export %1 config</source>
         <translation type="unfinished">Vie % 1 kokoonpano</translation>
     </message>
@@ -2701,7 +2701,7 @@ Katso lisätietoja asiakirjasta "Configuration/DNS".</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="977" />
-        <location filename="../../src/ui/mainwindow.cpp" line="2855" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2880" />
         <source>Clone</source>
         <translation type="unfinished">Klooni</translation>
     </message>
@@ -2809,7 +2809,7 @@ Katso lisätietoja asiakirjasta "Configuration/DNS".</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1142" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3564" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3589" />
         <source>Add new Group</source>
         <translation type="unfinished">Lisää uusi ryhmä</translation>
     </message>
@@ -2819,224 +2819,224 @@ Katso lisätietoja asiakirjasta "Configuration/DNS".</translation>
         <translation type="unfinished">Suojausasetukset</translation>
     </message>
     <message>
-        <location filename="../../src/dataStore/ProxyEntity.cpp" line="222" />
+        <location filename="../../src/dataStore/ProxyEntity.cpp" line="223" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="291" />
         <source>Unavailable</source>
         <translation type="unfinished">Ei saatavilla</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1054" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1055" />
         <source>Edit Routing Profiles</source>
         <translation type="unfinished">Muokkaa reititysprofiileja</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1076" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1077" />
         <source>Update Routing Profiles</source>
         <translation type="unfinished">Päivitä reititysprofiilit</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1088" />
-        <location filename="../../src/ui/mainwindow.cpp" line="1092" />
-        <location filename="../../src/ui/mainwindow.cpp" line="1113" />
-        <location filename="../../src/ui/mainwindow.cpp" line="1116" />
-        <location filename="../../src/ui/mainwindow.cpp" line="1160" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1089" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1093" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1114" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1117" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1161" />
         <location filename="../../src/ui/setting/RouteItem.cpp" line="95" />
         <location filename="../../src/ui/setting/RouteItem.cpp" line="104" />
         <source>Update Response</source>
         <translation type="unfinished">Päivitä vastaus</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1089" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1090" />
         <location filename="../../src/ui/setting/RouteItem.cpp" line="105" />
         <source>No routing profiles are updated</source>
         <translation type="unfinished">Reititysprofiileja ei päivitetä</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1093" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1094" />
         <location filename="../../src/ui/setting/RouteItem.cpp" line="96" />
         <source>Updated %1 routing profiles</source>
         <translation type="unfinished">Päivitetty %1 reititysprofiilia</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1103" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1104" />
         <source>Update RuleSet Map</source>
         <translation type="unfinished">Päivitä RuleSet Map</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1114" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1115" />
         <source>Failed to update rulesets</source>
         <translation type="unfinished">Sääntöjoukkojen päivittäminen epäonnistui</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1117" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1118" />
         <source>Rulesets updated successfully</source>
         <translation type="unfinished">Sääntöjoukkojen päivitys onnistui</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1126" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1127" />
         <source>Update RuleSet Cache</source>
         <translation type="unfinished">Päivitä RuleSet-välimuisti</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1161" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1162" />
         <source>Rulesets cache is updated</source>
         <translation type="unfinished">Sääntöjoukkojen välimuisti päivitetään</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1175" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1176" />
         <source>Clear RuleSet Cache</source>
         <translation type="unfinished">Tyhjennä RuleSet-välimuisti</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1211" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1212" />
         <source>Enable AdBlock</source>
         <translation type="unfinished">Ota AdBlock käyttöön</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1615" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1616" />
         <source>Error</source>
         <translation type="unfinished">Virhe</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1702" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1703" />
         <source>Tun Settings changed</source>
         <translation type="unfinished">Tun Asetukset muutettu</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1703" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1704" />
         <source>Restart Tun to take effect.</source>
         <translation type="unfinished">Käynnistä Tun uudelleen, jotta se tulee voimaan.</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1709" />
-        <location filename="../../src/ui/mainwindow.cpp" line="1767" />
-        <location filename="../../src/ui/mainwindow.cpp" line="2909" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3280" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3334" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3383" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3609" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1710" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1768" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2934" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3305" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3359" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3408" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3634" />
         <source>Confirmation</source>
         <translation type="unfinished">Vahvistus</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1710" />
-        <location filename="../../src/ui/mainwindow.cpp" line="1768" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1711" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1769" />
         <source>Settings changed, restart proxy?</source>
         <translation type="unfinished">Asetuksia muutettu, käynnistää välityspalvelin uudelleen?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1739" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1740" />
         <source>Settings changed</source>
         <translation type="unfinished">Asetukset muutettu</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1740" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1741" />
         <source>Restart the program to take effect.</source>
         <translation type="unfinished">Käynnistä ohjelma uudelleen, jotta se tulee voimaan.</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1783" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1784" />
         <source>Imported %1 profile(s)</source>
         <translation type="unfinished">Tuotu % 1 profiili(a)</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2050" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2051" />
         <source>User opted for no privilege req, some features may not work</source>
         <translation type="unfinished">Käyttäjä ei ole valinnut etuoikeuksia, jotkin ominaisuudet eivät ehkä toimi</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2114" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2115" />
         <source>Please give the core root privileges</source>
         <translation type="unfinished">Anna pääkäyttäjän oikeudet</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2468" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2469" />
         <source>Not Running</source>
         <translation type="unfinished">Ei Juokse</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2856" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2881" />
         <source>Clone %1 item(s)</source>
         <translation type="unfinished">Kloonaa % 1 kohde(a)</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2890" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2915" />
         <source> Confirmation </source>
         <translation type="unfinished">Vahvistus</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2891" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2916" />
         <source> Remove %1 item(s) ? </source>
         <translation type="unfinished">Poistetaanko %1 kohde(a) ?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2910" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2935" />
         <source>Remove %1 item(s) ?</source>
         <translation type="unfinished">Poistetaanko %1 kohde(a) ?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2947" />
-        <location filename="../../src/ui/mainwindow.cpp" line="2960" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2972" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2985" />
         <source>Copied %1 item(s)</source>
         <translation type="unfinished">Kopioitu % 1 kohde(a)</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3192" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3217" />
         <source>QR Code not found</source>
         <translation type="unfinished">QR-koodia ei löydy</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3213" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3238" />
         <source>Unable to capture screen</source>
         <translation type="unfinished">Näyttöä ei voi kaapata</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3281" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3306" />
         <source>Remove %1 Unavailable item(s) ?</source>
         <translation type="unfinished">Poistetaanko % 1 ei saatavilla?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3335" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3360" />
         <source>Remove %1 Invalid item(s) ?</source>
         <translation type="unfinished">Poista %1 virheelliset kohteet?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3384" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3409" />
         <source>Replace domain server addresses with their resolved IPs?</source>
         <translation type="unfinished">Korvataanko toimialueen palvelinosoitteet niiden ratkaistuilla IP-osoitteilla?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3533" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3558" />
         <source>Clear</source>
         <translation type="unfinished">Selkeä</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3600" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3625" />
         <source>Delete selected Group</source>
         <translation type="unfinished">Poista valittu ryhmä</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3601" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3626" />
         <source>Edit selected Group</source>
         <translation type="unfinished">Muokkaa valittua ryhmää</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3610" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3635" />
         <source>Remove %1?</source>
         <translation type="unfinished">Poistetaanko %1?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4304" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4329" />
         <source>Cannot start</source>
         <translation type="unfinished">Ei voi aloittaa</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4305" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4330" />
         <source>Last download request has not finished yet</source>
         <translation type="unfinished">Viimeisin latauspyyntö ei ole vielä päättynyt</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4339" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4364" />
         <source>Failed to download update assets</source>
         <translation type="unfinished">Päivityssisällön lataaminen epäonnistui</translation>
     </message>
@@ -3325,7 +3325,7 @@ Poistettu %3 profiilia:
     </message>
     <message>
         <location filename="../../src/stats/traffic/TrafficLooper.cpp" line="115" />
-        <location filename="../../src/ui/mainwindow.cpp" line="2436" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2437" />
         <source>Proxy: %1
 Direct: %2</source>
         <translation type="unfinished">Välityspalvelin: %1
@@ -3384,97 +3384,102 @@ Kuinka päivittää?</translation>
         <translation type="unfinished">Käytetty: %1 Jäljellä: %2 Vanhenee: %3</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="223" />
+        <location filename="../../src/ui/mainwindow.cpp" line="224" />
         <source>Download Profiles</source>
         <translation type="unfinished">Lataa profiilit</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="224" />
+        <location filename="../../src/ui/mainwindow.cpp" line="225" />
         <source>Requesting profile error: %1</source>
         <translation type="unfinished">Profiilivirhettä pyydetään: %1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="391" />
+        <location filename="../../src/ui/mainwindow.cpp" line="392" />
         <source>
 Deleted %1 Duplicates</source>
         <translation type="unfinished">Poistettu %1 kaksoiskappaletta</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="425" />
+        <location filename="../../src/ui/mainwindow.cpp" line="426" />
         <source>
 Deleted %1 Invalid</source>
         <translation type="unfinished">Poistettu %1 Virheellinen</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="448" />
+        <location filename="../../src/ui/mainwindow.cpp" line="449" />
         <source>
 Deleted %1 Unavailable</source>
         <translation type="unfinished">Poistettu %1 Ei saatavilla</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1494" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1495" />
         <source>Check Rule Sets: %1</source>
         <translation type="unfinished">Tarkista sääntöjoukot: %1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1516" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1517" />
         <source>Requesting rule-set list error: %1</source>
         <translation type="unfinished">Pyydetään sääntöjoukkoluettelovirhettä: %1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2473" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2474" />
         <source>IP address: %1</source>
         <translation type="unfinished">IP-osoite: %1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2978" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2860" />
+        <source>Move profiles to group</source>
+        <translation type="unfinished">Siirrä profiilit ryhmään</translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/mainwindow.cpp" line="3003" />
         <source>Config copied</source>
         <translation type="unfinished">Konfig kopioitu</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2989" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3014" />
         <source>Copy core config</source>
         <translation type="unfinished">Kopioi ydinasetukset</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2990" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3015" />
         <source>Copy test config</source>
         <translation type="unfinished">Kopioi testiasetukset</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2991" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3016" />
         <location filename="../../src/ui/security_addon.cpp" line="22" />
         <location filename="../../src/ui/setting/dialog_vpn_settings.cpp" line="45" />
         <source>OK</source>
         <translation type="unfinished">OK</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4208" />
-        <location filename="../../src/ui/mainwindow.cpp" line="4219" />
-        <location filename="../../src/ui/mainwindow.cpp" line="4263" />
-        <location filename="../../src/ui/mainwindow.cpp" line="4286" />
-        <location filename="../../src/ui/mainwindow.cpp" line="4295" />
-        <location filename="../../src/ui/mainwindow.cpp" line="4330" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4233" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4244" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4288" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4311" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4320" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4355" />
         <source>Update</source>
         <translation type="unfinished">Päivittää</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4209" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4234" />
         <source>Not official support platform</source>
         <translation type="unfinished">Ei virallinen tukialusta</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4220" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4245" />
         <source>Requesting update error: %1</source>
         <translation type="unfinished">Päivitysvirhepyyntö: %1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4263" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4288" />
         <source>No update</source>
         <translation type="unfinished">Ei päivitystä</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4287" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4312" />
         <source>Update found: %1
 Release note:
 %2</source>
@@ -3483,17 +3488,17 @@ Julkaisutiedote:
 %2</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4290" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4315" />
         <source>Close</source>
         <translation type="unfinished">Lähellä</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4292" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4317" />
         <source>Open in browser</source>
         <translation type="unfinished">Avaa selaimessa</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4331" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4356" />
         <source>Update is ready, restart to install?</source>
         <translation type="unfinished">Päivitys on valmis, aloitetaanko asennus uudelleen?</translation>
     </message>
@@ -3833,24 +3838,24 @@ Julkaisutiedote:
 <context>
     <name>SpinnerDialog</name>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="171" />
+        <location filename="../../src/ui/mainwindow.cpp" line="172" />
         <source>Invalid JSON Array</source>
         <translation type="unfinished">Virheellinen JSON-taulukko</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="172" />
+        <location filename="../../src/ui/mainwindow.cpp" line="173" />
         <source>The provided input cannot be parsed to a valid route rule array:
 </source>
         <translation type="unfinished">Annettua syötettä ei voida jäsentää kelvolliseen reittisääntötaulukkoon:</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="295" />
+        <location filename="../../src/ui/mainwindow.cpp" line="296" />
         <source>Fetching information</source>
         <translation type="unfinished">Tietojen hakeminen</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="311" />
-        <location filename="../../src/ui/mainwindow.cpp" line="1235" />
+        <location filename="../../src/ui/mainwindow.cpp" line="312" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1236" />
         <source>Download Profiles</source>
         <translation type="unfinished">Lataa profiilit</translation>
     </message>

@@ -4,7 +4,7 @@ Sing-Box command line mode is available now! Just type for additional informatio
 `nekobox_core sing-box --help`
  
 Qt based Desktop cross-platform GUI proxy utility, empowered by [Sing-box](https://github.com/SagerNet/sing-box)
-Supports Windows 11/10/8.1/8/7 (arm64, x86_64, x86) / Linux  out of the box.
+Supports Windows 11/10 (arm64, x86_64, x86) / Linux  out of the box.
 
 <img width="558" height="641" alt="image" src="https://github.com/user-attachments/assets/577b861a-ed17-4f1f-b3ae-340bb43ec3f1" />
 
@@ -34,7 +34,7 @@ Supports Windows 11/10/8.1/8/7 (arm64, x86_64, x86) / Linux  out of the box.
 
 ## Supported protocols
  
-  SOCKS ; HTTP(S) ; Shadowsocks ; Trojan ; VMess ; VLESS ; TUIC ; Hysteria ; Hysteria2 ; AnyTLS ; Mieru ; Wireguard ; SSH ; ShadowTLS ; Custom Outbound ; Custom Config ; Chaining outbounds ; Extra Core ; Tor
+  SOCKS ; HTTP(S) ; Shadowsocks ; Trojan ; VMess ; VLESS ; TUIC ; Hysteria ; Hysteria2 ; AnyTLS ; Mieru ; Naive ; Wireguard ; SSH ; ShadowTLS ; Custom Outbound ; Custom Config ; Chaining outbounds ; Extra Core ; Tor
 
 ## Subscription Formats
 
@@ -127,7 +127,7 @@ Started in 2021, Throne has revolutionized creator gifting through its Wishlist 
 If [NekoBox](https://github.com/qr243vbi/nekobox) does not work in tun mode, then issue might be with tun configurations. Try to open tun settings, set stack to gvisor or set different tun address (for example, 168.19.0.1/24)
 
 **I have computer with Windows 7, or Window 8, or Windows 8.1. Which version of [NekoBox](https://github.com/qr243vbi/nekobox) should I download?** <br/>
-For Windows 7, Windows 8 and Windows 8.1 it is recommended to install 32 bit [NekoBox](https://github.com/qr243vbi/nekobox), even if you run Windows with x64 cpu support. In generally, 64 bit executables does not means run faster than 32 bit unless program needs more than 2Gb of ram memory, which is not the case with [NekoBox](https://github.com/qr243vbi/nekobox). 64 bit executables are built with latest Qt and does support Windows 10/11 dark theme. You can read more about 32 bit software at [Reddit topic](https://www.reddit.com/r/AskComputerScience/comments/15aqv4o/are_there_any_advantages_to_32_bit_software_or_64/)
+For Windows 7, Windows 8, and Windows 8.1, it is recommended to first install [VxKex-NEXT](https://github.com/YuZhouRen86/VxKex-NEXT/releases) from the latest release available. After installing VxKex-NEXT, you should launch NekoBox using the VxVex mode to ensure proper functionality.
 
 **I got the msvcp140.dll not found error on windows** <br/>
 The "msvcp140.dll not found" error usually means that the Microsoft Visual C++ Redistributable is missing or corrupted. To fix this, try install or reinstall the Microsoft Visual C++ Redistributable from the official Microsoft website
