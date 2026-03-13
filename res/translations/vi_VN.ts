@@ -2339,7 +2339,7 @@ Nếu giá trị mặc định không hoạt động, hãy thử thay đổi nó
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="51" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="54" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="647" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="644" />
         <source>Profiles</source>
         <translation type="unfinished">Hồ sơ</translation>
     </message>
@@ -2373,324 +2373,333 @@ Nếu giá trị mặc định không hoạt động, hãy thử thay đổi nó
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="161" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="597" />
-        <location filename="../../src/ui/mainwindow.cpp" line="2493" />
-        <location filename="../../src/ui/mainwindow.cpp" line="2496" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="594" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2501" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2504" />
         <source>System Proxy</source>
         <translation type="unfinished">Proxy hệ thống</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="231" />
         <source>URL Test</source>
-        <translation type="unfinished">Kiểm tra URL</translation>
+        <translation type="obsolete">Kiểm tra URL</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="309" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="306" />
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="140" />
         <source>Type</source>
         <translation type="unfinished">Kiểu</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="314" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="311" />
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="143" />
         <source>Address</source>
         <translation type="unfinished">Địa chỉ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="319" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="316" />
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="146" />
         <source>Name</source>
         <translation type="unfinished">Tên</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="324" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="321" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="291" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="293" />
         <source>Test Result</source>
         <translation type="unfinished">Kết quả kiểm tra</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="329" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="489" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="326" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="486" />
         <source>Traffic</source>
         <translation type="unfinished">Giao thông</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="394" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="391" />
         <source>Logs</source>
         <translation type="unfinished">Nhật ký</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="429" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="426" />
         <source>Connections</source>
         <translation type="unfinished">Kết nối</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="457" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="454" />
         <source>Destination (Domain)</source>
         <translation type="unfinished">Đích (Tên miền)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="460" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="457" />
         <source>Click To Disable Sorting</source>
         <translation type="unfinished">Bấm để tắt sắp xếp</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="465" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="462" />
         <source>Process</source>
         <translation type="unfinished">Quá trình</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="468" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="465" />
         <source>Click To Sort By Process</source>
         <translation type="unfinished">Nhấn vào đây để sắp xếp theo quy trình</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="473" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="470" />
         <source>Protocol</source>
         <translation type="unfinished">Giao thức</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="476" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="473" />
         <source>Click To Sort By Protocol</source>
         <translation type="unfinished">Bấm Để Sắp Xếp Theo Giao Thức</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="481" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="478" />
         <source>Outbound</source>
         <translation type="unfinished">Đi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="484" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="481" />
         <source>Click To Sort By Outbound</source>
         <translation type="unfinished">Nhấn vào đây để sắp xếp theo chiều đi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="492" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="489" />
         <source>Click To Toggle sort by Traffic</source>
         <translation type="unfinished">Nhấp để chuyển đổi sắp xếp theo lưu lượng truy cập</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="501" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="498" />
         <source>Traffic Graph</source>
         <translation type="unfinished">Biểu đồ giao thông</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="593" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="590" />
         <source>Program</source>
         <translation type="unfinished">Chương trình</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="616" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="613" />
         <source>Preferences</source>
         <translation type="unfinished">Tùy chọn</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="627" />
         <source>Server</source>
-        <translation type="unfinished">Máy chủ</translation>
+        <translation type="obsolete">Máy chủ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="631" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="628" />
         <source>Share</source>
         <translation type="unfinished">Chia sẻ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="641" />
         <source>Current group</source>
-        <translation type="unfinished">Nhóm hiện tại</translation>
+        <translation type="obsolete">Nhóm hiện tại</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="658" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="231" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="654" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="701" />
         <source>Test</source>
         <translation type="unfinished">Bài kiểm tra</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="687" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="624" />
+        <source>Current Selected</source>
+        <translation type="unfinished">Đã chọn hiện tại</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="638" />
+        <source>Current Group</source>
+        <translation type="unfinished">Nhóm hiện tại</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="683" />
         <source>Hidden menu</source>
         <translation type="unfinished">Trình đơn ẩn</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="700" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="696" />
         <source>Routing Menu</source>
         <translation type="unfinished">Menu định tuyến</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="711" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="714" />
         <source>Exit</source>
         <translation type="unfinished">Ra</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="716" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="719" />
         <source>Toggle Window</source>
         <translation type="unfinished">Chuyển đổi cửa sổ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="721" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="724" />
         <source>Basic Settings</source>
         <translation type="unfinished">Cài đặt cơ bản</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="726" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="729" />
         <source>New profile</source>
         <translation type="unfinished">Hồ sơ mới</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="731" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="734" />
         <source>Groups</source>
         <translation type="unfinished">Nhóm</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="736" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3561" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3571" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="739" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3569" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3579" />
         <source>Start</source>
         <translation type="unfinished">Bắt đầu</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="744" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3560" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3571" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="747" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3568" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3579" />
         <source>Stop</source>
         <translation type="unfinished">Dừng lại</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="752" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="755" />
         <source>Edit</source>
         <translation type="unfinished">Biên tập</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="760" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="763" />
         <source>Routing Settings</source>
         <translation type="unfinished">Cài đặt định tuyến</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="765" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="768" />
         <source>Add profile from clipboard</source>
         <translation type="unfinished">Thêm hồ sơ từ clipboard</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="773" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="776" />
         <source>Delete</source>
         <translation type="unfinished">Xóa bỏ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="781" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="784" />
         <source>Debug Info</source>
         <translation type="unfinished">Thông tin gỡ lỗi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="786" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="789" />
         <source>QR Code and link</source>
         <translation type="unfinished">Mã QR và liên kết</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="794" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="797" />
         <source>Copy Link</source>
         <translation type="unfinished">Sao chép liên kết</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="815" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1056" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="818" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1059" />
         <source>Clear Test Result</source>
         <translation type="unfinished">Xóa kết quả kiểm tra</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="823" />
-        <location filename="../../src/ui/mainwindow.cpp" line="1402" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="826" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1410" />
         <source>Export %1 config</source>
         <translation type="unfinished">Xuất cấu hình %1</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="831" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="834" />
         <source>Reset Traffic</source>
         <translation type="unfinished">Đặt lại lưu lượng truy cập</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="839" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="842" />
         <source>Scan QR Code</source>
         <translation type="unfinished">Quét mã QR</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="847" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="850" />
         <source>Enable System Proxy</source>
         <translation type="unfinished">Kích hoạt proxy hệ thống</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="855" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="858" />
         <source>Disable</source>
         <translation type="unfinished">Vô hiệu hóa</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="860" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="863" />
         <source>Remove Duplicates</source>
         <translation type="unfinished">Xóa trùng lặp</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="868" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="945" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="953" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="871" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="948" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="956" />
         <source>fake</source>
         <translation type="unfinished">giả mạo</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="876" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1152" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="879" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1155" />
         <source>Move</source>
         <translation type="unfinished">Di chuyển</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="887" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="890" />
         <source>Start with system</source>
         <translation type="unfinished">Bắt đầu với hệ thống</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="895" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="898" />
         <source>Remember last profile</source>
         <translation type="unfinished">Nhớ hồ sơ cuối cùng</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="903" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="906" />
         <source>Allow other devices to connect</source>
         <translation type="unfinished">Cho phép các thiết bị khác kết nối</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="908" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="911" />
         <source>Remove Unavailable</source>
         <translation type="unfinished">Xóa không có sẵn</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="916" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="919" />
         <source>Full Test</source>
         <translation type="unfinished">Kiểm tra đầy đủ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="924" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="927" />
         <source>Hotkey Settings</source>
         <translation type="unfinished">Cài đặt phím nóng</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="929" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="932" />
         <source>Select All</source>
         <translation type="unfinished">Chọn tất cả</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="937" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="940" />
         <source>Copy Custom Links</source>
         <translation type="unfinished">Sao chép liên kết tùy chỉnh</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="961" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="964" />
         <source>Copy links</source>
         <translation type="unfinished">Sao chép liên kết</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1045" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1048" />
         <source>Url Test</source>
         <translation type="unfinished">Kiểm tra URL</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1078" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1081" />
         <source>Resolve Domain</source>
         <translation type="unfinished">Giải quyết tên miền</translation>
     </message>
@@ -2703,48 +2712,48 @@ Nếu giá trị mặc định không hoạt động, hãy thử thay đổi nó
         <translation type="obsolete">Sao chép liên kết đã chọn</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="972" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="975" />
         <source>Enable Tun</source>
         <translation type="unfinished">Kích hoạt điều chỉnh</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="977" />
-        <location filename="../../src/ui/mainwindow.cpp" line="2880" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="980" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2888" />
         <source>Clone</source>
         <translation type="unfinished">Dòng vô tính</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="985" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="988" />
         <source>Update subscription</source>
         <translation type="unfinished">Cập nhật đăng ký</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="996" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="999" />
         <source>Resolve domain</source>
         <translation type="unfinished">Giải quyết tên miền</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1004" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1007" />
         <source>Tun Settings</source>
         <translation type="unfinished">Cài đặt điều chỉnh</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1009" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1012" />
         <source>Restart Program</source>
         <translation type="unfinished">Khởi động lại chương trình</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1014" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1017" />
         <source>Open Config Folder</source>
         <translation type="unfinished">Mở thư mục cấu hình</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1035" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1038" />
         <source>Restart Proxy</source>
         <translation type="unfinished">Khởi động lại proxy</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1040" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1043" />
         <source>Stop Testing</source>
         <translation type="unfinished">Dừng thử nghiệm</translation>
     </message>
@@ -2761,7 +2770,7 @@ Nếu giá trị mặc định không hoạt động, hãy thử thay đổi nó
         <translation type="obsolete">Xóa kết quả kiểm tra đã chọn</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1067" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1070" />
         <source>Url Test Group</source>
         <translation type="unfinished">Nhóm kiểm tra url</translation>
     </message>
@@ -2774,7 +2783,7 @@ Nếu giá trị mặc định không hoạt động, hãy thử thay đổi nó
         <translation type="obsolete">Giải quyết tên miền đã chọn</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1086" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1089" />
         <source>Remove Invalid</source>
         <translation type="unfinished">Xóa không hợp lệ</translation>
     </message>
@@ -2787,58 +2796,58 @@ Nếu giá trị mặc định không hoạt động, hãy thử thay đổi nó
         <translation type="obsolete">Mở Trình quản lý</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1097" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1100" />
         <source>Speedtest Current</source>
         <translation type="unfinished">Tốc độ hiện tại</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1102" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1105" />
         <source>Full test Selected</source>
         <translation type="unfinished">Kiểm tra đầy đủ đã chọn</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1107" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1110" />
         <source>Download test Selected</source>
         <translation type="unfinished">Tải xuống bài kiểm tra đã chọn</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1112" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1115" />
         <source>Upload test Selected</source>
         <translation type="unfinished">Tải lên bài kiểm tra đã chọn</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1117" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1120" />
         <source>Country test Selected</source>
         <translation type="unfinished">Kiểm tra quốc gia đã chọn</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1122" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1125" />
         <source>Simple download test Selected</source>
         <translation type="unfinished">Kiểm tra tải xuống đơn giản đã chọn</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1127" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1130" />
         <source>Speedtest Group</source>
         <translation type="unfinished">Nhóm kiểm tra tốc độ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1132" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1135" />
         <source>Hide window</source>
         <translation type="unfinished">Ẩn cửa sổ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1137" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1140" />
         <source>Add profile from File</source>
         <translation type="unfinished">Thêm hồ sơ từ Tệp</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1142" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3589" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1145" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3597" />
         <source>Add new Group</source>
         <translation type="unfinished">Thêm nhóm mới</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1147" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1150" />
         <source>Security Settings</source>
         <translation type="unfinished">Cài đặt bảo mật</translation>
     </message>
@@ -2917,150 +2926,150 @@ Nếu giá trị mặc định không hoạt động, hãy thử thay đổi nó
         <translation type="unfinished">Bật AdBlock</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1616" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1624" />
         <source>Error</source>
         <translation type="unfinished">Lỗi</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1703" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1711" />
         <source>Tun Settings changed</source>
         <translation type="unfinished">Cài đặt Tun đã thay đổi</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1704" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1712" />
         <source>Restart Tun to take effect.</source>
         <translation type="unfinished">Khởi động lại Tun để có hiệu lực.</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1710" />
-        <location filename="../../src/ui/mainwindow.cpp" line="1768" />
-        <location filename="../../src/ui/mainwindow.cpp" line="2934" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3305" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3359" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3408" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3634" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1718" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1776" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2942" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3313" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3367" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3416" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3642" />
         <source>Confirmation</source>
         <translation type="unfinished">Xác nhận</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1711" />
-        <location filename="../../src/ui/mainwindow.cpp" line="1769" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1719" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1777" />
         <source>Settings changed, restart proxy?</source>
         <translation type="unfinished">Cài đặt đã thay đổi, khởi động lại proxy?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1740" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1748" />
         <source>Settings changed</source>
         <translation type="unfinished">Đã thay đổi cài đặt</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1741" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1749" />
         <source>Restart the program to take effect.</source>
         <translation type="unfinished">Khởi động lại chương trình để có hiệu lực.</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1784" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1792" />
         <source>Imported %1 profile(s)</source>
         <translation type="unfinished">Đã nhập %1 hồ sơ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2051" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2059" />
         <source>User opted for no privilege req, some features may not work</source>
         <translation type="unfinished">Người dùng đã chọn không yêu cầu đặc quyền, một số tính năng có thể không hoạt động</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2115" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2123" />
         <source>Please give the core root privileges</source>
         <translation type="unfinished">Vui lòng cấp quyền root cốt lõi</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2469" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2477" />
         <source>Not Running</source>
         <translation type="unfinished">Không chạy</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2881" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2889" />
         <source>Clone %1 item(s)</source>
         <translation type="unfinished">Sao chép %1 mục</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2915" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2923" />
         <source> Confirmation </source>
         <translation type="unfinished">Xác nhận</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2916" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2924" />
         <source> Remove %1 item(s) ? </source>
         <translation type="unfinished">Xóa %1 mục ?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2935" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2943" />
         <source>Remove %1 item(s) ?</source>
         <translation type="unfinished">Xóa %1 mục ?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2972" />
-        <location filename="../../src/ui/mainwindow.cpp" line="2985" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2980" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2993" />
         <source>Copied %1 item(s)</source>
         <translation type="unfinished">Đã sao chép %1 mục</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3217" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3225" />
         <source>QR Code not found</source>
         <translation type="unfinished">Không tìm thấy mã QR</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3238" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3246" />
         <source>Unable to capture screen</source>
         <translation type="unfinished">Không thể chụp màn hình</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3306" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3314" />
         <source>Remove %1 Unavailable item(s) ?</source>
         <translation type="unfinished">Xóa %1 (các) mục không có sẵn?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3360" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3368" />
         <source>Remove %1 Invalid item(s) ?</source>
         <translation type="unfinished">Xóa %1 mục không hợp lệ ?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3409" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3417" />
         <source>Replace domain server addresses with their resolved IPs?</source>
         <translation type="unfinished">Thay thế địa chỉ máy chủ miền bằng IP đã được phân giải của chúng?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3558" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3566" />
         <source>Clear</source>
         <translation type="unfinished">Thông thoáng</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3625" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3633" />
         <source>Delete selected Group</source>
         <translation type="unfinished">Xóa nhóm đã chọn</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3626" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3634" />
         <source>Edit selected Group</source>
         <translation type="unfinished">Chỉnh sửa nhóm đã chọn</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3635" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3643" />
         <source>Remove %1?</source>
         <translation type="unfinished">Xóa %1?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4329" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4337" />
         <source>Cannot start</source>
         <translation type="unfinished">Không thể bắt đầu</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4330" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4338" />
         <source>Last download request has not finished yet</source>
         <translation type="unfinished">Yêu cầu tải xuống cuối cùng vẫn chưa kết thúc</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4364" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4372" />
         <source>Failed to download update assets</source>
         <translation type="unfinished">Không tải được nội dung cập nhật xuống</translation>
     </message>
@@ -3244,7 +3253,7 @@ Nếu giá trị mặc định không hoạt động, hãy thử thay đổi nó
 <context>
     <name>QAction</name>
     <message>
-        <location filename="../../src/ui/security_addon.cpp" line="347" />
+        <location filename="../../src/ui/security_addon.cpp" line="346" />
         <source>Security Settings</source>
         <translation type="unfinished">Cài đặt bảo mật</translation>
     </message>
@@ -3349,7 +3358,7 @@ Hồ sơ %3 đã bị xóa:
     </message>
     <message>
         <location filename="../../src/stats/traffic/TrafficLooper.cpp" line="115" />
-        <location filename="../../src/ui/mainwindow.cpp" line="2437" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2445" />
         <source>Proxy: %1
 Direct: %2</source>
         <translation type="unfinished">Ủy quyền: %1
@@ -3436,74 +3445,74 @@ Deleted %1 Unavailable</source>
         <translation type="unfinished">Đã xóa %1 Không có sẵn</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1495" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1503" />
         <source>Check Rule Sets: %1</source>
         <translation type="unfinished">Kiểm tra bộ quy tắc: %1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1517" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1525" />
         <source>Requesting rule-set list error: %1</source>
         <translation type="unfinished">Đang yêu cầu lỗi danh sách bộ quy tắc: %1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2474" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2482" />
         <source>IP address: %1</source>
         <translation type="unfinished">Địa chỉ IP: %1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2860" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2868" />
         <source>Move profiles to group</source>
         <translation type="unfinished">Di chuyển hồ sơ vào nhóm</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3003" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3011" />
         <source>Config copied</source>
         <translation type="unfinished">Đã sao chép cấu hình</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3014" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3022" />
         <source>Copy core config</source>
         <translation type="unfinished">Sao chép cấu hình lõi</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3015" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3023" />
         <source>Copy test config</source>
         <translation type="unfinished">Sao chép cấu hình thử nghiệm</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3016" />
-        <location filename="../../src/ui/security_addon.cpp" line="22" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3024" />
+        <location filename="../../src/ui/security_addon.cpp" line="21" />
         <location filename="../../src/ui/setting/dialog_vpn_settings.cpp" line="45" />
         <source>OK</source>
         <translation type="unfinished">ĐƯỢC RỒI</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4233" />
-        <location filename="../../src/ui/mainwindow.cpp" line="4244" />
-        <location filename="../../src/ui/mainwindow.cpp" line="4288" />
-        <location filename="../../src/ui/mainwindow.cpp" line="4311" />
-        <location filename="../../src/ui/mainwindow.cpp" line="4320" />
-        <location filename="../../src/ui/mainwindow.cpp" line="4355" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4241" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4252" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4296" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4319" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4328" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4363" />
         <source>Update</source>
         <translation type="unfinished">Cập nhật</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4234" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4242" />
         <source>Not official support platform</source>
         <translation type="unfinished">Không phải nền tảng hỗ trợ chính thức</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4245" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4253" />
         <source>Requesting update error: %1</source>
         <translation type="unfinished">Lỗi cập nhật yêu cầu: %1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4288" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4296" />
         <source>No update</source>
         <translation type="unfinished">Không có cập nhật</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4312" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4320" />
         <source>Update found: %1
 Release note:
 %2</source>
@@ -3512,22 +3521,22 @@ Ghi chú phát hành:
 %2</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4315" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4323" />
         <source>Close</source>
         <translation type="unfinished">Đóng</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4317" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4325" />
         <source>Open in browser</source>
         <translation type="unfinished">Mở trong trình duyệt</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4356" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4364" />
         <source>Update is ready, restart to install?</source>
         <translation type="unfinished">Cập nhật đã sẵn sàng, khởi động lại để cài đặt?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/security_addon.cpp" line="21" />
+        <location filename="../../src/ui/security_addon.cpp" line="20" />
         <source>Access denied</source>
         <translation type="unfinished">Quyền truy cập bị từ chối</translation>
     </message>

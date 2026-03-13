@@ -2339,7 +2339,7 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="51" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="54" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="647" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="644" />
         <source>Profiles</source>
         <translation type="unfinished">Профили</translation>
     </message>
@@ -2373,370 +2373,379 @@ For more information, see the document "Configuration/DNS".</source>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="161" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="597" />
-        <location filename="../../src/ui/mainwindow.cpp" line="2493" />
-        <location filename="../../src/ui/mainwindow.cpp" line="2496" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="594" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2501" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2504" />
         <source>System Proxy</source>
         <translation type="unfinished">Системски прокси</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="231" />
         <source>URL Test</source>
-        <translation type="unfinished">Тест за URL</translation>
+        <translation type="obsolete">Тест за URL</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="309" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="306" />
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="140" />
         <source>Type</source>
         <translation type="unfinished">Тип</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="314" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="311" />
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="143" />
         <source>Address</source>
         <translation type="unfinished">Адреса</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="319" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="316" />
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="146" />
         <source>Name</source>
         <translation type="unfinished">Име</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="324" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="321" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="291" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="293" />
         <source>Test Result</source>
         <translation type="unfinished">Резултат од тестот</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="329" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="489" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="326" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="486" />
         <source>Traffic</source>
         <translation type="unfinished">Сообраќајот</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="394" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="391" />
         <source>Logs</source>
         <translation type="unfinished">Дневници</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="429" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="426" />
         <source>Connections</source>
         <translation type="unfinished">Врски</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="457" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="454" />
         <source>Destination (Domain)</source>
         <translation type="unfinished">Дестинација (домен)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="460" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="457" />
         <source>Click To Disable Sorting</source>
         <translation type="unfinished">Кликнете За да го исклучите сортирањето</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="465" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="462" />
         <source>Process</source>
         <translation type="unfinished">Процес</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="468" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="465" />
         <source>Click To Sort By Process</source>
         <translation type="unfinished">Кликнете за да подредите по процес</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="473" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="470" />
         <source>Protocol</source>
         <translation type="unfinished">Протокол</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="476" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="473" />
         <source>Click To Sort By Protocol</source>
         <translation type="unfinished">Кликнете за подредување по протокол</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="481" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="478" />
         <source>Outbound</source>
         <translation type="unfinished">Излез</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="484" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="481" />
         <source>Click To Sort By Outbound</source>
         <translation type="unfinished">Кликнете за да подредите по излезни</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="492" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="489" />
         <source>Click To Toggle sort by Traffic</source>
         <translation type="unfinished">Кликнете за да вклучите сортирање по сообраќај</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="501" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="498" />
         <source>Traffic Graph</source>
         <translation type="unfinished">График на сообраќај</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="593" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="590" />
         <source>Program</source>
         <translation type="unfinished">Програма</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="616" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="613" />
         <source>Preferences</source>
         <translation type="unfinished">Преференци</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="627" />
         <source>Server</source>
-        <translation type="unfinished">Сервер</translation>
+        <translation type="obsolete">Сервер</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="631" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="628" />
         <source>Share</source>
         <translation type="unfinished">Споделете</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="641" />
         <source>Current group</source>
-        <translation type="unfinished">Тековна група</translation>
+        <translation type="obsolete">Тековна група</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="658" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="231" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="654" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="701" />
         <source>Test</source>
         <translation type="unfinished">Тест</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="687" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="624" />
+        <source>Current Selected</source>
+        <translation type="unfinished">Избрано тековно</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="638" />
+        <source>Current Group</source>
+        <translation type="unfinished">Тековна група</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="683" />
         <source>Hidden menu</source>
         <translation type="unfinished">Скриено мени</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="700" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="696" />
         <source>Routing Menu</source>
         <translation type="unfinished">Мени за рутирање</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="711" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="714" />
         <source>Exit</source>
         <translation type="unfinished">Излезете</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="716" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="719" />
         <source>Toggle Window</source>
         <translation type="unfinished">Вклучете го прозорецот</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="721" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="724" />
         <source>Basic Settings</source>
         <translation type="unfinished">Основни поставки</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="726" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="729" />
         <source>New profile</source>
         <translation type="unfinished">Нов профил</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="731" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="734" />
         <source>Groups</source>
         <translation type="unfinished">Групи</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="736" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3561" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3571" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="739" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3569" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3579" />
         <source>Start</source>
         <translation type="unfinished">Започнете</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="744" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3560" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3571" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="747" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3568" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3579" />
         <source>Stop</source>
         <translation type="unfinished">Стоп</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="752" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="755" />
         <source>Edit</source>
         <translation type="unfinished">Уреди</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="760" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="763" />
         <source>Routing Settings</source>
         <translation type="unfinished">Поставки за рутирање</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="765" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="768" />
         <source>Add profile from clipboard</source>
         <translation type="unfinished">Додајте профил од таблата со исечоци</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="773" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="776" />
         <source>Delete</source>
         <translation type="unfinished">Избриши</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="781" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="784" />
         <source>Debug Info</source>
         <translation type="unfinished">Информации за отстранување грешки</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="786" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="789" />
         <source>QR Code and link</source>
         <translation type="unfinished">QR код и врска</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="794" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="797" />
         <source>Copy Link</source>
         <translation type="unfinished">Копирај врска</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="815" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1056" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="818" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1059" />
         <source>Clear Test Result</source>
         <translation type="unfinished">Исчистете го резултатот од тестот</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="823" />
-        <location filename="../../src/ui/mainwindow.cpp" line="1402" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="826" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1410" />
         <source>Export %1 config</source>
         <translation type="unfinished">Извези % 1 конфигурација</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="831" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="834" />
         <source>Reset Traffic</source>
         <translation type="unfinished">Ресетирајте го сообраќајот</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="839" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="842" />
         <source>Scan QR Code</source>
         <translation type="unfinished">Скенирајте QR-код</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="847" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="850" />
         <source>Enable System Proxy</source>
         <translation type="unfinished">Овозможи системски прокси</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="855" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="858" />
         <source>Disable</source>
         <translation type="unfinished">Оневозможи</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="860" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="863" />
         <source>Remove Duplicates</source>
         <translation type="unfinished">Отстранете ги дупликатите</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="868" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="945" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="953" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="871" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="948" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="956" />
         <source>fake</source>
         <translation type="unfinished">лажен</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="876" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1152" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="879" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1155" />
         <source>Move</source>
         <translation type="unfinished">Премести</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="887" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="890" />
         <source>Start with system</source>
         <translation type="unfinished">Започнете со системот</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="895" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="898" />
         <source>Remember last profile</source>
         <translation type="unfinished">Запомнете го последниот профил</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="903" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="906" />
         <source>Allow other devices to connect</source>
         <translation type="unfinished">Дозволете други уреди да се поврзат</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="908" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="911" />
         <source>Remove Unavailable</source>
         <translation type="unfinished">Отстрани Недостапно</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="916" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="919" />
         <source>Full Test</source>
         <translation type="unfinished">Целосен тест</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="924" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="927" />
         <source>Hotkey Settings</source>
         <translation type="unfinished">Поставки за копчињата</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="929" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="932" />
         <source>Select All</source>
         <translation type="unfinished">Изберете Сите</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="937" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="940" />
         <source>Copy Custom Links</source>
         <translation type="unfinished">Копирајте прилагодени врски</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="961" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="964" />
         <source>Copy links</source>
         <translation type="unfinished">Копирај врски</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1045" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1048" />
         <source>Url Test</source>
         <translation type="unfinished">УРЛ тест</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1078" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1081" />
         <source>Resolve Domain</source>
         <translation type="unfinished">Решавање на домен</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="972" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="975" />
         <source>Enable Tun</source>
         <translation type="unfinished">Овозможи Tun</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="977" />
-        <location filename="../../src/ui/mainwindow.cpp" line="2880" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="980" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2888" />
         <source>Clone</source>
         <translation type="unfinished">Клон</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="985" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="988" />
         <source>Update subscription</source>
         <translation type="unfinished">Ажурирајте ја претплатата</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="996" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="999" />
         <source>Resolve domain</source>
         <translation type="unfinished">Решавање на доменот</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1004" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1007" />
         <source>Tun Settings</source>
         <translation type="unfinished">Прилагодете ги поставките</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1009" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1012" />
         <source>Restart Program</source>
         <translation type="unfinished">Рестартирајте ја програмата</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1014" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1017" />
         <source>Open Config Folder</source>
         <translation type="unfinished">Отворете ја папката за конфигурација</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1035" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1038" />
         <source>Restart Proxy</source>
         <translation type="unfinished">Рестартирајте го прокси</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1040" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1043" />
         <source>Stop Testing</source>
         <translation type="unfinished">Стоп за тестирање</translation>
     </message>
@@ -2745,7 +2754,7 @@ For more information, see the document "Configuration/DNS".</source>
         <translation type="obsolete">Ctrl+Shift+S</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1067" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1070" />
         <source>Url Test Group</source>
         <translation type="unfinished">УРЛ тест група</translation>
     </message>
@@ -2754,7 +2763,7 @@ For more information, see the document "Configuration/DNS".</source>
         <translation type="obsolete">Ctrl+Shift+G</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1086" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1089" />
         <source>Remove Invalid</source>
         <translation type="unfinished">Отстрани неважечки</translation>
     </message>
@@ -2763,58 +2772,58 @@ For more information, see the document "Configuration/DNS".</source>
         <translation type="obsolete">Ctrl+Alt+I</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1097" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1100" />
         <source>Speedtest Current</source>
         <translation type="unfinished">Најбрзина струја</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1102" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1105" />
         <source>Full test Selected</source>
         <translation type="unfinished">Целосен тест е избран</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1107" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1110" />
         <source>Download test Selected</source>
         <translation type="unfinished">Избран е тест за преземање</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1112" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1115" />
         <source>Upload test Selected</source>
         <translation type="unfinished">Тестот за поставување е избран</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1117" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1120" />
         <source>Country test Selected</source>
         <translation type="unfinished">Тест за земја е избран</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1122" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1125" />
         <source>Simple download test Selected</source>
         <translation type="unfinished">Избран е едноставен тест за преземање</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1127" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1130" />
         <source>Speedtest Group</source>
         <translation type="unfinished">Брзина група</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1132" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1135" />
         <source>Hide window</source>
         <translation type="unfinished">Сокриј го прозорецот</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1137" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1140" />
         <source>Add profile from File</source>
         <translation type="unfinished">Додајте профил од Датотека</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1142" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3589" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1145" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3597" />
         <source>Add new Group</source>
         <translation type="unfinished">Додадете нова група</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1147" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1150" />
         <source>Security Settings</source>
         <translation type="unfinished">Поставки за безбедност</translation>
     </message>
@@ -2893,150 +2902,150 @@ For more information, see the document "Configuration/DNS".</source>
         <translation type="unfinished">Овозможи AdBlock</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1616" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1624" />
         <source>Error</source>
         <translation type="unfinished">Грешка</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1703" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1711" />
         <source>Tun Settings changed</source>
         <translation type="unfinished">Поставките за прилагодување се сменија</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1704" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1712" />
         <source>Restart Tun to take effect.</source>
         <translation type="unfinished">Рестартирајте го Tun за да стапи на сила.</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1710" />
-        <location filename="../../src/ui/mainwindow.cpp" line="1768" />
-        <location filename="../../src/ui/mainwindow.cpp" line="2934" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3305" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3359" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3408" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3634" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1718" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1776" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2942" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3313" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3367" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3416" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3642" />
         <source>Confirmation</source>
         <translation type="unfinished">Потврда</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1711" />
-        <location filename="../../src/ui/mainwindow.cpp" line="1769" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1719" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1777" />
         <source>Settings changed, restart proxy?</source>
         <translation type="unfinished">Поставките се сменија, рестартирај прокси?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1740" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1748" />
         <source>Settings changed</source>
         <translation type="unfinished">Поставките се сменија</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1741" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1749" />
         <source>Restart the program to take effect.</source>
         <translation type="unfinished">Рестартирајте ја програмата за да стапи на сила.</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1784" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1792" />
         <source>Imported %1 profile(s)</source>
         <translation type="unfinished">Увезени % 1 профил(и)</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2051" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2059" />
         <source>User opted for no privilege req, some features may not work</source>
         <translation type="unfinished">Корисникот избра без барање за привилегии, некои функции може да не работат</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2115" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2123" />
         <source>Please give the core root privileges</source>
         <translation type="unfinished">Ве молиме дајте ги основните права за root</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2469" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2477" />
         <source>Not Running</source>
         <translation type="unfinished">Не трчање</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2881" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2889" />
         <source>Clone %1 item(s)</source>
         <translation type="unfinished">Клонирајте % 1 ставка(и)</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2915" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2923" />
         <source> Confirmation </source>
         <translation type="unfinished">Потврда</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2916" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2924" />
         <source> Remove %1 item(s) ? </source>
         <translation type="unfinished">Да се ​​отстрани %1 ставка(и)?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2935" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2943" />
         <source>Remove %1 item(s) ?</source>
         <translation type="unfinished">Да се ​​отстрани %1 ставка(и)?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2972" />
-        <location filename="../../src/ui/mainwindow.cpp" line="2985" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2980" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2993" />
         <source>Copied %1 item(s)</source>
         <translation type="unfinished">Копирани %1 ставки</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3217" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3225" />
         <source>QR Code not found</source>
         <translation type="unfinished">QR-кодот не е пронајден</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3238" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3246" />
         <source>Unable to capture screen</source>
         <translation type="unfinished">Не може да се сними екранот</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3306" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3314" />
         <source>Remove %1 Unavailable item(s) ?</source>
         <translation type="unfinished">Отстрани % 1 Недостапни ставки?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3360" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3368" />
         <source>Remove %1 Invalid item(s) ?</source>
         <translation type="unfinished">Отстрани %1 неважечки ставки?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3409" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3417" />
         <source>Replace domain server addresses with their resolved IPs?</source>
         <translation type="unfinished">Да се ​​заменат адресите на серверот на доменот со нивните решени IP-адреси?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3558" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3566" />
         <source>Clear</source>
         <translation type="unfinished">Јасно</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3625" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3633" />
         <source>Delete selected Group</source>
         <translation type="unfinished">Избришете ја избраната група</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3626" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3634" />
         <source>Edit selected Group</source>
         <translation type="unfinished">Уредете ја избраната група</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3635" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3643" />
         <source>Remove %1?</source>
         <translation type="unfinished">Да се ​​отстрани %1?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4329" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4337" />
         <source>Cannot start</source>
         <translation type="unfinished">Не може да започне</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4330" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4338" />
         <source>Last download request has not finished yet</source>
         <translation type="unfinished">Последното барање за преземање сè уште не е завршено</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4364" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4372" />
         <source>Failed to download update assets</source>
         <translation type="unfinished">Не успеа да се преземат средствата за ажурирање</translation>
     </message>
@@ -3220,7 +3229,7 @@ For more information, see the document "Configuration/DNS".</source>
 <context>
     <name>QAction</name>
     <message>
-        <location filename="../../src/ui/security_addon.cpp" line="347" />
+        <location filename="../../src/ui/security_addon.cpp" line="346" />
         <source>Security Settings</source>
         <translation type="unfinished">Поставки за безбедност</translation>
     </message>
@@ -3325,7 +3334,7 @@ Deleted %3 Profiles:
     </message>
     <message>
         <location filename="../../src/stats/traffic/TrafficLooper.cpp" line="115" />
-        <location filename="../../src/ui/mainwindow.cpp" line="2437" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2445" />
         <source>Proxy: %1
 Direct: %2</source>
         <translation type="unfinished">Прокси: % 1
@@ -3412,74 +3421,74 @@ Deleted %1 Unavailable</source>
         <translation type="unfinished">Избришано % 1 Недостапно</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1495" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1503" />
         <source>Check Rule Sets: %1</source>
         <translation type="unfinished">Проверете ги групите правила: %1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1517" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1525" />
         <source>Requesting rule-set list error: %1</source>
         <translation type="unfinished">Барање грешка во списокот со множество правила: % 1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2474" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2482" />
         <source>IP address: %1</source>
         <translation type="unfinished">IP адреса: %1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2860" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2868" />
         <source>Move profiles to group</source>
         <translation type="unfinished">Преместете ги профилите во групата</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3003" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3011" />
         <source>Config copied</source>
         <translation type="unfinished">Конфигурацијата е копирана</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3014" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3022" />
         <source>Copy core config</source>
         <translation type="unfinished">Копирајте ја основната конфигурација</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3015" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3023" />
         <source>Copy test config</source>
         <translation type="unfinished">Копирај тест конфигурација</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3016" />
-        <location filename="../../src/ui/security_addon.cpp" line="22" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3024" />
+        <location filename="../../src/ui/security_addon.cpp" line="21" />
         <location filename="../../src/ui/setting/dialog_vpn_settings.cpp" line="45" />
         <source>OK</source>
         <translation type="unfinished">Во ред</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4233" />
-        <location filename="../../src/ui/mainwindow.cpp" line="4244" />
-        <location filename="../../src/ui/mainwindow.cpp" line="4288" />
-        <location filename="../../src/ui/mainwindow.cpp" line="4311" />
-        <location filename="../../src/ui/mainwindow.cpp" line="4320" />
-        <location filename="../../src/ui/mainwindow.cpp" line="4355" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4241" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4252" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4296" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4319" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4328" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4363" />
         <source>Update</source>
         <translation type="unfinished">Ажурирање</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4234" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4242" />
         <source>Not official support platform</source>
         <translation type="unfinished">Не е официјална платформа за поддршка</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4245" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4253" />
         <source>Requesting update error: %1</source>
         <translation type="unfinished">Барање грешка за ажурирање: % 1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4288" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4296" />
         <source>No update</source>
         <translation type="unfinished">Нема ажурирање</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4312" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4320" />
         <source>Update found: %1
 Release note:
 %2</source>
@@ -3488,22 +3497,22 @@ Release note:
 % 2</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4315" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4323" />
         <source>Close</source>
         <translation type="unfinished">Затвори</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4317" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4325" />
         <source>Open in browser</source>
         <translation type="unfinished">Отворете во прелистувачот</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4356" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4364" />
         <source>Update is ready, restart to install?</source>
         <translation type="unfinished">Ажурирањето е подготвено, да се рестартира за да се инсталира?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/security_addon.cpp" line="21" />
+        <location filename="../../src/ui/security_addon.cpp" line="20" />
         <source>Access denied</source>
         <translation type="unfinished">Пристапот е одбиен</translation>
     </message>

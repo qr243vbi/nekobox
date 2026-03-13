@@ -1329,8 +1329,16 @@ skip_updater_hide:
   };
   connect(ui->actionUrl_Test_Group, &QAction::triggered, this,
           url_test_group_action);
-  connect(ui->url_test_button, &QPushButton::clicked, this,
-          url_test_group_action);
+
+  QMenu * testmenu = ui->menuTest;
+  testmenu->insertAction(ui->actionSpeedtest_Current, ui->actionUrl_Test_Group);
+  ui->url_test_button->setMenu(testmenu);
+  //connect(ui->url_test_button, &QPushButton::clicked, this,
+  //        url_test_group_action);
+  testmenu = ui->menu_profiles;
+  testmenu->addSeparator();
+  testmenu->addMenu(ui->menu_server);
+  testmenu->addMenu(ui->menuCurrent_group);
 
   connect(ui->actionSpeedtest_Current, &QAction::triggered, this, [=, this]() {
     if (running != nullptr) {

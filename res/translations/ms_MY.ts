@@ -2339,7 +2339,7 @@ Untuk maklumat lanjut, lihat dokumen "Konfigurasi/DNS".</translation>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="51" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="54" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="647" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="644" />
         <source>Profiles</source>
         <translation type="unfinished">Profil</translation>
     </message>
@@ -2373,324 +2373,333 @@ Untuk maklumat lanjut, lihat dokumen "Konfigurasi/DNS".</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="161" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="597" />
-        <location filename="../../src/ui/mainwindow.cpp" line="2493" />
-        <location filename="../../src/ui/mainwindow.cpp" line="2496" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="594" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2501" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2504" />
         <source>System Proxy</source>
         <translation type="unfinished">Proksi Sistem</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="231" />
         <source>URL Test</source>
-        <translation type="unfinished">Ujian URL</translation>
+        <translation type="obsolete">Ujian URL</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="309" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="306" />
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="140" />
         <source>Type</source>
         <translation type="unfinished">taip</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="314" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="311" />
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="143" />
         <source>Address</source>
         <translation type="unfinished">Alamat</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="319" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="316" />
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="146" />
         <source>Name</source>
         <translation type="unfinished">Nama</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="324" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="321" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="291" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="293" />
         <source>Test Result</source>
         <translation type="unfinished">Keputusan Ujian</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="329" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="489" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="326" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="486" />
         <source>Traffic</source>
         <translation type="unfinished">Trafik</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="394" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="391" />
         <source>Logs</source>
         <translation type="unfinished">Log</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="429" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="426" />
         <source>Connections</source>
         <translation type="unfinished">Sambungan</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="457" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="454" />
         <source>Destination (Domain)</source>
         <translation type="unfinished">Destinasi (Domain)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="460" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="457" />
         <source>Click To Disable Sorting</source>
         <translation type="unfinished">Klik Untuk Lumpuhkan Isih</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="465" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="462" />
         <source>Process</source>
         <translation type="unfinished">Proses</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="468" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="465" />
         <source>Click To Sort By Process</source>
         <translation type="unfinished">Klik Untuk Isih Mengikut Proses</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="473" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="470" />
         <source>Protocol</source>
         <translation type="unfinished">Protokol</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="476" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="473" />
         <source>Click To Sort By Protocol</source>
         <translation type="unfinished">Klik Untuk Isih Mengikut Protokol</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="481" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="478" />
         <source>Outbound</source>
         <translation type="unfinished">Keluar</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="484" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="481" />
         <source>Click To Sort By Outbound</source>
         <translation type="unfinished">Klik Untuk Isih Mengikut Keluar</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="492" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="489" />
         <source>Click To Toggle sort by Traffic</source>
         <translation type="unfinished">Klik Untuk Togol isih mengikut Trafik</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="501" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="498" />
         <source>Traffic Graph</source>
         <translation type="unfinished">Graf Trafik</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="593" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="590" />
         <source>Program</source>
         <translation type="unfinished">Program</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="616" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="613" />
         <source>Preferences</source>
         <translation type="unfinished">Keutamaan</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="627" />
         <source>Server</source>
-        <translation type="unfinished">pelayan</translation>
+        <translation type="obsolete">pelayan</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="631" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="628" />
         <source>Share</source>
         <translation type="unfinished">Kongsi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="641" />
         <source>Current group</source>
-        <translation type="unfinished">Kumpulan semasa</translation>
+        <translation type="obsolete">Kumpulan semasa</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="658" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="231" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="654" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="701" />
         <source>Test</source>
         <translation type="unfinished">Ujian</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="687" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="624" />
+        <source>Current Selected</source>
+        <translation type="unfinished">Semasa Dipilih</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="638" />
+        <source>Current Group</source>
+        <translation type="unfinished">Kumpulan Semasa</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="683" />
         <source>Hidden menu</source>
         <translation type="unfinished">Menu tersembunyi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="700" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="696" />
         <source>Routing Menu</source>
         <translation type="unfinished">Menu Penghalaan</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="711" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="714" />
         <source>Exit</source>
         <translation type="unfinished">Keluar</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="716" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="719" />
         <source>Toggle Window</source>
         <translation type="unfinished">Togol Tetingkap</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="721" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="724" />
         <source>Basic Settings</source>
         <translation type="unfinished">Tetapan Asas</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="726" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="729" />
         <source>New profile</source>
         <translation type="unfinished">Profil baharu</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="731" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="734" />
         <source>Groups</source>
         <translation type="unfinished">Kumpulan</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="736" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3561" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3571" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="739" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3569" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3579" />
         <source>Start</source>
         <translation type="unfinished">Mulakan</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="744" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3560" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3571" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="747" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3568" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3579" />
         <source>Stop</source>
         <translation type="unfinished">Berhenti</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="752" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="755" />
         <source>Edit</source>
         <translation type="unfinished">Sunting</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="760" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="763" />
         <source>Routing Settings</source>
         <translation type="unfinished">Tetapan Penghalaan</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="765" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="768" />
         <source>Add profile from clipboard</source>
         <translation type="unfinished">Tambah profil daripada papan keratan</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="773" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="776" />
         <source>Delete</source>
         <translation type="unfinished">Padam</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="781" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="784" />
         <source>Debug Info</source>
         <translation type="unfinished">Maklumat Nyahpepijat</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="786" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="789" />
         <source>QR Code and link</source>
         <translation type="unfinished">Kod QR dan pautan</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="794" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="797" />
         <source>Copy Link</source>
         <translation type="unfinished">Salin Pautan</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="815" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1056" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="818" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1059" />
         <source>Clear Test Result</source>
         <translation type="unfinished">Jelas Keputusan Ujian</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="823" />
-        <location filename="../../src/ui/mainwindow.cpp" line="1402" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="826" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1410" />
         <source>Export %1 config</source>
         <translation type="unfinished">Eksport % 1 konfigurasi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="831" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="834" />
         <source>Reset Traffic</source>
         <translation type="unfinished">Tetapkan Semula Trafik</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="839" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="842" />
         <source>Scan QR Code</source>
         <translation type="unfinished">Imbas Kod QR</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="847" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="850" />
         <source>Enable System Proxy</source>
         <translation type="unfinished">Dayakan Proksi Sistem</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="855" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="858" />
         <source>Disable</source>
         <translation type="unfinished">Lumpuhkan</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="860" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="863" />
         <source>Remove Duplicates</source>
         <translation type="unfinished">Alih keluar Pendua</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="868" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="945" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="953" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="871" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="948" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="956" />
         <source>fake</source>
         <translation type="unfinished">palsu</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="876" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1152" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="879" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1155" />
         <source>Move</source>
         <translation type="unfinished">Bergerak</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="887" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="890" />
         <source>Start with system</source>
         <translation type="unfinished">Mulakan dengan sistem</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="895" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="898" />
         <source>Remember last profile</source>
         <translation type="unfinished">Ingat profil terakhir</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="903" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="906" />
         <source>Allow other devices to connect</source>
         <translation type="unfinished">Benarkan peranti lain bersambung</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="908" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="911" />
         <source>Remove Unavailable</source>
         <translation type="unfinished">Alih keluar Tidak tersedia</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="916" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="919" />
         <source>Full Test</source>
         <translation type="unfinished">Ujian Penuh</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="924" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="927" />
         <source>Hotkey Settings</source>
         <translation type="unfinished">Tetapan Hotkey</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="929" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="932" />
         <source>Select All</source>
         <translation type="unfinished">Pilih Semua</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="937" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="940" />
         <source>Copy Custom Links</source>
         <translation type="unfinished">Salin Pautan Tersuai</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="961" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="964" />
         <source>Copy links</source>
         <translation type="unfinished">Salin pautan</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1045" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1048" />
         <source>Url Test</source>
         <translation type="unfinished">Ujian Url</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1078" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1081" />
         <source>Resolve Domain</source>
         <translation type="unfinished">Selesaikan Domain</translation>
     </message>
@@ -2703,48 +2712,48 @@ Untuk maklumat lanjut, lihat dokumen "Konfigurasi/DNS".</translation>
         <translation type="obsolete">Salin pautan yang dipilih</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="972" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="975" />
         <source>Enable Tun</source>
         <translation type="unfinished">Dayakan Tun</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="977" />
-        <location filename="../../src/ui/mainwindow.cpp" line="2880" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="980" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2888" />
         <source>Clone</source>
         <translation type="unfinished">Klon</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="985" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="988" />
         <source>Update subscription</source>
         <translation type="unfinished">Kemas kini langganan</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="996" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="999" />
         <source>Resolve domain</source>
         <translation type="unfinished">Selesaikan domain</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1004" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1007" />
         <source>Tun Settings</source>
         <translation type="unfinished">Tetapan Tun</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1009" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1012" />
         <source>Restart Program</source>
         <translation type="unfinished">Mulakan semula Program</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1014" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1017" />
         <source>Open Config Folder</source>
         <translation type="unfinished">Buka Folder Konfigurasi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1035" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1038" />
         <source>Restart Proxy</source>
         <translation type="unfinished">Mulakan semula Proksi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1040" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1043" />
         <source>Stop Testing</source>
         <translation type="unfinished">Berhenti Menguji</translation>
     </message>
@@ -2761,7 +2770,7 @@ Untuk maklumat lanjut, lihat dokumen "Konfigurasi/DNS".</translation>
         <translation type="obsolete">Kosongkan Keputusan Ujian Dipilih</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1067" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1070" />
         <source>Url Test Group</source>
         <translation type="unfinished">Kumpulan Ujian Url</translation>
     </message>
@@ -2770,7 +2779,7 @@ Untuk maklumat lanjut, lihat dokumen "Konfigurasi/DNS".</translation>
         <translation type="obsolete">Ctrl+Shift+G</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1086" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1089" />
         <source>Remove Invalid</source>
         <translation type="unfinished">Alih Keluar Tidak Sah</translation>
     </message>
@@ -2783,58 +2792,58 @@ Untuk maklumat lanjut, lihat dokumen "Konfigurasi/DNS".</translation>
         <translation type="obsolete">Buka Pengurus</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1097" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1100" />
         <source>Speedtest Current</source>
         <translation type="unfinished">Arus Terpantas</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1102" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1105" />
         <source>Full test Selected</source>
         <translation type="unfinished">Ujian penuh Dipilih</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1107" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1110" />
         <source>Download test Selected</source>
         <translation type="unfinished">Muat turun ujian Dipilih</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1112" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1115" />
         <source>Upload test Selected</source>
         <translation type="unfinished">Muat naik ujian Dipilih</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1117" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1120" />
         <source>Country test Selected</source>
         <translation type="unfinished">Ujian negara Dipilih</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1122" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1125" />
         <source>Simple download test Selected</source>
         <translation type="unfinished">Ujian muat turun mudah Dipilih</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1127" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1130" />
         <source>Speedtest Group</source>
         <translation type="unfinished">Kumpulan Speedtest</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1132" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1135" />
         <source>Hide window</source>
         <translation type="unfinished">Sembunyikan tetingkap</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1137" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1140" />
         <source>Add profile from File</source>
         <translation type="unfinished">Tambah profil daripada Fail</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1142" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3589" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1145" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3597" />
         <source>Add new Group</source>
         <translation type="unfinished">Tambah Kumpulan baharu</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1147" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1150" />
         <source>Security Settings</source>
         <translation type="unfinished">Tetapan Keselamatan</translation>
     </message>
@@ -2913,150 +2922,150 @@ Untuk maklumat lanjut, lihat dokumen "Konfigurasi/DNS".</translation>
         <translation type="unfinished">Dayakan AdBlock</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1616" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1624" />
         <source>Error</source>
         <translation type="unfinished">ralat</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1703" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1711" />
         <source>Tun Settings changed</source>
         <translation type="unfinished">Tetapan Tun berubah</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1704" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1712" />
         <source>Restart Tun to take effect.</source>
         <translation type="unfinished">Mulakan semula Tun untuk berkuatkuasa.</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1710" />
-        <location filename="../../src/ui/mainwindow.cpp" line="1768" />
-        <location filename="../../src/ui/mainwindow.cpp" line="2934" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3305" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3359" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3408" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3634" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1718" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1776" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2942" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3313" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3367" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3416" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3642" />
         <source>Confirmation</source>
         <translation type="unfinished">Pengesahan</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1711" />
-        <location filename="../../src/ui/mainwindow.cpp" line="1769" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1719" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1777" />
         <source>Settings changed, restart proxy?</source>
         <translation type="unfinished">Tetapan ditukar, mulakan semula proksi?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1740" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1748" />
         <source>Settings changed</source>
         <translation type="unfinished">Tetapan berubah</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1741" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1749" />
         <source>Restart the program to take effect.</source>
         <translation type="unfinished">Mulakan semula program untuk berkuat kuasa.</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1784" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1792" />
         <source>Imported %1 profile(s)</source>
         <translation type="unfinished">% 1 profil yang diimport</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2051" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2059" />
         <source>User opted for no privilege req, some features may not work</source>
         <translation type="unfinished">Pengguna memilih untuk tiada syarat keistimewaan, sesetengah ciri mungkin tidak berfungsi</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2115" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2123" />
         <source>Please give the core root privileges</source>
         <translation type="unfinished">Sila berikan keistimewaan akar teras</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2469" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2477" />
         <source>Not Running</source>
         <translation type="unfinished">Tidak Berlari</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2881" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2889" />
         <source>Clone %1 item(s)</source>
         <translation type="unfinished">Klon % 1 item</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2915" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2923" />
         <source> Confirmation </source>
         <translation type="unfinished">Pengesahan</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2916" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2924" />
         <source> Remove %1 item(s) ? </source>
         <translation type="unfinished">Alih keluar % 1 item ?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2935" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2943" />
         <source>Remove %1 item(s) ?</source>
         <translation type="unfinished">Alih keluar % 1 item ?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2972" />
-        <location filename="../../src/ui/mainwindow.cpp" line="2985" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2980" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2993" />
         <source>Copied %1 item(s)</source>
         <translation type="unfinished">% 1 item disalin</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3217" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3225" />
         <source>QR Code not found</source>
         <translation type="unfinished">Kod QR tidak ditemui</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3238" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3246" />
         <source>Unable to capture screen</source>
         <translation type="unfinished">Tidak dapat menangkap skrin</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3306" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3314" />
         <source>Remove %1 Unavailable item(s) ?</source>
         <translation type="unfinished">Alih keluar % 1 Item tidak tersedia ?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3360" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3368" />
         <source>Remove %1 Invalid item(s) ?</source>
         <translation type="unfinished">Alih keluar % 1 Item tidak sah ?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3409" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3417" />
         <source>Replace domain server addresses with their resolved IPs?</source>
         <translation type="unfinished">Gantikan alamat pelayan domain dengan IP yang telah diselesaikan?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3558" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3566" />
         <source>Clear</source>
         <translation type="unfinished">Jelas</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3625" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3633" />
         <source>Delete selected Group</source>
         <translation type="unfinished">Padamkan Kumpulan yang dipilih</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3626" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3634" />
         <source>Edit selected Group</source>
         <translation type="unfinished">Edit Kumpulan yang dipilih</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3635" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3643" />
         <source>Remove %1?</source>
         <translation type="unfinished">Alih keluar % 1?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4329" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4337" />
         <source>Cannot start</source>
         <translation type="unfinished">Tidak boleh bermula</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4330" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4338" />
         <source>Last download request has not finished yet</source>
         <translation type="unfinished">Permintaan muat turun terakhir masih belum selesai</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4364" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4372" />
         <source>Failed to download update assets</source>
         <translation type="unfinished">Gagal memuat turun aset kemas kini</translation>
     </message>
@@ -3240,7 +3249,7 @@ Untuk maklumat lanjut, lihat dokumen "Konfigurasi/DNS".</translation>
 <context>
     <name>QAction</name>
     <message>
-        <location filename="../../src/ui/security_addon.cpp" line="347" />
+        <location filename="../../src/ui/security_addon.cpp" line="346" />
         <source>Security Settings</source>
         <translation type="unfinished">Tetapan Keselamatan</translation>
     </message>
@@ -3345,7 +3354,7 @@ Dipadamkan % 3 Profil:
     </message>
     <message>
         <location filename="../../src/stats/traffic/TrafficLooper.cpp" line="115" />
-        <location filename="../../src/ui/mainwindow.cpp" line="2437" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2445" />
         <source>Proxy: %1
 Direct: %2</source>
         <translation type="unfinished">Proksi: % 1
@@ -3432,74 +3441,74 @@ Deleted %1 Unavailable</source>
         <translation type="unfinished">Dipadamkan % 1 Tidak tersedia</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1495" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1503" />
         <source>Check Rule Sets: %1</source>
         <translation type="unfinished">Semak Set Peraturan: % 1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1517" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1525" />
         <source>Requesting rule-set list error: %1</source>
         <translation type="unfinished">Meminta ralat senarai set peraturan: % 1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2474" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2482" />
         <source>IP address: %1</source>
         <translation type="unfinished">Alamat IP: % 1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2860" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2868" />
         <source>Move profiles to group</source>
         <translation type="unfinished">Alihkan profil ke kumpulan</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3003" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3011" />
         <source>Config copied</source>
         <translation type="unfinished">Konfigurasi disalin</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3014" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3022" />
         <source>Copy core config</source>
         <translation type="unfinished">Salin konfigurasi teras</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3015" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3023" />
         <source>Copy test config</source>
         <translation type="unfinished">Salin konfigurasi ujian</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3016" />
-        <location filename="../../src/ui/security_addon.cpp" line="22" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3024" />
+        <location filename="../../src/ui/security_addon.cpp" line="21" />
         <location filename="../../src/ui/setting/dialog_vpn_settings.cpp" line="45" />
         <source>OK</source>
         <translation type="unfinished">OK</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4233" />
-        <location filename="../../src/ui/mainwindow.cpp" line="4244" />
-        <location filename="../../src/ui/mainwindow.cpp" line="4288" />
-        <location filename="../../src/ui/mainwindow.cpp" line="4311" />
-        <location filename="../../src/ui/mainwindow.cpp" line="4320" />
-        <location filename="../../src/ui/mainwindow.cpp" line="4355" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4241" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4252" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4296" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4319" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4328" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4363" />
         <source>Update</source>
         <translation type="unfinished">Kemas kini</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4234" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4242" />
         <source>Not official support platform</source>
         <translation type="unfinished">Bukan platform sokongan rasmi</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4245" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4253" />
         <source>Requesting update error: %1</source>
         <translation type="unfinished">Meminta ralat kemas kini: % 1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4288" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4296" />
         <source>No update</source>
         <translation type="unfinished">Tiada kemas kini</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4312" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4320" />
         <source>Update found: %1
 Release note:
 %2</source>
@@ -3508,22 +3517,22 @@ Nota keluaran:
 % 2</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4315" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4323" />
         <source>Close</source>
         <translation type="unfinished">tutup</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4317" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4325" />
         <source>Open in browser</source>
         <translation type="unfinished">Buka dalam penyemak imbas</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4356" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4364" />
         <source>Update is ready, restart to install?</source>
         <translation type="unfinished">Kemas kini sudah sedia, mulakan semula untuk memasang?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/security_addon.cpp" line="21" />
+        <location filename="../../src/ui/security_addon.cpp" line="20" />
         <source>Access denied</source>
         <translation type="unfinished">Akses ditolak</translation>
     </message>

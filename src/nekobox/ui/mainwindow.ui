@@ -228,10 +228,7 @@
       <item>
        <widget class="QPushButton" name="url_test_button">
         <property name="text">
-         <string>URL Test</string>
-        </property>
-        <property name="flat">
-         <bool>false</bool>
+         <string>Test</string>
         </property>
        </widget>
       </item>
@@ -624,7 +621,7 @@
    </widget>
    <widget class="QMenu" name="menu_server">
     <property name="title">
-     <string>Server</string>
+     <string>Current Selected</string>
     </property>
     <widget class="QMenu" name="menu_share_item">
      <property name="title">
@@ -638,7 +635,7 @@
     </widget>
     <widget class="QMenu" name="menuCurrent_group">
      <property name="title">
-      <string>Current group</string>
+      <string>Current Group</string>
      </property>
      <addaction name="separator"/>
     </widget>
@@ -651,7 +648,6 @@
      <addaction name="menu_add_from_input"/>
      <addaction name="actionAdd_profile_from_File"/>
      <addaction name="menu_scan_qr"/>
-     <addaction name="actionSpeedtest_Current"/>
     </widget>
     <widget class="QMenu" name="menu_test">
      <property name="title">
@@ -700,11 +696,18 @@
      <string>Routing Menu</string>
     </property>
    </widget>
+   <widget class="QMenu" name="menuTest">
+    <property name="title">
+     <string>Test</string>
+    </property>
+    <addaction name="actionSpeedtest_Current"/>
+   </widget>
    <addaction name="menu_program"/>
    <addaction name="menu_preferences"/>
    <addaction name="menu_server"/>
    <addaction name="menuHidden_menu"/>
    <addaction name="menuRouting_Menu"/>
+   <addaction name="menuTest"/>
   </widget>
   <action name="menu_exit">
    <property name="text">
