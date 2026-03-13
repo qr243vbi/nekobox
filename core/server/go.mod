@@ -1,6 +1,6 @@
 module nekobox_core
 
-go 1.25.0
+go 1.25.7
 
 require (
 	github.com/NullYing/npipe v0.0.0-20250430055250-2d2a4d962cf7
@@ -12,7 +12,7 @@ require (
 	github.com/sagernet/quic-go v0.59.0-sing-box-mod.4
 	github.com/sagernet/sing v0.8.2
 	github.com/sagernet/sing-box v1.13.2
-	github.com/sagernet/sing-tun v0.8.2
+	github.com/sagernet/sing-tun v0.8.3-0.20260311131511-caaf8469e09e
 	github.com/spf13/cobra v1.10.2
 	golang.org/x/sys v0.42.0
 	golang.zx2c4.com/wireguard/wgctrl v0.0.0-20241231184526-a9ab2273dd10
@@ -72,7 +72,7 @@ require (
 	github.com/mholt/acmez/v3 v3.1.6 // indirect
 	github.com/miekg/dns v1.1.72 // indirect
 	github.com/mitchellh/go-ps v1.0.0 // indirect
-	github.com/openai/openai-go/v3 v3.24.0 // indirect
+	github.com/openai/openai-go/v3 v3.26.0 // indirect
 	github.com/pierrec/lz4/v4 v4.1.21 // indirect
 	github.com/pires/go-proxyproto v0.8.1 // indirect
 	github.com/prometheus-community/pro-bing v0.4.0 // indirect
