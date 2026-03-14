@@ -408,13 +408,13 @@ func InstallVcRedist() {
 	if download == "" {
 	} else {
 		if runtime.GOARCH == "amd64" {
-			VCRedistDownload = "https://aka.ms/vs/15/release/vc_redist.x64.exe"
+			VCRedistDownload = "https://aka.ms/vc14/vc_redist.x64.exe"
 			VCRedistFile = "vc14_redist.x64.exe"
 		} else if runtime.GOARCH == "arm64" {
 			VCRedistDownload = "https://aka.ms/vc14/vc_redist.arm64.exe"
 			VCRedistFile = "vc14_redist.arm64.exe"
 		} else if runtime.GOARCH == "386" {
-			VCRedistDownload = "https://aka.ms/vs/15/release/vc_redist.x86.exe"
+			VCRedistDownload = "https://aka.ms/vc14/vc_redist.x86.exe"
 			VCRedistFile = "vc14_redist.x86.exe"
 		}
 		VCRedistFile = filepath.Join(getDownloadDir(), VCRedistFile)

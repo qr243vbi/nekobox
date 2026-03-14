@@ -29,7 +29,8 @@ QString getGroupName(bool * ok, bool * createNewGroup, const QString& content){
     auto combo = new QComboBox();
     combo->addItems({
         QObject::tr("Create new subscription group"),
-                    QObject::tr("Add profiles to this group"),
+        QObject::tr("Add profiles to this group"),
+        QObject::tr("Add as http/https proxy")
     });
     layout->addWidget(combo);
 
@@ -59,9 +60,12 @@ QString getGroupName(bool * ok, bool * createNewGroup, const QString& content){
         if (index == 0){
             *createNewGroup = true;
             return lineEdit->text();
-        } else {
+        } else if (index == 1){
             *createNewGroup = false;
             return "";
+        } else {
+            *createNewGroup = false;
+            return "link";
         }
     } else {
         *ok = false;

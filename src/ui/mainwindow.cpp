@@ -3826,6 +3826,12 @@ void MainWindow::setActionsData() {
   ui->actionUploadtest_Selected->setData(QString("m26"));
   ui->actionCountrytest_Selected->setData(QString("m27"));
   ui->actionSimpledl_Selected->setData(QString("m28"));
+  ui->menu_move_profile->setData(QString("m29"));
+  ui->menu_add_from_clipboard->setData(QString("m30"));
+  ui->menu_edit->setData(QString("m31"));
+  ui->menu_stop->setData(QString("m32"));
+  ui->menu_delete->setData(QString("m33"));
+  ui->menu_select_all->setData(QString("m30"));
 }
 
 QList<QAction *> MainWindow::getActionsForShortcut() {

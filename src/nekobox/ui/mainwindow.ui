@@ -768,7 +768,7 @@
     <string>Add profile from clipboard</string>
    </property>
    <property name="shortcut">
-    <string notr="true">Ctrl+V</string>
+    <string notr="true">Ctrl+B</string>
    </property>
   </action>
   <action name="menu_delete">

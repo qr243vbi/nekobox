@@ -790,6 +790,9 @@ namespace Subscription {
             if (ok == false){
                 return;
             }
+            if (!createNewGroup && groupName == "link"){
+                asURL = false;
+            }
         }
 
         runOnNewThread([=,this] {
