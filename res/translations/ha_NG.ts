@@ -3282,152 +3282,154 @@ An goge %3 Bayanan martaba:
     <message>
         <location filename="../../src/main.cpp" line="119" />
         <source>Custom</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Custom</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="120" />
         <source>Extra Core</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Karin Core</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/global/GuiUtils.hpp" line="121" />
         <location filename="../../src/ui/profile/edit_ssh.cpp" line="28" />
         <location filename="../../src/ui/setting/dialog_basic_settings.cpp" line="334" />
         <source>Select</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Zaɓi</translation>
     </message>
     <message>
         <location filename="../../src/stats/traffic/TrafficLooper.cpp" line="115" />
         <location filename="../../src/ui/mainwindow.cpp" line="2467" />
         <source>Proxy: %1
 Direct: %2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Wakili: %1
+Kai tsaye: %2</translation>
     </message>
     <message>
         <location filename="../../src/sys/Process.cpp" line="104" />
         <source>Core exited, cleaning up...</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Core ya fita, yana tsaftacewa...</translation>
     </message>
     <message>
         <location filename="../../src/sys/Process.cpp" line="111" />
         <source>Core exits too frequently, stop automatic restart this profile.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Core yana fita akai-akai, dakatar da sake kunna wannan bayanin martaba ta atomatik.</translation>
     </message>
     <message>
         <location filename="../../src/sys/Process.cpp" line="120" />
         <source>Restarting the core ...</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ana sake farawa ainihin...</translation>
     </message>
     <message>
         <location filename="../../src/sys/Settings.cpp" line="356" />
         <source>System</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tsari</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="22" />
         <source>URL detected</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">An gano URL</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="27" />
         <source>%1
 How to update?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">%1
+Yadda za a sabunta?</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="31" />
         <source>Create new subscription group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ƙirƙiri sabon ƙungiyar biyan kuɗi</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="32" />
         <source>Add profiles to this group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ƙara bayanan martaba zuwa wannan rukunin</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="33" />
         <source>Add as http/https proxy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ƙara azaman wakili na http/https</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="38" />
         <source>Group name</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Sunan rukuni</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="105" />
         <source>Used: %1 Remain: %2 Expire: %3</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Anfani: %1 Rage: %2 Karewa: %3</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="224" />
         <source>Download Profiles</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Zazzage bayanan martaba</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="225" />
         <source>Requesting profile error: %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Neman kuskuren bayanin martaba: %1</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="392" />
         <source>
 Deleted %1 Duplicates</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">An share %1 Kwafi</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="426" />
         <source>
 Deleted %1 Invalid</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">An share %1 Ba daidai ba</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="449" />
         <source>
 Deleted %1 Unavailable</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">An share %1 Babu</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1525" />
         <source>Check Rule Sets: %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Duba Saitin Dokokin: %1</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1547" />
         <source>Requesting rule-set list error: %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Neman kuskuren lissafin saitin ƙa'ida: %1</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2504" />
         <source>IP address: %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Adireshin IP: %1</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2890" />
         <source>Move profiles to group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Matsar da bayanan martaba zuwa rukuni</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3033" />
         <source>Config copied</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">An kwafi saitin</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3044" />
         <source>Copy core config</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kwafi ainihin saitin</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3045" />
         <source>Copy test config</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kwafi saitin gwaji</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3046" />
         <location filename="../../src/ui/security_addon.cpp" line="21" />
         <location filename="../../src/ui/setting/dialog_vpn_settings.cpp" line="53" />
         <source>OK</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">KO</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="4285" />
@@ -3437,64 +3439,66 @@ Deleted %1 Unavailable</source>
         <location filename="../../src/ui/mainwindow.cpp" line="4372" />
         <location filename="../../src/ui/mainwindow.cpp" line="4407" />
         <source>Update</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Sabuntawa</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="4286" />
         <source>Not official support platform</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ba dandalin tallafi na hukuma ba</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="4297" />
         <source>Requesting update error: %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Neman kuskuren sabuntawa: %1</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="4340" />
         <source>No update</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Babu sabuntawa</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="4364" />
         <source>Update found: %1
 Release note:
 %2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">An samu sabuntawa: %1
+Bayanan sanarwa:
+%2</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="4367" />
         <source>Close</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kusa</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="4369" />
         <source>Open in browser</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Bude a browser</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="4408" />
         <source>Update is ready, restart to install?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">An shirya sabuntawa, sake farawa don shigarwa?</translation>
     </message>
     <message>
         <location filename="../../src/ui/security_addon.cpp" line="20" />
         <source>Access denied</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">An hana shiga</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/dialog_basic_settings.cpp" line="339" />
         <source>Select a Folder</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Zaɓi babban fayil</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/dialog_vpn_settings.cpp" line="45" />
         <source>Exclude CIDR's</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Cire CDR's</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/dialog_vpn_settings.cpp" line="54" />
         <source>Cancel</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Soke</translation>
     </message>
 </context>
 <context>
@@ -3502,92 +3506,92 @@ Release note:
     <message>
         <location filename="../../src/main.cpp" line="64" />
         <source>Cancel</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Soke</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="65" />
         <source>Apply</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Aiwatar</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="66" />
         <source>Yes</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ee</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="67" />
         <source>No</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">A'a</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="68" />
         <source>OK</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">KO</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="69" />
         <source>Defaults</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Default</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="70" />
         <source>Restore Defaults</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Mayar da Defaults</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="71" />
         <source>Discard</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Yi watsi da</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="73" />
         <source>Undo</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Gyara</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="74" />
         <source>Redo</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Maimaita</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="75" />
         <source>Cut</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Yanke</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="76" />
         <source>Copy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kwafi</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="77" />
         <source>Paste</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Manna</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="78" />
         <source>Delete</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Share</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="79" />
         <source>Select All</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Zaɓi Duk</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="80" />
         <source>Stop</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tsaya</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="81" />
         <source>Clear</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Share</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="82" />
         <source>Copy Link Location</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kwafi Wuri Mai Haɗi</translation>
     </message>
 </context>
 <context>
@@ -3595,165 +3599,165 @@ Release note:
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="14" />
         <source>Route Profile</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Bayanan Hanya</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="24" />
         <source>General</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Gabaɗaya</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="63" />
         <source>Default outbound</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Fitarwa na asali</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="70" />
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="319" />
         <source>Name</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Suna</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="78" />
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="187" />
         <source>Proxy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Wakili</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="83" />
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="217" />
         <source>Direct</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kai tsaye</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="88" />
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="157" />
         <source>Block</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Toshe</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="96" />
         <source>Update url</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Sabunta url</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="130" />
         <source>Skip update</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tsallake sabuntawa</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="137" />
         <source>Update manually</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Sabuntawa da hannu</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="151" />
         <source>Basic</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Na asali</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="248" />
         <source>Advanced</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Na ci gaba</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="257" />
         <source>Import JSON</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Shigo da JSON</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="267" />
         <source>Rules</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Dokoki</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="279" />
         <source>New</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Sabo</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="286" />
         <source>Move Up</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Matsar Sama</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="293" />
         <source>Move Down</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Matsar da ƙasa</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="300" />
         <source>Delete</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Share</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="310" />
         <source>Rule Attributes</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Halayen Mulki</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="329" />
         <source>Attribute</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Siffa</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="342" />
         <source>Name_Placeholder</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Sunan_Mai riƙewa</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="374" />
         <source>Notes</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Bayanan kula</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="302" />
         <location filename="../../src/ui/setting/RouteItem.cpp" line="469" />
         <source>Invalid rules</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Dokokin mara inganci</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="302" />
         <source>Some rules could not be added:
 </source>
-        <translation type="unfinished" />
+        <translation type="unfinished">An kasa ƙara wasu dokoki:</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="358" />
         <source>Invalid JSON Array</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Array JSON mara inganci</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="358" />
         <source>The provided input cannot be parsed to a valid route rule array:
 </source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ba za a iya rarraba shigarwar da aka bayar zuwa ingantaccen tsarin ƙa'idar hanya ba:</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="441" />
         <source>Invalid operation</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Aiki mara inganci</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="441" />
         <source>Cannot create Route Profile with empty name</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ba za a iya ƙirƙira bayanin martabar Hanya tare da fanko suna ba</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="457" />
         <source>Empty Route Profile</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Bayanan Bayanin Hanyar Hanya</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="457" />
         <source>No valid rules are in the profile</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Babu ingantattun dokoki a cikin bayanan martaba</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="469" />
         <source>Some rules could not be added, fix them before saving:
 </source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Wasu dokoki ba za a iya ƙarawa ba, gyara su kafin adanawa:</translation>
     </message>
 </context>
 <context>
@@ -3761,42 +3765,42 @@ Release note:
     <message>
         <location filename="../../src/nekobox/ui/security/security.ui" line="14" />
         <source>Security Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Saitunan Tsaro</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/security.ui" line="62" />
         <source>Lock Actions</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kulle Ayyukan</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/security.ui" line="69" />
         <source>Lock Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kulle Saituna</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/security.ui" line="76" />
         <source>Lock Startup</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kulle Farawa</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/security.ui" line="113" />
         <source>Delete Users</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Share Masu Amfani</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/security.ui" line="120" />
         <source>Edit User Roles</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Shirya Matsayin Mai Amfani</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/security.ui" line="163" />
         <source>Change UI Password</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Canza kalmar wucewa ta UI</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/security.ui" line="170" />
         <source>Set Proxy Credentials</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Saita Takardun Wakilci</translation>
     </message>
 </context>
 <context>
@@ -3804,18 +3808,18 @@ Release note:
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="172" />
         <source>Invalid JSON Array</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Array JSON mara inganci</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="173" />
         <source>The provided input cannot be parsed to a valid route rule array:
 </source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ba za a iya rarraba shigarwar da aka bayar zuwa ingantaccen tsarin ƙa'idar hanya ba:</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="296" />
         <source>Fetching information</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Nemo bayanai</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="312" />
