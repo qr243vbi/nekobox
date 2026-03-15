@@ -2195,67 +2195,67 @@ Wixii macluumaad dheeraad ah, eeg dukumeentiga "Configuration/DNS".</translation
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="106" />
         <source>Workers</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Shaqaale</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="116" />
         <source>Use System Interface</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Isticmaal Interface System</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="126" />
         <source>Amnezia Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Dejinta Amnezia</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="132" />
         <source>Enable</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Daar</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="139" />
         <source>Junk Packet Count</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tirinta Xidhmada Junk</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="149" />
         <source>Junk Packet Min Size</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Xidhmada Junk Min Cabirka</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="159" />
         <source>Junk Packet Max Size</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Xidhmada Junk Cabbirka ugu badan</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="169" />
         <source>Init Packet Junk Size</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Baakidhka Init Junk Cabbirka</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="179" />
         <source>Response Packet Junk Size</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Baakidhka Jawaabta Cabbirka Junk</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="189" />
         <source>Init Packet Magic Header</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Init Xidhmada Magic Header</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="199" />
         <source>Response Packet Magic Header</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Xirmada Sixirka Jawaabta</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="209" />
         <source>Underload Packet Magic Header</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Hoos-u-qaadista Xirmada Magic Header</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="219" />
         <source>Transport Header Magic Header</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Madaxa Sixirka Madaxa Gaadiidka</translation>
     </message>
 </context>
 <context>
@@ -2263,47 +2263,47 @@ Wixii macluumaad dheeraad ah, eeg dukumeentiga "Configuration/DNS".</translation
     <message>
         <location filename="../../src/nekobox/ui/group/GroupItem.ui" line="63" />
         <source>Update Subscription</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Cusbooneysii Isdiiwaangelinta</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/GroupItem.ui" line="76" />
         <source>Edit</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Wax ka beddel</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/GroupItem.ui" line="89" />
         <source>Remove</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ka saar</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="133" />
         <source>Basic</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Aasaaska</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="133" />
         <source>Subscription</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Isdiiwaangelinta</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="134" />
         <source>Archive</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kaydka</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="146" />
         <source>Last update: %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Cusbooneysii ugu dambeysay: %1</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="190" />
         <source>Confirmation</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Xaqiijinta</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="190" />
         <source>Remove %1?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ka saar %1?</translation>
     </message>
 </context>
 <context>
@@ -2312,42 +2312,42 @@ Wixii macluumaad dheeraad ah, eeg dukumeentiga "Configuration/DNS".</translation
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="29" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="32" />
         <source>NekoBox</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">NekoBox</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="51" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="54" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="624" />
         <source>Profiles</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Profiles</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="73" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="76" />
         <source>Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Dejinta</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="95" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="98" />
         <source>Routing</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Jideynta</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="117" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="120" />
         <source>Update</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Cusbooneysii</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="147" />
         <source>Tun Mode</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Habka Tun</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="154" />
         <source>System DNS</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Nidaamka DNS</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="161" />
@@ -2355,375 +2355,375 @@ Wixii macluumaad dheeraad ah, eeg dukumeentiga "Configuration/DNS".</translation
         <location filename="../../src/ui/mainwindow.cpp" line="2523" />
         <location filename="../../src/ui/mainwindow.cpp" line="2526" />
         <source>System Proxy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Nidaamka Wakiil</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="231" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="648" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="701" />
         <source>Test</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tijaabi</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="306" />
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="140" />
         <source>Type</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Nooca</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="311" />
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="143" />
         <source>Address</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Cinwaanka</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="316" />
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="146" />
         <source>Name</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Magaca</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="321" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="291" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="293" />
         <source>Test Result</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Natiijada Imtixaanka</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="326" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="486" />
         <source>Traffic</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Gaadiidka</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="391" />
         <source>Logs</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Logs</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="426" />
         <source>Connections</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Xiriirinta</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="454" />
         <source>Destination (Domain)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Meesha (Domain)</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="457" />
         <source>Click To Disable Sorting</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Guji si aad u joojiso kala soocida</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="462" />
         <source>Process</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Habka</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="465" />
         <source>Click To Sort By Process</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Guji si aad u kala saarto habka</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="470" />
         <source>Protocol</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Baratakoolka</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="473" />
         <source>Click To Sort By Protocol</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Guji si aad Hab-maamuus ugu kala saarto</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="478" />
         <source>Outbound</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ka baxsan</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="481" />
         <source>Click To Sort By Outbound</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Guji si aad u kala soocdo dibadda</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="489" />
         <source>Click To Toggle sort by Traffic</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Guji si aad u kala beddesho taraafikada</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="498" />
         <source>Traffic Graph</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Sawirka Taraafikada</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="590" />
         <source>Program</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Barnaamijka</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="613" />
         <source>Preferences</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Dookhyada</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="628" />
         <source>Current Group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kooxda Hadda</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="634" />
         <source>Current Selected</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Hadda la doortay</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="638" />
         <source>Share</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">La wadaag</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="683" />
         <source>Hidden menu</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Liiska qarsoon</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="696" />
         <source>Routing Menu</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Menu dariiqa</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="707" />
         <source>Context</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Dulucda sheekada</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="711" />
         <source>ContextProfiles</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ContextProfiles</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="726" />
         <source>Exit</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ka bax</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="731" />
         <source>Toggle Window</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Bedel daaqada</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="736" />
         <source>Basic Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Dejinta aasaasiga ah</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="741" />
         <source>New profile</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">profile cusub</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="746" />
         <source>Groups</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kooxaha</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="751" />
         <location filename="../../src/ui/mainwindow.cpp" line="3591" />
         <location filename="../../src/ui/mainwindow.cpp" line="3601" />
         <source>Start</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Bilow</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="759" />
         <location filename="../../src/ui/mainwindow.cpp" line="3590" />
         <location filename="../../src/ui/mainwindow.cpp" line="3601" />
         <source>Stop</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Jooji</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="767" />
         <source>Edit</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Wax ka beddel</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="775" />
         <source>Routing Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Settings Settings</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="780" />
         <source>Add profile from clipboard</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ku dar astaanta guud ee sabuuradda</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="788" />
         <source>Delete</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tirtir</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="796" />
         <source>Debug Info</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Macluumaadka ciribtirka</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="801" />
         <source>QR Code and link</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Koodhka QR iyo isku xidhka</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="809" />
         <source>Copy Link</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Nuqul ka samee Linkiga</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="830" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1071" />
         <source>Clear Test Result</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Nadiifi natiijada tijaabada</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="838" />
         <location filename="../../src/ui/mainwindow.cpp" line="1432" />
         <source>Export %1 config</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Dhoofinta %1 habaynta</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="846" />
         <source>Reset Traffic</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Dib u habaynta gaadiidka</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="854" />
         <source>Scan QR Code</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Sawir koodka QR</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="862" />
         <source>Enable System Proxy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Daar habka wakiilka</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="870" />
         <source>Disable</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Dami</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="875" />
         <source>Remove Duplicates</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ka saar Nuqullada</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="883" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="960" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="968" />
         <source>fake</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">been abuur ah</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="891" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1167" />
         <source>Move</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Dhaqaaq</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="902" />
         <source>Start with system</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ku bilow nidaamka</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="910" />
         <source>Remember last profile</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Xusuusnow profile u dambeeyay</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="918" />
         <source>Allow other devices to connect</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Oggolow aaladaha kale inay ku xidhmaan</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="923" />
         <source>Remove Unavailable</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ka saar lama heli karo</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="931" />
         <source>Full Test</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Imtixaan buuxa</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="939" />
         <source>Hotkey Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Dejinta Hotkey</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="944" />
         <source>Select All</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Dooro Dhammaan</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="952" />
         <source>Copy Custom Links</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Nuqul ka samee Xiriirada Gaarka ah</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="976" />
         <source>Copy links</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Koobiga isku xirka</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="987" />
         <source>Enable Tun</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Daar Tun</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="992" />
         <location filename="../../src/ui/mainwindow.cpp" line="2910" />
         <source>Clone</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Clone</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1000" />
         <source>Update subscription</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Cusbooneysii isdiiwaangelinta</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1011" />
         <source>Resolve domain</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Xalli domain</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1019" />
         <source>Tun Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tun Settings</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1024" />
         <source>Restart Program</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Dib u bilaw barnaamijka</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1029" />
         <source>Open Config Folder</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Fur Folder Config</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1050" />
         <source>Restart Proxy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Dib u bilaw wakiilka</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1055" />
         <source>Stop Testing</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Jooji Imtixaanka</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1060" />
         <source>Url Test</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Imtixaanka Url</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1082" />
         <source>Url Test Group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kooxda Imtixaanka Url</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1093" />
