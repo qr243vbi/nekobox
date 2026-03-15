@@ -3825,7 +3825,7 @@ Release note:
         <location filename="../../src/ui/mainwindow.cpp" line="312" />
         <location filename="../../src/ui/mainwindow.cpp" line="1258" />
         <source>Download Profiles</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">پروفایل ډاونلوډ کړئ</translation>
     </message>
 </context>
 <context>
@@ -3833,7 +3833,7 @@ Release note:
     <message>
         <location filename="../../src/nekobox/ui/security/delete_or_edit_users.ui" line="14" />
         <source>Form</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">فورمه</translation>
     </message>
 </context>
 </TS>
