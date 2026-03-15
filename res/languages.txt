@@ -89,13 +89,13 @@ kg_CD:Kikongo
 rw_RW:Kinyarwanda
 so_SO:Soomaali
 yo_NG:Yorùbá
-ig_NG:Igbo
-ha_NG:Hausa
-qu_PE:Runa Simi
-ay_BO:Aymar aru
-gn_PY:Avañe'ẽ
-sm_WS:Gagana Samoa
-to_TO:Lea faka-Tonga
-fj_FJ:Na Vosa Vakaviti
-mi_NZ:Te Reo Māori
+#ig_NG:Igbo
+#ha_NG:Hausa
+#qu_PE:Runa Simi
+#ay_BO:Aymar aru
+#gn_PY:Avañe'ẽ
+#sm_WS:Gagana Samoa
+#to_TO:Lea faka-Tonga
+#fj_FJ:Na Vosa Vakaviti
+#mi_NZ:Te Reo Māori
 ru_RU:Русский

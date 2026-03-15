@@ -2205,57 +2205,57 @@ Fun alaye diẹ sii, wo iwe-ipamọ "Atunto/DNS".</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="126" />
         <source>Amnezia Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Awọn Eto Amnezia</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="132" />
         <source>Enable</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Mu ṣiṣẹ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="139" />
         <source>Junk Packet Count</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Junk Packet kika</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="149" />
         <source>Junk Packet Min Size</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Junk Packet Min Iwon</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="159" />
         <source>Junk Packet Max Size</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Junk Packet Max Iwon</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="169" />
         <source>Init Packet Junk Size</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Init Packet Junk Iwon</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="179" />
         <source>Response Packet Junk Size</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Idahun Packet Junk Iwon</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="189" />
         <source>Init Packet Magic Header</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Init Packet Magic akọsori</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="199" />
         <source>Response Packet Magic Header</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Idahun Packet Magic akọsori</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="209" />
         <source>Underload Packet Magic Header</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Underload Packet Magic akọsori</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="219" />
         <source>Transport Header Magic Header</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Transport akọsori Magic akọsori</translation>
     </message>
 </context>
 <context>
@@ -2263,47 +2263,47 @@ Fun alaye diẹ sii, wo iwe-ipamọ "Atunto/DNS".</translation>
     <message>
         <location filename="../../src/nekobox/ui/group/GroupItem.ui" line="63" />
         <source>Update Subscription</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ṣiṣe alabapin imudojuiwọn</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/GroupItem.ui" line="76" />
         <source>Edit</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ṣatunkọ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/GroupItem.ui" line="89" />
         <source>Remove</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Yọ kuro</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="133" />
         <source>Basic</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ipilẹṣẹ</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="133" />
         <source>Subscription</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ṣiṣe alabapin</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="134" />
         <source>Archive</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ifipamọ</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="146" />
         <source>Last update: %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Imudojuiwọn to kẹhin: %1</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="190" />
         <source>Confirmation</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ìmúdájú</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="190" />
         <source>Remove %1?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Yọ %1 kuro?</translation>
     </message>
 </context>
 <context>
@@ -2312,42 +2312,42 @@ Fun alaye diẹ sii, wo iwe-ipamọ "Atunto/DNS".</translation>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="29" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="32" />
         <source>NekoBox</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">NekoBox</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="51" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="54" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="624" />
         <source>Profiles</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Awọn profaili</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="73" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="76" />
         <source>Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Eto</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="95" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="98" />
         <source>Routing</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ipa ọna</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="117" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="120" />
         <source>Update</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Imudojuiwọn</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="147" />
         <source>Tun Mode</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ipo Tun</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="154" />
         <source>System DNS</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Eto DNS</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="161" />
@@ -2355,385 +2355,385 @@ Fun alaye diẹ sii, wo iwe-ipamọ "Atunto/DNS".</translation>
         <location filename="../../src/ui/mainwindow.cpp" line="2523" />
         <location filename="../../src/ui/mainwindow.cpp" line="2526" />
         <source>System Proxy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Aṣoju eto</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="231" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="648" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="701" />
         <source>Test</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Idanwo</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="306" />
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="140" />
         <source>Type</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Iru</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="311" />
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="143" />
         <source>Address</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Adirẹsi</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="316" />
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="146" />
         <source>Name</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Oruko</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="321" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="291" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="293" />
         <source>Test Result</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Abajade Idanwo</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="326" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="486" />
         <source>Traffic</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ijabọ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="391" />
         <source>Logs</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Awọn akọọlẹ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="426" />
         <source>Connections</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Awọn isopọ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="454" />
         <source>Destination (Domain)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ibo (Agbegbe)</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="457" />
         <source>Click To Disable Sorting</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tẹ Lati Mu tito lẹsẹsẹ ṣiṣẹ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="462" />
         <source>Process</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ilana</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="465" />
         <source>Click To Sort By Process</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tẹ Lati Too Nipa Ilana</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="470" />
         <source>Protocol</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ilana</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="473" />
         <source>Click To Sort By Protocol</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tẹ Lati Too Nipa Ilana</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="478" />
         <source>Outbound</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ti njade lo</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="481" />
         <source>Click To Sort By Outbound</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tẹ Lati Too Nipa Ti njade</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="489" />
         <source>Click To Toggle sort by Traffic</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tẹ Lati Balu too nipasẹ Traffic</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="498" />
         <source>Traffic Graph</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Traffic Aworan</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="590" />
         <source>Program</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Eto</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="613" />
         <source>Preferences</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Awọn ayanfẹ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="628" />
         <source>Current Group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ẹgbẹ lọwọlọwọ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="634" />
         <source>Current Selected</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ti yan lọwọlọwọ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="638" />
         <source>Share</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Pinpin</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="683" />
         <source>Hidden menu</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Farasin akojọ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="696" />
         <source>Routing Menu</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Akojọ afisona</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="707" />
         <source>Context</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Atokọ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="711" />
         <source>ContextProfiles</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ContextProfaili</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="726" />
         <source>Exit</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Jade</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="731" />
         <source>Toggle Window</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Yi Ferese Yipada</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="736" />
         <source>Basic Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Awọn Eto ipilẹ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="741" />
         <source>New profile</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Profaili tuntun</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="746" />
         <source>Groups</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Awọn ẹgbẹ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="751" />
         <location filename="../../src/ui/mainwindow.cpp" line="3591" />
         <location filename="../../src/ui/mainwindow.cpp" line="3601" />
         <source>Start</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Bẹrẹ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="759" />
         <location filename="../../src/ui/mainwindow.cpp" line="3590" />
         <location filename="../../src/ui/mainwindow.cpp" line="3601" />
         <source>Stop</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Duro</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="767" />
         <source>Edit</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ṣatunkọ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="775" />
         <source>Routing Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Eto ipa ọna</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="780" />
         <source>Add profile from clipboard</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ṣafikun profaili lati agekuru agekuru</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="788" />
         <source>Delete</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Paarẹ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="796" />
         <source>Debug Info</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Alaye yokokoro</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="801" />
         <source>QR Code and link</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">QR Code ati ọna asopọ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="809" />
         <source>Copy Link</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Daakọ Ọna asopọ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="830" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1071" />
         <source>Clear Test Result</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ko Abajade Idanwo kuro</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="838" />
         <location filename="../../src/ui/mainwindow.cpp" line="1432" />
         <source>Export %1 config</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ṣe okeere %1 atunto</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="846" />
         <source>Reset Traffic</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tun Traffic to</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="854" />
         <source>Scan QR Code</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ṣayẹwo koodu QR</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="862" />
         <source>Enable System Proxy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Mu Aṣoju System ṣiṣẹ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="870" />
         <source>Disable</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Pa a</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="875" />
         <source>Remove Duplicates</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Yọ Awọn ẹda-iwe kuro</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="883" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="960" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="968" />
         <source>fake</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">iro</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="891" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1167" />
         <source>Move</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Gbe</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="902" />
         <source>Start with system</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Bẹrẹ pẹlu eto</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="910" />
         <source>Remember last profile</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ranti profaili to kẹhin</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="918" />
         <source>Allow other devices to connect</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Gba awọn ẹrọ miiran laaye lati sopọ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="923" />
         <source>Remove Unavailable</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Yọ Ko si</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="931" />
         <source>Full Test</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Idanwo ni kikun</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="939" />
         <source>Hotkey Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Hotkey Eto</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="944" />
         <source>Select All</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Yan Gbogbo</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="952" />
         <source>Copy Custom Links</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Da Aṣa Links</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="976" />
         <source>Copy links</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Da awọn ọna asopọ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="987" />
         <source>Enable Tun</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Mu Tun ṣiṣẹ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="992" />
         <location filename="../../src/ui/mainwindow.cpp" line="2910" />
         <source>Clone</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">oniye</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1000" />
         <source>Update subscription</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ṣe imudojuiwọn ṣiṣe alabapin</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1011" />
         <source>Resolve domain</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Yanju ibugbe</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1019" />
         <source>Tun Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tun Eto</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1024" />
         <source>Restart Program</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tun Eto</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1029" />
         <source>Open Config Folder</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ṣii Folda atunto</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1050" />
         <source>Restart Proxy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tun Aṣoju bẹrẹ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1055" />
         <source>Stop Testing</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Duro Idanwo</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1060" />
         <source>Url Test</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Idanwo Url</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1082" />
         <source>Url Test Group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Url igbeyewo Ẹgbẹ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1093" />
         <source>Resolve Domain</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Yanju ase</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1101" />
         <source>Remove Invalid</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Yọ aiṣedeede kuro</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1112" />
