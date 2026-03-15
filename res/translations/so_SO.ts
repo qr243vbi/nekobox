@@ -537,12 +537,12 @@ daqiiqo&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1106" />
         <source>Test Target URL</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tijaabi bartilmaameedka URL</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1113" />
         <source>URL to test proxies against</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">URL si loo tijaabiyo wakiillada</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1116" />
@@ -552,89 +552,89 @@ daqiiqo&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1123" />
         <source>Automatically switch to another working proxy when TUN mode proxy fails</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Si toos ah ugu beddel wakiil kale oo shaqaynaya marka habka TUN uu fashilmo</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1126" />
         <source>Enable TUN Failover</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Daar TUN Guuldarraysiga</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1134" />
         <source>Startup</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Bilawga</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1195" />
         <source>Geometry</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Joometri</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1224" />
         <source>Autosave geometry</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Si otomaatig ah u kaydso joomatari</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1231" />
         <source>Autosave position</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Booska otomaatiga u dhig</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1251" />
         <source>Apply now</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Codso hadda</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1367" />
         <source>Width</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ballaca</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1380" />
         <source>X</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">X</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1413" />
         <source>Y</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Y</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1426" />
         <source>Height</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Dhererka</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1513" />
         <source>Core Executable Path</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Jidka La Fulin Karo ee Muhiimka ah</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1542" />
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1716" />
         <source>Use default</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Isticmaal default</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1549" />
         <source>Remote Control</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Xakamaynta fog</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1575" />
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1749" />
         <source>Select</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Dooro</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1687" />
         <source>Resources Directory</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Hagaha Khayraadka</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1723" />
         <source>Resource Manager</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Maareeyaha Kheyraadka</translation>
     </message>
 </context>
 <context>
@@ -642,104 +642,104 @@ daqiiqo&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="20" />
         <source>Edit Group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kooxda wax ka beddel</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="36" />
         <source>Common</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Caadiyan</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="102" />
         <source>Name</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Magaca</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="109" />
         <source>Type</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Nooca</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="117" />
         <source>Basic</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Aasaaska</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="122" />
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="287" />
         <source>Subscription</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Isdiiwaangelinta</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="135" />
         <source>Manually column width</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ballaca tiirarka gacanta</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="142" />
         <source>Archive</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kaydka</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="155" />
         <source>Proxy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Wakiil</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="194" />
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="221" />
         <source>None</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Midna</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="201" />
         <source>Front Proxy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Wakiilka hore</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="208" />
         <source>Landing Proxy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Soo degista Wakiil</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="232" />
         <source>Share</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">La wadaag</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="238" />
         <source>Copy profile share links</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Nuqul ka samee xiriiriyeyaasha wadaaga profile</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="245" />
         <source>Copy profile share links (Custom Links)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Nuqul ka samee xiriiriyeyaasha wadaaga astaanta guud (Custom Links)</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="253" />
         <source>Notes</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Xusuusin</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="314" />
         <source>Skip automatic update</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ka bood cusboonaysiinta tooska ah</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="59" />
         <source>Copied</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">la guuriyay</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="358" />
         <source>Warning</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Digniin</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="358" />
         <source>Please input URL</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Fadlan geli URL</translation>
     </message>
 </context>
 <context>
@@ -748,260 +748,260 @@ daqiiqo&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="26" />
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="843" />
         <source>Edit</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Wax ka beddel</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="56" />
         <source>Common</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Caadiyan</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="73" />
         <source>Type</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Nooca</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="80" />
         <source>Port</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Dekedda</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="87" />
         <source>Address</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Cinwaanka</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="94" />
         <source>Name</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Magaca</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="139" />
         <source>Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Dejinta</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="166" />
         <source>The underlying transport method. It must be consistent with the server, otherwise, the connection cannot be established.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Habka gaadiidka hoose.Waa inay la socotaa server-ka, haddii kale, xiriirka lama dhisi karo.</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="169" />
         <source>Network</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Shabakadda</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="226" />
         <source>Server support is required</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Taageerada adeegaha ayaa loo baahan yahay</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="229" />
         <source>Multiplex</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Multiplex</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="236" />
         <source>Transport Layer Security. It must be consistent with the server, otherwise, the connection cannot be established.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ammaanka lakabka gaadiidka.Waa inay la socotaa server-ka, haddii kale, xiriirka lama dhisi karo.</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="239" />
         <source>Security</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Amniga</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="260" />
         <source>UDP FullCone Packet encoding for implementing features such as UDP FullCone. Server support is required, if the wrong selection is made, the connection cannot be made. Please leave it blank.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Xirmada UDP FullCone codaynta si loo hirgeliyo astaamaha sida UDP FullCone.Taageerada adeegaha ayaa loo baahan yahay, haddii xulashada khaldan la sameeyo, isku xirka lama samayn karo.Fadlan ku dhaaf meel banaan</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="263" />
         <source>Packet Encoding</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Xirmada Codeynta</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="271" />
         <source>Keep Default</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ku hay sida caadiga ah</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="276" />
         <source>On</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Daar</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="281" />
         <source>Off</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Demin</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="294" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Overrides mux to On&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;madaxa/&gt;&lt;body&gt;&lt;p&gt;Ka qaadaa mux ilaa shid&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="297" />
         <source>Enable TCP Brutal</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Daar TCP aadka u xun</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="311" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Server to Client TCP Brutal Speed&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;U adeegaha Xawaaraha Axmaqnimada TCP ee macmiilka&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="314" />
         <source>TCP Brutal Speed</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Xawaaraha xun ee TCP</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="324" />
         <source>Mb/s</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Mb/s</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="345" />
         <source>Custom Outbound Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Dejinta ka bixida gaarka ah</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="361" />
         <source>Custom Config Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Habaynta Gaarka ah</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="381" />
         <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="713" />
         <source>Apply settings to this group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Codso dejinta kooxdan</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="436" />
         <source>Network Settings (%1)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Dejinta Shabakadda (%1)</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="458" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;madax/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="541" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Method of http request, will be converted to uppercase&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Qaabka http codsiga, waxa loo rogi doonaa far waaweyn&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="544" />
         <source>Method</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Habka</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="578" />
         <source>header type</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">nooca madaxa</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="618" />
         <source>TLS Camouflage Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Dejinta Camouflage TLS</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="672" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;May degrade performance, try record fragment first&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Waxay hoos u dhigi kartaa waxqabadka, isku day inaad duubto jajab marka hore &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="675" />
         <source>Enable TLS fragment</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Daar jajabka TLS</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="682" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;time format, like 500ms, 10ms etc&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;qaabka waqtiga, sida 500ms, 10ms iwm &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="685" />
         <source>Fallback Delay</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Dib u dhac</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="698" />
         <source>Enable TLS Record Fragment</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Daar jajabka Diiwaanka TLS</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="737" />
         <source>Reality public key. If not empty, turn TLS into REALITY.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Xaqiiqda furaha dadweynaha.Haddaysan madhnayn, TLS u rog Xaqiiqda.</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="750" />
         <source>Reality short id. Accept only one value.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Xaqiiqda gaaban id.Aqbal hal qiime oo kaliya.</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="753" />
         <source>Reality SID</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Xaqiiqda SID</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="775" />
         <source>TLS Security Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Goobaha Amniga ee TLS</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="792" />
         <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="644" />
         <source>Certificate</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Shahaado</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="819" />
         <source>When enabled, V2Ray will not check the validity of the TLS certificate provided by the remote host (the security is equivalent to plaintext)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Marka la furo, V2Ray ma hubin doonto ansaxnimada shahaadada TLS ee ay bixiso martigeliyaha fog (ammaanku waxay u dhigmaan qoraal cad)</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="822" />
         <source>Allow insecure</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Allow ammaan darro</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="829" />
         <source>Enable ECH</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Daar ECH</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="836" />
         <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="655" />
         <source>ECH Config</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Qaabka ECH</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="854" />
         <source>QSN</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">QSN</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="861" />
         <source>Server name indication, clear text.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tilmaanta magaca adeegaha, qoraal cad.</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="874" />
         <source>Application layer protocol negotiation, clear text. Please separate them with commas.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">gorgortanka borotokoolka lakabka codsiga, qoraal cad.Fadlan ku kala saar hakad.</translation>
     </message>
     <message>
         <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="230" />
         <source>Custom (%1 outbound)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Caadi ahaan (%1 baxay)</translation>
     </message>
     <message>
         <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="232" />
         <source>Custom (%1 config)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Gaar ahaan (%1 habayn)</translation>
     </message>
     <message>
         <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="602" />
@@ -1010,7 +1010,7 @@ daqiiqo&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
         <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="617" />
         <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="625" />
         <source>Not set</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Lama dejin</translation>
     </message>
     <message>
         <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="604" />
@@ -1019,12 +1019,12 @@ daqiiqo&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
         <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="619" />
         <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="627" />
         <source>Already set</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Horeba loo dhigay</translation>
     </message>
     <message>
         <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="685" />
         <source>Confirm</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Xaqiiji</translation>
     </message>
 </context>
 <context>
@@ -1032,37 +1032,37 @@ daqiiqo&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="14" />
         <source>Landing proxy for group Group2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Soo degista wakiilka kooxda2</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="41" />
         <source>Proxy:</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Wakiil:</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="48" />
         <source>Search:</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Raadi:</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="68" />
         <source>Group1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kooxda1</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="74" />
         <source>Group2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kooxda2</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="415" />
         <source>Front proxy for group %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Wakiilka hore ee kooxda %1</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="417" />
         <source>Front proxy: </source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Wakiilka hore:</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="428" />
