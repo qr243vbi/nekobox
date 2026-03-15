@@ -537,12 +537,12 @@
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1106" />
         <source>Test Target URL</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">URL-и ҳадафи санҷиш</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1113" />
         <source>URL to test proxies against</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">URL барои санҷиши прокси бар зидди</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1116" />
@@ -552,89 +552,89 @@
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1123" />
         <source>Automatically switch to another working proxy when TUN mode proxy fails</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Вақте ки прокси реҷаи TUN ноком мешавад, ба таври худкор ба прокси кори дигар гузаред</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1126" />
         <source>Enable TUN Failover</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Фаъолсозии TUN Failover</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1134" />
         <source>Startup</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Навкор</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1195" />
         <source>Geometry</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Геометрия</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1224" />
         <source>Autosave geometry</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Геометрияро худкор захира кунед</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1231" />
         <source>Autosave position</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Мавқеи худкор нигоҳдорӣ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1251" />
         <source>Apply now</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ҳоло муроҷиат кунед</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1367" />
         <source>Width</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Васеъ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1380" />
         <source>X</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">X</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1413" />
         <source>Y</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Я</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1426" />
         <source>Height</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Баландӣ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1513" />
         <source>Core Executable Path</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Роҳи асосии иҷрошаванда</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1542" />
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1716" />
         <source>Use default</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Пешфарзро истифода баред</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1549" />
         <source>Remote Control</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Назорати дурдаст</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1575" />
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1749" />
         <source>Select</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Интихоб кунед</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1687" />
         <source>Resources Directory</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Феҳристи захираҳо</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1723" />
         <source>Resource Manager</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Менеҷери захираҳо</translation>
     </message>
 </context>
 <context>
@@ -642,104 +642,104 @@
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="20" />
         <source>Edit Group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Таҳрири гурӯҳ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="36" />
         <source>Common</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">умумӣ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="102" />
         <source>Name</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ном</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="109" />
         <source>Type</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Навъи</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="117" />
         <source>Basic</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Асосӣ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="122" />
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="287" />
         <source>Subscription</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Обуна</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="135" />
         <source>Manually column width</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Паҳнои сутун ба таври дастӣ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="142" />
         <source>Archive</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Архив</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="155" />
         <source>Proxy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Прокси</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="194" />
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="221" />
         <source>None</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ҳеҷ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="201" />
         <source>Front Proxy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Прокси пеш</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="208" />
         <source>Landing Proxy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Прокси фурудгоҳ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="232" />
         <source>Share</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Мубодила</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="238" />
         <source>Copy profile share links</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Истинодҳои мубодилаи профилро нусхабардорӣ кунед</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="245" />
         <source>Copy profile share links (Custom Links)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Истинодҳои мубодилаи профилро нусхабардорӣ кунед (Истинодҳои фармоишӣ)</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="253" />
         <source>Notes</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Қайдҳо</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="314" />
         <source>Skip automatic update</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Гузаронидани навсозии худкор</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="59" />
         <source>Copied</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Нусхабардорӣ</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="358" />
         <source>Warning</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Огоҳӣ</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="358" />
         <source>Please input URL</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Лутфан URL-ро ворид кунед</translation>
     </message>
 </context>
 <context>
@@ -748,260 +748,260 @@
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="26" />
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="843" />
         <source>Edit</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Таҳрир</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="56" />
         <source>Common</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">умумӣ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="73" />
         <source>Type</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Навъи</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="80" />
         <source>Port</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Порт</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="87" />
         <source>Address</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Суроға</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="94" />
         <source>Name</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ном</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="139" />
         <source>Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Танзимотҳо</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="166" />
         <source>The underlying transport method. It must be consistent with the server, otherwise, the connection cannot be established.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Усули асосии нақлиёт.Он бояд бо сервер мувофиқ бошад, вагарна пайвастшавӣ барқарор карда намешавад.</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="169" />
         <source>Network</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Шабака</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="226" />
         <source>Server support is required</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Дастгирии сервер талаб карда мешавад</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="229" />
         <source>Multiplex</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Мультиплекс</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="236" />
         <source>Transport Layer Security. It must be consistent with the server, otherwise, the connection cannot be established.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Амнияти қабати нақлиёт.Он бояд бо сервер мувофиқ бошад, вагарна пайвастшавӣ барқарор карда намешавад.</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="239" />
         <source>Security</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Амният</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="260" />
         <source>UDP FullCone Packet encoding for implementing features such as UDP FullCone. Server support is required, if the wrong selection is made, the connection cannot be made. Please leave it blank.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Рамзгузории бастаи UDP FullCone барои татбиқи хусусиятҳо ба монанди UDP FullCone.Дастгирии сервер талаб карда мешавад, агар интихоби нодуруст анҷом дода шавад, пайвастшавӣ ғайриимкон аст.Лутфан онро холӣ гузоред.</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="263" />
         <source>Packet Encoding</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Рамзгузории пакет</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="271" />
         <source>Keep Default</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Пешфарзро нигоҳ доред</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="276" />
         <source>On</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Дар</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="281" />
         <source>Off</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Хомӯш</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="294" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Overrides mux to On&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Мухкро ба Фаъол&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; бекор мекунад</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="297" />
         <source>Enable TCP Brutal</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">TCP Brutal-ро фаъол созед</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="311" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Server to Client TCP Brutal Speed&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Сервер ба мизоҷ TCP Суръати бераҳмона&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="314" />
         <source>TCP Brutal Speed</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Суръати бераҳмона TCP</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="324" />
         <source>Mb/s</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Мб/с</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="345" />
         <source>Custom Outbound Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Танзимоти фармоишии содиротӣ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="361" />
         <source>Custom Config Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Танзимоти танзимоти фармоишӣ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="381" />
         <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="713" />
         <source>Apply settings to this group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Танзимотҳоро ба ин гурӯҳ татбиқ кунед</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="436" />
         <source>Network Settings (%1)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Танзимоти шабака (%1)</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="458" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="541" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Method of http request, will be converted to uppercase&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Усули дархости http, ба ҳарфи калон табдил дода мешавад&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="544" />
         <source>Method</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Усул</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="578" />
         <source>header type</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">навъи сарлавҳа</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="618" />
         <source>TLS Camouflage Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Танзимоти камуфляжи TLS</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="672" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;May degrade performance, try record fragment first&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Шояд иҷроишро паст кунад, аввал фрагменти сабтро санҷед&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="675" />
         <source>Enable TLS fragment</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Фрагменти TLS-ро фаъол созед</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="682" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;time format, like 500ms, 10ms etc&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;формати вақт, ба монанди 500ms, 10ms ва ғайра&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="685" />
         <source>Fallback Delay</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Таъхири бозгашт</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="698" />
         <source>Enable TLS Record Fragment</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Фрагменти сабти TLS-ро фаъол созед</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="737" />
         <source>Reality public key. If not empty, turn TLS into REALITY.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Калиди оммавии воқеият.Агар холӣ набошад, TLS-ро ба REALITY табдил диҳед.</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="750" />
         <source>Reality short id. Accept only one value.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Иди кӯтоҳи воқеият.Танҳо як арзишро қабул кунед.</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="753" />
         <source>Reality SID</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Воқеияти SID</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="775" />
         <source>TLS Security Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Танзимоти амнияти TLS</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="792" />
         <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="644" />
         <source>Certificate</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Шаҳодатнома</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="819" />
         <source>When enabled, V2Ray will not check the validity of the TLS certificate provided by the remote host (the security is equivalent to plaintext)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ҳангоми фаъол шудан, V2Ray эътибори сертификати TLS-ро аз ҷониби мизбони дурдаст тафтиш намекунад (амният ба матни оддӣ баробар аст)</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="822" />
         <source>Allow insecure</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ба бехатарӣ иҷозат диҳед</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="829" />
         <source>Enable ECH</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ECH-ро фаъол созед</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="836" />
         <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="655" />
         <source>ECH Config</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Танзимоти ECH</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="854" />
         <source>QSN</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">QSN</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="861" />
         <source>Server name indication, clear text.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Нишон додани номи сервер, матни равшан.</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="874" />
         <source>Application layer protocol negotiation, clear text. Please separate them with commas.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Музокироти протоколи қабати барнома, матни равшан.Лутфан онҳоро бо вергул ҷудо кунед.</translation>
     </message>
     <message>
         <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="230" />
         <source>Custom (%1 outbound)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Фармоишгар (% 1 баромад)</translation>
     </message>
     <message>
         <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="232" />
         <source>Custom (%1 config)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Фармоишгар (% 1 конфигуратсия)</translation>
     </message>
     <message>
         <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="602" />
@@ -1010,7 +1010,7 @@
         <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="617" />
         <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="625" />
         <source>Not set</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Муқаррар нашудааст</translation>
     </message>
     <message>
         <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="604" />
@@ -1019,12 +1019,12 @@
         <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="619" />
         <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="627" />
         <source>Already set</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Аллакай муқаррар карда шудааст</translation>
     </message>
     <message>
         <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="685" />
         <source>Confirm</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Тасдиқ кунед</translation>
     </message>
 </context>
 <context>
@@ -1032,37 +1032,37 @@
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="14" />
         <source>Landing proxy for group Group2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Прокси фуруд барои гурӯҳи Group2</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="41" />
         <source>Proxy:</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Прокси:</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="48" />
         <source>Search:</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ҷустуҷӯ:</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="68" />
         <source>Group1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Гурӯҳи 1</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="74" />
         <source>Group2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Гурӯҳи 2</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="415" />
         <source>Front proxy for group %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Прокси пеш барои гурӯҳи % 1</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="417" />
         <source>Front proxy: </source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Прокси пеш:</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="428" />
