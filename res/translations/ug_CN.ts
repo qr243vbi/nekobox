@@ -2728,84 +2728,84 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1093" />
         <source>Resolve Domain</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">دائىرە ھەل قىلىڭ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1101" />
         <source>Remove Invalid</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ئىناۋەتسىز</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1112" />
         <source>Speedtest Current</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Speedtest Current</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1117" />
         <source>Full test Selected</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">تولۇق سىناق تاللاندى</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1122" />
         <source>Download test Selected</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">چۈشۈرۈش سىنىقى تاللاندى</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1127" />
         <source>Upload test Selected</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">يۈكلەش سىنىقى تاللاندى</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1132" />
         <source>Country test Selected</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">دۆلەت سىنىقى تاللاندى</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1137" />
         <source>Simple download test Selected</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ئاددىي چۈشۈرۈش سىنىقى تاللاندى</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1142" />
         <source>Speedtest Group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Speedtest Group</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1147" />
         <source>Hide window</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">كۆزنەكنى يوشۇرۇش</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1152" />
         <source>Add profile from File</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ھۆججەتتىن ئارخىپ قوشۇڭ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1157" />
         <location filename="../../src/ui/mainwindow.cpp" line="3619" />
         <source>Add new Group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">يېڭى گۇرۇپپا قوشۇڭ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1162" />
         <source>Security Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">بىخەتەرلىك تەڭشەكلىرى</translation>
     </message>
     <message>
         <location filename="../../src/dataStore/ProxyEntity.cpp" line="223" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="291" />
         <source>Unavailable</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Unavailable</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1077" />
         <source>Edit Routing Profiles</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">يول ئارخىپىنى تەھرىرلەڭ</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1099" />
         <source>Update Routing Profiles</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">يول ئارخىپىنى يېڭىلاڭ</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1111" />
@@ -2816,69 +2816,69 @@ For more information, see the document "Configuration/DNS".</source>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="95" />
         <location filename="../../src/ui/setting/RouteItem.cpp" line="104" />
         <source>Update Response</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ئىنكاسنى يېڭىلاش</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1112" />
         <location filename="../../src/ui/setting/RouteItem.cpp" line="105" />
         <source>No routing profiles are updated</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ھېچقانداق يوللانما ئارخىپى يېڭىلانمىدى</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1116" />
         <location filename="../../src/ui/setting/RouteItem.cpp" line="96" />
         <source>Updated %1 routing profiles</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">% 1 يېتەكلەش ئارخىپى يېڭىلاندى</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1126" />
         <source>Update RuleSet Map</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">RuleSet خەرىتىسىنى يېڭىلاش</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1137" />
         <source>Failed to update rulesets</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">قائىدىلەرنى يېڭىلاش مەغلۇب بولدى</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1140" />
         <source>Rulesets updated successfully</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">قائىدە مۇۋەپپەقىيەتلىك يېڭىلاندى</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1149" />
         <source>Update RuleSet Cache</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">RuleSet Cache نى يېڭىلاڭ</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1184" />
         <source>Rulesets cache is updated</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">قائىدە ساقلىغۇچ يېڭىلاندى</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1198" />
         <source>Clear RuleSet Cache</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">RuleSet Cache نى تازىلاڭ</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1234" />
         <source>Enable AdBlock</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">AdBlock نى قوزغىتىڭ</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1646" />
         <source>Error</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">خاتالىق</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1733" />
         <source>Tun Settings changed</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">تەڭشەك تەڭشىكى ئۆزگەرتىلدى</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1734" />
         <source>Restart Tun to take effect.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tun نى قايتا قوزغىتىپ كۈچكە ئىگە بولىدۇ.</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1740" />
@@ -2889,269 +2889,269 @@ For more information, see the document "Configuration/DNS".</source>
         <location filename="../../src/ui/mainwindow.cpp" line="3438" />
         <location filename="../../src/ui/mainwindow.cpp" line="3664" />
         <source>Confirmation</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">جەزملەشتۈرۈش</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1741" />
         <location filename="../../src/ui/mainwindow.cpp" line="1799" />
         <source>Settings changed, restart proxy?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">تەڭشەكلەر ئۆزگەرتىلدى ، ۋاكالەتچى قايتا قوزغىتىلدى؟</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1770" />
         <source>Settings changed</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">تەڭشەك ئۆزگەرتىلدى</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1771" />
         <source>Restart the program to take effect.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">پروگراممىنى قايتا قوزغىتىپ كۈچكە ئىگە بولىدۇ.</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1814" />
         <source>Imported %1 profile(s)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ئىمپورت قىلىنغان% 1 ئارخىپ (لار)</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2081" />
         <source>User opted for no privilege req, some features may not work</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ئىشلەتكۈچى ھېچقانداق ئالاھىدە ئىمتىيازنى تاللىمىدى ، بەزى ئىقتىدارلار ئىشلىمەسلىكى مۇمكىن</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2145" />
         <source>Please give the core root privileges</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">يادرولۇق يىلتىز ئىمتىيازلىرىنى بېرىڭ</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2499" />
         <source>Not Running</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ئىجرا بولمايدۇ</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2911" />
         <source>Clone %1 item(s)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">كلون% 1 تۈر (لار)</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2945" />
         <source> Confirmation </source>
-        <translation type="unfinished" />
+        <translation type="unfinished">جەزملەشتۈرۈش</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2946" />
         <source> Remove %1 item(s) ? </source>
-        <translation type="unfinished" />
+        <translation type="unfinished">% 1 تۈرنى ئۆچۈرۈڭ؟</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2965" />
         <source>Remove %1 item(s) ?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">% 1 تۈرنى ئۆچۈرۈڭ؟</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3002" />
         <location filename="../../src/ui/mainwindow.cpp" line="3015" />
         <source>Copied %1 item(s)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">كۆچۈرۈلگەن% 1 تۈر (لار)</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3247" />
         <source>QR Code not found</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">QR كودى تېپىلمىدى</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3268" />
         <source>Unable to capture screen</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ئېكراننى تۇتقىلى بولمىدى</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3336" />
         <source>Remove %1 Unavailable item(s) ?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">% 1 ئىشلەتكىلى بولمايدىغان تۈر (لەر) نى ئۆچۈرۈڭ؟</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3390" />
         <source>Remove %1 Invalid item(s) ?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">% 1 ئىناۋەتسىز تۈر (لەرنى) ئۆچۈرۈڭ؟</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3439" />
         <source>Replace domain server addresses with their resolved IPs?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">دائىرە مۇلازىمېتىر ئادرېسىنى ھەل قىلىنغان IP بىلەن ئالماشتۇرۇڭ؟</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3588" />
         <source>Clear</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ئېنىق</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3655" />
         <source>Delete selected Group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">تاللانغان گۇرۇپپىنى ئۆچۈرۈڭ</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3656" />
         <source>Edit selected Group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">تاللانغان گۇرۇپپىنى تەھرىرلەڭ</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3665" />
         <source>Remove %1?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">% 1 نى ئۆچۈرۈڭ؟</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="4381" />
         <source>Cannot start</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">باشلىغىلى بولمايدۇ</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="4382" />
         <source>Last download request has not finished yet</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ئاخىرقى چۈشۈرۈش تەلىپى تېخى تاماملانمىدى</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="4416" />
         <source>Failed to download update assets</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">يېڭىلاش مۈلكىنى چۈشۈرۈش مەغلۇب بولدى</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="83" />
         <source>Profile test aborted</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ئارخىپ سىنىقى ئەمەلدىن قالدۇرۇلدى</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="134" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="180" />
         <source>[%1] test error: %2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">[% 1] سىناق خاتالىقى:% 2</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="163" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="489" />
         <source>Something is very wrong, the subject ent cannot be found!</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">بىر نەرسە بەك خاتا ، تېما مەزمۇنىنى تاپقىلى بولمايدۇ!</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="169" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="495" />
         <source>Profile manager data is corrupted, try again.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ئارخىپ باشقۇرغۇچىنىڭ سانلىق مەلۇماتلىرى بۇزۇلغان ، قايتا سىناڭ.</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="203" />
         <source>The last url test did not exit completely, please wait. If it persists, please restart the program.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ئەڭ ئاخىرقى url سىنىقى پۈتۈنلەي چىقمىدى ، ساقلاپ تۇرۇڭ.ئەگەر ئۇ داۋاملاشسا ، پروگراممىنى قايتا قوزغىتىڭ.</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="212" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="319" />
         <source>Failed to build test config: </source>
-        <translation type="unfinished" />
+        <translation type="unfinished">سىناق سەپلىمىسى قۇرۇلمىدى:</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="253" />
         <source>URL test finished!</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">URL سىنىقى ئاخىرلاشتى!</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="264" />
         <source>Failed to stop tests</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">سىناقنى توختىتالمىدى</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="270" />
         <source>Testing</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">سىناق</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="308" />
         <source>The last speed test did not exit completely, please wait. If it persists, please restart the program.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ئەڭ ئاخىرقى سۈرئەت سىنىقى پۈتۈنلەي چىقمىدى ، ساقلاپ تۇرۇڭ.ئەگەر ئۇ داۋاملاشسا ، پروگراممىنى قايتا قوزغىتىڭ.</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="345" />
         <source>Speedtest finished!</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Speedtest finished!</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="426" />
         <source>Profile speed test aborted</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ئارخىپ سۈرئىتىنى ئەمەلدىن قالدۇردى</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="514" />
         <source>[%1] speed test error: %2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">[% 1] سۈرئەت سىنىقى خاتالىقى:% 2</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="523" />
         <source>You need to enable hijack DNS server first</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ئالدى بىلەن DNS مۇلازىمېتىرىنى بۇلاڭ</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="537" />
         <source>Failed to set system dns: </source>
-        <translation type="unfinished" />
+        <translation type="unfinished">سىستېما dns نى تەڭشەش مەغلۇب بولدى:</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="585" />
         <source>Tun device misbehaving</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ئۈسكۈنىنىڭ قائىدىگە خىلاپلىق قىلىشى</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="586" />
         <source>If you have trouble starting VPN, you can force reset Core process here and then try starting the profile again. The error is %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ئەگەر VPN نى قوزغىتىشتا مەسىلىگە يولۇقسىڭىز ، Core جەريانىنى بۇ يەرگە قايتا ئورنىتىشقا زورلاپ ، ئاندىن ئارخىپنى قايتا قوزغىتىپ سىناپ بېقىڭ.خاتالىق% 1</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="590" />
         <source>Reset</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ئەسلىگە قايتۇرۇش</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="591" />
         <source>Cancel</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">بىكار قىلىش</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="630" />
         <source>Another profile is starting...</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">باشقا بىر ئارخىپ باشلىنىۋاتىدۇ ...</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="637" />
         <source>Another profile is stopping...</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">باشقا بىر ئارخىپ توختاپ قالدى ...</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="658" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="740" />
         <source>If there is no response for a long time, it is recommended to restart the software.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ئەگەر ئۇزۇن ۋاقىت ئىنكاس بولمىسا ، يۇمشاق دېتالنى قايتا قوزغىتىش تەۋسىيە قىلىنىدۇ.</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="672" />
         <source>Starting profile %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ئارخىپنى باشلاش% 1</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="674" />
         <source>Failed to start profile %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ئارخىپ% 1 نى قوزغىتالمىدى</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="723" />
         <source>Stop return error</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">قايتۇرۇش خاتالىقىنى توختىتىڭ</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="763" />
         <source>Stopping profile %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ئارخىپنى توختىتىش% 1</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="765" />
         <source>Failed to stop, please restart the program.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">توختىمىدى ، پروگراممىنى قايتا قوزغىتىڭ.</translation>
     </message>
 </context>
 <context>
@@ -3164,17 +3164,17 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/security/change_password.ui" line="20" />
         <source>Username</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ئىشلەتكۈچى ئىسمى</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/change_password.ui" line="37" />
         <source>New Password</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">يېڭى پارول</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/change_password.ui" line="54" />
         <source>Confirm Password</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">پارولنى جەزملەشتۈرۈڭ</translation>
     </message>
 </context>
 <context>
@@ -3182,12 +3182,12 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/ui/profile/ProxyItem.cpp" line="39" />
         <source>Confirmation</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">جەزملەشتۈرۈش</translation>
     </message>
     <message>
         <location filename="../../src/ui/profile/ProxyItem.cpp" line="39" />
         <source>Remove %1?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">% 1 نى ئۆچۈرۈڭ؟</translation>
     </message>
 </context>
 <context>
@@ -3195,7 +3195,7 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/ui/security_addon.cpp" line="346" />
         <source>Security Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">بىخەتەرلىك تەڭشەكلىرى</translation>
     </message>
 </context>
 <context>
@@ -3203,7 +3203,7 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/main.cpp" line="317" />
         <source>QT_LAYOUT_DIRECTION</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">QT_LAYOUT_DIRECTION</translation>
     </message>
 </context>
 <context>
@@ -3211,37 +3211,37 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/configs/ConfigBuilder.cpp" line="159" />
         <source>Tun mode cannot be used with Custom configs</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">تەڭشەش ھالىتىنى Custom سەپلىمىسى بىلەن ئىشلىتىشكە بولمايدۇ</translation>
     </message>
     <message>
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="839" />
         <source>Requesting subscription: %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">مۇشتەرى بولۇشنى تەلەپ قىلىش:% 1</translation>
     </message>
     <message>
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="843" />
         <source>Requesting subscription %1 error: %2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">مۇشتەرى بولۇشنى تەلەپ قىلىش% 1 خاتالىق:% 2</translation>
     </message>
     <message>
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="850" />
         <source>Subscription request fininshed: %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">مۇشتەرى بولۇش تەلىپى ئاخىرلاشتى:% 1</translation>
     </message>
     <message>
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="868" />
         <source>Clearing servers...</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">مۇلازىمېتىرنى تازىلاش ...</translation>
     </message>
     <message>
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="873" />
         <source>Processing subscription data...</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">مۇشتەرىلىك سانلىق مەلۇماتلىرىنى بىر تەرەپ قىلىش ...</translation>
     </message>
     <message>
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="876" />
         <source>Process complete, applying...</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">جەريان تامام ، ئىلتىماس ...</translation>
     </message>
     <message>
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="939" />
@@ -3249,27 +3249,30 @@ For more information, see the document "Configuration/DNS".</source>
 %2
 Deleted %3 Profiles:
 %4</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">% 1 ئارخىپ قوشۇلدى:
+% 2
+% 3 ئارخىپ ئۆچۈرۈلدى:
+% 4</translation>
     </message>
     <message>
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="944" />
         <source>Nothing</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ھېچنېمە يوق</translation>
     </message>
     <message>
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="947" />
         <source>Change of %1:</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">% 1 نىڭ ئۆزگىرىشى:</translation>
     </message>
     <message>
         <location filename="../../src/dataStore/Database.cpp" line="123" />
         <source>Default</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">سۈكۈتتىكى</translation>
     </message>
     <message>
         <location filename="../../src/global/HTTPRequestHelper.cpp" line="189" />
         <source>Could not open file.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ھۆججەت ئاچالمىدى.</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="105" />
