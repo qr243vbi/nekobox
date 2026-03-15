@@ -2728,84 +2728,84 @@ Don ƙarin bayani, duba daftarin aiki "Configuration/DNS".</translation>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1093" />
         <source>Resolve Domain</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Gyara Domain</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1101" />
         <source>Remove Invalid</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Cire mara inganci</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1112" />
         <source>Speedtest Current</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Gwajin Saurin Yanzu</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1117" />
         <source>Full test Selected</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Cikakken gwajin da aka zaba</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1122" />
         <source>Download test Selected</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Zazzage gwajin da aka zaɓa</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1127" />
         <source>Upload test Selected</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">An zaɓi gwajin ƙaddamarwa</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1132" />
         <source>Country test Selected</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Gwajin ƙasa da aka zaɓa</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1137" />
         <source>Simple download test Selected</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">An zaɓi gwajin saukewa mai sauƙi</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1142" />
         <source>Speedtest Group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ƙungiyar Speedtest</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1147" />
         <source>Hide window</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Boye taga</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1152" />
         <source>Add profile from File</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ƙara bayanin martaba daga Fayil</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1157" />
         <location filename="../../src/ui/mainwindow.cpp" line="3619" />
         <source>Add new Group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ƙara sabon rukuni</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1162" />
         <source>Security Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Saitunan Tsaro</translation>
     </message>
     <message>
         <location filename="../../src/dataStore/ProxyEntity.cpp" line="223" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="291" />
         <source>Unavailable</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Babu</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1077" />
         <source>Edit Routing Profiles</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Shirya Bayanan Rubutu</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1099" />
         <source>Update Routing Profiles</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Sabunta Bayanan Rarrabawa</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1111" />
@@ -2816,69 +2816,69 @@ Don ƙarin bayani, duba daftarin aiki "Configuration/DNS".</translation>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="95" />
         <location filename="../../src/ui/setting/RouteItem.cpp" line="104" />
         <source>Update Response</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Sabunta Amsa</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1112" />
         <location filename="../../src/ui/setting/RouteItem.cpp" line="105" />
         <source>No routing profiles are updated</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ba a sabunta bayanan martabar hanya ba</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1116" />
         <location filename="../../src/ui/setting/RouteItem.cpp" line="96" />
         <source>Updated %1 routing profiles</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">An sabunta %1 bayanan martaba</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1126" />
         <source>Update RuleSet Map</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Sabunta taswirar RuleSet</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1137" />
         <source>Failed to update rulesets</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">An kasa sabunta ka'idoji</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1140" />
         <source>Rulesets updated successfully</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">An sabunta dokoki cikin nasara</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1149" />
         <source>Update RuleSet Cache</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Sabunta RuleSet Cache</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1184" />
         <source>Rulesets cache is updated</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Rulesets cache an sabunta</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1198" />
         <source>Clear RuleSet Cache</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Share RuleSet Cache</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1234" />
         <source>Enable AdBlock</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kunna AdBlock</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1646" />
         <source>Error</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kuskure</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1733" />
         <source>Tun Settings changed</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tun saituna sun canza</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1734" />
         <source>Restart Tun to take effect.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Sake kunna Tun don aiwatarwa.</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1740" />
@@ -2889,269 +2889,269 @@ Don ƙarin bayani, duba daftarin aiki "Configuration/DNS".</translation>
         <location filename="../../src/ui/mainwindow.cpp" line="3438" />
         <location filename="../../src/ui/mainwindow.cpp" line="3664" />
         <source>Confirmation</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tabbatarwa</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1741" />
         <location filename="../../src/ui/mainwindow.cpp" line="1799" />
         <source>Settings changed, restart proxy?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Saituna sun canza, sake farawa wakili?</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1770" />
         <source>Settings changed</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Saituna sun canza</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1771" />
         <source>Restart the program to take effect.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Sake kunna shirin don aiwatarwa.</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1814" />
         <source>Imported %1 profile(s)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">An shigo da bayanan martaba %1</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2081" />
         <source>User opted for no privilege req, some features may not work</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Mai amfani ya zaɓi ba buƙatun gata, wasu fasalulluka na iya yin aiki</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2145" />
         <source>Please give the core root privileges</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Da fatan za a ba tushen gata</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2499" />
         <source>Not Running</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ba Gudu ba</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2911" />
         <source>Clone %1 item(s)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Clone%1 abu(s)</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2945" />
         <source> Confirmation </source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tabbatarwa</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2946" />
         <source> Remove %1 item(s) ? </source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Cire %1 abu(s)?</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2965" />
         <source>Remove %1 item(s) ?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Cire %1 abu(s)?</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3002" />
         <location filename="../../src/ui/mainwindow.cpp" line="3015" />
         <source>Copied %1 item(s)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">An kwafi %1 abu(s)</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3247" />
         <source>QR Code not found</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ba a sami lambar QR ba</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3268" />
         <source>Unable to capture screen</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">An kasa ɗaukar allo</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3336" />
         <source>Remove %1 Unavailable item(s) ?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Cire %1 Abubuwan da ba su samuwa?</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3390" />
         <source>Remove %1 Invalid item(s) ?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Cire %1 Abu(s) mara inganci?</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3439" />
         <source>Replace domain server addresses with their resolved IPs?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Sauya adiresoshin sabar yanki tare da warware IPs?</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3588" />
         <source>Clear</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Share</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3655" />
         <source>Delete selected Group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Share rukunin da aka zaɓa</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3656" />
         <source>Edit selected Group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Gyara rukunin da aka zaɓa</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3665" />
         <source>Remove %1?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Cire %1?</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="4381" />
         <source>Cannot start</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ba za a iya farawa ba</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="4382" />
         <source>Last download request has not finished yet</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ba a gama buƙatar zazzagewar ƙarshe ba tukuna</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="4416" />
         <source>Failed to download update assets</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ba a yi nasarar sauke abubuwan ɗaukaka ba</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="83" />
         <source>Profile test aborted</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">An soke gwajin bayanan martaba</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="134" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="180" />
         <source>[%1] test error: %2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">[%1] Kuskuren gwaji: %2</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="163" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="489" />
         <source>Something is very wrong, the subject ent cannot be found!</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Wani abu ba daidai ba ne, ba za a iya samun batun ent ba!</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="169" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="495" />
         <source>Profile manager data is corrupted, try again.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Bayanan mai sarrafa bayanan martaba ya lalace, sake gwadawa.</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="203" />
         <source>The last url test did not exit completely, please wait. If it persists, please restart the program.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Gwajin url na ƙarshe bai fita gaba ɗaya ba, da fatan za a jira.Idan ya ci gaba, da fatan za a sake kunna shirin.</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="212" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="319" />
         <source>Failed to build test config: </source>
-        <translation type="unfinished" />
+        <translation type="unfinished">An kasa gina saitin gwaji:</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="253" />
         <source>URL test finished!</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">An gama gwajin URL!</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="264" />
         <source>Failed to stop tests</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">An kasa dakatar da gwaje-gwaje</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="270" />
         <source>Testing</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Gwaji</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="308" />
         <source>The last speed test did not exit completely, please wait. If it persists, please restart the program.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Gwajin gudu na ƙarshe bai fita gaba ɗaya ba, da fatan za a jira.Idan ya ci gaba, da fatan za a sake kunna shirin.</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="345" />
         <source>Speedtest finished!</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">An gama gwajin sauri!</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="426" />
         <source>Profile speed test aborted</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">An soke gwajin saurin bayanin martaba</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="514" />
         <source>[%1] speed test error: %2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">[%1] Kuskuren gwajin saurin gudu: %2</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="523" />
         <source>You need to enable hijack DNS server first</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kuna buƙatar kunna satar sabar DNS da farko</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="537" />
         <source>Failed to set system dns: </source>
-        <translation type="unfinished" />
+        <translation type="unfinished">An kasa saita tsarin DNS:</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="585" />
         <source>Tun device misbehaving</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tun na'urar rashin ɗabi'a</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="586" />
         <source>If you have trouble starting VPN, you can force reset Core process here and then try starting the profile again. The error is %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Idan kuna da matsala farawa VPN, za ku iya tilasta sake saita tsarin Core a nan sannan kuma gwada fara bayanin martaba.Kuskuren shine %1</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="590" />
         <source>Reset</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Sake saiti</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="591" />
         <source>Cancel</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Soke</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="630" />
         <source>Another profile is starting...</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Wani profile yana farawa...</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="637" />
         <source>Another profile is stopping...</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Wani bayanin martaba yana tsayawa...</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="658" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="740" />
         <source>If there is no response for a long time, it is recommended to restart the software.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Idan babu amsa na dogon lokaci, ana bada shawarar sake kunna software.</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="672" />
         <source>Starting profile %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Fara bayanin martaba %1</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="674" />
         <source>Failed to start profile %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">An kasa fara bayanin martaba %1</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="723" />
         <source>Stop return error</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Dakatar da kuskure</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="763" />
         <source>Stopping profile %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tsayawa bayanin martaba %1</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="765" />
         <source>Failed to stop, please restart the program.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">An kasa tsayawa, da fatan za a sake kunna shirin.</translation>
     </message>
 </context>
 <context>
@@ -3164,17 +3164,17 @@ Don ƙarin bayani, duba daftarin aiki "Configuration/DNS".</translation>
     <message>
         <location filename="../../src/nekobox/ui/security/change_password.ui" line="20" />
         <source>Username</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Sunan mai amfani</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/change_password.ui" line="37" />
         <source>New Password</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Sabuwar Kalmar wucewa</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/change_password.ui" line="54" />
         <source>Confirm Password</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">tabbata kalmar shiga</translation>
     </message>
 </context>
 <context>
@@ -3182,12 +3182,12 @@ Don ƙarin bayani, duba daftarin aiki "Configuration/DNS".</translation>
     <message>
         <location filename="../../src/ui/profile/ProxyItem.cpp" line="39" />
         <source>Confirmation</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tabbatarwa</translation>
     </message>
     <message>
         <location filename="../../src/ui/profile/ProxyItem.cpp" line="39" />
         <source>Remove %1?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Cire %1?</translation>
     </message>
 </context>
 <context>
@@ -3195,7 +3195,7 @@ Don ƙarin bayani, duba daftarin aiki "Configuration/DNS".</translation>
     <message>
         <location filename="../../src/ui/security_addon.cpp" line="346" />
         <source>Security Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Saitunan Tsaro</translation>
     </message>
 </context>
 <context>
@@ -3211,37 +3211,37 @@ Don ƙarin bayani, duba daftarin aiki "Configuration/DNS".</translation>
     <message>
         <location filename="../../src/configs/ConfigBuilder.cpp" line="159" />
         <source>Tun mode cannot be used with Custom configs</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ba za a iya amfani da yanayin Tun tare da saiti na Musamman ba</translation>
     </message>
     <message>
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="839" />
         <source>Requesting subscription: %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Neman biyan kuɗi: %1</translation>
     </message>
     <message>
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="843" />
         <source>Requesting subscription %1 error: %2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Neman biyan kuɗi %1 kuskure: %2</translation>
     </message>
     <message>
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="850" />
         <source>Subscription request fininshed: %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">An gama buƙatar biyan kuɗi: %1</translation>
     </message>
     <message>
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="868" />
         <source>Clearing servers...</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ana share sabobin...</translation>
     </message>
     <message>
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="873" />
         <source>Processing subscription data...</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ana aiwatar da bayanan biyan kuɗi...</translation>
     </message>
     <message>
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="876" />
         <source>Process complete, applying...</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">An kammala tsari, ana nema...</translation>
     </message>
     <message>
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="939" />
@@ -3249,32 +3249,35 @@ Don ƙarin bayani, duba daftarin aiki "Configuration/DNS".</translation>
 %2
 Deleted %3 Profiles:
 %4</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">An ƙara %1 bayanan martaba:
+%2
+An goge %3 Bayanan martaba:
+%4</translation>
     </message>
     <message>
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="944" />
         <source>Nothing</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Babu komai</translation>
     </message>
     <message>
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="947" />
         <source>Change of %1:</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Canjin %1:</translation>
     </message>
     <message>
         <location filename="../../src/dataStore/Database.cpp" line="123" />
         <source>Default</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tsohuwar</translation>
     </message>
     <message>
         <location filename="../../src/global/HTTPRequestHelper.cpp" line="189" />
         <source>Could not open file.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">An kasa buɗe fayil.</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="105" />
         <source>Chain Proxy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Sarkar wakili</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="119" />
