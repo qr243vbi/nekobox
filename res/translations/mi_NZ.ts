@@ -2195,67 +2195,67 @@ Mo etahi atu korero, tirohia te tuhinga "Whakaritenga/DNS".</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="106" />
         <source>Workers</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kaimahi</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="116" />
         <source>Use System Interface</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Whakamahia te Atanga Pūnaha</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="126" />
         <source>Amnezia Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tautuhinga Amnezia</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="132" />
         <source>Enable</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Whakahohe</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="139" />
         <source>Junk Packet Count</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tatau Peeti Paraurehe</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="149" />
         <source>Junk Packet Min Size</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Te Rahi Moni o te Peeke Paraurehe</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="159" />
         <source>Junk Packet Max Size</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Te Rahi Nui o te Peeke Paraurehe</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="169" />
         <source>Init Packet Junk Size</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Init te Rahi Paraurehe</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="179" />
         <source>Response Packet Junk Size</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Rahi Rahi Peeke Whakautu</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="189" />
         <source>Init Packet Magic Header</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Init Packet Magic Pane</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="199" />
         <source>Response Packet Magic Header</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Pane Whakautu Packet Magic</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="209" />
         <source>Underload Packet Magic Header</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Utahia te Packet Magic Pane</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="219" />
         <source>Transport Header Magic Header</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Pane Waka Pane Makutu</translation>
     </message>
 </context>
 <context>
@@ -2263,47 +2263,47 @@ Mo etahi atu korero, tirohia te tuhinga "Whakaritenga/DNS".</translation>
     <message>
         <location filename="../../src/nekobox/ui/group/GroupItem.ui" line="63" />
         <source>Update Subscription</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Whakahou ohaurunga</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/GroupItem.ui" line="76" />
         <source>Edit</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Whakatikatika</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/GroupItem.ui" line="89" />
         <source>Remove</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tango</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="133" />
         <source>Basic</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Taketake</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="133" />
         <source>Subscription</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ohaurunga</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="134" />
         <source>Archive</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Pūranga</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="146" />
         <source>Last update: %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Whakahoutanga whakamutunga: %1</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="190" />
         <source>Confirmation</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Whakapumautanga</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="190" />
         <source>Remove %1?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tango %1?</translation>
     </message>
 </context>
 <context>
@@ -2312,42 +2312,42 @@ Mo etahi atu korero, tirohia te tuhinga "Whakaritenga/DNS".</translation>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="29" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="32" />
         <source>NekoBox</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">NekoBox</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="51" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="54" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="624" />
         <source>Profiles</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kōtaha</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="73" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="76" />
         <source>Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tautuhinga</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="95" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="98" />
         <source>Routing</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ararere</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="117" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="120" />
         <source>Update</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Whakahou</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="147" />
         <source>Tun Mode</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Aratau Tun</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="154" />
         <source>System DNS</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">DNS Pūnaha</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="161" />
@@ -2355,375 +2355,375 @@ Mo etahi atu korero, tirohia te tuhinga "Whakaritenga/DNS".</translation>
         <location filename="../../src/ui/mainwindow.cpp" line="2523" />
         <location filename="../../src/ui/mainwindow.cpp" line="2526" />
         <source>System Proxy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Takawaenga Pūnaha</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="231" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="648" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="701" />
         <source>Test</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Whakamatau</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="306" />
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="140" />
         <source>Type</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Momo</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="311" />
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="143" />
         <source>Address</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Wāhitau</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="316" />
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="146" />
         <source>Name</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ingoa</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="321" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="291" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="293" />
         <source>Test Result</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Hua Whakamatau</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="326" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="486" />
         <source>Traffic</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Te waka</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="391" />
         <source>Logs</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Rangitaki</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="426" />
         <source>Connections</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Hononga</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="454" />
         <source>Destination (Domain)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Wāhanga (Rohe)</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="457" />
         <source>Click To Disable Sorting</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Pāwhiri Hei Monokia te Kōmaka</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="462" />
         <source>Process</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tukanga</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="465" />
         <source>Click To Sort By Process</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Pāwhiri Hei Kōmaka mā te Tukanga</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="470" />
         <source>Protocol</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kawa</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="473" />
         <source>Click To Sort By Protocol</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Pāwhiri Hei Kōmaka mā te Kawa</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="478" />
         <source>Outbound</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kei waho</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="481" />
         <source>Click To Sort By Outbound</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Pāwhiri Hei Kōmaka ā-Tawaho</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="489" />
         <source>Click To Toggle sort by Traffic</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Pāwhiri Hei Takahuri kōmaka mā te waka</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="498" />
         <source>Traffic Graph</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kauwhata Waka</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="590" />
         <source>Program</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Papatono</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="613" />
         <source>Preferences</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Manakohanga</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="628" />
         <source>Current Group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Rōpū o nāianei</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="634" />
         <source>Current Selected</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kua tohua o naianei</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="638" />
         <source>Share</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tiri</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="683" />
         <source>Hidden menu</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tahua huna</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="696" />
         <source>Routing Menu</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tahua Ararere</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="707" />
         <source>Context</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Horopaki</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="711" />
         <source>ContextProfiles</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">HoropakiProfiles</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="726" />
         <source>Exit</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Putaatu</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="731" />
         <source>Toggle Window</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Takahuri Matapihi</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="736" />
         <source>Basic Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tautuhinga Taketake</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="741" />
         <source>New profile</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kōtaha hou</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="746" />
         <source>Groups</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Rōpū</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="751" />
         <location filename="../../src/ui/mainwindow.cpp" line="3591" />
         <location filename="../../src/ui/mainwindow.cpp" line="3601" />
         <source>Start</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tīmata</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="759" />
         <location filename="../../src/ui/mainwindow.cpp" line="3590" />
         <location filename="../../src/ui/mainwindow.cpp" line="3601" />
         <source>Stop</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kati</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="767" />
         <source>Edit</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Whakatikatika</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="775" />
         <source>Routing Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tautuhinga Ararere</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="780" />
         <source>Add profile from clipboard</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tāpiri kōtaha mai i te papatopenga</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="788" />
         <source>Delete</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Mukua</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="796" />
         <source>Debug Info</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Patuiro Mōhiohio</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="801" />
         <source>QR Code and link</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Waehere QR me te hono</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="809" />
         <source>Copy Link</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tārua Hononga</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="830" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1071" />
         <source>Clear Test Result</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ūkui Hua Whakamātautau</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="838" />
         <location filename="../../src/ui/mainwindow.cpp" line="1432" />
         <source>Export %1 config</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kaweake %1 whirihora</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="846" />
         <source>Reset Traffic</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tautuhi Tauhokohoko</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="854" />
         <source>Scan QR Code</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Matawai Waehere QR</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="862" />
         <source>Enable System Proxy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Whakahohe Takawaenga Pūnaha</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="870" />
         <source>Disable</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Monokia</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="875" />
         <source>Remove Duplicates</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tango Tārite</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="883" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="960" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="968" />
         <source>fake</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">rūpahu</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="891" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1167" />
         <source>Move</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Nuku</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="902" />
         <source>Start with system</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tīmatahia me te punaha</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="910" />
         <source>Remember last profile</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kia mahara ki te kōtaha whakamutunga</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="918" />
         <source>Allow other devices to connect</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tukua etahi atu taputapu kia hono</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="923" />
         <source>Remove Unavailable</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tango Kore Wātea</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="931" />
         <source>Full Test</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Whakamatau Katoa</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="939" />
         <source>Hotkey Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tautuhinga Hotkey</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="944" />
         <source>Select All</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tīpakohia Katoa</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="952" />
         <source>Copy Custom Links</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tārua Hononga Ritenga</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="976" />
         <source>Copy links</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tārua hononga</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="987" />
         <source>Enable Tun</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Whakahohe Tun</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="992" />
         <location filename="../../src/ui/mainwindow.cpp" line="2910" />
         <source>Clone</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Karaka</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1000" />
         <source>Update subscription</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Whakahou ohaurunga</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1011" />
         <source>Resolve domain</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Whakatau rohe</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1019" />
         <source>Tun Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tautuhinga Tun</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1024" />
         <source>Restart Program</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tīmata anō te Hōtaka</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1029" />
         <source>Open Config Folder</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Whakatuwheratia te Kōpaki Whirihora</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1050" />
         <source>Restart Proxy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tīmata anō Takawaenga</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1055" />
         <source>Stop Testing</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kati te Whakamatau</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1060" />
         <source>Url Test</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Whakamātautau Url</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1082" />
         <source>Url Test Group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Rōpū Whakamatau Url</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1093" />
