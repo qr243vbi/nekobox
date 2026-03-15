@@ -1481,38 +1481,38 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
         <translation type="unfinished">মুছুন</translation>
     </message>
     <message>
-        <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="30"/>
+        <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="29"/>
         <source>Invalid state</source>
         <translation type="unfinished">অবৈধ অবস্থা</translation>
     </message>
     <message>
-        <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="30"/>
+        <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="29"/>
         <source>The list of routing profiles is empty, this should be an unreachable state, crashes may occur now</source>
         <translation type="unfinished">রাউটিং প্রোফাইলের তালিকা খালি, এটি একটি পৌঁছানো যায় না এমন অবস্থা হওয়া উচিত, এখন ক্র্যাশ হতে পারে</translation>
     </message>
     <message>
-        <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="203"/>
-        <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="207"/>
+        <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="202"/>
+        <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="206"/>
         <source>Invalid settings</source>
         <translation type="unfinished">অবৈধ সেটিংস৷</translation>
     </message>
     <message>
-        <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="203"/>
+        <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="202"/>
         <source>Routing profile cannot be empty</source>
         <translation type="unfinished">রাউটিং প্রোফাইল খালি করা যাবে না</translation>
     </message>
     <message>
-        <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="207"/>
+        <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="206"/>
         <source>DNS Rules are not valid</source>
         <translation type="unfinished">DNS নিয়ম বৈধ নয়</translation>
     </message>
     <message>
-        <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="315"/>
+        <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="314"/>
         <source>Invalid operation</source>
         <translation type="unfinished">অবৈধ অপারেশন</translation>
     </message>
     <message>
-        <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="315"/>
+        <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="314"/>
         <source>Routing Profiles cannot be empty, try adding another profile or editing this one</source>
         <translation type="unfinished">রাউটিং প্রোফাইলগুলি খালি থাকতে পারে না, অন্য প্রোফাইল যোগ করার চেষ্টা করুন বা এটি সম্পাদনা করুন৷</translation>
     </message>
@@ -2307,32 +2307,32 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
         <translation type="unfinished">সরান</translation>
     </message>
     <message>
-        <location filename="../../src/ui/group/GroupItem.cpp" line="129"/>
+        <location filename="../../src/ui/group/GroupItem.cpp" line="133"/>
         <source>Basic</source>
         <translation type="unfinished">মৌলিক</translation>
     </message>
     <message>
-        <location filename="../../src/ui/group/GroupItem.cpp" line="129"/>
+        <location filename="../../src/ui/group/GroupItem.cpp" line="133"/>
         <source>Subscription</source>
         <translation type="unfinished">সাবস্ক্রিপশন</translation>
     </message>
     <message>
-        <location filename="../../src/ui/group/GroupItem.cpp" line="130"/>
+        <location filename="../../src/ui/group/GroupItem.cpp" line="134"/>
         <source>Archive</source>
         <translation type="unfinished">সংরক্ষণাগার</translation>
     </message>
     <message>
-        <location filename="../../src/ui/group/GroupItem.cpp" line="142"/>
+        <location filename="../../src/ui/group/GroupItem.cpp" line="146"/>
         <source>Last update: %1</source>
         <translation type="unfinished">শেষ আপডেট: %1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/group/GroupItem.cpp" line="186"/>
+        <location filename="../../src/ui/group/GroupItem.cpp" line="190"/>
         <source>Confirmation</source>
         <translation type="unfinished">নিশ্চিতকরণ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/group/GroupItem.cpp" line="186"/>
+        <location filename="../../src/ui/group/GroupItem.cpp" line="190"/>
         <source>Remove %1?</source>
         <translation type="unfinished">%1 সরান?</translation>
     </message>
@@ -2348,7 +2348,7 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="51"/>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="54"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="644"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="624"/>
         <source>Profiles</source>
         <translation type="unfinished">প্রোফাইল</translation>
     </message>
@@ -2383,8 +2383,8 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="161"/>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="594"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="2501"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="2504"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2523"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2526"/>
         <source>System Proxy</source>
         <translation type="unfinished">সিস্টেম প্রক্সি</translation>
     </message>
@@ -2498,7 +2498,7 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
         <translation type="obsolete">সার্ভার</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="628"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="638"/>
         <source>Share</source>
         <translation type="unfinished">শেয়ার করুন</translation>
     </message>
@@ -2508,18 +2508,18 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="231"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="654"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="648"/>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="701"/>
         <source>Test</source>
         <translation type="unfinished">পরীক্ষা</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="624"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="634"/>
         <source>Current Selected</source>
         <translation type="unfinished">বর্তমান নির্বাচিত</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="638"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="628"/>
         <source>Current Group</source>
         <translation type="unfinished">বর্তমান গ্রুপ</translation>
     </message>
@@ -2534,181 +2534,191 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
         <translation type="unfinished">রাউটিং মেনু</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="714"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="707"/>
+        <source>Context</source>
+        <translation type="unfinished">প্রসঙ্গ</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="711"/>
+        <source>ContextProfiles</source>
+        <translation type="unfinished">প্রসঙ্গ প্রোফাইল</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="726"/>
         <source>Exit</source>
         <translation type="unfinished">প্রস্থান করুন</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="719"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="731"/>
         <source>Toggle Window</source>
         <translation type="unfinished">উইন্ডো টগল করুন</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="724"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="736"/>
         <source>Basic Settings</source>
         <translation type="unfinished">মৌলিক সেটিংস</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="729"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="741"/>
         <source>New profile</source>
         <translation type="unfinished">নতুন প্রোফাইল</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="734"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="746"/>
         <source>Groups</source>
         <translation type="unfinished">গোষ্ঠী</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="739"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3569"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3579"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="751"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3591"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3601"/>
         <source>Start</source>
         <translation type="unfinished">শুরু করুন</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="747"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3568"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3579"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="759"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3590"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3601"/>
         <source>Stop</source>
         <translation type="unfinished">থামো</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="755"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="767"/>
         <source>Edit</source>
         <translation type="unfinished">সম্পাদনা করুন</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="763"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="775"/>
         <source>Routing Settings</source>
         <translation type="unfinished">রাউটিং সেটিংস</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="768"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="780"/>
         <source>Add profile from clipboard</source>
         <translation type="unfinished">ক্লিপবোর্ড থেকে প্রোফাইল যোগ করুন</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="776"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="788"/>
         <source>Delete</source>
         <translation type="unfinished">মুছে দিন</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="784"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="796"/>
         <source>Debug Info</source>
         <translation type="unfinished">ডিবাগ তথ্য</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="789"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="801"/>
         <source>QR Code and link</source>
         <translation type="unfinished">QR কোড এবং লিঙ্ক</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="797"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="809"/>
         <source>Copy Link</source>
         <translation type="unfinished">লিংক কপি করুন</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="818"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1059"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="830"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1071"/>
         <source>Clear Test Result</source>
         <translation type="unfinished">পরীক্ষার ফলাফল পরিষ্কার করুন</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="826"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="1410"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="838"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1432"/>
         <source>Export %1 config</source>
         <translation type="unfinished">%1 কনফিগারেশন এক্সপোর্ট করুন</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="834"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="846"/>
         <source>Reset Traffic</source>
         <translation type="unfinished">ট্রাফিক রিসেট করুন</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="842"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="854"/>
         <source>Scan QR Code</source>
         <translation type="unfinished">QR কোড স্ক্যান করুন</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="850"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="862"/>
         <source>Enable System Proxy</source>
         <translation type="unfinished">সিস্টেম প্রক্সি সক্ষম করুন</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="858"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="870"/>
         <source>Disable</source>
         <translation type="unfinished">নিষ্ক্রিয় করুন</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="863"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="875"/>
         <source>Remove Duplicates</source>
         <translation type="unfinished">সদৃশ সরান</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="871"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="948"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="956"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="883"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="960"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="968"/>
         <source>fake</source>
         <translation type="unfinished">জাল</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="879"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1155"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="891"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1167"/>
         <source>Move</source>
         <translation type="unfinished">সরান</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="890"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="902"/>
         <source>Start with system</source>
         <translation type="unfinished">সিস্টেম দিয়ে শুরু করুন</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="898"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="910"/>
         <source>Remember last profile</source>
         <translation type="unfinished">শেষ প্রোফাইল মনে রাখবেন</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="906"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="918"/>
         <source>Allow other devices to connect</source>
         <translation type="unfinished">অন্যান্য ডিভাইসগুলিকে সংযোগ করার অনুমতি দিন</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="911"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="923"/>
         <source>Remove Unavailable</source>
         <translation type="unfinished">অনুপলব্ধ সরান</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="919"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="931"/>
         <source>Full Test</source>
         <translation type="unfinished">সম্পূর্ণ পরীক্ষা</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="927"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="939"/>
         <source>Hotkey Settings</source>
         <translation type="unfinished">হটকি সেটিংস</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="932"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="944"/>
         <source>Select All</source>
         <translation type="unfinished">সব নির্বাচন করুন</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="940"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="952"/>
         <source>Copy Custom Links</source>
         <translation type="unfinished">কাস্টম লিঙ্ক কপি করুন</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="964"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="976"/>
         <source>Copy links</source>
         <translation type="unfinished">লিঙ্ক কপি করুন</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1048"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1060"/>
         <source>Url Test</source>
         <translation type="unfinished">ইউআরএল পরীক্ষা</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1081"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1093"/>
         <source>Resolve Domain</source>
         <translation type="unfinished">ডোমেইন সমাধান করুন</translation>
     </message>
@@ -2721,48 +2731,48 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
         <translation type="obsolete">নির্বাচিত লিঙ্কগুলি অনুলিপি করুন</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="975"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="987"/>
         <source>Enable Tun</source>
         <translation type="unfinished">Tun সক্ষম করুন</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="980"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="2888"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="992"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2910"/>
         <source>Clone</source>
         <translation type="unfinished">ক্লোন</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="988"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1000"/>
         <source>Update subscription</source>
         <translation type="unfinished">সাবস্ক্রিপশন আপডেট করুন</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="999"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1011"/>
         <source>Resolve domain</source>
         <translation type="unfinished">ডোমেইন সমাধান করুন</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1007"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1019"/>
         <source>Tun Settings</source>
         <translation type="unfinished">টিউন সেটিংস</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1012"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1024"/>
         <source>Restart Program</source>
         <translation type="unfinished">প্রোগ্রাম রিস্টার্ট করুন</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1017"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1029"/>
         <source>Open Config Folder</source>
         <translation type="unfinished">কনফিগ ফোল্ডার খুলুন</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1038"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1050"/>
         <source>Restart Proxy</source>
         <translation type="unfinished">প্রক্সি রিস্টার্ট করুন</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1043"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1055"/>
         <source>Stop Testing</source>
         <translation type="unfinished">পরীক্ষা বন্ধ করুন</translation>
     </message>
@@ -2779,7 +2789,7 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
         <translation type="obsolete">ক্লিয়ার টেস্ট রেজাল্ট সিলেক্ট করা হয়েছে</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1070"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1082"/>
         <source>Url Test Group</source>
         <translation type="unfinished">ইউআরএল টেস্ট গ্রুপ</translation>
     </message>
@@ -2792,7 +2802,7 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
         <translation type="obsolete">নির্বাচিত ডোমেন সমাধান করুন</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1089"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1101"/>
         <source>Remove Invalid</source>
         <translation type="unfinished">অবৈধ সরান</translation>
     </message>
@@ -2805,58 +2815,58 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
         <translation type="obsolete">ওপেন ম্যানেজার</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1100"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1112"/>
         <source>Speedtest Current</source>
         <translation type="unfinished">স্পিডটেস্ট কারেন্ট</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1105"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1117"/>
         <source>Full test Selected</source>
         <translation type="unfinished">সম্পূর্ণ পরীক্ষা নির্বাচিত</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1110"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1122"/>
         <source>Download test Selected</source>
         <translation type="unfinished">ডাউনলোড পরীক্ষা নির্বাচন করা হয়েছে</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1115"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1127"/>
         <source>Upload test Selected</source>
         <translation type="unfinished">আপলোড পরীক্ষা নির্বাচিত</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1120"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1132"/>
         <source>Country test Selected</source>
         <translation type="unfinished">দেশ পরীক্ষা নির্বাচিত</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1125"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1137"/>
         <source>Simple download test Selected</source>
         <translation type="unfinished">সহজ ডাউনলোড পরীক্ষা নির্বাচিত</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1130"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1142"/>
         <source>Speedtest Group</source>
         <translation type="unfinished">স্পিডটেস্ট গ্রুপ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1135"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1147"/>
         <source>Hide window</source>
         <translation type="unfinished">জানালা লুকান</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1140"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1152"/>
         <source>Add profile from File</source>
         <translation type="unfinished">ফাইল থেকে প্রোফাইল যোগ করুন</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1145"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3597"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1157"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3619"/>
         <source>Add new Group</source>
         <translation type="unfinished">নতুন গ্রুপ যোগ করুন</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1150"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1162"/>
         <source>Security Settings</source>
         <translation type="unfinished">নিরাপত্তা সেটিংস</translation>
     </message>
@@ -2867,218 +2877,218 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
         <translation type="unfinished">অনুপলব্ধ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1055"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1077"/>
         <source>Edit Routing Profiles</source>
         <translation type="unfinished">রাউটিং প্রোফাইল সম্পাদনা করুন</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1077"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1099"/>
         <source>Update Routing Profiles</source>
         <translation type="unfinished">রাউটিং প্রোফাইল আপডেট করুন</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1089"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="1093"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="1114"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="1117"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="1161"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1111"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1115"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1136"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1139"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1183"/>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="95"/>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="104"/>
         <source>Update Response</source>
         <translation type="unfinished">আপডেট প্রতিক্রিয়া</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1090"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1112"/>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="105"/>
         <source>No routing profiles are updated</source>
         <translation type="unfinished">কোন রাউটিং প্রোফাইল আপডেট করা হয় না</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1094"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1116"/>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="96"/>
         <source>Updated %1 routing profiles</source>
         <translation type="unfinished">আপডেট করা হয়েছে %1 রাউটিং প্রোফাইল</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1104"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1126"/>
         <source>Update RuleSet Map</source>
         <translation type="unfinished">রুলসেট ম্যাপ আপডেট করুন</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1115"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1137"/>
         <source>Failed to update rulesets</source>
         <translation type="unfinished">নিয়ম আপডেট করতে ব্যর্থ হয়েছে</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1118"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1140"/>
         <source>Rulesets updated successfully</source>
         <translation type="unfinished">নিয়মাবলী সফলভাবে আপডেট করা হয়েছে</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1127"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1149"/>
         <source>Update RuleSet Cache</source>
         <translation type="unfinished">RuleSet ক্যাশে আপডেট করুন</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1162"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1184"/>
         <source>Rulesets cache is updated</source>
         <translation type="unfinished">Rulesets ক্যাশে আপডেট করা হয়</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1176"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1198"/>
         <source>Clear RuleSet Cache</source>
         <translation type="unfinished">RuleSet ক্যাশে সাফ করুন</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1212"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1234"/>
         <source>Enable AdBlock</source>
         <translation type="unfinished">AdBlock সক্ষম করুন</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1624"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1646"/>
         <source>Error</source>
         <translation type="unfinished">ত্রুটি</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1711"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1733"/>
         <source>Tun Settings changed</source>
         <translation type="unfinished">Tun সেটিংস পরিবর্তিত হয়েছে৷</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1712"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1734"/>
         <source>Restart Tun to take effect.</source>
         <translation type="unfinished">কার্যকর করতে Tun পুনরায় চালু করুন।</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1718"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="1776"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="2942"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3313"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3367"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3416"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3642"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1740"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1798"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2964"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3335"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3389"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3438"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3664"/>
         <source>Confirmation</source>
         <translation type="unfinished">নিশ্চিতকরণ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1719"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="1777"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1741"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1799"/>
         <source>Settings changed, restart proxy?</source>
         <translation type="unfinished">সেটিংস পরিবর্তিত হয়েছে, প্রক্সি পুনরায় চালু করবেন?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1748"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1770"/>
         <source>Settings changed</source>
         <translation type="unfinished">সেটিংস পরিবর্তন করা হয়েছে</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1749"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1771"/>
         <source>Restart the program to take effect.</source>
         <translation type="unfinished">কার্যকর করার জন্য প্রোগ্রামটি পুনরায় চালু করুন।</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1792"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1814"/>
         <source>Imported %1 profile(s)</source>
         <translation type="unfinished">আমদানি করা %1 প্রোফাইল(গুলি)</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2059"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2081"/>
         <source>User opted for no privilege req, some features may not work</source>
         <translation type="unfinished">ব্যবহারকারী কোনো বিশেষাধিকার অনুরোধের জন্য বেছে নিয়েছেন, কিছু বৈশিষ্ট্য কাজ নাও করতে পারে</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2123"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2145"/>
         <source>Please give the core root privileges</source>
         <translation type="unfinished">অনুগ্রহ করে মূল রুট সুবিধা দিন</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2477"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2499"/>
         <source>Not Running</source>
         <translation type="unfinished">চলছে না</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2889"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2911"/>
         <source>Clone %1 item(s)</source>
         <translation type="unfinished">ক্লোন %1 আইটেম(গুলি)</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2923"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2945"/>
         <source> Confirmation </source>
         <translation type="unfinished">নিশ্চিতকরণ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2924"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2946"/>
         <source> Remove %1 item(s) ? </source>
         <translation type="unfinished">%1 আইটেম(গুলি) সরান?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2943"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2965"/>
         <source>Remove %1 item(s) ?</source>
         <translation type="unfinished">%1 আইটেম(গুলি) সরান?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2980"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="2993"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3002"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3015"/>
         <source>Copied %1 item(s)</source>
         <translation type="unfinished">অনুলিপি করা হয়েছে %1 আইটেম(গুলি)</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3225"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3247"/>
         <source>QR Code not found</source>
         <translation type="unfinished">QR কোড পাওয়া যায়নি</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3246"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3268"/>
         <source>Unable to capture screen</source>
         <translation type="unfinished">স্ক্রীন ক্যাপচার করতে অক্ষম</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3314"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3336"/>
         <source>Remove %1 Unavailable item(s) ?</source>
         <translation type="unfinished">%1 অনুপলব্ধ আইটেম(গুলি) সরান?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3368"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3390"/>
         <source>Remove %1 Invalid item(s) ?</source>
         <translation type="unfinished">%1 অবৈধ আইটেম(গুলি) সরান?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3417"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3439"/>
         <source>Replace domain server addresses with their resolved IPs?</source>
         <translation type="unfinished">ডোমেন সার্ভার ঠিকানাগুলি তাদের সমাধান করা আইপিগুলির সাথে প্রতিস্থাপন করবেন?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3566"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3588"/>
         <source>Clear</source>
         <translation type="unfinished">পরিষ্কার</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3633"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3655"/>
         <source>Delete selected Group</source>
         <translation type="unfinished">নির্বাচিত গ্রুপ মুছুন</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3634"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3656"/>
         <source>Edit selected Group</source>
         <translation type="unfinished">নির্বাচিত গ্রুপ সম্পাদনা করুন</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3643"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3665"/>
         <source>Remove %1?</source>
         <translation type="unfinished">%1 সরান?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4337"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4381"/>
         <source>Cannot start</source>
         <translation type="unfinished">শুরু করা যাবে না</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4338"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4382"/>
         <source>Last download request has not finished yet</source>
         <translation type="unfinished">শেষ ডাউনলোড অনুরোধ এখনও শেষ হয়নি</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4372"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4416"/>
         <source>Failed to download update assets</source>
         <translation type="unfinished">আপডেট সম্পদ ডাউনলোড করতে ব্যর্থ হয়েছে</translation>
     </message>
@@ -3270,7 +3280,7 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
 <context>
     <name>QGuiApplication</name>
     <message>
-        <location filename="../../src/main.cpp" line="287"/>
+        <location filename="../../src/main.cpp" line="317"/>
         <source>QT_LAYOUT_DIRECTION</source>
         <translation type="unfinished">QT_LAYOUT_DIRECTION</translation>
     </message>
@@ -3283,37 +3293,37 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
         <translation type="unfinished">কাস্টম কনফিগারেশনের সাথে টুন মোড ব্যবহার করা যাবে না</translation>
     </message>
     <message>
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="836"/>
+        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="839"/>
         <source>Requesting subscription: %1</source>
         <translation type="unfinished">সাবস্ক্রিপশনের জন্য অনুরোধ করা হচ্ছে: %1</translation>
     </message>
     <message>
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="840"/>
+        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="843"/>
         <source>Requesting subscription %1 error: %2</source>
         <translation type="unfinished">সাবস্ক্রিপশনের জন্য অনুরোধ করা হচ্ছে %1 ত্রুটি: %2</translation>
     </message>
     <message>
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="847"/>
+        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="850"/>
         <source>Subscription request fininshed: %1</source>
         <translation type="unfinished">সাবস্ক্রিপশন অনুরোধ শেষ হয়েছে: %1</translation>
     </message>
     <message>
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="865"/>
+        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="868"/>
         <source>Clearing servers...</source>
         <translation type="unfinished">সার্ভার সাফ করা হচ্ছে...</translation>
     </message>
     <message>
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="870"/>
+        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="873"/>
         <source>Processing subscription data...</source>
         <translation type="unfinished">সদস্যতা ডেটা প্রক্রিয়া করা হচ্ছে...</translation>
     </message>
     <message>
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="873"/>
+        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="876"/>
         <source>Process complete, applying...</source>
         <translation type="unfinished">প্রক্রিয়া সম্পন্ন, আবেদন করা হচ্ছে...</translation>
     </message>
     <message>
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="936"/>
+        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="939"/>
         <source>Added %1 profiles:
 %2
 Deleted %3 Profiles:
@@ -3324,17 +3334,17 @@ Deleted %3 Profiles:
 %4</translation>
     </message>
     <message>
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="941"/>
+        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="944"/>
         <source>Nothing</source>
         <translation type="unfinished">কিছুই না</translation>
     </message>
     <message>
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="944"/>
+        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="947"/>
         <source>Change of %1:</source>
         <translation type="unfinished">%1 এর পরিবর্তন:</translation>
     </message>
     <message>
-        <location filename="../../src/dataStore/Database.cpp" line="132"/>
+        <location filename="../../src/dataStore/Database.cpp" line="123"/>
         <source>Default</source>
         <translation type="unfinished">ডিফল্ট</translation>
     </message>
@@ -3361,13 +3371,13 @@ Deleted %3 Profiles:
     <message>
         <location filename="../../src/nekobox/global/GuiUtils.hpp" line="121"/>
         <location filename="../../src/ui/profile/edit_ssh.cpp" line="28"/>
-        <location filename="../../src/ui/setting/dialog_basic_settings.cpp" line="333"/>
+        <location filename="../../src/ui/setting/dialog_basic_settings.cpp" line="334"/>
         <source>Select</source>
         <translation type="unfinished">নির্বাচন করুন</translation>
     </message>
     <message>
         <location filename="../../src/stats/traffic/TrafficLooper.cpp" line="115"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="2445"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2467"/>
         <source>Proxy: %1
 Direct: %2</source>
         <translation type="unfinished">প্রক্সি: %1
@@ -3416,12 +3426,17 @@ How to update?</source>
         <translation type="unfinished">এই গ্রুপে প্রোফাইল যোগ করুন</translation>
     </message>
     <message>
-        <location filename="../../src/ui/group/GroupItem.cpp" line="37"/>
+        <location filename="../../src/ui/group/GroupItem.cpp" line="33"/>
+        <source>Add as http/https proxy</source>
+        <translation type="unfinished">http/https প্রক্সি হিসেবে যোগ করুন</translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/group/GroupItem.cpp" line="38"/>
         <source>Group name</source>
         <translation type="unfinished">গ্রুপের নাম</translation>
     </message>
     <message>
-        <location filename="../../src/ui/group/GroupItem.cpp" line="101"/>
+        <location filename="../../src/ui/group/GroupItem.cpp" line="105"/>
         <source>Used: %1 Remain: %2 Expire: %3</source>
         <translation type="unfinished">ব্যবহৃত: %1 অবশিষ্ট: %2 মেয়াদ শেষ: %3</translation>
     </message>
@@ -3454,74 +3469,74 @@ Deleted %1 Unavailable</source>
         <translation type="unfinished">মুছে ফেলা হয়েছে %1 অনুপলব্ধ৷</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1503"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1525"/>
         <source>Check Rule Sets: %1</source>
         <translation type="unfinished">নিয়ম সেট চেক করুন: %1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1525"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1547"/>
         <source>Requesting rule-set list error: %1</source>
         <translation type="unfinished">নিয়ম-সেট তালিকা ত্রুটি: %1 অনুরোধ করা হচ্ছে</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2482"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2504"/>
         <source>IP address: %1</source>
         <translation type="unfinished">আইপি ঠিকানা: %1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2868"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2890"/>
         <source>Move profiles to group</source>
         <translation type="unfinished">প্রোফাইলগুলিকে গ্রুপে সরান</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3011"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3033"/>
         <source>Config copied</source>
         <translation type="unfinished">কনফিগ কপি করা হয়েছে</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3022"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3044"/>
         <source>Copy core config</source>
         <translation type="unfinished">কোর কনফিগারেশন কপি করুন</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3023"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3045"/>
         <source>Copy test config</source>
         <translation type="unfinished">পরীক্ষার কনফিগারেশন কপি করুন</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3024"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3046"/>
         <location filename="../../src/ui/security_addon.cpp" line="21"/>
-        <location filename="../../src/ui/setting/dialog_vpn_settings.cpp" line="45"/>
+        <location filename="../../src/ui/setting/dialog_vpn_settings.cpp" line="53"/>
         <source>OK</source>
         <translation type="unfinished">ঠিক আছে</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4241"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="4252"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4285"/>
         <location filename="../../src/ui/mainwindow.cpp" line="4296"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="4319"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="4328"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4340"/>
         <location filename="../../src/ui/mainwindow.cpp" line="4363"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4372"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4407"/>
         <source>Update</source>
         <translation type="unfinished">আপডেট</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4242"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4286"/>
         <source>Not official support platform</source>
         <translation type="unfinished">অফিসিয়াল সমর্থন প্ল্যাটফর্ম নয়</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4253"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4297"/>
         <source>Requesting update error: %1</source>
         <translation type="unfinished">আপডেটের জন্য অনুরোধ করা হচ্ছে ত্রুটি: %1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4296"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4340"/>
         <source>No update</source>
         <translation type="unfinished">কোন আপডেট নেই</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4320"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4364"/>
         <source>Update found: %1
 Release note:
 %2</source>
@@ -3530,17 +3545,17 @@ Release note:
 %2</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4323"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4367"/>
         <source>Close</source>
         <translation type="unfinished">বন্ধ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4325"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4369"/>
         <source>Open in browser</source>
         <translation type="unfinished">ব্রাউজারে খুলুন</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4364"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4408"/>
         <source>Update is ready, restart to install?</source>
         <translation type="unfinished">আপডেট প্রস্তুত, ইনস্টল করতে পুনরায় আরম্ভ করবেন?</translation>
     </message>
@@ -3550,17 +3565,17 @@ Release note:
         <translation type="unfinished">অ্যাক্সেস অস্বীকার করা হয়েছে৷</translation>
     </message>
     <message>
-        <location filename="../../src/ui/setting/dialog_basic_settings.cpp" line="338"/>
+        <location filename="../../src/ui/setting/dialog_basic_settings.cpp" line="339"/>
         <source>Select a Folder</source>
         <translation type="unfinished">একটি ফোল্ডার নির্বাচন করুন</translation>
     </message>
     <message>
-        <location filename="../../src/ui/setting/dialog_vpn_settings.cpp" line="37"/>
+        <location filename="../../src/ui/setting/dialog_vpn_settings.cpp" line="45"/>
         <source>Exclude CIDR&apos;s</source>
         <translation type="unfinished">CIDR এর বাদ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/setting/dialog_vpn_settings.cpp" line="46"/>
+        <location filename="../../src/ui/setting/dialog_vpn_settings.cpp" line="54"/>
         <source>Cancel</source>
         <translation type="unfinished">বাতিল করুন</translation>
     </message>
@@ -3902,7 +3917,7 @@ Release note:
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="312"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="1236"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1258"/>
         <source>Download Profiles</source>
         <translation type="unfinished">প্রোফাইল ডাউনলোড করুন</translation>
     </message>
