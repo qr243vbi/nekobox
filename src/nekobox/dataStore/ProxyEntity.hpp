@@ -134,19 +134,4 @@ namespace Configs {
         #undef cast_func
     };
 
-
-    class OldProxyEntityCompat : public JsonStore{
-        public:
-        virtual ConfJsMap _map()  override;
-        std::shared_ptr<Configs::ProxyEntity> proxy;
-        OldProxyEntityCompat(std::shared_ptr<Configs::ProxyEntity> b): proxy(b){};
-    };
-
-
-    class OldBeanEntityCompat : public JsonStore{
-        public:
-        virtual ConfJsMap _map()  override;
-        std::shared_ptr<Configs::AbstractBean> bean;
-        OldBeanEntityCompat(std::shared_ptr<Configs::AbstractBean> b): bean(b){};
-    };
 } // namespace Configs

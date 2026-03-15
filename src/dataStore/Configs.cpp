@@ -445,36 +445,7 @@ QByteArray hash = QCryptographicHash::hash(
 
     #undef d_add
 
-    Shortcuts::Shortcuts() : JsonStore()
-    {
-    }
-    
-    DECL_MAP(Shortcuts)
-        ADD_MAP("keyval", keyVal, stringList);
-    STOP_MAP
 
-    bool Shortcuts::Save()
-    {
-        keyVal.clear();
-        for (auto [k, v] : asKeyValueRange(shortcuts))
-        {
-            if (v.isEmpty()) continue;
-            keyVal << k << v.toString();
-        }
-
-        return JsonStore::Save();
-    }
-
-    bool Shortcuts::Load() {
-        auto ret = JsonStore::Load();
-        if (!ret) return false;
-        if (keyVal.count()%2 != 0) return false;
-        for (int i=0;i<keyVal.size();i+=2)
-        {
-            shortcuts[keyVal[i]] = QKeySequence(keyVal[i+1]);
-        }
-        return ret;
-    }
 
     QStringList Routing::List() {
         return {"Default"};

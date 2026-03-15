@@ -213,6 +213,28 @@ inline bool isDarkMode() {
 #endif
 }
 
+namespace Configs {
+class Shortcuts : public JsonStore
+{
+public:
+    bool legacy = false;
+    virtual ConfJsMap _map() override;
+    QVariantMap shortcuts;
+    virtual bool UnknownKeyHash(const QByteArray & array) override;
+
+    explicit Shortcuts();
+};
+
+class ShortcutsOld : public JsonStore
+{
+public:
+    virtual ConfJsMap _map() override;
+    QStringList shortcuts;
+
+    explicit ShortcutsOld();
+};
+}
+
 struct ProxyColorRule : public JsonStore {
     virtual ConfJsMap _map() override;
     ProxyColorRule(int, int, int, int, bool, QColor);

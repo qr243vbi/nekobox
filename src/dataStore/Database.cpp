@@ -12,15 +12,6 @@ namespace Configs {
     ProfileManager::ProfileManager() : JsonStore("profiles.cfg") {
     }
 
-    DECL_MAP(OldProxyEntityCompat)
-        ADD_MAP("bean", proxy, jsonStore);
-    STOP_MAP
-
-
-    DECL_MAP(OldBeanEntityCompat)
-        ADD_MAP("bean", bean, jsonStore);
-    STOP_MAP
-
     DECL_MAP(ProfileManager)
         ADD_MAP("groups", 
             groupsTabOrder, integerList);

@@ -723,6 +723,28 @@ MainWindow::MainWindow(QWidget *parent)
   ui->toolButton_server->setMenu(ui->menu_profiles);
   ui->toolButton_routing->setMenu(ui->menuRouting_Menu);
 
+  {
+  auto menu_profiles = ui->menu_profiles;
+  auto menu_context_profiles = ui->menuContextProfiles;
+  auto menu_server = ui->menu_server;
+  auto menu_context = ui->menuContext;
+  for (auto u : menu_profiles->actions()){
+    if (u->menu() != menu_server){
+      menu_context_profiles->addAction(u);
+    }
+  }
+  menu_context_profiles->setTitle(menu_profiles->title());
+  connect(menu_context, &QMenu::aboutToShow, this, [menu_context_profiles, menu_context, menu_server]() {
+    menu_context->clear();
+    menu_context->addMenu(menu_context_profiles);
+    menu_context->addSeparator();
+    for (auto i : menu_server->actions()) {
+        menu_context->addAction(i);
+    }
+  });
+
+  }
+
   ADD_SECURITY_ACTION
 
   ui->menubar->setVisible(false);
@@ -1335,10 +1357,10 @@ skip_updater_hide:
   ui->url_test_button->setMenu(testmenu);
   //connect(ui->url_test_button, &QPushButton::clicked, this,
   //        url_test_group_action);
-  testmenu = ui->menu_profiles;
-  testmenu->addSeparator();
-  testmenu->addMenu(ui->menu_server);
-  testmenu->addMenu(ui->menuCurrent_group);
+  //testmenu = ui->menu_profiles;
+  //testmenu->addSeparator();
+  //testmenu->addMenu(ui->menu_server);
+  //testmenu->addMenu(ui->menuCurrent_group);
 
   connect(ui->actionSpeedtest_Current, &QAction::triggered, this, [=, this]() {
     if (running != nullptr) {
@@ -3452,7 +3474,7 @@ void MainWindow::on_proxyListTable_customContextMenuRequested(
     const QPoint &pos) {
   auto pos1 = ui->proxyListTable->viewport()->mapToGlobal(pos);  
   LAST_CLICK
-  ui->menu_server->popup(pos1); 
+  ui->menuContext->popup(pos1);
 }
 
 QList<std::shared_ptr<Configs::ProxyEntity>>
@@ -3777,10 +3799,13 @@ void MainWindow::RegisterHotkey(bool unregister) {
 
 void MainWindow::RegisterHiddenMenuShortcuts(QMenu *menu) {
   for (const auto &action : menu->actions()) {
-    if (!action->shortcut().toString().isEmpty()) {
+#ifdef DEBUG_MODE
+      qDebug() << "SHORTCUT" << action->shortcut().toString();
+#endif
+ //   if (!action->shortcut().toString().isEmpty()) {
       hiddenMenuShortcuts.append(new QShortcut(
           action->shortcut(), this, [=, this]() { action->trigger(); }));
-    }
+ //   }
   }
 }
 
@@ -3796,6 +3821,7 @@ void MainWindow::RegisterHiddenMenuShortcuts(bool unregister) {
   RegisterHiddenMenuShortcuts(ui->menu_server);
   RegisterHiddenMenuShortcuts(ui->menu_test);
   RegisterHiddenMenuShortcuts(ui->menu_share_item);
+  RegisterHiddenMenuShortcuts(ui->menu_profiles);
 }
 
 void MainWindow::setActionsData() {
@@ -3849,18 +3875,30 @@ QList<QAction *> MainWindow::getActionsForShortcut() {
 }
 
 void MainWindow::loadShortcuts() {
-  auto mp = Configs::dataStore->shortcuts->shortcuts;
+  auto& mp = Configs::windowSettings->shortcuts->shortcuts;
+  bool legacy = Configs::windowSettings->shortcuts->legacy;
   for (QList<QAction *> actions = findChildren<QAction *>();
        QAction *action : actions) {
-    if (action->data().isNull() || action->data().toString().isEmpty())
+    QVariant data = action->data();
+    QString data_string;
+    if (data.isNull() || (data_string = data.toString()).isEmpty())
       continue;
-    if (mp.count(action->data().toString()) == 0)
-      action->setShortcut(QKeySequence());
-    else
-      action->setShortcut(mp[action->data().toString()]);
+    if (mp.count(data_string) == 0) {
+      if (!legacy){
+        action->setShortcut(QKeySequence());
+      } else {
+        mp[data_string] = action->shortcut().toString();
+      }
+    }
+    else {
+      action->setShortcut(mp[data_string].toString());
+    }
   }
-
   RegisterHiddenMenuShortcuts();
+  if (legacy){
+    Configs::windowSettings->shortcuts->Save();
+    Configs::windowSettings->shortcuts->legacy = false;
+  }
 }
 /*
 

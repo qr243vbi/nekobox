@@ -619,63 +619,63 @@
     <addaction name="menu_hotkey_settings"/>
     <addaction name="menu_open_config_folder"/>
    </widget>
-   <widget class="QMenu" name="menu_server">
+   <widget class="QMenu" name="menu_profiles">
     <property name="title">
-     <string>Current Selected</string>
+     <string>Profiles</string>
     </property>
-    <widget class="QMenu" name="menu_share_item">
-     <property name="title">
-      <string>Share</string>
-     </property>
-     <addaction name="menu_qr"/>
-     <addaction name="menu_export_config"/>
-     <addaction name="separator"/>
-     <addaction name="menu_copy_links"/>
-     <addaction name="menu_copy_links_nkr"/>
-    </widget>
     <widget class="QMenu" name="menuCurrent_group">
      <property name="title">
       <string>Current Group</string>
      </property>
      <addaction name="separator"/>
     </widget>
-    <widget class="QMenu" name="menu_profiles">
+    <widget class="QMenu" name="menu_server">
      <property name="title">
-      <string>Profiles</string>
+      <string>Current Selected</string>
      </property>
-     <addaction name="menu_add_from_clipboard"/>
-     <addaction name="actionAdd_new_Group"/>
-     <addaction name="menu_add_from_input"/>
-     <addaction name="actionAdd_profile_from_File"/>
-     <addaction name="menu_scan_qr"/>
+     <widget class="QMenu" name="menu_share_item">
+      <property name="title">
+       <string>Share</string>
+      </property>
+      <addaction name="menu_qr"/>
+      <addaction name="menu_export_config"/>
+      <addaction name="separator"/>
+      <addaction name="menu_copy_links"/>
+      <addaction name="menu_copy_links_nkr"/>
+     </widget>
+     <widget class="QMenu" name="menu_test">
+      <property name="title">
+       <string>Test</string>
+      </property>
+      <addaction name="actionUrl_Test_Selected"/>
+      <addaction name="actionUrl_Test_Clear"/>
+      <addaction name="actionSpeedtest_Selected"/>
+      <addaction name="actionDownloadtest_Selected"/>
+      <addaction name="actionUploadtest_Selected"/>
+      <addaction name="actionCountrytest_Selected"/>
+      <addaction name="actionSimpledl_Selected"/>
+     </widget>
+     <addaction name="menu_start"/>
+     <addaction name="menu_stop"/>
+     <addaction name="menu_edit"/>
+     <addaction name="menu_select_all"/>
+     <addaction name="separator"/>
+     <addaction name="menu_share_item"/>
+     <addaction name="menu_clone"/>
+     <addaction name="menu_move_profile"/>
+     <addaction name="menu_delete"/>
+     <addaction name="separator"/>
+     <addaction name="menu_resolve_selected"/>
+     <addaction name="menu_reset_traffic"/>
+     <addaction name="menu_test"/>
     </widget>
-    <widget class="QMenu" name="menu_test">
-     <property name="title">
-      <string>Test</string>
-     </property>
-     <addaction name="actionUrl_Test_Selected"/>
-     <addaction name="actionUrl_Test_Clear"/>
-     <addaction name="actionSpeedtest_Selected"/>
-     <addaction name="actionDownloadtest_Selected"/>
-     <addaction name="actionUploadtest_Selected"/>
-     <addaction name="actionCountrytest_Selected"/>
-     <addaction name="actionSimpledl_Selected"/>
-    </widget>
-    <addaction name="menu_profiles"/>
+    <addaction name="menu_add_from_clipboard"/>
+    <addaction name="actionAdd_new_Group"/>
+    <addaction name="menu_add_from_input"/>
+    <addaction name="actionAdd_profile_from_File"/>
+    <addaction name="menu_scan_qr"/>
     <addaction name="separator"/>
-    <addaction name="menu_start"/>
-    <addaction name="menu_stop"/>
-    <addaction name="menu_edit"/>
-    <addaction name="menu_select_all"/>
-    <addaction name="separator"/>
-    <addaction name="menu_share_item"/>
-    <addaction name="menu_clone"/>
-    <addaction name="menu_move_profile"/>
-    <addaction name="menu_delete"/>
-    <addaction name="separator"/>
-    <addaction name="menu_resolve_selected"/>
-    <addaction name="menu_reset_traffic"/>
-    <addaction name="menu_test"/>
+    <addaction name="menu_server"/>
     <addaction name="menuCurrent_group"/>
    </widget>
    <widget class="QMenu" name="menuHidden_menu">
@@ -702,12 +702,24 @@
     </property>
     <addaction name="actionSpeedtest_Current"/>
    </widget>
+   <widget class="QMenu" name="menuContext">
+    <property name="title">
+     <string>Context</string>
+    </property>
+    <widget class="QMenu" name="menuContextProfiles">
+     <property name="title">
+      <string>ContextProfiles</string>
+     </property>
+    </widget>
+    <addaction name="menuContextProfiles"/>
+   </widget>
    <addaction name="menu_program"/>
    <addaction name="menu_preferences"/>
-   <addaction name="menu_server"/>
+   <addaction name="menu_profiles"/>
    <addaction name="menuHidden_menu"/>
    <addaction name="menuRouting_Menu"/>
    <addaction name="menuTest"/>
+   <addaction name="menuContext"/>
   </widget>
   <action name="menu_exit">
    <property name="text">
@@ -768,7 +780,7 @@
     <string>Add profile from clipboard</string>
    </property>
    <property name="shortcut">
-    <string notr="true">Ctrl+B</string>
+    <string notr="true">Ctrl+V</string>
    </property>
   </action>
   <action name="menu_delete">

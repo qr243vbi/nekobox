@@ -165,3 +165,29 @@ std::map<Icon::TrayIconStatus, IndicatorRule> indicatorRuleMap = {
     {Icon::TrayIconStatus::SYSTEM_PROXY_DNS, {0.4, 0.04, 0.4, Qt::darkMagenta}},
     {Icon::TrayIconStatus::RUNNING, {0.4, 0.04, 0.4, Qt::darkGreen}}
 };
+
+namespace Configs {
+Shortcuts::Shortcuts() : JsonStore()
+{
+}
+
+DECL_MAP(Shortcuts)
+    ADD_MAP("shortcuts", shortcuts, stringMap);
+STOP_MAP
+
+bool Shortcuts::UnknownKeyHash(const QByteArray & array) {
+    if (array == Configs::hash("keyval")){
+        this->legacy = true;
+    }
+    return false;
+}
+
+ShortcutsOld::ShortcutsOld() : JsonStore()
+{
+}
+
+DECL_MAP(ShortcutsOld)
+    ADD_MAP("keyval", shortcuts, stringList);
+STOP_MAP
+
+}

@@ -23,9 +23,6 @@ import (
 	"github.com/sagernet/sing/service"
 )
 
-
-
-
 // server is used to implement myservice.MyServiceServer.
 type server struct {
 }
@@ -101,15 +98,15 @@ func (s *server) Start(ctx context.Context, in *gen.LoadConfigReq) (*gen.ErrorRe
 	if err != nil {
 		return out, nil
 	}
-//	if strings.Contains(
-//		in.CoreConfig, "tun-in") && strings.Contains(
-//		in.CoreConfig, "172.19.0.1/24") {
-//		err := sys.SetSystemDNS("172.19.0.2", boxInstance.Network().InterfaceMonitor())
-//		if err != nil {
-//			log.Println("Failed to set system DNS:", err)
-//		}
-//		needUnsetDNS = true
-//	}
+	//	if strings.Contains(
+	//		in.CoreConfig, "tun-in") && strings.Contains(
+	//		in.CoreConfig, "172.19.0.1/24") {
+	//		err := sys.SetSystemDNS("172.19.0.2", boxInstance.Network().InterfaceMonitor())
+	//		if err != nil {
+	//			log.Println("Failed to set system DNS:", err)
+	//		}
+	//		needUnsetDNS = true
+	//	}
 
 	return out, nil
 }
@@ -128,13 +125,13 @@ func (s *server) Stop(ctx context.Context, in *gen.EmptyReq) (*gen.ErrorResp, er
 		return out, err
 	}
 
-//	if needUnsetDNS {
-//		needUnsetDNS = false
-//		err := sys.SetSystemDNS("Empty", boxInstance.Network().InterfaceMonitor())
-//		if err != nil {
-//			log.Println("Failed to unset system DNS:", err)
-//		}
-//	}
+	//	if needUnsetDNS {
+	//		needUnsetDNS = false
+	//		err := sys.SetSystemDNS("Empty", boxInstance.Network().InterfaceMonitor())
+	//		if err != nil {
+	//			log.Println("Failed to unset system DNS:", err)
+	//		}
+	//	}
 	internal.BoxInstance.CloseWithTimeout(internal.InstanceCancel, time.Second*2, log.Println)
 
 	internal.BoxInstance = nil
@@ -154,6 +151,49 @@ func (s *server) CheckConfig(ctx context.Context, in *gen.LoadConfigReq) (*gen.E
 		out.Error = (err.Error())
 		return out, nil
 	}
+	return out, nil
+}
+
+func (s *server) IPTest(ctx context.Context, in *gen.IPTestRequest) (*gen.QueryIPTestResponse, error) {
+	out := new(gen.QueryIPTestResponse)
+	var testInstance *boxbox.Box
+	var cancel context.CancelFunc
+	var err error
+	testInstance, cancel, err = boxmain.Create([]byte(in.Config))
+	if err != nil {
+		return nil, err
+	}
+	defer testInstance.CloseWithTimeout(cancel, 2*time.Second, log.Println)
+
+	outboundTags := in.OutboundTags
+	if in.UseDefaultOutbound {
+		outbound := testInstance.Outbound().Default()
+		outboundTags = []string{outbound.Tag()}
+	}
+
+	maxConcurrency := in.MaxConcurrency
+	if maxConcurrency >= MaxConcurrentTests || maxConcurrency == 0 {
+		maxConcurrency = MaxConcurrentTests
+	}
+	timeout := time.Duration(in.TestTimeoutMs) * time.Millisecond
+	results := BatchIPTest(testCtx, testInstance, outboundTags, int(maxConcurrency), timeout)
+
+	res := make([]*gen.IPTestResp, 0, len(results))
+	for idx, data := range results {
+		errStr := ""
+		if data.Error != nil {
+			errStr = data.Error.Error()
+		}
+		tag := outboundTags[idx]
+
+		res = append(res, &gen.IPTestResp{
+			OutboundTag: (tag),
+			IP:          (data.Result.IP),
+			CountryCode: (data.Result.CountryCode),
+			Error:       (errStr),
+		})
+	}
+	out.Results = res
 	return out, nil
 }
 

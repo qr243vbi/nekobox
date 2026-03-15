@@ -37,21 +37,6 @@ namespace Configs {
         static QStringList List();
     };
 
-    class Shortcuts : public JsonStore
-    {
-    public:
-        virtual ConfJsMap _map() override;
-
-        QMap<QString, QKeySequence> shortcuts;
-
-        QStringList keyVal;
-
-        explicit Shortcuts();
-        virtual bool Save() override;
-
-        virtual bool Load() override;
-    };
-
     INIT_ENUM(VpnImplementation)
         ADD_ENUM_LIST(Preset::SingBox::VpnImplementation, 1)
     STOP_ENUM
@@ -168,7 +153,6 @@ namespace Configs {
         int remember_id = -1919;
         bool remember_enable = false;
         bool windows_set_admin = false;
-        std::unique_ptr<Shortcuts> shortcuts;
 
         // Socks & HTTP Inbound
         QString inbound_address = "127.0.0.1";

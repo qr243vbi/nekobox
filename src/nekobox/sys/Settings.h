@@ -4,6 +4,7 @@
 #include <QMap>
 #include <QSettings>
 #include <nekobox/dataStore/Utils.hpp>
+#include <nekobox/global/GuiUtils.hpp>
 
 #define CONFIG_INI_PATH QDir::current().absolutePath() + "/window.ini"
 
@@ -49,6 +50,7 @@
   };
 
 namespace Configs {
+
 class SettingsValue;
 class SettingsStore {
 public:
@@ -86,6 +88,7 @@ SETTINGS_VALUE(Chr)
 
 class WindowSettings : public SettingsStore {
 public:
+  std::unique_ptr<Shortcuts> shortcuts;
   QList<std::shared_ptr<SettingsValue>> &_map() override;
   QSettings settings() override;
   QString theme =

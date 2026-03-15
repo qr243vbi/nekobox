@@ -151,7 +151,7 @@ struct IPTestRequest {
 
 service LibcoreService {
   CacheURLResult CacheHTTP(1: CacheURLRequest req),
-
+  QueryIPTestResponse IPTest(1: IPTestRequest req),
   ErrorResp Start(1: LoadConfigReq req),
   ErrorResp Stop(1: EmptyReq req),
   ErrorResp CheckConfig(1: LoadConfigReq req),

@@ -108,7 +108,8 @@ func (c *CountryTestResults) Results() []*SpeedTestResult {
 	return cp
 }
 
-func BatchURLTest(ctx context.Context, i *boxbox.Box, outboundTags []string, url string, maxConcurrency int, twice bool, timeout time.Duration) []*URLTestResult {
+func BatchURLTest(ctx context.Context, i *boxbox.Box, outboundTags []string, url string,
+	maxConcurrency int, twice bool, timeout time.Duration) []*URLTestResult {
 	if timeout <= 0 {
 		timeout = URLTestTimeout
 	}
