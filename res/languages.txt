@@ -89,7 +89,7 @@ ug_CN:ئۇيغۇرچە
 #rw_RW:Kinyarwanda
 so_SO:Soomaali
 yo_NG:Yorùbá
-#ig_NG:Igbo
+ig_NG:Igbo
 #ha_NG:Hausa
 #qu_PE:Runa Simi
 #ay_BO:Aymar aru
