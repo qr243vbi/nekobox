@@ -2753,59 +2753,59 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1127" />
         <source>Upload test Selected</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Тестти жүктөө тандалды</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1132" />
         <source>Country test Selected</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Өлкө тести тандалды</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1137" />
         <source>Simple download test Selected</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Жөнөкөй жүктөө тести тандалды</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1142" />
         <source>Speedtest Group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Speedtest Group</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1147" />
         <source>Hide window</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Терезени жашыруу</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1152" />
         <source>Add profile from File</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Файлдан профиль кошуу</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1157" />
         <location filename="../../src/ui/mainwindow.cpp" line="3619" />
         <source>Add new Group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Жаңы топ кошуу</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1162" />
         <source>Security Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Коопсуздук жөндөөлөрү</translation>
     </message>
     <message>
         <location filename="../../src/dataStore/ProxyEntity.cpp" line="223" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="291" />
         <source>Unavailable</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Жеткиликсиз</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1077" />
         <source>Edit Routing Profiles</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Багыттоо профилдерин түзөтүңүз</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1099" />
         <source>Update Routing Profiles</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Багыттоо профилдерин жаңыртуу</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1111" />
@@ -2816,69 +2816,69 @@ For more information, see the document "Configuration/DNS".</source>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="95" />
         <location filename="../../src/ui/setting/RouteItem.cpp" line="104" />
         <source>Update Response</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Жоопту жаңыртуу</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1112" />
         <location filename="../../src/ui/setting/RouteItem.cpp" line="105" />
         <source>No routing profiles are updated</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Багыттоо профилдери жаңыртылган эмес</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1116" />
         <location filename="../../src/ui/setting/RouteItem.cpp" line="96" />
         <source>Updated %1 routing profiles</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Жаңыртылган %1 багыттоо профилдери</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1126" />
         <source>Update RuleSet Map</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">RuleSet картасын жаңыртуу</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1137" />
         <source>Failed to update rulesets</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Эрежелер топтому жаңыртылган жок</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1140" />
         <source>Rulesets updated successfully</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Эрежелер топтому ийгиликтүү жаңыртылды</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1149" />
         <source>Update RuleSet Cache</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">RuleSet кэшин жаңыртуу</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1184" />
         <source>Rulesets cache is updated</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Эрежелердин кэши жаңыртылды</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1198" />
         <source>Clear RuleSet Cache</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">RuleSet кэшин тазалоо</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1234" />
         <source>Enable AdBlock</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">AdBlock иштетүү</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1646" />
         <source>Error</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ката</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1733" />
         <source>Tun Settings changed</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Тун орнотуулары өзгөртүлдү</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1734" />
         <source>Restart Tun to take effect.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Күчүнө кириш үчүн Tun'ду өчүрүп күйгүзүңүз.</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1740" />
@@ -2889,43 +2889,43 @@ For more information, see the document "Configuration/DNS".</source>
         <location filename="../../src/ui/mainwindow.cpp" line="3438" />
         <location filename="../../src/ui/mainwindow.cpp" line="3664" />
         <source>Confirmation</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ырастоо</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1741" />
         <location filename="../../src/ui/mainwindow.cpp" line="1799" />
         <source>Settings changed, restart proxy?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Жөндөөлөр өзгөрдү, прокси кайра иштетилсинби?</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1770" />
         <source>Settings changed</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Орнотуулар өзгөртүлдү</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1771" />
         <source>Restart the program to take effect.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Күчүнө кириш үчүн программаны кайра иштетиңиз.</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1814" />
         <source>Imported %1 profile(s)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Импорттолгон %1 профиль(лер)</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2081" />
         <source>User opted for no privilege req, some features may not work</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Колдонуучу эч кандай артыкчылык талабын тандап алган, кээ бир функциялар иштебей калышы мүмкүн</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2145" />
         <source>Please give the core root privileges</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Сураныч, негизги тамыр артыкчылыктарын бериңиз</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2499" />
         <source>Not Running</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">No Running</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2911" />
@@ -2935,223 +2935,223 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2945" />
         <source> Confirmation </source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ырастоо</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2946" />
         <source> Remove %1 item(s) ? </source>
-        <translation type="unfinished" />
+        <translation type="unfinished">% 1 объект(лер) алынып салынсынбы?</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2965" />
         <source>Remove %1 item(s) ?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">% 1 объект(лер) алынып салынсынбы?</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3002" />
         <location filename="../../src/ui/mainwindow.cpp" line="3015" />
         <source>Copied %1 item(s)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">%1 нерсе(лер) көчүрүлдү</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3247" />
         <source>QR Code not found</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">QR коду табылган жок</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3268" />
         <source>Unable to capture screen</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Экранды тартуу мүмкүн эмес</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3336" />
         <source>Remove %1 Unavailable item(s) ?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">% 1 Жеткиликсиз нерсе(лер) алынып салынсынбы?</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3390" />
         <source>Remove %1 Invalid item(s) ?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">% 1 Жараксыз нерсе(лер) алынып салынсынбы?</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3439" />
         <source>Replace domain server addresses with their resolved IPs?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Домен серверинин даректерин алардын чечилген IP даректери менен алмаштырылсынбы?</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3588" />
         <source>Clear</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Таза</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3655" />
         <source>Delete selected Group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Тандалган топту жок кылуу</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3656" />
         <source>Edit selected Group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Тандалган топту түзөтүү</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3665" />
         <source>Remove %1?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">% 1 өчүрүлсүнбү?</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="4381" />
         <source>Cannot start</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">баштоо мүмкүн эмес</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="4382" />
         <source>Last download request has not finished yet</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Акыркы жүктөө сурамы бүтө элек</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="4416" />
         <source>Failed to download update assets</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Жаңыртуу активдери жүктөлүп алынбай калды</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="83" />
         <source>Profile test aborted</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Профиль сыноосу токтотулду</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="134" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="180" />
         <source>[%1] test error: %2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">[% 1] сыноо катасы: % 2</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="163" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="489" />
         <source>Something is very wrong, the subject ent cannot be found!</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Бир нерсе туура эмес болуп жатат, тема табылбай жатат!</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="169" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="495" />
         <source>Profile manager data is corrupted, try again.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Профиль башкаргычынын дайындары бузулган, кайра аракет кылыңыз.</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="203" />
         <source>The last url test did not exit completely, please wait. If it persists, please restart the program.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Акыркы url сынагы толугу менен чыккан жок, күтө туруңуз.Эгер ал кайталана берсе, программаны кайра иштетиңиз.</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="212" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="319" />
         <source>Failed to build test config: </source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Сыноо конфигурациясын куруу ишке ашкан жок:</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="253" />
         <source>URL test finished!</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">URL сыноо аяктады!</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="264" />
         <source>Failed to stop tests</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Сыноолор токтотулган жок</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="270" />
         <source>Testing</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Сыноо</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="308" />
         <source>The last speed test did not exit completely, please wait. If it persists, please restart the program.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Акыркы ылдамдык сыноосу толугу менен чыккан жок, күтө туруңуз.Эгер ал кайталана берсе, программаны кайра иштетиңиз.</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="345" />
         <source>Speedtest finished!</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Speedtest аяктады!</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="426" />
         <source>Profile speed test aborted</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Профиль ылдамдыгын текшерүү токтотулду</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="514" />
         <source>[%1] speed test error: %2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">[%1] ылдамдыкты текшерүү катасы: %2</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="523" />
         <source>You need to enable hijack DNS server first</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Адегенде DNS серверин уурдоону иштетишиңиз керек</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="537" />
         <source>Failed to set system dns: </source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Тутум DNS орнотулбай калды:</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="585" />
         <source>Tun device misbehaving</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Түзмөктүн туура эмес иштешин тууралаңыз</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="586" />
         <source>If you have trouble starting VPN, you can force reset Core process here and then try starting the profile again. The error is %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Эгер VPNди баштоодо кыйынчылыкка туш болсоңуз, негизги процессти бул жерден мажбурлап баштапкы абалга келтирип, андан соң профилди кайра баштоого аракет кылсаңыз болот.Ката %1</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="590" />
         <source>Reset</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Калыбына келтирүү</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="591" />
         <source>Cancel</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Жокко чыгаруу</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="630" />
         <source>Another profile is starting...</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Башка профиль ачылууда...</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="637" />
         <source>Another profile is stopping...</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Башка профиль токтоп турат...</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="658" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="740" />
         <source>If there is no response for a long time, it is recommended to restart the software.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Эгерде узак убакыт бою эч кандай жооп жок болсо, анда программалык камсыздоону кайра иштетүү сунушталат.</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="672" />
         <source>Starting profile %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Профиль башталууда % 1</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="674" />
         <source>Failed to start profile %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">% 1 профили башталбай калды</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="723" />
         <source>Stop return error</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Кайтуу катасын токтотуу</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="763" />
         <source>Stopping profile %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">% 1 профили токтотулууда</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="765" />
         <source>Failed to stop, please restart the program.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Токтотулбай калды, программаны кайра иштетиңиз.</translation>
     </message>
 </context>
 <context>
@@ -3164,17 +3164,17 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/security/change_password.ui" line="20" />
         <source>Username</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Колдонуучунун аты</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/change_password.ui" line="37" />
         <source>New Password</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">жаңы сыр сөз</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/change_password.ui" line="54" />
         <source>Confirm Password</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Сырсөздү ыраста</translation>
     </message>
 </context>
 <context>
@@ -3182,12 +3182,12 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/ui/profile/ProxyItem.cpp" line="39" />
         <source>Confirmation</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ырастоо</translation>
     </message>
     <message>
         <location filename="../../src/ui/profile/ProxyItem.cpp" line="39" />
         <source>Remove %1?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">% 1 өчүрүлсүнбү?</translation>
     </message>
 </context>
 <context>
@@ -3195,7 +3195,7 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/ui/security_addon.cpp" line="346" />
         <source>Security Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Коопсуздук жөндөөлөрү</translation>
     </message>
 </context>
 <context>
@@ -3203,7 +3203,7 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/main.cpp" line="317" />
         <source>QT_LAYOUT_DIRECTION</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">QT_LAYOUT_DIRECTION</translation>
     </message>
 </context>
 <context>
@@ -3211,37 +3211,37 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/configs/ConfigBuilder.cpp" line="159" />
         <source>Tun mode cannot be used with Custom configs</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Тун режимин Ыңгайлаштырылган конфигурациялар менен колдонуу мүмкүн эмес</translation>
     </message>
     <message>
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="839" />
         <source>Requesting subscription: %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Жазылууну суранууда: % 1</translation>
     </message>
     <message>
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="843" />
         <source>Requesting subscription %1 error: %2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Жазылууну суранууда % 1 катасы: % 2</translation>
     </message>
     <message>
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="850" />
         <source>Subscription request fininshed: %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Жазылуу өтүнүчү аяктады: % 1</translation>
     </message>
     <message>
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="868" />
         <source>Clearing servers...</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Серверлер тазаланууда...</translation>
     </message>
     <message>
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="873" />
         <source>Processing subscription data...</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Жазылуу дайындары иштетилүүдө...</translation>
     </message>
     <message>
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="876" />
         <source>Process complete, applying...</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Процесс аяктады, колдонууда...</translation>
     </message>
     <message>
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="939" />
@@ -3249,17 +3249,20 @@ For more information, see the document "Configuration/DNS".</source>
 %2
 Deleted %3 Profiles:
 %4</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">%1 профиль кошулду:
+% 2
+Өчүрүлгөн %3 Профильдер:
+% 4</translation>
     </message>
     <message>
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="944" />
         <source>Nothing</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Эч нерсе</translation>
     </message>
     <message>
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="947" />
         <source>Change of %1:</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">% 1 өзгөртүү:</translation>
     </message>
     <message>
         <location filename="../../src/dataStore/Database.cpp" line="123" />
@@ -3279,46 +3282,47 @@ Deleted %3 Profiles:
     <message>
         <location filename="../../src/main.cpp" line="119" />
         <source>Custom</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ыңгайлаштырылган</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="120" />
         <source>Extra Core</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Extra Core</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/global/GuiUtils.hpp" line="121" />
         <location filename="../../src/ui/profile/edit_ssh.cpp" line="28" />
         <location filename="../../src/ui/setting/dialog_basic_settings.cpp" line="334" />
         <source>Select</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Тандоо</translation>
     </message>
     <message>
         <location filename="../../src/stats/traffic/TrafficLooper.cpp" line="115" />
         <location filename="../../src/ui/mainwindow.cpp" line="2467" />
         <source>Proxy: %1
 Direct: %2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Прокси: % 1
+Түздөн-түз: % 2</translation>
     </message>
     <message>
         <location filename="../../src/sys/Process.cpp" line="104" />
         <source>Core exited, cleaning up...</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Негизги чыкты, тазалоо...</translation>
     </message>
     <message>
         <location filename="../../src/sys/Process.cpp" line="111" />
         <source>Core exits too frequently, stop automatic restart this profile.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Негизги өтө тез-тез чыгат, бул профилди автоматтык түрдө өчүрүп күйгүзүүнү токтотуңуз.</translation>
     </message>
     <message>
         <location filename="../../src/sys/Process.cpp" line="120" />
         <source>Restarting the core ...</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Негизги кайра иштетилүүдө...</translation>
     </message>
     <message>
         <location filename="../../src/sys/Settings.cpp" line="356" />
         <source>System</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Система</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="22" />
