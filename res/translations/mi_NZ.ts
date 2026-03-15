@@ -3282,152 +3282,154 @@ Kua Mukua %3 Kōtaha:
     <message>
         <location filename="../../src/main.cpp" line="119" />
         <source>Custom</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ritenga</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="120" />
         <source>Extra Core</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Core Apiti</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/global/GuiUtils.hpp" line="121" />
         <location filename="../../src/ui/profile/edit_ssh.cpp" line="28" />
         <location filename="../../src/ui/setting/dialog_basic_settings.cpp" line="334" />
         <source>Select</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tīpakohia</translation>
     </message>
     <message>
         <location filename="../../src/stats/traffic/TrafficLooper.cpp" line="115" />
         <location filename="../../src/ui/mainwindow.cpp" line="2467" />
         <source>Proxy: %1
 Direct: %2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Takawaenga: %1
+Tika: %2</translation>
     </message>
     <message>
         <location filename="../../src/sys/Process.cpp" line="104" />
         <source>Core exited, cleaning up...</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ka puta te Core, ka horoi...</translation>
     </message>
     <message>
         <location filename="../../src/sys/Process.cpp" line="111" />
         <source>Core exits too frequently, stop automatic restart this profile.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">He maha nga wa ka puta te matua, kati te whakaara ano i tenei kōtaha.</translation>
     </message>
     <message>
         <location filename="../../src/sys/Process.cpp" line="120" />
         <source>Restarting the core ...</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ka timata ano i te matua...</translation>
     </message>
     <message>
         <location filename="../../src/sys/Settings.cpp" line="356" />
         <source>System</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Pūnaha</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="22" />
         <source>URL detected</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">I kitea te URL</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="27" />
         <source>%1
 How to update?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">%1
+Me pehea te whakahou?</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="31" />
         <source>Create new subscription group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Waihangahia he roopu ohaurunga hou</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="32" />
         <source>Add profiles to this group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tāpirihia ngā kōtaha ki tēnei rōpū</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="33" />
         <source>Add as http/https proxy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tāpirihia hei takawaenga http/https</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="38" />
         <source>Group name</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ingoa roopu</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="105" />
         <source>Used: %1 Remain: %2 Expire: %3</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kua whakamahia: %1 Tonu: %2 Pau: %3</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="224" />
         <source>Download Profiles</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tikiake Kōtaha</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="225" />
         <source>Requesting profile error: %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Te tono hapa kōtaha: %1</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="392" />
         <source>
 Deleted %1 Duplicates</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kua Mukua %1 Tārite</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="426" />
         <source>
 Deleted %1 Invalid</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kua mukua %1 Muhu</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="449" />
         <source>
 Deleted %1 Unavailable</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kua mukua %1 Kaore i te waatea</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1525" />
         <source>Check Rule Sets: %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tirohia nga huinga Ture: %1</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1547" />
         <source>Requesting rule-set list error: %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kei te tono hapa rarangi tautuhi ture: %1</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2504" />
         <source>IP address: %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Wāhitau IP: %1</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2890" />
         <source>Move profiles to group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Nuku pūkete ki te roopu</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3033" />
         <source>Config copied</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">I tāruatia te whirihora</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3044" />
         <source>Copy core config</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tārua whirihora matua</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3045" />
         <source>Copy test config</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tārua whirihora whakamātautau</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3046" />
         <location filename="../../src/ui/security_addon.cpp" line="21" />
         <location filename="../../src/ui/setting/dialog_vpn_settings.cpp" line="53" />
         <source>OK</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">pai</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="4285" />
@@ -3437,64 +3439,66 @@ Deleted %1 Unavailable</source>
         <location filename="../../src/ui/mainwindow.cpp" line="4372" />
         <location filename="../../src/ui/mainwindow.cpp" line="4407" />
         <source>Update</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Whakahou</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="4286" />
         <source>Not official support platform</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ehara i te turanga tautoko mana</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="4297" />
         <source>Requesting update error: %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Te tono hapa whakahou: %1</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="4340" />
         <source>No update</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kaore he whakahou</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="4364" />
         <source>Update found: %1
 Release note:
 %2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">I kitea te whakahōu: %1
+Panui tuku:
+%2</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="4367" />
         <source>Close</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Katia</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="4369" />
         <source>Open in browser</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tuwhera i roto i te pūtirotiro</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="4408" />
         <source>Update is ready, restart to install?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kua reri te whakahōu, tīmata anō ki te tāuta?</translation>
     </message>
     <message>
         <location filename="../../src/ui/security_addon.cpp" line="20" />
         <source>Access denied</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Karekau te uru</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/dialog_basic_settings.cpp" line="339" />
         <source>Select a Folder</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tīpakohia he Kōpaki</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/dialog_vpn_settings.cpp" line="45" />
         <source>Exclude CIDR's</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Waiho nga CIDR</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/dialog_vpn_settings.cpp" line="54" />
         <source>Cancel</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Whakakore</translation>
     </message>
 </context>
 <context>
@@ -3502,92 +3506,92 @@ Release note:
     <message>
         <location filename="../../src/main.cpp" line="64" />
         <source>Cancel</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Whakakore</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="65" />
         <source>Apply</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tonoa</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="66" />
         <source>Yes</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ae</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="67" />
         <source>No</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kao</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="68" />
         <source>OK</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">pai</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="69" />
         <source>Defaults</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Taunoa</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="70" />
         <source>Restore Defaults</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Whakaora Taunoa</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="71" />
         <source>Discard</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Makahia</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="73" />
         <source>Undo</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Wetekina</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="74" />
         <source>Redo</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Mahi ano</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="75" />
         <source>Cut</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tapahia</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="76" />
         <source>Copy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tārua</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="77" />
         <source>Paste</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Whakapiri</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="78" />
         <source>Delete</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Mukua</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="79" />
         <source>Select All</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tīpakohia Katoa</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="80" />
         <source>Stop</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kati</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="81" />
         <source>Clear</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Maamaa</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="82" />
         <source>Copy Link Location</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tauwāhi Hononga Tārua</translation>
     </message>
 </context>
 <context>
@@ -3595,165 +3599,165 @@ Release note:
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="14" />
         <source>Route Profile</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ararere Profile</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="24" />
         <source>General</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Whānui</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="63" />
         <source>Default outbound</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Taunoa ki waho</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="70" />
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="319" />
         <source>Name</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ingoa</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="78" />
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="187" />
         <source>Proxy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Takawaenga</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="83" />
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="217" />
         <source>Direct</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tika</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="88" />
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="157" />
         <source>Block</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Poraka</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="96" />
         <source>Update url</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Whakahōu url</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="130" />
         <source>Skip update</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tīpoka whakahōu</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="137" />
         <source>Update manually</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Whakahou ā-ringa</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="151" />
         <source>Basic</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Taketake</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="248" />
         <source>Advanced</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Arā atu</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="257" />
         <source>Import JSON</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kawemai JSON</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="267" />
         <source>Rules</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ture</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="279" />
         <source>New</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Hou</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="286" />
         <source>Move Up</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Nuku ki Runga</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="293" />
         <source>Move Down</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Nuku ki raro</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="300" />
         <source>Delete</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Mukua</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="310" />
         <source>Rule Attributes</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Huanga Ture</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="329" />
         <source>Attribute</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Huanga</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="342" />
         <source>Name_Placeholder</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ingoa_Kaiwhakahaere</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="374" />
         <source>Notes</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Notes</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="302" />
         <location filename="../../src/ui/setting/RouteItem.cpp" line="469" />
         <source>Invalid rules</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ture muhu</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="302" />
         <source>Some rules could not be added:
 </source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ko etahi ture kaore i taea te taapiri:</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="358" />
         <source>Invalid JSON Array</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Huanga JSON muhu</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="358" />
         <source>The provided input cannot be parsed to a valid route rule array:
 </source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ko te tāuru kua hoatu e kore e taea te poroporoaki ki te huānga ture ara whaimana:</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="441" />
         <source>Invalid operation</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Mahi muhu</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="441" />
         <source>Cannot create Route Profile with empty name</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kāore e taea te hanga i te Kōtaha Ararere me te ingoa putua</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="457" />
         <source>Empty Route Profile</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kōtaha Ara Putua</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="457" />
         <source>No valid rules are in the profile</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Karekau he ture whaimana kei te kōtaha</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="469" />
         <source>Some rules could not be added, fix them before saving:
 </source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ko etahi ture kaore i taea te taapiri, whakatikahia i mua i te penapena:</translation>
     </message>
 </context>
 <context>
@@ -3761,42 +3765,42 @@ Release note:
     <message>
         <location filename="../../src/nekobox/ui/security/security.ui" line="14" />
         <source>Security Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tautuhinga Haumarutanga</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/security.ui" line="62" />
         <source>Lock Actions</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Nga Mahi Maukati</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/security.ui" line="69" />
         <source>Lock Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tautuhinga Maukati</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/security.ui" line="76" />
         <source>Lock Startup</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Maukati Whakaoho</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/security.ui" line="113" />
         <source>Delete Users</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Mukua Kaiwhakamahi</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/security.ui" line="120" />
         <source>Edit User Roles</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Whakatika i nga mahi a te Kaiwhakamahi</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/security.ui" line="163" />
         <source>Change UI Password</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Huri Kupuhipa UI</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/security.ui" line="170" />
         <source>Set Proxy Credentials</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tautuhia nga Tikanga Takawaenga</translation>
     </message>
 </context>
 <context>
@@ -3804,18 +3808,18 @@ Release note:
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="172" />
         <source>Invalid JSON Array</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Huanga JSON muhu</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="173" />
         <source>The provided input cannot be parsed to a valid route rule array:
 </source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ko te tāuru kua hoatu e kore e taea te poroporoaki ki te huānga ture ara whaimana:</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="296" />
         <source>Fetching information</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Te tiki korero</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="312" />
