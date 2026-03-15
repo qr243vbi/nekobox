@@ -3825,7 +3825,7 @@ Panui tuku:
         <location filename="../../src/ui/mainwindow.cpp" line="312" />
         <location filename="../../src/ui/mainwindow.cpp" line="1258" />
         <source>Download Profiles</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tikiake Kōtaha</translation>
     </message>
 </context>
 <context>
@@ -3833,7 +3833,7 @@ Panui tuku:
     <message>
         <location filename="../../src/nekobox/ui/security/delete_or_edit_users.ui" line="14" />
         <source>Form</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Puka</translation>
     </message>
 </context>
 </TS>
