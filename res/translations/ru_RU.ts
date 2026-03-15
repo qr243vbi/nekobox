@@ -3457,7 +3457,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/main.cpp" line="317"/>
         <source>QT_LAYOUT_DIRECTION</source>
-        <translation>QT_LAYOUT_DIRECTION</translation>
+        <translation></translation>
     </message>
 </context>
 <context>

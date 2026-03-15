@@ -3246,7 +3246,7 @@ Ukuze uthole ulwazi olwengeziwe, bheka idokhumenti ethi &quot;Ukucushwa/i-DNS&qu
     <message>
         <location filename="../../src/main.cpp" line="317"/>
         <source>QT_LAYOUT_DIRECTION</source>
-        <translation type="unfinished">QT_LAYOUT_DIRECTION</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

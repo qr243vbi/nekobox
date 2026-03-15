@@ -3250,7 +3250,7 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
     <message>
         <location filename="../../src/main.cpp" line="317"/>
         <source>QT_LAYOUT_DIRECTION</source>
-        <translation type="unfinished">КТ_ЛАИОУТ_ДИРЕЦТИОН</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

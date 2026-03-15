@@ -3246,7 +3246,7 @@ Za više informacija pogledajte dokument &quot;Konfiguracija/DNS&quot;.</transla
     <message>
         <location filename="../../src/main.cpp" line="317"/>
         <source>QT_LAYOUT_DIRECTION</source>
-        <translation type="unfinished">QT_LAYOUT_DIRECTION</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
