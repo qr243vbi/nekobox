@@ -2733,79 +2733,79 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1101" />
         <source>Remove Invalid</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ړنګول</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1112" />
         <source>Speedtest Current</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">د سرعت اوسني</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1117" />
         <source>Full test Selected</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">بشپړ ازموینه غوره شوه</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1122" />
         <source>Download test Selected</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ډاونلوډ ټیسټ غوره شوی</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1127" />
         <source>Upload test Selected</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">د اپلوډ ازموینه غوره شوه</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1132" />
         <source>Country test Selected</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">د هیواد ازموینه وټاکل شوه</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1137" />
         <source>Simple download test Selected</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ساده ډاونلوډ ټیسټ غوره شوی</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1142" />
         <source>Speedtest Group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">د سرعت ټیسټ ګروپ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1147" />
         <source>Hide window</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">کړکۍ پټ کړئ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1152" />
         <source>Add profile from File</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">د فایل څخه پروفایل اضافه کړئ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1157" />
         <location filename="../../src/ui/mainwindow.cpp" line="3619" />
         <source>Add new Group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">نوی ګروپ اضافه کړئ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1162" />
         <source>Security Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">امنیتي ترتیبات</translation>
     </message>
     <message>
         <location filename="../../src/dataStore/ProxyEntity.cpp" line="223" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="291" />
         <source>Unavailable</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">نه شته</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1077" />
         <source>Edit Routing Profiles</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">د روټینګ پروفایلونه ایډیټ کړئ</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1099" />
         <source>Update Routing Profiles</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">د روټینګ پروفایل تازه کړئ</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1111" />
@@ -2816,69 +2816,69 @@ For more information, see the document "Configuration/DNS".</source>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="95" />
         <location filename="../../src/ui/setting/RouteItem.cpp" line="104" />
         <source>Update Response</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">تازه ځواب</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1112" />
         <location filename="../../src/ui/setting/RouteItem.cpp" line="105" />
         <source>No routing profiles are updated</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">هیڅ روټینګ پروفایلونه تازه ندي</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1116" />
         <location filename="../../src/ui/setting/RouteItem.cpp" line="96" />
         <source>Updated %1 routing profiles</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">د %1 روټینګ پروفایلونه تازه شوي</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1126" />
         <source>Update RuleSet Map</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">د RuleSet نقشه تازه کړئ</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1137" />
         <source>Failed to update rulesets</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">د مقرراتو په تازه کولو کې پاتې راغلی</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1140" />
         <source>Rulesets updated successfully</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">مقررات په بریالیتوب سره تازه شول</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1149" />
         <source>Update RuleSet Cache</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">د RuleSet کیچ تازه کړئ</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1184" />
         <source>Rulesets cache is updated</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">د قواعدو زیرمه تازه شوې</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1198" />
         <source>Clear RuleSet Cache</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">د RuleSet کیچ پاک کړئ</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1234" />
         <source>Enable AdBlock</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">اډ بلاک فعال کړئ</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1646" />
         <source>Error</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">تېروتنه</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1733" />
         <source>Tun Settings changed</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">د ټون ترتیبات بدل شوي</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1734" />
         <source>Restart Tun to take effect.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">د تاثیر کولو لپاره Tun بیا پیل کړئ.</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1740" />
@@ -2889,269 +2889,269 @@ For more information, see the document "Configuration/DNS".</source>
         <location filename="../../src/ui/mainwindow.cpp" line="3438" />
         <location filename="../../src/ui/mainwindow.cpp" line="3664" />
         <source>Confirmation</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">تایید</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1741" />
         <location filename="../../src/ui/mainwindow.cpp" line="1799" />
         <source>Settings changed, restart proxy?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ترتیبات بدل شوي، پراکسي بیا پیل کړئ؟</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1770" />
         <source>Settings changed</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ترتیبات بدل شوي</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1771" />
         <source>Restart the program to take effect.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">د اغیزمن کیدو لپاره برنامه بیا پیل کړئ.</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1814" />
         <source>Imported %1 profile(s)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">وارد شوی %1 پروفایل</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2081" />
         <source>User opted for no privilege req, some features may not work</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">کارن د هیڅ امتیاز غوښتنې لپاره غوره کړی، ځینې ځانګړتیاوې ممکن کار ونکړي</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2145" />
         <source>Please give the core root privileges</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">مهرباني وکړئ د اصلي ریښې امتیازات ورکړئ</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2499" />
         <source>Not Running</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">نه چلول</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2911" />
         <source>Clone %1 item(s)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">کلون % 1 توکي</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2945" />
         <source> Confirmation </source>
-        <translation type="unfinished" />
+        <translation type="unfinished">تایید</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2946" />
         <source> Remove %1 item(s) ? </source>
-        <translation type="unfinished" />
+        <translation type="unfinished">% 1 توکي لرې کړئ؟</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2965" />
         <source>Remove %1 item(s) ?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">% 1 توکي لرې کړئ؟</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3002" />
         <location filename="../../src/ui/mainwindow.cpp" line="3015" />
         <source>Copied %1 item(s)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">کاپي شوي %1 توکي</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3247" />
         <source>QR Code not found</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">د QR کوډ ونه موندل شو</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3268" />
         <source>Unable to capture screen</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">د سکرین د نیولو توان نلري</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3336" />
         <source>Remove %1 Unavailable item(s) ?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">% 1 نا موجود توکي لرې کړئ؟</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3390" />
         <source>Remove %1 Invalid item(s) ?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">% 1 ناسم توکي لرې کړئ؟</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3439" />
         <source>Replace domain server addresses with their resolved IPs?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">د ډومین سرور پتې د دوی حل شوي IPs سره بدل کړئ؟</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3588" />
         <source>Clear</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">روښانه</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3655" />
         <source>Delete selected Group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">غوره شوی ګروپ ړنګ کړئ</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3656" />
         <source>Edit selected Group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">غوره شوی ګروپ ایډیټ کړئ</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3665" />
         <source>Remove %1?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">%1 لرې کړئ؟</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="4381" />
         <source>Cannot start</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">پیل نشي</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="4382" />
         <source>Last download request has not finished yet</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">وروستی ډاونلوډ غوښتنه لاهم پای ته نه ده رسیدلې</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="4416" />
         <source>Failed to download update assets</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">د تازه اثاثو ډاونلوډ کولو کې پاتې راغلی</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="83" />
         <source>Profile test aborted</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">د پروفایل ازموینه لغوه شوه</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="134" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="180" />
         <source>[%1] test error: %2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">د ازموینې تېروتنه: %2</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="163" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="489" />
         <source>Something is very wrong, the subject ent cannot be found!</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">یو څه ډیر غلط دی، موضوع نه موندل کیږي!</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="169" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="495" />
         <source>Profile manager data is corrupted, try again.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">د پروفایل مدیر ډاټا خرابه شوې، بیا هڅه وکړئ.</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="203" />
         <source>The last url test did not exit completely, please wait. If it persists, please restart the program.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">وروستی url ازموینه په بشپړه توګه نه وه وتلې، مهرباني وکړئ انتظار وکړئ.که دا دوام ومومي، مهرباني وکړئ پروګرام بیا پیل کړئ.</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="212" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="319" />
         <source>Failed to build test config: </source>
-        <translation type="unfinished" />
+        <translation type="unfinished">د ازموینې ترتیب په جوړولو کې پاتې راغلی:</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="253" />
         <source>URL test finished!</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">د URL ازموینه پای ته ورسیده!</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="264" />
         <source>Failed to stop tests</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">د ازموینو په بندولو کې پاتې راغلی</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="270" />
         <source>Testing</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ازموینه</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="308" />
         <source>The last speed test did not exit completely, please wait. If it persists, please restart the program.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">وروستی سرعت ازموینه په بشپړه توګه نه وه وتلې، مهرباني وکړئ انتظار وکړئ.که دا دوام ومومي، مهرباني وکړئ پروګرام بیا پیل کړئ.</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="345" />
         <source>Speedtest finished!</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">د سرعت ازموینه پای ته ورسیده!</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="426" />
         <source>Profile speed test aborted</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">د پروفایل سرعت ازموینه لغوه شوه</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="514" />
         <source>[%1] speed test error: %2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">د سرعت ازموینې تېروتنه: %2</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="523" />
         <source>You need to enable hijack DNS server first</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">تاسو اړتیا لرئ لومړی د هایجیک DNS سرور فعال کړئ</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="537" />
         <source>Failed to set system dns: </source>
-        <translation type="unfinished" />
+        <translation type="unfinished">د سیسټم dns په ترتیب کولو کې پاتې راغلی:</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="585" />
         <source>Tun device misbehaving</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ټون وسیله ناوړه چلند کوي</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="586" />
         <source>If you have trouble starting VPN, you can force reset Core process here and then try starting the profile again. The error is %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">که تاسو د VPN پیل کولو کې ستونزه لرئ ، تاسو کولی شئ دلته د کور پروسې بیا تنظیم کړئ او بیا د پروفایل بیا پیل کولو هڅه وکړئ.تېروتنه %1 ده</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="590" />
         <source>Reset</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">بیا تنظیم کړئ</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="591" />
         <source>Cancel</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">لغوه کړئ</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="630" />
         <source>Another profile is starting...</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">بل پروفایل پیل کیږي ...</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="637" />
         <source>Another profile is stopping...</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">بل پروفایل ودریږي ...</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="658" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="740" />
         <source>If there is no response for a long time, it is recommended to restart the software.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">که چیرې د اوږدې مودې لپاره هیڅ ځواب شتون ونلري ، نو سپارښتنه کیږي چې سافټویر بیا پیل کړئ.</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="672" />
         <source>Starting profile %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">پېل پروفایل %1</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="674" />
         <source>Failed to start profile %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">د پروفایل %1 په پیل کولو کې پاتې راغلی</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="723" />
         <source>Stop return error</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">د بیرته راستنیدو تېروتنه ودروئ</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="763" />
         <source>Stopping profile %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">پروفایل ودرول %1</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="765" />
         <source>Failed to stop, please restart the program.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">په بندولو کې پاتې راغلی، مهرباني وکړئ پروګرام بیا پیل کړئ.</translation>
     </message>
 </context>
 <context>
@@ -3164,17 +3164,17 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/security/change_password.ui" line="20" />
         <source>Username</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">کارن نوم</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/change_password.ui" line="37" />
         <source>New Password</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">نوی پټنوم</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/change_password.ui" line="54" />
         <source>Confirm Password</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">پاسورډ تایید کړئ</translation>
     </message>
 </context>
 <context>
@@ -3182,12 +3182,12 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/ui/profile/ProxyItem.cpp" line="39" />
         <source>Confirmation</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">تایید</translation>
     </message>
     <message>
         <location filename="../../src/ui/profile/ProxyItem.cpp" line="39" />
         <source>Remove %1?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">%1 لرې کړئ؟</translation>
     </message>
 </context>
 <context>
@@ -3195,7 +3195,7 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/ui/security_addon.cpp" line="346" />
         <source>Security Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">امنیتي ترتیبات</translation>
     </message>
 </context>
 <context>
@@ -3203,7 +3203,7 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/main.cpp" line="317" />
         <source>QT_LAYOUT_DIRECTION</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">QT_LAYOUT_DIRECTION</translation>
     </message>
 </context>
 <context>
@@ -3211,37 +3211,37 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/configs/ConfigBuilder.cpp" line="159" />
         <source>Tun mode cannot be used with Custom configs</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">د ټون حالت د دودیز تشکیلاتو سره نشي کارول کیدی</translation>
     </message>
     <message>
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="839" />
         <source>Requesting subscription: %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">د ګډون غوښتنه: %1</translation>
     </message>
     <message>
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="843" />
         <source>Requesting subscription %1 error: %2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">د ګډون غوښتنه %1 تېروتنه: %2</translation>
     </message>
     <message>
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="850" />
         <source>Subscription request fininshed: %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">د ګډون غوښتنه پای ته ورسیده: %1</translation>
     </message>
     <message>
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="868" />
         <source>Clearing servers...</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">د سرورونو پاکول...</translation>
     </message>
     <message>
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="873" />
         <source>Processing subscription data...</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">د ګډون ډاټا پروسس کول...</translation>
     </message>
     <message>
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="876" />
         <source>Process complete, applying...</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">پروسه بشپړه شوه، درخواست کول...</translation>
     </message>
     <message>
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="939" />
@@ -3249,32 +3249,35 @@ For more information, see the document "Configuration/DNS".</source>
 %2
 Deleted %3 Profiles:
 %4</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">اضافه شوي %1 پروفایلونه:
+%2
+ړنګ شوی %3 پروفایل:
+%4</translation>
     </message>
     <message>
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="944" />
         <source>Nothing</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">هیڅ نه</translation>
     </message>
     <message>
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="947" />
         <source>Change of %1:</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">د %1 بدلون:</translation>
     </message>
     <message>
         <location filename="../../src/dataStore/Database.cpp" line="123" />
         <source>Default</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ډیفالټ</translation>
     </message>
     <message>
         <location filename="../../src/global/HTTPRequestHelper.cpp" line="189" />
         <source>Could not open file.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">دوتنه خلاص نشو</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="105" />
         <source>Chain Proxy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">سلسله پراکسي</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="119" />
