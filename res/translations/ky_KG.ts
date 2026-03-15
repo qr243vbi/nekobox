@@ -3327,108 +3327,109 @@ Direct: %2</source>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="22" />
         <source>URL detected</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">URL аныкталды</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="27" />
         <source>%1
 How to update?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">% 1
+Кантип жаңыртуу керек?</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="31" />
         <source>Create new subscription group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Жаңы жазылуу тобун түзүңүз</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="32" />
         <source>Add profiles to this group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Бул топко профилдерди кошуңуз</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="33" />
         <source>Add as http/https proxy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">http/https прокси катары кошуу</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="38" />
         <source>Group name</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Топтун аты</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="105" />
         <source>Used: %1 Remain: %2 Expire: %3</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Колдонулган: % 1 Калды: % 2 Мөөнөтү: % 3</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="224" />
         <source>Download Profiles</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Профильдерди жүктөп алыңыз</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="225" />
         <source>Requesting profile error: %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Суралган профиль катасы: % 1</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="392" />
         <source>
 Deleted %1 Duplicates</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Жок кылынган % 1 Дубликат</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="426" />
         <source>
 Deleted %1 Invalid</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Жок кылынды % 1 Жараксыз</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="449" />
         <source>
 Deleted %1 Unavailable</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Жок кылынган % 1 Жеткиликсиз</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1525" />
         <source>Check Rule Sets: %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Эрежелер топтомун текшерүү: % 1</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1547" />
         <source>Requesting rule-set list error: %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Сурамда эреже топтому тизмеси катасы: % 1</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2504" />
         <source>IP address: %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">IP дареги: % 1</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2890" />
         <source>Move profiles to group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Профильдерди топко жылдырыңыз</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3033" />
         <source>Config copied</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Конфигурация көчүрүлдү</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3044" />
         <source>Copy core config</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Негизги конфигурацияны көчүрүү</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3045" />
         <source>Copy test config</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Сыноо конфигурациясын көчүрүү</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3046" />
         <location filename="../../src/ui/security_addon.cpp" line="21" />
         <location filename="../../src/ui/setting/dialog_vpn_settings.cpp" line="53" />
         <source>OK</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">макул</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="4285" />
@@ -3438,64 +3439,66 @@ Deleted %1 Unavailable</source>
         <location filename="../../src/ui/mainwindow.cpp" line="4372" />
         <location filename="../../src/ui/mainwindow.cpp" line="4407" />
         <source>Update</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Жаңыртуу</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="4286" />
         <source>Not official support platform</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Расмий колдоо платформасы эмес</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="4297" />
         <source>Requesting update error: %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Жаңыртуу катасы: % 1</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="4340" />
         <source>No update</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Жаңыртуу жок</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="4364" />
         <source>Update found: %1
 Release note:
 %2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Жаңыртуу табылды: % 1
+Чыгаруу эскертүүсү:
+% 2</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="4367" />
         <source>Close</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Жабуу</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="4369" />
         <source>Open in browser</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Браузерде ачуу</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="4408" />
         <source>Update is ready, restart to install?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Жаңыртуу даяр, орнотуу үчүн өчүрүп күйгүзүңүзбү?</translation>
     </message>
     <message>
         <location filename="../../src/ui/security_addon.cpp" line="20" />
         <source>Access denied</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Кирүү четке кагылды</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/dialog_basic_settings.cpp" line="339" />
         <source>Select a Folder</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Папканы тандаңыз</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/dialog_vpn_settings.cpp" line="45" />
         <source>Exclude CIDR's</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">CIDR'дерди кошпоңуз</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/dialog_vpn_settings.cpp" line="54" />
         <source>Cancel</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Жокко чыгаруу</translation>
     </message>
 </context>
 <context>
@@ -3503,17 +3506,17 @@ Release note:
     <message>
         <location filename="../../src/main.cpp" line="64" />
         <source>Cancel</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Жокко чыгаруу</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="65" />
         <source>Apply</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Колдонуу</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="66" />
         <source>Yes</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ооба</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="67" />
@@ -3523,72 +3526,72 @@ Release note:
     <message>
         <location filename="../../src/main.cpp" line="68" />
         <source>OK</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">макул</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="69" />
         <source>Defaults</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Демейки</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="70" />
         <source>Restore Defaults</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Демейкилерди калыбына келтирүү</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="71" />
         <source>Discard</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Жок кылуу</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="73" />
         <source>Undo</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Жок кылуу</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="74" />
         <source>Redo</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Redo</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="75" />
         <source>Cut</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Кесүү</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="76" />
         <source>Copy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Көчүрмө</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="77" />
         <source>Paste</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Паста</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="78" />
         <source>Delete</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Жок кылуу</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="79" />
         <source>Select All</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Баарын тандаңыз</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="80" />
         <source>Stop</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Токто</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="81" />
         <source>Clear</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Таза</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="82" />
         <source>Copy Link Location</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Шилтеменин жайгашкан жерин көчүрүү</translation>
     </message>
 </context>
 <context>
@@ -3596,165 +3599,165 @@ Release note:
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="14" />
         <source>Route Profile</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Маршрут профили</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="24" />
         <source>General</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Генерал</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="63" />
         <source>Default outbound</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Демейки чыгуу</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="70" />
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="319" />
         <source>Name</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">аты</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="78" />
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="187" />
         <source>Proxy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Прокси</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="83" />
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="217" />
         <source>Direct</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Түз</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="88" />
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="157" />
         <source>Block</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Блок</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="96" />
         <source>Update url</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">URL жаңыртуу</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="130" />
         <source>Skip update</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Жаңыртууну өткөрүп жиберүү</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="137" />
         <source>Update manually</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Кол менен жаңыртуу</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="151" />
         <source>Basic</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Негизги</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="248" />
         <source>Advanced</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Өркүндөтүлгөн</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="257" />
         <source>Import JSON</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">JSON импорттоо</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="267" />
         <source>Rules</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Эрежелер</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="279" />
         <source>New</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Жаңы</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="286" />
         <source>Move Up</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Жогору жылдыруу</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="293" />
         <source>Move Down</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Төмөнгө жылдыруу</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="300" />
         <source>Delete</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Жок кылуу</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="310" />
         <source>Rule Attributes</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Эреже атрибуттары</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="329" />
         <source>Attribute</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Атрибут</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="342" />
         <source>Name_Placeholder</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Name_Placeholder</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="374" />
         <source>Notes</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Эскертүүлөр</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="302" />
         <location filename="../../src/ui/setting/RouteItem.cpp" line="469" />
         <source>Invalid rules</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Жараксыз эрежелер</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="302" />
         <source>Some rules could not be added:
 </source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Кээ бир эрежелерди кошуу мүмкүн эмес:</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="358" />
         <source>Invalid JSON Array</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Жараксыз JSON массив</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="358" />
         <source>The provided input cannot be parsed to a valid route rule array:
 </source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Берилген киргизүүнү жарактуу маршруттук эреже массивине талдоо мүмкүн эмес:</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="441" />
         <source>Invalid operation</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Жараксыз операция</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="441" />
         <source>Cannot create Route Profile with empty name</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Бош аталыш менен Маршрут профилин түзүү мүмкүн эмес</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="457" />
         <source>Empty Route Profile</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Бош Маршрут профили</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="457" />
         <source>No valid rules are in the profile</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Профилде жарактуу эрежелер жок</translation>
     </message>
     <message>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="469" />
         <source>Some rules could not be added, fix them before saving:
 </source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Айрым эрежелерди кошуу мүмкүн эмес, аларды сактоодон мурун оңдоңуз:</translation>
     </message>
 </context>
 <context>
@@ -3762,42 +3765,42 @@ Release note:
     <message>
         <location filename="../../src/nekobox/ui/security/security.ui" line="14" />
         <source>Security Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Коопсуздук жөндөөлөрү</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/security.ui" line="62" />
         <source>Lock Actions</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Lock Actions</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/security.ui" line="69" />
         <source>Lock Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Lock Settings</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/security.ui" line="76" />
         <source>Lock Startup</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Lock Startup</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/security.ui" line="113" />
         <source>Delete Users</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Колдонуучуларды жок кылуу</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/security.ui" line="120" />
         <source>Edit User Roles</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Колдонуучунун ролдорун түзөтүңүз</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/security.ui" line="163" />
         <source>Change UI Password</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">UI сырсөзүн өзгөртүү</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/security.ui" line="170" />
         <source>Set Proxy Credentials</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Прокси эсептик дайындарын коюу</translation>
     </message>
 </context>
 <context>
@@ -3805,24 +3808,24 @@ Release note:
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="172" />
         <source>Invalid JSON Array</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Жараксыз JSON массив</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="173" />
         <source>The provided input cannot be parsed to a valid route rule array:
 </source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Берилген киргизүүнү жарактуу маршруттук эреже массивине талдоо мүмкүн эмес:</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="296" />
         <source>Fetching information</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Маалымат алынууда</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="312" />
         <location filename="../../src/ui/mainwindow.cpp" line="1258" />
         <source>Download Profiles</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Профильдерди жүктөп алыңыз</translation>
     </message>
 </context>
 <context>
@@ -3830,7 +3833,7 @@ Release note:
     <message>
         <location filename="../../src/nekobox/ui/security/delete_or_edit_users.ui" line="14" />
         <source>Form</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Форма</translation>
     </message>
 </context>
 </TS>
