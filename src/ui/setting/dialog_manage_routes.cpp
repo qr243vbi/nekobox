@@ -17,8 +17,7 @@
 #include "nekobox/ui/mainwindow.h"
 
 #include <QtGlobal> // For QT_VERSION_CHECK
-
-#if QT_VERSION >= QT_VERSION_CHECK(6, 6, 0)
+#if QT_VERSION >= QT_VERSION_CHECK(6, 9, 0)
 #define STATE_CHANGED &QCheckBox::checkStateChanged
 #else
 #define STATE_CHANGED &QCheckBox::stateChanged
@@ -103,10 +102,10 @@ DialogManageRoutes::DialogManageRoutes(QWidget *parent, bool EditRouteProfiles) 
         ui->simple_dns_box->setDisabled(useDNSObject);
         ui->dns_object->setDisabled(!useDNSObject);
     });
-#if QT_VERSION < QT_VERSION_CHECK(6, 6, 0)
-    ui->use_dns_object->stateChanged(Qt::Unchecked); // uncheck to uncheck
+#if QT_VERSION >= QT_VERSION_CHECK(6, 9, 0)
+    ui->use_dns_object->checkStateChanged(Qt::Unchecked); // uncheck to uncheck
 #else
-    ui->use_dns_object->checkStateChanged(Qt::Unchecked); // uncheck to uncheck    
+    ui->use_dns_object->stateChanged(Qt::Unchecked); // uncheck to uncheck
 #endif
     connect(ui->dns_document, &QPushButton::clicked, this, [=,this] {
         MessageBoxInfo("DNS", dnsHelpDocumentUrl);

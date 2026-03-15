@@ -23,12 +23,13 @@
 
 #include "nekobox/ui/mainwindow_interface.h"
 
-
-#if QT_VERSION >= QT_VERSION_CHECK(6, 6, 0)
+#include <QtGlobal> // For QT_VERSION_CHECK
+#if QT_VERSION >= QT_VERSION_CHECK(6, 9, 0)
 #define STATE_CHANGED &QCheckBox::checkStateChanged
 #else
 #define STATE_CHANGED &QCheckBox::stateChanged
 #endif
+
 #include <QDir>
 
 #define settings Configs::windowSettings

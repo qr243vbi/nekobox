@@ -375,9 +375,9 @@ QList<std::shared_ptr<LanguageValue>> &languageCodes() {
         }
         if (ind > 0) {
           QString key = str;
-          key.slice(0, ind);
+          key = key.sliced(0, ind);
           QString value = str;
-          value.slice(ind + 1);
+          value = value.sliced(ind + 1);
           #ifdef DEBUG_MODE
           qDebug() << "Language: " << key << value ;
           #endif
