@@ -537,12 +537,12 @@ meneti&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1106" />
         <source>Test Target URL</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Whakamātautau URL Target</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1113" />
         <source>URL to test proxies against</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">URL hei whakamatautau i nga takawaenga</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1116" />
@@ -552,89 +552,89 @@ meneti&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1123" />
         <source>Automatically switch to another working proxy when TUN mode proxy fails</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Whakawhiti aunoa ki tetahi atu takawaenga mahi ina rahua te takawaenga aratau TUN</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1126" />
         <source>Enable TUN Failover</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Whakahohehia te TUN Failover</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1134" />
         <source>Startup</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Whakaoho</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1195" />
         <source>Geometry</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Geometry</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1224" />
         <source>Autosave geometry</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tiaki Aunoa āhuahanga</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1231" />
         <source>Autosave position</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tūnga TiakiAunoa</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1251" />
         <source>Apply now</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tonoa inaianei</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1367" />
         <source>Width</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Whānui</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1380" />
         <source>X</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">X</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1413" />
         <source>Y</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Y</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1426" />
         <source>Height</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Teitei</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1513" />
         <source>Core Executable Path</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ara Whakahaere Matua</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1542" />
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1716" />
         <source>Use default</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Whakamahia taunoa</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1549" />
         <source>Remote Control</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Mana Mamao</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1575" />
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1749" />
         <source>Select</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tīpakohia</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1687" />
         <source>Resources Directory</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Rauemi Whaiaronga</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1723" />
         <source>Resource Manager</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kaiwhakahaere Rauemi</translation>
     </message>
 </context>
 <context>
@@ -642,104 +642,104 @@ meneti&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="20" />
         <source>Edit Group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Whakatika Rōpū</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="36" />
         <source>Common</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">noa</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="102" />
         <source>Name</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ingoa</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="109" />
         <source>Type</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Momo</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="117" />
         <source>Basic</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Taketake</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="122" />
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="287" />
         <source>Subscription</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ohaurunga</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="135" />
         <source>Manually column width</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Whānui tīwae ā-ringa</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="142" />
         <source>Archive</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Pūranga</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="155" />
         <source>Proxy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Takawaenga</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="194" />
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="221" />
         <source>None</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Karekau</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="201" />
         <source>Front Proxy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Takawaenga o Mua</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="208" />
         <source>Landing Proxy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Takawaenga Taunga</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="232" />
         <source>Share</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tiri</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="238" />
         <source>Copy profile share links</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tāruatia ngā hononga tiri kōtaha</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="245" />
         <source>Copy profile share links (Custom Links)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tāruatia ngā hononga tiritahi kōtaha (Nga Hononga Ritenga)</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="253" />
         <source>Notes</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Notes</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="314" />
         <source>Skip automatic update</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tīpoka whakahōunga aunoa</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="59" />
         <source>Copied</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kua kapea</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="358" />
         <source>Warning</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Whakatupato</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="358" />
         <source>Please input URL</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Whakauruhia koa te URL</translation>
     </message>
 </context>
 <context>
@@ -748,260 +748,260 @@ meneti&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="26" />
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="843" />
         <source>Edit</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Whakatikatika</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="56" />
         <source>Common</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">noa</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="73" />
         <source>Type</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Momo</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="80" />
         <source>Port</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tauranga</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="87" />
         <source>Address</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Wāhitau</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="94" />
         <source>Name</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ingoa</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="139" />
         <source>Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tautuhinga</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="166" />
         <source>The underlying transport method. It must be consistent with the server, otherwise, the connection cannot be established.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ko te tikanga kawe waka.Me rite tonu ki te tūmau, ki te kore, kaore e taea te hono atu.</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="169" />
         <source>Network</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Whatunga</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="226" />
         <source>Server support is required</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Me tautoko te tūmau</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="229" />
         <source>Multiplex</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Multiplex</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="236" />
         <source>Transport Layer Security. It must be consistent with the server, otherwise, the connection cannot be established.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Haumarutanga Paparanga Waka.Me rite tonu ki te tūmau, ki te kore, kaore e taea te hono atu.</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="239" />
         <source>Security</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Haumarutanga</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="260" />
         <source>UDP FullCone Packet encoding for implementing features such as UDP FullCone. Server support is required, if the wrong selection is made, the connection cannot be made. Please leave it blank.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">UDP FullCone Packet whakawaehere mo te whakatinana i nga ahuatanga penei i te UDP FullCone.Me tautoko te tūmau, ki te he te kowhiringa, kaore e taea te hono.Tena koa waiho kia watea.</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="263" />
         <source>Packet Encoding</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Whakawaehere Pakete</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="271" />
         <source>Keep Default</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Pupuri Taunoa</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="276" />
         <source>On</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kei runga</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="281" />
         <source>Off</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Wehe</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="294" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Overrides mux to On&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ka takahia te mux ki te On&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="297" />
         <source>Enable TCP Brutal</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Whakahohea TCP Brutal</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="311" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Server to Client TCP Brutal Speed&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Server ki te Kiritaki TCP Tere Kino&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="314" />
         <source>TCP Brutal Speed</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">TCP Tino Tere</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="324" />
         <source>Mb/s</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Mb/s</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="345" />
         <source>Custom Outbound Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tautuhinga Puawai Ritenga</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="361" />
         <source>Custom Config Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tautuhinga Whirihora Ritenga</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="381" />
         <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="713" />
         <source>Apply settings to this group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Hoatu nga tautuhinga ki tenei roopu</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="436" />
         <source>Network Settings (%1)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tautuhinga Whatunga (%1)</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="458" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="541" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Method of http request, will be converted to uppercase&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Te tikanga o te tono http, ka hurihia ki te pūmatua&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="544" />
         <source>Method</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tikanga</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="578" />
         <source>header type</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">momo pane</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="618" />
         <source>TLS Camouflage Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">TLS Tautuhinga Camouflage</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="672" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;May degrade performance, try record fragment first&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ka taea te whakaheke i te mahi, me ngana i te wahanga tuhi tuatahi&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="675" />
         <source>Enable TLS fragment</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Whakahohehia te wahanga TLS</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="682" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;time format, like 500ms, 10ms etc&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;hōputu wā, pēnei i te 500ms, 10ms etc&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="685" />
         <source>Fallback Delay</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Whakaroa Whakamuri</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="698" />
         <source>Enable TLS Record Fragment</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Whakahohe TLS Record Fragment</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="737" />
         <source>Reality public key. If not empty, turn TLS into REALITY.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kī tūmatanui pono.Ki te kore e putua, hurihia te TLS hei REALITY.</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="750" />
         <source>Reality short id. Accept only one value.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Reality poto id.Whakaaetia kia kotahi anake te uara.</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="753" />
         <source>Reality SID</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tika SID</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="775" />
         <source>TLS Security Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tautuhinga Haumaru TLS</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="792" />
         <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="644" />
         <source>Certificate</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tiwhikete</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="819" />
         <source>When enabled, V2Ray will not check the validity of the TLS certificate provided by the remote host (the security is equivalent to plaintext)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ina whakahohea, karekau a V2Ray e taki i te whaimana o te tiwhikete TLS i homai e te kaihautu mamao (he rite te haumarutanga ki te kupu tuhi)</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="822" />
         <source>Allow insecure</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Whakaaetia te noho haumaru</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="829" />
         <source>Enable ECH</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Whakahohehia te ECH</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="836" />
         <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="655" />
         <source>ECH Config</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Whirihoranga ECH</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="854" />
         <source>QSN</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">QSN</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="861" />
         <source>Server name indication, clear text.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tohu ingoa tūmau, kupu mārama.</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="874" />
         <source>Application layer protocol negotiation, clear text. Please separate them with commas.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Te whiriwhiringa kawa paparanga tono, maamaa te tuhinga.Tena koa wehea ki nga tohu.</translation>
     </message>
     <message>
         <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="230" />
         <source>Custom (%1 outbound)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ritenga (%1 ki waho)</translation>
     </message>
     <message>
         <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="232" />
         <source>Custom (%1 config)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ritenga (%1 whirihora)</translation>
     </message>
     <message>
         <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="602" />
@@ -1010,7 +1010,7 @@ meneti&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
         <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="617" />
         <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="625" />
         <source>Not set</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kaore i whakaritea</translation>
     </message>
     <message>
         <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="604" />
@@ -1019,12 +1019,12 @@ meneti&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
         <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="619" />
         <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="627" />
         <source>Already set</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kua whakaritea</translation>
     </message>
     <message>
         <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="685" />
         <source>Confirm</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Whakaū</translation>
     </message>
 </context>
 <context>
@@ -1032,37 +1032,37 @@ meneti&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="14" />
         <source>Landing proxy for group Group2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Taunga takawaenga mo te roopu Rōpū2</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="41" />
         <source>Proxy:</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Takawaenga:</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="48" />
         <source>Search:</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Rapu:</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="68" />
         <source>Group1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Rōpū1</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="74" />
         <source>Group2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Rōpū2</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="415" />
         <source>Front proxy for group %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Takawaenga o mua mo te roopu %1</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="417" />
         <source>Front proxy: </source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Takawaenga o mua:</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="428" />
