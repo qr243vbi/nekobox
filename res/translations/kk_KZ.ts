@@ -2448,32 +2448,32 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="489" />
         <source>Click To Toggle sort by Traffic</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Трафик бойынша сұрыптауды ауыстыру үшін басыңыз</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="498" />
         <source>Traffic Graph</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Трафик графигі</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="590" />
         <source>Program</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Бағдарлама</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="613" />
         <source>Preferences</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Параметрлер</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="628" />
         <source>Current Group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Қазіргі топ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="634" />
         <source>Current Selected</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ағымдағы таңдалған</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="638" />
@@ -2483,32 +2483,32 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="683" />
         <source>Hidden menu</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Жасырын мәзір</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="696" />
         <source>Routing Menu</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Маршрутизация мәзірі</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="707" />
         <source>Context</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Контекст</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="711" />
         <source>ContextProfiles</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Мәтінмәндік профильдер</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="726" />
         <source>Exit</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Шығу</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="731" />
         <source>Toggle Window</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Терезені ауыстырып қосу</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="736" />
@@ -2518,26 +2518,26 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="741" />
         <source>New profile</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Жаңа профиль</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="746" />
         <source>Groups</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Топтар</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="751" />
         <location filename="../../src/ui/mainwindow.cpp" line="3591" />
         <location filename="../../src/ui/mainwindow.cpp" line="3601" />
         <source>Start</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Бастау</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="759" />
         <location filename="../../src/ui/mainwindow.cpp" line="3590" />
         <location filename="../../src/ui/mainwindow.cpp" line="3601" />
         <source>Stop</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Тоқта</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="767" />
@@ -2547,64 +2547,64 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="775" />
         <source>Routing Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Маршруттау параметрлері</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="780" />
         <source>Add profile from clipboard</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Профильді алмасу буферінен қосыңыз</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="788" />
         <source>Delete</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Жою</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="796" />
         <source>Debug Info</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Түзету ақпараты</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="801" />
         <source>QR Code and link</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">QR коды және сілтеме</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="809" />
         <source>Copy Link</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Сілтемені көшіру</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="830" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1071" />
         <source>Clear Test Result</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Сынақ нәтижесін тазалау</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="838" />
         <location filename="../../src/ui/mainwindow.cpp" line="1432" />
         <source>Export %1 config</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">% 1 конфигурациясын экспорттау</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="846" />
         <source>Reset Traffic</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Трафикті қалпына келтіру</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="854" />
         <source>Scan QR Code</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">QR кодын сканерлеңіз</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="862" />
         <source>Enable System Proxy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Жүйе проксиін қосыңыз</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="870" />
         <source>Disable</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Өшіру</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="875" />
@@ -2616,28 +2616,28 @@ For more information, see the document "Configuration/DNS".</source>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="960" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="968" />
         <source>fake</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">жалған</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="891" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1167" />
         <source>Move</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Жылжыту</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="902" />
         <source>Start with system</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Жүйеден бастаңыз</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="910" />
         <source>Remember last profile</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Соңғы профильді есте сақтаңыз</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="918" />
         <source>Allow other devices to connect</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Басқа құрылғылардың қосылуына рұқсат беріңіз</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="923" />
@@ -2647,88 +2647,88 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="931" />
         <source>Full Test</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Толық сынақ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="939" />
         <source>Hotkey Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Жылдам перне параметрлері</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="944" />
         <source>Select All</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Барлығын таңдаңыз</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="952" />
         <source>Copy Custom Links</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Теңшелетін сілтемелерді көшіру</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="976" />
         <source>Copy links</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Сілтемелерді көшіру</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="987" />
         <source>Enable Tun</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tun функциясын қосыңыз</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="992" />
         <location filename="../../src/ui/mainwindow.cpp" line="2910" />
         <source>Clone</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Клондау</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1000" />
         <source>Update subscription</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Жазылымды жаңарту</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1011" />
         <source>Resolve domain</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Доменді шешу</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1019" />
         <source>Tun Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Баптау параметрлері</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1024" />
         <source>Restart Program</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Бағдарламаны қайта іске қосу</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1029" />
         <source>Open Config Folder</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Конфигурация қалтасын ашыңыз</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1050" />
         <source>Restart Proxy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Проксиді қайта іске қосыңыз</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1055" />
         <source>Stop Testing</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Тестілеуді тоқтату</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1060" />
         <source>Url Test</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Url сынағы</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1082" />
         <source>Url Test Group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Url сынақ тобы</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1093" />
         <source>Resolve Domain</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Доменді шешу</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1101" />
@@ -2738,32 +2738,32 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1112" />
         <source>Speedtest Current</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Speedtest ток</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1117" />
         <source>Full test Selected</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Толық сынақ таңдалды</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1122" />
         <source>Download test Selected</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Таңдалған сынақ жүктеп алу</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1127" />
         <source>Upload test Selected</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Жүктеп салу сынағы таңдалды</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1132" />
         <source>Country test Selected</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ел сынағы таңдалды</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1137" />
         <source>Simple download test Selected</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Қарапайым жүктеп алу сынағы таңдалды</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1142" />
@@ -2773,39 +2773,39 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1147" />
         <source>Hide window</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Терезені жасыру</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1152" />
         <source>Add profile from File</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Файлдан профиль қосыңыз</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1157" />
         <location filename="../../src/ui/mainwindow.cpp" line="3619" />
         <source>Add new Group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Жаңа топ қосу</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1162" />
         <source>Security Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Қауіпсіздік параметрлері</translation>
     </message>
     <message>
         <location filename="../../src/dataStore/ProxyEntity.cpp" line="223" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="291" />
         <source>Unavailable</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Қолжетімсіз</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1077" />
         <source>Edit Routing Profiles</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Бағыттау профильдерін өңдеу</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1099" />
         <source>Update Routing Profiles</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Маршруттау профильдерін жаңарту</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1111" />
@@ -2816,69 +2816,69 @@ For more information, see the document "Configuration/DNS".</source>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="95" />
         <location filename="../../src/ui/setting/RouteItem.cpp" line="104" />
         <source>Update Response</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Жауапты жаңарту</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1112" />
         <location filename="../../src/ui/setting/RouteItem.cpp" line="105" />
         <source>No routing profiles are updated</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ешбір маршруттау профильдері жаңартылмайды</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1116" />
         <location filename="../../src/ui/setting/RouteItem.cpp" line="96" />
         <source>Updated %1 routing profiles</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Жаңартылған % 1 бағыттау профильдері</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1126" />
         <source>Update RuleSet Map</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">RuleSet картасын жаңарту</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1137" />
         <source>Failed to update rulesets</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ережелер жиынын жаңарту мүмкін болмады</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1140" />
         <source>Rulesets updated successfully</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ережелер жинағы сәтті жаңартылды</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1149" />
         <source>Update RuleSet Cache</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">RuleSet кэшін жаңарту</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1184" />
         <source>Rulesets cache is updated</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ережелер жиынтығының кэші жаңартылды</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1198" />
         <source>Clear RuleSet Cache</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">RuleSet кэшін тазалау</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1234" />
         <source>Enable AdBlock</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">AdBlock қосыңыз</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1646" />
         <source>Error</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Қате</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1733" />
         <source>Tun Settings changed</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Реттеу параметрлері өзгертілді</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1734" />
         <source>Restart Tun to take effect.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Күшіне ену үшін Tun қолданбасын қайта іске қосыңыз.</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1740" />
@@ -2889,124 +2889,124 @@ For more information, see the document "Configuration/DNS".</source>
         <location filename="../../src/ui/mainwindow.cpp" line="3438" />
         <location filename="../../src/ui/mainwindow.cpp" line="3664" />
         <source>Confirmation</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Растау</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1741" />
         <location filename="../../src/ui/mainwindow.cpp" line="1799" />
         <source>Settings changed, restart proxy?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Параметрлер өзгертілді, проксиді қайта іске қосу керек пе?</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1770" />
         <source>Settings changed</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Параметрлер өзгертілді</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1771" />
         <source>Restart the program to take effect.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Күшіне ену үшін бағдарламаны қайта іске қосыңыз.</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1814" />
         <source>Imported %1 profile(s)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Импортталған % 1 профиль(лар)</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2081" />
         <source>User opted for no privilege req, some features may not work</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Пайдаланушы артықшылықты талап етуді таңдады, кейбір мүмкіндіктер жұмыс істемеуі мүмкін</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2145" />
         <source>Please give the core root privileges</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Негізгі түбірлік артықшылықтарды беріңіз</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2499" />
         <source>Not Running</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Жүгіру емес</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2911" />
         <source>Clone %1 item(s)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">% 1 элементті клондау</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2945" />
         <source> Confirmation </source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Растау</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2946" />
         <source> Remove %1 item(s) ? </source>
-        <translation type="unfinished" />
+        <translation type="unfinished">% 1 элементті жою керек пе?</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="2965" />
         <source>Remove %1 item(s) ?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">% 1 элементті жою керек пе?</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3002" />
         <location filename="../../src/ui/mainwindow.cpp" line="3015" />
         <source>Copied %1 item(s)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Көшірілген % 1 элемент</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3247" />
         <source>QR Code not found</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">QR коды табылмады</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3268" />
         <source>Unable to capture screen</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Экранды түсіру мүмкін емес</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3336" />
         <source>Remove %1 Unavailable item(s) ?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">% 1 Қолжетімсіз элементтерді жою ?</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3390" />
         <source>Remove %1 Invalid item(s) ?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">% 1 Жарамсыз элемент(тер)ді жою ?</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3439" />
         <source>Replace domain server addresses with their resolved IPs?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Домен серверінің мекенжайларын олардың шешілген IP мекенжайларымен ауыстыру керек пе?</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3588" />
         <source>Clear</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Таза</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3655" />
         <source>Delete selected Group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Таңдалған топты жою</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3656" />
         <source>Edit selected Group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Таңдалған топты өңдеу</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3665" />
         <source>Remove %1?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">% 1 жойылсын ба?</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="4381" />
         <source>Cannot start</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Бастау мүмкін емес</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="4382" />
         <source>Last download request has not finished yet</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Соңғы жүктеп алу сұрауы әлі аяқталған жоқ</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="4416" />
