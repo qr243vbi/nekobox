@@ -1636,47 +1636,47 @@ Don ƙarin bayani, duba daftarin aiki "Configuration/DNS".</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="50" />
         <source>1080</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">1080</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="78" />
         <source>Core path</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Hanyar Core</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="95" />
         <source>Choose from file</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Zaɓi daga fayil</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="114" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;args to pass to the executable. You can insert a single %s and it will be replaced with the path to a file containing the config entered below.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt; head/&gt;&lt; body&gt;&lt;p&gt;args don mikawa ga wanda za'a iya aiwatarwa.Kuna iya saka %s guda ɗaya kuma za a maye gurbinsa da hanyar zuwa fayil ɗin da ke ɗauke da tsarin da aka shigar a ƙasa.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="117" />
         <source>Args</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Args</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="124" />
         <source>run -confPath %s</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">run -confPath %s</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="131" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;contents of the config file that will be passed to the extra core process if %s is specified in the args&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;abun ciki na config file wanda za'a wuce zuwa ƙarin ainihin tsari idan %s aka ƙayyade a cikin args&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="134" />
         <source>Config</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Saita</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="144" />
         <source>No logs</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Babu rajistan ayyukan</translation>
     </message>
 </context>
 <context>
@@ -1689,32 +1689,32 @@ Don ƙarin bayani, duba daftarin aiki "Configuration/DNS".</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="20" />
         <source>Username</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Sunan mai amfani</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="30" />
         <source>Password</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kalmar wucewa</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="40" />
         <source>Port range</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tashar tashar jiragen ruwa</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="55" />
         <source>Multiplexing</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Multiplexing</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="72" />
         <source>Transport</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Sufuri</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="82" />
         <source>Traffic Pattern</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tsarin Hanya</translation>
     </message>
 </context>
 <context>
@@ -1722,43 +1722,43 @@ Don ƙarin bayani, duba daftarin aiki "Configuration/DNS".</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="26" />
         <source>Password</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kalmar wucewa</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="34" />
         <location filename="../../src/ui/profile/edit_naive.cpp" line="9" />
         <source>Off</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kashe</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="55" />
         <source>Username</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Sunan mai amfani</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="65" />
         <source>insecure_concurrency - Number of concurrent tunnel connections. </source>
-        <translation type="unfinished" />
+        <translation type="unfinished">insecure_concurrency - Adadin hanyoyin haɗin rami na lokaci guda.</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="78" />
         <source>quic_congestion_control - QUIC congestion control algorithm.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">quic_congestion_control - QUIC sarrafa cunkoso algorithm.</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="88" />
         <source>Version of UDP over TCP protocol, server support is required.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Sigar UDP akan ka'idar TCP, ana buƙatar tallafin uwar garke.</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="104" />
         <source>extra_headers - Extra headers to send in HTTP requests.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">extra_headers - Ƙarin kanun labarai don aikawa cikin buƙatun HTTP.</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="107" />
         <source>Headers</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Shugabanni</translation>
     </message>
 </context>
 <context>
@@ -1766,104 +1766,104 @@ Don ƙarin bayani, duba daftarin aiki "Configuration/DNS".</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="24" />
         <source>Heartbeat</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">bugun zuciya</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="45" />
         <source>Download (Mbps)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Sauke (Mbps)</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="69" />
         <source>Upload (Mbps)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Loda (Mbps)</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="81" />
         <source>Zero Rtt Handshake</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Hannun Hannu Zero Rtt</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="90" />
         <source>UDP Relay Mode</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Yanayin Relay UDP</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="115" />
         <source>Congestion Control</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kula da cunkoso</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="147" />
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="177" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Comma seperated ranges: 100:200,500:600&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt; kai/&gt;&lt;body&gt;&lt;p&gt;Rarrabu wakafi: 100:200,500:600&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="154" />
         <source>Obfs Password</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Obfs Password</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="170" />
         <source>Disable MTU Discovery</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kashe Gano MTU</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="180" />
         <source>Port range</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tashar tashar jiragen ruwa</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="190" />
         <source>Hop Interval</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tazarar Hop</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="197" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;100ms&lt;br/&gt;1s&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt; kai/&gt;&lt;body&gt;&lt;p&gt;100ms&lt;br/&gt;1s&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="217" />
         <source>Auth Type</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Nau'in Gaskiya</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="230" />
         <source>Auth Payload</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Auth Payload</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="243" />
         <source>Password</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kalmar wucewa</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="257" />
         <source>Generate UUID</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Samar da UUID</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="293" />
         <location filename="../../src/ui/profile/edit_quic.cpp" line="149" />
         <source>Certificate</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Takaddun shaida</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="310" />
         <source>Disable SNI</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kashe SNI</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="327" />
         <source>SNI</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">SNI</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="334" />
         <source>Allow Insecure</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Bada Rashin Tsaro</translation>
     </message>
 </context>
 <context>
@@ -1876,47 +1876,47 @@ Don ƙarin bayani, duba daftarin aiki "Configuration/DNS".</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="20" />
         <source>User</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Mai amfani</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="30" />
         <source>Password</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kalmar wucewa</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="40" />
         <source>Private Key</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Keɓaɓɓen Maɓalli</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="50" />
         <source>Private Key Password</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Keɓaɓɓen Kalmar wucewa ta Maɓalli</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="60" />
         <source>Host Key</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Makullin Mai watsa shiri</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="70" />
         <source>Host Key Algorithms</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Algorithms Mai watsa shiri</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="80" />
         <source>Client Version</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Sigar abokin ciniki</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="93" />
         <source>Private Key Path</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tafarkin Maɓalli Mai zaman kansa</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="103" />
         <source>Choose File</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Zaɓi Fayil</translation>
     </message>
 </context>
 <context>
@@ -1924,32 +1924,32 @@ Don ƙarin bayani, duba daftarin aiki "Configuration/DNS".</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="30" />
         <source>Plugin</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Plugin</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="37" />
         <source>Encryption</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Rufewa</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="44" />
         <source>Plugin Args</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Plugin Args</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="54" />
         <source>Password</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kalmar wucewa</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="80" />
         <source>Version of UDP over TCP protocol, server support is required.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Sigar UDP akan ka'idar TCP, ana buƙatar tallafin uwar garke.</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="94" />
         <source>Off</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kashe</translation>
     </message>
 </context>
 <context>
@@ -1957,27 +1957,27 @@ Don ƙarin bayani, duba daftarin aiki "Configuration/DNS".</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="20" />
         <source>Version</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Sigar</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="27" />
         <source>Password</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kalmar wucewa</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="38" />
         <source>1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">1</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="43" />
         <source>2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">2</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="48" />
         <source>3</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">3</translation>
     </message>
 </context>
 <context>
@@ -1985,17 +1985,17 @@ Don ƙarin bayani, duba daftarin aiki "Configuration/DNS".</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="20" />
         <source>Version</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Sigar</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="33" />
         <source>Username</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Sunan mai amfani</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="54" />
         <source>Password</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kalmar wucewa</translation>
     </message>
 </context>
 <context>
@@ -2003,72 +2003,72 @@ Don ƙarin bayani, duba daftarin aiki "Configuration/DNS".</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="14" />
         <source>Form</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Siffar</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="20" />
         <source>State directory</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Littafin Jaha</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="30" />
         <source>Auth key</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Maɓallin tabbaci</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="40" />
         <source>Control URL</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Sarrafa URL</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="50" />
         <source>Hostname</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Sunan mai watsa shiri</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="60" />
         <source>Accept routes</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Karɓi hanyoyi</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="67" />
         <source>Ephemeral</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ephemeral</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="74" />
         <source>Exit node allow lan access</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kullin fita yana ba da damar shiga lan</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="81" />
         <source>Advertise exit node</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tallata kumburin fita</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="88" />
         <source>Exit node</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Fitar kumburi</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="98" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;comma seperated list of subnets&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt; kai/&gt;&lt;body&gt;&lt;p&gt;jerin waƙafi na rabe-raben rabe-rabe&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="101" />
         <source>Advertise routes</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tallata hanyoyi</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="111" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;use tailscale dns as the remote dns&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt; head/&gt;&lt;body&gt;&lt;p&gt;amfani da tailscale dns as the remote dns&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="114" />
         <source>Global DNS</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Duniya DNS</translation>
     </message>
 </context>
 <context>
@@ -2081,22 +2081,22 @@ Don ƙarin bayani, duba daftarin aiki "Configuration/DNS".</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="20" />
         <source>Custom Path</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Hanyar Al'ada</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="30" />
         <source>Extra Args</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Karin Args</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="40" />
         <source>Tor Config</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tor Config</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="55" />
         <source>Data DIr</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Data DIr</translation>
     </message>
 </context>
 <context>
@@ -2104,7 +2104,7 @@ Don ƙarin bayani, duba daftarin aiki "Configuration/DNS".</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_trojan_vless.ui" line="23" />
         <source>Password</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kalmar wucewa</translation>
     </message>
 </context>
 <context>
@@ -2112,22 +2112,22 @@ Don ƙarin bayani, duba daftarin aiki "Configuration/DNS".</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_vmess.ui" line="52" />
         <source>Security</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tsaro</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_vmess.ui" line="59" />
         <source>Alter Id</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Canza Id</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_vmess.ui" line="66" />
         <source>UUID</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">UUID</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_vmess.ui" line="100" />
         <source>Generate UUID</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Samar da UUID</translation>
     </message>
 </context>
 <context>
@@ -2140,57 +2140,57 @@ Don ƙarin bayani, duba daftarin aiki "Configuration/DNS".</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="23" />
         <source>Private Key</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Keɓaɓɓen Maɓalli</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="33" />
         <source>Public Key</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Maɓallin Jama'a</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="43" />
         <source>Pre Shared Key</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Maɓallin Rabawa Pre</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="53" />
         <source>Reserved</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ajiye</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="63" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;persistent_keepalive_interval in seconds&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt; kai/&gt;&lt; jiki &gt;&lt;p&gt;tsawon_keepalive_interval a cikin dakika &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="66" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt; kai/&gt;&lt; jiki &gt;&lt; p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/jiki &gt; &gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="69" />
         <source>Persistent Keepalive</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ci gaba da wanzuwa</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="79" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;comma seperated list of subnets&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt; kai/&gt;&lt;body&gt;&lt;p&gt;jerin waƙafi na rabe-raben rabe-rabe&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="82" />
         <source>Local Address</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Adireshin gida</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="92" />
         <source>MTU</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">MTU</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="99" />
         <source>1420</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">1420</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="106" />
