@@ -3819,13 +3819,13 @@ Release note:
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="296" />
         <source>Fetching information</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ئۇچۇرغا ئېرىشىش</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="312" />
         <location filename="../../src/ui/mainwindow.cpp" line="1258" />
         <source>Download Profiles</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ئارخىپلارنى چۈشۈرۈڭ</translation>
     </message>
 </context>
 <context>
@@ -3833,7 +3833,7 @@ Release note:
     <message>
         <location filename="../../src/nekobox/ui/security/delete_or_edit_users.ui" line="14" />
         <source>Form</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">شەكىل</translation>
     </message>
 </context>
 </TS>
