@@ -2375,8 +2375,8 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="161"/>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="594"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="2523"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="2526"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2531"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2534"/>
         <source>System Proxy</source>
         <translation type="unfinished">ਸਿਸਟਮ ਪਰਾਕਸੀ</translation>
     </message>
@@ -2562,15 +2562,15 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="751"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3591"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3601"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3599"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3609"/>
         <source>Start</source>
         <translation type="unfinished">ਸ਼ੁਰੂ ਕਰੋ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="759"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3590"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3601"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3598"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3609"/>
         <source>Stop</source>
         <translation type="unfinished">ਰੂਕੋ</translation>
     </message>
@@ -2617,7 +2617,7 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="838"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="1432"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1440"/>
         <source>Export %1 config</source>
         <translation type="unfinished">% 1 ਸੰਰਚਨਾ ਨਿਰਯਾਤ ਕਰੋ</translation>
     </message>
@@ -2729,7 +2729,7 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="992"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="2910"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2918"/>
         <source>Clone</source>
         <translation type="unfinished">ਕਲੋਨ</translation>
     </message>
@@ -2853,7 +2853,7 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1157"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3619"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3627"/>
         <source>Add new Group</source>
         <translation type="unfinished">ਨਵਾਂ ਸਮੂਹ ਸ਼ਾਮਲ ਕਰੋ</translation>
     </message>
@@ -2869,218 +2869,218 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
         <translation type="unfinished">ਅਣਉਪਲਬਧ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1077"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1085"/>
         <source>Edit Routing Profiles</source>
         <translation type="unfinished">ਰੂਟਿੰਗ ਪ੍ਰੋਫਾਈਲਾਂ ਦਾ ਸੰਪਾਦਨ ਕਰੋ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1099"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1107"/>
         <source>Update Routing Profiles</source>
         <translation type="unfinished">ਰੂਟਿੰਗ ਪ੍ਰੋਫਾਈਲਾਂ ਨੂੰ ਅੱਪਡੇਟ ਕਰੋ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1111"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="1115"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="1136"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="1139"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="1183"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1119"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1123"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1144"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1147"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1191"/>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="95"/>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="104"/>
         <source>Update Response</source>
         <translation type="unfinished">ਜਵਾਬ ਅੱਪਡੇਟ ਕਰੋ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1112"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1120"/>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="105"/>
         <source>No routing profiles are updated</source>
         <translation type="unfinished">ਕੋਈ ਰੂਟਿੰਗ ਪ੍ਰੋਫਾਈਲ ਅੱਪਡੇਟ ਨਹੀਂ ਕੀਤੇ ਗਏ ਹਨ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1116"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1124"/>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="96"/>
         <source>Updated %1 routing profiles</source>
         <translation type="unfinished">%1 ਰੂਟਿੰਗ ਪ੍ਰੋਫਾਈਲਾਂ ਨੂੰ ਅੱਪਡੇਟ ਕੀਤਾ ਗਿਆ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1126"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1134"/>
         <source>Update RuleSet Map</source>
         <translation type="unfinished">RuleSet ਨਕਸ਼ਾ ਅੱਪਡੇਟ ਕਰੋ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1137"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1145"/>
         <source>Failed to update rulesets</source>
         <translation type="unfinished">ਨਿਯਮ ਸੈੱਟ ਅੱਪਡੇਟ ਕਰਨ ਵਿੱਚ ਅਸਫਲ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1140"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1148"/>
         <source>Rulesets updated successfully</source>
         <translation type="unfinished">ਨਿਯਮ ਸਫਲਤਾਪੂਰਵਕ ਅੱਪਡੇਟ ਕੀਤੇ ਗਏ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1149"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1157"/>
         <source>Update RuleSet Cache</source>
         <translation type="unfinished">RuleSet ਕੈਸ਼ ਅੱਪਡੇਟ ਕਰੋ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1184"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1192"/>
         <source>Rulesets cache is updated</source>
         <translation type="unfinished">Rulesets ਕੈਸ਼ ਅੱਪਡੇਟ ਕੀਤਾ ਗਿਆ ਹੈ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1198"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1206"/>
         <source>Clear RuleSet Cache</source>
         <translation type="unfinished">RuleSet ਕੈਸ਼ ਸਾਫ਼ ਕਰੋ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1234"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1242"/>
         <source>Enable AdBlock</source>
         <translation type="unfinished">AdBlock ਨੂੰ ਸਮਰੱਥ ਬਣਾਓ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1646"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1654"/>
         <source>Error</source>
         <translation type="unfinished">ਗਲਤੀ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1733"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1741"/>
         <source>Tun Settings changed</source>
         <translation type="unfinished">ਟੂਨ ਸੈਟਿੰਗਾਂ ਬਦਲੀਆਂ ਗਈਆਂ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1734"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1742"/>
         <source>Restart Tun to take effect.</source>
         <translation type="unfinished">Tun ਨੂੰ ਪ੍ਰਭਾਵੀ ਕਰਨ ਲਈ ਮੁੜ-ਚਾਲੂ ਕਰੋ।</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1740"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="1798"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="2964"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3335"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3389"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3438"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3664"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1748"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1806"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2972"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3343"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3397"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3446"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3672"/>
         <source>Confirmation</source>
         <translation type="unfinished">ਪੁਸ਼ਟੀ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1741"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="1799"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1749"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1807"/>
         <source>Settings changed, restart proxy?</source>
         <translation type="unfinished">ਸੈਟਿੰਗਾਂ ਬਦਲੀਆਂ, ਪ੍ਰੌਕਸੀ ਨੂੰ ਮੁੜ ਚਾਲੂ ਕਰਨਾ ਹੈ?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1770"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1778"/>
         <source>Settings changed</source>
         <translation type="unfinished">ਸੈਟਿੰਗਾਂ ਬਦਲੀਆਂ ਗਈਆਂ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1771"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1779"/>
         <source>Restart the program to take effect.</source>
         <translation type="unfinished">ਪ੍ਰਭਾਵੀ ਹੋਣ ਲਈ ਪ੍ਰੋਗਰਾਮ ਨੂੰ ਮੁੜ-ਚਾਲੂ ਕਰੋ।</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1814"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1822"/>
         <source>Imported %1 profile(s)</source>
         <translation type="unfinished">ਆਯਾਤ ਕੀਤਾ % 1 ਪ੍ਰੋਫਾਈਲ(s)</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2081"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2089"/>
         <source>User opted for no privilege req, some features may not work</source>
         <translation type="unfinished">ਉਪਭੋਗਤਾ ਨੇ ਕੋਈ ਵਿਸ਼ੇਸ਼ ਅਧਿਕਾਰ ਬੇਨਤੀ ਲਈ ਚੋਣ ਨਹੀਂ ਕੀਤੀ, ਕੁਝ ਵਿਸ਼ੇਸ਼ਤਾਵਾਂ ਕੰਮ ਨਹੀਂ ਕਰ ਸਕਦੀਆਂ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2145"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2153"/>
         <source>Please give the core root privileges</source>
         <translation type="unfinished">ਕਿਰਪਾ ਕਰਕੇ ਕੋਰ ਰੂਟ ਵਿਸ਼ੇਸ਼ ਅਧਿਕਾਰ ਦਿਓ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2499"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2507"/>
         <source>Not Running</source>
         <translation type="unfinished">ਨਹੀਂ ਚੱਲ ਰਿਹਾ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2911"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2919"/>
         <source>Clone %1 item(s)</source>
         <translation type="unfinished">% 1 ਆਈਟਮ(ਆਂ) ਨੂੰ ਕਲੋਨ ਕਰੋ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2945"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2953"/>
         <source> Confirmation </source>
         <translation type="unfinished">ਪੁਸ਼ਟੀ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2946"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2954"/>
         <source> Remove %1 item(s) ? </source>
         <translation type="unfinished">% 1 ਆਈਟਮਾਂ ਨੂੰ ਹਟਾਉਣਾ ਹੈ?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2965"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2973"/>
         <source>Remove %1 item(s) ?</source>
         <translation type="unfinished">% 1 ਆਈਟਮਾਂ ਨੂੰ ਹਟਾਉਣਾ ਹੈ?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3002"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3015"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3010"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3023"/>
         <source>Copied %1 item(s)</source>
         <translation type="unfinished">ਕਾਪੀ ਕੀਤੀ ਗਈ % 1 ਆਈਟਮਾਂ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3247"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3255"/>
         <source>QR Code not found</source>
         <translation type="unfinished">QR ਕੋਡ ਨਹੀਂ ਮਿਲਿਆ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3268"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3276"/>
         <source>Unable to capture screen</source>
         <translation type="unfinished">ਸਕ੍ਰੀਨ ਕੈਪਚਰ ਕਰਨ ਵਿੱਚ ਅਸਮਰੱਥ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3336"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3344"/>
         <source>Remove %1 Unavailable item(s) ?</source>
         <translation type="unfinished">% 1 ਅਣਉਪਲਬਧ ਆਈਟਮਾਂ ਨੂੰ ਹਟਾਉਣਾ ਹੈ?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3390"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3398"/>
         <source>Remove %1 Invalid item(s) ?</source>
         <translation type="unfinished">% 1 ਅਵੈਧ ਆਈਟਮਾਂ ਨੂੰ ਹਟਾਉਣਾ ਹੈ?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3439"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3447"/>
         <source>Replace domain server addresses with their resolved IPs?</source>
         <translation type="unfinished">ਡੋਮੇਨ ਸਰਵਰ ਪਤਿਆਂ ਨੂੰ ਉਹਨਾਂ ਦੇ ਹੱਲ ਕੀਤੇ IP ਨਾਲ ਬਦਲਣਾ ਹੈ?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3588"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3596"/>
         <source>Clear</source>
         <translation type="unfinished">ਸਾਫ਼</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3655"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3663"/>
         <source>Delete selected Group</source>
         <translation type="unfinished">ਚੁਣੇ ਗਏ ਸਮੂਹ ਨੂੰ ਮਿਟਾਓ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3656"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3664"/>
         <source>Edit selected Group</source>
         <translation type="unfinished">ਚੁਣੇ ਗਏ ਸਮੂਹ ਦਾ ਸੰਪਾਦਨ ਕਰੋ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3665"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3673"/>
         <source>Remove %1?</source>
         <translation type="unfinished">ਕੀ %1 ਨੂੰ ਹਟਾਉਣਾ ਹੈ?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4381"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4389"/>
         <source>Cannot start</source>
         <translation type="unfinished">ਸ਼ੁਰੂ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸਕਦਾ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4382"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4390"/>
         <source>Last download request has not finished yet</source>
         <translation type="unfinished">ਆਖਰੀ ਡਾਊਨਲੋਡ ਦੀ ਬੇਨਤੀ ਅਜੇ ਪੂਰੀ ਨਹੀਂ ਹੋਈ ਹੈ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4416"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4424"/>
         <source>Failed to download update assets</source>
         <translation type="unfinished">ਅੱਪਡੇਟ ਸੰਪਤੀਆਂ ਨੂੰ ਡਾਊਨਲੋਡ ਕਰਨ ਵਿੱਚ ਅਸਫਲ</translation>
     </message>
@@ -3369,7 +3369,7 @@ Deleted %3 Profiles:
     </message>
     <message>
         <location filename="../../src/stats/traffic/TrafficLooper.cpp" line="115"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="2467"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2475"/>
         <source>Proxy: %1
 Direct: %2</source>
         <translation type="unfinished">ਪਰਾਕਸੀ: % 1
@@ -3433,102 +3433,102 @@ How to update?</source>
         <translation type="unfinished">ਵਰਤਿਆ ਗਿਆ: %1 ਬਾਕੀ: %2 ਮਿਆਦ ਪੁੱਗਣ: %3</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="224"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="254"/>
         <source>Download Profiles</source>
         <translation type="unfinished">ਪ੍ਰੋਫਾਈਲ ਡਾਊਨਲੋਡ ਕਰੋ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="225"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="255"/>
         <source>Requesting profile error: %1</source>
         <translation type="unfinished">ਪ੍ਰੋਫਾਈਲ ਗਲਤੀ ਲਈ ਬੇਨਤੀ ਕੀਤੀ ਜਾ ਰਹੀ ਹੈ: %1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="392"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="422"/>
         <source>
 Deleted %1 Duplicates</source>
         <translation type="unfinished">%1 ਡੁਪਲੀਕੇਟ ਮਿਟਾਏ ਗਏ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="426"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="456"/>
         <source>
 Deleted %1 Invalid</source>
         <translation type="unfinished">ਹਟਾਇਆ ਗਿਆ % 1 ਗਲਤ ਹੈ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="449"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="479"/>
         <source>
 Deleted %1 Unavailable</source>
         <translation type="unfinished">ਮਿਟਾਇਆ ਗਿਆ % 1 ਅਣਉਪਲਬਧ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1525"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1533"/>
         <source>Check Rule Sets: %1</source>
         <translation type="unfinished">ਨਿਯਮ ਸੈੱਟਾਂ ਦੀ ਜਾਂਚ ਕਰੋ: %1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1547"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1555"/>
         <source>Requesting rule-set list error: %1</source>
         <translation type="unfinished">ਨਿਯਮ-ਸੈੱਟ ਸੂਚੀ ਦੀ ਬੇਨਤੀ ਕਰਨ ਵਿੱਚ ਗਲਤੀ: %1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2504"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2512"/>
         <source>IP address: %1</source>
         <translation type="unfinished">IP ਪਤਾ: %1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2890"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2898"/>
         <source>Move profiles to group</source>
         <translation type="unfinished">ਪ੍ਰੋਫਾਈਲਾਂ ਨੂੰ ਗਰੁੱਪ ਵਿੱਚ ਭੇਜੋ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3033"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3041"/>
         <source>Config copied</source>
         <translation type="unfinished">ਸੰਰਚਨਾ ਕਾਪੀ ਕੀਤੀ ਗਈ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3044"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3052"/>
         <source>Copy core config</source>
         <translation type="unfinished">ਕੋਰ ਸੰਰਚਨਾ ਕਾਪੀ ਕਰੋ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3045"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3053"/>
         <source>Copy test config</source>
         <translation type="unfinished">ਟੈਸਟ ਸੰਰਚਨਾ ਕਾਪੀ ਕਰੋ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3046"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3054"/>
         <location filename="../../src/ui/security_addon.cpp" line="21"/>
         <location filename="../../src/ui/setting/dialog_vpn_settings.cpp" line="53"/>
         <source>OK</source>
         <translation type="unfinished">ਠੀਕ ਹੈ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4285"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="4296"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="4340"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="4363"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="4372"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="4407"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4293"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4304"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4348"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4371"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4380"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4415"/>
         <source>Update</source>
         <translation type="unfinished">ਅੱਪਡੇਟ ਕਰੋ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4286"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4294"/>
         <source>Not official support platform</source>
         <translation type="unfinished">ਅਧਿਕਾਰਤ ਸਮਰਥਨ ਪਲੇਟਫਾਰਮ ਨਹੀਂ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4297"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4305"/>
         <source>Requesting update error: %1</source>
         <translation type="unfinished">ਅੱਪਡੇਟ ਦੀ ਬੇਨਤੀ ਕਰਨ ਵਿੱਚ ਗਲਤੀ: %1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4340"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4348"/>
         <source>No update</source>
         <translation type="unfinished">ਕੋਈ ਅੱਪਡੇਟ ਨਹੀਂ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4364"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4372"/>
         <source>Update found: %1
 Release note:
 %2</source>
@@ -3537,17 +3537,17 @@ Release note:
 % 2</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4367"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4375"/>
         <source>Close</source>
         <translation type="unfinished">ਬੰਦ ਕਰੋ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4369"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4377"/>
         <source>Open in browser</source>
         <translation type="unfinished">ਬ੍ਰਾਊਜ਼ਰ ਵਿੱਚ ਖੋਲ੍ਹੋ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4408"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4416"/>
         <source>Update is ready, restart to install?</source>
         <translation type="unfinished">ਅੱਪਡੇਟ ਤਿਆਰ ਹੈ, ਇੰਸਟੌਲ ਕਰਨ ਲਈ ਰੀਸਟਾਰਟ ਕਰਨਾ ਹੈ?</translation>
     </message>
@@ -3887,24 +3887,24 @@ Release note:
 <context>
     <name>SpinnerDialog</name>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="172"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="202"/>
         <source>Invalid JSON Array</source>
         <translation type="unfinished">ਅਵੈਧ JSON ਐਰੇ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="173"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="203"/>
         <source>The provided input cannot be parsed to a valid route rule array:
 </source>
         <translation type="unfinished">ਪ੍ਰਦਾਨ ਕੀਤੇ ਇਨਪੁਟ ਨੂੰ ਇੱਕ ਵੈਧ ਰੂਟ ਨਿਯਮ ਐਰੇ ਵਿੱਚ ਪਾਰਸ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸਕਦਾ ਹੈ:</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="296"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="326"/>
         <source>Fetching information</source>
         <translation type="unfinished">ਜਾਣਕਾਰੀ ਪ੍ਰਾਪਤ ਕੀਤੀ ਜਾ ਰਹੀ ਹੈ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="312"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="1258"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="342"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1266"/>
         <source>Download Profiles</source>
         <translation type="unfinished">ਪ੍ਰੋਫਾਈਲ ਡਾਊਨਲੋਡ ਕਰੋ</translation>
     </message>

@@ -2375,8 +2375,8 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="161"/>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="594"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="2523"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="2526"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2531"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2534"/>
         <source>System Proxy</source>
         <translation type="unfinished">စနစ်ပရောက်စီ</translation>
     </message>
@@ -2562,15 +2562,15 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="751"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3591"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3601"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3599"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3609"/>
         <source>Start</source>
         <translation type="unfinished">စတင်ပါ။</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="759"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3590"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3601"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3598"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3609"/>
         <source>Stop</source>
         <translation type="unfinished">ရပ်</translation>
     </message>
@@ -2617,7 +2617,7 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="838"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="1432"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1440"/>
         <source>Export %1 config</source>
         <translation type="unfinished">%1 config ကို ထုတ်ယူပါ။</translation>
     </message>
@@ -2721,7 +2721,7 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="992"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="2910"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2918"/>
         <source>Clone</source>
         <translation type="unfinished">ကိုယ်ပွား</translation>
     </message>
@@ -2829,7 +2829,7 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1157"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3619"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3627"/>
         <source>Add new Group</source>
         <translation type="unfinished">Group အသစ်ထည့်ပါ။</translation>
     </message>
@@ -2845,218 +2845,218 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
         <translation type="unfinished">မရနိုင်ပါ။</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1077"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1085"/>
         <source>Edit Routing Profiles</source>
         <translation type="unfinished">လမ်းကြောင်းပရိုဖိုင်များကို တည်းဖြတ်ပါ။</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1099"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1107"/>
         <source>Update Routing Profiles</source>
         <translation type="unfinished">လမ်းကြောင်းပရိုဖိုင်များကို အပ်ဒိတ်လုပ်ပါ။</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1111"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="1115"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="1136"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="1139"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="1183"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1119"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1123"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1144"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1147"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1191"/>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="95"/>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="104"/>
         <source>Update Response</source>
         <translation type="unfinished">တုံ့ပြန်မှုကို အပ်ဒိတ်လုပ်ပါ။</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1112"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1120"/>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="105"/>
         <source>No routing profiles are updated</source>
         <translation type="unfinished">လမ်းကြောင်းပရိုဖိုင်များကို အပ်ဒိတ်လုပ်ထားခြင်းမရှိပါ။</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1116"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1124"/>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="96"/>
         <source>Updated %1 routing profiles</source>
         <translation type="unfinished">%1 လမ်းပြပရိုဖိုင်များကို အပ်ဒိတ်လုပ်ထားသည်။</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1126"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1134"/>
         <source>Update RuleSet Map</source>
         <translation type="unfinished">RuleSet Map ကို အပ်ဒိတ်လုပ်ပါ။</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1137"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1145"/>
         <source>Failed to update rulesets</source>
         <translation type="unfinished">စည်းမျဉ်းများကို အပ်ဒိတ်လုပ်ရန် မအောင်မြင်ပါ။</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1140"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1148"/>
         <source>Rulesets updated successfully</source>
         <translation type="unfinished">စည်းမျဉ်းများကို အောင်မြင်စွာ အပ်ဒိတ်လုပ်ထားသည်။</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1149"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1157"/>
         <source>Update RuleSet Cache</source>
         <translation type="unfinished">RuleSet Cache ကို အပ်ဒိတ်လုပ်ပါ။</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1184"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1192"/>
         <source>Rulesets cache is updated</source>
         <translation type="unfinished">Rulesets cache ကို အပ်ဒိတ်လုပ်ထားသည်။</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1198"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1206"/>
         <source>Clear RuleSet Cache</source>
         <translation type="unfinished">RuleSet Cache ကိုရှင်းလင်းပါ။</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1234"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1242"/>
         <source>Enable AdBlock</source>
         <translation type="unfinished">AdBlock ကိုဖွင့်ပါ။</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1646"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1654"/>
         <source>Error</source>
         <translation type="unfinished">အမှား</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1733"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1741"/>
         <source>Tun Settings changed</source>
         <translation type="unfinished">ထွန်းဆက်တင်များ ပြောင်းသွားသည်။</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1734"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1742"/>
         <source>Restart Tun to take effect.</source>
         <translation type="unfinished">ထွန်းအကျိုးသက်ရောက်စေရန် ပြန်လည်စတင်ပါ။</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1740"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="1798"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="2964"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3335"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3389"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3438"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3664"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1748"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1806"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2972"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3343"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3397"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3446"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3672"/>
         <source>Confirmation</source>
         <translation type="unfinished">အတည်ပြုချက်</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1741"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="1799"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1749"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1807"/>
         <source>Settings changed, restart proxy?</source>
         <translation type="unfinished">ဆက်တင်များပြောင်းပြီး၊ ပရောက်စီကို ပြန်လည်စတင်လိုပါသလား။</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1770"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1778"/>
         <source>Settings changed</source>
         <translation type="unfinished">ဆက်တင်များ ပြောင်းလဲသွားသည်။</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1771"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1779"/>
         <source>Restart the program to take effect.</source>
         <translation type="unfinished">အသက်ဝင်စေရန် ပရိုဂရမ်ကို ပြန်လည်စတင်ပါ။</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1814"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1822"/>
         <source>Imported %1 profile(s)</source>
         <translation type="unfinished">%1 ပရိုဖိုင်(s) ကို တင်သွင်းခဲ့သည်</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2081"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2089"/>
         <source>User opted for no privilege req, some features may not work</source>
         <translation type="unfinished">အသုံးပြုသူသည် အခွင့်ထူးတောင်းဆိုချက်မရှိသည့်အတွက် ရွေးချယ်လိုက်သည်၊ အချို့သောဝန်ဆောင်မှုများသည် အလုပ်မဖြစ်နိုင်ပါ။</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2145"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2153"/>
         <source>Please give the core root privileges</source>
         <translation type="unfinished">ကျေးဇူးပြု၍ ပင်မအမြစ်အခွင့်အရေးများကို ပေးပါ။</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2499"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2507"/>
         <source>Not Running</source>
         <translation type="unfinished">မပြေး</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2911"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2919"/>
         <source>Clone %1 item(s)</source>
         <translation type="unfinished">%1 ဖိုင်(များ)ကို ပုံတူပွားရန်</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2945"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2953"/>
         <source> Confirmation </source>
         <translation type="unfinished">အတည်ပြုချက်</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2946"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2954"/>
         <source> Remove %1 item(s) ? </source>
         <translation type="unfinished">%1 ပစ္စည်း(s) ကို ဖယ်ရှားမလား။</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2965"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2973"/>
         <source>Remove %1 item(s) ?</source>
         <translation type="unfinished">%1 ပစ္စည်း(s) ကို ဖယ်ရှားမလား။</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3002"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3015"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3010"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3023"/>
         <source>Copied %1 item(s)</source>
         <translation type="unfinished">%1 ဖိုင်(များ) ကို ကူးယူထားသည်</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3247"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3255"/>
         <source>QR Code not found</source>
         <translation type="unfinished">QR Code မတွေ့ပါ။</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3268"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3276"/>
         <source>Unable to capture screen</source>
         <translation type="unfinished">မျက်နှာပြင်ကို ဖမ်းယူ၍မရပါ။</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3336"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3344"/>
         <source>Remove %1 Unavailable item(s) ?</source>
         <translation type="unfinished">%1 မရရှိနိုင်သည့်အရာ(များ)ကို ဖယ်ရှားမလား။</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3390"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3398"/>
         <source>Remove %1 Invalid item(s) ?</source>
         <translation type="unfinished">%1 မမှန်ကန်သည့်အရာ(များ)ကို ဖယ်ရှားမလား။</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3439"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3447"/>
         <source>Replace domain server addresses with their resolved IPs?</source>
         <translation type="unfinished">ဒိုမိန်းဆာဗာလိပ်စာများကို ၎င်းတို့၏ဖြေရှင်းထားသော IP များဖြင့် အစားထိုးမလား။</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3588"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3596"/>
         <source>Clear</source>
         <translation type="unfinished">ရှင်းပါတယ်။</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3655"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3663"/>
         <source>Delete selected Group</source>
         <translation type="unfinished">ရွေးချယ်ထားသောအဖွဲ့ကို ဖျက်ပါ။</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3656"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3664"/>
         <source>Edit selected Group</source>
         <translation type="unfinished">ရွေးချယ်ထားသောအဖွဲ့ကို တည်းဖြတ်ပါ။</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3665"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3673"/>
         <source>Remove %1?</source>
         <translation type="unfinished">%1 ကို ဖယ်ရှားမလား။</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4381"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4389"/>
         <source>Cannot start</source>
         <translation type="unfinished">မစတင်နိုင်ပါ။</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4382"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4390"/>
         <source>Last download request has not finished yet</source>
         <translation type="unfinished">နောက်ဆုံးဒေါင်းလုဒ်တောင်းဆိုမှု မပြီးဆုံးသေးပါ။</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4416"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4424"/>
         <source>Failed to download update assets</source>
         <translation type="unfinished">အပ်ဒိတ်ပိုင်ဆိုင်မှုများကို ဒေါင်းလုဒ်လုပ်ရန် မအောင်မြင်ပါ။</translation>
     </message>
@@ -3345,7 +3345,7 @@ Deleted %3 Profiles:
     </message>
     <message>
         <location filename="../../src/stats/traffic/TrafficLooper.cpp" line="115"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="2467"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2475"/>
         <source>Proxy: %1
 Direct: %2</source>
         <translation type="unfinished">ပရောက်စီ- %1
@@ -3409,102 +3409,102 @@ How to update?</source>
         <translation type="unfinished">အသုံးပြုထားသည်- %1 ကျန်- %2 သက်တမ်းကုန်- %3</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="224"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="254"/>
         <source>Download Profiles</source>
         <translation type="unfinished">Profiles ကို ဒေါင်းလုဒ်လုပ်ပါ။</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="225"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="255"/>
         <source>Requesting profile error: %1</source>
         <translation type="unfinished">ပရိုဖိုင် အမှားကို တောင်းဆိုနေသည်- %1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="392"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="422"/>
         <source>
 Deleted %1 Duplicates</source>
         <translation type="unfinished">ထပ်နေသော %1 ကို ဖျက်လိုက်သည်</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="426"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="456"/>
         <source>
 Deleted %1 Invalid</source>
         <translation type="unfinished">ဖျက်လိုက်သည် %1 မမှန်ကန်ပါ။</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="449"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="479"/>
         <source>
 Deleted %1 Unavailable</source>
         <translation type="unfinished">ဖျက်လိုက်သည် %1 မရနိုင်ပါ။</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1525"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1533"/>
         <source>Check Rule Sets: %1</source>
         <translation type="unfinished">စည်းကမ်းသတ်မှတ်မှုများကို စစ်ဆေးပါ- %1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1547"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1555"/>
         <source>Requesting rule-set list error: %1</source>
         <translation type="unfinished">စည်းမျဉ်းသတ်မှတ်မှုစာရင်း အမှားအယွင်းကို တောင်းဆိုနေသည်- %1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2504"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2512"/>
         <source>IP address: %1</source>
         <translation type="unfinished">IP လိပ်စာ- %1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2890"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2898"/>
         <source>Move profiles to group</source>
         <translation type="unfinished">ပရိုဖိုင်များကို အဖွဲ့သို့ ရွှေ့ပါ။</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3033"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3041"/>
         <source>Config copied</source>
         <translation type="unfinished">Config ကို ကူးယူထားသည်။</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3044"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3052"/>
         <source>Copy core config</source>
         <translation type="unfinished">core config ကို ကူးယူပါ။</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3045"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3053"/>
         <source>Copy test config</source>
         <translation type="unfinished">စမ်းသပ်မှုပုံစံကို ကူးယူပါ။</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3046"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3054"/>
         <location filename="../../src/ui/security_addon.cpp" line="21"/>
         <location filename="../../src/ui/setting/dialog_vpn_settings.cpp" line="53"/>
         <source>OK</source>
         <translation type="unfinished">အိုကေ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4285"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="4296"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="4340"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="4363"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="4372"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="4407"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4293"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4304"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4348"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4371"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4380"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4415"/>
         <source>Update</source>
         <translation type="unfinished">အပ်ဒိတ်</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4286"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4294"/>
         <source>Not official support platform</source>
         <translation type="unfinished">တရားဝင်ပံ့ပိုးမှုပလက်ဖောင်းမဟုတ်ပါ။</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4297"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4305"/>
         <source>Requesting update error: %1</source>
         <translation type="unfinished">အပ်ဒိတ်ကို တောင်းဆိုနေသည့် အမှား- %1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4340"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4348"/>
         <source>No update</source>
         <translation type="unfinished">အပ်ဒိတ်မရှိပါ။</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4364"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4372"/>
         <source>Update found: %1
 Release note:
 %2</source>
@@ -3513,17 +3513,17 @@ Release note:
 %2</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4367"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4375"/>
         <source>Close</source>
         <translation type="unfinished">ပိတ်လိုက်</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4369"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4377"/>
         <source>Open in browser</source>
         <translation type="unfinished">ဘရောက်ဆာတွင်ဖွင့်ပါ။</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4408"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4416"/>
         <source>Update is ready, restart to install?</source>
         <translation type="unfinished">အပ်ဒိတ်အဆင်သင့်ဖြစ်ပြီ၊ ထည့်သွင်းရန် ပြန်လည်စတင်လိုပါသလား။</translation>
     </message>
@@ -3863,24 +3863,24 @@ Release note:
 <context>
     <name>SpinnerDialog</name>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="172"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="202"/>
         <source>Invalid JSON Array</source>
         <translation type="unfinished">မမှန်ကန်သော JSON Array</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="173"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="203"/>
         <source>The provided input cannot be parsed to a valid route rule array:
 </source>
         <translation type="unfinished">ပေးထားသည့် ထည့်သွင်းမှုကို မှန်ကန်သောလမ်းကြောင်း စည်းမျဉ်း array တစ်ခုသို့ ခွဲခြမ်းစိတ်ဖြာ၍မရပါ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="296"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="326"/>
         <source>Fetching information</source>
         <translation type="unfinished">အချက်အလက်ရယူခြင်း။</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="312"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="1258"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="342"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1266"/>
         <source>Download Profiles</source>
         <translation type="unfinished">Profiles ကို ဒေါင်းလုဒ်လုပ်ပါ။</translation>
     </message>

@@ -133,6 +133,36 @@ void SelectDialog::setupUi() {
 
     setLayout(layout);
 }
+void MainWindow::menu_server_about_to_show(QMenu * menu_server){
+//  if (running) {
+//    ui->actionSpeedtest_Current->setEnabled(true);
+//  } else {
+//     ui->actionSpeedtest_Current->setEnabled(false);
+//  }
+  bool selected_profile = true;
+  if (auto selected = get_now_selected_list(); selected.empty()) {
+    selected_profile = false;
+  }
+
+  ui->menu_test->setEnabled(selected_profile);
+  ui->actionUrl_Test_Selected->setEnabled(selected_profile);
+  ui->actionUrl_Test_Clear->setEnabled(selected_profile);
+  ui->menu_resolve_selected->setEnabled(selected_profile);
+  ui->menu_start->setEnabled(selected_profile);
+  ui->menu_edit->setEnabled(selected_profile);
+  ui->menu_share_item->setEnabled(selected_profile);
+  ui->menu_delete->setEnabled(selected_profile);
+  ui->menu_move_profile->setEnabled(selected_profile);
+  ui->menu_clone->setEnabled(selected_profile);
+  ui->menu_reset_traffic->setEnabled(selected_profile);
+
+  if (!speedtestRunning.tryLock()) {
+    menu_server->addAction(ui->menu_stop_testing);
+  } else {
+    speedtestRunning.unlock();
+    menu_server->removeAction(ui->menu_stop_testing);
+  }
+}
 
 void SelectDialog::onOk(int selectedIndex) {
     emit confirmed(selectedIndex); // Emit signal for confirmed selection
@@ -734,14 +764,19 @@ MainWindow::MainWindow(QWidget *parent)
     }
   }
   menu_context_profiles->setTitle(menu_profiles->title());
-  connect(menu_context, &QMenu::aboutToShow, this, [menu_context_profiles, menu_context, menu_server]() {
-    menu_context->clear();
-    menu_context->addMenu(menu_context_profiles);
-    menu_context->addSeparator();
-    for (auto i : menu_server->actions()) {
-        menu_context->addAction(i);
-    }
+
+  menu_context->clear();
+  menu_context->addMenu(menu_context_profiles);
+  menu_context->addSeparator();
+  for (auto i : menu_server->actions()) {
+      menu_context->addAction(i);
+  }
+
+  connect(menu_context, &QMenu::aboutToShow, this, [this]() {
+      this->menu_server_about_to_show(ui->menuContext);
   });
+
+
 
   }
 
@@ -1023,35 +1058,8 @@ skip_updater_hide:
     on_tabWidget_customContextMenuRequested(point);
   });
 
-  connect(ui->menu_server, &QMenu::aboutToShow, this, [=, this]() {
-    //  if (running) {
-    //    ui->actionSpeedtest_Current->setEnabled(true);
-    //  } else {
-    //     ui->actionSpeedtest_Current->setEnabled(false);
-    //  }
-    bool selected_profile = true;
-    if (auto selected = get_now_selected_list(); selected.empty()) {
-      selected_profile = false;
-    }
-
-    ui->menu_test->setEnabled(selected_profile);
-    ui->actionUrl_Test_Selected->setEnabled(selected_profile);
-    ui->actionUrl_Test_Clear->setEnabled(selected_profile);
-    ui->menu_resolve_selected->setEnabled(selected_profile);
-    ui->menu_start->setEnabled(selected_profile);
-    ui->menu_edit->setEnabled(selected_profile);
-    ui->menu_share_item->setEnabled(selected_profile);
-    ui->menu_delete->setEnabled(selected_profile);
-    ui->menu_move_profile->setEnabled(selected_profile);
-    ui->menu_clone->setEnabled(selected_profile);
-    ui->menu_reset_traffic->setEnabled(selected_profile);
-
-    if (!speedtestRunning.tryLock()) {
-      ui->menu_server->addAction(ui->menu_stop_testing);
-    } else {
-      speedtestRunning.unlock();
-      ui->menu_server->removeAction(ui->menu_stop_testing);
-    }
+  connect(ui->menu_server, &QMenu::aboutToShow, this, [this]() {
+    this->menu_server_about_to_show(this->ui->menu_server);
   });
 
   QFile srslist(getResource("srslist.json"));

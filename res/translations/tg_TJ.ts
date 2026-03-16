@@ -2353,8 +2353,8 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="161"/>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="594"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="2523"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="2526"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2531"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2534"/>
         <source>System Proxy</source>
         <translation type="unfinished">Прокси система</translation>
     </message>
@@ -2528,15 +2528,15 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="751"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3591"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3601"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3599"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3609"/>
         <source>Start</source>
         <translation type="unfinished">Оғоз</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="759"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3590"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3601"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3598"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3609"/>
         <source>Stop</source>
         <translation type="unfinished">Ист</translation>
     </message>
@@ -2583,7 +2583,7 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="838"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="1432"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1440"/>
         <source>Export %1 config</source>
         <translation type="unfinished">Содироти % 1 конфигуратсия</translation>
     </message>
@@ -2677,7 +2677,7 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="992"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="2910"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2918"/>
         <source>Clone</source>
         <translation type="unfinished">Клон</translation>
     </message>
@@ -2783,7 +2783,7 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1157"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3619"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3627"/>
         <source>Add new Group</source>
         <translation type="unfinished">Илова кардани гурӯҳи нав</translation>
     </message>
@@ -2799,218 +2799,218 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
         <translation type="unfinished">Дастнорас</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1077"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1085"/>
         <source>Edit Routing Profiles</source>
         <translation type="unfinished">Таҳрири профилҳои масир</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1099"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1107"/>
         <source>Update Routing Profiles</source>
         <translation type="unfinished">Навсозии профилҳои масир</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1111"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="1115"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="1136"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="1139"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="1183"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1119"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1123"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1144"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1147"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1191"/>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="95"/>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="104"/>
         <source>Update Response</source>
         <translation type="unfinished">Ҷавоби навсозӣ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1112"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1120"/>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="105"/>
         <source>No routing profiles are updated</source>
         <translation type="unfinished">Ягон профилҳои масир нав карда намешаванд</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1116"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1124"/>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="96"/>
         <source>Updated %1 routing profiles</source>
         <translation type="unfinished">% 1 профилҳои масир нав карда шуд</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1126"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1134"/>
         <source>Update RuleSet Map</source>
         <translation type="unfinished">Харитаи RuleSet навсозӣ кунед</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1137"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1145"/>
         <source>Failed to update rulesets</source>
         <translation type="unfinished">Навсозии маҷмӯи қоидаҳо муяссар нашуд</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1140"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1148"/>
         <source>Rulesets updated successfully</source>
         <translation type="unfinished">Маҷмӯаҳои қоидаҳо бомуваффақият нав карда шуданд</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1149"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1157"/>
         <source>Update RuleSet Cache</source>
         <translation type="unfinished">Cache RuleSet навсозӣ кунед</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1184"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1192"/>
         <source>Rulesets cache is updated</source>
         <translation type="unfinished">Кэши маҷмӯи қоидаҳо нав карда мешавад</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1198"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1206"/>
         <source>Clear RuleSet Cache</source>
         <translation type="unfinished">Кэши RuleSet-ро тоза кунед</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1234"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1242"/>
         <source>Enable AdBlock</source>
         <translation type="unfinished">AdBlock-ро фаъол созед</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1646"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1654"/>
         <source>Error</source>
         <translation type="unfinished">Хатогӣ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1733"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1741"/>
         <source>Tun Settings changed</source>
         <translation type="unfinished">Танзимоти Танзим тағйир ёфт</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1734"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1742"/>
         <source>Restart Tun to take effect.</source>
         <translation type="unfinished">Барои эътибор пайдо кардани Tun-ро аз нав оғоз кунед.</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1740"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="1798"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="2964"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3335"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3389"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3438"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3664"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1748"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1806"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2972"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3343"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3397"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3446"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3672"/>
         <source>Confirmation</source>
         <translation type="unfinished">Тасдиқ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1741"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="1799"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1749"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1807"/>
         <source>Settings changed, restart proxy?</source>
         <translation type="unfinished">Танзимот тағир ёфт, проксиро бозоғоз намоед?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1770"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1778"/>
         <source>Settings changed</source>
         <translation type="unfinished">Танзимот тағир ёфт</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1771"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1779"/>
         <source>Restart the program to take effect.</source>
         <translation type="unfinished">Барномаро аз нав оғоз кунед, то эътибор пайдо кунад.</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1814"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1822"/>
         <source>Imported %1 profile(s)</source>
         <translation type="unfinished">%1 профил(ҳо) ворид карда шуд</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2081"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2089"/>
         <source>User opted for no privilege req, some features may not work</source>
         <translation type="unfinished">Корбар ҳеҷ гуна имтиёзро интихоб кард, баъзе хусусиятҳо метавонанд кор накунанд</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2145"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2153"/>
         <source>Please give the core root privileges</source>
         <translation type="unfinished">Лутфан имтиёзҳои асосии решаро диҳед</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2499"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2507"/>
         <source>Not Running</source>
         <translation type="unfinished">На давидан</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2911"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2919"/>
         <source>Clone %1 item(s)</source>
         <translation type="unfinished">Клон кардани %1 адад(ҳо)</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2945"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2953"/>
         <source> Confirmation </source>
         <translation type="unfinished">Тасдиқ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2946"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2954"/>
         <source> Remove %1 item(s) ? </source>
         <translation type="unfinished">%1 адад(ҳо) хориҷ карда шавад?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2965"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2973"/>
         <source>Remove %1 item(s) ?</source>
         <translation type="unfinished">%1 адад(ҳо) хориҷ карда шавад?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3002"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3015"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3010"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3023"/>
         <source>Copied %1 item(s)</source>
         <translation type="unfinished">% 1 адад нусхабардорӣ карда шуд</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3247"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3255"/>
         <source>QR Code not found</source>
         <translation type="unfinished">Коди QR ёфт нашуд</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3268"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3276"/>
         <source>Unable to capture screen</source>
         <translation type="unfinished">Экранро гирифтан ғайриимкон аст</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3336"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3344"/>
         <source>Remove %1 Unavailable item(s) ?</source>
         <translation type="unfinished">% 1 адад(ҳо)-и дастнорас нест кунед ?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3390"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3398"/>
         <source>Remove %1 Invalid item(s) ?</source>
         <translation type="unfinished">% 1 адад(ҳо)-и беэътибор нест кунед ?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3439"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3447"/>
         <source>Replace domain server addresses with their resolved IPs?</source>
         <translation type="unfinished">Суроғаҳои сервери доменро бо IP-ҳои ҳалшудаи онҳо иваз кунед?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3588"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3596"/>
         <source>Clear</source>
         <translation type="unfinished">Тоза</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3655"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3663"/>
         <source>Delete selected Group</source>
         <translation type="unfinished">Гурӯҳи интихобшударо нест кунед</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3656"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3664"/>
         <source>Edit selected Group</source>
         <translation type="unfinished">Таҳрири гурӯҳи интихобшуда</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3665"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3673"/>
         <source>Remove %1?</source>
         <translation type="unfinished">% 1 нест карда шавад?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4381"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4389"/>
         <source>Cannot start</source>
         <translation type="unfinished">Оғоз кардан мумкин нест</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4382"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4390"/>
         <source>Last download request has not finished yet</source>
         <translation type="unfinished">Дархости охирини зеркашӣ ҳанӯз анҷом нашудааст</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4416"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4424"/>
         <source>Failed to download update assets</source>
         <translation type="unfinished">Барои зеркашии дороиҳои навсозӣ муваффақ нашуд</translation>
     </message>
@@ -3299,7 +3299,7 @@ Deleted %3 Profiles:
     </message>
     <message>
         <location filename="../../src/stats/traffic/TrafficLooper.cpp" line="115"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="2467"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2475"/>
         <source>Proxy: %1
 Direct: %2</source>
         <translation type="unfinished">Прокси: % 1
@@ -3363,102 +3363,102 @@ How to update?</source>
         <translation type="unfinished">Истифодашуда: % 1 Боқимонда: % 2 Ба охир расидан: % 3</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="224"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="254"/>
         <source>Download Profiles</source>
         <translation type="unfinished">Профилҳоро зеркашӣ кунед</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="225"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="255"/>
         <source>Requesting profile error: %1</source>
         <translation type="unfinished">Хатои профили дархост: % 1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="392"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="422"/>
         <source>
 Deleted %1 Duplicates</source>
         <translation type="unfinished">% 1 Дубликат нест карда шуд</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="426"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="456"/>
         <source>
 Deleted %1 Invalid</source>
         <translation type="unfinished">Нест карда шуд % 1 Беэътибор</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="449"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="479"/>
         <source>
 Deleted %1 Unavailable</source>
         <translation type="unfinished">Ҳазфшуда % 1 дастнорас</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1525"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1533"/>
         <source>Check Rule Sets: %1</source>
         <translation type="unfinished">Маҷмӯи қоидаҳоро тафтиш кунед: % 1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1547"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1555"/>
         <source>Requesting rule-set list error: %1</source>
         <translation type="unfinished">Дархости хатогии рӯйхати маҷмӯи қоидаҳо: % 1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2504"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2512"/>
         <source>IP address: %1</source>
         <translation type="unfinished">Суроғаи IP: % 1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2890"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2898"/>
         <source>Move profiles to group</source>
         <translation type="unfinished">Профилҳоро ба гурӯҳ интиқол диҳед</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3033"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3041"/>
         <source>Config copied</source>
         <translation type="unfinished">Конфигуратсия нусхабардорӣ карда шуд</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3044"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3052"/>
         <source>Copy core config</source>
         <translation type="unfinished">Конфигуратсияи аслӣ нусхабардорӣ кунед</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3045"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3053"/>
         <source>Copy test config</source>
         <translation type="unfinished">Конфигуратсияи санҷишро нусхабардорӣ кунед</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3046"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3054"/>
         <location filename="../../src/ui/security_addon.cpp" line="21"/>
         <location filename="../../src/ui/setting/dialog_vpn_settings.cpp" line="53"/>
         <source>OK</source>
         <translation type="unfinished">ДУРУСТ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4285"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="4296"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="4340"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="4363"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="4372"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="4407"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4293"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4304"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4348"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4371"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4380"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4415"/>
         <source>Update</source>
         <translation type="unfinished">Навсозӣ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4286"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4294"/>
         <source>Not official support platform</source>
         <translation type="unfinished">Платформаи дастгирии расмӣ нест</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4297"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4305"/>
         <source>Requesting update error: %1</source>
         <translation type="unfinished">Хатогии дархости навсозӣ: % 1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4340"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4348"/>
         <source>No update</source>
         <translation type="unfinished">Навсозӣ нест</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4364"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4372"/>
         <source>Update found: %1
 Release note:
 %2</source>
@@ -3467,17 +3467,17 @@ Release note:
 % 2</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4367"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4375"/>
         <source>Close</source>
         <translation type="unfinished">Пӯшед</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4369"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4377"/>
         <source>Open in browser</source>
         <translation type="unfinished">Дар браузер кушоед</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4408"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4416"/>
         <source>Update is ready, restart to install?</source>
         <translation type="unfinished">Навсозӣ омода аст, барои насб кардан аз нав оғоз кунед?</translation>
     </message>
@@ -3807,24 +3807,24 @@ Release note:
 <context>
     <name>SpinnerDialog</name>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="172"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="202"/>
         <source>Invalid JSON Array</source>
         <translation type="unfinished">Массиви JSON нодуруст</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="173"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="203"/>
         <source>The provided input cannot be parsed to a valid route rule array:
 </source>
         <translation type="unfinished">Вуруди пешниҳодшударо ба массиви қоидаи масир таҳлил кардан мумкин нест:</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="296"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="326"/>
         <source>Fetching information</source>
         <translation type="unfinished">Гирифтани маълумот</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="312"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="1258"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="342"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1266"/>
         <source>Download Profiles</source>
         <translation type="unfinished">Профилҳоро зеркашӣ кунед</translation>
     </message>

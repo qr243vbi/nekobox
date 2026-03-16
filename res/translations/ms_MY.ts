@@ -2375,8 +2375,8 @@ Untuk maklumat lanjut, lihat dokumen &quot;Konfigurasi/DNS&quot;.</translation>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="161"/>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="594"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="2523"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="2526"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2531"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2534"/>
         <source>System Proxy</source>
         <translation type="unfinished">Proksi Sistem</translation>
     </message>
@@ -2562,15 +2562,15 @@ Untuk maklumat lanjut, lihat dokumen &quot;Konfigurasi/DNS&quot;.</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="751"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3591"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3601"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3599"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3609"/>
         <source>Start</source>
         <translation type="unfinished">Mulakan</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="759"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3590"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3601"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3598"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3609"/>
         <source>Stop</source>
         <translation type="unfinished">Berhenti</translation>
     </message>
@@ -2617,7 +2617,7 @@ Untuk maklumat lanjut, lihat dokumen &quot;Konfigurasi/DNS&quot;.</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="838"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="1432"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1440"/>
         <source>Export %1 config</source>
         <translation type="unfinished">Eksport % 1 konfigurasi</translation>
     </message>
@@ -2729,7 +2729,7 @@ Untuk maklumat lanjut, lihat dokumen &quot;Konfigurasi/DNS&quot;.</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="992"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="2910"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2918"/>
         <source>Clone</source>
         <translation type="unfinished">Klon</translation>
     </message>
@@ -2849,7 +2849,7 @@ Untuk maklumat lanjut, lihat dokumen &quot;Konfigurasi/DNS&quot;.</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1157"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3619"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3627"/>
         <source>Add new Group</source>
         <translation type="unfinished">Tambah Kumpulan baharu</translation>
     </message>
@@ -2865,218 +2865,218 @@ Untuk maklumat lanjut, lihat dokumen &quot;Konfigurasi/DNS&quot;.</translation>
         <translation type="unfinished">Tidak tersedia</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1077"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1085"/>
         <source>Edit Routing Profiles</source>
         <translation type="unfinished">Edit Profil Penghalaan</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1099"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1107"/>
         <source>Update Routing Profiles</source>
         <translation type="unfinished">Kemas kini Profil Penghalaan</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1111"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="1115"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="1136"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="1139"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="1183"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1119"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1123"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1144"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1147"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1191"/>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="95"/>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="104"/>
         <source>Update Response</source>
         <translation type="unfinished">Kemas Kini Respons</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1112"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1120"/>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="105"/>
         <source>No routing profiles are updated</source>
         <translation type="unfinished">Tiada profil penghalaan dikemas kini</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1116"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1124"/>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="96"/>
         <source>Updated %1 routing profiles</source>
         <translation type="unfinished">Mengemas kini % 1 profil penghalaan</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1126"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1134"/>
         <source>Update RuleSet Map</source>
         <translation type="unfinished">Kemas kini Peta Set Peraturan</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1137"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1145"/>
         <source>Failed to update rulesets</source>
         <translation type="unfinished">Gagal mengemas kini set peraturan</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1140"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1148"/>
         <source>Rulesets updated successfully</source>
         <translation type="unfinished">Set peraturan berjaya dikemas kini</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1149"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1157"/>
         <source>Update RuleSet Cache</source>
         <translation type="unfinished">Kemas kini RuleSet Cache</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1184"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1192"/>
         <source>Rulesets cache is updated</source>
         <translation type="unfinished">Cache set peraturan dikemas kini</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1198"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1206"/>
         <source>Clear RuleSet Cache</source>
         <translation type="unfinished">Kosongkan RuleSet Cache</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1234"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1242"/>
         <source>Enable AdBlock</source>
         <translation type="unfinished">Dayakan AdBlock</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1646"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1654"/>
         <source>Error</source>
         <translation type="unfinished">ralat</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1733"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1741"/>
         <source>Tun Settings changed</source>
         <translation type="unfinished">Tetapan Tun berubah</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1734"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1742"/>
         <source>Restart Tun to take effect.</source>
         <translation type="unfinished">Mulakan semula Tun untuk berkuatkuasa.</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1740"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="1798"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="2964"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3335"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3389"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3438"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3664"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1748"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1806"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2972"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3343"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3397"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3446"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3672"/>
         <source>Confirmation</source>
         <translation type="unfinished">Pengesahan</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1741"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="1799"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1749"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1807"/>
         <source>Settings changed, restart proxy?</source>
         <translation type="unfinished">Tetapan ditukar, mulakan semula proksi?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1770"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1778"/>
         <source>Settings changed</source>
         <translation type="unfinished">Tetapan berubah</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1771"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1779"/>
         <source>Restart the program to take effect.</source>
         <translation type="unfinished">Mulakan semula program untuk berkuat kuasa.</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1814"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1822"/>
         <source>Imported %1 profile(s)</source>
         <translation type="unfinished">% 1 profil yang diimport</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2081"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2089"/>
         <source>User opted for no privilege req, some features may not work</source>
         <translation type="unfinished">Pengguna memilih untuk tiada syarat keistimewaan, sesetengah ciri mungkin tidak berfungsi</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2145"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2153"/>
         <source>Please give the core root privileges</source>
         <translation type="unfinished">Sila berikan keistimewaan akar teras</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2499"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2507"/>
         <source>Not Running</source>
         <translation type="unfinished">Tidak Berlari</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2911"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2919"/>
         <source>Clone %1 item(s)</source>
         <translation type="unfinished">Klon % 1 item</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2945"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2953"/>
         <source> Confirmation </source>
         <translation type="unfinished">Pengesahan</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2946"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2954"/>
         <source> Remove %1 item(s) ? </source>
         <translation type="unfinished">Alih keluar % 1 item ?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2965"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2973"/>
         <source>Remove %1 item(s) ?</source>
         <translation type="unfinished">Alih keluar % 1 item ?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3002"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3015"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3010"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3023"/>
         <source>Copied %1 item(s)</source>
         <translation type="unfinished">% 1 item disalin</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3247"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3255"/>
         <source>QR Code not found</source>
         <translation type="unfinished">Kod QR tidak ditemui</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3268"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3276"/>
         <source>Unable to capture screen</source>
         <translation type="unfinished">Tidak dapat menangkap skrin</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3336"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3344"/>
         <source>Remove %1 Unavailable item(s) ?</source>
         <translation type="unfinished">Alih keluar % 1 Item tidak tersedia ?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3390"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3398"/>
         <source>Remove %1 Invalid item(s) ?</source>
         <translation type="unfinished">Alih keluar % 1 Item tidak sah ?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3439"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3447"/>
         <source>Replace domain server addresses with their resolved IPs?</source>
         <translation type="unfinished">Gantikan alamat pelayan domain dengan IP yang telah diselesaikan?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3588"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3596"/>
         <source>Clear</source>
         <translation type="unfinished">Jelas</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3655"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3663"/>
         <source>Delete selected Group</source>
         <translation type="unfinished">Padamkan Kumpulan yang dipilih</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3656"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3664"/>
         <source>Edit selected Group</source>
         <translation type="unfinished">Edit Kumpulan yang dipilih</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3665"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3673"/>
         <source>Remove %1?</source>
         <translation type="unfinished">Alih keluar % 1?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4381"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4389"/>
         <source>Cannot start</source>
         <translation type="unfinished">Tidak boleh bermula</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4382"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4390"/>
         <source>Last download request has not finished yet</source>
         <translation type="unfinished">Permintaan muat turun terakhir masih belum selesai</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4416"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4424"/>
         <source>Failed to download update assets</source>
         <translation type="unfinished">Gagal memuat turun aset kemas kini</translation>
     </message>
@@ -3365,7 +3365,7 @@ Dipadamkan % 3 Profil:
     </message>
     <message>
         <location filename="../../src/stats/traffic/TrafficLooper.cpp" line="115"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="2467"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2475"/>
         <source>Proxy: %1
 Direct: %2</source>
         <translation type="unfinished">Proksi: % 1
@@ -3429,102 +3429,102 @@ Bagaimana untuk mengemas kini?</translation>
         <translation type="unfinished">Digunakan: % 1 Kekal: % 2 Tamat: % 3</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="224"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="254"/>
         <source>Download Profiles</source>
         <translation type="unfinished">Muat turun Profil</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="225"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="255"/>
         <source>Requesting profile error: %1</source>
         <translation type="unfinished">Meminta ralat profil: % 1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="392"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="422"/>
         <source>
 Deleted %1 Duplicates</source>
         <translation type="unfinished">Dipadamkan % 1 Pendua</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="426"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="456"/>
         <source>
 Deleted %1 Invalid</source>
         <translation type="unfinished">Dipadamkan % 1 Tidak sah</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="449"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="479"/>
         <source>
 Deleted %1 Unavailable</source>
         <translation type="unfinished">Dipadamkan % 1 Tidak tersedia</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1525"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1533"/>
         <source>Check Rule Sets: %1</source>
         <translation type="unfinished">Semak Set Peraturan: % 1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1547"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1555"/>
         <source>Requesting rule-set list error: %1</source>
         <translation type="unfinished">Meminta ralat senarai set peraturan: % 1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2504"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2512"/>
         <source>IP address: %1</source>
         <translation type="unfinished">Alamat IP: % 1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2890"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="2898"/>
         <source>Move profiles to group</source>
         <translation type="unfinished">Alihkan profil ke kumpulan</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3033"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3041"/>
         <source>Config copied</source>
         <translation type="unfinished">Konfigurasi disalin</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3044"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3052"/>
         <source>Copy core config</source>
         <translation type="unfinished">Salin konfigurasi teras</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3045"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3053"/>
         <source>Copy test config</source>
         <translation type="unfinished">Salin konfigurasi ujian</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3046"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="3054"/>
         <location filename="../../src/ui/security_addon.cpp" line="21"/>
         <location filename="../../src/ui/setting/dialog_vpn_settings.cpp" line="53"/>
         <source>OK</source>
         <translation type="unfinished">OK</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4285"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="4296"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="4340"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="4363"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="4372"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="4407"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4293"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4304"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4348"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4371"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4380"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4415"/>
         <source>Update</source>
         <translation type="unfinished">Kemas kini</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4286"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4294"/>
         <source>Not official support platform</source>
         <translation type="unfinished">Bukan platform sokongan rasmi</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4297"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4305"/>
         <source>Requesting update error: %1</source>
         <translation type="unfinished">Meminta ralat kemas kini: % 1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4340"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4348"/>
         <source>No update</source>
         <translation type="unfinished">Tiada kemas kini</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4364"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4372"/>
         <source>Update found: %1
 Release note:
 %2</source>
@@ -3533,17 +3533,17 @@ Nota keluaran:
 % 2</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4367"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4375"/>
         <source>Close</source>
         <translation type="unfinished">tutup</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4369"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4377"/>
         <source>Open in browser</source>
         <translation type="unfinished">Buka dalam penyemak imbas</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4408"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="4416"/>
         <source>Update is ready, restart to install?</source>
         <translation type="unfinished">Kemas kini sudah sedia, mulakan semula untuk memasang?</translation>
     </message>
@@ -3883,24 +3883,24 @@ Nota keluaran:
 <context>
     <name>SpinnerDialog</name>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="172"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="202"/>
         <source>Invalid JSON Array</source>
         <translation type="unfinished">Tatasusunan JSON tidak sah</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="173"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="203"/>
         <source>The provided input cannot be parsed to a valid route rule array:
 </source>
         <translation type="unfinished">Input yang diberikan tidak boleh dihuraikan kepada tatasusunan peraturan laluan yang sah:</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="296"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="326"/>
         <source>Fetching information</source>
         <translation type="unfinished">Mengambil maklumat</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="312"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="1258"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="342"/>
+        <location filename="../../src/ui/mainwindow.cpp" line="1266"/>
         <source>Download Profiles</source>
         <translation type="unfinished">Muat turun Profil</translation>
     </message>

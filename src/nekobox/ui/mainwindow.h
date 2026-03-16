@@ -183,6 +183,8 @@ public:
 
     void show_log_impl(const QString &log);
 
+    void menu_server_about_to_show(QMenu * menu);
+
  //   void start_select_mode(QObject *context, const std::function<void(int)> &callback);
 
     void RegisterHotkey(bool unregister);
