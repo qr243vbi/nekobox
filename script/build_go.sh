@@ -15,8 +15,10 @@ else if [[ "$GOOS" == "linux" && "$GOARCH" == "amd64" ]]; then
 else if [[ "$GOOS" == "linux" && "$GOARCH" == "arm64" ]]; then
   DEST=$DEPLOYMENT/linux-arm64
 else if [[ "$GOOS" == "linux" && "$GOARCH" == "386" ]]; then
-  DEST=$DEPLOYMENT/linux-i386
-fi; fi; fi; fi; fi; fi;
+  DEST=$DEPLOYMENT/linux-386
+else if [[ "$GOOS" == "linux" && "$GOARCH" == "arm" ]]; then
+  DEST=$DEPLOYMENT/linux-arm
+fi; fi; fi; fi; fi; fi; fi;
 fi
 
 echo "DESTINATION IS $DEST FOR MACHINE $GOARCH with platform $GOOS"

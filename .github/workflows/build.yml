@@ -48,6 +48,16 @@ on:
         type: boolean
         default: true
         required: false
+      build_ubuntu_32:
+        description: "Build linux x86 binaries"
+        type: boolean
+        default: true
+        required: false
+      build_ubuntu_arm_32:
+        description: "Build linux ARM binaries"
+        type: boolean
+        default: true
+        required: false
       publish_chocolatey:
         description: "Publish chocolatey packages"
         type: boolean
@@ -85,6 +95,14 @@ jobs:
             cross_arch: arm64
             go_version: "1.26.0"
             allow: ${{ github.event.inputs.build_ubuntu_arm }}
+          - cross_os: linux
+            cross_arch: 386
+            go_version: "1.26.0"
+            allow: ${{ github.event.inputs.build_ubuntu_32 }}
+          - cross_os: linux
+            cross_arch: arm
+            go_version: "1.26.0"
+            allow: ${{ github.event.inputs.build_ubuntu_arm_32 }}
           - cross_os: windows
             cross_arch: amd64
             go_version: "1.26.0"
@@ -321,6 +339,103 @@ jobs:
 
       - name: Uploading Artifact
         if: matrix.allow == 'true' && github.event.inputs.source_only  != 'true'
+        uses: actions/upload-artifact@v4.6.2
+        with:
+          name: nekobox-${{ github.sha }}-${{ matrix.platform }}-${{ matrix.target }}-Qt${{ matrix.qt_version }}
+          path: artifacts.tgz
+
+  build-cpp-linux-isolated:
+    name: Build linux 32 bit binaries
+    permissions:
+      contents: write
+      actions: read
+    needs:
+      - build-go
+    strategy:
+      matrix:
+        include:
+          - platform: ubuntu-24.04
+            target: 386
+            allow: ${{ github.event.inputs.build_ubuntu_32 }}
+          - platform: ubuntu-24.04-arm
+            target: arm
+            allow: ${{ github.event.inputs.build_ubuntu_arm_32 }}
+      fail-fast: false
+    runs-on: ${{ matrix.platform }}
+    env:
+      ACTIONS_ALLOW_UNSECURE_COMMANDS: true
+      INPUT_VERSION: ${{ github.event.inputs.tag }}
+    steps:
+      - name: Checking out sources
+        if: matrix.allow == 'true' && github.event.inputs.source_only != 'true'
+        uses: actions/checkout@main
+        with:
+          ref: 'main'
+          submodules: "false"
+
+      - name: Download Artifacts
+        if: matrix.allow == 'true' && github.event.inputs.source_only != 'true'
+        uses: actions/download-artifact@v4.3.0
+        with:
+          path: download-artifact
+
+      - name: Download Srslist
+        if: matrix.allow == 'true' && github.event.inputs.source_only != 'true'
+        shell: bash
+        run: |
+          curl -fLso "srslist.json" "https://github.com/qr243vbi/ruleset/raw/refs/heads/rule-set/srslist.json"
+          mkdir build
+
+      - name: Cache Builds
+        id: cache-common
+        if: github.event.inputs.source_only  != 'true' && matrix.allow == 'true'
+        uses: actions/cache@v4.2.3
+        with:
+          path: build
+          key: CommonCache-${{ matrix.platform }}-${{ matrix.target }}-${{ github.event.inputs.tag }}
+
+      - name: Cache Containers
+        id: cache-common-containers
+        if: github.event.inputs.source_only  != 'true' && matrix.allow == 'true'
+        uses: actions/cache@v4.2.3
+        with:
+          path: ~/.local/share/containers
+          key: CommonCachePodman-${{ matrix.platform }}-${{ matrix.target }}-${{ github.event.inputs.tag }}
+
+      - name: Linux - Install apt dependencies
+        if: matrix.allow == 'true' && github.event.inputs.source_only != 'true'
+        uses: awalsh128/cache-apt-pkgs-action@latest
+        with:
+          packages: podman podman-compose
+          version: 1.0
+
+      - name: Linux - Generate MakeFile and Build
+        if: matrix.allow == 'true' && github.event.inputs.source_only != 'true'
+        shell: bash
+        run: |
+          if [[ "${{ matrix.target }}" == "arm" ]]
+          then
+           echo "ARCH1=armhf" >> .ENV
+           echo "ARCH=arm" >> .ENV
+          else
+           echo "ARCH1=i686" >> .ENV
+           echo "ARCH=386" >> .ENV
+          fi
+          echo "INPUT_VERSION=${{ github.event.inputs.tag }}" >> .ENV
+          if [[ "${{ github.event.inputs.publish }}" == "true" ]]
+          then
+            echo "UPLOAD_WITH_GH=yes" >> .ENV
+            echo "GH_TOKEN='${{ secrets.UPLOAD_TOKEN }}'" >> .ENV
+          fi
+          podman compose up --force-recreate --build --remove-orphan
+
+      - name: Tar files
+        if: matrix.allow == 'true' && github.event.inputs.source_only != 'true'
+        shell: bash
+        run: tar czvf artifacts.tgz ./deployment
+
+      - name: Uploading Artifact
+        if: matrix.allow == 'true' && github.event.inputs.source_only != 'true'
         uses: actions/upload-artifact@v4.6.2
         with:
           name: nekobox-${{ github.sha }}-${{ matrix.platform }}-${{ matrix.target }}-Qt${{ matrix.qt_version }}

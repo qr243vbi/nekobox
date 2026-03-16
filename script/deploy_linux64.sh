@@ -46,14 +46,15 @@ ls "$DEST"
 
 command -v linuxdeploy  && ln -s `which linuxdeploy` "linuxdeploy-$ARCH1.AppImage" ||:
 command -v linuxdeploy-plugin-qt  && ln -s `which linuxdeploy-plugin-qt` "linuxdeploy-plugin-qt-$ARCH1.AppImage" ||:
-if command -v appimagetool 
+if command -v appimagetool
 then
   ln -s `which appimagetool` appimagetool-$ARCH1.AppImage ||:
-  APPIMAGE_EXTRA_ARGS=()
-else
+#  APPIMAGE_EXTRA_ARGS=()
+fi
+## else
   [[ -f runtime-${ARCH1} ]]  || wget -c https://github.com/AppImage/type2-runtime/releases/download/continuous/runtime-${ARCH1}  
   APPIMAGE_EXTRA_ARGS=(--runtime-file "$CURDIR/runtime-${ARCH1}")
-fi
+#fi
 
 [[ -x linuxdeploy-$ARCH1.AppImage ]] || wget -c https://github.com/linuxdeploy/linuxdeploy/releases/download/1-alpha-20250213-2/linuxdeploy-$ARCH1.AppImage
 [[ -x linuxdeploy-plugin-qt-$ARCH1.AppImage ]] || wget -c https://github.com/linuxdeploy/linuxdeploy-plugin-qt/releases/download/1-alpha-20250213-1/linuxdeploy-plugin-qt-$ARCH1.AppImage
