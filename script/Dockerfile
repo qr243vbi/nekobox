@@ -50,6 +50,7 @@ RUN apk add --no-cache \
     qt6-qtwayland qt6-qtwayland-dev
 
 RUN apk add --no-cache mesa-gl mesa-dev
+RUN apk add --no-cache patchelf
 
 WORKDIR /app
 

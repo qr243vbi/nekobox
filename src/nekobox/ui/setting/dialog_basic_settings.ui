@@ -878,13 +878,6 @@
       </attribute>
       <layout class="QVBoxLayout" name="verticalLayout_4">
        <item>
-        <widget class="QCheckBox" name="disable_privilege_req">
-         <property name="text">
-          <string>Disable Privilege request</string>
-         </property>
-        </widget>
-       </item>
-       <item>
         <widget class="QCheckBox" name="use_mozilla_certs">
          <property name="text">
           <string>Use Mozilla Certificate Store</string>
@@ -896,6 +889,50 @@
          <property name="text">
           <string>Skip TLS certificate authentication by default (allowInsecure)</string>
          </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="groupBox_12">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="title">
+          <string/>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_3">
+          <property name="leftMargin">
+           <number>0</number>
+          </property>
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="rightMargin">
+           <number>0</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QCheckBox" name="disable_privilege_req">
+            <property name="text">
+             <string>Disable Privilege request</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QCheckBox" name="windows_no_admin">
+            <property name="toolTip">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Do not attempt to start as Admin unless explicitly requested&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+            <property name="text">
+             <string>Always Start as Standard User</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
         </widget>
        </item>
        <item>
@@ -912,6 +949,18 @@
          <layout class="QHBoxLayout" name="horizontalLayout_26">
           <property name="spacing">
            <number>25</number>
+          </property>
+          <property name="leftMargin">
+           <number>0</number>
+          </property>
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="rightMargin">
+           <number>0</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
           </property>
           <item>
            <widget class="QLabel" name="label_18">
@@ -943,20 +992,44 @@
         </widget>
        </item>
        <item>
-        <widget class="QCheckBox" name="windows_no_admin">
-         <property name="toolTip">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Do not attempt to start as Admin unless explicitly requested&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        <widget class="QGroupBox" name="groupBox_13">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
          </property>
-         <property name="text">
-          <string>Always Start as Standard User</string>
+         <property name="title">
+          <string/>
          </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QCheckBox" name="force_json_configs">
-         <property name="text">
-          <string>Use Json instead binary for configs</string>
-         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_4">
+          <property name="leftMargin">
+           <number>0</number>
+          </property>
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="rightMargin">
+           <number>0</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QCheckBox" name="force_json_configs">
+            <property name="text">
+             <string>Use Json instead binary for configs</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QCheckBox" name="ask_delete">
+            <property name="text">
+             <string>Ask for deleting profile</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
         </widget>
        </item>
       </layout>

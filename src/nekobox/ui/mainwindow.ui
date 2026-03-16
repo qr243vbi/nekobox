@@ -685,7 +685,6 @@
     <addaction name="menu_update_subscription"/>
     <addaction name="menu_resolve_domain"/>
     <addaction name="menu_remove_invalid"/>
-    <addaction name="actionUrl_Test_Group"/>
     <addaction name="menu_remove_unavailable"/>
     <addaction name="menu_clear_test_result"/>
     <addaction name="menu_delete_repeat"/>
@@ -700,6 +699,7 @@
     <property name="title">
      <string>Test</string>
     </property>
+    <addaction name="actionUrl_Test_Group"/>
     <addaction name="actionSpeedtest_Current"/>
    </widget>
    <widget class="QMenu" name="menuContext">
@@ -1107,11 +1107,6 @@
     <enum>QAction::MenuRole::TextHeuristicRole</enum>
    </property>
   </action>
-  <action name="actionSpeedtest_Current">
-   <property name="text">
-    <string>Speedtest Current</string>
-   </property>
-  </action>
   <action name="actionSpeedtest_Selected">
    <property name="text">
     <string>Full test Selected</string>
@@ -1168,6 +1163,11 @@
    </property>
    <property name="shortcut">
     <string notr="true">Ctrl+M</string>
+   </property>
+  </action>
+  <action name="actionSpeedtest_Current">
+   <property name="text">
+    <string>Speedtest Current</string>
    </property>
   </action>
  </widget>

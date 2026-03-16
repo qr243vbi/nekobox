@@ -2,6 +2,7 @@
 
 #include "nekobox/ui/group/dialog_edit_group.h"
 #include "nekobox/global/GuiUtils.hpp"
+#include "nekobox/sys/Settings.h"
 #include "nekobox/configs/sub/GroupUpdater.hpp"
 
 #include <QMessageBox>
@@ -187,8 +188,8 @@ void GroupItem::on_edit_clicked() {
 
 void GroupItem::on_remove_clicked() {
     if (Configs::profileManager->groups.size() <= 1) return;
-    if (QMessageBox::question(this, tr("Confirmation"), tr("Remove %1?").arg(ent->name)) ==
-        QMessageBox::StandardButton::Yes) {
+    if (!Configs::windowSettings->ask_delete || (QMessageBox::question(this, tr("Confirmation"), tr("Remove %1?").arg(ent->name)) ==
+        QMessageBox::StandardButton::Yes)) {
         Configs::profileManager->DeleteGroup(ent->id);
         MW_dialog_message(Dialog_DialogManageGroups, "refresh-1");
         delete item;

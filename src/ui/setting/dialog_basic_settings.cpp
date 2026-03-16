@@ -180,6 +180,7 @@ DialogBasicSettings::DialogBasicSettings(MainWindow *parent)
     D_LOAD_STRING(test_latency_url)
     D_LOAD_BOOL(disable_tray)
     S_LOAD_BOOL(auto_hide)
+            S_LOAD_BOOL(ask_delete)
     ui->set_text_under_menu_icons->setChecked(settings->text_under_buttons);
     connect(ui->set_text_under_menu_icons, STATE_CHANGED, this, [=,this]
     {
@@ -450,6 +451,7 @@ void DialogBasicSettings::accept() {
     D_SAVE_BOOL(sub_clear)
     D_SAVE_BOOL(net_insecure)
     S_SAVE_BOOL(auto_hide)
+            S_SAVE_BOOL(ask_delete)
     D_SAVE_BOOL(sub_send_hwid)
     D_SAVE_STRING(sub_custom_hwid_params)
     D_SAVE_BOOL(sub_rm_invalid)

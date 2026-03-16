@@ -335,7 +335,7 @@ private:
     DownloadProgressReport currentDownloadReport; // could use a list, but don't think can show more than one anyways
 
     // shortcuts
-    QList<QShortcut*> hiddenMenuShortcuts;
+    QList<std::shared_ptr<QShortcut>> hiddenMenuShortcuts;
 
     QMap<QString, QString> remoteRouteProfileNames;
     QStringList remoteRouteProfiles;

@@ -128,6 +128,7 @@ public:
   bool save_position = true;
   bool text_under_buttons = true;
   bool manually_column_width = false;
+  bool ask_delete = true;
   QStringList column_width;
   QString language = "";
 };

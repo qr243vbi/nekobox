@@ -162,6 +162,8 @@ void MainWindow::menu_server_about_to_show(QMenu * menu_server){
     speedtestRunning.unlock();
     menu_server->removeAction(ui->menu_stop_testing);
   }
+
+  RegisterHiddenMenuShortcuts();
 }
 
 void SelectDialog::onOk(int selectedIndex) {
@@ -752,14 +754,17 @@ MainWindow::MainWindow(QWidget *parent)
   ui->toolButton_preferences->setMenu(ui->menu_preferences);
   ui->toolButton_server->setMenu(ui->menu_profiles);
   ui->toolButton_routing->setMenu(ui->menuRouting_Menu);
+  ui->url_test_button->setMenu(ui->menuTest);
 
   {
   auto menu_profiles = ui->menu_profiles;
   auto menu_context_profiles = ui->menuContextProfiles;
   auto menu_server = ui->menu_server;
   auto menu_context = ui->menuContext;
+  auto menu_group = ui->menuCurrent_group;
   for (auto u : menu_profiles->actions()){
-    if (u->menu() != menu_server){
+    auto menu = u->menu();
+    if (menu != menu_server && menu != menu_group){
       menu_context_profiles->addAction(u);
     }
   }
@@ -771,6 +776,8 @@ MainWindow::MainWindow(QWidget *parent)
   for (auto i : menu_server->actions()) {
       menu_context->addAction(i);
   }
+  menu_context->addSeparator();
+  menu_context->addMenu(menu_group);
 
   connect(menu_context, &QMenu::aboutToShow, this, [this]() {
       this->menu_server_about_to_show(ui->menuContext);
@@ -1359,16 +1366,6 @@ skip_updater_hide:
   };
   connect(ui->actionUrl_Test_Group, &QAction::triggered, this,
           url_test_group_action);
-
-  QMenu * testmenu = ui->menuTest;
-  testmenu->insertAction(ui->actionSpeedtest_Current, ui->actionUrl_Test_Group);
-  ui->url_test_button->setMenu(testmenu);
-  //connect(ui->url_test_button, &QPushButton::clicked, this,
-  //        url_test_group_action);
-  //testmenu = ui->menu_profiles;
-  //testmenu->addSeparator();
-  //testmenu->addMenu(ui->menu_server);
-  //testmenu->addMenu(ui->menuCurrent_group);
 
   connect(ui->actionSpeedtest_Current, &QAction::triggered, this, [=, this]() {
     if (running != nullptr) {
@@ -2968,7 +2965,7 @@ void MainWindow::on_menu_delete_triggered() {
   auto ents = get_now_selected_list();
   if (ents.count() == 0)
     return;
-  if (QMessageBox::question(
+  if (!Configs::windowSettings->ask_delete || QMessageBox::question(
           this, tr("Confirmation"),
           QString(tr("Remove %1 item(s) ?")).arg(ents.count())) ==
       QMessageBox::StandardButton::Yes) {
@@ -3338,11 +3335,11 @@ void MainWindow::on_menu_remove_unavailable_triggered() {
     }
   }
 
-  if (!out_del.empty() &&
+  if (!out_del.empty() &&(!Configs::windowSettings->ask_delete ||
       QMessageBox::question(
           this, tr("Confirmation"),
           tr("Remove %1 Unavailable item(s) ?").arg(out_del.length()) + "\n" +
-              remove_display) == QMessageBox::StandardButton::Yes) {
+              remove_display) == QMessageBox::StandardButton::Yes) ) {
     QList<int> del_ids;
     for (const auto &ent : out_del) {
       del_ids += ent->id;
@@ -3392,11 +3389,11 @@ void MainWindow::on_menu_remove_invalid_triggered() {
     }
 
     runOnUiThread([=, this] {
-      if (!out_del.empty() &&
+      if (!out_del.empty() &&(!Configs::windowSettings->ask_delete ||
           QMessageBox::question(
               this, tr("Confirmation"),
               tr("Remove %1 Invalid item(s) ?").arg(out_del.length()) + "\n" +
-                  remove_display) == QMessageBox::StandardButton::Yes) {
+                  remove_display) == QMessageBox::StandardButton::Yes)) {
         QList<int> del_ids;
         for (const auto &ent : out_del) {
           del_ids += ent->id;
@@ -3616,6 +3613,7 @@ void MainWindow::on_masterLogBrowser_customContextMenuRequested(
 }
 
 void MainWindow::on_tabWidget_customContextMenuRequested(const QPoint &p) {
+    {
   QMenu *menu;
   int clickedIndex = 0;
   auto point_x = p.x();
@@ -3645,7 +3643,7 @@ void MainWindow::on_tabWidget_customContextMenuRequested(const QPoint &p) {
       this->lastx = pos1.x();
       this->lasty = pos1.y();
       menu->exec(pos1);
-      return;
+      goto return_deffer;
     }
     ui->tabWidget->setCurrentIndex(clickedIndex);
     menu = new QMenu(this);
@@ -3653,6 +3651,9 @@ void MainWindow::on_tabWidget_customContextMenuRequested(const QPoint &p) {
     menu = ui->menuCurrent_group;
     menu->clear();
     clickedIndex = ui->tabWidget->currentIndex();
+    QObject::connect(menu, &QMenu::aboutToHide, this, [menu](){
+        menu->clear();
+    }, Qt::SingleShotConnection);
   }
 
   bool profile_action = (menu != ui->menuCurrent_group);
@@ -3668,7 +3669,7 @@ void MainWindow::on_tabWidget_customContextMenuRequested(const QPoint &p) {
       [clickedIndex, this] {
         CHECK_SETTINGS_ACCESS_W
         auto id = Configs::profileManager->groupsTabOrder[clickedIndex];
-        if (QMessageBox::question(
+        if (!Configs::windowSettings->ask_delete || QMessageBox::question(
                 this, tr("Confirmation"),
                 tr("Remove %1?")
                     .arg(Configs::profileManager->groups[id]->name)) ==
@@ -3732,6 +3733,9 @@ void MainWindow::on_tabWidget_customContextMenuRequested(const QPoint &p) {
     this->lasty = pos1.y();
     menu->exec(pos1);
   }
+    }
+    return_deffer:
+    RegisterHiddenMenuShortcuts();
   return;
 }
 
@@ -3808,28 +3812,29 @@ void MainWindow::RegisterHotkey(bool unregister) {
 void MainWindow::RegisterHiddenMenuShortcuts(QMenu *menu) {
   for (const auto &action : menu->actions()) {
 #ifdef DEBUG_MODE
-      qDebug() << "SHORTCUT" << action->shortcut().toString();
+      qDebug() << "HIDDEN SHORTCUT" << action->shortcut().toString();
 #endif
- //   if (!action->shortcut().toString().isEmpty()) {
-      hiddenMenuShortcuts.append(new QShortcut(
+    if (!action->shortcut().toString().isEmpty()) {
+      hiddenMenuShortcuts.append(std::make_shared<QShortcut>(
           action->shortcut(), this, [=, this]() { action->trigger(); }));
- //   }
+    }
   }
 }
 
 void MainWindow::RegisterHiddenMenuShortcuts(bool unregister) {
-  for (const auto s : hiddenMenuShortcuts)
+  for (const auto s : hiddenMenuShortcuts) {
     s->deleteLater();
+  }
   hiddenMenuShortcuts.clear();
 
   if (unregister)
     return;
 
   RegisterHiddenMenuShortcuts(ui->menuHidden_menu);
-  RegisterHiddenMenuShortcuts(ui->menu_server);
-  RegisterHiddenMenuShortcuts(ui->menu_test);
-  RegisterHiddenMenuShortcuts(ui->menu_share_item);
-  RegisterHiddenMenuShortcuts(ui->menu_profiles);
+//  RegisterHiddenMenuShortcuts(ui->menu_server);
+//  RegisterHiddenMenuShortcuts(ui->menu_test);
+//  RegisterHiddenMenuShortcuts(ui->menu_share_item);
+//  RegisterHiddenMenuShortcuts(ui->menu_profiles);
 }
 
 void MainWindow::setActionsData() {
@@ -3848,7 +3853,6 @@ void MainWindow::setActionsData() {
   ui->menu_scan_qr->setData(QString("m14"));
   ui->menu_stop_testing->setData(QString("m15"));
   ui->menu_update_subscription->setData(QString("m16"));
-  ui->actionSpeedtest_Current->setData(QString("m18"));
   ui->actionSpeedtest_Group->setData(QString("m19"));
   ui->actionSpeedtest_Selected->setData(QString("m20"));
   ui->actionUrl_Test_Group->setData(QString("m21"));
@@ -3865,7 +3869,10 @@ void MainWindow::setActionsData() {
   ui->menu_edit->setData(QString("m31"));
   ui->menu_stop->setData(QString("m32"));
   ui->menu_delete->setData(QString("m33"));
-  ui->menu_select_all->setData(QString("m30"));
+  ui->menu_select_all->setData(QString("m34"));
+  ui->actionSpeedtest_Current->setData(QString("m40"));
+
+
 }
 
 QList<QAction *> MainWindow::getActionsForShortcut() {
@@ -3885,28 +3892,43 @@ QList<QAction *> MainWindow::getActionsForShortcut() {
 void MainWindow::loadShortcuts() {
   auto& mp = Configs::windowSettings->shortcuts->shortcuts;
   bool legacy = Configs::windowSettings->shortcuts->legacy;
-  for (QList<QAction *> actions = findChildren<QAction *>();
+  QList<QAction *> actions = findChildren<QAction *>();
+  if (legacy){
+      for (QAction *action : actions) {
+        QVariant data = action->data();
+        QString data_string;
+        if (data.isNull() || (data_string = data.toString()).isEmpty())
+          continue;
+        if (mp.count(data_string) == 0) {
+            mp[data_string] = action->shortcut().toString();
+        }
+      }
+      Configs::windowSettings->shortcuts->Save();
+      Configs::windowSettings->shortcuts->legacy = false;
+  }
+/*
+  for (QAction *action : qApp->allWidgets().first()->actions()) {
+      action->setShortcut(QKeySequence());
+  }*/
+  for (
        QAction *action : actions) {
     QVariant data = action->data();
     QString data_string;
     if (data.isNull() || (data_string = data.toString()).isEmpty())
       continue;
     if (mp.count(data_string) == 0) {
-      if (!legacy){
         action->setShortcut(QKeySequence());
-      } else {
-        mp[data_string] = action->shortcut().toString();
-      }
     }
     else {
-      action->setShortcut(mp[data_string].toString());
+      QString str;
+      QKeySequence seq(str = mp[data_string].toString());
+#ifdef DEBUG_MODE
+      qDebug() << "SHORTCUT IS" << str << seq;
+#endif
+      action->setShortcut(seq);
     }
   }
   RegisterHiddenMenuShortcuts();
-  if (legacy){
-    Configs::windowSettings->shortcuts->Save();
-    Configs::windowSettings->shortcuts->legacy = false;
-  }
 }
 /*
 

@@ -56,9 +56,15 @@ fi
   APPIMAGE_EXTRA_ARGS=(--runtime-file "$CURDIR/runtime-${ARCH1}")
 #fi
 
-[[ -x linuxdeploy-$ARCH1.AppImage ]] || wget -c https://github.com/linuxdeploy/linuxdeploy/releases/download/1-alpha-20250213-2/linuxdeploy-$ARCH1.AppImage
-[[ -x linuxdeploy-plugin-qt-$ARCH1.AppImage ]] || wget -c https://github.com/linuxdeploy/linuxdeploy-plugin-qt/releases/download/1-alpha-20250213-1/linuxdeploy-plugin-qt-$ARCH1.AppImage
-[[ -x appimagetool-${ARCH1}.AppImage ]] || wget -c https://github.com/AppImage/appimagetool/releases/download/continuous/appimagetool-${ARCH1}.AppImage
+ARCH2="$ARCH1"
+if [[ "$ARCH2" == 'i686' ]]
+then
+  ARCH2='i386'
+fi
+
+[[ -x linuxdeploy-$ARCH1.AppImage ]] || wget -c https://github.com/linuxdeploy/linuxdeploy/releases/download/continuous/linuxdeploy-$ARCH2.AppImage -O linuxdeploy-$ARCH1.AppImage
+[[ -x linuxdeploy-plugin-qt-$ARCH1.AppImage ]] || wget -c https://github.com/linuxdeploy/linuxdeploy-plugin-qt/releases/download/continuous/linuxdeploy-plugin-qt-$ARCH2.AppImage -O linuxdeploy-plugin-qt-$ARCH1.AppImage
+[[ -x appimagetool-${ARCH1}.AppImage ]] || wget -c https://github.com/AppImage/appimagetool/releases/download/continuous/appimagetool-${ARCH1}.AppImage -O appimagetool-${ARCH1}.AppImage
 chmod +x *.AppImage ||:
 
 export EXTRA_QT_PLUGINS="iconengines;wayland-shell-integration;wayland-decoration-client;"
