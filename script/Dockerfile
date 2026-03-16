@@ -27,7 +27,7 @@ RUN apk add --no-cache \
 
 # Add Qt tools like lupdate, lrelease, and Qt Designer
 RUN apk add --no-cache \
-    qt6-qttools-dev qt6-qttools
+    qt6-qttools-dev qt6-qttools squashfs-tools
 
 WORKDIR /app
 
