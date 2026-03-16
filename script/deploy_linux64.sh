@@ -63,7 +63,7 @@ chmod +x *.AppImage ||:
 
 export EXTRA_QT_PLUGINS="iconengines;wayland-shell-integration;wayland-decoration-client;"
 export EXTRA_PLATFORM_PLUGINS="libqwayland.so;"
-"$CURDIR/linuxdeploy-$ARCH1.AppImage" --appdir $DEST --executable $DEST/nekobox --plugin qt
+"$CURDIR/linuxdeploy-$ARCH1.AppImage" --appdir $DEST  --executable $DEST/nekobox
 
 cd $DEST
 rm -r ./usr/translations ||:

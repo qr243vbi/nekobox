@@ -25,15 +25,29 @@ RUN apk add --no-cache \
     thrift thrift-dev 
 
 RUN apk add --no-cache \
-    qt6-qtbase qt6-qtbase-dev \
-    qt6-qttools qt6-qttools-dev \
-    qt6-qt5compat \
-    qt6-qtdeclarative qt6-qtdeclarative-dev \
+    qt6-qtbase qt6-qtbase-dev 
+
+
+RUN apk add --no-cache \
+    qt6-qttools qt6-qttools-dev 
+
+
+RUN apk add --no-cache \
+    qt6-qt5compat 
+
+
+RUN apk add --no-cache \
+    qt6-qtdeclarative qt6-qtdeclarative-dev 
+
+RUN apk add --no-cache \
     qt6-qtmultimedia qt6-qtmultimedia-dev
 
 # Add Qt tools like lupdate, lrelease, and Qt Designer
 RUN apk add --no-cache \
     qt6-qttools-dev qt6-qttools squashfs-tools
+
+RUN apk add --no-cache \
+    qt6-qtwayland qt6-qtwayland-dev
 
 WORKDIR /app
 
