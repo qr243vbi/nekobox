@@ -356,9 +356,11 @@ jobs:
         include:
           - platform: ubuntu-24.04
             target: 386
+            target2: i686
             allow: ${{ github.event.inputs.build_ubuntu_32 }}
           - platform: ubuntu-24.04-arm
             target: arm
+            target2: armhf
             allow: ${{ github.event.inputs.build_ubuntu_arm_32 }}
       fail-fast: false
     runs-on: ${{ matrix.platform }}
@@ -413,20 +415,16 @@ jobs:
         if: matrix.allow == 'true' && github.event.inputs.source_only != 'true'
         shell: bash
         run: |
-          if [[ "${{ matrix.target }}" == "arm" ]]
-          then
-           echo "ARCH1=armhf" >> .ENV
-           echo "ARCH=arm" >> .ENV
-          else
-           echo "ARCH1=i686" >> .ENV
-           echo "ARCH=386" >> .ENV
-          fi
+          echo "ARCH1=${{ matrix.target2 }}" >> .ENV
+          echo "ARCH=${{ matrix.target }}" >> .ENV
           echo "INPUT_VERSION=${{ github.event.inputs.tag }}" >> .ENV
+          echo "SKIP_BUILD_GO=yes" >> .ENV
           if [[ "${{ github.event.inputs.publish }}" == "true" ]]
           then
             echo "UPLOAD_WITH_GH=yes" >> .ENV
             echo "GH_TOKEN='${{ secrets.UPLOAD_TOKEN }}'" >> .ENV
           fi
+          export GUEST_ARCH=${{ matrix.target }}
           docker compose up --force-recreate --build
 
       - name: Tar files

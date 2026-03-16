@@ -1,7 +1,6 @@
-version: '3.9'
- 
 services:
   myapp:
+    platform: linux/${GUEST_ARCH:-386}
     build:
       context: script
       dockerfile: Dockerfile
