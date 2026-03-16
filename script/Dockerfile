@@ -8,17 +8,23 @@ RUN  apk update
 RUN apk add --no-cache \
     bash \
     build-base \
-    cmake \
+    cmake 
+
+RUN apk add --no-cache \
     clang clang-dev llvm-dev \
-    git \
-    ninja-build \
+    git 
+
+RUN apk add --no-cache \
+    samurai \
     bash \
     wget \
     github-cli \
     curl \
     pkgconfig \
     boost boost-dev \
-    thrift thrift-dev \
+    thrift thrift-dev 
+
+RUN apk add --no-cache \
     qt6-qtbase qt6-qtbase-dev \
     qt6-qttools qt6-qttools-dev \
     qt6-qt5compat \
