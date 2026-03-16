@@ -49,6 +49,8 @@ RUN apk add --no-cache \
 RUN apk add --no-cache \
     qt6-qtwayland qt6-qtwayland-dev
 
+RUN apk add --no-cache mesa-gl mesa-dev
+
 WORKDIR /app
 
 
