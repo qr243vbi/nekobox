@@ -1,6 +1,9 @@
 #!/bin/bash
 set -e
 source script/env_deploy.sh
+
+if [ -z $DEST ]; then
+  DEST=$BUILD
 if [[ "$GOOS" == "windows" && "$GOARCH" == "amd64" ]]; then
   DEST=$DEPLOYMENT/windows64
 else if [[ "$GOOS" == "windows" && "$GOARCH" == "arm64" ]]; then
@@ -14,9 +17,6 @@ else if [[ "$GOOS" == "linux" && "$GOARCH" == "arm64" ]]; then
 else if [[ "$GOOS" == "linux" && "$GOARCH" == "386" ]]; then
   DEST=$DEPLOYMENT/linux-i386
 fi; fi; fi; fi; fi; fi;
-
-if [ -z $DEST ]; then
-  DEST=$BUILD
 fi
 
 echo "DESTINATION IS $DEST FOR MACHINE $GOARCH with platform $GOOS"

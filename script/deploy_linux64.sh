@@ -8,9 +8,11 @@ UNAME="${UNAME:-$(uname -m)}"
 if [[ "${UNAME}" == 'aarch64' || "${UNAME}" == 'arm64' ]]; then
   ARCH="arm64"
   ARCH1="aarch64"
-else
+else 
+if [[ "${UNAME}" == 'amd64' || "${UNAME}" == 'x86_64' ]]; then
   ARCH="amd64"
   ARCH1="x86_64"
+fi
 fi
 
 DEST="$DEPLOYMENT/linux-$ARCH"

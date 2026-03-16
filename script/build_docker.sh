@@ -2,6 +2,12 @@
 . script/env_deploy.sh
 set -e
 
+if [[ -d "$1" ]]
+then
+ export BUILD="$1"
+ export DEST="$1"
+fi
+
 if [[ -d download-artifact ]]
 then
 (
@@ -17,7 +23,7 @@ then
    pushd $DEPLOYMENT
    tar -xvf $archive_standalone.tar.xz
    SRC_ROOT=$PWD/$archive_standalone
-   BUILD="$SRC_ROOT/build"
+#   BUILD="$SRC_ROOT/build"
    GOFLAGS="-mod=vendor $GOFLAGS"
    VERSION_SINGBOX="$(cat $SRC_ROOT/SingBox.Version)"
    LAST_ACTION='rm -rf "$SRC_ROOT"'
