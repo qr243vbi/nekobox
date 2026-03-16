@@ -1,6 +1,9 @@
 services:
   myapp:
     platform: linux/${GUEST_ARCH:-386}
+    privileged: true
+    devices:
+      - "/dev/fuse:/dev/fuse"
     build:
       context: script
       dockerfile: Dockerfile
