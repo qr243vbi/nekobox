@@ -13,7 +13,6 @@ DEPLOYMENT="${DEPLOYMENT:-$SRC_ROOT/deployment}"
 BUILD="${BUILD:-$SRC_ROOT/build}"
 version_standalone="nekobox-$INPUT_VERSION"
 archive_standalone="nekobox-unified-source-$INPUT_VERSION"
-
-export NEKOBOX_ENV_DEPLOYED=yes
+GOCMD="${GOCMD:-go}"
 
 fi

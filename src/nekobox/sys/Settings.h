@@ -147,6 +147,7 @@ QString getResource(QString, QStringList dirs = {});
 QString getUpdaterPath();
 #endif
 #ifdef Q_OS_UNIX
+QString getAppImage();
 bool isAppImage();
 #endif
 QString getRootResource(QString str);

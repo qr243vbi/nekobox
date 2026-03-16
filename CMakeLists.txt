@@ -382,8 +382,9 @@ endif()
 target_include_directories(nekobox PRIVATE ${THRIFT_INCLUDE_DIRS})
 target_link_libraries(nekobox PRIVATE ${THRIFT_LIBRARIES})
 
-find_package(Boost REQUIRED)
+find_package(Boost REQUIRED COMPONENTS filesystem)
 target_include_directories(nekobox PRIVATE ${Boost_INCLUDE_DIRS})
+target_link_libraries(nekobox PRIVATE Boost::filesystem)
 
 
 # Target Link

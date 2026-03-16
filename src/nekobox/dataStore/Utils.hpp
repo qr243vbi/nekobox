@@ -1,5 +1,7 @@
 #pragma once
 
+#include <boost/dll/runtime_symbol_info.hpp>
+
 #include "3rdparty/qv2ray/wrapper.hpp"
 #include <QDebug>
 #include <QFile>
@@ -199,8 +201,8 @@ inline QString software_build_date;
 inline QString software_name;
 inline QString software_core_name;
 
-#define root_directory QApplication::applicationDirPath()
-#define software_path QApplication::applicationFilePath()
+inline QString root_directory;// = QString(boost::dll::program_location().parent_path().string().c_str());
+inline QString software_path;//  = QString(boost::dll::program_location().string().c_str());
 
 // MainWindow functions
 inline std::function<void(QString)> MW_show_log;

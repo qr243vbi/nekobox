@@ -1,7 +1,6 @@
 #!/bin/bash
-set -e
 source script/env_deploy.sh
-
+set -e
 if [ -z $DEST ]; then
   DEST=$BUILD
 if [[ "$GOOS" == "windows" && "$GOARCH" == "amd64" ]]; then
@@ -24,8 +23,6 @@ fi
 echo "DESTINATION IS $DEST FOR MACHINE $GOARCH with platform $GOOS"
 TAGS="with_clash_api,with_gvisor,with_quic,with_wireguard,with_utls,with_dhcp,with_tailscale,with_shadowtls,with_grpc,with_acme"
 #with_acme,with_purego,with_naive_outbound
-
-GOCMD="${GOCMD:-go}"
 
 mkdir -p $DEST ||:
 

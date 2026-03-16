@@ -19,6 +19,8 @@
 #include <nekobox/sys/windows/eventHandler.h>
 #include <nekobox/sys/windows/WinVersion.h>
 #include <qfontdatabase.h>
+#else
+#include <nekobox/sys/Settings.h>
 #endif
 
 
@@ -97,6 +99,7 @@ void loadTranslate(const QString& locale) {
         QCoreApplication::installTranslator(trans);
     }
 
+
     Preset::SingBox::OutboundTypes = {
             {"socks", "Socks"},
             {"http", "HTTP"},
@@ -123,7 +126,11 @@ void loadTranslate(const QString& locale) {
 
 #define LOCAL_SERVER_PREFIX "nekobox-"
 
+
 int main(int argc, char** argv) {
+
+    root_directory = QString(boost::dll::program_location().parent_path().string().c_str());
+    software_path  = QString(boost::dll::program_location().string().c_str());
     // Core dump
 #ifdef Q_OS_WIN
     Windows_SetCrashHandler();
@@ -132,9 +139,20 @@ int main(int argc, char** argv) {
     Unix_SetCrashHandler();
 #endif
 
+
+
+#ifdef Q_OS_UNIX
+{
+    QString qpath = root_directory;
+    qDebug() << qpath + "/usr/plugins";
+    QApplication::addLibraryPath(qpath + "/usr/plugins");
+}
+#endif
+
     QApplication::setAttribute(Qt::AA_DontUseNativeDialogs);
     QApplication::setQuitOnLastWindowClosed(false);
     QApplication a(argc, argv);
+
 
     // Flags
     Configs::dataStore->argv = QApplication::arguments();
@@ -161,6 +179,15 @@ int main(int argc, char** argv) {
     QDir dir;
 	// dirs & clean
     auto wd = QDir(root_directory);
+#ifdef Q_OS_UNIX
+    {
+        QString imagepath = getAppImage();
+        if (imagepath != ""){
+            QFileInfo fileinfo(imagepath);
+            wd.setPath(fileinfo.absolutePath());
+        }
+    }
+#endif
     if (Configs::dataStore->flag_use_appdata) {
         if (!Configs::dataStore->appdataDir.isEmpty()) {
             wd.setPath(Configs::dataStore->appdataDir);
@@ -225,9 +252,6 @@ int main(int argc, char** argv) {
     };
 
     
-#ifdef Q_OS_UNIX
-    QApplication::addLibraryPath(root_directory + "/usr/plugins");
-#endif    
     // dispatchers
     DS_cores = new QThread;
     DS_cores->start();

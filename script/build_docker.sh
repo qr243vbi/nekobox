@@ -1,7 +1,12 @@
 #!/bin/bash
-set +e
 . script/env_deploy.sh
 set -e
+export NEKOBOX_ENV_DEPLOYED=yes
+
+if [[ -z `command -v $GOCMD` ]]
+then
+ export SKIP_BUILD_GO=yes
+fi
 
 if [[ -d "$1" ]]
 then

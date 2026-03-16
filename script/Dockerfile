@@ -1,58 +1,38 @@
-# Base Alpine image
-FROM alpine:latest
+# Base Debian image
+FROM debian:oldstable
 
-# Enable edge main & community repositories for Qt6
-RUN  apk update
+# Update package index and install required packages
+RUN apt-get update
 
-# Install development tools, compilers, and libraries
-RUN apk add --no-cache \
+RUN apt-get install -y --no-install-recommends \
     bash \
-    build-base \
-    cmake 
+    build-essential \
+    cmake
 
-RUN apk add --no-cache \
-    clang clang-dev llvm-dev \
-    git 
-
-RUN apk add --no-cache \
-    samurai \
-    bash \
+RUN apt-get install -y --no-install-recommends \
+    git \
+    ninja-build \
     wget \
-    github-cli \
+    gh \
     curl \
-    pkgconfig \
-    boost boost-dev \
-    thrift thrift-dev 
+    pkg-config
 
-RUN apk add --no-cache \
-    qt6-qtbase qt6-qtbase-dev 
+RUN apt-get install -y --no-install-recommends \
+    thrift-compiler \
+    libboost-all-dev \
+    libthrift-dev
 
+RUN apt-get install -y --no-install-recommends \
+    patchelf \
+    fuse \
+    squashfs-tools
 
-RUN apk add --no-cache \
-    qt6-qttools qt6-qttools-dev 
+RUN apt-get install -y --no-install-recommends patchelf qt6-tools-dev-tools qt6-tools-dev qt6-base-dev qt6-base-dev-tools cmake linguist-qt6 thrift-compiler libthrift-dev qt6-declarative-dev libboost-all-dev
 
-
-RUN apk add --no-cache \
-    qt6-qt5compat 
-
-
-RUN apk add --no-cache \
-    qt6-qtdeclarative qt6-qtdeclarative-dev 
-
-RUN apk add --no-cache \
-    qt6-qtmultimedia qt6-qtmultimedia-dev
-
-# Add Qt tools like lupdate, lrelease, and Qt Designer
-RUN apk add --no-cache \
-    qt6-qttools-dev qt6-qttools squashfs-tools
-
-RUN apk add --no-cache \
-    qt6-qtwayland qt6-qtwayland-dev
-
-RUN apk add --no-cache mesa-gl mesa-dev
-RUN apk add --no-cache patchelf
-
-WORKDIR /app
-
+RUN apt-get install -y --no-install-recommends ca-certificates
+RUN apt-get install -y --no-install-recommends qt6-wayland libxcb-xinerama0
+RUN apt-get install -y file
+RUN apt-get install -y mesa-utils libegl1-mesa-dev libgl1-mesa-dev libglu1-mesa-dev
+RUN apt-get install -y --no-install-recommends qmake6
 
 CMD ["bash", "-c", "/app/script/build_docker.sh"]
