@@ -427,7 +427,7 @@ jobs:
             echo "UPLOAD_WITH_GH=yes" >> .ENV
             echo "GH_TOKEN='${{ secrets.UPLOAD_TOKEN }}'" >> .ENV
           fi
-          podman compose up --force-recreate --build --remove-orphan
+          podman compose up --force-recreate --build
 
       - name: Tar files
         if: matrix.allow == 'true' && github.event.inputs.source_only != 'true'
