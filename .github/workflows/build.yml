@@ -127,7 +127,7 @@ jobs:
       - name: Cache Common Download
         id: cache-common
         if: matrix.cross_os != 'public' && ( github.event.inputs.source_only  != 'true' && matrix.allow == 'true' )
-        uses: actions/cache@v4.2.3
+        uses: actions/cache@main
         with:
           path: artifacts.tgz
           key: CommonCache-${{ matrix.cross_os }}-${{ matrix.cross_arch }}-${{ hashFiles('script/build_go.sh', 'core/*') }}-${{ matrix.go_version }}
@@ -318,7 +318,7 @@ jobs:
       - name: Cache Builds
         id: cache-common
         if: github.event.inputs.source_only  != 'true' && matrix.allow == 'true'
-        uses: actions/cache@v4.2.3
+        uses: actions/cache@main
         with:
           path: build
           key: NinjaCache-${{ matrix.platform }}-${{ matrix.target }}-${{ github.event.inputs.tag }}
@@ -395,7 +395,7 @@ jobs:
       - name: Cache Builds
         id: cache-common
         if: github.event.inputs.source_only  != 'true' && matrix.allow == 'true'
-        uses: actions/cache@v4.2.3
+        uses: actions/cache@main
         with:
           path: build
           key: CommonCache-${{ matrix.platform }}-${{ matrix.target }}-${{ github.event.inputs.tag }}
@@ -415,13 +415,10 @@ jobs:
      #     packages: podman podman-compose
       #    version: 1.0
 
-      - uses: satackey/action-docker-layer-caching@v0.0.11
-      # Ignore the failure of a step and avoid terminating the job.
-        continue-on-error: true
+      - name: Cache Docker images.
+        uses: AllySummers/docker-cache@main
         with:
-          key: foo-docker-cache-${{ matrix.target }}
-          restore-keys: |
-            foo-docker-cache-
+          key: docker-${{ runner.os }}-${{ hashFiles(paths) }}
 
       - name: Linux - Generate MakeFile and Build
         if: matrix.allow == 'true' && github.event.inputs.source_only != 'true'
@@ -431,7 +428,6 @@ jobs:
           echo 'INPUT_VERSION=${{ github.event.inputs.tag }}' >> .ENV
           export GUEST_ARCH=${{ matrix.target }}
           docker compose up --force-recreate --build
-
 
       - name: Linux - Publish
         if: matrix.allow == 'true' && github.event.inputs.source_only != 'true' && github.event.inputs.publish  == 'true'
