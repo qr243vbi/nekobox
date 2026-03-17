@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -x
 set -e
 
 source script/env_deploy.sh
@@ -55,7 +55,14 @@ fi
 cp srslist.json "$DEST/srslist.json"
 
 #### copy exe ####
-cp "$BUILD/nekobox.exe" "$DEST" || cp "$BUILD/Release/nekobox.exe" "$DEST"
+rel="$BUILD"
+if [[ -f "$BUILD/Release/nekobox.exe" ]]
+then
+  rel="$BUILD/Release"
+fi
+
+cp "$rel/nekobox.exe" "$DEST"
+cp "$rel/"*.dll  "$DEST"
 [[ -f "$BUILD/nekobox_core.exe" ]] && cp "$BUILD/nekobox_core.exe" "$DEST" 
 [[ -f "$BUILD/updater.exe" ]] && cp "$BUILD/updater.exe" "$DEST"
 
