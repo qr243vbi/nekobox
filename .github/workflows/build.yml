@@ -418,7 +418,7 @@ jobs:
       - name: Cache Docker images.
         uses: AllySummers/docker-cache@main
         with:
-          key: docker-${{ matrix.platform }}-${{ matrix.target }}-${{ hashFiles(script/Dockerfile) }}
+          key: docker-${{ matrix.platform }}-${{ matrix.target }}-${{ hashFiles('script/Dockerfile') }}
 
       - name: Linux - Generate MakeFile and Build
         if: matrix.allow == 'true' && github.event.inputs.source_only != 'true'
