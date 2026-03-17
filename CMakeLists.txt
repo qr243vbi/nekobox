@@ -382,6 +382,13 @@ endif()
 target_include_directories(nekobox PRIVATE ${THRIFT_INCLUDE_DIRS})
 target_link_libraries(nekobox PRIVATE ${THRIFT_LIBRARIES})
 
+if (MSVC)
+    include(FindBoost)
+    set(Boost_USE_STATIC_LIBS ON)
+    set(Boost_USE_MULTITHREADED ON)
+    set(Boost_USE_STATIC_RUNTIME OFF)
+endif()
+
 find_package(Boost REQUIRED COMPONENTS filesystem)
 target_include_directories(nekobox PRIVATE ${Boost_INCLUDE_DIRS})
 target_link_libraries(nekobox PRIVATE Boost::filesystem)
