@@ -431,12 +431,14 @@ jobs:
           echo 'INPUT_VERSION=${{ github.event.inputs.tag }}' >> .ENV
           export GUEST_ARCH=${{ matrix.target }}
           docker compose up --force-recreate --build
-          if [[ "${{ github.event.inputs.publish }}" == "true" ]]
-          then
-            export GH_TOKEN='${{ secrets.UPLOAD_TOKEN }}'
-            gh release upload '${{ github.event.inputs.tag }}' ./deployment/*.AppImage --clobber
-            gh release upload '${{ github.event.inputs.tag }}' ./deployment/*.tar.gz --clobber
-          fi
+
+
+      - name: Linux - Publish
+        if: matrix.allow == 'true' && github.event.inputs.source_only != 'true' && github.event.inputs.publish  == 'true'
+        shell: bash
+        run: |
+          export GH_TOKEN='${{ secrets.UPLOAD_TOKEN }}'
+          gh release upload '${{ github.event.inputs.tag }}' ./deployment/* --clobber
 
       - name: Tar files
         if: matrix.allow == 'true' && github.event.inputs.source_only != 'true'
