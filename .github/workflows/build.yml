@@ -174,7 +174,7 @@ jobs:
         run: tar czvf artifacts.tgz ./deployment
       - name: Uploading Artifact
         if: matrix.cross_os == 'public' || ( github.event.inputs.source_only  != 'true' && matrix.allow == 'true' )
-        uses: actions/upload-artifact@v4.6.2
+        uses: actions/upload-artifact@main
         with:
           name: nekobox-${{ github.sha }}-Common-${{ matrix.cross_os }}-${{ matrix.cross_arch }}
           path: artifacts.tgz
@@ -304,7 +304,7 @@ jobs:
           
       - name: Download Artifacts
         if: matrix.allow == 'true' && github.event.inputs.source_only != 'true'
-        uses: actions/download-artifact@v4.3.0
+        uses: actions/download-artifact@main
         with:
           path: download-artifact
 
@@ -339,7 +339,7 @@ jobs:
 
       - name: Uploading Artifact
         if: matrix.allow == 'true' && github.event.inputs.source_only  != 'true'
-        uses: actions/upload-artifact@v4.6.2
+        uses: actions/upload-artifact@main
         with:
           name: nekobox-${{ github.sha }}-${{ matrix.platform }}-${{ matrix.target }}-Qt${{ matrix.qt_version }}
           path: artifacts.tgz
@@ -381,7 +381,7 @@ jobs:
 
       - name: Download Artifacts
         if: matrix.allow == 'true' && github.event.inputs.source_only != 'true'
-        uses: actions/download-artifact@v4.3.0
+        uses: actions/download-artifact@main
         with:
           path: download-artifact
 
@@ -443,9 +443,9 @@ jobs:
 
       - name: Uploading Artifact
         if: matrix.allow == 'true' && github.event.inputs.source_only != 'true'
-        uses: actions/upload-artifact@v4.6.2
+        uses: actions/upload-artifact@main
         with:
-          name: nekobox-${{ github.sha }}-${{ matrix.platform }}-${{ matrix.target }}-Qt${{ matrix.qt_version }}
+          name: nekobox-${{ github.sha }}-${{ matrix.platform }}-${{ matrix.target }}
           path: artifacts.tgz
   #
   # build-cpp-linux:
@@ -563,7 +563,7 @@ jobs:
           ref: 'main'
           submodules: "false"
       - name: Download Artifacts
-        uses: actions/download-artifact@v4.3.0
+        uses: actions/download-artifact@main
         with:
           path: download-artifact
       - name: Install Zip, Curl, Jq
