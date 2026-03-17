@@ -495,7 +495,7 @@ namespace Configs {
         };
         add_non_empty(outbound, "private_key", privateKey);
         add_non_empty(outbound, "private_key_path", privateKeyPath);
-        add_non_empty(outbound, "private_key_passphase", privateKeyPass);
+        add_non_empty(outbound, "private_key_passphrase", privateKeyPass);
         if (!hostKey.isEmpty()) outbound["host_key"] = QListStr2QJsonArray(hostKey);
         if (!hostKeyAlgs.isEmpty()) outbound["host_key_algorithms"] = QListStr2QJsonArray(hostKeyAlgs);
         add_non_empty(outbound, "client_version", clientVersion);
