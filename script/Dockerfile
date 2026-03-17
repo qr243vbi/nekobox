@@ -13,7 +13,6 @@ RUN apt-get install -y --no-install-recommends \
     git \
     ninja-build \
     wget \
-    gh \
     curl \
     pkg-config
 

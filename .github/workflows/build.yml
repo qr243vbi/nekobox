@@ -427,15 +427,16 @@ jobs:
         if: matrix.allow == 'true' && github.event.inputs.source_only != 'true'
         shell: bash
         run: |
-          echo "UNAME=${{ matrix.target }}" >> .ENV
-          echo "INPUT_VERSION=${{ github.event.inputs.tag }}" >> .ENV
-          if [[ "${{ github.event.inputs.publish }}" == "true" ]]
-          then
-            echo "UPLOAD_WITH_GH=yes" >> .ENV
-            echo "GH_TOKEN='${{ secrets.UPLOAD_TOKEN }}'" >> .ENV
-          fi
+          echo 'UNAME=${{ matrix.target }}' >> .ENV
+          echo 'INPUT_VERSION=${{ github.event.inputs.tag }}' >> .ENV
           export GUEST_ARCH=${{ matrix.target }}
           docker compose up --force-recreate --build
+          if [[ "${{ github.event.inputs.publish }}" == "true" ]]
+          then
+            export GH_TOKEN='${{ secrets.UPLOAD_TOKEN }}'
+            gh release upload '${{ github.event.inputs.tag }}' ./deployment/*.AppImage --clobber
+            gh release upload '${{ github.event.inputs.tag }}' ./deployment/*.tar.gz --clobber
+          fi
 
       - name: Tar files
         if: matrix.allow == 'true' && github.event.inputs.source_only != 'true'
