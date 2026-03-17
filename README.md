@@ -16,10 +16,10 @@ Supports Windows 11/10 (arm64, x86_64, x86) / Linux  out of the box.
 ### OBS repository 
 [![build result](https://build.opensuse.org/projects/home:juzbun:NekoBox/packages/nekobox/badge.svg?type=percent)](https://build.opensuse.org/package/show/home:juzbun:NekoBox/nekobox) <br/>
 
-[NekoBox repository](https://software.opensuse.org//download.html?project=home%3Ajuzbun%3ANekoBox&package=nekobox) for various linux distributions ([OpenSUSE](https://get.opensuse.org/), [Fedora](https://fedoraproject.org/), [Mageia](https://www.mageia.org/), [Debian](https://www.debian.org/), [Raspbian](https://www.raspberrypi.com/software/), [Ubuntu](https://ubuntu.com/), [Arch](https://archlinux.org/)).
+[NekoBox repository](https://software.opensuse.org//download.html?project=home%3Ajuzbun%3ANekoBox&package=nekobox) for various linux distributions ([OpenSUSE](https://get.opensuse.org/), [Mageia](https://www.mageia.org/), [Fedora](https://fedoraproject.org/),  [Debian](https://www.debian.org/), [Raspbian](https://www.raspberrypi.com/software/), [Ubuntu](https://ubuntu.com/), [Arch](https://archlinux.org/)).
 
 ### COPR repository
-[NekoBox repository](https://copr.fedorainfracloud.org/coprs/qr243vbi/NekoBox/) for various linux distributions ([RedHat](https://www.redhat.com), [Centos](https://www.centos.org), [OpenSUSE](https://get.opensuse.org/), [Fedora](https://fedoraproject.org/), [Mageia](https://www.mageia.org/), [Almalinux](https://almalinux.org/)).
+[NekoBox repository](https://copr.fedorainfracloud.org/coprs/qr243vbi/NekoBox/) for various linux distributions ([RedHat](https://www.redhat.com), [OpenSUSE](https://get.opensuse.org/), [Centos](https://www.centos.org), [Fedora](https://fedoraproject.org/), [Almalinux](https://almalinux.org/)).
 
 ### WinGet Package
 - [![WinGet Page](https://img.shields.io/winget/v/qr243vbi.NekoBox)](https://winget.ragerworks.com/package/qr243vbi.NekoBox)
