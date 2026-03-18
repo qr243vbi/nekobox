@@ -16,7 +16,7 @@ cp -Rf nekobox_chocolatey nekobox
 cd nekobox
 
 sed -i "s~@URL_x86@~${url_x86}~g;s~@URL_x64@~${url_x64}~g;s~@SHA_x86@~${sha_x86}~g;s~@SHA_x64@~${sha_x64}~g;" tools/chocolateyinstall.ps1
-sed -i "s~<version>.*</version>~<version>${INPUT_VERSION}</version>~g;" nekobox.nuspec
+sed -i "s~<version>.*</version>~<version>${INPUT_VERSION}.0</version>~g;" nekobox.nuspec
 
 choco pack
 
