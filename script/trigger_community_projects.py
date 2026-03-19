@@ -8,4 +8,4 @@ client = v3.Client({
    'login': login, 
    'token': token
 })
-print(client.package_proxy.build('qr243vbi', 'NekoBox', 'NekoBox'))
+print(client.package_proxy.build('qr243vbi', 'NekoBox', 'nekobox'))
