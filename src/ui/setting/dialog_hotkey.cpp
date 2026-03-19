@@ -16,6 +16,10 @@ DialogHotkey::DialogHotkey(QWidget *parent, const QList<QAction*>& actions) : QD
     ui->system_proxy->setKeySequence(Configs::dataStore->hotkey_system_proxy_menu);
     ui->toggle_proxy->setKeySequence(Configs::dataStore->hotkey_toggle_system_proxy);
 
+#ifndef USE_HOTKEYS
+    ui->global->hide();
+#endif
+
     generateShortcutItems(actions);
 
     GetMainWindow()->RegisterHotkey(true);

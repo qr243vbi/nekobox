@@ -19,7 +19,34 @@
      <property name="currentIndex">
       <number>0</number>
      </property>
-     <widget class="QWidget" name="tab">
+     <widget class="QWidget" name="shortcuts">
+      <attribute name="title">
+       <string>Shortcuts</string>
+      </attribute>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="QScrollArea" name="shortcut_area">
+         <property name="horizontalScrollBarPolicy">
+          <enum>Qt::ScrollBarPolicy::ScrollBarAsNeeded</enum>
+         </property>
+         <property name="widgetResizable">
+          <bool>true</bool>
+         </property>
+         <widget class="QWidget" name="scrollAreaWidgetContents">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>380</width>
+            <height>311</height>
+           </rect>
+          </property>
+         </widget>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="global">
       <attribute name="title">
        <string>Global</string>
       </attribute>
@@ -73,33 +100,6 @@
        </item>
        <item row="4" column="1">
         <widget class="QKeySequenceEdit" name="toggle_proxy"/>
-       </item>
-      </layout>
-     </widget>
-     <widget class="QWidget" name="tab_2">
-      <attribute name="title">
-       <string>Shortcuts</string>
-      </attribute>
-      <layout class="QHBoxLayout" name="horizontalLayout">
-       <item>
-        <widget class="QScrollArea" name="shortcut_area">
-         <property name="horizontalScrollBarPolicy">
-          <enum>Qt::ScrollBarPolicy::ScrollBarAsNeeded</enum>
-         </property>
-         <property name="widgetResizable">
-          <bool>true</bool>
-         </property>
-         <widget class="QWidget" name="scrollAreaWidgetContents">
-          <property name="geometry">
-           <rect>
-            <x>0</x>
-            <y>0</y>
-            <width>380</width>
-            <height>311</height>
-           </rect>
-          </property>
-         </widget>
-        </widget>
        </item>
       </layout>
      </widget>

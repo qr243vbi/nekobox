@@ -40,7 +40,7 @@ cd nekobox_tumbleweed
 osc update
 rm !(nekobox.changes)
 
-wget https://codefloe.com/qr243vbi/nekobox/raw/branch/main/nekobox.spec
+wget https://gitea.com/qr243vbi/nekobox/raw/branch/main/nekobox.spec
 
 sed -i "s@Source0:.*@Source0: $pkgurl@g; s@Version:.*@Version: $pkgver@g;" nekobox.spec
 

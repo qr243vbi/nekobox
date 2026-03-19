@@ -191,7 +191,7 @@ jobs:
         uses: actions/checkout@main
         with:
           ref: 'main'
-          submodules: 'false'
+          submodules: 'true'
       - name: Create requirements.txt
         shell: bash
         run: |
@@ -262,7 +262,7 @@ jobs:
         uses: actions/checkout@main
         with:
           ref: 'main'
-          submodules: "false"
+          submodules: "true"
 
       - name: Setup Ninja
         if: matrix.allow == 'true' && github.event.inputs.source_only != 'true'
@@ -380,7 +380,7 @@ jobs:
         uses: actions/checkout@main
         with:
           ref: 'main'
-          submodules: "false"
+          submodules: "true"
 
       - name: Download Artifacts
         if: matrix.allow == 'true' && github.event.inputs.source_only != 'true'
@@ -564,7 +564,7 @@ jobs:
         uses: actions/checkout@main
         with:
           ref: 'main'
-          submodules: "false"
+          submodules: "true"
       - name: Download Artifacts
         uses: actions/download-artifact@main
         with:
