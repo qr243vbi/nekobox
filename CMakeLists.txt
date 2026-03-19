@@ -8,7 +8,9 @@ set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 cmake_policy(SET CMP0069 NEW) #find package policy
-cmake_policy(SET CMP0167 NEW) #boost config policy
+if(POLICY CMP0167)
+    cmake_policy(SET CMP0167 NEW) #boost config policy
+endif()
 set(CMAKE_CXX_EXTENSIONS OFF)
 
 if (UNIX)
