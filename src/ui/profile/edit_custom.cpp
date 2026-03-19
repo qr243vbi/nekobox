@@ -65,11 +65,7 @@ bool EditCustom::onEnd() {
         return false;
     }
 
-<<<<<<< HEAD
-    auto bean = this->ent->CustomBean();
-=======
     auto bean = ent->unlock(ent->CustomBean());
->>>>>>> other-repo/main
 
     P_SAVE_STRING_PLAIN(config_simple)
     bean->core = preset_core;

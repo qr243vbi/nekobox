@@ -42,11 +42,7 @@ QString get_outbound_name(int id) {
     if (id == -1) return "proxy";
     if (id == -2) return "direct";
     auto profiles = Configs::profileManager->profiles;
-<<<<<<< HEAD
-    if (profiles.count(id)) return profiles[id]->bean->name;
-=======
     if (profiles.count(id)) return profiles[id]->name;
->>>>>>> other-repo/main
     return "INVALID OUTBOUND";
 }
 
@@ -54,11 +50,7 @@ QStringList get_all_outbounds() {
     QStringList res;
     auto profiles = Configs::profileManager->profiles;
     for (const auto &item: profiles) {
-<<<<<<< HEAD
-        res.append(item.second->bean->DisplayName());
-=======
         res.append(item.second->DisplayName());
->>>>>>> other-repo/main
     }
 
     return res;

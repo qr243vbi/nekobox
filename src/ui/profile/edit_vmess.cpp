@@ -13,15 +13,9 @@ EditVMess::~EditVMess() {
     delete ui;
 }
 
-<<<<<<< HEAD
-void EditVMess::onStart(std::shared_ptr<Configs::ProxyEntity> _ent) {
-    this->ent = _ent;
-    auto bean = this->ent->VMessBean();
-=======
 void EditVMess::onStart(std::shared_ptr<Configs::ProxyEntity> ent) {
     this->ent = ent;
     auto bean = ent->VMessBean();
->>>>>>> other-repo/main
 
     ui->uuid->setText(bean->uuid);
     ui->aid->setText(QString::number(bean->aid));
@@ -29,18 +23,10 @@ void EditVMess::onStart(std::shared_ptr<Configs::ProxyEntity> ent) {
 }
 
 bool EditVMess::onEnd() {
-<<<<<<< HEAD
-    auto bean = this->ent->VMessBean();
-=======
     auto bean = ent->unlock(ent->VMessBean());
->>>>>>> other-repo/main
 
     bean->uuid = ui->uuid->text();
     bean->aid = ui->aid->text().toInt();
     bean->security = ui->security->currentText();
-<<<<<<< HEAD
-
-=======
->>>>>>> other-repo/main
     return true;
 }

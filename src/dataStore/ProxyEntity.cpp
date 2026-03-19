@@ -1,9 +1,4 @@
 #include <nekobox/dataStore/ProxyEntity.hpp>
-<<<<<<< HEAD
-#include <nekobox/configs/proxy/AbstractBean.hpp>
-#include <qnamespace.h>
-#include <QCoreApplication>
-=======
 #include <nekobox/configs/proxy/Preset.hpp>
 #include <nekobox/dataStore/Utils.hpp>
 #include <nekobox/configs/proxy/AbstractBean.hpp>
@@ -12,17 +7,10 @@
 #include <nekobox/configs/proxy/includes.h>
 #include <nekobox/dataStore/Database.hpp>
 
->>>>>>> other-repo/main
 
 namespace Configs
 {
 
-<<<<<<< HEAD
-    #define _add(map1, X, Y, B) _put(map1, X, &this->Y)
-    //, ITEM_TYPE(B))
-
-    ConfJsMap ProxyEntity::_map(){
-=======
 
 [[nodiscard]]  QString ProxyEntity::DisplayAddress(){
     return (type != "chain" && type != "custom" && type != "extracore" &&
@@ -183,7 +171,6 @@ qDebug() << "Bean Path" << this->bean_cfg;
     }
 
     ConfJsMap ProxyEntity::_map() {
->>>>>>> other-repo/main
         static ConfJsMapStat map1;
         static ConfJsMapStat map2;
         static bool map1_init = true;
@@ -199,26 +186,6 @@ qDebug() << "Bean Path" << this->bean_cfg;
             _add(map1, "country", test_country, string);
             _add(map1, "is_working", is_working, boolean);
             _add(map1, "last_auto_test_time", last_auto_test_time, integer64);
-<<<<<<< HEAD
-
-            map2.insert(map1);
-            _add(map2, "bean", bean, jsonStore);
-            _add(map2, "traffic", traffic_data, jsonStore);
-        }
-        #undef _add
-        
-        if (bean.get() == nullptr){
-            return map1;
-        } else {
-            return map2;
-        }
-    }
-
-    ProxyEntity::ProxyEntity(Configs::AbstractBean *bean, const QString &type_) {
-        if (type_ != nullptr) this->type = type_;
-        if (bean != nullptr) {
-            this->bean = std::shared_ptr<Configs::AbstractBean>(bean);
-=======
             _add(map1, "name", name, string);
             _add(map1, "addr", serverAddress, string);
             _add(map1, "port", serverPort, integer);
@@ -247,7 +214,6 @@ qDebug() << "Bean Path" << this->bean_cfg;
             SavePrivate();
             weak->entity = nullptr;
             weak.reset();
->>>>>>> other-repo/main
         }
     };
 
@@ -264,8 +230,6 @@ qDebug() << "Bean Path" << this->bean_cfg;
         return result;
     }
 
-<<<<<<< HEAD
-=======
 
 
         #define cast_func(X)         \
@@ -292,5 +256,4 @@ qDebug() << "Bean Path" << this->bean_cfg;
         cast_func(ExtraCore)
         cast_func(Naive)
 
->>>>>>> other-repo/main
 }

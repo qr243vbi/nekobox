@@ -10,16 +10,10 @@ namespace Configs {
         QString password = "";
         int shadowtls_version = 1;
 
-<<<<<<< HEAD
-        std::shared_ptr<V2rayStreamSettings> stream = std::make_shared<V2rayStreamSettings>();
-
-        ShadowTLSBean() : AbstractBean(0) {
-=======
         std::shared_ptr<V2rayStreamSettings> stream ;
 
         ShadowTLSBean(Configs::ProxyEntity * entity) : AbstractBean(entity, 0) {
              stream = std::make_shared<V2rayStreamSettings>();
->>>>>>> other-repo/main
         }
         
         INIT_MAP
@@ -27,18 +21,6 @@ namespace Configs {
             ADD_MAP("shadowtls_version", shadowtls_version, integer);
             ADD_MAP("stream", stream, jsonStore);
         STOP_MAP
-<<<<<<< HEAD
-
-        QString DisplayType() override { return "ShadowTLS"; };
-
-        CoreObjOutboundBuildResult BuildCoreObjSingBox() override;
-
-        bool TryParseLink(const QString &link);
-
-        bool TryParseJson(const QJsonObject &obj);
-
-        QString ToShareLink() override;
-=======
 /*/
         QString DisplayType() override { return "ShadowTLS"; };
 */
@@ -54,6 +36,5 @@ namespace Configs {
             return "shadowtls";
         };
         #endif
->>>>>>> other-repo/main
     };
 } // namespace Configs

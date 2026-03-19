@@ -1,18 +1,3 @@
-<<<<<<< HEAD
-#include "nekobox/ui/mainwindow.h"
-
-#include "3rdparty/qv2ray/wrapper.hpp"
-#include "nekobox/configs/ConfigBuilder.hpp"
-#include "nekobox/configs/sub/GroupUpdater.hpp"
-#include "nekobox/dataStore/Const.hpp"
-#include "nekobox/dataStore/ProfileFilter.hpp"
-#include "nekobox/dataStore/ResourceEntity.hpp"
-#include "nekobox/dataStore/Utils.hpp"
-#include "nekobox/global/keyvaluerange.h"
-#include "nekobox/sys/AutoRun.hpp"
-#include "nekobox/sys/Process.hpp"
-#include "nekobox/ui/group/GroupItem.h"
-=======
 #include <nekobox/ui/mainwindow.h>
 #include <3rdparty/qv2ray/wrapper.hpp>
 #include <nekobox/configs/ConfigBuilder.hpp>
@@ -26,7 +11,6 @@
 #include <nekobox/sys/Process.hpp>
 #include <nekobox/ui/group/GroupItem.h>
 #include <nekobox/ui/utils/MapListModel.hpp>
->>>>>>> other-repo/main
 #include <nekobox/global/GuiUtils.hpp>
 
 #ifndef NKR_SOFTWARE_KEYS
@@ -108,20 +92,15 @@
 
 extern QVariantMap ruleSetMap;
 
-<<<<<<< HEAD
-=======
 #include <QVBoxLayout>
 #include <QPushButton>
 #include <QListView>
 #include <QLabel>
 
->>>>>>> other-repo/main
 void setAppIcon(Icon::TrayIconStatus, QSystemTrayIcon *, MainWindow *window);
 
 void MainWindow::set_icons() { set_icons_from_settings(); }
 
-<<<<<<< HEAD
-=======
 SelectDialog::SelectDialog(QWidget *parent, std::shared_ptr<QAbstractListModel> model)
     : QDialog(parent), model(model) {
     setupUi();
@@ -197,7 +176,6 @@ void SelectDialog::onCancel() {
     reject(); // Close the dialog with a rejected status
 }
 
->>>>>>> other-repo/main
 void SpinnerDialog::addItem(QString item, QString name) {
   listWidget->addItem(name);
   list << (item);
@@ -212,18 +190,12 @@ void SpinnerDialog::onOk() {
     auto resp = window->remoteRouteProfileGetter(profile, &url, &proxy);
     if (resp.isEmpty()) {
       return;
-<<<<<<< HEAD
-    } else {
-      qDebug() << resp;
-    }
-=======
     } 
     #ifdef DEBUG_MODE
     else {
       qDebug() << "PROFILE GETTER IS : " << resp;
     }
     #endif
->>>>>>> other-repo/main
     QString err;
     auto parsed =
         Configs::RoutingChain::parseJsonArray(QString2QJsonArray(resp), &err);
@@ -531,13 +503,9 @@ MainWindow::MainWindow(QWidget *parent)
                                   )
                            .toString();
 #endif
-<<<<<<< HEAD
-    qDebug() << NKR_VERSION << software_version;
-=======
 #ifdef DEBUG_MODE
     qDebug() << NKR_VERSION << software_version;
 #endif
->>>>>>> other-repo/main
     software_build_date =
         globalSettings.value("program_build_date", "").toString();
 #ifdef NKR_TIMESTAMP
@@ -559,10 +527,7 @@ MainWindow::MainWindow(QWidget *parent)
   softwareFilePath = getApplicationPath();
   softwarePath = root_directory;
 
-<<<<<<< HEAD
-=======
 
->>>>>>> other-repo/main
   // Load Manager
   Configs::profileManager->LoadManager();
   QString theme = Configs::windowSettings->theme;
@@ -671,17 +636,9 @@ MainWindow::MainWindow(QWidget *parent)
   runOnNewThread([=, this] { GetDeviceDetails(); });
 
   proxyAutoTester = std::make_unique<Stats::ProxyAutoTester>(this);
-<<<<<<< HEAD
-
-  // Prepare core
-  Configs::dataStore->core_port = MkPort();
-  if (Configs::dataStore->core_port <= 0)
-    Configs::dataStore->core_port = 19810;
-=======
   
     Configs::dataStore->core_port = MkPort();
     Configs::dataStore->core_domain = "127.0.0.1";
->>>>>>> other-repo/main
 
   QString core_path = getCorePath();
 
@@ -695,13 +652,9 @@ MainWindow::MainWindow(QWidget *parent)
   runOnThread(
       [=, this] {
         core_process = new Configs_sys::CoreProcess(core_path, args);
-<<<<<<< HEAD
-        qDebug() << "Core file located at " << core_path;
-=======
         #ifdef DEBUG_MODE
         qDebug() << "Core file located at " << core_path;
         #endif
->>>>>>> other-repo/main
         // Remember last started
         if (Configs::dataStore->remember_enable &&
             Configs::dataStore->remember_id >= 0) {
@@ -721,11 +674,7 @@ MainWindow::MainWindow(QWidget *parent)
       break;
   }
   if (!Configs::dataStore->core_running)
-<<<<<<< HEAD
-    qDebug() << "[Warn] Core is taking too much time to start";
-=======
     qWarning() << "[Warn] Core is taking too much time to start";
->>>>>>> other-repo/main
 #endif
 
   if (!font_family.isEmpty()) {
@@ -805,8 +754,6 @@ MainWindow::MainWindow(QWidget *parent)
   ui->toolButton_preferences->setMenu(ui->menu_preferences);
   ui->toolButton_server->setMenu(ui->menu_profiles);
   ui->toolButton_routing->setMenu(ui->menuRouting_Menu);
-<<<<<<< HEAD
-=======
   ui->url_test_button->setMenu(ui->menuTest);
 
   {
@@ -839,7 +786,6 @@ MainWindow::MainWindow(QWidget *parent)
 
 
   }
->>>>>>> other-repo/main
 
   ADD_SECURITY_ACTION
 
@@ -911,12 +857,9 @@ skip_updater_hide:
     group->Save();
   };
 
-<<<<<<< HEAD
-=======
 
   ui->proxyListTable->setAlternatingRowColors(true);
 
->>>>>>> other-repo/main
   if (auto button = ui->proxyListTable->findChild<QAbstractButton *>(
           QString(), Qt::FindDirectChildrenOnly)) {
     // Corner Button
@@ -1009,11 +952,7 @@ skip_updater_hide:
           [=, this](QSystemTrayIcon::ActivationReason reason) {
             if (reason == QSystemTrayIcon::Trigger) {
               CHECK_ACTION_ACCESS_W
-<<<<<<< HEAD
-              ActivateWindow(this);
-=======
               ToggleWindow(this);
->>>>>>> other-repo/main
             }
           });
 
@@ -1048,13 +987,9 @@ skip_updater_hide:
   });
   connect(ui->actionToggle_window, &QAction::triggered, this, [=, this] {
     CHECK_SETTINGS_ACCESS_W
-<<<<<<< HEAD
-    ActivateWindow(this);
-=======
     do {
       ToggleWindow(this);
     } while (this->isHidden());
->>>>>>> other-repo/main
   });
   connect(ui->actionRemember_last_proxy, &QAction::triggered, this,
           [=, this](bool checked) {
@@ -1130,50 +1065,6 @@ skip_updater_hide:
     on_tabWidget_customContextMenuRequested(point);
   });
 
-<<<<<<< HEAD
-  connect(ui->menu_server, &QMenu::aboutToShow, this, [=, this]() {
-    //  if (running) {
-    //    ui->actionSpeedtest_Current->setEnabled(true);
-    //  } else {
-    //     ui->actionSpeedtest_Current->setEnabled(false);
-    //  }
-    bool selected_profile = true;
-    if (auto selected = get_now_selected_list(); selected.empty()) {
-      selected_profile = false;
-    }
-
-    ui->menu_test->setEnabled(selected_profile);
-    ui->actionUrl_Test_Selected->setEnabled(selected_profile);
-    ui->actionUrl_Test_Clear->setEnabled(selected_profile);
-    ui->menu_resolve_selected->setEnabled(selected_profile);
-    ui->menu_start->setEnabled(selected_profile);
-    ui->menu_edit->setEnabled(selected_profile);
-    ui->menu_share_item->setEnabled(selected_profile);
-    ui->menu_delete->setEnabled(selected_profile);
-    ui->menu_clone->setEnabled(selected_profile);
-    ui->menu_reset_traffic->setEnabled(selected_profile);
-
-    if (!speedtestRunning.tryLock()) {
-      ui->menu_server->addAction(ui->menu_stop_testing);
-    } else {
-      speedtestRunning.unlock();
-      ui->menu_server->removeAction(ui->menu_stop_testing);
-    }
-  });
-
-  QFile *srslist = new QFile("srslist.json");
-  if (!srslist->exists()) {
-    delete srslist;
-    srslist = new QFile(getResource("srslist.json"));
-  }
-  if (srslist->exists() && srslist->open(QIODevice::ReadOnly)) {
-    QByteArray byteArray = srslist->readAll();
-    srslist->close();
-    delete srslist;
-    ruleSetMap = QString2QMap(byteArray);
-  } else {
-    delete srslist;
-=======
   connect(ui->menu_server, &QMenu::aboutToShow, this, [this]() {
     this->menu_server_about_to_show(this->ui->menu_server);
   });
@@ -1184,7 +1075,6 @@ skip_updater_hide:
     srslist.close();
     ruleSetMap = QString2QMap(byteArray);
   } else {
->>>>>>> other-repo/main
     runOnNewThread([this]() { getRuleSet(); });
   }
 
@@ -1476,11 +1366,6 @@ skip_updater_hide:
   };
   connect(ui->actionUrl_Test_Group, &QAction::triggered, this,
           url_test_group_action);
-<<<<<<< HEAD
-  connect(ui->url_test_button, &QPushButton::clicked, this,
-          url_test_group_action);
-=======
->>>>>>> other-repo/main
 
   connect(ui->actionSpeedtest_Current, &QAction::triggered, this, [=, this]() {
     if (running != nullptr) {
@@ -1546,11 +1431,7 @@ skip_updater_hide:
     auto selected = get_now_selected_list();
     if (!selected.isEmpty()) {
       auto ent = selected.first();
-<<<<<<< HEAD
-      name = ent->bean->DisplayCoreType();
-=======
       name = ent->DisplayCoreType();
->>>>>>> other-repo/main
     }
     ui->menu_export_config->setVisible(name == software_core_name);
     ui->menu_export_config->setText(tr("Export %1 config").arg(name));
@@ -1679,10 +1560,7 @@ bool MainWindow::getRuleSet() {
       qvar.insert(key, value);
     }
     WriteFileText("srslist.json", QMap2QString(qvar));
-<<<<<<< HEAD
-=======
     Configs::resourceManager->saveLink("srslist.json", "srslist.json");
->>>>>>> other-repo/main
   }
   return true;
 }
@@ -1908,11 +1786,7 @@ void MainWindow::dialog_message_impl(const QString &sender,
     on_menu_exit_triggered();
   }
   if (info == "Raise") {
-<<<<<<< HEAD
-    ActivateWindow(this);
-=======
     ToggleWindow(this);
->>>>>>> other-repo/main
   }
   if (info == "NeedAdmin") {
     get_elevated_permissions();
@@ -2017,13 +1891,9 @@ void MainWindow::on_menu_hotkey_settings_triggered() {
 }
 
 void MainWindow::on_commitDataRequest() {
-<<<<<<< HEAD
-  qDebug() << "Start of data save";
-=======
   #ifdef DEBUG_MODE
   qDebug() << "Start of data save";
   #endif
->>>>>>> other-repo/main
   {
     // save size and geometry
     int x, y, width, height;
@@ -2062,16 +1932,6 @@ void MainWindow::on_commitDataRequest() {
   Configs::dataStore->Save();
   Configs::windowSettings->Save();
   Configs::profileManager->SaveManager();
-<<<<<<< HEAD
-  qDebug() << "End of data save";
-}
-
-void MainWindow::prepare_exit() {
-  qDebug() << "prepare for exit...";
-  mu_exit.lock();
-  if (Configs::dataStore->prepare_exit) {
-    qDebug() << "prepare exit had already succeeded, ignoring...";
-=======
   #ifdef DEBUG_MODE
   qDebug() << "End of data save";
   #endif
@@ -2086,7 +1946,6 @@ void MainWindow::prepare_exit() {
   #ifdef DEBUG_MODE
     qDebug() << "prepare exit had already succeeded, ignoring...";
   #endif
->>>>>>> other-repo/main
     mu_exit.unlock();
     return;
   }
@@ -2105,13 +1964,9 @@ void MainWindow::prepare_exit() {
   profile_stop(false, true);
 
   mu_exit.unlock();
-<<<<<<< HEAD
-  qDebug() << "prepare exit done!";
-=======
   #ifdef DEBUG_MODE
   qDebug() << "prepare exit done!";
   #endif
->>>>>>> other-repo/main
 }
 
 void MainWindow::size_changed(int width, int height) {
@@ -2161,15 +2016,10 @@ void MainWindow::on_menu_exit_triggered() {
     destinationFilePath += "/temp/updater";
 #endif
     if (QFile::copy(sourceFilePath, destinationFilePath)) {
-<<<<<<< HEAD
-      qDebug() << "File copied successfully from" << sourceFilePath << "to"
-               << destinationFilePath;
-=======
   #ifdef DEBUG_MODE
       qDebug() << "File copied successfully from" << sourceFilePath << "to"
                << destinationFilePath;
 #endif
->>>>>>> other-repo/main
 #ifdef Q_OS_WIN
       WinCommander::runProcess(destinationFilePath, list, "", SW_NORMAL, false,
                                (!isDirectoryWritable(updateDir)));
@@ -2177,15 +2027,10 @@ void MainWindow::on_menu_exit_triggered() {
       QProcess::startDetached(destinationFilePath, list);
 #endif
     } else {
-<<<<<<< HEAD
-      qDebug() << "Failed to copy file from" << sourceFilePath << "to"
-               << destinationFilePath;
-=======
   #ifdef DEBUG_MODE
       qDebug() << "Failed to copy file from" << sourceFilePath << "to"
                << destinationFilePath;
 #endif
->>>>>>> other-repo/main
     }
 #endif
   } else if (exit_reason == 2 || exit_reason == 3 || exit_reason == 4) {
@@ -2200,13 +2045,9 @@ void MainWindow::on_menu_exit_triggered() {
     }
     auto program = softwareFilePath;
 
-<<<<<<< HEAD
-    qDebug() << "Will Be Restarted: " << program;
-=======
   #ifdef DEBUG_MODE
     qDebug() << "Will Be Restarted: " << program;
 #endif
->>>>>>> other-repo/main
 
     if (exit_reason == 3 || exit_reason == 4) {
       if (exit_reason == 3)
@@ -2612,13 +2453,8 @@ MainWindow::filterProfilesList(const QList<int> &profiles) {
       continue;
     }
     if (searchString.isEmpty() ||
-<<<<<<< HEAD
-        profile->bean->name.contains(searchString, Qt::CaseInsensitive) ||
-        profile->bean->serverAddress.contains(searchString,
-=======
         profile->name.contains(searchString, Qt::CaseInsensitive) ||
         profile->serverAddress.contains(searchString,
->>>>>>> other-repo/main
                                               Qt::CaseInsensitive) ||
         (searchString.startsWith("CODE:") &&
          searchString.mid(5) == profile->test_country))
@@ -2663,11 +2499,7 @@ void MainWindow::refresh_status(const QString &traffic_update) {
   if (QDateTime::currentSecsSinceEpoch() - last_test_time > 2) {
     ui->label_running->setText(
         running ? QString("[%1] %2")
-<<<<<<< HEAD
-                      .arg(group_name, running->bean->DisplayName())
-=======
                       .arg(group_name, running->DisplayName())
->>>>>>> other-repo/main
                       .left(30)
                 : tr("Not Running"));
   }
@@ -2709,11 +2541,7 @@ void MainWindow::refresh_status(const QString &traffic_update) {
       tt << "[" + Configs::dataStore->active_routing + "]";
     }
     if (running != nullptr)
-<<<<<<< HEAD
-      tt << running->bean->DisplayTypeAndName() + "@" + group_name;
-=======
       tt << running->DisplayTypeAndName() + "@" + group_name;
->>>>>>> other-repo/main
     return tt.join(isTray ? "\n" : " ");
   };
 
@@ -2845,19 +2673,6 @@ void MainWindow::refresh_proxy_list_impl(const int &id,
             QString ms_b;
             if (groupSortAction.method == GroupSortMethod::ByType) {
               ms_a =
-<<<<<<< HEAD
-                  Configs::profileManager->GetProfile(a)->bean->DisplayType();
-              ms_b =
-                  Configs::profileManager->GetProfile(b)->bean->DisplayType();
-            } else if (groupSortAction.method == GroupSortMethod::ByName) {
-              ms_a = Configs::profileManager->GetProfile(a)->bean->name;
-              ms_b = Configs::profileManager->GetProfile(b)->bean->name;
-            } else if (groupSortAction.method == GroupSortMethod::ByAddress) {
-              ms_a = Configs::profileManager->GetProfile(a)
-                         ->bean->DisplayAddress();
-              ms_b = Configs::profileManager->GetProfile(b)
-                         ->bean->DisplayAddress();
-=======
                   Configs::profileManager->GetProfile(a)->type;
               ms_b =
                   Configs::profileManager->GetProfile(b)->type;
@@ -2869,7 +2684,6 @@ void MainWindow::refresh_proxy_list_impl(const int &id,
                          ->DisplayAddress();
               ms_b = Configs::profileManager->GetProfile(b)
                          ->DisplayAddress();
->>>>>>> other-repo/main
             } else if (groupSortAction.method == GroupSortMethod::ByLatency) {
               ms_a = Configs::profileManager->GetProfile(a)->full_test_report;
               ms_b = Configs::profileManager->GetProfile(b)->full_test_report;
@@ -2999,33 +2813,21 @@ void MainWindow::refresh_table_item(
 
   // C0: Type
   auto f = f0->clone();
-<<<<<<< HEAD
-  f->setText(profile->bean->DisplayType());
-=======
   f->setText(profile->DisplayType());
->>>>>>> other-repo/main
   if (isRunning)
     f->setForeground(palette().link());
   ui->proxyListTable->setItem(row, 0, f);
 
   // C1: Address+Port
   f = f0->clone();
-<<<<<<< HEAD
-  f->setText(profile->bean->DisplayAddress());
-=======
   f->setText(profile->DisplayAddress());
->>>>>>> other-repo/main
   if (isRunning)
     f->setForeground(palette().link());
   ui->proxyListTable->setItem(row, 1, f);
 
   // C2: Name
   f = f0->clone();
-<<<<<<< HEAD
-  f->setText(profile->bean->name);
-=======
   f->setText(profile->name);
->>>>>>> other-repo/main
   if (isRunning)
     f->setForeground(palette().link());
   ui->proxyListTable->setItem(row, 2, f);
@@ -3073,8 +2875,6 @@ void MainWindow::on_menu_add_from_clipboard_triggered() {
   Subscription::groupUpdater->AsyncUpdate(this->post_update_job, clipboard, &chooseUpdateGroup);
 }
 
-<<<<<<< HEAD
-=======
 void MainWindow::move_selected_profiles(int group_id){
     Configs::profileManager->MoveProfileBatch(get_now_selected_list(), group_id);
     refresh_proxy_list();
@@ -3106,7 +2906,6 @@ void MainWindow::on_menu_move_profile_triggered() {
     select->exec();
 }
 
->>>>>>> other-repo/main
 void MainWindow::on_menu_clone_triggered() {
   CHECK_SETTINGS_ACCESS_W
   auto ents = get_now_selected_list();
@@ -3120,11 +2919,7 @@ void MainWindow::on_menu_clone_triggered() {
 
   QStringList sls;
   for (const auto &ent : ents) {
-<<<<<<< HEAD
-    sls << ent->bean->ToNekorayShareLink(ent->type);
-=======
     sls << ent->bean()->ToNekorayShareLink(ent->type);
->>>>>>> other-repo/main
   }
 
   Subscription::groupUpdater->AsyncUpdate(this->post_update_job, sls.join("\n"), &chooseUpdateGroup);
@@ -3144,11 +2939,7 @@ void MainWindow::on_menu_delete_repeat_triggered() {
   int remove_display_count = 0;
   QString remove_display;
   for (const auto &ent : out_del) {
-<<<<<<< HEAD
-    remove_display += ent->bean->DisplayTypeAndName() + " \n ";
-=======
     remove_display += ent->DisplayTypeAndName() + " \n ";
->>>>>>> other-repo/main
     if (++remove_display_count == 20) {
       remove_display += " ... ";
       break;
@@ -3174,11 +2965,7 @@ void MainWindow::on_menu_delete_triggered() {
   auto ents = get_now_selected_list();
   if (ents.count() == 0)
     return;
-<<<<<<< HEAD
-  if (QMessageBox::question(
-=======
   if (!Configs::windowSettings->ask_delete || QMessageBox::question(
->>>>>>> other-repo/main
           this, tr("Confirmation"),
           QString(tr("Remove %1 item(s) ?")).arg(ents.count())) ==
       QMessageBox::StandardButton::Yes) {
@@ -3212,11 +2999,7 @@ void MainWindow::on_menu_copy_links_triggered() {
   auto ents = get_now_selected_list();
   QStringList links;
   for (const auto &ent : ents) {
-<<<<<<< HEAD
-    links += ent->bean->ToShareLink();
-=======
     links += ent->bean()->ToShareLink();
->>>>>>> other-repo/main
   }
   if (links.length() == 0)
     return;
@@ -3229,11 +3012,7 @@ void MainWindow::on_menu_copy_links_nkr_triggered() {
   auto ents = get_now_selected_list();
   QStringList links;
   for (const auto &ent : ents) {
-<<<<<<< HEAD
-    links += ent->bean->ToNekorayShareLink(ent->type);
-=======
     links += ent->bean()->ToNekorayShareLink(ent->type);
->>>>>>> other-repo/main
   }
   if (links.length() == 0)
     return;
@@ -3247,11 +3026,7 @@ void MainWindow::on_menu_export_config_triggered() {
   if (ents.count() != 1)
     return;
   auto ent = ents.first();
-<<<<<<< HEAD
-  if (ent->bean->DisplayCoreType() != software_core_name)
-=======
   if (ent->DisplayCoreType() != software_core_name)
->>>>>>> other-repo/main
     return;
 
   auto result = BuildConfig(ent, false, true);
@@ -3389,17 +3164,10 @@ void MainWindow::display_qr_link(bool nkrFormat) {
     }
   };
 
-<<<<<<< HEAD
-  auto link = ents.first()->bean->ToShareLink();
-  auto link_nk = ents.first()->bean->ToNekorayShareLink(ents.first()->type);
-  auto w = new W(link, link_nk);
-  w->setWindowTitle(ents.first()->bean->DisplayTypeAndName());
-=======
   auto link = ents.first()->bean()->ToShareLink();
   auto link_nk = ents.first()->bean()->ToNekorayShareLink(ents.first()->type);
   auto w = new W(link, link_nk);
   w->setWindowTitle(ents.first()->DisplayTypeAndName());
->>>>>>> other-repo/main
   w->exec();
   w->deleteLater();
 }
@@ -3560,30 +3328,18 @@ void MainWindow::on_menu_remove_unavailable_triggered() {
   int remove_display_count = 0;
   QString remove_display;
   for (const auto &ent : out_del) {
-<<<<<<< HEAD
-    remove_display += ent->bean->DisplayTypeAndName() + "\n";
-=======
     remove_display += ent->DisplayTypeAndName() + "\n";
->>>>>>> other-repo/main
     if (++remove_display_count == 20) {
       remove_display += "...";
       break;
     }
   }
 
-<<<<<<< HEAD
-  if (!out_del.empty() &&
-      QMessageBox::question(
-          this, tr("Confirmation"),
-          tr("Remove %1 Unavailable item(s) ?").arg(out_del.length()) + "\n" +
-              remove_display) == QMessageBox::StandardButton::Yes) {
-=======
   if (!out_del.empty() &&(!Configs::windowSettings->ask_delete ||
       QMessageBox::question(
           this, tr("Confirmation"),
           tr("Remove %1 Unavailable item(s) ?").arg(out_del.length()) + "\n" +
               remove_display) == QMessageBox::StandardButton::Yes) ) {
->>>>>>> other-repo/main
     QList<int> del_ids;
     for (const auto &ent : out_del) {
       del_ids += ent->id;
@@ -3625,11 +3381,7 @@ void MainWindow::on_menu_remove_invalid_triggered() {
     int remove_display_count = 0;
     QString remove_display;
     for (const auto &ent : out_del) {
-<<<<<<< HEAD
-      remove_display += ent->bean->DisplayTypeAndName() + "\n";
-=======
       remove_display += ent->DisplayTypeAndName() + "\n";
->>>>>>> other-repo/main
       if (++remove_display_count == 20) {
         remove_display += "...";
         break;
@@ -3637,19 +3389,11 @@ void MainWindow::on_menu_remove_invalid_triggered() {
     }
 
     runOnUiThread([=, this] {
-<<<<<<< HEAD
-      if (!out_del.empty() &&
-          QMessageBox::question(
-              this, tr("Confirmation"),
-              tr("Remove %1 Invalid item(s) ?").arg(out_del.length()) + "\n" +
-                  remove_display) == QMessageBox::StandardButton::Yes) {
-=======
       if (!out_del.empty() &&(!Configs::windowSettings->ask_delete ||
           QMessageBox::question(
               this, tr("Confirmation"),
               tr("Remove %1 Invalid item(s) ?").arg(out_del.length()) + "\n" +
                   remove_display) == QMessageBox::StandardButton::Yes)) {
->>>>>>> other-repo/main
         QList<int> del_ids;
         for (const auto &ent : out_del) {
           del_ids += ent->id;
@@ -3674,22 +3418,14 @@ void MainWindow::on_menu_resolve_selected_triggered() {
   Configs::dataStore->resolve_count = profiles.count();
 
   for (const auto &profile : profiles) {
-<<<<<<< HEAD
-    profile->bean->ResolveDomainToIP([=, this] {
-      profile->Save();
-=======
     auto bean = profile->unlock(profile->bean());
     bean->ResolveDomainToIP([=, this] {
->>>>>>> other-repo/main
       if (--Configs::dataStore->resolve_count != 0)
         return;
       refresh_proxy_list();
       mw_sub_updating = false;
     });
-<<<<<<< HEAD
-=======
     bean.reset();
->>>>>>> other-repo/main
   }
 }
 
@@ -3717,27 +3453,13 @@ void MainWindow::on_menu_resolve_domain_triggered() {
 
   for (const auto id : profiles) {
     auto profile = Configs::profileManager->GetProfile(id);
-<<<<<<< HEAD
-    profile->bean->ResolveDomainToIP([=, this] {
-      profile->Save();
-=======
     auto bean = profile->unlock(profile->bean());
     bean->ResolveDomainToIP([=, this] {
->>>>>>> other-repo/main
       if (--Configs::dataStore->resolve_count != 0)
         return;
       refresh_proxy_list();
       mw_sub_updating = false;
     });
-<<<<<<< HEAD
-  }
-}
-
-void MainWindow::on_proxyListTable_customContextMenuRequested(
-    const QPoint &pos) {
-  ui->menu_server->popup(
-      ui->proxyListTable->viewport()->mapToGlobal(pos)); // 弹出菜单
-=======
     bean.reset();
   }
 }
@@ -3758,7 +3480,6 @@ void MainWindow::on_proxyListTable_customContextMenuRequested(
   auto pos1 = ui->proxyListTable->viewport()->mapToGlobal(pos);  
   LAST_CLICK
   ui->menuContext->popup(pos1);
->>>>>>> other-repo/main
 }
 
 QList<std::shared_ptr<Configs::ProxyEntity>>
@@ -3858,12 +3579,9 @@ void MainWindow::show_log_impl(const QString &log) {
 
 void MainWindow::on_masterLogBrowser_customContextMenuRequested(
     const QPoint &pos) {
-<<<<<<< HEAD
-=======
   auto pos1 = ui->masterLogBrowser->viewport()->mapToGlobal(pos);  
   LAST_CLICK
 
->>>>>>> other-repo/main
   QMenu *menu = ui->masterLogBrowser->createStandardContextMenu();
 
   auto sep = new QAction(this);
@@ -3891,15 +3609,6 @@ void MainWindow::on_masterLogBrowser_customContextMenuRequested(
   menu->addAction(action_clear);
   menu->addAction(action_stop);
 
-<<<<<<< HEAD
-  menu->exec(ui->masterLogBrowser->viewport()->mapToGlobal(pos));
-}
-
-void MainWindow::on_tabWidget_customContextMenuRequested(const QPoint &p) {
-  QMenu *menu;
-  int clickedIndex = 0;
-  if (p.x() != 0 || p.y() != 0) {
-=======
   menu->exec(pos1);
 }
 
@@ -3910,7 +3619,6 @@ void MainWindow::on_tabWidget_customContextMenuRequested(const QPoint &p) {
   auto point_x = p.x();
   auto point_y = p.y();
   if (point_y != 0 || point_x != 0) {
->>>>>>> other-repo/main
     clickedIndex = ui->tabWidget->tabBar()->tabAt(p);
     if (clickedIndex == -1) {
       menu = new QMenu(this);
@@ -3931,16 +3639,11 @@ void MainWindow::on_tabWidget_customContextMenuRequested(const QPoint &p) {
           Qt::SingleShotConnection);
 
       menu->addAction(addAction);
-<<<<<<< HEAD
-      menu->exec(ui->tabWidget->tabBar()->mapToGlobal(p));
-      return;
-=======
       auto pos1 = ui->tabWidget->tabBar()->mapToGlobal(p);
       this->lastx = pos1.x();
       this->lasty = pos1.y();
       menu->exec(pos1);
       goto return_deffer;
->>>>>>> other-repo/main
     }
     ui->tabWidget->setCurrentIndex(clickedIndex);
     menu = new QMenu(this);
@@ -3948,12 +3651,9 @@ void MainWindow::on_tabWidget_customContextMenuRequested(const QPoint &p) {
     menu = ui->menuCurrent_group;
     menu->clear();
     clickedIndex = ui->tabWidget->currentIndex();
-<<<<<<< HEAD
-=======
     QObject::connect(menu, &QMenu::aboutToHide, this, [menu](){
         menu->clear();
     }, Qt::SingleShotConnection);
->>>>>>> other-repo/main
   }
 
   bool profile_action = (menu != ui->menuCurrent_group);
@@ -3969,23 +3669,16 @@ void MainWindow::on_tabWidget_customContextMenuRequested(const QPoint &p) {
       [clickedIndex, this] {
         CHECK_SETTINGS_ACCESS_W
         auto id = Configs::profileManager->groupsTabOrder[clickedIndex];
-<<<<<<< HEAD
-        if (QMessageBox::question(
-=======
         if (!Configs::windowSettings->ask_delete || QMessageBox::question(
->>>>>>> other-repo/main
                 this, tr("Confirmation"),
                 tr("Remove %1?")
                     .arg(Configs::profileManager->groups[id]->name)) ==
             QMessageBox::StandardButton::Yes) {
-<<<<<<< HEAD
-=======
           if (running != nullptr) {
             if (running->gid == id) {
               profile_stop(false, true, false);
             }
           }
->>>>>>> other-repo/main
           Configs::profileManager->DeleteGroup(id);
           MW_dialog_message(Dialog_DialogManageGroups, "refresh-1");
         }
@@ -4035,10 +3728,6 @@ void MainWindow::on_tabWidget_customContextMenuRequested(const QPoint &p) {
     menu->removeAction(ui->menu_stop_testing);
   }
   if (menu != ui->menuCurrent_group) {
-<<<<<<< HEAD
-    menu->exec(ui->tabWidget->tabBar()->mapToGlobal(p));
-  }
-=======
     auto pos1 = ui->tabWidget->tabBar()->mapToGlobal(p);
     this->lastx = pos1.x();
     this->lasty = pos1.y();
@@ -4047,7 +3736,6 @@ void MainWindow::on_tabWidget_customContextMenuRequested(const QPoint &p) {
     }
     return_deffer:
     RegisterHiddenMenuShortcuts();
->>>>>>> other-repo/main
   return;
 }
 
@@ -4123,46 +3811,30 @@ void MainWindow::RegisterHotkey(bool unregister) {
 
 void MainWindow::RegisterHiddenMenuShortcuts(QMenu *menu) {
   for (const auto &action : menu->actions()) {
-<<<<<<< HEAD
-    if (!action->shortcut().toString().isEmpty()) {
-      hiddenMenuShortcuts.append(new QShortcut(
-=======
 #ifdef DEBUG_MODE
       qDebug() << "HIDDEN SHORTCUT" << action->shortcut().toString();
 #endif
     if (!action->shortcut().toString().isEmpty()) {
       hiddenMenuShortcuts.append(std::make_shared<QShortcut>(
->>>>>>> other-repo/main
           action->shortcut(), this, [=, this]() { action->trigger(); }));
     }
   }
 }
 
 void MainWindow::RegisterHiddenMenuShortcuts(bool unregister) {
-<<<<<<< HEAD
-  for (const auto s : hiddenMenuShortcuts)
-    s->deleteLater();
-=======
   for (const auto s : hiddenMenuShortcuts) {
     s->deleteLater();
   }
->>>>>>> other-repo/main
   hiddenMenuShortcuts.clear();
 
   if (unregister)
     return;
 
   RegisterHiddenMenuShortcuts(ui->menuHidden_menu);
-<<<<<<< HEAD
-  RegisterHiddenMenuShortcuts(ui->menu_server);
-  RegisterHiddenMenuShortcuts(ui->menu_test);
-  RegisterHiddenMenuShortcuts(ui->menu_share_item);
-=======
 //  RegisterHiddenMenuShortcuts(ui->menu_server);
 //  RegisterHiddenMenuShortcuts(ui->menu_test);
 //  RegisterHiddenMenuShortcuts(ui->menu_share_item);
 //  RegisterHiddenMenuShortcuts(ui->menu_profiles);
->>>>>>> other-repo/main
 }
 
 void MainWindow::setActionsData() {
@@ -4181,10 +3853,6 @@ void MainWindow::setActionsData() {
   ui->menu_scan_qr->setData(QString("m14"));
   ui->menu_stop_testing->setData(QString("m15"));
   ui->menu_update_subscription->setData(QString("m16"));
-<<<<<<< HEAD
-  ui->actionSpeedtest_Current->setData(QString("m18"));
-=======
->>>>>>> other-repo/main
   ui->actionSpeedtest_Group->setData(QString("m19"));
   ui->actionSpeedtest_Selected->setData(QString("m20"));
   ui->actionUrl_Test_Group->setData(QString("m21"));
@@ -4196,8 +3864,6 @@ void MainWindow::setActionsData() {
   ui->actionUploadtest_Selected->setData(QString("m26"));
   ui->actionCountrytest_Selected->setData(QString("m27"));
   ui->actionSimpledl_Selected->setData(QString("m28"));
-<<<<<<< HEAD
-=======
   ui->menu_move_profile->setData(QString("m29"));
   ui->menu_add_from_clipboard->setData(QString("m30"));
   ui->menu_edit->setData(QString("m31"));
@@ -4207,7 +3873,6 @@ void MainWindow::setActionsData() {
   ui->actionSpeedtest_Current->setData(QString("m40"));
 
 
->>>>>>> other-repo/main
 }
 
 QList<QAction *> MainWindow::getActionsForShortcut() {
@@ -4225,19 +3890,6 @@ QList<QAction *> MainWindow::getActionsForShortcut() {
 }
 
 void MainWindow::loadShortcuts() {
-<<<<<<< HEAD
-  auto mp = Configs::dataStore->shortcuts->shortcuts;
-  for (QList<QAction *> actions = findChildren<QAction *>();
-       QAction *action : actions) {
-    if (action->data().isNull() || action->data().toString().isEmpty())
-      continue;
-    if (mp.count(action->data().toString()) == 0)
-      action->setShortcut(QKeySequence());
-    else
-      action->setShortcut(mp[action->data().toString()]);
-  }
-
-=======
   auto& mp = Configs::windowSettings->shortcuts->shortcuts;
   bool legacy = Configs::windowSettings->shortcuts->legacy;
   QList<QAction *> actions = findChildren<QAction *>();
@@ -4276,7 +3928,6 @@ void MainWindow::loadShortcuts() {
       action->setShortcut(seq);
     }
   }
->>>>>>> other-repo/main
   RegisterHiddenMenuShortcuts();
 }
 /*
@@ -4360,13 +4011,9 @@ JsUpdaterWindow *MainWindow::createJsUpdaterWindow() {
 #endif
 
 void MainWindow::HotkeyEvent(const QString &key) {
-<<<<<<< HEAD
-  qDebug() << "Hot Key Pressed" << key;
-=======
   #ifdef DEBUG_MODE
   qDebug() << "Hot Key Pressed" << key;
   #endif
->>>>>>> other-repo/main
   if (key.isEmpty())
     return;
   runOnUiThread([=, this] {
@@ -4732,14 +4379,9 @@ skip1:
     this->exit_reason = 1;
     this->archive_name = archive_name;
 
-<<<<<<< HEAD
-    qDebug() << "ARCHIVE PATH" << archive_name;
-
-=======
   #ifdef DEBUG_MODE
     qDebug() << "ARCHIVE PATH" << archive_name;
 #endif
->>>>>>> other-repo/main
     runOnNewThread([=, this] { on_menu_exit_triggered(); });
   }
 

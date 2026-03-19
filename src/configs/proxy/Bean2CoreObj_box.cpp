@@ -7,8 +7,6 @@
 namespace Configs {
     static QJsonObject getXbadoptionRange(const QJsonValue & value);
 
-<<<<<<< HEAD
-=======
     template<typename T>
     static void add_non_empty(T & obj, const QString & key, const QString & value){
         if (!value.isEmpty()){
@@ -16,7 +14,6 @@ namespace Configs {
         }
     }
 
->>>>>>> other-repo/main
     static QJsonObject getXmux(const QJsonValue & value){
         QJsonObject obj;
         for (auto [k, v]: asKeyValueRange(value.toObject().toVariantMap()) ){
@@ -88,23 +85,15 @@ namespace Configs {
 
     void V2rayStreamSettings::BuildStreamSettingsSingBox(QJsonObject *outbound) {
         // https://sing-box.sagernet.org/configuration/shared/v2ray-transport
-<<<<<<< HEAD
-
-=======
         QString type = outbound->value("type").toString();
         bool is_naive = type == "naive";
         if (is_naive) goto skip_network;
->>>>>>> other-repo/main
         if (network != "tcp") {
             QJsonObject transport{{"type", network}};
             if (network == "ws") {
                 // ws path & ed
                 auto pathWithoutEd = SubStrBefore(path, "?ed=");
-<<<<<<< HEAD
-                if (!pathWithoutEd.isEmpty()) transport["path"] = pathWithoutEd;
-=======
                 add_non_empty(transport, "path", pathWithoutEd);
->>>>>>> other-repo/main
                 if (pathWithoutEd != path) {
                     if (auto ed = SubStrAfter(path, "?ed=").toInt(); ed > 0) {
                         transport["max_early_data"] = ed;
@@ -116,26 +105,16 @@ namespace Configs {
                 if (!ok) {
                     MW_show_log("Warning: headers could not be parsed, they will not be used");
                 }
-<<<<<<< HEAD
-                if (!host.isEmpty()) headerMap["Host"] = host;
-=======
                 add_non_empty(headerMap, "Host", host);
->>>>>>> other-repo/main
                 transport["headers"] = QMapString2QJsonObject(headerMap);
                 if (ws_early_data_length > 0) {
                     transport["max_early_data"] = ws_early_data_length;
                     transport["early_data_header_name"] = ws_early_data_name;
                 }
             } else if (network == "http") {
-<<<<<<< HEAD
-                if (!path.isEmpty()) transport["path"] = path;
-                if (!host.isEmpty()) transport["host"] = QListStr2QJsonArray(host.split(","));
-                if (!method.isEmpty()) transport["method"] = method.toUpper();
-=======
                 add_non_empty(transport, "path", path);
                 add_non_empty(transport, "method", method.toUpper());
                 if (!host.isEmpty()) transport["host"] = QListStr2QJsonArray(host.split(","));
->>>>>>> other-repo/main
                 bool ok;
                 auto headerMap = GetHeaderPairs(&ok);
                 if (!ok) {
@@ -143,17 +122,10 @@ namespace Configs {
                 }
                 transport["headers"] = QMapString2QJsonObject(headerMap);
             } else if (network == "grpc") {
-<<<<<<< HEAD
-                if (!path.isEmpty()) transport["service_name"] = path;
-            } else if (network == "httpupgrade") {
-                if (!path.isEmpty()) transport["path"] = path;
-                if (!host.isEmpty()) transport["host"] = host;
-=======
                 add_non_empty(transport, "service_name", path);
             } else if (network == "httpupgrade") {
                 add_non_empty(transport, "path", path);
                 add_non_empty(transport, "host", host);
->>>>>>> other-repo/main
                 bool ok;
                 auto headerMap = GetHeaderPairs(&ok);
                 if (!ok) {
@@ -161,13 +133,8 @@ namespace Configs {
                 }
                 transport["headers"] = QMapString2QJsonObject(headerMap);
             } else if (network == "xhttp") {
-<<<<<<< HEAD
-                if (!path.isEmpty()) transport["path"] = path;
-                if (!host.isEmpty()) transport["host"] = host;
-=======
                 add_non_empty(transport, "path", path);
                 add_non_empty(transport, "host", host);
->>>>>>> other-repo/main
                 transport["mode"] = xhttp_mode;
                 parseExtraXhttp(transport, xhttp_extra);
             }
@@ -182,11 +149,7 @@ namespace Configs {
             };
             if (!network.trimmed().isEmpty()) outbound->insert("transport", transport);
         }
-<<<<<<< HEAD
-
-=======
         skip_network:
->>>>>>> other-repo/main
         // tls
         if (security == "tls") {
             QJsonObject tls{{"enabled", true}};
@@ -195,18 +158,6 @@ namespace Configs {
                     {"enabled", true},
                     {"config", QListStr2QJsonArray(ech_config.trimmed().split("\n"))}
                 };
-<<<<<<< HEAD
-                if (!query_server_name.isEmpty()){
-                    ech["query_server_name"] = query_server_name;
-                }
-                tls["ech"] = ech;
-            }
-            if (allow_insecure || Configs::dataStore->skip_cert) tls["insecure"] = true;
-            if (!sni.trimmed().isEmpty()) tls["server_name"] = sni;
-            if (!certificate.trimmed().isEmpty()) {
-                tls["certificate"] = certificate.trimmed();
-            }
-=======
                 add_non_empty(ech, "query_server_name", query_server_name);
                 tls["ech"] = ech;
             }
@@ -218,7 +169,6 @@ namespace Configs {
             if (is_naive){
                 return;
             }
->>>>>>> other-repo/main
             if (!alpn.trimmed().isEmpty()) {
                 tls["alpn"] = QListStr2QJsonArray(alpn.split(","));
             }
@@ -246,32 +196,19 @@ namespace Configs {
             outbound->insert("tls", tls);
         }
 
-<<<<<<< HEAD
-        if (outbound->value("type").toString() == "vmess" || outbound->value("type").toString() == "vless") {
-=======
         if (type == "vmess" || type == "vless") {
->>>>>>> other-repo/main
             outbound->insert("packet_encoding", packet_encoding);
         }
     }
 
-<<<<<<< HEAD
-    CoreObjOutboundBuildResult SocksHttpBean::BuildCoreObjSingBox() {
-=======
     CoreObjOutboundBuildResult SocksHttpBean::BuildCoreObjSingBox() const {
->>>>>>> other-repo/main
         CoreObjOutboundBuildResult result;
 
         QJsonObject outbound;
         outbound["type"] = socks_http_type == type_HTTP ? "http" : "socks";
         if (socks_http_type == type_Socks4) outbound["version"] = "4";
-<<<<<<< HEAD
-        outbound["server"] = serverAddress;
-        outbound["server_port"] = serverPort;
-=======
         outbound["server"] = entity->serverAddress;
         outbound["server_port"] = entity->serverPort;
->>>>>>> other-repo/main
 
         if (!username.isEmpty() && !password.isEmpty()) {
             outbound["username"] = username;
@@ -283,26 +220,6 @@ namespace Configs {
         return result;
     }
 
-<<<<<<< HEAD
-    CoreObjOutboundBuildResult ShadowSocksBean::BuildCoreObjSingBox() {
-        CoreObjOutboundBuildResult result;
-
-        QJsonObject outbound{{"type", "shadowsocks"}};
-        outbound["server"] = serverAddress;
-        outbound["server_port"] = serverPort;
-        outbound["method"] = method;
-        outbound["password"] = password;
-
-        if (uot != 0) {
-            QJsonObject udp_over_tcp{
-                {"enabled", true},
-                {"version", uot},
-            };
-            outbound["udp_over_tcp"] = udp_over_tcp;
-        } else {
-            outbound["udp_over_tcp"] = false;
-        }
-=======
 
     static QJsonValue udp_over_tcp_object(int version){
         QJsonValue val;
@@ -326,7 +243,6 @@ namespace Configs {
         outbound["method"] = method;
         outbound["password"] = password;
         outbound["udp_over_tcp"] = udp_over_tcp_object(uot);
->>>>>>> other-repo/main
 
         if (!plugin.trimmed().isEmpty()) {
             outbound["plugin"] = SubStrBefore(plugin, ";");
@@ -338,22 +254,13 @@ namespace Configs {
         return result;
     }
 
-<<<<<<< HEAD
-    CoreObjOutboundBuildResult AnyTLSBean::BuildCoreObjSingBox() {
-=======
     CoreObjOutboundBuildResult AnyTLSBean::BuildCoreObjSingBox() const {
->>>>>>> other-repo/main
         CoreObjOutboundBuildResult result;
 
         QJsonObject outbound{
             {"type", "anytls"},
-<<<<<<< HEAD
-            {"server", serverAddress},
-            {"server_port", serverPort},
-=======
             {"server", entity->serverAddress},
             {"server_port", entity->serverPort},
->>>>>>> other-repo/main
             {"password", password},
             {"idle_session_check_interval", idle_session_check_interval},
             {"idle_session_timeout", idle_session_timeout},
@@ -366,22 +273,13 @@ namespace Configs {
     }
 
 
-<<<<<<< HEAD
-    CoreObjOutboundBuildResult ShadowTLSBean::BuildCoreObjSingBox() {
-=======
     CoreObjOutboundBuildResult ShadowTLSBean::BuildCoreObjSingBox() const {
->>>>>>> other-repo/main
         CoreObjOutboundBuildResult result;
 
         QJsonObject outbound{
             {"type", "shadowtls"},
-<<<<<<< HEAD
-            {"server", serverAddress},
-            {"server_port", serverPort},
-=======
             {"server", entity->serverAddress},
             {"server_port", entity->serverPort},
->>>>>>> other-repo/main
             {"password", password},
             {"version", shadowtls_version},
         };
@@ -391,22 +289,13 @@ namespace Configs {
         return result;
     }
 
-<<<<<<< HEAD
-    CoreObjOutboundBuildResult VMessBean::BuildCoreObjSingBox() {
-=======
     CoreObjOutboundBuildResult VMessBean::BuildCoreObjSingBox() const {
->>>>>>> other-repo/main
         CoreObjOutboundBuildResult result;
 
         QJsonObject outbound{
             {"type", "vmess"},
-<<<<<<< HEAD
-            {"server", serverAddress},
-            {"server_port", serverPort},
-=======
             {"server", entity->serverAddress},
             {"server_port", entity->serverPort},
->>>>>>> other-repo/main
             {"uuid", uuid.trimmed()},
             {"alter_id", aid},
             {"security", security},
@@ -417,31 +306,17 @@ namespace Configs {
         return result;
     }
 
-<<<<<<< HEAD
-    CoreObjOutboundBuildResult TrojanVLESSBean::BuildCoreObjSingBox() {
-=======
     CoreObjOutboundBuildResult TrojanVLESSBean::BuildCoreObjSingBox() const {
->>>>>>> other-repo/main
         CoreObjOutboundBuildResult result;
 
         QJsonObject outbound{
             {"type", proxy_type == proxy_VLESS ? "vless" : "trojan"},
-<<<<<<< HEAD
-            {"server", serverAddress},
-            {"server_port", serverPort},
-        };
-
-        if (proxy_type == proxy_VLESS) {
-            if (flow.right(7) == "-udp443") {
-                // 检查末尾是否包含"-udp443"，如果是，则删去
-=======
             {"server", entity->serverAddress},
             {"server_port", entity->serverPort},
         };
         QString flow = this->flow;
         if (proxy_type == proxy_VLESS) {
             if (flow.right(7) == "-udp443") {
->>>>>>> other-repo/main
                 flow.chop(7);
             } else if (flow == "none") {
                 // 不使用 flow
@@ -458,11 +333,7 @@ namespace Configs {
         return result;
     }
 
-<<<<<<< HEAD
-    CoreObjOutboundBuildResult QUICBean::BuildCoreObjSingBox() {
-=======
     CoreObjOutboundBuildResult QUICBean::BuildCoreObjSingBox() const {
->>>>>>> other-repo/main
         CoreObjOutboundBuildResult result;
 
         QJsonObject coreTlsObj{
@@ -476,13 +347,8 @@ namespace Configs {
         if (proxy_type == proxy_Hysteria2) coreTlsObj["alpn"] = "h3";
 
         QJsonObject outbound{
-<<<<<<< HEAD
-            {"server", serverAddress},
-            {"server_port", serverPort},
-=======
             {"server", entity->serverAddress},
             {"server_port", entity->serverPort},
->>>>>>> other-repo/main
             {"tls", coreTlsObj},
         };
 
@@ -506,11 +372,7 @@ namespace Configs {
                     }
                 }
                 outbound["server_ports"] = QListStr2QJsonArray(modifiedPorts);
-<<<<<<< HEAD
-                if (!hop_interval.isEmpty()) outbound["hop_interval"] = hop_interval;
-=======
                 add_non_empty(outbound, "hop_interval", hop_interval);
->>>>>>> other-repo/main
             }
 
             if (authPayloadType == hysteria_auth_base64) outbound["auth"] = authPayload;
@@ -532,11 +394,7 @@ namespace Configs {
                     }
                 }
                 outbound["server_ports"] = QListStr2QJsonArray(modifiedPorts);
-<<<<<<< HEAD
-                if (!hop_interval.isEmpty()) outbound["hop_interval"] = hop_interval;
-=======
                 add_non_empty(outbound, "hop_interval", hop_interval);
->>>>>>> other-repo/main
             }
 
             if (!obfsPassword.isEmpty()) {
@@ -556,34 +414,21 @@ namespace Configs {
                 outbound["udp_relay_mode"] = udpRelayMode;
             }
             outbound["zero_rtt_handshake"] = zeroRttHandshake;
-<<<<<<< HEAD
-            if (!heartbeat.trimmed().isEmpty()) outbound["heartbeat"] = heartbeat;
-=======
             add_non_empty(outbound, "heartbeat", heartbeat.trimmed());
->>>>>>> other-repo/main
         }
 
         result.outbound = outbound;
         return result;
     }
 
-<<<<<<< HEAD
-    CoreObjOutboundBuildResult WireguardBean::BuildCoreObjSingBox() {
-=======
     CoreObjOutboundBuildResult WireguardBean::BuildCoreObjSingBox() const {
->>>>>>> other-repo/main
         CoreObjOutboundBuildResult result;
 
         auto tun_name = "nekobox-wg";
 
         QJsonObject peer{
-<<<<<<< HEAD
-            {"address", serverAddress},
-            {"port", serverPort},
-=======
             {"address", entity->serverAddress},
             {"port", entity->serverPort},
->>>>>>> other-repo/main
             {"public_key", publicKey},
             {"pre_shared_key", preSharedKey},
             {"reserved", QListInt2QJsonArray(reserved)},
@@ -617,11 +462,7 @@ namespace Configs {
         return result;
     }
 
-<<<<<<< HEAD
-    CoreObjOutboundBuildResult TailscaleBean::BuildCoreObjSingBox()
-=======
     CoreObjOutboundBuildResult TailscaleBean::BuildCoreObjSingBox() const
->>>>>>> other-repo/main
     {
         CoreObjOutboundBuildResult result;
         QJsonObject outbound{
@@ -642,28 +483,11 @@ namespace Configs {
         return result;
     }
 
-<<<<<<< HEAD
-    CoreObjOutboundBuildResult SSHBean::BuildCoreObjSingBox(){
-=======
     CoreObjOutboundBuildResult SSHBean::BuildCoreObjSingBox() const {
->>>>>>> other-repo/main
         CoreObjOutboundBuildResult result;
 
         QJsonObject outbound{
             {"type", "ssh"},
-<<<<<<< HEAD
-            {"server", serverAddress},
-            {"server_port", serverPort},
-            {"user", user},
-            {"password", password},
-        };
-        if (!privateKey.isEmpty()) outbound["private_key"] = privateKey;
-        if (!privateKeyPath.isEmpty()) outbound["private_key_path"] = privateKeyPath;
-        if (!privateKeyPass.isEmpty()) outbound["private_key_passphrase"] = privateKeyPass;
-        if (!hostKey.isEmpty()) outbound["host_key"] = QListStr2QJsonArray(hostKey);
-        if (!hostKeyAlgs.isEmpty()) outbound["host_key_algorithms"] = QListStr2QJsonArray(hostKeyAlgs);
-        if (!clientVersion.isEmpty()) outbound["client_version"] = clientVersion;
-=======
             {"server", entity->serverAddress},
             {"server_port", entity->serverPort},
             {"user", user},
@@ -675,17 +499,12 @@ namespace Configs {
         if (!hostKey.isEmpty()) outbound["host_key"] = QListStr2QJsonArray(hostKey);
         if (!hostKeyAlgs.isEmpty()) outbound["host_key_algorithms"] = QListStr2QJsonArray(hostKeyAlgs);
         add_non_empty(outbound, "client_version", clientVersion);
->>>>>>> other-repo/main
 
         result.outbound = outbound;
         return result;
     }
 
-<<<<<<< HEAD
-    CoreObjOutboundBuildResult CustomBean::BuildCoreObjSingBox() {
-=======
     CoreObjOutboundBuildResult CustomBean::BuildCoreObjSingBox() const {
->>>>>>> other-repo/main
         CoreObjOutboundBuildResult result;
 
         if (core == "internal") {
@@ -695,11 +514,7 @@ namespace Configs {
         return result;
     }
 
-<<<<<<< HEAD
-    CoreObjOutboundBuildResult ExtraCoreBean::BuildCoreObjSingBox()
-=======
     CoreObjOutboundBuildResult ExtraCoreBean::BuildCoreObjSingBox() const
->>>>>>> other-repo/main
     {
         CoreObjOutboundBuildResult result;
         QJsonObject outbound{
@@ -711,25 +526,11 @@ namespace Configs {
         return result;
     }
     
-<<<<<<< HEAD
-    CoreObjOutboundBuildResult MieruBean::BuildCoreObjSingBox()
-=======
     CoreObjOutboundBuildResult MieruBean::BuildCoreObjSingBox() const
->>>>>>> other-repo/main
     {
         CoreObjOutboundBuildResult result;
         QJsonObject outbound {
             {"type", "mieru"},
-<<<<<<< HEAD
-            {"server", this->serverAddress},
-            {"server_port", this->serverPort},
-            {"server_ports", QListStr2QJsonArray(this->serverPorts)},
-            {"transport", this->transport},
-            {"username", this->username},
-            {"password", this->password},
-            {"multiplexing", this->multiplexing},
-        };
-=======
             {"server", entity->serverAddress},
             {"server_port", entity->serverPort},
             {"server_ports", QListStr2QJsonArray(this->serverPorts)},
@@ -739,15 +540,11 @@ namespace Configs {
             {"multiplexing", *this->multiplexing},
         };
         add_non_empty(outbound, "traffic_pattern", traffic_pattern);
->>>>>>> other-repo/main
         result.outbound = outbound;
         return result;
     }
 
 
-<<<<<<< HEAD
-    CoreObjOutboundBuildResult TorBean::BuildCoreObjSingBox()
-=======
     CoreObjOutboundBuildResult NaiveBean::BuildCoreObjSingBox() const
     {
         CoreObjOutboundBuildResult result;
@@ -769,7 +566,6 @@ namespace Configs {
     }
 
     CoreObjOutboundBuildResult TorBean::BuildCoreObjSingBox() const
->>>>>>> other-repo/main
     {
         CoreObjOutboundBuildResult result;
         QString path = this->executable_path;

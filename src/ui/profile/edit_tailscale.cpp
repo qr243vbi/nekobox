@@ -16,11 +16,7 @@ void EditTailScale::onStart(std::shared_ptr<Configs::ProxyEntity> _ent) {
 
     ui->state_dir->setText(bean->state_directory);
     ui->auth_key->setText(bean->auth_key);
-<<<<<<< HEAD
-    ui->control_plane->setText(bean->control_url);
-=======
     ui->control_plane->setText(bean->entity->serverAddress);
->>>>>>> other-repo/main
     ui->ephemeral->setChecked(bean->ephemeral);
     ui->hostname->setText(bean->hostname);
     ui->accept_route->setChecked(bean->accept_routes);
@@ -32,19 +28,11 @@ void EditTailScale::onStart(std::shared_ptr<Configs::ProxyEntity> _ent) {
 }
 
 bool EditTailScale::onEnd() {
-<<<<<<< HEAD
-    auto bean = this->ent->TailscaleBean();
-
-    bean->state_directory = ui->state_dir->text();
-    bean->auth_key = ui->auth_key->text();
-    bean->control_url = ui->control_plane->text();
-=======
     auto bean = ent->unlock(ent->TailscaleBean());
 
     bean->state_directory = ui->state_dir->text();
     bean->auth_key = ui->auth_key->text();
     bean->entity->serverAddress = ui->control_plane->text();
->>>>>>> other-repo/main
     bean->ephemeral = ui->ephemeral->isChecked();
     bean->hostname = ui->hostname->text();
     bean->accept_routes = ui->accept_route->isChecked();

@@ -11,14 +11,11 @@ endfunction()
 
 nkr_add_compile_definitions(NKR_TIMESTAMP=\"${CURRENT_DATE_TIME}\")
 
-<<<<<<< HEAD
-=======
 # Check if the build type is Debug
 if(CMAKE_BUILD_TYPE STREQUAL "Debug")
     nkr_add_compile_definitions(DEBUG_MODE=\"console\")
 endif()
 
->>>>>>> other-repo/main
 if(NKR_VERSION STREQUAL "DYNAMIC")
     nkr_add_compile_definitions(NKR_DEFAULT_VERSION=\"${NKR_DEFAULT_VERSION}\")
 else()

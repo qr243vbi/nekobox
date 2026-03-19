@@ -129,11 +129,6 @@ struct CacheURLResult{
   2: bool exists;
 }
 
-<<<<<<< HEAD
-service LibcoreService {
-  CacheURLResult CacheHTTP(1: CacheURLRequest req),
-
-=======
 
 struct IPTestResp {
   1: string outbound_tag;
@@ -157,7 +152,6 @@ struct IPTestRequest {
 service LibcoreService {
   CacheURLResult CacheHTTP(1: CacheURLRequest req),
   QueryIPTestResponse IPTest(1: IPTestRequest req),
->>>>>>> other-repo/main
   ErrorResp Start(1: LoadConfigReq req),
   ErrorResp Stop(1: EmptyReq req),
   ErrorResp CheckConfig(1: LoadConfigReq req),

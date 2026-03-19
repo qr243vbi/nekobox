@@ -15,10 +15,7 @@
 #include <QInputDialog>
 #include <QMessageBox>
 #include <QTimer>
-<<<<<<< HEAD
-=======
 #include <qboxlayout.h>
->>>>>>> other-repo/main
 #include <qfontdatabase.h>
 #include "nekobox/sys/Settings.h"
 #include "nekobox/dataStore/ResourceEntity.hpp"
@@ -26,27 +23,17 @@
 
 #include "nekobox/ui/mainwindow_interface.h"
 
-<<<<<<< HEAD
-
-#if QT_VERSION >= QT_VERSION_CHECK(6, 6, 0)
-=======
 #include <QtGlobal> // For QT_VERSION_CHECK
 #if QT_VERSION >= QT_VERSION_CHECK(6, 9, 0)
->>>>>>> other-repo/main
 #define STATE_CHANGED &QCheckBox::checkStateChanged
 #else
 #define STATE_CHANGED &QCheckBox::stateChanged
 #endif
-<<<<<<< HEAD
-=======
 
->>>>>>> other-repo/main
 #include <QDir>
 
 #define settings Configs::windowSettings
 
-<<<<<<< HEAD
-=======
 int LanguageModel::rowCount(const QModelIndex &parent ) const {
     return languageList.size(); // The number of items in the list
 }
@@ -131,15 +118,12 @@ QVariant LanguageModel::data(const QModelIndex &index, int role ) const
 
 
 
->>>>>>> other-repo/main
 DialogBasicSettings::DialogBasicSettings(MainWindow *parent)
     : QDialog(parent), ui(new Ui::DialogBasicSettings) {
     CHECK_SETTINGS_ACCESS
     ui->setupUi(this);
     ADD_ASTERISK(this);
     this->parent = parent;
-<<<<<<< HEAD
-=======
     CACHE.language_code = Configs::windowSettings->language;
     
     for (auto lang : languageCodes()){
@@ -158,7 +142,6 @@ DialogBasicSettings::DialogBasicSettings(MainWindow *parent)
             ui->language_button->setText(pointer->name);
         }
     });    
->>>>>>> other-repo/main
 
     // Auto-testing
     D_LOAD_BOOL(auto_test_enable)
@@ -197,10 +180,7 @@ DialogBasicSettings::DialogBasicSettings(MainWindow *parent)
     D_LOAD_STRING(test_latency_url)
     D_LOAD_BOOL(disable_tray)
     S_LOAD_BOOL(auto_hide)
-<<<<<<< HEAD
-=======
             S_LOAD_BOOL(ask_delete)
->>>>>>> other-repo/main
     ui->set_text_under_menu_icons->setChecked(settings->text_under_buttons);
     connect(ui->set_text_under_menu_icons, STATE_CHANGED, this, [=,this]
     {
@@ -251,28 +231,7 @@ DialogBasicSettings::DialogBasicSettings(MainWindow *parent)
     D_LOAD_BOOL(start_minimal)
     S_LOAD_INT(max_log_line)
     //
-<<<<<<< HEAD
-    auto language = ui->language;
-    language->clear();
-    auto locale = getLocale();
-    auto & codes = languageCodes();
-    int index = -1;
-    for (auto u : codes){
-        language->addItem(u->name);
-        if (u->code == locale){
-            index = language->count() - 1;
-        }
-    } 
-    if (index >= 0){
-        language->setCurrentIndex(index);
-    }
-    //    language->setCurrentIndex(locales.indexOf(getLocale()));
-    connect(language, &QComboBox::currentIndexChanged, this, [=,this](int index) {
-        CACHE.needRestart = true;
-    });
-=======
 
->>>>>>> other-repo/main
     connect(ui->font, &QComboBox::currentTextChanged, this, [=,this](const QString &fontName) {
         auto font = qApp->font();
         font.setFamily(fontName);
@@ -296,14 +255,10 @@ DialogBasicSettings::DialogBasicSettings(MainWindow *parent)
     });
     //
     ui->theme->addItems(QStyleFactory::keys());
-<<<<<<< HEAD
-    ui->theme->addItem("QDarkStyle");
-=======
     ui->theme->addItem("Dark");
     ui->theme->addItem("AMOLED");
     ui->theme->addItem("Kawaii");
     ui->theme->addItem("Aqua");
->>>>>>> other-repo/main
     //
 //    bool ok;
     ui->theme->setCurrentText(settings->theme);
@@ -468,13 +423,6 @@ void DialogBasicSettings::accept() {
 
     D_SAVE_BOOL(connection_statistics);
     QString locale = "";
-<<<<<<< HEAD
-    int locale_index = ui->language->currentIndex();
-    if (locale_index >= 0){
-        locale = languageCodes()[locale_index]->code;
-    }
-=======
->>>>>>> other-repo/main
     D_SAVE_BOOL(start_minimal)
     S_SAVE_INT(max_log_line)
     #ifdef Q_OS_WIN
@@ -503,10 +451,7 @@ void DialogBasicSettings::accept() {
     D_SAVE_BOOL(sub_clear)
     D_SAVE_BOOL(net_insecure)
     S_SAVE_BOOL(auto_hide)
-<<<<<<< HEAD
-=======
             S_SAVE_BOOL(ask_delete)
->>>>>>> other-repo/main
     D_SAVE_BOOL(sub_send_hwid)
     D_SAVE_STRING(sub_custom_hwid_params)
     D_SAVE_BOOL(sub_rm_invalid)
@@ -534,13 +479,9 @@ void DialogBasicSettings::accept() {
  //   int width, height, X, Y;
     // Startup
     settings->language = locale;
-<<<<<<< HEAD
-    qDebug() << "Save language as: " << locale;
-=======
     #ifdef DEBUG_MODE
     qDebug() << "Save language as: " << locale;
     #endif
->>>>>>> other-repo/main
     S_SAVE_BOOL(save_geometry);
     S_SAVE_BOOL(save_position);
     S_SAVE_INT(width)
@@ -572,8 +513,6 @@ void DialogBasicSettings::accept() {
     if (need_save_manager){
         Configs::resourceManager->Save();
     }
-<<<<<<< HEAD
-=======
     
     // Language
     if (CACHE.language_code != Configs::windowSettings->language){
@@ -581,7 +520,6 @@ void DialogBasicSettings::accept() {
         settings->language = CACHE.language_code;
     }
 
->>>>>>> other-repo/main
     // Security
 
     D_SAVE_BOOL(skip_cert)

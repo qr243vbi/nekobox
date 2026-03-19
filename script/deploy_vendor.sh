@@ -1,7 +1,4 @@
-<<<<<<< HEAD
-=======
 shopt -s globstar
->>>>>>> other-repo/main
 source script/env_deploy.sh
 pushd "$SRC_ROOT"
 
@@ -36,16 +33,11 @@ echo "[General]" > global.ini
 echo "program_version=$INPUT_VERSION" >> global.ini
 echo "program_name=NekoBox" >> global.ini
 
-<<<<<<< HEAD
-git add -f srslist* global.ini core/server/{gen/{libcore_service-remote,main_sing,*.go},vendor} SingBox.Version
-
-=======
 rm -fv **/*.so
 rm -fv **/*.a
 rm -fv **/*.dll
 
 git add -f srslist* global.ini core/server/{gen/{libcore_service-remote,main_sing,*.go},vendor} SingBox.Version
->>>>>>> other-repo/main
 git -c user.name="a" -c user.email="my@email.org" commit -am "New Update"
 
 
@@ -53,12 +45,6 @@ if [[ ! -e "$DEPLOYMENT" ]]
 then
  mkdir "$DEPLOYMENT"
 fi
-<<<<<<< HEAD
-git ls-files --recurse-submodules | tar --transform="s,^,$archive_standalone/,S" -c --xz -f "$DEPLOYMENT/$archive_standalone.tar.xz" -T-
-sha256sum "$DEPLOYMENT/$archive_standalone.tar.xz" > "$DEPLOYMENT/$archive_standalone.tar.xz.sha256sum"
-
-git reset --soft HEAD^1
-=======
 
 (git ls-files | grep -v core/server/sing-box  ; (cd core/server/sing-box; git ls-files | sed 's@^@core/server/sing-box/@') ) | tar --transform="s,^,$archive_standalone/,S" -c --xz -f "$DEPLOYMENT/$archive_standalone.tar.xz" -T-
 sha256sum "$DEPLOYMENT/$archive_standalone.tar.xz" > "$DEPLOYMENT/$archive_standalone.tar.xz.sha256sum"
@@ -70,6 +56,5 @@ do
 git rm -rf "$i"
 rm -rf "$i"
 done
->>>>>>> other-repo/main
 
 popd

@@ -44,9 +44,6 @@ namespace Configs_ConfigItem {
         };
 
     std::shared_ptr<configItem> JsonStore::_get(const QString &name) {
-<<<<<<< HEAD
-        auto _map = this->_map();
-=======
         return std::static_pointer_cast<configItem>(this->_get_const_job(name));
     }
 
@@ -57,7 +54,6 @@ namespace Configs_ConfigItem {
     std::shared_ptr<configItem> JsonStore::_get_const_job(const QString &name) const {
         JsonStore * store = (JsonStore*) this;
         auto _map = store->_map();
->>>>>>> other-repo/main
         auto h = Configs::hash(name);
         if (_map.contains(h)) {
             auto ret =  _map.value(h);
@@ -68,16 +64,10 @@ namespace Configs_ConfigItem {
         return nullptr;
     }
 
-<<<<<<< HEAD
-    QJsonObject JsonStore::ToJson(const QStringList &without) {
-        QJsonObject object;
-        auto _map = this->_map();
-=======
     QJsonObject JsonStore::ToJson(const QStringList &without) const {
         QJsonObject object;
         JsonStore * store = (JsonStore*) this;
         auto _map = store->_map();
->>>>>>> other-repo/main
         for (const auto &_item: _map.values()) {
             auto item = _item.get();
             if (item == nullptr){
@@ -86,28 +76,16 @@ namespace Configs_ConfigItem {
             const QString & name = item->name;
             if (without.contains(name)) continue;
 
-<<<<<<< HEAD
-            object.insert(name, item->getNode(this));
-=======
             object.insert(name, item->getNode(store));
->>>>>>> other-repo/main
         }
         return object;
     }
 
-<<<<<<< HEAD
-    QByteArray JsonStore::ToJsonBytes(const QStringList &without) {
-        return QJsonObject2QString(ToJson(without), false).toUtf8();
-    }
-
-    void * configItem::getPtr(JsonStore * p) const {
-=======
     QByteArray JsonStore::ToJsonBytes(const QStringList &without) const {
         return QJsonObject2QString(ToJson(without), false).toUtf8();
     }
 
     void * configItem::getPtr(const JsonStore * p) const {
->>>>>>> other-repo/main
         return (void*)((size_t)p + ptr);
     }
 
@@ -115,18 +93,6 @@ namespace Configs_ConfigItem {
         auto  _map = this->_map();
         for (const auto &key: object.keys()) {
             auto h = Configs::hash(key);
-<<<<<<< HEAD
-            if (_map.count(h) == 0) {
-                continue;
-            }
-            auto value = object[key];
-            auto item = _map.value(h).get();
-
-            if (item == nullptr){
-                continue;
-            } 
-            if (item->name != key){
-=======
             QJsonValue value;
             if (_map.count(h) == 0) {
                 if (UnknownKeyHash(h) && ((value = object[key]).isObject())){
@@ -139,7 +105,6 @@ namespace Configs_ConfigItem {
             auto item = _map.value(h).get();
 
             if ((item == nullptr) || (item->name != key)){
->>>>>>> other-repo/main
                 continue;
             }
 
@@ -150,17 +115,10 @@ namespace Configs_ConfigItem {
         if (callback_after_load != nullptr) callback_after_load();
     }
 
-<<<<<<< HEAD
-    void JsonStore::_setValue(JsonStore * store, const void *p){
-        for (auto & item: store->_map()){
-            if (item->getPtr(store) == p){
-                this->_setValue(item->name, item->getNode(store));
-=======
     void JsonStore::_setValue(const JsonStore * store, const void *p){
         for (auto & item: ((JsonStore*)store)->_map()){
             if (item->getPtr(store) == p){
                 this->_setValue(item->name, item->getNode((JsonStore*)store));
->>>>>>> other-repo/main
             }
         }
     }
@@ -177,13 +135,9 @@ namespace Configs_ConfigItem {
         auto document = QJsonDocument::fromJson(data, &error);
 
         if (error.error != error.NoError) {
-<<<<<<< HEAD
-            qDebug() << "QJsonParseError" << error.errorString();
-=======
             #ifdef DEBUG_MODE
             qDebug() << "QJsonParseError" << error.errorString();
             #endif
->>>>>>> other-repo/main
             return;
         }
 
@@ -197,24 +151,9 @@ namespace Configs_ConfigItem {
         bool force_json_configs = Configs::ForceJsonConfigs;
 
         auto save_content = 
-<<<<<<< HEAD
-            (force_json_configs) ? this->ToJsonBytes() : this->ToBytes();//JsonValueToBytes(this->ToBin());
-        
-        QFile file;
-        file.setFileName(fn);
-        if (file.open(QIODevice::ReadWrite | QIODevice::Truncate)){
-            if (!force_json_configs) {
-                file.write("NekoBox");
-            }
-            file.write(save_content);
-        }
-        file.close();
-
-=======
             (force_json_configs) ? this->ToJsonBytes() : this->ToBytes({}, true);
         
         WriteFile(fn, save_content);
->>>>>>> other-repo/main
         return true;
     }
 
@@ -227,16 +166,10 @@ namespace Configs_ConfigItem {
 
         bool ok = file.open(QIODevice::ReadOnly);
         if (!ok) {
-<<<<<<< HEAD
-            if (load_control_must){
-                qDebug() << ("can not open config " + fn + "\n" + file.errorString());
-            }
-=======
             #ifdef DEBUG_MODE
     //        if (load_control_must){
                 qDebug() << ("can not open config " + fn + "\n" + file.errorString());
             #endif
->>>>>>> other-repo/main
         } else {
             auto last_save_content = file.read(7);
             if (last_save_content == "NekoBox"){
@@ -251,8 +184,6 @@ namespace Configs_ConfigItem {
         file.close();
         return ok;
     }
-<<<<<<< HEAD
-=======
     JsonEnum& JsonEnum::set(int value){
 #ifdef DEBUG_MODE
             qDebug() << "ENUM IS SETTING" << value;
@@ -337,7 +268,6 @@ namespace Configs_ConfigItem {
         static bool initialized = false;
         return m;
     }
->>>>>>> other-repo/main
 
 } // namespace Configs_ConfigItem
 
@@ -353,9 +283,6 @@ QByteArray hash = QCryptographicHash::hash(
   return hash;
 }
 
-<<<<<<< HEAD
-    bool ForceJsonConfigs = false;
-=======
     bool ForceJsonConfigs = 
     #ifdef DEBUG_MODE
     true
@@ -363,7 +290,6 @@ QByteArray hash = QCryptographicHash::hash(
     false
     #endif
     ;
->>>>>>> other-repo/main
 
     DataStore *dataStore = new DataStore();
 
@@ -519,40 +445,7 @@ QByteArray hash = QCryptographicHash::hash(
 
     #undef d_add
 
-<<<<<<< HEAD
-    Shortcuts::Shortcuts() : JsonStore()
-    {
-    }
-    
-    DECL_MAP(Shortcuts)
-        ADD_MAP("keyval", keyVal, stringList);
-    STOP_MAP
 
-    bool Shortcuts::Save()
-    {
-        keyVal.clear();
-        for (auto [k, v] : asKeyValueRange(shortcuts))
-        {
-            if (v.isEmpty()) continue;
-            keyVal << k << v.toString();
-        }
-
-        return JsonStore::Save();
-    }
-
-    bool Shortcuts::Load() {
-        auto ret = JsonStore::Load();
-        if (!ret) return false;
-        if (keyVal.count()%2 != 0) return false;
-        for (int i=0;i<keyVal.size();i+=2)
-        {
-            shortcuts[keyVal[i]] = QKeySequence(keyVal[i+1]);
-        }
-        return ret;
-    }
-=======
-
->>>>>>> other-repo/main
 
     QStringList Routing::List() {
         return {"Default"};
@@ -596,8 +489,5 @@ QByteArray hash = QCryptographicHash::hash(
     QString GetBasePath() {
         return QDir::currentPath();
     }
-<<<<<<< HEAD
-=======
 
->>>>>>> other-repo/main
 } // namespace Configs

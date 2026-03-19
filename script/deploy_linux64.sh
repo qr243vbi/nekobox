@@ -8,12 +8,6 @@ UNAME="${UNAME:-$(uname -m)}"
 if [[ "${UNAME}" == 'aarch64' || "${UNAME}" == 'arm64' ]]; then
   ARCH="arm64"
   ARCH1="aarch64"
-<<<<<<< HEAD
-else
-  ARCH="amd64"
-  ARCH1="x86_64"
-fi
-=======
 else if [[ "${UNAME}" == 'amd64' || "${UNAME}" == 'x86_64' ]]; then
   ARCH="amd64"
   ARCH1="x86_64"
@@ -27,7 +21,6 @@ else if [[ "${UNAME}" == 'arm' ]]; then
 fi; fi; fi; fi
 
 ARCH2="${ARCH2:-$ARCH1}"
->>>>>>> other-repo/main
 
 DEST="$DEPLOYMENT/linux-$ARCH"
 mkdir -p $DEST ||:
@@ -58,21 +51,6 @@ cp ./res/nekobox.ico "$DEST/nekobox.ico"
 
 ls "$DEST"
 
-<<<<<<< HEAD
-command -v linuxdeploy  && ln -s `which linuxdeploy` "linuxdeploy-$ARCH1.AppImage" ||:
-command -v linuxdeploy-plugin-qt  && ln -s `which linuxdeploy-plugin-qt` "linuxdeploy-plugin-qt-$ARCH1.AppImage" ||:
-if command -v appimagetool 
-then
-  ln -s `which appimagetool` appimagetool-$ARCH1.AppImage ||:
-  APPIMAGE_EXTRA_ARGS=()
-else
-  [[ -f runtime-${ARCH1} ]]  || wget -c https://github.com/AppImage/type2-runtime/releases/download/continuous/runtime-${ARCH1}  
-  APPIMAGE_EXTRA_ARGS=(--runtime-file "$CURDIR/runtime-${ARCH1}")
-fi
-
-[[ -x linuxdeploy-$ARCH1.AppImage ]] || wget -c https://github.com/linuxdeploy/linuxdeploy/releases/download/1-alpha-20250213-2/linuxdeploy-$ARCH1.AppImage
-[[ -x linuxdeploy-plugin-qt-$ARCH1.AppImage ]] || wget -c https://github.com/linuxdeploy/linuxdeploy-plugin-qt/releases/download/1-alpha-20250213-1/linuxdeploy-plugin-qt-$ARCH1.AppImage
-=======
 command -v linuxdeploy  && ln -s `which linuxdeploy` "linuxdeploy-$ARCH2.AppImage" ||:
 command -v linuxdeploy-plugin-qt  && ln -s `which linuxdeploy-plugin-qt` "linuxdeploy-plugin-qt-$ARCH2.AppImage" ||:
 if command -v appimagetool
@@ -88,38 +66,10 @@ fi
 
 [[ -x linuxdeploy-$ARCH2.AppImage ]] || wget -c https://github.com/linuxdeploy/linuxdeploy/releases/download/continuous/linuxdeploy-$ARCH2.AppImage
 [[ -x linuxdeploy-plugin-qt-$ARCH2.AppImage ]] || wget -c https://github.com/linuxdeploy/linuxdeploy-plugin-qt/releases/download/continuous/linuxdeploy-plugin-qt-$ARCH2.AppImage
->>>>>>> other-repo/main
 [[ -x appimagetool-${ARCH1}.AppImage ]] || wget -c https://github.com/AppImage/appimagetool/releases/download/continuous/appimagetool-${ARCH1}.AppImage
 chmod +x *.AppImage ||:
 
 export EXTRA_QT_PLUGINS="iconengines;wayland-shell-integration;wayland-decoration-client;"
-<<<<<<< HEAD
-export EXTRA_PLATFORM_PLUGINS="libqwayland.so;"
-"$CURDIR/linuxdeploy-$ARCH1.AppImage" --appdir $DEST --executable $DEST/nekobox --plugin qt
-
-cd $DEST
-rm -r ./usr/translations ||:
-rm -r ./usr/bin ||:
-rm -r ./usr/share ||:
-rm -r ./apprun-hooks ||:
-
-# fix plugins rpath
-rm -r ./usr/plugins ||:
-mkdir ./usr/plugins
-mkdir ./usr/plugins/platforms
-cp $QT_PLUGIN_PATH/platforms/libqxcb.so ./usr/plugins/platforms ||:
-cp $QT_PLUGIN_PATH/platforms/libqwayland.so ./usr/plugins/platforms ||:
-cp -r $QT_PLUGIN_PATH/platformthemes ./usr/plugins ||:
-cp -r $QT_PLUGIN_PATH/imageformats ./usr/plugins ||:
-cp -r $QT_PLUGIN_PATH/iconengines ./usr/plugins ||:
-cp -r $QT_PLUGIN_PATH/wayland-shell-integration ./usr/plugins ||:
-cp -r $QT_PLUGIN_PATH/wayland-decoration-client ./usr/plugins ||:
-cp -r $QT_PLUGIN_PATH/tls ./usr/plugins ||:
-patchelf --set-rpath '$ORIGIN/../../lib' ./usr/plugins/platforms/libqxcb.so ||:
-patchelf --set-rpath '$ORIGIN/../../lib' ./usr/plugins/platforms/libqwayland.so ||:
-patchelf --set-rpath '$ORIGIN/../../lib' ./usr/plugins/platformthemes/libqgtk3.so ||:
-patchelf --set-rpath '$ORIGIN/../../lib' ./usr/plugins/platformthemes/libqxdgdesktopportal.so ||:
-=======
 export QT_PLUGIN_PATH="${QT_PLUGIN_PATH:-$(qmake6 -query QT_INSTALL_PLUGINS)/platforms}"
 
 qmake6 -query QT_INSTALL_PLUGINS
@@ -158,7 +108,6 @@ rm -r ./apprun-hooks ||:
 #cp -r $QT_PLUGIN_PATH/tls ./usr/plugins ||:
 patchelf --set-rpath '$ORIGIN/../../lib' ./usr/plugins/platforms/*.so ||:
 patchelf --set-rpath '$ORIGIN/../../lib' ./usr/plugins/platformthemes/*.so ||:
->>>>>>> other-repo/main
 
 # fix extra libs...
 #mkdir ./usr/lib2
@@ -251,12 +200,3 @@ rmdir $DEST ||:
 
 popd
 
-<<<<<<< HEAD
-
-if [[ "${UPLOAD_WITH_GH}" == 'yes' ]]
-then
-  gh release upload "${INPUT_VERSION}" "${DEPLOYMENT}/${version_standalone}-${ARCH1}-linux.AppImage"
-  gh release upload "${INPUT_VERSION}" "${DEPLOYMENT}/${version_standalone}-linux-${ARCH}.tar.gz"
-fi
-=======
->>>>>>> other-repo/main

@@ -30,11 +30,7 @@ void EditSocksHttp::onStart(std::shared_ptr<Configs::ProxyEntity> _ent) {
 }
 
 bool EditSocksHttp::onEnd() {
-<<<<<<< HEAD
-    auto bean = this->ent->SocksHTTPBean();
-=======
     auto bean = ent->unlock(ent->SocksHTTPBean());
->>>>>>> other-repo/main
 
     if (ui->version->isVisible()) {
         if (ui->version->currentIndex() == 1) {
@@ -46,9 +42,5 @@ bool EditSocksHttp::onEnd() {
 
     bean->username = ui->username->text();
     bean->password = ui->password->text();
-<<<<<<< HEAD
-
-=======
->>>>>>> other-repo/main
     return true;
 }

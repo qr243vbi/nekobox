@@ -12,11 +12,7 @@ namespace Configs {
         int mapping_port = 0;
         int socks_port = 0;
 
-<<<<<<< HEAD
-        CustomBean() : AbstractBean(0) {
-=======
         CustomBean(Configs::ProxyEntity * entity) : AbstractBean(entity, 0) {
->>>>>>> other-repo/main
         }
         INIT_MAP
             ADD_MAP("core", core, string);
@@ -26,11 +22,7 @@ namespace Configs {
             ADD_MAP("mapping_port", mapping_port, integer);
             ADD_MAP("socks_port", socks_port, integer);
         STOP_MAP
-<<<<<<< HEAD
-
-=======
 /*
->>>>>>> other-repo/main
         QString DisplayType() override {
             if (core == "internal") {
                 auto type = QString2QJsonObject(config_simple)["type"].toString();
@@ -53,12 +45,6 @@ namespace Configs {
             }
             return AbstractBean::DisplayAddress();
         };
-<<<<<<< HEAD
-
-        CoreObjOutboundBuildResult BuildCoreObjSingBox() override;
-    };
-} // namespace Configs
-=======
 */
 #ifdef DEBUG_MODE
         virtual QString type()const override {
@@ -68,4 +54,3 @@ namespace Configs {
         CoreObjOutboundBuildResult BuildCoreObjSingBox() const override;
     };
 } // namespace Configs
->>>>>>> other-repo/main

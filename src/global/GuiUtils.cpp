@@ -19,10 +19,6 @@ int MessageBoxInfo(const QString &title, const QString &text) {
     return QMessageBox::information(GetMessageBoxParent(), title, text);
 }
 */
-<<<<<<< HEAD
-void ActivateWindow(QWidget *w) { ToggleWindow(w); }
-=======
->>>>>>> other-repo/main
 
 void ToggleWindow(QWidget *w) {
   if (w->isVisible() && !(w->windowState() & Qt::WindowMinimized)) {
@@ -169,8 +165,6 @@ std::map<Icon::TrayIconStatus, IndicatorRule> indicatorRuleMap = {
     {Icon::TrayIconStatus::SYSTEM_PROXY_DNS, {0.4, 0.04, 0.4, Qt::darkMagenta}},
     {Icon::TrayIconStatus::RUNNING, {0.4, 0.04, 0.4, Qt::darkGreen}}
 };
-<<<<<<< HEAD
-=======
 
 namespace Configs {
 Shortcuts::Shortcuts() : JsonStore()
@@ -197,4 +191,3 @@ DECL_MAP(ShortcutsOld)
 STOP_MAP
 
 }
->>>>>>> other-repo/main

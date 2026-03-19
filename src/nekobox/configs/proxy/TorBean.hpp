@@ -12,11 +12,7 @@ namespace Configs {
         QString data_directory;
         QVariantMap torrc;
 
-<<<<<<< HEAD
-        TorBean() : AbstractBean(0) {
-=======
         TorBean(Configs::ProxyEntity * entity) : AbstractBean(entity, 0) {
->>>>>>> other-repo/main
         }
         
         INIT_MAP
@@ -25,18 +21,6 @@ namespace Configs {
             ADD_MAP("data_directory", data_directory, string);
             ADD_MAP("torrc", torrc, stringMap);
         STOP_MAP
-<<<<<<< HEAD
-
-        QString DisplayType() override { return "Tor"; };
-
-        CoreObjOutboundBuildResult BuildCoreObjSingBox() override;
-
-        bool TryParseLink(const QString &link);
-
-        bool TryParseJson(const QJsonObject &obj);
-
-        QString ToShareLink() override;
-=======
 /*/
         QString DisplayType() override { return "Tor"; };
 */
@@ -52,6 +36,5 @@ namespace Configs {
             return "tor";
         };
         #endif
->>>>>>> other-repo/main
     };
 } // namespace Configs

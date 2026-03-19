@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-#include "nekobox/ui/setting/dialog_hotkey.h"
-
-#include <nekobox/global/GuiUtils.hpp>
-
-#include "nekobox/ui/mainwindow_interface.h"
-#include <nekobox/global/keyvaluerange.h>
-=======
 #include <nekobox/ui/setting/dialog_hotkey.h>
 
 #include <nekobox/global/GuiUtils.hpp>
@@ -13,7 +5,6 @@
 #include <nekobox/ui/mainwindow_interface.h>
 #include <nekobox/global/keyvaluerange.h>
 #include <nekobox/sys/Settings.h>
->>>>>>> other-repo/main
 #include <QAction>
 
 DialogHotkey::DialogHotkey(QWidget *parent, const QList<QAction*>& actions) : QDialog(parent), ui(new Ui::DialogHotkey) {
@@ -55,15 +46,9 @@ void DialogHotkey::accept()
 
     for (auto [kseq, actionID] : asKeyValueRange(seqEdit2ID))
     {
-<<<<<<< HEAD
-        Configs::dataStore->shortcuts->shortcuts[actionID] = kseq->keySequence();
-    }
-    Configs::dataStore->shortcuts->Save();
-=======
         Configs::windowSettings->shortcuts->shortcuts[actionID] = kseq->keySequence();
     }
     Configs::windowSettings->shortcuts->Save();
->>>>>>> other-repo/main
 
     Configs::dataStore->Save();
     MW_dialog_message(Dialog_DialogManageHotkeys, "UpdateShortcuts");

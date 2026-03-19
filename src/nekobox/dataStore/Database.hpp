@@ -12,11 +12,6 @@ namespace Configs {
 
     extern ProfileManager *profileManager;
 
-<<<<<<< HEAD
-    extern QMap<QString, QString> profileDisplayNames; 
-
-=======
->>>>>>> other-repo/main
     class ProfileManager : private JsonStore {
     public:
         // JsonStore
@@ -40,11 +35,6 @@ namespace Configs {
 
         [[nodiscard]] static QString GetDisplayType(const QString & type);
 
-<<<<<<< HEAD
-        [[nodiscard]] static std::shared_ptr<ProxyEntity> NewProxyEntity(const QString &type, bool nullok);
-
-=======
->>>>>>> other-repo/main
         [[nodiscard]] static std::shared_ptr<ProxyEntity> NewProxyEntity(const QString &type);
 
         [[nodiscard]] static std::shared_ptr<Group> NewGroup();
@@ -55,14 +45,11 @@ namespace Configs {
 
         bool AddProfileBatch(const QList<std::shared_ptr<ProxyEntity>> &ents, int gid = -1);
 
-<<<<<<< HEAD
-=======
         bool MoveProfile(int id, int gid);
 
         bool MoveProfileBatch(const QList<int>& ids, int gid);
         bool MoveProfileBatch(const QList<std::shared_ptr<ProxyEntity>>& ids, int gid);
 
->>>>>>> other-repo/main
         void DeleteProfile(int id);
 
         void BatchDeleteProfiles(const QList<int>& ids);
@@ -100,11 +87,7 @@ namespace Configs {
 
         [[nodiscard]] int NewRouteChainID() const;
 
-<<<<<<< HEAD
-        static std::shared_ptr<ProxyEntity> LoadProxyEntity(const QString &jsonPath);
-=======
         static std::shared_ptr<ProxyEntity> LoadProxyEntity(const QString &jsonPath, const QString &beanPath);
->>>>>>> other-repo/main
 
         static std::shared_ptr<Group> LoadGroup(const QString &jsonPath);
 

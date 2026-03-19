@@ -92,11 +92,7 @@ namespace Configs_sys {
 
             if (state == QProcess::NotRunning) {
                 Configs::dataStore->core_running = false;
-<<<<<<< HEAD
-                qDebug() << "Core stated changed to not running";
-=======
                 qWarning() << "Core stated changed to not running";
->>>>>>> other-repo/main
             }
 
             if (!Configs::dataStore->prepare_exit && state == QProcess::NotRunning) {
@@ -135,13 +131,9 @@ namespace Configs_sys {
 
         QString rulesets = QDir("rule_sets").absolutePath();
         list << "NEKOBOX_RULESET_CACHE_DIRECTORY=" + rulesets;
-<<<<<<< HEAD
-        qDebug() << rulesets;
-=======
         #ifdef DEBUG_MODE
         qDebug() << "RULESETS ARE IN " << rulesets;
         #endif
->>>>>>> other-repo/main
 
         list << "NEKOBOX_APPIMAGE_CUSTOM_EXECUTABLE=nekobox_core";
 

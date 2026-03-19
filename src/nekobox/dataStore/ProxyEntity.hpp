@@ -1,13 +1,5 @@
 #pragma once
 
-<<<<<<< HEAD
-#include "nekobox/dataStore/Configs.hpp"
-#include "nekobox/global/CountryHelper.hpp"
-#include "nekobox/stats/traffic/TrafficData.hpp"
-#include "nekobox/configs/proxy/AbstractBean.hpp"
-#include <QColor>
-#include "nekobox/configs/proxy/ExtraCore.h"
-=======
 #include "Utils.hpp"
 #include <nekobox/dataStore/Configs.hpp>
 #include <nekobox/global/CountryHelper.hpp>
@@ -16,7 +8,6 @@
 #include <QColor>
 #include <memory>
 #include <nekobox/configs/proxy/ExtraCore.h>
->>>>>>> other-repo/main
 
 namespace Configs {
     class SocksHttpBean;
@@ -48,22 +39,12 @@ namespace Configs {
     class CustomBean;
 
     class ChainBean;
-<<<<<<< HEAD
-=======
 
     class NaiveBean;
->>>>>>> other-repo/main
 }; // namespace Configs
 
 namespace Configs {
     class ProxyEntity : public JsonStore {
-<<<<<<< HEAD
-    public:
-        virtual ConfJsMap _map() override;
-
-        QString type;
-
-=======
     private:
         std::weak_ptr<Configs::AbstractBean> weak_bean;
         std::shared_ptr<Configs::AbstractBean> strong_bean;
@@ -80,26 +61,10 @@ namespace Configs {
         QString serverAddress = "127.0.0.1";
         int serverPort = 1080;
 
->>>>>>> other-repo/main
         int id = -1;
         int gid = 0;
         int latencyInt = 0;
         int latencyOrder = 0;
-<<<<<<< HEAD
-        QString dl_speed;
-        QString ul_speed;
-        QString test_country;
-        std::shared_ptr<Configs::AbstractBean> bean;
-        std::shared_ptr<Stats::TrafficData> traffic_data = std::make_shared<Stats::TrafficData>("");
-
-        QString full_test_report;
-
-        ProxyEntity(Configs::AbstractBean *bean, const QString &type_);
-
-        bool is_working = false;
-        qint64 last_auto_test_time = 0;
-
-=======
 
         bool is_working = false;
         QString bean_cfg;
@@ -140,78 +105,10 @@ namespace Configs {
 
         void ResetBeans();
 
->>>>>>> other-repo/main
         [[nodiscard]] QString DisplayTestResult() const;
 
    //     [[nodiscard]] QColor DisplayLatencyColor() const;
 
-<<<<<<< HEAD
-        [[nodiscard]] Configs::ChainBean *ChainBean() const {
-            return (Configs::ChainBean *) bean.get();
-        };
-
-        [[nodiscard]] Configs::SocksHttpBean *SocksHTTPBean() const {
-            return (Configs::SocksHttpBean *) bean.get();
-        };
-
-        [[nodiscard]] Configs::ShadowSocksBean *ShadowSocksBean() const {
-            return (Configs::ShadowSocksBean *) bean.get();
-        };
-
-        [[nodiscard]] Configs::VMessBean *VMessBean() const {
-            return (Configs::VMessBean *) bean.get();
-        };
-
-        [[nodiscard]] Configs::TrojanVLESSBean *TrojanVLESSBean() const {
-            return (Configs::TrojanVLESSBean *) bean.get();
-        };
-
-        [[nodiscard]] Configs::NaiveBean *NaiveBean() const {
-            return (Configs::NaiveBean *) bean.get();
-        };
-
-        [[nodiscard]] Configs::MieruBean *MieruBean() const {
-            return (Configs::MieruBean *) bean.get();
-        };
-
-        [[nodiscard]] Configs::QUICBean *QUICBean() const {
-            return (Configs::QUICBean *) bean.get();
-        };
-
-        [[nodiscard]] Configs::AnyTLSBean *AnyTLSBean() const {
-            return (Configs::AnyTLSBean *) bean.get();
-        };
-
-        [[nodiscard]] Configs::ShadowTLSBean *ShadowTLSBean() const {
-            return (Configs::ShadowTLSBean *) bean.get();
-        };
-
-        [[nodiscard]] Configs::WireguardBean *WireguardBean() const {
-            return (Configs::WireguardBean *) bean.get();
-        };
-
-        [[nodiscard]] Configs::TailscaleBean *TailscaleBean() const
-        {
-            return (Configs::TailscaleBean *) bean.get();
-        }
-
-        [[nodiscard]] Configs::SSHBean *SSHBean() const {
-            return (Configs::SSHBean *) bean.get();
-        };
-
-        [[nodiscard]] Configs::TorBean *TorBean() const {
-            return (Configs::TorBean *) bean.get();
-        };
-
-        [[nodiscard]] Configs::CustomBean *CustomBean() const {
-            return (Configs::CustomBean *) bean.get();
-        };
-
-        [[nodiscard]] Configs::ExtraCoreBean *ExtraCoreBean() const {
-            return (Configs::ExtraCoreBean *) bean.get();
-        };
-    };
-=======
         #define SocksHTTPBean SocksHttpBean
         #define cast_func(X)         \
         [[nodiscard]] std::shared_ptr<const Configs::X##Bean> X##Bean() const;
@@ -237,5 +134,4 @@ namespace Configs {
         #undef cast_func
     };
 
->>>>>>> other-repo/main
 } // namespace Configs

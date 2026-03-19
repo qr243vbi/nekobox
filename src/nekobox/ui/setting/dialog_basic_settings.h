@@ -7,8 +7,6 @@
 #include "nekobox/ui/mainwindow.h"
 
 
-<<<<<<< HEAD
-=======
 
 #include <QDialog>
 #include <QListView>
@@ -59,7 +57,6 @@ private:
 
 
 
->>>>>>> other-repo/main
 namespace Ui {
     class DialogBasicSettings;
 }
@@ -86,10 +83,7 @@ private:
     Ui::DialogBasicSettings *ui;
 
     struct {
-<<<<<<< HEAD
-=======
         QString language_code;
->>>>>>> other-repo/main
         QString custom_inbound;
         bool needRestart = false;
         bool updateDisableTray = false;

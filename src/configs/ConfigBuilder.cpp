@@ -152,11 +152,7 @@ namespace Configs {
         status->chainID = chainID;
 
         if (status->ent != nullptr){
-<<<<<<< HEAD
-            auto customBean = dynamic_cast<Configs::CustomBean *>(ent->bean.get());
-=======
             auto customBean = ent->CustomBean();
->>>>>>> other-repo/main
             if (customBean != nullptr && customBean->core == "internal-full") {
                 if (dataStore->spmode_vpn)
                 {
@@ -169,17 +165,11 @@ namespace Configs {
             }
 
         // apply custom config
-<<<<<<< HEAD
-            MergeJson(QString2QJsonObject(ent->bean->custom_config), result->coreConfig);
-        } else {
-            qDebug() << "Generating Block Network Config";
-=======
             MergeJson(QString2QJsonObject(customBean->custom_config), result->coreConfig);
         } else {
             #ifdef DEBUG_MODE
             qDebug() << "Generating Block Network Config";
             #endif
->>>>>>> other-repo/main
             BuildConfigSingBox(status);
         }
 
@@ -207,16 +197,6 @@ namespace Configs {
             return true;
         }
         QJsonObject conf;
-<<<<<<< HEAD
-        if (ent->type == "custom" && ent->CustomBean()->core == "internal-full")
-        {
-            conf = QString2QJsonObject(ent->CustomBean()->config_simple);
-        } else
-        {
-            auto out = ent->bean->BuildCoreObjSingBox();
-            auto outArr = QJsonArray{out.outbound};
-            auto key = ent->bean->IsEndpoint() ? "endpoints" : "outbounds";
-=======
         auto bean = ent->bean();
         if (auto custom = ent->CustomBean(); ent->type == "custom" && ent->CustomBean()->core == "internal-full")
         {
@@ -225,7 +205,6 @@ namespace Configs {
             auto out = bean->BuildCoreObjSingBox();
             auto outArr = QJsonArray{out.outbound};
             auto key = bean->IsEndpoint() ? "endpoints" : "outbounds";
->>>>>>> other-repo/main
             conf = {
             {key, outArr},
             };
@@ -239,11 +218,7 @@ namespace Configs {
         }
         if (resp.isEmpty()) return true;
         // else
-<<<<<<< HEAD
-        MW_show_log("Invalid ent " + ent->bean->name + ": " + resp);
-=======
         MW_show_log("Invalid ent " + ent->name + ": " + resp);
->>>>>>> other-repo/main
         return false;
     }
 
@@ -268,11 +243,7 @@ namespace Configs {
                 continue;
             }
             if (!IsValid(item)) {
-<<<<<<< HEAD
-                MW_show_log("Skipping invalid config: " + item->bean->name);
-=======
                 MW_show_log("Skipping invalid config: " + item->name);
->>>>>>> other-repo/main
                 item->latencyInt = -1;
                 continue;
             }
@@ -302,11 +273,7 @@ namespace Configs {
             // now we add the outbounds of the current config to the final one
             auto outbounds = res->coreConfig["outbounds"].toArray();
             if (outbounds.isEmpty()) {
-<<<<<<< HEAD
-                results->error = QString("outbounds is empty for %1").arg(item->bean->name);
-=======
                 results->error = QString("outbounds is empty for %1").arg(item->name);
->>>>>>> other-repo/main
                 return results;
             }
             auto endpoints = res->coreConfig["endpoints"].toArray();
@@ -457,15 +424,6 @@ namespace Configs {
 
             BuildOutbound(ent, status, outbound, tagOut);
 
-<<<<<<< HEAD
-            // apply custom outbound settings
-            MergeJson(QString2QJsonObject(ent->bean->custom_outbound), outbound);
-
-            // Bypass Lookup for the first profile
-            auto serverAddress = ent->bean->serverAddress;
-
-            if (auto customBean = dynamic_cast<Configs::CustomBean *>(ent->bean.get()); customBean != nullptr && customBean->core == "internal") {
-=======
             auto bean = ent->bean();
             // apply custom outbound settings
             MergeJson(QString2QJsonObject(bean->custom_outbound), outbound);
@@ -474,7 +432,6 @@ namespace Configs {
             auto serverAddress = ent->serverAddress;
 
             if (auto customBean = ent->CustomBean(); customBean != nullptr && customBean->core == "internal") {
->>>>>>> other-repo/main
                 auto server = QString2QJsonObject(customBean->config_simple)["server"].toString();
                 if (!server.isEmpty()) serverAddress = server;
             }
@@ -483,11 +440,7 @@ namespace Configs {
                 status->domainListDNSDirect += serverAddress;
             }
 
-<<<<<<< HEAD
-            if (ent->bean->IsEndpoint())
-=======
             if (bean->IsEndpoint())
->>>>>>> other-repo/main
             {
                 status->endpoints += outbound;
                 lastWasEndpoint = true;
@@ -502,10 +455,7 @@ namespace Configs {
     }
 
     void BuildOutbound(const std::shared_ptr<ProxyEntity> &ent, const std::shared_ptr<BuildConfigStatus> &status, QJsonObject& outbound, const QString& tag) {
-<<<<<<< HEAD
-=======
         auto bean = ent->bean();
->>>>>>> other-repo/main
         if (ent->type == "wireguard") {
             if (ent->WireguardBean()->useSystemInterface && !IsAdmin()) {
                 MW_dialog_message("configBuilder" ,"NeedAdmin");
@@ -514,11 +464,7 @@ namespace Configs {
             }
         }
 
-<<<<<<< HEAD
-        const auto coreR = ent->bean->BuildCoreObjSingBox();
-=======
         const auto coreR = bean->BuildCoreObjSingBox();
->>>>>>> other-repo/main
         if (coreR.outbound.isEmpty()) {
             status->result->error = "unsupported outbound";
             return;
@@ -539,26 +485,16 @@ namespace Configs {
         auto needMux = ent->type == "vmess" || ent->type == "trojan" || ent->type == "vless" || ent->type == "shadowsocks";
         needMux &= dataStore->mux_concurrency > 0;
 
-<<<<<<< HEAD
-        auto stream = GetStreamSettings(ent->bean.get());
-=======
         auto stream = GetStreamSettingsConst(bean.get());
->>>>>>> other-repo/main
         if (stream != nullptr) {
             if (stream->network == "grpc" || stream->network == "quic" || stream->network == "anytls" || (stream->network == "http" && stream->security == "tls")) {
                 needMux = false;
             }
         }
 
-<<<<<<< HEAD
-        auto mux_state = ent->bean->mux_state;
-        if (mux_state == 0) {
-            if (!dataStore->mux_default_on && !ent->bean->enable_brutal) needMux = false;
-=======
         auto mux_state = bean->mux_state;
         if (mux_state == 0) {
             if (!dataStore->mux_default_on && !bean->enable_brutal) needMux = false;
->>>>>>> other-repo/main
         } else if (mux_state == 1) {
             needMux = true;
         } else if (mux_state == 2) {
@@ -578,19 +514,11 @@ namespace Configs {
                 {"padding", dataStore->mux_padding},
                 {"max_streams", dataStore->mux_concurrency},
             };
-<<<<<<< HEAD
-            if (ent->bean->enable_brutal) {
-                auto brutalObj = QJsonObject{
-                    {"enabled", true},
-                    {"up_mbps", ent->bean->brutal_speed},
-                    {"down_mbps", ent->bean->brutal_speed},
-=======
             if (bean->enable_brutal) {
                 auto brutalObj = QJsonObject{
                     {"enabled", true},
                     {"up_mbps", bean->brutal_speed},
                     {"down_mbps", bean->brutal_speed},
->>>>>>> other-repo/main
                 };
                 muxObj["max_connections"] = 1;
                 muxObj["brutal"] = brutalObj;
@@ -966,13 +894,8 @@ namespace Configs {
                 outboundMap[item] = tag;
 
                 // add to dns direct resolve
-<<<<<<< HEAD
-                if (!IsIpAddress(neededEnt->bean->serverAddress)) {
-                    directDomains << neededEnt->bean->serverAddress;
-=======
                 if (!IsIpAddress(neededEnt->serverAddress)) {
                     directDomains << neededEnt->serverAddress;
->>>>>>> other-repo/main
                     needDirectDnsRules = true;
                 }
             }
@@ -1008,10 +931,6 @@ namespace Configs {
             }
             if (dataStore->adblock_enable && !blockAll) {
                 QString item = "nekobox-adblocksingbox";
-<<<<<<< HEAD
-                qDebug() << item;
-=======
->>>>>>> other-repo/main
                 auto json_object = get_rule_set_json(item);
                 if (!json_object.isEmpty()){
                     ruleSetArray += json_object;

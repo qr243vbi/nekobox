@@ -3,10 +3,7 @@ package main
 import (
 	"bytes"
 	"context"
-<<<<<<< HEAD
-=======
 	"encoding/json"
->>>>>>> other-repo/main
 	"errors"
 	"fmt"
 	"io"
@@ -111,12 +108,8 @@ func (c *CountryTestResults) Results() []*SpeedTestResult {
 	return cp
 }
 
-<<<<<<< HEAD
-func BatchURLTest(ctx context.Context, i *boxbox.Box, outboundTags []string, url string, maxConcurrency int, twice bool, timeout time.Duration) []*URLTestResult {
-=======
 func BatchURLTest(ctx context.Context, i *boxbox.Box, outboundTags []string, url string,
 	maxConcurrency int, twice bool, timeout time.Duration) []*URLTestResult {
->>>>>>> other-repo/main
 	if timeout <= 0 {
 		timeout = URLTestTimeout
 	}
@@ -421,8 +414,6 @@ func speedTestWithDialer(ctx context.Context, dialer func(ctx context.Context, n
 		}
 	}
 }
-<<<<<<< HEAD
-=======
 
 type IPInfo struct {
 	IP          string `json:"ip"`
@@ -541,4 +532,3 @@ func ipTest(ctx context.Context, client *http.Client) (IPInfo, error) {
 	}
 	return res, nil
 }
->>>>>>> other-repo/main

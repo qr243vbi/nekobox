@@ -4,12 +4,6 @@
 #include <QPalette>
 
 #include "nekobox/ui/setting/ThemeManager.hpp"
-<<<<<<< HEAD
-
-ThemeManager *themeManager = new ThemeManager;
-
-extern QString ReadFileText(const QString &path);
-=======
 #include "nekobox/dataStore/Utils.hpp"
 
 ThemeManager *themeManager = new ThemeManager;
@@ -23,7 +17,6 @@ QMap<QString, QString> & ThemeManager::getThemes(){
     }
     return map;
 }
->>>>>>> other-repo/main
 
 void ThemeManager::ApplyTheme(const QString &theme, bool force) {
     if (this->system_style_name.isEmpty()) {
@@ -38,10 +31,6 @@ void ThemeManager::ApplyTheme(const QString &theme, bool force) {
     if (lowerTheme == "system") {
         qApp->setStyleSheet("");
         qApp->setStyle(system_style_name);
-<<<<<<< HEAD
-    } else if (lowerTheme == "qdarkstyle") {
-        QFile f(":qdarkstyle/dark/darkstyle.qss");
-=======
     } else {
         QString path;
         {
@@ -65,20 +54,12 @@ void ThemeManager::ApplyTheme(const QString &theme, bool force) {
             }
         }
         QFile f(path);
->>>>>>> other-repo/main
         if (f.open(QFile::ReadOnly | QFile::Text)){
             QTextStream ts(&f);
             qApp->setStyleSheet(ts.readAll());
         }
-<<<<<<< HEAD
-    } else {
-        qApp->setStyleSheet("");
-        qApp->setStyle(theme);
-    }
-=======
     }
     skip_set_style:
->>>>>>> other-repo/main
 
     current_theme = theme;
 

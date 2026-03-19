@@ -8,10 +8,7 @@
 #include <thrift/protocol/TBinaryProtocol.h>             
 #include <thrift/server/TSimpleServer.h>
 #include <thrift/transport/TSocket.h>                    
-<<<<<<< HEAD
-=======
 #include <thrift/transport/TPipe.h>                    
->>>>>>> other-repo/main
 #include <thrift/transport/TBufferTransports.h>          
 #include <thrift/transport/TTransportUtils.h>
 #include <gen-cpp/LibcoreService.h>
@@ -45,12 +42,6 @@ if (!Configs::dataStore->core_running) {                                        
 } else {    \
 }
 
-<<<<<<< HEAD
-
-
-#define CHANNEL(X, VAL)                                                                 \
-std::shared_ptr<TTransport> socketAA(new TSocket(domain, port));                     \
-=======
 static std::shared_ptr<TTransport> getThriftTransport(const std::string & domain, int port){
     if (port > 0){
         return std::shared_ptr<TTransport> (new TSocket(domain, port));
@@ -61,7 +52,6 @@ static std::shared_ptr<TTransport> getThriftTransport(const std::string & domain
 
 #define CHANNEL(X, VAL)                                                                 \
 std::shared_ptr<TTransport> socketAA(getThriftTransport(domain, port));                     \
->>>>>>> other-repo/main
 std::shared_ptr<TTransport> transportAA(new TBufferedTransport(socketAA));                  \
 std::shared_ptr<TProtocol> protocolAA(new TBinaryProtocol(transportAA));                    \
 libcore::LibcoreServiceClient client(protocolAA);                                         \

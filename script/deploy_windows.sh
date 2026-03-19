@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-#!/bin/bash
-=======
 #!/bin/bash -x
->>>>>>> other-repo/main
 set -e
 
 source script/env_deploy.sh
@@ -59,9 +55,6 @@ fi
 cp srslist.json "$DEST/srslist.json"
 
 #### copy exe ####
-<<<<<<< HEAD
-cp "$BUILD/nekobox.exe" "$DEST" || cp "$BUILD/Release/nekobox.exe" "$DEST"
-=======
 rel="$BUILD"
 if [[ -f "$BUILD/Release/nekobox.exe" ]]
 then
@@ -70,7 +63,6 @@ fi
 
 cp "$rel/nekobox.exe" "$DEST"
 cp "$rel/"*.dll  "$DEST"
->>>>>>> other-repo/main
 [[ -f "$BUILD/nekobox_core.exe" ]] && cp "$BUILD/nekobox_core.exe" "$DEST" 
 [[ -f "$BUILD/updater.exe" ]] && cp "$BUILD/updater.exe" "$DEST"
 

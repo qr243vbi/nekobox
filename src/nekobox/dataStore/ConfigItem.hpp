@@ -3,10 +3,7 @@
 #include <QString>
 #include <QJsonObject>
 #include <functional>
-<<<<<<< HEAD
-=======
 #include <boost/bimap.hpp>
->>>>>>> other-repo/main
 
 namespace Configs_ConfigItem{
     struct configItem;
@@ -19,22 +16,6 @@ typedef ConfJsMapStat & ConfJsMap;
 //}
 
 namespace Configs_ConfigItem {
-<<<<<<< HEAD
-    // config
-/*
-    enum itemType {
-        type_string,
-        type_integer,
-        type_integer64,
-        type_boolean,
-        type_stringList,
-        type_integerList,
-        type_jsonStore,
-        type_jsonStoreList,
-        type_stringMap
-    };
-*/ 
-=======
 
 class JsonEnum{
 public:
@@ -55,7 +36,6 @@ public:
     }
     int value;
 };
->>>>>>> other-repo/main
 
     class JsonStore;
 
@@ -79,11 +59,7 @@ public:
         virtual unsigned short type() = 0;
         size_t ptr;
         QString name;
-<<<<<<< HEAD
-        virtual void * getPtr(JsonStore * store) const;
-=======
         virtual void * getPtr(const JsonStore * store) const;
->>>>>>> other-repo/main
     };
 
     struct Bin{
@@ -124,12 +100,8 @@ inline QDataStream &operator>>(QDataStream &in, Bin &p) {
         type_strMap = 8,
         type_boolPtr = 9,
         type_jsonShared = 10,
-<<<<<<< HEAD
-        type_double = 11
-=======
         type_double = 11,
         type_enum = 12
->>>>>>> other-repo/main
     };
 
     PTR_ITEM(int)
@@ -144,17 +116,12 @@ inline QDataStream &operator>>(QDataStream &in, Bin &p) {
     PTR_ITEM(boolPtr)
     PTR_ITEM(jsonShared)
     PTR_ITEM(double)
-<<<<<<< HEAD
-
-    class JsonStore {
-=======
     PTR_ITEM(enum)
 
     class JsonStore {
     private:
 
         std::shared_ptr<configItem> _get_const_job(const QString &name) const;
->>>>>>> other-repo/main
     public:
         virtual ~JsonStore() = default;
    //     QMap<QString, std::shared_ptr<configItem>> _map;
@@ -170,10 +137,7 @@ inline QDataStream &operator>>(QDataStream &in, Bin &p) {
         void _put(ConfJsMap _map, const QString& str, QList<int> *);
         void _put(ConfJsMap _map, const QString& str, JsonStore **);
         void _put(ConfJsMap _map, const QString& str, std::shared_ptr<JsonStore>*);
-<<<<<<< HEAD
-=======
         void _put(ConfJsMap _map, const QString& str, std::shared_ptr<JsonEnum>*);
->>>>>>> other-repo/main
         void _put(ConfJsMap _map, const QString& str, QVariantMap *);
         void _put(ConfJsMap _map, const QString& str, QJsonStoreListBase *);
         void _put(ConfJsMap _map, const QString& str, bool **);
@@ -182,13 +146,6 @@ inline QDataStream &operator>>(QDataStream &in, Bin &p) {
         void _put(ConfJsMap _map, const QString& str, T ** type){
             _put(_map, str, (JsonStore **) type);
         }
-<<<<<<< HEAD
-        template<typename T, typename = typename std::enable_if<std::is_base_of<JsonStore, T>::value>::type>
-        void _put(ConfJsMap _map, const QString& str, std::shared_ptr<T>* type){
-            _put(_map, str, (std::shared_ptr<JsonStore>*) type);
-        }
-
-=======
 
         template<typename T>
         requires (std::derived_from<T, JsonStore> || std::derived_from<T, JsonEnum>)
@@ -213,18 +170,13 @@ inline QDataStream &operator>>(QDataStream &in, Bin &p) {
             _put(map, str, &base);
         }
 */
->>>>>>> other-repo/main
         virtual ConfJsMap _map() = 0;
 
         std::function<void()> callback_after_load = nullptr;
         std::function<void()> callback_before_save = nullptr;
 
         QString fn;
-<<<<<<< HEAD
-        bool load_control_must = false; 
-=======
  //       bool load_control_must = false; 
->>>>>>> other-repo/main
         bool save_control_no_save = false;
 
         JsonStore() = default;
@@ -234,27 +186,16 @@ inline QDataStream &operator>>(QDataStream &in, Bin &p) {
         }
 
         void _setValue(const QString &name, const QJsonValue &p);
-<<<<<<< HEAD
-        void _setValue(JsonStore * store, const void *p);
-=======
         void _setValue(const JsonStore * store, const void *p);
->>>>>>> other-repo/main
 
         QString _name(void *p);
 
         std::shared_ptr<configItem> _get(const QString &name);
-<<<<<<< HEAD
-
-        QJsonObject ToJson(const QStringList &without = {});
-
-        QByteArray ToJsonBytes(const QStringList &without = {});
-=======
         std::shared_ptr<const configItem> _get_const(const QString &name) const;
 
         QJsonObject ToJson(const QStringList &without = {}) const;
 
         QByteArray ToJsonBytes(const QStringList &without = {}) const;
->>>>>>> other-repo/main
 
         void FromJson(QJsonObject object);
 
@@ -262,20 +203,13 @@ inline QDataStream &operator>>(QDataStream &in, Bin &p) {
 
         void FromBytes(const QByteArray &data);
 
-<<<<<<< HEAD
-        QByteArray ToBytes(const QStringList &without = {});
-=======
         QByteArray ToBytes(const QStringList &without = {}, bool header = false) const;
->>>>>>> other-repo/main
         
         virtual bool Save();
 
         virtual bool Load();
-<<<<<<< HEAD
-=======
 
         virtual bool UnknownKeyHash(const QByteArray &data);
->>>>>>> other-repo/main
         
     };
 

@@ -46,20 +46,12 @@ DialogEditGroup::DialogEditGroup(const std::shared_ptr<Configs::Group> &ent, QWi
     std::function<void(bool)> copy_click = [id=ent->id, this] (bool neko){
         QStringList links;
         for (const auto &[_, profile]: Configs::profileManager->profiles) {
-<<<<<<< HEAD
-            if (profile->gid != id) continue;
-            if (neko){
-                links += profile->bean->ToNekorayShareLink(profile->type);
-            } else {
-                links += profile->bean->ToShareLink();
-=======
             auto bean = profile->bean();
             if (profile->gid != id) continue;
             if (neko){
                 links += bean->ToNekorayShareLink(profile->type);
             } else {
                 links += bean->ToShareLink();
->>>>>>> other-repo/main
             }
         }
         QApplication::clipboard()->setText(links.join("\n"));
@@ -177,22 +169,14 @@ public:
             if (column < 3 && column >= 0){
                 int profile_id = profiles.at(row);
                 auto & bean = 
-<<<<<<< HEAD
-                    Configs::profileManager->profiles.at(profile_id)->bean;
-=======
                     Configs::profileManager->profiles.at(profile_id);
->>>>>>> other-repo/main
                 switch(column){
                     case 0:
                     return bean->DisplayType();
                     case 1:
                     return bean->DisplayAddress();
                     case 2:
-<<<<<<< HEAD
-                    return bean->name;
-=======
                     return bean->DisplayName();
->>>>>>> other-repo/main
                 }
             }
         }
@@ -466,11 +450,7 @@ QString DialogEditGroup::get_proxy_name(int id, bool is_for_routeprofile ) {
         return QCoreApplication::translate(
         "DialogGroupChooseProxy", "None");
     } else {
-<<<<<<< HEAD
-        QString str = profile->bean->name;
-=======
         QString str = profile->name;
->>>>>>> other-repo/main
         if (str.isEmpty()){
             return QString("ID: ")+ QString::number(id);
         } else {

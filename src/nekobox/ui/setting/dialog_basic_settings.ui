@@ -518,15 +518,11 @@
              </widget>
             </item>
             <item row="1" column="1">
-<<<<<<< HEAD
-             <widget class="QComboBox" name="language"/>
-=======
              <widget class="QPushButton" name="language_button">
               <property name="text">
                <string>System</string>
               </property>
              </widget>
->>>>>>> other-repo/main
             </item>
            </layout>
           </widget>
@@ -854,29 +850,17 @@
               </property>
               <item>
                <property name="text">
-<<<<<<< HEAD
-                <string>5m</string>
-=======
                 <string notr="true">5m</string>
->>>>>>> other-repo/main
                </property>
               </item>
               <item>
                <property name="text">
-<<<<<<< HEAD
-                <string>10m</string>
-=======
                 <string notr="true">10m</string>
->>>>>>> other-repo/main
                </property>
               </item>
               <item>
                <property name="text">
-<<<<<<< HEAD
-                <string>30m</string>
-=======
                 <string notr="true">30m</string>
->>>>>>> other-repo/main
                </property>
               </item>
              </widget>
@@ -894,16 +878,6 @@
       </attribute>
       <layout class="QVBoxLayout" name="verticalLayout_4">
        <item>
-<<<<<<< HEAD
-        <widget class="QCheckBox" name="disable_privilege_req">
-         <property name="text">
-          <string>Disable Privilege request</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-=======
->>>>>>> other-repo/main
         <widget class="QCheckBox" name="use_mozilla_certs">
          <property name="text">
           <string>Use Mozilla Certificate Store</string>
@@ -918,8 +892,6 @@
         </widget>
        </item>
        <item>
-<<<<<<< HEAD
-=======
         <widget class="QGroupBox" name="groupBox_12">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
@@ -964,7 +936,6 @@
         </widget>
        </item>
        <item>
->>>>>>> other-repo/main
         <widget class="QGroupBox" name="horizontalGroupBox2">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
@@ -979,8 +950,6 @@
           <property name="spacing">
            <number>25</number>
           </property>
-<<<<<<< HEAD
-=======
           <property name="leftMargin">
            <number>0</number>
           </property>
@@ -993,7 +962,6 @@
           <property name="bottomMargin">
            <number>0</number>
           </property>
->>>>>>> other-repo/main
           <item>
            <widget class="QLabel" name="label_18">
             <property name="sizePolicy">
@@ -1024,22 +992,6 @@
         </widget>
        </item>
        <item>
-<<<<<<< HEAD
-        <widget class="QCheckBox" name="windows_no_admin">
-         <property name="toolTip">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Do not attempt to start as Admin unless explicitly requested&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-         </property>
-         <property name="text">
-          <string>Always Start as Standard User</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QCheckBox" name="force_json_configs">
-         <property name="text">
-          <string>Use Json instead binary for configs</string>
-         </property>
-=======
         <widget class="QGroupBox" name="groupBox_13">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
@@ -1078,7 +1030,6 @@
            </widget>
           </item>
          </layout>
->>>>>>> other-repo/main
         </widget>
        </item>
       </layout>

@@ -1,57 +1,18 @@
-<<<<<<< HEAD
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-=======
 <?xml version='1.0' encoding='UTF-8'?>
->>>>>>> other-repo/main
 <TS version="2.1" language="hy_AM">
 <context>
     <name>ConfirmForm</name>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="14"/>
-        <source>Dialog</source>
-        <translation type="unfinished">Երկխոսություն</translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="20"/>
-=======
         <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="14" />
         <source>Dialog</source>
         <translation type="unfinished" />
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="20" />
->>>>>>> other-repo/main
         <source>Username</source>
         <translation type="unfinished">Օգտվողի անունը</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="37"/>
-        <source>Password</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="78"/>
-        <source>Remember</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="105"/>
-        <source>seconds</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="110"/>
-        <source>minutes</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="115"/>
-        <source>hours</source>
-        <translation type="unfinished"></translation>
-=======
         <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="37" />
         <source>Password</source>
         <translation type="unfinished">Գաղտնաբառ</translation>
@@ -75,57 +36,25 @@
         <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="115" />
         <source>hours</source>
         <translation type="unfinished">ժամեր</translation>
->>>>>>> other-repo/main
     </message>
 </context>
 <context>
     <name>Dialog</name>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/setting/resource_manager.ui" line="14"/>
-        <source>Dialog</source>
-        <translation type="unfinished">Երկխոսություն</translation>
-=======
         <location filename="../../src/nekobox/ui/setting/resource_manager.ui" line="14" />
         <source>Dialog</source>
         <translation type="unfinished" />
->>>>>>> other-repo/main
     </message>
 </context>
 <context>
     <name>DialogBasicSettings</name>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="20"/>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="52"/>
-=======
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="20" />
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="52" />
->>>>>>> other-repo/main
         <source>Basic Settings</source>
         <translation type="unfinished">Հիմնական կարգավորումներ</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="46"/>
-        <source>Common</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="98"/>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Socks
-                                                                + HTTP Proxy&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
-                                                            </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="103"/>
-        <source>Listen Port</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="110"/>
-=======
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="46" />
         <source>Common</source>
         <translation type="unfinished">Ընդհանուր</translation>
@@ -145,185 +74,10 @@
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="110" />
->>>>>>> other-repo/main
         <source>Edit</source>
         <translation type="unfinished">Խմբագրել</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="117"/>
-        <source>Custom Inbound</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="127"/>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Selects a random available port on every run&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="130"/>
-        <source>Random port</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="137"/>
-        <source>Proxy Format</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="144"/>
-        <source>Listen Address</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="164"/>
-        <source>Network Settings</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="185"/>
-        <source>Use proxy when activated</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="192"/>
-        <source>URL Test after profile start</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="199"/>
-        <source>Request update at startup</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="206"/>
-        <source>Ignore TLS errors</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="216"/>
-        <source>Test Settings</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="243"/>
-        <source>Simple Download URL</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="251"/>
-        <source>Download + Upload</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="256"/>
-        <source>Only Download</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="261"/>
-        <source>Only Upload</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="266"/>
-        <source>Simple Download</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="271"/>
-        <source>Only Country</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="279"/>
-        <source>Latency Test URL</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="286"/>
-        <source>Speedtest mode</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="293"/>
-        <source>Concurrent</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="300"/>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;timeout in milliseconds&lt;br/&gt;applies to all tests individually&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="303"/>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="316"/>
-        <source>Timeout</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="313"/>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Timeout for URLtest in ms&lt;br/&gt;Note that muxed connections take a much longer time for their initial request, and setting this value too low will cause the test to falsely report that the config is not working&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="360"/>
-        <source>Style</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="371"/>
-        <source>Font</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="381"/>
-        <source>Font Size</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="397"/>
-        <source>Connection statistics</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="410"/>
-        <source>Hide dashboard at startup</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="417"/>
-        <source>Show System DNS option</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="434"/>
-        <source>Disable tray</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="441"/>
-        <source>Set text under menu icons</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="448"/>
-        <source>Hide at startup</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="461"/>
-        <source>Max log lines</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="494"/>
-        <source>Theme</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="502"/>
-=======
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="117" />
         <source>Custom Inbound</source>
         <translation type="unfinished">Պատվերով ներգնա</translation>
@@ -497,29 +251,10 @@
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="502" />
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="523" />
->>>>>>> other-repo/main
         <source>System</source>
         <translation type="unfinished">Համակարգ</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="516"/>
-        <source>Language</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="532"/>
-        <source>Icon</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="539"/>
-        <source>Emoji Font</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="552"/>
-=======
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="516" />
         <source>Language</source>
         <translation type="unfinished">Լեզու</translation>
@@ -536,25 +271,10 @@
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="556" />
->>>>>>> other-repo/main
         <source>Subscription</source>
         <translation type="unfinished">Բաժանորդագրություն</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="558"/>
-        <source>Clear servers before update</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="565"/>
-        <source>URL Test after update</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="580"/>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="800"/>
-=======
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="562" />
         <source>Clear servers before update</source>
         <translation type="unfinished">Մաքրել սերվերները թարմացումից առաջ</translation>
@@ -567,68 +287,20 @@
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="584" />
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="804" />
->>>>>>> other-repo/main
         <source>Enable</source>
         <translation type="unfinished">Միացնել</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="587"/>
-        <source>Interval (minute, invalid if less than 30)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="606"/>
-=======
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="591" />
         <source>Interval (minute, invalid if less than 30)</source>
         <translation type="unfinished">Ընդմիջում (րոպե, անվավեր, եթե 30-ից պակաս է)</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="610" />
->>>>>>> other-repo/main
         <source>Remove Duplicates</source>
         <translation type="unfinished">Հեռացնել կրկնօրինակները</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="613"/>
-        <source>hwid=custom_value,os=custom_os,osVersion=custom_version,model=custom_model</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="620"/>
-        <source>User Agent</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="630"/>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;HWID=%1&lt;/p&gt;&lt;p&gt;OS=%2&lt;/p&gt;&lt;p&gt;OS Version=%3&lt;/p&gt;&lt;p&gt;Model=%4&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="633"/>
-        <source>Send System Parameters</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="646"/>
-        <source>Automatic update</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="653"/>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Format: hwid=value,os=value,osVersion=value,model=value&lt;/p&gt;&lt;p&gt;Leave empty to use default values. Only specify the parameters you want to override.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="656"/>
-        <source>Custom System Parameters (optional)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="663"/>
-=======
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="617" />
         <source>hwid=custom_value,os=custom_os,osVersion=custom_version,model=custom_model</source>
         <translation type="unfinished">hwid=custom_value,os=custom_os,osVersion=custom_version,model=custom_model</translation>
@@ -665,311 +337,15 @@
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="667" />
->>>>>>> other-repo/main
         <source>Remove Invalid</source>
         <translation type="unfinished">Հեռացնել անվավեր</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="670"/>
-=======
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="674" />
->>>>>>> other-repo/main
         <source>Remove Unavailable</source>
         <translation type="unfinished">Հեռացնել անհասանելի</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="678"/>
-        <source>Core</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="717"/>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Might
-                                                                            Improve Ping and Performance&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
-                                                                        </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="722"/>
-        <source>Disable Traffic Stats</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="731"/>
-        <source>Multiplex (mux)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="738"/>
-        <source>Loglevel</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="750"/>
-        <source>concurrency</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="760"/>
-        <source>Padding</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="767"/>
-        <source>Default On</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="779"/>
-        <source>Core Options</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="789"/>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Settings for the
-                                            sing-box&apos;s built-in NTP client&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
-                                        </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="794"/>
-        <source>NTP Settings</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="809"/>
-        <source>server</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="819"/>
-        <source>Port</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="836"/>
-        <source>sync interval</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="843"/>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;In
-                                                                minutes&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
-                                                            </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="849"/>
-        <source>5m</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="854"/>
-        <source>10m</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="859"/>
-        <source>30m</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="873"/>
-        <source>Security</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="879"/>
-        <source>Disable Privilege request</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="886"/>
-        <source>Use Mozilla Certificate Store</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="893"/>
-        <source>Skip TLS certificate authentication by default (allowInsecure)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="921"/>
-        <source>Default uTLS Fingerprint</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="944"/>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Do not attempt to start as Admin unless explicitly requested&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="947"/>
-        <source>Always Start as Standard User</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="954"/>
-        <source>Use Json instead binary for configs</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="968"/>
-        <source>Auto-Testing</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="974"/>
-        <source>Automatically test proxies in the background and maintain a pool of working proxies</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="977"/>
-        <source>Enable Auto-Testing</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="984"/>
-        <source>Test Interval (seconds)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="991"/>
-        <source>How often to run the test cycle</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1007"/>
-        <source>Proxies Per Cycle</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1014"/>
-        <source>Number of proxies to test in each cycle</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1030"/>
-        <source>Working Pool Size</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1037"/>
-        <source>Maximum number of verified working proxies to maintain</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1053"/>
-        <source>Latency Threshold (ms)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1060"/>
-        <source>Maximum latency to consider a proxy as working</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1079"/>
-        <source>Failure Retry Count</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1086"/>
-        <source>Number of retry attempts before considering a proxy as failed</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1102"/>
-        <source>Test Target URL</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1109"/>
-        <source>URL to test proxies against</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1112"/>
-        <source>http://cp.cloudflare.com/</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1119"/>
-        <source>Automatically switch to another working proxy when TUN mode proxy fails</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1122"/>
-        <source>Enable TUN Failover</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1130"/>
-        <source>Startup</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1191"/>
-        <source>Geometry</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1220"/>
-        <source>Autosave geometry</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1227"/>
-        <source>Autosave position</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1247"/>
-        <source>Apply now</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1363"/>
-        <source>Width</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1376"/>
-        <source>X</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1409"/>
-        <source>Y</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1422"/>
-        <source>Height</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1509"/>
-        <source>Core Executable Path</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1538"/>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1712"/>
-        <source>Use default</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1545"/>
-        <source>Remote Control</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1571"/>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1745"/>
-=======
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="682" />
         <source>Core</source>
         <translation type="unfinished">Հիմնական</translation>
@@ -1256,21 +632,10 @@ sing-box-ի ներկառուցված NTP հաճախորդը&lt;/p&gt;&lt;/body&g
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1648" />
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1822" />
->>>>>>> other-repo/main
         <source>Select</source>
         <translation type="unfinished">Ընտրել</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1683"/>
-        <source>Resources Directory</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1719"/>
-        <source>Resource Manager</source>
-        <translation type="unfinished"></translation>
-=======
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1760" />
         <source>Resources Directory</source>
         <translation type="unfinished">Ռեսուրսների տեղեկատու</translation>
@@ -1279,25 +644,11 @@ sing-box-ի ներկառուցված NTP հաճախորդը&lt;/p&gt;&lt;/body&g
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1796" />
         <source>Resource Manager</source>
         <translation type="unfinished">Ռեսուրսների կառավարիչ</translation>
->>>>>>> other-repo/main
     </message>
 </context>
 <context>
     <name>DialogEditGroup</name>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="20"/>
-        <source>Edit Group</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="36"/>
-        <source>Common</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="102"/>
-=======
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="20" />
         <source>Edit Group</source>
         <translation type="unfinished">Խմբագրել խումբ</translation>
@@ -1309,87 +660,41 @@ sing-box-ի ներկառուցված NTP հաճախորդը&lt;/p&gt;&lt;/body&g
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="102" />
->>>>>>> other-repo/main
         <source>Name</source>
         <translation type="unfinished">Անուն</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="109"/>
-=======
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="109" />
->>>>>>> other-repo/main
         <source>Type</source>
         <translation type="unfinished">Տեսակ</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="117"/>
-=======
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="117" />
->>>>>>> other-repo/main
         <source>Basic</source>
         <translation type="unfinished">Հիմնական</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="122"/>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="287"/>
-=======
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="122" />
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="287" />
->>>>>>> other-repo/main
         <source>Subscription</source>
         <translation type="unfinished">Բաժանորդագրություն</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="135"/>
-        <source>Manually column width</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="142"/>
-=======
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="135" />
         <source>Manually column width</source>
         <translation type="unfinished">Ձեռքով սյունակի լայնությունը</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="142" />
->>>>>>> other-repo/main
         <source>Archive</source>
         <translation type="unfinished">Արխիվ</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="155"/>
-=======
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="155" />
->>>>>>> other-repo/main
         <source>Proxy</source>
         <translation type="unfinished">Վստահված անձ</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="194"/>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="221"/>
-        <source>None</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="201"/>
-        <source>Front Proxy</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="208"/>
-        <source>Landing Proxy</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="232"/>
-=======
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="194" />
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="221" />
         <source>None</source>
@@ -1407,24 +712,10 @@ sing-box-ի ներկառուցված NTP հաճախորդը&lt;/p&gt;&lt;/body&g
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="232" />
->>>>>>> other-repo/main
         <source>Share</source>
         <translation type="unfinished">Կիսվել</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="238"/>
-        <source>Copy profile share links</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="245"/>
-        <source>Copy profile share links (Custom Links)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="253"/>
-=======
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="238" />
         <source>Copy profile share links</source>
         <translation type="unfinished">Պատճենել պրոֆիլի համօգտագործման հղումները</translation>
@@ -1436,31 +727,10 @@ sing-box-ի ներկառուցված NTP հաճախորդը&lt;/p&gt;&lt;/body&g
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="253" />
->>>>>>> other-repo/main
         <source>Notes</source>
         <translation type="unfinished">Նշումներ</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="314"/>
-        <source>Skip automatic update</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/ui/group/dialog_edit_group.cpp" line="58"/>
-        <source>Copied</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/ui/group/dialog_edit_group.cpp" line="357"/>
-        <source>Warning</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/ui/group/dialog_edit_group.cpp" line="357"/>
-        <source>Please input URL</source>
-        <translation type="unfinished"></translation>
-=======
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="314" />
         <source>Skip automatic update</source>
         <translation type="unfinished">Բաց թողնել ավտոմատ թարմացումը</translation>
@@ -1479,183 +749,47 @@ sing-box-ի ներկառուցված NTP հաճախորդը&lt;/p&gt;&lt;/body&g
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="358" />
         <source>Please input URL</source>
         <translation type="unfinished">Խնդրում ենք մուտքագրել URL</translation>
->>>>>>> other-repo/main
     </message>
 </context>
 <context>
     <name>DialogEditProfile</name>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="26"/>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="662"/>
-=======
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="26" />
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="843" />
->>>>>>> other-repo/main
         <source>Edit</source>
         <translation type="unfinished">Խմբագրել</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="56"/>
-        <source>Common</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="73"/>
-=======
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="56" />
         <source>Common</source>
         <translation type="unfinished">Ընդհանուր</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="73" />
->>>>>>> other-repo/main
         <source>Type</source>
         <translation type="unfinished">Տեսակ</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="80"/>
-        <source>Port</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="87"/>
-=======
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="80" />
         <source>Port</source>
         <translation type="unfinished">Նավահանգիստ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="87" />
->>>>>>> other-repo/main
         <source>Address</source>
         <translation type="unfinished">Հասցե</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="94"/>
-=======
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="94" />
->>>>>>> other-repo/main
         <source>Name</source>
         <translation type="unfinished">Անուն</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="139"/>
-=======
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="139" />
->>>>>>> other-repo/main
         <source>Settings</source>
         <translation type="unfinished">Կարգավորումներ</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="166"/>
-        <source>The underlying transport method. It must be consistent with the server, otherwise, the connection cannot be established.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="169"/>
-        <source>Network</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="226"/>
-        <source>Server support is required</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="229"/>
-        <source>Multiplex</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="236"/>
-        <source>Transport Layer Security. It must be consistent with the server, otherwise, the connection cannot be established.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="239"/>
-        <source>Security</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="260"/>
-        <source>UDP FullCone Packet encoding for implementing features such as UDP FullCone. Server support is required, if the wrong selection is made, the connection cannot be made. Please leave it blank.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="263"/>
-        <source>Packet Encoding</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="271"/>
-        <source>Keep Default</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="276"/>
-        <source>On</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="281"/>
-        <source>Off</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="294"/>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Overrides mux to On&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="297"/>
-        <source>Enable TCP Brutal</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="311"/>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Server to Client TCP Brutal Speed&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="314"/>
-        <source>TCP Brutal Speed</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="324"/>
-        <source>Mb/s</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="345"/>
-        <source>Custom Outbound Settings</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="361"/>
-        <source>Custom Config Settings</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="381"/>
-        <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="696"/>
-        <source>Apply settings to this group</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="436"/>
-        <source>Network Settings (%1)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="458"/>
-=======
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="166" />
         <source>The underlying transport method. It must be consistent with the server, otherwise, the connection cannot be established.</source>
         <translation type="unfinished">Փոխադրման հիմքում ընկած մեթոդը.Այն պետք է համապատասխանի սերվերին, հակառակ դեպքում կապը չի կարող հաստատվել:</translation>
@@ -1758,156 +892,10 @@ sing-box-ի ներկառուցված NTP հաճախորդը&lt;/p&gt;&lt;/body&g
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="458" />
->>>>>>> other-repo/main
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="541"/>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Method of http request, will be converted to uppercase&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="544"/>
-        <source>Method</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="578"/>
-        <source>header type</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="594"/>
-        <source>TLS Security Settings</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="611"/>
-        <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="627"/>
-        <source>Certificate</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="638"/>
-        <source>When enabled, V2Ray will not check the validity of the TLS certificate provided by the remote host (the security is equivalent to plaintext)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="641"/>
-        <source>Allow insecure</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="648"/>
-        <source>Enable ECH</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="655"/>
-        <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="638"/>
-        <source>ECH Config</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="673"/>
-        <source>QSN</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="680"/>
-        <source>Server name indication, clear text.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="693"/>
-        <source>Application layer protocol negotiation, clear text. Please separate them with commas.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="720"/>
-        <source>TLS Camouflage Settings</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="774"/>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;May degrade performance, try record fragment first&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="777"/>
-        <source>Enable TLS fragment</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="784"/>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;time format, like 500ms, 10ms etc&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="787"/>
-        <source>Fallback Delay</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="800"/>
-        <source>Enable TLS Record Fragment</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="839"/>
-        <source>Reality public key. If not empty, turn TLS into REALITY.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="852"/>
-        <source>Reality short id. Accept only one value.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="855"/>
-        <source>Reality SID</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="219"/>
-        <source>Custom (%1 outbound)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="221"/>
-        <source>Custom (%1 config)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="223"/>
-        <source>Extra Core</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="585"/>
-        <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="590"/>
-        <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="595"/>
-        <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="600"/>
-        <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="608"/>
-        <source>Not set</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="587"/>
-        <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="592"/>
-        <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="597"/>
-        <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="602"/>
-        <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="610"/>
-        <source>Already set</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="668"/>
-        <source>Confirm</source>
-        <translation type="unfinished"></translation>
-=======
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="541" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Method of http request, will be converted to uppercase&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;http հարցման մեթոդը կվերածվի մեծատառի&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
@@ -2064,61 +1052,11 @@ sing-box-ի ներկառուցված NTP հաճախորդը&lt;/p&gt;&lt;/body&g
         <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="685" />
         <source>Confirm</source>
         <translation type="unfinished">Հաստատել</translation>
->>>>>>> other-repo/main
     </message>
 </context>
 <context>
     <name>DialogGroupChooseProxy</name>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="14"/>
-        <source>Landing proxy for group Group2</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="41"/>
-        <source>Proxy:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="48"/>
-        <source>Search:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="68"/>
-        <source>Group1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="74"/>
-        <source>Group2</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/ui/group/dialog_edit_group.cpp" line="414"/>
-        <source>Front proxy for group %1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/ui/group/dialog_edit_group.cpp" line="416"/>
-        <source>Front proxy: </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/ui/group/dialog_edit_group.cpp" line="427"/>
-        <source>Landing proxy for group %1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/ui/group/dialog_edit_group.cpp" line="429"/>
-        <source>Landing proxy: </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/ui/group/dialog_edit_group.cpp" line="442"/>
-        <location filename="../../src/ui/setting/RouteItem.cpp" line="140"/>
-=======
         <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="14" />
         <source>Landing proxy for group Group2</source>
         <translation type="unfinished">Վայրէջքի վստահված անձ խմբի 2-րդ խմբի համար</translation>
@@ -2166,50 +1104,16 @@ sing-box-ի ներկառուցված NTP հաճախորդը&lt;/p&gt;&lt;/body&g
     <message>
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="443" />
         <location filename="../../src/ui/setting/RouteItem.cpp" line="140" />
->>>>>>> other-repo/main
         <source>Proxy</source>
         <translation type="unfinished">Վստահված անձ</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/group/dialog_edit_group.cpp" line="445"/>
-        <location filename="../../src/ui/setting/RouteItem.cpp" line="142"/>
-=======
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="446" />
         <location filename="../../src/ui/setting/RouteItem.cpp" line="142" />
->>>>>>> other-repo/main
         <source>Direct</source>
         <translation type="unfinished">Ուղղակի</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/group/dialog_edit_group.cpp" line="449"/>
-        <source>None</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/ui/profile/edit_chain.cpp" line="46"/>
-        <source>Add proxy</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/ui/profile/edit_chain.cpp" line="66"/>
-        <source>Replace %1 proxy</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/ui/setting/RouteItem.cpp" line="135"/>
-        <source>Select outbound</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/ui/setting/RouteItem.cpp" line="137"/>
-        <source>Outbound: </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/ui/setting/RouteItem.cpp" line="144"/>
-=======
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="450" />
         <source>None</source>
         <translation type="unfinished">Ոչ մեկը</translation>
@@ -2236,7 +1140,6 @@ sing-box-ի ներկառուցված NTP հաճախորդը&lt;/p&gt;&lt;/body&g
     </message>
     <message>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="144" />
->>>>>>> other-repo/main
         <source>Outbound</source>
         <translation type="unfinished">Արտագնա</translation>
     </message>
@@ -2244,46 +1147,6 @@ sing-box-ի ներկառուցված NTP հաճախորդը&lt;/p&gt;&lt;/body&g
 <context>
     <name>DialogHotkey</name>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="14"/>
-        <source>Hotkey</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="24"/>
-        <source>Global</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="30"/>
-        <source>Trigger main window</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="40"/>
-        <source>Show groups</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="50"/>
-        <source>Show routes</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="60"/>
-        <source>Proxy mode</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="70"/>
-        <source>Toggle System Proxy</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="81"/>
-        <source>Shortcuts</source>
-        <translation type="unfinished"></translation>
-=======
         <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="14" />
         <source>Hotkey</source>
         <translation type="unfinished">Hotkey</translation>
@@ -2322,34 +1185,16 @@ sing-box-ի ներկառուցված NTP հաճախորդը&lt;/p&gt;&lt;/body&g
         <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="81" />
         <source>Shortcuts</source>
         <translation type="unfinished">Դյուրանցումներ</translation>
->>>>>>> other-repo/main
     </message>
 </context>
 <context>
     <name>DialogManageGroups</name>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/group/dialog_manage_groups.ui" line="17"/>
-=======
         <location filename="../../src/nekobox/ui/group/dialog_manage_groups.ui" line="17" />
->>>>>>> other-repo/main
         <source>Groups</source>
         <translation type="unfinished">Խմբեր</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/group/dialog_manage_groups.ui" line="35"/>
-        <source>New group</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/group/dialog_manage_groups.ui" line="45"/>
-        <source>Update all subscriptions</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/ui/group/dialog_manage_groups.cpp" line="56"/>
-=======
         <location filename="../../src/nekobox/ui/group/dialog_manage_groups.ui" line="35" />
         <source>New group</source>
         <translation type="unfinished">Նոր խումբ</translation>
@@ -2361,48 +1206,18 @@ sing-box-ի ներկառուցված NTP հաճախորդը&lt;/p&gt;&lt;/body&g
     </message>
     <message>
         <location filename="../../src/ui/group/dialog_manage_groups.cpp" line="56" />
->>>>>>> other-repo/main
         <source>Confirmation</source>
         <translation type="unfinished">Հաստատում</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/group/dialog_manage_groups.cpp" line="56"/>
-        <source>Update all subscriptions?</source>
-        <translation type="unfinished"></translation>
-=======
         <location filename="../../src/ui/group/dialog_manage_groups.cpp" line="56" />
         <source>Update all subscriptions?</source>
         <translation type="unfinished">Թարմացնե՞լ բոլոր բաժանորդագրությունները:</translation>
->>>>>>> other-repo/main
     </message>
 </context>
 <context>
     <name>DialogManageRoutes</name>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="14"/>
-        <source>Routes</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="24"/>
-        <source>Common</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="39"/>
-        <source>Sniffs the connections intial packet(s?) to identify the protocol and the SNI. Sniff result for destination also rewrites the destionation of the connection to the sniffed SNI. For more data on the sniffed protocol refer to the sing-box&apos;s documentation.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="42"/>
-        <source>Sniffing Mode</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="50"/>
-=======
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="14" />
         <source>Routes</source>
         <translation type="unfinished">Երթուղիներ</translation>
@@ -2424,110 +1239,10 @@ sing-box-ի ներկառուցված NTP հաճախորդը&lt;/p&gt;&lt;/body&g
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="50" />
->>>>>>> other-repo/main
         <source>Disable</source>
         <translation type="unfinished">Անջատել</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="55"/>
-        <source>Sniff result for routing</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="69"/>
-        <source>Routing Profile</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="92"/>
-        <source>Inbound Domain Strategy</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="107"/>
-        <source>GitHub</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="112"/>
-        <source>jsDelivr(Cloudflare)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="117"/>
-        <source>jsDelivr(Gcore)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="122"/>
-        <source>jsDelivr(Quantil)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="127"/>
-        <source>jsDelivr(Fastly)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="132"/>
-        <source>jsDelivr(CDN)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="149"/>
-        <source>Remote Rule-set Mirror</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="162"/>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Resolve domains to IP before connect, also affects the server address as well&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="165"/>
-        <source>Outbound Domain Strategy</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="178"/>
-        <source>RuleSet download url</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="192"/>
-        <source>Hijack</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="198"/>
-        <source>DNS Server</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="216"/>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="312"/>
-        <source>Listen Port</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="226"/>
-        <source>IPv4 Response</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="236"/>
-        <source>IPv6 Response</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="246"/>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Following format should be used:&lt;br/&gt;domain:a.com&lt;/p&gt;&lt;p&gt;suffix:a.com&lt;/p&gt;&lt;p&gt;regex:someregex&lt;/p&gt;&lt;p&gt;rule_set:nameOfRuleSet&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="249"/>
-=======
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="55" />
         <source>Sniff result for routing</source>
         <translation type="unfinished">Հոտի արդյունք երթուղավորման համար</translation>
@@ -2625,133 +1340,16 @@ sing-box-ի ներկառուցված NTP հաճախորդը&lt;/p&gt;&lt;/body&g
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="249" />
->>>>>>> other-repo/main
         <source>Rules</source>
         <translation type="unfinished">Կանոններ</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="280"/>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="319"/>
-=======
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="280" />
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="319" />
->>>>>>> other-repo/main
         <source>Enable</source>
         <translation type="unfinished">Միացնել</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="287"/>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Whether to listen on 0.0.0.0 so that other devices on LAN can use this server&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="290"/>
-        <source>Allow Lan to Connect</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="303"/>
-        <source>Redirect Settings</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="329"/>
-        <source>Listen Address</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="340"/>
-        <source>DNS</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="346"/>
-        <source>Simple DNS Settings</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="352"/>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;examples:&lt;br/&gt;tls://8.8.8.8&lt;br/&gt;https://domain/path&lt;/p&gt;&lt;p&gt;tcp://8.8.8.8:1234&lt;/p&gt;&lt;p&gt;dhcp://auto&lt;/p&gt;&lt;p&gt;h3://domain/path&lt;/p&gt;&lt;p&gt;quic://domain:4632&lt;/p&gt;&lt;p&gt;etc&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="355"/>
-        <source>Remote DNS</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="367"/>
-        <source>Default DNS server</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="428"/>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="502"/>
-        <source>Query Strategy</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="440"/>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Local DNS can not be used in some configurations, you will have to set an ip here to be used as local dns in such situations&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="443"/>
-        <source>Local Override</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="450"/>
-        <source>This is especially important and it is recommended to use the default value of &quot;localhost&quot;.
-If the default value does not work, try changing it to &quot;223.5.5.5&quot;.
-For more information, see the document &quot;Configuration/DNS&quot;.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="455"/>
-        <source>Direct DNS</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="514"/>
-        <source>Enable FakeIP</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="524"/>
-        <source>DNS Object Settings</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="532"/>
-        <source>Use DNS Object</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="545"/>
-        <source>Format</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="558"/>
-        <source>Document</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="574"/>
-        <source>Route</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="580"/>
-        <source>Routing Profiles</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="592"/>
-=======
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="287" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Whether to listen on 0.0.0.0 so that other devices on LAN can use this server&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Արդյոք լսել 0.0.0.0-ով, որպեսզի LAN-ի մյուս սարքերը կարողանան օգտագործել այս սերվերը&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
@@ -2863,77 +1461,30 @@ For more information, see the document "Configuration/DNS".</source>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="592" />
->>>>>>> other-repo/main
         <source>New</source>
         <translation type="unfinished">Նոր</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="599"/>
-=======
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="599" />
->>>>>>> other-repo/main
         <source>Clone</source>
         <translation type="unfinished">Կլոնավորում</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="606"/>
-        <source>Export</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="613"/>
-=======
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="606" />
         <source>Export</source>
         <translation type="unfinished">Արտահանում</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="613" />
->>>>>>> other-repo/main
         <source>Edit</source>
         <translation type="unfinished">Խմբագրել</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="620"/>
-=======
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="620" />
->>>>>>> other-repo/main
         <source>Delete</source>
         <translation type="unfinished">Ջնջել</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="30"/>
-        <source>Invalid state</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="30"/>
-        <source>The list of routing profiles is empty, this should be an unreachable state, crashes may occur now</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="203"/>
-        <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="207"/>
-        <source>Invalid settings</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="203"/>
-        <source>Routing profile cannot be empty</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="207"/>
-        <source>DNS Rules are not valid</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="315"/>
-=======
         <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="29" />
         <source>Invalid state</source>
         <translation type="unfinished">Անվավեր վիճակ</translation>
@@ -2961,73 +1512,23 @@ For more information, see the document "Configuration/DNS".</source>
     </message>
     <message>
         <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="314" />
->>>>>>> other-repo/main
         <source>Invalid operation</source>
         <translation type="unfinished">Անվավեր գործողություն</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="315"/>
-        <source>Routing Profiles cannot be empty, try adding another profile or editing this one</source>
-        <translation type="unfinished"></translation>
-=======
         <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="314" />
         <source>Routing Profiles cannot be empty, try adding another profile or editing this one</source>
         <translation type="unfinished">Ուղղորդող պրոֆիլները չեն կարող դատարկ լինել, փորձեք ավելացնել մեկ այլ պրոֆիլ կամ խմբագրել այս պրոֆիլը</translation>
->>>>>>> other-repo/main
     </message>
 </context>
 <context>
     <name>DialogVPNSettings</name>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="14"/>
-=======
         <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="14" />
->>>>>>> other-repo/main
         <source>Tun Settings</source>
         <translation type="unfinished">Կարգավորել կարգավորումները</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="85"/>
-        <source>Tun Enable IPv6</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="92"/>
-        <source>Strict Route</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="99"/>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;When enabled, Direct IP CIDRs and rule sets will also be added to the Tun setting to be excluded at OS routing level. IMPORTANT: Large rule sets have been reported to cause massive CPU usage in windows, please enable this option with caution.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="102"/>
-        <source>Enable Tun Routing</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="109"/>
-        <source>AutoRedirect</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="125"/>
-        <source>Tun address</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="135"/>
-        <source>Tun ipv6 address</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="150"/>
-        <source>Exclude CIDR&apos;s</source>
-=======
         <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="85" />
         <source>Tun Enable IPv6</source>
         <translation type="unfinished">Միացնել IPv6-ը</translation>
@@ -3065,33 +1566,12 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="150" />
         <source>Exclude CIDR's</source>
->>>>>>> other-repo/main
         <translation type="unfinished">Բացառեք CIDR-ները</translation>
     </message>
 </context>
 <context>
     <name>EditAnyTLS</name>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/profile/edit_anytls.ui" line="20"/>
-        <source>Password</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/profile/edit_anytls.ui" line="30"/>
-        <source>Idle Session Check Interval</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/profile/edit_anytls.ui" line="40"/>
-        <source>Idle Session Timeout</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/profile/edit_anytls.ui" line="50"/>
-        <source>Min Idle Session</source>
-        <translation type="unfinished"></translation>
-=======
         <location filename="../../src/nekobox/ui/profile/edit_anytls.ui" line="20" />
         <source>Password</source>
         <translation type="unfinished">Գաղտնաբառ</translation>
@@ -3110,27 +1590,11 @@ For more information, see the document "Configuration/DNS".</source>
         <location filename="../../src/nekobox/ui/profile/edit_anytls.ui" line="50" />
         <source>Min Idle Session</source>
         <translation type="unfinished">Min Idle Session</translation>
->>>>>>> other-repo/main
     </message>
 </context>
 <context>
     <name>EditChain</name>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/profile/edit_chain.ui" line="20"/>
-        <source>Traffic order is from top to bottom</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/profile/edit_chain.ui" line="49"/>
-        <source>Select Profile</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/ui/profile/edit_chain.cpp" line="28"/>
-        <source>Name cannot be empty.</source>
-        <translation type="unfinished"></translation>
-=======
         <location filename="../../src/nekobox/ui/profile/edit_chain.ui" line="20" />
         <source>Traffic order is from top to bottom</source>
         <translation type="unfinished">Երթևեկության կարգը վերևից ներքև է</translation>
@@ -3144,37 +1608,11 @@ For more information, see the document "Configuration/DNS".</source>
         <location filename="../../src/ui/profile/edit_chain.cpp" line="28" />
         <source>Name cannot be empty.</source>
         <translation type="unfinished">Անունը չի կարող դատարկ լինել:</translation>
->>>>>>> other-repo/main
     </message>
 </context>
 <context>
     <name>EditCustom</name>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/profile/edit_custom.ui" line="28"/>
-        <source>Core</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/profile/edit_custom.ui" line="41"/>
-        <source>Json Editor</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/ui/profile/edit_custom.cpp" line="53"/>
-        <source>Outbound JSON, please read the documentation.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/ui/profile/edit_custom.cpp" line="55"/>
-        <source>Please fill the complete config.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/ui/profile/edit_custom.cpp" line="64"/>
-        <source>Name cannot be empty.</source>
-        <translation type="unfinished"></translation>
-=======
         <location filename="../../src/nekobox/ui/profile/edit_custom.ui" line="28" />
         <source>Core</source>
         <translation type="unfinished">Հիմնական</translation>
@@ -3198,81 +1636,16 @@ For more information, see the document "Configuration/DNS".</source>
         <location filename="../../src/ui/profile/edit_custom.cpp" line="64" />
         <source>Name cannot be empty.</source>
         <translation type="unfinished">Անունը չի կարող դատարկ լինել:</translation>
->>>>>>> other-repo/main
     </message>
 </context>
 <context>
     <name>EditExtraCore</name>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="14"/>
-=======
         <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="14" />
->>>>>>> other-repo/main
         <source>Form</source>
         <translation type="unfinished">Ձև</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="29"/>
-        <source>Socks address</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="36"/>
-        <source>127.0.0.1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="43"/>
-        <source>Socks port</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="50"/>
-        <source>1080</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="78"/>
-        <source>Core path</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="95"/>
-        <source>Choose from file</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="114"/>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;args to pass to the executable. You can insert a single %s and it will be replaced with the path to a file containing the config entered below.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="117"/>
-        <source>Args</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="124"/>
-        <source>run -confPath %s</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="131"/>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;contents of the config file that will be passed to the extra core process if %s is specified in the args&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="134"/>
-        <source>Config</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="144"/>
-        <source>No logs</source>
-        <translation type="unfinished"></translation>
-=======
         <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="29" />
         <source>Socks address</source>
         <translation type="unfinished">Գուլպաների հասցեն</translation>
@@ -3331,51 +1704,21 @@ For more information, see the document "Configuration/DNS".</source>
         <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="144" />
         <source>No logs</source>
         <translation type="unfinished">Ոչ մի տեղեկամատյան</translation>
->>>>>>> other-repo/main
     </message>
 </context>
 <context>
     <name>EditMieru</name>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="14"/>
-        <source>EditMieru</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="20"/>
-=======
         <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="14" />
         <source>EditMieru</source>
         <translation type="unfinished" />
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="20" />
->>>>>>> other-repo/main
         <source>Username</source>
         <translation type="unfinished">Օգտվողի անունը</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="30"/>
-        <source>Password</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="40"/>
-        <source>Port range</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="55"/>
-        <source>Multiplexing</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="92"/>
-        <source>Transport</source>
-        <translation type="unfinished"></translation>
-=======
         <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="30" />
         <source>Password</source>
         <translation type="unfinished">Գաղտնաբառ</translation>
@@ -3443,114 +1786,11 @@ For more information, see the document "Configuration/DNS".</source>
         <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="107" />
         <source>Headers</source>
         <translation type="unfinished">Վերնագրեր</translation>
->>>>>>> other-repo/main
     </message>
 </context>
 <context>
     <name>EditQUIC</name>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="24"/>
-        <source>Heartbeat</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="45"/>
-        <source>Download (Mbps)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="69"/>
-        <source>Upload (Mbps)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="81"/>
-        <source>Zero Rtt Handshake</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="90"/>
-        <source>UDP Relay Mode</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="115"/>
-        <source>Congestion Control</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="147"/>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="177"/>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Comma seperated ranges: 100:200,500:600&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="154"/>
-        <source>Obfs Password</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="170"/>
-        <source>Disable MTU Discovery</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="180"/>
-        <source>Port range</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="190"/>
-        <source>Hop Interval</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="197"/>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;100ms&lt;br/&gt;1s&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="217"/>
-        <source>Auth Type</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="230"/>
-        <source>Auth Payload</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="243"/>
-        <source>Password</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="257"/>
-        <source>Generate UUID</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="293"/>
-        <location filename="../../src/ui/profile/edit_quic.cpp" line="149"/>
-        <source>Certificate</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="310"/>
-        <source>Disable SNI</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="327"/>
-        <source>SNI</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="334"/>
-        <source>Allow Insecure</source>
-        <translation type="unfinished"></translation>
-=======
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="24" />
         <source>Heartbeat</source>
         <translation type="unfinished">Սրտի բաբախյուն</translation>
@@ -3651,30 +1891,11 @@ For more information, see the document "Configuration/DNS".</source>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="334" />
         <source>Allow Insecure</source>
         <translation type="unfinished">Թույլատրել անապահով</translation>
->>>>>>> other-repo/main
     </message>
 </context>
 <context>
     <name>EditSSH</name>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="14"/>
-        <source>EditSSH</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="20"/>
-        <source>User</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="30"/>
-        <source>Password</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="40"/>
-=======
         <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="14" />
         <source>EditSSH</source>
         <translation type="unfinished" />
@@ -3691,41 +1912,10 @@ For more information, see the document "Configuration/DNS".</source>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="40" />
->>>>>>> other-repo/main
         <source>Private Key</source>
         <translation type="unfinished">Անձնական բանալի</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="50"/>
-        <source>Private Key Password</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="60"/>
-        <source>Host Key</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="70"/>
-        <source>Host Key Algorithms</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="80"/>
-        <source>Client Version</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="93"/>
-        <source>Private Key Path</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="103"/>
-        <source>Choose File</source>
-        <translation type="unfinished"></translation>
-=======
         <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="50" />
         <source>Private Key Password</source>
         <translation type="unfinished">Անձնական բանալի գաղտնաբառ</translation>
@@ -3754,42 +1944,11 @@ For more information, see the document "Configuration/DNS".</source>
         <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="103" />
         <source>Choose File</source>
         <translation type="unfinished">Ընտրեք Ֆայլ</translation>
->>>>>>> other-repo/main
     </message>
 </context>
 <context>
     <name>EditShadowSocks</name>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="30"/>
-        <source>Plugin</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="37"/>
-        <source>Encryption</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="44"/>
-        <source>Plugin Args</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="54"/>
-        <source>Password</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="80"/>
-        <source>Version of UDP over TCP protocol, server support is required.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="94"/>
-        <source>Off</source>
-        <translation type="unfinished"></translation>
-=======
         <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="30" />
         <source>Plugin</source>
         <translation type="unfinished">Փլագին</translation>
@@ -3818,37 +1977,11 @@ For more information, see the document "Configuration/DNS".</source>
         <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="94" />
         <source>Off</source>
         <translation type="unfinished">Անջատված</translation>
->>>>>>> other-repo/main
     </message>
 </context>
 <context>
     <name>EditShadowTLS</name>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="20"/>
-        <source>Version</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="27"/>
-        <source>Password</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="38"/>
-        <source>1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="43"/>
-        <source>2</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="48"/>
-        <source>3</source>
-        <translation type="unfinished"></translation>
-=======
         <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="20" />
         <source>Version</source>
         <translation type="unfinished">Տարբերակ</translation>
@@ -3872,102 +2005,34 @@ For more information, see the document "Configuration/DNS".</source>
         <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="48" />
         <source>3</source>
         <translation type="unfinished">3</translation>
->>>>>>> other-repo/main
     </message>
 </context>
 <context>
     <name>EditSocksHttp</name>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="20"/>
-        <source>Version</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="33"/>
-=======
         <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="20" />
         <source>Version</source>
         <translation type="unfinished">Տարբերակ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="33" />
->>>>>>> other-repo/main
         <source>Username</source>
         <translation type="unfinished">Օգտվողի անունը</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="54"/>
-        <source>Password</source>
-        <translation type="unfinished"></translation>
-=======
         <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="54" />
         <source>Password</source>
         <translation type="unfinished">Գաղտնաբառ</translation>
->>>>>>> other-repo/main
     </message>
 </context>
 <context>
     <name>EditTailScale</name>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="14"/>
-=======
         <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="14" />
->>>>>>> other-repo/main
         <source>Form</source>
         <translation type="unfinished">Ձև</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="20"/>
-        <source>State directory</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="30"/>
-        <source>Auth key</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="40"/>
-        <source>Control URL</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="50"/>
-        <source>Hostname</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="60"/>
-        <source>Accept routes</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="67"/>
-        <source>Ephemeral</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="74"/>
-        <source>Exit node allow lan access</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="81"/>
-        <source>Advertise exit node</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="88"/>
-        <source>Exit node</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="98"/>
-=======
         <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="20" />
         <source>State directory</source>
         <translation type="unfinished">Պետական ​​գրացուցակ</translation>
@@ -4014,26 +2079,10 @@ For more information, see the document "Configuration/DNS".</source>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="98" />
->>>>>>> other-repo/main
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;comma seperated list of subnets&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;ստորակետերով առանձնացված ենթացանցերի ցուցակ&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="101"/>
-        <source>Advertise routes</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="111"/>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;use tailscale dns as the remote dns&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="114"/>
-        <source>Global DNS</source>
-        <translation type="unfinished"></translation>
-=======
         <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="101" />
         <source>Advertise routes</source>
         <translation type="unfinished">Գովազդեք երթուղիները</translation>
@@ -4047,37 +2096,11 @@ For more information, see the document "Configuration/DNS".</source>
         <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="114" />
         <source>Global DNS</source>
         <translation type="unfinished">Համաշխարհային DNS</translation>
->>>>>>> other-repo/main
     </message>
 </context>
 <context>
     <name>EditTor</name>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="14"/>
-        <source>EditTor</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="20"/>
-        <source>Custom Path</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="30"/>
-        <source>Extra Args</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="40"/>
-        <source>Tor Config</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="55"/>
-        <source>Data DIr</source>
-        <translation type="unfinished"></translation>
-=======
         <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="14" />
         <source>EditTor</source>
         <translation type="unfinished" />
@@ -4101,46 +2124,19 @@ For more information, see the document "Configuration/DNS".</source>
         <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="55" />
         <source>Data DIr</source>
         <translation type="unfinished">Տվյալների դիր</translation>
->>>>>>> other-repo/main
     </message>
 </context>
 <context>
     <name>EditTrojanVLESS</name>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/profile/edit_trojan_vless.ui" line="23"/>
-        <source>Password</source>
-        <translation type="unfinished"></translation>
-=======
         <location filename="../../src/nekobox/ui/profile/edit_trojan_vless.ui" line="23" />
         <source>Password</source>
         <translation type="unfinished">Գաղտնաբառ</translation>
->>>>>>> other-repo/main
     </message>
 </context>
 <context>
     <name>EditVMess</name>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/profile/edit_vmess.ui" line="52"/>
-        <source>Security</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/profile/edit_vmess.ui" line="59"/>
-        <source>Alter Id</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/profile/edit_vmess.ui" line="66"/>
-        <source>UUID</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/profile/edit_vmess.ui" line="100"/>
-        <source>Generate UUID</source>
-        <translation type="unfinished"></translation>
-=======
         <location filename="../../src/nekobox/ui/profile/edit_vmess.ui" line="52" />
         <source>Security</source>
         <translation type="unfinished">Անվտանգություն</translation>
@@ -4159,235 +2155,132 @@ For more information, see the document "Configuration/DNS".</source>
         <location filename="../../src/nekobox/ui/profile/edit_vmess.ui" line="100" />
         <source>Generate UUID</source>
         <translation type="unfinished">Ստեղծեք UUID</translation>
->>>>>>> other-repo/main
     </message>
 </context>
 <context>
     <name>EditWireguard</name>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="14"/>
-        <source>EditWireguard</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="23"/>
-=======
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="14" />
         <source>EditWireguard</source>
         <translation type="unfinished" />
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="23" />
->>>>>>> other-repo/main
         <source>Private Key</source>
         <translation type="unfinished">Անձնական բանալի</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="33"/>
-=======
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="33" />
->>>>>>> other-repo/main
         <source>Public Key</source>
         <translation type="unfinished">Հանրային բանալի</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="43"/>
-=======
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="43" />
->>>>>>> other-repo/main
         <source>Pre Shared Key</source>
         <translation type="unfinished">Նախնական համօգտագործված բանալի</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="53"/>
-=======
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="53" />
->>>>>>> other-repo/main
         <source>Reserved</source>
         <translation type="unfinished">Վերապահված է</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="63"/>
-=======
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="63" />
->>>>>>> other-repo/main
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;persistent_keepalive_interval in seconds&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;persistent_keepalive_interval վայրկյաններով&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="66"/>
-=======
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="66" />
->>>>>>> other-repo/main
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="69"/>
-=======
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="69" />
->>>>>>> other-repo/main
         <source>Persistent Keepalive</source>
         <translation type="unfinished">Համառ Keepalive</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="79"/>
-=======
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="79" />
->>>>>>> other-repo/main
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;comma seperated list of subnets&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;ստորակետերով առանձնացված ենթացանցերի ցուցակ&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="82"/>
-=======
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="82" />
->>>>>>> other-repo/main
         <source>Local Address</source>
         <translation type="unfinished">Տեղական հասցե</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="92"/>
-=======
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="92" />
->>>>>>> other-repo/main
         <source>MTU</source>
         <translation type="unfinished">MTU</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="99"/>
-=======
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="99" />
->>>>>>> other-repo/main
         <source>1420</source>
         <translation type="unfinished">1420 թ</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="106"/>
-=======
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="106" />
->>>>>>> other-repo/main
         <source>Workers</source>
         <translation type="unfinished">Աշխատողներ</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="116"/>
-=======
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="116" />
->>>>>>> other-repo/main
         <source>Use System Interface</source>
         <translation type="unfinished">Օգտագործեք համակարգի միջերեսը</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="126"/>
-=======
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="126" />
->>>>>>> other-repo/main
         <source>Amnezia Settings</source>
         <translation type="unfinished">Amnezia-ի կարգավորումներ</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="132"/>
-=======
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="132" />
->>>>>>> other-repo/main
         <source>Enable</source>
         <translation type="unfinished">Միացնել</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="139"/>
-=======
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="139" />
->>>>>>> other-repo/main
         <source>Junk Packet Count</source>
         <translation type="unfinished">Անպետք փաթեթների հաշվարկ</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="149"/>
-=======
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="149" />
->>>>>>> other-repo/main
         <source>Junk Packet Min Size</source>
         <translation type="unfinished">Անպետք փաթեթի նվազագույն չափը</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="159"/>
-=======
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="159" />
->>>>>>> other-repo/main
         <source>Junk Packet Max Size</source>
         <translation type="unfinished">Անպետք փաթեթի առավելագույն չափը</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="169"/>
-=======
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="169" />
->>>>>>> other-repo/main
         <source>Init Packet Junk Size</source>
         <translation type="unfinished">Init Packet Junk Size</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="179"/>
-=======
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="179" />
->>>>>>> other-repo/main
         <source>Response Packet Junk Size</source>
         <translation type="unfinished">Արձագանքման փաթեթի անպիտան չափը</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="189"/>
-=======
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="189" />
->>>>>>> other-repo/main
         <source>Init Packet Magic Header</source>
         <translation type="unfinished">Init Packet Magic Header</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="199"/>
-=======
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="199" />
->>>>>>> other-repo/main
         <source>Response Packet Magic Header</source>
         <translation type="unfinished">Պատասխանների փաթեթի կախարդական վերնագիր</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="209"/>
-        <source>Underload Packet Magic Header</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="219"/>
-=======
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="209" />
         <source>Underload Packet Magic Header</source>
         <translation type="unfinished">Underload Packet Magic Header</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="219" />
->>>>>>> other-repo/main
         <source>Transport Header Magic Header</source>
         <translation type="unfinished">Տրանսպորտի վերնագիր Magic Header</translation>
     </message>
@@ -4395,83 +2288,47 @@ For more information, see the document "Configuration/DNS".</source>
 <context>
     <name>GroupItem</name>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/group/GroupItem.ui" line="63"/>
-=======
         <location filename="../../src/nekobox/ui/group/GroupItem.ui" line="63" />
->>>>>>> other-repo/main
         <source>Update Subscription</source>
         <translation type="unfinished">Թարմացնել բաժանորդագրությունը</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/group/GroupItem.ui" line="76"/>
-=======
         <location filename="../../src/nekobox/ui/group/GroupItem.ui" line="76" />
->>>>>>> other-repo/main
         <source>Edit</source>
         <translation type="unfinished">Խմբագրել</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/group/GroupItem.ui" line="89"/>
-=======
         <location filename="../../src/nekobox/ui/group/GroupItem.ui" line="89" />
->>>>>>> other-repo/main
         <source>Remove</source>
         <translation type="unfinished">Հեռացնել</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/group/GroupItem.cpp" line="129"/>
-=======
         <location filename="../../src/ui/group/GroupItem.cpp" line="134" />
->>>>>>> other-repo/main
         <source>Basic</source>
         <translation type="unfinished">Հիմնական</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/group/GroupItem.cpp" line="129"/>
-=======
         <location filename="../../src/ui/group/GroupItem.cpp" line="134" />
->>>>>>> other-repo/main
         <source>Subscription</source>
         <translation type="unfinished">Բաժանորդագրություն</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/group/GroupItem.cpp" line="130"/>
-=======
         <location filename="../../src/ui/group/GroupItem.cpp" line="135" />
->>>>>>> other-repo/main
         <source>Archive</source>
         <translation type="unfinished">Արխիվ</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/group/GroupItem.cpp" line="142"/>
-=======
         <location filename="../../src/ui/group/GroupItem.cpp" line="147" />
->>>>>>> other-repo/main
         <source>Last update: %1</source>
         <translation type="unfinished">Վերջին թարմացում՝ %1</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/group/GroupItem.cpp" line="186"/>
-=======
         <location filename="../../src/ui/group/GroupItem.cpp" line="191" />
->>>>>>> other-repo/main
         <source>Confirmation</source>
         <translation type="unfinished">Հաստատում</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/group/GroupItem.cpp" line="186"/>
-=======
         <location filename="../../src/ui/group/GroupItem.cpp" line="191" />
->>>>>>> other-repo/main
         <source>Remove %1?</source>
         <translation type="unfinished">Հեռացնե՞լ %1-ը:</translation>
     </message>
@@ -4479,314 +2336,169 @@ For more information, see the document "Configuration/DNS".</source>
 <context>
     <name>MainWindow</name>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="29"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="32"/>
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="29" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="32" />
->>>>>>> other-repo/main
         <source>NekoBox</source>
         <translation type="unfinished">NekoBox</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="51"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="54"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="693"/>
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="51" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="54" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="624" />
->>>>>>> other-repo/main
         <source>Profiles</source>
         <translation type="unfinished">Պրոֆիլներ</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="73"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="76"/>
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="73" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="76" />
->>>>>>> other-repo/main
         <source>Settings</source>
         <translation type="unfinished">Կարգավորումներ</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="95"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="98"/>
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="95" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="98" />
->>>>>>> other-repo/main
         <source>Routing</source>
         <translation type="unfinished">Երթուղիավորում</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="117"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="120"/>
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="117" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="120" />
->>>>>>> other-repo/main
         <source>Update</source>
         <translation type="unfinished">Թարմացնել</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="147"/>
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="147" />
->>>>>>> other-repo/main
         <source>Tun Mode</source>
         <translation type="unfinished">Թուն ռեժիմ</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="154"/>
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="154" />
->>>>>>> other-repo/main
         <source>System DNS</source>
         <translation type="unfinished">Համակարգի DNS</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="161"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="597"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="2422"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="2425"/>
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="161" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="594" />
         <location filename="../../src/ui/mainwindow.cpp" line="2528" />
         <location filename="../../src/ui/mainwindow.cpp" line="2531" />
->>>>>>> other-repo/main
         <source>System Proxy</source>
         <translation type="unfinished">Համակարգի վստահված անձ</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="231"/>
-        <source>URL Test</source>
-        <translation type="unfinished">URL-ի թեստ</translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="309"/>
-        <location filename="../../src/ui/group/dialog_edit_group.cpp" line="139"/>
-=======
         <source>URL Test</source>
         <translation type="obsolete">URL-ի թեստ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="306" />
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="140" />
->>>>>>> other-repo/main
         <source>Type</source>
         <translation type="unfinished">Տեսակ</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="314"/>
-        <location filename="../../src/ui/group/dialog_edit_group.cpp" line="142"/>
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="311" />
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="143" />
->>>>>>> other-repo/main
         <source>Address</source>
         <translation type="unfinished">Հասցե</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="319"/>
-        <location filename="../../src/ui/group/dialog_edit_group.cpp" line="145"/>
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="316" />
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="146" />
->>>>>>> other-repo/main
         <source>Name</source>
         <translation type="unfinished">Անուն</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="324"/>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="289"/>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="291"/>
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="321" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="291" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="293" />
->>>>>>> other-repo/main
         <source>Test Result</source>
         <translation type="unfinished">Փորձարկման արդյունք</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="329"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="489"/>
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="326" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="486" />
->>>>>>> other-repo/main
         <source>Traffic</source>
         <translation type="unfinished">Երթևեկություն</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="394"/>
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="391" />
->>>>>>> other-repo/main
         <source>Logs</source>
         <translation type="unfinished">Տեղեկամատյաններ</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="429"/>
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="426" />
->>>>>>> other-repo/main
         <source>Connections</source>
         <translation type="unfinished">Միացումներ</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="457"/>
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="454" />
->>>>>>> other-repo/main
         <source>Destination (Domain)</source>
         <translation type="unfinished">Նպատակակետ (տիրույթ)</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="460"/>
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="457" />
->>>>>>> other-repo/main
         <source>Click To Disable Sorting</source>
         <translation type="unfinished">Սեղմեք Տեսակավորումն անջատելու համար</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="465"/>
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="462" />
->>>>>>> other-repo/main
         <source>Process</source>
         <translation type="unfinished">Գործընթացը</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="468"/>
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="465" />
->>>>>>> other-repo/main
         <source>Click To Sort By Process</source>
         <translation type="unfinished">Սեղմեք դասավորելու համար ըստ գործընթացի</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="473"/>
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="470" />
->>>>>>> other-repo/main
         <source>Protocol</source>
         <translation type="unfinished">Արձանագրություն</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="476"/>
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="473" />
->>>>>>> other-repo/main
         <source>Click To Sort By Protocol</source>
         <translation type="unfinished">Սեղմեք՝ ըստ արձանագրության տեսակավորելու համար</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="481"/>
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="478" />
->>>>>>> other-repo/main
         <source>Outbound</source>
         <translation type="unfinished">Արտագնա</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="484"/>
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="481" />
->>>>>>> other-repo/main
         <source>Click To Sort By Outbound</source>
         <translation type="unfinished">Սեղմեք՝ ըստ արտագնա տեսակավորելու</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="492"/>
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="489" />
->>>>>>> other-repo/main
         <source>Click To Toggle sort by Traffic</source>
         <translation type="unfinished">Սեղմեք՝ ըստ երթևեկության դասավորելու համար</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="501"/>
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="498" />
->>>>>>> other-repo/main
         <source>Traffic Graph</source>
         <translation type="unfinished">Երթևեկության գրաֆիկ</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="593"/>
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="590" />
->>>>>>> other-repo/main
         <source>Program</source>
         <translation type="unfinished">Ծրագիր</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="616"/>
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="613" />
->>>>>>> other-repo/main
         <source>Preferences</source>
         <translation type="unfinished">Նախապատվություններ</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="627"/>
-        <source>Server</source>
-        <translation type="unfinished">Սերվեր</translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="631"/>
-=======
         <source>Server</source>
         <translation type="obsolete">Սերվեր</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="638" />
->>>>>>> other-repo/main
         <source>Share</source>
         <translation type="unfinished">Կիսվել</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="641"/>
-        <source>Current group</source>
-        <translation type="unfinished">Ընթացիկ խումբ</translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="647"/>
-=======
         <source>Current group</source>
         <translation type="obsolete">Ընթացիկ խումբ</translation>
     </message>
@@ -4794,14 +2506,10 @@ For more information, see the document "Configuration/DNS".</source>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="231" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="648" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="700" />
->>>>>>> other-repo/main
         <source>Test</source>
         <translation type="unfinished">Փորձարկում</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="675"/>
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="634" />
         <source>Current Selected</source>
         <translation type="unfinished">Ընթացիկ ընտրված</translation>
@@ -4813,23 +2521,15 @@ For more information, see the document "Configuration/DNS".</source>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="683" />
->>>>>>> other-repo/main
         <source>Hidden menu</source>
         <translation type="unfinished">Թաքնված մենյու</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="688"/>
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="695" />
->>>>>>> other-repo/main
         <source>Routing Menu</source>
         <translation type="unfinished">Ուղղորդման ընտրացանկ</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="711"/>
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="707" />
         <source>Context</source>
         <translation type="unfinished">Համատեքստ</translation>
@@ -4841,301 +2541,164 @@ For more information, see the document "Configuration/DNS".</source>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="726" />
->>>>>>> other-repo/main
         <source>Exit</source>
         <translation type="unfinished">Ելք</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="716"/>
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="731" />
->>>>>>> other-repo/main
         <source>Toggle Window</source>
         <translation type="unfinished">Միացնել պատուհանը</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="721"/>
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="736" />
->>>>>>> other-repo/main
         <source>Basic Settings</source>
         <translation type="unfinished">Հիմնական կարգավորումներ</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="726"/>
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="741" />
->>>>>>> other-repo/main
         <source>New profile</source>
         <translation type="unfinished">Նոր պրոֆիլ</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="731"/>
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="746" />
->>>>>>> other-repo/main
         <source>Groups</source>
         <translation type="unfinished">Խմբեր</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="736"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3442"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3452"/>
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="751" />
         <location filename="../../src/ui/mainwindow.cpp" line="3596" />
         <location filename="../../src/ui/mainwindow.cpp" line="3606" />
->>>>>>> other-repo/main
         <source>Start</source>
         <translation type="unfinished">Սկսել</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="744"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3441"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3452"/>
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="759" />
         <location filename="../../src/ui/mainwindow.cpp" line="3595" />
         <location filename="../../src/ui/mainwindow.cpp" line="3606" />
->>>>>>> other-repo/main
         <source>Stop</source>
         <translation type="unfinished">Դադարեցրեք</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="752"/>
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="767" />
->>>>>>> other-repo/main
         <source>Edit</source>
         <translation type="unfinished">Խմբագրել</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="760"/>
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="775" />
->>>>>>> other-repo/main
         <source>Routing Settings</source>
         <translation type="unfinished">Ուղղորդման կարգավորումներ</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="765"/>
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="780" />
->>>>>>> other-repo/main
         <source>Add profile from clipboard</source>
         <translation type="unfinished">Ավելացնել պրոֆիլը clipboard-ից</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="773"/>
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="788" />
->>>>>>> other-repo/main
         <source>Delete</source>
         <translation type="unfinished">Ջնջել</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="781"/>
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="796" />
->>>>>>> other-repo/main
         <source>Debug Info</source>
         <translation type="unfinished">Վրիպազերծման տեղեկատվությունը</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="786"/>
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="801" />
->>>>>>> other-repo/main
         <source>QR Code and link</source>
         <translation type="unfinished">QR կոդ և հղում</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="794"/>
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="809" />
->>>>>>> other-repo/main
         <source>Copy Link</source>
         <translation type="unfinished">Պատճենել հղումը</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="815"/>
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="830" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1071" />
->>>>>>> other-repo/main
         <source>Clear Test Result</source>
         <translation type="unfinished">Մաքրել փորձարկման արդյունքը</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="823"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="1348"/>
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="838" />
         <location filename="../../src/ui/mainwindow.cpp" line="1437" />
->>>>>>> other-repo/main
         <source>Export %1 config</source>
         <translation type="unfinished">Արտահանել %1 կազմաձևը</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="831"/>
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="846" />
->>>>>>> other-repo/main
         <source>Reset Traffic</source>
         <translation type="unfinished">Վերականգնել երթևեկությունը</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="839"/>
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="854" />
->>>>>>> other-repo/main
         <source>Scan QR Code</source>
         <translation type="unfinished">Սկանավորեք QR կոդը</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="847"/>
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="862" />
->>>>>>> other-repo/main
         <source>Enable System Proxy</source>
         <translation type="unfinished">Միացնել System Proxy-ը</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="855"/>
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="870" />
->>>>>>> other-repo/main
         <source>Disable</source>
         <translation type="unfinished">Անջատել</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="860"/>
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="875" />
->>>>>>> other-repo/main
         <source>Remove Duplicates</source>
         <translation type="unfinished">Հեռացնել կրկնօրինակները</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="868"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="945"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="953"/>
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="883" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="960" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="968" />
->>>>>>> other-repo/main
         <source>fake</source>
         <translation type="unfinished">կեղծ</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="876"/>
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="891" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1162" />
->>>>>>> other-repo/main
         <source>Move</source>
         <translation type="unfinished">Տեղափոխել</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="887"/>
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="902" />
->>>>>>> other-repo/main
         <source>Start with system</source>
         <translation type="unfinished">Սկսեք համակարգից</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="895"/>
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="910" />
->>>>>>> other-repo/main
         <source>Remember last profile</source>
         <translation type="unfinished">Հիշեք վերջին պրոֆիլը</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="903"/>
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="918" />
->>>>>>> other-repo/main
         <source>Allow other devices to connect</source>
         <translation type="unfinished">Թույլ տվեք միանալ այլ սարքերին</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="908"/>
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="923" />
->>>>>>> other-repo/main
         <source>Remove Unavailable</source>
         <translation type="unfinished">Հեռացնել անհասանելի</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="916"/>
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="931" />
->>>>>>> other-repo/main
         <source>Full Test</source>
         <translation type="unfinished">Ամբողջական թեստ</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="924"/>
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="939" />
->>>>>>> other-repo/main
         <source>Hotkey Settings</source>
         <translation type="unfinished">Hotkey կարգավորումներ</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="929"/>
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="944" />
->>>>>>> other-repo/main
         <source>Select All</source>
         <translation type="unfinished">Ընտրեք Բոլորը</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="937"/>
-        <source>Copy links of selected (Custom Links)</source>
-        <translation type="unfinished">Պատճենել ընտրված հղումները (Պատվիրված հղումներ)</translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="961"/>
-        <source>Copy links of selected</source>
-        <translation type="unfinished">Պատճենել ընտրված հղումները</translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="972"/>
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="952" />
         <source>Copy Custom Links</source>
         <translation type="unfinished">Պատճենել հատուկ հղումները</translation>
@@ -5165,103 +2728,51 @@ For more information, see the document "Configuration/DNS".</source>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="987" />
->>>>>>> other-repo/main
         <source>Enable Tun</source>
         <translation type="unfinished">Միացնել Tun-ը</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="977"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="2778"/>
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="992" />
         <location filename="../../src/ui/mainwindow.cpp" line="2915" />
->>>>>>> other-repo/main
         <source>Clone</source>
         <translation type="unfinished">Կլոնավորում</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="985"/>
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1000" />
->>>>>>> other-repo/main
         <source>Update subscription</source>
         <translation type="unfinished">Թարմացրեք բաժանորդագրությունը</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="996"/>
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1011" />
->>>>>>> other-repo/main
         <source>Resolve domain</source>
         <translation type="unfinished">Լուծել տիրույթը</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1004"/>
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1019" />
->>>>>>> other-repo/main
         <source>Tun Settings</source>
         <translation type="unfinished">Կարգավորել կարգավորումները</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1009"/>
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1024" />
->>>>>>> other-repo/main
         <source>Restart Program</source>
         <translation type="unfinished">Վերագործարկեք ծրագիրը</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1014"/>
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1029" />
->>>>>>> other-repo/main
         <source>Open Config Folder</source>
         <translation type="unfinished">Բացեք Config թղթապանակը</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1035"/>
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1050" />
->>>>>>> other-repo/main
         <source>Restart Proxy</source>
         <translation type="unfinished">Վերագործարկեք վստահված անձը</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1040"/>
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1055" />
->>>>>>> other-repo/main
         <source>Stop Testing</source>
         <translation type="unfinished">Դադարեցրեք փորձարկումը</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1045"/>
-        <source>Url Test Selected</source>
-        <translation type="unfinished">Ընտրված է URL-ի թեստը</translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1048"/>
-        <source>Ctrl+Shift+S</source>
-        <translation type="unfinished">Ctrl+Shift+S</translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1056"/>
-        <source>Clear Test Result Selected</source>
-        <translation type="unfinished">Ընտրված է մաքրել փորձարկման արդյունքը</translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1067"/>
-=======
         <source>Url Test Selected</source>
         <translation type="obsolete">Ընտրված է URL-ի թեստը</translation>
     </message>
@@ -5275,24 +2786,10 @@ For more information, see the document "Configuration/DNS".</source>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1082" />
->>>>>>> other-repo/main
         <source>Url Test Group</source>
         <translation type="unfinished">Url թեստային խումբ</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1070"/>
-        <source>Ctrl+Shift+G</source>
-        <translation type="unfinished">Ctrl+Shift+G</translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1078"/>
-        <source>Resolve Selected Domain</source>
-        <translation type="unfinished">Լուծել ընտրված տիրույթը</translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1086"/>
-=======
         <source>Ctrl+Shift+G</source>
         <translation type="obsolete">Ctrl+Shift+G</translation>
     </message>
@@ -5302,24 +2799,10 @@ For more information, see the document "Configuration/DNS".</source>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1101" />
->>>>>>> other-repo/main
         <source>Remove Invalid</source>
         <translation type="unfinished">Հեռացնել անվավեր</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1089"/>
-        <source>Ctrl+Alt+I</source>
-        <translation type="unfinished">Ctrl+Alt+I</translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1097"/>
-        <source>Open Manager</source>
-        <translation type="unfinished">Բացեք կառավարիչը</translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1102"/>
-=======
         <source>Ctrl+Alt+I</source>
         <translation type="obsolete">Ctrl+Alt+I</translation>
     </message>
@@ -5329,141 +2812,77 @@ For more information, see the document "Configuration/DNS".</source>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1170" />
->>>>>>> other-repo/main
         <source>Speedtest Current</source>
         <translation type="unfinished">Speedtest ընթացիկ</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1107"/>
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1112" />
->>>>>>> other-repo/main
         <source>Full test Selected</source>
         <translation type="unfinished">Ընտրված է ամբողջական թեստ</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1112"/>
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1117" />
->>>>>>> other-repo/main
         <source>Download test Selected</source>
         <translation type="unfinished">Ներբեռնման թեստը ընտրված է</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1117"/>
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1122" />
->>>>>>> other-repo/main
         <source>Upload test Selected</source>
         <translation type="unfinished">Վերբեռնման թեստը ընտրված է</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1122"/>
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1127" />
->>>>>>> other-repo/main
         <source>Country test Selected</source>
         <translation type="unfinished">Ընտրված է երկրի թեստը</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1127"/>
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1132" />
->>>>>>> other-repo/main
         <source>Simple download test Selected</source>
         <translation type="unfinished">Ընտրված է պարզ ներբեռնման թեստ</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1132"/>
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1137" />
->>>>>>> other-repo/main
         <source>Speedtest Group</source>
         <translation type="unfinished">Speedtest խումբ</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1137"/>
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1142" />
->>>>>>> other-repo/main
         <source>Hide window</source>
         <translation type="unfinished">Թաքցնել պատուհանը</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1142"/>
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1147" />
->>>>>>> other-repo/main
         <source>Add profile from File</source>
         <translation type="unfinished">Ավելացնել պրոֆիլ Ֆայլից</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1147"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3468"/>
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1152" />
         <location filename="../../src/ui/mainwindow.cpp" line="3625" />
->>>>>>> other-repo/main
         <source>Add new Group</source>
         <translation type="unfinished">Ավելացնել նոր խումբ</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1152"/>
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1157" />
->>>>>>> other-repo/main
         <source>Security Settings</source>
         <translation type="unfinished">Անվտանգության կարգավորումներ</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/dataStore/ProxyEntity.cpp" line="52"/>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="289"/>
-=======
         <location filename="../../src/dataStore/ProxyEntity.cpp" line="223" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="291" />
->>>>>>> other-repo/main
         <source>Unavailable</source>
         <translation type="unfinished">Անհասանելի է</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="1001"/>
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="1092" />
->>>>>>> other-repo/main
         <source>Edit Routing Profiles</source>
         <translation type="unfinished">Խմբագրել երթուղային պրոֆիլները</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="1023"/>
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="1114" />
->>>>>>> other-repo/main
         <source>Update Routing Profiles</source>
         <translation type="unfinished">Թարմացրեք երթուղային պրոֆիլները</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="1035"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="1039"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="1060"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="1063"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="1107"/>
-        <location filename="../../src/ui/setting/RouteItem.cpp" line="95"/>
-        <location filename="../../src/ui/setting/RouteItem.cpp" line="104"/>
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="1126" />
         <location filename="../../src/ui/mainwindow.cpp" line="1130" />
         <location filename="../../src/ui/mainwindow.cpp" line="1151" />
@@ -5471,132 +2890,72 @@ For more information, see the document "Configuration/DNS".</source>
         <location filename="../../src/ui/mainwindow.cpp" line="1198" />
         <location filename="../../src/ui/setting/RouteItem.cpp" line="95" />
         <location filename="../../src/ui/setting/RouteItem.cpp" line="104" />
->>>>>>> other-repo/main
         <source>Update Response</source>
         <translation type="unfinished">Թարմացնել պատասխանը</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="1036"/>
-        <location filename="../../src/ui/setting/RouteItem.cpp" line="105"/>
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="1127" />
         <location filename="../../src/ui/setting/RouteItem.cpp" line="105" />
->>>>>>> other-repo/main
         <source>No routing profiles are updated</source>
         <translation type="unfinished">Երթուղային պրոֆիլներ չեն թարմացվում</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="1040"/>
-        <location filename="../../src/ui/setting/RouteItem.cpp" line="96"/>
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="1131" />
         <location filename="../../src/ui/setting/RouteItem.cpp" line="96" />
->>>>>>> other-repo/main
         <source>Updated %1 routing profiles</source>
         <translation type="unfinished">Թարմացվել է %1 երթուղային պրոֆիլները</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="1050"/>
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="1141" />
->>>>>>> other-repo/main
         <source>Update RuleSet Map</source>
         <translation type="unfinished">Թարմացրեք RuleSet քարտեզը</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="1061"/>
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="1152" />
->>>>>>> other-repo/main
         <source>Failed to update rulesets</source>
         <translation type="unfinished">Չհաջողվեց թարմացնել կանոնները</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="1064"/>
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="1155" />
->>>>>>> other-repo/main
         <source>Rulesets updated successfully</source>
         <translation type="unfinished">Կանոնների հավաքածուները հաջողությամբ թարմացվեցին</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="1073"/>
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="1164" />
->>>>>>> other-repo/main
         <source>Update RuleSet Cache</source>
         <translation type="unfinished">Թարմացրեք RuleSet քեշը</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="1108"/>
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="1199" />
->>>>>>> other-repo/main
         <source>Rulesets cache is updated</source>
         <translation type="unfinished">Կանոնների քեշը թարմացվում է</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="1122"/>
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="1213" />
->>>>>>> other-repo/main
         <source>Clear RuleSet Cache</source>
         <translation type="unfinished">Մաքրել RuleSet քեշը</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="1158"/>
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="1249" />
->>>>>>> other-repo/main
         <source>Enable AdBlock</source>
         <translation type="unfinished">Միացնել AdBlock-ը</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="1561"/>
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="1651" />
->>>>>>> other-repo/main
         <source>Error</source>
         <translation type="unfinished">Սխալ</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="1648"/>
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="1738" />
->>>>>>> other-repo/main
         <source>Tun Settings changed</source>
         <translation type="unfinished">Tun-ի կարգավորումները փոխվել են</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="1649"/>
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="1739" />
->>>>>>> other-repo/main
         <source>Restart Tun to take effect.</source>
         <translation type="unfinished">Վերագործարկեք Tun-ը՝ ուժի մեջ մտնելու համար:</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="1655"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="1713"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="2832"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3203"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3257"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3305"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="3510"/>
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="1745" />
         <location filename="../../src/ui/mainwindow.cpp" line="1803" />
         <location filename="../../src/ui/mainwindow.cpp" line="2969" />
@@ -5604,480 +2963,268 @@ For more information, see the document "Configuration/DNS".</source>
         <location filename="../../src/ui/mainwindow.cpp" line="3394" />
         <location filename="../../src/ui/mainwindow.cpp" line="3443" />
         <location filename="../../src/ui/mainwindow.cpp" line="3673" />
->>>>>>> other-repo/main
         <source>Confirmation</source>
         <translation type="unfinished">Հաստատում</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="1656"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="1714"/>
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="1746" />
         <location filename="../../src/ui/mainwindow.cpp" line="1804" />
->>>>>>> other-repo/main
         <source>Settings changed, restart proxy?</source>
         <translation type="unfinished">Կարգավորումները փոխվե՞լ են, վերագործարկե՞լ պրոքսին:</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="1685"/>
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="1775" />
->>>>>>> other-repo/main
         <source>Settings changed</source>
         <translation type="unfinished">Կարգավորումները փոխվել են</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="1686"/>
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="1776" />
->>>>>>> other-repo/main
         <source>Restart the program to take effect.</source>
         <translation type="unfinished">Վերագործարկեք ծրագիրը ուժի մեջ մտնելու համար:</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="1729"/>
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="1819" />
->>>>>>> other-repo/main
         <source>Imported %1 profile(s)</source>
         <translation type="unfinished">Ներմուծվել է %1 պրոֆիլ(ներ)</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="1980"/>
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="2086" />
->>>>>>> other-repo/main
         <source>User opted for no privilege req, some features may not work</source>
         <translation type="unfinished">Օգտատերը ընտրել է առանց արտոնությունների պահանջի, որոշ գործառույթներ կարող են չաշխատել</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="2044"/>
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="2150" />
->>>>>>> other-repo/main
         <source>Please give the core root privileges</source>
         <translation type="unfinished">Խնդրում ենք տալ հիմնական արմատային արտոնությունները</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="2398"/>
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="2504" />
->>>>>>> other-repo/main
         <source>Not Running</source>
         <translation type="unfinished">Չի վազում</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="2779"/>
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="2916" />
->>>>>>> other-repo/main
         <source>Clone %1 item(s)</source>
         <translation type="unfinished">Կլոնավորել %1 տարր(ներ)</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="2813"/>
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="2950" />
->>>>>>> other-repo/main
         <source> Confirmation </source>
         <translation type="unfinished">Հաստատում</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="2814"/>
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="2951" />
->>>>>>> other-repo/main
         <source> Remove %1 item(s) ? </source>
         <translation type="unfinished">Հեռացնե՞լ %1 տարրը:</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="2833"/>
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="2970" />
->>>>>>> other-repo/main
         <source>Remove %1 item(s) ?</source>
         <translation type="unfinished">Հեռացնե՞լ %1 տարրը:</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="2870"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="2883"/>
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="3007" />
         <location filename="../../src/ui/mainwindow.cpp" line="3020" />
->>>>>>> other-repo/main
         <source>Copied %1 item(s)</source>
         <translation type="unfinished">Պատճենվել է %1 տարր(ներ)</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="3115"/>
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="3252" />
->>>>>>> other-repo/main
         <source>QR Code not found</source>
         <translation type="unfinished">QR կոդը չի գտնվել</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="3136"/>
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="3273" />
->>>>>>> other-repo/main
         <source>Unable to capture screen</source>
         <translation type="unfinished">Հնարավոր չէ լուսանկարել էկրանը</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="3204"/>
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="3341" />
->>>>>>> other-repo/main
         <source>Remove %1 Unavailable item(s) ?</source>
         <translation type="unfinished">Հեռացնե՞լ %1 Անհասանելի տարր(ներ)ը:</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="3258"/>
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="3395" />
->>>>>>> other-repo/main
         <source>Remove %1 Invalid item(s) ?</source>
         <translation type="unfinished">Հեռացնե՞լ %1 Անվավեր տարր(ներ):</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="3306"/>
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="3444" />
->>>>>>> other-repo/main
         <source>Replace domain server addresses with their resolved IPs?</source>
         <translation type="unfinished">Փոխարինե՞լ տիրույթի սերվերի հասցեները իրենց լուծված IP-ներով:</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="3439"/>
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="3593" />
->>>>>>> other-repo/main
         <source>Clear</source>
         <translation type="unfinished">Պարզ</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="3501"/>
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="3664" />
->>>>>>> other-repo/main
         <source>Delete selected Group</source>
         <translation type="unfinished">Ջնջել ընտրված խումբը</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="3502"/>
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="3665" />
->>>>>>> other-repo/main
         <source>Edit selected Group</source>
         <translation type="unfinished">Խմբագրել ընտրված խումբը</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="3511"/>
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="3674" />
->>>>>>> other-repo/main
         <source>Remove %1?</source>
         <translation type="unfinished">Հեռացնե՞լ %1-ը:</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="4194"/>
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="4411" />
->>>>>>> other-repo/main
         <source>Cannot start</source>
         <translation type="unfinished">Հնարավոր չէ սկսել</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="4195"/>
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="4412" />
->>>>>>> other-repo/main
         <source>Last download request has not finished yet</source>
         <translation type="unfinished">Վերջին ներբեռնման հարցումը դեռ ավարտված չէ</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="4229"/>
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="4446" />
->>>>>>> other-repo/main
         <source>Failed to download update assets</source>
         <translation type="unfinished">Չհաջողվեց ներբեռնել թարմացման ակտիվները</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="81"/>
-=======
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="83" />
->>>>>>> other-repo/main
         <source>Profile test aborted</source>
         <translation type="unfinished">Պրոֆիլի թեստն ընդհատվել է</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="132"/>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="178"/>
-=======
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="134" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="180" />
->>>>>>> other-repo/main
         <source>[%1] test error: %2</source>
         <translation type="unfinished">[% 1] փորձարկման սխալ՝ %2</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="161"/>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="487"/>
-=======
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="163" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="489" />
->>>>>>> other-repo/main
         <source>Something is very wrong, the subject ent cannot be found!</source>
         <translation type="unfinished">Ինչ-որ բան շատ սխալ է, թեման հնարավոր չէ գտնել:</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="167"/>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="493"/>
-=======
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="169" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="495" />
->>>>>>> other-repo/main
         <source>Profile manager data is corrupted, try again.</source>
         <translation type="unfinished">Պրոֆիլի կառավարչի տվյալները վնասված են, նորից փորձեք:</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="201"/>
-=======
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="203" />
->>>>>>> other-repo/main
         <source>The last url test did not exit completely, please wait. If it persists, please restart the program.</source>
         <translation type="unfinished">Վերջին url-ի փորձարկումն ամբողջությամբ չի ավարտվել, խնդրում ենք սպասել:Եթե ​​այն շարունակվի, խնդրում ենք վերագործարկել ծրագիրը:</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="210"/>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="317"/>
-=======
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="212" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="319" />
->>>>>>> other-repo/main
         <source>Failed to build test config: </source>
         <translation type="unfinished">Չհաջողվեց կառուցել թեստային կազմաձևը՝</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="251"/>
-=======
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="253" />
->>>>>>> other-repo/main
         <source>URL test finished!</source>
         <translation type="unfinished">URL-ի փորձարկումն ավարտված է:</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="262"/>
-=======
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="264" />
->>>>>>> other-repo/main
         <source>Failed to stop tests</source>
         <translation type="unfinished">Չհաջողվեց դադարեցնել թեստերը</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="268"/>
-=======
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="270" />
->>>>>>> other-repo/main
         <source>Testing</source>
         <translation type="unfinished">Փորձարկում</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="306"/>
-=======
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="308" />
->>>>>>> other-repo/main
         <source>The last speed test did not exit completely, please wait. If it persists, please restart the program.</source>
         <translation type="unfinished">Վերջին արագության փորձարկումն ամբողջությամբ չի ավարտվել, խնդրում ենք սպասել:Եթե ​​այն շարունակվի, խնդրում ենք վերագործարկել ծրագիրը:</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="343"/>
-=======
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="345" />
->>>>>>> other-repo/main
         <source>Speedtest finished!</source>
         <translation type="unfinished">Speedtest-ն ավարտվեց:</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="424"/>
-=======
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="426" />
->>>>>>> other-repo/main
         <source>Profile speed test aborted</source>
         <translation type="unfinished">Պրոֆիլի արագության փորձարկումն ընդհատվել է</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="512"/>
-=======
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="514" />
->>>>>>> other-repo/main
         <source>[%1] speed test error: %2</source>
         <translation type="unfinished">[%1] արագության փորձարկման սխալ՝ %2</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="521"/>
-=======
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="523" />
->>>>>>> other-repo/main
         <source>You need to enable hijack DNS server first</source>
         <translation type="unfinished">Դուք պետք է նախ միացնեք հափշտակել DNS սերվերը</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="535"/>
-=======
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="537" />
->>>>>>> other-repo/main
         <source>Failed to set system dns: </source>
         <translation type="unfinished">Չհաջողվեց տեղադրել համակարգի dns:</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="583"/>
-=======
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="585" />
->>>>>>> other-repo/main
         <source>Tun device misbehaving</source>
         <translation type="unfinished">Միացնել սարքի սխալ վարքը</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="584"/>
-=======
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="586" />
->>>>>>> other-repo/main
         <source>If you have trouble starting VPN, you can force reset Core process here and then try starting the profile again. The error is %1</source>
         <translation type="unfinished">Եթե ​​դժվարանում եք սկսել VPN-ը, կարող եք այստեղ ստիպել վերակայել Core գործընթացը, այնուհետև փորձել նորից սկսել պրոֆիլը:Սխալը %1 է</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="588"/>
-=======
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="590" />
->>>>>>> other-repo/main
         <source>Reset</source>
         <translation type="unfinished">Վերականգնել</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="589"/>
-=======
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="591" />
->>>>>>> other-repo/main
         <source>Cancel</source>
         <translation type="unfinished">Չեղարկել</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="628"/>
-=======
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="630" />
->>>>>>> other-repo/main
         <source>Another profile is starting...</source>
         <translation type="unfinished">Մեկ այլ պրոֆիլ է սկսվում...</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="635"/>
-=======
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="637" />
->>>>>>> other-repo/main
         <source>Another profile is stopping...</source>
         <translation type="unfinished">Մեկ այլ պրոֆիլ կանգ է առնում...</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="656"/>
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="738"/>
-=======
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="658" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="740" />
->>>>>>> other-repo/main
         <source>If there is no response for a long time, it is recommended to restart the software.</source>
         <translation type="unfinished">Եթե ​​երկար ժամանակ պատասխան չկա, խորհուրդ է տրվում վերագործարկել ծրագրաշարը:</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="670"/>
-=======
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="672" />
->>>>>>> other-repo/main
         <source>Starting profile %1</source>
         <translation type="unfinished">Մեկնարկային պրոֆիլը %1</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="672"/>
-=======
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="674" />
->>>>>>> other-repo/main
         <source>Failed to start profile %1</source>
         <translation type="unfinished">Չհաջողվեց սկսել պրոֆիլը %1</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="721"/>
-=======
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="723" />
->>>>>>> other-repo/main
         <source>Stop return error</source>
         <translation type="unfinished">Stop վերադարձի սխալ</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="761"/>
-=======
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="763" />
->>>>>>> other-repo/main
         <source>Stopping profile %1</source>
         <translation type="unfinished">Պրոֆիլի դադարեցում % 1</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="763"/>
-=======
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="765" />
->>>>>>> other-repo/main
         <source>Failed to stop, please restart the program.</source>
         <translation type="unfinished">Չհաջողվեց դադարեցնել, խնդրում ենք վերագործարկել ծրագիրը:</translation>
     </message>
@@ -6085,39 +3232,22 @@ For more information, see the document "Configuration/DNS".</source>
 <context>
     <name>PasswordForm</name>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/security/change_password.ui" line="14"/>
-        <source>Dialog</source>
-        <translation type="unfinished">Երկխոսություն</translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/security/change_password.ui" line="20"/>
-=======
         <location filename="../../src/nekobox/ui/security/change_password.ui" line="14" />
         <source>Dialog</source>
         <translation type="unfinished" />
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/change_password.ui" line="20" />
->>>>>>> other-repo/main
         <source>Username</source>
         <translation type="unfinished">Օգտվողի անունը</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/security/change_password.ui" line="37"/>
-=======
         <location filename="../../src/nekobox/ui/security/change_password.ui" line="37" />
->>>>>>> other-repo/main
         <source>New Password</source>
         <translation type="unfinished">Նոր գաղտնաբառ</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/security/change_password.ui" line="54"/>
-=======
         <location filename="../../src/nekobox/ui/security/change_password.ui" line="54" />
->>>>>>> other-repo/main
         <source>Confirm Password</source>
         <translation type="unfinished">Հաստատեք գաղտնաբառը</translation>
     </message>
@@ -6125,20 +3255,12 @@ For more information, see the document "Configuration/DNS".</source>
 <context>
     <name>ProxyItem</name>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/profile/ProxyItem.cpp" line="39"/>
-=======
         <location filename="../../src/ui/profile/ProxyItem.cpp" line="39" />
->>>>>>> other-repo/main
         <source>Confirmation</source>
         <translation type="unfinished">Հաստատում</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/profile/ProxyItem.cpp" line="39"/>
-=======
         <location filename="../../src/ui/profile/ProxyItem.cpp" line="39" />
->>>>>>> other-repo/main
         <source>Remove %1?</source>
         <translation type="unfinished">Հեռացնե՞լ %1-ը:</translation>
     </message>
@@ -6146,11 +3268,7 @@ For more information, see the document "Configuration/DNS".</source>
 <context>
     <name>QAction</name>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/security_addon.cpp" line="342"/>
-=======
         <location filename="../../src/ui/security_addon.cpp" line="346" />
->>>>>>> other-repo/main
         <source>Security Settings</source>
         <translation type="unfinished">Անվտանգության կարգավորումներ</translation>
     </message>
@@ -6158,88 +3276,50 @@ For more information, see the document "Configuration/DNS".</source>
 <context>
     <name>QGuiApplication</name>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/main.cpp" line="258"/>
-        <source>QT_LAYOUT_DIRECTION</source>
-        <translation type="unfinished">QT_LAYOUT_DIRECTION</translation>
-=======
         <location filename="../../src/main.cpp" line="328" />
         <source>QT_LAYOUT_DIRECTION</source>
         <translation type="unfinished" />
->>>>>>> other-repo/main
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/configs/ConfigBuilder.cpp" line="159"/>
-=======
         <location filename="../../src/configs/ConfigBuilder.cpp" line="159" />
->>>>>>> other-repo/main
         <source>Tun mode cannot be used with Custom configs</source>
         <translation type="unfinished">Tun ռեժիմը չի կարող օգտագործվել հատուկ կազմաձևերով</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="913"/>
-=======
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="839" />
->>>>>>> other-repo/main
         <source>Requesting subscription: %1</source>
         <translation type="unfinished">Բաժանորդագրման հարցում՝ %1</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="917"/>
-=======
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="843" />
->>>>>>> other-repo/main
         <source>Requesting subscription %1 error: %2</source>
         <translation type="unfinished">Բաժանորդագրման հարցում % 1 սխալ՝ %2</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="924"/>
-=======
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="850" />
->>>>>>> other-repo/main
         <source>Subscription request fininshed: %1</source>
         <translation type="unfinished">Բաժանորդագրման հարցումն ավարտված է՝ %1</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="942"/>
-=======
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="868" />
->>>>>>> other-repo/main
         <source>Clearing servers...</source>
         <translation type="unfinished">Սերվերների մաքրում...</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="947"/>
-=======
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="873" />
->>>>>>> other-repo/main
         <source>Processing subscription data...</source>
         <translation type="unfinished">Բաժանորդագրության տվյալները մշակվում են...</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="950"/>
-=======
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="876" />
->>>>>>> other-repo/main
         <source>Process complete, applying...</source>
         <translation type="unfinished">Գործընթացն ավարտված է, դիմում...</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="1013"/>
-=======
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="939" />
->>>>>>> other-repo/main
         <source>Added %1 profiles:
 %2
 Deleted %3 Profiles:
@@ -6250,56 +3330,31 @@ Deleted %3 Profiles:
 %4</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="1018"/>
-=======
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="944" />
->>>>>>> other-repo/main
         <source>Nothing</source>
         <translation type="unfinished">Ոչինչ</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="1021"/>
-=======
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="947" />
->>>>>>> other-repo/main
         <source>Change of %1:</source>
         <translation type="unfinished">%1-ի փոփոխություն.</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/dataStore/Database.cpp" line="119"/>
-=======
         <location filename="../../src/dataStore/Database.cpp" line="123" />
->>>>>>> other-repo/main
         <source>Default</source>
         <translation type="unfinished">Կանխադրված</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/global/HTTPRequestHelper.cpp" line="189"/>
-=======
         <location filename="../../src/global/HTTPRequestHelper.cpp" line="189" />
->>>>>>> other-repo/main
         <source>Could not open file.</source>
         <translation type="unfinished">Չհաջողվեց բացել ֆայլը:</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/configs/proxy/ChainBean.hpp" line="17"/>
-=======
         <location filename="../../src/main.cpp" line="107" />
->>>>>>> other-repo/main
         <source>Chain Proxy</source>
         <translation type="unfinished">Շղթայի վստահված անձ</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/global/GuiUtils.hpp" line="112"/>
-        <location filename="../../src/ui/profile/edit_ssh.cpp" line="28"/>
-        <location filename="../../src/ui/setting/dialog_basic_settings.cpp" line="244"/>
-=======
         <location filename="../../src/main.cpp" line="121" />
         <source>Custom</source>
         <translation type="unfinished">Պատվերով</translation>
@@ -6313,292 +3368,171 @@ Deleted %3 Profiles:
         <location filename="../../src/nekobox/global/GuiUtils.hpp" line="121" />
         <location filename="../../src/ui/profile/edit_ssh.cpp" line="28" />
         <location filename="../../src/ui/setting/dialog_basic_settings.cpp" line="335" />
->>>>>>> other-repo/main
         <source>Select</source>
         <translation type="unfinished">Ընտրել</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/stats/traffic/TrafficLooper.cpp" line="115"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="2366"/>
-=======
         <location filename="../../src/stats/traffic/TrafficLooper.cpp" line="115" />
         <location filename="../../src/ui/mainwindow.cpp" line="2472" />
->>>>>>> other-repo/main
         <source>Proxy: %1
 Direct: %2</source>
         <translation type="unfinished">Վստահված անձ՝ %1
 Ուղիղ՝ %2</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/sys/Process.cpp" line="104"/>
-=======
         <location filename="../../src/sys/Process.cpp" line="104" />
->>>>>>> other-repo/main
         <source>Core exited, cleaning up...</source>
         <translation type="unfinished">Core-ը դուրս եկավ, մաքրում...</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/sys/Process.cpp" line="111"/>
-=======
         <location filename="../../src/sys/Process.cpp" line="111" />
->>>>>>> other-repo/main
         <source>Core exits too frequently, stop automatic restart this profile.</source>
         <translation type="unfinished">Core-ը շատ հաճախ է դուրս գալիս, դադարեցրեք այս պրոֆիլի ավտոմատ վերագործարկումը:</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/sys/Process.cpp" line="120"/>
-=======
         <location filename="../../src/sys/Process.cpp" line="120" />
->>>>>>> other-repo/main
         <source>Restarting the core ...</source>
         <translation type="unfinished">Միջուկի վերագործարկում...</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/sys/Settings.cpp" line="361"/>
-=======
         <location filename="../../src/sys/Settings.cpp" line="357" />
->>>>>>> other-repo/main
         <source>System</source>
         <translation type="unfinished">Համակարգ</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/group/GroupItem.cpp" line="22"/>
-=======
         <location filename="../../src/ui/group/GroupItem.cpp" line="23" />
->>>>>>> other-repo/main
         <source>URL detected</source>
         <translation type="unfinished">Հայտնաբերվել է URL</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/group/GroupItem.cpp" line="27"/>
-=======
         <location filename="../../src/ui/group/GroupItem.cpp" line="28" />
->>>>>>> other-repo/main
         <source>%1
 How to update?</source>
         <translation type="unfinished">%1
 Ինչպե՞ս թարմացնել:</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/group/GroupItem.cpp" line="31"/>
-=======
         <location filename="../../src/ui/group/GroupItem.cpp" line="32" />
->>>>>>> other-repo/main
         <source>Create new subscription group</source>
         <translation type="unfinished">Ստեղծեք նոր բաժանորդային խումբ</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/group/GroupItem.cpp" line="32"/>
-=======
         <location filename="../../src/ui/group/GroupItem.cpp" line="33" />
->>>>>>> other-repo/main
         <source>Add profiles to this group</source>
         <translation type="unfinished">Ավելացրեք պրոֆիլներ այս խմբին</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/group/GroupItem.cpp" line="37"/>
-=======
         <location filename="../../src/ui/group/GroupItem.cpp" line="34" />
         <source>Add as http/https proxy</source>
         <translation type="unfinished">Ավելացնել որպես http/https վստահված անձ</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="39" />
->>>>>>> other-repo/main
         <source>Group name</source>
         <translation type="unfinished">Խմբի անվանումը</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/group/GroupItem.cpp" line="101"/>
-=======
         <location filename="../../src/ui/group/GroupItem.cpp" line="106" />
->>>>>>> other-repo/main
         <source>Used: %1 Remain: %2 Expire: %3</source>
         <translation type="unfinished">Օգտագործված՝ %1 Մնացել է՝ %2 Ժամկետը՝ %3</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="173"/>
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="256" />
->>>>>>> other-repo/main
         <source>Download Profiles</source>
         <translation type="unfinished">Ներբեռնեք պրոֆիլները</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="174"/>
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="257" />
->>>>>>> other-repo/main
         <source>Requesting profile error: %1</source>
         <translation type="unfinished">Պրոֆիլի սխալի հարցում՝ %1</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="341"/>
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="424" />
->>>>>>> other-repo/main
         <source>
 Deleted %1 Duplicates</source>
         <translation type="unfinished">Ջնջված է %1 Կրկնօրինակ</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="375"/>
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="458" />
->>>>>>> other-repo/main
         <source>
 Deleted %1 Invalid</source>
         <translation type="unfinished">Ջնջված է %1 Անվավեր</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="398"/>
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="481" />
->>>>>>> other-repo/main
         <source>
 Deleted %1 Unavailable</source>
         <translation type="unfinished">Ջնջված է %1 Անհասանելի է</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="1441"/>
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="1530" />
->>>>>>> other-repo/main
         <source>Check Rule Sets: %1</source>
         <translation type="unfinished">Ստուգեք կանոնների հավաքածուները՝ %1</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="1463"/>
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="1552" />
->>>>>>> other-repo/main
         <source>Requesting rule-set list error: %1</source>
         <translation type="unfinished">Կանոնների հավաքածուի ցանկի սխալի հարցում՝ %1</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="2403"/>
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="2509" />
->>>>>>> other-repo/main
         <source>IP address: %1</source>
         <translation type="unfinished">IP հասցե՝ %1</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="2901"/>
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="2895" />
         <source>Move profiles to group</source>
         <translation type="unfinished">Տեղափոխեք պրոֆիլները խումբ</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3038" />
->>>>>>> other-repo/main
         <source>Config copied</source>
         <translation type="unfinished">Կազմաձևը պատճենվեց</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="2912"/>
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="3049" />
->>>>>>> other-repo/main
         <source>Copy core config</source>
         <translation type="unfinished">Պատճենել հիմնական կազմաձևը</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="2913"/>
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="3050" />
->>>>>>> other-repo/main
         <source>Copy test config</source>
         <translation type="unfinished">Պատճենել թեստային կազմաձևը</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="2914"/>
-        <location filename="../../src/ui/security_addon.cpp" line="22"/>
-        <location filename="../../src/ui/setting/dialog_vpn_settings.cpp" line="45"/>
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="3051" />
         <location filename="../../src/ui/security_addon.cpp" line="21" />
         <location filename="../../src/ui/setting/dialog_vpn_settings.cpp" line="53" />
->>>>>>> other-repo/main
         <source>OK</source>
         <translation type="unfinished">Լավ</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="4099"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="4110"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="4154"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="4176"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="4185"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="4220"/>
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="4315" />
         <location filename="../../src/ui/mainwindow.cpp" line="4326" />
         <location filename="../../src/ui/mainwindow.cpp" line="4370" />
         <location filename="../../src/ui/mainwindow.cpp" line="4393" />
         <location filename="../../src/ui/mainwindow.cpp" line="4402" />
         <location filename="../../src/ui/mainwindow.cpp" line="4437" />
->>>>>>> other-repo/main
         <source>Update</source>
         <translation type="unfinished">Թարմացնել</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="4100"/>
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="4316" />
->>>>>>> other-repo/main
         <source>Not official support platform</source>
         <translation type="unfinished">Պաշտոնական աջակցության հարթակ չէ</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="4111"/>
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="4327" />
->>>>>>> other-repo/main
         <source>Requesting update error: %1</source>
         <translation type="unfinished">Թարմացման հարցում սխալ՝ %1</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="4154"/>
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="4370" />
->>>>>>> other-repo/main
         <source>No update</source>
         <translation type="unfinished">Թարմացում չկա</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="4177"/>
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="4394" />
->>>>>>> other-repo/main
         <source>Update found: %1
 Release note:
 %2</source>
@@ -6607,62 +3541,31 @@ Release note:
 %2</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="4180"/>
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="4397" />
->>>>>>> other-repo/main
         <source>Close</source>
         <translation type="unfinished">Փակել</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="4182"/>
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="4399" />
->>>>>>> other-repo/main
         <source>Open in browser</source>
         <translation type="unfinished">Բացեք բրաուզերում</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="4221"/>
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="4438" />
->>>>>>> other-repo/main
         <source>Update is ready, restart to install?</source>
         <translation type="unfinished">Թարմացումը պատրաստ է, վերսկսե՞լ՝ տեղադրելու համար:</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/security_addon.cpp" line="21"/>
-=======
         <location filename="../../src/ui/security_addon.cpp" line="20" />
->>>>>>> other-repo/main
         <source>Access denied</source>
         <translation type="unfinished">Մուտքը մերժված է</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/setting/dialog_basic_settings.cpp" line="249"/>
-=======
         <location filename="../../src/ui/setting/dialog_basic_settings.cpp" line="340" />
->>>>>>> other-repo/main
         <source>Select a Folder</source>
         <translation type="unfinished">Ընտրեք Թղթապանակ</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/setting/dialog_vpn_settings.cpp" line="37"/>
-        <source>Exclude CIDR&apos;s</source>
-        <translation type="unfinished">Բացառեք CIDR-ները</translation>
-    </message>
-    <message>
-        <location filename="../../src/ui/setting/dialog_vpn_settings.cpp" line="46"/>
-        <source>Cancel</source>
-        <translation type="unfinished">Չեղարկել</translation>
-    </message>
-=======
         <location filename="../../src/ui/setting/dialog_vpn_settings.cpp" line="45" />
         <source>Exclude CIDR's</source>
         <translation type="unfinished">Բացառեք CIDR-ները</translation>
@@ -6682,169 +3585,96 @@ Release note:
         <comment>DialogEditProfile</comment>
         <translation type="obsolete">Լրացուցիչ միջուկ</translation>
     </message>
->>>>>>> other-repo/main
 </context>
 <context>
     <name>QPlatformTheme</name>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/main.cpp" line="57"/>
-=======
         <location filename="../../src/main.cpp" line="66" />
->>>>>>> other-repo/main
         <source>Cancel</source>
         <translation type="unfinished">Չեղարկել</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/main.cpp" line="58"/>
-=======
         <location filename="../../src/main.cpp" line="67" />
->>>>>>> other-repo/main
         <source>Apply</source>
         <translation type="unfinished">Դիմել</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/main.cpp" line="59"/>
-=======
         <location filename="../../src/main.cpp" line="68" />
->>>>>>> other-repo/main
         <source>Yes</source>
         <translation type="unfinished">Այո՛</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/main.cpp" line="60"/>
-=======
         <location filename="../../src/main.cpp" line="69" />
->>>>>>> other-repo/main
         <source>No</source>
         <translation type="unfinished">Ոչ</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/main.cpp" line="61"/>
-=======
         <location filename="../../src/main.cpp" line="70" />
->>>>>>> other-repo/main
         <source>OK</source>
         <translation type="unfinished">Լավ</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/main.cpp" line="62"/>
-=======
         <location filename="../../src/main.cpp" line="71" />
->>>>>>> other-repo/main
         <source>Defaults</source>
         <translation type="unfinished">Կանխադրվածներ</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/main.cpp" line="63"/>
-=======
         <location filename="../../src/main.cpp" line="72" />
->>>>>>> other-repo/main
         <source>Restore Defaults</source>
         <translation type="unfinished">Վերականգնել կանխադրվածները</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/main.cpp" line="64"/>
-=======
         <location filename="../../src/main.cpp" line="73" />
->>>>>>> other-repo/main
         <source>Discard</source>
         <translation type="unfinished">Վերացնել</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/main.cpp" line="66"/>
-=======
         <location filename="../../src/main.cpp" line="75" />
->>>>>>> other-repo/main
         <source>Undo</source>
         <translation type="unfinished">Հետարկել</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/main.cpp" line="67"/>
-=======
         <location filename="../../src/main.cpp" line="76" />
->>>>>>> other-repo/main
         <source>Redo</source>
         <translation type="unfinished">Կրկնել</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/main.cpp" line="68"/>
-=======
         <location filename="../../src/main.cpp" line="77" />
->>>>>>> other-repo/main
         <source>Cut</source>
         <translation type="unfinished">Կտրել</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/main.cpp" line="69"/>
-=======
         <location filename="../../src/main.cpp" line="78" />
->>>>>>> other-repo/main
         <source>Copy</source>
         <translation type="unfinished">Պատճենել</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/main.cpp" line="70"/>
-=======
         <location filename="../../src/main.cpp" line="79" />
->>>>>>> other-repo/main
         <source>Paste</source>
         <translation type="unfinished">Կպցնել</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/main.cpp" line="71"/>
-=======
         <location filename="../../src/main.cpp" line="80" />
->>>>>>> other-repo/main
         <source>Delete</source>
         <translation type="unfinished">Ջնջել</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/main.cpp" line="72"/>
-=======
         <location filename="../../src/main.cpp" line="81" />
->>>>>>> other-repo/main
         <source>Select All</source>
         <translation type="unfinished">Ընտրեք Բոլորը</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/main.cpp" line="73"/>
-=======
         <location filename="../../src/main.cpp" line="82" />
->>>>>>> other-repo/main
         <source>Stop</source>
         <translation type="unfinished">Դադարեցրեք</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/main.cpp" line="74"/>
-=======
         <location filename="../../src/main.cpp" line="83" />
->>>>>>> other-repo/main
         <source>Clear</source>
         <translation type="unfinished">Պարզ</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/main.cpp" line="75"/>
-=======
         <location filename="../../src/main.cpp" line="84" />
->>>>>>> other-repo/main
         <source>Copy Link Location</source>
         <translation type="unfinished">Պատճենել հղումի գտնվելու վայրը</translation>
     </message>
@@ -6852,293 +3682,164 @@ Release note:
 <context>
     <name>RouteItem</name>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="14"/>
-=======
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="14" />
->>>>>>> other-repo/main
         <source>Route Profile</source>
         <translation type="unfinished">Երթուղու պրոֆիլը</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="24"/>
-=======
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="24" />
->>>>>>> other-repo/main
         <source>General</source>
         <translation type="unfinished">Գեներալ</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="63"/>
-=======
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="63" />
->>>>>>> other-repo/main
         <source>Default outbound</source>
         <translation type="unfinished">Կանխադրված ելքային</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="70"/>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="319"/>
-=======
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="70" />
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="319" />
->>>>>>> other-repo/main
         <source>Name</source>
         <translation type="unfinished">Անուն</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="78"/>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="187"/>
-=======
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="78" />
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="187" />
->>>>>>> other-repo/main
         <source>Proxy</source>
         <translation type="unfinished">Վստահված անձ</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="83"/>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="217"/>
-=======
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="83" />
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="217" />
->>>>>>> other-repo/main
         <source>Direct</source>
         <translation type="unfinished">Ուղղակի</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="88"/>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="157"/>
-=======
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="88" />
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="157" />
->>>>>>> other-repo/main
         <source>Block</source>
         <translation type="unfinished">Արգելափակել</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="96"/>
-=======
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="96" />
->>>>>>> other-repo/main
         <source>Update url</source>
         <translation type="unfinished">Թարմացրեք url-ը</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="130"/>
-=======
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="130" />
->>>>>>> other-repo/main
         <source>Skip update</source>
         <translation type="unfinished">Բաց թողնել թարմացումը</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="137"/>
-=======
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="137" />
->>>>>>> other-repo/main
         <source>Update manually</source>
         <translation type="unfinished">Թարմացրեք ձեռքով</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="151"/>
-=======
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="151" />
->>>>>>> other-repo/main
         <source>Basic</source>
         <translation type="unfinished">Հիմնական</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="248"/>
-=======
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="248" />
->>>>>>> other-repo/main
         <source>Advanced</source>
         <translation type="unfinished">Ընդլայնված</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="257"/>
-=======
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="257" />
->>>>>>> other-repo/main
         <source>Import JSON</source>
         <translation type="unfinished">Ներմուծեք JSON</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="267"/>
-=======
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="267" />
->>>>>>> other-repo/main
         <source>Rules</source>
         <translation type="unfinished">Կանոններ</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="279"/>
-=======
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="279" />
->>>>>>> other-repo/main
         <source>New</source>
         <translation type="unfinished">Նոր</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="286"/>
-=======
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="286" />
->>>>>>> other-repo/main
         <source>Move Up</source>
         <translation type="unfinished">Շարժվել վերև</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="293"/>
-=======
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="293" />
->>>>>>> other-repo/main
         <source>Move Down</source>
         <translation type="unfinished">Տեղափոխվել ներքև</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="300"/>
-=======
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="300" />
->>>>>>> other-repo/main
         <source>Delete</source>
         <translation type="unfinished">Ջնջել</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="310"/>
-=======
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="310" />
->>>>>>> other-repo/main
         <source>Rule Attributes</source>
         <translation type="unfinished">Կանոնների հատկանիշներ</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="329"/>
-=======
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="329" />
->>>>>>> other-repo/main
         <source>Attribute</source>
         <translation type="unfinished">Հատկանիշ</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="342"/>
-=======
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="342" />
->>>>>>> other-repo/main
         <source>Name_Placeholder</source>
         <translation type="unfinished">Անուն_ Տեղապահ</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="374"/>
-=======
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="374" />
->>>>>>> other-repo/main
         <source>Notes</source>
         <translation type="unfinished">Նշումներ</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/setting/RouteItem.cpp" line="302"/>
-        <location filename="../../src/ui/setting/RouteItem.cpp" line="469"/>
-=======
         <location filename="../../src/ui/setting/RouteItem.cpp" line="302" />
         <location filename="../../src/ui/setting/RouteItem.cpp" line="469" />
->>>>>>> other-repo/main
         <source>Invalid rules</source>
         <translation type="unfinished">Անվավեր կանոններ</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/setting/RouteItem.cpp" line="302"/>
-=======
         <location filename="../../src/ui/setting/RouteItem.cpp" line="302" />
->>>>>>> other-repo/main
         <source>Some rules could not be added:
 </source>
         <translation type="unfinished">Որոշ կանոններ չհաջողվեց ավելացնել.</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/setting/RouteItem.cpp" line="358"/>
-=======
         <location filename="../../src/ui/setting/RouteItem.cpp" line="358" />
->>>>>>> other-repo/main
         <source>Invalid JSON Array</source>
         <translation type="unfinished">Անվավեր JSON զանգված</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/setting/RouteItem.cpp" line="358"/>
-=======
         <location filename="../../src/ui/setting/RouteItem.cpp" line="358" />
->>>>>>> other-repo/main
         <source>The provided input cannot be parsed to a valid route rule array:
 </source>
         <translation type="unfinished">Տրամադրված մուտքագրումը չի կարող վերլուծվել վավեր երթուղու կանոնների զանգվածում՝</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/setting/RouteItem.cpp" line="441"/>
-=======
         <location filename="../../src/ui/setting/RouteItem.cpp" line="441" />
->>>>>>> other-repo/main
         <source>Invalid operation</source>
         <translation type="unfinished">Անվավեր գործողություն</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/setting/RouteItem.cpp" line="441"/>
-=======
         <location filename="../../src/ui/setting/RouteItem.cpp" line="441" />
->>>>>>> other-repo/main
         <source>Cannot create Route Profile with empty name</source>
         <translation type="unfinished">Հնարավոր չէ ստեղծել երթուղու պրոֆիլ դատարկ անունով</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/setting/RouteItem.cpp" line="457"/>
-=======
         <location filename="../../src/ui/setting/RouteItem.cpp" line="457" />
->>>>>>> other-repo/main
         <source>Empty Route Profile</source>
         <translation type="unfinished">Դատարկ երթուղու պրոֆիլը</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/setting/RouteItem.cpp" line="457"/>
-=======
         <location filename="../../src/ui/setting/RouteItem.cpp" line="457" />
->>>>>>> other-repo/main
         <source>No valid rules are in the profile</source>
         <translation type="unfinished">Պրոֆիլում վավեր կանոններ չկան</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/setting/RouteItem.cpp" line="469"/>
-=======
         <location filename="../../src/ui/setting/RouteItem.cpp" line="469" />
->>>>>>> other-repo/main
         <source>Some rules could not be added, fix them before saving:
 </source>
         <translation type="unfinished">Որոշ կանոններ չհաջողվեց ավելացնել, շտկեք դրանք նախքան պահպանելը.</translation>
@@ -7147,74 +3848,42 @@ Release note:
 <context>
     <name>SecurityForm</name>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/security/security.ui" line="14"/>
-=======
         <location filename="../../src/nekobox/ui/security/security.ui" line="14" />
->>>>>>> other-repo/main
         <source>Security Settings</source>
         <translation type="unfinished">Անվտանգության կարգավորումներ</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/security/security.ui" line="62"/>
-=======
         <location filename="../../src/nekobox/ui/security/security.ui" line="62" />
->>>>>>> other-repo/main
         <source>Lock Actions</source>
         <translation type="unfinished">Կողպեք գործողությունները</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/security/security.ui" line="69"/>
-=======
         <location filename="../../src/nekobox/ui/security/security.ui" line="69" />
->>>>>>> other-repo/main
         <source>Lock Settings</source>
         <translation type="unfinished">Կողպման կարգավորումներ</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/security/security.ui" line="76"/>
-=======
         <location filename="../../src/nekobox/ui/security/security.ui" line="76" />
->>>>>>> other-repo/main
         <source>Lock Startup</source>
         <translation type="unfinished">Կողպեք մեկնարկը</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/security/security.ui" line="113"/>
-=======
         <location filename="../../src/nekobox/ui/security/security.ui" line="113" />
->>>>>>> other-repo/main
         <source>Delete Users</source>
         <translation type="unfinished">Ջնջել օգտվողներին</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/security/security.ui" line="120"/>
-=======
         <location filename="../../src/nekobox/ui/security/security.ui" line="120" />
->>>>>>> other-repo/main
         <source>Edit User Roles</source>
         <translation type="unfinished">Խմբագրել օգտվողի դերերը</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/security/security.ui" line="163"/>
-=======
         <location filename="../../src/nekobox/ui/security/security.ui" line="163" />
->>>>>>> other-repo/main
         <source>Change UI Password</source>
         <translation type="unfinished">Փոխեք UI գաղտնաբառը</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/security/security.ui" line="170"/>
-=======
         <location filename="../../src/nekobox/ui/security/security.ui" line="170" />
->>>>>>> other-repo/main
         <source>Set Proxy Credentials</source>
         <translation type="unfinished">Սահմանեք վստահված անձի հավատարմագրերը</translation>
     </message>
@@ -7222,41 +3891,24 @@ Release note:
 <context>
     <name>SpinnerDialog</name>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="121"/>
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="204" />
->>>>>>> other-repo/main
         <source>Invalid JSON Array</source>
         <translation type="unfinished">Անվավեր JSON զանգված</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="122"/>
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="205" />
->>>>>>> other-repo/main
         <source>The provided input cannot be parsed to a valid route rule array:
 </source>
         <translation type="unfinished">Տրամադրված մուտքագրումը չի կարող վերլուծվել վավեր երթուղու կանոնների զանգվածում՝</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="245"/>
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="328" />
->>>>>>> other-repo/main
         <source>Fetching information</source>
         <translation type="unfinished">Տեղեկությունների առբերում</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="261"/>
-        <location filename="../../src/ui/mainwindow.cpp" line="1182"/>
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="344" />
         <location filename="../../src/ui/mainwindow.cpp" line="1273" />
->>>>>>> other-repo/main
         <source>Download Profiles</source>
         <translation type="unfinished">Ներբեռնեք պրոֆիլները</translation>
     </message>
@@ -7264,17 +3916,9 @@ Release note:
 <context>
     <name>UsersForm</name>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/security/delete_or_edit_users.ui" line="14"/>
-=======
         <location filename="../../src/nekobox/ui/security/delete_or_edit_users.ui" line="14" />
->>>>>>> other-repo/main
         <source>Form</source>
         <translation type="unfinished">Ձև</translation>
     </message>
 </context>
-<<<<<<< HEAD
 </TS>
-=======
-</TS>
->>>>>>> other-repo/main

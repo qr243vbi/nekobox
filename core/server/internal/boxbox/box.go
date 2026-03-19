@@ -22,12 +22,8 @@ import (
 	"github.com/sagernet/sing-box/dns/transport/local"
 	"github.com/sagernet/sing-box/experimental"
 	"github.com/sagernet/sing-box/experimental/cachefile"
-<<<<<<< HEAD
-	"github.com/sagernet/sing-box/experimental/libbox/platform"
-=======
 
 	//	"github.com/sagernet/sing-box/experimental/libbox/platform"
->>>>>>> other-repo/main
 	"github.com/sagernet/sing-box/log"
 	"github.com/sagernet/sing-box/option"
 	"github.com/sagernet/sing-box/protocol/direct"
@@ -148,13 +144,6 @@ func New(options Options) (*Box, error) {
 	if experimentalOptions.V2RayAPI != nil && experimentalOptions.V2RayAPI.Listen != "" {
 		needV2RayAPI = true
 	}
-<<<<<<< HEAD
-	platformInterface := service.FromContext[platform.Interface](ctx)
-	var defaultLogWriter io.Writer
-	if platformInterface != nil {
-		defaultLogWriter = io.Discard
-	}
-=======
 	//	platformInterface := service.FromContext[platform.Interface](ctx)
 
 	var defaultLogWriter io.Writer
@@ -163,7 +152,6 @@ func New(options Options) (*Box, error) {
 			defaultLogWriter = io.Discard
 		}
 	*/
->>>>>>> other-repo/main
 	logFactory, err := log.New(log.Options{
 		Context:        ctx,
 		Options:        common.PtrValueOrDefault(options.Log),
@@ -204,11 +192,7 @@ func New(options Options) (*Box, error) {
 	service.MustRegister[adapter.ServiceManager](ctx, serviceManager)
 	dnsRouter := dns.NewRouter(ctx, logFactory, dnsOptions)
 	service.MustRegister[adapter.DNSRouter](ctx, dnsRouter)
-<<<<<<< HEAD
-	networkManager, err := route.NewNetworkManager(ctx, logFactory.NewLogger("network"), routeOptions)
-=======
 	networkManager, err := route.NewNetworkManager(ctx, logFactory.NewLogger("network"), routeOptions, dnsOptions)
->>>>>>> other-repo/main
 	if err != nil {
 		return nil, E.Cause(err, "initialize network manager")
 	}
@@ -347,26 +331,12 @@ func New(options Options) (*Box, error) {
 			option.DirectOutboundOptions{},
 		)
 	})
-<<<<<<< HEAD
-	dnsTransportManager.Initialize(common.Must1(
-		local.NewTransport(
-=======
 	dnsTransportManager.Initialize(func() (adapter.DNSTransport, error) {
 		return local.NewTransport(
->>>>>>> other-repo/main
 			ctx,
 			logFactory.NewLogger("dns/local"),
 			"local",
 			option.LocalDNSServerOptions{},
-<<<<<<< HEAD
-		)))
-	if platformInterface != nil {
-		err = platformInterface.Initialize(networkManager)
-		if err != nil {
-			return nil, E.Cause(err, "initialize platform interface")
-		}
-	}
-=======
 		)
 	})
 	/*
@@ -376,7 +346,6 @@ func New(options Options) (*Box, error) {
 				return nil, E.Cause(err, "initialize platform interface")
 			}
 		}*/
->>>>>>> other-repo/main
 	if needCacheFile {
 		cacheFile := cachefile.New(ctx, common.PtrValueOrDefault(experimentalOptions.CacheFile))
 		service.MustRegister[adapter.CacheFile](ctx, cacheFile)
@@ -485,17 +454,6 @@ func (s *Box) preStart() error {
 	if err != nil {
 		return E.Cause(err, "start logger")
 	}
-<<<<<<< HEAD
-	err = adapter.StartNamed(adapter.StartStateInitialize, s.internalService) // cache-file clash-api v2ray-api
-	if err != nil {
-		return err
-	}
-	err = adapter.Start(adapter.StartStateInitialize, s.network, s.dnsTransport, s.dnsRouter, s.connection, s.router, s.outbound, s.inbound, s.endpoint, s.service)
-	if err != nil {
-		return err
-	}
-	err = adapter.Start(adapter.StartStateStart, s.outbound, s.dnsTransport, s.dnsRouter, s.network, s.connection, s.router)
-=======
 	err = adapter.StartNamed(s.logger, adapter.StartStateInitialize, s.internalService) // cache-file clash-api v2ray-api
 	if err != nil {
 		return err
@@ -505,7 +463,6 @@ func (s *Box) preStart() error {
 		return err
 	}
 	err = adapter.Start(s.logger, adapter.StartStateStart, s.outbound, s.dnsTransport, s.dnsRouter, s.network, s.connection, s.router)
->>>>>>> other-repo/main
 	if err != nil {
 		return err
 	}
@@ -517,29 +474,6 @@ func (s *Box) start() error {
 	if err != nil {
 		return err
 	}
-<<<<<<< HEAD
-	err = adapter.StartNamed(adapter.StartStateStart, s.internalService)
-	if err != nil {
-		return err
-	}
-	err = adapter.Start(adapter.StartStateStart, s.inbound, s.endpoint, s.service)
-	if err != nil {
-		return err
-	}
-	err = adapter.Start(adapter.StartStatePostStart, s.outbound, s.network, s.dnsTransport, s.dnsRouter, s.connection, s.router, s.inbound, s.endpoint, s.service)
-	if err != nil {
-		return err
-	}
-	err = adapter.StartNamed(adapter.StartStatePostStart, s.internalService)
-	if err != nil {
-		return err
-	}
-	err = adapter.Start(adapter.StartStateStarted, s.network, s.dnsTransport, s.dnsRouter, s.connection, s.router, s.outbound, s.inbound, s.endpoint, s.service)
-	if err != nil {
-		return err
-	}
-	err = adapter.StartNamed(adapter.StartStateStarted, s.internalService)
-=======
 	err = adapter.StartNamed(s.logger, adapter.StartStateStart, s.internalService)
 	if err != nil {
 		return err
@@ -561,7 +495,6 @@ func (s *Box) start() error {
 		return err
 	}
 	err = adapter.StartNamed(s.logger, adapter.StartStateStarted, s.internalService)
->>>>>>> other-repo/main
 	if err != nil {
 		return err
 	}

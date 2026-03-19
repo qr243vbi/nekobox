@@ -1,9 +1,5 @@
 #include "nekobox/dataStore/Utils.hpp"
-<<<<<<< HEAD
-
-=======
 #include "nekobox/dataStore/Configs.hpp"
->>>>>>> other-repo/main
 #include "3rdparty/QThreadCreateThread.hpp"
 #include "3rdparty/base64.h"
 #include <QDir>
@@ -23,10 +19,7 @@
 #include <QTimer>
 #include <QUrlQuery>
 #include <functional>
-<<<<<<< HEAD
-=======
 #include <qnamespace.h>
->>>>>>> other-repo/main
 
 QString defStr(const QString &value, const QString def) {
   if (value.isEmpty()) {
@@ -36,8 +29,6 @@ QString defStr(const QString &value, const QString def) {
   }
 }
 
-<<<<<<< HEAD
-=======
 
 bool createSymlink(const QString &targetPath, const QString &linkPath) {
   if (QFile::link(targetPath, linkPath)) {
@@ -56,7 +47,6 @@ bool isFileInDirectoryOrSubdirectory(const QString &filePath, const QString &dir
     return !relative.startsWith("..");
 }
 
->>>>>>> other-repo/main
 void runOnNewThread(const std::function<void()> &callback) {
   createQThread(callback)->start();
 }
@@ -337,12 +327,9 @@ int MkPort() {
   s.listen();
   auto port = s.serverPort();
   s.close();
-<<<<<<< HEAD
-=======
   if (port < 0){
     return 19810;
   }
->>>>>>> other-repo/main
   return port;
 }
 

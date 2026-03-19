@@ -5,11 +5,7 @@
     <message>
         <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="14" />
         <source>Dialog</source>
-<<<<<<< HEAD
-        <translation type="unfinished">Dialogue</translation>
-=======
         <translation type="unfinished" />
->>>>>>> other-repo/main
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="20" />
@@ -29,11 +25,7 @@
     <message>
         <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="105" />
         <source>seconds</source>
-<<<<<<< HEAD
-        <translation type="unfinished" />
-=======
         <translation type="unfinished">seconds</translation>
->>>>>>> other-repo/main
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="110" />
@@ -51,11 +43,7 @@
     <message>
         <location filename="../../src/nekobox/ui/setting/resource_manager.ui" line="14" />
         <source>Dialog</source>
-<<<<<<< HEAD
-        <translation type="unfinished">Dialogue</translation>
-=======
         <translation type="unfinished" />
->>>>>>> other-repo/main
     </message>
 </context>
 <context>
@@ -69,11 +57,7 @@
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="46" />
         <source>Common</source>
-<<<<<<< HEAD
-        <translation type="unfinished" />
-=======
         <translation type="unfinished">Common</translation>
->>>>>>> other-repo/main
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="98" />
@@ -191,11 +175,7 @@
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="293" />
         <source>Concurrent</source>
-<<<<<<< HEAD
-        <translation type="unfinished" />
-=======
         <translation type="unfinished">Concurrent</translation>
->>>>>>> other-repo/main
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="300" />
@@ -270,10 +250,7 @@
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="502" />
-<<<<<<< HEAD
-=======
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="523" />
->>>>>>> other-repo/main
         <source>System</source>
         <translation type="unfinished">Système</translation>
     </message>
@@ -283,175 +260,98 @@
         <translation type="unfinished">Langue</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="532" />
-=======
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="536" />
->>>>>>> other-repo/main
         <source>Icon</source>
         <translation type="unfinished">Icône</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="539" />
-=======
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="543" />
->>>>>>> other-repo/main
         <source>Emoji Font</source>
         <translation type="unfinished">Police Emoji</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="552" />
-=======
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="556" />
->>>>>>> other-repo/main
         <source>Subscription</source>
         <translation type="unfinished">Abonnement</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="558" />
-=======
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="562" />
->>>>>>> other-repo/main
         <source>Clear servers before update</source>
         <translation type="unfinished">Effacer les serveurs avant la mise à jour</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="565" />
-=======
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="569" />
->>>>>>> other-repo/main
         <source>URL Test after update</source>
         <translation type="unfinished">Test d'URL après mise à jour</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="580" />
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="800" />
-=======
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="584" />
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="804" />
->>>>>>> other-repo/main
         <source>Enable</source>
         <translation type="unfinished">Activer</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="587" />
-=======
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="591" />
->>>>>>> other-repo/main
         <source>Interval (minute, invalid if less than 30)</source>
         <translation type="unfinished">Intervalle (minute, invalide si inférieur à 30)</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="606" />
-=======
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="610" />
->>>>>>> other-repo/main
         <source>Remove Duplicates</source>
         <translation type="unfinished">Supprimer les doublons</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="613" />
-=======
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="617" />
->>>>>>> other-repo/main
         <source>hwid=custom_value,os=custom_os,osVersion=custom_version,model=custom_model</source>
         <translation type="unfinished">hwid=custom_value,os=custom_os,osVersion=custom_version,model=custom_model</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="620" />
-=======
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="624" />
->>>>>>> other-repo/main
         <source>User Agent</source>
         <translation type="unfinished">Agent utilisateur</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="630" />
-=======
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="634" />
->>>>>>> other-repo/main
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;HWID=%1&lt;/p&gt;&lt;p&gt;OS=%2&lt;/p&gt;&lt;p&gt;OS Version=%3&lt;/p&gt;&lt;p&gt;Model=%4&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;HWID=%1&lt;/p&gt;&lt;p&gt;OS=%2&lt;/p&gt;&lt;p&gt;Version du système d'exploitation=%3&lt;/p&gt;&lt;p&gt;Modèle=%4&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="633" />
-=======
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="637" />
->>>>>>> other-repo/main
         <source>Send System Parameters</source>
         <translation type="unfinished">Envoyer les paramètres système</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="646" />
-=======
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="650" />
->>>>>>> other-repo/main
         <source>Automatic update</source>
         <translation type="unfinished">Mise à jour automatique</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="653" />
-=======
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="657" />
->>>>>>> other-repo/main
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Format: hwid=value,os=value,osVersion=value,model=value&lt;/p&gt;&lt;p&gt;Leave empty to use default values. Only specify the parameters you want to override.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Format : hwid=value,os=value,osVersion=value,model=value&lt;/p&gt;&lt;p&gt;Laissez vide pour utiliser les valeurs par défaut.Spécifiez uniquement les paramètres que vous souhaitez remplacer.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="656" />
-=======
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="660" />
->>>>>>> other-repo/main
         <source>Custom System Parameters (optional)</source>
         <translation type="unfinished">Paramètres système personnalisés (facultatif)</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="663" />
-=======
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="667" />
->>>>>>> other-repo/main
         <source>Remove Invalid</source>
         <translation type="unfinished">Supprimer invalide</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="670" />
-=======
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="674" />
->>>>>>> other-repo/main
         <source>Remove Unavailable</source>
         <translation type="unfinished">Supprimer indisponible</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="678" />
-=======
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="682" />
->>>>>>> other-repo/main
         <source>Core</source>
         <translation type="unfinished">Cœur</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="717" />
-=======
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="721" />
->>>>>>> other-repo/main
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Might
                                                                             Improve Ping and Performance&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                                                                         </source>
@@ -459,78 +359,46 @@
 Améliorer le ping et les performances&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="722" />
-=======
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="726" />
->>>>>>> other-repo/main
         <source>Disable Traffic Stats</source>
         <translation type="unfinished">Désactiver les statistiques de trafic</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="731" />
-=======
         <source>Use TCP</source>
         <translation type="obsolete">Utiliser TCP</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="735" />
->>>>>>> other-repo/main
         <source>Multiplex (mux)</source>
         <translation type="unfinished">Multiplexage (mux)</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="738" />
-=======
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="742" />
->>>>>>> other-repo/main
         <source>Loglevel</source>
         <translation type="unfinished">Niveau de journalisation</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="750" />
-=======
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="754" />
->>>>>>> other-repo/main
         <source>concurrency</source>
         <translation type="unfinished">concurrence</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="760" />
-=======
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="764" />
->>>>>>> other-repo/main
         <source>Padding</source>
         <translation type="unfinished">Rembourrage</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="767" />
-=======
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="771" />
->>>>>>> other-repo/main
         <source>Default On</source>
         <translation type="unfinished">Activé par défaut</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="779" />
-=======
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="783" />
->>>>>>> other-repo/main
         <source>Core Options</source>
         <translation type="unfinished">Options de base</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="789" />
-=======
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="793" />
->>>>>>> other-repo/main
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Settings for the
                                             sing-box's built-in NTP client&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                                         </source>
@@ -538,48 +406,27 @@ Améliorer le ping et les performances&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</tran
 client NTP intégré de sing-box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="794" />
-=======
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="798" />
->>>>>>> other-repo/main
         <source>NTP Settings</source>
         <translation type="unfinished">Paramètres NTP</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="809" />
-        <source>server</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="819" />
-=======
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="813" />
         <source>server</source>
         <translation type="unfinished">server</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="823" />
->>>>>>> other-repo/main
         <source>Port</source>
         <translation type="unfinished">Port</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="836" />
-=======
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="840" />
->>>>>>> other-repo/main
         <source>sync interval</source>
         <translation type="unfinished">intervalle de synchronisation</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="843" />
-=======
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="847" />
->>>>>>> other-repo/main
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;In
                                                                 minutes&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                                                             </source>
@@ -587,395 +434,214 @@ client NTP intégré de sing-box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translatio
 minutes&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="849" />
-        <source>5m</source>
-        <translation type="unfinished">5m</translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="854" />
-        <source>10m</source>
-        <translation type="unfinished">10m</translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="859" />
-        <source>30m</source>
-        <translation type="unfinished">30m</translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="873" />
-=======
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="877" />
->>>>>>> other-repo/main
         <source>Security</source>
         <translation type="unfinished">Sécurité</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="879" />
-=======
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="921" />
->>>>>>> other-repo/main
         <source>Disable Privilege request</source>
         <translation type="unfinished">Désactiver la demande de privilège</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="886" />
-=======
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="883" />
->>>>>>> other-repo/main
         <source>Use Mozilla Certificate Store</source>
         <translation type="unfinished">Utiliser le magasin de certificats Mozilla</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="893" />
-=======
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="890" />
->>>>>>> other-repo/main
         <source>Skip TLS certificate authentication by default (allowInsecure)</source>
         <translation type="unfinished">Ignorer l'authentification du certificat TLS par défaut (allowInsecure)</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="921" />
-=======
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="974" />
->>>>>>> other-repo/main
         <source>Default uTLS Fingerprint</source>
         <translation type="unfinished">Empreinte digitale uTLS par défaut</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="944" />
-=======
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="928" />
->>>>>>> other-repo/main
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Do not attempt to start as Admin unless explicitly requested&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;N'essayez pas de démarrer en tant qu'administrateur sauf demande explicite&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="947" />
-=======
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="931" />
->>>>>>> other-repo/main
         <source>Always Start as Standard User</source>
         <translation type="unfinished">Toujours démarrer en tant qu'utilisateur standard</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="954" />
-=======
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1021" />
->>>>>>> other-repo/main
         <source>Use Json instead binary for configs</source>
         <translation type="unfinished">Utilisez Json à la place du binaire pour les configurations</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="968" />
-=======
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1028" />
         <source>Ask for deleting profile</source>
         <translation type="unfinished">Demander la suppression du profil</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1045" />
->>>>>>> other-repo/main
         <source>Auto-Testing</source>
         <translation type="unfinished">Test automatique</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="974" />
-=======
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1051" />
->>>>>>> other-repo/main
         <source>Automatically test proxies in the background and maintain a pool of working proxies</source>
         <translation type="unfinished">Testez automatiquement les proxys en arrière-plan et maintenez un pool de proxys fonctionnels</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="977" />
-=======
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1054" />
->>>>>>> other-repo/main
         <source>Enable Auto-Testing</source>
         <translation type="unfinished">Activer les tests automatiques</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="984" />
-=======
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1061" />
->>>>>>> other-repo/main
         <source>Test Interval (seconds)</source>
         <translation type="unfinished">Intervalle de test (secondes)</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="991" />
-=======
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1068" />
->>>>>>> other-repo/main
         <source>How often to run the test cycle</source>
         <translation type="unfinished">À quelle fréquence exécuter le cycle de test</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1007" />
-=======
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1084" />
->>>>>>> other-repo/main
         <source>Proxies Per Cycle</source>
         <translation type="unfinished">Procurations par cycle</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1014" />
-=======
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1091" />
->>>>>>> other-repo/main
         <source>Number of proxies to test in each cycle</source>
         <translation type="unfinished">Nombre de proxys à tester à chaque cycle</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1030" />
-=======
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1107" />
->>>>>>> other-repo/main
         <source>Working Pool Size</source>
         <translation type="unfinished">Taille du pool de travail</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1037" />
-=======
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1114" />
->>>>>>> other-repo/main
         <source>Maximum number of verified working proxies to maintain</source>
         <translation type="unfinished">Nombre maximum de proxys de travail vérifiés à maintenir</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1053" />
-=======
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1130" />
->>>>>>> other-repo/main
         <source>Latency Threshold (ms)</source>
         <translation type="unfinished">Seuil de latence (ms)</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1060" />
-=======
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1137" />
->>>>>>> other-repo/main
         <source>Maximum latency to consider a proxy as working</source>
         <translation type="unfinished">Latence maximale pour considérer un proxy comme fonctionnel</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1079" />
-=======
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1156" />
->>>>>>> other-repo/main
         <source>Failure Retry Count</source>
         <translation type="unfinished">Nombre de tentatives d'échec</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1086" />
-=======
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1163" />
->>>>>>> other-repo/main
         <source>Number of retry attempts before considering a proxy as failed</source>
         <translation type="unfinished">Nombre de nouvelles tentatives avant de considérer un proxy comme ayant échoué</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1102" />
-=======
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1179" />
->>>>>>> other-repo/main
         <source>Test Target URL</source>
         <translation type="unfinished">Tester l'URL cible</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1109" />
-=======
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1186" />
->>>>>>> other-repo/main
         <source>URL to test proxies against</source>
         <translation type="unfinished">URL pour tester les proxys</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1112" />
-=======
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1189" />
->>>>>>> other-repo/main
         <source>http://cp.cloudflare.com/</source>
         <translation type="unfinished" />
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1119" />
-=======
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1196" />
->>>>>>> other-repo/main
         <source>Automatically switch to another working proxy when TUN mode proxy fails</source>
         <translation type="unfinished">Basculer automatiquement vers un autre proxy fonctionnel en cas d'échec du proxy en mode TUN</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1122" />
-=======
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1199" />
->>>>>>> other-repo/main
         <source>Enable TUN Failover</source>
         <translation type="unfinished">Activer le basculement TUN</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1130" />
-=======
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1207" />
->>>>>>> other-repo/main
         <source>Startup</source>
         <translation type="unfinished">Démarrer</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1191" />
-=======
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1268" />
->>>>>>> other-repo/main
         <source>Geometry</source>
         <translation type="unfinished">Géométrie</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1220" />
-=======
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1297" />
->>>>>>> other-repo/main
         <source>Autosave geometry</source>
         <translation type="unfinished">Géométrie d'enregistrement automatique</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1227" />
-=======
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1304" />
->>>>>>> other-repo/main
         <source>Autosave position</source>
         <translation type="unfinished">Position de sauvegarde automatique</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1247" />
-=======
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1324" />
->>>>>>> other-repo/main
         <source>Apply now</source>
         <translation type="unfinished">Postulez maintenant</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1363" />
-=======
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1440" />
->>>>>>> other-repo/main
         <source>Width</source>
         <translation type="unfinished">Largeur</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1376" />
-=======
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1453" />
->>>>>>> other-repo/main
         <source>X</source>
         <translation type="unfinished">X</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1409" />
-=======
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1486" />
->>>>>>> other-repo/main
         <source>Y</source>
         <translation type="unfinished">Oui</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1422" />
-=======
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1499" />
->>>>>>> other-repo/main
         <source>Height</source>
         <translation type="unfinished">Hauteur</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1509" />
-=======
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1586" />
->>>>>>> other-repo/main
         <source>Core Executable Path</source>
         <translation type="unfinished">Chemin de l'exécutable principal</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1538" />
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1712" />
-=======
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1615" />
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1789" />
->>>>>>> other-repo/main
         <source>Use default</source>
         <translation type="unfinished">Utiliser par défaut</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1545" />
-=======
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1622" />
->>>>>>> other-repo/main
         <source>Remote Control</source>
         <translation type="unfinished">Télécommande</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1571" />
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1745" />
-=======
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1648" />
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1822" />
->>>>>>> other-repo/main
         <source>Select</source>
         <translation type="unfinished">Sélectionner</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1683" />
-=======
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1760" />
->>>>>>> other-repo/main
         <source>Resources Directory</source>
         <translation type="unfinished">Répertoire des ressources</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1719" />
-=======
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1796" />
->>>>>>> other-repo/main
         <source>Resource Manager</source>
         <translation type="unfinished">Gestionnaire de ressources</translation>
     </message>
@@ -990,11 +656,7 @@ minutes&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="36" />
         <source>Common</source>
-<<<<<<< HEAD
-        <translation type="unfinished" />
-=======
         <translation type="unfinished">Common</translation>
->>>>>>> other-repo/main
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="102" />
@@ -1036,11 +698,7 @@ minutes&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="194" />
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="221" />
         <source>None</source>
-<<<<<<< HEAD
-        <translation type="unfinished" />
-=======
         <translation type="unfinished">None</translation>
->>>>>>> other-repo/main
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="201" />
@@ -1078,29 +736,17 @@ minutes&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
         <translation type="unfinished">Ignorer la mise à jour automatique</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/group/dialog_edit_group.cpp" line="58" />
-=======
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="59" />
->>>>>>> other-repo/main
         <source>Copied</source>
         <translation type="unfinished">Copié</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/group/dialog_edit_group.cpp" line="357" />
-=======
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="358" />
->>>>>>> other-repo/main
         <source>Warning</source>
         <translation type="unfinished">Avertissement</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/group/dialog_edit_group.cpp" line="357" />
-=======
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="358" />
->>>>>>> other-repo/main
         <source>Please input URL</source>
         <translation type="unfinished">Veuillez saisir l'URL</translation>
     </message>
@@ -1109,22 +755,14 @@ minutes&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     <name>DialogEditProfile</name>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="26" />
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="662" />
-=======
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="843" />
->>>>>>> other-repo/main
         <source>Edit</source>
         <translation type="unfinished">Modifier</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="56" />
         <source>Common</source>
-<<<<<<< HEAD
-        <translation type="unfinished" />
-=======
         <translation type="unfinished">Common</translation>
->>>>>>> other-repo/main
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="73" />
@@ -1243,11 +881,7 @@ minutes&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="381" />
-<<<<<<< HEAD
-        <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="696" />
-=======
         <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="713" />
->>>>>>> other-repo/main
         <source>Apply settings to this group</source>
         <translation type="unfinished">Appliquer les paramètres à ce groupe</translation>
     </message>
@@ -1277,202 +911,108 @@ minutes&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
         <translation type="unfinished">type d'en-tête</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="594" />
-=======
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="775" />
->>>>>>> other-repo/main
         <source>TLS Security Settings</source>
         <translation type="unfinished">Paramètres de sécurité TLS</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="611" />
-        <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="627" />
-=======
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="792" />
         <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="644" />
->>>>>>> other-repo/main
         <source>Certificate</source>
         <translation type="unfinished">Certificat</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="638" />
-=======
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="819" />
->>>>>>> other-repo/main
         <source>When enabled, V2Ray will not check the validity of the TLS certificate provided by the remote host (the security is equivalent to plaintext)</source>
         <translation type="unfinished">Lorsqu'il est activé, V2Ray ne vérifiera pas la validité du certificat TLS fourni par l'hôte distant (la sécurité est équivalente au texte en clair)</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="641" />
-=======
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="822" />
->>>>>>> other-repo/main
         <source>Allow insecure</source>
         <translation type="unfinished">Autoriser non sécurisé</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="648" />
-=======
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="829" />
->>>>>>> other-repo/main
         <source>Enable ECH</source>
         <translation type="unfinished">Activer ECH</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="655" />
-        <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="638" />
-=======
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="836" />
         <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="655" />
->>>>>>> other-repo/main
         <source>ECH Config</source>
         <translation type="unfinished">Configuration ECH</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="673" />
-=======
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="854" />
->>>>>>> other-repo/main
         <source>QSN</source>
         <translation type="unfinished">QSN</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="680" />
-=======
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="861" />
->>>>>>> other-repo/main
         <source>Server name indication, clear text.</source>
         <translation type="unfinished">Indication du nom du serveur, texte clair.</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="693" />
-=======
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="874" />
->>>>>>> other-repo/main
         <source>Application layer protocol negotiation, clear text. Please separate them with commas.</source>
         <translation type="unfinished">Négociation du protocole de la couche application, texte clair.Veuillez les séparer par des virgules.</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="720" />
-=======
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="618" />
->>>>>>> other-repo/main
         <source>TLS Camouflage Settings</source>
         <translation type="unfinished">Paramètres de camouflage TLS</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="774" />
-=======
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="672" />
->>>>>>> other-repo/main
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;May degrade performance, try record fragment first&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Peut dégrader les performances, essayez d'abord d'enregistrer le fragment&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="777" />
-=======
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="675" />
->>>>>>> other-repo/main
         <source>Enable TLS fragment</source>
         <translation type="unfinished">Activer le fragment TLS</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="784" />
-=======
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="682" />
->>>>>>> other-repo/main
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;time format, like 500ms, 10ms etc&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;format de l'heure, comme 500 ms, 10 ms, etc.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="787" />
-=======
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="685" />
->>>>>>> other-repo/main
         <source>Fallback Delay</source>
         <translation type="unfinished">Délai de repli</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="800" />
-=======
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="698" />
->>>>>>> other-repo/main
         <source>Enable TLS Record Fragment</source>
         <translation type="unfinished">Activer le fragment d'enregistrement TLS</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="839" />
-=======
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="737" />
->>>>>>> other-repo/main
         <source>Reality public key. If not empty, turn TLS into REALITY.</source>
         <translation type="unfinished">Clé publique de réalité.S'il n'est pas vide, transformez TLS en REALITY.</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="852" />
-=======
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="750" />
->>>>>>> other-repo/main
         <source>Reality short id. Accept only one value.</source>
         <translation type="unfinished">Réalité courte identification.Acceptez une seule valeur.</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="855" />
-=======
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="753" />
->>>>>>> other-repo/main
         <source>Reality SID</source>
         <translation type="unfinished">Réalité SID</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="219" />
-=======
         <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="230" />
->>>>>>> other-repo/main
         <source>Custom (%1 outbound)</source>
         <translation type="unfinished">Personnalisé (%1 sortant)</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="221" />
-=======
         <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="232" />
->>>>>>> other-repo/main
         <source>Custom (%1 config)</source>
         <translation type="unfinished">Personnalisé (configuration %1)</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="223" />
-        <source>Extra Core</source>
-        <translation type="unfinished">Noyau supplémentaire</translation>
-    </message>
-    <message>
-        <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="585" />
-        <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="590" />
-        <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="595" />
-        <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="600" />
-        <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="608" />
-=======
         <source>Extra Core</source>
         <translation type="obsolete">Noyau supplémentaire</translation>
     </message>
@@ -1496,33 +1036,20 @@ minutes&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
         <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="612" />
         <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="617" />
         <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="625" />
->>>>>>> other-repo/main
         <source>Not set</source>
         <translation type="unfinished">Non défini</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="587" />
-        <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="592" />
-        <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="597" />
-        <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="602" />
-        <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="610" />
-=======
         <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="604" />
         <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="609" />
         <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="614" />
         <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="619" />
         <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="627" />
->>>>>>> other-repo/main
         <source>Already set</source>
         <translation type="unfinished">Déjà défini</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="668" />
-=======
         <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="685" />
->>>>>>> other-repo/main
         <source>Confirm</source>
         <translation type="unfinished">Confirmer</translation>
     </message>
@@ -1555,71 +1082,41 @@ minutes&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
         <translation type="unfinished">Groupe2</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/group/dialog_edit_group.cpp" line="414" />
-=======
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="415" />
->>>>>>> other-repo/main
         <source>Front proxy for group %1</source>
         <translation type="unfinished">Proxy frontal pour le groupe %1</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/group/dialog_edit_group.cpp" line="416" />
-=======
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="417" />
->>>>>>> other-repo/main
         <source>Front proxy: </source>
         <translation type="unfinished">Proxy frontal :</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/group/dialog_edit_group.cpp" line="427" />
-=======
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="428" />
->>>>>>> other-repo/main
         <source>Landing proxy for group %1</source>
         <translation type="unfinished">Proxy d'atterrissage pour le groupe %1</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/group/dialog_edit_group.cpp" line="429" />
-=======
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="430" />
->>>>>>> other-repo/main
         <source>Landing proxy: </source>
         <translation type="unfinished">Proxy d'atterrissage :</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/group/dialog_edit_group.cpp" line="442" />
-=======
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="443" />
->>>>>>> other-repo/main
         <location filename="../../src/ui/setting/RouteItem.cpp" line="140" />
         <source>Proxy</source>
         <translation type="unfinished">Procuration</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/group/dialog_edit_group.cpp" line="445" />
-=======
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="446" />
->>>>>>> other-repo/main
         <location filename="../../src/ui/setting/RouteItem.cpp" line="142" />
         <source>Direct</source>
         <translation type="unfinished">Direct</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/group/dialog_edit_group.cpp" line="449" />
-        <source>None</source>
-        <translation type="unfinished" />
-=======
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="450" />
         <source>None</source>
         <translation type="unfinished">None</translation>
->>>>>>> other-repo/main
     </message>
     <message>
         <location filename="../../src/ui/profile/edit_chain.cpp" line="46" />
@@ -1639,20 +1136,12 @@ minutes&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     <message>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="137" />
         <source>Outbound: </source>
-<<<<<<< HEAD
-        <translation type="unfinished" />
-=======
         <translation type="unfinished">Outbound: </translation>
->>>>>>> other-repo/main
     </message>
     <message>
         <location filename="../../src/ui/setting/RouteItem.cpp" line="144" />
         <source>Outbound</source>
-<<<<<<< HEAD
-        <translation type="unfinished" />
-=======
         <translation type="unfinished">Outbound</translation>
->>>>>>> other-repo/main
     </message>
 </context>
 <context>
@@ -1665,11 +1154,7 @@ minutes&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="24" />
         <source>Global</source>
-<<<<<<< HEAD
-        <translation type="unfinished" />
-=======
         <translation type="unfinished">Global</translation>
->>>>>>> other-repo/main
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="30" />
@@ -1740,11 +1225,7 @@ minutes&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="24" />
         <source>Common</source>
-<<<<<<< HEAD
-        <translation type="unfinished" />
-=======
         <translation type="unfinished">Common</translation>
->>>>>>> other-repo/main
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="39" />
@@ -1779,56 +1260,32 @@ minutes&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="107" />
         <source>GitHub</source>
-<<<<<<< HEAD
-        <translation type="unfinished">GitHub</translation>
-=======
         <translation type="unfinished" />
->>>>>>> other-repo/main
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="112" />
         <source>jsDelivr(Cloudflare)</source>
-<<<<<<< HEAD
-        <translation type="unfinished">jsDelivr(Cloudflare)</translation>
-=======
         <translation type="unfinished" />
->>>>>>> other-repo/main
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="117" />
         <source>jsDelivr(Gcore)</source>
-<<<<<<< HEAD
-        <translation type="unfinished">jsDelivr(Gcore)</translation>
-=======
         <translation type="unfinished" />
->>>>>>> other-repo/main
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="122" />
         <source>jsDelivr(Quantil)</source>
-<<<<<<< HEAD
-        <translation type="unfinished">jsDelivr(Quantil)</translation>
-=======
         <translation type="unfinished" />
->>>>>>> other-repo/main
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="127" />
         <source>jsDelivr(Fastly)</source>
-<<<<<<< HEAD
-        <translation type="unfinished">jsDelivr (rapidement)</translation>
-=======
         <translation type="unfinished" />
->>>>>>> other-repo/main
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="132" />
         <source>jsDelivr(CDN)</source>
-<<<<<<< HEAD
-        <translation type="unfinished">jsDelivr(CDN)</translation>
-=======
         <translation type="unfinished" />
->>>>>>> other-repo/main
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="149" />
@@ -2005,11 +1462,7 @@ Pour plus d'informations, consultez le document "Configuration/DNS".</translatio
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="592" />
         <source>New</source>
-<<<<<<< HEAD
-        <translation type="unfinished" />
-=======
         <translation type="unfinished">New</translation>
->>>>>>> other-repo/main
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="599" />
@@ -2032,67 +1485,38 @@ Pour plus d'informations, consultez le document "Configuration/DNS".</translatio
         <translation type="unfinished">Supprimer</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="30" />
-=======
         <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="29" />
->>>>>>> other-repo/main
         <source>Invalid state</source>
         <translation type="unfinished">État invalide</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="30" />
-=======
         <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="29" />
->>>>>>> other-repo/main
         <source>The list of routing profiles is empty, this should be an unreachable state, crashes may occur now</source>
         <translation type="unfinished">La liste des profils de routage est vide, cela devrait être un état inaccessible, des plantages peuvent survenir maintenant</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="203" />
-        <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="207" />
-=======
         <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="202" />
         <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="206" />
->>>>>>> other-repo/main
         <source>Invalid settings</source>
         <translation type="unfinished">Paramètres invalides</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="203" />
-=======
         <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="202" />
->>>>>>> other-repo/main
         <source>Routing profile cannot be empty</source>
         <translation type="unfinished">Le profil de routage ne peut pas être vide</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="207" />
-=======
         <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="206" />
->>>>>>> other-repo/main
         <source>DNS Rules are not valid</source>
         <translation type="unfinished">Les règles DNS ne sont pas valides</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="315" />
-=======
         <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="314" />
->>>>>>> other-repo/main
         <source>Invalid operation</source>
         <translation type="unfinished">Opération invalide</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="315" />
-=======
         <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="314" />
->>>>>>> other-repo/main
         <source>Routing Profiles cannot be empty, try adding another profile or editing this one</source>
         <translation type="unfinished">Les profils de routage ne peuvent pas être vides, essayez d'ajouter un autre profil ou de modifier celui-ci</translation>
     </message>
@@ -2287,11 +1711,7 @@ Pour plus d'informations, consultez le document "Configuration/DNS".</translatio
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="14" />
         <source>EditMieru</source>
-<<<<<<< HEAD
-        <translation type="unfinished">ModifierMieru</translation>
-=======
         <translation type="unfinished" />
->>>>>>> other-repo/main
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="20" />
@@ -2314,12 +1734,6 @@ Pour plus d'informations, consultez le document "Configuration/DNS".</translatio
         <translation type="unfinished">Multiplexage</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="92" />
-        <source>Transport</source>
-        <translation type="unfinished">Transport</translation>
-    </message>
-=======
         <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="72" />
         <source>Transport</source>
         <translation type="unfinished">Transport</translation>
@@ -2381,7 +1795,6 @@ Pour plus d'informations, consultez le document "Configuration/DNS".</translatio
         <source>Headers</source>
         <translation type="unfinished">En-têtes</translation>
     </message>
->>>>>>> other-repo/main
 </context>
 <context>
     <name>EditQUIC</name>
@@ -2493,20 +1906,12 @@ Pour plus d'informations, consultez le document "Configuration/DNS".</translatio
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="14" />
         <source>EditSSH</source>
-<<<<<<< HEAD
-        <translation type="unfinished">ModifierSSH</translation>
-=======
         <translation type="unfinished" />
->>>>>>> other-repo/main
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="20" />
         <source>User</source>
-<<<<<<< HEAD
-        <translation type="unfinished" />
-=======
         <translation type="unfinished">User</translation>
->>>>>>> other-repo/main
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="30" />
@@ -2765,11 +2170,7 @@ Pour plus d'informations, consultez le document "Configuration/DNS".</translatio
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="14" />
         <source>EditWireguard</source>
-<<<<<<< HEAD
-        <translation type="unfinished">ModifierWireguard</translation>
-=======
         <translation type="unfinished" />
->>>>>>> other-repo/main
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="23" />
@@ -2789,11 +2190,7 @@ Pour plus d'informations, consultez le document "Configuration/DNS".</translatio
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="53" />
         <source>Reserved</source>
-<<<<<<< HEAD
-        <translation type="unfinished" />
-=======
         <translation type="unfinished">Reserved</translation>
->>>>>>> other-repo/main
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="63" />
@@ -2833,11 +2230,7 @@ Pour plus d'informations, consultez le document "Configuration/DNS".</translatio
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="106" />
         <source>Workers</source>
-<<<<<<< HEAD
-        <translation type="unfinished" />
-=======
         <translation type="unfinished">Workers</translation>
->>>>>>> other-repo/main
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="116" />
@@ -2918,56 +2311,32 @@ Pour plus d'informations, consultez le document "Configuration/DNS".</translatio
         <translation type="unfinished">Retirer</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/group/GroupItem.cpp" line="129" />
-=======
         <location filename="../../src/ui/group/GroupItem.cpp" line="134" />
->>>>>>> other-repo/main
         <source>Basic</source>
         <translation type="unfinished">Basique</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/group/GroupItem.cpp" line="129" />
-=======
         <location filename="../../src/ui/group/GroupItem.cpp" line="134" />
->>>>>>> other-repo/main
         <source>Subscription</source>
         <translation type="unfinished">Abonnement</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/group/GroupItem.cpp" line="130" />
-=======
         <location filename="../../src/ui/group/GroupItem.cpp" line="135" />
->>>>>>> other-repo/main
         <source>Archive</source>
         <translation type="unfinished">Archive</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/group/GroupItem.cpp" line="142" />
-=======
         <location filename="../../src/ui/group/GroupItem.cpp" line="147" />
->>>>>>> other-repo/main
         <source>Last update: %1</source>
         <translation type="unfinished">Dernière mise à jour : %1</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/group/GroupItem.cpp" line="186" />
-=======
         <location filename="../../src/ui/group/GroupItem.cpp" line="191" />
->>>>>>> other-repo/main
         <source>Confirmation</source>
         <translation type="unfinished">Confirmation</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/group/GroupItem.cpp" line="186" />
-=======
         <location filename="../../src/ui/group/GroupItem.cpp" line="191" />
->>>>>>> other-repo/main
         <source>Remove %1?</source>
         <translation type="unfinished">Supprimer %1 ?</translation>
     </message>
@@ -2983,11 +2352,7 @@ Pour plus d'informations, consultez le document "Configuration/DNS".</translatio
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="51" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="54" />
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="693" />
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="624" />
->>>>>>> other-repo/main
         <source>Profiles</source>
         <translation type="unfinished">Profils</translation>
     </message>
@@ -3021,238 +2386,127 @@ Pour plus d'informations, consultez le document "Configuration/DNS".</translatio
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="161" />
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="597" />
-        <location filename="../../src/ui/mainwindow.cpp" line="2422" />
-        <location filename="../../src/ui/mainwindow.cpp" line="2425" />
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="594" />
         <location filename="../../src/ui/mainwindow.cpp" line="2528" />
         <location filename="../../src/ui/mainwindow.cpp" line="2531" />
->>>>>>> other-repo/main
         <source>System Proxy</source>
         <translation type="unfinished">Proxy système</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="231" />
-        <source>URL Test</source>
-        <translation type="unfinished">Test d'URL</translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="309" />
-        <location filename="../../src/ui/group/dialog_edit_group.cpp" line="139" />
-=======
         <source>URL Test</source>
         <translation type="obsolete">Test d'URL</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="306" />
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="140" />
->>>>>>> other-repo/main
         <source>Type</source>
         <translation type="unfinished">Taper</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="314" />
-        <location filename="../../src/ui/group/dialog_edit_group.cpp" line="142" />
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="311" />
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="143" />
->>>>>>> other-repo/main
         <source>Address</source>
         <translation type="unfinished">Adresse</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="319" />
-        <location filename="../../src/ui/group/dialog_edit_group.cpp" line="145" />
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="316" />
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="146" />
->>>>>>> other-repo/main
         <source>Name</source>
         <translation type="unfinished">Nom</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="324" />
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="289" />
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="291" />
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="321" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="291" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="293" />
->>>>>>> other-repo/main
         <source>Test Result</source>
         <translation type="unfinished">Résultat du test</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="329" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="489" />
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="326" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="486" />
->>>>>>> other-repo/main
         <source>Traffic</source>
         <translation type="unfinished">Trafic</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="394" />
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="391" />
->>>>>>> other-repo/main
         <source>Logs</source>
         <translation type="unfinished">Journaux</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="429" />
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="426" />
->>>>>>> other-repo/main
         <source>Connections</source>
         <translation type="unfinished">Relations</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="457" />
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="454" />
->>>>>>> other-repo/main
         <source>Destination (Domain)</source>
         <translation type="unfinished">Destination (domaine)</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="460" />
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="457" />
->>>>>>> other-repo/main
         <source>Click To Disable Sorting</source>
         <translation type="unfinished">Cliquez pour désactiver le tri</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="465" />
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="462" />
->>>>>>> other-repo/main
         <source>Process</source>
         <translation type="unfinished">Processus</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="468" />
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="465" />
->>>>>>> other-repo/main
         <source>Click To Sort By Process</source>
         <translation type="unfinished">Cliquez pour trier par processus</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="473" />
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="470" />
->>>>>>> other-repo/main
         <source>Protocol</source>
         <translation type="unfinished">Protocole</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="476" />
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="473" />
->>>>>>> other-repo/main
         <source>Click To Sort By Protocol</source>
         <translation type="unfinished">Cliquez pour trier par protocole</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="481" />
-        <source>Outbound</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="484" />
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="478" />
         <source>Outbound</source>
         <translation type="unfinished">Outbound</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="481" />
->>>>>>> other-repo/main
         <source>Click To Sort By Outbound</source>
         <translation type="unfinished">Cliquez pour trier par sortant</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="492" />
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="489" />
->>>>>>> other-repo/main
         <source>Click To Toggle sort by Traffic</source>
         <translation type="unfinished">Cliquez pour basculer le tri par trafic</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="501" />
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="498" />
->>>>>>> other-repo/main
         <source>Traffic Graph</source>
         <translation type="unfinished">Graphique de trafic</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="593" />
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="590" />
->>>>>>> other-repo/main
         <source>Program</source>
         <translation type="unfinished">Programme</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="616" />
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="613" />
->>>>>>> other-repo/main
         <source>Preferences</source>
         <translation type="unfinished">Préférences</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="627" />
-        <source>Server</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="631" />
-=======
         <source>Server</source>
         <translation type="obsolete">Server</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="638" />
->>>>>>> other-repo/main
         <source>Share</source>
         <translation type="unfinished">Partager</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="641" />
-        <source>Current group</source>
-        <translation type="unfinished">Groupe actuel</translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="647" />
-=======
         <source>Current group</source>
         <translation type="obsolete">Groupe actuel</translation>
     </message>
@@ -3260,14 +2514,10 @@ Pour plus d'informations, consultez le document "Configuration/DNS".</translatio
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="231" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="648" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="700" />
->>>>>>> other-repo/main
         <source>Test</source>
         <translation type="unfinished">Test</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="675" />
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="634" />
         <source>Current Selected</source>
         <translation type="unfinished">Actuellement sélectionné</translation>
@@ -3279,23 +2529,15 @@ Pour plus d'informations, consultez le document "Configuration/DNS".</translatio
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="683" />
->>>>>>> other-repo/main
         <source>Hidden menu</source>
         <translation type="unfinished">Menu caché</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="688" />
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="695" />
->>>>>>> other-repo/main
         <source>Routing Menu</source>
         <translation type="unfinished">Menu Routage</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="711" />
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="707" />
         <source>Context</source>
         <translation type="unfinished">Contexte</translation>
@@ -3307,212 +2549,116 @@ Pour plus d'informations, consultez le document "Configuration/DNS".</translatio
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="726" />
->>>>>>> other-repo/main
         <source>Exit</source>
         <translation type="unfinished">Sortie</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="716" />
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="731" />
->>>>>>> other-repo/main
         <source>Toggle Window</source>
         <translation type="unfinished">Basculer la fenêtre</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="721" />
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="736" />
->>>>>>> other-repo/main
         <source>Basic Settings</source>
         <translation type="unfinished">Paramètres de base</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="726" />
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="741" />
->>>>>>> other-repo/main
         <source>New profile</source>
         <translation type="unfinished">Nouveau profil</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="731" />
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="746" />
->>>>>>> other-repo/main
         <source>Groups</source>
         <translation type="unfinished">Groupes</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="736" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3442" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3452" />
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="751" />
         <location filename="../../src/ui/mainwindow.cpp" line="3596" />
         <location filename="../../src/ui/mainwindow.cpp" line="3606" />
->>>>>>> other-repo/main
         <source>Start</source>
         <translation type="unfinished">Commencer</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="744" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3441" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3452" />
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="759" />
         <location filename="../../src/ui/mainwindow.cpp" line="3595" />
         <location filename="../../src/ui/mainwindow.cpp" line="3606" />
->>>>>>> other-repo/main
         <source>Stop</source>
         <translation type="unfinished">Arrêt</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="752" />
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="767" />
->>>>>>> other-repo/main
         <source>Edit</source>
         <translation type="unfinished">Modifier</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="760" />
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="775" />
->>>>>>> other-repo/main
         <source>Routing Settings</source>
         <translation type="unfinished">Paramètres de routage</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="765" />
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="780" />
->>>>>>> other-repo/main
         <source>Add profile from clipboard</source>
         <translation type="unfinished">Ajouter un profil depuis le presse-papiers</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="773" />
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="788" />
->>>>>>> other-repo/main
         <source>Delete</source>
         <translation type="unfinished">Supprimer</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="781" />
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="796" />
->>>>>>> other-repo/main
         <source>Debug Info</source>
         <translation type="unfinished">Informations de débogage</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="786" />
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="801" />
->>>>>>> other-repo/main
         <source>QR Code and link</source>
         <translation type="unfinished">QR Code et lien</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="794" />
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="809" />
->>>>>>> other-repo/main
         <source>Copy Link</source>
         <translation type="unfinished">Copier le lien</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="815" />
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="830" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1071" />
->>>>>>> other-repo/main
         <source>Clear Test Result</source>
         <translation type="unfinished">Effacer le résultat du test</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="823" />
-        <location filename="../../src/ui/mainwindow.cpp" line="1348" />
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="838" />
         <location filename="../../src/ui/mainwindow.cpp" line="1437" />
->>>>>>> other-repo/main
         <source>Export %1 config</source>
         <translation type="unfinished">Exporter la configuration %1</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="831" />
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="846" />
->>>>>>> other-repo/main
         <source>Reset Traffic</source>
         <translation type="unfinished">Réinitialiser le trafic</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="839" />
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="854" />
->>>>>>> other-repo/main
         <source>Scan QR Code</source>
         <translation type="unfinished">Scanner le code QR</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="847" />
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="862" />
->>>>>>> other-repo/main
         <source>Enable System Proxy</source>
         <translation type="unfinished">Activer le proxy système</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="855" />
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="870" />
->>>>>>> other-repo/main
         <source>Disable</source>
         <translation type="unfinished">Désactiver</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="860" />
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="875" />
->>>>>>> other-repo/main
         <source>Remove Duplicates</source>
         <translation type="unfinished">Supprimer les doublons</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="868" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="945" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="953" />
-        <source>fake</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="876" />
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="883" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="960" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="968" />
@@ -3522,87 +2668,45 @@ Pour plus d'informations, consultez le document "Configuration/DNS".</translatio
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="891" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1162" />
->>>>>>> other-repo/main
         <source>Move</source>
         <translation type="unfinished">Se déplacer</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="887" />
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="902" />
->>>>>>> other-repo/main
         <source>Start with system</source>
         <translation type="unfinished">Commencez par le système</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="895" />
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="910" />
->>>>>>> other-repo/main
         <source>Remember last profile</source>
         <translation type="unfinished">Mémoriser le dernier profil</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="903" />
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="918" />
->>>>>>> other-repo/main
         <source>Allow other devices to connect</source>
         <translation type="unfinished">Autoriser d'autres appareils à se connecter</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="908" />
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="923" />
->>>>>>> other-repo/main
         <source>Remove Unavailable</source>
         <translation type="unfinished">Supprimer indisponible</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="916" />
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="931" />
->>>>>>> other-repo/main
         <source>Full Test</source>
         <translation type="unfinished">Test complet</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="924" />
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="939" />
->>>>>>> other-repo/main
         <source>Hotkey Settings</source>
         <translation type="unfinished">Paramètres des raccourcis clavier</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="929" />
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="944" />
->>>>>>> other-repo/main
         <source>Select All</source>
         <translation type="unfinished">Sélectionner tout</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="937" />
-        <source>Copy links of selected (Custom Links)</source>
-        <translation type="unfinished">Copier les liens sélectionnés (liens personnalisés)</translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="961" />
-        <source>Copy links of selected</source>
-        <translation type="unfinished">Copier les liens des sélectionnés</translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="972" />
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="952" />
         <source>Copy Custom Links</source>
         <translation type="unfinished">Copier les liens personnalisés</translation>
@@ -3632,103 +2736,51 @@ Pour plus d'informations, consultez le document "Configuration/DNS".</translatio
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="987" />
->>>>>>> other-repo/main
         <source>Enable Tun</source>
         <translation type="unfinished">Activer le réglage</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="977" />
-        <location filename="../../src/ui/mainwindow.cpp" line="2778" />
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="992" />
         <location filename="../../src/ui/mainwindow.cpp" line="2915" />
->>>>>>> other-repo/main
         <source>Clone</source>
         <translation type="unfinished">Cloner</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="985" />
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1000" />
->>>>>>> other-repo/main
         <source>Update subscription</source>
         <translation type="unfinished">Mettre à jour l'abonnement</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="996" />
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1011" />
->>>>>>> other-repo/main
         <source>Resolve domain</source>
         <translation type="unfinished">Résoudre le domaine</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1004" />
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1019" />
->>>>>>> other-repo/main
         <source>Tun Settings</source>
         <translation type="unfinished">Paramètres de réglage</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1009" />
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1024" />
->>>>>>> other-repo/main
         <source>Restart Program</source>
         <translation type="unfinished">Redémarrer le programme</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1014" />
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1029" />
->>>>>>> other-repo/main
         <source>Open Config Folder</source>
         <translation type="unfinished">Ouvrir le dossier de configuration</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1035" />
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1050" />
->>>>>>> other-repo/main
         <source>Restart Proxy</source>
         <translation type="unfinished">Redémarrer le proxy</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1040" />
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1055" />
->>>>>>> other-repo/main
         <source>Stop Testing</source>
         <translation type="unfinished">Arrêter le test</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1045" />
-        <source>Url Test Selected</source>
-        <translation type="unfinished">Test d'URL sélectionné</translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1048" />
-        <source>Ctrl+Shift+S</source>
-        <translation type="unfinished">Ctrl+Maj+S</translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1056" />
-        <source>Clear Test Result Selected</source>
-        <translation type="unfinished">Effacer le résultat du test sélectionné</translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1067" />
-=======
         <source>Url Test Selected</source>
         <translation type="obsolete">Test d'URL sélectionné</translation>
     </message>
@@ -3742,24 +2794,10 @@ Pour plus d'informations, consultez le document "Configuration/DNS".</translatio
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1082" />
->>>>>>> other-repo/main
         <source>Url Test Group</source>
         <translation type="unfinished">Groupe de test d'URL</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1070" />
-        <source>Ctrl+Shift+G</source>
-        <translation type="unfinished">Ctrl+Maj+G</translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1078" />
-        <source>Resolve Selected Domain</source>
-        <translation type="unfinished">Résoudre le domaine sélectionné</translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1086" />
-=======
         <source>Ctrl+Shift+G</source>
         <translation type="obsolete">Ctrl+Maj+G</translation>
     </message>
@@ -3769,24 +2807,10 @@ Pour plus d'informations, consultez le document "Configuration/DNS".</translatio
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1101" />
->>>>>>> other-repo/main
         <source>Remove Invalid</source>
         <translation type="unfinished">Supprimer invalide</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1089" />
-        <source>Ctrl+Alt+I</source>
-        <translation type="unfinished">Ctrl+Alt+I</translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1097" />
-        <source>Open Manager</source>
-        <translation type="unfinished">Gestionnaire ouvert</translation>
-    </message>
-    <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1102" />
-=======
         <source>Ctrl+Alt+I</source>
         <translation type="obsolete">Ctrl+Alt+I</translation>
     </message>
@@ -3796,270 +2820,150 @@ Pour plus d'informations, consultez le document "Configuration/DNS".</translatio
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1170" />
->>>>>>> other-repo/main
         <source>Speedtest Current</source>
         <translation type="unfinished">Courant de test de vitesse</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1107" />
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1112" />
->>>>>>> other-repo/main
         <source>Full test Selected</source>
         <translation type="unfinished">Test complet Sélectionné</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1112" />
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1117" />
->>>>>>> other-repo/main
         <source>Download test Selected</source>
         <translation type="unfinished">Télécharger le test Sélectionné</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1117" />
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1122" />
->>>>>>> other-repo/main
         <source>Upload test Selected</source>
         <translation type="unfinished">Télécharger le test Sélectionné</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1122" />
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1127" />
->>>>>>> other-repo/main
         <source>Country test Selected</source>
         <translation type="unfinished">Test pays Sélectionné</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1127" />
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1132" />
->>>>>>> other-repo/main
         <source>Simple download test Selected</source>
         <translation type="unfinished">Test de téléchargement simple Sélectionné</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1132" />
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1137" />
->>>>>>> other-repo/main
         <source>Speedtest Group</source>
         <translation type="unfinished">Groupe de test de vitesse</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1137" />
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1142" />
->>>>>>> other-repo/main
         <source>Hide window</source>
         <translation type="unfinished">Masquer la fenêtre</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1142" />
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1147" />
->>>>>>> other-repo/main
         <source>Add profile from File</source>
         <translation type="unfinished">Ajouter un profil à partir d'un fichier</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1147" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3468" />
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1152" />
         <location filename="../../src/ui/mainwindow.cpp" line="3625" />
->>>>>>> other-repo/main
         <source>Add new Group</source>
         <translation type="unfinished">Ajouter un nouveau groupe</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1152" />
-=======
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1157" />
->>>>>>> other-repo/main
         <source>Security Settings</source>
         <translation type="unfinished">Paramètres de sécurité</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/dataStore/ProxyEntity.cpp" line="52" />
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="289" />
-=======
         <location filename="../../src/dataStore/ProxyEntity.cpp" line="223" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="291" />
->>>>>>> other-repo/main
         <source>Unavailable</source>
         <translation type="unfinished">Indisponible</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="1001" />
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="1092" />
->>>>>>> other-repo/main
         <source>Edit Routing Profiles</source>
         <translation type="unfinished">Modifier les profils de routage</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="1023" />
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="1114" />
->>>>>>> other-repo/main
         <source>Update Routing Profiles</source>
         <translation type="unfinished">Mettre à jour les profils de routage</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="1035" />
-        <location filename="../../src/ui/mainwindow.cpp" line="1039" />
-        <location filename="../../src/ui/mainwindow.cpp" line="1060" />
-        <location filename="../../src/ui/mainwindow.cpp" line="1063" />
-        <location filename="../../src/ui/mainwindow.cpp" line="1107" />
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="1126" />
         <location filename="../../src/ui/mainwindow.cpp" line="1130" />
         <location filename="../../src/ui/mainwindow.cpp" line="1151" />
         <location filename="../../src/ui/mainwindow.cpp" line="1154" />
         <location filename="../../src/ui/mainwindow.cpp" line="1198" />
->>>>>>> other-repo/main
         <location filename="../../src/ui/setting/RouteItem.cpp" line="95" />
         <location filename="../../src/ui/setting/RouteItem.cpp" line="104" />
         <source>Update Response</source>
         <translation type="unfinished">Mettre à jour la réponse</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="1036" />
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="1127" />
->>>>>>> other-repo/main
         <location filename="../../src/ui/setting/RouteItem.cpp" line="105" />
         <source>No routing profiles are updated</source>
         <translation type="unfinished">Aucun profil de routage n'est mis à jour</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="1040" />
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="1131" />
->>>>>>> other-repo/main
         <location filename="../../src/ui/setting/RouteItem.cpp" line="96" />
         <source>Updated %1 routing profiles</source>
         <translation type="unfinished">Profils de routage %1 mis à jour</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="1050" />
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="1141" />
->>>>>>> other-repo/main
         <source>Update RuleSet Map</source>
         <translation type="unfinished">Mettre à jour la carte du jeu de règles</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="1061" />
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="1152" />
->>>>>>> other-repo/main
         <source>Failed to update rulesets</source>
         <translation type="unfinished">Échec de la mise à jour des ensembles de règles</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="1064" />
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="1155" />
->>>>>>> other-repo/main
         <source>Rulesets updated successfully</source>
         <translation type="unfinished">Ensembles de règles mis à jour avec succès</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="1073" />
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="1164" />
->>>>>>> other-repo/main
         <source>Update RuleSet Cache</source>
         <translation type="unfinished">Mettre à jour le cache de l'ensemble de règles</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="1108" />
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="1199" />
->>>>>>> other-repo/main
         <source>Rulesets cache is updated</source>
         <translation type="unfinished">Le cache des ensembles de règles est mis à jour</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="1122" />
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="1213" />
->>>>>>> other-repo/main
         <source>Clear RuleSet Cache</source>
         <translation type="unfinished">Effacer le cache de l'ensemble de règles</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="1158" />
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="1249" />
->>>>>>> other-repo/main
         <source>Enable AdBlock</source>
         <translation type="unfinished">Activer AdBlock</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="1561" />
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="1651" />
->>>>>>> other-repo/main
         <source>Error</source>
         <translation type="unfinished">Erreur</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="1648" />
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="1738" />
->>>>>>> other-repo/main
         <source>Tun Settings changed</source>
         <translation type="unfinished">Paramètres de réglage modifiés</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="1649" />
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="1739" />
->>>>>>> other-repo/main
         <source>Restart Tun to take effect.</source>
         <translation type="unfinished">Redémarrez Tun pour prendre effet.</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="1655" />
-        <location filename="../../src/ui/mainwindow.cpp" line="1713" />
-        <location filename="../../src/ui/mainwindow.cpp" line="2832" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3203" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3257" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3305" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3510" />
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="1745" />
         <location filename="../../src/ui/mainwindow.cpp" line="1803" />
         <location filename="../../src/ui/mainwindow.cpp" line="2969" />
@@ -4067,481 +2971,268 @@ Pour plus d'informations, consultez le document "Configuration/DNS".</translatio
         <location filename="../../src/ui/mainwindow.cpp" line="3394" />
         <location filename="../../src/ui/mainwindow.cpp" line="3443" />
         <location filename="../../src/ui/mainwindow.cpp" line="3673" />
->>>>>>> other-repo/main
         <source>Confirmation</source>
         <translation type="unfinished">Confirmation</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="1656" />
-        <location filename="../../src/ui/mainwindow.cpp" line="1714" />
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="1746" />
         <location filename="../../src/ui/mainwindow.cpp" line="1804" />
->>>>>>> other-repo/main
         <source>Settings changed, restart proxy?</source>
         <translation type="unfinished">Paramètres modifiés, redémarrer le proxy ?</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="1685" />
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="1775" />
->>>>>>> other-repo/main
         <source>Settings changed</source>
         <translation type="unfinished">Paramètres modifiés</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="1686" />
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="1776" />
->>>>>>> other-repo/main
         <source>Restart the program to take effect.</source>
         <translation type="unfinished">Redémarrez le programme pour prendre effet.</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="1729" />
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="1819" />
->>>>>>> other-repo/main
         <source>Imported %1 profile(s)</source>
         <translation type="unfinished">Profil(s) %1 importé(s)</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="1980" />
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="2086" />
->>>>>>> other-repo/main
         <source>User opted for no privilege req, some features may not work</source>
         <translation type="unfinished">L'utilisateur a opté pour aucune demande de privilège, certaines fonctionnalités peuvent ne pas fonctionner</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="2044" />
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="2150" />
->>>>>>> other-repo/main
         <source>Please give the core root privileges</source>
         <translation type="unfinished">Veuillez donner les privilèges root principaux</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="2398" />
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="2504" />
->>>>>>> other-repo/main
         <source>Not Running</source>
         <translation type="unfinished">Ne fonctionne pas</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="2779" />
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="2916" />
->>>>>>> other-repo/main
         <source>Clone %1 item(s)</source>
         <translation type="unfinished">Cloner %1 élément(s)</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="2813" />
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="2950" />
->>>>>>> other-repo/main
         <source> Confirmation </source>
         <translation type="unfinished">Confirmation</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="2814" />
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="2951" />
->>>>>>> other-repo/main
         <source> Remove %1 item(s) ? </source>
         <translation type="unfinished">Supprimer %1 élément(s) ?</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="2833" />
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="2970" />
->>>>>>> other-repo/main
         <source>Remove %1 item(s) ?</source>
         <translation type="unfinished">Supprimer %1 élément(s) ?</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="2870" />
-        <location filename="../../src/ui/mainwindow.cpp" line="2883" />
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="3007" />
         <location filename="../../src/ui/mainwindow.cpp" line="3020" />
->>>>>>> other-repo/main
         <source>Copied %1 item(s)</source>
         <translation type="unfinished">%1 élément(s) copié(s)</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="3115" />
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="3252" />
->>>>>>> other-repo/main
         <source>QR Code not found</source>
         <translation type="unfinished">Code QR introuvable</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="3136" />
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="3273" />
->>>>>>> other-repo/main
         <source>Unable to capture screen</source>
         <translation type="unfinished">Impossible de capturer l'écran</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="3204" />
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="3341" />
->>>>>>> other-repo/main
         <source>Remove %1 Unavailable item(s) ?</source>
         <translation type="unfinished">Supprimer %1 Élément(s) indisponible(s) ?</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="3258" />
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="3395" />
->>>>>>> other-repo/main
         <source>Remove %1 Invalid item(s) ?</source>
         <translation type="unfinished">Supprimer %1 Élément(s) invalide(s) ?</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="3306" />
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="3444" />
->>>>>>> other-repo/main
         <source>Replace domain server addresses with their resolved IPs?</source>
         <translation type="unfinished">Remplacer les adresses des serveurs de domaine par leurs adresses IP résolues ?</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="3439" />
-        <source>Clear</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3501" />
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="3593" />
         <source>Clear</source>
         <translation type="unfinished">Clear</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3664" />
->>>>>>> other-repo/main
         <source>Delete selected Group</source>
         <translation type="unfinished">Supprimer le groupe sélectionné</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="3502" />
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="3665" />
->>>>>>> other-repo/main
         <source>Edit selected Group</source>
         <translation type="unfinished">Modifier le groupe sélectionné</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="3511" />
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="3674" />
->>>>>>> other-repo/main
         <source>Remove %1?</source>
         <translation type="unfinished">Supprimer %1 ?</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="4194" />
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="4411" />
->>>>>>> other-repo/main
         <source>Cannot start</source>
         <translation type="unfinished">Impossible de démarrer</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="4195" />
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="4412" />
->>>>>>> other-repo/main
         <source>Last download request has not finished yet</source>
         <translation type="unfinished">La dernière demande de téléchargement n'est pas encore terminée</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="4229" />
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="4446" />
->>>>>>> other-repo/main
         <source>Failed to download update assets</source>
         <translation type="unfinished">Échec du téléchargement des ressources de mise à jour</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="81" />
-=======
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="83" />
->>>>>>> other-repo/main
         <source>Profile test aborted</source>
         <translation type="unfinished">Test de profil interrompu</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="132" />
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="178" />
-=======
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="134" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="180" />
->>>>>>> other-repo/main
         <source>[%1] test error: %2</source>
         <translation type="unfinished">[%1] erreur de test : %2</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="161" />
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="487" />
-=======
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="163" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="489" />
->>>>>>> other-repo/main
         <source>Something is very wrong, the subject ent cannot be found!</source>
         <translation type="unfinished">Quelque chose ne va vraiment pas, le sujet est introuvable !</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="167" />
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="493" />
-=======
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="169" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="495" />
->>>>>>> other-repo/main
         <source>Profile manager data is corrupted, try again.</source>
         <translation type="unfinished">Les données du gestionnaire de profils sont corrompues, réessayez.</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="201" />
-=======
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="203" />
->>>>>>> other-repo/main
         <source>The last url test did not exit completely, please wait. If it persists, please restart the program.</source>
         <translation type="unfinished">Le dernier test d'URL ne s'est pas terminé complètement, veuillez patienter.Si le problème persiste, veuillez redémarrer le programme.</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="210" />
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="317" />
-=======
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="212" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="319" />
->>>>>>> other-repo/main
         <source>Failed to build test config: </source>
         <translation type="unfinished">Échec de la création de la configuration de test :</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="251" />
-=======
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="253" />
->>>>>>> other-repo/main
         <source>URL test finished!</source>
         <translation type="unfinished">Test d'URL terminé !</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="262" />
-=======
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="264" />
->>>>>>> other-repo/main
         <source>Failed to stop tests</source>
         <translation type="unfinished">Impossible d'arrêter les tests</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="268" />
-=======
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="270" />
->>>>>>> other-repo/main
         <source>Testing</source>
         <translation type="unfinished">Essai</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="306" />
-=======
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="308" />
->>>>>>> other-repo/main
         <source>The last speed test did not exit completely, please wait. If it persists, please restart the program.</source>
         <translation type="unfinished">Le dernier test de vitesse ne s'est pas terminé complètement, veuillez patienter.Si le problème persiste, veuillez redémarrer le programme.</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="343" />
-=======
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="345" />
->>>>>>> other-repo/main
         <source>Speedtest finished!</source>
         <translation type="unfinished">Test de vitesse terminé !</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="424" />
-=======
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="426" />
->>>>>>> other-repo/main
         <source>Profile speed test aborted</source>
         <translation type="unfinished">Test de vitesse de profil annulé</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="512" />
-=======
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="514" />
->>>>>>> other-repo/main
         <source>[%1] speed test error: %2</source>
         <translation type="unfinished">[%1] erreur de test de vitesse : %2</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="521" />
-=======
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="523" />
->>>>>>> other-repo/main
         <source>You need to enable hijack DNS server first</source>
         <translation type="unfinished">Vous devez d'abord activer le piratage du serveur DNS</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="535" />
-=======
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="537" />
->>>>>>> other-repo/main
         <source>Failed to set system dns: </source>
         <translation type="unfinished">Échec de la définition du DNS du système :</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="583" />
-=======
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="585" />
->>>>>>> other-repo/main
         <source>Tun device misbehaving</source>
         <translation type="unfinished">L'appareil Tun se comporte mal</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="584" />
-=======
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="586" />
->>>>>>> other-repo/main
         <source>If you have trouble starting VPN, you can force reset Core process here and then try starting the profile again. The error is %1</source>
         <translation type="unfinished">Si vous rencontrez des difficultés pour démarrer le VPN, vous pouvez forcer la réinitialisation du processus Core ici, puis réessayer de redémarrer le profil.L'erreur est %1</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="588" />
-=======
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="590" />
->>>>>>> other-repo/main
         <source>Reset</source>
         <translation type="unfinished">Réinitialiser</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="589" />
-=======
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="591" />
->>>>>>> other-repo/main
         <source>Cancel</source>
         <translation type="unfinished">Annuler</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="628" />
-=======
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="630" />
->>>>>>> other-repo/main
         <source>Another profile is starting...</source>
         <translation type="unfinished">Un autre profil démarre...</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="635" />
-=======
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="637" />
->>>>>>> other-repo/main
         <source>Another profile is stopping...</source>
         <translation type="unfinished">Un autre profil s'arrête...</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="656" />
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="738" />
-=======
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="658" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="740" />
->>>>>>> other-repo/main
         <source>If there is no response for a long time, it is recommended to restart the software.</source>
         <translation type="unfinished">S'il n'y a pas de réponse pendant une longue période, il est recommandé de redémarrer le logiciel.</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="670" />
-=======
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="672" />
->>>>>>> other-repo/main
         <source>Starting profile %1</source>
         <translation type="unfinished">Profil de démarrage %1</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="672" />
-=======
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="674" />
->>>>>>> other-repo/main
         <source>Failed to start profile %1</source>
         <translation type="unfinished">Échec du démarrage du profil %1</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="721" />
-=======
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="723" />
->>>>>>> other-repo/main
         <source>Stop return error</source>
         <translation type="unfinished">Erreur de retour d'arrêt</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="761" />
-=======
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="763" />
->>>>>>> other-repo/main
         <source>Stopping profile %1</source>
         <translation type="unfinished">Arrêt du profil %1</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow_rpc.cpp" line="763" />
-=======
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="765" />
->>>>>>> other-repo/main
         <source>Failed to stop, please restart the program.</source>
         <translation type="unfinished">Échec de l'arrêt, veuillez redémarrer le programme.</translation>
     </message>
@@ -4551,11 +3242,7 @@ Pour plus d'informations, consultez le document "Configuration/DNS".</translatio
     <message>
         <location filename="../../src/nekobox/ui/security/change_password.ui" line="14" />
         <source>Dialog</source>
-<<<<<<< HEAD
-        <translation type="unfinished">Dialogue</translation>
-=======
         <translation type="unfinished" />
->>>>>>> other-repo/main
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/change_password.ui" line="20" />
@@ -4589,11 +3276,7 @@ Pour plus d'informations, consultez le document "Configuration/DNS".</translatio
 <context>
     <name>QAction</name>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/security_addon.cpp" line="342" />
-=======
         <location filename="../../src/ui/security_addon.cpp" line="346" />
->>>>>>> other-repo/main
         <source>Security Settings</source>
         <translation type="unfinished">Paramètres de sécurité</translation>
     </message>
@@ -4601,15 +3284,9 @@ Pour plus d'informations, consultez le document "Configuration/DNS".</translatio
 <context>
     <name>QGuiApplication</name>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/main.cpp" line="258" />
-        <source>QT_LAYOUT_DIRECTION</source>
-        <translation type="unfinished">QT_LAYOUT_DIRECTION</translation>
-=======
         <location filename="../../src/main.cpp" line="328" />
         <source>QT_LAYOUT_DIRECTION</source>
         <translation type="unfinished" />
->>>>>>> other-repo/main
     </message>
 </context>
 <context>
@@ -4620,65 +3297,37 @@ Pour plus d'informations, consultez le document "Configuration/DNS".</translatio
         <translation type="unfinished">Le mode Tun ne peut pas être utilisé avec les configurations personnalisées</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="913" />
-=======
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="839" />
->>>>>>> other-repo/main
         <source>Requesting subscription: %1</source>
         <translation type="unfinished">Demande d'abonnement : %1</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="917" />
-=======
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="843" />
->>>>>>> other-repo/main
         <source>Requesting subscription %1 error: %2</source>
         <translation type="unfinished">Erreur de demande d'abonnement %1 : %2</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="924" />
-=======
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="850" />
->>>>>>> other-repo/main
         <source>Subscription request fininshed: %1</source>
         <translation type="unfinished">Demande d'abonnement terminée : %1</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="942" />
-=======
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="868" />
->>>>>>> other-repo/main
         <source>Clearing servers...</source>
         <translation type="unfinished">Effacement des serveurs...</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="947" />
-=======
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="873" />
->>>>>>> other-repo/main
         <source>Processing subscription data...</source>
         <translation type="unfinished">Traitement des données d'abonnement...</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="950" />
-=======
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="876" />
->>>>>>> other-repo/main
         <source>Process complete, applying...</source>
         <translation type="unfinished">Processus terminé, candidature...</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="1013" />
-=======
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="939" />
->>>>>>> other-repo/main
         <source>Added %1 profiles:
 %2
 Deleted %3 Profiles:
@@ -4689,29 +3338,17 @@ Profils %3 supprimés :
 %4</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="1018" />
-=======
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="944" />
->>>>>>> other-repo/main
         <source>Nothing</source>
         <translation type="unfinished">Rien</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="1021" />
-=======
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="947" />
->>>>>>> other-repo/main
         <source>Change of %1:</source>
         <translation type="unfinished">Modification de %1 :</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/dataStore/Database.cpp" line="119" />
-=======
         <location filename="../../src/dataStore/Database.cpp" line="123" />
->>>>>>> other-repo/main
         <source>Default</source>
         <translation type="unfinished">Défaut</translation>
     </message>
@@ -4721,20 +3358,11 @@ Profils %3 supprimés :
         <translation type="unfinished">Impossible d'ouvrir le fichier.</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/configs/proxy/ChainBean.hpp" line="17" />
-=======
         <location filename="../../src/main.cpp" line="107" />
->>>>>>> other-repo/main
         <source>Chain Proxy</source>
         <translation type="unfinished">Proxy de chaîne</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/nekobox/global/GuiUtils.hpp" line="112" />
-        <location filename="../../src/ui/profile/edit_ssh.cpp" line="28" />
-        <location filename="../../src/ui/setting/dialog_basic_settings.cpp" line="244" />
-=======
         <location filename="../../src/main.cpp" line="121" />
         <source>Custom</source>
         <translation type="unfinished">Coutume</translation>
@@ -4748,17 +3376,12 @@ Profils %3 supprimés :
         <location filename="../../src/nekobox/global/GuiUtils.hpp" line="121" />
         <location filename="../../src/ui/profile/edit_ssh.cpp" line="28" />
         <location filename="../../src/ui/setting/dialog_basic_settings.cpp" line="335" />
->>>>>>> other-repo/main
         <source>Select</source>
         <translation type="unfinished">Sélectionner</translation>
     </message>
     <message>
         <location filename="../../src/stats/traffic/TrafficLooper.cpp" line="115" />
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="2366" />
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="2472" />
->>>>>>> other-repo/main
         <source>Proxy: %1
 Direct: %2</source>
         <translation type="unfinished">Mandataire : %1
@@ -4780,247 +3403,144 @@ Direct : %2</translation>
         <translation type="unfinished">Redémarrage du noyau...</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/sys/Settings.cpp" line="361" />
-=======
         <location filename="../../src/sys/Settings.cpp" line="357" />
->>>>>>> other-repo/main
         <source>System</source>
         <translation type="unfinished">Système</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/group/GroupItem.cpp" line="22" />
-=======
         <location filename="../../src/ui/group/GroupItem.cpp" line="23" />
->>>>>>> other-repo/main
         <source>URL detected</source>
         <translation type="unfinished">URL détectée</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/group/GroupItem.cpp" line="27" />
-=======
         <location filename="../../src/ui/group/GroupItem.cpp" line="28" />
->>>>>>> other-repo/main
         <source>%1
 How to update?</source>
         <translation type="unfinished">%1
 Comment mettre à jour ?</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/group/GroupItem.cpp" line="31" />
-=======
         <location filename="../../src/ui/group/GroupItem.cpp" line="32" />
->>>>>>> other-repo/main
         <source>Create new subscription group</source>
         <translation type="unfinished">Créer un nouveau groupe d'abonnement</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/group/GroupItem.cpp" line="32" />
-=======
         <location filename="../../src/ui/group/GroupItem.cpp" line="33" />
->>>>>>> other-repo/main
         <source>Add profiles to this group</source>
         <translation type="unfinished">Ajouter des profils à ce groupe</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/group/GroupItem.cpp" line="37" />
-=======
         <location filename="../../src/ui/group/GroupItem.cpp" line="34" />
         <source>Add as http/https proxy</source>
         <translation type="unfinished">Ajouter comme proxy http/https</translation>
     </message>
     <message>
         <location filename="../../src/ui/group/GroupItem.cpp" line="39" />
->>>>>>> other-repo/main
         <source>Group name</source>
         <translation type="unfinished">Nom du groupe</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/group/GroupItem.cpp" line="101" />
-=======
         <location filename="../../src/ui/group/GroupItem.cpp" line="106" />
->>>>>>> other-repo/main
         <source>Used: %1 Remain: %2 Expire: %3</source>
         <translation type="unfinished">Utilisé : %1 Restant : %2 Expire : %3</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="173" />
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="256" />
->>>>>>> other-repo/main
         <source>Download Profiles</source>
         <translation type="unfinished">Télécharger les profils</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="174" />
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="257" />
->>>>>>> other-repo/main
         <source>Requesting profile error: %1</source>
         <translation type="unfinished">Erreur de demande de profil : %1</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="341" />
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="424" />
->>>>>>> other-repo/main
         <source>
 Deleted %1 Duplicates</source>
         <translation type="unfinished">%1 doublons supprimés</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="375" />
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="458" />
->>>>>>> other-repo/main
         <source>
 Deleted %1 Invalid</source>
         <translation type="unfinished">Supprimé %1 Invalide</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="398" />
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="481" />
->>>>>>> other-repo/main
         <source>
 Deleted %1 Unavailable</source>
         <translation type="unfinished">Supprimé %1 Indisponible</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="1441" />
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="1530" />
->>>>>>> other-repo/main
         <source>Check Rule Sets: %1</source>
         <translation type="unfinished">Vérifier les ensembles de règles : %1</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="1463" />
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="1552" />
->>>>>>> other-repo/main
         <source>Requesting rule-set list error: %1</source>
         <translation type="unfinished">Erreur de demande de liste d'ensembles de règles : %1</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="2403" />
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="2509" />
->>>>>>> other-repo/main
         <source>IP address: %1</source>
         <translation type="unfinished">Adresse IP : %1</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="2901" />
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="2895" />
         <source>Move profiles to group</source>
         <translation type="unfinished">Déplacer les profils vers le groupe</translation>
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="3038" />
->>>>>>> other-repo/main
         <source>Config copied</source>
         <translation type="unfinished">Configuration copiée</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="2912" />
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="3049" />
->>>>>>> other-repo/main
         <source>Copy core config</source>
         <translation type="unfinished">Copier la configuration principale</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="2913" />
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="3050" />
->>>>>>> other-repo/main
         <source>Copy test config</source>
         <translation type="unfinished">Copier la configuration de test</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="2914" />
-        <location filename="../../src/ui/security_addon.cpp" line="22" />
-        <location filename="../../src/ui/setting/dialog_vpn_settings.cpp" line="45" />
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="3051" />
         <location filename="../../src/ui/security_addon.cpp" line="21" />
         <location filename="../../src/ui/setting/dialog_vpn_settings.cpp" line="53" />
->>>>>>> other-repo/main
         <source>OK</source>
         <translation type="unfinished">D'ACCORD</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="4099" />
-        <location filename="../../src/ui/mainwindow.cpp" line="4110" />
-        <location filename="../../src/ui/mainwindow.cpp" line="4154" />
-        <location filename="../../src/ui/mainwindow.cpp" line="4176" />
-        <location filename="../../src/ui/mainwindow.cpp" line="4185" />
-        <location filename="../../src/ui/mainwindow.cpp" line="4220" />
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="4315" />
         <location filename="../../src/ui/mainwindow.cpp" line="4326" />
         <location filename="../../src/ui/mainwindow.cpp" line="4370" />
         <location filename="../../src/ui/mainwindow.cpp" line="4393" />
         <location filename="../../src/ui/mainwindow.cpp" line="4402" />
         <location filename="../../src/ui/mainwindow.cpp" line="4437" />
->>>>>>> other-repo/main
         <source>Update</source>
         <translation type="unfinished">Mise à jour</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="4100" />
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="4316" />
->>>>>>> other-repo/main
         <source>Not official support platform</source>
         <translation type="unfinished">Pas de plateforme d'assistance officielle</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="4111" />
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="4327" />
->>>>>>> other-repo/main
         <source>Requesting update error: %1</source>
         <translation type="unfinished">Erreur de demande de mise à jour : %1</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="4154" />
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="4370" />
->>>>>>> other-repo/main
         <source>No update</source>
         <translation type="unfinished">Aucune mise à jour</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="4177" />
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="4394" />
->>>>>>> other-repo/main
         <source>Update found: %1
 Release note:
 %2</source>
@@ -5029,66 +3549,36 @@ Note de version :
 %2</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="4180" />
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="4397" />
->>>>>>> other-repo/main
         <source>Close</source>
         <translation type="unfinished">Fermer</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="4182" />
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="4399" />
->>>>>>> other-repo/main
         <source>Open in browser</source>
         <translation type="unfinished">Ouvrir dans le navigateur</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="4221" />
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="4438" />
->>>>>>> other-repo/main
         <source>Update is ready, restart to install?</source>
         <translation type="unfinished">La mise à jour est prête, redémarrer pour l'installer ?</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/security_addon.cpp" line="21" />
-=======
         <location filename="../../src/ui/security_addon.cpp" line="20" />
->>>>>>> other-repo/main
         <source>Access denied</source>
         <translation type="unfinished">Accès refusé</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/setting/dialog_basic_settings.cpp" line="249" />
-=======
         <location filename="../../src/ui/setting/dialog_basic_settings.cpp" line="340" />
->>>>>>> other-repo/main
         <source>Select a Folder</source>
         <translation type="unfinished">Sélectionnez un dossier</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/setting/dialog_vpn_settings.cpp" line="37" />
-=======
         <location filename="../../src/ui/setting/dialog_vpn_settings.cpp" line="45" />
->>>>>>> other-repo/main
         <source>Exclude CIDR's</source>
         <translation type="unfinished">Exclure les CIDR</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/setting/dialog_vpn_settings.cpp" line="46" />
-        <source>Cancel</source>
-        <translation type="unfinished">Annuler</translation>
-    </message>
-=======
         <location filename="../../src/ui/setting/dialog_vpn_settings.cpp" line="54" />
         <source>Cancel</source>
         <translation type="unfinished">Annuler</translation>
@@ -5108,170 +3598,96 @@ Note de version :
         <comment>DialogEditProfile</comment>
         <translation type="obsolete">Noyau supplémentaire</translation>
     </message>
->>>>>>> other-repo/main
 </context>
 <context>
     <name>QPlatformTheme</name>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/main.cpp" line="57" />
-=======
         <location filename="../../src/main.cpp" line="66" />
->>>>>>> other-repo/main
         <source>Cancel</source>
         <translation type="unfinished">Annuler</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/main.cpp" line="58" />
-=======
         <location filename="../../src/main.cpp" line="67" />
->>>>>>> other-repo/main
         <source>Apply</source>
         <translation type="unfinished">Appliquer</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/main.cpp" line="59" />
-=======
         <location filename="../../src/main.cpp" line="68" />
->>>>>>> other-repo/main
         <source>Yes</source>
         <translation type="unfinished">Oui</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/main.cpp" line="60" />
-=======
         <location filename="../../src/main.cpp" line="69" />
->>>>>>> other-repo/main
         <source>No</source>
         <translation type="unfinished">Non</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/main.cpp" line="61" />
-=======
         <location filename="../../src/main.cpp" line="70" />
->>>>>>> other-repo/main
         <source>OK</source>
         <translation type="unfinished">D'ACCORD</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/main.cpp" line="62" />
-=======
         <location filename="../../src/main.cpp" line="71" />
->>>>>>> other-repo/main
         <source>Defaults</source>
         <translation type="unfinished">Valeurs par défaut</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/main.cpp" line="63" />
-=======
         <location filename="../../src/main.cpp" line="72" />
->>>>>>> other-repo/main
         <source>Restore Defaults</source>
         <translation type="unfinished">Restaurer les paramètres par défaut</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/main.cpp" line="64" />
-=======
         <location filename="../../src/main.cpp" line="73" />
->>>>>>> other-repo/main
         <source>Discard</source>
         <translation type="unfinished">Jeter</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/main.cpp" line="66" />
-=======
         <location filename="../../src/main.cpp" line="75" />
->>>>>>> other-repo/main
         <source>Undo</source>
         <translation type="unfinished">Défaire</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/main.cpp" line="67" />
-=======
         <location filename="../../src/main.cpp" line="76" />
->>>>>>> other-repo/main
         <source>Redo</source>
         <translation type="unfinished">Refaire</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/main.cpp" line="68" />
-=======
         <location filename="../../src/main.cpp" line="77" />
->>>>>>> other-repo/main
         <source>Cut</source>
         <translation type="unfinished">Couper</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/main.cpp" line="69" />
-=======
         <location filename="../../src/main.cpp" line="78" />
->>>>>>> other-repo/main
         <source>Copy</source>
         <translation type="unfinished">Copie</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/main.cpp" line="70" />
-=======
         <location filename="../../src/main.cpp" line="79" />
->>>>>>> other-repo/main
         <source>Paste</source>
         <translation type="unfinished">Coller</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/main.cpp" line="71" />
-=======
         <location filename="../../src/main.cpp" line="80" />
->>>>>>> other-repo/main
         <source>Delete</source>
         <translation type="unfinished">Supprimer</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/main.cpp" line="72" />
-=======
         <location filename="../../src/main.cpp" line="81" />
->>>>>>> other-repo/main
         <source>Select All</source>
         <translation type="unfinished">Sélectionner tout</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/main.cpp" line="73" />
-=======
         <location filename="../../src/main.cpp" line="82" />
->>>>>>> other-repo/main
         <source>Stop</source>
         <translation type="unfinished">Arrêt</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/main.cpp" line="74" />
-        <source>Clear</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <location filename="../../src/main.cpp" line="75" />
-=======
         <location filename="../../src/main.cpp" line="83" />
         <source>Clear</source>
         <translation type="unfinished">Clear</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="84" />
->>>>>>> other-repo/main
         <source>Copy Link Location</source>
         <translation type="unfinished">Copier l'emplacement du lien</translation>
     </message>
@@ -5286,11 +3702,7 @@ Note de version :
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="24" />
         <source>General</source>
-<<<<<<< HEAD
-        <translation type="unfinished" />
-=======
         <translation type="unfinished">General</translation>
->>>>>>> other-repo/main
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="63" />
@@ -5344,11 +3756,7 @@ Note de version :
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="248" />
         <source>Advanced</source>
-<<<<<<< HEAD
-        <translation type="unfinished" />
-=======
         <translation type="unfinished">Advanced</translation>
->>>>>>> other-repo/main
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="257" />
@@ -5363,11 +3771,7 @@ Note de version :
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="279" />
         <source>New</source>
-<<<<<<< HEAD
-        <translation type="unfinished" />
-=======
         <translation type="unfinished">New</translation>
->>>>>>> other-repo/main
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="286" />
@@ -5500,41 +3904,24 @@ Note de version :
 <context>
     <name>SpinnerDialog</name>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="121" />
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="204" />
->>>>>>> other-repo/main
         <source>Invalid JSON Array</source>
         <translation type="unfinished">Tableau JSON invalide</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="122" />
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="205" />
->>>>>>> other-repo/main
         <source>The provided input cannot be parsed to a valid route rule array:
 </source>
         <translation type="unfinished">L'entrée fournie ne peut pas être analysée dans un tableau de règles de routage valide :</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="245" />
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="328" />
->>>>>>> other-repo/main
         <source>Fetching information</source>
         <translation type="unfinished">Récupération d'informations</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../../src/ui/mainwindow.cpp" line="261" />
-        <location filename="../../src/ui/mainwindow.cpp" line="1182" />
-=======
         <location filename="../../src/ui/mainwindow.cpp" line="344" />
         <location filename="../../src/ui/mainwindow.cpp" line="1273" />
->>>>>>> other-repo/main
         <source>Download Profiles</source>
         <translation type="unfinished">Télécharger les profils</translation>
     </message>

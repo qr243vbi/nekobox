@@ -137,11 +137,7 @@ void ProxyAutoTester::CheckActiveProxyHealth() {
         req.test_current = true;
 
         // Add the active proxy tag
-<<<<<<< HEAD
-        QString tag = QString("out-%1-%2").arg(proxy->type, proxy->bean->name);
-=======
         QString tag = QString("out-%1-%2").arg(proxy->type, proxy->name);
->>>>>>> other-repo/main
         req.outbound_tags.push_back(tag.toStdString());
 
         bool rpcOK;
@@ -205,11 +201,7 @@ void ProxyAutoTester::HandleProxyFailure(int proxyId, int attemptCount) {
             emit failoverTriggered(proxyId, nextProxyId);
 
             auto nextProxy = Configs::profileManager->GetProfile(nextProxyId);
-<<<<<<< HEAD
-            QString proxyName = nextProxy ? nextProxy->bean->DisplayTypeAndName() : QString::number(nextProxyId);
-=======
             QString proxyName = nextProxy ? nextProxy->DisplayTypeAndName() : QString::number(nextProxyId);
->>>>>>> other-repo/main
 
             // Trigger the switch in the main window
             runOnUiThread([=] {
@@ -475,11 +467,7 @@ void ProxyAutoTester::performTest(const QList<int> &proxyIds) {
             if (proxyToStart >= 0) {
                 auto proxy = Configs::profileManager->GetProfile(proxyToStart);
                 if (proxy) {
-<<<<<<< HEAD
-                    QString proxyName = proxy->bean->DisplayTypeAndName();
-=======
                     QString proxyName = proxy->DisplayTypeAndName();
->>>>>>> other-repo/main
 
                     runOnUiThread([=] {
                         MW_show_log(QString("[Auto-Test] No proxy running, automatically starting: %1 (ID: %2)")
