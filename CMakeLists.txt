@@ -7,7 +7,8 @@ set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-set(CMAKE_POLICY_DEFAULT_CMP0069 NEW)
+cmake_policy(SET CMP0069 NEW) #find package policy
+cmake_policy(SET CMP0167 NEW) #boost config policy
 set(CMAKE_CXX_EXTENSIONS OFF)
 
 if (UNIX)
@@ -67,6 +68,8 @@ endif ()
 set(BUILD_SHARED_LIBS OFF)
 
 if (USE_HOTKEYS)
+  set(QHOTKEY_INSTALL OFF CACHE BOOL "Disable install QHotkey library")
+  set(QHOTKEY_EXAMPLES ON CACHE BOOL "Enable compiling examples")
   add_subdirectory("3rdparty/QHotkey")
   nkr_add_compile_definitions(USE_HOTKEYS)
   list(APPEND NKR_EXTERNAL_TARGETS qhotkey)
