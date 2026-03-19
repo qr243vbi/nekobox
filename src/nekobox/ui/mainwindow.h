@@ -95,6 +95,27 @@ private:
 };
 
 
+<<<<<<< HEAD
+=======
+class SelectDialog : public QDialog {
+    Q_OBJECT
+public:
+    SelectDialog(QWidget * parent, std::shared_ptr<QAbstractListModel> model);
+
+signals:
+    void confirmed(int selectedIndex); // Signal for confirmed selection
+    void canceled();                   // Signal for cancellation
+
+private slots:
+    void onOk(int selectedIndex);
+
+    void onCancel();
+
+private:
+    std::shared_ptr<QAbstractListModel> model;
+    void setupUi();
+};
+>>>>>>> other-repo/main
 
 //class MessageQueue;
 
@@ -116,12 +137,23 @@ public:
     friend class SpinnerDialog;
     std::unique_ptr<Stats::ProxyAutoTester> proxyAutoTester;
 
+<<<<<<< HEAD
+=======
+    int lastx = -1, lasty = -1;
+>>>>>>> other-repo/main
     explicit MainWindow(QWidget *parent = nullptr);
 
     ~MainWindow() override;
 
     void prepare_exit();
 
+<<<<<<< HEAD
+=======
+    void move_selected_profiles(int profile_id);
+
+    bool context_menu_locked();
+
+>>>>>>> other-repo/main
     void refresh_proxy_list(const int &id = -1);
 
     void show_group(int gid);
@@ -160,6 +192,11 @@ public:
 
     void show_log_impl(const QString &log);
 
+<<<<<<< HEAD
+=======
+    void menu_server_about_to_show(QMenu * menu);
+
+>>>>>>> other-repo/main
  //   void start_select_mode(QObject *context, const std::function<void(int)> &callback);
 
     void RegisterHotkey(bool unregister);
@@ -204,6 +241,11 @@ private slots:
 
     void on_menu_add_from_clipboard_triggered();
 
+<<<<<<< HEAD
+=======
+    void on_menu_move_profile_triggered();
+
+>>>>>>> other-repo/main
     void on_menu_clone_triggered();
 
     void on_menu_delete_repeat_triggered();
@@ -308,7 +350,11 @@ private:
     DownloadProgressReport currentDownloadReport; // could use a list, but don't think can show more than one anyways
 
     // shortcuts
+<<<<<<< HEAD
     QList<QShortcut*> hiddenMenuShortcuts;
+=======
+    QList<std::shared_ptr<QShortcut>> hiddenMenuShortcuts;
+>>>>>>> other-repo/main
 
     QMap<QString, QString> remoteRouteProfileNames;
     QStringList remoteRouteProfiles;

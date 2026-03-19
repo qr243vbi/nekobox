@@ -10,6 +10,17 @@
 #include "nekobox/sys/windows/WinVersion.h"
 #endif
 
+<<<<<<< HEAD
+=======
+
+#include <QtGlobal> // For QT_VERSION_CHECK
+#if QT_VERSION >= QT_VERSION_CHECK(6, 9, 0)
+#define STATE_CHANGED &QCheckBox::checkStateChanged
+#else
+#define STATE_CHANGED &QCheckBox::stateChanged
+#endif
+
+>>>>>>> other-repo/main
 #include <QMessageBox>
 #define ADJUST_SIZE                                                            \
   runOnThread(                                                                 \
@@ -75,7 +86,11 @@ DialogVPNSettings::DialogVPNSettings(QWidget *parent)
     // Show dialog and run the event loop
     dialog->exec();
   });
+<<<<<<< HEAD
   connect(ui->vpn_ipv6, &QCheckBox::checkStateChanged, this, lambda);
+=======
+  connect(ui->vpn_ipv6, STATE_CHANGED, this, lambda);
+>>>>>>> other-repo/main
   bool ipv6;
   ui->vpn_mtu->setCurrentText(QString::number(Configs::dataStore->vpn_mtu));
   ui->vpn_ipv6->setChecked(ipv6 = Configs::dataStore->vpn_ipv6);

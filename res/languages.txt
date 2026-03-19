@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 zh_CN:简体中文
+=======
+zh_CN:中文
+>>>>>>> other-repo/main
 he_IL:עברית
 fa_IR:فارسی
 bn_BD:বাংলা
@@ -34,7 +38,11 @@ sw_KE:Kiswahili
 lt_LT:Lietuvių
 et_EE:Eesti
 lv_LV:Latviešu
+<<<<<<< HEAD
 sq_AL:Gjuha Shqipe
+=======
+sq_AL:Shqip
+>>>>>>> other-repo/main
 mk_MK:Македонски
 is_IS:Íslenska
 eu_ES:Euskara
@@ -46,22 +54,34 @@ ta_IN:தமிழ்
 bn_IN:বাংলা
 mr_IN:मराठी
 te_IN:తెలుగు
+<<<<<<< HEAD
 pa_IN:ਪੰਜਾਬੀ
+=======
+>>>>>>> other-repo/main
 gu_IN:ગુજરાતી
 kn_IN:ಕನ್ನಡ
 or_IN:ଓଡ଼ିଆ
 ne_NP:नेपाली
 si_LK:සිංහල
+<<<<<<< HEAD
 km_KH:ភាសាខ្មែរ
 my_MM:မြန်မာ
 lo_LA:ລາວ
 hy_AM:Հայերեն
 ka_GE:ქართული
 sq_AL:Gjuha Shqipe
+=======
+km_KH:ខ្មែរ
+my_MM:မြန်မာဘာသာ
+lo_LA:ລາວ
+hy_AM:Հայերեն
+ka_GE:ქართული
+>>>>>>> other-repo/main
 sw_TZ:Kiswahili
 be_BY:Беларуская
 af_ZA:Afrikaans
 cy_GB:Cymraeg
+<<<<<<< HEAD
 hu_HU:Magyar
 sr_RS:Српски
 sk_SK:Slovenčina
@@ -93,4 +113,44 @@ lo_LA:ລາວ
 zu_ZA:isiZulu
 xh_ZA:isiXhosa
 af_ZA:Afrikaans
+=======
+mn_MN:Монгол
+sr_BS:Српски
+ca_ES:Català
+pa_IN:ਪੰਜਾਬੀ
+sd_PK:سنڌي
+el_GR:Ελληνικά
+bs_BA:Bosanski
+am_ET:አማርኛ
+az_AZ:Azərbaycan dili
+uz_UZ:Oʻzbek
+zu_ZA:isiZulu
+xh_ZA:isiXhosa
+kk_KZ:Қазақша
+ky_KG:Кыргызча
+tg_TJ:Тоҷикӣ
+ps_AF:پښتو
+tk_TM:Türkmen
+ug_CN:ئۇيغۇرچە
+dv_MV:ދިވެހި
+bo_CN:བོད་ཡིག
+dz_BT:རྫོང་ཁ
+ti_ET:ትግርኛ
+ff_SN:Pulaar
+wo_SN:Wolof
+ln_CD:Lingála
+kg_CD:Kikongo
+rw_RW:Kinyarwanda
+so_SO:Soomaali
+yo_NG:Yorùbá
+ig_NG:Igbo
+ha_NG:Hausa
+qu_PE:Runa Simi
+ay_BO:Aymar aru
+gn_PY:Avañe'ẽ
+sm_WS:Gagana Samoa
+to_TO:Lea faka-Tonga
+fj_FJ:Na Vosa Vakaviti
+mi_NZ:Te Reo Māori
+>>>>>>> other-repo/main
 ru_RU:Русский

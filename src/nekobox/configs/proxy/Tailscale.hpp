@@ -17,7 +17,11 @@ namespace Configs {
         bool advertise_exit_node = false;
         bool globalDNS = false;
 
+<<<<<<< HEAD
         explicit TailscaleBean() : AbstractBean(0) {
+=======
+        explicit TailscaleBean(Configs::ProxyEntity * entity) : AbstractBean(entity, 0) {
+>>>>>>> other-repo/main
         }
 
         INIT_MAP
@@ -34,6 +38,7 @@ namespace Configs {
             ADD_MAP("globalDNS", globalDNS, boolean);
         STOP_MAP
         
+<<<<<<< HEAD
 
         QString DisplayType() override { return "Tailscale"; }
 
@@ -48,5 +53,26 @@ namespace Configs {
         QString ToShareLink() override;
 
         bool IsEndpoint() override {return true;}
+=======
+/*/
+        QString DisplayType() override { return "Tailscale"; }
+
+        QString DisplayAddress() override {return control_url; }
+*/
+        CoreObjOutboundBuildResult BuildCoreObjSingBox() const override;
+
+        bool TryParseLink(const QString &link) override;
+
+        bool TryParseJson(const QJsonObject &obj) override;
+
+        QString ToShareLink() const override;
+
+        bool IsEndpoint() const override {return true;}
+        #ifdef DEBUG_MODE
+        virtual QString type()const override {
+            return "tailscale";
+        };
+        #endif
+>>>>>>> other-repo/main
     };
 } // namespace Configs

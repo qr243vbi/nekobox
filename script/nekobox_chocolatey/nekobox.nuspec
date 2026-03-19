@@ -2,6 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>nekobox</id>
+<<<<<<< HEAD
     <version>5.1.18</version>
     <title>nekobox (Install)</title>
     <authors>qr243vbi</authors>
@@ -10,6 +11,16 @@
     <projectUrl>https://github.com/qr243vbi/nekobox</projectUrl>
     <projectSourceUrl>https://github.com/qr243vbi/nekobox</projectSourceUrl>
     <packageSourceUrl>https://github.com/qr243vbi/nekobox/tree/main/script/nekobox_template</packageSourceUrl>
+=======
+    <version>5.10.27</version>
+    <title>nekobox (Install)</title>
+    <authors>qr243vbi</authors>
+	<licenseUrl>https://www.gnu.org/licenses/gpl-3.0.txt</licenseUrl>
+	<iconUrl>https://raw.githubusercontent.com/qr243vbi/nekobox/refs/heads/main/res/public/icon.png</iconUrl>
+    <projectUrl>https://github.com/qr243vbi/nekobox</projectUrl>
+    <projectSourceUrl>https://github.com/qr243vbi/nekobox</projectSourceUrl>
+    <packageSourceUrl>https://github.com/qr243vbi/nekobox/tree/main/script/nekobox_chocolatey</packageSourceUrl>
+>>>>>>> other-repo/main
     <tags>nekobox proxy</tags>
     <summary>Nekobox For PC</summary>
 	<releaseNotes /> 

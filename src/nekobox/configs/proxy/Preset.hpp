@@ -1,8 +1,28 @@
 #pragma once
 #include <QStringList>
+<<<<<<< HEAD
 
 namespace Preset::SingBox {
   inline QStringList VpnImplementation = {"system", "gvisor", "mixed"};
+=======
+#include <QMap>
+#include <QObject>
+
+namespace Preset::SingBox {
+  extern QMap<QString, QString> OutboundTypes;
+  inline QStringList QUICCongestionControlAlgorithm = {"bbr", "bbr2", "cubic", "reno"};
+  inline QStringList VpnImplementation = {"system", "gvisor", "mixed"};
+  inline QStringList MieruMultiplexing = {
+      "MULTIPLEXING_OFF",
+      "MULTIPLEXING_LOW",
+      "MULTIPLEXING_MIDDLE",
+      "MULTIPLEXING_HIGH"
+  };
+  inline QStringList MieruTransport = {
+      "TCP",
+      "UDP"
+  };
+>>>>>>> other-repo/main
   inline QStringList DomainStrategy = {"", "ipv4_only", "ipv6_only", "prefer_ipv4", "prefer_ipv6"};
   inline QStringList UtlsFingerPrint = {"", "chrome", "firefox", "edge", "safari", "360", "qq", "ios", "android", "random", "randomized"};
   inline QStringList ShadowsocksMethods = {

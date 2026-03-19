@@ -37,9 +37,17 @@ SETTINGS_PUT(QStringList, StrList)
 
 INIT_LIST(WindowSettings)
 ADD_LIST(theme)
+<<<<<<< HEAD
 ADD_LIST(font_family)
 ADD_LIST(font_size)
 ADD_LIST(logs_enabled)
+=======
+ADD_LIST(no_symlinks)
+ADD_LIST(font_family)
+ADD_LIST(font_size)
+ADD_LIST(logs_enabled)
+ADD_LIST(ask_delete)
+>>>>>>> other-repo/main
 ADD_LIST(test_after_start)
 ADD_LIST(startup_update)
 ADD_LIST(max_log_line)
@@ -241,6 +249,7 @@ bool isFileAppendable(QString filePath) {
   return false;
 }
 
+<<<<<<< HEAD
 bool createSymlink(const QString &targetPath, const QString &linkPath) {
   if (QFile::link(targetPath, linkPath)) {
     return true;
@@ -248,6 +257,8 @@ bool createSymlink(const QString &targetPath, const QString &linkPath) {
     return false;
   }
 }
+=======
+>>>>>>> other-repo/main
 
 QString getLocale() {
   return defStr(Configs::windowSettings->language, QLocale().name());
@@ -257,8 +268,14 @@ void updateEmojiFont() {
 #if QT_VERSION >= QT_VERSION_CHECK(6, 9, 0)
   QString font = getResource("emoji.ttf");
   static int latestFont = -1;
+<<<<<<< HEAD
 
   qDebug() << "Font path is : " << font;
+=======
+#ifdef DEBUG_MODE
+  qDebug() << "Font path is : " << font;
+#endif
+>>>>>>> other-repo/main
   int fontId = QFontDatabase::addApplicationFont(font);
   if (fontId >= 0) {
     if (latestFont >= 0) {
@@ -362,7 +379,13 @@ QList<std::shared_ptr<LanguageValue>> &languageCodes() {
     ADD("C", "English")
     QString path = getResource("languages.txt");
     if (path == "") {
+<<<<<<< HEAD
       qDebug() << "languages.txt path not found";
+=======
+      #ifdef DEBUG_MODE
+      qDebug() << "languages.txt path not found";
+      #endif
+>>>>>>> other-repo/main
       ADDIF("zh_CN", "简体中文")
       ADDIF("he_IL", "עברית")
       ADDIF("fa_IR", "فارسی")
@@ -371,6 +394,7 @@ QList<std::shared_ptr<LanguageValue>> &languageCodes() {
       QString text = ReadFileText(path);
       QStringList list = text.split("\n");
       for (QString str : list) {
+<<<<<<< HEAD
         int ind = str.indexOf(':');
         if (ind > 0) {
           QString key = str;
@@ -378,6 +402,21 @@ QList<std::shared_ptr<LanguageValue>> &languageCodes() {
           QString value = str;
           value.slice(ind + 1);
           qDebug() << "Language: " << key << value ;
+=======
+        str = str.trimmed();
+        int ind = -1;
+        if (!str.startsWith('#')){
+          ind = str.indexOf(':');
+        }
+        if (ind > 0) {
+          QString key = str;
+          key = key.sliced(0, ind);
+          QString value = str;
+          value = value.sliced(ind + 1);
+          #ifdef DEBUG_MODE
+          qDebug() << "Language: " << key << value ;
+          #endif
+>>>>>>> other-repo/main
           if (!key.isEmpty() && !value.isEmpty()){
             ADDIF(key, value)
           }

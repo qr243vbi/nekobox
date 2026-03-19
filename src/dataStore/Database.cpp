@@ -1,16 +1,27 @@
+<<<<<<< HEAD
 #include "nekobox/dataStore/Database.hpp"
 
 #include "nekobox/configs/proxy/includes.h"
 #include "nekobox/configs/proxy/AbstractBean.hpp"
 
+=======
+#include <nekobox/dataStore/Database.hpp>
+
+#include <nekobox/configs/proxy/includes.h>
+#include <nekobox/configs/proxy/AbstractBean.hpp>
+#include <nekobox/configs/proxy/Preset.hpp>
+>>>>>>> other-repo/main
 #include <QDir>
 
 namespace Configs {
 
     ProfileManager *profileManager = new ProfileManager();
     
+<<<<<<< HEAD
     QMap<QString, QString> profileDisplayNames;
 
+=======
+>>>>>>> other-repo/main
     ProfileManager::ProfileManager() : JsonStore("profiles.cfg") {
     }
 
@@ -49,9 +60,21 @@ namespace Configs {
         // Load Proxys
         QList<int> delProfile;
         for (auto id: profilesIdOrder) {
+<<<<<<< HEAD
             auto ent = LoadProxyEntity(QString("profiles/%1.cfg").arg(id));
             // Corrupted profile?
             if (ent == nullptr || ent->bean == nullptr || ent->bean->version == -114514) {
+=======
+            #ifdef DEBUG_MODE
+                qDebug() << "Load Profile With ID" << id;
+            #endif
+            auto ent = LoadProxyEntity(
+                QString("profiles/%1.cfg").arg(id),
+                QString("beans/%1.cfg").arg(id)
+            );
+            // Corrupted profile?
+            if (ent == nullptr || !ent->isValid()) {
+>>>>>>> other-repo/main
                 delProfile << id;
                 continue;
             }
@@ -131,6 +154,7 @@ namespace Configs {
         JsonStore::Save();
     }
 
+<<<<<<< HEAD
     std::shared_ptr<ProxyEntity> ProfileManager::LoadProxyEntity(const QString &jsonPath) {
         // Load type
         ProxyEntity ent0(nullptr, nullptr);
@@ -152,6 +176,53 @@ namespace Configs {
             ent->fn = jsonPath;
             ent->Load();
         }
+=======
+    bool ProxyEntity::isValid() const {
+        return Preset::SingBox::OutboundTypes.contains(this->type);
+    }
+
+    std::shared_ptr<ProxyEntity> ProfileManager::LoadProxyEntity(
+            const QString &jsonPath,
+            const QString &beanPath
+        ) {
+        // Load type
+        auto ent = NewProxyEntity("");
+        ent->fn = jsonPath;
+        bool validType = ent->Load();
+
+        if (!validType) {
+            #ifdef DEBUG_MODE
+            qDebug() << "LOADING FAILED:" << jsonPath;
+            #endif
+            ent->type = "";
+            return ent;
+        }
+        if (!ent->isValid()){
+            #ifdef DEBUG_MODE
+            qDebug() << "UNKNOWN TYPE:" << ent->type;
+            #endif
+            return ent;
+        }
+        validType = (ent->fn != ent->bean_cfg);
+#ifdef DEBUG_MODE
+        qDebug() << "Migration Mode" << !validType;
+#endif
+        std::shared_ptr<AbstractBean> bean;
+        if (!validType){
+            bean = ent->unlock(ent->bean());
+            bean->fn = jsonPath;
+            bean->Load();
+        }
+        ent->bean_cfg = beanPath;
+        if (!validType){
+            bean->Save();
+            ent->Save();
+        }
+        ent->ResetBeans();
+#ifdef DEBUG_MODE
+        qDebug() << "Profiles loaded, beans resetted" ;
+#endif
+>>>>>>> other-repo/main
         return ent;
     }
 
@@ -167,6 +238,7 @@ namespace Configs {
 
 
     QString ProfileManager::GetDisplayType(const QString & type){
+<<<<<<< HEAD
         QString ret = profileDisplayNames.value(type, "");
         if (ret == ""){
             auto proxy = NewProxyEntity(type, true);
@@ -234,6 +306,16 @@ namespace Configs {
     std::shared_ptr<ProxyEntity> ProfileManager::NewProxyEntity(const QString &type) {
         return NewProxyEntity(type, false);
     } 
+=======
+        return Preset::SingBox::OutboundTypes.value(type, type);
+    }
+
+    std::shared_ptr<ProxyEntity> ProfileManager::NewProxyEntity(const QString &type) {
+    //    Configs::AbstractBean *bean = nullptr;
+        auto ent = std::make_shared<ProxyEntity>(type);
+        return ent;
+    }
+>>>>>>> other-repo/main
 
     std::shared_ptr<Group> ProfileManager::NewGroup() {
         auto ent = std::make_shared<Group>();
@@ -251,6 +333,7 @@ namespace Configs {
     }
 
     bool ProfileManager::AddProfile(const std::shared_ptr<ProxyEntity> &ent, int gid) {
+<<<<<<< HEAD
         if (ent->id >= 0) {
             return false;
         }
@@ -271,6 +354,11 @@ namespace Configs {
         ent->fn = QString("profiles/%1.cfg").arg(ent->id);
         ent->Save();
         return true;
+=======
+        QList<std::shared_ptr<ProxyEntity>> list;
+        list << ent;
+        return ProfileManager::AddProfileBatch(list, gid);
+>>>>>>> other-repo/main
     }
 
     bool ProfileManager::AddProfileBatch(const QList<std::shared_ptr<ProxyEntity>>& ents, int gid)
@@ -281,12 +369,22 @@ namespace Configs {
         for (const auto& ent : ents)
         {
             if (ent->id >= 0) continue;
+<<<<<<< HEAD
             ent->id = NewProfileID();
             ent->gid = gid;
             group->AddProfile(ent->id);
             profiles[ent->id] = ent;
             profilesIdOrder.push_back(ent->id);
             ent->fn = QString("profiles/%1.cfg").arg(ent->id);
+=======
+            int id = ent->id = NewProfileID();
+            ent->gid = gid;
+            group->AddProfile(id);
+            profiles[id] = ent;
+            profilesIdOrder.push_back(id);
+            ent->fn = QString("profiles/%1.cfg").arg(id);
+            ent->bean_cfg = QString("beans/%1.cfg").arg(id);
+>>>>>>> other-repo/main
         }
         group->Save();
         runOnNewThread([=,this]
@@ -296,6 +394,59 @@ namespace Configs {
         return true;
     }
 
+<<<<<<< HEAD
+=======
+    bool ProfileManager::MoveProfile(int id, int gid) {
+        QList<int> list;
+        list << id;
+        return ProfileManager::MoveProfileBatch(list, gid);
+    }
+
+    bool ProfileManager::MoveProfileBatch(const QList<int>& ents, int gid)
+    {
+        QList<std::shared_ptr<ProxyEntity>> entsp;
+        for (int i : ents){
+            entsp << this->GetProfile(i);
+        }
+        return this->MoveProfileBatch(entsp, gid);
+    }
+
+    bool ProfileManager::MoveProfileBatch(const QList<std::shared_ptr<ProxyEntity>>& ents, int mgid)
+    {
+        if (this->groups.count(mgid) == 0){
+            return false;
+        }
+        bool added = false;
+        auto group = this->groups[mgid];
+        QSet<std::shared_ptr<Group>> ments;
+        QSet<std::shared_ptr<Group>> grps;
+        for (auto ent : ents){
+            int id = ent->id;
+            int gid = ent->gid;
+            if (gid == mgid){
+                continue;
+            }
+            if (this->groups.count(gid) == 0){
+                continue;
+            }
+            auto grp = this->groups[gid];
+            grp->RemoveProfile(id);
+            grps.insert(grp);
+            group->AddProfile(id);
+            ent->gid = mgid;
+            added = true;
+        }
+        if (added) {
+            grps.insert(group);
+            runOnNewThread([=,this] {
+                for (const auto& grp : grps) grp->Save();
+                for (const auto& ent : ments) ent->Save();
+            });
+        }
+        return true;
+    }
+
+>>>>>>> other-repo/main
 
     void ProfileManager::DeleteProfile(int id) {
         if (id < 0) return;
@@ -339,16 +490,29 @@ namespace Configs {
 
         runOnNewThread([=,this]
         {
+<<<<<<< HEAD
            for (int id : deleted_ids) QFile(QString("profiles/%1.cfg").arg(id)).remove();
+=======
+           for (int id : deleted_ids) {
+            QFile(QString("profiles/%1.cfg").arg(id)).remove();
+            QFile(QString("beans/%1.cfg").arg(id)).remove();
+           }
+>>>>>>> other-repo/main
         });
     }
 
 
     void ProfileManager::deleteProfile(int id)
     {
+<<<<<<< HEAD
         profiles.erase(id);
         profilesIdOrder.removeAll(id);
         QFile(QString("profiles/%1.cfg").arg(id)).remove();
+=======
+        QList<int> ids;
+        ids << id;
+        BatchDeleteProfiles(ids);
+>>>>>>> other-repo/main
     }
 
 

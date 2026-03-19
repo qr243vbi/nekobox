@@ -6,7 +6,10 @@
 #include <QAction>
 #include <QCryptographicHash>
 #include <QSettings>
+<<<<<<< HEAD
 #include <QtTranslation>
+=======
+>>>>>>> other-repo/main
 #include <qlineedit.h>
 #include <qnamespace.h>
 #include <qpushbutton.h>
@@ -124,14 +127,28 @@ bool confirmLock(LockValue val, bool restart){
     QString password;
     bool checked;
     if (!userlist.contains(username)) {
+<<<<<<< HEAD
       qDebug() << "Username " << username << " is not exists";
+=======
+  #ifdef DEBUG_MODE
+      qDebug() << "Username " << username << " is not exists";
+      #endif
+>>>>>>> other-repo/main
       goto skip_timing;
     }
     password = confirm->ui->password->text();
     checked = checkPassword(username, password);
     if (!checked) {
+<<<<<<< HEAD
       qDebug() << "passwords does not match";
       goto skip_timing;
+=======
+  #ifdef DEBUG_MODE
+      qDebug() << "passwords does not match";
+      goto skip_timing;
+            #endif
+
+>>>>>>> other-repo/main
     }
     ret = !(getLocked(val, username));
     if (ret){
@@ -522,4 +539,8 @@ SecurityForm::SecurityForm(bool is_user_defined, QWidget *parent) {
             [this, sec]() -> void { sec->close(); }, Qt::SingleShotConnection);
         sec->show();
       });
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> other-repo/main

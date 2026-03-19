@@ -4,8 +4,16 @@ namespace Configs {
 
     QString ProfileFilter_ent_key(const std::shared_ptr<Configs::ProxyEntity> &ent, bool by_address) {
         by_address &= ent->type != "custom";
+<<<<<<< HEAD
         return by_address ? (ent->bean->DisplayAddress() + ent->bean->DisplayType())
                           : QJsonObject2QString(ent->bean->ToJson({"c_cfg", "c_out"}), true) + ent->bean->DisplayType();
+=======
+        return (ent->DisplayAddress() + 
+                ent->DisplayType()) + 
+                (by_address ? QJsonObject2QString(
+                            ent->bean()->ToJson({"c_cfg", "c_out"}), 
+                            true) : "");
+>>>>>>> other-repo/main
     }
 
     void ProfileFilter::Uniq(const QList<std::shared_ptr<ProxyEntity>> &in,

@@ -28,7 +28,11 @@ void EditShadowSocks::onStart(std::shared_ptr<Configs::ProxyEntity> _ent) {
 }
 
 bool EditShadowSocks::onEnd() {
+<<<<<<< HEAD
     auto bean = this->ent->ShadowSocksBean();
+=======
+    auto bean = ent->unlock(ent->ShadowSocksBean());
+>>>>>>> other-repo/main
 
     bean->method = ui->method->currentText();
     bean->password = ui->password->text();

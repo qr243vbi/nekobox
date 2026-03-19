@@ -14,7 +14,11 @@ namespace Configs {
         QStringList hostKeyAlgs;
         QString clientVersion;
 
+<<<<<<< HEAD
         SSHBean() : AbstractBean(0) {
+=======
+        SSHBean(Configs::ProxyEntity * entity) : AbstractBean(entity, 0) {
+>>>>>>> other-repo/main
         }
 
         INIT_MAP
@@ -27,6 +31,7 @@ namespace Configs {
             ADD_MAP("hostKeyAlgs", hostKeyAlgs, stringList);
             ADD_MAP("clientVersion", clientVersion, string);
         STOP_MAP
+<<<<<<< HEAD
 
         QString DisplayType() override { return "SSH"; };
 
@@ -37,5 +42,22 @@ namespace Configs {
         bool TryParseJson(const QJsonObject &obj);
 
         QString ToShareLink() override;
+=======
+/*/
+        QString DisplayType() override { return "SSH"; };
+*/
+        CoreObjOutboundBuildResult BuildCoreObjSingBox() const override;
+
+        bool TryParseLink(const QString &link) override;
+
+        bool TryParseJson(const QJsonObject &obj) override;
+
+        QString ToShareLink() const override;
+        #ifdef DEBUG_MODE
+        virtual QString type()const override {
+            return "ssh";
+        };
+        #endif
+>>>>>>> other-repo/main
     };
 }

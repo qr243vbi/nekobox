@@ -1,11 +1,22 @@
 #pragma once
 
+<<<<<<< HEAD
 #include "nekobox/dataStore/Configs.hpp"
 #include "nekobox/global/CountryHelper.hpp"
 #include "nekobox/stats/traffic/TrafficData.hpp"
 #include "nekobox/configs/proxy/AbstractBean.hpp"
 #include <QColor>
 #include "nekobox/configs/proxy/ExtraCore.h"
+=======
+#include "Utils.hpp"
+#include <nekobox/dataStore/Configs.hpp>
+#include <nekobox/global/CountryHelper.hpp>
+#include <nekobox/stats/traffic/TrafficData.hpp>
+#include <nekobox/configs/proxy/AbstractBean.hpp>
+#include <QColor>
+#include <memory>
+#include <nekobox/configs/proxy/ExtraCore.h>
+>>>>>>> other-repo/main
 
 namespace Configs {
     class SocksHttpBean;
@@ -37,19 +48,44 @@ namespace Configs {
     class CustomBean;
 
     class ChainBean;
+<<<<<<< HEAD
+=======
+
+    class NaiveBean;
+>>>>>>> other-repo/main
 }; // namespace Configs
 
 namespace Configs {
     class ProxyEntity : public JsonStore {
+<<<<<<< HEAD
     public:
         virtual ConfJsMap _map() override;
 
         QString type;
 
+=======
+    private:
+        std::weak_ptr<Configs::AbstractBean> weak_bean;
+        std::shared_ptr<Configs::AbstractBean> strong_bean;
+        bool SavePrivate();
+    public:
+        virtual ConfJsMap _map() override;
+        virtual bool Save() override;
+
+        bool isValid() const;
+
+        QString type;
+
+        QString name = "";
+        QString serverAddress = "127.0.0.1";
+        int serverPort = 1080;
+
+>>>>>>> other-repo/main
         int id = -1;
         int gid = 0;
         int latencyInt = 0;
         int latencyOrder = 0;
+<<<<<<< HEAD
         QString dl_speed;
         QString ul_speed;
         QString test_country;
@@ -63,10 +99,53 @@ namespace Configs {
         bool is_working = false;
         qint64 last_auto_test_time = 0;
 
+=======
+
+        bool is_working = false;
+        QString bean_cfg;
+        QString dl_speed;
+        QString ul_speed;
+        QString test_country;
+        std::shared_ptr<const Configs::AbstractBean> bean() const;
+        virtual bool UnknownKeyHash(const QByteArray & array) override;
+        std::shared_ptr<Stats::TrafficData> traffic_data = std::make_shared<Stats::TrafficData>("");
+        QString full_test_report;
+
+        ProxyEntity(const QString &type_);
+        virtual ~ProxyEntity() override;
+
+        qint64 last_auto_test_time = 0;
+
+        template<typename A>
+        std::shared_ptr<A> unlock(std::shared_ptr<const A> bean){
+            auto ret = this->weak_bean.lock();
+            if ((void*)ret.get() == (void*)bean.get()){
+                if (ret != nullptr){
+                    ret->save_control_no_save = false;
+                }
+                return std::static_pointer_cast<A>(ret);
+            }
+            return nullptr;
+        }
+
+        [[nodiscard]]  QString DisplayAddress();
+
+        [[nodiscard]]  QString DisplayName();
+
+        [[nodiscard]]  QString DisplayCoreType();
+
+        [[nodiscard]]  QString DisplayType();
+
+        [[nodiscard]]  QString DisplayTypeAndName();
+
+        void ResetBeans();
+
+>>>>>>> other-repo/main
         [[nodiscard]] QString DisplayTestResult() const;
 
    //     [[nodiscard]] QColor DisplayLatencyColor() const;
 
+<<<<<<< HEAD
         [[nodiscard]] Configs::ChainBean *ChainBean() const {
             return (Configs::ChainBean *) bean.get();
         };
@@ -132,4 +211,31 @@ namespace Configs {
             return (Configs::ExtraCoreBean *) bean.get();
         };
     };
+=======
+        #define SocksHTTPBean SocksHttpBean
+        #define cast_func(X)         \
+        [[nodiscard]] std::shared_ptr<const Configs::X##Bean> X##Bean() const;
+
+        cast_func(Chain)
+        cast_func(SocksHttp)
+        cast_func(ShadowSocks)
+        cast_func(VMess)
+        cast_func(TrojanVLESS)
+ //       cast_func(Naive)
+        cast_func(Mieru)
+        cast_func(QUIC)
+        cast_func(AnyTLS)
+        cast_func(ShadowTLS)
+        cast_func(Wireguard)
+        cast_func(Tailscale)
+        cast_func(SSH)
+        cast_func(Tor)
+        cast_func(Custom)
+        cast_func(ExtraCore)
+        cast_func(Naive)
+
+        #undef cast_func
+    };
+
+>>>>>>> other-repo/main
 } // namespace Configs

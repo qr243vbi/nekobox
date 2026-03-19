@@ -16,3 +16,7 @@
 #include "MieruBean.hpp"
 #include "ShadowTLSBean.hpp"
 #include "TorBean.hpp"
+<<<<<<< HEAD
+=======
+#include "NaiveBean.hpp"
+>>>>>>> other-repo/main

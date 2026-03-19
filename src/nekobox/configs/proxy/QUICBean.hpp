@@ -73,9 +73,13 @@ namespace Configs {
             if (!init){
                 init = true;
                 // Add base AbstractBean fields
+<<<<<<< HEAD
                 _add(tuic, "name", name, string);
                 _add(tuic, "addr", serverAddress, string);
                 _add(tuic, "port", serverPort, integer);
+=======
+                tuic = AbstractBean::_map();
+>>>>>>> other-repo/main
                 
                 _add(tuic, "forceExternal", forceExternal, boolean);
             // TLS
@@ -123,7 +127,11 @@ namespace Configs {
 
         #undef _add
 
+<<<<<<< HEAD
         explicit QUICBean(int _proxy_type) : AbstractBean(0) {
+=======
+        explicit QUICBean(Configs::ProxyEntity * entity, int _proxy_type) : AbstractBean(entity, 0) {
+>>>>>>> other-repo/main
             proxy_type = _proxy_type;
             if (proxy_type == proxy_Hysteria || proxy_type == proxy_Hysteria2) {
                 if (proxy_type == proxy_Hysteria) { // hy1
@@ -134,7 +142,11 @@ namespace Configs {
             } else if (proxy_type == proxy_TUIC) {
             }
         };
+<<<<<<< HEAD
 
+=======
+/*
+>>>>>>> other-repo/main
         QString DisplayAddress() override {
             return ::DisplayAddress(serverAddress, serverPort);
         }
@@ -148,6 +160,7 @@ namespace Configs {
                 return "Hysteria2";
             }
         };
+<<<<<<< HEAD
 
         CoreObjOutboundBuildResult BuildCoreObjSingBox() override;
 
@@ -158,3 +171,26 @@ namespace Configs {
         QString ToShareLink() override;
     };
 } // namespace Configs
+=======
+*/
+        CoreObjOutboundBuildResult BuildCoreObjSingBox() const override;
+
+        bool TryParseLink(const QString &link) override;
+
+        bool TryParseJson(const QJsonObject &obj) override;
+
+        QString ToShareLink() const override;
+        #ifdef DEBUG_MODE
+        virtual QString type()const override {
+            if (proxy_type == proxy_TUIC) {
+                return "tuic";
+            } else if (proxy_type == proxy_Hysteria) {
+                return "hysteria";
+            } else {
+                return "hysteria2";
+            }
+        };
+        #endif
+    };
+} // namespace Configs
+>>>>>>> other-repo/main

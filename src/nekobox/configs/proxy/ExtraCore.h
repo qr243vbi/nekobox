@@ -12,7 +12,11 @@ namespace Configs {
         QString extraCoreConf;
         bool noLogs;
 
+<<<<<<< HEAD
         ExtraCoreBean() : AbstractBean(0) {
+=======
+        ExtraCoreBean(Configs::ProxyEntity * entity) : AbstractBean(entity, 0) {
+>>>>>>> other-repo/main
         }
         INIT_MAP
             ADD_MAP("socks_address", socksAddress, string);
@@ -22,6 +26,7 @@ namespace Configs {
             ADD_MAP("extra_core_conf", extraCoreConf, string);
             ADD_MAP("no_logs", noLogs, boolean);
         STOP_MAP
+<<<<<<< HEAD
         QString DisplayType() override { return "ExtraCore"; };
 
         CoreObjOutboundBuildResult BuildCoreObjSingBox() override;
@@ -31,5 +36,21 @@ namespace Configs {
         bool TryParseJson(const QJsonObject &obj);
 
         QString ToShareLink() override;
+=======
+ //       QString DisplayType() override { return "ExtraCore"; };
+
+        CoreObjOutboundBuildResult BuildCoreObjSingBox() const override;
+
+        bool TryParseLink(const QString &link) override;
+
+        bool TryParseJson(const QJsonObject &obj) override;
+        #ifdef DEBUG_MODE
+        virtual QString type()const override {
+            return "extra";
+        };
+        #endif
+
+        QString ToShareLink() const override;
+>>>>>>> other-repo/main
     };
 }

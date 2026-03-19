@@ -301,7 +301,13 @@ bool jsRouteProfileGetter(
                qWarning() <<  "Error in JavaScript code: " << jsFunction.toString();
                return "";
             }
+<<<<<<< HEAD
             qDebug() << "jsFunction " << jsFunction.toString();
+=======
+            #ifdef DEBUG_MODE
+            qDebug() << "jsFunction " << jsFunction.toString();
+            #endif
+>>>>>>> other-repo/main
             QJSValueList args ;
             args << profile ;
             bool proxy_set = false;

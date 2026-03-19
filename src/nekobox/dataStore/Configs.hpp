@@ -20,4 +20,8 @@ namespace Configs {
     bool isSetuidSet(const std::string& path);
 
     QString GetBasePath();
+<<<<<<< HEAD
+=======
+ //   bimap::bidirectional_map<std::string, int> map;
+>>>>>>> other-repo/main
 } // namespace Configs

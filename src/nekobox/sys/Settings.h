@@ -4,6 +4,10 @@
 #include <QMap>
 #include <QSettings>
 #include <nekobox/dataStore/Utils.hpp>
+<<<<<<< HEAD
+=======
+#include <nekobox/global/GuiUtils.hpp>
+>>>>>>> other-repo/main
 
 #define CONFIG_INI_PATH QDir::current().absolutePath() + "/window.ini"
 
@@ -49,6 +53,10 @@
   };
 
 namespace Configs {
+<<<<<<< HEAD
+=======
+
+>>>>>>> other-repo/main
 class SettingsValue;
 class SettingsStore {
 public:
@@ -86,6 +94,10 @@ SETTINGS_VALUE(Chr)
 
 class WindowSettings : public SettingsStore {
 public:
+<<<<<<< HEAD
+=======
+  std::unique_ptr<Shortcuts> shortcuts;
+>>>>>>> other-repo/main
   QList<std::shared_ptr<SettingsValue>> &_map() override;
   QSettings settings() override;
   QString theme =
@@ -109,6 +121,10 @@ public:
       11
 #endif
       ;
+<<<<<<< HEAD
+=======
+  bool no_symlinks = true;
+>>>>>>> other-repo/main
   bool logs_enabled = true;
   bool test_after_start = true;
   char startup_update = false;
@@ -124,6 +140,10 @@ public:
   bool save_position = true;
   bool text_under_buttons = true;
   bool manually_column_width = false;
+<<<<<<< HEAD
+=======
+  bool ask_delete = true;
+>>>>>>> other-repo/main
   QStringList column_width;
   QString language = "";
 };
@@ -132,7 +152,10 @@ public:
 
 void updateEmojiFont();
 
+<<<<<<< HEAD
 bool createSymlink(const QString &targetPath, const QString &linkPath);
+=======
+>>>>>>> other-repo/main
 // QSettings getSettings();
 QSettings getGlobal();
 QString getLocale();
@@ -143,6 +166,10 @@ QString getResource(QString, QStringList dirs = {});
 QString getUpdaterPath();
 #endif
 #ifdef Q_OS_UNIX
+<<<<<<< HEAD
+=======
+QString getAppImage();
+>>>>>>> other-repo/main
 bool isAppImage();
 #endif
 QString getRootResource(QString str);

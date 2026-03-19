@@ -228,10 +228,14 @@
       <item>
        <widget class="QPushButton" name="url_test_button">
         <property name="text">
+<<<<<<< HEAD
          <string>URL Test</string>
         </property>
         <property name="flat">
          <bool>false</bool>
+=======
+         <string>Test</string>
+>>>>>>> other-repo/main
         </property>
        </widget>
       </item>
@@ -622,6 +626,7 @@
     <addaction name="menu_hotkey_settings"/>
     <addaction name="menu_open_config_folder"/>
    </widget>
+<<<<<<< HEAD
    <widget class="QMenu" name="menu_server">
     <property name="title">
      <string>Server</string>
@@ -668,6 +673,65 @@
     <addaction name="menu_resolve_selected"/>
     <addaction name="menu_reset_traffic"/>
     <addaction name="menu_test"/>
+=======
+   <widget class="QMenu" name="menu_profiles">
+    <property name="title">
+     <string>Profiles</string>
+    </property>
+    <widget class="QMenu" name="menuCurrent_group">
+     <property name="title">
+      <string>Current Group</string>
+     </property>
+     <addaction name="separator"/>
+    </widget>
+    <widget class="QMenu" name="menu_server">
+     <property name="title">
+      <string>Current Selected</string>
+     </property>
+     <widget class="QMenu" name="menu_share_item">
+      <property name="title">
+       <string>Share</string>
+      </property>
+      <addaction name="menu_qr"/>
+      <addaction name="menu_export_config"/>
+      <addaction name="separator"/>
+      <addaction name="menu_copy_links"/>
+      <addaction name="menu_copy_links_nkr"/>
+     </widget>
+     <widget class="QMenu" name="menu_test">
+      <property name="title">
+       <string>Test</string>
+      </property>
+      <addaction name="actionUrl_Test_Selected"/>
+      <addaction name="actionUrl_Test_Clear"/>
+      <addaction name="actionSpeedtest_Selected"/>
+      <addaction name="actionDownloadtest_Selected"/>
+      <addaction name="actionUploadtest_Selected"/>
+      <addaction name="actionCountrytest_Selected"/>
+      <addaction name="actionSimpledl_Selected"/>
+     </widget>
+     <addaction name="menu_start"/>
+     <addaction name="menu_stop"/>
+     <addaction name="menu_edit"/>
+     <addaction name="menu_select_all"/>
+     <addaction name="separator"/>
+     <addaction name="menu_share_item"/>
+     <addaction name="menu_clone"/>
+     <addaction name="menu_move_profile"/>
+     <addaction name="menu_delete"/>
+     <addaction name="separator"/>
+     <addaction name="menu_resolve_selected"/>
+     <addaction name="menu_reset_traffic"/>
+     <addaction name="menu_test"/>
+    </widget>
+    <addaction name="menu_add_from_clipboard"/>
+    <addaction name="actionAdd_new_Group"/>
+    <addaction name="menu_add_from_input"/>
+    <addaction name="actionAdd_profile_from_File"/>
+    <addaction name="menu_scan_qr"/>
+    <addaction name="separator"/>
+    <addaction name="menu_server"/>
+>>>>>>> other-repo/main
     <addaction name="menuCurrent_group"/>
    </widget>
    <widget class="QMenu" name="menuHidden_menu">
@@ -677,7 +741,10 @@
     <addaction name="menu_update_subscription"/>
     <addaction name="menu_resolve_domain"/>
     <addaction name="menu_remove_invalid"/>
+<<<<<<< HEAD
     <addaction name="actionUrl_Test_Group"/>
+=======
+>>>>>>> other-repo/main
     <addaction name="menu_remove_unavailable"/>
     <addaction name="menu_clear_test_result"/>
     <addaction name="menu_delete_repeat"/>
@@ -688,6 +755,7 @@
      <string>Routing Menu</string>
     </property>
    </widget>
+<<<<<<< HEAD
    <widget class="QMenu" name="menu_profiles">
     <property name="title">
      <string>Profiles</string>
@@ -705,6 +773,33 @@
    <addaction name="menuHidden_menu"/>
    <addaction name="menuRouting_Menu"/>
    <addaction name="menu_profiles"/>
+=======
+   <widget class="QMenu" name="menuTest">
+    <property name="title">
+     <string>Test</string>
+    </property>
+    <addaction name="actionUrl_Test_Group"/>
+    <addaction name="actionSpeedtest_Current"/>
+   </widget>
+   <widget class="QMenu" name="menuContext">
+    <property name="title">
+     <string>Context</string>
+    </property>
+    <widget class="QMenu" name="menuContextProfiles">
+     <property name="title">
+      <string>ContextProfiles</string>
+     </property>
+    </widget>
+    <addaction name="menuContextProfiles"/>
+   </widget>
+   <addaction name="menu_program"/>
+   <addaction name="menu_preferences"/>
+   <addaction name="menu_profiles"/>
+   <addaction name="menuHidden_menu"/>
+   <addaction name="menuRouting_Menu"/>
+   <addaction name="menuTest"/>
+   <addaction name="menuContext"/>
+>>>>>>> other-repo/main
   </widget>
   <action name="menu_exit">
    <property name="text">
@@ -934,7 +1029,11 @@
   </action>
   <action name="menu_copy_links_nkr">
    <property name="text">
+<<<<<<< HEAD
     <string>Copy links of selected (Custom Links)</string>
+=======
+    <string>Copy Custom Links</string>
+>>>>>>> other-repo/main
    </property>
    <property name="shortcut">
     <string notr="true">Ctrl+Alt+C</string>
@@ -958,7 +1057,11 @@
   </action>
   <action name="menu_copy_links">
    <property name="text">
+<<<<<<< HEAD
     <string>Copy links of selected</string>
+=======
+    <string>Copy links</string>
+>>>>>>> other-repo/main
    </property>
    <property name="shortcut">
     <string notr="true">Ctrl+C</string>
@@ -1042,10 +1145,17 @@
   </action>
   <action name="actionUrl_Test_Selected">
    <property name="text">
+<<<<<<< HEAD
     <string>Url Test Selected</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+Shift+S</string>
+=======
+    <string>Url Test</string>
+   </property>
+   <property name="shortcut">
+    <string notr="true">Ctrl+Shift+S</string>
+>>>>>>> other-repo/main
    </property>
    <property name="visible">
     <bool>true</bool>
@@ -1053,7 +1163,11 @@
   </action>
   <action name="actionUrl_Test_Clear">
    <property name="text">
+<<<<<<< HEAD
     <string>Clear Test Result Selected</string>
+=======
+    <string>Clear Test Result</string>
+>>>>>>> other-repo/main
    </property>
    <property name="visible">
     <bool>true</bool>
@@ -1067,7 +1181,11 @@
     <string>Url Test Group</string>
    </property>
    <property name="shortcut">
+<<<<<<< HEAD
     <string>Ctrl+Shift+G</string>
+=======
+    <string notr="true">Ctrl+Shift+G</string>
+>>>>>>> other-repo/main
    </property>
    <property name="visible">
     <bool>true</bool>
@@ -1075,7 +1193,11 @@
   </action>
   <action name="menu_resolve_selected">
    <property name="text">
+<<<<<<< HEAD
     <string>Resolve Selected Domain</string>
+=======
+    <string>Resolve Domain</string>
+>>>>>>> other-repo/main
    </property>
    <property name="visible">
     <bool>true</bool>
@@ -1086,12 +1208,17 @@
     <string>Remove Invalid</string>
    </property>
    <property name="shortcut">
+<<<<<<< HEAD
     <string>Ctrl+Alt+I</string>
+=======
+    <string notr="true">Ctrl+Alt+I</string>
+>>>>>>> other-repo/main
    </property>
    <property name="menuRole">
     <enum>QAction::MenuRole::TextHeuristicRole</enum>
    </property>
   </action>
+<<<<<<< HEAD
   <action name="menu_open_routing_manager">
    <property name="text">
     <string>Open Manager</string>
@@ -1102,6 +1229,8 @@
     <string>Speedtest Current</string>
    </property>
   </action>
+=======
+>>>>>>> other-repo/main
   <action name="actionSpeedtest_Selected">
    <property name="text">
     <string>Full test Selected</string>
@@ -1152,6 +1281,22 @@
     <string>Security Settings</string>
    </property>
   </action>
+<<<<<<< HEAD
+=======
+  <action name="menu_move_profile">
+   <property name="text">
+    <string>Move</string>
+   </property>
+   <property name="shortcut">
+    <string notr="true">Ctrl+M</string>
+   </property>
+  </action>
+  <action name="actionSpeedtest_Current">
+   <property name="text">
+    <string>Speedtest Current</string>
+   </property>
+  </action>
+>>>>>>> other-repo/main
  </widget>
  <customwidgets>
   <customwidget>

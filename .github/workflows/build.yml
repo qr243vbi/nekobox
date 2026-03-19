@@ -48,6 +48,19 @@ on:
         type: boolean
         default: true
         required: false
+<<<<<<< HEAD
+=======
+      build_ubuntu_32:
+        description: "Build linux x86 binaries"
+        type: boolean
+        default: true
+        required: false
+      build_ubuntu_arm_32:
+        description: "Build linux ARM binaries"
+        type: boolean
+        default: true
+        required: false
+>>>>>>> other-repo/main
       publish_chocolatey:
         description: "Publish chocolatey packages"
         type: boolean
@@ -85,6 +98,17 @@ jobs:
             cross_arch: arm64
             go_version: "1.26.0"
             allow: ${{ github.event.inputs.build_ubuntu_arm }}
+<<<<<<< HEAD
+=======
+          - cross_os: linux
+            cross_arch: 386
+            go_version: "1.26.0"
+            allow: ${{ github.event.inputs.build_ubuntu_32 }}
+          - cross_os: linux
+            cross_arch: arm
+            go_version: "1.26.0"
+            allow: ${{ github.event.inputs.build_ubuntu_arm_32 }}
+>>>>>>> other-repo/main
           - cross_os: windows
             cross_arch: amd64
             go_version: "1.26.0"
@@ -109,13 +133,21 @@ jobs:
       - name: Cache Common Download
         id: cache-common
         if: matrix.cross_os != 'public' && ( github.event.inputs.source_only  != 'true' && matrix.allow == 'true' )
+<<<<<<< HEAD
         uses: actions/cache@v4.2.3
+=======
+        uses: actions/cache@main
+>>>>>>> other-repo/main
         with:
           path: artifacts.tgz
           key: CommonCache-${{ matrix.cross_os }}-${{ matrix.cross_arch }}-${{ hashFiles('script/build_go.sh', 'core/*') }}-${{ matrix.go_version }}
       - name: Install Golang
         if: ( matrix.cross_os == 'public' || ( github.event.inputs.source_only  != 'true' && matrix.allow == 'true' ) ) && steps.cache-common.outputs.cache-hit != 'true'
+<<<<<<< HEAD
         uses: qr243vbi/setup-go@main
+=======
+        uses: actions/setup-go@main
+>>>>>>> other-repo/main
         with:
           go-version: ${{ matrix.go_version }}
           cache-dependency-path: |
@@ -140,18 +172,36 @@ jobs:
         shell: bash
         run: |
           env INPUT_VERSION=${{ github.event.inputs.tag }} bash -x ./script/deploy_vendor.sh
+<<<<<<< HEAD
       - name: Installing ghr
         if: matrix.cross_os == 'public' && github.event.inputs.publish == 'true'
         run: |
           go install github.com/tcnksm/ghr@v0.17.0
           ghr -delete -t "${{ secrets.UPLOAD_TOKEN }}" -b "$(echo -e "${{ github.event.inputs.text }}")" -n "${{ github.event.inputs.tag }}" "${{ github.event.inputs.tag }}" deployment
 
+=======
+      - name: Publish sources
+        if: matrix.cross_os == 'public' && github.event.inputs.publish == 'true'
+        run: |
+          export INPUT_VERSION="${{ github.event.inputs.tag }}"
+          export MESSAGE="$(echo -e "${{ github.event.inputs.text }}")"
+          export GH_TOKEN='${{ secrets.UPLOAD_TOKEN }}'
+          if ! gh release view "${INPUT_VERSION}" >/dev/null 2>&1
+          then
+            gh release create "${INPUT_VERSION}" --title "${INPUT_VERSION}" --notes "${MESSAGE}"
+          fi
+          gh release upload "${INPUT_VERSION}" deployment/* --clobber
+>>>>>>> other-repo/main
       - name: Tar files
         if: matrix.cross_os == 'public' || ( github.event.inputs.source_only  != 'true' && matrix.allow == 'true' && steps.cache-common.outputs.cache-hit != 'true' )
         run: tar czvf artifacts.tgz ./deployment
       - name: Uploading Artifact
         if: matrix.cross_os == 'public' || ( github.event.inputs.source_only  != 'true' && matrix.allow == 'true' )
+<<<<<<< HEAD
         uses: actions/upload-artifact@v4.6.2
+=======
+        uses: actions/upload-artifact@main
+>>>>>>> other-repo/main
         with:
           name: nekobox-${{ github.sha }}-Common-${{ matrix.cross_os }}-${{ matrix.cross_arch }}
           path: artifacts.tgz
@@ -181,6 +231,7 @@ jobs:
       - name: Trigger Open Build Service and Copr
         shell: bash
         run: |
+<<<<<<< HEAD
           pip install osc
           export MESSAGE="${{ github.event.inputs.text }}"
           export SUBMIT_FACTORY=${{ github.event.inputs.publish_suse }}
@@ -190,6 +241,20 @@ jobs:
           export INPUT_VERSION="${{ github.event.inputs.tag }}"
           bash ./script/generate_pkgbuild.sh
           bash ./script/trigger_open_build_service.sh
+=======
+          pip install osc copr
+          export MESSAGE="$(echo -e "${{ github.event.inputs.text }}")"
+          export SUBMIT_FACTORY=${{ github.event.inputs.publish_suse }}
+          export OBS_USERNAME="${{ secrets.OBS_USER }}"
+          export OBS_PASSWORD="${{ secrets.OBS_PASSWORD }}"
+          export OBS_HOOK_TOKEN="${{ secrets.OBS_HOOK_TOKEN }}"
+          export COPR_LOGIN="${{ secrets.COPR_LOGIN }}"
+          export COPR_TOKEN="${{ secrets.COPR_TOKEN }}"
+          export INPUT_VERSION="${{ github.event.inputs.tag }}"
+          bash ./script/generate_pkgbuild.sh
+          bash ./script/trigger_open_build_service.sh
+          python3 ./script/trigger_community_projects.py
+>>>>>>> other-repo/main
 
       - name: Publish AUR package
         uses: KSXGitHub/github-actions-deploy-aur@v4.1.1
@@ -275,13 +340,21 @@ jobs:
         if: matrix.allow == 'true' && github.event.inputs.source_only != 'true'
         id: vcpkg
         with:
+<<<<<<< HEAD
           pkgs: thrift
+=======
+          pkgs: thrift boost
+>>>>>>> other-repo/main
           triplet: ${{ matrix.triplet }}
           token: ${{ secrets.UPLOAD_TOKEN }}
           
       - name: Download Artifacts
         if: matrix.allow == 'true' && github.event.inputs.source_only != 'true'
+<<<<<<< HEAD
         uses: actions/download-artifact@v4.3.0
+=======
+        uses: actions/download-artifact@main
+>>>>>>> other-repo/main
         with:
           path: download-artifact
 
@@ -295,7 +368,11 @@ jobs:
       - name: Cache Builds
         id: cache-common
         if: github.event.inputs.source_only  != 'true' && matrix.allow == 'true'
+<<<<<<< HEAD
         uses: actions/cache@v4.2.3
+=======
+        uses: actions/cache@main
+>>>>>>> other-repo/main
         with:
           path: build
           key: NinjaCache-${{ matrix.platform }}-${{ matrix.target }}-${{ github.event.inputs.tag }}
@@ -316,7 +393,11 @@ jobs:
 
       - name: Uploading Artifact
         if: matrix.allow == 'true' && github.event.inputs.source_only  != 'true'
+<<<<<<< HEAD
         uses: actions/upload-artifact@v4.6.2
+=======
+        uses: actions/upload-artifact@main
+>>>>>>> other-repo/main
         with:
           name: nekobox-${{ github.sha }}-${{ matrix.platform }}-${{ matrix.target }}-Qt${{ matrix.qt_version }}
           path: artifacts.tgz
@@ -332,6 +413,7 @@ jobs:
       matrix:
         include:
           - platform: ubuntu-24.04
+<<<<<<< HEAD
             qt_version: 6.10.2
             target: amd64
             allow: ${{ github.event.inputs.build_ubuntu }}
@@ -339,6 +421,19 @@ jobs:
             qt_version: 6.10.2
             target: arm64
             allow: ${{ github.event.inputs.build_ubuntu_arm }}
+=======
+            target: amd64
+            allow: ${{ github.event.inputs.build_ubuntu }}
+          - platform: ubuntu-24.04-arm
+            target: arm64
+            allow: ${{ github.event.inputs.build_ubuntu_arm }}
+          - platform: ubuntu-24.04
+            target: 386
+            allow: ${{ github.event.inputs.build_ubuntu_32 }}
+          - platform: ubuntu-24.04-arm
+            target: arm
+            allow: ${{ github.event.inputs.build_ubuntu_arm_32 }}
+>>>>>>> other-repo/main
       fail-fast: false
     runs-on: ${{ matrix.platform }}
     env:
@@ -354,6 +449,7 @@ jobs:
 
       - name: Download Artifacts
         if: matrix.allow == 'true' && github.event.inputs.source_only != 'true'
+<<<<<<< HEAD
         uses: actions/download-artifact@v4.3.0
         with:
           path: download-artifact
@@ -368,6 +464,12 @@ jobs:
           modules: qtcharts
           cache-key-prefix: QtCache-${{ matrix.platform }}-${{ matrix.target }}
 
+=======
+        uses: actions/download-artifact@main
+        with:
+          path: download-artifact
+
+>>>>>>> other-repo/main
       - name: Download Srslist
         if: matrix.allow == 'true' && github.event.inputs.source_only != 'true'
         shell: bash
@@ -375,6 +477,7 @@ jobs:
           curl -fLso "srslist.json" "https://github.com/qr243vbi/ruleset/raw/refs/heads/rule-set/srslist.json"
           mkdir build
 
+<<<<<<< HEAD
       - name: Linux - Install apt dependencies
         if: matrix.allow == 'true' && github.event.inputs.source_only != 'true'
         uses: awalsh128/cache-apt-pkgs-action@latest
@@ -386,14 +489,44 @@ jobs:
         id: cache-common
         if: github.event.inputs.source_only  != 'true' && matrix.allow == 'true'
         uses: actions/cache@v4.2.3
+=======
+      - name: Cache Builds
+        id: cache-common
+        if: github.event.inputs.source_only  != 'true' && matrix.allow == 'true'
+        uses: actions/cache@main
+>>>>>>> other-repo/main
         with:
           path: build
           key: CommonCache-${{ matrix.platform }}-${{ matrix.target }}-${{ github.event.inputs.tag }}
 
+<<<<<<< HEAD
+=======
+ #     - name: Cache Containers
+  #      id: cache-common-containers
+   #     if: github.event.inputs.source_only  != 'true' && matrix.allow == 'true'
+    #    uses: actions/cache@v4.2.3
+     #   with:
+      #    path: ~/.local/share/containers
+       #   key: CommonCachePodman-${{ matrix.platform }}-${{ matrix.target }}-${{ github.event.inputs.tag }}
+
+ #     - name: Linux - Install apt dependencies
+  #      if: matrix.allow == 'true' && github.event.inputs.source_only != 'true'
+   #     uses: awalsh128/cache-apt-pkgs-action@latest
+    #    with:
+     #     packages: podman podman-compose
+      #    version: 1.0
+
+      - name: Cache Docker images.
+        uses: AllySummers/docker-cache@main
+        with:
+          key: docker-${{ matrix.platform }}-${{ matrix.target }}-${{ hashFiles('script/Dockerfile') }}
+
+>>>>>>> other-repo/main
       - name: Linux - Generate MakeFile and Build
         if: matrix.allow == 'true' && github.event.inputs.source_only != 'true'
         shell: bash
         run: |
+<<<<<<< HEAD
           cd build
           if [[ ${{ github.event.inputs.skip_updater }} == 'true' ]]; then export SKIP_UPDATE_BUTTON=ON; else export SKIP_UPDATE_BUTTON=OFF; fi
           cmake -GNinja -DSKIP_UPDATE_BUTTON="${SKIP_UPDATE_BUTTON}" -DCMAKE_BUILD_TYPE=Release "-DNKR_DEFAULT_VERSION=${INPUT_VERSION}" ..
@@ -405,6 +538,19 @@ jobs:
             export GH_TOKEN='${{ secrets.UPLOAD_TOKEN }}'
           fi
           bash -x ./script/deploy_linux64.sh
+=======
+          echo 'UNAME=${{ matrix.target }}' >> .ENV
+          echo 'INPUT_VERSION=${{ github.event.inputs.tag }}' >> .ENV
+          export GUEST_ARCH=${{ matrix.target }}
+          docker compose up --force-recreate --build
+
+      - name: Linux - Publish
+        if: matrix.allow == 'true' && github.event.inputs.source_only != 'true' && github.event.inputs.publish  == 'true'
+        shell: bash
+        run: |
+          export GH_TOKEN='${{ secrets.UPLOAD_TOKEN }}'
+          gh release upload '${{ github.event.inputs.tag }}' ./deployment/* --clobber
+>>>>>>> other-repo/main
 
       - name: Tar files
         if: matrix.allow == 'true' && github.event.inputs.source_only != 'true'
@@ -413,10 +559,114 @@ jobs:
 
       - name: Uploading Artifact
         if: matrix.allow == 'true' && github.event.inputs.source_only != 'true'
+<<<<<<< HEAD
         uses: actions/upload-artifact@v4.6.2
         with:
           name: nekobox-${{ github.sha }}-${{ matrix.platform }}-${{ matrix.target }}-Qt${{ matrix.qt_version }}
           path: artifacts.tgz
+=======
+        uses: actions/upload-artifact@main
+        with:
+          name: nekobox-${{ github.sha }}-${{ matrix.platform }}-${{ matrix.target }}
+          path: artifacts.tgz
+  #
+  # build-cpp-linux:
+  #   name: Build linux binaries
+  #   permissions:
+  #     contents: write
+  #     actions: read
+  #   needs:
+  #     - build-go
+  #   strategy:
+  #     matrix:
+  #       include:
+  #         - platform: ubuntu-24.04
+  #           qt_version: 6.10.2
+  #           target: amd64
+  #           allow: ${{ github.event.inputs.build_ubuntu }}
+  #         - platform: ubuntu-24.04-arm
+  #           qt_version: 6.10.2
+  #           target: arm64
+  #           allow: ${{ github.event.inputs.build_ubuntu_arm }}
+  #     fail-fast: false
+  #   runs-on: ${{ matrix.platform }}
+  #   env:
+  #     ACTIONS_ALLOW_UNSECURE_COMMANDS: true
+  #     INPUT_VERSION: ${{ github.event.inputs.tag }}
+  #   steps:
+  #     - name: Checking out sources
+  #       if: matrix.allow == 'true' && github.event.inputs.source_only != 'true'
+  #       uses: actions/checkout@main
+  #       with:
+  #         ref: 'main'
+  #         submodules: "false"
+  #
+  #     - name: Download Artifacts
+  #       if: matrix.allow == 'true' && github.event.inputs.source_only != 'true'
+  #       uses: actions/download-artifact@v4.3.0
+  #       with:
+  #         path: download-artifact
+  #
+  #     - name: Install Qt
+  #       if: matrix.allow == 'true' && github.event.inputs.source_only != 'true'
+  #       uses: jurplel/install-qt-action@v4.3.0
+  #       with:
+  #         version: ${{ matrix.qt_version }}
+  #         setup-python: true
+  #         cache: true
+  #         modules: qtcharts
+  #         cache-key-prefix: QtCache-${{ matrix.platform }}-${{ matrix.target }}
+  #
+  #     - name: Download Srslist
+  #       if: matrix.allow == 'true' && github.event.inputs.source_only != 'true'
+  #       shell: bash
+  #       run: |
+  #         curl -fLso "srslist.json" "https://github.com/qr243vbi/ruleset/raw/refs/heads/rule-set/srslist.json"
+  #         mkdir build
+  #
+  #     - name: Linux - Install apt dependencies
+  #       if: matrix.allow == 'true' && github.event.inputs.source_only != 'true'
+  #       uses: awalsh128/cache-apt-pkgs-action@latest
+  #       with:
+  #         packages: libfuse2 patchelf squashfs-tools openssl-dev openssl thrift-compiler libthrift-dev libboost-dev
+  #         version: 1.0
+  #
+  #     - name: Cache Builds
+  #       id: cache-common
+  #       if: github.event.inputs.source_only  != 'true' && matrix.allow == 'true'
+  #       uses: actions/cache@v4.2.3
+  #       with:
+  #         path: build
+  #         key: CommonCache-${{ matrix.platform }}-${{ matrix.target }}-${{ github.event.inputs.tag }}
+  #
+  #     - name: Linux - Generate MakeFile and Build
+  #       if: matrix.allow == 'true' && github.event.inputs.source_only != 'true'
+  #       shell: bash
+  #       run: |
+  #         cd build
+  #         if [[ ${{ github.event.inputs.skip_updater }} == 'true' ]]; then export SKIP_UPDATE_BUTTON=ON; else export SKIP_UPDATE_BUTTON=OFF; fi
+  #         cmake -GNinja -DSKIP_UPDATE_BUTTON="${SKIP_UPDATE_BUTTON}" -DCMAKE_BUILD_TYPE=Release "-DNKR_DEFAULT_VERSION=${INPUT_VERSION}" ..
+  #         ninja
+  #         cd ..
+  #         if [[ "${{ github.event.inputs.publish }}" == "true" ]]
+  #         then
+  #           export UPLOAD_WITH_GH=yes
+  #           export GH_TOKEN='${{ secrets.UPLOAD_TOKEN }}'
+  #         fi
+  #         bash -x ./script/deploy_linux64.sh
+  #
+  #     - name: Tar files
+  #       if: matrix.allow == 'true' && github.event.inputs.source_only != 'true'
+  #       shell: bash
+  #       run: tar czvf artifacts.tgz ./deployment
+  #
+  #     - name: Uploading Artifact
+  #       if: matrix.allow == 'true' && github.event.inputs.source_only != 'true'
+  #       uses: actions/upload-artifact@v4.6.2
+  #       with:
+  #         name: nekobox-${{ github.sha }}-${{ matrix.platform }}-${{ matrix.target }}-Qt${{ matrix.qt_version }}
+  #         path: artifacts.tgz
+>>>>>>> other-repo/main
 
   publish:
     name: Pack & Publish Release
@@ -436,7 +686,11 @@ jobs:
           ref: 'main'
           submodules: "false"
       - name: Download Artifacts
+<<<<<<< HEAD
         uses: actions/download-artifact@v4.3.0
+=======
+        uses: actions/download-artifact@main
+>>>>>>> other-repo/main
         with:
           path: download-artifact
       - name: Install Zip, Curl, Jq
@@ -463,8 +717,13 @@ jobs:
             mv windows64 nekobox
             zip -9 -r $version_standalone-windows64.zip nekobox
             rm -rf nekobox windows64
+<<<<<<< HEAD
             gh release upload "${INPUT_VERSION}" $version_standalone-windows64-installer.exe
             gh release upload "${INPUT_VERSION}" $version_standalone-windows64.zip
+=======
+            gh release upload "${INPUT_VERSION}" $version_standalone-windows64-installer.exe --clobber
+            gh release upload "${INPUT_VERSION}" $version_standalone-windows64.zip --clobber
+>>>>>>> other-repo/main
           fi
           ####
           if [[ -f nekobox_setup_arm64.exe ]]; then
@@ -472,8 +731,13 @@ jobs:
             mv windows-arm64 nekobox
             zip -9 -r $version_standalone-windows-arm64.zip nekobox
             rm -rf nekobox windows-arm64
+<<<<<<< HEAD
             gh release upload "${INPUT_VERSION}" $version_standalone-windows-arm64-installer.exe
             gh release upload "${INPUT_VERSION}" $version_standalone-windows-arm64.zip
+=======
+            gh release upload "${INPUT_VERSION}" $version_standalone-windows-arm64-installer.exe --clobber
+            gh release upload "${INPUT_VERSION}" $version_standalone-windows-arm64.zip --clobber
+>>>>>>> other-repo/main
           fi
           ####
           if [[ -f nekobox_setup32.exe ]]; then
@@ -481,8 +745,13 @@ jobs:
             mv windows32 nekobox
             zip -9 -r $version_standalone-windows32.zip nekobox
             rm -rf nekobox windows32
+<<<<<<< HEAD
             gh release upload "${INPUT_VERSION}" $version_standalone-windows32-installer.exe
             gh release upload "${INPUT_VERSION}" $version_standalone-windows32.zip
+=======
+            gh release upload "${INPUT_VERSION}" $version_standalone-windows32-installer.exe --clobber
+            gh release upload "${INPUT_VERSION}" $version_standalone-windows32.zip --clobber
+>>>>>>> other-repo/main
           fi
           if [[ '${{ github.event.inputs.publish_winget }}' == 'true' && -f $version_standalone-windows32.zip && -f $version_standalone-windows64.zip && -f $version_standalone-windows-arm64.zip ]]
           then

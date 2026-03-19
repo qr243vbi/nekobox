@@ -130,6 +130,10 @@ set(PROJECT_SOURCES
         src/configs/ConfigBuilder.cpp
 
         src/configs/proxy/AbstractBean.cpp
+<<<<<<< HEAD
+=======
+        src/configs/proxy/WireguardBean.cpp
+>>>>>>> other-repo/main
         src/configs/proxy/Bean2CoreObj_box.cpp
         src/configs/proxy/Bean2Link.cpp
         src/configs/proxy/Link2Bean.cpp
@@ -140,6 +144,10 @@ set(PROJECT_SOURCES
         ${NEKOBOX_INCLUDE}/configs/proxy/ExtraCore.h
         ${NEKOBOX_INCLUDE}/configs/proxy/includes.h
         ${NEKOBOX_INCLUDE}/configs/proxy/MieruBean.hpp
+<<<<<<< HEAD
+=======
+        ${NEKOBOX_INCLUDE}/configs/proxy/NaiveBean.hpp
+>>>>>>> other-repo/main
         ${NEKOBOX_INCLUDE}/configs/proxy/TorBean.hpp
         ${NEKOBOX_INCLUDE}/configs/proxy/Preset.hpp
         ${NEKOBOX_INCLUDE}/configs/proxy/QUICBean.hpp
@@ -180,6 +188,10 @@ set(PROJECT_SOURCES
         ${NEKOBOX_INCLUDE}/sys/AutoRun.hpp
         ${NEKOBOX_INCLUDE}/sys/Process.hpp
         ${NEKOBOX_INCLUDE}/sys/Settings.h
+<<<<<<< HEAD
+=======
+        ${NEKOBOX_INCLUDE}/ui/utils/MapListModel.hpp
+>>>>>>> other-repo/main
 
         src/sys/Process.cpp
         src/sys/AutoRun.cpp
@@ -211,6 +223,12 @@ set(PROJECT_SOURCES
         ${NEKOBOX_INCLUDE}/ui/profile/edit_shadowsocks.h
         src/ui/profile/edit_shadowsocks.cpp
         ${NEKOBOX_INCLUDE}/ui/profile/edit_shadowsocks.ui
+<<<<<<< HEAD
+=======
+        ${NEKOBOX_INCLUDE}/ui/profile/edit_naive.h
+        src/ui/profile/edit_naive.cpp
+        ${NEKOBOX_INCLUDE}/ui/profile/edit_naive.ui
+>>>>>>> other-repo/main
         ${NEKOBOX_INCLUDE}/ui/profile/edit_vmess.h
         src/ui/profile/edit_vmess.cpp
         ${NEKOBOX_INCLUDE}/ui/profile/edit_vmess.ui
@@ -366,16 +384,39 @@ qt_add_lrelease(nekobox TS_FILES ${TS_FILES} QM_FILES_OUTPUT_VARIABLE QM_FILES)
 # target_sources(nekobox PRIVATE ${CMAKE_BINARY_DIR}/translations.qrc)
 
 if (MSVC)
+<<<<<<< HEAD
 find_package(Thrift REQUIRED)
 set(THRIFT_LIBRARIES thrift::thrift)
 else()
 find_package(PkgConfig REQUIRED)
 pkg_check_modules(THRIFT thrift REQUIRED)
+=======
+    find_package(Thrift REQUIRED)
+    set(THRIFT_LIBRARIES thrift::thrift)
+else()
+    find_package(PkgConfig REQUIRED)
+    pkg_check_modules(THRIFT thrift REQUIRED)
+>>>>>>> other-repo/main
 endif()
 
 target_include_directories(nekobox PRIVATE ${THRIFT_INCLUDE_DIRS})
 target_link_libraries(nekobox PRIVATE ${THRIFT_LIBRARIES})
 
+<<<<<<< HEAD
+=======
+#if (MSVC)
+#    include(FindBoost)
+#    set(Boost_USE_STATIC_LIBS ON)
+#    set(Boost_USE_MULTITHREADED ON)
+#    set(Boost_USE_STATIC_RUNTIME ON)
+#endif()
+
+find_package(Boost REQUIRED COMPONENTS filesystem)
+target_include_directories(nekobox PRIVATE ${Boost_INCLUDE_DIRS})
+target_link_libraries(nekobox PRIVATE Boost::filesystem)
+
+
+>>>>>>> other-repo/main
 # Target Link
 
 target_link_libraries(nekobox PRIVATE
@@ -387,6 +428,14 @@ target_link_libraries(nekobox PRIVATE
 
 if (MSVC)
     target_compile_options(nekobox PRIVATE "/std:c++20")       # add c++20 feature
+<<<<<<< HEAD
+=======
+    if(CMAKE_SIZEOF_VOID_P EQUAL 4)
+        set_target_properties(nekobox PROPERTIES
+            MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>"
+        )
+    endif()
+>>>>>>> other-repo/main
 endif()
 
 qt_finalize_executable(nekobox)

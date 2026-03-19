@@ -1,8 +1,17 @@
+<<<<<<< HEAD
 #include "nekobox/dataStore/ResourceEntity.hpp"
 #include "nekobox/sys/Settings.h"
 #include <QString>
 #include <qcoreapplication.h>
 #include "nekobox/configs/proxy/AbstractBean.hpp"
+=======
+#include <nekobox/dataStore/ResourceEntity.hpp>
+#include <nekobox/dataStore/Utils.hpp>
+#include <nekobox/sys/Settings.h>
+#include <QString>
+#include <qcoreapplication.h>
+#include <nekobox/configs/proxy/AbstractBean.hpp>
+>>>>>>> other-repo/main
 
 static inline QString _ent(QString name) {
   name = name.replace("/", "_P");
@@ -16,14 +25,23 @@ static inline QString _ent(QString name) {
 namespace Configs {
 
 DECL_MAP(ResourceManager)
+<<<<<<< HEAD
     ADD_MAP( "core_path", core_path, string);
     ADD_MAP( "resources_path", resources_path, string);
+=======
+    ADD_MAP("core_path", core_path, string);
+    ADD_MAP("resources_path", resources_path, string);
+>>>>>>> other-repo/main
     ADD_MAP("latest_path", latest_path, string);
 STOP_MAP
 
 ResourceManager::ResourceManager() : JsonStore("resource_manager.cfg") {
   symlinks_supported = true;
+<<<<<<< HEAD
   load_control_must = true;
+=======
+  //load_control_must = true;
+>>>>>>> other-repo/main
   this->Load();
 }
 
@@ -42,6 +60,7 @@ QString ResourceManager::getLatestPath(){
 
 bool ResourceManager::saveLink(QString str, QString path){
   str = _ent(str);
+<<<<<<< HEAD
   latest_path = QFileInfo(path).absolutePath();
   if (symlinks_supported) {
     QString file("resources/" + str + ".ent.lnk");
@@ -51,6 +70,25 @@ bool ResourceManager::saveLink(QString str, QString path){
     QFile file("resources/" + str + ".ent.txt");
     file.remove();
     return WriteFileText(file, path);
+=======
+  latest_path = QFileInfo(path).absoluteFilePath();
+  QDir this_path (Configs::GetBasePath());
+
+  QString relative = this_path.relativeFilePath(latest_path);
+  if (!relative.startsWith("..")){
+    latest_path = relative;
+    if (symlinks_supported){
+      latest_path = QString("..") + QDir::separator() + latest_path;
+    }
+  }  
+  if (symlinks_supported) {
+    QString file(this_path.absoluteFilePath(QString("resources") + QDir::separator() + str + ".ent.lnk"));
+    QFile::remove(file);
+    return createSymlink(latest_path, file);
+  } else {
+    QFile file(this_path.absoluteFilePath(QString("resources") + QDir::separator() + str + ".ent.txt"));
+    return WriteFileText(file, latest_path);
+>>>>>>> other-repo/main
   }
 }
 

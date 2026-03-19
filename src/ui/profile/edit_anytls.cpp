@@ -18,9 +18,15 @@ EditAnyTLS::~EditAnyTLS() {
     delete ui;
 }
 
+<<<<<<< HEAD
 void EditAnyTLS::onStart(std::shared_ptr<Configs::ProxyEntity> _ent) {
     this->ent = _ent;
     auto bean = this->ent->AnyTLSBean();
+=======
+void EditAnyTLS::onStart(std::shared_ptr<Configs::ProxyEntity> ent) {
+    this->ent = ent;
+    auto bean = (ent->AnyTLSBean());
+>>>>>>> other-repo/main
 
     ui->password->setText(bean->password);
     ui->interval->setText(bean->idle_session_check_interval);
@@ -29,7 +35,11 @@ void EditAnyTLS::onStart(std::shared_ptr<Configs::ProxyEntity> _ent) {
 }
 
 bool EditAnyTLS::onEnd() {
+<<<<<<< HEAD
     auto bean = this->ent->AnyTLSBean();
+=======
+    auto bean = ent->unlock(ent->AnyTLSBean());
+>>>>>>> other-repo/main
 
     bean->password = ui->password->text();
     bean->idle_session_check_interval = ui->interval->text();
@@ -48,9 +58,15 @@ EditShadowTLS::~EditShadowTLS() {
     delete ui;
 }
 
+<<<<<<< HEAD
 void EditShadowTLS::onStart(std::shared_ptr<Configs::ProxyEntity> _ent) {
     this->ent = _ent;
     auto bean = this->ent->ShadowTLSBean();
+=======
+void EditShadowTLS::onStart(std::shared_ptr<Configs::ProxyEntity> ent) {
+    this->ent = ent;
+    auto bean = ent->ShadowTLSBean();
+>>>>>>> other-repo/main
 
     ui->password->setText(bean->password);
     int ver = bean->shadowtls_version - 1;
@@ -59,7 +75,11 @@ void EditShadowTLS::onStart(std::shared_ptr<Configs::ProxyEntity> _ent) {
 }
 
 bool EditShadowTLS::onEnd() {
+<<<<<<< HEAD
     auto bean = this->ent->ShadowTLSBean();
+=======
+    auto bean = ent->unlock(ent->ShadowTLSBean());
+>>>>>>> other-repo/main
 
     bean->password = ui->password->text();
     bean->shadowtls_version = ui->comboBox->currentIndex() + 1;

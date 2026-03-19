@@ -6,6 +6,10 @@
 #include "nekobox/ui/profile/edit_custom.h"
 #include "nekobox/ui/profile/edit_extra_core.h"
 #include "nekobox/ui/profile/edit_mieru.h"
+<<<<<<< HEAD
+=======
+#include "nekobox/ui/profile/edit_naive.h"
+>>>>>>> other-repo/main
 #include "nekobox/ui/profile/edit_tor.h"
 #include "nekobox/ui/profile/edit_quic.h"
 #include "nekobox/ui/profile/edit_shadowsocks.h"
@@ -33,7 +37,11 @@
 #include <QtGlobal>
 
 #include <QStyle>
+<<<<<<< HEAD
 #if QT_VERSION >= QT_VERSION_CHECK(6, 6, 0)
+=======
+#if QT_VERSION >= QT_VERSION_CHECK(6, 9, 0)
+>>>>>>> other-repo/main
 #define STATE_CHANGED &QCheckBox::checkStateChanged
 #else
 #define STATE_CHANGED &QCheckBox::stateChanged
@@ -50,6 +58,16 @@
   ui->type->addItem(                                                           \
       Configs::ProfileManager::GetDisplayType(a), a);
 
+<<<<<<< HEAD
+=======
+
+
+#define ADJUST_RIGHT_BOX                                                       \
+    auto rightNoBox = (                                                       \
+        ui->network_box->isHidden() && ui->security_group->isHidden());        \
+        ui->right_all_w->setVisible(!rightNoBox);
+
+>>>>>>> other-repo/main
 DialogEditProfile::DialogEditProfile(const QString &_type, int profileOrGroupId,
                                      QWidget *parent)
     : QDialog(parent), ui(new Ui::DialogEditProfile) {
@@ -168,12 +186,20 @@ DialogEditProfile::DialogEditProfile(const QString &_type, int profileOrGroupId,
   connect(ui->security, &QComboBox::currentTextChanged, this,
           [=, this](const QString &txt) {
             if (txt == "tls") {
+<<<<<<< HEAD
               ui->security_box->setVisible(true);
               ui->tls_camouflage_box->setVisible(true);
             } else {
               ui->security_box->setVisible(false);
               ui->tls_camouflage_box->setVisible(false);
             }
+=======
+              ui->security_group->setVisible(true);
+            } else {
+              ui->security_group->setVisible(false);
+            }
+            ADJUST_RIGHT_BOX
+>>>>>>> other-repo/main
             ADJUST_SIZE
           });
   emit ui->security->currentTextChanged(ui->security->currentText());
@@ -183,6 +209,10 @@ DialogEditProfile::DialogEditProfile(const QString &_type, int profileOrGroupId,
     ui->tls_frag_fall_delay->setEnabled(state);
   });
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> other-repo/main
   // mux setting changed
   connect(ui->multiplex, &QComboBox::currentTextChanged, this,
           [=, this](const QString &txt) {
@@ -201,6 +231,7 @@ DialogEditProfile::DialogEditProfile(const QString &_type, int profileOrGroupId,
     this->type = _type;
 
     // load type to combo box
+<<<<<<< HEAD
     LOAD_TYPE("socks")
     LOAD_TYPE("http")
     LOAD_TYPE("shadowsocks")
@@ -224,6 +255,32 @@ DialogEditProfile::DialogEditProfile(const QString &_type, int profileOrGroupId,
     LOAD_TYPE("chain")
     LOAD_TYPE("tor")
 
+=======
+      // load type to combo box
+      LOAD_TYPE("socks")
+      LOAD_TYPE("http")
+      LOAD_TYPE("shadowsocks")
+      LOAD_TYPE("trojan")
+      LOAD_TYPE("vmess")
+      LOAD_TYPE("vless")
+      LOAD_TYPE("hysteria")
+      LOAD_TYPE("hysteria2")
+      LOAD_TYPE("tuic")
+      LOAD_TYPE("anytls")
+      LOAD_TYPE("shadowtls")
+      LOAD_TYPE("mieru")
+      LOAD_TYPE("naive")
+      LOAD_TYPE("wireguard")
+      LOAD_TYPE("tailscale")
+      LOAD_TYPE("ssh")
+      LOAD_TYPE("tor")
+      ui->type->addItem(tr("Custom (%1 outbound)").arg(software_core_name),
+                        "internal");
+      ui->type->addItem(tr("Custom (%1 config)").arg(software_core_name),
+                        "internal-full");
+      LOAD_TYPE("extracore");
+      LOAD_TYPE("chain")
+>>>>>>> other-repo/main
     // type changed
     connect(ui->type, &QComboBox::currentIndexChanged, this,
             [=, this](int index) {
@@ -320,6 +377,13 @@ void DialogEditProfile::typeSelected(const QString &newType) {
     auto _innerWidget = new EditMieru(this);
     innerWidget = _innerWidget;
     innerEditor = _innerWidget;
+<<<<<<< HEAD
+=======
+  } else if (type == "naive") {
+      auto _innerWidget = new EditNaive(this);
+      innerWidget = _innerWidget;
+      innerEditor = _innerWidget;
+>>>>>>> other-repo/main
   } else if (type == "tor") {
       auto _innerWidget = new EditTor(this);
       innerWidget = _innerWidget;
@@ -343,16 +407,40 @@ void DialogEditProfile::typeSelected(const QString &newType) {
   // hide some widget
   auto showAddressPort = type != "chain" && customType != "internal" &&
                          customType != "internal-full" && type != "extracore" &&
+<<<<<<< HEAD
                          type != "tailscale";
+=======
+                         type != "tailscale" && type != "tor";
+>>>>>>> other-repo/main
   ui->address->setVisible(showAddressPort);
   ui->address_l->setVisible(showAddressPort);
   ui->port->setVisible(showAddressPort);
   ui->port_l->setVisible(showAddressPort);
 
+<<<<<<< HEAD
   // 右边 stream
   auto stream = GetStreamSettings(ent->bean.get());
   if (stream != nullptr) {
     ui->right_all_w->setVisible(true);
+=======
+  auto bean = ent->bean();
+  #ifdef DEBUG_MODE
+  auto bibi = ent->unlock(bean);
+  qDebug() << "INSPECT MAP OF BEAN OF TYPE" << bibi->type();
+  for (auto key: bibi->_map().values()){
+    qDebug() << key->name;
+  }
+  qDebug() << "END INSPECT";
+  #endif
+
+  auto stream = GetStreamSettingsConst(bean.get());
+  if (stream != nullptr) {
+
+    #ifdef DEBUG_MODE
+    qDebug() << "Stream is not nullptr";
+    #endif
+ //   ui->right_all_w->setVisible(true);
+>>>>>>> other-repo/main
     ui->network->setCurrentText(stream->network);
     ui->security->setCurrentText(stream->security);
     ui->packet_encoding->setCurrentText(stream->packet_encoding);
@@ -380,6 +468,7 @@ void DialogEditProfile::typeSelected(const QString &newType) {
     ui->xhttp_extra->setText(stream->xhttp_extra);
     ui->reality_pbk->setText(stream->reality_pbk);
     ui->reality_sid->setText(stream->reality_sid);
+<<<<<<< HEAD
     ui->multiplex->setCurrentIndex(ent->bean->mux_state);
     ui->brutal_enable->setCheckState(ent->bean->enable_brutal
                                          ? Qt::CheckState::Checked
@@ -394,6 +483,22 @@ void DialogEditProfile::typeSelected(const QString &newType) {
   // left: custom
   CACHE.custom_config = ent->bean->custom_config;
   CACHE.custom_outbound = ent->bean->custom_outbound;
+=======
+    ui->multiplex->setCurrentIndex(bean->mux_state);
+    ui->brutal_enable->setCheckState(bean->enable_brutal
+                                         ? Qt::CheckState::Checked
+                                         : Qt::CheckState::Unchecked);
+    ui->brutal_speed->setText(QString::number(bean->brutal_speed));
+    CACHE.certificate = stream->certificate;
+    CACHE.ech_config = stream->ech_config;
+  } //else {
+  //  ui->right_all_w->setVisible(false);
+ // }
+
+  // left: custom
+  CACHE.custom_config = bean->custom_config;
+  CACHE.custom_outbound = bean->custom_outbound;
+>>>>>>> other-repo/main
   bool show_custom_config = true;
   bool show_custom_outbound = true;
   if (type == "chain") {
@@ -417,7 +522,11 @@ void DialogEditProfile::typeSelected(const QString &newType) {
   ui->bean->layout()->removeWidget(old);
   innerWidget->layout()->setContentsMargins(0, 0, 0, 0);
   ui->bean->layout()->addWidget(innerWidget);
+<<<<<<< HEAD
   ui->bean->setTitle(ent->bean->DisplayType());
+=======
+  ui->bean->setTitle(ent->DisplayType());
+>>>>>>> other-repo/main
   delete old;
 
   // 左边 bean inner editor
@@ -433,14 +542,21 @@ void DialogEditProfile::typeSelected(const QString &newType) {
   innerEditor->onStart(ent);
 
   // 左边 common
+<<<<<<< HEAD
   ui->name->setText(ent->bean->name);
   ui->address->setText(ent->bean->serverAddress);
   ui->port->setText(QString::number(ent->bean->serverPort));
+=======
+  ui->name->setText(ent->name);
+  ui->address->setText(ent->serverAddress);
+  ui->port->setText(QString::number(ent->serverPort));
+>>>>>>> other-repo/main
   ui->port->setValidator(QRegExpValidator_Number);
 
   // 星号
   ADD_ASTERISK(this)
 
+<<<<<<< HEAD
   if (type == "vmess" || type == "vless") {
     ui->packet_encoding->setVisible(true);
     ui->packet_encoding_l->setVisible(true);
@@ -475,12 +591,45 @@ void DialogEditProfile::typeSelected(const QString &newType) {
     ui->multiplex_l->setVisible(false);
     ui->brutal_box->setVisible(false);
   }
+=======
+  auto packet_encoding_visible = (type == "vmess" || type == "vless");
+    ui->packet_encoding->setVisible(packet_encoding_visible);
+    ui->packet_encoding_l->setVisible(packet_encoding_visible);
+
+
+  auto network_visible = (type == "vmess" || type == "vless" || type == "trojan");
+    ui->network_l->setVisible(network_visible);
+    ui->network->setVisible(network_visible);
+    ui->network_box->setVisible(network_visible);
+
+  auto security_visible = (type == "vmess" || type == "vless" || type == "trojan" ||
+      type == "http" || type == "anytls" || type == "shadowtls" || type == "naive");
+    ui->security->setVisible(security_visible);
+    ui->security_l->setVisible(security_visible);
+
+  auto naive_hidden = (type != "naive");
+  if (security_visible){
+    ui->tls_camouflage_box->setVisible(naive_hidden);
+    ui->query_server_name->setVisible(naive_hidden);
+    ui->alpn->setVisible(naive_hidden);
+    ui->label_query_server_name->setVisible(naive_hidden);
+    ui->label_alpn->setVisible(naive_hidden);
+  }
+
+  auto brutal_visible = (type == "vmess" || type == "vless" || type == "trojan" ||
+      type == "shadowsocks");
+    ui->multiplex->setVisible(brutal_visible);
+    ui->multiplex_l->setVisible(brutal_visible);
+    ui->brutal_box->setVisible(brutal_visible);
+
+>>>>>>> other-repo/main
   int streamBoxVisible = 0;
   for (auto label : ui->stream_box->findChildren<QLabel *>()) {
     if (!label->isHidden() && label->parent() == ui->stream_box)
       streamBoxVisible++;
   }
   ui->stream_box->setVisible(streamBoxVisible);
+<<<<<<< HEAD
 
   auto rightNoBox =
       (ui->stream_box->isHidden() && ui->network_box->isHidden() &&
@@ -488,6 +637,9 @@ void DialogEditProfile::typeSelected(const QString &newType) {
   if (rightNoBox && !ui->right_all_w->isHidden()) {
     ui->right_all_w->setVisible(false);
   }
+=======
+  ADJUST_RIGHT_BOX
+>>>>>>> other-repo/main
 
   editor_cache_updated_impl();
   ADJUST_SIZE
@@ -501,12 +653,21 @@ bool DialogEditProfile::onEnd() {
   }
 
   // 左边
+<<<<<<< HEAD
   ent->bean->name = ui->name->text();
   ent->bean->serverAddress = ui->address->text().remove(' ');
   ent->bean->serverPort = ui->port->text().toInt();
 
   // 右边 stream
   auto stream = GetStreamSettings(ent->bean.get());
+=======
+  ent->name = ui->name->text();
+  ent->serverAddress = ui->address->text().remove(' ');
+  ent->serverPort = ui->port->text().toInt();
+  auto bean = ent->unlock(ent->bean());
+  //
+  auto stream = GetStreamSettings(bean.get());
+>>>>>>> other-repo/main
   if (stream != nullptr) {
     stream->network = ui->network->currentText();
     stream->security = ui->security->currentText();
@@ -530,9 +691,15 @@ bool DialogEditProfile::onEnd() {
     stream->xhttp_extra = ui->xhttp_extra->text();
     stream->reality_pbk = ui->reality_pbk->text();
     stream->reality_sid = ui->reality_sid->text();
+<<<<<<< HEAD
     ent->bean->mux_state = ui->multiplex->currentIndex();
     ent->bean->enable_brutal = ui->brutal_enable->isChecked();
     ent->bean->brutal_speed = ui->brutal_speed->text().toInt();
+=======
+    bean->mux_state = ui->multiplex->currentIndex();
+    bean->enable_brutal = ui->brutal_enable->isChecked();
+    bean->brutal_speed = ui->brutal_speed->text().toInt();
+>>>>>>> other-repo/main
     stream->certificate = CACHE.certificate;
     stream->ech_config = CACHE.ech_config;
 
@@ -545,13 +712,22 @@ bool DialogEditProfile::onEnd() {
   }
 
   // cached custom
+<<<<<<< HEAD
   ent->bean->custom_outbound = CACHE.custom_outbound;
   ent->bean->custom_config = CACHE.custom_config;
 
+=======
+  bean->custom_outbound = CACHE.custom_outbound;
+  bean->custom_config = CACHE.custom_config;
+>>>>>>> other-repo/main
   return true;
 }
 
 void DialogEditProfile::accept() {
+<<<<<<< HEAD
+=======
+  auto bean = ent->bean();
+>>>>>>> other-repo/main
   // save to ent
   if (!onEnd()) {
     return;
@@ -568,6 +744,10 @@ void DialogEditProfile::accept() {
       QMessageBox::warning(this, "???", "id exists");
     });
     }
+<<<<<<< HEAD
+=======
+    ent->Save();
+>>>>>>> other-repo/main
   } else {
     auto changed = ent->Save();
     if (changed && Configs::dataStore->started_id == ent->id)
@@ -699,6 +879,7 @@ void DialogEditProfile::on_apply_to_group_clicked() {
 
 void DialogEditProfile::do_apply_to_group(
     const std::shared_ptr<Configs::Group> &group, QWidget *key) {
+<<<<<<< HEAD
   Configs::V2rayStreamSettings *stream = nullptr;
   Configs::AbstractBean *bean = nullptr;
   bean = ent->bean.get();
@@ -724,11 +905,58 @@ void DialogEditProfile::do_apply_to_group(
         continue;
       profile->bean->_setValue(bean, p);
       profile->Save();
+=======
+  const Configs::V2rayStreamSettings *stream = nullptr;
+  auto bean = ent->bean();
+
+  if (bean != nullptr) {
+    stream = GetStreamSettingsConst(bean.get());
+  }
+
+  QMap<int, std::shared_ptr<Configs::AbstractBean>> to_save;
+
+  #define SAVE_PROFILE       {        \
+        int id = profile->id;         \
+        if (to_save.count(id) == 0) to_save[id] = profile_bean;  \
+      }
+
+  auto copyStream = [=, this](const void *p) {
+    for (const auto &profile : group->GetProfileEnts()) {
+      auto profile_bean = profile->unlock(profile->bean());
+      if (profile_bean == nullptr)
+        continue;
+      auto newStream = GetStreamSettings(profile_bean.get());
+      if (newStream == nullptr || stream == newStream)
+        continue;
+      newStream->_setValue(stream, p);
+      SAVE_PROFILE
+    }
+  };
+
+  auto copyBean = [=, this](const void *p) {
+    for (const auto &profile : group->GetProfileEnts()) {
+      auto profile_bean = profile->unlock(profile->bean());
+      if (profile == ent || profile_bean == nullptr)
+        continue;
+      profile_bean.get()->_setValue(bean.get(), p);
+      SAVE_PROFILE
+    }
+  };
+
+  auto copyEntity = [=, this](const void *p) {
+    for (const auto &profile : group->GetProfileEnts()) {
+      auto profile_bean = profile->unlock(profile->bean());
+      if (profile == ent || profile_bean.get() == nullptr)
+        continue;
+      profile->_setValue(bean->entity, p);
+      SAVE_PROFILE
+>>>>>>> other-repo/main
     }
   };
 
   if (bean != nullptr) {
     if (key == ui->name){
+<<<<<<< HEAD
       copyBean(&ent->bean->name);
     } else if (key == ui->port){
       copyBean(&ent->bean->serverPort);
@@ -744,6 +972,23 @@ void DialogEditProfile::do_apply_to_group(
       copyBean(&ent->bean->custom_config);
     } else if (key == ui->custom_outbound_edit) {
       copyBean(&ent->bean->custom_outbound);
+=======
+      copyEntity(&ent->name);
+    } else if (key == ui->port){
+      copyEntity(&ent->serverPort);
+    } else if (key == ui->address){
+      copyEntity(&ent->serverAddress);
+    } else if (key == ui->multiplex) {
+      copyBean(&bean->mux_state);
+    } else if (key == ui->brutal_enable) {
+      copyBean(&bean->enable_brutal);
+    } else if (key == ui->brutal_speed) {
+      copyBean(&bean->brutal_speed);
+    } else if (key == ui->custom_config_edit) {
+      copyBean(&bean->custom_config);
+    } else if (key == ui->custom_outbound_edit) {
+      copyBean(&bean->custom_outbound);
+>>>>>>> other-repo/main
     } else {
       if (stream != nullptr) {
         if (key == ui->ech_config_edit) {
@@ -768,4 +1013,11 @@ void DialogEditProfile::do_apply_to_group(
       }
     }
   }
+<<<<<<< HEAD
+=======
+
+  for (auto ent : to_save.values()){
+    ent->entity->Save();
+  }
+>>>>>>> other-repo/main
 }

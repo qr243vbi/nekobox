@@ -118,14 +118,29 @@ namespace Configs {
         }
     };
 
+<<<<<<< HEAD
     inline V2rayStreamSettings *GetStreamSettings(AbstractBean *bean) {
         if (bean == nullptr) return nullptr;
         auto stream_item = bean->_get("stream");
         if (stream_item != nullptr) {
             auto stream_store = *(JsonStore **) stream_item->getPtr(bean);
+=======
+    inline const V2rayStreamSettings *GetStreamSettingsConst(const AbstractBean *bean) {
+        if (bean == nullptr) return nullptr;
+        auto stream_item = bean->_get_const("stream");
+        if (stream_item != nullptr) {
+            auto stream_store = *(JsonStore **) stream_item->getPtr((JsonStore*)bean);
+>>>>>>> other-repo/main
             auto stream = (Configs::V2rayStreamSettings *) stream_store;
             return stream;
         }
         return nullptr;
     }
+<<<<<<< HEAD
+=======
+
+    inline V2rayStreamSettings *GetStreamSettings(AbstractBean *bean) {
+        return (V2rayStreamSettings*) GetStreamSettingsConst(bean);
+    }
+>>>>>>> other-repo/main
 } // namespace Configs

@@ -1,6 +1,10 @@
 #include "Const.hpp"
 #include "ConfigItem.hpp"
 #include "Utils.hpp"
+<<<<<<< HEAD
+=======
+#include <nekobox/configs/proxy/Preset.hpp>
+>>>>>>> other-repo/main
 #ifdef Q_OS_WIN
 #include "nekobox/sys/windows/WinVersion.h"
 #endif
@@ -36,6 +40,7 @@ namespace Configs {
         static QStringList List();
     };
 
+<<<<<<< HEAD
     class Shortcuts : public JsonStore
     {
     public:
@@ -50,6 +55,11 @@ namespace Configs {
 
         virtual bool Load() override;
     };
+=======
+    INIT_ENUM(VpnImplementation)
+        ADD_ENUM_LIST(Preset::SingBox::VpnImplementation, 1)
+    STOP_ENUM
+>>>>>>> other-repo/main
 
     class DataStore : public JsonStore {
     public:
@@ -59,6 +69,10 @@ namespace Configs {
         // Custom system parameters: format "hwid=value,os=value,osVersion=value,model=value"
         // Running
         int core_port = 19810;
+<<<<<<< HEAD
+=======
+        QString core_domain = "127.0.0.1";
+>>>>>>> other-repo/main
         int started_id = -1919;
         bool core_running = false;
         bool prepare_exit = false;
@@ -162,7 +176,10 @@ namespace Configs {
         int remember_id = -1919;
         bool remember_enable = false;
         bool windows_set_admin = false;
+<<<<<<< HEAD
         std::unique_ptr<Shortcuts> shortcuts;
+=======
+>>>>>>> other-repo/main
 
         // Socks & HTTP Inbound
         QString inbound_address = "127.0.0.1";

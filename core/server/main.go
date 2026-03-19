@@ -64,7 +64,11 @@ func RunCore(_port *int, _debug *bool) {
 }
 
 func main() {
+<<<<<<< HEAD
 	if len(os.Args) > 0 {
+=======
+	if len(os.Args) > 1 {
+>>>>>>> other-repo/main
 		if os.Args[1] == "-installer-mode" {
 			fmt.Println("nekobox_core installer mode")
 			InstallerMode()

@@ -78,6 +78,14 @@ inline QString joinCommand(const QStringList &arguments) {
     ui->a->setValidator(QRegExpValidator_Number);
 #define P_SAVE_INT(a) bean->a = ui->a->text().toInt();
 
+<<<<<<< HEAD
+=======
+
+#define SP_LOAD_INT(a)                    \
+    ui->a->setValue(bean->a);
+#define SP_SAVE_INT(a) bean->a = ui->a->value();
+
+>>>>>>> other-repo/main
 #define D_LOAD_INT(a)                                  \
     ui->a->setText(QString::number(Configs::dataStore->a)); \
     ui->a->setValidator(QRegExpValidator_Number);
@@ -91,6 +99,13 @@ inline QString joinCommand(const QStringList &arguments) {
 #define P_LOAD_COMBO_STRING(a) ui->a->setCurrentText(bean->a);
 #define P_SAVE_COMBO_STRING(a) bean->a = ui->a->currentText();
 
+<<<<<<< HEAD
+=======
+
+#define P_LOAD_COMBO_STRING_PTR(a) ui->a->setCurrentText(*bean->a);
+#define P_SAVE_COMBO_STRING_PTR(a) *bean->a = ui->a->currentText();
+
+>>>>>>> other-repo/main
 #define D_LOAD_COMBO_STRING(a) ui->a->setCurrentText(Configs::dataStore->a);
 #define D_SAVE_COMBO_STRING(a) Configs::dataStore->a = ui->a->currentText();
 
@@ -176,8 +191,11 @@ QWidget *GetMessageBoxParent();
       QMessageBox::information(this, T, X) ;                        \
 })                                                                  \
 
+<<<<<<< HEAD
 void ActivateWindow(QWidget *w);
 
+=======
+>>>>>>> other-repo/main
 void ToggleWindow(QWidget *w);
 
 void runOnUiThread(const std::function<void()> &callback);
@@ -206,6 +224,31 @@ inline bool isDarkMode() {
 #endif
 }
 
+<<<<<<< HEAD
+=======
+namespace Configs {
+class Shortcuts : public JsonStore
+{
+public:
+    bool legacy = false;
+    virtual ConfJsMap _map() override;
+    QVariantMap shortcuts;
+    virtual bool UnknownKeyHash(const QByteArray & array) override;
+
+    explicit Shortcuts();
+};
+
+class ShortcutsOld : public JsonStore
+{
+public:
+    virtual ConfJsMap _map() override;
+    QStringList shortcuts;
+
+    explicit ShortcutsOld();
+};
+}
+
+>>>>>>> other-repo/main
 struct ProxyColorRule : public JsonStore {
     virtual ConfJsMap _map() override;
     ProxyColorRule(int, int, int, int, bool, QColor);

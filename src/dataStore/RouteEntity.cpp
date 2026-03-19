@@ -164,7 +164,11 @@ namespace Configs {
                             MW_show_log("The outbound described in the rule chain is missing, maybe your data is corrupted");
                             return {};
                         }
+<<<<<<< HEAD
                         obj["outbound"] = prof->bean->DisplayName();
+=======
+                        obj["outbound"] = prof->DisplayName();
+>>>>>>> other-repo/main
                     }
                 } else {
                     if (!outboundTag.isEmpty()) obj["outbound"] = outboundTag;
@@ -483,8 +487,14 @@ namespace Configs {
     int getOutboundID(const QString& name) {
         if (name == "proxy") return -1;
         if (name == "direct") return -2;
+<<<<<<< HEAD
         for (const auto& item: profileManager->profiles) {
             if (item.second->bean->name == name) return item.first;
+=======
+        if (name == "block") return -3;
+        for (const auto& item: profileManager->profiles) {
+            if (item.second->name == name) return item.first;
+>>>>>>> other-repo/main
         }
 
         return INVALID_ID;

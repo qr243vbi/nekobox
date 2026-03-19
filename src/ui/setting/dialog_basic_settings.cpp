@@ -15,6 +15,10 @@
 #include <QInputDialog>
 #include <QMessageBox>
 #include <QTimer>
+<<<<<<< HEAD
+=======
+#include <qboxlayout.h>
+>>>>>>> other-repo/main
 #include <qfontdatabase.h>
 #include "nekobox/sys/Settings.h"
 #include "nekobox/dataStore/ResourceEntity.hpp"
@@ -22,22 +26,139 @@
 
 #include "nekobox/ui/mainwindow_interface.h"
 
+<<<<<<< HEAD
 
 #if QT_VERSION >= QT_VERSION_CHECK(6, 6, 0)
+=======
+#include <QtGlobal> // For QT_VERSION_CHECK
+#if QT_VERSION >= QT_VERSION_CHECK(6, 9, 0)
+>>>>>>> other-repo/main
 #define STATE_CHANGED &QCheckBox::checkStateChanged
 #else
 #define STATE_CHANGED &QCheckBox::stateChanged
 #endif
+<<<<<<< HEAD
+=======
+
+>>>>>>> other-repo/main
 #include <QDir>
 
 #define settings Configs::windowSettings
 
+<<<<<<< HEAD
+=======
+int LanguageModel::rowCount(const QModelIndex &parent ) const {
+    return languageList.size(); // The number of items in the list
+}
+
+std::shared_ptr<LanguageValue> LanguageModel::getLanguage(int index) const {
+    return languageList[index];
+}
+
+QVariant LanguageModel::data(const QModelIndex &index, int role ) const 
+{
+        if (index.isValid() && index.row() < languageList.size()) {
+            const auto &language = languageList[index.row()];
+            if (role == Qt::DisplayRole) {
+                return language->name;
+            } else if (role == 9999){
+                return language->index;
+            }
+        }
+        return QVariant();
+}
+
+
+    LanguageSelectionDialog::LanguageSelectionDialog(QWidget *parent)
+        : QDialog(parent)
+    {
+        selectedLanguage = nullptr;
+        // Set dialog title
+        setWindowTitle("Select Language");
+
+        // Create layout
+        QVBoxLayout *layout = new QVBoxLayout(this);
+
+        // Create the list view to show available languages
+        languageListView = new QListView(this);
+        layout->addWidget(languageListView);
+
+        // Create the model to display the languages
+        languageModel = new LanguageModel(this);
+
+        // Set the model for the list view
+        languageListView->setModel(languageModel);
+
+        // Enable selection
+        languageListView->setSelectionMode(QAbstractItemView::SingleSelection);
+
+        // Create OK and Cancel buttons
+        QPushButton *okButton = new QPushButton("OK", this);
+        QPushButton *cancelButton = new QPushButton("Cancel", this);
+
+        // Connect buttons to actions
+        connect(okButton, &QPushButton::clicked, this, &LanguageSelectionDialog::onOkClicked);
+        connect(cancelButton, &QPushButton::clicked, this, &LanguageSelectionDialog::reject);
+
+        QHBoxLayout *hlayout = new QHBoxLayout(this);
+        // Add buttons to layout
+        hlayout->addWidget(okButton);
+        hlayout->addWidget(cancelButton);
+        layout->addLayout(hlayout);
+
+        // Set the layout for the dialog
+        setLayout(layout);
+    }
+
+    std::shared_ptr<LanguageValue> LanguageSelectionDialog::getSelectedLanguage() const {
+        return selectedLanguage;
+    }
+
+    void LanguageSelectionDialog::onOkClicked() {
+        QModelIndex selectedIndex = languageListView->currentIndex();
+        if (selectedIndex.isValid()) {
+            selectedLanguage = languageModel->getLanguage(languageModel->data(selectedIndex, 9999).value<int>());
+            #ifdef DEBUG_MODE
+            qDebug() << "Selected language:" << selectedLanguage->name;
+            #endif
+            accept(); // Close the dialog with acceptance
+        } else {
+            #ifdef DEBUG_MODE
+            qDebug() << "No language selected";
+            #endif
+        }
+    }
+
+
+
+>>>>>>> other-repo/main
 DialogBasicSettings::DialogBasicSettings(MainWindow *parent)
     : QDialog(parent), ui(new Ui::DialogBasicSettings) {
     CHECK_SETTINGS_ACCESS
     ui->setupUi(this);
     ADD_ASTERISK(this);
     this->parent = parent;
+<<<<<<< HEAD
+=======
+    CACHE.language_code = Configs::windowSettings->language;
+    
+    for (auto lang : languageCodes()){
+        if (lang->code == CACHE.language_code){
+            ui->language_button->setText(lang->name);
+        } 
+    }
+
+    connect(ui->language_button, &QPushButton::clicked, this, [=,this] {
+        auto select_language = std::make_shared<LanguageSelectionDialog>(this);
+        select_language->show();
+        select_language->exec();
+        auto pointer = select_language->getSelectedLanguage();
+        if (pointer != nullptr){
+            CACHE.language_code = pointer->code;
+            ui->language_button->setText(pointer->name);
+        }
+    });    
+>>>>>>> other-repo/main
 
     // Auto-testing
     D_LOAD_BOOL(auto_test_enable)
@@ -76,6 +197,10 @@ DialogBasicSettings::DialogBasicSettings(MainWindow *parent)
     D_LOAD_STRING(test_latency_url)
     D_LOAD_BOOL(disable_tray)
     S_LOAD_BOOL(auto_hide)
+<<<<<<< HEAD
+=======
+            S_LOAD_BOOL(ask_delete)
+>>>>>>> other-repo/main
     ui->set_text_under_menu_icons->setChecked(settings->text_under_buttons);
     connect(ui->set_text_under_menu_icons, STATE_CHANGED, this, [=,this]
     {
@@ -126,6 +251,7 @@ DialogBasicSettings::DialogBasicSettings(MainWindow *parent)
     D_LOAD_BOOL(start_minimal)
     S_LOAD_INT(max_log_line)
     //
+<<<<<<< HEAD
     auto language = ui->language;
     language->clear();
     auto locale = getLocale();
@@ -144,6 +270,9 @@ DialogBasicSettings::DialogBasicSettings(MainWindow *parent)
     connect(language, &QComboBox::currentIndexChanged, this, [=,this](int index) {
         CACHE.needRestart = true;
     });
+=======
+
+>>>>>>> other-repo/main
     connect(ui->font, &QComboBox::currentTextChanged, this, [=,this](const QString &fontName) {
         auto font = qApp->font();
         font.setFamily(fontName);
@@ -167,7 +296,14 @@ DialogBasicSettings::DialogBasicSettings(MainWindow *parent)
     });
     //
     ui->theme->addItems(QStyleFactory::keys());
+<<<<<<< HEAD
     ui->theme->addItem("QDarkStyle");
+=======
+    ui->theme->addItem("Dark");
+    ui->theme->addItem("AMOLED");
+    ui->theme->addItem("Kawaii");
+    ui->theme->addItem("Aqua");
+>>>>>>> other-repo/main
     //
 //    bool ok;
     ui->theme->setCurrentText(settings->theme);
@@ -332,10 +468,13 @@ void DialogBasicSettings::accept() {
 
     D_SAVE_BOOL(connection_statistics);
     QString locale = "";
+<<<<<<< HEAD
     int locale_index = ui->language->currentIndex();
     if (locale_index >= 0){
         locale = languageCodes()[locale_index]->code;
     }
+=======
+>>>>>>> other-repo/main
     D_SAVE_BOOL(start_minimal)
     S_SAVE_INT(max_log_line)
     #ifdef Q_OS_WIN
@@ -364,6 +503,10 @@ void DialogBasicSettings::accept() {
     D_SAVE_BOOL(sub_clear)
     D_SAVE_BOOL(net_insecure)
     S_SAVE_BOOL(auto_hide)
+<<<<<<< HEAD
+=======
+            S_SAVE_BOOL(ask_delete)
+>>>>>>> other-repo/main
     D_SAVE_BOOL(sub_send_hwid)
     D_SAVE_STRING(sub_custom_hwid_params)
     D_SAVE_BOOL(sub_rm_invalid)
@@ -391,7 +534,13 @@ void DialogBasicSettings::accept() {
  //   int width, height, X, Y;
     // Startup
     settings->language = locale;
+<<<<<<< HEAD
     qDebug() << "Save language as: " << locale;
+=======
+    #ifdef DEBUG_MODE
+    qDebug() << "Save language as: " << locale;
+    #endif
+>>>>>>> other-repo/main
     S_SAVE_BOOL(save_geometry);
     S_SAVE_BOOL(save_position);
     S_SAVE_INT(width)
@@ -423,6 +572,16 @@ void DialogBasicSettings::accept() {
     if (need_save_manager){
         Configs::resourceManager->Save();
     }
+<<<<<<< HEAD
+=======
+    
+    // Language
+    if (CACHE.language_code != Configs::windowSettings->language){
+        CACHE.needRestart = true;
+        settings->language = CACHE.language_code;
+    }
+
+>>>>>>> other-repo/main
     // Security
 
     D_SAVE_BOOL(skip_cert)

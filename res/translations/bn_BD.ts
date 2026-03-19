@@ -5,7 +5,11 @@
     <message>
         <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="14" />
         <source>Dialog</source>
+<<<<<<< HEAD
         <translation type="unfinished">ডায়ালগ</translation>
+=======
+        <translation type="unfinished" />
+>>>>>>> other-repo/main
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="20" />
@@ -43,7 +47,11 @@
     <message>
         <location filename="../../src/nekobox/ui/setting/resource_manager.ui" line="14" />
         <source>Dialog</source>
+<<<<<<< HEAD
         <translation type="unfinished">ডায়ালগ</translation>
+=======
+        <translation type="unfinished" />
+>>>>>>> other-repo/main
     </message>
 </context>
 <context>
@@ -250,6 +258,10 @@
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="502" />
+<<<<<<< HEAD
+=======
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="523" />
+>>>>>>> other-repo/main
         <source>System</source>
         <translation type="unfinished">সিস্টেম</translation>
     </message>
@@ -259,98 +271,175 @@
         <translation type="unfinished">ভাষা</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="532" />
+=======
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="536" />
+>>>>>>> other-repo/main
         <source>Icon</source>
         <translation type="unfinished">আইকন</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="539" />
+=======
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="543" />
+>>>>>>> other-repo/main
         <source>Emoji Font</source>
         <translation type="unfinished">ইমোজি ফন্ট</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="552" />
+=======
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="556" />
+>>>>>>> other-repo/main
         <source>Subscription</source>
         <translation type="unfinished">সাবস্ক্রিপশন</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="558" />
+=======
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="562" />
+>>>>>>> other-repo/main
         <source>Clear servers before update</source>
         <translation type="unfinished">আপডেট করার আগে সার্ভার সাফ করুন</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="565" />
+=======
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="569" />
+>>>>>>> other-repo/main
         <source>URL Test after update</source>
         <translation type="unfinished">আপডেটের পর URL পরীক্ষা</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="580" />
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="800" />
+=======
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="584" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="804" />
+>>>>>>> other-repo/main
         <source>Enable</source>
         <translation type="unfinished">সক্ষম করুন</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="587" />
+=======
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="591" />
+>>>>>>> other-repo/main
         <source>Interval (minute, invalid if less than 30)</source>
         <translation type="unfinished">ব্যবধান (মিনিট, 30 এর কম হলে অবৈধ)</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="606" />
+=======
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="610" />
+>>>>>>> other-repo/main
         <source>Remove Duplicates</source>
         <translation type="unfinished">সদৃশ সরান</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="613" />
+=======
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="617" />
+>>>>>>> other-repo/main
         <source>hwid=custom_value,os=custom_os,osVersion=custom_version,model=custom_model</source>
         <translation type="unfinished">hwid=custom_value,os=custom_os,osVersion=custom_version,model=custom_model</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="620" />
+=======
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="624" />
+>>>>>>> other-repo/main
         <source>User Agent</source>
         <translation type="unfinished">ব্যবহারকারী এজেন্ট</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="630" />
+=======
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="634" />
+>>>>>>> other-repo/main
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;HWID=%1&lt;/p&gt;&lt;p&gt;OS=%2&lt;/p&gt;&lt;p&gt;OS Version=%3&lt;/p&gt;&lt;p&gt;Model=%4&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;HWID=%1&lt;/p&gt;&lt;p&gt;OS=%2&lt;/p&gt;&lt;p&gt;OS সংস্করণ=%3&lt;/p&gt;&lt;p&gt;মডেল=%4&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="633" />
+=======
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="637" />
+>>>>>>> other-repo/main
         <source>Send System Parameters</source>
         <translation type="unfinished">সিস্টেম প্যারামিটার পাঠান</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="646" />
+=======
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="650" />
+>>>>>>> other-repo/main
         <source>Automatic update</source>
         <translation type="unfinished">স্বয়ংক্রিয় আপডেট</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="653" />
+=======
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="657" />
+>>>>>>> other-repo/main
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Format: hwid=value,os=value,osVersion=value,model=value&lt;/p&gt;&lt;p&gt;Leave empty to use default values. Only specify the parameters you want to override.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;ফর্ম্যাট: hwid=value,os=value,osVersion=value,model=value&lt;/p&gt;&lt;p&gt;ডিফল্ট মান ব্যবহার করতে খালি ছেড়ে দিন।আপনি যে প্যারামিটারগুলিকে ওভাররাইড করতে চান তা নির্দিষ্ট করুন৷&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;৷</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="656" />
+=======
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="660" />
+>>>>>>> other-repo/main
         <source>Custom System Parameters (optional)</source>
         <translation type="unfinished">কাস্টম সিস্টেম প্যারামিটার (ঐচ্ছিক)</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="663" />
+=======
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="667" />
+>>>>>>> other-repo/main
         <source>Remove Invalid</source>
         <translation type="unfinished">অবৈধ সরান</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="670" />
+=======
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="674" />
+>>>>>>> other-repo/main
         <source>Remove Unavailable</source>
         <translation type="unfinished">অনুপলব্ধ সরান</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="678" />
+=======
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="682" />
+>>>>>>> other-repo/main
         <source>Core</source>
         <translation type="unfinished">কোর</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="717" />
+=======
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="721" />
+>>>>>>> other-repo/main
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Might
                                                                             Improve Ping and Performance&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                                                                         </source>
@@ -358,42 +447,78 @@
 পিং এবং কর্মক্ষমতা উন্নত করুন&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="722" />
+=======
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="726" />
+>>>>>>> other-repo/main
         <source>Disable Traffic Stats</source>
         <translation type="unfinished">ট্রাফিক পরিসংখ্যান নিষ্ক্রিয় করুন</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="731" />
+=======
+        <source>Use TCP</source>
+        <translation type="obsolete">TCP ব্যবহার করুন</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="735" />
+>>>>>>> other-repo/main
         <source>Multiplex (mux)</source>
         <translation type="unfinished">মাল্টিপ্লেক্স (mux)</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="738" />
+=======
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="742" />
+>>>>>>> other-repo/main
         <source>Loglevel</source>
         <translation type="unfinished">লগলেভেল</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="750" />
+=======
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="754" />
+>>>>>>> other-repo/main
         <source>concurrency</source>
         <translation type="unfinished">সঙ্গতি</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="760" />
+=======
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="764" />
+>>>>>>> other-repo/main
         <source>Padding</source>
         <translation type="unfinished">প্যাডিং</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="767" />
+=======
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="771" />
+>>>>>>> other-repo/main
         <source>Default On</source>
         <translation type="unfinished">ডিফল্ট চালু</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="779" />
+=======
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="783" />
+>>>>>>> other-repo/main
         <source>Core Options</source>
         <translation type="unfinished">মূল বিকল্প</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="789" />
+=======
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="793" />
+>>>>>>> other-repo/main
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Settings for the
                                             sing-box's built-in NTP client&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                                         </source>
@@ -401,27 +526,47 @@
 sing-box এর অন্তর্নির্মিত NTP ক্লায়েন্ট&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="794" />
+=======
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="798" />
+>>>>>>> other-repo/main
         <source>NTP Settings</source>
         <translation type="unfinished">NTP সেটিংস</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="809" />
+=======
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="813" />
+>>>>>>> other-repo/main
         <source>server</source>
         <translation type="unfinished">সার্ভার</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="819" />
+=======
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="823" />
+>>>>>>> other-repo/main
         <source>Port</source>
         <translation type="unfinished">বন্দর</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="836" />
+=======
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="840" />
+>>>>>>> other-repo/main
         <source>sync interval</source>
         <translation type="unfinished">সিঙ্ক ব্যবধান</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="843" />
+=======
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="847" />
+>>>>>>> other-repo/main
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;In
                                                                 minutes&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                                                             </source>
@@ -429,6 +574,7 @@ sing-box এর অন্তর্নির্মিত NTP ক্লায়�
 মিনিট&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="849" />
         <source>5m</source>
         <translation type="unfinished">5মি</translation>
@@ -445,208 +591,378 @@ sing-box এর অন্তর্নির্মিত NTP ক্লায়�
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="873" />
+=======
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="877" />
+>>>>>>> other-repo/main
         <source>Security</source>
         <translation type="unfinished">নিরাপত্তা</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="879" />
+=======
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="921" />
+>>>>>>> other-repo/main
         <source>Disable Privilege request</source>
         <translation type="unfinished">বিশেষাধিকার অনুরোধ অক্ষম করুন</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="886" />
+=======
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="883" />
+>>>>>>> other-repo/main
         <source>Use Mozilla Certificate Store</source>
         <translation type="unfinished">Mozilla সার্টিফিকেট স্টোর ব্যবহার করুন</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="893" />
+=======
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="890" />
+>>>>>>> other-repo/main
         <source>Skip TLS certificate authentication by default (allowInsecure)</source>
         <translation type="unfinished">ডিফল্টরূপে TLS শংসাপত্র প্রমাণীকরণ এড়িয়ে যান (অনিরাপদ অনুমতি দিন)</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="921" />
+=======
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="974" />
+>>>>>>> other-repo/main
         <source>Default uTLS Fingerprint</source>
         <translation type="unfinished">ডিফল্ট uTLS ফিঙ্গারপ্রিন্ট</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="944" />
+=======
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="928" />
+>>>>>>> other-repo/main
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Do not attempt to start as Admin unless explicitly requested&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;প্রশাসক হিসাবে শুরু করার চেষ্টা করবেন না যদি না স্পষ্টভাবে অনুরোধ করা হয়&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="947" />
+=======
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="931" />
+>>>>>>> other-repo/main
         <source>Always Start as Standard User</source>
         <translation type="unfinished">সর্বদা স্ট্যান্ডার্ড ব্যবহারকারী হিসাবে শুরু করুন</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="954" />
+=======
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1021" />
+>>>>>>> other-repo/main
         <source>Use Json instead binary for configs</source>
         <translation type="unfinished">কনফিগারেশনের জন্য বাইনারি পরিবর্তে Json ব্যবহার করুন</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="968" />
+=======
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1028" />
+        <source>Ask for deleting profile</source>
+        <translation type="unfinished">প্রোফাইল মুছে ফেলার জন্য জিজ্ঞাসা করুন</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1045" />
+>>>>>>> other-repo/main
         <source>Auto-Testing</source>
         <translation type="unfinished">স্বয়ংক্রিয় পরীক্ষা</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="974" />
+=======
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1051" />
+>>>>>>> other-repo/main
         <source>Automatically test proxies in the background and maintain a pool of working proxies</source>
         <translation type="unfinished">ব্যাকগ্রাউন্ডে স্বয়ংক্রিয়ভাবে প্রক্সি পরীক্ষা করুন এবং কার্যকরী প্রক্সিগুলির একটি পুল বজায় রাখুন</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="977" />
+=======
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1054" />
+>>>>>>> other-repo/main
         <source>Enable Auto-Testing</source>
         <translation type="unfinished">স্বয়ংক্রিয় পরীক্ষা সক্ষম করুন৷</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="984" />
+=======
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1061" />
+>>>>>>> other-repo/main
         <source>Test Interval (seconds)</source>
         <translation type="unfinished">পরীক্ষার ব্যবধান (সেকেন্ড)</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="991" />
+=======
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1068" />
+>>>>>>> other-repo/main
         <source>How often to run the test cycle</source>
         <translation type="unfinished">কতবার পরীক্ষা চক্র চালাতে হবে</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1007" />
+=======
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1084" />
+>>>>>>> other-repo/main
         <source>Proxies Per Cycle</source>
         <translation type="unfinished">সাইকেল প্রতি প্রক্সি</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1014" />
+=======
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1091" />
+>>>>>>> other-repo/main
         <source>Number of proxies to test in each cycle</source>
         <translation type="unfinished">প্রতিটি চক্রে পরীক্ষা করার জন্য প্রক্সির সংখ্যা</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1030" />
+=======
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1107" />
+>>>>>>> other-repo/main
         <source>Working Pool Size</source>
         <translation type="unfinished">ওয়ার্কিং পুলের আকার</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1037" />
+=======
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1114" />
+>>>>>>> other-repo/main
         <source>Maximum number of verified working proxies to maintain</source>
         <translation type="unfinished">রক্ষণাবেক্ষণের জন্য যাচাইকৃত কাজের প্রক্সিগুলির সর্বাধিক সংখ্যা৷</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1053" />
+=======
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1130" />
+>>>>>>> other-repo/main
         <source>Latency Threshold (ms)</source>
         <translation type="unfinished">লেটেন্সি থ্রেশহোল্ড (মিসে)</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1060" />
+=======
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1137" />
+>>>>>>> other-repo/main
         <source>Maximum latency to consider a proxy as working</source>
         <translation type="unfinished">একটি প্রক্সিকে কাজ হিসাবে বিবেচনা করার জন্য সর্বাধিক লেটেন্সি৷</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1079" />
+=======
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1156" />
+>>>>>>> other-repo/main
         <source>Failure Retry Count</source>
         <translation type="unfinished">ব্যর্থতা পুনরায় চেষ্টা গণনা</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1086" />
+=======
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1163" />
+>>>>>>> other-repo/main
         <source>Number of retry attempts before considering a proxy as failed</source>
         <translation type="unfinished">একটি প্রক্সিকে ব্যর্থ হিসাবে বিবেচনা করার আগে পুনঃপ্রচেষ্টার সংখ্যা</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1102" />
+=======
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1179" />
+>>>>>>> other-repo/main
         <source>Test Target URL</source>
         <translation type="unfinished">লক্ষ্য ইউআরএল পরীক্ষা করুন</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1109" />
+=======
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1186" />
+>>>>>>> other-repo/main
         <source>URL to test proxies against</source>
         <translation type="unfinished">প্রক্সির বিরুদ্ধে পরীক্ষা করার জন্য URL</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1112" />
+=======
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1189" />
+>>>>>>> other-repo/main
         <source>http://cp.cloudflare.com/</source>
         <translation type="unfinished" />
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1119" />
+=======
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1196" />
+>>>>>>> other-repo/main
         <source>Automatically switch to another working proxy when TUN mode proxy fails</source>
         <translation type="unfinished">TUN মোড প্রক্সি ব্যর্থ হলে স্বয়ংক্রিয়ভাবে অন্য কার্যকরী প্রক্সিতে স্যুইচ করুন</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1122" />
+=======
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1199" />
+>>>>>>> other-repo/main
         <source>Enable TUN Failover</source>
         <translation type="unfinished">TUN ফেইলওভার সক্ষম করুন</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1130" />
+=======
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1207" />
+>>>>>>> other-repo/main
         <source>Startup</source>
         <translation type="unfinished">স্টার্টআপ</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1191" />
+=======
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1268" />
+>>>>>>> other-repo/main
         <source>Geometry</source>
         <translation type="unfinished">জ্যামিতি</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1220" />
+=======
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1297" />
+>>>>>>> other-repo/main
         <source>Autosave geometry</source>
         <translation type="unfinished">অটোসেভ জ্যামিতি</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1227" />
+=======
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1304" />
+>>>>>>> other-repo/main
         <source>Autosave position</source>
         <translation type="unfinished">স্বয়ংক্রিয় সংরক্ষণ অবস্থান</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1247" />
+=======
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1324" />
+>>>>>>> other-repo/main
         <source>Apply now</source>
         <translation type="unfinished">এখনই আবেদন করুন</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1363" />
+=======
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1440" />
+>>>>>>> other-repo/main
         <source>Width</source>
         <translation type="unfinished">প্রস্থ</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1376" />
+=======
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1453" />
+>>>>>>> other-repo/main
         <source>X</source>
         <translation type="unfinished">এক্স</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1409" />
+=======
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1486" />
+>>>>>>> other-repo/main
         <source>Y</source>
         <translation type="unfinished">Y</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1422" />
+=======
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1499" />
+>>>>>>> other-repo/main
         <source>Height</source>
         <translation type="unfinished">উচ্চতা</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1509" />
+=======
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1586" />
+>>>>>>> other-repo/main
         <source>Core Executable Path</source>
         <translation type="unfinished">কোর এক্সিকিউটেবল পাথ</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1538" />
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1712" />
+=======
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1615" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1789" />
+>>>>>>> other-repo/main
         <source>Use default</source>
         <translation type="unfinished">ডিফল্ট ব্যবহার করুন</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1545" />
+=======
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1622" />
+>>>>>>> other-repo/main
         <source>Remote Control</source>
         <translation type="unfinished">রিমোট কন্ট্রোল</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1571" />
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1745" />
+=======
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1648" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1822" />
+>>>>>>> other-repo/main
         <source>Select</source>
         <translation type="unfinished">নির্বাচন করুন</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1683" />
+=======
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1760" />
+>>>>>>> other-repo/main
         <source>Resources Directory</source>
         <translation type="unfinished">সম্পদ ডিরেক্টরি</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1719" />
+=======
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1796" />
+>>>>>>> other-repo/main
         <source>Resource Manager</source>
         <translation type="unfinished">রিসোর্স ম্যানেজার</translation>
     </message>
@@ -741,17 +1057,29 @@ sing-box এর অন্তর্নির্মিত NTP ক্লায়�
         <translation type="unfinished">স্বয়ংক্রিয় আপডেট এড়িয়ে যান</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="58" />
+=======
+        <location filename="../../src/ui/group/dialog_edit_group.cpp" line="59" />
+>>>>>>> other-repo/main
         <source>Copied</source>
         <translation type="unfinished">কপি করা হয়েছে</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="357" />
+=======
+        <location filename="../../src/ui/group/dialog_edit_group.cpp" line="358" />
+>>>>>>> other-repo/main
         <source>Warning</source>
         <translation type="unfinished">সতর্কতা</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="357" />
+=======
+        <location filename="../../src/ui/group/dialog_edit_group.cpp" line="358" />
+>>>>>>> other-repo/main
         <source>Please input URL</source>
         <translation type="unfinished">অনুগ্রহ করে ইনপুট URL</translation>
     </message>
@@ -760,7 +1088,11 @@ sing-box এর অন্তর্নির্মিত NTP ক্লায়�
     <name>DialogEditProfile</name>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="26" />
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="662" />
+=======
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="843" />
+>>>>>>> other-repo/main
         <source>Edit</source>
         <translation type="unfinished">সম্পাদনা করুন</translation>
     </message>
@@ -886,7 +1218,11 @@ sing-box এর অন্তর্নির্মিত NTP ক্লায়�
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="381" />
+<<<<<<< HEAD
         <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="696" />
+=======
+        <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="713" />
+>>>>>>> other-repo/main
         <source>Apply settings to this group</source>
         <translation type="unfinished">এই গ্রুপে সেটিংস প্রয়োগ করুন</translation>
     </message>
@@ -916,108 +1252,191 @@ sing-box এর অন্তর্নির্মিত NTP ক্লায়�
         <translation type="unfinished">হেডার টাইপ</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="594" />
+=======
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="775" />
+>>>>>>> other-repo/main
         <source>TLS Security Settings</source>
         <translation type="unfinished">TLS নিরাপত্তা সেটিংস</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="611" />
         <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="627" />
+=======
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="792" />
+        <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="644" />
+>>>>>>> other-repo/main
         <source>Certificate</source>
         <translation type="unfinished">সার্টিফিকেট</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="638" />
+=======
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="819" />
+>>>>>>> other-repo/main
         <source>When enabled, V2Ray will not check the validity of the TLS certificate provided by the remote host (the security is equivalent to plaintext)</source>
         <translation type="unfinished">সক্রিয় করা হলে, V2Ray দূরবর্তী হোস্ট দ্বারা প্রদত্ত TLS শংসাপত্রের বৈধতা পরীক্ষা করবে না (নিরাপত্তা প্লেইনটেক্সটের সমতুল্য)</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="641" />
+=======
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="822" />
+>>>>>>> other-repo/main
         <source>Allow insecure</source>
         <translation type="unfinished">অনিরাপদ অনুমতি দিন</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="648" />
+=======
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="829" />
+>>>>>>> other-repo/main
         <source>Enable ECH</source>
         <translation type="unfinished">ECH সক্ষম করুন</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="655" />
         <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="638" />
+=======
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="836" />
+        <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="655" />
+>>>>>>> other-repo/main
         <source>ECH Config</source>
         <translation type="unfinished">ECH কনফিগারেশন</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="673" />
+=======
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="854" />
+>>>>>>> other-repo/main
         <source>QSN</source>
         <translation type="unfinished">QSN</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="680" />
+=======
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="861" />
+>>>>>>> other-repo/main
         <source>Server name indication, clear text.</source>
         <translation type="unfinished">সার্ভার নামের ইঙ্গিত, পরিষ্কার পাঠ্য।</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="693" />
+=======
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="874" />
+>>>>>>> other-repo/main
         <source>Application layer protocol negotiation, clear text. Please separate them with commas.</source>
         <translation type="unfinished">অ্যাপ্লিকেশন স্তর প্রোটোকল আলোচনা, পরিষ্কার পাঠ্য.অনুগ্রহ করে কমা দিয়ে আলাদা করুন।</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="720" />
+=======
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="618" />
+>>>>>>> other-repo/main
         <source>TLS Camouflage Settings</source>
         <translation type="unfinished">TLS ক্যামোফ্লেজ সেটিংস</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="774" />
+=======
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="672" />
+>>>>>>> other-repo/main
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;May degrade performance, try record fragment first&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;কর্মক্ষমতা হ্রাস পেতে পারে, প্রথমে রেকর্ড টুকরো চেষ্টা করুন&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="777" />
+=======
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="675" />
+>>>>>>> other-repo/main
         <source>Enable TLS fragment</source>
         <translation type="unfinished">TLS খণ্ড সক্ষম করুন</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="784" />
+=======
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="682" />
+>>>>>>> other-repo/main
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;time format, like 500ms, 10ms etc&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;সময় বিন্যাস, যেমন 500ms, 10ms ইত্যাদি&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="787" />
+=======
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="685" />
+>>>>>>> other-repo/main
         <source>Fallback Delay</source>
         <translation type="unfinished">ফলব্যাক বিলম্ব</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="800" />
+=======
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="698" />
+>>>>>>> other-repo/main
         <source>Enable TLS Record Fragment</source>
         <translation type="unfinished">TLS রেকর্ড ফ্র্যাগমেন্ট সক্ষম করুন</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="839" />
+=======
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="737" />
+>>>>>>> other-repo/main
         <source>Reality public key. If not empty, turn TLS into REALITY.</source>
         <translation type="unfinished">বাস্তবতা পাবলিক কী।খালি না হলে, TLS কে বাস্তবে পরিণত করুন।</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="852" />
+=======
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="750" />
+>>>>>>> other-repo/main
         <source>Reality short id. Accept only one value.</source>
         <translation type="unfinished">বাস্তব সংক্ষিপ্ত আইডি।শুধুমাত্র একটি মান গ্রহণ করুন.</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="855" />
+=======
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="753" />
+>>>>>>> other-repo/main
         <source>Reality SID</source>
         <translation type="unfinished">বাস্তবতা SID</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="219" />
+=======
+        <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="230" />
+>>>>>>> other-repo/main
         <source>Custom (%1 outbound)</source>
         <translation type="unfinished">কাস্টম (% 1 আউটবাউন্ড)</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="221" />
+=======
+        <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="232" />
+>>>>>>> other-repo/main
         <source>Custom (%1 config)</source>
         <translation type="unfinished">কাস্টম (% 1 কনফিগারেশন)</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="223" />
         <source>Extra Core</source>
         <translation type="unfinished">অতিরিক্ত কোর</translation>
@@ -1028,20 +1447,57 @@ sing-box এর অন্তর্নির্মিত NTP ক্লায়�
         <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="595" />
         <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="600" />
         <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="608" />
+=======
+        <source>Extra Core</source>
+        <translation type="obsolete">অতিরিক্ত কোর</translation>
+    </message>
+    <message>
+        <source>Chain Proxy</source>
+        <translation type="obsolete">চেইন প্রক্সি</translation>
+    </message>
+    <message>
+        <source>Custom (%1 outbound)</source>
+        <comment>DialogEditProfile</comment>
+        <translation type="obsolete">কাস্টম (% 1 আউটবাউন্ড)</translation>
+    </message>
+    <message>
+        <source>Custom (%1 config)</source>
+        <comment>DialogEditProfile</comment>
+        <translation type="obsolete">কাস্টম (% 1 কনফিগারেশন)</translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="602" />
+        <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="607" />
+        <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="612" />
+        <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="617" />
+        <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="625" />
+>>>>>>> other-repo/main
         <source>Not set</source>
         <translation type="unfinished">সেট করা হয়নি</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="587" />
         <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="592" />
         <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="597" />
         <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="602" />
         <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="610" />
+=======
+        <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="604" />
+        <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="609" />
+        <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="614" />
+        <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="619" />
+        <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="627" />
+>>>>>>> other-repo/main
         <source>Already set</source>
         <translation type="unfinished">ইতিমধ্যে সেট</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="668" />
+=======
+        <location filename="../../src/ui/profile/dialog_edit_profile.cpp" line="685" />
+>>>>>>> other-repo/main
         <source>Confirm</source>
         <translation type="unfinished">নিশ্চিত করুন</translation>
     </message>
@@ -1074,39 +1530,67 @@ sing-box এর অন্তর্নির্মিত NTP ক্লায়�
         <translation type="unfinished">গ্রুপ 2</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="414" />
+=======
+        <location filename="../../src/ui/group/dialog_edit_group.cpp" line="415" />
+>>>>>>> other-repo/main
         <source>Front proxy for group %1</source>
         <translation type="unfinished">গ্রুপ %1-এর জন্য সামনের প্রক্সি</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="416" />
+=======
+        <location filename="../../src/ui/group/dialog_edit_group.cpp" line="417" />
+>>>>>>> other-repo/main
         <source>Front proxy: </source>
         <translation type="unfinished">সামনের প্রক্সি:</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="427" />
+=======
+        <location filename="../../src/ui/group/dialog_edit_group.cpp" line="428" />
+>>>>>>> other-repo/main
         <source>Landing proxy for group %1</source>
         <translation type="unfinished">গ্রুপ %1 এর জন্য ল্যান্ডিং প্রক্সি</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="429" />
+=======
+        <location filename="../../src/ui/group/dialog_edit_group.cpp" line="430" />
+>>>>>>> other-repo/main
         <source>Landing proxy: </source>
         <translation type="unfinished">ল্যান্ডিং প্রক্সি:</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="442" />
+=======
+        <location filename="../../src/ui/group/dialog_edit_group.cpp" line="443" />
+>>>>>>> other-repo/main
         <location filename="../../src/ui/setting/RouteItem.cpp" line="140" />
         <source>Proxy</source>
         <translation type="unfinished">প্রক্সি</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="445" />
+=======
+        <location filename="../../src/ui/group/dialog_edit_group.cpp" line="446" />
+>>>>>>> other-repo/main
         <location filename="../../src/ui/setting/RouteItem.cpp" line="142" />
         <source>Direct</source>
         <translation type="unfinished">সরাসরি</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="449" />
+=======
+        <location filename="../../src/ui/group/dialog_edit_group.cpp" line="450" />
+>>>>>>> other-repo/main
         <source>None</source>
         <translation type="unfinished">কোনোটিই নয়</translation>
     </message>
@@ -1252,32 +1736,56 @@ sing-box এর অন্তর্নির্মিত NTP ক্লায়�
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="107" />
         <source>GitHub</source>
+<<<<<<< HEAD
         <translation type="unfinished">গিটহাব</translation>
+=======
+        <translation type="unfinished" />
+>>>>>>> other-repo/main
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="112" />
         <source>jsDelivr(Cloudflare)</source>
+<<<<<<< HEAD
         <translation type="unfinished">jsDelivr(ক্লাউডফ্লেয়ার)</translation>
+=======
+        <translation type="unfinished" />
+>>>>>>> other-repo/main
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="117" />
         <source>jsDelivr(Gcore)</source>
+<<<<<<< HEAD
         <translation type="unfinished">jsDelivr(Gcore)</translation>
+=======
+        <translation type="unfinished" />
+>>>>>>> other-repo/main
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="122" />
         <source>jsDelivr(Quantil)</source>
+<<<<<<< HEAD
         <translation type="unfinished">jsDelivr(কোয়ান্টিল)</translation>
+=======
+        <translation type="unfinished" />
+>>>>>>> other-repo/main
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="127" />
         <source>jsDelivr(Fastly)</source>
+<<<<<<< HEAD
         <translation type="unfinished">jsDelivr(দ্রুত)</translation>
+=======
+        <translation type="unfinished" />
+>>>>>>> other-repo/main
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="132" />
         <source>jsDelivr(CDN)</source>
+<<<<<<< HEAD
         <translation type="unfinished">jsDelivr(CDN)</translation>
+=======
+        <translation type="unfinished" />
+>>>>>>> other-repo/main
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="149" />
@@ -1477,38 +1985,67 @@ For more information, see the document "Configuration/DNS".</source>
         <translation type="unfinished">মুছুন</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="30" />
+=======
+        <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="29" />
+>>>>>>> other-repo/main
         <source>Invalid state</source>
         <translation type="unfinished">অবৈধ অবস্থা</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="30" />
+=======
+        <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="29" />
+>>>>>>> other-repo/main
         <source>The list of routing profiles is empty, this should be an unreachable state, crashes may occur now</source>
         <translation type="unfinished">রাউটিং প্রোফাইলের তালিকা খালি, এটি একটি পৌঁছানো যায় না এমন অবস্থা হওয়া উচিত, এখন ক্র্যাশ হতে পারে</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="203" />
         <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="207" />
+=======
+        <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="202" />
+        <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="206" />
+>>>>>>> other-repo/main
         <source>Invalid settings</source>
         <translation type="unfinished">অবৈধ সেটিংস৷</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="203" />
+=======
+        <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="202" />
+>>>>>>> other-repo/main
         <source>Routing profile cannot be empty</source>
         <translation type="unfinished">রাউটিং প্রোফাইল খালি করা যাবে না</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="207" />
+=======
+        <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="206" />
+>>>>>>> other-repo/main
         <source>DNS Rules are not valid</source>
         <translation type="unfinished">DNS নিয়ম বৈধ নয়</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="315" />
+=======
+        <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="314" />
+>>>>>>> other-repo/main
         <source>Invalid operation</source>
         <translation type="unfinished">অবৈধ অপারেশন</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="315" />
+=======
+        <location filename="../../src/ui/setting/dialog_manage_routes.cpp" line="314" />
+>>>>>>> other-repo/main
         <source>Routing Profiles cannot be empty, try adding another profile or editing this one</source>
         <translation type="unfinished">রাউটিং প্রোফাইলগুলি খালি থাকতে পারে না, অন্য প্রোফাইল যোগ করার চেষ্টা করুন বা এটি সম্পাদনা করুন৷</translation>
     </message>
@@ -1703,7 +2240,11 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="14" />
         <source>EditMieru</source>
+<<<<<<< HEAD
         <translation type="unfinished">EditMieru</translation>
+=======
+        <translation type="unfinished" />
+>>>>>>> other-repo/main
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="20" />
@@ -1726,10 +2267,74 @@ For more information, see the document "Configuration/DNS".</source>
         <translation type="unfinished">মাল্টিপ্লেক্সিং</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="92" />
         <source>Transport</source>
         <translation type="unfinished">পরিবহন</translation>
     </message>
+=======
+        <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="72" />
+        <source>Transport</source>
+        <translation type="unfinished">পরিবহন</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="82" />
+        <source>Traffic Pattern</source>
+        <translation type="unfinished">ট্রাফিক প্যাটার্ন</translation>
+    </message>
+</context>
+<context>
+    <name>EditNaive</name>
+    <message>
+        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="26" />
+        <source>Password</source>
+        <translation type="unfinished">পাসওয়ার্ড</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="34" />
+        <location filename="../../src/ui/profile/edit_naive.cpp" line="9" />
+        <source>Off</source>
+        <translation type="unfinished">বন্ধ</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="55" />
+        <source>Username</source>
+        <translation type="unfinished">ব্যবহারকারীর নাম</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="65" />
+        <source>insecure_concurrency - Number of concurrent tunnel connections. </source>
+        <translation type="unfinished">insecure_concurrency - সমবর্তী টানেল সংযোগের সংখ্যা।</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="78" />
+        <source>quic_congestion_control - QUIC congestion control algorithm.</source>
+        <translation type="unfinished">quic_congestion_control - QUIC কনজেশন কন্ট্রোল অ্যালগরিদম।</translation>
+    </message>
+    <message>
+        <source>IC</source>
+        <translation type="obsolete">আইসি</translation>
+    </message>
+    <message>
+        <source>QUIC</source>
+        <translation type="obsolete">QUIC</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="88" />
+        <source>Version of UDP over TCP protocol, server support is required.</source>
+        <translation type="unfinished">TCP প্রোটোকলের উপর UDP এর সংস্করণ, সার্ভার সমর্থন প্রয়োজন।</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="104" />
+        <source>extra_headers - Extra headers to send in HTTP requests.</source>
+        <translation type="unfinished">extra_headers - HTTP অনুরোধ পাঠানোর জন্য অতিরিক্ত হেডার।</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="107" />
+        <source>Headers</source>
+        <translation type="unfinished">হেডার</translation>
+    </message>
+>>>>>>> other-repo/main
 </context>
 <context>
     <name>EditQUIC</name>
@@ -1841,7 +2446,11 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="14" />
         <source>EditSSH</source>
+<<<<<<< HEAD
         <translation type="unfinished">এসএসএইচ সম্পাদনা করুন</translation>
+=======
+        <translation type="unfinished" />
+>>>>>>> other-repo/main
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="20" />
@@ -2046,7 +2655,11 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="14" />
         <source>EditTor</source>
+<<<<<<< HEAD
         <translation type="unfinished">সম্পাদক</translation>
+=======
+        <translation type="unfinished" />
+>>>>>>> other-repo/main
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="20" />
@@ -2105,7 +2718,11 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="14" />
         <source>EditWireguard</source>
+<<<<<<< HEAD
         <translation type="unfinished">EditWireguard</translation>
+=======
+        <translation type="unfinished" />
+>>>>>>> other-repo/main
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="23" />
@@ -2246,32 +2863,56 @@ For more information, see the document "Configuration/DNS".</source>
         <translation type="unfinished">সরান</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/group/GroupItem.cpp" line="129" />
+=======
+        <location filename="../../src/ui/group/GroupItem.cpp" line="134" />
+>>>>>>> other-repo/main
         <source>Basic</source>
         <translation type="unfinished">মৌলিক</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/group/GroupItem.cpp" line="129" />
+=======
+        <location filename="../../src/ui/group/GroupItem.cpp" line="134" />
+>>>>>>> other-repo/main
         <source>Subscription</source>
         <translation type="unfinished">সাবস্ক্রিপশন</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/group/GroupItem.cpp" line="130" />
+=======
+        <location filename="../../src/ui/group/GroupItem.cpp" line="135" />
+>>>>>>> other-repo/main
         <source>Archive</source>
         <translation type="unfinished">সংরক্ষণাগার</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/group/GroupItem.cpp" line="142" />
+=======
+        <location filename="../../src/ui/group/GroupItem.cpp" line="147" />
+>>>>>>> other-repo/main
         <source>Last update: %1</source>
         <translation type="unfinished">শেষ আপডেট: %1</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/group/GroupItem.cpp" line="186" />
+=======
+        <location filename="../../src/ui/group/GroupItem.cpp" line="191" />
+>>>>>>> other-repo/main
         <source>Confirmation</source>
         <translation type="unfinished">নিশ্চিতকরণ</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/group/GroupItem.cpp" line="186" />
+=======
+        <location filename="../../src/ui/group/GroupItem.cpp" line="191" />
+>>>>>>> other-repo/main
         <source>Remove %1?</source>
         <translation type="unfinished">%1 সরান?</translation>
     </message>
@@ -2287,7 +2928,11 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="51" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="54" />
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="693" />
+=======
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="624" />
+>>>>>>> other-repo/main
         <source>Profiles</source>
         <translation type="unfinished">প্রোফাইল</translation>
     </message>
@@ -2321,13 +2966,20 @@ For more information, see the document "Configuration/DNS".</source>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="161" />
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="597" />
         <location filename="../../src/ui/mainwindow.cpp" line="2422" />
         <location filename="../../src/ui/mainwindow.cpp" line="2425" />
+=======
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="594" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2528" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2531" />
+>>>>>>> other-repo/main
         <source>System Proxy</source>
         <translation type="unfinished">সিস্টেম প্রক্সি</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="231" />
         <source>URL Test</source>
         <translation type="unfinished">URL পরীক্ষা</translation>
@@ -2335,292 +2987,553 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="309" />
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="139" />
+=======
+        <source>URL Test</source>
+        <translation type="obsolete">URL পরীক্ষা</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="306" />
+        <location filename="../../src/ui/group/dialog_edit_group.cpp" line="140" />
+>>>>>>> other-repo/main
         <source>Type</source>
         <translation type="unfinished">টাইপ</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="314" />
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="142" />
+=======
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="311" />
+        <location filename="../../src/ui/group/dialog_edit_group.cpp" line="143" />
+>>>>>>> other-repo/main
         <source>Address</source>
         <translation type="unfinished">ঠিকানা</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="319" />
         <location filename="../../src/ui/group/dialog_edit_group.cpp" line="145" />
+=======
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="316" />
+        <location filename="../../src/ui/group/dialog_edit_group.cpp" line="146" />
+>>>>>>> other-repo/main
         <source>Name</source>
         <translation type="unfinished">নাম</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="324" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="289" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="291" />
+=======
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="321" />
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="291" />
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="293" />
+>>>>>>> other-repo/main
         <source>Test Result</source>
         <translation type="unfinished">পরীক্ষার ফলাফল</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="329" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="489" />
+=======
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="326" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="486" />
+>>>>>>> other-repo/main
         <source>Traffic</source>
         <translation type="unfinished">ট্রাফিক</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="394" />
+=======
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="391" />
+>>>>>>> other-repo/main
         <source>Logs</source>
         <translation type="unfinished">লগ</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="429" />
+=======
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="426" />
+>>>>>>> other-repo/main
         <source>Connections</source>
         <translation type="unfinished">সংযোগ</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="457" />
+=======
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="454" />
+>>>>>>> other-repo/main
         <source>Destination (Domain)</source>
         <translation type="unfinished">গন্তব্য (ডোমেন)</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="460" />
+=======
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="457" />
+>>>>>>> other-repo/main
         <source>Click To Disable Sorting</source>
         <translation type="unfinished">বাছাই নিষ্ক্রিয় করতে ক্লিক করুন</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="465" />
+=======
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="462" />
+>>>>>>> other-repo/main
         <source>Process</source>
         <translation type="unfinished">প্রক্রিয়া</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="468" />
+=======
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="465" />
+>>>>>>> other-repo/main
         <source>Click To Sort By Process</source>
         <translation type="unfinished">প্রক্রিয়া অনুসারে সাজাতে ক্লিক করুন</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="473" />
+=======
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="470" />
+>>>>>>> other-repo/main
         <source>Protocol</source>
         <translation type="unfinished">প্রোটোকল</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="476" />
+=======
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="473" />
+>>>>>>> other-repo/main
         <source>Click To Sort By Protocol</source>
         <translation type="unfinished">প্রোটোকল অনুসারে সাজাতে ক্লিক করুন</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="481" />
+=======
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="478" />
+>>>>>>> other-repo/main
         <source>Outbound</source>
         <translation type="unfinished">আউটবাউন্ড</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="484" />
+=======
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="481" />
+>>>>>>> other-repo/main
         <source>Click To Sort By Outbound</source>
         <translation type="unfinished">আউটবাউন্ড অনুসারে সাজাতে ক্লিক করুন</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="492" />
+=======
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="489" />
+>>>>>>> other-repo/main
         <source>Click To Toggle sort by Traffic</source>
         <translation type="unfinished">ট্র্যাফিক অনুসারে সাজানোর টগল করতে ক্লিক করুন</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="501" />
+=======
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="498" />
+>>>>>>> other-repo/main
         <source>Traffic Graph</source>
         <translation type="unfinished">ট্রাফিক গ্রাফ</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="593" />
+=======
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="590" />
+>>>>>>> other-repo/main
         <source>Program</source>
         <translation type="unfinished">প্রোগ্রাম</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="616" />
+=======
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="613" />
+>>>>>>> other-repo/main
         <source>Preferences</source>
         <translation type="unfinished">পছন্দসমূহ</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="627" />
         <source>Server</source>
         <translation type="unfinished">সার্ভার</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="631" />
+=======
+        <source>Server</source>
+        <translation type="obsolete">সার্ভার</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="638" />
+>>>>>>> other-repo/main
         <source>Share</source>
         <translation type="unfinished">শেয়ার করুন</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="641" />
         <source>Current group</source>
         <translation type="unfinished">বর্তমান গ্রুপ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="647" />
+=======
+        <source>Current group</source>
+        <translation type="obsolete">বর্তমান গ্রুপ</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="231" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="648" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="700" />
+>>>>>>> other-repo/main
         <source>Test</source>
         <translation type="unfinished">পরীক্ষা</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="675" />
+=======
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="634" />
+        <source>Current Selected</source>
+        <translation type="unfinished">বর্তমান নির্বাচিত</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="628" />
+        <source>Current Group</source>
+        <translation type="unfinished">বর্তমান গ্রুপ</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="683" />
+>>>>>>> other-repo/main
         <source>Hidden menu</source>
         <translation type="unfinished">লুকানো মেনু</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="688" />
+=======
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="695" />
+>>>>>>> other-repo/main
         <source>Routing Menu</source>
         <translation type="unfinished">রাউটিং মেনু</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="711" />
+=======
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="707" />
+        <source>Context</source>
+        <translation type="unfinished">প্রসঙ্গ</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="711" />
+        <source>ContextProfiles</source>
+        <translation type="unfinished">প্রসঙ্গ প্রোফাইল</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="726" />
+>>>>>>> other-repo/main
         <source>Exit</source>
         <translation type="unfinished">প্রস্থান করুন</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="716" />
+=======
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="731" />
+>>>>>>> other-repo/main
         <source>Toggle Window</source>
         <translation type="unfinished">উইন্ডো টগল করুন</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="721" />
+=======
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="736" />
+>>>>>>> other-repo/main
         <source>Basic Settings</source>
         <translation type="unfinished">মৌলিক সেটিংস</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="726" />
+=======
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="741" />
+>>>>>>> other-repo/main
         <source>New profile</source>
         <translation type="unfinished">নতুন প্রোফাইল</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="731" />
+=======
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="746" />
+>>>>>>> other-repo/main
         <source>Groups</source>
         <translation type="unfinished">গোষ্ঠী</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="736" />
         <location filename="../../src/ui/mainwindow.cpp" line="3442" />
         <location filename="../../src/ui/mainwindow.cpp" line="3452" />
+=======
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="751" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3596" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3606" />
+>>>>>>> other-repo/main
         <source>Start</source>
         <translation type="unfinished">শুরু করুন</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="744" />
         <location filename="../../src/ui/mainwindow.cpp" line="3441" />
         <location filename="../../src/ui/mainwindow.cpp" line="3452" />
+=======
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="759" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3595" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3606" />
+>>>>>>> other-repo/main
         <source>Stop</source>
         <translation type="unfinished">থামো</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="752" />
+=======
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="767" />
+>>>>>>> other-repo/main
         <source>Edit</source>
         <translation type="unfinished">সম্পাদনা করুন</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="760" />
+=======
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="775" />
+>>>>>>> other-repo/main
         <source>Routing Settings</source>
         <translation type="unfinished">রাউটিং সেটিংস</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="765" />
+=======
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="780" />
+>>>>>>> other-repo/main
         <source>Add profile from clipboard</source>
         <translation type="unfinished">ক্লিপবোর্ড থেকে প্রোফাইল যোগ করুন</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="773" />
+=======
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="788" />
+>>>>>>> other-repo/main
         <source>Delete</source>
         <translation type="unfinished">মুছে দিন</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="781" />
+=======
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="796" />
+>>>>>>> other-repo/main
         <source>Debug Info</source>
         <translation type="unfinished">ডিবাগ তথ্য</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="786" />
+=======
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="801" />
+>>>>>>> other-repo/main
         <source>QR Code and link</source>
         <translation type="unfinished">QR কোড এবং লিঙ্ক</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="794" />
+=======
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="809" />
+>>>>>>> other-repo/main
         <source>Copy Link</source>
         <translation type="unfinished">লিংক কপি করুন</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="815" />
+=======
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="830" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1071" />
+>>>>>>> other-repo/main
         <source>Clear Test Result</source>
         <translation type="unfinished">পরীক্ষার ফলাফল পরিষ্কার করুন</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="823" />
         <location filename="../../src/ui/mainwindow.cpp" line="1348" />
+=======
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="838" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1437" />
+>>>>>>> other-repo/main
         <source>Export %1 config</source>
         <translation type="unfinished">%1 কনফিগারেশন এক্সপোর্ট করুন</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="831" />
+=======
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="846" />
+>>>>>>> other-repo/main
         <source>Reset Traffic</source>
         <translation type="unfinished">ট্রাফিক রিসেট করুন</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="839" />
+=======
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="854" />
+>>>>>>> other-repo/main
         <source>Scan QR Code</source>
         <translation type="unfinished">QR কোড স্ক্যান করুন</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="847" />
+=======
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="862" />
+>>>>>>> other-repo/main
         <source>Enable System Proxy</source>
         <translation type="unfinished">সিস্টেম প্রক্সি সক্ষম করুন</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="855" />
+=======
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="870" />
+>>>>>>> other-repo/main
         <source>Disable</source>
         <translation type="unfinished">নিষ্ক্রিয় করুন</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="860" />
+=======
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="875" />
+>>>>>>> other-repo/main
         <source>Remove Duplicates</source>
         <translation type="unfinished">সদৃশ সরান</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="868" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="945" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="953" />
+=======
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="883" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="960" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="968" />
+>>>>>>> other-repo/main
         <source>fake</source>
         <translation type="unfinished">জাল</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="876" />
+=======
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="891" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1162" />
+>>>>>>> other-repo/main
         <source>Move</source>
         <translation type="unfinished">সরান</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="887" />
+=======
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="902" />
+>>>>>>> other-repo/main
         <source>Start with system</source>
         <translation type="unfinished">সিস্টেম দিয়ে শুরু করুন</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="895" />
+=======
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="910" />
+>>>>>>> other-repo/main
         <source>Remember last profile</source>
         <translation type="unfinished">শেষ প্রোফাইল মনে রাখবেন</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="903" />
+=======
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="918" />
+>>>>>>> other-repo/main
         <source>Allow other devices to connect</source>
         <translation type="unfinished">অন্যান্য ডিভাইসগুলিকে সংযোগ করার অনুমতি দিন</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="908" />
+=======
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="923" />
+>>>>>>> other-repo/main
         <source>Remove Unavailable</source>
         <translation type="unfinished">অনুপলব্ধ সরান</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="916" />
+=======
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="931" />
+>>>>>>> other-repo/main
         <source>Full Test</source>
         <translation type="unfinished">সম্পূর্ণ পরীক্ষা</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="924" />
+=======
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="939" />
+>>>>>>> other-repo/main
         <source>Hotkey Settings</source>
         <translation type="unfinished">হটকি সেটিংস</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="929" />
+=======
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="944" />
+>>>>>>> other-repo/main
         <source>Select All</source>
         <translation type="unfinished">সব নির্বাচন করুন</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="937" />
         <source>Copy links of selected (Custom Links)</source>
         <translation type="unfinished">নির্বাচিত লিঙ্কগুলি অনুলিপি করুন (কাস্টম লিঙ্ক)</translation>
@@ -2632,51 +3545,116 @@ For more information, see the document "Configuration/DNS".</source>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="972" />
+=======
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="952" />
+        <source>Copy Custom Links</source>
+        <translation type="unfinished">কাস্টম লিঙ্ক কপি করুন</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="976" />
+        <source>Copy links</source>
+        <translation type="unfinished">লিঙ্ক কপি করুন</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1060" />
+        <source>Url Test</source>
+        <translation type="unfinished">ইউআরএল পরীক্ষা</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1093" />
+        <source>Resolve Domain</source>
+        <translation type="unfinished">ডোমেইন সমাধান করুন</translation>
+    </message>
+    <message>
+        <source>Copy links of selected (Custom Links)</source>
+        <translation type="obsolete">নির্বাচিত লিঙ্কগুলি অনুলিপি করুন (কাস্টম লিঙ্ক)</translation>
+    </message>
+    <message>
+        <source>Copy links of selected</source>
+        <translation type="obsolete">নির্বাচিত লিঙ্কগুলি অনুলিপি করুন</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="987" />
+>>>>>>> other-repo/main
         <source>Enable Tun</source>
         <translation type="unfinished">Tun সক্ষম করুন</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="977" />
         <location filename="../../src/ui/mainwindow.cpp" line="2778" />
+=======
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="992" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2915" />
+>>>>>>> other-repo/main
         <source>Clone</source>
         <translation type="unfinished">ক্লোন</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="985" />
+=======
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1000" />
+>>>>>>> other-repo/main
         <source>Update subscription</source>
         <translation type="unfinished">সাবস্ক্রিপশন আপডেট করুন</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="996" />
+=======
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1011" />
+>>>>>>> other-repo/main
         <source>Resolve domain</source>
         <translation type="unfinished">ডোমেইন সমাধান করুন</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1004" />
+=======
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1019" />
+>>>>>>> other-repo/main
         <source>Tun Settings</source>
         <translation type="unfinished">টিউন সেটিংস</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1009" />
+=======
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1024" />
+>>>>>>> other-repo/main
         <source>Restart Program</source>
         <translation type="unfinished">প্রোগ্রাম রিস্টার্ট করুন</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1014" />
+=======
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1029" />
+>>>>>>> other-repo/main
         <source>Open Config Folder</source>
         <translation type="unfinished">কনফিগ ফোল্ডার খুলুন</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1035" />
+=======
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1050" />
+>>>>>>> other-repo/main
         <source>Restart Proxy</source>
         <translation type="unfinished">প্রক্সি রিস্টার্ট করুন</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1040" />
+=======
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1055" />
+>>>>>>> other-repo/main
         <source>Stop Testing</source>
         <translation type="unfinished">পরীক্ষা বন্ধ করুন</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1045" />
         <source>Url Test Selected</source>
         <translation type="unfinished">ইউআরএল পরীক্ষা নির্বাচিত</translation>
@@ -2693,10 +3671,26 @@ For more information, see the document "Configuration/DNS".</source>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1067" />
+=======
+        <source>Url Test Selected</source>
+        <translation type="obsolete">ইউআরএল পরীক্ষা নির্বাচিত</translation>
+    </message>
+    <message>
+        <source>Ctrl+Shift+S</source>
+        <translation type="obsolete">Ctrl+Shift+S</translation>
+    </message>
+    <message>
+        <source>Clear Test Result Selected</source>
+        <translation type="obsolete">ক্লিয়ার টেস্ট রেজাল্ট সিলেক্ট করা হয়েছে</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1082" />
+>>>>>>> other-repo/main
         <source>Url Test Group</source>
         <translation type="unfinished">ইউআরএল টেস্ট গ্রুপ</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1070" />
         <source>Ctrl+Shift+G</source>
         <translation type="unfinished">Ctrl+Shift+G</translation>
@@ -2708,10 +3702,22 @@ For more information, see the document "Configuration/DNS".</source>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1086" />
+=======
+        <source>Ctrl+Shift+G</source>
+        <translation type="obsolete">Ctrl+Shift+G</translation>
+    </message>
+    <message>
+        <source>Resolve Selected Domain</source>
+        <translation type="obsolete">নির্বাচিত ডোমেন সমাধান করুন</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1101" />
+>>>>>>> other-repo/main
         <source>Remove Invalid</source>
         <translation type="unfinished">অবৈধ সরান</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1089" />
         <source>Ctrl+Alt+I</source>
         <translation type="unfinished">Ctrl+Alt+I</translation>
@@ -2723,150 +3729,272 @@ For more information, see the document "Configuration/DNS".</source>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1102" />
+=======
+        <source>Ctrl+Alt+I</source>
+        <translation type="obsolete">Ctrl+Alt+I</translation>
+    </message>
+    <message>
+        <source>Open Manager</source>
+        <translation type="obsolete">ওপেন ম্যানেজার</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1170" />
+>>>>>>> other-repo/main
         <source>Speedtest Current</source>
         <translation type="unfinished">স্পিডটেস্ট কারেন্ট</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1107" />
+=======
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1112" />
+>>>>>>> other-repo/main
         <source>Full test Selected</source>
         <translation type="unfinished">সম্পূর্ণ পরীক্ষা নির্বাচিত</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1112" />
+=======
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1117" />
+>>>>>>> other-repo/main
         <source>Download test Selected</source>
         <translation type="unfinished">ডাউনলোড পরীক্ষা নির্বাচন করা হয়েছে</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1117" />
+=======
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1122" />
+>>>>>>> other-repo/main
         <source>Upload test Selected</source>
         <translation type="unfinished">আপলোড পরীক্ষা নির্বাচিত</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1122" />
+=======
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1127" />
+>>>>>>> other-repo/main
         <source>Country test Selected</source>
         <translation type="unfinished">দেশ পরীক্ষা নির্বাচিত</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1127" />
+=======
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1132" />
+>>>>>>> other-repo/main
         <source>Simple download test Selected</source>
         <translation type="unfinished">সহজ ডাউনলোড পরীক্ষা নির্বাচিত</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1132" />
+=======
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1137" />
+>>>>>>> other-repo/main
         <source>Speedtest Group</source>
         <translation type="unfinished">স্পিডটেস্ট গ্রুপ</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1137" />
+=======
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1142" />
+>>>>>>> other-repo/main
         <source>Hide window</source>
         <translation type="unfinished">জানালা লুকান</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1142" />
+=======
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1147" />
+>>>>>>> other-repo/main
         <source>Add profile from File</source>
         <translation type="unfinished">ফাইল থেকে প্রোফাইল যোগ করুন</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1147" />
         <location filename="../../src/ui/mainwindow.cpp" line="3468" />
+=======
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1152" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3625" />
+>>>>>>> other-repo/main
         <source>Add new Group</source>
         <translation type="unfinished">নতুন গ্রুপ যোগ করুন</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1152" />
+=======
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1157" />
+>>>>>>> other-repo/main
         <source>Security Settings</source>
         <translation type="unfinished">নিরাপত্তা সেটিংস</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/dataStore/ProxyEntity.cpp" line="52" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="289" />
+=======
+        <location filename="../../src/dataStore/ProxyEntity.cpp" line="223" />
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="291" />
+>>>>>>> other-repo/main
         <source>Unavailable</source>
         <translation type="unfinished">অনুপলব্ধ</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/mainwindow.cpp" line="1001" />
+=======
+        <location filename="../../src/ui/mainwindow.cpp" line="1092" />
+>>>>>>> other-repo/main
         <source>Edit Routing Profiles</source>
         <translation type="unfinished">রাউটিং প্রোফাইল সম্পাদনা করুন</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/mainwindow.cpp" line="1023" />
+=======
+        <location filename="../../src/ui/mainwindow.cpp" line="1114" />
+>>>>>>> other-repo/main
         <source>Update Routing Profiles</source>
         <translation type="unfinished">রাউটিং প্রোফাইল আপডেট করুন</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/mainwindow.cpp" line="1035" />
         <location filename="../../src/ui/mainwindow.cpp" line="1039" />
         <location filename="../../src/ui/mainwindow.cpp" line="1060" />
         <location filename="../../src/ui/mainwindow.cpp" line="1063" />
         <location filename="../../src/ui/mainwindow.cpp" line="1107" />
+=======
+        <location filename="../../src/ui/mainwindow.cpp" line="1126" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1130" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1151" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1154" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1198" />
+>>>>>>> other-repo/main
         <location filename="../../src/ui/setting/RouteItem.cpp" line="95" />
         <location filename="../../src/ui/setting/RouteItem.cpp" line="104" />
         <source>Update Response</source>
         <translation type="unfinished">আপডেট প্রতিক্রিয়া</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/mainwindow.cpp" line="1036" />
+=======
+        <location filename="../../src/ui/mainwindow.cpp" line="1127" />
+>>>>>>> other-repo/main
         <location filename="../../src/ui/setting/RouteItem.cpp" line="105" />
         <source>No routing profiles are updated</source>
         <translation type="unfinished">কোন রাউটিং প্রোফাইল আপডেট করা হয় না</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/mainwindow.cpp" line="1040" />
+=======
+        <location filename="../../src/ui/mainwindow.cpp" line="1131" />
+>>>>>>> other-repo/main
         <location filename="../../src/ui/setting/RouteItem.cpp" line="96" />
         <source>Updated %1 routing profiles</source>
         <translation type="unfinished">আপডেট করা হয়েছে %1 রাউটিং প্রোফাইল</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/mainwindow.cpp" line="1050" />
+=======
+        <location filename="../../src/ui/mainwindow.cpp" line="1141" />
+>>>>>>> other-repo/main
         <source>Update RuleSet Map</source>
         <translation type="unfinished">রুলসেট ম্যাপ আপডেট করুন</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/mainwindow.cpp" line="1061" />
+=======
+        <location filename="../../src/ui/mainwindow.cpp" line="1152" />
+>>>>>>> other-repo/main
         <source>Failed to update rulesets</source>
         <translation type="unfinished">নিয়ম আপডেট করতে ব্যর্থ হয়েছে</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/mainwindow.cpp" line="1064" />
+=======
+        <location filename="../../src/ui/mainwindow.cpp" line="1155" />
+>>>>>>> other-repo/main
         <source>Rulesets updated successfully</source>
         <translation type="unfinished">নিয়মাবলী সফলভাবে আপডেট করা হয়েছে</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/mainwindow.cpp" line="1073" />
+=======
+        <location filename="../../src/ui/mainwindow.cpp" line="1164" />
+>>>>>>> other-repo/main
         <source>Update RuleSet Cache</source>
         <translation type="unfinished">RuleSet ক্যাশে আপডেট করুন</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/mainwindow.cpp" line="1108" />
+=======
+        <location filename="../../src/ui/mainwindow.cpp" line="1199" />
+>>>>>>> other-repo/main
         <source>Rulesets cache is updated</source>
         <translation type="unfinished">Rulesets ক্যাশে আপডেট করা হয়</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/mainwindow.cpp" line="1122" />
+=======
+        <location filename="../../src/ui/mainwindow.cpp" line="1213" />
+>>>>>>> other-repo/main
         <source>Clear RuleSet Cache</source>
         <translation type="unfinished">RuleSet ক্যাশে সাফ করুন</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/mainwindow.cpp" line="1158" />
+=======
+        <location filename="../../src/ui/mainwindow.cpp" line="1249" />
+>>>>>>> other-repo/main
         <source>Enable AdBlock</source>
         <translation type="unfinished">AdBlock সক্ষম করুন</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/mainwindow.cpp" line="1561" />
+=======
+        <location filename="../../src/ui/mainwindow.cpp" line="1651" />
+>>>>>>> other-repo/main
         <source>Error</source>
         <translation type="unfinished">ত্রুটি</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/mainwindow.cpp" line="1648" />
+=======
+        <location filename="../../src/ui/mainwindow.cpp" line="1738" />
+>>>>>>> other-repo/main
         <source>Tun Settings changed</source>
         <translation type="unfinished">Tun সেটিংস পরিবর্তিত হয়েছে৷</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/mainwindow.cpp" line="1649" />
+=======
+        <location filename="../../src/ui/mainwindow.cpp" line="1739" />
+>>>>>>> other-repo/main
         <source>Restart Tun to take effect.</source>
         <translation type="unfinished">কার্যকর করতে Tun পুনরায় চালু করুন।</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/mainwindow.cpp" line="1655" />
         <location filename="../../src/ui/mainwindow.cpp" line="1713" />
         <location filename="../../src/ui/mainwindow.cpp" line="2832" />
@@ -2874,268 +4002,488 @@ For more information, see the document "Configuration/DNS".</source>
         <location filename="../../src/ui/mainwindow.cpp" line="3257" />
         <location filename="../../src/ui/mainwindow.cpp" line="3305" />
         <location filename="../../src/ui/mainwindow.cpp" line="3510" />
+=======
+        <location filename="../../src/ui/mainwindow.cpp" line="1745" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1803" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2969" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3340" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3394" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3443" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3673" />
+>>>>>>> other-repo/main
         <source>Confirmation</source>
         <translation type="unfinished">নিশ্চিতকরণ</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/mainwindow.cpp" line="1656" />
         <location filename="../../src/ui/mainwindow.cpp" line="1714" />
+=======
+        <location filename="../../src/ui/mainwindow.cpp" line="1746" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1804" />
+>>>>>>> other-repo/main
         <source>Settings changed, restart proxy?</source>
         <translation type="unfinished">সেটিংস পরিবর্তিত হয়েছে, প্রক্সি পুনরায় চালু করবেন?</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/mainwindow.cpp" line="1685" />
+=======
+        <location filename="../../src/ui/mainwindow.cpp" line="1775" />
+>>>>>>> other-repo/main
         <source>Settings changed</source>
         <translation type="unfinished">সেটিংস পরিবর্তন করা হয়েছে</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/mainwindow.cpp" line="1686" />
+=======
+        <location filename="../../src/ui/mainwindow.cpp" line="1776" />
+>>>>>>> other-repo/main
         <source>Restart the program to take effect.</source>
         <translation type="unfinished">কার্যকর করার জন্য প্রোগ্রামটি পুনরায় চালু করুন।</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/mainwindow.cpp" line="1729" />
+=======
+        <location filename="../../src/ui/mainwindow.cpp" line="1819" />
+>>>>>>> other-repo/main
         <source>Imported %1 profile(s)</source>
         <translation type="unfinished">আমদানি করা %1 প্রোফাইল(গুলি)</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/mainwindow.cpp" line="1980" />
+=======
+        <location filename="../../src/ui/mainwindow.cpp" line="2086" />
+>>>>>>> other-repo/main
         <source>User opted for no privilege req, some features may not work</source>
         <translation type="unfinished">ব্যবহারকারী কোনো বিশেষাধিকার অনুরোধের জন্য বেছে নিয়েছেন, কিছু বৈশিষ্ট্য কাজ নাও করতে পারে</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/mainwindow.cpp" line="2044" />
+=======
+        <location filename="../../src/ui/mainwindow.cpp" line="2150" />
+>>>>>>> other-repo/main
         <source>Please give the core root privileges</source>
         <translation type="unfinished">অনুগ্রহ করে মূল রুট সুবিধা দিন</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/mainwindow.cpp" line="2398" />
+=======
+        <location filename="../../src/ui/mainwindow.cpp" line="2504" />
+>>>>>>> other-repo/main
         <source>Not Running</source>
         <translation type="unfinished">চলছে না</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/mainwindow.cpp" line="2779" />
+=======
+        <location filename="../../src/ui/mainwindow.cpp" line="2916" />
+>>>>>>> other-repo/main
         <source>Clone %1 item(s)</source>
         <translation type="unfinished">ক্লোন %1 আইটেম(গুলি)</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/mainwindow.cpp" line="2813" />
+=======
+        <location filename="../../src/ui/mainwindow.cpp" line="2950" />
+>>>>>>> other-repo/main
         <source> Confirmation </source>
         <translation type="unfinished">নিশ্চিতকরণ</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/mainwindow.cpp" line="2814" />
+=======
+        <location filename="../../src/ui/mainwindow.cpp" line="2951" />
+>>>>>>> other-repo/main
         <source> Remove %1 item(s) ? </source>
         <translation type="unfinished">%1 আইটেম(গুলি) সরান?</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/mainwindow.cpp" line="2833" />
+=======
+        <location filename="../../src/ui/mainwindow.cpp" line="2970" />
+>>>>>>> other-repo/main
         <source>Remove %1 item(s) ?</source>
         <translation type="unfinished">%1 আইটেম(গুলি) সরান?</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/mainwindow.cpp" line="2870" />
         <location filename="../../src/ui/mainwindow.cpp" line="2883" />
+=======
+        <location filename="../../src/ui/mainwindow.cpp" line="3007" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3020" />
+>>>>>>> other-repo/main
         <source>Copied %1 item(s)</source>
         <translation type="unfinished">অনুলিপি করা হয়েছে %1 আইটেম(গুলি)</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/mainwindow.cpp" line="3115" />
+=======
+        <location filename="../../src/ui/mainwindow.cpp" line="3252" />
+>>>>>>> other-repo/main
         <source>QR Code not found</source>
         <translation type="unfinished">QR কোড পাওয়া যায়নি</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/mainwindow.cpp" line="3136" />
+=======
+        <location filename="../../src/ui/mainwindow.cpp" line="3273" />
+>>>>>>> other-repo/main
         <source>Unable to capture screen</source>
         <translation type="unfinished">স্ক্রীন ক্যাপচার করতে অক্ষম</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/mainwindow.cpp" line="3204" />
+=======
+        <location filename="../../src/ui/mainwindow.cpp" line="3341" />
+>>>>>>> other-repo/main
         <source>Remove %1 Unavailable item(s) ?</source>
         <translation type="unfinished">%1 অনুপলব্ধ আইটেম(গুলি) সরান?</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/mainwindow.cpp" line="3258" />
+=======
+        <location filename="../../src/ui/mainwindow.cpp" line="3395" />
+>>>>>>> other-repo/main
         <source>Remove %1 Invalid item(s) ?</source>
         <translation type="unfinished">%1 অবৈধ আইটেম(গুলি) সরান?</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/mainwindow.cpp" line="3306" />
+=======
+        <location filename="../../src/ui/mainwindow.cpp" line="3444" />
+>>>>>>> other-repo/main
         <source>Replace domain server addresses with their resolved IPs?</source>
         <translation type="unfinished">ডোমেন সার্ভার ঠিকানাগুলি তাদের সমাধান করা আইপিগুলির সাথে প্রতিস্থাপন করবেন?</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/mainwindow.cpp" line="3439" />
+=======
+        <location filename="../../src/ui/mainwindow.cpp" line="3593" />
+>>>>>>> other-repo/main
         <source>Clear</source>
         <translation type="unfinished">পরিষ্কার</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/mainwindow.cpp" line="3501" />
+=======
+        <location filename="../../src/ui/mainwindow.cpp" line="3664" />
+>>>>>>> other-repo/main
         <source>Delete selected Group</source>
         <translation type="unfinished">নির্বাচিত গ্রুপ মুছুন</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/mainwindow.cpp" line="3502" />
+=======
+        <location filename="../../src/ui/mainwindow.cpp" line="3665" />
+>>>>>>> other-repo/main
         <source>Edit selected Group</source>
         <translation type="unfinished">নির্বাচিত গ্রুপ সম্পাদনা করুন</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/mainwindow.cpp" line="3511" />
+=======
+        <location filename="../../src/ui/mainwindow.cpp" line="3674" />
+>>>>>>> other-repo/main
         <source>Remove %1?</source>
         <translation type="unfinished">%1 সরান?</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/mainwindow.cpp" line="4194" />
+=======
+        <location filename="../../src/ui/mainwindow.cpp" line="4411" />
+>>>>>>> other-repo/main
         <source>Cannot start</source>
         <translation type="unfinished">শুরু করা যাবে না</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/mainwindow.cpp" line="4195" />
+=======
+        <location filename="../../src/ui/mainwindow.cpp" line="4412" />
+>>>>>>> other-repo/main
         <source>Last download request has not finished yet</source>
         <translation type="unfinished">শেষ ডাউনলোড অনুরোধ এখনও শেষ হয়নি</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/mainwindow.cpp" line="4229" />
+=======
+        <location filename="../../src/ui/mainwindow.cpp" line="4446" />
+>>>>>>> other-repo/main
         <source>Failed to download update assets</source>
         <translation type="unfinished">আপডেট সম্পদ ডাউনলোড করতে ব্যর্থ হয়েছে</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="81" />
+=======
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="83" />
+>>>>>>> other-repo/main
         <source>Profile test aborted</source>
         <translation type="unfinished">প্রোফাইল পরীক্ষা বাতিল করা হয়েছে</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="132" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="178" />
+=======
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="134" />
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="180" />
+>>>>>>> other-repo/main
         <source>[%1] test error: %2</source>
         <translation type="unfinished">[%1] পরীক্ষার ত্রুটি: %2</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="161" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="487" />
+=======
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="163" />
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="489" />
+>>>>>>> other-repo/main
         <source>Something is very wrong, the subject ent cannot be found!</source>
         <translation type="unfinished">কিছু খুব ভুল, সাবজেক্ট ENT পাওয়া যাবে না!</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="167" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="493" />
+=======
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="169" />
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="495" />
+>>>>>>> other-repo/main
         <source>Profile manager data is corrupted, try again.</source>
         <translation type="unfinished">প্রোফাইল ম্যানেজার ডেটা নষ্ট হয়ে গেছে, আবার চেষ্টা করুন।</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="201" />
+=======
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="203" />
+>>>>>>> other-repo/main
         <source>The last url test did not exit completely, please wait. If it persists, please restart the program.</source>
         <translation type="unfinished">শেষ url পরীক্ষা সম্পূর্ণভাবে প্রস্থান করেনি, অনুগ্রহ করে অপেক্ষা করুন।যদি এটি অব্যাহত থাকে, অনুগ্রহ করে প্রোগ্রামটি পুনরায় চালু করুন।</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="210" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="317" />
+=======
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="212" />
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="319" />
+>>>>>>> other-repo/main
         <source>Failed to build test config: </source>
         <translation type="unfinished">পরীক্ষা কনফিগার তৈরি করতে ব্যর্থ হয়েছে:</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="251" />
+=======
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="253" />
+>>>>>>> other-repo/main
         <source>URL test finished!</source>
         <translation type="unfinished">ইউআরএল পরীক্ষা শেষ!</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="262" />
+=======
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="264" />
+>>>>>>> other-repo/main
         <source>Failed to stop tests</source>
         <translation type="unfinished">পরীক্ষা বন্ধ করতে ব্যর্থ</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="268" />
+=======
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="270" />
+>>>>>>> other-repo/main
         <source>Testing</source>
         <translation type="unfinished">টেস্টিং</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="306" />
+=======
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="308" />
+>>>>>>> other-repo/main
         <source>The last speed test did not exit completely, please wait. If it persists, please restart the program.</source>
         <translation type="unfinished">শেষ গতি পরীক্ষা সম্পূর্ণরূপে প্রস্থান করা হয়নি, অপেক্ষা করুন.যদি এটি অব্যাহত থাকে, অনুগ্রহ করে প্রোগ্রামটি পুনরায় চালু করুন।</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="343" />
+=======
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="345" />
+>>>>>>> other-repo/main
         <source>Speedtest finished!</source>
         <translation type="unfinished">স্পিডটেস্ট শেষ!</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="424" />
+=======
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="426" />
+>>>>>>> other-repo/main
         <source>Profile speed test aborted</source>
         <translation type="unfinished">প্রোফাইল গতি পরীক্ষা বাতিল করা হয়েছে</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="512" />
+=======
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="514" />
+>>>>>>> other-repo/main
         <source>[%1] speed test error: %2</source>
         <translation type="unfinished">[%1] গতি পরীক্ষা ত্রুটি: %2</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="521" />
+=======
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="523" />
+>>>>>>> other-repo/main
         <source>You need to enable hijack DNS server first</source>
         <translation type="unfinished">আপনাকে প্রথমে হাইজ্যাক ডিএনএস সার্ভার সক্ষম করতে হবে</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="535" />
+=======
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="537" />
+>>>>>>> other-repo/main
         <source>Failed to set system dns: </source>
         <translation type="unfinished">সিস্টেম ডিএনএস সেট করতে ব্যর্থ:</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="583" />
+=======
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="585" />
+>>>>>>> other-repo/main
         <source>Tun device misbehaving</source>
         <translation type="unfinished">টুন ডিভাইস খারাপ আচরণ করছে</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="584" />
+=======
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="586" />
+>>>>>>> other-repo/main
         <source>If you have trouble starting VPN, you can force reset Core process here and then try starting the profile again. The error is %1</source>
         <translation type="unfinished">আপনার যদি VPN শুরু করতে সমস্যা হয়, তাহলে আপনি জোর করে কোর প্রসেস রিসেট করতে পারেন এবং তারপর প্রোফাইলটি আবার শুরু করার চেষ্টা করুন৷ত্রুটি হল %1</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="588" />
+=======
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="590" />
+>>>>>>> other-repo/main
         <source>Reset</source>
         <translation type="unfinished">রিসেট করুন</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="589" />
+=======
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="591" />
+>>>>>>> other-repo/main
         <source>Cancel</source>
         <translation type="unfinished">বাতিল করুন</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="628" />
+=======
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="630" />
+>>>>>>> other-repo/main
         <source>Another profile is starting...</source>
         <translation type="unfinished">আরেকটি প্রোফাইল শুরু হচ্ছে...</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="635" />
+=======
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="637" />
+>>>>>>> other-repo/main
         <source>Another profile is stopping...</source>
         <translation type="unfinished">আরেকটি প্রোফাইল বন্ধ হচ্ছে...</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="656" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="738" />
+=======
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="658" />
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="740" />
+>>>>>>> other-repo/main
         <source>If there is no response for a long time, it is recommended to restart the software.</source>
         <translation type="unfinished">যদি দীর্ঘ সময়ের জন্য কোন প্রতিক্রিয়া না হয়, তবে সফ্টওয়্যারটি পুনরায় চালু করার পরামর্শ দেওয়া হয়।</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="670" />
+=======
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="672" />
+>>>>>>> other-repo/main
         <source>Starting profile %1</source>
         <translation type="unfinished">প্রোফাইল শুরু হচ্ছে %1</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="672" />
+=======
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="674" />
+>>>>>>> other-repo/main
         <source>Failed to start profile %1</source>
         <translation type="unfinished">প্রোফাইল %1 শুরু করতে ব্যর্থ হয়েছে</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="721" />
+=======
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="723" />
+>>>>>>> other-repo/main
         <source>Stop return error</source>
         <translation type="unfinished">ফেরত ত্রুটি বন্ধ করুন</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="761" />
+=======
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="763" />
+>>>>>>> other-repo/main
         <source>Stopping profile %1</source>
         <translation type="unfinished">প্রোফাইল %1 বন্ধ করা হচ্ছে</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="763" />
+=======
+        <location filename="../../src/ui/mainwindow_rpc.cpp" line="765" />
+>>>>>>> other-repo/main
         <source>Failed to stop, please restart the program.</source>
         <translation type="unfinished">থামাতে ব্যর্থ হয়েছে, অনুগ্রহ করে প্রোগ্রামটি পুনরায় চালু করুন৷</translation>
     </message>
@@ -3145,7 +4493,11 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/security/change_password.ui" line="14" />
         <source>Dialog</source>
+<<<<<<< HEAD
         <translation type="unfinished">ডায়ালগ</translation>
+=======
+        <translation type="unfinished" />
+>>>>>>> other-repo/main
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/change_password.ui" line="20" />
@@ -3179,7 +4531,11 @@ For more information, see the document "Configuration/DNS".</source>
 <context>
     <name>QAction</name>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/security_addon.cpp" line="342" />
+=======
+        <location filename="../../src/ui/security_addon.cpp" line="346" />
+>>>>>>> other-repo/main
         <source>Security Settings</source>
         <translation type="unfinished">নিরাপত্তা সেটিংস</translation>
     </message>
@@ -3187,9 +4543,15 @@ For more information, see the document "Configuration/DNS".</source>
 <context>
     <name>QGuiApplication</name>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/main.cpp" line="258" />
         <source>QT_LAYOUT_DIRECTION</source>
         <translation type="unfinished">QT_LAYOUT_DIRECTION</translation>
+=======
+        <location filename="../../src/main.cpp" line="328" />
+        <source>QT_LAYOUT_DIRECTION</source>
+        <translation type="unfinished" />
+>>>>>>> other-repo/main
     </message>
 </context>
 <context>
@@ -3200,37 +4562,65 @@ For more information, see the document "Configuration/DNS".</source>
         <translation type="unfinished">কাস্টম কনফিগারেশনের সাথে টুন মোড ব্যবহার করা যাবে না</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="913" />
+=======
+        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="839" />
+>>>>>>> other-repo/main
         <source>Requesting subscription: %1</source>
         <translation type="unfinished">সাবস্ক্রিপশনের জন্য অনুরোধ করা হচ্ছে: %1</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="917" />
+=======
+        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="843" />
+>>>>>>> other-repo/main
         <source>Requesting subscription %1 error: %2</source>
         <translation type="unfinished">সাবস্ক্রিপশনের জন্য অনুরোধ করা হচ্ছে %1 ত্রুটি: %2</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="924" />
+=======
+        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="850" />
+>>>>>>> other-repo/main
         <source>Subscription request fininshed: %1</source>
         <translation type="unfinished">সাবস্ক্রিপশন অনুরোধ শেষ হয়েছে: %1</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="942" />
+=======
+        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="868" />
+>>>>>>> other-repo/main
         <source>Clearing servers...</source>
         <translation type="unfinished">সার্ভার সাফ করা হচ্ছে...</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="947" />
+=======
+        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="873" />
+>>>>>>> other-repo/main
         <source>Processing subscription data...</source>
         <translation type="unfinished">সদস্যতা ডেটা প্রক্রিয়া করা হচ্ছে...</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="950" />
+=======
+        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="876" />
+>>>>>>> other-repo/main
         <source>Process complete, applying...</source>
         <translation type="unfinished">প্রক্রিয়া সম্পন্ন, আবেদন করা হচ্ছে...</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="1013" />
+=======
+        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="939" />
+>>>>>>> other-repo/main
         <source>Added %1 profiles:
 %2
 Deleted %3 Profiles:
@@ -3241,17 +4631,29 @@ Deleted %3 Profiles:
 %4</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="1018" />
+=======
+        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="944" />
+>>>>>>> other-repo/main
         <source>Nothing</source>
         <translation type="unfinished">কিছুই না</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/configs/sub/GroupUpdater.cpp" line="1021" />
+=======
+        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="947" />
+>>>>>>> other-repo/main
         <source>Change of %1:</source>
         <translation type="unfinished">%1 এর পরিবর্তন:</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/dataStore/Database.cpp" line="119" />
+=======
+        <location filename="../../src/dataStore/Database.cpp" line="123" />
+>>>>>>> other-repo/main
         <source>Default</source>
         <translation type="unfinished">ডিফল্ট</translation>
     </message>
@@ -3261,20 +4663,44 @@ Deleted %3 Profiles:
         <translation type="unfinished">ফাইল খুলতে পারেনি.</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/configs/proxy/ChainBean.hpp" line="17" />
+=======
+        <location filename="../../src/main.cpp" line="107" />
+>>>>>>> other-repo/main
         <source>Chain Proxy</source>
         <translation type="unfinished">চেইন প্রক্সি</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/nekobox/global/GuiUtils.hpp" line="112" />
         <location filename="../../src/ui/profile/edit_ssh.cpp" line="28" />
         <location filename="../../src/ui/setting/dialog_basic_settings.cpp" line="244" />
+=======
+        <location filename="../../src/main.cpp" line="121" />
+        <source>Custom</source>
+        <translation type="unfinished">কাস্টম</translation>
+    </message>
+    <message>
+        <location filename="../../src/main.cpp" line="122" />
+        <source>Extra Core</source>
+        <translation type="unfinished">অতিরিক্ত কোর</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/global/GuiUtils.hpp" line="121" />
+        <location filename="../../src/ui/profile/edit_ssh.cpp" line="28" />
+        <location filename="../../src/ui/setting/dialog_basic_settings.cpp" line="335" />
+>>>>>>> other-repo/main
         <source>Select</source>
         <translation type="unfinished">নির্বাচন করুন</translation>
     </message>
     <message>
         <location filename="../../src/stats/traffic/TrafficLooper.cpp" line="115" />
+<<<<<<< HEAD
         <location filename="../../src/ui/mainwindow.cpp" line="2366" />
+=======
+        <location filename="../../src/ui/mainwindow.cpp" line="2472" />
+>>>>>>> other-repo/main
         <source>Proxy: %1
 Direct: %2</source>
         <translation type="unfinished">প্রক্সি: %1
@@ -3296,134 +4722,247 @@ Direct: %2</source>
         <translation type="unfinished">মূলটি পুনরায় চালু করা হচ্ছে...</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/sys/Settings.cpp" line="361" />
+=======
+        <location filename="../../src/sys/Settings.cpp" line="357" />
+>>>>>>> other-repo/main
         <source>System</source>
         <translation type="unfinished">সিস্টেম</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/group/GroupItem.cpp" line="22" />
+=======
+        <location filename="../../src/ui/group/GroupItem.cpp" line="23" />
+>>>>>>> other-repo/main
         <source>URL detected</source>
         <translation type="unfinished">ইউআরএল শনাক্ত করা হয়েছে</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/group/GroupItem.cpp" line="27" />
+=======
+        <location filename="../../src/ui/group/GroupItem.cpp" line="28" />
+>>>>>>> other-repo/main
         <source>%1
 How to update?</source>
         <translation type="unfinished">%1
 কিভাবে আপডেট করবেন?</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/group/GroupItem.cpp" line="31" />
+=======
+        <location filename="../../src/ui/group/GroupItem.cpp" line="32" />
+>>>>>>> other-repo/main
         <source>Create new subscription group</source>
         <translation type="unfinished">নতুন সাবস্ক্রিপশন গ্রুপ তৈরি করুন</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/group/GroupItem.cpp" line="32" />
+=======
+        <location filename="../../src/ui/group/GroupItem.cpp" line="33" />
+>>>>>>> other-repo/main
         <source>Add profiles to this group</source>
         <translation type="unfinished">এই গ্রুপে প্রোফাইল যোগ করুন</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/group/GroupItem.cpp" line="37" />
+=======
+        <location filename="../../src/ui/group/GroupItem.cpp" line="34" />
+        <source>Add as http/https proxy</source>
+        <translation type="unfinished">http/https প্রক্সি হিসেবে যোগ করুন</translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/group/GroupItem.cpp" line="39" />
+>>>>>>> other-repo/main
         <source>Group name</source>
         <translation type="unfinished">গ্রুপের নাম</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/group/GroupItem.cpp" line="101" />
+=======
+        <location filename="../../src/ui/group/GroupItem.cpp" line="106" />
+>>>>>>> other-repo/main
         <source>Used: %1 Remain: %2 Expire: %3</source>
         <translation type="unfinished">ব্যবহৃত: %1 অবশিষ্ট: %2 মেয়াদ শেষ: %3</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/mainwindow.cpp" line="173" />
+=======
+        <location filename="../../src/ui/mainwindow.cpp" line="256" />
+>>>>>>> other-repo/main
         <source>Download Profiles</source>
         <translation type="unfinished">প্রোফাইল ডাউনলোড করুন</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/mainwindow.cpp" line="174" />
+=======
+        <location filename="../../src/ui/mainwindow.cpp" line="257" />
+>>>>>>> other-repo/main
         <source>Requesting profile error: %1</source>
         <translation type="unfinished">প্রোফাইল ত্রুটির অনুরোধ করা হচ্ছে: %1</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/mainwindow.cpp" line="341" />
+=======
+        <location filename="../../src/ui/mainwindow.cpp" line="424" />
+>>>>>>> other-repo/main
         <source>
 Deleted %1 Duplicates</source>
         <translation type="unfinished">%1 সদৃশ মুছে ফেলা হয়েছে</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/mainwindow.cpp" line="375" />
+=======
+        <location filename="../../src/ui/mainwindow.cpp" line="458" />
+>>>>>>> other-repo/main
         <source>
 Deleted %1 Invalid</source>
         <translation type="unfinished">মুছে ফেলা হয়েছে %1 অবৈধ</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/mainwindow.cpp" line="398" />
+=======
+        <location filename="../../src/ui/mainwindow.cpp" line="481" />
+>>>>>>> other-repo/main
         <source>
 Deleted %1 Unavailable</source>
         <translation type="unfinished">মুছে ফেলা হয়েছে %1 অনুপলব্ধ৷</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/mainwindow.cpp" line="1441" />
+=======
+        <location filename="../../src/ui/mainwindow.cpp" line="1530" />
+>>>>>>> other-repo/main
         <source>Check Rule Sets: %1</source>
         <translation type="unfinished">নিয়ম সেট চেক করুন: %1</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/mainwindow.cpp" line="1463" />
+=======
+        <location filename="../../src/ui/mainwindow.cpp" line="1552" />
+>>>>>>> other-repo/main
         <source>Requesting rule-set list error: %1</source>
         <translation type="unfinished">নিয়ম-সেট তালিকা ত্রুটি: %1 অনুরোধ করা হচ্ছে</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/mainwindow.cpp" line="2403" />
+=======
+        <location filename="../../src/ui/mainwindow.cpp" line="2509" />
+>>>>>>> other-repo/main
         <source>IP address: %1</source>
         <translation type="unfinished">আইপি ঠিকানা: %1</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/mainwindow.cpp" line="2901" />
+=======
+        <location filename="../../src/ui/mainwindow.cpp" line="2895" />
+        <source>Move profiles to group</source>
+        <translation type="unfinished">প্রোফাইলগুলিকে গ্রুপে সরান</translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/mainwindow.cpp" line="3038" />
+>>>>>>> other-repo/main
         <source>Config copied</source>
         <translation type="unfinished">কনফিগ কপি করা হয়েছে</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/mainwindow.cpp" line="2912" />
+=======
+        <location filename="../../src/ui/mainwindow.cpp" line="3049" />
+>>>>>>> other-repo/main
         <source>Copy core config</source>
         <translation type="unfinished">কোর কনফিগারেশন কপি করুন</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/mainwindow.cpp" line="2913" />
+=======
+        <location filename="../../src/ui/mainwindow.cpp" line="3050" />
+>>>>>>> other-repo/main
         <source>Copy test config</source>
         <translation type="unfinished">পরীক্ষার কনফিগারেশন কপি করুন</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/mainwindow.cpp" line="2914" />
         <location filename="../../src/ui/security_addon.cpp" line="22" />
         <location filename="../../src/ui/setting/dialog_vpn_settings.cpp" line="45" />
+=======
+        <location filename="../../src/ui/mainwindow.cpp" line="3051" />
+        <location filename="../../src/ui/security_addon.cpp" line="21" />
+        <location filename="../../src/ui/setting/dialog_vpn_settings.cpp" line="53" />
+>>>>>>> other-repo/main
         <source>OK</source>
         <translation type="unfinished">ঠিক আছে</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/mainwindow.cpp" line="4099" />
         <location filename="../../src/ui/mainwindow.cpp" line="4110" />
         <location filename="../../src/ui/mainwindow.cpp" line="4154" />
         <location filename="../../src/ui/mainwindow.cpp" line="4176" />
         <location filename="../../src/ui/mainwindow.cpp" line="4185" />
         <location filename="../../src/ui/mainwindow.cpp" line="4220" />
+=======
+        <location filename="../../src/ui/mainwindow.cpp" line="4315" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4326" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4370" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4393" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4402" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4437" />
+>>>>>>> other-repo/main
         <source>Update</source>
         <translation type="unfinished">আপডেট</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/mainwindow.cpp" line="4100" />
+=======
+        <location filename="../../src/ui/mainwindow.cpp" line="4316" />
+>>>>>>> other-repo/main
         <source>Not official support platform</source>
         <translation type="unfinished">অফিসিয়াল সমর্থন প্ল্যাটফর্ম নয়</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/mainwindow.cpp" line="4111" />
+=======
+        <location filename="../../src/ui/mainwindow.cpp" line="4327" />
+>>>>>>> other-repo/main
         <source>Requesting update error: %1</source>
         <translation type="unfinished">আপডেটের জন্য অনুরোধ করা হচ্ছে ত্রুটি: %1</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/mainwindow.cpp" line="4154" />
+=======
+        <location filename="../../src/ui/mainwindow.cpp" line="4370" />
+>>>>>>> other-repo/main
         <source>No update</source>
         <translation type="unfinished">কোন আপডেট নেই</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/mainwindow.cpp" line="4177" />
+=======
+        <location filename="../../src/ui/mainwindow.cpp" line="4394" />
+>>>>>>> other-repo/main
         <source>Update found: %1
 Release note:
 %2</source>
@@ -3432,130 +4971,248 @@ Release note:
 %2</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/mainwindow.cpp" line="4180" />
+=======
+        <location filename="../../src/ui/mainwindow.cpp" line="4397" />
+>>>>>>> other-repo/main
         <source>Close</source>
         <translation type="unfinished">বন্ধ</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/mainwindow.cpp" line="4182" />
+=======
+        <location filename="../../src/ui/mainwindow.cpp" line="4399" />
+>>>>>>> other-repo/main
         <source>Open in browser</source>
         <translation type="unfinished">ব্রাউজারে খুলুন</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/mainwindow.cpp" line="4221" />
+=======
+        <location filename="../../src/ui/mainwindow.cpp" line="4438" />
+>>>>>>> other-repo/main
         <source>Update is ready, restart to install?</source>
         <translation type="unfinished">আপডেট প্রস্তুত, ইনস্টল করতে পুনরায় আরম্ভ করবেন?</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/security_addon.cpp" line="21" />
+=======
+        <location filename="../../src/ui/security_addon.cpp" line="20" />
+>>>>>>> other-repo/main
         <source>Access denied</source>
         <translation type="unfinished">অ্যাক্সেস অস্বীকার করা হয়েছে৷</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/setting/dialog_basic_settings.cpp" line="249" />
+=======
+        <location filename="../../src/ui/setting/dialog_basic_settings.cpp" line="340" />
+>>>>>>> other-repo/main
         <source>Select a Folder</source>
         <translation type="unfinished">একটি ফোল্ডার নির্বাচন করুন</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/setting/dialog_vpn_settings.cpp" line="37" />
+=======
+        <location filename="../../src/ui/setting/dialog_vpn_settings.cpp" line="45" />
+>>>>>>> other-repo/main
         <source>Exclude CIDR's</source>
         <translation type="unfinished">CIDR এর বাদ</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/setting/dialog_vpn_settings.cpp" line="46" />
         <source>Cancel</source>
         <translation type="unfinished">বাতিল করুন</translation>
     </message>
-</context>
-<context>
-    <name>QPlatformTheme</name>
-    <message>
-        <location filename="../../src/main.cpp" line="57" />
+=======
+        <location filename="../../src/ui/setting/dialog_vpn_settings.cpp" line="54" />
         <source>Cancel</source>
         <translation type="unfinished">বাতিল করুন</translation>
     </message>
     <message>
+        <source>Chain Proxy</source>
+        <comment>DialogEditProfile</comment>
+        <translation type="obsolete">চেইন প্রক্সি</translation>
+    </message>
+    <message>
+        <source>Custom</source>
+        <comment>DialogEditProfile</comment>
+        <translation type="obsolete">কাস্টম</translation>
+    </message>
+    <message>
+        <source>Extra Core</source>
+        <comment>DialogEditProfile</comment>
+        <translation type="obsolete">অতিরিক্ত কোর</translation>
+    </message>
+>>>>>>> other-repo/main
+</context>
+<context>
+    <name>QPlatformTheme</name>
+    <message>
+<<<<<<< HEAD
+        <location filename="../../src/main.cpp" line="57" />
+=======
+        <location filename="../../src/main.cpp" line="66" />
+>>>>>>> other-repo/main
+        <source>Cancel</source>
+        <translation type="unfinished">বাতিল করুন</translation>
+    </message>
+    <message>
+<<<<<<< HEAD
         <location filename="../../src/main.cpp" line="58" />
+=======
+        <location filename="../../src/main.cpp" line="67" />
+>>>>>>> other-repo/main
         <source>Apply</source>
         <translation type="unfinished">আবেদন করুন</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/main.cpp" line="59" />
+=======
+        <location filename="../../src/main.cpp" line="68" />
+>>>>>>> other-repo/main
         <source>Yes</source>
         <translation type="unfinished">হ্যাঁ</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/main.cpp" line="60" />
+=======
+        <location filename="../../src/main.cpp" line="69" />
+>>>>>>> other-repo/main
         <source>No</source>
         <translation type="unfinished">না</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/main.cpp" line="61" />
+=======
+        <location filename="../../src/main.cpp" line="70" />
+>>>>>>> other-repo/main
         <source>OK</source>
         <translation type="unfinished">ঠিক আছে</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/main.cpp" line="62" />
+=======
+        <location filename="../../src/main.cpp" line="71" />
+>>>>>>> other-repo/main
         <source>Defaults</source>
         <translation type="unfinished">ডিফল্ট</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/main.cpp" line="63" />
+=======
+        <location filename="../../src/main.cpp" line="72" />
+>>>>>>> other-repo/main
         <source>Restore Defaults</source>
         <translation type="unfinished">ডিফল্ট পুনরুদ্ধার করুন</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/main.cpp" line="64" />
+=======
+        <location filename="../../src/main.cpp" line="73" />
+>>>>>>> other-repo/main
         <source>Discard</source>
         <translation type="unfinished">বাতিল করুন</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/main.cpp" line="66" />
+=======
+        <location filename="../../src/main.cpp" line="75" />
+>>>>>>> other-repo/main
         <source>Undo</source>
         <translation type="unfinished">পূর্বাবস্থায় ফেরান</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/main.cpp" line="67" />
+=======
+        <location filename="../../src/main.cpp" line="76" />
+>>>>>>> other-repo/main
         <source>Redo</source>
         <translation type="unfinished">আবার করুন</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/main.cpp" line="68" />
+=======
+        <location filename="../../src/main.cpp" line="77" />
+>>>>>>> other-repo/main
         <source>Cut</source>
         <translation type="unfinished">কাটা</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/main.cpp" line="69" />
+=======
+        <location filename="../../src/main.cpp" line="78" />
+>>>>>>> other-repo/main
         <source>Copy</source>
         <translation type="unfinished">কপি</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/main.cpp" line="70" />
+=======
+        <location filename="../../src/main.cpp" line="79" />
+>>>>>>> other-repo/main
         <source>Paste</source>
         <translation type="unfinished">পেস্ট করুন</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/main.cpp" line="71" />
+=======
+        <location filename="../../src/main.cpp" line="80" />
+>>>>>>> other-repo/main
         <source>Delete</source>
         <translation type="unfinished">মুছুন</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/main.cpp" line="72" />
+=======
+        <location filename="../../src/main.cpp" line="81" />
+>>>>>>> other-repo/main
         <source>Select All</source>
         <translation type="unfinished">সব নির্বাচন করুন</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/main.cpp" line="73" />
+=======
+        <location filename="../../src/main.cpp" line="82" />
+>>>>>>> other-repo/main
         <source>Stop</source>
         <translation type="unfinished">থামো</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/main.cpp" line="74" />
+=======
+        <location filename="../../src/main.cpp" line="83" />
+>>>>>>> other-repo/main
         <source>Clear</source>
         <translation type="unfinished">পরিষ্কার</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/main.cpp" line="75" />
+=======
+        <location filename="../../src/main.cpp" line="84" />
+>>>>>>> other-repo/main
         <source>Copy Link Location</source>
         <translation type="unfinished">লিঙ্কের অবস্থান কপি করুন</translation>
     </message>
@@ -3772,24 +5429,41 @@ Release note:
 <context>
     <name>SpinnerDialog</name>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/mainwindow.cpp" line="121" />
+=======
+        <location filename="../../src/ui/mainwindow.cpp" line="204" />
+>>>>>>> other-repo/main
         <source>Invalid JSON Array</source>
         <translation type="unfinished">অবৈধ JSON অ্যারে</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/mainwindow.cpp" line="122" />
+=======
+        <location filename="../../src/ui/mainwindow.cpp" line="205" />
+>>>>>>> other-repo/main
         <source>The provided input cannot be parsed to a valid route rule array:
 </source>
         <translation type="unfinished">প্রদত্ত ইনপুট একটি বৈধ রুট নিয়ম অ্যারেতে পার্স করা যাবে না:</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/mainwindow.cpp" line="245" />
+=======
+        <location filename="../../src/ui/mainwindow.cpp" line="328" />
+>>>>>>> other-repo/main
         <source>Fetching information</source>
         <translation type="unfinished">তথ্য আনা হচ্ছে</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/ui/mainwindow.cpp" line="261" />
         <location filename="../../src/ui/mainwindow.cpp" line="1182" />
+=======
+        <location filename="../../src/ui/mainwindow.cpp" line="344" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1273" />
+>>>>>>> other-repo/main
         <source>Download Profiles</source>
         <translation type="unfinished">প্রোফাইল ডাউনলোড করুন</translation>
     </message>

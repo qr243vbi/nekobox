@@ -27,7 +27,11 @@ then
 fi
 if [[ "${UPLOAD_WITH_GH}" == 'yes' ]]
 then
+<<<<<<< HEAD
   gh release upload "${INPUT_VERSION}" nekobox*.nupkg
+=======
+  gh release upload "${INPUT_VERSION}" nekobox*.nupkg --clobber
+>>>>>>> other-repo/main
 fi
 )
 

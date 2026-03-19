@@ -1,5 +1,10 @@
 #pragma once
 
+<<<<<<< HEAD
+=======
+#include <boost/dll/runtime_symbol_info.hpp>
+
+>>>>>>> other-repo/main
 #include "3rdparty/qv2ray/wrapper.hpp"
 #include <QDebug>
 #include <QFile>
@@ -15,6 +20,13 @@
 #endif
 //
 
+<<<<<<< HEAD
+=======
+
+bool createSymlink(const QString &targetPath, const QString &linkPath);
+
+bool isFileInDirectoryOrSubdirectory(const QString &filePath, const QString &dirPath);
+>>>>>>> other-repo/main
 QString defStr(const QString &value, const QString def);
 
 #ifndef KEY_VALUE_RANGE
@@ -133,6 +145,56 @@ template <typename T> auto asListRange(QList<T> &&list) {
   return ptr;                                                                  \
   }
 
+<<<<<<< HEAD
+=======
+
+
+#ifdef DEBUG_MODE
+
+#define DEBUG_INIT_ENUM qDebug() << "CALLED INIT ENUM" << init;         \
+{                                                                       \
+   std::ostringstream oss;                                              \
+   bool first = true;                                                   \
+   for (auto it = ptr.left.begin(); it != ptr.left.end(); ++it) {       \
+       if (!first) oss << ", ";                                         \
+       oss << it->first << ":" << it->second;                           \
+       first = false;                                                   \
+   }                                                                    \
+   qDebug() <<  oss.str().c_str();                                      \
+}
+
+#else
+#define DEBUG_INIT_ENUM
+#endif
+
+#define STOP_ENUM STOP_MAP ; };
+
+#define INIT_ENUM(Name)                                                  \
+class Name##Enum: public JsonEnum {                               \
+public:                                                                 \
+    template<typename T>                                                \
+    explicit Name##Enum(T t){ this->set(t); };                    \
+    using JsonEnum::operator=;                                          \
+    virtual const boost::bimap<std::string, int>& _map()               \
+        const override{                                                        \
+        static boost::bimap<std::string, int> ptr;                     \
+        static bool init = false;                 DEBUG_INIT_ENUM              \
+        if (init) return ptr;
+
+#ifdef DEBUG_MODE
+#define ADD_ENUM(K, V) ptr.insert({K, V}); qDebug() << "ADD ENUM" << K << V ;
+#else
+#define ADD_ENUM(K, V) ptr.insert({K, V})
+#endif
+#define ADD_ENUM_LIST(K, I)                             \
+{                                                       \
+    int pref = I;                                       \
+    for (int i = 0, n = K.size(); i < n; i ++){         \
+        ADD_ENUM(K.at(i).toStdString(), i + pref);      \
+    }                                                   \
+}
+
+>>>>>>> other-repo/main
 #define ADD_MAP(X, Y, B) _put(ptr, X, &this->Y)
 //, ITEM_TYPE(B))
 #endif
@@ -148,8 +210,13 @@ inline QString software_build_date;
 inline QString software_name;
 inline QString software_core_name;
 
+<<<<<<< HEAD
 #define root_directory QApplication::applicationDirPath()
 #define software_path QApplication::applicationFilePath()
+=======
+inline QString root_directory;// = QString(boost::dll::program_location().parent_path().string().c_str());
+inline QString software_path;//  = QString(boost::dll::program_location().string().c_str());
+>>>>>>> other-repo/main
 
 // MainWindow functions
 inline std::function<void(QString)> MW_show_log;
@@ -268,7 +335,10 @@ QString DisplayAddress(QString serverAddress, int serverPort);
 QString DisplayDest(const QString &dest, QString domain);
 
 // Format & Misc
+<<<<<<< HEAD
 
+=======
+>>>>>>> other-repo/main
 int MkPort();
 
 QString DisplayTime(long long time, int formatType = 0);

@@ -22,7 +22,11 @@ void EditTor::onStart(std::shared_ptr<Configs::ProxyEntity> _ent) {
 }
 
 bool EditTor::onEnd() {
+<<<<<<< HEAD
     auto bean = this->ent->TorBean();
+=======
+    auto bean = ent->unlock(ent->TorBean());
+>>>>>>> other-repo/main
     P_SAVE_STRING(executable_path)
     P_SAVE_STRING(data_directory)
     P_SAVE_STRINGLIST(extra_args)

@@ -2,6 +2,10 @@
 
 #include "nekobox/ui/group/dialog_edit_group.h"
 #include "nekobox/global/GuiUtils.hpp"
+<<<<<<< HEAD
+=======
+#include "nekobox/sys/Settings.h"
+>>>>>>> other-repo/main
 #include "nekobox/configs/sub/GroupUpdater.hpp"
 
 #include <QMessageBox>
@@ -29,7 +33,12 @@ QString getGroupName(bool * ok, bool * createNewGroup, const QString& content){
     auto combo = new QComboBox();
     combo->addItems({
         QObject::tr("Create new subscription group"),
+<<<<<<< HEAD
                     QObject::tr("Add profiles to this group"),
+=======
+        QObject::tr("Add profiles to this group"),
+        QObject::tr("Add as http/https proxy")
+>>>>>>> other-repo/main
     });
     layout->addWidget(combo);
 
@@ -59,9 +68,18 @@ QString getGroupName(bool * ok, bool * createNewGroup, const QString& content){
         if (index == 0){
             *createNewGroup = true;
             return lineEdit->text();
+<<<<<<< HEAD
         } else {
             *createNewGroup = false;
             return "";
+=======
+        } else if (index == 1){
+            *createNewGroup = false;
+            return "";
+        } else {
+            *createNewGroup = false;
+            return "link";
+>>>>>>> other-repo/main
         }
     } else {
         *ok = false;
@@ -183,8 +201,13 @@ void GroupItem::on_edit_clicked() {
 
 void GroupItem::on_remove_clicked() {
     if (Configs::profileManager->groups.size() <= 1) return;
+<<<<<<< HEAD
     if (QMessageBox::question(this, tr("Confirmation"), tr("Remove %1?").arg(ent->name)) ==
         QMessageBox::StandardButton::Yes) {
+=======
+    if (!Configs::windowSettings->ask_delete || (QMessageBox::question(this, tr("Confirmation"), tr("Remove %1?").arg(ent->name)) ==
+        QMessageBox::StandardButton::Yes)) {
+>>>>>>> other-repo/main
         Configs::profileManager->DeleteGroup(ent->id);
         MW_dialog_message(Dialog_DialogManageGroups, "refresh-1");
         delete item;

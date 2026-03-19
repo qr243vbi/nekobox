@@ -15,21 +15,38 @@
 #include <windows.h>
 
 #include <iostream>
+<<<<<<< HEAD
 #include "nekobox/sys/windows/MiniDump.h"
 #include "nekobox/sys/windows/eventHandler.h"
 #include "nekobox/sys/windows/WinVersion.h"
 #include <qfontdatabase.h>
+=======
+#include <nekobox/sys/windows/MiniDump.h>
+#include <nekobox/sys/windows/eventHandler.h>
+#include <nekobox/sys/windows/WinVersion.h>
+#include <qfontdatabase.h>
+#else
+#include <nekobox/sys/Settings.h>
+>>>>>>> other-repo/main
 #endif
 
 
 #ifndef NKR_SOFTWARE_KEYS
 #define CHECK_STARTUP_ACCESS_M
 #else
+<<<<<<< HEAD
 #include "nekobox/ui/security_addon.h"
 #endif
 
 #include "nekobox/sys/Settings.h"
 #include "nekobox/dataStore/ResourceEntity.hpp"
+=======
+#include <nekobox/ui/security_addon.h>
+#endif
+
+#include <nekobox/sys/Settings.h>
+#include <nekobox/dataStore/ResourceEntity.hpp>
+>>>>>>> other-repo/main
 
 #include <nekobox/ui/mainwindow_interface.h>
 #include <nekobox/global/GuiUtils.hpp>
@@ -53,6 +70,16 @@ void signal_handler(int signum) {
 QTranslator* trans = nullptr;
 //QTranslator* trans_qt = nullptr;
 
+<<<<<<< HEAD
+=======
+
+namespace Preset {
+    namespace SingBox {
+         QMap<QString, QString> OutboundTypes;
+    }
+}
+
+>>>>>>> other-repo/main
 void loadTranslate(const QString& locale) {
     QT_TRANSLATE_NOOP("QPlatformTheme", "Cancel");
     QT_TRANSLATE_NOOP("QPlatformTheme", "Apply");
@@ -73,6 +100,11 @@ void loadTranslate(const QString& locale) {
     QT_TRANSLATE_NOOP("QPlatformTheme", "Stop");
     QT_TRANSLATE_NOOP("QPlatformTheme", "Clear");
     QT_TRANSLATE_NOOP("QPlatformTheme", "Copy Link Location");
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> other-repo/main
     if (trans != nullptr) {
         trans->deleteLater();
     }
@@ -87,11 +119,46 @@ void loadTranslate(const QString& locale) {
     if (trans->load(getLangResource(locale))) {
         QCoreApplication::installTranslator(trans);
     }
+<<<<<<< HEAD
+=======
+
+
+    Preset::SingBox::OutboundTypes = {
+            {"socks", "Socks"},
+            {"http", "HTTP"},
+            {"mieru", "Mieru"},
+            {"shadowsocks", "Shadowsocks"},
+            {"chain", QObject::tr("Chain Proxy")},
+            {"vmess", "VMess"},
+            {"trojan", "Trojan"},
+            {"vless", "VLESS"},
+            {"hysteria", "Hysteria 1"},
+            {"hysteria2", "Hysteria 2"},
+            {"tuic", "TUIC"},
+            {"anytls", "AnyTLS"},
+            {"shadowtls", "ShadowTLS"},
+            {"wireguard", "Wireguard"},
+            {"tailscale", "Tailscale"},
+            {"ssh", "SSH"},
+            {"tor", "Tor"},
+            {"naive", "Naive"},
+            {"custom", QObject::tr("Custom")},
+            {"extracore", QObject::tr("Extra Core")},
+        };
+>>>>>>> other-repo/main
 }
 
 #define LOCAL_SERVER_PREFIX "nekobox-"
 
+<<<<<<< HEAD
 int main(int argc, char** argv) {
+=======
+
+int main(int argc, char** argv) {
+
+    root_directory = QString(boost::dll::program_location().parent_path().string().c_str());
+    software_path  = QString(boost::dll::program_location().string().c_str());
+>>>>>>> other-repo/main
     // Core dump
 #ifdef Q_OS_WIN
     Windows_SetCrashHandler();
@@ -100,10 +167,27 @@ int main(int argc, char** argv) {
     Unix_SetCrashHandler();
 #endif
 
+<<<<<<< HEAD
+=======
+
+
+#ifdef Q_OS_UNIX
+{
+    QString qpath = root_directory;
+    qDebug() << qpath + "/usr/plugins";
+    QApplication::addLibraryPath(qpath + "/usr/plugins");
+}
+#endif
+
+>>>>>>> other-repo/main
     QApplication::setAttribute(Qt::AA_DontUseNativeDialogs);
     QApplication::setQuitOnLastWindowClosed(false);
     QApplication a(argc, argv);
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> other-repo/main
     // Flags
     Configs::dataStore->argv = QApplication::arguments();
     if (Configs::dataStore->argv.contains("-many")) Configs::dataStore->flag_many = true;
@@ -129,6 +213,18 @@ int main(int argc, char** argv) {
     QDir dir;
 	// dirs & clean
     auto wd = QDir(root_directory);
+<<<<<<< HEAD
+=======
+#ifdef Q_OS_UNIX
+    {
+        QString imagepath = getAppImage();
+        if (imagepath != ""){
+            QFileInfo fileinfo(imagepath);
+            wd.setPath(fileinfo.absolutePath());
+        }
+    }
+#endif
+>>>>>>> other-repo/main
     if (Configs::dataStore->flag_use_appdata) {
         if (!Configs::dataStore->appdataDir.isEmpty()) {
             wd.setPath(Configs::dataStore->appdataDir);
@@ -158,6 +254,7 @@ int main(int argc, char** argv) {
 			goto loop_back_2;
 		}
 	}
+<<<<<<< HEAD
         // Dir
     if (!dir.exists("profiles")) {
         dir_success &= dir.mkdir("profiles");
@@ -171,6 +268,13 @@ int main(int argc, char** argv) {
     if (!dir.exists("route_profiles")) {
         dir_success &= dir.mkdir("route_profiles");
     }
+=======
+    // Dir
+    dir_success &= dir.mkdir("temp");
+    if (!dir.exists("resources")) {
+        dir_success &= dir.mkdir("resources");
+    }
+>>>>>>> other-repo/main
     if (!dir_success) {
         loop_back_2:
         if (use_application_dir){
@@ -195,12 +299,21 @@ int main(int argc, char** argv) {
     bool supported = Configs::resourceManager->symlinks_supported = createSymlink(getApplicationPath(), "resources/qr243vbi.lnk.lnk");
     if (supported){
         QFile::remove("resources/qr243vbi.lnk.lnk");
+<<<<<<< HEAD
     };
 
     
 #ifdef Q_OS_UNIX
     QApplication::addLibraryPath(root_directory + "/usr/plugins");
 #endif    
+=======
+        if (Configs::windowSettings->no_symlinks){
+            Configs::resourceManager->symlinks_supported = false;
+        }
+    };
+
+    
+>>>>>>> other-repo/main
     // dispatchers
     DS_cores = new QThread;
     DS_cores->start();
@@ -245,16 +358,60 @@ int main(int argc, char** argv) {
         Configs::dataStore->routing->Save();
     }
 
+<<<<<<< HEAD
     Configs::dataStore->shortcuts = std::make_unique<Configs::Shortcuts>();
     Configs::dataStore->shortcuts->fn = "shortcuts.cfg";
     isLoaded = Configs::dataStore->shortcuts->Load();
     if (!isLoaded) {
         Configs::dataStore->shortcuts->Save();
+=======
+    Configs::windowSettings->shortcuts = std::make_unique<Configs::Shortcuts>();
+    Configs::windowSettings->shortcuts->fn = "shortcuts.cfg";
+    isLoaded = QFile::exists("shortcuts.cfg");
+    if (isLoaded) {
+        isLoaded = Configs::windowSettings->shortcuts->Load();
+    }
+    if (Configs::windowSettings->shortcuts->legacy) {
+        auto old = std::make_shared<Configs::ShortcutsOld>();
+        old->fn = Configs::windowSettings->shortcuts->fn;
+        old->Load();
+        int size = old->shortcuts.size();
+        Configs::windowSettings->shortcuts->legacy = false;
+        {
+            int i = 0;
+            QString key, value;
+            repeat_shortcuts:
+            if (i >= size){
+                goto finish_shortcuts;
+            }
+            key = old->shortcuts[i];
+            i ++;
+            if (i >= size){
+                goto finish_shortcuts;
+            }
+            value = old->shortcuts[i];
+            Configs::windowSettings->shortcuts->shortcuts[key] = value;
+            i++;
+            goto repeat_shortcuts;
+        }
+    }
+
+    if (!isLoaded) {
+        Configs::windowSettings->shortcuts->legacy = true;
+        finish_shortcuts:
+        Configs::windowSettings->shortcuts->Save();
+>>>>>>> other-repo/main
     }
 
     // Translate
     QString locale = getLocale();
+<<<<<<< HEAD
     qDebug() << "Language is: " << locale;
+=======
+    #ifdef DEBUG_MODE
+    qDebug() << "Language is: " << locale;
+    #endif
+>>>>>>> other-repo/main
     QGuiApplication::tr("QT_LAYOUT_DIRECTION");
     if (locale == "") locale = QLocale().name();
     loadTranslate(locale);
@@ -263,12 +420,24 @@ int main(int argc, char** argv) {
     QByteArray hashBytes = QCryptographicHash::hash(wd.absolutePath().toUtf8(), QCryptographicHash::Md5).toBase64(QByteArray::OmitTrailingEquals);
     hashBytes.replace('+', '0').replace('/', '1');
     serverName = LOCAL_SERVER_PREFIX + QString::fromUtf8(hashBytes);
+<<<<<<< HEAD
     qDebug() << "server name: " << serverName;
+=======
+    #ifdef DEBUG_MODE
+    qDebug() << "server name: " << serverName;
+    #endif
+>>>>>>> other-repo/main
     QLocalSocket socket;
     socket.connectToServer(serverName);
     if (socket.waitForConnected(250))
     {
+<<<<<<< HEAD
         qDebug() << "Another instance is running, let's wake it up and quit";
+=======
+        #ifdef DEBUG_MODE
+        qDebug() << "Another instance is running, let's wake it up and quit";
+        #endif
+>>>>>>> other-repo/main
         socket.disconnectFromServer();
         return 0;
     }
@@ -282,7 +451,13 @@ int main(int argc, char** argv) {
     }
     QObject::connect(&server, &QLocalServer::newConnection, qApp, [&] {
         auto s = server.nextPendingConnection();
+<<<<<<< HEAD
         qDebug() << "Another instance tried to wake us up on " << serverName << s;
+=======
+        #ifdef DEBUG_MODE
+        qDebug() << "Another instance tried to wake us up on " << serverName << s;
+        #endif
+>>>>>>> other-repo/main
         s->close();
         // raise main window
         MW_dialog_message("", "Raise");

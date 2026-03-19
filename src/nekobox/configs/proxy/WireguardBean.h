@@ -27,7 +27,11 @@ namespace Configs {
         int underload_packet_magic_header = 0;
         int transport_packet_magic_header = 0;
 
+<<<<<<< HEAD
         WireguardBean() : AbstractBean(0) {
+=======
+        WireguardBean(Configs::ProxyEntity * entity) : AbstractBean(entity, 0) {
+>>>>>>> other-repo/main
         }
 
         INIT_MAP
@@ -53,6 +57,7 @@ namespace Configs {
             ADD_MAP("transport_packet_magic_header", transport_packet_magic_header, integer);
         STOP_MAP
 
+<<<<<<< HEAD
         QString FormatReserved() {
             QString res = "";
             for (int i=0;i<reserved.size();i++) {
@@ -168,5 +173,28 @@ namespace Configs {
             name = "Wg file config";
             return true;
         };
+=======
+        QString FormatReserved() const;
+/*/
+        QString DisplayType() override { return "Wireguard"; };
+*/
+        CoreObjOutboundBuildResult BuildCoreObjSingBox() const override;
+
+        bool TryParseLink(const QString &link) override;
+
+        bool TryParseJson(const QJsonObject &obj) override;
+
+        QString ToShareLink() const override;
+
+        bool IsEndpoint() const override {return true;}
+        #ifdef DEBUG_MODE
+        virtual QString type()const override {
+            return "wireguard";
+        };
+        #endif
+
+    private:
+        bool parseWgConfig(const QString &config);
+>>>>>>> other-repo/main
     };
 } // namespace Configs

@@ -7,6 +7,59 @@
 #include "nekobox/ui/mainwindow.h"
 
 
+<<<<<<< HEAD
+=======
+
+#include <QDialog>
+#include <QListView>
+#include <QPushButton>
+#include <QVBoxLayout>
+#include <QDebug>
+
+#include <QAbstractListModel>
+#include <QList>
+#include <nekobox/sys/Settings.h>
+
+class LanguageModel : public QAbstractListModel
+{
+    Q_OBJECT
+
+public:
+    LanguageModel(QObject *parent = nullptr)
+        : QAbstractListModel(parent) {}
+
+    int rowCount(const QModelIndex &parent = QModelIndex()) const override;
+
+
+    std::shared_ptr<LanguageValue> getLanguage(int index) const ;
+
+    QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
+
+private:
+    QList<std::shared_ptr<LanguageValue>> languageList = languageCodes(); // The list of shared pointers
+};
+
+class LanguageSelectionDialog : public QDialog
+{
+    Q_OBJECT
+
+public:
+    LanguageSelectionDialog(QWidget *parent = nullptr);
+
+    std::shared_ptr<LanguageValue> getSelectedLanguage() const ;
+
+private slots:
+    void onOkClicked();
+
+private:
+    QListView *languageListView;
+    LanguageModel *languageModel;
+    std::shared_ptr<LanguageValue> selectedLanguage;
+};
+
+
+
+>>>>>>> other-repo/main
 namespace Ui {
     class DialogBasicSettings;
 }
@@ -33,6 +86,10 @@ private:
     Ui::DialogBasicSettings *ui;
 
     struct {
+<<<<<<< HEAD
+=======
+        QString language_code;
+>>>>>>> other-repo/main
         QString custom_inbound;
         bool needRestart = false;
         bool updateDisableTray = false;

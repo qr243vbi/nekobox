@@ -39,7 +39,13 @@ void MainWindow::setup_rpc() {
         [=](const QString &errStr) {
             MW_show_log("[Error] Core: " + errStr);
         },
+<<<<<<< HEAD
         "127.0.0.1", Configs::dataStore->core_port);
+=======
+        Configs::dataStore->core_domain,
+        Configs::dataStore->core_port
+    );
+>>>>>>> other-repo/main
 
     // Looper
     runOnNewThread([=] { Stats::trafficLooper->Loop(); });
@@ -130,7 +136,11 @@ void MainWindow::runURLTest(const QString& config, bool useDefault, const QStrin
                     else {
                         ent->latencyInt = -1;
                         MW_show_log(tr("[%1] test error: %2").arg(
+<<<<<<< HEAD
                             ent->bean->DisplayTypeAndName(), error));
+=======
+                            ent->DisplayTypeAndName(), error));
+>>>>>>> other-repo/main
                     }
                 }
                 ent->Save();
@@ -176,7 +186,11 @@ void MainWindow::runURLTest(const QString& config, bool useDefault, const QStrin
             else {
                 ent->latencyInt = -1;
                 MW_show_log(tr("[%1] test error: %2").arg(
+<<<<<<< HEAD
                 ent->bean->DisplayTypeAndName(), error));
+=======
+                ent->DisplayTypeAndName(), error));
+>>>>>>> other-repo/main
             }
         }
         ent->Save();
@@ -363,7 +377,11 @@ void MainWindow::querySpeedtest(QDateTime lastProxyListUpdate, const QMap<QStrin
     runOnUiThread([=, this, &lastProxyListUpdate]
     {
         showSpeedtestData = true;
+<<<<<<< HEAD
         currentSptProfileName = profile->bean->name;
+=======
+        currentSptProfileName = profile->name;
+>>>>>>> other-repo/main
         auto result = currentTestResult = res->result;
         UpdateDataView();
 
@@ -510,7 +528,11 @@ void MainWindow::runSpeedTest(const QString& config, bool useDefault, bool testC
             ent->latencyInt = -1;
             ent->test_country = "";
             MW_show_log(tr("[%1] speed test error: %2").arg(
+<<<<<<< HEAD
                 ent->bean->DisplayTypeAndName(), QString::fromStdString(res.error)));
+=======
+                ent->DisplayTypeAndName(), QString::fromStdString(res.error)));
+>>>>>>> other-repo/main
         }
         ent->Save();
     }
@@ -667,9 +689,15 @@ void MainWindow::profile_start(int _id, bool do_not_test) {
         mutex->unlock();
         delete mutex;
         // do start
+<<<<<<< HEAD
         MW_show_log(">>>>>>>> " + tr("Starting profile %1").arg(ent->bean->DisplayTypeAndName()));
         if (!profile_start_stage2()) {
             MW_show_log("<<<<<<<< " + tr("Failed to start profile %1").arg(ent->bean->DisplayTypeAndName()));
+=======
+        MW_show_log(">>>>>>>> " + tr("Starting profile %1").arg(ent->DisplayTypeAndName()));
+        if (!profile_start_stage2()) {
+            MW_show_log("<<<<<<<< " + tr("Failed to start profile %1").arg(ent->DisplayTypeAndName()));
+>>>>>>> other-repo/main
         }
         mu_starting.unlock();
         if (!do_not_test) {
@@ -758,7 +786,11 @@ void MainWindow::profile_stop(bool crash, bool block, bool manual) {
 
     runOnNewThread([=, this, &blocker] {
         // do stop
+<<<<<<< HEAD
         MW_show_log(">>>>>>>> " + tr("Stopping profile %1").arg(running->bean->DisplayTypeAndName()));
+=======
+        MW_show_log(">>>>>>>> " + tr("Stopping profile %1").arg(running->DisplayTypeAndName()));
+>>>>>>> other-repo/main
         if (!profile_stop_stage2()) {
             MW_show_log("<<<<<<<< " + tr("Failed to stop, please restart the program."));
         }

@@ -25,11 +25,22 @@ void EditTrojanVLESS::onStart(std::shared_ptr<Configs::ProxyEntity> _ent) {
     ui->password->setText(bean->password);
     ui->flow->addItems(Preset::SingBox::Flows );
     ui->flow->setCurrentText(bean->flow);
+<<<<<<< HEAD
 }
 
 bool EditTrojanVLESS::onEnd() {
     auto bean = this->ent->TrojanVLESSBean();
     bean->password = ui->password->text();
     bean->flow = ui->flow->currentText();
+=======
+    bean.reset();
+}
+
+bool EditTrojanVLESS::onEnd() {
+    auto bean = ent->unlock(ent->TrojanVLESSBean());
+    bean->password = ui->password->text();
+    bean->flow = ui->flow->currentText();
+    bean.reset();
+>>>>>>> other-repo/main
     return true;
 }

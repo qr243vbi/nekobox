@@ -129,9 +129,35 @@ struct CacheURLResult{
   2: bool exists;
 }
 
+<<<<<<< HEAD
 service LibcoreService {
   CacheURLResult CacheHTTP(1: CacheURLRequest req),
 
+=======
+
+struct IPTestResp {
+  1: string outbound_tag;
+  2: string ip;
+  3: string country_code;
+  4: string error;
+}
+
+struct QueryIPTestResponse {
+  1: list<IPTestResp> results;
+}
+
+struct IPTestRequest {
+  1: string config;
+  2: list<string> outbound_tags;
+  3: bool use_default_outbound;
+  4: i32 max_concurrency;
+  5: i32 test_timeout_ms;
+}
+
+service LibcoreService {
+  CacheURLResult CacheHTTP(1: CacheURLRequest req),
+  QueryIPTestResponse IPTest(1: IPTestRequest req),
+>>>>>>> other-repo/main
   ErrorResp Start(1: LoadConfigReq req),
   ErrorResp Stop(1: EmptyReq req),
   ErrorResp CheckConfig(1: LoadConfigReq req),

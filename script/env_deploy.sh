@@ -1,3 +1,10 @@
+<<<<<<< HEAD
+=======
+
+if [[ "$NEKOBOX_ENV_DEPLOYED" != yes ]]; 
+then
+
+>>>>>>> other-repo/main
 if [[ ! -f core/server/sing-box/box.go && -d .git ]]
 then
   git submodule init ||:
@@ -9,3 +16,9 @@ DEPLOYMENT="${DEPLOYMENT:-$SRC_ROOT/deployment}"
 BUILD="${BUILD:-$SRC_ROOT/build}"
 version_standalone="nekobox-$INPUT_VERSION"
 archive_standalone="nekobox-unified-source-$INPUT_VERSION"
+<<<<<<< HEAD
+=======
+GOCMD="${GOCMD:-go}"
+
+fi
+>>>>>>> other-repo/main

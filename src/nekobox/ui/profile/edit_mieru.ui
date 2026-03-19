@@ -34,17 +34,28 @@
    <item row="1" column="1">
     <widget class="QLineEdit" name="password"/>
    </item>
+<<<<<<< HEAD
    <item row="4" column="0">
+=======
+   <item row="5" column="0">
+>>>>>>> other-repo/main
     <widget class="QLabel" name="port_range_l">
      <property name="text">
       <string>Port range</string>
      </property>
     </widget>
    </item>
+<<<<<<< HEAD
    <item row="4" column="1">
     <widget class="QTextEdit" name="port_range"/>
    </item>
    <item row="5" column="0" colspan="2">
+=======
+   <item row="5" column="1">
+    <widget class="QTextEdit" name="port_range"/>
+   </item>
+   <item row="6" column="0" colspan="2">
+>>>>>>> other-repo/main
     <widget class="QWidget" name="widget" native="true">
      <layout class="QGridLayout" name="gridLayout"/>
     </widget>
@@ -64,6 +75,7 @@
        <verstretch>0</verstretch>
       </sizepolicy>
      </property>
+<<<<<<< HEAD
      <item>
       <property name="text">
        <string notr="true">MULTIPLEXING_OFF</string>
@@ -84,6 +96,8 @@
        <string notr="true">MULTIPLEXING_HIGH</string>
       </property>
      </item>
+=======
+>>>>>>> other-repo/main
     </widget>
    </item>
    <item row="2" column="0">
@@ -94,6 +108,7 @@
     </widget>
    </item>
    <item row="2" column="1">
+<<<<<<< HEAD
     <widget class="QComboBox" name="transport">
      <item>
       <property name="text">
@@ -107,6 +122,20 @@
      </item>
     </widget>
    </item>
+=======
+    <widget class="QComboBox" name="transport"/>
+   </item>
+   <item row="4" column="0">
+    <widget class="QLabel" name="label_2">
+     <property name="text">
+      <string>Traffic Pattern</string>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="1">
+    <widget class="QLineEdit" name="traffic_pattern"/>
+   </item>
+>>>>>>> other-repo/main
   </layout>
  </widget>
  <resources/>
