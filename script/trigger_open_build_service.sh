@@ -25,7 +25,7 @@ pushd nekobox_temp
 
 pkgurl="$(echo ${source[0]} | sed "s@$pkgver@%{version}@g;" )"
 
-osc co home:juzbun:NekoBox/nekobox -o nekobox
+osc co home:qr243vbi/nekobox -o nekobox
 osc co network:vpn/nekobox -o nekobox_tumbleweed
 
 (
