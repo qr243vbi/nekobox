@@ -607,6 +607,7 @@
     <addaction name="actionRestart_Proxy"/>
     <addaction name="actionRestart_Program"/>
     <addaction name="menu_exit"/>
+    <addaction name="actionInformation"/>
    </widget>
    <widget class="QMenu" name="menu_preferences">
     <property name="title">
@@ -1168,6 +1169,11 @@
   <action name="actionSpeedtest_Current">
    <property name="text">
     <string>Speedtest Current</string>
+   </property>
+  </action>
+  <action name="actionInformation">
+   <property name="text">
+    <string>Information</string>
    </property>
   </action>
  </widget>

@@ -204,8 +204,8 @@ set(PROJECT_SOURCES
         src/ui/mainwindow.cpp
         ${NEKOBOX_INCLUDE}/ui/mainwindow.h
         ${NEKOBOX_INCLUDE}/ui/mainwindow.ui
+        ${NEKOBOX_INCLUDE}/ui/info/main.ui
         ${NEKOBOX_INCLUDE}/ui/profile/edit_shadowtls.ui
-
         ${NEKOBOX_INCLUDE}/ui/profile/dialog_edit_profile.h
         src/ui/profile/dialog_edit_profile.cpp
         ${NEKOBOX_INCLUDE}/ui/profile/dialog_edit_profile.ui
