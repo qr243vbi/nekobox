@@ -25,7 +25,7 @@ pushd nekobox_temp
 
 pkgurl="$(echo ${source[0]} | sed "s@$pkgver@%{version}@g;" )"
 
-osc co home:juzbun:NekoBox/nekobox -o nekobox
+osc co home:qr243vbi/nekobox -o nekobox
 osc co network:vpn/nekobox -o nekobox_tumbleweed
 
 (
@@ -40,7 +40,7 @@ cd nekobox_tumbleweed
 osc update
 rm !(nekobox.changes)
 
-wget https://codefloe.com/qr243vbi/nekobox/raw/branch/main/nekobox.spec
+wget https://gitea.com/qr243vbi/nekobox/raw/branch/main/nekobox.spec
 
 sed -i "s@Source0:.*@Source0: $pkgurl@g; s@Version:.*@Version: $pkgver@g;" nekobox.spec
 

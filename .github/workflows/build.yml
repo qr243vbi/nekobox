@@ -191,7 +191,7 @@ jobs:
         uses: actions/checkout@main
         with:
           ref: 'main'
-          submodules: 'false'
+          submodules: 'true'
       - name: Create requirements.txt
         shell: bash
         run: |
@@ -204,15 +204,18 @@ jobs:
       - name: Trigger Open Build Service and Copr
         shell: bash
         run: |
-          pip install osc
+          pip install osc copr
           export MESSAGE="$(echo -e "${{ github.event.inputs.text }}")"
           export SUBMIT_FACTORY=${{ github.event.inputs.publish_suse }}
           export OBS_USERNAME="${{ secrets.OBS_USER }}"
           export OBS_PASSWORD="${{ secrets.OBS_PASSWORD }}"
           export OBS_HOOK_TOKEN="${{ secrets.OBS_HOOK_TOKEN }}"
+          export COPR_LOGIN="${{ secrets.COPR_LOGIN }}"
+          export COPR_TOKEN="${{ secrets.COPR_TOKEN }}"
           export INPUT_VERSION="${{ github.event.inputs.tag }}"
           bash ./script/generate_pkgbuild.sh
           bash ./script/trigger_open_build_service.sh
+          python3 ./script/trigger_community_projects.py
 
       - name: Publish AUR package
         uses: KSXGitHub/github-actions-deploy-aur@v4.1.1
@@ -259,7 +262,7 @@ jobs:
         uses: actions/checkout@main
         with:
           ref: 'main'
-          submodules: "false"
+          submodules: "true"
 
       - name: Setup Ninja
         if: matrix.allow == 'true' && github.event.inputs.source_only != 'true'
@@ -377,7 +380,7 @@ jobs:
         uses: actions/checkout@main
         with:
           ref: 'main'
-          submodules: "false"
+          submodules: "true"
 
       - name: Download Artifacts
         if: matrix.allow == 'true' && github.event.inputs.source_only != 'true'
@@ -561,7 +564,7 @@ jobs:
         uses: actions/checkout@main
         with:
           ref: 'main'
-          submodules: "false"
+          submodules: "true"
       - name: Download Artifacts
         uses: actions/download-artifact@main
         with:

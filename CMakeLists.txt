@@ -7,7 +7,10 @@ set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-set(CMAKE_POLICY_DEFAULT_CMP0069 NEW)
+cmake_policy(SET CMP0069 NEW) #find package policy
+if(POLICY CMP0167)
+    cmake_policy(SET CMP0167 NEW) #boost config policy
+endif()
 set(CMAKE_CXX_EXTENSIONS OFF)
 
 if (UNIX)
@@ -51,22 +54,28 @@ list(APPEND CMAKE_FIND_ROOT_PATH ${CMAKE_PREFIX_PATH})
 message("[CMAKE_FIND_ROOT_PATH] ${CMAKE_FIND_ROOT_PATH}")
 
 #### NKR ####
+option(SKIP_UPDATE_BUTTON "Always hide update button" OFF)
+option(SKIP_JS_UPDATER "Skip JS update checker" OFF)
+option(USE_HOTKEYS "Skip JS update checker" ON)
 
 include("cmake/print.cmake")
 include("cmake/nkr.cmake")
-include("cmake/QHotkey.cmake")
 
 find_package(Threads)
-
-option(SKIP_UPDATE_BUTTON "Always hide update button" OFF)
-option(SKIP_JS_UPDATER "Skip JS update checker" OFF)
 
 if (NKR_PACKAGE)
     nkr_add_compile_definitions(NKR_CPP_USE_APPDATA)
 endif ()
 
 set(BUILD_SHARED_LIBS OFF)
-list(APPEND NKR_EXTERNAL_TARGETS qhotkey)
+
+if (USE_HOTKEYS)
+  set(QHOTKEY_INSTALL OFF CACHE BOOL "Disable install QHotkey library")
+  set(QHOTKEY_EXAMPLES ON CACHE BOOL "Enable compiling examples")
+  add_subdirectory("3rdparty/QHotkey")
+  nkr_add_compile_definitions(USE_HOTKEYS)
+  list(APPEND NKR_EXTERNAL_TARGETS qhotkey)
+endif()
 
 find_program(THRIFT_COMPILER thrift REQUIRED)
 set(THRIFT_FILE "${CMAKE_CURRENT_SOURCE_DIR}/core/server/gen/libcore.thrift")
@@ -195,8 +204,8 @@ set(PROJECT_SOURCES
         src/ui/mainwindow.cpp
         ${NEKOBOX_INCLUDE}/ui/mainwindow.h
         ${NEKOBOX_INCLUDE}/ui/mainwindow.ui
+        ${NEKOBOX_INCLUDE}/ui/info/main.ui
         ${NEKOBOX_INCLUDE}/ui/profile/edit_shadowtls.ui
-
         ${NEKOBOX_INCLUDE}/ui/profile/dialog_edit_profile.h
         src/ui/profile/dialog_edit_profile.cpp
         ${NEKOBOX_INCLUDE}/ui/profile/dialog_edit_profile.ui

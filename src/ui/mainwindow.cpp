@@ -77,7 +77,11 @@
 #endif
 #include "nekobox/global/DeviceDetailsHelper.hpp"
 #include "nekobox/sys/Settings.h"
-#include <3rdparty/QHotkey/qhotkey.h>
+
+#ifdef USE_HOTKEYS
+#include <3rdparty/QHotkey/QHotkey/qhotkey.h>
+#endif
+
 #include <3rdparty/qv2ray/v2/proxy/QvProxyConfigurator.hpp>
 #include <QDir>
 #include <QFileDialog>
@@ -3770,10 +3774,13 @@ inline QJsonArray last_arr; // format is nekoray_connections_json
 
 // Hotkey
 
+#ifdef USE_HOTKEYS
 inline QList<std::shared_ptr<QHotkey>> RegisteredHotkey;
+#endif
 
 void MainWindow::RegisterHotkey(bool unregister) {
-  while (!RegisteredHotkey.isEmpty()) {
+#ifdef USE_HOTKEYS
+    while (!RegisteredHotkey.isEmpty()) {
     auto hk = RegisteredHotkey.takeFirst();
     hk->deleteLater();
   }
@@ -3807,6 +3814,7 @@ void MainWindow::RegisterHotkey(bool unregister) {
       hk->deleteLater();
     }
   }
+#endif
 }
 
 void MainWindow::RegisterHiddenMenuShortcuts(QMenu *menu) {
