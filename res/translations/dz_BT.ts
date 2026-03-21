@@ -2454,6 +2454,11 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
         <source>About</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="539"/>
+        <source>NyameBox / NekoBox for PC</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MainWindow</name>
