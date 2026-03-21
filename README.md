@@ -164,4 +164,12 @@ They are located at the [ruleset](https://github.com/qr243vbi/ruleset/tree/route
 
 Use of this software is subject to the GPL-3 license.
 
-[![Star History Chart](https://api.star-history.com/svg?repos=qr243vbi/nekobox&type=Date)](https://www.star-history.com/#qr243vbi/nekobox&Date)
+## Star History
+
+<a href="https://www.star-history.com/?repos=qr243vbi%2Fnekobox&type=date&legend=top-left">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/image?repos=qr243vbi/nekobox&type=date&theme=dark&legend=top-left" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/image?repos=qr243vbi/nekobox&type=date&legend=top-left" />
+   <img alt="Star History Chart" src="https://api.star-history.com/image?repos=qr243vbi/nekobox&type=date&legend=top-left" />
+ </picture>
+</a>
