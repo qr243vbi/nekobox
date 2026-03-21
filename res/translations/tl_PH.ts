@@ -2352,85 +2352,133 @@ Para sa higit pang impormasyon, tingnan ang dokumentong &quot;Configuration/DNS&
         <translation type="unfinished">Mga Istatistika ng Paggamit</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="58"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="140"/>
         <source>Traffic Statistics</source>
         <translation type="unfinished">Istatistika ng Trapiko</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="70"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="214"/>
         <source>Total Proxy Traffic:</source>
         <translation type="unfinished">Kabuuang Trapiko ng Proxy:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="80"/>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="97"/>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="104"/>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="111"/>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="176"/>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="183"/>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="190"/>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="236"/>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="243"/>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="250"/>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="299"/>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="306"/>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="313"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="54"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="77"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="94"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="127"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="158"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="201"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="224"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="244"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="312"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="319"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="326"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="372"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="379"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="386"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="435"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="442"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="449"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="477"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="506"/>
         <source>TextLabel</source>
         <translation type="unfinished">TextLabel</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="87"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="165"/>
         <source>Total Direct Traffic:</source>
         <translation type="unfinished">Kabuuang Direktang Trapiko:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="124"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="465"/>
         <source>Security Statistics</source>
         <translation type="unfinished">Mga Istatistika ng Seguridad</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="134"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="270"/>
         <source>Profile Statistics</source>
         <translation type="unfinished">Mga Istatistika ng Profile</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="140"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="67"/>
+        <source>Usage time:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="84"/>
+        <source>Last launch time:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="101"/>
+        <source>First launch time:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="117"/>
+        <source>Start count:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="181"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="237"/>
+        <source>Download:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="194"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="257"/>
+        <source>Upload:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="276"/>
         <source>Proxy Profiles</source>
         <translation type="unfinished">Mga Proxy na Profile</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="146"/>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="216"/>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="279"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="282"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="352"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="415"/>
         <source>Deleted</source>
         <translation type="unfinished">Tinanggal</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="156"/>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="226"/>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="289"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="292"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="362"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="425"/>
         <source>Exists</source>
         <translation type="unfinished">Umiiral</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="166"/>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="206"/>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="269"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="302"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="342"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="405"/>
         <source>Created</source>
         <translation type="unfinished">Nilikha</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="200"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="336"/>
         <source>Groups and Subscriptions</source>
         <translation type="unfinished">Mga Grupo at Subscription</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="260"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="396"/>
         <source>Route Profiles</source>
         <translation type="unfinished">Mga Profile ng Ruta</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="327"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="490"/>
+        <source>Failed authentications count:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="519"/>
+        <source>Users count:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="533"/>
         <source>About</source>
         <translation type="unfinished">Tungkol sa</translation>
     </message>

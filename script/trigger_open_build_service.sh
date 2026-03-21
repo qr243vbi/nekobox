@@ -14,7 +14,7 @@ apiurl=https://api.opensuse.org
 [https://api.opensuse.org]
 user=${OBS_USERNAME}
 pass=${OBS_PASSWORD}
-credentials_mgr_class=osc.credentials.ObfuscatedConfigFileCredentialsManager
+credentials_mgr_class=osc.credentials.PlaintextConfigFileCredentialsManager
 EFO
 
 fi
