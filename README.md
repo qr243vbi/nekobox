@@ -6,7 +6,7 @@ Sing-Box command line mode is available now! Just type for additional informatio
 Qt based Desktop cross-platform GUI proxy utility, empowered by [Sing-box](https://github.com/SagerNet/sing-box)
 Supports Windows 11/10 (arm64, x86_64, x86) / Linux  out of the box.
 
-<img width="558" height="641" alt="image" src="https://github.com/user-attachments/assets/577b861a-ed17-4f1f-b3ae-340bb43ec3f1" />
+<img width="558" height="641" alt="image" src="https://raw.githubusercontent.com/qr243vbi/qr243vbi_images/refs/heads/nekobox/nekobox.png" />
 
 
 ### GitHub Releases (Portable ZIPs, Windows installers, [AppImages](https://github.com/qr243vbi/nekobox/discussions/41))
