@@ -12,6 +12,7 @@ namespace Configs {
 
     class Routing : public JsonStore {
     public:
+        DECLARE_STORE_TYPE(DefaultRoute)
         virtual ConfJsMap _map() override;
         int current_route_id = 0;
 
@@ -43,6 +44,7 @@ namespace Configs {
 
     class DataStore : public JsonStore {
     public:
+        DECLARE_STORE_TYPE(NekoBox)
         virtual ConfJsMap _map() override;
         // custom hardware info
         QString sub_custom_hwid_params = ""; 

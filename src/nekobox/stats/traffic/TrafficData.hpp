@@ -19,6 +19,9 @@ namespace Stats {
 
         long long last_update;
 
+
+        DECLARE_STORE_TYPE(NoSave)
+
         explicit TrafficData(std::string tag) {
             this->tag = std::move(tag);
         };

@@ -808,7 +808,7 @@ namespace Configs {
         for (const auto& item: other.Rules) {
             Rules.push_back(std::make_shared<RouteRule>(*item));
         }
-        fn = QString(other.fn);
+        //fn = QString(other.fn);
         defaultOutboundID = other.defaultOutboundID;
     }
 

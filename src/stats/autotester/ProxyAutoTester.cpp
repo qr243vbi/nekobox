@@ -161,7 +161,7 @@ void ProxyAutoTester::CheckActiveProxyHealth() {
 
         if (isHealthy) {
             activeProxyFailureCount = 0; // Reset failure count on success
-            proxy->is_working = true;
+            proxy->is_working = (true);
             proxy->last_auto_test_time = QDateTime::currentSecsSinceEpoch();
             proxy->Save();
         } else {
@@ -184,7 +184,7 @@ void ProxyAutoTester::HandleProxyFailure(int proxyId, int attemptCount) {
     // Mark proxy as not working
     auto proxy = Configs::profileManager->GetProfile(proxyId);
     if (proxy) {
-        proxy->is_working = false;
+        proxy->is_working = (false);
         proxy->Save();
     }
 
@@ -424,7 +424,7 @@ void ProxyAutoTester::performTest(const QList<int> &proxyIds) {
                                 && res.latency_ms < getLatencyThreshold();
 
                 // Update proxy status
-                proxy->is_working = isWorking;
+                proxy->is_working = (isWorking);
                 proxy->last_auto_test_time = currentTime;
 
                 if (isWorking) {

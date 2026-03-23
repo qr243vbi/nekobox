@@ -1963,8 +1963,7 @@ void MainWindow::prepare_exit() {
   //
   on_commitDataRequest();
   //
-  Configs::dataStore->save_control_no_save =
-      true; // don't change datastore after this line
+  Configs::dataStore->save_control_no_save(true); // don't change datastore after this line
   profile_stop(false, true);
 
   mu_exit.unlock();

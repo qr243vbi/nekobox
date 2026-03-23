@@ -50,8 +50,14 @@ namespace Configs {
         std::shared_ptr<Configs::AbstractBean> strong_bean;
         bool SavePrivate();
     public:
+
+        DECLARE_STORE_TYPE(Proxies)
         virtual ConfJsMap _map() override;
         virtual bool Save() override;
+        virtual int Id() override { return id; }
+
+        DECLARE_FLAG(same_path_for_bean, custom_flag2)
+    //    DECLARE_FLAG(bean_path_not_defined, custom_flag)
 
         bool isValid() const;
 
@@ -65,9 +71,9 @@ namespace Configs {
         int gid = 0;
         int latencyInt = 0;
         int latencyOrder = 0;
-
         bool is_working = false;
-        QString bean_cfg;
+
+//        QString bean_cfg;
         QString dl_speed;
         QString ul_speed;
         QString test_country;
@@ -86,7 +92,7 @@ namespace Configs {
             auto ret = this->weak_bean.lock();
             if ((void*)ret.get() == (void*)bean.get()){
                 if (ret != nullptr){
-                    ret->save_control_no_save = false;
+                    ret->save_control_no_save(false);
                 }
                 return std::static_pointer_cast<A>(ret);
             }

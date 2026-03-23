@@ -7,6 +7,8 @@ namespace Configs
 {
     class Group : public JsonStore {
     public:
+
+        DECLARE_STORE_TYPE(Groups)
         int id = -1;
         bool archive = false;
         bool skip_auto_update = false;

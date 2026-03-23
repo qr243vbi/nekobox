@@ -18,6 +18,7 @@
 #include <memory>
 #include <utility>
 #include <nekobox/api/RPC.h>
+#include <QBuffer>
 #include <QVariantMap>
 #include <nekobox/js/version.h>
 #include <QCryptographicHash>
@@ -33,7 +34,81 @@
 #include <sys/stat.h>
 #endif
 
+
+namespace Configs {
+static QString getFileName(short type, long id){
+    switch(type){
+        case Profiles:
+        return "profiles.cfg";
+    }
+    return "";
+};
+
+static QString getPathName(short type){
+    return "";
+}
+
+bool FileDatabaseManager::Save(JsonStore * store) {
+    using Configs::JsonStoreType;
+    auto type = store->StoreType();
+    switch (type){
+        case Routes:
+        case Proxies:
+        case Groups:
+        case Beans:
+        case Shortcuts:
+        case ResourceManager:
+        case Profiles:
+        case NekoBox:
+        case DefaultRoute:
+    default:
+        break;
+    }
+    return true;
+}
+bool FileDatabaseManager::Load(JsonStore* store) {
+    using Configs::JsonStoreType;
+    auto type = store->StoreType();
+    switch (type){
+        case Routes:
+        case Proxies:
+        case Groups:
+        case Beans:
+        case Shortcuts:
+        case ResourceManager:
+        case Profiles:
+        case NekoBox:
+        case DefaultRoute:
+    default:
+        break;
+    }
+    return true;
+}
+
+QList<int> FileDatabaseManager::Query(char type) {
+    QList<int> result;
+    QDir dr(getPathName(type));
+    auto entryList = dr.entryList(QDir::Files);
+    for (auto e: entryList) {
+        e = e.toLower();
+        if (!e.endsWith(".cfg", Qt::CaseInsensitive)) continue;
+        e = e.remove(".cfg", Qt::CaseInsensitive);
+        bool ok;
+        auto id = e.toInt(&ok);
+        if (ok) {
+            result << id;
+        }
+    }
+    std::sort(result.begin(), result.end());
+    return result;
+}
+
+std::shared_ptr<DatabaseManager> databaseManager = std::make_shared<FileDatabaseManager>();
+}
+
 namespace Configs_ConfigItem {
+
+
          QString JsonStore::_name(void *p){
             for (auto & item: _map()){
                 if (item->getPtr(this) == p){
@@ -112,7 +187,7 @@ namespace Configs_ConfigItem {
 
         }
 
-        if (callback_after_load != nullptr) callback_after_load();
+//        if (callback_after_load != nullptr) callback_after_load();
     }
 
     void JsonStore::_setValue(const JsonStore * store, const void *p){
@@ -130,9 +205,9 @@ namespace Configs_ConfigItem {
         item->setNode(this, node);
     }
 
-    void JsonStore::FromJsonBytes(const QByteArray &data) {
+    void JsonStore::FromJsonBytes(const QByteArrayView &data) {
         QJsonParseError error{};
-        auto document = QJsonDocument::fromJson(data, &error);
+        auto document = QJsonDocument::fromJson(data.toByteArray(), &error);
 
         if (error.error != error.NoError) {
             #ifdef DEBUG_MODE
@@ -144,46 +219,39 @@ namespace Configs_ConfigItem {
         FromJson(document.object());
     }
 
-    bool JsonStore::Save() {
-        if (callback_before_save != nullptr) callback_before_save();
-        if (save_control_no_save) return false;
-
+    QByteArray JsonStore::content(){
         bool force_json_configs = Configs::ForceJsonConfigs;
 
-        auto save_content = 
-            (force_json_configs) ? this->ToJsonBytes() : this->ToBytes({}, true);
+        return (force_json_configs) ? this->ToJsonBytes() : this->ToBytes({}, true);
+    }
+
+
+    void JsonStore::content(const QByteArray & byteArray){
+        if (byteArray.size() > 7) {
+            QByteArray magic = byteArray.left(7);
+            if (magic == "NekoBox"){
+                QByteArrayView view(byteArray.constData(), 7);
+                FromBytes(view);
+            } else {
+                goto is_json;
+            };
+        } else {
+            is_json:
+            FromJsonBytes(byteArray);
+        }
+    }
+
+    bool JsonStore::Save() {
+    //    if (callback_before_save != nullptr) callback_before_save();
+        if (save_control_no_save()) return false;
         
-        WriteFile(fn, save_content);
-        return true;
+        return Configs::databaseManager->Save(this);
     }
 
     bool JsonStore::Load() {
-        QFile file(fn);
-
-        if (!file.exists()) {
-            return false;
-        }
-
-        bool ok = file.open(QIODevice::ReadOnly);
-        if (!ok) {
-            #ifdef DEBUG_MODE
-    //        if (load_control_must){
-                qDebug() << ("can not open config " + fn + "\n" + file.errorString());
-            #endif
-        } else {
-            auto last_save_content = file.read(7);
-            if (last_save_content == "NekoBox"){
-                last_save_content = file.readAll();
-                FromBytes(last_save_content);
-            } else {
-                last_save_content.append(file.readAll());
-                FromJsonBytes(last_save_content);
-            }
-        }
-  //      l2:
-        file.close();
-        return ok;
+        return Configs::databaseManager->Load(this);
     }
+
     JsonEnum& JsonEnum::set(int value){
 #ifdef DEBUG_MODE
             qDebug() << "ENUM IS SETTING" << value;

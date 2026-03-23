@@ -48,8 +48,9 @@ namespace Configs {
     };
 
     AbstractBean::~AbstractBean() {
+        bool save_control_no_save = this->save_control_no_save();
         #ifdef DEBUG_MODE
-            qDebug() << "DO NOT SAVE BEFORE BLOW" << save_control_no_save; 
+            qDebug() << "DO NOT SAVE BEFORE BLOW" << save_control_no_save;
         #endif
         if (!save_control_no_save && (this->entity != nullptr)){
             this->entity->Save();

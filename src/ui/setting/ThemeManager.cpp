@@ -13,7 +13,7 @@ QMap<QString, QString> & ThemeManager::getThemes(){
     static bool initialized = false;
     if (!initialized){
         initialized = true;
-        ReadFileText(":nekobox/qss/styles.list");
+    //    ReadFileText(":nekobox/qss/styles.list");
     }
     return map;
 }

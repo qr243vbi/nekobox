@@ -88,7 +88,7 @@ SETTINGS_VALUE(Chr)
 
 class WindowSettings : public SettingsStore {
 public:
-  std::unique_ptr<Shortcuts> shortcuts;
+  std::unique_ptr<class Shortcuts> shortcuts;
   QList<std::shared_ptr<SettingsValue>> &_map() override;
   QSettings settings() override;
   QString theme =

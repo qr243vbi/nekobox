@@ -16,7 +16,7 @@ namespace Configs {
     public:
         // JsonStore
         virtual ConfJsMap _map() override;
-
+        DECLARE_STORE_TYPE(Profiles)
         // order -> id
         QList<int> groupsTabOrder;
 
@@ -87,11 +87,14 @@ namespace Configs {
 
         [[nodiscard]] int NewRouteChainID() const;
 
-        static std::shared_ptr<ProxyEntity> LoadProxyEntity(const QString &jsonPath, const QString &beanPath);
+        static std::shared_ptr<ProxyEntity> LoadProxyEntity(
+            int id
+        //        const QString &jsonPath, const QString &beanPath
+        );
 
-        static std::shared_ptr<Group> LoadGroup(const QString &jsonPath);
+        static std::shared_ptr<Group> LoadGroup(int id);
 
-        static std::shared_ptr<RoutingChain> LoadRouteChain(const QString &jsonPath);
+        static std::shared_ptr<RoutingChain> LoadRouteChain(int id);
 
         void deleteProfile(int id);
     };

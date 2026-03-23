@@ -9,7 +9,7 @@ namespace Configs {
 
     ProfileManager *profileManager = new ProfileManager();
     
-    ProfileManager::ProfileManager() : JsonStore("profiles.cfg") {
+    ProfileManager::ProfileManager() : JsonStore() {
     }
 
     DECL_MAP(ProfileManager)
@@ -17,33 +17,15 @@ namespace Configs {
             groupsTabOrder, integerList);
     STOP_MAP
 
-    QList<int> filterIntJsonFile(const QString &path) {
-        QList<int> result;
-        QDir dr(path);
-        auto entryList = dr.entryList(QDir::Files);
-        for (auto e: entryList) {
-            e = e.toLower();
-            if (!e.endsWith(".cfg", Qt::CaseInsensitive)) continue;
-            e = e.remove(".cfg", Qt::CaseInsensitive);
-            bool ok;
-            auto id = e.toInt(&ok);
-            if (ok) {
-                result << id;
-            }
-        }
-        std::sort(result.begin(), result.end());
-        return result;
-    }
-
     void ProfileManager::LoadManager() {
         JsonStore::Load();
         //
         profiles = {};
         groups = {};
         routes = {};
-        profilesIdOrder = filterIntJsonFile("profiles");
-        groupsIdOrder = filterIntJsonFile("groups");
-        routesIdOrder = filterIntJsonFile("route_profiles");
+        profilesIdOrder = Configs::databaseManager->Query(Configs::JsonStoreType::Proxies);
+        groupsIdOrder = Configs::databaseManager->Query(Configs::JsonStoreType::Groups);
+        routesIdOrder = Configs::databaseManager->Query(Configs::JsonStoreType::Routes);
         // Load Proxys
         QList<int> delProfile;
         for (auto id: profilesIdOrder) {
@@ -51,8 +33,7 @@ namespace Configs {
                 qDebug() << "Load Profile With ID" << id;
             #endif
             auto ent = LoadProxyEntity(
-                QString("profiles/%1.cfg").arg(id),
-                QString("beans/%1.cfg").arg(id)
+                        id
             );
             // Corrupted profile?
             if (ent == nullptr || !ent->isValid()) {
@@ -71,7 +52,7 @@ namespace Configs {
         groupsTabOrder = {};
         auto needToCheckGroups = QSet<int>();
         for (auto id: groupsIdOrder) {
-            auto ent = LoadGroup(QString("groups/%1.cfg").arg(id));
+            auto ent = LoadGroup(id);
             // Corrupted group?
             if (ent->id != id) {
                 continue;
@@ -108,7 +89,7 @@ namespace Configs {
         }
         // Load Routing profiles
         for (auto id : routesIdOrder) {
-            auto route = LoadRouteChain(QString("route_profiles/%1.cfg").arg(id));
+            auto route = LoadRouteChain(id);
             if (route == nullptr) {
                 MW_show_log(QString("File route_profiles/%1.cfg is corrupted, consider delete it").arg(id));
                 continue;
@@ -135,22 +116,21 @@ namespace Configs {
         JsonStore::Save();
     }
 
-    bool ProxyEntity::isValid() const {
-        return Preset::SingBox::OutboundTypes.contains(this->type);
-    }
 
     std::shared_ptr<ProxyEntity> ProfileManager::LoadProxyEntity(
-            const QString &jsonPath,
-            const QString &beanPath
+        //    const QString &jsonPath,
+        //    const QString &beanPath
+            int id
         ) {
         // Load type
         auto ent = NewProxyEntity("");
-        ent->fn = jsonPath;
+        ent->id = id;
+     //   ent->fn = jsonPath;
         bool validType = ent->Load();
 
         if (!validType) {
             #ifdef DEBUG_MODE
-            qDebug() << "LOADING FAILED:" << jsonPath;
+            qDebug() << "LOADING FAILED:" << "profiles/" << id << ".cfg";
             #endif
             ent->type = "";
             return ent;
@@ -161,17 +141,16 @@ namespace Configs {
             #endif
             return ent;
         }
-        validType = (ent->fn != ent->bean_cfg);
+        validType = !ent->same_path_for_bean();
 #ifdef DEBUG_MODE
         qDebug() << "Migration Mode" << !validType;
 #endif
         std::shared_ptr<AbstractBean> bean;
         if (!validType){
             bean = ent->unlock(ent->bean());
-            bean->fn = jsonPath;
+            ent->same_path_for_bean(false);
             bean->Load();
         }
-        ent->bean_cfg = beanPath;
         if (!validType){
             bean->Save();
             ent->Save();
@@ -183,9 +162,10 @@ namespace Configs {
         return ent;
     }
 
-    std::shared_ptr<RoutingChain> ProfileManager::LoadRouteChain(const QString &jsonPath) {
+
+    std::shared_ptr<RoutingChain> ProfileManager::LoadRouteChain(int id) {
         auto routingChain = std::make_shared<RoutingChain>();
-        routingChain->fn = jsonPath;
+        routingChain->id = id;;
         if (!routingChain->Load()) {
             return nullptr;
         }
@@ -238,8 +218,6 @@ namespace Configs {
             group->AddProfile(id);
             profiles[id] = ent;
             profilesIdOrder.push_back(id);
-            ent->fn = QString("profiles/%1.cfg").arg(id);
-            ent->bean_cfg = QString("beans/%1.cfg").arg(id);
         }
         group->Save();
         runOnNewThread([=,this]
@@ -343,8 +321,8 @@ namespace Configs {
         runOnNewThread([=,this]
         {
            for (int id : deleted_ids) {
-            QFile(QString("profiles/%1.cfg").arg(id)).remove();
-            QFile(QString("beans/%1.cfg").arg(id)).remove();
+            Configs::databaseManager->Drop(Proxies, id);
+            Configs::databaseManager->Drop(Beans, id);
            }
         });
     }
@@ -377,9 +355,9 @@ namespace Configs {
     }
     // Group
 
-    std::shared_ptr<Group> ProfileManager::LoadGroup(const QString &jsonPath) {
+    std::shared_ptr<Group> ProfileManager::LoadGroup(int jsonPath) {
         auto ent = std::make_shared<Group>();
-        ent->fn = jsonPath;
+        ent->id = jsonPath;
         ent->Load();
         return ent;
     }
@@ -402,7 +380,6 @@ namespace Configs {
         groupsIdOrder.push_back(ent->id);
         groupsTabOrder.push_back(ent->id);
 
-        ent->fn = QString("groups/%1.cfg").arg(ent->id);
         ent->Save();
         return true;
     }
@@ -417,7 +394,7 @@ namespace Configs {
         groups.erase(gid);
         groupsIdOrder.removeAll(gid);
         groupsTabOrder.removeAll(gid);
-        QFile(QString("groups/%1.cfg").arg(gid)).remove();
+        Configs::databaseManager->Drop(Groups, gid);
     }
 
     std::shared_ptr<Group> ProfileManager::GetGroup(int id) {
@@ -446,7 +423,6 @@ namespace Configs {
         }
 
         chain->id = NewRouteChainID();
-        chain->fn = QString("route_profiles/%1.cfg").arg(chain->id);
         routes[chain->id] = chain;
         routesIdOrder.push_back(chain->id);
         chain->Save();
@@ -469,10 +445,10 @@ namespace Configs {
                 item->Save();
             }
         }
-        auto currFiles = filterIntJsonFile("route_profiles");
+        auto currFiles = Configs::databaseManager->Query(Configs::JsonStoreType::Routes);
         for (const auto &item: currFiles) { // clean up removed route profiles
             if (!routes.count(item)) {
-                QFile(QString("route_profiles/%1.cfg").arg(item)).remove();
+                Configs::databaseManager->Drop(Routes, item);
             }
         }
     }

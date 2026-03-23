@@ -16,10 +16,14 @@ namespace Configs {
         QString error;
     };
 
+
     class ProxyEntity;
 
     class AbstractBean : public JsonStore {
     public:
+
+        DECLARE_STORE_TYPE(Proxies)
+
         int version;
         virtual ConfJsMap _map() override;
 

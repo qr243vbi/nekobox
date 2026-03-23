@@ -43,11 +43,15 @@ namespace Configs
     qDebug()<<"Invalid Bean";
 #endif
         if (array == bean_key){
-            this->bean_cfg = this->fn;
+            this->same_path_for_bean(true);
             return true;
         }
         return false;
     };
+
+    bool ProxyEntity::isValid() const {
+        return Preset::SingBox::OutboundTypes.contains(this->type);
+    }
 
     void ProxyEntity::ResetBeans(){
         this->weak_bean.reset();
@@ -59,17 +63,14 @@ namespace Configs
     }
 
     bool ProxyEntity::SavePrivate() {
-        auto bean = this->weak_bean.lock();
+        std::shared_ptr<Configs::AbstractBean> bean = this->weak_bean.lock();
         if (bean != nullptr){
-            if (!this->bean_cfg.isEmpty()){
-                bean->save_control_no_save = this->save_control_no_save;
-                bean->fn = this->bean_cfg;
+                bean->save_control_no_save(this->save_control_no_save());
                 bean->Save();
                 #ifdef DEBUG_MODE
-                    qDebug() << "Save Bean Entity" << fn << "of type" << bean->type() << "and json" << bean->ToJson();
+                    qDebug() << "Save Bean Entity Id" << id << "of type" << bean->type() << "and json" << bean->ToJson();
                 #endif
                 this->strong_bean.reset();
-            }
         }
         return JsonStore::Save();
     }
@@ -145,14 +146,12 @@ namespace Configs
         std::shared_ptr<Configs::AbstractBean> ret(bean);
 #ifdef DEBUG_MODE
 qDebug() << "Type Unknown" << make_strong_bean;
-qDebug() << "Bean Path" << this->bean_cfg;
 #endif
 
         if (!make_strong_bean){
-            if (!this->bean_cfg.isEmpty()){
-                ret->fn = this->bean_cfg;
+            if (this->id > -1){
                 ret->Load();
-                ret->save_control_no_save = true;
+                ret->save_control_no_save(true);
             } else {
                 make_strong_bean = true;
             }
@@ -210,7 +209,7 @@ qDebug() << "Bean Path" << this->bean_cfg;
     ProxyEntity::~ProxyEntity() {
         this->strong_bean.reset();
         auto weak = this->weak_bean.lock();
-        if (!save_control_no_save && (weak != nullptr)){
+        if (!save_control_no_save() && (weak != nullptr)){
             SavePrivate();
             weak->entity = nullptr;
             weak.reset();

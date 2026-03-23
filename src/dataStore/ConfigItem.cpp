@@ -229,6 +229,8 @@ std::shared_ptr<configItem> Configs_ConfigItem::getConfigItem(int i) {
   }
 };
 
+int JsonStore::Id(){ return -1; };
+
 QByteArray JsonStore::ToBytes(const QStringList &without, bool header) const {
     QByteArray byteArray;
     QBuffer buffer(&byteArray); // Create a buffer to write to QByteArray
@@ -273,8 +275,8 @@ bool JsonStore::UnknownKeyHash(const QByteArray &data){
     return false;
 }
 
-void JsonStore::FromBytes(const QByteArray &data) {
-  QDataStream stream(data);
+void JsonStore::FromBytes(const QByteArrayView &data) {
+  QDataStream stream(data.toByteArray());
   auto _map = this->_map();
   while (!stream.atEnd()) {
     QByteArray key;

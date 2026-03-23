@@ -22,7 +22,7 @@ DECL_MAP(ResourceManager)
     ADD_MAP("latest_path", latest_path, string);
 STOP_MAP
 
-ResourceManager::ResourceManager() : JsonStore("resource_manager.cfg") {
+ResourceManager::ResourceManager() : JsonStore() {
   symlinks_supported = true;
   //load_control_must = true;
   this->Load();
@@ -86,5 +86,5 @@ QString ResourceManager::getLink(QString str) {
 
 };
 
-  ResourceManager  * resourceManager = new Configs::ResourceManager();
+  class ResourceManager  * resourceManager = new class Configs::ResourceManager();
 } // namespace Configs

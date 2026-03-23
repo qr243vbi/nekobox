@@ -232,12 +232,13 @@ int main(int argc, char** argv) {
         return 1;
     }
 
-    
+
     dir_success &= isFileAppendable("nekobox.cfg");
     
     if (!dir_success){
         goto loop_back_2;
     }
+
 
     CHECK_STARTUP_ACCESS_M
 
@@ -262,7 +263,6 @@ int main(int argc, char** argv) {
     });
     
     // Load dataStore
-    Configs::dataStore->fn = "nekobox.cfg";
     auto isLoaded = Configs::dataStore->Load();
     if (!isLoaded) {
         Configs::dataStore->Save();
@@ -290,21 +290,21 @@ int main(int argc, char** argv) {
 
     // load routing and shortcuts
     Configs::dataStore->routing = std::make_unique<Configs::Routing>();
-    Configs::dataStore->routing->fn = "default_route_profile.cfg";
+   // Configs::dataStore->routing->fn = "default_route_profile.cfg";
     isLoaded = Configs::dataStore->routing->Load();
     if (!isLoaded) {
         Configs::dataStore->routing->Save();
     }
 
-    Configs::windowSettings->shortcuts = std::make_unique<Configs::Shortcuts>();
-    Configs::windowSettings->shortcuts->fn = "shortcuts.cfg";
-    isLoaded = QFile::exists("shortcuts.cfg");
-    if (isLoaded) {
+    Configs::windowSettings->shortcuts = std::make_unique<class Configs::Shortcuts>();
+  //  Configs::windowSettings->shortcuts->fn = "shortcuts.cfg";
+ //   isLoaded = QFile::exists("shortcuts.cfg");
+  //  if (isLoaded) {
         isLoaded = Configs::windowSettings->shortcuts->Load();
-    }
+  //  }
     if (Configs::windowSettings->shortcuts->legacy) {
         auto old = std::make_shared<Configs::ShortcutsOld>();
-        old->fn = Configs::windowSettings->shortcuts->fn;
+   //     old->fn = Configs::windowSettings->shortcuts->fn;
         old->Load();
         int size = old->shortcuts.size();
         Configs::windowSettings->shortcuts->legacy = false;
