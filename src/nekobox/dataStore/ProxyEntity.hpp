@@ -52,9 +52,9 @@ namespace Configs {
     public:
 
         DECLARE_STORE_TYPE(Proxies)
+        DECLARE_ID_RETURN
         virtual ConfJsMap _map() override;
         virtual bool Save() override;
-        virtual int Id() override { return id; }
 
         DECLARE_FLAG(same_path_for_bean, custom_flag2)
     //    DECLARE_FLAG(bean_path_not_defined, custom_flag)

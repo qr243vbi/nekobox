@@ -32,6 +32,10 @@ namespace Configs {
                             .toBase64(QByteArray::Base64UrlEncoding));
         return url.toString();
     }
+
+    int AbstractBean::Id() const {
+        return this->entity->id;
+    }
     
     #ifdef DEBUG_MODE
     QString AbstractBean::type()const {

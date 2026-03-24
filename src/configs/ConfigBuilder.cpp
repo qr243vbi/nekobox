@@ -106,7 +106,7 @@ namespace Configs {
     }
 
     QString getTunName() {
-        return "nb_" + GetRandomString(10, ExcludeUppercase | ExcludeDigits);
+        return "tun_" + GetRandomString(9, ExcludeUppercase | ExcludeDigits);
     }
 
     void MergeJson(const QJsonObject &custom, QJsonObject &outbound) {

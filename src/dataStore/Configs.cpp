@@ -35,76 +35,6 @@
 #endif
 
 
-namespace Configs {
-static QString getFileName(short type, long id){
-    switch(type){
-        case Profiles:
-        return "profiles.cfg";
-    }
-    return "";
-};
-
-static QString getPathName(short type){
-    return "";
-}
-
-bool FileDatabaseManager::Save(JsonStore * store) {
-    using Configs::JsonStoreType;
-    auto type = store->StoreType();
-    switch (type){
-        case Routes:
-        case Proxies:
-        case Groups:
-        case Beans:
-        case Shortcuts:
-        case ResourceManager:
-        case Profiles:
-        case NekoBox:
-        case DefaultRoute:
-    default:
-        break;
-    }
-    return true;
-}
-bool FileDatabaseManager::Load(JsonStore* store) {
-    using Configs::JsonStoreType;
-    auto type = store->StoreType();
-    switch (type){
-        case Routes:
-        case Proxies:
-        case Groups:
-        case Beans:
-        case Shortcuts:
-        case ResourceManager:
-        case Profiles:
-        case NekoBox:
-        case DefaultRoute:
-    default:
-        break;
-    }
-    return true;
-}
-
-QList<int> FileDatabaseManager::Query(char type) {
-    QList<int> result;
-    QDir dr(getPathName(type));
-    auto entryList = dr.entryList(QDir::Files);
-    for (auto e: entryList) {
-        e = e.toLower();
-        if (!e.endsWith(".cfg", Qt::CaseInsensitive)) continue;
-        e = e.remove(".cfg", Qt::CaseInsensitive);
-        bool ok;
-        auto id = e.toInt(&ok);
-        if (ok) {
-            result << id;
-        }
-    }
-    std::sort(result.begin(), result.end());
-    return result;
-}
-
-std::shared_ptr<DatabaseManager> databaseManager = std::make_shared<FileDatabaseManager>();
-}
 
 namespace Configs_ConfigItem {
 
@@ -241,14 +171,46 @@ namespace Configs_ConfigItem {
         }
     }
 
+    bool JsonStore::SaveToFile(const QString & file){
+        return WriteFile(file, content());
+    }
+
+    bool JsonStore::LoadFromFile(const QString & fn){
+        QFile file(fn);
+
+        if (!file.exists()) {
+            return false;
+        }
+        bool ok = file.open(QIODevice::ReadOnly);
+        if (!ok) {
+            #ifdef DEBUG_MODE
+    //        if (load_control_must){
+                qDebug() << ("can not open config " + fn + "\n" + file.errorString());
+            #endif
+        } else {
+            content(file.readAll());
+        }
+  //      l2:
+        file.close();
+        return ok;
+    }
+
     bool JsonStore::Save() {
     //    if (callback_before_save != nullptr) callback_before_save();
-        if (save_control_no_save()) return false;
+        if (save_control_no_save() || (this->StoreType() == Configs::JsonStoreType::NoSave)) {
+#ifdef DEBUG_MODE
+            qDebug() << "Store File Name Is" << Configs::getJsonStoreFileName(this->StoreType(), this->Id());
+#endif
+            return false;
+        }
         
         return Configs::databaseManager->Save(this);
     }
 
     bool JsonStore::Load() {
+        if (Configs::JsonStoreType::NoSave == this->StoreType()){
+            return false;
+        }
         return Configs::databaseManager->Load(this);
     }
 

@@ -33,6 +33,7 @@ bool X(bool flag){                                                    \
 }
 
 #define DECLARE_STORE_TYPE(X) virtual char StoreType() const override { return Configs::JsonStoreType::X; };
+#define DECLARE_ID_RETURN virtual int Id() const override { return id; };
 #define DECLARE_FLAG_SAME(X) DECLARE_FLAG(X, X)
 
 namespace Configs {
@@ -52,7 +53,7 @@ namespace Configs {
         Beans = 4,
         Shortcuts = 5,
         ResourceManager = 6,
-        Profiles = 7,
+        ProxyManager = 7,
         NekoBox = 8,
         DefaultRoute = 9,
         NoSave = 10
@@ -168,7 +169,7 @@ inline QDataStream &operator>>(QDataStream &in, Bin &p) {
         std::shared_ptr<configItem> _get_const_job(const QString &name) const;
     public:
         DECLARE_FLAG_SAME(save_control_no_save)
-        virtual int Id();
+        virtual int Id() const ;
 
         QByteArray content();
         void content(const QByteArray &array);
@@ -258,7 +259,11 @@ inline QDataStream &operator>>(QDataStream &in, Bin &p) {
         
         virtual bool Save();
 
+        virtual bool SaveToFile(const QString & file);
+
         virtual bool Load();
+
+        virtual bool LoadFromFile(const QString & file);
 
         virtual char StoreType() const = 0;
 
@@ -266,7 +271,7 @@ inline QDataStream &operator>>(QDataStream &in, Bin &p) {
 
 
     protected:
-        unsigned char flags;
+        unsigned char flags = 0;
         
     };
 

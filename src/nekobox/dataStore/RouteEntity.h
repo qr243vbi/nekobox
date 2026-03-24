@@ -132,6 +132,7 @@ namespace Configs {
     public:
 
         DECLARE_STORE_TYPE(Routes)
+        DECLARE_ID_RETURN
         int id = -1;
         QString chain_name = "";
         QString update_url = "";

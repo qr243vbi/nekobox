@@ -19,5 +19,7 @@ namespace Configs {
     bool isSetuidSet(const std::string& path);
 
     QString GetBasePath();
+    QString getJsonStoreFileName(short type, long id);
+    QString getJsonStorePathName(char type);
  //   bimap::bidirectional_map<std::string, int> map;
 } // namespace Configs

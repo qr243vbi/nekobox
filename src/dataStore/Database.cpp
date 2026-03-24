@@ -5,8 +5,121 @@
 #include <nekobox/configs/proxy/Preset.hpp>
 #include <QDir>
 
-namespace Configs {
 
+namespace Configs {
+ QString getJsonStoreFileName(short type, long id){
+    switch (type){
+        case Routes:
+        case Proxies:
+        case Groups:
+        case Beans:
+        break;
+        case Shortcuts:
+        return "shortcuts.cfg";
+        case ResourceManager:
+        return "resource_manager.cfg";
+        case ProxyManager:
+        return "profiles.cfg";
+        case NekoBox:
+        return "nekobox.cfg";
+        case DefaultRoute:
+        return "default_route_profile.cfg";
+    default:
+        return "";
+    }
+    {
+        QString str;
+        if (id < 0) return "";
+        switch (type){
+            case Routes:
+            str = "route_profiles/%1.cfg";
+            break;
+            case Proxies:
+            str = "profiles/%1.cfg";
+            break;
+            case Groups:
+            str = "groups/%1.cfg";
+            break;
+            case Beans:
+            str = "beans/%1.cfg";
+            break;
+        }
+        return str.arg(id);
+    }
+};
+
+ QString getJsonStorePathName(char type){
+    switch (type){
+        case Routes:
+        return "route_profiles";
+        case Proxies:
+        return "profiles";
+        case Groups:
+        return "groups";
+        case Beans:
+        return "beans";
+    default:
+        return "";
+    }
+}
+
+bool FileDatabaseManager::Save(JsonStore * store) {
+    auto type = store->StoreType();
+    auto id = store->Id();
+    auto path = getJsonStoreFileName(type, id);
+    if (path == ""){
+        return false;
+    }
+    return store->SaveToFile(path);
+}
+bool FileDatabaseManager::Load(JsonStore* store) {
+    auto type = store->StoreType();
+    auto id = store->Id();
+    auto path = getJsonStoreFileName(type, id);
+    if (path == ""){
+        return false;
+    }
+    return store->LoadFromFile(path);
+}
+
+bool FileDatabaseManager::Drop(char chr, int id){
+    QString fn = getJsonStorePathName(chr);
+    if (fn != ""){
+        QFile file(fn +
+              QDir::separator() +
+              QString::number(id) + ".cfg");
+        return file.remove();
+    }
+    return false;
+}
+
+QList<int> FileDatabaseManager::Query(char type) {
+    QList<int> result;
+    QString fn = getJsonStorePathName(type);
+    if (fn == ""){
+        return result;
+    }
+    QDir dr(fn);
+    auto entryList = dr.entryList(QDir::Files);
+    for (auto e: entryList) {
+        e = e.toLower();
+        if (!e.endsWith(".cfg", Qt::CaseInsensitive)) continue;
+        e = e.remove(".cfg", Qt::CaseInsensitive);
+        bool ok;
+        auto id = e.toInt(&ok);
+        if (ok) {
+            result << id;
+        }
+    }
+    std::sort(result.begin(), result.end());
+    return result;
+}
+
+std::shared_ptr<DatabaseManager> databaseManager = std::make_shared<FileDatabaseManager>();
+}
+
+
+namespace Configs {
     ProfileManager *profileManager = new ProfileManager();
     
     ProfileManager::ProfileManager() : JsonStore() {

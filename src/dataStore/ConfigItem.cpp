@@ -229,7 +229,7 @@ std::shared_ptr<configItem> Configs_ConfigItem::getConfigItem(int i) {
   }
 };
 
-int JsonStore::Id(){ return -1; };
+int JsonStore::Id() const { return 0; };
 
 QByteArray JsonStore::ToBytes(const QStringList &without, bool header) const {
     QByteArray byteArray;

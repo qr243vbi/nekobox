@@ -9,6 +9,7 @@ namespace Configs
     public:
 
         DECLARE_STORE_TYPE(Groups)
+        DECLARE_ID_RETURN
         int id = -1;
         bool archive = false;
         bool skip_auto_update = false;
