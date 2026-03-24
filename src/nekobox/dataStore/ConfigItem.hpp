@@ -39,10 +39,11 @@ bool X(bool flag){                                                    \
 namespace Configs {
     namespace JsonStoreFlags{
         const unsigned char
-            save_control_no_save = 0b00000001,
-            is_working           = 0b00000010,
-            custom_flag2         = 0b01000000,
-            custom_flag          = 0b10000000;
+            save_control_no_save  = 0b00000001,
+            is_working            = 0b00000010,
+            force_readable_config = 0b00000100,
+            custom_flag2          = 0b01000000,
+            custom_flag           = 0b10000000;
 
     };
 
@@ -169,6 +170,7 @@ inline QDataStream &operator>>(QDataStream &in, Bin &p) {
         std::shared_ptr<configItem> _get_const_job(const QString &name) const;
     public:
         DECLARE_FLAG_SAME(save_control_no_save)
+        DECLARE_FLAG_SAME(force_readable_config)
         virtual int Id() const ;
 
         QByteArray content();
@@ -293,9 +295,13 @@ public:
 
 class FileDatabaseManager: public DatabaseManager {
 public:
-    bool Save(JsonStore *) override;
-    bool Load(JsonStore *) override;
+    virtual bool Save(JsonStore *) override;
+    virtual bool Load(JsonStore *) override;
     virtual bool Drop(char, int) override;
+
+    static bool SaveToFile(JsonStore *) ;
+    static bool LoadFromFile(JsonStore *) ;
+    static bool DropFromDirectory(char, int) ;
     virtual QList<int> Query(char type) override;
 
 };

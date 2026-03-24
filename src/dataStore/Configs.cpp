@@ -150,7 +150,7 @@ namespace Configs_ConfigItem {
     }
 
     QByteArray JsonStore::content(){
-        bool force_json_configs = Configs::ForceJsonConfigs;
+        bool force_json_configs = Configs::ForceJsonConfigs || this->force_readable_config();
 
         return (force_json_configs) ? this->ToJsonBytes() : this->ToBytes({}, true);
     }
@@ -203,13 +203,21 @@ namespace Configs_ConfigItem {
 #endif
             return false;
         }
-        
-        return Configs::databaseManager->Save(this);
+        if (!force_readable_config()){
+            return Configs::databaseManager->Save(this);
+        } else {
+            return Configs::FileDatabaseManager::SaveToFile(this);
+        }
     }
 
     bool JsonStore::Load() {
         if (Configs::JsonStoreType::NoSave == this->StoreType()){
             return false;
+        }
+        if (force_readable_config()){
+            if (Configs::FileDatabaseManager::LoadFromFile(this)){
+                return true;
+            }
         }
         return Configs::databaseManager->Load(this);
     }

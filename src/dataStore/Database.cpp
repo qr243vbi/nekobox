@@ -63,7 +63,17 @@ namespace Configs {
     }
 }
 
-bool FileDatabaseManager::Save(JsonStore * store) {
+ bool FileDatabaseManager::Save(JsonStore* store){
+     return SaveToFile(store);
+ }
+ bool FileDatabaseManager::Load(JsonStore* store){
+     return LoadFromFile(store);
+ }
+ bool FileDatabaseManager::Drop(char chr, int id){
+     return DropFromDirectory(chr, id);
+ }
+
+bool FileDatabaseManager::SaveToFile(JsonStore * store) {
     auto type = store->StoreType();
     auto id = store->Id();
     auto path = getJsonStoreFileName(type, id);
@@ -72,7 +82,7 @@ bool FileDatabaseManager::Save(JsonStore * store) {
     }
     return store->SaveToFile(path);
 }
-bool FileDatabaseManager::Load(JsonStore* store) {
+bool FileDatabaseManager::LoadFromFile(JsonStore* store) {
     auto type = store->StoreType();
     auto id = store->Id();
     auto path = getJsonStoreFileName(type, id);
@@ -82,7 +92,7 @@ bool FileDatabaseManager::Load(JsonStore* store) {
     return store->LoadFromFile(path);
 }
 
-bool FileDatabaseManager::Drop(char chr, int id){
+bool FileDatabaseManager::DropFromDirectory(char chr, int id){
     QString fn = getJsonStorePathName(chr);
     if (fn != ""){
         QFile file(fn +
