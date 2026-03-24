@@ -10,7 +10,9 @@
 #include <nekobox/configs/proxy/ExtraCore.h>
 
 namespace Configs {
-    class SocksHttpBean;
+    class HTTPBean;
+
+    class SocksBean;
 
     class ShadowSocksBean;
 
@@ -115,12 +117,12 @@ namespace Configs {
 
    //     [[nodiscard]] QColor DisplayLatencyColor() const;
 
-        #define SocksHTTPBean SocksHttpBean
         #define cast_func(X)         \
         [[nodiscard]] std::shared_ptr<const Configs::X##Bean> X##Bean() const;
 
         cast_func(Chain)
-        cast_func(SocksHttp)
+        cast_func(Socks)
+        cast_func(HTTP)
         cast_func(ShadowSocks)
         cast_func(VMess)
         cast_func(TrojanVLESS)

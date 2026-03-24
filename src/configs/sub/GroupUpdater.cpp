@@ -149,14 +149,14 @@ namespace Subscription {
         if (str.startsWith("socks5://") || str.startsWith("socks4://") ||
             str.startsWith("socks4a://") || str.startsWith("socks://")) {
             ent = Configs::ProfileManager::NewProxyEntity("socks");
-            auto ok = ent->unlock(ent->SocksHTTPBean())->TryParseLink(str);
+            auto ok = ent->unlock(ent->SocksBean())->TryParseLink(str);
             if (!ok) return;
         }
 
         // HTTP
         if (str.startsWith("http://") || str.startsWith("https://")) {
             ent = Configs::ProfileManager::NewProxyEntity("http");
-            auto ok = ent->unlock(ent->SocksHTTPBean())->TryParseLink(str);
+            auto ok = ent->unlock(ent->HTTPBean())->TryParseLink(str);
             if (!ok) return;
         }
 

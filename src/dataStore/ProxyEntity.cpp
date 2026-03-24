@@ -98,11 +98,11 @@ namespace Configs
         if (type == ""){
           goto unknown_type;
         cast(socks)
-            bean = new Configs::SocksHttpBean(ent, Configs::SocksHttpBean::type_Socks5);
+            bean = new Configs::SocksBean(ent, Configs::SocksBean::type_Socks5);
         cast(mieru)
             bean = new Configs::MieruBean(ent);  
         cast(http)
-            bean = new Configs::SocksHttpBean(ent, Configs::SocksHttpBean::type_HTTP);
+            bean = new Configs::HttpBean(ent);
         cast(shadowsocks)
             bean = new Configs::ShadowSocksBean(ent);
         cast(chain)
