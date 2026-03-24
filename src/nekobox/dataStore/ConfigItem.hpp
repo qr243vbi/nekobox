@@ -40,8 +40,7 @@ namespace Configs {
     namespace JsonStoreFlags{
         const unsigned char
             save_control_no_save  = 0b00000001,
-            is_working            = 0b00000010,
-            force_readable_config = 0b00000100,
+            force_readable_config = 0b00000010,
             custom_flag2          = 0b01000000,
             custom_flag           = 0b10000000;
 

@@ -156,7 +156,8 @@ set(PROJECT_SOURCES
         ${NEKOBOX_INCLUDE}/configs/proxy/QUICBean.hpp
         ${NEKOBOX_INCLUDE}/configs/proxy/ShadowSocksBean.hpp
         ${NEKOBOX_INCLUDE}/configs/proxy/ShadowTLSBean.hpp
-        ${NEKOBOX_INCLUDE}/configs/proxy/SocksHttpBean.hpp
+        ${NEKOBOX_INCLUDE}/configs/proxy/HttpBean.hpp
+        ${NEKOBOX_INCLUDE}/configs/proxy/SocksBean.hpp
         ${NEKOBOX_INCLUDE}/configs/proxy/SSHBean.h
         ${NEKOBOX_INCLUDE}/configs/proxy/Tailscale.hpp
         ${NEKOBOX_INCLUDE}/configs/proxy/TrojanVLESSBean.hpp

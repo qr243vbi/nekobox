@@ -4,6 +4,12 @@
 #include "Preset.hpp"
 
 namespace Configs {
+
+INIT_ENUM(Network)
+    ADD_ENUM("udp", 1);
+    ADD_ENUM("tcp", 2);
+STOP_ENUM
+
     class V2rayStreamSettings : public JsonStore {
     public:
 
