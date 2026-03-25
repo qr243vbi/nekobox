@@ -196,6 +196,7 @@ jobs:
       - name: Create requirements.txt, add ssh key
         shell: bash
         run: |
+          mkdir -p ~/.ssh/
           echo osc copr > requirements.txt
           echo "${{ secrets.AUR_SSH_PRIVATE_KEY }}" > ~/.ssh/aur
           cat <<EOF >> ~/.ssh/config
@@ -204,7 +205,8 @@ jobs:
             IdentityFile ~/.ssh/aur
             HostName aur.archlinux.org
           EOF
-          chmod 600 ~/.ssh/config ~/.ssh/aur
+          chmod 600 ~/.ssh/config
+          chmod 600 ~/.ssh/aur
           git config --global user.email "${{ secrets.EMAIL }}
           git config --global user.name "${{ github.actor }}"
 
