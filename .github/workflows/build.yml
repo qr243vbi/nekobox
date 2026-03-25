@@ -160,10 +160,12 @@ jobs:
           env INPUT_VERSION=${{ github.event.inputs.tag }} bash -x ./script/deploy_vendor.sh
       - name: Publish sources
         if: matrix.cross_os == 'public' && github.event.inputs.publish == 'true'
+        env:
+          INPUT_VERSION: ${{ github.event.inputs.tag }}
+          MESSAGE: ${{ github.event.inputs.text }}
+          GH_TOKEN: ${{ secrets.UPLOAD_TOKEN }}
         run: |
-          export INPUT_VERSION="${{ github.event.inputs.tag }}"
-          export MESSAGE="$(echo -e "${{ github.event.inputs.text }}")"
-          export GH_TOKEN='${{ secrets.UPLOAD_TOKEN }}'
+          export MESSAGE="$(echo -e "${MESSAGE}")"
           if ! gh release view "${INPUT_VERSION}" >/dev/null 2>&1
           then
             gh release create "${INPUT_VERSION}" --title "${INPUT_VERSION}" --notes "${MESSAGE}"
@@ -215,17 +217,19 @@ jobs:
 
       - name: Trigger Open Build Service and Copr
         shell: bash
+        env:
+          MESSAGE: ${{ github.event.inputs.text }}
+          SUBMIT_FACTORY: ${{ github.event.inputs.publish_suse }}
+          OBS_USER: ${{ secrets.OBS_USER }}
+          EMAIL: ${{ secrets.EMAIL }}
+          USER: ${{ github.actor }}
+          OBS_PASSWORD: ${{ secrets.OBS_PASSWORD }}
+          COPR_LOGIN: ${{ secrets.COPR_LOGIN }}
+          COPR_TOKEN: ${{ secrets.COPR_TOKEN }}
+          INPUT_VERSION: ${{ github.event.inputs.tag }}
         run: |
-          pip install osc copr
-          export MESSAGE="$(echo -e "${{ github.event.inputs.text }}")"
-          export SUBMIT_FACTORY=${{ github.event.inputs.publish_suse }}
-          export OBS_USER="${{ secrets.OBS_USER }}"
-          export EMAIL="${{ secrets.EMAIL }}"
-          export USER="${{ github.actor }}"
-          export OBS_PASSWORD="${{ secrets.OBS_PASSWORD }}"
-          export COPR_LOGIN="${{ secrets.COPR_LOGIN }}"
-          export COPR_TOKEN="${{ secrets.COPR_TOKEN }}"
-          export INPUT_VERSION="${{ github.event.inputs.tag }}"
+          export MESSAGE="$(echo -e "${MESSAGE}")"
+          pip install copr
           bash ./script/generate_pkgbuild.sh
           bash ./script/trigger_open_build_service.sh
           python3 ./script/trigger_community_projects.py
@@ -430,18 +434,20 @@ jobs:
       - name: Linux - Generate MakeFile and Build
         if: matrix.allow == 'true' && github.event.inputs.source_only != 'true'
         shell: bash
+        env:
+          GUEST_ARCH: ${{ matrix.target }}
         run: |
-          echo 'UNAME=${{ matrix.target }}' >> .ENV
-          echo 'INPUT_VERSION=${{ github.event.inputs.tag }}' >> .ENV
-          export GUEST_ARCH=${{ matrix.target }}
+          echo "UNAME=${GUEST_ARCH}" >> .ENV
+          echo "INPUT_VERSION=${INPUT_VERSION}" >> .ENV
           docker compose up --force-recreate --build
 
       - name: Linux - Publish
         if: matrix.allow == 'true' && github.event.inputs.source_only != 'true' && github.event.inputs.publish  == 'true'
         shell: bash
+        env:
+          GH_TOKEN: ${{ secrets.UPLOAD_TOKEN }}
         run: |
-          export GH_TOKEN='${{ secrets.UPLOAD_TOKEN }}'
-          gh release upload '${{ github.event.inputs.tag }}' ./deployment/* --clobber
+          gh release upload '$INPUT_VERSION' ./deployment/* --clobber
 
       - name: Tar files
         if: matrix.allow == 'true' && github.event.inputs.source_only != 'true'
@@ -579,14 +585,14 @@ jobs:
           choco: zip curl jq
       - name: Pack
         shell: bash
+        env:
+          GITHUB_TOKEN: ${{ secrets.WINGET_TOKEN }}
+          INPUT_VERSION: ${{ github.event.inputs.tag }}
+          EMAIL: ${{ secrets.EMAIL }}
+          UPLOAD_WITH_GH: yes
+          CHOCOLATEY_API_KEY: ${{ secrets.CHOCOLATEY_API_KEY }}
+          GH_TOKEN: ${{ secrets.UPLOAD_TOKEN }}
         run: |
-          export GITHUB_TOKEN="${{ secrets.WINGET_TOKEN }}"
-          export INPUT_VERSION="${{ github.event.inputs.tag }}"
-          export EMAIL="${{ secrets.EMAIL }}"
-          export UPLOAD_WITH_GH=yes
-          export CHOCOLATEY_API_KEY="${{ secrets.CHOCOLATEY_API_KEY }}"
-          export GH_TOKEN='${{ secrets.UPLOAD_TOKEN }}'
-
           source script/env_deploy.sh
           find . -name artifacts.tgz | xargs -n1 tar xvzf
           ##
