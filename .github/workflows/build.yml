@@ -204,14 +204,15 @@ jobs:
           git config --global user.email "${{ secrets.EMAIL }}"
           git config --global user.name "${{ github.actor }}"
           mkdir -p "~/.ssh"
+          touch "~/.ssh/config"
+          touch "~/.ssh/known_hosts"
           echo "Host aur aur.archlinux.org"     >> "~/.ssh/config"
           echo "  IdentityFile ~/.ssh/aur"      >> "~/.ssh/config"
           echo "  User aur"                     >> "~/.ssh/config"
-          ssh-keyscan -v -t "rsa,dsa,ecdsa,ed25519" aur.archlinux.org >>~/.ssh/known_hosts
+          ssh-keyscan -v -t "rsa,dsa,ecdsa,ed25519" aur.archlinux.org >> ~/.ssh/known_hosts
           echo "$AUR_KEY" >~/.ssh/aur
-          ssh-keygen -vy -f ~/.ssh/aur >~/.ssh/aur.pub
+          ssh-keygen -vy -f ~/.ssh/aur > ~/.ssh/aur.pub
           chmod -vR 600 ~/.ssh/*
-
 
       - uses: actions/setup-python@v5
         with:
