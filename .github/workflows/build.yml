@@ -207,10 +207,10 @@ jobs:
           echo "Host aur aur.archlinux.org"     >> "~/.ssh/config"
           echo "  IdentityFile ~/.ssh/aur"      >> "~/.ssh/config"
           echo "  User aur"                     >> "~/.ssh/config"
-          chmod -vR 600 /home/builder/.ssh/*
           ssh-keyscan -v -t "rsa,dsa,ecdsa,ed25519" aur.archlinux.org >>~/.ssh/known_hosts
           echo "$AUR_KEY" >~/.ssh/aur
           ssh-keygen -vy -f ~/.ssh/aur >~/.ssh/aur.pub
+          chmod -vR 600 ~/.ssh/*
 
 
       - uses: actions/setup-python@v5
