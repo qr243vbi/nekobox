@@ -7,6 +7,46 @@
 
 namespace Configs {
 
+template<typename T>
+static void parse_authentication(T * t, QUrl & url){
+    auto username = url.userName();
+    auto password = url.password();
+    // v2rayN fmt
+    if (password.isEmpty() && !username.isEmpty()) {
+        QString n = DecodeB64IfValid(username);
+        if (!n.isEmpty()) {
+            username = SubStrBefore(n, ":");
+            password = SubStrAfter(n, ":");
+        }
+    }
+    t->username = username;
+    t->password = password;
+}
+
+static void parse_security(std::shared_ptr<V2rayStreamSettings> stream, QUrlQuery & query){
+    stream->security = "tls";
+    auto sni1 = GetQueryValue(query, "sni");
+    auto sni2 = GetQueryValue(query, "peer");
+    if (!sni1.isEmpty()) stream->sni = sni1;
+    if (!sni2.isEmpty()) stream->sni = sni2;
+    stream->alpn = GetQueryValue(query, "alpn");
+    stream->allow_insecure = !QStringList{"0", "false"}.contains(query.queryItemValue("insecure"));
+    auto ech_config = GetQueryValue(query, "ech_config");
+    if ((stream->enable_ech = (!ech_config.isEmpty()))){
+        stream->ech_config = ech_config;
+        stream->query_server_name = GetQueryValue(query, "query_server_name");
+    }
+
+    stream->reality_pbk = GetQueryValue(query, "pbk", "");
+    stream->reality_sid = GetQueryValue(query, "sid", "");
+    stream->utlsFingerprint = GetQueryValue(query, "fp", "");
+    if (query.queryItemValue("fragment") == "1") stream->enable_tls_fragment = true;
+    stream->tls_fragment_fallback_delay = query.queryItemValue("fragment_fallback_delay");
+    if (query.queryItemValue("record_fragment") == "1") stream->enable_tls_record_fragment = true;
+    if (stream->utlsFingerprint.isEmpty()) {
+        stream->utlsFingerprint = dataStore->utlsFingerprint;
+    }
+}
 
     static void deinitialize_url(QUrl & url, Configs::ProxyEntity * entity){
         entity->name = url.fragment(QUrl::FullyDecoded);
@@ -21,60 +61,37 @@ namespace Configs {
     if (hasRemarks) linkN += "#" + SubStrAfter(link, "#");                                                                      \
     auto url = QUrl("https://" + linkN);
 
-    bool SocksHttpBean::TryParseLink(const QString &link) {
+    bool SocksBean::TryParseLink(const QString &link) {
         auto url = QUrl(link);
         if (!url.isValid()) return false;
         auto query = GetQuery(url);
 
         if (link.startsWith("socks4")) socks_http_type = type_Socks4;
-        if (link.startsWith("http")) socks_http_type = type_HTTP;
         deinitialize_url(url, entity);
-        username = url.userName();
-        password = url.password();
-        if (entity->serverPort == -1) entity->serverPort = socks_http_type == type_HTTP ? 443 : 1080;
+        if (entity->serverPort == -1) entity->serverPort = 1080;
 
-        // v2rayN fmt
-        if (password.isEmpty() && !username.isEmpty()) {
-            QString n = DecodeB64IfValid(username);
-            if (!n.isEmpty()) {
-                username = SubStrBefore(n, ":");
-                password = SubStrAfter(n, ":");
-            }
-        }
-
-        stream->security = GetQueryValue(query, "security", "");
-        stream->sni = GetQueryValue(query, "sni");
-        if (link.startsWith("https")) stream->security = "tls";
+        parse_authentication(this, url);
+        *network = GetQueryValue(query, "network");
+        uot = GetQueryIntValue(query, "uot", GetQueryIntValue(query, "udp_over_tcp", 0));
 
         return !entity->serverAddress.isEmpty();
     }
 
-    static void parse_security(std::shared_ptr<V2rayStreamSettings> stream, QUrlQuery & query){
-        stream->security = "tls";
-        auto sni1 = GetQueryValue(query, "sni");
-        auto sni2 = GetQueryValue(query, "peer");
-        if (!sni1.isEmpty()) stream->sni = sni1;
-        if (!sni2.isEmpty()) stream->sni = sni2;
-        stream->alpn = GetQueryValue(query, "alpn");
-        stream->allow_insecure = !QStringList{"0", "false"}.contains(query.queryItemValue("insecure"));
-        auto ech_config = GetQueryValue(query, "ech_config");
-        if ((stream->enable_ech = (!ech_config.isEmpty()))){
-            stream->ech_config = ech_config;
-            stream->query_server_name = GetQueryValue(query, "query_server_name");
-        }
+    bool HttpBean::TryParseLink(const QString &link) {
+        auto url = QUrl(link);
+        if (!url.isValid()) return false;
+        auto query = GetQuery(url);
 
-        stream->reality_pbk = GetQueryValue(query, "pbk", "");
-        stream->reality_sid = GetQueryValue(query, "sid", "");
-        stream->utlsFingerprint = GetQueryValue(query, "fp", "");
-        if (query.queryItemValue("fragment") == "1") stream->enable_tls_fragment = true;
-        stream->tls_fragment_fallback_delay = query.queryItemValue("fragment_fallback_delay");
-        if (query.queryItemValue("record_fragment") == "1") stream->enable_tls_record_fragment = true;
-        if (stream->utlsFingerprint.isEmpty()) {
-            stream->utlsFingerprint = dataStore->utlsFingerprint;
-        }
+        deinitialize_url(url, entity);
+        if (entity->serverPort == -1) entity->serverPort = 443;
+        parse_authentication(this, url);
+        path = url.path();
+        headers = GetQueryMapValue(query, "headers");
+        if (link.startsWith("https")) {
+            parse_security(stream, query);
+        };
+        return !entity->serverAddress.isEmpty();
     }
-
-
 
     bool AnyTLSBean::TryParseLink(const QString &link) {
         auto url = QUrl(link);
@@ -544,8 +561,7 @@ namespace Configs {
         auto query = GetQuery(url);
         deinitialize_url(url, entity);
 
-        username = url.userName();
-        password = url.password();
+        parse_authentication(this, url);
 
         *quic_congestion_control = GetQueryValue(query, "quic_congestion_control");
         quic = (GetQueryValue(query, "quic").localeAwareCompare("true") == 0);
@@ -563,8 +579,8 @@ namespace Configs {
         auto query = GetQuery(url);
         deinitialize_url(url, entity);
 
-        username = url.userName();
-        password = url.password();
+        parse_authentication(this, url);
+
         *transport = query.queryItemValue("transport");
         traffic_pattern = GetQueryValue(query, "traffic_pattern");
         *multiplexing = query.queryItemValue("multiplexing");

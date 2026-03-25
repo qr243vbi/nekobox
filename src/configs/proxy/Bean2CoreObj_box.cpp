@@ -14,6 +14,27 @@ namespace Configs {
         }
     }
 
+    static QJsonValue udp_over_tcp_object(int version){
+        QJsonValue val;
+        if (version == 0){
+            val = false;
+        } else {
+            QJsonObject udp_over_tcp{
+                {"enabled", true},
+                {"version", version}
+            };
+        }
+        return val;
+    }
+
+
+    template<typename T>
+    static void add_non_empty(T & obj, const QString & key, const QVariantMap & value){
+        if (!value.isEmpty()){
+            obj[key] = QJsonObject::fromVariantMap(value);
+        }
+    }
+
     static QJsonObject getXmux(const QJsonValue & value){
         QJsonObject obj;
         for (auto [k, v]: asKeyValueRange(value.toObject().toVariantMap()) ){
@@ -201,37 +222,45 @@ namespace Configs {
         }
     }
 
-    CoreObjOutboundBuildResult SocksHttpBean::BuildCoreObjSingBox() const {
+CoreObjOutboundBuildResult SocksBean::BuildCoreObjSingBox() const {
+    CoreObjOutboundBuildResult result;
+
+    QJsonObject outbound;
+    outbound["type"] = "socks";
+    outbound["version"] = socks_http_type;
+    outbound["server"] = entity->serverAddress;
+    outbound["server_port"] = entity->serverPort;
+
+    if (!username.isEmpty() && !password.isEmpty()) {
+        outbound["username"] = username;
+        outbound["password"] = password;
+    }
+
+    outbound["network"] = *network;
+    outbound["udp_over_tcp"] = udp_over_tcp_object(uot);
+
+    result.outbound = outbound;
+    return result;
+}
+
+    CoreObjOutboundBuildResult HttpBean::BuildCoreObjSingBox() const {
         CoreObjOutboundBuildResult result;
 
         QJsonObject outbound;
-        outbound["type"] = socks_http_type == type_HTTP ? "http" : "socks";
-        if (socks_http_type == type_Socks4) outbound["version"] = "4";
+        outbound["type"] = "http";
         outbound["server"] = entity->serverAddress;
         outbound["server_port"] = entity->serverPort;
+        add_non_empty(outbound, "path", path);
 
         if (!username.isEmpty() && !password.isEmpty()) {
             outbound["username"] = username;
             outbound["password"] = password;
         }
+        add_non_empty(outbound, "headers", this->headers);
 
         stream->BuildStreamSettingsSingBox(&outbound);
         result.outbound = outbound;
         return result;
-    }
-
-
-    static QJsonValue udp_over_tcp_object(int version){
-        QJsonValue val;
-        if (version == 0){
-            val = false;
-        } else {
-            QJsonObject udp_over_tcp{
-                {"enabled", true},
-                {"version", version}
-            };
-        }
-        return val;
     }
 
     CoreObjOutboundBuildResult ShadowSocksBean::BuildCoreObjSingBox() const {

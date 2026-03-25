@@ -156,7 +156,7 @@ namespace Subscription {
         // HTTP
         if (str.startsWith("http://") || str.startsWith("https://")) {
             ent = Configs::ProfileManager::NewProxyEntity("http");
-            auto ok = ent->unlock(ent->HTTPBean())->TryParseLink(str);
+            auto ok = ent->unlock(ent->HttpBean())->TryParseLink(str);
             if (!ok) return;
         }
 
@@ -467,8 +467,13 @@ namespace Subscription {
                     auto smux = NodeChild(proxy, {"smux"});
                     if (!smux.is_null() && Node2Bool(smux["enabled"])) bean->mux_state = 1;
                     bean.reset();
-                } else if (type == "socks" || type == "http") {
-                    auto bean = ent->unlock(ent->SocksHTTPBean());
+                } else if (type == "socks") {
+                    auto bean = ent->unlock(ent->SocksBean());
+                    bean->username = Node2QString(proxy["username"]);
+                    bean->password = Node2QString(proxy["password"]);
+                    bean.reset();
+                } else if (type == "http") {
+                    auto bean = ent->unlock(ent->HttpBean());
                     bean->username = Node2QString(proxy["username"]);
                     bean->password = Node2QString(proxy["password"]);
                     if (type == "http" && Node2Bool(proxy["tls"])) {

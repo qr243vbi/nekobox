@@ -167,13 +167,25 @@ namespace Configs
         return !( entity->serverAddress.isEmpty() || method.isEmpty() || password.isEmpty());
     }
 
-    bool SocksHttpBean::TryParseJson(const QJsonObject& obj)
+    bool SocksBean::TryParseJson(const QJsonObject& obj)
     {
         
         initialize_entity(this->entity, obj);
-        socks_http_type = obj["type"] == "http" ? type_HTTP : type_Socks5;
+        this->socks_http_type = obj["version"].toInt(type_Socks5);
         username = obj["username"].toString();
         password = obj["password"].toString();
+        *network = obj["network"];
+        uot = parseUOT(obj);
+        return true;
+    }
+
+    bool HttpBean::TryParseJson(const QJsonObject& obj)
+    {
+        initialize_entity(this->entity, obj);
+        username = obj["username"].toString();
+        password = obj["password"].toString();
+        path = obj["path"].toString();
+        headers = obj["headers"].toObject().toVariantMap();
         parse_tls(stream, obj);
         return true;
     }

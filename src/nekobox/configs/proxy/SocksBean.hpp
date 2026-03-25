@@ -13,7 +13,7 @@ namespace Configs {
         int socks_http_type = type_Socks5;
         QString username = "";
         QString password = "";
-        std::shared_ptr<NetworkEnum> network ;
+        std::shared_ptr<NetworkEnum> network = std::make_shared<NetworkEnum>("tcp");
         int uot = 0;
 
 

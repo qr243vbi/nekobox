@@ -6,8 +6,7 @@
 namespace Configs {
 
 INIT_ENUM(Network)
-    ADD_ENUM("udp", 1);
-    ADD_ENUM("tcp", 2);
+    ADD_ENUM_LIST(Preset::SingBox::Network, 1);
 STOP_ENUM
 
     class V2rayStreamSettings : public JsonStore {

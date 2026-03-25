@@ -238,7 +238,8 @@ qDebug() << "Type Unknown" << make_strong_bean;
         };
 
         cast_func(Chain)
-        cast_func(SocksHttp)
+        cast_func(Http)
+        cast_func(Socks)
         cast_func(ShadowSocks)
         cast_func(VMess)
         cast_func(TrojanVLESS)

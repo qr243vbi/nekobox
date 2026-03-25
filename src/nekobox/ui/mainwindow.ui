@@ -607,7 +607,6 @@
     <addaction name="actionRestart_Proxy"/>
     <addaction name="actionRestart_Program"/>
     <addaction name="menu_exit"/>
-    <addaction name="actionInformation"/>
    </widget>
    <widget class="QMenu" name="menu_preferences">
     <property name="title">

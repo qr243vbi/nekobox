@@ -10,7 +10,7 @@
 #include <nekobox/configs/proxy/ExtraCore.h>
 
 namespace Configs {
-    class HTTPBean;
+    class HttpBean;
 
     class SocksBean;
 
@@ -122,7 +122,7 @@ namespace Configs {
 
         cast_func(Chain)
         cast_func(Socks)
-        cast_func(HTTP)
+        cast_func(Http)
         cast_func(ShadowSocks)
         cast_func(VMess)
         cast_func(TrojanVLESS)

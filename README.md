@@ -25,7 +25,8 @@ Supports Windows 11/10 (arm64, x86_64, x86) / Linux  out of the box.
 - [![WinGet Page](https://img.shields.io/winget/v/qr243vbi.NekoBox)](https://winget.ragerworks.com/package/qr243vbi.NekoBox)
 
 ### Aur package
-- [source](https://aur.archlinux.org/packages/nekobox)
+- [nekobox](https://aur.archlinux.org/packages/nekobox)
+- [nekobox-git](https://aur.archlinux.org/packages/nekobox-git)
 
 ### Chocolatey Package
 

@@ -26,22 +26,6 @@ namespace Configs {
         }
     }
 
-    QString SocksHttpBean::ToShareLink() const {
-        QUrl url;
-        initialize_url(url, this->entity);
-        if (socks_http_type == type_HTTP) { // http
-            if (stream->security == "tls") {
-                url.setScheme("https");
-            } else {
-                url.setScheme("http");
-            }
-        } else {
-            url.setScheme(QString("socks%1").arg(socks_http_type));
-        }
-        if (!username.isEmpty()) url.setUserName(username);
-        if (!password.isEmpty()) url.setPassword(password);
-        return url.toString(QUrl::FullyEncoded);
-    }
 
     static void add_security(std::shared_ptr<V2rayStreamSettings> stream, QUrlQuery & query){
         auto security = stream->security;
@@ -63,7 +47,42 @@ namespace Configs {
         if (security == "reality") {
             query.addQueryItem("pbk", stream->reality_pbk);
             add_query_nonempty("sid", query, stream->reality_sid);
-        }        
+        }
+    }
+
+    QString HttpBean::ToShareLink() const {
+        QUrl url;
+        QUrlQuery query;
+        initialize_url(url, this->entity);
+        { // http
+            if (stream->security == "tls") {
+                url.setScheme("https");
+            } else {
+                url.setScheme("http");
+            }
+        }
+        if (!username.isEmpty()) url.setUserName(username);
+        if (!password.isEmpty()) url.setPassword(password);
+        if (!path.isEmpty()) url.setPath(path);
+        add_query_map_nonempty("headers", query, headers);
+        add_security(stream, query);
+        url.setQuery(query);
+        return url.toString(QUrl::FullyEncoded);
+    }
+
+    QString SocksBean::ToShareLink() const {
+        QUrl url;
+        QUrlQuery query;
+        initialize_url(url, this->entity);
+        {
+            url.setScheme(QString("socks%1").arg(socks_http_type));
+        }
+        if (!username.isEmpty()) url.setUserName(username);
+        if (!password.isEmpty()) url.setPassword(password);
+        add_query_nonempty("network", query, *network);
+        add_query_int_range("uot", query, uot, 1, 2);
+        url.setQuery(query);
+        return url.toString(QUrl::FullyEncoded);
     }
 
     QString ShadowTLSBean::ToShareLink() const {
