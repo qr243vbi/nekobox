@@ -210,15 +210,10 @@ jobs:
           git config --global user.email "${{ secrets.EMAIL }}"
           git config --global user.name "${{ github.actor }}"
 
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.13'
-          cache: 'pip'
-
       - name: Linux - Install apt dependencies
         uses: awalsh128/cache-apt-pkgs-action@latest
         with:
-          packages: makepkg
+          packages: makepkg curl
           version: 1.0
 
       - name: Trigger Open Build Service and Copr
@@ -227,9 +222,10 @@ jobs:
           pip install osc copr
           export MESSAGE="$(echo -e "${{ github.event.inputs.text }}")"
           export SUBMIT_FACTORY=${{ github.event.inputs.publish_suse }}
-          export OBS_USERNAME="${{ secrets.OBS_USER }}"
+          export OBS_USER="${{ secrets.OBS_USER }}"
+          export EMAIL="${{ secrets.EMAIL }}"
+          export USER="${{ github.actor }}"
           export OBS_PASSWORD="${{ secrets.OBS_PASSWORD }}"
-          export OBS_HOOK_TOKEN="${{ secrets.OBS_HOOK_TOKEN }}"
           export COPR_LOGIN="${{ secrets.COPR_LOGIN }}"
           export COPR_TOKEN="${{ secrets.COPR_TOKEN }}"
           export INPUT_VERSION="${{ github.event.inputs.tag }}"
