@@ -197,7 +197,7 @@ jobs:
         shell: bash
         run: |
           mkdir -p ~/.ssh/
-          echo osc copr > requirements.txt
+          echo copr > requirements.txt
           echo "${{ secrets.AUR_SSH_PRIVATE_KEY }}" > ~/.ssh/aur
           cat <<EOF >> ~/.ssh/config
           Host aur.archlinux.org
@@ -209,6 +209,11 @@ jobs:
           chmod 600 ~/.ssh/aur
           git config --global user.email "${{ secrets.EMAIL }}"
           git config --global user.name "${{ github.actor }}"
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+          cache: 'pip'
 
       - name: Linux - Install apt dependencies
         uses: awalsh128/cache-apt-pkgs-action@latest
