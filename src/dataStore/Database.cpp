@@ -480,6 +480,9 @@ namespace Configs {
 
     std::shared_ptr<Group> ProfileManager::LoadGroup(int jsonPath) {
         auto ent = std::make_shared<Group>();
+#ifdef DEBUG_MODE
+        qDebug() << "Group Is: " << jsonPath;
+#endif
         ent->id = jsonPath;
         ent->Load();
         return ent;

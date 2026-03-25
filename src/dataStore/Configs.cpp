@@ -135,9 +135,9 @@ namespace Configs_ConfigItem {
         item->setNode(this, node);
     }
 
-    void JsonStore::FromJsonBytes(const QByteArrayView &data) {
+    void JsonStore::FromJsonBytes(const QByteArray &data) {
         QJsonParseError error{};
-        auto document = QJsonDocument::fromJson(data.toByteArray(), &error);
+        auto document = QJsonDocument::fromJson(data, &error);
 
         if (error.error != error.NoError) {
             #ifdef DEBUG_MODE
@@ -150,7 +150,7 @@ namespace Configs_ConfigItem {
     }
 
     QByteArray JsonStore::content(){
-        bool force_json_configs = Configs::ForceJsonConfigs || this->force_readable_config();
+        bool force_json_configs = Configs::ForceJsonConfigs ;
 
         return (force_json_configs) ? this->ToJsonBytes() : this->ToBytes({}, true);
     }
@@ -158,10 +158,12 @@ namespace Configs_ConfigItem {
 
     void JsonStore::content(const QByteArray & byteArray){
         if (byteArray.size() > 7) {
-            QByteArray magic = byteArray.left(7);
+            QByteArray magic = byteArray.first(7);
+#ifdef DEBUG_MODE
+            qDebug() << "magic is: " << magic << (magic == "NekoBox");
+#endif
             if (magic == "NekoBox"){
-                QByteArrayView view(byteArray.constData(), 7);
-                FromBytes(view);
+                FromBytes(byteArray.mid(7));
             } else {
                 goto is_json;
             };
@@ -203,21 +205,12 @@ namespace Configs_ConfigItem {
 #endif
             return false;
         }
-        if (!force_readable_config()){
-            return Configs::databaseManager->Save(this);
-        } else {
-            return Configs::FileDatabaseManager::SaveToFile(this);
-        }
+        return Configs::databaseManager->Save(this);
     }
 
     bool JsonStore::Load() {
         if (Configs::JsonStoreType::NoSave == this->StoreType()){
             return false;
-        }
-        if (force_readable_config()){
-            if (Configs::FileDatabaseManager::LoadFromFile(this)){
-                return true;
-            }
         }
         return Configs::databaseManager->Load(this);
     }

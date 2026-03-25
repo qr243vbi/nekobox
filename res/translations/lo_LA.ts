@@ -2010,19 +2010,59 @@ For more information, see the document "Configuration/DNS".</source>
 <context>
     <name>EditSocksHttp</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="20" />
+        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="128" />
         <source>Version</source>
         <translation type="unfinished">ຮຸ່ນ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="33" />
+        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="23" />
         <source>Username</source>
         <translation type="unfinished">ຊື່ຜູ້ໃຊ້</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="54" />
+        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="33" />
         <source>Password</source>
         <translation type="unfinished">ລະຫັດຜ່ານ</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="40" />
+        <source>Network</source>
+        <translation type="unfinished">ເຄືອຂ່າຍ</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="56" />
+        <source>Path</source>
+        <translation type="unfinished">ເສັ້ນທາງ</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="72" />
+        <source>Headers</source>
+        <translation type="unfinished">ສ່ວນຫົວ</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="83" />
+        <source>Off</source>
+        <translation type="unfinished">ປິດ</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="88" />
+        <source>1</source>
+        <translation type="unfinished">1</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="93" />
+        <source>2</source>
+        <translation type="unfinished">2</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="101" />
+        <source>Version of UDP over TCP protocol, server support is required.</source>
+        <translation type="unfinished">ເວີຊັນຂອງ UDP ໃນໄລຍະ TCP protocol, ການຮອງຮັບເຊີບເວີແມ່ນຕ້ອງການ.</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="104" />
+        <source>UoT</source>
+        <translation type="unfinished">UoT</translation>
     </message>
 </context>
 <context>
@@ -2498,7 +2538,7 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="51" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="54" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="625" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="624" />
         <source>Profiles</source>
         <translation type="unfinished">ໂປຣໄຟລ໌</translation>
     </message>
@@ -2533,8 +2573,8 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="161" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="594" />
-        <location filename="../../src/ui/mainwindow.cpp" line="2532" />
-        <location filename="../../src/ui/mainwindow.cpp" line="2535" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2531" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2534" />
         <source>System Proxy</source>
         <translation type="unfinished">ຕົວແທນລະບົບ</translation>
     </message>
@@ -2639,7 +2679,7 @@ For more information, see the document "Configuration/DNS".</source>
         <translation type="unfinished">ໂຄງການ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="614" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="613" />
         <source>Preferences</source>
         <translation type="unfinished">ຄວາມມັກ</translation>
     </message>
@@ -2648,7 +2688,7 @@ For more information, see the document "Configuration/DNS".</source>
         <translation type="obsolete">ເຊີບເວີ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="639" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="638" />
         <source>Share</source>
         <translation type="unfinished">ແບ່ງປັນ</translation>
     </message>
@@ -2658,268 +2698,268 @@ For more information, see the document "Configuration/DNS".</source>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="231" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="649" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="701" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="648" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="700" />
         <source>Test</source>
         <translation type="unfinished">ການທົດສອບ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="635" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="634" />
         <source>Current Selected</source>
         <translation type="unfinished">ເລືອກປະຈຸບັນ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="629" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="628" />
         <source>Current Group</source>
         <translation type="unfinished">ກຸ່ມປະຈຸບັນ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="684" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="683" />
         <source>Hidden menu</source>
         <translation type="unfinished">ເມນູທີ່ເຊື່ອງໄວ້</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="696" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="695" />
         <source>Routing Menu</source>
         <translation type="unfinished">ເມນູກຳນົດເສັ້ນທາງ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="708" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="707" />
         <source>Context</source>
         <translation type="unfinished">ບໍລິບົດ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="712" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="711" />
         <source>ContextProfiles</source>
         <translation type="unfinished">ContextProfiles</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="727" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="726" />
         <source>Exit</source>
         <translation type="unfinished">ອອກໄປ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="732" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="731" />
         <source>Toggle Window</source>
         <translation type="unfinished">ສະຫຼັບໜ້າຈໍ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="737" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="736" />
         <source>Basic Settings</source>
         <translation type="unfinished">ການຕັ້ງຄ່າພື້ນຖານ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="742" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="741" />
         <source>New profile</source>
         <translation type="unfinished">ໂປຣໄຟລ໌ໃໝ່</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="747" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="746" />
         <source>Groups</source>
         <translation type="unfinished">ກຸ່ມ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="752" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3600" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3610" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="751" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3599" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3609" />
         <source>Start</source>
         <translation type="unfinished">ເລີ່ມ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="760" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3599" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3610" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="759" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3598" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3609" />
         <source>Stop</source>
         <translation type="unfinished">ຢຸດ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="768" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="767" />
         <source>Edit</source>
         <translation type="unfinished">ແກ້ໄຂ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="776" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="775" />
         <source>Routing Settings</source>
         <translation type="unfinished">ການຕັ້ງຄ່າເສັ້ນທາງ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="781" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="780" />
         <source>Add profile from clipboard</source>
         <translation type="unfinished">ເພີ່ມໂປຣໄຟລ໌ຈາກຄລິບບອດ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="789" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="788" />
         <source>Delete</source>
         <translation type="unfinished">ລຶບ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="797" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="796" />
         <source>Debug Info</source>
         <translation type="unfinished">ຂໍ້ມູນດີບັກ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="802" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="801" />
         <source>QR Code and link</source>
         <translation type="unfinished">ລະຫັດ QR ແລະການເຊື່ອມຕໍ່</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="810" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="809" />
         <source>Copy Link</source>
         <translation type="unfinished">ສຳເນົາລິ້ງ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="831" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1072" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="830" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1071" />
         <source>Clear Test Result</source>
         <translation type="unfinished">ແຈ້ງຜົນການທົດສອບ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="839" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="838" />
         <location filename="../../src/ui/mainwindow.cpp" line="1441" />
         <source>Export %1 config</source>
         <translation type="unfinished">ສົ່ງອອກ %1 config</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="847" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="846" />
         <source>Reset Traffic</source>
         <translation type="unfinished">ຣີເຊັດການຈະລາຈອນ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="855" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="854" />
         <source>Scan QR Code</source>
         <translation type="unfinished">ສະແກນລະຫັດ QR</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="863" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="862" />
         <source>Enable System Proxy</source>
         <translation type="unfinished">ເປີດໃຊ້ System Proxy</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="871" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="870" />
         <source>Disable</source>
         <translation type="unfinished">ປິດໃຊ້ງານ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="876" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="875" />
         <source>Remove Duplicates</source>
         <translation type="unfinished">ເອົາສິ່ງທີ່ຊໍ້າກັນອອກ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="884" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="961" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="969" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="883" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="960" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="968" />
         <source>fake</source>
         <translation type="unfinished">ປອມ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="892" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1163" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="891" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1162" />
         <source>Move</source>
         <translation type="unfinished">ຍ້າຍ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="903" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="902" />
         <source>Start with system</source>
         <translation type="unfinished">ເລີ່ມຕົ້ນດ້ວຍລະບົບ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="911" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="910" />
         <source>Remember last profile</source>
         <translation type="unfinished">ຈື່ໂປຣໄຟລ໌ສຸດທ້າຍ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="919" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="918" />
         <source>Allow other devices to connect</source>
         <translation type="unfinished">ອະນຸຍາດໃຫ້ອຸປະກອນອື່ນເຊື່ອມຕໍ່</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="924" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="923" />
         <source>Remove Unavailable</source>
         <translation type="unfinished">ເອົາສິ່ງທີ່ບໍ່ສາມາດໃຊ້ໄດ້ອອກ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="932" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="931" />
         <source>Full Test</source>
         <translation type="unfinished">ການທົດສອບເຕັມ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="940" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="939" />
         <source>Hotkey Settings</source>
         <translation type="unfinished">ການຕັ້ງຄ່າ Hotkey</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="945" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="944" />
         <source>Select All</source>
         <translation type="unfinished">ເລືອກທັງໝົດ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="953" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="952" />
         <source>Copy Custom Links</source>
         <translation type="unfinished">ສຳເນົາລິ້ງທີ່ກຳນົດເອງ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="977" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="976" />
         <source>Copy links</source>
         <translation type="unfinished">ສຳເນົາລິ້ງ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1061" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1060" />
         <source>Url Test</source>
         <translation type="unfinished">ການທົດສອບ URL</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1094" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1093" />
         <source>Resolve Domain</source>
         <translation type="unfinished">ແກ້ໄຂໂດເມນ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1176" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1175" />
         <source>Information</source>
         <translation type="unfinished">ຂໍ້ມູນ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="988" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="987" />
         <source>Enable Tun</source>
         <translation type="unfinished">ເປີດໃຊ້ Tun</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="993" />
-        <location filename="../../src/ui/mainwindow.cpp" line="2919" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="992" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2918" />
         <source>Clone</source>
         <translation type="unfinished">ໂຄນ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1001" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1000" />
         <source>Update subscription</source>
         <translation type="unfinished">ອັບເດດການສະໝັກໃຊ້</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1012" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1011" />
         <source>Resolve domain</source>
         <translation type="unfinished">ແກ້ໄຂໂດເມນ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1020" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1019" />
         <source>Tun Settings</source>
         <translation type="unfinished">ການຕັ້ງຄ່າ Tun</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1025" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1024" />
         <source>Restart Program</source>
         <translation type="unfinished">ເລີ່ມໂຄງການຄືນໃໝ່</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1030" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1029" />
         <source>Open Config Folder</source>
         <translation type="unfinished">ເປີດ Folder Config</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1051" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1050" />
         <source>Restart Proxy</source>
         <translation type="unfinished">ຣີສະຕາດພຣັອກຊີ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1056" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1055" />
         <source>Stop Testing</source>
         <translation type="unfinished">ຢຸດການທົດສອບ</translation>
     </message>
@@ -2928,7 +2968,7 @@ For more information, see the document "Configuration/DNS".</source>
         <translation type="obsolete">Ctrl+Shift+S</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1083" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1082" />
         <source>Url Test Group</source>
         <translation type="unfinished">ກຸ່ມທົດສອບ Url</translation>
     </message>
@@ -2937,7 +2977,7 @@ For more information, see the document "Configuration/DNS".</source>
         <translation type="obsolete">Ctrl+Shift+G</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1102" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1101" />
         <source>Remove Invalid</source>
         <translation type="unfinished">ເອົາອອກບໍ່ຖືກຕ້ອງ</translation>
     </message>
@@ -2946,63 +2986,63 @@ For more information, see the document "Configuration/DNS".</source>
         <translation type="obsolete">Ctrl+Alt+I</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1171" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1170" />
         <source>Speedtest Current</source>
         <translation type="unfinished">Speedtest Current</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1113" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1112" />
         <source>Full test Selected</source>
         <translation type="unfinished">ເລືອກການທົດສອບເຕັມແລ້ວ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1118" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1117" />
         <source>Download test Selected</source>
         <translation type="unfinished">ດາວໂຫຼດການທົດສອບເລືອກ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1123" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1122" />
         <source>Upload test Selected</source>
         <translation type="unfinished">ເລືອກການທົດສອບການອັບໂຫລດ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1128" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1127" />
         <source>Country test Selected</source>
         <translation type="unfinished">ການທົດສອບປະເທດທີ່ເລືອກ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1133" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1132" />
         <source>Simple download test Selected</source>
         <translation type="unfinished">ການ​ທົດ​ສອບ​ການ​ດາວ​ໂຫຼດ​ງ່າຍ​ດາຍ​ເລືອກ​</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1138" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1137" />
         <source>Speedtest Group</source>
         <translation type="unfinished">ກຸ່ມ Speedtest</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1143" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1142" />
         <source>Hide window</source>
         <translation type="unfinished">ເຊື່ອງປ່ອງຢ້ຽມ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1148" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1147" />
         <source>Add profile from File</source>
         <translation type="unfinished">ເພີ່ມໂປຣໄຟລ໌ຈາກ File</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1153" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3629" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1152" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3628" />
         <source>Add new Group</source>
         <translation type="unfinished">ເພີ່ມກຸ່ມໃໝ່</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1158" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1157" />
         <source>Security Settings</source>
         <translation type="unfinished">ການຕັ້ງຄ່າຄວາມປອດໄພ</translation>
     </message>
     <message>
-        <location filename="../../src/dataStore/ProxyEntity.cpp" line="223" />
+        <location filename="../../src/dataStore/ProxyEntity.cpp" line="222" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="291" />
         <source>Unavailable</source>
         <translation type="unfinished">ບໍ່ສາມາດໃຊ້ໄດ້</translation>
@@ -3093,11 +3133,11 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1749" />
         <location filename="../../src/ui/mainwindow.cpp" line="1807" />
-        <location filename="../../src/ui/mainwindow.cpp" line="2973" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3344" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3398" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3447" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3677" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2972" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3343" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3397" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3446" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3676" />
         <source>Confirmation</source>
         <translation type="unfinished">ການຢືນຢັນ</translation>
     </message>
@@ -3123,103 +3163,103 @@ For more information, see the document "Configuration/DNS".</source>
         <translation type="unfinished">ນຳເຂົ້າ %1 ໂປຣໄຟລ໌ແລ້ວ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2090" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2089" />
         <source>User opted for no privilege req, some features may not work</source>
         <translation type="unfinished">ຜູ້​ໃຊ້​ເລືອກ​ທີ່​ບໍ່​ມີ req ສິດ​ທິ​ພິ​ເສດ​, ບາງ​ລັກ​ສະ​ນະ​ອາດ​ຈະ​ບໍ່​ເຮັດ​ວຽກ​</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2154" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2153" />
         <source>Please give the core root privileges</source>
         <translation type="unfinished">ກະລຸນາໃຫ້ສິດທິພື້ນຖານຫຼັກ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2508" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2507" />
         <source>Not Running</source>
         <translation type="unfinished">ບໍ່ແລ່ນ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2920" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2919" />
         <source>Clone %1 item(s)</source>
         <translation type="unfinished">Clone %1 ລາຍການ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2954" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2953" />
         <source> Confirmation </source>
         <translation type="unfinished">ການຢືນຢັນ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2955" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2954" />
         <source> Remove %1 item(s) ? </source>
         <translation type="unfinished">ລຶບ %1 ລາຍການອອກບໍ?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2974" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2973" />
         <source>Remove %1 item(s) ?</source>
         <translation type="unfinished">ລຶບ %1 ລາຍການອອກບໍ?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3011" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3024" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3010" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3023" />
         <source>Copied %1 item(s)</source>
         <translation type="unfinished">ສຳເນົາ %1 ລາຍການແລ້ວ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3256" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3255" />
         <source>QR Code not found</source>
         <translation type="unfinished">ບໍ່ພົບລະຫັດ QR</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3277" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3276" />
         <source>Unable to capture screen</source>
         <translation type="unfinished">ບໍ່ສາມາດບັນທຶກໜ້າຈໍໄດ້</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3345" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3344" />
         <source>Remove %1 Unavailable item(s) ?</source>
         <translation type="unfinished">ເອົາ %1 ລາຍການທີ່ບໍ່ສາມາດໃຊ້ໄດ້ອອກ ?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3399" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3398" />
         <source>Remove %1 Invalid item(s) ?</source>
         <translation type="unfinished">ເອົາ %1 ລາຍການທີ່ບໍ່ຖືກຕ້ອງອອກ ?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3448" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3447" />
         <source>Replace domain server addresses with their resolved IPs?</source>
         <translation type="unfinished">ແທນທີ່ທີ່ຢູ່ເຊີບເວີໂດເມນດ້ວຍ IP ທີ່ແກ້ໄຂແລ້ວບໍ?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3597" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3596" />
         <source>Clear</source>
         <translation type="unfinished">ຈະແຈ້ງ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3668" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3667" />
         <source>Delete selected Group</source>
         <translation type="unfinished">ລຶບກຸ່ມທີ່ເລືອກ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3669" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3668" />
         <source>Edit selected Group</source>
         <translation type="unfinished">ແກ້ໄຂກຸ່ມທີ່ເລືອກ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3678" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3677" />
         <source>Remove %1?</source>
         <translation type="unfinished">ລຶບ %1 ອອກບໍ?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4419" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4418" />
         <source>Cannot start</source>
         <translation type="unfinished">ບໍ່ສາມາດເລີ່ມຕົ້ນໄດ້</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4420" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4419" />
         <source>Last download request has not finished yet</source>
         <translation type="unfinished">ການຮ້ອງຂໍການດາວໂຫຼດຫຼ້າສຸດຍັງບໍ່ທັນສໍາເລັດເທື່ອ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4454" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4453" />
         <source>Failed to download update assets</source>
         <translation type="unfinished">ດາວໂຫຼດຊັບສິນອັບເດດບໍ່ສຳເລັດ</translation>
     </message>
@@ -3424,37 +3464,37 @@ For more information, see the document "Configuration/DNS".</source>
         <translation type="unfinished">ໂໝດ Tun ບໍ່ສາມາດໃຊ້ກັບການຕັ້ງຄ່າແບບກຳນົດເອງໄດ້</translation>
     </message>
     <message>
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="839" />
+        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="844" />
         <source>Requesting subscription: %1</source>
         <translation type="unfinished">ກຳລັງຮ້ອງຂໍການສະໝັກໃຊ້: %1</translation>
     </message>
     <message>
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="843" />
+        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="848" />
         <source>Requesting subscription %1 error: %2</source>
         <translation type="unfinished">ກຳລັງຮ້ອງຂໍການສະໝັກໃຊ້ %1 ຜິດພາດ: %2</translation>
     </message>
     <message>
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="850" />
+        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="855" />
         <source>Subscription request fininshed: %1</source>
         <translation type="unfinished">ຄຳຮ້ອງຂໍການສະໝັກສະມາຊິກສຳເລັດແລ້ວ: %1</translation>
     </message>
     <message>
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="868" />
+        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="873" />
         <source>Clearing servers...</source>
         <translation type="unfinished">ກຳລັງລຶບລ້າງເຊີບເວີ...</translation>
     </message>
     <message>
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="873" />
+        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="878" />
         <source>Processing subscription data...</source>
         <translation type="unfinished">ກຳລັງປະມວນຜົນຂໍ້ມູນການສະໝັກໃຊ້...</translation>
     </message>
     <message>
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="876" />
+        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="881" />
         <source>Process complete, applying...</source>
         <translation type="unfinished">ຂະ​ບວນ​ການ​ສໍາ​ເລັດ​, ການ​ນໍາ​ໃຊ້ ...</translation>
     </message>
     <message>
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="939" />
+        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="944" />
         <source>Added %1 profiles:
 %2
 Deleted %3 Profiles:
@@ -3465,17 +3505,17 @@ Deleted %3 Profiles:
 %4</translation>
     </message>
     <message>
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="944" />
+        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="949" />
         <source>Nothing</source>
         <translation type="unfinished">ບໍ່ມີຫຍັງ</translation>
     </message>
     <message>
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="947" />
+        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="952" />
         <source>Change of %1:</source>
         <translation type="unfinished">ການປ່ຽນແປງຂອງ %1:</translation>
     </message>
     <message>
-        <location filename="../../src/dataStore/Database.cpp" line="123" />
+        <location filename="../../src/dataStore/Database.cpp" line="227" />
         <source>Default</source>
         <translation type="unfinished">ຄ່າເລີ່ມຕົ້ນ</translation>
     </message>
@@ -3508,7 +3548,7 @@ Deleted %3 Profiles:
     </message>
     <message>
         <location filename="../../src/stats/traffic/TrafficLooper.cpp" line="115" />
-        <location filename="../../src/ui/mainwindow.cpp" line="2476" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2475" />
         <source>Proxy: %1
 Direct: %2</source>
         <translation type="unfinished">ຕົວແທນ: %1
@@ -3610,64 +3650,64 @@ Deleted %1 Unavailable</source>
         <translation type="unfinished">ການຮ້ອງຂໍຄວາມຜິດພາດລາຍຊື່ທີ່ຕັ້ງກົດລະບຽບ: %1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2513" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2512" />
         <source>IP address: %1</source>
         <translation type="unfinished">ທີ່ຢູ່ IP: %1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2899" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2898" />
         <source>Move profiles to group</source>
         <translation type="unfinished">ຍ້າຍໂປຣໄຟລ໌ໄປຫາກຸ່ມ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3042" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3041" />
         <source>Config copied</source>
         <translation type="unfinished">ສຳເນົາການຕັ້ງຄ່າແລ້ວ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3053" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3052" />
         <source>Copy core config</source>
         <translation type="unfinished">ສຳເນົາການຕັ້ງຄ່າຫຼັກ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3054" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3053" />
         <source>Copy test config</source>
         <translation type="unfinished">ສຳເນົາການຕັ້ງຄ່າການທົດສອບ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3055" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3054" />
         <location filename="../../src/ui/security_addon.cpp" line="21" />
         <location filename="../../src/ui/setting/dialog_vpn_settings.cpp" line="53" />
         <source>OK</source>
         <translation type="unfinished">ຕົກລົງ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4323" />
-        <location filename="../../src/ui/mainwindow.cpp" line="4334" />
-        <location filename="../../src/ui/mainwindow.cpp" line="4378" />
-        <location filename="../../src/ui/mainwindow.cpp" line="4401" />
-        <location filename="../../src/ui/mainwindow.cpp" line="4410" />
-        <location filename="../../src/ui/mainwindow.cpp" line="4445" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4322" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4333" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4377" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4400" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4409" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4444" />
         <source>Update</source>
         <translation type="unfinished">ອັບເດດ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4324" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4323" />
         <source>Not official support platform</source>
         <translation type="unfinished">ບໍ່ແມ່ນເວທີສະຫນັບສະຫນູນຢ່າງເປັນທາງການ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4335" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4334" />
         <source>Requesting update error: %1</source>
         <translation type="unfinished">ການຮ້ອງຂໍການອັບເດດຜິດພາດ: %1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4378" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4377" />
         <source>No update</source>
         <translation type="unfinished">ບໍ່ມີການປັບປຸງ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4402" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4401" />
         <source>Update found: %1
 Release note:
 %2</source>
@@ -3676,17 +3716,17 @@ Release note:
 %2</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4405" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4404" />
         <source>Close</source>
         <translation type="unfinished">ປິດ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4407" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4406" />
         <source>Open in browser</source>
         <translation type="unfinished">ເປີດໃນ browser</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4446" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4445" />
         <source>Update is ready, restart to install?</source>
         <translation type="unfinished">ການອັບເດດພ້ອມແລ້ວ, ຣີສະຕາດເພື່ອຕິດຕັ້ງບໍ?</translation>
     </message>

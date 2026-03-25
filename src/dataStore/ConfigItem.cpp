@@ -275,8 +275,8 @@ bool JsonStore::UnknownKeyHash(const QByteArray &data){
     return false;
 }
 
-void JsonStore::FromBytes(const QByteArrayView &data) {
-  QDataStream stream(data.toByteArray());
+void JsonStore::FromBytes(const QByteArray &data) {
+  QDataStream stream(data);
   auto _map = this->_map();
   while (!stream.atEnd()) {
     QByteArray key;

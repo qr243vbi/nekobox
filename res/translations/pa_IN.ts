@@ -2010,19 +2010,59 @@ For more information, see the document "Configuration/DNS".</source>
 <context>
     <name>EditSocksHttp</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="20" />
+        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="128" />
         <source>Version</source>
         <translation type="unfinished">ਸੰਸਕਰਣ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="33" />
+        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="23" />
         <source>Username</source>
         <translation type="unfinished">ਯੂਜ਼ਰਨੇਮ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="54" />
+        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="33" />
         <source>Password</source>
         <translation type="unfinished">ਪਾਸਵਰਡ</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="40" />
+        <source>Network</source>
+        <translation type="unfinished">ਨੈੱਟਵਰਕ</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="56" />
+        <source>Path</source>
+        <translation type="unfinished">ਮਾਰਗ</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="72" />
+        <source>Headers</source>
+        <translation type="unfinished">ਸਿਰਲੇਖ</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="83" />
+        <source>Off</source>
+        <translation type="unfinished">ਬੰਦ</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="88" />
+        <source>1</source>
+        <translation type="unfinished">1</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="93" />
+        <source>2</source>
+        <translation type="unfinished">2</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="101" />
+        <source>Version of UDP over TCP protocol, server support is required.</source>
+        <translation type="unfinished">TCP ਪ੍ਰੋਟੋਕੋਲ ਉੱਤੇ UDP ਦਾ ਸੰਸਕਰਣ, ਸਰਵਰ ਸਹਾਇਤਾ ਦੀ ਲੋੜ ਹੈ।</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="104" />
+        <source>UoT</source>
+        <translation type="unfinished">UoT</translation>
     </message>
 </context>
 <context>
@@ -2498,7 +2538,7 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="51" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="54" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="625" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="624" />
         <source>Profiles</source>
         <translation type="unfinished">ਪ੍ਰੋਫਾਈਲਾਂ</translation>
     </message>
@@ -2533,8 +2573,8 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="161" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="594" />
-        <location filename="../../src/ui/mainwindow.cpp" line="2532" />
-        <location filename="../../src/ui/mainwindow.cpp" line="2535" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2531" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2534" />
         <source>System Proxy</source>
         <translation type="unfinished">ਸਿਸਟਮ ਪਰਾਕਸੀ</translation>
     </message>
@@ -2639,7 +2679,7 @@ For more information, see the document "Configuration/DNS".</source>
         <translation type="unfinished">ਪ੍ਰੋਗਰਾਮ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="614" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="613" />
         <source>Preferences</source>
         <translation type="unfinished">ਤਰਜੀਹਾਂ</translation>
     </message>
@@ -2648,7 +2688,7 @@ For more information, see the document "Configuration/DNS".</source>
         <translation type="obsolete">ਸਰਵਰ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="639" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="638" />
         <source>Share</source>
         <translation type="unfinished">ਸ਼ੇਅਰ ਕਰੋ</translation>
     </message>
@@ -2658,222 +2698,222 @@ For more information, see the document "Configuration/DNS".</source>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="231" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="649" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="701" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="648" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="700" />
         <source>Test</source>
         <translation type="unfinished">ਟੈਸਟ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="635" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="634" />
         <source>Current Selected</source>
         <translation type="unfinished">ਮੌਜੂਦਾ ਚੁਣਿਆ ਗਿਆ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="629" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="628" />
         <source>Current Group</source>
         <translation type="unfinished">ਮੌਜੂਦਾ ਸਮੂਹ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="684" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="683" />
         <source>Hidden menu</source>
         <translation type="unfinished">ਲੁਕਿਆ ਹੋਇਆ ਮੀਨੂ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="696" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="695" />
         <source>Routing Menu</source>
         <translation type="unfinished">ਰੂਟਿੰਗ ਮੀਨੂ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="708" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="707" />
         <source>Context</source>
         <translation type="unfinished">ਸੰਦਰਭ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="712" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="711" />
         <source>ContextProfiles</source>
         <translation type="unfinished">ਸੰਦਰਭ ਪ੍ਰੋਫਾਈਲਾਂ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="727" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="726" />
         <source>Exit</source>
         <translation type="unfinished">ਨਿਕਾਸ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="732" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="731" />
         <source>Toggle Window</source>
         <translation type="unfinished">ਵਿੰਡੋ ਨੂੰ ਟੌਗਲ ਕਰੋ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="737" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="736" />
         <source>Basic Settings</source>
         <translation type="unfinished">ਬੁਨਿਆਦੀ ਸੈਟਿੰਗਾਂ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="742" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="741" />
         <source>New profile</source>
         <translation type="unfinished">ਨਵਾਂ ਪ੍ਰੋਫਾਈਲ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="747" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="746" />
         <source>Groups</source>
         <translation type="unfinished">ਸਮੂਹ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="752" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3600" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3610" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="751" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3599" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3609" />
         <source>Start</source>
         <translation type="unfinished">ਸ਼ੁਰੂ ਕਰੋ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="760" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3599" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3610" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="759" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3598" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3609" />
         <source>Stop</source>
         <translation type="unfinished">ਰੂਕੋ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="768" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="767" />
         <source>Edit</source>
         <translation type="unfinished">ਸੰਪਾਦਿਤ ਕਰੋ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="776" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="775" />
         <source>Routing Settings</source>
         <translation type="unfinished">ਰੂਟਿੰਗ ਸੈਟਿੰਗਾਂ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="781" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="780" />
         <source>Add profile from clipboard</source>
         <translation type="unfinished">ਕਲਿੱਪਬੋਰਡ ਤੋਂ ਪ੍ਰੋਫਾਈਲ ਸ਼ਾਮਲ ਕਰੋ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="789" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="788" />
         <source>Delete</source>
         <translation type="unfinished">ਮਿਟਾਓ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="797" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="796" />
         <source>Debug Info</source>
         <translation type="unfinished">ਡੀਬੱਗ ਜਾਣਕਾਰੀ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="802" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="801" />
         <source>QR Code and link</source>
         <translation type="unfinished">QR ਕੋਡ ਅਤੇ ਲਿੰਕ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="810" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="809" />
         <source>Copy Link</source>
         <translation type="unfinished">ਲਿੰਕ ਕਾਪੀ ਕਰੋ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="831" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1072" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="830" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1071" />
         <source>Clear Test Result</source>
         <translation type="unfinished">ਟੈਸਟ ਦਾ ਨਤੀਜਾ ਸਾਫ਼ ਕਰੋ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="839" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="838" />
         <location filename="../../src/ui/mainwindow.cpp" line="1441" />
         <source>Export %1 config</source>
         <translation type="unfinished">% 1 ਸੰਰਚਨਾ ਨਿਰਯਾਤ ਕਰੋ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="847" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="846" />
         <source>Reset Traffic</source>
         <translation type="unfinished">ਟ੍ਰੈਫਿਕ ਰੀਸੈਟ ਕਰੋ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="855" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="854" />
         <source>Scan QR Code</source>
         <translation type="unfinished">QR ਕੋਡ ਸਕੈਨ ਕਰੋ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="863" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="862" />
         <source>Enable System Proxy</source>
         <translation type="unfinished">ਸਿਸਟਮ ਪ੍ਰੌਕਸੀ ਨੂੰ ਸਮਰੱਥ ਬਣਾਓ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="871" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="870" />
         <source>Disable</source>
         <translation type="unfinished">ਅਸਮਰੱਥ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="876" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="875" />
         <source>Remove Duplicates</source>
         <translation type="unfinished">ਡੁਪਲੀਕੇਟ ਹਟਾਓ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="884" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="961" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="969" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="883" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="960" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="968" />
         <source>fake</source>
         <translation type="unfinished">ਜਾਅਲੀ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="892" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1163" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="891" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1162" />
         <source>Move</source>
         <translation type="unfinished">ਮੂਵ ਕਰੋ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="903" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="902" />
         <source>Start with system</source>
         <translation type="unfinished">ਸਿਸਟਮ ਨਾਲ ਸ਼ੁਰੂ ਕਰੋ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="911" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="910" />
         <source>Remember last profile</source>
         <translation type="unfinished">ਆਖਰੀ ਪ੍ਰੋਫਾਈਲ ਯਾਦ ਰੱਖੋ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="919" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="918" />
         <source>Allow other devices to connect</source>
         <translation type="unfinished">ਹੋਰ ਡਿਵਾਈਸਾਂ ਨੂੰ ਕਨੈਕਟ ਕਰਨ ਦਿਓ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="924" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="923" />
         <source>Remove Unavailable</source>
         <translation type="unfinished">ਅਣਉਪਲਬਧ ਹਟਾਓ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="932" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="931" />
         <source>Full Test</source>
         <translation type="unfinished">ਪੂਰਾ ਟੈਸਟ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="940" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="939" />
         <source>Hotkey Settings</source>
         <translation type="unfinished">ਹੌਟਕੀ ਸੈਟਿੰਗਾਂ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="945" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="944" />
         <source>Select All</source>
         <translation type="unfinished">ਸਭ ਚੁਣੋ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="953" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="952" />
         <source>Copy Custom Links</source>
         <translation type="unfinished">ਕਸਟਮ ਲਿੰਕ ਕਾਪੀ ਕਰੋ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="977" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="976" />
         <source>Copy links</source>
         <translation type="unfinished">ਲਿੰਕ ਕਾਪੀ ਕਰੋ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1061" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1060" />
         <source>Url Test</source>
         <translation type="unfinished">ਯੂਆਰਐਲ ਟੈਸਟ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1094" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1093" />
         <source>Resolve Domain</source>
         <translation type="unfinished">ਡੋਮੇਨ ਨੂੰ ਹੱਲ ਕਰੋ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1176" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1175" />
         <source>Information</source>
         <translation type="unfinished">ਜਾਣਕਾਰੀ</translation>
     </message>
@@ -2886,48 +2926,48 @@ For more information, see the document "Configuration/DNS".</source>
         <translation type="obsolete">ਚੁਣੇ ਹੋਏ ਲਿੰਕਾਂ ਨੂੰ ਕਾਪੀ ਕਰੋ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="988" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="987" />
         <source>Enable Tun</source>
         <translation type="unfinished">ਟੂਨ ਨੂੰ ਸਮਰੱਥ ਬਣਾਓ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="993" />
-        <location filename="../../src/ui/mainwindow.cpp" line="2919" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="992" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2918" />
         <source>Clone</source>
         <translation type="unfinished">ਕਲੋਨ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1001" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1000" />
         <source>Update subscription</source>
         <translation type="unfinished">ਗਾਹਕੀ ਅੱਪਡੇਟ ਕਰੋ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1012" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1011" />
         <source>Resolve domain</source>
         <translation type="unfinished">ਡੋਮੇਨ ਨੂੰ ਹੱਲ ਕਰੋ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1020" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1019" />
         <source>Tun Settings</source>
         <translation type="unfinished">ਟੂਨ ਸੈਟਿੰਗਾਂ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1025" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1024" />
         <source>Restart Program</source>
         <translation type="unfinished">ਪ੍ਰੋਗਰਾਮ ਨੂੰ ਰੀਸਟਾਰਟ ਕਰੋ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1030" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1029" />
         <source>Open Config Folder</source>
         <translation type="unfinished">ਸੰਰਚਨਾ ਫੋਲਡਰ ਖੋਲ੍ਹੋ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1051" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1050" />
         <source>Restart Proxy</source>
         <translation type="unfinished">ਪ੍ਰੌਕਸੀ ਮੁੜ-ਚਾਲੂ ਕਰੋ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1056" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1055" />
         <source>Stop Testing</source>
         <translation type="unfinished">ਟੈਸਟ ਕਰਨਾ ਬੰਦ ਕਰੋ</translation>
     </message>
@@ -2944,7 +2984,7 @@ For more information, see the document "Configuration/DNS".</source>
         <translation type="obsolete">ਚੁਣਿਆ ਗਿਆ ਟੈਸਟ ਨਤੀਜਾ ਸਾਫ਼ ਕਰੋ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1083" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1082" />
         <source>Url Test Group</source>
         <translation type="unfinished">Url ਟੈਸਟ ਗਰੁੱਪ</translation>
     </message>
@@ -2957,7 +2997,7 @@ For more information, see the document "Configuration/DNS".</source>
         <translation type="obsolete">ਚੁਣੇ ਹੋਏ ਡੋਮੇਨ ਨੂੰ ਹੱਲ ਕਰੋ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1102" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1101" />
         <source>Remove Invalid</source>
         <translation type="unfinished">ਅਵੈਧ ਨੂੰ ਹਟਾਓ</translation>
     </message>
@@ -2970,63 +3010,63 @@ For more information, see the document "Configuration/DNS".</source>
         <translation type="obsolete">ਓਪਨ ਮੈਨੇਜਰ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1171" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1170" />
         <source>Speedtest Current</source>
         <translation type="unfinished">ਸਪੀਡਟੈਸਟ ਵਰਤਮਾਨ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1113" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1112" />
         <source>Full test Selected</source>
         <translation type="unfinished">ਪੂਰਾ ਟੈਸਟ ਚੁਣਿਆ ਗਿਆ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1118" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1117" />
         <source>Download test Selected</source>
         <translation type="unfinished">ਡਾਊਨਲੋਡ ਟੈਸਟ ਚੁਣਿਆ ਗਿਆ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1123" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1122" />
         <source>Upload test Selected</source>
         <translation type="unfinished">ਅੱਪਲੋਡ ਟੈਸਟ ਚੁਣਿਆ ਗਿਆ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1128" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1127" />
         <source>Country test Selected</source>
         <translation type="unfinished">ਦੇਸ਼ ਟੈਸਟ ਚੁਣਿਆ ਗਿਆ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1133" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1132" />
         <source>Simple download test Selected</source>
         <translation type="unfinished">ਸਧਾਰਨ ਡਾਊਨਲੋਡ ਟੈਸਟ ਚੁਣਿਆ ਗਿਆ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1138" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1137" />
         <source>Speedtest Group</source>
         <translation type="unfinished">ਸਪੀਡਟੈਸਟ ਗਰੁੱਪ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1143" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1142" />
         <source>Hide window</source>
         <translation type="unfinished">ਵਿੰਡੋ ਲੁਕਾਓ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1148" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1147" />
         <source>Add profile from File</source>
         <translation type="unfinished">ਫਾਈਲ ਤੋਂ ਪ੍ਰੋਫਾਈਲ ਸ਼ਾਮਲ ਕਰੋ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1153" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3629" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1152" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3628" />
         <source>Add new Group</source>
         <translation type="unfinished">ਨਵਾਂ ਸਮੂਹ ਸ਼ਾਮਲ ਕਰੋ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1158" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1157" />
         <source>Security Settings</source>
         <translation type="unfinished">ਸੁਰੱਖਿਆ ਸੈਟਿੰਗਾਂ</translation>
     </message>
     <message>
-        <location filename="../../src/dataStore/ProxyEntity.cpp" line="223" />
+        <location filename="../../src/dataStore/ProxyEntity.cpp" line="222" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="291" />
         <source>Unavailable</source>
         <translation type="unfinished">ਅਣਉਪਲਬਧ</translation>
@@ -3117,11 +3157,11 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1749" />
         <location filename="../../src/ui/mainwindow.cpp" line="1807" />
-        <location filename="../../src/ui/mainwindow.cpp" line="2973" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3344" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3398" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3447" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3677" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2972" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3343" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3397" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3446" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3676" />
         <source>Confirmation</source>
         <translation type="unfinished">ਪੁਸ਼ਟੀ</translation>
     </message>
@@ -3147,103 +3187,103 @@ For more information, see the document "Configuration/DNS".</source>
         <translation type="unfinished">ਆਯਾਤ ਕੀਤਾ % 1 ਪ੍ਰੋਫਾਈਲ(s)</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2090" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2089" />
         <source>User opted for no privilege req, some features may not work</source>
         <translation type="unfinished">ਉਪਭੋਗਤਾ ਨੇ ਕੋਈ ਵਿਸ਼ੇਸ਼ ਅਧਿਕਾਰ ਬੇਨਤੀ ਲਈ ਚੋਣ ਨਹੀਂ ਕੀਤੀ, ਕੁਝ ਵਿਸ਼ੇਸ਼ਤਾਵਾਂ ਕੰਮ ਨਹੀਂ ਕਰ ਸਕਦੀਆਂ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2154" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2153" />
         <source>Please give the core root privileges</source>
         <translation type="unfinished">ਕਿਰਪਾ ਕਰਕੇ ਕੋਰ ਰੂਟ ਵਿਸ਼ੇਸ਼ ਅਧਿਕਾਰ ਦਿਓ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2508" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2507" />
         <source>Not Running</source>
         <translation type="unfinished">ਨਹੀਂ ਚੱਲ ਰਿਹਾ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2920" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2919" />
         <source>Clone %1 item(s)</source>
         <translation type="unfinished">% 1 ਆਈਟਮ(ਆਂ) ਨੂੰ ਕਲੋਨ ਕਰੋ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2954" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2953" />
         <source> Confirmation </source>
         <translation type="unfinished">ਪੁਸ਼ਟੀ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2955" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2954" />
         <source> Remove %1 item(s) ? </source>
         <translation type="unfinished">% 1 ਆਈਟਮਾਂ ਨੂੰ ਹਟਾਉਣਾ ਹੈ?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2974" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2973" />
         <source>Remove %1 item(s) ?</source>
         <translation type="unfinished">% 1 ਆਈਟਮਾਂ ਨੂੰ ਹਟਾਉਣਾ ਹੈ?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3011" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3024" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3010" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3023" />
         <source>Copied %1 item(s)</source>
         <translation type="unfinished">ਕਾਪੀ ਕੀਤੀ ਗਈ % 1 ਆਈਟਮਾਂ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3256" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3255" />
         <source>QR Code not found</source>
         <translation type="unfinished">QR ਕੋਡ ਨਹੀਂ ਮਿਲਿਆ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3277" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3276" />
         <source>Unable to capture screen</source>
         <translation type="unfinished">ਸਕ੍ਰੀਨ ਕੈਪਚਰ ਕਰਨ ਵਿੱਚ ਅਸਮਰੱਥ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3345" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3344" />
         <source>Remove %1 Unavailable item(s) ?</source>
         <translation type="unfinished">% 1 ਅਣਉਪਲਬਧ ਆਈਟਮਾਂ ਨੂੰ ਹਟਾਉਣਾ ਹੈ?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3399" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3398" />
         <source>Remove %1 Invalid item(s) ?</source>
         <translation type="unfinished">% 1 ਅਵੈਧ ਆਈਟਮਾਂ ਨੂੰ ਹਟਾਉਣਾ ਹੈ?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3448" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3447" />
         <source>Replace domain server addresses with their resolved IPs?</source>
         <translation type="unfinished">ਡੋਮੇਨ ਸਰਵਰ ਪਤਿਆਂ ਨੂੰ ਉਹਨਾਂ ਦੇ ਹੱਲ ਕੀਤੇ IP ਨਾਲ ਬਦਲਣਾ ਹੈ?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3597" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3596" />
         <source>Clear</source>
         <translation type="unfinished">ਸਾਫ਼</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3668" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3667" />
         <source>Delete selected Group</source>
         <translation type="unfinished">ਚੁਣੇ ਗਏ ਸਮੂਹ ਨੂੰ ਮਿਟਾਓ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3669" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3668" />
         <source>Edit selected Group</source>
         <translation type="unfinished">ਚੁਣੇ ਗਏ ਸਮੂਹ ਦਾ ਸੰਪਾਦਨ ਕਰੋ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3678" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3677" />
         <source>Remove %1?</source>
         <translation type="unfinished">ਕੀ %1 ਨੂੰ ਹਟਾਉਣਾ ਹੈ?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4419" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4418" />
         <source>Cannot start</source>
         <translation type="unfinished">ਸ਼ੁਰੂ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸਕਦਾ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4420" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4419" />
         <source>Last download request has not finished yet</source>
         <translation type="unfinished">ਆਖਰੀ ਡਾਊਨਲੋਡ ਦੀ ਬੇਨਤੀ ਅਜੇ ਪੂਰੀ ਨਹੀਂ ਹੋਈ ਹੈ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4454" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4453" />
         <source>Failed to download update assets</source>
         <translation type="unfinished">ਅੱਪਡੇਟ ਸੰਪਤੀਆਂ ਨੂੰ ਡਾਊਨਲੋਡ ਕਰਨ ਵਿੱਚ ਅਸਫਲ</translation>
     </message>
@@ -3448,37 +3488,37 @@ For more information, see the document "Configuration/DNS".</source>
         <translation type="unfinished">ਟੂਨ ਮੋਡ ਨੂੰ ਕਸਟਮ ਸੰਰਚਨਾਵਾਂ ਨਾਲ ਨਹੀਂ ਵਰਤਿਆ ਜਾ ਸਕਦਾ ਹੈ</translation>
     </message>
     <message>
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="839" />
+        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="844" />
         <source>Requesting subscription: %1</source>
         <translation type="unfinished">ਗਾਹਕੀ ਲਈ ਬੇਨਤੀ ਕੀਤੀ ਜਾ ਰਹੀ ਹੈ: %1</translation>
     </message>
     <message>
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="843" />
+        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="848" />
         <source>Requesting subscription %1 error: %2</source>
         <translation type="unfinished">ਗਾਹਕੀ ਲਈ ਬੇਨਤੀ %1 ਗਲਤੀ: %2</translation>
     </message>
     <message>
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="850" />
+        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="855" />
         <source>Subscription request fininshed: %1</source>
         <translation type="unfinished">ਸਬਸਕ੍ਰਿਪਸ਼ਨ ਬੇਨਤੀ ਸਮਾਪਤ: % 1</translation>
     </message>
     <message>
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="868" />
+        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="873" />
         <source>Clearing servers...</source>
         <translation type="unfinished">ਸਰਵਰ ਕਲੀਅਰ ਕੀਤੇ ਜਾ ਰਹੇ ਹਨ...</translation>
     </message>
     <message>
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="873" />
+        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="878" />
         <source>Processing subscription data...</source>
         <translation type="unfinished">ਗਾਹਕੀ ਡੇਟਾ ਦੀ ਪ੍ਰਕਿਰਿਆ ਹੋ ਰਹੀ ਹੈ...</translation>
     </message>
     <message>
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="876" />
+        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="881" />
         <source>Process complete, applying...</source>
         <translation type="unfinished">ਪ੍ਰਕਿਰਿਆ ਪੂਰੀ ਹੋਈ, ਅਰਜ਼ੀ ਦਿੱਤੀ ਜਾ ਰਹੀ ਹੈ...</translation>
     </message>
     <message>
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="939" />
+        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="944" />
         <source>Added %1 profiles:
 %2
 Deleted %3 Profiles:
@@ -3489,17 +3529,17 @@ Deleted %3 Profiles:
 % 4</translation>
     </message>
     <message>
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="944" />
+        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="949" />
         <source>Nothing</source>
         <translation type="unfinished">ਕੁਝ ਨਹੀਂ</translation>
     </message>
     <message>
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="947" />
+        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="952" />
         <source>Change of %1:</source>
         <translation type="unfinished">% 1 ਦੀ ਤਬਦੀਲੀ:</translation>
     </message>
     <message>
-        <location filename="../../src/dataStore/Database.cpp" line="123" />
+        <location filename="../../src/dataStore/Database.cpp" line="227" />
         <source>Default</source>
         <translation type="unfinished">ਡਿਫਾਲਟ</translation>
     </message>
@@ -3532,7 +3572,7 @@ Deleted %3 Profiles:
     </message>
     <message>
         <location filename="../../src/stats/traffic/TrafficLooper.cpp" line="115" />
-        <location filename="../../src/ui/mainwindow.cpp" line="2476" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2475" />
         <source>Proxy: %1
 Direct: %2</source>
         <translation type="unfinished">ਪਰਾਕਸੀ: % 1
@@ -3634,64 +3674,64 @@ Deleted %1 Unavailable</source>
         <translation type="unfinished">ਨਿਯਮ-ਸੈੱਟ ਸੂਚੀ ਦੀ ਬੇਨਤੀ ਕਰਨ ਵਿੱਚ ਗਲਤੀ: %1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2513" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2512" />
         <source>IP address: %1</source>
         <translation type="unfinished">IP ਪਤਾ: %1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2899" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2898" />
         <source>Move profiles to group</source>
         <translation type="unfinished">ਪ੍ਰੋਫਾਈਲਾਂ ਨੂੰ ਗਰੁੱਪ ਵਿੱਚ ਭੇਜੋ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3042" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3041" />
         <source>Config copied</source>
         <translation type="unfinished">ਸੰਰਚਨਾ ਕਾਪੀ ਕੀਤੀ ਗਈ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3053" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3052" />
         <source>Copy core config</source>
         <translation type="unfinished">ਕੋਰ ਸੰਰਚਨਾ ਕਾਪੀ ਕਰੋ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3054" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3053" />
         <source>Copy test config</source>
         <translation type="unfinished">ਟੈਸਟ ਸੰਰਚਨਾ ਕਾਪੀ ਕਰੋ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3055" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3054" />
         <location filename="../../src/ui/security_addon.cpp" line="21" />
         <location filename="../../src/ui/setting/dialog_vpn_settings.cpp" line="53" />
         <source>OK</source>
         <translation type="unfinished">ਠੀਕ ਹੈ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4323" />
-        <location filename="../../src/ui/mainwindow.cpp" line="4334" />
-        <location filename="../../src/ui/mainwindow.cpp" line="4378" />
-        <location filename="../../src/ui/mainwindow.cpp" line="4401" />
-        <location filename="../../src/ui/mainwindow.cpp" line="4410" />
-        <location filename="../../src/ui/mainwindow.cpp" line="4445" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4322" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4333" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4377" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4400" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4409" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4444" />
         <source>Update</source>
         <translation type="unfinished">ਅੱਪਡੇਟ ਕਰੋ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4324" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4323" />
         <source>Not official support platform</source>
         <translation type="unfinished">ਅਧਿਕਾਰਤ ਸਮਰਥਨ ਪਲੇਟਫਾਰਮ ਨਹੀਂ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4335" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4334" />
         <source>Requesting update error: %1</source>
         <translation type="unfinished">ਅੱਪਡੇਟ ਦੀ ਬੇਨਤੀ ਕਰਨ ਵਿੱਚ ਗਲਤੀ: %1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4378" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4377" />
         <source>No update</source>
         <translation type="unfinished">ਕੋਈ ਅੱਪਡੇਟ ਨਹੀਂ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4402" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4401" />
         <source>Update found: %1
 Release note:
 %2</source>
@@ -3700,17 +3740,17 @@ Release note:
 % 2</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4405" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4404" />
         <source>Close</source>
         <translation type="unfinished">ਬੰਦ ਕਰੋ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4407" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4406" />
         <source>Open in browser</source>
         <translation type="unfinished">ਬ੍ਰਾਊਜ਼ਰ ਵਿੱਚ ਖੋਲ੍ਹੋ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4446" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4445" />
         <source>Update is ready, restart to install?</source>
         <translation type="unfinished">ਅੱਪਡੇਟ ਤਿਆਰ ਹੈ, ਇੰਸਟੌਲ ਕਰਨ ਲਈ ਰੀਸਟਾਰਟ ਕਰਨਾ ਹੈ?</translation>
     </message>

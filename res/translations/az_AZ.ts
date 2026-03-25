@@ -2006,19 +2006,59 @@ Standart dəyər işləmirsə, onu "223.5.5.5" olaraq dəyişdirməyə çalış�
 <context>
     <name>EditSocksHttp</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="20" />
+        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="128" />
         <source>Version</source>
         <translation type="unfinished">Versiya</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="33" />
+        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="23" />
         <source>Username</source>
         <translation type="unfinished">İstifadəçi adı</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="54" />
+        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="33" />
         <source>Password</source>
         <translation type="unfinished">parol</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="40" />
+        <source>Network</source>
+        <translation type="unfinished">Şəbəkə</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="56" />
+        <source>Path</source>
+        <translation type="unfinished">Yol</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="72" />
+        <source>Headers</source>
+        <translation type="unfinished">Başlıqlar</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="83" />
+        <source>Off</source>
+        <translation type="unfinished">Söndür</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="88" />
+        <source>1</source>
+        <translation type="unfinished">1</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="93" />
+        <source>2</source>
+        <translation type="unfinished">2</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="101" />
+        <source>Version of UDP over TCP protocol, server support is required.</source>
+        <translation type="unfinished">TCP protokolu üzərində UDP versiyası, server dəstəyi tələb olunur.</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="104" />
+        <source>UoT</source>
+        <translation type="unfinished">UoT</translation>
     </message>
 </context>
 <context>
@@ -2494,7 +2534,7 @@ Standart dəyər işləmirsə, onu "223.5.5.5" olaraq dəyişdirməyə çalış�
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="51" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="54" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="625" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="624" />
         <source>Profiles</source>
         <translation type="unfinished">Profillər</translation>
     </message>
@@ -2529,8 +2569,8 @@ Standart dəyər işləmirsə, onu "223.5.5.5" olaraq dəyişdirməyə çalış�
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="161" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="594" />
-        <location filename="../../src/ui/mainwindow.cpp" line="2532" />
-        <location filename="../../src/ui/mainwindow.cpp" line="2535" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2531" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2534" />
         <source>System Proxy</source>
         <translation type="unfinished">Sistem Proksi</translation>
     </message>
@@ -2635,7 +2675,7 @@ Standart dəyər işləmirsə, onu "223.5.5.5" olaraq dəyişdirməyə çalış�
         <translation type="unfinished">Proqram</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="614" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="613" />
         <source>Preferences</source>
         <translation type="unfinished">Üstünlüklər</translation>
     </message>
@@ -2644,7 +2684,7 @@ Standart dəyər işləmirsə, onu "223.5.5.5" olaraq dəyişdirməyə çalış�
         <translation type="obsolete">Server</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="639" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="638" />
         <source>Share</source>
         <translation type="unfinished">Paylaşın</translation>
     </message>
@@ -2654,268 +2694,268 @@ Standart dəyər işləmirsə, onu "223.5.5.5" olaraq dəyişdirməyə çalış�
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="231" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="649" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="701" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="648" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="700" />
         <source>Test</source>
         <translation type="unfinished">Test</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="635" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="634" />
         <source>Current Selected</source>
         <translation type="unfinished">Cari Seçildi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="629" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="628" />
         <source>Current Group</source>
         <translation type="unfinished">Cari Qrup</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="684" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="683" />
         <source>Hidden menu</source>
         <translation type="unfinished">Gizli menyu</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="696" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="695" />
         <source>Routing Menu</source>
         <translation type="unfinished">Marşrutlaşdırma Menyu</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="708" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="707" />
         <source>Context</source>
         <translation type="unfinished">Kontekst</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="712" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="711" />
         <source>ContextProfiles</source>
         <translation type="unfinished">KontekstProfilləri</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="727" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="726" />
         <source>Exit</source>
         <translation type="unfinished">Çıx</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="732" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="731" />
         <source>Toggle Window</source>
         <translation type="unfinished">Pəncərəni dəyişdirin</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="737" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="736" />
         <source>Basic Settings</source>
         <translation type="unfinished">Əsas Parametrlər</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="742" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="741" />
         <source>New profile</source>
         <translation type="unfinished">Yeni profil</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="747" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="746" />
         <source>Groups</source>
         <translation type="unfinished">Qruplar</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="752" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3600" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3610" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="751" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3599" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3609" />
         <source>Start</source>
         <translation type="unfinished">Başlayın</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="760" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3599" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3610" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="759" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3598" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3609" />
         <source>Stop</source>
         <translation type="unfinished">Dayan</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="768" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="767" />
         <source>Edit</source>
         <translation type="unfinished">Redaktə et</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="776" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="775" />
         <source>Routing Settings</source>
         <translation type="unfinished">Marşrutlama Parametrləri</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="781" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="780" />
         <source>Add profile from clipboard</source>
         <translation type="unfinished">Buferdən profil əlavə edin</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="789" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="788" />
         <source>Delete</source>
         <translation type="unfinished">Sil</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="797" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="796" />
         <source>Debug Info</source>
         <translation type="unfinished">Sazlama Məlumatı</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="802" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="801" />
         <source>QR Code and link</source>
         <translation type="unfinished">QR kodu və keçid</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="810" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="809" />
         <source>Copy Link</source>
         <translation type="unfinished">Linki kopyalayın</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="831" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1072" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="830" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1071" />
         <source>Clear Test Result</source>
         <translation type="unfinished">Test Nəticəsini Təmizləyin</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="839" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="838" />
         <location filename="../../src/ui/mainwindow.cpp" line="1441" />
         <source>Export %1 config</source>
         <translation type="unfinished">%1 konfiqurasiyanı ixrac edin</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="847" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="846" />
         <source>Reset Traffic</source>
         <translation type="unfinished">Trafiki sıfırlayın</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="855" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="854" />
         <source>Scan QR Code</source>
         <translation type="unfinished">QR kodunu skan edin</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="863" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="862" />
         <source>Enable System Proxy</source>
         <translation type="unfinished">Sistem Proksisini aktivləşdirin</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="871" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="870" />
         <source>Disable</source>
         <translation type="unfinished">Deaktiv edin</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="876" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="875" />
         <source>Remove Duplicates</source>
         <translation type="unfinished">Dublikatları silin</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="884" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="961" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="969" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="883" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="960" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="968" />
         <source>fake</source>
         <translation type="unfinished">saxta</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="892" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1163" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="891" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1162" />
         <source>Move</source>
         <translation type="unfinished">Hərəkət edin</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="903" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="902" />
         <source>Start with system</source>
         <translation type="unfinished">Sistemdən başlayın</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="911" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="910" />
         <source>Remember last profile</source>
         <translation type="unfinished">Son profili yadda saxla</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="919" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="918" />
         <source>Allow other devices to connect</source>
         <translation type="unfinished">Digər cihazların qoşulmasına icazə verin</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="924" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="923" />
         <source>Remove Unavailable</source>
         <translation type="unfinished">Sil əlçatan deyil</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="932" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="931" />
         <source>Full Test</source>
         <translation type="unfinished">Tam Test</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="940" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="939" />
         <source>Hotkey Settings</source>
         <translation type="unfinished">İsti düymə Parametrləri</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="945" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="944" />
         <source>Select All</source>
         <translation type="unfinished">Hamısını seçin</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="953" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="952" />
         <source>Copy Custom Links</source>
         <translation type="unfinished">Xüsusi Linkləri Kopyalayın</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="977" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="976" />
         <source>Copy links</source>
         <translation type="unfinished">Bağlantıları kopyalayın</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1061" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1060" />
         <source>Url Test</source>
         <translation type="unfinished">Url Testi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1094" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1093" />
         <source>Resolve Domain</source>
         <translation type="unfinished">Domeni həll edin</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1176" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1175" />
         <source>Information</source>
         <translation type="unfinished">Məlumat</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="988" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="987" />
         <source>Enable Tun</source>
         <translation type="unfinished">Tun-u aktivləşdirin</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="993" />
-        <location filename="../../src/ui/mainwindow.cpp" line="2919" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="992" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2918" />
         <source>Clone</source>
         <translation type="unfinished">Klon</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1001" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1000" />
         <source>Update subscription</source>
         <translation type="unfinished">Abunəliyi yeniləyin</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1012" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1011" />
         <source>Resolve domain</source>
         <translation type="unfinished">Domeni həll edin</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1020" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1019" />
         <source>Tun Settings</source>
         <translation type="unfinished">Tun Parametrləri</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1025" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1024" />
         <source>Restart Program</source>
         <translation type="unfinished">Proqramı yenidən başladın</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1030" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1029" />
         <source>Open Config Folder</source>
         <translation type="unfinished">Konfiqurasiya Qovluğunu açın</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1051" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1050" />
         <source>Restart Proxy</source>
         <translation type="unfinished">Proksi-ni yenidən başladın</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1056" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1055" />
         <source>Stop Testing</source>
         <translation type="unfinished">Testi dayandırın</translation>
     </message>
@@ -2924,7 +2964,7 @@ Standart dəyər işləmirsə, onu "223.5.5.5" olaraq dəyişdirməyə çalış�
         <translation type="obsolete">Ctrl+Shift+S</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1083" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1082" />
         <source>Url Test Group</source>
         <translation type="unfinished">Url Test Qrupu</translation>
     </message>
@@ -2933,7 +2973,7 @@ Standart dəyər işləmirsə, onu "223.5.5.5" olaraq dəyişdirməyə çalış�
         <translation type="obsolete">Ctrl+Shift+G</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1102" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1101" />
         <source>Remove Invalid</source>
         <translation type="unfinished">Etibarsızlığı silin</translation>
     </message>
@@ -2942,63 +2982,63 @@ Standart dəyər işləmirsə, onu "223.5.5.5" olaraq dəyişdirməyə çalış�
         <translation type="obsolete">Ctrl+Alt+I</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1171" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1170" />
         <source>Speedtest Current</source>
         <translation type="unfinished">Speedtest Cərəyanı</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1113" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1112" />
         <source>Full test Selected</source>
         <translation type="unfinished">Tam test Seçildi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1118" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1117" />
         <source>Download test Selected</source>
         <translation type="unfinished">Seçilmiş testi yükləyin</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1123" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1122" />
         <source>Upload test Selected</source>
         <translation type="unfinished">Yükləmə testi Seçildi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1128" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1127" />
         <source>Country test Selected</source>
         <translation type="unfinished">Ölkə testi Seçildi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1133" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1132" />
         <source>Simple download test Selected</source>
         <translation type="unfinished">Sadə yükləmə testi seçildi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1138" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1137" />
         <source>Speedtest Group</source>
         <translation type="unfinished">Speedtest Qrupu</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1143" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1142" />
         <source>Hide window</source>
         <translation type="unfinished">Pəncərəni gizlət</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1148" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1147" />
         <source>Add profile from File</source>
         <translation type="unfinished">Fayldan profil əlavə edin</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1153" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3629" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1152" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3628" />
         <source>Add new Group</source>
         <translation type="unfinished">Yeni Qrup əlavə edin</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1158" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1157" />
         <source>Security Settings</source>
         <translation type="unfinished">Təhlükəsizlik Parametrləri</translation>
     </message>
     <message>
-        <location filename="../../src/dataStore/ProxyEntity.cpp" line="223" />
+        <location filename="../../src/dataStore/ProxyEntity.cpp" line="222" />
         <location filename="../../src/ui/mainwindow_rpc.cpp" line="291" />
         <source>Unavailable</source>
         <translation type="unfinished">Əlçatan deyil</translation>
@@ -3089,11 +3129,11 @@ Standart dəyər işləmirsə, onu "223.5.5.5" olaraq dəyişdirməyə çalış�
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="1749" />
         <location filename="../../src/ui/mainwindow.cpp" line="1807" />
-        <location filename="../../src/ui/mainwindow.cpp" line="2973" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3344" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3398" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3447" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3677" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2972" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3343" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3397" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3446" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3676" />
         <source>Confirmation</source>
         <translation type="unfinished">Təsdiq</translation>
     </message>
@@ -3119,103 +3159,103 @@ Standart dəyər işləmirsə, onu "223.5.5.5" olaraq dəyişdirməyə çalış�
         <translation type="unfinished">Import edilmiş %1 profil(lər)</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2090" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2089" />
         <source>User opted for no privilege req, some features may not work</source>
         <translation type="unfinished">İstifadəçi heç bir imtiyaz tələbi üçün seçim etdi, bəzi funksiyalar işləməyə bilər</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2154" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2153" />
         <source>Please give the core root privileges</source>
         <translation type="unfinished">Zəhmət olmasa, əsas kök imtiyazlarını verin</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2508" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2507" />
         <source>Not Running</source>
         <translation type="unfinished">Qaçış deyil</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2920" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2919" />
         <source>Clone %1 item(s)</source>
         <translation type="unfinished">%1 elementi klonla</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2954" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2953" />
         <source> Confirmation </source>
         <translation type="unfinished">Təsdiq</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2955" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2954" />
         <source> Remove %1 item(s) ? </source>
         <translation type="unfinished">%1 element(lər) silinsin?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2974" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2973" />
         <source>Remove %1 item(s) ?</source>
         <translation type="unfinished">%1 element(lər) silinsin?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3011" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3024" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3010" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3023" />
         <source>Copied %1 item(s)</source>
         <translation type="unfinished">Kopyalandı %1 element(lər)</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3256" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3255" />
         <source>QR Code not found</source>
         <translation type="unfinished">QR kodu tapılmadı</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3277" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3276" />
         <source>Unable to capture screen</source>
         <translation type="unfinished">Ekranı çəkmək mümkün deyil</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3345" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3344" />
         <source>Remove %1 Unavailable item(s) ?</source>
         <translation type="unfinished">%1 Əlçatmaz element(lər) silinsin?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3399" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3398" />
         <source>Remove %1 Invalid item(s) ?</source>
         <translation type="unfinished">%1 Yanlış element(lər) silinsin?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3448" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3447" />
         <source>Replace domain server addresses with their resolved IPs?</source>
         <translation type="unfinished">Domen server ünvanları həll edilmiş IP-ləri ilə əvəz edilsin?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3597" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3596" />
         <source>Clear</source>
         <translation type="unfinished">Təmiz</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3668" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3667" />
         <source>Delete selected Group</source>
         <translation type="unfinished">Seçilmiş Qrupu silin</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3669" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3668" />
         <source>Edit selected Group</source>
         <translation type="unfinished">Seçilmiş Qrupu redaktə edin</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3678" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3677" />
         <source>Remove %1?</source>
         <translation type="unfinished">%1 silinsin?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4419" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4418" />
         <source>Cannot start</source>
         <translation type="unfinished">Başlamaq mümkün deyil</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4420" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4419" />
         <source>Last download request has not finished yet</source>
         <translation type="unfinished">Son yükləmə sorğusu hələ tamamlanmayıb</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4454" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4453" />
         <source>Failed to download update assets</source>
         <translation type="unfinished">Yeniləmə aktivlərini endirmək alınmadı</translation>
     </message>
@@ -3420,37 +3460,37 @@ Standart dəyər işləmirsə, onu "223.5.5.5" olaraq dəyişdirməyə çalış�
         <translation type="unfinished">Tun rejimi Fərdi konfiqurasiyalarla istifadə edilə bilməz</translation>
     </message>
     <message>
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="839" />
+        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="844" />
         <source>Requesting subscription: %1</source>
         <translation type="unfinished">Abunəlik tələb olunur: %1</translation>
     </message>
     <message>
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="843" />
+        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="848" />
         <source>Requesting subscription %1 error: %2</source>
         <translation type="unfinished">Abunəlik sorğusu %1 xətası: %2</translation>
     </message>
     <message>
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="850" />
+        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="855" />
         <source>Subscription request fininshed: %1</source>
         <translation type="unfinished">Abunə sorğusu tamamlandı: %1</translation>
     </message>
     <message>
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="868" />
+        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="873" />
         <source>Clearing servers...</source>
         <translation type="unfinished">Serverlər təmizlənir...</translation>
     </message>
     <message>
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="873" />
+        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="878" />
         <source>Processing subscription data...</source>
         <translation type="unfinished">Abunəlik datası işlənir...</translation>
     </message>
     <message>
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="876" />
+        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="881" />
         <source>Process complete, applying...</source>
         <translation type="unfinished">Proses tamamlandı, müraciət edilir...</translation>
     </message>
     <message>
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="939" />
+        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="944" />
         <source>Added %1 profiles:
 %2
 Deleted %3 Profiles:
@@ -3461,17 +3501,17 @@ Silinmiş %3 Profil:
 %4</translation>
     </message>
     <message>
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="944" />
+        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="949" />
         <source>Nothing</source>
         <translation type="unfinished">heç nə</translation>
     </message>
     <message>
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="947" />
+        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="952" />
         <source>Change of %1:</source>
         <translation type="unfinished">%1 dəyişikliyi:</translation>
     </message>
     <message>
-        <location filename="../../src/dataStore/Database.cpp" line="123" />
+        <location filename="../../src/dataStore/Database.cpp" line="227" />
         <source>Default</source>
         <translation type="unfinished">Defolt</translation>
     </message>
@@ -3504,7 +3544,7 @@ Silinmiş %3 Profil:
     </message>
     <message>
         <location filename="../../src/stats/traffic/TrafficLooper.cpp" line="115" />
-        <location filename="../../src/ui/mainwindow.cpp" line="2476" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2475" />
         <source>Proxy: %1
 Direct: %2</source>
         <translation type="unfinished">Proksi: %1
@@ -3606,64 +3646,64 @@ Deleted %1 Unavailable</source>
         <translation type="unfinished">Qayda dəsti siyahısı xətası tələb olunur: %1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2513" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2512" />
         <source>IP address: %1</source>
         <translation type="unfinished">IP ünvanı: %1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2899" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2898" />
         <source>Move profiles to group</source>
         <translation type="unfinished">Profilləri qrupa köçürün</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3042" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3041" />
         <source>Config copied</source>
         <translation type="unfinished">Konfiqurasiya kopyalandı</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3053" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3052" />
         <source>Copy core config</source>
         <translation type="unfinished">Əsas konfiqurasiyanı kopyalayın</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3054" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3053" />
         <source>Copy test config</source>
         <translation type="unfinished">Test konfiqurasiyasını kopyalayın</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3055" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3054" />
         <location filename="../../src/ui/security_addon.cpp" line="21" />
         <location filename="../../src/ui/setting/dialog_vpn_settings.cpp" line="53" />
         <source>OK</source>
         <translation type="unfinished">OK</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4323" />
-        <location filename="../../src/ui/mainwindow.cpp" line="4334" />
-        <location filename="../../src/ui/mainwindow.cpp" line="4378" />
-        <location filename="../../src/ui/mainwindow.cpp" line="4401" />
-        <location filename="../../src/ui/mainwindow.cpp" line="4410" />
-        <location filename="../../src/ui/mainwindow.cpp" line="4445" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4322" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4333" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4377" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4400" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4409" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4444" />
         <source>Update</source>
         <translation type="unfinished">Yeniləyin</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4324" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4323" />
         <source>Not official support platform</source>
         <translation type="unfinished">Rəsmi dəstək platforması deyil</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4335" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4334" />
         <source>Requesting update error: %1</source>
         <translation type="unfinished">Yeniləmə xətası tələb olunur: %1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4378" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4377" />
         <source>No update</source>
         <translation type="unfinished">Yeniləmə yoxdur</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4402" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4401" />
         <source>Update found: %1
 Release note:
 %2</source>
@@ -3672,17 +3712,17 @@ Buraxılış qeydi:
 %2</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4405" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4404" />
         <source>Close</source>
         <translation type="unfinished">Bağlayın</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4407" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4406" />
         <source>Open in browser</source>
         <translation type="unfinished">Brauzerdə açın</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4446" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4445" />
         <source>Update is ready, restart to install?</source>
         <translation type="unfinished">Güncəlləmə hazırdır, quraşdırmaq üçün yenidən başlasın?</translation>
     </message>
