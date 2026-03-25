@@ -35,7 +35,6 @@
 #endif
 
 
-
 namespace Configs_ConfigItem {
 
 
@@ -212,6 +211,9 @@ namespace Configs_ConfigItem {
         if (Configs::JsonStoreType::NoSave == this->StoreType()){
             return false;
         }
+        #ifdef DEBUG_MODE
+            qDebug() << "Database Manager IS: " << (long long)(void*)Configs::databaseManager.get();
+        #endif
         return Configs::databaseManager->Load(this);
     }
 

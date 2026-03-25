@@ -303,6 +303,8 @@ public:
 
 };
 
-extern std::shared_ptr<DatabaseManager> databaseManager;
+
+inline std::shared_ptr<DatabaseManager> databaseManager = std::make_shared<FileDatabaseManager>();
+
 }
 #endif
