@@ -197,12 +197,21 @@ jobs:
 
       - name: Create requirements.txt, add ssh key
         shell: bash
+        env:
+          AUR_KEY: ${{ secrets.AUR_SSH_PRIVATE_KEY }}
         run: |
           echo copr > requirements.txt
-          echo "${{ secrets.AUR_SSH_PRIVATE_KEY }}" > $PWD/aur.key
           git config --global user.email "${{ secrets.EMAIL }}"
           git config --global user.name "${{ github.actor }}"
-          git config --global core.sshCommand "ssh -i $PWD/aur.key -o IdentitiesOnly=yes"
+          mkdir -p "~/.ssh"
+          echo "Host aur aur.archlinux.org"     >> "~/.ssh/config"
+          echo "  IdentityFile ~/.ssh/aur"      >> "~/.ssh/config"
+          echo "  User aur"                     >> "~/.ssh/config"
+          chmod -vR 600 /home/builder/.ssh/*
+          ssh-keyscan -v -t "rsa,dsa,ecdsa,ed25519" aur.archlinux.org >>~/.ssh/known_hosts
+          echo "$AUR_KEY" >~/.ssh/aur
+          ssh-keygen -vy -f ~/.ssh/aur >~/.ssh/aur.pub
+
 
       - uses: actions/setup-python@v5
         with:
