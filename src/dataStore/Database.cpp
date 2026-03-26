@@ -124,8 +124,6 @@ QList<int> FileDatabaseManager::Query(char type) {
     std::sort(result.begin(), result.end());
     return result;
 }
-
-std::shared_ptr<DatabaseManager> databaseManager = std::make_shared<FileDatabaseManager>();
 }
 
 

@@ -247,7 +247,7 @@ QByteArray DecodeB64IfValid(const QString &input,
 class QUrlQuery;
 
 #define GetQuery(url)                                                          \
-  QUrlQuery((url).query(QUrl::ComponentFormattingOption::FullyDecoded));
+  QUrlQuery(url.query(QUrl::ComponentFormattingOption::FullyDecoded));
 
 QString GetQueryValue(const QUrlQuery &q, const QString &key,
                       const QString &def = "");
