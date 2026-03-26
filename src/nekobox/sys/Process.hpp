@@ -4,6 +4,7 @@
 #include <QElapsedTimer>
 #include <QProcess>
 #include <QMutex>
+#include <functional>
 
 #undef ELEVATE_METHOD
 #ifdef Q_OS_UNIX
@@ -14,6 +15,8 @@
 #endif
 
 namespace Configs_sys {
+    extern std::function<void()> core_pre_start;
+
     class CoreProcess: public QObject
     {
     public:

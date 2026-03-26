@@ -40,6 +40,7 @@ static bool removeIfDifferentOwner(const QString &path)
 #endif
 
 namespace Configs_sys {
+    std::function<void()> core_pre_start;
 
     CoreProcess::~CoreProcess() {
     }
@@ -50,10 +51,17 @@ namespace Configs_sys {
     }
 
     CoreProcess::CoreProcess(const QString &core_path, const QStringList &args) {
+        if (core_pre_start != nullptr){
+            core_pre_start();
+        }
         program = core_path;
         arguments = args;
         arguments << "-waitpid";
         arguments << QString::number(QCoreApplication::applicationPid());
+        arguments << "-address";
+        arguments << Configs::dataStore->core_domain;
+        arguments << "-port";
+        arguments << QString::number(Configs::dataStore->core_port);
 
         connect(&process, &QProcess::readyReadStandardOutput, this, [&]() {
             auto log = process.readAllStandardOutput();
