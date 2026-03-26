@@ -153,9 +153,7 @@ namespace Configs
         if (obj.contains("password")) password = obj["password"].toString();
         if (obj.contains("plugin")) plugin = obj["plugin"].toString();
         if (obj.contains("plugin_opts")) plugin_opts = obj["plugin_opts"].toString();
-
-
-
+        if (obj.contains("network")) *network = obj["network"];
         mux_state = obj["multiplex"].isObject() ? (obj["multiplex"].toObject()["enabled"].toBool() ? 1 : 2) : 0;
         return true;
     }

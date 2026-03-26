@@ -436,7 +436,8 @@ namespace Subscription {
                     if (Node2Bool(proxy["udp-over-tcp"])) {
                         bean->uot = Node2Int(proxy["udp-over-tcp-version"]);
                         if (bean->uot == 0) bean->uot = 2;
-                    }
+                    }  
+                    *bean->network = Node2QString(proxy["network"]);
 
                     if (proxy.contains("plugin") && proxy.contains("plugin-opts")) {
                         auto plugin_n = proxy["plugin"];

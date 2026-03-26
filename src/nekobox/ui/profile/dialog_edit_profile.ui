@@ -58,11 +58,11 @@
         <layout class="QVBoxLayout" name="verticalLayout_3">
          <item>
           <layout class="QGridLayout" name="gridLayout_2">
+           <item row="0" column="1">
+            <widget class="QComboBox" name="type"/>
+           </item>
            <item row="2" column="1">
             <widget class="MyLineEdit" name="address"/>
-           </item>
-           <item row="1" column="1">
-            <widget class="MyLineEdit" name="name"/>
            </item>
            <item row="3" column="1">
             <widget class="QLineEdit" name="port"/>
@@ -81,13 +81,6 @@
              </property>
             </widget>
            </item>
-           <item row="2" column="0">
-            <widget class="QLabel" name="address_l">
-             <property name="text">
-              <string>Address</string>
-             </property>
-            </widget>
-           </item>
            <item row="1" column="0">
             <widget class="QLabel" name="label">
              <property name="text">
@@ -95,8 +88,25 @@
              </property>
             </widget>
            </item>
-           <item row="0" column="1">
-            <widget class="QComboBox" name="type"/>
+           <item row="2" column="0">
+            <widget class="QLabel" name="address_l">
+             <property name="text">
+              <string>Address</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="MyLineEdit" name="name"/>
+           </item>
+           <item row="4" column="0">
+            <widget class="QLabel" name="network_l_2">
+             <property name="text">
+              <string>Network</string>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="1">
+            <widget class="QComboBox" name="network_2"/>
            </item>
           </layout>
          </item>
@@ -166,7 +176,7 @@
               <string>The underlying transport method. It must be consistent with the server, otherwise, the connection cannot be established.</string>
              </property>
              <property name="text">
-              <string>Network</string>
+              <string>Transport</string>
              </property>
             </widget>
            </item>

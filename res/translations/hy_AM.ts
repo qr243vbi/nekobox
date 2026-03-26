@@ -286,7 +286,7 @@
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="584" />
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="804" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="820" />
         <source>Enable</source>
         <translation type="unfinished">Միացնել</translation>
     </message>
@@ -351,7 +351,7 @@
         <translation type="unfinished">Հիմնական</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="721" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="727" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Might
                                                                             Improve Ping and Performance&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                                                                         </source>
@@ -359,7 +359,7 @@
 Բարելավել Ping-ը և կատարողականությունը&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="726" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="732" />
         <source>Disable Traffic Stats</source>
         <translation type="unfinished">Անջատել երթևեկության վիճակագրությունը</translation>
     </message>
@@ -368,37 +368,37 @@
         <translation type="obsolete">Օգտագործեք TCP</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="735" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="782" />
         <source>Multiplex (mux)</source>
         <translation type="unfinished">Multiplex (mux)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="742" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="789" />
         <source>Loglevel</source>
         <translation type="unfinished">Loglevel</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="754" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="756" />
         <source>concurrency</source>
         <translation type="unfinished">զուգահեռականություն</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="764" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="766" />
         <source>Padding</source>
         <translation type="unfinished">Լիցքավորում</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="771" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="773" />
         <source>Default On</source>
         <translation type="unfinished">Կանխադրված միացված է</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="783" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="799" />
         <source>Core Options</source>
         <translation type="unfinished">Հիմնական ընտրանքներ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="793" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="809" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Settings for the
                                             sing-box's built-in NTP client&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                                         </source>
@@ -406,27 +406,27 @@
 sing-box-ի ներկառուցված NTP հաճախորդը&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="798" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="814" />
         <source>NTP Settings</source>
         <translation type="unfinished">NTP-ի կարգավորումներ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="813" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="829" />
         <source>server</source>
         <translation type="unfinished">սերվեր</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="823" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="839" />
         <source>Port</source>
         <translation type="unfinished">Նավահանգիստ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="840" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="856" />
         <source>sync interval</source>
         <translation type="unfinished">համաժամացման ընդմիջում</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="847" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="863" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;In
                                                                 minutes&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                                                             </source>
@@ -434,214 +434,224 @@ sing-box-ի ներկառուցված NTP հաճախորդը&lt;/p&gt;&lt;/body&g
 րոպե&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="877" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="893" />
         <source>Security</source>
         <translation type="unfinished">Անվտանգություն</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="921" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="937" />
         <source>Disable Privilege request</source>
         <translation type="unfinished">Անջատել արտոնությունների հարցումը</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="883" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="899" />
         <source>Use Mozilla Certificate Store</source>
         <translation type="unfinished">Օգտագործեք Mozilla Certificate Store-ը</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="890" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="906" />
         <source>Skip TLS certificate authentication by default (allowInsecure)</source>
         <translation type="unfinished">Բաց թողնել TLS վկայագրի նույնականացումը լռելյայնորեն (allowInsecure)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="974" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="990" />
         <source>Default uTLS Fingerprint</source>
         <translation type="unfinished">Կանխադրված uTLS մատնահետք</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="928" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="944" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Do not attempt to start as Admin unless explicitly requested&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Մի փորձեք սկսել որպես ադմինիստրատոր, քանի դեռ բացահայտորեն չի պահանջվել&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="931" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="739" />
+        <source>Use Unix Domain Socket for communication between nekobox and nekobox_core</source>
+        <translation type="unfinished">Օգտագործեք Unix Domain Socket-ը nekobox-ի և nekobox_core-ի միջև հաղորդակցվելու համար</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="742" />
+        <source>Use UDS for IPC</source>
+        <translation type="unfinished">Օգտագործեք UDS IPC-ի համար</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="947" />
         <source>Always Start as Standard User</source>
         <translation type="unfinished">Միշտ սկսեք որպես ստանդարտ օգտվող</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1021" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1037" />
         <source>Use Json instead binary for configs</source>
         <translation type="unfinished">Կազմաձևերի համար օգտագործեք Json-ը երկուականի փոխարեն</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1028" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1044" />
         <source>Ask for deleting profile</source>
         <translation type="unfinished">Խնդրեք ջնջել պրոֆիլը</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1045" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1061" />
         <source>Auto-Testing</source>
         <translation type="unfinished">Ավտո-փորձարկում</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1051" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1067" />
         <source>Automatically test proxies in the background and maintain a pool of working proxies</source>
         <translation type="unfinished">Ավտոմատ կերպով փորձարկեք վստահված անձերը հետին պլանում և պահպանեք աշխատող վստահված անձանց լողավազան</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1054" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1070" />
         <source>Enable Auto-Testing</source>
         <translation type="unfinished">Միացնել ավտոմատ փորձարկումը</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1061" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1077" />
         <source>Test Interval (seconds)</source>
         <translation type="unfinished">Փորձարկման ընդմիջում (վայրկյաններ)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1068" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1084" />
         <source>How often to run the test cycle</source>
         <translation type="unfinished">Որքա՞ն հաճախ պետք է գործարկել թեստային ցիկլը</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1084" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1100" />
         <source>Proxies Per Cycle</source>
         <translation type="unfinished">Վստահված անձինք մեկ ցիկլի համար</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1091" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1107" />
         <source>Number of proxies to test in each cycle</source>
         <translation type="unfinished">Յուրաքանչյուր ցիկլում փորձարկվող վստահված անձանց թիվը</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1107" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1123" />
         <source>Working Pool Size</source>
         <translation type="unfinished">Աշխատանքային լողավազանի չափը</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1114" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1130" />
         <source>Maximum number of verified working proxies to maintain</source>
         <translation type="unfinished">Ստուգված աշխատանքային վստահված անձանց առավելագույն քանակը, որոնք պետք է պահպանվեն</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1130" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1146" />
         <source>Latency Threshold (ms)</source>
         <translation type="unfinished">Հետաձգման շեմ (մս)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1137" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1153" />
         <source>Maximum latency to consider a proxy as working</source>
         <translation type="unfinished">Առավելագույն ուշացում՝ վստահված անձին աշխատող համարելու համար</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1156" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1172" />
         <source>Failure Retry Count</source>
         <translation type="unfinished">Անհաջողության կրկնակի փորձերի քանակ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1163" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1179" />
         <source>Number of retry attempts before considering a proxy as failed</source>
         <translation type="unfinished">Կրկնակի փորձերի թիվը՝ նախքան վստահված անձը ձախողված համարելը</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1179" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1195" />
         <source>Test Target URL</source>
         <translation type="unfinished">Թիրախային URL-ի փորձարկում</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1186" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1202" />
         <source>URL to test proxies against</source>
         <translation type="unfinished">URL վստահված անձանց դեմ փորձարկելու համար</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1189" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1205" />
         <source>http://cp.cloudflare.com/</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1196" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1212" />
         <source>Automatically switch to another working proxy when TUN mode proxy fails</source>
         <translation type="unfinished">Ավտոմատ կերպով անցնել մեկ այլ աշխատող վստահված անձի, երբ TUN ռեժիմի վստահված անձը ձախողվի</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1199" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1215" />
         <source>Enable TUN Failover</source>
         <translation type="unfinished">Միացնել TUN Failover-ը</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1207" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1223" />
         <source>Startup</source>
         <translation type="unfinished">Սկսնակ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1268" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1284" />
         <source>Geometry</source>
         <translation type="unfinished">Երկրաչափություն</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1297" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1313" />
         <source>Autosave geometry</source>
         <translation type="unfinished">Ավտոմատ պահպանում երկրաչափություն</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1304" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1320" />
         <source>Autosave position</source>
         <translation type="unfinished">Ավտոպահպանման դիրքը</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1324" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1340" />
         <source>Apply now</source>
         <translation type="unfinished">Դիմեք հիմա</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1440" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1456" />
         <source>Width</source>
         <translation type="unfinished">Լայնությունը</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1453" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1469" />
         <source>X</source>
         <translation type="unfinished">X</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1486" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1502" />
         <source>Y</source>
         <translation type="unfinished">Յ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1499" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1515" />
         <source>Height</source>
         <translation type="unfinished">Բարձրություն</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1586" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1602" />
         <source>Core Executable Path</source>
         <translation type="unfinished">Հիմնական գործարկվող ուղի</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1615" />
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1789" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1631" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1805" />
         <source>Use default</source>
         <translation type="unfinished">Օգտագործեք լռելյայն</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1622" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1638" />
         <source>Remote Control</source>
         <translation type="unfinished">Հեռակառավարման վահանակ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1648" />
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1822" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1664" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1838" />
         <source>Select</source>
         <translation type="unfinished">Ընտրել</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1760" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1776" />
         <source>Resources Directory</source>
         <translation type="unfinished">Ռեսուրսների տեղեկատու</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1796" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1812" />
         <source>Resource Manager</source>
         <translation type="unfinished">Ռեսուրսների կառավարիչ</translation>
     </message>
@@ -795,9 +805,8 @@ sing-box-ի ներկառուցված NTP հաճախորդը&lt;/p&gt;&lt;/body&g
         <translation type="unfinished">Փոխադրման հիմքում ընկած մեթոդը.Այն պետք է համապատասխանի սերվերին, հակառակ դեպքում կապը չի կարող հաստատվել:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="169" />
         <source>Network</source>
-        <translation type="unfinished">Ցանց</translation>
+        <translation type="obsolete">Ցանց</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="226" />
@@ -961,6 +970,11 @@ sing-box-ի ներկառուցված NTP հաճախորդը&lt;/p&gt;&lt;/body&g
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="618" />
         <source>TLS Camouflage Settings</source>
         <translation type="unfinished">TLS քողարկման կարգավորումներ</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="169" />
+        <source>Transport</source>
+        <translation type="unfinished">Տրանսպորտ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="672" />
@@ -1949,32 +1963,37 @@ For more information, see the document "Configuration/DNS".</source>
 <context>
     <name>EditShadowSocks</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="30" />
+        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="105" />
         <source>Plugin</source>
         <translation type="unfinished">Փլագին</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="37" />
+        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="62" />
         <source>Encryption</source>
         <translation type="unfinished">Կոդավորումը</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="44" />
+        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="69" />
         <source>Plugin Args</source>
         <translation type="unfinished">Plugin Args</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="54" />
+        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="76" />
         <source>Password</source>
         <translation type="unfinished">Գաղտնաբառ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="80" />
+        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="118" />
+        <source>Network</source>
+        <translation type="unfinished">Ցանց</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="49" />
         <source>Version of UDP over TCP protocol, server support is required.</source>
         <translation type="unfinished">UDP-ի տարբերակը TCP արձանագրության միջոցով, պահանջվում է սերվերի աջակցություն:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="94" />
+        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="87" />
         <source>Off</source>
         <translation type="unfinished">Անջատված</translation>
     </message>
@@ -2573,8 +2592,8 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="161" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="594" />
-        <location filename="../../src/ui/mainwindow.cpp" line="2531" />
-        <location filename="../../src/ui/mainwindow.cpp" line="2534" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2548" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2551" />
         <source>System Proxy</source>
         <translation type="unfinished">Համակարգի վստահված անձ</translation>
     </message>
@@ -2760,15 +2779,15 @@ For more information, see the document "Configuration/DNS".</source>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="751" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3599" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3609" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3616" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3626" />
         <source>Start</source>
         <translation type="unfinished">Սկսել</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="759" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3598" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3609" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3615" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3626" />
         <source>Stop</source>
         <translation type="unfinished">Դադարեցրեք</translation>
     </message>
@@ -2815,7 +2834,7 @@ For more information, see the document "Configuration/DNS".</source>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="838" />
-        <location filename="../../src/ui/mainwindow.cpp" line="1441" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1458" />
         <source>Export %1 config</source>
         <translation type="unfinished">Արտահանել %1 կազմաձևը</translation>
     </message>
@@ -2932,7 +2951,7 @@ For more information, see the document "Configuration/DNS".</source>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="992" />
-        <location filename="../../src/ui/mainwindow.cpp" line="2918" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2935" />
         <source>Clone</source>
         <translation type="unfinished">Կլոնավորում</translation>
     </message>
@@ -3056,7 +3075,7 @@ For more information, see the document "Configuration/DNS".</source>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1152" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3628" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3645" />
         <source>Add new Group</source>
         <translation type="unfinished">Ավելացնել նոր խումբ</translation>
     </message>
@@ -3072,218 +3091,218 @@ For more information, see the document "Configuration/DNS".</source>
         <translation type="unfinished">Անհասանելի է</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1096" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1113" />
         <source>Edit Routing Profiles</source>
         <translation type="unfinished">Խմբագրել երթուղային պրոֆիլները</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1118" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1135" />
         <source>Update Routing Profiles</source>
         <translation type="unfinished">Թարմացրեք երթուղային պրոֆիլները</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1130" />
-        <location filename="../../src/ui/mainwindow.cpp" line="1134" />
-        <location filename="../../src/ui/mainwindow.cpp" line="1155" />
-        <location filename="../../src/ui/mainwindow.cpp" line="1158" />
-        <location filename="../../src/ui/mainwindow.cpp" line="1202" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1147" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1151" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1172" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1175" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1219" />
         <location filename="../../src/ui/setting/RouteItem.cpp" line="95" />
         <location filename="../../src/ui/setting/RouteItem.cpp" line="104" />
         <source>Update Response</source>
         <translation type="unfinished">Թարմացնել պատասխանը</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1131" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1148" />
         <location filename="../../src/ui/setting/RouteItem.cpp" line="105" />
         <source>No routing profiles are updated</source>
         <translation type="unfinished">Երթուղային պրոֆիլներ չեն թարմացվում</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1135" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1152" />
         <location filename="../../src/ui/setting/RouteItem.cpp" line="96" />
         <source>Updated %1 routing profiles</source>
         <translation type="unfinished">Թարմացվել է %1 երթուղային պրոֆիլները</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1145" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1162" />
         <source>Update RuleSet Map</source>
         <translation type="unfinished">Թարմացրեք RuleSet քարտեզը</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1156" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1173" />
         <source>Failed to update rulesets</source>
         <translation type="unfinished">Չհաջողվեց թարմացնել կանոնները</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1159" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1176" />
         <source>Rulesets updated successfully</source>
         <translation type="unfinished">Կանոնների հավաքածուները հաջողությամբ թարմացվեցին</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1168" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1185" />
         <source>Update RuleSet Cache</source>
         <translation type="unfinished">Թարմացրեք RuleSet քեշը</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1203" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1220" />
         <source>Rulesets cache is updated</source>
         <translation type="unfinished">Կանոնների քեշը թարմացվում է</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1217" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1234" />
         <source>Clear RuleSet Cache</source>
         <translation type="unfinished">Մաքրել RuleSet քեշը</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1253" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1270" />
         <source>Enable AdBlock</source>
         <translation type="unfinished">Միացնել AdBlock-ը</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1655" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1672" />
         <source>Error</source>
         <translation type="unfinished">Սխալ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1742" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1759" />
         <source>Tun Settings changed</source>
         <translation type="unfinished">Tun-ի կարգավորումները փոխվել են</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1743" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1760" />
         <source>Restart Tun to take effect.</source>
         <translation type="unfinished">Վերագործարկեք Tun-ը՝ ուժի մեջ մտնելու համար:</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1749" />
-        <location filename="../../src/ui/mainwindow.cpp" line="1807" />
-        <location filename="../../src/ui/mainwindow.cpp" line="2972" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3343" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3397" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3446" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3676" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1766" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1824" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2989" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3360" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3414" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3463" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3693" />
         <source>Confirmation</source>
         <translation type="unfinished">Հաստատում</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1750" />
-        <location filename="../../src/ui/mainwindow.cpp" line="1808" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1767" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1825" />
         <source>Settings changed, restart proxy?</source>
         <translation type="unfinished">Կարգավորումները փոխվե՞լ են, վերագործարկե՞լ պրոքսին:</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1779" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1796" />
         <source>Settings changed</source>
         <translation type="unfinished">Կարգավորումները փոխվել են</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1780" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1797" />
         <source>Restart the program to take effect.</source>
         <translation type="unfinished">Վերագործարկեք ծրագիրը ուժի մեջ մտնելու համար:</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1823" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1840" />
         <source>Imported %1 profile(s)</source>
         <translation type="unfinished">Ներմուծվել է %1 պրոֆիլ(ներ)</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2089" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2106" />
         <source>User opted for no privilege req, some features may not work</source>
         <translation type="unfinished">Օգտատերը ընտրել է առանց արտոնությունների պահանջի, որոշ գործառույթներ կարող են չաշխատել</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2153" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2170" />
         <source>Please give the core root privileges</source>
         <translation type="unfinished">Խնդրում ենք տալ հիմնական արմատային արտոնությունները</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2507" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2524" />
         <source>Not Running</source>
         <translation type="unfinished">Չի վազում</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2919" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2936" />
         <source>Clone %1 item(s)</source>
         <translation type="unfinished">Կլոնավորել %1 տարր(ներ)</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2953" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2970" />
         <source> Confirmation </source>
         <translation type="unfinished">Հաստատում</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2954" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2971" />
         <source> Remove %1 item(s) ? </source>
         <translation type="unfinished">Հեռացնե՞լ %1 տարրը:</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2973" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2990" />
         <source>Remove %1 item(s) ?</source>
         <translation type="unfinished">Հեռացնե՞լ %1 տարրը:</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3010" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3023" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3027" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3040" />
         <source>Copied %1 item(s)</source>
         <translation type="unfinished">Պատճենվել է %1 տարր(ներ)</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3255" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3272" />
         <source>QR Code not found</source>
         <translation type="unfinished">QR կոդը չի գտնվել</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3276" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3293" />
         <source>Unable to capture screen</source>
         <translation type="unfinished">Հնարավոր չէ լուսանկարել էկրանը</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3344" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3361" />
         <source>Remove %1 Unavailable item(s) ?</source>
         <translation type="unfinished">Հեռացնե՞լ %1 Անհասանելի տարր(ներ)ը:</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3398" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3415" />
         <source>Remove %1 Invalid item(s) ?</source>
         <translation type="unfinished">Հեռացնե՞լ %1 Անվավեր տարր(ներ):</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3447" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3464" />
         <source>Replace domain server addresses with their resolved IPs?</source>
         <translation type="unfinished">Փոխարինե՞լ տիրույթի սերվերի հասցեները իրենց լուծված IP-ներով:</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3596" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3613" />
         <source>Clear</source>
         <translation type="unfinished">Պարզ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3667" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3684" />
         <source>Delete selected Group</source>
         <translation type="unfinished">Ջնջել ընտրված խումբը</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3668" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3685" />
         <source>Edit selected Group</source>
         <translation type="unfinished">Խմբագրել ընտրված խումբը</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3677" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3694" />
         <source>Remove %1?</source>
         <translation type="unfinished">Հեռացնե՞լ %1-ը:</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4418" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4435" />
         <source>Cannot start</source>
         <translation type="unfinished">Հնարավոր չէ սկսել</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4419" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4436" />
         <source>Last download request has not finished yet</source>
         <translation type="unfinished">Վերջին ներբեռնման հարցումը դեռ ավարտված չէ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4453" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4470" />
         <source>Failed to download update assets</source>
         <translation type="unfinished">Չհաջողվեց ներբեռնել թարմացման ակտիվները</translation>
     </message>
@@ -3488,37 +3507,37 @@ For more information, see the document "Configuration/DNS".</source>
         <translation type="unfinished">Tun ռեժիմը չի կարող օգտագործվել հատուկ կազմաձևերով</translation>
     </message>
     <message>
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="844" />
+        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="845" />
         <source>Requesting subscription: %1</source>
         <translation type="unfinished">Բաժանորդագրման հարցում՝ %1</translation>
     </message>
     <message>
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="848" />
+        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="849" />
         <source>Requesting subscription %1 error: %2</source>
         <translation type="unfinished">Բաժանորդագրման հարցում % 1 սխալ՝ %2</translation>
     </message>
     <message>
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="855" />
+        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="856" />
         <source>Subscription request fininshed: %1</source>
         <translation type="unfinished">Բաժանորդագրման հարցումն ավարտված է՝ %1</translation>
     </message>
     <message>
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="873" />
+        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="874" />
         <source>Clearing servers...</source>
         <translation type="unfinished">Սերվերների մաքրում...</translation>
     </message>
     <message>
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="878" />
+        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="879" />
         <source>Processing subscription data...</source>
         <translation type="unfinished">Բաժանորդագրության տվյալները մշակվում են...</translation>
     </message>
     <message>
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="881" />
+        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="882" />
         <source>Process complete, applying...</source>
         <translation type="unfinished">Գործընթացն ավարտված է, դիմում...</translation>
     </message>
     <message>
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="944" />
+        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="945" />
         <source>Added %1 profiles:
 %2
 Deleted %3 Profiles:
@@ -3529,17 +3548,17 @@ Deleted %3 Profiles:
 %4</translation>
     </message>
     <message>
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="949" />
+        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="950" />
         <source>Nothing</source>
         <translation type="unfinished">Ոչինչ</translation>
     </message>
     <message>
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="952" />
+        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="953" />
         <source>Change of %1:</source>
         <translation type="unfinished">%1-ի փոփոխություն.</translation>
     </message>
     <message>
-        <location filename="../../src/dataStore/Database.cpp" line="227" />
+        <location filename="../../src/dataStore/Database.cpp" line="225" />
         <source>Default</source>
         <translation type="unfinished">Կանխադրված</translation>
     </message>
@@ -3566,35 +3585,35 @@ Deleted %3 Profiles:
     <message>
         <location filename="../../src/nekobox/global/GuiUtils.hpp" line="121" />
         <location filename="../../src/ui/profile/edit_ssh.cpp" line="28" />
-        <location filename="../../src/ui/setting/dialog_basic_settings.cpp" line="335" />
+        <location filename="../../src/ui/setting/dialog_basic_settings.cpp" line="336" />
         <source>Select</source>
         <translation type="unfinished">Ընտրել</translation>
     </message>
     <message>
         <location filename="../../src/stats/traffic/TrafficLooper.cpp" line="115" />
-        <location filename="../../src/ui/mainwindow.cpp" line="2475" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2492" />
         <source>Proxy: %1
 Direct: %2</source>
         <translation type="unfinished">Վստահված անձ՝ %1
 Ուղիղ՝ %2</translation>
     </message>
     <message>
-        <location filename="../../src/sys/Process.cpp" line="104" />
+        <location filename="../../src/sys/Process.cpp" line="112" />
         <source>Core exited, cleaning up...</source>
         <translation type="unfinished">Core-ը դուրս եկավ, մաքրում...</translation>
     </message>
     <message>
-        <location filename="../../src/sys/Process.cpp" line="111" />
+        <location filename="../../src/sys/Process.cpp" line="119" />
         <source>Core exits too frequently, stop automatic restart this profile.</source>
         <translation type="unfinished">Core-ը շատ հաճախ է դուրս գալիս, դադարեցրեք այս պրոֆիլի ավտոմատ վերագործարկումը:</translation>
     </message>
     <message>
-        <location filename="../../src/sys/Process.cpp" line="120" />
+        <location filename="../../src/sys/Process.cpp" line="128" />
         <source>Restarting the core ...</source>
         <translation type="unfinished">Միջուկի վերագործարկում...</translation>
     </message>
     <message>
-        <location filename="../../src/sys/Settings.cpp" line="357" />
+        <location filename="../../src/sys/Settings.cpp" line="358" />
         <source>System</source>
         <translation type="unfinished">Համակարգ</translation>
     </message>
@@ -3664,74 +3683,74 @@ Deleted %1 Unavailable</source>
         <translation type="unfinished">Ջնջված է %1 Անհասանելի է</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1534" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1551" />
         <source>Check Rule Sets: %1</source>
         <translation type="unfinished">Ստուգեք կանոնների հավաքածուները՝ %1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1556" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1573" />
         <source>Requesting rule-set list error: %1</source>
         <translation type="unfinished">Կանոնների հավաքածուի ցանկի սխալի հարցում՝ %1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2512" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2529" />
         <source>IP address: %1</source>
         <translation type="unfinished">IP հասցե՝ %1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2898" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2915" />
         <source>Move profiles to group</source>
         <translation type="unfinished">Տեղափոխեք պրոֆիլները խումբ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3041" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3058" />
         <source>Config copied</source>
         <translation type="unfinished">Կազմաձևը պատճենվեց</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3052" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3069" />
         <source>Copy core config</source>
         <translation type="unfinished">Պատճենել հիմնական կազմաձևը</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3053" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3070" />
         <source>Copy test config</source>
         <translation type="unfinished">Պատճենել թեստային կազմաձևը</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3054" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3071" />
         <location filename="../../src/ui/security_addon.cpp" line="21" />
         <location filename="../../src/ui/setting/dialog_vpn_settings.cpp" line="53" />
         <source>OK</source>
         <translation type="unfinished">Լավ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4322" />
-        <location filename="../../src/ui/mainwindow.cpp" line="4333" />
-        <location filename="../../src/ui/mainwindow.cpp" line="4377" />
-        <location filename="../../src/ui/mainwindow.cpp" line="4400" />
-        <location filename="../../src/ui/mainwindow.cpp" line="4409" />
-        <location filename="../../src/ui/mainwindow.cpp" line="4444" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4339" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4350" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4394" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4417" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4426" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4461" />
         <source>Update</source>
         <translation type="unfinished">Թարմացնել</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4323" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4340" />
         <source>Not official support platform</source>
         <translation type="unfinished">Պաշտոնական աջակցության հարթակ չէ</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4334" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4351" />
         <source>Requesting update error: %1</source>
         <translation type="unfinished">Թարմացման հարցում սխալ՝ %1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4377" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4394" />
         <source>No update</source>
         <translation type="unfinished">Թարմացում չկա</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4401" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4418" />
         <source>Update found: %1
 Release note:
 %2</source>
@@ -3740,17 +3759,17 @@ Release note:
 %2</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4404" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4421" />
         <source>Close</source>
         <translation type="unfinished">Փակել</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4406" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4423" />
         <source>Open in browser</source>
         <translation type="unfinished">Բացեք բրաուզերում</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4445" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4462" />
         <source>Update is ready, restart to install?</source>
         <translation type="unfinished">Թարմացումը պատրաստ է, վերսկսե՞լ՝ տեղադրելու համար:</translation>
     </message>
@@ -3760,7 +3779,7 @@ Release note:
         <translation type="unfinished">Մուտքը մերժված է</translation>
     </message>
     <message>
-        <location filename="../../src/ui/setting/dialog_basic_settings.cpp" line="340" />
+        <location filename="../../src/ui/setting/dialog_basic_settings.cpp" line="341" />
         <source>Select a Folder</source>
         <translation type="unfinished">Ընտրեք Թղթապանակ</translation>
     </message>
@@ -4107,7 +4126,7 @@ Release note:
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="348" />
-        <location filename="../../src/ui/mainwindow.cpp" line="1277" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1294" />
         <source>Download Profiles</source>
         <translation type="unfinished">Ներբեռնեք պրոֆիլները</translation>
     </message>

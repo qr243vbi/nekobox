@@ -271,6 +271,7 @@ CoreObjOutboundBuildResult SocksBean::BuildCoreObjSingBox() const {
         outbound["server_port"] = entity->serverPort;
         outbound["method"] = method;
         outbound["password"] = password;
+        outbound["network"] = *network;
         outbound["udp_over_tcp"] = udp_over_tcp_object(uot);
 
         if (!plugin.trimmed().isEmpty()) {
@@ -328,6 +329,9 @@ CoreObjOutboundBuildResult SocksBean::BuildCoreObjSingBox() const {
             {"uuid", uuid.trimmed()},
             {"alter_id", aid},
             {"security", security},
+            // network
+            // authenticated_length
+            // global_padding
         };
 
         stream->BuildStreamSettingsSingBox(&outbound);

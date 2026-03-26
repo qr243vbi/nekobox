@@ -12,6 +12,7 @@ namespace Configs {
         QString security = "auto";
 
         std::shared_ptr<V2rayStreamSettings> stream ;
+        std::shared_ptr<NetworkEnum> network = std::make_shared<NetworkEnum>("tcp");
 
         VMessBean(Configs::ProxyEntity * entity) : AbstractBean(entity, 0) {
              stream = std::make_shared<V2rayStreamSettings>();
@@ -22,6 +23,7 @@ namespace Configs {
             ADD_MAP("aid", aid, integer);
             ADD_MAP("sec", security, string);
             ADD_MAP("stream", stream, jsonStore);
+            ADD_MAP("network", network, string);
         STOP_MAP
 /*/
         QString DisplayType() override { return "VMess"; };

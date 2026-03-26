@@ -21,8 +21,7 @@ namespace Configs {
 
     class AbstractBean : public JsonStore {
     public:
-
-        DECLARE_STORE_TYPE(Beans)
+        virtual char StoreType() const override ;
         virtual int Id() const override;
         int version;
         virtual ConfJsMap _map() override;

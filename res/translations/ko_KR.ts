@@ -286,7 +286,7 @@
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="584" />
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="804" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="820" />
         <source>Enable</source>
         <translation type="unfinished">할 수 있게 하다</translation>
     </message>
@@ -351,7 +351,7 @@
         <translation type="unfinished">핵심</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="721" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="727" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Might
                                                                             Improve Ping and Performance&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                                                                         </source>
@@ -359,7 +359,7 @@
 핑 및 성능 향상&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="726" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="732" />
         <source>Disable Traffic Stats</source>
         <translation type="unfinished">트래픽 통계 비활성화</translation>
     </message>
@@ -368,37 +368,37 @@
         <translation type="obsolete">TCP 사용</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="735" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="782" />
         <source>Multiplex (mux)</source>
         <translation type="unfinished">멀티플렉스(mux)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="742" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="789" />
         <source>Loglevel</source>
         <translation type="unfinished">로그 수준</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="754" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="756" />
         <source>concurrency</source>
         <translation type="unfinished">동시성</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="764" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="766" />
         <source>Padding</source>
         <translation type="unfinished">심</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="771" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="773" />
         <source>Default On</source>
         <translation type="unfinished">기본값은 켜짐</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="783" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="799" />
         <source>Core Options</source>
         <translation type="unfinished">핵심 옵션</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="793" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="809" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Settings for the
                                             sing-box's built-in NTP client&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                                         </source>
@@ -406,27 +406,27 @@
 sing-box의 내장 NTP 클라이언트&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="798" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="814" />
         <source>NTP Settings</source>
         <translation type="unfinished">NTP 설정</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="813" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="829" />
         <source>server</source>
         <translation type="unfinished">섬기는 사람</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="823" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="839" />
         <source>Port</source>
         <translation type="unfinished">포트</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="840" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="856" />
         <source>sync interval</source>
         <translation type="unfinished">동기화 간격</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="847" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="863" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;In
                                                                 minutes&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                                                             </source>
@@ -434,214 +434,224 @@ sing-box의 내장 NTP 클라이언트&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</tran
 분&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="877" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="893" />
         <source>Security</source>
         <translation type="unfinished">보안</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="921" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="937" />
         <source>Disable Privilege request</source>
         <translation type="unfinished">권한 요청 비활성화</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="883" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="899" />
         <source>Use Mozilla Certificate Store</source>
         <translation type="unfinished">Mozilla 인증서 저장소 사용</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="890" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="906" />
         <source>Skip TLS certificate authentication by default (allowInsecure)</source>
         <translation type="unfinished">기본적으로 TLS 인증서 인증 건너뛰기(allowInsecure)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="974" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="990" />
         <source>Default uTLS Fingerprint</source>
         <translation type="unfinished">기본 uTLS 지문</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="928" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="944" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Do not attempt to start as Admin unless explicitly requested&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;명시적으로 요청하지 않는 한 관리자로 시작하지 마세요&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="931" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="739" />
+        <source>Use Unix Domain Socket for communication between nekobox and nekobox_core</source>
+        <translation type="unfinished">nekobox와 nekobox_core 간의 통신에는 Unix 도메인 소켓을 사용하십시오.</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="742" />
+        <source>Use UDS for IPC</source>
+        <translation type="unfinished">IPC에 UDS 사용</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="947" />
         <source>Always Start as Standard User</source>
         <translation type="unfinished">항상 표준 사용자로 시작</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1021" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1037" />
         <source>Use Json instead binary for configs</source>
         <translation type="unfinished">구성에 바이너리 대신 Json을 사용하세요.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1028" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1044" />
         <source>Ask for deleting profile</source>
         <translation type="unfinished">프로필 삭제 요청</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1045" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1061" />
         <source>Auto-Testing</source>
         <translation type="unfinished">자동 테스트</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1051" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1067" />
         <source>Automatically test proxies in the background and maintain a pool of working proxies</source>
         <translation type="unfinished">백그라운드에서 자동으로 프록시를 테스트하고 작동 중인 프록시 풀을 유지합니다.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1054" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1070" />
         <source>Enable Auto-Testing</source>
         <translation type="unfinished">자동 테스트 활성화</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1061" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1077" />
         <source>Test Interval (seconds)</source>
         <translation type="unfinished">테스트 간격(초)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1068" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1084" />
         <source>How often to run the test cycle</source>
         <translation type="unfinished">테스트 주기를 실행하는 빈도</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1084" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1100" />
         <source>Proxies Per Cycle</source>
         <translation type="unfinished">주기당 프록시</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1091" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1107" />
         <source>Number of proxies to test in each cycle</source>
         <translation type="unfinished">각 주기에서 테스트할 프록시 수</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1107" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1123" />
         <source>Working Pool Size</source>
         <translation type="unfinished">작업 풀 크기</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1114" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1130" />
         <source>Maximum number of verified working proxies to maintain</source>
         <translation type="unfinished">유지 관리할 확인된 작동 프록시의 최대 수</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1130" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1146" />
         <source>Latency Threshold (ms)</source>
         <translation type="unfinished">지연 시간 임계값(ms)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1137" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1153" />
         <source>Maximum latency to consider a proxy as working</source>
         <translation type="unfinished">프록시가 작동하는 것으로 간주하는 최대 대기 시간</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1156" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1172" />
         <source>Failure Retry Count</source>
         <translation type="unfinished">실패 재시도 횟수</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1163" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1179" />
         <source>Number of retry attempts before considering a proxy as failed</source>
         <translation type="unfinished">프록시가 실패한 것으로 간주되기 전의 재시도 횟수</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1179" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1195" />
         <source>Test Target URL</source>
         <translation type="unfinished">테스트 대상 URL</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1186" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1202" />
         <source>URL to test proxies against</source>
         <translation type="unfinished">프록시를 테스트할 URL</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1189" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1205" />
         <source>http://cp.cloudflare.com/</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1196" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1212" />
         <source>Automatically switch to another working proxy when TUN mode proxy fails</source>
         <translation type="unfinished">TUN 모드 프록시가 실패할 경우 작동 중인 다른 프록시로 자동 전환</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1199" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1215" />
         <source>Enable TUN Failover</source>
         <translation type="unfinished">TUN 장애 조치 활성화</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1207" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1223" />
         <source>Startup</source>
         <translation type="unfinished">시작</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1268" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1284" />
         <source>Geometry</source>
         <translation type="unfinished">기하학</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1297" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1313" />
         <source>Autosave geometry</source>
         <translation type="unfinished">자동 저장 기하학</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1304" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1320" />
         <source>Autosave position</source>
         <translation type="unfinished">자동 저장 위치</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1324" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1340" />
         <source>Apply now</source>
         <translation type="unfinished">지금 신청하세요</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1440" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1456" />
         <source>Width</source>
         <translation type="unfinished">너비</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1453" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1469" />
         <source>X</source>
         <translation type="unfinished">엑스</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1486" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1502" />
         <source>Y</source>
         <translation type="unfinished">와이</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1499" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1515" />
         <source>Height</source>
         <translation type="unfinished">키</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1586" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1602" />
         <source>Core Executable Path</source>
         <translation type="unfinished">핵심 실행 파일 경로</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1615" />
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1789" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1631" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1805" />
         <source>Use default</source>
         <translation type="unfinished">기본값 사용</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1622" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1638" />
         <source>Remote Control</source>
         <translation type="unfinished">원격 제어</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1648" />
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1822" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1664" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1838" />
         <source>Select</source>
         <translation type="unfinished">선택하다</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1760" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1776" />
         <source>Resources Directory</source>
         <translation type="unfinished">자원 디렉토리</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1796" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1812" />
         <source>Resource Manager</source>
         <translation type="unfinished">자원 관리자</translation>
     </message>
@@ -795,9 +805,8 @@ sing-box의 내장 NTP 클라이언트&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</tran
         <translation type="unfinished">기본 전송 방법입니다.서버와 일치해야 합니다. 그렇지 않으면 연결을 설정할 수 없습니다.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="169" />
         <source>Network</source>
-        <translation type="unfinished">회로망</translation>
+        <translation type="obsolete">회로망</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="226" />
@@ -961,6 +970,11 @@ sing-box의 내장 NTP 클라이언트&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</tran
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="618" />
         <source>TLS Camouflage Settings</source>
         <translation type="unfinished">TLS 위장 설정</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="169" />
+        <source>Transport</source>
+        <translation type="unfinished">수송</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="672" />
@@ -1949,32 +1963,37 @@ For more information, see the document "Configuration/DNS".</source>
 <context>
     <name>EditShadowSocks</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="30" />
+        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="105" />
         <source>Plugin</source>
         <translation type="unfinished">플러그인</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="37" />
+        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="62" />
         <source>Encryption</source>
         <translation type="unfinished">암호화</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="44" />
+        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="69" />
         <source>Plugin Args</source>
         <translation type="unfinished">플러그인 인수</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="54" />
+        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="76" />
         <source>Password</source>
         <translation type="unfinished">비밀번호</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="80" />
+        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="118" />
+        <source>Network</source>
+        <translation type="unfinished">회로망</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="49" />
         <source>Version of UDP over TCP protocol, server support is required.</source>
         <translation type="unfinished">UDP over TCP 프로토콜 버전, 서버 지원이 필요합니다.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="94" />
+        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="87" />
         <source>Off</source>
         <translation type="unfinished">끄다</translation>
     </message>
@@ -2573,8 +2592,8 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="161" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="594" />
-        <location filename="../../src/ui/mainwindow.cpp" line="2531" />
-        <location filename="../../src/ui/mainwindow.cpp" line="2534" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2548" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2551" />
         <source>System Proxy</source>
         <translation type="unfinished">시스템 프록시</translation>
     </message>
@@ -2760,15 +2779,15 @@ For more information, see the document "Configuration/DNS".</source>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="751" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3599" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3609" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3616" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3626" />
         <source>Start</source>
         <translation type="unfinished">시작</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="759" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3598" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3609" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3615" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3626" />
         <source>Stop</source>
         <translation type="unfinished">멈추다</translation>
     </message>
@@ -2815,7 +2834,7 @@ For more information, see the document "Configuration/DNS".</source>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="838" />
-        <location filename="../../src/ui/mainwindow.cpp" line="1441" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1458" />
         <source>Export %1 config</source>
         <translation type="unfinished">%1 구성 내보내기</translation>
     </message>
@@ -2932,7 +2951,7 @@ For more information, see the document "Configuration/DNS".</source>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="992" />
-        <location filename="../../src/ui/mainwindow.cpp" line="2918" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2935" />
         <source>Clone</source>
         <translation type="unfinished">클론</translation>
     </message>
@@ -3056,7 +3075,7 @@ For more information, see the document "Configuration/DNS".</source>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1152" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3628" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3645" />
         <source>Add new Group</source>
         <translation type="unfinished">새 그룹 추가</translation>
     </message>
@@ -3072,218 +3091,218 @@ For more information, see the document "Configuration/DNS".</source>
         <translation type="unfinished">없는</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1096" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1113" />
         <source>Edit Routing Profiles</source>
         <translation type="unfinished">라우팅 프로필 편집</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1118" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1135" />
         <source>Update Routing Profiles</source>
         <translation type="unfinished">라우팅 프로필 업데이트</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1130" />
-        <location filename="../../src/ui/mainwindow.cpp" line="1134" />
-        <location filename="../../src/ui/mainwindow.cpp" line="1155" />
-        <location filename="../../src/ui/mainwindow.cpp" line="1158" />
-        <location filename="../../src/ui/mainwindow.cpp" line="1202" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1147" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1151" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1172" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1175" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1219" />
         <location filename="../../src/ui/setting/RouteItem.cpp" line="95" />
         <location filename="../../src/ui/setting/RouteItem.cpp" line="104" />
         <source>Update Response</source>
         <translation type="unfinished">응답 업데이트</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1131" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1148" />
         <location filename="../../src/ui/setting/RouteItem.cpp" line="105" />
         <source>No routing profiles are updated</source>
         <translation type="unfinished">라우팅 프로필이 업데이트되지 않습니다.</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1135" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1152" />
         <location filename="../../src/ui/setting/RouteItem.cpp" line="96" />
         <source>Updated %1 routing profiles</source>
         <translation type="unfinished">%1 라우팅 프로필을 업데이트했습니다.</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1145" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1162" />
         <source>Update RuleSet Map</source>
         <translation type="unfinished">규칙 세트 맵 업데이트</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1156" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1173" />
         <source>Failed to update rulesets</source>
         <translation type="unfinished">규칙 세트를 업데이트하지 못했습니다.</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1159" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1176" />
         <source>Rulesets updated successfully</source>
         <translation type="unfinished">규칙 세트가 성공적으로 업데이트되었습니다.</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1168" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1185" />
         <source>Update RuleSet Cache</source>
         <translation type="unfinished">규칙 세트 캐시 업데이트</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1203" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1220" />
         <source>Rulesets cache is updated</source>
         <translation type="unfinished">규칙 세트 캐시가 업데이트되었습니다.</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1217" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1234" />
         <source>Clear RuleSet Cache</source>
         <translation type="unfinished">규칙 세트 캐시 지우기</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1253" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1270" />
         <source>Enable AdBlock</source>
         <translation type="unfinished">AdBlock 활성화</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1655" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1672" />
         <source>Error</source>
         <translation type="unfinished">오류</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1742" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1759" />
         <source>Tun Settings changed</source>
         <translation type="unfinished">튜닝 설정이 변경됨</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1743" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1760" />
         <source>Restart Tun to take effect.</source>
         <translation type="unfinished">적용하려면 Tun을 다시 시작하세요.</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1749" />
-        <location filename="../../src/ui/mainwindow.cpp" line="1807" />
-        <location filename="../../src/ui/mainwindow.cpp" line="2972" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3343" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3397" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3446" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3676" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1766" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1824" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2989" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3360" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3414" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3463" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3693" />
         <source>Confirmation</source>
         <translation type="unfinished">확인</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1750" />
-        <location filename="../../src/ui/mainwindow.cpp" line="1808" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1767" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1825" />
         <source>Settings changed, restart proxy?</source>
         <translation type="unfinished">설정이 변경되었습니다. 프록시를 다시 시작하시겠습니까?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1779" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1796" />
         <source>Settings changed</source>
         <translation type="unfinished">설정이 변경됨</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1780" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1797" />
         <source>Restart the program to take effect.</source>
         <translation type="unfinished">적용하려면 프로그램을 다시 시작하세요.</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1823" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1840" />
         <source>Imported %1 profile(s)</source>
         <translation type="unfinished">%1 프로필을 가져왔습니다.</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2089" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2106" />
         <source>User opted for no privilege req, some features may not work</source>
         <translation type="unfinished">사용자가 권한 요청 없음을 선택했습니다. 일부 기능이 작동하지 않을 수 있습니다.</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2153" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2170" />
         <source>Please give the core root privileges</source>
         <translation type="unfinished">핵심 루트 권한을 부여해주세요</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2507" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2524" />
         <source>Not Running</source>
         <translation type="unfinished">실행되지 않음</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2919" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2936" />
         <source>Clone %1 item(s)</source>
         <translation type="unfinished">%1개 항목 복제</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2953" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2970" />
         <source> Confirmation </source>
         <translation type="unfinished">확인</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2954" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2971" />
         <source> Remove %1 item(s) ? </source>
         <translation type="unfinished">%1개 항목을 제거하시겠습니까?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2973" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2990" />
         <source>Remove %1 item(s) ?</source>
         <translation type="unfinished">%1개 항목을 제거하시겠습니까?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3010" />
-        <location filename="../../src/ui/mainwindow.cpp" line="3023" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3027" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3040" />
         <source>Copied %1 item(s)</source>
         <translation type="unfinished">%1개 항목을 복사했습니다</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3255" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3272" />
         <source>QR Code not found</source>
         <translation type="unfinished">QR 코드를 찾을 수 없습니다</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3276" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3293" />
         <source>Unable to capture screen</source>
         <translation type="unfinished">화면을 캡처할 수 없습니다</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3344" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3361" />
         <source>Remove %1 Unavailable item(s) ?</source>
         <translation type="unfinished">%1 사용할 수 없는 항목을 제거하시겠습니까?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3398" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3415" />
         <source>Remove %1 Invalid item(s) ?</source>
         <translation type="unfinished">%1 잘못된 항목을 제거하시겠습니까?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3447" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3464" />
         <source>Replace domain server addresses with their resolved IPs?</source>
         <translation type="unfinished">도메인 서버 주소를 확인된 IP로 바꾸시겠습니까?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3596" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3613" />
         <source>Clear</source>
         <translation type="unfinished">분명한</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3667" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3684" />
         <source>Delete selected Group</source>
         <translation type="unfinished">선택한 그룹 삭제</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3668" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3685" />
         <source>Edit selected Group</source>
         <translation type="unfinished">선택한 그룹 편집</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3677" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3694" />
         <source>Remove %1?</source>
         <translation type="unfinished">%1을(를) 제거하시겠습니까?</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4418" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4435" />
         <source>Cannot start</source>
         <translation type="unfinished">시작할 수 없습니다</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4419" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4436" />
         <source>Last download request has not finished yet</source>
         <translation type="unfinished">마지막 다운로드 요청이 아직 완료되지 않았습니다.</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4453" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4470" />
         <source>Failed to download update assets</source>
         <translation type="unfinished">업데이트 자산을 다운로드하지 못했습니다.</translation>
     </message>
@@ -3488,37 +3507,37 @@ For more information, see the document "Configuration/DNS".</source>
         <translation type="unfinished">조정 모드는 사용자 정의 구성과 함께 사용할 수 없습니다</translation>
     </message>
     <message>
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="844" />
+        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="845" />
         <source>Requesting subscription: %1</source>
         <translation type="unfinished">구독 요청 중: %1</translation>
     </message>
     <message>
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="848" />
+        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="849" />
         <source>Requesting subscription %1 error: %2</source>
         <translation type="unfinished">구독 요청 중 %1 오류: %2</translation>
     </message>
     <message>
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="855" />
+        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="856" />
         <source>Subscription request fininshed: %1</source>
         <translation type="unfinished">구독 요청이 완료되었습니다: %1</translation>
     </message>
     <message>
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="873" />
+        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="874" />
         <source>Clearing servers...</source>
         <translation type="unfinished">서버 정리 중...</translation>
     </message>
     <message>
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="878" />
+        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="879" />
         <source>Processing subscription data...</source>
         <translation type="unfinished">구독 데이터 처리 중...</translation>
     </message>
     <message>
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="881" />
+        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="882" />
         <source>Process complete, applying...</source>
         <translation type="unfinished">처리가 완료되었습니다. 적용 중입니다...</translation>
     </message>
     <message>
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="944" />
+        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="945" />
         <source>Added %1 profiles:
 %2
 Deleted %3 Profiles:
@@ -3529,17 +3548,17 @@ Deleted %3 Profiles:
 %4</translation>
     </message>
     <message>
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="949" />
+        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="950" />
         <source>Nothing</source>
         <translation type="unfinished">아무것도 아님</translation>
     </message>
     <message>
-        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="952" />
+        <location filename="../../src/configs/sub/GroupUpdater.cpp" line="953" />
         <source>Change of %1:</source>
         <translation type="unfinished">%1 변경:</translation>
     </message>
     <message>
-        <location filename="../../src/dataStore/Database.cpp" line="227" />
+        <location filename="../../src/dataStore/Database.cpp" line="225" />
         <source>Default</source>
         <translation type="unfinished">기본</translation>
     </message>
@@ -3566,35 +3585,35 @@ Deleted %3 Profiles:
     <message>
         <location filename="../../src/nekobox/global/GuiUtils.hpp" line="121" />
         <location filename="../../src/ui/profile/edit_ssh.cpp" line="28" />
-        <location filename="../../src/ui/setting/dialog_basic_settings.cpp" line="335" />
+        <location filename="../../src/ui/setting/dialog_basic_settings.cpp" line="336" />
         <source>Select</source>
         <translation type="unfinished">선택하다</translation>
     </message>
     <message>
         <location filename="../../src/stats/traffic/TrafficLooper.cpp" line="115" />
-        <location filename="../../src/ui/mainwindow.cpp" line="2475" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2492" />
         <source>Proxy: %1
 Direct: %2</source>
         <translation type="unfinished">프록시: %1
 직접: %2</translation>
     </message>
     <message>
-        <location filename="../../src/sys/Process.cpp" line="104" />
+        <location filename="../../src/sys/Process.cpp" line="112" />
         <source>Core exited, cleaning up...</source>
         <translation type="unfinished">코어가 종료되었습니다. 정리 중...</translation>
     </message>
     <message>
-        <location filename="../../src/sys/Process.cpp" line="111" />
+        <location filename="../../src/sys/Process.cpp" line="119" />
         <source>Core exits too frequently, stop automatic restart this profile.</source>
         <translation type="unfinished">Core가 너무 자주 종료됩니다. 이 프로필의 자동 다시 시작을 중지하세요.</translation>
     </message>
     <message>
-        <location filename="../../src/sys/Process.cpp" line="120" />
+        <location filename="../../src/sys/Process.cpp" line="128" />
         <source>Restarting the core ...</source>
         <translation type="unfinished">코어를 다시 시작하는 중...</translation>
     </message>
     <message>
-        <location filename="../../src/sys/Settings.cpp" line="357" />
+        <location filename="../../src/sys/Settings.cpp" line="358" />
         <source>System</source>
         <translation type="unfinished">체계</translation>
     </message>
@@ -3664,74 +3683,74 @@ Deleted %1 Unavailable</source>
         <translation type="unfinished">% 1을(를) 삭제했습니다. 사용할 수 없습니다</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1534" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1551" />
         <source>Check Rule Sets: %1</source>
         <translation type="unfinished">규칙 세트 확인: %1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="1556" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1573" />
         <source>Requesting rule-set list error: %1</source>
         <translation type="unfinished">규칙 세트 목록 요청 중 오류: %1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2512" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2529" />
         <source>IP address: %1</source>
         <translation type="unfinished">IP 주소: %1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="2898" />
+        <location filename="../../src/ui/mainwindow.cpp" line="2915" />
         <source>Move profiles to group</source>
         <translation type="unfinished">프로필을 그룹으로 이동</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3041" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3058" />
         <source>Config copied</source>
         <translation type="unfinished">구성이 복사되었습니다.</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3052" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3069" />
         <source>Copy core config</source>
         <translation type="unfinished">코어 구성 복사</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3053" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3070" />
         <source>Copy test config</source>
         <translation type="unfinished">테스트 구성 복사</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="3054" />
+        <location filename="../../src/ui/mainwindow.cpp" line="3071" />
         <location filename="../../src/ui/security_addon.cpp" line="21" />
         <location filename="../../src/ui/setting/dialog_vpn_settings.cpp" line="53" />
         <source>OK</source>
         <translation type="unfinished">좋아요</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4322" />
-        <location filename="../../src/ui/mainwindow.cpp" line="4333" />
-        <location filename="../../src/ui/mainwindow.cpp" line="4377" />
-        <location filename="../../src/ui/mainwindow.cpp" line="4400" />
-        <location filename="../../src/ui/mainwindow.cpp" line="4409" />
-        <location filename="../../src/ui/mainwindow.cpp" line="4444" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4339" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4350" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4394" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4417" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4426" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4461" />
         <source>Update</source>
         <translation type="unfinished">업데이트</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4323" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4340" />
         <source>Not official support platform</source>
         <translation type="unfinished">공식 지원 플랫폼이 아닙니다.</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4334" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4351" />
         <source>Requesting update error: %1</source>
         <translation type="unfinished">업데이트 요청 중 오류: %1</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4377" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4394" />
         <source>No update</source>
         <translation type="unfinished">업데이트 없음</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4401" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4418" />
         <source>Update found: %1
 Release note:
 %2</source>
@@ -3740,17 +3759,17 @@ Release note:
 % 2</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4404" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4421" />
         <source>Close</source>
         <translation type="unfinished">닫다</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4406" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4423" />
         <source>Open in browser</source>
         <translation type="unfinished">브라우저에서 열기</translation>
     </message>
     <message>
-        <location filename="../../src/ui/mainwindow.cpp" line="4445" />
+        <location filename="../../src/ui/mainwindow.cpp" line="4462" />
         <source>Update is ready, restart to install?</source>
         <translation type="unfinished">업데이트가 준비되었습니다. 다시 시작하여 설치하시겠습니까?</translation>
     </message>
@@ -3760,7 +3779,7 @@ Release note:
         <translation type="unfinished">접근 불가</translation>
     </message>
     <message>
-        <location filename="../../src/ui/setting/dialog_basic_settings.cpp" line="340" />
+        <location filename="../../src/ui/setting/dialog_basic_settings.cpp" line="341" />
         <source>Select a Folder</source>
         <translation type="unfinished">폴더 선택</translation>
     </message>
@@ -4112,7 +4131,7 @@ Release note:
     </message>
     <message>
         <location filename="../../src/ui/mainwindow.cpp" line="348" />
-        <location filename="../../src/ui/mainwindow.cpp" line="1277" />
+        <location filename="../../src/ui/mainwindow.cpp" line="1294" />
         <source>Download Profiles</source>
         <translation type="unfinished">프로필 다운로드</translation>
     </message>

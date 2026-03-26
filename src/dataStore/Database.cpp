@@ -262,17 +262,15 @@ namespace Configs {
             #endif
             return ent;
         }
-        validType = !ent->same_path_for_bean();
 #ifdef DEBUG_MODE
-        qDebug() << "Migration Mode" << !validType;
+        qDebug() << "Migration Mode" << ent->same_path_for_bean();
 #endif
         std::shared_ptr<AbstractBean> bean;
-        if (!validType){
+        if (ent->same_path_for_bean()){
             bean = ent->unlock(ent->bean());
+            bean->Load();
             ent->same_path_for_bean(false);
             bean->Load();
-        }
-        if (!validType){
             bean->Save();
             ent->Save();
         }

@@ -200,6 +200,25 @@ try{                                                                            
         }
     }
 
+    std::optional<libcore::QueryIPTestResponse> Client::QueryIPTest(bool *rpcOK)
+    {
+        CHECK("QueryIPTest")
+        if (!is_running){
+            *rpcOK = false;
+            return std::nullopt;
+        }
+        libcore::EmptyReq request;
+        CHANNEL(QueryIPTest, QueryIPTestResponse)
+     
+        if(status.isOk()) {
+            *rpcOK = true;
+            return reply;
+        } else {
+            NOT_OK
+            return std::nullopt;
+        }
+    }
+
     QString Client::SetSystemDNS(bool *rpcOK, const bool clear) const {
         CHECK("SetSystemDNS")
         if (!is_running){

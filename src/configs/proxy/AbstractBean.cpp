@@ -21,6 +21,14 @@ namespace Configs {
         ADD_MAP("brutal_speed", brutal_speed, integer);
     STOP_MAP
 
+    char AbstractBean::StoreType() const {
+        if (this->entity->same_path_for_bean()){
+            return Configs::JsonStoreType::Proxies;
+        } else {
+            return Configs::JsonStoreType::Beans;
+        }
+    };
+
     QString AbstractBean::ToNekorayShareLink(const QString &type) const {
         if (this->entity == nullptr) return "";
         auto b = ToJson();

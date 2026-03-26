@@ -47,6 +47,7 @@ private:
     QString type;
     int groupId;
     bool newEnt = false;
+    bool networkVisible = false;
     std::shared_ptr<Configs::ProxyEntity> ent;
 
     QString network_title_base;

@@ -34,49 +34,41 @@
      </property>
     </widget>
    </item>
-   <item row="4" column="0">
-    <widget class="QLabel" name="network_l">
+   <item row="2" column="1">
+    <widget class="QLineEdit" name="password"/>
+   </item>
+   <item row="3" column="0">
+    <widget class="QLabel" name="version_l">
      <property name="text">
-      <string>Network</string>
+      <string>Version</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="1">
+    <widget class="QComboBox" name="version">
+     <item>
+      <property name="text">
+       <string notr="true">5</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string notr="true">4</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="4" column="0">
+    <widget class="QLabel" name="uot_l">
+     <property name="toolTip">
+      <string>Version of UDP over TCP protocol, server support is required.</string>
+     </property>
+     <property name="text">
+      <string>UoT</string>
      </property>
     </widget>
    </item>
    <item row="4" column="1">
-    <widget class="QComboBox" name="network"/>
-   </item>
-   <item row="6" column="0">
-    <widget class="QLabel" name="path_l">
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="text">
-      <string>Path</string>
-     </property>
-    </widget>
-   </item>
-   <item row="6" column="1">
-    <widget class="QLineEdit" name="path"/>
-   </item>
-   <item row="7" column="0">
-    <widget class="QLabel" name="headers_l">
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="text">
-      <string>Headers</string>
-     </property>
-    </widget>
-   </item>
-   <item row="7" column="1">
-    <widget class="QTextEdit" name="headers"/>
-   </item>
-   <item row="5" column="1">
     <widget class="QComboBox" name="uot">
      <item>
       <property name="text">
@@ -96,38 +88,36 @@
     </widget>
    </item>
    <item row="5" column="0">
-    <widget class="QLabel" name="uot_l">
-     <property name="toolTip">
-      <string>Version of UDP over TCP protocol, server support is required.</string>
+    <widget class="QLabel" name="path_l">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
      </property>
      <property name="text">
-      <string>UoT</string>
+      <string>Path</string>
      </property>
     </widget>
    </item>
-   <item row="2" column="1">
-    <widget class="QLineEdit" name="password"/>
+   <item row="5" column="1">
+    <widget class="QLineEdit" name="path"/>
    </item>
-   <item row="3" column="1">
-    <widget class="QComboBox" name="version">
-     <item>
-      <property name="text">
-       <string notr="true">5</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string notr="true">4</string>
-      </property>
-     </item>
-    </widget>
-   </item>
-   <item row="3" column="0">
-    <widget class="QLabel" name="version_l">
+   <item row="6" column="0">
+    <widget class="QLabel" name="headers_l">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
      <property name="text">
-      <string>Version</string>
+      <string>Headers</string>
      </property>
     </widget>
+   </item>
+   <item row="6" column="1">
+    <widget class="QTextEdit" name="headers"/>
    </item>
   </layout>
  </widget>

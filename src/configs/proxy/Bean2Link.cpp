@@ -195,6 +195,7 @@ namespace Configs {
             query.addQueryItem("uot", "2");
         }
 
+        add_query_nonempty("network", query, *network);
         if (!query.isEmpty()) url.setQuery(query);
         //
         auto link = url.toString(QUrl::FullyEncoded);

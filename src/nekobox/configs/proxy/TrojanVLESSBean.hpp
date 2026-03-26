@@ -10,6 +10,7 @@ namespace Configs {
         static constexpr int proxy_Trojan = 0;
         static constexpr int proxy_VLESS = 1;
         int proxy_type = proxy_Trojan;
+        std::shared_ptr<NetworkEnum> network = std::make_shared<NetworkEnum>("tcp");
 
         QString password = "";
         QString flow = "";
@@ -22,6 +23,7 @@ namespace Configs {
         }
 
         INIT_MAP
+            ADD_MAP("network", network, string);
             ADD_MAP("pass", password, string);
             ADD_MAP("flow", flow, string);
             ADD_MAP("stream", stream, jsonStore);

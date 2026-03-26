@@ -66,6 +66,7 @@ DialogEditProfile::DialogEditProfile(const QString &_type, int profileOrGroupId,
   ui->setupUi(this);
   ui->dialog_layout->setAlignment(ui->left, Qt::AlignTop);
 
+    ui->network_2->addItems(Preset::SingBox::Network);
   // network changed
   network_title_base = ui->network_box->title();
   connect(ui->network, &QComboBox::currentTextChanged, this,
@@ -258,6 +259,21 @@ void DialogEditProfile::typeSelected(const QString &newType) {
   QString customType;
   type = newType;
   bool validType = true;
+
+  bool networkVisible = this->networkVisible = (
+    type == "socks" ||
+    type == "shadowsocks" ||
+    type == "vmess" ||
+    type == "trojan" ||
+    type == "hysteria" ||
+    type == "vless" ||
+    type == "tuic" ||
+    type == "hysteria2"
+  );
+
+  ui->network_l_2->setVisible(networkVisible);
+  ui->network_2->setVisible(networkVisible);
+
 
   if (type == "socks" || type == "http") {
     auto _innerWidget = new EditSocksHttp(this);
@@ -521,6 +537,7 @@ bool DialogEditProfile::onEnd() {
   ent->serverAddress = ui->address->text().remove(' ');
   ent->serverPort = ui->port->text().toInt();
   auto bean = ent->unlock(ent->bean());
+
   //
   auto stream = GetStreamSettings(bean.get());
   if (stream != nullptr) {
@@ -563,6 +580,11 @@ bool DialogEditProfile::onEnd() {
   // cached custom
   bean->custom_outbound = CACHE.custom_outbound;
   bean->custom_config = CACHE.custom_config;
+
+
+  if (this->networkVisible){
+    bean->_setValue("network", this->ui->network_2->currentText());
+  }
   return true;
 }
 

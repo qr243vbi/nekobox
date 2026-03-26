@@ -237,6 +237,7 @@ static void parse_security(std::shared_ptr<V2rayStreamSettings> stream, QUrlQuer
             } else if (mux_str == "false") {
                 mux_state = 2;
             }
+            *network = GetQueryValue(query, "network");
 
         } else {
             // v2rayN

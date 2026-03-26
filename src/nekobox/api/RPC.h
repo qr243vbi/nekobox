@@ -50,6 +50,12 @@ public:
   std::optional<libcore::QueryCountryTestResponse>
   QueryCountryTestResults(bool *rpcOK);
 
+  std::optional<libcore::QueryIPTestResponse>
+  IPTest(bool *rpcOK, const libcore::IPTestRequest &request);
+
+  std::optional<libcore::QueryIPTestResponse>
+  QueryIPTest(bool *rpcOK);
+
 private:
   std::string domain;
   int port;

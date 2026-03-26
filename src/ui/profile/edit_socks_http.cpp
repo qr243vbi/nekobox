@@ -17,8 +17,6 @@ bool EditSocksHttp::onStartHttp() {
     {
         ui->version->setVisible(false);
         ui->version_l->setVisible(false);
-        ui->network->setVisible(false);
-        ui->network_l->setVisible(false);
         ui->uot->setVisible(false);
         ui->uot_l->setVisible(false);
     }
@@ -54,12 +52,10 @@ bool EditSocksHttp::onStartSocks() {
         ui->path_l->setVisible(false);
         ui->headers->setVisible(false);
         ui->headers_l->setVisible(false);
-        this->ui->network->addItems(Preset::SingBox::Network);
     }
 
     P_LOAD_STRING(username)
     P_LOAD_STRING(password)
-    P_LOAD_COMBO_STRING_PTR(network)
     return true;
 }
 
@@ -78,7 +74,6 @@ bool EditSocksHttp::onEndSocks() {
 
     P_SAVE_STRING(username)
     P_SAVE_STRING(password)
-    P_SAVE_COMBO_STRING_PTR(network)
     return true;
 }
 

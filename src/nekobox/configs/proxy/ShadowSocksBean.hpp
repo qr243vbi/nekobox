@@ -11,6 +11,7 @@ namespace Configs {
         QString password = "";
         QString plugin = "";
         QString plugin_opts = "";
+        std::shared_ptr<NetworkEnum> network = std::make_shared<NetworkEnum>("tcp");
         int uot = 0;
 
         std::shared_ptr<V2rayStreamSettings> stream;
@@ -26,6 +27,7 @@ namespace Configs {
             ADD_MAP("plugin_opts", plugin_opts, string);
             ADD_MAP("uot", uot, integer);
             ADD_MAP("stream", stream, jsonStore);
+            ADD_MAP("network", network, string);
         STOP_MAP
 
         bool IsValid() {
