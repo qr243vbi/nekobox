@@ -39,7 +39,7 @@
       </size>
      </property>
      <property name="currentIndex">
-      <number>0</number>
+      <number>3</number>
      </property>
      <widget class="QWidget" name="tab_1">
       <attribute name="title">
@@ -711,9 +711,15 @@
                </item>
                <item>
                 <widget class="QCheckBox" name="disable_stats">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
                  <property name="minimumSize">
                   <size>
-                   <width>411</width>
+                   <width>0</width>
                    <height>0</height>
                   </size>
                  </property>
@@ -727,21 +733,17 @@
                  </property>
                 </widget>
                </item>
+               <item>
+                <widget class="QCheckBox" name="core_use_uds">
+                 <property name="toolTip">
+                  <string>Use Unix Domain Socket for communication between nekobox and nekobox_core</string>
+                 </property>
+                 <property name="text">
+                  <string>Use UDS for IPC</string>
+                 </property>
+                </widget>
+               </item>
               </layout>
-             </item>
-             <item row="1" column="0">
-              <widget class="QLabel" name="label_6">
-               <property name="text">
-                <string>Multiplex (mux)</string>
-               </property>
-              </widget>
-             </item>
-             <item row="0" column="0">
-              <widget class="QLabel" name="label_3">
-               <property name="text">
-                <string>Loglevel</string>
-               </property>
-              </widget>
              </item>
              <item row="1" column="1">
               <layout class="QHBoxLayout" name="horizontalLayout">
@@ -773,6 +775,20 @@
                 </widget>
                </item>
               </layout>
+             </item>
+             <item row="1" column="0">
+              <widget class="QLabel" name="label_6">
+               <property name="text">
+                <string>Multiplex (mux)</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="0">
+              <widget class="QLabel" name="label_3">
+               <property name="text">
+                <string>Loglevel</string>
+               </property>
+              </widget>
              </item>
             </layout>
            </widget>

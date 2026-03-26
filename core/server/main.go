@@ -80,7 +80,7 @@ func main() {
 	var _waitpid *int
 
 	_port := flag.Int("port", 19810, "Port")
-	_addr := flag.String("port", "127.0.0.1", "Address")
+	_addr := flag.String("address", "127.0.0.1", "Address")
 	_sock := flag.String("socket", "", "Unix Domain Socket")
 	_debug := flag.Bool("debug", false, "Debug mode")
 	_arg0 := flag.String("argv0", os.Args[0], "Replace first argument")
@@ -185,11 +185,23 @@ func main() {
 	var err error
 	socket := *_sock
 	if socket != "" {
-		addr, err = net.ResolveUnixAddr("unix", socket)
+		goto unix_resolve
 	} else {
+		if (*_port < 0){
+			socket = *_addr
+			goto unix_resolve
+		}
 		listenAddr := *_addr + ":" + strconv.Itoa(*_port)
 		addr, err = net.ResolveTCPAddr("tcp", listenAddr)
 	}
+
+	goto unix_unresolve
+	unix_resolve:
+	{
+		addr, err = net.ResolveUnixAddr("unix", socket)
+	}
+	unix_unresolve:
+
 	if err != nil {
 		log.Println("error running thrift server: ", err)
 	}

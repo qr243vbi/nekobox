@@ -640,13 +640,27 @@ MainWindow::MainWindow(QWidget *parent)
   runOnNewThread([=, this] { GetDeviceDetails(); });
 
   proxyAutoTester = std::make_unique<Stats::ProxyAutoTester>(this);
-  
+
+  if (!Configs::windowSettings->core_use_uds){
     Configs::dataStore->core_port = MkPort();
     Configs::dataStore->core_domain = "127.0.0.1";
+  } else {
+    Configs::dataStore->core_port = -1;
+    Configs::dataStore->core_domain = 
+        Configs::GetBasePath() + QDir::separator() +
+        "temp" + QDir::separator() +
+        GetRandomString(18) + ".sock";
+  }
+
+  #ifdef DEBUG_MODE
+    qDebug() << ">>> CORE LISTENING IN >>>" << Configs::dataStore->core_domain;
+  #endif
 
   QString core_path = getCorePath();
 
   QStringList args;
+  args.push_back("-address");
+  args.push_back(Configs::dataStore->core_domain);
   args.push_back("-port");
   args.push_back(QString::number(Configs::dataStore->core_port));
   if (Configs::dataStore->log_level == "debug")

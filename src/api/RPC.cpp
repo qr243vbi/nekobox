@@ -46,7 +46,7 @@ static std::shared_ptr<TTransport> getThriftTransport(const std::string & domain
     if (port > 0){
         return std::shared_ptr<TTransport> (new TSocket(domain, port));
     } else {
-        return std::shared_ptr<TTransport> (new TPipe(domain));
+        return std::shared_ptr<TTransport> (new TSocket(domain));
     }
 }
 
