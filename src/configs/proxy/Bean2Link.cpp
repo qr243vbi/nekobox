@@ -25,10 +25,19 @@ namespace Configs {
         url.setPort(bean->entity->serverPort);
     }
 
+    inline void add_query_boolean(const char * name, QUrlQuery & query, bool value){
+        add_query_nonempty(name, query, value ? "true" : "false");
+    };
+
     template<typename B>
     static void add_quic(QUrlQuery & q, B * bean){
         add_query_nonempty("quic_congestion_control", q, (QString)*bean->quic_congestion_control);
-        add_query_nonempty("quic", q, bean->quic ? "true" : "false");
+        add_query_boolean("quic", q, bean->quic);
+    }
+
+    template<typename B>
+    static void add_mux_state(QUrlQuery & q, B * bean){
+        add_query_boolean("mux", q, (bean->mux_state == 1) ? true : false);
     }
 
     static void add_query_int_range(const char * name, QUrlQuery & query, int value, int begin, int end){
@@ -172,11 +181,7 @@ namespace Configs {
         }
 
         // mux
-        if (mux_state == 1) {
-            query.addQueryItem("mux", "true");
-        } else if (mux_state == 2) {
-            query.addQueryItem("mux", "false");
-        }
+        add_mux_state(query, this);
 
         // protocol
         if (proxy_type == proxy_VLESS) {
@@ -205,11 +210,7 @@ namespace Configs {
         add_query_nonempty("plugin", query, plugin);
 
         // mux
-        if (mux_state == 1) {
-            query.addQueryItem("mux", "true");
-        } else if (mux_state == 2) {
-            query.addQueryItem("mux", "false");
-        }
+        add_mux_state(query, this);
         // uot
         add_udp_over_tcp(query, this);
 
@@ -273,11 +274,7 @@ namespace Configs {
         }
 
         // mux
-        if (mux_state == 1) {
-            query.addQueryItem("mux", "true");
-        } else if (mux_state == 2) {
-            query.addQueryItem("mux", "false");
-        }
+        add_mux_state(query, this);
 
         url.setQuery(query);
         return url.toString(QUrl::FullyEncoded);
@@ -372,14 +369,14 @@ namespace Configs {
         url.setScheme("wg");
         initialize_url(url, this);
         QUrlQuery query;
-        query.addQueryItem("private_key", privateKey);
-        query.addQueryItem("peer_public_key", publicKey);
-        query.addQueryItem("pre_shared_key", preSharedKey);
-        query.addQueryItem("reserved", FormatReserved());
+        add_query_nonempty("private_key", query, privateKey);
+        add_query_nonempty("peer_public_key", query, publicKey);
+        add_query_nonempty("pre_shared_key", query, preSharedKey);
+        add_query_nonempty("reserved", query, FormatReserved());
         add_query_int("persistent_keepalive", query, (persistentKeepalive));
         add_query_int("mtu", query, (MTU));
-        query.addQueryItem("use_system_interface", useSystemInterface ? "true":"false");
-        query.addQueryItem("local_address", localAddress.join("-"));
+        add_query_boolean("use_system_interface", query, useSystemInterface);
+        add_query_nonempty("local_address", query, localAddress.join("-"));
         add_query_int("workers", query, (workerCount));
         if (enable_amnezia)
         {
@@ -408,14 +405,14 @@ namespace Configs {
         add_query_nonempty("state_directory", q, QUrl::toPercentEncoding(state_directory));
         add_query_nonempty("auth_key", q, QUrl::toPercentEncoding(auth_key));
         add_query_nonempty("control_url", q, QUrl::toPercentEncoding(control_url));
-        add_query_nonempty("ephemeral", q, ephemeral ? "true" : "false");
+        add_query_boolean("ephemeral", q, ephemeral);
         add_query_nonempty("hostname", q, QUrl::toPercentEncoding(hostname));
-        add_query_nonempty("accept_routes", q, accept_routes ? "true" : "false");
+        add_query_boolean("accept_routes", q, accept_routes);
         add_query_nonempty("exit_node", q, exit_node);
-        add_query_nonempty("exit_node_allow_lan_access", q, exit_node_allow_lan_access ? "true" : "false");
+        add_query_boolean("exit_node_allow_lan_access", q, exit_node_allow_lan_access);
         add_query_nonempty("advertise_routes", q, QUrl::toPercentEncoding(advertise_routes.join(",")));
-        add_query_nonempty("advertise_exit_node", q, advertise_exit_node ? "true" : "false");
-        add_query_nonempty("global_dns", q, globalDNS ? "true" : "false");
+        add_query_boolean("advertise_exit_node", q, advertise_exit_node);
+        add_query_boolean("global_dns", q, globalDNS);
         url.setQuery(q);
         return url.toString(QUrl::FullyEncoded);
     }
@@ -473,9 +470,8 @@ namespace Configs {
         QUrlQuery q;
         add_username_password(url, this);
         add_quic(q, this);
-        add_udp_over_tcp(q, this);
         add_security(stream, q);
-
+        add_query_boolean("health_check", q, health_check);
         url.setQuery(q);
         return url.toString(QUrl::FullyEncoded);
     }
