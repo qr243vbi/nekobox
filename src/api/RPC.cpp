@@ -28,9 +28,7 @@ struct Status{
 
 namespace API {
 
-    Client::Client(std::function<void(const QString &)> onError, const QString &host, int port) {                         
-        this->port = (port);
-        this->domain = host.toStdString();
+    Client::Client(std::function<void(const QString &)> onError) {                         
         this->onError = std::move(onError);
     }
 
@@ -42,16 +40,17 @@ if (!Configs::dataStore->core_running) {                                        
 } else {    \
 }
 
-static std::shared_ptr<TTransport> getThriftTransport(const std::string & domain, int port){
+static std::shared_ptr<TTransport> getThriftTransport(){
+    int port = Configs::dataStore->core_port;
     if (port > 0){
-        return std::shared_ptr<TTransport> (new TSocket(domain, port));
+        return std::shared_ptr<TTransport> (new TSocket(Configs::dataStore->core_domain, port));
     } else {
-        return std::shared_ptr<TTransport> (new TSocket(domain));
+        return std::shared_ptr<TTransport> (new TSocket(Configs::dataStore->core_domain));
     }
 }
 
 #define CHANNEL(X, VAL)                                                                 \
-std::shared_ptr<TTransport> socketAA(getThriftTransport(domain, port));                     \
+std::shared_ptr<TTransport> socketAA(getThriftTransport());                     \
 std::shared_ptr<TTransport> transportAA(new TBufferedTransport(socketAA));                  \
 std::shared_ptr<TProtocol> protocolAA(new TBinaryProtocol(transportAA));                    \
 libcore::LibcoreServiceClient client(protocolAA);                                         \

@@ -203,9 +203,14 @@ int main(int argc, char** argv) {
     if (!wd.exists("settings")) {
         dir_success &= wd.mkdir("settings");
     }
+
     
 	{
 		QString wd_abs = wd.absoluteFilePath("settings");
+
+    #ifdef Q_OS_UNIX
+    prepare_directory_for_shared_access(wd_abs.toStdString());
+    #endif
 		QDir::setCurrent(wd_abs);
 		MoveDirToTrash("temp");
 		dir = QDir(wd_abs);

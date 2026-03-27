@@ -9,8 +9,7 @@
 namespace API {
 class Client {
 public:
-  explicit Client(std::function<void(const QString &)> onError,
-                  const QString &host, int port);
+  explicit Client(std::function<void(const QString &)> onError);
 
   // QString returns is error string
 
@@ -57,8 +56,6 @@ public:
   QueryIPTest(bool *rpcOK);
 
 private:
-  std::string domain;
-  int port;
   std::function<void(const QString &)> onError;
 };
 

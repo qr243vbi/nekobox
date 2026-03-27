@@ -29,12 +29,17 @@ func RunCore(addr net.Addr, _debug *bool) {
 	boxmain.DisableColor()
 	// RPC
 	go func() {
+		network := addr.Network()
+		address := addr.String()
 		for {
 			time.Sleep(100 * time.Millisecond)
-			conn, err := net.Dial(addr.Network(), addr.String())
+			conn, err := net.Dial(network, address)
 			if err == nil {
 				conn.Close()
-				fmt.Printf("Core listening at %v\n", addr.String())
+				fmt.Printf("Core listening  at %v\n", address)
+				if network == "unix" {
+					os.Chmod(address, 0770)
+				}
 				return
 			}
 		}
@@ -187,7 +192,7 @@ func main() {
 	if socket != "" {
 		goto unix_resolve
 	} else {
-		if (*_port < 0){
+		if *_port < 0 {
 			socket = *_addr
 			goto unix_resolve
 		}
@@ -196,11 +201,11 @@ func main() {
 	}
 
 	goto unix_unresolve
-	unix_resolve:
+unix_resolve:
 	{
 		addr, err = net.ResolveUnixAddr("unix", socket)
 	}
-	unix_unresolve:
+unix_unresolve:
 
 	if err != nil {
 		log.Println("error running thrift server: ", err)

@@ -38,10 +38,10 @@ void MainWindow::setup_rpc() {
     defaultClient = new Client(
         [=](const QString &errStr) {
             MW_show_log("[Error] Core: " + errStr);
-        },
-        Configs::dataStore->core_domain,
-        Configs::dataStore->core_port
+        }
     );
+
+    Configs::isAdminCache = -1;
 
     // Looper
     runOnNewThread([=] { Stats::trafficLooper->Loop(); });
@@ -576,6 +576,8 @@ void MainWindow::profile_start(int _id, bool do_not_test) {
         if (!rpcOK) {
             return false;
         }
+
+        Configs::isAdminCache = -1;
         if (!error.isEmpty()) {
             if (error.contains("configure tun interface")) {
                 runOnUiThread([=, this] {
@@ -705,6 +707,7 @@ void MainWindow::set_spmode_system_proxy(bool enable, bool save) {
     }
 
     Configs::dataStore->spmode_system_proxy = enable;
+    Configs::isAdminCache = -1;
     refresh_status();
 }
 

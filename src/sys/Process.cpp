@@ -40,8 +40,6 @@ static bool removeIfDifferentOwner(const QString &path)
 #endif
 
 namespace Configs_sys {
-    std::function<void()> core_pre_start;
-
     CoreProcess::~CoreProcess() {
     }
 
@@ -50,18 +48,16 @@ namespace Configs_sys {
         process.waitForFinished();
     }
 
-    CoreProcess::CoreProcess(const QString &core_path, const QStringList &args) {
-        if (core_pre_start != nullptr){
-            core_pre_start();
-        }
+    CoreProcess::CoreProcess(const QString &core_path, const QStringList &args, std::string * domain, int * port, std::function<void()> func) {
         program = core_path;
         arguments = args;
-        arguments << "-waitpid";
-        arguments << QString::number(QCoreApplication::applicationPid());
-        arguments << "-address";
-        arguments << Configs::dataStore->core_domain;
-        arguments << "-port";
-        arguments << QString::number(Configs::dataStore->core_port);
+        this->core_pre_start = func;
+        this->port = port;
+        this->domain = domain;
+
+        #ifdef DEBUG_MODE
+        qDebug() << "CORE START WITH PATH" << program << "AND ARGS" << arguments ;
+        #endif
 
         connect(&process, &QProcess::readyReadStandardOutput, this, [&]() {
             auto log = process.readAllStandardOutput();
@@ -133,6 +129,9 @@ namespace Configs_sys {
     }
 
     void CoreProcess::Start() {
+        if (core_pre_start != nullptr){
+            core_pre_start();
+        }
         if (started) return;
         started = true;
         QStringList list = QProcessEnvironment::systemEnvironment().toStringList();
@@ -159,7 +158,20 @@ namespace Configs_sys {
         process.setWorkingDirectory(cachePath);
 
         process.setEnvironment(list);
-        process.start(program, arguments);
+        QStringList args = arguments;
+
+        args << "-waitpid";
+        args << QString::number(QCoreApplication::applicationPid());
+        args << "-address";
+        args << QString::fromStdString(*this->domain);
+        args << "-port";
+        args << QString::number(*this->port);
+        #ifdef DEBUG_MODE
+        qDebug() <<" ARGUMENTS ARE " << args;
+        #endif    
+        process.setArguments(args);
+        process.setProgram(program);
+        process.start();
     }
 
     void CoreProcess::Restart() {

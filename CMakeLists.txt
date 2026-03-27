@@ -402,7 +402,15 @@ target_link_libraries(nekobox PRIVATE ${THRIFT_LIBRARIES})
 find_package(Boost REQUIRED COMPONENTS filesystem)
 target_include_directories(nekobox PRIVATE ${Boost_INCLUDE_DIRS})
 target_link_libraries(nekobox PRIVATE Boost::filesystem)
+if (UNIX)
+find_library(ACL_LIB acl)
 
+if(NOT ACL_LIB)
+    message(FATAL_ERROR "libacl not found. Install libacl-devel.")
+endif()
+
+target_link_libraries(nekobox PRIVATE ${ACL_LIB})
+endif()
 
 # Target Link
 

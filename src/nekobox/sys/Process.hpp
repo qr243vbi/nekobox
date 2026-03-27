@@ -15,7 +15,6 @@
 #endif
 
 namespace Configs_sys {
-    extern std::function<void()> core_pre_start;
 
     class CoreProcess: public QObject
     {
@@ -27,6 +26,10 @@ namespace Configs_sys {
         QString tag;
         QString program;
         QStringList arguments;
+        int waitpid;
+        std::string * domain;
+        int * port;
+        std::function<void()> core_pre_start;
 
         ~CoreProcess();
 
@@ -42,7 +45,7 @@ namespace Configs_sys {
         void elevateCoreProcessProgram();
 #endif
 
-        CoreProcess(const QString &core_path, const QStringList &args);
+        CoreProcess(const QString &core_path, const QStringList &args, std::string *, int *, std::function<void()> );
 
         int start_profile_when_core_is_up = -1;
 

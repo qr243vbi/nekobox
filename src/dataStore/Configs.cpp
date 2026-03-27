@@ -493,8 +493,6 @@ QByteArray hash = QCryptographicHash::hash(
         return fn;
     }
 
-    short isAdminCache = -1;
-
     bool isSetuidSet(const std::string& path) {
         return false;
     }

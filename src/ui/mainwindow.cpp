@@ -101,6 +101,12 @@ extern QVariantMap ruleSetMap;
 #include <QListView>
 #include <QLabel>
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 9, 0)
+#define STATE_CHANGED &QCheckBox::checkStateChanged
+#else
+#define STATE_CHANGED &QCheckBox::stateChanged
+#endif
+
 void setAppIcon(Icon::TrayIconStatus, QSystemTrayIcon *, MainWindow *window);
 
 void MainWindow::set_icons() { set_icons_from_settings(); }
@@ -641,24 +647,6 @@ MainWindow::MainWindow(QWidget *parent)
 
   proxyAutoTester = std::make_unique<Stats::ProxyAutoTester>(this);
 
-  Configs_sys::core_pre_start = [](){
-    if (!Configs::windowSettings->core_use_uds){
-        Configs::dataStore->core_port = MkPort();
-        Configs::dataStore->core_domain = "127.0.0.1";
-    } else {
-        QString tempdir = QDir::tempPath();
-        QDir dir;
-        if (!dir.exists(tempdir)){
-            dir.mkpath(tempdir);
-        }
-        Configs::dataStore->core_port = -1;
-        Configs::dataStore->core_domain =
-            tempdir + QDir::separator() +
-            "temp" + QDir::separator() +
-            GetRandomString(18) + ".sock";
-    }
-  };
-
   #ifdef DEBUG_MODE
     qDebug() << ">>> CORE LISTENING IN >>>" << Configs::dataStore->core_domain;
   #endif
@@ -672,7 +660,29 @@ MainWindow::MainWindow(QWidget *parent)
   // Start core
   runOnThread(
       [=, this] {
-        core_process = new Configs_sys::CoreProcess(core_path, args);
+        core_process = new Configs_sys::CoreProcess(core_path, args, 
+          &Configs::dataStore->core_domain, &Configs::dataStore->core_port,
+   
+          [](){
+    if (!Configs::windowSettings->core_use_uds){
+        Configs::dataStore->core_port = MkPort();
+        Configs::dataStore->core_domain = "127.0.0.1";
+    } else {
+        QString tempdir = QDir::tempPath() + QDir::separator() + GetRandomString(12);
+        QDir dir;
+        if (!dir.exists(tempdir)){
+            dir.mkpath(tempdir);
+        }
+        #ifdef Q_OS_UNIX
+        prepare_directory_for_shared_access(tempdir.toStdString());
+        #endif
+        Configs::dataStore->core_port = -1;
+        Configs::dataStore->core_domain =
+            QString(tempdir + QDir::separator() +
+            GetRandomString(12) + ".sock").toStdString();
+    }
+  }
+        );
         #ifdef DEBUG_MODE
         qDebug() << "Core file located at " << core_path;
         #endif
@@ -1036,11 +1046,20 @@ skip_updater_hide:
             MW_dialog_message("", "UpdateDataStore");
           });
   //
+  /*
+  connect(ui->checkBox_VPN, STATE_CHANGED, this, [](bool checked){
+    if (checked) {
+      Configs::isAdminCache = -1;
+    }
+  });*/
   connect(ui->checkBox_VPN, &QCheckBox::clicked, this, [=, this](bool checked) {
-    CHECK_ACTION_ACCESS_W set_spmode_vpn(checked);
+    Configs::isAdminCache = false;
+    CHECK_ACTION_ACCESS_W 
+    set_spmode_vpn(checked);
   });
   connect(ui->checkBox_SystemProxy, &QCheckBox::clicked, this,
           [=, this](bool checked) {
+                Configs::isAdminCache = false;
             CHECK_ACTION_ACCESS_W set_spmode_system_proxy(checked);
           });
   connect(ui->menu_spmode, &QMenu::aboutToShow, this, [=, this]() {
@@ -1053,13 +1072,18 @@ skip_updater_hide:
   });
   connect(ui->menu_spmode_system_proxy, &QAction::triggered, this,
           [=, this](bool checked) {
+                Configs::isAdminCache = false;
+
             CHECK_ACTION_ACCESS_W set_spmode_system_proxy(checked);
           });
   connect(ui->menu_spmode_vpn, &QAction::triggered, this,
           [=, this](bool checked) {
+                Configs::isAdminCache = false;
+
             CHECK_ACTION_ACCESS_W set_spmode_vpn(checked);
           });
   connect(ui->menu_spmode_disabled, &QAction::triggered, this, [=, this]() {
+        Configs::isAdminCache = false;
     CHECK_ACTION_ACCESS_W
     set_spmode_system_proxy(false);
     set_spmode_vpn(false);
@@ -2143,6 +2167,7 @@ skip_start_elevate_process:
   goto skip_start_elevate_process;
 start_elevate_process: {
   StopVPNProcess();
+  Configs::isAdminCache = -1;
   core_process->elevateCoreProcessProgram();
   runOnUiThread([=, this]() {
     if (reason == 3) {

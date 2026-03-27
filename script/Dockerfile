@@ -28,6 +28,8 @@ RUN apt-get install -y --no-install-recommends \
 
 RUN apt-get install -y --no-install-recommends patchelf qt6-tools-dev-tools qt6-tools-dev qt6-base-dev qt6-base-dev-tools cmake linguist-qt6 thrift-compiler libthrift-dev qt6-declarative-dev libboost-all-dev
 
+RUN apt-get install -y --no-install-recommends libacl1-dev
+
 RUN apt-get install -y --no-install-recommends ca-certificates
 RUN apt-get install -y --no-install-recommends qt6-wayland libxcb-xinerama0
 RUN apt-get install -y file
