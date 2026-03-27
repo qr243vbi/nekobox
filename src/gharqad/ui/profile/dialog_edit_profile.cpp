@@ -7,6 +7,8 @@
 #include "nekobox/ui/profile/edit_extra_core.h"
 #include "nekobox/ui/profile/edit_mieru.h"
 #include "nekobox/ui/profile/edit_naive.h"
+#include "nekobox/ui/profile/edit_juicity.h"
+#include "nekobox/ui/profile/edit_trusttunnel.h"
 #include "nekobox/ui/profile/edit_tor.h"
 #include "nekobox/ui/profile/edit_quic.h"
 #include "nekobox/ui/profile/edit_shadowsocks.h"
@@ -223,6 +225,8 @@ DialogEditProfile::DialogEditProfile(const QString &_type, int profileOrGroupId,
       LOAD_TYPE("anytls")
       LOAD_TYPE("shadowtls")
       LOAD_TYPE("mieru")
+      LOAD_TYPE("juicity")
+      LOAD_TYPE("trusttunnel")
       LOAD_TYPE("naive")
       LOAD_TYPE("wireguard")
       LOAD_TYPE("tailscale")
@@ -348,6 +352,14 @@ void DialogEditProfile::typeSelected(const QString &newType) {
     innerEditor = _innerWidget;
   } else if (type == "naive") {
       auto _innerWidget = new EditNaive(this);
+      innerWidget = _innerWidget;
+      innerEditor = _innerWidget;
+  } else if (type == "juicity") {
+      auto _innerWidget = new EditJuicity(this);
+      innerWidget = _innerWidget;
+      innerEditor = _innerWidget;
+  } else if (type == "trusttunnel") {
+      auto _innerWidget = new EditTrustTunnel(this);
       innerWidget = _innerWidget;
       innerEditor = _innerWidget;
   } else if (type == "tor") {
@@ -499,7 +511,7 @@ void DialogEditProfile::typeSelected(const QString &newType) {
     ui->network_box->setVisible(network_visible);
 
   auto security_visible = (type == "vmess" || type == "vless" || type == "trojan" ||
-      type == "http" || type == "anytls" || type == "shadowtls" || type == "naive");
+      type == "http" || type == "anytls" || type == "shadowtls" || type == "naive" || type == "trusttunnel" || type == "juicity");
     ui->security->setVisible(security_visible);
     ui->security_l->setVisible(security_visible);
 

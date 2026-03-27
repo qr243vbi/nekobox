@@ -1,7 +1,7 @@
-#include "nekobox/ui/profile/edit_naive.h"
 
-#include "nekobox/configs/proxy/NaiveBean.hpp"
 #include "nekobox/configs/proxy/Preset.hpp"
+#include "nekobox/ui/profile/edit_naive.h"
+#include "nekobox/configs/proxy/NaiveBean.hpp"
 
 EditNaive::EditNaive(QWidget *parent) : QWidget(parent),
 ui(new Ui::EditNaive) {

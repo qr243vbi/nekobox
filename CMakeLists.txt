@@ -151,6 +151,7 @@ set(PROJECT_SOURCES
         ${NYXARIA}/configs/proxy/ExtraCore.h
         ${NYXARIA}/configs/proxy/includes.h
         ${NYXARIA}/configs/proxy/TrustTunnelBean.hpp
+        ${NYXARIA}/configs/proxy/JuicityBean.hpp
         ${NYXARIA}/configs/proxy/MieruBean.hpp
         ${NYXARIA}/configs/proxy/NaiveBean.hpp
         ${NYXARIA}/configs/proxy/TorBean.hpp
@@ -229,6 +230,12 @@ set(PROJECT_SOURCES
         ${NYXARIA}/ui/profile/edit_naive.h
         ${GHARQAD}/ui/profile/edit_naive.cpp
         ${NYXARIA}/ui/profile/edit_naive.ui
+        ${NYXARIA}/ui/profile/edit_juicity.h
+        ${GHARQAD}/ui/profile/edit_juicity.cpp
+        ${NYXARIA}/ui/profile/edit_juicity.ui
+        ${NYXARIA}/ui/profile/edit_trusttunnel.h
+        ${GHARQAD}/ui/profile/edit_trusttunnel.cpp
+        ${NYXARIA}/ui/profile/edit_trusttunnel.ui
         ${NYXARIA}/ui/profile/edit_vmess.h
         ${GHARQAD}/ui/profile/edit_vmess.cpp
         ${NYXARIA}/ui/profile/edit_vmess.ui

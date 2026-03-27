@@ -19,3 +19,4 @@
 #include "TorBean.hpp"
 #include "NaiveBean.hpp"
 #include "TrustTunnelBean.hpp"
+#include "JuicityBean.hpp"
