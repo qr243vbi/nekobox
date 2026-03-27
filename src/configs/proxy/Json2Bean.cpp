@@ -21,6 +21,10 @@ namespace Configs
         bean->password = obj["password"].toString();
     }
 
+    static void add_mux_state(AbstractBean * bean, const QJsonObject &obj){
+        bean->mux_state = obj["multiplex"].isObject() ? (obj["multiplex"].toObject()["enabled"].toBool() ? 1 : 2) : 0;
+    }
+
     static bool parse_tls(std::shared_ptr<V2rayStreamSettings> stream, const QJsonObject & obj){
         bool is_tls = obj["tls"].isObject() ;
         if (is_tls) {
@@ -162,7 +166,8 @@ namespace Configs
     template<typename T>
     static void add_quic(T * bean, const QJsonObject &obj){
         *bean->quic_congestion_control = obj["quic_congestion_control"].toString();
-        bean->quic = obj["quic"].toBool();    }
+        bean->quic = obj["quic"].toBool();    
+    }
 
     bool ShadowSocksBean::TryParseJson(const QJsonObject& obj)
     {
@@ -176,7 +181,7 @@ namespace Configs
         if (obj.contains("password")) password = obj["password"].toString();
         if (obj.contains("plugin")) plugin = obj["plugin"].toString();
         if (obj.contains("plugin_opts")) plugin_opts = obj["plugin_opts"].toString();
-        mux_state = obj["multiplex"].isObject() ? (obj["multiplex"].toObject()["enabled"].toBool() ? 1 : 2) : 0;
+        add_mux_state(this, obj);
         return true;
     }
 
@@ -230,7 +235,7 @@ namespace Configs
         password = obj["password"].toString();
         if (proxy_type == proxy_VLESS) password = obj["uuid"].toString();
         flow = obj["flow"].toString();
-        mux_state = obj["multiplex"].isObject() ? (obj["multiplex"].toObject()["enabled"].toBool() ? 1 : 2) : 0;
+        add_mux_state(this, obj);
 
         stream->packet_encoding = obj["packet_encoding"].toString();
 
@@ -246,7 +251,7 @@ namespace Configs
         uuid = obj["uuid"].toString();
         security = obj["security"].toString();
         aid = obj["alter_id"].toInt();
-        mux_state = obj["multiplex"].isObject() ? (obj["multiplex"].toObject()["enabled"].toBool() ? 1 : 2) : 0;
+        add_mux_state(this, obj);
 
         stream->packet_encoding = obj["packet_encoding"].toString();
 

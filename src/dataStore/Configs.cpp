@@ -286,7 +286,7 @@ namespace Configs_ConfigItem {
     JsonEnum::operator QString() const {
         auto map = _map();
         try {
-            return QString::fromStdString(map.right.at(this->value).get_name());
+            return map.right.at(this->value).get_name();
         } catch (std::out_of_range){
 #ifdef DEBUG_MODE
             qDebug() << this->value << "NOT FOUND";

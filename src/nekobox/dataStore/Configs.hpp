@@ -26,6 +26,7 @@ namespace Configs {
 struct EnumFieldName {
     // constructors
     EnumFieldName();
+    EnumFieldName(QString n);
     EnumFieldName(std::string n);
 
     // copy / move
@@ -37,15 +38,18 @@ struct EnumFieldName {
     EnumFieldName& operator=(EnumFieldName&& other) noexcept; // move assign
 
     // assign from string
+    EnumFieldName& operator=(QString const& s);
+    EnumFieldName& operator=(QString&& s);
+
+    // assign from std string
     EnumFieldName& operator=(std::string const& s);
     EnumFieldName& operator=(std::string&& s);
 
     // set operator: replace stored name (updates lower_name)
-    void set_name(std::string n);
+    void set_name(QString n);
 
     // accessors
-    const std::string& get_name() const noexcept;
-    const std::string& get_lower_name() const noexcept;
+    const QString& get_name() const noexcept;
 
     // relational operators
     bool operator<(EnumFieldName const& o) const noexcept;
@@ -56,15 +60,14 @@ struct EnumFieldName {
     bool operator>=(EnumFieldName const& o) const noexcept; 
 
     // convenience comparison with std::string (case-sensitive on original name)
-    bool operator==(std::string const& s) const noexcept;
-    bool operator!=(std::string const& s) const noexcept;
+    bool operator==(const QString& s) const noexcept;
+    bool operator!=(const QString& s) const noexcept;
 
     friend struct EnumFieldNameHasher;
     friend struct EnumFieldNameEqual;
 
 private:
-    std::string name;
-    std::string lower_name;
+    QString name;
 };
 
 // Custom hasher and equality functors (declarations)

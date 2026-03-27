@@ -7,6 +7,7 @@
 #include <qcontainerfwd.h>
 
 #include <boost/algorithm/string.hpp>
+#include <qnamespace.h>
 
 
 static void _put_store(ConfJsMap _map, const QString &str, void *value,
@@ -525,18 +526,22 @@ SET_BIN(double) {
 // --- Constructors ---
 EnumFieldName::EnumFieldName() = default;
 
+EnumFieldName::EnumFieldName(QString n)
+    : name(std::move(n))
+{}
+
 EnumFieldName::EnumFieldName(std::string n)
-    : name(std::move(n)), lower_name(boost::algorithm::to_lower_copy(name))
+    : name(QString::fromStdString(n))
 {}
 
 // copy constructor
 EnumFieldName::EnumFieldName(EnumFieldName const& other)
-    : name(other.name), lower_name(other.lower_name)
+    : name(other.name)
 {}
 
 // move constructor
 EnumFieldName::EnumFieldName(EnumFieldName&& other) noexcept
-    : name(std::move(other.name)), lower_name(std::move(other.lower_name))
+    : name(std::move(other.name))
 {}
 
 // --- Assignment operators ---
@@ -545,52 +550,56 @@ EnumFieldName::EnumFieldName(EnumFieldName&& other) noexcept
 EnumFieldName& EnumFieldName::operator=(EnumFieldName const& other) {
     if (this != &other) {
         name = other.name;
-        lower_name = other.lower_name;
     }
     return *this;
 }
 
 // move assignment
 EnumFieldName& EnumFieldName::operator=(EnumFieldName&& other) noexcept {
-    if (this != &other) {
-        name = std::move(other.name);
-        lower_name = std::move(other.lower_name);
-    }
+    name = std::move(other.name);
     return *this;
 }
 
 // assign from lvalue string
-EnumFieldName& EnumFieldName::operator=(std::string const& s) {
+EnumFieldName& EnumFieldName::operator=(const QString & s) {
     name = s;
-    lower_name = boost::algorithm::to_lower_copy(name);
+    return *this;
+}
+
+// assign from rvalue string
+EnumFieldName& EnumFieldName::operator=(QString&& s) {
+    name = std::move(s);
+    return *this;
+}
+
+// assign from lvalue string
+EnumFieldName& EnumFieldName::operator=(const std::string & s) {
+    name = QString::fromStdString(s);
     return *this;
 }
 
 // assign from rvalue string
 EnumFieldName& EnumFieldName::operator=(std::string&& s) {
-    name = std::move(s);
-    lower_name = boost::algorithm::to_lower_copy(name);
+    name = QString::fromStdString(std::move(s));
     return *this;
 }
 
 // --- Mutator / setter ---
-void EnumFieldName::set_name(std::string n) {
+void EnumFieldName::set_name(QString n) {
     name = std::move(n);
-    lower_name = boost::algorithm::to_lower_copy(name);
 }
 
 // --- Accessors ---
-const std::string& EnumFieldName::get_name() const noexcept { return name; }
-const std::string& EnumFieldName::get_lower_name() const noexcept { return lower_name; }
+const QString& EnumFieldName::get_name() const noexcept { return name; }
 
 // --- Relational operators ---
 // Default ordering: case-sensitive on original name. Swap to lower_name if you want case-insensitive ordering.
 bool EnumFieldName::operator<(EnumFieldName const& o) const noexcept {
-    return lower_name < o.lower_name;
+    return QString::compare(name, o.name, Qt::CaseInsensitive) < 0;
 }
 
 bool EnumFieldName::operator==(EnumFieldName const& o) const noexcept {
-    return lower_name == o.lower_name;
+    return QString::compare(name, o.name, Qt::CaseInsensitive) == 0;
 }
 
 bool EnumFieldName::operator!=(EnumFieldName const& o) const noexcept {
@@ -610,28 +619,32 @@ bool EnumFieldName::operator>=(EnumFieldName const& o) const noexcept {
 }
 
 // Comparisons with std::string (case-sensitive against original name)
-bool EnumFieldName::operator==(std::string const& s) const noexcept {
-    return lower_name == boost::algorithm::to_lower_copy(s);
+bool EnumFieldName::operator==(QString const& s) const noexcept {
+    return QString::compare(name, s, Qt::CaseInsensitive) == 0;
 }
 
-bool EnumFieldName::operator!=(std::string const& s) const noexcept {
-    return lower_name != boost::algorithm::to_lower_copy(s);
+bool EnumFieldName::operator!=(const QString& s) const noexcept {
+    return !(*this == s);
 }
 
 // --- Hasher and equality functors ---
 // Use lower_name to compute hash and equality (case-insensitive behavior).
 
 std::size_t EnumFieldNameHasher::operator()(EnumFieldName const& w) const noexcept {
-    return std::hash<std::string>{}(w.lower_name);
+  QString key = w.name;  // best option
+  key = key.toCaseFolded();
+  uint hash = qHash(key);
+  return hash;
 }
 
 bool EnumFieldNameEqual::operator()(EnumFieldName const& a, EnumFieldName const& b) const noexcept {
-    return a.lower_name == b.lower_name;
+    return a == b;
 }
 
 // --- std::hash specialization ---
 namespace std {
     std::size_t hash<EnumFieldName>::operator()(EnumFieldName const& w) const noexcept {
-        return std::hash<std::string>{}(w.get_lower_name());
+        EnumFieldNameHasher hsr;
+        return hsr(w);
     }
 }

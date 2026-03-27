@@ -149,7 +149,7 @@ template <typename T> auto asListRange(QList<T> &&list) {
    bool first = true;                                                   \
    for (auto it = ptr.left.begin(); it != ptr.left.end(); ++it) {       \
        if (!first) oss << ", ";                                         \
-       oss << it->first.get_name() << ":" << it->second;                \
+       oss << it->first.get_name().toStdString() << ":" << it->second;  \
        first = false;                                                   \
    }                                                                    \
    qDebug() <<  oss.str().c_str();                                      \
@@ -182,7 +182,7 @@ public:                                                                 \
 {                                                       \
     int pref = I;                                       \
     for (int i = 0, n = K.size(); i < n; i ++){         \
-        ADD_ENUM(K.at(i).toStdString(), i + pref);      \
+        ADD_ENUM(K.at(i), i + pref);      \
     }                                                   \
 }
 

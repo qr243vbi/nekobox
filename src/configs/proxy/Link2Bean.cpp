@@ -8,7 +8,7 @@
 namespace Configs {
 
 template<typename T>
-static void parse_authentication(T * t, QUrl & url){
+static void add_username_password(T * t, QUrl & url){
     auto username = url.userName();
     auto password = url.password();
     // v2rayN fmt
@@ -22,6 +22,45 @@ static void parse_authentication(T * t, QUrl & url){
     t->username = username;
     t->password = password;
 }
+
+template<typename T>
+static void add_udp_over_tcp(T *t, QUrlQuery & query){
+    t->uot = GetQueryIntValue(query, "uot", GetQueryIntValue(query, "udp_over_tcp", 0));
+}
+
+    template<typename T>
+    static void add_quic(T * bean, const QUrlQuery &query){
+        *bean->quic_congestion_control = GetQueryValue(query, "quic_congestion_control");
+        bean->quic = (GetQueryValue(query, "quic").localeAwareCompare("true") == 0);
+    }
+
+    template<typename T>
+    static void add_network(T * t, const QUrlQuery &obj){
+        auto network =  GetQueryValue(obj, "network");
+        if (network.isEmpty()){
+            *t->network = network;
+        }
+    }
+
+    static void set_boolean(const char * name, bool & value, const QUrlQuery &obj){
+        auto qval = obj.queryItemValue(name);
+        if (value){
+            value = !(qval.localeAwareCompare("false"));
+        } else {
+            value = (qval.localeAwareCompare("true"));
+        }
+    }
+
+    static void add_mux_state(AbstractBean * bean, const QUrlQuery &query){
+        auto mux_str = GetQueryValue(query, "mux", "");
+        if (mux_str == "true") {
+            bean->mux_state = 1;
+        } else if (mux_str == "false") {
+            bean->mux_state = 2;
+        } else {
+            bean->mux_state = 0;
+        }
+    }
 
 static void parse_security(std::shared_ptr<V2rayStreamSettings> stream, QUrlQuery & query){
     stream->security = "tls";
@@ -70,10 +109,9 @@ static void parse_security(std::shared_ptr<V2rayStreamSettings> stream, QUrlQuer
         deinitialize_url(url, entity);
         if (entity->serverPort == -1) entity->serverPort = 1080;
 
-        parse_authentication(this, url);
-        *network = GetQueryValue(query, "network");
-        uot = GetQueryIntValue(query, "uot", GetQueryIntValue(query, "udp_over_tcp", 0));
-
+        add_username_password(this, url);
+        add_network(this, query);
+        add_udp_over_tcp(this, query);
         return !entity->serverAddress.isEmpty();
     }
 
@@ -84,7 +122,7 @@ static void parse_security(std::shared_ptr<V2rayStreamSettings> stream, QUrlQuer
 
         deinitialize_url(url, entity);
         if (entity->serverPort == -1) entity->serverPort = 443;
-        parse_authentication(this, url);
+        add_username_password(this, url);
         path = url.path();
         headers = GetQueryMapValue(query, "headers");
         if (link.startsWith("https")) {
@@ -135,6 +173,7 @@ static void parse_security(std::shared_ptr<V2rayStreamSettings> stream, QUrlQuer
         password = url.userName();
         if (entity->serverPort == -1) entity->serverPort = 443;
 
+        add_network(this, query);
         // security
 
         auto type =  GetQueryValue(query, "type", "tcp");
@@ -194,12 +233,7 @@ static void parse_security(std::shared_ptr<V2rayStreamSettings> stream, QUrlQuer
         }
 
         // mux
-        auto mux_str = GetQueryValue(query, "mux", "");
-        if (mux_str == "true") {
-            mux_state = 1;
-        } else if (mux_str == "false") {
-            mux_state = 2;
-        }
+        add_mux_state(this, query);
 
         // protocol
         if (proxy_type == proxy_VLESS) {
@@ -231,13 +265,10 @@ static void parse_security(std::shared_ptr<V2rayStreamSettings> stream, QUrlQuer
 
             auto query = GetQuery(url);
             plugin = query.queryItemValue("plugin").replace("simple-obfs;", "obfs-local;");
-            auto mux_str = GetQueryValue(query, "mux", "");
-            if (mux_str == "true") {
-                mux_state = 1;
-            } else if (mux_str == "false") {
-                mux_state = 2;
-            }
-            *network = GetQueryValue(query, "network");
+            
+            add_mux_state(this, query);
+            add_network(this, query);
+            add_udp_over_tcp(this, query);
 
         } else {
             // v2rayN
@@ -249,6 +280,7 @@ static void parse_security(std::shared_ptr<V2rayStreamSettings> stream, QUrlQuer
             method = url.userName();
             password = url.password();
         }
+
         return !(entity->serverAddress.isEmpty() || method.isEmpty() || password.isEmpty());
     }
 
@@ -291,13 +323,14 @@ static void parse_security(std::shared_ptr<V2rayStreamSettings> stream, QUrlQuer
             if (!url.isValid()) return false;
             auto query = GetQuery(url);
             deinitialize_url(url, entity);
-
             uuid = url.userName();
             if (entity->serverPort == -1) entity->serverPort = 443;
 
             aid = 0; // “此分享标准仅针对 VMess AEAD 和 VLESS。”
             security = GetQueryValue(query, "encryption", "auto");
-
+            set_boolean("global_padding", global_padding, query);
+            set_boolean("authenticated_length", authenticated_length, query);
+            add_network(this, query);
             // security
             auto type = GetQueryValue(query, "type", "tcp");
             if (type == "h2") {
@@ -321,12 +354,7 @@ static void parse_security(std::shared_ptr<V2rayStreamSettings> stream, QUrlQuer
             if (query.queryItemValue("record_fragment") == "1") stream->enable_tls_record_fragment = true;
 
             // mux
-            auto mux_str = GetQueryValue(query, "mux", "");
-            if (mux_str == "true") {
-                mux_state = 1;
-            } else if (mux_str == "false") {
-                mux_state = 2;
-            }
+            add_mux_state(this, query);
 
             // type
             if (stream->network == "ws") {
@@ -359,6 +387,8 @@ static void parse_security(std::shared_ptr<V2rayStreamSettings> stream, QUrlQuer
     }
 
     bool QUICBean::TryParseLink(const QString &link) {
+
+
         auto url = QUrl(link);
         if (!url.isValid()) {
             if(!url.errorString().startsWith("Invalid port"))
@@ -371,6 +401,7 @@ static void parse_security(std::shared_ptr<V2rayStreamSettings> stream, QUrlQuer
         }
         auto query = QUrlQuery(url.query());
 
+        add_network(this, query);
         if (url.scheme() == "hysteria") {
             // https://hysteria.network/docs/uri-scheme/
             if (!query.hasQueryItem("upmbps") || !query.hasQueryItem("downmbps")) return false;
@@ -471,10 +502,10 @@ static void parse_security(std::shared_ptr<V2rayStreamSettings> stream, QUrlQuer
         }
         persistentKeepalive = GetQueryIntValue(query, "persistent_keepalive");
         MTU = GetQueryIntValue(query, "mtu");
-        useSystemInterface = query.queryItemValue("use_system_interface") == "true";
+        set_boolean("use_system_interface", useSystemInterface, query);
         workerCount = GetQueryIntValue(query, "workers");
 
-        enable_amnezia = query.queryItemValue("enable_amnezia") == "true";
+        set_boolean("enable_amnezia", enable_amnezia, query);
         junk_packet_count = GetQueryIntValue(query, "junk_packet_count");
         junk_packet_min_size = GetQueryIntValue(query, "junk_packet_min_size");
         junk_packet_max_size = GetQueryIntValue(query, "junk_packet_max_size");
@@ -498,14 +529,15 @@ static void parse_security(std::shared_ptr<V2rayStreamSettings> stream, QUrlQuer
         state_directory = QUrl::fromPercentEncoding(query.queryItemValue("state_directory").toUtf8());
         auth_key = QUrl::fromPercentEncoding(query.queryItemValue("auth_key").toUtf8());
         control_url = QUrl::fromPercentEncoding(query.queryItemValue("control_url").toUtf8());
-        ephemeral = query.queryItemValue("ephemeral") == "true";
+        set_boolean("ephemeral", ephemeral, query);
         hostname = QUrl::fromPercentEncoding(query.queryItemValue("hostname").toUtf8());
-        accept_routes = query.queryItemValue("accept_routes") == "true";
+        set_boolean("accept_routes", accept_routes, query);
         exit_node = query.queryItemValue("exit_node");
-        exit_node_allow_lan_access = query.queryItemValue("exit_node_allow_lan_access") == "true";
+        set_boolean("exit_node_allow_lan_access", exit_node_allow_lan_access, query);
         advertise_routes = QUrl::fromPercentEncoding(query.queryItemValue("advertise_routes").toUtf8()).split(",");
-        advertise_exit_node = query.queryItemValue("advertise_exit_node") == "true";
-        globalDNS = query.queryItemValue("globalDNS") == "true";
+        set_boolean("advertise_exit_node", advertise_exit_node, query);
+        set_boolean("globalDNS", globalDNS, query);
+        set_boolean("global_dns", globalDNS, query);
 
         return true;
     }
@@ -554,20 +586,33 @@ static void parse_security(std::shared_ptr<V2rayStreamSettings> stream, QUrlQuer
         return true;
     };
 
-
     bool NaiveBean::TryParseLink(const QString& link)
     {
         auto url = QUrl(link);
         if (!url.isValid()) return false;
-        auto query = GetQuery(url);
+        QUrlQuery query = GetQuery(url);
         deinitialize_url(url, entity);
 
-        parse_authentication(this, url);
-
-        *quic_congestion_control = GetQueryValue(query, "quic_congestion_control");
-        quic = (GetQueryValue(query, "quic").localeAwareCompare("true") == 0);
-        uot = GetQueryIntValue(query, "uot", GetQueryIntValue(query, "udp_over_tcp", 0));
+        add_username_password(this, url);
+        add_quic(this, query);
+        add_udp_over_tcp(this, query);
         extra_headers = GetQueryMapValue(query, "extra_headers");
+
+        parse_security(stream, query);
+        return true;
+    }
+
+
+    bool TrustTunnelBean::TryParseLink(const QString& link)
+    {
+        auto url = QUrl(link);
+        if (!url.isValid()) return false;
+        QUrlQuery query = GetQuery(url);
+        deinitialize_url(url, entity);
+
+        add_username_password(this, url);
+        add_quic(this, query);
+        set_boolean("health_check", this->health_check, query);
 
         parse_security(stream, query);
         return true;
@@ -580,7 +625,7 @@ static void parse_security(std::shared_ptr<V2rayStreamSettings> stream, QUrlQuer
         auto query = GetQuery(url);
         deinitialize_url(url, entity);
 
-        parse_authentication(this, url);
+        add_username_password(this, url);
 
         *network = query.queryItemValue("transport").toLower();
         traffic_pattern = GetQueryValue(query, "traffic_pattern");

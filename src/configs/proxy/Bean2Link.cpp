@@ -35,9 +35,10 @@ namespace Configs {
         add_query_boolean("quic", q, bean->quic);
     }
 
-    template<typename B>
-    static void add_mux_state(QUrlQuery & q, B * bean){
-        add_query_boolean("mux", q, (bean->mux_state == 1) ? true : false);
+    static void add_mux_state(QUrlQuery & q, const AbstractBean * bean){
+        if (bean->mux_state != 0) {
+            add_query_boolean("mux", q, (bean->mux_state == 1) ? true : false);
+        }
     }
 
     static void add_query_int_range(const char * name, QUrlQuery & query, int value, int begin, int end){
