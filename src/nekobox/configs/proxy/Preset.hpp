@@ -5,7 +5,7 @@
 
 namespace Preset::SingBox {
   extern QMap<QString, QString> OutboundTypes;
-  inline QStringList QUICCongestionControlAlgorithm = {"bbr", "bbr2", "cubic", "reno"};
+  inline QStringList QUICCongestionControlAlgorithm = {"bbr", "bbr2", "cubic", "reno", "bbr_standard", "bbr_variant"};
   inline QStringList VpnImplementation = {"system", "gvisor", "mixed"};
   inline QStringList MieruMultiplexing = {
       "MULTIPLEXING_OFF",

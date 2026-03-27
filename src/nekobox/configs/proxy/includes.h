@@ -18,3 +18,4 @@
 #include "ShadowTLSBean.hpp"
 #include "TorBean.hpp"
 #include "NaiveBean.hpp"
+#include "TrustTunnel.hpp"

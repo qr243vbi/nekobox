@@ -3,51 +3,44 @@
 #include "AbstractBean.hpp"
 #include "V2RayStreamSettings.hpp"
 #include "Preset.hpp"
-#include <QVariantMap>
 
 namespace Configs {
-
-    class NaiveBean : public AbstractBean {
+    class TrustTunnel : public AbstractBean {
     public:
-        QString username = "";
         QString password = "";
-        int insecure_concurrency = 0;
-        int uot = 0;
-        QVariantMap extra_headers;
+        QString username = "";
+        bool health_check = true;
         bool quic = false;
         std::shared_ptr<QUICEnum> quic_congestion_control;
         std::shared_ptr<V2rayStreamSettings> stream;
 
-        NaiveBean(Configs::ProxyEntity * entity) : AbstractBean(entity, 0) {
+        TrustTunnel(Configs::ProxyEntity * entity) : AbstractBean(entity, 0) {
             quic_congestion_control = std::make_shared<QUICEnum>("");
             stream = std::make_shared<V2rayStreamSettings>();
         }
-
-        #ifdef DEBUG_MODE
-        virtual QString type()const override {
-            return "naive";
-        };
-        #endif
         
         INIT_MAP
             ADD_MAP("username", username, string);
-            ADD_MAP("password", password, string);
-            ADD_MAP("insecure_concurrency", insecure_concurrency, integer);
-            ADD_MAP("uot", uot, integer);
-            ADD_MAP("extra_headers", extra_headers, map);
+            ADD_MAP("password", password, stringList);
+            ADD_MAP("health_check", health_check, boolean);
             ADD_MAP("quic_enabled", quic, boolean);
             ADD_MAP("quic_congestion_control", quic_congestion_control, string);
             ADD_MAP("stream", stream, jsonStore);
         STOP_MAP
-
-     //   QString DisplayType() override { return "AnyTLS"; };
-
-        CoreObjOutboundBuildResult BuildCoreObjSingBox()const override;
+/*/
+        QString DisplayType() override { return "Tor"; };
+*/
+        CoreObjOutboundBuildResult BuildCoreObjSingBox() const override;
 
         bool TryParseLink(const QString &link) override;
 
         bool TryParseJson(const QJsonObject &obj) override;
 
-        QString ToShareLink()const override;
+        QString ToShareLink() const override;
+        #ifdef DEBUG_MODE
+        virtual QString type()const override {
+            return "tor";
+        };
+        #endif
     };
 } // namespace Configs

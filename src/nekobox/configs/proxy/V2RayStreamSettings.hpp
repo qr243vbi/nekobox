@@ -5,6 +5,10 @@
 
 namespace Configs {
 
+    INIT_ENUM(QUIC)
+        ADD_ENUM_LIST(Preset::SingBox::QUICCongestionControlAlgorithm, 1);
+    STOP_ENUM
+    
 INIT_ENUM(Network)
     ADD_ENUM_LIST(Preset::SingBox::Network, 1);
 STOP_ENUM
