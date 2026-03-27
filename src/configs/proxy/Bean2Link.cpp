@@ -12,23 +12,41 @@ namespace Configs {
     inline void add_query_nonempty(const char * name, QUrlQuery & query, const QString &value){ AddQueryString(query, name, value); };
     inline void add_query_args_nonempty(const char * name, QUrlQuery & query, const QStringList & value) { AddQueryStringList(query, name, value); };
     inline void add_query_map_nonempty(const char * name, QUrlQuery & query, const QVariantMap & value) { AddQueryMap(query, name, value); };
+    
     template<typename T>
     static void add_network(QUrlQuery & query, T * obj){
         add_query_nonempty("network", query, *obj->network);
     }
 
-
-    static void initialize_url(QUrl & url, Configs::ProxyEntity * entity){
-        auto name = entity->name;
+    static void initialize_url(QUrl & url, const AbstractBean * bean){
+        auto name = bean->entity->name;
         if (!name.isEmpty()) url.setFragment(name);
-        url.setHost(entity->serverAddress);
-        url.setPort(entity->serverPort);
+        url.setHost(bean->entity->serverAddress);
+        url.setPort(bean->entity->serverPort);
     }
 
-    inline void add_query_int_range(const char * name, QUrlQuery & query, int value, int begin, int end){
+    template<typename B>
+    static void add_quic(QUrlQuery & q, B * bean){
+        add_query_nonempty("quic_congestion_control", q, (QString)*bean->quic_congestion_control);
+        add_query_nonempty("quic", q, bean->quic ? "true" : "false");
+    }
+
+    static void add_query_int_range(const char * name, QUrlQuery & query, int value, int begin, int end){
         if (value >= begin && value <= end){
             add_query_int(name, query, value);
         }
+    }
+
+    template<typename T>
+    static void add_udp_over_tcp(QUrlQuery & query, T * bean){
+        add_query_int_range("uot", query, bean->uot, 1, 2);
+    }
+
+
+    template<typename B>
+    static void add_username_password(QUrl & url, B * bean){
+        if (!bean->username.isEmpty()) url.setUserName(bean->username);
+        if (!bean->password.isEmpty()) url.setPassword(bean->password);
     }
 
 
@@ -58,7 +76,7 @@ namespace Configs {
     QString HttpBean::ToShareLink() const {
         QUrl url;
         QUrlQuery query;
-        initialize_url(url, this->entity);
+        initialize_url(url, this);
         { // http
             if (stream->security == "tls") {
                 url.setScheme("https");
@@ -66,8 +84,7 @@ namespace Configs {
                 url.setScheme("http");
             }
         }
-        if (!username.isEmpty()) url.setUserName(username);
-        if (!password.isEmpty()) url.setPassword(password);
+        add_username_password(url, this);
         if (!path.isEmpty()) url.setPath(path);
         add_query_map_nonempty("headers", query, headers);
         add_security(stream, query);
@@ -78,14 +95,13 @@ namespace Configs {
     QString SocksBean::ToShareLink() const {
         QUrl url;
         QUrlQuery query;
-        initialize_url(url, this->entity);
+        initialize_url(url, this);
         {
             url.setScheme(QString("socks%1").arg(socks_http_type));
         }
-        if (!username.isEmpty()) url.setUserName(username);
-        if (!password.isEmpty()) url.setPassword(password);
+        add_username_password(url, this);
         add_network(query, this);
-        add_query_int_range("uot", query, uot, 1, 2);
+        add_udp_over_tcp(query, this);
         url.setQuery(query);
         return url.toString(QUrl::FullyEncoded);
     }
@@ -95,7 +111,7 @@ namespace Configs {
         QUrlQuery query;
         url.setScheme("shadowtls");
         url.setUserName(password);        
-        initialize_url(url, this->entity);
+        initialize_url(url, this);
         add_query_int("version", query, shadowtls_version);
         add_security(stream, query);
         url.setQuery(query);
@@ -107,7 +123,7 @@ namespace Configs {
         QUrlQuery query;
         url.setScheme("anytls");
         url.setUserName(password);        
-        initialize_url(url, this->entity);
+        initialize_url(url, this);
         add_query_nonempty("idle_session_check_interval", query, idle_session_check_interval);
         add_query_nonempty("idle_session_timeout", query, idle_session_timeout);
         add_query_int_natural("min_idle_session", query, min_idle_session);
@@ -124,7 +140,7 @@ namespace Configs {
         QUrlQuery query;
         url.setScheme(proxy_type == proxy_VLESS ? "vless" : "trojan");
         url.setUserName(password);
-        initialize_url(url, this->entity);
+        initialize_url(url, this);
         add_network(query, this);
 
         //  security
@@ -184,7 +200,7 @@ namespace Configs {
             auto method_password = method + ":" + password;
             url.setUserName(method_password.toUtf8().toBase64(QByteArray::Base64Option::Base64UrlEncoding));
         }
-        initialize_url(url, this->entity);
+        initialize_url(url, this);
         QUrlQuery query;
         add_query_nonempty("plugin", query, plugin);
 
@@ -195,11 +211,7 @@ namespace Configs {
             query.addQueryItem("mux", "false");
         }
         // uot
-        if (uot == 1) {
-            query.addQueryItem("uot", "1");
-        } else if (uot == 2) {
-            query.addQueryItem("uot", "2");
-        }
+        add_udp_over_tcp(query, this);
 
         add_network(query, this);
         if (!query.isEmpty()) url.setQuery(query);
@@ -214,7 +226,7 @@ namespace Configs {
         QUrlQuery query;
         url.setScheme("vmess");
         url.setUserName(uuid);
-        initialize_url(url, this->entity);
+        initialize_url(url, this);
 
         query.addQueryItem("encryption", security);
         add_network(query, this);
@@ -309,7 +321,7 @@ namespace Configs {
             url.setScheme("tuic");
             url.setUserName(uuid);
             url.setPassword(password);
-            initialize_url(url, this->entity);
+            initialize_url(url, this);
 
             if (!congestionControl.isEmpty()) query.addQueryItem("congestion_control", congestionControl);
             if (!alpn.isEmpty()) query.addQueryItem("alpn", alpn);
@@ -358,7 +370,7 @@ namespace Configs {
     QString WireguardBean::ToShareLink() const {
         QUrl url;
         url.setScheme("wg");
-        initialize_url(url, this->entity);
+        initialize_url(url, this);
         QUrlQuery query;
         query.addQueryItem("private_key", privateKey);
         query.addQueryItem("peer_public_key", publicKey);
@@ -411,7 +423,7 @@ namespace Configs {
     QString SSHBean::ToShareLink() const {
         QUrl url;
         url.setScheme("ssh");
-        initialize_url(url, this->entity);
+        initialize_url(url, this);
         QUrlQuery q;
         add_query_nonempty("user", q, user);
         add_query_nonempty("password", q, password);
@@ -442,13 +454,11 @@ namespace Configs {
     QString NaiveBean::ToShareLink() const {
         QUrl url;
         url.setScheme("naive");
-        initialize_url(url, this->entity);
+        initialize_url(url, this);
         QUrlQuery q;
-        url.setUserName(username);
-        url.setPassword(password);
-        add_query_nonempty("quic_congestion_control", q, (QString)*quic_congestion_control);
-        add_query_nonempty("quic", q, quic ? "true" : "false");
-        add_query_int_range("uot", q, uot, 1, 2);
+        add_username_password(url, this);
+        add_quic(q, this);
+        add_udp_over_tcp(q, this);
         add_query_map_nonempty("extra_headers", q, extra_headers);
         add_security(stream, q);
 
@@ -456,6 +466,19 @@ namespace Configs {
         return url.toString(QUrl::FullyEncoded);
     }
 
+    QString TrustTunnelBean::ToShareLink() const {
+        QUrl url;
+        url.setScheme("trusttunnel");
+        initialize_url(url, this);
+        QUrlQuery q;
+        add_username_password(url, this);
+        add_quic(q, this);
+        add_udp_over_tcp(q, this);
+        add_security(stream, q);
+
+        url.setQuery(q);
+        return url.toString(QUrl::FullyEncoded);
+    }
 
     QString TorBean::ToShareLink() const {
         QUrl url;
@@ -474,10 +497,9 @@ namespace Configs {
     QString MieruBean::ToShareLink() const {
         QUrl url;
         url.setScheme("mieru");
-        initialize_url(url, this->entity);
+        initialize_url(url, this);
         QUrlQuery q;
-        url.setUserName(username);
-        url.setPassword(password);
+        add_username_password(url, this);
         add_query_nonempty( "transport", q, QString(*network).toUpper());
         add_query_nonempty( "multiplexing", q, *multiplexing);
         add_query_nonempty( "server_ports", q, serverPorts.join(","));

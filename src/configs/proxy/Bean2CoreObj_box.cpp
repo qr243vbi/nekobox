@@ -8,8 +8,8 @@ namespace Configs {
     static QJsonObject getXbadoptionRange(const QJsonValue & value);
 
 
-    template<typename T, typename B>
-    static void add_default_fields(T & obj, B * bean){
+    template<typename T>
+    static void add_default_fields(T & obj, const AbstractBean * bean){
         obj["type"] = bean->type();
         obj["server"] = bean->entity->serverAddress;
         obj["server_port"] = bean->entity->serverPort;
