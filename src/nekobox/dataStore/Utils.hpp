@@ -149,7 +149,7 @@ template <typename T> auto asListRange(QList<T> &&list) {
    bool first = true;                                                   \
    for (auto it = ptr.left.begin(); it != ptr.left.end(); ++it) {       \
        if (!first) oss << ", ";                                         \
-       oss << it->first << ":" << it->second;                           \
+       oss << it->first.get_name() << ":" << it->second;                \
        first = false;                                                   \
    }                                                                    \
    qDebug() <<  oss.str().c_str();                                      \
@@ -167,16 +167,16 @@ public:                                                                 \
     template<typename T>                                                \
     explicit Name##Enum(T t){ this->set(t); };                    \
     using JsonEnum::operator=;                                          \
-    virtual const boost::bimap<std::string, int>& _map()               \
+    virtual const boost::bimap<EnumFieldName, int>& _map()               \
         const override{                                                        \
-        static boost::bimap<std::string, int> ptr;                     \
+        static boost::bimap<EnumFieldName, int> ptr;                     \
         static bool init = false;                 DEBUG_INIT_ENUM              \
         if (init) return ptr;
 
 #ifdef DEBUG_MODE
-#define ADD_ENUM(K, V) ptr.insert({K, V}); qDebug() << "ADD ENUM" << K << V ;
+#define ADD_ENUM(K, V) ptr.insert({EnumFieldName(K), V}); qDebug() << "ADD ENUM" << K << V ;
 #else
-#define ADD_ENUM(K, V) ptr.insert({K, V})
+#define ADD_ENUM(K, V) ptr.insert({EnumFieldName(K), V})
 #endif
 #define ADD_ENUM_LIST(K, I)                             \
 {                                                       \

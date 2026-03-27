@@ -46,11 +46,11 @@ namespace Configs {
             return AbstractBean::DisplayAddress();
         };
 */
-#ifdef DEBUG_MODE
+
         virtual QString type()const override {
             return "custom";
         };
-#endif
+
         CoreObjOutboundBuildResult BuildCoreObjSingBox() const override;
     };
 } // namespace Configs

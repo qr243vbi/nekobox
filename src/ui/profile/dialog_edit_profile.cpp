@@ -268,7 +268,8 @@ void DialogEditProfile::typeSelected(const QString &newType) {
     type == "hysteria" ||
     type == "vless" ||
     type == "tuic" ||
-    type == "hysteria2"
+    type == "hysteria2" ||
+    type == "mieru"
   );
 
   ui->network_l_2->setVisible(networkVisible);
@@ -387,6 +388,10 @@ void DialogEditProfile::typeSelected(const QString &newType) {
   }
   qDebug() << "END INSPECT";
   #endif
+
+  if (networkVisible){
+    ui->network_2->setCurrentText(bean->_getValue("network").toString());
+  }
 
   auto stream = GetStreamSettingsConst(bean.get());
   if (stream != nullptr) {

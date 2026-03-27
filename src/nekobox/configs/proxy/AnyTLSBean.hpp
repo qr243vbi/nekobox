@@ -18,11 +18,9 @@ namespace Configs {
             stream = std::make_shared<V2rayStreamSettings>();
         }
 
-        #ifdef DEBUG_MODE
         virtual QString type()const override {
             return "anytls";
         };
-        #endif
         
         INIT_MAP
             ADD_MAP("password", password, string);

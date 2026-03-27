@@ -1,14 +1,8 @@
 #pragma once
 #include "Const.hpp"
 #include "Utils.hpp"
-#include "ConfigItem.hpp"
-#include "DataStore.hpp"
 
 namespace Configs {
-// Source - https://stackoverflow.com/a
-// Posted by Kuba hasn't forgotten Monica
-// Retrieved 2026-01-13, License - CC BY-SA 3.0
-
     QByteArray hash(const QString & str);
 
     QString FindCoreRealPath();
@@ -20,5 +14,73 @@ namespace Configs {
     QString GetBasePath();
     QString getJsonStoreFileName(short type, long id);
     QString getJsonStorePathName(char type);
- //   bimap::bidirectional_map<std::string, int> map;
-} // namespace Configs
+} 
+
+
+#ifndef WIDGET_HPP_INCLUDED
+#define WIDGET_HPP_INCLUDED
+
+#include <string>
+#include <cstddef> // for std::size_t
+
+struct EnumFieldName {
+    // constructors
+    EnumFieldName();
+    EnumFieldName(std::string n);
+
+    // copy / move
+    EnumFieldName(EnumFieldName const& other);
+    EnumFieldName(EnumFieldName&& other) noexcept;
+
+    // assignment operators
+    EnumFieldName& operator=(EnumFieldName const& other); // copy assign
+    EnumFieldName& operator=(EnumFieldName&& other) noexcept; // move assign
+
+    // assign from string
+    EnumFieldName& operator=(std::string const& s);
+    EnumFieldName& operator=(std::string&& s);
+
+    // set operator: replace stored name (updates lower_name)
+    void set_name(std::string n);
+
+    // accessors
+    const std::string& get_name() const noexcept;
+    const std::string& get_lower_name() const noexcept;
+
+    // relational operators
+    bool operator<(EnumFieldName const& o) const noexcept;
+    bool operator==(EnumFieldName const& o) const noexcept;
+    bool operator!=(EnumFieldName const& o) const noexcept;
+    bool operator>(EnumFieldName const& o) const noexcept;
+    bool operator<=(EnumFieldName const& o) const noexcept;
+    bool operator>=(EnumFieldName const& o) const noexcept; 
+
+    // convenience comparison with std::string (case-sensitive on original name)
+    bool operator==(std::string const& s) const noexcept;
+    bool operator!=(std::string const& s) const noexcept;
+
+    friend struct EnumFieldNameHasher;
+    friend struct EnumFieldNameEqual;
+
+private:
+    std::string name;
+    std::string lower_name;
+};
+
+// Custom hasher and equality functors (declarations)
+struct EnumFieldNameHasher {
+    std::size_t operator()(EnumFieldName const& w) const noexcept;
+};
+
+struct EnumFieldNameEqual {
+    bool operator()(EnumFieldName const& a, EnumFieldName const& b) const noexcept;
+};
+
+namespace std {
+    template<>
+    struct hash<EnumFieldName> {
+        std::size_t operator()(EnumFieldName const& w) const noexcept;
+    };
+}
+
+#endif // WIDGET_HPP_INCLUDED

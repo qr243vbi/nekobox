@@ -12,6 +12,11 @@ namespace Configs {
     inline void add_query_nonempty(const char * name, QUrlQuery & query, const QString &value){ AddQueryString(query, name, value); };
     inline void add_query_args_nonempty(const char * name, QUrlQuery & query, const QStringList & value) { AddQueryStringList(query, name, value); };
     inline void add_query_map_nonempty(const char * name, QUrlQuery & query, const QVariantMap & value) { AddQueryMap(query, name, value); };
+    template<typename T>
+    static void add_network(QUrlQuery & query, T * obj){
+        add_query_nonempty("network", query, *obj->network);
+    }
+
 
     static void initialize_url(QUrl & url, Configs::ProxyEntity * entity){
         auto name = entity->name;
@@ -79,7 +84,7 @@ namespace Configs {
         }
         if (!username.isEmpty()) url.setUserName(username);
         if (!password.isEmpty()) url.setPassword(password);
-        add_query_nonempty("network", query, *network);
+        add_network(query, this);
         add_query_int_range("uot", query, uot, 1, 2);
         url.setQuery(query);
         return url.toString(QUrl::FullyEncoded);
@@ -120,6 +125,7 @@ namespace Configs {
         url.setScheme(proxy_type == proxy_VLESS ? "vless" : "trojan");
         url.setUserName(password);
         initialize_url(url, this->entity);
+        add_network(query, this);
 
         //  security
         add_security(stream, query);
@@ -195,7 +201,7 @@ namespace Configs {
             query.addQueryItem("uot", "2");
         }
 
-        add_query_nonempty("network", query, *network);
+        add_network(query, this);
         if (!query.isEmpty()) url.setQuery(query);
         //
         auto link = url.toString(QUrl::FullyEncoded);
@@ -211,6 +217,7 @@ namespace Configs {
         initialize_url(url, this->entity);
 
         query.addQueryItem("encryption", security);
+        add_network(query, this);
 
         //  security
         auto security = stream->security;
@@ -267,11 +274,11 @@ namespace Configs {
     QString QUICBean::ToShareLink() const {
         QUrl url;
         QString portRange;
+        QUrlQuery query;
         if (proxy_type == proxy_Hysteria) {
             url.setScheme("hysteria");
             url.setHost(entity->serverAddress);
             url.setPort(0);
-            QUrlQuery query;
             add_query_int("upmbps", query, uploadMbps);
             add_query_int("downmbps", query, downloadMbps);
             if (!obfsPassword.isEmpty()) {
@@ -297,7 +304,6 @@ namespace Configs {
             } else
                 url.setPort(entity->serverPort);
             if (!hop_interval.isEmpty()) query.addQueryItem("hop_interval", hop_interval);
-            if (!query.isEmpty()) url.setQuery(query);
             if (!entity->name.isEmpty()) url.setFragment(entity->name);
         } else if (proxy_type == proxy_TUIC) {
             url.setScheme("tuic");
@@ -305,14 +311,12 @@ namespace Configs {
             url.setPassword(password);
             initialize_url(url, this->entity);
 
-            QUrlQuery q;
-            if (!congestionControl.isEmpty()) q.addQueryItem("congestion_control", congestionControl);
-            if (!alpn.isEmpty()) q.addQueryItem("alpn", alpn);
-            if (!sni.isEmpty()) q.addQueryItem("sni", sni);
-            if (!udpRelayMode.isEmpty()) q.addQueryItem("udp_relay_mode", udpRelayMode);
-            if (allowInsecure) q.addQueryItem("allow_insecure", "1");
-            if (disableSni) q.addQueryItem("disable_sni", "1");
-            if (!q.isEmpty()) url.setQuery(q);
+            if (!congestionControl.isEmpty()) query.addQueryItem("congestion_control", congestionControl);
+            if (!alpn.isEmpty()) query.addQueryItem("alpn", alpn);
+            if (!sni.isEmpty()) query.addQueryItem("sni", sni);
+            if (!udpRelayMode.isEmpty()) query.addQueryItem("udp_relay_mode", udpRelayMode);
+            if (allowInsecure) query.addQueryItem("allow_insecure", "1");
+            if (disableSni) query.addQueryItem("disable_sni", "1");
         } else if (proxy_type == proxy_Hysteria2) {
             url.setScheme("hy2");
             url.setHost(entity->serverAddress);
@@ -323,13 +327,12 @@ namespace Configs {
             } else {
                 url.setUserName(password);
             }
-            QUrlQuery q;
             if (!obfsPassword.isEmpty()) {
-                q.addQueryItem("obfs", "salamander");
-                q.addQueryItem("obfs-password", QUrl::toPercentEncoding(obfsPassword));
+                query.addQueryItem("obfs", "salamander");
+                query.addQueryItem("obfs-password", QUrl::toPercentEncoding(obfsPassword));
             }
-            if (allowInsecure) q.addQueryItem("insecure", "1");
-            if (!sni.isEmpty()) q.addQueryItem("sni", sni);
+            if (allowInsecure) query.addQueryItem("insecure", "1");
+            if (!sni.isEmpty()) query.addQueryItem("sni", sni);
             if (!serverPorts.empty()) {
                 QStringList portList;
                 for (const auto& range : serverPorts) {
@@ -340,10 +343,12 @@ namespace Configs {
                 portRange = portList.join(",");
             } else
                 url.setPort(entity->serverPort);
-            if (!hop_interval.isEmpty()) q.addQueryItem("hop_interval", hop_interval);
-            if (!q.isEmpty()) url.setQuery(q);
+            if (!hop_interval.isEmpty()) query.addQueryItem("hop_interval", hop_interval);
             if (!entity->name.isEmpty()) url.setFragment(entity->name);
         }
+        add_network(query, this);
+        if (!query.isEmpty()) url.setQuery(query);
+
         if (portRange.isEmpty())
             return url.toString(QUrl::FullyEncoded);
         else
@@ -473,7 +478,7 @@ namespace Configs {
         QUrlQuery q;
         url.setUserName(username);
         url.setPassword(password);
-        add_query_nonempty( "transport", q, *transport);
+        add_query_nonempty( "transport", q, QString(*network).toUpper());
         add_query_nonempty( "multiplexing", q, *multiplexing);
         add_query_nonempty( "server_ports", q, serverPorts.join(","));
         add_query_nonempty("traffic_pattern", q, traffic_pattern);

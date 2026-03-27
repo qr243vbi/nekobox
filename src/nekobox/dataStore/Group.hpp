@@ -1,7 +1,8 @@
 #pragma once
 
 #include "ProxyEntity.hpp"
-#include "nekobox/dataStore/Configs.hpp"
+#include "Configs.hpp"
+#include "ConfigItem.hpp"
 
 namespace Configs
 {

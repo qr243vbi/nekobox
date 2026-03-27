@@ -582,7 +582,7 @@ static void parse_security(std::shared_ptr<V2rayStreamSettings> stream, QUrlQuer
 
         parse_authentication(this, url);
 
-        *transport = query.queryItemValue("transport");
+        *network = query.queryItemValue("transport").toLower();
         traffic_pattern = GetQueryValue(query, "traffic_pattern");
         *multiplexing = query.queryItemValue("multiplexing");
         serverPorts = query.queryItemValue("server_ports").split(",");

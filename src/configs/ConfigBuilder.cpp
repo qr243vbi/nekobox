@@ -1,6 +1,7 @@
-#include "nekobox/dataStore/RouteEntity.h"
-#include "nekobox/dataStore/Utils.hpp"
+#include <nekobox/dataStore/RouteEntity.h>
+#include <nekobox/dataStore/Utils.hpp>
 
+#include <nekobox/dataStore/DataStore.hpp>
 #include <nekobox/configs/ConfigBuilder.hpp>
 #include <nekobox/dataStore/Database.hpp>
 #include <nekobox/configs/proxy/includes.h>
@@ -1125,5 +1126,38 @@ namespace Configs {
         status->result->coreConfig.insert("endpoints", status->endpoints);
         status->result->coreConfig.insert("route", routeObj);
         if (!experimentalObj.isEmpty()) status->result->coreConfig.insert("experimental", experimentalObj);
+    }
+
+    QString get_jsdelivr_link(QString link)
+    {
+        if(dataStore->routing->ruleset_mirror == Mirrors::GITHUB)
+            return link;
+        if(auto url = QUrl(link); url.isValid() && url.host() == "raw.githubusercontent.com")
+        {
+            QStringList list = url.path().split('/');      
+            QString result;
+            switch(dataStore->routing->ruleset_mirror) {
+            case Mirrors::GCORE: result = "https://gcore.jsdelivr.net/gh"; break;
+            case Mirrors::QUANTIL: result = "https://quantil.jsdelivr.net/gh"; break;
+            case Mirrors::FASTLY: result = "https://fastly.jsdelivr.net/gh"; break;
+            case Mirrors::CDN: result = "https://cdn.jsdelivr.net/gh"; break;
+            default: result = "https://testingcf.jsdelivr.net/gh";
+            }
+
+            int index = 0;
+            foreach(QString item, list)
+            {
+                if(!item.isEmpty())
+                {
+                    if(index == 2)
+                        result += "@" + item;
+                    else
+                        result += "/" + item;
+                    index++;
+                }
+            }
+            return result;
+        }
+        return link;
     }
 } // namespace Configs

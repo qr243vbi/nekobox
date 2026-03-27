@@ -6,6 +6,9 @@
 #include <qcborcommon.h>
 #include <qcontainerfwd.h>
 
+#include <boost/algorithm/string.hpp>
+
+
 static void _put_store(ConfJsMap _map, const QString &str, void *value,
                        std::shared_ptr<configItem> item, JsonStore *store) {
   item->name = str;
@@ -500,4 +503,135 @@ SET_BIN(double) {
   data >> value;
   GET_PTR_OR_RETURN
   *(double *)ptr = value;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+#include <algorithm> // std::transform
+#include <cctype>    // std::tolower
+#include <utility>
+#include <functional> // std::hash
+
+// --- Constructors ---
+EnumFieldName::EnumFieldName() = default;
+
+EnumFieldName::EnumFieldName(std::string n)
+    : name(std::move(n)), lower_name(boost::algorithm::to_lower_copy(name))
+{}
+
+// copy constructor
+EnumFieldName::EnumFieldName(EnumFieldName const& other)
+    : name(other.name), lower_name(other.lower_name)
+{}
+
+// move constructor
+EnumFieldName::EnumFieldName(EnumFieldName&& other) noexcept
+    : name(std::move(other.name)), lower_name(std::move(other.lower_name))
+{}
+
+// --- Assignment operators ---
+
+// copy assignment
+EnumFieldName& EnumFieldName::operator=(EnumFieldName const& other) {
+    if (this != &other) {
+        name = other.name;
+        lower_name = other.lower_name;
+    }
+    return *this;
+}
+
+// move assignment
+EnumFieldName& EnumFieldName::operator=(EnumFieldName&& other) noexcept {
+    if (this != &other) {
+        name = std::move(other.name);
+        lower_name = std::move(other.lower_name);
+    }
+    return *this;
+}
+
+// assign from lvalue string
+EnumFieldName& EnumFieldName::operator=(std::string const& s) {
+    name = s;
+    lower_name = boost::algorithm::to_lower_copy(name);
+    return *this;
+}
+
+// assign from rvalue string
+EnumFieldName& EnumFieldName::operator=(std::string&& s) {
+    name = std::move(s);
+    lower_name = boost::algorithm::to_lower_copy(name);
+    return *this;
+}
+
+// --- Mutator / setter ---
+void EnumFieldName::set_name(std::string n) {
+    name = std::move(n);
+    lower_name = boost::algorithm::to_lower_copy(name);
+}
+
+// --- Accessors ---
+const std::string& EnumFieldName::get_name() const noexcept { return name; }
+const std::string& EnumFieldName::get_lower_name() const noexcept { return lower_name; }
+
+// --- Relational operators ---
+// Default ordering: case-sensitive on original name. Swap to lower_name if you want case-insensitive ordering.
+bool EnumFieldName::operator<(EnumFieldName const& o) const noexcept {
+    return lower_name < o.lower_name;
+}
+
+bool EnumFieldName::operator==(EnumFieldName const& o) const noexcept {
+    return lower_name == o.lower_name;
+}
+
+bool EnumFieldName::operator!=(EnumFieldName const& o) const noexcept {
+    return !(*this == o);
+}
+
+bool EnumFieldName::operator>(EnumFieldName const& o) const noexcept {
+    return o < *this;
+}
+
+bool EnumFieldName::operator<=(EnumFieldName const& o) const noexcept {
+    return !(o < *this);
+}
+
+bool EnumFieldName::operator>=(EnumFieldName const& o) const noexcept {
+    return !(*this < o);
+}
+
+// Comparisons with std::string (case-sensitive against original name)
+bool EnumFieldName::operator==(std::string const& s) const noexcept {
+    return lower_name == boost::algorithm::to_lower_copy(s);
+}
+
+bool EnumFieldName::operator!=(std::string const& s) const noexcept {
+    return lower_name != boost::algorithm::to_lower_copy(s);
+}
+
+// --- Hasher and equality functors ---
+// Use lower_name to compute hash and equality (case-insensitive behavior).
+
+std::size_t EnumFieldNameHasher::operator()(EnumFieldName const& w) const noexcept {
+    return std::hash<std::string>{}(w.lower_name);
+}
+
+bool EnumFieldNameEqual::operator()(EnumFieldName const& a, EnumFieldName const& b) const noexcept {
+    return a.lower_name == b.lower_name;
+}
+
+// --- std::hash specialization ---
+namespace std {
+    std::size_t hash<EnumFieldName>::operator()(EnumFieldName const& w) const noexcept {
+        return std::hash<std::string>{}(w.get_lower_name());
+    }
 }

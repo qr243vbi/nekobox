@@ -1,10 +1,12 @@
 #pragma once
 
 #include "Utils.hpp"
-#include <nekobox/dataStore/Configs.hpp>
+#include "Configs.hpp"
+#include "ConfigItem.hpp"
 #include <nekobox/global/CountryHelper.hpp>
 #include <nekobox/stats/traffic/TrafficData.hpp>
 #include <nekobox/configs/proxy/AbstractBean.hpp>
+#include "DataStore.hpp"
 #include <QColor>
 #include <memory>
 #include <nekobox/configs/proxy/ExtraCore.h>

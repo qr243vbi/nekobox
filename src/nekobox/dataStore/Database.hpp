@@ -1,6 +1,6 @@
 #pragma once
 
-#include "nekobox/dataStore/Configs.hpp"
+#include "Configs.hpp"
 #include "ProxyEntity.hpp"
 #include "Group.hpp"
 #include "RouteEntity.h"

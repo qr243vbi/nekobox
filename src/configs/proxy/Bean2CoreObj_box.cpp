@@ -7,6 +7,14 @@
 namespace Configs {
     static QJsonObject getXbadoptionRange(const QJsonValue & value);
 
+
+    template<typename T, typename B>
+    static void add_default_fields(T & obj, B * bean){
+        obj["type"] = bean->type();
+        obj["server"] = bean->entity->serverAddress;
+        obj["server_port"] = bean->entity->serverPort;
+    }
+
     template<typename T>
     static void add_non_empty(T & obj, const QString & key, const QString & value){
         if (!value.isEmpty()){
@@ -27,6 +35,30 @@ namespace Configs {
         return val;
     }
 
+    template<typename T, typename B>
+    static void add_username_password(T & obj, B * bean){
+        add_non_empty(obj, "password", bean->password);
+        add_non_empty(obj, "username", bean->username);
+    }
+
+    template<typename T, typename B>
+    static void add_network(T & obj, B * bean){
+        add_non_empty(obj, "network", *bean->network);
+    }
+
+    template<typename T, typename B>
+    static void add_udp_over_tcp(T & obj, B * bean){
+        obj["udp_over_tcp"] = udp_over_tcp_object(bean->uot);
+    }
+
+    template<typename T, typename B>
+    static void add_quic(T & obj, B * bean){
+        bool quic = bean->quic;
+        obj["quic"] = quic;
+        if (quic){
+            obj["quic_congestion_control"] = *bean->quic_congestion_control;
+        }
+    }
 
     template<typename T>
     static void add_non_empty(T & obj, const QString & key, const QVariantMap & value){
@@ -226,18 +258,11 @@ CoreObjOutboundBuildResult SocksBean::BuildCoreObjSingBox() const {
     CoreObjOutboundBuildResult result;
 
     QJsonObject outbound;
-    outbound["type"] = "socks";
     outbound["version"] = socks_http_type;
-    outbound["server"] = entity->serverAddress;
-    outbound["server_port"] = entity->serverPort;
-
-    if (!username.isEmpty() && !password.isEmpty()) {
-        outbound["username"] = username;
-        outbound["password"] = password;
-    }
-
-    outbound["network"] = *network;
-    outbound["udp_over_tcp"] = udp_over_tcp_object(uot);
+    add_default_fields(outbound, this);
+    add_username_password(outbound, this);
+    add_udp_over_tcp(outbound, this);
+    add_network(outbound, this);
 
     result.outbound = outbound;
     return result;
@@ -247,15 +272,9 @@ CoreObjOutboundBuildResult SocksBean::BuildCoreObjSingBox() const {
         CoreObjOutboundBuildResult result;
 
         QJsonObject outbound;
-        outbound["type"] = "http";
-        outbound["server"] = entity->serverAddress;
-        outbound["server_port"] = entity->serverPort;
+        add_default_fields(outbound, this);
         add_non_empty(outbound, "path", path);
-
-        if (!username.isEmpty() && !password.isEmpty()) {
-            outbound["username"] = username;
-            outbound["password"] = password;
-        }
+        add_username_password(outbound, this);
         add_non_empty(outbound, "headers", this->headers);
 
         stream->BuildStreamSettingsSingBox(&outbound);
@@ -266,20 +285,19 @@ CoreObjOutboundBuildResult SocksBean::BuildCoreObjSingBox() const {
     CoreObjOutboundBuildResult ShadowSocksBean::BuildCoreObjSingBox() const {
         CoreObjOutboundBuildResult result;
 
-        QJsonObject outbound{{"type", "shadowsocks"}};
-        outbound["server"] = entity->serverAddress;
-        outbound["server_port"] = entity->serverPort;
+        QJsonObject outbound;
+        add_default_fields(outbound, this);
         outbound["method"] = method;
         outbound["password"] = password;
-        outbound["network"] = *network;
-        outbound["udp_over_tcp"] = udp_over_tcp_object(uot);
+        add_network(outbound, this);
+        add_udp_over_tcp(outbound, this);
 
         if (!plugin.trimmed().isEmpty()) {
             outbound["plugin"] = SubStrBefore(plugin, ";");
             outbound["plugin_opts"] = SubStrAfter(plugin, ";");
         }
 
-        stream->BuildStreamSettingsSingBox(&outbound);
+   //     stream->BuildStreamSettingsSingBox(&outbound);
         result.outbound = outbound;
         return result;
     }
@@ -288,15 +306,12 @@ CoreObjOutboundBuildResult SocksBean::BuildCoreObjSingBox() const {
         CoreObjOutboundBuildResult result;
 
         QJsonObject outbound{
-            {"type", "anytls"},
-            {"server", entity->serverAddress},
-            {"server_port", entity->serverPort},
             {"password", password},
             {"idle_session_check_interval", idle_session_check_interval},
             {"idle_session_timeout", idle_session_timeout},
             {"min_idle_session", min_idle_session},
         };
-
+        add_default_fields(outbound, this);
         stream->BuildStreamSettingsSingBox(&outbound);
         result.outbound = outbound;
         return result;
@@ -307,12 +322,11 @@ CoreObjOutboundBuildResult SocksBean::BuildCoreObjSingBox() const {
         CoreObjOutboundBuildResult result;
 
         QJsonObject outbound{
-            {"type", "shadowtls"},
-            {"server", entity->serverAddress},
-            {"server_port", entity->serverPort},
             {"password", password},
             {"version", shadowtls_version},
         };
+
+        add_default_fields(outbound, this);
 
         stream->BuildStreamSettingsSingBox(&outbound);
         result.outbound = outbound;
@@ -323,16 +337,14 @@ CoreObjOutboundBuildResult SocksBean::BuildCoreObjSingBox() const {
         CoreObjOutboundBuildResult result;
 
         QJsonObject outbound{
-            {"type", "vmess"},
-            {"server", entity->serverAddress},
-            {"server_port", entity->serverPort},
             {"uuid", uuid.trimmed()},
             {"alter_id", aid},
             {"security", security},
-            // network
-            // authenticated_length
-            // global_padding
+            {"authenticated_length", authenticated_length},
+            {"global_padding", global_padding}
         };
+        add_network(outbound, this);
+        add_default_fields(outbound, this);
 
         stream->BuildStreamSettingsSingBox(&outbound);
         result.outbound = outbound;
@@ -342,11 +354,9 @@ CoreObjOutboundBuildResult SocksBean::BuildCoreObjSingBox() const {
     CoreObjOutboundBuildResult TrojanVLESSBean::BuildCoreObjSingBox() const {
         CoreObjOutboundBuildResult result;
 
-        QJsonObject outbound{
-            {"type", proxy_type == proxy_VLESS ? "vless" : "trojan"},
-            {"server", entity->serverAddress},
-            {"server_port", entity->serverPort},
-        };
+        QJsonObject outbound;
+        add_default_fields(outbound, this);
+        add_network(outbound, this);
         QString flow = this->flow;
         if (proxy_type == proxy_VLESS) {
             if (flow.right(7) == "-udp443") {
@@ -380,13 +390,12 @@ CoreObjOutboundBuildResult SocksBean::BuildCoreObjSingBox() const {
         if (proxy_type == proxy_Hysteria2) coreTlsObj["alpn"] = "h3";
 
         QJsonObject outbound{
-            {"server", entity->serverAddress},
-            {"server_port", entity->serverPort},
             {"tls", coreTlsObj},
         };
+        add_default_fields(outbound, this);
+        add_network(outbound, this);
 
         if (proxy_type == proxy_Hysteria) {
-            outbound["type"] = "hysteria";
             outbound["obfs"] = obfsPassword;
             outbound["disable_mtu_discovery"] = disableMtuDiscovery;
             outbound["recv_window"] = streamReceiveWindow;
@@ -411,7 +420,6 @@ CoreObjOutboundBuildResult SocksBean::BuildCoreObjSingBox() const {
             if (authPayloadType == hysteria_auth_base64) outbound["auth"] = authPayload;
             if (authPayloadType == hysteria_auth_string) outbound["auth_str"] = authPayload;
         } else if (proxy_type == proxy_Hysteria2) {
-            outbound["type"] = "hysteria2";
             outbound["password"] = password;
             outbound["up_mbps"] = uploadMbps;
             outbound["down_mbps"] = downloadMbps;
@@ -437,7 +445,6 @@ CoreObjOutboundBuildResult SocksBean::BuildCoreObjSingBox() const {
                 };
             }
         } else if (proxy_type == proxy_TUIC) {
-            outbound["type"] = "tuic";
             outbound["uuid"] = uuid;
             outbound["password"] = password;
             outbound["congestion_control"] = congestionControl;
@@ -499,7 +506,7 @@ CoreObjOutboundBuildResult SocksBean::BuildCoreObjSingBox() const {
     {
         CoreObjOutboundBuildResult result;
         QJsonObject outbound{
-            {"type", "tailscale"},
+            {"type", this->type()},
             {"state_directory", state_directory},
             {"auth_key", auth_key},
             {"control_url", control_url},
@@ -567,7 +574,7 @@ CoreObjOutboundBuildResult SocksBean::BuildCoreObjSingBox() const {
             {"server", entity->serverAddress},
             {"server_port", entity->serverPort},
             {"server_ports", QListStr2QJsonArray(this->serverPorts)},
-            {"transport", *this->transport},
+            {"transport", QString(*this->network).toUpper()},
             {"username", this->username},
             {"password", this->password},
             {"multiplexing", *this->multiplexing},
@@ -582,17 +589,14 @@ CoreObjOutboundBuildResult SocksBean::BuildCoreObjSingBox() const {
     {
         CoreObjOutboundBuildResult result;
         QJsonObject outbound {
-            {"type", "naive"},
-            {"server", entity->serverAddress},
-            {"server_port", entity->serverPort},
-            {"username", this->username},
-            {"password", this->password},
             {"insecure_concurrency", this->insecure_concurrency},
             {"extra_headers", QJsonObject::fromVariantMap(this->extra_headers)},
-            {"udp_over_tcp", udp_over_tcp_object(this->uot)},
-            {"quic", this->quic},
-            {"quic_congestion_control", (QString)*quic_congestion_control}
         };
+        add_default_fields(outbound, this);
+        add_username_password(outbound, this);
+        add_udp_over_tcp(outbound, this);
+        add_quic(outbound, this);
+
         stream->BuildStreamSettingsSingBox(&outbound);
         result.outbound = outbound;
         return result;
@@ -607,7 +611,7 @@ CoreObjOutboundBuildResult SocksBean::BuildCoreObjSingBox() const {
         }
 
         QJsonObject outbound {
-            {"type", "tor"},
+            {"type", this->type()},
             {"executable_path", path},
             {"extra_args", QListStr2QJsonArray(this->extra_args)},
             {"data_directory", this->data_directory},

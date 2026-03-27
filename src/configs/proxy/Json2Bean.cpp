@@ -8,7 +8,12 @@ namespace Configs
         entity->name = obj["tag"].toString();
         entity->serverAddress = obj["server"].toString();
         entity->serverPort = obj["server_port"].toInt();
-    }    
+    }
+
+    template<typename T>
+    static void add_network(T * t, const QJsonObject obj){
+        if (obj.contains("network")) *t->network = obj["network"];
+    }
 
     static bool parse_tls(std::shared_ptr<V2rayStreamSettings> stream, const QJsonObject & obj){
         bool is_tls = obj["tls"].isObject() ;
@@ -153,7 +158,6 @@ namespace Configs
         if (obj.contains("password")) password = obj["password"].toString();
         if (obj.contains("plugin")) plugin = obj["plugin"].toString();
         if (obj.contains("plugin_opts")) plugin_opts = obj["plugin_opts"].toString();
-        if (obj.contains("network")) *network = obj["network"];
         mux_state = obj["multiplex"].isObject() ? (obj["multiplex"].toObject()["enabled"].toBool() ? 1 : 2) : 0;
         return true;
     }
@@ -337,7 +341,7 @@ namespace Configs
         initialize_entity(this->entity, obj);
         password = obj["password"].toString();
         username = obj["username"].toString();
-        *transport = obj["transport"].toString();
+        *network = obj["transport"].toString().toLower();
         *multiplexing = obj["multiplexing"].toString();
         traffic_pattern = obj["traffic_pattern"].toString();
         auto & ports = serverPorts;

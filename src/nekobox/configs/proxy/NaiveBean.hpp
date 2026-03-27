@@ -23,11 +23,11 @@ namespace Configs {
             stream = std::make_shared<V2rayStreamSettings>();
         }
 
-        #ifdef DEBUG_MODE
+
         virtual QString type()const override {
             return "naive";
         };
-        #endif
+
         
         INIT_MAP
             ADD_MAP("username", username, string);

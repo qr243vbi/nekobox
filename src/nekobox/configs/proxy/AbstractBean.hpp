@@ -3,6 +3,7 @@
 #include <QJsonObject>
 #include <QJsonArray>
 
+#include "nekobox/dataStore/ConfigItem.hpp"
 #include "nekobox/dataStore/Configs.hpp"
 #include "nekobox/dataStore/Utils.hpp"
 
@@ -45,9 +46,7 @@ namespace Configs {
         virtual bool UnknownKeyHash(const QByteArray & array) override;
 
         //
-        #ifdef DEBUG_MODE
         virtual QString type() const;
-        #endif
 //        [[nodiscard]] virtual QString DisplayAddress();
 
 //        [[nodiscard]] virtual QString DisplayName();

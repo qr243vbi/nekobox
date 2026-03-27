@@ -1,4 +1,5 @@
 #pragma once
+#include "nekobox/dataStore/ConfigItem.hpp"
 #include "nekobox/dataStore/Configs.hpp"
 #include <QDir>
 

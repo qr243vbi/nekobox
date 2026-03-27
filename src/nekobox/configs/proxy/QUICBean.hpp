@@ -159,7 +159,7 @@ namespace Configs {
         bool TryParseJson(const QJsonObject &obj) override;
 
         QString ToShareLink() const override;
-        #ifdef DEBUG_MODE
+
         virtual QString type()const override {
             if (proxy_type == proxy_TUIC) {
                 return "tuic";
@@ -169,6 +169,5 @@ namespace Configs {
                 return "hysteria2";
             }
         };
-        #endif
     };
 } // namespace Configs

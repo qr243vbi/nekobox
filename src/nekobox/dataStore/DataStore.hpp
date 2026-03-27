@@ -1,3 +1,6 @@
+#ifndef DATA_STORE_HEADER
+#define DATA_STORE_HEADER
+
 #include "Const.hpp"
 #include "ConfigItem.hpp"
 #include "Utils.hpp"
@@ -225,3 +228,21 @@ namespace Configs {
     extern DataStore *dataStore;
 
 } // namespace Configs
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#endif

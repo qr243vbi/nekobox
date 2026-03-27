@@ -5,6 +5,7 @@
 #include <QString>
 #include <QJsonObject>
 #include <boost/bimap.hpp>
+#include "Configs.hpp"
 
 namespace Configs_ConfigItem{
     struct configItem;
@@ -57,13 +58,14 @@ namespace Configs {
         DefaultRoute = 9,
         NoSave = 10
     };
-}
 
+}
+    
 namespace Configs_ConfigItem {
 
 class JsonEnum{
 public:
-    virtual const boost::bimap<std::string, int> & _map() const;
+    virtual const boost::bimap<EnumFieldName, int> & _map() const;
     JsonEnum& set(int) ;
     JsonEnum& set(const QString&);
     JsonEnum& set(const char *);
@@ -238,6 +240,7 @@ inline QDataStream &operator>>(QDataStream &in, Bin &p) {
 
         void _setValue(const QString &name, const QJsonValue &p);
         void _setValue(const JsonStore * store, const void *p);
+        QJsonValue _getValue(const QString & name) const;
 
         QString _name(void *p);
 

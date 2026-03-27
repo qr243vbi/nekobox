@@ -1,9 +1,10 @@
-#include "nekobox/dataStore/ConfigItem.hpp"
-#include "nekobox/dataStore/Configs.hpp"
-#include "nekobox/configs/proxy/Preset.hpp"
-#include "nekobox/configs/proxy/AbstractBean.hpp"
-#include "nekobox/sys/Settings.h"
-#include "nekobox/global/keyvaluerange.h"
+#include <nekobox/dataStore/ConfigItem.hpp>
+#include <nekobox/dataStore/Configs.hpp>
+#include <nekobox/dataStore/DataStore.hpp>
+#include <nekobox/configs/proxy/Preset.hpp>
+#include <nekobox/configs/proxy/AbstractBean.hpp>
+#include <nekobox/sys/Settings.h>
+#include <nekobox/global/keyvaluerange.h>
 
 #include <QApplication>
 #include <QDir>
@@ -125,6 +126,12 @@ namespace Configs_ConfigItem {
                 this->_setValue(item->name, item->getNode((JsonStore*)store));
             }
         }
+    }
+
+    QJsonValue JsonStore::_getValue(const QString & name) const {
+        auto store = (JsonStore *) (this);
+        auto item = store->_get(name);
+        return item->getNode(store);
     }
 
     void JsonStore::_setValue(const QString &name, const QJsonValue & node) {
@@ -279,7 +286,7 @@ namespace Configs_ConfigItem {
     JsonEnum::operator QString() const {
         auto map = _map();
         try {
-            return QString::fromStdString(map.right.at(this->value));
+            return QString::fromStdString(map.right.at(this->value).get_name());
         } catch (std::out_of_range){
 #ifdef DEBUG_MODE
             qDebug() << this->value << "NOT FOUND";
@@ -293,11 +300,11 @@ namespace Configs_ConfigItem {
         arr.append(reinterpret_cast<const char*>(&value), sizeof(value));
         return arr;
     }
-    const boost::bimap<std::string, int>& JsonEnum::_map() const {
+    const boost::bimap<EnumFieldName, int>& JsonEnum::_map() const {
 #ifdef DEBUG_MODE
         qDebug() << "NULL BIMAP";
 #endif
-        static boost::bimap<std::string, int> m;
+        static boost::bimap<EnumFieldName, int> m;
         static bool initialized = false;
         return m;
     }
