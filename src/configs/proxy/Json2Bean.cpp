@@ -11,8 +11,14 @@ namespace Configs
     }
 
     template<typename T>
-    static void add_network(T * t, const QJsonObject obj){
+    static void add_network(T * t, const QJsonObject &obj){
         if (obj.contains("network")) *t->network = obj["network"];
+    }
+
+    template<typename B>
+    static void add_username_password(B * bean, const QJsonObject &obj){
+        bean->username = obj["username"].toString();
+        bean->password = obj["password"].toString();
     }
 
     static bool parse_tls(std::shared_ptr<V2rayStreamSettings> stream, const QJsonObject & obj){
@@ -73,6 +79,7 @@ namespace Configs
     bool QUICBean::TryParseJson(const QJsonObject& obj)
     {
         auto type = obj["type"].toString();
+        add_network(this, obj);
         if (type == "hysteria")
         {
             proxy_type = proxy_Hysteria;
@@ -147,13 +154,24 @@ namespace Configs
         return uot;
     }
 
+    template<typename T>
+    static void add_udp_over_tcp(T * bean, const QJsonObject &obj){
+        bean->uot = parseUOT(obj);
+    }
+
+    template<typename T>
+    static void add_quic(T * bean, const QJsonObject &obj){
+        *bean->quic_congestion_control = obj["quic_congestion_control"].toString();
+        bean->quic = obj["quic"].toBool();    }
+
     bool ShadowSocksBean::TryParseJson(const QJsonObject& obj)
     {
         initialize_entity(this->entity, obj);
 //        method = obj["method"].toString();
 //        password = obj["password"].toString();
 //        plugin = obj["plugin"].toString();
-        uot = parseUOT(obj);
+        add_network(this, obj);
+        add_udp_over_tcp(this, obj);
         if (obj.contains("method")) method = obj["method"].toString();
         if (obj.contains("password")) password = obj["password"].toString();
         if (obj.contains("plugin")) plugin = obj["plugin"].toString();
@@ -174,18 +192,16 @@ namespace Configs
         
         initialize_entity(this->entity, obj);
         this->socks_http_type = obj["version"].toInt(type_Socks5);
-        username = obj["username"].toString();
-        password = obj["password"].toString();
-        *network = obj["network"];
-        uot = parseUOT(obj);
+        add_username_password(this, obj);
+        add_udp_over_tcp(this, obj);
+        add_network(this, obj);
         return true;
     }
 
     bool HttpBean::TryParseJson(const QJsonObject& obj)
     {
         initialize_entity(this->entity, obj);
-        username = obj["username"].toString();
-        password = obj["password"].toString();
+        add_username_password(this, obj);
         path = obj["path"].toString();
         headers = obj["headers"].toObject().toVariantMap();
         parse_tls(stream, obj);
@@ -220,6 +236,7 @@ namespace Configs
 
         parse_tls(stream, obj);
         parse_transport(stream, obj);
+        add_network(this, obj);
         return true;
     }
 
@@ -233,8 +250,12 @@ namespace Configs
 
         stream->packet_encoding = obj["packet_encoding"].toString();
 
+        global_padding = obj["global_padding"].toBool();
+        authenticated_length = obj["authenticated_length"].toBool();
+
         parse_tls(stream, obj);
         parse_transport(stream, obj);
+        add_network(this, obj);
         return true;
     }
 
@@ -316,14 +337,23 @@ namespace Configs
     bool NaiveBean::TryParseJson(const QJsonObject& obj)
     {
         initialize_entity(this->entity, obj);
-        username = obj["username"].toString();
-        password = obj["password"].toString();
+        add_username_password(this, obj);
         insecure_concurrency = obj["insecure_concurrency"].toInt();
         extra_headers = obj["extra_headers"].toObject().toVariantMap();
-        uot = parseUOT(obj);
-        *quic_congestion_control = obj["quic_congestion_control"].toString();
-        quic = obj["quic"].toBool();
+        add_udp_over_tcp(this, obj);
+        add_quic(this, obj);
         parse_tls(stream, obj);
+        return true;
+    }
+
+
+    bool TrustTunnelBean::TryParseJson(const QJsonObject& obj)
+    {
+        initialize_entity(this->entity, obj);
+        add_username_password(this, obj);
+        add_quic(this, obj);
+        parse_tls(stream, obj);
+        health_check = obj["health_check"].toBool();
         return true;
     }
 
@@ -339,8 +369,7 @@ namespace Configs
     bool MieruBean::TryParseJson(const QJsonObject& obj)
     {
         initialize_entity(this->entity, obj);
-        password = obj["password"].toString();
-        username = obj["username"].toString();
+        add_username_password(this, obj);
         *network = obj["transport"].toString().toLower();
         *multiplexing = obj["multiplexing"].toString();
         traffic_pattern = obj["traffic_pattern"].toString();

@@ -570,15 +570,12 @@ CoreObjOutboundBuildResult SocksBean::BuildCoreObjSingBox() const {
     {
         CoreObjOutboundBuildResult result;
         QJsonObject outbound {
-            {"type", "mieru"},
-            {"server", entity->serverAddress},
-            {"server_port", entity->serverPort},
             {"server_ports", QListStr2QJsonArray(this->serverPorts)},
             {"transport", QString(*this->network).toUpper()},
-            {"username", this->username},
-            {"password", this->password},
             {"multiplexing", *this->multiplexing},
         };
+        add_username_password(outbound, this);
+        add_default_fields(outbound, this);
         add_non_empty(outbound, "traffic_pattern", traffic_pattern);
         result.outbound = outbound;
         return result;

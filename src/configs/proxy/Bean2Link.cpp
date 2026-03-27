@@ -229,6 +229,9 @@ namespace Configs {
         url.setUserName(uuid);
         initialize_url(url, this);
 
+        add_query_boolean("global_padding", query, this->global_padding);
+        add_query_boolean("authenticated_length", query, this->authenticated_length);
+
         query.addQueryItem("encryption", security);
         add_network(query, this);
 
