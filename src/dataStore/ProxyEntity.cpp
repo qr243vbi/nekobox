@@ -137,6 +137,10 @@ namespace Configs
             bean = new Configs::TorBean(ent);
         cast(naive)
             bean = new Configs::NaiveBean(ent);
+        cast(trusttunnel)
+            bean = new Configs::TrustTunnelBean(ent);
+        cast(juicity)
+            bean = new Configs::JuicityBean(ent);
         } else {
             unknown_type:
             bean = new Configs::AbstractBean(ent, -114514);
@@ -243,7 +247,6 @@ qDebug() << "Type Unknown" << make_strong_bean;
         cast_func(ShadowSocks)
         cast_func(VMess)
         cast_func(TrojanVLESS)
-  //      cast_func(Naive)
         cast_func(Mieru)
         cast_func(QUIC)
         cast_func(AnyTLS)
@@ -255,5 +258,7 @@ qDebug() << "Type Unknown" << make_strong_bean;
         cast_func(Custom)
         cast_func(ExtraCore)
         cast_func(Naive)
+        cast_func(TrustTunnel)
+        cast_func(Juicity)
 
 }

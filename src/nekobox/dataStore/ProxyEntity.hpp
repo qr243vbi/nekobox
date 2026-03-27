@@ -31,6 +31,8 @@ namespace Configs {
     class MieruBean;
 
     class TrustTunnelBean;
+    
+    class JuicityBean;
 
     class ShadowTLSBean;
 
@@ -143,6 +145,7 @@ namespace Configs {
         cast_func(ExtraCore)
         cast_func(Naive)
         cast_func(TrustTunnel)
+        cast_func(Juicity)
 
         #undef cast_func
     };

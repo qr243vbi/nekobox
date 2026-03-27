@@ -60,7 +60,7 @@ namespace Configs {
     }
 
 
-    static void add_security(std::shared_ptr<V2rayStreamSettings> stream, QUrlQuery & query){
+    static void add_tls(std::shared_ptr<V2rayStreamSettings> stream, QUrlQuery & query){
         auto security = stream->security;
         if (security == "tls" && !stream->reality_pbk.trimmed().isEmpty()) security = "reality";
         query.addQueryItem("security", security == "" ? "none" : security);
@@ -97,7 +97,7 @@ namespace Configs {
         add_username_password(url, this);
         if (!path.isEmpty()) url.setPath(path);
         add_query_map_nonempty("headers", query, headers);
-        add_security(stream, query);
+        add_tls(stream, query);
         url.setQuery(query);
         return url.toString(QUrl::FullyEncoded);
     }
@@ -123,7 +123,7 @@ namespace Configs {
         url.setUserName(password);        
         initialize_url(url, this);
         add_query_int("version", query, shadowtls_version);
-        add_security(stream, query);
+        add_tls(stream, query);
         url.setQuery(query);
         return url.toString(QUrl::FullyEncoded);
     }
@@ -139,7 +139,7 @@ namespace Configs {
         add_query_int_natural("min_idle_session", query, min_idle_session);
 
         //  security
-        add_security(stream, query);
+        add_tls(stream, query);
 
         url.setQuery(query);
         return url.toString(QUrl::FullyEncoded);
@@ -154,7 +154,7 @@ namespace Configs {
         add_network(query, this);
 
         //  security
-        add_security(stream, query);
+        add_tls(stream, query);
 
         // type
         query.addQueryItem("type", stream->network);
@@ -461,7 +461,7 @@ namespace Configs {
         add_quic(q, this);
         add_udp_over_tcp(q, this);
         add_query_map_nonempty("extra_headers", q, extra_headers);
-        add_security(stream, q);
+        add_tls(stream, q);
 
         url.setQuery(q);
         return url.toString(QUrl::FullyEncoded);
@@ -469,13 +469,24 @@ namespace Configs {
 
     QString TrustTunnelBean::ToShareLink() const {
         QUrl url;
-        url.setScheme("trusttunnel");
+        url.setScheme("tt");
         initialize_url(url, this);
         QUrlQuery q;
         add_username_password(url, this);
         add_quic(q, this);
-        add_security(stream, q);
+        add_tls(stream, q);
         add_query_boolean("health_check", q, health_check);
+        url.setQuery(q);
+        return url.toString(QUrl::FullyEncoded);
+    }
+
+    QString JuicityBean::ToShareLink() const {
+        QUrl url;
+        url.setScheme("juicity");
+        initialize_url(url, this);
+        QUrlQuery q;
+        add_username_password(url, this);
+        add_tls(stream, q);
         url.setQuery(q);
         return url.toString(QUrl::FullyEncoded);
     }

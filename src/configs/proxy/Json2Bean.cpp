@@ -25,7 +25,7 @@ namespace Configs
         bean->mux_state = obj["multiplex"].isObject() ? (obj["multiplex"].toObject()["enabled"].toBool() ? 1 : 2) : 0;
     }
 
-    static bool parse_tls(std::shared_ptr<V2rayStreamSettings> stream, const QJsonObject & obj){
+    static bool add_tls(std::shared_ptr<V2rayStreamSettings> stream, const QJsonObject & obj){
         bool is_tls = obj["tls"].isObject() ;
         if (is_tls) {
             QJsonObject tls = obj["tls"].toObject();
@@ -209,7 +209,7 @@ namespace Configs
         add_username_password(this, obj);
         path = obj["path"].toString();
         headers = obj["headers"].toObject().toVariantMap();
-        parse_tls(stream, obj);
+        add_tls(stream, obj);
         return true;
     }
 
@@ -239,7 +239,7 @@ namespace Configs
 
         stream->packet_encoding = obj["packet_encoding"].toString();
 
-        parse_tls(stream, obj);
+        add_tls(stream, obj);
         parse_transport(stream, obj);
         add_network(this, obj);
         return true;
@@ -258,7 +258,7 @@ namespace Configs
         global_padding = obj["global_padding"].toBool();
         authenticated_length = obj["authenticated_length"].toBool();
 
-        parse_tls(stream, obj);
+        add_tls(stream, obj);
         parse_transport(stream, obj);
         add_network(this, obj);
         return true;
@@ -271,7 +271,7 @@ namespace Configs
         idle_session_check_interval = obj["idle_session_check_interval"].toString();
         idle_session_timeout = obj["idle_session_timeout"].toString();
         min_idle_session = obj["min_idle_session"].toInt();
-        parse_tls(stream, obj);
+        add_tls(stream, obj);
         return true;
     }
 
@@ -281,7 +281,7 @@ namespace Configs
         initialize_entity(this->entity, obj);
         password = obj["password"].toString();
         shadowtls_version = obj["version"].toInt();
-        parse_tls(stream, obj);
+        add_tls(stream, obj);
         return true;
     }
 
@@ -347,7 +347,7 @@ namespace Configs
         extra_headers = obj["extra_headers"].toObject().toVariantMap();
         add_udp_over_tcp(this, obj);
         add_quic(this, obj);
-        parse_tls(stream, obj);
+        add_tls(stream, obj);
         return true;
     }
 
@@ -357,8 +357,18 @@ namespace Configs
         initialize_entity(this->entity, obj);
         add_username_password(this, obj);
         add_quic(this, obj);
-        parse_tls(stream, obj);
+        add_tls(stream, obj);
         health_check = obj["health_check"].toBool();
+        return true;
+    }
+
+
+    bool JuicityBean::TryParseJson(const QJsonObject& obj)
+    {
+        initialize_entity(this->entity, obj);
+        this->username = obj["uuid"].toString();
+        this->password = obj["password"].toString();
+        add_tls(stream, obj);
         return true;
     }
 

@@ -62,7 +62,7 @@ static void add_udp_over_tcp(T *t, QUrlQuery & query){
         }
     }
 
-static void parse_security(std::shared_ptr<V2rayStreamSettings> stream, QUrlQuery & query){
+static void add_tls(std::shared_ptr<V2rayStreamSettings> stream, QUrlQuery & query){
     stream->security = "tls";
     auto sni1 = GetQueryValue(query, "sni");
     auto sni2 = GetQueryValue(query, "peer");
@@ -126,7 +126,7 @@ static void parse_security(std::shared_ptr<V2rayStreamSettings> stream, QUrlQuer
         path = url.path();
         headers = GetQueryMapValue(query, "headers");
         if (link.startsWith("https")) {
-            parse_security(stream, query);
+            add_tls(stream, query);
         };
         return !entity->serverAddress.isEmpty();
     }
@@ -143,7 +143,7 @@ static void parse_security(std::shared_ptr<V2rayStreamSettings> stream, QUrlQuer
         this->idle_session_timeout = GetQueryValue(query, "idle_session_timeout", "30s");
         this->min_idle_session = GetQueryIntValue(query, "min_idle_session", 0);
         // security
-        parse_security(stream, query);
+        add_tls(stream, query);
 
         return !(password.isEmpty() || entity->serverAddress.isEmpty());
     }
@@ -158,7 +158,7 @@ static void parse_security(std::shared_ptr<V2rayStreamSettings> stream, QUrlQuer
         if (entity->serverPort == -1) entity->serverPort = 443;
         this->shadowtls_version = GetQueryIntValue(query, "version", 0);
         // security
-        parse_security(stream, query);
+        add_tls(stream, query);
 
         return !(password.isEmpty() || entity->serverAddress.isEmpty());
     }
@@ -598,7 +598,7 @@ static void parse_security(std::shared_ptr<V2rayStreamSettings> stream, QUrlQuer
         add_udp_over_tcp(this, query);
         extra_headers = GetQueryMapValue(query, "extra_headers");
 
-        parse_security(stream, query);
+        add_tls(stream, query);
         return true;
     }
 
@@ -614,7 +614,19 @@ static void parse_security(std::shared_ptr<V2rayStreamSettings> stream, QUrlQuer
         add_quic(this, query);
         set_boolean("health_check", this->health_check, query);
 
-        parse_security(stream, query);
+        add_tls(stream, query);
+        return true;
+    }
+
+
+    bool JuicityBean::TryParseLink(const QString& link)
+    {
+        auto url = QUrl(link);
+        if (!url.isValid()) return false;
+        QUrlQuery query = GetQuery(url);
+        deinitialize_url(url, entity);
+        add_username_password(this, url);
+        add_tls(stream, query);
         return true;
     }
 

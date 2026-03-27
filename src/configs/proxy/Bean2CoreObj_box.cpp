@@ -613,6 +613,19 @@ CoreObjOutboundBuildResult SocksBean::BuildCoreObjSingBox() const {
         return result;
     }
 
+
+    CoreObjOutboundBuildResult JuicityBean::BuildCoreObjSingBox() const
+    {
+        CoreObjOutboundBuildResult result;
+        QJsonObject outbound;
+        add_default_fields(outbound, this);
+        outbound["uuid"] = this->username;
+        outbound["password"] = this->password;
+        stream->BuildStreamSettingsSingBox(&outbound);
+        result.outbound = outbound;
+        return result;
+    }
+
     CoreObjOutboundBuildResult TorBean::BuildCoreObjSingBox() const
     {
         CoreObjOutboundBuildResult result;
