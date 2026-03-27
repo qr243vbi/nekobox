@@ -497,6 +497,9 @@ QByteArray hash = QCryptographicHash::hash(
         return false;
     }
 
+    static signed char isAdminCache = -1;
+
+
     bool IsAdmin(bool forceRenew) {
         if (isAdminCache >= 0 && !forceRenew) return isAdminCache;
 

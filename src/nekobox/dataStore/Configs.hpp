@@ -8,7 +8,6 @@ namespace Configs {
 // Source - https://stackoverflow.com/a
 // Posted by Kuba hasn't forgotten Monica
 // Retrieved 2026-01-13, License - CC BY-SA 3.0
-    inline short isAdminCache = -1;
 
     QByteArray hash(const QString & str);
 

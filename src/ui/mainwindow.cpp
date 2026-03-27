@@ -1049,17 +1049,14 @@ skip_updater_hide:
   /*
   connect(ui->checkBox_VPN, STATE_CHANGED, this, [](bool checked){
     if (checked) {
-      Configs::isAdminCache = -1;
     }
   });*/
   connect(ui->checkBox_VPN, &QCheckBox::clicked, this, [=, this](bool checked) {
-    Configs::isAdminCache = false;
     CHECK_ACTION_ACCESS_W 
     set_spmode_vpn(checked);
   });
   connect(ui->checkBox_SystemProxy, &QCheckBox::clicked, this,
           [=, this](bool checked) {
-                Configs::isAdminCache = false;
             CHECK_ACTION_ACCESS_W set_spmode_system_proxy(checked);
           });
   connect(ui->menu_spmode, &QMenu::aboutToShow, this, [=, this]() {
@@ -1072,18 +1069,13 @@ skip_updater_hide:
   });
   connect(ui->menu_spmode_system_proxy, &QAction::triggered, this,
           [=, this](bool checked) {
-                Configs::isAdminCache = false;
-
             CHECK_ACTION_ACCESS_W set_spmode_system_proxy(checked);
           });
   connect(ui->menu_spmode_vpn, &QAction::triggered, this,
           [=, this](bool checked) {
-                Configs::isAdminCache = false;
-
             CHECK_ACTION_ACCESS_W set_spmode_vpn(checked);
           });
   connect(ui->menu_spmode_disabled, &QAction::triggered, this, [=, this]() {
-        Configs::isAdminCache = false;
     CHECK_ACTION_ACCESS_W
     set_spmode_system_proxy(false);
     set_spmode_vpn(false);
@@ -1868,10 +1860,14 @@ void MainWindow::dialog_message_impl(const QString &sender,
       refresh_groups();
     }
   } else if (sender == "ExternalProcess") {
+
     if (info == "Crashed") {
       profile_stop();
     } else if (info.startsWith("CoreStarted")) {
-      Configs::IsAdmin(true);
+      #ifdef DEBUG_MODE
+      qDebug() << "IsAdmin After Core Started" << 
+      #endif
+       Configs::IsAdmin(true);
       if (Configs::dataStore->remember_spmode.contains("system_proxy")) {
         set_spmode_system_proxy(true, false);
       }
@@ -2167,7 +2163,6 @@ skip_start_elevate_process:
   goto skip_start_elevate_process;
 start_elevate_process: {
   StopVPNProcess();
-  Configs::isAdminCache = -1;
   core_process->elevateCoreProcessProgram();
   runOnUiThread([=, this]() {
     if (reason == 3) {

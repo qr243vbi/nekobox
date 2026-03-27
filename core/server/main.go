@@ -36,7 +36,7 @@ func RunCore(addr net.Addr, _debug *bool) {
 			conn, err := net.Dial(network, address)
 			if err == nil {
 				conn.Close()
-				fmt.Printf("Core listening  at %v\n", address)
+				fmt.Printf("Core listening at %v\n", address)
 				if network == "unix" {
 					os.Chmod(address, 0770)
 				}

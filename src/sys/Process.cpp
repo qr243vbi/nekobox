@@ -62,20 +62,29 @@ namespace Configs_sys {
         connect(&process, &QProcess::readyReadStandardOutput, this, [&]() {
             auto log = process.readAllStandardOutput();
             if (start_profile_when_core_is_up >= 0) {
-                if (log.contains("Core listening at")) {
+                if (log.contains("Core listening")) {
                     // The core really started
                     MW_dialog_message("ExternalProcess", "CoreStarted," + QString::number(start_profile_when_core_is_up));
                     start_profile_when_core_is_up = -1;
+                    goto show_log;
                 } else if (log.contains("failed to serve")) {
                     // The core failed to start
                     process.kill();
+                    goto show_log;
+                }
+            } else {
+                if (log.contains("Core listening")) {
+                    MW_dialog_message("ExternalProcess", "CoreStarted,-1");
+                    goto show_log;
                 }
             }
             if (log.contains("Extra process exited unexpectedly"))
             {
                 MW_show_log("Extra Core exited, stopping profile...");
                 MW_dialog_message("ExternalProcess", "Crashed");
+                goto show_log;
             }
+            show_log:
             if (logCounter.fetchAndAddRelaxed(log.count("\n")) > Configs::windowSettings->max_log_line) return;
             MW_show_log(log);
         });

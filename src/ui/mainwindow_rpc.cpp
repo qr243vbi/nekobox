@@ -41,7 +41,6 @@ void MainWindow::setup_rpc() {
         }
     );
 
-    Configs::isAdminCache = -1;
 
     // Looper
     runOnNewThread([=] { Stats::trafficLooper->Loop(); });
@@ -577,7 +576,6 @@ void MainWindow::profile_start(int _id, bool do_not_test) {
             return false;
         }
 
-        Configs::isAdminCache = -1;
         if (!error.isEmpty()) {
             if (error.contains("configure tun interface")) {
                 runOnUiThread([=, this] {
@@ -707,7 +705,6 @@ void MainWindow::set_spmode_system_proxy(bool enable, bool save) {
     }
 
     Configs::dataStore->spmode_system_proxy = enable;
-    Configs::isAdminCache = -1;
     refresh_status();
 }
 
