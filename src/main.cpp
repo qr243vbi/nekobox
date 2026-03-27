@@ -119,6 +119,8 @@ void loadTranslate(const QString& locale) {
             {"ssh", "SSH"},
             {"tor", "Tor"},
             {"naive", "Naive"},
+            {"trusttunnel", "TrustTunnel"},
+            {"juicity", "Juicity"},
             {"custom", QObject::tr("Custom")},
             {"extracore", QObject::tr("Extra Core")},
         };

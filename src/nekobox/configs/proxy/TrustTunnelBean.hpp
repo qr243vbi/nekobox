@@ -5,7 +5,7 @@
 #include "Preset.hpp"
 
 namespace Configs {
-    class TrustTunnel : public AbstractBean {
+    class TrustTunnelBean : public AbstractBean {
     public:
         QString password = "";
         QString username = "";
@@ -14,7 +14,7 @@ namespace Configs {
         std::shared_ptr<QUICEnum> quic_congestion_control;
         std::shared_ptr<V2rayStreamSettings> stream;
 
-        TrustTunnel(Configs::ProxyEntity * entity) : AbstractBean(entity, 0) {
+        TrustTunnelBean(Configs::ProxyEntity * entity) : AbstractBean(entity, 0) {
             quic_congestion_control = std::make_shared<QUICEnum>("");
             stream = std::make_shared<V2rayStreamSettings>();
         }
@@ -39,7 +39,7 @@ namespace Configs {
         QString ToShareLink() const override;
         #ifdef DEBUG_MODE
         virtual QString type()const override {
-            return "tor";
+            return "trusttunnel";
         };
         #endif
     };

@@ -28,6 +28,8 @@ namespace Configs {
 
     class MieruBean;
 
+    class TrustTunnelBean;
+
     class ShadowTLSBean;
 
     class WireguardBean;
@@ -138,6 +140,7 @@ namespace Configs {
         cast_func(Custom)
         cast_func(ExtraCore)
         cast_func(Naive)
+        cast_func(TrustTunnel)
 
         #undef cast_func
     };

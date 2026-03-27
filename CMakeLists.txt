@@ -149,6 +149,7 @@ set(PROJECT_SOURCES
         ${NEKOBOX_INCLUDE}/configs/proxy/CustomBean.hpp
         ${NEKOBOX_INCLUDE}/configs/proxy/ExtraCore.h
         ${NEKOBOX_INCLUDE}/configs/proxy/includes.h
+        ${NEKOBOX_INCLUDE}/configs/proxy/TrustTunnelBean.hpp
         ${NEKOBOX_INCLUDE}/configs/proxy/MieruBean.hpp
         ${NEKOBOX_INCLUDE}/configs/proxy/NaiveBean.hpp
         ${NEKOBOX_INCLUDE}/configs/proxy/TorBean.hpp
