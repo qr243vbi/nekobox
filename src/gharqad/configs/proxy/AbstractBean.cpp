@@ -45,12 +45,9 @@ namespace Configs {
         return this->entity->id;
     }
     
-    #ifdef DEBUG_MODE
     QString AbstractBean::type()const {
         return "unknown";
     }
-    #endif
-
 
     bool AbstractBean::UnknownKeyHash(const QByteArray & array) {
         if (array == bean_key){

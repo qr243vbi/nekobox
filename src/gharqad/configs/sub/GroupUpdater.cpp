@@ -202,6 +202,20 @@ namespace Subscription {
             if (!ok) return;
         }
 
+        // TrustTunnel
+        if (str.startsWith("tt://")) {
+            ent = Configs::ProfileManager::NewProxyEntity("trusttunnel");
+            auto ok = ent->unlock(ent->TrustTunnelBean())->TryParseLink(str);
+            if (!ok) return;
+        }
+
+        // Juicity
+        if (str.startsWith("juicity://")) {
+            ent = Configs::ProfileManager::NewProxyEntity("juicity");
+            auto ok = ent->unlock(ent->JuicityBean())->TryParseLink(str);
+            if (!ok) return;
+        }
+
         // AnyTLS
         if (str.startsWith("anytls://")) {
             ent = Configs::ProfileManager::NewProxyEntity("anytls");
