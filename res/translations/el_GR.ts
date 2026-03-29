@@ -2496,9 +2496,8 @@ For more information, see the document "Configuration/DNS".</source>
         <translation type="unfinished">Στατιστικά Ασφαλείας</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="210" />
         <source>Profile Statistics</source>
-        <translation type="unfinished">Στατιστικά προφίλ</translation>
+        <translation type="obsolete">Στατιστικά προφίλ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/info/main.ui" line="67" />
@@ -2536,6 +2535,11 @@ For more information, see the document "Configuration/DNS".</source>
         <location filename="../../src/nekobox/ui/info/main.ui" line="216" />
         <source>Proxy Profiles</source>
         <translation type="unfinished">Προφίλ διακομιστή μεσολάβησης</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="210" />
+        <source>Database Statistics</source>
+        <translation type="unfinished">Στατιστικά Βάσης Δεδομένων</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/info/main.ui" line="222" />
@@ -2584,9 +2588,8 @@ For more information, see the document "Configuration/DNS".</source>
         <translation type="unfinished">Για</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="539" />
         <source>NyameBox / NekoBox for PC</source>
-        <translation type="unfinished">NyameBox / NekoBox για υπολογιστή</translation>
+        <translation type="obsolete">NyameBox / NekoBox για υπολογιστή</translation>
     </message>
 </context>
 <context>
@@ -2635,8 +2638,8 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="164" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="579" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2605" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2608" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2614" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2617" />
         <source>System Proxy</source>
         <translation type="unfinished">Proxy συστήματος</translation>
     </message>
@@ -2822,15 +2825,15 @@ For more information, see the document "Configuration/DNS".</source>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="737" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3673" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3683" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3682" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3692" />
         <source>Start</source>
         <translation type="unfinished">Αρχή</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="745" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3672" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3683" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3681" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3692" />
         <source>Stop</source>
         <translation type="unfinished">Στάση</translation>
     </message>
@@ -2877,7 +2880,7 @@ For more information, see the document "Configuration/DNS".</source>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="824" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1506" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1510" />
         <source>Export %1 config</source>
         <translation type="unfinished">Εξαγωγή %1 διαμόρφωσης</translation>
     </message>
@@ -2987,7 +2990,7 @@ For more information, see the document "Configuration/DNS".</source>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="978" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2992" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3001" />
         <source>Clone</source>
         <translation type="unfinished">Κλώνος</translation>
     </message>
@@ -3095,7 +3098,7 @@ For more information, see the document "Configuration/DNS".</source>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1138" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3702" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3711" />
         <source>Add new Group</source>
         <translation type="unfinished">Προσθήκη νέας ομάδας</translation>
     </message>
@@ -3111,218 +3114,218 @@ For more information, see the document "Configuration/DNS".</source>
         <translation type="unfinished">Δυσεύρετος</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1161" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1165" />
         <source>Edit Routing Profiles</source>
         <translation type="unfinished">Επεξεργασία προφίλ δρομολόγησης</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1183" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1187" />
         <source>Update Routing Profiles</source>
         <translation type="unfinished">Ενημέρωση προφίλ δρομολόγησης</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1195" />
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1199" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1220" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1223" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1267" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1203" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1224" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1227" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1271" />
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="95" />
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="104" />
         <source>Update Response</source>
         <translation type="unfinished">Ενημέρωση απάντησης</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1196" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1200" />
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="105" />
         <source>No routing profiles are updated</source>
         <translation type="unfinished">Δεν ενημερώνονται προφίλ δρομολόγησης</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1200" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1204" />
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="96" />
         <source>Updated %1 routing profiles</source>
         <translation type="unfinished">Ενημερώθηκαν τα προφίλ δρομολόγησης %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1210" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1214" />
         <source>Update RuleSet Map</source>
         <translation type="unfinished">Ενημέρωση χάρτη συνόλου κανόνων</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1221" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1225" />
         <source>Failed to update rulesets</source>
         <translation type="unfinished">Αποτυχία ενημέρωσης συνόλων κανόνων</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1224" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1228" />
         <source>Rulesets updated successfully</source>
         <translation type="unfinished">Τα σύνολα κανόνων ενημερώθηκαν με επιτυχία</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1233" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1237" />
         <source>Update RuleSet Cache</source>
         <translation type="unfinished">Ενημερώστε την προσωρινή μνήμη RuleSet</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1268" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1272" />
         <source>Rulesets cache is updated</source>
         <translation type="unfinished">Η κρυφή μνήμη συνόλων κανόνων ενημερώθηκε</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1282" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1286" />
         <source>Clear RuleSet Cache</source>
         <translation type="unfinished">Εκκαθάριση της προσωρινής μνήμης RuleSet</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1318" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1322" />
         <source>Enable AdBlock</source>
         <translation type="unfinished">Ενεργοποίηση AdBlock</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1720" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1728" />
         <source>Error</source>
         <translation type="unfinished">Σφάλμα</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1807" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1815" />
         <source>Tun Settings changed</source>
         <translation type="unfinished">Οι ρυθμίσεις συντονισμού άλλαξαν</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1808" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1816" />
         <source>Restart Tun to take effect.</source>
         <translation type="unfinished">Κάντε επανεκκίνηση του Tun για να τεθεί σε ισχύ.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1814" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1872" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3046" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3417" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3471" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3520" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3750" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1822" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1880" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3055" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3426" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3480" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3529" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3759" />
         <source>Confirmation</source>
         <translation type="unfinished">Επιβεβαίωση</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1815" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1873" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1823" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1881" />
         <source>Settings changed, restart proxy?</source>
         <translation type="unfinished">Οι ρυθμίσεις άλλαξαν, επανεκκίνηση του διακομιστή μεσολάβησης;</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1844" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1852" />
         <source>Settings changed</source>
         <translation type="unfinished">Οι ρυθμίσεις άλλαξαν</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1845" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1853" />
         <source>Restart the program to take effect.</source>
         <translation type="unfinished">Επανεκκινήστε το πρόγραμμα για να τεθεί σε ισχύ.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1888" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1896" />
         <source>Imported %1 profile(s)</source>
         <translation type="unfinished">Εισήχθησαν %1 προφίλ(α)</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2163" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2172" />
         <source>User opted for no privilege req, some features may not work</source>
         <translation type="unfinished">Ο χρήστης επέλεξε να μην απαιτείται προνόμιο, ορισμένες λειτουργίες ενδέχεται να μην λειτουργούν</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2227" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2236" />
         <source>Please give the core root privileges</source>
         <translation type="unfinished">Παρακαλούμε δώστε τα βασικά δικαιώματα root</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2581" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2590" />
         <source>Not Running</source>
         <translation type="unfinished">Δεν τρέχει</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2993" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3002" />
         <source>Clone %1 item(s)</source>
         <translation type="unfinished">Κλωνοποίηση % 1 στοιχείο(α)</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3027" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3036" />
         <source> Confirmation </source>
         <translation type="unfinished">Επιβεβαίωση</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3028" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3037" />
         <source> Remove %1 item(s) ? </source>
         <translation type="unfinished">Κατάργηση %1 στοιχείων ;</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3047" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3056" />
         <source>Remove %1 item(s) ?</source>
         <translation type="unfinished">Κατάργηση %1 στοιχείων ;</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3084" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3097" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3093" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3106" />
         <source>Copied %1 item(s)</source>
         <translation type="unfinished">Αντιγράφηκε %1 στοιχείο(α)</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3329" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3338" />
         <source>QR Code not found</source>
         <translation type="unfinished">Ο κωδικός QR δεν βρέθηκε</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3350" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3359" />
         <source>Unable to capture screen</source>
         <translation type="unfinished">Δεν είναι δυνατή η λήψη της οθόνης</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3418" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3427" />
         <source>Remove %1 Unavailable item(s) ?</source>
         <translation type="unfinished">Κατάργηση %1 Μη διαθέσιμα στοιχεία;</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3472" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3481" />
         <source>Remove %1 Invalid item(s) ?</source>
         <translation type="unfinished">Κατάργηση %1 Μη έγκυρων στοιχείων;</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3521" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3530" />
         <source>Replace domain server addresses with their resolved IPs?</source>
         <translation type="unfinished">Αντικατάσταση των διευθύνσεων διακομιστή τομέα με τις επιλυμένες IP τους;</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3670" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3679" />
         <source>Clear</source>
         <translation type="unfinished">Σαφής</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3741" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3750" />
         <source>Delete selected Group</source>
         <translation type="unfinished">Διαγραφή επιλεγμένης ομάδας</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3742" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3751" />
         <source>Edit selected Group</source>
         <translation type="unfinished">Επεξεργασία επιλεγμένης ομάδας</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3751" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3760" />
         <source>Remove %1?</source>
         <translation type="unfinished">Κατάργηση %1;</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4492" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4501" />
         <source>Cannot start</source>
         <translation type="unfinished">Δεν είναι δυνατή η έναρξη</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4493" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4502" />
         <source>Last download request has not finished yet</source>
         <translation type="unfinished">Το τελευταίο αίτημα λήψης δεν έχει ολοκληρωθεί ακόμα</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4527" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4536" />
         <source>Failed to download update assets</source>
         <translation type="unfinished">Αποτυχία λήψης στοιχείων ενημέρωσης</translation>
     </message>
@@ -3506,7 +3509,7 @@ For more information, see the document "Configuration/DNS".</source>
 <context>
     <name>QAction</name>
     <message>
-        <location filename="../../src/gharqad/ui/security_addon.cpp" line="346" />
+        <location filename="../../src/gharqad/ui/security_addon.cpp" line="366" />
         <source>Security Settings</source>
         <translation type="unfinished">Ρυθμίσεις ασφαλείας</translation>
     </message>
@@ -3514,7 +3517,7 @@ For more information, see the document "Configuration/DNS".</source>
 <context>
     <name>QGuiApplication</name>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="348" />
+        <location filename="../../src/gharqad/main.cpp" line="354" />
         <source>QT_LAYOUT_DIRECTION</source>
         <translation type="unfinished" />
     </message>
@@ -3578,7 +3581,7 @@ Deleted %3 Profiles:
         <translation type="unfinished">Αλλαγή % 1:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/dataStore/Database.cpp" line="227" />
+        <location filename="../../src/gharqad/dataStore/Database.cpp" line="307" />
         <source>Default</source>
         <translation type="unfinished">Αθέτηση</translation>
     </message>
@@ -3588,17 +3591,17 @@ Deleted %3 Profiles:
         <translation type="unfinished">Δεν ήταν δυνατό το άνοιγμα του αρχείου.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="108" />
+        <location filename="../../src/gharqad/main.cpp" line="113" />
         <source>Chain Proxy</source>
         <translation type="unfinished">Αλυσίδα μεσολάβησης</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="124" />
+        <location filename="../../src/gharqad/main.cpp" line="129" />
         <source>Custom</source>
         <translation type="unfinished">Εθιμο</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="125" />
+        <location filename="../../src/gharqad/main.cpp" line="130" />
         <source>Extra Core</source>
         <translation type="unfinished">Extra Core</translation>
     </message>
@@ -3610,7 +3613,7 @@ Deleted %3 Profiles:
         <translation type="unfinished">Επιλέγω</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2549" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2558" />
         <source>Proxy: %1
 Direct: %2</source>
         <translation type="unfinished">Διακομιστής: %1
@@ -3632,7 +3635,7 @@ Direct: %2</source>
         <translation type="unfinished">Επανεκκίνηση του πυρήνα...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/sys/Settings.cpp" line="358" />
+        <location filename="../../src/gharqad/sys/Settings.cpp" line="350" />
         <source>System</source>
         <translation type="unfinished">Σύστημα</translation>
     </message>
@@ -3684,30 +3687,30 @@ How to update?</source>
         <translation type="unfinished">Αίτημα σφάλματος προφίλ: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="461" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="469" />
         <source>
 Deleted %1 Duplicates</source>
         <translation type="unfinished">Διαγράφηκαν %1 διπλότυπα</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="495" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="503" />
         <source>
 Deleted %1 Invalid</source>
         <translation type="unfinished">Διαγράφηκε % 1 Μη έγκυρο</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="518" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="526" />
         <source>
 Deleted %1 Unavailable</source>
         <translation type="unfinished">Διαγράφηκε % 1 Μη διαθέσιμο</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1599" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1607" />
         <source>Check Rule Sets: %1</source>
         <translation type="unfinished">Ελέγξτε τα σύνολα κανόνων: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1621" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1629" />
         <source>Requesting rule-set list error: %1</source>
         <translation type="unfinished">Αίτημα σφάλματος λίστας συνόλου κανόνων: %1</translation>
     </message>
@@ -3716,64 +3719,64 @@ Deleted %1 Unavailable</source>
         <translation type="obsolete">Διεύθυνση IP: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2586" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2595" />
         <source>Inbound IP: %1</source>
         <translation type="unfinished">Εισερχόμενη IP: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2972" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2981" />
         <source>Move profiles to group</source>
         <translation type="unfinished">Μετακίνηση προφίλ στην ομάδα</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3115" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3124" />
         <source>Config copied</source>
         <translation type="unfinished">Η διαμόρφωση αντιγράφηκε</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3126" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3135" />
         <source>Copy core config</source>
         <translation type="unfinished">Αντιγραφή παραμέτρων πυρήνα</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3127" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3136" />
         <source>Copy test config</source>
         <translation type="unfinished">Αντιγραφή δοκιμαστικής διαμόρφωσης</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3128" />
-        <location filename="../../src/gharqad/ui/security_addon.cpp" line="21" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3137" />
+        <location filename="../../src/gharqad/ui/security_addon.cpp" line="31" />
         <location filename="../../src/gharqad/ui/setting/dialog_vpn_settings.cpp" line="53" />
         <source>OK</source>
         <translation type="unfinished">ΕΝΤΑΞΕΙ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4396" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4407" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4451" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4474" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4405" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4416" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4460" />
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4483" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4518" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4492" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4527" />
         <source>Update</source>
         <translation type="unfinished">Εκσυγχρονίζω</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4397" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4406" />
         <source>Not official support platform</source>
         <translation type="unfinished">Δεν είναι επίσημη πλατφόρμα υποστήριξης</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4408" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4417" />
         <source>Requesting update error: %1</source>
         <translation type="unfinished">Αίτημα σφάλματος ενημέρωσης: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4451" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4460" />
         <source>No update</source>
         <translation type="unfinished">Καμία ενημέρωση</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4475" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4484" />
         <source>Update found: %1
 Release note:
 %2</source>
@@ -3782,22 +3785,22 @@ Release note:
 %2</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4478" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4487" />
         <source>Close</source>
         <translation type="unfinished">Κοντά</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4480" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4489" />
         <source>Open in browser</source>
         <translation type="unfinished">Άνοιγμα στο πρόγραμμα περιήγησης</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4519" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4528" />
         <source>Update is ready, restart to install?</source>
         <translation type="unfinished">Η ενημέρωση είναι έτοιμη, επανεκκίνηση για εγκατάσταση;</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/security_addon.cpp" line="20" />
+        <location filename="../../src/gharqad/ui/security_addon.cpp" line="30" />
         <source>Access denied</source>
         <translation type="unfinished">Δεν επιτρέπεται η πρόσβαση</translation>
     </message>
@@ -3837,92 +3840,92 @@ Direct: ⚡%2 📦%4</source>
 <context>
     <name>QPlatformTheme</name>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="66" />
+        <location filename="../../src/gharqad/main.cpp" line="71" />
         <source>Cancel</source>
         <translation type="unfinished">Ματαίωση</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="67" />
+        <location filename="../../src/gharqad/main.cpp" line="72" />
         <source>Apply</source>
         <translation type="unfinished">Εφαρμόζω</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="68" />
+        <location filename="../../src/gharqad/main.cpp" line="73" />
         <source>Yes</source>
         <translation type="unfinished">Ναί</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="69" />
+        <location filename="../../src/gharqad/main.cpp" line="74" />
         <source>No</source>
         <translation type="unfinished">Οχι</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="70" />
+        <location filename="../../src/gharqad/main.cpp" line="75" />
         <source>OK</source>
         <translation type="unfinished">ΕΝΤΑΞΕΙ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="71" />
+        <location filename="../../src/gharqad/main.cpp" line="76" />
         <source>Defaults</source>
         <translation type="unfinished">Προεπιλογές</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="72" />
+        <location filename="../../src/gharqad/main.cpp" line="77" />
         <source>Restore Defaults</source>
         <translation type="unfinished">Επαναφορά προεπιλογών</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="73" />
+        <location filename="../../src/gharqad/main.cpp" line="78" />
         <source>Discard</source>
         <translation type="unfinished">Απορρίπτω</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="75" />
+        <location filename="../../src/gharqad/main.cpp" line="80" />
         <source>Undo</source>
         <translation type="unfinished">Ξεκάνω</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="76" />
+        <location filename="../../src/gharqad/main.cpp" line="81" />
         <source>Redo</source>
         <translation type="unfinished">Ξανακάνω</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="77" />
+        <location filename="../../src/gharqad/main.cpp" line="82" />
         <source>Cut</source>
         <translation type="unfinished">Τομή</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="78" />
+        <location filename="../../src/gharqad/main.cpp" line="83" />
         <source>Copy</source>
         <translation type="unfinished">Αντίγραφο</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="79" />
+        <location filename="../../src/gharqad/main.cpp" line="84" />
         <source>Paste</source>
         <translation type="unfinished">Πάστα</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="80" />
+        <location filename="../../src/gharqad/main.cpp" line="85" />
         <source>Delete</source>
         <translation type="unfinished">Διαγράφω</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="81" />
+        <location filename="../../src/gharqad/main.cpp" line="86" />
         <source>Select All</source>
         <translation type="unfinished">Επιλέξτε Όλα</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="82" />
+        <location filename="../../src/gharqad/main.cpp" line="87" />
         <source>Stop</source>
         <translation type="unfinished">Στάση</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="83" />
+        <location filename="../../src/gharqad/main.cpp" line="88" />
         <source>Clear</source>
         <translation type="unfinished">Σαφής</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="84" />
+        <location filename="../../src/gharqad/main.cpp" line="89" />
         <source>Copy Link Location</source>
         <translation type="unfinished">Αντιγραφή τοποθεσίας συνδέσμου</translation>
     </message>
@@ -4156,7 +4159,7 @@ Direct: ⚡%2 📦%4</source>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="381" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1342" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1346" />
         <source>Download Profiles</source>
         <translation type="unfinished">Λήψη Προφίλ</translation>
     </message>

@@ -2500,9 +2500,8 @@ Am ragor o wybodaeth, gweler y ddogfen "Configuration/DNS".</translation>
         <translation type="unfinished">Ystadegau Diogelwch</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="210" />
         <source>Profile Statistics</source>
-        <translation type="unfinished">Ystadegau Proffil</translation>
+        <translation type="obsolete">Ystadegau Proffil</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/info/main.ui" line="67" />
@@ -2540,6 +2539,11 @@ Am ragor o wybodaeth, gweler y ddogfen "Configuration/DNS".</translation>
         <location filename="../../src/nekobox/ui/info/main.ui" line="216" />
         <source>Proxy Profiles</source>
         <translation type="unfinished">Proffiliau Dirprwy</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="210" />
+        <source>Database Statistics</source>
+        <translation type="unfinished">Ystadegau Cronfa Ddata</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/info/main.ui" line="222" />
@@ -2588,9 +2592,8 @@ Am ragor o wybodaeth, gweler y ddogfen "Configuration/DNS".</translation>
         <translation type="unfinished">Ynghylch</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="539" />
         <source>NyameBox / NekoBox for PC</source>
-        <translation type="unfinished">NyameBox / NekoBox ar gyfer PC</translation>
+        <translation type="obsolete">NyameBox / NekoBox ar gyfer PC</translation>
     </message>
 </context>
 <context>
@@ -2639,8 +2642,8 @@ Am ragor o wybodaeth, gweler y ddogfen "Configuration/DNS".</translation>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="164" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="579" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2605" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2608" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2614" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2617" />
         <source>System Proxy</source>
         <translation type="unfinished">Dirprwy System</translation>
     </message>
@@ -2826,15 +2829,15 @@ Am ragor o wybodaeth, gweler y ddogfen "Configuration/DNS".</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="737" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3673" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3683" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3682" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3692" />
         <source>Start</source>
         <translation type="unfinished">Cychwyn</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="745" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3672" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3683" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3681" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3692" />
         <source>Stop</source>
         <translation type="unfinished">Stopio</translation>
     </message>
@@ -2881,7 +2884,7 @@ Am ragor o wybodaeth, gweler y ddogfen "Configuration/DNS".</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="824" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1506" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1510" />
         <source>Export %1 config</source>
         <translation type="unfinished">Allforio ffurfwedd % 1</translation>
     </message>
@@ -2991,7 +2994,7 @@ Am ragor o wybodaeth, gweler y ddogfen "Configuration/DNS".</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="978" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2992" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3001" />
         <source>Clone</source>
         <translation type="unfinished">Clôn</translation>
     </message>
@@ -3099,7 +3102,7 @@ Am ragor o wybodaeth, gweler y ddogfen "Configuration/DNS".</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1138" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3702" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3711" />
         <source>Add new Group</source>
         <translation type="unfinished">Ychwanegu Grŵp newydd</translation>
     </message>
@@ -3115,218 +3118,218 @@ Am ragor o wybodaeth, gweler y ddogfen "Configuration/DNS".</translation>
         <translation type="unfinished">Ddim ar gael</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1161" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1165" />
         <source>Edit Routing Profiles</source>
         <translation type="unfinished">Golygu Proffiliau Llwybro</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1183" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1187" />
         <source>Update Routing Profiles</source>
         <translation type="unfinished">Diweddaru Proffiliau Llwybro</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1195" />
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1199" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1220" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1223" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1267" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1203" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1224" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1227" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1271" />
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="95" />
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="104" />
         <source>Update Response</source>
         <translation type="unfinished">Ymateb Diweddaru</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1196" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1200" />
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="105" />
         <source>No routing profiles are updated</source>
         <translation type="unfinished">Nid oes unrhyw broffiliau llwybro yn cael eu diweddaru</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1200" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1204" />
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="96" />
         <source>Updated %1 routing profiles</source>
         <translation type="unfinished">Proffiliau llwybro % 1 wedi'u diweddaru</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1210" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1214" />
         <source>Update RuleSet Map</source>
         <translation type="unfinished">Diweddaru Map RuleSet</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1221" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1225" />
         <source>Failed to update rulesets</source>
         <translation type="unfinished">Wedi methu diweddaru setiau rheolau</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1224" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1228" />
         <source>Rulesets updated successfully</source>
         <translation type="unfinished">Diweddarwyd y setiau rheolau yn llwyddiannus</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1233" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1237" />
         <source>Update RuleSet Cache</source>
         <translation type="unfinished">Diweddaru RuleSet Cache</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1268" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1272" />
         <source>Rulesets cache is updated</source>
         <translation type="unfinished">Mae storfa'r setiau rheolau yn cael ei diweddaru</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1282" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1286" />
         <source>Clear RuleSet Cache</source>
         <translation type="unfinished">Clirio'r Cache RuleSet</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1318" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1322" />
         <source>Enable AdBlock</source>
         <translation type="unfinished">Galluogi AdBlock</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1720" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1728" />
         <source>Error</source>
         <translation type="unfinished">Gwall</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1807" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1815" />
         <source>Tun Settings changed</source>
         <translation type="unfinished">Newidiodd Gosodiadau Tun</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1808" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1816" />
         <source>Restart Tun to take effect.</source>
         <translation type="unfinished">Ailgychwyn Tun i ddod i rym.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1814" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1872" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3046" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3417" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3471" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3520" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3750" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1822" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1880" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3055" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3426" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3480" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3529" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3759" />
         <source>Confirmation</source>
         <translation type="unfinished">Cadarnhad</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1815" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1873" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1823" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1881" />
         <source>Settings changed, restart proxy?</source>
         <translation type="unfinished">Gosodiadau wedi newid, ailgychwyn dirprwy?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1844" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1852" />
         <source>Settings changed</source>
         <translation type="unfinished">Gosodiadau wedi newid</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1845" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1853" />
         <source>Restart the program to take effect.</source>
         <translation type="unfinished">Ailgychwyn y rhaglen i ddod i rym.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1888" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1896" />
         <source>Imported %1 profile(s)</source>
         <translation type="unfinished">Mewnforiwyd % 1 proffil(iau)</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2163" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2172" />
         <source>User opted for no privilege req, some features may not work</source>
         <translation type="unfinished">Dewisodd y defnyddiwr ddim hawl braint, efallai na fydd rhai nodweddion yn gweithio</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2227" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2236" />
         <source>Please give the core root privileges</source>
         <translation type="unfinished">Rhowch y breintiau gwraidd craidd</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2581" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2590" />
         <source>Not Running</source>
         <translation type="unfinished">Ddim yn Rhedeg</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2993" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3002" />
         <source>Clone %1 item(s)</source>
         <translation type="unfinished">Clonio % 1 eitem(au)</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3027" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3036" />
         <source> Confirmation </source>
         <translation type="unfinished">Cadarnhad</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3028" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3037" />
         <source> Remove %1 item(s) ? </source>
         <translation type="unfinished">Dileu % 1 eitem(au) ?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3047" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3056" />
         <source>Remove %1 item(s) ?</source>
         <translation type="unfinished">Dileu % 1 eitem(au) ?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3084" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3097" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3093" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3106" />
         <source>Copied %1 item(s)</source>
         <translation type="unfinished">Wedi copïo % 1 eitem(au)</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3329" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3338" />
         <source>QR Code not found</source>
         <translation type="unfinished">Heb ganfod y cod QR</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3350" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3359" />
         <source>Unable to capture screen</source>
         <translation type="unfinished">Methu dal sgrin</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3418" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3427" />
         <source>Remove %1 Unavailable item(s) ?</source>
         <translation type="unfinished">Dileu % 1 Eitem(au) nad ydynt ar gael ?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3472" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3481" />
         <source>Remove %1 Invalid item(s) ?</source>
         <translation type="unfinished">Dileu % 1 eitem(au) annilys ?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3521" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3530" />
         <source>Replace domain server addresses with their resolved IPs?</source>
         <translation type="unfinished">Disodli cyfeiriadau gweinydd parth gyda'u IPs sydd wedi'u datrys?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3670" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3679" />
         <source>Clear</source>
         <translation type="unfinished">Clir</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3741" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3750" />
         <source>Delete selected Group</source>
         <translation type="unfinished">Dileu'r Grŵp a ddewiswyd</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3742" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3751" />
         <source>Edit selected Group</source>
         <translation type="unfinished">Golygu'r Grŵp a ddewiswyd</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3751" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3760" />
         <source>Remove %1?</source>
         <translation type="unfinished">Tynnu % 1?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4492" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4501" />
         <source>Cannot start</source>
         <translation type="unfinished">Methu dechrau</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4493" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4502" />
         <source>Last download request has not finished yet</source>
         <translation type="unfinished">Nid yw'r cais lawrlwytho diwethaf wedi gorffen eto</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4527" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4536" />
         <source>Failed to download update assets</source>
         <translation type="unfinished">Wedi methu lawrlwytho asedau diweddaru</translation>
     </message>
@@ -3510,7 +3513,7 @@ Am ragor o wybodaeth, gweler y ddogfen "Configuration/DNS".</translation>
 <context>
     <name>QAction</name>
     <message>
-        <location filename="../../src/gharqad/ui/security_addon.cpp" line="346" />
+        <location filename="../../src/gharqad/ui/security_addon.cpp" line="366" />
         <source>Security Settings</source>
         <translation type="unfinished">Gosodiadau Diogelwch</translation>
     </message>
@@ -3518,7 +3521,7 @@ Am ragor o wybodaeth, gweler y ddogfen "Configuration/DNS".</translation>
 <context>
     <name>QGuiApplication</name>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="348" />
+        <location filename="../../src/gharqad/main.cpp" line="354" />
         <source>QT_LAYOUT_DIRECTION</source>
         <translation type="unfinished" />
     </message>
@@ -3582,7 +3585,7 @@ Wedi dileu % 3 Proffil:
         <translation type="unfinished">Newid % 1:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/dataStore/Database.cpp" line="227" />
+        <location filename="../../src/gharqad/dataStore/Database.cpp" line="307" />
         <source>Default</source>
         <translation type="unfinished">Diofyn</translation>
     </message>
@@ -3592,17 +3595,17 @@ Wedi dileu % 3 Proffil:
         <translation type="unfinished">Methu agor y ffeil.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="108" />
+        <location filename="../../src/gharqad/main.cpp" line="113" />
         <source>Chain Proxy</source>
         <translation type="unfinished">Dirprwy Gadwyn</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="124" />
+        <location filename="../../src/gharqad/main.cpp" line="129" />
         <source>Custom</source>
         <translation type="unfinished">Custom</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="125" />
+        <location filename="../../src/gharqad/main.cpp" line="130" />
         <source>Extra Core</source>
         <translation type="unfinished">Craidd Ychwanegol</translation>
     </message>
@@ -3614,7 +3617,7 @@ Wedi dileu % 3 Proffil:
         <translation type="unfinished">Dewiswch</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2549" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2558" />
         <source>Proxy: %1
 Direct: %2</source>
         <translation type="unfinished">Dirprwy: % 1
@@ -3636,7 +3639,7 @@ Uniongyrchol: % 2</translation>
         <translation type="unfinished">Wrthi'n ailgychwyn y craidd ...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/sys/Settings.cpp" line="358" />
+        <location filename="../../src/gharqad/sys/Settings.cpp" line="350" />
         <source>System</source>
         <translation type="unfinished">System</translation>
     </message>
@@ -3688,30 +3691,30 @@ Sut i ddiweddaru?</translation>
         <translation type="unfinished">Gwall proffil wrth wneud cais: % 1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="461" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="469" />
         <source>
 Deleted %1 Duplicates</source>
         <translation type="unfinished">Wedi dileu % 1 Dyblyg</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="495" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="503" />
         <source>
 Deleted %1 Invalid</source>
         <translation type="unfinished">Wedi dileu % 1 Annilys</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="518" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="526" />
         <source>
 Deleted %1 Unavailable</source>
         <translation type="unfinished">Wedi dileu % 1 Ddim ar gael</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1599" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1607" />
         <source>Check Rule Sets: %1</source>
         <translation type="unfinished">Gwirio Setiau Rheolau: % 1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1621" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1629" />
         <source>Requesting rule-set list error: %1</source>
         <translation type="unfinished">Gofyn am wall rhestr set rheolau: % 1</translation>
     </message>
@@ -3720,64 +3723,64 @@ Deleted %1 Unavailable</source>
         <translation type="obsolete">Cyfeiriad IP: % 1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2586" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2595" />
         <source>Inbound IP: %1</source>
         <translation type="unfinished">IP Inbound: % 1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2972" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2981" />
         <source>Move profiles to group</source>
         <translation type="unfinished">Symud proffiliau i grŵp</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3115" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3124" />
         <source>Config copied</source>
         <translation type="unfinished">Config wedi'i gopïo</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3126" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3135" />
         <source>Copy core config</source>
         <translation type="unfinished">Copïo ffurfwedd craidd</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3127" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3136" />
         <source>Copy test config</source>
         <translation type="unfinished">Copïo ffurfwedd prawf</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3128" />
-        <location filename="../../src/gharqad/ui/security_addon.cpp" line="21" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3137" />
+        <location filename="../../src/gharqad/ui/security_addon.cpp" line="31" />
         <location filename="../../src/gharqad/ui/setting/dialog_vpn_settings.cpp" line="53" />
         <source>OK</source>
         <translation type="unfinished">iawn</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4396" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4407" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4451" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4474" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4405" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4416" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4460" />
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4483" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4518" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4492" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4527" />
         <source>Update</source>
         <translation type="unfinished">Diweddariad</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4397" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4406" />
         <source>Not official support platform</source>
         <translation type="unfinished">Ddim yn llwyfan cymorth swyddogol</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4408" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4417" />
         <source>Requesting update error: %1</source>
         <translation type="unfinished">Gwall wrth ofyn am ddiweddariad: % 1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4451" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4460" />
         <source>No update</source>
         <translation type="unfinished">Dim diweddariad</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4475" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4484" />
         <source>Update found: %1
 Release note:
 %2</source>
@@ -3786,22 +3789,22 @@ Nodyn rhyddhau:
 % 2</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4478" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4487" />
         <source>Close</source>
         <translation type="unfinished">Cau</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4480" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4489" />
         <source>Open in browser</source>
         <translation type="unfinished">Agor yn y porwr</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4519" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4528" />
         <source>Update is ready, restart to install?</source>
         <translation type="unfinished">Diweddariad yn barod, ailgychwyn i osod?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/security_addon.cpp" line="20" />
+        <location filename="../../src/gharqad/ui/security_addon.cpp" line="30" />
         <source>Access denied</source>
         <translation type="unfinished">Mynediad wedi'i wrthod</translation>
     </message>
@@ -3841,92 +3844,92 @@ Uniongyrchol: ⚡% 2 📦% 4</translation>
 <context>
     <name>QPlatformTheme</name>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="66" />
+        <location filename="../../src/gharqad/main.cpp" line="71" />
         <source>Cancel</source>
         <translation type="unfinished">Canslo</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="67" />
+        <location filename="../../src/gharqad/main.cpp" line="72" />
         <source>Apply</source>
         <translation type="unfinished">Ymgeisiwch</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="68" />
+        <location filename="../../src/gharqad/main.cpp" line="73" />
         <source>Yes</source>
         <translation type="unfinished">Oes</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="69" />
+        <location filename="../../src/gharqad/main.cpp" line="74" />
         <source>No</source>
         <translation type="unfinished">Nac ydw</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="70" />
+        <location filename="../../src/gharqad/main.cpp" line="75" />
         <source>OK</source>
         <translation type="unfinished">iawn</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="71" />
+        <location filename="../../src/gharqad/main.cpp" line="76" />
         <source>Defaults</source>
         <translation type="unfinished">Rhagosodiadau</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="72" />
+        <location filename="../../src/gharqad/main.cpp" line="77" />
         <source>Restore Defaults</source>
         <translation type="unfinished">Adfer Rhagosodiadau</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="73" />
+        <location filename="../../src/gharqad/main.cpp" line="78" />
         <source>Discard</source>
         <translation type="unfinished">Taflwch</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="75" />
+        <location filename="../../src/gharqad/main.cpp" line="80" />
         <source>Undo</source>
         <translation type="unfinished">Dadwneud</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="76" />
+        <location filename="../../src/gharqad/main.cpp" line="81" />
         <source>Redo</source>
         <translation type="unfinished">Ail-wneud</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="77" />
+        <location filename="../../src/gharqad/main.cpp" line="82" />
         <source>Cut</source>
         <translation type="unfinished">Torri</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="78" />
+        <location filename="../../src/gharqad/main.cpp" line="83" />
         <source>Copy</source>
         <translation type="unfinished">Copi</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="79" />
+        <location filename="../../src/gharqad/main.cpp" line="84" />
         <source>Paste</source>
         <translation type="unfinished">Gludo</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="80" />
+        <location filename="../../src/gharqad/main.cpp" line="85" />
         <source>Delete</source>
         <translation type="unfinished">Dileu</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="81" />
+        <location filename="../../src/gharqad/main.cpp" line="86" />
         <source>Select All</source>
         <translation type="unfinished">Dewiswch Pawb</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="82" />
+        <location filename="../../src/gharqad/main.cpp" line="87" />
         <source>Stop</source>
         <translation type="unfinished">Stopio</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="83" />
+        <location filename="../../src/gharqad/main.cpp" line="88" />
         <source>Clear</source>
         <translation type="unfinished">Clir</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="84" />
+        <location filename="../../src/gharqad/main.cpp" line="89" />
         <source>Copy Link Location</source>
         <translation type="unfinished">Lleoliad Cyswllt Copïo</translation>
     </message>
@@ -4160,7 +4163,7 @@ Uniongyrchol: ⚡% 2 📦% 4</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="381" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1342" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1346" />
         <source>Download Profiles</source>
         <translation type="unfinished">Lawrlwythwch Proffiliau</translation>
     </message>

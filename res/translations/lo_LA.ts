@@ -2500,9 +2500,8 @@ For more information, see the document "Configuration/DNS".</source>
         <translation type="unfinished">ສະຖິຕິຄວາມປອດໄພ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="210" />
         <source>Profile Statistics</source>
-        <translation type="unfinished">ສະຖິຕິໂປຣໄຟລ໌</translation>
+        <translation type="obsolete">ສະຖິຕິໂປຣໄຟລ໌</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/info/main.ui" line="67" />
@@ -2540,6 +2539,11 @@ For more information, see the document "Configuration/DNS".</source>
         <location filename="../../src/nekobox/ui/info/main.ui" line="216" />
         <source>Proxy Profiles</source>
         <translation type="unfinished">ໂປຣໄຟລ໌ພຣັອກຊີ</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="210" />
+        <source>Database Statistics</source>
+        <translation type="unfinished">ສະຖິຕິຖານຂໍ້ມູນ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/info/main.ui" line="222" />
@@ -2588,9 +2592,8 @@ For more information, see the document "Configuration/DNS".</source>
         <translation type="unfinished">ກ່ຽວກັບ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="539" />
         <source>NyameBox / NekoBox for PC</source>
-        <translation type="unfinished">NyameBox / NekoBox ສໍາລັບ PC</translation>
+        <translation type="obsolete">NyameBox / NekoBox ສໍາລັບ PC</translation>
     </message>
 </context>
 <context>
@@ -2639,8 +2642,8 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="164" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="579" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2605" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2608" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2614" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2617" />
         <source>System Proxy</source>
         <translation type="unfinished">ຕົວແທນລະບົບ</translation>
     </message>
@@ -2826,15 +2829,15 @@ For more information, see the document "Configuration/DNS".</source>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="737" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3673" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3683" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3682" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3692" />
         <source>Start</source>
         <translation type="unfinished">ເລີ່ມ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="745" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3672" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3683" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3681" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3692" />
         <source>Stop</source>
         <translation type="unfinished">ຢຸດ</translation>
     </message>
@@ -2881,7 +2884,7 @@ For more information, see the document "Configuration/DNS".</source>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="824" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1506" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1510" />
         <source>Export %1 config</source>
         <translation type="unfinished">ສົ່ງອອກ %1 config</translation>
     </message>
@@ -2991,7 +2994,7 @@ For more information, see the document "Configuration/DNS".</source>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="978" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2992" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3001" />
         <source>Clone</source>
         <translation type="unfinished">ໂຄນ</translation>
     </message>
@@ -3099,7 +3102,7 @@ For more information, see the document "Configuration/DNS".</source>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1138" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3702" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3711" />
         <source>Add new Group</source>
         <translation type="unfinished">ເພີ່ມກຸ່ມໃໝ່</translation>
     </message>
@@ -3115,218 +3118,218 @@ For more information, see the document "Configuration/DNS".</source>
         <translation type="unfinished">ບໍ່ສາມາດໃຊ້ໄດ້</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1161" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1165" />
         <source>Edit Routing Profiles</source>
         <translation type="unfinished">ແກ້ໄຂໂປຣໄຟລ໌ການກຳນົດເສັ້ນທາງ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1183" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1187" />
         <source>Update Routing Profiles</source>
         <translation type="unfinished">ອັບເດດໂປຣໄຟລ໌ການກຳນົດເສັ້ນທາງ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1195" />
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1199" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1220" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1223" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1267" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1203" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1224" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1227" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1271" />
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="95" />
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="104" />
         <source>Update Response</source>
         <translation type="unfinished">ອັບເດດການຕອບສະໜອງ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1196" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1200" />
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="105" />
         <source>No routing profiles are updated</source>
         <translation type="unfinished">ບໍ່ມີການອັບເດດໂປຣໄຟລ໌ເສັ້ນທາງ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1200" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1204" />
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="96" />
         <source>Updated %1 routing profiles</source>
         <translation type="unfinished">ອັບເດດ %1 ໂປຣໄຟລ໌ການກຳນົດເສັ້ນທາງແລ້ວ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1210" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1214" />
         <source>Update RuleSet Map</source>
         <translation type="unfinished">ອັບເດດ RuleSet Map</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1221" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1225" />
         <source>Failed to update rulesets</source>
         <translation type="unfinished">ລົ້ມເຫລວໃນການປັບປຸງກົດລະບຽບ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1224" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1228" />
         <source>Rulesets updated successfully</source>
         <translation type="unfinished">ອັບເດດກົດລະບຽບສຳເລັດແລ້ວ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1233" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1237" />
         <source>Update RuleSet Cache</source>
         <translation type="unfinished">ອັບເດດ RuleSet Cache</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1268" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1272" />
         <source>Rulesets cache is updated</source>
         <translation type="unfinished">Rulesets cache ໄດ້ຖືກປັບປຸງ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1282" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1286" />
         <source>Clear RuleSet Cache</source>
         <translation type="unfinished">ລ້າງແຄດຊຸດ RuleSet</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1318" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1322" />
         <source>Enable AdBlock</source>
         <translation type="unfinished">ເປີດໃຊ້ AdBlock</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1720" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1728" />
         <source>Error</source>
         <translation type="unfinished">ຜິດພາດ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1807" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1815" />
         <source>Tun Settings changed</source>
         <translation type="unfinished">ປ່ຽນການຕັ້ງຄ່າ Tun</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1808" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1816" />
         <source>Restart Tun to take effect.</source>
         <translation type="unfinished">ປິດເປີດ Tun ຄືນໃໝ່ເພື່ອໃຫ້ມີຜົນ.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1814" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1872" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3046" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3417" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3471" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3520" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3750" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1822" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1880" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3055" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3426" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3480" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3529" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3759" />
         <source>Confirmation</source>
         <translation type="unfinished">ການຢືນຢັນ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1815" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1873" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1823" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1881" />
         <source>Settings changed, restart proxy?</source>
         <translation type="unfinished">ປ່ຽນການຕັ້ງຄ່າ, ຣີສະຕາດພຣັອກຊີບໍ?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1844" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1852" />
         <source>Settings changed</source>
         <translation type="unfinished">ປ່ຽນການຕັ້ງຄ່າ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1845" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1853" />
         <source>Restart the program to take effect.</source>
         <translation type="unfinished">ຣີສະຕາດໂປຣແກຣມເພື່ອໃຫ້ມີຜົນ.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1888" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1896" />
         <source>Imported %1 profile(s)</source>
         <translation type="unfinished">ນຳເຂົ້າ %1 ໂປຣໄຟລ໌ແລ້ວ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2163" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2172" />
         <source>User opted for no privilege req, some features may not work</source>
         <translation type="unfinished">ຜູ້​ໃຊ້​ເລືອກ​ທີ່​ບໍ່​ມີ req ສິດ​ທິ​ພິ​ເສດ​, ບາງ​ລັກ​ສະ​ນະ​ອາດ​ຈະ​ບໍ່​ເຮັດ​ວຽກ​</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2227" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2236" />
         <source>Please give the core root privileges</source>
         <translation type="unfinished">ກະລຸນາໃຫ້ສິດທິພື້ນຖານຫຼັກ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2581" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2590" />
         <source>Not Running</source>
         <translation type="unfinished">ບໍ່ແລ່ນ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2993" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3002" />
         <source>Clone %1 item(s)</source>
         <translation type="unfinished">Clone %1 ລາຍການ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3027" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3036" />
         <source> Confirmation </source>
         <translation type="unfinished">ການຢືນຢັນ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3028" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3037" />
         <source> Remove %1 item(s) ? </source>
         <translation type="unfinished">ລຶບ %1 ລາຍການອອກບໍ?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3047" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3056" />
         <source>Remove %1 item(s) ?</source>
         <translation type="unfinished">ລຶບ %1 ລາຍການອອກບໍ?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3084" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3097" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3093" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3106" />
         <source>Copied %1 item(s)</source>
         <translation type="unfinished">ສຳເນົາ %1 ລາຍການແລ້ວ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3329" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3338" />
         <source>QR Code not found</source>
         <translation type="unfinished">ບໍ່ພົບລະຫັດ QR</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3350" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3359" />
         <source>Unable to capture screen</source>
         <translation type="unfinished">ບໍ່ສາມາດບັນທຶກໜ້າຈໍໄດ້</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3418" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3427" />
         <source>Remove %1 Unavailable item(s) ?</source>
         <translation type="unfinished">ເອົາ %1 ລາຍການທີ່ບໍ່ສາມາດໃຊ້ໄດ້ອອກ ?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3472" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3481" />
         <source>Remove %1 Invalid item(s) ?</source>
         <translation type="unfinished">ເອົາ %1 ລາຍການທີ່ບໍ່ຖືກຕ້ອງອອກ ?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3521" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3530" />
         <source>Replace domain server addresses with their resolved IPs?</source>
         <translation type="unfinished">ແທນທີ່ທີ່ຢູ່ເຊີບເວີໂດເມນດ້ວຍ IP ທີ່ແກ້ໄຂແລ້ວບໍ?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3670" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3679" />
         <source>Clear</source>
         <translation type="unfinished">ຈະແຈ້ງ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3741" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3750" />
         <source>Delete selected Group</source>
         <translation type="unfinished">ລຶບກຸ່ມທີ່ເລືອກ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3742" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3751" />
         <source>Edit selected Group</source>
         <translation type="unfinished">ແກ້ໄຂກຸ່ມທີ່ເລືອກ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3751" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3760" />
         <source>Remove %1?</source>
         <translation type="unfinished">ລຶບ %1 ອອກບໍ?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4492" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4501" />
         <source>Cannot start</source>
         <translation type="unfinished">ບໍ່ສາມາດເລີ່ມຕົ້ນໄດ້</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4493" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4502" />
         <source>Last download request has not finished yet</source>
         <translation type="unfinished">ການຮ້ອງຂໍການດາວໂຫຼດຫຼ້າສຸດຍັງບໍ່ທັນສໍາເລັດເທື່ອ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4527" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4536" />
         <source>Failed to download update assets</source>
         <translation type="unfinished">ດາວໂຫຼດຊັບສິນອັບເດດບໍ່ສຳເລັດ</translation>
     </message>
@@ -3510,7 +3513,7 @@ For more information, see the document "Configuration/DNS".</source>
 <context>
     <name>QAction</name>
     <message>
-        <location filename="../../src/gharqad/ui/security_addon.cpp" line="346" />
+        <location filename="../../src/gharqad/ui/security_addon.cpp" line="366" />
         <source>Security Settings</source>
         <translation type="unfinished">ການຕັ້ງຄ່າຄວາມປອດໄພ</translation>
     </message>
@@ -3518,7 +3521,7 @@ For more information, see the document "Configuration/DNS".</source>
 <context>
     <name>QGuiApplication</name>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="348" />
+        <location filename="../../src/gharqad/main.cpp" line="354" />
         <source>QT_LAYOUT_DIRECTION</source>
         <translation type="unfinished" />
     </message>
@@ -3582,7 +3585,7 @@ Deleted %3 Profiles:
         <translation type="unfinished">ການປ່ຽນແປງຂອງ %1:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/dataStore/Database.cpp" line="227" />
+        <location filename="../../src/gharqad/dataStore/Database.cpp" line="307" />
         <source>Default</source>
         <translation type="unfinished">ຄ່າເລີ່ມຕົ້ນ</translation>
     </message>
@@ -3592,17 +3595,17 @@ Deleted %3 Profiles:
         <translation type="unfinished">ບໍ່ສາມາດເປີດໄຟລ໌ໄດ້.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="108" />
+        <location filename="../../src/gharqad/main.cpp" line="113" />
         <source>Chain Proxy</source>
         <translation type="unfinished">Chain Proxy</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="124" />
+        <location filename="../../src/gharqad/main.cpp" line="129" />
         <source>Custom</source>
         <translation type="unfinished">ກຳນົດເອງ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="125" />
+        <location filename="../../src/gharqad/main.cpp" line="130" />
         <source>Extra Core</source>
         <translation type="unfinished">ຫຼັກພິເສດ</translation>
     </message>
@@ -3614,7 +3617,7 @@ Deleted %3 Profiles:
         <translation type="unfinished">ເລືອກ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2549" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2558" />
         <source>Proxy: %1
 Direct: %2</source>
         <translation type="unfinished">ຕົວແທນ: %1
@@ -3636,7 +3639,7 @@ Direct: %2</source>
         <translation type="unfinished">ກຳລັງຣີສະຕາດຫຼັກ...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/sys/Settings.cpp" line="358" />
+        <location filename="../../src/gharqad/sys/Settings.cpp" line="350" />
         <source>System</source>
         <translation type="unfinished">ລະບົບ</translation>
     </message>
@@ -3688,30 +3691,30 @@ How to update?</source>
         <translation type="unfinished">ກຳລັງຮ້ອງຂໍໂປຣໄຟລ໌ຜິດພາດ: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="461" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="469" />
         <source>
 Deleted %1 Duplicates</source>
         <translation type="unfinished">ລຶບ %1 ຊໍ້າກັນແລ້ວ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="495" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="503" />
         <source>
 Deleted %1 Invalid</source>
         <translation type="unfinished">ລຶບ %1 ບໍ່ຖືກຕ້ອງ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="518" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="526" />
         <source>
 Deleted %1 Unavailable</source>
         <translation type="unfinished">ລຶບແລ້ວ %1 ບໍ່ສາມາດໃຊ້ໄດ້</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1599" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1607" />
         <source>Check Rule Sets: %1</source>
         <translation type="unfinished">ກວດສອບຊຸດກົດລະບຽບ: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1621" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1629" />
         <source>Requesting rule-set list error: %1</source>
         <translation type="unfinished">ການຮ້ອງຂໍຄວາມຜິດພາດລາຍຊື່ທີ່ຕັ້ງກົດລະບຽບ: %1</translation>
     </message>
@@ -3720,64 +3723,64 @@ Deleted %1 Unavailable</source>
         <translation type="obsolete">ທີ່ຢູ່ IP: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2586" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2595" />
         <source>Inbound IP: %1</source>
         <translation type="unfinished">IP ຂາເຂົ້າ: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2972" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2981" />
         <source>Move profiles to group</source>
         <translation type="unfinished">ຍ້າຍໂປຣໄຟລ໌ໄປຫາກຸ່ມ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3115" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3124" />
         <source>Config copied</source>
         <translation type="unfinished">ສຳເນົາການຕັ້ງຄ່າແລ້ວ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3126" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3135" />
         <source>Copy core config</source>
         <translation type="unfinished">ສຳເນົາການຕັ້ງຄ່າຫຼັກ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3127" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3136" />
         <source>Copy test config</source>
         <translation type="unfinished">ສຳເນົາການຕັ້ງຄ່າການທົດສອບ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3128" />
-        <location filename="../../src/gharqad/ui/security_addon.cpp" line="21" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3137" />
+        <location filename="../../src/gharqad/ui/security_addon.cpp" line="31" />
         <location filename="../../src/gharqad/ui/setting/dialog_vpn_settings.cpp" line="53" />
         <source>OK</source>
         <translation type="unfinished">ຕົກລົງ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4396" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4407" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4451" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4474" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4405" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4416" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4460" />
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4483" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4518" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4492" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4527" />
         <source>Update</source>
         <translation type="unfinished">ອັບເດດ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4397" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4406" />
         <source>Not official support platform</source>
         <translation type="unfinished">ບໍ່ແມ່ນເວທີສະຫນັບສະຫນູນຢ່າງເປັນທາງການ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4408" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4417" />
         <source>Requesting update error: %1</source>
         <translation type="unfinished">ການຮ້ອງຂໍການອັບເດດຜິດພາດ: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4451" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4460" />
         <source>No update</source>
         <translation type="unfinished">ບໍ່ມີການປັບປຸງ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4475" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4484" />
         <source>Update found: %1
 Release note:
 %2</source>
@@ -3786,22 +3789,22 @@ Release note:
 %2</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4478" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4487" />
         <source>Close</source>
         <translation type="unfinished">ປິດ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4480" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4489" />
         <source>Open in browser</source>
         <translation type="unfinished">ເປີດໃນ browser</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4519" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4528" />
         <source>Update is ready, restart to install?</source>
         <translation type="unfinished">ການອັບເດດພ້ອມແລ້ວ, ຣີສະຕາດເພື່ອຕິດຕັ້ງບໍ?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/security_addon.cpp" line="20" />
+        <location filename="../../src/gharqad/ui/security_addon.cpp" line="30" />
         <source>Access denied</source>
         <translation type="unfinished">ປະຕິເສດການເຂົ້າເຖິງ</translation>
     </message>
@@ -3841,92 +3844,92 @@ Direct: ⚡%2 📦%4</source>
 <context>
     <name>QPlatformTheme</name>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="66" />
+        <location filename="../../src/gharqad/main.cpp" line="71" />
         <source>Cancel</source>
         <translation type="unfinished">ຍົກເລີກ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="67" />
+        <location filename="../../src/gharqad/main.cpp" line="72" />
         <source>Apply</source>
         <translation type="unfinished">ສະໝັກ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="68" />
+        <location filename="../../src/gharqad/main.cpp" line="73" />
         <source>Yes</source>
         <translation type="unfinished">ແມ່ນແລ້ວ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="69" />
+        <location filename="../../src/gharqad/main.cpp" line="74" />
         <source>No</source>
         <translation type="unfinished">ບໍ່</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="70" />
+        <location filename="../../src/gharqad/main.cpp" line="75" />
         <source>OK</source>
         <translation type="unfinished">ຕົກລົງ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="71" />
+        <location filename="../../src/gharqad/main.cpp" line="76" />
         <source>Defaults</source>
         <translation type="unfinished">ຄ່າເລີ່ມຕົ້ນ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="72" />
+        <location filename="../../src/gharqad/main.cpp" line="77" />
         <source>Restore Defaults</source>
         <translation type="unfinished">ຟື້ນຟູຄ່າເລີ່ມຕົ້ນ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="73" />
+        <location filename="../../src/gharqad/main.cpp" line="78" />
         <source>Discard</source>
         <translation type="unfinished">ຖິ້ມ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="75" />
+        <location filename="../../src/gharqad/main.cpp" line="80" />
         <source>Undo</source>
         <translation type="unfinished">ຍົກເລີກ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="76" />
+        <location filename="../../src/gharqad/main.cpp" line="81" />
         <source>Redo</source>
         <translation type="unfinished">ເຮັດຄືນ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="77" />
+        <location filename="../../src/gharqad/main.cpp" line="82" />
         <source>Cut</source>
         <translation type="unfinished">ຕັດ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="78" />
+        <location filename="../../src/gharqad/main.cpp" line="83" />
         <source>Copy</source>
         <translation type="unfinished">ສຳເນົາ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="79" />
+        <location filename="../../src/gharqad/main.cpp" line="84" />
         <source>Paste</source>
         <translation type="unfinished">ວາງ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="80" />
+        <location filename="../../src/gharqad/main.cpp" line="85" />
         <source>Delete</source>
         <translation type="unfinished">ລຶບ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="81" />
+        <location filename="../../src/gharqad/main.cpp" line="86" />
         <source>Select All</source>
         <translation type="unfinished">ເລືອກທັງໝົດ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="82" />
+        <location filename="../../src/gharqad/main.cpp" line="87" />
         <source>Stop</source>
         <translation type="unfinished">ຢຸດ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="83" />
+        <location filename="../../src/gharqad/main.cpp" line="88" />
         <source>Clear</source>
         <translation type="unfinished">ຈະແຈ້ງ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="84" />
+        <location filename="../../src/gharqad/main.cpp" line="89" />
         <source>Copy Link Location</source>
         <translation type="unfinished">ສຳເນົາສະຖານທີ່ເຊື່ອມຕໍ່</translation>
     </message>
@@ -4160,7 +4163,7 @@ Direct: ⚡%2 📦%4</source>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="381" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1342" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1346" />
         <source>Download Profiles</source>
         <translation type="unfinished">ດາວໂຫຼດໂປຣໄຟລ໌</translation>
     </message>

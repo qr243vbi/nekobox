@@ -247,7 +247,31 @@ bool isFileAppendable(QString filePath) {
 
 
 QString getLocale() {
-  return defStr(Configs::windowSettings->language, QLocale().name());
+    QString locale;
+    auto text = ReadFileText(getResource("locale.txt")).trimmed();
+    #ifdef DEBUG_MODE
+        qDebug() << "Locale.txt text is" << text;
+    #endif
+    int ind = text.indexOf(':');
+    bool forced = false;
+    if (ind < 0) {
+        if (locale == ""){
+            locale = text;
+        }
+    } else {
+        auto last = text.sliced(ind+1);
+        forced = (last.compare("force", Qt::CaseInsensitive) == 0);
+        if (forced || (locale == "")){
+            locale = text.sliced(0, ind);
+        }
+    }
+    if (locale == ""){
+        locale = QLocale().name();
+    }
+    #ifdef DEBUG_MODE
+        qDebug() << "Locale is" << locale;
+    #endif
+  return forced ? (Configs::windowSettings->language = locale) : defStr(Configs::windowSettings->language, locale);
 }
 
 void updateEmojiFont() {

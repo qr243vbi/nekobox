@@ -11,6 +11,7 @@
 #include <QFileInfo>
 #include <QApplication>
 #include <memory>
+#include <qnamespace.h>
 #ifdef Q_OS_WIN
 #include <3rdparty/WinCommander.hpp>
 #include <windows.h>
@@ -67,7 +68,7 @@ namespace Preset {
     }
 }
 
-void loadTranslate(const QString& locale) {
+void loadTranslate(QString locale) {
     QT_TRANSLATE_NOOP("QPlatformTheme", "Cancel");
     QT_TRANSLATE_NOOP("QPlatformTheme", "Apply");
     QT_TRANSLATE_NOOP("QPlatformTheme", "Yes");
@@ -96,6 +97,8 @@ void loadTranslate(const QString& locale) {
  //       trans_qt->deleteLater();
  //   }
     //
+
+    // QLocale().name();
     trans = new QTranslator;
  //   trans_qt = new QTranslator;
     QLocale::setDefault(QLocale(locale));
@@ -352,7 +355,6 @@ int main(int argc, char** argv) {
     qDebug() << "Language is: " << locale;
     #endif
     QGuiApplication::tr("QT_LAYOUT_DIRECTION");
-    if (locale == "") locale = QLocale().name();
     loadTranslate(locale);
 
     // Check if another instance is running

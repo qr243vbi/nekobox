@@ -67,6 +67,7 @@ InfoDialog::InfoDialog(QWidget *parent) : QDialog(parent), ui(new Ui::InfoMain) 
   CHECK_SETTINGS_ACCESS
   ui->setupUi(this);
   ui->textBrowser->document()->setDefaultFont(qApp->font());
+  ui->textBrowser->setOpenExternalLinks(true);
   this->setWindowTitle(software_name);
   Stats::trafficLooper->initialize();
   SET_TRAFFIC_STAT(direct, down, ReadableSize)
