@@ -330,15 +330,6 @@ void Configs::MainWindowTableSettings::Load(
   this->column_width[4] = list[4].toInt();
 };
 
-/*
-    "",
-    "C",
-    "he_IL",
-    "zh_CN",
-    "fa_IR",
-    "ru_RU"
-*/
-
 #define ADD(X, Y) { \
   std::shared_ptr<LanguageValue> val = std::make_shared<LanguageValue>();  \
   val->code = X;      \
@@ -363,10 +354,6 @@ QList<std::shared_ptr<LanguageValue>> &languageCodes() {
       #ifdef DEBUG_MODE
       qDebug() << "languages.txt path not found";
       #endif
-      ADDIF("zh_CN", "简体中文")
-      ADDIF("he_IL", "עברית")
-      ADDIF("fa_IR", "فارسی")
-      ADDIF("ru_RU", "Русский")
     } else {
       QString text = ReadFileText(path);
       QStringList list = text.split("\n");

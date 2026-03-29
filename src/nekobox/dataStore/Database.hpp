@@ -5,6 +5,62 @@
 #include "Group.hpp"
 #include "RouteEntity.h"
 
+namespace Stats {
+    class DatabaseLoggerItem : public JsonStore {
+        public:
+        int created;
+        int deleted;
+        DECLARE_STORE_TYPE(NoSave)
+        NEW_MAP
+            ADD_MAP("new", created, jsonStore);
+            ADD_MAP("del", deleted, jsonStore);
+        STOP_MAP
+    };
+
+    class DatabaseLogger: public JsonStore {
+        public:
+        int start_count = 0;
+        long long first_launch_time = 0;
+        long long last_launch_time = 0;
+
+        std::shared_ptr<DatabaseLoggerItem> profiles = std::make_shared<DatabaseLoggerItem>();
+        std::shared_ptr<DatabaseLoggerItem> groups = std::make_shared<DatabaseLoggerItem>();
+        std::shared_ptr<DatabaseLoggerItem> routes = std::make_shared<DatabaseLoggerItem>();
+        
+        DECLARE_STORE_TYPE(DatabaseLogger)
+        NEW_MAP
+            ADD_MAP("profiles", profiles, jsonStore);
+            ADD_MAP("groups", groups, jsonStore);
+            ADD_MAP("routes", routes, jsonStore);
+            ADD_MAP("start_count", start_count, integer);
+            ADD_MAP("usage_time", usage_time, integer);
+            ADD_MAP("first_launch_time", first_launch_time, integer);
+            ADD_MAP("last_launch_time", last_launch_time, integer);
+            #ifdef NKR_SOFTWARE_KEYS
+            ADD_MAP("failed_auth_count", failed_auth_count, integer);
+            #endif
+        STOP_MAP
+
+        virtual bool Save() override;
+        static long GetTime();
+
+        long long get_usage_time();
+        void initialize();
+
+        #ifdef NKR_SOFTWARE_KEYS
+        int get_failed_auth_count(bool pre_save = false);
+        #endif
+        private:
+        long long usage_time = 0;
+        long long usage_time_update = 0;
+        #ifdef NKR_SOFTWARE_KEYS
+        int failed_auth_count = 0;
+        #endif
+    };
+
+    extern std::unique_ptr<DatabaseLogger> databaseLogger;
+}
+
 namespace Configs {
     const int INVALID_ID = -99999;
 

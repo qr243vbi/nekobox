@@ -41,6 +41,7 @@ namespace Configs {
     namespace JsonStoreFlags{
         const unsigned char
             save_control_no_save  = 0b00000001,
+            storage_exists        = 0b00000010,
             custom_flag2          = 0b01000000,
             custom_flag           = 0b10000000;
 
@@ -57,7 +58,8 @@ namespace Configs {
         NekoBox = 8,
         DefaultRoute = 9,
         NoSave = 10,
-        TrafficLooper = 11
+        TrafficLooper = 11,
+        DatabaseLogger = 12
     };
 
 }
@@ -171,6 +173,7 @@ inline QDataStream &operator>>(QDataStream &in, Bin &p) {
         std::shared_ptr<configItem> _get_const_job(const QString &name) const;
     public:
         DECLARE_FLAG_SAME(save_control_no_save)
+        DECLARE_FLAG_SAME(storage_exists)
         virtual int Id() const ;
 
         QByteArray content();

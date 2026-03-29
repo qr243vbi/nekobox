@@ -9,7 +9,7 @@ Supports Windows 11/10 (arm64, x86_64, x86) / Linux  out of the box.
 <img width="558" height="641" alt="image" src="https://raw.githubusercontent.com/qr243vbi/qr243vbi_images/refs/heads/nekobox/nekobox.png" />
 
 
-### GitHub Releases (Portable ZIPs, Windows installers, [AppImages](https://github.com/qr243vbi/nekobox/discussions/41))
+### GitHub Releases (Portable ZIPs, Windows installers, AppImages)
 
 [![GitHub All Releases](https://img.shields.io/github/downloads/qr243vbi/nekobox/total?label=downloads-total&logo=github)](https://github.com/qr243vbi/nekobox/releases)
 
@@ -35,7 +35,7 @@ Supports Windows 11/10 (arm64, x86_64, x86) / Linux  out of the box.
 
 ## Supported protocols
  
-  SOCKS ; HTTP(S) ; Shadowsocks ; Trojan ; VMess ; VLESS ; TUIC ; Hysteria ; Hysteria2 ; AnyTLS ; Mieru ; Naive ; Wireguard ; SSH ; ShadowTLS ; Custom Outbound ; Custom Config ; Chaining outbounds ; Extra Core ; Tor
+  SOCKS ; HTTP(S) ; Shadowsocks ; Trojan ; VMess ; VLESS ; TUIC ; Hysteria ; Hysteria2 ; AnyTLS ; Mieru ; Naive ; Wireguard ; SSH ; ShadowTLS ; TrustTunnel ; Juicity ; Custom Outbound ; Custom Config ; Chaining outbounds ; Extra Core ; Tor
 
 ## Subscription Formats
 
@@ -159,7 +159,7 @@ They are located at the [ruleset](https://github.com/qr243vbi/ruleset/tree/route
 
 ## Contact Us
   - Write GitHub issue.
-  - Or use Matrix [@fgvxd:matrix.org](https://matrix.to/#/@fgvxd:matrix.org)
+  - Or use Matrix [@qr243vbi:matrix.org](https://matrix.to/#/@qr243vbi:matrix.org)
 
 ## License
 

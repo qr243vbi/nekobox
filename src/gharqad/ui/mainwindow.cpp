@@ -582,11 +582,7 @@ MainWindow::MainWindow(QWidget *parent)
   ui->setupUi(this);
 
   themeManager->ApplyTheme(theme);
-  #ifndef DEBUG_MODE
-  ui->menu_program->removeAction(
-    ui->menu_information
-  );
-  #endif
+
   updateEmojiFont();
 
   // restore size and geometry
@@ -1984,6 +1980,7 @@ void MainWindow::on_commitDataRequest() {
   qDebug() << "Start of data save";
   #endif
   Stats::trafficLooper->Save();
+  Stats::databaseLogger->Save();
   {
     // save size and geometry
     int x, y, width, height;

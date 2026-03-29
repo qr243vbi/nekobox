@@ -222,6 +222,14 @@ bool jsInit(
 
     ctx->globalObject().setProperty("NKR_SOFTWARE_NAME", software_name);
 
+    auto & languages = languageCodes();
+    QJSValue langArray = ctx->newArray(languages.size());
+    for (auto ptr : languages) {
+        langArray.setProperty(ptr->index, ptr->code);
+    }
+    ctx->globalObject().setProperty("languages", langArray);
+
+
     QString script;
 
     script = "var configs = ";

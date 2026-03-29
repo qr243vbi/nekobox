@@ -211,7 +211,11 @@ namespace Configs_ConfigItem {
 #endif
             return false;
         }
-        return Configs::databaseManager->Save(this);
+        auto ret = Configs::databaseManager->Save(this);
+        if (ret){
+            this->storage_exists(true);
+        }
+        return ret;
     }
 
     bool JsonStore::Load() {
@@ -221,7 +225,11 @@ namespace Configs_ConfigItem {
         #ifdef DEBUG_MODE
             qDebug() << "Database Manager IS: " << (long long)(void*)Configs::databaseManager.get();
         #endif
-        return Configs::databaseManager->Load(this);
+        auto ret = Configs::databaseManager->Load(this);
+        if (ret){
+            this->storage_exists(true);
+        }
+        return ret;
     }
 
     JsonEnum& JsonEnum::set(int value){

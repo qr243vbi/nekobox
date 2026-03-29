@@ -1,19 +1,29 @@
 #include <QDir>
-#include "nekobox/ui/security_addon.h"
-#include "nekobox/dataStore/Utils.hpp"
-#include "nekobox/ui/mainwindow.h"
-#include "nekobox/ui/security/security.h"
+#include <nekobox/ui/security_addon.h>
+#include <nekobox/dataStore/Utils.hpp>
+#include <nekobox/ui/mainwindow.h>
+#include <nekobox/ui/security/security.h>
 #include <QAction>
 #include <QCryptographicHash>
 #include <QSettings>
 #include <qlineedit.h>
 #include <qnamespace.h>
 #include <qpushbutton.h>
+#include <QStringList>
 
 
 QSettings *local_keys = nullptr;
 QByteArray default_password;
 QStringList userlist;
+std::atomic<int> failed_count;
+
+int getFailedCount(bool reset){
+  int count = failed_count;
+  if (reset){
+    failed_count = 0;
+  }
+  return count;
+}
 
 void set_access_denied(QWidget * w){
   auto l1 = new QVBoxLayout();
@@ -93,7 +103,17 @@ static long long * getTimePointer(LockValue val){
   }
 }
 
+static bool confirmLockStatic(LockValue val, bool restart);
+
 bool confirmLock(LockValue val, bool restart){
+  auto ret = confirmLockStatic(val, restart);
+  if (!ret){
+    failed_count ++;
+  }
+  return ret;
+}
+
+bool confirmLockStatic(LockValue val, bool restart){
   init_keys();
   if (userlist.isEmpty()){
     return true;
@@ -527,3 +547,9 @@ SecurityForm::SecurityForm(bool is_user_defined, QWidget *parent) {
         sec->show();
       });
 }
+
+
+qsizetype getUserCount(){
+  init_keys();
+  return userlist.size();
+};

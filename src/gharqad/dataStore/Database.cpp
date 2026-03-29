@@ -4,6 +4,52 @@
 #include <nekobox/configs/proxy/AbstractBean.hpp>
 #include <nekobox/configs/proxy/Preset.hpp>
 #include <QDir>
+#include <QMutex>
+#include <chrono>
+
+#ifdef NKR_SOFTWARE_KEYS
+#include <nekobox/ui/security_addon.h>
+ int Stats::DatabaseLogger::get_failed_auth_count(bool pre_save){
+    auto ret = this->failed_auth_count + getFailedCount(pre_save);
+    if (pre_save){
+        this->failed_auth_count = ret;
+    }
+    return ret;
+ }
+#endif
+
+ long long Stats::DatabaseLogger::get_usage_time(){
+    auto ret = this->usage_time;
+    ret += GetTime() - this->usage_time_update;
+    return ret;
+ }
+
+ void Stats::DatabaseLogger::initialize(){
+    Stats::databaseLogger->start_count ++;
+    auto time = GetTime();
+    if (this->first_launch_time == 0){
+        this->first_launch_time = time;
+    }
+    this->last_launch_time = time;
+    this->usage_time_update = time;
+ }
+
+ bool Stats::DatabaseLogger::Save(){
+    #ifdef NKR_SOFTWARE_KEYS
+        get_failed_auth_count(true);
+    #endif
+    auto ret = get_usage_time();
+    this->usage_time_update = 0;
+    this->usage_time = ret;
+    return JsonStore::Save();
+ }
+
+ long Stats::DatabaseLogger::GetTime(){
+    auto now = std::chrono::system_clock::now();
+    auto duration = now.time_since_epoch();
+    auto millis = std::chrono::duration_cast<std::chrono::milliseconds>(duration).count();
+    return millis;
+ }
 
 
 namespace Configs {
@@ -25,7 +71,9 @@ namespace Configs {
         case DefaultRoute:
         return "default_route_profile.cfg";
         case TrafficLooper:
-        return "traffic_looper.cfg";
+        return "stats/traffic.cfg";
+        case DatabaseLogger:
+        return "stats/usage.cfg";
     default:
         return "";
     }
@@ -65,14 +113,46 @@ namespace Configs {
     }
 }
 
+ QMutex storeMutex;
+#define LOG_CREATE(CASE, VAR)           \
+        case CASE:                      \
+        if (!store->storage_exists()) { \
+            storeMutex.lock();          \
+            Stats::databaseLogger->VAR->created += 1; \
+            store->storage_exists(true);              \
+            storeMutex.unlock();        \
+        };                              \
+        break;
+
+#define LOG_DELETE(CASE, VAR)           \
+        case CASE: {                    \
+            storeMutex.lock();          \
+            Stats::databaseLogger->VAR->deleted += 1; \
+            storeMutex.unlock();        \
+        };                              \
+        break;
+
  bool FileDatabaseManager::Save(JsonStore* store){
+    switch (store->StoreType()){
+        LOG_CREATE(Routes, routes)
+        LOG_CREATE(Proxies, profiles)
+        LOG_CREATE(Groups, groups)
+    }
      return SaveToFile(store);
  }
  bool FileDatabaseManager::Load(JsonStore* store){
      return LoadFromFile(store);
  }
  bool FileDatabaseManager::Drop(char chr, int id){
-     return DropFromDirectory(chr, id);
+    bool ret = DropFromDirectory(chr, id);
+    if (ret){
+        switch(chr){
+            LOG_DELETE(Routes, routes);
+            LOG_DELETE(Proxies, profiles);
+            LOG_DELETE(Groups, groups);
+        }
+    }
+    return ret;
  }
 
 bool FileDatabaseManager::SaveToFile(JsonStore * store) {

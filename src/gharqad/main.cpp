@@ -10,6 +10,7 @@
 #include <QThread>
 #include <QFileInfo>
 #include <QApplication>
+#include <memory>
 #ifdef Q_OS_WIN
 #include <3rdparty/WinCommander.hpp>
 #include <windows.h>
@@ -54,6 +55,10 @@ void signal_handler(int signum) {
 
 QTranslator* trans = nullptr;
 //QTranslator* trans_qt = nullptr;
+
+namespace Stats {
+    std::unique_ptr<DatabaseLogger> databaseLogger = std::make_unique<DatabaseLogger>();
+}
 
 
 namespace Preset {
@@ -246,8 +251,9 @@ int main(int argc, char** argv) {
         goto loop_back_2;
     }
 
-
     CHECK_STARTUP_ACCESS_M
+    Stats::databaseLogger->Load();
+    Stats::databaseLogger->initialize();
 
     Configs::windowSettings->Load();
     Configs::resourceManager->Load();

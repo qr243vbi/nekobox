@@ -7,7 +7,8 @@
 #include <nekobox/dataStore/Utils.hpp>
 #include "TrafficData.hpp"
 
-namespace Stats {
+namespace Stats{
+
     class TrafficLooper : public JsonStore{
     public:
         DECLARE_STORE_TYPE(TrafficLooper)
