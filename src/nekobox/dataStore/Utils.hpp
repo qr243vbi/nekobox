@@ -60,6 +60,11 @@ auto asKeyValueRange(T &&iterable) noexcept {
 #include <QList>
 #include <cstddef>
 
+
+QString ReadableDuration(long long ms);
+
+QString ReadableDateTime(long long ms);
+
 template <typename T> class ListRange {
 private:
   T list;

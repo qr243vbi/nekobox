@@ -29,6 +29,81 @@ QString defStr(const QString &value, const QString def) {
   }
 }
 
+QString ReadableDateTime(long long ms)
+{
+    // Convert to seconds
+    qint64 totalSeconds = ms / 1000;
+
+    // Days since epoch
+    qint64 days = totalSeconds / 86400;
+    qint64 secsOfDay = totalSeconds % 86400;
+
+    // Time of day
+    int hour   = secsOfDay / 3600;
+    int minute = (secsOfDay % 3600) / 60;
+    int second = secsOfDay % 60;
+
+    // Date calculation (UTC)
+    int year = 1970;
+    while (true) {
+        bool leap = (year % 4 == 0 && (year % 100 != 0 || year % 400 == 0));
+        int daysInYear = leap ? 366 : 365;
+        if (days < daysInYear) break;
+        days -= daysInYear;
+        year++;
+    }
+
+    static const int monthDays[12] =
+        { 31,28,31,30,31,30,31,31,30,31,30,31 };
+
+    int month = 0;
+    while (true) {
+        int dim = monthDays[month];
+        // February leap day
+        if (month == 1) {
+            bool leap = (year % 4 == 0 && (year % 100 != 0 || year % 400 == 0));
+            if (leap) dim = 29;
+        }
+        if (days < dim) break;
+        days -= dim;
+        month++;
+    }
+
+    int day = days + 1;
+
+    return QString("%1-%2-%3 %4:%5:%6")
+        .arg(year, 4, 10, QChar('0'))
+        .arg(month + 1, 2, 10, QChar('0'))
+        .arg(day, 2, 10, QChar('0'))
+        .arg(hour, 2, 10, QChar('0'))
+        .arg(minute, 2, 10, QChar('0'))
+        .arg(second, 2, 10, QChar('0'));
+}
+
+
+QString ReadableDuration(long long ms)
+{
+    qint64 totalSeconds = ms / 1000;
+
+    qint64 days    = totalSeconds / 86400;        // 24 * 60 * 60
+    qint64 hours   = (totalSeconds % 86400) / 3600;
+    qint64 minutes = (totalSeconds % 3600) / 60;
+    qint64 seconds = totalSeconds % 60;
+
+    QStringList parts;
+
+    if (days > 0)
+        parts << QString::number(days) + "d";
+
+    if (hours > 0 || days > 0)
+        parts << QString::number(hours) + "h";
+
+    // minutes and seconds should always appear
+    parts << QString::number(minutes) + "m";
+    parts << QString::number(seconds) + "s";
+
+    return parts.join(" ");
+}
 
 bool createSymlink(const QString &targetPath, const QString &linkPath) {
   if (QFile::link(targetPath, linkPath)) {

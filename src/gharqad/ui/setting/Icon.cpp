@@ -77,9 +77,9 @@ InfoDialog::InfoDialog(QWidget *parent) : QDialog(parent), ui(new Ui::InfoMain) 
   SET_DATA_STAT(proxy, profiles, Configs::profileManager->profiles.size(), QString::number)
   SET_DATA_STAT(group, groups, Configs::profileManager->groups.size(), QString::number)
   SET_DATA_STAT(route, routes, Configs::profileManager->routes.size(), QString::number)
-  SET_LOGGER_FUNC(usage_time, QString::number)
-  SET_LOGGER_STAT(last_launch_time, QString::number)
-  SET_LOGGER_STAT(first_launch_time, QString::number)
+  SET_LOGGER_FUNC(usage_time, ReadableDuration)
+  SET_LOGGER_STAT(last_launch_time, ReadableDateTime)
+  SET_LOGGER_STAT(first_launch_time, ReadableDateTime)
   
 #ifdef NKR_SOFTWARE_KEYS
   SET_CUSTOM_STAT(users_count, getUserCount(), QString::number)
