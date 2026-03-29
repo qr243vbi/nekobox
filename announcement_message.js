@@ -9,6 +9,6 @@ if (first_start){
     if (index == 1){
         open_url("https://github.com/qr243vbi/nekobox");
     } else if (index == 2){
-        open_url("https://matrix.to/#/#nekobox_ex:opensuse.org");
+        open_url("https://matrix.to/#/#NyameBox:matrix.org");
     }
 }
