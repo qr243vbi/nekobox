@@ -2,7 +2,13 @@
 FROM debian:oldstable
 
 # Update package index and install required packages
-RUN apt-get update
+ARG TARGETPLATFORM
+ARG BUILDPLATFORM
+
+RUN echo "FINE"
+RUN echo "I am running on $BUILDPLATFORM, building for $TARGETPLATFORM"
+
+RUN apt-get update 
 
 RUN apt-get install -y --no-install-recommends \
     bash \
