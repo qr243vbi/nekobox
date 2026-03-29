@@ -285,7 +285,7 @@ jobs:
             allow: ${{ github.event.inputs.build_windows_arm64 }}
           - platform: windows-latest
             target: x86_64
-            qt_version: 6.11.0
+            qt_version: 6.10.2
             triplet: x64-windows
             allow: ${{ github.event.inputs.build_windows_x64 }}
           - platform: windows-latest
