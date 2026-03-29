@@ -14,6 +14,7 @@ RUN apt-get install -y --no-install-recommends \
     ninja-build \
     jq \
     curl \
+    wget \
     pkg-config
 
 RUN apt-get install -y --no-install-recommends \
